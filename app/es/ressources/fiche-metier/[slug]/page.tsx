@@ -16,10 +16,12 @@ const breadcrumbsByLocale = {
 export async function generateStaticParams() {
   try {
     const fiches = await getJobMetiers("es");
-    return fiches.map((f) => ({ slug: getJobMetierSlugForUrl(f) }));
+    const slugs = fiches.map((f) => ({ slug: getJobMetierSlugForUrl(f) }));
+    if (slugs.length > 0) return slugs;
   } catch {
-    return [];
+    // ignore
   }
+  return [{ slug: "__no_fiches__" }];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -39,6 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (slug === "__no_fiches__") notFound();
   const fiche = await getJobMetierBySlugOrSlugifiedTitle(slug, "es");
   if (!fiche) notFound();
   const canonicalSlug = getJobMetierSlugForUrl(fiche);
