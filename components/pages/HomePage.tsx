@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import {
@@ -393,6 +394,9 @@ export default function HomePage({
   const teamRef = useRef<HTMLDivElement>(null);
   const teamInView = useInView(teamRef, { once: true, margin: "-80px" });
 
+  const successRef = useRef<HTMLDivElement>(null);
+  const successInView = useInView(successRef, { once: true, margin: "-80px" });
+
   const whenRef = useRef<HTMLDivElement>(null);
   const whenInView = useInView(whenRef, { once: true, margin: "-80px" });
 
@@ -546,7 +550,15 @@ export default function HomePage({
                   ))}
                 </div>
                 <span className="text-white/60 text-sm">
-                  5/5 sur Trustfolio
+                  5/5 sur{" "}
+                  <a
+                    href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc/reviews"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:underline transition-colors"
+                  >
+                    Trustfolio
+                  </a>
                 </span>
               </div>
             </div>
@@ -1090,6 +1102,52 @@ export default function HomePage({
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ═══ SUCCESS STORIES ═══ */}
+      <section className="py-24 lg:py-32 bg-background">
+        <Script
+          src="https://share.trustfolio.co/scripts/embed-v2.js"
+          strategy="afterInteractive"
+        />
+        <div className="container text-center" ref={successRef}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={successInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="inline-block px-3 py-1 rounded-full bg-iter-violet/10 text-iter-violet text-xs font-semibold uppercase tracking-widest mb-4">
+              {locale === "fr"
+                ? "Success Stories"
+                : locale === "en"
+                  ? "Success Stories"
+                  : "Success Stories"}
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-10">
+              {locale === "fr"
+                ? "Découvrez les témoignages de nos clients"
+                : locale === "en"
+                  ? "Discover our clients' testimonials"
+                  : "Descubra los testimonios de nuestros clientes"}
+            </h2>
+            <a
+              className="trustfolio-widget"
+              data-config-id="d_TvhPTQ1j3"
+              data-mode="default"
+              data-lazyload="true"
+              data-initial-height="200"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc"
+            >
+              {locale === "fr"
+                ? "Découvrez les témoignages de nos clients"
+                : locale === "en"
+                  ? "Discover our clients' testimonials"
+                  : "Descubra los testimonios de nuestros clientes"}
+            </a>
+          </motion.div>
         </div>
       </section>
 

@@ -8,8 +8,8 @@ export const homeContent = {
         "Iter Advisors : DAF externalisé pour PME et startups (pilotage, cash, reporting, levée de fonds). Intervention flexible à Barcelone, Paris, Toulouse.",
     },
     hero: {
-      h1: { before: "La\u00A0", highlight: "meilleure version", after: "\u00A0de votre direction financière" },
-      h2: "Cabinet de conseil en finance d\u2019entreprise, CFOs à temps partagé et DAF externalisé",
+      h1: { before: "La meilleure version de votre ", highlight: "direction financière & ressources humaines", after: "" },
+      h2: "Cabinet de conseil en finance d\u2019entreprise, DAF externalisé et DRH externalisé. Nous structurons, pilotons et optimisons vos fonctions support pour une croissance saine et durable.",
       cta: "Prendre rendez-vous",
     },
     about: {
@@ -116,8 +116,8 @@ export const homeContent = {
         "Iter Advisors, votre DAF externe. Accompagnement expert en gestion financière externalisée, levée de fonds et opérations M&A.",
     },
     hero: {
-      h1: { before: "The\u00A0", highlight: "best version of", after: "\u00A0your finance department" },
-      h2: "Corporate finance consultancy, timeshare CFOs and outsourced CFOs",
+      h1: { before: "The best version of your ", highlight: "finance & human resources direction", after: "" },
+      h2: "Corporate finance consultancy, outsourced CFO and outsourced HR. We structure, manage and optimize your support functions for healthy, sustainable growth.",
       cta: "Make an appointment",
     },
     about: {
@@ -224,8 +224,8 @@ export const homeContent = {
         "Iter Advisors, vuestro CFO externo. Apoyo experto en gestión financiera externalizada, financiación y operaciones de fusiones y adquisiciones.",
     },
     hero: {
-      h1: { before: "La\u00A0", highlight: "mejor versión", after: "\u00A0de su departamento financiero" },
-      h2: "Consultoría de finanzas corporativas, CFOs a tiempo compartido y CFOs externalizados",
+      h1: { before: "La mejor versión de su ", highlight: "dirección financiera y recursos humanos", after: "" },
+      h2: "Consultoría en finanzas corporativas, CFO externalizado y RRHH externalizado. Estructuramos, pilotamos y optimizamos sus funciones de soporte para un crecimiento sano y sostenible.",
       cta: "Concierte una cita",
     },
     about: {
