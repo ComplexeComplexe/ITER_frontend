@@ -14,6 +14,6 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const teamMembers = await getTeamMembers("es");
+  const teamMembers = await getTeamMembers("fr");
   return <HomePage locale="es" teamMembers={teamMembers} />;
 }

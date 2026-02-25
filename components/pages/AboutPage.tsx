@@ -22,7 +22,10 @@ export default function AboutPage({
   teamMembers?: StrapiTeamMember[];
 }) {
   const t = getAboutContent(locale);
-  const members = strapiTeam.map(toDisplayMember);
+  const members =
+    strapiTeam.length > 0
+      ? strapiTeam.map(toDisplayMember)
+      : t.team.members.map((m) => ({ name: m.name, role: m.role, linkedin: m.linkedin }));
 
   return (
     <PageLayout locale={locale}>
