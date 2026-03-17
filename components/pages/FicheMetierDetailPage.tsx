@@ -6,11 +6,12 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import StrapiBlocks from "@/components/StrapiBlocks";
 import { strapiMediaUrl } from "@/lib/strapi";
-import type { StrapiJobMetier } from "@/lib/strapi";
+import type { StrapiJobMetier, CmsNavItem } from "@/lib/strapi";
 
 interface FicheMetierDetailPageProps {
   locale: Locale;
   fiche: StrapiJobMetier;
+  cmsNavigation?: CmsNavItem[];
   breadcrumbs: {
     resourcesLabel: string;
     resourcesHref: string;
@@ -23,9 +24,10 @@ export default function FicheMetierDetailPage({
   locale,
   fiche,
   breadcrumbs,
+  cmsNavigation,
 }: FicheMetierDetailPageProps) {
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       <section className="bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb

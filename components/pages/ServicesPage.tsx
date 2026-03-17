@@ -2,15 +2,22 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getServicesContent } from "@/lib/content/services";
+import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 
-export default function ServicesPage({ locale }: { locale: Locale }) {
+export default function ServicesPage({
+  locale,
+  cmsNavigation,
+}: {
+  locale: Locale;
+  cmsNavigation?: CmsNavItem[];
+}) {
   const t = getServicesContent(locale);
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
       <section className="bg-background pt-32 pb-16">
         <div className="container">

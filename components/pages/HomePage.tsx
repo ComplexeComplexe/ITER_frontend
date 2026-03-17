@@ -31,7 +31,7 @@ import {
 import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
 import { getHomeContent } from "@/lib/content/home";
-import type { StrapiTeamMember } from "@/lib/strapi";
+import type { StrapiTeamMember, CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 
 /* ─── Animated Counter Hook ─── */
@@ -342,9 +342,11 @@ function toDisplayMember(m: StrapiTeamMember) {
 export default function HomePage({
   locale,
   teamMembers: strapiTeam = [],
+  cmsNavigation,
 }: {
   locale: Locale;
   teamMembers?: StrapiTeamMember[];
+  cmsNavigation?: CmsNavItem[];
 }) {
   const t = getHomeContent(locale);
   const contactPath = getContactPath(locale);
@@ -378,7 +380,7 @@ export default function HomePage({
   const contactInView = useInView(contactRef, { once: true, margin: "-80px" });
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* ═══ HERO ═══ */}
       <section
         className="relative flex items-center overflow-hidden"

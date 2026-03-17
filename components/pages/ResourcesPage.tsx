@@ -3,15 +3,22 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getResourcesContent } from "@/lib/content/resources";
+import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 
-export default function ResourcesPage({ locale }: { locale: Locale }) {
+export default function ResourcesPage({
+  locale,
+  cmsNavigation,
+}: {
+  locale: Locale;
+  cmsNavigation?: CmsNavItem[];
+}) {
   const t = getResourcesContent(locale);
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
       <section className="bg-background pt-32 pb-16">
         <div className="container">

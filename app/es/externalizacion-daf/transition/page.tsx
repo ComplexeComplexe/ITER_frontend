@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import DafSubPage from "@/components/pages/DafSubPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
 import { getDafSubContent } from "@/lib/content/daf-sub";
+import { getCmsNavigation } from "@/lib/strapi";
 
 const content = getDafSubContent("es", "transition")!;
 
@@ -15,6 +16,13 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default function Page() {
-  return <DafSubPage locale="es" content={content} />;
+export default async function Page() {
+  const cmsNavigation = await getCmsNavigation("es");
+  return (
+    <DafSubPage
+      locale="es"
+      content={content}
+      cmsNavigation={cmsNavigation}
+    />
+  );
 }

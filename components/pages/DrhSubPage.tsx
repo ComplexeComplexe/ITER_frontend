@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
 import type { DrhSubContent } from "@/lib/content/drh-sub";
+import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -11,13 +12,14 @@ import CTASection from "@/components/CTASection";
 interface DrhSubPageProps {
   locale: Locale;
   content: DrhSubContent;
+  cmsNavigation?: CmsNavItem[];
 }
 
-export default function DrhSubPage({ locale, content }: DrhSubPageProps) {
+export default function DrhSubPage({ locale, content, cmsNavigation }: DrhSubPageProps) {
   const contactPath = getContactPath(locale);
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
       <section className="bg-background pt-32 pb-16">
         <div className="container">

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import ServiceSinglePage from "@/components/pages/ServiceSinglePage";
 import {
   getServiceSinglePage,
+  getCmsNavigation,
   SERVICE_PAGE_SLUGS,
   SERVICE_PAGE_API_MAP,
   type ServicePageSlug,
@@ -51,11 +52,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (!isServicePageSlug(slug)) notFound();
   const page = await getServiceSinglePage(slug, "fr");
   if (!page) notFound();
+  const cmsNavigation = await getCmsNavigation("fr");
   return (
     <ServiceSinglePage
       locale="fr"
       page={page}
       breadcrumbTitle={page.heroTitle}
+      cmsNavigation={cmsNavigation}
     />
   );
 }

@@ -3,7 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import GlossaryLetterIndex from "@/components/GlossaryLetterIndex";
-import type { StrapiGlossaryTerm } from "@/lib/strapi";
+import type { StrapiGlossaryTerm, CmsNavItem } from "@/lib/strapi";
 
 const content: Record<
   Locale,
@@ -51,15 +51,17 @@ const content: Record<
 export default function GlossairePage({
   locale,
   terms = [],
+  cmsNavigation,
 }: {
   locale: Locale;
   terms?: StrapiGlossaryTerm[];
+  cmsNavigation?: CmsNavItem[];
 }) {
   const t = content[locale];
   const hasTerms = terms && terms.length > 0;
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
       <section className="bg-background pt-32 pb-16">
         <div className="container">

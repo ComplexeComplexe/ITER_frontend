@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostPage from "@/components/pages/BlogPostPage";
-import { getBlogArticleBySlug, getBlogArticles } from "@/lib/strapi";
+import { getBlogArticleBySlug, getBlogArticles, getCmsNavigation } from "@/lib/strapi";
 import { buildStrapiCollectionMetadata } from "@/lib/metadata";
 import { blogPosts } from "@/lib/content/blog-posts";
 import { getLocalePath } from "@/lib/i18n";
@@ -58,7 +58,10 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const article = await getBlogArticleBySlug(slug, "es");
+  const [article, cmsNavigation] = await Promise.all([
+    getBlogArticleBySlug(slug, "es"),
+    getCmsNavigation("es"),
+  ]);
   const fallback = blogPosts.es?.[slug];
 
   if (article) {
@@ -68,6 +71,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         title={article.title}
         breadcrumbs={breadcrumbsByLocale.es}
         blocks={article.content}
+        cmsNavigation={cmsNavigation}
       />
     );
   }
@@ -78,6 +82,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         title={fallback.h1}
         breadcrumbs={fallback.breadcrumbs}
         content={fallback.content}
+        cmsNavigation={cmsNavigation}
       />
     );
   }

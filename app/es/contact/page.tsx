@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import ContactPage from "@/components/pages/ContactPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
+import { getCmsNavigation } from "@/lib/strapi";
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildStrapiMetadata({
@@ -12,6 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default function Page() {
-  return <ContactPage locale="es" />;
+export default async function Page() {
+  const cmsNavigation = await getCmsNavigation("es");
+  return <ContactPage locale="es" cmsNavigation={cmsNavigation} />;
 }

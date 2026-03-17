@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import DrhPage from "@/components/pages/DrhPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
-import { getDrhExternalisePage } from "@/lib/strapi";
+import { getDrhExternalisePage, getCmsNavigation } from "@/lib/strapi";
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildStrapiMetadata({
@@ -14,11 +14,15 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const strapiData = await getDrhExternalisePage("en");
+  const [strapiData, cmsNavigation] = await Promise.all([
+    getDrhExternalisePage("en"),
+    getCmsNavigation("en"),
+  ]);
   return (
     <DrhPage
       locale="en"
       strapiCategories={strapiData?.serviceCategories ?? null}
+      cmsNavigation={cmsNavigation}
     />
   );
 }

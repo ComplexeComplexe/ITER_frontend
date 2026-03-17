@@ -4,7 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import StrapiBlocks from "@/components/StrapiBlocks";
-import type { StrapiServiceSinglePage } from "@/lib/strapi";
+import type { StrapiServiceSinglePage, CmsNavItem } from "@/lib/strapi";
 
 const breadcrumbsByLocale: Record<
   Locale,
@@ -19,17 +19,19 @@ interface ServiceSinglePageProps {
   locale: Locale;
   page: StrapiServiceSinglePage;
   breadcrumbTitle: string;
+  cmsNavigation?: CmsNavItem[];
 }
 
 export default function ServiceSinglePage({
   locale,
   page,
   breadcrumbTitle,
+  cmsNavigation,
 }: ServiceSinglePageProps) {
   const bc = breadcrumbsByLocale[locale];
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       <section className="bg-background pt-32 pb-16">
         <div className="container flex flex-col items-center text-center">
           <Breadcrumb

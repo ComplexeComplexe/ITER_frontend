@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import DrhSubPage from "@/components/pages/DrhSubPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
 import { getDrhSubContent } from "@/lib/content/drh-sub";
+import { getCmsNavigation } from "@/lib/strapi";
 
 const content = getDrhSubContent("en", "shared-time")!;
 
@@ -15,6 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default function Page() {
-  return <DrhSubPage locale="en" content={content} />;
+export default async function Page() {
+  const cmsNavigation = await getCmsNavigation("en");
+  return <DrhSubPage locale="en" content={content} cmsNavigation={cmsNavigation} />;
 }

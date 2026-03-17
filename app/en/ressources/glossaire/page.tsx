@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import GlossairePage from "@/components/pages/GlossairePage";
 import { buildMetadata } from "@/lib/metadata";
-import { getGlossaryTerms } from "@/lib/strapi";
+import { getGlossaryTerms, getCmsNavigation } from "@/lib/strapi";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
@@ -11,6 +11,9 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default async function Page() {
-  const terms = await getGlossaryTerms("en");
-  return <GlossairePage locale="en" terms={terms} />;
+  const [terms, cmsNavigation] = await Promise.all([
+    getGlossaryTerms("en"),
+    getCmsNavigation("en"),
+  ]);
+  return <GlossairePage locale="en" terms={terms} cmsNavigation={cmsNavigation} />;
 }

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import TestimonialsListingPage from "@/components/pages/TestimonialsListingPage";
 import { buildMetadata } from "@/lib/metadata";
+import { getCmsNavigation } from "@/lib/strapi";
 
 export const metadata: Metadata = buildMetadata({
   locale: "es",
@@ -9,6 +10,12 @@ export const metadata: Metadata = buildMetadata({
   path: "/ressources/testimonials",
 });
 
-export default function Page() {
-  return <TestimonialsListingPage locale="es" />;
+export default async function Page() {
+  const cmsNavigation = await getCmsNavigation("es");
+  return (
+    <TestimonialsListingPage
+      locale="es"
+      cmsNavigation={cmsNavigation}
+    />
+  );
 }

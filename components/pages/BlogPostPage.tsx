@@ -4,11 +4,12 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import StrapiBlocks from "@/components/StrapiBlocks";
-import type { StrapiBlock } from "@/lib/strapi";
+import type { StrapiBlock, CmsNavItem } from "@/lib/strapi";
 
 interface BlogPostPageProps {
   locale: Locale;
   title: string;
+  cmsNavigation?: CmsNavItem[];
   breadcrumbs: {
     resourcesLabel: string;
     resourcesHref: string;
@@ -27,9 +28,10 @@ export default function BlogPostPage({
   breadcrumbs,
   content = [],
   blocks,
+  cmsNavigation,
 }: BlogPostPageProps) {
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       <section className="bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb

@@ -5,7 +5,7 @@ import { getLocalePath } from "@/lib/i18n";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
-import { getJobMetierSlugForUrl, type StrapiJobMetier } from "@/lib/strapi";
+import { getJobMetierSlugForUrl, type StrapiJobMetier, CmsNavItem } from "@/lib/strapi";
 
 const content: Record<
   Locale,
@@ -64,9 +64,11 @@ function getFicheHref(locale: Locale, slug: string): string {
 export default function FicheMetierListingPage({
   locale,
   fiches,
+  cmsNavigation,
 }: {
   locale: Locale;
   fiches?: StrapiJobMetier[] | null;
+  cmsNavigation?: CmsNavItem[];
 }) {
   const t = content[locale];
   const hasFiches = fiches && fiches.length > 0;
@@ -79,7 +81,7 @@ export default function FicheMetierListingPage({
     : [{ href: t.dafHref, title: t.dafLabel, index: "01" }];
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       <section className="bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb

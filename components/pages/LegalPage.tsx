@@ -1,17 +1,20 @@
 import { Locale } from "@/lib/i18n";
 import { LegalPageContent } from "@/lib/content/legal";
+import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export default function LegalPage({
   locale,
   content,
+  cmsNavigation,
 }: {
   locale: Locale;
   content: LegalPageContent;
+  cmsNavigation?: CmsNavItem[];
 }) {
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
       <section className="bg-background pt-32 pb-16">
         <div className="container">

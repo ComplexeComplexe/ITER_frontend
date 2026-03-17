@@ -1,6 +1,6 @@
 import { Locale } from "@/lib/i18n";
 import { getAboutContent } from "@/lib/content/about";
-import type { StrapiTeamMember } from "@/lib/strapi";
+import type { StrapiTeamMember, CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -17,9 +17,11 @@ function toDisplayMember(m: StrapiTeamMember) {
 export default function AboutPage({
   locale,
   teamMembers: strapiTeam = [],
+  cmsNavigation,
 }: {
   locale: Locale;
   teamMembers?: StrapiTeamMember[];
+  cmsNavigation?: CmsNavItem[];
 }) {
   const t = getAboutContent(locale);
   const members =
@@ -28,7 +30,7 @@ export default function AboutPage({
       : t.team.members.map((m) => ({ name: m.name, role: m.role, linkedin: m.linkedin }));
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
       <section className="bg-background pt-32 pb-16">
         <div className="container">

@@ -427,6 +427,37 @@ export async function strapiFetch<T>(
   return res.json();
 }
 
+// ─── CMS Navigation helper ────────────────────────────────
+
+export interface CmsNavItem {
+  title: string;
+  href: string;
+  children?: { text: string; href: string }[];
+}
+
+export async function getCmsNavigation(locale: Locale): Promise<CmsNavItem[] | undefined> {
+  try {
+    const global = await getGlobal(locale);
+    if (!global?.navigation || global.navigation.length === 0) return undefined;
+    const items: CmsNavItem[] = global.navigation
+      .map((item) => {
+        const children =
+          item.children
+            ?.filter((child) => child.label && child.url)
+            .map((child) => ({ text: child.label, href: child.url })) ?? [];
+        return {
+          title: item.label || "",
+          href: item.url || "#",
+          children: children.length > 0 ? children : undefined,
+        };
+      })
+      .filter((item) => item.title && item.href);
+    return items.length > 0 ? items : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 // ─── Data fetching functions ──────────────────────────────
 
 /** Get global site settings (nav, footer, etc.) */

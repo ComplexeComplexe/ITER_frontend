@@ -7,7 +7,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
 import { getDrhContent } from "@/lib/content/drh";
-import type { StrapiDrhServiceCategory } from "@/lib/strapi";
+import type { StrapiDrhServiceCategory, CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import DrhServicesGrid from "@/components/DrhServicesGrid";
@@ -35,16 +35,18 @@ function mapStrapiCategories(
 export default function DrhPage({
   locale,
   strapiCategories,
+  cmsNavigation,
 }: {
   locale: Locale;
   strapiCategories?: StrapiDrhServiceCategory[] | null;
+  cmsNavigation?: CmsNavItem[];
 }) {
   const t = getDrhContent(locale);
   const contactPath = getContactPath(locale);
   const gridCategories = mapStrapiCategories(strapiCategories ?? null);
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
       <section className="bg-background pt-32 pb-16">
         <div className="container">

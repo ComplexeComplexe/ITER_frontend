@@ -4,10 +4,17 @@ import { useState, FormEvent } from "react";
 import { ArrowRight } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getContactContent, ContactFormField } from "@/lib/content/contact";
+import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 
-export default function ContactPage({ locale }: { locale: Locale }) {
+export default function ContactPage({
+  locale,
+  cmsNavigation,
+}: {
+  locale: Locale;
+  cmsNavigation?: CmsNavItem[];
+}) {
   const t = getContactContent(locale);
   const [pending, setPending] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -49,7 +56,7 @@ export default function ContactPage({ locale }: { locale: Locale }) {
   }
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
       <section className="bg-background pt-32 pb-16">
         <div className="container">

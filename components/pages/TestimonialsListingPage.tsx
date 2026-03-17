@@ -1,4 +1,5 @@
 import { Locale } from "@/lib/i18n";
+import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -34,11 +35,17 @@ const content: Record<Locale, {
   },
 };
 
-export default function TestimonialsListingPage({ locale }: { locale: Locale }) {
+export default function TestimonialsListingPage({
+  locale,
+  cmsNavigation,
+}: {
+  locale: Locale;
+  cmsNavigation?: CmsNavItem[];
+}) {
   const t = content[locale];
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
       <section className="bg-background pt-32 pb-16">
         <div className="container">

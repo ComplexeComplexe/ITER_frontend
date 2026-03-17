@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import BlogListingPage from "@/components/pages/BlogListingPage";
-import { getBlogArticles } from "@/lib/strapi";
+import { getBlogArticles, getCmsNavigation } from "@/lib/strapi";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -12,5 +12,6 @@ export const metadata: Metadata = buildMetadata({
 
 export default async function Page() {
   const articles = await getBlogArticles("fr");
-  return <BlogListingPage locale="fr" articles={articles} />;
+  const cmsNavigation = await getCmsNavigation("fr");
+  return <BlogListingPage locale="fr" articles={articles} cmsNavigation={cmsNavigation} />;
 }

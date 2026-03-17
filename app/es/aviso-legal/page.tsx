@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import LegalPage from "@/components/pages/LegalPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
 import { getLegalContent } from "@/lib/content/legal";
+import { getCmsNavigation } from "@/lib/strapi";
 
 const content = getLegalContent("aviso-legal");
 
@@ -15,6 +16,13 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default function Page() {
-  return <LegalPage locale="es" content={content} />;
+export default async function Page() {
+  const cmsNavigation = await getCmsNavigation("es");
+  return (
+    <LegalPage
+      locale="es"
+      content={content}
+      cmsNavigation={cmsNavigation}
+    />
+  );
 }

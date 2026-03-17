@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import ResourcesPage from "@/components/pages/ResourcesPage";
 import { buildMetadata } from "@/lib/metadata";
+import { getCmsNavigation } from "@/lib/strapi";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
@@ -9,6 +10,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/ressources",
 });
 
-export default function Page() {
-  return <ResourcesPage locale="en" />;
+export default async function Page() {
+  const cmsNavigation = await getCmsNavigation("en");
+  return <ResourcesPage locale="en" cmsNavigation={cmsNavigation} />;
 }

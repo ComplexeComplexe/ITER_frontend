@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import LegalPage from "@/components/pages/LegalPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
+import { getCmsNavigation } from "@/lib/strapi";
 import { getLegalContent } from "@/lib/content/legal";
 
 const content = getLegalContent("politique-de-confidentialite");
@@ -15,6 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default function Page() {
-  return <LegalPage locale="fr" content={content} />;
+export default async function Page() {
+  const cmsNavigation = await getCmsNavigation("fr");
+  return <LegalPage locale="fr" content={content} cmsNavigation={cmsNavigation} />;
 }

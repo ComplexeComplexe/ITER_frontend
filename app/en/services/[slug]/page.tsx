@@ -6,6 +6,7 @@ import {
   getCanonicalServiceSlug,
   getServiceSlugsForLocale,
   SERVICE_PAGE_API_MAP,
+  getCmsNavigation,
   type ServicePageSlug,
 } from "@/lib/strapi";
 import { buildStrapiMetadata } from "@/lib/metadata";
@@ -50,13 +51,17 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const { slug } = await params;
   const canonical = getCanonicalServiceSlug(locale, slug);
   if (!canonical) notFound();
-  const page = await getServiceSinglePage(canonical, locale);
+  const [page, cmsNavigation] = await Promise.all([
+    getServiceSinglePage(canonical, locale),
+    getCmsNavigation("en"),
+  ]);
   if (!page) notFound();
   return (
     <ServiceSinglePage
       locale={locale}
       page={page}
       breadcrumbTitle={page.heroTitle}
+      cmsNavigation={cmsNavigation}
     />
   );
 }

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import FicheMetierListingPage from "@/components/pages/FicheMetierListingPage";
-import { getJobMetiers } from "@/lib/strapi";
+import { getJobMetiers, getCmsNavigation } from "@/lib/strapi";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -11,6 +11,9 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default async function Page() {
-  const fiches = await getJobMetiers("en");
-  return <FicheMetierListingPage locale="en" fiches={fiches} />;
+  const [fiches, cmsNavigation] = await Promise.all([
+    getJobMetiers("en"),
+    getCmsNavigation("en"),
+  ]);
+  return <FicheMetierListingPage locale="en" fiches={fiches} cmsNavigation={cmsNavigation} />;
 }

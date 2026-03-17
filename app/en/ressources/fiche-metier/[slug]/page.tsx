@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import FicheMetierDetailPage from "@/components/pages/FicheMetierDetailPage";
-import { getJobMetierBySlugOrSlugifiedTitle, getJobMetiers, getJobMetierSlugForUrl } from "@/lib/strapi";
+import { getJobMetierBySlugOrSlugifiedTitle, getJobMetiers, getJobMetierSlugForUrl, getCmsNavigation } from "@/lib/strapi";
 import { buildStrapiCollectionMetadata } from "@/lib/metadata";
 import { getLocalePath } from "@/lib/i18n";
 
@@ -39,9 +39,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const fiche = await getJobMetierBySlugOrSlugifiedTitle(slug, "en");
+  const [fiche, cmsNavigation] = await Promise.all([
+    getJobMetierBySlugOrSlugifiedTitle(slug, "en"),
+    getCmsNavigation("en"),
+  ]);
   if (!fiche) notFound();
   const canonicalSlug = getJobMetierSlugForUrl(fiche);
   if (slug !== canonicalSlug) redirect(getLocalePath("en", `${basePath}/${canonicalSlug}`));
-  return <FicheMetierDetailPage locale="en" fiche={fiche} breadcrumbs={breadcrumbsByLocale.en} />;
+  return <FicheMetierDetailPage locale="en" fiche={fiche} breadcrumbs={breadcrumbsByLocale.en} cmsNavigation={cmsNavigation} />;
 }

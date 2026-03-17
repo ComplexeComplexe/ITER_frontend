@@ -6,6 +6,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Locale } from "@/lib/i18n";
+import type { CmsNavItem } from "@/lib/strapi";
 import { getContactPath } from "@/lib/navigation";
 import { getDafContent } from "@/lib/content/daf";
 import PageLayout from "@/components/PageLayout";
@@ -13,12 +14,18 @@ import Breadcrumb from "@/components/Breadcrumb";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 
-export default function DafPage({ locale }: { locale: Locale }) {
+export default function DafPage({
+  locale,
+  cmsNavigation,
+}: {
+  locale: Locale;
+  cmsNavigation?: CmsNavItem[];
+}) {
   const t = getDafContent(locale);
   const contactPath = getContactPath(locale);
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
       <section className="bg-background pt-32 pb-16">
         <div className="container">

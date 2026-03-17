@@ -7,7 +7,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import { strapiMediaUrl } from "@/lib/strapi";
-import type { StrapiBlogArticle } from "@/lib/strapi";
+import type { StrapiBlogArticle, CmsNavItem } from "@/lib/strapi";
 
 const content: Record<
   Locale,
@@ -113,9 +113,11 @@ function getBlogHref(locale: Locale, slug: string): string {
 export default function BlogListingPage({
   locale,
   articles,
+  cmsNavigation,
 }: {
   locale: Locale;
   articles?: StrapiBlogArticle[] | null;
+  cmsNavigation?: CmsNavItem[];
 }) {
   const t = content[locale];
   // When Strapi returns articles, use their featuredImage; otherwise fallback to static cards (local images in public/images/blog/)
@@ -134,7 +136,7 @@ export default function BlogListingPage({
       : t.cards;
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       <section className="bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb
