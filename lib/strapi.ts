@@ -762,50 +762,20 @@ export async function getBlogArticleBySlug(slug: string, locale: Locale): Promis
 
 /** Get all team members */
 export async function getTeamMembers(locale: Locale): Promise<StrapiTeamMember[]> {
-  const fallbackLocales: Locale[] = locale === "fr" ? ["en"] : locale === "en" ? ["fr"] : ["en", "fr"];
   try {
-    const fetchMembers = async (targetLocale: Locale) =>
-      strapiFetch<StrapiCollectionResponse<StrapiTeamMember>>(
-        "team-members",
-        {
-          populate: "photo",
-          "sort[0]": "order:asc",
-          "pagination[pageSize]": "100",
-        },
-        { locale: targetLocale, revalidate: 60 }
-      );
-
-    const primary = await fetchMembers(locale);
-    if (primary.data.length > 0) return primary.data;
-
-    for (const fallbackLocale of fallbackLocales) {
-      try {
-        const fallback = await fetchMembers(fallbackLocale);
-        if (fallback.data.length > 0) return fallback.data;
-      } catch {
-        // Continue to next fallback locale.
-      }
-    }
+    const res = await strapiFetch<StrapiCollectionResponse<StrapiTeamMember>>(
+      "team-members",
+      {
+        populate: "photo",
+        "sort[0]": "order:asc",
+        "pagination[pageSize]": "100",
+      },
+      { locale, revalidate: 60 }
+    );
+    return res.data;
   } catch {
-    // Try fallback locales before returning an empty list.
-    for (const fallbackLocale of fallbackLocales) {
-      try {
-        const fallback = await strapiFetch<StrapiCollectionResponse<StrapiTeamMember>>(
-          "team-members",
-          {
-            populate: "photo",
-            "sort[0]": "order:asc",
-            "pagination[pageSize]": "100",
-          },
-          { locale: fallbackLocale, revalidate: 60 }
-        );
-        if (fallback.data.length > 0) return fallback.data;
-      } catch {
-        // Continue to next fallback locale.
-      }
-    }
+    return [];
   }
-  return [];
 }
 
 /** Get all testimonials */
