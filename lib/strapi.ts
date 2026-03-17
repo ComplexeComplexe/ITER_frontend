@@ -767,7 +767,7 @@ export async function getTeamMembers(locale: Locale): Promise<StrapiTeamMember[]
     const res = await strapiFetch<StrapiCollectionResponse<StrapiTeamMember>>(
       "team-members",
       {
-        populate: "photo",
+        "populate": "*",
         "sort[0]": "order:asc",
         "pagination[pageSize]": "100",
       },
