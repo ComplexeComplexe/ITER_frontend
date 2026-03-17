@@ -7,7 +7,8 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Locale } from "@/lib/i18n";
-import { navigation, languageSwitcher, getHomePath } from "@/lib/navigation";
+import { navigation, languageSwitcher, getContactPath, getHomePath } from "@/lib/navigation";
+import type { NavItem } from "@/lib/navigation";
 import { getLocalizedPath } from "@/lib/path-localization";
 
 export default function Header({ locale }: { locale: Locale }) {
@@ -15,8 +16,9 @@ export default function Header({ locale }: { locale: Locale }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const [cmsNavigation, setCmsNavigation] = useState<NavItem[] | null>(null);
 
-  const nav = navigation[locale];
+  const nav = cmsNavigation && cmsNavigation.length > 0 ? cmsNavigation : navigation[locale];
   const homePath = getHomePath(locale);
   const isHome = pathname === "/" || pathname === "/en" || pathname === "/es";
 
@@ -37,8 +39,31 @@ export default function Header({ locale }: { locale: Locale }) {
     };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    let active = true;
+
+    async function loadCmsNavigation() {
+      try {
+        const res = await fetch(`/api/site-global-navigation?locale=${locale}`);
+        if (!res.ok) return;
+        const data = (await res.json()) as { navigation?: NavItem[] };
+        if (!active) return;
+        if (Array.isArray(data.navigation)) {
+          setCmsNavigation(data.navigation);
+        }
+      } catch {
+        // Keep static navigation fallback when CMS is unreachable.
+      }
+    }
+
+    loadCmsNavigation();
+    return () => {
+      active = false;
+    };
+  }, [locale]);
+
   const getLocaleHref = (targetLocale: Locale) => getLocalizedPath(pathname, targetLocale);
-  const contactItem = nav[nav.length - 1];
+  const contactItem = nav[nav.length - 1] ?? { title: "Contact", href: getContactPath(locale) };
   const mainNav = nav.slice(0, -1);
 
   return (

@@ -260,25 +260,6 @@ const HERO_AVATARS = [
   }, // pas d'image fournie — remplacer par l'URL si disponible
 ];
 
-/* ─── Team ─── */
-const team = [
-  { name: "Sébastien Doat", role: "Co-fondateur & CFO", initials: "SD" },
-  { name: "Benjamin Ziza", role: "Co-fondateur & CFO", initials: "BZ" },
-  { name: "Guillaume Rostand", role: "Founding Partner & CMO", initials: "GR" },
-  { name: "Quico Montuenga Rios", role: "Fractional CFO", initials: "QM" },
-  { name: "Deisy Arias Ramirez", role: "Fractional CFO", initials: "DA" },
-  { name: "Florent Greth", role: "Fractional CFO", initials: "FG" },
-  { name: "Ornella Salgado", role: "Finance Analyst", initials: "OS" },
-  { name: "Tom Jaufre", role: "Finance CFO", initials: "TJ" },
-  { name: "Arthur Soulages", role: "Fractional CFO", initials: "AS" },
-  { name: "Rocio Montesano", role: "Finance Analyst", initials: "RM" },
-  { name: "Augustin Louvet", role: "Finance Analyst", initials: "AL" },
-  { name: "Christophe Hoarau", role: "Chief Data Officer", initials: "CH" },
-  { name: "Pauline Mathieu", role: "Finance Analyst", initials: "PM" },
-  { name: "Mélody Cadet", role: "Finance Analyst", initials: "MC" },
-  { name: "Fabien Onolfo", role: "Finance Analyst", initials: "FO" },
-];
-
 /* ─── Service Card ─── */
 function ServiceCard({
   icon: Icon,
@@ -367,14 +348,7 @@ export default function HomePage({
 }) {
   const t = getHomeContent(locale);
   const contactPath = getContactPath(locale);
-  const teamDisplay =
-    strapiTeam.length > 0
-      ? strapiTeam.map(toDisplayMember)
-      : team.map((m) => ({
-          name: m.name,
-          role: m.role,
-          linkedin: "#" as string,
-        }));
+  const teamDisplay = strapiTeam.map(toDisplayMember);
 
   const servicesRef = useRef<HTMLDivElement>(null);
   const servicesInView = useInView(servicesRef, {

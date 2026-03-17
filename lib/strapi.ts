@@ -431,23 +431,56 @@ export async function strapiFetch<T>(
 
 /** Get global site settings (nav, footer, etc.) */
 export async function getGlobal(locale: Locale): Promise<StrapiGlobal | null> {
+  const fallbackLocales: Locale[] = locale === "fr" ? ["en"] : locale === "en" ? ["fr"] : ["en", "fr"];
   try {
-    const res = await strapiFetch<StrapiSingleResponse<StrapiGlobal>>(
-      "global",
-      {
-        "populate[navigation][populate]": "children",
-        "populate[footer][populate]": "*",
-        "populate[socialLinks][populate]": "*",
-        "populate[aggregateRating][populate]": "*",
-        "populate[logo]": "*",
-        "populate[defaultSeo][populate]": "ogImage",
-      },
-      { locale }
-    );
-    return res.data;
+    const fetchGlobal = async (targetLocale: Locale) =>
+      strapiFetch<StrapiSingleResponse<StrapiGlobal>>(
+        "global",
+        {
+          "populate[navigation][populate]": "children",
+          "populate[footer][populate]": "*",
+          "populate[socialLinks][populate]": "*",
+          "populate[aggregateRating][populate]": "*",
+          "populate[logo]": "*",
+          "populate[defaultSeo][populate]": "ogImage",
+        },
+        { locale: targetLocale, revalidate: 60 }
+      );
+
+    const primary = await fetchGlobal(locale);
+    if (primary.data) return primary.data;
+
+    for (const fallbackLocale of fallbackLocales) {
+      try {
+        const fallback = await fetchGlobal(fallbackLocale);
+        if (fallback.data) return fallback.data;
+      } catch {
+        // Continue to next fallback locale.
+      }
+    }
   } catch {
-    return null;
+    // Try fallback locales before giving up.
+    for (const fallbackLocale of fallbackLocales) {
+      try {
+        const fallback = await strapiFetch<StrapiSingleResponse<StrapiGlobal>>(
+          "global",
+          {
+            "populate[navigation][populate]": "children",
+            "populate[footer][populate]": "*",
+            "populate[socialLinks][populate]": "*",
+            "populate[aggregateRating][populate]": "*",
+            "populate[logo]": "*",
+            "populate[defaultSeo][populate]": "ogImage",
+          },
+          { locale: fallbackLocale, revalidate: 60 }
+        );
+        if (fallback.data) return fallback.data;
+      } catch {
+        // Continue to next fallback locale.
+      }
+    }
   }
+  return null;
 }
 
 /** Get homepage data */
@@ -698,20 +731,50 @@ export async function getBlogArticleBySlug(slug: string, locale: Locale): Promis
 
 /** Get all team members */
 export async function getTeamMembers(locale: Locale): Promise<StrapiTeamMember[]> {
+  const fallbackLocales: Locale[] = locale === "fr" ? ["en"] : locale === "en" ? ["fr"] : ["en", "fr"];
   try {
-    const res = await strapiFetch<StrapiCollectionResponse<StrapiTeamMember>>(
-      "team-members",
-      {
-        populate: "photo",
-        "sort[0]": "order:asc",
-        "pagination[pageSize]": "100",
-      },
-      { locale }
-    );
-    return res.data;
+    const fetchMembers = async (targetLocale: Locale) =>
+      strapiFetch<StrapiCollectionResponse<StrapiTeamMember>>(
+        "team-members",
+        {
+          populate: "photo",
+          "sort[0]": "order:asc",
+          "pagination[pageSize]": "100",
+        },
+        { locale: targetLocale, revalidate: 60 }
+      );
+
+    const primary = await fetchMembers(locale);
+    if (primary.data.length > 0) return primary.data;
+
+    for (const fallbackLocale of fallbackLocales) {
+      try {
+        const fallback = await fetchMembers(fallbackLocale);
+        if (fallback.data.length > 0) return fallback.data;
+      } catch {
+        // Continue to next fallback locale.
+      }
+    }
   } catch {
-    return [];
+    // Try fallback locales before returning an empty list.
+    for (const fallbackLocale of fallbackLocales) {
+      try {
+        const fallback = await strapiFetch<StrapiCollectionResponse<StrapiTeamMember>>(
+          "team-members",
+          {
+            populate: "photo",
+            "sort[0]": "order:asc",
+            "pagination[pageSize]": "100",
+          },
+          { locale: fallbackLocale, revalidate: 60 }
+        );
+        if (fallback.data.length > 0) return fallback.data;
+      } catch {
+        // Continue to next fallback locale.
+      }
+    }
   }
+  return [];
 }
 
 /** Get all testimonials */
