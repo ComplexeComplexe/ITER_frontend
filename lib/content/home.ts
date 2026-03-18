@@ -116,6 +116,14 @@ export const homeContent = {
       { title: "Levée de fonds", desc: "Accompagnement stratégique pour sécuriser vos financements et convaincre les investisseurs." },
       { title: "M&A & Due Diligence", desc: "Conseil en fusions-acquisitions et audits financiers pour sécuriser vos opérations." },
     ],
+    hrServices: [
+      { title: "DRH externalisé", desc: "Un directeur des ressources humaines dédié à temps partagé pour structurer et piloter votre fonction RH." },
+      { title: "Recrutement & onboarding", desc: "Sourcing, sélection et intégration de vos talents pour constituer des équipes performantes." },
+      { title: "Gestion de la paie", desc: "Externalisation complète de la paie, conformité sociale et optimisation des charges." },
+      { title: "Formation & développement", desc: "Plans de formation, montée en compétences et gestion des carrières pour fidéliser vos talents." },
+      { title: "Relations sociales", desc: "Accompagnement dans le dialogue social, conformité réglementaire et gestion des conflits." },
+      { title: "Culture & marque employeur", desc: "Construction d'une culture d'entreprise forte et d'une marque employeur attractive." },
+    ],
     dafSection: {
       title: "DAF externalisé & CFO à temps partagé",
       paragraph: "Chez Iter Advisors, nos CFO part-time apportent une expertise sectorielle approfondie et une maîtrise des outils digitaux pour moderniser vos processus financiers. Fort de notre culture entrepreneuriale, nous accompagnons efficacement les entreprises dans différentes phases clés de leur développement.",
@@ -284,6 +292,14 @@ export const homeContent = {
       { title: "Fundraising", desc: "Strategic support to secure your financing and convince investors." },
       { title: "M&A & Due Diligence", desc: "M&A advisory and financial audits to secure your operations." },
     ],
+    hrServices: [
+      { title: "Outsourced HR Director", desc: "A dedicated part-time HR director to structure and manage your HR function." },
+      { title: "Recruitment & onboarding", desc: "Sourcing, selection and integration of your talent to build high-performing teams." },
+      { title: "Payroll management", desc: "Full payroll outsourcing, social compliance and charge optimization." },
+      { title: "Training & development", desc: "Training plans, skills development and career management to retain your talent." },
+      { title: "Employee relations", desc: "Support in social dialogue, regulatory compliance and conflict management." },
+      { title: "Culture & employer brand", desc: "Building a strong company culture and an attractive employer brand." },
+    ],
     dafSection: {
       title: "Outsourced CFO & Part-time CFO",
       paragraph: "At Iter Advisors, our part-time CFOs bring deep sector expertise and mastery of digital tools to modernize your financial processes. With our entrepreneurial culture, we effectively support companies through key stages of their development.",
@@ -451,6 +467,14 @@ export const homeContent = {
       { title: "Contabilidad externalizada", desc: "Una contabilidad de los más altos estándares, liberando su tiempo para lo esencial." },
       { title: "Captación de fondos", desc: "Acompañamiento estratégico para asegurar sus financiaciones y convencer a los inversores." },
       { title: "M&A & Due Diligence", desc: "Asesoramiento en fusiones y adquisiciones y auditorías financieras para asegurar sus operaciones." },
+    ],
+    hrServices: [
+      { title: "Director de RRHH externalizado", desc: "Un director de recursos humanos dedicado a tiempo compartido para estructurar y pilotar su función de RRHH." },
+      { title: "Reclutamiento e integración", desc: "Búsqueda, selección e integración de sus talentos para construir equipos de alto rendimiento." },
+      { title: "Gestión de nóminas", desc: "Externalización completa de nóminas, cumplimiento social y optimización de cargas." },
+      { title: "Formación y desarrollo", desc: "Planes de formación, desarrollo de competencias y gestión de carreras para retener su talento." },
+      { title: "Relaciones laborales", desc: "Acompañamiento en el diálogo social, cumplimiento normativo y gestión de conflictos." },
+      { title: "Cultura y marca empleadora", desc: "Construcción de una cultura empresarial sólida y una marca empleadora atractiva." },
     ],
     dafSection: {
       title: "CFO externalizado y CFO a tiempo compartido",

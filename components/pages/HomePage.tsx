@@ -27,11 +27,18 @@ import {
   Banknote,
   ChevronDown,
   Mail,
+  Users,
+  UserPlus,
+  CreditCard,
+  GraduationCap,
+  Handshake,
+  Heart,
 } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { getHomeContent } from "@/lib/content/home";
 import { faqPageSchema, financialServiceSchema } from "@/lib/schemas";
+import { fallbackTeamMembers } from "@/lib/content/team";
 import type { StrapiTeamMember, CmsNavItem, StrapiHomepage } from "@/lib/strapi";
 import { strapiMediaUrl } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
@@ -87,6 +94,7 @@ const clientLogos = [
 
 /* ─── Icons for service cards ─── */
 const serviceIcons = [TrendingUp, PieChart, Wallet, FileText, BarChart3, Briefcase];
+const hrServiceIcons = [Users, UserPlus, CreditCard, GraduationCap, Handshake, Heart];
 const stepIcons = [Search, Lightbulb, Cog, Rocket];
 const phaseIcons = [Rocket, TrendingUp, AlertTriangle, Banknote, BarChart3];
 const whyIcons = [Zap, Globe, Clock, Award];
@@ -193,7 +201,8 @@ export default function HomePage({
     ? homepage.whyChooseItems
     : null;
 
-  const heroAvatars = strapiTeam
+  const team = strapiTeam.length > 0 ? strapiTeam : fallbackTeamMembers;
+  const heroAvatars = team
     .filter((m) => m.showInHero && m.photo)
     .map((m) => ({
       initials: `${m.firstName?.[0] ?? ""}${m.lastName?.[0] ?? ""}`.toUpperCase(),
@@ -438,6 +447,20 @@ export default function HomePage({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {t.financeServices.map((s, i) => (
                 <ServiceCard key={s.title} icon={serviceIcons[i] ?? TrendingUp} title={s.title} desc={s.desc} index={i} />
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-0">
+            <div className="flex items-center gap-3 mb-8">
+              <span className="px-4 py-1.5 rounded-full bg-iter-violet text-white text-sm font-semibold">
+                {locale === "fr" ? "Ressources humaines" : locale === "en" ? "Human Resources" : "Recursos humanos"}
+              </span>
+              <div className="h-px flex-1 bg-iter-violet/20" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {t.hrServices.map((s, i) => (
+                <ServiceCard key={s.title} icon={hrServiceIcons[i] ?? Users} title={s.title} desc={s.desc} index={i + 6} />
               ))}
             </div>
           </div>
@@ -808,7 +831,7 @@ export default function HomePage({
             </motion.div>
 
             <div className="flex flex-wrap justify-center gap-6">
-              {strapiTeam.map((member, i) => {
+              {team.map((member, i) => {
                 const name = `${member.firstName} ${member.lastName}`.trim();
                 const photoUrl = strapiMediaUrl(member.photo);
                 const initials = `${member.firstName?.[0] ?? ""}${member.lastName?.[0] ?? ""}`.toUpperCase();
@@ -1072,13 +1095,6 @@ export default function HomePage({
                   className="group-hover:translate-x-1 transition-transform"
                 />
               </Link>
-              <a
-                href="mailto:contact@iteradvisors.com"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-iter-dark/30 text-iter-dark font-medium text-base hover:bg-iter-dark/5 transition-all duration-300"
-              >
-                <Mail size={18} />
-                {t.emailCta}
-              </a>
             </div>
           </motion.div>
         </div>

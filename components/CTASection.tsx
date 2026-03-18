@@ -67,13 +67,6 @@ export default function CTASection({ locale }: { locale: Locale }) {
               {t.button}
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <a
-              href="mailto:contact@iteradvisors.com"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-iter-dark/30 text-iter-dark font-medium text-base hover:bg-iter-dark/5 transition-all duration-300"
-            >
-              <Mail size={18} />
-              {t.email}
-            </a>
           </div>
         </motion.div>
       </div>

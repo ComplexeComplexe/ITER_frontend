@@ -1,5 +1,6 @@
 import { Locale } from "@/lib/i18n";
 import { getAboutContent } from "@/lib/content/about";
+import { fallbackTeamMembers } from "@/lib/content/team";
 import type { StrapiTeamMember, CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -17,6 +18,9 @@ export default function AboutPage({
   cmsNavigation?: CmsNavItem[];
 }) {
   const t = getAboutContent(locale);
+
+  // Use Strapi team if available, otherwise fall back to static data
+  const team = strapiTeam.length > 0 ? strapiTeam : fallbackTeamMembers;
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
@@ -161,7 +165,7 @@ export default function AboutPage({
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-6">
-            {strapiTeam.map((member) => (
+            {team.map((member) => (
               <TeamMemberCard key={member.id} member={member} />
             ))}
           </div>

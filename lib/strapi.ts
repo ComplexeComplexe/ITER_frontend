@@ -979,6 +979,8 @@ export function strapiMediaUrl(media: StrapiMedia | null | undefined): string {
   if (!media?.url) return "";
   // If it's already absolute, return as-is
   if (media.url.startsWith("http")) return media.url;
+  // If it's a local path (starts with /), return as-is
+  if (media.url.startsWith("/")) return media.url;
   // Otherwise prefix with Strapi URL
   return `${STRAPI_URL}${media.url}`;
 }
