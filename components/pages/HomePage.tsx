@@ -815,8 +815,8 @@ export default function HomePage({
               className="rounded-3xl overflow-hidden shadow-xl"
             >
               <Image
-                src="/images/bg/bg-hero-3d.jpg"
-                alt="Iter Advisors team"
+                src="/images/bg/about-section.jpg"
+                alt="Équipe Iter Advisors collaborant autour de dashboards financiers et RH"
                 width={600}
                 height={420}
                 className="w-full h-[350px] lg:h-[420px] object-cover"
