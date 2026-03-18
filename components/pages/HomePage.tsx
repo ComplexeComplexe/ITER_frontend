@@ -194,9 +194,18 @@ export default function HomePage({
   const cmsValueProps = homepage?.valuePropositions && homepage.valuePropositions.length > 0
     ? homepage.valuePropositions
     : null;
-  const cmsStats = homepage?.statistics && homepage.statistics.length > 0
+  const rawCmsStats = homepage?.statistics && homepage.statistics.length > 0
     ? homepage.statistics
     : null;
+  // Filter out CMS stats with empty or "0" values (incomplete CMS data)
+  const cmsStats = rawCmsStats
+    ? rawCmsStats.filter((s) => {
+        const val = s.value?.trim() ?? "";
+        return val !== "" && val !== "0";
+      })
+    : null;
+  // If all CMS stats were filtered out, fall back to static
+  const effectiveCmsStats = cmsStats && cmsStats.length > 0 ? cmsStats : null;
   const cmsWhyChoose = homepage?.whyChooseItems && homepage.whyChooseItems.length > 0
     ? homepage.whyChooseItems
     : null;
@@ -695,14 +704,14 @@ export default function HomePage({
             </p>
           </motion.div>
 
-          {cmsStats ? (
+          {effectiveCmsStats ? (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={whyInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
             >
-              {cmsStats.map((stat, i) => {
+              {effectiveCmsStats.map((stat, i) => {
                 const val = stat.value ?? "";
                 const numMatch = val.match(/(\d+)/);
                 const numVal = numMatch ? parseInt(numMatch[1], 10) : 0;
