@@ -14,6 +14,7 @@ export interface VisionCard {
 export interface TimelineStage {
   title: string;
   description: string;
+  href?: string;
 }
 
 export interface FAQItem {
@@ -111,26 +112,31 @@ export const aboutContent: Record<Locale, AboutContent> = {
           title: "Lancement",
           description:
             "Structurez votre fonction finance dès le départ. Mise en place de la comptabilité, des outils de gestion et des premiers tableaux de bord pour piloter votre activité.",
+          href: "/services/externalisation-comptable",
         },
         {
           title: "Croissance",
           description:
             "Accompagnez votre montée en puissance. Renforcement des process financiers, construction de business plans, pilotage de la performance et préparation aux levées de fonds.",
+          href: "/daf-externalise",
         },
         {
           title: "Gestion de crise",
           description:
             "Réagissez rapidement face aux difficultés. Plan de trésorerie d\u2019urgence, renégociation avec les créanciers, restructuration financière et accompagnement stratégique.",
+          href: "/services/gestion-de-tresorerie",
         },
         {
           title: "Levée de fonds",
           description:
             "Préparez et sécurisez vos financements. Construction du dossier investisseur, modélisation financière, due diligence et négociation avec les fonds d\u2019investissement.",
+          href: "/services/levee-de-fonds",
         },
         {
           title: "Post-levée",
           description:
             "Déployez efficacement les fonds levés. Mise en place du reporting investisseurs, structuration de la croissance, recrutement et organisation de la direction financière.",
+          href: "/services/controle-de-gestion-externalise",
         },
       ],
     },

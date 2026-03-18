@@ -4,7 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, TrendingDown, Zap, Eye, Network, BarChart3, Wallet, Rocket, Settings, Compass } from "lucide-react";
+import Image from "next/image";
 import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/strapi";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
@@ -136,27 +137,31 @@ export default function DafPage({
             ))}
           </div>
           <div className="grid md:grid-cols-2 gap-4 max-w-4xl">
-            {t.advantages.subsections?.map((sub, i) => (
-              <div
-                key={i}
-                className="group border border-border/50 rounded-2xl p-8 hover:border-iter-violet/30 transition-all duration-300"
-              >
-                <span className="text-[11px] font-bold text-iter-violet/40 tracking-widest">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="text-lg font-semibold font-heading mt-2 mb-3 group-hover:text-iter-violet transition-colors">
-                  {sub.heading}
-                </h3>
-                {sub.content.map((p, j) => (
-                  <p
-                    key={j}
-                    className="text-sm text-muted-foreground leading-relaxed"
-                  >
-                    {p}
-                  </p>
-                ))}
-              </div>
-            ))}
+            {t.advantages.subsections?.map((sub, i) => {
+              const icons = [TrendingDown, Zap, Eye, Network];
+              const Icon = icons[i % icons.length];
+              return (
+                <div
+                  key={i}
+                  className="group border border-border/50 rounded-2xl p-8 hover:border-iter-violet/30 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-iter-violet/10 flex items-center justify-center mb-4 group-hover:bg-iter-violet/20 transition-colors">
+                    <Icon size={22} className="text-iter-violet" />
+                  </div>
+                  <h3 className="text-lg font-semibold font-heading mt-2 mb-3 group-hover:text-iter-violet transition-colors">
+                    {sub.heading}
+                  </h3>
+                  {sub.content.map((p, j) => (
+                    <p
+                      key={j}
+                      className="text-sm text-muted-foreground leading-relaxed"
+                    >
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -178,11 +183,21 @@ export default function DafPage({
           <h2 className="text-3xl lg:text-4xl font-bold font-heading text-foreground mb-6">
             {t.missions.heading}
           </h2>
-          {t.missions.content.map((p, i) => (
-            <p key={i} className="text-muted-foreground leading-relaxed mb-4">
-              {p}
-            </p>
-          ))}
+          <p className="text-muted-foreground leading-relaxed mb-8">{t.missions.content[0]}</p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {t.missions.content.slice(1).map((p, i) => {
+              const missionIcons = [BarChart3, Wallet, Rocket, Settings, Compass];
+              const MIcon = missionIcons[i % missionIcons.length];
+              return (
+                <div key={i} className="flex items-start gap-4 p-5 rounded-2xl border border-border/50 bg-background">
+                  <div className="w-10 h-10 rounded-xl bg-iter-chartreuse/20 flex items-center justify-center shrink-0">
+                    <MIcon size={18} className="text-iter-dark" />
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{p}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 

@@ -103,11 +103,16 @@ const contactPageText = {
 
 const clientLogos = [
   { src: "/images/logos/logo-happyscribe.jpg", alt: "Happy Scribe" },
+  { src: "/images/logos/logo-impact.jpg", alt: "IMPACT+" },
+  { src: "/images/logos/logo-mitiga.jpg", alt: "Mitiga Solutions" },
+  { src: "/images/logos/logo-neat.jpg", alt: "Neat" },
+  { src: "/images/logos/logo-nuubb.jpg", alt: "NuuBB" },
+  { src: "/images/logos/logo-opitdigital.jpg", alt: "OptiDigital" },
+  { src: "/images/logos/logo-seasonly.jpg", alt: "Seasonly" },
+  { src: "/images/logos/logo-solamente.jpg", alt: "Solamente" },
   { src: "/images/logos/logo-surfe.jpg", alt: "Surfe" },
   { src: "/images/logos/logo-ukio.jpg", alt: "Ukio" },
   { src: "/images/logos/logo-yego.jpg", alt: "Yego" },
-  { src: "/images/logos/logo-neat.jpg", alt: "Neat" },
-  { src: "/images/logos/logo-seasonly.jpg", alt: "Seasonly" },
 ];
 
 /* ─── Main Component ─── */
@@ -310,7 +315,7 @@ export default function ContactPage({
 
               {/* Email */}
               <a
-                href="mailto:arnaud@unplexed.com"
+                href="mailto:contact@iteradvisors.com"
                 className="group flex items-start gap-4 p-5 rounded-2xl border border-border/50 bg-white hover:border-iter-violet/30 hover:shadow-md transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
@@ -318,7 +323,7 @@ export default function ContactPage({
                 </div>
                 <div>
                   <p className="text-sm font-medium text-foreground">{tx.emailLabel}</p>
-                  <p className="text-sm text-muted-foreground">arnaud@unplexed.com</p>
+                  <p className="text-sm text-muted-foreground">contact@iteradvisors.com</p>
                 </div>
               </a>
 

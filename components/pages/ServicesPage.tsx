@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Rocket, BarChart3, Calculator, Briefcase, Wallet, Handshake, Users } from "lucide-react";
+
+const serviceIcons = [Rocket, BarChart3, Calculator, Briefcase, Wallet, Users, Handshake];
 import { Locale } from "@/lib/i18n";
 import { getServicesContent } from "@/lib/content/services";
 import type { CmsNavItem } from "@/lib/strapi";
@@ -58,9 +60,14 @@ export default function ServicesPage({
                 href={service.href}
                 className="group bg-background border border-border/50 rounded-2xl p-8 hover:border-iter-violet/30 transition-all duration-300"
               >
-                <span className="text-[11px] font-bold text-iter-violet/40 tracking-widest">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+                {(() => {
+                  const SIcon = serviceIcons[i % serviceIcons.length];
+                  return (
+                    <div className="w-12 h-12 rounded-xl bg-iter-violet/10 flex items-center justify-center mb-4 group-hover:bg-iter-violet/20 transition-colors">
+                      <SIcon size={22} className="text-iter-violet" />
+                    </div>
+                  );
+                })()}
                 <h3 className="text-lg font-semibold font-heading mt-2 mb-4 group-hover:text-iter-violet transition-colors">
                   {service.title}
                 </h3>

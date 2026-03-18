@@ -364,32 +364,32 @@ export default function HomePage({
               </Link>
             </div>
 
-            <div className="mt-14 flex flex-wrap items-center gap-8 animate-[fadeInUp_0.7s_ease-out_0.65s_both]">
-              <div className="flex items-center gap-2">
-                <div className="flex gap-0.5">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <svg
-                      key={i}
-                      className="w-4 h-4 text-iter-chartreuse fill-current"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <span className="text-white/60 text-sm">
-                  5/5 {t.trustfolioLabel}{" "}
-                  <a
-                    href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc/reviews"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white hover:underline transition-colors"
+            <a
+              href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc/reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all duration-300 animate-[fadeInUp_0.7s_ease-out_0.65s_both]"
+            >
+              <div className="flex gap-0.5">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <svg
+                    key={i}
+                    className="w-5 h-5 text-iter-chartreuse fill-current"
+                    viewBox="0 0 20 20"
                   >
-                    Trustfolio
-                  </a>
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <div className="flex flex-col">
+                <span className="text-white font-semibold text-base leading-tight">
+                  5/5 {t.trustfolioLabel}
+                </span>
+                <span className="text-white/50 text-xs">
+                  Trustfolio
                 </span>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 
@@ -410,14 +410,14 @@ export default function HomePage({
             {[...clientLogos, ...clientLogos].map((logo, i) => (
               <div
                 key={i}
-                className="shrink-0 w-28 h-12 flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="shrink-0 w-40 h-16 flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
                   width={100}
                   height={40}
-                  className="object-contain max-h-8"
+                  className="object-contain max-h-12"
                 />
               </div>
             ))}
@@ -1032,6 +1032,11 @@ export default function HomePage({
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
+                {card.date && (
+                  <p className="text-xs text-muted-foreground mb-2">
+                    {card.date}
+                  </p>
+                )}
                 <p className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2">
                   {t.discover}
                 </p>

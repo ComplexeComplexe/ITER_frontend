@@ -57,6 +57,7 @@ const servicesFr: ServicesContent = {
     { title: "Externalisation comptabilit\u00e9", href: "/services/comptabilite-externalisation" },
     { title: "Gestion financi\u00e8re externalis\u00e9e", href: "/services/gestion-financiere-externalisee" },
     { title: "Pr\u00e9visionnel de tr\u00e9sorerie", href: "/services/previsionnel-tresorerie" },
+    { title: "DRH externalis\u00e9", href: "/services/drh-externalise" },
   ],
 };
 
@@ -93,6 +94,7 @@ const servicesEn: ServicesContent = {
     { title: "Accounting outsourcing", href: "/en/services/outsource-your-accounting" },
     { title: "Outsourced financial management", href: "/en/services/outsourced-financial-management" },
     { title: "Cash flow forecast", href: "/en/services/cash-flow-forecast" },
+    { title: "Outsourced HR Director", href: "/en/services/drh-externalise" },
   ],
 };
 
@@ -129,6 +131,7 @@ const servicesEs: ServicesContent = {
     { title: "Externalizaci\u00f3n de la contabilidad", href: "/es/services/externalizar-contabilidad" },
     { title: "Gesti\u00f3n financiera externalizada", href: "/es/services/gestion-financiera-externalizada" },
     { title: "Previsi\u00f3n de tesorer\u00eda", href: "/es/services/prevision-tesoreria" },
+    { title: "Director de RRHH externalizado", href: "/es/services/drh-externalise" },
   ],
 };
 

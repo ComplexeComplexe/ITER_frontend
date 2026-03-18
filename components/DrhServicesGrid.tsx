@@ -1,7 +1,37 @@
 "use client";
 
 import { Fragment } from "react";
-import { Check } from "lucide-react";
+import { Check, Users, FileText, Briefcase, GraduationCap, Scale, Heart, Building2, Shield, ClipboardList } from "lucide-react";
+
+const categoryIcons: Record<string, React.ElementType> = {
+  "Administration du personnel": ClipboardList,
+  "Personnel administration": ClipboardList,
+  "Administración de personal": ClipboardList,
+  "Paie et charges sociales": FileText,
+  "Payroll and social charges": FileText,
+  "Nómina y cargas sociales": FileText,
+  "Recrutement": Users,
+  "Recruitment": Users,
+  "Reclutamiento": Users,
+  "Formation et développement": GraduationCap,
+  "Training and development": GraduationCap,
+  "Formación y desarrollo": GraduationCap,
+  "Relations sociales": Scale,
+  "Social relations": Scale,
+  "Relaciones sociales": Scale,
+  "Santé et sécurité au travail": Shield,
+  "Health and safety at work": Shield,
+  "Salud y seguridad en el trabajo": Shield,
+  "Stratégie RH": Briefcase,
+  "HR Strategy": Briefcase,
+  "Estrategia de RRHH": Briefcase,
+  "Culture d'entreprise": Heart,
+  "Company culture": Heart,
+  "Cultura de empresa": Heart,
+  "Reporting RH": Building2,
+  "HR Reporting": Building2,
+  "Informes de RRHH": Building2,
+};
 import type { DrhServiceCategory } from "@/lib/content/drh-services-data";
 import { DRH_SERVICES_DEFAULT } from "@/lib/content/drh-services-data";
 
@@ -56,9 +86,15 @@ export default function DrhServicesGrid({
               <tr className="bg-iter-violet/5">
                 <td
                   colSpan={8}
-                  className="px-4 py-2 text-sm font-semibold text-iter-violet border-b border-border/50"
+                  className="px-4 py-3 text-sm font-semibold text-iter-violet border-b border-border/50"
                 >
-                  {cat.categoryName}
+                  <span className="inline-flex items-center gap-2">
+                    {(() => {
+                      const CatIcon = categoryIcons[cat.categoryName] || Briefcase;
+                      return <CatIcon size={16} className="text-iter-violet/70" />;
+                    })()}
+                    {cat.categoryName}
+                  </span>
                 </td>
               </tr>
               {cat.services.map((srv, idx) => (

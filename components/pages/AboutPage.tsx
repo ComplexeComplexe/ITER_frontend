@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Locale } from "@/lib/i18n";
 import { getAboutContent } from "@/lib/content/about";
 import { getFallbackTeamMembers } from "@/lib/content/team";
@@ -7,6 +8,10 @@ import Breadcrumb from "@/components/Breadcrumb";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import TeamMemberCard from "@/components/TeamMemberCard";
+import { Target, Users, Lightbulb, Handshake, Rocket, TrendingUp, Building2, BarChart3 } from "lucide-react";
+
+const visionIcons = [Target, Users, Lightbulb, Handshake];
+const stageIcons = [Rocket, TrendingUp, Building2, BarChart3];
 
 export default function AboutPage({
   locale,
@@ -86,10 +91,13 @@ export default function AboutPage({
                 key={i}
                 className="bg-background border border-border/50 rounded-2xl shadow-sm p-6 group hover:border-iter-violet/30 transition-all duration-300"
               >
-                <span className="text-[11px] font-bold text-iter-violet/40 tracking-widest">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="text-lg font-semibold font-heading text-foreground mt-2 mb-3 group-hover:text-iter-violet transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  {(() => { const Icon = visionIcons[i] || Target; return <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center"><Icon size={20} className="text-iter-violet" /></div>; })()}
+                  <span className="text-[11px] font-bold text-iter-violet/40 tracking-widest">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h3 className="text-lg font-semibold font-heading text-foreground mb-3 group-hover:text-iter-violet transition-colors">
                   {card.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -119,12 +127,14 @@ export default function AboutPage({
               {t.whenToCall.intro}
             </p>
             <div className="relative">
-              <div className="absolute left-[7px] top-2 bottom-2 w-px bg-iter-violet/10" />
+              <div className="absolute left-[19px] top-10 bottom-2 w-px bg-iter-violet/20" />
               <div className="space-y-8">
                 {t.whenToCall.stages.map((stage, i) => (
                   <div key={i} className="relative flex gap-6">
                     <div className="relative z-10 flex-shrink-0">
-                      <div className="w-[15px] h-[15px] rounded-full bg-iter-violet border-[3px] border-background shadow-sm mt-1" />
+                      <div className="w-10 h-10 rounded-xl bg-iter-violet flex items-center justify-center shadow-sm">
+                        {(() => { const Icon = stageIcons[i] || Rocket; return <Icon size={18} className="text-white" />; })()}
+                      </div>
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold font-heading text-iter-violet mb-2">
@@ -133,6 +143,15 @@ export default function AboutPage({
                       <p className="text-muted-foreground leading-relaxed">
                         {stage.description}
                       </p>
+                      {stage.href && (
+                        <Link
+                          href={stage.href}
+                          className="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-iter-violet hover:underline transition-colors"
+                        >
+                          {locale === "fr" ? "En savoir plus" : locale === "en" ? "Learn more" : "Saber m\u00e1s"}
+                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                        </Link>
+                      )}
                     </div>
                   </div>
                 ))}

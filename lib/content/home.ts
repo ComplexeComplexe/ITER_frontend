@@ -50,8 +50,8 @@ export const homeContent = {
     ],
     stats: [
       { value: "+85", bold: "Entreprises accompagnées", rest: " par Iter Advisors" },
-      { value: "+80\u00A0M", bold: "Levées de fonds", rest: " par nos clients depuis 2021" },
-      { value: "15", bold: "Collaborateurs", rest: " experts de la fonction Finance au service de nos clients" },
+      { value: "+100\u00A0M", bold: "Levées de fonds", rest: " par nos clients depuis 2021" },
+      { value: "15", bold: "Consultants", rest: " experts de la fonction Finance au service de nos clients" },
       { value: "30", bold: "Partenaires technologiques", rest: " au service de la performance financière" },
     ],
     whyChoose: {
@@ -95,16 +95,19 @@ export const homeContent = {
         title: "Les 10 outils pour les CFOs en start-up",
         href: "/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
         image: "/images/blog/les-10-outils-cfos.jpg",
+        date: "12 mars 2026",
       },
       {
         title: "Flux de trésorerie\u00A0: définition et importance pour les entreprises",
         href: "/ressources/blog/flux-de-tresorerie",
         image: "/images/blog/flux-de-tresorerie.jpg",
+        date: "5 mars 2026",
       },
       {
         title: "La modernisation du rôle de CFO",
         href: "/ressources/blog/la-modernisation-du-role-de-cfo",
         image: "/images/blog/modernisation-cfo.jpg",
+        date: "28 fév. 2026",
       },
     ],
     discover: "Découvrir",
@@ -226,8 +229,8 @@ export const homeContent = {
     ],
     stats: [
       { value: "+85", bold: "Companies supported", rest: " by Iter Advisors" },
-      { value: "+80\u00A0M", bold: "Funds raised by", rest: " our customers since 2021" },
-      { value: "15", bold: "Employees", rest: " Finance experts at the service of our customers" },
+      { value: "+100\u00A0M", bold: "Funds raised by", rest: " our customers since 2021" },
+      { value: "15", bold: "Consultants", rest: " Finance experts at the service of our customers" },
       { value: "30", bold: "Technology partners", rest: " for financial performance" },
     ],
     whyChoose: {
@@ -271,16 +274,19 @@ export const homeContent = {
         title: "AI and automation of repetitive tasks in the Finance department",
         href: "/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
         image: "/images/blog/ia-automatisation.jpg",
+        date: "Mar 12, 2026",
       },
       {
         title: "Organizing your finance department",
         href: "/en/ressources/blog/organiser-sa-direction-financiere",
         image: "/images/blog/organiser-direction-financiere.jpg",
+        date: "Mar 5, 2026",
       },
       {
         title: "Essential financial tech tools",
         href: "/en/ressources/blog/essentiels-outils-tech-finance",
         image: "/images/blog/outils-tech-finance.jpg",
+        date: "Feb 28, 2026",
       },
     ],
     discover: "Discover",
@@ -402,8 +408,8 @@ export const homeContent = {
     ],
     stats: [
       { value: "+85", bold: "Empresas acompañadas", rest: " por Iter Advisors" },
-      { value: "+80\u00A0M", bold: "Fondos recaudados por", rest: " nuestros clientes desde 2021" },
-      { value: "15", bold: "Colaboradores", rest: " expertos en finanzas al servicio de nuestros clientes" },
+      { value: "+100\u00A0M", bold: "Fondos recaudados por", rest: " nuestros clientes desde 2021" },
+      { value: "15", bold: "Consultores", rest: " expertos en finanzas al servicio de nuestros clientes" },
       { value: "30", bold: "Socios tecnológicos", rest: " al servicio del rendimiento financiero" },
     ],
     whyChoose: {
@@ -447,16 +453,19 @@ export const homeContent = {
         title: "IA y automatización de tareas repetitivas en el departamento de Finanzas",
         href: "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
         image: "/images/blog/ia-automatisation.jpg",
+        date: "12 mar. 2026",
       },
       {
         title: "Organizar su departamento financiero",
         href: "/es/ressources/blog/organiser-sa-direction-financiere",
         image: "/images/blog/organiser-direction-financiere.jpg",
+        date: "5 mar. 2026",
       },
       {
         title: "Las herramientas tecnológicas esenciales para las finanzas",
         href: "/es/ressources/blog/essentiels-outils-tech-finance",
         image: "/images/blog/outils-tech-finance.jpg",
+        date: "28 feb. 2026",
       },
     ],
     discover: "Descubra",
