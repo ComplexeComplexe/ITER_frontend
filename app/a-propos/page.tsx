@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "fr",
     path: "/a-propos",
     fallbackTitle: "À propos | Iter Advisors",
-    fallbackDescription: "Découvrez Iter Advisors.",
+    fallbackDescription: "Découvrez Iter Advisors, cabinet de DAF externalisé fondé à Barcelone. 15 experts financiers, +85 entreprises accompagnées et +80M€ de levées de fonds réalisées. Noté 5/5 sur Trustfolio.",
   });
 }
 

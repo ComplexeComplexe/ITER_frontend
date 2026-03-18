@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "fr",
     path: "/daf-externalise/temps-partage",
     fallbackTitle: "DAF à temps partagé | Iter Advisors",
-    fallbackDescription: "DAF à temps partagé pour PME.",
+    fallbackDescription: "DAF à temps partagé pour PME et startups : bénéficiez d'un directeur financier expérimenté quelques jours par semaine. Flexibilité, expertise et réduction des coûts avec Iter Advisors.",
   });
 }
 

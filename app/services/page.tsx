@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "fr",
     path: "/services",
     fallbackTitle: "Services | Iter Advisors",
-    fallbackDescription: "Nos services de direction financière externalisée.",
+    fallbackDescription: "Nos services de direction financière externalisée : prévisionnel de trésorerie, contrôle de gestion, accompagnement levée de fonds, comptabilité et gestion financière. Solutions sur mesure pour PME et startups.",
   });
 }
 

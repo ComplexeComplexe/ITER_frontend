@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "fr",
     path: "/drh-externalise",
     fallbackTitle: "DRH externalisé | Iter Advisors",
-    fallbackDescription: "DRH externalisé et direction RH à temps partagé pour PME et startups.",
+    fallbackDescription: "DRH externalisé et direction RH à temps partagé pour PME et startups. Recrutement, gestion sociale, conformité et stratégie RH par des experts dédiés. Contactez Iter Advisors.",
   });
 }
 

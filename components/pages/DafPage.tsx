@@ -9,6 +9,7 @@ import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/strapi";
 import { getContactPath } from "@/lib/navigation";
 import { getDafContent } from "@/lib/content/daf";
+import { faqPageSchema } from "@/lib/schemas";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -209,6 +210,16 @@ export default function DafPage({
       <div className="container">
         <div className="border-b border-border/50" />
       </div>
+
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            faqPageSchema(t.faq.map((item) => ({ question: item.question, answer: item.answer })))
+          ),
+        }}
+      />
 
       {/* FAQ */}
       <section className="bg-muted/30 py-24 lg:py-32">

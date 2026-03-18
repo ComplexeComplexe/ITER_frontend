@@ -31,6 +31,7 @@ import {
 import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
 import { getHomeContent } from "@/lib/content/home";
+import { faqPageSchema, financialServiceSchema } from "@/lib/schemas";
 import type { StrapiTeamMember, CmsNavItem, StrapiHomepage } from "@/lib/strapi";
 import { strapiMediaUrl } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
@@ -229,6 +230,22 @@ export default function HomePage({
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
+      {/* ═══ JSON-LD Schemas ═══ */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(financialServiceSchema()),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            faqPageSchema(t.faqs.map((faq) => ({ question: faq.q, answer: faq.a })))
+          ),
+        }}
+      />
+
       {/* ═══ HERO ═══ */}
       <section
         className="relative flex items-center overflow-hidden"

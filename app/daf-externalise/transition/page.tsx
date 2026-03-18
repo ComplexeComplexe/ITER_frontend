@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "fr",
     path: "/daf-externalise/transition",
     fallbackTitle: "DAF de transition | Iter Advisors",
-    fallbackDescription: "DAF de transition pour accompagner vos changements.",
+    fallbackDescription: "DAF de transition pour accompagner vos changements stratégiques : restructuration, levée de fonds, M&A ou remplacement temporaire. Intervention rapide et expertise immédiate avec Iter Advisors.",
   });
 }
 

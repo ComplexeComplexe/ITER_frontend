@@ -7,6 +7,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
 import { getDrhContent } from "@/lib/content/drh";
+import { faqPageSchema } from "@/lib/schemas";
 import type { StrapiDrhServiceCategory, CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -135,6 +136,16 @@ export default function DrhPage({
       </section>
 
       <TestimonialsSection locale={locale} />
+
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            faqPageSchema(t.faq.map((item) => ({ question: item.question, answer: item.answer })))
+          ),
+        }}
+      />
 
       {/* FAQ */}
       <section className="bg-muted/30 py-24 lg:py-32">
