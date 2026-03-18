@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Locale } from "@/lib/i18n";
-import { getContactPath } from "@/lib/navigation";
+import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import type { DrhSubContent } from "@/lib/content/drh-sub";
 import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
@@ -42,7 +42,9 @@ export default function DrhSubPage({ locale, content, cmsNavigation }: DrhSubPag
             </p>
           ))}
           <Link
-            href={contactPath}
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
           >
             {content.ctaButton}

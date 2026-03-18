@@ -199,6 +199,13 @@ export function getContactPath(locale: Locale): string {
   return `/${locale}/contact`;
 }
 
+export const BOOKING_URL =
+  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2DVmtdvwnZykAPoQC9_BNTFB_wHl1IrNagCAX0AaSbmEs8JmSGsTdWo96WGPzMEYtf_nkILQN8";
+
+export function getBookingUrl(): string {
+  return BOOKING_URL;
+}
+
 export function getHomePath(locale: Locale): string {
   if (locale === "fr") return "/";
   return `/${locale}`;

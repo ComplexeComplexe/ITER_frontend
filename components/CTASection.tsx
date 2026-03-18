@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Mail } from "lucide-react";
 import { Locale } from "@/lib/i18n";
-import { getContactPath } from "@/lib/navigation";
+import { BOOKING_URL } from "@/lib/navigation";
 
 const ctaText: Record<Locale, { heading: string; paragraph: string; button: string; email: string }> = {
   fr: {
@@ -59,7 +59,9 @@ export default function CTASection({ locale }: { locale: Locale }) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={getContactPath(locale)}
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-dark text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
             >
               {t.button}

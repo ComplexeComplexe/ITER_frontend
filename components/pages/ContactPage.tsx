@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getContactContent, ContactFormField } from "@/lib/content/contact";
+import { BOOKING_URL } from "@/lib/navigation";
 import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -334,7 +335,7 @@ export default function ContactPage({
 
               {/* Calendly CTA */}
               <a
-                href="https://calendly.com/iteradvisors"
+                href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-start gap-4 p-5 rounded-2xl border-2 border-iter-chartreuse/50 bg-iter-chartreuse/5 hover:bg-iter-chartreuse/10 hover:border-iter-chartreuse transition-all duration-300"

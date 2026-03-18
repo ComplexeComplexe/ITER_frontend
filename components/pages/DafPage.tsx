@@ -7,7 +7,7 @@ import { useRef } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/strapi";
-import { getContactPath } from "@/lib/navigation";
+import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { getDafContent } from "@/lib/content/daf";
 import { faqPageSchema } from "@/lib/schemas";
 import PageLayout from "@/components/PageLayout";
@@ -43,7 +43,9 @@ export default function DafPage({
             </p>
           ))}
           <Link
-            href={contactPath}
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
           >
             {t.ctaButton}
