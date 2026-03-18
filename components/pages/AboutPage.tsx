@@ -1,6 +1,6 @@
 import { Locale } from "@/lib/i18n";
 import { getAboutContent } from "@/lib/content/about";
-import { fallbackTeamMembers } from "@/lib/content/team";
+import { getFallbackTeamMembers } from "@/lib/content/team";
 import type { StrapiTeamMember, CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -20,7 +20,7 @@ export default function AboutPage({
   const t = getAboutContent(locale);
 
   // Use Strapi team if available, otherwise fall back to static data
-  const team = strapiTeam.length > 0 ? strapiTeam : fallbackTeamMembers;
+  const team = strapiTeam.length > 0 ? strapiTeam : getFallbackTeamMembers(locale);
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>

@@ -159,7 +159,7 @@ export const footerContent: Record<Locale, FooterContent> = {
   fr: {
     description:
       "Iter Advisors, basé à Barcelone, Paris et Toulouse, est un cabinet spécialisé dans les services de DAF externalisé, de conseil stratégique et d\u2019accompagnement en investissements, fusions-acquisitions.",
-    copyright: "Copyright \u00A9 2025 Iter Advisors. All Rights Reserved.",
+    copyright: "Copyright \u00A9 2025 Iter Advisors. Tous droits réservés.",
     trustfolio: "Note de 5/5 sur 31 avis sur notre profil",
     legalLinks: [
       { text: "Mentions légales", href: "/mentions-legales" },
@@ -170,7 +170,7 @@ export const footerContent: Record<Locale, FooterContent> = {
     description:
       "Iter Advisors, based in Barcelona, Paris and Toulouse, specializes in outsourced CFO services, strategic consulting and support for investments and mergers & acquisitions.",
     copyright: "Copyright \u00A9 2025 Iter Advisors. All Rights Reserved.",
-    trustfolio: "Note de 5/5 sur 31 avis sur notre profil",
+    trustfolio: "5/5 rating based on 31 reviews on our profile",
     legalLinks: [
       { text: "Terms of use", href: "/en/legal-notice" },
       { text: "Privacy policy", href: "/en/privacy-policy" },
@@ -180,7 +180,7 @@ export const footerContent: Record<Locale, FooterContent> = {
     description:
       "Iter Advisors, con sedes en Barcelona, París y Toulouse, es una empresa especializada en servicios externos de CFO, consultoría estratégica y apoyo a inversiones, fusiones y adquisiciones.",
     copyright: "Copyright \u00A9 2025 Iter Advisors. Todos los derechos reservados.",
-    trustfolio: "Note de 5/5 sur 31 avis sur notre profil",
+    trustfolio: "Puntuación de 5/5 basada en 31 opiniones en nuestro perfil",
     legalLinks: [
       { text: "Información jurídica", href: "/es/aviso-legal" },
       { text: "Política de privacidad", href: "/es/politica-de-privacidad" },

@@ -38,7 +38,7 @@ import { Locale } from "@/lib/i18n";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { getHomeContent } from "@/lib/content/home";
 import { faqPageSchema, financialServiceSchema } from "@/lib/schemas";
-import { fallbackTeamMembers } from "@/lib/content/team";
+import { getFallbackTeamMembers } from "@/lib/content/team";
 import type { StrapiTeamMember, CmsNavItem, StrapiHomepage } from "@/lib/strapi";
 import { strapiMediaUrl } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
@@ -210,7 +210,7 @@ export default function HomePage({
     ? homepage.whyChooseItems
     : null;
 
-  const team = strapiTeam.length > 0 ? strapiTeam : fallbackTeamMembers;
+  const team = strapiTeam.length > 0 ? strapiTeam : getFallbackTeamMembers(locale);
   const heroAvatars = team
     .filter((m) => m.showInHero && m.photo)
     .map((m) => ({
@@ -815,8 +815,8 @@ export default function HomePage({
               className="rounded-3xl overflow-hidden shadow-xl"
             >
               <Image
-                src="/images/bg/bg-hero-3d.jpg"
-                alt="Iter Advisors team"
+                src="/images/bg/about-section.jpg"
+                alt="Équipe Iter Advisors collaborant autour de dashboards financiers et RH"
                 width={600}
                 height={420}
                 className="w-full h-[350px] lg:h-[420px] object-cover"
@@ -914,10 +914,10 @@ export default function HomePage({
           >
             <span className="inline-block px-3 py-1 rounded-full bg-iter-violet/10 text-iter-violet text-xs font-semibold uppercase tracking-widest mb-4">
               {locale === "fr"
-                ? "Success Stories"
+                ? "Témoignages clients"
                 : locale === "en"
                   ? "Success Stories"
-                  : "Success Stories"}
+                  : "Casos de éxito"}
             </span>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-10">
               {t.successHeading}

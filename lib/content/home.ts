@@ -236,7 +236,7 @@ export const homeContent = {
         {
           number: "01.",
           title: "Outsourced finance department",
-          description: "Une expertise financière d\u2019exception pour guider votre entreprise au quotidien.",
+          description: "Exceptional financial expertise to guide your company on a daily basis.",
         },
         {
           number: "02.",
