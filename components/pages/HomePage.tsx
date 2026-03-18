@@ -180,7 +180,7 @@ export default function HomePage({
 
   const heroTitle = homepage?.heroTitle || `${t.hero.h1.before}${t.hero.h1.highlight}${t.hero.h1.after}`;
   const heroSubtitle = homepage?.heroSubtitle || t.hero.h2;
-  const heroCtaLabel = homepage?.heroCta?.label || t.hero.cta;
+  const heroCtaLabel = t.hero.cta;
   const heroCtaUrl = homepage?.heroCta?.url || contactPath;
 
   const cmsValueProps = homepage?.valuePropositions && homepage.valuePropositions.length > 0
@@ -307,12 +307,6 @@ export default function HomePage({
 
         <div className="container relative z-10 pt-20 pb-12 lg:pt-24 lg:pb-16">
           <div className="max-w-4xl animate-[fadeInUp_0.8s_ease-out_both]">
-            <div className="mb-6 animate-[fadeInUp_0.6s_ease-out_0.1s_both]">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium">
-                <span className="w-2 h-2 rounded-full bg-iter-chartreuse animate-pulse" />
-                Barcelone &middot; Paris &middot; Toulouse
-              </span>
-            </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white leading-[1.08] tracking-tight mb-5 animate-[fadeInUp_0.7s_ease-out_0.2s_both]">
               {homepage?.heroTitle ? (
@@ -353,37 +347,6 @@ export default function HomePage({
             </div>
 
             <div className="mt-14 flex flex-wrap items-center gap-8 animate-[fadeInUp_0.7s_ease-out_0.65s_both]">
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-2">
-                  {heroAvatars.map((avatar) => (
-                    <div
-                      key={avatar.initials}
-                      className="w-8 h-8 rounded-full bg-white/20 border-2 border-iter-violet flex items-center justify-center overflow-hidden shrink-0"
-                    >
-                      {avatar.imageUrl ? (
-                        <Image
-                          src={avatar.imageUrl}
-                          alt={avatar.name}
-                          width={32}
-                          height={32}
-                          className="object-cover w-full h-full"
-                          unoptimized
-                        />
-                      ) : (
-                        <span className="text-xs text-white font-bold">
-                          {avatar.initials}
-                        </span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-                {strapiTeam.length > heroAvatars.length && (
-                  <span className="text-white/60 text-sm">
-                    +{strapiTeam.length - heroAvatars.length} experts
-                  </span>
-                )}
-              </div>
-              <div className="h-8 w-px bg-white/20 hidden sm:block" />
               <div className="flex items-center gap-2">
                 <div className="flex gap-0.5">
                   {[1, 2, 3, 4, 5].map((i) => (
