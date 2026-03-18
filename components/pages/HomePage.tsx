@@ -479,8 +479,8 @@ export default function HomePage({
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-iter-violet/10">
                 <Image
-                  src="/images/bg/bg-3d.jpg"
-                  alt="Bureau financier"
+                  src="/images/bg/daf-section.jpg"
+                  alt="Consultants financiers collaborant dans un bureau moderne"
                   width={600}
                   height={520}
                   className="w-full h-[400px] lg:h-[520px] object-cover"
