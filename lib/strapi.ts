@@ -840,6 +840,26 @@ export async function getJobOffers(locale: Locale): Promise<StrapiJobOffer[]> {
   }
 }
 
+/** Get a single job offer by slug */
+export async function getJobOfferBySlug(
+  slug: string,
+  locale: Locale
+): Promise<StrapiJobOffer | null> {
+  try {
+    const res = await strapiFetch<StrapiCollectionResponse<StrapiJobOffer>>(
+      "job-offers",
+      {
+        "filters[slug][$eq]": slug,
+        "populate[seo][populate]": "ogImage",
+      },
+      { locale }
+    );
+    return res.data[0] ?? null;
+  } catch {
+    return null;
+  }
+}
+
 /** Get legal page */
 export async function getLegalPage(locale: Locale): Promise<StrapiLegalPage | null> {
   try {
