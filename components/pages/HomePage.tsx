@@ -194,23 +194,22 @@ export default function HomePage({
   const cmsValueProps = homepage?.valuePropositions && homepage.valuePropositions.length > 0
     ? homepage.valuePropositions
     : null;
-  const rawCmsStats = homepage?.statistics && homepage.statistics.length > 0
-    ? homepage.statistics
-    : null;
-  // Filter out CMS stats with empty or "0" values (incomplete CMS data)
-  const cmsStats = rawCmsStats
-    ? rawCmsStats.filter((s) => {
-        const val = s.value?.trim() ?? "";
-        return val !== "" && val !== "0";
-      })
-    : null;
-  // If all CMS stats were filtered out, fall back to static
-  const effectiveCmsStats = cmsStats && cmsStats.length > 0 ? cmsStats : null;
+  // Always use static stats (correctly translated per locale) instead of CMS stats
+  // CMS stats have persistent locale issues (ES labels appearing on FR pages)
+  const effectiveCmsStats = null;
   const cmsWhyChoose = homepage?.whyChooseItems && homepage.whyChooseItems.length > 0
     ? homepage.whyChooseItems
     : null;
 
-  const team = strapiTeam.length > 0 ? strapiTeam : getFallbackTeamMembers(locale);
+  const rawTeam = strapiTeam.length > 0 ? strapiTeam : getFallbackTeamMembers(locale);
+  // Deduplicate team members by normalized name (firstName + lastName)
+  const team = rawTeam.filter((member, index, self) => {
+    const name = `${member.firstName} ${member.lastName}`.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    return index === self.findIndex((m) => {
+      const mName = `${m.firstName} ${m.lastName}`.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      return mName === name;
+    });
+  });
   const heroAvatars = team
     .filter((m) => m.showInHero && m.photo)
     .map((m) => ({

@@ -25,7 +25,15 @@ export default function AboutPage({
   const t = getAboutContent(locale);
 
   // Use Strapi team if available, otherwise fall back to static data
-  const team = strapiTeam.length > 0 ? strapiTeam : getFallbackTeamMembers(locale);
+  const rawTeam = strapiTeam.length > 0 ? strapiTeam : getFallbackTeamMembers(locale);
+  // Deduplicate team members by normalized name (firstName + lastName)
+  const team = rawTeam.filter((member, index, self) => {
+    const name = `${member.firstName} ${member.lastName}`.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    return index === self.findIndex((m) => {
+      const mName = `${m.firstName} ${m.lastName}`.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      return mName === name;
+    });
+  });
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
