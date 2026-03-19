@@ -194,9 +194,8 @@ export default function HomePage({
   const cmsValueProps = homepage?.valuePropositions && homepage.valuePropositions.length > 0
     ? homepage.valuePropositions
     : null;
-  // Always use static stats (correctly translated per locale) instead of CMS stats
-  // CMS stats have persistent locale issues (ES labels appearing on FR pages)
-  const effectiveCmsStats = null;
+  // CMS stats disabled: persistent locale issues (ES labels appearing on FR pages)
+  // Using static stats from getHomeContent() which are correctly translated per locale
   const cmsWhyChoose = homepage?.whyChooseItems && homepage.whyChooseItems.length > 0
     ? homepage.whyChooseItems
     : null;
@@ -703,33 +702,7 @@ export default function HomePage({
             </p>
           </motion.div>
 
-          {effectiveCmsStats ? (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={whyInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
-            >
-              {effectiveCmsStats.map((stat, i) => {
-                const val = stat.value ?? "";
-                const numMatch = val.match(/(\d+)/);
-                const numVal = numMatch ? parseInt(numMatch[1], 10) : 0;
-                const prefix = val.replace(/\d+.*/, "");
-                const suffix = val.replace(/.*?\d+/, "");
-                return (
-                  <div
-                    key={stat.id ?? i}
-                    className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10"
-                  >
-                    <div className="text-4xl lg:text-5xl font-bold text-iter-chartreuse mb-2">
-                      {prefix}<AnimatedCounter target={numVal} suffix={suffix} />
-                    </div>
-                    <div className="text-sm text-white/60">{stat.label}</div>
-                  </div>
-                );
-              })}
-            </motion.div>
-          ) : (
+          {/* Always use static stats (correctly translated per locale) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={whyInView ? { opacity: 1, y: 0 } : {}}
@@ -756,7 +729,6 @@ export default function HomePage({
                 );
               })}
             </motion.div>
-          )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {(cmsWhyChoose ?? t.whyChoose.features).map((r, i) => {
