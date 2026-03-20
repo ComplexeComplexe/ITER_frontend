@@ -436,8 +436,30 @@ export default function LeadPage({
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1200));
+    try {
+      const stepLabels = ["stage", "challenge", "teamSize", "urgency"];
+      const quizAnswers: Record<string, string> = {};
+      answers.forEach((answer, i) => {
+        if (stepLabels[i]) quizAnswers[stepLabels[i]] = answer;
+      });
+      const payload = {
+        source: "profil",
+        data: {
+          ...formData,
+          ...quizAnswers,
+        },
+      };
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        console.error("Lead API error:", await res.text());
+      }
+    } catch (err) {
+      console.error("Failed to send lead:", err);
+    }
     setIsSubmitting(false);
     setSubmitted(true);
   };
