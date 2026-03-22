@@ -156,6 +156,81 @@
       "source": "/es/category/:path*",
       "destination": "/es/ressources/blog",
       "permanent": true
+    },
+    {
+      "source": "/daf-externalise/metier-de-daf",
+      "destination": "/daf-externalise/metier",
+      "permanent": true
+    },
+    {
+      "source": "/en/daf-externalise/metier-de-daf",
+      "destination": "/en/daf-outsourcing/metier",
+      "permanent": true
+    },
+    {
+      "source": "/es/daf-externalise/metier-de-daf",
+      "destination": "/es/externalizacion-daf/metier",
+      "permanent": true
+    },
+    {
+      "source": "/services/levee-de-fonds",
+      "destination": "/services/accompagnement-levee-de-fond",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/levee-de-fonds",
+      "destination": "/en/services/fund-raising-support",
+      "permanent": true
+    },
+    {
+      "source": "/es/services/levee-de-fonds",
+      "destination": "/es/services/soporte-financiacion",
+      "permanent": true
+    },
+    {
+      "source": "/testimonials/:slug",
+      "destination": "/ressources/testimonials",
+      "permanent": true
+    },
+    {
+      "source": "/en/testimonials/:slug",
+      "destination": "/en/ressources/testimonials",
+      "permanent": true
+    },
+    {
+      "source": "/es/testimonials/:slug",
+      "destination": "/es/ressources/testimonials",
+      "permanent": true
+    },
+    {
+      "source": "/glossaire/:slug",
+      "destination": "/ressources/glossaire",
+      "permanent": true
+    },
+    {
+      "source": "/en/glossaire/:slug",
+      "destination": "/en/ressources/glossaire",
+      "permanent": true
+    },
+    {
+      "source": "/es/glossaire/:slug",
+      "destination": "/es/ressources/glossaire",
+      "permanent": true
+    },
+    {
+      "source": "/fiche-metier/:slug",
+      "destination": "/ressources/fiche-metier",
+      "permanent": true
+    },
+    {
+      "source": "/en/fiche-metier/:slug",
+      "destination": "/en/ressources/fiche-metier",
+      "permanent": true
+    },
+    {
+      "source": "/es/fiche-metier/:slug",
+      "destination": "/es/ressources/fiche-metier",
+      "permanent": true
     }
   ]
 }
