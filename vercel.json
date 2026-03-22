@@ -1,0 +1,161 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/services/consolidation-financiere",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/reporting-financier",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/previsionnel-tresorerie",
+      "destination": "/en/services/cash-flow-forecast",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/comptabilite-externalisation",
+      "destination": "/en/services/outsource-your-accounting",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/controle-de-gestion-externalise",
+      "destination": "/en/services/outsourced-management-control",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/gestion-financiere-externalisee",
+      "destination": "/en/services/outsourced-financial-management",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/accompagnement-levee-de-fond",
+      "destination": "/en/services/fund-raising-support",
+      "permanent": true
+    },
+    {
+      "source": "/es/services/previsionnel-tresorerie",
+      "destination": "/es/services/prevision-tesoreria",
+      "permanent": true
+    },
+    {
+      "source": "/es/services/comptabilite-externalisation",
+      "destination": "/es/services/externalizar-contabilidad",
+      "permanent": true
+    },
+    {
+      "source": "/es/services/controle-de-gestion-externalise",
+      "destination": "/es/services/control-gestion-externalizado",
+      "permanent": true
+    },
+    {
+      "source": "/es/services/gestion-financiere-externalisee",
+      "destination": "/es/services/gestion-financiera-externalizada",
+      "permanent": true
+    },
+    {
+      "source": "/es/services/accompagnement-levee-de-fond",
+      "destination": "/es/services/soporte-financiacion",
+      "permanent": true
+    },
+    {
+      "source": "/en/about",
+      "destination": "/en/a-propos",
+      "permanent": true
+    },
+    {
+      "source": "/es/sobre-nosotros",
+      "destination": "/es/a-propos",
+      "permanent": true
+    },
+    {
+      "source": "/es/contacto",
+      "destination": "/es/contact",
+      "permanent": true
+    },
+    {
+      "source": "/es/daf-externalizado",
+      "destination": "/es/daf-externalise",
+      "permanent": true
+    },
+    {
+      "source": "/es/servicios",
+      "destination": "/es/services",
+      "permanent": true
+    },
+    {
+      "source": "/ressources/testimonials/:slug",
+      "destination": "/ressources/testimonials",
+      "permanent": true
+    },
+    {
+      "source": "/en/ressources/testimonials/:slug",
+      "destination": "/en/ressources/testimonials",
+      "permanent": true
+    },
+    {
+      "source": "/es/ressources/testimonials/:slug",
+      "destination": "/es/ressources/testimonials",
+      "permanent": true
+    },
+    {
+      "source": "/ressources/glossaire/:slug",
+      "destination": "/ressources/glossaire",
+      "permanent": true
+    },
+    {
+      "source": "/en/ressources/glossaire/:slug",
+      "destination": "/en/ressources/glossaire",
+      "permanent": true
+    },
+    {
+      "source": "/es/ressources/glossaire/:slug",
+      "destination": "/es/ressources/glossaire",
+      "permanent": true
+    },
+    {
+      "source": "/category/:path*",
+      "destination": "/ressources/blog",
+      "permanent": true
+    },
+    {
+      "source": "/en/category/:path*",
+      "destination": "/en/ressources/blog",
+      "permanent": true
+    },
+    {
+      "source": "/es/category/:path*",
+      "destination": "/es/ressources/blog",
+      "permanent": true
+    }
+  ]
+}
