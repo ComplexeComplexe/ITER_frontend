@@ -462,6 +462,22 @@ export default function LeadPage({
     }
     setIsSubmitting(false);
     setSubmitted(true);
+
+    // --- Google Ads Conversion Tracking via GTM dataLayer ---
+    if (typeof window !== "undefined") {
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({
+        event: "lead_form_submitted",
+        form_name: "diagnostic_financier",
+        lead_source: "profil_page",
+        lead_stage: answers[0] || "",
+        lead_challenge: answers[1] || "",
+        lead_team_size: answers[2] || "",
+        lead_urgency: answers[3] || "",
+        lead_email: formData.email,
+        lead_company: formData.company,
+      });
+    }
   };
 
   const progressPercent =
