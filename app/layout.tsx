@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import CookieConsent from "../components/CookieConsent";
 
 const dmSans = DM_Sans({
   subsets: ["latin", "latin-ext"],
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
         url: "/images/og-default.jpg",
         width: 1200,
         height: 630,
-        alt: "Iter Advisors — DAF externalisé & CFO à temps partagé",
+        alt: "Iter Advisors - DAF externalisé & CFO à temps partagé",
       },
     ],
   },
@@ -45,6 +46,22 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
       <head>
+        {/* Google Consent Mode v2 - Default denied BEFORE GTM loads */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  'analytics_storage':'denied',
+  'ad_storage':'denied',
+  'ad_user_data':'denied',
+  'ad_personalization':'denied',
+  'functionality_storage':'granted',
+  'security_storage':'granted',
+  'wait_for_update':500
+});`,
+          }}
+        />
+
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -146,6 +163,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         {/* End Google Tag Manager (noscript) */}
         {children}
+        <CookieConsent locale="fr" />
       </body>
     </html>
   );
