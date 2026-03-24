@@ -15,8 +15,10 @@ function getResend(): Resend {
   return _resend;
 }
 
-const RECIPIENT_EMAIL = process.env.LEAD_RECIPIENT_EMAIL || "contact@iteradvisors.com";
-const SENDER_EMAIL = process.env.LEAD_SENDER_EMAIL || "contact@iteradvisors.com";
+const RECIPIENT_EMAIL =
+  process.env.LEAD_RECIPIENT_EMAIL || "contact@iteradvisors.com";
+const SENDER_EMAIL =
+  process.env.LEAD_SENDER_EMAIL || "leads@crm.iteradvisors.com";
 
 export async function POST(request: NextRequest) {
   try {
@@ -26,7 +28,7 @@ export async function POST(request: NextRequest) {
     if (!source || !data) {
       return NextResponse.json(
         { error: "Missing required fields: source, data" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -62,16 +64,19 @@ export async function POST(request: NextRequest) {
       console.error("Resend error:", error);
       return NextResponse.json(
         { error: "Failed to send email" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
-    return NextResponse.json({ success: true, message: "Lead sent successfully" });
+    return NextResponse.json({
+      success: true,
+      message: "Lead sent successfully",
+    });
   } catch (err) {
     console.error("API error:", err);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -105,7 +110,7 @@ function buildProfilEmail(data: Record<string, string>): string {
               <td style="padding: 12px 8px; font-weight: 600; color: #374151; width: 40%; font-size: 14px;">${f.label}</td>
               <td style="padding: 12px 8px; color: #111827; font-size: 14px;">${f.value}</td>
             </tr>
-          `
+          `,
             )
             .join("")}
         </table>
@@ -145,7 +150,7 @@ function buildCampagneEmail(data: Record<string, string>): string {
               <td style="padding: 12px 8px; font-weight: 600; color: #374151; width: 40%; font-size: 14px;">${f.label}</td>
               <td style="padding: 12px 8px; color: #111827; font-size: 14px;">${f.value}</td>
             </tr>
-          `
+          `,
             )
             .join("")}
         </table>
