@@ -74,7 +74,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "sebastien-preel",
     photo: null,
     linkedIn: "https://www.linkedin.com/in/sebastienpreel/",
-    order: 5,
+    order: 6,
     showInHero: false,
   },
   {
@@ -86,7 +86,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "deisy-arias-ramirez",
     photo: { url: "/images/team/deisy-arias-ramirez.jpg" },
     linkedIn: "https://www.linkedin.com/in/deisy-arias-ramirez/",
-    order: 6,
+    order: 7,
     showInHero: false,
   },
   {
@@ -98,7 +98,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "tom-jaufre",
     photo: null,
     linkedIn: "https://www.linkedin.com/in/tom-jaufre-65904175/",
-    order: 7,
+    order: 8,
     showInHero: false,
   },
   {
@@ -110,7 +110,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "jessica-barnicaud",
     photo: null,
     linkedIn: "https://www.linkedin.com/in/jessica-barnicaud/",
-    order: 8,
+    order: 10,
     showInHero: false,
   },
   {
@@ -135,7 +135,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "ornella-salgado",
     photo: null,
     linkedIn: "https://www.linkedin.com/in/ornellaslgd/",
-    order: 10,
+    order: 11,
     showInHero: false,
   },
   {
@@ -147,7 +147,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "rocio-montesano",
     photo: null,
     linkedIn: "https://www.linkedin.com/in/rociomontesano/",
-    order: 11,
+    order: 12,
     showInHero: false,
   },
   {
@@ -159,7 +159,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "yumara-marie",
     photo: null,
     linkedIn: "https://www.linkedin.com/in/yumara-marie/",
-    order: 12,
+    order: 13,
     showInHero: false,
   },
   {
@@ -171,11 +171,11 @@ const fallbackData: FallbackMemberData[] = [
     slug: "benjamin-carlot",
     photo: null,
     linkedIn: "https://www.linkedin.com/in/benjamin-carlot/",
-    order: 13,
+    order: 15,
     showInHero: false,
   },
   {
-    id: 14,
+    id: 15,
     documentId: "pauline-mathieu",
     firstName: "Pauline",
     lastName: "Mathieu",
@@ -209,8 +209,8 @@ const fallbackData: FallbackMemberData[] = [
     slug: "borith-biv",
     photo: null,
     linkedIn: "https://www.linkedin.com/in/borith-biv/",
-    order: 16,
-    showInHero: false,
+    order: 5,
+    showInHero: true,
   },
   // === Finance Interns ===
   {

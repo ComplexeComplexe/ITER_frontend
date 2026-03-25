@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 // Script import removed - trustfolio loaded lazily via IntersectionObserver
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import {
   ArrowRight,
@@ -93,7 +93,7 @@ const clientLogos = [
 ];
 
 /* ─── Icons for service cards ─── */
-const serviceIcons = [TrendingUp, PieChart, Wallet, FileText, BarChart3, Briefcase];
+const serviceIcons = [TrendingUp, PieChart, Wallet, BarChart3, Briefcase];
 const hrServiceIcons = [Users, UserPlus, CreditCard, GraduationCap, Handshake, Heart];
 const stepIcons = [Search, Lightbulb, Cog, Rocket];
 const phaseIcons = [Rocket, TrendingUp, AlertTriangle, Banknote, BarChart3];
@@ -107,14 +107,20 @@ function ServiceCard({
   title,
   desc,
   index,
+  theme = "violet",
 }: {
   icon: typeof TrendingUp;
   title: string;
   desc: string;
   index: number;
+  theme?: "violet" | "chartreuse";
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  const isGreen = theme === "chartreuse";
+  const iconBg = isGreen ? "bg-iter-chartreuse/15 text-iter-dark" : "bg-iter-violet/10 text-iter-violet";
+  const hoverBg = isGreen ? "from-iter-chartreuse/8 to-transparent" : "from-iter-violet/5 to-transparent";
 
   return (
     <motion.div
@@ -124,9 +130,9 @@ function ServiceCard({
       transition={{ duration: 0.5, delay: index * 0.08 }}
       className="group p-6 rounded-2xl bg-card border border-border/50 hover:border-transparent hover:shadow-xl transition-all duration-300 relative overflow-hidden"
     >
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-iter-violet/5 to-transparent" />
+      <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br ${hoverBg}`} />
       <div className="relative z-10">
-        <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-iter-violet/10 text-iter-violet">
+        <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${iconBg}`}>
           <Icon size={22} />
         </div>
         <h3 className="text-lg font-semibold mb-2 text-foreground">{title}</h3>
@@ -228,6 +234,15 @@ export default function HomePage({
   const contactPath = getContactPath(locale);
 
   const heroTitle = homepage?.heroTitle || `${t.hero.h1.before}${t.hero.h1.highlight}${t.hero.h1.after}`;
+
+  // Animated hero highlight: alternate between "direction financiere" and "direction RH"
+  const [heroHighlightIndex, setHeroHighlightIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroHighlightIndex((prev) => (prev === 0 ? 1 : 0));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
   const heroSubtitle = homepage?.heroSubtitle || t.hero.h2;
   const heroCtaLabel = t.hero.cta;
   const heroCtaUrl = BOOKING_URL;
@@ -249,7 +264,7 @@ export default function HomePage({
       const mName = `${m.firstName} ${m.lastName}`.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
       return mName === name;
     });
-  });
+  }).sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
   const heroAvatars = team
     .filter((m) => m.showInHero && m.photo)
     .map((m) => ({
@@ -372,8 +387,19 @@ export default function HomePage({
               ) : (
                 <>
                   {t.hero.h1.before}
-                  <span className="text-iter-chartreuse">
-                    {t.hero.h1.highlight}
+                  <span className="relative inline-block overflow-hidden align-bottom" style={{ height: "1.15em" }}>
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={heroHighlightIndex}
+                        initial={{ y: "100%", opacity: 0 }}
+                        animate={{ y: "0%", opacity: 1 }}
+                        exit={{ y: "-100%", opacity: 0 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="block text-iter-chartreuse"
+                      >
+                        {heroHighlightIndex === 0 ? t.hero.h1.highlight : (t.hero.h1 as any).highlightAlt}
+                      </motion.span>
+                    </AnimatePresence>
                   </span>
                   {t.hero.h1.after}
                 </>
@@ -503,14 +529,14 @@ export default function HomePage({
 
           <div className="mb-0">
             <div className="flex items-center gap-3 mb-8">
-              <span className="px-4 py-1.5 rounded-full bg-iter-violet text-white text-sm font-semibold">
+              <span className="px-4 py-1.5 rounded-full bg-iter-chartreuse text-iter-dark text-sm font-semibold">
                 {locale === "fr" ? "Ressources humaines" : locale === "en" ? "Human Resources" : "Recursos humanos"}
               </span>
-              <div className="h-px flex-1 bg-iter-violet/20" />
+              <div className="h-px flex-1 bg-iter-chartreuse/30" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {t.hrServices.map((s, i) => (
-                <ServiceCard key={s.title} icon={hrServiceIcons[i] ?? Users} title={s.title} desc={s.desc} index={i + 6} />
+                <ServiceCard key={s.title} icon={hrServiceIcons[i] ?? Users} title={s.title} desc={s.desc} index={i + 5} theme="chartreuse" />
               ))}
             </div>
           </div>

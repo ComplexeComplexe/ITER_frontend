@@ -100,20 +100,61 @@ export default function Header({
                 )}
               </Link>
 
-              {/* Dropdown */}
+              {/* Dropdown / Mega-menu */}
               {item.children && openDropdown === i && (
-                <div className="absolute top-full left-0 pt-2">
-                  <div className="w-64 bg-white/95 backdrop-blur-md border border-white/20 rounded-xl p-1.5 shadow-xl shadow-iter-violet/20">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="block px-3 py-2.5 text-sm text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors"
-                      >
-                        {child.text}
-                      </Link>
-                    ))}
-                  </div>
+                <div className={`absolute top-full ${item.megaMenu ? 'left-1/2 -translate-x-1/2' : 'left-0'} pt-2`}>
+                  {item.megaMenu ? (
+                    <div className="w-[520px] bg-white/95 backdrop-blur-md border border-white/20 rounded-xl p-5 shadow-xl shadow-iter-violet/20">
+                      <div className="grid grid-cols-2 gap-6">
+                        {/* Finance column */}
+                        <div>
+                          <span className="inline-block px-2.5 py-1 rounded-full bg-iter-violet/10 text-iter-violet text-[11px] font-semibold uppercase tracking-wider mb-3">
+                            Finance
+                          </span>
+                          <div className="space-y-0.5">
+                            {item.children.filter(c => c.group === 'Finance').map((child) => (
+                              <Link
+                                key={child.href + child.text}
+                                href={child.href}
+                                className="block px-3 py-2 text-sm text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors"
+                              >
+                                {child.text}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                        {/* RH column */}
+                        <div>
+                          <span className="inline-block px-2.5 py-1 rounded-full bg-iter-chartreuse/20 text-iter-dark text-[11px] font-semibold uppercase tracking-wider mb-3">
+                            Ressources humaines
+                          </span>
+                          <div className="space-y-0.5">
+                            {item.children.filter(c => c.group === 'RH').map((child) => (
+                              <Link
+                                key={child.href + child.text}
+                                href={child.href}
+                                className="block px-3 py-2 text-sm text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors"
+                              >
+                                {child.text}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="w-64 bg-white/95 backdrop-blur-md border border-white/20 rounded-xl p-1.5 shadow-xl shadow-iter-violet/20">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className="block px-3 py-2.5 text-sm text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors"
+                        >
+                          {child.text}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
             </div>

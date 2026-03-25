@@ -124,16 +124,26 @@ export default function DrhPage({
       {/* Services Grid */}
       <section className="bg-background py-24 lg:py-32">
         <div className="container">
-          <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-10">
-            {t.servicesGridHeading}
-          </h2>
-          <div className="rounded-2xl border border-border/50 overflow-hidden bg-card">
-            <DrhServicesGrid
-              categories={gridCategories}
-              tierLabels={t.tierLabels}
-              addOnLabel={t.addOnLabel}
-            />
+          <div className="max-w-3xl mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-iter-chartreuse mb-3 block">
+              {locale === "fr" ? "Nos expertises" : locale === "en" ? "Our expertise" : "Nuestras expertises"}
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-bold font-heading text-foreground mb-4">
+              {t.servicesGridHeading}
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              {locale === "fr"
+                ? "Cliquez sur une categorie pour decouvrir le detail des services inclus dans chaque offre."
+                : locale === "en"
+                  ? "Click on a category to discover the services included in each offer."
+                  : "Haga clic en una categoria para descubrir los servicios incluidos en cada oferta."}
+            </p>
           </div>
+          <DrhServicesGrid
+            categories={gridCategories}
+            tierLabels={t.tierLabels}
+            addOnLabel={t.addOnLabel}
+          />
         </div>
       </section>
 

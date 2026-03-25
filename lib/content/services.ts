@@ -3,6 +3,7 @@ import { Locale } from "../i18n";
 export interface ServiceCard {
   title: string;
   href: string;
+  category?: "finance" | "rh";
 }
 
 export interface ServicesContent {
@@ -52,12 +53,16 @@ const servicesFr: ServicesContent = {
     ],
   },
   services: [
-    { title: "Accompagnement lev\u00e9e de fonds", href: "/services/accompagnement-levee-de-fond" },
-    { title: "Contr\u00f4le de gestion externalis\u00e9", href: "/services/controle-de-gestion-externalise" },
-    { title: "Externalisation comptabilit\u00e9", href: "/services/comptabilite-externalisation" },
-    { title: "Gestion financi\u00e8re externalis\u00e9e", href: "/services/gestion-financiere-externalisee" },
-    { title: "Pr\u00e9visionnel de tr\u00e9sorerie", href: "/services/previsionnel-tresorerie" },
-    { title: "DRH externalis\u00e9", href: "/services/drh-externalise" },
+    { title: "Accompagnement levee de fonds", href: "/services/accompagnement-levee-de-fond", category: "finance" },
+    { title: "Controle de gestion externalise", href: "/services/controle-de-gestion-externalise", category: "finance" },
+    { title: "Gestion financiere externalisee", href: "/services/gestion-financiere-externalisee", category: "finance" },
+    { title: "Previsionnel de tresorerie", href: "/services/previsionnel-tresorerie", category: "finance" },
+    { title: "M&A & Due Diligence", href: "/services/ma-due-diligence", category: "finance" },
+    { title: "DRH externalise", href: "/drh-externalise", category: "rh" },
+    { title: "Recrutement & talent acquisition", href: "/drh-externalise", category: "rh" },
+    { title: "Gestion de la paie & charges sociales", href: "/drh-externalise", category: "rh" },
+    { title: "Formation & developpement", href: "/drh-externalise", category: "rh" },
+    { title: "Conformite & droit du travail", href: "/drh-externalise", category: "rh" },
   ],
 };
 
@@ -89,12 +94,16 @@ const servicesEn: ServicesContent = {
     ],
   },
   services: [
-    { title: "Fund-raising support", href: "/en/services/fund-raising-support" },
-    { title: "Outsourced management control", href: "/en/services/outsourced-management-control" },
-    { title: "Accounting outsourcing", href: "/en/services/outsource-your-accounting" },
-    { title: "Outsourced financial management", href: "/en/services/outsourced-financial-management" },
-    { title: "Cash flow forecast", href: "/en/services/cash-flow-forecast" },
-    { title: "Outsourced HR Director", href: "/en/services/drh-externalise" },
+    { title: "Fund-raising support", href: "/en/services/fund-raising-support", category: "finance" },
+    { title: "Outsourced management control", href: "/en/services/outsourced-management-control", category: "finance" },
+    { title: "Outsourced financial management", href: "/en/services/outsourced-financial-management", category: "finance" },
+    { title: "Cash flow forecast", href: "/en/services/cash-flow-forecast", category: "finance" },
+    { title: "M&A & Due Diligence", href: "/en/services/ma-due-diligence", category: "finance" },
+    { title: "Outsourced HR Director", href: "/en/drh-externalise", category: "rh" },
+    { title: "Recruitment & talent acquisition", href: "/en/drh-externalise", category: "rh" },
+    { title: "Payroll & social charges", href: "/en/drh-externalise", category: "rh" },
+    { title: "Training & development", href: "/en/drh-externalise", category: "rh" },
+    { title: "Compliance & labor law", href: "/en/drh-externalise", category: "rh" },
   ],
 };
 
@@ -126,12 +135,16 @@ const servicesEs: ServicesContent = {
     ],
   },
   services: [
-    { title: "Apoyo a la recaudaci\u00f3n de fondos", href: "/es/services/soporte-financiacion" },
-    { title: "Control de gesti\u00f3n externalizado", href: "/es/services/control-gestion-externalizado" },
-    { title: "Externalizaci\u00f3n de la contabilidad", href: "/es/services/externalizar-contabilidad" },
-    { title: "Gesti\u00f3n financiera externalizada", href: "/es/services/gestion-financiera-externalizada" },
-    { title: "Previsi\u00f3n de tesorer\u00eda", href: "/es/services/prevision-tesoreria" },
-    { title: "Director de RRHH externalizado", href: "/es/services/drh-externalise" },
+    { title: "Apoyo a la captacion de fondos", href: "/es/services/soporte-financiacion", category: "finance" },
+    { title: "Control de gestion externalizado", href: "/es/services/control-gestion-externalizado", category: "finance" },
+    { title: "Gestion financiera externalizada", href: "/es/services/gestion-financiera-externalizada", category: "finance" },
+    { title: "Prevision de tesoreria", href: "/es/services/prevision-tesoreria", category: "finance" },
+    { title: "M&A & Due Diligence", href: "/es/services/ma-due-diligence", category: "finance" },
+    { title: "Director de RRHH externalizado", href: "/es/drh-externalise", category: "rh" },
+    { title: "Reclutamiento & adquisicion de talento", href: "/es/drh-externalise", category: "rh" },
+    { title: "Nomina y cargas sociales", href: "/es/drh-externalise", category: "rh" },
+    { title: "Formacion y desarrollo", href: "/es/drh-externalise", category: "rh" },
+    { title: "Cumplimiento y derecho laboral", href: "/es/drh-externalise", category: "rh" },
   ],
 };
 

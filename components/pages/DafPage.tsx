@@ -32,26 +32,40 @@ export default function DafPage({
       <section className="bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb locale={locale} items={[{ label: t.breadcrumbLabel }]} />
-          <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl mb-6">
-            {t.h1}
-          </h1>
-          {t.intro.map((paragraph, i) => (
-            <p
-              key={i}
-              className="text-lg text-muted-foreground max-w-2xl leading-relaxed mb-3"
-            >
-              {paragraph}
-            </p>
-          ))}
-          <Link
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
-          >
-            {t.ctaButton}
-            <ArrowRight size={16} />
-          </Link>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl mb-6">
+                {t.h1}
+              </h1>
+              {t.intro.map((paragraph, i) => (
+                <p
+                  key={i}
+                  className="text-lg text-muted-foreground max-w-2xl leading-relaxed mb-3"
+                >
+                  {paragraph}
+                </p>
+              ))}
+              <Link
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
+              >
+                {t.ctaButton}
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+            <div className="relative hidden lg:block">
+              <Image
+                src="/images/bg/daf-section.webp"
+                alt={locale === "fr" ? "DAF externalise - pilotage financier" : locale === "en" ? "Outsourced CFO - financial management" : "CFO externalizado - gestion financiera"}
+                width={560}
+                height={400}
+                className="rounded-2xl object-contain"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -172,7 +186,7 @@ export default function DafPage({
 
       {/* Missions */}
       <section className="bg-muted/30 py-24 lg:py-32">
-        <div className="container max-w-3xl">
+        <div className="container">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr"
               ? "Nos missions"

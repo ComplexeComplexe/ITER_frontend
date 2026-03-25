@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Linkedin, Youtube } from "lucide-react";
+import { MapPin, Linkedin } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { navigation, footerContent } from "@/lib/navigation";
 
@@ -107,15 +107,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                 <Linkedin size={16} />
                 LinkedIn
               </a>
-              <a
-                href="https://www.youtube.com/@iteradvisors"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/50 hover:text-iter-chartreuse transition-colors text-sm"
-              >
-                <Youtube size={16} />
-                YouTube
-              </a>
+
             </div>
           </div>
         </div>

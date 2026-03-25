@@ -4,7 +4,8 @@ import { SERVICE_PAGE_SLUGS, SERVICE_URL_SLUG_BY_LOCALE } from "./strapi";
 export interface NavItem {
   title: string;
   href: string;
-  children?: { text: string; href: string }[];
+  children?: { text: string; href: string; group?: string }[];
+  megaMenu?: boolean;
 }
 
 export interface FooterContent {
@@ -34,13 +35,19 @@ const navFr: NavItem[] = [
   {
     title: "Services",
     href: "/services",
+    megaMenu: true,
     children: [
-      { text: "Prévisionnel de trésorerie", href: "/services/previsionnel-tresorerie" },
-      { text: "Gestion financière externalisée", href: "/services/gestion-financiere-externalisee" },
-      { text: "Accompagnement levée de fonds", href: "/services/accompagnement-levee-de-fond" },
-      { text: "Externaliser sa comptabilité", href: "/services/comptabilite-externalisation" },
-      { text: "Contrôle de gestion", href: "/services/controle-de-gestion-externalise" },
-      { text: "DRH externalisé", href: "/services/drh-externalise" },
+      { text: "DAF externalise", href: "/daf-externalise", group: "Finance" },
+      { text: "Previsionnel de tresorerie", href: "/services/previsionnel-tresorerie", group: "Finance" },
+      { text: "Gestion financiere externalisee", href: "/services/gestion-financiere-externalisee", group: "Finance" },
+      { text: "Accompagnement levee de fonds", href: "/services/accompagnement-levee-de-fond", group: "Finance" },
+      { text: "Controle de gestion", href: "/services/controle-de-gestion-externalise", group: "Finance" },
+      { text: "M&A & Due Diligence", href: "/services/ma-due-diligence", group: "Finance" },
+      { text: "DRH externalise", href: "/drh-externalise", group: "RH" },
+      { text: "Recrutement & talent acquisition", href: "/drh-externalise", group: "RH" },
+      { text: "Gestion de la paie", href: "/drh-externalise", group: "RH" },
+      { text: "Formation & developpement", href: "/drh-externalise", group: "RH" },
+      { text: "Conformite & droit du travail", href: "/drh-externalise", group: "RH" },
     ],
   },
   {
