@@ -215,6 +215,42 @@ export default function DafPage({
         </div>
       </section>
 
+      {/* Related Services */}
+      <section className="bg-muted/30 py-24 lg:py-32">
+        <div className="container">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+            {locale === "fr" ? "Nos expertises" : locale === "en" ? "Our expertise" : "Nuestras expertises"}
+          </span>
+          <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
+            {locale === "fr" ? "Decouvrez nos autres services" : locale === "en" ? "Discover our other services" : "Descubra nuestros otros servicios"}
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { title: locale === "fr" ? "Levee de fonds" : locale === "en" ? "Fund-raising" : "Levantamiento de fondos", href: locale === "fr" ? "/services/accompagnement-levee-de-fond" : `/${locale}/services/fund-raising-support`, icon: Rocket },
+              { title: locale === "fr" ? "Controle de gestion" : locale === "en" ? "Management control" : "Control de gestion", href: locale === "fr" ? "/services/controle-de-gestion-externalise" : `/${locale}/services/outsourced-management-control`, icon: BarChart3 },
+              { title: locale === "fr" ? "Gestion de tresorerie" : locale === "en" ? "Cash flow management" : "Gestion de tesoreria", href: locale === "fr" ? "/services/previsionnel-tresorerie" : `/${locale}/services/cash-flow-forecast`, icon: Wallet },
+              { title: locale === "fr" ? "M&A & Due Diligence" : "M&A & Due Diligence", href: locale === "fr" ? "/services/ma-due-diligence" : `/${locale}/services/ma-due-diligence`, icon: Compass },
+              { title: locale === "fr" ? "DRH externalise" : locale === "en" ? "Outsourced HR Director" : "DRH externalizado", href: locale === "fr" ? "/drh-externalise" : `/${locale}/drh-externalise`, icon: Settings },
+              { title: locale === "fr" ? "DAF a temps partage" : locale === "en" ? "Part-time CFO" : "DAF a tiempo compartido", href: locale === "fr" ? "/daf-externalise/temps-partage" : `/${locale}/daf-externalise/temps-partage`, icon: Network },
+            ].map((service, i) => (
+              <Link
+                key={i}
+                href={service.href}
+                className="group flex items-center gap-4 bg-background border border-border/50 rounded-2xl p-6 hover:border-iter-violet/30 transition-all duration-300"
+              >
+                <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
+                  <service.icon size={20} className="text-iter-violet" />
+                </div>
+                <span className="font-semibold text-foreground group-hover:text-iter-violet transition-colors">
+                  {service.title}
+                </span>
+                <ArrowRight size={16} className="ml-auto text-foreground/30 group-hover:text-iter-violet transition-all group-hover:translate-x-1" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <TestimonialsSection locale={locale} />
 
       {/* Why Choose */}

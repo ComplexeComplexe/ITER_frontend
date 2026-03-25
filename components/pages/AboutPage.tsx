@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Locale } from "@/lib/i18n";
 import { getAboutContent } from "@/lib/content/about";
 import { getFallbackTeamMembers } from "@/lib/content/team";
@@ -41,12 +42,26 @@ export default function AboutPage({
       <section className="bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb locale={locale} items={[{ label: t.hero.h1 }]} />
-          <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl mb-6">
-            {t.hero.h1}
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
-            {t.hero.intro}
-          </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl mb-6">
+                {t.hero.h1}
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+                {t.hero.intro}
+              </p>
+            </div>
+            <div className="relative hidden lg:block">
+              <Image
+                src="/images/bg/about-section.webp"
+                alt={locale === "fr" ? "A propos d'Iter Advisors" : "About Iter Advisors"}
+                width={560}
+                height={400}
+                className="rounded-2xl object-contain"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

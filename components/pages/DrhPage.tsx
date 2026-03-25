@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ChevronDown, TrendingUp, BarChart3, Wallet, Rocket, Compass, Users } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { getDrhContent } from "@/lib/content/drh";
@@ -52,26 +53,40 @@ export default function DrhPage({
       <section className="bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb locale={locale} items={[{ label: t.breadcrumbLabel }]} />
-          <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl mb-6">
-            {t.h1}
-          </h1>
-          {t.intro.map((paragraph, i) => (
-            <p
-              key={i}
-              className="text-lg text-muted-foreground max-w-2xl leading-relaxed mb-3"
-            >
-              {paragraph}
-            </p>
-          ))}
-          <Link
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
-          >
-            {t.ctaButton}
-            <ArrowRight size={16} />
-          </Link>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl mb-6">
+                {t.h1}
+              </h1>
+              {t.intro.map((paragraph, i) => (
+                <p
+                  key={i}
+                  className="text-lg text-muted-foreground max-w-2xl leading-relaxed mb-3"
+                >
+                  {paragraph}
+                </p>
+              ))}
+              <Link
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
+              >
+                {t.ctaButton}
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+            <div className="relative hidden lg:block">
+              <Image
+                src="/images/bg/bg-3d.webp"
+                alt={locale === "fr" ? "DRH externalise - gestion des ressources humaines" : locale === "en" ? "Outsourced HR Director" : "DRH externalizado"}
+                width={560}
+                height={400}
+                className="rounded-2xl object-contain"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -144,6 +159,42 @@ export default function DrhPage({
             tierLabels={t.tierLabels}
             addOnLabel={t.addOnLabel}
           />
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="bg-background py-24 lg:py-32">
+        <div className="container">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-chartreuse mb-3 block">
+            {locale === "fr" ? "Nos expertises" : locale === "en" ? "Our expertise" : "Nuestras expertises"}
+          </span>
+          <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
+            {locale === "fr" ? "Decouvrez nos autres services" : locale === "en" ? "Discover our other services" : "Descubra nuestros otros servicios"}
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { title: locale === "fr" ? "DAF externalise" : locale === "en" ? "Outsourced CFO" : "DAF externalizado", href: locale === "fr" ? "/daf-externalise" : `/${locale}/daf-externalise`, icon: TrendingUp },
+              { title: locale === "fr" ? "Levee de fonds" : locale === "en" ? "Fund-raising" : "Levantamiento de fondos", href: locale === "fr" ? "/services/accompagnement-levee-de-fond" : `/${locale}/services/fund-raising-support`, icon: Rocket },
+              { title: locale === "fr" ? "Controle de gestion" : locale === "en" ? "Management control" : "Control de gestion", href: locale === "fr" ? "/services/controle-de-gestion-externalise" : `/${locale}/services/outsourced-management-control`, icon: BarChart3 },
+              { title: locale === "fr" ? "Gestion de tresorerie" : locale === "en" ? "Cash flow management" : "Gestion de tesoreria", href: locale === "fr" ? "/services/previsionnel-tresorerie" : `/${locale}/services/cash-flow-forecast`, icon: Wallet },
+              { title: locale === "fr" ? "M&A & Due Diligence" : "M&A & Due Diligence", href: locale === "fr" ? "/services/ma-due-diligence" : `/${locale}/services/ma-due-diligence`, icon: Compass },
+              { title: locale === "fr" ? "DRH a temps partage" : locale === "en" ? "Part-time HR Director" : "DRH a tiempo compartido", href: locale === "fr" ? "/drh-externalise/temps-partage" : `/${locale}/drh-externalise/temps-partage`, icon: Users },
+            ].map((service, i) => (
+              <Link
+                key={i}
+                href={service.href}
+                className="group flex items-center gap-4 bg-background border border-border/50 rounded-2xl p-6 hover:border-iter-chartreuse/40 transition-all duration-300"
+              >
+                <div className="w-10 h-10 rounded-xl bg-iter-chartreuse/15 flex items-center justify-center shrink-0 group-hover:bg-iter-chartreuse/25 transition-colors">
+                  <service.icon size={20} className="text-iter-dark" />
+                </div>
+                <span className="font-semibold text-foreground group-hover:text-iter-dark transition-colors">
+                  {service.title}
+                </span>
+                <ArrowRight size={16} className="ml-auto text-foreground/30 group-hover:text-iter-dark transition-all group-hover:translate-x-1" />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

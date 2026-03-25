@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Briefcase,
@@ -121,20 +122,34 @@ export default function JobsPage({
       <section className="relative bg-gradient-to-br from-background via-background to-iter-violet/5 pt-32 pb-20">
         <div className="container max-w-5xl">
           <Breadcrumb locale={locale} items={[{ label: "Jobs" }]} />
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 rounded-2xl bg-iter-violet/10 flex items-center justify-center">
-              <Users size={24} className="text-iter-violet" />
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-iter-violet/10 flex items-center justify-center">
+                  <Users size={24} className="text-iter-violet" />
+                </div>
+                <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet">
+                  {locale === "fr" ? "Carrières" : locale === "en" ? "Careers" : "Carreras"}
+                </span>
+              </div>
+              <h1 className="text-4xl lg:text-6xl font-bold font-heading text-foreground max-w-3xl mb-6 leading-tight">
+                {t.hero.h1}
+              </h1>
+              <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+                {t.intro}
+              </p>
             </div>
-            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet">
-              {locale === "fr" ? "Carrières" : locale === "en" ? "Careers" : "Carreras"}
-            </span>
+            <div className="relative hidden lg:block">
+              <Image
+                src="/images/bg/bg-3d.webp"
+                alt={locale === "fr" ? "Rejoignez l'equipe Iter Advisors" : "Join the Iter Advisors team"}
+                width={560}
+                height={400}
+                className="rounded-2xl object-contain"
+                loading="lazy"
+              />
+            </div>
           </div>
-          <h1 className="text-4xl lg:text-6xl font-bold font-heading text-foreground max-w-3xl mb-6 leading-tight">
-            {t.hero.h1}
-          </h1>
-          <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            {t.intro}
-          </p>
         </div>
       </section>
 

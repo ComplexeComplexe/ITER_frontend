@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Rocket,
@@ -40,9 +41,26 @@ export default function ServicesPage({
       <section className="bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb locale={locale} items={[{ label: t.hero.h1 }]} />
-          <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl">
-            {t.hero.h1}
-          </h1>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl">
+                {t.hero.h1}
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-xl leading-relaxed mt-6">
+                {t.intro.paragraph}
+              </p>
+            </div>
+            <div className="relative hidden lg:block">
+              <Image
+                src="/images/bg/bg-hero-3d.webp"
+                alt={locale === "fr" ? "Services Iter Advisors" : "Iter Advisors Services"}
+                width={560}
+                height={400}
+                className="rounded-2xl object-contain"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
