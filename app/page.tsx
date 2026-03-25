@@ -9,7 +9,8 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "fr",
     path: "/",
     fallbackTitle: "DAF externalisé & DAF à temps partagé | Iter Advisors",
-    fallbackDescription: "Iter Advisors, cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Pilotage financier, levée de fonds, reporting et gestion de trésorerie à Barcelone, Paris et Toulouse.",
+    fallbackDescription:
+      "Iter Advisors, cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Pilotage financier, levée de fonds, reporting et gestion de trésorerie à Barcelone, Paris et Toulouse",
   });
 }
 
@@ -19,5 +20,12 @@ export default async function Page() {
     getCmsNavigation("fr"),
     getHomepage("fr"),
   ]);
-  return <HomePage locale="fr" teamMembers={teamMembers} cmsNavigation={cmsNavigation} homepage={homepage} />;
+  return (
+    <HomePage
+      locale="fr"
+      teamMembers={teamMembers}
+      cmsNavigation={cmsNavigation}
+      homepage={homepage}
+    />
+  );
 }
