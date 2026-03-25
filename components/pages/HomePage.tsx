@@ -79,17 +79,17 @@ function AnimatedCounter({
 
 /* ─── Client Logos ─── */
 const clientLogos = [
-  { src: "/images/logos/logo-happyscribe.jpg", alt: "Happy Scribe" },
-  { src: "/images/logos/logo-impact.jpg", alt: "IMPACT+" },
-  { src: "/images/logos/logo-mitiga.jpg", alt: "Mitiga Solutions" },
-  { src: "/images/logos/logo-neat.jpg", alt: "Neat" },
-  { src: "/images/logos/logo-nuubb.jpg", alt: "NuuBB" },
-  { src: "/images/logos/logo-opitdigital.jpg", alt: "OptiDigital" },
-  { src: "/images/logos/logo-seasonly.jpg", alt: "Seasonly" },
-  { src: "/images/logos/logo-solamente.jpg", alt: "Solamente" },
-  { src: "/images/logos/logo-surfe.jpg", alt: "Surfe" },
-  { src: "/images/logos/logo-ukio.jpg", alt: "Ukio" },
-  { src: "/images/logos/logo-yego.jpg", alt: "Yego" },
+  { src: "/images/logos/logo-happyscribe.webp", alt: "Happy Scribe" },
+  { src: "/images/logos/logo-impact.webp", alt: "IMPACT+" },
+  { src: "/images/logos/logo-mitiga.webp", alt: "Mitiga Solutions" },
+  { src: "/images/logos/logo-neat.webp", alt: "Neat" },
+  { src: "/images/logos/logo-nuubb.webp", alt: "NuuBB" },
+  { src: "/images/logos/logo-opitdigital.webp", alt: "OptiDigital" },
+  { src: "/images/logos/logo-seasonly.webp", alt: "Seasonly" },
+  { src: "/images/logos/logo-solamente.webp", alt: "Solamente" },
+  { src: "/images/logos/logo-surfe.webp", alt: "Surfe" },
+  { src: "/images/logos/logo-ukio.webp", alt: "Ukio" },
+  { src: "/images/logos/logo-yego.webp", alt: "Yego" },
 ];
 
 /* ─── Icons for service cards ─── */
@@ -458,6 +458,7 @@ export default function HomePage({
                   width={100}
                   height={40}
                   className="object-contain max-h-12"
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -536,6 +537,7 @@ export default function HomePage({
                   width={600}
                   height={520}
                   className="w-full h-[400px] lg:h-[520px] object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-iter-dark/40 to-transparent" />
               </div>
@@ -626,6 +628,7 @@ export default function HomePage({
             alt=""
             fill
             className="object-cover"
+            loading="lazy"
           />
         </div>
         <div className="absolute inset-0 bg-background/90" />
@@ -833,6 +836,7 @@ export default function HomePage({
                 width={600}
                 height={420}
                 className="w-full h-[350px] lg:h-[420px] object-cover"
+                loading="lazy"
               />
             </motion.div>
           </div>
@@ -879,6 +883,7 @@ export default function HomePage({
                           height={96}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           unoptimized
+                          loading="lazy"
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
@@ -1037,6 +1042,7 @@ export default function HomePage({
                     alt={card.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
                 {card.date && (

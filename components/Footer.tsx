@@ -20,7 +20,7 @@ export default function Footer({ locale }: { locale: Locale }) {
           {/* Brand */}
           <div>
             <Image
-              src="/images/logos/logo-hero.png"
+              src="/images/logos/logo-hero.webp"
               alt="Iter Advisors"
               width={140}
               height={16}

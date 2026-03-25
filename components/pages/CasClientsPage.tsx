@@ -73,7 +73,7 @@ function getContent(locale: Locale) {
         {
           id: "happyscribe",
           company: "HappyScribe",
-          logo: "/images/logos/logo-happyscribe.jpg",
+          logo: "/images/logos/logo-happyscribe.webp",
           sector: "SaaS / Tech",
           sectorTag: "SaaS / Tech",
           serviceTag: "DAF externalisé",
@@ -99,7 +99,7 @@ function getContent(locale: Locale) {
         {
           id: "surfe",
           company: "Surfe",
-          logo: "/images/logos/logo-surfe.jpg",
+          logo: "/images/logos/logo-surfe.webp",
           sector: "SaaS / Tech",
           sectorTag: "SaaS / Tech",
           serviceTag: "Levée de fonds",
@@ -125,7 +125,7 @@ function getContent(locale: Locale) {
         {
           id: "ukio",
           company: "Ukio",
-          logo: "/images/logos/logo-ukio.jpg",
+          logo: "/images/logos/logo-ukio.webp",
           sector: "PropTech",
           sectorTag: "PropTech",
           serviceTag: "Contrôle de gestion",
@@ -151,7 +151,7 @@ function getContent(locale: Locale) {
         {
           id: "seasonly",
           company: "Seasonly",
-          logo: "/images/logos/logo-seasonly.jpg",
+          logo: "/images/logos/logo-seasonly.webp",
           sector: "E-commerce",
           sectorTag: "E-commerce",
           serviceTag: "Trésorerie",
@@ -177,7 +177,7 @@ function getContent(locale: Locale) {
         {
           id: "neat",
           company: "Neat",
-          logo: "/images/logos/logo-neat.jpg",
+          logo: "/images/logos/logo-neat.webp",
           sector: "FoodTech",
           sectorTag: "FoodTech",
           serviceTag: "DAF externalisé",
@@ -203,7 +203,7 @@ function getContent(locale: Locale) {
         {
           id: "yego",
           company: "Yego",
-          logo: "/images/logos/logo-yego.jpg",
+          logo: "/images/logos/logo-yego.webp",
           sector: "Mobilité",
           sectorTag: "Mobilité",
           serviceTag: "Comptabilité",
@@ -295,7 +295,7 @@ function getContent(locale: Locale) {
         {
           id: "happyscribe",
           company: "HappyScribe",
-          logo: "/images/logos/logo-happyscribe.jpg",
+          logo: "/images/logos/logo-happyscribe.webp",
           sector: "SaaS / Tech",
           sectorTag: "SaaS / Tech",
           serviceTag: "Outsourced CFO",
@@ -321,7 +321,7 @@ function getContent(locale: Locale) {
         {
           id: "surfe",
           company: "Surfe",
-          logo: "/images/logos/logo-surfe.jpg",
+          logo: "/images/logos/logo-surfe.webp",
           sector: "SaaS / Tech",
           sectorTag: "SaaS / Tech",
           serviceTag: "Fundraising",
@@ -347,7 +347,7 @@ function getContent(locale: Locale) {
         {
           id: "ukio",
           company: "Ukio",
-          logo: "/images/logos/logo-ukio.jpg",
+          logo: "/images/logos/logo-ukio.webp",
           sector: "PropTech",
           sectorTag: "PropTech",
           serviceTag: "Management control",
@@ -373,7 +373,7 @@ function getContent(locale: Locale) {
         {
           id: "seasonly",
           company: "Seasonly",
-          logo: "/images/logos/logo-seasonly.jpg",
+          logo: "/images/logos/logo-seasonly.webp",
           sector: "E-commerce",
           sectorTag: "E-commerce",
           serviceTag: "Treasury",
@@ -399,7 +399,7 @@ function getContent(locale: Locale) {
         {
           id: "neat",
           company: "Neat",
-          logo: "/images/logos/logo-neat.jpg",
+          logo: "/images/logos/logo-neat.webp",
           sector: "FoodTech",
           sectorTag: "FoodTech",
           serviceTag: "Outsourced CFO",
@@ -425,7 +425,7 @@ function getContent(locale: Locale) {
         {
           id: "yego",
           company: "Yego",
-          logo: "/images/logos/logo-yego.jpg",
+          logo: "/images/logos/logo-yego.webp",
           sector: "Mobility",
           sectorTag: "Mobilité",
           serviceTag: "Accounting",
@@ -517,7 +517,7 @@ function getContent(locale: Locale) {
         {
           id: "happyscribe",
           company: "HappyScribe",
-          logo: "/images/logos/logo-happyscribe.jpg",
+          logo: "/images/logos/logo-happyscribe.webp",
           sector: "SaaS / Tech",
           sectorTag: "SaaS / Tech",
           serviceTag: "DAF externalizado",
@@ -543,7 +543,7 @@ function getContent(locale: Locale) {
         {
           id: "surfe",
           company: "Surfe",
-          logo: "/images/logos/logo-surfe.jpg",
+          logo: "/images/logos/logo-surfe.webp",
           sector: "SaaS / Tech",
           sectorTag: "SaaS / Tech",
           serviceTag: "Levantamiento de fondos",
@@ -569,7 +569,7 @@ function getContent(locale: Locale) {
         {
           id: "ukio",
           company: "Ukio",
-          logo: "/images/logos/logo-ukio.jpg",
+          logo: "/images/logos/logo-ukio.webp",
           sector: "PropTech",
           sectorTag: "PropTech",
           serviceTag: "Control de gestión",
@@ -595,7 +595,7 @@ function getContent(locale: Locale) {
         {
           id: "seasonly",
           company: "Seasonly",
-          logo: "/images/logos/logo-seasonly.jpg",
+          logo: "/images/logos/logo-seasonly.webp",
           sector: "E-commerce",
           sectorTag: "E-commerce",
           serviceTag: "Tesorería",
@@ -621,7 +621,7 @@ function getContent(locale: Locale) {
         {
           id: "neat",
           company: "Neat",
-          logo: "/images/logos/logo-neat.jpg",
+          logo: "/images/logos/logo-neat.webp",
           sector: "FoodTech",
           sectorTag: "FoodTech",
           serviceTag: "DAF externalizado",
@@ -647,7 +647,7 @@ function getContent(locale: Locale) {
         {
           id: "yego",
           company: "Yego",
-          logo: "/images/logos/logo-yego.jpg",
+          logo: "/images/logos/logo-yego.webp",
           sector: "Movilidad",
           sectorTag: "Mobilité",
           serviceTag: "Contabilidad",
