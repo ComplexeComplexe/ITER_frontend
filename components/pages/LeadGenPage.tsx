@@ -741,10 +741,13 @@ export default function LeadGenPage({
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError("");
+
     try {
       const stepLabels = ["stage", "challenge", "teamSize", "urgency"];
       const quizAnswers: Record<string, string> = {};
@@ -767,30 +770,39 @@ export default function LeadGenPage({
           },
         }),
       });
-      const result = await res.json();
-      if (!result.success) {
-        console.error("Resend error:", result);
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        throw new Error(body?.details || "Server error");
+      }
+
+      setIsSubmitted(true);
+
+      if (typeof window !== "undefined") {
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).dataLayer.push({
+          event: "lead_form_submitted",
+          form_name: "diagnostic_financier",
+          lead_source: "profil_page",
+          lead_stage: answers[0] || "",
+          lead_challenge: answers[1] || "",
+          lead_team_size: answers[2] || "",
+          lead_urgency: answers[3] || "",
+          lead_email: formData.email,
+          lead_company: formData.company,
+        });
       }
     } catch (err) {
       console.error("Failed to send lead:", err);
-    }
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    // --- Google Ads Conversion Tracking via GTM dataLayer ---
-    if (typeof window !== "undefined") {
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      (window as any).dataLayer.push({
-        event: "lead_form_submitted",
-        form_name: "diagnostic_financier",
-        lead_source: "profil_page",
-        lead_stage: answers[0] || "",
-        lead_challenge: answers[1] || "",
-        lead_team_size: answers[2] || "",
-        lead_urgency: answers[3] || "",
-        lead_email: formData.email,
-        lead_company: formData.company,
-      });
+      setSubmitError(
+        locale === "fr"
+          ? "Une erreur est survenue. Veuillez réessayer ou nous contacter par email."
+          : locale === "es"
+            ? "Se ha producido un error. Inténtelo de nuevo o contáctenos por email."
+            : "Something went wrong. Please try again or contact us by email.",
+      );
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -1268,25 +1280,37 @@ export default function LeadGenPage({
                         />
                       </div>
 
+                      {submitError && (
+                        <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
+                          {submitError}
+                        </div>
+                      )}
+
                       {/* Navigation */}
                       <div className="flex justify-between items-center pt-4">
                         <button
                           type="button"
                           onClick={handlePrev}
-                          className="inline-flex items-center gap-2 text-foreground/50 hover:text-iter-violet transition-colors font-medium"
+                          disabled={isSubmitting}
+                          className="inline-flex items-center gap-2 text-foreground/50 hover:text-iter-violet transition-colors font-medium disabled:opacity-50"
                         >
                           <ArrowLeft size={16} />
                           {t.form.prev}
                         </button>
                         <button
                           type="submit"
-                          className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold text-base hover:shadow-xl hover:shadow-iter-chartreuse/20 transition-all duration-300 group"
+                          disabled={isSubmitting}
+                          className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold text-base hover:shadow-xl hover:shadow-iter-chartreuse/20 transition-all duration-300 group disabled:opacity-60"
                         >
-                          {t.form.contactStep.submit}
-                          <ArrowRight
-                            size={16}
-                            className="group-hover:translate-x-1 transition-transform"
-                          />
+                          {isSubmitting
+                            ? (locale === "fr" ? "Envoi…" : locale === "es" ? "Enviando…" : "Sending…")
+                            : t.form.contactStep.submit}
+                          {!isSubmitting && (
+                            <ArrowRight
+                              size={16}
+                              className="group-hover:translate-x-1 transition-transform"
+                            />
+                          )}
                         </button>
                       </div>
 
