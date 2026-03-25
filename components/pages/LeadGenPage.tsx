@@ -646,12 +646,12 @@ const content: Record<
 /* ─────────────────────────── Logos ─────────────────────────── */
 
 const clientLogos = [
-  { name: "HappyScribe", src: "/images/logos/logo-happyscribe.jpg" },
-  { name: "Surfe", src: "/images/logos/logo-surfe.jpg" },
-  { name: "Ukio", src: "/images/logos/logo-ukio.jpg" },
-  { name: "Seasonly", src: "/images/logos/logo-seasonly.jpg" },
-  { name: "Neat", src: "/images/logos/logo-neat.jpg" },
-  { name: "Yego", src: "/images/logos/logo-yego.jpg" },
+  { name: "HappyScribe", src: "/images/logos/logo-happyscribe.webp" },
+  { name: "Surfe", src: "/images/logos/logo-surfe.webp" },
+  { name: "Ukio", src: "/images/logos/logo-ukio.webp" },
+  { name: "Seasonly", src: "/images/logos/logo-seasonly.webp" },
+  { name: "Neat", src: "/images/logos/logo-neat.webp" },
+  { name: "Yego", src: "/images/logos/logo-yego.webp" },
 ];
 
 /* ─────────────────────────── Step Icon Helper ─────────────────────────── */

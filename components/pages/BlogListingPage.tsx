@@ -33,18 +33,18 @@ const content: Record<
       {
         title: "Les 10 outils pour les CFOs en start-up",
         href: "/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
-        image: "/images/blog/les-10-outils-cfos.jpg",
+        image: "/images/blog/les-10-outils-cfos.webp",
       },
       {
         title:
           "Flux de trésorerie : définition et importance pour les entreprises",
         href: "/ressources/blog/flux-de-tresorerie",
-        image: "/images/blog/flux-de-tresorerie.jpg",
+        image: "/images/blog/flux-de-tresorerie.webp",
       },
       {
         title: "La modernisation du rôle de CFO",
         href: "/ressources/blog/la-modernisation-du-role-de-cfo",
-        image: "/images/blog/modernisation-cfo.jpg",
+        image: "/images/blog/modernisation-cfo.webp",
       },
     ],
   },
@@ -61,17 +61,17 @@ const content: Record<
         title:
           "AI and automation of repetitive tasks in the Finance department",
         href: "/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
-        image: "/images/blog/ia-automatisation.jpg",
+        image: "/images/blog/ia-automatisation.webp",
       },
       {
         title: "Organizing your finance department",
         href: "/en/ressources/blog/organiser-sa-direction-financiere",
-        image: "/images/blog/organiser-direction-financiere.jpg",
+        image: "/images/blog/organiser-direction-financiere.webp",
       },
       {
         title: "Essential financial tech tools",
         href: "/en/ressources/blog/essentiels-outils-tech-finance",
-        image: "/images/blog/outils-tech-finance.jpg",
+        image: "/images/blog/outils-tech-finance.webp",
       },
     ],
   },
@@ -88,17 +88,17 @@ const content: Record<
         title:
           "IA y automatización de tareas repetitivas en el departamento de Finanzas",
         href: "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
-        image: "/images/blog/ia-automatisation.jpg",
+        image: "/images/blog/ia-automatisation.webp",
       },
       {
         title: "Organizar su departamento financiero",
         href: "/es/ressources/blog/organiser-sa-direction-financiere",
-        image: "/images/blog/organiser-direction-financiere.jpg",
+        image: "/images/blog/organiser-direction-financiere.webp",
       },
       {
         title: "Las herramientas tecnológicas esenciales para las finanzas",
         href: "/es/ressources/blog/essentiels-outils-tech-finance",
-        image: "/images/blog/outils-tech-finance.jpg",
+        image: "/images/blog/outils-tech-finance.webp",
       },
     ],
   },
@@ -130,7 +130,7 @@ export default function BlogListingPage({
           return {
             title: a.title,
             href: getBlogHref(locale, a.slug),
-            image: imageUrl || "/images/blog/placeholder.jpg",
+            image: imageUrl || "/images/blog/placeholder.webp",
           };
         })
       : t.cards;

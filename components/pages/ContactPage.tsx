@@ -102,17 +102,17 @@ const contactPageText = {
 } as const;
 
 const clientLogos = [
-  { src: "/images/logos/logo-happyscribe.jpg", alt: "Happy Scribe" },
-  { src: "/images/logos/logo-impact.jpg", alt: "IMPACT+" },
-  { src: "/images/logos/logo-mitiga.jpg", alt: "Mitiga Solutions" },
-  { src: "/images/logos/logo-neat.jpg", alt: "Neat" },
-  { src: "/images/logos/logo-nuubb.jpg", alt: "NuuBB" },
-  { src: "/images/logos/logo-opitdigital.jpg", alt: "OptiDigital" },
-  { src: "/images/logos/logo-seasonly.jpg", alt: "Seasonly" },
-  { src: "/images/logos/logo-solamente.jpg", alt: "Solamente" },
-  { src: "/images/logos/logo-surfe.jpg", alt: "Surfe" },
-  { src: "/images/logos/logo-ukio.jpg", alt: "Ukio" },
-  { src: "/images/logos/logo-yego.jpg", alt: "Yego" },
+  { src: "/images/logos/logo-happyscribe.webp", alt: "Happy Scribe" },
+  { src: "/images/logos/logo-impact.webp", alt: "IMPACT+" },
+  { src: "/images/logos/logo-mitiga.webp", alt: "Mitiga Solutions" },
+  { src: "/images/logos/logo-neat.webp", alt: "Neat" },
+  { src: "/images/logos/logo-nuubb.webp", alt: "NuuBB" },
+  { src: "/images/logos/logo-opitdigital.webp", alt: "OptiDigital" },
+  { src: "/images/logos/logo-seasonly.webp", alt: "Seasonly" },
+  { src: "/images/logos/logo-solamente.webp", alt: "Solamente" },
+  { src: "/images/logos/logo-surfe.webp", alt: "Surfe" },
+  { src: "/images/logos/logo-ukio.webp", alt: "Ukio" },
+  { src: "/images/logos/logo-yego.webp", alt: "Yego" },
 ];
 
 /* ─── Main Component ─── */

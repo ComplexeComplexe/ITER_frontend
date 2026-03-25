@@ -63,7 +63,7 @@ export default function Header({
         {/* Logo */}
         <Link href={homePath} className="flex items-center gap-2 group relative z-10 min-w-0">
           <Image
-            src="/images/logos/logo-hero.png"
+            src="/images/logos/logo-hero.webp"
             alt="Iter Advisors"
             width={140}
             height={16}
