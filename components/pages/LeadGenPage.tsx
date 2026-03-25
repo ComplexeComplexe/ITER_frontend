@@ -752,35 +752,24 @@ export default function LeadGenPage({
         if (stepLabels[i]) quizAnswers[stepLabels[i]] = answer;
       });
 
-      // --- Web3Forms : envoi direct vers contact@iteradvisors.com ---
-      const web3Payload = {
-        access_key: "997ec76b-88d6-430d-82aa-4b464bf2dc93",
-        subject: `Nouveau lead diagnostic - ${formData.firstName} ${formData.lastName} - ${formData.company || "N/A"}`,
-        from_name: "Iter Advisors - Formulaire Profil",
-        // Coordonnees
-        "Prenom": formData.firstName,
-        "Nom": formData.lastName,
-        "Entreprise": formData.company,
-        "Email": formData.email,
-        "Telephone": formData.phone,
-        // Reponses du diagnostic
-        "Stade de developpement": quizAnswers.stage || "-",
-        "Enjeu financier": quizAnswers.challenge || "-",
-        "Taille equipe": quizAnswers.teamSize || "-",
-        "Urgence": quizAnswers.urgency || "-",
-        // Meta
-        "Source": "Page /profil - Diagnostic financier",
-        replyto: formData.email,
-      };
-
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/lead", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(web3Payload),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source: "profil",
+          data: {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            company: formData.company,
+            email: formData.email,
+            phone: formData.phone,
+            ...quizAnswers,
+          },
+        }),
       });
       const result = await res.json();
       if (!result.success) {
-        console.error("Web3Forms error:", result);
+        console.error("Resend error:", result);
       }
     } catch (err) {
       console.error("Failed to send lead:", err);

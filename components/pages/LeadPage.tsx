@@ -47,18 +47,37 @@ const leadContent = {
     ],
     solutionTitle: "Iter Advisors, votre DAF externalisé",
     solutionItems: [
-      { icon: "chart", title: "Visibilité cash-flow", desc: "Projection à 12 mois, mise à jour mensuelle" },
-      { icon: "target", title: "Structuration levée de fonds", desc: "Business plan, data room, pitch financier" },
-      { icon: "zap", title: "Pilotage de la rentabilité", desc: "KPIs, reporting, tableaux de bord sur mesure" },
+      {
+        icon: "chart",
+        title: "Visibilité cash-flow",
+        desc: "Projection à 12 mois, mise à jour mensuelle",
+      },
+      {
+        icon: "target",
+        title: "Structuration levée de fonds",
+        desc: "Business plan, data room, pitch financier",
+      },
+      {
+        icon: "zap",
+        title: "Pilotage de la rentabilité",
+        desc: "KPIs, reporting, tableaux de bord sur mesure",
+      },
     ],
     /* Quiz */
     quizTitle: "Votre diagnostic en 4 questions",
-    quizSubtitle: "Découvrez le profil d'accompagnement idéal pour votre entreprise.",
+    quizSubtitle:
+      "Découvrez le profil d'accompagnement idéal pour votre entreprise.",
     steps: [
       {
         question: "Quel est le stade de développement de votre entreprise ?",
         icon: "building",
-        options: ["Pre-Seed / Seed", "Série A", "Série B+", "PME établie (>5 ans)", "Autre"],
+        options: [
+          "Pre-Seed / Seed",
+          "Série A",
+          "Série B+",
+          "PME établie (>5 ans)",
+          "Autre",
+        ],
       },
       {
         question: "Quel est votre enjeu financier prioritaire ?",
@@ -79,7 +98,12 @@ const leadContent = {
       {
         question: "Quand souhaitez-vous qu'un DAF soit opérationnel ?",
         icon: "clock",
-        options: ["Dès que possible", "Dans le mois", "Dans le trimestre", "Je me renseigne"],
+        options: [
+          "Dès que possible",
+          "Dans le mois",
+          "Dans le trimestre",
+          "Je me renseigne",
+        ],
       },
     ],
     contactTitle: "Parfait ! Nous avons l'expert idéal pour vous.",
@@ -92,20 +116,24 @@ const leadContent = {
     submitButton: "Voir mes résultats",
     /* Thank you */
     thankYouTitle: "Merci",
-    thankYouSubtitle: "Votre demande est confirmée. Un expert Iter Advisors vous contactera sous 24h.",
+    thankYouSubtitle:
+      "Votre demande est confirmée. Un expert Iter Advisors vous contactera sous 24h.",
     thankYouCTA: "Réserver un créneau maintenant",
-    thankYouCalendly: "Gagnez du temps : bloquez directement un créneau de 30 min avec un Partner.",
+    thankYouCalendly:
+      "Gagnez du temps : bloquez directement un créneau de 30 min avec un Partner.",
     /* Testimonials */
     testimonialsTitle: "Ce que disent nos clients",
     testimonials: [
       {
-        quote: "Grâce à Iter Advisors, nous avons structuré notre direction financière en 3 mois et sécurisé notre Série A de 2,5M€.",
+        quote:
+          "Grâce à Iter Advisors, nous avons structuré notre direction financière en 3 mois et sécurisé notre Série A de 2,5M€.",
         name: "CEO",
         company: "Startup SaaS B2B",
         stars: 5,
       },
       {
-        quote: "Un vrai bras droit financier. L'équipe Iter nous a permis de passer de 0 à un reporting mensuel complet en 6 semaines.",
+        quote:
+          "Un vrai bras droit financier. L'équipe Iter nous a permis de passer de 0 à un reporting mensuel complet en 6 semaines.",
         name: "Fondateur",
         company: "Scale-up E-commerce",
         stars: 5,
@@ -156,9 +184,21 @@ const leadContent = {
     ],
     solutionTitle: "Iter Advisors, your outsourced CFO",
     solutionItems: [
-      { icon: "chart", title: "Cash flow visibility", desc: "12-month projection, monthly updates" },
-      { icon: "target", title: "Fundraising structuring", desc: "Business plan, data room, financial pitch" },
-      { icon: "zap", title: "Profitability management", desc: "KPIs, reporting, custom dashboards" },
+      {
+        icon: "chart",
+        title: "Cash flow visibility",
+        desc: "12-month projection, monthly updates",
+      },
+      {
+        icon: "target",
+        title: "Fundraising structuring",
+        desc: "Business plan, data room, financial pitch",
+      },
+      {
+        icon: "zap",
+        title: "Profitability management",
+        desc: "KPIs, reporting, custom dashboards",
+      },
     ],
     quizTitle: "Your assessment in 4 questions",
     quizSubtitle: "Discover the ideal support profile for your company.",
@@ -166,7 +206,13 @@ const leadContent = {
       {
         question: "What stage is your company at?",
         icon: "building",
-        options: ["Pre-Seed / Seed", "Series A", "Series B+", "Established SME (>5 years)", "Other"],
+        options: [
+          "Pre-Seed / Seed",
+          "Series A",
+          "Series B+",
+          "Established SME (>5 years)",
+          "Other",
+        ],
       },
       {
         question: "What is your priority financial challenge?",
@@ -187,7 +233,12 @@ const leadContent = {
       {
         question: "When would you like a CFO to be operational?",
         icon: "clock",
-        options: ["As soon as possible", "Within a month", "Within a quarter", "Just exploring"],
+        options: [
+          "As soon as possible",
+          "Within a month",
+          "Within a quarter",
+          "Just exploring",
+        ],
       },
     ],
     contactTitle: "Great! We have the perfect expert for you.",
@@ -199,19 +250,22 @@ const leadContent = {
     fieldCompany: "Company name",
     submitButton: "See my results",
     thankYouTitle: "Thank you",
-    thankYouSubtitle: "Your request is confirmed. An Iter Advisors expert will contact you within 24h.",
+    thankYouSubtitle:
+      "Your request is confirmed. An Iter Advisors expert will contact you within 24h.",
     thankYouCTA: "Book a slot now",
     thankYouCalendly: "Save time: book a 30-min slot directly with a Partner.",
     testimonialsTitle: "What our clients say",
     testimonials: [
       {
-        quote: "Thanks to Iter Advisors, we structured our financial management in 3 months and secured our €2.5M Series A.",
+        quote:
+          "Thanks to Iter Advisors, we structured our financial management in 3 months and secured our €2.5M Series A.",
         name: "CEO",
         company: "B2B SaaS Startup",
         stars: 5,
       },
       {
-        quote: "A true financial right hand. The Iter team helped us go from zero to complete monthly reporting in 6 weeks.",
+        quote:
+          "A true financial right hand. The Iter team helped us go from zero to complete monthly reporting in 6 weeks.",
         name: "Founder",
         company: "E-commerce Scale-up",
         stars: 5,
@@ -261,9 +315,21 @@ const leadContent = {
     ],
     solutionTitle: "Iter Advisors, su DAF externalizado",
     solutionItems: [
-      { icon: "chart", title: "Visibilidad cash-flow", desc: "Proyección a 12 meses, actualización mensual" },
-      { icon: "target", title: "Estructuración de rondas", desc: "Business plan, data room, pitch financiero" },
-      { icon: "zap", title: "Pilotaje de la rentabilidad", desc: "KPIs, reporting, cuadros de mando a medida" },
+      {
+        icon: "chart",
+        title: "Visibilidad cash-flow",
+        desc: "Proyección a 12 meses, actualización mensual",
+      },
+      {
+        icon: "target",
+        title: "Estructuración de rondas",
+        desc: "Business plan, data room, pitch financiero",
+      },
+      {
+        icon: "zap",
+        title: "Pilotaje de la rentabilidad",
+        desc: "KPIs, reporting, cuadros de mando a medida",
+      },
     ],
     quizTitle: "Su diagnóstico en 4 preguntas",
     quizSubtitle: "Descubra el perfil de acompañamiento ideal para su empresa.",
@@ -271,7 +337,13 @@ const leadContent = {
       {
         question: "¿En qué etapa se encuentra su empresa?",
         icon: "building",
-        options: ["Pre-Seed / Seed", "Serie A", "Serie B+", "PYME establecida (>5 años)", "Otro"],
+        options: [
+          "Pre-Seed / Seed",
+          "Serie A",
+          "Serie B+",
+          "PYME establecida (>5 años)",
+          "Otro",
+        ],
       },
       {
         question: "¿Cuál es su desafío financiero prioritario?",
@@ -292,7 +364,12 @@ const leadContent = {
       {
         question: "¿Cuándo desea que un DAF esté operativo?",
         icon: "clock",
-        options: ["Lo antes posible", "En el mes", "En el trimestre", "Solo me informo"],
+        options: [
+          "Lo antes posible",
+          "En el mes",
+          "En el trimestre",
+          "Solo me informo",
+        ],
       },
     ],
     contactTitle: "¡Perfecto! Tenemos al experto ideal para usted.",
@@ -304,19 +381,23 @@ const leadContent = {
     fieldCompany: "Nombre de la empresa",
     submitButton: "Ver mis resultados",
     thankYouTitle: "Gracias",
-    thankYouSubtitle: "Su solicitud está confirmada. Un experto de Iter Advisors le contactará en 24h.",
+    thankYouSubtitle:
+      "Su solicitud está confirmada. Un experto de Iter Advisors le contactará en 24h.",
     thankYouCTA: "Reservar un horario ahora",
-    thankYouCalendly: "Ahorre tiempo: reserve directamente un espacio de 30 min con un Partner.",
+    thankYouCalendly:
+      "Ahorre tiempo: reserve directamente un espacio de 30 min con un Partner.",
     testimonialsTitle: "Lo que dicen nuestros clientes",
     testimonials: [
       {
-        quote: "Gracias a Iter Advisors, estructuramos nuestra dirección financiera en 3 meses y aseguramos nuestra Serie A de 2,5M€.",
+        quote:
+          "Gracias a Iter Advisors, estructuramos nuestra dirección financiera en 3 meses y aseguramos nuestra Serie A de 2,5M€.",
         name: "CEO",
         company: "Startup SaaS B2B",
         stars: 5,
       },
       {
-        quote: "Un verdadero brazo derecho financiero. El equipo Iter nos permitió pasar de cero a un reporting mensual completo en 6 semanas.",
+        quote:
+          "Un verdadero brazo derecho financiero. El equipo Iter nos permitió pasar de cero a un reporting mensual completo en 6 semanas.",
         name: "Fundador",
         company: "Scale-up E-commerce",
         stars: 5,
@@ -369,21 +450,36 @@ const clientLogos = [
 function StepIcon({ name, className }: { name: string; className?: string }) {
   const props = { size: 28, className: className || "text-iter-violet" };
   switch (name) {
-    case "building": return <Building2 {...props} />;
-    case "target": return <Target {...props} />;
-    case "users": return <Users {...props} />;
-    case "clock": return <Clock {...props} />;
-    default: return <Building2 {...props} />;
+    case "building":
+      return <Building2 {...props} />;
+    case "target":
+      return <Target {...props} />;
+    case "users":
+      return <Users {...props} />;
+    case "clock":
+      return <Clock {...props} />;
+    default:
+      return <Building2 {...props} />;
   }
 }
 
-function SolutionIcon({ name, className }: { name: string; className?: string }) {
+function SolutionIcon({
+  name,
+  className,
+}: {
+  name: string;
+  className?: string;
+}) {
   const props = { size: 24, className: className || "text-iter-chartreuse" };
   switch (name) {
-    case "chart": return <BarChart3 {...props} />;
-    case "target": return <Target {...props} />;
-    case "zap": return <Zap {...props} />;
-    default: return <TrendingUp {...props} />;
+    case "chart":
+      return <BarChart3 {...props} />;
+    case "target":
+      return <Target {...props} />;
+    case "zap":
+      return <Zap {...props} />;
+    default:
+      return <TrendingUp {...props} />;
   }
 }
 
@@ -500,8 +596,8 @@ export default function LeadPage({
     currentStep < 0
       ? 0
       : currentStep >= totalSteps
-      ? 100
-      : ((currentStep + 1) / (totalSteps + 1)) * 100;
+        ? 100
+        : ((currentStep + 1) / (totalSteps + 1)) * 100;
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
@@ -510,9 +606,27 @@ export default function LeadPage({
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-[0.04]">
           <svg className="w-full h-full" viewBox="0 0 1440 900" fill="none">
-            <circle cx="720" cy="450" r="400" stroke="white" strokeWidth="0.5" />
-            <circle cx="720" cy="450" r="300" stroke="white" strokeWidth="0.3" />
-            <circle cx="720" cy="450" r="200" stroke="white" strokeWidth="0.2" />
+            <circle
+              cx="720"
+              cy="450"
+              r="400"
+              stroke="white"
+              strokeWidth="0.5"
+            />
+            <circle
+              cx="720"
+              cy="450"
+              r="300"
+              stroke="white"
+              strokeWidth="0.3"
+            />
+            <circle
+              cx="720"
+              cy="450"
+              r="200"
+              stroke="white"
+              strokeWidth="0.2"
+            />
             {[...Array(8)].map((_, i) => (
               <line
                 key={i}
@@ -694,7 +808,9 @@ export default function LeadPage({
                     </div>
                     <div>
                       <h3 className="font-bold text-base mb-1">{item.title}</h3>
-                      <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                      <p className="text-white/60 text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -725,10 +841,15 @@ export default function LeadPage({
               <div className="mb-8">
                 <div className="flex justify-between text-sm text-gray-400 mb-2">
                   <span>
-                    {t.steps[Math.min(currentStep, totalSteps - 1)]?.question.split(" ").slice(0, 3).join(" ")}...
+                    {t.steps[Math.min(currentStep, totalSteps - 1)]?.question
+                      .split(" ")
+                      .slice(0, 3)
+                      .join(" ")}
+                    ...
                   </span>
                   <span>
-                    {Math.min(currentStep + 1, totalSteps + 1)} {t.stepOf} {totalSteps + 1}
+                    {Math.min(currentStep + 1, totalSteps + 1)} {t.stepOf}{" "}
+                    {totalSteps + 1}
                   </span>
                 </div>
                 <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
@@ -842,7 +963,10 @@ export default function LeadPage({
                           required
                           value={formData.firstName}
                           onChange={(e) =>
-                            setFormData({ ...formData, firstName: e.target.value })
+                            setFormData({
+                              ...formData,
+                              firstName: e.target.value,
+                            })
                           }
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-iter-violet focus:ring-2 focus:ring-iter-violet/20 outline-none transition-all text-gray-800"
                         />
@@ -856,7 +980,10 @@ export default function LeadPage({
                           required
                           value={formData.lastName}
                           onChange={(e) =>
-                            setFormData({ ...formData, lastName: e.target.value })
+                            setFormData({
+                              ...formData,
+                              lastName: e.target.value,
+                            })
                           }
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-iter-violet focus:ring-2 focus:ring-iter-violet/20 outline-none transition-all text-gray-800"
                         />
@@ -959,8 +1086,12 @@ export default function LeadPage({
                   <h3 className="text-3xl font-bold text-iter-dark mb-3">
                     {t.thankYouTitle}, {formData.firstName} !
                   </h3>
-                  <p className="text-gray-500 text-lg mb-8">{t.thankYouSubtitle}</p>
-                  <p className="text-gray-400 text-sm mb-6">{t.thankYouCalendly}</p>
+                  <p className="text-gray-500 text-lg mb-8">
+                    {t.thankYouSubtitle}
+                  </p>
+                  <p className="text-gray-400 text-sm mb-6">
+                    {t.thankYouCalendly}
+                  </p>
                   <Link
                     href={BOOKING_URL}
                     target="_blank"
@@ -1068,7 +1199,13 @@ export default function LeadPage({
       <section className="py-24 lg:py-32 bg-iter-dark relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]">
           <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none">
-            <circle cx="720" cy="300" r="300" stroke="white" strokeWidth="0.5" />
+            <circle
+              cx="720"
+              cy="300"
+              r="300"
+              stroke="white"
+              strokeWidth="0.5"
+            />
           </svg>
         </div>
         <div className="container relative z-10 text-center">
@@ -1084,7 +1221,10 @@ export default function LeadPage({
               setAnswers([]);
               setSubmitted(false);
               setTimeout(() => {
-                quizRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+                quizRef.current?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
               }, 100);
             }}
             className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-full bg-iter-chartreuse text-iter-dark font-bold text-lg hover:shadow-[0_0_30px_oklch(0.91_0.22_120/0.4)] transition-all duration-300 group"

@@ -539,7 +539,6 @@ export default function QualificationPage({
   });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
   const formRef = useRef<HTMLDivElement>(null);
 
   const totalSections = t.sections.length;
@@ -575,50 +574,9 @@ export default function QualificationPage({
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitError(null);
-
-    try {
-      const normalizedAnswers: Record<string, string> = Object.fromEntries(
-        Object.entries(answers).map(([key, value]) => [
-          key,
-          Array.isArray(value) ? value.join(", ") : value,
-        ]),
-      );
-
-      const payload = {
-        source: "profil",
-        data: {
-          ...normalizedAnswers,
-          ...formData,
-          locale,
-        },
-      };
-
-      const response = await fetch("/api/lead", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-
-      if (!response.ok) {
-        throw new Error("Lead API returned a non-OK response");
-      }
-
-      setSubmitted(true);
-    } catch (error) {
-      console.error("Failed to submit qualification form", error);
-      setSubmitError(
-        locale === "fr"
-          ? "Une erreur est survenue lors de l'envoi. Merci de reessayer."
-          : locale === "en"
-            ? "An error occurred while sending. Please try again."
-            : "Se produjo un error durante el envio. Intentalo de nuevo.",
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    setIsSubmitting(false);
+    setSubmitted(true);
   };
 
   const progressPercent = isContactStep
@@ -975,11 +933,6 @@ export default function QualificationPage({
                         </>
                       )}
                     </button>
-                    {submitError && (
-                      <p className="text-sm text-red-500 text-center mt-3">
-                        {submitError}
-                      </p>
-                    )}
 
                     <p className="text-xs text-gray-400 text-center mt-3">
                       {t.privacyNote}{" "}
