@@ -740,11 +740,69 @@ export default function LeadGenPage({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, this would send data to an API
-    console.log("Lead data:", { answers, formData });
+    setIsSubmitting(true);
+    try {
+      const stepLabels = ["stage", "challenge", "teamSize", "urgency"];
+      const quizAnswers: Record<string, string> = {};
+      answers.forEach((answer, i) => {
+        if (stepLabels[i]) quizAnswers[stepLabels[i]] = answer;
+      });
+
+      // --- Web3Forms : envoi direct vers contact@iteradvisors.com ---
+      const web3Payload = {
+        access_key: "997ec76b-88d6-430d-82aa-4b464bf2dc93",
+        subject: `Nouveau lead diagnostic - ${formData.firstName} ${formData.lastName} - ${formData.company || "N/A"}`,
+        from_name: "Iter Advisors - Formulaire Profil",
+        // Coordonnees
+        "Prenom": formData.firstName,
+        "Nom": formData.lastName,
+        "Entreprise": formData.company,
+        "Email": formData.email,
+        "Telephone": formData.phone,
+        // Reponses du diagnostic
+        "Stade de developpement": quizAnswers.stage || "-",
+        "Enjeu financier": quizAnswers.challenge || "-",
+        "Taille equipe": quizAnswers.teamSize || "-",
+        "Urgence": quizAnswers.urgency || "-",
+        // Meta
+        "Source": "Page /profil - Diagnostic financier",
+        replyto: formData.email,
+      };
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(web3Payload),
+      });
+      const result = await res.json();
+      if (!result.success) {
+        console.error("Web3Forms error:", result);
+      }
+    } catch (err) {
+      console.error("Failed to send lead:", err);
+    }
+    setIsSubmitting(false);
     setIsSubmitted(true);
+
+    // --- Google Ads Conversion Tracking via GTM dataLayer ---
+    if (typeof window !== "undefined") {
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({
+        event: "lead_form_submitted",
+        form_name: "diagnostic_financier",
+        lead_source: "profil_page",
+        lead_stage: answers[0] || "",
+        lead_challenge: answers[1] || "",
+        lead_team_size: answers[2] || "",
+        lead_urgency: answers[3] || "",
+        lead_email: formData.email,
+        lead_company: formData.company,
+      });
+    }
   };
 
   /* ─── FAQ state ─── */
