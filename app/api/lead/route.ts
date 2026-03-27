@@ -17,8 +17,7 @@ function getResend(): Resend {
 
 const TO = process.env.LEAD_RECIPIENT_EMAIL || "contact@iteradvisors.com";
 const FROM = "Iter Advisors <leads@crm.iteradvisors.com>";
-const CRM_BASE_URL =
-  process.env.CRM_BASE_URL || "https://crm.iteradvisors.com";
+const CRM_BASE_URL = process.env.CRM_BASE_URL || "https://crm.iteradvisors.com";
 
 function getSigningSecret(): Uint8Array {
   const raw = process.env.LEAD_SIGNING_SECRET;
@@ -86,10 +85,7 @@ const FIELD_LABELS: Record<string, string> = {
   urgency: "Urgence",
 };
 
-function buildSubject(
-  source: string,
-  data: Record<string, string>,
-): string {
+function buildSubject(source: string, data: Record<string, string>): string {
   const name = [data.firstName, data.lastName].filter(Boolean).join(" ");
   const company = data.company || "";
   const who = [name, company].filter(Boolean).join(" — ");
@@ -137,10 +133,7 @@ function buildHtmlEmail(
     .filter(([, v]) => v)
     .map(
       ([k, v]) =>
-        `<tr>
-          <td style="padding:6px 12px 6px 0;color:#6b7280;font-size:14px;white-space:nowrap;vertical-align:top;">${FIELD_LABELS[k] || k}</td>
-          <td style="padding:6px 0;font-size:14px;color:#111827;">${v}</td>
-        </tr>`,
+        `<li>${FIELD_LABELS[k] || k}: ${v}</li>`,
     )
     .join("");
 
@@ -148,31 +141,14 @@ function buildHtmlEmail(
 <!DOCTYPE html>
 <html lang="fr">
 <head><meta charset="utf-8"></head>
-<body style="margin:0;padding:0;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-  <div style="max-width:600px;margin:32px auto;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-    
-    <div style="background:#1e1b4b;padding:24px 32px;">
-      <h1 style="margin:0;color:#ffffff;font-size:20px;font-weight:600;">Nouveau lead</h1>
-      <p style="margin:4px 0 0;color:#c4b5fd;font-size:14px;">${buildSourceLabel(source)} · ${date}</p>
-    </div>
-
-    <div style="padding:24px 32px;">
-      <table style="width:100%;border-collapse:collapse;">
-        ${rows}
-      </table>
-    </div>
-
-    <div style="padding:0 32px 32px;text-align:center;">
-      <a href="${acceptUrl}" 
-         style="display:inline-block;padding:14px 32px;background:#2563eb;color:#ffffff;font-size:15px;font-weight:600;text-decoration:none;border-radius:8px;">
-        ✅ Ajouter au CRM
-      </a>
-      <p style="margin:12px 0 0;font-size:12px;color:#9ca3af;">
-        Ce lien est valable 7 jours. Le lead ne sera ajouté au CRM que si vous cliquez.
-      </p>
-    </div>
-
-  </div>
+<body>
+  <h1>Nouveau lead</h1>
+  <p>${buildSourceLabel(source)} · ${date}</p>
+  <ul>
+    ${rows}
+  </ul>
+  <p><a href="${acceptUrl}">✅ Ajouter au CRM</a></p>
+  <p>Ce lien est valable 7 jours. Le lead ne sera ajouté au CRM que si vous cliquez.</p>
 </body>
 </html>`.trim();
 }
