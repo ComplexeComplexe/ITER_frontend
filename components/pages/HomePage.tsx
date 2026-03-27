@@ -37,7 +37,7 @@ import {
 import { Locale } from "@/lib/i18n";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { getHomeContent } from "@/lib/content/home";
-import { faqPageSchema, financialServiceSchema } from "@/lib/schemas";
+import { faqPageSchema } from "@/lib/schemas";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import type { StrapiTeamMember, CmsNavItem, StrapiHomepage } from "@/lib/strapi";
 import { strapiMediaUrl } from "@/lib/strapi";
@@ -51,12 +51,22 @@ function AnimatedCounter({
   target: number;
   suffix?: string;
 }) {
-  const [count, setCount] = useState(0);
+  // SSR fallback: render the real target value on the server so Google
+  // never indexes "0 Entreprises accompagnees". The client will animate
+  // from 0 to target after hydration when the element enters the viewport.
+  const [count, setCount] = useState(target);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
-    if (!isInView) return;
+    // Reset to 0 on mount so the animation can play from 0 -> target
+    setCount(0);
+  }, []);
+
+  useEffect(() => {
+    if (!isInView || hasAnimated) return;
+    setHasAnimated(true);
     const duration = 1500;
     const startTime = Date.now();
     const step = () => {
@@ -67,7 +77,7 @@ function AnimatedCounter({
       if (progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
-  }, [isInView, target]);
+  }, [isInView, target, hasAnimated]);
 
   return (
     <span ref={ref}>
@@ -302,13 +312,7 @@ export default function HomePage({
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-      {/* ═══ JSON-LD Schemas ═══ */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(financialServiceSchema()),
-        }}
-      />
+      {/* ═══ JSON-LD Schema: FAQPage ═══ */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

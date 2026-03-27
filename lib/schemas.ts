@@ -86,7 +86,13 @@ export function financialServiceSchema(): Record<string, unknown> {
     url: `${BASE}/`,
     description:
       "Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Présent à Barcelone, Paris et Toulouse.",
-    telephone: "",
+    email: "contact@iteradvisors.com",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      email: "contact@iteradvisors.com",
+      availableLanguage: ["French", "English", "Spanish"],
+    },
     address: [
       {
         "@type": "PostalAddress",

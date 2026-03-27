@@ -5,6 +5,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import StrapiBlocks from "@/components/StrapiBlocks";
 import type { StrapiServiceSinglePage, CmsNavItem } from "@/lib/strapi";
+import { serviceSchema } from "@/lib/schemas";
 
 const breadcrumbsByLocale: Record<
   Locale,
@@ -19,6 +20,7 @@ interface ServiceSinglePageProps {
   locale: Locale;
   page: StrapiServiceSinglePage;
   breadcrumbTitle: string;
+  slug?: string;
   cmsNavigation?: CmsNavItem[];
 }
 
@@ -26,12 +28,30 @@ export default function ServiceSinglePage({
   locale,
   page,
   breadcrumbTitle,
+  slug,
   cmsNavigation,
 }: ServiceSinglePageProps) {
   const bc = breadcrumbsByLocale[locale];
 
+  // Build the canonical URL for this service page
+  const basePath = locale === "fr" ? `/services` : `/${locale}/services`;
+  const serviceUrl = `${basePath}/${slug || ""}`;
+
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
+      {/* Service schema.org/Service JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            serviceSchema({
+              name: page.heroTitle || breadcrumbTitle,
+              description: page.heroSubtitle || breadcrumbTitle,
+              url: serviceUrl,
+            })
+          ),
+        }}
+      />
       <section className="bg-background pt-32 pb-16">
         <div className="container flex flex-col items-center text-center">
           <Breadcrumb

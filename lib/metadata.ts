@@ -53,11 +53,20 @@ export function buildMetadata({
       siteName: "Iter Advisors",
       locale: localeMap[locale],
       type: "website",
+      images: [
+        {
+          url: `${base}/images/og-default.webp`,
+          width: 1200,
+          height: 630,
+          alt: "Iter Advisors - DAF & DRH externalis\u00e9s",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [`${base}/images/og-default.webp`],
     },
     icons: {
       icon: [

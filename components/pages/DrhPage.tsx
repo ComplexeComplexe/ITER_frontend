@@ -79,7 +79,7 @@ export default function DrhPage({
             <div className="relative hidden lg:block">
               <Image
                 src="/images/bg/bg-3d.webp"
-                alt={locale === "fr" ? "DRH externalise - gestion des ressources humaines" : locale === "en" ? "Outsourced HR Director" : "DRH externalizado"}
+                alt={locale === "fr" ? "DRH externalisé - gestion des ressources humaines" : locale === "en" ? "Outsourced HR Director" : "DRH externalizado"}
                 width={560}
                 height={400}
                 className="rounded-2xl object-contain"
@@ -173,7 +173,7 @@ export default function DrhPage({
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { title: locale === "fr" ? "DAF externalise" : locale === "en" ? "Outsourced CFO" : "DAF externalizado", href: locale === "fr" ? "/daf-externalise" : `/${locale}/daf-externalise`, icon: TrendingUp },
+              { title: locale === "fr" ? "DAF externalisé" : locale === "en" ? "Outsourced CFO" : "DAF externalizado", href: locale === "fr" ? "/daf-externalise" : `/${locale}/daf-externalise`, icon: TrendingUp },
               { title: locale === "fr" ? "Levee de fonds" : locale === "en" ? "Fund-raising" : "Levantamiento de fondos", href: locale === "fr" ? "/services/accompagnement-levee-de-fond" : `/${locale}/services/fund-raising-support`, icon: Rocket },
               { title: locale === "fr" ? "Controle de gestion" : locale === "en" ? "Management control" : "Control de gestion", href: locale === "fr" ? "/services/controle-de-gestion-externalise" : `/${locale}/services/outsourced-management-control`, icon: BarChart3 },
               { title: locale === "fr" ? "Gestion de tresorerie" : locale === "en" ? "Cash flow management" : "Gestion de tesoreria", href: locale === "fr" ? "/services/previsionnel-tresorerie" : `/${locale}/services/cash-flow-forecast`, icon: Wallet },

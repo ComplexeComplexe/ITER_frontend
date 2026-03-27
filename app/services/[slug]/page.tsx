@@ -58,6 +58,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       locale="fr"
       page={page}
       breadcrumbTitle={page.heroTitle}
+      slug={slug}
       cmsNavigation={cmsNavigation}
     />
   );
