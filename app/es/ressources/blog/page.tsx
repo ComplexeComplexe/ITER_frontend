@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
   locale: "es",
-  title: "Blog | Iter Advisors",
+  title: "Blog finanzas y CFO externalizado - Consejos y novedades | Iter Advisors",
   description: "Consulte todos nuestros artículos sobre finanzas corporativas, gestión financiera, gestión de tesorería y rondas de financiación.",
   path: "/ressources/blog",
 });

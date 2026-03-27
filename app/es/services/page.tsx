@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "services-page",
     locale: "es",
     path: "/services",
-    fallbackTitle: "Servicios | Iter Advisors",
+    fallbackTitle: "Servicios CFO externalizado - Tesorería, control de gestión, financiación | Iter Advisors",
     fallbackDescription: "Nuestros servicios de dirección financiera externalizada.",
   });
 }

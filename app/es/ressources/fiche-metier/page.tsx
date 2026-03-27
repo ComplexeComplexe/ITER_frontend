@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
   locale: "es",
-  title: "Perfiles profesionales | Iter Advisors",
+  title: "Perfiles profesionales finanzas - CFO, controller, tesorero | Iter Advisors",
   description: "Descubra nuestros perfiles profesionales detallados: Director Financiero, Controller y otros roles en finanzas corporativas.",
   path: "/ressources/fiche-metier",
 });

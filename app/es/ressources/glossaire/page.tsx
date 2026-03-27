@@ -5,7 +5,7 @@ import { getGlossaryTerms, getCmsNavigation } from "@/lib/strapi";
 
 export const metadata: Metadata = buildMetadata({
   locale: "es",
-  title: "Glosario | Iter Advisors",
+  title: "Glosario finanzas y contabilidad - Definiciones | Iter Advisors",
   description: "Glosario de términos clave de las finanzas corporativas: tesorería, rondas de financiación, reporting, plan de negocio y mucho más.",
   path: "/ressources/glossaire",
 });

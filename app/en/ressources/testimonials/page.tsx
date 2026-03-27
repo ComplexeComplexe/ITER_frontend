@@ -5,7 +5,7 @@ import { getCmsNavigation } from "@/lib/strapi";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "Case Studies | Iter Advisors",
+  title: "Outsourced CFO case studies - Client results | Iter Advisors",
   description: "Discover our client testimonials: SMEs, startups and scale-ups supported by Iter Advisors CFOs.",
   path: "/ressources/testimonials",
 });

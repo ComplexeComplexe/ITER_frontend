@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "about-page",
     locale: "en",
     path: "/a-propos",
-    fallbackTitle: "About | Iter Advisors",
+    fallbackTitle: "About us - Outsourced CFO firm since 2019 | Iter Advisors",
     fallbackDescription: "Discover Iter Advisors.",
   });
 }

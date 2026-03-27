@@ -187,6 +187,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   entries.push(
     ...entryAllLocales({ fr: "/ressources/testimonials", en: "/ressources/testimonials", es: "/ressources/testimonials" })
   );
+  entries.push(
+    ...entryAllLocales(
+      { fr: "/ressources/outils", en: "/ressources/tools", es: "/ressources/herramientas" },
+      { priority: 0.7 }
+    )
+  );
+  entries.push(
+    ...entryAllLocales(
+      { fr: "/ressources/case-studies", en: "/ressources/case-studies", es: "/ressources/case-studies" },
+      { priority: 0.7 }
+    )
+  );
 
   /* ── Pages institutionnelles ─────────────────────────────────────── */
   entries.push(

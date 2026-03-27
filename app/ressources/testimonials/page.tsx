@@ -5,7 +5,7 @@ import { getCmsNavigation } from "@/lib/strapi";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Cas clients | Iter Advisors",
+  title: "Cas clients DAF externalisé - Témoignages et résultats | Iter Advisors",
   description: "Découvrez les témoignages de nos clients : PME, startups et scale-ups accompagnées par les CFOs d'Iter Advisors.",
   path: "/ressources/testimonials",
 });
