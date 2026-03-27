@@ -406,7 +406,7 @@ export default function HomePage({
               {hasRotator ? (
                 <>
                   {heroBefore}
-                  <span className="relative inline-block overflow-hidden align-bottom" style={{ height: "1.15em" }}>
+                  <span className="relative inline-block overflow-hidden align-bottom" style={{ minHeight: "1.15em" }}>
                     <AnimatePresence mode="wait">
                       <motion.span
                         key={heroHighlightIndex}
