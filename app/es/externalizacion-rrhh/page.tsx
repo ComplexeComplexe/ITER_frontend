@@ -1,15 +1,15 @@
 import { Metadata } from "next";
 import DrhPage from "@/components/pages/DrhPage";
-import { buildStrapiMetadata } from "@/lib/metadata";
+import { buildMetadata } from "@/lib/metadata";
 import { getCmsNavigation, getDrhExternalisePage } from "@/lib/strapi";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return buildStrapiMetadata({
-    endpoint: "drh-externalise-page",
+  /* Use static fallback because Strapi SEO component is shared across locales */
+  return buildMetadata({
     locale: "es",
+    title: "Director de RRHH externalizado | Iter Advisors",
+    description: "Externalice su direcci\u00f3n de RRHH con un Director experimentado. Reclutamiento, gesti\u00f3n social y estrategia de RRHH a medida por Iter Advisors.",
     path: "/externalizacion-rrhh",
-    fallbackTitle: "RRHH externalizado | Iter Advisors",
-    fallbackDescription: "RRHH externalizado y dirección de personas a tiempo compartido para pymes y startups.",
   });
 }
 

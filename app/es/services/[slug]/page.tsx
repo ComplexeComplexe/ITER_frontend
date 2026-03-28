@@ -5,22 +5,41 @@ import {
   getServiceSinglePage,
   getCanonicalServiceSlug,
   getServiceSlugsForLocale,
-  SERVICE_PAGE_API_MAP,
   getCmsNavigation,
   type ServicePageSlug,
 } from "@/lib/strapi";
-import { buildStrapiMetadata } from "@/lib/metadata";
+import { buildMetadata } from "@/lib/metadata";
 import { getLocalePath } from "@/lib/i18n";
 
 const basePath = "/services";
 const locale = "es" as const;
 
+/* ── Fallback titles ES (Strapi SEO is shared across locales for Single Types) ── */
 const fallbackTitles: Record<ServicePageSlug, string> = {
-  "previsionnel-tresorerie": "Previsión de tesorería | Iter Advisors",
-  "gestion-financiere-externalisee": "Gestión financiera externalizada | Iter Advisors",
-  "accompagnement-levee-de-fond": "Soporte a la financiación | Iter Advisors",
-  "comptabilite-externalisation": "Externalizar la contabilidad | Iter Advisors",
-  "controle-de-gestion-externalise": "Control de gestión externalizado | Iter Advisors",
+  "previsionnel-tresorerie":
+    "Previsi\u00f3n de tesorer\u00eda - Pilotaje de flujos | Iter Advisors",
+  "gestion-financiere-externalisee":
+    "Gesti\u00f3n financiera externalizada | Iter Advisors",
+  "accompagnement-levee-de-fond":
+    "Acompa\u00f1amiento en captaci\u00f3n de fondos | Iter Advisors",
+  "comptabilite-externalisation":
+    "Externalizaci\u00f3n de contabilidad | Iter Advisors",
+  "controle-de-gestion-externalise":
+    "Control de gesti\u00f3n externalizado | Iter Advisors",
+};
+
+/* ── Fallback descriptions ES (unique per page) ── */
+const fallbackDescriptions: Record<ServicePageSlug, string> = {
+  "previsionnel-tresorerie":
+    "Elaboraci\u00f3n y seguimiento de su previsional de tesorer\u00eda. Anticipe sus flujos financieros y optimice su tesorer\u00eda con Iter Advisors.",
+  "gestion-financiere-externalisee":
+    "Externalice su gesti\u00f3n financiera con un CFO experimentado. Reporting y optimizaci\u00f3n financiera a medida por Iter Advisors.",
+  "accompagnement-levee-de-fond":
+    "Preparaci\u00f3n y acompa\u00f1amiento en su captaci\u00f3n de fondos. Business plan, data room y due diligence por Iter Advisors.",
+  "comptabilite-externalisation":
+    "Externalice su contabilidad: gesti\u00f3n contable, declaraciones fiscales y sociales. Servicio a medida por Iter Advisors.",
+  "controle-de-gestion-externalise":
+    "Externalice su control de gesti\u00f3n: cuadros de mando, an\u00e1lisis de desviaciones y optimizaci\u00f3n de costes por Iter Advisors.",
 };
 
 export async function generateStaticParams() {
@@ -37,13 +56,13 @@ export async function generateMetadata({
   if (!canonical) {
     return { title: "Servicios | Iter Advisors" };
   }
-  const endpoint = SERVICE_PAGE_API_MAP[canonical];
-  return buildStrapiMetadata({
-    endpoint,
+  /* Use static fallback directly because Strapi SEO component is shared
+     across locales (Single Types) and always returns FR meta tags. */
+  return buildMetadata({
     locale,
+    title: fallbackTitles[canonical],
+    description: fallbackDescriptions[canonical],
     path: getLocalePath(locale, `${basePath}/${slug}`),
-    fallbackTitle: fallbackTitles[canonical],
-    fallbackDescription: "Servicios de dirección financiera y asesoramiento por Iter Advisors.",
   });
 }
 

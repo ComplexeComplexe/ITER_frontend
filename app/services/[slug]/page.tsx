@@ -12,12 +12,32 @@ import { buildStrapiMetadata } from "@/lib/metadata";
 
 const basePath = "/services";
 
+/* ── Bug 1 + 4 fix: titres fallback corriges et enrichis ── */
 const fallbackTitles: Record<ServicePageSlug, string> = {
-  "previsionnel-tresorerie": "Prévisionnel de trésorerie | Iter Advisors",
-  "gestion-financiere-externalisee": "Gestion financière externalisée | Iter Advisors",
-  "accompagnement-levee-de-fond": "Accompagnement levée de fonds | Iter Advisors",
-  "comptabilite-externalisation": "Externaliser sa comptabilité | Iter Advisors",
-  "controle-de-gestion-externalise": "Contrôle de gestion | Iter Advisors",
+  "previsionnel-tresorerie":
+    "Prévisionnel de trésorerie : pilotez votre cash flow | Iter Advisors",
+  "gestion-financiere-externalisee":
+    "Gestion financière externalisée pour PME et startups | Iter Advisors",
+  "accompagnement-levee-de-fond":
+    "Accompagnement levée de fonds startup et PME | Iter Advisors",
+  "comptabilite-externalisation":
+    "Externaliser sa comptabilité : gestion fiable et optimisée | Iter Advisors",
+  "controle-de-gestion-externalise":
+    "Contrôle de gestion externalisé : pilotez votre performance | Iter Advisors",
+};
+
+/* ── Bug 3 fix: meta descriptions uniques par page ── */
+const fallbackDescriptions: Record<ServicePageSlug, string> = {
+  "previsionnel-tresorerie":
+    "Prévision de trésorerie et pilotage de cash flow pour startups et PME. Anticipez vos besoins, sécurisez votre runway. Outils : Agicap, Pennylane.",
+  "gestion-financiere-externalisee":
+    "Externalisez votre direction financière avec Iter Advisors. Pilotage de trésorerie, reporting et stratégie pour PME et startups. Experts opérationnels dès J1.",
+  "accompagnement-levee-de-fond":
+    "Accompagnement levée de fonds de la préparation au closing. 100M+ EUR levés pour nos clients. Due diligence, business plan et négociation.",
+  "comptabilite-externalisation":
+    "Externalisez votre comptabilité avec Iter Advisors. Tenue comptable, déclarations fiscales et clôtures mensuelles pour PME et startups.",
+  "controle-de-gestion-externalise":
+    "Contrôle de gestion externalisé pour PME et startups. Tableaux de bord, analyse des écarts et KPIs financiers. Économisez jusqu'à 55K EUR/an.",
 };
 
 function isServicePageSlug(slug: string): slug is ServicePageSlug {
@@ -43,7 +63,7 @@ export async function generateMetadata({
     locale: "fr",
     path: `${basePath}/${slug}`,
     fallbackTitle: fallbackTitles[slug],
-    fallbackDescription: "Services de direction financière et d'accompagnement par Iter Advisors.",
+    fallbackDescription: fallbackDescriptions[slug],
   });
 }
 

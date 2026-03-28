@@ -64,7 +64,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
         "Cabinet de conseil en finance et DAF externalisé, Iter Advisors accompagne le développement stratégique de ses partenaires par la structuration et le pilotage de leur fonction Finance.",
     },
     hero: {
-      h1: "À propos",
+      h1: "À propos d'Iter Advisors : votre cabinet de DAF externalisé",
       intro:
         "Cabinet de conseil en finance et DAF externalisé, Iter Advisors accompagne le développement stratégique de ses partenaires par la structuration et le pilotage de leur fonction Finance.",
     },

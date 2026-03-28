@@ -1,15 +1,15 @@
 import { Metadata } from "next";
 import DrhPage from "@/components/pages/DrhPage";
-import { buildStrapiMetadata } from "@/lib/metadata";
+import { buildMetadata } from "@/lib/metadata";
 import { getDrhExternalisePage, getCmsNavigation } from "@/lib/strapi";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return buildStrapiMetadata({
-    endpoint: "drh-externalise-page",
+  /* Use static fallback because Strapi SEO component is shared across locales */
+  return buildMetadata({
     locale: "en",
+    title: "Outsourced HR Director - Shared-time HR | Iter Advisors",
+    description: "Outsource your HR management with an experienced HR Director. Recruitment, social management, compliance and tailored HR strategy by Iter Advisors.",
     path: "/hr-outsourcing",
-    fallbackTitle: "Outsourced HR | Iter Advisors",
-    fallbackDescription: "Outsourced HR and fractional HR director for SMEs and startups.",
   });
 }
 

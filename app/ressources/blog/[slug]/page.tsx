@@ -32,7 +32,13 @@ const breadcrumbsByLocale = {
 export async function generateStaticParams() {
   try {
     const articles = await getBlogArticles("fr");
-    if (articles.length > 0) return articles.map((a) => ({ slug: a.slug }));
+    if (articles.length > 0) {
+      const strapiSlugs = articles.map((a) => ({ slug: a.slug }));
+      const staticSlugs = Object.keys(blogPosts.fr || {}).map((slug) => ({ slug }));
+      const allSlugs = new Map<string, { slug: string }>();
+      for (const s of [...strapiSlugs, ...staticSlugs]) allSlugs.set(s.slug, s);
+      return Array.from(allSlugs.values());
+    }
   } catch {
     // ignore
   }
@@ -80,8 +86,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         locale="fr"
         title={fallback.h1}
         breadcrumbs={fallback.breadcrumbs}
-        content={fallback.content}
+        content={fallback.htmlContent ? [] : fallback.content}
+        htmlContent={fallback.htmlContent}
         cmsNavigation={cmsNavigation}
+        publishedDate={fallback.publishedDate}
+        author={fallback.author}
+        category={fallback.category}
+        metaDescription={fallback.meta.description}
       />
     );
   }

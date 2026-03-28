@@ -86,6 +86,7 @@ const navEn: NavItem[] = [
       { text: "Transitional CFO", href: "/en/daf-outsourcing/transition" },
       { text: "CFO : The Mission", href: "/en/daf-outsourcing/metier" },
       { text: "Outsourced CFO Barcelona", href: "/en/outsourced-cfo-barcelona" },
+      { text: "Fractional CFO Barcelona", href: "/en/fractional-cfo-barcelona" },
       { text: "Outsourced CFO Paris", href: "/en/outsourced-cfo-paris" },
       { text: "Outsourced CFO Toulouse", href: "/en/outsourced-cfo-toulouse" },
     ],
@@ -100,16 +101,19 @@ const navEn: NavItem[] = [
   {
     title: "Services",
     href: "/en/services",
-    children: SERVICE_PAGE_SLUGS.map((slug) => ({
-      text: {
-        "previsionnel-tresorerie": "Cash flow forecast",
-        "gestion-financiere-externalisee": "Outsourced financial management",
-        "accompagnement-levee-de-fond": "Fund raising support",
-        "comptabilite-externalisation": "Outsource your accounting",
-        "controle-de-gestion-externalise": "Outsourced management control",
-      }[slug],
-      href: `/en/services/${SERVICE_URL_SLUG_BY_LOCALE.en[slug]}`,
-    })),
+    children: [
+      ...SERVICE_PAGE_SLUGS.map((slug) => ({
+        text: {
+          "previsionnel-tresorerie": "Cash flow forecast",
+          "gestion-financiere-externalisee": "Outsourced financial management",
+          "accompagnement-levee-de-fond": "Fund raising support",
+          "comptabilite-externalisation": "Outsource your accounting",
+          "controle-de-gestion-externalise": "Outsourced management control",
+        }[slug],
+        href: `/en/services/${SERVICE_URL_SLUG_BY_LOCALE.en[slug]}`,
+      })),
+      { text: "M&A & Due Diligence", href: "/en/services/ma-due-diligence" },
+    ],
   },
   {
     title: "Resources",
@@ -151,16 +155,19 @@ const navEs: NavItem[] = [
   {
     title: "Servicios",
     href: "/es/services",
-    children: SERVICE_PAGE_SLUGS.map((slug) => ({
-      text: {
-        "previsionnel-tresorerie": "Previsión de tesorería",
-        "gestion-financiere-externalisee": "Gestión financiera externalizada",
-        "accompagnement-levee-de-fond": "Soporte a la financiación",
-        "comptabilite-externalisation": "Externalizar la contabilidad",
-        "controle-de-gestion-externalise": "Control de gestión externalizado",
-      }[slug],
-      href: `/es/services/${SERVICE_URL_SLUG_BY_LOCALE.es[slug]}`,
-    })),
+    children: [
+      ...SERVICE_PAGE_SLUGS.map((slug) => ({
+        text: {
+          "previsionnel-tresorerie": "Previsión de tesorería",
+          "gestion-financiere-externalisee": "Gestión financiera externalizada",
+          "accompagnement-levee-de-fond": "Soporte a la financiación",
+          "comptabilite-externalisation": "Externalizar la contabilidad",
+          "controle-de-gestion-externalise": "Control de gestión externalizado",
+        }[slug],
+        href: `/es/services/${SERVICE_URL_SLUG_BY_LOCALE.es[slug]}`,
+      })),
+      { text: "M&A y Due Diligence", href: "/es/services/ma-due-diligence" },
+    ],
   },
   {
     title: "Recursos",

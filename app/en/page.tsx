@@ -8,8 +8,8 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "homepage",
     locale: "en",
     path: "/",
-    fallbackTitle: "Fractional CFO | Iter Advisors",
-    fallbackDescription: "Iter Advisors: fractional CFO for SMEs and startups.",
+    fallbackTitle: "Fractional CFO for Startups & SMEs | Iter Advisors",
+    fallbackDescription: "Iter Advisors provides fractional CFO and outsourced financial direction for startups and SMEs. Based in Barcelona, Paris and Toulouse. 100M+ EUR raised. Book a free consultation.",
   });
 }
 

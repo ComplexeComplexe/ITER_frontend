@@ -83,6 +83,11 @@ const BLOG_SLUGS = [
   "outils-daf-externalise-2026",
   "daf-externalise-barcelone",
   "previsionnel-tresorerie-guide-pme",
+  /* ── Nouveaux articles SEO brief mars 2026 ──────────────────────── */
+  "cout-daf-externalise-tarifs-prix-2026",
+  "daf-externalise-vs-daf-salarie",
+  "checklist-due-diligence-levee-de-fonds",
+  "daf-drh-externalises-synergie",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -284,6 +289,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...entryAllLocales(
       { fr: "/services/ma-due-diligence", en: "/services/ma-due-diligence", es: "/services/ma-due-diligence" },
       { priority: 0.8 }
+    )
+  );
+
+  /* ── Landing page Fractional CFO Barcelona ──────────────────────── */
+  entries.push(
+    ...entryAllLocales(
+      { fr: "/daf-externalise-barcelone", en: "/fractional-cfo-barcelona", es: "/cfo-externalizado-barcelona" },
+      { priority: 0.85 }
     )
   );
 
