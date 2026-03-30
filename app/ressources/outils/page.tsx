@@ -11,6 +11,7 @@ export const metadata: Metadata = buildMetadata({
   title: t.meta.title,
   description: t.meta.description,
   path: "/ressources/outils",
+    localizedPaths: { fr: "/ressources/outils", en: "/ressources/tools", es: "/ressources/herramientas" },
 });
 
 export default async function Page() {

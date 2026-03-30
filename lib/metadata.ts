@@ -9,7 +9,11 @@ const localeMap: Record<Locale, string> = {
 };
 
 /**
- * Build static metadata from provided strings (backward-compatible).
+ * Build static metadata from provided strings.
+ *
+ * `localizedPaths` (optional) allows specifying different paths per locale
+ * for correct hreflang generation. When omitted, the same `path` is used
+ * for all locales (backward-compatible behavior).
  */
 export function buildMetadata({
   locale,
@@ -18,6 +22,7 @@ export function buildMetadata({
   path,
   noindex,
   structuredData,
+  localizedPaths,
 }: {
   locale: Locale;
   title: string;
@@ -25,15 +30,21 @@ export function buildMetadata({
   path: string;
   noindex?: boolean;
   structuredData?: Record<string, unknown> | null;
+  localizedPaths?: { fr: string; en: string; es: string };
 }): Metadata {
   const base = "https://www.iteradvisors.com";
   const url = locale === "fr" ? `${base}${path}` : `${base}/${locale}${path === "/" ? "" : path}`;
 
+  // Use localizedPaths if provided, otherwise fall back to same path for all locales
+  const frPath = localizedPaths?.fr ?? path;
+  const enPath = localizedPaths?.en ?? path;
+  const esPath = localizedPaths?.es ?? path;
+
   const alternates: Record<string, string> = {
-    "x-default": `${base}${path}`,
-    fr: `${base}${path}`,
-    en: `${base}/en${path === "/" ? "" : path}`,
-    es: `${base}/es${path === "/" ? "" : path}`,
+    "x-default": `${base}${frPath}`,
+    fr: `${base}${frPath}`,
+    en: `${base}/en${enPath === "/" ? "" : enPath}`,
+    es: `${base}/es${esPath === "/" ? "" : esPath}`,
   };
 
   const meta: Metadata = {
@@ -97,12 +108,14 @@ export async function buildStrapiMetadata({
   path,
   fallbackTitle,
   fallbackDescription,
+  localizedPaths,
 }: {
   endpoint: string;
   locale: Locale;
   path: string;
   fallbackTitle: string;
   fallbackDescription: string;
+  localizedPaths?: { fr: string; en: string; es: string };
 }): Promise<Metadata> {
   try {
     const res = await strapiFetch<StrapiSingleResponse<{ seo: StrapiSeo | null }>>(
@@ -121,6 +134,7 @@ export async function buildStrapiMetadata({
         path,
         noindex: seo.noIndex || false,
         structuredData: seo.structuredData || null,
+        localizedPaths,
       });
 
       // Add OG image if available
@@ -139,6 +153,7 @@ export async function buildStrapiMetadata({
     title: fallbackTitle,
     description: fallbackDescription,
     path,
+    localizedPaths,
   });
 }
 
@@ -152,6 +167,7 @@ export async function buildStrapiCollectionMetadata({
   path,
   fallbackTitle,
   fallbackDescription,
+  localizedPaths,
 }: {
   endpoint: string;
   slug: string;
@@ -159,6 +175,7 @@ export async function buildStrapiCollectionMetadata({
   path: string;
   fallbackTitle: string;
   fallbackDescription: string;
+  localizedPaths?: { fr: string; en: string; es: string };
 }): Promise<Metadata> {
   try {
     const res = await strapiFetch<{ data: { seo?: StrapiSeo | null }[] }>(
@@ -180,6 +197,7 @@ export async function buildStrapiCollectionMetadata({
         path,
         noindex: seo.noIndex || false,
         structuredData: seo.structuredData || null,
+        localizedPaths,
       });
 
       if (ogImage && meta.openGraph && typeof meta.openGraph === "object") {
@@ -197,5 +215,6 @@ export async function buildStrapiCollectionMetadata({
     title: fallbackTitle,
     description: fallbackDescription,
     path,
+    localizedPaths,
   });
 }

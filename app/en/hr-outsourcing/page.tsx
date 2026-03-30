@@ -10,6 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Outsourced HR Director - Shared-time HR | Iter Advisors",
     description: "Outsource your HR management with an experienced HR Director. Recruitment, social management, compliance and tailored HR strategy by Iter Advisors.",
     path: "/hr-outsourcing",
+    localizedPaths: { fr: "/drh-externalise", en: "/hr-outsourcing", es: "/externalizacion-rrhh" },
   });
 }
 

@@ -6,6 +6,7 @@ import {
   getCmsNavigation,
   SERVICE_PAGE_SLUGS,
   SERVICE_PAGE_API_MAP,
+  SERVICE_URL_SLUG_BY_LOCALE,
   type ServicePageSlug,
 } from "@/lib/strapi";
 import { buildStrapiMetadata } from "@/lib/metadata";
@@ -44,6 +45,15 @@ function isServicePageSlug(slug: string): slug is ServicePageSlug {
   return (SERVICE_PAGE_SLUGS as readonly string[]).includes(slug);
 }
 
+/** Build localizedPaths for a service page slug */
+function getServiceLocalizedPaths(slug: ServicePageSlug) {
+  return {
+    fr: `/services/${SERVICE_URL_SLUG_BY_LOCALE.fr[slug]}`,
+    en: `/services/${SERVICE_URL_SLUG_BY_LOCALE.en[slug]}`,
+    es: `/services/${SERVICE_URL_SLUG_BY_LOCALE.es[slug]}`,
+  };
+}
+
 export async function generateStaticParams() {
   return SERVICE_PAGE_SLUGS.map((slug) => ({ slug }));
 }
@@ -62,6 +72,7 @@ export async function generateMetadata({
     endpoint,
     locale: "fr",
     path: `${basePath}/${slug}`,
+    localizedPaths: getServiceLocalizedPaths(slug),
     fallbackTitle: fallbackTitles[slug],
     fallbackDescription: fallbackDescriptions[slug],
   });

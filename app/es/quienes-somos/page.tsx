@@ -8,6 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "about-page",
     locale: "es",
     path: "/quienes-somos",
+    localizedPaths: { fr: "/a-propos", en: "/a-propos", es: "/quienes-somos" },
     fallbackTitle: "Quiénes somos - Consultoría CFO externalizado desde 2019 | Iter Advisors",
     fallbackDescription: "Descubra Iter Advisors.",
   });

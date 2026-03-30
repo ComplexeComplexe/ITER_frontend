@@ -198,7 +198,7 @@ const htmlContent = `<p>Your startup is growing. Investors are asking harder que
 <hr>
 <h3 id="ready-to-get-started">Ready to Get Started?</h3>
 <p>Whether you are a pre-seed startup setting up your first Spanish SL or a Series B company preparing for international expansion, Iter Advisors has the expertise to guide your financial strategy.</p>
-<p><strong><a href="/en/services/gestion-financiere-externalisee">Explore Our Financial Management Services</a></strong> | <strong><a href="/en/services/accompagnement-levee-de-fond">Learn About Our Fundraising Support</a></strong> | <strong><a href="/en/">Visit Our Homepage</a></strong></p>
+<p><strong><a href="/en/services/outsourced-financial-management">Explore Our Financial Management Services</a></strong> | <strong><a href="/en/services/fund-raising-support">Learn About Our Fundraising Support</a></strong> | <strong><a href="/en/">Visit Our Homepage</a></strong></p>
 <hr>
 <p><em>Iter Advisors is a financial advisory firm based in Barcelona, serving startups and scale-ups across Spain and Europe since 2019. Our team of 15+ experts provides fractional CFO, fundraising, and financial structuring services in English, Spanish, and French.</em></p>`;
 

@@ -11,6 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-transition-page",
     locale: "en",
     path: "/daf-outsourcing/transition",
+    localizedPaths: { fr: "/daf-externalise/transition", en: "/daf-outsourcing/transition", es: "/externalizacion-daf/transition" },
     fallbackTitle: "Transition CFO | Iter Advisors",
     fallbackDescription: "Transition CFO to support your changes.",
   });

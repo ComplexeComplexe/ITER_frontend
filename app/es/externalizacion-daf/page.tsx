@@ -8,6 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-externalise-page",
     locale: "es",
     path: "/externalizacion-daf",
+    localizedPaths: { fr: "/daf-externalise", en: "/daf-outsourcing", es: "/externalizacion-daf" },
     fallbackTitle: "Externalización DAF | Iter Advisors",
     fallbackDescription: "CFO externalizado para pymes y startups.",
   });

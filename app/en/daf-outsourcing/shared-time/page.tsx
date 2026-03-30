@@ -11,6 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-temps-partage-page",
     locale: "en",
     path: "/daf-outsourcing/shared-time",
+    localizedPaths: { fr: "/daf-externalise/temps-partage", en: "/daf-outsourcing/shared-time", es: "/externalizacion-daf/multipropiedad" },
     fallbackTitle: "Shared-time CFO | Iter Advisors",
     fallbackDescription: "Shared-time CFO for SMEs.",
   });

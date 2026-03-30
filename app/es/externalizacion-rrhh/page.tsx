@@ -10,6 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Director de RRHH externalizado | Iter Advisors",
     description: "Externalice su direcci\u00f3n de RRHH con un Director experimentado. Reclutamiento, gesti\u00f3n social y estrategia de RRHH a medida por Iter Advisors.",
     path: "/externalizacion-rrhh",
+    localizedPaths: { fr: "/drh-externalise", en: "/hr-outsourcing", es: "/externalizacion-rrhh" },
   });
 }
 

@@ -6,10 +6,10 @@ import {
   getCanonicalServiceSlug,
   getServiceSlugsForLocale,
   getCmsNavigation,
+  SERVICE_URL_SLUG_BY_LOCALE,
   type ServicePageSlug,
 } from "@/lib/strapi";
 import { buildMetadata } from "@/lib/metadata";
-import { getLocalePath } from "@/lib/i18n";
 
 const basePath = "/services";
 const locale = "es" as const;
@@ -42,6 +42,15 @@ const fallbackDescriptions: Record<ServicePageSlug, string> = {
     "Externalice su control de gesti\u00f3n: cuadros de mando, an\u00e1lisis de desviaciones y optimizaci\u00f3n de costes por Iter Advisors.",
 };
 
+/** Build localizedPaths for a service page slug */
+function getServiceLocalizedPaths(canonical: ServicePageSlug) {
+  return {
+    fr: `/services/${SERVICE_URL_SLUG_BY_LOCALE.fr[canonical]}`,
+    en: `/services/${SERVICE_URL_SLUG_BY_LOCALE.en[canonical]}`,
+    es: `/services/${SERVICE_URL_SLUG_BY_LOCALE.es[canonical]}`,
+  };
+}
+
 export async function generateStaticParams() {
   return getServiceSlugsForLocale(locale).map((slug) => ({ slug }));
 }
@@ -62,7 +71,8 @@ export async function generateMetadata({
     locale,
     title: fallbackTitles[canonical],
     description: fallbackDescriptions[canonical],
-    path: getLocalePath(locale, `${basePath}/${slug}`),
+    path: `/services/${slug}`,
+    localizedPaths: getServiceLocalizedPaths(canonical),
   });
 }
 

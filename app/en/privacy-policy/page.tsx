@@ -11,6 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "privacy-page",
     locale: "en",
     path: "/privacy-policy",
+    localizedPaths: { fr: "/politique-de-confidentialite", en: "/privacy-policy", es: "/politica-de-privacidad" },
     fallbackTitle: "Privacy Policy | Iter Advisors",
     fallbackDescription: "Privacy policy for Iter Advisors.",
   });

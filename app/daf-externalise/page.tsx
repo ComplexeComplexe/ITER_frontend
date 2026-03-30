@@ -8,6 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-externalise-page",
     locale: "fr",
     path: "/daf-externalise",
+    localizedPaths: { fr: "/daf-externalise", en: "/daf-outsourcing", es: "/externalizacion-daf" },
     fallbackTitle: "DAF externalisé | Iter Advisors",
     fallbackDescription: "Découvrez les missions et bénéfices d'un DAF externalisé. Iter Advisors accompagne PME et startups avec une direction financière flexible, experte et opérationnelle dès le premier jour.",
   });

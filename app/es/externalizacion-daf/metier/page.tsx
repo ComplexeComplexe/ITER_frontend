@@ -11,6 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-metier-page",
     locale: "es",
     path: "/externalizacion-daf/metier",
+    localizedPaths: { fr: "/daf-externalise/metier", en: "/daf-outsourcing/metier", es: "/externalizacion-daf/metier" },
     fallbackTitle: "Ficha de puesto CFO | Iter Advisors",
     fallbackDescription: "Ficha de puesto del Director Administrativo y Financiero.",
   });

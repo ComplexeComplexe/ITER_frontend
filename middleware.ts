@@ -18,7 +18,6 @@ const SLUG_REDIRECTS: Record<string, string> = {
   "/en/drh-externalise/temps-partage": "/en/hr-outsourcing/shared-time",
   "/en/mentions-legales": "/en/legal-notice",
   "/en/politique-de-confidentialite": "/en/privacy-policy",
-  "/en/a-propos": "/en/a-propos", // already correct
 
   /* ── ES slugs appearing in /en/ paths ─────────────────────────────── */
   "/en/externalizacion-daf": "/en/daf-outsourcing",
@@ -88,15 +87,69 @@ const SLUG_REDIRECTS: Record<string, string> = {
   "/aviso-legal": "/mentions-legales",
   "/politica-de-privacidad": "/politique-de-confidentialite",
 
-  /* ── Service slug corrections ─────────────────────────────────────── */
+  /* ── Service slug corrections (FR) ───────────────────────────────── */
   "/services/externalisation-comptable": "/services/comptabilite-externalisation",
   "/services/gestion-de-tresorerie": "/services/previsionnel-tresorerie",
+
+  /* ── Service EN slugs appearing in /es/ paths ────────────────────── */
   "/es/services/cash-flow-forecast": "/es/services/prevision-tesoreria",
   "/es/services/fund-raising-support": "/es/services/soporte-financiacion",
   "/es/services/outsourced-management-control": "/es/services/control-gestion-externalizado",
-  "/en/services/ma-due-diligence": "/en/services/ma-due-diligence",
-  "/es/services/ma-due-diligence": "/es/services/ma-due-diligence",
+  "/es/services/outsource-your-accounting": "/es/services/externalizar-contabilidad",
+  "/es/services/outsourced-financial-management": "/es/services/gestion-financiera-externalizada",
+
+  /* ── Service FR slugs appearing in /en/ paths ────────────────────── */
+  "/en/services/previsionnel-tresorerie": "/en/services/cash-flow-forecast",
+  "/en/services/gestion-financiere-externalisee": "/en/services/outsourced-financial-management",
+  "/en/services/accompagnement-levee-de-fond": "/en/services/fund-raising-support",
+  "/en/services/comptabilite-externalisation": "/en/services/outsource-your-accounting",
+  "/en/services/controle-de-gestion-externalise": "/en/services/outsourced-management-control",
+
+  /* ── Service FR slugs appearing in /es/ paths ────────────────────── */
+  "/es/services/previsionnel-tresorerie": "/es/services/prevision-tesoreria",
+  "/es/services/gestion-financiere-externalisee": "/es/services/gestion-financiera-externalizada",
+  "/es/services/accompagnement-levee-de-fond": "/es/services/soporte-financiacion",
+  "/es/services/comptabilite-externalisation": "/es/services/externalizar-contabilidad",
+  "/es/services/controle-de-gestion-externalise": "/es/services/control-gestion-externalizado",
+
+  /* ── Service ES slugs appearing in /en/ paths ────────────────────── */
+  "/en/services/prevision-tesoreria": "/en/services/cash-flow-forecast",
+  "/en/services/gestion-financiera-externalizada": "/en/services/outsourced-financial-management",
+  "/en/services/soporte-financiacion": "/en/services/fund-raising-support",
+  "/en/services/externalizar-contabilidad": "/en/services/outsource-your-accounting",
+  "/en/services/control-gestion-externalizado": "/en/services/outsourced-management-control",
+
+  /* ── Service ES slugs appearing in FR root ───────────────────────── */
+  "/services/prevision-tesoreria": "/services/previsionnel-tresorerie",
+  "/services/gestion-financiera-externalizada": "/services/gestion-financiere-externalisee",
+  "/services/soporte-financiacion": "/services/accompagnement-levee-de-fond",
+  "/services/externalizar-contabilidad": "/services/comptabilite-externalisation",
+  "/services/control-gestion-externalizado": "/services/controle-de-gestion-externalise",
+
+  /* ── Service EN slugs appearing in FR root ───────────────────────── */
+  "/services/cash-flow-forecast": "/services/previsionnel-tresorerie",
+  "/services/outsourced-financial-management": "/services/gestion-financiere-externalisee",
+  "/services/fund-raising-support": "/services/accompagnement-levee-de-fond",
+  "/services/outsource-your-accounting": "/services/comptabilite-externalisation",
+  "/services/outsourced-management-control": "/services/controle-de-gestion-externalise",
 };
+
+/* ── Blog slugs that were in sitemap but have no content - redirect to blog listing ── */
+const ORPHAN_BLOG_SLUGS = [
+  "cout-daf-externalise",
+  "daf-externalise-startup",
+  "daf-externalise-vs-comptable",
+  "pme-besoin-daf-externalise",
+  "daf-externalise-vs-daf-interne",
+  "daf-externalise-levee-de-fonds",
+  "missions-daf-externalise-temps-partage",
+  "choisir-cabinet-daf-externalise",
+  "management-transition-financiere",
+  "direction-financiere-externalisee",
+  "outils-daf-externalise-2026",
+  "daf-externalise-barcelone",
+  "previsionnel-tresorerie-guide-pme",
+];
 
 /* ------------------------------------------------------------------ */
 /*  Middleware                                                         */
@@ -110,7 +163,6 @@ export function middleware(request: NextRequest) {
     /^\/(en|es)\/(en|es)(\/.*)?$/
   );
   if (doubleLocaleMatch) {
-    // Keep the first locale prefix, strip the second
     const firstLocale = doubleLocaleMatch[1];
     const rest = doubleLocaleMatch[3] || "";
     const url = request.nextUrl.clone();
@@ -123,6 +175,25 @@ export function middleware(request: NextRequest) {
   if (target && target !== pathname) {
     const url = request.nextUrl.clone();
     url.pathname = target;
+    return NextResponse.redirect(url, 301);
+  }
+
+  /* ── 3. Orphan blog slugs -> redirect to blog listing ─────────────── */
+  const blogMatch = pathname.match(/^(?:\/(en|es))?\/ressources\/blog\/(.+)$/);
+  if (blogMatch) {
+    const locale = blogMatch[1] || "";
+    const slug = blogMatch[2];
+    if (ORPHAN_BLOG_SLUGS.includes(slug)) {
+      const url = request.nextUrl.clone();
+      url.pathname = locale ? `/${locale}/ressources/blog` : "/ressources/blog";
+      return NextResponse.redirect(url, 301);
+    }
+  }
+
+  /* ── 4. Trailing slash normalization ──────────────────────────────── */
+  if (pathname.length > 1 && pathname.endsWith("/")) {
+    const url = request.nextUrl.clone();
+    url.pathname = pathname.slice(0, -1);
     return NextResponse.redirect(url, 301);
   }
 

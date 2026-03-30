@@ -11,6 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "legal-page",
     locale: "es",
     path: "/aviso-legal",
+    localizedPaths: { fr: "/mentions-legales", en: "/legal-notice", es: "/aviso-legal" },
     fallbackTitle: "Aviso legal | Iter Advisors",
     fallbackDescription: "Aviso legal del sitio Iter Advisors.",
   });

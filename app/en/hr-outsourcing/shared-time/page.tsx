@@ -11,6 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "drh-temps-partage-page",
     locale: "en",
     path: "/hr-outsourcing/shared-time",
+    localizedPaths: { fr: "/drh-externalise/temps-partage", en: "/hr-outsourcing/shared-time", es: "/externalizacion-rrhh/tiempo-compartido" },
     fallbackTitle: "Shared-time HR | Iter Advisors",
     fallbackDescription: "Shared-time HR director: flexible people leadership for SMEs and startups.",
   });

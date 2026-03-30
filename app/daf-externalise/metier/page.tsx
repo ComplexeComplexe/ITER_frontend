@@ -11,6 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-metier-page",
     locale: "fr",
     path: "/daf-externalise/metier",
+    localizedPaths: { fr: "/daf-externalise/metier", en: "/daf-outsourcing/metier", es: "/externalizacion-daf/metier" },
     fallbackTitle: "Fiche métier DAF | Iter Advisors",
     fallbackDescription: "Fiche métier du DAF (Directeur Administratif et Financier) : rôle, missions, compétences clés, salaire et évolution du poste. Découvrez comment un DAF externalisé peut transformer votre entreprise.",
   });
