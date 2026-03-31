@@ -143,7 +143,6 @@ gtag('consent','default',{
                     ratingValue: "5",
                     bestRating: "5",
                     worstRating: "1",
-                    ratingCount: "31",
                     reviewCount: "31",
                   },
                 },
