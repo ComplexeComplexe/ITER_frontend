@@ -116,7 +116,6 @@ export function financialServiceSchema(): Record<string, unknown> {
       ratingValue: "5",
       bestRating: "5",
       worstRating: "1",
-      ratingCount: "31",
       reviewCount: "31",
     },
     sameAs: ["https://www.linkedin.com/company/iter-advisors/"],
