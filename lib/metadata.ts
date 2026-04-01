@@ -33,12 +33,19 @@ export function buildMetadata({
   localizedPaths?: { fr: string; en: string; es: string };
 }): Metadata {
   const base = "https://www.iteradvisors.com";
-  const url = locale === "fr" ? `${base}${path}` : `${base}/${locale}${path === "/" ? "" : path}`;
 
-  // Use localizedPaths if provided, otherwise fall back to same path for all locales
-  const frPath = localizedPaths?.fr ?? path;
-  const enPath = localizedPaths?.en ?? path;
-  const esPath = localizedPaths?.es ?? path;
+  // Strip leading locale prefix from path to prevent double-locale in canonical/URL
+  // e.g. path="/en/ressources/blog/slug" with locale="en" would produce /en/en/...
+  const safePath = (locale !== "fr" && path.startsWith(`/${locale}`)) ? path.replace(`/${locale}`, '') || '/' : path;
+
+  const url = locale === "fr" ? `${base}${safePath}` : `${base}/${locale}${safePath === "/" ? "" : safePath}`;
+
+  // Use localizedPaths if provided, otherwise fall back to safePath for all locales
+  // Also strip locale prefix from localizedPaths values to prevent double-locale
+  const stripLocale = (p: string, loc: string) => p.startsWith(`/${loc}`) ? (p.replace(`/${loc}`, '') || '/') : p;
+  const frPath = localizedPaths?.fr ?? safePath;
+  const enPath = stripLocale(localizedPaths?.en ?? safePath, 'en');
+  const esPath = stripLocale(localizedPaths?.es ?? safePath, 'es');
 
   const alternates: Record<string, string> = {
     "x-default": `${base}${frPath}`,

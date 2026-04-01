@@ -12,8 +12,8 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "es",
     path: "/aviso-legal",
     localizedPaths: { fr: "/mentions-legales", en: "/legal-notice", es: "/aviso-legal" },
-    fallbackTitle: "Aviso legal | Iter Advisors",
-    fallbackDescription: "Aviso legal del sitio Iter Advisors.",
+    fallbackTitle: "Aviso legal - Condiciones generales | Iter Advisors",
+    fallbackDescription: "Consulte el aviso legal, las condiciones generales y la informacion del editor del sitio web de Iter Advisors. Servicios de DAF externalizado en Francia y Espana.",
   });
 }
 
