@@ -94,11 +94,11 @@ function buildSubject(source: string, data: Record<string, string>): string {
     case "contact":
       return `Nouveau message contact — ${who || data.email || "N/A"}`;
     case "profil":
-      return `Nouveau lead diagnostic — ${who || data.email || "N/A"}`;
+      return `Nouveau contact diagnostic — ${who || data.email || "N/A"}`;
     case "campagne":
       return `Demande de contact campagne — ${who || data.email || "N/A"}`;
     default:
-      return `Nouveau lead Iter Advisors — ${data.email || "N/A"}`;
+      return `Nouveau contact Iter Advisors — ${data.email || "N/A"}`;
   }
 }
 
@@ -142,13 +142,13 @@ function buildHtmlEmail(
 <html lang="fr">
 <head><meta charset="utf-8"></head>
 <body>
-  <h1>Nouveau lead</h1>
+  <h1>Nouveau contact</h1>
   <p>${buildSourceLabel(source)} · ${date}</p>
   <ul>
     ${rows}
   </ul>
   <p><a href="${acceptUrl}">✅ Ajouter au CRM</a></p>
-  <p>Ce lien est valable 7 jours. Le lead ne sera ajouté au CRM que si vous cliquez.</p>
+  <p>Ce lien est valable 7 jours. Le contact ne sera ajouté au CRM que si vous cliquez.</p>
 </body>
 </html>`.trim();
 }
@@ -178,7 +178,7 @@ function buildPlainText(
     ...lines,
     "",
     "—",
-    "Ajouter ce lead au CRM :",
+    "Ajouter ce contact au CRM :",
     acceptUrl,
     "",
     "(Ce lien est valable 7 jours)",
