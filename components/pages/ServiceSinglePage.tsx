@@ -5,7 +5,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import StrapiBlocks from "@/components/StrapiBlocks";
 import type { StrapiServiceSinglePage, CmsNavItem } from "@/lib/strapi";
-import { serviceSchema } from "@/lib/schemas";
+import { serviceSchema, faqPageSchema } from "@/lib/schemas";
 
 const breadcrumbsByLocale: Record<
   Locale,
@@ -52,6 +52,27 @@ export default function ServiceSinglePage({
           ),
         }}
       />
+      {/* FAQPage schema.org JSON-LD (TICKET-15) */}
+      {page.faq && page.faq.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              faqPageSchema(
+                page.faq.map((item) => ({
+                  question: item.question,
+                  answer: item.answer
+                    ?.map((block: unknown) => {
+                      const b = block as { children?: { text?: string }[] };
+                      return b.children?.map((c) => c.text || "").join("") || "";
+                    })
+                    .join(" ") || "",
+                }))
+              )
+            ),
+          }}
+        />
+      )}
       <section className="bg-background pt-32 pb-16">
         <div className="container flex flex-col items-center text-center">
           <Breadcrumb

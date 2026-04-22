@@ -8,6 +8,7 @@ export const metadata: Metadata = buildMetadata({
   title: "Recrutement DAF et finance externalisés | Iter Advisors",
   description: "Rejoignez l'équipe Iter Advisors.",
   path: "/jobs",
+  noindex: true,
 });
 
 export default async function Page() {
