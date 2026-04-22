@@ -16,29 +16,29 @@ const basePath = "/services";
 /* ── Bug 1 + 4 fix: titres fallback corriges et enrichis ── */
 const fallbackTitles: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
-    "Prévisionnel de trésorerie : pilotez votre cash flow | Iter Advisors",
+    "Prévisionnel de Trésorerie PME - Modèle Glissant 13 Semaines | Iter Advisors",
   "gestion-financiere-externalisee":
-    "Gestion financière externalisée pour PME et startups | Iter Advisors",
+    "Gestion Financière Externalisée - DAF à Temps Partagé dès 2j/mois | Iter Advisors",
   "accompagnement-levee-de-fond":
-    "Accompagnement levée de fonds startup et PME | Iter Advisors",
+    "Levée de Fonds Startup - Data Room, Due Diligence & Négociation | Iter Advisors",
   "comptabilite-externalisation":
-    "Externaliser sa comptabilité : gestion fiable et optimisée | Iter Advisors",
+    "Externalisation Comptabilité - Tenue, Déclarations & Clôture | Iter Advisors",
   "controle-de-gestion-externalise":
-    "Contrôle de gestion externalisé : pilotez votre performance | Iter Advisors",
+    "Contrôle de Gestion Externalisé - Tableaux de Bord & KPIs | Iter Advisors",
 };
 
 /* ── Bug 3 fix: meta descriptions uniques par page ── */
 const fallbackDescriptions: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
-    "Prévision de trésorerie et pilotage de cash flow pour startups et PME. Anticipez vos besoins, sécurisez votre runway. Outils : Agicap, Pennylane.",
+    "Construisez un prévisionnel de trésorerie glissant sur 13 semaines. Anticipez les tensions de cash, optimisez votre BFR et sécurisez votre runway. +50 PME accompagnées.",
   "gestion-financiere-externalisee":
-    "Externalisez votre direction financière avec Iter Advisors. Pilotage de trésorerie, reporting et stratégie pour PME et startups. Experts opérationnels dès J1.",
+    "DAF externalisé dès 2 jours/mois. Reporting mensuel, pilotage budgétaire et stratégie financière pour startups et PME. Barcelone, Paris, Toulouse. Devis gratuit.",
   "accompagnement-levee-de-fond":
-    "Accompagnement levée de fonds de la préparation au closing. 100M+ EUR levés pour nos clients. Due diligence, business plan et négociation.",
+    "Levée de fonds clé en main : business plan, data room, due diligence et négociation investisseurs. +30 tours accompagnés, 100M EUR+ levés. Diagnostic gratuit.",
   "comptabilite-externalisation":
-    "Externalisez votre comptabilité avec Iter Advisors. Tenue comptable, déclarations fiscales et clôtures mensuelles pour PME et startups.",
+    "Externalisez votre comptabilité : tenue, déclarations TVA, paie et clôture annuelle. Pennylane, Sage, QuickBooks - migration en 2 semaines. Devis gratuit.",
   "controle-de-gestion-externalise":
-    "Contrôle de gestion externalisé pour PME et startups. Tableaux de bord, analyse des écarts et KPIs financiers. Économisez jusqu'à 55K EUR/an.",
+    "Contrôle de gestion externalisé : tableaux de bord, analyse des écarts, optimisation des coûts et suivi de performance. Résultats concrets dès le 1er mois.",
 };
 
 function isServicePageSlug(slug: string): slug is ServicePageSlug {

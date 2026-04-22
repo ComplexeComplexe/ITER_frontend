@@ -100,7 +100,7 @@ const SLUG_REDIRECTS: Record<string, string> = {
 
   /* ── Service FR slugs appearing in /en/ paths ────────────────────── */
   "/en/services/previsionnel-tresorerie": "/en/services/cash-flow-forecast",
-  "/en/services/gestion-financiere-externalisee": "/en/services/outsourced-financial-management",
+  "/en/services/gestion-financiere-externalisee": "/en/daf-outsourcing",  /* TICKET-11 cannibalization fix */
   "/en/services/accompagnement-levee-de-fond": "/en/services/fund-raising-support",
   "/en/services/comptabilite-externalisation": "/en/services/outsource-your-accounting",
   "/en/services/controle-de-gestion-externalise": "/en/services/outsourced-management-control",
@@ -114,7 +114,7 @@ const SLUG_REDIRECTS: Record<string, string> = {
 
   /* ── Service ES slugs appearing in /en/ paths ────────────────────── */
   "/en/services/prevision-tesoreria": "/en/services/cash-flow-forecast",
-  "/en/services/gestion-financiera-externalizada": "/en/services/outsourced-financial-management",
+  "/en/services/gestion-financiera-externalizada": "/en/daf-outsourcing",  /* TICKET-11 cannibalization fix */
   "/en/services/soporte-financiacion": "/en/services/fund-raising-support",
   "/en/services/externalizar-contabilidad": "/en/services/outsource-your-accounting",
   "/en/services/control-gestion-externalizado": "/en/services/outsourced-management-control",
@@ -132,6 +132,9 @@ const SLUG_REDIRECTS: Record<string, string> = {
   "/services/fund-raising-support": "/services/accompagnement-levee-de-fond",
   "/services/outsource-your-accounting": "/services/comptabilite-externalisation",
   "/services/outsourced-management-control": "/services/controle-de-gestion-externalise",
+
+  /* ── TICKET-11: Cannibalization fix - 301 to /en/daf-outsourcing ──── */
+  "/en/services/outsourced-financial-management": "/en/daf-outsourcing",
 
   /* ── Fractional CFO Barcelona: only exists in EN ─────────────────── */
   "/fractional-cfo-barcelona": "/daf-externalise-barcelone",

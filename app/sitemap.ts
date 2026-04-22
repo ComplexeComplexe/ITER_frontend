@@ -206,9 +206,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   entries.push(
     ...entryAllLocales({ fr: "/contact", en: "/contact", es: "/contact" })
   );
-  entries.push(
-    ...entryAllLocales({ fr: "/jobs", en: "/jobs", es: "/jobs" })
-  );
+  // /jobs pages are noindexed (TICKET-12) - removed from sitemap
+  // entries.push(
+  //   ...entryAllLocales({ fr: "/jobs", en: "/jobs", es: "/jobs" })
+  // );
+
+  /* ── Fractional CFO EN landing page (TICKET-12) ──────────────── */
+  entries.push({
+    url: `${BASE}/en/fractional-cfo`,
+    lastModified: TODAY,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  });
   entries.push(
     ...entryAllLocales({ fr: "/mentions-legales", en: "/legal-notice", es: "/aviso-legal" })
   );

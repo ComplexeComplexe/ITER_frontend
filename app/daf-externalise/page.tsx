@@ -9,8 +9,8 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "fr",
     path: "/daf-externalise",
     localizedPaths: { fr: "/daf-externalise", en: "/daf-outsourcing", es: "/externalizacion-daf" },
-    fallbackTitle: "DAF externalisé | Iter Advisors",
-    fallbackDescription: "Découvrez les missions et bénéfices d'un DAF externalisé. Iter Advisors accompagne PME et startups avec une direction financière flexible, experte et opérationnelle dès le premier jour.",
+    fallbackTitle: "DAF Externalisé pour PME et Startups | Iter Advisors - Barcelona, Paris",
+    fallbackDescription: "Recrutez un DAF externalisé dès 2 jours/mois. Trésorerie, reporting, levée de fonds : +50 PME et startups accompagnées depuis Barcelone, Paris et Toulouse. Devis gratuit.",
   });
 }
 

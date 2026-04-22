@@ -17,29 +17,29 @@ const locale = "es" as const;
 /* ── Fallback titles ES (Strapi SEO is shared across locales for Single Types) ── */
 const fallbackTitles: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
-    "Previsi\u00f3n de tesorer\u00eda - Pilotaje de flujos | Iter Advisors",
+    "Previsión de Tesorería PYME - Modelo Deslizante 13 Semanas | Iter Advisors",
   "gestion-financiere-externalisee":
-    "Gesti\u00f3n financiera externalizada | Iter Advisors",
+    "Gestión Financiera Externalizada - CFO a Tiempo Parcial desde 2 días/mes | Iter Advisors",
   "accompagnement-levee-de-fond":
-    "Acompa\u00f1amiento en captaci\u00f3n de fondos | Iter Advisors",
+    "Captación de Fondos - Data Room, Due Diligence y Negociación | Iter Advisors",
   "comptabilite-externalisation":
-    "Externalizaci\u00f3n de contabilidad | Iter Advisors",
+    "Externalización Contable - Gestión, Declaraciones y Cierre | Iter Advisors",
   "controle-de-gestion-externalise":
-    "Control de gesti\u00f3n externalizado | Iter Advisors",
+    "Control de Gestión Externalizado - Cuadros de Mando y KPIs | Iter Advisors",
 };
 
 /* ── Fallback descriptions ES (unique per page) ── */
 const fallbackDescriptions: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
-    "Elaboraci\u00f3n y seguimiento de su previsional de tesorer\u00eda. Anticipe sus flujos financieros y optimice su tesorer\u00eda con Iter Advisors.",
+    "Construya una previsión de tesorería deslizante a 13 semanas. Anticipe tensiones de caja, optimice su capital circulante. +50 PYME acompañadas. Consulta gratuita.",
   "gestion-financiere-externalisee":
-    "Externalice su gesti\u00f3n financiera con un CFO experimentado. Reporting y optimizaci\u00f3n financiera a medida por Iter Advisors.",
+    "CFO externalizado desde 2 días/mes. Reporting mensual, pilotaje presupuestario y estrategia financiera para startups y PYME. Barcelona, París, Toulouse.",
   "accompagnement-levee-de-fond":
-    "Preparaci\u00f3n y acompa\u00f1amiento en su captaci\u00f3n de fondos. Business plan, data room y due diligence por Iter Advisors.",
+    "Captación de fondos integral: business plan, data room, due diligence y negociación con inversores. +30 rondas acompañadas, 100M EUR+ levantados.",
   "comptabilite-externalisation":
-    "Externalice su contabilidad: gesti\u00f3n contable, declaraciones fiscales y sociales. Servicio a medida por Iter Advisors.",
+    "Externalice su contabilidad: gestión contable, IVA, nóminas y cierre anual. Pennylane, Sage, QuickBooks - migración en 2 semanas. Presupuesto gratuito.",
   "controle-de-gestion-externalise":
-    "Externalice su control de gesti\u00f3n: cuadros de mando, an\u00e1lisis de desviaciones y optimizaci\u00f3n de costes por Iter Advisors.",
+    "Control de gestión externalizado: cuadros de mando, análisis de desviaciones, optimización de costes y seguimiento de rendimiento. Resultados desde el 1er mes.",
 };
 
 /** Build localizedPaths for a service page slug */
