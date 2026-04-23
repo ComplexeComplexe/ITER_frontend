@@ -735,9 +735,9 @@ export async function getBlogArticleBySlug(slug: string, locale: Locale): Promis
       "blog-articles",
       {
         "filters[slug][$eq]": slug,
-        "populate[featuredImage]": "*",
-        "populate[relatedArticles][populate]": "featuredImage",
-        "populate[seo][populate]": "ogImage",
+        "populate[0]": "featuredImage",
+        "populate[1]": "seo",
+        "populate[2]": "relatedArticles",
       },
       { locale }
     );
