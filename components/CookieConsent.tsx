@@ -194,7 +194,7 @@ function storeConsent(consent: ConsentState): void {
 
 declare global {
   interface Window {
-    dataLayer: Record<string, unknown>[];
+    dataLayer: unknown[];
     gtag: (...args: unknown[]) => void;
   }
 }
@@ -203,29 +203,23 @@ function pushConsentToGTM(consent: ConsentState): void {
   if (typeof window === "undefined") return;
 
   // Google Consent Mode v2 — the default was already set in the <head>
-  // script of the layout. We push the same shape via dataLayer so that gtm.js
-  // (whether already loaded or loading later via lazy-load) sees the update.
+  // script of the layout. We fire a consent update via the gtag() shim, which
+  // pushes an Arguments-like entry into dataLayer (the pattern GTM expects).
+  // If GTM has already loaded its own gtag(), we use that for proper dedupe.
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push([
-    "consent",
-    "update",
-    {
-      analytics_storage: consent.analytics ? "granted" : "denied",
-      ad_storage: consent.marketing ? "granted" : "denied",
-      ad_user_data: consent.marketing ? "granted" : "denied",
-      ad_personalization: consent.marketing ? "granted" : "denied",
-    },
-  ]);
+  const gtagFn =
+    typeof window.gtag === "function"
+      ? window.gtag
+      : (...args: unknown[]) => {
+          window.dataLayer.push(args);
+        };
 
-  // Also call the gtag shim if GTM has already loaded.
-  if (typeof window.gtag === "function") {
-    window.gtag("consent", "update", {
-      analytics_storage: consent.analytics ? "granted" : "denied",
-      ad_storage: consent.marketing ? "granted" : "denied",
-      ad_user_data: consent.marketing ? "granted" : "denied",
-      ad_personalization: consent.marketing ? "granted" : "denied",
-    });
-  }
+  gtagFn("consent", "update", {
+    analytics_storage: consent.analytics ? "granted" : "denied",
+    ad_storage: consent.marketing ? "granted" : "denied",
+    ad_user_data: consent.marketing ? "granted" : "denied",
+    ad_personalization: consent.marketing ? "granted" : "denied",
+  });
 }
 
 // ---------------------------------------------------------------------------
