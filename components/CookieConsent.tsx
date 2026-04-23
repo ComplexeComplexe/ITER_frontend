@@ -27,33 +27,39 @@ const translations = {
     banner: {
       title: "Nous respectons votre vie privée",
       description:
-        "Nous utilisons des cookies pour analyser le trafic et améliorer votre expérience. Vous pouvez accepter tous les cookies, les refuser ou personnaliser vos préférences.",
+        "Nous déposons des cookies d'analyse et de marketing uniquement après votre consentement explicite. Vous pouvez tout accepter, tout refuser ou personnaliser vos choix.",
       acceptAll: "Tout accepter",
       rejectAll: "Tout refuser",
       customize: "Personnaliser",
+      policyLink: "Voir la politique cookies complète",
+      policyHref: "/politique-cookies",
     },
     modal: {
       title: "Préférences de cookies",
       description:
-        "Gérez vos préférences de cookies ci-dessous. Les cookies nécessaires sont indispensables au fonctionnement du site et ne peuvent pas être désactivés.",
+        "Gérez vos préférences par catégorie. Les cookies nécessaires sont indispensables au fonctionnement du site et ne peuvent pas être désactivés.",
       save: "Enregistrer mes préférences",
       acceptAll: "Tout accepter",
+      detailsLabel: "Liste détaillée des cookies",
       categories: {
         necessary: {
           title: "Cookies nécessaires",
           description:
-            "Ces cookies sont indispensables au fonctionnement du site (navigation, sécurité, préférences de langue). Ils ne peuvent pas être désactivés.",
+            "Strictement nécessaires au fonctionnement du site (gestion du consentement, sécurité).",
           always: "Toujours actifs",
+          trackers: "iter_cookie_consent, iter_cookie_consent_date (localStorage 1st-party, 180 jours)",
         },
         analytics: {
           title: "Cookies analytiques",
           description:
-            "Ces cookies nous permettent de mesurer l'audience du site et de comprendre comment les visiteurs l'utilisent, afin d'améliorer nos services (Google Analytics).",
+            "Mesure d'audience via Google Analytics 4 (Google LLC, États-Unis — clauses contractuelles types UE).",
+          trackers: "_ga, _ga_* (13 mois), _gid (24 h)",
         },
         marketing: {
           title: "Cookies marketing",
           description:
-            "Ces cookies sont utilisés pour vous proposer des publicités pertinentes et mesurer l'efficacité de nos campagnes (Google Ads, réseaux sociaux).",
+            "Suivi des conversions et reciblage via Google Ads / Google Marketing Platform (Google LLC, États-Unis).",
+          trackers: "_gcl_au (90 jours), IDE, DSID (13 mois)",
         },
       },
     },
@@ -63,33 +69,39 @@ const translations = {
     banner: {
       title: "We respect your privacy",
       description:
-        "We use cookies to analyze traffic and improve your experience. You can accept all cookies, reject them, or customize your preferences.",
+        "We set analytics and marketing cookies only after your explicit consent. You can accept all, reject all, or customize your choices.",
       acceptAll: "Accept all",
       rejectAll: "Reject all",
       customize: "Customize",
+      policyLink: "See the full cookie policy",
+      policyHref: "/en/cookie-policy",
     },
     modal: {
       title: "Cookie preferences",
       description:
-        "Manage your cookie preferences below. Necessary cookies are essential for the website to function and cannot be disabled.",
+        "Manage your preferences by category. Necessary cookies are essential for the site to function and cannot be disabled.",
       save: "Save my preferences",
       acceptAll: "Accept all",
+      detailsLabel: "Detailed cookie list",
       categories: {
         necessary: {
           title: "Necessary cookies",
           description:
-            "These cookies are essential for the website to function (navigation, security, language preferences). They cannot be disabled.",
+            "Strictly necessary for the site to function (consent management, security).",
           always: "Always active",
+          trackers: "iter_cookie_consent, iter_cookie_consent_date (localStorage 1st-party, 180 days)",
         },
         analytics: {
           title: "Analytics cookies",
           description:
-            "These cookies allow us to measure website traffic and understand how visitors use it, in order to improve our services (Google Analytics).",
+            "Traffic measurement via Google Analytics 4 (Google LLC, United States — EU Standard Contractual Clauses).",
+          trackers: "_ga, _ga_* (13 months), _gid (24h)",
         },
         marketing: {
           title: "Marketing cookies",
           description:
-            "These cookies are used to show you relevant ads and measure the effectiveness of our campaigns (Google Ads, social media).",
+            "Conversion tracking and retargeting via Google Ads / Google Marketing Platform (Google LLC, United States).",
+          trackers: "_gcl_au (90 days), IDE, DSID (13 months)",
         },
       },
     },
@@ -99,33 +111,39 @@ const translations = {
     banner: {
       title: "Respetamos su privacidad",
       description:
-        "Utilizamos cookies para analizar el tráfico y mejorar su experiencia. Puede aceptar todas las cookies, rechazarlas o personalizar sus preferencias.",
+        "Instalamos cookies de análisis y marketing únicamente tras su consentimiento explícito. Puede aceptar todo, rechazar todo o personalizar sus preferencias.",
       acceptAll: "Aceptar todo",
       rejectAll: "Rechazar todo",
       customize: "Personalizar",
+      policyLink: "Ver la política de cookies completa",
+      policyHref: "/es/politica-cookies",
     },
     modal: {
       title: "Preferencias de cookies",
       description:
-        "Gestione sus preferencias de cookies a continuación. Las cookies necesarias son esenciales para el funcionamiento del sitio y no se pueden desactivar.",
+        "Gestione sus preferencias por categoría. Las cookies necesarias son esenciales para el funcionamiento del sitio y no se pueden desactivar.",
       save: "Guardar mis preferencias",
       acceptAll: "Aceptar todo",
+      detailsLabel: "Lista detallada de cookies",
       categories: {
         necessary: {
           title: "Cookies necesarias",
           description:
-            "Estas cookies son esenciales para el funcionamiento del sitio (navegación, seguridad, preferencias de idioma). No se pueden desactivar.",
+            "Estrictamente necesarias para el funcionamiento del sitio (gestión del consentimiento, seguridad).",
           always: "Siempre activas",
+          trackers: "iter_cookie_consent, iter_cookie_consent_date (localStorage 1st-party, 180 días)",
         },
         analytics: {
           title: "Cookies analíticas",
           description:
-            "Estas cookies nos permiten medir el tráfico del sitio y comprender cómo lo utilizan los visitantes, para mejorar nuestros servicios (Google Analytics).",
+            "Medición de audiencia mediante Google Analytics 4 (Google LLC, EE.UU. — Cláusulas Contractuales Tipo UE).",
+          trackers: "_ga, _ga_* (13 meses), _gid (24 h)",
         },
         marketing: {
           title: "Cookies de marketing",
           description:
-            "Estas cookies se utilizan para mostrarle anuncios relevantes y medir la eficacia de nuestras campañas (Google Ads, redes sociales).",
+            "Seguimiento de conversiones y retargeting a través de Google Ads / Google Marketing Platform (Google LLC, EE.UU.).",
+          trackers: "_gcl_au (90 días), IDE, DSID (13 meses)",
         },
       },
     },
@@ -184,19 +202,22 @@ declare global {
 function pushConsentToGTM(consent: ConsentState): void {
   if (typeof window === "undefined") return;
 
+  // Google Consent Mode v2 — the default was already set in the <head>
+  // script of the layout. We push the same shape via dataLayer so that gtm.js
+  // (whether already loaded or loading later via lazy-load) sees the update.
   window.dataLayer = window.dataLayer || [];
-  function gtag(...args: unknown[]) {
-    window.dataLayer.push(Object.fromEntries(args.map((a, i) => [i, a])));
-  }
+  window.dataLayer.push([
+    "consent",
+    "update",
+    {
+      analytics_storage: consent.analytics ? "granted" : "denied",
+      ad_storage: consent.marketing ? "granted" : "denied",
+      ad_user_data: consent.marketing ? "granted" : "denied",
+      ad_personalization: consent.marketing ? "granted" : "denied",
+    },
+  ]);
 
-  // Google Consent Mode v2
-  window.dataLayer.push({
-    event: "consent_update",
-    consent_analytics: consent.analytics ? "granted" : "denied",
-    consent_marketing: consent.marketing ? "granted" : "denied",
-  });
-
-  // Utiliser gtag consent update si disponible
+  // Also call the gtag shim if GTM has already loaded.
   if (typeof window.gtag === "function") {
     window.gtag("consent", "update", {
       analytics_storage: consent.analytics ? "granted" : "denied",
@@ -205,21 +226,6 @@ function pushConsentToGTM(consent: ConsentState): void {
       ad_personalization: consent.marketing ? "granted" : "denied",
     });
   }
-}
-
-function setDefaultConsent(): void {
-  if (typeof window === "undefined") return;
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    "gtm.start": new Date().getTime(),
-    event: "gtm.js",
-  });
-  // Pousser le consentement par défaut (tout denied)
-  window.dataLayer.push({
-    event: "consent_default",
-    consent_analytics: "denied",
-    consent_marketing: "denied",
-  });
 }
 
 // ---------------------------------------------------------------------------
@@ -246,7 +252,8 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
       setConsent(stored);
       pushConsentToGTM(stored);
     } else {
-      setDefaultConsent();
+      // Default consent (all denied) is already set by the <head> script in
+      // the root layout before GTM loads. We just need to show the banner.
       setShowBanner(true);
     }
   }, []);
@@ -327,11 +334,20 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
 
               {/* Description */}
               <p
-                className="mb-5 text-sm leading-relaxed"
+                className="mb-3 text-sm leading-relaxed"
                 style={{ color: "oklch(0.45 0.01 270)" }}
               >
                 {t.banner.description}
               </p>
+
+              {/* Lien vers politique cookies détaillée */}
+              <a
+                href={t.banner.policyHref}
+                className="mb-5 inline-block text-xs underline hover:no-underline"
+                style={{ color: "oklch(0.42 0.28 275)" }}
+              >
+                {t.banner.policyLink}
+              </a>
 
               {/* Boutons */}
               <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-end sm:gap-3">
@@ -497,10 +513,25 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                       >
                         {cat.description}
                       </p>
+                      <p
+                        className="mt-2 font-mono text-[10px] leading-relaxed"
+                        style={{ color: "oklch(0.55 0.01 270)" }}
+                      >
+                        {cat.trackers}
+                      </p>
                     </div>
                   );
                 })}
               </div>
+
+              {/* Lien vers politique cookies détaillée */}
+              <a
+                href={t.banner.policyHref}
+                className="mt-4 inline-block text-xs underline hover:no-underline"
+                style={{ color: "oklch(0.42 0.28 275)" }}
+              >
+                {t.modal.detailsLabel}
+              </a>
 
               {/* Boutons */}
               <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-end sm:gap-3">

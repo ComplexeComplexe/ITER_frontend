@@ -201,6 +201,7 @@ export const footerContent: Record<Locale, FooterContent> = {
     legalLinks: [
       { text: "Mentions légales", href: "/mentions-legales" },
       { text: "Politique de confidentialité", href: "/politique-de-confidentialite" },
+      { text: "Politique de cookies", href: "/politique-cookies" },
     ],
     locations: [
       { city: "Barcelone", country: "Espagne", href: "/daf-externalise-barcelone" },
@@ -216,6 +217,7 @@ export const footerContent: Record<Locale, FooterContent> = {
     legalLinks: [
       { text: "Terms of use", href: "/en/legal-notice" },
       { text: "Privacy policy", href: "/en/privacy-policy" },
+      { text: "Cookie policy", href: "/en/cookie-policy" },
     ],
     locations: [
       { city: "Barcelona", country: "Spain", href: "/en/outsourced-cfo-barcelona" },
@@ -231,6 +233,7 @@ export const footerContent: Record<Locale, FooterContent> = {
     legalLinks: [
       { text: "Información jurídica", href: "/es/aviso-legal" },
       { text: "Política de privacidad", href: "/es/politica-de-privacidad" },
+      { text: "Política de cookies", href: "/es/politica-cookies" },
     ],
     locations: [
       { city: "Barcelona", country: "España", href: "/es/cfo-externalizado-barcelona" },
