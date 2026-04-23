@@ -8,6 +8,7 @@ export const metadata: Metadata = buildMetadata({
   title: "Finance and CFO careers - Join our team | Iter Advisors",
   description: "Join the Iter Advisors team.",
   path: "/jobs",
+  noindex: true,
 });
 
 export default async function Page() {

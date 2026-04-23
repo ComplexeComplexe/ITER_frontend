@@ -96,7 +96,6 @@ const servicesEn: ServicesContent = {
   services: [
     { title: "Fund-raising support", href: "/en/services/fund-raising-support", category: "finance" },
     { title: "Outsourced management control", href: "/en/services/outsourced-management-control", category: "finance" },
-    { title: "Outsourced financial management", href: "/en/services/outsourced-financial-management", category: "finance" },
     { title: "Cash flow forecast", href: "/en/services/cash-flow-forecast", category: "finance" },
     { title: "M&A & Due Diligence", href: "/en/services/ma-due-diligence", category: "finance" },
     { title: "Outsourced HR Director", href: "/en/drh-externalise", category: "rh" },

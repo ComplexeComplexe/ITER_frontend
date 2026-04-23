@@ -90,7 +90,12 @@
     },
     {
       "source": "/en/services/gestion-financiere-externalisee",
-      "destination": "/en/services/outsourced-financial-management",
+      "destination": "/en/daf-outsourcing",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/outsourced-financial-management",
+      "destination": "/en/daf-outsourcing",
       "permanent": true
     },
     {
