@@ -272,6 +272,31 @@
       "source": "/es/fiche-metier/:slug",
       "destination": "/es/ressources/fiche-metier",
       "permanent": true
+    },
+    {
+      "source": "/notre-expertise{/}?",
+      "destination": "/a-propos",
+      "permanent": true
+    },
+    {
+      "source": "/notre-equipe{/}?",
+      "destination": "/a-propos",
+      "permanent": true
+    },
+    {
+      "source": "/notre-methode{/}?",
+      "destination": "/a-propos",
+      "permanent": true
+    },
+    {
+      "source": "/en/about-us{/}?",
+      "destination": "/en/a-propos",
+      "permanent": true
+    },
+    {
+      "source": "/es/ressources/descripcion-del-puesto",
+      "destination": "/es/ressources/fiche-metier",
+      "permanent": true
     }
   ]
 }
