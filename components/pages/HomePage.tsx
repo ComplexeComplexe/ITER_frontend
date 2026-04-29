@@ -348,6 +348,7 @@ export default function HomePage({
           <Image
             src="/images/bg/bg-hero-3d.webp"
             alt=""
+            aria-hidden="true"
             fill
             className="object-cover"
             priority
@@ -683,6 +684,7 @@ export default function HomePage({
           <Image
             src="/images/bg/bg-3d.webp"
             alt=""
+            aria-hidden="true"
             fill
             className="object-cover"
             loading="lazy"
