@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostPage from "@/components/pages/BlogPostPage";
-import { getBlogArticleBySlug, getBlogArticles, getCmsNavigation } from "@/lib/strapi";
+import { getBlogArticleBySlug, getBlogArticles, getCmsNavigation, strapiMediaUrl } from "@/lib/strapi";
 import { buildStrapiCollectionMetadata } from "@/lib/metadata";
 import { blogPosts } from "@/lib/content/blog-posts";
 import { getLocalePath } from "@/lib/i18n";
@@ -72,6 +72,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         breadcrumbs={breadcrumbsByLocale.es}
         blocks={article.content}
         cmsNavigation={cmsNavigation}
+        slug={article.slug}
+        publishedDate={article.publishedDate}
+        metaDescription={article.excerpt}
+        featuredImageUrl={article.featuredImage ? strapiMediaUrl(article.featuredImage) : undefined}
       />
     );
   }

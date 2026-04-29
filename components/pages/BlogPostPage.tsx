@@ -5,6 +5,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import StrapiBlocks from "@/components/StrapiBlocks";
 import type { StrapiBlock, CmsNavItem } from "@/lib/strapi";
+import { articleSchema } from "@/lib/schemas";
 
 interface BlogPostPageProps {
   locale: Locale;
@@ -30,6 +31,10 @@ interface BlogPostPageProps {
   category?: string;
   /** Meta description for schema */
   metaDescription?: string;
+  /** Article slug — used to build the canonical URL for Article schema (CC-17) */
+  slug?: string;
+  /** Featured image URL — used for Article schema (CC-17) */
+  featuredImageUrl?: string;
 }
 
 function formatDate(isoDate: string, locale: Locale): string {
@@ -64,41 +69,30 @@ export default function BlogPostPage({
   author,
   category,
   metaDescription,
+  slug,
+  featuredImageUrl,
 }: BlogPostPageProps) {
-  /* ── Schema.org Article structured data ── */
-  const structuredData = publishedDate
-    ? {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        headline: title,
-        author: {
-          "@type": author ? "Person" : "Organization",
-          name: author || "Iter Advisors",
-          url: "https://www.iteradvisors.com/a-propos",
-        },
-        publisher: {
-          "@type": "Organization",
-          name: "Iter Advisors",
-          logo: {
-            "@type": "ImageObject",
-            url: "https://www.iteradvisors.com/images/logo.webp",
-          },
-        },
-        datePublished: publishedDate,
-        dateModified: publishedDate,
-        description: metaDescription || "",
-      }
-    : null;
+  /* ── Schema.org Article structured data (CC-17) ── */
+  // Build a canonical URL when we know the slug; falls back to the blog hub
+  // otherwise. The schema fires whenever we have a title (always).
+  const articleUrl = slug ? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
+  const structuredData = articleSchema({
+    headline: title,
+    description: metaDescription || "",
+    url: articleUrl,
+    datePublished: publishedDate,
+    dateModified: publishedDate,
+    authorName: author || "Iter Advisors",
+    imageSrc: featuredImageUrl,
+  });
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-      {/* Schema.org JSON-LD */}
-      {structuredData && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      )}
+      {/* Schema.org JSON-LD — Article (CC-17) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
       <section className="bg-background pt-32 pb-16">
         <div className="container">

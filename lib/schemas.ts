@@ -50,18 +50,34 @@ export function breadcrumbSchema(items: BreadcrumbItemSchema[]): Record<string, 
 }
 
 /**
- * Generate Service JSON-LD schema.
+ * Generate Service JSON-LD schema with optional offer catalog and aggregate rating.
  */
+export interface ServiceOffer {
+  name: string;
+  price?: string;
+  priceCurrency?: string;
+  description?: string;
+}
+
 export function serviceSchema({
   name,
   description,
   url,
+  serviceType,
+  areaServed,
+  offers,
+  aggregateRating,
 }: {
   name: string;
   description: string;
   url: string;
+  serviceType?: string;
+  /** ISO 3166-1 alpha-2 country codes, e.g. ["FR", "ES"]. */
+  areaServed?: string[];
+  offers?: ServiceOffer[];
+  aggregateRating?: { ratingValue: string; reviewCount: number };
 }): Record<string, unknown> {
-  return {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Service",
     name,
@@ -72,6 +88,70 @@ export function serviceSchema({
       name: "Iter Advisors",
       url: `${BASE}/`,
     },
+  };
+
+  if (serviceType) schema.serviceType = serviceType;
+  if (areaServed && areaServed.length > 0) schema.areaServed = areaServed;
+  if (offers && offers.length > 0) {
+    schema.hasOfferCatalog = {
+      "@type": "OfferCatalog",
+      name: `${name} — formules`,
+      itemListElement: offers.map((o) => ({
+        "@type": "Offer",
+        name: o.name,
+        ...(o.description && { description: o.description }),
+        ...(o.price && { price: o.price }),
+        ...(o.priceCurrency && { priceCurrency: o.priceCurrency }),
+      })),
+    };
+  }
+  if (aggregateRating) {
+    schema.aggregateRating = {
+      "@type": "AggregateRating",
+      ratingValue: aggregateRating.ratingValue,
+      reviewCount: aggregateRating.reviewCount,
+      bestRating: "5",
+      worstRating: "1",
+    };
+  }
+
+  return schema;
+}
+
+/**
+ * Generate Person JSON-LD schema (for article author / EEAT signals).
+ */
+export function personSchema({
+  name,
+  jobTitle,
+  url,
+  imageUrl,
+  sameAs,
+  worksForName = "Iter Advisors",
+  knowsAbout,
+}: {
+  name: string;
+  jobTitle?: string;
+  url?: string;
+  imageUrl?: string;
+  sameAs?: string[];
+  worksForName?: string;
+  knowsAbout?: string[];
+}): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name,
+    ...(jobTitle && { jobTitle }),
+    ...(url && { url: url.startsWith("http") ? url : `${BASE}${url}` }),
+    ...(imageUrl && { image: imageUrl.startsWith("http") ? imageUrl : `${BASE}${imageUrl}` }),
+    ...(sameAs && sameAs.length > 0 && { sameAs }),
+    worksFor: {
+      "@type": "Organization",
+      name: worksForName,
+      url: `${BASE}/`,
+    },
+    ...(knowsAbout && knowsAbout.length > 0 && { knowsAbout }),
   };
 }
 

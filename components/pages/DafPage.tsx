@@ -10,9 +10,10 @@ import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/strapi";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { getDafContent } from "@/lib/content/daf";
-import { faqPageSchema } from "@/lib/schemas";
+import { faqPageSchema, serviceSchema } from "@/lib/schemas";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
+import References from "@/components/References";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 
@@ -438,6 +439,46 @@ export default function DafPage({
         }}
       />
 
+      {/* Service + AggregateRating Schema (CC-05) */}
+      {locale === "fr" && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              serviceSchema({
+                name: "DAF externalisé",
+                description:
+                  "Cabinet de DAF externalisé pour PME, startups et scale-ups. CFO senior dès 2 jours/mois, opérationnel J+1. Trésorerie, reporting, contrôle de gestion, levée de fonds et M&A.",
+                url: "/daf-externalise",
+                serviceType: "Direction financière externalisée",
+                areaServed: ["FR", "ES"],
+                offers: [
+                  {
+                    name: "Essentiel",
+                    description: "2-3 jours par mois — pilotage trésorerie + reporting mensuel",
+                    price: "2000",
+                    priceCurrency: "EUR",
+                  },
+                  {
+                    name: "Croissance",
+                    description: "4-6 jours par mois — DAF opérationnel multi-missions",
+                    price: "4000",
+                    priceCurrency: "EUR",
+                  },
+                  {
+                    name: "Premium",
+                    description: "8 jours et plus par mois — DAF sponsor levée / M&A",
+                    price: "7000",
+                    priceCurrency: "EUR",
+                  },
+                ],
+                aggregateRating: { ratingValue: "5", reviewCount: 31 },
+              }),
+            ),
+          }}
+        />
+      )}
+
       {/* FAQ */}
       <section className="bg-muted/30 py-24 lg:py-32">
         <div className="container">
@@ -460,6 +501,9 @@ export default function DafPage({
       </section>
 
       <CTASection locale={locale} />
+
+      {/* External references (CC-18) — EEAT signal via authoritative sources */}
+      <References locale={locale} />
     </PageLayout>
   );
 }
