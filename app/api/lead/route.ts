@@ -16,7 +16,7 @@ function getResend(): Resend {
 }
 
 const TO = process.env.LEAD_RECIPIENT_EMAIL || "contact@iteradvisors.com";
-const FROM = "Iter Advisors <leads@crm.iteradvisors.com>";
+const FROM = "Iter Advisors <contact@mail.iteradvisors.com>";
 const CRM_BASE_URL = process.env.CRM_BASE_URL || "https://crm.iteradvisors.com";
 
 function getSigningSecret(): Uint8Array {
