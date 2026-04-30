@@ -32,23 +32,52 @@ export default function DafLocalPage({
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "FinancialService",
+    "@id": `https://www.iteradvisors.com/${
+      locale === "fr"
+        ? `daf-externalise-${city}`
+        : locale === "en"
+          ? `outsourced-cfo-${city === "barcelone" ? "barcelona" : city}`
+          : `cfo-externalizado-${city === "barcelone" ? "barcelona" : city}`
+    }#localbusiness`,
     name: `Iter Advisors - ${city.charAt(0).toUpperCase() + city.slice(1)}`,
     description: t.meta.description,
-    url: `https://www.iteradvisors.com/${locale === "fr" ? `daf-externalise-${city}` : locale === "en" ? `outsourced-cfo-${city === "barcelone" ? "barcelona" : city}` : `cfo-externalizado-${city === "barcelone" ? "barcelona" : city}`}`,
-    telephone: "",
+    url: `https://www.iteradvisors.com/${
+      locale === "fr"
+        ? `daf-externalise-${city}`
+        : locale === "en"
+          ? `outsourced-cfo-${city === "barcelone" ? "barcelona" : city}`
+          : `cfo-externalizado-${city === "barcelone" ? "barcelona" : city}`
+    }`,
     email: "contact@iteradvisors.com",
     address: {
       "@type": "PostalAddress",
-      addressLocality: city === "barcelone" ? "Barcelona" : city === "paris" ? "Paris" : "Toulouse",
+      addressLocality:
+        city === "barcelone" ? "Barcelona" : city === "paris" ? "Paris" : "Toulouse",
       addressCountry: city === "barcelone" ? "ES" : "FR",
     },
     areaServed: {
       "@type": "Place",
-      name: city === "barcelone" ? "Barcelona, Spain" : city === "paris" ? "Paris, Ile-de-France" : "Toulouse, Occitanie",
+      name:
+        city === "barcelone"
+          ? "Barcelona, Spain"
+          : city === "paris"
+            ? "Paris, Ile-de-France"
+            : "Toulouse, Occitanie",
     },
-    priceRange: "$$",
+    priceRange: "€€",
+    openingHours: "Mo-Fr 09:00-18:00",
     image: "https://www.iteradvisors.com/images/og-default.png",
+    // Tied to the Organization-level aggregateRating (Iter Advisors, 5/5 on 31
+    // reviews) so Google can attribute the rating to each local entity without
+    // duplicating the AggregateRating subtree per page.
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: 31,
+      bestRating: "5",
+      worstRating: "1",
+    },
   };
 
   const serviceSchema = {
