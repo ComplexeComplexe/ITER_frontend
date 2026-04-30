@@ -50,6 +50,7 @@ const navFr: NavItem[] = [
       { text: "DAF externalisé", href: "/daf-externalise", group: "Finance" },
       { text: "Prévisionnel de trésorerie", href: "/services/previsionnel-tresorerie", group: "Finance" },
       { text: "Gestion financière externalisée", href: "/services/gestion-financiere-externalisee", group: "Finance" },
+      { text: "Comptabilité externalisée", href: "/services/comptabilite-externalisation", group: "Finance" },
       { text: "Accompagnement levée de fonds", href: "/services/accompagnement-levee-de-fond", group: "Finance" },
       { text: "Contrôle de gestion", href: "/services/controle-de-gestion-externalise", group: "Finance" },
       { text: "M&A & Due Diligence", href: "/services/ma-due-diligence", group: "Finance" },
@@ -82,6 +83,7 @@ const navEn: NavItem[] = [
     title: "CFO Outsourced",
     href: "/en/daf-outsourcing",
     children: [
+      { text: "Fractional CFO", href: "/en/fractional-cfo" },
       { text: "Shared-time CFO", href: "/en/daf-outsourcing/shared-time" },
       { text: "Transitional CFO", href: "/en/daf-outsourcing/transition" },
       { text: "CFO : The Mission", href: "/en/daf-outsourcing/metier" },

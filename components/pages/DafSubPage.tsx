@@ -119,9 +119,9 @@ export default function DafSubPage({ locale, content, cmsNavigation }: DafSubPag
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { title: locale === "fr" ? "DAF externalisé" : locale === "en" ? "Outsourced CFO" : "DAF externalizado", href: locale === "fr" ? "/daf-externalise" : `/${locale}/daf-externalise`, icon: TrendingUp },
-              { title: locale === "fr" ? "Levee de fonds" : locale === "en" ? "Fund-raising" : "Levantamiento de fondos", href: locale === "fr" ? "/services/accompagnement-levee-de-fond" : `/${locale}/services/fund-raising-support`, icon: Rocket },
-              { title: locale === "fr" ? "Controle de gestion" : locale === "en" ? "Management control" : "Control de gestion", href: locale === "fr" ? "/services/controle-de-gestion-externalise" : `/${locale}/services/outsourced-management-control`, icon: BarChart3 },
-              { title: locale === "fr" ? "Gestion de tresorerie" : locale === "en" ? "Cash flow management" : "Gestion de tesoreria", href: locale === "fr" ? "/services/previsionnel-tresorerie" : `/${locale}/services/cash-flow-forecast`, icon: Shield },
+              { title: locale === "fr" ? "Accompagnement levée de fonds" : locale === "en" ? "Fund-raising support" : "Acompañamiento captación de fondos", href: locale === "fr" ? "/services/accompagnement-levee-de-fond" : `/${locale}/services/fund-raising-support`, icon: Rocket },
+              { title: locale === "fr" ? "Contrôle de gestion externalisé" : locale === "en" ? "Outsourced management control" : "Control de gestión externalizado", href: locale === "fr" ? "/services/controle-de-gestion-externalise" : `/${locale}/services/outsourced-management-control`, icon: BarChart3 },
+              { title: locale === "fr" ? "Prévisionnel de trésorerie" : locale === "en" ? "Cash flow forecast" : "Previsión de tesorería", href: locale === "fr" ? "/services/previsionnel-tresorerie" : `/${locale}/services/cash-flow-forecast`, icon: Shield },
               { title: locale === "fr" ? "DRH externalisé" : locale === "en" ? "Outsourced HR Director" : "DRH externalizado", href: locale === "fr" ? "/drh-externalise" : `/${locale}/drh-externalise`, icon: Target },
               { title: locale === "fr" ? "M&A & Due Diligence" : "M&A & Due Diligence", href: locale === "fr" ? "/services/ma-due-diligence" : `/${locale}/services/ma-due-diligence`, icon: Compass },
             ].map((service, i) => (

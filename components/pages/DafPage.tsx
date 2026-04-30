@@ -311,12 +311,13 @@ export default function DafPage({
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { title: locale === "fr" ? "Levee de fonds" : locale === "en" ? "Fund-raising" : "Levantamiento de fondos", href: locale === "fr" ? "/services/accompagnement-levee-de-fond" : `/${locale}/services/fund-raising-support`, icon: Rocket },
-              { title: locale === "fr" ? "Controle de gestion" : locale === "en" ? "Management control" : "Control de gestion", href: locale === "fr" ? "/services/controle-de-gestion-externalise" : `/${locale}/services/outsourced-management-control`, icon: BarChart3 },
-              { title: locale === "fr" ? "Gestion de tresorerie" : locale === "en" ? "Cash flow management" : "Gestion de tesoreria", href: locale === "fr" ? "/services/previsionnel-tresorerie" : `/${locale}/services/cash-flow-forecast`, icon: Wallet },
+              { title: locale === "fr" ? "Accompagnement levée de fonds" : locale === "en" ? "Fund-raising support" : "Acompañamiento captación de fondos", href: locale === "fr" ? "/services/accompagnement-levee-de-fond" : `/${locale}/services/fund-raising-support`, icon: Rocket },
+              { title: locale === "fr" ? "Contrôle de gestion externalisé" : locale === "en" ? "Outsourced management control" : "Control de gestión externalizado", href: locale === "fr" ? "/services/controle-de-gestion-externalise" : `/${locale}/services/outsourced-management-control`, icon: BarChart3 },
+              { title: locale === "fr" ? "Prévisionnel de trésorerie" : locale === "en" ? "Cash flow forecast" : "Previsión de tesorería", href: locale === "fr" ? "/services/previsionnel-tresorerie" : `/${locale}/services/cash-flow-forecast`, icon: Wallet },
               { title: locale === "fr" ? "M&A & Due Diligence" : "M&A & Due Diligence", href: locale === "fr" ? "/services/ma-due-diligence" : `/${locale}/services/ma-due-diligence`, icon: Compass },
+              { title: locale === "fr" ? "Comptabilité externalisée" : locale === "en" ? "Outsourced accounting" : "Externalización contable", href: locale === "fr" ? "/services/comptabilite-externalisation" : `/${locale}/services/outsource-your-accounting`, icon: DollarSign },
               { title: locale === "fr" ? "DRH externalisé" : locale === "en" ? "Outsourced HR Director" : "DRH externalizado", href: locale === "fr" ? "/drh-externalise" : `/${locale}/drh-externalise`, icon: Settings },
-              { title: locale === "fr" ? "DAF a temps partage" : locale === "en" ? "Part-time CFO" : "DAF a tiempo compartido", href: locale === "fr" ? "/daf-externalise/temps-partage" : `/${locale}/daf-externalise/temps-partage`, icon: Network },
+              { title: locale === "fr" ? "DAF à temps partagé" : locale === "en" ? "Part-time CFO" : "CFO a tiempo compartido", href: locale === "fr" ? "/daf-externalise/temps-partage" : `/${locale}/daf-externalise/temps-partage`, icon: Network },
             ].map((service, i) => (
               <Link
                 key={i}

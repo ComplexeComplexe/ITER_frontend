@@ -129,7 +129,7 @@ export default function ServicesPage({
                 </h3>
                 <span className="inline-flex items-center gap-2 text-[13px] font-medium text-foreground/40 group-hover:text-iter-violet transition-colors">
                   {locale === "fr"
-                    ? "Decouvrir"
+                    ? "Découvrir"
                     : locale === "en"
                       ? "Discover"
                       : "Descubra"}
@@ -173,7 +173,7 @@ export default function ServicesPage({
                 </h3>
                 <span className="inline-flex items-center gap-2 text-[13px] font-medium text-foreground/40 group-hover:text-iter-dark transition-colors">
                   {locale === "fr"
-                    ? "Decouvrir"
+                    ? "Découvrir"
                     : locale === "en"
                       ? "Discover"
                       : "Descubra"}

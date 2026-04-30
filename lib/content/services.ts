@@ -53,16 +53,16 @@ const servicesFr: ServicesContent = {
     ],
   },
   services: [
-    { title: "Accompagnement levee de fonds", href: "/services/accompagnement-levee-de-fond", category: "finance" },
-    { title: "Controle de gestion externalise", href: "/services/controle-de-gestion-externalise", category: "finance" },
-    { title: "Gestion financiere externalisee", href: "/services/gestion-financiere-externalisee", category: "finance" },
-    { title: "Previsionnel de tresorerie", href: "/services/previsionnel-tresorerie", category: "finance" },
+    { title: "Accompagnement levée de fonds", href: "/services/accompagnement-levee-de-fond", category: "finance" },
+    { title: "Contrôle de gestion externalisé", href: "/services/controle-de-gestion-externalise", category: "finance" },
+    { title: "Comptabilité externalisée", href: "/services/comptabilite-externalisation", category: "finance" },
+    { title: "Prévisionnel de trésorerie", href: "/services/previsionnel-tresorerie", category: "finance" },
     { title: "M&A & Due Diligence", href: "/services/ma-due-diligence", category: "finance" },
-    { title: "DRH externalise", href: "/drh-externalise", category: "rh" },
+    { title: "DRH externalisé", href: "/drh-externalise", category: "rh" },
     { title: "Recrutement & talent acquisition", href: "/drh-externalise", category: "rh" },
     { title: "Gestion de la paie & charges sociales", href: "/drh-externalise", category: "rh" },
-    { title: "Formation & developpement", href: "/drh-externalise", category: "rh" },
-    { title: "Conformite & droit du travail", href: "/drh-externalise", category: "rh" },
+    { title: "Formation & développement", href: "/drh-externalise", category: "rh" },
+    { title: "Conformité & droit du travail", href: "/drh-externalise", category: "rh" },
   ],
 };
 
