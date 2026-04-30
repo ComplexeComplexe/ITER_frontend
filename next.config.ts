@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   trailingSlash: false,
+  // Hide the X-Powered-By: Next.js header — minor information-disclosure
+  // hardening flagged by the technical SEO audit (T-3).
+  poweredByHeader: false,
   images: {
     unoptimized: true,
   },

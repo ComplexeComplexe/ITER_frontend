@@ -252,27 +252,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     )
   );
 
-  /* ── Landing page Fractional CFO Barcelona (EN-specific) ────────── */
-  entries.push(
-    entry(
-      { fr: "/daf-externalise-barcelone", en: "/fractional-cfo-barcelona", es: "/cfo-externalizado-barcelona" },
-      { priority: 0.85 }
-    )
-  );
-  /* EN-only entry for fractional-cfo-barcelona */
+  /* ── EN-specific Fractional CFO Barcelona landing page ────────────
+   *
+   * Single sitemap entry, no FR duplicate. The audit (T-2) flagged that
+   * /daf-externalise-barcelone was emitted twice — once via the
+   * outsourced-cfo-barcelona entryAllLocales (which is the canonical
+   * Barcelona triple) and once via a redundant entry() block here.
+   * The FR URL is kept only on the canonical triple above; the EN
+   * Fractional CFO landing self-references for hreflang (no FR claim,
+   * since /daf-externalise-barcelone already maps EN → outsourced-cfo).
+   */
   entries.push({
     url: `${BASE}/en/fractional-cfo-barcelona`,
     lastModified: TODAY,
     changeFrequency: "monthly",
     priority: 0.85,
-    alternates: {
-      languages: {
-        fr: `${BASE}/daf-externalise-barcelone`,
-        en: `${BASE}/en/fractional-cfo-barcelona`,
-        es: `${BASE}/es/cfo-externalizado-barcelona`,
-        "x-default": `${BASE}/daf-externalise-barcelone`,
-      },
-    },
   });
 
   /* ── Blog articles ───────────────────────────────────────────────── */
