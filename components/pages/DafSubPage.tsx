@@ -49,7 +49,7 @@ export default function DafSubPage({ locale, content, cmsNavigation }: DafSubPag
               <Link
                 href={BOOKING_URL}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
               >
                 {content.ctaButton}
@@ -114,7 +114,7 @@ export default function DafSubPage({ locale, content, cmsNavigation }: DafSubPag
             {locale === "fr" ? "Services lies" : locale === "en" ? "Related services" : "Servicios relacionados"}
           </span>
           <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
-            {locale === "fr" ? "Decouvrez nos autres expertises" : locale === "en" ? "Discover our other services" : "Descubra nuestros otros servicios"}
+            {locale === "fr" ? "Découvrez nos autres expertises" : locale === "en" ? "Discover our other services" : "Descubra nuestros otros servicios"}
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[

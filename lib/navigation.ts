@@ -72,7 +72,7 @@ const navFr: NavItem[] = [
       { text: "Cas d'usage", href: "/ressources/case-studies" },
     ],
   },
-  { title: "A propos", href: "/a-propos" },
+  { title: "À propos", href: "/a-propos" },
   { title: "Jobs", href: "/jobs" },
   { title: "Contact", href: "/contact" },
 ];

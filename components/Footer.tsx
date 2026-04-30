@@ -44,9 +44,9 @@ export default function Footer({ locale }: { locale: Locale }) {
           {/* Services */}
           {serviceNav?.children && (
             <div>
-              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
                 {serviceNav.title}
-              </h4>
+              </h3>
               <ul className="space-y-2.5">
                 {serviceNav.children.map((item) => (
                   <li key={item.href}>
@@ -62,9 +62,9 @@ export default function Footer({ locale }: { locale: Locale }) {
           {/* Resources */}
           {resourceNav?.children && (
             <div>
-              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
                 {resourceNav.title}
-              </h4>
+              </h3>
               <ul className="space-y-2.5">
                 {resourceNav.children.map((item) => (
                   <li key={item.href}>
@@ -81,7 +81,7 @@ export default function Footer({ locale }: { locale: Locale }) {
           <div>
             <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
               {locale === "fr" ? "Nos bureaux" : locale === "en" ? "Our offices" : "Nuestras oficinas"}
-            </h4>
+            </h3>
             <div className="space-y-3">
               {content.locations.map((loc) => (
                 <Link key={loc.city} href={loc.href} className="flex items-start gap-2 group">

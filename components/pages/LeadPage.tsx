@@ -696,7 +696,7 @@ export default function LeadPage({
               <Link
                 href={BOOKING_URL}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white font-semibold text-base hover:bg-white/5 transition-all duration-300"
               >
                 <Calendar size={18} />
@@ -1095,7 +1095,7 @@ export default function LeadPage({
                   <Link
                     href={BOOKING_URL}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="nofollow noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-bold text-base hover:shadow-[0_0_30px_oklch(0.42_0.28_275/0.3)] transition-all duration-300 group"
                   >
                     <Calendar size={18} />

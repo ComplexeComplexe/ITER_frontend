@@ -110,7 +110,7 @@ export default function DafLocalPage({
               <Link
                 href={BOOKING_URL}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
               >
                 {t.ctaButton}

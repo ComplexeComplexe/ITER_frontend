@@ -87,8 +87,8 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "cout-daf-externalise-tarifs-prix-2026": {
       meta: {
-        title: "DAF externalise tarif 2026 : prix, couts et grille | Iter Advisors",
-        description: "Decouvrez les tarifs d'un DAF externalise en 2026 : TJM, forfaits mensuels et grille de prix. Economisez 50 a 70% vs un DAF salarie. Diagnostic gratuit.",
+        title: "DAF externalisé tarif 2026 : prix, coûts et grille | Iter Advisors",
+        description: "Découvrez les tarifs d'un DAF externalisé en 2026 : TJM, forfaits mensuels et grille de prix. Économisez 50 à 70 % vs un DAF salarié. Diagnostic gratuit.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",

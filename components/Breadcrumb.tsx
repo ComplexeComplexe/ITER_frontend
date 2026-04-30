@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Locale } from "@/lib/i18n";
 import { getHomePath } from "@/lib/navigation";
 import { breadcrumbSchema } from "@/lib/schemas";
@@ -19,15 +22,20 @@ export default function Breadcrumb({
 }) {
   const isDark = variant === "dark";
   const homePath = getHomePath(locale);
+  const pathname = usePathname() || "";
 
-  // Build schema items: Home + all breadcrumb items
+  // Build schema items: Home + all breadcrumb items.
+  // The current page is the last item passed without href; we fall back to
+  // the live pathname so BreadcrumbList JSON-LD always emits a complete
+  // chain (Home → ... → current). Previously the last item was filtered
+  // out, leaving Google with only "Iter Advisors" and no rich result.
   const schemaItems = [
     { name: "Iter Advisors", url: homePath },
-    ...items.map((item) => ({
+    ...items.map((item, i) => ({
       name: item.label,
-      url: item.href || "",
+      url: item.href || (i === items.length - 1 ? pathname : ""),
     })),
-  ].filter((item) => item.url);
+  ].filter((item) => item.name && item.url);
 
   return (
     <>

@@ -61,7 +61,7 @@ export default function CTASection({ locale }: { locale: Locale }) {
             <Link
               href={BOOKING_URL}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-dark text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
             >
               {t.button}

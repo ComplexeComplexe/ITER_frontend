@@ -49,7 +49,7 @@ export default function DafPage({
               <Link
                 href={BOOKING_URL}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
               >
                 {t.ctaButton}
@@ -307,7 +307,7 @@ export default function DafPage({
             {locale === "fr" ? "Nos expertises" : locale === "en" ? "Our expertise" : "Nuestras expertises"}
           </span>
           <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
-            {locale === "fr" ? "Decouvrez nos autres services" : locale === "en" ? "Discover our other services" : "Descubra nuestros otros servicios"}
+            {locale === "fr" ? "Découvrez nos autres services" : locale === "en" ? "Discover our other services" : "Descubra nuestros otros servicios"}
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
