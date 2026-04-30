@@ -79,7 +79,7 @@ export default function Footer({ locale }: { locale: Locale }) {
 
           {/* Locations */}
           <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
               {locale === "fr" ? "Nos bureaux" : locale === "en" ? "Our offices" : "Nuestras oficinas"}
             </h3>
             <div className="space-y-3">
