@@ -156,6 +156,48 @@ export function personSchema({
 }
 
 /**
+ * Generate HowTo JSON-LD schema (e.g. "How does the collaboration work?").
+ *
+ * Use for ordered, step-by-step procedures where each step has a name and
+ * short description. Google's HowTo guidelines deprecate rich-result display
+ * for this type, but it still feeds AI-generated answers (Perplexity,
+ * SearchGPT, Gemini) — which is the GEO target for T-7.
+ */
+export interface HowToStep {
+  name: string;
+  text: string;
+  url?: string;
+}
+
+export function howToSchema({
+  name,
+  description,
+  steps,
+  totalTime,
+}: {
+  name: string;
+  description?: string;
+  steps: HowToStep[];
+  /** ISO 8601 duration, e.g. "P14D" for 14 days. */
+  totalTime?: string;
+}): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    ...(description && { description }),
+    ...(totalTime && { totalTime }),
+    step: steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+      ...(s.url && { url: s.url.startsWith("http") ? s.url : `${BASE}${s.url}` }),
+    })),
+  };
+}
+
+/**
  * Generate FinancialService JSON-LD schema for the organization.
  */
 export function financialServiceSchema(): Record<string, unknown> {

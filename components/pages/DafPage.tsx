@@ -10,12 +10,89 @@ import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/strapi";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { getDafContent } from "@/lib/content/daf";
-import { faqPageSchema, serviceSchema } from "@/lib/schemas";
+import { faqPageSchema, serviceSchema, howToSchema } from "@/lib/schemas";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import References from "@/components/References";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
+
+/* HowTo schema content — collaboration steps with an Iter Advisors fractional CFO.
+ * Drives AI-answer surfaces (Perplexity / SearchGPT / Gemini) per audit T-7. */
+const HOW_TO_COLLAB: Record<
+  Locale,
+  { name: string; description: string; steps: { name: string; text: string }[] }
+> = {
+  fr: {
+    name: "Comment se passe la collaboration avec un DAF externalisé Iter Advisors",
+    description:
+      "Les 4 étapes clés pour démarrer une mission de DAF externalisé avec Iter Advisors, du diagnostic initial à l'intégration opérationnelle.",
+    steps: [
+      {
+        name: "Diagnostic financier initial",
+        text: "Nous réalisons un diagnostic approfondi de votre situation financière sur 1 à 2 semaines : trésorerie, reporting, outils, process et enjeux stratégiques.",
+      },
+      {
+        name: "Cadrage de la mission",
+        text: "Nous définissons ensemble le périmètre d'intervention, la fréquence (jours par mois) et les objectifs prioritaires (levée de fonds, structuration, M&A, transition).",
+      },
+      {
+        name: "Intégration du DAF dans vos équipes",
+        text: "Notre DAF rejoint votre équipe et prend en main les sujets clés : tableaux de bord, prévisionnel de trésorerie, relations investisseurs et expert-comptable.",
+      },
+      {
+        name: "Pilotage et reporting récurrents",
+        text: "Le DAF assure un reporting mensuel, anime les comités stratégiques et adapte le périmètre selon l'évolution de votre activité — sans engagement de durée.",
+      },
+    ],
+  },
+  en: {
+    name: "How collaboration with an Iter Advisors fractional CFO works",
+    description:
+      "The 4 key steps to start a fractional CFO engagement with Iter Advisors, from initial diagnosis to operational integration.",
+    steps: [
+      {
+        name: "Initial financial diagnosis",
+        text: "We run an in-depth diagnosis of your financial situation over 1-2 weeks: cash flow, reporting, tools, processes and strategic priorities.",
+      },
+      {
+        name: "Engagement scoping",
+        text: "Together we define the scope, frequency (days per month) and priority objectives (fundraising, structuring, M&A, transition).",
+      },
+      {
+        name: "CFO integration into your team",
+        text: "Our CFO joins your team and takes ownership of key topics: dashboards, cash flow forecast, investor relations and accountant relationship.",
+      },
+      {
+        name: "Recurring management & reporting",
+        text: "The CFO delivers monthly reporting, runs strategic committees and adjusts scope as your business evolves — with no minimum commitment.",
+      },
+    ],
+  },
+  es: {
+    name: "Cómo funciona la colaboración con un CFO externalizado de Iter Advisors",
+    description:
+      "Las 4 etapas clave para arrancar una misión de CFO externalizado con Iter Advisors, del diagnóstico inicial a la integración operativa.",
+    steps: [
+      {
+        name: "Diagnóstico financiero inicial",
+        text: "Realizamos un diagnóstico profundo de su situación financiera durante 1-2 semanas: tesorería, reporting, herramientas, procesos y prioridades estratégicas.",
+      },
+      {
+        name: "Definición del alcance",
+        text: "Definimos juntos el alcance, la frecuencia (días al mes) y los objetivos prioritarios (ronda de financiación, estructuración, M&A, transición).",
+      },
+      {
+        name: "Integración del CFO en su equipo",
+        text: "Nuestro CFO se incorpora a su equipo y asume los temas clave: cuadros de mando, previsional de tesorería, relaciones con inversores y contable.",
+      },
+      {
+        name: "Pilotaje y reporting recurrentes",
+        text: "El CFO entrega un reporting mensual, anima los comités estratégicos y ajusta el alcance según la evolución de su actividad — sin compromiso mínimo.",
+      },
+    ],
+  },
+};
 
 export default function DafPage({
   locale,
@@ -436,6 +513,21 @@ export default function DafPage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             faqPageSchema(t.faq.map((item) => ({ question: item.question, answer: item.answer })))
+          ),
+        }}
+      />
+
+      {/* HowTo Schema (T-7) — collaboration steps for AI answer engines */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            howToSchema({
+              name: HOW_TO_COLLAB[locale].name,
+              description: HOW_TO_COLLAB[locale].description,
+              steps: HOW_TO_COLLAB[locale].steps,
+              totalTime: "P14D",
+            }),
           ),
         }}
       />

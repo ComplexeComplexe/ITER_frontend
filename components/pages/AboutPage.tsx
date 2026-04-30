@@ -9,6 +9,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import TeamMemberCard from "@/components/TeamMemberCard";
+import { personSchema } from "@/lib/schemas";
 import { Target, Users, Lightbulb, Handshake, Rocket, TrendingUp, Building2, BarChart3 } from "lucide-react";
 
 const visionIcons = [Target, Users, Lightbulb, Handshake];
@@ -258,6 +259,40 @@ export default function AboutPage({
 
       <TestimonialsSection locale={locale} />
       <CTASection locale={locale} />
+
+      {/* Person schemas for founding partners (T-7 — EEAT / GEO signals).
+        * Renders one Person JSON-LD per leadership team member (showInHero).
+        * FR-only injection: avoids duplicate Person nodes across locales — the
+        * hreflang cluster makes a single canonical Person sufficient. */}
+      {locale === "fr" &&
+        team
+          .filter((m) => m.showInHero)
+          .map((m) => {
+            const fullName = `${m.firstName} ${m.lastName}`.trim();
+            const photoUrl = m.photo?.url;
+            const sameAs = m.linkedIn ? [m.linkedIn] : undefined;
+            const schema = personSchema({
+              name: fullName,
+              jobTitle: m.role,
+              url: `/a-propos#${m.slug}`,
+              imageUrl: photoUrl,
+              sameAs,
+              knowsAbout: [
+                "DAF externalisé",
+                "Direction financière",
+                "Levée de fonds",
+                "Pilotage de la performance",
+                "Gestion de trésorerie",
+              ],
+            });
+            return (
+              <script
+                key={`person-${m.slug}`}
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+              />
+            );
+          })}
     </PageLayout>
   );
 }
