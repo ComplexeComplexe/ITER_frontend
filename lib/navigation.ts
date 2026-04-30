@@ -65,6 +65,7 @@ const navFr: NavItem[] = [
     title: "Ressources",
     href: "/ressources",
     children: [
+      { text: "Nos clients", href: "/clients" },
       { text: "Cas clients", href: "/ressources/testimonials" },
       { text: "Actualités", href: "/ressources/blog" },
       { text: "Fiches métier", href: "/ressources/fiche-metier" },
@@ -121,12 +122,13 @@ const navEn: NavItem[] = [
     title: "Resources",
     href: "/en/ressources",
     children: [
-      { text: "Case studies", href: "/en/ressources/testimonials" },
+      { text: "Our clients", href: "/en/clients" },
+      { text: "Testimonials", href: "/en/ressources/testimonials" },
       { text: "Blog", href: "/en/ressources/blog" },
       { text: "Job descriptions", href: "/en/ressources/fiche-metier" },
       { text: "Glossary", href: "/en/ressources/glossaire" },
       { text: "Our tools", href: "/en/ressources/tools" },
-      { text: "Case Studies", href: "/en/ressources/case-studies" },
+      { text: "Case studies", href: "/en/ressources/case-studies" },
     ],
   },
   { title: "About us", href: "/en/a-propos" },
@@ -175,6 +177,7 @@ const navEs: NavItem[] = [
     title: "Recursos",
     href: "/es/ressources",
     children: [
+      { text: "Nuestros clientes", href: "/es/clients" },
       { text: "Casos prácticos", href: "/es/ressources/testimonials" },
       { text: "Blog", href: "/es/ressources/blog" },
       { text: "Perfiles profesionales", href: "/es/ressources/fiche-metier" },

@@ -198,6 +198,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { priority: 0.7 }
     )
   );
+  // Named-clients page (GEO-5 from AI Visibility audit)
+  entries.push(
+    ...entryAllLocales(
+      { fr: "/clients", en: "/clients", es: "/clients" },
+      { priority: 0.8 }
+    )
+  );
 
   /* ── Pages institutionnelles ─────────────────────────────────────── */
   entries.push(
