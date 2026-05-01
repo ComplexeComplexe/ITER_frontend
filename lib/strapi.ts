@@ -762,7 +762,10 @@ export async function getTeamMembers(locale: Locale): Promise<StrapiTeamMember[]
       { locale, revalidate: 60 }
     );
     return res.data;
-  } catch {
+  } catch (err) {
+    // Surface the failure to Vercel logs so we can debug Strapi auth/permission
+    // issues — was previously silent, masking expired tokens or restricted endpoints.
+    console.error("[strapi] getTeamMembers failed, falling back to local data:", err);
     return [];
   }
 }
