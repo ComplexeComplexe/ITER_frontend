@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef } from "react";
 import { ArrowRight, ChevronDown, TrendingDown, Zap, Eye, Network, BarChart3, Wallet, Rocket, Settings, Compass, Clock, Users, Wrench, DollarSign, MapPin } from "lucide-react";
 import Image from "next/image";
 import { Locale } from "@/lib/i18n";
@@ -147,8 +146,17 @@ export default function DafPage({
         </div>
       </section>
 
+      {/* Table of Contents — FR only (audit SEO C.1) */}
+      {locale === "fr" && (
+        <section className="bg-background pt-2 pb-10">
+          <div className="container max-w-3xl">
+            <DafTableOfContents />
+          </div>
+        </section>
+      )}
+
       {/* Partner */}
-      <section className="bg-background py-16 lg:py-20">
+      <section id="partenaire" className="bg-background py-16 lg:py-20 scroll-mt-24">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr"
@@ -173,7 +181,7 @@ export default function DafPage({
       </div>
 
       {/* What Is */}
-      <section className="bg-muted/30 py-24 lg:py-32">
+      <section id="comprendre" className="bg-muted/30 py-24 lg:py-32 scroll-mt-24">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr"
@@ -205,11 +213,76 @@ export default function DafPage({
               ))}
             </div>
           ))}
+
+          {/* Comparison table (audit SEO C.2) — DAF externalisé vs interne en tableau Featured-Snippet-friendly */}
+          {t.comparisonTable && (
+            <div className="mt-10 -mx-4 sm:mx-0 overflow-x-auto">
+              <table className="w-full text-sm border-collapse bg-background border border-border/60 rounded-2xl overflow-hidden">
+                {t.comparisonTable.caption && (
+                  <caption className="caption-top text-left text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 px-4">
+                    {t.comparisonTable.caption}
+                  </caption>
+                )}
+                <thead className="bg-iter-violet/5">
+                  <tr>
+                    {t.comparisonTable.headers.map((h, i) => (
+                      <th
+                        key={i}
+                        scope="col"
+                        className="text-left font-semibold text-foreground p-4 border-b border-border/60"
+                      >
+                        {h}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {t.comparisonTable.rows.map((row, ri) => (
+                    <tr key={ri} className="even:bg-muted/30">
+                      {row.map((cell, ci) => (
+                        <td
+                          key={ci}
+                          className={`p-4 align-top border-b border-border/40 leading-relaxed ${
+                            ci === 0 ? "font-semibold text-foreground" : "text-muted-foreground"
+                          }`}
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
       </section>
 
+      {/* Temps partagé (audit SEO A.1) */}
+      {t.tempsPartage && (
+        <section id="temps-partage" className="bg-background py-24 lg:py-32 scroll-mt-24">
+          <div className="container max-w-3xl">
+            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+              {locale === "fr" ? "Synonymes" : locale === "en" ? "Synonyms" : "Sinónimos"}
+            </span>
+            <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+              {t.tempsPartage.heading}
+            </h2>
+            {t.tempsPartage.content.map((p, i) => (
+              <p key={i} className="text-muted-foreground leading-relaxed mb-4">
+                {p}
+              </p>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <div className="container">
+        <div className="border-b border-border/50" />
+      </div>
+
       {/* Advantages */}
-      <section className="bg-background py-24 lg:py-16">
+      <section id="avantages" className="bg-background py-24 lg:py-16 scroll-mt-24">
         <div className="container">
           <div className="max-w-3xl mb-10">
             <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
@@ -263,7 +336,7 @@ export default function DafPage({
       </div>
 
       {/* Missions */}
-      <section className="bg-muted/30 py-24 lg:py-32">
+      <section id="missions" className="bg-muted/30 py-24 lg:py-32 scroll-mt-24">
         <div className="container">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr"
@@ -285,7 +358,9 @@ export default function DafPage({
                   <div className="w-10 h-10 rounded-xl bg-iter-chartreuse/20 flex items-center justify-center shrink-0">
                     <MIcon size={18} className="text-iter-dark" />
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{p}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {locale === "fr" ? linkifyMissionText(p) : p}
+                  </p>
                 </div>
               );
             })}
@@ -294,7 +369,7 @@ export default function DafPage({
       </section>
 
       {/* Pricing */}
-      <section className="bg-background py-24 lg:py-16">
+      <section id="tarifs" className="bg-background py-24 lg:py-16 scroll-mt-24">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Tarifs" : locale === "en" ? "Pricing" : "Tarifas"}
@@ -307,15 +382,52 @@ export default function DafPage({
               {p}
             </p>
           ))}
+
+          {/* Featured client quote (audit SEO D.3) */}
+          {t.featuredQuote && (
+            <figure className="mt-10 p-8 rounded-3xl bg-iter-violet text-white relative">
+              <span aria-hidden className="absolute top-4 left-6 text-7xl leading-none font-heading text-iter-chartreuse/40 select-none">
+                &ldquo;
+              </span>
+              <blockquote className="relative text-lg lg:text-xl font-medium leading-relaxed pl-6">
+                {t.featuredQuote.quote}
+              </blockquote>
+              <figcaption className="mt-6 pl-6 text-sm text-white/80">
+                <span className="font-semibold text-iter-chartreuse">{t.featuredQuote.author}</span>
+                <span className="block text-white/70">
+                  {t.featuredQuote.role} — {t.featuredQuote.company}
+                </span>
+              </figcaption>
+            </figure>
+          )}
         </div>
       </section>
+
+      {/* DAF vs Expert-Comptable (audit SEO A.3) */}
+      {t.vsExpertComptable && (
+        <section id="vs-expert-comptable" className="bg-muted/30 py-24 lg:py-32 scroll-mt-24">
+          <div className="container max-w-3xl">
+            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+              {locale === "fr" ? "Complémentaire" : locale === "en" ? "Complementary" : "Complementario"}
+            </span>
+            <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+              {t.vsExpertComptable.heading}
+            </h2>
+            {t.vsExpertComptable.content.map((p, i) => (
+              <p key={i} className="text-muted-foreground leading-relaxed mb-4">
+                {p}
+              </p>
+            ))}
+          </div>
+        </section>
+      )}
 
       <div className="container">
         <div className="border-b border-border/50" />
       </div>
 
       {/* When To Hire */}
-      <section className="bg-muted/30 py-24 lg:py-32">
+      <section id="quand" className="bg-muted/30 py-24 lg:py-32 scroll-mt-24">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Quand ?" : locale === "en" ? "When?" : "Cuando?"}
@@ -618,7 +730,7 @@ export default function DafPage({
       />
 
       {/* FAQ */}
-      <section className="bg-muted/30 py-24 lg:py-32">
+      <section id="faq" className="bg-muted/30 py-24 lg:py-32 scroll-mt-24">
         <div className="container">
           <div className="text-center max-w-xl mx-auto mb-14">
             <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
@@ -643,6 +755,103 @@ export default function DafPage({
       {/* External references (CC-18) — EEAT signal via authoritative sources */}
       <References locale={locale} />
     </PageLayout>
+  );
+}
+
+/**
+ * In-text internal-link helper for the FR missions section (audit SEO B.1).
+ * First-occurrence-only matching — keeps prose readable, drives Google
+ * to weight contextual links over end-of-page link blocks.
+ */
+function linkifyMissionText(text: string): ReactNode {
+  const rules: { pattern: RegExp; href: string }[] = [
+    { pattern: /gestion de trésorerie/i, href: "/services/previsionnel-tresorerie" },
+    { pattern: /prévisionnel de trésorerie/i, href: "/services/previsionnel-tresorerie" },
+    { pattern: /levée de fonds/i, href: "/services/accompagnement-levee-de-fond" },
+    { pattern: /opérations de M&A/i, href: "/services/ma-due-diligence" },
+    { pattern: /comptabilité analytique/i, href: "/services/controle-de-gestion-externalise" },
+  ];
+
+  const parts: ReactNode[] = [];
+  let remaining = text;
+  let key = 0;
+  const usedHrefs = new Set<string>();
+
+  while (remaining.length > 0) {
+    const matches = rules
+      .filter((r) => !usedHrefs.has(r.href))
+      .map((r) => ({ rule: r, match: r.pattern.exec(remaining) }))
+      .filter((x): x is { rule: { pattern: RegExp; href: string }; match: RegExpExecArray } => x.match !== null)
+      .sort((a, b) => a.match.index - b.match.index);
+
+    if (matches.length === 0) {
+      parts.push(remaining);
+      break;
+    }
+
+    const first = matches[0];
+    const idx = first.match.index;
+    const matched = first.match[0];
+
+    if (idx > 0) parts.push(remaining.slice(0, idx));
+    parts.push(
+      <Link
+        key={`link-${key++}`}
+        href={first.rule.href}
+        className="text-iter-violet hover:underline underline-offset-2 font-medium"
+      >
+        {matched}
+      </Link>,
+    );
+    usedHrefs.add(first.rule.href);
+    remaining = remaining.slice(idx + matched.length);
+  }
+
+  return parts;
+}
+
+/**
+ * Table of contents — FR-only (audit SEO C.1).
+ * Anchors target the section ids set on the FR DAF page. Improves dwell-time
+ * and lets Google generate sitelinks under the SERP result.
+ */
+function DafTableOfContents() {
+  const items = [
+    { href: "#partenaire", label: "Iter Advisors, votre partenaire" },
+    { href: "#comprendre", label: "Qu'est-ce qu'un DAF externalisé ?" },
+    { href: "#temps-partage", label: "DAF externalisé ou DAF à temps partagé ?" },
+    { href: "#avantages", label: "Les 5 avantages clés" },
+    { href: "#missions", label: "Missions principales" },
+    { href: "#tarifs", label: "Grille tarifaire 2026" },
+    { href: "#vs-expert-comptable", label: "DAF externalisé vs expert-comptable" },
+    { href: "#quand", label: "Quand faire appel à un DAF externalisé ?" },
+    { href: "#faq", label: "Questions fréquentes (FAQ)" },
+  ];
+
+  return (
+    <nav
+      aria-label="Sommaire de la page"
+      className="border border-border/60 rounded-2xl p-6 lg:p-8 bg-muted/20"
+    >
+      <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-4 block">
+        Sommaire
+      </span>
+      <ol className="space-y-2 text-sm">
+        {items.map((item, i) => (
+          <li key={item.href} className="flex gap-3">
+            <span className="text-iter-violet/50 font-mono text-xs w-5 shrink-0 mt-0.5">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <a
+              href={item.href}
+              className="text-foreground hover:text-iter-violet transition-colors underline-offset-2 hover:underline"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
   );
 }
 
