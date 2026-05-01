@@ -1,0 +1,89 @@
+'use client';
+
+import React, { ReactNode } from 'react';
+import BlogHero from './BlogHero';
+import TableOfContents from './TableOfContents';
+import Tldr from './Tldr';
+import RelatedArticles from './RelatedArticles';
+
+export interface AuthorInfo {
+  name: string;
+  avatar?: string;
+  jobTitle?: string;
+}
+
+export interface TocItem {
+  id: string;
+  label: string;
+}
+
+export interface BlogPostLayoutProps {
+  category: string;
+  title: string;
+  dek: string;
+  author: AuthorInfo;
+  readingTime: number;
+  dateModified: string;
+  heroImage?: string;
+  toc: TocItem[];
+  tldr: string;
+  children: ReactNode;
+  relatedArticles?: Array<{
+    url: string;
+    category: string;
+    title: string;
+  }>;
+}
+
+/**
+ * BlogPostLayout — Main container for blog articles with refactored UX
+ * Implements: proper typography, table of contents, TL;DR, structured sections,
+ * inline CTAs, and related articles recommendation.
+ */
+export default function BlogPostLayout({
+  category,
+  title,
+  dek,
+  author,
+  readingTime,
+  dateModified,
+  heroImage,
+  toc,
+  tldr,
+  children,
+  relatedArticles = [],
+}: BlogPostLayoutProps) {
+  return (
+    <article className="w-full bg-white">
+      {/* Hero Section */}
+      <BlogHero
+        image={heroImage}
+        category={category}
+        title={title}
+        dek={dek}
+        author={author}
+        readingTime={readingTime}
+        dateModified={dateModified}
+      />
+
+      {/* Main Content Container */}
+      <div className="mx-auto max-w-4xl px-6 py-12 lg:py-16">
+        {/* Table of Contents */}
+        {toc && toc.length > 0 && <TableOfContents items={toc} />}
+
+        {/* TL;DR / À retenir section */}
+        {tldr && <Tldr>{tldr}</Tldr>}
+
+        {/* Article body (prose) */}
+        <article className="prose-blog mx-auto max-w-[720px] py-8">
+          {children}
+        </article>
+      </div>
+
+      {/* Related Articles Section */}
+      {relatedArticles && relatedArticles.length > 0 && (
+        <RelatedArticles articles={relatedArticles} />
+      )}
+    </article>
+  );
+}

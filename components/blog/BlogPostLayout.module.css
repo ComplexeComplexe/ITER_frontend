@@ -1,0 +1,163 @@
+/* Blog Post Layout — Prose typography and content styling */
+
+.prose_blog {
+  /* Base typography */
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: oklch(0.20 0.01 270);
+}
+
+.prose_blog h1,
+.prose_blog h2,
+.prose_blog h3,
+.prose_blog h4,
+.prose_blog h5,
+.prose_blog h6 {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  color: oklch(0.15 0.01 270);
+}
+
+.prose_blog h1 {
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.prose_blog h2 {
+  font-size: 20px;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  scroll-margin-top: 100px;
+}
+
+.prose_blog h3 {
+  font-size: 17px;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.prose_blog p {
+  margin-bottom: 1.25rem;
+}
+
+.prose_blog p:last-child {
+  margin-bottom: 0;
+}
+
+.prose_blog a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.prose_blog a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.prose_blog strong {
+  font-weight: 600;
+  color: oklch(0.15 0.01 270);
+}
+
+.prose_blog em {
+  font-style: italic;
+}
+
+.prose_blog ul,
+.prose_blog ol {
+  margin-bottom: 1.25rem;
+  margin-left: 1.5rem;
+}
+
+.prose_blog li {
+  margin-bottom: 0.5rem;
+}
+
+.prose_blog ul li::marker {
+  color: oklch(0.45 0.01 270);
+}
+
+.prose_blog ol li::marker {
+  color: oklch(0.45 0.01 270);
+}
+
+.prose_blog blockquote {
+  border-left: 3px solid #2563eb;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: oklch(0.35 0.01 270);
+  font-style: normal;
+  font-size: 15px;
+}
+
+.prose_blog table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 14px;
+}
+
+.prose_blog thead {
+  background-color: oklch(0.96 0.003 270);
+}
+
+.prose_blog th,
+.prose_blog td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 0.5px solid oklch(0.92 0.004 270);
+}
+
+.prose_blog tbody tr:nth-child(even) {
+  background-color: oklch(0.98 0.002 270);
+}
+
+.prose_blog code {
+  background-color: oklch(0.96 0.003 270);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  color: oklch(0.20 0.01 270);
+}
+
+.prose_blog pre {
+  background-color: oklch(0.15 0.01 270);
+  color: oklch(0.98 0.002 270);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.prose_blog pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .prose_blog h1 {
+    font-size: 24px;
+  }
+
+  .prose_blog h2 {
+    font-size: 18px;
+  }
+
+  .prose_blog h3 {
+    font-size: 16px;
+  }
+
+  .prose_blog {
+    font-size: 15px;
+  }
+}
