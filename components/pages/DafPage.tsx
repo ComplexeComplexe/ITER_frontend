@@ -544,19 +544,47 @@ export default function DafPage({
 
           {/* Featured client quote (audit SEO D.3) */}
           {t.featuredQuote && (
-            <figure className="mt-10 p-8 rounded-3xl bg-iter-violet text-white relative">
+            <figure className="mt-10 p-8 lg:p-10 rounded-3xl bg-iter-violet text-white relative overflow-hidden">
               <span aria-hidden className="absolute top-4 left-6 text-7xl leading-none font-heading text-iter-chartreuse/40 select-none">
                 &ldquo;
               </span>
-              <blockquote className="relative text-lg lg:text-xl font-medium leading-relaxed pl-6">
+              <blockquote className="relative text-base lg:text-lg font-medium leading-relaxed pl-6">
                 {t.featuredQuote.quote}
               </blockquote>
-              <figcaption className="mt-6 pl-6 text-sm text-white/80">
-                <span className="font-semibold text-iter-chartreuse">{t.featuredQuote.author}</span>
-                <span className="block text-white/70">
-                  {t.featuredQuote.role} — {t.featuredQuote.company}
-                </span>
+              <figcaption className="mt-6 pl-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+                <div className="text-sm">
+                  <span className="font-semibold text-iter-chartreuse block">
+                    {t.featuredQuote.author}
+                  </span>
+                  <span className="text-white/70">
+                    {t.featuredQuote.role} — {t.featuredQuote.company}
+                  </span>
+                </div>
+                {t.featuredQuote.companyLogo && (
+                  <div className="relative h-7 w-28 ml-auto bg-white/10 rounded px-3 py-1 flex items-center">
+                    <Image
+                      src={t.featuredQuote.companyLogo}
+                      alt={t.featuredQuote.company}
+                      fill
+                      className="object-contain p-1.5 brightness-0 invert"
+                      sizes="112px"
+                    />
+                  </div>
+                )}
               </figcaption>
+              {t.featuredQuote.sourceUrl && (
+                <a
+                  href={t.featuredQuote.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 ml-6 inline-flex items-center gap-1.5 text-xs text-iter-chartreuse/80 hover:text-iter-chartreuse transition-colors"
+                >
+                  <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                    <path d="M10 1.5l2.6 5.3 5.9.86-4.25 4.14 1 5.86L10 14.9l-5.25 2.76 1-5.86L1.5 7.66l5.9-.86L10 1.5z" />
+                  </svg>
+                  <span>{t.featuredQuote.sourceLabel ?? "Avis vérifié"}</span>
+                </a>
+              )}
             </figure>
           )}
         </div>

@@ -41,6 +41,11 @@ export interface FeaturedQuote {
   author: string;
   role: string;
   company: string;
+  /** Optional path under /public for the company logo (white-friendly). */
+  companyLogo?: string;
+  /** Optional source URL (e.g. Trustfolio profile) — adds an attribution link. */
+  sourceUrl?: string;
+  sourceLabel?: string;
 }
 
 export interface PricingTier {
@@ -280,14 +285,17 @@ export const dafContent: Record<Locale, DafContent> = {
       outro:
         "Sectoriellement, nos **DAF externalisés** sont spécialisés en SaaS, Deep-Tech, e-Commerce, Industrie et Services — secteurs sur lesquels nous avons accompagné +85 entreprises et facilité +100 M€ de levées de fonds.",
     },
-    // PLACEHOLDER — à remplacer par un vrai témoignage extrait de Trustfolio.
+    // Vrai témoignage extrait de Trustfolio (https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc)
     // Affiché en bandeau sous la grille tarifaire pour soutenir la conversion (audit SEO D.3).
     featuredQuote: {
       quote:
-        "Iter Advisors nous a apporté en quelques semaines la lecture financière qu'on cherchait depuis deux ans. Aujourd'hui je décide en m'appuyant sur des chiffres, pas sur mon intuition.",
-      author: "Témoignage client",
-      role: "CEO & co-fondateur·rice",
-      company: "Scale-up SaaS B2B",
+        "Nous collaborons avec Iter Advisors depuis 5 ans, et cette relation s'est révélée être un véritable atout stratégique. Bien au-delà d'un simple DAF externalisé, leurs équipes nous ont accompagnés sur des sujets structurants : migration ERP, structuration de la fonction finance, sujets légaux et fiscaux complexes, financement non dilutif. J'apprécie particulièrement leur capacité à nous challenger et à éclairer nos décisions stratégiques.",
+      author: "Magali Quentel-Reme",
+      role: "CEO & Co-fondatrice",
+      company: "Opti Digital",
+      companyLogo: "/images/logos/logo-opitdigital.webp",
+      sourceUrl: "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
+      sourceLabel: "Avis vérifié sur Trustfolio",
     },
     whenToHire: {
       heading: "Quand faire appel à un DAF externalisé ?",
