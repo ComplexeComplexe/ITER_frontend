@@ -247,7 +247,7 @@ export default function DafPage({
           </h2>
           {t.whatIs.content.map((p, i) => (
             <p key={i} className="text-muted-foreground leading-relaxed mb-4">
-              {p}
+              {locale === "fr" ? renderRichText(p) : p}
             </p>
           ))}
           {t.whatIs.subsections?.map((sub, i) => (
@@ -260,7 +260,7 @@ export default function DafPage({
                   key={j}
                   className="text-muted-foreground leading-relaxed mb-4"
                 >
-                  {p}
+                  {locale === "fr" ? renderRichText(p) : p}
                 </p>
               ))}
             </div>
@@ -396,6 +396,47 @@ export default function DafPage({
         <div className="border-b border-border/50" />
       </div>
 
+      {/* For Whom (audit SEO Action 11) — long-tail capture per stade / secteur */}
+      {t.forWhom && (
+        <section id="pour-qui" className="bg-background py-24 lg:py-32 scroll-mt-24">
+          <div className="container max-w-4xl">
+            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+              {locale === "fr" ? "Pour qui" : locale === "en" ? "For whom" : "Para quién"}
+            </span>
+            <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+              {t.forWhom.heading}
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-10 text-lg">
+              {locale === "fr" ? renderRichText(t.forWhom.intro) : t.forWhom.intro}
+            </p>
+            <div className="grid md:grid-cols-2 gap-5">
+              {t.forWhom.segments.map((seg, i) => (
+                <div
+                  key={i}
+                  className="border border-border/50 rounded-2xl p-6 lg:p-7 bg-card hover:border-iter-violet/30 transition-colors"
+                >
+                  <h3 className="text-lg font-semibold font-heading mb-3 text-foreground">
+                    {seg.heading}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {locale === "fr" ? renderRichText(seg.content) : seg.content}
+                  </p>
+                </div>
+              ))}
+            </div>
+            {t.forWhom.outro && (
+              <p className="text-muted-foreground leading-relaxed mt-10">
+                {locale === "fr" ? renderRichText(t.forWhom.outro) : t.forWhom.outro}
+              </p>
+            )}
+          </div>
+        </section>
+      )}
+
+      <div className="container">
+        <div className="border-b border-border/50" />
+      </div>
+
       {/* Missions */}
       <section id="missions" className="bg-muted/30 py-24 lg:py-32 scroll-mt-24">
         <div className="container">
@@ -431,7 +472,7 @@ export default function DafPage({
 
       {/* Pricing */}
       <section id="tarifs" className="bg-background py-24 lg:py-32 scroll-mt-24">
-        <div className="container max-w-3xl">
+        <div className="container max-w-4xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Tarifs" : locale === "en" ? "Pricing" : "Tarifas"}
           </span>
@@ -440,9 +481,66 @@ export default function DafPage({
           </h2>
           {t.pricing.content.map((p, i) => (
             <p key={i} className="text-muted-foreground leading-relaxed mb-4">
-              {p}
+              {locale === "fr" ? renderRichText(p) : p}
             </p>
           ))}
+
+          {/* Pricing table (audit SEO Action 5) — Featured-Snippet-friendly */}
+          {t.pricingTable && (
+            <div className="mt-8 -mx-4 sm:mx-0 overflow-x-auto">
+              <table className="w-full text-sm border-collapse bg-background border border-border/60 rounded-2xl overflow-hidden">
+                <caption className="caption-top text-left text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 px-4">
+                  {t.pricingTable.caption}
+                </caption>
+                <thead className="bg-iter-violet/5">
+                  <tr>
+                    {[
+                      locale === "fr" ? "Formule" : locale === "en" ? "Plan" : "Plan",
+                      locale === "fr" ? "Volume" : locale === "en" ? "Volume" : "Volumen",
+                      locale === "fr" ? "Tarif" : locale === "en" ? "Price" : "Precio",
+                      locale === "fr" ? "Pour qui" : locale === "en" ? "For whom" : "Para quién",
+                    ].map((h, i) => (
+                      <th
+                        key={i}
+                        scope="col"
+                        className="text-left font-semibold text-foreground p-4 border-b border-border/60"
+                      >
+                        {h}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {t.pricingTable.tiers.map((tier, ri) => (
+                    <tr key={ri} className="even:bg-muted/30">
+                      <th
+                        scope="row"
+                        className="p-4 align-top border-b border-border/40 leading-relaxed font-semibold text-foreground"
+                      >
+                        {tier.name}
+                      </th>
+                      <td className="p-4 align-top border-b border-border/40 leading-relaxed text-muted-foreground">
+                        {tier.volume}
+                      </td>
+                      <td className="p-4 align-top border-b border-border/40 leading-relaxed font-semibold text-foreground">
+                        {tier.price}
+                      </td>
+                      <td className="p-4 align-top border-b border-border/40 leading-relaxed text-muted-foreground">
+                        {tier.audience}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              {t.pricingTable.comparisonNote && (
+                <p className="text-sm text-muted-foreground leading-relaxed mt-6">
+                  {locale === "fr"
+                    ? renderRichText(t.pricingTable.comparisonNote)
+                    : t.pricingTable.comparisonNote}
+                </p>
+              )}
+            </div>
+          )}
 
           {/* Featured client quote (audit SEO D.3) */}
           {t.featuredQuote && (
@@ -498,7 +596,7 @@ export default function DafPage({
           </h2>
           {t.whenToHire.content.map((p, i) => (
             <p key={i} className="text-muted-foreground leading-relaxed mb-4">
-              {p}
+              {locale === "fr" ? renderRichText(p) : p}
             </p>
           ))}
         </div>
@@ -509,7 +607,7 @@ export default function DafPage({
       </div>
 
       {/* Profiles */}
-      <section className="bg-background py-24 lg:py-32">
+      <section id="profils" className="bg-background py-24 lg:py-32 scroll-mt-24">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Profils" : locale === "en" ? "Profiles" : "Perfiles"}
@@ -519,7 +617,7 @@ export default function DafPage({
           </h2>
           {t.profiles.content.map((p, i) => (
             <p key={i} className="text-muted-foreground leading-relaxed mb-4">
-              {p}
+              {locale === "fr" ? renderRichText(p) : p}
             </p>
           ))}
         </div>
@@ -944,6 +1042,49 @@ function DafYoutubeCard() {
 }
 
 /**
+ * Parse `**bold**` and `[text](url)` markdown-style markers in plain text
+ * (FR prose only). Bolds semantic anchors and inlines internal links to
+ * /daf-externalise/temps-partage and /daf-externalise/transition without
+ * switching the content layer to HTML.
+ */
+function renderRichText(text: string): ReactNode {
+  // Combined token: **bold** OR [link](url)
+  const regex = /\*\*([^*]+)\*\*|\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts: ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    if (match[1] !== undefined) {
+      // **bold**
+      parts.push(
+        <strong key={`b-${key++}`} className="font-semibold text-foreground">
+          {match[1]}
+        </strong>,
+      );
+    } else if (match[2] !== undefined && match[3] !== undefined) {
+      // [text](url)
+      parts.push(
+        <Link
+          key={`l-${key++}`}
+          href={match[3]}
+          className="text-iter-violet hover:underline underline-offset-2 font-medium"
+        >
+          {match[2]}
+        </Link>,
+      );
+    }
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) parts.push(text.slice(lastIndex));
+  return parts.length === 0 ? text : parts;
+}
+
+/**
  * In-text internal-link helper for the FR missions section (audit SEO B.1).
  * First-occurrence-only matching — keeps prose readable, drives Google
  * to weight contextual links over end-of-page link blocks.
@@ -1006,10 +1147,12 @@ function DafTableOfContents() {
     { href: "#comprendre", label: "Qu'est-ce qu'un DAF externalisé ?" },
     { href: "#temps-partage", label: "DAF externalisé ou DAF à temps partagé ?" },
     { href: "#avantages", label: "Les 5 avantages clés" },
+    { href: "#pour-qui", label: "Pour qui et à quel stade ?" },
     { href: "#missions", label: "Missions principales" },
     { href: "#tarifs", label: "Grille tarifaire 2026" },
     { href: "#vs-expert-comptable", label: "DAF externalisé vs expert-comptable" },
     { href: "#quand", label: "Quand faire appel à un DAF externalisé ?" },
+    { href: "#profils", label: "Profils de DAF externalisé" },
     { href: "#faq", label: "Questions fréquentes (FAQ)" },
   ];
 
