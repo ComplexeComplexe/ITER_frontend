@@ -26,7 +26,7 @@ export interface BlogPostLayoutProps {
   dateModified: string;
   heroImage?: string;
   toc: TocItem[];
-  tldr: string;
+  tldr: string | ReactNode;
   children: ReactNode;
   relatedArticles?: Array<{
     url: string;
