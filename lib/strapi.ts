@@ -750,12 +750,12 @@ export async function getBlogArticleBySlug(slug: string, locale: Locale): Promis
 /** Get all team members */
 export async function getTeamMembers(locale: Locale): Promise<StrapiTeamMember[]> {
   try {
-    // Strapi v5: explicit populate of the photo media field — `populate=*`
-    // sometimes returns photo as null on Strapi Cloud even when the asset exists.
     const res = await strapiFetch<StrapiCollectionResponse<StrapiTeamMember>>(
       "team-members",
       {
-        "populate[photo]": "*",
+        // `populate=*` is the working syntax on this Strapi Cloud instance —
+        // `populate[photo]=*` returns 400 ValidationError ("Invalid key related").
+        "populate": "*",
         "sort[0]": "order:asc",
         "pagination[pageSize]": "100",
       },
@@ -763,8 +763,6 @@ export async function getTeamMembers(locale: Locale): Promise<StrapiTeamMember[]
     );
     return res.data;
   } catch (err) {
-    // Surface the failure to Vercel logs so we can debug Strapi auth/permission
-    // issues — was previously silent, masking expired tokens or restricted endpoints.
     console.error("[strapi] getTeamMembers failed, falling back to local data:", err);
     return [];
   }
