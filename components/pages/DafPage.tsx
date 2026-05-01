@@ -10,7 +10,7 @@ import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/strapi";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { getDafContent } from "@/lib/content/daf";
-import { faqPageSchema, serviceSchema, howToSchema, articleSchema } from "@/lib/schemas";
+import { faqPageSchema, serviceSchema, howToSchema, articleSchema, speakableSchema } from "@/lib/schemas";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import References from "@/components/References";
@@ -111,7 +111,7 @@ export default function DafPage({
         <div className="container">
           <Breadcrumb locale={locale} items={[{ label: t.breadcrumbLabel }]} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div data-speakable="true">
               <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl mb-6">
                 {t.h1}
               </h1>
@@ -571,6 +571,26 @@ export default function DafPage({
           }}
         />
       )}
+
+      {/* Speakable Schema (content roadmap P1) — voice-search optimization.
+        * Targets the hero block (H1 + intro paragraphs) for voice assistants
+        * (Google Assistant, Alexa, Siri) to read aloud as a natural summary. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            speakableSchema({
+              url:
+                locale === "fr"
+                  ? "/daf-externalise"
+                  : locale === "en"
+                    ? "/en/daf-outsourcing"
+                    : "/es/externalizacion-daf",
+              cssSelectors: ["[data-speakable]"],
+            }),
+          ),
+        }}
+      />
 
       {/* Article Schema (audit V2 R-9) — pillar is also a long-form guide.
         * Helps Google + AI engines understand the dual nature: a Service page

@@ -198,6 +198,34 @@ export function howToSchema({
 }
 
 /**
+ * Generate Speakable JSON-LD schema (voice-search optimization).
+ *
+ * Marks specific page sections (via CSS selectors) as suitable for voice
+ * assistants (Google Assistant, Alexa, Siri) to read aloud. Targets long-form
+ * editorial content where a Q&A or summary block makes sense for voice output.
+ *
+ * Per Schema.org spec: type SpeakableSpecification, can target either CSS
+ * selectors or XPath. We use cssSelector since it's more portable.
+ */
+export function speakableSchema({
+  url,
+  cssSelectors,
+}: {
+  url: string;
+  cssSelectors: string[];
+}): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    url: url.startsWith("http") ? url : `${BASE}${url}`,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: cssSelectors,
+    },
+  };
+}
+
+/**
  * Generate FinancialService JSON-LD schema for the organization.
  */
 export function financialServiceSchema(): Record<string, unknown> {
