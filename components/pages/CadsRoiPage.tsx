@@ -13,7 +13,6 @@ import {
   LineChart,
   Zap,
   ShieldCheck,
-  Phone,
 } from "lucide-react";
 
 const CLIENT_LOGOS = [
@@ -85,7 +84,7 @@ function MinimalHeader({ onCtaClick }: { onCtaClick: () => void }) {
       }`}
     >
       <div className="container flex items-center justify-between h-16 lg:h-[72px]">
-        <div className="flex items-center gap-2">
+        <Link href="/" aria-label="Iter Advisors — accueil" className="flex items-center gap-2">
           <Image
             src="/images/logos/logo-hero.png"
             alt="Iter Advisors"
@@ -94,16 +93,9 @@ function MinimalHeader({ onCtaClick }: { onCtaClick: () => void }) {
             priority
             className="brightness-0 invert"
           />
-        </div>
+        </Link>
 
         <div className="flex items-center gap-3">
-          <a
-            href="tel:+33184886677"
-            className="hidden sm:inline-flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors"
-          >
-            <Phone size={14} />
-            <span>01 84 88 66 77</span>
-          </a>
           <button
             onClick={onCtaClick}
             className="px-5 py-2.5 text-sm font-semibold rounded-full bg-iter-chartreuse text-iter-dark hover:brightness-105 transition-all duration-200 hover:shadow-lg hover:shadow-iter-chartreuse/30"
