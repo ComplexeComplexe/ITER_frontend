@@ -104,7 +104,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
   entries.push(
     ...entryAllLocales(
-      { fr: "/daf-externalise/temps-partage", en: "/daf-outsourcing/shared-time", es: "/externalizacion-daf/multipropiedad" },
+      { fr: "/daf-externalise/temps-partage", en: "/daf-outsourcing/shared-time", es: "/externalizacion-daf/tiempo-compartido" },
       { priority: 0.9 }
     )
   );

@@ -141,7 +141,7 @@ const navEs: NavItem[] = [
     title: "CFO externo",
     href: "/es/externalizacion-daf",
     children: [
-      { text: "CFO a Tiempo Compartido", href: "/es/externalizacion-daf/multipropiedad" },
+      { text: "CFO a Tiempo Compartido", href: "/es/externalizacion-daf/tiempo-compartido" },
       { text: "CFO de transición", href: "/es/externalizacion-daf/transition" },
       { text: "CFO : Perfil profesional", href: "/es/externalizacion-daf/metier" },
       { text: "CFO externalizado Barcelona", href: "/es/cfo-externalizado-barcelona" },

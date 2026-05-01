@@ -213,7 +213,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
   paris: {
     fr: {
       meta: {
-        title: "DAF externalisé à Paris - CFO temps partagé Ile-de-France | Iter Advisors",
+        title: "DAF externalisé Paris — CFO temps partagé | Iter Advisors",
         description:
           "Iter Advisors, cabinet de DAF externalisé à Paris. Direction financière à temps partagé pour PME et startups en Ile-de-France. +85 entreprises accompagnées.",
       },

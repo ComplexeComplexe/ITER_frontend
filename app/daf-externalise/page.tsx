@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/daf-externalise",
     localizedPaths: { fr: "/daf-externalise", en: "/daf-outsourcing", es: "/externalizacion-daf" },
     fallbackTitle: "DAF externalisé · Opérationnel J+1 · 5/5 sur 31 avis | Iter Advisors",
-    fallbackDescription: "Cabinet de DAF externalisé pour PME, startups et scale-ups. CFO senior dès 2 jours/mois, opérationnel J+1. +80 M€ levés par nos clients. Devis gratuit.",
+    fallbackDescription: "Cabinet de DAF externalisé pour PME, startups et scale-ups. CFO senior dès 2 jours/mois, opérationnel J+1. +100 M€ levés par nos clients. Devis gratuit.",
   });
 }
 

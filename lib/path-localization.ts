@@ -15,9 +15,13 @@ const DAF_BASE: Record<Locale, string> = {
 };
 
 const DAF_SUB_PATHS: Record<string, Record<Locale, string>> = {
-  "temps-partage": { fr: "temps-partage", en: "shared-time", es: "multipropiedad" },
-  "shared-time": { fr: "temps-partage", en: "shared-time", es: "multipropiedad" },
-  multipropiedad: { fr: "temps-partage", en: "shared-time", es: "multipropiedad" },
+  // ES path renamed multipropiedad → tiempo-compartido (audit V2 R-4):
+  // "multipropiedad" means real-estate timeshare in Spanish, mistranslation.
+  "temps-partage": { fr: "temps-partage", en: "shared-time", es: "tiempo-compartido" },
+  "shared-time": { fr: "temps-partage", en: "shared-time", es: "tiempo-compartido" },
+  "tiempo-compartido": { fr: "temps-partage", en: "shared-time", es: "tiempo-compartido" },
+  // Legacy ES slug kept for backwards path-localization until 301s expire:
+  multipropiedad: { fr: "temps-partage", en: "shared-time", es: "tiempo-compartido" },
   transition: { fr: "transition", en: "transition", es: "transition" },
   metier: { fr: "metier", en: "metier", es: "metier" },
 };

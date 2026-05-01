@@ -55,7 +55,7 @@ export const dafContent: Record<Locale, DafContent> = {
       content: [
         "Iter Advisors est un cabinet de DAF externalisé présent à Barcelone, Paris et Toulouse. Nous mettons à disposition de nos clients des directeurs financiers expérimentés (10+ ans d'expérience), capables d'intervenir sur l'ensemble des problématiques financières d'une entreprise en croissance.",
         "Notre approche repose sur trois piliers fondamentaux : l'expertise technique, la vision stratégique et la flexibilité d'intervention. Chaque mission est conçue sur mesure pour répondre aux enjeux spécifiques de votre entreprise.",
-        "Avec plus de 85 entreprises accompagnées et plus de 80 millions d'euros de levées de fonds réalisées par nos clients, Iter Advisors s'est imposé comme un acteur de référence dans le domaine du DAF externalisé en France et en Espagne.",
+        "Avec plus de 85 entreprises accompagnées et plus de 100 millions d'euros de levées de fonds réalisées par nos clients, Iter Advisors s'est imposé comme un acteur de référence dans le domaine du DAF externalisé en France et en Espagne.",
       ],
     },
     whatIs: {
@@ -138,7 +138,7 @@ export const dafContent: Record<Locale, DafContent> = {
       ],
     },
     pricing: {
-      heading: "Combien coûte un DAF externalisé ? Grille tarifaire 2025",
+      heading: "Combien coûte un DAF externalisé ? Grille tarifaire 2026",
       content: [
         "Le tarif journalier moyen (TJM) d'un DAF externalisé se situe entre 750 et 1 250 EUR HT selon le niveau de séniorité et la complexité des missions. Chez Iter Advisors, nous proposons trois formules adaptées aux besoins des PME et startups.",
         "Formule Essentiel (2-3 jours/mois) : à partir de 2 000 EUR HT/mois. Idéale pour les startups early-stage qui ont besoin d'un suivi de trésorerie, d'un reporting mensuel et d'un interlocuteur financier pour les investisseurs.",
@@ -212,7 +212,7 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "Un DAF externalisé peut-il gérer une levée de fonds ?",
         answer:
-          "Oui, c'est l'une des missions les plus fréquentes. Le DAF externalisé prépare le business plan, la modélisation financière, le pitch deck financier et la data room. Il accompagne les négociations avec les investisseurs et pilote la due diligence. Chez Iter Advisors, nos clients ont levé plus de 80 M EUR.",
+          "Oui, c'est l'une des missions les plus fréquentes. Le DAF externalisé prépare le business plan, la modélisation financière, le pitch deck financier et la data room. Il accompagne les négociations avec les investisseurs et pilote la due diligence. Chez Iter Advisors, nos clients ont levé plus de 100 M EUR.",
       },
       {
         question: "Quels outils utilise un DAF externalisé ?",
@@ -269,7 +269,7 @@ export const dafContent: Record<Locale, DafContent> = {
       content: [
         "Iter Advisors is a Fractional CFO firm based in Barcelona, Paris and Toulouse. We provide our clients with experienced finance directors (10+ years of experience) capable of addressing all the financial challenges of a growing company.",
         "Our approach is built on three fundamental pillars: technical expertise, strategic vision and flexibility. Each engagement is tailored to meet the specific challenges of your business.",
-        "With over 85 companies supported and more than EUR 80 million in fundraising completed by our clients, Iter Advisors has established itself as a leading player in outsourced CFO services in France and Spain.",
+        "With over 85 companies supported and more than EUR 100 million in fundraising completed by our clients, Iter Advisors has established itself as a leading player in outsourced CFO services in France and Spain.",
       ],
     },
     whatIs: {
@@ -352,7 +352,7 @@ export const dafContent: Record<Locale, DafContent> = {
       ],
     },
     pricing: {
-      heading: "How much does a Fractional CFO cost? 2025 pricing guide",
+      heading: "How much does a Fractional CFO cost? 2026 pricing guide",
       content: [
         "The average daily rate for a Fractional CFO ranges from EUR 750 to 1,250 excl. VAT, depending on seniority and mission complexity. At Iter Advisors, we offer three packages tailored to SME and startup needs.",
         "Essential package (2-3 days/month): from EUR 2,000 excl. VAT/month. Ideal for early-stage startups needing cash flow monitoring, monthly reporting and a financial point of contact for investors.",
@@ -426,7 +426,7 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "Can a Fractional CFO manage a fundraise?",
         answer:
-          "Yes, it is one of the most common missions. The Fractional CFO prepares the business plan, financial model, pitch deck and data room. They support investor negotiations and manage financial due diligence. At Iter Advisors, our clients have raised over EUR 80M.",
+          "Yes, it is one of the most common missions. The Fractional CFO prepares the business plan, financial model, pitch deck and data room. They support investor negotiations and manage financial due diligence. At Iter Advisors, our clients have raised over EUR 100M.",
       },
       {
         question: "What tools does a Fractional CFO use?",
@@ -483,7 +483,7 @@ export const dafContent: Record<Locale, DafContent> = {
       content: [
         "Iter Advisors es un gabinete de CFO externalizado con presencia en Barcelona, Paris y Toulouse. Ponemos a disposicion de nuestros clientes directores financieros experimentados (10+ anos de experiencia), capaces de intervenir en todas las problematicas financieras de una empresa en crecimiento.",
         "Nuestro enfoque se basa en tres pilares fundamentales: la experiencia tecnica, la vision estrategica y la flexibilidad de intervencion. Cada mision esta disenada a medida para responder a los retos especificos de su empresa.",
-        "Con mas de 85 empresas acompanadas y mas de 80 millones de euros en rondas de financiacion realizadas por nuestros clientes, Iter Advisors se ha posicionado como un actor de referencia en el ambito del CFO externalizado en Francia y Espana.",
+        "Con mas de 85 empresas acompanadas y mas de 100 millones de euros en rondas de financiacion realizadas por nuestros clientes, Iter Advisors se ha posicionado como un actor de referencia en el ambito del CFO externalizado en Francia y Espana.",
       ],
     },
     whatIs: {
@@ -566,7 +566,7 @@ export const dafContent: Record<Locale, DafContent> = {
       ],
     },
     pricing: {
-      heading: "Cuanto cuesta un CFO externalizado? Guia de tarifas 2025",
+      heading: "Cuanto cuesta un CFO externalizado? Guia de tarifas 2026",
       content: [
         "La tarifa diaria media de un CFO externalizado se situa entre 750 y 1.250 EUR sin IVA, segun el nivel de senioridad y la complejidad de las misiones. En Iter Advisors, ofrecemos tres formulas adaptadas a las necesidades de pymes y startups.",
         "Formula Esencial (2-3 dias/mes): desde 2.000 EUR sin IVA/mes. Ideal para startups early-stage que necesitan seguimiento de tesoreria, reporting mensual y un interlocutor financiero para los inversores.",
@@ -640,7 +640,7 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "Un CFO externalizado puede gestionar una ronda de financiacion?",
         answer:
-          "Si, es una de las misiones mas frecuentes. El CFO externalizado prepara el plan de negocio, la modelizacion financiera, el pitch deck y la data room. Acompana las negociaciones con los inversores y pilota la due diligence. En Iter Advisors, nuestros clientes han levantado mas de 80 M EUR.",
+          "Si, es una de las misiones mas frecuentes. El CFO externalizado prepara el plan de negocio, la modelizacion financiera, el pitch deck y la data room. Acompana las negociaciones con los inversores y pilota la due diligence. En Iter Advisors, nuestros clientes han levantado mas de 100 M EUR.",
       },
       {
         question: "Que herramientas utiliza un CFO externalizado?",

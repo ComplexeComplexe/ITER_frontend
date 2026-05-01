@@ -297,6 +297,11 @@
       "source": "/es/ressources/descripcion-del-puesto",
       "destination": "/es/ressources/fiche-metier",
       "permanent": true
+    },
+    {
+      "source": "/es/externalizacion-daf/multipropiedad",
+      "destination": "/es/externalizacion-daf/tiempo-compartido",
+      "permanent": true
     }
   ]
 }

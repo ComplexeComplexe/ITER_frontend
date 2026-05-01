@@ -10,7 +10,7 @@ import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/strapi";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { getDafContent } from "@/lib/content/daf";
-import { faqPageSchema, serviceSchema, howToSchema } from "@/lib/schemas";
+import { faqPageSchema, serviceSchema, howToSchema, articleSchema } from "@/lib/schemas";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import References from "@/components/References";
@@ -571,6 +571,31 @@ export default function DafPage({
           }}
         />
       )}
+
+      {/* Article Schema (audit V2 R-9) — pillar is also a long-form guide.
+        * Helps Google + AI engines understand the dual nature: a Service page
+        * (commercial intent) AND an editorial guide (informational intent). */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            articleSchema({
+              headline: t.h1,
+              description: t.intro[0] ?? t.meta.description,
+              url:
+                locale === "fr"
+                  ? "/daf-externalise"
+                  : locale === "en"
+                    ? "/en/daf-outsourcing"
+                    : "/es/externalizacion-daf",
+              datePublished: "2024-09-01",
+              dateModified: new Date().toISOString().split("T")[0],
+              authorName: "Iter Advisors",
+              imageSrc: "/images/bg/daf-section.webp",
+            }),
+          ),
+        }}
+      />
 
       {/* FAQ */}
       <section className="bg-muted/30 py-24 lg:py-32">

@@ -4,14 +4,14 @@ import { buildStrapiMetadata } from "@/lib/metadata";
 import { getDafSubContent } from "@/lib/content/daf-sub";
 import { getCmsNavigation } from "@/lib/strapi";
 
-const content = getDafSubContent("es", "multipropiedad")!;
+const content = getDafSubContent("es", "tiempo-compartido")!;
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildStrapiMetadata({
     endpoint: "daf-temps-partage-page",
     locale: "es",
-    path: "/externalizacion-daf/multipropiedad",
-    localizedPaths: { fr: "/daf-externalise/temps-partage", en: "/daf-outsourcing/shared-time", es: "/externalizacion-daf/multipropiedad" },
+    path: "/externalizacion-daf/tiempo-compartido",
+    localizedPaths: { fr: "/daf-externalise/temps-partage", en: "/daf-outsourcing/shared-time", es: "/externalizacion-daf/tiempo-compartido" },
     fallbackTitle: "CFO a tiempo compartido | Iter Advisors",
     fallbackDescription: "CFO a tiempo compartido para pymes.",
   });

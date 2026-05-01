@@ -476,6 +476,10 @@ const slugMapping: Record<Locale, Record<string, DafSubPageSlug>> = {
   },
   es: {
     metier: "metier",
+    // Audit V2 R-4: ES URL renamed multipropiedad → tiempo-compartido.
+    // Legacy "multipropiedad" key retained as fallback for any direct hits
+    // until the 301 in vercel.json fully takes over.
+    "tiempo-compartido": "temps-partage",
     multipropiedad: "temps-partage",
     transition: "transition",
   },
