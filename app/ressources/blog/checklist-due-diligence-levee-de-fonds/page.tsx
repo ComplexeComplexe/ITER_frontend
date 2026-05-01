@@ -1,7 +1,7 @@
 
 
 import { Metadata } from 'next';
-import { BlogPostPageRefonte } from '@/components/pages/BlogPostPageRefonte';
+import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta } from '@/components/blog';
 
 export const metadata: Metadata = {

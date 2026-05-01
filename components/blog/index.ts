@@ -8,6 +8,6 @@ export { default as Callout } from './Callout';
 export { default as StatGrid } from './StatGrid';
 export type { StatItem } from './StatGrid';
 export { default as ProseTable } from './ProseTable';
-export { default as InlineCTA } from './InlineCta';
+export { default as InlineCta } from './InlineCta';
 export { default as RelatedArticles } from './RelatedArticles';
 export { default as AuthorByline } from './AuthorByline';
