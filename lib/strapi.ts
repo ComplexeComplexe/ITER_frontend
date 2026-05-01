@@ -750,10 +750,12 @@ export async function getBlogArticleBySlug(slug: string, locale: Locale): Promis
 /** Get all team members */
 export async function getTeamMembers(locale: Locale): Promise<StrapiTeamMember[]> {
   try {
+    // Strapi v5: explicit populate of the photo media field — `populate=*`
+    // sometimes returns photo as null on Strapi Cloud even when the asset exists.
     const res = await strapiFetch<StrapiCollectionResponse<StrapiTeamMember>>(
       "team-members",
       {
-        "populate": "*",
+        "populate[photo]": "*",
         "sort[0]": "order:asc",
         "pagination[pageSize]": "100",
       },
