@@ -125,7 +125,7 @@ export default function OrganiserDirectionFinancierePage() {
         <strong>Coût :</strong> €150-200k (3 FTE internes) ou €60-100k si CFO externalisé
       </p>
 
-      <h3>ETI / Grand compte (>€100M de CA)</h3>
+      <h3>ETI / Grand compte (&gt;€100M de CA)</h3>
       <p>
         <strong>Modèle : CFO + Contrôleur de gestion + Équipe comptable + Trésorier + Fiscal</strong>
       </p>

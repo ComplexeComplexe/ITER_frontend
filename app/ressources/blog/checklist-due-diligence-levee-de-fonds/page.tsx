@@ -44,7 +44,7 @@ export default function ChecklistDueDiligencePage() {
         { id: "timeline", label: "5. Timeline et plannification" },
         { id: "erreurs-eviter", label: "6. Erreurs à éviter" },
       ]}
-      tldr="La due diligence financière est l'audit le plus critique d'une levée. Préparation : documents financiers (3 ans), cap table, contrats, prévisions, comptes de résultat. Dataroom bien organisée = gain 2-3 semaines. Erreurs à éviter : docs manquants, prévisions pas réalistes, antériorité comptable < 2 ans."
+      tldr="La due diligence financière est l'audit le plus critique d'une levée. Préparation : documents financiers (3 ans), cap table, contrats, prévisions, comptes de résultat. Dataroom bien organisée = gain 2-3 semaines. Erreurs à éviter : docs manquants, prévisions pas réalistes, antériorité comptable &lt; 2 ans."
       relatedArticles={[
         {
           url: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
@@ -98,7 +98,7 @@ export default function ChecklistDueDiligencePage() {
         <strong>Documents importants :</strong>
       </p>
       <ul>
-        <li>📎 Audits / Certifications : Audit externe (si >€50M), Certifications ISO</li>
+        <li>📎 Audits / Certifications : Audit externe (si &gt;€50M), Certifications ISO</li>
         <li>📎 Contrats clients clés : Top 20 clients (revenus récurrents ?)</li>
         <li>📎 Contrats fournisseurs : Dépendances critiques</li>
         <li>📎 Analyses de coûts : Détail des marges par business unit</li>
@@ -114,7 +114,7 @@ export default function ChecklistDueDiligencePage() {
       <ul>
         <li>Coût d'acquisition client (CAC) par canal</li>
         <li>Lifetime value (LTV)</li>
-        <li>Ratio LTV/CAC (cible : >3)</li>
+        <li>Ratio LTV/CAC (cible : &gt;3)</li>
       </ul>
       <p>
         <strong>Analyse 2 : Runway et Burn</strong>
@@ -212,7 +212,7 @@ export default function ChecklistDueDiligencePage() {
       <ul>
         <li>❌ Prévisions trop agressives (réduisez de 30-50 % vos hypothèses, soyez réaliste)</li>
         <li>❌ Documents incomplets (si factures manquent, préparez attentes clientes)</li>
-        <li>❌ Comptabilité mal tenue (antériorité < 1 ans : problème majeur)</li>
+        <li>❌ Comptabilité mal tenue (antériorité &lt; 1 ans : problème majeur)</li>
         <li>❌ Secrets de bisness mélangés (dataroom sensible : documents NDA)</li>
         <li>❌ Pas de CFO/DAF pour répondre questions : avoir un expert dédié</li>
       </ul>

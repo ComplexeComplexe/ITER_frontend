@@ -225,7 +225,7 @@ export default function FluxDeTresorerieePage() {
         <li>☐ Solde de trésorerie mis à jour quotidiennement (automatique si outils cloud)</li>
         <li>☐ Prévisionnel 3-6 mois mis à jour hebdomadairement</li>
         <li>☐ Rapprochement bancaire automatisé</li>
-        <li>☐ Alertes si solde < seuil minimum de sécurité</li>
+        <li>☐ Alertes si solde &lt; seuil minimum de sécurité</li>
         <li>☐ Revue hebdomadaire avec le DAF/CFO</li>
       </ul>
 

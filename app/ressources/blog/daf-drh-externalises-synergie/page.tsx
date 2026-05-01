@@ -167,7 +167,7 @@ export default function DafDrhExternalisationSynergieePage() {
             <tr>
               <td><strong>Coût par FTE</strong></td>
               <td>Salaire moyen, coût total (charges)</td>
-              <td>Productivité par personne</li>
+              <td>Productivité par personne</td>
             </tr>
             <tr>
               <td><strong>Turnover</strong></td>

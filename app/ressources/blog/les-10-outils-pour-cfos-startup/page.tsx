@@ -25,7 +25,7 @@ export default function Outils10CfosStartupPage() {
         blogHref: "/ressources/blog",
       }}
       slug="les-10-outils-pour-cfos-startup"
-      category: "Tech Finance"
+      category="Tech Finance"
       title="Les 10 outils indispensables pour CFO en startup (2026)"
       dek="Découvrez les 10 meilleurs outils fintech pour startup : comptabilité, trésorerie, reporting, levée de fonds. Sélection, ROI, et stack recommandée."
       author={{
