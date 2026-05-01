@@ -378,7 +378,7 @@ export default async function Page() {
 
       <ul>
         <li>"Pourquoi churn a augmenté T2?" (analyse par cohorte)</li>
-        <li>"Quels sont les clients>10% de revenue?" (concentration risk)</li>
+        <li>"Quels sont les clients &gt;10% de revenue?" (concentration risk)</li>
         <li>"Burn rate ? Runway ?" (projections de trésorerie)</li>
         <li>"Unit economics par segment ?" (profitabilité granulaire)</li>
       </ul>
@@ -417,7 +417,7 @@ export default async function Page() {
 
       <ul>
         <li>☐ Comptes annuels N-1 et N-2 certifiés par expert-comptable</li>
-        <li>☐ Comptes N-3 mois à jour (pas de décalage > 1 mois)</li>
+        <li>☐ Comptes N-3 mois à jour (pas de décalage &gt; 1 mois)</li>
         <li>☐ Cash flow statement 24 mois avec forecast 36 mois</li>
         <li>☐ Détail revenue par produit/segment/canal sur 24 mois</li>
         <li>☐ Dashboard KPIs mis à jour (MRR, churn, CAC, LTV, burn rate)</li>
@@ -440,7 +440,7 @@ export default async function Page() {
 
       <ul>
         <li>☐ Contrats employés (CDI, non-concurrence, clauses IP)</li>
-        <li>☐ Contrats clients majeurs (top 10 clients >= 80% revenue?)</li>
+        <li>☐ Contrats clients majeurs (top 10 clients &gt;= 80% revenue?)</li>
         <li>☐ Contrats fournisseurs critiques</li>
         <li>☐ NDAs et contrats confidentialité</li>
         <li>☐ Accord partenariats stratégiques (si relevant)</li>
