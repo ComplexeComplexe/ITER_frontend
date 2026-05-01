@@ -145,7 +145,6 @@ export default function DafDrhExternalisationSynergieePage() {
       </p>
 
       <ProseTable>
-        <table>
           <thead>
             <tr>
               <th>Métrique</th>
@@ -180,8 +179,7 @@ export default function DafDrhExternalisationSynergieePage() {
               <td>Charges à venir</td>
             </tr>
           </tbody>
-        </table>
-      </ProseTable>
+        </ProseTable>
 
       <h2 id="conformite">5. Conformité et risques</h2>
       <p>
@@ -218,7 +216,6 @@ export default function DafDrhExternalisationSynergieePage() {
       </p>
 
       <ProseTable>
-        <table>
           <thead>
             <tr>
               <th>Élément</th>
@@ -265,8 +262,7 @@ export default function DafDrhExternalisationSynergieePage() {
               <td style={{ fontWeight: 'bold' }}>-€40-65k</td>
             </tr>
           </tbody>
-        </table>
-      </ProseTable>
+        </ProseTable>
 
       <Callout type="success" title="Conclusion financière">
         Externaliser DAF+DRH ensemble coûte €40-65k MOINS que les externalisé séparé. Plus les synergies sont énormes. C'est un no-brainer économique pour PMEs.

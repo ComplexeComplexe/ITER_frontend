@@ -139,7 +139,6 @@ export default function OrganiserDirectionFinancierePage() {
       <h2 id="roles-essentiels">3. Les rôles essentiels</h2>
 
       <ProseTable>
-        <table>
           <thead>
             <tr>
               <th>Rôle</th>
@@ -180,8 +179,7 @@ export default function OrganiserDirectionFinancierePage() {
               <td>Bac+5, 10+ ans</td>
             </tr>
           </tbody>
-        </table>
-      </ProseTable>
+        </ProseTable>
 
       <StatGrid items={[
         {

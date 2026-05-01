@@ -82,7 +82,6 @@ export default function EssentielsOutilsTechFinancePage() {
       </p>
 
       <ProseTable>
-        <table>
           <thead>
             <tr>
               <th>Catégorie</th>
@@ -112,8 +111,7 @@ export default function EssentielsOutilsTechFinancePage() {
               <td>Risque contrôlé, audit facile</td>
             </tr>
           </tbody>
-        </table>
-      </ProseTable>
+        </ProseTable>
 
       <h2 id="comptabilite-cloud">3. Comptabilité cloud et automatisation</h2>
       <p>

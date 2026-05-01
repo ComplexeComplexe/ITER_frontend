@@ -86,7 +86,6 @@ export default function DafExternaliseVsSalariePage() {
       </p>
 
       <ProseTable>
-        <table>
           <thead>
             <tr>
               <th>Élément de coût</th>
@@ -151,8 +150,7 @@ export default function DafExternaliseVsSalariePage() {
               <td style={{ fontWeight: 'bold' }}>-35 % à -50 %</td>
             </tr>
           </tbody>
-        </table>
-      </ProseTable>
+        </ProseTable>
 
       <StatGrid items={[
         {
@@ -213,7 +211,6 @@ export default function DafExternaliseVsSalariePage() {
       <h2 id="comparaison-directe">5. Comparaison directe (tableau synthétique)</h2>
 
       <ProseTable>
-        <table>
           <thead>
             <tr>
               <th>Critère</th>
@@ -278,8 +275,7 @@ export default function DafExternaliseVsSalariePage() {
               <td>✅ Salarié</td>
             </tr>
           </tbody>
-        </table>
-      </ProseTable>
+        </ProseTable>
 
       <h2 id="matrice-decision">6. Matrice de décision : qui choisir ?</h2>
 

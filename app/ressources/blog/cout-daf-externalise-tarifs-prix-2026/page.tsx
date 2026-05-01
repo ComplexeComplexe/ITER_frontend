@@ -69,7 +69,6 @@ export default function CoutDafExternalisePage() {
       </p>
 
       <ProseTable>
-        <table>
           <thead>
             <tr>
               <th>Profil</th>
@@ -109,8 +108,7 @@ export default function CoutDafExternalisePage() {
               <td>€25-35k</td>
             </tr>
           </tbody>
-        </table>
-      </ProseTable>
+        </ProseTable>
 
       <Callout type="info" title="Pricing 2026">
         Ces tarifs sont les tarifs "standard" du marché France. Iter Advisors propose ses DAFs à ces niveaux. Les tarifs peuvent varier selon votre localisation (Île-de-France +10-15 %, Province -5 %), complexité et urgence.
@@ -236,7 +234,6 @@ export default function CoutDafExternalisePage() {
       </p>
 
       <ProseTable>
-        <table>
           <thead>
             <tr>
               <th>CA annuel</th>
@@ -276,8 +273,7 @@ export default function CoutDafExternalisePage() {
               <td>0.2-0.8 %</td>
             </tr>
           </tbody>
-        </table>
-      </ProseTable>
+        </ProseTable>
 
       <InlineCta
         title="Vous voulez un devis pour votre situation ?"

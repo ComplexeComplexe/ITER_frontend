@@ -86,7 +86,6 @@ export default function FluxDeTresorerieePage() {
       </p>
 
       <ProseTable>
-        <table>
           <thead>
             <tr>
               <th>Type de flux</th>
@@ -111,8 +110,7 @@ export default function FluxDeTresorerieePage() {
               <td>Emprunt bancaire (+), remboursement crédit (-), levée fonds (+)</td>
             </tr>
           </tbody>
-        </table>
-      </ProseTable>
+        </ProseTable>
 
       <p>
         <strong>Formule simple :</strong>

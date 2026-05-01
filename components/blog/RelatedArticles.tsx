@@ -29,9 +29,9 @@ export default function RelatedArticles({
         </h2>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article, idx) => (
+          {articles.map((article) => (
             <article
-              key={idx}
+              key={article.url}
               className="group flex flex-col rounded-lg border border-slate-200 bg-white p-6 transition-shadow hover:shadow-lg"
             >
               <div className="mb-3 inline-block">

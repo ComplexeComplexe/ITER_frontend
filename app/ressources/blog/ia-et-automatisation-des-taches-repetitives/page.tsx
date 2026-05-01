@@ -83,7 +83,6 @@ export default function IaAutomatisationFinancePage() {
       </p>
 
       <ProseTable>
-        <table>
           <thead>
             <tr>
               <th>Tâche</th>
@@ -130,8 +129,7 @@ export default function IaAutomatisationFinancePage() {
               <td>Automatisé, +20 % accuracy</td>
             </tr>
           </tbody>
-        </table>
-      </ProseTable>
+        </ProseTable>
 
       <StatGrid items={[
         {
