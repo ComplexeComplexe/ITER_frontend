@@ -344,8 +344,8 @@ export default function DafPage({
 
       {/* Advantages */}
       <section id="avantages" className="bg-background py-24 lg:py-32 scroll-mt-24">
-        <div className="container">
-          <div className="max-w-3xl mb-10">
+        <div className="container max-w-4xl">
+          <div className="mb-10">
             <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
               {locale === "fr"
                 ? "Avantages"
@@ -362,7 +362,7 @@ export default function DafPage({
               </p>
             ))}
           </div>
-          <div className="grid md:grid-cols-2 gap-4 max-w-4xl">
+          <div className="grid md:grid-cols-2 gap-4">
             {t.advantages.subsections?.map((sub, i) => {
               const icons = [TrendingDown, Zap, Eye, Network];
               const Icon = icons[i % icons.length];
@@ -793,8 +793,8 @@ export default function DafPage({
       {/* Vos experts Iter Advisors (audit SEO D.1 / brief Bloc 7) — EEAT signal with named CFOs */}
       {locale === "fr" && featuredExperts.length > 0 && (
         <section id="experts" className="bg-background py-24 lg:py-32 scroll-mt-24">
-          <div className="container">
-            <div className="max-w-3xl mb-12">
+          <div className="container max-w-4xl">
+            <div className="mb-12">
               <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
                 Vos experts
               </span>
@@ -806,7 +806,7 @@ export default function DafPage({
                 supervisent l&apos;ensemble des engagements.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-5 max-w-4xl">
+            <div className="grid md:grid-cols-2 gap-5">
               {featuredExperts.map((expert) => {
                 const photoUrl = strapiMediaUrl(expert.photo);
                 const initials = `${expert.firstName?.[0] ?? ""}${
