@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import AuthorByline from './AuthorByline';
 import { AuthorInfo } from './BlogPostLayout';
 
@@ -15,10 +14,10 @@ interface BlogHeroProps {
 }
 
 /**
- * BlogHero — Header section with hero image, category badge, title, dek, and author info
+ * BlogHero — Header section with category badge, title, dek, and author info.
+ * Hero image rendering removed: source images were broken in production.
  */
 export default function BlogHero({
-  image,
   category,
   title,
   dek,
@@ -28,20 +27,6 @@ export default function BlogHero({
 }: BlogHeroProps) {
   return (
     <div className="w-full bg-white">
-      {/* Hero Image */}
-      {image && (
-        <div className="relative h-96 w-full overflow-hidden bg-gray-100">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 1280px) 100vw, 1280px"
-            priority
-          />
-        </div>
-      )}
-
       {/* Header Content */}
       <div className="mx-auto max-w-4xl px-6 py-12 lg:py-16">
         {/* Category Badge */}
