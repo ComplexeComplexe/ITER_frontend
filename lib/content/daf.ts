@@ -1,8 +1,22 @@
 import { Locale } from "../i18n";
 
+export interface FaqRichBullet {
+  label: string;
+  text: string;
+}
+
+export interface FaqRichAnswer {
+  intro?: string;
+  bullets?: FaqRichBullet[];
+  outro?: string;
+}
+
 export interface FaqItem {
   question: string;
+  /** Plain-text answer — used by JSON-LD FAQPage schema. Always required. */
   answer: string;
+  /** Optional structured answer rendered when present (intro + bullets + outro). */
+  answerRich?: FaqRichAnswer;
 }
 
 export interface DafSection {
@@ -57,15 +71,15 @@ export interface DafContent {
 export const dafContent: Record<Locale, DafContent> = {
   fr: {
     meta: {
-      title: "DAF externalisé à temps partagé : guide & tarifs 2026 | Iter Advisors",
+      title: "DAF Externalisé & Temps Partagé | Guide et Tarifs 2026",
       description:
-        "Tout sur le DAF externalisé à temps partagé : missions, tarifs (TJM 750-1 250 EUR), comparatif avec un DAF interne. Iter Advisors, cabinet de CFO part-time à Barcelone, Paris et Toulouse.",
+        "Accélérez votre croissance avec un DAF externalisé à temps partagé. Trésorerie, reporting, levée de fonds. Découvrez le rôle du DAF et nos tarifs 2026.",
     },
     breadcrumbLabel: "DAF Externalisé",
-    h1: "DAF externalisé : le guide complet pour PME et startups",
+    h1: "DAF Externalisé & à Temps Partagé : le bras droit financier de votre croissance",
     intro: [
-      "Un DAF externalisé — ou directeur administratif et financier externalisé, aussi appelé DAF à temps partagé ou CFO part-time — est un professionnel senior de la finance qui intervient dans votre entreprise sans en être salarié à temps plein. Il devient le bras droit du dirigeant sur les sujets financiers et le co-pilote de la performance, avec les mêmes responsabilités qu'un DAF interne (pilotage financier, gestion de trésorerie, reporting, relations investisseurs) mais sur un mode flexible : temps partagé, mission ponctuelle ou abonnement mensuel.",
-      "Chez Iter Advisors, nous accompagnons les PME, startups et scale-ups dans la structuration et le pilotage de leur fonction finance. Nos CFOs rompent l'isolement du chef d'entreprise et interviennent à temps partagé ou en mission ponctuelle pour vous aider à prendre les meilleures décisions stratégiques.",
+      "Ne pilotez plus à vue. Accédez à l'expertise d'un Directeur Financier de haut niveau pour structurer votre croissance, gérer votre trésorerie et rassurer vos investisseurs, sans le coût d'un temps plein.",
+      "Un DAF externalisé — aussi appelé DAF à temps partagé ou CFO part-time — est un professionnel senior de la finance qui intervient dans votre entreprise sans en être salarié à temps plein. Il devient le co-pilote du dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs, sur un mode flexible (temps partagé, mission ponctuelle ou abonnement mensuel).",
     ],
     partnerSection: {
       heading: "Iter Advisors, votre partenaire stratégique",
@@ -255,14 +269,36 @@ export const dafContent: Record<Locale, DafContent> = {
           "Le DAF externalisé est un terme générique qui englobe toutes les formes d'intervention externe en direction financière. Le DAF à temps partagé est une forme spécifique : il intervient de manière récurrente dans l'entreprise, généralement quelques jours par semaine ou par mois, sur une durée longue.",
       },
       {
-        question: "À quel moment une entreprise a-t-elle besoin d'un DAF externalisé ?",
+        question: "Quand une entreprise doit-elle faire appel à un DAF externalisé ?",
         answer:
-          "Plusieurs signaux l'indiquent : une croissance rapide nécessitant une structuration financière, une levée de fonds à préparer, un besoin de reporting rigoureux pour les investisseurs, un départ du DAF interne, ou simplement le souhait d'optimiser la gestion financière sans recruter à temps plein.",
+          "L'intervention d'un Directeur Administratif et Financier (DAF) à temps partagé est particulièrement recommandée lors des phases de transition critiques : hypercroissance (quand la gestion financière devient trop complexe pour le seul dirigeant), levée de fonds (Seed, Série A, Série B — pour préparer le business plan, le pitch deck et rassurer les investisseurs avec un reporting carré), tension de trésorerie (pour restructurer la dette, optimiser le BFR et mettre en place un prévisionnel strict), et départ ou absence d'un profil clé (en management de transition).",
+        answerRich: {
+          intro:
+            "L'intervention d'un Directeur Administratif et Financier (DAF) à temps partagé est particulièrement recommandée lors des phases de transition critiques :",
+          bullets: [
+            {
+              label: "Hypercroissance",
+              text: "quand la gestion financière devient trop complexe pour le seul dirigeant.",
+            },
+            {
+              label: "Levée de fonds",
+              text: "pour préparer le business plan, le pitch deck et rassurer les investisseurs avec un reporting carré (Seed, Série A, Série B).",
+            },
+            {
+              label: "Tension de trésorerie",
+              text: "pour restructurer la dette, optimiser le BFR (Besoin en Fonds de Roulement) et mettre en place un prévisionnel strict.",
+            },
+            {
+              label: "Départ ou absence",
+              text: "en management de transition pour pallier l'absence temporaire d'un profil clé en interne.",
+            },
+          ],
+        },
       },
       {
-        question: "Comment se passe la collaboration avec un DAF externalisé Iter Advisors ?",
+        question: "Comment se déroule la mise en place de la mission (Onboarding) ?",
         answer:
-          "La collaboration débute par un diagnostic approfondi de votre situation financière (1-2 semaines). Nous définissons ensemble le périmètre, la fréquence et les objectifs. Notre CFO s'intègre ensuite à votre équipe et travaille en étroite collaboration avec vos équipes internes, votre expert-comptable et vos investisseurs.",
+          "Nous commençons toujours par un audit flash de votre fonction financière actuelle (processus, outils, équipes en place). À l'issue de cet état des lieux, nous définissons ensemble une feuille de route claire avec des objectifs chiffrés. La mission commence ensuite avec un rythme défini (par exemple, 1 jour par semaine) qui peut être réévalué de manière totalement flexible selon l'évolution de vos besoins.",
       },
       {
         question: "Un DAF externalisé peut-il gérer une levée de fonds ?",
@@ -270,14 +306,14 @@ export const dafContent: Record<Locale, DafContent> = {
           "Oui, c'est l'une des missions les plus fréquentes. Le DAF externalisé prépare le business plan, la modélisation financière, le pitch deck financier et la data room. Il accompagne les négociations avec les investisseurs et pilote la due diligence. Chez Iter Advisors, nos clients ont levé plus de 100 M EUR.",
       },
       {
-        question: "Quels outils utilise un DAF externalisé ?",
+        question: "Quels logiciels et outils de gestion financière utilisez-vous ?",
         answer:
-          "Les principaux outils sont : Pennylane ou Sage pour la comptabilité, Agicap ou Fygr pour la trésorerie, Power BI ou Looker pour le reporting, et Odoo ou NetSuite pour l'ERP. Chez Iter Advisors, nous travaillons avec plus de 30 partenaires technologiques.",
+          "Nos DAF externalisés s'adaptent à votre écosystème technologique. Nous maîtrisons les meilleurs outils SaaS du marché pour moderniser votre fonction finance : logiciels de gestion de trésorerie (Agicap, Kyriba), outils de pré-comptabilité et facturation (Pennylane, Qonto, Spendesk), ainsi que des ERP ou solutions de Business Intelligence (PowerBI) pour l'automatisation de vos reportings.",
       },
       {
-        question: "DAF externalisé ou expert-comptable : quelle différence ?",
+        question: "Quelle est la différence entre un DAF externalisé et un expert-comptable ?",
         answer:
-          "L'expert-comptable assure la conformité légale (bilan, liasse fiscale, déclarations). Le DAF externalisé pilote la performance financière : prévisionnel, reporting de gestion, levée de fonds, stratégie. Les deux sont complémentaires : l'expert-comptable regarde le passé, le DAF anticipe l'avenir.",
+          "Leurs rôles sont complémentaires mais fondamentalement différents. L'expert-comptable est tourné vers le passé et la conformité : il saisit vos factures, produit votre bilan annuel et gère vos obligations fiscales ou sociales. Le DAF externalisé est tourné vers l'avenir et la stratégie : il analyse les données, construit des prévisionnels de trésorerie, crée des tableaux de bord (KPIs) et vous conseille sur vos choix d'investissement. Le DAF est votre co-pilote, qui fait le pont entre vos ambitions stratégiques et la réalité de vos chiffres.",
       },
       {
         question: "Combien de temps dure une mission de DAF externalisé ?",
@@ -300,12 +336,12 @@ export const dafContent: Record<Locale, DafContent> = {
           "Vérifiez l'expérience sectorielle, la séniorité des profils (10+ ans minimum), les résultats chiffrés chez d'autres clients, les outils maîtrisés, et la structure du cabinet (un indépendant seul est un risque de continuité). Demandez des références vérifiables.",
       },
       {
-        question: "Le DAF externalisé peut-il intervenir à distance ?",
+        question: "Où vos directeurs financiers interviennent-ils ?",
         answer:
-          "Oui, la majorité des missions se déroulent en mode hybride : présence sur site 1 à 2 jours par mois et travail à distance le reste du temps. Les outils collaboratifs (Slack, Notion, Google Workspace) permettent un suivi en temps réel. Chez Iter Advisors, nous intervenons à Barcelone, Paris, Toulouse et en full remote.",
+          "Les experts d'Iter Advisors accompagnent des startups et PME partout en France. Nous pouvons intervenir physiquement dans vos locaux (notamment à Paris et en Île-de-France, ainsi qu'à Barcelone et Toulouse depuis nos autres bureaux) pour des réunions de pilotage avec les dirigeants, ou travailler 100 % à distance (en remote), en nous intégrant à vos canaux de communication internes (Slack, Teams, Google Workspace).",
       },
     ],
-    ctaButton: "Prendre rendez-vous",
+    ctaButton: "Échanger avec un DAF (appel offert)",
   },
   en: {
     meta: {

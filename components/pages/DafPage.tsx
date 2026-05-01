@@ -8,7 +8,7 @@ import Image from "next/image";
 import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/strapi";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
-import { getDafContent } from "@/lib/content/daf";
+import { getDafContent, type FaqRichAnswer } from "@/lib/content/daf";
 import { faqPageSchema, serviceSchema, howToSchema, articleSchema, speakableSchema } from "@/lib/schemas";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -131,6 +131,44 @@ export default function DafPage({
                 {t.ctaButton}
                 <ArrowRight size={16} />
               </Link>
+
+              {/* Trust badges (audit SEO D.3 / brief Bloc 1) — FR only */}
+              {locale === "fr" && (
+                <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+                  <div className="flex items-center gap-2.5">
+                    <span className="flex" aria-label="Note 5 sur 5">
+                      {[0, 1, 2, 3, 4].map((i) => (
+                        <svg
+                          key={i}
+                          width="18"
+                          height="18"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          className="text-iter-chartreuse"
+                          aria-hidden
+                        >
+                          <path d="M10 1.5l2.6 5.3 5.9.86-4.25 4.14 1 5.86L10 14.9l-5.25 2.76 1-5.86L1.5 7.66l5.9-.86L10 1.5z" />
+                        </svg>
+                      ))}
+                    </span>
+                    <span className="text-sm font-semibold text-foreground">5/5</span>
+                    <span className="text-sm text-muted-foreground">— 31 avis Trustfolio</span>
+                  </div>
+                  <div className="flex items-center gap-5 opacity-70">
+                    {["logo-happyscribe", "logo-mitiga", "logo-surfe", "logo-ukio", "logo-yego"].map((logo) => (
+                      <div key={logo} className="relative h-6 w-20 grayscale">
+                        <Image
+                          src={`/images/logos/${logo}.webp`}
+                          alt=""
+                          fill
+                          className="object-contain"
+                          sizes="80px"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
             <div className="relative hidden lg:block">
               <Image
@@ -744,6 +782,7 @@ export default function DafPage({
                 key={i}
                 question={item.question}
                 answer={item.answer}
+                answerRich={item.answerRich}
               />
             ))}
           </div>
@@ -858,9 +897,11 @@ function DafTableOfContents() {
 function FaqAccordionItem({
   question,
   answer,
+  answerRich,
 }: {
   question: string;
   answer: string;
+  answerRich?: FaqRichAnswer;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -886,7 +927,26 @@ function FaqAccordionItem({
             className="overflow-hidden"
           >
             <div className="px-6 pb-6 text-muted-foreground leading-relaxed">
-              {answer}
+              {answerRich ? (
+                <>
+                  {answerRich.intro && <p className="mb-4">{answerRich.intro}</p>}
+                  {answerRich.bullets && answerRich.bullets.length > 0 && (
+                    <ul className="space-y-2 mb-4 list-none">
+                      {answerRich.bullets.map((b, i) => (
+                        <li key={i} className="flex gap-3">
+                          <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
+                          <span>
+                            <strong className="text-foreground font-semibold">{b.label} :</strong> {b.text}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {answerRich.outro && <p>{answerRich.outro}</p>}
+                </>
+              ) : (
+                answer
+              )}
             </div>
           </motion.div>
         )}
