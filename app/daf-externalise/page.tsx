@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import DafPage from "@/components/pages/DafPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation, getTeamMembers } from "@/lib/strapi";
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildStrapiMetadata({
@@ -15,6 +15,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("fr");
-  return <DafPage locale="fr" cmsNavigation={cmsNavigation} />;
+  const [cmsNavigation, teamMembers] = await Promise.all([
+    getCmsNavigation("fr"),
+    getTeamMembers("fr"),
+  ]);
+  return <DafPage locale="fr" cmsNavigation={cmsNavigation} teamMembers={teamMembers} />;
 }

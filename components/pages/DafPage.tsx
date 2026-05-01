@@ -3,11 +3,13 @@
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronDown, TrendingDown, Zap, Eye, Network, BarChart3, Wallet, Rocket, Settings, Compass, Clock, Users, Wrench, DollarSign, MapPin } from "lucide-react";
+import { ArrowRight, ChevronDown, TrendingDown, Zap, Eye, Network, BarChart3, Wallet, Rocket, Settings, Compass, Clock, Users, Wrench, DollarSign, MapPin, Linkedin, PlayCircle } from "lucide-react";
 import Image from "next/image";
 import { Locale } from "@/lib/i18n";
-import type { CmsNavItem } from "@/lib/strapi";
-import { getContactPath, BOOKING_URL } from "@/lib/navigation";
+import type { CmsNavItem, StrapiTeamMember } from "@/lib/strapi";
+import { strapiMediaUrl } from "@/lib/strapi";
+import { getFallbackTeamMembers } from "@/lib/content/team";
+import { BOOKING_URL } from "@/lib/navigation";
 import { getDafContent, type FaqRichAnswer } from "@/lib/content/daf";
 import { faqPageSchema, serviceSchema, howToSchema, articleSchema, speakableSchema } from "@/lib/schemas";
 import PageLayout from "@/components/PageLayout";
@@ -96,12 +98,22 @@ const HOW_TO_COLLAB: Record<
 export default function DafPage({
   locale,
   cmsNavigation,
+  teamMembers,
 }: {
   locale: Locale;
   cmsNavigation?: CmsNavItem[];
+  teamMembers?: StrapiTeamMember[];
 }) {
   const t = getDafContent(locale);
-  const contactPath = getContactPath(locale);
+
+  // Highlighted experts for the EEAT block (audit SEO D.1):
+  // Sébastien Doat (founding partner CFO) + Florent Greth (partner CFO).
+  // Falls back to local team data when Strapi is unavailable.
+  const teamSource =
+    teamMembers && teamMembers.length > 0 ? teamMembers : getFallbackTeamMembers(locale);
+  const featuredExperts = ["sebastien-doat", "florent-greth"]
+    .map((slug) => teamSource.find((m) => m.slug === slug))
+    .filter((m): m is StrapiTeamMember => Boolean(m));
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
@@ -109,15 +121,17 @@ export default function DafPage({
       <section className="bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb locale={locale} items={[{ label: t.breadcrumbLabel }]} />
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mt-6">
             <div data-speakable="true">
-              <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl mb-6">
+              <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
                 {t.h1}
               </h1>
               {t.intro.map((paragraph, i) => (
                 <p
                   key={i}
-                  className="text-lg text-muted-foreground max-w-2xl leading-relaxed mb-3"
+                  className={`text-muted-foreground leading-relaxed mb-4 ${
+                    i === 0 ? "text-lg lg:text-xl text-foreground/80 font-medium" : "text-base"
+                  }`}
                 >
                   {paragraph}
                 </p>
@@ -170,13 +184,13 @@ export default function DafPage({
                 </div>
               )}
             </div>
-            <div className="relative hidden lg:block">
+            <div className="relative hidden lg:flex items-center justify-center lg:sticky lg:top-28">
               <Image
                 src="/images/bg/daf-section.webp"
                 alt={locale === "fr" ? "DAF externalisé - pilotage financier" : locale === "en" ? "Outsourced CFO - financial management" : "CFO externalizado - gestion financiera"}
                 width={560}
                 height={400}
-                className="rounded-2xl object-contain"
+                className="rounded-2xl object-contain w-full max-w-xl"
                 loading="lazy"
               />
             </div>
@@ -296,21 +310,30 @@ export default function DafPage({
         </div>
       </section>
 
-      {/* Temps partagé (audit SEO A.1) */}
+      {/* Temps partagé (audit SEO A.1) — disposition asymétrique avec vidéo YouTube (brief Bloc 3) */}
       {t.tempsPartage && (
         <section id="temps-partage" className="bg-background py-24 lg:py-32 scroll-mt-24">
-          <div className="container max-w-3xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
-              {locale === "fr" ? "Synonymes" : locale === "en" ? "Synonyms" : "Sinónimos"}
-            </span>
-            <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
-              {t.tempsPartage.heading}
-            </h2>
-            {t.tempsPartage.content.map((p, i) => (
-              <p key={i} className="text-muted-foreground leading-relaxed mb-4">
-                {p}
-              </p>
-            ))}
+          <div className="container">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start max-w-6xl mx-auto">
+              <div className="lg:col-span-7">
+                <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+                  {locale === "fr" ? "Synonymes" : locale === "en" ? "Synonyms" : "Sinónimos"}
+                </span>
+                <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+                  {t.tempsPartage.heading}
+                </h2>
+                {t.tempsPartage.content.map((p, i) => (
+                  <p key={i} className="text-muted-foreground leading-relaxed mb-4">
+                    {p}
+                  </p>
+                ))}
+              </div>
+              {locale === "fr" && (
+                <div className="lg:col-span-5">
+                  <DafYoutubeCard />
+                </div>
+              )}
+            </div>
           </div>
         </section>
       )}
@@ -320,7 +343,7 @@ export default function DafPage({
       </div>
 
       {/* Advantages */}
-      <section id="avantages" className="bg-background py-24 lg:py-16 scroll-mt-24">
+      <section id="avantages" className="bg-background py-24 lg:py-32 scroll-mt-24">
         <div className="container">
           <div className="max-w-3xl mb-10">
             <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
@@ -407,7 +430,7 @@ export default function DafPage({
       </section>
 
       {/* Pricing */}
-      <section id="tarifs" className="bg-background py-24 lg:py-16 scroll-mt-24">
+      <section id="tarifs" className="bg-background py-24 lg:py-32 scroll-mt-24">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Tarifs" : locale === "en" ? "Pricing" : "Tarifas"}
@@ -486,7 +509,7 @@ export default function DafPage({
       </div>
 
       {/* Profiles */}
-      <section className="bg-background py-24 lg:py-16">
+      <section className="bg-background py-24 lg:py-32">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Profils" : locale === "en" ? "Profiles" : "Perfiles"}
@@ -633,7 +656,7 @@ export default function DafPage({
       <TestimonialsSection locale={locale} />
 
       {/* Why Choose */}
-      <section className="bg-background py-24 lg:py-16">
+      <section className="bg-background py-24 lg:py-32">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr"
@@ -767,6 +790,79 @@ export default function DafPage({
         }}
       />
 
+      {/* Vos experts Iter Advisors (audit SEO D.1 / brief Bloc 7) — EEAT signal with named CFOs */}
+      {locale === "fr" && featuredExperts.length > 0 && (
+        <section id="experts" className="bg-background py-24 lg:py-32 scroll-mt-24">
+          <div className="container">
+            <div className="max-w-3xl mb-12">
+              <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+                Vos experts
+              </span>
+              <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-4">
+                Vos experts Iter Advisors
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Nos associés DAF interviennent eux-mêmes sur les missions stratégiques et
+                supervisent l&apos;ensemble des engagements.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-5 max-w-4xl">
+              {featuredExperts.map((expert) => {
+                const photoUrl = strapiMediaUrl(expert.photo);
+                const initials = `${expert.firstName?.[0] ?? ""}${
+                  expert.lastName?.[0] ?? ""
+                }`.toUpperCase();
+                return (
+                  <article
+                    key={expert.slug}
+                    className="border border-border/50 rounded-2xl p-6 lg:p-7 bg-background hover:border-iter-violet/30 transition-colors flex items-center gap-5"
+                  >
+                    <div className="relative w-20 h-20 lg:w-24 lg:h-24 shrink-0 rounded-2xl overflow-hidden bg-iter-violet/10">
+                      {photoUrl ? (
+                        <Image
+                          src={photoUrl}
+                          alt={`${expert.firstName} ${expert.lastName}`}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 80px, 96px"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-iter-violet font-bold font-heading text-xl">
+                          {initials}
+                        </div>
+                      )}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-lg font-semibold font-heading">
+                        {expert.firstName} {expert.lastName}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-2">{expert.role}</p>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-iter-violet bg-iter-violet/10 rounded-full px-2.5 py-1 mb-3">
+                        10+ ans d&apos;expérience CFO
+                      </span>
+                      {expert.linkedIn && (
+                        <div>
+                          <a
+                            href={expert.linkedIn}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-sm text-iter-violet hover:underline"
+                            aria-label={`Profil LinkedIn de ${expert.firstName} ${expert.lastName}`}
+                          >
+                            <Linkedin size={14} />
+                            <span>LinkedIn</span>
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ */}
       <section id="faq" className="bg-muted/30 py-24 lg:py-32 scroll-mt-24">
         <div className="container">
@@ -794,6 +890,56 @@ export default function DafPage({
       {/* External references (CC-18) — EEAT signal via authoritative sources */}
       <References locale={locale} />
     </PageLayout>
+  );
+}
+
+/**
+ * YouTube card — links to the @IterAdvisors1 channel (brief Bloc 3).
+ * Uses a static visual with a play overlay, no embed (avoids cookies / heavy iframe).
+ */
+function DafYoutubeCard() {
+  return (
+    <a
+      href="https://www.youtube.com/@IterAdvisors1"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block rounded-3xl overflow-hidden border border-border/60 bg-background hover:border-iter-violet/40 hover:shadow-xl hover:shadow-iter-violet/10 transition-all"
+      aria-label="Voir la chaîne YouTube Iter Advisors (nouvelle fenêtre)"
+    >
+      <div
+        className="relative aspect-video w-full overflow-hidden"
+        style={{
+          background:
+            "linear-gradient(135deg, oklch(0.42 0.28 275) 0%, oklch(0.58 0.22 285) 50%, oklch(0.42 0.28 275) 100%)",
+        }}
+      >
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 30% 30%, oklch(0.91 0.22 120 / 0.4), transparent 50%)",
+          }}
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+            <PlayCircle size={36} className="text-iter-violet ml-0.5" strokeWidth={1.5} />
+          </div>
+        </div>
+        <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-[11px] font-medium uppercase tracking-wider px-2.5 py-1 rounded">
+          YouTube
+        </div>
+      </div>
+      <div className="p-5">
+        <h3 className="font-semibold text-foreground group-hover:text-iter-violet transition-colors">
+          Le DAF externalisé expliqué par nos associés
+        </h3>
+        <p className="text-sm text-muted-foreground mt-1.5">
+          Découvrez en vidéo notre approche, nos méthodes et les retours de nos clients sur
+          notre chaîne YouTube.
+        </p>
+      </div>
+    </a>
   );
 }
 
