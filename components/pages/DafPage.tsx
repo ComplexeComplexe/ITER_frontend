@@ -864,7 +864,6 @@ export default function DafPage({
                     priceCurrency: "EUR",
                   },
                 ],
-                aggregateRating: { ratingValue: "5", reviewCount: 31 },
               }),
             ),
           }}
