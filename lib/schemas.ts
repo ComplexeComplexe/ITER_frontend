@@ -50,7 +50,9 @@ export function breadcrumbSchema(items: BreadcrumbItemSchema[]): Record<string, 
 }
 
 /**
- * Generate Service JSON-LD schema with optional offer catalog and aggregate rating.
+ * Generate Service JSON-LD schema with optional offer catalog.
+ * Note: aggregateRating is NOT included here as it's not valid for Service type.
+ * Use organization-level aggregateRating via financialServiceSchema instead.
  */
 export interface ServiceOffer {
   name: string;
@@ -66,7 +68,6 @@ export function serviceSchema({
   serviceType,
   areaServed,
   offers,
-  aggregateRating,
 }: {
   name: string;
   description: string;
@@ -75,7 +76,6 @@ export function serviceSchema({
   /** ISO 3166-1 alpha-2 country codes, e.g. ["FR", "ES"]. */
   areaServed?: string[];
   offers?: ServiceOffer[];
-  aggregateRating?: { ratingValue: string; reviewCount: number };
 }): Record<string, unknown> {
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -103,15 +103,6 @@ export function serviceSchema({
         ...(o.price && { price: o.price }),
         ...(o.priceCurrency && { priceCurrency: o.priceCurrency }),
       })),
-    };
-  }
-  if (aggregateRating) {
-    schema.aggregateRating = {
-      "@type": "AggregateRating",
-      ratingValue: aggregateRating.ratingValue,
-      reviewCount: aggregateRating.reviewCount,
-      bestRating: "5",
-      worstRating: "1",
     };
   }
 
