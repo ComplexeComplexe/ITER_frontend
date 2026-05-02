@@ -4,9 +4,64 @@ import { MapPin, Linkedin, Globe } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { navigation, footerContent, languageSwitcher } from "@/lib/navigation";
 
+const POPULAR_ARTICLES = {
+  fr: [
+    { slug: "cost-daf", title: "Coût d'un DAF externalisé" },
+    { slug: "vs-salarié", title: "DAF externalisé vs salarié" },
+    { slug: "due-diligence", title: "Due diligence M&A" },
+    { slug: "drh-synergie", title: "DRH et synergie d'équipe" },
+    { slug: "levee-de-fonds", title: "Levée de fonds" },
+  ],
+  en: [
+    { slug: "cost-daf", title: "Cost of Outsourced CFO" },
+    { slug: "vs-salarié", title: "Outsourced CFO vs Employee" },
+    { slug: "due-diligence", title: "M&A Due Diligence" },
+    { slug: "drh-synergie", title: "HR and Team Synergy" },
+    { slug: "levee-de-fonds", title: "Fund Raising" },
+  ],
+  es: [
+    { slug: "cost-daf", title: "Costo de CFO externalizado" },
+    { slug: "vs-salarié", title: "CFO externalizado vs empleado" },
+    { slug: "due-diligence", title: "Due Diligence M&A" },
+    { slug: "drh-synergie", title: "RRHH y sinergia de equipo" },
+    { slug: "levee-de-fonds", title: "Financiación" },
+  ],
+};
+
 export default function Footer({ locale }: { locale: Locale }) {
   const content = footerContent[locale];
   const nav = navigation[locale];
+  const baseUrl = "https://iter-advisors.com";
+  const localePrefix = locale === "fr" ? "" : `/${locale}`;
+
+  // Generate WPFooter schema
+  const wpFooterSchema = {
+    "@context": "https://schema.org",
+    "@type": "WPFooter",
+    "name": "Iter Advisors Footer",
+    "url": `${baseUrl}${localePrefix}/`,
+    "hasPart": [
+      ...nav.flatMap((section) => {
+        if (section.children) {
+          return section.children.map((child) => ({
+            "@type": "SiteNavigationElement",
+            "name": child.text,
+            "url": `${baseUrl}${child.href}`,
+          }));
+        }
+        return {
+          "@type": "SiteNavigationElement",
+          "name": section.title,
+          "url": `${baseUrl}${section.href}`,
+        };
+      }),
+      ...content.legalLinks.map((link) => ({
+        "@type": "SiteNavigationElement",
+        "name": link.text,
+        "url": `${baseUrl}${link.href}`,
+      })),
+    ],
+  };
 
   const serviceNav = nav.find((n) => n.title === "Services" || n.title === "Servicios");
   const resourceNav = nav.find(
@@ -14,9 +69,14 @@ export default function Footer({ locale }: { locale: Locale }) {
   );
 
   return (
-    <footer className="bg-iter-dark py-16">
-      <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(wpFooterSchema) }}
+      />
+      <footer className="bg-iter-dark py-16">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div>
             <Image
@@ -141,13 +201,36 @@ export default function Footer({ locale }: { locale: Locale }) {
               </ul>
             </div>
           </div>
+
+          {/* Popular Articles */}
+          <div>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              {locale === "fr" ? "Articles populaires" : locale === "en" ? "Popular Articles" : "Artículos populares"}
+            </h3>
+            <ul className="space-y-2.5">
+              {POPULAR_ARTICLES[locale].map((article) => {
+                const articleHref = locale === "fr" ? `/ressources/blog/${article.slug}` : `/${locale}/ressources/blog/${article.slug}`;
+                return (
+                  <li key={article.slug}>
+                    <Link
+                      href={articleHref}
+                      className="text-white/50 text-sm hover:text-iter-chartreuse transition-colors line-clamp-2"
+                    >
+                      {article.title}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/30 text-xs">{content.copyright}</p>
+          {/* Bottom bar */}
+          <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-white/30 text-xs">{content.copyright}</p>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }
