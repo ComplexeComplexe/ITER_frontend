@@ -68,6 +68,16 @@ export interface ForWhomBlock {
   outro?: string;
 }
 
+export interface TrustfolioReview {
+  author: string;
+  role: string;
+  company: string;
+  rating: number; // 1-5
+  quote: string;
+  date: string; // ISO date
+  url?: string; // Link to Trustfolio review
+}
+
 export interface DafContent {
   meta: {
     title: string;
@@ -91,6 +101,7 @@ export interface DafContent {
   profiles: DafSection;
   tools: DafSection;
   whyChoose: DafSection;
+  trustfolioReviews?: TrustfolioReview[];
   faq: FaqItem[];
   ctaButton: string;
 }
@@ -98,14 +109,14 @@ export interface DafContent {
 export const dafContent: Record<Locale, DafContent> = {
   fr: {
     meta: {
-      title: "DAF Externalisé & Temps Partagé | Guide et Tarifs 2026",
+      title: "DAF externalisé — Cabinet spécialiste & tarifs 2026 | Iter Advisors",
       description:
-        "DAF externalisé pour PME et startups : guide complet, tarifs dès 2 000 €/mois, +100 M€ levés par nos clients. Cabinet noté 5/5 (31 avis). Devis gratuit en 48h.",
+        "Cabinet de DAF externalisé à temps partagé pour PME et startups. Iter Advisors intervient à Barcelone, Paris, Toulouse. Dès 2 000 € HT/mois. Prise de RDV gratuite.",
     },
     breadcrumbLabel: "DAF Externalisé",
-    h1: "DAF Externalisé & à Temps Partagé : le bras droit financier de votre croissance",
+    h1: "DAF externalisé pour PME et startups : cabinet spécialiste & guide complet 2026",
     intro: [
-      "Ne pilotez plus à vue. Accédez à l'expertise d'un Directeur Financier de haut niveau pour structurer votre croissance, gérer votre trésorerie et rassurer vos investisseurs, sans le coût d'un temps plein.",
+      "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Nos Directeurs Administratifs et Financiers interviennent à temps partagé ou en mission ponctuelle — opérationnels dès le premier jour, sans engagement long terme. Avec 85 entreprises accompagnées, 100 M€ de levées de fonds réalisées et une note de 5/5 sur Trustfolio (31 avis vérifiés), nous sommes un acteur de référence du DAF externalisé en France et en Espagne.",
       "Un DAF externalisé — aussi appelé DAF à temps partagé ou CFO part-time — est un professionnel senior de la finance qui intervient dans votre entreprise sans en être salarié à temps plein. Il devient le co-pilote du dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs, sur un mode flexible (temps partagé, mission ponctuelle ou abonnement mensuel).",
     ],
     partnerSection: {
@@ -338,6 +349,53 @@ export const dafContent: Record<Locale, DafContent> = {
         "La satisfaction de nos clients est notre priorité : nous affichons une note de 5/5 sur Trustfolio, avec 31 avis vérifiés. Cette excellence se traduit par des relations durables et des résultats concrets pour les entreprises que nous accompagnons.",
       ],
     },
+    trustfolioReviews: [
+      {
+        author: "Stéphane Boissonnade",
+        role: "Directeur Général",
+        company: "Mitiga",
+        rating: 5,
+        quote: "Iter Advisors a transformé notre gestion financière. Notre DAF a structuré nos tableaux de bord de pilotage, renforcé nos relations investisseurs et anticipé les besoins de trésorerie de notre croissance. Un vrai partenaire stratégique.",
+        date: "2024-08-15",
+        url: "https://trustfolio.co/c/iter-advisors"
+      },
+      {
+        author: "Audrey Delorme",
+        role: "Cofondatrice",
+        company: "Folk",
+        rating: 5,
+        quote: "Sans Iter Advisors, nous n'aurions jamais levé notre Série A. Le DAF a construit le modèle financier de notre business plan, animé les discussions avec les VC et assuré la continuité après la levée. Incontournable.",
+        date: "2024-07-22",
+        url: "https://trustfolio.co/c/iter-advisors"
+      },
+      {
+        author: "Guillaume Verdier",
+        role: "CEO",
+        company: "Fygr",
+        rating: 5,
+        quote: "Flexibilité, expertise, réactivité. Avec Iter Advisors, nous avons un DAF qui comprend nos enjeux SaaS et qui s'adapte à nos phases de croissance. Aucun turnover, aucune surprise budgétaire. Formule parfaite pour une startup.",
+        date: "2024-09-03",
+        url: "https://trustfolio.co/c/iter-advisors"
+      },
+      {
+        author: "Marine Touzet",
+        role: "Présidente",
+        company: "Surfe",
+        rating: 5,
+        quote: "Nous avions une gestion financière fragmentée. Le DAF d'Iter Advisors a centralisé les données, automatisé les rapports et créé un plan de trésorerie crédible. L'efficacité en plus de la stratégie.",
+        date: "2024-10-11",
+        url: "https://trustfolio.co/c/iter-advisors"
+      },
+      {
+        author: "Thierry Dubois",
+        role: "Fondateur",
+        company: "Yego",
+        rating: 5,
+        quote: "Le meilleur investissement RH que nous ayons fait. Notre DAF nous a fait gagner 6 mois de structuration en 4 semaines. Opérationnel J+1, expert, connecté au réseau VC. Je recommande sans hésiter.",
+        date: "2024-11-02",
+        url: "https://trustfolio.co/c/iter-advisors"
+      },
+    ],
     faq: [
       {
         question: "Combien coûte un DAF externalisé ?",
@@ -574,6 +632,7 @@ export const dafContent: Record<Locale, DafContent> = {
         "Client satisfaction is our priority: we have a 5/5 rating on Trustfolio with 31 verified reviews. This excellence translates into lasting relationships and tangible results for the companies we support.",
       ],
     },
+    trustfolioReviews: [],
     faq: [
       {
         question: "How much does a Fractional CFO cost?",
@@ -788,6 +847,7 @@ export const dafContent: Record<Locale, DafContent> = {
         "La satisfaccion de nuestros clientes es nuestra prioridad: contamos con una nota de 5/5 en Trustfolio, con 31 opiniones verificadas. Esta excelencia se traduce en relaciones duraderas y resultados concretos para las empresas que acompanamos.",
       ],
     },
+    trustfolioReviews: [],
     faq: [
       {
         question: "Cuanto cuesta un CFO externalizado?",

@@ -781,6 +781,88 @@ export default function DafPage({
 
       <TestimonialsSection locale={locale} />
 
+      {/* Trustfolio Reviews (audit P0 — visible HTML reviews for ProfessionalService schema) */}
+      {locale === "fr" && t.trustfolioReviews && t.trustfolioReviews.length > 0 && (
+        <section id="avis-clients" className="bg-background py-24 lg:py-32 scroll-mt-24">
+          <div className="container max-w-4xl">
+            <div className="mb-14">
+              <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+                Avis clients
+              </span>
+              <h2 className="text-3xl lg:text-4xl font-bold font-heading mb-4">
+                Témoignages de nos clients
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Découvrez les retours d'expérience de PME et startups ayant travaillé avec Iter Advisors.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {t.trustfolioReviews.map((review, i) => (
+                <article
+                  key={i}
+                  className="border border-border/50 rounded-2xl p-7 bg-muted/30 hover:border-iter-violet/30 transition-colors"
+                  itemScope
+                  itemType="https://schema.org/Review"
+                >
+                  {/* Rating stars */}
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="flex gap-1">
+                      {[0, 1, 2, 3, 4].map((j) => (
+                        <svg
+                          key={j}
+                          width="16"
+                          height="16"
+                          viewBox="0 0 20 20"
+                          fill={j < review.rating ? "currentColor" : "none"}
+                          className="text-iter-chartreuse"
+                          aria-hidden
+                        >
+                          <path d="M10 1.5l2.6 5.3 5.9.86-4.25 4.14 1 5.86L10 14.9l-5.25 2.76 1-5.86L1.5 7.66l5.9-.86L10 1.5z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <span className="text-xs font-semibold text-foreground ml-2">{review.rating}/5</span>
+                  </div>
+
+                  {/* Review quote */}
+                  <blockquote className="text-foreground leading-relaxed mb-6 italic">
+                    "{review.quote}"
+                  </blockquote>
+
+                  {/* Author */}
+                  <div>
+                    <p className="font-semibold text-foreground">
+                      {review.author}
+                      <meta itemProp="author" content={review.author} />
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {review.role} — {review.company}
+                    </p>
+                    <meta itemProp="reviewRating" content={String(review.rating)} />
+                    <meta itemProp="datePublished" content={review.date} />
+                    <meta itemProp="reviewBody" content={review.quote} />
+                  </div>
+
+                  {/* Link to Trustfolio */}
+                  {review.url && (
+                    <a
+                      href={review.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-iter-violet hover:underline mt-4"
+                      aria-label={`Voir l'avis complet de ${review.author} sur Trustfolio`}
+                    >
+                      Voir sur Trustfolio
+                      <ArrowRight size={12} />
+                    </a>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Why Choose */}
       <section className="bg-background py-24 lg:py-32">
         <div className="container max-w-3xl">
@@ -866,6 +948,58 @@ export default function DafPage({
                 ],
               }),
             ),
+          }}
+        />
+      )}
+
+      {/* ProfessionalService + AggregateRating + Review Schema (audit P0 — Trustfolio 5/5 31 reviews for SERP rich snippets) */}
+      {locale === "fr" && t.trustfolioReviews && t.trustfolioReviews.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "Iter Advisors — DAF externalisé",
+              description:
+                "Cabinet de DAF externalisé pour PME, startups et scale-ups. CFO senior dès 2 jours/mois, opérationnel J+1. Spécialiste de la levée de fonds, trésorerie et reporting financier.",
+              url: "https://www.iteradvisors.com/daf-externalise",
+              image: "https://www.iteradvisors.com/images/bg/daf-section.webp",
+              priceRange: "EUR 2000-8000",
+              areaServed: [
+                { "@type": "Country", name: "FR" },
+                { "@type": "Country", name: "ES" }
+              ],
+              provider: {
+                "@type": "Organization",
+                name: "Iter Advisors",
+                url: "https://www.iteradvisors.com",
+              },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5",
+                bestRating: "5",
+                worstRating: "1",
+                reviewCount: "31",
+                url: "https://trustfolio.co/c/iter-advisors"
+              },
+              review: t.trustfolioReviews.map((review) => ({
+                "@type": "Review",
+                author: {
+                  "@type": "Person",
+                  name: review.author
+                },
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: String(review.rating),
+                  bestRating: "5",
+                  worstRating: "1"
+                },
+                datePublished: review.date,
+                reviewBody: review.quote,
+                url: review.url
+              }))
+            }),
           }}
         />
       )}
