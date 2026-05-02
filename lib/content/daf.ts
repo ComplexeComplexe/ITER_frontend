@@ -398,22 +398,27 @@ export const dafContent: Record<Locale, DafContent> = {
     ],
     faq: [
       {
+        question: "Qu'est-ce qu'un DAF externalisé ?",
+        answer:
+          "Un DAF externalisé — Directeur Administratif et Financier externalisé — est un professionnel senior de la finance qui intervient au sein de votre entreprise sans être salarié à temps plein. Il assume les mêmes responsabilités qu'un DAF interne (pilotage financier, gestion de trésorerie, reporting, relations investisseurs) mais sur un mode flexible : temps partagé, mission ponctuelle ou abonnement mensuel. On parle aussi de CFO externalisé, directeur financier à temps partagé ou fractional CFO (en anglais).",
+      },
+      {
         question: "Combien coûte un DAF externalisé ?",
         answer:
-          "Le TJM d'un DAF externalisé se situe entre 750 et 1 250 EUR HT. Chez Iter Advisors, nos formules vont de 2 000 EUR/mois (2-3 jours) à 7 000+ EUR/mois (8+ jours). À titre de comparaison, un DAF salarié coûte 8 300 à 17 750 EUR/mois charges comprises.",
+          "Le TJM (tarif journalier moyen) d'un DAF externalisé se situe entre 750 et 1 250 EUR HT selon la seniorité et la complexité des missions. Chez Iter Advisors, nos formules vont de 2 000 EUR/mois HT (2-3 jours par mois) à 7 000+ EUR/mois HT (8+ jours par mois). À titre de comparaison, un DAF salarié à temps plein coûte entre 8 300 et 17 750 EUR/mois charges comprises, soit un budget annuel de 100 000 à 213 000 EUR.",
       },
       {
-        question: "Quelle est la différence entre un DAF externalisé et un DAF à temps partagé ?",
+        question: "Quelle est la différence entre un DAF externalisé et un expert-comptable ?",
         answer:
-          "Le DAF externalisé est un terme générique qui englobe toutes les formes d'intervention externe en direction financière. Le DAF à temps partagé est une forme spécifique : il intervient de manière récurrente dans l'entreprise, généralement quelques jours par semaine ou par mois, sur une durée longue.",
+          "L'expert-comptable certifie la conformité légale et fiscale de votre comptabilité (bilan annuel, liasse fiscale, déclarations TVA). Il regarde le passé et garantit la régularité des comptes. Le DAF externalisé pilote la performance financière au quotidien : prévisionnel de trésorerie, reporting de gestion, analyse de marges, préparation de levée de fonds. Il anticipe l'avenir et aide à prendre des décisions opérationnelles. Ce sont des rôles complémentaires : une PME structurée a typiquement les deux.",
       },
       {
-        question: "Quand une entreprise doit-elle faire appel à un DAF externalisé ?",
+        question: "Quand faire appel à un DAF externalisé ?",
         answer:
-          "L'intervention d'un Directeur Administratif et Financier (DAF) à temps partagé est particulièrement recommandée lors des phases de transition critiques : hypercroissance (quand la gestion financière devient trop complexe pour le seul dirigeant), levée de fonds (Seed, Série A, Série B — pour préparer le business plan, le pitch deck et rassurer les investisseurs avec un reporting carré), tension de trésorerie (pour restructurer la dette, optimiser le BFR et mettre en place un prévisionnel strict), et départ ou absence d'un profil clé (en management de transition).",
+          "Un DAF externalisé est pertinent lors de plusieurs phases critiques : (1) hypercroissance — quand la gestion financière devient trop complexe pour le seul dirigeant et que vous avez besoin de structurer le reporting et l'analyse financière; (2) levée de fonds (Seed, Série A, Série B) — pour préparer un business plan solide, construire un modèle financier crédible et animer les discussions avec les investisseurs; (3) tension de trésorerie — pour restructurer la dette, optimiser le BFR (besoin en fonds de roulement) et mettre en place un prévisionnel strict; (4) départ d'un DAF ou CFO — en management de transition pour assurer la continuité sans préavis de recrutement de 6 mois; (5) entrée à l'international — pour comprendre les enjeux fiscaux et réglementaires d'un nouveau marché (France, Espagne).",
         answerRich: {
           intro:
-            "L'intervention d'un Directeur Administratif et Financier (DAF) à temps partagé est particulièrement recommandée lors des phases de transition critiques :",
+            "Un DAF externalisé est pertinent lors de plusieurs phases critiques :",
           bullets: [
             {
               label: "Hypercroissance",
@@ -421,7 +426,7 @@ export const dafContent: Record<Locale, DafContent> = {
             },
             {
               label: "Levée de fonds",
-              text: "pour préparer le business plan, le pitch deck et rassurer les investisseurs avec un reporting carré (Seed, Série A, Série B).",
+              text: "pour préparer un business plan solide, un modèle financier crédible et animer les discussions avec les VCs (Seed, Série A, Série B).",
             },
             {
               label: "Tension de trésorerie",
@@ -445,14 +450,14 @@ export const dafContent: Record<Locale, DafContent> = {
           "Oui, c'est l'une des missions les plus fréquentes. Le DAF externalisé prépare le business plan, la modélisation financière, le pitch deck financier et la data room. Il accompagne les négociations avec les investisseurs et pilote la due diligence. Chez Iter Advisors, nos clients ont levé plus de 100 M EUR.",
       },
       {
+        question: "Quelle est la différence entre un DAF à temps partagé et un DAF externalisé ?",
+        answer:
+          "Techniquement, ce sont deux expressions pour dire la même chose, avec une nuance de durée. Le DAF externalisé est un terme générique qui englobe toutes les formes d'intervention externe (temps partagé, mission ponctuelle, abonnement mensuel). Le DAF à temps partagé est une forme spécifique de DAF externalisé qui intervient de manière récurrente, sur plusieurs mois ou années, généralement quelques jours par semaine ou par mois. Chez Iter Advisors, nous proposons les deux modes : un accompagnement à temps partagé pour structurer la finance d'une PME en croissance (12-36 mois), et des missions courtes de 3-6 mois pour des opérations stratégiques (levée de fonds, M&A, transition).",
+      },
+      {
         question: "Quels logiciels et outils de gestion financière utilisez-vous ?",
         answer:
           "Nos DAF externalisés s'adaptent à votre écosystème technologique. Nous maîtrisons les meilleurs outils SaaS du marché pour moderniser votre fonction finance : logiciels de gestion de trésorerie (Agicap, Kyriba), outils de pré-comptabilité et facturation (Pennylane, Qonto, Spendesk), ainsi que des ERP ou solutions de Business Intelligence (PowerBI) pour l'automatisation de vos reportings.",
-      },
-      {
-        question: "Quelle est la différence entre un DAF externalisé et un expert-comptable ?",
-        answer:
-          "Leurs rôles sont complémentaires mais fondamentalement différents. L'expert-comptable est tourné vers le passé et la conformité : il saisit vos factures, produit votre bilan annuel et gère vos obligations fiscales ou sociales. Le DAF externalisé est tourné vers l'avenir et la stratégie : il analyse les données, construit des prévisionnels de trésorerie, crée des tableaux de bord (KPIs) et vous conseille sur vos choix d'investissement. Le DAF est votre co-pilote, qui fait le pont entre vos ambitions stratégiques et la réalité de vos chiffres.",
       },
       {
         question: "Combien de temps dure une mission de DAF externalisé ?",
