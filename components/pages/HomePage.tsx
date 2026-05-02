@@ -446,7 +446,7 @@ export default function HomePage({
                 />
               </Link>
               <Link
-                href="#services"
+                href={locale === "fr" ? "/services" : `/${locale}/services`}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/30 text-white font-medium text-base hover:bg-white/10 transition-all duration-300"
               >
                 {t.discoverServices}

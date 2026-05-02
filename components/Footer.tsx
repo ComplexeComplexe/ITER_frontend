@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Linkedin } from "lucide-react";
+import { MapPin, Linkedin, Globe } from "lucide-react";
 import { Locale } from "@/lib/i18n";
-import { navigation, footerContent } from "@/lib/navigation";
+import { navigation, footerContent, languageSwitcher } from "@/lib/navigation";
 
 export default function Footer({ locale }: { locale: Locale }) {
   const content = footerContent[locale];
@@ -93,31 +93,60 @@ export default function Footer({ locale }: { locale: Locale }) {
                 </Link>
               ))}
             </div>
-            <div className="flex items-center gap-4 mt-4">
+            <div className="flex items-center gap-4 mt-6 pt-4 border-t border-white/10">
               <a
                 href="https://www.linkedin.com/company/iter-advisors/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer me"
                 className="inline-flex items-center gap-2 text-white/50 hover:text-iter-chartreuse transition-colors text-sm"
               >
                 <Linkedin size={16} />
                 LinkedIn
               </a>
-
             </div>
+          </div>
+
+          {/* Language & Legal */}
+          <div>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              {locale === "fr" ? "Autres langues" : locale === "en" ? "Languages" : "Idiomas"}
+            </h3>
+            <div className="space-y-2.5">
+              {Object.entries(languageSwitcher).map(([lang, data]) => {
+                const localePath = locale === "fr" && lang === "fr" ? "/" : lang === "fr" ? "/" : `/${lang}`;
+                return (
+                  <Link
+                    key={lang}
+                    href={localePath}
+                    className="flex items-center gap-2 text-white/50 text-sm hover:text-iter-chartreuse transition-colors"
+                  >
+                    <Globe size={14} />
+                    <span>{data.label}</span>
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="mt-6 pt-4 border-t border-white/10">
+              <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-2">
+                {locale === "fr" ? "Légal" : locale === "en" ? "Legal" : "Legal"}
+              </h4>
+              <ul className="space-y-1.5">
+                {content.legalLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-white/40 text-xs hover:text-white/60 transition-colors">
+                      {link.text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs">{content.copyright}</p>
-          <div className="flex items-center gap-6">
-            {content.legalLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-white/30 text-xs hover:text-white/60 transition-colors">
-                {link.text}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
     </footer>
