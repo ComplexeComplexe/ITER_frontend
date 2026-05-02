@@ -1,0 +1,28 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f5f7fa"/>
+
+  <!-- Chart background -->
+  <rect x="50" y="50" width="300" height="180" fill="#e8eef7" rx="8"/>
+
+  <!-- Grid lines -->
+  <line x1="50" y1="130" x2="350" y2="130" stroke="#d0d8e8" stroke-width="1"/>
+  <line x1="50" y1="155" x2="350" y2="155" stroke="#d0d8e8" stroke-width="1"/>
+  <line x1="150" y1="50" x2="150" y2="230" stroke="#d0d8e8" stroke-width="1"/>
+  <line x1="250" y1="50" x2="250" y2="230" stroke="#d0d8e8" stroke-width="1"/>
+
+  <!-- Chart bars -->
+  <rect x="70" y="160" width="35" height="70" fill="#4945ff" rx="4"/>
+  <rect x="125" y="120" width="35" height="110" fill="#7b7ddd" rx="4"/>
+  <rect x="180" y="100" width="35" height="130" fill="#4945ff" rx="4"/>
+  <rect x="235" y="140" width="35" height="90" fill="#7b7ddd" rx="4"/>
+  <rect x="290" y="110" width="35" height="120" fill="#4945ff" rx="4"/>
+
+  <!-- Axis -->
+  <line x1="50" y1="230" x2="350" y2="230" stroke="#666" stroke-width="2"/>
+  <line x1="50" y1="50" x2="50" y2="230" stroke="#666" stroke-width="2"/>
+
+  <!-- Title -->
+  <text x="200" y="270" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a202c">
+    Prévisionnel de Trésorerie
+  </text>
+</svg>

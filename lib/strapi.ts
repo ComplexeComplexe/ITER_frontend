@@ -4,6 +4,8 @@
  */
 
 import { Locale } from "@/lib/i18n";
+import { fallbackServicePages } from "@/lib/fallback-service-pages";
+import { fallbackBlogArticles } from "@/lib/fallback-blog";
 
 // ─── Config ───────────────────────────────────────────────
 
@@ -706,7 +708,9 @@ export async function getServiceSinglePage(
     );
     return res.data;
   } catch {
-    return null;
+    // Return fallback content when Strapi is unavailable
+    console.warn(`[Strapi] Fallback used for service page: ${slug}`);
+    return fallbackServicePages[slug] || null;
   }
 }
 
@@ -724,7 +728,9 @@ export async function getBlogArticles(locale: Locale): Promise<StrapiBlogArticle
     );
     return res.data;
   } catch {
-    return [];
+    // Return fallback blog articles when Strapi is unavailable
+    console.warn(`[Strapi] Fallback used for blog articles (locale: ${locale})`);
+    return (fallbackBlogArticles as any[]) || [];
   }
 }
 
