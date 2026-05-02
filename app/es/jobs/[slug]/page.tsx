@@ -9,7 +9,7 @@ import {
 
 export async function generateStaticParams() {
   const jobs = await getJobOffers("es");
-  return jobs.map((job) => ({ slug: job.slug }));
+  return jobs.filter((job) => typeof job.slug === "string" && job.slug.length > 0).map((job) => ({ slug: job.slug }));
 }
 
 export async function generateMetadata({

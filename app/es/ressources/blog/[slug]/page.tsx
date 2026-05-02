@@ -32,7 +32,7 @@ const breadcrumbsByLocale = {
 export async function generateStaticParams() {
   try {
     const articles = await getBlogArticles("es");
-    if (articles.length > 0) return articles.map((a) => ({ slug: a.slug }));
+    if (articles.length > 0) return articles.filter((a) => typeof a.slug === "string" && a.slug.length > 0).map((a) => ({ slug: a.slug }));
   } catch {
     // ignore
   }

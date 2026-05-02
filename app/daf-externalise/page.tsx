@@ -2,15 +2,20 @@ import { Metadata } from "next";
 import DafPage from "@/components/pages/DafPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
 import { getCmsNavigation, getTeamMembers } from "@/lib/strapi";
+import { getDafContent } from "@/lib/content/daf";
 
 export async function generateMetadata(): Promise<Metadata> {
+  // Source meta title/description from lib/content/daf.ts so SEO copy edits
+  // there propagate to the actual <title>/<meta description>. The Strapi CMS
+  // entry still wins when present.
+  const t = getDafContent("fr");
   return buildStrapiMetadata({
     endpoint: "daf-externalise-page",
     locale: "fr",
     path: "/daf-externalise",
     localizedPaths: { fr: "/daf-externalise", en: "/daf-outsourcing", es: "/externalizacion-daf" },
-    fallbackTitle: "DAF externalisé : guide, tarifs & cabinet 2026 | Iter Advisors",
-    fallbackDescription: "DAF externalisé : guide complet 2026. Tarifs (dès 2 000 €/mois), missions, profils, secteurs. +85 entreprises et +100 M€ levés. Note 5/5 (31 avis). Devis gratuit.",
+    fallbackTitle: t.meta.title,
+    fallbackDescription: t.meta.description,
   });
 }
 

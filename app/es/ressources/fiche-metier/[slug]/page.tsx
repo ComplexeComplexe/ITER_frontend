@@ -16,7 +16,7 @@ const breadcrumbsByLocale = {
 export async function generateStaticParams() {
   try {
     const fiches = await getJobMetiers("es");
-    const slugs = fiches.map((f) => ({ slug: getJobMetierSlugForUrl(f) }));
+    const slugs = fiches.map((f) => ({ slug: getJobMetierSlugForUrl(f) })).filter((x) => typeof x.slug === "string" && x.slug.length > 0);
     if (slugs.length > 0) return slugs;
   } catch {
     // ignore

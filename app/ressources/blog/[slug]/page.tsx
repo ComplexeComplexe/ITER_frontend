@@ -33,7 +33,7 @@ export async function generateStaticParams() {
   try {
     const articles = await getBlogArticles("fr");
     if (articles.length > 0) {
-      const strapiSlugs = articles.map((a) => ({ slug: a.slug }));
+      const strapiSlugs = articles.filter((a) => typeof a.slug === "string" && a.slug.length > 0).map((a) => ({ slug: a.slug }));
       const staticSlugs = Object.keys(blogPosts.fr || {}).map((slug) => ({ slug }));
       const allSlugs = new Map<string, { slug: string }>();
       for (const s of [...strapiSlugs, ...staticSlugs]) allSlugs.set(s.slug, s);
