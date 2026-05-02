@@ -293,12 +293,18 @@ export default function HomePage({
     });
   }).sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
   const heroAvatars = team
-    .filter((m) => m.showInHero && m.photo)
-    .map((m) => ({
-      initials: `${m.firstName?.[0] ?? ""}${m.lastName?.[0] ?? ""}`.toUpperCase(),
-      imageUrl: strapiMediaUrl(m.photo),
-      name: `${m.firstName} ${m.lastName}`.trim(),
-    }));
+    .filter((m) => m.showInHero)
+    .map((m) => {
+      // Try Strapi first, then fallback to local image
+      const strapiPhotoUrl = strapiMediaUrl(m.photo);
+      const localPhotoSlug = `${m.firstName}-${m.lastName}`.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[̀-ͯ]/g, '');
+      const localPhotoUrl = `/images/team/${localPhotoSlug}.jpg`;
+      return {
+        initials: `${m.firstName?.[0] ?? ""}${m.lastName?.[0] ?? ""}`.toUpperCase(),
+        imageUrl: strapiPhotoUrl || localPhotoUrl,
+        name: `${m.firstName} ${m.lastName}`.trim(),
+      };
+    });
 
   const servicesRef = useRef<HTMLDivElement>(null);
   const servicesInView = useInView(servicesRef, {
@@ -918,7 +924,12 @@ export default function HomePage({
             <div className="flex flex-wrap justify-center gap-6">
               {team.map((member, i) => {
                 const name = `${member.firstName} ${member.lastName}`.trim();
-                const photoUrl = strapiMediaUrl(member.photo);
+                // Try Strapi first, then fallback to local image
+                const strapiPhotoUrl = strapiMediaUrl(member.photo);
+                const localPhotoSlug = `${member.firstName}-${member.lastName}`.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[̀-ͯ]/g, '');
+                const localPhotoUrl = `/images/team/${localPhotoSlug}.jpg`;
+                // Use local image if Strapi doesn't have one, or as primary source
+                const photoUrl = strapiPhotoUrl || localPhotoUrl;
                 const initials = `${member.firstName?.[0] ?? ""}${member.lastName?.[0] ?? ""}`.toUpperCase();
                 const hasLinkedin = member.linkedIn && member.linkedIn.trim().length > 0;
 
