@@ -74,25 +74,25 @@ export default function Footer({ locale }: { locale: Locale }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(wpFooterSchema) }}
       />
-      <footer className="bg-iter-dark py-16">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+      <footer className="bg-iter-dark py-12 sm:py-16">
+        <div className="container px-4 sm:px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10 mb-8 sm:mb-12">
           {/* Brand */}
-          <div>
+          <div className="col-span-2 sm:col-span-1">
             <Image
               src="/images/logos/logo-hero.webp"
               alt="Iter Advisors"
-              width={140}
-              height={16}
-              className="mb-5 brightness-0 invert"
+              width={120}
+              height={14}
+              className="mb-3 brightness-0 invert"
             />
-            <p className="text-white/50 text-sm leading-relaxed mb-4">
+            <p className="text-white/50 text-xs sm:text-sm leading-relaxed mb-3">
               {content.description}
             </p>
             <div className="flex items-center gap-2">
               <div className="flex gap-0.5">
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <svg key={i} className="w-3.5 h-3.5 text-iter-chartreuse fill-current" viewBox="0 0 20 20">
+                  <svg key={i} className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-iter-chartreuse fill-current" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
@@ -104,13 +104,13 @@ export default function Footer({ locale }: { locale: Locale }) {
           {/* Services */}
           {serviceNav?.children && (
             <div>
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
                 {serviceNav.title}
               </h3>
-              <ul className="space-y-2.5">
+              <ul className="space-y-1.5 sm:space-y-2.5">
                 {serviceNav.children.map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="text-white/50 text-sm hover:text-iter-chartreuse transition-colors">
+                    <Link href={item.href} className="text-white/50 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2">
                       {item.text}
                     </Link>
                   </li>
@@ -122,13 +122,13 @@ export default function Footer({ locale }: { locale: Locale }) {
           {/* Resources */}
           {resourceNav?.children && (
             <div>
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
                 {resourceNav.title}
               </h3>
-              <ul className="space-y-2.5">
+              <ul className="space-y-1.5 sm:space-y-2.5">
                 {resourceNav.children.map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="text-white/50 text-sm hover:text-iter-chartreuse transition-colors">
+                    <Link href={item.href} className="text-white/50 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2">
                       {item.text}
                     </Link>
                   </li>
@@ -139,61 +139,61 @@ export default function Footer({ locale }: { locale: Locale }) {
 
           {/* Locations */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
               {locale === "fr" ? "Nos bureaux" : locale === "en" ? "Our offices" : "Nuestras oficinas"}
             </h3>
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               {content.locations.map((loc) => (
                 <Link key={loc.city} href={loc.href} className="flex items-start gap-2 group">
-                  <MapPin size={14} className="text-iter-chartreuse mt-0.5 shrink-0" />
+                  <MapPin size={12} className="text-iter-chartreuse mt-0.5 shrink-0 sm:w-4 sm:h-4" />
                   <div>
-                    <span className="text-white/70 text-sm block group-hover:text-iter-chartreuse transition-colors">{loc.city}</span>
+                    <span className="text-white/70 text-xs sm:text-sm block group-hover:text-iter-chartreuse transition-colors">{loc.city}</span>
                     <span className="text-white/40 text-xs">{loc.country}</span>
                   </div>
                 </Link>
               ))}
             </div>
-            <div className="flex items-center gap-4 mt-6 pt-4 border-t border-white/10">
+            <div className="flex items-center gap-3 mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
               <a
                 href="https://www.linkedin.com/company/iter-advisors/"
                 target="_blank"
                 rel="noopener noreferrer me"
-                className="inline-flex items-center gap-2 text-white/50 hover:text-iter-chartreuse transition-colors text-sm"
+                className="inline-flex items-center gap-2 text-white/50 hover:text-iter-chartreuse transition-colors text-xs sm:text-sm"
               >
-                <Linkedin size={16} />
-                LinkedIn
+                <Linkedin size={14} className="sm:w-4 sm:h-4" />
+                <span className="hidden sm:inline">LinkedIn</span>
               </a>
             </div>
           </div>
 
           {/* Language & Legal */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
               {locale === "fr" ? "Autres langues" : locale === "en" ? "Languages" : "Idiomas"}
             </h3>
-            <div className="space-y-2.5">
+            <div className="space-y-1.5 sm:space-y-2.5">
               {Object.entries(languageSwitcher).map(([lang, data]) => {
                 const localePath = locale === "fr" && lang === "fr" ? "/" : lang === "fr" ? "/" : `/${lang}`;
                 return (
                   <Link
                     key={lang}
                     href={localePath}
-                    className="flex items-center gap-2 text-white/50 text-sm hover:text-iter-chartreuse transition-colors"
+                    className="flex items-center gap-2 text-white/50 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors"
                   >
-                    <Globe size={14} />
+                    <Globe size={12} className="sm:w-4 sm:h-4" />
                     <span>{data.label}</span>
                   </Link>
                 );
               })}
             </div>
-            <div className="mt-6 pt-4 border-t border-white/10">
+            <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
               <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-2">
                 {locale === "fr" ? "Légal" : locale === "en" ? "Legal" : "Legal"}
               </h4>
-              <ul className="space-y-1.5">
+              <ul className="space-y-1">
                 {content.legalLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-white/40 text-xs hover:text-white/60 transition-colors">
+                    <Link href={link.href} className="text-white/40 text-xs hover:text-white/60 transition-colors line-clamp-2">
                       {link.text}
                     </Link>
                   </li>
@@ -204,17 +204,17 @@ export default function Footer({ locale }: { locale: Locale }) {
 
           {/* Popular Articles */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
               {locale === "fr" ? "Articles populaires" : locale === "en" ? "Popular Articles" : "Artículos populares"}
             </h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-1.5 sm:space-y-2.5">
               {POPULAR_ARTICLES[locale].map((article) => {
                 const articleHref = locale === "fr" ? `/ressources/blog/${article.slug}` : `/${locale}/ressources/blog/${article.slug}`;
                 return (
                   <li key={article.slug}>
                     <Link
                       href={articleHref}
-                      className="text-white/50 text-sm hover:text-iter-chartreuse transition-colors line-clamp-2"
+                      className="text-white/50 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2"
                     >
                       {article.title}
                     </Link>
@@ -226,8 +226,8 @@ export default function Footer({ locale }: { locale: Locale }) {
         </div>
 
           {/* Bottom bar */}
-          <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-white/30 text-xs">{content.copyright}</p>
+          <div className="pt-6 sm:pt-8 border-t border-white/10 flex flex-col items-center justify-center">
+            <p className="text-white/30 text-xs text-center">{content.copyright}</p>
           </div>
         </div>
       </footer>
