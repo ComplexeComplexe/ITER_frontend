@@ -301,7 +301,7 @@ export default function HomePage({
       const localPhotoUrl = `/images/team/${localPhotoSlug}.jpg`;
       return {
         initials: `${m.firstName?.[0] ?? ""}${m.lastName?.[0] ?? ""}`.toUpperCase(),
-        imageUrl: strapiPhotoUrl || localPhotoUrl,
+        imageUrl: strapiPhotoUrl || localPhotoUrl, // Use Strapi if available, else local
         name: `${m.firstName} ${m.lastName}`.trim(),
       };
     });
@@ -927,8 +927,9 @@ export default function HomePage({
                 // Try Strapi first, then fallback to local image
                 const strapiPhotoUrl = strapiMediaUrl(member.photo);
                 const localPhotoSlug = `${member.firstName}-${member.lastName}`.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[̀-ͯ]/g, '');
+                // Use local JPG (can be upgraded to WebP in future)
                 const localPhotoUrl = `/images/team/${localPhotoSlug}.jpg`;
-                // Use local image if Strapi doesn't have one, or as primary source
+                // Use local image if Strapi doesn't have one
                 const photoUrl = strapiPhotoUrl || localPhotoUrl;
                 const initials = `${member.firstName?.[0] ?? ""}${member.lastName?.[0] ?? ""}`.toUpperCase();
                 const hasLinkedin = member.linkedIn && member.linkedIn.trim().length > 0;
