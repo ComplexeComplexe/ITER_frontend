@@ -141,7 +141,6 @@ export default function Footer({ locale }: { locale: Locale }) {
               </ul>
             </div>
           </div>
-          </div>
         </div>
 
         {/* Bottom bar */}

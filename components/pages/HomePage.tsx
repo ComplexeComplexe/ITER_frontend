@@ -920,19 +920,23 @@ export default function HomePage({
                 const name = `${member.firstName} ${member.lastName}`.trim();
                 const photoUrl = strapiMediaUrl(member.photo);
                 const initials = `${member.firstName?.[0] ?? ""}${member.lastName?.[0] ?? ""}`.toUpperCase();
-                const linkedin = member.linkedIn || "#";
+                const hasLinkedin = member.linkedIn && member.linkedIn.trim().length > 0;
 
                 return (
-                  <motion.a
+                  <motion.div
                     key={member.id}
-                    href={linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 20 }}
                     animate={teamInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.4, delay: 0.3 + i * 0.04 }}
-                    className="group text-center w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(20%-1.2rem)]"
+                    className={`text-center w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(20%-1.2rem)] ${hasLinkedin ? "" : ""}`}
                   >
+                    {hasLinkedin ? (
+                      <a
+                        href={member.linkedIn}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block"
+                      >
                     <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-3 rounded-2xl bg-iter-violet overflow-hidden group-hover:shadow-lg group-hover:shadow-iter-violet/20 transition-all duration-300">
                       {photoUrl ? (
                         <Image
@@ -958,7 +962,7 @@ export default function HomePage({
                     <p className="text-xs text-muted-foreground mt-0.5">
                       {member.role}
                     </p>
-                    {linkedin !== "#" && (
+                    {hasLinkedin && (
                       <div className="mt-1.5 flex justify-center">
                         <svg
                           className="w-3.5 h-3.5 text-muted-foreground/40 group-hover:text-iter-violet transition-colors"
@@ -969,7 +973,37 @@ export default function HomePage({
                         </svg>
                       </div>
                     )}
-                  </motion.a>
+                      </a>
+                    ) : (
+                      <div className="block">
+                        <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-3 rounded-2xl bg-iter-violet overflow-hidden group-hover:shadow-lg group-hover:shadow-iter-violet/20 transition-all duration-300">
+                          {photoUrl ? (
+                            <Image
+                              src={photoUrl}
+                              alt={name}
+                              width={96}
+                              height={96}
+                              className="w-full h-full object-cover"
+                              unoptimized
+                              loading="lazy"
+                            />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center">
+                              <span className="text-white font-bold text-lg md:text-xl">
+                                {initials}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                        <h4 className="font-semibold text-sm">
+                          {name}
+                        </h4>
+                        <p className="text-xs text-muted-foreground mt-0.5">
+                          {member.role}
+                        </p>
+                      </div>
+                    )}
+                  </motion.div>
                 );
               })}
             </div>
