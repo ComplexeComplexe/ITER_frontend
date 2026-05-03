@@ -1,4 +1,5 @@
 import CookieConsent from "../../components/CookieConsent";
+import HrefLangInjector from "../../components/HrefLangInjector";
 
 export default function EsLayout({
   children,
@@ -8,6 +9,9 @@ export default function EsLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
+        {/* Hreflang injection for multi-language SEO */}
+        <HrefLangInjector />
+
         {/* Google Consent Mode v2 - Default denied BEFORE GTM loads */}
         <script
           dangerouslySetInnerHTML={{
