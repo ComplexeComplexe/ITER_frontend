@@ -3,7 +3,18 @@
  * Scans content for internal href patterns and validates them
  */
 
-import { getLocalizedPath, getNeutralPath, type Locale } from './i18n';
+import { getLocalePath, type Locale } from './i18n';
+
+/**
+ * Remove locale prefix from a path to get the neutral/canonical version
+ * e.g. "/en/services" -> "/services", "/es/blog" -> "/blog", "/" -> "/"
+ */
+function getNeutralPath(path: string): string {
+  if (path === '/en' || path === '/es') return '/';
+  if (path.startsWith('/en/')) return path.slice(3);
+  if (path.startsWith('/es/')) return path.slice(3);
+  return path;
+}
 
 /**
  * Represents a detected link and its validation status
@@ -179,7 +190,7 @@ export function suggestLinkFix(href: string, locale: Locale = 'fr'): string | nu
 
   // Missing locale prefix for EN/ES
   if (locale !== 'fr' && !normalized.startsWith('/')) {
-    const prefixed = getLocalizedPath(normalized, locale);
+    const prefixed = getLocalePath(locale, normalized);
     if (isValidRoute(prefixed, locale)) {
       return prefixed;
     }

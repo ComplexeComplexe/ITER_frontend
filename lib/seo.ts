@@ -51,7 +51,12 @@ export function frontmatterToMetadata(
   return {
     title: frontmatter.title,
     description: frontmatter.description,
-    canonical: canonicalUrl,
+
+    // Alternates for hreflang
+    alternates: {
+      canonical: canonicalUrl,
+      languages: alternatesLanguages,
+    },
 
     // Robots
     robots: {
@@ -76,12 +81,6 @@ export function frontmatterToMetadata(
       description: ogDescription,
       images: ogImage ? [ogImage] : undefined,
       creator: '@IterAdvisors1',
-    },
-
-    // Alternates for hreflang
-    alternates: {
-      canonical: canonicalUrl,
-      languages: alternatesLanguages,
     },
   };
 }

@@ -18,7 +18,7 @@ export const BaseFrontmatterSchema = z.object({
   // SEO
   description: z.string().min(50).max(200).describe('Meta description (140-160 chars)'),
   canonical: z.string().url().optional().describe('Canonical URL (auto-filled if omitted)'),
-  hreflang: z.record(z.string().url()).optional().describe('Translations map: { fr: url, en: url, es: url }'),
+  hreflang: z.record(z.string(), z.string().url()).optional().describe('Translations map: { fr: url, en: url, es: url }'),
 
   // OpenGraph & social
   ogImage: z.string().url().optional().describe('OG image URL (1200x630 recommended)'),
