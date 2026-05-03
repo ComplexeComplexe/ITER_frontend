@@ -139,7 +139,17 @@ const SLUG_REDIRECTS: Record<string, string> = {
   /* ── Fractional CFO Barcelona: only exists in EN ─────────────────── */
   "/fractional-cfo-barcelona": "/daf-externalise-barcelone",
   "/es/fractional-cfo-barcelona": "/es/cfo-externalizado-barcelona",
+
+  /* ── Old pages redirects (GSC coverage audit) ──────────────────────── */
+  "/notre-expertise": "/services",
+  "/notre-equipe": "/a-propos",
+  "/notre-methode": "/a-propos",
 };
+
+/* ── Orphaned fiche-metier slugs (not in system) ───────────────────── */
+const ORPHAN_FICHE_METIER_SLUGS = [
+  "descripcion-del-puesto",  // Found in GSC coverage report
+];
 
 /* ── Fiche metier slug mappings between locales ────────────────────── */
 const FICHE_METIER_SLUG_MAP: Record<string, Record<string, string>> = {
@@ -188,6 +198,10 @@ const ORPHAN_BLOG_SLUGS = [
   "outils-daf-externalise-2026",
   "daf-externalise-barcelone",
   "previsionnel-tresorerie-guide-pme",
+  // Missing blog articles found in GSC coverage report
+  "consequences-financieres-cyberattaques",
+  "essentiels-outils-tech-finance",
+  "anticiper-financierement-ses-recrutements-guide-pratique",
 ];
 
 /* ── FR-only blog slugs (no EN/ES translation) ────────────────────── */
@@ -242,6 +256,13 @@ export function middleware(request: NextRequest) {
     const locale = ficheMatch[1] || "fr";
     const slug = ficheMatch[2];
     const basePath = locale === "fr" ? "/ressources/fiche-metier" : `/${locale}/ressources/fiche-metier`;
+
+    // Orphaned fiche-metier slugs -> redirect to listing
+    if (ORPHAN_FICHE_METIER_SLUGS.includes(slug)) {
+      const url = request.nextUrl.clone();
+      url.pathname = basePath;
+      return NextResponse.redirect(url, 301);
+    }
 
     if (locale === "fr") {
       // On FR: if slug is EN or ES, redirect to FR slug
