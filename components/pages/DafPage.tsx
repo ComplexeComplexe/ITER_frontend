@@ -118,19 +118,19 @@ export default function DafPage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
-      <section className="bg-background pt-32 pb-16">
+      <section className="bg-background pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container">
           <Breadcrumb locale={locale} items={[{ label: t.breadcrumbLabel }]} />
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mt-6">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-start mt-4 sm:mt-6">
             <div data-speakable="true">
-              <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-4 sm:mb-6 leading-tight">
                 {t.h1}
               </h1>
               {t.intro.map((paragraph, i) => (
                 <p
                   key={i}
                   className={`text-muted-foreground leading-relaxed mb-4 ${
-                    i === 0 ? "text-lg lg:text-xl text-foreground/80 font-medium" : "text-base"
+                    i === 0 ? "text-base sm:text-lg lg:text-xl text-foreground/80 font-medium" : "text-sm sm:text-base"
                   }`}
                 >
                   {paragraph}
@@ -140,7 +140,7 @@ export default function DafPage({
                 href={BOOKING_URL}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
+                className="inline-flex items-center justify-center sm:justify-start gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4 w-full sm:w-auto text-sm sm:text-base"
               >
                 {t.ctaButton}
                 <ArrowRight size={16} />
@@ -148,35 +148,35 @@ export default function DafPage({
 
               {/* Trust badges (audit SEO D.3 / brief Bloc 1) — FR only */}
               {locale === "fr" && (
-                <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+                <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-x-8 sm:gap-y-4">
                   <div className="flex items-center gap-2.5">
                     <span className="flex" aria-label="Note 5 sur 5">
                       {[0, 1, 2, 3, 4].map((i) => (
                         <svg
                           key={i}
-                          width="18"
-                          height="18"
+                          width="16"
+                          height="16"
                           viewBox="0 0 20 20"
                           fill="currentColor"
-                          className="text-iter-chartreuse"
+                          className="text-iter-chartreuse sm:scale-110"
                           aria-hidden
                         >
                           <path d="M10 1.5l2.6 5.3 5.9.86-4.25 4.14 1 5.86L10 14.9l-5.25 2.76 1-5.86L1.5 7.66l5.9-.86L10 1.5z" />
                         </svg>
                       ))}
                     </span>
-                    <span className="text-sm font-semibold text-foreground">5/5</span>
-                    <span className="text-sm text-muted-foreground">— 31 avis Trustfolio</span>
+                    <span className="text-xs sm:text-sm font-semibold text-foreground">5/5</span>
+                    <span className="text-xs sm:text-sm text-muted-foreground">— 31 avis Trustfolio</span>
                   </div>
-                  <div className="flex items-center gap-5 opacity-70">
+                  <div className="flex items-center gap-3 sm:gap-5 opacity-70 overflow-x-auto">
                     {["logo-happyscribe", "logo-mitiga", "logo-surfe", "logo-ukio", "logo-yego"].map((logo) => (
-                      <div key={logo} className="relative h-6 w-20 grayscale">
+                      <div key={logo} className="relative h-5 sm:h-6 w-16 sm:w-20 grayscale shrink-0">
                         <Image
                           src={`/images/logos/${logo}.webp`}
                           alt=""
                           fill
                           className="object-contain"
-                          sizes="80px"
+                          sizes="(max-width: 640px) 64px, 80px"
                         />
                       </div>
                     ))}
@@ -208,20 +208,20 @@ export default function DafPage({
       )}
 
       {/* Partner */}
-      <section id="partenaire" className="bg-background py-16 lg:py-20 scroll-mt-24">
-        <div className="container max-w-3xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+      <section id="partenaire" className="bg-background py-12 sm:py-16 lg:py-20 scroll-mt-24">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
             {locale === "fr"
               ? "Votre partenaire"
               : locale === "en"
                 ? "Your partner"
                 : "Su socio"}
           </span>
-          <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
             {t.partnerSection.heading}
           </h2>
           {t.partnerSection.content.map((p, i) => (
-            <p key={i} className="text-muted-foreground leading-relaxed mb-4">
+            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               {p}
             </p>
           ))}
@@ -233,32 +233,32 @@ export default function DafPage({
       </div>
 
       {/* What Is */}
-      <section id="comprendre" className="bg-muted/30 py-24 lg:py-32 scroll-mt-24">
-        <div className="container max-w-3xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+      <section id="comprendre" className="bg-muted/30 py-16 sm:py-24 lg:py-32 scroll-mt-24">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
             {locale === "fr"
               ? "Comprendre"
               : locale === "en"
                 ? "Understand"
                 : "Comprender"}
           </span>
-          <h2 className="text-3xl lg:text-4xl font-bold font-heading text-foreground mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-4 sm:mb-6 leading-tight">
             {t.whatIs.heading}
           </h2>
           {t.whatIs.content.map((p, i) => (
-            <p key={i} className="text-muted-foreground leading-relaxed mb-4">
+            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               {locale === "fr" ? renderRichText(p) : p}
             </p>
           ))}
           {t.whatIs.subsections?.map((sub, i) => (
-            <div key={i} className="mt-10">
-              <h3 className="text-lg font-semibold font-heading text-foreground mb-4">
+            <div key={i} className="mt-6 sm:mt-10">
+              <h3 className="text-base sm:text-lg font-semibold font-heading text-foreground mb-3 sm:mb-4">
                 {sub.heading}
               </h3>
               {sub.content.map((p, j) => (
                 <p
                   key={j}
-                  className="text-muted-foreground leading-relaxed mb-4"
+                  className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4"
                 >
                   {locale === "fr" ? renderRichText(p) : p}
                 </p>
@@ -268,10 +268,10 @@ export default function DafPage({
 
           {/* Comparison table (audit SEO C.2) — DAF externalisé vs interne en tableau Featured-Snippet-friendly */}
           {t.comparisonTable && (
-            <div className="mt-10 -mx-4 sm:mx-0 overflow-x-auto">
-              <table className="w-full text-sm border-collapse bg-background border border-border/60 rounded-2xl overflow-hidden">
+            <div className="mt-6 sm:mt-10 -mx-4 sm:mx-0 overflow-x-auto">
+              <table className="w-full text-xs sm:text-sm border-collapse bg-background border border-border/60 rounded-2xl overflow-hidden">
                 {t.comparisonTable.caption && (
-                  <caption className="caption-top text-left text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 px-4">
+                  <caption className="caption-top text-left text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 px-3 sm:px-4">
                     {t.comparisonTable.caption}
                   </caption>
                 )}
@@ -281,7 +281,7 @@ export default function DafPage({
                       <th
                         key={i}
                         scope="col"
-                        className="text-left font-semibold text-foreground p-4 border-b border-border/60"
+                        className="text-left font-semibold text-foreground p-2 sm:p-4 border-b border-border/60"
                       >
                         {h}
                       </th>
@@ -294,7 +294,7 @@ export default function DafPage({
                       {row.map((cell, ci) => (
                         <td
                           key={ci}
-                          className={`p-4 align-top border-b border-border/40 leading-relaxed ${
+                          className={`p-2 sm:p-4 align-top border-b border-border/40 leading-relaxed ${
                             ci === 0 ? "font-semibold text-foreground" : "text-muted-foreground"
                           }`}
                         >
@@ -312,18 +312,18 @@ export default function DafPage({
 
       {/* Temps partagé (audit SEO A.1) — disposition asymétrique avec vidéo YouTube (brief Bloc 3) */}
       {t.tempsPartage && (
-        <section id="temps-partage" className="bg-background py-24 lg:py-32 scroll-mt-24">
+        <section id="temps-partage" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
           <div className="container">
-            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start max-w-6xl mx-auto">
-              <div className="lg:col-span-7">
-                <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+            <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start max-w-6xl mx-auto">
+              <div className="lg:col-span-7 px-4 sm:px-0">
+                <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
                   {locale === "fr" ? "Synonymes" : locale === "en" ? "Synonyms" : "Sinónimos"}
                 </span>
-                <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+                <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
                   {t.tempsPartage.heading}
                 </h2>
                 {t.tempsPartage.content.map((p, i) => (
-                  <p key={i} className="text-muted-foreground leading-relaxed mb-4">
+                  <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
                     {p}
                   </p>
                 ))}
@@ -343,44 +343,44 @@ export default function DafPage({
       </div>
 
       {/* Advantages */}
-      <section id="avantages" className="bg-background py-24 lg:py-32 scroll-mt-24">
-        <div className="container max-w-4xl">
-          <div className="mb-10">
-            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+      <section id="avantages" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
+        <div className="container max-w-4xl px-4 sm:px-6">
+          <div className="mb-8 sm:mb-10">
+            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
               {locale === "fr"
                 ? "Avantages"
                 : locale === "en"
                   ? "Advantages"
                   : "Ventajas"}
             </span>
-            <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+            <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
               {t.advantages.heading}
             </h2>
             {t.advantages.content.map((p, i) => (
-              <p key={i} className="text-muted-foreground leading-relaxed mb-4">
+              <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
                 {p}
               </p>
             ))}
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
             {t.advantages.subsections?.map((sub, i) => {
               const icons = [TrendingDown, Zap, Eye, Network];
               const Icon = icons[i % icons.length];
               return (
                 <div
                   key={i}
-                  className="group border border-border/50 rounded-2xl p-8 hover:border-iter-violet/30 transition-all duration-300"
+                  className="group border border-border/50 rounded-2xl p-5 sm:p-8 hover:border-iter-violet/30 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-iter-violet/10 flex items-center justify-center mb-4 group-hover:bg-iter-violet/20 transition-colors">
-                    <Icon size={22} className="text-iter-violet" />
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-iter-violet/10 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-iter-violet/20 transition-colors">
+                    <Icon size={20} className="text-iter-violet sm:scale-110" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-lg font-semibold font-heading mt-2 mb-3 group-hover:text-iter-violet transition-colors">
+                  <h3 className="text-base sm:text-lg font-semibold font-heading mt-2 mb-2 sm:mb-3 group-hover:text-iter-violet transition-colors">
                     {sub.heading}
                   </h3>
                   {sub.content.map((p, j) => (
                     <p
                       key={j}
-                      className="text-sm text-muted-foreground leading-relaxed"
+                      className="text-xs sm:text-sm text-muted-foreground leading-relaxed"
                     >
                       {p}
                     </p>
@@ -398,27 +398,27 @@ export default function DafPage({
 
       {/* For Whom (audit SEO Action 11) — long-tail capture per stade / secteur */}
       {t.forWhom && (
-        <section id="pour-qui" className="bg-background py-24 lg:py-32 scroll-mt-24">
-          <div className="container max-w-4xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+        <section id="pour-qui" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
+          <div className="container max-w-4xl px-4 sm:px-6">
+            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
               {locale === "fr" ? "Pour qui" : locale === "en" ? "For whom" : "Para quién"}
             </span>
-            <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+            <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
               {t.forWhom.heading}
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-10 text-lg">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 sm:mb-10">
               {locale === "fr" ? renderRichText(t.forWhom.intro) : t.forWhom.intro}
             </p>
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-5">
               {t.forWhom.segments.map((seg, i) => (
                 <div
                   key={i}
-                  className="border border-border/50 rounded-2xl p-6 lg:p-7 bg-card hover:border-iter-violet/30 transition-colors"
+                  className="border border-border/50 rounded-2xl p-4 sm:p-6 lg:p-7 bg-card hover:border-iter-violet/30 transition-colors"
                 >
-                  <h3 className="text-lg font-semibold font-heading mb-3 text-foreground">
+                  <h3 className="text-base sm:text-lg font-semibold font-heading mb-2 sm:mb-3 text-foreground">
                     {seg.heading}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     {locale === "fr" ? renderRichText(seg.content) : seg.content}
                   </p>
                 </div>
@@ -438,29 +438,29 @@ export default function DafPage({
       </div>
 
       {/* Missions */}
-      <section id="missions" className="bg-muted/30 py-24 lg:py-32 scroll-mt-24">
-        <div className="container">
-          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+      <section id="missions" className="bg-muted/30 py-16 sm:py-24 lg:py-32 scroll-mt-24">
+        <div className="container px-4 sm:px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
             {locale === "fr"
               ? "Nos missions"
               : locale === "en"
                 ? "Our missions"
                 : "Nuestras misiones"}
           </span>
-          <h2 className="text-3xl lg:text-4xl font-bold font-heading text-foreground mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-4 sm:mb-6 leading-tight">
             {t.missions.heading}
           </h2>
-          <p className="text-muted-foreground leading-relaxed mb-8">{t.missions.content[0]}</p>
-          <div className="grid sm:grid-cols-2 gap-4">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 sm:mb-8">{t.missions.content[0]}</p>
+          <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
             {t.missions.content.slice(1).map((p, i) => {
               const missionIcons = [BarChart3, Wallet, Rocket, Settings, Compass];
               const MIcon = missionIcons[i % missionIcons.length];
               return (
-                <div key={i} className="flex items-start gap-4 p-5 rounded-2xl border border-border/50 bg-background">
-                  <div className="w-10 h-10 rounded-xl bg-iter-chartreuse/20 flex items-center justify-center shrink-0">
-                    <MIcon size={18} className="text-iter-dark" />
+                <div key={i} className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl border border-border/50 bg-background">
+                  <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-xl bg-iter-chartreuse/20 flex items-center justify-center shrink-0">
+                    <MIcon size={16} className="text-iter-dark sm:scale-110" strokeWidth={1.5} />
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     {locale === "fr" ? linkifyMissionText(p) : p}
                   </p>
                 </div>
@@ -471,25 +471,25 @@ export default function DafPage({
       </section>
 
       {/* Pricing */}
-      <section id="tarifs" className="bg-background py-24 lg:py-32 scroll-mt-24">
-        <div className="container max-w-4xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+      <section id="tarifs" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
+        <div className="container max-w-4xl px-4 sm:px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
             {locale === "fr" ? "Tarifs" : locale === "en" ? "Pricing" : "Tarifas"}
           </span>
-          <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
             {t.pricing.heading}
           </h2>
           {t.pricing.content.map((p, i) => (
-            <p key={i} className="text-muted-foreground leading-relaxed mb-4">
+            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               {locale === "fr" ? renderRichText(p) : p}
             </p>
           ))}
 
           {/* Pricing table (audit SEO Action 5) — Featured-Snippet-friendly */}
           {t.pricingTable && (
-            <div className="mt-8 -mx-4 sm:mx-0 overflow-x-auto">
-              <table className="w-full text-sm border-collapse bg-background border border-border/60 rounded-2xl overflow-hidden">
-                <caption className="caption-top text-left text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 px-4">
+            <div className="mt-6 sm:mt-8 -mx-4 sm:mx-0 overflow-x-auto">
+              <table className="w-full text-xs sm:text-sm border-collapse bg-background border border-border/60 rounded-2xl overflow-hidden">
+                <caption className="caption-top text-left text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 px-3 sm:px-4">
                   {t.pricingTable.caption}
                 </caption>
                 <thead className="bg-iter-violet/5">
@@ -503,7 +503,7 @@ export default function DafPage({
                       <th
                         key={i}
                         scope="col"
-                        className="text-left font-semibold text-foreground p-4 border-b border-border/60"
+                        className="text-left font-semibold text-foreground p-2 sm:p-4 border-b border-border/60"
                       >
                         {h}
                       </th>
@@ -515,17 +515,17 @@ export default function DafPage({
                     <tr key={ri} className="even:bg-muted/30">
                       <th
                         scope="row"
-                        className="p-4 align-top border-b border-border/40 leading-relaxed font-semibold text-foreground"
+                        className="p-2 sm:p-4 align-top border-b border-border/40 leading-relaxed font-semibold text-foreground"
                       >
                         {tier.name}
                       </th>
-                      <td className="p-4 align-top border-b border-border/40 leading-relaxed text-muted-foreground">
+                      <td className="p-2 sm:p-4 align-top border-b border-border/40 leading-relaxed text-muted-foreground">
                         {tier.volume}
                       </td>
-                      <td className="p-4 align-top border-b border-border/40 leading-relaxed font-semibold text-foreground">
+                      <td className="p-2 sm:p-4 align-top border-b border-border/40 leading-relaxed font-semibold text-foreground">
                         {tier.price}
                       </td>
-                      <td className="p-4 align-top border-b border-border/40 leading-relaxed text-muted-foreground">
+                      <td className="p-2 sm:p-4 align-top border-b border-border/40 leading-relaxed text-muted-foreground">
                         {tier.audience}
                       </td>
                     </tr>
@@ -533,7 +533,7 @@ export default function DafPage({
                 </tbody>
               </table>
               {t.pricingTable.comparisonNote && (
-                <p className="text-sm text-muted-foreground leading-relaxed mt-6">
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-4 sm:mt-6">
                   {locale === "fr"
                     ? renderRichText(t.pricingTable.comparisonNote)
                     : t.pricingTable.comparisonNote}
@@ -544,15 +544,15 @@ export default function DafPage({
 
           {/* Featured client quote (audit SEO D.3) */}
           {t.featuredQuote && (
-            <figure className="mt-10 p-8 lg:p-10 rounded-3xl bg-iter-violet text-white relative overflow-hidden">
-              <span aria-hidden className="absolute top-4 left-6 text-7xl leading-none font-heading text-iter-chartreuse/40 select-none">
+            <figure className="mt-6 sm:mt-10 p-5 sm:p-8 lg:p-10 rounded-3xl bg-iter-violet text-white relative overflow-hidden">
+              <span aria-hidden className="absolute top-2 sm:top-4 left-3 sm:left-6 text-5xl sm:text-7xl leading-none font-heading text-iter-chartreuse/40 select-none">
                 &ldquo;
               </span>
-              <blockquote className="relative text-base lg:text-lg font-medium leading-relaxed pl-6">
+              <blockquote className="relative text-sm sm:text-base lg:text-lg font-medium leading-relaxed pl-4 sm:pl-6">
                 {t.featuredQuote.quote}
               </blockquote>
-              <figcaption className="mt-6 pl-6 flex flex-wrap items-center gap-x-6 gap-y-3">
-                <div className="text-sm">
+              <figcaption className="mt-4 sm:mt-6 pl-4 sm:pl-6 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 sm:gap-y-3">
+                <div className="text-xs sm:text-sm">
                   <span className="font-semibold text-iter-chartreuse block">
                     {t.featuredQuote.author}
                   </span>
@@ -592,16 +592,16 @@ export default function DafPage({
 
       {/* DAF vs Expert-Comptable (audit SEO A.3) */}
       {t.vsExpertComptable && (
-        <section id="vs-expert-comptable" className="bg-muted/30 py-24 lg:py-32 scroll-mt-24">
-          <div className="container max-w-3xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+        <section id="vs-expert-comptable" className="bg-muted/30 py-16 sm:py-24 lg:py-32 scroll-mt-24">
+          <div className="container max-w-3xl px-4 sm:px-6">
+            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
               {locale === "fr" ? "Complémentaire" : locale === "en" ? "Complementary" : "Complementario"}
             </span>
-            <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+            <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
               {t.vsExpertComptable.heading}
             </h2>
             {t.vsExpertComptable.content.map((p, i) => (
-              <p key={i} className="text-muted-foreground leading-relaxed mb-4">
+              <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
                 {p}
               </p>
             ))}
@@ -614,16 +614,16 @@ export default function DafPage({
       </div>
 
       {/* When To Hire */}
-      <section id="quand" className="bg-muted/30 py-24 lg:py-32 scroll-mt-24">
-        <div className="container max-w-3xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+      <section id="quand" className="bg-muted/30 py-16 sm:py-24 lg:py-32 scroll-mt-24">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
             {locale === "fr" ? "Quand ?" : locale === "en" ? "When?" : "Cuando?"}
           </span>
-          <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
             {t.whenToHire.heading}
           </h2>
           {t.whenToHire.content.map((p, i) => (
-            <p key={i} className="text-muted-foreground leading-relaxed mb-4">
+            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               {locale === "fr" ? renderRichText(p) : p}
             </p>
           ))}
@@ -635,16 +635,16 @@ export default function DafPage({
       </div>
 
       {/* Profiles */}
-      <section id="profils" className="bg-background py-24 lg:py-32 scroll-mt-24">
-        <div className="container max-w-3xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+      <section id="profils" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
             {locale === "fr" ? "Profils" : locale === "en" ? "Profiles" : "Perfiles"}
           </span>
-          <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
             {t.profiles.heading}
           </h2>
           {t.profiles.content.map((p, i) => (
-            <p key={i} className="text-muted-foreground leading-relaxed mb-4">
+            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               {locale === "fr" ? renderRichText(p) : p}
             </p>
           ))}
@@ -656,16 +656,16 @@ export default function DafPage({
       </div>
 
       {/* Tools */}
-      <section className="bg-muted/30 py-24 lg:py-32">
-        <div className="container max-w-3xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+      <section className="bg-muted/30 py-16 sm:py-24 lg:py-32">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
             {locale === "fr" ? "Outils" : locale === "en" ? "Tools" : "Herramientas"}
           </span>
-          <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
             {t.tools.heading}
           </h2>
           {t.tools.content.map((p, i) => (
-            <p key={i} className="text-muted-foreground leading-relaxed mb-4">
+            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               {p}
             </p>
           ))}
@@ -677,15 +677,15 @@ export default function DafPage({
       </div>
 
       {/* Related Services */}
-      <section className="bg-muted/30 py-24 lg:py-32">
-        <div className="container">
-          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+      <section className="bg-muted/30 py-16 sm:py-24 lg:py-32">
+        <div className="container px-4 sm:px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
             {locale === "fr" ? "Nos expertises" : locale === "en" ? "Our expertise" : "Nuestras expertises"}
           </span>
-          <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-6 sm:mb-10 leading-tight">
             {locale === "fr" ? "Découvrez nos autres services" : locale === "en" ? "Discover our other services" : "Descubra nuestros otros servicios"}
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {[
               { title: locale === "fr" ? "Accompagnement levée de fonds" : locale === "en" ? "Fund-raising support" : "Acompañamiento captación de fondos", href: locale === "fr" ? "/services/accompagnement-levee-de-fond" : `/${locale}/services/fund-raising-support`, icon: Rocket },
               { title: locale === "fr" ? "Contrôle de gestion externalisé" : locale === "en" ? "Outsourced management control" : "Control de gestión externalizado", href: locale === "fr" ? "/services/controle-de-gestion-externalise" : `/${locale}/services/outsourced-management-control`, icon: BarChart3 },
@@ -714,26 +714,26 @@ export default function DafPage({
       </section>
 
       {/* Nos implantations */}
-      <section className="bg-background py-24 lg:py-32">
-        <div className="container">
-          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+      <section className="bg-background py-16 sm:py-24 lg:py-32">
+        <div className="container px-4 sm:px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
             {locale === "fr" ? "Nos implantations" : locale === "en" ? "Our locations" : "Nuestras sedes"}
           </span>
-          <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-4">
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-3 sm:mb-4 leading-tight">
             {locale === "fr"
               ? "Un DAF externalis\u00e9 proche de chez vous"
               : locale === "en"
                 ? "An outsourced CFO near you"
                 : "Un CFO externalizado cerca de usted"}
           </h2>
-          <p className="text-muted-foreground leading-relaxed mb-10 max-w-2xl">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 sm:mb-10 max-w-2xl">
             {locale === "fr"
               ? "Iter Advisors intervient depuis ses bureaux de Barcelone, Paris et Toulouse. D\u00e9couvrez nos \u00e9quipes locales et les sp\u00e9cificit\u00e9s de chaque march\u00e9."
               : locale === "en"
                 ? "Iter Advisors operates from its offices in Barcelona, Paris and Toulouse. Discover our local teams and the specificities of each market."
                 : "Iter Advisors opera desde sus oficinas en Barcelona, Par\u00eds y Toulouse. Descubra nuestros equipos locales y las especificidades de cada mercado."}
           </p>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-3 gap-3 sm:gap-4">
             {[
               {
                 city: "Barcelone",
@@ -760,18 +760,18 @@ export default function DafPage({
               <Link
                 key={i}
                 href={loc.href}
-                className="group flex flex-col gap-3 bg-muted/30 border border-border/50 rounded-2xl p-6 hover:border-iter-violet/30 transition-all duration-300"
+                className="group flex flex-col gap-2 sm:gap-3 bg-muted/30 border border-border/50 rounded-2xl p-4 sm:p-6 hover:border-iter-violet/30 transition-all duration-300"
               >
-                <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
-                  <MapPin size={20} className="text-iter-violet" />
+                <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
+                  <MapPin size={18} className="text-iter-violet sm:scale-110" strokeWidth={1.5} />
                 </div>
-                <span className="font-semibold text-lg text-foreground group-hover:text-iter-violet transition-colors">
+                <span className="font-semibold text-base sm:text-lg text-foreground group-hover:text-iter-violet transition-colors">
                   {locale === "en" ? loc.cityEn : locale === "es" ? loc.cityEs : loc.city}
                 </span>
-                <span className="text-sm text-muted-foreground">{loc.desc}</span>
-                <span className="text-sm font-medium text-iter-violet flex items-center gap-1 mt-auto">
+                <span className="text-xs sm:text-sm text-muted-foreground">{loc.desc}</span>
+                <span className="text-xs sm:text-sm font-medium text-iter-violet flex items-center gap-1 mt-auto">
                   {locale === "fr" ? "D\u00e9couvrir" : locale === "en" ? "Learn more" : "Descubrir"}
-                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>
             ))}
@@ -783,38 +783,38 @@ export default function DafPage({
 
       {/* Trustfolio Reviews (audit P0 — visible HTML reviews for ProfessionalService schema) */}
       {locale === "fr" && t.trustfolioReviews && t.trustfolioReviews.length > 0 && (
-        <section id="avis-clients" className="bg-background py-24 lg:py-32 scroll-mt-24">
-          <div className="container max-w-4xl">
-            <div className="mb-14">
-              <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+        <section id="avis-clients" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
+          <div className="container max-w-4xl px-4 sm:px-6">
+            <div className="mb-8 sm:mb-14">
+              <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
                 Avis clients
               </span>
-              <h2 className="text-3xl lg:text-4xl font-bold font-heading mb-4">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading mb-3 sm:mb-4 leading-tight">
                 Témoignages de nos clients
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Découvrez les retours d'expérience de PME et startups ayant travaillé avec Iter Advisors.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
               {t.trustfolioReviews.map((review, i) => (
                 <article
                   key={i}
-                  className="border border-border/50 rounded-2xl p-7 bg-muted/30 hover:border-iter-violet/30 transition-colors"
+                  className="border border-border/50 rounded-2xl p-4 sm:p-7 bg-muted/30 hover:border-iter-violet/30 transition-colors"
                   itemScope
                   itemType="https://schema.org/Review"
                 >
                   {/* Rating stars */}
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-center gap-2 mb-3 sm:mb-4">
                     <div className="flex gap-1">
                       {[0, 1, 2, 3, 4].map((j) => (
                         <svg
                           key={j}
-                          width="16"
-                          height="16"
+                          width="14"
+                          height="14"
                           viewBox="0 0 20 20"
                           fill={j < review.rating ? "currentColor" : "none"}
-                          className="text-iter-chartreuse"
+                          className="text-iter-chartreuse sm:scale-110"
                           aria-hidden
                         >
                           <path d="M10 1.5l2.6 5.3 5.9.86-4.25 4.14 1 5.86L10 14.9l-5.25 2.76 1-5.86L1.5 7.66l5.9-.86L10 1.5z" />
@@ -825,17 +825,17 @@ export default function DafPage({
                   </div>
 
                   {/* Review quote */}
-                  <blockquote className="text-foreground leading-relaxed mb-6 italic">
+                  <blockquote className="text-xs sm:text-sm text-foreground leading-relaxed mb-4 sm:mb-6 italic">
                     "{review.quote}"
                   </blockquote>
 
                   {/* Author */}
                   <div>
-                    <p className="font-semibold text-foreground">
+                    <p className="text-xs sm:text-sm font-semibold text-foreground">
                       {review.author}
                       <meta itemProp="author" content={review.author} />
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-xs text-muted-foreground">
                       {review.role} — {review.company}
                     </p>
                     <meta itemProp="reviewRating" content={String(review.rating)} />
@@ -864,20 +864,20 @@ export default function DafPage({
       )}
 
       {/* Why Choose */}
-      <section className="bg-background py-24 lg:py-32">
-        <div className="container max-w-3xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+      <section className="bg-background py-16 sm:py-24 lg:py-32">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
             {locale === "fr"
               ? "Pourquoi nous"
               : locale === "en"
                 ? "Why us"
                 : "Por qué nosotros"}
           </span>
-          <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
             {t.whyChoose.heading}
           </h2>
           {t.whyChoose.content.map((p, i) => (
-            <p key={i} className="text-muted-foreground leading-relaxed mb-4">
+            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               {p}
             </p>
           ))}
@@ -887,6 +887,28 @@ export default function DafPage({
       <div className="container">
         <div className="border-b border-border/50" />
       </div>
+
+      {/* FAQ */}
+      <section id="faq" className="bg-muted/30 py-16 sm:py-24 lg:py-32 scroll-mt-24">
+        <div className="container px-4 sm:px-6">
+          <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
+            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
+              FAQ
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading">FAQ</h2>
+          </div>
+          <div className="max-w-3xl mx-auto space-y-2 sm:space-y-3">
+            {t.faq.map((item, i) => (
+              <FaqAccordionItem
+                key={i}
+                question={item.question}
+                answer={item.answer}
+                answerRich={item.answerRich}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Schema */}
       <script
@@ -1058,21 +1080,21 @@ export default function DafPage({
 
       {/* Vos experts Iter Advisors (audit SEO D.1 / brief Bloc 7) — EEAT signal with named CFOs */}
       {locale === "fr" && featuredExperts.length > 0 && (
-        <section id="experts" className="bg-background py-24 lg:py-32 scroll-mt-24">
-          <div className="container max-w-4xl">
-            <div className="mb-12">
-              <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
+        <section id="experts" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
+          <div className="container max-w-4xl px-4 sm:px-6">
+            <div className="mb-8 sm:mb-12">
+              <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
                 Vos experts
               </span>
-              <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-4">
+              <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-3 sm:mb-4 leading-tight">
                 Vos experts Iter Advisors
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Nos associés DAF interviennent eux-mêmes sur les missions stratégiques et
                 supervisent l&apos;ensemble des engagements.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
               {featuredExperts.map((expert) => {
                 const photoUrl = strapiMediaUrl(expert.photo);
                 const initials = `${expert.firstName?.[0] ?? ""}${
@@ -1081,29 +1103,29 @@ export default function DafPage({
                 return (
                   <article
                     key={expert.slug}
-                    className="border border-border/50 rounded-2xl p-6 lg:p-7 bg-background hover:border-iter-violet/30 transition-colors flex items-center gap-5"
+                    className="border border-border/50 rounded-2xl p-4 sm:p-6 lg:p-7 bg-background hover:border-iter-violet/30 transition-colors flex items-center gap-3 sm:gap-5"
                   >
-                    <div className="relative w-20 h-20 lg:w-24 lg:h-24 shrink-0 rounded-2xl overflow-hidden bg-iter-violet/10">
+                    <div className="relative w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 shrink-0 rounded-2xl overflow-hidden bg-iter-violet/10">
                       {photoUrl ? (
                         <Image
                           src={photoUrl}
                           alt={`${expert.firstName} ${expert.lastName}`}
                           fill
                           className="object-cover"
-                          sizes="(max-width: 1024px) 80px, 96px"
+                          sizes="(max-width: 640px) 64px, (max-width: 1024px) 80px, 96px"
                         />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-iter-violet font-bold font-heading text-xl">
+                        <div className="w-full h-full flex items-center justify-center text-iter-violet font-bold font-heading text-lg sm:text-xl">
                           {initials}
                         </div>
                       )}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-lg font-semibold font-heading">
+                      <h3 className="text-base sm:text-lg font-semibold font-heading">
                         {expert.firstName} {expert.lastName}
                       </h3>
-                      <p className="text-sm text-muted-foreground mb-2">{expert.role}</p>
-                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-iter-violet bg-iter-violet/10 rounded-full px-2.5 py-1 mb-3">
+                      <p className="text-xs sm:text-sm text-muted-foreground mb-1 sm:mb-2">{expert.role}</p>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-iter-violet bg-iter-violet/10 rounded-full px-2 sm:px-2.5 py-0.5 sm:py-1 mb-2 sm:mb-3">
                         10+ ans d&apos;expérience CFO
                       </span>
                       {expert.linkedIn && (
@@ -1128,28 +1150,6 @@ export default function DafPage({
           </div>
         </section>
       )}
-
-      {/* FAQ */}
-      <section id="faq" className="bg-muted/30 py-24 lg:py-32 scroll-mt-24">
-        <div className="container">
-          <div className="text-center max-w-xl mx-auto mb-14">
-            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
-              FAQ
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold font-heading">FAQ</h2>
-          </div>
-          <div className="max-w-3xl mx-auto space-y-3">
-            {t.faq.map((item, i) => (
-              <FaqAccordionItem
-                key={i}
-                question={item.question}
-                answer={item.answer}
-                answerRich={item.answerRich}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
 
       <CTASection locale={locale} />
 
@@ -1366,12 +1366,13 @@ function FaqAccordionItem({
     <div className="border border-border/50 rounded-2xl overflow-hidden bg-background">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between p-6 text-left font-semibold hover:text-iter-violet transition-colors"
+        className="w-full flex items-start sm:items-center justify-between p-4 sm:p-6 text-left font-semibold hover:text-iter-violet transition-colors gap-3"
       >
-        <span>{question}</span>
+        <span className="text-sm sm:text-base">{question}</span>
         <ChevronDown
           size={16}
-          className={`flex-shrink-0 ml-4 text-foreground/30 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`flex-shrink-0 text-foreground/30 transition-transform mt-0.5 sm:mt-0`}
+          style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
         />
       </button>
       <AnimatePresence>
@@ -1383,15 +1384,15 @@ function FaqAccordionItem({
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="px-6 pb-6 text-muted-foreground leading-relaxed">
+            <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-xs sm:text-sm text-muted-foreground leading-relaxed">
               {answerRich ? (
                 <>
-                  {answerRich.intro && <p className="mb-4">{answerRich.intro}</p>}
+                  {answerRich.intro && <p className="mb-3 sm:mb-4">{answerRich.intro}</p>}
                   {answerRich.bullets && answerRich.bullets.length > 0 && (
-                    <ul className="space-y-2 mb-4 list-none">
+                    <ul className="space-y-2 mb-3 sm:mb-4 list-none">
                       {answerRich.bullets.map((b, i) => (
-                        <li key={i} className="flex gap-3">
-                          <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
+                        <li key={i} className="flex gap-2 sm:gap-3">
+                          <span aria-hidden className="mt-1.5 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
                           <span>
                             <strong className="text-foreground font-semibold">{b.label} :</strong> {b.text}
                           </span>
