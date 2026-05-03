@@ -6,25 +6,25 @@ import { navigation, footerContent, languageSwitcher } from "@/lib/navigation";
 
 const POPULAR_ARTICLES = {
   fr: [
-    { slug: "cost-daf", title: "Coût d'un DAF externalisé" },
-    { slug: "vs-salarié", title: "DAF externalisé vs salarié" },
-    { slug: "due-diligence", title: "Due diligence M&A" },
-    { slug: "drh-synergie", title: "DRH et synergie d'équipe" },
-    { slug: "levee-de-fonds", title: "Levée de fonds" },
+    { slug: "cout-daf-externalise-tarifs-prix-2026", title: "Coût d'un DAF externalisé" },
+    { slug: "daf-externalise-vs-daf-salarie", title: "DAF externalisé vs salarié" },
+    { slug: "checklist-due-diligence-levee-de-fonds", title: "Due diligence & Levée de fonds" },
+    { slug: "daf-drh-externalises-synergie", title: "DRH et synergie d'équipe" },
+    { slug: "les-10-outils-pour-les-cfos-en-start-up", title: "Les 10 outils pour CFO startup" },
   ],
   en: [
-    { slug: "cost-daf", title: "Cost of Outsourced CFO" },
-    { slug: "vs-salarié", title: "Outsourced CFO vs Employee" },
-    { slug: "due-diligence", title: "M&A Due Diligence" },
-    { slug: "drh-synergie", title: "HR and Team Synergy" },
-    { slug: "levee-de-fonds", title: "Fund Raising" },
+    { slug: "cout-daf-externalise-tarifs-prix-2026", title: "Cost of Outsourced CFO" },
+    { slug: "daf-externalise-vs-daf-salarie", title: "Outsourced CFO vs Employee" },
+    { slug: "checklist-due-diligence-levee-de-fonds", title: "Due Diligence & Fundraising" },
+    { slug: "daf-drh-externalises-synergie", title: "HR and Team Synergy" },
+    { slug: "les-10-outils-pour-les-cfos-en-start-up", title: "10 CFO Tools for Startups" },
   ],
   es: [
-    { slug: "cost-daf", title: "Costo de CFO externalizado" },
-    { slug: "vs-salarié", title: "CFO externalizado vs empleado" },
-    { slug: "due-diligence", title: "Due Diligence M&A" },
-    { slug: "drh-synergie", title: "RRHH y sinergia de equipo" },
-    { slug: "levee-de-fonds", title: "Financiación" },
+    { slug: "cout-daf-externalise-tarifs-prix-2026", title: "Costo de CFO externalizado" },
+    { slug: "daf-externalise-vs-daf-salarie", title: "CFO externalizado vs empleado" },
+    { slug: "checklist-due-diligence-levee-de-fonds", title: "Due Diligence y Financiación" },
+    { slug: "daf-drh-externalises-synergie", title: "RRHH y sinergia de equipo" },
+    { slug: "les-10-outils-pour-les-cfos-en-start-up", title: "10 herramientas para CFO startup" },
   ],
 };
 
