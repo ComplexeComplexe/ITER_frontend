@@ -60,7 +60,7 @@ export default function HrefLangInjector() {
     hreflangs.forEach(({ hreflang, href }) => {
       const link = document.createElement('link');
       link.rel = 'alternate';
-      link.hrefLang = hreflang;
+      link.setAttribute('hrefLang', hreflang);
       link.href = href;
       head.appendChild(link);
     });
