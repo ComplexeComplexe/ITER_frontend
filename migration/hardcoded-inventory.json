@@ -1,0 +1,194 @@
+[
+  {
+    "filePath": "app/cads/page.tsx",
+    "route": "/cads",
+    "locale": "fr",
+    "hasStrapidependency": false,
+    "seoElements": {
+      "title": false,
+      "description": true,
+      "canonical": true,
+      "hreflang": false,
+      "ogImage": false,
+      "jsonLd": false
+    },
+    "internalLinks": [],
+    "isHardcoded": true
+  },
+  {
+    "filePath": "app/cads/roi/page.tsx",
+    "route": "/cads/roi",
+    "locale": "fr",
+    "hasStrapidependency": false,
+    "seoElements": {
+      "title": false,
+      "description": true,
+      "canonical": true,
+      "hreflang": false,
+      "ogImage": false,
+      "jsonLd": false
+    },
+    "internalLinks": [],
+    "isHardcoded": true
+  },
+  {
+    "filePath": "app/ressources/blog/checklist-due-diligence-levee-de-fonds/page.tsx",
+    "route": "/ressources/blog/checklist-due-diligence-levee-de-fonds",
+    "locale": "fr",
+    "hasStrapidependency": false,
+    "seoElements": {
+      "title": false,
+      "description": true,
+      "canonical": false,
+      "hreflang": false,
+      "ogImage": false,
+      "jsonLd": false
+    },
+    "internalLinks": [],
+    "isHardcoded": true
+  },
+  {
+    "filePath": "app/ressources/blog/cout-daf-externalise-tarifs-prix-2026/page.tsx",
+    "route": "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
+    "locale": "fr",
+    "hasStrapidependency": false,
+    "seoElements": {
+      "title": false,
+      "description": true,
+      "canonical": false,
+      "hreflang": false,
+      "ogImage": false,
+      "jsonLd": false
+    },
+    "internalLinks": [],
+    "isHardcoded": true
+  },
+  {
+    "filePath": "app/ressources/blog/daf-drh-externalises-synergie/page.tsx",
+    "route": "/ressources/blog/daf-drh-externalises-synergie",
+    "locale": "fr",
+    "hasStrapidependency": false,
+    "seoElements": {
+      "title": false,
+      "description": true,
+      "canonical": false,
+      "hreflang": false,
+      "ogImage": false,
+      "jsonLd": false
+    },
+    "internalLinks": [],
+    "isHardcoded": true
+  },
+  {
+    "filePath": "app/ressources/blog/daf-externalise-vs-daf-salarie/page.tsx",
+    "route": "/ressources/blog/daf-externalise-vs-daf-salarie",
+    "locale": "fr",
+    "hasStrapidependency": false,
+    "seoElements": {
+      "title": false,
+      "description": true,
+      "canonical": false,
+      "hreflang": false,
+      "ogImage": false,
+      "jsonLd": false
+    },
+    "internalLinks": [],
+    "isHardcoded": true
+  },
+  {
+    "filePath": "app/ressources/blog/essentiels-outils-tech-finance/page.tsx",
+    "route": "/ressources/blog/essentiels-outils-tech-finance",
+    "locale": "fr",
+    "hasStrapidependency": false,
+    "seoElements": {
+      "title": false,
+      "description": true,
+      "canonical": false,
+      "hreflang": false,
+      "ogImage": false,
+      "jsonLd": false
+    },
+    "internalLinks": [],
+    "isHardcoded": true
+  },
+  {
+    "filePath": "app/ressources/blog/flux-de-tresorerie/page.tsx",
+    "route": "/ressources/blog/flux-de-tresorerie",
+    "locale": "fr",
+    "hasStrapidependency": false,
+    "seoElements": {
+      "title": false,
+      "description": true,
+      "canonical": false,
+      "hreflang": false,
+      "ogImage": false,
+      "jsonLd": false
+    },
+    "internalLinks": [],
+    "isHardcoded": true
+  },
+  {
+    "filePath": "app/ressources/blog/ia-et-automatisation-des-taches-repetitives/page.tsx",
+    "route": "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
+    "locale": "fr",
+    "hasStrapidependency": false,
+    "seoElements": {
+      "title": false,
+      "description": true,
+      "canonical": false,
+      "hreflang": false,
+      "ogImage": false,
+      "jsonLd": false
+    },
+    "internalLinks": [],
+    "isHardcoded": true
+  },
+  {
+    "filePath": "app/ressources/blog/la-modernisation-du-role-de-cfo/page.tsx",
+    "route": "/ressources/blog/la-modernisation-du-role-de-cfo",
+    "locale": "fr",
+    "hasStrapidependency": false,
+    "seoElements": {
+      "title": false,
+      "description": true,
+      "canonical": false,
+      "hreflang": false,
+      "ogImage": false,
+      "jsonLd": false
+    },
+    "internalLinks": [],
+    "isHardcoded": true
+  },
+  {
+    "filePath": "app/ressources/blog/les-10-outils-pour-cfos-startup/page.tsx",
+    "route": "/ressources/blog/les-10-outils-pour-cfos-startup",
+    "locale": "fr",
+    "hasStrapidependency": false,
+    "seoElements": {
+      "title": false,
+      "description": true,
+      "canonical": false,
+      "hreflang": false,
+      "ogImage": false,
+      "jsonLd": false
+    },
+    "internalLinks": [],
+    "isHardcoded": true
+  },
+  {
+    "filePath": "app/ressources/blog/organiser-sa-direction-financiere/page.tsx",
+    "route": "/ressources/blog/organiser-sa-direction-financiere",
+    "locale": "fr",
+    "hasStrapidependency": false,
+    "seoElements": {
+      "title": false,
+      "description": true,
+      "canonical": false,
+      "hreflang": false,
+      "ogImage": false,
+      "jsonLd": false
+    },
+    "internalLinks": [],
+    "isHardcoded": true
+  }
+]
