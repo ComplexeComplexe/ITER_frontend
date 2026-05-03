@@ -700,7 +700,7 @@ const SERVICE_PAGE_TITLES: Record<ServicePageSlug, Record<Locale, { heroTitle: s
   },
   "gestion-financiere-externalisee": {
     fr: { heroTitle: "Gestion Financière Externalisée", heroSubtitle: "Une direction financière à la carte, adaptée à la taille et aux enjeux de votre entreprise" },
-    en: { heroTitle: "Outsourced Financial Management", heroSubtitle: "Financial leadership tailored to your company's size and needs" },
+    en: { heroTitle: "Part-time Financial Management", heroSubtitle: "Financial leadership tailored to your company's size and needs" },
     es: { heroTitle: "Gestión Financiera Externalizada", heroSubtitle: "Una dirección financiera a medida, adaptada al tamaño y retos de tu empresa" },
   },
   "accompagnement-levee-de-fond": {
@@ -715,7 +715,7 @@ const SERVICE_PAGE_TITLES: Record<ServicePageSlug, Record<Locale, { heroTitle: s
   },
   "controle-de-gestion-externalise": {
     fr: { heroTitle: "Contrôle de Gestion Externalisé", heroSubtitle: "Tableaux de Bord Financiers, Analyse des Coûts & Optimisation de la Rentabilité" },
-    en: { heroTitle: "Outsourced Management Control", heroSubtitle: "Financial Dashboards, Cost Analysis & Profitability Optimization" },
+    en: { heroTitle: "Part-time Management Control", heroSubtitle: "Financial Dashboards, Cost Analysis & Profitability Optimization" },
     es: { heroTitle: "Control de Gestión Externalizado", heroSubtitle: "Cuadros de Mando Financieros, Análisis de Costes y Optimización de Rentabilidad" },
   },
 };
