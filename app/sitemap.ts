@@ -63,19 +63,18 @@ const BLOG_SLUGS = [
   "la-modernisation-du-role-de-cfo",
   "les-10-outils-pour-les-cfos-en-start-up",
   "essentiels-outils-tech-finance",
-  "ia-et-automatisation-des-taches-repetitives-du-departement-finance",
   "organiser-sa-direction-financiere",
   /* Strapi blog posts */
-  "levee-de-fonds-dilutif-vs-non-dilutif",
   "consequences-financieres-cyberattaques",
   "regimes-fiscaux-france-vs-espagne",
-  "ia-act-opportunite-fintechs",
   "anticiper-financierement-ses-recrutements-guide-pratique",
   /* New articles (mars 2026 brief) */
   "cout-daf-externalise-tarifs-prix-2026",
   "daf-externalise-vs-daf-salarie",
   "checklist-due-diligence-levee-de-fonds",
   "daf-drh-externalises-synergie",
+  /* MDX migration articles */
+  "ia-et-automatisation-des-taches-repetitives",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -213,10 +212,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   entries.push(
     ...entryAllLocales({ fr: "/contact", en: "/contact", es: "/contact" })
   );
-  // /jobs pages are noindexed (TICKET-12) - removed from sitemap
-  // entries.push(
-  //   ...entryAllLocales({ fr: "/jobs", en: "/jobs", es: "/jobs" })
-  // );
+  // /jobs pages are noindexed (TICKET-12) but included in sitemap for discovery
+  entries.push(
+    ...entryAllLocales({ fr: "/jobs", en: "/jobs", es: "/jobs" }, { priority: 0.5 })
+  );
 
   /* ── Fractional CFO EN landing page (TICKET-12) ──────────────── */
   entries.push({

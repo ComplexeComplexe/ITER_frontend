@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "../components/CookieConsent";
+import HrefLangInjector from "../components/HrefLangInjector";
 
 const dmSans = DM_Sans({
   subsets: ["latin", "latin-ext"],
@@ -46,6 +47,9 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
       <head>
+        {/* Hreflang injection for multi-language SEO */}
+        <HrefLangInjector />
+
         {/* DNS prefetch & preconnect for 3rd-party origins */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://share.trustfolio.co" />

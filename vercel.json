@@ -302,6 +302,51 @@
       "source": "/es/externalizacion-daf/multipropiedad",
       "destination": "/es/externalizacion-daf/tiempo-compartido",
       "permanent": true
+    },
+    {
+      "source": "/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+      "destination": "/ressources/blog",
+      "permanent": true
+    },
+    {
+      "source": "/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+      "destination": "/en/ressources/blog",
+      "permanent": true
+    },
+    {
+      "source": "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+      "destination": "/es/ressources/blog",
+      "permanent": true
+    },
+    {
+      "source": "/ressources/blog/levee-de-fonds-dilutif-vs-non-dilutif",
+      "destination": "/services/accompagnement-levee-de-fond",
+      "permanent": true
+    },
+    {
+      "source": "/en/ressources/blog/levee-de-fonds-dilutif-vs-non-dilutif",
+      "destination": "/en/services/fund-raising-support",
+      "permanent": true
+    },
+    {
+      "source": "/es/ressources/blog/levee-de-fonds-dilutif-vs-non-dilutif",
+      "destination": "/es/services/soporte-financiacion",
+      "permanent": true
+    },
+    {
+      "source": "/ressources/blog/ia-act-opportunite-fintechs",
+      "destination": "/ressources/blog",
+      "permanent": true
+    },
+    {
+      "source": "/en/ressources/blog/ia-act-opportunite-fintechs",
+      "destination": "/en/ressources/blog",
+      "permanent": true
+    },
+    {
+      "source": "/es/ressources/blog/ia-act-opportunite-fintechs",
+      "destination": "/es/ressources/blog",
+      "permanent": true
     }
   ]
 }
