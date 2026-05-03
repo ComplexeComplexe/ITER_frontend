@@ -54,6 +54,19 @@ export function buildMetadata({
     es: `${base}/es${esPath === "/" ? "" : esPath}`,
   };
 
+  // Build hreflang link tags for HTML head (fixes Next.js alternates.languages not rendering)
+  const hrefLangLinks = [
+    { hreflang: "x-default", href: alternates["x-default"] },
+    { hreflang: "fr-FR", href: alternates.fr },
+    { hreflang: "en-GB", href: alternates.en },
+    { hreflang: "es-ES", href: alternates.es },
+  ]
+    .map(
+      ({ hreflang, href }) =>
+        `<link rel="alternate" hrefLang="${hreflang}" href="${href}" />`
+    )
+    .join("\n  ");
+
   const meta: Metadata = {
     title,
     description,
@@ -92,6 +105,9 @@ export function buildMetadata({
         { url: "/favicon.png", sizes: "192x192" },
       ],
       apple: "/favicon.png",
+    },
+    other: {
+      "hreflang-links": hrefLangLinks,
     },
   };
 

@@ -980,8 +980,7 @@ export default function DafPage({
                 ratingValue: "5",
                 bestRating: "5",
                 worstRating: "1",
-                reviewCount: "31",
-                url: "https://trustfolio.co/c/iter-advisors"
+                reviewCount: "31"
               },
               review: t.trustfolioReviews.map((review) => ({
                 "@type": "Review",

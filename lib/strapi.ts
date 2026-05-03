@@ -691,6 +691,35 @@ export async function getServiceBySlug(slug: string, locale: Locale): Promise<St
 }
 
 /** Get a service single-type page by slug (FR, EN, ES) */
+/** Service page titles in Spanish and English for locale-aware fallback */
+const SERVICE_PAGE_TITLES: Record<ServicePageSlug, Record<Locale, { heroTitle: string; heroSubtitle: string }>> = {
+  "previsionnel-tresorerie": {
+    fr: { heroTitle: "Prévisionnel de Trésorerie", heroSubtitle: "Modèle Glissant 13 Semaines - Anticipez vos besoins de cash" },
+    en: { heroTitle: "Cash Flow Forecast", heroSubtitle: "13-Week Rolling Model - Anticipate Your Cash Needs" },
+    es: { heroTitle: "Previsión de Tesorería", heroSubtitle: "Modelo Deslizante 13 Semanas - Anticipe sus necesidades de caja" },
+  },
+  "gestion-financiere-externalisee": {
+    fr: { heroTitle: "Gestion Financière Externalisée", heroSubtitle: "Une direction financière à la carte, adaptée à la taille et aux enjeux de votre entreprise" },
+    en: { heroTitle: "Outsourced Financial Management", heroSubtitle: "Financial leadership tailored to your company's size and needs" },
+    es: { heroTitle: "Gestión Financiera Externalizada", heroSubtitle: "Una dirección financiera a medida, adaptada al tamaño y retos de tu empresa" },
+  },
+  "accompagnement-levee-de-fond": {
+    fr: { heroTitle: "Accompagnement Levée de Fonds", heroSubtitle: "Préparez et réussissez vos levées avec un partenaire expérimenté à vos côtés" },
+    en: { heroTitle: "Fundraising Support", heroSubtitle: "Prepare and succeed in your fundraising with an experienced partner by your side" },
+    es: { heroTitle: "Apoyo en Captación de Fondos", heroSubtitle: "Prepare y tenga éxito en sus rondas de financiación con un socio experimentado" },
+  },
+  "comptabilite-externalisation": {
+    fr: { heroTitle: "Externalisation Comptabilité", heroSubtitle: "Tenue, Déclarations & Clôture - Migration en 2 semaines" },
+    en: { heroTitle: "Outsourced Accounting", heroSubtitle: "Bookkeeping, Filings & Closeout - Migration in 2 weeks" },
+    es: { heroTitle: "Externalización Contable", heroSubtitle: "Gestión, Declaraciones y Cierre - Migración en 2 semanas" },
+  },
+  "controle-de-gestion-externalise": {
+    fr: { heroTitle: "Contrôle de Gestion Externalisé", heroSubtitle: "Tableaux de Bord Financiers, Analyse des Coûts & Optimisation de la Rentabilité" },
+    en: { heroTitle: "Outsourced Management Control", heroSubtitle: "Financial Dashboards, Cost Analysis & Profitability Optimization" },
+    es: { heroTitle: "Control de Gestión Externalizado", heroSubtitle: "Cuadros de Mando Financieros, Análisis de Costes y Optimización de Rentabilidad" },
+  },
+};
+
 export async function getServiceSinglePage(
   slug: ServicePageSlug,
   locale: Locale
@@ -710,7 +739,19 @@ export async function getServiceSinglePage(
   } catch {
     // Return fallback content when Strapi is unavailable
     console.warn(`[Strapi] Fallback used for service page: ${slug}`);
-    return fallbackServicePages[slug] || null;
+    const fallback = fallbackServicePages[slug];
+    if (fallback && locale !== "fr") {
+      // Apply locale-specific titles to fallback content
+      const titles = SERVICE_PAGE_TITLES[slug];
+      if (titles && titles[locale]) {
+        return {
+          ...fallback,
+          heroTitle: titles[locale].heroTitle,
+          heroSubtitle: titles[locale].heroSubtitle,
+        };
+      }
+    }
+    return fallback || null;
   }
 }
 

@@ -53,6 +53,11 @@ export async function generateMetadata({
     path: getLocalePath("en", `${blogBasePath}/${slug}`),
     fallbackTitle: fallback?.meta.title ?? `${slug} | Iter Advisors`,
     fallbackDescription: fallback?.meta.description ?? "",
+    localizedPaths: {
+      fr: `${blogBasePath}/${slug}`,
+      en: `${blogBasePath}/${slug}`,
+      es: `${blogBasePath}/${slug}`,
+    },
   });
 }
 
