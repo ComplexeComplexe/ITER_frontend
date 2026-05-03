@@ -87,19 +87,19 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
     },
     en: {
       meta: {
-        title: "Outsourced CFO in Barcelona - Fractional CFO | Iter Advisors",
+        title: "Fractional CFO in Barcelona - Part-time CFO | Iter Advisors",
         description:
-          "Iter Advisors, outsourced CFO firm in Barcelona. Part-time CFO for startups and SMEs in Spain. French-Spanish expertise, 85+ companies supported.",
+          "Iter Advisors, fractional CFO firm in Barcelona. Part-time CFO for startups and SMEs in Spain. French-Spanish expertise, 85+ companies supported.",
       },
-      breadcrumbLabel: "Outsourced CFO Barcelona",
-      h1: "Outsourced CFO in Barcelona: your fractional CFO in Spain",
+      breadcrumbLabel: "Fractional CFO Barcelona",
+      h1: "Fractional CFO in Barcelona: your part-time CFO in Spain",
       intro: [
         "Barcelona has become one of Europe's most dynamic tech hubs, attracting startups, scale-ups and international SMEs. In this fast-growing ecosystem, having an experienced CFO is a decisive competitive advantage.",
         "Iter Advisors has been based in Barcelona since its founding. Our bilingual French-Spanish CFOs support companies in structuring their finance function, preparing fundraises and managing growth in the Spanish market.",
       ],
       sections: [
         {
-          heading: "Why choose an outsourced CFO in Barcelona?",
+          heading: "Why choose a fractional CFO in Barcelona?",
           content: [
             "Barcelona's entrepreneurial ecosystem has specificities that make a fractional CFO particularly relevant: a dense network of tech startups, complex Spanish tax regulations (IS, IVA, retenciones), and a frequent need for bilingual reporting for international investors.",
             "Our Barcelona-based CFOs master the Spanish tax and legal environment, relationships with local banks (CaixaBank, Sabadell, BBVA) and the specificities of the Iberian market. They work in French, Spanish and English.",
@@ -125,12 +125,12 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
       ],
       faq: [
         {
-          question: "How much does an outsourced CFO cost in Barcelona?",
+          question: "How much does a fractional CFO cost in Barcelona?",
           answer:
             "Our Barcelona packages range from EUR 2,000/month (2-3 days) to EUR 7,000+/month (8+ days). Rates are aligned with the Spanish market, with a daily rate of EUR 750-1,100 excl. VAT.",
         },
         {
-          question: "Does your outsourced CFO speak Spanish?",
+          question: "Do your fractional CFOs speak Spanish?",
           answer:
             "Yes, all our Barcelona-based CFOs are bilingual French-Spanish (and English). They master financial and tax terminology in all three languages.",
         },
@@ -270,22 +270,22 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
     },
     en: {
       meta: {
-        title: "Outsourced CFO in Paris - Fractional CFO Ile-de-France | Iter Advisors",
+        title: "Fractional CFO in Paris - Part-time CFO Ile-de-France | Iter Advisors",
         description:
-          "Iter Advisors, outsourced CFO firm in Paris. Part-time financial management for SMEs and startups in Ile-de-France. 85+ companies supported.",
+          "Iter Advisors, fractional CFO firm in Paris. Part-time financial management for SMEs and startups in Ile-de-France. 85+ companies supported.",
       },
-      breadcrumbLabel: "Outsourced CFO Paris",
-      h1: "Outsourced CFO in Paris: your fractional CFO in Ile-de-France",
+      breadcrumbLabel: "Fractional CFO Paris",
+      h1: "Fractional CFO in Paris: your part-time CFO in Ile-de-France",
       intro: [
         "Paris and Ile-de-France concentrate the majority of innovative French startups and SMEs. In a market where competition for financial talent is intense, a fractional CFO offers a flexible and immediately operational alternative.",
         "Iter Advisors supports Parisian companies with experienced CFOs working on a part-time basis. Our knowledge of the Ile-de-France ecosystem - investors, banks, incubators - is a major asset for our clients.",
       ],
       sections: [
         {
-          heading: "Why choose an outsourced CFO in Paris?",
+          heading: "Why choose a fractional CFO in Paris?",
           content: [
             "The Parisian market is characterized by a high density of tech startups (Station F, incubators), privileged access to investors (Parisian VCs, Bpifrance) and high salary costs for senior finance profiles.",
-            "An outsourced CFO in Paris provides finance leadership expertise without the cost of a full-time hire (EUR 120-180K gross annually in Paris for a senior CFO). Our packages start at EUR 2,000/month.",
+            "A fractional CFO in Paris provides finance leadership expertise without the cost of a full-time hire (EUR 120-180K gross annually in Paris for a senior CFO). Our packages start at EUR 2,000/month.",
           ],
         },
         {
@@ -308,7 +308,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
       ],
       faq: [
         {
-          question: "How much does an outsourced CFO cost in Paris?",
+          question: "How much does a fractional CFO cost in Paris?",
           answer:
             "Our Paris packages range from EUR 2,000/month (2-3 days) to EUR 8,000+/month (8+ days). The daily rate is EUR 900-1,250 excl. VAT, in line with the Parisian market.",
         },
@@ -443,19 +443,19 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
     },
     en: {
       meta: {
-        title: "Outsourced CFO in Toulouse - Fractional CFO Occitanie | Iter Advisors",
+        title: "Fractional CFO in Toulouse - Part-time CFO Occitanie | Iter Advisors",
         description:
-          "Iter Advisors, outsourced CFO firm in Toulouse. Part-time financial management for SMEs and startups in Occitanie. 85+ companies supported.",
+          "Iter Advisors, fractional CFO firm in Toulouse. Part-time financial management for SMEs and startups in Occitanie. 85+ companies supported.",
       },
-      breadcrumbLabel: "Outsourced CFO Toulouse",
-      h1: "Outsourced CFO in Toulouse: your fractional CFO in Occitanie",
+      breadcrumbLabel: "Fractional CFO Toulouse",
+      h1: "Fractional CFO in Toulouse: your part-time CFO in Occitanie",
       intro: [
         "Toulouse, the capital of aerospace, is also a major hub for innovation and entrepreneurship in France. The Occitanie region hosts a dynamic ecosystem of startups, industrial SMEs and service companies.",
         "Iter Advisors supports Toulouse-based companies with fractional CFOs who understand the specificities of the local economic fabric: aerospace subcontracting, deeptech, agritech and business services.",
       ],
       sections: [
         {
-          heading: "Why choose an outsourced CFO in Toulouse?",
+          heading: "Why choose a fractional CFO in Toulouse?",
           content: [
             "The Toulouse ecosystem stands out for its sector diversity (aerospace, space, health, agritech) and the presence of major contractors (Airbus, Thales, Pierre Fabre). Regional SMEs and mid-caps need rigorous financial management to handle long cycles and large account relationships.",
             "With Toulouse's lower cost of living compared to Paris, our fractional CFO rates are adapted to the local market while offering national-level expertise.",
@@ -481,7 +481,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
       ],
       faq: [
         {
-          question: "How much does an outsourced CFO cost in Toulouse?",
+          question: "How much does a fractional CFO cost in Toulouse?",
           answer:
             "Our Toulouse packages range from EUR 2,000/month (2-3 days) to EUR 6,000+/month (8+ days). The daily rate is EUR 750-1,000 excl. VAT, adapted to the Occitanie market.",
         },
