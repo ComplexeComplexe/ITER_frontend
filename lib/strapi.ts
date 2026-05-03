@@ -5,6 +5,7 @@
 
 import { Locale } from "@/lib/i18n";
 import { fallbackServicePages } from "@/lib/fallback-service-pages";
+import { getFallbackServicePage } from "@/lib/fallback-service-pages-localized";
 import { fallbackBlogArticles } from "@/lib/fallback-blog";
 
 // ─── Config ───────────────────────────────────────────────
@@ -739,18 +740,15 @@ export async function getServiceSinglePage(
   } catch {
     // Return fallback content when Strapi is unavailable
     console.warn(`[Strapi] Fallback used for service page: ${slug}`);
-    const fallback = fallbackServicePages[slug];
-    if (fallback && locale !== "fr") {
-      // Apply locale-specific titles to fallback content
-      const titles = SERVICE_PAGE_TITLES[slug];
-      if (titles && titles[locale]) {
-        return {
-          ...fallback,
-          heroTitle: titles[locale].heroTitle,
-          heroSubtitle: titles[locale].heroSubtitle,
-        };
-      }
+
+    // Use locale-specific fallbacks
+    if (locale !== "fr") {
+      const localizedFallback = getFallbackServicePage(slug, locale);
+      return localizedFallback || null;
     }
+
+    // For French, use the original French fallback
+    const fallback = fallbackServicePages[slug];
     return fallback || null;
   }
 }
