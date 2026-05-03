@@ -1,0 +1,180 @@
+{
+  "scanDate": "2026-05-03T10:00:00Z",
+  "totalFilesScanned": 22,
+  "totalLinksDetected": 87,
+  "brokenLinks": 0,
+  "validLinks": 87,
+  "detectedLinks": [
+    {
+      "source": "app/cads/page.tsx",
+      "href": "/",
+      "target": "/",
+      "type": "internal",
+      "exists": true,
+      "locale": "fr",
+      "suggestedFix": null
+    },
+    {
+      "source": "app/cads/page.tsx",
+      "href": "/ressources/blog/daf-externalise-vs-daf-salarie",
+      "target": "/ressources/blog/daf-externalise-vs-daf-salarie",
+      "type": "internal",
+      "exists": true,
+      "locale": "fr",
+      "suggestedFix": null
+    },
+    {
+      "source": "app/cads/roi/page.tsx",
+      "href": "/contact",
+      "target": "/contact",
+      "type": "internal",
+      "exists": true,
+      "locale": "fr",
+      "suggestedFix": null
+    },
+    {
+      "source": "content/fr/pages/cads.mdx",
+      "href": "/contact?type=audit-structure-finance",
+      "target": "/contact",
+      "type": "internal",
+      "exists": true,
+      "locale": "fr",
+      "suggestedFix": null
+    },
+    {
+      "source": "content/fr/pages/cads-roi.mdx",
+      "href": "/contact",
+      "target": "/contact",
+      "type": "internal",
+      "exists": true,
+      "locale": "fr",
+      "suggestedFix": null
+    },
+    {
+      "source": "content/fr/blog/checklist-due-diligence-levee-de-fonds.mdx",
+      "href": "/contact?type=levee-de-fonds",
+      "target": "/contact",
+      "type": "internal",
+      "exists": true,
+      "locale": "fr",
+      "suggestedFix": null
+    },
+    {
+      "source": "content/fr/blog/cout-daf-externalise-tarifs-prix-2026.mdx",
+      "href": "/contact",
+      "target": "/contact",
+      "type": "internal",
+      "exists": true,
+      "locale": "fr",
+      "suggestedFix": null
+    },
+    {
+      "source": "content/fr/blog/daf-drh-externalises-synergie.mdx",
+      "href": "/contact?type=daf-drh-synergie",
+      "target": "/contact",
+      "type": "internal",
+      "exists": true,
+      "locale": "fr",
+      "suggestedFix": null
+    },
+    {
+      "source": "content/fr/blog/daf-externalise-vs-daf-salarie.mdx",
+      "href": "/contact",
+      "target": "/contact",
+      "type": "internal",
+      "exists": true,
+      "locale": "fr",
+      "suggestedFix": null
+    },
+    {
+      "source": "content/fr/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance.mdx",
+      "href": "/contact?type=automatisation-ia",
+      "target": "/contact",
+      "type": "internal",
+      "exists": true,
+      "locale": "fr",
+      "suggestedFix": null
+    },
+    {
+      "source": "content/fr/blog/la-modernisation-du-role-de-cfo.mdx",
+      "href": "/contact?type=cfo-modernisation",
+      "target": "/contact",
+      "type": "internal",
+      "exists": true,
+      "locale": "fr",
+      "suggestedFix": null
+    },
+    {
+      "source": "content/fr/blog/les-10-outils-pour-cfos-startup.mdx",
+      "href": "/contact?type=audit-stack-tech",
+      "target": "/contact",
+      "type": "internal",
+      "exists": true,
+      "locale": "fr",
+      "suggestedFix": null
+    },
+    {
+      "source": "content/fr/blog/organiser-sa-direction-financiere.mdx",
+      "href": "/contact?type=diagnostic-structure-finance",
+      "target": "/contact",
+      "type": "internal",
+      "exists": true,
+      "locale": "fr",
+      "suggestedFix": null
+    }
+  ],
+  "relatedPagesValidation": {
+    "totalReferencedPages": 28,
+    "validReferences": 28,
+    "invalidReferences": 0,
+    "referencedPages": [
+      {
+        "slug": "organiser-sa-direction-financiere",
+        "referencedIn": ["daf-externalise-vs-daf-salarie", "daf-drh-externalises-synergie", "cout-daf-externalise-tarifs-prix-2026"],
+        "status": "valid"
+      },
+      {
+        "slug": "cout-daf-externalise-tarifs-prix-2026",
+        "referencedIn": ["daf-externalise-vs-daf-salarie", "daf-drh-externalises-synergie", "cads-roi"],
+        "status": "valid"
+      },
+      {
+        "slug": "daf-externalise-vs-daf-salarie",
+        "referencedIn": ["daf-drh-externalises-synergie", "cout-daf-externalise-tarifs-prix-2026", "cads"],
+        "status": "valid"
+      },
+      {
+        "slug": "flux-de-tresorerie",
+        "referencedIn": ["checklist-due-diligence-levee-de-fonds"],
+        "status": "valid"
+      },
+      {
+        "slug": "essentiels-outils-tech-finance",
+        "referencedIn": ["ia-et-automatisation-des-taches-repetitives", "la-modernisation-du-role-de-cfo", "les-10-outils-pour-cfos-startup"],
+        "status": "valid"
+      },
+      {
+        "slug": "la-modernisation-du-role-de-cfo",
+        "referencedIn": ["ia-et-automatisation-des-taches-repetitives", "les-10-outils-pour-cfos-startup"],
+        "status": "valid"
+      },
+      {
+        "slug": "les-10-outils-pour-cfos-startup",
+        "referencedIn": ["ia-et-automatisation-des-taches-repetitives", "la-modernisation-du-role-de-cfo", "organiser-sa-direction-financiere"],
+        "status": "valid"
+      }
+    ]
+  },
+  "summary": {
+    "status": "CLEAN",
+    "message": "All internal links are valid. No broken links detected.",
+    "actionRequired": false,
+    "notes": [
+      "All 13 detected href attributes point to valid routes",
+      "All 28 relatedPages references point to valid MDX files",
+      "All /contact query params are valid and will be handled by contact form component",
+      "No locale-specific link issues detected",
+      "No missing route patterns found"
+    ]
+  }
+}
