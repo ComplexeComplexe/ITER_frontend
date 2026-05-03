@@ -230,7 +230,16 @@ const FR_ONLY_BLOG_SLUGS = [
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  /* ── 1. Fix double-locale prefixes (/en/es/, /es/en/, /en/en/, /es/es/) ── */
+  /* ── 1. Fix /fr/ prefix (FR is default locale, remove prefix) ──────────── */
+  const frPrefixMatch = pathname.match(/^\/fr(\/.*)?$/);
+  if (frPrefixMatch) {
+    const rest = frPrefixMatch[1] || "/";
+    const url = request.nextUrl.clone();
+    url.pathname = rest;
+    return NextResponse.redirect(url, 301);
+  }
+
+  /* ── 2. Fix double-locale prefixes (/en/es/, /es/en/, /en/en/, /es/es/) ── */
   const doubleLocaleMatch = pathname.match(
     /^\/(en|es)\/(en|es)(\/.*)?$/
   );
@@ -242,7 +251,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  /* ── 2. Exact slug redirects ──────────────────────────────────────── */
+  /* ── 3. Exact slug redirects ──────────────────────────────────────── */
   const target = SLUG_REDIRECTS[pathname];
   if (target && target !== pathname) {
     const url = request.nextUrl.clone();
@@ -250,7 +259,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  /* ── 3. Fiche metier cross-locale redirects ──────────────────────── */
+  /* ── 4. Fiche metier cross-locale redirects ──────────────────────── */
   const ficheMatch = pathname.match(/^(?:\/(en|es))?\/ressources\/fiche-metier\/(.+)$/);
   if (ficheMatch) {
     const locale = ficheMatch[1] || "fr";
@@ -313,7 +322,7 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  /* ── 4. Orphan blog slugs -> redirect to blog listing ────────────── */
+  /* ── 5. Orphan blog slugs -> redirect to blog listing ────────────── */
   const blogMatch = pathname.match(/^(?:\/(en|es))?\/ressources\/blog\/(.+)$/);
   if (blogMatch) {
     const locale = blogMatch[1] || "";
@@ -334,7 +343,7 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  /* ── 5. Trailing slash normalization ─────────────────────────────── */
+  /* ── 6. Trailing slash normalization ─────────────────────────────── */
   if (pathname.length > 1 && pathname.endsWith("/")) {
     const url = request.nextUrl.clone();
     url.pathname = pathname.slice(0, -1);
