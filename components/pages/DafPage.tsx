@@ -997,7 +997,15 @@ export default function DafPage({
                 },
                 datePublished: review.date,
                 reviewBody: review.quote,
-                url: review.url
+                url: review.url,
+                itemReviewed: {
+                  "@type": "Service",
+                  name: "DAF externalisé",
+                  provider: {
+                    "@type": "Organization",
+                    name: "Iter Advisors"
+                  }
+                }
               }))
             }),
           }}
