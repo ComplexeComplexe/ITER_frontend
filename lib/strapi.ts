@@ -952,7 +952,10 @@ export async function getGlossaryTerms(locale: Locale): Promise<StrapiGlossaryTe
     );
     return res.data;
   } catch {
-    return [];
+    // Fallback to local glossary data when Strapi is unavailable
+    const { getFallbackGlossaryTerms } = await import("./fallback-glossary");
+    const strapiLocale = locale === "fr" ? "fr" : locale === "en" ? "en" : "es";
+    return getFallbackGlossaryTerms(strapiLocale as "fr" | "en" | "es");
   }
 }
 
