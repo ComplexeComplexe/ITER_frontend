@@ -73,7 +73,7 @@ const servicesEn: ServicesContent = {
       "Iter Advisors supports you with tailored solutions: fund-raising, management control, accounting, financial management and cash flow.",
   },
   hero: {
-    h1: "Services",
+    h1: "Fractional CFO Services - Treasury, Accounting & Fundraising",
   },
   intro: {
     paragraph:
@@ -96,6 +96,7 @@ const servicesEn: ServicesContent = {
   services: [
     { title: "Fund-raising support", href: "/en/services/fund-raising-support", category: "finance" },
     { title: "Part-time management control", href: "/en/services/outsourced-management-control", category: "finance" },
+    { title: "Outsource your accounting", href: "/en/services/outsource-your-accounting", category: "finance" },
     { title: "Cash flow forecast", href: "/en/services/cash-flow-forecast", category: "finance" },
     { title: "M&A & Due Diligence", href: "/en/services/ma-due-diligence", category: "finance" },
     { title: "Fractional HR Director", href: "/en/drh-externalise", category: "rh" },

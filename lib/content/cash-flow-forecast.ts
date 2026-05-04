@@ -99,7 +99,7 @@ const content: Record<Locale, CashFlowForecastContent> = {
       description: "Master cash flow forecasting with our complete guide. Learn 13-week rolling models, templates, and best practices to avoid cash crisis and manage startup runway.",
     },
     hero: {
-      h1: "Cash Flow Forecast: The Startup's Essential Financial Tool",
+      h1: "Cash Flow Forecasting Services for Growing Businesses",
       intro: "Cash flow is king. While startups focus on growth and revenue, many fail because they run out of cash. This comprehensive guide shows you how to build and maintain a 13-week rolling cash flow forecast—the gold standard in startup financial management.",
     },
     sections: [
