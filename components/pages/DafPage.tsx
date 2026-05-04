@@ -997,13 +997,6 @@ export default function DafPage({
                 name: "Iter Advisors",
                 url: "https://www.iteradvisors.com",
               },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5",
-                bestRating: "5",
-                worstRating: "1",
-                reviewCount: "31"
-              },
               review: t.trustfolioReviews.map((review) => ({
                 "@type": "Review",
                 author: {
