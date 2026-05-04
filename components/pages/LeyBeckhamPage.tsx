@@ -110,13 +110,7 @@ export default function LeyBeckhamPage({ locale, content: t, cmsNavigation }: Le
       </section>
 
       {/* CTA */}
-      <CTASection
-        locale={locale}
-        title={t.cta.title}
-        description={t.cta.description}
-        buttonText={t.cta.buttonText}
-        buttonHref={t.cta.buttonHref}
-      />
+      <CTASection locale={locale} />
     </PageLayout>
   );
 }

@@ -110,13 +110,7 @@ export default function CashFlowForecastPage({ locale, content: t, cmsNavigation
       </section>
 
       {/* CTA */}
-      <CTASection
-        locale={locale}
-        title={t.cta.title}
-        description={t.cta.description}
-        buttonText={t.cta.buttonText}
-        buttonHref={t.cta.buttonHref}
-      />
+      <CTASection locale={locale} />
     </PageLayout>
   );
 }
