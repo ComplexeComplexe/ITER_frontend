@@ -232,7 +232,7 @@ const fallbackData: FallbackMemberData[] = [
       es: "Analista Financiero"
     },
     slug: "alice-fumeron",
-    photo: null,
+    photo: { url: "/images/team/alice-fumeron.webp" },
     linkedIn: "https://www.linkedin.com/in/alicefumeron/",
     order: 14,
     showInHero: false,
