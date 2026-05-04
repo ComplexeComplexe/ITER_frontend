@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import AboutPage from "@/components/pages/AboutPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
-import { getCmsNavigation, getTeamMembers } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/strapi";
+import { getTeamMembers as getTeamMembersStatic } from "@/lib/content/team";
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildStrapiMetadata({
@@ -16,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const [teamMembers, cmsNavigation] = await Promise.all([
-    getTeamMembers("es"),
+    getTeamMembersStatic("es"),
     getCmsNavigation("es"),
   ]);
   return (

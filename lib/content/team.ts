@@ -14,6 +14,11 @@ interface FallbackMemberData {
   showInHero: boolean;
 }
 
+// Helper function to convert name to slug format
+function nameToSlug(firstName: string, lastName: string): string {
+  return `${firstName.toLowerCase().replace(/[éèê]/g, 'e')}-${lastName.toLowerCase().replace(/[éèê]/g, 'e')}`;
+}
+
 const fallbackData: FallbackMemberData[] = [
   // === Direction / Partners ===
   {
@@ -21,9 +26,13 @@ const fallbackData: FallbackMemberData[] = [
     documentId: "sebastien-doat",
     firstName: "Sébastien",
     lastName: "Doat",
-    roles: { fr: "Associé fondateur, CFO & Investisseur", en: "Founding Partner, CFO & Investor", es: "Socio fundador, CFO e Inversor" },
+    roles: {
+      fr: "Associé fondateur - CFO & Investisseur",
+      en: "Founding Partner - CFO & Investor",
+      es: "Socio fundador - CFO e Inversor"
+    },
     slug: "sebastien-doat",
-    photo: null,
+    photo: { url: "/images/team/sebastien-doat.webp" },
     linkedIn: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
     order: 1,
     showInHero: true,
@@ -33,9 +42,13 @@ const fallbackData: FallbackMemberData[] = [
     documentId: "benjamin-ziza",
     firstName: "Benjamin",
     lastName: "Ziza",
-    roles: { fr: "Associé fondateur, CFO & Investisseur", en: "Founding Partner, CFO & Investor", es: "Socio fundador, CFO e Inversor" },
+    roles: {
+      fr: "Associé fondateur - CFO & Investisseur",
+      en: "Founding Partner - CFO & Investor",
+      es: "Socio fundador - CFO e Inversor"
+    },
     slug: "benjamin-ziza",
-    photo: { url: "/images/team/benjamin-ziza.jpg" },
+    photo: { url: "/images/team/benjamin-ziza.webp" },
     linkedIn: "https://www.linkedin.com/in/benjamin-ziza/",
     order: 2,
     showInHero: true,
@@ -45,10 +58,14 @@ const fallbackData: FallbackMemberData[] = [
     documentId: "guillaume-rostand",
     firstName: "Guillaume",
     lastName: "Rostand",
-    roles: { fr: "Associé fondateur & CMO", en: "Founding Partner & CMO", es: "Socio fundador y CMO" },
+    roles: {
+      fr: "Associé fondateur & CMO",
+      en: "Founding Partner & CMO",
+      es: "Socio fundador y CMO"
+    },
     slug: "guillaume-rostand",
-    photo: { url: "/images/team/guillaume-rostand.jpg" },
-    linkedIn: "https://www.linkedin.com/in/guillaumerostand/",
+    photo: { url: "/images/team/guillaume-rostand.webp" },
+    linkedIn: "https://www.linkedin.com/in/rostand/",
     order: 3,
     showInHero: true,
   },
@@ -57,10 +74,14 @@ const fallbackData: FallbackMemberData[] = [
     documentId: "florent-greth",
     firstName: "Florent",
     lastName: "Greth",
-    roles: { fr: "Partner & CFO", en: "Partner & CFO", es: "Partner & CFO" },
+    roles: {
+      fr: "Partner & CFO",
+      en: "Partner & CFO",
+      es: "Partner y CFO"
+    },
     slug: "florent-greth",
-    photo: { url: "/images/team/florent-greth.jpg" },
-    linkedIn: "https://www.linkedin.com/in/florent-greth/",
+    photo: { url: "/images/team/florent-greth.webp" },
+    linkedIn: "https://www.linkedin.com/in/florent-greth-cfo-pennylane/?locale=en",
     order: 4,
     showInHero: true,
   },
@@ -69,13 +90,18 @@ const fallbackData: FallbackMemberData[] = [
     documentId: "borith-biv",
     firstName: "Borith",
     lastName: "Biv",
-    roles: { fr: "Partner Capital Humain", en: "Partner Human Capital", es: "Partner Capital Humano" },
+    roles: {
+      fr: "Partner Capital Humain",
+      en: "Partner Human Capital",
+      es: "Partner Capital Humano"
+    },
     slug: "borith-biv",
-    photo: null,
+    photo: { url: "/images/team/borith-biv.webp" },
     linkedIn: "https://www.linkedin.com/in/borith-biv-linkb/",
     order: 5,
     showInHero: false,
   },
+
   // === Finance - CFO ===
   {
     id: 6,
@@ -84,9 +110,9 @@ const fallbackData: FallbackMemberData[] = [
     lastName: "Arias Ramirez",
     roles: { fr: "CFO", en: "CFO", es: "CFO" },
     slug: "deisy-arias-ramirez",
-    photo: { url: "/images/team/deisy-arias-ramirez.jpg" },
-    linkedIn: "https://www.linkedin.com/in/deisy-arias-ramirez/",
-    order: 7,
+    photo: { url: "/images/team/deisy-arias-ramirez.webp" },
+    linkedIn: "https://www.linkedin.com/in/deisyarias/",
+    order: 6,
     showInHero: false,
   },
   {
@@ -96,9 +122,9 @@ const fallbackData: FallbackMemberData[] = [
     lastName: "Preel",
     roles: { fr: "CFO", en: "CFO", es: "CFO" },
     slug: "sebastien-preel",
-    photo: null,
+    photo: { url: "/images/team/sebastien-preel.webp" },
     linkedIn: "https://www.linkedin.com/in/spreel/",
-    order: 6,
+    order: 7,
     showInHero: false,
   },
   {
@@ -106,156 +132,152 @@ const fallbackData: FallbackMemberData[] = [
     documentId: "tom-jaufre",
     firstName: "Tom",
     lastName: "Jaufre",
-    roles: { fr: "CFO & M&A", en: "CFO & M&A", es: "CFO & M&A" },
+    roles: {
+      fr: "CFO & M&A",
+      en: "CFO & M&A",
+      es: "CFO y M&A"
+    },
     slug: "tom-jaufre",
-    photo: null,
+    photo: { url: "/images/team/tom-jaufre.webp" },
     linkedIn: "https://www.linkedin.com/in/tom-jaufre-65904175/",
     order: 8,
     showInHero: false,
   },
   {
     id: 9,
-    documentId: "jordi-kopp",
-    firstName: "Jordi",
-    lastName: "Kopp",
-    roles: { fr: "CFO", en: "CFO", es: "CFO" },
-    slug: "jordi-kopp",
-    photo: null,
-    linkedIn: "https://www.linkedin.com/in/jordi-kopp/",
-    order: 9,
-    showInHero: false,
-  },
-  {
-    id: 10,
     documentId: "jessica-barnicaud",
     firstName: "Jessica",
     lastName: "Barnicaud",
     roles: { fr: "CFO", en: "CFO", es: "CFO" },
     slug: "jessica-barnicaud",
-    photo: null,
+    photo: { url: "/images/team/jessica-barnicaud.webp" },
     linkedIn: "https://www.linkedin.com/in/jessica-barnicaud/",
+    order: 9,
+    showInHero: false,
+  },
+  {
+    id: 10,
+    documentId: "benjamin-carlot",
+    firstName: "Benjamin",
+    lastName: "Carlot",
+    roles: {
+      fr: "Head of Finance & Controlling",
+      en: "Head of Finance & Controlling",
+      es: "Jefe de Finanzas y Control"
+    },
+    slug: "benjamin-carlot",
+    photo: { url: "/images/team/benjamin-carlot.webp" },
+    linkedIn: "https://www.linkedin.com/in/benjamin-carlot-fractional-cfo-43303120/",
     order: 10,
     showInHero: false,
   },
   {
     id: 11,
-    documentId: "ornella-salgado",
-    firstName: "Ornella",
-    lastName: "Salgado",
-    roles: { fr: "Analyste financière senior", en: "Senior Financial Analyst", es: "Analista Financiera Senior" },
-    slug: "ornella-salgado",
-    photo: null,
-    linkedIn: "https://www.linkedin.com/in/ornellaslgd/",
+    documentId: "christophe-hoarau",
+    firstName: "Christophe",
+    lastName: "Hoarau",
+    roles: {
+      fr: "CFO & Data Officer",
+      en: "CFO & Data Officer",
+      es: "CFO y Oficial de Datos"
+    },
+    slug: "christophe-hoarau",
+    photo: { url: "/images/team/christophe-hoarau.webp" },
+    linkedIn: "https://www.linkedin.com/in/christophe-hoarau-2bb8b8ab/",
     order: 11,
     showInHero: false,
   },
+
+  // === Analysts ===
   {
     id: 12,
-    documentId: "rocio-montesano",
-    firstName: "Rocio",
-    lastName: "Montesano",
-    roles: { fr: "Analyste financière senior", en: "Senior Financial Analyst", es: "Analista Financiera Senior" },
-    slug: "rocio-montesano",
-    photo: null,
-    linkedIn: "https://www.linkedin.com/in/rocio-montesano/",
+    documentId: "ornella-salgado",
+    firstName: "Ornella",
+    lastName: "Salgado",
+    roles: {
+      fr: "Financial Analyst",
+      en: "Financial Analyst",
+      es: "Analista Financiero"
+    },
+    slug: "ornella-salgado",
+    photo: { url: "/images/team/ornella-salgado.webp" },
+    linkedIn: "https://www.linkedin.com/in/ornellaslgd/",
     order: 12,
     showInHero: false,
   },
   {
     id: 13,
-    documentId: "yumara-marie",
-    firstName: "Yumara",
-    lastName: "Marie",
-    roles: { fr: "Analyste financière", en: "Financial Analyst", es: "Analista Financiera" },
-    slug: "yumara-marie",
-    photo: null,
-    linkedIn: "https://www.linkedin.com/in/yumara-marie/",
+    documentId: "pauline-mathieu",
+    firstName: "Pauline",
+    lastName: "Mathieu",
+    roles: {
+      fr: "Financial Analyst",
+      en: "Financial Analyst",
+      es: "Analista Financiero"
+    },
+    slug: "pauline-mathieu",
+    photo: { url: "/images/team/pauline-mathieu.webp" },
+    linkedIn: "https://www.linkedin.com/in/pauline-mathieu-082488160/",
     order: 13,
     showInHero: false,
   },
   {
     id: 14,
-    documentId: "pauline-mathieu",
-    firstName: "Pauline",
-    lastName: "Mathieu",
-    roles: { fr: "Analyste financière", en: "Financial Analyst", es: "Analista Financiera" },
-    slug: "pauline-mathieu",
+    documentId: "alice-fumeron",
+    firstName: "Alice",
+    lastName: "Fumeron",
+    roles: {
+      fr: "Financial Analyst",
+      en: "Financial Analyst",
+      es: "Analista Financiero"
+    },
+    slug: "alice-fumeron",
     photo: null,
-    linkedIn: "https://www.linkedin.com/in/pauline-mathieu-082488160/",
+    linkedIn: "https://www.linkedin.com/in/alicefumeron/",
     order: 14,
     showInHero: false,
   },
   {
     id: 15,
-    documentId: "benjamin-carlot",
-    firstName: "Benjamin",
-    lastName: "Carlot",
-    roles: { fr: "Head of Finance & Controlling", en: "Head of Finance & Controlling", es: "Head of Finance & Controlling" },
-    slug: "benjamin-carlot",
-    photo: null,
-    linkedIn: "https://www.linkedin.com/in/benjamin-carlot-fractional-cfo-43303120/",
+    documentId: "carole-casse",
+    firstName: "Carole",
+    lastName: "Casse",
+    roles: {
+      fr: "Financial Analyst",
+      en: "Financial Analyst",
+      es: "Analista Financiero"
+    },
+    slug: "carole-casse",
+    photo: { url: "/images/team/carole-casse.webp" },
+    linkedIn: "https://www.linkedin.com/in/carole-casse/",
     order: 15,
     showInHero: false,
   },
   {
     id: 16,
-    documentId: "christophe-hoarau",
-    firstName: "Christophe",
-    lastName: "Hoarau",
-    roles: { fr: "CFO & Data Officer", en: "CFO & Data Officer", es: "CFO & Data Officer" },
-    slug: "christophe-hoarau",
-    photo: null,
-    linkedIn: "https://www.linkedin.com/in/christophe-hoarau-2bb8b8ab/?locale=en",
-    order: 16,
-    showInHero: false,
-  },
-  {
-    id: 17,
     documentId: "andress-ayme",
     firstName: "Andress",
     lastName: "Ayme",
-    roles: { fr: "Stagiaire Finance", en: "Finance Intern", es: "Pasante de Finanzas" },
+    roles: {
+      fr: "Intern Financial Analyst",
+      en: "Intern Financial Analyst",
+      es: "Analista Financiero Interno"
+    },
     slug: "andress-ayme",
-    photo: null,
+    photo: { url: "/images/team/andress-ayme.webp" },
     linkedIn: "https://www.linkedin.com/in/andress-ayme-089904276/",
-    order: 17,
-    showInHero: false,
-  },
-  {
-    id: 18,
-    documentId: "nina-eskinazi",
-    firstName: "Nina",
-    lastName: "Eskinazi",
-    roles: { fr: "Stagiaire Finance", en: "Finance Intern", es: "Pasante de Finanzas" },
-    slug: "nina-eskinazi",
-    photo: null,
-    linkedIn: "https://www.linkedin.com/in/nina-eskinazi/",
-    order: 18,
+    order: 16,
     showInHero: false,
   },
 ];
 
-/**
- * Get fallback team members with locale-appropriate roles.
- * Used when Strapi CMS data is unavailable or incomplete.
- */
-export function getFallbackTeamMembers(locale: Locale = "fr"): StrapiTeamMember[] {
-  return fallbackData.map((m) => ({
-    id: m.id,
-    documentId: m.documentId,
-    firstName: m.firstName,
-    lastName: m.lastName,
-    role: m.roles[locale] ?? m.roles.fr,
-    slug: m.slug,
-    photo: m.photo as any,
-    linkedIn: m.linkedIn,
-    order: m.order,
-    showInHero: m.showInHero,
-  }));
+export function getTeamMembers(locale: Locale): StrapiTeamMember[] {
+  return fallbackData.map((member) => ({
+    ...member,
+    title: `${member.firstName} ${member.lastName}`,
+    role: member.roles[locale],
+  })) as StrapiTeamMember[];
 }
 
-/**
- * @deprecated Use getFallbackTeamMembers(locale) instead for locale-aware roles.
- * Kept for backward compatibility — returns FR roles.
- */
-export const fallbackTeamMembers: StrapiTeamMember[] = getFallbackTeamMembers("fr");
+// Alias for backward compatibility
+export const getFallbackTeamMembers = getTeamMembers;

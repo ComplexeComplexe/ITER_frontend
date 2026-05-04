@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import AboutPage from "@/components/pages/AboutPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
-import { getTeamMembers, getCmsNavigation } from "@/lib/strapi";
+import { getTeamMembers as getTeamMembersStatic } from "@/lib/content/team";
+import { getCmsNavigation } from "@/lib/strapi";
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildStrapiMetadata({
@@ -15,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const teamMembers = await getTeamMembers("fr");
+  const teamMembers = await getTeamMembersStatic("fr");
   const cmsNavigation = await getCmsNavigation("fr");
   return <AboutPage locale="fr" teamMembers={teamMembers} cmsNavigation={cmsNavigation} />;
 }
