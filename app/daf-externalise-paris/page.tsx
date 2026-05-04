@@ -1,15 +1,14 @@
 import { Metadata } from "next";
-import DafLocalPage from "@/components/pages/DafLocalPage";
+import DafExternalisePariEnrichedPage from "@/components/pages/DafExternalisePariEnrichedPage";
 import { buildMetadata } from "@/lib/metadata";
 import { getCmsNavigation } from "@/lib/strapi";
-import { getDafLocalContent } from "@/lib/content/daf-local";
+import { getDafExternalisePariEnrichedContent } from "@/lib/content/daf-externalise-paris-enriched";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = getDafLocalContent("paris", "fr");
+  const t = getDafExternalisePariEnrichedContent("fr");
   return buildMetadata({
     locale: "fr",
     path: "/daf-externalise-paris",
-    localizedPaths: { fr: "/daf-externalise-paris", en: "/outsourced-cfo-paris", es: "/cfo-externalizado-paris" },
     title: t.meta.title,
     description: t.meta.description,
   });
@@ -17,5 +16,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");
-  return <DafLocalPage locale="fr" city="paris" cmsNavigation={cmsNavigation} />;
+  const content = getDafExternalisePariEnrichedContent("fr");
+  return (
+    <DafExternalisePariEnrichedPage
+      locale="fr"
+      content={content}
+      cmsNavigation={cmsNavigation}
+    />
+  );
 }
