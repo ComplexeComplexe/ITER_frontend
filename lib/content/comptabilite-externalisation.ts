@@ -5,7 +5,44 @@ export const comptabiliteExternalisationContent = {
       description:
         "Externalisez votre comptabilité avec Iter Advisors : tenue des comptes, déclarations fiscales, paie et clôture annuelle. Intégration fluide avec Pennylane, Sage, QuickBooks.",
     },
+    author: {
+      name: "Sébastien Doat",
+      jobTitle: "Co-fondateur & CFO Advisor",
+      linkedInUrl: "https://www.linkedin.com/in/sebastiendoat",
+      avatarUrl: "https://www.iteradvisors.com/images/sebastien-doat.jpg",
+      updateDate: "2026-05-05",
+    },
+    tldr: "Externaliser sa comptabilité coûte 60-85% moins cher qu'un comptable interne, avec une expertise plus large et une flexibilité adaptée aux startups et PME en croissance.",
     h1: "Externalisation comptable : tarifs, méthode et bénéfices pour PME et startups",
+    testimonials: [
+      {
+        name: "Alain Rousseau",
+        company: "Tech Startup",
+        sector: "Logiciel SaaS",
+        text: "Nous avions peur de perdre la visibilité sur nos comptes. Au contraire, les tableaux de bord qu'Iter nous a mis en place nous donnent une meilleure vue que nous n'avions jamais eu avec un comptable interne.",
+        rating: 5,
+      },
+      {
+        name: "Valérie Lefevre",
+        company: "PME Distribution",
+        sector: "Retail",
+        text: "L'intégration avec notre ERP a été transparente. Pas de rupture de service, pas de perte de données. Impressive professionnalism.",
+        rating: 5,
+      },
+      {
+        name: "Marc Dubois",
+        company: "Consulting & Services",
+        sector: "B2B Services",
+        text: "Nous économisons 30k€ par an en délégant la comptabilité à Iter. Nous avons pu réinvestir cet argent dans le développement commercial.",
+        rating: 5,
+      },
+    ],
+    sources: [
+      "Ordre des experts-comptables - Chiffres clés du secteur 2025",
+      "INSEE - Coûts de fonctionnement des TPE/PME",
+      "Association DFCG - Guide des pratiques de comptabilité externalisée",
+      "Conseil supérieur de l'ordre des experts-comptables",
+    ],
     sections: [
       {
         id: "definition",

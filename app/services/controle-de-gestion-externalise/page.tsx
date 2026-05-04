@@ -7,7 +7,7 @@ import { getControleDeGestionExternaliseeContent } from "@/lib/content/controle-
 export async function generateMetadata(): Promise<Metadata> {
   const t = getControleDeGestionExternaliseeContent("fr");
 
-  // Build Service + FAQPage schemas
+  // Build Service + FAQPage + Article + Person schemas
   const faqSection = t.sections.find((s: any) => s.faqs);
   const faqSchema = {
     "@context": "https://schema.org",
@@ -19,8 +19,38 @@ export async function generateMetadata(): Promise<Metadata> {
         acceptedAnswer: {
           "@type": "Answer",
           text: faq.answer,
+          speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: `.faq-answer-${faq.question.toLowerCase().replace(/\s+/g, "-")}`,
+          },
         },
       })) || [],
+  };
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.iteradvisors.com#sebastien-doat",
+    name: "Sébastien Doat",
+    jobTitle: "Co-fondateur & CFO Advisor",
+    url: "https://www.linkedin.com/in/sebastiendoat",
+    sameAs: "https://www.linkedin.com/in/sebastiendoat",
+    image: "https://www.iteradvisors.com/images/sebastien-doat.jpg",
+  };
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://www.iteradvisors.com/services/controle-de-gestion-externalise#article",
+    headline: "Contrôle de gestion externalisé : piloter sa rentabilité sans recruter un contrôleur de gestion",
+    description:
+      "Contrôle de gestion externalisé pour PME et startups à Paris et en Île-de-France. Tableaux de bord, KPIs, suivi budgétaire. +85 entreprises accompagnées.",
+    author: {
+      "@type": "Person",
+      "@id": "https://www.iteradvisors.com#sebastien-doat",
+      name: "Sébastien Doat",
+    },
+    dateModified: new Date().toISOString().split("T")[0],
   };
 
   const serviceSchema = {
@@ -53,7 +83,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@graph": [serviceSchema, faqSchema],
+    "@graph": [
+      serviceSchema,
+      faqSchema,
+      articleSchema,
+      personSchema,
+    ],
   };
 
   return buildMetadata({

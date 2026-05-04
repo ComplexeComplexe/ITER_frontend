@@ -7,7 +7,7 @@ import { getComptabiliteExternalisationContent } from "@/lib/content/comptabilit
 export async function generateMetadata(): Promise<Metadata> {
   const t = getComptabiliteExternalisationContent("fr");
 
-  // Build Service + FAQPage schemas
+  // Build Service + FAQPage + Article + Person schemas
   const faqSection = t.sections.find((s: any) => s.faqs);
   const faqSchema = {
     "@context": "https://schema.org",
@@ -19,8 +19,37 @@ export async function generateMetadata(): Promise<Metadata> {
         acceptedAnswer: {
           "@type": "Answer",
           text: faq.answer,
+          speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: `.faq-answer-${faq.question.toLowerCase().replace(/\s+/g, "-")}`,
+          },
         },
       })) || [],
+  };
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.iteradvisors.com#sebastien-doat",
+    name: "Sébastien Doat",
+    jobTitle: "Co-fondateur & CFO Advisor",
+    url: "https://www.linkedin.com/in/sebastiendoat",
+    sameAs: "https://www.linkedin.com/in/sebastiendoat",
+    image: "https://www.iteradvisors.com/images/sebastien-doat.jpg",
+  };
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://www.iteradvisors.com/services/comptabilite-externalisation#article",
+    headline: "Externalisation comptable : tarifs, méthode et bénéfices pour PME et startups",
+    description: t.meta.description,
+    author: {
+      "@type": "Person",
+      "@id": "https://www.iteradvisors.com#sebastien-doat",
+      name: "Sébastien Doat",
+    },
+    dateModified: new Date().toISOString().split("T")[0],
   };
 
   const serviceSchema = {
@@ -53,7 +82,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@graph": [serviceSchema, faqSchema],
+    "@graph": [
+      serviceSchema,
+      faqSchema,
+      articleSchema,
+      personSchema,
+    ],
   };
 
   return buildMetadata({

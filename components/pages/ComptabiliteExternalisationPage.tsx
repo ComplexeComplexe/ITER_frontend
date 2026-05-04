@@ -6,6 +6,8 @@ import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
+import AuthorByline from "@/components/AuthorByline";
+import ClientTestimonials from "@/components/ClientTestimonials";
 
 interface ComptabiliteExternalisationPageProps {
   locale: Locale;
@@ -32,11 +34,23 @@ export default function ComptabiliteExternalisationPage({
               { label: locale === "fr" ? "Externalisation comptable" : "Accounting Outsourcing" },
             ]}
           />
+          {t.author && (
+            <div className="mt-6 sm:mt-8">
+              <AuthorByline
+                name={t.author.name}
+                jobTitle={t.author.jobTitle}
+                linkedInUrl={t.author.linkedInUrl}
+                avatarUrl={t.author.avatarUrl}
+                updateDate={t.author.updateDate}
+                locale={locale}
+              />
+            </div>
+          )}
           <div className="mt-6 sm:mt-8">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6 sm:mb-8 leading-tight">
               {t.h1}
             </h1>
-            <div className="prose prose-sm sm:prose-base max-w-none">
+            <div className="prose prose-sm sm:prose-base max-w-none space-y-4 mb-8">
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4">
                 La comptabilité reste l'un des premiers points de friction pour un dirigeant. Entre les échéances fiscales, la gestion des factures et la préparation de la clôture annuelle, le temps consacré à la tenue des comptes s'accumule vite. Pourtant, rares sont les entreprises en croissance qui justifient dès le départ un comptable interne à temps plein.
               </p>
@@ -47,6 +61,14 @@ export default function ComptabiliteExternalisationPage({
                 Chez Iter Advisors, nous accompagnons les dirigeants sur la tenue comptable, les déclarations fiscales et la clôture annuelle. Notre approche s'appuie sur les outils cloud que vous utilisez déjà, sans imposer de migration forcée ni de rupture dans vos processus.
               </p>
             </div>
+            {t.tldr && (
+              <div className="mb-8 p-6 bg-iter-chartreuse/10 border-l-4 border-iter-chartreuse rounded-r-lg">
+                <p className="text-sm font-semibold text-foreground mb-2">En une ligne</p>
+                <p className="text-sm sm:text-base text-foreground leading-relaxed">
+                  {t.tldr}
+                </p>
+              </div>
+            )}
             <Link
               href={BOOKING_URL}
               target="_blank"
@@ -139,6 +161,45 @@ export default function ComptabiliteExternalisationPage({
           ))}
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      {t.testimonials && (
+        <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/5">
+          <div className="container max-w-3xl">
+            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-12 text-center">
+              Avis de nos clients
+            </h2>
+            <ClientTestimonials
+              testimonials={t.testimonials}
+              trustfolioUrl="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc"
+            />
+          </div>
+        </section>
+      )}
+
+      {/* Sources Section */}
+      {t.sources && (
+        <section className="py-16 sm:py-24 lg:py-32 bg-background">
+          <div className="container max-w-3xl">
+            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-8">
+              Sources et références
+            </h2>
+            <div className="prose prose-sm sm:prose-base max-w-none">
+              <ul className="space-y-3">
+                {t.sources.map((source: string, idx: number) => (
+                  <li key={idx} className="text-sm sm:text-base text-muted-foreground">
+                    {source}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p className="text-xs text-muted-foreground mt-8 pt-8 border-t">
+              Les chiffres et références citées dans cet article proviennent de sources publiques officielles.
+              Nous nous engageons à maintenir la pertinence et l'exactitude de ces informations.
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <CTASection locale={locale} />

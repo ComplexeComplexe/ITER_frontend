@@ -6,6 +6,8 @@ import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
+import AuthorByline from "@/components/AuthorByline";
+import ClientTestimonials from "@/components/ClientTestimonials";
 
 interface DafExternalisePariEnrichedPageProps {
   locale: Locale;
@@ -32,17 +34,37 @@ export default function DafExternalisePariEnrichedPage({
               { label: locale === "fr" ? "DAF externalisé Paris" : "Outsourced CFO Paris" },
             ]}
           />
+          {t.author && (
+            <div className="mt-6 sm:mt-8">
+              <AuthorByline
+                name={t.author.name}
+                jobTitle={t.author.jobTitle}
+                linkedInUrl={t.author.linkedInUrl}
+                avatarUrl={t.author.avatarUrl}
+                updateDate={t.author.updateDate}
+                locale={locale}
+              />
+            </div>
+          )}
           <div className="mt-6 sm:mt-8">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6 sm:mb-8 leading-tight">
               {t.h1}
             </h1>
-            <div className="prose prose-sm sm:prose-base max-w-none space-y-4 mb-6">
+            <div className="prose prose-sm sm:prose-base max-w-none space-y-4 mb-8">
               {t.intro.map((para: string, idx: number) => (
                 <p key={idx} className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                   {para}
                 </p>
               ))}
             </div>
+            {t.tldr && (
+              <div className="mb-8 p-6 bg-iter-chartreuse/10 border-l-4 border-iter-chartreuse rounded-r-lg">
+                <p className="text-sm font-semibold text-foreground mb-2">En une ligne</p>
+                <p className="text-sm sm:text-base text-foreground leading-relaxed">
+                  {t.tldr}
+                </p>
+              </div>
+            )}
             <Link
               href={BOOKING_URL}
               target="_blank"
@@ -209,6 +231,45 @@ export default function DafExternalisePariEnrichedPage({
           ))}
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      {t.testimonials && (
+        <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/5">
+          <div className="container max-w-3xl">
+            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-12 text-center">
+              Avis de nos clients
+            </h2>
+            <ClientTestimonials
+              testimonials={t.testimonials}
+              trustfolioUrl="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc"
+            />
+          </div>
+        </section>
+      )}
+
+      {/* Sources Section */}
+      {t.sources && (
+        <section className="py-16 sm:py-24 lg:py-32 bg-background">
+          <div className="container max-w-3xl">
+            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-8">
+              Sources et références
+            </h2>
+            <div className="prose prose-sm sm:prose-base max-w-none">
+              <ul className="space-y-3">
+                {t.sources.map((source: string, idx: number) => (
+                  <li key={idx} className="text-sm sm:text-base text-muted-foreground">
+                    {source}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p className="text-xs text-muted-foreground mt-8 pt-8 border-t">
+              Les chiffres et références citées dans cet article proviennent de sources publiques officielles.
+              Nous nous engageons à maintenir la pertinence et l'exactitude de ces informations.
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <CTASection locale={locale} />

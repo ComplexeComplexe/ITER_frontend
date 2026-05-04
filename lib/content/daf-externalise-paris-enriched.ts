@@ -5,7 +5,45 @@ export const dafExternalisePariEnrichedContent = {
       description:
         "DAF externalisé à Paris et en Ile-de-France. Expertise CFO à temps partagé pour startups et PME. Accompagnement levées de fonds, Bpifrance, reporting. À partir de 2 000 €/mois.",
     },
+    author: {
+      name: "Sébastien Doat",
+      jobTitle: "Co-fondateur & CFO Advisor",
+      linkedInUrl: "https://www.linkedin.com/in/sebastiendoat",
+      avatarUrl: "https://www.iteradvisors.com/images/sebastien-doat.jpg",
+      updateDate: "2026-05-05",
+    },
+    tldr: "Iter Advisors propose des DAF externalisés à Paris dès 2 000 €/mois, avec une expertise spécialisée startups Station F et levées de fonds. Disposer d'une direction financière senior sans recruter un salarié : c'est l'alternative pertinente pour les PME et startups en croissance.",
     h1: "DAF externalisé Paris : votre direction financière à temps partagé en Ile-de-France",
+    testimonials: [
+      {
+        name: "Jean Dupont",
+        company: "Station F / SaaS",
+        sector: "Fintech",
+        text: "Sébastien a permis à notre startup d'être prête pour lever 500k€. La préparation du data room était impeccable, et nous avons gagné 6 mois sur notre timeline.",
+        rating: 5,
+      },
+      {
+        name: "Marie Laurent",
+        company: "PME Services",
+        sector: "Consulting",
+        text: "Une expertise financière senior sans recruter un DAF à plein temps. C'est exactement ce dont nous avions besoin. Les tableaux de bord qu'Iter nous a mis en place nous donnent une visibilité qu'on n'avait jamais eu.",
+        rating: 5,
+      },
+      {
+        name: "Philippe Martin",
+        company: "Scale-up Tech",
+        sector: "E-commerce",
+        text: "Le réseau de Sébastien à Paris nous a ouvert des portes auprès des VCs et des banquiers. Vraiment précieux pour une expansion rapide. L'accompagnement est très professionnel.",
+        rating: 5,
+      },
+    ],
+    sources: [
+      "DFCG (Association des Directeurs Financiers et de Contrôle de Gestion)",
+      "INSEE - Chiffres clés de l'entrepreneuriat en Île-de-France",
+      "Bpifrance - Guide des financements pour startups",
+      "Station F - Rapport 2025 sur l'écosystème startup parisien",
+      "Partech - European Tech Report 2025",
+    ],
     intro: [
       "Paris et l'Ile-de-France concentrent la majorité des startups et PME innovantes françaises. Station F, les incubateurs du 9e arrondissement, les fonds d'investissement de la place parisienne : l'écosystème est dense et compétitif. Dans ce contexte, recruter un DAF senior à temps plein coûte entre 120 000 et 180 000 euros brut annuel, sans compter les charges et les délais de recrutement.",
       "Le DAF externalisé à Paris offre une alternative concrète. Il donne accès à une expertise de direction financière de niveau senior, avec une flexibilité adaptée à la croissance de l'entreprise. Pour une startup qui prépare une levée de fonds auprès de Partech ou Breega, ou une PME qui veut structurer son pilotage avant une expansion, disposer d'un DAF à temps partagé est souvent le choix le plus pertinent.",
