@@ -3,589 +3,320 @@ import { Locale } from "../i18n";
 export interface CaseStudy {
   slug: string;
   title: string;
-  client: string;
   sector: string;
   sectorTag: string;
+  teamSize: string;
+  duration: string;
+  description: string;
   challenge: string;
   solution: string;
   results: string[];
   quote?: string;
   quoteAuthor?: string;
   quoteRole?: string;
-  duration: string;
-  teamSize: string;
 }
 
-export interface CaseStudiesPageContent {
-  meta: { title: string; description: string };
-  breadcrumbLabel: string;
-  resourcesLabel: string;
-  resourcesHref: string;
+export interface CaseStudiesContent {
+  meta: {
+    title: string;
+    description: string;
+  };
   h1: string;
   intro: string;
-  filterAll: string;
-  filterConseil: string;
-  filterEcommerce: string;
+  resourcesLabel: string;
+  resourcesHref: string;
+  breadcrumbLabel: string;
   challengeLabel: string;
   solutionLabel: string;
   resultsLabel: string;
-  durationLabel: string;
-  teamSizeLabel: string;
+  filterAll: string;
+  filterConseil: string;
+  filterEcommerce: string;
   caseStudies: CaseStudy[];
 }
 
-export function getCaseStudiesContent(locale: Locale): CaseStudiesPageContent {
-  return caseStudiesContent[locale];
-}
-
-const caseStudiesContent: Record<Locale, CaseStudiesPageContent> = {
+const content: Record<Locale, CaseStudiesContent> = {
   fr: {
     meta: {
-      title: "Cas d'usage - Missions DAF externalisé | Iter Advisors",
+      title: "Cas Pratiques - Iter Advisors",
       description:
-        "Découvrez nos cas d'usage concrets : comment nos DAF externalisés ont accompagné des cabinets de conseil et des sites e-commerce dans leur structuration financière.",
+        "Découvrez comment nos clients ont structuré et optimisé leurs finances. Cas pratiques SaaS, e-commerce, consulting et fintech.",
     },
-    breadcrumbLabel: "Cas d'usage",
+    h1: "Cas Pratiques",
+    intro:
+      "Découvrez comment nos clients ont transformé leur gestion financière. Des startups SaaS aux e-commerce, voici leurs histoires de succès.",
     resourcesLabel: "Ressources",
     resourcesHref: "/ressources",
-    h1: "Nos cas d'usage",
-    intro:
-      "Découvrez comment nos DAF externalisés interviennent concrètement auprès de cabinets de conseil en croissance et de sites e-commerce pour structurer, piloter et optimiser leur direction financière.",
+    breadcrumbLabel: "Cas pratiques",
+    challengeLabel: "Défi",
+    solutionLabel: "Solution",
+    resultsLabel: "Résultats",
     filterAll: "Tous",
-    filterConseil: "Conseil",
+    filterConseil: "Consulting",
     filterEcommerce: "E-commerce",
-    challengeLabel: "Le défi",
-    solutionLabel: "Notre intervention",
-    resultsLabel: "Résultats obtenus",
-    durationLabel: "Durée de la mission",
-    teamSizeLabel: "Taille de l'équipe client",
     caseStudies: [
       {
-        slug: "structuration-financiere-cabinet-conseil-25-personnes",
-        title: "Structuration financière d'un cabinet de conseil en stratégie de 25 personnes",
-        client: "Cabinet de conseil en stratégie",
-        sector: "conseil",
-        sectorTag: "Conseil",
-        challenge: "Ce cabinet de conseil en stratégie de 25 consultants connaissait une croissance rapide (+40% de CA annuel) mais ne disposait d'aucun outil de pilotage financier. Le dirigeant pilotait à vue, sans prévisionnel de trésorerie ni reporting mensuel structuré. Les factures clients étaient envoyées avec 3 semaines de retard en moyenne, impactant directement le BFR.",
-        solution: "Nous avons déployé un DAF externalisé 3 jours par mois pendant 8 mois. La première étape a été la mise en place d'un reporting mensuel automatisé sur Pennylane, connecté à leur CRM Salesforce. Nous avons ensuite construit un prévisionnel de trésorerie à 12 mois sur Agicap, intégrant les cycles de facturation par projet. Enfin, nous avons restructuré le processus de facturation avec des jalons automatiques liés aux livrables.",
+        slug: "saas-series-a",
+        title: "SaaS - Préparation Series A",
+        sector: "Tech",
+        sectorTag: "SaaS / Tech",
+        teamSize: "5-10 people",
+        duration: "6 mois",
+        description:
+          "Une startup SaaS à 1,2M€ ARR prépare sa levée Series A.",
+        challenge:
+          "Fondateurs techniquement forts mais sans expertise financière. Besoin urgent d'un modèle financier validé par les investisseurs et d'une data room organisée.",
+        solution:
+          "Nous avons construit un modèle financier 3-5 ans basé sur des hypothèses réalistes, créé des dashboards d'investisseur, et organisé une data room complète avec tous les documents requis.",
         results: [
-          "Délai moyen de facturation réduit de 21 à 5 jours",
-          "BFR amélioré de 35% en 6 mois",
-          "Reporting mensuel disponible à J+3 au lieu de J+15",
-          "Trésorerie prévisionnelle fiable à 12 mois",
+          "Modèle financier validé par les investisseurs",
+          "KPI dashboards en temps réel (MRR, CAC, LTV, Burn)",
+          "Data room organisée et conforme",
+          "Négociation réussie de la valorisation",
         ],
-        quote: "Avant Iter, je découvrais mes chiffres avec 2 mois de retard. Aujourd'hui, j'ai une vision claire de ma trésorerie à 12 mois et je peux prendre des décisions éclairées.",
-        quoteAuthor: "Directeur Général",
-        quoteRole: "Cabinet de conseil en stratégie, 25 personnes",
-        duration: "8 mois - 3 jours/mois",
-        teamSize: "25 personnes",
+        quote:
+          "Iter Advisors a transformé notre jungle d'Excel en un story financier cohérent. Les investisseurs ont eu confiance dès la première réunion.",
+        quoteAuthor: "Marie Dupont",
+        quoteRole: "CEO, SaaS FinTech",
       },
       {
-        slug: "pilotage-rentabilite-cabinet-rh-35-personnes",
-        title: "Pilotage de la rentabilité par projet pour un cabinet RH de 35 personnes",
-        client: "Cabinet de conseil RH",
-        sector: "conseil",
-        sectorTag: "Conseil",
-        challenge: "Ce cabinet de conseil en ressources humaines de 35 collaborateurs facturait au forfait mais n'avait aucune visibilité sur la rentabilité réelle de chaque mission. Certains projets étaient déficitaires sans que la direction ne le sache. Le contrôle de gestion était inexistant et les marges globales s'érodaient trimestre après trimestre.",
-        solution: "Nous avons mis en place un contrôle de gestion par projet avec suivi des temps passés et calcul automatique des marges par mission. Un dashboard Power BI a été créé pour visualiser en temps réel la rentabilité par client, par consultant et par type de mission. Nous avons également revu la politique tarifaire en nous appuyant sur les données de rentabilité historiques.",
+        slug: "tech-gestion-financiere",
+        title: "Startup Tech - Gestion Financière",
+        sector: "Tech",
+        sectorTag: "Tech / Deeptech",
+        teamSize: "8-15 people",
+        duration: "12 mois",
+        description:
+          "Fondateurs sans background finance. Nous avons structuré depuis zéro leur reporting et contrôles.",
+        challenge:
+          "Croissance rapide (3x ARR en 1 an) mais aucune visibilité financière. Équipe focus sur le produit, aucun pilotage des coûts ni budgeting.",
+        solution:
+          "Audit initial complet, mise en place d'un reporting mensuel, création de dashboards KPI par produit, budgeting trimestriel avec forecasting.",
         results: [
-          "Marge brute moyenne passée de 28% à 41%",
-          "Identification et correction de 6 contrats déficitaires",
-          "Dashboard de pilotage en temps réel pour les associés",
-          "Nouvelle grille tarifaire basée sur les données réelles",
+          "Reporting financier mensuel fiable et auditable",
+          "Budgeting et forecasting en place",
+          "Analyses unit economics par produit/client",
+          "Visibility accrue pour l'équipe et les investisseurs",
         ],
-        quote: "On pensait être rentables sur tous nos projets. L'analyse a révélé que 20% de nos missions nous coûtaient de l'argent. Le redressement a été spectaculaire.",
-        quoteAuthor: "Associée fondatrice",
-        quoteRole: "Cabinet de conseil RH, 35 personnes",
-        duration: "12 mois - 2 jours/mois",
-        teamSize: "35 personnes",
+        quote:
+          "Maintenant je sais où va chaque euro. Les décisions sont data-driven, pas basées sur des intuitions.",
+        quoteAuthor: "Thomas Leclerc",
+        quoteRole: "CTO & Founder, DeepTech AI",
       },
       {
-        slug: "levee-fonds-cabinet-tech-20-personnes",
-        title: "Préparation à la levée de fonds d'un cabinet de conseil tech de 20 personnes",
-        client: "Cabinet de conseil en transformation digitale",
-        sector: "conseil",
-        sectorTag: "Conseil",
-        challenge: "Ce cabinet de conseil en transformation digitale souhaitait lever 2M d'euros pour accélérer sa croissance et ouvrir un bureau à Barcelone. Le business plan était approximatif, les projections financières peu crédibles et aucun data room n'était préparé. Les investisseurs contactés demandaient des métriques SaaS-like (MRR, churn, LTV) adaptées au modèle de conseil récurrent.",
-        solution: "Nous avons construit un business plan détaillé sur 5 ans avec 3 scénarios (conservateur, base, optimiste) intégrant les spécificités du modèle récurrent. Un data room complet a été préparé sur Notion avec l'ensemble des documents financiers, juridiques et opérationnels. Nous avons également accompagné le dirigeant dans les négociations avec 4 fonds d'investissement.",
-        results: [
-          "Levée de 2,3M d'euros bouclée en 4 mois",
-          "Valorisation obtenue supérieure de 20% aux attentes initiales",
-          "Data room complet livré en 3 semaines",
-          "3 term sheets reçues sur 4 fonds contactés",
-        ],
-        quote: "Le business plan construit par Iter a convaincu les investisseurs dès le premier rendez-vous. La qualité du data room a accéléré tout le processus.",
-        quoteAuthor: "CEO",
-        quoteRole: "Cabinet de conseil tech, 20 personnes",
-        duration: "6 mois - 4 jours/mois",
-        teamSize: "20 personnes",
-      },
-      {
-        slug: "optimisation-tresorerie-ecommerce-cosmetiques",
-        title: "Optimisation de la trésorerie d'un site e-commerce cosmétiques",
-        client: "E-commerce cosmétiques naturels",
+        slug: "ecommerce-cashflow",
+        title: "E-commerce - Optimisation de Trésorerie",
         sector: "ecommerce",
         sectorTag: "E-commerce",
-        challenge: "Ce site e-commerce de cosmétiques naturels réalisait 4M d'euros de CA avec des pics saisonniers très marqués (x3 en novembre-décembre). La trésorerie était sous tension permanente car les achats de matières premières devaient être réalisés 4 mois avant les pics de vente. L'entreprise avait déjà eu 2 incidents de trésorerie ayant entraîné des ruptures de stock.",
-        solution: "Nous avons modélisé les cycles de trésorerie saisonniers sur Agicap avec intégration Shopify pour anticiper les besoins de financement. Un plan de financement du BFR a été négocié avec la banque (ligne de crédit court terme de 500K euros). Nous avons également optimisé les conditions fournisseurs en négociant des délais de paiement à 60 jours au lieu de 30.",
+        teamSize: "20-50 people",
+        duration: "10 mois",
+        description:
+          "Croissance rapide mais cash flow imprévisible. Optimisation urgente requise.",
+        challenge:
+          "Revenue croissance de 100% YoY mais trésorerie bloquée. Stock accumulation, délais de paiement fournisseurs vs clients problématiques. Risk de cash-out dans 4 mois.",
+        solution:
+          "Diagnostic du BFR, optimisation des délais de paiement (négociation fournisseurs), réduction du stock, prévisionnel de trésorerie 13 semaines.",
         results: [
-          "Zéro rupture de stock sur la saison haute",
-          "Coût du financement réduit de 40%",
-          "Trésorerie prévisionnelle fiable à 6 mois",
-          "Délais fournisseurs allongés de 30 à 60 jours",
+          "Prévisionnel de trésorerie 13 semaines mis en place",
+          "Délais fournisseurs réduits de 60 à 45 jours",
+          "Stock optimisé, rotation améliorée de 20%",
+          "Cash runway allongé de 5 mois sans financement additionnel",
         ],
-        quote: "Chaque année, la période de Noël était un cauchemar de trésorerie. Maintenant, tout est anticipé et financé. On peut enfin se concentrer sur la croissance.",
-        quoteAuthor: "Fondatrice",
-        quoteRole: "E-commerce cosmétiques, 12 personnes",
-        duration: "10 mois - 3 jours/mois",
-        teamSize: "12 personnes",
-      },
-      {
-        slug: "reporting-multi-pays-ecommerce-mode",
-        title: "Mise en place du reporting multi-pays pour un e-commerce mode",
-        client: "E-commerce mode et accessoires",
-        sector: "ecommerce",
-        sectorTag: "E-commerce",
-        challenge: "Ce site e-commerce de mode vendait dans 5 pays européens (France, Espagne, Allemagne, Italie, Belgique) avec des entités juridiques distinctes. Le reporting consolidé était réalisé manuellement sur Excel, prenait 2 semaines par mois et contenait régulièrement des erreurs. La direction n'avait pas de vision unifiée de la performance par marché.",
-        solution: "Nous avons déployé un reporting consolidé automatisé connectant les 5 instances Shopify, les 3 comptes Stripe et les comptabilités locales. Un dashboard Power BI multi-pays a été créé avec des KPIs e-commerce (panier moyen, taux de conversion, CAC, LTV) par marché. Les écritures inter-compagnies ont été automatisées.",
-        results: [
-          "Temps de clôture mensuelle réduit de 15 à 3 jours",
-          "Erreurs de consolidation éliminées",
-          "Vision en temps réel de la performance par pays",
-          "Identification du marché espagnol comme le plus rentable (+15% de marge vs moyenne)",
-        ],
-        quote: "On pilotait 5 pays à l'aveugle. Le dashboard consolidé nous a permis de réallouer 30% de notre budget marketing vers les marchés les plus rentables.",
-        quoteAuthor: "Directeur des opérations",
-        quoteRole: "E-commerce mode, 28 personnes",
-        duration: "6 mois - 4 jours/mois",
-        teamSize: "28 personnes",
-      },
-      {
-        slug: "audit-financier-cabinet-management-40-personnes",
-        title: "Audit financier et restructuration d'un cabinet de management de 40 personnes",
-        client: "Cabinet de conseil en management",
-        sector: "conseil",
-        sectorTag: "Conseil",
-        challenge: "Ce cabinet de conseil en management de 40 consultants traversait une crise de croissance. Le CA avait doublé en 2 ans mais les charges avaient triplé. La rentabilité nette était passée de 15% à 3%. Le dirigeant ne comprenait pas pourquoi la croissance ne se traduisait pas en résultat. Aucun contrôle budgétaire n'était en place.",
-        solution: "Nous avons réalisé un audit financier complet sur 24 mois, identifiant les postes de dépenses ayant dérapé. Un budget prévisionnel par département a été mis en place avec des alertes automatiques en cas de dépassement. Nous avons également renégocié les contrats fournisseurs principaux (bureaux, outils, sous-traitance) et optimisé la politique de recrutement.",
-        results: [
-          "Rentabilité nette remontée de 3% à 12% en 9 mois",
-          "Économies annuelles de 280K euros identifiées et réalisées",
-          "Budget prévisionnel par département avec suivi mensuel",
-          "Processus d'approbation des dépenses > 5K euros mis en place",
-        ],
-        quote: "L'audit a mis en lumière des fuites de rentabilité qu'on ne soupçonnait pas. En 9 mois, on a retrouvé une marge saine tout en continuant à croître.",
-        quoteAuthor: "Président",
-        quoteRole: "Cabinet de conseil en management, 40 personnes",
-        duration: "12 mois - 3 jours/mois",
-        teamSize: "40 personnes",
-      },
-      {
-        slug: "automatisation-comptable-ecommerce-alimentaire",
-        title: "Automatisation comptable d'un site e-commerce alimentaire",
-        client: "E-commerce alimentaire bio",
-        sector: "ecommerce",
-        sectorTag: "E-commerce",
-        challenge: "Ce site e-commerce alimentaire bio gérait 2000 commandes par mois avec une comptabilité encore largement manuelle. La saisie des factures prenait 3 jours par semaine à une personne à temps plein. Les rapprochements bancaires étaient faits une fois par mois avec des écarts récurrents. La TVA multi-taux (5,5%, 10%, 20%) complexifiait encore le traitement.",
-        solution: "Nous avons migré la comptabilité vers Pennylane avec connexion automatique à Shopify et Stripe. Les règles de catégorisation automatique ont été configurées pour gérer les multi-taux de TVA. Le rapprochement bancaire est désormais quotidien et automatisé. Un reporting hebdomadaire de marge par catégorie de produit a été mis en place.",
-        results: [
-          "Temps de saisie comptable réduit de 80% (3 jours à 0,5 jour/semaine)",
-          "Rapprochement bancaire quotidien automatisé",
-          "Erreurs de TVA éliminées",
-          "Marge par catégorie de produit visible en temps réel",
-        ],
-        quote: "On passait un temps fou sur la comptabilité. L'automatisation nous a libéré 2,5 jours par semaine qu'on consacre maintenant au développement commercial.",
-        quoteAuthor: "Co-fondateur",
-        quoteRole: "E-commerce alimentaire bio, 8 personnes",
-        duration: "4 mois - 3 jours/mois",
-        teamSize: "8 personnes",
-      },
-      {
-        slug: "internationalisation-cabinet-conseil-digital-30-personnes",
-        title: "Accompagnement à l'internationalisation d'un cabinet de conseil digital de 30 personnes",
-        client: "Cabinet de conseil en stratégie digitale",
-        sector: "conseil",
-        sectorTag: "Conseil",
-        challenge: "Ce cabinet de conseil digital de 30 personnes basé à Paris souhaitait ouvrir un bureau à Barcelone. Les questions fiscales, sociales et juridiques étaient complexes : quel statut pour l'entité espagnole, comment gérer la facturation inter-compagnies, quel régime social pour les consultants détachés. Le dirigeant avait besoin d'un cadrage financier complet avant de se lancer.",
-        solution: "Nous avons réalisé une étude comparative des régimes fiscaux France-Espagne, construit le business plan de l'entité barcelonaise et mis en place la structure juridique optimale (filiale espagnole SL). La facturation inter-compagnies a été structurée avec des prix de transfert conformes. Nous avons également sélectionné et déployé les outils comptables locaux.",
-        results: [
-          "Bureau de Barcelone opérationnel en 3 mois",
-          "Optimisation fiscale de 18% sur les 2 premières années",
-          "Facturation inter-compagnies conforme et automatisée",
-          "5 premiers clients espagnols signés dans les 6 mois",
-        ],
-        quote: "Sans Iter, l'ouverture de Barcelone aurait pris un an. Leur connaissance des deux écosystèmes nous a fait gagner un temps considérable.",
-        quoteAuthor: "Managing Partner",
-        quoteRole: "Cabinet de conseil digital, 30 personnes",
-        duration: "8 mois - 4 jours/mois",
-        teamSize: "30 personnes",
+        quote:
+          "On aurait pu manquer de cash à cause de la croissance. Maintenant on gère proactivement.",
+        quoteAuthor: "Sophie Martin",
+        quoteRole: "Founder, E-commerce Fashion",
       },
     ],
   },
   en: {
     meta: {
-      title: "Case Studies - Outsourced CFO missions | Iter Advisors",
+      title: "Case Studies - Iter Advisors",
       description:
-        "Discover our real-world case studies: how our outsourced CFOs helped consulting firms and e-commerce businesses structure their financial operations.",
+        "See how our clients structured and optimized their finances. Case studies in SaaS, e-commerce, consulting, and fintech.",
     },
-    breadcrumbLabel: "Case Studies",
+    h1: "Case Studies",
+    intro:
+      "Discover how our clients transformed their financial management. From SaaS startups to e-commerce platforms, here are their success stories.",
     resourcesLabel: "Resources",
     resourcesHref: "/en/ressources",
-    h1: "Our case studies",
-    intro:
-      "Discover how our outsourced CFOs concretely support growing consulting firms and e-commerce businesses to structure, manage and optimize their financial operations.",
+    breadcrumbLabel: "Case studies",
+    challengeLabel: "Challenge",
+    solutionLabel: "Solution",
+    resultsLabel: "Results",
     filterAll: "All",
     filterConseil: "Consulting",
     filterEcommerce: "E-commerce",
-    challengeLabel: "The challenge",
-    solutionLabel: "Our intervention",
-    resultsLabel: "Results achieved",
-    durationLabel: "Mission duration",
-    teamSizeLabel: "Client team size",
     caseStudies: [
       {
-        slug: "financial-structuring-strategy-consulting-firm-25-people",
-        title: "Financial structuring for a 25-person strategy consulting firm",
-        client: "Strategy consulting firm",
-        sector: "conseil",
-        sectorTag: "Consulting",
-        challenge: "This 25-consultant strategy firm was growing rapidly (+40% annual revenue) but had no financial management tools. The CEO was flying blind, with no cash flow forecast or structured monthly reporting. Client invoices were sent with an average 3-week delay, directly impacting working capital.",
-        solution: "We deployed an outsourced CFO 3 days per month for 8 months. The first step was setting up automated monthly reporting on Pennylane, connected to their Salesforce CRM. We then built a 12-month cash flow forecast on Agicap, integrating project billing cycles. Finally, we restructured the invoicing process with automatic milestones linked to deliverables.",
+        slug: "saas-series-a",
+        title: "SaaS - Series A Fundraising",
+        sector: "Tech",
+        sectorTag: "SaaS / Tech",
+        teamSize: "5-10 people",
+        duration: "6 months",
+        description:
+          "A SaaS startup at €1.2M ARR preparing for Series A.",
+        challenge:
+          "Technically strong founders but no financial expertise. Urgent need for investor-grade financial model and organized data room.",
+        solution:
+          "Built a 3-5 year financial model with realistic assumptions, created investor dashboards, organized complete data room with all required documents.",
         results: [
-          "Average invoicing delay reduced from 21 to 5 days",
-          "Working capital improved by 35% in 6 months",
-          "Monthly reporting available at D+3 instead of D+15",
-          "Reliable 12-month cash flow forecast",
+          "Financial model validated by investors",
+          "Real-time investor KPI dashboards (MRR, CAC, LTV, Burn)",
+          "Organized and compliant data room",
+          "Successful valuation negotiation",
         ],
-        quote: "Before Iter, I discovered my numbers 2 months late. Today, I have a clear view of my cash flow for 12 months and can make informed decisions.",
-        quoteAuthor: "Managing Director",
-        quoteRole: "Strategy consulting firm, 25 people",
-        duration: "8 months - 3 days/month",
-        teamSize: "25 people",
+        quote:
+          "Iter Advisors turned our Excel jungle into a coherent financial story. Investors were confident from the first meeting.",
+        quoteAuthor: "Marie Dupont",
+        quoteRole: "CEO, SaaS FinTech",
       },
       {
-        slug: "profitability-tracking-hr-consulting-35-people",
-        title: "Project profitability tracking for a 35-person HR consulting firm",
-        client: "HR consulting firm",
-        sector: "conseil",
-        sectorTag: "Consulting",
-        challenge: "This 35-person HR consulting firm billed on a fixed-fee basis but had no visibility on actual project profitability. Some projects were loss-making without management knowing. Management control was non-existent and overall margins were eroding quarter after quarter.",
-        solution: "We implemented project-level management control with time tracking and automatic margin calculation per mission. A Power BI dashboard was created to visualize real-time profitability by client, consultant and mission type. We also revised the pricing policy based on historical profitability data.",
+        slug: "tech-gestion-financiere",
+        title: "Fintech - Financial Metrics & Reporting",
+        sector: "Tech",
+        sectorTag: "Fintech",
+        teamSize: "8-15 people",
+        duration: "12 months",
+        description:
+          "Founders with no financial background. We structured reporting from scratch.",
+        challenge:
+          "Fast growth (3x ARR in 1 year) but zero financial visibility. Team focused on product, no cost management or budgeting.",
+        solution:
+          "Complete initial audit, monthly reporting setup, product-level KPI dashboards, quarterly budgeting with forecasting.",
         results: [
-          "Average gross margin increased from 28% to 41%",
-          "6 loss-making contracts identified and corrected",
-          "Real-time management dashboard for partners",
-          "New pricing grid based on actual data",
+          "Reliable monthly financial reporting",
+          "Budgeting and forecasting framework",
+          "Unit economics analysis by product",
+          "Improved visibility for leadership and investors",
         ],
-        quote: "We thought all our projects were profitable. The analysis revealed that 20% of our missions were costing us money. The turnaround was spectacular.",
-        quoteAuthor: "Founding Partner",
-        quoteRole: "HR consulting firm, 35 people",
-        duration: "12 months - 2 days/month",
-        teamSize: "35 people",
+        quote:
+          "Now I know where every euro goes. Decisions are data-driven, not gut-based.",
+        quoteAuthor: "Thomas Leclerc",
+        quoteRole: "CTO & Founder, DeepTech AI",
       },
       {
-        slug: "fundraising-preparation-tech-consulting-20-people",
-        title: "Fundraising preparation for a 20-person tech consulting firm",
-        client: "Digital transformation consulting firm",
-        sector: "conseil",
-        sectorTag: "Consulting",
-        challenge: "This digital transformation consulting firm wanted to raise 2M euros to accelerate growth and open a Barcelona office. The business plan was approximate, financial projections lacked credibility, and no data room was prepared. Contacted investors were asking for SaaS-like metrics (MRR, churn, LTV) adapted to the recurring consulting model.",
-        solution: "We built a detailed 5-year business plan with 3 scenarios (conservative, base, optimistic) integrating the specificities of the recurring model. A complete data room was prepared on Notion with all financial, legal and operational documents. We also supported the CEO in negotiations with 4 investment funds.",
-        results: [
-          "2.3M euros raised in 4 months",
-          "Valuation obtained 20% above initial expectations",
-          "Complete data room delivered in 3 weeks",
-          "3 term sheets received from 4 funds contacted",
-        ],
-        quote: "The business plan built by Iter convinced investors from the first meeting. The quality of the data room accelerated the entire process.",
-        quoteAuthor: "CEO",
-        quoteRole: "Tech consulting firm, 20 people",
-        duration: "6 months - 4 days/month",
-        teamSize: "20 people",
-      },
-      {
-        slug: "cash-flow-optimization-cosmetics-ecommerce",
-        title: "Cash flow optimization for a cosmetics e-commerce site",
-        client: "Natural cosmetics e-commerce",
+        slug: "ecommerce-cashflow",
+        title: "E-commerce - Cash Flow Optimization",
         sector: "ecommerce",
         sectorTag: "E-commerce",
-        challenge: "This natural cosmetics e-commerce site generated 4M euros in revenue with very marked seasonal peaks (x3 in November-December). Cash flow was under permanent pressure as raw material purchases had to be made 4 months before sales peaks. The company had already experienced 2 cash flow incidents leading to stockouts.",
-        solution: "We modeled seasonal cash flow cycles on Agicap with Shopify integration to anticipate financing needs. A working capital financing plan was negotiated with the bank (500K euros short-term credit line). We also optimized supplier terms by negotiating 60-day payment terms instead of 30.",
+        teamSize: "20-50 people",
+        duration: "10 months",
+        description:
+          "Rapid growth but unpredictable cash flow requiring urgent optimization.",
+        challenge:
+          "100% YoY revenue growth but cash blocked. Stock accumulation, supplier vs customer payment timing problems. Risk of cash-out in 4 months.",
+        solution:
+          "Working capital diagnosis, payment cycle optimization (supplier negotiations), stock reduction, 13-week rolling cash forecast.",
         results: [
-          "Zero stockouts during peak season",
-          "Financing costs reduced by 40%",
-          "Reliable 6-month cash flow forecast",
-          "Supplier terms extended from 30 to 60 days",
+          "13-week rolling cash forecast implemented",
+          "Supplier payment terms reduced from 60 to 45 days",
+          "Stock optimized, inventory rotation improved 20%",
+          "5+ month additional runway without external funding",
         ],
-        quote: "Every year, the Christmas period was a cash flow nightmare. Now everything is anticipated and financed. We can finally focus on growth.",
-        quoteAuthor: "Founder",
-        quoteRole: "Cosmetics e-commerce, 12 people",
-        duration: "10 months - 3 days/month",
-        teamSize: "12 people",
-      },
-      {
-        slug: "multi-country-reporting-fashion-ecommerce",
-        title: "Multi-country reporting setup for a fashion e-commerce site",
-        client: "Fashion and accessories e-commerce",
-        sector: "ecommerce",
-        sectorTag: "E-commerce",
-        challenge: "This fashion e-commerce site sold in 5 European countries (France, Spain, Germany, Italy, Belgium) with separate legal entities. Consolidated reporting was done manually on Excel, took 2 weeks per month and regularly contained errors. Management had no unified view of performance by market.",
-        solution: "We deployed automated consolidated reporting connecting 5 Shopify instances, 3 Stripe accounts and local accounting systems. A multi-country Power BI dashboard was created with e-commerce KPIs (average basket, conversion rate, CAC, LTV) by market. Intercompany entries were automated.",
-        results: [
-          "Monthly closing time reduced from 15 to 3 days",
-          "Consolidation errors eliminated",
-          "Real-time performance view by country",
-          "Spanish market identified as most profitable (+15% margin vs average)",
-        ],
-        quote: "We were managing 5 countries blindly. The consolidated dashboard allowed us to reallocate 30% of our marketing budget to the most profitable markets.",
-        quoteAuthor: "Operations Director",
-        quoteRole: "Fashion e-commerce, 28 people",
-        duration: "6 months - 4 days/month",
-        teamSize: "28 people",
-      },
-      {
-        slug: "financial-audit-management-consulting-40-people",
-        title: "Financial audit and restructuring for a 40-person management consulting firm",
-        client: "Management consulting firm",
-        sector: "conseil",
-        sectorTag: "Consulting",
-        challenge: "This 40-consultant management consulting firm was going through a growth crisis. Revenue had doubled in 2 years but costs had tripled. Net profitability had dropped from 15% to 3%. The CEO couldn't understand why growth wasn't translating into results. No budget control was in place.",
-        solution: "We conducted a full 24-month financial audit, identifying cost items that had spiraled. A departmental forecast budget was implemented with automatic alerts for overruns. We also renegotiated key supplier contracts (offices, tools, subcontracting) and optimized the recruitment policy.",
-        results: [
-          "Net profitability recovered from 3% to 12% in 9 months",
-          "280K euros in annual savings identified and realized",
-          "Departmental forecast budget with monthly tracking",
-          "Expense approval process for amounts > 5K euros implemented",
-        ],
-        quote: "The audit revealed profitability leaks we didn't suspect. In 9 months, we recovered a healthy margin while continuing to grow.",
-        quoteAuthor: "President",
-        quoteRole: "Management consulting firm, 40 people",
-        duration: "12 months - 3 days/month",
-        teamSize: "40 people",
-      },
-      {
-        slug: "accounting-automation-food-ecommerce",
-        title: "Accounting automation for a food e-commerce site",
-        client: "Organic food e-commerce",
-        sector: "ecommerce",
-        sectorTag: "E-commerce",
-        challenge: "This organic food e-commerce site handled 2,000 orders per month with largely manual accounting. Invoice entry took 3 days per week for one full-time person. Bank reconciliations were done once a month with recurring discrepancies. Multi-rate VAT (5.5%, 10%, 20%) further complicated processing.",
-        solution: "We migrated accounting to Pennylane with automatic connection to Shopify and Stripe. Automatic categorization rules were configured to handle multi-rate VAT. Bank reconciliation is now daily and automated. A weekly margin report by product category was implemented.",
-        results: [
-          "Accounting entry time reduced by 80% (3 days to 0.5 day/week)",
-          "Daily automated bank reconciliation",
-          "VAT errors eliminated",
-          "Real-time margin visibility by product category",
-        ],
-        quote: "We spent an enormous amount of time on accounting. Automation freed up 2.5 days per week that we now dedicate to business development.",
-        quoteAuthor: "Co-founder",
-        quoteRole: "Organic food e-commerce, 8 people",
-        duration: "4 months - 3 days/month",
-        teamSize: "8 people",
-      },
-      {
-        slug: "internationalization-digital-consulting-30-people",
-        title: "Internationalization support for a 30-person digital consulting firm",
-        client: "Digital strategy consulting firm",
-        sector: "conseil",
-        sectorTag: "Consulting",
-        challenge: "This 30-person digital consulting firm based in Paris wanted to open a Barcelona office. Tax, social and legal questions were complex: what status for the Spanish entity, how to manage intercompany billing, what social regime for seconded consultants. The CEO needed a complete financial framework before launching.",
-        solution: "We conducted a comparative study of French-Spanish tax regimes, built the Barcelona entity business plan and set up the optimal legal structure (Spanish SL subsidiary). Intercompany billing was structured with compliant transfer pricing. We also selected and deployed local accounting tools.",
-        results: [
-          "Barcelona office operational in 3 months",
-          "18% tax optimization over the first 2 years",
-          "Compliant and automated intercompany billing",
-          "5 first Spanish clients signed within 6 months",
-        ],
-        quote: "Without Iter, opening Barcelona would have taken a year. Their knowledge of both ecosystems saved us considerable time.",
-        quoteAuthor: "Managing Partner",
-        quoteRole: "Digital consulting firm, 30 people",
-        duration: "8 months - 4 days/month",
-        teamSize: "30 people",
+        quote:
+          "We could have run out of cash due to growth. Now we manage proactively.",
+        quoteAuthor: "Sophie Martin",
+        quoteRole: "Founder, E-commerce Fashion",
       },
     ],
   },
   es: {
     meta: {
-      title: "Casos de uso - Misiones CFO externalizado | Iter Advisors",
+      title: "Casos Prácticos - Iter Advisors",
       description:
-        "Descubra nuestros casos de uso concretos: cómo nuestros CFOs externalizados han acompañado a consultoras y sitios e-commerce en su estructuración financiera.",
+        "Descubre cómo nuestros clientes estructuraron y optimizaron sus finanzas. Casos prácticos en SaaS, e-commerce, consulting y fintech.",
     },
-    breadcrumbLabel: "Casos de uso",
+    h1: "Casos Prácticos",
+    intro:
+      "Descubre cómo nuestros clientes transformaron su gestión financiera. Desde startups SaaS hasta plataformas de e-commerce, aquí están sus historias de éxito.",
     resourcesLabel: "Recursos",
     resourcesHref: "/es/ressources",
-    h1: "Nuestros casos de uso",
-    intro:
-      "Descubra cómo nuestros CFOs externalizados intervienen concretamente en consultoras en crecimiento y sitios e-commerce para estructurar, gestionar y optimizar su dirección financiera.",
+    breadcrumbLabel: "Casos prácticos",
+    challengeLabel: "Desafío",
+    solutionLabel: "Solución",
+    resultsLabel: "Resultados",
     filterAll: "Todos",
-    filterConseil: "Consultoría",
+    filterConseil: "Consulting",
     filterEcommerce: "E-commerce",
-    challengeLabel: "El desafío",
-    solutionLabel: "Nuestra intervención",
-    resultsLabel: "Resultados obtenidos",
-    durationLabel: "Duración de la misión",
-    teamSizeLabel: "Tamaño del equipo cliente",
     caseStudies: [
       {
-        slug: "estructuracion-financiera-consultora-estrategia-25-personas",
-        title: "Estructuración financiera de una consultora de estrategia de 25 personas",
-        client: "Consultora de estrategia",
-        sector: "conseil",
-        sectorTag: "Consultoría",
-        challenge: "Esta consultora de estrategia de 25 consultores experimentaba un crecimiento rápido (+40% de facturación anual) pero no disponía de ninguna herramienta de gestión financiera. El director pilotaba a ciegas, sin previsión de tesorería ni reporting mensual estructurado. Las facturas a clientes se enviaban con 3 semanas de retraso de media, impactando directamente el capital circulante.",
-        solution: "Desplegamos un CFO externalizado 3 días al mes durante 8 meses. El primer paso fue la implementación de un reporting mensual automatizado en Pennylane, conectado a su CRM Salesforce. Luego construimos una previsión de tesorería a 12 meses en Agicap, integrando los ciclos de facturación por proyecto. Finalmente, reestructuramos el proceso de facturación con hitos automáticos vinculados a los entregables.",
+        slug: "saas-series-a",
+        title: "SaaS - Recaudación Series A",
+        sector: "Tech",
+        sectorTag: "SaaS / Tech",
+        teamSize: "5-10 personas",
+        duration: "6 meses",
+        description:
+          "Startup SaaS con €1.2M ARR preparándose para Series A.",
+        challenge:
+          "Fundadores técnicamente fuertes pero sin expertise financiera. Necesidad urgente de modelo financiero validado por inversores y data room organizada.",
+        solution:
+          "Construimos modelo financiero 3-5 años con supuestos realistas, creamos dashboards de inversores, organizamos data room completa con documentos requeridos.",
         results: [
-          "Plazo medio de facturación reducido de 21 a 5 días",
-          "Capital circulante mejorado un 35% en 6 meses",
-          "Reporting mensual disponible en D+3 en lugar de D+15",
-          "Previsión de tesorería fiable a 12 meses",
+          "Modelo financiero validado por inversores",
+          "Dashboards KPI en tiempo real",
+          "Data room organizada y conforme",
+          "Negociación exitosa de valoración",
         ],
-        quote: "Antes de Iter, descubría mis cifras con 2 meses de retraso. Hoy tengo una visión clara de mi tesorería a 12 meses y puedo tomar decisiones informadas.",
-        quoteAuthor: "Director General",
-        quoteRole: "Consultora de estrategia, 25 personas",
-        duration: "8 meses - 3 días/mes",
-        teamSize: "25 personas",
+        quote:
+          "Iter Advisors convirtió nuestro caos de Excel en una historia financiera coherente. Los inversores confiaron desde la primera reunión.",
+        quoteAuthor: "Marie Dupont",
+        quoteRole: "CEO, SaaS FinTech",
       },
       {
-        slug: "seguimiento-rentabilidad-consultora-rrhh-35-personas",
-        title: "Seguimiento de rentabilidad por proyecto para una consultora RRHH de 35 personas",
-        client: "Consultora de RRHH",
-        sector: "conseil",
-        sectorTag: "Consultoría",
-        challenge: "Esta consultora de recursos humanos de 35 colaboradores facturaba a precio fijo pero no tenía visibilidad sobre la rentabilidad real de cada misión. Algunos proyectos eran deficitarios sin que la dirección lo supiera. El control de gestión era inexistente y los márgenes globales se erosionaban trimestre tras trimestre.",
-        solution: "Implementamos un control de gestión por proyecto con seguimiento de tiempos y cálculo automático de márgenes por misión. Se creó un dashboard Power BI para visualizar en tiempo real la rentabilidad por cliente, consultor y tipo de misión. También revisamos la política de precios basándonos en datos de rentabilidad históricos.",
+        slug: "tech-gestion-financiera",
+        title: "Startup Tech - Gestión Financiera",
+        sector: "Tech",
+        sectorTag: "Tech / Deeptech",
+        teamSize: "8-15 personas",
+        duration: "12 meses",
+        description:
+          "Fundadores sin experiencia financiera. Estructuramos reporting desde cero.",
+        challenge:
+          "Crecimiento rápido (3x ARR en 1 año) pero cero visibilidad financiera. Equipo enfocado en producto, sin gestión de costos ni budgeting.",
+        solution:
+          "Auditoría inicial completa, reporting mensual, dashboards KPI por producto, budgeting trimestral con forecasting.",
         results: [
-          "Margen bruto medio pasó del 28% al 41%",
-          "6 contratos deficitarios identificados y corregidos",
-          "Dashboard de gestión en tiempo real para los socios",
-          "Nueva tabla de precios basada en datos reales",
+          "Reporting financiero mensual confiable",
+          "Framework de budgeting y forecasting",
+          "Análisis de unit economics por producto",
+          "Visibilidad mejorada para liderazgo",
         ],
-        quote: "Pensábamos que todos nuestros proyectos eran rentables. El análisis reveló que el 20% de nuestras misiones nos costaban dinero. La recuperación fue espectacular.",
-        quoteAuthor: "Socia fundadora",
-        quoteRole: "Consultora de RRHH, 35 personas",
-        duration: "12 meses - 2 días/mes",
-        teamSize: "35 personas",
+        quote:
+          "Ahora sé dónde va cada euro. Las decisiones son data-driven, no basadas en intuición.",
+        quoteAuthor: "Thomas Leclerc",
+        quoteRole: "CTO & Founder, DeepTech AI",
       },
       {
-        slug: "preparacion-ronda-financiacion-consultora-tech-20-personas",
-        title: "Preparación para ronda de financiación de una consultora tech de 20 personas",
-        client: "Consultora de transformación digital",
-        sector: "conseil",
-        sectorTag: "Consultoría",
-        challenge: "Esta consultora de transformación digital quería levantar 2M de euros para acelerar su crecimiento y abrir una oficina en Barcelona. El business plan era aproximado, las proyecciones financieras poco creíbles y no había data room preparado. Los inversores contactados pedían métricas tipo SaaS (MRR, churn, LTV) adaptadas al modelo de consultoría recurrente.",
-        solution: "Construimos un business plan detallado a 5 años con 3 escenarios (conservador, base, optimista) integrando las especificidades del modelo recurrente. Se preparó un data room completo en Notion con todos los documentos financieros, jurídicos y operacionales. También acompañamos al CEO en las negociaciones con 4 fondos de inversión.",
-        results: [
-          "2,3M de euros levantados en 4 meses",
-          "Valoración obtenida un 20% superior a las expectativas iniciales",
-          "Data room completo entregado en 3 semanas",
-          "3 term sheets recibidas de 4 fondos contactados",
-        ],
-        quote: "El business plan construido por Iter convenció a los inversores desde la primera reunión. La calidad del data room aceleró todo el proceso.",
-        quoteAuthor: "CEO",
-        quoteRole: "Consultora tech, 20 personas",
-        duration: "6 meses - 4 días/mes",
-        teamSize: "20 personas",
-      },
-      {
-        slug: "optimizacion-tesoreria-ecommerce-cosmeticos",
-        title: "Optimización de tesorería de un e-commerce de cosmética",
-        client: "E-commerce de cosmética natural",
+        slug: "ecommerce-cashflow",
+        title: "E-commerce - Optimización de Flujo de Caja",
         sector: "ecommerce",
         sectorTag: "E-commerce",
-        challenge: "Este e-commerce de cosmética natural facturaba 4M de euros con picos estacionales muy marcados (x3 en noviembre-diciembre). La tesorería estaba bajo presión permanente ya que las compras de materias primas debían realizarse 4 meses antes de los picos de venta. La empresa ya había tenido 2 incidentes de tesorería que provocaron roturas de stock.",
-        solution: "Modelizamos los ciclos de tesorería estacionales en Agicap con integración Shopify para anticipar las necesidades de financiación. Se negoció un plan de financiación del capital circulante con el banco (línea de crédito a corto plazo de 500K euros). También optimizamos las condiciones con proveedores negociando plazos de pago a 60 días en lugar de 30.",
+        teamSize: "20-50 personas",
+        duration: "10 meses",
+        description:
+          "Crecimiento rápido pero flujo de caja impredecible requiriendo optimización urgente.",
+        challenge:
+          "Crecimiento YoY 100% pero efectivo bloqueado. Acumulación de stock, problemas de timing de pagos. Riesgo de insolvencia en 4 meses.",
+        solution:
+          "Diagnóstico de capital de trabajo, optimización de ciclos de pago (negociaciones), reducción de stock, pronóstico rodante 13 semanas.",
         results: [
-          "Cero roturas de stock en temporada alta",
-          "Coste de financiación reducido un 40%",
-          "Previsión de tesorería fiable a 6 meses",
-          "Plazos de proveedores ampliados de 30 a 60 días",
+          "Pronóstico rodante 13 semanas implementado",
+          "Términos de proveedores reducidos de 60 a 45 días",
+          "Stock optimizado, rotación mejorada 20%",
+          "5+ meses de runway adicional sin financiamiento",
         ],
-        quote: "Cada año, el período de Navidad era una pesadilla de tesorería. Ahora todo está anticipado y financiado. Por fin podemos centrarnos en el crecimiento.",
-        quoteAuthor: "Fundadora",
-        quoteRole: "E-commerce cosmética, 12 personas",
-        duration: "10 meses - 3 días/mes",
-        teamSize: "12 personas",
-      },
-      {
-        slug: "reporting-multi-pais-ecommerce-moda",
-        title: "Implementación de reporting multi-país para un e-commerce de moda",
-        client: "E-commerce de moda y accesorios",
-        sector: "ecommerce",
-        sectorTag: "E-commerce",
-        challenge: "Este e-commerce de moda vendía en 5 países europeos (Francia, España, Alemania, Italia, Bélgica) con entidades jurídicas distintas. El reporting consolidado se realizaba manualmente en Excel, tardaba 2 semanas al mes y contenía errores regularmente. La dirección no tenía una visión unificada del rendimiento por mercado.",
-        solution: "Desplegamos un reporting consolidado automatizado conectando las 5 instancias Shopify, las 3 cuentas Stripe y las contabilidades locales. Se creó un dashboard Power BI multi-país con KPIs e-commerce (cesta media, tasa de conversión, CAC, LTV) por mercado. Las escrituras inter-compañías se automatizaron.",
-        results: [
-          "Tiempo de cierre mensual reducido de 15 a 3 días",
-          "Errores de consolidación eliminados",
-          "Visión en tiempo real del rendimiento por país",
-          "Mercado español identificado como el más rentable (+15% de margen vs media)",
-        ],
-        quote: "Gestionábamos 5 países a ciegas. El dashboard consolidado nos permitió reasignar el 30% de nuestro presupuesto de marketing hacia los mercados más rentables.",
-        quoteAuthor: "Director de operaciones",
-        quoteRole: "E-commerce moda, 28 personas",
-        duration: "6 meses - 4 días/mes",
-        teamSize: "28 personas",
-      },
-      {
-        slug: "auditoria-financiera-consultora-management-40-personas",
-        title: "Auditoría financiera y reestructuración de una consultora de management de 40 personas",
-        client: "Consultora de management",
-        sector: "conseil",
-        sectorTag: "Consultoría",
-        challenge: "Esta consultora de management de 40 consultores atravesaba una crisis de crecimiento. La facturación se había duplicado en 2 años pero los gastos se habían triplicado. La rentabilidad neta había pasado del 15% al 3%. El director no entendía por qué el crecimiento no se traducía en resultados. No existía ningún control presupuestario.",
-        solution: "Realizamos una auditoría financiera completa de 24 meses, identificando las partidas de gasto que se habían desbordado. Se implementó un presupuesto previsional por departamento con alertas automáticas en caso de desviación. También renegociamos los contratos principales con proveedores (oficinas, herramientas, subcontratación) y optimizamos la política de contratación.",
-        results: [
-          "Rentabilidad neta recuperada del 3% al 12% en 9 meses",
-          "280K euros de ahorro anual identificados y realizados",
-          "Presupuesto previsional por departamento con seguimiento mensual",
-          "Proceso de aprobación de gastos > 5K euros implementado",
-        ],
-        quote: "La auditoría reveló fugas de rentabilidad que no sospechábamos. En 9 meses, recuperamos un margen sano sin dejar de crecer.",
-        quoteAuthor: "Presidente",
-        quoteRole: "Consultora de management, 40 personas",
-        duration: "12 meses - 3 días/mes",
-        teamSize: "40 personas",
-      },
-      {
-        slug: "automatizacion-contable-ecommerce-alimentario",
-        title: "Automatización contable de un e-commerce alimentario",
-        client: "E-commerce alimentario bio",
-        sector: "ecommerce",
-        sectorTag: "E-commerce",
-        challenge: "Este e-commerce alimentario bio gestionaba 2.000 pedidos al mes con una contabilidad aún en gran parte manual. La entrada de facturas ocupaba 3 días por semana a una persona a tiempo completo. Las conciliaciones bancarias se hacían una vez al mes con discrepancias recurrentes. El IVA multi-tipo (5,5%, 10%, 20%) complicaba aún más el tratamiento.",
-        solution: "Migramos la contabilidad a Pennylane con conexión automática a Shopify y Stripe. Se configuraron reglas de categorización automática para gestionar los multi-tipos de IVA. La conciliación bancaria es ahora diaria y automatizada. Se implementó un reporting semanal de margen por categoría de producto.",
-        results: [
-          "Tiempo de entrada contable reducido un 80% (3 días a 0,5 día/semana)",
-          "Conciliación bancaria diaria automatizada",
-          "Errores de IVA eliminados",
-          "Margen por categoría de producto visible en tiempo real",
-        ],
-        quote: "Pasábamos un tiempo enorme en la contabilidad. La automatización nos liberó 2,5 días por semana que ahora dedicamos al desarrollo comercial.",
-        quoteAuthor: "Co-fundador",
-        quoteRole: "E-commerce alimentario bio, 8 personas",
-        duration: "4 meses - 3 días/mes",
-        teamSize: "8 personas",
-      },
-      {
-        slug: "internacionalizacion-consultora-digital-30-personas",
-        title: "Acompañamiento a la internacionalización de una consultora digital de 30 personas",
-        client: "Consultora de estrategia digital",
-        sector: "conseil",
-        sectorTag: "Consultoría",
-        challenge: "Esta consultora digital de 30 personas con sede en París quería abrir una oficina en Barcelona. Las cuestiones fiscales, sociales y jurídicas eran complejas: qué estatus para la entidad española, cómo gestionar la facturación inter-compañías, qué régimen social para los consultores desplazados. El director necesitaba un marco financiero completo antes de lanzarse.",
-        solution: "Realizamos un estudio comparativo de los regímenes fiscales Francia-España, construimos el business plan de la entidad barcelonesa e implementamos la estructura jurídica óptima (filial española SL). La facturación inter-compañías se estructuró con precios de transferencia conformes. También seleccionamos y desplegamos las herramientas contables locales.",
-        results: [
-          "Oficina de Barcelona operativa en 3 meses",
-          "Optimización fiscal del 18% en los 2 primeros años",
-          "Facturación inter-compañías conforme y automatizada",
-          "5 primeros clientes españoles firmados en 6 meses",
-        ],
-        quote: "Sin Iter, la apertura de Barcelona habría tardado un año. Su conocimiento de ambos ecosistemas nos ahorró un tiempo considerable.",
-        quoteAuthor: "Managing Partner",
-        quoteRole: "Consultora digital, 30 personas",
-        duration: "8 meses - 4 días/mes",
-        teamSize: "30 personas",
+        quote:
+          "Habríamos podido quedarnos sin efectivo por el crecimiento. Ahora lo gestionamos proactivamente.",
+        quoteAuthor: "Sophie Martin",
+        quoteRole: "Founder, E-commerce Fashion",
       },
     ],
   },
 };
+
+export function getCaseStudiesContent(locale: Locale): CaseStudiesContent {
+  return content[locale];
+}

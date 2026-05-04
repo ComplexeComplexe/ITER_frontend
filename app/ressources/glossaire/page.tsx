@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import GlossairePage from "@/components/pages/GlossairePage";
 import { buildMetadata } from "@/lib/metadata";
-import { getGlossaryTerms, getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/strapi";
+import { getGlossaryContent, convertToStrapiTerms } from "@/lib/content/glossary";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
@@ -11,7 +12,8 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default async function Page() {
-  const terms = await getGlossaryTerms("fr");
+  const glossaryContent = getGlossaryContent("fr");
+  const terms = convertToStrapiTerms(glossaryContent.terms);
   const cmsNavigation = await getCmsNavigation("fr");
   return <GlossairePage locale="fr" terms={terms} cmsNavigation={cmsNavigation} />;
 }
