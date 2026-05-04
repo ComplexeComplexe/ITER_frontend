@@ -1,0 +1,282 @@
+export const dafExternalisePariContent = {
+  fr: {
+    meta: {
+      title: "DAF externalisé Paris : CFO à temps partagé en Ile-de-France | Iter Advisors",
+      description:
+        "DAF externalisé à Paris et en Ile-de-France. Expertise CFO à temps partagé pour startups et PME. Accompagnement levées de fonds, Bpifrance, reporting. À partir de 2 000 €/mois.",
+    },
+    h1: "DAF externalisé Paris : votre direction financière à temps partagé en Ile-de-France",
+    intro: [
+      "Paris et l'Ile-de-France concentrent la majorité des startups et PME innovantes françaises. Station F, les incubateurs du 9e arrondissement, les fonds d'investissement de la place parisienne : l'écosystème est dense et compétitif. Dans ce contexte, recruter un DAF senior à temps plein coûte entre 120 000 et 180 000 euros brut annuel, sans compter les charges et les délais de recrutement.",
+      "Le DAF externalisé à Paris offre une alternative concrète. Il donne accès à une expertise de direction financière de niveau senior, avec une flexibilité adaptée à la croissance de l'entreprise. Pour une startup qui prépare une levée de fonds auprès de Partech ou Breega, ou une PME qui veut structurer son pilotage avant une expansion, disposer d'un DAF à temps partagé est souvent le choix le plus pertinent.",
+      "Chez Iter Advisors, nous accompagnons les entreprises parisiennes avec des CFOs expérimentés qui interviennent sur site et en remote dans toute l'Ile-de-France. Notre connaissance de l'écosystème francilien est un atout concret pour nos clients.",
+    ],
+    sections: [
+      {
+        id: "definition",
+        title: "Qu'est-ce qu'un DAF externalisé à Paris ?",
+        paragraphs: [
+          "Un DAF externalisé à Paris est un directeur administratif et financier senior qui intervient à temps partagé dans votre entreprise, sans être salarié. Il assume les responsabilités classiques d'un DAF : pilotage financier, reporting, trésorerie, relations avec les investisseurs et les banques, structuration de la fonction finance.",
+          "Contrairement à un consultant ponctuel qui livre une étude puis repart, un DAF externalisé s'intègre dans la durée. Il participe aux comités de direction, prépare les board meetings, accompagne les levées de fonds et structure les processus financiers de l'entreprise. La différence avec un salarié interne réside dans la flexibilité : le nombre de jours d'intervention s'ajuste au rythme de l'activité.",
+          "Sur le marché parisien, cette formule est particulièrement adaptée. Le coût d'un DAF senior à Paris est parmi les plus élevés de France, et la pénurie de profils qualifiés rend les recrutements longs et incertains. L'externalisation permet de démarrer immédiatement, avec un expert qui connaît déjà l'écosystème francilien.",
+        ],
+      },
+      {
+        id: "comparatif",
+        title: "Comparatif : DAF interne vs DAF externalisé à Paris",
+        comparison: {
+          internal: {
+            title: "DAF interne à temps plein",
+            price: "120 000 € - 180 000 €",
+            subtitle: "Salaire brut annuel + charges + avantages",
+            cons: [
+              "Recrutement long (3 à 6 mois)",
+              "Coût fixe mensuel élevé",
+              "Engagement sur 12 à 24 mois",
+              "Risque de turnover coûteux",
+              "Expertise limitée à une seule expérience",
+              "Pas de flexibilité en cas de ralentissement",
+            ],
+          },
+          external: {
+            title: "DAF externalisé Iter Advisors",
+            price: "À partir de 2 000 €/mois",
+            subtitle: "Formule adaptable selon vos besoins",
+            pros: [
+              "Mise en place immédiate",
+              "Coût proportionnel à l'activité",
+              "Flexibilité mensuelle",
+              "Expertise multi-sectorielle",
+              "Réseau VCs et banques parisiennes",
+              "Ajustement sans rupture",
+            ],
+          },
+        },
+        tables: [
+          {
+            caption: "Tableau comparatif détaillé des coûts annuels à Paris",
+            headers: ["Poste", "DAF interne (coût total)", "DAF externalisé Iter Advisors", "Économie"],
+            rows: [
+              ["Salaire / honoraires annuels", "150 000 € - 220 000 €", "24 000 € - 96 000 €", "60 % - 85 %"],
+              ["Charges sociales", "45 000 € - 66 000 €", "Inclus", "100 %"],
+              ["Mutuelle / prévoyance", "3 000 € - 6 000 €", "Inclus", "100 %"],
+              ["Prime de participation / intéressement", "5 000 € - 15 000 €", "Aucune", "100 %"],
+              ["Frais de recrutement", "15 000 € - 30 000 €", "Aucun", "100 %"],
+              ["Coût total annuel estimé", "218 000 € - 337 000 €", "24 000 € - 96 000 €", "70 % - 90 %"],
+            ],
+          },
+        ],
+      },
+      {
+        id: "missions",
+        title: "Les missions d'un DAF externalisé à Paris",
+        paragraphs: [
+          "Le périmètre d'intervention d'un DAF externalisé couvre l'ensemble de la fonction finance. Voici les missions les plus demandées par les entreprises parisiennes :",
+        ],
+        tables: [
+          {
+            caption: "Périmètre des missions d'un DAF externalisé Iter Advisors à Paris",
+            headers: ["Domaine", "Missions concrètes", "Fréquence"],
+            rows: [
+              ["Pilotage financier", "Tableaux de bord, reporting mensuel, analyse des écarts, suivi des KPIs", "Mensuel"],
+              ["Trésorerie", "Suivi de la trésorerie, prévisions à 13 semaines, gestion du BFR, négociation bancaire", "Hebdomadaire"],
+              ["Levées de fonds", "Préparation du data room, financial model, accompagnement VCs (Partech, Elaia, Breega, Idinvest)", "Par projet"],
+              ["Structuration", "Mise en place de processus finance, choix des outils, intégration comptable, reporting investisseurs", "Projet"],
+              ["Relations institutionnelles", "Accompagnement Bpifrance, CIR, JEI, relations banques, négociation crédits", "Trimestriel"],
+              ["M&A et due diligence", "Accompagnement aux cessions, acquisitions, audit financier, négociation", "Par projet"],
+            ],
+          },
+        ],
+      },
+      {
+        id: "parcours",
+        title: "Le parcours type d'un DAF externalisé chez Iter Advisors",
+        paragraphs: [
+          "Chaque entreprise a ses spécificités, mais le démarrage d'une collaboration suit généralement un schéma reconnu. Voici comment se déroule l'intervention d'un DAF externalisé Iter Advisors sur le terrain parisien :",
+        ],
+        timeline: [
+          {
+            title: "Mois 1 : Diagnostic et structuration",
+            description:
+              "Audit de la situation financière actuelle, revue des processus, identification des priorités. Mise en place des outils de pilotage et des tableaux de bord adaptés à votre activité.",
+          },
+          {
+            title: "Mois 2-3 : Mise en routine",
+            description:
+              "Établissement du reporting mensuel, structuration de la trésorerie, mise en conformité des déclarations fiscales. Premiers écarts analysés et premières recommandations formulées.",
+          },
+          {
+            title: "Mois 4-6 : Optimisation",
+            description:
+              "Analyse des coûts par centre de profit, optimisation du BFR, négociation bancaire si nécessaire. Préparation éventuelle d'une levée de fonds ou d'un dossier Bpifrance.",
+          },
+          {
+            title: "Mois 7-12 : Pilotage stratégique",
+            description:
+              "Reporting investisseurs, accompagnement aux board meetings, élaboration du budget annuel, analyse des scénarios de croissance. Le DAF devient un véritable partenaire stratégique.",
+          },
+        ],
+      },
+      {
+        id: "marche-parisien",
+        title: "Pourquoi Paris est un marché spécifique pour le DAF externalisé",
+        paragraphs: [
+          "Le marché parisien présente des caractéristiques qui rendent le DAF externalisé particulièrement pertinent :",
+        ],
+        kpis: [
+          {
+            number: "35 %",
+            label: "des startups françaises\nsont basées à Paris",
+          },
+          {
+            number: "120 K€+",
+            label: "salaire brut annuel\nd'un DAF senior à Paris",
+          },
+          {
+            number: "3-6 mois",
+            label: "délai moyen de\nrecrutement d'un DAF",
+          },
+        ],
+        bullets: [
+          {
+            title: "Densité de l'écosystème startup.",
+            text: "Station F, les incubateurs du 9e, les fonds d'investissement : Paris concentre les acteurs clés. Un DAF externalisé qui connaît cet écosystème peut accélérer les relations avec les VCs et les banques.",
+          },
+          {
+            title: "Coût salarial élevé.",
+            text: "Les profils financiers seniors à Paris sont parmi les plus chers de France. Pour une startup en amorçage ou une PME en développement, ce coût est souvent disproportionné par rapport au besoin réel.",
+          },
+          {
+            title: "Pénurie de talents.",
+            text: "Les bons profils financiers sont rares et très sollicités. Le turnover est fréquent et coûteux. L'externalisation évite ce risque.",
+          },
+          {
+            title: "Accès aux dispositifs d'aide.",
+            text: "Bpifrance, le CIR, le JEI : les dispositifs franciliens sont nombreux mais complexes. Un DAF externalisé parisien connaît ces mécanismes et peut les exploiter efficacement.",
+          },
+          {
+            title: "Internationalisation.",
+            text: "Notre double implantation Paris-Barcelone est un atout pour les entreprises qui se développent vers l'Espagne ou l'Europe du Sud.",
+          },
+        ],
+      },
+      {
+        id: "avantage-iter",
+        title: "L'avantage Iter Advisors à Paris",
+        paragraphs: [
+          "Notre équipe parisienne intervient sur site et en remote dans toute l'Ile-de-France. Nous connaissons parfaitement l'écosystème financier parisien et entretenons des relations privilégiées avec les principaux acteurs du marché.",
+        ],
+        tables: [
+          {
+            caption: "Notre réseau et notre expertise à Paris",
+            headers: ["Type d'acteur", "Exemples", "Comment Iter Advisors vous aide"],
+            rows: [
+              [
+                "Fonds d'investissement",
+                "Partech, Elaia, Breega, Idinvest, Seventure Partners",
+                "Préparation du data room, financial model, accompagnement aux due diligences",
+              ],
+              [
+                "Banques et financement",
+                "Bpifrance, BPI, banques traditionnelles",
+                "Structuration des dossiers de crédit, négociation des conditions, suivi des engagements",
+              ],
+              [
+                "Dispositifs d'aide",
+                "CIR, JEI, aides régionales Ile-de-France",
+                "Optimisation des dispositifs, préparation des dossiers, conformité fiscale",
+              ],
+              [
+                "Écosystème startup",
+                "Station F, incubateurs, accélérateurs",
+                "Connaissance des standards de reporting, des attentes des VCs, des benchmarks sectoriels",
+              ],
+            ],
+          },
+        ],
+        closingText:
+          "Notre double implantation Paris-Barcelone est un atout unique pour les entreprises qui se développent à l'international, notamment vers le marché espagnol. Nous pouvons accompagner la structuration financière sur les deux territoires avec une cohérence méthodologique.",
+      },
+      {
+        id: "signaux",
+        title: "Les signaux qui montrent qu'il faut faire appel à un DAF externalisé à Paris",
+        paragraphs: [
+          "Plusieurs situations concrètes indiquent qu'une direction financière artisanale atteint ses limites :",
+        ],
+        bullets: [
+          {
+            title: "La trésorerie devient difficile à prévoir.",
+            text: "Le dirigeant ne sait plus exactement combien son entreprise aura de disponible dans trois mois. Les encours clients s'allongent, les dépenses augmentent, et le lien entre les deux n'est pas maîtrisé.",
+          },
+          {
+            title: "Les investisseurs demandent un reporting structuré.",
+            text: "Une startup en levée de fonds ou une PME avec des actionnaires doit fournir des analyses financières régulières. Des chiffres approximatifs ou des tableaux Excel personnels ne passent pas le filtre des VCs parisiens.",
+          },
+          {
+            title: "La croissance s'accélère mais la rentabilité stagne.",
+            text: "Le chiffre d'affaires augmente, mais la marge nette ne suit pas. Sans une analyse par produit, par client ou par canal de distribution, il est impossible d'identifier le levier d'amélioration.",
+          },
+          {
+            title: "La fonction finance repose sur une seule personne surchargée.",
+            text: "Un comptable ou un office manager gère les factures, la paie et la trésorerie. Aucune vision stratégique, aucune anticipation. Les décisions se prennent au jour le jour.",
+          },
+          {
+            title: "L'entreprise prépare une levée de fonds ou une opération de croissance externe.",
+            text: "Le data room, le financial model, la due diligence : ces étapes exigent une expertise financière senior que le dirigeant ne peut pas improviser.",
+          },
+        ],
+        closingText:
+          "Ces signaux ne signifient pas forcément qu'il faut recruter un DAF à temps plein. Pour une structure de dix à soixante personnes, un poste à temps plein est souvent surdimensionné et coûteux. Le DAF externalisé à Paris offre une flexibilité et une expertise adaptées à ce stade de croissance.",
+      },
+      {
+        id: "faq",
+        title: "Questions fréquentes",
+        faqs: [
+          {
+            question: "Qu'est-ce qu'un DAF externalisé à Paris ?",
+            answer:
+              "C'est un directeur administratif et financier senior qui intervient à temps partagé dans votre entreprise parisienne ou francilienne, sans être salarié. Il assume le pilotage financier, le reporting, la trésorerie, les relations avec les investisseurs et la structuration de la fonction finance, avec une flexibilité adaptée à votre croissance.",
+          },
+          {
+            question: "Combien coûte un DAF externalisé à Paris ?",
+            answer:
+              "Les formules Iter Advisors démarrent à 2 000 euros par mois. Le coût total dépend du nombre de jours d'intervention, de la complexité de l'activité et du périmètre couvert. Pour comparaison, un DAF senior à Paris coûte entre 120 000 et 180 000 euros brut annuel, charges comprises. L'externalisation représente une économie de 60 à 85 %.",
+          },
+          {
+            question: "Quelle différence entre un DAF externalisé et un consultant financier ponctuel ?",
+            answer:
+              "Un consultant livre une mission définie puis repart. Un DAF externalisé s'intègre dans la durée, participe aux comités de direction, prépare les board meetings et devient un partenaire stratégique. La relation est continue et évolutive, pas ponctuelle.",
+          },
+          {
+            question: "Un DAF externalisé peut-il accompagner une levée de fonds à Paris ?",
+            answer:
+              "Oui, et c'est l'une des missions les plus demandées. Iter Advisors prépare le data room, construit le financial model, accompagne les due diligences et négocie avec les VCs de la place parisienne (Partech, Elaia, Breega, Idinvest, Seventure Partners). Notre connaissance de l'écosystème est un atout concret.",
+          },
+          {
+            question: "Le DAF externalisé intervient-il sur site à Paris ?",
+            answer:
+              "Oui. Notre équipe parisienne intervient sur site dans votre bureau parisien et en remote selon vos préférences. Nous couvrons toute l'Ile-de-France. La flexibilité du mode de travail est un des avantages du modèle : le DAF est présent quand c'est nécessaire, sans occuper un bureau permanent.",
+          },
+          {
+            question: "Quand faut-il faire appel à un DAF externalisé plutôt que recruter en interne ?",
+            answer:
+              "L'externalisation est pertinente quand le volume d'activité ne justifie pas un poste à temps plein, quand l'entreprise traverse une phase de croissance rapide et instable, ou quand le dirigeant veut accéder à une expertise variée sans engager un salarié. C'est souvent le cas des startups et des PME en développement à Paris.",
+          },
+        ],
+      },
+      {
+        id: "conclusion",
+        title: "Conclusion",
+        paragraphs: [
+          "Un pilotage financier fiable et structuré est le fondement de toute croissance sereine. Pour les dirigeants de startups et de PME à Paris et en Ile-de-France, le DAF externalisé offre un équilibre pertinent : l'expertise d'un professionnel senior sans le coût et la rigidité d'un recrutement interne.",
+          "Chez Iter Advisors, nous traitons la direction financière comme un outil de décision, pas comme une simple fonction administrative. Nous connaissons l'écosystème parisien, nous travaillons avec les outils que vous utilisez déjà et nous nous adaptons à votre rythme de croissance.",
+          "Vous pouvez échanger avec Iter Advisors pour évaluer le niveau d'accompagnement financier adapté à votre entreprise parisienne.",
+        ],
+      },
+    ],
+  },
+};
+
+export function getDafExternalisePariContent(locale: "fr") {
+  return dafExternalisePariContent[locale];
+}
