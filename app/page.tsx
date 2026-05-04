@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/",
     fallbackTitle: "DAF externalisé & DAF à temps partagé | Iter Advisors",
     fallbackDescription:
-      "Iter Advisors, cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Pilotage financier, levée de fonds, reporting et gestion de trésorerie à Barcelone, Paris et Toulouse",
+      "DAF externalisé et CFO à temps partagé pour PME et startups. Pilotage financier, levée de fonds, trésorerie. Barcelone, Paris, Toulouse.",
   });
 }
 
