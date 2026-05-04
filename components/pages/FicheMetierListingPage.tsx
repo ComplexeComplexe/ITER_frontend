@@ -39,7 +39,7 @@ const content: Record<
     intro:
       "Discover our detailed job descriptions for corporate finance professionals. Roles, skills and career paths in financial management.",
     dafLabel: "Job description: Chief Financial Officer",
-    dafHref: "/en/daf-outsourcing/metier",
+    dafHref: "/en/fractional-cfo/metier",
     discoverLabel: "Discover",
   },
   es: {

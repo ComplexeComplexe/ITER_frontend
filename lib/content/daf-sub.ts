@@ -174,7 +174,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           "Discover the CFO role: responsibilities, key skills and how the position has evolved in modern companies.",
       },
       parentLabel: "CFO Outsourced",
-      parentHref: "/en/daf-outsourcing",
+      parentHref: "/en/fractional-cfo",
       breadcrumbLabel: "The CFO role",
       h1: "What is a CFO?",
       sections: [
@@ -222,7 +222,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           "The part-time CFO: a flexible and cost-effective solution for growing companies. Discover the benefits of timeshare CFO services with Iter Advisors.",
       },
       parentLabel: "CFO Outsourced",
-      parentHref: "/en/daf-outsourcing",
+      parentHref: "/en/fractional-cfo",
       breadcrumbLabel: "Shared-time CFO",
       h1: "The timeshare CFO: A flexible, efficient solution",
       sections: [
@@ -270,7 +270,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           "The transitional CFO intervenes during critical periods: restructuring, fundraising, temporary replacement. Discover this solution with Iter Advisors.",
       },
       parentLabel: "CFO Outsourced",
-      parentHref: "/en/daf-outsourcing",
+      parentHref: "/en/fractional-cfo",
       breadcrumbLabel: "Transitional CFO",
       h1: "What is a transitional CFO?",
       sections: [

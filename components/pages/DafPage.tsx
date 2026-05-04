@@ -1045,7 +1045,7 @@ export default function DafPage({
                 locale === "fr"
                   ? "/daf-externalise"
                   : locale === "en"
-                    ? "/en/daf-outsourcing"
+                    ? "/en/fractional-cfo"
                     : "/es/externalizacion-daf",
               cssSelectors: ["[data-speakable]"],
             }),
@@ -1067,7 +1067,7 @@ export default function DafPage({
                 locale === "fr"
                   ? "/daf-externalise"
                   : locale === "en"
-                    ? "/en/daf-outsourcing"
+                    ? "/en/fractional-cfo"
                     : "/es/externalizacion-daf",
               datePublished: "2024-09-01",
               dateModified: new Date().toISOString().split("T")[0],

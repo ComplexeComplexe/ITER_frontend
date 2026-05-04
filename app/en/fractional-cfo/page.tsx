@@ -14,9 +14,9 @@ export async function generateMetadata(): Promise<Metadata> {
       en: "/fractional-cfo",
       es: "/externalizacion-daf",
     },
-    title: "Fractional CFO for Startups & SMEs | Iter Advisors",
+    title: "Fractional CFO for Startups & SMEs - Part-time CFO Services | Iter Advisors",
     description:
-      "Hire a fractional CFO to scale your finance function without the cost of a full-time hire. Cash flow, fundraising, reporting and strategic advisory - from Barcelona, Paris and Toulouse.",
+      "Iter Advisors provides fractional CFO services for startups and growing SMEs. Get a part-time CFO with full-time expertise - flexible, affordable, and results-driven.",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Service",
@@ -101,7 +101,7 @@ export default async function FractionalCFOPage() {
               Book a free consultation
             </Link>
             <Link
-              href="/en/daf-outsourcing"
+              href="/en/services/fund-raising-support"
               className="border border-white/30 text-white px-8 py-3 rounded-lg hover:bg-white/10 transition"
             >
               Learn about our CFO services

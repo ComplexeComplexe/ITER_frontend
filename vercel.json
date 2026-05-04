@@ -90,12 +90,12 @@
     },
     {
       "source": "/en/services/gestion-financiere-externalisee",
-      "destination": "/en/daf-outsourcing",
+      "destination": "/en/fractional-cfo",
       "permanent": true
     },
     {
       "source": "/en/services/outsourced-financial-management",
-      "destination": "/en/daf-outsourcing",
+      "destination": "/en/fractional-cfo",
       "permanent": true
     },
     {
@@ -205,7 +205,7 @@
     },
     {
       "source": "/en/daf-externalise/metier-de-daf",
-      "destination": "/en/daf-outsourcing/metier",
+      "destination": "/en/fractional-cfo/metier",
       "permanent": true
     },
     {

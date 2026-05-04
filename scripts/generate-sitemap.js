@@ -12,10 +12,10 @@ const now = new Date().toISOString().split("T")[0];
 
 const staticPages = [
   { fr: "/", en: "/en", es: "/es" },
-  { fr: "/daf-externalise", en: "/en/daf-outsourcing", es: "/es/externalizacion-daf" },
-  { fr: "/daf-externalise/metier", en: "/en/daf-outsourcing/metier", es: "/es/externalizacion-daf/metier" },
-  { fr: "/daf-externalise/temps-partage", en: "/en/daf-outsourcing/shared-time", es: "/es/externalizacion-daf/multipropiedad" },
-  { fr: "/daf-externalise/transition", en: "/en/daf-outsourcing/transition", es: "/es/externalizacion-daf/transition" },
+  { fr: "/daf-externalise", en: "/en/fractional-cfo", es: "/es/externalizacion-daf" },
+  { fr: "/daf-externalise/metier", en: "/en/fractional-cfo/metier", es: "/es/externalizacion-daf/metier" },
+  { fr: "/daf-externalise/temps-partage", en: "/en/fractional-cfo/shared-time", es: "/es/externalizacion-daf/multipropiedad" },
+  { fr: "/daf-externalise/transition", en: "/en/fractional-cfo/transition", es: "/es/externalizacion-daf/transition" },
   { fr: "/drh-externalise", en: "/en/hr-outsourcing", es: "/es/externalizacion-rrhh" },
   { fr: "/drh-externalise/temps-partage", en: "/en/hr-outsourcing/shared-time", es: "/es/externalizacion-rrhh/tiempo-compartido" },
   { fr: "/services", en: "/en/services", es: "/es/services" },

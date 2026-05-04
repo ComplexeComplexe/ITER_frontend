@@ -7,10 +7,10 @@ import type { NextRequest } from "next/server";
 
 const SLUG_REDIRECTS: Record<string, string> = {
   /* ── FR slugs appearing in /en/ paths ─────────────────────────────── */
-  "/en/daf-externalise": "/en/daf-outsourcing",
-  "/en/daf-externalise/metier": "/en/daf-outsourcing/metier",
-  "/en/daf-externalise/temps-partage": "/en/daf-outsourcing/shared-time",
-  "/en/daf-externalise/transition": "/en/daf-outsourcing/transition",
+  "/en/daf-externalise": "/en/fractional-cfo",
+  "/en/daf-externalise/metier": "/en/fractional-cfo/metier",
+  "/en/daf-externalise/temps-partage": "/en/fractional-cfo/shared-time",
+  "/en/daf-externalise/transition": "/en/fractional-cfo/transition",
   "/en/daf-externalise-barcelone": "/en/outsourced-cfo-barcelona",
   "/en/daf-externalise-paris": "/en/outsourced-cfo-paris",
   "/en/daf-externalise-toulouse": "/en/outsourced-cfo-toulouse",
@@ -20,10 +20,10 @@ const SLUG_REDIRECTS: Record<string, string> = {
   "/en/politique-de-confidentialite": "/en/privacy-policy",
 
   /* ── ES slugs appearing in /en/ paths ─────────────────────────────── */
-  "/en/externalizacion-daf": "/en/daf-outsourcing",
-  "/en/externalizacion-daf/metier": "/en/daf-outsourcing/metier",
-  "/en/externalizacion-daf/multipropiedad": "/en/daf-outsourcing/shared-time",
-  "/en/externalizacion-daf/transition": "/en/daf-outsourcing/transition",
+  "/en/externalizacion-daf": "/en/fractional-cfo",
+  "/en/externalizacion-daf/metier": "/en/fractional-cfo/metier",
+  "/en/externalizacion-daf/multipropiedad": "/en/fractional-cfo/shared-time",
+  "/en/externalizacion-daf/transition": "/en/fractional-cfo/transition",
   "/en/externalizacion-rrhh": "/en/hr-outsourcing",
   "/en/externalizacion-rrhh/tiempo-compartido": "/en/hr-outsourcing/shared-time",
   "/en/cfo-externalizado-barcelona": "/en/outsourced-cfo-barcelona",
@@ -100,7 +100,7 @@ const SLUG_REDIRECTS: Record<string, string> = {
 
   /* ── Service FR slugs appearing in /en/ paths ────────────────────── */
   "/en/services/previsionnel-tresorerie": "/en/services/cash-flow-forecast",
-  "/en/services/gestion-financiere-externalisee": "/en/daf-outsourcing",  /* TICKET-11 cannibalization fix */
+  "/en/services/gestion-financiere-externalisee": "/en/fractional-cfo",  /* TICKET-11 cannibalization fix */
   "/en/services/accompagnement-levee-de-fond": "/en/services/fund-raising-support",
   "/en/services/comptabilite-externalisation": "/en/services/outsource-your-accounting",
   "/en/services/controle-de-gestion-externalise": "/en/services/outsourced-management-control",
@@ -114,7 +114,7 @@ const SLUG_REDIRECTS: Record<string, string> = {
 
   /* ── Service ES slugs appearing in /en/ paths ────────────────────── */
   "/en/services/prevision-tesoreria": "/en/services/cash-flow-forecast",
-  "/en/services/gestion-financiera-externalizada": "/en/daf-outsourcing",  /* TICKET-11 cannibalization fix */
+  "/en/services/gestion-financiera-externalizada": "/en/fractional-cfo",  /* TICKET-11 cannibalization fix */
   "/en/services/soporte-financiacion": "/en/services/fund-raising-support",
   "/en/services/externalizar-contabilidad": "/en/services/outsource-your-accounting",
   "/en/services/control-gestion-externalizado": "/en/services/outsourced-management-control",
@@ -133,8 +133,8 @@ const SLUG_REDIRECTS: Record<string, string> = {
   "/services/outsource-your-accounting": "/services/comptabilite-externalisation",
   "/services/outsourced-management-control": "/services/controle-de-gestion-externalise",
 
-  /* ── TICKET-11: Cannibalization fix - 301 to /en/daf-outsourcing ──── */
-  "/en/services/outsourced-financial-management": "/en/daf-outsourcing",
+  /* ── TICKET-11: Cannibalization fix - 301 to /en/fractional-cfo ──── */
+  "/en/services/outsourced-financial-management": "/en/fractional-cfo",
 
   /* ── Fractional CFO Barcelona: only exists in EN ─────────────────── */
   "/fractional-cfo-barcelona": "/daf-externalise-barcelone",

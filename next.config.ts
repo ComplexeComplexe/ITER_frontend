@@ -56,6 +56,15 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/en/daf-outsourcing",
+        destination: "/en/fractional-cfo",
+        permanent: true, // 301 redirect
+      },
+    ];
+  },
 };
 
 export default nextConfig;

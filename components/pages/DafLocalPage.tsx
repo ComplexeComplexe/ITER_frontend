@@ -125,7 +125,7 @@ export default function DafLocalPage({
     serviceType: locale === "fr" ? "DAF externalisé" : locale === "en" ? "Outsourced CFO" : "CFO externalizado",
   };
 
-  const dafPath = locale === "fr" ? "/daf-externalise" : locale === "en" ? "/en/daf-outsourcing" : "/es/externalizacion-daf";
+  const dafPath = locale === "fr" ? "/daf-externalise" : locale === "en" ? "/en/fractional-cfo" : "/es/externalizacion-daf";
   const dafLabel = locale === "fr" ? "DAF externalisé" : locale === "en" ? "Outsourced CFO" : "CFO externalizado";
 
   return (

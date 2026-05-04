@@ -82,13 +82,13 @@ const navFr: NavItem[] = [
 
 const navEn: NavItem[] = [
   {
-    title: "CFO Outsourced",
-    href: "/en/daf-outsourcing",
+    title: "Fractional CFO",
+    href: "/en/fractional-cfo",
     children: [
       { text: "Fractional CFO", href: "/en/fractional-cfo" },
-      { text: "Shared-time CFO", href: "/en/daf-outsourcing/shared-time" },
-      { text: "Transitional CFO", href: "/en/daf-outsourcing/transition" },
-      { text: "CFO : The Mission", href: "/en/daf-outsourcing/metier" },
+      { text: "Shared-time CFO", href: "/en/fractional-cfo/shared-time" },
+      { text: "Transitional CFO", href: "/en/fractional-cfo/transition" },
+      { text: "CFO : The Mission", href: "/en/fractional-cfo/metier" },
       { text: "Outsourced CFO Barcelona", href: "/en/outsourced-cfo-barcelona" },
       { text: "Fractional CFO Barcelona", href: "/en/fractional-cfo-barcelona" },
       { text: "Outsourced CFO Paris", href: "/en/outsourced-cfo-paris" },
