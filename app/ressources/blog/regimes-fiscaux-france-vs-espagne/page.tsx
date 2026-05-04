@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  openGraph: {
+    images: [
+      {
+        url: "/images/blog/regimes-fiscaux-france-vs-espagne.webp",
+        alt: "Régimes fiscaux : France vs Espagne — Comparaison complète 2026",
+      },
+    ],
+  },
 };
 
 export default async function Page() {

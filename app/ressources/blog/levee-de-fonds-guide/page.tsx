@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  openGraph: {
+    images: [
+      {
+        url: "/images/blog/levee-de-fonds.webp",
+        alt: "Levée de fonds : préparation financière et juridique 2026",
+      },
+    ],
+  },
 };
 
 export default async function Page() {

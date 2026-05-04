@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  openGraph: {
+    images: [
+      {
+        url: "/images/blog/daf-externalise.webp",
+        alt: "DAF externalisé : guide complet, tarifs et cas client 2026",
+      },
+    ],
+  },
 };
 
 export default async function Page() {
