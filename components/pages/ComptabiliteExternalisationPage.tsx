@@ -72,11 +72,31 @@ export default function ComptabiliteExternalisationPage({
               {/* Regular paragraphs */}
               {section.paragraphs && (
                 <div className="prose prose-sm sm:prose-base max-w-none space-y-4 mb-6">
-                  {section.paragraphs.map((para: string, pidx: number) => (
-                    <p key={pidx} className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      {para}
-                    </p>
-                  ))}
+                  {section.paragraphs.map((para: string, pidx: number) => {
+                    // Simple link replacement for [[text|url]] syntax
+                    const parts = para.split(/\[\[(.+?)\|(.+?)\]\]/g);
+                    return (
+                      <p key={pidx} className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        {parts.map((part: string, i: number) => {
+                          if (i % 3 === 0) return part; // Regular text
+                          if (i % 3 === 1) {
+                            // This is the link text, next item is the URL
+                            const url = parts[i + 1];
+                            return (
+                              <Link
+                                key={i}
+                                href={url}
+                                className="text-iter-violet hover:text-iter-violet/80 underline"
+                              >
+                                {part}
+                              </Link>
+                            );
+                          }
+                          return null; // URL part, already processed
+                        })}
+                      </p>
+                    );
+                  })}
                 </div>
               )}
 

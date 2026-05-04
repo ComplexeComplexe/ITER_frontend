@@ -79,6 +79,74 @@ export const comptabiliteExternalisationContent = {
           "Pour une entreprise en croissance, ces bénéfices se traduisent aussi par une meilleure préparation aux audits, aux due diligences et aux négociations avec des investisseurs ou des partenaires bancaires.",
       },
       {
+        id: "comparatif",
+        title: "Comparatif : comptable interne vs cabinet vs externalisation",
+        paragraphs: [
+          "Que vous hésitiez entre recruter en interne, solliciter un cabinet traditionnel ou externaliser votre comptabilité, ce tableau comparatif vous aidera à évaluer les coûts réels et les avantages de chaque approche :",
+        ],
+        tables: [
+          {
+            caption: "Comparaison détaillée des trois modèles de comptabilité",
+            headers: [
+              "Critère",
+              "Comptable interne (TPE/PME)",
+              "Cabinet expertise comptable",
+              "Externalisation Iter Advisors",
+            ],
+            rows: [
+              [
+                "Coût annuel (entreprise de 15-20 personnes)",
+                "35 000 € - 55 000 €",
+                "4 000 € - 8 000 €",
+                "4 200 € - 9 600 €",
+              ],
+              [
+                "Outils et logiciels",
+                "Variable (souvent legacy)",
+                "Imposés par le cabinet",
+                "Au choix (Pennylane, Sage, QB)",
+              ],
+              [
+                "Délai de réponse (questions urgentes)",
+                "Immédiat",
+                "48-72 heures",
+                "24 heures",
+              ],
+              [
+                "Pilotage financier (tableaux de bord, KPIs)",
+                "Limité",
+                "Liasses fiscales uniquement",
+                "Reporting mensuel complet + analyse",
+              ],
+              [
+                "Flexibilité (ajustement du volume)",
+                "Contrat fixe (12-24 mois)",
+                "Forfait standard",
+                "Modulaire mois par mois",
+              ],
+              [
+                "Délai de mise en place",
+                "2-3 mois (recrutement)",
+                "2-4 semaines",
+                "1-2 semaines",
+              ],
+              [
+                "Continuité en cas d'absence",
+                "Risque de rupture",
+                "Assuré (autre expert-comptable)",
+                "Assuré (équipe dédiée)",
+              ],
+              [
+                "Relation de confiance établie",
+                "Moyenne (1 seul interlocuteur)",
+                "Très bonne (cabinet établi)",
+                "Excellente (partenaire long terme)",
+              ],
+            ],
+          },
+        ],
+      },
+      {
         id: "approche-iter",
         title: "Comment Iter Advisors accompagne votre comptabilité externalisée",
         paragraphs: [
@@ -87,6 +155,8 @@ export const comptabiliteExternalisationContent = {
           "Un périmètre clair et complet. Notre accompagnement couvre la tenue de la comptabilité générale, les déclarations TVA et fiscales, la gestion de la paie et des charges sociales, ainsi que la préparation et le suivi de la clôture comptable annuelle. Chaque point est traité avec la même rigueur, sans délégation opaque à des sous-traitants.",
           "Des comptables qui comprennent votre business. Nos équipes ne se contentent pas de saisir des écritures. Elles comprennent le contexte de votre entreprise : votre modèle économique, vos enjeux de trésorerie, vos obligations envers des investisseurs. Cette vision globale permet de produire une comptabilité qui sert le pilotage, pas seulement la conformité fiscale.",
         ],
+        closingText:
+          "L'externalisation comptable fonctionne d'autant mieux qu'elle s'intègre dans une stratégie financière globale. Pour une vision complète, explorez aussi notre offre [[DAF externalisé|/daf-externalise-paris]] (direction financière complète) et nos services de [[prévisionnel de trésorerie|/services/previsionnel-tresorerie]] et [[contrôle de gestion|/services/controle-de-gestion-externalise]] pour un pilotage à 360°.",
       },
       {
         id: "erreurs-eviter",
