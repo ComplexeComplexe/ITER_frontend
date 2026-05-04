@@ -3,13 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronDown, MapPin, Building2, Users, Briefcase, Phone, BarChart3, Wallet, Rocket, Compass, Network } from "lucide-react";
+import { ArrowRight, ChevronDown, MapPin, Building2, Users, Briefcase, Phone, BarChart3, Wallet, Rocket, Compass, Network, Star } from "lucide-react";
 import Image from "next/image";
 import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/strapi";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { getDafLocalContent, DafLocalCity } from "@/lib/content/daf-local";
 import { faqPageSchema } from "@/lib/schemas";
+import { TRUSTFOLIO_REVIEWS, TRUSTFOLIO_REVIEW_COUNT, TRUSTFOLIO_RATING } from "@/lib/content/trustfolio-reviews";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
@@ -68,16 +69,43 @@ export default function DafLocalPage({
     priceRange: "€€",
     openingHours: "Mo-Fr 09:00-18:00",
     image: "https://www.iteradvisors.com/images/og-default.png",
-    // Tied to the Organization-level aggregateRating (Iter Advisors, 5/5 on 31
-    // reviews) so Google can attribute the rating to each local entity without
-    // duplicating the AggregateRating subtree per page.
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5",
-      reviewCount: 31,
+      ratingValue: String(TRUSTFOLIO_RATING),
+      reviewCount: String(TRUSTFOLIO_REVIEW_COUNT),
       bestRating: "5",
       worstRating: "1",
     },
+    review: TRUSTFOLIO_REVIEWS.map((review) => ({
+      "@type": "Review",
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: String(TRUSTFOLIO_RATING),
+        bestRating: "5",
+      },
+      author: {
+        "@type": "Person",
+        name: review.name,
+        jobTitle: review.jobTitle,
+        worksFor: { "@type": "Organization", "name": review.company },
+      },
+      datePublished: review.datePublished,
+      reviewBody: review.reviewBody,
+      publisher: {
+        "@type": "Organization",
+        name: "Trustfolio",
+        url: "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
+      },
+      itemReviewed: {
+        "@id": `https://www.iteradvisors.com/${
+          locale === "fr"
+            ? `daf-externalise-${city}`
+            : locale === "en"
+              ? `outsourced-cfo-${city === "barcelone" ? "barcelona" : city}`
+              : `cfo-externalizado-${city === "barcelone" ? "barcelona" : city}`
+        }#localbusiness`,
+      },
+    })),
   };
 
   const serviceSchema = {
@@ -291,6 +319,106 @@ export default function DafLocalPage({
                 <ArrowRight size={16} className="ml-auto text-foreground/30 group-hover:text-iter-violet transition-all group-hover:translate-x-1" />
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials / Avis clients vérifiés */}
+      <section className="py-20 bg-muted/30" aria-labelledby="testimonials-heading">
+        <div className="container max-w-4xl">
+          <div className="mb-12">
+            <h2 id="testimonials-heading" className="text-3xl lg:text-4xl font-bold font-heading text-foreground mb-4">
+              {locale === "fr"
+                ? "Avis clients vérifiés"
+                : locale === "en"
+                  ? "Verified customer reviews"
+                  : "Opiniones de clientes verificadas"}
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              {locale === "fr" ? (
+                <>
+                  <strong>Note 5/5 sur {TRUSTFOLIO_REVIEW_COUNT} avis authentifiés</strong> par{" "}
+                  <a
+                    href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc"
+                    rel="noopener nofollow"
+                    target="_blank"
+                    className="text-iter-violet hover:underline font-semibold"
+                  >
+                    Trustfolio
+                  </a>
+                </>
+              ) : locale === "en" ? (
+                <>
+                  <strong>5/5 rating on {TRUSTFOLIO_REVIEW_COUNT} verified reviews</strong> from{" "}
+                  <a
+                    href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc"
+                    rel="noopener nofollow"
+                    target="_blank"
+                    className="text-iter-violet hover:underline font-semibold"
+                  >
+                    Trustfolio
+                  </a>
+                </>
+              ) : (
+                <>
+                  <strong>Calificación 5/5 en {TRUSTFOLIO_REVIEW_COUNT} opiniones verificadas</strong> de{" "}
+                  <a
+                    href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc"
+                    rel="noopener nofollow"
+                    target="_blank"
+                    className="text-iter-violet hover:underline font-semibold"
+                  >
+                    Trustfolio
+                  </a>
+                </>
+              )}
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            {TRUSTFOLIO_REVIEWS.map((review, idx) => (
+              <div key={idx} className="bg-background border border-border rounded-2xl p-8">
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} size={18} className="fill-iter-chartreuse text-iter-chartreuse" />
+                  ))}
+                </div>
+                <blockquote className="text-lg text-muted-foreground italic mb-4 leading-relaxed">
+                  "{review.reviewBody}"
+                </blockquote>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                  <div>
+                    <p className="font-semibold text-foreground">
+                      {review.name}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {review.jobTitle} {locale === "fr" ? "chez" : "at"} <strong>{review.company}</strong>
+                    </p>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    {new Date(review.datePublished).toLocaleDateString(locale === "fr" ? "fr-FR" : locale === "es" ? "es-ES" : "en-US", {
+                      year: "numeric",
+                      month: "long",
+                    })}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <a
+              href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc"
+              rel="noopener nofollow"
+              target="_blank"
+              className="inline-flex items-center gap-2 text-iter-violet hover:text-iter-violet/80 font-semibold transition-colors"
+            >
+              {locale === "fr"
+                ? `Voir les ${TRUSTFOLIO_REVIEW_COUNT} avis sur Trustfolio →`
+                : locale === "en"
+                  ? `View all ${TRUSTFOLIO_REVIEW_COUNT} reviews on Trustfolio →`
+                  : `Ver las ${TRUSTFOLIO_REVIEW_COUNT} opiniones en Trustfolio →`}
+            </a>
           </div>
         </div>
       </section>
