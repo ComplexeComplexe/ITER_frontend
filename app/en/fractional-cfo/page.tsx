@@ -165,7 +165,7 @@ export default async function FractionalCFOPage() {
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-[#0a1628] mb-8">
-            Fractional CFO vs full-time CFO
+            Fractional CFO vs CFO outsourced
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
@@ -173,7 +173,7 @@ export default async function FractionalCFOPage() {
                 <tr className="bg-[#0a1628] text-white">
                   <th className="p-4 font-semibold">Criteria</th>
                   <th className="p-4 font-semibold">Fractional CFO</th>
-                  <th className="p-4 font-semibold">Full-time CFO</th>
+                  <th className="p-4 font-semibold">CFO Outsourced</th>
                 </tr>
               </thead>
               <tbody className="text-gray-700">
