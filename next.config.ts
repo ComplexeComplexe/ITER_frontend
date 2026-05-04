@@ -63,6 +63,65 @@ const nextConfig: NextConfig = {
         destination: "/en/fractional-cfo",
         permanent: true, // 301 redirect
       },
+      // 404 fix: /resources/ → /ressources/ (English-style path to French-style)
+      {
+        source: "/resources/:path*",
+        destination: "/ressources/:path*",
+        permanent: true, // 301 redirect
+      },
+      {
+        source: "/en/resources/:path*",
+        destination: "/en/ressources/:path*",
+        permanent: true, // 301 redirect
+      },
+      {
+        source: "/es/resources/:path*",
+        destination: "/es/ressources/:path*",
+        permanent: true, // 301 redirect
+      },
+      // 404 fix: Blog slug inconsistencies
+      {
+        source: "/ressources/blog/levee-de-fonds-startup",
+        destination: "/ressources/blog/levee-de-fonds-guide",
+        permanent: true, // 301 redirect
+      },
+      {
+        source: "/en/ressources/blog/levee-de-fonds-startup",
+        destination: "/en/ressources/blog/levee-de-fonds-guide",
+        permanent: true, // 301 redirect
+      },
+      {
+        source: "/ressources/blog/daf-externalise",
+        destination: "/ressources/blog/daf-externalise-guide",
+        permanent: true, // 301 redirect
+      },
+      {
+        source: "/en/ressources/blog/daf-externalise",
+        destination: "/en/ressources/blog/daf-externalise-guide",
+        permanent: true, // 301 redirect
+      },
+      // 404 fix: /fractional-cfo/metier should redirect to correct resource
+      {
+        source: "/en/fractional-cfo/metier",
+        destination: "/en/ressources/fiche-metier",
+        permanent: true, // 301 redirect
+      },
+      {
+        source: "/fractional-cfo/metier",
+        destination: "/ressources/fiche-metier",
+        permanent: true, // 301 redirect
+      },
+      // 404 fix: /fractional-cfo/shared-time → /fractional-cfo page
+      {
+        source: "/en/fractional-cfo/shared-time",
+        destination: "/en/fractional-cfo",
+        permanent: true, // 301 redirect
+      },
+      {
+        source: "/fractional-cfo/shared-time",
+        destination: "/fractional-cfo",
+        permanent: true, // 301 redirect
+      },
     ];
   },
 };
