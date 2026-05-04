@@ -5,7 +5,7 @@ export const comptabiliteExternalisationContent = {
       description:
         "Externalisez votre comptabilité avec Iter Advisors : tenue des comptes, déclarations fiscales, paie et clôture annuelle. Intégration fluide avec Pennylane, Sage, QuickBooks.",
     },
-    h1: "Externalisation comptable pour startups et PME : gagner en fiabilité sans recruter",
+    h1: "Externalisation comptable : tarifs, méthode et bénéfices pour PME et startups",
     sections: [
       {
         id: "definition",

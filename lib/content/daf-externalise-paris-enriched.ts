@@ -69,9 +69,9 @@ export const dafExternalisePariEnrichedContent = {
       },
       {
         id: "missions",
-        title: "Les missions d'un DAF externalisé à Paris",
+        title: "Les missions d'un DAF externalisé à Paris et en Île-de-France",
         paragraphs: [
-          "Le périmètre d'intervention d'un DAF externalisé couvre l'ensemble de la fonction finance. Voici les missions les plus demandées par les entreprises parisiennes :",
+          "Le périmètre d'intervention d'un DAF externalisé couvre l'ensemble de la fonction finance. Voici les missions les plus demandées par les entreprises de Paris et de l'Île-de-France :",
         ],
         tables: [
           {
@@ -119,9 +119,9 @@ export const dafExternalisePariEnrichedContent = {
       },
       {
         id: "marche-parisien",
-        title: "Pourquoi Paris est un marché spécifique pour le DAF externalisé",
+        title: "Pourquoi Paris et l'Île-de-France sont un marché spécifique pour le DAF externalisé",
         paragraphs: [
-          "Le marché parisien présente des caractéristiques qui rendent le DAF externalisé particulièrement pertinent :",
+          "Le marché parisien et francilien présente des caractéristiques qui rendent le DAF externalisé particulièrement pertinent. Que vous soyez basé dans le 8e arrondissement de Paris, en banlieue (Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne) ou dans les Yvelines, l'Île-de-France concentre l'écosystème startup et entrepreneurial français :",
         ],
         kpis: [
           {
@@ -162,9 +162,9 @@ export const dafExternalisePariEnrichedContent = {
       },
       {
         id: "avantage-iter",
-        title: "L'avantage Iter Advisors à Paris",
+        title: "L'avantage Iter Advisors à Paris et en Île-de-France",
         paragraphs: [
-          "Notre équipe parisienne intervient sur site et en remote dans toute l'Ile-de-France. Nous connaissons parfaitement l'écosystème financier parisien et entretenons des relations privilégiées avec les principaux acteurs du marché.",
+          "Notre équipe parisienne intervient sur site et en remote dans toute l'Île-de-France : Paris (75), Hauts-de-Seine (92), Seine-Saint-Denis (93), Val-de-Marne (94), Essonne (91), Yvelines (78), Seine-et-Marne (77) et Val-d'Oise (95). Nous connaissons parfaitement l'écosystème financier francilien et entretenons des relations privilégiées avec les principaux acteurs du marché, des fonds d'investissement parisiens aux dispositifs d'aide régionaux.",
         ],
         tables: [
           {
@@ -199,9 +199,9 @@ export const dafExternalisePariEnrichedContent = {
       },
       {
         id: "signaux",
-        title: "Les signaux qui montrent qu'il faut faire appel à un DAF externalisé à Paris",
+        title: "Les signaux qui montrent qu'il faut faire appel à un DAF externalisé à Paris et en Île-de-France",
         paragraphs: [
-          "Plusieurs situations concrètes indiquent qu'une direction financière artisanale atteint ses limites :",
+          "Plusieurs situations concrètes indiquent qu'une direction financière artisanale atteint ses limites. Vous êtes dirigeant d'une startup à Station F, d'une PME en banlieue parisienne (La Défense, Boulogne, Saint-Denis) ou d'une entreprise technologique en Île-de-France ? Ces signaux vous concernent :",
         ],
         bullets: [
           {
