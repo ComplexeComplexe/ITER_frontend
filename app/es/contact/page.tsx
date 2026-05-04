@@ -8,8 +8,8 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "contact-page",
     locale: "es",
     path: "/contact",
-    fallbackTitle: "Contacte con nuestros CFOs externalizados - Barcelona, París, Toulouse | Iter Advisors",
-    fallbackDescription: "Contacte con Iter Advisors.",
+    fallbackTitle: "Contacto | Iter Advisors",
+    fallbackDescription: "Contacte con Iter Advisors para una consulta gratuita con un experto financiero.",
   });
 }
 

@@ -8,8 +8,8 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "services-page",
     locale: "fr",
     path: "/services",
-    fallbackTitle: "Services DAF externalisé - Trésorerie, contrôle de gestion, levée de fonds | Iter Advisors",
-    fallbackDescription: "Nos services de direction financière externalisée : prévisionnel de trésorerie, contrôle de gestion, accompagnement levée de fonds, comptabilité et gestion financière. Solutions sur mesure pour PME et startups.",
+    fallbackTitle: "Services DAF externalisé | Iter Advisors",
+    fallbackDescription: "Services de direction financière externalisée : trésorerie, contrôle de gestion, levée de fonds, comptabilité pour PME et startups.",
   });
 }
 

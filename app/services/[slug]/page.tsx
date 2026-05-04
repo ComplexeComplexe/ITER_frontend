@@ -16,15 +16,15 @@ const basePath = "/services";
 /* ── Bug 1 + 4 fix: titres fallback corriges et enrichis ── */
 const fallbackTitles: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
-    "Prévisionnel de Trésorerie PME - Modèle Glissant 13 Semaines | Iter Advisors",
+    "Prévisionnel de Trésorerie PME | Iter Advisors",
   "gestion-financiere-externalisee":
-    "Gestion Financière Externalisée - DAF à Temps Partagé dès 2j/mois | Iter Advisors",
+    "Gestion Financière Externalisée | Iter Advisors",
   "accompagnement-levee-de-fond":
-    "Levée de Fonds Startup - Data Room, Due Diligence & Négociation | Iter Advisors",
+    "Levée de Fonds Startup | Iter Advisors",
   "comptabilite-externalisation":
-    "Externalisation Comptabilité - Tenue, Déclarations & Clôture | Iter Advisors",
+    "Externalisation Comptabilité | Iter Advisors",
   "controle-de-gestion-externalise":
-    "Contrôle de Gestion Externalisé - Tableaux de Bord & KPIs | Iter Advisors",
+    "Contrôle de Gestion Externalisé | Iter Advisors",
 };
 
 /* ── Bug 3 fix: meta descriptions uniques par page ── */

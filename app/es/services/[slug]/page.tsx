@@ -17,15 +17,15 @@ const locale = "es" as const;
 /* ── Fallback titles ES (Strapi SEO is shared across locales for Single Types) ── */
 const fallbackTitles: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
-    "Previsión de Tesorería PYME - Modelo Deslizante 13 Semanas | Iter Advisors",
+    "Previsión de Tesorería PYME | Iter Advisors",
   "gestion-financiere-externalisee":
-    "Gestión Financiera Externalizada - CFO a Tiempo Parcial desde 2 días/mes | Iter Advisors",
+    "Gestión Financiera Externalizada | Iter Advisors",
   "accompagnement-levee-de-fond":
-    "Captación de Fondos - Data Room, Due Diligence y Negociación | Iter Advisors",
+    "Captación de Fondos | Iter Advisors",
   "comptabilite-externalisation":
-    "Externalización Contable - Gestión, Declaraciones y Cierre | Iter Advisors",
+    "Externalización Contable | Iter Advisors",
   "controle-de-gestion-externalise":
-    "Control de Gestión Externalizado - Cuadros de Mando y KPIs | Iter Advisors",
+    "Control de Gestión Externalizado | Iter Advisors",
 };
 
 /* ── Fallback descriptions ES (unique per page) ── */
@@ -63,7 +63,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const canonical = getCanonicalServiceSlug(locale, slug);
   if (!canonical) {
-    return { title: "Servicios | Iter Advisors" };
+    return { title: "Services | Iter Advisors" };
   }
   /* Use static fallback directly because Strapi SEO component is shared
      across locales (Single Types) and always returns FR meta tags. */

@@ -5,8 +5,8 @@ import { getCmsNavigation } from "@/lib/strapi";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Ressources DAF externalisé - Blog, fiches métiers, cas clients | Iter Advisors",
-  description: "Retrouvez toutes nos ressources : blog, glossaire, fiches métiers et témoignages clients.",
+  title: "Ressources DAF externalisé | Iter Advisors",
+  description: "Ressources : blog, glossaire, fiches métiers et témoignages clients.",
   path: "/ressources",
 });
 

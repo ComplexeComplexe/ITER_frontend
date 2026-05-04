@@ -17,15 +17,15 @@ const locale = "en" as const;
 /* ── Fallback titles EN (Strapi SEO is shared across locales for Single Types) ── */
 const fallbackTitles: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
-    "Cash Flow Forecasting for SMEs - 13-Week Rolling Model | Iter Advisors",
+    "Cash Flow Forecasting for SMEs | Iter Advisors",
   "gestion-financiere-externalisee":
-    "Part-Time Financial Management - Fractional CFO from 2 Days/Month | Iter Advisors",
+    "Part-Time Financial Management | Iter Advisors",
   "accompagnement-levee-de-fond":
-    "Fundraising Support - Data Room, Due Diligence & Investor Prep | Iter Advisors",
+    "Fundraising Support | Iter Advisors",
   "comptabilite-externalisation":
-    "Outsourced Accounting - Bookkeeping, Tax & Year-End Closing | Iter Advisors",
+    "Outsourced Accounting | Iter Advisors",
   "controle-de-gestion-externalise":
-    "Part-Time Management Control - KPI Dashboards & Cost Analysis | Iter Advisors",
+    "Part-Time Management Control | Iter Advisors",
 };
 
 /* ── Fallback descriptions EN (unique per page) ── */
