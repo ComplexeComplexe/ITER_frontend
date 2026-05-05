@@ -209,7 +209,7 @@ async function sendLeadNotification(data: FormData): Promise<boolean> {
           Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-          from: 'leads@iteradvisors.com',
+          from: 'Iter Advisors <contact@mail.iteradvisors.com>',
           to: 'contact@iteradvisors.com',
           subject: `Nouvelle demande d'audit - ${data.firstName} ${data.lastName} (${data.company})`,
           html: emailContent,
