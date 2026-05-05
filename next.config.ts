@@ -241,6 +241,38 @@ const nextConfig: NextConfig = {
         destination: "/en/resources/glossary",
         permanent: true, // 301 redirect (French → English)
       },
+      // TICKET 4: Spanish service page for accounting externalization
+      {
+        source: "/es/services/comptabilite-externalisation",
+        destination: "/es/services/externalizar-contabilidad",
+        permanent: true, // 301 redirect (French service → Spanish service)
+      },
+      // TICKET 4: English service pages for consistency
+      {
+        source: "/en/services/comptabilite-externalisation",
+        destination: "/en/services/outsource-your-accounting",
+        permanent: true, // 301 redirect (French → English)
+      },
+      {
+        source: "/en/services/accompagnement-levee-de-fond",
+        destination: "/en/services/fundraising-support",
+        permanent: true, // 301 redirect (French → English)
+      },
+      {
+        source: "/en/services/controle-de-gestion-externalise",
+        destination: "/en/services/outsourced-management-control",
+        permanent: true, // 301 redirect (French → English)
+      },
+      {
+        source: "/en/services/gestion-financiere-externalisee",
+        destination: "/en/services/financial-management",
+        permanent: true, // 301 redirect (French → English)
+      },
+      {
+        source: "/en/services/previsionnel-tresorerie",
+        destination: "/en/services/cash-flow-forecast",
+        permanent: true, // 301 redirect (French → English)
+      },
     ];
   },
 };
