@@ -204,11 +204,11 @@ const nextConfig: NextConfig = {
         destination: "/es/campana",
         permanent: true, // 301 redirect (French → Spanish)
       },
-      // TICKET 3: English URL slug corrections (French → English)
+      // TICKET 3: English URL slug corrections (English → French for canonical paths)
       {
-        source: "/en/ressources/:path*",
-        destination: "/en/resources/:path*",
-        permanent: true, // 301 redirect (French → English)
+        source: "/en/resources/:path*",
+        destination: "/en/ressources/:path*",
+        permanent: true, // 301 redirect (normalize to French-style canonical paths)
       },
       {
         source: "/en/profil",
@@ -227,13 +227,13 @@ const nextConfig: NextConfig = {
       },
       // Handle specific ressources → resources mappings for fiche-metier
       {
-        source: "/en/resources/fiche-metier/:path*",
-        destination: "/en/resources/job-descriptions/:path*",
+        source: "/en/ressources/fiche-metier/:path*",
+        destination: "/en/ressources/job-descriptions/:path*",
         permanent: true, // 301 redirect (fiche-metier → job-descriptions)
       },
       {
-        source: "/en/resources/glossaire",
-        destination: "/en/resources/glossary",
+        source: "/en/ressources/glossaire",
+        destination: "/en/ressources/glossary",
         permanent: true, // 301 redirect (French → English)
       },
       // TICKET 4: Spanish service page for accounting externalization
@@ -250,7 +250,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/en/services/accompagnement-levee-de-fond",
-        destination: "/en/services/fundraising-support",
+        destination: "/en/services/fund-raising-support",
         permanent: true, // 301 redirect (French → English)
       },
       {
@@ -260,7 +260,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/en/services/gestion-financiere-externalisee",
-        destination: "/en/services/financial-management",
+        destination: "/en/fractional-cfo",
         permanent: true, // 301 redirect (French → English)
       },
       {
