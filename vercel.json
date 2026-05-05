@@ -64,6 +64,11 @@
   ],
   "redirects": [
     {
+      "source": "/en/resources/:path*",
+      "destination": "/en/ressources/:path*",
+      "permanent": true
+    },
+    {
       "source": "/services/consolidation-financiere",
       "destination": "/services",
       "permanent": true
