@@ -204,6 +204,43 @@ const nextConfig: NextConfig = {
         destination: "/es/campana",
         permanent: true, // 301 redirect (French → Spanish)
       },
+      // TICKET 3: English URL slug corrections (French → English)
+      {
+        source: "/en/ressources/:path*",
+        destination: "/en/resources/:path*",
+        permanent: true, // 301 redirect (French → English)
+      },
+      {
+        source: "/en/a-propos",
+        destination: "/en/about",
+        permanent: true, // 301 redirect (French → English)
+      },
+      {
+        source: "/en/profil",
+        destination: "/en/profile",
+        permanent: true, // 301 redirect (French → English)
+      },
+      {
+        source: "/en/qualification",
+        destination: "/en/assessment",
+        permanent: true, // 301 redirect (French → English)
+      },
+      {
+        source: "/en/campagne",
+        destination: "/en/campaign",
+        permanent: true, // 301 redirect (French → English)
+      },
+      // Handle specific ressources → resources mappings for fiche-metier
+      {
+        source: "/en/resources/fiche-metier/:path*",
+        destination: "/en/resources/job-descriptions/:path*",
+        permanent: true, // 301 redirect (fiche-metier → job-descriptions)
+      },
+      {
+        source: "/en/resources/glossaire",
+        destination: "/en/resources/glossary",
+        permanent: true, // 301 redirect (French → English)
+      },
     ];
   },
 };
