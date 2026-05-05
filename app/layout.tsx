@@ -96,6 +96,21 @@ gtag('consent','default',{
         />
         {/* End Google Tag Manager */}
 
+        {/* Google Ads Conversion Tracking */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18030187059"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-18030187059');`,
+          }}
+        />
+        {/* End Google Ads Conversion Tracking */}
+
         {/* Favicons & Manifest */}
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
