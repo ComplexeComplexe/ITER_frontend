@@ -210,7 +210,7 @@ async function sendLeadNotification(data: FormData): Promise<boolean> {
         },
         body: JSON.stringify({
           from: 'leads@iteradvisors.com',
-          to: 'recrutement@iteradvisors.com',
+          to: 'contact@iteradvisors.com',
           subject: `Nouvelle demande d'audit - ${data.firstName} ${data.lastName} (${data.company})`,
           html: emailContent,
           reply_to: data.email,
