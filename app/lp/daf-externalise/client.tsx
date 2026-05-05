@@ -3,8 +3,10 @@
 import Script from 'next/script';
 import { useState, useEffect } from 'react';
 import { ChevronDown, Star } from 'lucide-react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
-// Type definitions for form and tracking
+// Type definitions
 interface FormData {
   firstName: string;
   lastName: string;
@@ -12,7 +14,7 @@ interface FormData {
   company: string;
   phone?: string;
   teamSize: string;
-  priority: string;
+  mainNeed: string;
   message?: string;
   rgpd: boolean;
   utm_source?: string;
@@ -35,6 +37,9 @@ function pushToDataLayer(event: string, data?: Record<string, any>) {
   if (typeof window !== 'undefined' && window.dataLayer) {
     window.dataLayer.push({
       event,
+      page_type: 'landing_page',
+      page_name: 'lp_daf_externalise',
+      service: 'daf_externalise',
       ...data,
     });
   }
@@ -49,7 +54,7 @@ function ConversionForm() {
     company: '',
     phone: '',
     teamSize: '',
-    priority: '',
+    mainNeed: '',
     message: '',
     rgpd: false,
   });
@@ -79,11 +84,6 @@ function ConversionForm() {
       landing_url: window.location.href,
       referrer: document.referrer,
     }));
-
-    pushToDataLayer('page_view', {
-      page_title: document.title,
-      page_url: window.location.href,
-    });
   }, []);
 
   const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -105,21 +105,16 @@ function ConversionForm() {
       }));
     }
 
-    // Clear field errors
     setErrors((prev) => prev.filter((err) => err.field !== name));
 
-    // Track form field completed
-    pushToDataLayer('form_field_completed', {
+    pushToDataLayer('form_field_interaction', {
       field_name: name,
-      field_value: e.target instanceof HTMLInputElement && e.target.type === 'checkbox'
-        ? (e.target as HTMLInputElement).checked
-        : value,
     });
   };
 
   const handleFocus = () => {
-    pushToDataLayer('form_started', {
-      form_name: 'audit_cash_runway',
+    pushToDataLayer('lead_form_start', {
+      form_position: 'main_form',
     });
   };
 
@@ -128,11 +123,11 @@ function ConversionForm() {
 
     if (!formData.firstName.trim()) newErrors.push({ field: 'firstName', message: 'Prénom requis' });
     if (!formData.lastName.trim()) newErrors.push({ field: 'lastName', message: 'Nom requis' });
-    if (!formData.email.trim()) newErrors.push({ field: 'email', message: 'Email requis' });
-    if (!validateEmail(formData.email)) newErrors.push({ field: 'email', message: 'Email invalide' });
+    if (!formData.email.trim() || !validateEmail(formData.email))
+      newErrors.push({ field: 'email', message: 'Email invalide' });
     if (!formData.company.trim()) newErrors.push({ field: 'company', message: 'Société requise' });
     if (!formData.teamSize) newErrors.push({ field: 'teamSize', message: 'Taille équipe requise' });
-    if (!formData.priority) newErrors.push({ field: 'priority', message: 'Enjeu requis' });
+    if (!formData.mainNeed) newErrors.push({ field: 'mainNeed', message: 'Besoin requis' });
     if (!formData.rgpd) newErrors.push({ field: 'rgpd', message: 'Acceptation RGPD requise' });
 
     setErrors(newErrors);
@@ -141,16 +136,8 @@ function ConversionForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    pushToDataLayer('form_submit_attempt', { form_name: 'audit_cash_runway' });
 
     if (!validateForm()) {
-      const firstError = errors[0];
-      if (firstError) {
-        pushToDataLayer('form_error', {
-          field: firstError.field,
-          message: firstError.message,
-        });
-      }
       return;
     }
 
@@ -165,8 +152,9 @@ function ConversionForm() {
 
       if (response.ok) {
         setSubmitStatus('success');
-        pushToDataLayer('form_submitted', {
-          form_name: 'audit_cash_runway',
+        pushToDataLayer('lead_form_submit', {
+          lead_need: formData.mainNeed,
+          company_size: formData.teamSize,
           phone_provided: !!formData.phone,
         });
         setFormData({
@@ -176,28 +164,19 @@ function ConversionForm() {
           company: '',
           phone: '',
           teamSize: '',
-          priority: '',
+          mainNeed: '',
           message: '',
           rgpd: false,
         });
 
-        // Show success message
         setTimeout(() => {
           setSubmitStatus('idle');
         }, 5000);
       } else {
         setSubmitStatus('error');
-        const errorData = await response.json();
-        pushToDataLayer('form_error', {
-          status: response.status,
-          message: errorData.error || 'Erreur de soumission',
-        });
       }
     } catch (error) {
       setSubmitStatus('error');
-      pushToDataLayer('form_error', {
-        error: error instanceof Error ? error.message : 'Erreur inconnue',
-      });
     } finally {
       setIsSubmitting(false);
     }
@@ -233,7 +212,6 @@ function ConversionForm() {
           autoComplete="given-name"
           required
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-iter-violet focus:border-transparent outline-none"
-          aria-invalid={!!getFieldError('firstName')}
         />
         {getFieldError('firstName') && (
           <p className="text-red-600 text-sm mt-1">{getFieldError('firstName')}</p>
@@ -254,7 +232,6 @@ function ConversionForm() {
           autoComplete="family-name"
           required
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-iter-violet focus:border-transparent outline-none"
-          aria-invalid={!!getFieldError('lastName')}
         />
         {getFieldError('lastName') && (
           <p className="text-red-600 text-sm mt-1">{getFieldError('lastName')}</p>
@@ -275,7 +252,6 @@ function ConversionForm() {
           autoComplete="email"
           required
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-iter-violet focus:border-transparent outline-none"
-          aria-invalid={!!getFieldError('email')}
         />
         {getFieldError('email') && (
           <p className="text-red-600 text-sm mt-1">{getFieldError('email')}</p>
@@ -296,17 +272,16 @@ function ConversionForm() {
           autoComplete="organization"
           required
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-iter-violet focus:border-transparent outline-none"
-          aria-invalid={!!getFieldError('company')}
         />
         {getFieldError('company') && (
           <p className="text-red-600 text-sm mt-1">{getFieldError('company')}</p>
         )}
       </div>
 
-      {/* Téléphone (optionnel) */}
+      {/* Téléphone */}
       <div>
         <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-1">
-          Téléphone (optionnel)
+          Téléphone
         </label>
         <input
           id="phone"
@@ -315,7 +290,6 @@ function ConversionForm() {
           value={formData.phone}
           onChange={handleChange}
           autoComplete="tel"
-          inputMode="numeric"
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-iter-violet focus:border-transparent outline-none"
         />
       </div>
@@ -323,7 +297,7 @@ function ConversionForm() {
       {/* Taille équipe */}
       <div>
         <label htmlFor="teamSize" className="block text-sm font-medium text-foreground mb-1">
-          Taille de l'équipe *
+          Taille de l'entreprise *
         </label>
         <select
           id="teamSize"
@@ -332,42 +306,43 @@ function ConversionForm() {
           onChange={handleChange}
           required
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-iter-violet focus:border-transparent outline-none"
-          aria-invalid={!!getFieldError('teamSize')}
         >
           <option value="">-- Sélectionner --</option>
-          <option value="1-10">1-10</option>
-          <option value="11-50">11-50</option>
-          <option value="51-200">51-200</option>
-          <option value="200+">200+</option>
+          <option value="1-10">1-10 collaborateurs</option>
+          <option value="11-50">11-50 collaborateurs</option>
+          <option value="51-200">51-200 collaborateurs</option>
+          <option value="200+">200+ collaborateurs</option>
         </select>
         {getFieldError('teamSize') && (
           <p className="text-red-600 text-sm mt-1">{getFieldError('teamSize')}</p>
         )}
       </div>
 
-      {/* Enjeu prioritaire */}
+      {/* Besoin principal */}
       <div>
-        <label htmlFor="priority" className="block text-sm font-medium text-foreground mb-1">
-          Enjeu prioritaire *
+        <label htmlFor="mainNeed" className="block text-sm font-medium text-foreground mb-1">
+          Besoin principal *
         </label>
         <select
-          id="priority"
-          name="priority"
-          value={formData.priority}
+          id="mainNeed"
+          name="mainNeed"
+          value={formData.mainNeed}
           onChange={handleChange}
           required
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-iter-violet focus:border-transparent outline-none"
-          aria-invalid={!!getFieldError('priority')}
         >
           <option value="">-- Sélectionner --</option>
-          <option value="Trésorerie">Trésorerie</option>
+          <option value="Trésorerie">Trésorerie et cash flow</option>
+          <option value="Reporting">Reporting et board</option>
+          <option value="Budget">Budget et forecast</option>
           <option value="Levée de fonds">Levée de fonds</option>
-          <option value="Reporting">Reporting</option>
-          <option value="Structuration générale">Structuration générale</option>
+          <option value="Contrôle de gestion">Contrôle de gestion</option>
+          <option value="Structuration finance">Structuration finance</option>
+          <option value="Renfort">Renfort DAF</option>
           <option value="Autre">Autre</option>
         </select>
-        {getFieldError('priority') && (
-          <p className="text-red-600 text-sm mt-1">{getFieldError('priority')}</p>
+        {getFieldError('mainNeed') && (
+          <p className="text-red-600 text-sm mt-1">{getFieldError('mainNeed')}</p>
         )}
       </div>
 
@@ -381,13 +356,13 @@ function ConversionForm() {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="Décrivez en quelques mots votre contexte"
-          rows={4}
+          placeholder="Parlez-nous de votre situation financière..."
+          rows={3}
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-iter-violet focus:border-transparent outline-none"
         />
       </div>
 
-      {/* RGPD Checkbox */}
+      {/* RGPD */}
       <div className="flex items-start gap-3">
         <input
           id="rgpd"
@@ -397,12 +372,11 @@ function ConversionForm() {
           onChange={handleChange}
           required
           className="w-5 h-5 mt-1 cursor-pointer"
-          aria-invalid={!!getFieldError('rgpd')}
         />
         <label htmlFor="rgpd" className="text-sm text-muted-foreground">
-          J'accepte qu'Iter Advisors utilise mes données pour me recontacter dans le cadre de ma demande.{' '}
+          J'accepte qu'Iter Advisors utilise mes données pour me recontacter.{' '}
           <a href="/politique-de-confidentialite" className="text-iter-violet hover:underline">
-            Voir notre politique de confidentialité
+            Politique de confidentialité
           </a>
         </label>
       </div>
@@ -410,7 +384,7 @@ function ConversionForm() {
         <p className="text-red-600 text-sm">{getFieldError('rgpd')}</p>
       )}
 
-      {/* Hidden fields for UTM tracking */}
+      {/* Hidden fields */}
       {['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'landing_url', 'referrer'].map(
         (field) => (
           <input
@@ -422,24 +396,23 @@ function ConversionForm() {
         )
       )}
 
-      {/* Submit Button */}
       <button
         type="submit"
         disabled={isSubmitting}
-        data-event="form_submit_attempt"
+        onClick={() => pushToDataLayer('cta_click', { cta_text: 'Planifier mon diagnostic', cta_position: 'form' })}
         className="w-full px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 disabled:opacity-50"
       >
-        {isSubmitting ? 'Envoi en cours...' : 'Obtenir mon Audit Cash Runway →'}
+        {isSubmitting ? 'Envoi en cours...' : 'Planifier mon diagnostic financier'}
       </button>
 
       <p className="text-xs text-muted-foreground text-center">
-        Réponse en moins de 24h. Aucune donnée n'est partagée avec des tiers.
+        Nous revenons vers vous sous 24h ouvrées.
       </p>
     </form>
   );
 }
 
-// Sticky Mobile CTA Footer
+// Sticky Mobile CTA
 function StickyCTAFooter() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -458,25 +431,23 @@ function StickyCTAFooter() {
     <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 shadow-lg md:hidden z-40">
       <button
         onClick={() => {
-          pushToDataLayer('cta_sticky_click', { position: 'sticky_footer' });
+          pushToDataLayer('cta_click', { cta_text: 'Planifier diagnostic', cta_position: 'sticky_footer' });
           const formElement = document.getElementById('conversion-form');
           formElement?.scrollIntoView({ behavior: 'smooth' });
         }}
-        data-event="cta_sticky_click"
         className="w-full px-4 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold text-sm"
       >
-        Audit Cash Runway →
+        Planifier →
       </button>
     </div>
   );
 }
 
-// FAQ Component with Scroll Depth Tracking
+// FAQ with schema
 function FAQ() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   useEffect(() => {
-    // Track scroll depth
     let depths = new Set<string>();
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -485,16 +456,15 @@ function FAQ() {
 
       if (scrollPercent >= 25 && !depths.has('25')) {
         depths.add('25');
-        pushToDataLayer('scroll_depth_25', { depth: '25%' });
-      } else if (scrollPercent >= 50 && !depths.has('50')) {
+        pushToDataLayer('scroll_depth', { depth: '25%' });
+      }
+      if (scrollPercent >= 50 && !depths.has('50')) {
         depths.add('50');
-        pushToDataLayer('scroll_depth_50', { depth: '50%' });
-      } else if (scrollPercent >= 75 && !depths.has('75')) {
+        pushToDataLayer('scroll_depth', { depth: '50%' });
+      }
+      if (scrollPercent >= 75 && !depths.has('75')) {
         depths.add('75');
-        pushToDataLayer('scroll_depth_75', { depth: '75%' });
-      } else if (scrollPercent >= 99 && !depths.has('100')) {
-        depths.add('100');
-        pushToDataLayer('scroll_depth_100', { depth: '100%' });
+        pushToDataLayer('scroll_depth', { depth: '75%' });
       }
     };
 
@@ -504,40 +474,34 @@ function FAQ() {
 
   const faqs = [
     {
-      question: 'Combien coûte un DAF externalisé chez Iter Advisors ?',
+      question: 'Qu\'est-ce qu\'un DAF externalisé ?',
       answer:
-        'Nos formules démarrent à 2 000 € HT/mois pour 2-3 jours d\'intervention. Soit 80 % moins cher qu\'un DAF salarié à temps plein. Nous adaptons le package à vos besoins : pilotage de cash seul, reporting investisseur, gestion comptable complète, ou accompagnement levée de fonds. Chaque engagement est mensuel renouvelable — zéro pénalité de sortie. ',
-      answerLink: { text: 'Voir la grille tarifaire détaillée', href: '/daf-externalise#tarifs' },
+        'Un DAF externalisé est un directeur financier senior qui accompagne une entreprise sans être recruté à temps plein. Il intervient à temps partagé ou sur mission pour structurer la trésorerie, le budget, les reportings, le contrôle de gestion et les décisions financières. Aussi appelé DAF à temps partagé ou CFO part-time.',
     },
     {
-      question: 'Quand faire appel à un DAF externalisé ?',
+      question: 'Quelle différence avec un expert-comptable ?',
       answer:
-        'Dès que tu dois prendre des décisions financières critiques : lever des fonds, évaluer ta runway, comprendre tes marges, mettre en place du reporting pour tes investisseurs. Tu n\'as pas besoin d\'attendre d\'avoir un gros CFO salarié — ton DAF externalisé commence en 48h. ',
-      answerLink: { text: 'Guide complet', href: '/daf-externalise' },
+        'L\'expert-comptable sécurise la production comptable, fiscale et légale. Le DAF externalisé utilise ces chiffres pour aider le dirigeant à piloter l\'entreprise : trésorerie, marge, forecast, financement, budget et décisions stratégiques. Ils se complètent.',
     },
     {
-      question: 'DAF externalisé vs expert-comptable : quelle différence ?',
+      question: 'Combien coûte un DAF externalisé ?',
       answer:
-        'Ton expert-comptable certifie les chiffres du passé (bilan, liasse fiscale). Ton DAF Iter Advisors les regarde le jour même et te dit « on a 6 mois de trésorerie, il faut accélérer la collecte » ou « on peut augmenter les marges ici ». L\'expert-comptable est réactif, le DAF est proactif. Ils se complètent. ',
-      answerLink: { text: 'Article complet sur le sujet', href: '/ressources/blog' },
+        'Le coût dépend du niveau d\'intervention, du rythme souhaité et de la complexité des sujets. L\'intérêt du modèle est d\'adapter l\'accompagnement au besoin réel, sans supporter le coût fixe d\'un DAF salarié à plein temps. Généralement 80% moins cher qu\'un DAF recruté en CDI.',
     },
     {
-      question: 'DAF externalisé vs DAF salarié : quel ROI ?',
+      question: 'À partir de quand faut-il faire appel à un DAF externalisé ?',
       answer:
-        'Un DAF salarié coûte 120-200 k€/an chargé et 3-6 mois de recrutement. Notre DAF externalisé coûte 24-84 k€/an selon ta formule, démarre en 48h, et tu peux augmenter/diminuer les jours sans friction. Si tu as besoin de spécialisation tech uniquement, tu ne paynes que les jours consommés — pas une personne entière. Cas d\'usage parfait : startups Series A/B et PME en croissance rapide.',
-      answerLink: null,
+        'Le besoin apparaît souvent quand le dirigeant manque de visibilité sur la trésorerie, prépare une levée de fonds, doit produire un reporting fiable, ou ne peut plus piloter l\'entreprise uniquement avec la comptabilité et quelques fichiers Excel.',
     },
     {
-      question: 'Quel est le délai de mise en place ?',
+      question: 'Est-ce adapté aux PME qui ne lèvent pas de fonds ?',
       answer:
-        'Mercredi 14h : tu valides l\'audit. Jeudi 9h : ton DAF arrive, accès aux outils, entretiens avec ton équipe. Vendredi : dashboard de pilotage fonctionnel. Lundi semaine 2 : plan d\'action. C\'est la raison pour laquelle nous sommes le DAF préféré des fondateurs en urgence fundraising. ',
-      answerLink: null,
+        'Oui. Le DAF externalisé n\'est pas réservé aux startups. Il est utile dès qu\'une entreprise veut mieux piloter son cash, ses marges, son budget, ses financements ou ses décisions de croissance, qu\'elle soit en levée ou non.',
     },
     {
-      question: 'Le DAF externalisé peut-il accompagner ma levée de fonds ?',
+      question: 'Combien de temps faut-il pour démarrer ?',
       answer:
-        'Oui — c\'est même l\'un de nos cas d\'usage les plus courants. Nous préparons la data room, répondons aux due diligence questions, bâtissons ton business plan, présentons ton historique financier. Plus encore : c\'est beaucoup plus rentable qu\'un consultant à 500 €/jour, et c\'est quelqu\'un qui « vit » dans tes chiffres. ',
-      answerLink: { text: 'Services levée de fonds', href: '/services/accompagnement-levee-de-fond' },
+        'Après un premier diagnostic, nous pouvons cadrer rapidement les priorités, définir le rythme d\'intervention et lancer les premiers chantiers : trésorerie, reporting, budget ou structuration finance. Mise en place possible en quelques semaines.',
     },
   ];
 
@@ -557,14 +521,7 @@ function FAQ() {
           </button>
           {openFAQ === idx && (
             <div className="px-6 pb-6 border-t border-gray-200 bg-iter-violet/2">
-              <p className="text-muted-foreground">
-                {faq.answer}
-                {faq.answerLink && (
-                  <a href={faq.answerLink.href} className="text-iter-violet hover:underline font-semibold">
-                    {faq.answerLink.text}
-                  </a>
-                )}
-              </p>
+              <p className="text-muted-foreground">{faq.answer}</p>
             </div>
           )}
         </div>
@@ -582,7 +539,7 @@ function FAQ() {
               name: faq.question,
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: faq.answer + (faq.answerLink?.text || ''),
+                text: faq.answer,
               },
             })),
           }),
@@ -596,7 +553,7 @@ function FAQ() {
 export default function LandingPageClient() {
   return (
     <main className="min-h-screen bg-background">
-      {/* GTM Script */}
+      {/* GTM */}
       <Script
         id="gtm-script"
         strategy="afterInteractive"
@@ -604,6 +561,9 @@ export default function LandingPageClient() {
           __html: `window.dataLayer = window.dataLayer || [];`,
         }}
       />
+
+      {/* Header */}
+      <Header locale="fr" />
 
       {/* SECTION 1: HERO */}
       <section className="pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 bg-gradient-to-br from-background via-background to-iter-violet/5">
@@ -616,184 +576,224 @@ export default function LandingPageClient() {
               DAF externalisé pour PME et startups
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Pilotez votre cash et sécurisez votre croissance avec un DAF senior à temps partagé. Opérationnel en 48h,
-              sans le coût d'un recrutement fixe.
+              Un DAF senior à temps partagé pour structurer votre trésorerie, vos reportings et votre pilotage financier, sans recruter à temps plein.
             </p>
 
-            {/* 3 Benefits */}
+            {/* 3 USPs */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 my-8">
               <div className="text-center">
-                <p className="text-2xl mb-2">✅</p>
-                <p className="font-semibold text-foreground">Trésorerie maîtrisée</p>
-                <p className="text-sm text-muted-foreground">Visibilité 13 semaines</p>
+                <p className="text-2xl mb-2">💰</p>
+                <p className="font-semibold text-foreground">Trésorerie prévisible à 3 mois</p>
+                <p className="text-sm text-muted-foreground">Une vision claire du cash disponible.</p>
               </div>
               <div className="text-center">
-                <p className="text-2xl mb-2">✅</p>
-                <p className="font-semibold text-foreground">Reporting investisseur</p>
-                <p className="text-sm text-muted-foreground">Board-ready en 30 jours</p>
+                <p className="text-2xl mb-2">📊</p>
+                <p className="font-semibold text-foreground">Reporting prêt pour le board</p>
+                <p className="text-sm text-muted-foreground">KPIs et forecast en 30 jours.</p>
               </div>
               <div className="text-center">
-                <p className="text-2xl mb-2">✅</p>
-                <p className="font-semibold text-foreground">Flexibilité totale</p>
-                <p className="text-sm text-muted-foreground">Engagement 3 mois minimum</p>
+                <p className="text-2xl mb-2">⚡</p>
+                <p className="font-semibold text-foreground">DAF senior sans CDI</p>
+                <p className="text-sm text-muted-foreground">Flexible, dès 3 mois d'engagement.</p>
               </div>
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <button
                 onClick={() => {
-                  pushToDataLayer('cta_hero_click', { position: 'hero' });
+                  pushToDataLayer('cta_click', { cta_text: 'Planifier diagnostic', cta_position: 'hero' });
                   document.getElementById('conversion-form')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                data-event="cta_hero_click"
-                data-cta-position="hero"
                 className="px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
-                Planifier mon Audit Cash Runway →
+                Planifier un diagnostic financier
               </button>
-              <button
+              <a
+                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2DVmtdvwnZykAPoQC9_BNTFB_wHl1IrNagCAX0AaSbmEs8JmSGsTdWo96WGPzMEYtf_nkILQN8"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => {
-                  pushToDataLayer('cta_secondary_click', { position: 'hero' });
+                  pushToDataLayer('cta_click', { cta_text: 'Prendre RDV calendar', cta_position: 'hero' });
                 }}
                 className="px-8 py-4 rounded-full border-2 border-iter-violet text-iter-violet hover:bg-iter-violet/5 transition-all duration-300 font-semibold"
               >
-                Ou demander un échange par email
-              </button>
+                Prendre immédiatement rendez-vous
+              </a>
             </div>
 
             {/* Social Proof */}
-            <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="pt-8 border-t border-gray-200">
               <p className="text-sm text-muted-foreground">
-                ★ <strong>5/5 sur 35 avis Trustfolio</strong> · <strong>+85 entreprises accompagnées</strong> ·{' '}
-                <strong>+100 M€ levés par nos clients</strong>
+                ⭐ <strong>5/5 sur Trustfolio</strong> · <strong>85+ entreprises accompagnées</strong> ·{' '}
+                <strong>100 M€+ levés par nos clients</strong>
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2: PAIN POINT */}
+      {/* SECTION 2: PROBLEM */}
       <section className="py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
-              Pourquoi attendre que votre trésorerie soit sous tension ?
+              Pourquoi attendre que la trésorerie devienne un sujet urgent ?
             </h2>
             <p className="text-lg text-muted-foreground">
-              Votre expert-comptable regarde le passé, votre DAF Iter Advisors construit votre futur.
+              La comptabilité vous dit ce qui s'est passé. Le DAF vous aide à décider ce qui doit se passer ensuite.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <div className="p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
-              <p className="text-lg font-semibold text-foreground mb-2">
-                Manque de visibilité sur votre cash runway ?
-              </p>
+              <p className="font-semibold text-foreground mb-2">💧 Vous manquez de visibilité sur votre trésorerie ?</p>
               <p className="text-sm text-muted-foreground">
-                Sans prévisions fiables, impossible de prendre les bonnes décisions à temps.
+                Vous ne savez pas précisément combien de mois vous pouvez tenir, ni quelles décisions prendre avant que la tension n'arrive.
               </p>
             </div>
             <div className="p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
-              <p className="text-lg font-semibold text-foreground mb-2">
-                Reporting manuel chronophage et imprécis ?
-              </p>
+              <p className="font-semibold text-foreground mb-2">📑 Vos reportings prennent trop de temps ?</p>
               <p className="text-sm text-muted-foreground">
-                Excel partout, données hétérogènes, aucun single source of truth.
+                Les chiffres circulent dans plusieurs fichiers, les versions changent, et personne n'a la même lecture de la situation.
               </p>
             </div>
             <div className="p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
-              <p className="text-lg font-semibold text-foreground mb-2">
-                Une levée de fonds ou une cession à préparer ?
-              </p>
+              <p className="font-semibold text-foreground mb-2">🤝 Vous devez rassurer votre board ou des investisseurs ?</p>
               <p className="text-sm text-muted-foreground">
-                Financiers et investisseurs exigent des données solides et professionnelles.
+                Prévisionnel, KPIs, data room, scénario de trésorerie : vos chiffres doivent être solides avant les discussions importantes.
               </p>
             </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <button
+              onClick={() => {
+                pushToDataLayer('cta_click', { cta_text: 'Parler de ma situation', cta_position: 'problem_section' });
+                document.getElementById('conversion-form')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-block px-8 py-3 rounded-full border-2 border-iter-violet text-iter-violet hover:bg-iter-violet/5 transition-all duration-300 font-semibold"
+            >
+              Parler de ma situation
+            </button>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: MISSIONS */}
+      {/* SECTION 3: SOLUTION */}
       <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
         <div className="container max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
-              Votre direction financière sur-mesure
-            </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-8 text-center">
+            Un DAF externalisé, pour piloter sans recruter trop tôt
+          </h2>
+
+          <div className="prose prose-sm max-w-none mb-12 text-center">
+            <p className="text-lg text-muted-foreground">
+              Un DAF externalisé, aussi appelé DAF à temps partagé ou CFO part-time, intervient auprès de votre entreprise quelques jours par mois ou sur une mission précise.
+              <br />
+              <br />
+              Il devient le bras droit financier du dirigeant : il met de l'ordre dans les chiffres, structure les reportings, anticipe la trésorerie et aide à prendre les bonnes décisions au bon moment.
+            </p>
           </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+            <div className="bg-white p-6 rounded-lg border border-gray-200">
+              <p className="text-foreground font-semibold mb-2">✅ Accès à un profil senior</p>
+              <p className="text-sm text-muted-foreground">
+                Sans supporter le coût d'un recrutement à plein temps.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg border border-gray-200">
+              <p className="text-foreground font-semibold mb-2">✅ Visibilité sur vos chiffres</p>
+              <p className="text-sm text-muted-foreground">
+                Cash, marges, budgets, priorités financières claires.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg border border-gray-200">
+              <p className="text-foreground font-semibold mb-2">✅ Routines financières simples</p>
+              <p className="text-sm text-muted-foreground">
+                Lisibles, utiles et alignées avec votre pilotage.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white p-6 rounded-lg border border-gray-200 text-center mb-8">
+            <p className="text-sm text-muted-foreground">
+              <strong>Iter Advisors ne remplace pas votre expert-comptable.</strong> Nous complétons son travail en transformant vos chiffres en outils de pilotage.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4: MISSIONS */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-background">
+        <div className="container max-w-4xl">
+          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4 text-center">
+            Ce que votre DAF externalisé peut prendre en main
+          </h2>
+          <p className="text-lg text-muted-foreground text-center mb-12">
+            L'intervention s'adapte à votre niveau de maturité : urgence cash, reporting board, structuration finance, levée de fonds ou renfort ponctuel.
+          </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              {
-                title: 'Pilotage de cash',
-                description: 'Plan de trésorerie glissant 13 semaines + optimisation BFR',
-              },
-              {
-                title: 'Stratégie & Budget',
-                description: 'Business Plan 3 ans + Forecast trimestriel + suivi des écarts',
-              },
-              {
-                title: 'Relations investisseurs',
-                description: 'Reportings Board + préparation Data Room',
-              },
-              {
-                title: 'Levée de fonds',
-                description: 'Accompagnement Series A/B, Bridge, dette',
-              },
-              {
-                title: 'Outils & structuration',
-                description: 'Pennylane, Agicap, Notion, Looker',
-              },
-              {
-                title: 'Management',
-                description: 'Encadrement de votre équipe comptable',
-              },
+              { title: 'Pilotage de trésorerie', desc: 'Prévisions 13 semaines, suivi du cash, anticipation des tensions.' },
+              { title: 'Budget et forecast', desc: 'Business plan, reforecast mensuel et analyse des écarts.' },
+              { title: 'Reporting dirigeant et board', desc: 'KPIs financiers, tableaux de bord prêts à partager.' },
+              { title: 'Levée de fonds et financement', desc: 'Prévisionnel, business plan, data room financière.' },
+              { title: 'Contrôle de gestion', desc: 'Analyse des marges, rentabilité par activité, pricing.' },
+              { title: 'Structuration finance', desc: 'Mise en place des outils, fiabilisation des données.' },
             ].map((mission, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-lg bg-white border border-gray-200 hover:border-iter-violet/30 transition-colors"
-              >
+              <div key={idx} className="p-6 rounded-lg bg-white border border-gray-200 hover:border-iter-violet/30 transition-colors">
                 <h3 className="font-semibold text-foreground mb-2">{mission.title}</h3>
-                <p className="text-sm text-muted-foreground">{mission.description}</p>
+                <p className="text-sm text-muted-foreground">{mission.desc}</p>
               </div>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <a href="/daf-externalise" className="text-iter-violet hover:underline font-semibold">
-              Voir tout notre périmètre →
-            </a>
+            <button
+              onClick={() => {
+                pushToDataLayer('cta_click', { cta_text: 'Identifier priorités', cta_position: 'missions_section' });
+                document.getElementById('conversion-form')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-block px-8 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all"
+            >
+              Identifier mes priorités finance
+            </button>
           </div>
         </div>
       </section>
 
-      {/* SECTION 4: COMPARATIF */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background">
+      {/* SECTION 5: COMPARISON */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
         <div className="container max-w-5xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
-              Pourquoi choisir le temps partagé avec Iter Advisors ?
-            </h2>
-          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4 text-center">
+            Expert-comptable, DAF salarié ou DAF externalisé ?
+          </h2>
+          <p className="text-lg text-muted-foreground text-center mb-12">
+            Ces rôles ne répondent pas au même besoin. L'expert-comptable sécurise la production comptable. Le DAF salarié structure une direction financière. Le DAF externalisé vous donne un pilotage senior sans recruter trop tôt.
+          </p>
 
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto mb-8">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-300">
                   <th className="text-left p-3 font-semibold">Critère</th>
-                  <th className="text-left p-3 font-semibold">Expert-Comptable</th>
-                  <th className="text-left p-3 font-semibold">DAF salarié temps plein</th>
-                  <th className="text-left p-3 font-semibold bg-iter-chartreuse/10">DAF Iter Advisors</th>
+                  <th className="text-left p-3 font-semibold">Expert-comptable</th>
+                  <th className="text-left p-3 font-semibold">DAF salarié</th>
+                  <th className="text-left p-3 font-semibold bg-iter-chartreuse/10">DAF externalisé Iter</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  ['Vision stratégique', 'Faible', 'Élevée', 'Maximale'],
-                  ['Coût annuel', '4-12 k€', '120-200 k€ chargé', '24-84 k€ selon formule'],
-                  ['Délai de mise en place', '2-4 semaines', '3-6 mois', '48 heures'],
-                  ['Expertise sectorielle tech', 'Généraliste', 'Variable', 'Spécialiste SaaS / scale-up'],
-                  ['Engagement', 'Forfait annuel', 'CDI', 'Mensuel renouvelable'],
+                  ['Rôle principal', 'Comptabilité, fiscalité, obligations', 'Direction financière interne', 'Pilotage financier partagé'],
+                  ['Trésorerie et forecast', 'Variable', 'Fort', 'Fort, rapidement'],
+                  ['Reporting board', 'Variable', 'Fort', 'Structuré en semaines'],
+                  ['Budget et contrôle de gestion', 'Variable', 'Fort', 'Fort, adapté'],
+                  ['Coût annuel', 'Selon périmètre', 'Élevé, charge fixe', 'Adapté au besoin'],
+                  ['Délai de mise en place', 'Variable', '3-6 mois', 'Rapide'],
+                  ['Engagement', 'Mission ou forfait', 'CDI', '3 mois initial'],
                 ].map((row, idx) => (
                   <tr key={idx} className="border-b border-gray-200">
                     <td className="p-3 font-semibold text-foreground">{row[0]}</td>
@@ -806,155 +806,107 @@ export default function LandingPageClient() {
             </table>
           </div>
 
-          <div className="text-center mt-8">
-            <a href="/daf-externalise#tarifs" className="text-iter-violet hover:underline font-semibold">
-              Voir notre grille tarifaire 2026 →
-            </a>
+          <div className="bg-white p-6 rounded-lg border border-gray-200 text-center">
+            <p className="text-sm text-muted-foreground">
+              Le DAF externalisé ne remplace pas votre expert-comptable. Il l'aide à devenir une source fiable pour piloter l'entreprise, pas seulement pour produire les comptes.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* SECTION 5: MÉTHODE */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
-        <div className="container max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
-              Notre méthode en 3 étapes
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              {
-                step: '1',
-                title: 'Audit flash (48h)',
-                description: 'Analyse de l\'existant + identification des urgences',
-              },
-              {
-                step: '2',
-                title: 'Plan de bataille (semaine 2)',
-                description: 'Mise en place outils + dashboard pilotage',
-              },
-              {
-                step: '3',
-                title: 'Copilote régulier',
-                description: 'Point hebdomadaire ou mensuel selon vos besoins',
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="relative">
-                <div className="p-6 rounded-lg bg-white border border-gray-200">
-                  <div className="text-4xl font-bold text-iter-violet mb-3">{item.step}</div>
-                  <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
-                </div>
-                {idx < 2 && (
-                  <div className="hidden sm:block absolute top-1/2 -right-3 transform -translate-y-1/2">
-                    <ChevronDown className="w-6 h-6 text-gray-300 rotate-90" />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 6: TÉMOIGNAGES */}
+      {/* SECTION 6: METHOD */}
       <section className="py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
-              Ce que disent les dirigeants accompagnés
-            </h2>
-          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-12 text-center">
+            Une mise en place simple, en 3 étapes
+          </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
             {[
               {
-                name: 'Charles Deknudt',
-                role: 'PDG et fondateur',
-                company: 'Eltex',
-                quote:
-                  'Après avoir levé notre premier tour de table, nous avions besoin de structurer rapidement nos opérations financières. Iter Advisors nous a aidés à professionnaliser notre fonction finance, du reporting à la trésorerie.',
+                step: '1',
+                title: 'Diagnostic rapide',
+                desc: 'Nous analysons votre situation, vos chiffres, vos outils, vos urgences et priorités financières.',
               },
               {
-                name: 'Arnaud Mege',
-                role: 'Co-founder',
-                company: 'Unplexed',
-                quote:
-                  'Nous avons été très bien accompagnés par les équipes d\'Iter dans la structuration de notre fonction finance chez Unplexed. Les résultats ont été à la hauteur de nos attentes, voire au-delà.',
+                step: '2',
+                title: 'Plan d\'action priorisé',
+                desc: 'Nous définissons les premiers sujets : trésorerie, reporting, budget, forecast ou financement.',
               },
               {
-                name: 'Mathurin Blouin',
-                role: 'CEO',
-                company: 'MFL',
-                quote:
-                  'Nous avons fait appel à Iter Advisors dans le cadre de la structuration financière de MFL, une startup web3 en pleine croissance. Meilleure visibilité sur nos finances depuis.',
+                step: '3',
+                title: 'Pilotage régulier',
+                desc: 'Nous mettons en place les routines : points cash, reporting mensuel, arbitrages et décisions.',
               },
-            ].map((testimonial, idx) => (
-              <div key={idx} className="p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-sm text-foreground mb-4">"{testimonial.quote}"</p>
-                <p className="font-semibold text-foreground text-sm">{testimonial.name}</p>
-                <p className="text-xs text-muted-foreground">
-                  {testimonial.role} — {testimonial.company}
-                </p>
+            ].map((item) => (
+              <div key={item.step} className="p-6 rounded-lg bg-white border border-gray-200">
+                <div className="text-4xl font-bold text-iter-violet mb-3">{item.step}</div>
+                <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
 
           <div className="text-center">
-            <a
-              href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc"
-              target="_blank"
-              rel="noopener nofollow"
-              className="text-iter-violet hover:underline font-semibold"
+            <button
+              onClick={() => {
+                pushToDataLayer('cta_click', { cta_text: 'Lancer diagnostic', cta_position: 'method_section' });
+                document.getElementById('conversion-form')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-block px-8 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all"
             >
-              Voir les 35 avis sur Trustfolio →
-            </a>
+              Lancer le diagnostic
+            </button>
           </div>
         </div>
       </section>
 
-      {/* SECTION 7: RÉASSURANCE */}
+      {/* SECTION 7: CREDIBILITY */}
       <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
         <div className="container max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-8">
-              Des DAF qui ont déjà été à votre place
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Nos DAF ne sont pas des consultants. Ce sont des opérationnels qui ont dirigé la finance de scale-ups en
-              hyper-croissance et de PME en transformation. Cabinet basé à Barcelone, Paris et Toulouse — au cœur de
-              l'écosystème tech européen. Membre de France Digitale, recommandé par WILCO.
-            </p>
+          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-8 text-center">
+            Des DAF qui ont déjà été à votre place
+          </h2>
+          <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            Un bon DAF externalisé ne se contente pas de commenter les chiffres. Il aide le dirigeant à prendre de meilleures décisions, avec des données fiables, des priorités claires et une vraie compréhension des enjeux business.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+            <div className="text-center">
+              <p className="text-4xl font-bold text-iter-violet mb-2">85+</p>
+              <p className="text-muted-foreground">Entreprises accompagnées</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl font-bold text-iter-violet mb-2">100 M€+</p>
+              <p className="text-muted-foreground">Levés par nos clients</p>
+            </div>
           </div>
 
-          {/* Partner Logos */}
-          <div className="flex flex-col sm:flex-row justify-center gap-12 items-center">
-            {['France Digitale', 'WILCO', 'DFCG'].map((partner, idx) => (
-              <div key={idx} className="text-center">
-                <div className="w-24 h-24 rounded-lg bg-white border border-gray-200 flex items-center justify-center font-semibold text-sm text-muted-foreground">
-                  {partner}
-                </div>
-              </div>
-            ))}
+          <div className="bg-white p-8 rounded-lg border border-gray-200 text-center mb-8">
+            <div className="flex justify-center gap-1 mb-3">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
+              ))}
+            </div>
+            <p className="text-2xl font-bold text-foreground mb-2">5/5 sur Trustfolio</p>
+            <p className="text-sm text-muted-foreground">Basé sur 31+ avis vérifiés</p>
           </div>
+
+          <p className="text-center text-sm text-muted-foreground">
+            Cabinet basé à Barcelone, Paris et Toulouse, Iter Advisors accompagne des PME, startups et scale-ups dans leur pilotage financier, leur structuration finance et leurs opérations de croissance.
+          </p>
         </div>
       </section>
 
-      {/* SECTION 8: FORMULAIRE */}
+      {/* SECTION 8: FORM */}
       <section className="py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-2xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
-              Prêt à structurer votre finance ?
+              Faites le point avec un DAF senior
             </h2>
             <p className="text-lg text-muted-foreground">
-              Audit Cash Runway de 30 minutes — sans engagement, sans pression commerciale.
+              30 minutes pour parler de votre trésorerie, de vos reportings et de vos priorités finance. Sans engagement, sans pression commerciale.
             </p>
           </div>
 
@@ -967,43 +919,21 @@ export default function LandingPageClient() {
       {/* SECTION 9: FAQ */}
       <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
         <div className="container max-w-3xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
-              Questions fréquentes
-            </h2>
-          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-12 text-center">
+            Questions fréquentes
+          </h2>
 
           <FAQ />
         </div>
       </section>
 
-      {/* SECTION 10: CTA FINAL */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background">
-        <div className="container max-w-2xl text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-6">
-            Prenons 30 minutes pour faire le point sur votre cash runway
-          </h2>
-          <button
-            onClick={() => {
-              pushToDataLayer('cta_footer_click', { position: 'footer' });
-              document.getElementById('conversion-form')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            data-event="cta_footer_click"
-            data-cta-position="footer"
-            className="px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mb-6"
-          >
-            Planifier mon Audit Cash Runway →
-          </button>
-          <p className="text-muted-foreground">
-            <strong>Sans engagement. Sans pression commerciale. Garanti.</strong>
-          </p>
-        </div>
-      </section>
-
-      {/* Sticky Mobile CTA */}
+      {/* Sticky Footer */}
       <StickyCTAFooter />
 
-      {/* JSON-LD Schemas */}
+      {/* Footer */}
+      <Footer locale="fr" />
+
+      {/* Schemas */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1016,37 +946,12 @@ export default function LandingPageClient() {
               '@type': 'Organization',
               name: 'Iter Advisors',
               url: 'https://www.iteradvisors.com',
-              sameAs: ['https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc'],
             },
             areaServed: [{ '@type': 'Country', name: 'France' }],
             audience: {
               '@type': 'Audience',
               audienceType: 'PME, Startups, Scale-ups',
             },
-          }),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              {
-                '@type': 'ListItem',
-                position: 1,
-                name: 'Iter Advisors',
-                item: 'https://www.iteradvisors.com/',
-              },
-              {
-                '@type': 'ListItem',
-                position: 2,
-                name: 'DAF externalisé — Landing campagne',
-                item: 'https://www.iteradvisors.com/lp/daf-externalise',
-              },
-            ],
           }),
         }}
       />

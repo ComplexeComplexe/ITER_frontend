@@ -3,14 +3,14 @@ import LandingPageClient from './client';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'DAF Externalisé pour PME & Startups | Iter Advisors',
+    title: 'DAF externalisé pour PME et startups | Iter Advisors',
     description:
-      'Sécurisez votre trésorerie et vos levées de fonds. DAF senior opérationnel en 48h. Audit Cash Runway 30 min sans engagement. Cabinet 5/5 sur 35 avis.',
+      'Accédez à un DAF externalisé senior pour piloter votre trésorerie, vos budgets, vos reportings et vos décisions financières. Accompagnement flexible pour PME, startups et scale-ups.',
     robots: 'noindex, follow',
     openGraph: {
-      title: 'DAF Externalisé pour PME & Startups | Iter Advisors',
+      title: 'DAF externalisé pour PME et startups | Iter Advisors',
       description:
-        'Sécurisez votre trésorerie et vos levées de fonds. DAF senior opérationnel en 48h.',
+        'Un DAF senior à temps partagé pour structurer votre trésorerie, vos reportings et votre pilotage financier.',
       type: 'website',
       url: 'https://www.iteradvisors.com/lp/daf-externalise',
       images: [
@@ -24,9 +24,9 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'DAF Externalisé pour PME & Startups | Iter Advisors',
+      title: 'DAF externalisé pour PME et startups | Iter Advisors',
       description:
-        'Sécurisez votre trésorerie et vos levées de fonds. DAF senior opérationnel en 48h.',
+        'Un DAF senior à temps partagé pour structurer votre trésorerie, vos reportings et votre pilotage financier.',
     },
     alternates: {
       canonical: 'https://www.iteradvisors.com/lp/daf-externalise',
