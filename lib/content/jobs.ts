@@ -38,7 +38,12 @@ const jobsFr: JobsContent = {
     paragraph:
       "Iter Advisors est une soci\u00e9t\u00e9 de conseil financier en pleine croissance. Nous rejoindre, c\u2019est int\u00e9grer un environnement international et multiculturel avec l\u2019opportunit\u00e9 de partager l\u2019aventure du lancement d\u2019une start-up avec nous.",
   },
-  jobs: [],
+  jobs: [
+    { title: "Fractional CFO pour startups", href: "/jobs/fractional-cfo-startups" },
+    { title: "Responsable Marketing & Growth Strategy", href: "/jobs/marketing-growth-strategy" },
+    { title: "Senior Finance Manager", href: "/jobs/senior-finance-manager" },
+    { title: "Analyste financier junior", href: "/jobs/finance-analyst-junior-fr" },
+  ],
   discoverLabel: "D\u00e9couvrir",
 };
 
@@ -58,7 +63,12 @@ const jobsEn: JobsContent = {
     paragraph:
       "Iter Advisors is a fast-growing financial advisory firm. Joining us means joining an international, multicultural environment, with the opportunity to share in the adventure of launching a start-up with us.",
   },
-  jobs: [],
+  jobs: [
+    { title: "Fractional CFO for startups", href: "/en/jobs/fractional-cfo-startups" },
+    { title: "Marketing & Growth Strategy Manager", href: "/en/jobs/marketing-growth-strategy" },
+    { title: "Senior Finance Manager", href: "/en/jobs/senior-finance-manager" },
+    { title: "Junior Financial Analyst", href: "/en/jobs/finance-analyst-junior-fr" },
+  ],
   discoverLabel: "Discover",
 };
 
@@ -78,7 +88,12 @@ const jobsEs: JobsContent = {
     paragraph:
       "Iter Advisors es una empresa de asesoramiento financiero en r\u00e1pido crecimiento. Unirse a nosotros significa integrarse en un entorno internacional y multicultural, con la oportunidad de compartir la aventura de lanzar una start-up con nosotros.",
   },
-  jobs: [],
+  jobs: [
+    { title: "CFO Fraccionario para startups", href: "/es/jobs/fractional-cfo-startups" },
+    { title: "Responsable de Marketing y Crecimiento", href: "/es/jobs/marketing-growth-strategy" },
+    { title: "Senior Finance Manager", href: "/es/jobs/senior-finance-manager" },
+    { title: "Analista Financiero Junior", href: "/es/jobs/finance-analyst-junior-fr" },
+  ],
   discoverLabel: "Descubra",
 };
 

@@ -82,45 +82,106 @@ const nextConfig: NextConfig = {
       // 404 fix: Blog slug inconsistencies
       {
         source: "/ressources/blog/levee-de-fonds-startup",
-        destination: "/ressources/blog/levee-de-fonds-guide",
-        permanent: true, // 301 redirect
-      },
-      {
-        source: "/en/ressources/blog/levee-de-fonds-startup",
-        destination: "/en/ressources/blog/levee-de-fonds-guide",
+        destination: "/services/accompagnement-levee-de-fond",
         permanent: true, // 301 redirect
       },
       {
         source: "/ressources/blog/daf-externalise",
-        destination: "/ressources/blog/daf-externalise-guide",
+        destination: "/daf-externalise",
+        permanent: true, // 301 redirect (pillar page, slug collision)
+      },
+      {
+        source: "/ressources/tools",
+        destination: "/ressources/outils",
         permanent: true, // 301 redirect
       },
       {
-        source: "/en/ressources/blog/daf-externalise",
-        destination: "/en/ressources/blog/daf-externalise-guide",
-        permanent: true, // 301 redirect
+        source: "/ressources/herramientas",
+        destination: "/ressources/outils",
+        permanent: true, // 301 redirect (wrong lang slug in FR path)
       },
-      // 404 fix: /fractional-cfo/metier should redirect to correct resource
+      // EN/ES blog 404s
       {
-        source: "/en/fractional-cfo/metier",
-        destination: "/en/ressources/fiche-metier",
+        source: "/en/ressources/blog/ia-et-automatisation-des-taches-repetitives",
+        destination: "/en/ressources/blog",
+        permanent: true, // 301 redirect (article depublished)
+      },
+      {
+        source: "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives",
+        destination: "/es/ressources/blog",
+        permanent: true, // 301 redirect (article depublished)
+      },
+      {
+        source: "/en/ressources/blog/les-10-outils-pour-cfos-startup",
+        destination: "/en/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
+        permanent: true, // 301 redirect (slug mismatch)
+      },
+      {
+        source: "/es/ressources/blog/les-10-outils-pour-cfos-startup",
+        destination: "/es/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
+        permanent: true, // 301 redirect (slug mismatch)
+      },
+      {
+        source: "/es/ressources/tools",
+        destination: "/es/ressources/herramientas",
         permanent: true, // 301 redirect
       },
       {
-        source: "/fractional-cfo/metier",
-        destination: "/ressources/fiche-metier",
+        source: "/en/ressources/herramientas",
+        destination: "/en/ressources/tools",
         permanent: true, // 301 redirect
       },
-      // 404 fix: /fractional-cfo/shared-time → /fractional-cfo page
+      // Old fractional-cfo cluster slugs (EN)
       {
         source: "/en/fractional-cfo/shared-time",
-        destination: "/en/fractional-cfo",
-        permanent: true, // 301 redirect
+        destination: "/en/daf-outsourcing/shared-time",
+        permanent: true, // 301 redirect (cluster rename)
       },
       {
-        source: "/fractional-cfo/shared-time",
-        destination: "/fractional-cfo",
-        permanent: true, // 301 redirect
+        source: "/en/fractional-cfo/metier",
+        destination: "/en/daf-outsourcing/metier",
+        permanent: true, // 301 redirect (cluster rename)
+      },
+      // Jobs EN/ES (if positions not translated, redirect to hub)
+      {
+        source: "/en/jobs/fractional-cfo-startups",
+        destination: "/en/jobs",
+        permanent: true, // 301 redirect (not translated)
+      },
+      {
+        source: "/es/jobs/fractional-cfo-startups",
+        destination: "/es/jobs",
+        permanent: true, // 301 redirect (not translated)
+      },
+      {
+        source: "/en/jobs/marketing-growth-strategy",
+        destination: "/en/jobs",
+        permanent: true, // 301 redirect (not translated)
+      },
+      {
+        source: "/es/jobs/marketing-growth-strategy",
+        destination: "/es/jobs",
+        permanent: true, // 301 redirect (not translated)
+      },
+      {
+        source: "/en/jobs/senior-finance-manager",
+        destination: "/en/jobs",
+        permanent: true, // 301 redirect (not translated)
+      },
+      {
+        source: "/es/jobs/senior-finance-manager",
+        destination: "/es/jobs",
+        permanent: true, // 301 redirect (not translated)
+      },
+      {
+        source: "/en/jobs/finance-analyst-junior-fr",
+        destination: "/en/jobs",
+        permanent: true, // 301 redirect (not translated)
+      },
+      {
+        source: "/es/jobs/finance-analyst-junior-fr",
+        destination: "/es/jobs",
+        permanent: true, // 301 redirect (not translated)
       },
     ];
   },
