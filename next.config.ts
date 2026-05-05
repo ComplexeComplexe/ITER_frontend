@@ -204,12 +204,7 @@ const nextConfig: NextConfig = {
         destination: "/es/campana",
         permanent: true, // 301 redirect (French → Spanish)
       },
-      // TICKET 3: English URL slug corrections (English → French for canonical paths)
-      {
-        source: "/en/resources/:path*",
-        destination: "/en/ressources/:path*",
-        permanent: true, // 301 redirect (normalize to French-style canonical paths)
-      },
+      // TICKET 3: English URL slug corrections (French → English)
       {
         source: "/en/profil",
         destination: "/en/profile",
