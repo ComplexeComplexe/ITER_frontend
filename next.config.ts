@@ -211,11 +211,6 @@ const nextConfig: NextConfig = {
         permanent: true, // 301 redirect (French → English)
       },
       {
-        source: "/en/a-propos",
-        destination: "/en/about",
-        permanent: true, // 301 redirect (French → English)
-      },
-      {
         source: "/en/profil",
         destination: "/en/profile",
         permanent: true, // 301 redirect (French → English)
