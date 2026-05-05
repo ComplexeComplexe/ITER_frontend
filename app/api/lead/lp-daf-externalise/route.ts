@@ -7,7 +7,7 @@ interface FormData {
   company: string;
   phone?: string;
   teamSize: string;
-  priority: string;
+  mainNeed: string;
   message?: string;
   rgpd: boolean;
   utm_source?: string;
@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
     if (!data.teamSize) {
       return NextResponse.json({ error: 'Taille équipe requise' }, { status: 400 });
     }
-    if (!data.priority) {
+    if (!data.mainNeed) {
       return NextResponse.json({ error: 'Enjeu requis' }, { status: 400 });
     }
     if (!data.rgpd) {
@@ -144,7 +144,7 @@ async function sendLeadNotification(data: FormData): Promise<boolean> {
 
       <div class="field">
         <span class="label">Enjeu prioritaire:</span>
-        <div class="value">${escapeHtml(data.priority)}</div>
+        <div class="value">${escapeHtml(data.mainNeed)}</div>
       </div>
 
       ${data.phone ? `
