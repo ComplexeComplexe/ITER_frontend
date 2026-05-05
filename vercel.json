@@ -134,11 +134,6 @@
       "permanent": true
     },
     {
-      "source": "/en/about",
-      "destination": "/en/a-propos",
-      "permanent": true
-    },
-    {
       "source": "/es/sobre-nosotros",
       "destination": "/es/a-propos",
       "permanent": true
