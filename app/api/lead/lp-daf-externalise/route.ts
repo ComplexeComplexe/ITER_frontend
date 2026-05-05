@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { Resend } from 'resend';
+
+export const dynamic = 'force-dynamic';
 
 interface FormData {
   firstName: string;
@@ -20,8 +23,18 @@ interface FormData {
   referrer?: string;
 }
 
-// Anti-spam honeypot field (not present in real submissions)
-const HONEYPOT_FIELD = 'company_website';
+let _resend: Resend | null = null;
+function getResend(): Resend {
+  if (!_resend) {
+    const key = process.env.RESEND_API_KEY;
+    if (!key) throw new Error('RESEND_API_KEY is not set');
+    _resend = new Resend(key);
+  }
+  return _resend;
+}
+
+const TO = 'contact@iteradvisors.com';
+const FROM = 'Iter Advisors <contact@mail.iteradvisors.com>';
 
 // Email validation
 function validateEmail(email: string): boolean {
@@ -57,22 +70,30 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Acceptation RGPD requise' }, { status: 400 });
     }
 
-    // Anti-spam: Check if submission was too fast (< 3 seconds indicates bot)
-    // Note: In production, you'd track submission time in frontend and send it here
-    // For now, we'll rely on server-side validation
+    // Build email
+    const subject = `Nouvelle demande d'audit - ${data.firstName} ${data.lastName} (${data.company})`;
+    const html = buildHtmlEmail(data);
+    const text = buildPlainTextEmail(data);
 
-    // Send email (you'll need to set up email service)
-    // This is a placeholder - integrate with your email service
-    const emailSent = await sendLeadNotification(data);
+    // Send email using Resend
+    const { data: result, error } = await getResend().emails.send({
+      from: FROM,
+      to: [TO],
+      subject,
+      html,
+      text,
+      replyTo: data.email,
+    });
 
-    if (!emailSent) {
+    if (error) {
+      console.error('Resend error:', JSON.stringify(error, null, 2));
       return NextResponse.json(
         { error: 'Erreur lors de l\'envoi. Veuillez réessayer.' },
         { status: 500 }
       );
     }
 
-    // Return success
+    console.log('Email sent:', result?.id);
     return NextResponse.json(
       {
         success: true,
@@ -89,13 +110,20 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Send email notification
-async function sendLeadNotification(data: FormData): Promise<boolean> {
-  try {
-    // Email content
-    const emailContent = `
+// Build HTML email
+function buildHtmlEmail(data: FormData): string {
+  const date = new Date().toLocaleDateString('fr-FR', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+
+  return `
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <style>
@@ -112,7 +140,7 @@ async function sendLeadNotification(data: FormData): Promise<boolean> {
 <body>
   <div class="container">
     <div class="header">
-      <h1>Nouvelle demande d'audit Cash Runway</h1>
+      <h1>Nouvelle demande - DAF Externalisé</h1>
       <p>Landing page: /lp/daf-externalise</p>
     </div>
 
@@ -166,7 +194,7 @@ async function sendLeadNotification(data: FormData): Promise<boolean> {
         <div class="value">
           ${data.utm_source ? `Source: ${escapeHtml(data.utm_source)} | ` : ''}
           ${data.utm_medium ? `Medium: ${escapeHtml(data.utm_medium)} | ` : ''}
-          ${data.utm_campaign ? `Campaign: ${escapeHtml(data.utm_campaign)}` : ''}
+          ${data.utm_campaign ? `Campaign: ${escapeHtml(data.utm_campaign)}` : 'N/A'}
         </div>
       </div>
 
@@ -178,55 +206,56 @@ async function sendLeadNotification(data: FormData): Promise<boolean> {
       ` : ''}
 
       <div class="footer">
+        <p>Date: ${date}</p>
         <p>Landing URL: ${escapeHtml(data.landing_url || '')}</p>
         <p>Referrer: ${escapeHtml(data.referrer || 'direct')}</p>
-        <p>Date: ${new Date().toLocaleString('fr-FR')}</p>
       </div>
     </div>
   </div>
 </body>
 </html>
-    `;
+  `.trim();
+}
 
-    // Use Resend or your email service here
-    // This is a placeholder implementation
-    // In production, integrate with Resend, SendGrid, AWS SES, etc.
+// Build plain text email
+function buildPlainTextEmail(data: FormData): string {
+  const date = new Date().toLocaleDateString('fr-FR', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
 
-    const apiKey = process.env.RESEND_API_KEY || process.env.EMAIL_API_KEY;
+  const lines = [
+    `Nouvelle demande - DAF Externalisé`,
+    `Landing page: /lp/daf-externalise`,
+    '',
+    `Prénom: ${data.firstName}`,
+    `Nom: ${data.lastName}`,
+    `Email: ${data.email}`,
+    `Société: ${data.company}`,
+    `Taille de l'équipe: ${data.teamSize}`,
+    `Enjeu prioritaire: ${data.mainNeed}`,
+  ];
 
-    if (!apiKey) {
-      console.warn('No email service configured. Logging lead data instead.');
-      console.log('Form submission:', data);
-      return true; // Fallback: log and return success
-    }
+  if (data.phone) lines.push(`Téléphone: ${data.phone}`);
+  if (data.message) lines.push(`Message: ${data.message}`);
 
-    // Example with Resend (popular email service)
-    if (process.env.RESEND_API_KEY) {
-      const response = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-        },
-        body: JSON.stringify({
-          from: 'Iter Advisors <contact@mail.iteradvisors.com>',
-          to: 'contact@iteradvisors.com',
-          subject: `Nouvelle demande d'audit - ${data.firstName} ${data.lastName} (${data.company})`,
-          html: emailContent,
-          reply_to: data.email,
-        }),
-      });
+  lines.push('');
+  lines.push(
+    `Source UTM: ${[data.utm_source, data.utm_medium, data.utm_campaign].filter(Boolean).join(' | ') || 'N/A'}`
+  );
 
-      return response.ok;
-    }
+  if (data.gclid) lines.push(`Google Click ID: ${data.gclid}`);
 
-    // Fallback: log submission
-    console.log('Form submission received:', data);
-    return true;
-  } catch (error) {
-    console.error('Email sending error:', error);
-    return false;
-  }
+  lines.push('');
+  lines.push(`Date: ${date}`);
+  lines.push(`Landing URL: ${data.landing_url || ''}`);
+  lines.push(`Referrer: ${data.referrer || 'direct'}`);
+
+  return lines.join('\n');
 }
 
 // HTML escape utility
