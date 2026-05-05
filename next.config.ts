@@ -183,6 +183,27 @@ const nextConfig: NextConfig = {
         destination: "/es/jobs",
         permanent: true, // 301 redirect (not translated)
       },
+      // TICKET 2: Spanish slug migration to native Spanish
+      {
+        source: "/es/ressources/:path*",
+        destination: "/es/recursos/:path*",
+        permanent: true, // 301 redirect (French → Spanish)
+      },
+      {
+        source: "/es/profil",
+        destination: "/es/perfil",
+        permanent: true, // 301 redirect (French → Spanish)
+      },
+      {
+        source: "/es/qualification",
+        destination: "/es/calificacion",
+        permanent: true, // 301 redirect (French → Spanish)
+      },
+      {
+        source: "/es/campagne",
+        destination: "/es/campana",
+        permanent: true, // 301 redirect (French → Spanish)
+      },
     ];
   },
 };

@@ -1,0 +1,26 @@
+import { Metadata } from "next";
+import GlossairePage from "@/components/pages/GlossairePage";
+import { buildMetadata } from "@/lib/metadata";
+import { getCmsNavigation } from "@/lib/strapi";
+import { getGlossaryContent, convertToStrapiTerms } from "@/lib/content/glossary";
+
+export const metadata: Metadata = buildMetadata({
+  locale: "es",
+  title: "Glosario finanzas y contabilidad - Definiciones | Iter Advisors",
+  description: "Glosario de términos clave de las finanzas corporativas: tesorería, rondas de financiación, reporting, plan de negocio y mucho más.",
+  path: "/ressources/glossaire",
+});
+
+export default async function Page() {
+  const glossaryContent = getGlossaryContent("es");
+  const terms = convertToStrapiTerms(glossaryContent.terms);
+  const cmsNavigation = await getCmsNavigation("es");
+
+  return (
+    <GlossairePage
+      locale="es"
+      terms={terms}
+      cmsNavigation={cmsNavigation}
+    />
+  );
+}
