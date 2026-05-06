@@ -804,6 +804,14 @@ export default function DafPage({
                   itemScope
                   itemType="https://schema.org/Review"
                 >
+                  {/* itemReviewed - specify what this review is about */}
+                  <div itemProp="itemReviewed" itemScope itemType="https://schema.org/Service" style={{ display: 'none' }}>
+                    <span itemProp="name">DAF externalisé</span>
+                    <div itemProp="provider" itemScope itemType="https://schema.org/Organization">
+                      <span itemProp="name">Iter Advisors</span>
+                    </div>
+                  </div>
+
                   {/* Rating stars */}
                   <div className="flex items-center gap-2 mb-3 sm:mb-4">
                     <div className="flex gap-1">
@@ -832,13 +840,19 @@ export default function DafPage({
                   {/* Author */}
                   <div>
                     <p className="text-xs sm:text-sm font-semibold text-foreground">
-                      {review.author}
-                      <meta itemProp="author" content={review.author} />
+                      <span itemProp="author" itemScope itemType="https://schema.org/Person">
+                        <span itemProp="name">{review.author}</span>
+                      </span>
                     </p>
                     <p className="text-xs text-muted-foreground">
                       {review.role} — {review.company}
                     </p>
-                    <meta itemProp="reviewRating" content={String(review.rating)} />
+                    {/* reviewRating as Rating object */}
+                    <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating" style={{ display: 'none' }}>
+                      <span itemProp="ratingValue">{review.rating}</span>
+                      <span itemProp="bestRating">5</span>
+                      <span itemProp="worstRating">1</span>
+                    </div>
                     <meta itemProp="datePublished" content={review.date} />
                     <meta itemProp="reviewBody" content={review.quote} />
                   </div>
@@ -997,6 +1011,13 @@ export default function DafPage({
                 name: "Iter Advisors",
                 url: "https://www.iteradvisors.com",
               },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5",
+                bestRating: "5",
+                worstRating: "1",
+                reviewCount: String(31)
+              },
               review: t.trustfolioReviews.map((review) => ({
                 "@type": "Review",
                 author: {
@@ -1011,15 +1032,7 @@ export default function DafPage({
                 },
                 datePublished: review.date,
                 reviewBody: review.quote,
-                url: review.url,
-                itemReviewed: {
-                  "@type": "Service",
-                  name: "DAF externalisé",
-                  provider: {
-                    "@type": "Organization",
-                    name: "Iter Advisors"
-                  }
-                }
+                url: review.url
               }))
             }),
           }}
