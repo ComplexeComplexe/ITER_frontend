@@ -949,7 +949,7 @@ export default function DafPage({
         }}
       />
 
-      {/* Service + AggregateRating Schema (CC-05) + Correction 1 from ticket */}
+      {/* Service Schema (CC-05) */}
       {locale === "fr" && (
         <script
           type="application/ld+json"
@@ -962,12 +962,6 @@ export default function DafPage({
                 url: "/daf-externalise",
                 serviceType: "Direction financière externalisée",
                 areaServed: ["FR", "ES"],
-                aggregateRating: {
-                  ratingValue: "5",
-                  bestRating: "5",
-                  worstRating: "1",
-                  ratingCount: t.trustfolioReviews?.length || 0,
-                },
                 offers: [
                   {
                     name: "Essentiel",

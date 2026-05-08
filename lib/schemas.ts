@@ -50,21 +50,16 @@ export function breadcrumbSchema(items: BreadcrumbItemSchema[]): Record<string, 
 }
 
 /**
- * Generate Service JSON-LD schema with optional offer catalog and aggregateRating.
- * Includes aggregateRating (Correction 1 from ticket).
+ * Generate Service JSON-LD schema with optional offer catalog.
+ * NOTE: aggregateRating is NOT included (removed per ticket requirement).
+ * Reason: Google does not accept aggregateRating under Service type without individual Review objects.
+ * Self-serving reviews without external verification are not eligible for rich results.
  */
 export interface ServiceOffer {
   name: string;
   price?: string;
   priceCurrency?: string;
   description?: string;
-}
-
-export interface AggregateRatingData {
-  ratingValue: string;
-  bestRating: string;
-  worstRating: string;
-  ratingCount: number;
 }
 
 export function serviceSchema({
@@ -74,7 +69,6 @@ export function serviceSchema({
   serviceType,
   areaServed,
   offers,
-  aggregateRating,
 }: {
   name: string;
   description: string;
@@ -83,7 +77,6 @@ export function serviceSchema({
   /** ISO 3166-1 alpha-2 country codes, e.g. ["FR", "ES"]. */
   areaServed?: string[];
   offers?: ServiceOffer[];
-  aggregateRating?: AggregateRatingData;
 }): Record<string, unknown> {
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -100,15 +93,6 @@ export function serviceSchema({
 
   if (serviceType) schema.serviceType = serviceType;
   if (areaServed && areaServed.length > 0) schema.areaServed = areaServed;
-  if (aggregateRating) {
-    schema.aggregateRating = {
-      "@type": "AggregateRating",
-      ratingValue: aggregateRating.ratingValue,
-      bestRating: aggregateRating.bestRating,
-      worstRating: aggregateRating.worstRating,
-      ratingCount: aggregateRating.ratingCount,
-    };
-  }
   if (offers && offers.length > 0) {
     schema.hasOfferCatalog = {
       "@type": "OfferCatalog",
