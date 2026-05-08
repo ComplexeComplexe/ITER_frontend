@@ -6,7 +6,7 @@ import { getCmsNavigation } from "@/lib/strapi";
 export const metadata: Metadata = buildMetadata({
   locale: "es",
   title: "Recursos CFO Externalizado | Iter Advisors",
-  description: "Recursos: blog, glosario, fichas de puestos y testimonios de clientes.",
+  description: "Recursos CFO: blog finanzas, glosario, fichas de puestos, testimonios. Guías gratis sobre CFO externalizado, levantamiento de fondos, contabilidad.",
   path: "/ressources",
 });
 

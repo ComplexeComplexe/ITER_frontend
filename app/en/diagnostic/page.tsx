@@ -4,8 +4,7 @@ import { getCmsNavigation } from "@/lib/strapi";
 
 export const metadata: Metadata = {
   title: "Free Assessment | Iter Advisors – Outsourced CFO",
-  description:
-    "Assess your financial needs in 2 minutes and discover how an outsourced CFO can structure your growth. Free assessment, no commitment.",
+  description: "Assess your financial needs in 2 minutes. Discover how a fractional CFO can help your startup or SME. Get a free personalized diagnostic report.",
   openGraph: {
     title: "Free Assessment | Iter Advisors",
     description:

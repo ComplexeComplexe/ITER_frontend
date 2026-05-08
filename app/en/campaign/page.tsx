@@ -4,8 +4,7 @@ import { getCmsNavigation } from "@/lib/strapi";
 
 export const metadata: Metadata = {
   title: "Case Studies | Iter Advisors",
-  description:
-    "Discover how Iter Advisors supports startups, scale-ups and SMEs: outsourced CFO, fundraising, treasury, management control. Detailed case studies with measurable results.",
+  description: "Concrete results for ambitious companies. Case studies featuring startups and SMEs. 50+ clients, €100M+ raised. Client testimonials.",
   openGraph: {
     title: "Case Studies | Iter Advisors",
     description:

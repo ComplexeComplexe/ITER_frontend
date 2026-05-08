@@ -57,8 +57,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "@type": "Service",
     "@id": "https://www.iteradvisors.com/services/comptabilite-externalisation#service",
     name: "Externalisation Comptable — Iter Advisors",
-    description:
-      "Externalisation comptable complète : tenue des comptes, déclarations fiscales, paie et clôture annuelle pour startups et PME",
+    description: "Externalisation comptable: tenue des comptes, déclarations TVA, paie, reporting. Solution flexible pour PME et startups. Audit gratuit.",
     provider: {
       "@type": "Organization",
       name: "Iter Advisors",

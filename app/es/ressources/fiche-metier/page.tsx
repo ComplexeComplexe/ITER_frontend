@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   locale: "es",
   title: "Perfiles Finance | Iter Advisors",
-  description: "Descubra nuestros perfiles profesionales detallados: Director Financiero, Controller y otros roles en finanzas corporativas.",
+  description: "Fichas profesionales finanzas: DAF, CFO, Controller, Tesorero. Responsabilidades, skills, salarios. Guía experto gratis 2026 para gestores RH.",
   path: "/ressources/fiche-metier",
 });
 

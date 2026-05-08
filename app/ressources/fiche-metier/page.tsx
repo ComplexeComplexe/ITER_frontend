@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
   title: "Fiches Métiers Finance | Iter Advisors",
-  description: "Découvrez nos fiches métiers détaillées : DAF, RAF, CFO et autres métiers de la finance d'entreprise.",
+  description: "Fiches métiers finance : DAF, RAF, CFO, Trésorier, Contrôleur. Missions, compétences, salaires détaillés. Guide expert gratuit 2026 pour managers.",
   path: "/ressources/fiche-metier",
 });
 

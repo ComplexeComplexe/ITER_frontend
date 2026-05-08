@@ -6,7 +6,7 @@ import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
   title: "DAF externalisé vs salarié | Iter Advisors",
-  description: "Comparaison détaillée : DAF externalisé vs DAF salarié. Coûts, avantages, inconvénients et matrice de décision. Analyse par Iter Advisors.",
+  description: "DAF externalisé vs DAF salarié : comparaison complète des coûts, avantages et inconvénients. Découvrez la meilleure solution pour votre PME. Guide 2026.",
   openGraph: {
     title: "DAF externalisé vs DAF salarié | Comparaison complète | Iter Advisors",
     description: "Comparaison détaillée : DAF externalisé vs DAF salarié. Coûts, avantages, inconvénients et matrice de décision.",

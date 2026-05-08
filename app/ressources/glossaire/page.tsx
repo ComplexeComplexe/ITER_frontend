@@ -7,7 +7,7 @@ import { getGlossaryContent, convertToStrapiTerms } from "@/lib/content/glossary
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
   title: "Glossaire Finance | Iter Advisors",
-  description: "Glossaire des termes clés de la finance d'entreprise : trésorerie, levée de fonds, reporting, business plan et bien plus.",
+  description: "Glossaire finance : termes clés de la finance d'entreprise. Trésorerie, BFR, EBITDA, cap table, runway. Définitions claires pour entrepreneurs.",
   path: "/ressources/glossaire",
 });
 

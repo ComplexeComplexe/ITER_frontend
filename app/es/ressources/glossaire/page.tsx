@@ -7,7 +7,7 @@ import { getGlossaryContent, convertToStrapiTerms } from "@/lib/content/glossary
 export const metadata: Metadata = buildMetadata({
   locale: "es",
   title: "Glosario Finanzas | Iter Advisors",
-  description: "Glosario de términos clave de las finanzas corporativas: tesorería, rondas de financiación, reporting, plan de negocio y mucho más.",
+  description: "Glosario financiero: definiciones de términos clave en finanzas corporativas y contabilidad. Tesorería, cash flow, EBITDA, BFR, cap table.",
   path: "/ressources/glossaire",
 });
 

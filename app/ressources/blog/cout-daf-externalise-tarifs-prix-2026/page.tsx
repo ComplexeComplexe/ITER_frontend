@@ -6,7 +6,7 @@ import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
   title: "Tarifs DAF 2026 | Iter Advisors",
-  description: "Combien coûte un DAF externalisé en 2026 ? Tarifs TJM, forfaits mensuels, grille de prix par profil et ROI. Économie vs DAF salarié.",
+  description: "Combien coûte un DAF externalisé en 2026 ? Tarifs, TJM, forfaits. Comparez avec un DAF salarié. Grille tarifaire complète et ROI calculé.",
   openGraph: {
     title: "DAF externalisé : tarifs 2026, prix et grille | Iter Advisors",
     description: "Combien coûte un DAF externalisé en 2026 ? Tarifs TJM, forfaits mensuels, grille de prix par profil et ROI.",

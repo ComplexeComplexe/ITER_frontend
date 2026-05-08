@@ -254,8 +254,7 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "en",
     path: "/fractional-cfo-barcelona",
     title: "Fractional CFO Barcelona | Startup CFO | Iter Advisors",
-    description:
-      "Get senior CFO expertise without the full-time cost. Iter Advisors provides fractional CFO services in Barcelona for startups and scale-ups. Book a free 30-min review.",
+    description: "Senior CFO expertise in Barcelona without the full-time cost. Part-time CFO services for startups and SMEs. Flexible engagement from 2 days/month.",
     structuredData: faqStructuredData,
   });
 }

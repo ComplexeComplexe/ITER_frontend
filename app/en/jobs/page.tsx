@@ -6,7 +6,7 @@ import { getCmsNavigation, getJobOffers } from "@/lib/strapi";
 export const metadata: Metadata = buildMetadata({
   locale: "en",
   title: "Finance and CFO careers - Join our team | Iter Advisors",
-  description: "Join the Iter Advisors team.",
+  description: "Join Iter Advisors. Finance careers: CFO, Finance Manager, Consultant roles. Help startups and SMEs scale with cutting-edge financial expertise.",
   path: "/jobs",
   noindex: true,
 });

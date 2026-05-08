@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
     locale: "fr",
     title: "Recrutement DAF et finance externalisés | Iter Advisors",
-    description: "Rejoignez l'équipe Iter Advisors. 4 postes ouverts : Fractional CFO, Manager Finance, Analyste Junior, Growth Marketing.",
+    description: "Recrutement finance : rejoignez Iter Advisors. Postes ouverts : Fractional CFO, DRH, Consultant. Carrière dynamique, missions startup, impact stratégique.",
     path: "/jobs",
     noindex: true,
     structuredData,

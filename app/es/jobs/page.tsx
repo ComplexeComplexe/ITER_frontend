@@ -6,7 +6,7 @@ import { getCmsNavigation, getJobOffers } from "@/lib/strapi";
 export const metadata: Metadata = buildMetadata({
   locale: "es",
   title: "Empleo finanzas y CFO externalizado | Iter Advisors",
-  description: "Únase al equipo de Iter Advisors.",
+  description: "Únete a Iter Advisors. Carreras finanzas: CFO, Finance Manager, Consultor. Ayuda startups y pymes a escalar. Oportunidades impactantes en finanzas.",
   path: "/jobs",
   noindex: true,
 });
