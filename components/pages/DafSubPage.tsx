@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, TrendingUp, BarChart3, Shield, Rocket, Settings, Target, Compass, Zap } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 import { Locale } from "@/lib/i18n";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { DafSubContent } from "@/lib/content/daf-sub";
@@ -39,12 +40,23 @@ export default function DafSubPage({ locale, content, cmsNavigation }: DafSubPag
               </h1>
               {content.sections[0] &&
                 content.sections[0].content.map((p, i) => (
-                  <p
+                  <div
                     key={i}
-                    className="text-lg text-muted-foreground max-w-2xl leading-relaxed mb-3"
+                    className="text-lg text-muted-foreground max-w-2xl leading-relaxed mb-3 prose prose-sm max-w-none [&>p]:m-0 [&>strong]:font-bold [&>em]:italic [&>a]:text-iter-violet [&>a]:underline hover:[&>a]:no-underline"
                   >
-                    {p}
-                  </p>
+                    <ReactMarkdown
+                      components={{
+                        p: ({ node, ...props }) => <span {...props} />,
+                        a: ({ node, href, children, ...props }) => (
+                          <Link href={href || "#"} {...props}>
+                            {children}
+                          </Link>
+                        ),
+                      }}
+                    >
+                      {p}
+                    </ReactMarkdown>
+                  </div>
                 ))}
               <Link
                 href={BOOKING_URL}
@@ -95,12 +107,23 @@ export default function DafSubPage({ locale, content, cmsNavigation }: DafSubPag
                 </div>
               )}
               {section.content.map((p, j) => (
-                <p
+                <div
                   key={j}
-                  className="text-muted-foreground leading-relaxed mb-4"
+                  className="text-muted-foreground leading-relaxed mb-4 prose prose-sm max-w-none [&>p]:m-0 [&>strong]:font-bold [&>em]:italic [&>a]:text-iter-violet [&>a]:underline hover:[&>a]:no-underline"
                 >
-                  {p}
-                </p>
+                  <ReactMarkdown
+                    components={{
+                      p: ({ node, ...props }) => <span {...props} />,
+                      a: ({ node, href, children, ...props }) => (
+                        <Link href={href || "#"} {...props}>
+                          {children}
+                        </Link>
+                      ),
+                    }}
+                  >
+                    {p}
+                  </ReactMarkdown>
+                </div>
               ))}
             </div>
           </section>
