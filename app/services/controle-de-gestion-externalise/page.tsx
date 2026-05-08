@@ -94,7 +94,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
     locale: "fr",
     path: "/services/controle-de-gestion-externalise",
-    title: "Contrôle de gestion externalisé Paris & IDF — Devis 48h | Iter Advisors",
+    title: "Contrôle Gestion | Iter Advisors",
     description:
       "Contrôle de gestion externalisé pour PME et startups à Paris et en Île-de-France. Tableaux de bord, KPIs, suivi budgétaire. +85 entreprises accompagnées.",
     structuredData,

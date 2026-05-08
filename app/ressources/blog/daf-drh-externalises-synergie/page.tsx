@@ -5,7 +5,7 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "DAF et DRH externalisés : synergie et économies | Iter Advisors",
+  title: "DAF & DRH externalisés | Iter Advisors",
   description: "Découvrez les synergies quand on externalise DAF et DRH. Économies, efficacité, reporting RH-Finance intégré. Guide pratique pour PMEs.",
   openGraph: {
     title: "DAF et DRH externalisés : synergie et économies | Iter Advisors",

@@ -4,8 +4,7 @@ import { getCmsNavigation } from "@/lib/strapi";
 import { Callout, StatGrid, ProseTable, InlineCTA } from "@/components/blog";
 
 export const metadata: Metadata = {
-  title:
-    "DAF externalisé : guide complet, tarifs et cas client 2026 | Iter Advisors",
+  title: "Guide DAF externalisé | Iter Advisors",
   description:
     "Guide complet du DAF externalisé. Missions, tarifs (à partir de 2 000 €/mois), profils, secteurs. +85 entreprises aidées, +100 M€ levés. Devis gratuit.",
   robots: {

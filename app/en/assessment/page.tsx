@@ -3,7 +3,7 @@ import QualificationPage from "@/components/pages/QualificationPage";
 import { getCmsNavigation } from "@/lib/strapi";
 
 export const metadata: Metadata = {
-  title: "Company Qualification | Iter Advisors – Financial Maturity Analysis",
+  title: "Company Assessment | Iter Advisors",
   description:
     "Qualify your company in 5 minutes and receive a personalized financial maturity analysis. Tailored recommendations from our CFO experts.",
   openGraph: {

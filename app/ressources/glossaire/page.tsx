@@ -6,7 +6,7 @@ import { getGlossaryContent, convertToStrapiTerms } from "@/lib/content/glossary
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Glossaire finance et comptabilité - Définitions | Iter Advisors",
+  title: "Glossaire Finance | Iter Advisors",
   description: "Glossaire des termes clés de la finance d'entreprise : trésorerie, levée de fonds, reporting, business plan et bien plus.",
   path: "/ressources/glossaire",
 });

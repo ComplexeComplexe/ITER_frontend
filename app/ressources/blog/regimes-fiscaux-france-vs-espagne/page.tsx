@@ -4,7 +4,7 @@ import { getCmsNavigation } from "@/lib/strapi";
 import { Callout, StatGrid, ProseTable, InlineCTA } from "@/components/blog";
 
 export const metadata: Metadata = {
-  title: "Régimes fiscaux France vs Espagne : Comparaison 2026 | Iter Advisors",
+  title: "Régimes Fiscaux | Iter Advisors",
   description:
     "Guide complet de la comparaison fiscale France-Espagne 2026. IS, TVA, cotisations, régimes spéciaux. Économisez jusqu'à 7 500 €/employé. Audit gratuit.",
   robots: {

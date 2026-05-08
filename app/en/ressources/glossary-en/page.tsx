@@ -6,7 +6,7 @@ import { getGlossaryContent, convertToStrapiTerms } from "@/lib/content/glossary
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "Finance and accounting glossary - Definitions | Iter Advisors",
+  title: "Finance Glossary | Iter Advisors",
   description: "Glossary of key corporate finance terms: cash management, fundraising, reporting, business plan and more.",
   path: "/ressources/glossaire",
 });

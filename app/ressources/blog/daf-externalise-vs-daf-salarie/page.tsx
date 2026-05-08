@@ -5,7 +5,7 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "DAF externalisé vs DAF salarié | Comparaison complète | Iter Advisors",
+  title: "DAF externalisé vs salarié | Iter Advisors",
   description: "Comparaison détaillée : DAF externalisé vs DAF salarié. Coûts, avantages, inconvénients et matrice de décision. Analyse par Iter Advisors.",
   openGraph: {
     title: "DAF externalisé vs DAF salarié | Comparaison complète | Iter Advisors",

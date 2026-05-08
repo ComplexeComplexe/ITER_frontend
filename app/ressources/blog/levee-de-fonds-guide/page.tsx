@@ -4,8 +4,7 @@ import { getCmsNavigation } from "@/lib/strapi";
 import { Callout, StatGrid, ProseTable, InlineCTA } from "@/components/blog";
 
 export const metadata: Metadata = {
-  title:
-    "Levée de fonds : préparation financière et juridique 2026 | Iter Advisors",
+  title: "Guide Levée Fonds | Iter Advisors",
   description:
     "Guide complet levée de fonds. Préparation comptable, due diligence, documentation, valorisation. Iter Advisors a assisté startups à lever +100M€.",
   robots: {

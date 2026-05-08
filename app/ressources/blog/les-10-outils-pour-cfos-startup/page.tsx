@@ -5,7 +5,7 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "Les 10 outils indispensables pour CFOs en startup | Iter Advisors",
+  title: "Outils CFO Startup | Iter Advisors",
   description: "Guide complet des 10 meilleurs outils fintech pour CFOs et founders en startup. Comptabilité, trésorerie, reporting, levée de fonds. Comparaison et ROI.",
   openGraph: {
     title: "Les 10 outils indispensables pour CFOs en startup | Iter Advisors",

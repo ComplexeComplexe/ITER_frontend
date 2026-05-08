@@ -3,7 +3,7 @@ import QualificationPage from "@/components/pages/QualificationPage";
 import { getCmsNavigation } from "@/lib/strapi";
 
 export const metadata: Metadata = {
-  title: "Calificación Empresa | Iter Advisors – Análisis de Madurez Financiera",
+  title: "Calificación Empresas | Iter Advisors",
   description:
     "Califique su empresa en 5 minutos y reciba un análisis personalizado de su madurez financiera. Recomendaciones a medida de nuestros expertos DAF.",
   openGraph: {

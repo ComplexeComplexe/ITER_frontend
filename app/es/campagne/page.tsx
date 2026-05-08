@@ -3,7 +3,7 @@ import CasClientsPage from "@/components/pages/CasClientsPage";
 import { getCmsNavigation } from "@/lib/strapi";
 
 export const metadata: Metadata = {
-  title: "Casos de Éxito | Iter Advisors – Resultados concretos para empresas ambiciosas",
+  title: "Casos Éxito | Iter Advisors",
   description:
     "Descubra cómo Iter Advisors acompaña a startups, scale-ups y PYMEs: DAF externalizado, levantamiento de fondos, tesorería, control de gestión. Casos de éxito detallados con resultados medibles.",
   openGraph: {

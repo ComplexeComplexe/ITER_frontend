@@ -5,7 +5,7 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "DAF externalisé : tarifs 2026, prix et grille | Iter Advisors",
+  title: "Tarifs DAF 2026 | Iter Advisors",
   description: "Combien coûte un DAF externalisé en 2026 ? Tarifs TJM, forfaits mensuels, grille de prix par profil et ROI. Économie vs DAF salarié.",
   openGraph: {
     title: "DAF externalisé : tarifs 2026, prix et grille | Iter Advisors",

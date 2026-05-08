@@ -5,7 +5,7 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "Flux de trésorerie : définition, calcul et importance | Iter Advisors",
+  title: "Flux de trésorerie | Iter Advisors",
   description: "Comprendre les flux de trésorerie (cash flow) : définition, calcul, types, importance pour la gestion financière. Guide complet par Iter Advisors.",
   openGraph: {
     title: "Flux de trésorerie : définition, calcul et importance | Iter Advisors",
