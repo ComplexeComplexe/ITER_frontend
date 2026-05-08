@@ -14,9 +14,9 @@ export async function generateMetadata(): Promise<Metadata> {
       en: "/fractional-cfo",
       es: "/externalizacion-daf",
     },
-    title: "Fractional CFO for Startups & SMEs - Part-time CFO Services | Iter Advisors",
+    title: "Fractional CFO for Startups & SMEs | Iter Advisors",
     description:
-      "Iter Advisors provides fractional CFO services for startups and growing SMEs. Get a part-time CFO with full-time expertise - flexible, affordable, and results-driven.",
+      "Iter Advisors provides fractional CFO services for startups and growing SMEs. Get a part-time CFO with full-time expertise - flexible, affordable, results-driven.",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Service",
@@ -86,7 +86,7 @@ export default async function FractionalCFOPage() {
       <section className="bg-[#0a1628] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Fractional CFO for Startups &amp; SMEs
+            Fractional CFO Services for Startups &amp; SMEs
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Scale your finance function with a senior CFO - part-time, flexible,
@@ -120,7 +120,9 @@ export default async function FractionalCFOPage() {
             A fractional CFO provides the same strategic financial leadership as
             a full-time CFO, but on a part-time basis. This model is ideal for
             startups and SMEs that need senior finance expertise but cannot
-            justify or afford a full-time hire. At Iter Advisors, our fractional
+            justify or afford a full-time hire. Unlike outsourced CFO services that
+            focus solely on back-office accounting, our fractional CFOs provide
+            strategic financial leadership. At Iter Advisors, our fractional
             CFOs typically work 2-8 days per month and cover:
           </p>
           <div className="grid md:grid-cols-2 gap-8">
@@ -256,8 +258,8 @@ export default async function FractionalCFOPage() {
                 desc: "Barcelona, Paris, and Toulouse. We combine local expertise with cross-border financial management.",
               },
               {
-                title: "Modern tech stack",
-                desc: "Pennylane, Agicap, Stripe, Power BI, Notion. We automate your finance function with the best tools.",
+                title: "Virtual CFO services",
+                desc: "Our virtual CFO services leverage Pennylane, Agicap, Stripe, Power BI, and Notion to automate your finance function with the best tools, anywhere in the world.",
               },
               {
                 title: "Fundraising track record",
