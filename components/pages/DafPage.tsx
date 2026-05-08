@@ -988,56 +988,12 @@ export default function DafPage({
         />
       )}
 
-      {/* ProfessionalService + AggregateRating + Review Schema (audit P0 — Trustfolio 5/5 31 reviews for SERP rich snippets) */}
-      {locale === "fr" && t.trustfolioReviews && t.trustfolioReviews.length > 0 && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              name: "Iter Advisors — DAF externalisé",
-              description:
-                "Cabinet de DAF externalisé pour PME, startups et scale-ups. CFO senior dès 2 jours/mois, opérationnel J+1. Spécialiste de la levée de fonds, trésorerie et reporting financier.",
-              url: "https://www.iteradvisors.com/daf-externalise",
-              image: "https://www.iteradvisors.com/images/bg/daf-section.webp",
-              priceRange: "EUR 2000-8000",
-              areaServed: [
-                { "@type": "Country", name: "FR" },
-                { "@type": "Country", name: "ES" }
-              ],
-              provider: {
-                "@type": "Organization",
-                name: "Iter Advisors",
-                url: "https://www.iteradvisors.com",
-              },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5",
-                bestRating: "5",
-                worstRating: "1",
-                reviewCount: String(31)
-              },
-              review: t.trustfolioReviews.map((review) => ({
-                "@type": "Review",
-                author: {
-                  "@type": "Person",
-                  name: review.author
-                },
-                reviewRating: {
-                  "@type": "Rating",
-                  ratingValue: String(review.rating),
-                  bestRating: "5",
-                  worstRating: "1"
-                },
-                datePublished: review.date,
-                reviewBody: review.quote,
-                url: review.url
-              }))
-            }),
-          }}
-        />
-      )}
+      {/* NOTE: ProfessionalService + Review Schema removed (2026-05-06)
+        * Reason: Google Rich Results test shows "Invalid object type for itemReviewed"
+        * Service is not an accepted type for Review snippets per Google's guidelines.
+        * Testimonials remain in HTML (UX + Trustfolio widget) without JSON-LD markup.
+        * This resolves 5 critical validation errors in Google Search Console.
+        */}
 
       {/* Speakable Schema (content roadmap P1) — voice-search optimization.
         * Targets the hero block (H1 + intro paragraphs) for voice assistants
