@@ -163,7 +163,6 @@ function ServiceCard({
 
   return <>{cardContent}</>;
 }
-}
 
 /* ─── FAQ Item ─── */
 function FAQItem({ q, a }: { q: string; a: string }) {

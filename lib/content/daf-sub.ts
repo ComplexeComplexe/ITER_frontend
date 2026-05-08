@@ -380,6 +380,32 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       ],
       ctaButton: "Make an appointment",
     },
+    tarifs: {
+      meta: {
+        title: "Outsourced CFO Pricing 2026 - Rates | Iter Advisors",
+        description: "How much does an outsourced CFO cost? Pricing from €2,000 to €8,000 per month depending on the formula. Complete transparency, no surprises.",
+      },
+      parentLabel: "CFO Outsourced",
+      parentHref: "/en/fractional-cfo",
+      breadcrumbLabel: "Pricing",
+      h1: "Outsourced CFO Pricing 2026: rates and comparison",
+      sections: [
+        {
+          content: [
+            "How much does an outsourced CFO cost? This is often the first question asked by SME and startup leaders. The answer depends on several factors: the formula chosen (part-time, transitional, or specific mission), the number of intervention days per month, and the complexity of your company's financial situation.",
+            "At Iter Advisors, we have chosen complete transparency on our rates. This page presents our 2026 pricing grid, the factors that influence the cost, and a comparison with alternatives (hiring a full-time CFO, financial consultant, or accounting firm).",
+          ],
+        },
+        {
+          heading: "2026 Pricing Grid",
+          content: [
+            "Outsourced CFO rates are generally expressed as a monthly fee, calculated on the basis of a predetermined number of intervention days.",
+            "Part-time CFO Formula: the most common and suitable for SMEs and startups. 1 day/month: €1,500-2,500 for companies with fewer than 10 employees. 2 days/month: €2,500-4,500 (the most requested formula, covering full reporting, cash management, and accounting supervision). 3-4 days/month: €4,500-8,000 for companies with more than 30 employees or multi-entity structures.",
+          ],
+        },
+      ],
+      ctaButton: "Make an appointment",
+    },
   },
   es: {
     metier: {
@@ -522,6 +548,32 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           content: [
             "Iter Advisors dispone de un equipo de CFOs de transición experimentados, inmediatamente disponibles. Nuestros profesionales han acompañado con éxito a empresas de diversos sectores: tech, e-commerce, industria, servicios B2B.",
             "Garantizamos una incorporación rápida (en 48 a 72 horas en caso de urgencia) y un acompañamiento de calidad a lo largo de toda la misión. Contáctenos para evaluar juntos sus necesidades.",
+          ],
+        },
+      ],
+      ctaButton: "Concierte una cita",
+    },
+    tarifs: {
+      meta: {
+        title: "Tarifas DAF Externalizado 2026 - Precios | Iter Advisors",
+        description: "¿Cuánto cuesta un DAF externalizado? Tarifas desde 2.000 a 8.000€ mensuales según la fórmula. Transparencia total, sin sorpresas.",
+      },
+      parentLabel: "CFO Externalizado",
+      parentHref: "/es/externalizacion-daf",
+      breadcrumbLabel: "Tarifas",
+      h1: "Tarifas DAF Externalizado 2026: cuadrilla de precios y comparativa",
+      sections: [
+        {
+          content: [
+            "¿Cuánto cuesta un DAF externalizado? Esta es a menudo la primera pregunta que se hacen los dirigentes de PYMEs y startups antes de dar el paso. La respuesta depende de varios factores: la fórmula elegida (tiempo compartido, transición o misión puntual), el número de días de intervención al mes, y la complejidad de la situación financiera de la empresa.",
+            "En Iter Advisors, hemos optado por una transparencia total en nuestras tarifas. Esta página presenta nuestra cuadrilla de precios 2026, los factores que influyen en el coste, y una comparativa con las alternativas (contratación de un DAF a tiempo completo, consultor financiero, o despacho contable).",
+          ],
+        },
+        {
+          heading: "Cuadrilla de Tarifas 2026",
+          content: [
+            "Las tarifas de un DAF externalizado se expresan generalmente como una cuota mensual, calculada sobre la base de un número de días de intervención predeterminado.",
+            "Fórmula DAF a Tiempo Compartido: la más frecuente y adaptada a PYMEs y startups. 1 día/mes: €1.500-2.500 para empresas con menos de 10 empleados. 2 días/mes: €2.500-4.500 (la fórmula más solicitada, cubriendo reporting completo, seguimiento de tesorería y supervisión contable). 3-4 días/mes: €4.500-8.000 para empresas con más de 30 empleados o estructuras multi-entidades.",
           ],
         },
       ],
