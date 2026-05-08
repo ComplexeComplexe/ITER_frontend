@@ -109,14 +109,14 @@ export interface DafContent {
 export const dafContent: Record<Locale, DafContent> = {
   fr: {
     meta: {
-      title: "DAF Externalisé : Cabinet pour PME & Startups | Iter Advisors",
+      title: "DAF Externalisé pour PME & Startups | Iter Advisors",
       description:
-        "DAF externalisé à temps partagé pour PME et startups. Cabinet de directeur financier à Barcelone, Paris, Toulouse. Tarifs dès 2 000 € HT/mois.",
+        "DAF externalisé à temps partagé. Direction financière externalisée pour PME et startups. Tarifs dès 2 000 € HT/mois. Expertise multi-sectorielle, CFO stratégique, flexible et operationnel rapidement.",
     },
     breadcrumbLabel: "DAF Externalisé",
-    h1: "DAF externalisé pour PME et Startups : votre direction financière externalisée",
+    h1: "DAF Externalisé & Directeur Financier Externalisé pour PME et Startups",
     intro: [
-      "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Nos directeurs financiers à temps partagé interviennent en mission ponctuelle ou via une direction financière externalisée — opérationnels dès le premier jour, sans engagement long terme. Avec 85 entreprises accompagnées, 100 M€ de levées de fonds réalisées et une note de 5/5 sur Trustfolio (31 avis vérifiés), nous sommes un acteur de référence du DAF externalisé en France et en Espagne.",
+      "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Nos directeurs financiers à temps partagé (aussi appelés CFO à temps partagé) interviennent en mission ponctuelle ou via une direction financière externalisée — opérationnels dès le premier jour, sans engagement long terme. Avec 85 entreprises accompagnées, 100 M€ de levées de fonds réalisées et une note de 5/5 sur Trustfolio (31 avis vérifiés), nous sommes un acteur de référence du DAF externalisé et du directeur financier externalisé en France et en Espagne.",
       "Un DAF externalisé — aussi appelé DAF à temps partagé, directeur financier externalisé ou CFO externalisé — est un professionnel senior de la finance qui intervient dans votre entreprise sans en être salarié à temps plein. Il devient le co-pilote du dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs, sur un mode flexible (temps partagé, mission ponctuelle ou abonnement mensuel).",
     ],
     partnerSection: {
