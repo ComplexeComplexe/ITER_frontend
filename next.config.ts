@@ -6,7 +6,13 @@ const nextConfig: NextConfig = {
   // hardening flagged by the technical SEO audit (T-3).
   poweredByHeader: false,
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+    domains: [
+      'ztynwacifpvzaemkqifh.storage.eu-central-1.nhost.run', // Strapi CDN
+      'share.trustfolio.co', // Trustfolio widgets
+    ],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   experimental: {
     optimizePackageImports: ["framer-motion", "lucide-react"],

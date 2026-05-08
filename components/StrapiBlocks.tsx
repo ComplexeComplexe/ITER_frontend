@@ -140,6 +140,8 @@ function BlockNode({ block, contactHref }: { block: StrapiBlock; contactHref?: s
             width={block.image?.width || 800}
             height={block.image?.height || 450}
             className="rounded-2xl w-full h-auto"
+            loading="lazy"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
           />
         </figure>
       );
