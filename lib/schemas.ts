@@ -348,12 +348,8 @@ export function reviewsSchema(reviews: ReviewData[]): Record<string, unknown> {
         worstRating: "1",
       },
       itemReviewed: {
-        "@type": "Service",
-        name: "DAF externalisé",
-        provider: {
-          "@type": "Organization",
-          name: "Iter Advisors",
-        },
+        "@type": "Organization",
+        "@id": "https://www.iteradvisors.com/#organization",
       },
       ...(review.url && { url: review.url }),
     })),
