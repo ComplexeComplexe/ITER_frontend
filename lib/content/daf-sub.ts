@@ -1,6 +1,6 @@
 import { Locale } from "../i18n";
 
-export type DafSubPageSlug = "metier" | "temps-partage" | "transition" | "tarifs";
+export type DafSubPageSlug = "metier" | "temps-partage" | "transition" | "tarifs" | "secteurs";
 
 export interface DafSubContent {
   meta: {
@@ -22,47 +22,73 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
   fr: {
     metier: {
       meta: {
-        title: "Qu'est-ce qu'un DAF ? Rôle, missions et compétences | Iter Advisors",
+        title: "Métier de DAF : Rôle, Missions et Compétences | Iter Advisors",
         description:
-          "Découvrez le métier de DAF (Directeur Administratif et Financier) : rôle, missions, compétences clés et évolution du poste dans les entreprises modernes.",
+          "Découvrez le métier de DAF : rôle complet, missions clés, compétences requises et évolution du poste dans les entreprises modernes.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "Le métier de DAF",
-      h1: "Qu'est-ce qu'un DAF ?",
+      h1: "Le Métier de DAF : rôle, missions et compétences en 2026",
       sections: [
         {
           content: [
-            "Le DAF, ou Directeur Administratif et Financier, est un acteur central dans la gouvernance d'une entreprise. Véritable bras droit du dirigeant, il supervise l'ensemble des fonctions financières et administratives, de la comptabilité au pilotage stratégique.",
-            "Dans un contexte économique de plus en plus complexe, le rôle du DAF a considérablement évolué. Au-delà de la gestion comptable traditionnelle, il est aujourd'hui un véritable partenaire stratégique qui participe activement aux décisions clés de l'entreprise.",
+            "Le **DAF**, ou Directeur Administratif et Financier, est l'officier financier senior de l'entreprise. Véritable bras droit du PDG ou du Directeur Général, il supervise l'intégralité de la fonction finance : comptabilité, trésorerie, reporting, fiscalité, et pilotage de la performance. Le DAF n'est pas qu'un expert technique ; c'est un partenaire stratégique qui participe aux décisions clés et contribue à la création de valeur.",
+            "En 2026, le métier de DAF traverse une transformation profonde. Les tâches administratives et répétitives sont progressivement automatisées, libérant du temps pour les missions à haute valeur ajoutée : stratégie financière, accompagnement du business, gestion des risques et transformation digitale.",
           ],
         },
         {
-          heading: "Les missions principales du DAF",
+          heading: "Les missions principales d'un DAF",
           content: [
-            "Le DAF assume un large éventail de responsabilités au sein de l'entreprise. Ses missions principales incluent la supervision de la comptabilité et du reporting financier, la gestion de la trésorerie et des financements, l'élaboration des budgets et des prévisionnels, ainsi que le pilotage de la performance via des tableaux de bord.",
-            "Il est également responsable de la conformité réglementaire, des relations avec les banques et les investisseurs, et de la mise en place des systèmes d'information financiers. Dans les entreprises en croissance, il joue un rôle clé dans les levées de fonds et les opérations de M&A.",
+            "**Pilotage de la comptabilité et reporting financier :** Le DAF supervise la tenue de la comptabilité générale et la production des états financiers (bilan, compte de résultat, tableau de flux de trésorerie). Il s'assure que les comptes sont réguliers, sincères et reflètent fidèlement la situation financière de l'entreprise. Il est responsable de la conformité légale et fiscale.",
+            "**Gestion de la trésorerie :** C'est l'une des missions critiques du DAF. Il prévoit les besoins de trésorerie, négocie les conditions bancaires, gère les risques de change et de taux, et s'assure que l'entreprise dispose toujours des ressources nécessaires pour financer son activité.",
+            "**Élaboration de la stratégie financière :** Le DAF élabore les budgets, les prévisions financières (5 ans) et les plans de trésorerie. Il participe à la définition de la stratégie de financement (dette, fonds propres, leasing), et pilote les grands projets d'investissement.",
+            "**Reporting et tableau de bord :** Le DAF met en place les outils de pilotage qui permettent au management de monitorer la performance financière en temps réel : tableaux de bord KPI, analyses de variance, reporting mensuel et trimestral.",
+            "**Gestion des relations bancaires et investisseurs :** Le DAF représente l'entreprise auprès des banquiers, des investisseurs et des fonds de private equity. Il prépare les présentations financières, négocie les contrats de financement et gère les relations à long terme.",
+            "**Fiscalité et conformité :** Le DAF travaille en étroite collaboration avec l'expert-comptable et les conseillers fiscaux pour optimiser la fiscalité de l'entreprise (impôt sur les sociétés, TVA, impôt sur la fortune immobilière). Il s'assure de la conformité avec toutes les obligations légales (paye, normes comptables, etc.).",
+            "**Gestion des risques financiers :** Le DAF identifie les risques financiers (crédit, trésorerie, change, taux), évalue leur impact potentiel, et met en place les mesures d'atténuation appropriées.",
           ],
         },
         {
-          heading: "Les compétences clés d'un DAF",
+          heading: "Les compétences clés d'un DAF performant",
           content: [
-            "Un DAF performant combine des compétences techniques solides avec des qualités de leadership et de communication. Il maîtrise la comptabilité, la fiscalité, le droit des affaires et les outils de gestion financière. Ses capacités d'analyse et de synthèse lui permettent de transformer des données complexes en recommandations stratégiques claires.",
-            "La maîtrise des outils technologiques est devenue incontournable : ERP, outils de BI (Business Intelligence), logiciels de consolidation et de reporting automatisé font partie de son quotidien.",
+            "**Compétences techniques :** Maîtrise approfondie de la comptabilité générale et analytique, de la fiscalité d'entreprise, du droit des affaires, et des normes comptables (IFRS, normes françaises). Connaissance des principaux outils du DAF : ERP (SAP, NetSuite, Sage), logiciels de BI (Tableau, Power BI), outils de planning financier (Adaptive Insights, Anaplan), et logiciels de consolidation (HFM, Essbase).",
+            "**Compétences analytiques et stratégiques :** Capacité à analyser des données financières complexes, identifier les tendances, et proposer des recommandations stratégiques. Le DAF doit être en mesure de synthétiser l'information pour la rendre accessible au management non-financier.",
+            "**Compétences en leadership :** Autonome et proactif, le DAF dirige une équipe finance parfois dispersée géographiquement. Il doit inspirer confiance, communiquer clairement et créer une culture de performance au sein de la fonction finance.",
+            "**Compétences commerciales :** Le DAF n'est plus enfermé dans son bureau. Il doit comprendre l'activité de l'entreprise, parler le langage des opérationnels et des vendeurs, et aider le management à prendre les meilleures décisions commerciales.",
+            "**Agilité technologique :** À l'ère de l'IA et de la cloud, le DAF doit être à l'aise avec les technologies émergentes (automatisation RPA, machine learning, blockchain). Il doit piloter la transformation digitale de la fonction finance.",
+            "**Compétences interpersonnelles :** Capacité à travailler avec différents stakeholders (banquiers, investisseurs, experts-comptables, auditeurs, dirigeants d'autres divisions). Écoute active, diplomatie et capacité à construire des consensus.",
           ],
         },
         {
-          heading: "L'évolution du métier de DAF",
+          heading: "Le profil type d'un DAF : expérience et parcours",
           content: [
-            "Le métier de DAF connaît une transformation profonde. La digitalisation, l'automatisation des tâches répétitives et l'essor de l'intelligence artificielle libèrent du temps pour les missions à forte valeur ajoutée : stratégie, accompagnement du business, gestion des risques.",
-            "Le DAF moderne est un véritable business partner qui parle le langage des opérationnels, comprend les enjeux commerciaux et contribue à la création de valeur. Il est au coeur de la transformation digitale de la fonction finance.",
+            "Un DAF senior a généralement 12 à 15 ans d'expérience en finance d'entreprise. Son parcours type débute dans un cabinet d'audit (Deloitte, EY, KPMG, Grant Thornton) où il acquiert une expertise comptable et d'audit solide. Il passe ensuite 8 à 10 ans en tant que contrôleur de gestion ou responsable finance dans 2 ou 3 entreprises de secteurs différents, ce qui lui permet de comprendre différents métiers et de développer une vision stratégique.",
+            "Certains DAF ont complété leur formation par un MBA ou un master spécialisé (TFAI, MSF, DFCG). Beaucoup détiennent des certifications comme l'expertise comptable ou le DSCG.",
           ],
         },
         {
-          heading: "DAF externalisé : une alternative pertinente",
+          heading: "L'évolution du métier : du contrôleur à l'activateur de croissance",
           content: [
-            "Pour les PME, startups et scale-ups qui ne peuvent pas ou ne souhaitent pas recruter un DAF à temps plein, le DAF externalisé offre une solution flexible et efficace. Il apporte la même expertise qu'un DAF interne, avec l'avantage de la flexibilité et d'un coût maîtrisé.",
-            "Chez Iter Advisors, nos DAFs externalisés accompagnent les entreprises en croissance avec rigueur et engagement. Contactez-nous pour découvrir comment nous pouvons soutenir votre développement.",
+            "Historiquement, le DAF était d'abord un contrôleur : vérifier la conformité, s'assurer que les règles étaient respectées, sécuriser les chiffres. Aujourd'hui, le DAF est un véritable **activateur de croissance**. Il aide le dirigeant à financer la croissance, à optimiser les investissements, à acquérir des concurrents, et à piloter la transformation numérique.",
+            "La transformation digitale accélère cette évolution. L'automatisation RPA prend en charge les tâches répétitives (rapprochements bancaires, arrêtés de fin de mois, facturation). Le machine learning aide à prédire les besoins de trésorerie et les risques d'impayés. L'IA générative accélère la production des rapports et des analyses.",
+            "Libéré des tâches administratives, le DAF peut se concentrer sur ce qui crée vraiment de la valeur : la stratégie financière, l'accompagnement du business, et la transformation de la fonction finance.",
+          ],
+        },
+        {
+          heading: "DAF interne vs DAF externalisé",
+          content: [
+            "Un DAF interne en CDI coûte entre 80 000 et 150 000€ brut par an, soit environ 116 000 à 217 000€ charges patronales comprises. Recruter un DAF prend 3 à 6 mois. De plus, si le profil ne convient pas, il peut être difficile de changer rapidement.",
+            "Chez Iter Advisors, nos DAFs externalisés apportent la même expertise qu'un DAF interne, avec plusieurs avantages : flexibilité (ajuster les jours d'intervention selon vos besoins), coût maîtrisé (2 500 à 4 500€/mois pour un temps partagé), disponibilité immédiate, et expérience multisectorielle.",
+            "Pour en savoir plus sur nos formules de DAF externalisé (temps partagé, transition, ou mission ponctuelle), consultez la page **[DAF à temps partagé](/daf-externalise/temps-partage)** ou nos **[tarifs](/daf-externalise/tarifs)**.",
+          ],
+        },
+        {
+          heading: "FAQ - Métier de DAF",
+          content: [
+            "**Quelle est la différence entre un DAF et un Directeur Financier ?** Les deux termes désignent la même fonction en France. Le titre officiel est DAF (Directeur Administratif et Financier), mais certaines entreprises utilisent Directeur Financier ou CFO (Chief Financial Officer).",
+            "**Un DAF doit-il impérativement avoir l'expertise comptable ?** Non. Bien que l'expertise comptable soit un avantage, ce n'est pas une obligation. De nombreux DAFs ont un bac+5 (master finance, diplôme d'école de commerce) et acquièrent l'expérience pratique en cabinet d'audit ou en contrôle de gestion.",
+            "**Quel est le salaire d'un DAF en 2026 ?** Le salaire brut d'un DAF junior (3-5 ans d'expérience) varie de 50 000 à 70 000€. Un DAF confirmé (10-15 ans) gagne entre 80 000 et 120 000€. Un DAF senior de grand groupe peut atteindre 150 000€+, avec participation aux résultats et stock-options.",
           ],
         },
       ],
@@ -70,47 +96,69 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     "temps-partage": {
       meta: {
-        title: "DAF à temps partagé : Solution flexible pour PME et startups | Iter Advisors",
+        title: "DAF à Temps Partagé - Missions et Tarifs | Iter Advisors",
         description:
-          "Le DAF à temps partagé : une solution flexible et économique pour les entreprises en croissance. Découvrez les avantages du temps partagé avec Iter Advisors.",
+          "Le DAF à temps partagé intervient plusieurs jours par mois pour structurer votre finance. Missions, audience, tarifs détaillés par Iter Advisors.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF à temps partagé",
-      h1: "Le DAF à temps partagé : Solution flexible et efficace",
+      h1: "DAF à Temps Partagé : votre directeur financier flexible",
       sections: [
         {
           content: [
-            "Le DAF à temps partagé est un directeur administratif et financier qui intervient de manière régulière au sein de votre entreprise, généralement quelques jours par semaine ou par mois. Cette formule offre un accès permanent à une expertise financière de haut niveau, tout en optimisant les coûts.",
-            "Cette solution s'adresse particulièrement aux PME, startups et scale-ups qui ont besoin d'une direction financière structurée mais dont l'activité ne justifie pas encore un recrutement à temps plein.",
+            "Le **DAF à temps partagé** est un Directeur Administratif et Financier senior qui intervient régulièrement au sein de votre entreprise, généralement 2 à 3 jours par semaine ou par mois. Contrairement au **[DAF de transition](/daf-externalise/transition)** qui mobilise l'intégralité de sa disponibilité pour une durée limitée, le DAF à temps partagé s'inscrit dans la durée : il suit votre entreprise, apprend vos enjeux, et ajuste progressivement sa contribution.",
+            "Cette formule offre un accès permanent à une expertise financière de haut niveau, tout en optimisant les coûts. Elle s'adresse particulièrement aux **PME, startups et scale-ups** qui ont besoin d'une direction financière structurée mais dont l'activité ne justifie pas encore un recrutement à temps plein.",
           ],
         },
         {
-          heading: "Comment fonctionne le DAF à temps partagé ?",
+          heading: "Comment Fonctionne le DAF à Temps Partagé ?",
           content: [
-            "Le DAF à temps partagé s'intègre dans votre organisation comme un membre à part entière de votre équipe de direction. Il participe aux comités stratégiques, travaille en étroite collaboration avec vos équipes opérationnelles et assure un suivi régulier de votre performance financière.",
-            "La fréquence d'intervention est définie selon vos besoins : de 1 à 3 jours par semaine en général. Elle peut être ajustée à la hausse lors de périodes intenses (levée de fonds, clôture annuelle, opérations stratégiques) ou à la baisse en phase de croisière.",
+            "Le DAF à temps partagé s'intègre dans votre organisation comme un membre à part entière de votre équipe de direction. Il participe aux réunions stratégiques, travaille en étroite collaboration avec vos équipes opérationnelles et assure un suivi régulier de votre performance financière.",
+            "La fréquence d'intervention est définie selon vos besoins : de 1 à 3 jours par semaine ou par mois. Elle peut être ajustée à la hausse lors de périodes intenses (levée de fonds, clôture annuelle, opérations stratégiques, changement d'ERP) ou à la baisse en phase de croisière.",
+            "Concrètement, le DAF à temps partagé met en place une organisation régulière : réunion hebdomadaire ou bimensuelle d'une demi-journée pour faire le point sur la trésorerie, les KPIs financiers et les priorités ; jours de travail autonome sur les chantiers identifiés (budgets, analyses de variance, optimisation des processus, etc.) ; disponibilité pour les échanges urgents par email ou téléphone entre les jours formels.",
           ],
         },
         {
-          heading: "Les avantages du temps partagé",
+          heading: "Pour Quelles Entreprises ?",
           content: [
-            "Le premier avantage est économique : le coût d'un DAF à temps partagé représente une fraction du coût d'un DAF en CDI, tout en apportant le même niveau d'expertise. Vous bénéficiez d'un regard externe et d'une expérience multisectorielle enrichissante.",
-            "La continuité est un autre atout majeur. Contrairement à un consultant ponctuel, le DAF à temps partagé suit votre entreprise dans la durée, ce qui lui permet de développer une connaissance approfondie de vos enjeux et de votre environnement.",
-            "Enfin, la flexibilité du dispositif vous permet de faire évoluer le volume d'intervention en fonction de la croissance de votre activité, sans engagement rigide.",
+            "Le DAF à temps partagé est particulièrement adapté aux **startups post-seed et Série A** qui structurent leur fonction finance pour la première fois et doivent mettre en place des budgets, des tableaux de bord et une conformité fiscale. Aux **PME en croissance** (CA de 5 à 50 millions) qui professionnalisent leur gestion financière sans justifier un DAF à temps plein. Aux **filiales de groupes** qui ont besoin d'un relais financier local pour suivre la performance et consolider les résultats. Aux **entreprises en préparation d'opérations stratégiques** : levée de fonds, M&A, IPO, où la structuration de la finance est clé.",
           ],
         },
         {
-          heading: "Pour quelles entreprises ?",
+          heading: "Les Missions Principales",
           content: [
-            "Le DAF à temps partagé est particulièrement adapté aux entreprises en phase de structuration (post-seed, Série A), aux PME en croissance qui souhaitent professionnaliser leur gestion financière, aux filiales de groupes qui ont besoin d'un relais financier local, et aux entreprises en préparation d'opérations stratégiques (levée de fonds, M&A).",
+            "**Pilotage financier et tableaux de bord :** Le DAF à temps partagé met en place les outils de pilotage qui permettent au dirigeant de monitorer sa performance en temps réel : tableau de bord KPI mensuel, analyse de variance (réel vs budget), reporting P&L par produit ou par ligne de business.",
+            "**Gestion de la trésorerie :** Prévisions de trésorerie à 3-6 mois, négociation des conditions bancaires, mise en place d'un système de cash management efficace, suivi quotidien des besoins de trésorerie.",
+            "**Élaboration des budgets et des prévisions :** Mise en place du processus budgétaire, construction des prévisionnels financiers à 3-5 ans pour la levée de fonds ou la prise de décision stratégique.",
+            "**Structure financière et comptabilité :** Mise en place de la comptabilité analytique, refonte des plans comptables si nécessaire, organisation de la clôture mensuelle et annuelle, et conformité fiscale.",
+            "**Optimisation des coûts :** Analyse des dépenses, identification des leviers de réduction de coûts (renégociation de contrats, réorganisation de la structure) sans pénaliser la croissance.",
+            "**Relations bancaires et financement :** Présentation de la situation financière aux banques, négociation des lignes de crédit, préparation des demandes de financement (crédit d'impôt, subventions).",
           ],
         },
         {
-          heading: "L'approche Iter Advisors",
+          heading: "Les Avantages du DAF à Temps Partagé",
           content: [
-            "Chez Iter Advisors, nous avons développé une méthodologie éprouvée pour le DAF à temps partagé. Chaque mission débute par un diagnostic complet de votre situation financière, suivi d'un plan d'action priorisé. Notre CFO s'appuie sur un réseau de 30 partenaires technologiques pour mettre en place les meilleurs outils.",
-            "Notre présence à Barcelone, Paris et Toulouse nous permet d'intervenir auprès d'entreprises françaises et internationales. Contactez-nous pour discuter de vos besoins.",
+            "**Économie significative :** Le coût d'un DAF à temps partagé représente 20-40% du coût d'un DAF en CDI. Pour 2 jours par mois, comptez 2 500-4 500€ HT/mois au lieu de 80 000-150 000€ brut/an pour un DAF salarié.",
+            "**Continuité et connaissance approfondie :** Contrairement à un consultant ponctuel qui intervient une fois et disparaît, le DAF à temps partagé suit votre entreprise dans la durée. Il devient progressivement expert de votre secteur, de vos clients, de vos opérations, de vos défis spécifiques.",
+            "**Regard externe et expérience multisectorielle :** Votre DAF travaille avec d'autres entreprises. Il apporte les meilleures pratiques, les benchmarks du secteur, et des idées novatrices issues de ses autres engagements.",
+            "**Flexibilité totale :** Vous pouvez ajuster le nombre de jours en fonction de votre croissance. Pas d'engagement sur plusieurs années, résiliation possible avec préavis d'un mois chez Iter Advisors.",
+            "**Crédibilité auprès des banques et investisseurs :** Pour une levée de fonds, avoir un DAF structuré (même à temps partagé) renforce votre crédibilité. Les investisseurs savent que vous pilotez vos finances sérieusement.",
+          ],
+        },
+        {
+          heading: "DAF à Temps Partagé : la Phase 1",
+          content: [
+            "Les trois premiers mois d'une mission de DAF à temps partagé sont cruciaux. Le DAF réalise un diagnostic complet de votre situation financière : analyse de la comptabilité existante, constitution du dossier fiscal, identification des risques et des points d'amélioration.",
+            "A l'issue de ce diagnostic, vous recevez un rapport détaillé avec les recommandations prioritaires et un plan d'action pour les 12 prochains mois.",
+          ],
+        },
+        {
+          heading: "FAQ - DAF à Temps Partagé",
+          content: [
+            "**Peut-on passer d'un DAF à temps partagé à un DAF interne ?** Oui, c'est un scénario fréquent. Une fois la structure mise en place, vous pouvez recruter un DAF junior à temps plein et garder le DAF à temps partagé en mode conseil pour quelques jours par trimestre.",
+            "**Un DAF à temps partagé peut-il également être DAF de transition sur une autre mission ?** Oui. Chez Iter Advisors, nos DAFs à temps partagé peuvent être mobilisés en mode transition intense pendant 2-3 mois si un besoin urgent surgit chez l'un de leurs clients.",
+            "**Quels sont les délais de mise en place ?** Nous pouvons démarrer une mission en 48-72 heures après signature du contrat. Le premier diagnostic prend généralement 4-6 semaines.",
           ],
         },
       ],
@@ -118,48 +166,85 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     transition: {
       meta: {
-        title: "DAF de transition : Expert pour vos périodes clés | Iter Advisors",
+        title: "DAF de Transition - Missions, Durée et Tarifs | Iter Advisors",
         description:
-          "Le DAF de transition intervient lors de périodes critiques : restructuration, levée de fonds, remplacement temporaire. Découvrez cette solution avec Iter Advisors.",
+          "Le DAF de transition intervient à temps plein en cas de crise, de vacance de poste ou de transformation. Missions, durée et tarifs détaillés par Iter Advisors.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF de transition",
-      h1: "Qu'est-ce qu'un DAF de transition ?",
+      h1: "DAF de Transition : votre direction financière en urgence",
       sections: [
         {
           content: [
-            "Le DAF de transition est un directeur financier expérimenté qui intervient dans votre entreprise pour une période définie, lors d'un moment clé de votre développement. Contrairement au DAF à temps partagé, sa mission est intensive et limitée dans le temps : de quelques semaines à quelques mois.",
-            "Il apporte une expertise immédiatement opérationnelle pour traverser des phases critiques : restructuration financière, remplacement temporaire d'un DAF, préparation d'une levée de fonds, mise en place de nouveaux process ou accompagnement d'une opération de M&A.",
+            "Le **DAF de transition** est un Directeur Administratif et Financier senior qui intervient à temps plein ou quasi-plein dans une entreprise pour une durée limitée, généralement de 3 à 12 mois. Contrairement au **[DAF à temps partagé](/daf-externalise/temps-partage)** qui s'inscrit dans la durée avec une présence partielle, le DAF de transition mobilise l'intégralité de sa disponibilité pour répondre à une situation d'urgence ou de transformation.",
+            "Le **[DAF externalisé](/daf-externalise)** en mode transition est sollicité dans des circonstances précises : départ soudain du DAF en poste, crise de trésorerie, restructuration financière, préparation à une cession ou une acquisition, ou encore accompagnement d'une forte croissance qui dépasse les capacités de l'équipe finance en place.",
           ],
         },
         {
-          heading: "Quand faire appel à un DAF de transition ?",
+          heading: "Dans Quels Cas Faire Appel à un DAF de Transition ?",
           content: [
-            "Plusieurs situations justifient le recours à un DAF de transition. Le départ soudain de votre directeur financier, une période de restructuration nécessitant une expertise pointue, une levée de fonds imminente requérant une préparation intensive, ou encore l'intégration post-acquisition d'une nouvelle entité.",
-            "Le DAF de transition intervient également lorsque l'entreprise traverse une phase de forte croissance nécessitant une montée en compétences rapide de la fonction finance, ou quand il faut mettre en place un nouvel ERP ou refondre les process financiers.",
+            "**Vacance de Poste :** C'est la situation la plus fréquente. Le DAF en poste démissionne, est en arrêt maladie prolongé, ou part en retraite. Le recrutement d'un successeur prend en moyenne 3 à 6 mois. Pendant cette période, la direction financière ne peut pas rester sans pilote. Le DAF de transition prend le relais immédiatement, assure la continuité des opérations, et peut même participer au recrutement de son successeur.",
+            "**Crise de Trésorerie :** Quand une entreprise fait face à une tension de trésorerie sévère - retard de paiement clients, rupture de ligne de crédit, BFR mal maîtrisé - elle a besoin d'un expert financier disponible à temps plein pour gérer la crise. Le DAF de transition analyse la situation, met en place un plan de trésorerie d'urgence, négocie avec les banques et les créanciers, et pilote le retour à l'équilibre.",
+            "**Transformation et Restructuration :** Une fusion-acquisition, une restructuration du groupe, ou une transformation digitale de la fonction finance nécessite une expertise et une disponibilité que l'équipe en place n'a pas toujours. Le DAF de transition apporte l'expertise et la bande passante nécessaires pour mener ces projets à bien sans perturber les opérations courantes.",
+            "**Préparation à une Levée de Fonds ou une Cession :** La préparation d'une levée de fonds ou d'une cession d'entreprise est un processus intensif. Construire la data room, préparer les projections financières, répondre aux questions des investisseurs ou des acquéreurs - tout cela demande une disponibilité que le DAF à temps partagé ne peut pas toujours offrir. Le DAF de transition prend en charge cette phase critique de bout en bout.",
           ],
         },
         {
-          heading: "Les spécificités du management de transition",
+          heading: "Les Missions d'un DAF de Transition",
           content: [
-            "Le DAF de transition se caractérise par sa capacité à être opérationnel immédiatement. Son expérience lui permet de comprendre rapidement les enjeux de l'entreprise, d'établir un diagnostic précis et de mettre en oeuvre un plan d'action efficace.",
-            "Il sait gérer la pression et les situations d'urgence, tout en maintenant une vision stratégique. Sa neutralité et son objectivité sont des atouts précieux pour conduire le changement au sein de l'organisation.",
+            "**Audit et Diagnostic Initial :** La première semaine d'une mission de transition est toujours consacrée à un audit complet de la situation financière. Le DAF de transition analyse les états financiers, évalue la qualité de la comptabilité, identifie les risques immédiats (tensions de trésorerie, litiges fiscaux, engagements hors bilan), et rencontre les parties prenantes clés (banquier, expert-comptable, équipe finance).",
+            "À l'issue de cette première semaine, il remet un rapport de diagnostic avec ses recommandations prioritaires et un plan d'action pour les 30 premiers jours.",
+            "**Stabilisation des Opérations :** La priorité absolue est de stabiliser les opérations financières : s'assurer que les paiements fournisseurs sont honorés, que les encaissements clients sont suivis, que les déclarations fiscales sont à jour, et que la trésorerie est sous contrôle. Cette phase de stabilisation dure généralement 4 à 8 semaines.",
+            "**Transformation et Amélioration :** Une fois les opérations stabilisées, le DAF de transition peut s'attaquer aux chantiers de transformation : mise en place d'outils de pilotage modernes, restructuration des processus financiers, formation de l'équipe en place, ou préparation du dossier pour la levée de fonds.",
+            "**Passation et Recrutement :** La mission de transition se termine toujours par une passation soignée. Le DAF de transition documente les processus, forme son successeur, et s'assure que rien n'est perdu dans la transition.",
           ],
         },
         {
-          heading: "La mission type d'un DAF de transition",
+          heading: "Durée d'une Mission de DAF de Transition",
           content: [
-            "Une mission de DAF de transition se déroule généralement en trois phases. La première semaine est consacrée au diagnostic : analyse de la situation financière, identification des priorités, rencontre des équipes clés.",
-            "Vient ensuite la phase d'exécution, qui constitue le coeur de la mission : mise en place des actions correctives, structuration des process, préparation des dossiers stratégiques et pilotage opérationnel quotidien.",
-            "Enfin, la phase de passation assure la pérennité des améliorations mises en place : documentation des process, formation des équipes et transmission au DAF permanent ou au DAF à temps partagé qui prendra le relais.",
+            "**3 mois** est la durée minimale pour une mission de transition. En dessous, le DAF n'a pas le temps de comprendre l'entreprise, de stabiliser la situation, et de préparer une passation correcte.",
+            "**6 mois** est la durée la plus fréquente. Elle permet de couvrir un cycle complet, de mener les principaux chantiers de transformation, et de recruter et former le successeur.",
+            "**12 mois** est recommandé pour les situations complexes : restructuration lourde, préparation à une cession, ou transformation digitale de la fonction finance.",
+            "Pour en savoir plus sur **[quand recruter un DAF de transition](/ressources/blog/daf-transition-quand)** et les situations qui le justifient, consultez notre guide pratique.",
           ],
         },
         {
-          heading: "L'offre Iter Advisors en management de transition",
+          heading: "Tarifs d'un DAF de Transition",
           content: [
-            "Iter Advisors dispose d'une équipe de DAFs de transition expérimentés, immédiatement mobilisables. Nos professionnels ont accompagné avec succès des entreprises dans des secteurs variés : tech, e-commerce, industrie, services B2B.",
-            "Nous garantissons une prise de poste rapide (sous 48 à 72 heures en cas d'urgence) et un accompagnement de qualité tout au long de la mission. Contactez-nous pour évaluer ensemble vos besoins.",
+            "Le tarif d'un **management de transition finance** est exprimé en TJM (Taux Journalier Moyen). Il est généralement plus élevé que le tarif d'un DAF à temps partagé, car le DAF de transition mobilise l'intégralité de sa disponibilité pour votre entreprise.",
+            "Chez Iter Advisors, nos TJM pour les missions de transition varient entre 800 et 1 500 euros HT par jour, selon le profil du DAF et la complexité de la mission. Pour une mission à temps plein (20 jours par mois), cela représente entre 16 000 et 30 000 euros HT par mois.",
+            "Pour une comparaison détaillée des coûts, consultez notre page sur les **[tarifs du DAF externalisé](/daf-externalise/tarifs)**.",
+          ],
+        },
+        {
+          heading: "DAF de Transition vs DAF Intérimaire",
+          content: [
+            "Les termes \"DAF de transition\" et \"DAF intérimaire\" sont souvent utilisés de manière interchangeable, mais ils recouvrent des réalités légèrement différentes.",
+            "Le **DAF intérimaire** est un salarié mis à disposition par une agence d'intérim spécialisée. Cette formule implique des contraintes administratives et un coût souvent plus élevé en raison de la marge de l'agence.",
+            "Le **DAF de transition** chez Iter Advisors est un prestataire indépendant qui intervient dans le cadre d'un contrat de prestation de services. Cette formule est plus flexible, plus rapide à mettre en place, et souvent moins coûteuse.",
+          ],
+        },
+        {
+          heading: "Nos Autres Formules d'Intervention",
+          content: [
+            "Si votre besoin est récurrent et s'inscrit dans la durée, le **[DAF à temps partagé](/daf-externalise/temps-partage)** est plus adapté. Pour comprendre les compétences requises pour ce poste, consultez notre page sur le **[métier de DAF](/daf-externalise/metier)**. Pour une comparaison transparente des coûts, consultez les **[tarifs du DAF externalisé](/daf-externalise/tarifs)**.",
+            "Nous intervenons dans de nombreux secteurs (**[DAF externalisé par secteur](/daf-externalise/secteurs)**) et dans plusieurs villes (**[DAF externalisé près de chez vous](/daf-externalise/locaux)**).",
+          ],
+        },
+        {
+          heading: "Comment Démarrer une Mission de Transition ?",
+          content: [
+            "La réactivité est au cœur du DAF de transition. Chez Iter Advisors, nous pouvons démarrer une mission en 48 à 72 heures après la signature du contrat.",
+            "**Jour 1 :** Premier appel de qualification pour comprendre la situation et évaluer l'urgence. **Jour 2-3 :** Présentation du DAF proposé au dirigeant. Signature du contrat de prestation. **Jour 4-5 :** Démarrage de la mission. Accès aux systèmes, rencontre avec l'équipe, début de l'audit.",
+          ],
+        },
+        {
+          heading: "FAQ - DAF de Transition",
+          content: [
+            "**Quelle est la différence entre un DAF de transition et un manager de transition ?** Le manager de transition est un terme générique qui désigne tout cadre dirigeant intervenant en mode transition (DG, DRH, DAF, DSI...). Le DAF de transition est un manager de transition spécialisé dans la direction financière.",
+            "**Le DAF de transition peut-il recruter son successeur ?** Oui, c'est même recommandé. Le DAF de transition connaît les besoins réels du poste et peut aider à définir le profil idéal, participer aux entretiens, et assurer la passation avec le nouveau DAF recruté.",
+            "**Peut-on passer d'une mission de transition à un DAF à temps partagé ?** Absolument. C'est même un scénario fréquent : la mission de transition stabilise la situation, puis le DAF reste en mode temps partagé pour assurer la continuité du pilotage financier.",
           ],
         },
       ],
@@ -228,6 +313,62 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             "Peut-on négocier le tarif ? Nos tarifs sont transparents et basés sur le marché. Nous pouvons adapter le nombre de jours d'intervention à votre budget, mais nous ne pratiquons pas de négociation sur le tarif journalier. La qualité de nos DAF justifie nos prix.",
             "Y a-t-il un engagement de durée minimum ? Non. Nos contrats sont résiliables avec un préavis d'un mois. Nous préférons gagner votre confiance par la qualité de notre travail plutôt que par des clauses contractuelles contraignantes.",
             "Le tarif inclut-il les déplacements ? Pour les interventions en présentiel, les frais de déplacement (transport, hébergement si nécessaire) sont facturés en sus au coût réel. Les interventions en distanciel ne génèrent pas de frais supplémentaires.",
+          ],
+        },
+      ],
+      ctaButton: "Prendre rendez-vous",
+    },
+    secteurs: {
+      meta: {
+        title: "DAF Externalisé par Secteur d'Activité | Iter Advisors",
+        description:
+          "DAF externalisé spécialisé par secteur (SaaS, e-commerce, industrie, fintech, santé). Notre expertise sectorielle adaptée à votre métier.",
+      },
+      parentLabel: "DAF Externalisé",
+      parentHref: "/daf-externalise",
+      breadcrumbLabel: "DAF par secteur",
+      h1: "DAF Externalisé par Secteur : notre expertise sectorielle",
+      sections: [
+        {
+          content: [
+            "Chaque secteur d'activité a ses spécificités financières. Une startup **SaaS** n'a pas les mêmes enjeux qu'une **ETI industrielle** ou une plateforme **e-commerce**. Les cycles de vente sont différents, les modèles économiques varient, les risques ne sont pas les mêmes.",
+            "Chez Iter Advisors, nos DAFs externalisés disposent d'une expertise sectorielle approfondie. Ils comprennent votre métier, vos défis spécifiques, et les bonnes pratiques de votre industrie.",
+          ],
+        },
+        {
+          heading: "DAF Externalisé pour Startups & SaaS",
+          content: [
+            "Les startups SaaS ont des enjeux financiers spécifiques : modèle d'abonnement, churn client, LTV/CAC ratio, burn rate, runway. Notre DAF externalisé pour SaaS maîtrise ces KPIs, aide à optimiser le modèle économique, et prépare les levées de fonds successives.",
+          ],
+        },
+        {
+          heading: "DAF Externalisé pour E-Commerce",
+          content: [
+            "Les plateformes e-commerce connaissent des cycles financiers particuliers : saisonnalité, gestion du stock et du BFR, marges fines sur les ventes. Notre expertise aide à piloter la profitabilité malgré les contraintes de trésorerie inhérentes au secteur.",
+          ],
+        },
+        {
+          heading: "DAF Externalisé pour l'Industrie & ETI",
+          content: [
+            "Les entreprises industrielles et les ETI ont besoin d'un DAF qui comprenne la complexité opérationnelle : production, supply chain, risques de change. Nos DAFs externalisés pour l'industrie apportent cette expertise.",
+          ],
+        },
+        {
+          heading: "DAF Externalisé pour Fintech & Finance",
+          content: [
+            "Les entreprises fintech opèrent dans un cadre réglementaire strict. Notre DAF externalisé pour fintech maîtrise la conformité, les reporting réglementaires, et les enjeux de trésorerie en temps réel.",
+          ],
+        },
+        {
+          heading: "DAF Externalisé pour Santé & Biotech",
+          content: [
+            "Les entreprises de santé et biotech font face à des cycles longs de R&D, des cycles de remboursement complexes, et des enjeux réglementaires importants. Notre expertise aide à piloter la performance dans cet environnement.",
+          ],
+        },
+        {
+          heading: "Contactez-Nous",
+          content: [
+            "Vous recherchez un DAF externalisé spécialisé dans votre secteur ? Nos consultants sauront vous proposer le profil idéal. Consultez également nos autres pages : **[DAF à temps partagé](/daf-externalise/temps-partage)**, **[DAF de transition](/daf-externalise/transition)**, **[métier de DAF](/daf-externalise/metier)**, et **[tarifs](/daf-externalise/tarifs)**.",
           ],
         },
       ],
@@ -400,7 +541,103 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           heading: "2026 Pricing Grid",
           content: [
             "Outsourced CFO rates are generally expressed as a monthly fee, calculated on the basis of a predetermined number of intervention days.",
-            "Part-time CFO Formula: the most common and suitable for SMEs and startups. 1 day/month: €1,500-2,500 for companies with fewer than 10 employees. 2 days/month: €2,500-4,500 (the most requested formula, covering full reporting, cash management, and accounting supervision). 3-4 days/month: €4,500-8,000 for companies with more than 30 employees or multi-entity structures.",
+            "Part-time CFO Formula: 1 day/month €1,500-2,500; 2 days/month €2,500-4,500 (most popular); 3-4 days/month €4,500-8,000.",
+            "Transition CFO Formula: €800-1,500 daily rate, or €16,000-30,000/month full-time.",
+            "Specific Mission: €800-1,200 daily rate for audits, financial models, or treasury reviews.",
+          ],
+        },
+        {
+          heading: "What Affects the Price?",
+          content: [
+            "CFO experience: A CFO with 5 years experience costs less than one with 20 years. Our associates all have 10+ years experience.",
+            "Complexity: Simple accounting with one entity costs less than multi-country structures with currency operations.",
+            "Industry: SaaS, e-commerce, or biotech may require specialized expertise with higher rates.",
+            "Location: Paris rates are typically 10-20% higher than other regions.",
+          ],
+        },
+        {
+          heading: "Comparison with Alternatives",
+          content: [
+            "Outsourced CFO vs In-house CFO: Full-time CFO costs €80,000-150,000 gross/year (€116,000-217,000 with benefits). Part-time outsourced CFO at 2 days/month costs €2,500-4,500/month = 3-7x less. Plus full flexibility.",
+            "Outsourced CFO vs Accounting Firm: Accounting firms ensure legal compliance. CFOs drive daily financial performance. Most structured SMEs use both.",
+            "Outsourced CFO vs Financial Consultant: Consultants handle one project then leave. CFOs build ongoing relationships and know your business.",
+          ],
+        },
+        {
+          heading: "How Does Billing Work?",
+          content: [
+            "We establish a service agreement specifying intervention days per month, monthly rate, and 30-day notice for termination. Invoicing is monthly with net-30 payment terms. No hidden fees, no minimum commitment beyond first month.",
+          ],
+        },
+        {
+          heading: "Get a Custom Quote",
+          content: [
+            "For a personalized quote, contact us for a 30-minute call to discuss your needs and financial situation. We'll send a detailed proposal within 48 hours.",
+          ],
+        },
+        {
+          heading: "FAQ - Outsourced CFO Pricing",
+          content: [
+            "Is the fee tax deductible? Yes. CFO fees are operating expenses deductible from taxable income.",
+            "Can we negotiate? Our rates are market-based and transparent. We can adjust intervention days to fit your budget, but not the daily rate.",
+            "Minimum commitment? No. Contracts are cancellable with 30 days notice. We prefer to earn your trust through quality work.",
+            "Do travel costs count? For in-person work, travel is billed at cost. Remote work has no additional fees.",
+          ],
+        },
+      ],
+      ctaButton: "Make an appointment",
+    },
+    secteurs: {
+      meta: {
+        title: "Outsourced CFO by Industry | Iter Advisors",
+        description:
+          "Specialized CFO services by industry (SaaS, e-commerce, manufacturing, fintech, healthcare). Industry-specific financial expertise.",
+      },
+      parentLabel: "CFO Outsourced",
+      parentHref: "/en/fractional-cfo",
+      breadcrumbLabel: "CFO by industry",
+      h1: "Outsourced CFO by Industry: Our sectoral expertise",
+      sections: [
+        {
+          content: [
+            "Each industry has unique financial challenges. A SaaS startup has different financial priorities than a manufacturing company or e-commerce platform. Sales cycles differ, business models vary, and risks are distinct.",
+            "At Iter Advisors, our outsourced CFOs bring deep industry expertise. They understand your business, your specific challenges, and best practices in your sector.",
+          ],
+        },
+        {
+          heading: "Outsourced CFO for Startups & SaaS",
+          content: [
+            "SaaS startups face specific financial challenges: subscription models, customer churn, LTV/CAC ratio, burn rate, runway. Our SaaS CFO masters these KPIs and helps optimize your business model.",
+          ],
+        },
+        {
+          heading: "Outsourced CFO for E-Commerce",
+          content: [
+            "E-commerce platforms face unique cycles: seasonality, inventory and working capital management, thin margins. Our expertise helps you navigate these challenges profitably.",
+          ],
+        },
+        {
+          heading: "Outsourced CFO for Manufacturing & Mid-Market",
+          content: [
+            "Industrial companies need CFOs who understand operational complexity: production, supply chain, currency risks. Our manufacturing CFO brings this expertise.",
+          ],
+        },
+        {
+          heading: "Outsourced CFO for Fintech & Finance",
+          content: [
+            "Fintech companies operate in strict regulatory environments. Our fintech CFO masters compliance, regulatory reporting, and real-time treasury management.",
+          ],
+        },
+        {
+          heading: "Outsourced CFO for Healthcare & Biotech",
+          content: [
+            "Healthcare and biotech companies face long R&D cycles and complex reimbursement models. Our expertise helps you navigate these specialized challenges.",
+          ],
+        },
+        {
+          heading: "Contact Us",
+          content: [
+            "Looking for an industry-specialized CFO? Our consultants will recommend the ideal profile. Also see our Part-time CFO, Transition CFO, CFO Role, and Pricing pages.",
           ],
         },
       ],
@@ -573,7 +810,103 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           heading: "Cuadrilla de Tarifas 2026",
           content: [
             "Las tarifas de un DAF externalizado se expresan generalmente como una cuota mensual, calculada sobre la base de un número de días de intervención predeterminado.",
-            "Fórmula DAF a Tiempo Compartido: la más frecuente y adaptada a PYMEs y startups. 1 día/mes: €1.500-2.500 para empresas con menos de 10 empleados. 2 días/mes: €2.500-4.500 (la fórmula más solicitada, cubriendo reporting completo, seguimiento de tesorería y supervisión contable). 3-4 días/mes: €4.500-8.000 para empresas con más de 30 empleados o estructuras multi-entidades.",
+            "Fórmula DAF a Tiempo Compartido: 1 día/mes €1.500-2.500; 2 días/mes €2.500-4.500 (más solicitada); 3-4 días/mes €4.500-8.000.",
+            "Fórmula DAF de Transición: €800-1.500 diarios, o €16.000-30.000/mes a tiempo completo.",
+            "Misión Puntual: €800-1.200 diarios para auditorías, modelos financieros, o revisiones de tesorería.",
+          ],
+        },
+        {
+          heading: "¿Qué Afecta al Precio?",
+          content: [
+            "Experiencia del DAF: Un DAF con 5 años cuesta menos que uno con 20. Nuestros asociados tienen 10+ años.",
+            "Complejidad: Contabilidad simple con una entidad cuesta menos que estructuras multi-país con operaciones en divisas.",
+            "Sector: SaaS, e-commerce o biotech pueden requerir especialización con tarifas más altas.",
+            "Ubicación: Tarifas en París típicamente 10-20% superiores a otras regiones.",
+          ],
+        },
+        {
+          heading: "Comparativa con Alternativas",
+          content: [
+            "DAF externalizado vs DAF a tiempo completo: DAF a tiempo completo cuesta €80.000-150.000 brutos/año (€116.000-217.000 con costes sociales). DAF externalizado a 2 días/mes cuesta €2.500-4.500/mes = 3-7 veces menos. Además, flexibilidad total.",
+            "DAF externalizado vs Despacho contable: Los despachos garantizan conformidad legal. Los DAFs impulsan desempeño financiero diario. PYMEs estructuradas típicamente usan ambos.",
+            "DAF externalizado vs Consultor financiero: Los consultores manejan un proyecto y se van. Los DAFs construyen relaciones continuas y conocen su negocio.",
+          ],
+        },
+        {
+          heading: "¿Cómo Funciona la Facturación?",
+          content: [
+            "Establecemos un acuerdo de servicios especificando días de intervención por mes, tarifa mensual, y 30 días de preaviso para terminación. Facturación mensual con pago neto-30. Sin cuotas ocultas, sin compromiso mínimo más allá del primer mes.",
+          ],
+        },
+        {
+          heading: "Obtenga un Presupuesto Personalizado",
+          content: [
+            "Para un presupuesto personalizado, contáctenos para una llamada de 30 minutos donde discutiremos sus necesidades y situación financiera. Enviaremos una propuesta detallada en 48 horas.",
+          ],
+        },
+        {
+          heading: "FAQ - Tarifas del DAF Externalizado",
+          content: [
+            "¿Es la tarifa deducible fiscalmente? Sí. Los honorarios de un DAF externalizado son gastos de explotación deducibles de la base imponible.",
+            "¿Podemos negociar? Nuestras tarifas son basadas en mercado y transparentes. Podemos ajustar días de intervención a su presupuesto, pero no negociamos la tarifa diaria.",
+            "¿Compromiso mínimo? No. Los contratos son resolubles con 30 días de preaviso. Preferimos ganar su confianza mediante trabajo de calidad.",
+            "¿Incluyen costes de desplazamiento? Para trabajo presencial, viajes se facturan a coste real. Trabajo remoto sin cuotas adicionales.",
+          ],
+        },
+      ],
+      ctaButton: "Concierte una cita",
+    },
+    secteurs: {
+      meta: {
+        title: "DAF Externalizado por Sector de Actividad | Iter Advisors",
+        description:
+          "DAF externalizado especializado por sector (SaaS, e-commerce, industria, fintech, sanidad). Experiencia sectorial adaptada a su negocio.",
+      },
+      parentLabel: "CFO Externalizado",
+      parentHref: "/es/externalizacion-daf",
+      breadcrumbLabel: "DAF por sector",
+      h1: "DAF Externalizado por Sector: nuestra experiencia sectorial",
+      sections: [
+        {
+          content: [
+            "Cada sector de actividad tiene desafíos financieros únicos. Una startup SaaS no tiene las mismas prioridades que una empresa industrial o plataforma e-commerce. Ciclos de venta diferentes, modelos económicos variados, riesgos distintos.",
+            "En Iter Advisors, nuestros DAFs externalizados cuentan con experiencia sectorial profunda. Entienden su negocio, sus desafíos específicos, y las mejores prácticas de su industria.",
+          ],
+        },
+        {
+          heading: "DAF Externalizado para Startups & SaaS",
+          content: [
+            "Las startups SaaS enfrentan desafíos financieros específicos: modelos de suscripción, churn de clientes, ratio LTV/CAC, burn rate, runway. Nuestro DAF para SaaS domina estos KPIs y ayuda a optimizar el modelo económico.",
+          ],
+        },
+        {
+          heading: "DAF Externalizado para E-Commerce",
+          content: [
+            "Las plataformas e-commerce enfrentan ciclos únicos: estacionalidad, gestión de stock y BFR, márgenes finos. Nuestra experiencia ayuda a pilotar rentabilidad a pesar de restricciones de tesorería.",
+          ],
+        },
+        {
+          heading: "DAF Externalizado para Industria & PYMEs",
+          content: [
+            "Empresas industriales y PYMEs necesitan DAF que entienda complejidad operacional: producción, cadena de suministro, riesgos de cambio. Nuestro DAF industrial trae esta experiencia.",
+          ],
+        },
+        {
+          heading: "DAF Externalizado para Fintech & Finanzas",
+          content: [
+            "Empresas fintech operan en marcos regulatorios estrictos. Nuestro DAF para fintech domina conformidad, reporting regulatorio, y gestión de tesorería en tiempo real.",
+          ],
+        },
+        {
+          heading: "DAF Externalizado para Sanidad & Biotech",
+          content: [
+            "Empresas de sanidad y biotech enfrentan ciclos largos de I+D y modelos complejos de reembolso. Nuestra experiencia ayuda a navegar estos desafíos especializados.",
+          ],
+        },
+        {
+          heading: "Contáctenos",
+          content: [
+            "¿Busca un DAF externalizado especializado en su sector? Nuestros consultores recomendarán el perfil ideal. Vea también nuestras páginas de DAF a Tiempo Compartido, DAF de Transición, Rol de DAF, y Tarifas.",
           ],
         },
       ],
@@ -588,11 +921,15 @@ const slugMapping: Record<Locale, Record<string, DafSubPageSlug>> = {
     metier: "metier",
     "temps-partage": "temps-partage",
     transition: "transition",
+    tarifs: "tarifs",
+    secteurs: "secteurs",
   },
   en: {
     metier: "metier",
     "shared-time": "temps-partage",
     transition: "transition",
+    pricing: "tarifs",
+    industries: "secteurs",
   },
   es: {
     metier: "metier",
@@ -602,6 +939,8 @@ const slugMapping: Record<Locale, Record<string, DafSubPageSlug>> = {
     "tiempo-compartido": "temps-partage",
     multipropiedad: "temps-partage",
     transition: "transition",
+    tarifas: "tarifs",
+    sectores: "secteurs",
   },
 };
 
