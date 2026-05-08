@@ -118,12 +118,14 @@ function ServiceCard({
   desc,
   index,
   theme = "violet",
+  href,
 }: {
   icon: typeof TrendingUp;
   title: string;
   desc: string;
   index: number;
   theme?: "violet" | "chartreuse";
+  href?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -132,7 +134,7 @@ function ServiceCard({
   const iconBg = isGreen ? "bg-iter-chartreuse/15 text-iter-dark" : "bg-iter-violet/10 text-iter-violet";
   const hoverBg = isGreen ? "from-iter-chartreuse/8 to-transparent" : "from-iter-violet/5 to-transparent";
 
-  return (
+  const cardContent = (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
@@ -150,6 +152,17 @@ function ServiceCard({
       </div>
     </motion.div>
   );
+
+  if (href) {
+    return (
+      <Link href={href} className="no-underline">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  return <>{cardContent}</>;
+}
 }
 
 /* ─── FAQ Item ─── */
@@ -551,7 +564,7 @@ export default function HomePage({
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {t.financeServices.map((s, i) => (
-                <ServiceCard key={s.title} icon={serviceIcons[i] ?? TrendingUp} title={s.title} desc={s.desc} index={i} />
+                <ServiceCard key={s.title} icon={serviceIcons[i] ?? TrendingUp} title={s.title} desc={s.desc} index={i} href={s.href} />
               ))}
             </div>
           </div>

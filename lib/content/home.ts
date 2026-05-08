@@ -112,7 +112,7 @@ export const homeContent = {
     ],
     discover: "Découvrir",
     financeServices: [
-      { title: "DAF externalisé", desc: "Un directeur financier dédié à temps partagé pour structurer et piloter votre fonction finance." },
+      { title: "DAF externalisé", href: "/daf-externalise", desc: "Un directeur financier dédié à temps partagé pour structurer et piloter votre fonction finance." },
       { title: "Contrôle de gestion", desc: "Tableaux de bord, reporting et analyse de performance pour des décisions éclairées." },
       { title: "Gestion de trésorerie", desc: "Prévisionnel de trésorerie, optimisation du BFR et pilotage de la liquidité." },
       { title: "Levée de fonds", desc: "Accompagnement stratégique pour sécuriser vos financements et convaincre les investisseurs." },
@@ -297,7 +297,7 @@ export const homeContent = {
     ],
     discover: "Discover",
     financeServices: [
-      { title: "Outsourced CFO", desc: "A dedicated part-time CFO to structure and manage your finance function." },
+      { title: "Outsourced CFO", href: "/daf-externalise", desc: "A dedicated part-time CFO to structure and manage your finance function." },
       { title: "Management control", desc: "Dashboards, reporting and performance analysis for informed decisions." },
       { title: "Cash management", desc: "Cash flow forecasting, working capital optimization and liquidity management." },
       { title: "Fundraising", desc: "Strategic support to secure your financing and convince investors." },
@@ -482,7 +482,7 @@ export const homeContent = {
     ],
     discover: "Descubra",
     financeServices: [
-      { title: "CFO externalizado", desc: "Un director financiero dedicado a tiempo compartido para estructurar y pilotar su función financiera." },
+      { title: "CFO externalizado", href: "/daf-externalise", desc: "Un director financiero dedicado a tiempo compartido para estructurar y pilotar su función financiera." },
       { title: "Control de gestión", desc: "Cuadros de mando, reporting y análisis de rendimiento para decisiones informadas." },
       { title: "Gestión de tesorería", desc: "Previsión de tesorería, optimización del capital circulante y gestión de la liquidez." },
       { title: "Captación de fondos", desc: "Acompañamiento estratégico para asegurar sus financiaciones y convencer a los inversores." },

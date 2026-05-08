@@ -1,6 +1,6 @@
 import { Locale } from "../i18n";
 
-export type DafSubPageSlug = "metier" | "temps-partage" | "transition";
+export type DafSubPageSlug = "metier" | "temps-partage" | "transition" | "tarifs";
 
 export interface DafSubContent {
   meta: {
@@ -160,6 +160,74 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           content: [
             "Iter Advisors dispose d'une équipe de DAFs de transition expérimentés, immédiatement mobilisables. Nos professionnels ont accompagné avec succès des entreprises dans des secteurs variés : tech, e-commerce, industrie, services B2B.",
             "Nous garantissons une prise de poste rapide (sous 48 à 72 heures en cas d'urgence) et un accompagnement de qualité tout au long de la mission. Contactez-nous pour évaluer ensemble vos besoins.",
+          ],
+        },
+      ],
+      ctaButton: "Prendre rendez-vous",
+    },
+    tarifs: {
+      meta: {
+        title: "Tarifs DAF Externalisé 2026 - Grille de Prix | Iter Advisors",
+        description: "Combien coûte un DAF externalisé ? Grille de tarifs 2026 : de 2 000 à 8 000 € HT/mois selon la formule. Transparence totale, sans surprise.",
+      },
+      parentLabel: "DAF Externalisé",
+      parentHref: "/daf-externalise",
+      breadcrumbLabel: "Tarifs",
+      h1: "Tarifs DAF Externalisé 2026 : grille de prix et comparatif",
+      sections: [
+        {
+          content: [
+            "Combien coûte un DAF externalisé ? C'est souvent la première question que se posent les dirigeants de PME et de startups avant de franchir le pas. La réponse dépend de plusieurs facteurs : la formule choisie (temps partagé, transition ou mission ponctuelle), le nombre de jours d'intervention par mois, et la complexité de la situation financière de l'entreprise.",
+            "Chez Iter Advisors, nous avons fait le choix de la transparence totale sur nos tarifs. Cette page présente notre grille de prix 2026, les facteurs qui influencent le coût, et une comparaison avec les alternatives (recrutement d'un DAF salarié, consultant financier, expert-comptable).",
+          ],
+        },
+        {
+          heading: "Grille de Tarifs 2026",
+          content: [
+            "Les tarifs d'un DAF externalisé s'expriment généralement en forfait mensuel, calculé sur la base d'un nombre de jours d'intervention défini à l'avance.",
+            "Formule DAF à Temps Partagé : la plus courante et adaptée aux PME et startups. 1 jour/mois : 1 500-2 500€ HT pour les entreprises de moins de 10 salariés. 2 jours/mois : 2 500-4 500€ HT (la formule la plus demandée, couvrant reporting complet, suivi de trésorerie et supervision comptable). 3-4 jours/mois : 4 500-8 000€ HT pour les entreprises de plus de 30 salariés ou structures multi-entités.",
+            "Formule DAF de Transition : intervention à temps plein ou quasi-plein sur 3 à 12 mois en cas de crise ou transformation majeure. Tarif : 800-1 500€ HT par jour, soit 16 000-30 000€ HT par mois. Significativement plus élevé que le temps partagé car mobilisation intégrale.",
+            "Mission Ponctuelle : pour besoins spécifiques et limités (due diligence, modèle financier, audit de trésorerie). TJM : 800-1 200€ HT par jour selon le profil et la complexité.",
+          ],
+        },
+        {
+          heading: "Qu'est-ce qui Fait Varier le Prix ?",
+          content: [
+            "Plusieurs facteurs influencent le coût final d'un DAF externalisé. L'expérience du DAF : un DAF avec 5 ans d'expérience ne coûte pas le même prix qu'un DAF avec 20 ans d'expérience. Chez Iter Advisors, tous nos associés ont plus de 10 ans d'expérience en finance d'entreprise.",
+            "La complexité de la situation : une comptabilité simple avec une seule entité juridique nécessite moins de temps qu'une structure multi-pays avec opérations en devises, filiales et obligations de consolidation.",
+            "Le secteur d'activité : certains secteurs comme les SaaS, e-commerce ou biotechs nécessitent une expertise spécifique qui peut justifier un tarif légèrement supérieur.",
+            "La localisation : les tarifs à Paris sont généralement 10-20% supérieurs à ceux pratiqués en province ou à Barcelone, en raison du coût de la vie plus élevé.",
+          ],
+        },
+        {
+          heading: "Comparaison avec les Alternatives",
+          content: [
+            "DAF externalisé vs DAF salarié : un DAF salarié en CDI coûte 80 000-150 000€ brut/an, soit 116 000-217 000€/an charges comprises (45% de charges patronales). Un DAF externalisé à 2 jours/mois coûte 2 500-4 500€ HT/mois, soit 3 à 7 fois moins cher. De plus, si vos besoins évoluent, vous ajustez simplement le nombre de jours sans contrainte administrative.",
+            "DAF externalisé vs Expert-Comptable : l'expert-comptable certifie la conformité légale et fiscale. Le DAF externalisé pilote la performance financière au quotidien. Ce sont des rôles complémentaires. Une PME structurée a typiquement les deux : l'expert-comptable pour la conformité, le DAF pour le pilotage.",
+            "DAF externalisé vs Consultant Financier : un consultant intervient sur une mission précise et repart une fois terminée. Le DAF externalisé construit une relation continue et connaît votre historique. Pour des besoins récurrents, le DAF externalisé est toujours plus adapté.",
+          ],
+        },
+        {
+          heading: "Comment se Passe la Facturation ?",
+          content: [
+            "Chez Iter Advisors, la facturation est simple et transparente. Nous établissons un contrat de prestation de services qui précise le nombre de jours d'intervention par mois, le tarif mensuel, et les modalités de résiliation (préavis d'un mois).",
+            "La facturation est mensuelle, avec paiement à 30 jours. Il n'y a pas de frais cachés, pas de facturation supplémentaire pour les échanges par email ou téléphone entre les jours d'intervention formels, et pas d'engagement minimum au-delà du premier mois.",
+          ],
+        },
+        {
+          heading: "Comment Obtenir un Devis ?",
+          content: [
+            "Pour obtenir un devis personnalisé, le plus simple est de nous contacter pour un premier échange de 30 minutes. Lors de cet appel, nous évaluons ensemble vos besoins, votre situation financière actuelle, et le nombre de jours d'intervention adapté.",
+            "Nous vous envoyons ensuite une proposition commerciale détaillée sous 48 heures.",
+          ],
+        },
+        {
+          heading: "FAQ - Tarifs du DAF Externalisé",
+          content: [
+            "Le tarif est-il déductible fiscalement ? Oui. Les honoraires d'un DAF externalisé sont des charges d'exploitation déductibles du résultat imposable de l'entreprise, au même titre que les honoraires d'un expert-comptable ou d'un avocat.",
+            "Peut-on négocier le tarif ? Nos tarifs sont transparents et basés sur le marché. Nous pouvons adapter le nombre de jours d'intervention à votre budget, mais nous ne pratiquons pas de négociation sur le tarif journalier. La qualité de nos DAF justifie nos prix.",
+            "Y a-t-il un engagement de durée minimum ? Non. Nos contrats sont résiliables avec un préavis d'un mois. Nous préférons gagner votre confiance par la qualité de notre travail plutôt que par des clauses contractuelles contraignantes.",
+            "Le tarif inclut-il les déplacements ? Pour les interventions en présentiel, les frais de déplacement (transport, hébergement si nécessaire) sont facturés en sus au coût réel. Les interventions en distanciel ne génèrent pas de frais supplémentaires.",
           ],
         },
       ],

@@ -119,11 +119,11 @@ export default function DafSubPage({ locale, content, cmsNavigation }: DafSubPag
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { title: locale === "fr" ? "DAF externalisé" : locale === "en" ? "Outsourced CFO" : "DAF externalizado", href: locale === "fr" ? "/daf-externalise" : `/${locale}/daf-externalise`, icon: TrendingUp },
-              { title: locale === "fr" ? "Accompagnement levée de fonds" : locale === "en" ? "Fund-raising support" : "Acompañamiento captación de fondos", href: locale === "fr" ? "/services/accompagnement-levee-de-fond" : `/${locale}/services/fund-raising-support`, icon: Rocket },
-              { title: locale === "fr" ? "Contrôle de gestion externalisé" : locale === "en" ? "Outsourced management control" : "Control de gestión externalizado", href: locale === "fr" ? "/services/controle-de-gestion-externalise" : `/${locale}/services/outsourced-management-control`, icon: BarChart3 },
-              { title: locale === "fr" ? "Prévisionnel de trésorerie" : locale === "en" ? "Cash flow forecast" : "Previsión de tesorería", href: locale === "fr" ? "/services/previsionnel-tresorerie" : `/${locale}/services/cash-flow-forecast`, icon: Shield },
-              { title: locale === "fr" ? "DRH externalisé" : locale === "en" ? "Outsourced HR Director" : "DRH externalizado", href: locale === "fr" ? "/drh-externalise" : `/${locale}/drh-externalise`, icon: Target },
-              { title: locale === "fr" ? "M&A & Due Diligence" : "M&A & Due Diligence", href: locale === "fr" ? "/services/ma-due-diligence" : `/${locale}/services/ma-due-diligence`, icon: Compass },
+              { title: locale === "fr" ? "DAF à temps partagé" : locale === "en" ? "Fractional CFO" : "DAF a tiempo compartido", href: locale === "fr" ? "/daf-externalise/temps-partage" : `/${locale}/daf-externalise/temps-partage`, icon: Rocket },
+              { title: locale === "fr" ? "DAF de transition" : locale === "en" ? "Transition CFO" : "DAF de transición", href: locale === "fr" ? "/daf-externalise/transition" : `/${locale}/daf-externalise/transition`, icon: BarChart3 },
+              { title: locale === "fr" ? "Métier de DAF" : locale === "en" ? "CFO role & skills" : "Profesión de DAF", href: locale === "fr" ? "/daf-externalise/metier" : `/${locale}/daf-externalise/metier`, icon: Shield },
+              { title: locale === "fr" ? "Tarifs du DAF externalisé" : locale === "en" ? "CFO pricing" : "Tarifas DAF externalizado", href: locale === "fr" ? "/daf-externalise/tarifs" : `/${locale}/daf-externalise/tarifs`, icon: Target },
+              { title: locale === "fr" ? "DAF externalisé par secteur" : locale === "en" ? "CFO by industry" : "DAF externalizado por sector", href: locale === "fr" ? "/daf-externalise/secteurs" : `/${locale}/daf-externalise/secteurs`, icon: Compass },
             ].map((service, i) => (
               <Link
                 key={i}
