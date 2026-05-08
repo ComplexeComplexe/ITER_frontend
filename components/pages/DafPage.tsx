@@ -11,7 +11,7 @@ import { strapiMediaUrl } from "@/lib/strapi";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import { BOOKING_URL } from "@/lib/navigation";
 import { getDafContent, type FaqRichAnswer } from "@/lib/content/daf";
-import { faqPageSchema, serviceSchema, howToSchema, articleSchema, speakableSchema } from "@/lib/schemas";
+import { faqPageSchema, serviceSchema, howToSchema, articleSchema, speakableSchema, reviewsSchema } from "@/lib/schemas";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import References from "@/components/References";
@@ -949,7 +949,7 @@ export default function DafPage({
         }}
       />
 
-      {/* Service + AggregateRating Schema (CC-05) */}
+      {/* Service + AggregateRating Schema (CC-05) + Correction 1 from ticket */}
       {locale === "fr" && (
         <script
           type="application/ld+json"
@@ -962,6 +962,12 @@ export default function DafPage({
                 url: "/daf-externalise",
                 serviceType: "Direction financière externalisée",
                 areaServed: ["FR", "ES"],
+                aggregateRating: {
+                  ratingValue: "5",
+                  bestRating: "5",
+                  worstRating: "1",
+                  ratingCount: t.trustfolioReviews?.length || 0,
+                },
                 offers: [
                   {
                     name: "Essentiel",
@@ -988,12 +994,25 @@ export default function DafPage({
         />
       )}
 
-      {/* NOTE: ProfessionalService + Review Schema removed (2026-05-06)
-        * Reason: Google Rich Results test shows "Invalid object type for itemReviewed"
-        * Service is not an accepted type for Review snippets per Google's guidelines.
-        * Testimonials remain in HTML (UX + Trustfolio widget) without JSON-LD markup.
-        * This resolves 5 critical validation errors in Google Search Console.
-        */}
+      {/* Review Schema with corrections (Corrections 2-4 from ticket) */}
+      {locale === "fr" && t.trustfolioReviews && t.trustfolioReviews.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              reviewsSchema(
+                t.trustfolioReviews.map((review) => ({
+                  author: review.author,
+                  datePublished: review.date,
+                  reviewBody: review.quote,
+                  rating: review.rating,
+                  url: review.url,
+                }))
+              ),
+            ),
+          }}
+        />
+      )}
 
       {/* Speakable Schema (content roadmap P1) — voice-search optimization.
         * Targets the hero block (H1 + intro paragraphs) for voice assistants

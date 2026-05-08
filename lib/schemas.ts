@@ -50,15 +50,21 @@ export function breadcrumbSchema(items: BreadcrumbItemSchema[]): Record<string, 
 }
 
 /**
- * Generate Service JSON-LD schema with optional offer catalog.
- * Note: aggregateRating is NOT included here as it's not valid for Service type.
- * Use organization-level aggregateRating via financialServiceSchema instead.
+ * Generate Service JSON-LD schema with optional offer catalog and aggregateRating.
+ * Includes aggregateRating (Correction 1 from ticket).
  */
 export interface ServiceOffer {
   name: string;
   price?: string;
   priceCurrency?: string;
   description?: string;
+}
+
+export interface AggregateRatingData {
+  ratingValue: string;
+  bestRating: string;
+  worstRating: string;
+  ratingCount: number;
 }
 
 export function serviceSchema({
@@ -68,6 +74,7 @@ export function serviceSchema({
   serviceType,
   areaServed,
   offers,
+  aggregateRating,
 }: {
   name: string;
   description: string;
@@ -76,6 +83,7 @@ export function serviceSchema({
   /** ISO 3166-1 alpha-2 country codes, e.g. ["FR", "ES"]. */
   areaServed?: string[];
   offers?: ServiceOffer[];
+  aggregateRating?: AggregateRatingData;
 }): Record<string, unknown> {
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -92,6 +100,15 @@ export function serviceSchema({
 
   if (serviceType) schema.serviceType = serviceType;
   if (areaServed && areaServed.length > 0) schema.areaServed = areaServed;
+  if (aggregateRating) {
+    schema.aggregateRating = {
+      "@type": "AggregateRating",
+      ratingValue: aggregateRating.ratingValue,
+      bestRating: aggregateRating.bestRating,
+      worstRating: aggregateRating.worstRating,
+      ratingCount: aggregateRating.ratingCount,
+    };
+  }
   if (offers && offers.length > 0) {
     schema.hasOfferCatalog = {
       "@type": "OfferCatalog",
@@ -311,6 +328,51 @@ export function articleSchema({
         url: imageSrc.startsWith("http") ? imageSrc : `${BASE}${imageSrc}`,
       },
     }),
+  };
+}
+
+/**
+ * Generate Review JSON-LD schema array with corrected structure (Ticket fixes).
+ * Implements Corrections 2-4 from the ticket:
+ * - Correction 2: author type is "Person" (not "Thing")
+ * - Correction 3: Rating uses ratingValue (not name)
+ * - Correction 4: itemReviewed is included in each review
+ */
+export interface ReviewData {
+  author: string;
+  datePublished: string; // ISO date YYYY-MM-DD
+  reviewBody: string;
+  rating: number; // 1-5
+  url?: string; // Link to source (e.g. Trustfolio)
+}
+
+export function reviewsSchema(reviews: ReviewData[]): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@graph": reviews.map((review) => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: review.author,
+      },
+      datePublished: review.datePublished,
+      reviewBody: review.reviewBody,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: String(review.rating),
+        bestRating: "5",
+        worstRating: "1",
+      },
+      itemReviewed: {
+        "@type": "Service",
+        name: "DAF externalisé",
+        provider: {
+          "@type": "Organization",
+          name: "Iter Advisors",
+        },
+      },
+      ...(review.url && { url: review.url }),
+    })),
   };
 }
 
