@@ -30,9 +30,9 @@ const navFr: NavItem[] = [
       { text: "DAF à Temps Partagé", href: "/daf-externalise/temps-partage" },
       { text: "DAF de Transition", href: "/daf-externalise/transition" },
       { text: "DAF : Métier", href: "/daf-externalise/metier" },
-      { text: "DAF externalisé Barcelone", href: "/daf-externalise-barcelone" },
-      { text: "DAF externalisé Paris", href: "/daf-externalise-paris" },
-      { text: "DAF externalisé Toulouse", href: "/daf-externalise-toulouse" },
+      { text: "DAF : Tarifs", href: "/daf-externalise/tarifs" },
+      { text: "DAF par Secteur", href: "/daf-externalise/secteurs" },
+      { text: "DAF près de chez vous", href: "/daf-externalise/locaux" },
     ],
   },
   {
