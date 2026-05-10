@@ -7,13 +7,14 @@ import {
   SERVICE_PAGE_SLUGS,
   SERVICE_PAGE_API_MAP,
   SERVICE_URL_SLUG_BY_LOCALE,
+  getServiceSlugsForLocale,
   type ServicePageSlug,
 } from "@/lib/strapi";
 import { buildStrapiMetadata } from "@/lib/metadata";
 
 const basePath = "/services";
 
-/* ── Bug 1 + 4 fix: titres fallback corriges et enrichis ── */
+/* ── Fallback titles for FR services ── */
 const fallbackTitles: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
     "Prévisionnel de Trésorerie PME | Iter Advisors",
@@ -27,7 +28,7 @@ const fallbackTitles: Record<ServicePageSlug, string> = {
     "Contrôle de Gestion Externalisé | Iter Advisors",
 };
 
-/* ── Bug 3 fix: meta descriptions uniques par page ── */
+/* ── Fallback descriptions for FR services ── */
 const fallbackDescriptions: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
     "Construisez un prévisionnel de trésorerie glissant sur 13 semaines. Anticipez les tensions de cash, optimisez votre BFR et sécurisez votre runway. +50 PME accompagnées.",
@@ -49,13 +50,13 @@ function isServicePageSlug(slug: string): slug is ServicePageSlug {
 function getServiceLocalizedPaths(slug: ServicePageSlug) {
   return {
     fr: `/services/${SERVICE_URL_SLUG_BY_LOCALE.fr[slug]}`,
-    en: `/services/${SERVICE_URL_SLUG_BY_LOCALE.en[slug]}`,
-    es: `/services/${SERVICE_URL_SLUG_BY_LOCALE.es[slug]}`,
+    en: `/en/services/${SERVICE_URL_SLUG_BY_LOCALE.en[slug]}`,
+    es: `/es/services/${SERVICE_URL_SLUG_BY_LOCALE.es[slug]}`,
   };
 }
 
 export async function generateStaticParams() {
-  return SERVICE_PAGE_SLUGS.map((slug) => ({ slug }));
+  return getServiceSlugsForLocale("fr").map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({

@@ -3,56 +3,52 @@ import { notFound } from "next/navigation";
 import ServiceSinglePage from "@/components/pages/ServiceSinglePage";
 import {
   getServiceSinglePage,
+  getCmsNavigation,
+  SERVICE_PAGE_SLUGS,
+  SERVICE_PAGE_API_MAP,
+  SERVICE_URL_SLUG_BY_LOCALE,
   getCanonicalServiceSlug,
   getServiceSlugsForLocale,
-  getCmsNavigation,
-  SERVICE_URL_SLUG_BY_LOCALE,
   type ServicePageSlug,
 } from "@/lib/strapi";
-import { buildMetadata } from "@/lib/metadata";
+import { buildStrapiMetadata } from "@/lib/metadata";
 
-const basePath = "/services";
-const locale = "es" as const;
+const basePath = "/es/services";
 
-/* ── Fallback titles ES (Strapi SEO is shared across locales for Single Types) ── */
+/* ── Fallback titles for ES services ── */
 const fallbackTitles: Record<ServicePageSlug, string> = {
-  "previsionnel-tresorerie":
-    "Previsión de Tesorería PYME | Iter Advisors",
-  "gestion-financiere-externalisee":
-    "Gestión Financiera Externalizada | Iter Advisors",
-  "accompagnement-levee-de-fond":
-    "Captación de Fondos | Iter Advisors",
-  "comptabilite-externalisation":
-    "Externalización Contable | Iter Advisors",
-  "controle-de-gestion-externalise":
-    "Control de Gestión Externalizado | Iter Advisors",
+  "previsionnel-tresorerie": "Previsión de Tesorería | Iter Advisors",
+  "gestion-financiere-externalisee": "Gestión Financiera Externalizada | Iter Advisors",
+  "accompagnement-levee-de-fond": "Soporte de Financiación | Iter Advisors",
+  "comptabilite-externalisation": "Externalizar Contabilidad | Iter Advisors",
+  "controle-de-gestion-externalise": "Control de Gestión Externalizado | Iter Advisors",
 };
 
-/* ── Fallback descriptions ES (unique per page) ── */
+/* ── Fallback descriptions for ES services ── */
 const fallbackDescriptions: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
-    "Construya una previsión de tesorería deslizante a 13 semanas. Anticipe tensiones de caja, optimice su capital circulante. +50 PYME acompañadas. Consulta gratuita.",
+    "Crea una previsión de tesorería móvil de 13 semanas. Anticipa tensiones de efectivo, optimiza tu capital de trabajo y asegura tu runway. 50+ PYMEs acompañadas.",
   "gestion-financiere-externalisee":
-    "CFO externalizado desde 2 días/mes. Reporting mensual, pilotaje presupuestario y estrategia financiera para startups y PYME. Barcelona, París, Toulouse.",
+    "CFO externalizado desde 2 días/mes. Reporting mensual, gestión presupuestaria y estrategia financiera para startups y PYMEs. Presupuesto gratuito.",
   "accompagnement-levee-de-fond":
-    "Captación de fondos integral: business plan, data room, due diligence y negociación con inversores. +30 rondas acompañadas, 100M EUR+ levantados.",
+    "Financiación integral: business plan, data room, due diligence y negociaciones con inversores. 30+ rondas acompañadas, 100M EUR+ levantados.",
   "comptabilite-externalisation":
-    "Externalice su contabilidad: gestión contable, IVA, nóminas y cierre anual. Pennylane, Sage, QuickBooks - migración en 2 semanas. Presupuesto gratuito.",
+    "Externaliza tu contabilidad: teneduría, declaraciones de IVA, nómina y cierre anual. Pennylane, Sage, QuickBooks - migración en 2 semanas.",
   "controle-de-gestion-externalise":
-    "Control de gestión externalizado: cuadros de mando, análisis de desviaciones, optimización de costes y seguimiento de rendimiento. Resultados desde el 1er mes.",
+    "Externaliza tu control de gestión para impulsar rentabilidad. Dashboards y KPIs personalizados para PYMEs y startups en España.",
 };
 
 /** Build localizedPaths for a service page slug */
-function getServiceLocalizedPaths(canonical: ServicePageSlug) {
+function getServiceLocalizedPaths(slug: ServicePageSlug) {
   return {
-    fr: `/services/${SERVICE_URL_SLUG_BY_LOCALE.fr[canonical]}`,
-    en: `/services/${SERVICE_URL_SLUG_BY_LOCALE.en[canonical]}`,
-    es: `/services/${SERVICE_URL_SLUG_BY_LOCALE.es[canonical]}`,
+    fr: `/services/${SERVICE_URL_SLUG_BY_LOCALE.fr[slug]}`,
+    en: `/en/services/${SERVICE_URL_SLUG_BY_LOCALE.en[slug]}`,
+    es: `/es/services/${SERVICE_URL_SLUG_BY_LOCALE.es[slug]}`,
   };
 }
 
 export async function generateStaticParams() {
-  return getServiceSlugsForLocale(locale).map((slug) => ({ slug }));
+  return getServiceSlugsForLocale("es").map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -61,36 +57,34 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const canonical = getCanonicalServiceSlug(locale, slug);
+  const canonical = getCanonicalServiceSlug("es", slug);
   if (!canonical) {
-    return { title: "Services | Iter Advisors" };
+    return { title: "Servicios | Iter Advisors" };
   }
-  /* Use static fallback directly because Strapi SEO component is shared
-     across locales (Single Types) and always returns FR meta tags. */
-  return buildMetadata({
-    locale,
-    title: fallbackTitles[canonical],
-    description: fallbackDescriptions[canonical],
-    path: `/services/${slug}`,
+  const endpoint = SERVICE_PAGE_API_MAP[canonical];
+  return buildStrapiMetadata({
+    endpoint,
+    locale: "es",
+    path: `${basePath}/${slug}`,
     localizedPaths: getServiceLocalizedPaths(canonical),
+    fallbackTitle: fallbackTitles[canonical],
+    fallbackDescription: fallbackDescriptions[canonical],
   });
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const canonical = getCanonicalServiceSlug(locale, slug);
+  const canonical = getCanonicalServiceSlug("es", slug);
   if (!canonical) notFound();
-  const [page, cmsNavigation] = await Promise.all([
-    getServiceSinglePage(canonical, locale),
-    getCmsNavigation("es"),
-  ]);
+  const page = await getServiceSinglePage(canonical, "es");
   if (!page) notFound();
+  const cmsNavigation = await getCmsNavigation("es");
   return (
     <ServiceSinglePage
-      locale={locale}
+      locale="es"
       page={page}
       breadcrumbTitle={page.heroTitle}
-      slug={slug}
+      slug={canonical}
       cmsNavigation={cmsNavigation}
     />
   );
