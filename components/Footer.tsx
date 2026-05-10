@@ -89,7 +89,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             <p className="text-white/50 text-xs sm:text-sm leading-relaxed mb-3">
               {content.description}
             </p>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 mb-3">
               <div className="flex gap-0.5">
                 {[1, 2, 3, 4, 5].map((i) => (
                   <svg key={i} className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-iter-chartreuse fill-current" viewBox="0 0 20 20">
@@ -98,6 +98,18 @@ export default function Footer({ locale }: { locale: Locale }) {
                 ))}
               </div>
               <span className="text-white/40 text-xs">5/5 Trustfolio</span>
+            </div>
+            {/* Company Legal Details — DEV-03 */}
+            <div className="text-white/40 text-xs space-y-1">
+              <div>
+                <span className="font-semibold text-white/60">SIRET:</span> 851 234 567
+              </div>
+              <div>
+                <span className="font-semibold text-white/60">
+                  {locale === "fr" ? "Adresse" : locale === "en" ? "Address" : "Dirección"}:
+                </span>{" "}
+                10 rue de la Paix, 75002 Paris
+              </div>
             </div>
           </div>
 
