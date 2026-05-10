@@ -692,7 +692,6 @@ export default function DafPage({
               { title: locale === "fr" ? "Métier de DAF" : locale === "en" ? "CFO role & skills" : "Profesión de DAF", href: locale === "fr" ? "/daf-externalise/metier" : `/${locale}/daf-externalise/metier`, icon: Shield },
               { title: locale === "fr" ? "Tarifs du DAF externalisé" : locale === "en" ? "CFO pricing" : "Tarifas DAF externalizado", href: locale === "fr" ? "/daf-externalise/tarifs" : `/${locale}/daf-externalise/tarifs`, icon: DollarSign },
               { title: locale === "fr" ? "DAF externalisé par secteur" : locale === "en" ? "CFO by industry" : "DAF externalizado por sector", href: locale === "fr" ? "/daf-externalise/secteurs" : `/${locale}/daf-externalise/secteurs`, icon: Compass },
-              { title: locale === "fr" ? "DAF externalisé près de chez vous" : locale === "en" ? "Local outsourced CFO" : "CFO externalizado local", href: locale === "fr" ? "/daf-externalise/locaux" : `/${locale}/daf-externalise/locaux`, icon: MapPin },
             ].map((service, i) => (
               <Link
                 key={i}

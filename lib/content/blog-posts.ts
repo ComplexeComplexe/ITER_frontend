@@ -37,6 +37,9 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogHref: "/ressources/blog",
       },
       h1: "Flux de trésorerie : définition et importance pour les entreprises",
+      publishedDate: "2026-05-10",
+      author: "Sébastien Doat",
+      category: "guides-pratiques",
       htmlContent: `<p>Le flux de trésorerie, ou cash flow, est un indicateur financier fondamental qui mesure les entrées et sorties d'argent d'une entreprise sur une période donnée. Il constitue le baromètre de la santé financière de votre société et permet d'anticiper les besoins de financement.</p>
 <p>Comprendre et maîtriser ses flux de trésorerie est essentiel pour toute entreprise, qu'il s'agisse d'une startup en phase de lancement ou d'une PME en pleine croissance. Un suivi rigoureux permet d'éviter les crises de liquidité et de prendre des décisions éclairées.</p>
 <p>On distingue généralement trois types de flux de trésorerie : le flux opérationnel (lié à l'activité courante), le flux d'investissement (acquisitions et cessions d'actifs) et le flux de financement (emprunts, remboursements, levées de fonds).</p>
@@ -1342,7 +1345,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Cas d'étude Happy Scribe : comment structurer les finances d'une startup en hypercroissance",
       publishedDate: "2026-05-10",
-      author: "Iter Advisors",
+      author: "Sébastien Doat",
       category: "cas-etudes",
       htmlContent: `<p><strong>Happy Scribe est une startup française fondée en 2016 qui propose une solution SaaS pour la transcription et la sous-titrage automatiques de vidéos.</strong> Parmi ses utilisateurs figurent des producteurs Netflix, des journalistes indépendants, des chaînes YouTube à fort audience, et des agences audiovisuelles.</p>
 <p>En 2024, Happy Scribe avait atteint 200 000€ de revenu mensuel récurrent (MRR) avec une croissance de 20-30% mois après mois. L'équipe comptait une quarantaine de personnes réparties entre Paris, Londres et Barcelone. Et pourtant, la gestion financière restait chaotique : un spreadsheet Excel massif, des bouchons de cash flow malgré d'excellents chiffres, et aucune visibilité sur la profitabilité par client.</p>
@@ -1501,7 +1504,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Externalisation comptable : le guide pratique pour les dirigeants de PME et startups",
       publishedDate: "2026-05-10",
-      author: "Iter Advisors",
+      author: "Sébastien Doat",
       category: "guides-pratiques",
       htmlContent: `<p><strong>Vous teniez les comptes de votre entreprise vous-même. Ou peut-être faites-vous confiance à un ami comptable freelance qui travaille au black. Aujourd'hui, le doute s'installe : "Faut-il vraiment externaliser ma comptabilité ? Qu'est-ce que je vais y gagner ? Et surtout, à quel prix ?"</strong></p>
 <p>L'externalisation comptable est l'une des décisions que tout dirigeant de PME ou startup doit se poser, généralement autour de 5 à 10 salariés. Jusqu'à ce stade, faire soi-même ou confier à un prestataire informel suffit. Passé ce seuil, les obligations deviennent complexes, le risque augmente, et le temps investi devient trop coûteux.</p>
@@ -1679,7 +1682,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 </tr>
 </tbody>
 </table>
-<p><strong>En pratique :</strong> La plupart des startups et PME commencent par externaliser la comptabilité (cabinet comptable), puis ajoutent un <a href="/daf-externalise">DAF externalisé</a> quand elles entrent dans une phase de croissance rapide ou de levée de fonds.</p>
+<p><strong>En pratique :</strong> La plupart des startups et PME commencent par externaliser la comptabilité (cabinet comptable), puis ajoutent un <a href="/daf-externalise">service de direction financière externalisée</a> quand elles entrent dans une phase de croissance rapide ou de levée de fonds.</p>
 <p>Idéalement, ces deux services travaillent ensemble : le DAF donne la stratégie, le cabinet comptable assure la qualité des comptes.</p>
 <hr>
 <h2 id="conclusion-lexternalisation-comptable-nest-pas-un-luxe-cest-une-necessite">Conclusion : L'externalisation comptable n'est pas un luxe, c'est une nécessité</h2>

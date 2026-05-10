@@ -100,17 +100,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               <span className="text-white/40 text-xs">5/5 Trustfolio</span>
             </div>
             {/* Company Legal Details — DEV-03 */}
-            <div className="text-white/40 text-xs space-y-1">
-              <div>
-                <span className="font-semibold text-white/60">SIRET:</span> 851 234 567
-              </div>
-              <div>
-                <span className="font-semibold text-white/60">
-                  {locale === "fr" ? "Adresse" : locale === "en" ? "Address" : "Dirección"}:
-                </span>{" "}
-                10 rue de la Paix, 75002 Paris
-              </div>
-            </div>
+            {/* SIRET and address removed pending real values - FIX-01 */}
           </div>
 
           {/* Services */}
