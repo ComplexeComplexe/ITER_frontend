@@ -316,6 +316,17 @@ const nextConfig: NextConfig = {
         destination: "/es/daf-externalise/metier",
         permanent: true, // 301 redirect (empty page)
       },
+      // OUTILS CFO: Old URL redirects (from legacy implementation)
+      {
+        source: "/ressources/outils/outil-comptabilite/:path*",
+        destination: "/ressources/outils/logiciels-comptabilite",
+        permanent: true, // 301 redirect (slug rename)
+      },
+      {
+        source: "/ressources/outils/outil-tresorerie/:path*",
+        destination: "/ressources/outils/logiciels-tresorerie",
+        permanent: true, // 301 redirect (slug rename)
+      },
     ];
   },
 };

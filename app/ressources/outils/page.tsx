@@ -1,20 +1,22 @@
 import { Metadata } from "next";
-import ToolsPage from "@/components/pages/ToolsPage";
+import HubPage from "@/components/Outils/HubPage";
 import { buildMetadata } from "@/lib/metadata";
 import { getCmsNavigation } from "@/lib/strapi";
-import { getToolsContent } from "@/lib/content/tools";
-
-const t = getToolsContent("fr");
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: t.meta.title,
-  description: t.meta.description,
+  title: "Stack financier idéal pour startups et PME — Le guide 2026 | Iter Advisors",
+  description:
+    "Quels outils pour piloter sa finance entre 10 et 100 employés ? Le stack recommandé par nos DAF externalisés : compta, trésorerie, dépenses, paie.",
   path: "/ressources/outils",
-    localizedPaths: { fr: "/ressources/outils", en: "/ressources/tools", es: "/ressources/herramientas" },
+  localizedPaths: {
+    fr: "/ressources/outils",
+    en: "/en/ressources/tools",
+    es: "/es/recursos/herramientas",
+  },
 });
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");
-  return <ToolsPage locale="fr" cmsNavigation={cmsNavigation} />;
+  return <HubPage locale="fr" cmsNavigation={cmsNavigation} />;
 }
