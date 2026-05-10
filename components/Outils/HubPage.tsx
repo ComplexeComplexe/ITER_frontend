@@ -7,6 +7,69 @@ import ToolCard from './ToolCard';
 import { tools } from '@/data/tools';
 import Link from 'next/link';
 
+const hubBreadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Ressources',
+      item: 'https://www.iteradvisors.com/ressources',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Outils',
+      item: 'https://www.iteradvisors.com/ressources/outils',
+    },
+  ],
+};
+
+const hubCollectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': 'https://www.iteradvisors.com/ressources/outils',
+  name: 'Stack financier idéal pour startups et PME',
+  description:
+    'Guide complet des outils de finance (comptabilité, trésorerie, dépenses, paie) recommandés par nos DAF externalisés.',
+  url: 'https://www.iteradvisors.com/ressources/outils',
+  author: {
+    '@type': 'Organization',
+    name: 'Iter Advisors',
+    url: 'https://www.iteradvisors.com',
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Comptabilité',
+        url: 'https://www.iteradvisors.com/ressources/outils/logiciels-comptabilite',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Trésorerie',
+        url: 'https://www.iteradvisors.com/ressources/outils/logiciels-tresorerie',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Gestion des dépenses',
+        url: 'https://www.iteradvisors.com/ressources/outils/gestion-depenses',
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: 'Paie & RH',
+        url: 'https://www.iteradvisors.com/ressources/outils/logiciels-paie',
+      },
+    ],
+  },
+};
+
 export interface HubPageProps {
   locale: 'fr' | 'en' | 'es';
   cmsNavigation?: any;
@@ -81,6 +144,20 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
 
   return (
     <PageLayout locale={locale}>
+      {/* JSON-LD Schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(hubBreadcrumbSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(hubCollectionSchema),
+        }}
+      />
+
       {/* Hero section */}
       <section className="bg-background pt-32 pb-16">
         <div className="container">

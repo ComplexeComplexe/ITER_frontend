@@ -9,6 +9,33 @@ import { getCategoryContent } from '@/data/categoryContent';
 import Link from 'next/link';
 import Image from 'next/image';
 
+function generateCategoryBreadcrumbSchema(categoryTitle: string, slug: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Ressources',
+        item: 'https://www.iteradvisors.com/ressources',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Outils',
+        item: 'https://www.iteradvisors.com/ressources/outils',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: categoryTitle,
+        item: `https://www.iteradvisors.com/ressources/outils/${slug}`,
+      },
+    ],
+  };
+}
+
 export interface CategoryPageProps {
   slug: string;
   locale: 'fr' | 'en' | 'es';
@@ -47,6 +74,14 @@ export default function CategoryPage({
 
   return (
     <PageLayout locale={locale}>
+      {/* JSON-LD Schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateCategoryBreadcrumbSchema(categoryContent.title, slug)),
+        }}
+      />
+
       {/* Hero section */}
       <section className="bg-background pt-32 pb-16">
         <div className="container">
