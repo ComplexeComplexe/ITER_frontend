@@ -542,6 +542,35 @@ export const dafContent: Record<Locale, DafContent> = {
         },
       ],
     },
+    comparisonTable: {
+      caption: "Fractional CFO vs in-house CFO — side-by-side comparison",
+      headers: ["Criterion", "Fractional CFO", "In-house CFO"],
+      rows: [
+        ["Annual cost", "EUR 24,000 – 96,000", "EUR 100,000 – 213,000 (including employer charges)"],
+        ["Commitment", "No minimum duration, flexible month-to-month", "Full-time employment, 3-month notice period"],
+        ["Time to deployment", "Operational in 1-2 weeks", "3-6 months (recruitment + onboarding)"],
+        ["Industry expertise", "Multi-sector with external perspective", "Single-company expertise"],
+        ["Network (VCs, banks, lawyers)", "Extensive, shared across clients", "Limited to individual background"],
+        ["Presence", "1-8+ days/month, hybrid", "5 days/week, on-site"],
+        ["Best for", "SMEs and startups with EUR 1-50M revenue", "Large enterprises >EUR 50M revenue"],
+      ],
+    },
+    tempsPartage: {
+      heading: "Part-time CFO or Fractional CFO: is it the same thing?",
+      content: [
+        "Yes — both terms refer to the same concept: a senior finance professional who splits their time across multiple companies instead of being a full-time employee at one organization. \"Fractional CFO\" is the generic term, while \"part-time CFO\" emphasizes the engagement model (a few days per month or week on a recurring basis).",
+        "You may also encounter terms like fractional finance leader, part-time financial director, shared CFO, or interim CFO — these are all synonyms for the same service. The key difference lies in duration: a part-time CFO typically commits for 12-36 months, while a Fractional CFO can handle one-off projects (fundraising, M&A, transition).",
+        "At Iter Advisors, we offer both models: recurring part-time support to structure finance in a growing SME, and short-term intensive projects for strategic operations. The boundary is intentionally flexible — your needs determine the format, not the other way around.",
+      ],
+    },
+    vsExpertComptable: {
+      heading: "Fractional CFO or accountant: what's the difference?",
+      content: [
+        "The accountant and Fractional CFO are complementary — not competitors. The accountant ensures legal and tax compliance (balance sheet, tax returns, VAT filings, payroll). They look backward and guarantee account accuracy for tax authorities.",
+        "The Fractional CFO drives financial performance daily: cash flow forecasting, management reporting, margin analysis, fundraising preparation, banking negotiations, tool selection, and strategic guidance. They anticipate the future and help make operational decisions.",
+        "In practice: your accountant produces the general ledger, the Fractional CFO transforms it into a dashboard for your executive team. One closes the annual snapshot, the other films the current quarter and projects the next 12 months. A well-structured SME typically has both: an accountant for compliance, a Fractional CFO for management.",
+      ],
+    },
     advantages: {
       heading: "The 5 key advantages of a Fractional CFO",
       content: [
@@ -595,11 +624,71 @@ export const dafContent: Record<Locale, DafContent> = {
       heading: "How much does a Fractional CFO cost? 2026 pricing guide",
       content: [
         "The average daily rate for a Fractional CFO ranges from EUR 750 to 1,250 excl. VAT, depending on seniority and mission complexity. At Iter Advisors, we offer three packages tailored to SME and startup needs.",
-        "Essential package (2-3 days/month): from EUR 2,000 excl. VAT/month. Ideal for early-stage startups needing cash flow monitoring, monthly reporting and a financial point of contact for investors.",
-        "Growth package (4-6 days/month): from EUR 4,000 excl. VAT/month. For structuring SMEs requiring comprehensive financial management, tool implementation and regular strategic support.",
-        "Premium package (8+ days/month): from EUR 7,000 excl. VAT/month. For scale-ups and companies in fundraising or M&A phase, with a CFO quasi-integrated into the leadership team.",
-        "For comparison, a full-time salaried CFO costs EUR 100,000-213,000 per year (salary + charges), or EUR 8,300-17,750/month. A Fractional CFO saves 50-70% depending on the package.",
       ],
+    },
+    pricingTable: {
+      caption: "Fractional CFO pricing 2026 — three packages for your stage",
+      tiers: [
+        {
+          name: "Essential",
+          volume: "2 to 3 days/month",
+          price: "From EUR 2,000 excl. VAT/month",
+          audience: "Early-stage startups (pre-seed to seed)",
+        },
+        {
+          name: "Growth",
+          volume: "4 to 6 days/month",
+          price: "From EUR 4,000 excl. VAT/month",
+          audience: "SMEs structuring or Series A scale-ups",
+        },
+        {
+          name: "Premium",
+          volume: "8+ days/month",
+          price: "From EUR 7,000 excl. VAT/month",
+          audience: "Scale-ups, fundraising, M&A",
+        },
+      ],
+      comparisonNote:
+        "By comparison, a **full-time salaried CFO** costs EUR 100,000-213,000 per year all-inclusive, or 4-8 times more than a Fractional CFO depending on the package. For recurring long-term support, explore our [part-time CFO service](/en/fractional-cfo/shared-time). For urgent situations (CFO departure, restructuring), see our [transition CFO service](/en/fractional-cfo/transition).",
+    },
+    forWhom: {
+      heading: "Fractional CFO: for whom and at what stage?",
+      intro:
+        "The **Fractional CFO** is not just for large enterprises. Four typical profiles derive maximum value from this solution.",
+      segments: [
+        {
+          heading: "Early-stage startups (pre-seed to seed)",
+          content:
+            "At this stage, you can't afford a salaried CFO (EUR 100,000-150,000+ per year) but you need a senior financial voice for your first fundraises and runway tracking. The **Essential Fractional CFO package** (2-3 days/month) covers your needs for EUR 2,000-3,000 excl. VAT/month. For more regular support, the [part-time CFO model](/en/fractional-cfo/shared-time) becomes highly relevant.",
+        },
+        {
+          heading: "Series A/B scale-ups",
+          content:
+            "You now manage complex treasury, quarterly investor reporting, and perhaps prepare your next round. The **Growth Fractional CFO package** (4-6 days/month) handles finance function structuring before you hire a full-time CFO. This is typically the ideal moment for a [part-time CFO](/en/fractional-cfo/shared-time) — the same senior profile, present 1 day per week over time.",
+        },
+        {
+          heading: "Growing SMEs or companies in transition",
+          content:
+            "You're an SME with 10-80 employees; your accountant has sufficed so far, but growth or a sale transaction now requires real **financial leadership**. The **Fractional CFO** provides strategic oversight without the cost of full-time hiring, with the flexibility to adjust scope month-to-month.",
+        },
+        {
+          heading: "Enterprises in transformation",
+          content:
+            "For 3-12 months (CFO departure, restructuring, post-acquisition integration), the [transition CFO](/en/fractional-cfo/transition) steps in within 5 days with a senior 20+ year profile. This is an intensive one-off engagement, distinct from recurring part-time support.",
+        },
+      ],
+      outro:
+        "Sector-wise, our **Fractional CFOs** specialize in SaaS, Deep-Tech, e-Commerce, Manufacturing, and Services — sectors where we've supported 85+ companies and facilitated EUR 100M+ in fundraising.\n\n**Additional services:** Beyond Fractional CFO support, we also offer guidance in other critical functions: **outsourced HR** for scaling team structuring, interim management for urgent situations, and fundraising support.",
+    },
+    featuredQuote: {
+      quote:
+        "We've partnered with Iter Advisors for 5 years, and this relationship has been a genuine strategic asset. Far beyond a simple Fractional CFO, their teams guided us on structural matters: ERP migration, finance function organization, complex legal and tax issues, non-dilutive financing. I especially appreciate their ability to challenge us and clarify our strategic decisions.",
+      author: "Magali Quentel-Reme",
+      role: "CEO & Co-founder",
+      company: "Opti Digital",
+      companyLogo: "/images/logos/logo-opitdigital.webp",
+      sourceUrl: "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
+      sourceLabel: "Verified review on Trustfolio",
     },
     whenToHire: {
       heading: "When should you hire a Fractional CFO?",
@@ -642,7 +731,18 @@ export const dafContent: Record<Locale, DafContent> = {
         "Client satisfaction is our priority: we have a 5/5 rating on Trustfolio with 31 verified reviews. This excellence translates into lasting relationships and tangible results for the companies we support.",
       ],
     },
-    trustfolioReviews: [],
+    trustfolioReviews: [
+      {
+        author: "Magali Quentel-Reme",
+        role: "CEO & Co-founder",
+        company: "Opti Digital",
+        rating: 5,
+        quote:
+          "We've partnered with Iter Advisors for 5 years, and this relationship has been a genuine strategic asset. Far beyond a simple Fractional CFO, their teams guided us on structural matters: ERP migration, finance function organization, complex legal and tax issues.",
+        date: "2024-11-15",
+        url: "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
+      },
+    ],
     faq: [
       {
         question: "How much does a Fractional CFO cost?",
