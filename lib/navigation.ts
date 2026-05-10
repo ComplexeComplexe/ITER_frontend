@@ -48,8 +48,7 @@ const navFr: NavItem[] = [
     href: "/ressources",
     children: [
       { text: "Blog & Actualités", href: "/ressources/blog" },
-      { text: "Cas clients", href: "/ressources/testimonials" },
-      { text: "Fiches métier", href: "/ressources/fiche-metier" },
+      { text: "Cas clients", href: "/ressources/cas-clients" },
       { text: "Glossaire", href: "/ressources/glossaire" },
     ],
   },
@@ -91,8 +90,7 @@ const navEn: NavItem[] = [
     href: "/en/ressources",
     children: [
       { text: "Blog & News", href: "/en/ressources/blog" },
-      { text: "Case Studies", href: "/en/ressources/testimonials" },
-      { text: "Job Descriptions", href: "/en/ressources/fiche-metier" },
+      { text: "Case Studies", href: "/en/ressources/cas-clients" },
       { text: "Glossary", href: "/en/ressources/glossaire" },
     ],
   },
@@ -134,8 +132,7 @@ const navEs: NavItem[] = [
     href: "/es/ressources",
     children: [
       { text: "Blog & Actualidades", href: "/es/ressources/blog" },
-      { text: "Casos prácticos", href: "/es/ressources/testimonials" },
-      { text: "Perfiles profesionales", href: "/es/ressources/fiche-metier" },
+      { text: "Casos prácticos", href: "/es/ressources/cas-clients" },
       { text: "Glosario", href: "/es/ressources/glossaire" },
     ],
   },

@@ -269,6 +269,53 @@ const nextConfig: NextConfig = {
         destination: "/en/services/cash-flow-forecast",
         permanent: true, // 301 redirect (French → English)
       },
+      // UX-02: Merge testimonials and case studies into unified social proof hub
+      {
+        source: "/ressources/case-studies",
+        destination: "/ressources/cas-clients",
+        permanent: true, // 301 redirect (merged content)
+      },
+      {
+        source: "/ressources/testimonials",
+        destination: "/ressources/cas-clients",
+        permanent: true, // 301 redirect (merged content)
+      },
+      {
+        source: "/en/ressources/case-studies",
+        destination: "/en/ressources/cas-clients",
+        permanent: true, // 301 redirect (merged content)
+      },
+      {
+        source: "/en/ressources/testimonials",
+        destination: "/en/ressources/cas-clients",
+        permanent: true, // 301 redirect (merged content)
+      },
+      {
+        source: "/es/ressources/case-studies",
+        destination: "/es/ressources/cas-clients",
+        permanent: true, // 301 redirect (merged content)
+      },
+      {
+        source: "/es/ressources/testimonials",
+        destination: "/es/ressources/cas-clients",
+        permanent: true, // 301 redirect (merged content)
+      },
+      // UX-03: Remove empty job descriptions hub with redirect to main DAF role page
+      {
+        source: "/ressources/fiche-metier/:path*",
+        destination: "/daf-externalise/metier",
+        permanent: true, // 301 redirect (empty page)
+      },
+      {
+        source: "/en/ressources/fiche-metier/:path*",
+        destination: "/en/daf-externalise/metier",
+        permanent: true, // 301 redirect (empty page)
+      },
+      {
+        source: "/es/ressources/fiche-metier/:path*",
+        destination: "/es/daf-externalise/metier",
+        permanent: true, // 301 redirect (empty page)
+      },
     ];
   },
 };
