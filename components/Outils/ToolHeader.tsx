@@ -41,6 +41,7 @@ export default function ToolHeader({
               alt={`Logo ${name}`}
               width={80}
               height={80}
+              priority={true}
               className="object-contain"
             />
           </div>

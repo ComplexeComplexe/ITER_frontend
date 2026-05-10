@@ -46,6 +46,7 @@ export default function ToolCard({
               alt={`Logo ${name}`}
               width={50}
               height={50}
+              priority={true}
               className="object-contain"
             />
           </div>
