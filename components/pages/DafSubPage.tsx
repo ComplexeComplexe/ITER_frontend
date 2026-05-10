@@ -75,7 +75,7 @@ export default function DafSubPage({ locale, content, cmsNavigation }: DafSubPag
                 width={560}
                 height={400}
                 className="rounded-2xl object-contain"
-                loading="lazy"
+                priority={true}
               />
             </div>
           </div>

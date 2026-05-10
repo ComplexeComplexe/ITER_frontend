@@ -191,7 +191,7 @@ export default function DafPage({
                 width={560}
                 height={400}
                 className="rounded-2xl object-contain w-full max-w-xl"
-                loading="lazy"
+                priority={true}
               />
             </div>
           </div>
