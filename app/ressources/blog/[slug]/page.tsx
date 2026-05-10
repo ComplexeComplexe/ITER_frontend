@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostPage from "@/components/pages/BlogPostPage";
-import { getBlogArticleBySlug, getBlogArticles, getCmsNavigation, strapiMediaUrl } from "@/lib/strapi";
+import { getBlogArticleBySlug, getBlogArticles, getCmsNavigation, strapiMediaUrl, getTeamMembers } from "@/lib/strapi";
 import { buildStrapiCollectionMetadata } from "@/lib/metadata";
 import { blogPosts } from "@/lib/content/blog-posts";
 import { getLocalePath } from "@/lib/i18n";
+import { getFallbackTeamMembers } from "@/lib/content/team";
 
 const blogBasePath = "/ressources/blog";
 
@@ -69,6 +70,15 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const fallback = blogPosts.fr?.[slug];
   const cmsNavigation = await getCmsNavigation("fr");
 
+  // Fetch team members for author bio display (DEV-02)
+  let teamMembers;
+  try {
+    teamMembers = await getTeamMembers("fr");
+  } catch {
+    teamMembers = undefined;
+  }
+  const teamSource = teamMembers && teamMembers.length > 0 ? teamMembers : getFallbackTeamMembers("fr");
+
   if (article) {
     return (
       <BlogPostPage
@@ -81,6 +91,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         publishedDate={article.publishedDate}
         metaDescription={article.excerpt}
         featuredImageUrl={article.featuredImage ? strapiMediaUrl(article.featuredImage) : undefined}
+        teamMembers={teamSource}
       />
     );
   }
@@ -97,6 +108,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         author={fallback.author}
         category={fallback.category}
         metaDescription={fallback.meta.description}
+        teamMembers={teamSource}
       />
     );
   }
