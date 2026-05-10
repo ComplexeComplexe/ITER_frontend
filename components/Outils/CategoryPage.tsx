@@ -5,7 +5,9 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import ComparisonTable from './ComparisonTable';
 import { Tool } from '@/data/tools';
+import { getCategoryContent } from '@/data/categoryContent';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export interface CategoryPageProps {
   slug: string;
@@ -14,38 +16,15 @@ export interface CategoryPageProps {
   tools: Tool[];
 }
 
-const categoryInfo = {
-  'logiciels-comptabilite': {
-    title: 'Comptabilité',
-    intro:
-      'La comptabilité n\'est pas une contrainte légale. C\'est le système nerveux de votre entreprise. Un bon outil comptable vous donne votre résultat en temps réel, alerte sur les dérives, et alimente vos prévisions.',
-  },
-  'logiciels-tresorerie': {
-    title: 'Trésorerie',
-    intro:
-      '80% des défaillances d\'entreprises rentables sont liées à un problème de trésorerie, pas de rentabilité. C\'est pourquoi nous imposons un outil de prévision de trésorerie dès la Series A.',
-  },
-  'gestion-depenses': {
-    title: 'Gestion des dépenses et notes de frais',
-    intro:
-      'Gérez vos dépenses opérationnelles en temps réel avec les outils modernes. Cartes virtuelles, workflows d\'approbation, et intégration comptable automatique.',
-  },
-  'logiciels-paie': {
-    title: 'Paie & RH',
-    intro:
-      'Automatisez votre paie et vos déclarations sociales sans erreur ni surcharge administrative. De la DSN aux bulletins, tout doit être fluide et traçable.',
-  },
-};
-
 export default function CategoryPage({
   slug,
   locale = 'fr',
   cmsNavigation,
   tools,
 }: CategoryPageProps) {
-  const info = categoryInfo[slug as keyof typeof categoryInfo];
+  const categoryContent = getCategoryContent(slug);
 
-  if (!info) {
+  if (!categoryContent) {
     return null;
   }
 
@@ -76,15 +55,15 @@ export default function CategoryPage({
             items={[
               { label: 'Ressources', href: '/ressources' },
               { label: 'Outils', href: '/ressources/outils' },
-              { label: info.title },
+              { label: categoryContent.title },
             ]}
           />
 
           <div className="max-w-3xl mt-8">
             <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
-              {info.title} pour PME : le comparatif de nos DAF externalisés
+              {categoryContent.title} pour PME : le comparatif de nos DAF externalisés
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">{info.intro}</p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">{categoryContent.intro}</p>
           </div>
         </div>
       </section>
@@ -94,9 +73,7 @@ export default function CategoryPage({
         <div className="container">
           <p className="font-semibold text-gray-900 mb-2">Verdict rapide (30 secondes)</p>
           <p className="text-gray-700">
-            {tools[0]?.name} est notre standard pour les startups et PME modernes. L'expérience
-            utilisateur est nettement supérieure, l'API est solide, et les intégrations bancaires
-            sont fluides.
+            {categoryContent.verdict}
           </p>
         </div>
       </section>
@@ -119,52 +96,79 @@ export default function CategoryPage({
           </h2>
 
           <div className="space-y-12">
-            {tools.map((tool) => (
-              <div key={tool.slug} className="bg-background p-8 rounded-lg border border-gray-200">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gray-50 rounded-lg flex-shrink-0 flex items-center justify-center">
-                    {/* Logo would go here */}
+            {categoryContent.selectedTools.map((selectedTool) => {
+              const toolData = tools.find((t) => t.name === selectedTool.name);
+              return (
+                <div key={selectedTool.name} className="bg-background p-8 rounded-lg border border-gray-200">
+                  <div className="flex items-start gap-4 mb-6">
+                    {toolData?.logo && (
+                      <div className="w-16 h-16 bg-gray-50 rounded-lg flex-shrink-0 flex items-center justify-center">
+                        <Image
+                          src={toolData.logo}
+                          alt={selectedTool.name}
+                          width={50}
+                          height={50}
+                          className="object-contain"
+                        />
+                      </div>
+                    )}
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900">{selectedTool.name}</h3>
+                      <p className="text-muted-foreground">{selectedTool.forWho}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900">{tool.name}</h3>
-                    <p className="text-muted-foreground">{tool.category}</p>
-                  </div>
-                </div>
 
-                <div className="grid md:grid-cols-3 gap-6 mb-6">
-                  <div>
-                    <p className="text-xs font-semibold text-muted-foreground uppercase mb-2">
-                      Pour
-                    </p>
-                    <ul className="space-y-1 text-sm">
-                      {tool.forWho.slice(0, 2).map((item, idx) => (
-                        <li key={idx} className="text-gray-700">
-                          ✓ {item}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="grid md:grid-cols-2 gap-8 mb-6">
+                    <div>
+                      <p className="text-xs font-semibold text-green-700 uppercase mb-3">✓ Avantages</p>
+                      <ul className="space-y-2">
+                        {selectedTool.pros.map((pro, idx) => (
+                          <li key={idx} className="text-sm text-gray-700 flex gap-2">
+                            <span className="text-green-600 flex-shrink-0">+</span>
+                            <span>{pro}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-red-700 uppercase mb-3">✗ Limitations</p>
+                      <ul className="space-y-2">
+                        {selectedTool.cons.map((con, idx) => (
+                          <li key={idx} className="text-sm text-gray-700 flex gap-2">
+                            <span className="text-red-600 flex-shrink-0">−</span>
+                            <span>{con}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-xs font-semibold text-muted-foreground uppercase mb-2">
-                      Implémentation
-                    </p>
-                    <p className="text-sm font-semibold text-gray-900">{tool.implementationTime}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold text-muted-foreground uppercase mb-2">
-                      Tarif
-                    </p>
-                    <p className="text-sm font-semibold text-gray-900">{tool.priceRange}</p>
-                  </div>
-                </div>
 
-                <Link
-                  href={`/ressources/outils/${tool.slug}`}
-                  className="inline-flex items-center gap-2 px-6 py-3 text-iter-violet font-semibold hover:gap-3 transition-all"
-                >
-                  Lire l'avis complet
-                  <span>→</span>
-                </Link>
+                  {toolData && (
+                    <Link
+                      href={`/ressources/outils/${toolData.slug}`}
+                      className="inline-flex items-center gap-2 px-6 py-3 text-iter-violet font-semibold hover:gap-3 transition-all"
+                    >
+                      Lire l'avis complet
+                      <span>→</span>
+                    </Link>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Decision criteria */}
+      <section className="bg-background py-16">
+        <div className="container">
+          <h2 className="text-2xl font-bold font-heading text-foreground mb-8">
+            Critères de décision
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {categoryContent.decisionCriteria.map((criterion, idx) => (
+              <div key={idx} className="p-6 bg-muted/20 rounded-lg border border-gray-200">
+                <p className="text-gray-700">{criterion}</p>
               </div>
             ))}
           </div>

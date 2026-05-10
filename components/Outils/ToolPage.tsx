@@ -8,6 +8,12 @@ import VerbatimBlock from './VerbatimBlock';
 import StackCombo from './StackCombo';
 import { Tool, getToolsByCategory } from '@/data/tools';
 import { getVerbatimsByTool } from '@/data/verbatims';
+import { getToolDetails } from '@/data/toolDetails';
+import {
+  generateToolReviewSchema,
+  generateFAQSchema,
+  generateBreadcrumbSchema,
+} from '@/lib/schemas/toolSchemas';
 import Link from 'next/link';
 
 export interface ToolPageProps {
@@ -113,8 +119,9 @@ export default function ToolPage({
   tool,
 }: ToolPageProps) {
   const verbatim = getVerbatimsByTool(slug);
-  const stacksForTool = toolStacks[slug] || [];
-  const faqForTool = faqItems[slug as keyof typeof faqItems] || [];
+  const toolDetails = getToolDetails(slug);
+  const stacksForTool = toolDetails?.stackCombos || toolStacks[slug] || [];
+  const faqForTool = toolDetails?.faqExpanded || faqItems[slug as keyof typeof faqItems] || [];
   const alternativeTools = getToolsByCategory(tool.category).filter((t) => t.slug !== slug);
 
   return (
@@ -141,6 +148,37 @@ export default function ToolPage({
         </div>
       </section>
 
+      {/* JSON-LD Schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateToolReviewSchema(tool)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbSchema(
+              tool.name,
+              tool.slug,
+              categoryLabels[tool.category as keyof typeof categoryLabels],
+              tool.categorySlug
+            )
+          ),
+        }}
+      />
+      {faqForTool.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              generateFAQSchema(tool.name, faqForTool, tool.slug)
+            ),
+          }}
+        />
+      )}
+
       {/* Tool Header Component */}
       <section className="bg-background py-8">
         <div className="container">
@@ -163,8 +201,7 @@ export default function ToolPage({
         <div className="container">
           <p className="font-semibold text-gray-900 mb-2">Verdict 30 secondes</p>
           <p className="text-gray-700">
-            {tool.name} est notre standard pour {tool.forWho[0]}. Le rapport prix/qualité est
-            excellent, l'implémentation rapide, et le support réactif.
+            {toolDetails?.verdict30s || `${tool.name} est notre standard pour ${tool.forWho[0]}. Le rapport prix/qualité est excellent, l'implémentation rapide, et le support réactif.`}
           </p>
         </div>
       </section>
@@ -201,6 +238,72 @@ export default function ToolPage({
         </div>
       </section>
 
+      {/* Advantages section */}
+      {toolDetails?.advantages && toolDetails.advantages.length > 0 && (
+        <section className="bg-muted/20 py-16">
+          <div className="container max-w-3xl">
+            <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Avantages clés</h2>
+            <div className="space-y-6">
+              {toolDetails.advantages.map((advantage, idx) => (
+                <div key={idx} className="bg-background p-6 rounded-lg border border-green-200 border-l-4 border-l-green-600">
+                  <h3 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                    <span className="text-green-600 text-xl">✓</span>
+                    {advantage.title}
+                  </h3>
+                  <p className="text-gray-700">{advantage.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Limitations section */}
+      {toolDetails?.limitations && toolDetails.limitations.length > 0 && (
+        <section className="bg-background py-16">
+          <div className="container max-w-3xl">
+            <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Limitations et solutions</h2>
+            <div className="space-y-6">
+              {toolDetails.limitations.map((limitation, idx) => (
+                <div key={idx} className="bg-muted/20 p-6 rounded-lg border border-orange-200 border-l-4 border-l-orange-600">
+                  <h3 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                    <span className="text-orange-600 text-xl">⚠</span>
+                    {limitation.title}
+                  </h3>
+                  <p className="text-gray-700"><strong>Solution :</strong> {limitation.workaround}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Implementation guide section */}
+      {toolDetails?.implementationGuide && toolDetails.implementationGuide.length > 0 && (
+        <section className="bg-muted/20 py-16">
+          <div className="container max-w-3xl">
+            <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Guide d'implémentation</h2>
+            <div className="space-y-4">
+              {toolDetails.implementationGuide.map((item, idx) => (
+                <div key={idx} className="bg-background p-6 rounded-lg border border-gray-200">
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center h-8 w-8 rounded-full bg-iter-violet text-white font-bold text-sm">
+                        {idx + 1}
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-gray-900 mb-1">{item.step}</h3>
+                      <p className="text-gray-700 text-sm">{item.detail}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Verbatim block */}
       {verbatim && (
         <section className="bg-muted/20 py-16">
@@ -217,13 +320,38 @@ export default function ToolPage({
       )}
 
       {/* Stack Combo sections */}
-      {stacksForTool.map((stack, idx) => (
-        <section key={idx} className="bg-background py-16">
+      {stacksForTool && stacksForTool.length > 0 && (
+        <section className="bg-background py-16">
           <div className="container max-w-3xl">
-            <StackCombo combo={stack.combo} title={stack.title} description={stack.description} />
+            <h2 className="text-2xl font-bold font-heading text-foreground mb-12">Stacks recommandés</h2>
+            <div className="space-y-12">
+              {stacksForTool.map((stack: any, idx: number) => {
+                const toolMap = [
+                  { name: 'Pennylane', slug: 'pennylane', logo: '/images/logos/tools/pennylane.svg', role: 'Comptabilité' },
+                  { name: 'Agicap', slug: 'agicap', logo: '/images/logos/tools/agicap.svg', role: 'Trésorerie' },
+                  { name: 'Spendesk', slug: 'spendesk', logo: '/images/logos/tools/spendesk.svg', role: 'Dépenses' },
+                  { name: 'PayFit', slug: 'payfit', logo: '/images/logos/tools/payfit.svg', role: 'Paie' }
+                ];
+                const comboToRender = stack.tools && stack.tools.length > 0 ?
+                  stack.tools.map((toolName: string) => {
+                    const t = toolMap.find(x => x.name === toolName);
+                    return t || { name: toolName, slug: toolName.toLowerCase(), logo: '', role: '' };
+                  }) : (stack.combo || []);
+                return (
+                  <div key={idx}>
+                    <StackCombo
+                      combo={comboToRender}
+                      title={stack.title}
+                      description={stack.description}
+                    />
+                    <p className="text-sm text-muted-foreground mt-4">{stack.context}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
-      ))}
+      )}
 
       {/* Alternatives section */}
       {alternativeTools.length > 0 && (
