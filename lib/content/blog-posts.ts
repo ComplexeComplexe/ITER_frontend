@@ -37,13 +37,37 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogHref: "/ressources/blog",
       },
       h1: "Flux de trésorerie : définition et importance pour les entreprises",
-      content: [
-        "Le flux de trésorerie, ou cash flow, est un indicateur financier fondamental qui mesure les entrées et sorties d'argent d'une entreprise sur une période donnée. Il constitue le baromètre de la santé financière de votre société et permet d'anticiper les besoins de financement.",
-        "Comprendre et maîtriser ses flux de trésorerie est essentiel pour toute entreprise, qu'il s'agisse d'une startup en phase de lancement ou d'une PME en pleine croissance. Un suivi rigoureux permet d'éviter les crises de liquidité et de prendre des décisions éclairées.",
-        "On distingue généralement trois types de flux de trésorerie : le flux opérationnel (lié à l'activité courante), le flux d'investissement (acquisitions et cessions d'actifs) et le flux de financement (emprunts, remboursements, levées de fonds).",
-        "Le prévisionnel de trésorerie est l'outil indispensable pour piloter votre cash. Il vous permet de projeter vos encaissements et décaissements sur les semaines et mois à venir, d'identifier les périodes de tension et d'anticiper les solutions de financement.",
-        "Chez Iter Advisors, nos CFOs externalisés accompagnent les entreprises dans la mise en place d'outils de suivi de trésorerie performants. De l'élaboration du prévisionnel à l'optimisation du BFR, nous vous aidons à sécuriser votre cash et à financer votre croissance.",
-      ],
+      htmlContent: `<p>Le flux de trésorerie, ou cash flow, est un indicateur financier fondamental qui mesure les entrées et sorties d'argent d'une entreprise sur une période donnée. Il constitue le baromètre de la santé financière de votre société et permet d'anticiper les besoins de financement.</p>
+<p>Comprendre et maîtriser ses flux de trésorerie est essentiel pour toute entreprise, qu'il s'agisse d'une startup en phase de lancement ou d'une PME en pleine croissance. Un suivi rigoureux permet d'éviter les crises de liquidité et de prendre des décisions éclairées.</p>
+<p>On distingue généralement trois types de flux de trésorerie : le flux opérationnel (lié à l'activité courante), le flux d'investissement (acquisitions et cessions d'actifs) et le flux de financement (emprunts, remboursements, levées de fonds).</p>
+<p>Le prévisionnel de trésorerie est l'outil indispensable pour piloter votre cash. Il vous permet de projeter vos encaissements et décaissements sur les semaines et mois à venir, d'identifier les périodes de tension et d'anticiper les solutions de financement.</p>
+<p>Chez Iter Advisors, nos CFOs externalisés accompagnent les entreprises dans la mise en place d'outils de suivi de trésorerie performants. De l'élaboration du prévisionnel à l'optimisation du BFR, nous vous aidons à sécuriser votre cash et à financer votre croissance.</p>
+<hr>
+<h2 id="la-gestion-des-flux-de-tresorerie-au-quotidien">La gestion des flux de trésorerie au quotidien</h2>
+<p>Au-delà de la théorie, gérer la trésorerie au quotidien demande une discipline rigoureuse et une compréhension précise de vos cycles d'encaissement et décaissement. C'est dans l'opérationnel que se gagnent ou se perdent les cash flows.</p>
+<h3 id="cycler-de-conversion-cash-un-concept-cle">Cycle de conversion cash : un concept clé</h3>
+<p>Le cycle de conversion cash (CCC) est le nombre de jours entre le moment où vous payez vos fournisseurs et celui où vous encaissez vos clients. Plus ce cycle est court, meilleur est votre trésorerie.</p>
+<p><strong>Exemple :</strong> Une PME de services qui facture ses clients à 30 jours et qui paie ses fournisseurs à 60 jours a un CCC négatif de 30 jours. Autrement dit, elle reçoit l'argent des clients avant de devoir payer les fournisseurs -- c'est idéal. À l'inverse, une PME qui facture à 60 jours et paie à 30 jours a un CCC positif de 30 jours : elle doit financer l'activité avant de recevoir le cash des clients.</p>
+<p>Trois leviers permettent de réduire votre CCC et d'améliorer votre trésorerie :</p>
+<ul>
+<li><strong>Réduire le délai de paiement des clients</strong> : facturation à la commande plutôt qu'à la livraison, acomptes, pénalités de retard</li>
+<li><strong>Augmenter le délai de paiement des fournisseurs</strong> : négociation, conditions commerciales meilleures</li>
+<li><strong>Optimiser votre stock</strong> : moins de stock = moins de cash immobilisé</li>
+</ul>
+<h3 id="erreurs-courantes-a-eviter">Erreurs courantes à éviter</h3>
+<p><strong>Erreur 1 : Ne pas faire de prévisionnel</strong> — Vous attendez la fin du mois pour voir si vous avez assez de trésorerie. Trop tard. Solution : faire un prévisionnel sur 13 semaines, mis à jour chaque semaine, qui vous alerte dès qu'un risque apparaît.</p>
+<p><strong>Erreur 2 : Confondre profit et cash</strong> — Une entreprise peut être profitable et faire faillite. Les charges comptables (amortissements, provisions) réduisent le profit mais pas le cash. À l'inverse, les investissements réduisent le cash mais pas le profit. Solution : piloter les deux en parallèle.</p>
+<p><strong>Erreur 3 : Négliger la facuration et le suivi clients</strong> — Beaucoup d'entreprises n'ont pas de système de relance automatique des impayés. Cela coûte des milliers d'euros en décalages de trésorerie. Solution : logiciel de facturation qui automatise les relances.</p>
+<p><strong>Erreur 4 : Payer au moment du reçu des factures fournisseurs</strong> — Utilisez toute la période de crédit accordée par vos fournisseurs. Si vous avez 30 jours pour payer, ne payez pas le jour 1. Solution : centraliser les paiements, établir un calendrier de paiement</p>
+<p><strong>Erreur 5 : Pas de rapprochement bancaire régulier</strong> — Sans rapprochement, vous découvrez les erreurs trop tard. Solution : rapprochement bancaire automatisé chaque jour (Pennylane, Stripe, etc.).</p>
+<h3 id="outils-modernes-pour-piloter-la-tresorerie">Outils modernes pour piloter la trésorerie</h3>
+<p>Utiliser Excel pour gérer la trésorerie en 2026, c'est accepter de laisser de l'argent sur la table. Voici les outils qui font la différence :</p>
+<p><strong>Agicap ou Fygr</strong> — Synchronisation automatique de vos données bancaires, prévisionnel en temps réel, alertes sur les tensions de trésorerie.</p>
+<p><strong>Stripe ou Paypal pour les paiements</strong> — Webhook automatisé qui alimente votre comptabilité en temps réel. Zéro erreur de saisie.</p>
+<p><strong>Pennylane ou Dext pour la comptabilité</strong> — Rapprochement bancaire automatisé, synchronisation des factures.</p>
+<p><strong>Finthesis ou Looker pour le reporting</strong> — Tableaux de bord en temps réel de votre trésorerie, avec forecast et tendances.</p>
+<p>L'investissement dans ces outils (500 à 1 000€/mois) se rentabilise facilement sur les premiers mois grâce aux erreurs évitées et au temps économisé.</p>`,
+      content: [],
     },
     "la-modernisation-du-role-de-cfo": {
       meta: {
