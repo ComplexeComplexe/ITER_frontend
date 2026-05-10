@@ -6,7 +6,6 @@ import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
-import AuthorByline from "@/components/AuthorByline";
 import ClientTestimonials from "@/components/ClientTestimonials";
 
 interface ComptabiliteExternalisationPageProps {
@@ -34,18 +33,6 @@ export default function ComptabiliteExternalisationPage({
               { label: locale === "fr" ? "Externalisation comptable" : "Accounting Outsourcing" },
             ]}
           />
-          {t.author && (
-            <div className="mt-6 sm:mt-8">
-              <AuthorByline
-                name={t.author.name}
-                jobTitle={t.author.jobTitle}
-                linkedInUrl={t.author.linkedInUrl}
-                avatarUrl={t.author.avatarUrl}
-                updateDate={t.author.updateDate}
-                locale={locale}
-              />
-            </div>
-          )}
           <div className="mt-6 sm:mt-8">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6 sm:mb-8 leading-tight">
               {t.h1}
