@@ -40,8 +40,8 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       htmlContent: `<p>Le flux de trésorerie, ou cash flow, est un indicateur financier fondamental qui mesure les entrées et sorties d'argent d'une entreprise sur une période donnée. Il constitue le baromètre de la santé financière de votre société et permet d'anticiper les besoins de financement.</p>
 <p>Comprendre et maîtriser ses flux de trésorerie est essentiel pour toute entreprise, qu'il s'agisse d'une startup en phase de lancement ou d'une PME en pleine croissance. Un suivi rigoureux permet d'éviter les crises de liquidité et de prendre des décisions éclairées.</p>
 <p>On distingue généralement trois types de flux de trésorerie : le flux opérationnel (lié à l'activité courante), le flux d'investissement (acquisitions et cessions d'actifs) et le flux de financement (emprunts, remboursements, levées de fonds).</p>
-<p>Le prévisionnel de trésorerie est l'outil indispensable pour piloter votre cash. Il vous permet de projeter vos encaissements et décaissements sur les semaines et mois à venir, d'identifier les périodes de tension et d'anticiper les solutions de financement.</p>
-<p>Chez Iter Advisors, nos CFOs externalisés accompagnent les entreprises dans la mise en place d'outils de suivi de trésorerie performants. De l'élaboration du prévisionnel à l'optimisation du BFR, nous vous aidons à sécuriser votre cash et à financer votre croissance.</p>
+<p>Le <a href="/services/previsionnel-tresorerie">prévisionnel de trésorerie</a> est l'outil indispensable pour piloter votre cash. Il vous permet de projeter vos encaissements et décaissements sur les semaines et mois à venir, d'identifier les périodes de tension et d'anticiper les solutions de financement.</p>
+<p>Chez Iter Advisors, nos <a href="/daf-externalise">CFOs externalisés</a> accompagnent les entreprises dans la mise en place d'outils de suivi de trésorerie performants. De l'élaboration du prévisionnel à l'optimisation du BFR, nous vous aidons à sécuriser votre cash et à financer votre croissance.</p>
 <hr>
 <h2 id="la-gestion-des-flux-de-tresorerie-au-quotidien">La gestion des flux de trésorerie au quotidien</h2>
 <p>Au-delà de la théorie, gérer la trésorerie au quotidien demande une discipline rigoureuse et une compréhension précise de vos cycles d'encaissement et décaissement. C'est dans l'opérationnel que se gagnent ou se perdent les cash flows.</p>
@@ -1395,7 +1395,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 </ul>
 <p>Note : Happy Scribe a décidé de garder la comptable freelance pour la tenue quotidienne, mais de l'intégrer vraiment dans les processus (avant elle travaillait en silo). Ils ont aussi recruté une "Finance Ops" junior, un profil qu'on trouve facilement sur le marché (coût : 35-40k€ annuels vs 150k€ pour un CFO senior).</p>
 <h3 id="4-phase-4-reporting-et-optimisation-janvier-2024">Phase 4 : Reporting et optimisation (janvier 2024)</h3>
-<p>Dès janvier 2024, Happy Scribe avait son premier tableau de bord unifiée :</p>
+<p>Dès janvier 2024, Happy Scribe avait son premier <a href="/services/gestion-financiere-externalisee">tableau de bord</a> unifiée :</p>
 <ul>
 <li>P&L temps réel, avec répartition par source de revenu (enterprise customers vs SMB, vs free tier)</li>
 <li>Trésorerie prévisionnelle sur 13 semaines</li>
@@ -1477,12 +1477,12 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <h3 id="2-choisir-une-stack-unifiee-pas-un-erp-enterprise">2. Choisir une stack unifiée, pas un ERP enterprise</h3>
 <p>Les startups SaaS n'ont pas besoin de SAP ou Oracle. Elles ont besoin d'une série d'outils intégrés qui communiquent bien entre eux. Stripe + Pennylane + Finthesis + CRM = bien plus puissant qu'un ERP, et 100x moins complexe.</p>
 <h3 id="3-hybridiser-externalisation-et-internalisation">3. Hybridiser externalisation et internalisation</h3>
-<p>Ne pas tout externaliser (vous perdriez le contrôle), ne pas tout internaliser (trop cher, manque de flexibilité). Le meilleur modèle : DAF externalisé pour la stratégie + Ops internalisé pour l'exécution quotidienne.</p>
+<p>Ne pas tout externaliser (vous perdriez le contrôle), ne pas tout internaliser (trop cher, manque de flexibilité). Le meilleur modèle : <a href="/daf-externalise">DAF externalisé</a> pour la stratégie + Ops internalisé pour l'exécution quotidienne.</p>
 <h3 id="4-la-visibilite-sur-les-chiffres-change-les-decisions-strategiques">4. La visibilité sur les chiffres change les décisions stratégiques</h3>
 <p>Une fois que vous voyez vos unit economics, votre profitabilité par client, et votre cash burn détaillé, chaque décision commerciale et opérationnelle change. Les fondateurs commencent à piloter sur des chiffres, pas sur des intuitions.</p>
 <hr>
 <h2 id="conclusion">Conclusion</h2>
-<p>Le cas de Happy Scribe illustre bien comment une startup SaaS en hypercroissance peut structurer sa direction financière sans recruter un CFO onéreux et peu flexible. La solution : une combinaison de DAF externalisé, d'outils modernes, et d'une personne Finance Ops interne.</p>
+<p>Le cas de Happy Scribe illustre bien comment une startup SaaS en hypercroissance peut structurer sa direction financière sans recruter un CFO onéreux et peu flexible. La solution : une combinaison de <a href="/daf-externalise">DAF externalisé</a>, d'outils modernes, et d'une personne Finance Ops interne.</p>
 <p>Happy Scribe a investi ~100k€ en 2024 (audit + salaire Finance Ops + services Iter Advisors) pour mettre en place cette infrastructure. Ils ont économisé ~30k€/mois en optimisations AWS seules, et ont gagné une visibilité qui leur permettra de lever leur Series B dans les meilleures conditions.</p>
 <p>Si vous dirigez une startup SaaS entre 100k€ et 1M€ de MRR et que vous vous reconnaissez dans la situation initiale de Happy Scribe, c'est le moment d'agir. La bonne infrastructure financière n'est pas un coût -- c'est un investissement.</p>
 <p><strong>Vous avez une startup en hypercroissance et vous vous posez les mêmes questions que Happy Scribe ?</strong> <a href="/daf-externalise">Chez Iter Advisors</a>, nous avons accompagné une trentaine de startups SaaS à structurer leur direction financière. Nous pouvons auditer votre situation en une semaine et proposer un plan d'action adapté. <a href="/contact">Contactez-nous pour un diagnostic gratuit</a>.</p>`,
@@ -1628,7 +1628,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <ul>
 <li>✅ <strong>Vous avez entre 5 et 100 salariés</strong> : la taille critique où l'externalisation devient rentable</li>
 <li>✅ <strong>Vous avez plus de 50 transactions comptables par mois</strong> : au-delà, faire soi-même devient chronophage</li>
-<li>✅ <strong>Votre trésorerie se complique</strong> : plusieurs comptes bancaires, virements réguliers, besoin de prévisionnel</li>
+<li>✅ <strong>Votre trésorerie se complique</strong> : plusieurs comptes bancaires, virements réguliers, besoin d'un <a href="/services/previsionnel-tresorerie">prévisionnel de trésorerie</a></li>
 <li>✅ <strong>Vous avez des salariés</strong> : la paie devient une obligation complexe</li>
 <li>✅ <strong>Vous préparez une levée de fonds</strong> : un dossier comptable propre est un atout majeur</li>
 <li>✅ <strong>Vous n'aimez pas faire la comptabilité</strong> : c'est le signal le plus fort. La comptabilité doit être un outil, pas une corvée.</li>
@@ -1642,7 +1642,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 </ul>
 <hr>
 <h2 id="internalisation-comptable-vs-daf-externalise-quelle-difference">Internalisation comptable vs DAF externalisé : quelle différence ?</h2>
-<p>Beaucoup de dirigeants confondent l'externalisation de la tenue comptable (cabinet comptable) et l'externalisation de la direction financière (<a href="/daf-externalise">DAF externalisé</a>). Ce sont deux services complémentaires, pas synonymes.</p>
+<p>Beaucoup de dirigeants confondent l'externalisation de la tenue comptable (cabinet comptable) et l'externalisation de la <a href="/services/gestion-financiere-externalisee">direction financière</a> (<a href="/daf-externalise">DAF externalisé</a>). Ce sont deux services complémentaires, pas synonymes.</p>
 <table>
 <thead>
 <tr>
