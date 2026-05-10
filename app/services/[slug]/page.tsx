@@ -38,7 +38,7 @@ const fallbackDescriptions: Record<ServicePageSlug, string> = {
   "comptabilite-externalisation":
     "Externalisez votre comptabilité : tenue, déclarations TVA, paie et clôture annuelle. Pennylane, Sage, QuickBooks - migration en 2 semaines. Devis gratuit.",
   "controle-de-gestion-externalise":
-    "Contrôle de gestion externalisé : tableaux de bord, analyse des écarts, optimisation des coûts et suivi de performance. Résultats concrets dès le 1er mois.",
+    "Externalisez votre contrôle de gestion pour piloter votre rentabilité. Tableaux de bord et KPIs sur-mesure pour PME et startups à Paris, IDF et partout en France.",
 };
 
 function isServicePageSlug(slug: string): slug is ServicePageSlug {
