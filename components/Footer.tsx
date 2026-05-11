@@ -106,9 +106,9 @@ export default function Footer({ locale }: { locale: Locale }) {
           {/* Services */}
           {serviceNav?.children && (
             <div>
-              <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
+              <p className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
                 {serviceNav.title}
-              </h3>
+              </p>
               <ul className="space-y-1.5 sm:space-y-2.5">
                 {serviceNav.children.map((item) => (
                   <li key={item.href}>
@@ -124,9 +124,9 @@ export default function Footer({ locale }: { locale: Locale }) {
           {/* Resources */}
           {resourceNav?.children && (
             <div>
-              <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
+              <p className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
                 {resourceNav.title}
-              </h3>
+              </p>
               <ul className="space-y-1.5 sm:space-y-2.5">
                 {resourceNav.children.map((item) => (
                   <li key={item.href}>
@@ -141,9 +141,9 @@ export default function Footer({ locale }: { locale: Locale }) {
 
           {/* Locations */}
           <div>
-            <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
+            <p className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
               {locale === "fr" ? "Nos bureaux" : locale === "en" ? "Our offices" : "Nuestras oficinas"}
-            </h3>
+            </p>
             <div className="space-y-2 sm:space-y-3">
               {content.locations.map((loc) => (
                 <Link key={loc.city} href={loc.href} className="flex items-start gap-2 group">
@@ -170,9 +170,9 @@ export default function Footer({ locale }: { locale: Locale }) {
 
           {/* Language & Legal */}
           <div>
-            <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
+            <p className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
               {locale === "fr" ? "Autres langues" : locale === "en" ? "Languages" : "Idiomas"}
-            </h3>
+            </p>
             <div className="space-y-1.5 sm:space-y-2.5">
               {Object.entries(languageSwitcher).map(([lang, data]) => {
                 const localePath = locale === "fr" && lang === "fr" ? "/" : lang === "fr" ? "/" : `/${lang}`;
@@ -189,9 +189,9 @@ export default function Footer({ locale }: { locale: Locale }) {
               })}
             </div>
             <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
-              <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-2">
+              <p className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-2">
                 {locale === "fr" ? "Légal" : locale === "en" ? "Legal" : "Legal"}
-              </h4>
+              </p>
               <ul className="space-y-1">
                 {content.legalLinks.map((link) => (
                   <li key={link.href}>
@@ -206,9 +206,9 @@ export default function Footer({ locale }: { locale: Locale }) {
 
           {/* Popular Articles */}
           <div>
-            <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
+            <p className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
               {locale === "fr" ? "Articles populaires" : locale === "en" ? "Popular Articles" : "Artículos populares"}
-            </h3>
+            </p>
             <ul className="space-y-1.5 sm:space-y-2.5">
               {POPULAR_ARTICLES[locale].map((article) => {
                 const articleHref = locale === "fr" ? `/ressources/blog/${article.slug}` : `/${locale}/ressources/blog/${article.slug}`;
