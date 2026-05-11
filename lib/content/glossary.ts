@@ -59,71 +59,115 @@ const content: Record<Locale, GlossaryContent> = {
       {
         title: "Besoin en Fonds de Roulement (BFR)",
         definition:
-          "La différence entre vos dettes court terme (fournisseurs, salaires) et vos actifs court terme (clients à recevoir, stock). Un BFR élevé signifie que vous avez besoin de plus de trésorerie pour fonctionner.",
+          "Le BFR représente le montant de trésorerie que votre entreprise doit financer pour couvrir le décalage entre vos encaissements clients et vos décaissements fournisseurs et salaires. Il se calcule comme la somme des stocks et des créances clients, moins les dettes fournisseurs et fiscales. Un BFR positif signifie que vous devez avancer du cash pour faire tourner votre activité ; un BFR négatif (typique des modèles d'abonnement) signifie que vous encaissez avant de payer — un avantage majeur. Un BFR mal maîtrisé peut asphyxier une entreprise rentable.",
         context:
-          "Exemple : Un e-commerce paie ses fournisseurs en 30 jours mais ses clients paient en 45 jours. Son BFR = 15 jours de dépenses opérationnelles.",
+          "Exemple : un e-commerce D2C avec stocks de 60 jours, des clients qui paient à 30 jours et des fournisseurs à 30 jours porte un BFR ≈ 60 jours de coût des ventes. Une SaaS B2B encaissant annuellement à l'avance peut afficher un BFR négatif. Voir notre [page dédiée BFR](/ressources/glossaire/besoin-fonds-roulement-bfr).",
       },
       {
         title: "Cash Burn",
         definition:
-          "Montant mensuel moyen de trésorerie que votre entreprise dépense. Le cash burn indique combien de temps vous pouvez opérer avec votre trésorerie actuelle avant de lever des fonds.",
-        context: "Une startup avec €500k de trésorerie et €50k de burn mensuel a 10 mois de runway.",
+          "Le cash burn (ou burn rate) mesure la consommation nette mensuelle de trésorerie d'une entreprise — c'est-à-dire les dépenses totales moins les revenus encaissés. On distingue le gross burn (total des dépenses) du net burn (après revenus). C'est la métrique vitale d'une startup : combinée à la trésorerie disponible, elle donne le runway (temps restant avant la faillite). Un burn qui diminue malgré la croissance signe un product-market fit ; un burn qui augmente sans contrepartie de revenus est un signal d'alerte pour les investisseurs.",
+        context:
+          "Une startup avec 500K€ de trésorerie et un burn net de 50K€/mois a 10 mois de runway. Détail complet sur la [page Cash Burn & Runway](/ressources/glossaire/cash-burn-runway).",
       },
       {
         title: "CAC (Customer Acquisition Cost)",
         definition:
-          "Le coût moyen pour acquérir un client. Calculé en divisant le budget marketing par le nombre de clients acquis.",
+          "Le CAC est le coût total pour acquérir un nouveau client. Il inclut toutes les dépenses marketing et commerciales : publicité payée, salaires marketing/sales, outils CRM, événements, contenu. La formule de base : CAC = (Dépenses marketing + Dépenses commerciales) / Nombre de nouveaux clients sur la période. Le CAC se calcule idéalement par canal (Google Ads, LinkedIn, content marketing) pour identifier les leviers les plus rentables et réallouer le budget. C'est l'un des KPIs scrutés en priorité par les investisseurs SaaS.",
         context:
-          "Si vous dépensez €10k en marketing et gagnez 100 clients, votre CAC = €100.",
+          "Si vous dépensez 30K€/mois en marketing + 20K€ en sales pour acquérir 25 clients, votre CAC = 2 000 €. À comparer au LTV pour vérifier la viabilité du business model. Détails sur la [page CAC & LTV](/ressources/glossaire/cac-ltv).",
       },
       {
         title: "LTV (Lifetime Value)",
         definition:
-          "Revenu total que vous attendez d'un client sur toute sa vie. Plus votre LTV est élevée, mieux vous pouvez vous permettre de dépenser en acquisition.",
+          "La LTV est le revenu total qu'un client générera sur toute la durée de sa relation avec l'entreprise. Formule simplifiée : LTV = ARPU × Marge brute × Durée de vie moyenne du client. Formule plus précise : LTV = ARPU × (Marge brute %) / Churn mensuel. Le ratio LTV/CAC est le baromètre d'un business model récurrent : > 3 est sain, > 5 est excellent, < 1 indique un modèle non viable. Attention : pour une jeune startup, la LTV basée sur 6 mois de données est peu fiable — elle doit être recalculée régulièrement.",
         context:
-          "Si un client SaaS paie €100/mois pendant 3 ans et se résilie, son LTV = €3,600.",
+          "Un SaaS avec ARPU 500 €/mois, marge brute 75% et churn 2%/mois a une LTV ≈ 18 750 €. Avec un CAC de 2 000 €, le ratio LTV/CAC est de 9,4x — excellent.",
       },
       {
         title: "Term Sheet",
         definition:
-          "Document non-contraignant décrivant les termes principales d'un investissement (montant, valorisation, droits de vote, liquidation).",
+          "Le term sheet est la lettre d'intention non contraignante par laquelle un investisseur formalise les conditions d'une levée de fonds : montant, valorisation pre-money, liquidation preference, anti-dilution, board seats, drag-along, tag-along, vesting des fondateurs, no shop, pro-rata rights. C'est le document le plus important de votre levée : une clause mal négociée peut coûter des millions d'euros ou le contrôle de l'entreprise. Standard : 1x non-participating liquidation preference, weighted average anti-dilution, 1 siège investisseur sur 3, no shop 30 jours maximum.",
         context:
-          "Un term sheet spécifie que vous levez €2M à une valorisation de €10M pré-money.",
+          "Un term sheet de Series A peut prévoir : 3M€ levés à 8M€ pre-money, 1x non-participating, weighted average, board 2 fondateurs + 1 investisseur, vesting 4 ans avec cliff 1 an, no shop 30 jours.",
       },
       {
         title: "Cap Table (Capitalization Table)",
         definition:
-          "Tableau montrant la structure de propriété de votre entreprise : qui possède combien de parts (fondateurs, investisseurs, employés avec options).",
+          "Le cap table est le registre vivant de la structure capitalistique de votre entreprise. Il liste tous les actionnaires (fondateurs, investisseurs, salariés via BSPCE/BSA) avec leur nombre d'actions, leur pourcentage du capital et leur droits de vote. Il intègre aussi les instruments non encore exercés : BSPCE non levés, SAFE, obligations convertibles. Un cap table tenu à jour est indispensable lors d'une levée — les investisseurs le scrutent en premier pour vérifier la dilution et la structure de gouvernance. Outils recommandés : Carta, Pulley, Tougerme.",
         context:
-          "Votre cap table peut montrer : Fondateur 1 : 40%, Fondateur 2 : 40%, Investisseur Seed : 15%, Option pool : 5%.",
+          "Cap table post-Series A typique : Fondateurs 55%, Pool BSPCE 12%, Business Angels seed 8%, VC Series A 25%. Le pool BSPCE étant dilué à chaque tour, prévoyez sa réabondance lors de la prochaine levée.",
       },
       {
         title: "Runway",
         definition:
-          "Nombre de mois pendant lesquels vous pouvez opérer avec votre trésorerie actuelle avant de manquer d'argent.",
+          "Le runway est le nombre de mois pendant lesquels une entreprise peut continuer à opérer avec sa trésorerie actuelle à son burn rate actuel. Formule : Runway = Trésorerie disponible / Cash burn net mensuel. C'est l'indicateur vital qui pilote toutes les décisions stratégiques : timing de la prochaine levée, plan de hiring, marketing spend. Règle d'or du venture capital : lever quand on a 12-18 mois de runway, jamais avec moins de 9 mois (décote de 20-40% sur la valorisation). À suivre hebdomadairement quand le runway tombe sous 12 mois.",
         context:
-          "Si vous avez €500k et brûlez €50k/mois, vous avez 10 mois de runway.",
+          "Avec 650K€ de trésorerie et un burn net de 80K€/mois, votre runway est de 8 mois. Vous êtes en zone orange : il faut lancer la levée immédiatement ou réduire les coûts.",
       },
       {
         title: "MRR (Monthly Recurring Revenue)",
         definition:
-          "Revenu mensuel prévisible générée par abonnements ou contrats récurrents. La base de calcul pour SaaS et modèles récurrents.",
+          "Le MRR est le revenu récurrent mensuel d'une entreprise — la somme normalisée mensuellement de tous les abonnements actifs. Un client payant 12 000 €/an contribue 1 000 € au MRR. Le MRR se décompose en : New MRR (nouveaux clients), Expansion MRR (upsell), Contraction MRR (downgrades), Churned MRR (résiliations). Le Net New MRR = New + Expansion − Contraction − Churned. C'est la métrique #1 pour toute SaaS : sa croissance mois-à-mois est le moteur de la valorisation. Un MRR qui croît de 10%/mois doublé tous les 7 mois — la trajectoire idéale d'une early-stage SaaS.",
         context:
-          "100 clients payant €100/mois = €10k MRR. C'est votre métrique clé à suivre.",
+          "100 clients payant 100 €/mois = 10K€ MRR (120K€ ARR). Voir [ARR & MRR](/ressources/glossaire/arr-mrr) pour les benchmarks par stade de levée.",
       },
       {
-        title: "Taux de Rétention",
+        title: "Taux de Rétention (NRR)",
         definition:
-          "Pourcentage de clients qui restent actifs après une période donnée (généralement calculé mensuellement ou annuellement).",
+          "Le taux de rétention mesure la proportion de clients (ou de revenus) conservés sur une période. On distingue le gross retention (résiliations uniquement), le net retention et surtout le NRR (Net Revenue Retention) qui inclut l'expansion (upsell). Un NRR > 100% signifie que les clients existants génèrent plus de revenus chaque année malgré le churn — c'est le « negative churn », état idéal d'une SaaS mature. Benchmarks SaaS B2B : NRR > 120% excellent, 110-120% bon, 100-110% sain, < 100% à corriger. Le NRR est la métrique la plus prédictive de la valorisation SaaS.",
         context:
-          "Un taux de rétention de 90% signifie que 10% de vos clients partent chaque mois.",
+          "MRR début 100K€, churn 5K€, downgrades 1,5K€, upsell 3K€ → NRR = (100 − 5 − 1,5 + 3) / 100 = 96,5%. Sain. Voir [Churn Rate](/ressources/glossaire/churn-rate) pour les formules détaillées.",
       },
       {
         title: "EBITDA",
         definition:
-          "Earnings Before Interest, Taxes, Depreciation, and Amortization. Profit avant déductions financières et comptables.",
+          "L'EBITDA (Earnings Before Interest, Taxes, Depreciation and Amortization) mesure la performance opérationnelle d'une entreprise indépendamment de sa structure financière, fiscale et d'investissement. Formule : EBITDA = Résultat net + Impôts + Charges financières + Dotations aux amortissements. C'est l'indicateur de référence pour comparer des entreprises d'un même secteur. Utilisé par les banques (ratio Dette/EBITDA < 3 pour la capacité d'endettement), par les VCs et fonds PE (multiple EV/EBITDA pour la valorisation), et en M&A (prix d'acquisition exprimé en multiple d'EBITDA, généralement 4x à 8x).",
         context:
-          "L'EBITDA montre la rentabilité opérationnelle réelle de votre entreprise, indépendamment de la structure d'endettement.",
+          "Une SaaS avec 2,5M€ de CA et 450K€ d'EBITDA affiche une marge EBITDA de 18% — saine pour le secteur. Détails complets sur la [page EBITDA](/ressources/glossaire/ebitda).",
+      },
+      // ─── 6 termes ajoutés via TICKET 27 ─────────────────────────────
+      {
+        title: "Dilution (levée de fonds)",
+        definition:
+          "La dilution est la réduction du pourcentage de propriété des actionnaires existants lorsque l'entreprise émet de nouvelles actions — typiquement lors d'une levée de fonds. Formule : Dilution = Nouvelles actions / (Actions existantes + Nouvelles actions). Lors d'une Series A à 8M€ pre-money + 2M€ levés, les actionnaires existants sont dilués de 20%. Les fondateurs doivent anticiper la dilution cumulée sur plusieurs tours : 3 levées successives peuvent réduire leur part de 100% à 35-45% — d'où l'importance de négocier valorisation et taille du pool BSPCE à chaque tour.",
+        context:
+          "Pre-money 8M€, montant levé 2M€ → dilution 20%. Sur 3 levées (Seed + A + B), la dilution cumulée des fondateurs atteint typiquement 50-60%.",
+      },
+      {
+        title: "Vesting",
+        definition:
+          "Le vesting est le mécanisme d'acquisition progressive des actions ou des BSPCE par un salarié ou un fondateur, conditionné à sa présence dans l'entreprise. Le standard du marché : 4 ans avec cliff de 1 an. Cela signifie : aucun droit pendant la première année (cliff), puis acquisition mensuelle de 1/48ème jusqu'à la fin des 4 ans. Si le salarié part avant le cliff, il perd tout. Le vesting protège l'entreprise contre les départs précoces et aligne les intérêts long terme. Distinction good leaver (départ non-fautif, conserve les actions acquises) vs bad leaver (départ fautif, perd tout).",
+        context:
+          "Un développeur reçoit 10 000 BSPCE en avril 2026 avec vesting 4 ans + cliff 1 an. Il part en mars 2027 (avant cliff) → 0 BSPCE acquis. S'il part en mars 2028 → 5 000 BSPCE acquis (50%).",
+      },
+      {
+        title: "SAFE / BSA / BSPCE",
+        definition:
+          "Trois instruments financiers utilisés en early-stage. **SAFE** (Simple Agreement for Future Equity) : convention par laquelle l'investisseur paie maintenant pour des actions émises plus tard (typiquement lors de la prochaine levée), avec valuation cap et/ou discount. Pratique pour les bridges. **BSA** (Bon de Souscription d'Actions) : droit de souscrire des actions à un prix fixé, utilisable par toute société et tout bénéficiaire. **BSPCE** : équivalent réservé aux salariés/dirigeants de SAS et SA de moins de 15 ans, avec fiscalité avantageuse (PFU 12,8% après 3 ans). Voir notre [page BSPCE & BSA](/ressources/glossaire/bspce-bsa) pour les détails.",
+        context:
+          "SAFE de 200K€ avec valuation cap 6M€ et discount 20% : à la prochaine levée à 10M€ pre-money, l'investisseur convertit au minimum entre 6M€ (cap) et 8M€ (10M€ − 20%). Soit 6M€ → 3,3% du capital.",
+      },
+      {
+        title: "Due Diligence",
+        definition:
+          "La due diligence (DD) est l'enquête approfondie menée par un investisseur ou un acquéreur avant de finaliser une opération de capital (levée, rachat, M&A). Elle couvre la due diligence financière (qualité du MRR/ARR, CAC/LTV, burn rate, comptabilité, projections), juridique (contrats clients/fournisseurs, IP, litiges, conformité RGPD), commerciale (marché, concurrence, traction) et technique (architecture, sécurité, dette technique). Une DD bien préparée peut réduire sa durée de 4 semaines à 10 jours et augmenter la valorisation de 10-20%. Anticipez avec une data room structurée 3 mois avant les rendez-vous VC.",
+        context:
+          "Lors d'une Series A, les VCs passent typiquement 2-4 semaines en DD avec des dizaines de documents demandés. Voir notre [checklist data room](/ressources/blog/data-room-checklist-levee-de-fonds).",
+      },
+      {
+        title: "Kicker (dette venture)",
+        definition:
+          "Le kicker est une rémunération supplémentaire accordée à un prêteur en dette venture, sous forme de BSA (warrants) ou de participation au capital, en échange d'un taux d'intérêt plus bas. Standard du marché : un fonds de venture debt prête 2-5M€ à un taux de 10-12% + un warrant donnant droit à 1-3% du capital à un strike fixé. Le kicker compense le risque du prêteur (la dette venture est généralement subordonnée à la dette bancaire). Pour la startup : un financement moins dilutif que le capital pur, utile pour étendre le runway entre deux levées.",
+        context:
+          "Un fonds de venture debt prête 3M€ à 10%/an sur 4 ans + warrant pour 2% du capital à 10M€ de valuation cap. Si l'entreprise se valorise 50M€, le kicker rapporte 800K€ au prêteur.",
+      },
+      {
+        title: "Ratio LTV/CAC",
+        definition:
+          "Le ratio LTV/CAC compare la valeur générée par un client (LTV) au coût pour l'acquérir (CAC). C'est le baromètre #1 d'un business model récurrent. Seuils standards : LTV/CAC < 1 = modèle non viable (chaque client coûte plus qu'il ne rapporte) ; 1-3 = viable mais fragile ; 3-5 = sain ; > 5 = excellent et scalable. Complémentaire au CAC Payback Period (délai pour récupérer le CAC) : < 12 mois = excellent pour SaaS B2B. Les investisseurs SaaS appliquent une décote significative aux startups avec LTV/CAC < 3 et un premium pour > 5. Voir [CAC & LTV](/ressources/glossaire/cac-ltv).",
+        context:
+          "CAC 2 000 € + LTV 18 750 € → ratio 9,4x = excellent. CAC 4 000 € + LTV 6 000 € → ratio 1,5x = fragile, modèle à corriger.",
       },
     ],
     cta: {
