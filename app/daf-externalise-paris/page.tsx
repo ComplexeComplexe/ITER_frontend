@@ -144,7 +144,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
     locale: "fr",
     path: "/daf-externalise-paris",
-    title: "DAF Paris | Iter Advisors",
+    title: "DAF externalisé Paris — CFO à temps partagé | Iter Advisors",
     description: t.meta.description,
     structuredData,
     localizedPaths: {

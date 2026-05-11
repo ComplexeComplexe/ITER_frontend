@@ -128,11 +128,11 @@ export default function ServicesPage({
                   {service.title}
                 </h3>
                 <span className="inline-flex items-center gap-2 text-[13px] font-medium text-foreground/40 group-hover:text-iter-violet transition-colors">
-                  {locale === "fr"
-                    ? "Découvrir"
+                  {(locale === "fr"
+                    ? "Découvrir "
                     : locale === "en"
-                      ? "Discover"
-                      : "Descubra"}
+                      ? "Discover "
+                      : "Descubra ") + service.title.toLowerCase()}
                   <ArrowRight
                     size={14}
                     className="transition-transform group-hover:translate-x-1"
@@ -172,11 +172,11 @@ export default function ServicesPage({
                   {service.title}
                 </h3>
                 <span className="inline-flex items-center gap-2 text-[13px] font-medium text-foreground/40 group-hover:text-iter-dark transition-colors">
-                  {locale === "fr"
-                    ? "Découvrir"
+                  {(locale === "fr"
+                    ? "Découvrir "
                     : locale === "en"
-                      ? "Discover"
-                      : "Descubra"}
+                      ? "Discover "
+                      : "Descubra ") + service.title.toLowerCase()}
                   <ArrowRight
                     size={14}
                     className="transition-transform group-hover:translate-x-1"
@@ -187,6 +187,107 @@ export default function ServicesPage({
           </div>
         </div>
       </section>
+
+      {/* Pourquoi externaliser — TICKET 11 */}
+      {t.whyOutsource && (
+        <section className="bg-background py-20 lg:py-24">
+          <div className="container max-w-4xl">
+            <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
+              {t.whyOutsource.heading}
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-10">
+              {t.whyOutsource.intro}
+            </p>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {t.whyOutsource.benefits.map((b) => (
+                <div key={b.label} className="rounded-2xl border border-border/50 p-6">
+                  <p className="font-semibold mb-2">{b.label}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{b.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Nos domaines d'expertise */}
+      {t.expertise && (
+        <section className="bg-muted/30 py-20 lg:py-24">
+          <div className="container max-w-4xl">
+            <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
+              {t.expertise.heading}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {t.expertise.domains.map((d) => (
+                <div key={d.label} className="bg-background rounded-2xl border border-border/50 p-6">
+                  <p className="font-semibold mb-2">{d.label}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{d.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Comment ça marche */}
+      {t.methodology && (
+        <section className="bg-background py-20 lg:py-24">
+          <div className="container max-w-4xl">
+            <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
+              {t.methodology.heading}
+            </h2>
+            <ol className="space-y-6">
+              {t.methodology.steps.map((s, i) => (
+                <li key={s.step} className="flex items-start gap-4">
+                  <span className="flex-shrink-0 w-9 h-9 rounded-full bg-iter-violet text-white font-semibold flex items-center justify-center text-sm">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-semibold">{s.step}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed mt-1">{s.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
+
+      {/* FAQ + JSON-LD */}
+      {t.faq && (
+        <section className="bg-muted/30 py-20 lg:py-24">
+          <div className="container max-w-3xl">
+            <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
+              {t.faq.heading}
+            </h2>
+            <div className="space-y-4">
+              {t.faq.items.map((item) => (
+                <details key={item.question} className="bg-background rounded-2xl border border-border/50 p-6 group">
+                  <summary className="font-semibold cursor-pointer list-none flex justify-between items-center gap-4">
+                    {item.question}
+                    <span className="text-iter-violet transition-transform group-open:rotate-45 text-xl leading-none">+</span>
+                  </summary>
+                  <p className="text-muted-foreground text-sm leading-relaxed mt-4">{item.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: t.faq.items.map((item) => ({
+                  "@type": "Question",
+                  name: item.question,
+                  acceptedAnswer: { "@type": "Answer", text: item.answer },
+                })),
+              }),
+            }}
+          />
+        </section>
+      )}
 
       <CTASection locale={locale} />
     </PageLayout>

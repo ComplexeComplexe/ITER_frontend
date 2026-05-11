@@ -6,6 +6,26 @@ export interface ServiceCard {
   category?: "finance" | "rh";
 }
 
+export interface WhyOutsourceBenefit {
+  label: string;
+  description: string;
+}
+
+export interface ExpertiseDomain {
+  label: string;
+  description: string;
+}
+
+export interface MethodologyStep {
+  step: string;
+  description: string;
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 export interface ServicesContent {
   meta: {
     title: string;
@@ -23,6 +43,24 @@ export interface ServicesContent {
     paragraphs: string[];
   };
   services: ServiceCard[];
+  // Optional enrichment sections (TICKET 11) — present on FR, can be added per locale later.
+  whyOutsource?: {
+    heading: string;
+    intro: string;
+    benefits: WhyOutsourceBenefit[];
+  };
+  expertise?: {
+    heading: string;
+    domains: ExpertiseDomain[];
+  };
+  methodology?: {
+    heading: string;
+    steps: MethodologyStep[];
+  };
+  faq?: {
+    heading: string;
+    items: FaqItem[];
+  };
 }
 
 const servicesFr: ServicesContent = {
@@ -58,12 +96,96 @@ const servicesFr: ServicesContent = {
     { title: "Comptabilité externalisée", href: "/services/comptabilite-externalisation", category: "finance" },
     { title: "Prévisionnel de trésorerie", href: "/services/previsionnel-tresorerie", category: "finance" },
     { title: "M&A & Due Diligence", href: "/services/ma-due-diligence", category: "finance" },
+    { title: "Gestion financière externalisée", href: "/services/gestion-financiere-externalisee", category: "finance" },
     { title: "DRH externalisé", href: "/drh-externalise", category: "rh" },
     { title: "Recrutement & talent acquisition", href: "/drh-externalise", category: "rh" },
     { title: "Gestion de la paie & charges sociales", href: "/drh-externalise", category: "rh" },
     { title: "Formation & développement", href: "/drh-externalise", category: "rh" },
     { title: "Conformité & droit du travail", href: "/drh-externalise", category: "rh" },
   ],
+  whyOutsource: {
+    heading: "Pourquoi externaliser vos services financiers ?",
+    intro:
+      "Externaliser votre direction financière, c’est choisir la flexibilité et l’expertise sans le coût d’un salarié interne. Un DAF externalisé apporte une vision fraîche, une expérience multi-secteurs et une méthodologie éprouvée — sans les contraintes d’un CDI.",
+    benefits: [
+      {
+        label: "Réduction des coûts",
+        description: "30 à 50 % moins cher qu’un DAF salarié (charges incluses).",
+      },
+      {
+        label: "Flexibilité",
+        description: "Missions de 2 jours/mois à temps plein, adaptables à votre charge réelle.",
+      },
+      {
+        label: "Expertise",
+        description: "Accès à une équipe de CFOs avec expérience multi-secteurs.",
+      },
+      {
+        label: "Scalabilité",
+        description: "Montée en charge progressive selon votre croissance et vos cycles.",
+      },
+    ],
+  },
+  expertise: {
+    heading: "Nos domaines d’expertise",
+    domains: [
+      {
+        label: "Finance",
+        description:
+          "Comptabilité, contrôle de gestion, prévisionnel de trésorerie, reporting mensuel, accompagnement levée de fonds, M&A & due diligence.",
+      },
+      {
+        label: "Ressources Humaines",
+        description: "Recrutement, gestion de la paie, formation, conformité & droit du travail.",
+      },
+    ],
+  },
+  methodology: {
+    heading: "Comment ça marche ?",
+    steps: [
+      {
+        step: "Diagnostic — semaine 1",
+        description: "Audit de votre situation financière et identification des leviers prioritaires.",
+      },
+      {
+        step: "Recommandation — semaine 2",
+        description: "Proposition d’une mission adaptée : périmètre, rythme, livrables.",
+      },
+      {
+        step: "Implémentation — semaines 3 à 4",
+        description: "Déploiement des outils (Pennylane, Agicap, Spendesk, PayFit) et des process.",
+      },
+      {
+        step: "Pilotage — mensuel",
+        description: "Reporting, ajustements et accompagnement opérationnel en continu.",
+      },
+    ],
+  },
+  faq: {
+    heading: "Questions fréquentes",
+    items: [
+      {
+        question: "Quel est le coût d’un DAF externalisé ?",
+        answer:
+          "De 2 000 €/mois (2 jours/semaine) à 8 000 €/mois (temps plein), selon la charge et la complexité de la mission.",
+      },
+      {
+        question: "Dans quels délais peut-on démarrer ?",
+        answer:
+          "Diagnostic en 1 semaine, démarrage effectif de la mission en 2 à 3 semaines après le brief initial.",
+      },
+      {
+        question: "Quels outils utilisez-vous ?",
+        answer:
+          "Pennylane, Agicap, Spendesk, PayFit selon vos besoins. Voir notre comparatif complet des outils CFO sur /ressources/outils.",
+      },
+      {
+        question: "Intervenez-vous à l’international ?",
+        answer:
+          "Oui, nos bureaux à Barcelone, Paris et Toulouse couvrent la France et l’Espagne. Missions Europe possibles.",
+      },
+    ],
+  },
 };
 
 const servicesEn: ServicesContent = {
@@ -99,6 +221,7 @@ const servicesEn: ServicesContent = {
     { title: "Outsource your accounting", href: "/en/services/outsource-your-accounting", category: "finance" },
     { title: "Cash flow forecast", href: "/en/services/cash-flow-forecast", category: "finance" },
     { title: "M&A & Due Diligence", href: "/en/services/ma-due-diligence", category: "finance" },
+    { title: "Outsourced financial management", href: "/en/fractional-cfo", category: "finance" },
     { title: "Fractional HR Director", href: "/en/drh-externalise", category: "rh" },
     { title: "Recruitment & talent acquisition", href: "/en/drh-externalise", category: "rh" },
     { title: "Payroll & social charges", href: "/en/drh-externalise", category: "rh" },
