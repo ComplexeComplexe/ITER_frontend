@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00A878;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad4)"/>
+
+  <!-- Left side: AI neural network icon -->
+  <g transform="translate(100, 150)">
+    <circle cx="80" cy="80" r="70" fill="#FFFFFF" opacity="0.15"/>
+    <!-- Nodes -->
+    <circle cx="50" cy="50" r="5" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="110" cy="50" r="5" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="50" cy="110" r="5" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="110" cy="110" r="5" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="80" cy="80" r="6" fill="#FFFFFF" opacity="0.95"/>
+    <!-- Connections -->
+    <line x1="50" y1="50" x2="80" y2="80" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+    <line x1="110" y1="50" x2="80" y2="80" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+    <line x1="50" y1="110" x2="80" y2="80" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+    <line x1="110" y1="110" x2="80" y2="80" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- Right side: Text -->
+  <g transform="translate(450, 100)">
+    <text x="0" y="0" font-size="56" font-weight="700" fill="#FFFFFF" font-family="'Helvetica Neue', Arial, sans-serif" letter-spacing="-1">
+      IA & Automatisation
+    </text>
+
+    <text x="0" y="80" font-size="32" font-weight="400" fill="#FFFFFF" font-family="'Helvetica Neue', Arial, sans-serif" opacity="0.9">
+      Transformer votre Département Finance
+    </text>
+
+    <text x="0" y="140" font-size="20" font-weight="400" fill="#FFFFFF" font-family="'Helvetica Neue', Arial, sans-serif" opacity="0.85">
+      Machine learning • Robotique • Optimisation • Prédiction
+    </text>
+
+    <!-- Stats -->
+    <g transform="translate(0, 200)">
+      <g>
+        <text x="0" y="0" font-size="28" font-weight="700" fill="#FFF" font-family="'Helvetica Neue', Arial, sans-serif">40%</text>
+        <text x="0" y="28" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.8" font-family="'Helvetica Neue', Arial, sans-serif">Temps économisé</text>
+      </g>
+      <g transform="translate(150, 0)">
+        <text x="0" y="0" font-size="28" font-weight="700" fill="#FFF" font-family="'Helvetica Neue', Arial, sans-serif">-80%</text>
+        <text x="0" y="28" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.8" font-family="'Helvetica Neue', Arial, sans-serif">Erreurs</text>
+      </g>
+      <g transform="translate(300, 0)">
+        <text x="0" y="0" font-size="28" font-weight="700" fill="#FFF" font-family="'Helvetica Neue', Arial, sans-serif">2026</text>
+        <text x="0" y="28" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.8" font-family="'Helvetica Neue', Arial, sans-serif">Le standard</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad2)"/>
+
+  <!-- Left side: Rocket/Growth icon -->
+  <g transform="translate(80, 120)">
+    <circle cx="100" cy="100" r="80" fill="#FFFFFF" opacity="0.15"/>
+    <path d="M 100 40 L 120 90 L 100 80 L 80 90 Z" fill="#FFFFFF" opacity="0.9"/>
+    <rect x="85" y="100" width="30" height="60" rx="4" fill="#FFFFFF" opacity="0.7"/>
+    <circle cx="75" cy="140" r="6" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="125" cy="140" r="6" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+
+  <!-- Right side: Text -->
+  <g transform="translate(450, 100)">
+    <text x="0" y="0" font-size="56" font-weight="700" fill="#FFFFFF" font-family="'Helvetica Neue', Arial, sans-serif" letter-spacing="-1">
+      Levée de Fonds
+    </text>
+
+    <text x="0" y="80" font-size="32" font-weight="400" fill="#FFFFFF" font-family="'Helvetica Neue', Arial, sans-serif" opacity="0.9">
+      Financer votre Croissance
+    </text>
+
+    <text x="0" y="140" font-size="20" font-weight="400" fill="#FFFFFF" font-family="'Helvetica Neue', Arial, sans-serif" opacity="0.85">
+      Guide complet • Due diligence • Data room • Pitch deck
+    </text>
+
+    <!-- Stats -->
+    <g transform="translate(0, 200)">
+      <g>
+        <text x="0" y="0" font-size="28" font-weight="700" fill="#FFF" font-family="'Helvetica Neue', Arial, sans-serif">100M€</text>
+        <text x="0" y="28" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.8" font-family="'Helvetica Neue', Arial, sans-serif">Levés</text>
+      </g>
+      <g transform="translate(150, 0)">
+        <text x="0" y="0" font-size="28" font-weight="700" fill="#FFF" font-family="'Helvetica Neue', Arial, sans-serif">-50%</text>
+        <text x="0" y="28" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.8" font-family="'Helvetica Neue', Arial, sans-serif">Délai</text>
+      </g>
+      <g transform="translate(300, 0)">
+        <text x="0" y="0" font-size="28" font-weight="700" fill="#FFF" font-family="'Helvetica Neue', Arial, sans-serif">+20%</text>
+        <text x="0" y="28" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.8" font-family="'Helvetica Neue', Arial, sans-serif">Valuation</text>
+      </g>
+    </g>
+  </g>
+</svg>

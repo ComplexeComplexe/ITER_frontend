@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E11D48;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad3)"/>
+
+  <!-- Left side: Tools grid icon -->
+  <g transform="translate(90, 140)">
+    <circle cx="90" cy="90" r="75" fill="#FFFFFF" opacity="0.15"/>
+    <!-- Grid of tool icons -->
+    <rect x="40" y="40" width="35" height="35" rx="4" fill="#FFFFFF" opacity="0.8"/>
+    <rect x="85" y="40" width="35" height="35" rx="4" fill="#FFFFFF" opacity="0.8"/>
+    <rect x="40" y="85" width="35" height="35" rx="4" fill="#FFFFFF" opacity="0.8"/>
+    <rect x="85" y="85" width="35" height="35" rx="4" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+
+  <!-- Right side: Text -->
+  <g transform="translate(450, 100)">
+    <text x="0" y="0" font-size="56" font-weight="700" fill="#FFFFFF" font-family="'Helvetica Neue', Arial, sans-serif" letter-spacing="-1">
+      10 Outils CFO
+    </text>
+
+    <text x="0" y="80" font-size="32" font-weight="400" fill="#FFFFFF" font-family="'Helvetica Neue', Arial, sans-serif" opacity="0.9">
+      Pour Startups en Croissance
+    </text>
+
+    <text x="0" y="140" font-size="20" font-weight="400" fill="#FFFFFF" font-family="'Helvetica Neue', Arial, sans-serif" opacity="0.85">
+      Comptabilité • Trésorerie • Reporting • BI • Automatisation
+    </text>
+
+    <!-- Stats -->
+    <g transform="translate(0, 200)">
+      <g>
+        <text x="0" y="0" font-size="28" font-weight="700" fill="#FFF" font-family="'Helvetica Neue', Arial, sans-serif">10+</text>
+        <text x="0" y="28" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.8" font-family="'Helvetica Neue', Arial, sans-serif">Outils testés</text>
+      </g>
+      <g transform="translate(150, 0)">
+        <text x="0" y="0" font-size="28" font-weight="700" fill="#FFF" font-family="'Helvetica Neue', Arial, sans-serif">3-5k€</text>
+        <text x="0" y="28" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.8" font-family="'Helvetica Neue', Arial, sans-serif">/mois</text>
+      </g>
+      <g transform="translate(300, 0)">
+        <text x="0" y="0" font-size="28" font-weight="700" fill="#FFF" font-family="'Helvetica Neue', Arial, sans-serif">40%</text>
+        <text x="0" y="28" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.8" font-family="'Helvetica Neue', Arial, sans-serif">Temps gagné</text>
+      </g>
+    </g>
+  </g>
+</svg>
