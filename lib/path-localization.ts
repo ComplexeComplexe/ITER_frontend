@@ -14,6 +14,14 @@ const DAF_BASE: Record<Locale, string> = {
   es: "externalizacion-daf",
 };
 
+/**
+ * Alternate EN slugs recognized as "DAF base" so users on /en/fractional-cfo
+ * can map back to FR /daf-externalise (and forward to ES /externalizacion-daf).
+ * Note: middleware redirects /en/daf-outsourcing → /en/fractional-cfo for the
+ * root only; sub-paths keep the daf-outsourcing slug, so we accept both.
+ */
+const DAF_BASE_ALIASES_EN = new Set(["daf-outsourcing", "fractional-cfo"]);
+
 const DAF_SUB_PATHS: Record<string, Record<Locale, string>> = {
   // ES path renamed multipropiedad → tiempo-compartido (audit V2 R-4):
   // "multipropiedad" means real-estate timeshare in Spanish, mistranslation.
@@ -56,6 +64,62 @@ const PRIVACY_PATH: Record<Locale, string> = {
   es: "politica-de-privacidad",
 };
 
+const COOKIE_PATH: Record<Locale, string> = {
+  fr: "politique-cookies",
+  en: "cookie-policy",
+  es: "politica-cookies",
+};
+
+const PROFILE_PATH: Record<Locale, string> = {
+  fr: "profil",
+  en: "profile",
+  es: "perfil",
+};
+
+const QUALIFICATION_PATH: Record<Locale, string> = {
+  fr: "qualification",
+  en: "assessment",
+  es: "calificacion",
+};
+
+const CAMPAIGN_PATH: Record<Locale, string> = {
+  fr: "campagne",
+  en: "campaign",
+  es: "campana",
+};
+
+// City landing pages: daf-externalise-{city} ↔ outsourced-cfo-{city} ↔ cfo-externalizado-{city}
+const CITY_PAGES: Record<string, Record<Locale, string>> = {
+  barcelone: {
+    fr: "daf-externalise-barcelone",
+    en: "outsourced-cfo-barcelona",
+    es: "cfo-externalizado-barcelona",
+  },
+  paris: {
+    fr: "daf-externalise-paris",
+    en: "outsourced-cfo-paris",
+    es: "cfo-externalizado-paris",
+  },
+  toulouse: {
+    fr: "daf-externalise-toulouse",
+    en: "outsourced-cfo-toulouse",
+    es: "cfo-externalizado-toulouse",
+  },
+};
+
+const CITY_PAGE_LOOKUP = new Map<string, string>();
+for (const [key, paths] of Object.entries(CITY_PAGES)) {
+  for (const v of Object.values(paths)) CITY_PAGE_LOOKUP.set(v, key);
+}
+
+// Resources sub-paths that vary by locale (excluding blog/glossaire which have [slug] handling)
+const RESOURCES_TOOLS: Record<Locale, string> = {
+  fr: "outils",
+  en: "tools",
+  es: "herramientas",
+};
+const RESOURCES_TOOLS_ALIASES = new Set(["outils", "tools", "herramientas"]);
+
 function getPathWithoutLocale(pathname: string): { locale: Locale; path: string } {
   const segments = pathname.split("/").filter(Boolean);
   if (segments[0] === "en" || segments[0] === "es") {
@@ -83,9 +147,11 @@ export function getLocalizedPath(pathname: string, targetLocale: Locale): string
 
   const segs = path.split("/").filter(Boolean);
 
-  // Contact, Jobs (same path)
+  // Contact, Jobs, Clients, Diagnostic (same slug across locales)
   if (segs[0] === "contact" && segs.length === 1) return `${prefix}/contact`;
-  if (segs[0] === "jobs" && segs.length === 1) return `${prefix}/jobs`;
+  if (segs[0] === "jobs") return `${prefix}/${segs.join("/")}`;
+  if (segs[0] === "clients" && segs.length === 1) return `${prefix}/clients`;
+  if (segs[0] === "diagnostic" && segs.length === 1) return `${prefix}/diagnostic`;
 
   // About
   if (segs[0] === "a-propos" && segs.length === 1) return `${prefix}/${ABOUT_PATH[targetLocale]}`;
@@ -101,8 +167,37 @@ export function getLocalizedPath(pathname: string, targetLocale: Locale): string
   if (segs[0] === "politica-de-privacidad" && segs.length === 1)
     return `${prefix}/${PRIVACY_PATH[targetLocale]}`;
 
-  // DAF
-  const dafBases = Object.values(DAF_BASE);
+  // Cookies
+  if (
+    segs.length === 1 &&
+    (segs[0] === "politique-cookies" || segs[0] === "cookie-policy" || segs[0] === "politica-cookies")
+  ) {
+    return `${prefix}/${COOKIE_PATH[targetLocale]}`;
+  }
+
+  // Profile / Qualification / Campaign (single-page locale variants)
+  if (segs.length === 1 && (segs[0] === "profil" || segs[0] === "profile" || segs[0] === "perfil")) {
+    return `${prefix}/${PROFILE_PATH[targetLocale]}`;
+  }
+  if (
+    segs.length === 1 &&
+    (segs[0] === "qualification" || segs[0] === "assessment" || segs[0] === "calificacion")
+  ) {
+    return `${prefix}/${QUALIFICATION_PATH[targetLocale]}`;
+  }
+  if (segs.length === 1 && (segs[0] === "campagne" || segs[0] === "campaign" || segs[0] === "campana")) {
+    return `${prefix}/${CAMPAIGN_PATH[targetLocale]}`;
+  }
+
+  // City landing pages: daf-externalise-{city} ↔ outsourced-cfo-{city} ↔ cfo-externalizado-{city}
+  if (segs.length === 1) {
+    const cityKey = CITY_PAGE_LOOKUP.get(segs[0]);
+    if (cityKey) return `${prefix}/${CITY_PAGES[cityKey][targetLocale]}`;
+  }
+
+  // DAF — accept the EN `fractional-cfo` alias as well, since users may land
+  // on the canonical /en/fractional-cfo URL.
+  const dafBases = [...Object.values(DAF_BASE), ...DAF_BASE_ALIASES_EN];
   if (dafBases.includes(segs[0]) && segs.length >= 1) {
     const base = `${prefix}/${DAF_BASE[targetLocale]}`;
     if (segs.length === 1) return base;
@@ -136,22 +231,44 @@ export function getLocalizedPath(pathname: string, targetLocale: Locale): string
   }
 
   // Resources (ressources) — structure: /ressources, /ressources/blog, /ressources/blog/[slug], etc.
-  if (segs[0] === "ressources") {
+  // Also handle /recursos (ES canonical) since middleware redirects /es/ressources/* → /es/recursos/*.
+  if (segs[0] === "ressources" || segs[0] === "recursos") {
     const resourcesBase = `${prefix}/ressources`;
     if (segs.length === 1) return resourcesBase;
+
+    // Tools hub: outils ↔ tools ↔ herramientas (+ sub-categories share the same slugs)
+    if (RESOURCES_TOOLS_ALIASES.has(segs[1])) {
+      const toolsBase = `${resourcesBase}/${RESOURCES_TOOLS[targetLocale]}`;
+      if (segs.length === 2) return toolsBase;
+      return `${toolsBase}/${segs.slice(2).join("/")}`;
+    }
+
+    // Same-slug sub-hubs across locales
+    if (segs[1] === "cas-clients" || segs[1] === "case-studies") {
+      // Canonical is cas-clients; case-studies 301-redirects to it.
+      return `${resourcesBase}/cas-clients${segs.length > 2 ? "/" + segs.slice(2).join("/") : ""}`;
+    }
     if (segs[1] === "testimonials") return `${resourcesBase}/testimonials`;
     if (segs[1] === "blog") {
       if (segs.length === 2) return `${resourcesBase}/blog`;
       return `${resourcesBase}/blog/${segs.slice(2).join("/")}`;
     }
-    if (segs[1] === "fiche-metier") {
+    if (segs[1] === "fiche-metier" || segs[1] === "job-descriptions") {
       if (segs.length === 2) return `${resourcesBase}/fiche-metier`;
       return `${resourcesBase}/fiche-metier/${segs.slice(2).join("/")}`;
     }
-    if (segs[1] === "glossaire") return `${resourcesBase}/glossaire`;
-    return pathname;
+    // Glossary: glossaire (FR/EN canonical) / glossary-en (EN legacy) / preserve [slug] if present
+    if (segs[1] === "glossaire" || segs[1] === "glossary-en" || segs[1] === "glossary") {
+      if (segs.length === 2) return `${resourcesBase}/glossaire`;
+      return `${resourcesBase}/glossaire/${segs.slice(2).join("/")}`;
+    }
+    // Unknown sub-path under /ressources: preserve segments under the target locale prefix.
+    return `${resourcesBase}/${segs.slice(1).join("/")}`;
   }
 
-  // Fallback: home
-  return prefix || "/";
+  // Fallback: preserve the path under the target locale prefix. Most unmapped
+  // routes share their slug across locales (or have middleware/next.config
+  // redirects that resolve mismatches), so this is safer than dropping the
+  // user on the locale home page.
+  return `${prefix}/${segs.join("/")}`;
 }
