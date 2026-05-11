@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "contact-page",
     locale: "fr",
     path: "/contact",
-    fallbackTitle: "Contact | Iter Advisors",
+    fallbackTitle: "Contactez Iter Advisors — DAF & DRH externalisé | Iter Advisors",
     fallbackDescription: "Contactez Iter Advisors pour un premier échange gratuit avec un expert financier. Bureaux à Barcelone, Paris et Toulouse.",
   });
 }
