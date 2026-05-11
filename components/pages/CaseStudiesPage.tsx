@@ -185,9 +185,9 @@ export default function CaseStudiesPage({
               { label: t.breadcrumbLabel },
             ]}
           />
-          <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-3xl mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-3xl mb-6">
             {t.h1}
-          </h1>
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
             {t.intro}
           </p>
