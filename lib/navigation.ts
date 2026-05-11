@@ -47,6 +47,7 @@ const navFr: NavItem[] = [
     title: "Ressources",
     href: "/ressources",
     children: [
+      { text: "Outils", href: "/ressources/outils" },
       { text: "Blog & Actualités", href: "/ressources/blog" },
       { text: "Cas clients", href: "/ressources/cas-clients" },
       { text: "Glossaire", href: "/ressources/glossaire" },
@@ -89,6 +90,7 @@ const navEn: NavItem[] = [
     title: "Resources",
     href: "/en/ressources",
     children: [
+      { text: "Tools", href: "/en/ressources/outils" },
       { text: "Blog & News", href: "/en/ressources/blog" },
       { text: "Case Studies", href: "/en/ressources/cas-clients" },
       { text: "Glossary", href: "/en/ressources/glossaire" },
@@ -131,6 +133,7 @@ const navEs: NavItem[] = [
     title: "Recursos",
     href: "/es/ressources",
     children: [
+      { text: "Herramientas", href: "/es/ressources/outils" },
       { text: "Blog & Actualidades", href: "/es/ressources/blog" },
       { text: "Casos prácticos", href: "/es/ressources/cas-clients" },
       { text: "Glosario", href: "/es/ressources/glossaire" },
