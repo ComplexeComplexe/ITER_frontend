@@ -13,6 +13,7 @@ import {
   generateToolReviewSchema,
   generateFAQSchema,
   generateBreadcrumbSchema,
+  generateHowToSchema,
 } from '@/lib/schemas/toolSchemas';
 import Link from 'next/link';
 
@@ -178,6 +179,22 @@ export default function ToolPage({
           }}
         />
       )}
+      {/* HowTo JSON-LD — TICKET 31 */}
+      {toolDetails?.implementationGuide && toolDetails.implementationGuide.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              generateHowToSchema(
+                tool.name,
+                tool.slug,
+                toolDetails.implementationGuide,
+                tool.implementationTime
+              )
+            ),
+          }}
+        />
+      )}
 
       {/* Tool Header Component */}
       <section className="bg-background py-8">
@@ -299,6 +316,36 @@ export default function ToolPage({
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Retour terrain — TICKET 20 */}
+      {toolDetails?.retourTerrain && (
+        <section className="bg-iter-violet/5 border-y border-iter-violet/20 py-16">
+          <div className="container max-w-3xl">
+            <h2 className="text-2xl font-bold font-heading text-foreground mb-6">Retour terrain</h2>
+            <p className="text-gray-700 leading-relaxed italic mb-8">
+              « {toolDetails.retourTerrain.clientStory} »
+            </p>
+            <div className="bg-background p-6 rounded-lg border border-iter-violet/20">
+              <p className="font-semibold text-gray-900 mb-2">Stack recommandé</p>
+              <p className="text-gray-700 mb-2">
+                <strong>{toolDetails.retourTerrain.recommendedStack.tools.join(' + ')}</strong>
+                {' = notre stack le plus déployé pour ce besoin.'}
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Budget total : <strong>{toolDetails.retourTerrain.recommendedStack.budget}</strong>. ROI constaté : <strong>{toolDetails.retourTerrain.recommendedStack.roi}</strong>.
+              </p>
+              {toolDetails.retourTerrain.relatedCategoryHref && (
+                <Link
+                  href={toolDetails.retourTerrain.relatedCategoryHref}
+                  className="inline-block mt-4 text-iter-violet font-semibold hover:underline text-sm"
+                >
+                  → {toolDetails.retourTerrain.relatedCategoryLabel ?? 'Voir le comparatif complet'}
+                </Link>
+              )}
             </div>
           </div>
         </section>

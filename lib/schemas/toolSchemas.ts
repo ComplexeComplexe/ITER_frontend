@@ -112,3 +112,31 @@ export function generateSoftwareApplicationSchema(tool: Tool) {
     },
   };
 }
+
+/**
+ * HowTo JSON-LD schema for tool implementation guides (TICKET 31).
+ * Generates a schema.org/HowTo from a tool's implementationGuide steps,
+ * enabling rich-snippet "How to" eligibility in search results.
+ */
+export function generateHowToSchema(
+  toolName: string,
+  toolSlug: string,
+  steps: Array<{ step: string; detail: string }>,
+  totalDuration?: string
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    '@id': `https://www.iteradvisors.com/ressources/outils/${toolSlug}#howto`,
+    name: `Comment implémenter ${toolName}`,
+    description: `Guide d'implémentation de ${toolName} étape par étape, par les DAF externalisés d'Iter Advisors.`,
+    ...(totalDuration ? { totalTime: totalDuration } : {}),
+    step: steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.step,
+      text: s.detail,
+      url: `https://www.iteradvisors.com/ressources/outils/${toolSlug}#step${i + 1}`,
+    })),
+  };
+}

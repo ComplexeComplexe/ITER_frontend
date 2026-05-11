@@ -23,6 +23,21 @@ export interface ToolDetails {
     question: string;
     answer: string;
   }>;
+  /**
+   * "Retour terrain" — anonymized client story with quantified outcomes
+   * and a recommended stack. Added via TICKET 20 (mai 2026) on the 4
+   * existing fiches; optional on others.
+   */
+  retourTerrain?: {
+    clientStory: string;
+    recommendedStack: {
+      tools: string[];
+      budget: string;
+      roi: string;
+    };
+    relatedCategoryHref?: string;
+    relatedCategoryLabel?: string;
+  };
 }
 
 export const toolDetails: Record<string, ToolDetails> = {
@@ -138,6 +153,17 @@ export const toolDetails: Record<string, ToolDetails> = {
           'Oui, intégrations natives avec Stripe, Shopify, WooCommerce. Les transactions se synchro automatiquement. Pour les marchés (" marketplace "), un paramétrage custom est nécessaire.',
       },
     ],
+    retourTerrain: {
+      clientStory:
+        "Chez une SaaS B2B de 35 personnes (CA 4M€), nous avons déployé Pennylane en 2 semaines. Le temps de clôture est passé de 8 jours à 3 jours. Le rapprochement bancaire automatique économise 6 heures de traitement par mois. L'intégration native avec Agicap et Spendesk a éliminé les doubles saisies — gain de 8 heures supplémentaires par mois pour l'équipe finance.",
+      recommendedStack: {
+        tools: ['Pennylane', 'Agicap', 'Spendesk'],
+        budget: '800-1 500 €/mois',
+        roi: '3-6 mois',
+      },
+      relatedCategoryHref: '/ressources/outils/logiciels-comptabilite',
+      relatedCategoryLabel: 'Voir le comparatif complet des logiciels de comptabilité',
+    },
   },
   agicap: {
     slug: 'agicap',
@@ -234,6 +260,17 @@ export const toolDetails: Record<string, ToolDetails> = {
           'Agicap récupère automatiquement l\'historique via la connexion bancaire (6-12 mois). Pas de migration manuelle.',
       },
     ],
+    retourTerrain: {
+      clientStory:
+        "Chez une scale-up SaaS de 60 personnes avec 4 comptes bancaires et une ligne de crédit, nous avons déployé Agicap en 2 semaines. Avant : le CFO consultait les comptes manuellement chaque lundi. Après : 3 scénarios à 13 semaines (pessimiste -20% CA, base, optimiste +30% CA) avec alertes cash automatiques 6 semaines avant rupture. La levée Series B a été anticipée et lancée 4 mois plus tôt — décote zéro.",
+      recommendedStack: {
+        tools: ['Pennylane', 'Agicap', 'Spendesk'],
+        budget: '800-1 500 €/mois',
+        roi: '3-6 mois',
+      },
+      relatedCategoryHref: '/ressources/outils/logiciels-tresorerie',
+      relatedCategoryLabel: 'Voir le comparatif complet des logiciels de trésorerie',
+    },
   },
   spendesk: {
     slug: 'spendesk',
@@ -322,6 +359,17 @@ export const toolDetails: Record<string, ToolDetails> = {
           'Oui, avec l\'intégration Pennylane/Sage. Les écritures vont automatiquement dans le bon journal avec le bon code comptable.',
       },
     ],
+    retourTerrain: {
+      clientStory:
+        "Chez un e-commerce D2C de 28 personnes, nous avons déployé Spendesk en 10 jours. Avant : 14 cartes Mastercard partagées entre 8 personnes, justificatifs perdus, 8 heures d'admin par clôture. Après : 28 cartes virtuelles dédiées (une par service SaaS), workflows d'approbation (CEO > 1K€, manager < 500€), export comptable automatique vers Pennylane. Gain : 6-8 heures par clôture mensuelle, zéro justificatif perdu.",
+      recommendedStack: {
+        tools: ['Pennylane', 'Spendesk', 'Agicap'],
+        budget: '800-1 500 €/mois',
+        roi: '3-6 mois',
+      },
+      relatedCategoryHref: '/ressources/outils/gestion-depenses',
+      relatedCategoryLabel: 'Voir le comparatif complet des outils de gestion des dépenses',
+    },
   },
   payfit: {
     slug: 'payfit',
@@ -427,6 +475,17 @@ export const toolDetails: Record<string, ToolDetails> = {
           'PayFit récupère l\'historique du cabinet (dernières 12 fiches). Les paramétrages (CCN, contributions) se configurent en 2 jours. Zéro interruption de service.',
       },
     ],
+    retourTerrain: {
+      clientStory:
+        "Chez une SaaS B2B de 45 personnes (CCN SYNTEC, forfait jours), nous avons migré la paie depuis un cabinet traditionnel vers PayFit en 5 jours. Avant : 3 erreurs de paie sur 18 mois, DSN envoyée en retard 2 fois, satisfaction salariés sur la paie à 3,1/5. Après : zéro erreur en 18 mois, DSN automatique, portail collaborateur ayant réduit de 40% les questions RH, satisfaction salariés à 4,3/5.",
+      recommendedStack: {
+        tools: ['Pennylane', 'PayFit', 'Lucca'],
+        budget: '40-60 €/salarié/mois',
+        roi: '2-3 mois',
+      },
+      relatedCategoryHref: '/ressources/outils/logiciels-paie',
+      relatedCategoryLabel: 'Voir le comparatif complet des logiciels de paie',
+    },
   },
   // ─── 9 fiches outils ajoutées via TICKET 5 ───────────────────────────
   sage: {
