@@ -368,9 +368,11 @@ export default function HomePage({
             alt=""
             aria-hidden="true"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
             fetchPriority="high"
+            quality={85}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-iter-violet/90 via-iter-violet/80 to-iter-dark/90" />
         </div>

@@ -123,6 +123,90 @@ export default function CategoryPage({
         </div>
       </section>
 
+      {/* Detailed comparison matrix — TICKET 18 */}
+      {categoryContent.detailedComparison && (
+        <section className="bg-muted/20 py-16">
+          <div className="container max-w-5xl">
+            <h2 className="text-2xl font-bold font-heading text-foreground mb-3">
+              Tableau comparatif détaillé
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              Comparaison critère par critère, basée sur 40+ déploiements terrain.
+            </p>
+            <div className="overflow-x-auto bg-background rounded-2xl border border-gray-200">
+              <table className="w-full text-sm">
+                <thead className="bg-iter-violet/5 border-b border-gray-200">
+                  <tr>
+                    <th className="text-left p-4 font-semibold text-foreground">Critère</th>
+                    {categoryContent.detailedComparison.tools.map((toolName) => (
+                      <th key={toolName} className="text-left p-4 font-semibold text-foreground">
+                        {toolName}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {categoryContent.detailedComparison.criteria.map((row, idx) => (
+                    <tr
+                      key={row.label}
+                      className={idx % 2 === 0 ? 'bg-background' : 'bg-muted/10'}
+                    >
+                      <td className="p-4 font-medium text-foreground">{row.label}</td>
+                      {categoryContent.detailedComparison!.tools.map((toolName) => (
+                        <td key={toolName} className="p-4 text-gray-700">
+                          {row.scores[toolName] ?? '—'}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Verdict by profile/stage — TICKET 18 */}
+      {categoryContent.verdictByStage && categoryContent.verdictByStage.length > 0 && (
+        <section className="bg-background py-16">
+          <div className="container max-w-4xl">
+            <h2 className="text-2xl font-bold font-heading text-foreground mb-3">
+              Notre recommandation par profil
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              Quel outil choisir selon votre stade de croissance et votre activité.
+            </p>
+            <div className="space-y-3">
+              {categoryContent.verdictByStage.map((v) => (
+                <div
+                  key={v.stage}
+                  className="grid sm:grid-cols-[200px_220px_1fr] gap-4 items-start p-5 rounded-2xl border border-gray-200 bg-muted/10"
+                >
+                  <div>
+                    <p className="text-xs font-semibold text-iter-violet uppercase tracking-wider">
+                      Profil
+                    </p>
+                    <p className="font-semibold text-foreground mt-1">{v.stage}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-iter-violet uppercase tracking-wider">
+                      Recommandation
+                    </p>
+                    <p className="font-semibold text-foreground mt-1">{v.tool}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-iter-violet uppercase tracking-wider">
+                      Pourquoi
+                    </p>
+                    <p className="text-gray-700 mt-1 text-sm leading-relaxed">{v.reason}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Tools detail sections */}
       <section className="bg-muted/20 py-16">
         <div className="container">

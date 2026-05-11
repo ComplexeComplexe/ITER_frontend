@@ -1,3 +1,19 @@
+export interface DetailedComparisonCriterion {
+  /** Criterion label, e.g. "UX", "Stocks", "Immobilisations", "API". */
+  label: string;
+  /** Per-tool score (free-form string : "5/5", "39-199€", "1-3 sem.", "Pennylane", etc.). */
+  scores: Record<string, string>;
+}
+
+export interface VerdictByStageEntry {
+  /** Profile or stage tag, e.g. "Seed", "Series A/B", "Industrie", "Retail". */
+  stage: string;
+  /** Recommended tool name. */
+  tool: string;
+  /** One-line rationale. */
+  reason: string;
+}
+
 export interface CategoryContent {
   slug: string;
   title: string;
@@ -10,6 +26,19 @@ export interface CategoryContent {
     cons: string[];
   }>;
   decisionCriteria: string[];
+  /**
+   * Detailed comparison matrix (TICKET 18). Lists each criterion with a
+   * per-tool score so the page can render a dense comparison table.
+   */
+  detailedComparison?: {
+    tools: string[]; // column order
+    criteria: DetailedComparisonCriterion[];
+  };
+  /**
+   * Recommendation by profile/stage (TICKET 18). 4-6 entries that tell
+   * the reader which tool fits which use case at a glance.
+   */
+  verdictByStage?: VerdictByStageEntry[];
 }
 
 export const categoryContent: Record<string, CategoryContent> = {
@@ -64,6 +93,26 @@ export const categoryContent: Record<string, CategoryContent> = {
       'Préférence de l\'expert-comptable',
       'Budget et durée d\'implémentation',
     ],
+    detailedComparison: {
+      tools: ['Pennylane', 'Sage', 'Cegid Loop'],
+      criteria: [
+        { label: 'UX / facilité', scores: { Pennylane: '5/5', Sage: '2/5', 'Cegid Loop': '3/5' } },
+        { label: 'Gestion stocks', scores: { Pennylane: '2/5', Sage: '5/5', 'Cegid Loop': '4/5' } },
+        { label: 'Immobilisations', scores: { Pennylane: '2/5', Sage: '5/5', 'Cegid Loop': '3/5' } },
+        { label: 'API / intégrations', scores: { Pennylane: '5/5', Sage: '3/5', 'Cegid Loop': '2/5' } },
+        { label: 'Compta analytique', scores: { Pennylane: '4/5', Sage: '5/5', 'Cegid Loop': '4/5' } },
+        { label: 'Multi-sociétés', scores: { Pennylane: '3/5', Sage: '5/5', 'Cegid Loop': '4/5' } },
+        { label: 'Prix mensuel', scores: { Pennylane: '39-199 €', Sage: '99-499 €', 'Cegid Loop': '79-299 €' } },
+        { label: 'Implémentation', scores: { Pennylane: '1-3 sem.', Sage: '4-12 sem.', 'Cegid Loop': '2-6 sem.' } },
+      ],
+    },
+    verdictByStage: [
+      { stage: 'Seed', tool: 'Pennylane', reason: 'UX moderne, déploiement en 1 semaine, prix faible — parfait pour démarrer.' },
+      { stage: 'Series A/B', tool: 'Pennylane (Sage si stocks)', reason: 'Pennylane couvre 90% des SaaS / services. Bascule sur Sage si stocks complexes ou immobilisations lourdes.' },
+      { stage: 'Industrie', tool: 'Sage', reason: 'Lots, traçabilité, immobilisations IFRS — Sage est indispensable.' },
+      { stage: 'Retail multi-magasin', tool: 'Cegid Loop', reason: 'Modules caisse, gestion magasin et stocks multi-dépôts intégrés.' },
+      { stage: 'Groupe multi-sociétés', tool: 'Sage', reason: 'Consolidation native, multi-axes analytiques, écosystème expert-comptable mature.' },
+    ],
   },
   'logiciels-tresorerie': {
     slug: 'logiciels-tresorerie',
@@ -105,6 +154,26 @@ export const categoryContent: Record<string, CategoryContent> = {
       'Besoin de prévisions (13 semaines)',
       'Complexité du groupe (intercos, lignes de crédit)',
       'Volume de transactions',
+    ],
+    detailedComparison: {
+      tools: ['Agicap', 'Fygr', 'Kyriba'],
+      criteria: [
+        { label: 'Banques connectées', scores: { Agicap: '120+', Fygr: '15', Kyriba: '1 000+' } },
+        { label: 'Horizon prévision', scores: { Agicap: '12-52 sem.', Fygr: '13 sem.', Kyriba: '52+ sem.' } },
+        { label: 'Scénarios', scores: { Agicap: 'Illimités', Fygr: '2 (opti/pessi)', Kyriba: 'Illimités' } },
+        { label: 'Budget vs réalité', scores: { Agicap: '✓', Fygr: '✓', Kyriba: '✓' } },
+        { label: 'Multi-devises', scores: { Agicap: '✓', Fygr: 'Limité', Kyriba: '✓ avancé' } },
+        { label: 'API', scores: { Agicap: '✓', Fygr: '✗', Kyriba: '✓' } },
+        { label: 'Support', scores: { Agicap: 'Téléphone + chat', Fygr: 'Email', Kyriba: 'Account manager' } },
+        { label: 'Prix mensuel', scores: { Agicap: '49-249 €', Fygr: '29-99 €', Kyriba: 'Sur devis (5K+ €)' } },
+        { label: 'Implémentation', scores: { Agicap: '2 sem.', Fygr: '1-2 jours', Kyriba: '8-16 sem.' } },
+      ],
+    },
+    verdictByStage: [
+      { stage: 'Seed (<20 pers., 1-2 banques)', tool: 'Fygr', reason: 'Onboarding en une demi-journée, 49 €/mois, visibilité essentielle sur le cash.' },
+      { stage: 'Series A/B (20-100 pers.)', tool: 'Agicap', reason: 'Multi-banques, scénarios complexes, alertes prédictives — indispensable pour anticiper la levée.' },
+      { stage: 'Internationale multi-devises', tool: 'Agicap Pro', reason: 'Multi-devises avancé + intercos + filiales — couverture européenne.' },
+      { stage: 'ETI / Grand groupe (>100M€ CA)', tool: 'Kyriba', reason: 'Treasury desk professionnel, FX hedging, intégration ERP — overkill pour PME.' },
     ],
   },
   'gestion-depenses': {
@@ -155,6 +224,25 @@ export const categoryContent: Record<string, CategoryContent> = {
       'Internationalisation (mono vs multi-devises)',
       'Intégration compta requise',
       'Besoin de reporting par projet/centre de coûts',
+    ],
+    detailedComparison: {
+      tools: ['Pleo', 'Spendesk', 'Payhawk'],
+      criteria: [
+        { label: 'Cartes virtuelles', scores: { Pleo: '✓ illimitées', Spendesk: '✓ illimitées', Payhawk: '✓ multi-pays' } },
+        { label: 'Workflows approbation', scores: { Pleo: '1 niveau', Spendesk: 'Conditionnels', Payhawk: 'Sophistiqués multi-entités' } },
+        { label: 'Devises supportées', scores: { Pleo: '~10', Spendesk: '~30', Payhawk: '50+' } },
+        { label: 'Intégration ERP', scores: { Pleo: '✗', Spendesk: 'Partielle', Payhawk: '✓ SAP/Oracle/NetSuite' } },
+        { label: 'Multi-entités', scores: { Pleo: '✗', Spendesk: 'Limité', Payhawk: '✓' } },
+        { label: 'Reporting par cost center', scores: { Pleo: 'Basique', Spendesk: '✓', Payhawk: '✓ avancé' } },
+        { label: 'Prix mensuel', scores: { Pleo: '35-129 €', Spendesk: '99-299 €', Payhawk: '149-499 €' } },
+        { label: 'Implémentation', scores: { Pleo: '1-2 jours', Spendesk: '1-2 sem.', Payhawk: '2-4 sem.' } },
+      ],
+    },
+    verdictByStage: [
+      { stage: 'Seed (<15 cartes)', tool: 'Pleo', reason: 'Onboarding en 10 minutes, prix imbattable, intégration Pennylane native.' },
+      { stage: 'Series A/B (15-50 cartes)', tool: 'Spendesk', reason: 'Workflows d\'approbation conditionnels, reporting détaillé, plafonds par rôle.' },
+      { stage: 'Scale-up internationale', tool: 'Payhawk', reason: '50+ devises, multi-entités, intégration ERP — pour 3+ pays.' },
+      { stage: 'Très petite équipe (<10 cartes)', tool: 'Pleo', reason: 'Simplicité avant tout — pas de workflow lourd à paramétrer.' },
     ],
   },
   'logiciels-paie': {
@@ -214,6 +302,26 @@ export const categoryContent: Record<string, CategoryContent> = {
       'Besoin de suite RH intégrée (congés, temps, notes de frais)',
       'Entités à l\'étranger',
       'Besoin de paramétrages spécifiques',
+    ],
+    detailedComparison: {
+      tools: ['PayFit', 'Silae', 'Lucca'],
+      criteria: [
+        { label: 'CCN couvertes', scores: { PayFit: '~40 principales', Silae: '600+', Lucca: 'Via PayFit/Silae' } },
+        { label: 'UX / portail collaborateur', scores: { PayFit: '5/5', Silae: '3/5', Lucca: '4/5' } },
+        { label: 'Gestion des temps', scores: { PayFit: '2/5', Silae: '5/5', Lucca: '5/5' } },
+        { label: 'Notes de frais intégrées', scores: { PayFit: 'Module +', Silae: 'Partiel', Lucca: '✓ natif' } },
+        { label: 'Onboarding salariés', scores: { PayFit: '✓', Silae: 'Limité', Lucca: '✓ avancé' } },
+        { label: 'Intégration compta', scores: { PayFit: 'Pennylane native', Silae: 'Silae Expert', Lucca: 'Via PayFit' } },
+        { label: 'Prix par salarié', scores: { PayFit: '27-49 €/mois', Silae: '60-90 €/mois', Lucca: '39-149 €/mois' } },
+        { label: 'Implémentation', scores: { PayFit: '1-2 sem.', Silae: '2-4 sem.', Lucca: '2-4 sem.' } },
+      ],
+    },
+    verdictByStage: [
+      { stage: 'Startup SaaS <50 pers., CCN SYNTEC', tool: 'PayFit', reason: 'DSN auto, portail moderne, zéro erreur — le standard pour les startups.' },
+      { stage: 'PME services 50-150 pers.', tool: 'PayFit + Lucca', reason: 'Stack RH complet : PayFit pour la paie, Lucca pour absences, temps et notes de frais.' },
+      { stage: 'Industrie / BTP / Spectacle', tool: 'Silae', reason: '600+ CCN, gestion des temps complexe, multi-conventions — indispensable.' },
+      { stage: '>150 salariés', tool: 'Silae', reason: 'Couverture conventionnelle exhaustive et paramétrages spécifiques. PayFit ralentit à cette taille.' },
+      { stage: 'ETI multi-entités', tool: 'Silae + Lucca', reason: 'Silae gère la paie complexe ; Lucca unifie le RH (absences, temps, talent).' },
     ],
   },
 };
