@@ -1,6 +1,17 @@
 import { Locale } from "../i18n";
 
-export type GlossaryEntrySlug = "bfr" | "ebitda" | "cfo";
+export type GlossaryEntrySlug =
+  | "bfr"
+  | "ebitda"
+  | "cfo"
+  // TICKET 21 — 8 nouvelles pages glossaire dédiées
+  | "besoin-fonds-roulement-bfr"
+  | "cash-burn-runway"
+  | "cac-ltv"
+  | "arr-mrr"
+  | "churn-rate"
+  | "run-rate"
+  | "bspce-bsa";
 
 export interface GlossaryEntryContent {
   meta: {
@@ -15,7 +26,7 @@ export interface GlossaryEntryContent {
   ctaButton: string;
 }
 
-export const glossaryEntries: Record<Locale, Record<GlossaryEntrySlug, GlossaryEntryContent>> = {
+export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, GlossaryEntryContent>>> = {
   fr: {
     bfr: {
       meta: {
@@ -174,6 +185,503 @@ export const glossaryEntries: Record<Locale, Record<GlossaryEntrySlug, GlossaryE
         },
       ],
       ctaButton: "Prendre rendez-vous",
+    },
+    // ─── 8 pages glossaire ajoutées via TICKET 21 ──────────────────────
+    "besoin-fonds-roulement-bfr": {
+      meta: {
+        title: "Besoin en Fonds de Roulement (BFR) — Définition et Calcul Complet | Iter Advisors",
+        description: "BFR : définition, formule de calcul, benchmarks par secteur, leviers d'optimisation. Le guide complet pour piloter votre trésorerie.",
+      },
+      h1: "Besoin en Fonds de Roulement (BFR) — Définition, Formule et Calcul",
+      sections: [
+        {
+          content: [
+            "Le **Besoin en Fonds de Roulement (BFR)** est l'un des indicateurs financiers les plus critiques pour les entreprises en croissance — et pourtant l'un des moins compris. Il mesure le montant de trésorerie que vous devez financer pour couvrir le décalage temporel entre vos décaissements (paiement fournisseurs, salaires) et vos encaissements (paiement clients). Un BFR mal maîtrisé peut asphyxier une entreprise rentable et tuer une startup en pleine croissance.",
+          ],
+        },
+        {
+          heading: "Définition complète",
+          content: [
+            "Le BFR représente le montant de ressources financières nécessaire au financement du cycle d'exploitation. Il résulte du décalage entre les encaissements générés par l'activité et les décaissements nécessaires à cette même activité.",
+            "En termes simples : c'est l'argent que vous devez « avancer » pour faire tourner votre business entre le moment où vous payez vos charges et celui où vous encaissez vos revenus.",
+            "**Composantes du BFR** : actifs circulants d'exploitation (stocks + créances clients + charges constatées d'avance) moins passifs circulants d'exploitation (dettes fournisseurs + dettes fiscales et sociales).",
+          ],
+        },
+        {
+          heading: "Formule de calcul",
+          content: [
+            "**Formule de base** : BFR = Actifs circulants d'exploitation − Passifs circulants d'exploitation",
+            "**Formule détaillée** : BFR = (Stocks + Créances clients + Charges payées d'avance) − (Dettes fournisseurs + Dettes fiscales/sociales)",
+            "**Formule par délais (méthode des ratios)** : BFR = (DSO × CA journalier) + (DIO × Coût achats journalier) − (DPO × Coût achats journalier)",
+            "Avec **DSO** = délai moyen clients, **DIO** = délai moyen stocks, **DPO** = délai moyen fournisseurs.",
+          ],
+        },
+        {
+          heading: "Pourquoi le BFR est important",
+          content: [
+            "**Prédicteur de santé financière.** Une entreprise avec un BFR négatif (modèle abonnement, Amazon) est en position de force. Un BFR positif trop élevé asphyxie la croissance.",
+            "**Levier de croissance.** Chaque euro de CA supplémentaire nécessite un financement de BFR. Si votre BFR/CA = 20%, 1M€ de croissance = 200K€ de besoin de financement.",
+            "**Indicateur de performance opérationnelle.** Un BFR qui diminue malgré la croissance du CA signe une optimisation réussie.",
+            "**Clé pour les banques.** Les banques analysent le BFR pour dimensionner les lignes de trésorerie et le crédit de caisse.",
+          ],
+        },
+        {
+          heading: "Benchmarks et seuils par secteur",
+          content: [
+            "**SaaS (abonnement)** : BFR/CA = -10 à 5%. DSO 15-30j, DIO 0j, DPO 30-45j. Cible : négatif.",
+            "**E-commerce D2C** : BFR/CA = 15-25%. DSO 5-15j, DIO 30-60j, DPO 30-45j. Cible : < 15%.",
+            "**Industrie** : BFR/CA = 20-35%. DSO 45-75j, DIO 30-90j, DPO 30-60j. Cible : < 25%.",
+            "**BTP** : BFR/CA = 25-40%. DSO 60-90j, DIO 15-30j, DPO 45-75j. Cible : < 30%.",
+            "**Interprétation** : BFR < 0 = excellent. 0-15% = sain. 15-30% = à surveiller. > 30% = critique.",
+          ],
+        },
+        {
+          heading: "Limites et pièges",
+          content: [
+            "**BFR négatif ≠ trésorerie saine.** Un BFR négatif est excellent mais ne garantit pas une trésorerie positive si l'entreprise a des dettes financières lourdes.",
+            "**Saisonnalité ignorée.** Le BFR annuel masque des variations mensuelles importantes.",
+            "**Croissance = BFR qui augmente.** Une entreprise qui double son CA en 1 an doit financer une augmentation de BFR de 20-30% du CA additionnel.",
+            "**Comparaison sectorielle obligatoire.** Un BFR de 20% du CA est excellent pour une industrie mais critique pour une SaaS.",
+          ],
+        },
+        {
+          heading: "FAQ",
+          content: [
+            "**Comment réduire mon BFR ?** 3 leviers : (1) réduire le DSO, (2) réduire le DIO (stocks), (3) augmenter le DPO (délais fournisseurs). Voir notre [guide des 7 leviers](/ressources/blog/reduire-bfr-7-leviers-actionnables).",
+            "**Un BFR négatif est-il possible ?** Oui, c'est même idéal. Typique des abonnements payés en avance (SaaS) et du e-commerce avec paiement immédiat.",
+            "**Le BFR est-il le même que le besoin de trésorerie ?** Non. Le besoin de trésorerie = BFR + Investissements − Capitaux permanents. Le BFR ne mesure que la partie exploitation.",
+            "**À quelle fréquence calculer le BFR ?** Mensuellement pour les startups en croissance rapide, trimestriellement pour les PME établies.",
+          ],
+        },
+      ],
+      ctaButton: "Auditer mon BFR avec un DAF",
+    },
+    "cash-burn-runway": {
+      meta: {
+        title: "Cash Burn & Runway — Définition, Calcul et Seuils pour Startups | Iter Advisors",
+        description: "Cash burn et runway : les 2 métriques vitales de toute startup. Méthode de calcul, seuils critiques, règles du venture capital.",
+      },
+      h1: "Cash Burn & Runway — Définition et Calcul pour Startups",
+      sections: [
+        {
+          content: [
+            "Le **cash burn** et le **runway** sont les deux indicateurs vitaux de toute startup. Le cash burn mesure la vitesse à laquelle une entreprise consomme sa trésorerie. Le runway indique combien de temps il lui reste avant de manquer d'argent. Ces deux métriques sont suivies religieusement par les fondateurs, les investisseurs et les board members — car elles déterminent littéralement la survie de l'entreprise.",
+          ],
+        },
+        {
+          heading: "Définition complète",
+          content: [
+            "**Cash burn (ou burn rate)** : montant net de trésorerie dépensé par une entreprise sur une période donnée (généralement mensuelle).",
+            "**Runway** : nombre de mois pendant lesquels une entreprise peut continuer à opérer avec sa trésorerie actuelle à son taux de burn actuel.",
+            "**Gross burn** : total des dépenses mensuelles (sans tenir compte des revenus).",
+            "**Net burn** : dépenses mensuelles − revenus mensuels = consommation nette de trésorerie.",
+          ],
+        },
+        {
+          heading: "Formule de calcul",
+          content: [
+            "**Cash burn mensuel net** = Dépenses mensuelles totales − Revenus mensuels",
+            "**Runway (mois)** = Trésorerie disponible / Cash burn mensuel net",
+            "Exemple : revenus 45 000 €, dépenses 140 000 €, trésorerie 760 000 € → burn 95 000 €/mois → runway 8 mois.",
+          ],
+        },
+        {
+          heading: "Pourquoi c'est important",
+          content: [
+            "**Indicateur de survie.** Un runway < 6 mois est considéré comme critique. < 3 mois = levée quasi impossible.",
+            "**Timing des levées.** Règle d'or du VC : lever quand on a 12-18 mois de runway. < 6 mois = décote de 20-40%.",
+            "**Product-market fit.** Un burn qui diminue naturellement = signe de PMF.",
+            "**Décisions opérationnelles.** Chaque embauche doit être pondérée contre son impact sur le runway.",
+          ],
+        },
+        {
+          heading: "Benchmarks et seuils",
+          content: [
+            "**Runway > 18 mois** : zone verte — focus croissance.",
+            "**12-18 mois** : zone jaune — préparer la prochaine étape.",
+            "**9-12 mois** : zone orange — lancer la levée activement.",
+            "**6-9 mois** : zone rouge — levée urgente + réduction des coûts.",
+            "**< 6 mois** : zone noire — plan d'urgence (bridge round, M&A).",
+          ],
+        },
+        {
+          heading: "Limites et pièges",
+          content: [
+            "**Burn lissé vs burn réel.** Un loyer trimestriel ou un pic de recrutement crée des mois à burn très élevé.",
+            "**Revenus ≠ trésorerie.** En comptabilité d'engagement, un CA de 100K€ avec DSO 60 jours ne génère que ~50K€ de cash mensuel.",
+            "**Dépenses engageantes.** Un contrat annuel AWS engage la trésorerie future.",
+            "**Le Rule of 40 complémentaire.** Pour une SaaS, taux de croissance + marge EBITDA ≥ 40% est plus complet que le burn seul.",
+          ],
+        },
+        {
+          heading: "FAQ",
+          content: [
+            "**À quelle fréquence calculer le runway ?** Hebdomadairement pour les startups < 12 mois de runway, mensuellement sinon.",
+            "**Que faire si mon runway tombe sous 6 mois ?** 3 options : réduire les coûts, accélérer les revenus, lancer un bridge round.",
+            "**Le burn peut-il être positif ?** Oui — c'est l'objectif ! Un « burn négatif » = cash-flow positif.",
+            "**Comment prédire le burn futur ?** Utilisez un modèle de forecast avec 3 scénarios (pessimiste/base/optimiste).",
+          ],
+        },
+      ],
+      ctaButton: "Construire mon forecast avec un DAF",
+    },
+    "cac-ltv": {
+      meta: {
+        title: "CAC & LTV — Définitions, Formules et Ratio | Iter Advisors",
+        description: "CAC, LTV et ratio LTV/CAC : les métriques fondamentales du business model SaaS. Formules, benchmarks, leviers d'optimisation.",
+      },
+      h1: "CAC & LTV — Définitions, Formules et Ratio LTV/CAC",
+      sections: [
+        {
+          content: [
+            "Le **CAC** (Customer Acquisition Cost) et le **LTV** (Lifetime Value) sont les deux métriques fondamentales du business model SaaS et subscription. Elles répondent à deux questions essentielles : « combien coûte un nouveau client ? » et « combien un client nous rapporte-t-il sur toute sa durée de vie ? ». Le ratio LTV/CAC est le baromètre de la santé économique d'un modèle récurrent.",
+          ],
+        },
+        {
+          heading: "Définition complète",
+          content: [
+            "**CAC** : coût total pour acquérir un nouveau client. Il inclut tous les investissements marketing et commerciaux.",
+            "**LTV** : revenu total qu'un client générera sur toute la durée de sa relation avec l'entreprise.",
+            "**Ratio LTV/CAC** : retour sur investissement de l'acquisition client. > 3 est sain. > 5 est excellent. < 1 = modèle non viable.",
+          ],
+        },
+        {
+          heading: "Formule de calcul",
+          content: [
+            "**CAC** = (Dépenses marketing + Dépenses commerciales) / Nombre de nouveaux clients",
+            "**LTV (formule simplifiée)** = ARPU × Marge brute × Durée de vie moyenne du client",
+            "**LTV (formule précise)** = ARPU × (Marge brute %) / Churn rate mensuel",
+            "**CAC Payback Period** = CAC / (ARPU × Marge brute). < 12 mois = excellent pour une SaaS B2B.",
+          ],
+        },
+        {
+          heading: "Pourquoi c'est important",
+          content: [
+            "**Viabilité du business model.** Si LTV/CAC < 1, chaque client coûte plus cher qu'il ne rapporte.",
+            "**Scalabilité.** LTV/CAC > 5 signifie qu'on peut investir massivement en acquisition avec ROI positif.",
+            "**Base de valorisation.** Les VCs utilisent le LTV/CAC pour évaluer la qualité du business model.",
+            "**Optimisation marketing.** Le CAC par canal permet de réallouer le budget vers les canaux efficaces.",
+          ],
+        },
+        {
+          heading: "Benchmarks et seuils",
+          content: [
+            "**LTV/CAC** : < 1 critique. 3-5 sain. > 5 excellent.",
+            "**CAC payback** : > 24 mois critique. 12-18 mois sain. < 12 mois excellent.",
+            "**Churn mensuel** : > 5% critique. 2-5% à surveiller. < 2% excellent.",
+          ],
+        },
+        {
+          heading: "Limites et pièges",
+          content: [
+            "**LTV sur données limitées.** Une LTV basée sur 6 mois de données est peu fiable.",
+            "**CAC qui varie par canal.** Le CAC global masque des disparités importantes.",
+            "**Churn qui évolue.** Le churn des early adopters diffère du churn mainstream.",
+            "**Coûts cachés du CAC.** Temps des fondateurs en vente, réductions accordées, onboarding souvent omis.",
+            "**LTV ≠ trésorerie.** Une LTV de 20K€ sur 3 ans ne se traduit pas par 20K€ de cash immédiat.",
+          ],
+        },
+        {
+          heading: "FAQ",
+          content: [
+            "**Quel est le ratio LTV/CAC idéal ?** > 3 minimum. 3-5 sain. > 5 excellent. < 1 = non viable.",
+            "**Comment réduire mon CAC ?** Optimiser les canaux payants, développer SEO/content, parrainage, améliorer la conversion trial→payant.",
+            "**Comment augmenter mon LTV ?** Réduire le churn (customer success), augmenter l'ARPU (upsell), augmenter la durée de vie (engagement).",
+            "**Le CAC inclut-il les account managers ?** Non, uniquement les coûts d'acquisition. Les AM et CS sont dans les coûts de rétention.",
+          ],
+        },
+      ],
+      ctaButton: "Optimiser mon LTV/CAC avec un DAF",
+    },
+    "arr-mrr": {
+      meta: {
+        title: "ARR & MRR — Définitions et Calcul pour SaaS | Iter Advisors",
+        description: "ARR (Annual Recurring Revenue) et MRR (Monthly Recurring Revenue) : les métriques de référence du SaaS. Calcul, benchmarks, seuils de levée.",
+      },
+      h1: "ARR & MRR — Définitions et Calcul pour SaaS",
+      sections: [
+        {
+          content: [
+            "L'**ARR** (Annual Recurring Revenue) et le **MRR** (Monthly Recurring Revenue) sont les métriques de référence des entreprises en modèle d'abonnement. Elles mesurent le revenu récurrent — prévisible et régulier — qui constitue la base de valorisation des startups SaaS. Contrairement au chiffre d'affaires traditionnel, l'ARR et le MRR offrent une vision claire de la trajectoire de croissance et de la santé économique du business model récurrent.",
+          ],
+        },
+        {
+          heading: "Définition complète",
+          content: [
+            "**MRR** : revenu récurrent mensuel. Somme de tous les abonnements actifs d'un mois donné, normalisée sur une base mensuelle. Un client payant 12 000 €/an contribue 1 000 € au MRR.",
+            "**ARR** : MRR × 12. Annualise le revenu récurrent pour donner une vision long terme.",
+            "**Types de MRR** : New MRR (nouveaux clients), Expansion MRR (upsell/cross-sell), Contraction MRR (downgrades), Churned MRR (résiliations).",
+            "**Net New MRR** = New + Expansion − Contraction − Churned.",
+          ],
+        },
+        {
+          heading: "Formule de calcul",
+          content: [
+            "**MRR** = Σ (Prix de chaque abonnement actif / Période en mois)",
+            "**ARR** = MRR × 12",
+            "**Net MRR Growth** = (MRR mois N − MRR mois N-1) / MRR mois N-1 × 100",
+          ],
+        },
+        {
+          heading: "Pourquoi c'est important",
+          content: [
+            "**Prédictibilité.** Le revenu récurrent est prévisible. Un ARR de 1M€ = 1M€ de CA garanti l'année suivante (hors churn).",
+            "**Base de valorisation.** SaaS en croissance > 100% : valorisation 10-20x ARR. SaaS mature : 5-8x.",
+            "**Mesure de la traction.** MRR qui croît 10%/mois = doubling time de 7 mois.",
+            "**Pilotage opérationnel.** La décomposition du MRR permet d'identifier les leviers de croissance.",
+          ],
+        },
+        {
+          heading: "Benchmarks et seuils ARR par levée",
+          content: [
+            "**Pre-seed** : prototype, pas encore de MRR significatif.",
+            "**Seed** : 10-50K€ MRR (120-600K€ ARR).",
+            "**Series A** : 50-200K€ MRR (600K€-2,4M€ ARR).",
+            "**Series B** : 200-500K€ MRR (2,4-6M€ ARR).",
+            "**Series C+** : > 500K€ MRR (> 6M€ ARR).",
+            "**Croissance ARR YoY** : > 100% early, 50-100% growth, 30-50% scale-up.",
+          ],
+        },
+        {
+          heading: "Limites et pièges",
+          content: [
+            "**ARR ≠ trésorerie.** Un ARR de 1M€ avec DSO 60 jours ne génère que ~917K€ de cash annuel.",
+            "**Annual discounts gonflent l'ARR.** Un client qui paie 10K€/an pour un service à 12K€/an contribue 833 €/mois — mais a payé en une fois.",
+            "**Churn caché.** L'ARR annuel masque le churn mensuel. 5%/mois = 46% annuel.",
+            "**Comptabilisation des trials.** Les trials ne doivent pas être comptés en MRR.",
+            "**ARR ≠ GAAP revenue.** En compta, un paiement annuel est comptabilisé sur 12 mois (deferred revenue).",
+          ],
+        },
+        {
+          heading: "FAQ",
+          content: [
+            "**ARR vs CA ?** Le CA inclut toutes les sources. L'ARR ne compte que le revenu récurrent d'abonnement.",
+            "**Comment passer de MRR à ARR ?** ARR = MRR × 12.",
+            "**Le MRR inclut-il les services pro ?** Non, uniquement le revenu récurrent d'abonnement.",
+            "**Quel est un bon taux de croissance MRR ?** Pour une SaaS B2B early stage, 10-15%/mois est excellent.",
+          ],
+        },
+      ],
+      ctaButton: "Structurer mon reporting ARR avec un DAF",
+    },
+    "churn-rate": {
+      meta: {
+        title: "Churn Rate — Définition, Calcul et Seuils | Iter Advisors",
+        description: "Churn rate : la métrique que les VCs scrutent en premier. Calcul, NRR, gross vs net, benchmarks B2B / B2C, leviers de rétention.",
+      },
+      h1: "Churn Rate — Définition, Calcul et Seuils",
+      sections: [
+        {
+          content: [
+            "Le **churn rate** (ou taux de désabonnement) est la métrique que les fondateurs de SaaS détestent regarder — mais que les investisseurs scrutent en premier. Il mesure la proportion de clients ou de revenus perdus sur une période donnée. Un churn élevé est le signe d'un product-market fit insuffisant. Un churn faible et maîtrisé est le garant de la prédictibilité du revenu récurrent.",
+          ],
+        },
+        {
+          heading: "Définition complète",
+          content: [
+            "**Churn rate client** : % de clients qui résilient leur abonnement sur une période donnée.",
+            "**Churn rate revenu (Revenue Churn)** : % de revenus perdus sur une période — incluant les résiliations et downgrades.",
+            "**NRR (Net Revenue Retention)** : % de revenus conservés d'une cohorte, incluant l'expansion (upsell). NRR > 100% = clients existants génèrent plus de revenus malgré le churn.",
+            "**Gross Churn** : revenus perdus par résiliations uniquement.",
+            "**Net Churn** : Gross Churn − Expansion (upsell/cross-sell).",
+          ],
+        },
+        {
+          heading: "Formule de calcul",
+          content: [
+            "**Churn client** = Clients perdus (mois N) / Clients au début du mois N × 100",
+            "**Revenue Churn** = MRR perdu (mois N) / MRR au début du mois N × 100",
+            "**NRR** = (MRR début + Expansion − Contraction − Churn) / MRR début × 100",
+          ],
+        },
+        {
+          heading: "Pourquoi c'est important",
+          content: [
+            "**Indicateur de PMF.** Churn > 5%/mois pour SaaS B2B = problème produit ou ciblage. < 2% = produit sticky.",
+            "**Impact exponentiel.** Churn de 5%/mois = 46% annuel. Même avec une acquisition forte, la croissance nette est pénalisée.",
+            "**Coût acquisition vs rétention.** Acquérir un nouveau client coûte 5 à 25x plus cher que d'en retenir un.",
+            "**Valorisation.** Décote significative pour les startups avec churn élevé. NRR > 120% = valorisation premium.",
+          ],
+        },
+        {
+          heading: "Benchmarks et seuils",
+          content: [
+            "**Churn client B2B SaaS** : excellent < 2%/mois. Bon 2-3%. À surveiller 3-5%. Critique > 5%.",
+            "**Churn client B2C** : excellent < 5%/mois. Bon 5-8%. À surveiller 8-12%. Critique > 12%.",
+            "**NRR B2B SaaS** : excellent > 120%. Bon 110-120%. Sain 100-110%. < 100% critique.",
+            "**Net revenue churn B2B** : idéal < 0% (negative churn). 0-2% bon. > 5% critique.",
+          ],
+        },
+        {
+          heading: "Limites et pièges",
+          content: [
+            "**Churn par segment.** Le churn des petits clients peut être 3x plus élevé que celui des grands comptes.",
+            "**Churn early adopters ≠ mainstream.** Les premiers clients sont plus tolérants.",
+            "**Churn annualisé trompeur.** 2%/mois ≠ 24% annuel. Formule : 1 − (1 − churn mensuel)^12.",
+            "**Voluntary vs Involuntary churn.** Le churn involontaire (carte expirée) = 20-40% du total, récupérable par dunning.",
+            "**Churn masqué par la croissance.** Calculez toujours le churn en parallèle du NRR.",
+          ],
+        },
+        {
+          heading: "FAQ",
+          content: [
+            "**Quel est un bon taux de churn pour une SaaS B2B ?** < 2% mensuel (22% annuel) = bon. < 1% = excellent. > 5% = critique.",
+            "**Comment réduire le churn ?** Customer success proactif, onboarding optimisé, features sticky, pricing aligné avec la valeur, NPS régulier.",
+            "**Churn client vs churn revenu ?** Le churn revenu inclut les downgrades. Un churn client de 3% peut coexister avec un churn revenu de 5%.",
+            "**Qu'est-ce que le « negative churn » ?** Quand l'expansion dépasse le churn — NRR > 100%. État idéal d'une SaaS mature.",
+          ],
+        },
+      ],
+      ctaButton: "Réduire mon churn avec un DAF",
+    },
+    "run-rate": {
+      meta: {
+        title: "Run Rate — Définition et Calcul pour Projections | Iter Advisors",
+        description: "Run rate : annualisation d'une performance récente pour estimer le résultat sur 12 mois. Limites, pièges, utilisation correcte.",
+      },
+      h1: "Run Rate — Définition et Calcul pour Projections",
+      sections: [
+        {
+          content: [
+            "Le **run rate** est une métrique de projection qui annualise une performance récente pour estimer le résultat sur une période complète. Très utilisé par les startups et les investisseurs, il permet d'extrapoler le chiffre d'affaires ou les coûts actuels sur 12 mois. C'est un outil rapide mais qui doit être manipulé avec précaution — car il suppose que les conditions actuelles resteront constantes, ce qui est rarement le cas dans une startup en croissance.",
+          ],
+        },
+        {
+          heading: "Définition complète",
+          content: [
+            "Le run rate annualise une métrique mensuelle ou trimestrielle pour estimer sa valeur sur 12 mois. Il répond à la question : « si notre performance actuelle se maintient, où serons-nous dans 12 mois ? »",
+            "**Run rate ≠ ARR.** Le run rate est une extrapolation basée sur une période récente. L'ARR est la somme des abonnements actifs contractés. Pour une SaaS en croissance rapide, le run rate est généralement supérieur à l'ARR.",
+          ],
+        },
+        {
+          heading: "Formule de calcul",
+          content: [
+            "**À partir d'une métrique mensuelle** : Run Rate = Métrique du dernier mois × 12",
+            "**À partir d'une métrique trimestrielle** : Run Rate = Métrique du dernier trimestre × 4",
+            "Exemple : MRR fin janvier 85 000 € → ARR run rate = 1 020 000 €.",
+          ],
+        },
+        {
+          heading: "Pourquoi c'est important",
+          content: [
+            "**Projections rapides.** Estimation rapide de l'ARR ou du CA annuel sans modèle complexe.",
+            "**Comparaisons.** « Nous sommes à 2M€ de run rate » est compris par tous les investisseurs.",
+            "**Suivi de la croissance.** Une courbe de run rate qui accélère = croissance exponentielle.",
+            "**Budgets et prévisions.** Base pour des prévisions rapides en attendant des modèles plus sophistiqués.",
+          ],
+        },
+        {
+          heading: "Fiabilité du run rate selon le contexte",
+          content: [
+            "**SaaS mature, croissance stable** : fiabilité élevée — prévisions fiables.",
+            "**SaaS en hyper-croissance** : fiabilité faible — sous-estime la performance future.",
+            "**Activité saisonnière** : fiabilité faible — nécessite un ajustement saisonnier.",
+            "**Projet en phase de lancement** : fiabilité très faible — à éviter pour les projections.",
+          ],
+        },
+        {
+          heading: "Limites et pièges",
+          content: [
+            "**Hypothèse de constance fausse.** Janvier ≠ février ≠ mars. La croissance, la saisonnalité, les aléas rendent cette hypothèse fausse.",
+            "**Sous-estimation en croissance.** Pour une SaaS qui croît 10%/mois, le run rate basé sur le dernier mois sous-estime l'ARR réel.",
+            "**Sensible aux outliers.** Un mois exceptionnel (gros contrat) fausse le run rate. Utilisez une moyenne 3 mois.",
+            "**Ne remplace pas un vrai forecast.** Pour les décisions stratégiques, utilisez un modèle avec plusieurs scénarios.",
+            "**Run rate revenus ≠ run rate dépenses.** Les dépenses augmentent plus vite que les revenus.",
+          ],
+        },
+        {
+          heading: "FAQ",
+          content: [
+            "**Run rate vs ARR ?** Le run rate annualise le dernier mois. L'ARR somme les abonnements actuels. Pour une SaaS en croissance, run rate > ARR.",
+            "**Quelle période utiliser ?** Le dernier mois pour une estimation rapide. Une moyenne sur 3 mois pour plus de fiabilité.",
+            "**Le run rate est-il fiable pour une levée ?** Non. Les VCs préfèrent l'ARR et les cohortes.",
+            "**Puis-je utiliser le run rate pour les coûts ?** Oui, avec prudence. Les coûts de personnel augmentent par paliers (hiring).",
+          ],
+        },
+      ],
+      ctaButton: "Construire mon forecast avec un DAF",
+    },
+    "bspce-bsa": {
+      meta: {
+        title: "BSPCE & BSA — Guide Complet pour Startups Françaises | Iter Advisors",
+        description: "BSPCE et BSA : conditions d'attribution, fiscalité, dilution, pièges juridiques. Le guide complet pour structurer votre plan stock-options.",
+      },
+      h1: "BSPCE & BSA — Guide Complet pour Startups Françaises",
+      sections: [
+        {
+          content: [
+            "Les **BSPCE** (Bons de Souscription de Parts de Créateur d'Entreprise) et les **BSA** (Bons de Souscription d'Actions) sont les deux instruments juridiques les plus utilisés par les startups françaises pour attribuer des stock-options à leurs salariés et lever des fonds. Ils sont au cœur de la rémunération des startups tech et constituent un levier de motivation et de rétention des talents.",
+          ],
+        },
+        {
+          heading: "Définition complète",
+          content: [
+            "**BSPCE** : instrument réservé aux salariés et dirigeants de sociétés par actions (SAS, SA) qui leur donne le droit de souscrire des actions à un prix fixé à l'avance. Gratuits à l'attribution, régime fiscal et social avantageux.",
+            "**BSA** : instrument plus souple, utilisable par tous types de sociétés (SAS, SARL, SA) et attribuable à des non-salariés (conseillers, investisseurs, partenaires).",
+            "**BSA Air** : variante du BSA sans prix d'exercice — attribution gratuite d'actions différée.",
+          ],
+        },
+        {
+          heading: "Conditions d'attribution des BSPCE",
+          content: [
+            "Pour attribuer des BSPCE, la société doit remplir les conditions suivantes :",
+            "- Être une société par actions (SAS ou SA) — les SARL ne peuvent pas attribuer de BSPCE",
+            "- Avoir moins de 15 ans d'existence",
+            "- Ne pas être issue d'une fusion, scission ou apport partiel d'actif",
+            "- Être soumise à l'IS — exclut les SCIs",
+            "- Ne pas être cotée en bourse (sauf sur Euronext Growth)",
+          ],
+        },
+        {
+          heading: "Formule de calcul",
+          content: [
+            "**Plus-value par BSPCE** = Valeur de l'action au moment de l'exercice − Prix d'exercice du BSPCE",
+            "**Dilution** = Nombre d'actions à créer / (Nombre d'actions existantes + Nombre d'actions à créer) × 100",
+          ],
+        },
+        {
+          heading: "Pourquoi c'est important",
+          content: [
+            "**Rétention des talents.** Les BSPCE alignent les intérêts des salariés avec ceux de l'entreprise.",
+            "**Rémunération différée.** En phase de lancement, les BSPCE compensent les salaires sous-market.",
+            "**Avantages fiscaux.** Plus-value taxée à 12,8% (PFU) après 3 ans de détention, contre 30% pour les plus-values classiques.",
+            "**Avantages sociaux.** Pas de cotisations sociales sur l'attribution ni sur l'exercice.",
+            "**Culture d'entreprise.** Attribution à toute l'équipe = culture de propriété.",
+          ],
+        },
+        {
+          heading: "Benchmarks d'attribution",
+          content: [
+            "**CTO / Cofondateur non-fondateur** : 1-3% du capital.",
+            "**VP / Director** : 0,3-1%.",
+            "**Lead / Senior** : 0,1-0,3%.",
+            "**Junior / IC** : 0,05-0,1%.",
+            "**Pool total salariés** : 10-15% du capital.",
+            "**Délai d'exercice** : BSPCE = vesting 3-4 ans avec cliff 1 an. BSA Air = souvent sans vesting ou court (1-2 ans).",
+          ],
+        },
+        {
+          heading: "Limites et pièges",
+          content: [
+            "**Dilution mal calculée.** Pool de 15% + BSPCE précédents peuvent cumuler 25-30% de dilution.",
+            "**Prix d'exercice mal fixé.** Doit être à la valeur réelle (fair market value). Trop bas = redressement fiscal. Trop haut = inexerçables.",
+            "**Clauses de sortie manquantes.** Bien prévoir good leaver / bad leaver, licenciement, décès.",
+            "**Condition de présence excessive.** Un vesting de 5 ans avec cliff 2 ans serait contestable.",
+            "**Complexité administrative.** AGE, avenant aux statuts, suivi rigoureux des attributions et exercices.",
+          ],
+        },
+        {
+          heading: "FAQ",
+          content: [
+            "**BSPCE vs BSA Air ?** BSPCE = réservé aux salariés de SAS/SA, prix d'exercice à payer. BSA Air = utilisable par tous, sans prix d'exercice, attribution gratuite.",
+            "**Combien de BSPCE faut-il attribuer ?** Pool de 10-15% du capital est standard.",
+            "**Régime fiscal ?** Plus-value à 12,8% après 3 ans. Avant 3 ans : 30%. Exonération de cotisations sociales.",
+            "**Une SARL peut-elle attribuer des BSPCE ?** Non, uniquement SAS et SA. Les SARL peuvent utiliser des BSA ou des AGA.",
+            "**Que se passe-t-il si le salarié part avant la fin du vesting ?** Il perd les BSPCE non acquises (bad leaver). En cas de départ non-fautif, il conserve les BSPCE acquis (good leaver).",
+          ],
+        },
+      ],
+      ctaButton: "Structurer mon plan BSPCE avec un DAF",
     },
   },
   en: {
@@ -492,21 +1000,54 @@ const slugMapping: Record<Locale, Record<string, GlossaryEntrySlug>> = {
     bfr: "bfr",
     ebitda: "ebitda",
     cfo: "cfo",
+    // TICKET 21 — 8 nouvelles pages glossaire
+    "besoin-fonds-roulement-bfr": "besoin-fonds-roulement-bfr",
+    "cash-burn-runway": "cash-burn-runway",
+    "cac-ltv": "cac-ltv",
+    "arr-mrr": "arr-mrr",
+    "churn-rate": "churn-rate",
+    "run-rate": "run-rate",
+    "bspce-bsa": "bspce-bsa",
   },
   en: {
     bfr: "bfr",
     ebitda: "ebitda",
     cfo: "cfo",
+    // FR fallback for new slugs (EN translation pending)
+    "besoin-fonds-roulement-bfr": "besoin-fonds-roulement-bfr",
+    "cash-burn-runway": "cash-burn-runway",
+    "cac-ltv": "cac-ltv",
+    "arr-mrr": "arr-mrr",
+    "churn-rate": "churn-rate",
+    "run-rate": "run-rate",
+    "bspce-bsa": "bspce-bsa",
   },
   es: {
     bfr: "bfr",
     ebitda: "ebitda",
     cfo: "cfo",
+    // FR fallback for new slugs (ES translation pending)
+    "besoin-fonds-roulement-bfr": "besoin-fonds-roulement-bfr",
+    "cash-burn-runway": "cash-burn-runway",
+    "cac-ltv": "cac-ltv",
+    "arr-mrr": "arr-mrr",
+    "churn-rate": "churn-rate",
+    "run-rate": "run-rate",
+    "bspce-bsa": "bspce-bsa",
   },
 };
+
+/**
+ * Locales whose entries fall back to FR content when the locale-specific
+ * version is missing — used for the TICKET 21 new entries (EN/ES translations
+ * not yet produced).
+ */
+function getEntryWithFrFallback(locale: Locale, slug: GlossaryEntrySlug): GlossaryEntryContent | undefined {
+  return glossaryEntries[locale]?.[slug] ?? glossaryEntries.fr?.[slug];
+}
 
 export function getGlossaryEntryContent(locale: string, urlSlug: string): GlossaryEntryContent | undefined {
   const key = slugMapping[locale as Locale]?.[urlSlug];
   if (!key) return undefined;
-  return glossaryEntries[locale as Locale]?.[key];
+  return getEntryWithFrFallback(locale as Locale, key);
 }

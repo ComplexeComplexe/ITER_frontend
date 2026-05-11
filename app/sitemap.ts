@@ -75,6 +75,64 @@ const BLOG_SLUGS = [
   "daf-drh-externalises-synergie",
   /* MDX migration articles */
   "ia-et-automatisation-des-taches-repetitives",
+  /* TICKET 23 — 15 nouveaux articles (mai 2026) */
+  "quand-embaucher-daf-externalise-5-signes",
+  "daf-externalise-barcelone-guide-startups-espagnoles",
+  "cout-daf-externalise-2026-tarifs-par-mission",
+  "daf-externalise-vs-expert-comptable",
+  "pennylane-vs-sage-comparatif-40-deploiements",
+  "agicap-vs-fygr-outil-tresorerie",
+  "stack-financier-saas-series-a",
+  "data-room-checklist-levee-de-fonds",
+  "term-sheet-negocier-clauses-cles",
+  "due-diligence-financiere-investisseurs",
+  "reduire-bfr-7-leviers-actionnables",
+  "cash-burn-calculer-runway-anticiper-levee",
+  "tableau-de-bord-financier-startup-12-kpis",
+  "drh-externalise-quand-et-pourquoi",
+  "payfit-vs-silae-comparatif-pme",
+];
+
+/* ── TICKET 5 — 9 nouvelles fiches outils ──────────────────────────── */
+const TOOL_SLUGS = [
+  /* Existing */
+  "pennylane",
+  "agicap",
+  "spendesk",
+  "payfit",
+  /* New */
+  "sage",
+  "cegid-loop",
+  "fygr",
+  "pleo",
+  "silae",
+  "lucca",
+  "qonto",
+  "revolut-business",
+  "payhawk",
+];
+
+/* ── TICKET 21 — 8 nouvelles pages glossaire dédiées ───────────────── */
+const GLOSSARY_SLUGS = [
+  "bfr",
+  "ebitda",
+  "cfo",
+  /* New */
+  "besoin-fonds-roulement-bfr",
+  "cash-burn-runway",
+  "cac-ltv",
+  "arr-mrr",
+  "churn-rate",
+  "run-rate",
+  "bspce-bsa",
+];
+
+/* ── TICKET 1 — 4 nouvelles pages services RH dédiées ──────────────── */
+const HR_SERVICE_SLUGS = [
+  "recrutement-talent-acquisition",
+  "gestion-paie-charges-sociales",
+  "formation-developpement",
+  "conformite-droit-travail",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -277,6 +335,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { priority: 0.6 }
       )
     );
+  }
+
+  /* ── TICKET 5 — fiches outils ────────────────────────────────────── */
+  for (const slug of TOOL_SLUGS) {
+    const path = `/ressources/outils/${slug}`;
+    entries.push(
+      ...entryAllLocales(
+        { fr: path, en: path, es: path },
+        { priority: 0.7 }
+      )
+    );
+  }
+
+  /* ── TICKET 21 — pages glossaire dédiées ─────────────────────────── */
+  for (const slug of GLOSSARY_SLUGS) {
+    const path = `/ressources/glossaire/${slug}`;
+    entries.push(
+      ...entryAllLocales(
+        { fr: path, en: path, es: path },
+        { priority: 0.6 }
+      )
+    );
+  }
+
+  /* ── TICKET 1 — pages services RH dédiées (FR uniquement pour l'instant) ── */
+  for (const slug of HR_SERVICE_SLUGS) {
+    entries.push({
+      url: `${BASE}/services/${slug}`,
+      lastModified: TODAY,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    });
   }
 
   return entries;

@@ -1700,6 +1700,759 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       content: [],
     },
 
+    // ─── 15 articles ajoutés via TICKET 23 ─────────────────────────────
+    // Pilier 1 — DAF Externalisé (4 articles)
+    "quand-embaucher-daf-externalise-5-signes": {
+      meta: {
+        title: "Quand embaucher un DAF externalisé ? 5 signes qui ne trompent pas | Iter Advisors",
+        description: "Burn rate inconnu, levée sans modèle, comptabilité en retard : les 5 signes qui montrent qu'il est temps d'externaliser votre direction financière.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "Quand embaucher un DAF externalisé ? 5 signes qui ne trompent pas",
+      publishedDate: "2026-05-11",
+      author: "Sébastien Doat",
+      category: "daf-externalise",
+      htmlContent: `<p>Vous avez lancé votre startup, trouvé votre product-market fit, et commencez à générer du chiffre d'affaires. Votre expert-comptable produit des bilans trimestriels que vous ne lisez plus vraiment. Vous prenez les décisions stratégiques « à l'intuition ». Et puis un jour, vous devez préparer une levée de fonds sans aucune visibilité sur vos chiffres.</p>
+<p>C'est exactement le moment où un DAF externalisé devient indispensable. Voici 5 signes qui ne trompent pas.</p>
+<h2 id="signe-1">Signe n°1 : vous ne connaissez pas votre burn rate précis</h2>
+<p>Si votre réponse à « combien dépensez-vous par mois ? » commence par « euh, environ… », c'est un signal d'alerte. Le burn rate est la métrique vitale de toute startup. Sans une connaissance précise de votre consommation de trésorerie mensuelle, vous naviguez à l'aveugle — et le runway (temps restant avant la faillite) est une inconnue dangereuse.</p>
+<p>Un DAF externalisé met en place les outils (<a href="/ressources/outils/pennylane">Pennylane</a>, <a href="/ressources/outils/agicap">Agicap</a>) et les process pour tracker votre burn rate en temps réel. Plus d'estimations approximatives : vous avez un chiffre précis, actualisé, et des prévisions à 13 semaines.</p>
+<h2 id="signe-2">Signe n°2 : vous passez plus de 5 heures par semaine sur l'administratif financier</h2>
+<p>Les fondateurs que nous rencontrons passent en moyenne 8 à 12 heures par semaine sur des tâches financières : relances clients, rapprochements bancaires, préparation board, négociations fournisseurs. C'est du temps volé au produit, au commercial, et à la stratégie.</p>
+<p>Si vous estimez passer plus d'une demi-journée par semaine sur la finance, il est temps d'externaliser. Un DAF à temps partagé (2 jours par semaine) libère ce temps précieux tout en apportant une expertise que vous n'avez pas en interne.</p>
+<h2 id="signe-3">Signe n°3 : vous préparez une levée de fonds sans modèle financier</h2>
+<p>Les investisseurs ne financent pas une vision — ils financent des chiffres. Arriver à un rendez-vous VC sans modèle financier sur 3 ans, sans KPIs SaaS trackés, sans data room structurée, c'est perdre 6 mois de négociation.</p>
+<p>Nos clients qui ont levé avec succès avaient tous un point commun : un DAF qui avait préparé le terrain financier 6 mois avant la levée. Le modèle financier est devenu le document le plus consulté de leur data room. Voir notre <a href="/ressources/blog/data-room-checklist-levee-de-fonds">checklist data room complète</a>.</p>
+<h2 id="signe-4">Signe n°4 : votre comptabilité a plus de 2 mois de retard</h2>
+<p>Un retard comptable est le symptôme d'une fonction financière défaillante. Mais c'est aussi un risque opérationnel majeur : vous ne pouvez pas prendre de décisions éclairées avec des données obsolètes, vous manquez des échéances fiscales, et vous découvrez les problèmes quand il est trop tard.</p>
+<p>Un DAF externalisé ne se contente pas de « mettre à jour la compta » : il met en place des outils modernes (Pennylane) qui réduisent le délai de clôture de 6 semaines à 5 jours.</p>
+<h2 id="signe-5">Signe n°5 : vous avez plus de 10 salariés et aucun contrôle de gestion</h2>
+<p>À 10 personnes, vous pouvez gérer le budget « de tête ». À 20 personnes, c'est impossible. Sans contrôle de gestion — budget annuel, suivi mensuel des écarts, reporting KPIs — vous ne savez pas si vous dépensez trop en marketing, si vos recrutements sont rentables, ou si votre marge se dégrade.</p>
+<p>Le bon moment pour embaucher un DAF externalisé ? Quand vous atteignez 8-12 salariés avec un chiffre d'affaires &gt; 500K€, ou quand vous préparez une levée dans les 6-12 mois. Le coût (2 000-4 000 €/mois pour 2 jours/semaine) est 30 à 50% moins cher qu'un DAF salarié.</p>
+<p><a href="/daf-externalise">Découvrir nos missions DAF externalisé</a> | <a href="/contact">Prendre rendez-vous</a></p>`,
+      content: [],
+    },
+    "daf-externalise-barcelone-guide-startups-espagnoles": {
+      meta: {
+        title: "DAF externalisé à Barcelone : le guide pour startups espagnoles | Iter Advisors",
+        description: "Fiscalité espagnole, subventions ACCIO/ENISA, recrutement tech à Barcelone : guide complet pour structurer la finance d'une startup en Catalogne.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "DAF externalisé à Barcelone : le guide pour les startups espagnoles",
+      publishedDate: "2026-05-11",
+      author: "Benjamin Ziza",
+      category: "daf-externalise",
+      htmlContent: `<p>Barcelone est devenue le deuxième écosystème startup d'Europe après Londres. Avec plus de 2 000 startups, des hubs technologiques comme 22@ et le District de la Innovación, et un coût de la vie 30% inférieur à Paris, la ville attire chaque année des centaines d'entrepreneurs français et internationaux.</p>
+<p>Mais gérer la finance d'une startup à Barcelone présente des spécificités : comptabilité espagnole (Plan General Contable), obligations fiscales différentes, subventions régionales, et un écosystème VC en pleine structuration. Voici le guide complet.</p>
+<h2 id="fiscalite">Le paysage fiscal espagnol</h2>
+<p>L'Espagne a un régime fiscal propre avec des spécificités importantes. L'IS (Impuesto de Sociedades) est de 25% — mais les startups peuvent bénéficier du régime « Entidades de Base Tecnológica » avec des allégements fiscaux significatifs. La TVA (IVA) est de 21% avec des taux réduits pour certains services numériques.</p>
+<p>Le principal défi pour les entrepreneurs français : la comptabilité espagnole est en « competencia exclusiva » des experts-comptables (censados). Vous ne pouvez pas gérer votre comptabilité seul comme en France avec <a href="/ressources/outils/pennylane">Pennylane</a> — vous devez obligatoirement passer par un expert-comptable local.</p>
+<h2 id="subventions">Les subventions et aides catalanes</h2>
+<ul>
+<li><strong>ACCIO</strong> (Generalitat de Catalunya) : subventions à l'innovation jusqu'à 150K€</li>
+<li><strong>ENISA</strong> (gouvernement espagnol) : prêts participatifs pour startups</li>
+<li><strong>ICF</strong> (Institut Català de Finances) : lignes de trésorerie et prêts</li>
+<li><strong>Barcelona Activa</strong> : accompagnement et financement pour les startups en phase de lancement</li>
+</ul>
+<p>Notre équipe de DAF basée à <a href="/daf-externalise-barcelone">Barcelone</a> connaît ces dispositifs sur le bout des doigts. Nous avons accompagné plus de 15 startups dans leurs demandes de subventions catalanes, avec un taux de succès de 75%.</p>
+<h2 id="recrutement">Le recrutement tech à Barcelone</h2>
+<p>Le pool de talents tech est profond — mais le marché devient compétitif. Un développeur senior coûte 45-65K€ brut annuel (contre 65-85K€ à Paris). Les charges sociales sont de 30% (contre 45% en France). La différence de coût total est de 25 à 35%.</p>
+<h2 id="erreurs">Les erreurs à éviter</h2>
+<ol>
+<li>Mauvaise structure juridique : choisir entre filiale espagnole (SL) et succursale sans analyse préalable</li>
+<li>Non-respect des obligations fiscales locales : modèle 720, censos fiscaux</li>
+<li>Gestion de la trésorerie bi-pays sans outil de consolidation</li>
+<li>Manque de reporting consolidé entre comptabilités française et espagnole</li>
+</ol>
+<h2 id="cout">Le coût d'un DAF à Barcelone</h2>
+<p>Un DAF externalisé basé à Barcelone coûte 15 à 25% moins cher qu'à Paris, avec une expertise équivalente. Nos forfaits démarrent à 1 500 €/mois pour une mission de 2 jours par semaine.</p>
+<p><a href="/contact">Contacter notre équipe de Barcelone</a></p>`,
+      content: [],
+    },
+    "cout-daf-externalise-2026-tarifs-par-mission": {
+      meta: {
+        title: "Combien coûte un DAF externalisé en 2026 ? Tarifs détaillés par mission | Iter Advisors",
+        description: "Tarifs DAF externalisé 2026 par profil de startup : Seed, Series A, Scale-up, Transition. Comparaison avec un DAF salarié. Basé sur 120+ missions.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "Combien coûte un DAF externalisé en 2026 ? Tarifs détaillés par mission",
+      publishedDate: "2026-05-11",
+      author: "Sébastien Doat",
+      category: "daf-externalise",
+      htmlContent: `<p>C'est la question que nous entendons le plus souvent : « combien coûte un DAF externalisé ? ». La réponse dépend de votre stade de croissance, de la complexité de votre activité, et du périmètre de la mission. Voici un guide détaillé des tarifs en 2026, basé sur nos 120+ missions réalisées.</p>
+<h2 id="seed">Forfait « Seed » — 1 500-2 500 €/mois</h2>
+<p><strong>Périmètre</strong> : 1-2 jours/semaine. Startups de 5-15 personnes avec un CA &lt; 1M€.</p>
+<ul>
+<li>Mise en place de la comptabilité (Pennylane)</li>
+<li>Suivi mensuel de la trésorerie (Agicap)</li>
+<li>Reporting mensuel simplifié (burn rate, runway)</li>
+<li>Gestion des déclarations fiscales et sociales</li>
+<li>Accompagnement ponctuel sur les décisions financières</li>
+</ul>
+<h2 id="series-a">Forfait « Series A » — 3 000-5 000 €/mois</h2>
+<p><strong>Périmètre</strong> : 3-4 jours/semaine. Startups de 15-40 personnes avec un CA de 1-5M€.</p>
+<ul>
+<li>Tout le périmètre Seed +</li>
+<li>Contrôle de gestion (budget, suivi des écarts)</li>
+<li>Reporting mensuel au board (KPIs, forecast)</li>
+<li>Accompagnement levée de fonds (modèle financier, data room)</li>
+<li>Optimisation fiscale (CIR, subventions)</li>
+<li>Gestion de la paie et des obligations RH</li>
+</ul>
+<p>C'est notre forfait le plus demandé. Il couvre 80% des besoins d'une startup en Series A.</p>
+<h2 id="scale-up">Forfait « Scale-up » — 5 000-8 000 €/mois</h2>
+<p><strong>Périmètre</strong> : temps plein équivalent. Scale-ups de 40-100 personnes avec un CA &gt; 5M€.</p>
+<ul>
+<li>Tout le périmètre Series A +</li>
+<li>Direction financière complète</li>
+<li>Consolidation multi-sociétés</li>
+<li>Accompagnement M&amp;A</li>
+<li>Relations bancaires et négociation de crédits</li>
+<li>Supervision de l'équipe finance</li>
+</ul>
+<h2 id="transition">Forfait « Transition » — 4 000-6 000 €/mois</h2>
+<p>Périmètre : mission de 3-6 mois. Recrutement du DAF permanent + passation.</p>
+<h2 id="compare">DAF externalisé vs DAF salarié</h2>
+<table>
+<thead><tr><th>Poste</th><th>Coût total annuel</th></tr></thead>
+<tbody>
+<tr><td>DAF salarié junior (45K€ brut)</td><td>65 000 €</td></tr>
+<tr><td>DAF salarié senior (75K€ brut)</td><td>105 000 €</td></tr>
+<tr><td>DAF externalisé « Seed »</td><td>18 000-30 000 €</td></tr>
+<tr><td>DAF externalisé « Series A »</td><td>36 000-60 000 €</td></tr>
+<tr><td>DAF externalisé « Scale-up »</td><td>60 000-96 000 €</td></tr>
+</tbody>
+</table>
+<p>Un DAF externalisé coûte 30 à 50% moins cher qu'un salarié équivalent, avec plus de flexibilité et une expertise plus large. Le ROI se mesure en heures de fondateur libérées, en erreurs financières évitées, et en valorisation lors de la levée.</p>
+<p><a href="/contact">Demander un devis personnalisé</a></p>`,
+      content: [],
+    },
+    "daf-externalise-vs-expert-comptable": {
+      meta: {
+        title: "DAF externalisé vs Expert-Comptable : quelle différence ? | Iter Advisors",
+        description: "Expert-comptable et DAF sont complémentaires, pas substituables. Tableau comparatif des missions, périmètres, et quand chacun devient indispensable.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "DAF externalisé vs Expert-Comptable : quelle différence ?",
+      publishedDate: "2026-05-11",
+      author: "Sébastien Doat",
+      category: "daf-externalise",
+      htmlContent: `<p>« J'ai déjà un expert-comptable, pourquoi aurais-je besoin d'un DAF ? » — c'est une confusion fréquente. L'expert-comptable et le DAF ont des métiers complémentaires mais totalement différents. Comparer un DAF à un expert-comptable, c'est comme comparer un pilote à un mécanicien — les deux sont essentiels, mais ils n'ont pas le même rôle.</p>
+<h2 id="expert-comptable">L'expert-comptable : le gardien de la conformité</h2>
+<p>Son rôle est comptable et fiscal :</p>
+<ul>
+<li>Enregistre les opérations comptables (factures, banque, paie)</li>
+<li>Établit les déclarations fiscales (TVA, IS, CET)</li>
+<li>Produit les comptes annuels (bilan, compte de résultat)</li>
+<li>Assure la conformité réglementaire</li>
+<li>Répond aux contrôles fiscaux</li>
+</ul>
+<p>Son horizon est rétrospectif : il traite ce qui s'est passé. Coût moyen : 800-2 000 €/mois.</p>
+<h2 id="daf">Le DAF externalisé : le pilote de la performance</h2>
+<p>Son rôle est de direction financière :</p>
+<ul>
+<li>Met en place la stratégie financière</li>
+<li>Construit les modèles financiers et les prévisions</li>
+<li>Gère la trésorerie et le reporting mensuel</li>
+<li>Accompagne les levées de fonds et les M&amp;A</li>
+<li>Optimise la fiscalité (CIR, subventions)</li>
+<li>Structure le contrôle de gestion</li>
+<li>Anime le reporting au board</li>
+</ul>
+<p>Son horizon est prospectif. Coût moyen : 2 000-5 000 €/mois.</p>
+<h2 id="duo">Le duo gagnant : expert-comptable + DAF</h2>
+<p>L'expert-comptable assure la base comptable — le DAF utilise cette base pour piloter.</p>
+<table>
+<thead><tr><th>Besoin</th><th>Expert-comptable</th><th>DAF</th></tr></thead>
+<tbody>
+<tr><td>Comptabilité quotidienne</td><td>✅</td><td>❌</td></tr>
+<tr><td>Déclarations fiscales</td><td>✅</td><td>❌</td></tr>
+<tr><td>Comptes annuels</td><td>✅</td><td>❌</td></tr>
+<tr><td>Trésorerie &amp; forecasting</td><td>❌</td><td>✅</td></tr>
+<tr><td>Reporting mensuel/board</td><td>❌</td><td>✅</td></tr>
+<tr><td>Modèle financier</td><td>❌</td><td>✅</td></tr>
+<tr><td>Levée de fonds</td><td>❌</td><td>✅</td></tr>
+<tr><td>Contrôle de gestion</td><td>❌</td><td>✅</td></tr>
+<tr><td>CIR &amp; subventions</td><td>❌</td><td>✅</td></tr>
+<tr><td>M&amp;A</td><td>❌</td><td>✅</td></tr>
+</tbody>
+</table>
+<h2 id="quand">Quand le DAF devient-il indispensable en plus de l'expert-comptable ?</h2>
+<ul>
+<li>Quand vous avez plus de 10 salariés</li>
+<li>Quand vous préparez une levée de fonds</li>
+<li>Quand votre CA dépasse 1M€</li>
+<li>Quand vous avez des opérations multi-pays</li>
+<li>Quand vous ne comprenez plus vos chiffres</li>
+</ul>
+<p><a href="/daf-externalise">Découvrir nos missions DAF externalisé</a></p>`,
+      content: [],
+    },
+    // Pilier 2 — Outils & Stack Financier (3 articles)
+    "pennylane-vs-sage-comparatif-40-deploiements": {
+      meta: {
+        title: "Pennylane vs Sage : notre comparatif après 40 déploiements | Iter Advisors",
+        description: "Comparatif terrain Pennylane vs Sage par Iter Advisors : 40+ déploiements analysés. UX, stocks, immobilisations, prix, intégrations. Notre recommandation par profil.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "Pennylane vs Sage : notre comparatif après 40 déploiements",
+      publishedDate: "2026-05-11",
+      author: "Benjamin Ziza",
+      category: "outils-stack",
+      htmlContent: `<p>Après avoir déployé <a href="/ressources/outils/pennylane">Pennylane</a> chez plus de 25 clients et <a href="/ressources/outils/sage">Sage</a> chez une quinzaine, nous avons une vision claire : il n'y a pas de « meilleur » outil de comptabilité — il y a un outil adapté à votre situation. Voici notre comparatif terrain.</p>
+<h2 id="verdict">Le verdict en 30 secondes</h2>
+<p>Pennylane pour les startups SaaS, les entreprises de services et les PME digitales qui privilégient l'UX et l'intégration avec leur stack d'outils. Sage pour les industriels, les commerçants, et les structures avec des besoins de gestion de stocks et d'immobilisations complexes.</p>
+<h2 id="comparatif">Comparatif détaillé</h2>
+<table>
+<thead><tr><th>Critère</th><th>Pennylane</th><th>Sage</th></tr></thead>
+<tbody>
+<tr><td>UX / Facilité</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+<tr><td>Gestion de stocks</td><td>⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td>Immobilisations</td><td>⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td>API / Intégrations</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+<tr><td>Comptabilité analytique</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td>Multi-sociétés</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td>Rapport qualité/prix</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td>Implémentation</td><td>1-3 semaines</td><td>4-12 semaines</td></tr>
+<tr><td>Prix</td><td>39-199 €/mois</td><td>99-499 €/mois</td></tr>
+</tbody>
+</table>
+<h2 id="retour-pennylane">Retour terrain — Pennylane</h2>
+<p>Déployé chez une startup SaaS de 35 personnes à Paris. Temps de clôture passé de 8 jours à 3 jours. Rapprochement bancaire automatique : 6 heures économisées par mois. L'intégration avec <a href="/ressources/outils/agicap">Agicap</a> et <a href="/ressources/outils/spendesk">Spendesk</a> est transparente.</p>
+<h2 id="retour-sage">Retour terrain — Sage</h2>
+<p>Accompagné une PME industrielle de 45 personnes à Toulouse. La gestion des stocks avec lots et numéros de série, le module immobilisations avec amortissements dégressifs, et la comptabilité analytique multi-axes sont des fonctionnalités que Pennylane ne couvre pas encore.</p>
+<h2 id="reco">Notre recommandation par profil</h2>
+<ul>
+<li><strong>Startup SaaS &lt; 50 pers.</strong> : Pennylane</li>
+<li><strong>E-commerce D2C &lt; 100 pers.</strong> : Pennylane (sauf stocks très complexes)</li>
+<li><strong>Industrie / Fabrication</strong> : Sage</li>
+<li><strong>Retail multi-magasin</strong> : Cegid Loop ou Sage</li>
+<li><strong>PME services digitaux</strong> : Pennylane</li>
+<li><strong>Groupe multi-sociétés</strong> : Sage (consolidation)</li>
+</ul>
+<p><a href="/ressources/outils/pennylane">Fiche complète Pennylane</a> | <a href="/ressources/outils/sage">Fiche complète Sage</a></p>`,
+      content: [],
+    },
+    "agicap-vs-fygr-outil-tresorerie": {
+      meta: {
+        title: "Agicap vs Fygr : quel outil de trésorerie choisir ? | Iter Advisors",
+        description: "Agicap multi-banques et scénarios avancés, ou Fygr économique et simple ? Comparatif terrain par Iter Advisors basé sur 30+ déploiements.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "Agicap vs Fygr : quel outil de trésorerie choisir ?",
+      publishedDate: "2026-05-11",
+      author: "Benjamin Ziza",
+      category: "outils-stack",
+      htmlContent: `<p>La trésorerie est le nerf de la guerre des startups. Mais avant d'avoir une trésorerie à gérer, il faut la voir — et c'est précisément le job d'un outil de prévision de trésorerie. Chez Iter Advisors, nous déployons principalement <a href="/ressources/outils/agicap">Agicap</a> et <a href="/ressources/outils/fygr">Fygr</a>. Deux approches, deux positionnements.</p>
+<h2 id="verdict">Le verdict en 30 secondes</h2>
+<p>Agicap pour les startups et PME avec une trésorerie complexe (multi-banques, scénarios multiples, lignes de crédit) et un budget &gt; 100 €/mois. Fygr pour les PME avec une trésorerie simple (1-2 banques, besoin de visibilité basique) et un budget &lt; 80 €/mois.</p>
+<h2 id="comparatif">Comparatif détaillé</h2>
+<table>
+<thead><tr><th>Critère</th><th>Agicap</th><th>Fygr</th></tr></thead>
+<tbody>
+<tr><td>Banques connectées</td><td>120+</td><td>15</td></tr>
+<tr><td>Prévision (horizon)</td><td>12-52 semaines</td><td>13 semaines</td></tr>
+<tr><td>Scénarios</td><td>Illimités</td><td>2 (opti/pessi)</td></tr>
+<tr><td>Budget vs réalité</td><td>✅</td><td>✅</td></tr>
+<tr><td>Multi-utilisateurs</td><td>✅</td><td>✅</td></tr>
+<tr><td>API</td><td>✅</td><td>❌</td></tr>
+<tr><td>Support</td><td>Téléphone + chat</td><td>Email</td></tr>
+<tr><td>Prix</td><td>49-249 €/mois</td><td>29-99 €/mois</td></tr>
+<tr><td>Implémentation</td><td>2 semaines</td><td>1-2 jours</td></tr>
+</tbody>
+</table>
+<h2 id="retour-agicap">Retour terrain — Agicap</h2>
+<p>Déployé chez une scale-up de 60 personnes avec 4 comptes bancaires et une ligne de crédit. La prévision à 13 semaines avec 3 scénarios (pessimiste -20% CA, réaliste, optimiste +30% CA) permet de prendre des décisions éclairées.</p>
+<h2 id="retour-fygr">Retour terrain — Fygr</h2>
+<p>Déployé chez une PME de 25 personnes avec 2 comptes bancaires. L'interface simple et le module budget vs réalité ont convaincu le dirigeant — non-financier — en 30 minutes.</p>
+<h2 id="reco">Notre recommandation</h2>
+<ul>
+<li>&lt; 20 pers., 1-2 banques, budget serré : <strong>Fygr</strong></li>
+<li>&gt; 20 pers., multi-banques, scénarios complexes : <strong>Agicap</strong></li>
+<li>&gt; 80 pers., trésorerie internationale : <strong>Agicap Pro + Kyriba</strong></li>
+</ul>
+<p><a href="/ressources/outils/agicap">Fiche Agicap</a> | <a href="/ressources/outils/fygr">Fiche Fygr</a></p>`,
+      content: [],
+    },
+    "stack-financier-saas-series-a": {
+      meta: {
+        title: "Le stack financier idéal pour une SaaS en Series A | Iter Advisors",
+        description: "Pennylane + Agicap + Spendesk + PayFit : le stack financier que nous déployons systématiquement chez nos startups SaaS en Series A. ROI détaillé.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "Le stack financier idéal pour une SaaS en Series A",
+      publishedDate: "2026-05-11",
+      author: "Sébastien Doat",
+      category: "outils-stack",
+      htmlContent: `<p>Une startup SaaS en Series A (ARR 1-5M€, 20-50 personnes) a des besoins financiers spécifiques : comptabilité réactive, trésorerie prévisible, dépenses contrôlées, paie optimisée. Après avoir accompagné plus de 30 startups à ce stade, nous avons identifié le stack qui fonctionne le mieux.</p>
+<h2 id="stack">Le stack « Trinité SaaS »</h2>
+<table>
+<thead><tr><th>Fonction</th><th>Outil</th><th>Prix</th><th>Pourquoi</th></tr></thead>
+<tbody>
+<tr><td>Comptabilité</td><td><a href="/ressources/outils/pennylane">Pennylane</a></td><td>99 €/mois</td><td>UX, API, clôture rapide</td></tr>
+<tr><td>Trésorerie</td><td><a href="/ressources/outils/agicap">Agicap</a></td><td>99 €/mois</td><td>Prévisions 13s, multi-banques</td></tr>
+<tr><td>Dépenses</td><td><a href="/ressources/outils/spendesk">Spendesk</a></td><td>199 €/mois</td><td>Workflows, cartes virtuelles</td></tr>
+<tr><td>Paie</td><td><a href="/ressources/outils/payfit">PayFit</a></td><td>~49 €/salarié</td><td>DSN auto, portail collaborateur</td></tr>
+</tbody>
+</table>
+<p>Budget total : ~800-1 500 €/mois pour une équipe de 30 personnes.</p>
+<h2 id="pourquoi">Pourquoi ce stack ?</h2>
+<p><strong>Pennylane</strong> car à la Series A, vous avez besoin d'une comptabilité à jour en temps réel — pas de bilans trimestriels avec 6 semaines de retard. Pennylane clôture en 5 jours et s'intègre nativement avec les 3 autres outils.</p>
+<p><strong>Agicap</strong> car avec 20-50 personnes et un CA &gt; 1M€, votre trésorerie devient complexe. Des prévisions à 13 semaines avec 3 scénarios sont indispensables pour anticiper la prochaine levée.</p>
+<p><strong>Spendesk</strong> car à 30 personnes, les dépenses s'échappent sans contrôle. Spendesk apporte des workflows d'approbation, des cartes virtuelles par service, et un reporting en temps réel.</p>
+<p><strong>PayFit</strong> car à la Series A, votre paie est encore simple (CCN SYNTEC standard) mais vous avez besoin d'un outil moderne. PayFit gère la DSN automatiquement et offre un portail collaborateur qui réduit les questions RH de 40%.</p>
+<h2 id="variantes">Les alternatives selon votre profil</h2>
+<table>
+<thead><tr><th>Variante</th><th>Si vous…</th><th>Stack</th></tr></thead>
+<tbody>
+<tr><td>International</td><td>Avez du business UK/US</td><td>+ <a href="/ressources/outils/revolut-business">Revolut Business</a></td></tr>
+<tr><td>E-commerce</td><td>Vendez en ligne</td><td>+ Stripe (+ <a href="/ressources/outils/qonto">Qonto</a> si FR)</td></tr>
+<tr><td>Industrie lourde</td><td>Gérez des stocks</td><td>Pennylane → <a href="/ressources/outils/sage">Sage</a></td></tr>
+<tr><td>Budget serré</td><td>Cherchez le ROI max</td><td><a href="/ressources/outils/fygr">Fygr</a> + <a href="/ressources/outils/pleo">Pleo</a></td></tr>
+</tbody>
+</table>
+<h2 id="roi">Le ROI de ce stack</h2>
+<ul>
+<li><strong>Temps de clôture</strong> : 6 semaines → 5 jours</li>
+<li><strong>Visibilité trésorerie</strong> : 0 jours → 13 semaines</li>
+<li><strong>Temps admin dépenses</strong> : 8h/semaine → 1h/semaine</li>
+<li><strong>Erreurs de paie</strong> : 2-3/an → 0</li>
+<li><strong>Coût total</strong> : ~1 200 €/mois = 1,5% du burn rate moyen</li>
+</ul>
+<p><a href="/ressources/outils">Voir notre comparatif complet des outils</a></p>`,
+      content: [],
+    },
+    // Pilier 3 — Levée de Fonds & M&A (3 articles)
+    "data-room-checklist-levee-de-fonds": {
+      meta: {
+        title: "Data Room : la checklist complète pour votre levée de fonds | Iter Advisors",
+        description: "Checklist data room levée de fonds : société, financier, KPIs SaaS, juridique, commercial, technique. Basée sur 25+ levées accompagnées.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "Data Room : la checklist complète pour votre levée de fonds",
+      publishedDate: "2026-05-11",
+      author: "Sébastien Doat",
+      category: "levee-de-fonds",
+      htmlContent: `<p>La data room est le cœur de votre process de levée de fonds. C'est l'endroit où vous centralisez tous les documents que les investisseurs vont consulter pendant la due diligence. Une data room bien structurée peut réduire le temps de due diligence de 4 semaines à 10 jours — et augmenter votre valorisation de 10 à 20%.</p>
+<h2 id="societe">Section 1 — Société &amp; Gouvernance</h2>
+<ul>
+<li>Statuts à jour (et tous les avenants depuis la création)</li>
+<li>K-bis de moins de 3 mois</li>
+<li>Répertoire des actionnaires et cap table à jour</li>
+<li>PV des assemblées générales (3 dernières années)</li>
+<li>Règlement intérieur</li>
+<li>Contrats entre actionnaires (pacte d'actionnaires, clauses de préemption)</li>
+<li>Organigramme de la société</li>
+</ul>
+<h2 id="financier">Section 2 — Financier</h2>
+<ul>
+<li>Comptes annuels des 3 dernières années (ou depuis la création)</li>
+<li>Budget annuel et prévisions sur 3 ans (P&amp;L, cash-flow, balance)</li>
+<li>Dernière situation comptable (moins de 1 mois)</li>
+<li>Tableau de bord mensuel (KPIs, burn rate, runway)</li>
+<li>Historique des levées de fonds précédentes</li>
+<li>Contrats de crédit, lignes de trésorerie, cautions</li>
+<li>Déclarations fiscales (IS, TVA) des 3 dernières années</li>
+</ul>
+<h2 id="kpis">Section 3 — KPIs &amp; Métriques (essentiel pour les SaaS)</h2>
+<ul>
+<li><a href="/ressources/glossaire/arr-mrr">MRR/ARR</a> mensuel depuis le lancement</li>
+<li><a href="/ressources/glossaire/cac-ltv">CAC et LTV</a> par canal d'acquisition</li>
+<li><a href="/ressources/glossaire/churn-rate">Churn rate</a> (client et revenu)</li>
+<li>NRR (Net Revenue Retention)</li>
+<li>DSO et <a href="/ressources/glossaire/besoin-fonds-roulement-bfr">BFR</a></li>
+<li>Unit economics détaillées</li>
+<li>Cohort analysis</li>
+<li>Pipeline commercial (opportunités, taux de conversion)</li>
+</ul>
+<h2 id="juridique">Section 4 — Juridique</h2>
+<ul>
+<li>Contrats clients significatifs (&gt; 10% du CA)</li>
+<li>Contrats fournisseurs critiques</li>
+<li>Contrats de travail des salariés clés</li>
+<li>Plans <a href="/ressources/glossaire/bspce-bsa">BSPCE / BSA</a></li>
+<li>Documentation IP (brevets, marques, logiciels)</li>
+<li>Éventuels litiges en cours</li>
+<li>Assurances (RC pro, cyber, etc.)</li>
+</ul>
+<h2 id="commercial">Section 5 — Commercial &amp; Marketing</h2>
+<ul>
+<li>Présentation commerciale (pitch deck)</li>
+<li>Analyse de marché (TAM, SAM, SOM)</li>
+<li>Stratégie go-to-market</li>
+<li>Plan marketing et budget</li>
+<li>Études clients (NPS, testimonials)</li>
+<li>Concurrents et différenciation</li>
+</ul>
+<h2 id="technique">Section 6 — Technique &amp; Produit</h2>
+<ul>
+<li>Architecture technique</li>
+<li>Documentation produit</li>
+<li>Roadmap produit (12-18 mois)</li>
+<li>Stack technique</li>
+<li>Politique de sécurité et conformité (RGPD, SOC2)</li>
+</ul>
+<h2 id="erreurs">Les erreurs à éviter</h2>
+<ol>
+<li><strong>Data room incomplète</strong> : les investisseurs détestent demander des documents un par un</li>
+<li><strong>Documents non à jour</strong> : un cap table obsolète ou des comptes de 6 mois = manque de professionnalisme</li>
+<li><strong>Trop d'informations</strong> : une data room de 500 documents noie l'essentiel</li>
+<li><strong>Pas de KPIs SaaS</strong> : pour une SaaS, les KPIs sont le document le plus consulté</li>
+<li><strong>Pas de modèle financier</strong> : c'est le document le plus scruté après les KPIs</li>
+</ol>
+<p>Notre conseil : préparez votre data room 3 mois avant de contacter les VCs. <a href="/contact">Contactez-nous</a> pour structurer la vôtre.</p>`,
+      content: [],
+    },
+    "term-sheet-negocier-clauses-cles": {
+      meta: {
+        title: "Term Sheet : comment négocier les clauses clés | Iter Advisors",
+        description: "Valorisation, liquidation preference, anti-dilution, vesting, board seats : les 8 clauses term sheet à négocier et notre position par clause.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "Term Sheet : comment négocier les clauses clés",
+      publishedDate: "2026-05-11",
+      author: "Sébastien Doat",
+      category: "levee-de-fonds",
+      htmlContent: `<p>Le term sheet est le document le plus important de votre levée de fonds. C'est la lettre d'intention des investisseurs qui définit les conditions de leur entrée au capital. Une clause mal négociée peut vous coûter des millions d'euros ou le contrôle de votre entreprise.</p>
+<h2 id="valorisation">Clause 1 — Valorisation (Pre-money / Post-money)</h2>
+<p>La valorisation pre-money est la valeur de votre entreprise avant l'injection de capital. Post-money = pre-money + montant levé.</p>
+<p><strong>Notre position</strong> : négociez toujours en pre-money. Les investisseurs préfèrent post-money car cela gonfle artificiellement la valorisation. Exemple : 10M€ pre-money + 2M€ levé = 12M€ post-money. Si vous dites « 12M€ de valorisation », l'investisseur comprend post-money — et votre dilution est plus forte.</p>
+<h2 id="liq-pref">Clause 2 — Liquidation Preference</h2>
+<p>Définit qui est payé en premier lors d'une sortie. Un 1x non-participating est le standard. Un 1x participating (double dip) est à éviter absolument.</p>
+<p><strong>Notre position</strong> : 1x non-participating maximum. Jamais de participating. Au-delà de 1x (2x, 3x), c'est un red flag.</p>
+<h2 id="anti-dilution">Clause 3 — Anti-dilution</h2>
+<p>Protège les investisseurs en cas de baisse de valorisation lors d'une levée future. Le full ratchet est catastrophique pour les fondateurs. Le weighted average est le standard.</p>
+<p><strong>Notre position</strong> : weighted average only. Full ratchet = non négociable.</p>
+<h2 id="board">Clause 4 — Board Seats</h2>
+<p>Composition du conseil. Les investisseurs demandent généralement 1 siège pour une Series A.</p>
+<p><strong>Notre position</strong> : 1 siège investisseur pour Series A acceptable. Gardez la majorité (3 sièges : 2 fondateurs + 1 investisseur).</p>
+<h2 id="drag-tag">Clause 5 — Drag-along / Tag-along</h2>
+<p>Le drag-along oblige les minoritaires à vendre si les majoritaires vendent. Le tag-along permet aux minoritaires de participer à la vente.</p>
+<p><strong>Notre position</strong> : drag-along à 75-80% des droits de vote (pas moins). Tag-along systématique pour protéger les fondateurs.</p>
+<h2 id="vesting">Clause 6 — Vesting des fondateurs</h2>
+<p>Les investisseurs imposent souvent un vesting de 4 ans avec un cliff de 1 an.</p>
+<p><strong>Notre position</strong> : 4 ans avec 1 an de cliff est le standard du marché — acceptable. Par contre, les actions déjà détenues avant la levée ne devraient pas être soumises à de nouveau vesting.</p>
+<h2 id="no-shop">Clause 7 — No Shop</h2>
+<p>Période pendant laquelle vous ne pouvez pas négocier avec d'autres investisseurs. Standard : 30-45 jours.</p>
+<p><strong>Notre position</strong> : 30 jours maximum.</p>
+<h2 id="pro-rata">Clause 8 — Pro-rata Rights</h2>
+<p>Droit des investisseurs de participer aux levées futures pour maintenir leur pourcentage.</p>
+<p><strong>Notre position</strong> : pro-rata standard acceptable. Limitez-les à la prochaine levée uniquement (super pro-rata = à négocier avec prudence).</p>
+<p><strong>Notre conseil</strong> : ne négociez jamais un term sheet seul. Faites relire par un avocat capital-risque ET par un DAF qui a déjà négocié des term sheets. <a href="/contact">Contactez notre équipe</a> pour préparer votre levée.</p>`,
+      content: [],
+    },
+    "due-diligence-financiere-investisseurs": {
+      meta: {
+        title: "Due Diligence financière : ce que les investisseurs vérifient | Iter Advisors",
+        description: "Comment les investisseurs analysent vos chiffres : MRR/ARR, CAC, LTV, burn rate, comptabilité, projections, litiges. Les red flags qui tuent une levée.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "Due Diligence financière : ce que les investisseurs vérifient",
+      publishedDate: "2026-05-11",
+      author: "Sébastien Doat",
+      category: "levee-de-fonds",
+      htmlContent: `<p>La due diligence financière est l'étape où les investisseurs mettent votre entreprise sous la loupe. Ils vérifient vos chiffres, analysent votre modèle, et cherchent les risques cachés. Voici ce qu'ils vérifient vraiment, dans l'ordre de leur priorité.</p>
+<h2 id="mrr-arr">1. La qualité du MRR/ARR (pour les SaaS)</h2>
+<p>Les investisseurs commencent toujours par les métriques de revenus récurrents. Ils vérifient :</p>
+<ul>
+<li>Que le MRR est calculé correctement (pas de clients gratuits inclus, pas de services professionnels)</li>
+<li>La qualité de la croissance (new MRR vs expansion vs churn)</li>
+<li>La rétention (NRR, cohort analysis)</li>
+<li>La concentration du revenu (pas de client &gt; 20% du ARR)</li>
+</ul>
+<p><strong>Red flag</strong> : un MRR qui croît mais avec un <a href="/ressources/glossaire/churn-rate">churn élevé</a> (&gt; 5%/mois) ou un NRR &lt; 100%.</p>
+<h2 id="cac-ltv">2. Le CAC et le LTV</h2>
+<p>Les investisseurs calculent leur propre <a href="/ressources/glossaire/cac-ltv">CAC et LTV</a> — souvent avec une méthodologie différente de la vôtre. Ils vérifient que tous les coûts marketing et commerciaux sont inclus, que le LTV est basé sur des données suffisantes, que le ratio LTV/CAC est &gt; 3, et le CAC payback period.</p>
+<p><strong>Red flag</strong> : un CAC qui augmente alors que le LTV stagne. Un LTV/CAC &lt; 2.</p>
+<h2 id="burn">3. Le burn rate et le runway</h2>
+<p>Les investisseurs modélisent votre consommation de trésorerie avec leur propre scénario. Ils vérifient que votre <a href="/ressources/glossaire/cash-burn-runway">burn rate</a> est cohérent avec votre plan de hiring, que votre runway post-levée est &gt; 18 mois, et que vous avez des leviers de réduction des coûts si nécessaire.</p>
+<p><strong>Red flag</strong> : un burn rate qui augmenterait de 3x post-levée sans justification claire.</p>
+<h2 id="compta">4. La qualité comptable</h2>
+<p>Les investisseurs (ou leurs conseils) relisent vos comptes :</p>
+<ul>
+<li>Comptabilité à jour et conforme</li>
+<li>Pas de créances clients douteuses</li>
+<li>Engagements hors bilan déclarés (baux, contrats)</li>
+<li>Propriété intellectuelle correctement capitalisée</li>
+</ul>
+<p><strong>Red flag</strong> : une comptabilité avec &gt; 2 mois de retard. Des créances clients &gt; 90 jours non provisionnées.</p>
+<h2 id="forecast">5. Les projections financières</h2>
+<p>Les investisseurs analysent votre modèle financier avec un œil critique :</p>
+<ul>
+<li>Hypothèses réalistes (pas de croissance à 500% sur 3 ans sans justification)</li>
+<li>Modèle cohérent (P&amp;L, cash-flow, balance sont liés)</li>
+<li>Scénarios sensibilisés</li>
+<li>Plan de hiring réaliste</li>
+</ul>
+<p><strong>Red flag</strong> : un modèle où le cash-flow ne dépend que d'une seule hypothèse (« on recrute 10 commerciaux et on triple le CA »).</p>
+<h2 id="risques">6. Les litiges et risques</h2>
+<ul>
+<li>Litiges en cours (prud'homaux, commerciaux)</li>
+<li>Contrats critiques (dépendance à un client, un fournisseur)</li>
+<li>Conformité réglementaire (RGPD, licences)</li>
+<li>Engagements des fondateurs (vesting, clauses de non-concurrence)</li>
+</ul>
+<p>Notre conseil : anticipez la due diligence. Préparez un « dd package » avec toutes les réponses aux questions classiques. <a href="/contact">Préparer ma due diligence avec un DAF</a>.</p>`,
+      content: [],
+    },
+    // Pilier 4 — Gestion Financière (3 articles)
+    "reduire-bfr-7-leviers-actionnables": {
+      meta: {
+        title: "Comment réduire votre BFR : 7 leviers actionnables | Iter Advisors",
+        description: "DSO, stocks, fournisseurs, factoring : 7 leviers concrets pour libérer 15-25% de votre CA en cash sans lever de fonds.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "Comment réduire votre BFR : 7 leviers actionnables",
+      publishedDate: "2026-05-11",
+      author: "Benjamin Ziza",
+      category: "gestion-financiere",
+      htmlContent: `<p>Le <a href="/ressources/glossaire/besoin-fonds-roulement-bfr">BFR</a> (Besoin en Fonds de Roulement) est le plus grand consommateur de trésorerie des entreprises en croissance. Une startup qui double son CA doit généralement financer une augmentation de BFR de 20 à 30% de la croissance. Optimiser son BFR, c'est libérer du cash sans lever de fonds.</p>
+<h2 id="dso">Levier 1 — Réduire le DSO (délai client)</h2>
+<ul>
+<li>Facturez immédiatement après la prestation</li>
+<li>Passez en paiement anticipé ou à 15 jours pour les nouveaux clients</li>
+<li>Mettez en place des relances automatiques (D+1, D+7, D+14)</li>
+<li>Offrez un escompte de 2% pour paiement à 10 jours</li>
+<li>Pour les gros clients B2B à 60 jours : proposez du factoring</li>
+</ul>
+<p>Impact type : DSO de 60 → 30 jours = 1/12<sup>ème</sup> du CA annuel libéré en cash.</p>
+<h2 id="stocks">Levier 2 — Optimiser les stocks</h2>
+<ul>
+<li>Mettez en place un outil de prévision des ventes (<a href="/ressources/outils/agicap">Agicap</a>)</li>
+<li>Passez à des commandes progressives plutôt que massives</li>
+<li>Liquidez les stocks dormants (&gt; 90 jours sans rotation)</li>
+<li>Négociez du consignement ou du dropshipping avec vos fournisseurs</li>
+<li>Mettez en place des seuils de réapprovisionnement par SKU</li>
+</ul>
+<p>Impact type : stocks de 90 → 45 jours = 1/8<sup>ème</sup> du coût des achats libéré.</p>
+<h2 id="fournisseurs">Levier 3 — Allonger les délais fournisseurs</h2>
+<ul>
+<li>Renégociez vos conditions de paiement (30 → 45 jours)</li>
+<li>Passez en paiement à 60 jours pour les fournisseurs stratégiques</li>
+<li>Mettez en concurrence vos fournisseurs</li>
+<li>Utilisez des cartes corporate avec débit différé</li>
+</ul>
+<h2 id="anticipe">Levier 4 — Paiement anticipé des clients</h2>
+<ul>
+<li>Passez vos clients en abonnement avec paiement en début de période</li>
+<li>Proposez des remises pour paiement anticipé</li>
+<li>Facturez les acomptes (30% à la commande, 70% à la livraison)</li>
+</ul>
+<h2 id="acomptes">Levier 5 — Réduire les acomptes aux fournisseurs</h2>
+<ul>
+<li>Renégociez les acomptes (50% → 30%)</li>
+<li>Stagger les paiements d'acompte sur plusieurs mois</li>
+<li>Privilégiez les fournisseurs qui ne demandent pas d'acompte</li>
+</ul>
+<h2 id="production">Levier 6 — Optimiser le cycle de production</h2>
+<p>Pour les industriels, chaque jour gagné dans le cycle = un jour de BFR en moins. Lean manufacturing, just-in-time, externalisation des étapes longues.</p>
+<h2 id="factoring">Levier 7 — Factoring / affacturage</h2>
+<p>Le factoring vous permet d'encaisser immédiatement vos créances clients — moyennant une commission de 0,5 à 2%. Utilisez-le ponctuellement, pas en permanence.</p>
+<h2 id="experience">Notre expérience</h2>
+<p>Chez nos clients, l'optimisation du BFR libère en moyenne 15 à 25% du CA en cash. Pour une PME de 3M€ de CA : 450 000 à 750 000 € de trésorerie libérée — sans lever de fonds.</p>
+<p><a href="/contact">Auditer mon BFR avec un DAF</a></p>`,
+      content: [],
+    },
+    "cash-burn-calculer-runway-anticiper-levee": {
+      meta: {
+        title: "Cash Burn : calculer votre runway et anticiper la levée | Iter Advisors",
+        description: "Méthode complète pour calculer votre burn rate net et votre runway. Seuils critiques, règles du venture capital, scénarios de forecast.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "Cash Burn : calculer votre runway et anticiper la levée",
+      publishedDate: "2026-05-11",
+      author: "Sébastien Doat",
+      category: "gestion-financiere",
+      htmlContent: `<p>Le <a href="/ressources/glossaire/cash-burn-runway">cash burn et le runway</a> sont les deux métriques les plus importantes de votre startup. Elles déterminent quand vous devrez lever des fonds, recruter, ou réduire vos coûts. Pourtant, 40% des fondateurs ne connaissent pas précisément leur burn rate.</p>
+<h2 id="methode">Calculer son burn rate : la méthode</h2>
+<pre><code>Burn Rate Net = Dépenses mensuelles totales − Revenus mensuels</code></pre>
+<p>Attention aux pièges :</p>
+<ul>
+<li>Incluez TOUTES les dépenses : salaires (charges incluses), loyer, outils, marketing, services</li>
+<li>Les revenus = trésorerie encaissée, pas le CA comptable</li>
+<li>Calculez sur une moyenne de 3 mois pour lisser les variations</li>
+<li>Intégrez les dépenses à venir (recrutements planifiés, loyer qui augmente)</li>
+</ul>
+<h2 id="exemple">Exemple concret</h2>
+<table>
+<thead><tr><th>Poste</th><th>Mensuel</th></tr></thead>
+<tbody>
+<tr><td>Salaires bruts (15 pers. × 4 500 €)</td><td>67 500 €</td></tr>
+<tr><td>Charges sociales (45%)</td><td>30 375 €</td></tr>
+<tr><td>Loyer &amp; charges</td><td>4 500 €</td></tr>
+<tr><td>Outils &amp; logiciels</td><td>3 200 €</td></tr>
+<tr><td>Marketing &amp; acquisition</td><td>12 000 €</td></tr>
+<tr><td>Services externes</td><td>5 800 €</td></tr>
+<tr><td>Frais généraux</td><td>2 500 €</td></tr>
+<tr><td><strong>Dépenses totales</strong></td><td><strong>125 875 €</strong></td></tr>
+<tr><td>Revenus (MRR)</td><td>45 000 €</td></tr>
+<tr><td><strong>Burn rate net</strong></td><td><strong>80 875 €</strong></td></tr>
+</tbody>
+</table>
+<h2 id="runway">Calculer son runway</h2>
+<pre><code>Runway (mois) = Trésorerie disponible / Burn rate net</code></pre>
+<p>Avec 650 000 € de trésorerie et un burn de 80 875 € : runway = 8 mois.</p>
+<h2 id="seuils">Les seuils critiques</h2>
+<table>
+<thead><tr><th>Runway</th><th>Zone</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td>&gt; 18 mois</td><td>🟢 Verte</td><td>Focus croissance</td></tr>
+<tr><td>12-18 mois</td><td>🟡 Jaune</td><td>Préparer la prochaine étape</td></tr>
+<tr><td>9-12 mois</td><td>🟠 Orange</td><td>Lancer la levée activement</td></tr>
+<tr><td>6-9 mois</td><td>🔴 Rouge</td><td>Levée urgente + réduction coûts</td></tr>
+<tr><td>&lt; 6 mois</td><td>⚫ Noire</td><td>Plan de survie</td></tr>
+</tbody>
+</table>
+<h2 id="regle-or">La règle d'or du venture capital</h2>
+<p>Levez quand vous avez 12-18 mois de runway. Jamais avec moins de 9 mois. Pourquoi ? Parce qu'avec moins de 9 mois, vous perdez tout leverage de négociation. L'investisseur sait que vous êtes dans l'urgence — et il en profite pour décoter votre valorisation de 20 à 40%.</p>
+<h2 id="forecast">Anticiper avec un forecast</h2>
+<ol>
+<li>Plan de hiring : chaque recrutement ajoute 6 000-10 000 €/mois de burn</li>
+<li>Investissements : bureaux, équipements, R&amp;D</li>
+<li>Scénarios de croissance / de réduction</li>
+</ol>
+<p>Utilisez un modèle avec 3 scénarios (pessimiste / base / optimiste) et mettez-le à jour mensuellement.</p>
+<h2 id="reduire-burn">Comment réduire son burn rate</h2>
+<ol>
+<li>Freeze des recrutements : économie immédiate de 6-10K€/mois par poste</li>
+<li>Réduction du marketing : coupez les canaux à CAC élevé</li>
+<li>Renégociation des contrats : outils SaaS, loyer, services</li>
+<li>Augmentation des revenus : hausse de prix, upsell clients existants</li>
+<li>Bridge round : tour d'amorçage auprès des investisseurs existants</li>
+</ol>
+<p><a href="/contact">Construire mon forecast avec un DAF</a></p>`,
+      content: [],
+    },
+    "tableau-de-bord-financier-startup-12-kpis": {
+      meta: {
+        title: "Tableau de bord financier startup : les 12 KPIs essentiels | Iter Advisors",
+        description: "MRR, CAC, LTV, NRR, burn rate, runway, BFR, marge brute, Rule of 40 : les 12 KPIs que nous suivons systématiquement chez nos clients.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "Tableau de bord financier startup : les 12 KPIs essentiels",
+      publishedDate: "2026-05-11",
+      author: "Sébastien Doat",
+      category: "gestion-financiere",
+      htmlContent: `<p>Un tableau de bord financier efficace ne contient pas 50 métriques — il contient les 12 bonnes. Celles qui disent en un coup d'œil si votre startup est en bonne santé financière. Voici les 12 KPIs que nous suivons systématiquement avec nos clients.</p>
+<h2 id="croissance">Catégorie 1 — Croissance (3 KPIs)</h2>
+<ol>
+<li><strong><a href="/ressources/glossaire/arr-mrr">MRR/ARR</a></strong> : le revenu récurrent mensuel/annuel. Métrique #1 pour toute startup SaaS.</li>
+<li><strong>Net New MRR</strong> : le MRR gagné (new + expansion) moins le MRR perdu (churn + contraction). Le vrai moteur de la croissance.</li>
+<li><strong>Taux de croissance mensuel</strong> : (MRR mois N − MRR mois N-1) / MRR mois N-1 × 100. Un taux &gt; 10% est excellent.</li>
+</ol>
+<h2 id="acquisition">Catégorie 2 — Acquisition &amp; Rétention (3 KPIs)</h2>
+<ol start="4">
+<li><strong><a href="/ressources/glossaire/cac-ltv">CAC</a></strong> : Customer Acquisition Cost. À calculer par canal.</li>
+<li><strong>LTV/CAC</strong> : &gt; 3 = sain. &gt; 5 = excellent.</li>
+<li><strong>NRR</strong> : Net Revenue Retention. &gt; 100% = croissance organique.</li>
+</ol>
+<h2 id="tresorerie">Catégorie 3 — Trésorerie (3 KPIs)</h2>
+<ol start="7">
+<li><strong><a href="/ressources/glossaire/cash-burn-runway">Burn rate net</a></strong> : à suivre chaque semaine.</li>
+<li><strong>Runway</strong> : nombre de mois de trésorerie restante. &gt; 12 mois = zone verte.</li>
+<li><strong><a href="/ressources/glossaire/besoin-fonds-roulement-bfr">BFR / CA</a></strong> : &lt; 15% = sain.</li>
+</ol>
+<h2 id="rentabilite">Catégorie 4 — Rentabilité &amp; Efficacité (3 KPIs)</h2>
+<ol start="10">
+<li><strong>Marge brute</strong> : &gt; 70% pour une SaaS est le standard.</li>
+<li><strong>CAC Payback Period</strong> : &lt; 12 mois = excellent.</li>
+<li><strong>Rule of 40</strong> : Taux de croissance + Marge EBITDA ≥ 40%. Le graal des SaaS.</li>
+</ol>
+<h2 id="frequence">La fréquence de suivi</h2>
+<table>
+<thead><tr><th>KPI</th><th>Fréquence</th></tr></thead>
+<tbody>
+<tr><td>MRR, Burn, Runway</td><td>Hebdomadaire</td></tr>
+<tr><td>CAC, LTV, Churn</td><td>Mensuelle</td></tr>
+<tr><td>NRR, Rule of 40</td><td>Trimestrielle</td></tr>
+<tr><td>BFR, Marge brute</td><td>Mensuelle</td></tr>
+</tbody>
+</table>
+<p>Un tableau de bord n'a de valeur que s'il est lu et utilisé. Fixez un rituel : 30 minutes chaque lundi matin avec votre DAF. <a href="/contact">Mettre en place mon tableau de bord</a>.</p>`,
+      content: [],
+    },
+    // Pilier 5 — RH & Paie (2 articles)
+    "drh-externalise-quand-et-pourquoi": {
+      meta: {
+        title: "DRH externalisé : quand et pourquoi ? | Iter Advisors",
+        description: "À partir de 10 salariés, pendant une hyper-croissance ou en cas de litige, pourquoi externaliser le DRH plutôt que recruter. Coût, périmètre, ROI.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "DRH externalisé : quand et pourquoi ?",
+      publishedDate: "2026-05-11",
+      author: "Sébastien Doat",
+      category: "rh-paie",
+      htmlContent: `<p>La plupart des startups externalisent rapidement leur comptabilité (expert-comptable) et leur finance (DAF). Mais beaucoup oublient une fonction critique : les ressources humaines. Or, les problèmes RH — paie erronée, litiges prud'homaux, turnover incontrôlé — peuvent coûter aussi cher que des problèmes financiers.</p>
+<h2 id="quand">Quand externaliser le DRH ?</h2>
+<p><strong>Seuil n°1 : 10 salariés.</strong> À 10 personnes, la paie devient complexe (congés, absences, variables), le droit du travail s'applique pleinement (CSE obligatoire à 11), et les premières tensions RH apparaissent.</p>
+<p><strong>Seuil n°2 : croissance rapide.</strong> Si vous prévoyez de doubler d'effectifs en 12 mois, vous avez besoin d'un RH pour structurer le recrutement, l'onboarding, et la culture.</p>
+<p><strong>Seuil n°3 : premiers départs / litiges.</strong> Un départ conflictuel, une mise au pied du mur prud'homal, ou un taux de turnover &gt; 20% = il est temps d'appeler un expert.</p>
+<p><strong>Seuil n°4 : internationalisation.</strong> Recruter en Espagne, gérer des expatriés, ou structurer une équipe distribuée nécessite une expertise RH pointue.</p>
+<h2 id="pourquoi">Pourquoi externaliser plutôt qu'embaucher ?</h2>
+<p><strong>Coût.</strong> Un DRH salarié senior coûte 70-100K€ brut annuel (charges incluses : 100-140K€). Un DRH externalisé coûte 2 000-4 000 €/mois (24-48K€/an) — soit 50 à 65% de moins cher.</p>
+<p><strong>Flexibilité.</strong> Vous passez de 2 jours/semaine à 4 jours selon vos besoins — sans recrutement ni licenciement.</p>
+<p><strong>Expertise cumulée.</strong> Un DRH externalisé travaille avec 10-15 entreprises par an. Il a vu plus de situations qu'un DRH interne en 5 ans.</p>
+<p><strong>Pas de risque de départ.</strong> Un DRH externalisé est remplacé en 48 heures.</p>
+<h2 id="perimetre">Ce que couvre un DRH externalisé</h2>
+<ul>
+<li><a href="/services/gestion-paie-charges-sociales">Paie &amp; administration</a> : bulletins, DSN, congés, absences, entrées/sorties</li>
+<li><a href="/services/recrutement-talent-acquisition">Recrutement</a> : définition des profils, sourcing, entretiens, intégration</li>
+<li><a href="/services/conformite-droit-travail">Conformité</a> : règlement intérieur, CSE, accords d'entreprise, litiges</li>
+<li><a href="/services/formation-developpement">Développement des compétences</a> : plans de formation, évaluations</li>
+<li>Culture RH : onboarding, engagement, satisfaction, retention</li>
+</ul>
+<h2 id="experience">Notre expérience</h2>
+<p>Nous accompagnons nos clients sur le volet RH depuis 2022. Nos DRH externalisés gèrent la paie de plus de 200 salariés, ont accompagné 50+ recrutements, et réduit le turnover de nos clients de 25% en moyenne.</p>
+<p><a href="/drh-externalise">Découvrir nos missions DRH externalisé</a></p>`,
+      content: [],
+    },
+    "payfit-vs-silae-comparatif-pme": {
+      meta: {
+        title: "PayFit vs Silae : comparatif pour PME en croissance | Iter Advisors",
+        description: "PayFit pour startups SaaS CCN SYNTEC ou Silae pour BTP / spectacle / multi-conventions ? Comparatif terrain par Iter Advisors basé sur 40+ déploiements.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "PayFit vs Silae : comparatif pour PME en croissance",
+      publishedDate: "2026-05-11",
+      author: "Benjamin Ziza",
+      category: "rh-paie",
+      htmlContent: `<p>Le choix de l'outil de paie est critique pour une PME en croissance. Une paie erronée, une DSN rejetée, ou une non-conformité sociale peut coûter cher. Chez Iter Advisors, nous déployons principalement deux outils de paie : <a href="/ressources/outils/payfit">PayFit</a> et <a href="/ressources/outils/silae">Silae</a>. Voici notre comparatif basé sur 40+ déploiements.</p>
+<h2 id="verdict">Le verdict en 30 secondes</h2>
+<p>PayFit pour les startups et PME avec une paie standard (CCN SYNTEC, forfait jours, &lt; 150 salariés) qui privilégient l'UX moderne et le portail collaborateur. Silae pour les structures avec une paie complexe (CCN rares, multi-conventions, gestion des temps, BTP, spectacle).</p>
+<h2 id="comparatif">Comparatif détaillé</h2>
+<table>
+<thead><tr><th>Critère</th><th>PayFit</th><th>Silae</th></tr></thead>
+<tbody>
+<tr><td>UX / Facilité</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+<tr><td>CCN couvertes</td><td>~40 principales</td><td>600+</td></tr>
+<tr><td>Gestion des temps</td><td>⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td>Portail collaborateur</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+<tr><td>Intégration comptable</td><td>Pennylane (native)</td><td>Silae Expert</td></tr>
+<tr><td>Prix</td><td>27-49 €/salarié/mois</td><td>60-90 €/salarié/mois</td></tr>
+<tr><td>Implémentation</td><td>1-2 semaines</td><td>2-4 semaines</td></tr>
+<tr><td>Support</td><td>Téléphone + chat</td><td>Téléphone + email</td></tr>
+<tr><td>&gt; 150 salariés</td><td>Ralentissements</td><td>✅ Parfait</td></tr>
+</tbody>
+</table>
+<h2 id="retour-payfit">Retour terrain — PayFit</h2>
+<p>Déployé chez une SaaS de 45 salariés (CCN SYNTEC, forfait jours). Implémentation en 5 jours. Taux d'erreur de paie : 0 en 18 mois. Satisfaction salariés (portail) : 4,3/5.</p>
+<h2 id="retour-silae">Retour terrain — Silae</h2>
+<p>Déployé chez une entreprise de BTP de 35 salariés (CCN BTP, heures réelles, multi-chantiers). Gestion des temps intégrée. Conformité BTP totale. Temps de traitement de la paie : 3 jours → 4 heures.</p>
+<h2 id="reco">Notre recommandation</h2>
+<table>
+<thead><tr><th>Profil</th><th>Outil recommandé</th></tr></thead>
+<tbody>
+<tr><td>Startup SaaS &lt; 50 pers., CCN SYNTEC</td><td>PayFit</td></tr>
+<tr><td>PME services &lt; 100 pers., forfait jours</td><td>PayFit</td></tr>
+<tr><td>Industrie, BTP, spectacle</td><td>Silae</td></tr>
+<tr><td>Multi-conventions, temps complexes</td><td>Silae</td></tr>
+<tr><td>&gt; 150 salariés</td><td>Silae ou <a href="/ressources/outils/lucca">Lucca</a> + paie</td></tr>
+</tbody>
+</table>
+<p><a href="/ressources/outils/payfit">Fiche PayFit</a> | <a href="/ressources/outils/silae">Fiche Silae</a></p>`,
+      content: [],
+    },
+
   },
   en: {
     "essentiels-outils-tech-finance": {

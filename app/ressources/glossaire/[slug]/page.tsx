@@ -5,7 +5,19 @@ import { getGlossaryEntryContent } from "@/lib/content/glossary-entries";
 import { getCmsNavigation } from "@/lib/strapi";
 import { Locale } from "@/lib/i18n";
 
-const validSlugs = ["bfr", "ebitda", "cfo"];
+const validSlugs = [
+  "bfr",
+  "ebitda",
+  "cfo",
+  // TICKET 21 — 8 nouvelles pages glossaire dédiées
+  "besoin-fonds-roulement-bfr",
+  "cash-burn-runway",
+  "cac-ltv",
+  "arr-mrr",
+  "churn-rate",
+  "run-rate",
+  "bspce-bsa",
+];
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
