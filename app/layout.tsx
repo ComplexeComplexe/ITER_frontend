@@ -96,17 +96,28 @@ gtag('consent','default',{
         />
         {/* End Google Tag Manager */}
 
-        {/* Google Ads Conversion Tracking */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18030187059"
-        />
+        {/* Google Ads Conversion Tracking — deferred for LCP (TICKET 14) */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'AW-18030187059');`,
+            __html: `(function(){
+  var loaded=false;
+  function loadGAds(){
+    if(loaded)return;loaded=true;
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18030187059');
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id=AW-18030187059';
+    document.head.appendChild(s);
+  }
+  if('requestIdleCallback' in window){requestIdleCallback(loadGAds,{timeout:3500});}
+  else{setTimeout(loadGAds,3500);}
+  ['scroll','click','touchstart','mouseover','keydown'].forEach(function(e){
+    window.addEventListener(e,loadGAds,{once:true,passive:true});
+  });
+})();`,
           }}
         />
         {/* End Google Ads Conversion Tracking */}
