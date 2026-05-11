@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -22,6 +22,8 @@ export default function Header({
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const [langOpen, setLangOpen] = useState(false);
+  const langSwitcherRef = useRef<HTMLDivElement | null>(null);
 
   const nav = cmsNavigation && cmsNavigation.length > 0 ? cmsNavigation : navigation[locale];
   const homePath = getHomePath(locale);
@@ -43,6 +45,32 @@ export default function Header({
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
+
+  // Close language switcher on route change, outside click, or Escape.
+  useEffect(() => {
+    setLangOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!langOpen) return;
+    const onPointer = (e: MouseEvent | TouchEvent) => {
+      const target = e.target as Node | null;
+      if (target && langSwitcherRef.current && !langSwitcherRef.current.contains(target)) {
+        setLangOpen(false);
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLangOpen(false);
+    };
+    document.addEventListener("mousedown", onPointer);
+    document.addEventListener("touchstart", onPointer, { passive: true });
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onPointer);
+      document.removeEventListener("touchstart", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [langOpen]);
 
   const getLocaleHref = (targetLocale: Locale) => getLocalizedPath(pathname, targetLocale);
   const contactItem = nav[nav.length - 1] ?? { title: "Contact", href: getContactPath(locale) };
@@ -166,28 +194,51 @@ export default function Header({
         <div className="flex items-center justify-end gap-3 min-w-0">
           <div className="hidden lg:flex items-center gap-3">
             {/* Language Switcher */}
-            <div className="relative group">
-              <button className="flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-white/50 uppercase tracking-wider hover:text-white transition-colors">
+            <div
+              className="relative"
+              ref={langSwitcherRef}
+              onMouseEnter={() => setLangOpen(true)}
+              onMouseLeave={() => setLangOpen(false)}
+            >
+              <button
+                type="button"
+                onClick={() => setLangOpen((v) => !v)}
+                aria-haspopup="menu"
+                aria-expanded={langOpen}
+                className="flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-white/50 uppercase tracking-wider hover:text-white transition-colors"
+              >
                 {locale}
-                <svg className="w-2.5 h-2.5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className={`w-2.5 h-2.5 opacity-50 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute top-full right-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="w-28 bg-white/95 backdrop-blur-md border border-white/20 rounded-xl p-1 shadow-xl">
-                  {(["fr", "en", "es"] as Locale[])
-                    .filter((l) => l !== locale)
-                    .map((l) => (
-                      <Link
-                        key={l}
-                        href={getLocaleHref(l)}
-                        className="block px-3 py-2 text-xs text-iter-dark/60 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors uppercase tracking-wider"
-                      >
-                        {languageSwitcher[l].label}
-                      </Link>
-                    ))}
+              {langOpen && (
+                <div className="absolute top-full right-0 pt-2">
+                  <div
+                    role="menu"
+                    className="w-28 bg-white/95 backdrop-blur-md border border-white/20 rounded-xl p-1 shadow-xl"
+                  >
+                    {(["fr", "en", "es"] as Locale[])
+                      .filter((l) => l !== locale)
+                      .map((l) => (
+                        <Link
+                          key={l}
+                          role="menuitem"
+                          href={getLocaleHref(l)}
+                          onClick={() => setLangOpen(false)}
+                          className="block px-3 py-2 text-xs text-iter-dark/60 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors uppercase tracking-wider"
+                        >
+                          {languageSwitcher[l].label}
+                        </Link>
+                      ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* CTA Button */}
