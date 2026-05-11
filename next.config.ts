@@ -232,11 +232,6 @@ const nextConfig: NextConfig = {
         destination: "/en/ressources/job-descriptions/:path*",
         permanent: true, // 301 redirect (fiche-metier → job-descriptions)
       },
-      {
-        source: "/en/ressources/glossaire",
-        destination: "/en/ressources/glossary",
-        permanent: true, // 301 redirect (French → English)
-      },
       // TICKET 4: Spanish service page for accounting externalization
       {
         source: "/es/services/comptabilite-externalisation",
