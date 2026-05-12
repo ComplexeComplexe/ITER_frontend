@@ -99,8 +99,28 @@ export default function Footer({ locale }: { locale: Locale }) {
               </div>
               <span className="text-white/40 text-xs">5/5 Trustfolio</span>
             </div>
-            {/* Company Legal Details — DEV-03 */}
-            {/* SIRET and address removed pending real values - FIX-01 */}
+            {/* Company Legal Details — E-E-A-T trust signals */}
+            <address className="not-italic text-white/60 text-xs leading-relaxed mt-3 space-y-1">
+              <p className="flex items-start gap-1.5">
+                <MapPin size={12} className="shrink-0 mt-0.5 text-iter-chartreuse/80" aria-hidden />
+                <span>
+                  {locale === "fr"
+                    ? "Barcelone (siège) · Paris · Toulouse"
+                    : locale === "en"
+                    ? "Barcelona (HQ) · Paris · Toulouse"
+                    : "Barcelona (sede) · París · Toulouse"}
+                </span>
+              </p>
+              <p>
+                <a
+                  href="mailto:contact@iteradvisors.com"
+                  className="hover:text-iter-chartreuse transition-colors"
+                >
+                  contact@iteradvisors.com
+                </a>
+              </p>
+              {/* TODO(seo-08): SIRET, full street address & phone pending client confirmation */}
+            </address>
           </div>
 
           {/* Services */}
