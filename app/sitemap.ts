@@ -149,28 +149,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     )
   );
 
-  /* ── DAF Externalise ─────────────────────────────────────────────── */
+  /* ── DAF Externalise — HARMO-01: EN canonical aligned on /fractional-cfo/* ── */
   entries.push(
     ...entryAllLocales(
-      { fr: "/daf-externalise", en: "/daf-outsourcing", es: "/externalizacion-daf" },
+      { fr: "/daf-externalise", en: "/fractional-cfo", es: "/externalizacion-daf" },
       { priority: 0.9 }
     )
   );
   entries.push(
     ...entryAllLocales(
-      { fr: "/daf-externalise/metier", en: "/daf-outsourcing/metier", es: "/externalizacion-daf/metier" },
+      { fr: "/daf-externalise/metier", en: "/fractional-cfo/metier", es: "/externalizacion-daf/metier" },
       { priority: 0.9 }
     )
   );
   entries.push(
     ...entryAllLocales(
-      { fr: "/daf-externalise/temps-partage", en: "/daf-outsourcing/shared-time", es: "/externalizacion-daf/tiempo-compartido" },
+      { fr: "/daf-externalise/temps-partage", en: "/fractional-cfo/shared-time", es: "/externalizacion-daf/tiempo-compartido" },
       { priority: 0.9 }
     )
   );
   entries.push(
     ...entryAllLocales(
-      { fr: "/daf-externalise/transition", en: "/daf-outsourcing/transition", es: "/externalizacion-daf/transition" },
+      { fr: "/daf-externalise/transition", en: "/fractional-cfo/transition", es: "/externalizacion-daf/transition" },
       { priority: 0.9 }
     )
   );
@@ -278,13 +278,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...entryAllLocales({ fr: "/jobs", en: "/jobs", es: "/jobs" }, { priority: 0.5 })
   );
 
-  /* ── Fractional CFO EN landing page (TICKET-12) ──────────────── */
-  entries.push({
-    url: `${BASE}/en/fractional-cfo`,
-    lastModified: TODAY,
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  });
+  /* HARMO-01 — `/en/fractional-cfo` is now the EN canonical of the DAF
+   * triple emitted above (line ~153). The standalone entry that used to
+   * live here (when EN canonical was `/en/daf-outsourcing`) is no longer
+   * needed — keeping it would emit `/en/fractional-cfo` twice in the
+   * sitemap. */
   entries.push(
     ...entryAllLocales({ fr: "/mentions-legales", en: "/legal-notice", es: "/aviso-legal" })
   );
