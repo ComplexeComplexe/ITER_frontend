@@ -5,6 +5,8 @@ export interface StackComboTool {
   name: string;
   slug: string;
   logo: string;
+  /** SEO-optimized alt text for the logo (TICKET T3/T4). */
+  logoAlt?: string;
   role: string;
 }
 
@@ -25,14 +27,21 @@ export default function StackCombo({ combo, title, description }: StackComboProp
           <div key={tool.slug} className="flex items-center gap-4 w-full md:w-auto">
             <Link href={`/ressources/outils/${tool.slug}`}>
               <div className="flex items-center gap-2 px-4 py-3 bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow cursor-pointer">
-                <div className="w-8 h-8 flex-shrink-0">
-                  <Image
-                    src={tool.logo}
-                    alt={`Logo ${tool.name}`}
-                    width={32}
-                    height={32}
-                    className="object-contain"
-                  />
+                <div className="flex items-center justify-center w-12 h-8 flex-shrink-0">
+                  {tool.logo ? (
+                    <Image
+                      src={tool.logo}
+                      alt={tool.logoAlt ?? `Logo ${tool.name}`}
+                      width={80}
+                      height={30}
+                      sizes="80px"
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  ) : (
+                    <span className="text-xs font-semibold text-gray-500 px-1.5 py-0.5 rounded bg-gray-100">
+                      {tool.name.slice(0, 3).toUpperCase()}
+                    </span>
+                  )}
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900 text-sm">{tool.name}</p>

@@ -6,6 +6,9 @@ export interface ToolCardProps {
   name: string;
   slug: string;
   logo: string;
+  /** SEO-optimized alt text for the logo (TICKET T3/T4). Optional for
+   *  backwards compat with callers that haven't been migrated yet. */
+  logoAlt?: string;
   category: string;
   categorySlug: string;
   rating: number;
@@ -17,6 +20,7 @@ export default function ToolCard({
   name,
   slug,
   logo,
+  logoAlt,
   category,
   categorySlug,
   rating,
@@ -40,14 +44,14 @@ export default function ToolCard({
       <div className="flex flex-col h-full p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
         {/* Header with logo and badge */}
         <div className="flex items-start justify-between gap-4 mb-4">
-          <div className="flex-shrink-0 w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center">
+          <div className="flex-shrink-0 w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center p-2">
             <Image
               src={logo}
-              alt={`Logo ${name}`}
-              width={50}
-              height={50}
-              priority={true}
-              className="object-contain"
+              alt={logoAlt ?? `Logo ${name}`}
+              width={120}
+              height={40}
+              sizes="120px"
+              className="max-w-full max-h-full object-contain"
             />
           </div>
           <div className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${phaseBadgeColors[phase]}`}>

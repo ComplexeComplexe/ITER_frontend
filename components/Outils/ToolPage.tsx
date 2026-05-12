@@ -6,7 +6,7 @@ import CTASection from '@/components/CTASection';
 import ToolHeader from './ToolHeader';
 import VerbatimBlock from './VerbatimBlock';
 import StackCombo from './StackCombo';
-import { Tool, getToolsByCategory } from '@/data/tools';
+import { Tool, getToolsByCategory, tools as allTools } from '@/data/tools';
 import { getVerbatimsByTool } from '@/data/verbatims';
 import { getToolDetails } from '@/data/toolDetails';
 import {
@@ -202,6 +202,7 @@ export default function ToolPage({
           <ToolHeader
             name={tool.name}
             logo={tool.logo}
+            logoAlt={tool.logoAlt}
             category={categoryLabels[tool.category as keyof typeof categoryLabels]}
             categorySlug={tool.categorySlug}
             rating={tool.rating}
@@ -373,16 +374,31 @@ export default function ToolPage({
             <h2 className="text-2xl font-bold font-heading text-foreground mb-12">Stacks recommandés</h2>
             <div className="space-y-12">
               {stacksForTool.map((stack: any, idx: number) => {
-                const toolMap = [
-                  { name: 'Pennylane', slug: 'pennylane', logo: '/images/logos/tools/pennylane.svg', role: 'Comptabilité' },
-                  { name: 'Agicap', slug: 'agicap', logo: '/images/logos/tools/agicap.svg', role: 'Trésorerie' },
-                  { name: 'Spendesk', slug: 'spendesk', logo: '/images/logos/tools/spendesk.svg', role: 'Dépenses' },
-                  { name: 'PayFit', slug: 'payfit', logo: '/images/logos/tools/payfit.svg', role: 'Paie' }
-                ];
+                // Derive the stack tool map from the canonical tools array so
+                // every tool (incl. the 9 added via TICKET 5) renders with
+                // its real logo + SEO alt text in stack combos.
+                const roleByCategory: Record<Tool['category'], string> = {
+                  comptabilite: 'Comptabilité',
+                  tresorerie: 'Trésorerie',
+                  depenses: 'Dépenses',
+                  paie: 'Paie',
+                };
                 const comboToRender = stack.tools && stack.tools.length > 0 ?
                   stack.tools.map((toolName: string) => {
-                    const t = toolMap.find(x => x.name === toolName);
-                    return t || { name: toolName, slug: toolName.toLowerCase(), logo: '', role: '' };
+                    const t = allTools.find((x) => x.name === toolName);
+                    if (t) {
+                      return {
+                        name: t.name,
+                        slug: t.slug,
+                        logo: t.logo,
+                        logoAlt: t.logoAlt,
+                        role: roleByCategory[t.category],
+                      };
+                    }
+                    // Unknown tool name (e.g. "Stripe", "SAP" referenced in
+                    // a stack combo but not in our data) — render the label
+                    // without a logo rather than crash.
+                    return { name: toolName, slug: toolName.toLowerCase().replace(/\s+/g, '-'), logo: '', role: '' };
                   }) : (stack.combo || []);
                 return (
                   <div key={idx}>
