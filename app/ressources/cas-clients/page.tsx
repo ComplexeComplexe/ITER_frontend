@@ -82,7 +82,7 @@ function CasClientsPageContent({ locale }: { locale: Locale }) {
 
       {/* Testimonials Section */}
       <div className="bg-muted/30">
-        <TestimonialsListingPage locale={locale} cmsNavigation={undefined} />
+        <TestimonialsListingPage locale={locale} cmsNavigation={undefined} asSection />
       </div>
 
       <CTASection locale={locale} />

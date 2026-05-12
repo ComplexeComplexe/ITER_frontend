@@ -55,7 +55,7 @@ export default function ToolHeader({
         <div className="flex-1 min-w-0">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">{name}</h1>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">{name}</h2>
               <p className="text-lg text-gray-600">{category}</p>
             </div>
 

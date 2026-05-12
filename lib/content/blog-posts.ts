@@ -581,7 +581,7 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
 - Accompagnement lors d'un contrôle fiscal</p>
 <p>La force du modèle externalisé réside dans cette modularité. Une startup en phase de levée de fonds peut mobiliser son DAF externalisé à 4 jours par semaine pendant 3 mois, puis réduire à 2 jours par mois une fois la levée bouclée.</p>
 <h3 id="couts-reels-dun-daf-externalise">Coûts réels d'un DAF externalisé</h3>
-<p>La structure de coûts d'un <a href="/daf-externalise">DAF externalisé</a> est radicalement différente de celle d'un salarié :</p>
+<p>La structure de coûts d'un <a href="/daf-externalise">directeur financier externalisé</a> est radicalement différente de celle d'un salarié :</p>
 <p><strong>Tarification mensuelle selon l'intensité de la mission :</strong>
 - Intervention légère (1 à 2 jours/mois) : 2 000 à 3 000 euros HT/mois
 - Intervention régulière (1 jour/semaine) : 3 500 à 5 000 euros HT/mois
@@ -1480,12 +1480,12 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <h3 id="2-choisir-une-stack-unifiee-pas-un-erp-enterprise">2. Choisir une stack unifiée, pas un ERP enterprise</h3>
 <p>Les startups SaaS n'ont pas besoin de SAP ou Oracle. Elles ont besoin d'une série d'outils intégrés qui communiquent bien entre eux. Stripe + Pennylane + Finthesis + CRM = bien plus puissant qu'un ERP, et 100x moins complexe.</p>
 <h3 id="3-hybridiser-externalisation-et-internalisation">3. Hybridiser externalisation et internalisation</h3>
-<p>Ne pas tout externaliser (vous perdriez le contrôle), ne pas tout internaliser (trop cher, manque de flexibilité). Le meilleur modèle : <a href="/daf-externalise">DAF externalisé</a> pour la stratégie + Ops internalisé pour l'exécution quotidienne.</p>
+<p>Ne pas tout externaliser (vous perdriez le contrôle), ne pas tout internaliser (trop cher, manque de flexibilité). Le meilleur modèle : <a href="/daf-externalise">notre accompagnement financier externalisé</a> pour la stratégie + Ops internalisé pour l'exécution quotidienne.</p>
 <h3 id="4-la-visibilite-sur-les-chiffres-change-les-decisions-strategiques">4. La visibilité sur les chiffres change les décisions stratégiques</h3>
 <p>Une fois que vous voyez vos unit economics, votre profitabilité par client, et votre cash burn détaillé, chaque décision commerciale et opérationnelle change. Les fondateurs commencent à piloter sur des chiffres, pas sur des intuitions.</p>
 <hr>
 <h2 id="conclusion">Conclusion</h2>
-<p>Le cas de Happy Scribe illustre bien comment une startup SaaS en hypercroissance peut structurer sa direction financière sans recruter un CFO onéreux et peu flexible. La solution : une combinaison de <a href="/daf-externalise">DAF externalisé</a>, d'outils modernes, et d'une personne Finance Ops interne.</p>
+<p>Le cas de Happy Scribe illustre bien comment une startup SaaS en hypercroissance peut structurer sa direction financière sans recruter un CFO onéreux et peu flexible. La solution : une combinaison de <a href="/daf-externalise">direction financière externalisée</a>, d'outils modernes, et d'une personne Finance Ops interne.</p>
 <p>Happy Scribe a investi ~100k€ en 2024 (audit + salaire Finance Ops + services Iter Advisors) pour mettre en place cette infrastructure. Ils ont économisé ~30k€/mois en optimisations AWS seules, et ont gagné une visibilité qui leur permettra de lever leur Series B dans les meilleures conditions.</p>
 <p>Si vous dirigez une startup SaaS entre 100k€ et 1M€ de MRR et que vous vous reconnaissez dans la situation initiale de Happy Scribe, c'est le moment d'agir. La bonne infrastructure financière n'est pas un coût -- c'est un investissement.</p>
 <p><strong>Vous avez une startup en hypercroissance et vous vous posez les mêmes questions que Happy Scribe ?</strong> <a href="/daf-externalise">Chez Iter Advisors</a>, nous avons accompagné une trentaine de startups SaaS à structurer leur direction financière. Nous pouvons auditer votre situation en une semaine et proposer un plan d'action adapté. <a href="/contact">Contactez-nous pour un diagnostic gratuit</a>.</p>`,
@@ -1645,7 +1645,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 </ul>
 <hr>
 <h2 id="internalisation-comptable-vs-daf-externalise-quelle-difference">Internalisation comptable vs DAF externalisé : quelle différence ?</h2>
-<p>Beaucoup de dirigeants confondent l'externalisation de la tenue comptable (cabinet comptable) et l'externalisation de la <a href="/services/gestion-financiere-externalisee">direction financière</a> (<a href="/daf-externalise">DAF externalisé</a>). Ce sont deux services complémentaires, pas synonymes.</p>
+<p>Beaucoup de dirigeants confondent l'externalisation de la tenue comptable (cabinet comptable) et l'externalisation de la <a href="/services/gestion-financiere-externalisee">direction financière</a> (<a href="/daf-externalise">notre cabinet de conseil financier</a>). Ce sont deux services complémentaires, pas synonymes.</p>
 <table>
 <thead>
 <tr>

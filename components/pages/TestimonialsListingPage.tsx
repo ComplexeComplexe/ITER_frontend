@@ -330,30 +330,43 @@ const iconMap = {
 export default function TestimonialsListingPage({
   locale,
   cmsNavigation,
+  asSection = false,
 }: {
   locale: Locale;
   cmsNavigation?: CmsNavItem[];
+  asSection?: boolean;
 }) {
   const t = pageContent[locale];
   const cases = useCases[locale];
   const gridRef = useRef<HTMLDivElement>(null);
   const gridInView = useInView(gridRef, { once: true, margin: "-60px" });
 
+  const Wrapper = asSection
+    ? ({ children }: { children: React.ReactNode }) => <>{children}</>
+    : ({ children }: { children: React.ReactNode }) => (
+        <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
+          {children}
+        </PageLayout>
+      );
+  const Heading = asSection ? "h2" : "h1";
+
   return (
-    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
+    <Wrapper>
       {/* Hero */}
-      <section className="bg-background pt-32 pb-16">
+      <section className={asSection ? "bg-background pt-12 pb-16" : "bg-background pt-32 pb-16"}>
         <div className="container">
-          <Breadcrumb
-            locale={locale}
-            items={[
-              { label: t.resourcesLabel, href: t.resourcesHref },
-              { label: t.breadcrumbLabel },
-            ]}
-          />
-          <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl mb-6">
+          {!asSection && (
+            <Breadcrumb
+              locale={locale}
+              items={[
+                { label: t.resourcesLabel, href: t.resourcesHref },
+                { label: t.breadcrumbLabel },
+              ]}
+            />
+          )}
+          <Heading className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl mb-6">
             {t.h1}
-          </h1>
+          </Heading>
           <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
             {t.intro}
           </p>
@@ -457,7 +470,7 @@ export default function TestimonialsListingPage({
       </section>
 
       <TestimonialsSection locale={locale} />
-      <CTASection locale={locale} />
-    </PageLayout>
+      {!asSection && <CTASection locale={locale} />}
+    </Wrapper>
   );
 }
