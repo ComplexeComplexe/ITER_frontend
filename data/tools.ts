@@ -4,6 +4,13 @@ export interface Tool {
   category: 'comptabilite' | 'tresorerie' | 'depenses' | 'paie';
   categorySlug: string;
   logo: string;
+  /**
+   * SEO-optimized alt text rendered on the `<Image>` of the logo wherever
+   * the tool appears (card, hero, stack combo, comparison table). Includes
+   * the brand name + a short positioning keyword so it contributes to the
+   * page's semantic context rather than the generic "Logo {name}" placeholder.
+   */
+  logoAlt: string;
   website: string;
   rating: number;
   implementationTime: string;
@@ -23,6 +30,7 @@ export const tools: Tool[] = [
     category: 'comptabilite',
     categorySlug: 'logiciels-comptabilite',
     logo: '/images/logos/tools/pennylane.svg',
+    logoAlt: 'Logo Pennylane — logiciel de comptabilité en ligne pour startups et PME',
     website: 'https://www.pennylane.com',
     rating: 4.5,
     implementationTime: '1-3 semaines',
@@ -49,6 +57,7 @@ export const tools: Tool[] = [
     category: 'tresorerie',
     categorySlug: 'logiciels-tresorerie',
     logo: '/images/logos/tools/agicap.svg',
+    logoAlt: 'Logo Agicap — logiciel de prévision de trésorerie pour PME',
     website: 'https://agicap.com/fr/',
     rating: 4.3,
     implementationTime: '2 semaines',
@@ -74,6 +83,7 @@ export const tools: Tool[] = [
     category: 'depenses',
     categorySlug: 'gestion-depenses',
     logo: '/images/logos/tools/spendesk.svg',
+    logoAlt: 'Logo Spendesk — logiciel de gestion des dépenses et notes de frais pour scale-ups',
     website: 'https://www.spendesk.com',
     rating: 4.2,
     implementationTime: '1-2 semaines',
@@ -99,6 +109,7 @@ export const tools: Tool[] = [
     category: 'paie',
     categorySlug: 'logiciels-paie',
     logo: '/images/logos/tools/payfit.svg',
+    logoAlt: 'Logo PayFit — logiciel de paie et DSN automatisé pour startups et PME',
     website: 'https://payfit.com/fr/',
     rating: 4.4,
     implementationTime: '1-2 semaines',
@@ -124,7 +135,8 @@ export const tools: Tool[] = [
     name: 'Sage',
     category: 'comptabilite',
     categorySlug: 'logiciels-comptabilite',
-    logo: '/images/logos/tools/sage.svg',
+    logo: '/images/logos/tools/sage.png',
+    logoAlt: 'Logo Sage — logiciel comptable historique pour PME industrielles et multi-sociétés',
     website: 'https://www.sage.com/fr-fr/',
     rating: 3.8,
     implementationTime: '4-12 semaines',
@@ -151,7 +163,8 @@ export const tools: Tool[] = [
     name: 'Cegid Loop',
     category: 'comptabilite',
     categorySlug: 'logiciels-comptabilite',
-    logo: '/images/logos/tools/cegid-loop.svg',
+    logo: '/images/logos/tools/cegid-loop.png',
+    logoAlt: 'Logo Cegid Loop — logiciel comptable cloud pour PME et retail multi-établissements',
     website: 'https://www.cegid.com/fr/produits/cegid-loop/',
     rating: 3.5,
     implementationTime: '2-6 semaines',
@@ -177,7 +190,8 @@ export const tools: Tool[] = [
     name: 'Fygr',
     category: 'tresorerie',
     categorySlug: 'logiciels-tresorerie',
-    logo: '/images/logos/tools/fygr.svg',
+    logo: '/images/logos/tools/fygr.png',
+    logoAlt: 'Logo Fygr — outil de trésorerie économique pour PME 10-80 salariés',
     website: 'https://fygr.io',
     rating: 4.0,
     implementationTime: '1-2 jours',
@@ -203,7 +217,8 @@ export const tools: Tool[] = [
     name: 'Pleo',
     category: 'depenses',
     categorySlug: 'gestion-depenses',
-    logo: '/images/logos/tools/pleo.svg',
+    logo: '/images/logos/tools/pleo.png',
+    logoAlt: 'Logo Pleo — cartes de paiement et gestion des dépenses pour startups en seed',
     website: 'https://www.pleo.io/fr',
     rating: 4.3,
     implementationTime: '1-2 jours',
@@ -229,7 +244,8 @@ export const tools: Tool[] = [
     name: 'Silae',
     category: 'paie',
     categorySlug: 'logiciels-paie',
-    logo: '/images/logos/tools/silae.svg',
+    logo: '/images/logos/tools/silae.png',
+    logoAlt: 'Logo Silae — logiciel de paie multi-conventions pour PME (BTP, spectacle, maritime)',
     website: 'https://www.silae.fr',
     rating: 3.9,
     implementationTime: '2-4 semaines',
@@ -256,7 +272,8 @@ export const tools: Tool[] = [
     name: 'Lucca',
     category: 'paie',
     categorySlug: 'logiciels-paie',
-    logo: '/images/logos/tools/lucca.svg',
+    logo: '/images/logos/tools/lucca.png',
+    logoAlt: 'Logo Lucca — suite RH complète (absences, temps, notes de frais) pour PME 20-200 salariés',
     website: 'https://www.lucca.fr',
     rating: 4.1,
     implementationTime: '2-4 semaines',
@@ -281,7 +298,8 @@ export const tools: Tool[] = [
     name: 'Qonto',
     category: 'depenses',
     categorySlug: 'gestion-depenses',
-    logo: '/images/logos/tools/qonto.svg',
+    logo: '/images/logos/tools/qonto.png',
+    logoAlt: 'Logo Qonto — banque en ligne pro pour startups et PME françaises',
     website: 'https://qonto.com/fr',
     rating: 4.4,
     implementationTime: '1 jour',
@@ -308,7 +326,8 @@ export const tools: Tool[] = [
     name: 'Revolut Business',
     category: 'depenses',
     categorySlug: 'gestion-depenses',
-    logo: '/images/logos/tools/revolut-business.svg',
+    logo: '/images/logos/tools/revolut-business.png',
+    logoAlt: 'Logo Revolut Business — banque multi-devises pour startups internationales',
     website: 'https://www.revolut.com/business/',
     rating: 4.2,
     implementationTime: '1 jour',
@@ -334,7 +353,8 @@ export const tools: Tool[] = [
     name: 'Payhawk',
     category: 'depenses',
     categorySlug: 'gestion-depenses',
-    logo: '/images/logos/tools/payhawk.svg',
+    logo: '/images/logos/tools/payhawk.png',
+    logoAlt: 'Logo Payhawk — gestion des dépenses multi-devises et ERP pour ETI internationales',
     website: 'https://payhawk.com/',
     rating: 4.1,
     implementationTime: '2-4 semaines',

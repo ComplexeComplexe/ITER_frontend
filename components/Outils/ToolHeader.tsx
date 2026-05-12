@@ -5,6 +5,8 @@ import { Star } from 'lucide-react';
 export interface ToolHeaderProps {
   name: string;
   logo: string;
+  /** SEO-optimized alt text for the logo (TICKET T3/T4). */
+  logoAlt?: string;
   category: string;
   categorySlug: string;
   rating: number;
@@ -18,6 +20,7 @@ export interface ToolHeaderProps {
 export default function ToolHeader({
   name,
   logo,
+  logoAlt,
   category,
   categorySlug,
   rating,
@@ -35,14 +38,15 @@ export default function ToolHeader({
       <div className="flex flex-col md:flex-row md:items-start gap-6">
         {/* Logo & Basic Info */}
         <div className="flex-shrink-0">
-          <div className="flex items-center justify-center w-24 h-24 md:w-32 md:h-32 bg-gray-50 rounded-lg">
+          <div className="flex items-center justify-center w-24 h-24 md:w-32 md:h-32 bg-gray-50 rounded-lg p-3 md:p-4">
             <Image
               src={logo}
-              alt={`Logo ${name}`}
-              width={80}
-              height={80}
-              priority={true}
-              className="object-contain"
+              alt={logoAlt ?? `Logo ${name}`}
+              width={160}
+              height={60}
+              sizes="(min-width: 768px) 128px, 96px"
+              priority
+              className="max-w-full max-h-full object-contain"
             />
           </div>
         </div>

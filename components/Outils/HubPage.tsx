@@ -265,6 +265,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
                 name={tool.name}
                 slug={tool.slug}
                 logo={tool.logo}
+                logoAlt={tool.logoAlt}
                 category={tool.category}
                 categorySlug={tool.categorySlug}
                 rating={tool.rating}

@@ -61,6 +61,7 @@ export default function CategoryPage({
       name: tool.name,
       slug: tool.slug,
       logo: tool.logo,
+      logoAlt: tool.logoAlt,
       rating: tool.rating,
       features: {
         'Taille cible': tool.forWho[0] || '—',
@@ -221,13 +222,14 @@ export default function CategoryPage({
                 <div key={selectedTool.name} className="bg-background p-8 rounded-lg border border-gray-200">
                   <div className="flex items-start gap-4 mb-6">
                     {toolData?.logo && (
-                      <div className="w-16 h-16 bg-gray-50 rounded-lg flex-shrink-0 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-gray-50 rounded-lg flex-shrink-0 flex items-center justify-center p-2">
                         <Image
                           src={toolData.logo}
-                          alt={selectedTool.name}
-                          width={50}
-                          height={50}
-                          className="object-contain"
+                          alt={toolData.logoAlt ?? `Logo ${selectedTool.name}`}
+                          width={120}
+                          height={40}
+                          sizes="120px"
+                          className="max-w-full max-h-full object-contain"
                         />
                       </div>
                     )}
