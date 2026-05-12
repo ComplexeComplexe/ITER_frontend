@@ -47,25 +47,19 @@ export function buildMetadata({
   const enPath = stripLocale(localizedPaths?.en ?? safePath, 'en');
   const esPath = stripLocale(localizedPaths?.es ?? safePath, 'es');
 
-  const alternates: Record<string, string> = {
-    "x-default": `${base}${frPath}`,
-    fr: `${base}${frPath}`,
-    en: `${base}/en${enPath === "/" ? "" : enPath}`,
-    es: `${base}/es${esPath === "/" ? "" : esPath}`,
-  };
+  const frUrl = `${base}${frPath}`;
+  const enUrl = `${base}/en${enPath === "/" ? "" : enPath}`;
+  const esUrl = `${base}/es${esPath === "/" ? "" : esPath}`;
 
-  // Build hreflang link tags for HTML head (fixes Next.js alternates.languages not rendering)
-  const hrefLangLinks = [
-    { hreflang: "x-default", href: alternates["x-default"] },
-    { hreflang: "fr-FR", href: alternates.fr },
-    { hreflang: "en-GB", href: alternates.en },
-    { hreflang: "es-ES", href: alternates.es },
-  ]
-    .map(
-      ({ hreflang, href }) =>
-        `<link rel="alternate" hrefLang="${hreflang}" href="${href}" />`
-    )
-    .join("\n  ");
+  // Use full hreflang codes as keys so Next.js renders them as
+  // <link rel="alternate" hreflang="fr-FR" href="..." /> in <head>.
+  // (SSR fallback also lives in components/HrefLangInjector.tsx.)
+  const languages: Record<string, string> = {
+    "x-default": frUrl,
+    "fr-FR": frUrl,
+    "en-GB": enUrl,
+    "es-ES": esUrl,
+  };
 
   const meta: Metadata = {
     title,
@@ -75,7 +69,7 @@ export function buildMetadata({
       : "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
     alternates: {
       canonical: url,
-      languages: alternates,
+      languages,
     },
     openGraph: {
       title,
@@ -105,9 +99,6 @@ export function buildMetadata({
         { url: "/favicon.png", sizes: "192x192" },
       ],
       apple: "/favicon.png",
-    },
-    other: {
-      "hreflang-links": hrefLangLinks,
     },
   };
 

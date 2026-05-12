@@ -144,6 +144,13 @@ const SLUG_REDIRECTS: Record<string, string> = {
   "/notre-expertise": "/services",
   "/notre-equipe": "/a-propos",
   "/notre-methode": "/a-propos",
+
+  /* ── 5 remaining 404s (audit v2 — SEO-06) ───────────────────────────── */
+  "/en/daf-externalise/secteurs": "/en/fractional-cfo",
+  "/en/daf-externalise/tarifs": "/en/fractional-cfo",
+  "/es/daf-externalise/secteurs": "/es/externalizacion-daf",
+  "/es/daf-externalise/tarifs": "/es/externalizacion-daf",
+  "/es/ressources/blog": "/es/recursos/blog",
 };
 
 /* ── Orphaned fiche-metier slugs (not in system) ───────────────────── */
@@ -350,7 +357,12 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  return NextResponse.next();
+  /* ── 7. Expose pathname to server components for SSR hreflang ────── */
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-pathname", pathname);
+  return NextResponse.next({
+    request: { headers: requestHeaders },
+  });
 }
 
 export const config = {
