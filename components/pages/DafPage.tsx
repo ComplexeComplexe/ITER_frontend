@@ -169,17 +169,20 @@ export default function DafPage({
                     <span className="text-xs sm:text-sm text-muted-foreground">— 31 avis Trustfolio</span>
                   </div>
                   <div className="flex items-center gap-3 sm:gap-5 opacity-70 overflow-x-auto">
-                    {["logo-happyscribe", "logo-mitiga", "logo-surfe", "logo-ukio", "logo-yego"].map((logo) => (
-                      <div key={logo} className="relative h-5 sm:h-6 w-16 sm:w-20 grayscale shrink-0">
-                        <Image
-                          src={`/images/logos/${logo}.webp`}
-                          alt=""
-                          fill
-                          className="object-contain"
-                          sizes="(max-width: 640px) 64px, 80px"
-                        />
-                      </div>
-                    ))}
+                    {["logo-happyscribe", "logo-mitiga", "logo-surfe", "logo-ukio", "logo-yego"].map((logo) => {
+                      const clientName = logo.replace("logo-", "").replace(/^./, (c) => c.toUpperCase());
+                      return (
+                        <div key={logo} className="relative h-5 sm:h-6 w-16 sm:w-20 grayscale shrink-0">
+                          <Image
+                            src={`/images/logos/${logo}.webp`}
+                            alt={`Logo ${clientName} — client Iter Advisors`}
+                            fill
+                            className="object-contain"
+                            sizes="(max-width: 640px) 64px, 80px"
+                          />
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}
