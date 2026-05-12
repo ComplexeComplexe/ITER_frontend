@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/quienes-somos",
     localizedPaths: { fr: "/a-propos", en: "/a-propos", es: "/quienes-somos" },
     fallbackTitle: "Quiénes somos - Consultoría CFO externalizado desde 2019 | Iter Advisors",
-    fallbackDescription: "Descubra Iter Advisors.",
+    fallbackDescription: "Iter Advisors, gabinete de CFO externalizado fundado en 2019. Equipo senior con sede en Barcelona, París y Toulouse. Conozca a nuestros directores financieros.",
   });
 }
 

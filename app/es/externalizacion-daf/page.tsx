@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/externalizacion-daf",
     localizedPaths: { fr: "/daf-externalise", en: "/daf-outsourcing", es: "/externalizacion-daf" },
     fallbackTitle: "Externalización DAF | Iter Advisors",
-    fallbackDescription: "CFO externalizado para pymes y startups.",
+    fallbackDescription: "Iter Advisors, gabinete de CFO externalizado para pymes y startups en España y Francia. 85 empresas acompañadas, 100 M€ de fundraising, 5/5 en Trustfolio.",
   });
 }
 
