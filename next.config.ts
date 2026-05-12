@@ -137,16 +137,22 @@ const nextConfig: NextConfig = {
         destination: "/en/ressources/tools",
         permanent: true, // 301 redirect
       },
-      // Old fractional-cfo cluster slugs (EN)
+      // HARMO-01 — EN canonical cluster is now /en/fractional-cfo/* to match
+      // the parent slug. Old /en/daf-outsourcing/* URLs 301-redirect into it.
       {
-        source: "/en/fractional-cfo/shared-time",
-        destination: "/en/daf-outsourcing/shared-time",
-        permanent: true, // 301 redirect (cluster rename)
+        source: "/en/daf-outsourcing/shared-time",
+        destination: "/en/fractional-cfo/shared-time",
+        permanent: true,
       },
       {
-        source: "/en/fractional-cfo/metier",
-        destination: "/en/daf-outsourcing/metier",
-        permanent: true, // 301 redirect (cluster rename)
+        source: "/en/daf-outsourcing/transition",
+        destination: "/en/fractional-cfo/transition",
+        permanent: true,
+      },
+      {
+        source: "/en/daf-outsourcing/metier",
+        destination: "/en/fractional-cfo/metier",
+        permanent: true,
       },
       // Jobs EN/ES (if positions not translated, redirect to hub)
       {

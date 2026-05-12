@@ -10,15 +10,14 @@ import { getCanonicalServiceSlug, SERVICE_URL_SLUG_BY_LOCALE, type ServicePageSl
 
 const DAF_BASE: Record<Locale, string> = {
   fr: "daf-externalise",
-  en: "daf-outsourcing",
+  en: "fractional-cfo",
   es: "externalizacion-daf",
 };
 
 /**
- * Alternate EN slugs recognized as "DAF base" so users on /en/fractional-cfo
- * can map back to FR /daf-externalise (and forward to ES /externalizacion-daf).
- * Note: middleware redirects /en/daf-outsourcing → /en/fractional-cfo for the
- * root only; sub-paths keep the daf-outsourcing slug, so we accept both.
+ * Alternate EN slugs still recognized as "DAF base" so the language switcher
+ * can map legacy `/en/daf-outsourcing/*` URLs back to FR / ES correctly.
+ * The canonical EN slug is now `fractional-cfo` (HARMO-01).
  */
 const DAF_BASE_ALIASES_EN = new Set(["daf-outsourcing", "fractional-cfo"]);
 
