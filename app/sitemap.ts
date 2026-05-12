@@ -75,6 +75,9 @@ const BLOG_SLUGS = [
   "daf-drh-externalises-synergie",
   /* MDX migration articles */
   "ia-et-automatisation-des-taches-repetitives",
+  /* INDEX-01 — articles indexés mais absents du sitemap (mai 2026) */
+  "externalisation-comptable",
+  "cas-etude-happy-scribe",
   /* TICKET 23 — 15 nouveaux articles (mai 2026) */
   "quand-embaucher-daf-externalise-5-signes",
   "daf-externalise-barcelone-guide-startups-espagnoles",

@@ -226,6 +226,24 @@ const nextConfig: NextConfig = {
         destination: "/en/campaign",
         permanent: true, // 301 redirect (French → English)
       },
+      // INDEX-02 — 3 redirections 301 pour URLs 404 remontées par GSC (mai 2026).
+      // Doivent venir AVANT les catch-all fiche-metier ci-dessous pour matcher
+      // sur le slug exact plutôt que sur le pattern générique.
+      {
+        source: "/en/services/outsourced-management-accounting",
+        destination: "/en/services/outsource-your-accounting",
+        permanent: true,
+      },
+      {
+        source: "/es/services/control-de-gestion-externalizado",
+        destination: "/es/services/control-gestion-externalizado",
+        permanent: true,
+      },
+      {
+        source: "/en/ressources/fiche-metier/expert-paie-et-administration-du-personnel",
+        destination: "/en/ressources/job-descriptions",
+        permanent: true,
+      },
       // Handle specific ressources → resources mappings for fiche-metier
       {
         source: "/en/ressources/fiche-metier/:path*",
