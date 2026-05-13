@@ -47,19 +47,21 @@ export function buildMetadata({
   const enPath = stripLocale(localizedPaths?.en ?? safePath, 'en');
   const esPath = stripLocale(localizedPaths?.es ?? safePath, 'es');
 
+  // SEO-P0-01: Use RFC 5646 language-region codes as keys so Next.js renders
+  // hreflang="fr-FR" / "en-GB" / "es-ES" instead of bare "fr" / "en" / "es".
   const alternates: Record<string, string> = {
     "x-default": `${base}${frPath}`,
-    fr: `${base}${frPath}`,
-    en: `${base}/en${enPath === "/" ? "" : enPath}`,
-    es: `${base}/es${esPath === "/" ? "" : esPath}`,
+    "fr-FR": `${base}${frPath}`,
+    "en-GB": `${base}/en${enPath === "/" ? "" : enPath}`,
+    "es-ES": `${base}/es${esPath === "/" ? "" : esPath}`,
   };
 
   // Build hreflang link tags for HTML head (fixes Next.js alternates.languages not rendering)
   const hrefLangLinks = [
     { hreflang: "x-default", href: alternates["x-default"] },
-    { hreflang: "fr-FR", href: alternates.fr },
-    { hreflang: "en-GB", href: alternates.en },
-    { hreflang: "es-ES", href: alternates.es },
+    { hreflang: "fr-FR", href: alternates["fr-FR"] },
+    { hreflang: "en-GB", href: alternates["en-GB"] },
+    { hreflang: "es-ES", href: alternates["es-ES"] },
   ]
     .map(
       ({ hreflang, href }) =>

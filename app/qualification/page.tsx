@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Qualification | Iter Advisors",
   description:
     "Qualifiez votre entreprise en 5 minutes et recevez une analyse personnalisée de votre maturité financière. Recommandations sur mesure par nos experts DAF.",
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Qualification Entreprise | Iter Advisors",
     description:
