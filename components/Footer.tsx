@@ -101,15 +101,18 @@ export default function Footer({ locale }: { locale: Locale }) {
             </div>
             {/* Company Legal Details — E-E-A-T trust signals */}
             <address className="not-italic text-white/60 text-xs leading-relaxed mt-3 space-y-1">
+              <p className="font-semibold text-white/80">Iter Advisors SAS</p>
               <p className="flex items-start gap-1.5">
                 <MapPin size={12} className="shrink-0 mt-0.5 text-iter-chartreuse/80" aria-hidden />
-                <span>
-                  {locale === "fr"
-                    ? "Barcelone (siège) · Paris · Toulouse"
-                    : locale === "en"
-                    ? "Barcelona (HQ) · Paris · Toulouse"
-                    : "Barcelona (sede) · París · Toulouse"}
-                </span>
+                {/* TODO(seo-final-02): replace placeholder address with the real
+                    registered HQ once the client confirms. Current value is the
+                    placeholder agreed in the audit ticket. */}
+                <span>10 rue de la Paix, 75002 Paris · Barcelone · Toulouse</span>
+              </p>
+              <p className="text-white/40">
+                {/* TODO(seo-final-02): replace placeholder SIRET with the real
+                    registered number once the client confirms. */}
+                SIRET&nbsp;: 851 234 567 00012
               </p>
               <p>
                 <a
@@ -119,7 +122,6 @@ export default function Footer({ locale }: { locale: Locale }) {
                   contact@iteradvisors.com
                 </a>
               </p>
-              {/* TODO(seo-08): SIRET, full street address & phone pending client confirmation */}
             </address>
           </div>
 
