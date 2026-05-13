@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     images: [
       {
-        url: "/images/og-default.jpg",
+        url: "/images/og-default.webp",
         width: 1200,
         height: 630,
         alt: "Iter Advisors - DAF externalisé & CFO à temps partagé",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/images/og-default.jpg"],
+    images: ["/images/og-default.webp"],
   },
 };
 

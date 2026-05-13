@@ -5,6 +5,7 @@ import { getCmsNavigation } from "@/lib/strapi";
 export const metadata: Metadata = {
   title: "Diagnostic DAF | Iter Advisors",
   description: "Évaluez vos besoins financiers en 2 minutes. Diagnostic personnalisé gratuit. Découvrez comment un DAF externalisé peut aider votre entreprise.",
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Diagnostic Financier Gratuit | Iter Advisors",
     description:

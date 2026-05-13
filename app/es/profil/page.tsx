@@ -5,6 +5,7 @@ import { getCmsNavigation } from "@/lib/strapi";
 export const metadata: Metadata = {
   title: "Diagnóstico Financiero | Iter Advisors",
   description: "Evalúe sus necesidades financieras en 2 minutos. Diagnóstico personalizado gratis. Descubra cómo un CFO externalizado puede ayudar.",
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Diagnóstico Financiero Gratuito | Iter Advisors",
     description:
