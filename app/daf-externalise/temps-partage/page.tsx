@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-temps-partage-page",
     locale: "fr",
     path: "/daf-externalise/temps-partage",
-    localizedPaths: { fr: "/daf-externalise/temps-partage", en: "/daf-outsourcing/shared-time", es: "/externalizacion-daf/tiempo-compartido" },
+    localizedPaths: { fr: "/daf-externalise/temps-partage", en: "/en/fractional-cfo/shared-time", es: "/externalizacion-daf/tiempo-compartido" },
     fallbackTitle: "DAF à temps partagé : CFO senior dès 2 jours/mois | Iter Advisors",
     fallbackDescription: "DAF à temps partagé pour PME et startups : bénéficiez d'un directeur financier expérimenté quelques jours par semaine. Flexibilité, expertise et réduction des coûts avec Iter Advisors.",
   });

@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-tarifs-page",
     locale: "fr",
     path: "/daf-externalise/tarifs",
-    localizedPaths: { fr: "/daf-externalise/tarifs", en: "/daf-outsourcing/pricing", es: "/externalizacion-daf/tarifas" },
+    localizedPaths: { fr: "/daf-externalise/tarifs", en: "/en/fractional-cfo", es: "/externalizacion-daf/tarifas" },
     fallbackTitle: "Tarifs DAF Externalisé 2026 - Grille de Prix | Iter Advisors",
     fallbackDescription: "Combien coûte un DAF externalisé ? Grille de tarifs 2026 : de 2 000 à 8 000 € HT/mois selon la formule. Transparence totale, sans surprise.",
   });
