@@ -2452,6 +2452,151 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p><a href="/ressources/outils/payfit">Fiche PayFit</a> | <a href="/ressources/outils/silae">Fiche Silae</a></p>`,
       content: [],
     },
+    "impot-revenu-espagne": {
+      meta: {
+        title: "Impôt sur le Revenu en Espagne — Guide Complet 2026 IRPF | Iter Advisors",
+        description: "Découvrez tout sur l'impôt sur le revenu en Espagne (IRPF) : barèmes 2026, loi Beckham, déclaration et conseils pour expatriés français et entrepreneurs.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Impôt sur le Revenu en Espagne — Guide Complet 2026 pour Expatriés et Entreprises",
+      publishedDate: "2026-05-13",
+      author: "Iter Advisors",
+      category: "Fiscalité internationale",
+      htmlContent: `<p>L'<strong>impôt sur le revenu en Espagne</strong>, connu sous le nom d'<strong>IRPF (Impuesto sobre la Renta de las Personas Físicas)</strong>, est l'un des éléments clés à maîtriser pour tout expatrié français ou entrepreneur s'installant en Espagne. Barcelone et Madrid attirent chaque année des milliers de travailleurs francophones — startups, freelances, salariés en télétravail — mais la fiscalité espagnole reste mal connue et source de confusion.</p>
+<p>Chez <a href="/daf-externalise">Iter Advisors</a>, nous accompagnons chaque année plus de 30 entreprises et entrepreneurs qui s'installent à Barcelone. L'optimisation fiscale est systématiquement le premier sujet qu'ils abordent avec nos DAF externalisés. Voici un guide complet pour comprendre l'<strong>impôt sur le revenu en Espagne</strong> en 2026.</p>
+<h2 id="qu-est-ce-que-irpf">Qu'est-ce que l'IRPF ?</h2>
+<p>L'<strong>IRPF</strong> est l'impôt sur le revenu des personnes physiques en Espagne. Il s'applique aux revenus du travail (salaires), aux revenus du capital (dividendes, intérêts), aux revenus fonciers et aux plus-values. Contrairement à la France où l'impôt est prélevé à la source, l'IRPF espagnol est généralement payé par l'assujetti lors de la déclaration annuelle — bien que les retenues à la source existent pour les salariés.</p>
+<h2 id="baremes-irpf">Les barèmes de l'IRPF en 2026</h2>
+<p>L'Espagne applique un système de tranches progressives. Les barèmes pour 2026 sont les suivants (sous réserve de validation budgétaire) :</p>
+<table>
+<thead><tr><th>Tranche de revenus</th><th>Taux d'imposition</th></tr></thead>
+<tbody>
+<tr><td>Jusqu'à 12 450 €</td><td>19 %</td></tr>
+<tr><td>12 450 € – 20 200 €</td><td>24 %</td></tr>
+<tr><td>20 200 € – 35 200 €</td><td>30 %</td></tr>
+<tr><td>35 200 € – 60 000 €</td><td>37 %</td></tr>
+<tr><td>60 000 € – 300 000 €</td><td>45 %</td></tr>
+<tr><td>Au-delà de 300 000 €</td><td>47 %</td></tr>
+</tbody>
+</table>
+<p><strong>Attention :</strong> ces taux sont les taux d'imposition de l'État. Les communautés autonomes (Catalogne, Madrid, Andalousie…) appliquent des taux propres qui viennent s'ajouter. En Catalogne, le taux marginal maximal atteint <strong>54 %</strong> pour les très hauts revenus. À Madrid, le taux est plus favorable avec un maximum d'environ 45 %.</p>
+<h2 id="loi-beckham">Le régime des expatriés (Loi Beckham)</h2>
+<p>La <strong>loi Beckham</strong> (article 93 de la LIRPF) est le principal atout fiscal pour les expatriés s'installant en Espagne. Ce régime permet aux travailleurs étrangers d'être imposés comme non-résidents fiscaux pendant les 6 premières années — avec des taux très avantageux :</p>
+<ul>
+<li><strong>Revenus du travail</strong> : taux fixe de <strong>24 %</strong> jusqu'à 600 000 € (puis 47 % au-delà)</li>
+<li><strong>Revenus du capital</strong> : 19 % jusqu'à 6 000 €, 21 % jusqu'à 50 000 €, 23 % au-delà</li>
+<li><strong>Exonération des revenus perçus à l'étranger</strong> (sauf revenus du travail)</li>
+</ul>
+<p><strong>Conditions d'éligibilité :</strong></p>
+<ul>
+<li>Ne pas avoir été résident fiscal en Espagne les 5 années précédentes</li>
+<li>S'installer en Espagne pour un emploi (contrat espagnol) ou pour devenir dirigeant</li>
+<li>L'emploi doit être exercé effectivement en Espagne</li>
+<li>Le travail doit représenter &gt; 85 % du revenu global (si mixte)</li>
+</ul>
+<blockquote><p>« La loi Beckham est un avantage fiscal considérable pour les cadres et dirigeants qui s'installent à Barcelone. Un salaire de 100 000 € passe d'un taux marginal de 45 % à un taux fixe de 24 %. C'est une économie de 15 000 à 20 000 € par an. » — <strong>Benjamin Ziza, Founding Partner &amp; CFO, Iter Advisors</strong></p></blockquote>
+<p>Pour approfondir, consultez notre <a href="/ressources/blog/ley-beckham-guide-expatries">guide complet sur la loi Beckham</a> et notre page <a href="/daf-externalise-barcelone">DAF externalisé à Barcelone</a>.</p>
+<h2 id="comment-declarer">Comment déclarer ses revenus ?</h2>
+<p>La déclaration de l'IRPF se fait annuellement, généralement entre avril et juin (période dite de « renta »). Les étapes :</p>
+<ol>
+<li><strong>Modelo 100</strong> : déclaration annuelle de l'IRPF (obligatoire si revenus &gt; 22 000 €)</li>
+<li><strong>Modelo 151</strong> : déclaration pour les non-résidents fiscaux (Beckham)</li>
+<li><strong>Retenues à la source</strong> : les employeurs retiennent un acompte mensuel</li>
+<li><strong>Régularisation</strong> : solde à payer ou remboursement après la déclaration</li>
+</ol>
+<h2 id="france-vs-espagne">Comparaison France vs Espagne</h2>
+<table>
+<thead><tr><th>Critère</th><th>France</th><th>Espagne</th></tr></thead>
+<tbody>
+<tr><td>Taux marginal max</td><td>45 %</td><td>47 % (État) + communauté</td></tr>
+<tr><td>Prélèvement à la source</td><td>Oui (PAS)</td><td>Retenues sur salaire</td></tr>
+<tr><td>Régime expatrié</td><td>PEX / impatriés</td><td>Loi Beckham (24 % fixe)</td></tr>
+<tr><td>Plafond quotient familial</td><td>Oui</td><td>Non (abattement par enfant)</td></tr>
+<tr><td>Imposition couples</td><td>Commune</td><td>Individuelle</td></tr>
+<tr><td>Revenus étrangers</td><td>Imposables</td><td>Exonérés (loi Beckham)</td></tr>
+</tbody>
+</table>
+<h2 id="erreurs-eviter">Erreurs à éviter</h2>
+<ol>
+<li><strong>Ne pas déclarer les revenus français</strong> : même avec la loi Beckham, les revenus non exonérés doivent être déclarés.</li>
+<li><strong>Confondre résident fiscal et résident administratif</strong> : on est résident fiscal espagnol si on vit &gt; 183 jours/an en Espagne.</li>
+<li><strong>Oublier la double imposition</strong> : la convention France-Espagne évite la double imposition, mais elle doit être appliquée correctement.</li>
+<li><strong>Sous-estimer les charges sociales</strong> : les cotisations patronales en Espagne sont de 30–32 % (contre 40–45 % en France).</li>
+</ol>
+<h2 id="entrepreneurs">Conseils pour les entrepreneurs</h2>
+<p>Si vous créez une société en Espagne (SL ou SAS), l'IRPF ne s'applique pas directement à la société — c'est l'<strong>IS (Impuesto de Sociedades)</strong> qui s'applique (taux standard de 25 %). Mais votre rémunération de dirigeant est soumise à l'IRPF.</p>
+<p><strong>Stratégie optimale :</strong> combiner la loi Beckham (pour votre rémunération) avec une optimisation de l'IS (pour la société). Nos <a href="/daf-externalise-barcelone">DAF basés à Barcelone</a> accompagnent chaque année plus de 15 entrepreneurs dans cette structuration.</p>
+<h2 id="faq">FAQ</h2>
+<p><strong>Suis-je résident fiscal en Espagne ?</strong> Oui si vous vivez plus de 183 jours par an en Espagne, ou si votre centre d'intérêts économiques y est situé.</p>
+<p><strong>La loi Beckham s'applique-t-elle aux freelances ?</strong> Oui, si vous créez une société (SL) et que vous en êtes le dirigeant. Le statut d'autónomo (freelance) ne permet pas d'accéder à la loi Beckham.</p>
+<p><strong>Dois-je déclarer mes revenus français en Espagne ?</strong> Si vous êtes résident fiscal en Espagne, vous devez déclarer vos revenus mondiaux. Mais la convention fiscale France-Espagne évite la double imposition.</p>
+<p><strong>Quel est le délai pour déclarer l'IRPF ?</strong> La campagne de déclaration de la « renta » s'ouvre en avril et se termine fin juin de l'année suivante.</p>
+<p><strong>Besoin d'un accompagnement personnalisé pour votre installation en Espagne ?</strong> <a href="/contact">Contactez nos DAF externalisés basés à Barcelone</a> pour un diagnostic fiscal gratuit de 30 minutes.</p>`,
+      content: [],
+    },
+    "externaliser-comptabilite-guide": {
+      meta: {
+        title: "Externaliser la Comptabilité : Guide Complet pour Startups & PME | Iter Advisors",
+        description: "Externaliser la comptabilité : avantages, coûts, comparaison avec un comptable interne et conseils pour choisir le bon cabinet. Guide expert Iter Advisors 2026.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Externaliser la Comptabilité : Guide Complet pour Startups & PME",
+      publishedDate: "2026-05-13",
+      author: "Iter Advisors",
+      category: "Externalisation",
+      htmlContent: `<p>L'<strong>externalisation de la comptabilité</strong> est le premier pas vers une fonction financière professionnelle. Pour les startups et PME, c'est aussi un levier d'économie : 30 à 50 % moins cher qu'un comptable interne, avec une expertise souvent supérieure. Chez Iter Advisors, nous avons accompagné plus de 85 entreprises dans l'<a href="/services/comptabilite-externalisation">externalisation de leur comptabilité</a> — voici ce que nous avons appris.</p>
+<h2 id="definition">Qu'est-ce que l'externalisation de la comptabilité ?</h2>
+<p>L'externalisation consiste à confier la tenue de vos comptes à un expert-comptable ou à un cabinet spécialisé, plutôt que de la gérer en interne. Elle peut être totale (toute la comptabilité est externalisée) ou partielle (certaines tâches restent en interne).</p>
+<h2 id="avantages">Les 5 avantages de l'externalisation</h2>
+<ol>
+<li><strong>Réduction des coûts</strong> : 30 à 50 % moins cher qu'un salarié</li>
+<li><strong>Expertise garantie</strong> : un expert-comptable certifié, à jour sur la réglementation</li>
+<li><strong>Outils modernes</strong> : accès à Pennylane, Agicap, et autres outils cloud</li>
+<li><strong>Concentration sur le cœur de métier</strong> : vous vous concentrez sur votre business</li>
+<li><strong>Flexibilité</strong> : adaptez le périmètre selon votre croissance</li>
+</ol>
+<h2 id="vs-interne">Comptabilité externalisée vs comptable interne</h2>
+<table>
+<thead><tr><th>Critère</th><th>Externalisé</th><th>Interne</th></tr></thead>
+<tbody>
+<tr><td>Coût annuel</td><td>10 000 – 30 000 €</td><td>45 000 – 65 000 € (charges incluses)</td></tr>
+<tr><td>Expertise</td><td>Multi-clients, multi-secteurs</td><td>Single-company</td></tr>
+<tr><td>Outils</td><td>Cloud modernes (Pennylane, etc.)</td><td>Variable</td></tr>
+<tr><td>Disponibilité</td><td>Réactive (tickets, email, téléphone)</td><td>Présent en interne</td></tr>
+<tr><td>Scalabilité</td><td>Facile (changer de formule)</td><td>Recrutement nécessaire</td></tr>
+</tbody>
+</table>
+<h2 id="quand-externaliser">Quand externaliser ?</h2>
+<ul>
+<li><strong>&lt; 10 salariés</strong> : externalisation totale recommandée</li>
+<li><strong>10 – 50 salariés</strong> : externalisation + <a href="/daf-externalise/temps-partage">DAF à temps partagé</a></li>
+<li><strong>&gt; 50 salariés</strong> : comptable interne + <a href="/daf-externalise">DAF externalisé</a></li>
+</ul>
+<h2 id="outils">Les outils recommandés</h2>
+<ul>
+<li><strong><a href="/ressources/outils/pennylane">Pennylane</a></strong> : la meilleure UX pour les startups SaaS</li>
+<li><strong>Sage</strong> : pour les industries et les stocks complexes</li>
+<li><strong>Cegid Loop</strong> : pour le retail et les multi-établissements</li>
+</ul>
+<p>Pour comparer en profondeur, lisez notre <a href="/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements">comparatif Pennylane vs Sage</a> basé sur 40 déploiements.</p>
+<blockquote><p>« Nous avions un comptable interne qui partait en congés sans prévenir. Depuis que nous avons externalisé sur Pennylane avec Iter Advisors, nous avons une comptabilité à jour en temps réel — et nous avons économisé 20 000 € par an. » — <strong>CEO, startup SaaS</strong></p></blockquote>
+<h2 id="faq">FAQ</h2>
+<p><strong>Combien coûte l'externalisation ?</strong> 10 000 à 30 000 € par an selon le volume de transactions et le niveau de service.</p>
+<p><strong>Mes données sont-elles sécurisées ?</strong> Oui, les cabinets sont soumis au secret professionnel et utilisent des outils chiffrés conformes RGPD.</p>
+<p><strong>Puis-je garder la visibilité sur mes comptes ?</strong> Oui, avec Pennylane vous avez un accès temps réel à vos comptes, factures, et tableaux de bord.</p>
+<p><strong>Prêt à externaliser votre comptabilité ?</strong> Découvrez notre <a href="/services/comptabilite-externalisation">offre de comptabilité externalisée</a> ou <a href="/contact">contactez-nous pour un diagnostic gratuit</a>.</p>`,
+      content: [],
+    },
 
   },
   en: {
@@ -2576,6 +2721,67 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
         "La tecnología juega un papel central en la organización financiera moderna. Las herramientas adecuadas pueden automatizar tareas rutinarias, mejorar la precisión de los datos y proporcionar visibilidad en tiempo real del rendimiento financiero.",
         "Para muchas empresas en crecimiento, un modelo híbrido funciona mejor: un CFO externalizado proporciona supervisión estratégica y experiencia, mientras que un equipo financiero interno se encarga de las operaciones del día a día. Este es el modelo que defendemos en Iter Advisors.",
       ],
+    },
+    "que-es-fractional-cfo": {
+      meta: {
+        title: "¿Qué es un Fractional CFO? Guía Completa para Pymes y Startups | Iter Advisors",
+        description: "¿Qué es un Fractional CFO? Definición, misiones, ventajas y coste. Guía completa para pymes y startups que necesitan dirección financiera senior a tiempo parcial.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Recursos",
+        resourcesHref: "/es/recursos",
+        blogLabel: "Blog",
+        blogHref: "/es/recursos/blog",
+      },
+      h1: "¿Qué es un Fractional CFO? Guía Completa para Pymes y Startups",
+      publishedDate: "2026-05-13",
+      author: "Iter Advisors",
+      category: "Dirección financiera",
+      htmlContent: `<p>El <strong>Fractional CFO</strong> (o CFO a tiempo compartido) es un Director Financiero senior que trabaja en varias empresas simultáneamente, dedicando a cada una un número limitado de días por semana o mes. Es la solución ideal para pymes y startups que necesitan una dirección financiera profesional pero no tienen el volumen de trabajo — ni el presupuesto — para un CFO a tiempo completo.</p>
+<h2 id="que-es">¿Qué es un fractional CFO?</h2>
+<p>Un <strong>fractional CFO</strong> asume las mismas responsabilidades que un CFO interno :</p>
+<ul>
+<li>Estrategia financiera y planificación</li>
+<li>Gestión de tesorería y previsiones</li>
+<li>Reporting al board y a los inversores</li>
+<li>Control de gestión y presupuestos</li>
+<li>Acompañamiento en rondas de financiación</li>
+<li>Optimización fiscal</li>
+</ul>
+<p>La única diferencia : no está presente 5 días por semana. Interviene 1 a 3 días por semana — suficiente para estructurar la función financiera sin sobrecargar el presupuesto. Para más detalles, consulte nuestra página <a href="/es/externalizacion-daf">CFO Externalizado</a>.</p>
+<h2 id="vs-interno">Fractional CFO vs CFO interno</h2>
+<table>
+<thead><tr><th>Criterio</th><th>Fractional CFO</th><th>CFO interno</th></tr></thead>
+<tbody>
+<tr><td>Coste anual</td><td>24 000 – 96 000 €</td><td>100 000 – 213 000 € (cargas incluidas)</td></tr>
+<tr><td>Compromiso</td><td>Sin duración mínima</td><td>Contrato indefinido</td></tr>
+<tr><td>Tiempo de despliegue</td><td>1 – 2 semanas</td><td>3 – 6 meses (reclutamiento)</td></tr>
+<tr><td>Experiencia</td><td>Multi-sectorial</td><td>Single-company</td></tr>
+<tr><td>Red de contactos</td><td>Extensa (VCs, bancos, abogados)</td><td>Limitada</td></tr>
+</tbody>
+</table>
+<h2 id="cuando-contratar">¿Cuándo contratar un fractional CFO?</h2>
+<ol>
+<li><strong>Seed stage</strong> : tienes product-market fit pero ninguna visibilidad financiera</li>
+<li><strong>Series A</strong> : preparas una ronda de financiación y necesitas un modelo financiero</li>
+<li><strong>Crecimiento rápido</strong> : pasas de 10 a 50 empleados en 12 meses y la gestión financiera se desborda</li>
+<li><strong>Transición</strong> : tu CFO acaba de marcharse y necesitas una solución intermedia</li>
+</ol>
+<h2 id="ventajas">Las 5 ventajas del fractional CFO</h2>
+<ol>
+<li><strong>Reducción de costes hasta un 60 %</strong></li>
+<li><strong>Flexibilidad total</strong> : de 2 días/mes a tiempo completo</li>
+<li><strong>Visión externa y multi-sectorial</strong></li>
+<li><strong>Acceso a una red de expertos</strong> (VCs, bancos, abogados)</li>
+<li><strong>Operativo desde el primer día</strong></li>
+</ol>
+<blockquote><p>« Nuestro fractional CFO de Iter Advisors transformó nuestra gestión financiera en 3 meses. Pasamos de una contabilidad con 3 meses de retraso a un reporting mensual al board. Y nos acompañó en nuestra Series A de 3,2M€. » — <strong>CEO, EdTechFlow (caso cliente)</strong></p></blockquote>
+<h2 id="faq">FAQ</h2>
+<p><strong>¿Cuánto cuesta un fractional CFO ?</strong> Desde 2 000 €/mes para 2 días/semana. Las tarifas varían según el nivel de seniority y la complejidad de la misión.</p>
+<p><strong>¿Qué diferencia hay entre fractional CFO y part-time CFO ?</strong> Son sinónimos. « Fractional » es el término anglosajón estándar; en España también se utiliza « CFO a tiempo compartido ».</p>
+<p><strong>¿Un fractional CFO puede acompañar una ronda de financiación ?</strong> Sí, es una de sus misiones principales. Nuestros fractional CFOs en Iter Advisors han acompañado más de 100 M€ de levantamientos de capital.</p>
+<p><strong>¿Listo para contratar un fractional CFO ?</strong> Descubra nuestro servicio de <a href="/es/externalizacion-daf">CFO Externalizado</a> o <a href="/es/contact">contáctenos para un diagnóstico gratuito</a> de 30 minutos.</p>`,
+      content: [],
     },
   },
 };
