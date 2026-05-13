@@ -90,8 +90,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         locale="en"
         title={fallback.h1}
         breadcrumbs={fallback.breadcrumbs}
-        content={fallback.content}
+        content={fallback.htmlContent ? [] : fallback.content}
+        htmlContent={fallback.htmlContent}
         cmsNavigation={cmsNavigation}
+        publishedDate={fallback.publishedDate}
+        author={fallback.author}
+        category={fallback.category}
+        metaDescription={fallback.meta.description}
       />
     );
   }
