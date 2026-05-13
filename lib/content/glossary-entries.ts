@@ -143,48 +143,73 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     cfo: {
       meta: {
-        title: "CFO : Définition, Rôle et Différence avec le DAF | Iter Advisors",
+        title: "CFO — Définition, Rôle et Missions du Chief Financial Officer | Iter Advisors",
         description:
-          "Définition du CFO (Chief Financial Officer) : rôle, missions et différence avec le DAF. Guide rédigé par les experts financiers d'Iter Advisors.",
+          "CFO : définition complète du Chief Financial Officer, ses missions, la différence avec un DAF, et pourquoi les startups ont besoin d'un CFO externalisé. Guide par Iter Advisors.",
       },
-      h1: "CFO (Chief Financial Officer) : définition et rôle",
+      h1: "CFO — Définition, Rôle et Missions du Chief Financial Officer",
       sections: [
         {
           content: [
-            "Le **CFO** (Chief Financial Officer) est le titre anglophone du Directeur Financier d'une entreprise. En France, ce titre est de plus en plus utilisé dans les startups, les scale-ups et les entreprises à culture internationale, en remplacement ou en complément du titre traditionnel de **[DAF](/daf-externalise/metier)** (Directeur Administratif et Financier).",
+            "Le **CFO** (Chief Financial Officer) est le dirigeant financier d'une entreprise. Il dirige la fonction finance, assure la gestion de la trésorerie, supervise la comptabilité, et conseille la direction générale sur les décisions stratégiques à impact financier. Dans une startup, le CFO peut être la différence entre une croissance maîtrisée et une faillite évitable.",
+            "En France, le CFO est souvent appelé **[DAF](/daf-externalise/metier)** (Directeur Administratif et Financier). Les deux termes désignent globalement le même poste, même si le DAF français a traditionnellement une dimension administrative plus marquée.",
           ],
         },
         {
           heading: "Définition du CFO",
           content: [
-            "Le CFO est le responsable de la gestion financière d'une organisation. Il est membre du comité de direction (CODIR ou C-suite) et rend compte directement au CEO (Chief Executive Officer). Ses responsabilités couvrent la comptabilité, la trésorerie, le reporting financier, la planification financière (FP&A), la fiscalité, et souvent les relations avec les investisseurs (Investor Relations).",
+            "Le **Chief Financial Officer** (CFO) est le membre de la direction chargé de la stratégie financière de l'entreprise. Il est responsable de :",
+            "**La stratégie financière** : planification, prévisions, modèles financiers",
+            "**La gestion de la trésorerie** : cash-flow, prévisions de trésorerie, relations bancaires",
+            "**La comptabilité et le reporting** : comptes annuels, reporting mensuel, audit",
+            "**Le contrôle de gestion** : budgets, analyse des écarts, KPIs financiers",
+            "**Les relations avec les investisseurs** : levées de fonds, reporting board, M&A",
+            "**La fiscalité** : optimisation fiscale, conformité, subventions (CIR)",
           ],
         },
         {
-          heading: "CFO vs DAF : Quelle Différence ?",
+          heading: "CFO vs DAF : quelle différence ?",
           content: [
-            "Dans la pratique, CFO et DAF désignent le même poste. La différence est principalement culturelle et sectorielle.",
-            "Le titre **DAF** est plus courant dans les entreprises françaises traditionnelles (PME, ETI, grandes entreprises françaises). Il implique souvent un périmètre administratif plus large (juridique, RH dans certains cas).",
-            "Le titre **CFO** est privilégié dans les startups, les scale-ups, et les entreprises à culture internationale. Il est perçu comme plus moderne et plus orienté vers la stratégie financière.",
-            "Dans les deux cas, les missions sont similaires : pilotage de la trésorerie, reporting financier, accompagnement stratégique du dirigeant, relations avec les banques et les investisseurs.",
+            "**Appellation** : « CFO » est anglo-saxonne ; « DAF » est française.",
+            "**Focus principal** : le CFO se concentre sur la stratégie financière et les investisseurs ; le DAF combine administration et finance.",
+            "**Typologie d'entreprise** : on parle plus de CFO dans les startups, scale-ups et entreprises multinationales ; le DAF est la norme dans les PME, ETI et groupes français.",
+            "**Relations investisseurs** : centrales chez le CFO (VC, M&A), moindres chez le DAF.",
+            "**Dimension administrative** : limitée chez le CFO, marquée chez le DAF (juridique, RH).",
+            "**International** : très présent chez le CFO, plus local chez le DAF.",
+            "« Dans la pratique, chez nos clients startups, le DAF externalisé joue exactement le même rôle qu'un CFO. Il gère la stratégie financière, accompagne les levées de fonds, et présente au board. La différence est dans le nom, pas dans les missions. » — **Benjamin Ziza, Founding Partner & CFO, Iter Advisors**",
           ],
         },
         {
-          heading: "Le CFO Externalisé (Fractional CFO)",
+          heading: "Les missions d'un CFO dans une startup",
           content: [
-            "Le concept de **CFO externalisé** (ou Fractional CFO en anglais) est l'équivalent du **[DAF externalisé](/daf-externalise)** pour les entreprises à culture internationale. Il s'agit d'un CFO senior qui partage son temps entre plusieurs entreprises clientes, offrant une expertise de haut niveau à un coût adapté aux PME et aux startups.",
-            "Chez Iter Advisors, nos associés interviennent indifféremment sous le titre de DAF externalisé ou de CFO externalisé selon la culture de l'entreprise cliente. Pour en savoir plus sur nos services de **[DAF externalisé](/daf-externalise)**, consultez notre page dédiée.",
+            "**Phase Seed (CA < 1M€, < 15 personnes)** : mise en place de la comptabilité et des outils, suivi de la trésorerie, déclarations fiscales, premiers budgets.",
+            "**Phase Series A (CA 1-5M€, 15-50 personnes)** : construction du modèle financier, reporting mensuel au board, accompagnement à la levée de fonds, contrôle de gestion, optimisation fiscale (CIR).",
+            "**Phase Series B+ (CA > 5M€, > 50 personnes)** : stratégie financière et M&A, consolidation multi-sociétés, relations bancaires et dette, supervision de l'équipe finance, préparation à l'exit (IPO ou rachat).",
+          ],
+        },
+        {
+          heading: "Le CFO externalisé : la solution pour les PME et startups",
+          content: [
+            "Toutes les entreprises n'ont pas besoin (ni les moyens) d'un CFO à temps plein. Le **CFO externalisé** (ou [DAF externalisé](/daf-externalise)) offre :",
+            "**Un accès à une expertise de niveau C-suite** sans le coût d'un salarié (30 à 50 % moins cher)",
+            "**Une flexibilité totale** : de 2 jours/mois à temps plein selon les besoins",
+            "**Une vision multi-sectorielle** : nos CFOs interviennent sur 10 à 15 entreprises par an",
+            "**Un réseau** : accès à des VCs, banquiers, avocats, experts-comptables",
+            "Pour aller plus loin, découvrez notre offre de [DAF externalisé](/daf-externalise) ou comparez avec un [expert-comptable](/ressources/blog/daf-externalise-vs-expert-comptable). En anglais, lisez notre page [Fractional CFO](/en/fractional-cfo).",
           ],
         },
         {
           heading: "FAQ - CFO",
           content: [
-            "**Quelle est la différence entre CFO et CFA ?** Le CFA (Chartered Financial Analyst) est une certification professionnelle délivrée par le CFA Institute, principalement utilisée dans la gestion d'actifs et l'analyse financière. Le CFO est un titre de poste (directeur financier). Les deux n'ont rien à voir.",
-            "**Un CFO peut-il être externalisé ?** Oui. Le Fractional CFO (CFO externalisé) est un modèle de plus en plus répandu, notamment aux États-Unis et au Royaume-Uni. En France, on parle plutôt de DAF externalisé, mais le concept est identique.",
+            "**Quelle est la différence entre un CFO et un expert-comptable ?** L'expert-comptable gère la comptabilité passée (déclarations, bilans). Le CFO pilote la stratégie financière future (prévisions, levées de fonds, board). Les deux sont complémentaires.",
+            "**À quel stade une startup a-t-elle besoin d'un CFO ?** Dès 10 salariés et/ou quand vous préparez une levée de fonds. Un CFO seed coûte 2 000 à 3 500 €/mois pour 2 jours/semaine.",
+            "**CFO salarié vs CFO externalisé : que choisir ?** < 50 personnes = externalisé (plus flexible, moins cher). > 50 personnes avec une finance complexe = salarié.",
+            "**Le CFO fait-il aussi de la paie et du RH ?** Généralement non. La paie est gérée par un outil ([PayFit](/ressources/outils/payfit), [Silae](/ressources/outils/silae)) ou un cabinet. Le CFO peut superviser la fonction RH mais ne la gère pas directement.",
+            "**Quelle est la différence entre CFO et CFA ?** Le CFA (Chartered Financial Analyst) est une certification professionnelle. Le CFO est un titre de poste. Les deux n'ont rien à voir.",
           ],
         },
       ],
-      ctaButton: "Prendre rendez-vous",
+      ctaButton: "Besoin d'un CFO ? Diagnostic gratuit",
     },
     // ─── 8 pages glossaire ajoutées via TICKET 21 ──────────────────────
     "besoin-fonds-roulement-bfr": {
