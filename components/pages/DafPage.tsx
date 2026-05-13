@@ -690,11 +690,12 @@ export default function DafPage({
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {[
-              { title: locale === "fr" ? "DAF à temps partagé" : locale === "en" ? "Part-time CFO" : "CFO a tiempo compartido", href: locale === "fr" ? "/daf-externalise/temps-partage" : `/${locale}/daf-externalise/temps-partage`, icon: Network },
-              { title: locale === "fr" ? "DAF de transition" : locale === "en" ? "Transition CFO" : "DAF de transición", href: locale === "fr" ? "/daf-externalise/transition" : `/${locale}/daf-externalise/transition`, icon: BarChart3 },
-              { title: locale === "fr" ? "Métier de DAF" : locale === "en" ? "CFO role & skills" : "Profesión de DAF", href: locale === "fr" ? "/daf-externalise/metier" : `/${locale}/daf-externalise/metier`, icon: Shield },
-              { title: locale === "fr" ? "Tarifs du DAF externalisé" : locale === "en" ? "CFO pricing" : "Tarifas DAF externalizado", href: locale === "fr" ? "/daf-externalise/tarifs" : `/${locale}/daf-externalise/tarifs`, icon: DollarSign },
-              { title: locale === "fr" ? "DAF externalisé par secteur" : locale === "en" ? "CFO by industry" : "DAF externalizado por sector", href: locale === "fr" ? "/daf-externalise/secteurs" : `/${locale}/daf-externalise/secteurs`, icon: Compass },
+              // SEO: Use canonical localized URLs — avoids redirect chains through middleware
+              { title: locale === "fr" ? "DAF à temps partagé" : locale === "en" ? "Part-time CFO" : "CFO a tiempo compartido", href: locale === "fr" ? "/daf-externalise/temps-partage" : locale === "en" ? "/en/fractional-cfo/shared-time" : "/es/externalizacion-daf/tiempo-compartido", icon: Network },
+              { title: locale === "fr" ? "DAF de transition" : locale === "en" ? "Transition CFO" : "DAF de transición", href: locale === "fr" ? "/daf-externalise/transition" : locale === "en" ? "/en/fractional-cfo/transition" : "/es/externalizacion-daf/transition", icon: BarChart3 },
+              { title: locale === "fr" ? "Métier de DAF" : locale === "en" ? "CFO role & skills" : "Profesión de DAF", href: locale === "fr" ? "/daf-externalise/metier" : locale === "en" ? "/en/fractional-cfo/metier" : "/es/externalizacion-daf/metier", icon: Shield },
+              { title: locale === "fr" ? "Tarifs du DAF externalisé" : locale === "en" ? "CFO pricing" : "Tarifas DAF externalizado", href: locale === "fr" ? "/daf-externalise/tarifs" : locale === "en" ? "/en/fractional-cfo/tarifs" : "/es/externalizacion-daf/tarifas", icon: DollarSign },
+              { title: locale === "fr" ? "DAF externalisé par secteur" : locale === "en" ? "CFO by industry" : "DAF externalizado por sector", href: locale === "fr" ? "/daf-externalise/secteurs" : locale === "en" ? "/en/fractional-cfo/secteurs" : "/es/externalizacion-daf/sectores", icon: Compass },
             ].map((service, i) => (
               <Link
                 key={i}

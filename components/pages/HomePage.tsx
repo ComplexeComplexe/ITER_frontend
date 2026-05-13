@@ -689,9 +689,39 @@ export default function HomePage({
                   href={locale === "fr" ? "/daf-externalise" : locale === "en" ? "/en/fractional-cfo" : "/es/externalizacion-daf"}
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-iter-violet text-iter-violet font-semibold hover:bg-iter-violet/5 transition-all duration-300"
                 >
-                  {locale === "fr" ? "En savoir plus" : locale === "en" ? "Learn more" : "Saber m\u00e1s"}
+                  {locale === "fr" ? "En savoir plus" : locale === "en" ? "Learn more" : "Saber más"}
                   <ArrowRight size={16} />
                 </Link>
+              </div>
+              {/* SEO: Internal links to cocon sub-pages — distributes PageRank to key pages */}
+              <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1">
+                {locale === "fr" && [
+                  { href: "/daf-externalise/tarifs", label: "Tarifs du DAF externalisé" },
+                  { href: "/daf-externalise/temps-partage", label: "DAF à temps partagé" },
+                  { href: "/daf-externalise/metier", label: "Métier de DAF" },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} className="text-xs text-muted-foreground hover:text-iter-violet transition-colors underline-offset-2 hover:underline">
+                    {link.label}
+                  </Link>
+                ))}
+                {locale === "en" && [
+                  { href: "/en/fractional-cfo/tarifs", label: "CFO pricing" },
+                  { href: "/en/fractional-cfo/shared-time", label: "Part-time CFO" },
+                  { href: "/en/fractional-cfo/metier", label: "CFO role & skills" },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} className="text-xs text-muted-foreground hover:text-iter-violet transition-colors underline-offset-2 hover:underline">
+                    {link.label}
+                  </Link>
+                ))}
+                {locale === "es" && [
+                  { href: "/es/externalizacion-daf/tarifas", label: "Tarifas CFO externalizado" },
+                  { href: "/es/externalizacion-daf/tiempo-compartido", label: "CFO a tiempo compartido" },
+                  { href: "/es/externalizacion-daf/metier", label: "Profesión de DAF" },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} className="text-xs text-muted-foreground hover:text-iter-violet transition-colors underline-offset-2 hover:underline">
+                    {link.label}
+                  </Link>
+                ))}
               </div>
             </motion.div>
           </div>

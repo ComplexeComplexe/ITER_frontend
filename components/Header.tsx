@@ -24,6 +24,8 @@ export default function Header({
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [langOpen, setLangOpen] = useState(false);
   const langSwitcherRef = useRef<HTMLDivElement | null>(null);
+  // HEADER-01: Close delay prevents accidental dropdown dismissal when moving mouse
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const nav = cmsNavigation && cmsNavigation.length > 0 ? cmsNavigation : navigation[locale];
   const homePath = getHomePath(locale);
@@ -107,8 +109,15 @@ export default function Header({
             <div
               key={item.href}
               className="relative"
-              onMouseEnter={() => item.children && setOpenDropdown(i)}
-              onMouseLeave={() => setOpenDropdown(null)}
+              onMouseEnter={() => {
+                // HEADER-01: Cancel any pending close timer
+                if (closeTimer.current) clearTimeout(closeTimer.current);
+                if (item.children) setOpenDropdown(i);
+              }}
+              onMouseLeave={() => {
+                // HEADER-01: 150ms delay prevents accidental close when moving to dropdown
+                closeTimer.current = setTimeout(() => setOpenDropdown(null), 150);
+              }}
             >
               <Link
                 href={item.href}
@@ -131,7 +140,11 @@ export default function Header({
 
               {/* Dropdown / Mega-menu */}
               {item.children && openDropdown === i && (
-                <div className={`absolute top-full ${item.megaMenu ? 'left-1/2 -translate-x-1/2' : 'left-0'} pt-2`}>
+                <div
+                  className={`absolute top-full ${item.megaMenu ? 'left-1/2 -translate-x-1/2' : 'left-0'} pt-2`}
+                  onMouseEnter={() => { if (closeTimer.current) clearTimeout(closeTimer.current); }}
+                  onMouseLeave={() => { closeTimer.current = setTimeout(() => setOpenDropdown(null), 150); }}
+                >
                   {item.megaMenu ? (
                     <div className="w-[520px] bg-white/95 backdrop-blur-md border border-white/20 rounded-xl p-5 shadow-xl shadow-iter-violet/20">
                       <div className="grid grid-cols-2 gap-6">

@@ -26,8 +26,8 @@ const navFr: NavItem[] = [
   {
     title: "Expertises",
     href: "/daf-externalise",
+    // HEADER-02: Removed duplicate "Direction Financière (DAF)" link (same href as parent)
     children: [
-      { text: "Direction Financière (DAF)", href: "/daf-externalise" },
       { text: "Ressources Humaines (DRH)", href: "/drh-externalise" },
       { text: "M&A & Levée de fonds", href: "/services/accompagnement-levee-de-fond" },
     ],
@@ -56,8 +56,8 @@ const navFr: NavItem[] = [
   {
     title: "Le Cabinet",
     href: "/a-propos",
+    // HEADER-02: Removed duplicate "Notre équipe" link (same href as parent)
     children: [
-      { text: "Notre équipe", href: "/a-propos" },
       { text: "Nos clients", href: "/clients" },
       { text: "Carrières", href: "/jobs" },
     ],
@@ -69,8 +69,8 @@ const navEn: NavItem[] = [
   {
     title: "Expertise",
     href: "/en/fractional-cfo",
+    // HEADER-02: Removed duplicate "Financial Direction (CFO)" link (same href as parent)
     children: [
-      { text: "Financial Direction (CFO)", href: "/en/fractional-cfo" },
       { text: "Human Resources (HR)", href: "/en/hr-outsourcing" },
       { text: "M&A & Fundraising", href: "/en/services/fund-raising-support" },
     ],
@@ -99,8 +99,8 @@ const navEn: NavItem[] = [
   {
     title: "About",
     href: "/en/a-propos",
+    // HEADER-02: Removed duplicate "Our Team" link (same href as parent)
     children: [
-      { text: "Our Team", href: "/en/a-propos" },
       { text: "Our Clients", href: "/en/clients" },
       { text: "Careers", href: "/en/jobs" },
     ],
@@ -112,8 +112,8 @@ const navEs: NavItem[] = [
   {
     title: "Especialidades",
     href: "/es/externalizacion-daf",
+    // HEADER-02: Removed duplicate "Dirección Financiera (CFO)" link (same href as parent)
     children: [
-      { text: "Dirección Financiera (CFO)", href: "/es/externalizacion-daf" },
       { text: "Recursos Humanos (RRHH)", href: "/es/externalizacion-rrhh" },
       { text: "M&A y Financiación", href: "/es/services/soporte-financiacion" },
     ],
@@ -142,8 +142,8 @@ const navEs: NavItem[] = [
   {
     title: "La Empresa",
     href: "/es/quienes-somos",
+    // HEADER-02: Removed duplicate "Nuestro equipo" link (same href as parent)
     children: [
-      { text: "Nuestro equipo", href: "/es/quienes-somos" },
       { text: "Nuestros clientes", href: "/es/clients" },
       { text: "Carreras", href: "/es/jobs" },
     ],
