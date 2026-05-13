@@ -4,35 +4,24 @@ import BlogPostPage from "@/components/pages/BlogPostPage";
 import { getBlogArticleBySlug, getBlogArticles, getCmsNavigation, strapiMediaUrl } from "@/lib/strapi";
 import { buildStrapiCollectionMetadata } from "@/lib/metadata";
 import { blogPosts } from "@/lib/content/blog-posts";
-import { getLocalePath } from "@/lib/i18n";
 
-const blogBasePath = "/ressources/blog";
+const blogBasePath = "/recursos/blog";
 
-const breadcrumbsByLocale = {
-  fr: {
-    resourcesLabel: "Ressources",
-    resourcesHref: "/ressources",
-    blogLabel: "Blog",
-    blogHref: "/ressources/blog",
-  },
-  en: {
-    resourcesLabel: "Resources",
-    resourcesHref: "/en/ressources",
-    blogLabel: "Blog",
-    blogHref: "/en/ressources/blog",
-  },
-  es: {
-    resourcesLabel: "Recursos",
-    resourcesHref: "/es/ressources",
-    blogLabel: "Blog",
-    blogHref: "/es/ressources/blog",
-  },
-} as const;
+const breadcrumbs = {
+  resourcesLabel: "Recursos",
+  resourcesHref: "/es/recursos",
+  blogLabel: "Blog",
+  blogHref: "/es/recursos/blog",
+};
 
 export async function generateStaticParams() {
   try {
     const articles = await getBlogArticles("es");
-    if (articles.length > 0) return articles.filter((a) => typeof a.slug === "string" && a.slug.length > 0).map((a) => ({ slug: a.slug }));
+    if (articles.length > 0) {
+      return articles
+        .filter((a) => typeof a.slug === "string" && a.slug.length > 0)
+        .map((a) => ({ slug: a.slug }));
+    }
   } catch {
     // ignore
   }
@@ -50,13 +39,13 @@ export async function generateMetadata({
     endpoint: "blog-articles",
     slug,
     locale: "es",
-    path: getLocalePath("es", `${blogBasePath}/${slug}`),
+    path: `${blogBasePath}/${slug}`,
     fallbackTitle: fallback?.meta.title ?? `${slug} | Iter Advisors`,
     fallbackDescription: fallback?.meta.description ?? "",
     localizedPaths: {
-      fr: `${blogBasePath}/${slug}`,
-      en: `${blogBasePath}/${slug}`,
-      es: `${blogBasePath}/${slug}`,
+      fr: `/ressources/blog/${slug}`,
+      en: `/ressources/blog/${slug}`,
+      es: `/recursos/blog/${slug}`,
     },
   });
 }
@@ -74,7 +63,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <BlogPostPage
         locale="es"
         title={article.title}
-        breadcrumbs={breadcrumbsByLocale.es}
+        breadcrumbs={breadcrumbs}
         blocks={article.content}
         cmsNavigation={cmsNavigation}
         slug={article.slug}
@@ -89,7 +78,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <BlogPostPage
         locale="es"
         title={fallback.h1}
-        breadcrumbs={fallback.breadcrumbs}
+        breadcrumbs={{ ...fallback.breadcrumbs, resourcesHref: "/es/recursos", blogHref: "/es/recursos/blog" }}
         content={fallback.htmlContent ? [] : fallback.content}
         htmlContent={fallback.htmlContent}
         cmsNavigation={cmsNavigation}
