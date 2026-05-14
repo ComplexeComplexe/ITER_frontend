@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#FFFFFF"/>
+
+  <!-- masthead -->
+  <line x1="60" y1="48" x2="1140" y2="48" stroke="#0F1740" stroke-width="1" opacity="0.15"/>
+  <text x="60" y="38" fill="#0F1740" font-family="Georgia, serif" font-size="13" letter-spacing="3">ITER ADVISORS</text>
+  <text x="1140" y="38" fill="#0F1740" font-family="Georgia, serif" font-size="13" letter-spacing="3" text-anchor="end">VOL. 01 · 2026 · N° 16</text>
+  <line x1="60" y1="68" x2="1140" y2="68" stroke="#0F1740" stroke-width="3"/>
+
+  <!-- kicker + category badge -->
+  <text x="60" y="115" fill="#2E7D5B" font-family="-apple-system, Inter, sans-serif" font-size="13" font-weight="600" letter-spacing="3">GUIDE</text>
+  <rect x="60" y="135" width="51" height="34" rx="17" fill="#DDEEDC"/>
+  <text x="85.5" y="157" fill="#1F5A3C" font-family="-apple-system, Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="1.6" text-anchor="middle">RH</text>
+
+  <!-- huge serif title -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#0F1740">
+    <text x="60" y="230" font-size="72" font-weight="500" letter-spacing="-2">Le DRH</text>
+    <text x="60" y="308" font-size="72" font-weight="500" letter-spacing="-2">externalise</text>
+  </g>
+
+  <!-- accent rule under title -->
+  <line x1="60" y1="326" x2="120" y2="326" stroke="#2E7D5B" stroke-width="4"/>
+
+  <!-- italic subtitle -->
+  <g font-family="Georgia, serif" fill="#4B5563" font-style="italic">
+    <text x="60" y="360" font-size="24" font-weight="400">Quand y faire appel, et pourquoi ca</text>
+    <text x="60" y="392" font-size="24" font-weight="400">paye</text>
+  </g>
+
+  <!-- illustration block, right -->
+  <g transform="translate(780 220)">
+    <rect x="0" y="0" width="360" height="360" rx="8" fill="#DDEEDC"/>
+    <g transform="translate(70 70)">
+      <g stroke="#1F5A3C" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="70.4" cy="77" r="22"/>
+      <path d="M 39.6 165 C 39.6 127.6, 101.2 127.6, 101.2 165"/>
+      <circle cx="143" cy="70.4" r="17.6"/>
+      <path d="M 121.00000000000001 158.4 C 121.00000000000001 121.00000000000001, 171.6 121.00000000000001, 171.6 158.4"/>
+    </g>
+    </g>
+    <rect x="0" y="0" width="92" height="30" fill="#2E7D5B"/>
+    <text x="46" y="20" fill="white" font-family="-apple-system, Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="2.4" text-anchor="middle">FIG. 16</text>
+  </g>
+
+  <!-- bottom rule + brand stamp -->
+  <line x1="60" y1="820" x2="1140" y2="820" stroke="#0F1740" stroke-width="1" opacity="0.15"/>
+  <circle cx="78" cy="858" r="12" fill="#6C3AED"/>
+  <text x="100" y="864" fill="#0F1740" font-family="Georgia, serif" font-style="italic" font-size="16">Iter Advisors — DAF &amp; DRH externalisés</text>
+  <text x="1140" y="864" fill="#0F1740" opacity="0.55" font-family="-apple-system, Inter, sans-serif" font-size="13" text-anchor="end" letter-spacing="0.5">iteradvisors.com/ressources/blog</text>
+</svg>

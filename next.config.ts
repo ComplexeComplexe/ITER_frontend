@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // Allow first-party editorial SVG covers under /images/blog/covers/.
+    // Hardened with a strict CSP so the rendered SVG cannot execute
+    // scripts even if our own assets are ever tampered with.
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   experimental: {
     optimizePackageImports: ["framer-motion", "lucide-react"],
