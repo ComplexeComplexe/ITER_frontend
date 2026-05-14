@@ -45,7 +45,7 @@ export default async function Page() {
       }}
       readingTime={10}
       dateModified="2026-05-01T00:00:00Z"
-      heroImage="/images/blog/levee-de-fonds.webp"
+      heroImage="/images/blog/covers/levee-de-fonds-guide.svg"
       toc={[
         { id: "pourquoi", label: "1. Pourquoi bien préparer sa levée ?" },
         { id: "timeline", label: "2. Timeline et étapes clés" },

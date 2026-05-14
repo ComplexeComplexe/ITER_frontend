@@ -45,7 +45,7 @@ export default async function Page() {
       }}
       readingTime={9}
       dateModified="2026-05-01T00:00:00Z"
-      heroImage="/images/blog/daf-externalise.webp"
+      heroImage="/images/blog/covers/daf-externalise-guide.svg"
       toc={[
         { id: "definition", label: "1. Qu'est-ce qu'un DAF externalisé ?" },
         { id: "missions", label: "2. Missions et responsabilités" },

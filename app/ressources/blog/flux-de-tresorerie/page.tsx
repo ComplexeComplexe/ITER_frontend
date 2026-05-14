@@ -35,7 +35,7 @@ export default function FluxDeTresorerieePage() {
       }}
       readingTime={10}
       dateModified="2026-05-01"
-      heroImage="/images/blog/flux-de-tresorerie.webp"
+      heroImage="/images/blog/covers/flux-de-tresorerie.svg"
       toc={[
         { id: "definition", label: "1. Définition et importance" },
         { id: "trois-types", label: "2. Les trois types de flux" },

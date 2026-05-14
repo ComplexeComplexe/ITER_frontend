@@ -35,7 +35,7 @@ export default function EssentielsOutilsTechFinancePage() {
       }}
       readingTime={9}
       dateModified="2026-05-01"
-      heroImage="/images/blog/essentiels-outils-tech-finance.webp"
+      heroImage="/images/blog/covers/essentiels-outils-tech-finance.svg"
       toc={[
         { id: "pourquoi-digitaliser", label: "1. Pourquoi digitaliser votre finance ?" },
         { id: "stack-essentiels", label: "2. Le stack essentiels : 4 catégories" },

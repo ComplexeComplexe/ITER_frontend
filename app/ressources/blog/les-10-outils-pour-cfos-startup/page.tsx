@@ -35,7 +35,7 @@ export default function Outils10CfosStartupPage() {
       }}
       readingTime={12}
       dateModified="2026-05-01"
-      heroImage="/images/blog/10-outils-cfos-startup.webp"
+      heroImage="/images/blog/covers/les-10-outils-pour-cfos-startup.svg"
       toc={[
         { id: "comptabilite", label: "1. Comptabilité cloud et automatisation" },
         { id: "tresorerie", label: "2. Trésorerie et prévisions" },

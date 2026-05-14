@@ -35,7 +35,7 @@ export default function DafDrhExternalisationSynergieePage() {
       }}
       readingTime={10}
       dateModified="2026-05-01"
-      heroImage="/images/blog/daf-drh-synergie.webp"
+      heroImage="/images/blog/covers/daf-drh-externalises-synergie.svg"
       toc={[
         { id: "pourquoi-synergie", label: "1. Pourquoi cette synergie ?" },
         { id: "synergies-majeures", label: "2. Les 5 synergies majeures" },

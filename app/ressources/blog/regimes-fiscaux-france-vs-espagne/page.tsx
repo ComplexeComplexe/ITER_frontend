@@ -45,7 +45,7 @@ export default async function Page() {
       }}
       readingTime={8}
       dateModified="2026-05-01T00:00:00Z"
-      heroImage="/images/blog/regimes-fiscaux-france-vs-espagne.webp"
+      heroImage="/images/blog/covers/regimes-fiscaux-france-vs-espagne.svg"
       toc={[
         { id: "impot-societes", label: "1. Impôt sur les sociétés (IS)" },
         { id: "tva", label: "2. TVA et numéro INTRA-communautaire" },

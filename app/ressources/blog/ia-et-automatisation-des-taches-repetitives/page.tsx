@@ -35,7 +35,7 @@ export default function IaAutomatisationFinancePage() {
       }}
       readingTime={12}
       dateModified="2026-05-01"
-      heroImage="/images/blog/ia-automatisation-finance.webp"
+      heroImage="/images/blog/covers/ia-et-automatisation-des-taches-repetitives.svg"
       toc={[
         { id: "pourquoi-ia-maintenant", label: "1. Pourquoi l'IA en finance, maintenant ?" },
         { id: "taches-prioritaires", label: "2. Top 5 des tâches à automatiser" },
