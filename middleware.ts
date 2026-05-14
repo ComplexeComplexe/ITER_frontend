@@ -151,6 +151,18 @@ const SLUG_REDIRECTS: Record<string, string> = {
   "/es/daf-externalise/secteurs": "/es/externalizacion-daf",
   "/es/daf-externalise/tarifs": "/es/externalizacion-daf",
   "/es/ressources/blog": "/es/recursos/blog",
+
+  /* ── POST-MIG-02: 404s reported post-Strapi decommission ──────────── */
+  // /cookie-policy (root FR) is not a real page — canonical FR is /politique-cookies.
+  "/cookie-policy": "/politique-cookies",
+  // /en/ressources/outils — the EN canonical is /en/ressources/tools.
+  "/en/ressources/outils": "/en/ressources/tools",
+  // /es/fractional-cfo — the ES canonical is /es/externalizacion-daf.
+  "/es/fractional-cfo": "/es/externalizacion-daf",
+  "/es/fractional-cfo/metier": "/es/externalizacion-daf/metier",
+  "/es/fractional-cfo/shared-time": "/es/externalizacion-daf/tiempo-compartido",
+  "/es/fractional-cfo/transition": "/es/externalizacion-daf/transition",
+  // (/es/fractional-cfo-barcelona is already mapped above, line ~141)
 };
 
 /* ── Orphaned fiche-metier slugs (not in system) ───────────────────── */
@@ -191,6 +203,10 @@ for (const [frSlug, map] of Object.entries(FICHE_METIER_SLUG_MAP)) {
 }
 
 /* ── Blog slugs that were in sitemap but have no content ───────────── */
+/* CONTENT-02: only slugs that no longer have content anywhere (no static
+ * entry in lib/content/blog-posts.ts and no dedicated page.tsx) belong
+ * here. Anything that exists is removed so the request reaches its real
+ * page instead of being redirected to the listing. */
 const ORPHAN_BLOG_SLUGS = [
   "cout-daf-externalise",
   "daf-externalise-startup",
@@ -205,30 +221,22 @@ const ORPHAN_BLOG_SLUGS = [
   "outils-daf-externalise-2026",
   "daf-externalise-barcelone",
   "previsionnel-tresorerie-guide-pme",
-  // Missing blog articles found in GSC coverage report
+  // Old GSC coverage slugs that genuinely have no content anywhere.
+  // `essentiels-outils-tech-finance` removed — it has a dedicated page.tsx.
   "consequences-financieres-cyberattaques",
-  "essentiels-outils-tech-finance",
   "anticiper-financierement-ses-recrutements-guide-pratique",
 ];
 
 /* ── FR-only blog slugs (no EN/ES translation) ────────────────────── */
-/* Slugs with translations available in lib/content/blog-posts.ts → EN/ES
- * blocks are removed from this list so the [slug] routes serve the
- * translated content instead of 301-ing back to FR (SEO ticket FINAL-04). */
+/* CONTENT-02 pass: only keep slugs that (1) exist in FR and (2) have NO
+ * EN/ES version in lib/content/blog-posts.ts. Articles that have a
+ * translation in the static content are removed so the [slug] route
+ * serves them instead of redirecting EN/ES users to FR; slugs that
+ * don't exist anywhere are removed too so they 404 honestly. */
 const FR_ONLY_BLOG_SLUGS = [
-  // flux-de-tresorerie — translated in EN and ES (FINAL-04)
   "la-modernisation-du-role-de-cfo",
   "les-10-outils-pour-les-cfos-en-start-up",
-  "organiser-sa-direction-financiere",
-  "essentiels-outils-tech-finance",
-  "ia-et-automatisation-des-taches-repetitives-du-departement-finance",
-  "consequences-financieres-cyberattaques",
-  "levee-de-fonds-dilutif-vs-non-dilutif",
   "regimes-fiscaux-france-vs-espagne",
-  "anticiper-financierement-ses-recrutements-guide-pratique",
-  "ia-act-opportunite-fintechs",
-  // cout-daf-externalise-tarifs-prix-2026 — translated in EN and ES (FINAL-04)
-  // daf-externalise-vs-daf-salarie — translated in EN and ES (FINAL-04)
   "checklist-due-diligence-levee-de-fonds",
   "daf-drh-externalises-synergie",
 ];
