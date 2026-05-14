@@ -4,9 +4,22 @@ import { ArrowRight } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getResourcesContent } from "@/lib/content/resources";
 import type { CmsNavItem } from "@/lib/strapi";
+import { getStaticBlogListing } from "@/lib/blog-listing";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
+
+const NEWS_HEADINGS: Record<Locale, string[]> = {
+  fr: ["Actualités", "Articles"],
+  en: ["News", "Articles", "Latest"],
+  es: ["Noticias", "Actualidades", "Artículos"],
+};
+
+const NEWS_TAG: Record<Locale, string> = {
+  fr: "Blog",
+  en: "Blog",
+  es: "Blog",
+};
 
 export default function ResourcesPage({
   locale,
@@ -16,6 +29,29 @@ export default function ResourcesPage({
   cmsNavigation?: CmsNavItem[];
 }) {
   const t = getResourcesContent(locale);
+
+  // Replace the hard-coded "Actualités" cards with the 4 newest static
+  // articles from lib/content/blog-posts.ts so /ressources stays in sync
+  // with /ressources/blog (which now lists all 26 static articles).
+  const newsHeadings = NEWS_HEADINGS[locale];
+  const newsTag = NEWS_TAG[locale];
+  const latest = getStaticBlogListing(locale).slice(0, 4);
+  const categories = t.categories.map((category) => {
+    if (!newsHeadings.includes(category.heading) || latest.length === 0) {
+      return category;
+    }
+    return {
+      ...category,
+      cards: latest.map((article) => ({
+        title: article.title,
+        href: `${locale === "fr" ? "" : "/" + locale}/ressources/blog/${article.slug}`,
+        image:
+          (article.featuredImage as unknown as { url?: string })?.url ||
+          "/images/blog/placeholder.webp",
+        tag: newsTag,
+      })),
+    };
+  });
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
@@ -33,7 +69,7 @@ export default function ResourcesPage({
       </section>
 
       {/* Categories */}
-      {t.categories.map((category, ci) => (
+      {categories.map((category, ci) => (
         <section
           key={ci}
           className={
