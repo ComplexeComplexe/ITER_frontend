@@ -4,6 +4,7 @@ import BlogPostPage from "@/components/pages/BlogPostPage";
 import { getBlogArticleBySlug, getBlogArticles, getCmsNavigation, getTeamMembers, strapiMediaUrl } from "@/lib/strapi";
 import { buildStrapiCollectionMetadata } from "@/lib/metadata";
 import { blogPosts } from "@/lib/content/blog-posts";
+import { BLOG_ILLUSTRATIONS } from "@/lib/blog-illustrations";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 
 const blogBasePath = "/recursos/blog";
@@ -99,6 +100,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         category={fallback.category}
         metaDescription={fallback.meta.description}
         teamMembers={teamSource}
+        bodyImage={BLOG_ILLUSTRATIONS[slug]}
       />
     );
   }
