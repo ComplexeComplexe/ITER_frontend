@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import BlogListingPage from "@/components/pages/BlogListingPage";
 import { getBlogArticles, getCmsNavigation } from "@/lib/strapi";
 import { buildMetadata } from "@/lib/metadata";
+import { getStaticBlogListing } from "@/lib/blog-listing";
 
 export const metadata: Metadata = buildMetadata({
   locale: "es",
@@ -11,10 +12,25 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default async function Page() {
-  const [articles, cmsNavigation] = await Promise.all([
-    getBlogArticles("es"),
-    getCmsNavigation("es"),
-  ]);
+  const staticArticles = getStaticBlogListing("es");
+  let articles = staticArticles;
+  try {
+    const strapiArticles = await getBlogArticles("es");
+    if (strapiArticles && strapiArticles.length > 0) {
+      const known = new Set(staticArticles.map((a) => a.slug));
+      articles = [...staticArticles, ...strapiArticles.filter((a) => !known.has(a.slug))];
+    }
+  } catch {
+    /* Strapi disabled — static list is fine. */
+  }
+
+  let cmsNavigation;
+  try {
+    cmsNavigation = await getCmsNavigation("es");
+  } catch {
+    cmsNavigation = undefined;
+  }
+
   return (
     <BlogListingPage
       locale="es"

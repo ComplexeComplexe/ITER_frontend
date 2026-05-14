@@ -1,99 +1,36 @@
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import BlogPostPage from "@/components/pages/BlogPostPage";
-import { getBlogArticleBySlug, getBlogArticles, getCmsNavigation, strapiMediaUrl } from "@/lib/strapi";
-import { buildStrapiCollectionMetadata } from "@/lib/metadata";
-import { blogPosts } from "@/lib/content/blog-posts";
-import { getLocalePath } from "@/lib/i18n";
+import BlogListingPage from "@/components/pages/BlogListingPage";
+import { getBlogArticles, getCmsNavigation } from "@/lib/strapi";
+import { buildMetadata } from "@/lib/metadata";
+import { getStaticBlogListing } from "@/lib/blog-listing";
 
-const blogBasePath = "/ressources/blog";
+export const metadata: Metadata = buildMetadata({
+  locale: "es",
+  title: "Blog Finanzas | Iter Advisors",
+  description:
+    "Blog de finanzas para pymes y startups. Artículos sobre CFO externalizado, tesorería, levantamiento de capital. Consejos y tendencias 2026.",
+  path: "/recursos/blog",
+});
 
-const breadcrumbsByLocale = {
-  fr: {
-    resourcesLabel: "Ressources",
-    resourcesHref: "/ressources",
-    blogLabel: "Blog",
-    blogHref: "/ressources/blog",
-  },
-  en: {
-    resourcesLabel: "Resources",
-    resourcesHref: "/en/ressources",
-    blogLabel: "Blog",
-    blogHref: "/en/ressources/blog",
-  },
-  es: {
-    resourcesLabel: "Recursos",
-    resourcesHref: "/es/ressources",
-    blogLabel: "Blog",
-    blogHref: "/es/ressources/blog",
-  },
-} as const;
-
-export async function generateStaticParams() {
+export default async function Page() {
+  const staticArticles = getStaticBlogListing("es");
+  let articles = staticArticles;
   try {
-    const articles = await getBlogArticles("es");
-    if (articles.length > 0) return articles.filter((a) => typeof a.slug === "string" && a.slug.length > 0).map((a) => ({ slug: a.slug }));
+    const strapiArticles = await getBlogArticles("es");
+    if (strapiArticles && strapiArticles.length > 0) {
+      const known = new Set(staticArticles.map((a) => a.slug));
+      articles = [...staticArticles, ...strapiArticles.filter((a) => !known.has(a.slug))];
+    }
   } catch {
-    // ignore
+    /* Strapi disabled — static list is fine. */
   }
-  return Object.keys(blogPosts.es || {}).map((slug) => ({ slug }));
-}
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  const fallback = blogPosts.es?.[slug];
-  return buildStrapiCollectionMetadata({
-    endpoint: "blog-articles",
-    slug,
-    locale: "es",
-    path: getLocalePath("es", `${blogBasePath}/${slug}`),
-    fallbackTitle: fallback?.meta.title ?? `${slug} | Iter Advisors`,
-    fallbackDescription: fallback?.meta.description ?? "",
-    localizedPaths: {
-      fr: `${blogBasePath}/${slug}`,
-      en: `${blogBasePath}/${slug}`,
-      es: `${blogBasePath}/${slug}`,
-    },
-  });
-}
-
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const [article, cmsNavigation] = await Promise.all([
-    getBlogArticleBySlug(slug, "es"),
-    getCmsNavigation("es"),
-  ]);
-  const fallback = blogPosts.es?.[slug];
-
-  if (article) {
-    return (
-      <BlogPostPage
-        locale="es"
-        title={article.title}
-        breadcrumbs={breadcrumbsByLocale.es}
-        blocks={article.content}
-        cmsNavigation={cmsNavigation}
-        slug={article.slug}
-        publishedDate={article.publishedDate}
-        metaDescription={article.excerpt}
-        featuredImageUrl={article.featuredImage ? strapiMediaUrl(article.featuredImage) : undefined}
-      />
-    );
+  let cmsNavigation;
+  try {
+    cmsNavigation = await getCmsNavigation("es");
+  } catch {
+    cmsNavigation = undefined;
   }
-  if (fallback) {
-    return (
-      <BlogPostPage
-        locale="es"
-        title={fallback.h1}
-        breadcrumbs={fallback.breadcrumbs}
-        content={fallback.content}
-        cmsNavigation={cmsNavigation}
-      />
-    );
-  }
-  notFound();
+
+  return <BlogListingPage locale="es" articles={articles} cmsNavigation={cmsNavigation} />;
 }
