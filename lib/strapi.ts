@@ -422,13 +422,15 @@ export async function strapiFetch<T>(
   params: Record<string, string> = {},
   options: { locale?: Locale; revalidate?: number } = {}
 ): Promise<T> {
-  // MIGRATION-03 kill switch: when Strapi is disabled, return an empty
-  // collection / single response so callers fall through to their static
-  // fallback. We intentionally throw inside the matching try/catch wrappers
-  // of getGlobal/getHomepage/etc, but use an empty shape for the direct
-  // strapiFetch consumers (blog listing, fiches metier) so they don't crash.
+  // MIGRATION-03 kill switch: when Strapi is disabled, throw so every
+  // caller's try/catch falls through to its static fallback. Returning a
+  // partial envelope (`{ data: [] }`) broke single-type pages because their
+  // callers do `if (!page) notFound()` — an empty array is truthy so it
+  // slipped past the guard and crashed downstream with 500. Throwing is
+  // the consistent contract: collection callers fall back to their
+  // hard-coded data, single-type callers fall back to null/local content.
   if (STRAPI_DISABLED) {
-    return { data: [], meta: { pagination: { pageCount: 0, total: 0 } } } as T;
+    throw new Error("Strapi disabled (STRAPI_DISABLED env flag is set)");
   }
 
   const url = new URL(`/api/${endpoint}`, STRAPI_URL);
