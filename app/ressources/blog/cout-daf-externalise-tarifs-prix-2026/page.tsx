@@ -29,9 +29,9 @@ export default function CoutDafExternalisePage() {
       title="Combien coûte un DAF externalisé en 2026 ? Tarifs, grille de prix et ROI"
       dek="Grille de prix complète pour DAF externalisé 2026 : TJM, forfaits mensuels par seniority, ROI calculator. Économisez 50-70 % vs DAF salarié."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={8}
       dateModified="2026-05-01"

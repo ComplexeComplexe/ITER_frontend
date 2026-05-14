@@ -29,9 +29,9 @@ export default function EssentielsOutilsTechFinancePage() {
       title="Les essentiels outils tech pour moderniser votre département finance"
       dek="Découvrez comment les CFOs et directions financières optimisent leurs opérations avec les bonnes technologies : automatisation, IA, reporting temps réel et collaboration."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={9}
       dateModified="2026-05-01"

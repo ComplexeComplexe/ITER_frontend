@@ -29,9 +29,9 @@ export default function ModernisationRoleCfoPage() {
       title="La modernisation du rôle de CFO en 2026 : de l'administratif à la stratégie"
       dek="Comment le rôle du CFO évolue en 2026. De la gestion administrative à la stratégie financière : digitalisation, IA, ESG, leadership. Compétences clés du CFO moderne."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={10}
       dateModified="2026-05-01"

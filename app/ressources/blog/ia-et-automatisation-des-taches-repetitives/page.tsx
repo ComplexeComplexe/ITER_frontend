@@ -29,9 +29,9 @@ export default function IaAutomatisationFinancePage() {
       title="IA et automatisation : gagner 30-40 % de temps dans les tâches répétitives du département finance"
       dek="L'IA et l'automatisation transforment la finance en 2026. Découvrez quelles tâches automatiser en priorité, comment le faire, et quel impact en attendre."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={12}
       dateModified="2026-05-01"

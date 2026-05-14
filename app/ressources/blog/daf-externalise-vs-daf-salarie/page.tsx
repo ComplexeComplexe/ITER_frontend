@@ -29,9 +29,9 @@ export default function DafExternaliseVsSalariePage() {
       title="DAF externalisé vs DAF salarié : quelle option choisir ?"
       dek="Comparez les deux modèles : coûts, avantages, inconvénients. Analyse détaillée pour PME et scale-ups. Matrice de décision et recommandations."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={10}
       dateModified="2026-05-01"

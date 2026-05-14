@@ -29,9 +29,9 @@ export default function DafDrhExternalisationSynergieePage() {
       title="Externaliser DAF et DRH : synergies, économies et bénéfices operationnels"
       dek="Quand on externalise DAF et DRH ensemble, on crée des synergies majeures. Paie 100 % intégrée, reporting RH-Finance, meilleure conformité. Guide et ROI."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={10}
       dateModified="2026-05-01"
