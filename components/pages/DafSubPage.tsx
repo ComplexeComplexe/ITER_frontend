@@ -15,11 +15,20 @@ interface DafSubPageProps {
   locale: Locale;
   content: DafSubContent;
   cmsNavigation?: CmsNavItem[];
+  /** Per-route hero illustration. Falls back to the generic
+   *  about-section.webp when not provided. */
+  heroImage?: { src: string; alt: string };
 }
 
 const sectionIcons = [TrendingUp, BarChart3, Shield, Rocket, Settings, Target, Compass, Zap];
 
-export default function DafSubPage({ locale, content, cmsNavigation }: DafSubPageProps) {
+const DEFAULT_HERO = {
+  src: "/images/bg/about-section.webp",
+  alt: "",
+};
+
+export default function DafSubPage({ locale, content, cmsNavigation, heroImage }: DafSubPageProps) {
+  const hero = heroImage ?? { src: DEFAULT_HERO.src, alt: content.h1 };
   const contactPath = getContactPath(locale);
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
@@ -70,11 +79,11 @@ export default function DafSubPage({ locale, content, cmsNavigation }: DafSubPag
             </div>
             <div className="relative hidden lg:block">
               <Image
-                src="/images/bg/about-section.webp"
-                alt={content.h1}
+                src={hero.src}
+                alt={hero.alt}
                 width={560}
                 height={400}
-                className="rounded-2xl object-contain"
+                className="rounded-2xl object-cover w-full"
                 priority={true}
               />
             </div>

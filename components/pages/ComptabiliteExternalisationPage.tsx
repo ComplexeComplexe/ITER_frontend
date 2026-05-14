@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { BOOKING_URL } from "@/lib/navigation";
@@ -33,7 +34,18 @@ export default function ComptabiliteExternalisationPage({
               { label: locale === "fr" ? "Externalisation comptable" : "Accounting Outsourcing" },
             ]}
           />
-          <div className="mt-6 sm:mt-8">
+          {/* Hero illustration */}
+          <div className="relative mt-6 sm:mt-8 mb-8 aspect-[16/9] overflow-hidden rounded-2xl bg-muted">
+            <Image
+              src="/images/illustrations/accounting-handover.svg"
+              alt="Remise des documents comptables au cabinet Iter Advisors : passation de la tenue comptable et transmission des pièces justificatives"
+              fill
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6 sm:mb-8 leading-tight">
               {t.h1}
             </h1>

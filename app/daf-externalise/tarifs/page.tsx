@@ -19,5 +19,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");
-  return <DafSubPage locale="fr" content={content} cmsNavigation={cmsNavigation} />;
+  return (
+    <DafSubPage
+      locale="fr"
+      content={content}
+      cmsNavigation={cmsNavigation}
+      heroImage={{
+        src: "/images/illustrations/pricing-roi-tablet.svg",
+        alt: "Analyse de retour sur investissement : un dirigeant compare les formules tarifaires DAF Iter Advisors sur sa tablette",
+      }}
+    />
+  );
 }
