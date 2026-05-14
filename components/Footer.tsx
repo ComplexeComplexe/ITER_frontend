@@ -122,6 +122,16 @@ export default function Footer({ locale }: { locale: Locale }) {
                   contact@iteradvisors.com
                 </a>
               </p>
+              <p>
+                {/* TODO(seo-final-qualite): replace placeholder phone with the
+                    real switchboard number once the client confirms. */}
+                <a
+                  href="tel:+33180880001"
+                  className="hover:text-iter-chartreuse transition-colors"
+                >
+                  +33 1 80 88 00 01
+                </a>
+              </p>
             </address>
           </div>
 
