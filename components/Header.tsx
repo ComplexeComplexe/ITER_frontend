@@ -41,7 +41,24 @@ export default function Header({
   // Clear pending timer on unmount
   useEffect(() => () => cancelClose(), []);
 
-  const nav = cmsNavigation && cmsNavigation.length > 0 ? cmsNavigation : navigation[locale];
+  // FIX(i18n): the Strapi-driven `cmsNavigation` was returning the Spanish
+  // navigation for every locale (the CMS `global` single-type only had its
+  // ES translation populated, so the fallback chain in getGlobal() ended up
+  // serving ES on FR and EN pages). Until the CMS is properly translated,
+  // we use the locale-correct static `navigation[locale]` as the source of
+  // truth. The CMS source is still accepted but only when it actually
+  // returns at least one item whose href matches the current locale prefix
+  // — a cheap sanity check that prevents cross-locale bleed.
+  const localePrefix = locale === "fr" ? "/" : `/${locale}`;
+  const cmsLooksRightLocale =
+    !!cmsNavigation &&
+    cmsNavigation.length > 0 &&
+    cmsNavigation.some((item) =>
+      locale === "fr"
+        ? !item.href.startsWith("/en/") && !item.href.startsWith("/es/")
+        : item.href === localePrefix || item.href.startsWith(`${localePrefix}/`)
+    );
+  const nav = cmsLooksRightLocale ? cmsNavigation! : navigation[locale];
   const homePath = getHomePath(locale);
   const isHome = pathname === "/" || pathname === "/en" || pathname === "/es";
 
@@ -216,13 +233,11 @@ export default function Header({
         {/* Right side: lang + CTA (desktop) + menu toggle (mobile) */}
         <div className="flex items-center justify-end gap-3 min-w-0">
           <div className="hidden lg:flex items-center gap-3">
-            {/* Language Switcher */}
-            <div
-              className="relative"
-              ref={langSwitcherRef}
-              onMouseEnter={() => setLangOpen(true)}
-              onMouseLeave={() => setLangOpen(false)}
-            >
+            {/* Language Switcher — click-driven (mouseenter caused flicker on the
+                ~8px gap between trigger and panel; outside-click + Escape close
+                are handled by the existing useEffect above). The panel uses
+                AnimatePresence for a smooth unfold instead of a hard toggle. */}
+            <div className="relative" ref={langSwitcherRef}>
               <button
                 type="button"
                 onClick={() => setLangOpen((v) => !v)}
@@ -240,28 +255,37 @@ export default function Header({
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              {langOpen && (
-                <div className="absolute top-full right-0 pt-2">
-                  <div
-                    role="menu"
-                    className="w-28 bg-white/95 backdrop-blur-md border border-white/20 rounded-xl p-1 shadow-xl"
+              <AnimatePresence>
+                {langOpen && (
+                  <motion.div
+                    key="lang-panel"
+                    initial={{ opacity: 0, y: -6, scale: 0.96 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -6, scale: 0.96 }}
+                    transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+                    className="absolute top-full right-0 pt-2 origin-top-right"
                   >
-                    {(["fr", "en", "es"] as Locale[])
-                      .filter((l) => l !== locale)
-                      .map((l) => (
-                        <Link
-                          key={l}
-                          role="menuitem"
-                          href={getLocaleHref(l)}
-                          onClick={() => setLangOpen(false)}
-                          className="block px-3 py-2 text-xs text-iter-dark/60 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors uppercase tracking-wider"
-                        >
-                          {languageSwitcher[l].label}
-                        </Link>
-                      ))}
-                  </div>
-                </div>
-              )}
+                    <div
+                      role="menu"
+                      className="w-32 bg-white/95 backdrop-blur-md border border-white/20 rounded-xl p-1 shadow-xl"
+                    >
+                      {(["fr", "en", "es"] as Locale[])
+                        .filter((l) => l !== locale)
+                        .map((l) => (
+                          <Link
+                            key={l}
+                            role="menuitem"
+                            href={getLocaleHref(l)}
+                            onClick={() => setLangOpen(false)}
+                            className="block px-3 py-2 text-xs text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors uppercase tracking-wider"
+                          >
+                            {languageSwitcher[l].label}
+                          </Link>
+                        ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* CTA Button */}
