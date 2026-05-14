@@ -5,6 +5,7 @@ import { getCmsNavigation } from "@/lib/strapi";
 export const metadata: Metadata = {
   title: "Company Qualification | Iter Advisors",
   description: "Qualify your company's financial needs in 5 minutes. Receive a personalized assessment and expert recommendations for outsourced CFO services.",
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Company Qualification | Iter Advisors",
     description:

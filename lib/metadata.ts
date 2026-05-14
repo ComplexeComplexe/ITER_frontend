@@ -47,13 +47,12 @@ export function buildMetadata({
   const enPath = stripLocale(localizedPaths?.en ?? safePath, 'en');
   const esPath = stripLocale(localizedPaths?.es ?? safePath, 'es');
 
+  // SEO-P0-01: RFC 5646 language-region codes as keys so Next.js renders
+  // <link rel="alternate" hreflang="fr-FR" href="..." /> in <head>.
+  // SSR fallback also lives in components/HrefLangInjector.tsx.
   const frUrl = `${base}${frPath}`;
   const enUrl = `${base}/en${enPath === "/" ? "" : enPath}`;
   const esUrl = `${base}/es${esPath === "/" ? "" : esPath}`;
-
-  // Use full hreflang codes as keys so Next.js renders them as
-  // <link rel="alternate" hreflang="fr-FR" href="..." /> in <head>.
-  // (SSR fallback also lives in components/HrefLangInjector.tsx.)
   const languages: Record<string, string> = {
     "x-default": frUrl,
     "fr-FR": frUrl,
