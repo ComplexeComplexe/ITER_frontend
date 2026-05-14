@@ -38,6 +38,10 @@ interface BlogPostPageProps {
   featuredImageUrl?: string;
   /** Team members — used to display author photo and bio (DEV-02) */
   teamMembers?: StrapiTeamMember[];
+  /** Body illustration rendered between the H1 block and the article
+   *  body (separate from the listing cover). Wired from
+   *  `lib/blog-illustrations.ts`. */
+  bodyImage?: { src: string; alt: string };
 }
 
 function formatDate(isoDate: string, locale: Locale): string {
@@ -75,6 +79,7 @@ export default function BlogPostPage({
   slug,
   featuredImageUrl,
   teamMembers,
+  bodyImage,
 }: BlogPostPageProps) {
   /* ── Schema.org Article structured data (CC-17) ── */
   // Build a canonical URL when we know the slug; falls back to the blog hub
@@ -203,6 +208,25 @@ export default function BlogPostPage({
           )}
         </div>
       </section>
+
+      {/* Body illustration — shown above the article body, distinct from
+          the listing cover. Source-of-truth: lib/blog-illustrations.ts. */}
+      {bodyImage && (
+        <section className="bg-background pt-2 pb-8">
+          <div className="container max-w-3xl">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-3xl bg-muted">
+              <Image
+                src={bodyImage.src}
+                alt={bodyImage.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       <article className="bg-background py-24 lg:py-16">
         <div className="container max-w-3xl">
