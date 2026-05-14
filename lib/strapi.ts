@@ -1,6 +1,17 @@
 /**
- * Strapi API client for fetching CMS content at build time.
- * Supports i18n locales (fr, en, es) and Strapi v5 response format.
+ * @deprecated Strapi has been decommissioned. This module is kept only
+ * to preserve the public surface (types, constants, function signatures)
+ * that 200+ callers across the codebase still import. Every async
+ * fetcher now throws on first call so callers fall through to their
+ * static-content fallback (`lib/content/*.ts`, `lib/fallback-*.ts`).
+ *
+ * Removal plan: `migration/RUNBOOK_STRAPI_DECOMMISSION.md` step 4 —
+ * delete this file and rewrite the 200 imports in a dedicated codemod
+ * PR, once the runtime decoupling has been stable in production for a
+ * while.
+ *
+ * To temporarily re-enable Strapi (for example to run a fresh export):
+ *   STRAPI_ENABLED=true STRAPI_API_URL=… STRAPI_API_TOKEN=… npm run dev
  */
 
 import { Locale } from "@/lib/i18n";
@@ -16,23 +27,17 @@ const STRAPI_URL = rawStrapiUrl.replace(/\/admin\/?$/, "") || rawStrapiUrl;
 const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN || "";
 
 /**
- * MIGRATION-03 kill switch. When STRAPI_DISABLED is truthy (set in
- * .env.local / Vercel env), every network call below short-circuits to
- * an empty response. All callers already have a static-content fallback
- * (lib/content/*.ts, lib/fallback-*.ts) so the front-end keeps working
- * — this just stops paying for and depending on Strapi at request time.
+ * MIGRATION-03 sunset: Strapi is OFF by default. Every fetch is
+ * short-circuited unless `STRAPI_ENABLED=true` is set in the env (used
+ * only for the one-shot export script `scripts/export-strapi.ts`).
  *
- * Switching the flag is the safe rollout sequence:
- *   1. Confirm static content is complete (export-strapi.ts + diff).
- *   2. Set STRAPI_DISABLED=true on Vercel preview, smoke-test.
- *   3. Promote to production.
- *   4. Once verified for a few days, run the code-removal codemod from
- *      migration/RUNBOOK.md to delete this file outright.
+ * The legacy `STRAPI_DISABLED=true` opt-in is still honoured for
+ * forward-compatibility with old Vercel envs, but the variable can now
+ * safely be deleted there — the default behaviour is the same.
  */
-const STRAPI_DISABLED =
-  process.env.STRAPI_DISABLED === "true" ||
-  process.env.STRAPI_DISABLED === "1" ||
-  process.env.NEXT_PUBLIC_STRAPI_DISABLED === "true";
+const STRAPI_ENABLED =
+  process.env.STRAPI_ENABLED === "true" || process.env.STRAPI_ENABLED === "1";
+const STRAPI_DISABLED = !STRAPI_ENABLED;
 
 const isLocalStrapi =
   typeof STRAPI_URL === "string" &&
