@@ -35,7 +35,7 @@ export default function ChecklistDueDiligencePage() {
       }}
       readingTime={13}
       dateModified="2026-05-01"
-      heroImage="/images/blog/due-diligence-checklist.webp"
+      heroImage="/images/blog/covers/checklist-due-diligence-levee-de-fonds.svg"
       toc={[
         { id: "definition", label: "1. Qu'est-ce que la due diligence ?" },
         { id: "documents-financiers", label: "2. Documents financiers à préparer" },

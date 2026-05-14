@@ -35,7 +35,7 @@ export default function DafExternaliseVsSalariePage() {
       }}
       readingTime={10}
       dateModified="2026-05-01"
-      heroImage="/images/blog/daf-externalise-vs-salarie.webp"
+      heroImage="/images/blog/covers/daf-externalise-vs-daf-salarie.svg"
       toc={[
         { id: "contexte", label: "1. Contexte : pourquoi cette question ?" },
         { id: "cout-total", label: "2. Comparaison des coûts" },

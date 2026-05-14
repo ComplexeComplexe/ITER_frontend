@@ -35,7 +35,7 @@ export default function ModernisationRoleCfoPage() {
       }}
       readingTime={10}
       dateModified="2026-05-01"
-      heroImage="/images/blog/modernisation-cfo.webp"
+      heroImage="/images/blog/covers/la-modernisation-du-role-de-cfo.svg"
       toc={[
         { id: "evolution", label: "1. L'évolution du rôle depuis 10 ans" },
         { id: "trois-piliers", label: "2. Les trois piliers du CFO moderne" },

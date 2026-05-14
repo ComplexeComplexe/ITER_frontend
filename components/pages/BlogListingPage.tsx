@@ -120,20 +120,29 @@ export default function BlogListingPage({
   cmsNavigation?: CmsNavItem[];
 }) {
   const t = content[locale];
-  // When Strapi returns articles, use their featuredImage; otherwise fallback to static cards (local images in public/images/blog/)
+  // Source articles are assembled by `lib/blog-listing.ts` from the
+  // static blog-posts.ts source. Each article carries its editorial
+  // cover URL plus a per-article alt text on `featuredImage`.
   const cards =
     articles && articles.length > 0
       ? articles.map((a) => {
           const imageUrl = a.featuredImage?.url
             ? strapiMediaUrl(a.featuredImage)
             : "";
+          // Prefer the alt assembled per-article by lib/blog-listing
+          // (lives on featuredImage.alternativeText). Fall back to the
+          // article title when the slug is not in the cover map.
+          const alt =
+            (a.featuredImage as unknown as { alternativeText?: string })
+              ?.alternativeText || a.title;
           return {
             title: a.title,
             href: getBlogHref(locale, a.slug),
             image: imageUrl || "/images/blog/placeholder.webp",
+            alt,
           };
         })
-      : t.cards;
+      : t.cards.map((c) => ({ ...c, alt: c.title }));
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
@@ -163,8 +172,9 @@ export default function BlogListingPage({
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl mb-5 bg-muted">
                   <Image
                     src={card.image}
-                    alt={card.title}
+                    alt={card.alt}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>

@@ -35,7 +35,7 @@ export default function OrganiserDirectionFinancierePage() {
       }}
       readingTime={11}
       dateModified="2026-05-01"
-      heroImage="/images/blog/organiser-direction-financiere.webp"
+      heroImage="/images/blog/covers/organiser-sa-direction-financiere.svg"
       toc={[
         { id: "pourquoi-structure", label: "1. Pourquoi structurer votre finance ?" },
         { id: "modeles-par-taille", label: "2. Modèles d'organisation par taille" },

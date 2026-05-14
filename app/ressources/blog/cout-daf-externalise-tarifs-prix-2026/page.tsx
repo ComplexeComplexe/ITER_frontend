@@ -35,7 +35,7 @@ export default function CoutDafExternalisePage() {
       }}
       readingTime={8}
       dateModified="2026-05-01"
-      heroImage="/images/blog/tarifs-daf-2026.webp"
+      heroImage="/images/blog/covers/cout-daf-externalise-tarifs-prix-2026.svg"
       toc={[
         { id: "grille-tarifs", label: "1. Grille tarifaire complète" },
         { id: "tjm-forfait", label: "2. TJM vs forfait mensuel" },

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#FFFFFF"/>
+
+  <!-- masthead -->
+  <line x1="60" y1="48" x2="1140" y2="48" stroke="#0F1740" stroke-width="1" opacity="0.15"/>
+  <text x="60" y="38" fill="#0F1740" font-family="Georgia, serif" font-size="13" letter-spacing="3">ITER ADVISORS</text>
+  <text x="1140" y="38" fill="#0F1740" font-family="Georgia, serif" font-size="13" letter-spacing="3" text-anchor="end">VOL. 01 · 2026 · N° 14</text>
+  <line x1="60" y1="68" x2="1140" y2="68" stroke="#0F1740" stroke-width="3"/>
+
+  <!-- kicker + category badge -->
+  <text x="60" y="115" fill="#2EC4B6" font-family="-apple-system, Inter, sans-serif" font-size="13" font-weight="600" letter-spacing="3">METRIQUE</text>
+  <rect x="60" y="135" width="127" height="34" rx="17" fill="#D4F1EC"/>
+  <text x="123.5" y="157" fill="#0E5E54" font-family="-apple-system, Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="1.6" text-anchor="middle">TRESORERIE</text>
+
+  <!-- huge serif title -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#0F1740">
+    <text x="60" y="230" font-size="72" font-weight="500" letter-spacing="-2">Cash burn et</text>
+    <text x="60" y="308" font-size="72" font-weight="500" letter-spacing="-2">runway</text>
+  </g>
+
+  <!-- accent rule under title -->
+  <line x1="60" y1="326" x2="120" y2="326" stroke="#2EC4B6" stroke-width="4"/>
+
+  <!-- italic subtitle -->
+  <g font-family="Georgia, serif" fill="#4B5563" font-style="italic">
+    <text x="60" y="360" font-size="24" font-weight="400">Quand lever, avant qu'il ne soit</text>
+    <text x="60" y="392" font-size="24" font-weight="400">trop tard</text>
+  </g>
+
+  <!-- illustration block, right -->
+  <g transform="translate(780 220)">
+    <rect x="0" y="0" width="360" height="360" rx="8" fill="#D4F1EC"/>
+    <g transform="translate(70 70)">
+      <g stroke="#0E5E54" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 110 187 C 55 171.6, 55 121.00000000000001, 92.39999999999999 92.39999999999999 C 88 110, 101.2 121.00000000000001, 110 110 C 99 70.4, 121.00000000000001 44, 132 33 C 127.6 70.4, 158.4 88, 158.4 127.6 C 158.4 162.8, 136.4 184.79999999999998, 110 187 Z"/>
+    </g>
+    </g>
+    <rect x="0" y="0" width="92" height="30" fill="#2EC4B6"/>
+    <text x="46" y="20" fill="white" font-family="-apple-system, Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="2.4" text-anchor="middle">FIG. 14</text>
+  </g>
+
+  <!-- bottom rule + brand stamp -->
+  <line x1="60" y1="820" x2="1140" y2="820" stroke="#0F1740" stroke-width="1" opacity="0.15"/>
+  <circle cx="78" cy="858" r="12" fill="#6C3AED"/>
+  <text x="100" y="864" fill="#0F1740" font-family="Georgia, serif" font-style="italic" font-size="16">Iter Advisors — DAF &amp; DRH externalisés</text>
+  <text x="1140" y="864" fill="#0F1740" opacity="0.55" font-family="-apple-system, Inter, sans-serif" font-size="13" text-anchor="end" letter-spacing="0.5">iteradvisors.com/ressources/blog</text>
+</svg>

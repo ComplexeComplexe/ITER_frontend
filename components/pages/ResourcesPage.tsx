@@ -42,14 +42,19 @@ export default function ResourcesPage({
     }
     return {
       ...category,
-      cards: latest.map((article) => ({
-        title: article.title,
-        href: `${locale === "fr" ? "" : "/" + locale}/ressources/blog/${article.slug}`,
-        image:
-          (article.featuredImage as unknown as { url?: string })?.url ||
-          "/images/blog/placeholder.webp",
-        tag: newsTag,
-      })),
+      cards: latest.map((article) => {
+        const featured = article.featuredImage as unknown as {
+          url?: string;
+          alternativeText?: string;
+        };
+        return {
+          title: article.title,
+          href: `${locale === "fr" ? "" : "/" + locale}/ressources/blog/${article.slug}`,
+          image: featured?.url || "/images/blog/placeholder.webp",
+          alt: featured?.alternativeText || article.title,
+          tag: newsTag,
+        };
+      }),
     };
   });
 
@@ -105,8 +110,9 @@ export default function ResourcesPage({
                 >
                   <Image
                     src={card.image}
-                    alt={card.title}
+                    alt={(card as { alt?: string }).alt || card.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-iter-dark/90 via-iter-dark/30 to-transparent" />
