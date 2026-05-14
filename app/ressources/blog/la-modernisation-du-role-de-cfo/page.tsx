@@ -47,7 +47,7 @@ export default function ModernisationRoleCfoPage() {
       tldr="Le CFO d'aujourd'hui est un partenaire stratégique, pas un comptable. Il maîtrise la digitalisation, utilise l'IA pour prédire, parle ESG et communique avec tous les stakeholders. Les compétences évoluent : moins d'Excel, plus de storytelling et vision stratégique."
       relatedArticles={[
         {
-          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
           category: "Digitalisation",
           title: "IA et automatisation : gagner 30-40 % de temps",
         },

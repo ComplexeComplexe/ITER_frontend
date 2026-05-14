@@ -48,7 +48,7 @@ export default function EssentielsOutilsTechFinancePage() {
       tldr="La digitalisation du département finance n'est plus optionnelle. Les outils cloud (comptabilité, trésorerie, reporting) libèrent 40-50 % du temps des équipes. L'IA et l'automatisation élèvent le niveau d'expertise requis. Une sélection pragmatique adaptée à votre taille et budget garantit un ROI rapide."
       relatedArticles={[
         {
-          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
           category: "Digitalisation",
           title: "IA et automatisation : gagner 30 % de temps dans les tâches répétitives",
         },

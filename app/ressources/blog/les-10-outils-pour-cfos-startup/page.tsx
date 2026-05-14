@@ -52,7 +52,7 @@ export default function Outils10CfosStartupPage() {
           title: "Les essentiels outils tech pour moderniser votre département finance",
         },
         {
-          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
           category: "Automatisation",
           title: "IA et automatisation : gagner 30-40 % de temps",
         },

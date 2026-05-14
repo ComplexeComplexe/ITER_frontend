@@ -93,6 +93,8 @@ node -e '
 
 **Rollback en 30 s :** supprimer la var → Vercel redeploy → Strapi-driven content réactivé.
 
+> **Update (MIG-03 partial — PR #21)** : la sémantique du flag a été inversée. Par défaut Strapi est désormais **OFF**, le flag d'opt-in est `STRAPI_ENABLED=true` (utilisé uniquement pour relancer le script d'export). Tu peux supprimer `STRAPI_DISABLED=true` de Vercel — le comportement par défaut est identique.
+
 ## Step 4 — Nettoyage final (PR séparé, après ~1 semaine en prod sous kill switch)
 
 Une fois confiance acquise :
