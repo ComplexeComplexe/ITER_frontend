@@ -144,6 +144,13 @@ const SLUG_REDIRECTS: Record<string, string> = {
   "/notre-expertise": "/services",
   "/notre-equipe": "/a-propos",
   "/notre-methode": "/a-propos",
+
+  /* ── 5 remaining 404s (audit v2 — SEO-06) ───────────────────────────── */
+  "/en/daf-externalise/secteurs": "/en/fractional-cfo",
+  "/en/daf-externalise/tarifs": "/en/fractional-cfo",
+  "/es/daf-externalise/secteurs": "/es/externalizacion-daf",
+  "/es/daf-externalise/tarifs": "/es/externalizacion-daf",
+  "/es/ressources/blog": "/es/recursos/blog",
 };
 
 /* ── Orphaned fiche-metier slugs (not in system) ───────────────────── */
@@ -205,8 +212,11 @@ const ORPHAN_BLOG_SLUGS = [
 ];
 
 /* ── FR-only blog slugs (no EN/ES translation) ────────────────────── */
+/* Slugs with translations available in lib/content/blog-posts.ts → EN/ES
+ * blocks are removed from this list so the [slug] routes serve the
+ * translated content instead of 301-ing back to FR (SEO ticket FINAL-04). */
 const FR_ONLY_BLOG_SLUGS = [
-  "flux-de-tresorerie",
+  // flux-de-tresorerie — translated in EN and ES (FINAL-04)
   "la-modernisation-du-role-de-cfo",
   "les-10-outils-pour-les-cfos-en-start-up",
   "organiser-sa-direction-financiere",
@@ -217,8 +227,8 @@ const FR_ONLY_BLOG_SLUGS = [
   "regimes-fiscaux-france-vs-espagne",
   "anticiper-financierement-ses-recrutements-guide-pratique",
   "ia-act-opportunite-fintechs",
-  "cout-daf-externalise-tarifs-prix-2026",
-  "daf-externalise-vs-daf-salarie",
+  // cout-daf-externalise-tarifs-prix-2026 — translated in EN and ES (FINAL-04)
+  // daf-externalise-vs-daf-salarie — translated in EN and ES (FINAL-04)
   "checklist-due-diligence-levee-de-fonds",
   "daf-drh-externalises-synergie",
 ];
@@ -350,7 +360,12 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  return NextResponse.next();
+  /* ── 7. Expose pathname to server components for SSR hreflang ────── */
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-pathname", pathname);
+  return NextResponse.next({
+    request: { headers: requestHeaders },
+  });
 }
 
 export const config = {

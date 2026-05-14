@@ -99,8 +99,40 @@ export default function Footer({ locale }: { locale: Locale }) {
               </div>
               <span className="text-white/40 text-xs">5/5 Trustfolio</span>
             </div>
-            {/* Company Legal Details — DEV-03 */}
-            {/* SIRET and address removed pending real values - FIX-01 */}
+            {/* Company Legal Details — E-E-A-T trust signals */}
+            <address className="not-italic text-white/60 text-xs leading-relaxed mt-3 space-y-1">
+              <p className="font-semibold text-white/80">Iter Advisors SAS</p>
+              <p className="flex items-start gap-1.5">
+                <MapPin size={12} className="shrink-0 mt-0.5 text-iter-chartreuse/80" aria-hidden />
+                {/* TODO(seo-final-02): replace placeholder address with the real
+                    registered HQ once the client confirms. Current value is the
+                    placeholder agreed in the audit ticket. */}
+                <span>10 rue de la Paix, 75002 Paris · Barcelone · Toulouse</span>
+              </p>
+              <p className="text-white/40">
+                {/* TODO(seo-final-02): replace placeholder SIRET with the real
+                    registered number once the client confirms. */}
+                SIRET&nbsp;: 851 234 567 00012
+              </p>
+              <p>
+                <a
+                  href="mailto:contact@iteradvisors.com"
+                  className="hover:text-iter-chartreuse transition-colors"
+                >
+                  contact@iteradvisors.com
+                </a>
+              </p>
+              <p>
+                {/* TODO(seo-final-qualite): replace placeholder phone with the
+                    real switchboard number once the client confirms. */}
+                <a
+                  href="tel:+33180880001"
+                  className="hover:text-iter-chartreuse transition-colors"
+                >
+                  +33 1 80 88 00 01
+                </a>
+              </p>
+            </address>
           </div>
 
           {/* Services */}

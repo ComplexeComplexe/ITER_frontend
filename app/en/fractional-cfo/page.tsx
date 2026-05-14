@@ -25,5 +25,27 @@ export default async function FractionalCFOPage() {
     getCmsNavigation("en"),
     getTeamMembers("en"),
   ]);
-  return <DafPage locale="en" cmsNavigation={cmsNavigation} teamMembers={teamMembers} />;
+  const t = getDafContent("en");
+
+  // FAQPage JSON-LD — eligible for rich results on "fractional cfo" queries
+  // (SEO ticket A3 — JACKPOT keyword, 9 900 searches/month).
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: t.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <DafPage locale="en" cmsNavigation={cmsNavigation} teamMembers={teamMembers} />
+    </>
+  );
 }

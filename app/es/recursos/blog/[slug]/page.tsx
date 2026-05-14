@@ -4,40 +4,29 @@ import BlogPostPage from "@/components/pages/BlogPostPage";
 import { getBlogArticleBySlug, getBlogArticles, getCmsNavigation, getTeamMembers, strapiMediaUrl } from "@/lib/strapi";
 import { buildStrapiCollectionMetadata } from "@/lib/metadata";
 import { blogPosts } from "@/lib/content/blog-posts";
-import { getLocalePath } from "@/lib/i18n";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 
-const blogBasePath = "/ressources/blog";
+const blogBasePath = "/recursos/blog";
 
-const breadcrumbsByLocale = {
-  fr: {
-    resourcesLabel: "Ressources",
-    resourcesHref: "/ressources",
-    blogLabel: "Blog",
-    blogHref: "/ressources/blog",
-  },
-  en: {
-    resourcesLabel: "Resources",
-    resourcesHref: "/en/ressources",
-    blogLabel: "Blog",
-    blogHref: "/en/ressources/blog",
-  },
-  es: {
-    resourcesLabel: "Recursos",
-    resourcesHref: "/es/ressources",
-    blogLabel: "Blog",
-    blogHref: "/es/ressources/blog",
-  },
-} as const;
+const breadcrumbs = {
+  resourcesLabel: "Recursos",
+  resourcesHref: "/es/recursos",
+  blogLabel: "Blog",
+  blogHref: "/es/recursos/blog",
+};
 
 export async function generateStaticParams() {
   try {
-    const articles = await getBlogArticles("en");
-    if (articles.length > 0) return articles.filter((a) => typeof a.slug === "string" && a.slug.length > 0).map((a) => ({ slug: a.slug }));
+    const articles = await getBlogArticles("es");
+    if (articles.length > 0) {
+      return articles
+        .filter((a) => typeof a.slug === "string" && a.slug.length > 0)
+        .map((a) => ({ slug: a.slug }));
+    }
   } catch {
     // ignore
   }
-  return Object.keys(blogPosts.en || {}).map((slug) => ({ slug }));
+  return Object.keys(blogPosts.es || {}).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -46,47 +35,46 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const fallback = blogPosts.en?.[slug];
+  const fallback = blogPosts.es?.[slug];
   return buildStrapiCollectionMetadata({
     endpoint: "blog-articles",
     slug,
-    locale: "en",
-    path: getLocalePath("en", `${blogBasePath}/${slug}`),
+    locale: "es",
+    path: `${blogBasePath}/${slug}`,
     fallbackTitle: fallback?.meta.title ?? `${slug} | Iter Advisors`,
     fallbackDescription: fallback?.meta.description ?? "",
     localizedPaths: {
-      fr: `${blogBasePath}/${slug}`,
-      en: `${blogBasePath}/${slug}`,
-      es: `${blogBasePath}/${slug}`,
+      fr: `/ressources/blog/${slug}`,
+      en: `/ressources/blog/${slug}`,
+      es: `/recursos/blog/${slug}`,
     },
   });
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const [article, fallback, cmsNavigation] = await Promise.all([
-    getBlogArticleBySlug(slug, "en"),
-    Promise.resolve(blogPosts.en?.[slug]),
-    getCmsNavigation("en"),
+  const [article, cmsNavigation] = await Promise.all([
+    getBlogArticleBySlug(slug, "es"),
+    getCmsNavigation("es"),
   ]);
+  const fallback = blogPosts.es?.[slug];
 
-  // Team members are needed so BlogPostPage can render the named author's
-  // photo + role + LinkedIn link (E-E-A-T enrichment).
+  // Team members for E-E-A-T author enrichment (photo + role + LinkedIn).
   let teamMembers;
   try {
-    teamMembers = await getTeamMembers("en");
+    teamMembers = await getTeamMembers("es");
   } catch {
     teamMembers = undefined;
   }
   const teamSource =
-    teamMembers && teamMembers.length > 0 ? teamMembers : getFallbackTeamMembers("en");
+    teamMembers && teamMembers.length > 0 ? teamMembers : getFallbackTeamMembers("es");
 
   if (article) {
     return (
       <BlogPostPage
-        locale="en"
+        locale="es"
         title={article.title}
-        breadcrumbs={breadcrumbsByLocale.en}
+        breadcrumbs={breadcrumbs}
         blocks={article.content}
         cmsNavigation={cmsNavigation}
         slug={article.slug}
@@ -100,9 +88,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (fallback) {
     return (
       <BlogPostPage
-        locale="en"
+        locale="es"
         title={fallback.h1}
-        breadcrumbs={fallback.breadcrumbs}
+        breadcrumbs={{ ...fallback.breadcrumbs, resourcesHref: "/es/recursos", blogHref: "/es/recursos/blog" }}
         content={fallback.htmlContent ? [] : fallback.content}
         htmlContent={fallback.htmlContent}
         cmsNavigation={cmsNavigation}

@@ -117,7 +117,8 @@ export const dafContent: Record<Locale, DafContent> = {
     h1: "DAF Externalisé : votre direction financière sur-mesure",
     intro: [
       "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Nos directeurs financiers à temps partagé (aussi appelés CFO à temps partagé) interviennent en mission ponctuelle ou via une direction financière externalisée — opérationnels dès le premier jour, sans engagement long terme. Avec 85 entreprises accompagnées, 100 M€ de levées de fonds réalisées et une note de 5/5 sur Trustfolio (31 avis vérifiés), nous sommes un acteur de référence du DAF externalisé et du directeur financier externalisé en France et en Espagne.",
-      "Un DAF externalisé — aussi appelé DAF à temps partagé, directeur financier externalisé ou CFO externalisé — est un professionnel senior de la finance qui intervient dans votre entreprise sans en être salarié à temps plein. Il devient le co-pilote du dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs, sur un mode flexible (temps partagé, mission ponctuelle ou abonnement mensuel).",
+      "Un DAF externalisé — aussi appelé DAF à temps partagé, directeur financier externalisé ou CFO externalisé — est un professionnel senior de la finance qui intervient dans votre entreprise sans en être salarié à temps plein. Il devient le co-pilote du dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs, sur un mode flexible (temps partagé, mission ponctuelle ou abonnement mensuel). Pour comprendre la nuance avec son équivalent anglo-saxon, consultez notre fiche [Le CFO (Chief Financial Officer)](/ressources/glossaire/cfo).",
+      "Vous avez un projet en Espagne ? Nos DAFs basés à Barcelone connaissent en profondeur la fiscalité locale : lisez notre guide complet sur l'[Impôt sur le revenu en Espagne](/ressources/blog/impot-revenu-espagne) et notre [comparaison régimes fiscaux France vs Espagne](/ressources/blog/regimes-fiscaux-france-vs-espagne).",
     ],
     partnerSection: {
       heading: "Iter Advisors, votre partenaire stratégique",
@@ -494,15 +495,16 @@ export const dafContent: Record<Locale, DafContent> = {
   },
   en: {
     meta: {
-      title: "Fractional CFO: Missions, Pricing & Benefits for SMEs & Startups | Iter Advisors",
+      title: "Fractional CFO for Startups & SMEs — Missions, Pricing & Benefits | Iter Advisors",
       description:
-        "Everything about Fractional CFO services: missions, pricing (daily rate EUR 750-1,250), benefits and case studies. Iter Advisors, your outsourced CFO firm in Barcelona, Paris and Toulouse.",
+        "Fractional CFO services for startups and SMEs: missions, pricing (daily rate EUR 750-1,250), benefits, case studies. Hire a senior Fractional CFO in Barcelona, Paris, Toulouse.",
     },
     breadcrumbLabel: "Fractional CFO",
-    h1: "Fractional CFO: the complete guide for SMEs and startups",
+    h1: "Fractional CFO for Startups & SMEs — Iter Advisors",
     intro: [
-      "A Fractional CFO - or outsourced Chief Financial Officer - is a senior finance professional who works within your company without being a full-time employee. They assume the same responsibilities as an in-house CFO (financial management, cash flow, reporting, investor relations) but on a flexible basis: part-time, project-based or monthly retainer.",
-      "At Iter Advisors, we support SMEs, startups and scale-ups in structuring and managing their finance function. Our CFOs work on a part-time or project basis to help you make the best strategic decisions.",
+      "A **Fractional CFO** — or outsourced Chief Financial Officer — is a senior finance professional who works within your company without being a full-time employee. When you hire a Fractional CFO, you get the same responsibilities as an in-house CFO (financial strategy, cash flow, reporting, investor relations) but on a flexible basis: part-time, project-based, or monthly retainer.",
+      "At Iter Advisors, we support 85+ SMEs, startups and scale-ups by deploying a Fractional CFO into their finance function. Our Fractional CFOs are senior operators (10+ years) ready to structure forecasting, lead fundraising, or step in as interim CFO — without the cost or commitment of a full-time hire.",
+      "New to the role? Start with our glossary entry [What is a CFO?](/ressources/glossaire/cfo) to understand the difference between CFO, Finance Director and Controller — and explore [our finance services](/en/services) for the full scope of what an outsourced CFO can deliver.",
     ],
     partnerSection: {
       heading: "Iter Advisors, your strategic partner",
@@ -745,6 +747,11 @@ export const dafContent: Record<Locale, DafContent> = {
     ],
     faq: [
       {
+        question: "What is a Fractional CFO?",
+        answer:
+          "A Fractional CFO is a senior Chief Financial Officer who works for several companies simultaneously, dedicating a limited number of days per week or month to each one. A Fractional CFO assumes the same responsibilities as an in-house CFO — financial strategy, cash flow, board reporting, fundraising support — but on a flexible, part-time basis. It is the ideal solution for SMEs and startups that need senior financial leadership without the cost of a full-time hire.",
+      },
+      {
         question: "How much does a Fractional CFO cost?",
         answer:
           "The daily rate for a Fractional CFO ranges from EUR 750 to 1,250 excl. VAT. At Iter Advisors, our packages range from EUR 2,000/month (2-3 days) to EUR 7,000+/month (8+ days). For comparison, a salaried CFO costs EUR 8,300-17,750/month including charges.",
@@ -809,15 +816,16 @@ export const dafContent: Record<Locale, DafContent> = {
   },
   es: {
     meta: {
-      title: "CFO externalizado: misiones, tarifas y ventajas para pymes y startups | Iter Advisors",
+      title: "CFO Externalizado | Departamento Financiero & Directores Financieros | Iter Advisors",
       description:
-        "Todo sobre el CFO externalizado: misiones, tarifas (TJM 750-1.250 EUR), ventajas y casos concretos. Iter Advisors, su gabinete de CFO a tiempo compartido en Barcelona, Paris y Toulouse.",
+        "CFO externalizado para pymes y startups: dirección del departamento financiero (dpto financiero), directores financieros senior a tiempo compartido. Tarifas TJM 750-1.250 €.",
     },
     breadcrumbLabel: "CFO Externalizado",
     h1: "CFO externalizado: la guia completa para pymes y startups",
     intro: [
       "Un CFO externalizado - o Director Financiero externalizado - es un profesional senior de las finanzas que interviene en su empresa sin ser empleado a tiempo completo. Asume las mismas responsabilidades que un CFO interno (gestion financiera, tesoreria, reporting, relaciones con inversores) pero de forma flexible: tiempo compartido, mision puntual o suscripcion mensual.",
-      "En Iter Advisors, acompanamos a pymes, startups y scale-ups en la estructuracion y gestion de su funcion financiera. Nuestros CFOs intervienen a tiempo compartido o en mision puntual para ayudarle a tomar las mejores decisiones estrategicas.",
+      "En Iter Advisors, acompañamos a pymes, startups y scale-ups en la estructuración de su **departamento financiero (dpto financiero)**. Nuestros **directores financieros** senior intervienen a tiempo compartido o en misión puntual para ayudarle a tomar las mejores decisiones estratégicas.",
+      "¿Quiere entender la diferencia entre un CFO interno y un fractional CFO? Lea nuestra guía completa [¿Qué es un Fractional CFO?](/es/recursos/blog/que-es-fractional-cfo) o consulte nuestros [servicios financieros](/es/services) para conocer todo lo que un CFO externalizado puede aportar a su empresa.",
     ],
     partnerSection: {
       heading: "Iter Advisors, su socio estrategico",
@@ -853,6 +861,22 @@ export const dafContent: Record<Locale, DafContent> = {
             "Un CFO interno cuesta entre 80.000 y 150.000 EUR brutos anuales (mas cargas patronales del 25-42%), lo que supone un coste total de 100.000 a 213.000 EUR al ano. Un CFO externalizado representa un presupuesto de 2.000 a 8.000 EUR al mes segun el volumen, es decir, 24.000 a 96.000 EUR al ano.",
             "El CFO interno ofrece presencia diaria y conocimiento profundo de la empresa, pero implica compromiso a largo plazo y costes fijos elevados. El CFO externalizado aporta flexibilidad, vision multi-sectorial y una red amplia de socios, sin compromiso de duracion.",
             "Para empresas de 1 a 50 M EUR de facturacion, el CFO externalizado es a menudo la solucion mas pertinente: experiencia de alto nivel a un coste controlado, con la posibilidad de modular la intervencion segun las fases de crecimiento.",
+          ],
+        },
+        {
+          heading: "Departamento financiero (dpto financiero) externalizado",
+          content: [
+            "Externalizar el **departamento financiero** (o **dpto financiero**) consiste en confiar la dirección y la gestión de toda la función finanzas a un cabinet especializado. A diferencia de un único CFO interno, un **dpto financiero externalizado** combina varios perfiles complementarios: CFO, controller, tesorero, contable senior — escalables según el momento de la empresa.",
+            "El modelo es ideal para pymes y startups que necesitan un **departamento de finanzas** completo pero no pueden justificar el coste de un equipo interno de 3 a 5 personas. En Iter Advisors, nuestro **dpto financiero externalizado** cubre la planificación, el reporting, la tesorería, el control de gestión y las relaciones con inversores — con la flexibilidad de modular cada bloque según sus prioridades.",
+            "Ventajas de externalizar el **dpto financiero** : (1) acceso inmediato a un equipo senior multi-perfil, (2) coste 50-70% inferior al equivalente interno con cargas, (3) continuidad sin riesgo de salida del CFO, (4) herramientas y procesos rodados en decenas de empresas.",
+          ],
+        },
+        {
+          heading: "Directores financieros senior a tiempo compartido",
+          content: [
+            "Nuestros **directores financieros** son profesionales senior con más de 10 años de experiencia en dirección financiera de pymes, startups y scale-ups. Cada **director financiero** de Iter Advisors interviene en 3 a 5 empresas en paralelo, lo que le permite aportar una visión multi-sectorial y un retorno de experiencia rico — imposible de obtener con un único CFO interno.",
+            "¿Qué perfil de **director financiero** necesita? Para una startup pre-seed, un director financiero operativo enfocado en cash flow y reporting basic. Para una scale-up Series B, un director financiero estratégico capaz de pilotar un fundraising de 10 M€ o un M&A. Para una pyme establecida, un director financiero generalista capaz de gestionar la rentabilidad y la fiscalidad en paralelo.",
+            "En España, nuestros **directores financieros** intervienen tanto en Madrid como en Barcelona, con expertise específica sobre la fiscalidad española (IRPF, IS, ley Beckham) y los marcos contables locales (PGC, Impuesto de Sociedades).",
           ],
         },
       ],

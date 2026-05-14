@@ -154,6 +154,22 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
         {
+          heading: "DAF à temps partagé vs CFO Fractional : même métier ?",
+          content: [
+            "Dans la pratique, le **DAF à temps partagé** est l'équivalent français du **[Fractional CFO](/ressources/glossaire/cfo)** anglo-saxon. Les deux désignent un Directeur Financier senior qui partage son temps entre plusieurs entreprises. La différence est culturelle : on parle plutôt de DAF dans les PME et ETI françaises, et de CFO/Fractional CFO dans les startups et scale-ups internationales.",
+            "Que vous cherchiez un **DAF à temps partagé** ou un **CFO Fractional**, la mission est la même : structurer la fonction finance, piloter la trésorerie, accompagner la croissance et préparer les opérations stratégiques (levée de fonds, M&A, IPO). Pour comprendre la nuance, consultez notre [glossaire CFO](/ressources/glossaire/cfo) ou notre comparaison [DAF externalisé vs salarié](/ressources/blog/daf-externalise-vs-daf-salarie).",
+          ],
+        },
+        {
+          heading: "Cas concrets : DAF à temps partagé chez Iter Advisors",
+          content: [
+            "**Startup SaaS Series A (Happy Scribe)** : 4 jours/mois pour structurer le reporting, préparer la Series B et accompagner la consolidation comptable. Économie estimée : 80 000 €/an vs un DAF en CDI.",
+            "**PME e-commerce (35 personnes)** : 6 jours/mois pour piloter la trésorerie, optimiser le BFR et négocier les lignes bancaires. Résultat : -25% de BFR en 9 mois, soit 150 000 € de cash libéré.",
+            "**Scale-up FinTech** : 8 jours/mois en phase de levée Series B (5 M€ levés). Le **DAF à temps partagé** a construit le modèle financier, animé la data room et négocié le term sheet aux côtés du CEO.",
+            "Découvrez d'autres exemples sur notre [page cas clients](/ressources/cas-clients) ou parlez directement à un DAF lors d'un [diagnostic financier gratuit](/contact).",
+          ],
+        },
+        {
           heading: "FAQ - DAF à Temps Partagé",
           content: [
             "**Peut-on passer d'un DAF à temps partagé à un DAF interne ?** Oui, c'est un scénario fréquent. Une fois la structure mise en place, vous pouvez recruter un DAF junior à temps plein et garder le DAF à temps partagé en mode conseil pour quelques jours par trimestre.",

@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/politica-de-privacidad",
     localizedPaths: { fr: "/politique-de-confidentialite", en: "/privacy-policy", es: "/politica-de-privacidad" },
     fallbackTitle: "Política de privacidad | Iter Advisors",
-    fallbackDescription: "Política de privacidad de Iter Advisors.",
+    fallbackDescription: "Política de privacidad de Iter Advisors: cómo recopilamos, usamos y protegemos sus datos personales. Sus derechos según el RGPD y cómo ejercerlos.",
   });
 }
 

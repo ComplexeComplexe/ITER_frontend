@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/en/a-propos",
     localizedPaths: { fr: "/a-propos", en: "/a-propos", es: "/quienes-somos" },
     fallbackTitle: "About us - Outsourced CFO firm since 2019 | Iter Advisors",
-    fallbackDescription: "Discover Iter Advisors.",
+    fallbackDescription: "Iter Advisors is a fractional CFO firm based in Barcelona, Paris and Toulouse. Meet our team of senior CFOs, accountants and finance experts.",
   });
 }
 

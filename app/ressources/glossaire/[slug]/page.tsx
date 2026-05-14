@@ -42,6 +42,32 @@ export async function generateStaticParams() {
   return validSlugs.map((slug) => ({ slug }));
 }
 
+// FAQ schemas keyed by slug — injected as JSON-LD for rich-results eligibility.
+const faqBySlug: Record<string, { question: string; answer: string }[]> = {
+  cfo: [
+    {
+      question: "Quelle est la différence entre un CFO et un expert-comptable ?",
+      answer:
+        "L'expert-comptable gère la comptabilité passée (déclarations, bilans). Le CFO pilote la stratégie financière future (prévisions, levées de fonds, board). Les deux sont complémentaires.",
+    },
+    {
+      question: "À quel stade une startup a-t-elle besoin d'un CFO ?",
+      answer:
+        "Dès 10 salariés et/ou quand vous préparez une levée de fonds. Un CFO seed coûte 2 000 à 3 500 €/mois pour 2 jours/semaine.",
+    },
+    {
+      question: "CFO salarié vs CFO externalisé : que choisir ?",
+      answer:
+        "Moins de 50 personnes = externalisé (plus flexible, moins cher). Plus de 50 personnes avec une finance complexe = salarié.",
+    },
+    {
+      question: "Le CFO fait-il aussi de la paie et du RH ?",
+      answer:
+        "Généralement non. La paie est gérée par un outil (PayFit, Silae) ou un cabinet. Le CFO peut superviser la fonction RH mais ne la gère pas directement.",
+    },
+  ],
+};
+
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const content = getGlossaryEntryContent("fr", slug);
@@ -50,5 +76,28 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   }
 
   const cmsNavigation = await getCmsNavigation("fr");
-  return <GlossaryEntryPage locale="fr" content={content} cmsNavigation={cmsNavigation} />;
+  const faqItems = faqBySlug[slug];
+  const faqSchema = faqItems
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqItems.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      }
+    : null;
+
+  return (
+    <>
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      <GlossaryEntryPage locale="fr" content={content} cmsNavigation={cmsNavigation} />
+    </>
+  );
 }

@@ -27,7 +27,7 @@ const navFr: NavItem[] = [
     title: "Expertises",
     href: "/daf-externalise",
     children: [
-      { text: "Direction Financière (DAF)", href: "/daf-externalise" },
+      { text: "Direction Financière (DAF)", href: "/daf-externalise/metier" },
       { text: "Ressources Humaines (DRH)", href: "/drh-externalise" },
       { text: "M&A & Levée de fonds", href: "/services/accompagnement-levee-de-fond" },
     ],
@@ -57,7 +57,7 @@ const navFr: NavItem[] = [
     title: "Le Cabinet",
     href: "/a-propos",
     children: [
-      { text: "Notre équipe", href: "/a-propos" },
+      { text: "Notre équipe", href: "/a-propos#equipe" },
       { text: "Nos clients", href: "/clients" },
       { text: "Carrières", href: "/jobs" },
     ],
@@ -70,7 +70,7 @@ const navEn: NavItem[] = [
     title: "Expertise",
     href: "/en/fractional-cfo",
     children: [
-      { text: "Financial Direction (CFO)", href: "/en/fractional-cfo" },
+      { text: "Financial Direction (CFO)", href: "/en/fractional-cfo/metier" },
       { text: "Human Resources (HR)", href: "/en/hr-outsourcing" },
       { text: "M&A & Fundraising", href: "/en/services/fund-raising-support" },
     ],
@@ -100,7 +100,7 @@ const navEn: NavItem[] = [
     title: "About",
     href: "/en/a-propos",
     children: [
-      { text: "Our Team", href: "/en/a-propos" },
+      { text: "Our Team", href: "/en/a-propos#equipe" },
       { text: "Our Clients", href: "/en/clients" },
       { text: "Careers", href: "/en/jobs" },
     ],
@@ -113,7 +113,7 @@ const navEs: NavItem[] = [
     title: "Especialidades",
     href: "/es/externalizacion-daf",
     children: [
-      { text: "Dirección Financiera (CFO)", href: "/es/externalizacion-daf" },
+      { text: "Dirección Financiera (CFO)", href: "/es/externalizacion-daf/metier" },
       { text: "Recursos Humanos (RRHH)", href: "/es/externalizacion-rrhh" },
       { text: "M&A y Financiación", href: "/es/services/soporte-financiacion" },
     ],
@@ -143,7 +143,7 @@ const navEs: NavItem[] = [
     title: "La Empresa",
     href: "/es/quienes-somos",
     children: [
-      { text: "Nuestro equipo", href: "/es/quienes-somos" },
+      { text: "Nuestro equipo", href: "/es/quienes-somos#equipo" },
       { text: "Nuestros clientes", href: "/es/clients" },
       { text: "Carreras", href: "/es/jobs" },
     ],

@@ -47,27 +47,18 @@ export function buildMetadata({
   const enPath = stripLocale(localizedPaths?.en ?? safePath, 'en');
   const esPath = stripLocale(localizedPaths?.es ?? safePath, 'es');
 
-  // SEO-P0-01: Use RFC 5646 language-region codes as keys so Next.js renders
-  // hreflang="fr-FR" / "en-GB" / "es-ES" instead of bare "fr" / "en" / "es".
-  const alternates: Record<string, string> = {
-    "x-default": `${base}${frPath}`,
-    "fr-FR": `${base}${frPath}`,
-    "en-GB": `${base}/en${enPath === "/" ? "" : enPath}`,
-    "es-ES": `${base}/es${esPath === "/" ? "" : esPath}`,
+  // SEO-P0-01: RFC 5646 language-region codes as keys so Next.js renders
+  // <link rel="alternate" hreflang="fr-FR" href="..." /> in <head>.
+  // SSR fallback also lives in components/HrefLangInjector.tsx.
+  const frUrl = `${base}${frPath}`;
+  const enUrl = `${base}/en${enPath === "/" ? "" : enPath}`;
+  const esUrl = `${base}/es${esPath === "/" ? "" : esPath}`;
+  const languages: Record<string, string> = {
+    "x-default": frUrl,
+    "fr-FR": frUrl,
+    "en-GB": enUrl,
+    "es-ES": esUrl,
   };
-
-  // Build hreflang link tags for HTML head (fixes Next.js alternates.languages not rendering)
-  const hrefLangLinks = [
-    { hreflang: "x-default", href: alternates["x-default"] },
-    { hreflang: "fr-FR", href: alternates["fr-FR"] },
-    { hreflang: "en-GB", href: alternates["en-GB"] },
-    { hreflang: "es-ES", href: alternates["es-ES"] },
-  ]
-    .map(
-      ({ hreflang, href }) =>
-        `<link rel="alternate" hrefLang="${hreflang}" href="${href}" />`
-    )
-    .join("\n  ");
 
   const meta: Metadata = {
     title,
@@ -77,7 +68,7 @@ export function buildMetadata({
       : "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
     alternates: {
       canonical: url,
-      languages: alternates,
+      languages,
     },
     openGraph: {
       title,
@@ -107,9 +98,6 @@ export function buildMetadata({
         { url: "/favicon.png", sizes: "192x192" },
       ],
       apple: "/favicon.png",
-    },
-    other: {
-      "hreflang-links": hrefLangLinks,
     },
   };
 

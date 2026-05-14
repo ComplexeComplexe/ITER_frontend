@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/mentions-legales",
     localizedPaths: { fr: "/mentions-legales", en: "/legal-notice", es: "/aviso-legal" },
     fallbackTitle: "Mentions légales | Iter Advisors",
-    fallbackDescription: "Mentions légales du site Iter Advisors.",
+    fallbackDescription: "Mentions légales du cabinet Iter Advisors : raison sociale, siège, SIRET, directeur de la publication, hébergeur du site et conditions d'utilisation.",
   });
 }
 

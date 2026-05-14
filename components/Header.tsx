@@ -24,6 +24,22 @@ export default function Header({
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [langOpen, setLangOpen] = useState(false);
   const langSwitcherRef = useRef<HTMLDivElement | null>(null);
+  // Close timer so the dropdown survives a brief mouse exit (44ms WCAG target
+  // is wider than the link, so a quick slide off-link should not close it).
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpenDropdown(null), 150);
+  };
+
+  // Clear pending timer on unmount
+  useEffect(() => () => cancelClose(), []);
 
   const nav = cmsNavigation && cmsNavigation.length > 0 ? cmsNavigation : navigation[locale];
   const homePath = getHomePath(locale);
@@ -107,12 +123,15 @@ export default function Header({
             <div
               key={item.href}
               className="relative"
-              onMouseEnter={() => item.children && setOpenDropdown(i)}
-              onMouseLeave={() => setOpenDropdown(null)}
+              onMouseEnter={() => {
+                cancelClose();
+                if (item.children) setOpenDropdown(i);
+              }}
+              onMouseLeave={() => scheduleClose()}
             >
               <Link
                 href={item.href}
-                className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/10"
+                className="flex items-center gap-1 px-4 py-2.5 text-sm font-medium text-white/80 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/10"
               >
                 {item.title}
                 {item.children && (
@@ -131,7 +150,11 @@ export default function Header({
 
               {/* Dropdown / Mega-menu */}
               {item.children && openDropdown === i && (
-                <div className={`absolute top-full ${item.megaMenu ? 'left-1/2 -translate-x-1/2' : 'left-0'} pt-2`}>
+                <div
+                  className={`absolute top-full ${item.megaMenu ? 'left-1/2 -translate-x-1/2' : 'left-0'} pt-2`}
+                  onMouseEnter={cancelClose}
+                  onMouseLeave={scheduleClose}
+                >
                   {item.megaMenu ? (
                     <div className="w-[520px] bg-white/95 backdrop-blur-md border border-white/20 rounded-xl p-5 shadow-xl shadow-iter-violet/20">
                       <div className="grid grid-cols-2 gap-6">
@@ -145,7 +168,7 @@ export default function Header({
                               <Link
                                 key={child.href + child.text}
                                 href={child.href}
-                                className="block px-3 py-2 text-sm text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors"
+                                className="block px-3 py-2.5 text-sm text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors"
                               >
                                 {child.text}
                               </Link>
@@ -162,7 +185,7 @@ export default function Header({
                               <Link
                                 key={child.href + child.text}
                                 href={child.href}
-                                className="block px-3 py-2 text-sm text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors"
+                                className="block px-3 py-2.5 text-sm text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors"
                               >
                                 {child.text}
                               </Link>
