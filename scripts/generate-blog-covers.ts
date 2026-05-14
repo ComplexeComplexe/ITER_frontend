@@ -303,16 +303,6 @@ const ARTICLES: Article[] = [
     alt: "Couverture editoriale Iter Advisors — Le CFO moderne, comment le metier a ete reecrit",
   },
   {
-    n: 26,
-    slug: "les-10-outils-pour-les-cfos-en-start-up",
-    title: "10 outils pour les CFOs startup",
-    subtitle: "La boite a outils, classee et expliquee",
-    cat: "Outils finance",
-    kicker: "BOITE A OUTILS",
-    iconKey: "toolkit",
-    alt: "Couverture editoriale Iter Advisors — 10 outils pour les CFOs startup, boite a outils classee et expliquee",
-  },
-  {
     n: 27,
     slug: "les-10-outils-pour-cfos-startup",
     title: "10 outils essentiels pour CFO startup",

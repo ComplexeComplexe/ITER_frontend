@@ -92,26 +92,6 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         "Enfin, la dimension humaine reste centrale. Le CFO doit savoir communiquer avec les différentes parties prenantes (dirigeants, investisseurs, équipes opérationnelles) et traduire les données financières en recommandations actionnables. Le leadership et la vision stratégique sont plus que jamais des qualités essentielles.",
       ],
     },
-    "les-10-outils-pour-les-cfos-en-start-up": {
-      meta: {
-        title: "Les 10 outils pour les CFOs en start-up | Iter Advisors",
-        description: "Découvrez les 10 outils indispensables pour les CFOs en startup : comptabilité, trésorerie, reporting, levée de fonds et plus encore.",
-      },
-      breadcrumbs: {
-        resourcesLabel: "Ressources",
-        resourcesHref: "/ressources",
-        blogLabel: "Blog",
-        blogHref: "/ressources/blog",
-      },
-      h1: "Les 10 outils pour les CFOs en start-up",
-      content: [
-        "Dans l'écosystème startup, le CFO doit jongler entre de multiples missions avec des ressources souvent limitées. Le choix des bons outils est crucial pour gagner en efficacité et en visibilité sur la performance financière.",
-        "Les outils de comptabilité cloud comme Pennylane ou Dext permettent d'automatiser la saisie comptable et de disposer d'une vision en temps réel des comptes. Couplés à un expert-comptable digitalisé, ils constituent le socle de toute gestion financière structurée.",
-        "Pour le pilotage de la trésorerie, des solutions comme Agicap ou Fygr offrent un suivi en temps réel du cash et des prévisionnels automatisés. Ces outils sont indispensables pour les startups en phase de croissance, où le cash est souvent le nerf de la guerre.",
-        "Le reporting et la Business Intelligence trouvent des réponses dans des outils comme Finthesis, Power BI ou Looker. Ils permettent de construire des tableaux de bord dynamiques et de partager une vision claire de la performance avec les investisseurs et le board.",
-        "Enfin, pour la levée de fonds et le M&A, des plateformes comme Dealroom ou des datarooms virtuelles comme Pappers permettent de structurer les dossiers d'investissement et de faciliter la due diligence. Le CFO moderne doit maîtriser cet écosystème d'outils pour maximiser la valeur créée.",
-      ],
-    },
     "cout-daf-externalise-tarifs-prix-2026": {
       meta: {
         title: "DAF externalisé tarif 2026 : prix, coûts et grille | Iter Advisors",

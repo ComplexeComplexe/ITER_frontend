@@ -61,7 +61,7 @@ const BLOG_SLUGS = [
   /* Static blog posts (blog-posts.ts FR) */
   "flux-de-tresorerie",
   "la-modernisation-du-role-de-cfo",
-  "les-10-outils-pour-les-cfos-en-start-up",
+  "les-10-outils-pour-cfos-startup",
   "essentiels-outils-tech-finance",
   "organiser-sa-direction-financiere",
   /* Strapi blog posts */
