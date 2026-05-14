@@ -125,7 +125,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       h1: "Combien coute un DAF externalise en 2026 ? Tarifs, grille de prix et ROI",
       publishedDate: "2026-03-28",
-      author: "Iter Advisors",
+      author: "Sébastien Doat",
       category: "",
       htmlContent: `<p><strong>Le cout est la premiere question que se posent les dirigeants lorsqu'ils envisagent de faire appel a un DAF externalise.</strong> Et c'est logique : la direction financiere est un poste strategique, mais recruter un directeur administratif et financier a temps plein represente un investissement considerable -- souvent disproportionne pour une PME ou une startup en croissance.</p>
 <p>En 2026, le marche du <a href="https://iteradvisors.com/daf-externalise">DAF externalise</a> a profondement muri en France. Selon les donnees de <a href="https://www.bpifrance.fr/">Bpifrance</a>, plus de 60 % des PME francaises de moins de 50 salaries n'ont pas de directeur financier dedie. Pourtant, ces memes entreprises traversent des phases critiques -- levees de fonds, structuration financiere, croissance rapide -- ou l'absence d'expertise financiere senior coute bien plus cher que le prix d'un DAF externalise.</p>
@@ -492,7 +492,7 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
       },
       h1: "DAF externalisé vs DAF salarié : quel choix pour votre entreprise ?",
       publishedDate: "2026-03-28",
-      author: "Iter Advisors",
+      author: "Sébastien Doat",
       category: "",
       htmlContent: `<p>Votre entreprise grandit, les enjeux financiers se complexifient, et vous réalisez que la gestion financière ne peut plus reposer uniquement sur un comptable ou sur le dirigeant lui-même. Il vous faut un Directeur Administratif et Financier (DAF). Mais une question se pose immédiatement : faut-il recruter un DAF salarié à temps plein ou faire appel à un <a href="/daf-externalise">DAF externalisé</a> ?</p>
 <p>Ce dilemme est l'un des plus fréquents pour les PME et startups en croissance. D'un côté, le réflexe naturel pousse vers l'embauche d'un cadre en interne. De l'autre, l'externalisation de la direction financière offre une flexibilité et un rapport coût-efficacité difficiles à ignorer.</p>
@@ -778,7 +778,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Checklist due diligence financiere : bien preparer sa levee de fonds",
       publishedDate: "2026-03-28",
-      author: "Iter Advisors",
+      author: "Sébastien Doat",
       category: "Levee de fonds",
       htmlContent: `<p><strong>La due diligence est le moment de verite d'une levee de fonds.</strong> Vous avez convaincu des investisseurs avec votre pitch, negocie une term sheet prometteuse, et tout semble sur la bonne voie. Puis arrive la phase de due diligence financiere, et c'est la que tout peut basculer.</p>
 <p>Les chiffres parlent d'eux-memes : <strong>environ 30 % des deals echouent a cette etape</strong> par manque de preparation. Des documents manquants, des incoherences dans les chiffres, un previsionnel bancal -- autant de signaux d'alerte qui poussent les investisseurs a se retirer ou a renegocier drastiquement les termes.</p>
@@ -1170,7 +1170,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "DAF + DRH externalisés : pourquoi combiner les deux fonctions change tout",
       publishedDate: "2026-03-28",
-      author: "Iter Advisors",
+      author: "Sébastien Doat",
       category: "thought-leadership",
       htmlContent: `<p>Votre startup passe le cap des dix salariés. La trésorerie devient complexe, les obligations sociales s'accumulent, les recrutements s'enchaînent. Vous avez besoin d'un directeur financier. Vous avez besoin d'un directeur des ressources humaines. Mais votre budget ne permet pas deux embauches à plus de 100 000 euros par an chacune.</p>
 <p>Et si la vraie question n'était pas "lequel recruter en premier", mais plutôt : "pourquoi les séparer" ?</p>
@@ -2465,7 +2465,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Impôt sur le Revenu en Espagne — Guide Complet 2026 pour Expatriés et Entreprises",
       publishedDate: "2026-05-13",
-      author: "Iter Advisors",
+      author: "Benjamin Ziza",
       category: "Fiscalité internationale",
       htmlContent: `<p>L'<strong>impôt sur le revenu en Espagne</strong>, connu sous le nom d'<strong>IRPF (Impuesto sobre la Renta de las Personas Físicas)</strong>, est l'un des éléments clés à maîtriser pour tout expatrié français ou entrepreneur s'installant en Espagne. Barcelone et Madrid attirent chaque année des milliers de travailleurs francophones — startups, freelances, salariés en télétravail — mais la fiscalité espagnole reste mal connue et source de confusion.</p>
 <p>Chez <a href="/daf-externalise">Iter Advisors</a>, nous accompagnons chaque année plus de 30 entreprises et entrepreneurs qui s'installent à Barcelone. L'optimisation fiscale est systématiquement le premier sujet qu'ils abordent avec nos DAF externalisés. Voici un guide complet pour comprendre l'<strong>impôt sur le revenu en Espagne</strong> en 2026.</p>
@@ -2552,7 +2552,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Externaliser la Comptabilité : Guide Complet pour Startups & PME",
       publishedDate: "2026-05-13",
-      author: "Iter Advisors",
+      author: "Florent Greth",
       category: "Externalisation",
       htmlContent: `<p>L'<strong>externalisation de la comptabilité</strong> est le premier pas vers une fonction financière professionnelle. Pour les startups et PME, c'est aussi un levier d'économie : 30 à 50 % moins cher qu'un comptable interne, avec une expertise souvent supérieure. Chez Iter Advisors, nous avons accompagné plus de 85 entreprises dans l'<a href="/services/comptabilite-externalisation">externalisation de leur comptabilité</a> — voici ce que nous avons appris.</p>
 <h2 id="definition">Qu'est-ce que l'externalisation de la comptabilité ?</h2>
@@ -2674,7 +2674,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Cash Flow Management: Definition & Best Practices for SMEs",
       publishedDate: "2026-05-10",
-      author: "Iter Advisors",
+      author: "Sébastien Doat",
       category: "Practical guides",
       htmlContent: `<p><strong>Cash flow</strong> is the most important financial indicator for any business — yet it remains poorly mastered. It measures every euro of cash coming in and going out over a given period, and is the true barometer of your company's financial health. Profit is an accounting opinion. Cash flow is a fact.</p>
 <p>At Iter Advisors, our <a href="/en/fractional-cfo">Fractional CFOs</a> deploy a cash management system in the first 30 days of every engagement — because no other indicator predicts failure (or growth) as reliably.</p>
@@ -2727,7 +2727,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Fractional CFO Cost in 2026: Day Rates, Packages and ROI",
       publishedDate: "2026-05-12",
-      author: "Iter Advisors",
+      author: "Sébastien Doat",
       category: "CFO outsourcing",
       htmlContent: `<p><strong>Cost is the first question every founder asks when considering a Fractional CFO.</strong> It's a fair question — financial leadership is a strategic line item, and hiring a full-time CFO is one of the most expensive moves an SME can make. This guide gives you the real 2026 numbers.</p>
 <h2 id="day-rate">Day rate: the building block</h2>
@@ -2769,7 +2769,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Fractional CFO vs In-House CFO: Which Model Wins in 2026?",
       publishedDate: "2026-05-11",
-      author: "Iter Advisors",
+      author: "Sébastien Doat",
       category: "CFO outsourcing",
       htmlContent: `<p>Your business is growing, the finance topics are getting harder, and you've realised your accountant and your CEO can no longer carry the load alone. You need a CFO. The question is: full-time hire, or <a href="/en/fractional-cfo">Fractional CFO</a>?</p>
 <p>This guide breaks down the trade-offs across cost, flexibility, expertise and ROI — and gives you a clear answer based on your stage.</p>
@@ -2812,7 +2812,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Outsourcing Accounting: Complete Guide for Startups & SMEs",
       publishedDate: "2026-05-13",
-      author: "Iter Advisors",
+      author: "Florent Greth",
       category: "Outsourcing",
       htmlContent: `<p><strong>Outsourcing accounting</strong> is the first move toward a professional finance function — and for startups and SMEs, it's also a 30-50% cost reduction with arguably better expertise than what an in-house accountant could deliver alone. Iter Advisors has helped 85+ companies make this transition. Here's what we learned.</p>
 <h2 id="what">What does accounting outsourcing actually cover?</h2>
@@ -2928,7 +2928,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "¿Qué es un Fractional CFO? Guía Completa para Pymes y Startups",
       publishedDate: "2026-05-13",
-      author: "Iter Advisors",
+      author: "Sébastien Doat",
       category: "Dirección financiera",
       htmlContent: `<p>El <strong>Fractional CFO</strong> (o CFO a tiempo compartido) es un Director Financiero senior que trabaja en varias empresas simultáneamente, dedicando a cada una un número limitado de días por semana o mes. Es la solución ideal para pymes y startups que necesitan una dirección financiera profesional pero no tienen el volumen de trabajo — ni el presupuesto — para un CFO a tiempo completo.</p>
 <h2 id="que-es">¿Qué es un fractional CFO?</h2>
@@ -2990,7 +2990,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Flujo de Caja: Definición y Buenas Prácticas para Pymes",
       publishedDate: "2026-05-10",
-      author: "Iter Advisors",
+      author: "Sébastien Doat",
       category: "Guías prácticas",
       htmlContent: `<p>El <strong>flujo de caja (cash flow)</strong> es el indicador financiero más importante para cualquier empresa, y sin embargo sigue siendo mal dominado. Mide cada euro de tesorería que entra y sale en un periodo dado, y es el verdadero barómetro de la salud financiera de su empresa. El beneficio es una opinión contable. El flujo de caja es un hecho.</p>
 <p>En Iter Advisors, nuestros <a href="/es/externalizacion-daf">CFO externalizados</a> implementan un sistema de gestión de caja en los primeros 30 días de cada misión — porque ningún otro indicador predice tan bien el fracaso (o el crecimiento).</p>
@@ -3043,7 +3043,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Coste del CFO Externalizado en 2026: TJM, Paquetes y ROI",
       publishedDate: "2026-05-12",
-      author: "Iter Advisors",
+      author: "Sébastien Doat",
       category: "CFO externalizado",
       htmlContent: `<p><strong>El coste es la primera pregunta que se hace cualquier fundador al considerar un CFO externalizado.</strong> Es justo — la dirección financiera es estratégica, y fichar un CFO a tiempo completo es una de las decisiones más caras que puede tomar una pyme. Esta guía da los números reales de 2026.</p>
 <h2 id="day-rate">El TJM: la unidad básica</h2>
@@ -3085,7 +3085,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "CFO Externalizado vs CFO Interno: ¿Qué Modelo Gana en 2026?",
       publishedDate: "2026-05-11",
-      author: "Iter Advisors",
+      author: "Sébastien Doat",
       category: "CFO externalizado",
       htmlContent: `<p>Su negocio crece, los temas financieros se complican y se ha dado cuenta de que su contable y su CEO ya no pueden con todo. Necesita un CFO. La pregunta es: ¿fichaje a tiempo completo o <a href="/es/externalizacion-daf">CFO externalizado</a>?</p>
 <p>Esta guía desglosa los compromisos en coste, flexibilidad, expertise y ROI — y le da una respuesta clara según su etapa.</p>
@@ -3128,7 +3128,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Externalizar la Contabilidad: Guía Completa para Startups y Pymes",
       publishedDate: "2026-05-13",
-      author: "Iter Advisors",
+      author: "Florent Greth",
       category: "Externalización",
       htmlContent: `<p><strong>Externalizar la contabilidad</strong> es el primer paso hacia una función financiera profesional — y para startups y pymes, es también una reducción de coste del 30-50% con probablemente mejor expertise que un contable interno. Iter Advisors ha acompañado a 85+ empresas en esta transición. Esto es lo que aprendimos.</p>
 <h2 id="what">¿Qué cubre la externalización contable?</h2>
