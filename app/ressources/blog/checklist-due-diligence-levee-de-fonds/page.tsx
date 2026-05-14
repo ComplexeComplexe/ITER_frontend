@@ -29,9 +29,9 @@ export default function ChecklistDueDiligencePage() {
       title="Checklist due diligence : préparation financière complète pour la levée de fonds"
       dek="Guide complet avec checklist détaillée pour préparer votre due diligence financière. Documents, analyses, et préparation avec nos experts."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={13}
       dateModified="2026-05-01"

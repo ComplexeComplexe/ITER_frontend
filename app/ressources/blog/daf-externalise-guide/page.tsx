@@ -39,9 +39,9 @@ export default async function Page() {
       title="DAF externalisé : guide complet, tarifs et cas client 2026"
       dek="Qu'est-ce qu'un DAF externalisé ? Missions, profils, tarifs, secteurs. Pourquoi +85 entreprises font confiance à Iter Advisors."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter-advisors.jpg",
-        jobTitle: "Cabinet de DAF externalisé et CFO à temps partagé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={9}
       dateModified="2026-05-01T00:00:00Z"

@@ -29,9 +29,9 @@ export default function OrganiserDirectionFinancierePage() {
       title="Comment organiser sa direction financière en 2026 ?"
       dek="Structurer votre département finance selon votre taille et maturité. Rôles, responsabilités et modèles d'organisation pour PME, scale-ups et ETI."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={11}
       dateModified="2026-05-01"

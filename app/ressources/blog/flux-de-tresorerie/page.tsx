@@ -29,9 +29,9 @@ export default function FluxDeTresorerieePage() {
       title="Flux de trésorerie : définition, calcul et importance pour l'entreprise"
       dek="Maîtrisez vos flux de trésorerie : définition, types (opérationnel, investissement, financement), calcul et outils. Essentiel pour piloter votre cash et financer votre croissance."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={10}
       dateModified="2026-05-01"

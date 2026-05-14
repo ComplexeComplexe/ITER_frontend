@@ -39,9 +39,9 @@ export default async function Page() {
       title="Levée de fonds : préparation financière et juridique 2026"
       dek="Comment préparer votre levée de fonds ? Due diligence financière, documentations requises, valorisation. Guide avec checklist."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter-advisors.jpg",
-        jobTitle: "Cabinet de DAF externalisé et CFO à temps partagé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={10}
       dateModified="2026-05-01T00:00:00Z"

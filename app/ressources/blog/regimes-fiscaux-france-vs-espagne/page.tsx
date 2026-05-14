@@ -39,9 +39,9 @@ export default async function Page() {
       title="Régimes fiscaux : France vs Espagne — Comparaison complète 2026"
       dek="IS, TVA, cotisations sociales, régimes spéciaux. Comment optimiser votre structure fiscale entre la France et l'Espagne."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter-advisors.jpg",
-        jobTitle: "Cabinet de DAF externalisé et CFO à temps partagé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={8}
       dateModified="2026-05-01T00:00:00Z"

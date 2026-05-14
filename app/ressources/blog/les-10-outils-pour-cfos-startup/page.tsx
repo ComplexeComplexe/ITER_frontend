@@ -29,9 +29,9 @@ export default function Outils10CfosStartupPage() {
       title="Les 10 outils indispensables pour CFO en startup (2026)"
       dek="Découvrez les 10 meilleurs outils fintech pour startup : comptabilité, trésorerie, reporting, levée de fonds. Sélection, ROI, et stack recommandée."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={12}
       dateModified="2026-05-01"
