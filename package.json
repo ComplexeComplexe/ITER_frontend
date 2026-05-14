@@ -15,7 +15,9 @@
     "seed:fiches-metier": "tsx scripts/seed-fiches-metier-to-strapi.ts",
     "seed:glossary": "tsx scripts/seed-glossary-to-strapi.ts",
     "seed:service-pages": "tsx scripts/seed-service-single-pages-to-strapi.ts",
-    "seed:team": "tsx scripts/seed-team-members-to-strapi.ts"
+    "seed:team": "tsx scripts/seed-team-members-to-strapi.ts",
+    "migrate:export-strapi": "tsx scripts/export-strapi.ts",
+    "migrate:images": "tsx scripts/migrate-cdn-images.ts"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

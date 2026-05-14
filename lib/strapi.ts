@@ -15,6 +15,25 @@ const rawStrapiUrl = process.env.STRAPI_API_URL || "http://localhost:1337";
 const STRAPI_URL = rawStrapiUrl.replace(/\/admin\/?$/, "") || rawStrapiUrl;
 const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN || "";
 
+/**
+ * MIGRATION-03 kill switch. When STRAPI_DISABLED is truthy (set in
+ * .env.local / Vercel env), every network call below short-circuits to
+ * an empty response. All callers already have a static-content fallback
+ * (lib/content/*.ts, lib/fallback-*.ts) so the front-end keeps working
+ * — this just stops paying for and depending on Strapi at request time.
+ *
+ * Switching the flag is the safe rollout sequence:
+ *   1. Confirm static content is complete (export-strapi.ts + diff).
+ *   2. Set STRAPI_DISABLED=true on Vercel preview, smoke-test.
+ *   3. Promote to production.
+ *   4. Once verified for a few days, run the code-removal codemod from
+ *      migration/RUNBOOK.md to delete this file outright.
+ */
+const STRAPI_DISABLED =
+  process.env.STRAPI_DISABLED === "true" ||
+  process.env.STRAPI_DISABLED === "1" ||
+  process.env.NEXT_PUBLIC_STRAPI_DISABLED === "true";
+
 const isLocalStrapi =
   typeof STRAPI_URL === "string" &&
   (STRAPI_URL.includes("localhost") || STRAPI_URL.includes("127.0.0.1"));
@@ -403,6 +422,15 @@ export async function strapiFetch<T>(
   params: Record<string, string> = {},
   options: { locale?: Locale; revalidate?: number } = {}
 ): Promise<T> {
+  // MIGRATION-03 kill switch: when Strapi is disabled, return an empty
+  // collection / single response so callers fall through to their static
+  // fallback. We intentionally throw inside the matching try/catch wrappers
+  // of getGlobal/getHomepage/etc, but use an empty shape for the direct
+  // strapiFetch consumers (blog listing, fiches metier) so they don't crash.
+  if (STRAPI_DISABLED) {
+    return { data: [], meta: { pagination: { pageCount: 0, total: 0 } } } as T;
+  }
+
   const url = new URL(`/api/${endpoint}`, STRAPI_URL);
 
   // Add locale if specified (mapped to Strapi Cloud codes)
