@@ -115,19 +115,14 @@ export default function BlogPostPage({
             {title}
           </h1>
 
-          {/* Date, author and category */}
-          {(publishedDate || author || category) && (
+          {/* Author and category — publication date is intentionally
+              hidden from the UI (still emitted in the JSON-LD schema
+              above for SEO/freshness). */}
+          {(author || category) && (
             <div className="flex flex-col gap-4 mt-6">
-              {/* Date, author, category metadata row */}
               <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                {publishedDate && (
-                  <time dateTime={publishedDate}>
-                    {publishedLabel[locale]} {formatDate(publishedDate, locale)}
-                  </time>
-                )}
                 {category && (
                   <span className="flex items-center gap-1.5">
-                    <span className="w-1 h-1 rounded-full bg-muted-foreground/50" />
                     <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet bg-iter-violet/10 px-2 py-0.5 rounded-full">
                       {category}
                     </span>

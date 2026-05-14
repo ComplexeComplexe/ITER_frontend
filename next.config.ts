@@ -122,15 +122,33 @@ const nextConfig: NextConfig = {
         destination: "/es/ressources/blog",
         permanent: true, // 301 redirect (article depublished)
       },
+      // les-10-outils-pour-les-cfos-en-start-up (long slug) was depublished
+      // — kept the dedicated short-slug version. EN/ES paths redirect to
+      // the FR short slug since no EN/ES translation exists.
+      {
+        source: "/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
+        destination: "/ressources/blog/les-10-outils-pour-cfos-startup",
+        permanent: true,
+      },
       {
         source: "/en/ressources/blog/les-10-outils-pour-cfos-startup",
-        destination: "/en/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
-        permanent: true, // 301 redirect (slug mismatch)
+        destination: "/ressources/blog/les-10-outils-pour-cfos-startup",
+        permanent: true,
       },
       {
         source: "/es/ressources/blog/les-10-outils-pour-cfos-startup",
-        destination: "/es/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
-        permanent: true, // 301 redirect (slug mismatch)
+        destination: "/ressources/blog/les-10-outils-pour-cfos-startup",
+        permanent: true,
+      },
+      {
+        source: "/en/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
+        destination: "/ressources/blog/les-10-outils-pour-cfos-startup",
+        permanent: true,
+      },
+      {
+        source: "/es/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
+        destination: "/ressources/blog/les-10-outils-pour-cfos-startup",
+        permanent: true,
       },
       {
         source: "/es/ressources/tools",

@@ -235,7 +235,6 @@ const ORPHAN_BLOG_SLUGS = [
  * don't exist anywhere are removed too so they 404 honestly. */
 const FR_ONLY_BLOG_SLUGS = [
   "la-modernisation-du-role-de-cfo",
-  "les-10-outils-pour-les-cfos-en-start-up",
   "regimes-fiscaux-france-vs-espagne",
   "checklist-due-diligence-levee-de-fonds",
   "daf-drh-externalises-synergie",

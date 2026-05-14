@@ -69,7 +69,15 @@ export default async function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <DafSubPage locale="fr" content={content} cmsNavigation={cmsNavigation} />
+      <DafSubPage
+        locale="fr"
+        content={content}
+        cmsNavigation={cmsNavigation}
+        heroImage={{
+          src: "/images/illustrations/team-video-call.svg",
+          alt: "Réunion d'équipe en visioconférence : un DAF à temps partagé pilote la finance d'Iter Advisors à distance",
+        }}
+      />
     </>
   );
 }

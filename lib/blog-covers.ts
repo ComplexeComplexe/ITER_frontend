@@ -38,7 +38,6 @@ export const BLOG_COVERS: Record<string, BlogCover> = {
   "checklist-due-diligence-levee-de-fonds": { cover: "/images/blog/covers/checklist-due-diligence-levee-de-fonds.svg", alt: "Couverture editoriale Iter Advisors — Checklist due diligence financiere pour levee de fonds" },
   "daf-drh-externalises-synergie": { cover: "/images/blog/covers/daf-drh-externalises-synergie.svg", alt: "Couverture editoriale Iter Advisors — DAF et DRH externalises, pourquoi le duo change tout" },
   "la-modernisation-du-role-de-cfo": { cover: "/images/blog/covers/la-modernisation-du-role-de-cfo.svg", alt: "Couverture editoriale Iter Advisors — Le CFO moderne, comment le metier a ete reecrit" },
-  "les-10-outils-pour-les-cfos-en-start-up": { cover: "/images/blog/covers/les-10-outils-pour-les-cfos-en-start-up.svg", alt: "Couverture editoriale Iter Advisors — 10 outils pour les CFOs startup, boite a outils classee et expliquee" },
   "les-10-outils-pour-cfos-startup": { cover: "/images/blog/covers/les-10-outils-pour-cfos-startup.svg", alt: "Couverture editoriale Iter Advisors — 10 outils essentiels pour CFO startup, la shortlist du praticien" },
   "daf-externalise-guide": { cover: "/images/blog/covers/daf-externalise-guide.svg", alt: "Couverture editoriale Iter Advisors — Le guide complet du DAF externalise, tarifs et cas client" },
   "essentiels-outils-tech-finance": { cover: "/images/blog/covers/essentiels-outils-tech-finance.svg", alt: "Couverture editoriale Iter Advisors — Les outils tech essentiels pour la finance, la stack 2026" },

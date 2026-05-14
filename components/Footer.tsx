@@ -10,21 +10,21 @@ const POPULAR_ARTICLES = {
     { slug: "daf-externalise-vs-daf-salarie", title: "DAF externalisé vs salarié" },
     { slug: "checklist-due-diligence-levee-de-fonds", title: "Due diligence & Levée de fonds" },
     { slug: "daf-drh-externalises-synergie", title: "DRH et synergie d'équipe" },
-    { slug: "les-10-outils-pour-les-cfos-en-start-up", title: "Les 10 outils pour CFO startup" },
+    { slug: "les-10-outils-pour-cfos-startup", title: "Les 10 outils pour CFO startup" },
   ],
   en: [
     { slug: "cout-daf-externalise-tarifs-prix-2026", title: "Cost of Outsourced CFO" },
     { slug: "daf-externalise-vs-daf-salarie", title: "Outsourced CFO vs Employee" },
     { slug: "checklist-due-diligence-levee-de-fonds", title: "Due Diligence & Fundraising" },
     { slug: "daf-drh-externalises-synergie", title: "HR and Team Synergy" },
-    { slug: "les-10-outils-pour-les-cfos-en-start-up", title: "10 CFO Tools for Startups" },
+    { slug: "les-10-outils-pour-cfos-startup", title: "10 CFO Tools for Startups" },
   ],
   es: [
     { slug: "cout-daf-externalise-tarifs-prix-2026", title: "Costo de CFO externalizado" },
     { slug: "daf-externalise-vs-daf-salarie", title: "CFO externalizado vs empleado" },
     { slug: "checklist-due-diligence-levee-de-fonds", title: "Due Diligence y Financiación" },
     { slug: "daf-drh-externalises-synergie", title: "RRHH y sinergia de equipo" },
-    { slug: "les-10-outils-pour-les-cfos-en-start-up", title: "10 herramientas para CFO startup" },
+    { slug: "les-10-outils-pour-cfos-startup", title: "10 herramientas para CFO startup" },
   ],
 };
 

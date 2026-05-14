@@ -93,8 +93,8 @@ export const homeContent = {
     blogCards: [
       {
         title: "Les 10 outils pour les CFOs en start-up",
-        href: "/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
-        image: "/images/blog/les-10-outils-cfos.jpg",
+        href: "/ressources/blog/les-10-outils-pour-cfos-startup",
+        image: "/images/blog/covers/les-10-outils-pour-cfos-startup.svg",
         date: "12 mars 2026",
       },
       {
