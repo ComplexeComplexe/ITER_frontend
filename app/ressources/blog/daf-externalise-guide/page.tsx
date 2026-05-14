@@ -71,14 +71,19 @@ export default async function Page() {
       }
       relatedArticles={[
         {
-          url: "/ressources/blog/daf-externalise/transition",
+          url: "/ressources/blog/daf-externalise-vs-daf-salarie",
           category: "DAF externalisé",
-          title: "DAF de transition : accompagner vos changements stratégiques",
+          title: "DAF externalisé vs DAF salarié : quel choix pour votre entreprise ?",
         },
         {
-          url: "/ressources/blog/cfo-outsourcing",
-          category: "Stratégie financière",
-          title: "CFO outsourcing : pourquoi et comment déléguer votre direction financière",
+          url: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
+          category: "DAF externalisé",
+          title: "Coût d'un DAF externalisé en 2026 : tarifs, grille de prix et ROI",
+        },
+        {
+          url: "/ressources/blog/checklist-due-diligence-levee-de-fonds",
+          category: "Levée de fonds",
+          title: "Checklist due diligence financière : bien préparer sa levée de fonds",
         },
       ]}
       metaDescription="DAF externalisé : guide complet avec tarifs, missions, profils et cas clients. Iter Advisors accompagne +85 entreprises."

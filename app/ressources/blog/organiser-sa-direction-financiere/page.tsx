@@ -52,6 +52,11 @@ export default function OrganiserDirectionFinancierePage() {
           title: "DAF externalisé vs DAF salarié : analyse complète",
         },
         {
+          url: "/ressources/blog/daf-drh-externalises-synergie",
+          category: "Stratégie",
+          title: "DAF + DRH externalisés : la synergie qui change tout",
+        },
+        {
           url: "/ressources/blog/la-modernisation-du-role-de-cfo",
           category: "CFO",
           title: "La modernisation du rôle de CFO",

@@ -52,9 +52,14 @@ export default function CoutDafExternalisePage() {
           title: "DAF externalisé vs DAF salarié : analyse complète",
         },
         {
-          url: "/ressources/blog/organiser-sa-direction-financiere",
-          category: "Organisation",
-          title: "Comment organiser sa direction financière en 2026 ?",
+          url: "/ressources/blog/checklist-due-diligence-levee-de-fonds",
+          category: "Levée de fonds",
+          title: "Checklist due diligence financière : bien préparer sa levée de fonds",
+        },
+        {
+          url: "/ressources/blog/levee-de-fonds-guide",
+          category: "Levée de fonds",
+          title: "Lever des fonds : préparation fiscale, juridique et financière",
         },
         {
           url: "/ressources/blog/essentiels-outils-tech-finance",

@@ -71,14 +71,24 @@ export default async function Page() {
       }
       relatedArticles={[
         {
-          url: "/ressources/blog/daf-externalise",
-          category: "DAF externalisé",
-          title: "DAF externalisé : guide complet, tarifs et cas client",
+          url: "/ressources/blog/impot-revenu-espagne",
+          category: "Fiscalité internationale",
+          title: "Impôt sur le revenu en Espagne — Guide complet 2026 (IRPF, Beckham)",
         },
         {
-          url: "/ressources/blog/levee-de-fonds-startup",
+          url: "/ressources/blog/daf-externalise-barcelone-guide-startups-espagnoles",
+          category: "DAF externalisé",
+          title: "DAF externalisé à Barcelone : le guide pour les startups en Espagne",
+        },
+        {
+          url: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
+          category: "DAF externalisé",
+          title: "Coût d'un DAF externalisé en 2026 : tarifs, grille de prix et ROI",
+        },
+        {
+          url: "/ressources/blog/levee-de-fonds-guide",
           category: "Financement",
-          title: "Lever des fonds : préparation fiscale et juridique",
+          title: "Lever des fonds : préparation fiscale, juridique et financière",
         },
       ]}
       metaDescription="Comparaison complète IS, TVA et cotisations France vs Espagne. Économies potentielles et régimes optimisés. Guide expert Iter Advisors 2026."

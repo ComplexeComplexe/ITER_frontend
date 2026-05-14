@@ -57,9 +57,14 @@ export default function DafExternaliseVsSalariePage() {
           title: "Combien coûte un DAF externalisé en 2026 ? Tarifs et ROI",
         },
         {
-          url: "/ressources/blog/essentiels-outils-tech-finance",
+          url: "/ressources/blog/daf-drh-externalises-synergie",
+          category: "Stratégie",
+          title: "DAF + DRH externalisés : la synergie qui change tout",
+        },
+        {
+          url: "/ressources/blog/les-10-outils-pour-cfos-startup",
           category: "Tech",
-          title: "Les essentiels outils tech pour moderniser votre département finance",
+          title: "Les 10 outils incontournables pour les CFOs en startup",
         },
       ]}
     >
