@@ -565,6 +565,15 @@ const nextConfig: NextConfig = {
         destination: "/ressources/glossaire",
         permanent: true,
       },
+      // TICKET F1 (2026-05-17) — /fr/fractional-cfo referenced in tickets but
+      // no FR route exists under that path. The canonical FR cluster is
+      // /daf-externalise. 301 so internal links and any external backlinks
+      // pointing to /fr/fractional-cfo land on the right pillar.
+      {
+        source: "/fr/fractional-cfo",
+        destination: "/daf-externalise",
+        permanent: true,
+      },
       // ─── INDEX-05 (mai 2026) — ES blog 404s reported by Bing & Google ──
       // checklist-due-diligence-levee-de-fonds: article exists only in FR
       // (lib/content/blog-posts.ts) — redirect ES variant to the ES blog

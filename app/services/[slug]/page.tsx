@@ -74,6 +74,26 @@ export async function generateMetadata({
     return { title: "Services | Iter Advisors" };
   }
   const endpoint = SERVICE_PAGE_API_MAP[slug];
+
+  // TICKET F3 (2026-05-17) — gestion-financiere-externalisee is a thin page
+  // that overlaps with the richer controle-de-gestion-externalise. The SEO
+  // canonical is set to the richer page so Google consolidates signals there.
+  // No 301 redirect yet (F3 scope); only the canonical + hreflang are changed.
+  if (slug === "gestion-financiere-externalisee") {
+    return buildStrapiMetadata({
+      endpoint,
+      locale: "fr",
+      path: "/services/controle-de-gestion-externalise",
+      localizedPaths: {
+        fr: "/services/controle-de-gestion-externalise",
+        en: "/en/services/outsourced-management-control",
+        es: "/es/services/control-gestion-externalizado",
+      },
+      fallbackTitle: fallbackTitles[slug],
+      fallbackDescription: fallbackDescriptions[slug],
+    });
+  }
+
   return buildStrapiMetadata({
     endpoint,
     locale: "fr",

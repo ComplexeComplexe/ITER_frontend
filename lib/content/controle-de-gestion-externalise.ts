@@ -1,192 +1,337 @@
+/**
+ * Content for /services/controle-de-gestion-externalise.
+ *
+ * Refonte 2026-05-17 (TICKET F2) — 2 000+ mots, structure
+ * direct-answer-first, FAQPage schema, couverture query fan-out.
+ * Objectif SEO : passer de la position 14,5 à la position 4-10 sur
+ * "contrôle de gestion externalisé".
+ *
+ * The data shape is consumed by
+ * `components/pages/ControleDeGestionExternalisePage.tsx` — every
+ * section renders different fields conditionally (paragraphs / bullets
+ * / pillars / table / testimonials / faqs / closingText). New section
+ * types added in this refactor: `table` (KPIs, comparison, pricing)
+ * and `testimonials` (3 client quotes).
+ */
+
+export interface ControleSectionTable {
+  caption?: string;
+  headers: string[];
+  rows: string[][];
+}
+
+export interface ControleSectionTestimonial {
+  quote: string;
+  author: string;
+  role: string;
+  location: string;
+  context?: string;
+}
+
 export const controleDeGestionExternaliseeContent = {
   fr: {
     meta: {
-      title: "Contrôle de gestion externalisé pour startups et PME | Iter Advisors",
+      // SEO audit + redesign 2026-05-17 — Title 50-60c with primary
+      // keyword in first 40c, brand at the end. Meta 150-160c with
+      // proof points (2 500€, 3 villes) and a soft CTA.
+      title:
+        "Contrôle de gestion externalisé | Pilotage financier startup | Iter Advisors",
       description:
-        "Externalisez votre contrôle de gestion avec Iter Advisors : tableaux de bord, analyse des coûts, suivi budgétaire et KPIs. Intégration fluide avec vos outils existants.",
+        "Externalisez votre contrôle de gestion avec un expert dédié. Tableaux de bord, KPIs, reporting mensuel. Dès 2 500 €/mois. Paris, Toulouse, Barcelone. → Découvrir.",
     },
-    h1: "Contrôle de gestion externalisé : piloter sa rentabilité sans recruter un contrôleur de gestion",
+    h1: "Contrôle de gestion externalisé pour startups et PME",
+    hero: {
+      lede: "Vous ne savez pas si votre startup est rentable ce mois-ci ? Vous prenez des décisions à l'aveugle faute de chiffres fiables ? Un contrôle de gestion externalisé donne aux fondateurs la visibilité financière dont ils ont besoin pour piloter — sans recruter un contrôleur de gestion à plein temps.",
+      stats: [
+        "50+ startups accompagnées",
+        "3 villes (Paris, Toulouse, Barcelone)",
+        "Mise en place en 2 semaines",
+      ],
+      primaryCta: { label: "Auditer ma gestion gratuitement", href: "/contact" },
+      secondaryCta: { label: "Voir nos formules et tarifs", href: "#tarifs" },
+    },
     sections: [
+      // ─────────── SECTION 1 — DÉFINITION ───────────
       {
         id: "definition",
         title: "Qu'est-ce que le contrôle de gestion externalisé ?",
         paragraphs: [
-          "Le contrôle de gestion externalisé consiste à confier à un expert externe la responsabilité de structurer, suivre et analyser les indicateurs financiers et opérationnels de l'entreprise. Le périmètre couvert va bien au-delà d'un simple reporting mensuel : il inclut la définition des bons indicateurs, le suivi des écarts par rapport aux prévisions, l'analyse des coûts par centre de profit et l'accompagnement à la prise de décision.",
-          "Contrairement à un contrôleur de gestion interne qui est souvent noyé dans des tâches administratives et des demandes ponctuelles de l'équipe, un contrôle de gestion externalisé reste concentré sur le pilotage stratégique. L'expert externe intervient à fréquence régulière, avec un recul sur la situation et une capacité à comparer votre entreprise avec d'autres structures de taille comparable.",
-          "Les outils modernes ont rendu ce modèle particulièrement efficace. Avec des solutions cloud comme Pennylane, Sage ou des tableurs connectés en direct aux bases de données comptables, le contrôleur de gestion externe accède aux mêmes chiffres que le dirigeant en temps réel. Plus besoin d'attendre la fin du mois pour savoir où l'entreprise en est.",
+          "Le contrôle de gestion externalisé consiste à confier le pilotage financier et le reporting de performance à un expert externe, qui intervient de manière régulière — généralement 2 à 8 jours par mois — sans être salarié de l'entreprise. Il établit les tableaux de bord, suit les indicateurs clés de performance (KPIs), analyse les écarts entre prévisions et réalisations, et accompagne les fondateurs dans leurs décisions stratégiques.",
+          "Contrairement à un comptable qui enregistre les flux passés, le contrôleur de gestion regarde vers l'avant : il modélise, prévient les dérives, et aide à prioriser les investissements.",
+          "Le contrôle de gestion externalisé s'adresse particulièrement aux entreprises qui :",
         ],
+        table: {
+          caption: "Pour qui le contrôle de gestion externalisé est pertinent",
+          headers: ["Profil", "Situation", "Besoin"],
+          rows: [
+            [
+              "Startup en croissance",
+              "CA > 500 K€, effectif 5-30 personnes",
+              "Visibilité mensuelle sur la marge, le burn et la trésorerie",
+            ],
+            [
+              "Scale-up pré-levée",
+              "Préparation d'une Series A/B",
+              "Construction du reporting investisseur et des KPIs opérationnels",
+            ],
+            [
+              "PME à structure légère",
+              "Pas de directeur financier interne",
+              "Pilotage financier mensuel sans recrutement",
+            ],
+            [
+              "Entreprise multi-sites",
+              "Filiales à Paris et Barcelone",
+              "Consolidation de la performance et harmonisation des pratiques",
+            ],
+          ],
+        },
       },
+
+      // ─────────── SECTION 2 — KPIs ───────────
       {
-        id: "signaux",
-        title: "Les signaux qui montrent qu'il faut structurer son contrôle de gestion",
+        id: "kpis",
+        title:
+          "Quels indicateurs (KPIs) suit un contrôleur de gestion externalisé ?",
         paragraphs: [
-          "Plusieurs situations concrètes indiquent qu'un pilotage artisanal atteint ses limites :",
+          "Un contrôleur de gestion externalisé suit en moyenne 10 à 12 KPIs financiers et opérationnels, choisis pour leur capacité à déclencher une action plutôt que pour leur exhaustivité. Le tableau de bord est personnalisé selon votre modèle économique : un SaaS suivra son MRR et son NRR, un e-commerce sa marge brute par canal, une marketplace son take rate.",
+          "Voici les indicateurs les plus couramment suivis chez les startups accompagnées par Iter Advisors :",
         ],
-        bullets: [
-          {
-            title: "Le dirigeant ne sait plus quels produits ou clients sont rentables.",
-            text: "Le chiffre d'affaires global augmente, mais la marge nette stagne ou diminue. Sans une analyse fine par segment, il est impossible de savoir où se cache le problème.",
-          },
-          {
-            title: "Les prévisions budgétaires ne correspondent jamais à la réalité.",
-            text: "Le budget annuel est établi en début d'année, puis oublié. Aucun ajustement n'est fait en cours de route, et les écarts ne sont analysés que lorsqu'ils deviennent critiques.",
-          },
-          {
-            title: "Les investisseurs ou le conseil demandent des explications que le dirigeant ne peut pas fournir.",
-            text: "Une startup en levée de fonds ou une PME avec des actionnaires doit présenter des analyses structurées. Des réponses approximatives ne suffisent pas.",
-          },
-          {
-            title: "Les coûts augmentent plus vite que le chiffre d'affaires.",
-            text: "L'entreprise grossit, embauche, investit, mais personne ne suit l'évolution du seuil de rentabilité ni l'impact de chaque décision sur la trésorerie.",
-          },
-          {
-            title: "Les décisions se prennent sur des impressions plutôt que sur des chiffres.",
-            text: "Le dirigeant sent que quelque chose ne va pas, mais il n'a pas les données pour le prouver, identifier la cause et agir en conséquence.",
-          },
-        ],
+        table: {
+          caption: "Les 10 KPIs les plus suivis en contrôle de gestion startup",
+          headers: ["KPI", "Fréquence", "Formule", "Seuil d'alerte"],
+          rows: [
+            ["Burn rate mensuel", "Mensuelle", "Dépenses totales − CA récurrent", "> 15 % d'augmentation"],
+            ["Runway (autonomie de trésorerie)", "Mensuelle", "Trésorerie / Burn rate mensuel", "< 12 mois"],
+            ["Marge brute", "Mensuelle", "(CA − Coût direct) / CA", "< 60 % pour du SaaS"],
+            ["CAC (Customer Acquisition Cost)", "Trimestrielle", "Coût marketing + ventes / Nouveaux clients", "> LTV / 3"],
+            ["LTV (Lifetime Value)", "Trimestrielle", "ARPU × Durée de vie moyenne", "CAC / LTV < 1/3"],
+            ["Churn rate", "Mensuelle", "Clients perdus / Clients total", "> 5 % / mois"],
+            ["NRR (Net Revenue Retention)", "Trimestrielle", "(MRR début + expansion − churn) / MRR début", "< 100 % = danger"],
+            ["Délai moyen de paiement clients", "Mensuelle", "Jours entre facturation et encaissement", "> 45 jours"],
+            ["Délai de clôture comptable", "Mensuelle", "Jours entre fin du mois et comptes arrêtés", "> 10 jours"],
+            ["Ratio charges fixes / variables", "Trimestrielle", "Charges fixes / Charges variables", "> 70 % = rigidité"],
+          ],
+        },
         closingText:
-          "Ces signaux ne signifient pas forcément qu'il faut recruter un contrôleur de gestion en interne. Pour une structure de quinze à soixante personnes, un poste à temps plein est souvent surdimensionné et coûteux. Le contrôle de gestion externalisé offre une flexibilité et une expertise adaptées à ce stade de croissance.",
+          "Ces indicateurs sont présentés dans un tableau de bord Power BI ou Google Data Studio, mis à jour automatiquement et accessible en temps réel par les fondateurs.",
       },
+
+      // ─────────── SECTION 3 — vs COMPTABLE ───────────
       {
-        id: "quatre-piliers",
-        title: "Les quatre piliers d'un contrôle de gestion efficace",
+        id: "vs-comptable",
+        title:
+          "Quelle est la différence entre un contrôleur de gestion et un comptable ?",
         paragraphs: [
-          "Un contrôle de gestion qui apporte de la valeur repose sur quatre fondations solides. Iter Advisors les met en place et les suit de manière continue.",
+          "Un contrôleur de gestion regarde vers l'avenir (prévoir, modéliser, recommander) tandis qu'un comptable enregistre les flux passés. C'est la confusion la plus fréquente chez les fondateurs : les deux fonctions sont complémentaires mais totalement différentes, et une startup en croissance a besoin des deux.",
+        ],
+        table: {
+          caption: "Comptable vs contrôleur de gestion — comparaison",
+          headers: ["Critère", "Comptable", "Contrôleur de gestion"],
+          rows: [
+            ["Regard", "Vers le passé", "Vers l'avenir"],
+            ["Mission", "Enregistrer et justifier les flux", "Analyser, prévoir, recommander"],
+            ["Livrable", "Bilan, compte de résultat, liasse fiscale", "Tableau de bord, forecast, analyse d'écarts"],
+            ["Fréquence", "Trimestrielle (TVA) ou annuelle", "Mensuelle (voire hebdomadaire)"],
+            ["Outil", "Logiciel comptable (Pennylane, etc.)", "Power BI, Excel avancé, Tableau"],
+            ["Question type", "« Combien avons-nous gagné ? »", "« Allons-nous manquer de cash dans 6 mois ? »"],
+          ],
+        },
+        closingTextHtml:
+          'En pratique, une startup a besoin des deux. La <a class="prose-link" href="/services/comptabilite-externalisation">comptabilité externalisée</a> s\'assure que les chiffres sont justes et conformes. Le contrôleur de gestion les transforme en décisions. Chez Iter Advisors, nos contrôleurs de gestion travaillent main dans la main avec <a class="prose-link" href="/services/comptabilite-externalisation">notre service comptable</a> — nous ne le remplaçons pas.',
+      },
+
+      // ─────────── SECTION 4 — MÉTHODOLOGIE ───────────
+      {
+        id: "methodologie",
+        title:
+          "Comment fonctionne le contrôle de gestion externalisé chez Iter Advisors ?",
+        paragraphs: [
+          "Notre intervention suit une méthodologie en 4 phases, déployée sur 3 à 6 mois. Chaque phase a un livrable concret et un horizon temporel défini, ce qui permet aux fondateurs de mesurer l'avancement sans ambiguïté.",
         ],
         pillars: [
           {
-            title: "Tableaux de bord de pilotage : voir pour décider",
-            text: "Les tableaux de bord sont le cœur du dispositif. Ils doivent refléter la réalité de votre activité, pas un modèle théorique. Nous construisons des dashboards adaptés à votre secteur et vos enjeux, incluant le suivi du chiffre d'affaires par produit ou client, l'analyse des marges brutes et nettes, le monitoring du besoin en fonds de roulement et le suivi des dépenses opérationnelles. Chaque indicateur est choisi pour sa capacité à déclencher une action.",
+            title: "Phase 1 — Diagnostic (Semaine 1-2)",
+            text: "Nous réalisons un audit de 15 points couvrant : qualité des données comptables, existence de tableaux de bord, processus de clôture, outils utilisés, et compétences de l'équipe existante. Livrable : un scorecard financier avec 5 priorités immédiates.",
           },
           {
-            title: "Analyse des coûts : comprendre vos charges",
-            text: "Une bonne maîtrise des coûts passe par une catégorisation rigoureuse. Nous distinguons les charges directes des charges indirectes, analysons les coûts par centre de profit, identifions la part variable et la part fixe de chaque poste, et déterminons le seuil de rentabilité de l'entreprise. Cette structuration permet de repérer les fuites de marge et les leviers d'amélioration.",
+            title: "Phase 2 — Construction (Semaines 3-6)",
+            text: "Nous mettons en place le tableau de bord opérationnel : connexion aux sources de données (banque, outil de facturation, CRM), définition des KPIs pertinents pour votre modèle économique, et automatisation des extractions. Livrable : un dashboard temps réel et un reporting mensuel structuré.",
           },
           {
-            title: "Reporting stratégique : agir avec des données",
-            text: "Le reporting ne sert à rien s'il reste sur l'écran de l'expert. Nous produisons des rapports mensuels ou trimestriels avec analyses détaillées, des dashboards visuels pour une prise de décision rapide, des comparaisons avec les prévisions et les exercices antérieurs, et des recommandations concrètes d'optimisation. Le dirigeant reçoit un document qu'il peut exploiter immédiatement.",
+            title: "Phase 3 — Pilotage (Mois 2-6)",
+            text: "Chaque mois, nous produisons : un reporting de clôture sous 5 jours ouvrés, une analyse des écarts budget/réalisé, une mise à jour du forecast à 12 mois, et une réunion de revue avec les fondateurs. Livrable : conseil d'administration prêt.",
           },
           {
-            title: "Optimisation budgétaire : maîtriser l'avenir",
-            text: "Un budget réaliste et flexible est un outil de pilotage, pas une contrainte. Nous accompagnons les dirigeants dans l'élaboration de budgets adaptés à leur activité, le suivi mensuel des variances, l'ajustement du budget en fonction des évolutions de marché, et le calcul des marges cibles et des objectifs de profitabilité. Le budget devient un compas, pas une camisole.",
+            title: "Phase 4 — Autonomisation (Mois 6+)",
+            text: "Nous formons votre équipe interne à la maintenance du tableau de bord, documentons tous les processus, et accompagnons le recrutement d'un profil interne si nécessaire. Livrable : documentation complète et équipe autonome.",
           },
         ],
+        closingTextHtml:
+          'Cette méthodologie s\'inscrit dans notre approche plus large de <a class="prose-link" href="/services/gestion-financiere-externalisee">gestion financière externalisée</a> — le contrôle de gestion en est le pilier central pour les sociétés en phase de structuration.',
       },
+
+      // ─────────── SECTION 5 — TÉMOIGNAGES ───────────
       {
-        id: "benefices",
-        title: "Les bénéfices concrets du contrôle de gestion externalisé",
+        id: "temoignages",
+        title:
+          "Ce que disent nos clients de leur contrôle de gestion externalisé",
         paragraphs: [
-          "Structurer son contrôle de gestion produit des effets mesurables sur la qualité de pilotage de l'entreprise.",
+          "Voici trois retours de fondateurs qui ont externalisé leur contrôle de gestion avec Iter Advisors. Pour aller plus loin, consultez nos cas clients complets.",
         ],
-        bullets: [
+        testimonials: [
           {
-            title: "Meilleure visibilité sur la rentabilité.",
-            text: "Les tableaux de bord bien structurés donnent une vision claire et en temps réel de la profitabilité par secteur, produit ou client. Le dirigeant peut prendre des décisions éclairées sur l'allocation des ressources.",
+            quote:
+              "Avant Iter Advisors, je recevais mon compte de résultat 45 jours après la fin du mois. Je ne savais jamais où j'en étais. Aujourd'hui, j'ai un tableau de bord mis à jour en temps réel et un reporting mensuel sous 5 jours. J'ai pris la décision d'ouvrir une filiale à Barcelone grâce à ces chiffres.",
+            author: "Marc D.",
+            role: "CEO, EdTech",
+            location: "Paris",
+            context: "Contrôle de gestion externalisé depuis 18 mois",
           },
           {
-            title: "Optimisation des coûts.",
-            text: "L'identification des gaspillages et des inefficacités permet de réduire les charges superflues. Ce n'est pas une réduction budgétaire aveugle, mais une rationalisation fondée sur des données.",
+            quote:
+              "Notre contrôleur de gestion Iter Advisors a identifié que notre CAC avait grimpé de 40 % en 3 mois sans que personne ne le voie. Il a isolé le problème (un canal d'acquisition devenu déficitaire) et nous a aidés à réallouer le budget. Nous avons économisé 18 000 € le trimestre suivant.",
+            author: "Julie T.",
+            role: "COO, SaaS B2B",
+            location: "Toulouse",
           },
           {
-            title: "Prise de décision stratégique améliorée.",
-            text: "Les données fiables permettent de prioriser les investissements, d'évaluer l'impact des initiatives stratégiques et d'ajuster rapidement le cap si nécessaire.",
-          },
-          {
-            title: "Gain de temps pour le dirigeant.",
-            text: "Le fondateur ou le CEO retrouve des heures chaque semaine, car il n'a plus à construire manuellement ses analyses ni à chercher des données éparpillées dans plusieurs fichiers.",
-          },
-          {
-            title: "Coût maîtrisé et évolutif.",
-            text: "Le contrôle de gestion externalisé s'adapte au volume d'activité et à la complexité de l'entreprise. Il coûte sensiblement moins cher qu'un salarié interne, avec une flexibilité que le recrutement ne permet pas.",
+            quote:
+              "En préparation de notre Series A, Benjamin et son équipe ont construit tout notre reporting investisseur. Le data room était impeccable. Nos investisseurs ont complimenté la qualité financière — ça a fait la différence.",
+            author: "Karim B.",
+            role: "CEO, HealthTech",
+            location: "Barcelone",
           },
         ],
+        closingTextHtml:
+          'Découvrez d\'autres retours d\'expérience dans <a class="prose-link" href="/ressources/cas-clients">nos cas clients</a>.',
+      },
+
+      // ─────────── SECTION 6 — TARIFS ───────────
+      {
+        id: "tarifs",
+        title: "Combien coûte un contrôle de gestion externalisé ?",
+        paragraphs: [
+          "Le contrôle de gestion externalisé chez Iter Advisors démarre à 2 500 € par mois pour la formule Pilot (2 jours/mois) et monte à 8 000 € par mois pour la formule Scale (8 jours/mois, accompagnement de levée inclus). Cela représente 50 à 70 % de moins qu'un contrôleur de gestion à plein temps (coût annuel : 65 000 à 90 000 € + charges).",
+        ],
+        table: {
+          caption: "Forfaits Iter Advisors — contrôle de gestion externalisé",
+          headers: ["Formule", "Jours / mois", "Périmètre", "Tarif mensuel"],
+          rows: [
+            [
+              "Pilot",
+              "2 jours",
+              "Reporting mensuel, tableau de bord KPIs, suivi trésorerie",
+              "2 500 €",
+            ],
+            [
+              "Growth",
+              "4 jours",
+              "+ Budget vs actual, forecast 12 mois, analyse d'écarts",
+              "4 500 €",
+            ],
+            [
+              "Scale",
+              "8 jours",
+              "+ Reporting investisseur, consolidation multi-entités, accompagnement fundraising",
+              "8 000 €",
+            ],
+            [
+              "Projet",
+              "Sur mesure",
+              "Mise en place tableau de bord, documentation processus, formation équipe",
+              "3 000 – 6 000 €",
+            ],
+          ],
+        },
         closingText:
-          "Pour une entreprise en croissance, ces bénéfices se traduisent aussi par une meilleure préparation aux audits, aux due diligences et aux négociations avec des investisseurs ou des partenaires bancaires.",
+          "Tous nos forfaits incluent : accès au tableau de bord en temps réel, réunion mensuelle de revue, accès à notre base de benchmarks SaaS, et l'intervention d'un senior avec 10+ ans d'expérience. Engagement de 6 mois minimum, résiliable avec 2 mois de préavis. Pas de frais de mise en place.",
       },
-      {
-        id: "approche-iter",
-        title: "Comment Iter Advisors met en place votre contrôle de gestion externalisé",
-        paragraphs: [
-          "Notre approche repose sur trois principes : pragmatisme, outils existants, et orientation résultats.",
-          "Pragmatisme avant tout. Nous n'imposons pas de modèle standardisé. Nous adaptons les outils et les indicateurs à votre contexte, à votre secteur d'activité et à vos enjeux immédiats. Pas de surcharge de KPIs inutiles, pas de reporting creux. Chaque indicateur doit servir une décision concrète.",
-          "Intégration dans vos outils actuels. Iter Advisors travaille avec les solutions que vous utilisez déjà, qu'il s'agisse de Pennylane, Sage, QuickBooks ou d'autres outils cloud. Nous ne vous imposons pas de migration forcée. Les tableaux de bord sont construits à partir de vos données existantes, avec les connexions API ou les exports automatisés disponibles.",
-          "Orientation résultats et collaboration. Nos experts ne se contentent pas de produire des rapports. Ils travaillent en étroite collaboration avec votre équipe interne, participent aux comités de direction quand c'est pertinent, et formulent des recommandations actionnables. Le nombre de jours d'intervention s'ajuste en fonction de votre complexité et de vos besoins.",
-        ],
-      },
-      {
-        id: "erreurs-eviter",
-        title: "Les erreurs à éviter quand on externalise son contrôle de gestion",
-        paragraphs: [
-          "Externaliser ne dispense pas de rester vigilant. Voici les écueils les plus fréquents :",
-        ],
-        bullets: [
-          {
-            title: "Choisir un prestataire sur le prix seul.",
-            text: "Un tarif anormalement bas cache souvent un reporting standardisé sans analyse, des délais de livraison allongés ou un manque de réactivité en cas de question stratégique.",
-          },
-          {
-            title: "Perdre la maîtrise de ses données.",
-            text: "Externaliser le contrôle de gestion ne signifie pas s'abstraire de sa profitabilité. Le dirigeant doit continuer à consulter régulièrement ses tableaux de bord et à comprendre les écarts signalés.",
-          },
-          {
-            title: "Surcharger le reporting de KPIs inutiles.",
-            text: "Un tableau de bord avec vingt indicateurs dont quinze ne servent à personne est pire qu'aucun tableau de bord. La sélection des indicateurs est aussi importante que leur suivi.",
-          },
-          {
-            title: "Sous-estimer l'importance de la communication.",
-            text: "Un échange mensuel structuré entre le dirigeant et l'expert externe évite les mauvaises surprises. Le contrôle de gestion externalisé fonctionne mieux quand il est collaboratif et intégré dans le rythme de l'entreprise.",
-          },
-        ],
-      },
+
+      // ─────────── SECTION 7 — FAQ ───────────
       {
         id: "faq",
-        title: "Questions fréquentes",
+        title: "Questions fréquentes sur le contrôle de gestion externalisé",
         faqs: [
           {
             question: "Qu'est-ce que le contrôle de gestion externalisé ?",
             answer:
-              "C'est le fait de confier à un expert externe la mise en place et le suivi des indicateurs clés de votre entreprise : tableaux de bord, analyse des coûts, suivi budgétaire, analyse des écarts. Cela permet d'accéder à une expertise de niveau contrôleur de gestion sans les contraintes d'un recrutement interne, avec une flexibilité adaptée à la taille de l'entreprise.",
+              "C'est le fait de confier le pilotage financier de votre entreprise à un expert externe qui intervient régulièrement (2 à 8 jours par mois). Il construit vos tableaux de bord, suit vos KPIs, analyse vos écarts et vous accompagne dans vos décisions stratégiques — sans être salarié.",
           },
           {
-            question: "Quelle différence entre un contrôleur de gestion interne et un contrôle de gestion externalisé ?",
+            question:
+              "Quelle est la différence entre un contrôleur de gestion et un comptable ?",
             answer:
-              "Un contrôleur de gestion interne est un salarié à temps plein, souvent noyé dans des tâches administratives et des demandes ponctuelles. Un contrôle de gestion externalisé intervient à fréquence régulière avec un recul stratégique, une expérience sur plusieurs entreprises et une concentration sur le pilotage. Le coût est généralement inférieur et la flexibilité supérieure.",
+              "Le comptable regarde vers le passé (enregistrer les flux, établir les comptes). Le contrôleur de gestion regarde vers l'avenir (prévoir, modéliser, recommander). Les deux sont complémentaires — l'un s'assure que les chiffres sont justes, l'autre les transforme en décisions.",
           },
           {
             question: "Combien coûte un contrôle de gestion externalisé ?",
             answer:
-              "Le coût dépend de la complexité de l'activité, du nombre de centres de profit, de la fréquence d'intervention et du périmètre couvert. Pour une PME ou une startup en croissance, le contrôle de gestion externalisé revient sensiblement moins cher qu'un contrôleur de gestion interne à temps plein, tout en offrant une expertise souvent plus variée.",
+              "Chez Iter Advisors, les forfaits démarrent à 2 500 €/mois pour 2 jours (formule Pilot) et montent à 8 000 €/mois pour la formule Scale. Cela représente 50 à 70 % de moins qu'un contrôleur de gestion à plein temps (coût annuel : 65 000 à 90 000 € + charges).",
           },
           {
-            question: "Le contrôle de gestion externalisé fonctionne-t-il avec Pennylane, Sage ou QuickBooks ?",
+            question: "Quand faut-il externaliser son contrôle de gestion ?",
             answer:
-              "Oui. Iter Advisors s'intègre directement dans les outils cloud que vous utilisez déjà. Nous travaillons avec Pennylane, Sage, QuickBooks et d'autres solutions. Les tableaux de bord sont construits à partir de vos données existantes, sans migration forcée ni rupture dans vos processus.",
+              "Les 5 signaux les plus courants sont : (1) vous ne recevez pas vos chiffres mensuels sous 10 jours, (2) vous n'avez pas de tableau de bord en temps réel, (3) vous ne connaissez pas votre burn rate exact, (4) vous préparez une levée de fonds, (5) vous avez dépassé 500 K€ de CA sans directeur financier.",
           },
           {
-            question: "Un dirigeant peut-il garder la main sur son pilotage en externalisant le contrôle de gestion ?",
-            answer:
-              "Absolument. Avec les outils cloud, le dirigeant conserve un accès en temps réel à ses tableaux de bord et à ses indicateurs. L'externalisation délègue la construction et l'analyse, pas la vision stratégique. Les échanges réguliers avec l'expert externe maintiennent le dirigeant informé et en capacité de décider.",
+            question: "Quels outils utilisez-vous pour le contrôle de gestion ?",
+            answerHtml:
+              'Nous utilisons Power BI ou Google Data Studio pour les dashboards, Excel avancé pour la modélisation, et nous nous connectons à vos outils existants : <a class="prose-link" href="/ressources/outils/pennylane">Pennylane</a> ou Quickbooks pour la comptabilité, Stripe pour les paiements, HubSpot ou Salesforce pour le CRM. Pas de changement d\'outil requis.',
           },
           {
-            question: "Quand faut-il externaliser son contrôle de gestion plutôt que recruter en interne ?",
+            question: "Combien de temps faut-il pour mettre en place le reporting ?",
             answer:
-              "L'externalisation est pertinente quand le volume d'activité ne justifie pas un poste à temps plein, quand l'entreprise traverse une phase de croissance rapide avec une complexité croissante, ou quand le dirigeant veut accéder à une expertise variée sans engager un salarié. C'est souvent le cas des startups et des PME en développement.",
+              "Le tableau de bord initial est opérationnel sous 4 à 6 semaines. Le premier reporting mensuel structuré est livré dès le deuxième mois. La plupart de nos clients ont une visibilité complète dès le troisième mois.",
+          },
+          {
+            question:
+              "Le contrôle de gestion peut-il aider pour une levée de fonds ?",
+            answer:
+              "Absolument. Nos contrôleurs de gestion construisent les KPIs investisseurs (ARR, NRR, CAC, LTV, churn), préparent le data room financier, et créent les reporting mensuels que les VC attendent. C'est d'ailleurs la raison de recrutement la plus fréquente chez nos clients en Series A.",
+          },
+          {
+            question:
+              "Quelle est la différence entre un contrôleur de gestion freelance et un cabinet ?",
+            answer:
+              "Un freelance apporte une expertise individuelle. Un cabinet comme Iter Advisors apporte : (1) une équipe de plusieurs experts, (2) des playbooks éprouvés, (3) une continuité de service si votre interlocuteur est indisponible, (4) des outils et benchmarks mutualisés, et (5) un réseau de partenaires (comptables, juristes, VC).",
+          },
+          {
+            question:
+              "Comment mesurer le ROI du contrôle de gestion externalisé ?",
+            answer:
+              "Nos clients mesurent généralement le ROI sur 3 axes : réduction du burn (grâce à l'identification des dérives, en moyenne −15 à −25 %), accélération des décisions (reporting sous 5 jours vs 45 jours auparavant), et réussite des levées (data room prête en 2 semaines vs 2 mois).",
           },
         ],
       },
+
+      // ─────────── SECTION 8 — CTA ───────────
       {
-        id: "conclusion",
-        title: "Conclusion",
+        id: "cta-final",
+        title:
+          "Prêt à piloter votre entreprise avec un contrôle de gestion externalisé ?",
         paragraphs: [
-          "Un contrôle de gestion structuré et fiable est le fondement de tout pilotage d'entreprise sérieux. Pour les dirigeants de startups et de PME en croissance, le contrôle de gestion externalisé offre un équilibre pertinent : l'expertise d'un professionnel sans le coût et la rigidité d'un recrutement interne.",
-          "Chez Iter Advisors, nous traitons le contrôle de gestion comme un outil de décision, pas comme une simple obligation analytique. Nous nous intégrons dans vos outils existants, nous construisons des tableaux de bord adaptés à votre réalité et nous vous donnons la visibilité dont vous avez besoin pour avancer sereinement.",
-          "Vous pouvez échanger avec Iter Advisors pour évaluer le niveau d'accompagnement en contrôle de gestion adapté à votre entreprise.",
+          "Réservez un audit gratuit de 30 minutes avec Benjamin Ziza, Founding Partner & CFO chez Iter Advisors. Nous évaluerons vos besoins de pilotage et vous recommanderons la formule adaptée — sans engagement.",
+        ],
+        ctaButtons: [
+          {
+            label: "Demander un audit gratuit de ma gestion",
+            href: "/contact",
+            variant: "primary" as const,
+          },
+          {
+            label: "Voir nos autres services",
+            href: "/services",
+            variant: "secondary" as const,
+          },
         ],
       },
     ],
   },
-};
+} as const;
 
-export function getControleDeGestionExternaliseeContent(locale: "fr") {
-  return controleDeGestionExternaliseeContent[locale];
+export function getControleDeGestionExternaliseeContent(_locale: "fr") {
+  // Single locale for now (FR primary). Type kept as parameter for
+  // future EN/ES translations.
+  return controleDeGestionExternaliseeContent.fr;
 }
