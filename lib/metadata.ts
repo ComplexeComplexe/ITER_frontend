@@ -49,7 +49,10 @@ export function buildMetadata({
 
   // SEO-P0-01: RFC 5646 language-region codes as keys so Next.js renders
   // <link rel="alternate" hreflang="fr-FR" href="..." /> in <head>.
-  // SSR fallback also lives in components/HrefLangInjector.tsx.
+  // INDEX-01 (mai 2026): this is now the SINGLE source of hreflang
+  // emission — the previous client-side `HrefLangInjector` component
+  // has been removed to stop Google from seeing two contradictory sets
+  // (it ignored the entire group and treated FR/EN/ES as duplicates).
   const frUrl = `${base}${frPath}`;
   const enUrl = `${base}/en${enPath === "/" ? "" : enPath}`;
   const esUrl = `${base}/es${esPath === "/" ? "" : esPath}`;

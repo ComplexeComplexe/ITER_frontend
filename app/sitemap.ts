@@ -56,45 +56,72 @@ function entryAllLocales(
   ];
 }
 
-/* ── Blog slugs (only those with actual content in blog-posts.ts or Strapi) ── */
-const BLOG_SLUGS = [
-  /* Static blog posts (blog-posts.ts FR) */
+/* ── Blog slugs per locale ─────────────────────────────────────────────
+ *
+ * INDEX-02 (mai 2026) — Previously a single flat `BLOG_SLUGS` list was
+ * looped × 3 locales, emitting ~90 URLs of which ~60 were 404s or
+ * redirects because most articles only exist in FR. Google wasted its
+ * crawl budget on dead URLs.
+ *
+ * Source of truth: `lib/content/blog-posts.ts` (per-locale dictionaries)
+ * plus dedicated FR-only routes under `app/ressources/blog/<slug>/`.
+ * Each slug appears ONLY in the locales where the article is reachable
+ * via a real 200 response — no duplicates, no orphans. */
+const FR_BLOG_SLUGS = [
+  /* From lib/content/blog-posts.ts (fr section) */
+  "agicap-vs-fygr-outil-tresorerie",
+  "cas-etude-happy-scribe",
+  "cash-burn-calculer-runway-anticiper-levee",
+  "checklist-due-diligence-levee-de-fonds",
+  "cout-daf-externalise-2026-tarifs-par-mission",
+  "cout-daf-externalise-tarifs-prix-2026",
+  "daf-drh-externalises-synergie",
+  "daf-externalise-barcelone-guide-startups-espagnoles",
+  "daf-externalise-vs-daf-salarie",
+  "daf-externalise-vs-expert-comptable",
+  "data-room-checklist-levee-de-fonds",
+  "drh-externalise-quand-et-pourquoi",
+  "due-diligence-financiere-investisseurs",
+  "externalisation-comptable",
+  "externaliser-comptabilite-guide",
   "flux-de-tresorerie",
+  "impot-revenu-espagne",
   "la-modernisation-du-role-de-cfo",
+  "payfit-vs-silae-comparatif-pme",
+  "pennylane-vs-sage-comparatif-40-deploiements",
+  "quand-embaucher-daf-externalise-5-signes",
+  "reduire-bfr-7-leviers-actionnables",
+  "stack-financier-saas-series-a",
+  "tableau-de-bord-financier-startup-12-kpis",
+  "term-sheet-negocier-clauses-cles",
+  /* Dedicated FR-only routes under app/ressources/blog/<slug>/ */
   "les-10-outils-pour-cfos-startup",
-  "essentiels-outils-tech-finance",
-  "organiser-sa-direction-financiere",
-  /* Strapi blog posts */
-  "consequences-financieres-cyberattaques",
+  "daf-externalise-guide",
+  "levee-de-fonds-guide",
+  "ia-et-automatisation-des-taches-repetitives",
   "regimes-fiscaux-france-vs-espagne",
-  "anticiper-financierement-ses-recrutements-guide-pratique",
-  /* New articles (mars 2026 brief) */
+] as const;
+
+const EN_BLOG_SLUGS = [
   "cout-daf-externalise-tarifs-prix-2026",
   "daf-externalise-vs-daf-salarie",
-  "checklist-due-diligence-levee-de-fonds",
-  "daf-drh-externalises-synergie",
-  /* MDX migration articles */
-  "ia-et-automatisation-des-taches-repetitives",
-  /* INDEX-01 — articles indexés mais absents du sitemap (mai 2026) */
+  "essentiels-outils-tech-finance",
   "externalisation-comptable",
-  "cas-etude-happy-scribe",
-  /* TICKET 23 — 15 nouveaux articles (mai 2026) */
-  "quand-embaucher-daf-externalise-5-signes",
-  "daf-externalise-barcelone-guide-startups-espagnoles",
-  "cout-daf-externalise-2026-tarifs-par-mission",
-  "daf-externalise-vs-expert-comptable",
-  "pennylane-vs-sage-comparatif-40-deploiements",
-  "agicap-vs-fygr-outil-tresorerie",
-  "stack-financier-saas-series-a",
-  "data-room-checklist-levee-de-fonds",
-  "term-sheet-negocier-clauses-cles",
-  "due-diligence-financiere-investisseurs",
-  "reduire-bfr-7-leviers-actionnables",
-  "cash-burn-calculer-runway-anticiper-levee",
-  "tableau-de-bord-financier-startup-12-kpis",
-  "drh-externalise-quand-et-pourquoi",
-  "payfit-vs-silae-comparatif-pme",
-];
+  "flux-de-tresorerie",
+  "ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+  "organiser-sa-direction-financiere",
+] as const;
+
+const ES_BLOG_SLUGS = [
+  "cout-daf-externalise-tarifs-prix-2026",
+  "daf-externalise-vs-daf-salarie",
+  "essentiels-outils-tech-finance",
+  "externalisation-comptable",
+  "flux-de-tresorerie",
+  "ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+  "organiser-sa-direction-financiere",
+  "que-es-fractional-cfo",
+] as const;
 
 /* ── TICKET 5 — 9 nouvelles fiches outils ──────────────────────────── */
 const TOOL_SLUGS = [
@@ -327,15 +354,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   });
 
-  /* ── Blog articles ───────────────────────────────────────────────── */
-  for (const slug of BLOG_SLUGS) {
+  /* ── Blog articles ────────────────────────────────────────────────
+   *
+   * INDEX-02 — emit exactly one URL per locale-where-the-article-exists,
+   * with hreflang alternates restricted to those same locales. Articles
+   * available in more than one locale (e.g. flux-de-tresorerie in
+   * FR/EN/ES) get a clean N-way hreflang group; FR-only articles emit
+   * a single entry with no hreflang at all.
+   */
+  const frSet = new Set<string>(FR_BLOG_SLUGS);
+  const enSet = new Set<string>(EN_BLOG_SLUGS);
+  const esSet = new Set<string>(ES_BLOG_SLUGS);
+  const allSlugs = new Set<string>([
+    ...FR_BLOG_SLUGS,
+    ...EN_BLOG_SLUGS,
+    ...ES_BLOG_SLUGS,
+  ]);
+  for (const slug of allSlugs) {
+    const inFr = frSet.has(slug);
+    const inEn = enSet.has(slug);
+    const inEs = esSet.has(slug);
     const path = `/ressources/blog/${slug}`;
-    entries.push(
-      ...entryAllLocales(
-        { fr: path, en: path, es: path },
-        { priority: 0.6 }
-      )
-    );
+    const languages: Record<string, string> = {};
+    if (inFr) languages.fr = `${BASE}${path}`;
+    if (inEn) languages.en = `${BASE}/en${path}`;
+    if (inEs) languages.es = `${BASE}/es${path}`;
+    // x-default = FR if available, otherwise the only available locale
+    languages["x-default"] = inFr
+      ? `${BASE}${path}`
+      : inEn
+        ? `${BASE}/en${path}`
+        : `${BASE}/es${path}`;
+    const common = {
+      lastModified: TODAY,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: { languages },
+    };
+    if (inFr) entries.push({ url: `${BASE}${path}`, ...common });
+    if (inEn) entries.push({ url: `${BASE}/en${path}`, ...common });
+    if (inEs) entries.push({ url: `${BASE}/es${path}`, ...common });
   }
 
   /* ── TICKET 5 — fiches outils ────────────────────────────────────── */

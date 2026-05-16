@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServiceSinglePage from "@/components/pages/ServiceSinglePage";
 import {
-  getServiceSinglePage,
   getCmsNavigation,
   SERVICE_PAGE_SLUGS,
   SERVICE_PAGE_API_MAP,
@@ -10,6 +9,12 @@ import {
   getServiceSlugsForLocale,
   type ServicePageSlug,
 } from "@/lib/strapi";
+// INDEX-04 — service pages no longer go through the Strapi fetcher
+// (which threw on a disabled CMS even though the catch was caught
+// internally). Switching to the synchronous static resolver removes the
+// async hop entirely and guarantees a 200 even if `lib/strapi.ts` ever
+// breaks again.
+import { getStaticServicePage } from "@/lib/fallback-service-pages-localized";
 import { buildStrapiMetadata } from "@/lib/metadata";
 
 const basePath = "/services";
@@ -82,7 +87,7 @@ export async function generateMetadata({
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   if (!isServicePageSlug(slug)) notFound();
-  const page = await getServiceSinglePage(slug, "fr");
+  const page = getStaticServicePage(slug, "fr");
   if (!page) notFound();
   const cmsNavigation = await getCmsNavigation("fr");
   return (

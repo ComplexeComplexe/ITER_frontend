@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: "Diagnóstico Gratuito | Iter Advisors – DAF Externalizado",
   description:
     "Evalúe sus necesidades financieras en 2 minutos y descubra cómo un DAF externalizado puede estructurar su crecimiento. Diagnóstico gratuito y sin compromiso.",
+  // INDEX-03: diagnostic funnel — conversion page, no SEO value.
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Diagnóstico Gratuito | Iter Advisors",
     description:
