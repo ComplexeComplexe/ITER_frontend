@@ -152,6 +152,43 @@
 }
 .prose .callout-pitfall p { margin: 0; }
 
+/* TL;DR — « À retenir en 30 secondes ». Cream background + violet left
+   filet + body in DM Serif italic. Lifts the best editorial pattern of
+   the site (per the May 2026 critique) so a scanning reader catches the
+   article's punchline without reading the whole thing. Use:
+
+   <aside class="callout-tldr">
+     <p class="callout-tldr__title">À retenir en 30 secondes</p>
+     <p>Coût annuel : 24 000 € – 96 000 €.</p>
+     <p>ROI moyen : 4 à 6 mois.</p>
+     <p>Idéal pour : PME 1–10 M€ de CA.</p>
+   </aside>
+*/
+.prose .callout-tldr {
+  background: #FAF7F2;
+  border-left: 4px solid #5B21B6;
+  padding: 24px 32px;
+  margin: 36px 0;
+  border-radius: 0 8px 8px 0;
+  font-family: 'DM Serif Display', 'Georgia', serif;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #1f2937;
+}
+.prose .callout-tldr .callout-tldr__title {
+  font-family: var(--font-heading), 'Space Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  color: #5B21B6;
+  margin: 0 0 12px;
+}
+.prose .callout-tldr p { margin: 0 0 8px; }
+.prose .callout-tldr p:last-child { margin: 0; }
+
 /* ─── Custom scrollbar ─── */
 ::-webkit-scrollbar {
   width: 6px;

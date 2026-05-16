@@ -9,6 +9,16 @@ import CTASection from "@/components/CTASection";
 import { strapiMediaUrl } from "@/lib/strapi";
 import type { StrapiBlogArticle, CmsNavItem } from "@/lib/strapi";
 
+/* ───────────────────────────────────────────────────────────────────────
+ *  Per-locale UI strings.
+ *
+ *  Editorial pass (mai 2026 — design critique) :
+ *  - the previous H1 "Nos articles" + tagline ("Retrouvez toutes les
+ *    actualités…") was generic and signalled nothing about the angle.
+ *  - new H1 names the publication as a journal, the deck announces who
+ *    it is for and what cadence to expect, and the per-card CTA varies
+ *    so 27 buttons no longer all say "Lire l'article".
+ * ─────────────────────────────────────────────────────────────────── */
 const content: Record<
   Locale,
   {
@@ -17,7 +27,17 @@ const content: Record<
     breadcrumbLabel: string;
     h1: string;
     intro: string;
+    /** Default CTA for cards that don't match a more specific format. */
     discover: string;
+    /** Format-specific CTAs picked by category / title heuristics. */
+    discoverByKind: {
+      guide: string;
+      comparison: string;
+      caseStudy: string;
+      analysis: string;
+    };
+    /** "8 min de lecture" wrapper — the number is injected. */
+    readTimeSuffix: string;
     cards: { title: string; href: string; image: string }[];
   }
 > = {
@@ -25,10 +45,17 @@ const content: Record<
     resourcesLabel: "Ressources",
     resourcesHref: "/ressources",
     breadcrumbLabel: "Blog",
-    h1: "Nos articles",
+    h1: "Le journal d’Iter Advisors",
     intro:
-      "Retrouvez toutes les actualités et analyses de nos experts financiers. Des articles pratiques pour piloter votre croissance.",
-    discover: "Lire l'article",
+      "Guides, comparatifs et retours d’expérience pour fondateurs et CFOs. Écrit par notre équipe, mis à jour chaque mois.",
+    discover: "Lire l’article",
+    discoverByKind: {
+      guide: "Lire le guide",
+      comparison: "Voir le comparatif",
+      caseStudy: "Lire le cas pratique",
+      analysis: "Lire l’analyse",
+    },
+    readTimeSuffix: "min de lecture",
     cards: [
       {
         title: "Les 10 outils pour les CFOs en start-up",
@@ -52,10 +79,17 @@ const content: Record<
     resourcesLabel: "Resources",
     resourcesHref: "/en/ressources",
     breadcrumbLabel: "Blog",
-    h1: "Our articles",
+    h1: "The Iter Advisors journal",
     intro:
-      "Browse all news and analyses from our financial experts. Practical articles to drive your growth.",
+      "Guides, comparisons and field notes for founders and CFOs. Written by our team, updated every month.",
     discover: "Read the article",
+    discoverByKind: {
+      guide: "Read the guide",
+      comparison: "See the comparison",
+      caseStudy: "Read the case study",
+      analysis: "Read the analysis",
+    },
+    readTimeSuffix: "min read",
     cards: [
       {
         title:
@@ -79,10 +113,17 @@ const content: Record<
     resourcesLabel: "Recursos",
     resourcesHref: "/es/ressources",
     breadcrumbLabel: "Blog",
-    h1: "Nuestros artículos",
+    h1: "La revista de Iter Advisors",
     intro:
-      "Consulte todas las noticias y análisis de nuestros expertos financieros. Artículos prácticos para impulsar su crecimiento.",
+      "Guías, comparativas y aprendizajes para fundadores y CFOs. Escrito por nuestro equipo, actualizado cada mes.",
     discover: "Leer el artículo",
+    discoverByKind: {
+      guide: "Leer la guía",
+      comparison: "Ver la comparativa",
+      caseStudy: "Leer el caso práctico",
+      analysis: "Leer el análisis",
+    },
+    readTimeSuffix: "min de lectura",
     cards: [
       {
         title:
@@ -110,6 +151,71 @@ function getBlogHref(locale: Locale, slug: string): string {
   return getLocalePath(locale, `${blogBasePath}/${slug}`);
 }
 
+/* ── Card-format heuristics ────────────────────────────────────────────
+ *
+ * Pick a more specific CTA than the generic "Read the article" based on
+ * the article's category and title. This is purely a UX-copy improvement
+ * (one of the items flagged by the May 2026 critique); article ranking
+ * and structure are untouched.
+ */
+function inferKind(
+  title: string,
+  category: string
+): keyof (typeof content)["fr"]["discoverByKind"] {
+  const t = title.toLowerCase();
+  const c = category.toLowerCase();
+  if (t.includes("vs ") || t.includes(" vs") || t.includes("comparatif")) return "comparison";
+  if (t.includes("cas client") || t.includes("cas-etude") || t.includes("case study") || c.includes("cas-etude")) return "caseStudy";
+  if (t.includes("checklist") || t.includes("guide") || t.includes("comment ") || t.startsWith("les ")) return "guide";
+  return "analysis";
+}
+
+/* ── Date formatter (locale-aware short form: "13 mai 2026") ───────── */
+function formatDate(iso: string | undefined, locale: Locale): string | null {
+  if (!iso) return null;
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return null;
+  const localeTag: Record<Locale, string> = {
+    fr: "fr-FR",
+    en: "en-GB",
+    es: "es-ES",
+  };
+  return d.toLocaleDateString(localeTag[locale], {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+}
+
+/* ── Category → display label normalisation ────────────────────────────
+ *
+ * The codebase has two coexisting category naming conventions (slug-style
+ * "daf-externalise" and display-style "DAF externalisé"). We pick the
+ * display style for surface UI and map slugs through this table — keeps
+ * the listing visually coherent without rewriting every article entry.
+ */
+const CATEGORY_LABEL_FR: Record<string, string> = {
+  "daf-externalise": "DAF externalisé",
+  "DAF externalisé": "DAF externalisé",
+  "levee-de-fonds": "Levée de fonds",
+  "Levee de fonds": "Levée de fonds",
+  "outils-stack": "Outils & stack",
+  "Outils & stack": "Outils & stack",
+  "cas-etudes": "Cas pratiques",
+  "gestion-financiere": "Gestion financière",
+  "Gestion financière": "Gestion financière",
+  "guides-pratiques": "Guides pratiques",
+  "thought-leadership": "Tribune",
+  "rh-paie": "RH & Paie",
+  Externalisation: "Externalisation",
+  "Fiscalité internationale": "Fiscalité",
+};
+
+function categoryLabel(raw: string | undefined): string | null {
+  if (!raw) return null;
+  return CATEGORY_LABEL_FR[raw] ?? raw;
+}
+
 export default function BlogListingPage({
   locale,
   articles,
@@ -122,27 +228,37 @@ export default function BlogListingPage({
   const t = content[locale];
   // Source articles are assembled by `lib/blog-listing.ts` from the
   // static blog-posts.ts source. Each article carries its editorial
-  // cover URL plus a per-article alt text on `featuredImage`.
+  // cover URL plus a per-article alt text on `featuredImage`, plus
+  // optional readMinutes / category / publishedDate used below.
   const cards =
     articles && articles.length > 0
       ? articles.map((a) => {
           const imageUrl = a.featuredImage?.url
             ? strapiMediaUrl(a.featuredImage)
             : "";
-          // Prefer the alt assembled per-article by lib/blog-listing
-          // (lives on featuredImage.alternativeText). Fall back to the
-          // article title when the slug is not in the cover map.
           const alt =
             (a.featuredImage as unknown as { alternativeText?: string })
               ?.alternativeText || a.title;
+          const kind = inferKind(a.title, a.category ?? "");
           return {
             title: a.title,
             href: getBlogHref(locale, a.slug),
             image: imageUrl || "/images/blog/placeholder.webp",
             alt,
+            category: categoryLabel(a.category),
+            date: formatDate(a.publishedDate, locale),
+            readMinutes: a.readMinutes,
+            ctaLabel: t.discoverByKind[kind] ?? t.discover,
           };
         })
-      : t.cards.map((c) => ({ ...c, alt: c.title }));
+      : t.cards.map((c) => ({
+          ...c,
+          alt: c.title,
+          category: null as string | null,
+          date: null as string | null,
+          readMinutes: undefined as number | undefined,
+          ctaLabel: t.discover,
+        }));
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
@@ -179,15 +295,25 @@ export default function BlogListingPage({
                   />
                 </div>
                 <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 block">
-                  Blog
+                  {card.category ?? "Blog"}
                 </span>
                 <h3 className="text-lg font-semibold font-heading group-hover:text-iter-violet transition-colors leading-snug">
                   {card.title}
                 </h3>
+                {(card.date || card.readMinutes) && (
+                  <p className="mt-2 text-xs text-foreground/55 font-medium">
+                    {card.date}
+                    {card.date && card.readMinutes ? " · " : ""}
+                    {card.readMinutes
+                      ? `${card.readMinutes} ${t.readTimeSuffix}`
+                      : ""}
+                  </p>
+                )}
                 <span className="inline-flex items-center gap-2 mt-3 text-[13px] font-medium text-foreground/40 group-hover:text-iter-violet transition-colors">
-                  {t.discover}
+                  {card.ctaLabel}
                   <ArrowRight
                     size={14}
+                    aria-hidden="true"
                     className="transition-transform group-hover:translate-x-1"
                   />
                 </span>
