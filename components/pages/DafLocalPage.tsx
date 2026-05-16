@@ -51,12 +51,23 @@ export default function DafLocalPage({
           : `cfo-externalizado-${city === "barcelone" ? "barcelona" : city}`
     }`,
     email: "contact@iteradvisors.com",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality:
-        city === "barcelone" ? "Barcelona" : city === "paris" ? "Paris" : "Toulouse",
-      addressCountry: city === "barcelone" ? "ES" : "FR",
-    },
+    // Iter Advisors S.L. — registered office: Carrer Casp, 54, 5-1°,
+    // 08010 Barcelona (NIF B42960849). Paris and Toulouse are
+    // operational offices without a public registered address.
+    address:
+      city === "barcelone"
+        ? {
+            "@type": "PostalAddress",
+            streetAddress: "Carrer Casp, 54, 5-1°",
+            addressLocality: "Barcelona",
+            postalCode: "08010",
+            addressCountry: "ES",
+          }
+        : {
+            "@type": "PostalAddress",
+            addressLocality: city === "paris" ? "Paris" : "Toulouse",
+            addressCountry: "FR",
+          },
     areaServed: {
       "@type": "Place",
       name:

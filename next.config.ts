@@ -37,7 +37,9 @@ const nextConfig: NextConfig = {
           { key: "Cross-Origin-Opener-Policy", value: "same-origin-allow-popups" },
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
           // Content-Signal EU - signal that content is human-authored and copyrighted
-          { key: "X-Content-Signal", value: "human-authored, copyright=Iter Advisors SAS, jurisdiction=EU" },
+          // Iter Advisors S.L. (Spanish company, NIF B42960849) — ES
+          // jurisdiction signal for the EU Content-Signal initiative.
+          { key: "X-Content-Signal", value: "human-authored, copyright=Iter Advisors S.L., jurisdiction=ES" },
         ],
       },
       // Cache headers for static assets

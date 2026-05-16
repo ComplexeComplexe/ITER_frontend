@@ -69,37 +69,23 @@ export default function Footer({ locale }: { locale: Locale }) {
               </div>
               <span className="text-white/40 text-xs">5/5 Trustfolio</span>
             </div>
-            {/* Company Legal Details — E-E-A-T trust signals */}
+            {/* Company Legal Details — E-E-A-T trust signals.
+                Iter Advisors S.L. is registered in Spain (NIF B42960849);
+                Paris and Toulouse are operational offices, the HQ is in
+                Barcelona. */}
             <address className="not-italic text-white/60 text-xs leading-relaxed mt-3 space-y-1">
-              <p className="font-semibold text-white/80">Iter Advisors SAS</p>
+              <p className="font-semibold text-white/80">Iter Advisors S.L.</p>
               <p className="flex items-start gap-1.5">
                 <MapPin size={12} className="shrink-0 mt-0.5 text-iter-chartreuse/80" aria-hidden />
-                {/* TODO(seo-final-02): replace placeholder address with the real
-                    registered HQ once the client confirms. Current value is the
-                    placeholder agreed in the audit ticket. */}
-                <span>10 rue de la Paix, 75002 Paris · Barcelone · Toulouse</span>
+                <span>Carrer Casp, 54, 5-1° · 08010 Barcelona · Paris · Toulouse</span>
               </p>
-              <p className="text-white/40">
-                {/* TODO(seo-final-02): replace placeholder SIRET with the real
-                    registered number once the client confirms. */}
-                SIRET&nbsp;: 851 234 567 00012
-              </p>
+              <p className="text-white/40">NIF&nbsp;: B42960849</p>
               <p>
                 <a
                   href="mailto:contact@iteradvisors.com"
                   className="hover:text-iter-chartreuse transition-colors"
                 >
                   contact@iteradvisors.com
-                </a>
-              </p>
-              <p>
-                {/* TODO(seo-final-qualite): replace placeholder phone with the
-                    real switchboard number once the client confirms. */}
-                <a
-                  href="tel:+33180880001"
-                  className="hover:text-iter-chartreuse transition-colors"
-                >
-                  +33 1 80 88 00 01
                 </a>
               </p>
             </address>
