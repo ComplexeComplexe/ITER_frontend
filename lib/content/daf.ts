@@ -334,14 +334,15 @@ export const dafContent: Record<Locale, DafContent> = {
       ],
     },
     tools: {
+      // D5 (2026-05-17) — liens vers pages outils individuelles + closing text avec 2 liens internes
       heading: "Les outils du DAF externalisé moderne",
       content: [
         "Un DAF externalisé performant s'appuie sur une stack d'outils modernes pour automatiser les tâches répétitives et se concentrer sur l'analyse et la stratégie :",
-        "Comptabilité et facturation : Pennylane, Sage, QuickBooks, Xero. Ces outils permettent une comptabilité en temps réel et une collaboration fluide avec l'expert-comptable.",
-        "Trésorerie et prévisionnel : Agicap, Fygr, Cashflow. Pour un suivi quotidien de la trésorerie et des prévisionnels à 12 mois glissants.",
-        "Reporting et BI : Power BI, Looker, Metabase, Google Sheets avancé. Pour construire des tableaux de bord automatisés et des analyses de rentabilité.",
-        "ERP et gestion : Odoo, NetSuite, SAP Business One. Pour les entreprises qui ont besoin d'intégrer la finance avec les opérations (achats, stocks, production).",
-        "Chez Iter Advisors, nous travaillons avec plus de 30 partenaires technologiques et nous aidons nos clients à choisir et déployer les outils les plus adaptés à leur taille et leur secteur.",
+        "Comptabilité et facturation : [Pennylane](/ressources/outils/pennylane), [Sage](/ressources/outils/sage), QuickBooks, Xero. Ces outils permettent une comptabilité en temps réel et une collaboration fluide avec l'expert-comptable.",
+        "Trésorerie et prévisionnel : [Agicap](/ressources/outils/agicap), [Fygr](/ressources/outils/fygr). Pour un suivi quotidien de la trésorerie et des prévisionnels à 12 mois glissants.",
+        "Gestion des dépenses : [Spendesk](/ressources/outils/spendesk), [Pleo](/ressources/outils/pleo), [Payhawk](/ressources/outils/payhawk). Cartes virtuelles, workflows d'approbation et intégration comptable automatisée.",
+        "Reporting et BI : Power BI, Looker, Metabase, Google Sheets avancé. Pour construire des tableaux de bord automatisés et des analyses de rentabilité par produit ou client.",
+        "Chez Iter Advisors, nous travaillons avec plus de 30 partenaires technologiques. [Découvrez notre sélection complète d'outils finance](/ressources/outils) — mise à jour en continu par nos DAFs selon les retours terrain — et notre guide sur les [10 outils indispensables pour un CFO startup](/ressources/blog/les-10-outils-pour-cfos-startup).",
       ],
     },
     whyChoose: {

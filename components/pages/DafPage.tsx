@@ -701,7 +701,7 @@ export default function DafPage({
           </h2>
           {t.tools.content.map((p, i) => (
             <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              {p}
+              {locale === "fr" ? renderRichText(p) : p}
             </p>
           ))}
         </div>
