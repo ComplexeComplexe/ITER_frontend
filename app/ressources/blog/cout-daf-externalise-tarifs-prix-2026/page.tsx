@@ -3,6 +3,7 @@
 import { Metadata } from 'next';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
+import MidArticleSoftCTA from '@/components/blog/MidArticleSoftCTA';
 
 export const metadata: Metadata = {
   title: "Tarifs DAF 2026 | Iter Advisors",
@@ -32,6 +33,7 @@ export default function CoutDafExternalisePage() {
         name: "Benjamin Ziza",
         avatar: "/images/team/benjamin-ziza.webp",
         jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
+        url: "/a-propos/benjamin-ziza",
       }}
       readingTime={8}
       dateModified="2026-05-01"
@@ -163,6 +165,12 @@ export default function CoutDafExternalisePage() {
         <li>Coût : Expert DAF = €6,500/mois + Comptables = €6,000/mois = €12,500/mois</li>
         <li>Total annuel : €150k</li>
       </ul>
+
+      {/* Soft CTA mid-article (May 2026 design critique) — visitor is
+          in discovery mode after sections 1-3, before the harder
+          "inclus/exclus" details. Strong transactional CTA stays at
+          the end of the article. */}
+      <MidArticleSoftCTA locale="fr" />
 
       <h2 id="inclus-exclus">4. Ce qui est inclus / exclus</h2>
       <p>

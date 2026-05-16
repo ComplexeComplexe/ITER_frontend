@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getAuthorSlugs } from "@/lib/content/team";
 
 const BASE = "https://www.iteradvisors.com";
 const TODAY = new Date().toISOString().split("T")[0];
@@ -426,6 +427,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     });
+  }
+
+  /* ── Author pages (May 2026 — design critique #11). Each founding
+   *  partner with a populated multilingual bio gets a /[locale]/(about)/
+   *  [slug] page with Person schema. Hreflang cluster: FR canonical at
+   *  /a-propos/<slug>, EN at /en/a-propos/<slug>, ES at
+   *  /es/quienes-somos/<slug>. */
+  for (const slug of getAuthorSlugs()) {
+    entries.push(
+      ...entryAllLocales(
+        {
+          fr: `/a-propos/${slug}`,
+          en: `/a-propos/${slug}`,
+          es: `/quienes-somos/${slug}`,
+        },
+        { priority: 0.6 }
+      )
+    );
   }
 
   return entries;
