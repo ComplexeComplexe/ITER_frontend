@@ -33,7 +33,9 @@ export async function generateMetadata(): Promise<Metadata> {
             "@type": "Place",
             address: {
               "@type": "PostalAddress",
+              streetAddress: "Carrer Casp, 54, 5-1°",
               addressLocality: "Barcelona",
+              postalCode: "08010",
               addressRegion: "Catalunya",
               addressCountry: "ES",
             },

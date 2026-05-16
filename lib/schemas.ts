@@ -225,6 +225,11 @@ export function financialServiceSchema(): Record<string, unknown> {
     "@context": "https://schema.org",
     "@type": "FinancialService",
     name: "Iter Advisors",
+    // Spanish SL — keep the legal identifiers in sync with the
+    // canonical Organization graph emitted from app/layout.tsx.
+    legalName: "Iter Advisors S.L.",
+    taxID: "B42960849",
+    vatID: "ESB42960849",
     url: `${BASE}/`,
     description:
       "Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Présent à Barcelone, Paris et Toulouse.",
@@ -238,7 +243,9 @@ export function financialServiceSchema(): Record<string, unknown> {
     address: [
       {
         "@type": "PostalAddress",
-        addressLocality: "Barcelone",
+        streetAddress: "Carrer Casp, 54, 5-1°",
+        addressLocality: "Barcelona",
+        postalCode: "08010",
         addressCountry: "ES",
       },
       {

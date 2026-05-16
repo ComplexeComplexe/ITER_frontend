@@ -141,6 +141,10 @@ gtag('consent','default',{
                   "@type": ["FinancialService", "Organization"],
                   "@id": "https://www.iteradvisors.com/#organization",
                   name: "Iter Advisors",
+                  // Spanish SL (sociedad limitada), NIF B42960849.
+                  legalName: "Iter Advisors S.L.",
+                  taxID: "B42960849",
+                  vatID: "ESB42960849",
                   url: "https://www.iteradvisors.com/",
                   description:
                     "Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Présent à Barcelone, Paris et Toulouse.",
@@ -151,7 +155,9 @@ gtag('consent','default',{
                   address: [
                     {
                       "@type": "PostalAddress",
-                      addressLocality: "Barcelone",
+                      streetAddress: "Carrer Casp, 54, 5-1°",
+                      addressLocality: "Barcelona",
+                      postalCode: "08010",
                       addressCountry: "ES",
                     },
                     {
