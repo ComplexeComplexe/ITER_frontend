@@ -163,21 +163,8 @@
       "destination": "/es/ressources/testimonials",
       "permanent": true
     },
-    {
-      "source": "/ressources/glossaire/:slug",
-      "destination": "/ressources/glossaire",
-      "permanent": true
-    },
-    {
-      "source": "/en/ressources/glossaire/:slug",
-      "destination": "/en/ressources/glossaire",
-      "permanent": true
-    },
-    {
-      "source": "/es/ressources/glossaire/:slug",
-      "destination": "/es/ressources/glossaire",
-      "permanent": true
-    },
+
+
     {
       "source": "/category/:path*",
       "destination": "/ressources/blog",
