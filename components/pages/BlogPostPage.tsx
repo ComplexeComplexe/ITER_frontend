@@ -5,8 +5,11 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import StrapiBlocks from "@/components/StrapiBlocks";
+import MidArticleSoftCTA from "@/components/blog/MidArticleSoftCTA";
 import type { StrapiBlock, CmsNavItem, StrapiTeamMember } from "@/lib/strapi";
 import { articleSchema } from "@/lib/schemas";
+import { estimateReadMinutes } from "@/lib/blog-read-time";
+import { splitHtmlAroundMid } from "@/lib/blog-cta-split";
 
 interface BlogPostPageProps {
   locale: Locale;
@@ -163,8 +166,13 @@ export default function BlogPostPage({
                         <div className="flex-1">
                           <div className="flex items-center gap-1.5">
                             <a
-                              href={`/${locale === "fr" ? "" : locale + "/"}a-propos`}
+                              href={
+                                locale === "es"
+                                  ? `/es/quienes-somos/${authorMember.slug}`
+                                  : `/${locale === "fr" ? "" : locale + "/"}a-propos/${authorMember.slug}`
+                              }
                               className="font-semibold text-foreground hover:text-iter-violet transition-colors"
+                              rel="author"
                             >
                               {authorMember.firstName} {authorMember.lastName}
                             </a>
@@ -238,21 +246,54 @@ export default function BlogPostPage({
               contactHref={getContactPath(locale)}
             />
           ) : htmlContent ? (
-            <div
-              className="prose prose-lg prose-neutral dark:prose-invert max-w-none
-                prose-headings:font-heading prose-headings:text-foreground
-                prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
-                prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                prose-p:text-muted-foreground prose-p:leading-relaxed
-                prose-a:text-iter-violet prose-a:no-underline hover:prose-a:underline
-                prose-strong:text-foreground
-                prose-table:border-collapse prose-table:w-full
-                prose-th:bg-muted/50 prose-th:p-3 prose-th:text-left prose-th:text-sm prose-th:font-semibold
-                prose-td:p-3 prose-td:text-sm prose-td:border-t prose-td:border-border/50
-                prose-li:text-muted-foreground
-                prose-blockquote:border-l-iter-violet prose-blockquote:bg-muted/20 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg"
-              dangerouslySetInnerHTML={{ __html: htmlContent }}
-            />
+            (() => {
+              const proseClasses =
+                "prose prose-lg prose-neutral dark:prose-invert max-w-none " +
+                "prose-headings:font-heading prose-headings:text-foreground " +
+                "prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 " +
+                "prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 " +
+                "prose-p:text-muted-foreground prose-p:leading-relaxed " +
+                "prose-a:text-iter-violet prose-a:no-underline hover:prose-a:underline " +
+                "prose-strong:text-foreground " +
+                "prose-table:border-collapse prose-table:w-full " +
+                "prose-th:bg-muted/50 prose-th:p-3 prose-th:text-left prose-th:text-sm prose-th:font-semibold " +
+                "prose-td:p-3 prose-td:text-sm prose-td:border-t prose-td:border-border/50 " +
+                "prose-li:text-muted-foreground " +
+                "prose-blockquote:border-l-iter-violet prose-blockquote:bg-muted/20 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg";
+
+              // Mid-article soft CTA, but only on long reads (≥ 6 min)
+              // and only when we can find an H2 in the [35 %, 65 %] band
+              // of the body. Otherwise the soft CTA renders below the
+              // body (still above the strong CTASection).
+              const readMins = estimateReadMinutes(htmlContent);
+              if (readMins >= 6) {
+                const [before, after] = splitHtmlAroundMid(htmlContent);
+                if (after) {
+                  return (
+                    <>
+                      <div
+                        className={proseClasses}
+                        dangerouslySetInnerHTML={{ __html: before }}
+                      />
+                      <MidArticleSoftCTA locale={locale} />
+                      <div
+                        className={proseClasses}
+                        dangerouslySetInnerHTML={{ __html: after }}
+                      />
+                    </>
+                  );
+                }
+              }
+              return (
+                <>
+                  <div
+                    className={proseClasses}
+                    dangerouslySetInnerHTML={{ __html: htmlContent }}
+                  />
+                  {readMins >= 6 && <MidArticleSoftCTA locale={locale} />}
+                </>
+              );
+            })()
           ) : (
             content.map((paragraph, i) => (
               <p key={i} className="text-muted-foreground leading-relaxed mb-6">

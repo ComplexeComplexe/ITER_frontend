@@ -12,6 +12,10 @@ interface FallbackMemberData {
   linkedIn: string;
   order: number;
   showInHero: boolean;
+  /** Long-form bio used by the dedicated author page (E-E-A-T signal).
+   *  Only populated for founding partners; other members fall back to
+   *  the team listing on /a-propos. */
+  bio?: Record<Locale, string>;
 }
 
 // Helper function to convert name to slug format
@@ -36,6 +40,11 @@ const fallbackData: FallbackMemberData[] = [
     linkedIn: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
     order: 1,
     showInHero: true,
+    bio: {
+      fr: "Sébastien a passé 15 ans à structurer la finance de startups et de scale-ups en France et en Espagne. Avant de cofonder Iter Advisors, il a tenu le poste de CFO pour plusieurs entreprises en hypercroissance, accompagnant plus de 30 levées de fonds totalisant plus de 150 M€. Son terrain de jeu : la trésorerie, la modélisation financière et la négociation avec les investisseurs.",
+      en: "Sébastien has spent 15 years structuring finance for startups and scale-ups across France and Spain. Before co-founding Iter Advisors, he held CFO roles at several hyper-growth companies, supporting 30+ fundraises totalling over €150M. His focus areas: cash management, financial modelling, and investor negotiations.",
+      es: "Sébastien ha pasado 15 años estructurando las finanzas de startups y scale-ups en Francia y España. Antes de cofundar Iter Advisors, ocupó el puesto de CFO en varias empresas de hipercrecimiento, acompañando más de 30 rondas de financiación por un total de más de 150 M€. Sus áreas de enfoque: tesorería, modelización financiera y negociación con inversores.",
+    },
   },
   {
     id: 2,
@@ -52,6 +61,11 @@ const fallbackData: FallbackMemberData[] = [
     linkedIn: "https://www.linkedin.com/in/benjamin-ziza/",
     order: 2,
     showInHero: true,
+    bio: {
+      fr: "Benjamin a structuré la direction financière de startups SaaS et de PME industrielles pendant 12 ans avant de cofonder Iter Advisors. Il pilote aujourd'hui le bureau de Barcelone et accompagne une dizaine de fondateurs par an sur leur stratégie financière, leur fiscalité internationale (notamment la loi Beckham) et la préparation de leurs levées de fonds. Auteur principal du journal d'Iter Advisors, il écrit sur les sujets qu'il pratique au quotidien : trésorerie, KPIs SaaS, externalisation comptable et fiscalité France-Espagne.",
+      en: "Benjamin spent 12 years structuring finance for SaaS startups and industrial SMEs before co-founding Iter Advisors. He now runs the Barcelona office and supports around ten founders a year on financial strategy, international taxation (notably the Beckham Law) and fundraising preparation. As lead writer of the Iter Advisors journal, he covers the topics he practices daily: cash management, SaaS KPIs, accounting outsourcing, and Franco-Spanish taxation.",
+      es: "Benjamin pasó 12 años estructurando las finanzas de startups SaaS y pymes industriales antes de cofundar Iter Advisors. Hoy dirige la oficina de Barcelona y acompaña a una decena de fundadores al año en su estrategia financiera, su fiscalidad internacional (en particular la ley Beckham) y la preparación de sus rondas de financiación. Autor principal de la revista de Iter Advisors, escribe sobre los temas que practica a diario: tesorería, KPIs SaaS, externalización contable y fiscalidad franco-española.",
+    },
   },
   {
     id: 3,
@@ -68,6 +82,11 @@ const fallbackData: FallbackMemberData[] = [
     linkedIn: "https://www.linkedin.com/in/rostand/",
     order: 3,
     showInHero: true,
+    bio: {
+      fr: "Guillaume cofonde et pilote la croissance d'Iter Advisors. Ancien fondateur de startups SaaS, il a passé une décennie côté opérateur avant de basculer côté accompagnement. Il dirige aujourd'hui les sujets marketing, partenariats et développement commercial du cabinet.",
+      en: "Guillaume co-founded Iter Advisors and runs its growth function. A former SaaS-startup founder, he spent a decade on the operator side before switching to advisory. He leads the firm's marketing, partnerships and business development efforts.",
+      es: "Guillaume cofundó Iter Advisors y dirige su función de crecimiento. Ex fundador de startups SaaS, pasó una década en el lado operativo antes de cambiar al asesoramiento. Hoy lidera las áreas de marketing, alianzas y desarrollo comercial del despacho.",
+    },
   },
   {
     id: 4,
@@ -281,3 +300,33 @@ export function getTeamMembers(locale: Locale): StrapiTeamMember[] {
 
 // Alias for backward compatibility
 export const getFallbackTeamMembers = getTeamMembers;
+
+/**
+ * Locate a single team member by slug + return them with the locale's
+ * role + bio resolved. Returns `null` if the slug is unknown OR if the
+ * member has no bio for this locale (no point rendering an empty
+ * author page).
+ */
+export function getTeamMemberBySlug(
+  slug: string,
+  locale: Locale,
+): (StrapiTeamMember & { bio: string }) | null {
+  const member = fallbackData.find((m) => m.slug === slug);
+  if (!member || !member.bio?.[locale]) return null;
+  return {
+    ...member,
+    title: `${member.firstName} ${member.lastName}`,
+    role: member.roles[locale],
+    bio: member.bio[locale],
+  } as StrapiTeamMember & { bio: string };
+}
+
+/**
+ * Slugs that have a dedicated author page (i.e. have a bio in every
+ * locale). Used by `generateStaticParams` and the sitemap.
+ */
+export function getAuthorSlugs(): string[] {
+  return fallbackData
+    .filter((m) => m.bio && m.bio.fr && m.bio.en && m.bio.es)
+    .map((m) => m.slug);
+}
