@@ -95,8 +95,13 @@ export default function HeroSection({
       </div>
 
       <div className="container relative z-10 pt-20 pb-12 lg:pt-24 lg:pb-16">
-        <div className="max-w-4xl animate-[fadeInUp_0.8s_ease-out_both]">
-          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white leading-[1.08] tracking-tight mb-5 animate-[fadeInUp_0.7s_ease-out_0.2s_both]">
+        {/* LCP-OPT: the H1 is the LCP element on mobile. Removed the
+            wrapper-level fadeInUp + the H1's own 0.2s-delayed animation
+            so the largest paintable element is opaque from first paint
+            instead of after ~0.9s. Cascading animations remain on the
+            subtitle, CTAs, and trust badge below — they are never LCP. */}
+        <div className="max-w-4xl">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white leading-[1.08] tracking-tight mb-5">
             {hasRotator ? (
               <>
                 {heroBefore}
