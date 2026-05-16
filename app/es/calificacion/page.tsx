@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: "Calificación Empresas | Iter Advisors",
   description:
     "Califique su empresa en 5 minutos y reciba un análisis personalizado de su madurez financiera. Recomendaciones a medida de nuestros expertos DAF.",
+  // INDEX-03: qualification funnel — no SEO value.
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Calificación Empresa | Iter Advisors",
     description:
