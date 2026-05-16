@@ -68,7 +68,7 @@ export default function DafLocalPage({
     },
     priceRange: "€€",
     openingHours: "Mo-Fr 09:00-18:00",
-    image: "https://www.iteradvisors.com/images/og-default.png",
+    image: "https://www.iteradvisors.com/images/og-default.webp",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: String(TRUSTFOLIO_RATING),

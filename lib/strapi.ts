@@ -450,12 +450,15 @@ export async function strapiFetch<T>(
     url.searchParams.set(key, value);
   }
 
+  // LCP-OPT: default to 1-hour ISR when no explicit `revalidate` is
+  // passed. If Strapi is ever re-enabled, this prevents every SSR from
+  // blocking on a fresh fetch and adding 500 ms – 2 s to TTFB.
   const res = await fetch(url.toString(), {
     headers: {
       Authorization: `Bearer ${STRAPI_TOKEN}`,
       "Content-Type": "application/json",
     },
-    next: options.revalidate !== undefined ? { revalidate: options.revalidate } : undefined,
+    next: { revalidate: options.revalidate ?? 3600 },
   });
 
   if (!res.ok) {
