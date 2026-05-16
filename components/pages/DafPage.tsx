@@ -11,7 +11,7 @@ import { strapiMediaUrl } from "@/lib/strapi";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import { BOOKING_URL } from "@/lib/navigation";
 import { getDafContent, type FaqRichAnswer } from "@/lib/content/daf";
-import { faqPageSchema, serviceSchema, howToSchema, speakableSchema, reviewsSchema } from "@/lib/schemas";
+import { faqPageSchema, howToSchema, speakableSchema, reviewsSchema } from "@/lib/schemas";
 import { renderInlineMarkdownLinks } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -886,41 +886,55 @@ export default function DafPage({
         }}
       />
 
-      {/* Service Schema (CC-05) */}
+      {/* D1 (2026-05-17) — FinancialService schema with aggregateRating replacing
+          the previous generic Service type. FinancialService is the Schema.org
+          sub-type that triggers rich-result eligibility for financial advisory
+          firms. aggregateRating surfaces the 5/5 stars in SERP snippets.
+          provider.sameAs adds LinkedIn + Trustfolio for cross-entity linking. */}
       {locale === "fr" && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              serviceSchema({
-                name: "DAF externalisé",
-                description:
-                  "Cabinet de DAF externalisé pour PME, startups et scale-ups. CFO senior dès 2 jours/mois, opérationnel J+1. Trésorerie, reporting, contrôle de gestion, levée de fonds et M&A.",
-                url: "/daf-externalise",
-                serviceType: "Direction financière externalisée",
-                areaServed: ["FR", "ES"],
-                offers: [
-                  {
-                    name: "Essentiel",
-                    description: "2-3 jours par mois — pilotage trésorerie + reporting mensuel",
-                    price: "2000",
-                    priceCurrency: "EUR",
-                  },
-                  {
-                    name: "Croissance",
-                    description: "4-6 jours par mois — DAF opérationnel multi-missions",
-                    price: "4000",
-                    priceCurrency: "EUR",
-                  },
-                  {
-                    name: "Premium",
-                    description: "8 jours et plus par mois — DAF sponsor levée / M&A",
-                    price: "7000",
-                    priceCurrency: "EUR",
-                  },
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FinancialService",
+              "@id": "https://www.iteradvisors.com/daf-externalise#service",
+              name: "DAF externalisé — Iter Advisors",
+              provider: {
+                "@type": "Organization",
+                "@id": "https://www.iteradvisors.com/#organization",
+                name: "Iter Advisors",
+                url: "https://www.iteradvisors.com",
+                logo: "https://www.iteradvisors.com/images/logos/logo-hero.png",
+                sameAs: [
+                  "https://www.linkedin.com/company/iter-advisors",
+                  "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
                 ],
-              }),
-            ),
+              },
+              description:
+                "Cabinet de DAF externalisé pour PME, startups et scale-ups. CFO senior dès 2 jours/mois, opérationnel J+1. Trésorerie, reporting, contrôle de gestion, levée de fonds et M&A.",
+              url: "https://www.iteradvisors.com/daf-externalise",
+              areaServed: [
+                { "@type": "City", name: "Paris" },
+                { "@type": "City", name: "Toulouse" },
+                { "@type": "City", name: "Barcelone" },
+              ],
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Formules DAF externalisé",
+                itemListElement: [
+                  { "@type": "Offer", name: "Essentiel", price: "2000", priceCurrency: "EUR" },
+                  { "@type": "Offer", name: "Croissance", price: "4000", priceCurrency: "EUR" },
+                  { "@type": "Offer", name: "Premium", price: "7000", priceCurrency: "EUR" },
+                ],
+              },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5",
+                reviewCount: "31",
+                bestRating: "5",
+              },
+            }),
           }}
         />
       )}

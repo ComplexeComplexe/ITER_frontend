@@ -111,11 +111,9 @@ export const dafContent: Record<Locale, DafContent> = {
     meta: {
       title: "DAF Externalisé pour PME & Startups | Iter Advisors",
       description:
-        // SEO audit 16 mai 2026 — shortened from 209 chars (truncated in
-        // SERP) to ~142 chars (full in SERP) with quantified proof (85
-        // entreprises, 100 M€) and an implicit CTA (« opérationnel en 1
-        // semaine »).
-        "Cabinet de DAF externalisé pour PME & startups. Tarifs dès 2 000 €/mois, opérationnel en 1 semaine. 85 entreprises accompagnées, 100 M€ levés.",
+        // D2 (2026-05-17) — 159c target per audit: primary keyword in first 40c,
+        // quantified proof, geo signals, implicit CTA.
+        "Cabinet de DAF externalisé pour PME & startups. CFO à temps partagé dès 2 000 €/mois. 85 entreprises accompagnées, 100 M€ levés. Paris, Toulouse, Barcelone.",
     },
     breadcrumbLabel: "DAF Externalisé",
     h1: "DAF Externalisé : votre direction financière sur-mesure",
