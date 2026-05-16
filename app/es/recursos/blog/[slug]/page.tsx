@@ -99,6 +99,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         author={fallback.author}
         category={fallback.category}
         metaDescription={fallback.meta.description}
+        slug={slug}
         teamMembers={teamSource}
         bodyImage={BLOG_ILLUSTRATIONS[slug]}
       />

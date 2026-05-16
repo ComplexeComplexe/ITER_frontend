@@ -266,6 +266,10 @@ export function financialServiceSchema(): Record<string, unknown> {
 
 /**
  * Generate Article / BlogPosting JSON-LD schema.
+ *
+ * Extended (mai 2026 redesign) with `wordCount` + `articleSection` per
+ * the blog-article-redesign ticket §6.6 acceptance criteria — these
+ * boost rich-result eligibility on Google's BlogPosting type.
  */
 export function articleSchema({
   headline,
@@ -274,7 +278,10 @@ export function articleSchema({
   datePublished,
   dateModified,
   authorName = "Iter Advisors",
+  authorUrl,
   imageSrc,
+  wordCount,
+  articleSection,
 }: {
   headline: string;
   description: string;
@@ -282,7 +289,16 @@ export function articleSchema({
   datePublished?: string;
   dateModified?: string;
   authorName?: string;
+  /** Author canonical URL (e.g. /a-propos/benjamin-ziza). When provided
+   *  the schema renders a Person author with a `url` instead of a
+   *  generic Organization fallback. */
+  authorUrl?: string;
   imageSrc?: string;
+  /** Number of words in the article body — Google rewards explicit
+   *  wordCount for ranking long-form content. */
+  wordCount?: number;
+  /** Article section / category (e.g. "Fiscalité"). */
+  articleSection?: string;
 }): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
@@ -292,11 +308,17 @@ export function articleSchema({
     url: url.startsWith("http") ? url : `${BASE}${url}`,
     ...(datePublished && { datePublished }),
     ...(dateModified && { dateModified }),
-    author: {
-      "@type": "Organization",
-      name: authorName,
-      url: `${BASE}/`,
-    },
+    author: authorUrl
+      ? {
+          "@type": "Person",
+          name: authorName,
+          url: authorUrl.startsWith("http") ? authorUrl : `${BASE}${authorUrl}`,
+        }
+      : {
+          "@type": "Organization",
+          name: authorName,
+          url: `${BASE}/`,
+        },
     publisher: {
       "@type": "Organization",
       name: "Iter Advisors",
@@ -312,6 +334,12 @@ export function articleSchema({
         url: imageSrc.startsWith("http") ? imageSrc : `${BASE}${imageSrc}`,
       },
     }),
+    ...(wordCount && wordCount > 0 && { wordCount }),
+    ...(articleSection && { articleSection }),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url.startsWith("http") ? url : `${BASE}${url}`,
+    },
   };
 }
 
