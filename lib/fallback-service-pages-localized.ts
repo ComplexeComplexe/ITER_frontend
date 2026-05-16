@@ -5,6 +5,7 @@
 
 import type { StrapiServiceSinglePage } from "@/lib/strapi";
 import type { Locale } from "@/lib/i18n";
+import { fallbackServicePages } from "@/lib/fallback-service-pages";
 
 const createParagraph = (text: string) => ({
   type: "paragraph" as const,
@@ -347,4 +348,19 @@ export function getFallbackServicePage(
     return fallbackServicePagesEs[slug];
   }
   return undefined;
+}
+
+/**
+ * INDEX-04 — single static resolver replacing `getServiceSinglePage` in
+ * route handlers. Synchronous (no Strapi/network call), so route SSR
+ * never throws / hits the catch-all 500 page when CMS is offline.
+ */
+export function getStaticServicePage(
+  slug: string,
+  locale: Locale
+): StrapiServiceSinglePage | null {
+  if (locale === "fr") {
+    return fallbackServicePages[slug] ?? null;
+  }
+  return getFallbackServicePage(slug, locale) ?? null;
 }
