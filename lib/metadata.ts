@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { Locale } from "./i18n";
-import { strapiFetch, type StrapiSeo, type StrapiSingleResponse, strapiMediaUrl } from "./strapi";
+import { strapiFetch, STRAPI_ENABLED, type StrapiSeo, type StrapiSingleResponse, strapiMediaUrl } from "./strapi";
 
 const localeMap: Record<Locale, string> = {
   fr: "fr_FR",
@@ -161,7 +161,12 @@ export async function buildStrapiMetadata({
       return meta;
     }
   } catch (e) {
-    console.warn(`Failed to fetch Strapi SEO for ${endpoint}:`, e);
+    // T1/T2 (mai 2026): only log when STRAPI_ENABLED — the local
+    // `fallbackTitle` / `fallbackDescription` are now the source of truth,
+    // so a "miss" against a disabled CMS is the expected fast path.
+    if (STRAPI_ENABLED) {
+      console.warn(`Failed to fetch Strapi SEO for ${endpoint}:`, e);
+    }
   }
 
   return buildMetadata({
@@ -257,7 +262,10 @@ export async function buildStrapiCollectionMetadata({
 
     return meta;
   } catch (e) {
-    console.warn(`Failed to fetch Strapi SEO for ${endpoint}/${slug}:`, e);
+    // T1/T2 (mai 2026): silent when STRAPI_DISABLED — fallback is canonical.
+    if (STRAPI_ENABLED) {
+      console.warn(`Failed to fetch Strapi SEO for ${endpoint}/${slug}:`, e);
+    }
   }
 
   return buildMetadata({
