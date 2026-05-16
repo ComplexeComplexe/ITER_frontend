@@ -369,6 +369,200 @@ const nextConfig: NextConfig = {
         destination: "/ressources/outils/logiciels-tresorerie",
         permanent: true, // 301 redirect (slug rename)
       },
+      // ─── INDEX-03 (mai 2026) — GSC "page avec redirection" cleanup ────
+      // Goal: every URL reported by GSC must reach a 200 in exactly one
+      // hop. This block kills four classes of issues:
+      //   1. Double-locale prefixes  (/en/en/*, /es/es/*, /en/es/*, /es/en/*)
+      //   2. Testimonials sub-slugs that GSC still tracks
+      //   3. Orphan blog slugs in EN/ES (article exists only in FR)
+      //   4. Per-locale service / pillar slug mismatches
+      //
+      // Double-locale catch-alls — MUST come before any /en/*, /es/* rule
+      // so they collapse the prefix before downstream rules try to match.
+      // GSC trace: /en/en/ressources/blog/..., /en/en/services/...,
+      // /es/es/services/..., /en/es/..., /es/en/...
+      {
+        source: "/en/en/:path*",
+        destination: "/en/:path*",
+        permanent: true,
+      },
+      {
+        source: "/es/es/:path*",
+        destination: "/es/:path*",
+        permanent: true,
+      },
+      {
+        source: "/en/es/:path*",
+        destination: "/es/:path*",
+        permanent: true,
+      },
+      {
+        source: "/es/en/:path*",
+        destination: "/en/:path*",
+        permanent: true,
+      },
+      // Testimonials sub-slugs — only the bare hub was redirected before,
+      // so /ressources/testimonials/yego, /es/ressources/testimonials/ukio,
+      // /en/ressources/testimonials/surf etc. all 404'd. The unified social
+      // proof hub is /[locale]/ressources/cas-clients (see UX-02 above).
+      {
+        source: "/ressources/testimonials/:slug*",
+        destination: "/ressources/cas-clients",
+        permanent: true,
+      },
+      {
+        source: "/en/ressources/testimonials/:slug*",
+        destination: "/en/ressources/cas-clients",
+        permanent: true,
+      },
+      // NOTE: the /es/ressources/* → /es/recursos/* rule (TICKET 2 above)
+      // intercepts the source URL first, so we only need the redirect on
+      // the post-migration path. Chain: GSC URL → /es/recursos/... → hub.
+      {
+        source: "/es/recursos/testimonials/:slug*",
+        destination: "/es/recursos/cas-clients",
+        permanent: true,
+      },
+      // EN/ES orphan blog slugs — article exists only in FR. Redirect to
+      // the locale blog hub so Google replaces the indexed URL with the
+      // hub instead of keeping the redirect chain.
+      {
+        source: "/en/ressources/blog/levee-de-fonds-dilutif-vs-non-dilutif",
+        destination: "/en/ressources/blog",
+        permanent: true,
+      },
+      {
+        source: "/es/ressources/blog/levee-de-fonds-dilutif-vs-non-dilutif",
+        destination: "/es/recursos/blog",
+        permanent: true,
+      },
+      {
+        source: "/en/ressources/blog/organiser-sa-direction-financiere",
+        destination: "/en/ressources/blog",
+        permanent: true,
+      },
+      {
+        source: "/en/ressources/blog/regimes-fiscaux-france-vs-espagne",
+        destination: "/en/ressources/blog",
+        permanent: true,
+      },
+      {
+        source: "/es/ressources/blog/regimes-fiscaux-france-vs-espagne",
+        destination: "/es/recursos/blog",
+        permanent: true,
+      },
+      // Full-slug variant of the depublished AI/automation article (the
+      // shorter slug was already handled; GSC tracks both forms).
+      {
+        source:
+          "/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+        destination: "/en/ressources/blog",
+        permanent: true,
+      },
+      {
+        source:
+          "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+        destination: "/es/recursos/blog",
+        permanent: true,
+      },
+      // FR service slugs that GSC has indexed with old names. The
+      // canonical names already live under app/services/*.
+      {
+        source: "/services/gestion-de-tresorerie",
+        destination: "/services/previsionnel-tresorerie",
+        permanent: true,
+      },
+      {
+        source: "/services/externalisation-comptable",
+        destination: "/services/comptabilite-externalisation",
+        permanent: true,
+      },
+      {
+        source: "/services/levee-de-fonds",
+        destination: "/services/accompagnement-levee-de-fond",
+        permanent: true,
+      },
+      // ES site: French-named service routes exist as duplicates of the
+      // Spanish canonical slugs. Collapse them so each topic has exactly
+      // one indexable URL per locale.
+      {
+        source: "/es/services/previsionnel-tresorerie",
+        destination: "/es/services/flujo-de-caja",
+        permanent: true,
+      },
+      {
+        source: "/es/services/accompagnement-levee-de-fond",
+        destination: "/es/services",
+        permanent: true,
+      },
+      {
+        source: "/es/services/controle-de-gestion-externalise",
+        destination: "/es/services",
+        permanent: true,
+      },
+      {
+        source: "/es/services/fund-raising-support",
+        destination: "/es/services",
+        permanent: true,
+      },
+      // EN site: Spanish-named service slug indexed by mistake.
+      {
+        source: "/en/services/control-gestion-externalizado",
+        destination: "/en/services/outsourced-management-control",
+        permanent: true,
+      },
+      // FR site: foreign-locale pillar slugs that shouldn't exist on the
+      // root domain. The canonical FR cluster is /daf-externalise/*.
+      {
+        source: "/daf-outsourcing/:path*",
+        destination: "/daf-externalise/:path*",
+        permanent: true,
+      },
+      {
+        source: "/externalizacion-daf/:path*",
+        destination: "/daf-externalise/:path*",
+        permanent: true,
+      },
+      // EN site: legacy DAF cluster slugs that still appear in GSC.
+      // Canonical EN cluster is /en/fractional-cfo/*.
+      {
+        source: "/en/daf-externalise/:path*",
+        destination: "/en/fractional-cfo/:path*",
+        permanent: true,
+      },
+      {
+        source: "/en/externalizacion-daf/:path*",
+        destination: "/en/fractional-cfo/:path*",
+        permanent: true,
+      },
+      // ES site: canonical ES cluster is /es/externalizacion-daf/*.
+      {
+        source: "/es/daf-externalise",
+        destination: "/es/externalizacion-daf",
+        permanent: true,
+      },
+      {
+        source: "/es/daf-externalise/:path*",
+        destination: "/es/externalizacion-daf/:path*",
+        permanent: true,
+      },
+      {
+        source: "/es/daf-outsourcing/:path*",
+        destination: "/es/externalizacion-daf/:path*",
+        permanent: true,
+      },
+      // Legal page in wrong language on /es.
+      {
+        source: "/es/mentions-legales",
+        destination: "/es/aviso-legal",
+        permanent: true,
+      },
+      // Glossary 404 — entry never existed. Send to the hub.
+      {
+        source: "/ressources/glossaire/fusion-acquisition",
+        destination: "/ressources/glossaire",
+        permanent: true,
+      },
     ];
   },
 };
