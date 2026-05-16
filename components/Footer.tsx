@@ -31,38 +31,12 @@ const POPULAR_ARTICLES = {
 export default function Footer({ locale }: { locale: Locale }) {
   const content = footerContent[locale];
   const nav = navigation[locale];
-  const baseUrl = "https://iter-advisors.com";
-  const localePrefix = locale === "fr" ? "" : `/${locale}`;
-
-  // Generate WPFooter schema
-  const wpFooterSchema = {
-    "@context": "https://schema.org",
-    "@type": "WPFooter",
-    "name": "Iter Advisors Footer",
-    "url": `${baseUrl}${localePrefix}/`,
-    "hasPart": [
-      ...nav.flatMap((section) => {
-        if (section.children) {
-          return section.children.map((child) => ({
-            "@type": "SiteNavigationElement",
-            "name": child.text,
-            "url": `${baseUrl}${child.href}`,
-          }));
-        }
-        return {
-          "@type": "SiteNavigationElement",
-          "name": section.title,
-          "url": `${baseUrl}${section.href}`,
-        };
-      }),
-      ...content.legalLinks.map((link) => ({
-        "@type": "SiteNavigationElement",
-        "name": link.text,
-        "url": `${baseUrl}${link.href}`,
-      })),
-    ],
-  };
-
+  // SEO audit 16 mai 2026 — `baseUrl` / `localePrefix` and the
+  // `WPFooter` JSON-LD schema were removed. `WPFooter` is a WordPress-
+  // specific schema type; emitting it on a Next.js site signals an
+  // inconsistent / templated stack to Google. The footer's nav is
+  // already exposed via the page's main schema graph (Organization +
+  // WebSite) and the user-facing footer markup itself.
   const serviceNav = nav.find((n) => n.title === "Services" || n.title === "Servicios");
   const resourceNav = nav.find(
     (n) => n.title === "Ressources" || n.title === "Resources" || n.title === "Recursos"
@@ -70,10 +44,6 @@ export default function Footer({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(wpFooterSchema) }}
-      />
       <footer className="bg-iter-dark py-12 sm:py-16">
         <div className="container px-4 sm:px-6">
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10 mb-8 sm:mb-12">
