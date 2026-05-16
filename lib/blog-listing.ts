@@ -11,6 +11,7 @@
 
 import { blogPosts } from "@/lib/content/blog-posts";
 import { BLOG_COVERS } from "@/lib/blog-covers";
+import { estimateReadMinutes } from "@/lib/blog-read-time";
 import type { Locale } from "@/lib/i18n";
 import type { StrapiBlogArticle, StrapiMedia } from "@/lib/strapi";
 
@@ -63,6 +64,7 @@ export function getStaticBlogListing(locale: Locale): StrapiBlogArticle[] {
   const articles: StrapiBlogArticle[] = entries.map(([slug, post]) => {
     const description = post.meta?.description ?? "";
     const publishedDate = post.publishedDate ?? "";
+    const readMinutes = estimateReadMinutes(post.htmlContent);
     return {
       id: 0,
       documentId: slug,
@@ -75,6 +77,7 @@ export function getStaticBlogListing(locale: Locale): StrapiBlogArticle[] {
       publishedDate,
       tableOfContents: false,
       category: post.category ?? "",
+      readMinutes,
     } as StrapiBlogArticle;
   });
 

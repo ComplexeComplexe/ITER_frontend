@@ -323,6 +323,9 @@ export interface StrapiBlogArticle {
   category: string;
   relatedArticles?: StrapiBlogArticle[];
   seo?: StrapiSeo;
+  /** Estimated reading time in minutes (computed from htmlContent for
+   *  static articles; not provided for Strapi-only ones). */
+  readMinutes?: number;
 }
 
 export interface StrapiTeamMember {
