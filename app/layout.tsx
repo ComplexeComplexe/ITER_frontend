@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "../components/CookieConsent";
-import HrefLangInjector from "../components/HrefLangInjector";
+// INDEX-01: HrefLangInjector removed. Hreflang is now emitted only
+// server-side via buildStrapiMetadata / buildStrapiCollectionMetadata
+// in lib/metadata.ts. Having both produced 8 conflicting hreflang
+// tags per page (4 SSR + 4 CSR), so Google ignored the entire set
+// and treated the FR/EN/ES variants as duplicate content.
 
 const dmSans = DM_Sans({
   subsets: ["latin", "latin-ext"],
@@ -47,9 +51,6 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
       <head>
-        {/* Hreflang injection for multi-language SEO */}
-        <HrefLangInjector />
-
         {/* DNS prefetch & preconnect for 3rd-party origins */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://share.trustfolio.co" />

@@ -1,5 +1,6 @@
 import CookieConsent from "../../components/CookieConsent";
-import HrefLangInjector from "../../components/HrefLangInjector";
+// INDEX-01: HrefLangInjector removed (same defect as the root layout).
+// Hreflang is now emitted server-side only, via the per-page metadata.
 
 export default function EsLayout({
   children,
@@ -9,9 +10,6 @@ export default function EsLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
-        {/* Hreflang injection for multi-language SEO */}
-        <HrefLangInjector />
-
         {/* Google Consent Mode v2 - Default denied BEFORE GTM loads */}
         <script
           dangerouslySetInnerHTML={{
