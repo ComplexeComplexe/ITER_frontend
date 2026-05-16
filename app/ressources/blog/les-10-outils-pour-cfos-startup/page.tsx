@@ -7,10 +7,19 @@ import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 export const metadata: Metadata = {
   title: "Outils CFO Startup | Iter Advisors",
   description: "Guide complet des 10 meilleurs outils fintech pour CFOs et founders en startup. Comptabilité, trésorerie, reporting, levée de fonds. Comparaison et ROI.",
+  // SEO audit 16 mai 2026 — Explicit canonical declared because the
+  // long-slug variant `/les-10-outils-pour-les-cfos-en-start-up` was
+  // also indexed in the past; a 301 redirect (next.config.ts L129)
+  // now resolves it here, and this canonical sets the short slug as
+  // the single indexable URL for the article.
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/les-10-outils-pour-cfos-startup",
+  },
   openGraph: {
     title: "Les 10 outils indispensables pour CFOs en startup | Iter Advisors",
     description: "Guide complet des 10 meilleurs outils fintech pour CFOs en startup. Comptabilité, trésorerie, reporting, levée de fonds. Comparaison et ROI.",
     type: "article",
+    url: "https://www.iteradvisors.com/ressources/blog/les-10-outils-pour-cfos-startup",
   },
 };
 

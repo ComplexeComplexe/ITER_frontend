@@ -11,7 +11,8 @@ import { strapiMediaUrl } from "@/lib/strapi";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import { BOOKING_URL } from "@/lib/navigation";
 import { getDafContent, type FaqRichAnswer } from "@/lib/content/daf";
-import { faqPageSchema, serviceSchema, howToSchema, articleSchema, speakableSchema, reviewsSchema } from "@/lib/schemas";
+import { faqPageSchema, serviceSchema, howToSchema, speakableSchema, reviewsSchema } from "@/lib/schemas";
+import { renderInlineMarkdownLinks } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import References from "@/components/References";
@@ -120,7 +121,26 @@ export default function DafPage({
       {/* Hero */}
       <section className="bg-background pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container">
-          <Breadcrumb locale={locale} items={[{ label: t.breadcrumbLabel }]} />
+          {/* SEO audit 16 mai 2026 — BreadcrumbList enriched from 2 to
+              3 items so Google can build a proper rich-result chain
+              (Iter Advisors → Services → DAF Externalisé). The middle
+              `Services` segment points to the existing /services hub
+              page (no orphan canonical). */}
+          <Breadcrumb
+            locale={locale}
+            items={[
+              {
+                label:
+                  locale === "fr"
+                    ? "Services"
+                    : locale === "en"
+                      ? "Services"
+                      : "Servicios",
+                href: locale === "fr" ? "/services" : `/${locale}/services`,
+              },
+              { label: t.breadcrumbLabel },
+            ]}
+          />
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-start mt-4 sm:mt-6">
             <div data-speakable="true">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-4 sm:mb-6 leading-tight">
@@ -133,7 +153,7 @@ export default function DafPage({
                     i === 0 ? "text-base sm:text-lg lg:text-xl text-foreground/80 font-medium" : "text-sm sm:text-base"
                   }`}
                 >
-                  {paragraph}
+                  {renderInlineMarkdownLinks(paragraph)}
                 </p>
               ))}
               <Link
@@ -216,32 +236,13 @@ export default function DafPage({
         </section>
       )}
 
-      {/* Partner */}
-      <section id="partenaire" className="bg-background py-12 sm:py-16 lg:py-20 scroll-mt-24">
-        <div className="container max-w-3xl px-4 sm:px-6">
-          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
-            {locale === "fr"
-              ? "Votre partenaire"
-              : locale === "en"
-                ? "Your partner"
-                : "Su socio"}
-          </span>
-          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
-            {t.partnerSection.heading}
-          </h2>
-          {t.partnerSection.content.map((p, i) => (
-            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              {p}
-            </p>
-          ))}
-        </div>
-      </section>
+      {/* SEO audit 16 mai 2026 — H2 order inverted: the definition
+          section ("Qu'est-ce qu'un DAF externalisé ?") now comes
+          first so the page answers the searcher's primary intent
+          before pitching the brand. Brand H2 ("Iter Advisors, votre
+          partenaire stratégique") drops to position 2. */}
 
-      <div className="container">
-        <div className="border-b border-border/50" />
-      </div>
-
-      {/* What Is */}
+      {/* What Is — primary intent answer */}
       <section id="comprendre" className="bg-muted/30 py-16 sm:py-24 lg:py-32 scroll-mt-24">
         <div className="container max-w-3xl px-4 sm:px-6">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
@@ -316,6 +317,31 @@ export default function DafPage({
               </table>
             </div>
           )}
+        </div>
+      </section>
+
+      <div className="container">
+        <div className="border-b border-border/50" />
+      </div>
+
+      {/* Partner — now position 2 (post-definition) per audit 16 mai 2026 */}
+      <section id="partenaire" className="bg-background py-12 sm:py-16 lg:py-20 scroll-mt-24">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
+            {locale === "fr"
+              ? "Votre partenaire"
+              : locale === "en"
+                ? "Your partner"
+                : "Su socio"}
+          </span>
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
+            {t.partnerSection.heading}
+          </h2>
+          {t.partnerSection.content.map((p, i) => (
+            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+              {p}
+            </p>
+          ))}
         </div>
       </section>
 
@@ -939,30 +965,14 @@ export default function DafPage({
         }}
       />
 
-      {/* Article Schema (audit V2 R-9) — pillar is also a long-form guide.
-        * Helps Google + AI engines understand the dual nature: a Service page
-        * (commercial intent) AND an editorial guide (informational intent). */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            articleSchema({
-              headline: t.h1,
-              description: t.intro[0] ?? t.meta.description,
-              url:
-                locale === "fr"
-                  ? "/daf-externalise"
-                  : locale === "en"
-                    ? "/en/fractional-cfo"
-                    : "/es/externalizacion-daf",
-              datePublished: "2024-09-01",
-              dateModified: new Date().toISOString().split("T")[0],
-              authorName: "Iter Advisors",
-              imageSrc: "/images/bg/daf-section.webp",
-            }),
-          ),
-        }}
-      />
+      {/*
+        * SEO audit 16 mai 2026 — Article / BlogPosting schema removed.
+        * Rationale: /daf-externalise is a Service landing (commercial
+        * intent), not an editorial article. Emitting BlogPosting here
+        * conflicted with the Service + WebPage schemas already in the
+        * page graph and risked Google ignoring the rich-result
+        * eligibility on the canonical Service type.
+        */}
 
       {/* Vos experts Iter Advisors (audit SEO D.1 / brief Bloc 7) — EEAT signal with named CFOs */}
       {locale === "fr" && featuredExperts.length > 0 && (
@@ -995,7 +1005,10 @@ export default function DafPage({
                       {photoUrl ? (
                         <Image
                           src={photoUrl}
-                          alt={`${expert.firstName} ${expert.lastName}`}
+                          // SEO audit 16 mai 2026 — alt enriched with
+                          // job title + brand so the image carries the
+                          // expert's signal (was "Sébastien Doat" only).
+                          alt={`${expert.firstName} ${expert.lastName} — ${expert.role}, Iter Advisors`}
                           fill
                           className="object-cover"
                           sizes="(max-width: 640px) 64px, (max-width: 1024px) 80px, 96px"

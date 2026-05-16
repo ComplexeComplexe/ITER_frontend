@@ -107,7 +107,7 @@ const clientLogos = [
   { src: "/images/logos/logo-mitiga.webp", alt: "Mitiga Solutions" },
   { src: "/images/logos/logo-neat.webp", alt: "Neat" },
   { src: "/images/logos/logo-nuubb.webp", alt: "NuuBB" },
-  { src: "/images/logos/logo-opitdigital.webp", alt: "OptiDigital" },
+  { src: "/images/logos/logo-opitdigital.webp", alt: "Logo Opti Digital — client Iter Advisors accompagné en DAF externalisé" },
   { src: "/images/logos/logo-seasonly.webp", alt: "Seasonly" },
   { src: "/images/logos/logo-solamente.webp", alt: "Solamente" },
   { src: "/images/logos/logo-surfe.webp", alt: "Surfe" },
