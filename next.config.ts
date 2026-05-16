@@ -563,6 +563,24 @@ const nextConfig: NextConfig = {
         destination: "/ressources/glossaire",
         permanent: true,
       },
+      // ─── INDEX-05 (mai 2026) — ES blog 404s reported by Bing & Google ──
+      // checklist-due-diligence-levee-de-fonds: article exists only in FR
+      // (lib/content/blog-posts.ts) — redirect ES variant to the ES blog
+      // hub so Bingbot stops collecting the 404.
+      {
+        source: "/es/recursos/blog/checklist-due-diligence-levee-de-fonds",
+        destination: "/es/recursos/blog",
+        permanent: true,
+      },
+      // recaudacion-fondos-dilutiva-vs-no-dilutiva: ES translation slug
+      // for the dilutif-vs-non-dilutif piece which only exists in FR.
+      // Send to the ES blog hub (matches the existing handling of
+      // /es/ressources/blog/levee-de-fonds-dilutif-vs-non-dilutif above).
+      {
+        source: "/es/recursos/blog/recaudacion-fondos-dilutiva-vs-no-dilutiva",
+        destination: "/es/recursos/blog",
+        permanent: true,
+      },
     ];
   },
 };
