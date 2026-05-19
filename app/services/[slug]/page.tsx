@@ -104,6 +104,14 @@ export async function generateMetadata({
   });
 }
 
+/* Per-slug hero illustrations (lightweight SVG) */
+const SLUG_HERO_IMAGES: Partial<Record<ServicePageSlug, { src: string; alt: string }>> = {
+  "accompagnement-levee-de-fond": {
+    src: "/images/illustrations/fundraising-growth.svg",
+    alt: "Accompagnement levée de fonds Iter Advisors — graphique de croissance illustrant la progression du financement startup",
+  },
+};
+
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   if (!isServicePageSlug(slug)) notFound();
@@ -117,6 +125,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       breadcrumbTitle={page.heroTitle}
       slug={slug}
       cmsNavigation={cmsNavigation}
+      heroImage={SLUG_HERO_IMAGES[slug as ServicePageSlug]}
     />
   );
 }

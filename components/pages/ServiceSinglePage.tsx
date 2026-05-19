@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, TrendingUp, BarChart3, Shield, Rocket, Settings, Target, Compass, Zap } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
@@ -27,6 +28,7 @@ interface ServiceSinglePageProps {
   breadcrumbTitle: string;
   slug?: string;
   cmsNavigation?: CmsNavItem[];
+  heroImage?: { src: string; alt: string };
 }
 
 /** Group Strapi content blocks by H2 headings into logical sections */
@@ -65,6 +67,7 @@ export default function ServiceSinglePage({
   breadcrumbTitle,
   slug,
   cmsNavigation,
+  heroImage,
 }: ServiceSinglePageProps) {
   const bc = breadcrumbsByLocale[locale];
   const contactPath = getContactPath(locale);
@@ -176,6 +179,22 @@ export default function ServiceSinglePage({
           </div>
         </div>
       </section>
+
+      {/* ─── Hero illustration (optional) ─── */}
+      {heroImage && (
+        <section className="bg-background pt-0 pb-8 sm:pb-12">
+          <div className="container max-w-3xl">
+            <Image
+              src={heroImage.src}
+              alt={heroImage.alt}
+              width={800}
+              height={450}
+              className="rounded-2xl object-cover w-full"
+              loading="lazy"
+            />
+          </div>
+        </section>
+      )}
 
       {/* ─── Content sections ─── */}
       <section className="py-16 sm:py-24 lg:py-32 bg-background">

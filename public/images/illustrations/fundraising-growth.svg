@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="fr-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B1F9A"/>
+      <stop offset="100%" stop-color="#170A50"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#fr-bg)"/>
+  <!-- Grid lines -->
+  <line x1="80" y1="140" x2="560" y2="140" stroke="rgba(255,255,255,0.055)" stroke-width="1"/>
+  <line x1="80" y1="220" x2="560" y2="220" stroke="rgba(255,255,255,0.055)" stroke-width="1"/>
+  <line x1="80" y1="300" x2="560" y2="300" stroke="rgba(255,255,255,0.055)" stroke-width="1"/>
+  <line x1="80" y1="370" x2="560" y2="370" stroke="rgba(255,255,255,0.055)" stroke-width="1"/>
+  <!-- Bar chart — growing series -->
+  <rect x="100" y="320" width="46" height="50" rx="4" fill="rgba(255,255,255,0.13)"/>
+  <rect x="164" y="290" width="46" height="80" rx="4" fill="rgba(255,255,255,0.18)"/>
+  <rect x="228" y="255" width="46" height="115" rx="4" fill="rgba(100,92,255,0.5)"/>
+  <rect x="292" y="215" width="46" height="155" rx="4" fill="rgba(100,92,255,0.68)"/>
+  <rect x="356" y="170" width="46" height="200" rx="4" fill="rgba(100,92,255,0.85)"/>
+  <rect x="420" y="125" width="46" height="245" rx="4" fill="rgba(191,223,0,0.78)"/>
+  <!-- Trend line -->
+  <polyline points="123,310 187,278 251,242 315,200 379,158 443,112"
+    fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2.5"
+    stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="123" cy="310" r="4" fill="rgba(255,255,255,0.65)"/>
+  <circle cx="251" cy="242" r="4" fill="rgba(255,255,255,0.65)"/>
+  <circle cx="379" cy="158" r="4" fill="rgba(255,255,255,0.65)"/>
+  <circle cx="443" cy="112" r="6" fill="#BFDF00"/>
+  <!-- Rocket shape -->
+  <g transform="translate(540,80) rotate(45)">
+    <ellipse cx="0" cy="0" rx="18" ry="36" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <polygon points="-18,20 0,45 18,20" fill="rgba(191,223,0,0.5)"/>
+    <circle cx="0" cy="-8" r="7" fill="rgba(255,255,255,0.45)"/>
+    <line x1="-8" y1="28" x2="-22" y2="48" stroke="rgba(191,223,0,0.5)" stroke-width="2" stroke-linecap="round"/>
+    <line x1="8" y1="28" x2="22" y2="48" stroke="rgba(191,223,0,0.5)" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <!-- Euro sign large decorative -->
+  <text x="605" y="290" font-family="Georgia, serif" font-size="160" fill="rgba(255,255,255,0.04)" font-weight="bold">€</text>
+  <!-- Panel on right -->
+  <rect x="582" y="200" width="175" height="165" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="596" y="218" width="60" height="40" rx="6" fill="rgba(191,223,0,0.12)"/>
+  <rect x="668" y="218" width="73" height="40" rx="6" fill="rgba(255,255,255,0.07)"/>
+  <rect x="596" y="236" width="30" height="6" rx="2" fill="rgba(191,223,0,0.7)"/>
+  <rect x="596" y="248" width="50" height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <rect x="684" y="234" width="42" height="8" rx="2" fill="rgba(255,255,255,0.55)"/>
+  <rect x="684" y="248" width="32" height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <rect x="596" y="270" width="145" height="80" rx="6" fill="rgba(255,255,255,0.04)"/>
+  <rect x="608" y="300" width="16" height="40" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="632" y="285" width="16" height="55" rx="2" fill="rgba(255,255,255,0.22)"/>
+  <rect x="656" y="274" width="16" height="66" rx="2" fill="rgba(100,92,255,0.5)"/>
+  <rect x="680" y="265" width="16" height="75" rx="2" fill="rgba(191,223,0,0.6)"/>
+  <rect x="704" y="278" width="16" height="62" rx="2" fill="rgba(100,92,255,0.35)"/>
+  <!-- Decorative -->
+  <circle cx="710" cy="390" r="80" fill="rgba(100,92,255,0.09)"/>
+  <circle cx="52" cy="52" r="52" fill="rgba(255,255,255,0.035)"/>
+</svg>
