@@ -108,7 +108,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
           {
             title: "Fiche métier : Directeur Administratif et Financier",
             href: "/ressources/fiche-metier",
-            image: "/images/logos/logo-hero.webp",
+            image: "/images/logos/logo-og-square.png",
             tag: "Fiche métier",
           },
         ],
@@ -197,7 +197,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
           {
             title: "Job description: Chief Financial Officer",
             href: "/en/ressources/fiche-metier",
-            image: "/images/logos/logo-hero.webp",
+            image: "/images/logos/logo-og-square.png",
             tag: "Job description",
           },
         ],
@@ -286,7 +286,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
           {
             title: "Perfil profesional: Director Financiero",
             href: "/es/ressources/fiche-metier",
-            image: "/images/logos/logo-hero.webp",
+            image: "/images/logos/logo-og-square.png",
             tag: "Perfil profesional",
           },
         ],

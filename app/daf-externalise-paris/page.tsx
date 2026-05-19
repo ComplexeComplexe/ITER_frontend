@@ -64,7 +64,7 @@ export async function generateMetadata(): Promise<Metadata> {
     url: "https://www.iteradvisors.com/daf-externalise-paris",
     telephone: "+33 1 76 54 28 11",
     areaServed: ["FR-75", "FR-92", "FR-93", "FR-94"],
-    image: "https://www.iteradvisors.com/logo.png",
+    image: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
     priceRange: "€€",
     offers: [
       {
