@@ -144,7 +144,7 @@ export default function ModernisationRoleCfoPage() {
         <li><strong>Trésorerie</strong> (Agicap, Fygr) : Cash forecasting IA, alertes</li>
         <li><strong>BI/Reporting</strong> (Power BI, Looker) : Tableaux de bord temps réel</li>
         <li><strong>Workflow</strong> (Make, Zapier) : Automatisation processus</li>
-        <li><strong>IA intégrée</strong> (Claude, ChatGPT) : Analyse documents, recommendations</li>
+        <li><strong>IA intégrée</strong> (ChatGPT, Gemini) : Analyse documents, recommendations</li>
       </ul>
       <p>
         Le CFO ne doit pas coder, mais comprendre ces outils et savoir s'en servir pour libérer du temps.

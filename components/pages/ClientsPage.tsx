@@ -17,7 +17,7 @@ import { ArrowRight } from "lucide-react";
  * Public clients page (GEO-5).
  *
  * Designed to maximize plain-text co-occurrence between "Iter Advisors"
- * and the named portfolio brands so that LLMs (Claude, ChatGPT, Gemini,
+ * and the named portfolio brands so that LLMs (ChatGPT, Gemini,
  * Perplexity) start associating us with the right tech ecosystems on
  * prompts like "fractional CFO Barcelona startup". Mirrors the pattern
  * used by The Startup CFO (the competitor that currently dominates those
