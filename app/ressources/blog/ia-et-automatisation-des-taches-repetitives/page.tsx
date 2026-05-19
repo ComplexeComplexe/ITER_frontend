@@ -118,7 +118,7 @@ export default function IaAutomatisationFinancePage() {
               <td><strong>4. Détection anomalies</strong></td>
               <td>Continue</td>
               <td>5-10h (enquête)</td>
-              <td>Anaplan, Stripe, Claude API</td>
+              <td>Anaplan, Stripe, OpenAI API</td>
               <td>90 % des cas flaggés</td>
             </tr>
             <tr>
@@ -206,7 +206,7 @@ export default function IaAutomatisationFinancePage() {
         <strong>AI natif :</strong>
       </p>
       <ul>
-        <li><strong>Claude API / OpenAI</strong> : Intégrez des capacités d'analyse de documents, génération de rapports, recommandations.</li>
+        <li><strong>OpenAI / Gemini API</strong> : Intégrez des capacités d'analyse de documents, génération de rapports, recommandations.</li>
         <li><strong>Azure Machine Learning</strong> : Pour des prévisions statistiques plus avancées.</li>
       </ul>
       <p>
