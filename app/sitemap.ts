@@ -197,6 +197,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
     priority: 0.9,
   });
+  /* SITEMAP-QA (2026-05-19) — /daf-externalise/secteurs was live (200) but missing.
+   * No dedicated EN/ES equivalent: EN localizedPath points to /en/fractional-cfo
+   * and /es/externalizacion-daf/sectores route does not exist yet.
+   * Emitted FR-only; EN/ES can be added when those pages are built. */
+  entries.push({
+    url: `${BASE}/daf-externalise/secteurs`,
+    lastModified: TODAY,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  });
   entries.push(
     ...entryAllLocales(
       { fr: "/daf-externalise/temps-partage", en: "/fractional-cfo/shared-time", es: "/externalizacion-daf/tiempo-compartido" },
@@ -236,11 +246,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
   /* SITEMAP-FIX: EN "outsourced-financial-management" 308 → /en/fractional-cfo (vercel.json).
    * The EN canonical for gestion-financière is /en/fractional-cfo (already in sitemap).
-   * Emit FR + ES only — no EN hreflang peer for this service page. */
-  entries.push(
-    { url: `${BASE}/services/gestion-financiere-externalisee`, lastModified: TODAY, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/es/services/gestion-financiera-externalizada`, lastModified: TODAY, changeFrequency: "monthly", priority: 0.8 },
-  );
+   * Emit FR + ES only — no EN hreflang peer for this service page.
+   *
+   * SITEMAP-QA (2026-05-19) — Added FR↔ES alternates so Google can cluster the two
+   * pages. EN intentionally excluded (EN URL permanently redirects to fractional-cfo).
+   * Note: the FR page canonical (set in generateMetadata) points to
+   * /services/controle-de-gestion-externalise per ticket F3; the canonical tag on the
+   * page itself takes precedence for deduplication — emitting the URL here is still
+   * correct so Googlebot discovers and processes it. */
+  {
+    const gfAlternates = {
+      languages: {
+        fr: `${BASE}/services/gestion-financiere-externalisee`,
+        es: `${BASE}/es/services/gestion-financiera-externalizada`,
+        "x-default": `${BASE}/services/gestion-financiere-externalisee`,
+      },
+    };
+    entries.push(
+      {
+        url: `${BASE}/services/gestion-financiere-externalisee`,
+        lastModified: TODAY,
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+        alternates: gfAlternates,
+      },
+      {
+        url: `${BASE}/es/services/gestion-financiera-externalizada`,
+        lastModified: TODAY,
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+        alternates: gfAlternates,
+      },
+    );
+  }
   entries.push(
     ...entryAllLocales(
       { fr: "/services/accompagnement-levee-de-fond", en: "/services/fund-raising-support", es: "/services/soporte-financiacion" },
@@ -359,11 +397,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
    * Fractional CFO landing self-references for hreflang (no FR claim,
    * since /daf-externalise-barcelone already maps EN → outsourced-cfo).
    */
+  /* SITEMAP-QA (2026-05-19) — Added self-referencing EN hreflang so this standalone
+   * EN landing is not treated as a hreflang orphan. No FR/ES equivalent page exists
+   * (the Barcelona cluster /daf-externalise-barcelone↔outsourced-cfo-barcelona↔
+   * cfo-externalizado-barcelona already covers FR/ES). */
   entries.push({
     url: `${BASE}/en/fractional-cfo-barcelona`,
     lastModified: TODAY,
-    changeFrequency: "monthly",
+    changeFrequency: "monthly" as const,
     priority: 0.85,
+    alternates: {
+      languages: {
+        en: `${BASE}/en/fractional-cfo-barcelona`,
+        "x-default": `${BASE}/en/fractional-cfo-barcelona`,
+      },
+    },
   });
 
   /* ── Blog articles ────────────────────────────────────────────────
