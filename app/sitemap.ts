@@ -190,6 +190,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { priority: 0.9 }
     )
   );
+  /* COCON-02 — /daf-externalise/tarifs was live (200) but missing from sitemap */
+  entries.push({
+    url: `${BASE}/daf-externalise/tarifs`,
+    lastModified: TODAY,
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
+  });
   entries.push(
     ...entryAllLocales(
       { fr: "/daf-externalise/temps-partage", en: "/fractional-cfo/shared-time", es: "/externalizacion-daf/tiempo-compartido" },

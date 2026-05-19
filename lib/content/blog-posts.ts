@@ -105,7 +105,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       h1: "Combien coute un DAF externalise en 2026 ? Tarifs, grille de prix et ROI",
       publishedDate: "2026-03-28",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "",
       htmlContent: `<p><strong>Le cout est la premiere question que se posent les dirigeants lorsqu'ils envisagent de faire appel a un DAF externalise.</strong> Et c'est logique : la direction financiere est un poste strategique, mais recruter un directeur administratif et financier a temps plein represente un investissement considerable -- souvent disproportionne pour une PME ou une startup en croissance.</p>
 <p>En 2026, le marche du <a href="https://iteradvisors.com/daf-externalise">DAF externalise</a> a profondement muri en France. Selon les donnees de <a href="https://www.bpifrance.fr/">Bpifrance</a>, plus de 60 % des PME francaises de moins de 50 salaries n'ont pas de directeur financier dedie. Pourtant, ces memes entreprises traversent des phases critiques -- levees de fonds, structuration financiere, croissance rapide -- ou l'absence d'expertise financiere senior coute bien plus cher que le prix d'un DAF externalise.</p>
@@ -472,7 +472,7 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
       },
       h1: "DAF externalisé vs DAF salarié : quel choix pour votre entreprise ?",
       publishedDate: "2026-03-28",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "",
       htmlContent: `<p>Votre entreprise grandit, les enjeux financiers se complexifient, et vous réalisez que la gestion financière ne peut plus reposer uniquement sur un comptable ou sur le dirigeant lui-même. Il vous faut un Directeur Administratif et Financier (DAF). Mais une question se pose immédiatement : faut-il recruter un DAF salarié à temps plein ou faire appel à un <a href="/daf-externalise">DAF externalisé</a> ?</p>
 <p>Ce dilemme est l'un des plus fréquents pour les PME et startups en croissance. D'un côté, le réflexe naturel pousse vers l'embauche d'un cadre en interne. De l'autre, l'externalisation de la direction financière offre une flexibilité et un rapport coût-efficacité difficiles à ignorer.</p>
@@ -1150,7 +1150,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "DAF + DRH externalisés : pourquoi combiner les deux fonctions change tout",
       publishedDate: "2026-03-28",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "thought-leadership",
       htmlContent: `<p>Votre startup passe le cap des dix salariés. La trésorerie devient complexe, les obligations sociales s'accumulent, les recrutements s'enchaînent. Vous avez besoin d'un directeur financier. Vous avez besoin d'un directeur des ressources humaines. Mais votre budget ne permet pas deux embauches à plus de 100 000 euros par an chacune.</p>
 <p>Et si la vraie question n'était pas "lequel recruter en premier", mais plutôt : "pourquoi les séparer" ?</p>
@@ -1690,7 +1690,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "5 signes que vous avez besoin d'un DAF externalisé (et comment choisir)",
       publishedDate: "2026-05-13",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "DAF externalisé",
       htmlContent: `<p>La décision de renforcer la fonction financière est un tournant pour toute entreprise en croissance. Trop tôt, elle constitue un poids financier inutile. Trop tard, elle expose l'entreprise à des risques opérationnels majeurs (défaillance de trésorerie, non-conformité fiscale, décisions stratégiques sans base chiffrée).</p>
 <p>Ce document présente cinq indicateurs factuels qui signalent qu'une entreprise a atteint le seuil de nécessité. Il analyse ensuite les options disponibles : DAF salarié, DAF externalisé, et les modalités de transition entre les deux.</p>
@@ -1812,7 +1812,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "DAF externalisé à Barcelone : le guide pour les startups espagnoles",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "daf-externalise",
       htmlContent: `<p>Barcelone est devenue le deuxième écosystème startup d'Europe après Londres. Avec plus de 2 000 startups, des hubs technologiques comme 22@ et le District de la Innovación, et un coût de la vie 30% inférieur à Paris, la ville attire chaque année des centaines d'entrepreneurs français et internationaux.</p>
 <p>Mais gérer la finance d'une startup à Barcelone présente des spécificités : comptabilité espagnole (Plan General Contable), obligations fiscales différentes, subventions régionales, et un écosystème VC en pleine structuration. Voici le guide complet.</p>
@@ -1849,7 +1849,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Combien coûte un DAF externalisé en 2026 ? Tarifs détaillés par mission",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "daf-externalise",
       htmlContent: `<p>C'est la question que nous entendons le plus souvent : « combien coûte un DAF externalisé ? ». La réponse dépend de votre stade de croissance, de la complexité de votre activité, et du périmètre de la mission. Voici un guide détaillé des tarifs en 2026, basé sur nos 120+ missions réalisées.</p>
 <h2 id="seed">Forfait « Seed » — 1 500-2 500 €/mois</h2>
@@ -1907,7 +1907,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "DAF externalisé vs Expert-Comptable : quelle différence ?",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "daf-externalise",
       htmlContent: `<p>« J'ai déjà un expert-comptable, pourquoi aurais-je besoin d'un DAF ? » — c'est une confusion fréquente. L'expert-comptable et le DAF ont des métiers complémentaires mais totalement différents. Comparer un DAF à un expert-comptable, c'est comme comparer un pilote à un mécanicien — les deux sont essentiels, mais ils n'ont pas le même rôle.</p>
 <h2 id="expert-comptable">L'expert-comptable : le gardien de la conformité</h2>
@@ -1969,7 +1969,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Pennylane vs Sage : notre comparatif après 40 déploiements",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "outils-stack",
       htmlContent: `<p>Après avoir déployé <a href="/ressources/outils/pennylane">Pennylane</a> chez plus de 25 clients et <a href="/ressources/outils/sage">Sage</a> chez une quinzaine, nous avons une vision claire : il n'y a pas de « meilleur » outil de comptabilité — il y a un outil adapté à votre situation. Voici notre comparatif terrain.</p>
 <h2 id="verdict">Le verdict en 30 secondes</h2>
@@ -2013,7 +2013,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Agicap vs Fygr : quel outil de trésorerie choisir ?",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "outils-stack",
       htmlContent: `<p>La trésorerie est le nerf de la guerre des startups. Mais avant d'avoir une trésorerie à gérer, il faut la voir — et c'est précisément le job d'un outil de prévision de trésorerie. Chez Iter Advisors, nous déployons principalement <a href="/ressources/outils/agicap">Agicap</a> et <a href="/ressources/outils/fygr">Fygr</a>. Deux approches, deux positionnements.</p>
 <h2 id="verdict">Le verdict en 30 secondes</h2>
@@ -2054,7 +2054,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Le stack financier idéal pour une SaaS en Series A (budget < 1 500 €/mois)",
       publishedDate: "2026-05-13",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "Outils & stack",
       htmlContent: `<p>Une startup SaaS en Series A (ARR entre 1 M€ et 5 M€, équipe de 20 à 50 personnes) traverse une phase critique. La fonction finance doit évoluer d'une gestion administrative basique vers un pilotage stratégique, sans pour autant mobiliser des ressources disproportionnées.</p>
 <p>L'objectif de ce guide est de définir un stack financier opérationnel, éprouvé, et maîtrisable en budget. Le budget cible est de 800 € à 1 500 € par mois — ce qui représente environ 1,5 % du burn rate moyen d'une SaaS en Series A (80 000 € à 120 000 € par mois).</p>
@@ -2339,7 +2339,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Comment réduire votre BFR : 7 leviers actionnables",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "gestion-financiere",
       htmlContent: `<p>Le <a href="/ressources/glossaire/besoin-fonds-roulement-bfr">BFR</a> (Besoin en Fonds de Roulement) est le plus grand consommateur de trésorerie des entreprises en croissance. Une startup qui double son CA doit généralement financer une augmentation de BFR de 20 à 30% de la croissance. Optimiser son BFR, c'est libérer du cash sans lever de fonds.</p>
 <h2 id="dso">Levier 1 — Réduire le DSO (délai client)</h2>
@@ -2466,7 +2466,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Tableau de bord financier startup : les 12 KPIs que tout CFO doit suivre",
       publishedDate: "2026-05-13",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "Gestion financière",
       htmlContent: `<p>Un tableau de bord financier efficace ne se mesure pas au nombre d'indicateurs qu'il contient, mais à la pertinence de ceux-ci. Un excès de métriques noie l'information ; un déficit masque les signaux d'alerte.</p>
 <p>Ce guide présente 12 KPIs (Key Performance Indicators) structurés en 4 catégories, avec pour chacun : la formule de calcul, le benchmark sectoriel, et la fréquence de suivi recommandée. Ces indicateurs sont applicables à l'ensemble des startups SaaS et PME digitales en phase de croissance.</p>
@@ -3127,7 +3127,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Fractional CFO Cost in 2026: Day Rates, Packages and ROI",
       publishedDate: "2026-05-12",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "CFO outsourcing",
       htmlContent: `<p><strong>Cost is the first question every founder asks when considering a Fractional CFO.</strong> It's a fair question — financial leadership is a strategic line item, and hiring a full-time CFO is one of the most expensive moves an SME can make. This guide gives you the real 2026 numbers.</p>
 <h2 id="day-rate">Day rate: the building block</h2>
@@ -3169,7 +3169,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Fractional CFO vs In-House CFO: Which Model Wins in 2026?",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "CFO outsourcing",
       htmlContent: `<p>Your business is growing, the finance topics are getting harder, and you've realised your accountant and your CEO can no longer carry the load alone. You need a CFO. The question is: full-time hire, or <a href="/en/fractional-cfo">Fractional CFO</a>?</p>
 <p>This guide breaks down the trade-offs across cost, flexibility, expertise and ROI — and gives you a clear answer based on your stage.</p>
@@ -3443,7 +3443,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Coste del CFO Externalizado en 2026: TJM, Paquetes y ROI",
       publishedDate: "2026-05-12",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "CFO externalizado",
       htmlContent: `<p><strong>El coste es la primera pregunta que se hace cualquier fundador al considerar un CFO externalizado.</strong> Es justo — la dirección financiera es estratégica, y fichar un CFO a tiempo completo es una de las decisiones más caras que puede tomar una pyme. Esta guía da los números reales de 2026.</p>
 <h2 id="day-rate">El TJM: la unidad básica</h2>
@@ -3485,7 +3485,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "CFO Externalizado vs CFO Interno: ¿Qué Modelo Gana en 2026?",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "CFO externalizado",
       htmlContent: `<p>Su negocio crece, los temas financieros se complican y se ha dado cuenta de que su contable y su CEO ya no pueden con todo. Necesita un CFO. La pregunta es: ¿fichaje a tiempo completo o <a href="/es/externalizacion-daf">CFO externalizado</a>?</p>
 <p>Esta guía desglosa los compromisos en coste, flexibilidad, expertise y ROI — y le da una respuesta clara según su etapa.</p>
