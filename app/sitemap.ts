@@ -1,73 +1,88 @@
 import type { MetadataRoute } from "next";
 import { getAuthorSlugs } from "@/lib/content/team";
+import { blogPosts } from "@/lib/content/blog-posts";
 
 const BASE = "https://www.iteradvisors.com";
-const TODAY = new Date().toISOString().split("T")[0];
 
-/* ── Helper: build a sitemap entry with hreflang alternates ────────── */
+// ── Content-type lastModified dates ──────────────────────────────────────────
+// Real per-content-type dates — NOT the build date.
+// Google uses lastmod to prioritise recrawl scheduling. Setting "today" on
+// every Vercel deploy trains Googlebot to ignore the signal entirely.
+// Update each constant only when that category of content meaningfully changes.
+const D = {
+  homepage:      "2026-05-19", // illustrations + sitemap refresh
+  pillar:        "2026-05-17", // DAF / DRH pillar pages — last major copy update
+  service:       "2026-05-17", // /services/* — last content update
+  local:         "2026-05-17", // geo pages (Barcelona, Paris, Toulouse)
+  institutional: "2026-03-01", // a-propos, contact, legal — stable
+  tools:         "2026-04-01", // tool sheets built ~April
+  glossary:      "2026-04-15", // glossary terms built ~April
+  author:        "2026-05-17", // Person schema + author bio pages added
+  jobs:          "2026-04-01", // noindexed but discoverable (TICKET-12)
+} as const;
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
 interface LocalizedPaths {
   fr: string;
   en: string;
   es: string;
 }
 
-function entry(
-  paths: LocalizedPaths,
-  opts: { changeFrequency?: MetadataRoute.Sitemap[number]["changeFrequency"]; priority?: number; lastModified?: string } = {}
-): MetadataRoute.Sitemap[number] {
+function buildAlternates(paths: LocalizedPaths) {
   return {
-    url: `${BASE}${paths.fr}`,
-    lastModified: opts.lastModified ?? TODAY,
-    changeFrequency: opts.changeFrequency ?? "monthly",
-    priority: opts.priority ?? 0.7,
-    alternates: {
-      languages: {
-        fr: `${BASE}${paths.fr}`,
-        en: `${BASE}/en${paths.en === "/" ? "" : paths.en}`,
-        es: `${BASE}/es${paths.es === "/" ? "" : paths.es}`,
-        "x-default": `${BASE}${paths.fr}`,
-      },
-    },
-  };
-}
-
-/* Also generate explicit EN and ES entries so search engines discover them */
-function entryAllLocales(
-  paths: LocalizedPaths,
-  opts: { changeFrequency?: MetadataRoute.Sitemap[number]["changeFrequency"]; priority?: number; lastModified?: string } = {}
-): MetadataRoute.Sitemap {
-  const alternates = {
     languages: {
-      fr: `${BASE}${paths.fr}`,
-      en: `${BASE}/en${paths.en === "/" ? "" : paths.en}`,
-      es: `${BASE}/es${paths.es === "/" ? "" : paths.es}`,
+      fr:          `${BASE}${paths.fr}`,
+      en:          `${BASE}/en${paths.en === "/" ? "" : paths.en}`,
+      es:          `${BASE}/es${paths.es === "/" ? "" : paths.es}`,
       "x-default": `${BASE}${paths.fr}`,
     },
   };
-  const common = {
-    lastModified: opts.lastModified ?? TODAY,
-    changeFrequency: opts.changeFrequency ?? ("monthly" as const),
-    priority: opts.priority ?? 0.7,
-    alternates,
+}
+
+/** Single FR-canonical URL with hreflang alternates.
+ *  Use when one or more locales don't have a page, so we declare the
+ *  EN/ES counterparts only in alternates (not as separate sitemap entries). */
+function entry(
+  paths: LocalizedPaths,
+  lastModified: string
+): MetadataRoute.Sitemap[number] {
+  return {
+    url: `${BASE}${paths.fr}`,
+    lastModified,
+    alternates: buildAlternates(paths),
   };
+}
+
+/** Three explicit URL entries (FR + EN + ES) sharing the same hreflang cluster.
+ *  Use when all three locales return a real HTTP 200. */
+function entryAllLocales(
+  paths: LocalizedPaths,
+  lastModified: string
+): MetadataRoute.Sitemap {
+  const alternates = buildAlternates(paths);
   return [
-    { url: `${BASE}${paths.fr}`, ...common },
-    { url: `${BASE}/en${paths.en === "/" ? "" : paths.en}`, ...common },
-    { url: `${BASE}/es${paths.es === "/" ? "" : paths.es}`, ...common },
+    { url: `${BASE}${paths.fr}`,                                    lastModified, alternates },
+    { url: `${BASE}/en${paths.en === "/" ? "" : paths.en}`,         lastModified, alternates },
+    { url: `${BASE}/es${paths.es === "/" ? "" : paths.es}`,         lastModified, alternates },
   ];
 }
 
-/* ── Blog slugs per locale ─────────────────────────────────────────────
- *
- * INDEX-02 (mai 2026) — Previously a single flat `BLOG_SLUGS` list was
- * looped × 3 locales, emitting ~90 URLs of which ~60 were 404s or
- * redirects because most articles only exist in FR. Google wasted its
- * crawl budget on dead URLs.
- *
- * Source of truth: `lib/content/blog-posts.ts` (per-locale dictionaries)
- * plus dedicated FR-only routes under `app/ressources/blog/<slug>/`.
- * Each slug appears ONLY in the locales where the article is reachable
- * via a real 200 response — no duplicates, no orphans. */
+/** Real publication date per blog slug, falling back to tools date.
+ *  Avoids emitting TODAY for articles that haven't changed since publish. */
+function blogModified(slug: string): string {
+  return (
+    blogPosts.fr[slug]?.publishedDate ??
+    blogPosts.en[slug]?.publishedDate ??
+    blogPosts.es[slug]?.publishedDate ??
+    D.tools
+  );
+}
+
+// ── Blog slugs per locale ─────────────────────────────────────────────────────
+//
+// INDEX-02 (mai 2026) — Previously a single flat BLOG_SLUGS list was looped
+// × 3 locales, emitting ~90 URLs of which ~60 were 404s or redirects. Each
+// slug appears ONLY in the locales where the article returns a real 200.
 const FR_BLOG_SLUGS = [
   /* From lib/content/blog-posts.ts (fr section) */
   "agicap-vs-fygr-outil-tresorerie",
@@ -124,31 +139,20 @@ const ES_BLOG_SLUGS = [
   "que-es-fractional-cfo",
 ] as const;
 
-/* ── TICKET 5 — 9 nouvelles fiches outils ──────────────────────────── */
+// ── Tool pages (FR-only — EN/ES tool pages return 404) ────────────────────────
 const TOOL_SLUGS = [
-  /* Existing */
-  "pennylane",
-  "agicap",
-  "spendesk",
-  "payfit",
-  /* New */
-  "sage",
-  "cegid-loop",
-  "fygr",
-  "pleo",
-  "silae",
-  "lucca",
-  "qonto",
-  "revolut-business",
-  "payhawk",
+  "pennylane", "agicap", "spendesk", "payfit",
+  "sage", "cegid-loop", "fygr", "pleo", "silae",
+  "lucca", "qonto", "revolut-business", "payhawk",
 ];
 
-/* ── TICKET 21 — 8 nouvelles pages glossaire dédiées ───────────────── */
+// ── Glossary pages (FR-only — EN/ES glossary have no [slug] routes) ───────────
+// SITEMAP-QA (2026-05-19) — "bfr" removed: it duplicates "besoin-fonds-roulement-bfr"
+// (both map to the same concept). A 301 redirect is added in next.config.ts so
+// existing backlinks and internal links to /ressources/glossaire/bfr don't break.
 const GLOSSARY_SLUGS = [
-  "bfr",
   "ebitda",
   "cfo",
-  /* New */
   "besoin-fonds-roulement-bfr",
   "cash-burn-runway",
   "cac-ltv",
@@ -158,7 +162,7 @@ const GLOSSARY_SLUGS = [
   "bspce-bsa",
 ];
 
-/* ── TICKET 1 — 4 nouvelles pages services RH dédiées ──────────────── */
+// ── HR service pages (FR-only for now) ───────────────────────────────────────
 const HR_SERVICE_SLUGS = [
   "recrutement-talent-acquisition",
   "gestion-paie-charges-sociales",
@@ -169,259 +173,224 @@ const HR_SERVICE_SLUGS = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
-  /* ── Homepage ────────────────────────────────────────────────────── */
+  // ── Homepage ──────────────────────────────────────────────────────────────
   entries.push(
-    ...entryAllLocales(
-      { fr: "/", en: "/", es: "/" },
-      { changeFrequency: "weekly", priority: 1.0 }
-    )
+    ...entryAllLocales({ fr: "/", en: "/", es: "/" }, D.homepage)
   );
 
-  /* ── DAF Externalise — HARMO-01: EN canonical aligned on /fractional-cfo/* ── */
+  // ── DAF Externalise ───────────────────────────────────────────────────────
+  // HARMO-01: EN canonical aligned on /fractional-cfo/*, ES on /externalizacion-daf/*
   entries.push(
     ...entryAllLocales(
       { fr: "/daf-externalise", en: "/fractional-cfo", es: "/externalizacion-daf" },
-      { priority: 0.9 }
+      D.pillar
     )
   );
   entries.push(
     ...entryAllLocales(
       { fr: "/daf-externalise/metier", en: "/fractional-cfo/metier", es: "/externalizacion-daf/metier" },
-      { priority: 0.9 }
+      D.pillar
     )
   );
-  /* COCON-02 — /daf-externalise/tarifs was live (200) but missing from sitemap */
+  // tarifs — FR-only (no EN/ES equivalent page exists yet)
   entries.push({
     url: `${BASE}/daf-externalise/tarifs`,
-    lastModified: TODAY,
-    changeFrequency: "monthly" as const,
-    priority: 0.9,
+    lastModified: D.pillar,
   });
-  /* SITEMAP-QA (2026-05-19) — /daf-externalise/secteurs was live (200) but missing.
-   * No dedicated EN/ES equivalent: EN localizedPath points to /en/fractional-cfo
-   * and /es/externalizacion-daf/sectores route does not exist yet.
-   * Emitted FR-only; EN/ES can be added when those pages are built. */
+  // secteurs — FR-only (SITEMAP-QA 2026-05-19: was missing from sitemap)
+  // EN localizedPath points to /en/fractional-cfo; /es/externalizacion-daf/sectores not built yet.
   entries.push({
     url: `${BASE}/daf-externalise/secteurs`,
-    lastModified: TODAY,
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
+    lastModified: D.pillar,
   });
   entries.push(
     ...entryAllLocales(
       { fr: "/daf-externalise/temps-partage", en: "/fractional-cfo/shared-time", es: "/externalizacion-daf/tiempo-compartido" },
-      { priority: 0.9 }
+      D.pillar
     )
   );
   entries.push(
     ...entryAllLocales(
       { fr: "/daf-externalise/transition", en: "/fractional-cfo/transition", es: "/externalizacion-daf/transition" },
-      { priority: 0.9 }
+      D.pillar
     )
   );
 
-  /* ── DRH Externalise ─────────────────────────────────────────────── */
+  // ── DRH Externalise ───────────────────────────────────────────────────────
   entries.push(
     ...entryAllLocales(
       { fr: "/drh-externalise", en: "/hr-outsourcing", es: "/externalizacion-rrhh" },
-      { priority: 0.9 }
+      D.pillar
     )
   );
   entries.push(
     ...entryAllLocales(
       { fr: "/drh-externalise/temps-partage", en: "/hr-outsourcing/shared-time", es: "/externalizacion-rrhh/tiempo-compartido" },
-      { priority: 0.9 }
+      D.pillar
     )
   );
 
-  /* ── Services ────────────────────────────────────────────────────── */
+  // ── Services ──────────────────────────────────────────────────────────────
   entries.push(
-    ...entryAllLocales({ fr: "/services", en: "/services", es: "/services" })
+    ...entryAllLocales({ fr: "/services", en: "/services", es: "/services" }, D.service)
   );
   entries.push(
     ...entryAllLocales(
       { fr: "/services/previsionnel-tresorerie", en: "/services/cash-flow-forecast", es: "/services/prevision-tesoreria" },
-      { priority: 0.8 }
+      D.service
     )
   );
-  /* SITEMAP-FIX: EN "outsourced-financial-management" 308 → /en/fractional-cfo (vercel.json).
-   * The EN canonical for gestion-financière is /en/fractional-cfo (already in sitemap).
-   * Emit FR + ES only — no EN hreflang peer for this service page.
-   *
-   * SITEMAP-QA (2026-05-19) — Added FR↔ES alternates so Google can cluster the two
-   * pages. EN intentionally excluded (EN URL permanently redirects to fractional-cfo).
-   * Note: the FR page canonical (set in generateMetadata) points to
-   * /services/controle-de-gestion-externalise per ticket F3; the canonical tag on the
-   * page itself takes precedence for deduplication — emitting the URL here is still
-   * correct so Googlebot discovers and processes it. */
+
+  // SITEMAP-FIX: EN "outsourced-financial-management" 308 → /en/fractional-cfo.
+  // Emit FR + ES only. SITEMAP-QA (2026-05-19): mutual alternates added so
+  // Google can cluster FR↔ES (EN intentionally excluded).
+  // Note: the FR page canonical (ticket F3) points to controle-de-gestion-externalise;
+  // the canonical tag on the page takes precedence — emitting the URL here is still
+  // correct so Googlebot discovers and processes it.
   {
     const gfAlternates = {
       languages: {
-        fr: `${BASE}/services/gestion-financiere-externalisee`,
-        es: `${BASE}/es/services/gestion-financiera-externalizada`,
+        fr:          `${BASE}/services/gestion-financiere-externalisee`,
+        es:          `${BASE}/es/services/gestion-financiera-externalizada`,
         "x-default": `${BASE}/services/gestion-financiere-externalisee`,
       },
     };
     entries.push(
       {
         url: `${BASE}/services/gestion-financiere-externalisee`,
-        lastModified: TODAY,
-        changeFrequency: "monthly" as const,
-        priority: 0.8,
+        lastModified: D.service,
         alternates: gfAlternates,
       },
       {
         url: `${BASE}/es/services/gestion-financiera-externalizada`,
-        lastModified: TODAY,
-        changeFrequency: "monthly" as const,
-        priority: 0.8,
+        lastModified: D.service,
         alternates: gfAlternates,
       },
     );
   }
+
   entries.push(
     ...entryAllLocales(
       { fr: "/services/accompagnement-levee-de-fond", en: "/services/fund-raising-support", es: "/services/soporte-financiacion" },
-      { priority: 0.8 }
+      D.service
     )
   );
   entries.push(
     ...entryAllLocales(
       { fr: "/services/comptabilite-externalisation", en: "/services/outsource-your-accounting", es: "/services/externalizar-contabilidad" },
-      { priority: 0.8 }
+      D.service
     )
   );
   entries.push(
     ...entryAllLocales(
       { fr: "/services/controle-de-gestion-externalise", en: "/services/outsourced-management-control", es: "/services/control-gestion-externalizado" },
-      { priority: 0.8 }
+      D.service
     )
   );
   entries.push(
     ...entryAllLocales(
       { fr: "/services/ma-due-diligence", en: "/services/ma-due-diligence", es: "/services/ma-due-diligence" },
-      { priority: 0.8 }
+      D.service
     )
   );
 
-  /* ── Ressources ──────────────────────────────────────────────────── */
-  /* SITEMAP-FIX: ES canonical for /ressources/ is /es/recursos/ (not /es/ressources/)
-   * — next.config permanent catch-all: /es/ressources/* → /es/recursos/*.
-   * Each entry below specifies the correct per-locale path explicitly. */
+  // ── Ressources ────────────────────────────────────────────────────────────
+  // SITEMAP-FIX: ES canonical for /ressources/ is /es/recursos/ — explicit per-locale paths below.
   entries.push(
-    ...entryAllLocales({ fr: "/ressources", en: "/ressources", es: "/recursos" })
+    ...entryAllLocales({ fr: "/ressources", en: "/ressources", es: "/recursos" }, D.institutional)
   );
   entries.push(
-    ...entryAllLocales({ fr: "/ressources/blog", en: "/ressources/blog", es: "/recursos/blog" })
+    ...entryAllLocales({ fr: "/ressources/blog", en: "/ressources/blog", es: "/recursos/blog" }, D.institutional)
   );
-  /* SITEMAP-FIX: /ressources/fiche-metier removed — all 3 locales redirect:
-   * FR → /daf-externalise/metier (already in sitemap), EN → 404 chain, ES → /es/recursos/fiche-metier.
-   * The EN job-descriptions page (redirect destination) returns 404 — separate bug to fix. */
   entries.push(
-    ...entryAllLocales({ fr: "/ressources/glossaire", en: "/ressources/glossaire", es: "/recursos/glossaire" })
+    ...entryAllLocales(
+      { fr: "/ressources/glossaire", en: "/ressources/glossaire", es: "/recursos/glossaire" },
+      D.glossary
+    )
   );
-  /* SITEMAP-FIX: testimonials + case-studies both 308 → /ressources/cas-clients (UX-02 merge).
-   * Emit the canonical URL directly; both old slugs are kept as 301 redirects only. */
+  // SITEMAP-FIX: testimonials + case-studies both 308 → /ressources/cas-clients.
   entries.push(
     ...entryAllLocales(
       { fr: "/ressources/cas-clients", en: "/ressources/cas-clients", es: "/recursos/cas-clients" },
-      { priority: 0.7 }
+      D.institutional
     )
   );
-  /* SITEMAP-FIX: /ressources/case-studies removed — 308 → /ressources/cas-clients (emitted above) */
   entries.push(
     ...entryAllLocales(
       { fr: "/ressources/outils", en: "/ressources/tools", es: "/recursos/herramientas" },
-      { priority: 0.7 }
+      D.tools
     )
   );
   // Named-clients page (GEO-5 from AI Visibility audit)
   entries.push(
     ...entryAllLocales(
       { fr: "/clients", en: "/clients", es: "/clients" },
-      { priority: 0.8 }
+      D.institutional
     )
   );
 
-  /* ── Pages institutionnelles ─────────────────────────────────────── */
+  // ── Pages institutionnelles ───────────────────────────────────────────────
   entries.push(
-    ...entryAllLocales({ fr: "/a-propos", en: "/a-propos", es: "/quienes-somos" })
+    ...entryAllLocales({ fr: "/a-propos", en: "/a-propos", es: "/quienes-somos" }, D.institutional)
   );
   entries.push(
-    ...entryAllLocales({ fr: "/contact", en: "/contact", es: "/contact" })
+    ...entryAllLocales({ fr: "/contact", en: "/contact", es: "/contact" }, D.institutional)
   );
-  // /jobs pages are noindexed (TICKET-12) but included in sitemap for discovery
+  // /jobs is noindexed (TICKET-12) but included for discovery
   entries.push(
-    ...entryAllLocales({ fr: "/jobs", en: "/jobs", es: "/jobs" }, { priority: 0.5 })
-  );
-
-  /* HARMO-01 — `/en/fractional-cfo` is now the EN canonical of the DAF
-   * triple emitted above (line ~153). The standalone entry that used to
-   * live here (when EN canonical was `/en/daf-outsourcing`) is no longer
-   * needed — keeping it would emit `/en/fractional-cfo` twice in the
-   * sitemap. */
-  entries.push(
-    ...entryAllLocales({ fr: "/mentions-legales", en: "/legal-notice", es: "/aviso-legal" })
+    ...entryAllLocales({ fr: "/jobs", en: "/jobs", es: "/jobs" }, D.jobs)
   );
   entries.push(
-    ...entryAllLocales({ fr: "/politique-de-confidentialite", en: "/privacy-policy", es: "/politica-de-privacidad" })
+    ...entryAllLocales({ fr: "/mentions-legales", en: "/legal-notice", es: "/aviso-legal" }, D.institutional)
+  );
+  entries.push(
+    ...entryAllLocales(
+      { fr: "/politique-de-confidentialite", en: "/privacy-policy", es: "/politica-de-privacidad" },
+      D.institutional
+    )
   );
 
-  /* ── Pages locales DAF externalise ────────────────────────────── */
+  // ── Pages locales DAF ─────────────────────────────────────────────────────
   entries.push(
     ...entryAllLocales(
       { fr: "/daf-externalise-barcelone", en: "/outsourced-cfo-barcelona", es: "/cfo-externalizado-barcelona" },
-      { priority: 0.8 }
+      D.local
     )
   );
   entries.push(
     ...entryAllLocales(
       { fr: "/daf-externalise-paris", en: "/outsourced-cfo-paris", es: "/cfo-externalizado-paris" },
-      { priority: 0.8 }
+      D.local
     )
   );
   entries.push(
     ...entryAllLocales(
       { fr: "/daf-externalise-toulouse", en: "/outsourced-cfo-toulouse", es: "/cfo-externalizado-toulouse" },
-      { priority: 0.8 }
+      D.local
     )
   );
 
-  /* ── EN-specific Fractional CFO Barcelona landing page ────────────
-   *
-   * Single sitemap entry, no FR duplicate. The audit (T-2) flagged that
-   * /daf-externalise-barcelone was emitted twice — once via the
-   * outsourced-cfo-barcelona entryAllLocales (which is the canonical
-   * Barcelona triple) and once via a redundant entry() block here.
-   * The FR URL is kept only on the canonical triple above; the EN
-   * Fractional CFO landing self-references for hreflang (no FR claim,
-   * since /daf-externalise-barcelone already maps EN → outsourced-cfo).
-   */
-  /* SITEMAP-QA (2026-05-19) — Added self-referencing EN hreflang so this standalone
-   * EN landing is not treated as a hreflang orphan. No FR/ES equivalent page exists
-   * (the Barcelona cluster /daf-externalise-barcelone↔outsourced-cfo-barcelona↔
-   * cfo-externalizado-barcelona already covers FR/ES). */
+  // Standalone EN Barcelona landing — self-referencing hreflang so Googlebot
+  // doesn't treat this as a hreflang orphan. No FR/ES equivalent page exists.
+  // (The Barcelona cluster daf-externalise-barcelone↔outsourced-cfo-barcelona↔
+  // cfo-externalizado-barcelona already covers FR/ES geo signals.)
+  // SITEMAP-QA (2026-05-19): alternates added.
   entries.push({
     url: `${BASE}/en/fractional-cfo-barcelona`,
-    lastModified: TODAY,
-    changeFrequency: "monthly" as const,
-    priority: 0.85,
+    lastModified: D.local,
     alternates: {
       languages: {
-        en: `${BASE}/en/fractional-cfo-barcelona`,
+        en:          `${BASE}/en/fractional-cfo-barcelona`,
         "x-default": `${BASE}/en/fractional-cfo-barcelona`,
       },
     },
   });
 
-  /* ── Blog articles ────────────────────────────────────────────────
-   *
-   * INDEX-02 — emit exactly one URL per locale-where-the-article-exists,
-   * with hreflang alternates restricted to those same locales. Articles
-   * available in more than one locale (e.g. flux-de-tresorerie in
-   * FR/EN/ES) get a clean N-way hreflang group; FR-only articles emit
-   * a single entry with no hreflang at all.
-   */
+  // ── Blog articles ─────────────────────────────────────────────────────────
+  //
+  // INDEX-02 — emit exactly one URL per locale-where-the-article-exists,
+  // with hreflang alternates restricted to those same locales.
+  // lastModified uses the real publishedDate from blog-posts.ts (not build date).
   const frSet = new Set<string>(FR_BLOG_SLUGS);
   const enSet = new Set<string>(EN_BLOG_SLUGS);
   const esSet = new Set<string>(ES_BLOG_SLUGS);
@@ -430,14 +399,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...EN_BLOG_SLUGS,
     ...ES_BLOG_SLUGS,
   ]);
+
   for (const slug of allSlugs) {
     const inFr = frSet.has(slug);
     const inEn = enSet.has(slug);
     const inEs = esSet.has(slug);
     const frPath = `/ressources/blog/${slug}`;
     // SITEMAP-FIX: ES canonical blog path is /es/recursos/blog/ (not /es/ressources/blog/)
-    // next.config has a permanent catch-all: /es/ressources/* → /es/recursos/*
     const esUrl = `${BASE}/es/recursos/blog/${slug}`;
+    const lastModified = blogModified(slug);
+
     const languages: Record<string, string> = {};
     if (inFr) languages.fr = `${BASE}${frPath}`;
     if (inEn) languages.en = `${BASE}/en${frPath}`;
@@ -448,69 +419,47 @@ export default function sitemap(): MetadataRoute.Sitemap {
       : inEn
         ? `${BASE}/en${frPath}`
         : esUrl;
-    const common = {
-      lastModified: TODAY,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-      alternates: { languages },
-    };
+
+    const common = { lastModified, alternates: { languages } };
     if (inFr) entries.push({ url: `${BASE}${frPath}`, ...common });
     if (inEn) entries.push({ url: `${BASE}/en${frPath}`, ...common });
     if (inEs) entries.push({ url: esUrl, ...common });
   }
 
-  /* ── TICKET 5 — fiches outils ────────────────────────────────────── */
-  /* SITEMAP-FIX: EN individual tool pages (/en/ressources/outils/[slug]) → 404 (no route).
-   * ES individual tool pages (/es/ressources/outils/[slug]) → 308 then 404 (no ES route).
-   * Emit FR only. The EN/ES tools hubs (/en/ressources/tools, /es/recursos/herramientas)
-   * are already in the sitemap above and link to individual FR pages. */
+  // ── Tool sheets (FR-only) ─────────────────────────────────────────────────
+  // SITEMAP-FIX: EN/ES tool pages return 404 (no route). FR only.
   for (const slug of TOOL_SLUGS) {
     entries.push({
       url: `${BASE}/ressources/outils/${slug}`,
-      lastModified: TODAY,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
+      lastModified: D.tools,
     });
   }
 
-  /* ── TICKET 21 — pages glossaire dédiées ─────────────────────────── */
-  /* SITEMAP-FIX: vercel.json has a catch-all redirect /ressources/glossaire/:slug →
-   * /ressources/glossaire that was added BEFORE the dedicated [slug] routes were built.
-   * The catch-all is removed below (vercel.json fix). EN/ES glossaire have no [slug]
-   * routes — emit FR only. */
+  // ── Glossary terms (FR-only) ──────────────────────────────────────────────
+  // SITEMAP-FIX: EN/ES glossary have no [slug] routes — FR only.
+  // "bfr" removed (duplicate of "besoin-fonds-roulement-bfr") — 301 in next.config.ts.
   for (const slug of GLOSSARY_SLUGS) {
     entries.push({
       url: `${BASE}/ressources/glossaire/${slug}`,
-      lastModified: TODAY,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
+      lastModified: D.glossary,
     });
   }
 
-  /* ── TICKET 1 — pages services RH dédiées (FR uniquement pour l'instant) ── */
+  // ── HR service pages (FR-only) ────────────────────────────────────────────
   for (const slug of HR_SERVICE_SLUGS) {
     entries.push({
       url: `${BASE}/services/${slug}`,
-      lastModified: TODAY,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
+      lastModified: D.service,
     });
   }
 
-  /* ── Author pages (May 2026 — design critique #11). Each founding
-   *  partner with a populated multilingual bio gets a /[locale]/(about)/
-   *  [slug] page with Person schema. Hreflang cluster: FR canonical at
-   *  /a-propos/<slug>, EN at /en/a-propos/<slug>, ES at
-   *  /es/quienes-somos/<slug>. */
+  // ── Author pages ──────────────────────────────────────────────────────────
+  // Hreflang cluster: FR /a-propos/<slug>, EN /en/a-propos/<slug>, ES /es/quienes-somos/<slug>.
   for (const slug of getAuthorSlugs()) {
     entries.push(
       ...entryAllLocales(
-        {
-          fr: `/a-propos/${slug}`,
-          en: `/a-propos/${slug}`,
-          es: `/quienes-somos/${slug}`,
-        },
-        { priority: 0.6 }
+        { fr: `/a-propos/${slug}`, en: `/a-propos/${slug}`, es: `/quienes-somos/${slug}` },
+        D.author
       )
     );
   }
