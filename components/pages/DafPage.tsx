@@ -40,7 +40,7 @@ const HOW_TO_COLLAB: Record<
       },
       {
         name: "Intégration du DAF dans vos équipes",
-        text: "Notre DAF rejoint votre équipe et prend en main les sujets clés : tableaux de bord, prévisionnel de trésorerie, relations investisseurs et expert-comptable.",
+        text: "Notre DAF rejoint votre équipe et prend en main les sujets clés : tableaux de bord financiers, budget prévisionnel, prévisionnel de trésorerie, relations investisseurs et expert-comptable.",
       },
       {
         name: "Pilotage et reporting récurrents",
@@ -143,9 +143,15 @@ export default function DafPage({
           />
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-start mt-4 sm:mt-6">
             <div data-speakable="true">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-2 leading-tight">
                 {t.h1}
               </h1>
+              {/* GAP 1 (2026-05-19) — freshness signal: visible dateModified for YMYL ranking */}
+              {locale === "fr" && (
+                <p className="text-xs text-muted-foreground mb-4 mt-1">
+                  <time dateTime="2026-05-17">Mis à jour en mai 2026</time>
+                </p>
+              )}
               {t.intro.map((paragraph, i) => (
                 <p
                   key={i}
@@ -912,7 +918,8 @@ export default function DafPage({
                 ],
               },
               description:
-                "Cabinet de DAF externalisé pour PME, startups et scale-ups. CFO senior dès 2 jours/mois, opérationnel J+1. Trésorerie, reporting, contrôle de gestion, levée de fonds et M&A.",
+                "Cabinet de DAF externalisé pour PME, startups et scale-ups. CFO senior dès 2 jours/mois, opérationnel J+1. Trésorerie, reporting financier, tableau de bord financier, budget prévisionnel, levée de fonds et M&A.",
+              dateModified: "2026-05-17",
               url: "https://www.iteradvisors.com/daf-externalise",
               areaServed: [
                 { "@type": "City", name: "Paris" },
@@ -934,6 +941,68 @@ export default function DafPage({
                 reviewCount: "31",
                 bestRating: "5",
               },
+            }),
+          }}
+        />
+      )}
+
+      {/* GAP 2 (2026-05-19) — Person schemas for named CFO experts (E-E-A-T / YMYL signal).
+          Sébastien Doat (founding partner) + Florent Greth (partner CFO).
+          sameAs → LinkedIn profiles; knowsAbout → primary expertise signals.
+          These structured entities confirm authorship & domain expertise to Google. */}
+      {locale === "fr" && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Person",
+                  "@id": "https://www.iteradvisors.com/#sebastien-doat",
+                  name: "Sébastien Doat",
+                  jobTitle: "Associé fondateur — DAF externalisé & CFO",
+                  url: "https://www.iteradvisors.com/a-propos",
+                  sameAs: [
+                    "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
+                  ],
+                  worksFor: {
+                    "@type": "Organization",
+                    "@id": "https://www.iteradvisors.com/#organization",
+                    name: "Iter Advisors",
+                  },
+                  knowsAbout: [
+                    "DAF externalisé",
+                    "CFO à temps partagé",
+                    "direction financière externalisée",
+                    "levée de fonds",
+                    "reporting financier",
+                    "budget prévisionnel",
+                  ],
+                },
+                {
+                  "@type": "Person",
+                  "@id": "https://www.iteradvisors.com/#florent-greth",
+                  name: "Florent Greth",
+                  jobTitle: "Partner & CFO",
+                  url: "https://www.iteradvisors.com/a-propos",
+                  sameAs: [
+                    "https://www.linkedin.com/in/florent-greth-cfo-pennylane/",
+                  ],
+                  worksFor: {
+                    "@type": "Organization",
+                    "@id": "https://www.iteradvisors.com/#organization",
+                    name: "Iter Advisors",
+                  },
+                  knowsAbout: [
+                    "DAF externalisé",
+                    "CFO",
+                    "finance startups",
+                    "tableau de bord financier",
+                    "contrôle de gestion",
+                  ],
+                },
+              ],
             }),
           }}
         />
