@@ -150,7 +150,9 @@ gtag('consent','default',{
                     "Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Présent à Barcelone, Paris et Toulouse.",
                   logo: {
                     "@type": "ImageObject",
-                    url: "https://www.iteradvisors.com/images/logos/logo-hero.png",
+                    url: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
+                    width: 512,
+                    height: 512,
                   },
                   address: [
                     {

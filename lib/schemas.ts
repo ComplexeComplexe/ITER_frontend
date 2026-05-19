@@ -332,7 +332,7 @@ export function articleSchema({
       url: `${BASE}/`,
       logo: {
         "@type": "ImageObject",
-        url: `${BASE}/images/logos/logo-hero.png`,
+        url: `${BASE}/images/logos/logo-og-square.png`,
       },
     },
     ...(imageSrc && {

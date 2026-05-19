@@ -94,7 +94,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "@id": "https://www.iteradvisors.com/#organization",
         name: "Iter Advisors",
         url: "https://www.iteradvisors.com",
-        logo: "https://www.iteradvisors.com/images/logos/logo-hero.png",
+        logo: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
       },
       {
         "@type": "BreadcrumbList",
