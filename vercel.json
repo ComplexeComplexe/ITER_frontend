@@ -150,17 +150,17 @@
     },
     {
       "source": "/ressources/testimonials/:slug",
-      "destination": "/ressources/testimonials",
+      "destination": "/ressources/cas-clients",
       "permanent": true
     },
     {
       "source": "/en/ressources/testimonials/:slug",
-      "destination": "/en/ressources/testimonials",
+      "destination": "/en/ressources/cas-clients",
       "permanent": true
     },
     {
       "source": "/es/ressources/testimonials/:slug",
-      "destination": "/es/ressources/testimonials",
+      "destination": "/es/recursos/cas-clients",
       "permanent": true
     },
 
@@ -212,17 +212,17 @@
     },
     {
       "source": "/testimonials/:slug",
-      "destination": "/ressources/testimonials",
+      "destination": "/ressources/cas-clients",
       "permanent": true
     },
     {
       "source": "/en/testimonials/:slug",
-      "destination": "/en/ressources/testimonials",
+      "destination": "/en/ressources/cas-clients",
       "permanent": true
     },
     {
       "source": "/es/testimonials/:slug",
-      "destination": "/es/ressources/testimonials",
+      "destination": "/es/recursos/cas-clients",
       "permanent": true
     },
     {

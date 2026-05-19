@@ -574,6 +574,78 @@ const nextConfig: NextConfig = {
         destination: "/daf-externalise",
         permanent: true,
       },
+      // ─── GSC-QA (2026-05-19) — 404 URLs from GSC report ─────────────────
+      // A. Locale-prefixed geo pages that used the wrong slug convention.
+      {
+        source: "/en/daf-externalise-paris",
+        destination: "/en/outsourced-cfo-paris",
+        permanent: true,
+      },
+      {
+        source: "/es/daf-externalise-paris",
+        destination: "/es/cfo-externalizado-paris",
+        permanent: true,
+      },
+      // B. Root-level client/testimonial orphan pages — old CMS URLs that
+      //    Google indexed via internal links. No Next.js route exists; redirect
+      //    to the unified social proof hub /ressources/cas-clients.
+      {
+        source: "/impact",
+        destination: "/ressources/cas-clients",
+        permanent: true,
+      },
+      {
+        source: "/optidigital",
+        destination: "/ressources/cas-clients",
+        permanent: true,
+      },
+      {
+        source: "/seasonly",
+        destination: "/ressources/cas-clients",
+        permanent: true,
+      },
+      {
+        source: "/yego",
+        destination: "/ressources/cas-clients",
+        permanent: true,
+      },
+      {
+        source: "/happy-scribe",
+        destination: "/ressources/cas-clients",
+        permanent: true,
+      },
+      {
+        source: "/mitiga-solutions",
+        destination: "/ressources/cas-clients",
+        permanent: true,
+      },
+      {
+        source: "/surf",
+        destination: "/ressources/cas-clients",
+        permanent: true,
+      },
+      {
+        source: "/ukio",
+        destination: "/ressources/cas-clients",
+        permanent: true,
+      },
+      {
+        source: "/solarmente",
+        destination: "/ressources/cas-clients",
+        permanent: true,
+      },
+      {
+        source: "/neat",
+        destination: "/ressources/cas-clients",
+        permanent: true,
+      },
+      // C. Glossary duplicate — /bfr duplicates /besoin-fonds-roulement-bfr.
+      //    Keep the long descriptive slug as canonical; redirect the short one.
+      {
+        source: "/ressources/glossaire/bfr",
+        destination: "/ressources/glossaire/besoin-fonds-roulement-bfr",
+        permanent: true,
+      },
       // ─── INDEX-05 (mai 2026) — ES blog 404s reported by Bing & Google ──
       // checklist-due-diligence-levee-de-fonds: article exists only in FR
       // (lib/content/blog-posts.ts) — redirect ES variant to the ES blog
