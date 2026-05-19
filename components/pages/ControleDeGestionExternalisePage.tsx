@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { BOOKING_URL } from "@/lib/navigation";
@@ -99,6 +100,20 @@ export default function ControleDeGestionExternalisePage({
               </ul>
             )}
           </div>
+        </div>
+      </section>
+
+      {/* ─── Hero illustration ─── */}
+      <section className="bg-background pt-0 pb-8 sm:pb-12">
+        <div className="container max-w-3xl">
+          <Image
+            src="/images/illustrations/management-control.svg"
+            alt="Contrôle de gestion externalisé Iter Advisors — tableaux de bord financiers avec KPIs, jauges de rentabilité et suivi des marges"
+            width={800}
+            height={450}
+            className="rounded-2xl object-cover w-full"
+            loading="lazy"
+          />
         </div>
       </section>
 

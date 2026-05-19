@@ -19,5 +19,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");
-  return <DafSubPage locale="fr" content={content} cmsNavigation={cmsNavigation} />;
+  return (
+    <DafSubPage
+      locale="fr"
+      content={content}
+      cmsNavigation={cmsNavigation}
+      heroImage={{
+        src: "/images/illustrations/daf-transition.svg",
+        alt: "DAF de transition Iter Advisors — passage de relais entre deux directeurs financiers, continuité opérationnelle garantie",
+      }}
+    />
+  );
 }
