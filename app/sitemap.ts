@@ -109,8 +109,8 @@ const EN_BLOG_SLUGS = [
   "essentiels-outils-tech-finance",
   "externalisation-comptable",
   "flux-de-tresorerie",
-  "ia-et-automatisation-des-taches-repetitives-du-departement-finance",
-  "organiser-sa-direction-financiere",
+  // SITEMAP-FIX: removed — next.config redirects /en/…/organiser-sa-direction-financiere → blog index
+  // SITEMAP-FIX: removed — vercel.json redirects /en/…/ia-et-automatisation-… → blog index
 ] as const;
 
 const ES_BLOG_SLUGS = [
@@ -119,7 +119,7 @@ const ES_BLOG_SLUGS = [
   "essentiels-outils-tech-finance",
   "externalisation-comptable",
   "flux-de-tresorerie",
-  "ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+  // SITEMAP-FIX: removed — vercel.json redirects /es/…/ia-et-automatisation-… → blog index
   "organiser-sa-direction-financiere",
   "que-es-fractional-cfo",
 ] as const;
@@ -190,6 +190,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { priority: 0.9 }
     )
   );
+  /* COCON-02 — /daf-externalise/tarifs was live (200) but missing from sitemap */
+  entries.push({
+    url: `${BASE}/daf-externalise/tarifs`,
+    lastModified: TODAY,
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
+  });
   entries.push(
     ...entryAllLocales(
       { fr: "/daf-externalise/temps-partage", en: "/fractional-cfo/shared-time", es: "/externalizacion-daf/tiempo-compartido" },
@@ -227,11 +234,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { priority: 0.8 }
     )
   );
+  /* SITEMAP-FIX: EN "outsourced-financial-management" 308 → /en/fractional-cfo (vercel.json).
+   * The EN canonical for gestion-financière is /en/fractional-cfo (already in sitemap).
+   * Emit FR + ES only — no EN hreflang peer for this service page. */
   entries.push(
-    ...entryAllLocales(
-      { fr: "/services/gestion-financiere-externalisee", en: "/services/outsourced-financial-management", es: "/services/gestion-financiera-externalizada" },
-      { priority: 0.8 }
-    )
+    { url: `${BASE}/services/gestion-financiere-externalisee`, lastModified: TODAY, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/es/services/gestion-financiera-externalizada`, lastModified: TODAY, changeFrequency: "monthly", priority: 0.8 },
   );
   entries.push(
     ...entryAllLocales(
@@ -259,30 +267,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   /* ── Ressources ──────────────────────────────────────────────────── */
+  /* SITEMAP-FIX: ES canonical for /ressources/ is /es/recursos/ (not /es/ressources/)
+   * — next.config permanent catch-all: /es/ressources/* → /es/recursos/*.
+   * Each entry below specifies the correct per-locale path explicitly. */
   entries.push(
-    ...entryAllLocales({ fr: "/ressources", en: "/ressources", es: "/ressources" })
+    ...entryAllLocales({ fr: "/ressources", en: "/ressources", es: "/recursos" })
   );
   entries.push(
-    ...entryAllLocales({ fr: "/ressources/blog", en: "/ressources/blog", es: "/ressources/blog" })
+    ...entryAllLocales({ fr: "/ressources/blog", en: "/ressources/blog", es: "/recursos/blog" })
   );
+  /* SITEMAP-FIX: /ressources/fiche-metier removed — all 3 locales redirect:
+   * FR → /daf-externalise/metier (already in sitemap), EN → 404 chain, ES → /es/recursos/fiche-metier.
+   * The EN job-descriptions page (redirect destination) returns 404 — separate bug to fix. */
   entries.push(
-    ...entryAllLocales({ fr: "/ressources/fiche-metier", en: "/ressources/fiche-metier", es: "/ressources/fiche-metier" })
+    ...entryAllLocales({ fr: "/ressources/glossaire", en: "/ressources/glossaire", es: "/recursos/glossaire" })
   );
-  entries.push(
-    ...entryAllLocales({ fr: "/ressources/glossaire", en: "/ressources/glossaire", es: "/ressources/glossaire" })
-  );
-  entries.push(
-    ...entryAllLocales({ fr: "/ressources/testimonials", en: "/ressources/testimonials", es: "/ressources/testimonials" })
-  );
+  /* SITEMAP-FIX: testimonials + case-studies both 308 → /ressources/cas-clients (UX-02 merge).
+   * Emit the canonical URL directly; both old slugs are kept as 301 redirects only. */
   entries.push(
     ...entryAllLocales(
-      { fr: "/ressources/outils", en: "/ressources/tools", es: "/ressources/herramientas" },
+      { fr: "/ressources/cas-clients", en: "/ressources/cas-clients", es: "/recursos/cas-clients" },
       { priority: 0.7 }
     )
   );
+  /* SITEMAP-FIX: /ressources/case-studies removed — 308 → /ressources/cas-clients (emitted above) */
   entries.push(
     ...entryAllLocales(
-      { fr: "/ressources/case-studies", en: "/ressources/case-studies", es: "/ressources/case-studies" },
+      { fr: "/ressources/outils", en: "/ressources/tools", es: "/recursos/herramientas" },
       { priority: 0.7 }
     )
   );
@@ -375,48 +386,57 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const inFr = frSet.has(slug);
     const inEn = enSet.has(slug);
     const inEs = esSet.has(slug);
-    const path = `/ressources/blog/${slug}`;
+    const frPath = `/ressources/blog/${slug}`;
+    // SITEMAP-FIX: ES canonical blog path is /es/recursos/blog/ (not /es/ressources/blog/)
+    // next.config has a permanent catch-all: /es/ressources/* → /es/recursos/*
+    const esUrl = `${BASE}/es/recursos/blog/${slug}`;
     const languages: Record<string, string> = {};
-    if (inFr) languages.fr = `${BASE}${path}`;
-    if (inEn) languages.en = `${BASE}/en${path}`;
-    if (inEs) languages.es = `${BASE}/es${path}`;
+    if (inFr) languages.fr = `${BASE}${frPath}`;
+    if (inEn) languages.en = `${BASE}/en${frPath}`;
+    if (inEs) languages.es = esUrl;
     // x-default = FR if available, otherwise the only available locale
     languages["x-default"] = inFr
-      ? `${BASE}${path}`
+      ? `${BASE}${frPath}`
       : inEn
-        ? `${BASE}/en${path}`
-        : `${BASE}/es${path}`;
+        ? `${BASE}/en${frPath}`
+        : esUrl;
     const common = {
       lastModified: TODAY,
       changeFrequency: "monthly" as const,
       priority: 0.6,
       alternates: { languages },
     };
-    if (inFr) entries.push({ url: `${BASE}${path}`, ...common });
-    if (inEn) entries.push({ url: `${BASE}/en${path}`, ...common });
-    if (inEs) entries.push({ url: `${BASE}/es${path}`, ...common });
+    if (inFr) entries.push({ url: `${BASE}${frPath}`, ...common });
+    if (inEn) entries.push({ url: `${BASE}/en${frPath}`, ...common });
+    if (inEs) entries.push({ url: esUrl, ...common });
   }
 
   /* ── TICKET 5 — fiches outils ────────────────────────────────────── */
+  /* SITEMAP-FIX: EN individual tool pages (/en/ressources/outils/[slug]) → 404 (no route).
+   * ES individual tool pages (/es/ressources/outils/[slug]) → 308 then 404 (no ES route).
+   * Emit FR only. The EN/ES tools hubs (/en/ressources/tools, /es/recursos/herramientas)
+   * are already in the sitemap above and link to individual FR pages. */
   for (const slug of TOOL_SLUGS) {
-    const path = `/ressources/outils/${slug}`;
-    entries.push(
-      ...entryAllLocales(
-        { fr: path, en: path, es: path },
-        { priority: 0.7 }
-      )
-    );
+    entries.push({
+      url: `${BASE}/ressources/outils/${slug}`,
+      lastModified: TODAY,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    });
   }
 
   /* ── TICKET 21 — pages glossaire dédiées ─────────────────────────── */
+  /* SITEMAP-FIX: vercel.json has a catch-all redirect /ressources/glossaire/:slug →
+   * /ressources/glossaire that was added BEFORE the dedicated [slug] routes were built.
+   * The catch-all is removed below (vercel.json fix). EN/ES glossaire have no [slug]
+   * routes — emit FR only. */
   for (const slug of GLOSSARY_SLUGS) {
-    const path = `/ressources/glossaire/${slug}`;
-    entries.push(
-      ...entryAllLocales(
-        { fr: path, en: path, es: path },
-        { priority: 0.6 }
-      )
-    );
+    entries.push({
+      url: `${BASE}/ressources/glossaire/${slug}`,
+      lastModified: TODAY,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    });
   }
 
   /* ── TICKET 1 — pages services RH dédiées (FR uniquement pour l'instant) ── */

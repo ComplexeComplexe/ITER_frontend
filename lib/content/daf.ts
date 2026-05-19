@@ -111,9 +111,9 @@ export const dafContent: Record<Locale, DafContent> = {
     meta: {
       title: "DAF Externalisé pour PME & Startups | Iter Advisors",
       description:
-        // D2 (2026-05-17) — 159c target per audit: primary keyword in first 40c,
-        // quantified proof, geo signals, implicit CTA.
-        "Cabinet de DAF externalisé pour PME & startups. CFO à temps partagé dès 2 000 €/mois. 85 entreprises accompagnées, 100 M€ levés. Paris, Toulouse, Barcelone.",
+        // D2-rev (2026-05-17) — tarifs + "+100 M€" pour ranker sur "tarif daf externalisé" ;
+        // "+" devant 100 M€ corrige le check meta et renforce la preuve sociale.
+        "Cabinet de DAF externalisé pour PME & startups. Tarifs dès 2 000 €/mois. 85 clients, +100 M€ levés. Paris, Toulouse, Barcelone.",
     },
     breadcrumbLabel: "DAF Externalisé",
     h1: "DAF Externalisé : votre direction financière sur-mesure",
@@ -141,7 +141,7 @@ export const dafContent: Record<Locale, DafContent> = {
           heading: "Définition et rôle principal",
           content: [
             "Le DAF externalisé assure la direction financière de votre entreprise à temps partagé ou en mission ponctuelle. Son rôle est de structurer, piloter et optimiser la fonction finance pour soutenir la croissance de l'entreprise.",
-            "Il intervient sur les sujets clés : élaboration du business plan, construction du prévisionnel de trésorerie, mise en place d'outils de pilotage, préparation des levées de fonds, optimisation des process comptables et financiers.",
+            "Il intervient sur les sujets clés : élaboration du business plan, construction du budget prévisionnel, mise en place d'outils de reporting financier et de pilotage, préparation des levées de fonds, optimisation des process comptables et financiers.",
           ],
         },
         {
@@ -232,7 +232,7 @@ export const dafContent: Record<Locale, DafContent> = {
       heading: "Les missions principales d'un DAF externalisé",
       content: [
         "Le DAF externalisé intervient sur un large spectre de missions financières et stratégiques :",
-        "Pilotage financier et reporting : mise en place de tableaux de bord, suivi des KPIs financiers, reporting mensuel aux dirigeants et investisseurs, construction du budget prévisionnel.",
+        "Pilotage financier et reporting financier : mise en place de tableaux de bord financiers, suivi des KPIs financiers, reporting mensuel aux dirigeants et investisseurs, construction du budget prévisionnel annuel et glissant.",
         "Gestion de trésorerie : élaboration du prévisionnel de trésorerie à 12 mois glissants, optimisation du BFR (besoin en fonds de roulement), gestion des relations bancaires, mise en place de financements court terme.",
         "Levée de fonds : préparation du dossier d'investissement (pitch deck financier, data room), modélisation financière, accompagnement dans les négociations avec les investisseurs, due diligence financière.",
         "Structuration des process : mise en place de la comptabilité analytique, automatisation des process financiers, sélection et déploiement d'outils adaptés (ERP, BI, trésorerie).",
@@ -341,7 +341,7 @@ export const dafContent: Record<Locale, DafContent> = {
         "Comptabilité et facturation : [Pennylane](/ressources/outils/pennylane), [Sage](/ressources/outils/sage), QuickBooks, Xero. Ces outils permettent une comptabilité en temps réel et une collaboration fluide avec l'expert-comptable.",
         "Trésorerie et prévisionnel : [Agicap](/ressources/outils/agicap), [Fygr](/ressources/outils/fygr). Pour un suivi quotidien de la trésorerie et des prévisionnels à 12 mois glissants.",
         "Gestion des dépenses : [Spendesk](/ressources/outils/spendesk), [Pleo](/ressources/outils/pleo), [Payhawk](/ressources/outils/payhawk). Cartes virtuelles, workflows d'approbation et intégration comptable automatisée.",
-        "Reporting et BI : Power BI, Looker, Metabase, Google Sheets avancé. Pour construire des tableaux de bord automatisés et des analyses de rentabilité par produit ou client.",
+        "Reporting financier et BI : Power BI, Looker, Metabase, Google Sheets avancé. Pour construire des tableaux de bord financiers automatisés, suivre les KPIs clés et produire des analyses de rentabilité par produit ou client.",
         "Chez Iter Advisors, nous travaillons avec plus de 30 partenaires technologiques. [Découvrez notre sélection complète d'outils finance](/ressources/outils) — mise à jour en continu par nos DAFs selon les retours terrain — et notre guide sur les [10 outils indispensables pour un CFO startup](/ressources/blog/les-10-outils-pour-cfos-startup).",
       ],
     },

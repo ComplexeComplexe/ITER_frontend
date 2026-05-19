@@ -534,6 +534,32 @@ export default function HomePage({
                   <ArrowRight size={16} />
                 </Link>
               </div>
+              {/* COCON-02 \u2014 Internal links to cocon sub-pages (PDF audit Priorit\u00e9 1).
+               * Distributes homepage PageRank to the 3 cluster pillars so Google
+               * can assess the full depth of the DAF expertise. */}
+              <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1">
+                {locale === "fr" && (
+                  <>
+                    <Link href="/daf-externalise/tarifs" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Tarifs du DAF externalis\u00e9</Link>
+                    <Link href="/daf-externalise/temps-partage" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF \u00e0 temps partag\u00e9</Link>
+                    <Link href="/daf-externalise/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">M\u00e9tier de DAF</Link>
+                  </>
+                )}
+                {locale === "en" && (
+                  <>
+                    <Link href="/en/fractional-cfo/shared-time" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Part-time CFO</Link>
+                    <Link href="/en/fractional-cfo/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">CFO role & skills</Link>
+                    <Link href="/en/fractional-cfo/transition" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Interim CFO</Link>
+                  </>
+                )}
+                {locale === "es" && (
+                  <>
+                    <Link href="/es/externalizacion-daf/tiempo-compartido" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">CFO a tiempo compartido</Link>
+                    <Link href="/es/externalizacion-daf/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Profesi\u00f3n de DAF</Link>
+                    <Link href="/es/externalizacion-daf/transition" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF de transici\u00f3n</Link>
+                  </>
+                )}
+              </div>
             </motion.div>
           </div>
         </div>
