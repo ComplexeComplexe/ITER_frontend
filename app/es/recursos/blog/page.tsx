@@ -6,7 +6,7 @@ import { getStaticBlogListing } from "@/lib/blog-listing";
 
 export const metadata: Metadata = buildMetadata({
   locale: "es",
-  title: "Blog Finanzas | Iter Advisors",
+  title: "Blog de Finanzas para Startups y Pymes | Iter Advisors",
   description:
     "Blog de finanzas para pymes y startups. Artículos sobre CFO externalizado, tesorería, levantamiento de capital. Consejos y tendencias 2026.",
   path: "/es/recursos/blog", // SEO-07: self-canonical

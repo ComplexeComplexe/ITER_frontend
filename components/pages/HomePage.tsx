@@ -530,7 +530,7 @@ export default function HomePage({
                   href={locale === "fr" ? "/daf-externalise" : locale === "en" ? "/en/fractional-cfo" : "/es/externalizacion-daf"}
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-iter-violet text-iter-violet font-semibold hover:bg-iter-violet/5 transition-all duration-300"
                 >
-                  {locale === "fr" ? "En savoir plus" : locale === "en" ? "Learn more" : "Saber m\u00e1s"}
+                  {locale === "fr" ? "D\u00e9couvrir le DAF externalis\u00e9" : locale === "en" ? "Explore Fractional CFO services" : "Conocer el DAF externalizado"}
                   <ArrowRight size={16} />
                 </Link>
               </div>

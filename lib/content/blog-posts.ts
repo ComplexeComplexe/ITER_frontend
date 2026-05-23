@@ -74,7 +74,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "la-modernisation-du-role-de-cfo": {
       meta: {
-        title: "La modernisation du rôle de CFO | Iter Advisors",
+        title: "La modernisation du rôle de CFO en 2026 : nouvelles compétences | Iter Advisors",
         description: "Comment le rôle du CFO évolue avec la digitalisation et l'IA. Découvrez les nouvelles compétences et missions du directeur financier moderne.",
       },
       breadcrumbs: {
@@ -302,7 +302,7 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
 <ul>
 <li><strong>Pas de charges sociales</strong> : les cotisations patronales representent 42 a 45 % du brut en France. Cette charge disparait completement avec un DAF externalise.</li>
 <li><strong>Pas d'avantages en nature</strong> : vehicule de fonction, mutuelle complementaire, prevoyance, tickets restaurant -- ces couts accessoires representent 10 000 a 25 000 EUR/an pour un cadre dirigeant.</li>
-<li><strong>Pas de risque de licenciement</strong> : en cas de retournement d'activite, mettre fin a la mission d'un DAF externalise ne genere ni indemnites de licenciement ni preavis couteux. Selon le <a href="https://www.legifrance.gouv.fr/codes/id/LEGIARTI000006901118">Code du travail</a>, les indemnites de licenciement d'un cadre dirigeant avec 5+ ans d'anciennete peuvent atteindre plusieurs mois de salaire.</li>
+<li><strong>Pas de risque de licenciement</strong> : en cas de retournement d'activite, mettre fin a la mission d'un DAF externalise ne genere ni indemnites de licenciement ni preavis couteux. Selon le <a href="https://www.service-public.fr/particuliers/vosdroits/F987">Code du travail</a>, les indemnites de licenciement d'un cadre dirigeant avec 5+ ans d'anciennete peuvent atteindre plusieurs mois de salaire.</li>
 <li><strong>Pas de temps de recrutement</strong> : le recrutement d'un CFO prend en moyenne 4 a 6 mois. Pendant ce temps, l'entreprise navigue sans direction financiere. Un DAF externalise peut commencer en quelques jours.</li>
 <li><strong>Flexibilite totale</strong> : augmenter ou reduire le volume d'intervention en fonction des besoins reels de l'entreprise, sans avenant au contrat de travail.</li>
 </ul>
@@ -2670,7 +2670,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // Pilier 5 — RH & Paie (2 articles)
     "drh-externalise-quand-et-pourquoi": {
       meta: {
-        title: "DRH externalisé : quand et pourquoi ? | Iter Advisors",
+        title: "DRH externalisé : quand et pourquoi externaliser les RH ? | Iter Advisors",
         description: "À partir de 10 salariés, pendant une hyper-croissance ou en cas de litige, pourquoi externaliser le DRH plutôt que recruter. Coût, périmètre, ROI.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -3002,7 +3002,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
   en: {
     "essentiels-outils-tech-finance": {
       meta: {
-        title: "Essential financial tech tools | Iter Advisors",
+        title: "Essential Financial Tech Tools for CFOs & SMEs | Iter Advisors",
         description: "Discover the essential technology tools for modern finance departments. Expert guide by Iter Advisors.",
       },
       breadcrumbs: {
@@ -3297,7 +3297,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "organiser-sa-direction-financiere": {
       meta: {
-        title: "Organizar su departamento financiero | Iter Advisors",
+        title: "Organizar su departamento financiero: guía para pymes | Iter Advisors",
         description: "Cómo estructurar y organizar su departamento financiero para un rendimiento óptimo. Guía experta de Iter Advisors.",
       },
       breadcrumbs: {
