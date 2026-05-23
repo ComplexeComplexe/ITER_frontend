@@ -4,6 +4,49 @@
  */
 
 import type { StrapiServiceSinglePage } from "@/lib/strapi";
+import type { Locale } from "@/lib/i18n";
+
+// ── Routing constants (kept here so service pages don't import lib/strapi) ──
+
+export const SERVICE_PAGE_SLUGS = [
+  "previsionnel-tresorerie",
+  "gestion-financiere-externalisee",
+  "accompagnement-levee-de-fond",
+  "comptabilite-externalisation",
+  "controle-de-gestion-externalise",
+] as const;
+
+export type ServicePageSlug = (typeof SERVICE_PAGE_SLUGS)[number];
+
+/** URL slug per locale (FR = canonical; EN/ES = localized slugs) */
+export const SERVICE_URL_SLUG_BY_LOCALE: Record<Locale, Record<ServicePageSlug, string>> = {
+  fr: {
+    "previsionnel-tresorerie": "previsionnel-tresorerie",
+    "gestion-financiere-externalisee": "gestion-financiere-externalisee",
+    "accompagnement-levee-de-fond": "accompagnement-levee-de-fond",
+    "comptabilite-externalisation": "comptabilite-externalisation",
+    "controle-de-gestion-externalise": "controle-de-gestion-externalise",
+  },
+  en: {
+    "previsionnel-tresorerie": "cash-flow-forecast",
+    "gestion-financiere-externalisee": "outsourced-financial-management",
+    "accompagnement-levee-de-fond": "fund-raising-support",
+    "comptabilite-externalisation": "outsource-your-accounting",
+    "controle-de-gestion-externalise": "outsourced-management-control",
+  },
+  es: {
+    "previsionnel-tresorerie": "prevision-tesoreria",
+    "gestion-financiere-externalisee": "gestion-financiera-externalizada",
+    "accompagnement-levee-de-fond": "soporte-financiacion",
+    "comptabilite-externalisation": "externalizar-contabilidad",
+    "controle-de-gestion-externalise": "control-gestion-externalizado",
+  },
+};
+
+/** List of URL slugs for generateStaticParams for a given locale. */
+export function getServiceSlugsForLocale(locale: Locale): string[] {
+  return SERVICE_PAGE_SLUGS.map((s) => SERVICE_URL_SLUG_BY_LOCALE[locale][s]);
+}
 
 export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
   "previsionnel-tresorerie": {

@@ -3,18 +3,12 @@ import { notFound } from "next/navigation";
 import ServiceSinglePage from "@/components/pages/ServiceSinglePage";
 import {
   SERVICE_PAGE_SLUGS,
-  SERVICE_PAGE_API_MAP,
   SERVICE_URL_SLUG_BY_LOCALE,
   getServiceSlugsForLocale,
   type ServicePageSlug,
-} from "@/lib/strapi";
-// INDEX-04 — service pages no longer go through the Strapi fetcher
-// (which threw on a disabled CMS even though the catch was caught
-// internally). Switching to the synchronous static resolver removes the
-// async hop entirely and guarantees a 200 even if `lib/strapi.ts` ever
-// breaks again.
+} from "@/lib/fallback-service-pages";
 import { getStaticServicePage } from "@/lib/fallback-service-pages-localized";
-import { buildStrapiMetadata } from "@/lib/metadata";
+import { buildMetadata } from "@/lib/metadata";
 
 const basePath = "/services";
 
@@ -72,15 +66,12 @@ export async function generateMetadata({
   if (!isServicePageSlug(slug)) {
     return { title: "Services | Iter Advisors" };
   }
-  const endpoint = SERVICE_PAGE_API_MAP[slug];
 
   // TICKET F3 (2026-05-17) — gestion-financiere-externalisee is a thin page
   // that overlaps with the richer controle-de-gestion-externalise. The SEO
   // canonical is set to the richer page so Google consolidates signals there.
-  // No 301 redirect yet (F3 scope); only the canonical + hreflang are changed.
   if (slug === "gestion-financiere-externalisee") {
-    return buildStrapiMetadata({
-      endpoint,
+    return buildMetadata({
       locale: "fr",
       path: "/services/controle-de-gestion-externalise",
       localizedPaths: {
@@ -88,18 +79,17 @@ export async function generateMetadata({
         en: "/en/services/outsourced-management-control",
         es: "/es/services/control-gestion-externalizado",
       },
-      fallbackTitle: fallbackTitles[slug],
-      fallbackDescription: fallbackDescriptions[slug],
+      title: fallbackTitles[slug],
+      description: fallbackDescriptions[slug],
     });
   }
 
-  return buildStrapiMetadata({
-    endpoint,
+  return buildMetadata({
     locale: "fr",
     path: `${basePath}/${slug}`,
     localizedPaths: getServiceLocalizedPaths(slug),
-    fallbackTitle: fallbackTitles[slug],
-    fallbackDescription: fallbackDescriptions[slug],
+    title: fallbackTitles[slug],
+    description: fallbackDescriptions[slug],
   });
 }
 
