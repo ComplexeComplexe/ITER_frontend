@@ -203,7 +203,7 @@ const toolsContent: Record<Locale, ToolsPageContent> = {
     },
     breadcrumbLabel: "Nuestras herramientas",
     resourcesLabel: "Recursos",
-    resourcesHref: "/es/ressources",
+    resourcesHref: "/es/recursos",
     h1: "Nuestro stack tecnológico",
     intro:
       "Nuestros CFOs externalizados se apoyan en un ecosistema de herramientas probadas para gestionar eficazmente su dirección financiera. Estas son las soluciones que desplegamos a diario para nuestros clientes.",

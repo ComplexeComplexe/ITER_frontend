@@ -112,7 +112,7 @@ const content: Record<Locale, OutsourceYourAccountingContent> = {
   en: {
     meta: {
       title:
-        "Outsourced Accounting Services for Startups & SMEs | Iter Advisors",
+        "Outsourced Accounting for Startups & SMEs | Iter Advisors",
       description:
         "Outsource accounting: bookkeeping, tax filings, year-end closing. Certified experts, Pennylane, Agicap. Start in 2 weeks. Free consultation.",
     },

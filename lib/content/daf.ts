@@ -498,7 +498,7 @@ export const dafContent: Record<Locale, DafContent> = {
   },
   en: {
     meta: {
-      title: "Fractional CFO for Startups & SMEs — Missions, Pricing & Benefits | Iter Advisors",
+      title: "Fractional CFO for Startups & SMEs | Iter Advisors",
       description:
         "Fractional CFO services for startups and SMEs: missions, pricing (daily rate EUR 750-1,250), benefits, case studies. Hire a senior Fractional CFO in Barcelona, Paris, Toulouse.",
     },

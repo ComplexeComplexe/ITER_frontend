@@ -7,6 +7,9 @@ import { Callout, StatGrid, InlineCta } from '@/components/blog';
 export const metadata: Metadata = {
   title: "Checklist due diligence levée de fonds | Iter Advisors",
   description: "Checklist complète pour préparer la due diligence financi de votre levée de fonds. Documentations, analyses, et préparation des investisseurs.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/checklist-due-diligence-levee-de-fonds",
+  },
   openGraph: {
     title: "Checklist due diligence levée de fonds | Iter Advisors",
     description: "Checklist complète pour préparer la due diligence financière de votre levée de fonds.",

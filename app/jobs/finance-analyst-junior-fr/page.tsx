@@ -11,6 +11,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Analyste financier junior France — Iter Advisors recrute",
     description:
       "Iter Advisors recrute un(e) analyste financier junior à Paris. CDI ou alternance. Cabinet de DAF externalisé. Formation et progression assurées.",
+    alternates: {
+      canonical: "https://www.iteradvisors.com/jobs/finance-analyst-junior-fr",
+    },
     openGraph: {
       title: "Analyste financier junior France — Iter Advisors recrute",
       description:

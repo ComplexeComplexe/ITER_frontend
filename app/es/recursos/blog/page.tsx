@@ -9,7 +9,7 @@ export const metadata: Metadata = buildMetadata({
   title: "Blog Finanzas | Iter Advisors",
   description:
     "Blog de finanzas para pymes y startups. Artículos sobre CFO externalizado, tesorería, levantamiento de capital. Consejos y tendencias 2026.",
-  path: "/recursos/blog",
+  path: "/es/recursos/blog", // SEO-07: self-canonical
 });
 
 export default async function Page() {

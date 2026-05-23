@@ -7,6 +7,9 @@ import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 export const metadata: Metadata = {
   title: "IA Finance | Iter Advisors",
   description: "Découvrez comment l'IA et l'automatisation libèrent 30-40 % du temps de vos équipes finance. Guide pratique avec cas d'usage et outils par Iter Advisors.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/ia-et-automatisation-des-taches-repetitives",
+  },
   openGraph: {
     title: "IA et automatisation finance | Gagner du temps | Iter Advisors",
     description: "Découvrez comment l'IA et l'automatisation libèrent 30-40 % du temps de vos équipes finance. Guide pratique avec cas d'usage et outils.",

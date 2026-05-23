@@ -131,12 +131,12 @@ const navEs: NavItem[] = [
   },
   {
     title: "Recursos",
-    href: "/es/ressources",
+    href: "/es/recursos",
     children: [
-      { text: "Herramientas", href: "/es/ressources/herramientas" },
-      { text: "Blog & Actualidades", href: "/es/ressources/blog" },
-      { text: "Casos prácticos", href: "/es/ressources/cas-clients" },
-      { text: "Glosario", href: "/es/ressources/glossaire" },
+      { text: "Herramientas", href: "/es/recursos/herramientas" },
+      { text: "Blog & Actualidades", href: "/es/recursos/blog" },
+      { text: "Casos prácticos", href: "/es/recursos/cas-clients" },
+      { text: "Glosario", href: "/es/recursos/glossaire" },
     ],
   },
   {

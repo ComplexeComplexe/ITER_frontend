@@ -95,7 +95,7 @@ const content: Record<Locale, CashFlowForecastContent> = {
   },
   en: {
     meta: {
-      title: "Cash Flow Forecast for Startups: Complete 13-Week Rolling Guide | 2026",
+      title: "Cash Flow Forecast 13-Week Rolling Guide | Iter Advisors",
       description: "Master cash flow forecasting with our complete guide. Learn 13-week rolling models, templates, and best practices to avoid cash crisis and manage startup runway.",
     },
     hero: {

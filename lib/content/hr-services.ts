@@ -182,7 +182,7 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
   "gestion-paie-charges-sociales": {
     slug: "gestion-paie-charges-sociales",
     meta: {
-      title: "Gestion de la Paie & Charges Sociales externalisée | Iter Advisors",
+      title: "Gestion de la paie externalisée | Iter Advisors",
       description:
         "Externalisez votre paie sur PayFit ou Silae : bulletins, DSN, URSSAF, charges sociales. Taux d'erreur < 0,5%, conformité garantie. Forfait par salarié.",
     },

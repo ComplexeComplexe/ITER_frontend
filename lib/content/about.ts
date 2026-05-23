@@ -112,7 +112,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
           title: "Lancement",
           description:
             "Structurez votre fonction finance dès le départ. Mise en place de la comptabilité, des outils de gestion et des premiers tableaux de bord pour piloter votre activité.",
-          href: "/services/externalisation-comptable",
+          href: "/services/comptabilite-externalisation",
         },
         {
           title: "Croissance",
@@ -124,13 +124,13 @@ export const aboutContent: Record<Locale, AboutContent> = {
           title: "Gestion de crise",
           description:
             "Réagissez rapidement face aux difficultés. Plan de trésorerie d\u2019urgence, renégociation avec les créanciers, restructuration financière et accompagnement stratégique.",
-          href: "/services/gestion-de-tresorerie",
+          href: "/services/previsionnel-tresorerie",
         },
         {
           title: "Levée de fonds",
           description:
             "Préparez et sécurisez vos financements. Construction du dossier investisseur, modélisation financière, due diligence et négociation avec les fonds d\u2019investissement.",
-          href: "/services/levee-de-fonds",
+          href: "/services/accompagnement-levee-de-fond",
         },
         {
           title: "Post-levée",

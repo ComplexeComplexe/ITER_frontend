@@ -102,7 +102,7 @@ const content: Record<
       {
         title:
           "AI and automation of repetitive tasks in the Finance department",
-        href: "/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+        href: "/en/ressources/blog",
         image: "/images/blog/ia-automatisation.webp",
       },
       {
@@ -119,7 +119,7 @@ const content: Record<
   },
   es: {
     resourcesLabel: "Recursos",
-    resourcesHref: "/es/ressources",
+    resourcesHref: "/es/recursos",
     breadcrumbLabel: "Blog",
     h1: "La revista de Iter Advisors",
     intro:
@@ -139,17 +139,17 @@ const content: Record<
       {
         title:
           "IA y automatización de tareas repetitivas en el departamento de Finanzas",
-        href: "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+        href: "/es/recursos/blog",
         image: "/images/blog/ia-automatisation.webp",
       },
       {
         title: "Organizar su departamento financiero",
-        href: "/es/ressources/blog/organiser-sa-direction-financiere",
+        href: "/es/recursos/blog/organiser-sa-direction-financiere",
         image: "/images/blog/organiser-direction-financiere.webp",
       },
       {
         title: "Las herramientas tecnológicas esenciales para las finanzas",
-        href: "/es/ressources/blog/essentiels-outils-tech-finance",
+        href: "/es/recursos/blog/essentiels-outils-tech-finance",
         image: "/images/blog/outils-tech-finance.webp",
       },
     ],

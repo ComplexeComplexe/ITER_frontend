@@ -7,7 +7,7 @@ export const metadata: Metadata = buildMetadata({
   locale: "es",
   title: "Recursos CFO Externalizado | Iter Advisors",
   description: "Recursos CFO: blog finanzas, glosario, fichas de puestos, testimonios. Guías gratis sobre CFO externalizado, levantamiento de fondos, contabilidad.",
-  path: "/ressources",
+  path: "/es/recursos", // SEO-07: self-canonical (was /ressources → 308 loop)
 });
 
 export default async function Page() {

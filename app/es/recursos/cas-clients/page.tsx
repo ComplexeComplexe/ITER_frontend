@@ -21,7 +21,7 @@ export const metadata: Metadata = buildMetadata({
   locale: "es",
   title: t.es.title,
   description: t.es.description,
-  path: "/recursos/cas-clients",
+  path: "/es/recursos/cas-clients", // SEO-07: self-canonical
 });
 
 const breadcrumbsByLocale: Record<Locale, { label: string; href: string }> = {

@@ -25,7 +25,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
   barcelone: {
     fr: {
       meta: {
-        title: "DAF externalisé à Barcelone - CFO temps partagé | Iter Advisors",
+        title: "DAF externalisé Barcelone — CFO partagé | Iter Advisors",
         description:
           "Iter Advisors, cabinet de DAF externalisé à Barcelone. CFO à temps partagé pour startups et PME en Espagne. Expertise franco-espagnole, +85 entreprises accompagnées.",
       },
@@ -87,7 +87,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
     },
     en: {
       meta: {
-        title: "Fractional CFO in Barcelona - Part-time CFO | Iter Advisors",
+        title: "Fractional CFO in Barcelona | Part-time CFO | Iter Advisors",
         description:
           "Iter Advisors, fractional CFO firm in Barcelona. Part-time CFO for startups and SMEs in Spain. French-Spanish expertise, 85+ companies supported.",
       },
@@ -149,7 +149,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
     },
     es: {
       meta: {
-        title: "CFO externalizado en Barcelona - CFO a tiempo compartido | Iter Advisors",
+        title: "CFO externalizado en Barcelona | Iter Advisors",
         description:
           "Iter Advisors, gabinete de CFO externalizado en Barcelona. CFO a tiempo compartido para startups y pymes en Espana. Experiencia franco-espanola, +85 empresas acompanadas.",
       },
@@ -270,7 +270,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
     },
     en: {
       meta: {
-        title: "Fractional CFO in Paris - Part-time CFO Ile-de-France | Iter Advisors",
+        title: "Fractional CFO in Paris | Ile-de-France | Iter Advisors",
         description:
           "Iter Advisors, fractional CFO firm in Paris. Part-time financial management for SMEs and startups in Ile-de-France. 85+ companies supported.",
       },
@@ -327,7 +327,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
     },
     es: {
       meta: {
-        title: "CFO externalizado en Paris - CFO a tiempo compartido | Iter Advisors",
+        title: "CFO externalizado París | Tiempo compartido | Iter Advisors",
         description:
           "Iter Advisors, gabinete de CFO externalizado en Paris. Direccion financiera a tiempo compartido para pymes y startups en Ile-de-France. +85 empresas acompanadas.",
       },
@@ -386,7 +386,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
   toulouse: {
     fr: {
       meta: {
-        title: "DAF externalisé à Toulouse - CFO temps partagé Occitanie | Iter Advisors",
+        title: "DAF externalisé Toulouse | CFO Occitanie | Iter Advisors",
         description:
           "Iter Advisors, cabinet de DAF externalisé à Toulouse. Direction financière à temps partagé pour PME et startups en Occitanie. +85 entreprises accompagnées.",
       },
@@ -443,7 +443,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
     },
     en: {
       meta: {
-        title: "Fractional CFO in Toulouse - Part-time CFO Occitanie | Iter Advisors",
+        title: "Fractional CFO in Toulouse | Occitanie | Iter Advisors",
         description:
           "Iter Advisors, fractional CFO firm in Toulouse. Part-time financial management for SMEs and startups in Occitanie. 85+ companies supported.",
       },
@@ -500,7 +500,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
     },
     es: {
       meta: {
-        title: "CFO externalizado en Toulouse - CFO a tiempo compartido Occitania | Iter Advisors",
+        title: "CFO externalizado Toulouse | Occitania | Iter Advisors",
         description:
           "Iter Advisors, gabinete de CFO externalizado en Toulouse. Direccion financiera a tiempo compartido para pymes y startups en Occitania. +85 empresas acompanadas.",
       },

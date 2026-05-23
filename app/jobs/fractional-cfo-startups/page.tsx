@@ -40,7 +40,7 @@ export async function generateMetadata(): Promise<Metadata> {
       // ── JobPosting (preserved) ──────────────────────────────────
       {
         "@type": "JobPosting",
-        title: "Fractional CFO pour startups",
+        title: "Fractional CFO pour Startups — Postuler | Iter Advisors",
         description:
           "Iter Advisors recrute des fractional CFOs seniors pour accompagner un portefeuille de startups tech (SaaS, deep-tech, e-commerce) basées en France et en Espagne. Vous prendrez en charge la direction financière de 3 à 5 clients en parallèle, sur un mode part-time flexible (freelance, portage ou CDI).",
         datePosted: "2026-05-04",
@@ -240,7 +240,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title:
-      "Fractional CFO pour Startups | Recruter un CFO à temps partiel | Iter Advisors",
+      "Fractional CFO pour Startups — Postuler | Iter Advisors",
     description:
       "Embauchez un Fractional CFO pour votre startup. Expertise financière senior à temps partiel dès 4 500 €/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
     alternates: {
@@ -248,7 +248,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       title:
-        "Fractional CFO pour Startups | Recruter un CFO à temps partiel | Iter Advisors",
+        "Fractional CFO pour Startups — Postuler | Iter Advisors",
       description:
         "Embauchez un Fractional CFO pour votre startup. Expertise financière senior à temps partiel dès 4 500 €/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
       url: PAGE_URL,

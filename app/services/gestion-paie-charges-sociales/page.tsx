@@ -9,7 +9,7 @@ const SLUG = "gestion-paie-charges-sociales";
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = getHRServiceContent(SLUG);
-  if (!content) return { title: "Service | Iter Advisors" };
+  if (!content) return { title: "Gestion de la paie externalisée | Iter Advisors" };
   return buildMetadata({
     locale: "fr",
     title: content.meta.title,

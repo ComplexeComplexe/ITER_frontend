@@ -7,6 +7,9 @@ import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 export const metadata: Metadata = {
   title: "Essentiels outils tech finance | Iter Advisors",
   description: "Découvrez les outils technologiques essentiels pour moderniser votre département finance. Guide complet des solutions cloud, IA et automatisation par Iter Advisors.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/essentiels-outils-tech-finance",
+  },
   openGraph: {
     title: "Essentiels outils tech finance | Iter Advisors",
     description: "Découvrez les outils technologiques essentiels pour moderniser votre département finance. Guide complet des solutions cloud, IA et automatisation.",

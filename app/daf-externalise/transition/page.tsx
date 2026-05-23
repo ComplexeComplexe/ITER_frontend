@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "fr",
     path: "/daf-externalise/transition",
     localizedPaths: { fr: "/daf-externalise/transition", en: "/en/fractional-cfo/transition", es: "/externalizacion-daf/transition" },
-    fallbackTitle: "DAF de transition : continuité financière 3-6 mois | Iter Advisors",
+    fallbackTitle: "DAF de transition — Continuité financière | Iter Advisors",
     fallbackDescription: "DAF de transition pour accompagner vos changements stratégiques : restructuration, levée de fonds, M&A ou remplacement temporaire. Intervention rapide et expertise immédiate avec Iter Advisors.",
   });
 }

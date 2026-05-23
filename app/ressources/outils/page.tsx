@@ -5,7 +5,7 @@ import { getCmsNavigation } from "@/lib/strapi";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Stack financier idéal pour startups et PME — Le guide 2026 | Iter Advisors",
+  title: "Stack financier startup & PME — Guide 2026 | Iter Advisors",
   description:
     "Quels outils pour piloter sa finance entre 10 et 100 employés ? Le stack recommandé par nos DAF externalisés : compta, trésorerie, dépenses, paie.",
   path: "/ressources/outils",

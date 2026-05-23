@@ -7,6 +7,9 @@ interface FallbackMemberData {
   firstName: string;
   lastName: string;
   roles: Record<Locale, string>;
+  /** Optional locale-specific label used exclusively in the page H1.
+   *  Falls back to `roles[locale]` when absent. */
+  h1Roles?: Record<Locale, string>;
   slug: string;
   photo: { url: string } | null;
   linkedIn: string;
@@ -35,6 +38,11 @@ const fallbackData: FallbackMemberData[] = [
       en: "Founding Partner - CFO & Investor",
       es: "Socio fundador - CFO e Inversor"
     },
+    h1Roles: {
+      fr: "Associé fondateur, DAF externalisé",
+      en: "Founding Partner, Fractional CFO",
+      es: "Socio fundador, CFO Externalizado",
+    },
     slug: "sebastien-doat",
     photo: { url: "/images/team/sebastien-doat.webp" },
     linkedIn: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
@@ -56,6 +64,11 @@ const fallbackData: FallbackMemberData[] = [
       en: "Founding Partner - CFO & Investor",
       es: "Socio fundador - CFO e Inversor"
     },
+    h1Roles: {
+      fr: "Associé fondateur, DAF externalisé",
+      en: "Founding Partner, Fractional CFO",
+      es: "Socio fundador, CFO Externalizado",
+    },
     slug: "benjamin-ziza",
     photo: { url: "/images/team/benjamin-ziza.webp" },
     linkedIn: "https://www.linkedin.com/in/benjamin-ziza/",
@@ -76,6 +89,11 @@ const fallbackData: FallbackMemberData[] = [
       fr: "Associé fondateur & CMO",
       en: "Founding Partner & CMO",
       es: "Socio fundador y CMO"
+    },
+    h1Roles: {
+      fr: "Co-fondateur, DAF externalisé",
+      en: "Co-Founder, Fractional CFO",
+      es: "Cofundador, CFO Externalizado",
     },
     slug: "guillaume-rostand",
     photo: { url: "/images/team/guillaume-rostand.webp" },
@@ -310,7 +328,7 @@ export const getFallbackTeamMembers = getTeamMembers;
 export function getTeamMemberBySlug(
   slug: string,
   locale: Locale,
-): (StrapiTeamMember & { bio: string }) | null {
+): (StrapiTeamMember & { bio: string; h1Role?: string }) | null {
   const member = fallbackData.find((m) => m.slug === slug);
   if (!member || !member.bio?.[locale]) return null;
   return {
@@ -318,7 +336,8 @@ export function getTeamMemberBySlug(
     title: `${member.firstName} ${member.lastName}`,
     role: member.roles[locale],
     bio: member.bio[locale],
-  } as StrapiTeamMember & { bio: string };
+    h1Role: member.h1Roles?.[locale],
+  } as StrapiTeamMember & { bio: string; h1Role?: string };
 }
 
 /**

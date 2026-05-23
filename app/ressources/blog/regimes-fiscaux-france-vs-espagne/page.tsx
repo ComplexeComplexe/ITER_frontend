@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Régimes Fiscaux | Iter Advisors",
   description:
     "Guide complet de la comparaison fiscale France-Espagne 2026. IS, TVA, cotisations, régimes spéciaux. Économisez jusqu'à 7 500 €/employé. Audit gratuit.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/regimes-fiscaux-france-vs-espagne",
+  },
   robots: {
     index: true,
     follow: true,
