@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "../components/CookieConsent";
@@ -43,13 +44,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // SEO-03: derive locale from the x-pathname header injected by middleware.
+  // This ensures the <html lang> attribute is correct for every locale on SSR,
+  // fixing the Screaming Frog / GSC signal that all EN and ES pages sent lang="fr".
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") ?? "/";
+  const lang =
+    pathname.startsWith("/en") ? "en" :
+    pathname.startsWith("/es") ? "es" : "fr";
+  const locale = lang as "fr" | "en" | "es";
+
   return (
-    <html lang="fr" className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
+    <html lang={lang} className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
       <head>
         {/* DNS prefetch & preconnect for 3rd-party origins */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -219,7 +230,7 @@ gtag('consent','default',{
         </noscript>
         {/* End Google Tag Manager (noscript) */}
         {children}
-        <CookieConsent locale="fr" />
+        <CookieConsent locale={locale} />
       </body>
     </html>
   );
