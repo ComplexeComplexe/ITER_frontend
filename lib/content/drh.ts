@@ -531,7 +531,7 @@ export const drhContent: Record<Locale, DrhContent> = {
     meta: {
       title: "RRHH externalizado | Dirección de personas | PME & Startup | Iter Advisors",
       description:
-        "Consultoría en recursos humanos: RRHH externalizado, director de RRHH a tiempo compartido. Estructura, reclutamiento, nómina, cumplimiento y cultura. Iter Advisors.",
+        "Consultoría RRHH externalizado: director de RRHH a tiempo compartido. Reclutamiento, nómina, cumplimiento y cultura. Iter Advisors, +85 empresas.",
     },
     breadcrumbLabel: "RRHH externalizado",
     h1: "RRHH externalizado: dirección de personas flexible y experta",

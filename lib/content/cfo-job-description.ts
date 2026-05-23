@@ -251,7 +251,7 @@ const content: Record<Locale, CFOJobDescriptionContent> = {
     meta: {
       title: "Descripción de Puesto CFO: Funciones, Responsabilidades y Competencias | Iter Advisors",
       description:
-        "Guía completa del rol de Director Financiero (CFO): responsabilidades, competencias requeridas, salario. Incluye comparación CFO tiempo completo vs externo.",
+        "Guía completa del Director Financiero (CFO): responsabilidades, competencias y salario. Comparación CFO a tiempo completo vs CFO externalizado.",
     },
     hero: {
       h1: "El Rol del Director Financiero (CFO)",

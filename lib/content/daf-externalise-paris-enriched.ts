@@ -3,7 +3,7 @@ export const dafExternalisePariEnrichedContent = {
     meta: {
       title: "DAF externalisé Paris : CFO à temps partagé en Ile-de-France | Iter Advisors",
       description:
-        "DAF externalisé à Paris et en Ile-de-France. Expertise CFO à temps partagé pour startups et PME. Accompagnement levées de fonds, Bpifrance, reporting. À partir de 2 000 €/mois.",
+        "DAF externalisé à Paris et en Ile-de-France : CFO à temps partagé pour startups et PME. Levées de fonds, Bpifrance, reporting. Dès 2 000 €/mois.",
     },
     author: {
       name: "Sébastien Doat",

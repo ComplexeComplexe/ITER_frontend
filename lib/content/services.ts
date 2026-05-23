@@ -234,7 +234,7 @@ const servicesEs: ServicesContent = {
   meta: {
     title: "Servicios | Iter Advisors",
     description:
-      "Iter Advisors le acompa\u00f1a con soluciones adaptadas: captaci\u00f3n de fondos, control de gesti\u00f3n, contabilidad, gesti\u00f3n financiera y tesorer\u00eda.",
+      "Iter Advisors: captaci\u00f3n de fondos, control de gesti\u00f3n, contabilidad y tesorer\u00eda para pymes y startups en Espa\u00f1a, Francia, B\u00e9lgica.",
   },
   hero: {
     h1: "Servicios",

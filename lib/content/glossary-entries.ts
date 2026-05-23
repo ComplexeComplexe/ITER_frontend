@@ -145,7 +145,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
       meta: {
         title: "CFO — Rôle, Missions et Définition | Iter Advisors",
         description:
-          "CFO : définition complète du Chief Financial Officer, ses missions, la différence avec un DAF, et pourquoi les startups ont besoin d'un CFO externalisé. Guide par Iter Advisors.",
+          "CFO : définition, missions du Chief Financial Officer, différence avec un DAF et pourquoi les startups ont besoin d'un CFO externalisé. Guide Iter Advisors.",
       },
       h1: "CFO — Définition, Rôle et Missions du Chief Financial Officer",
       sections: [

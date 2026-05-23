@@ -21,7 +21,7 @@ export interface LegalPageContent {
 const mentionsLegalesFr: LegalPageContent = {
   meta: {
     title: "Mentions l\u00e9gales | Iter Advisors",
-    description: "Mentions l\u00e9gales du site Iter Advisors.",
+    description: "Mentions l\u00e9gales d\u2019iteradvisors.com : \u00e9diteur, h\u00e9bergeur, propri\u00e9t\u00e9 intellectuelle et conditions d\u2019utilisation du site web.",
   },
   h1: "Mentions l\u00e9gales",
   sections: [
@@ -46,7 +46,7 @@ const mentionsLegalesFr: LegalPageContent = {
 const legalNoticeEn: LegalPageContent = {
   meta: {
     title: "Legal Notice | Iter Advisors",
-    description: "Legal notice for the Iter Advisors website.",
+    description: "Legal notice for iteradvisors.com: publisher information, hosting details, intellectual property and terms of use of the Iter Advisors website.",
   },
   h1: "Legal Notice",
   sections: [
@@ -71,7 +71,7 @@ const legalNoticeEn: LegalPageContent = {
 const avisoLegalEs: LegalPageContent = {
   meta: {
     title: "Aviso Legal | Iter Advisors",
-    description: "Aviso legal del sitio web de Iter Advisors.",
+    description: "Aviso legal de iteradvisors.com: información del editor, alojamiento web, propiedad intelectual y condiciones de uso del sitio web de Iter Advisors.",
   },
   h1: "Aviso Legal",
   sections: [
@@ -100,7 +100,7 @@ const avisoLegalEs: LegalPageContent = {
 const privacyFr: LegalPageContent = {
   meta: {
     title: "Politique de confidentialit\u00e9 | Iter Advisors",
-    description: "Politique de confidentialit\u00e9 du site Iter Advisors.",
+    description: "Politique de confidentialit\u00e9 d'Iter Advisors : donn\u00e9es personnelles, cookies, droits d'acc\u00e8s et de rectification, coordonn\u00e9es du DPO.",
   },
   h1: "Politique de confidentialit\u00e9",
   sections: [
@@ -165,7 +165,7 @@ const privacyFr: LegalPageContent = {
 const privacyEn: LegalPageContent = {
   meta: {
     title: "Privacy Policy | Iter Advisors",
-    description: "Privacy policy for the Iter Advisors website.",
+    description: "Privacy policy for iteradvisors.com: personal data collection, cookies, your rights (access, erasure) and contact details for the Iter Advisors DPO.",
   },
   h1: "Privacy Policy",
   sections: [
@@ -230,7 +230,7 @@ const privacyEn: LegalPageContent = {
 const privacyEs: LegalPageContent = {
   meta: {
     title: "Pol\u00edtica de Privacidad | Iter Advisors",
-    description: "Pol\u00edtica de privacidad del sitio web de Iter Advisors.",
+    description: "Pol\u00edtica de privacidad de Iter Advisors: datos personales, cookies, derechos de acceso y rectificaci\u00f3n, contacto con el DPO.",
   },
   h1: "Pol\u00edtica de Privacidad",
   sections: [

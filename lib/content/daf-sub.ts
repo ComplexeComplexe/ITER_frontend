@@ -184,7 +184,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       meta: {
         title: "DAF de Transition - Missions, Durée et Tarifs | Iter Advisors",
         description:
-          "Le DAF de transition intervient à temps plein en cas de crise, de vacance de poste ou de transformation. Missions, durée et tarifs détaillés par Iter Advisors.",
+          "Le DAF de transition intervient à temps plein en cas de crise, vacance de poste ou transformation majeure. Missions, durée et tarifs par Iter Advisors.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
@@ -761,7 +761,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       meta: {
         title: "CFO de transición: Experto para sus periodos clave | Iter Advisors",
         description:
-          "El CFO de transición interviene durante periodos críticos: reestructuración, rondas de financiación, reemplazo temporal. Descubra esta solución con Iter Advisors.",
+          "El CFO de transición interviene en periodos críticos: reestructuración, rondas de financiación, reemplazo temporal. Consulte a Iter Advisors.",
       },
       parentLabel: "CFO Externo",
       parentHref: "/es/externalizacion-daf",
