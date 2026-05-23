@@ -96,8 +96,8 @@ export async function generateMetadata({
 /* Per-slug hero images */
 const SLUG_HERO_IMAGES: Partial<Record<ServicePageSlug, { src: string; alt: string }>> = {
   "accompagnement-levee-de-fond": {
-    src: "/images/stock/levee-de-fonds-analyse.jpg",
-    alt: "Accompagnement levée de fonds Iter Advisors — analyse des données financières et due diligence investisseur",
+    src: "/images/illustrations/fundraising-growth.svg",
+    alt: "Accompagnement levée de fonds Iter Advisors — graphique de croissance illustrant la progression du financement startup",
   },
 };
 

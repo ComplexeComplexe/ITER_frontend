@@ -55,17 +55,11 @@ export default function ServicesPage({
             </div>
             <div className="relative hidden lg:block">
               <Image
-                src="/images/stock/services-partenariat.jpg"
-                alt={
-                  locale === "fr"
-                    ? "Signature d'un partenariat DAF externalisé — expert Iter Advisors et dirigeant d'entreprise"
-                    : locale === "en"
-                    ? "Fractional CFO partnership agreement — Iter Advisors expert and business leader"
-                    : "Acuerdo de colaboración CFO externalizado — experto Iter Advisors y director de empresa"
-                }
+                src="/images/bg/bg-hero-3d.webp"
+                alt={locale === "fr" ? "Services Iter Advisors" : "Iter Advisors Services"}
                 width={560}
-                height={374}
-                className="rounded-2xl object-cover"
+                height={400}
+                className="rounded-2xl object-contain"
                 loading="lazy"
               />
             </div>
