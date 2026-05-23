@@ -664,6 +664,133 @@ const nextConfig: NextConfig = {
         destination: "/es/recursos/blog",
         permanent: true,
       },
+
+      // ─── SEO-01 (2026-05-23) — 120 URLs en 404 remontées par Screaming Frog ─
+      //
+      // Strategy:
+      //  • Catch-all patterns where NO valid pages exist at those subpaths
+      //  • Individual rules for locale-slug mismatches and FR-only articles
+      //  • All redirect to the best semantically equivalent 200 page
+
+      // ── CATCH-ALL: EN glossaire slugs (/en/ressources/glossaire/*)
+      // The valid EN glossaire hub is at /en/ressources/glossaire (200 OK).
+      // No [slug] handler exists — all individual slugs 404.
+      // Redirect each slug to its FR canonical (glossaire is FR-only).
+      {
+        source: "/en/ressources/glossaire/:slug",
+        destination: "/ressources/glossaire/:slug",
+        permanent: true,
+      },
+      // ── CATCH-ALL: ES glossaire slugs (/es/recursos/glossaire/*)
+      {
+        source: "/es/recursos/glossaire/:slug",
+        destination: "/ressources/glossaire/:slug",
+        permanent: true,
+      },
+      // ── CATCH-ALL: EN tools slugs (/en/ressources/tools/*)
+      // /en/ressources/tools hub (200), but no [slug] handler.
+      {
+        source: "/en/ressources/tools/:slug",
+        destination: "/ressources/outils/:slug",
+        permanent: true,
+      },
+      // ── CATCH-ALL: ES herramientas slugs (/es/recursos/herramientas/*)
+      {
+        source: "/es/recursos/herramientas/:slug",
+        destination: "/ressources/outils/:slug",
+        permanent: true,
+      },
+
+      // ── FR orphan tool & blog pages (no content planned, redirect to hub)
+      { source: "/ressources/outils/sap-/-netsuite", destination: "/ressources/outils", permanent: true },
+      { source: "/ressources/outils/agicap-lite",    destination: "/ressources/outils", permanent: true },
+      { source: "/ressources/outils/stripe",          destination: "/ressources/outils", permanent: true },
+      { source: "/daf-externalise/locaux",            destination: "/daf-externalise",   permanent: true },
+      { source: "/ressources/blog/daf-transition-quand", destination: "/ressources/blog", permanent: true },
+      { source: "/ressources/blog/que-es-fractional-cfo", destination: "/ressources/blog", permanent: true },
+
+      // ── ES locale slug mismatches (old or untranslated subpage slugs)
+      { source: "/es/externalizacion-daf/tarifas",      destination: "/es/externalizacion-daf", permanent: true },
+      { source: "/es/externalizacion-daf/tarifs",       destination: "/es/externalizacion-daf", permanent: true },
+      { source: "/es/externalizacion-daf/secteurs",     destination: "/es/externalizacion-daf", permanent: true },
+      { source: "/es/externalizacion-daf/sectores",     destination: "/es/externalizacion-daf", permanent: true },
+      // FR slug for ES page → correct ES slug
+      { source: "/es/externalizacion-daf/temps-partage", destination: "/es/externalizacion-daf/tiempo-compartido", permanent: true },
+
+      // ── EN locale slug mismatches
+      { source: "/en/fractional-cfo/tarifs",   destination: "/en/fractional-cfo",             permanent: true },
+      { source: "/en/fractional-cfo/secteurs", destination: "/en/fractional-cfo",             permanent: true },
+      // FR slug → correct EN slug (page exists)
+      { source: "/en/fractional-cfo/temps-partage", destination: "/en/fractional-cfo/shared-time", permanent: true },
+
+      // ── Services pages that only exist in FR (no EN/ES equivalents)
+      { source: "/en/services/conformite-droit-travail",    destination: "/en/services",  permanent: true },
+      { source: "/es/services/conformite-droit-travail",    destination: "/es/services",  permanent: true },
+      { source: "/en/services/formation-developpement",     destination: "/en/services",  permanent: true },
+      { source: "/es/services/formation-developpement",     destination: "/es/services",  permanent: true },
+      { source: "/en/services/recrutement-talent-acquisition", destination: "/en/services", permanent: true },
+      { source: "/es/services/recrutement-talent-acquisition", destination: "/es/services", permanent: true },
+      { source: "/en/services/gestion-paie-charges-sociales",  destination: "/en/services", permanent: true },
+      { source: "/es/services/gestion-paie-charges-sociales",  destination: "/es/services", permanent: true },
+
+      // ── Typo / wrong locale prefix
+      { source: "/en/recursos/blog",       destination: "/en/ressources/blog",   permanent: true },
+      { source: "/recursos/blog",          destination: "/ressources/blog",      permanent: true },
+      { source: "/recursos/cas-clients",   destination: "/ressources/cas-clients", permanent: true },
+      { source: "/en/recursos/cas-clients", destination: "/en/ressources/cas-clients", permanent: true },
+
+      // ── Job descriptions (no EN/ES localized versions)
+      { source: "/en/ressources/job-descriptions", destination: "/ressources/fiche-metier", permanent: true },
+      { source: "/es/recursos/fiche-metier",       destination: "/ressources/fiche-metier", permanent: true },
+
+      // ── EN blog articles that only exist in FR — redirect to FR canonical
+      // (preserves link equity flowing to the actual content vs the EN blog hub)
+      { source: "/en/ressources/blog/quand-embaucher-daf-externalise-5-signes",            destination: "/ressources/blog/quand-embaucher-daf-externalise-5-signes",            permanent: true },
+      { source: "/en/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission",        destination: "/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission",        permanent: true },
+      { source: "/en/ressources/blog/tableau-de-bord-financier-startup-12-kpis",           destination: "/ressources/blog/tableau-de-bord-financier-startup-12-kpis",           permanent: true },
+      { source: "/en/ressources/blog/daf-externalise-vs-expert-comptable",                 destination: "/ressources/blog/daf-externalise-vs-expert-comptable",                 permanent: true },
+      { source: "/en/ressources/blog/impot-revenu-espagne",                                destination: "/ressources/blog/impot-revenu-espagne",                                permanent: true },
+      { source: "/en/ressources/blog/cash-burn-calculer-runway-anticiper-levee",           destination: "/ressources/blog/cash-burn-calculer-runway-anticiper-levee",           permanent: true },
+      { source: "/en/ressources/blog/agicap-vs-fygr-outil-tresorerie",                    destination: "/ressources/blog/agicap-vs-fygr-outil-tresorerie",                    permanent: true },
+      { source: "/en/ressources/blog/daf-externalise-barcelone-guide-startups-espagnoles", destination: "/ressources/blog/daf-externalise-barcelone-guide-startups-espagnoles", permanent: true },
+      { source: "/en/ressources/blog/due-diligence-financiere-investisseurs",              destination: "/ressources/blog/due-diligence-financiere-investisseurs",              permanent: true },
+      { source: "/en/ressources/blog/drh-externalise-quand-et-pourquoi",                  destination: "/ressources/blog/drh-externalise-quand-et-pourquoi",                  permanent: true },
+      { source: "/en/ressources/blog/reduire-bfr-7-leviers-actionnables",                 destination: "/ressources/blog/reduire-bfr-7-leviers-actionnables",                 permanent: true },
+      { source: "/en/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",        destination: "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",        permanent: true },
+      { source: "/en/ressources/blog/stack-financier-saas-series-a",                      destination: "/ressources/blog/stack-financier-saas-series-a",                      permanent: true },
+      { source: "/en/ressources/blog/term-sheet-negocier-clauses-cles",                   destination: "/ressources/blog/term-sheet-negocier-clauses-cles",                   permanent: true },
+      { source: "/en/ressources/blog/data-room-checklist-levee-de-fonds",                 destination: "/ressources/blog/data-room-checklist-levee-de-fonds",                 permanent: true },
+      { source: "/en/ressources/blog/cas-etude-happy-scribe",                             destination: "/ressources/cas-clients",                                             permanent: true },
+      { source: "/en/ressources/blog/externaliser-comptabilite-guide",                    destination: "/ressources/blog/externaliser-comptabilite-guide",                    permanent: true },
+      { source: "/en/ressources/blog/payfit-vs-silae-comparatif-pme",                     destination: "/ressources/blog/payfit-vs-silae-comparatif-pme",                     permanent: true },
+      // "que-es-fractional-cfo" is a Spanish-concept article → EN fractional-cfo pillar
+      { source: "/en/ressources/blog/que-es-fractional-cfo",                              destination: "/en/fractional-cfo",                                                  permanent: true },
+
+      // ── ES blog articles that only exist in FR — redirect to FR canonical
+      { source: "/es/recursos/blog/agicap-vs-fygr-outil-tresorerie",                      destination: "/ressources/blog/agicap-vs-fygr-outil-tresorerie",                    permanent: true },
+      { source: "/es/recursos/blog/daf-externalise-vs-expert-comptable",                  destination: "/ressources/blog/daf-externalise-vs-expert-comptable",                 permanent: true },
+      { source: "/es/recursos/blog/cash-burn-calculer-runway-anticiper-levee",            destination: "/ressources/blog/cash-burn-calculer-runway-anticiper-levee",           permanent: true },
+      { source: "/es/recursos/blog/tableau-de-bord-financier-startup-12-kpis",            destination: "/ressources/blog/tableau-de-bord-financier-startup-12-kpis",           permanent: true },
+      { source: "/es/recursos/blog/due-diligence-financiere-investisseurs",               destination: "/ressources/blog/due-diligence-financiere-investisseurs",              permanent: true },
+      { source: "/es/recursos/blog/payfit-vs-silae-comparatif-pme",                       destination: "/ressources/blog/payfit-vs-silae-comparatif-pme",                     permanent: true },
+      { source: "/es/recursos/blog/externaliser-comptabilite-guide",                      destination: "/ressources/blog/externaliser-comptabilite-guide",                    permanent: true },
+      { source: "/es/recursos/blog/cas-etude-happy-scribe",                               destination: "/ressources/cas-clients",                                             permanent: true },
+      { source: "/es/recursos/blog/data-room-checklist-levee-de-fonds",                   destination: "/ressources/blog/data-room-checklist-levee-de-fonds",                 permanent: true },
+      { source: "/es/recursos/blog/stack-financier-saas-series-a",                        destination: "/ressources/blog/stack-financier-saas-series-a",                      permanent: true },
+      { source: "/es/recursos/blog/term-sheet-negocier-clauses-cles",                     destination: "/ressources/blog/term-sheet-negocier-clauses-cles",                   permanent: true },
+      { source: "/es/recursos/blog/pennylane-vs-sage-comparatif-40-deploiements",         destination: "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",        permanent: true },
+      { source: "/es/recursos/blog/reduire-bfr-7-leviers-actionnables",                   destination: "/ressources/blog/reduire-bfr-7-leviers-actionnables",                 permanent: true },
+      { source: "/es/recursos/blog/drh-externalise-quand-et-pourquoi",                    destination: "/ressources/blog/drh-externalise-quand-et-pourquoi",                  permanent: true },
+      { source: "/es/recursos/blog/daf-externalise-barcelone-guide-startups-espagnoles",  destination: "/ressources/blog/daf-externalise-barcelone-guide-startups-espagnoles", permanent: true },
+      { source: "/es/recursos/blog/quand-embaucher-daf-externalise-5-signes",             destination: "/ressources/blog/quand-embaucher-daf-externalise-5-signes",            permanent: true },
+      { source: "/es/recursos/blog/cout-daf-externalise-2026-tarifs-par-mission",         destination: "/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission",        permanent: true },
+      { source: "/es/recursos/blog/la-modernisation-du-role-de-cfo",                      destination: "/ressources/blog/la-modernisation-du-role-de-cfo",                    permanent: true },
+      { source: "/es/recursos/blog/impot-revenu-espagne",                                 destination: "/ressources/blog/impot-revenu-espagne",                               permanent: true },
+      { source: "/es/recursos/blog/daf-drh-externalises-synergie",                        destination: "/ressources/blog/daf-drh-externalises-synergie",                      permanent: true },
+      // FR-only articles linked from EN/ES featured cards (SEO-06)
+      { source: "/es/recursos/blog/organiser-sa-direction-financiere",                    destination: "/ressources/blog/organiser-sa-direction-financiere",                   permanent: true },
+      { source: "/es/recursos/blog/essentiels-outils-tech-finance",                       destination: "/ressources/blog/essentiels-outils-tech-finance",                     permanent: true },
+      { source: "/en/ressources/blog/essentiels-outils-tech-finance",                     destination: "/ressources/blog/essentiels-outils-tech-finance",                     permanent: true },
     ];
   },
 };

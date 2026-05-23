@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "services-page",
     locale: "es",
     path: "/services/externalizar-contabilidad",
-    fallbackTitle: "Externalización Contable para Startups y PYMES | Iter Advisors",
+    fallbackTitle: "Externalización contable startups y PYMES | Iter Advisors",
     fallbackDescription:
       "Externaliza tu contabilidad con Iter Advisors: teneduría de libros, declaraciones fiscales, nómina y cierre anual. Integración con Pennylane, Sage, QuickBooks.",
   });
@@ -16,5 +16,5 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("es");
-  return <ServicesPage locale="es" cmsNavigation={cmsNavigation} />;
+  return <ServicesPage locale="es" cmsNavigation={cmsNavigation} h1Override="Externalización Contable" />;
 }

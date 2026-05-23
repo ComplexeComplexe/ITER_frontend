@@ -6,7 +6,7 @@ import { getStaticBlogListing } from "@/lib/blog-listing";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Blog Finance & DAF externalisé — Conseils & Guides | Iter Advisors",
+  title: "Blog finance d'entreprise & DAF externalisé | Iter Advisors",
   description: "Blog finance et DAF externalisé : articles, guides et tendances. Stratégie financière, levée de fonds, outils. Conseils d'experts pour PME.",
   path: "/ressources/blog",
 });

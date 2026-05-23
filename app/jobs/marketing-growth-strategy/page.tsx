@@ -11,6 +11,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Marketing & Growth Strategy — Recrutement | Iter Advisors",
     description:
       "Iter Advisors recrute un(e) responsable Marketing & Growth Strategy. Cabinet de DAF externalisé à Barcelone, Paris, Toulouse. Postes ouverts.",
+    alternates: {
+      canonical: "https://www.iteradvisors.com/jobs/marketing-growth-strategy",
+    },
     openGraph: {
       title: "Marketing & Growth Strategy — Recrutement | Iter Advisors",
       description:

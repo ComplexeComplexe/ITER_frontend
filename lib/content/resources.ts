@@ -41,29 +41,29 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
       {
         heading: "Cas clients",
         seeAllLabel: "Voir tous nos cas clients",
-        seeAllHref: "/ressources/testimonials",
+        seeAllHref: "/ressources/cas-clients",
         cards: [
           {
             title: "Happy Scribe : structuration financière d'une scale-up",
-            href: "/ressources/testimonials",
+            href: "/ressources/cas-clients",
             image: "/images/logos/logo-happyscribe.webp",
             tag: "Cas client",
           },
           {
             title: "Ukio : accompagnement à la levée de fonds Série A",
-            href: "/ressources/testimonials",
+            href: "/ressources/cas-clients",
             image: "/images/logos/logo-ukio.webp",
             tag: "Cas client",
           },
           {
             title: "Surfe : mise en place du reporting et pilotage",
-            href: "/ressources/testimonials",
+            href: "/ressources/cas-clients",
             image: "/images/logos/logo-surfe.webp",
             tag: "Cas client",
           },
           {
             title: "Yego : optimisation de la gestion de trésorerie",
-            href: "/ressources/testimonials",
+            href: "/ressources/cas-clients",
             image: "/images/logos/logo-yego.webp",
             tag: "Cas client",
           },
@@ -125,34 +125,34 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
     breadcrumbLabel: "Resources",
     h1: "Resources",
     intro:
-      "Browse all the content created by our CFOs: articles, thematic sheets, testimonials, downloadable templates and more. Our goal: to give you the keys to manage your financial growth.",
+      "Browse all the content created by our CFOs: articles, thematic sheets, testimonials, downloadable templates and more. Our goal: to give you the keys to manage your financial growth and make informed decisions at every stage of your company's development. Our library covers fractional CFO and finance management, fundraising, accounting, cash flow, M&A, HR outsourcing, and the tools modern finance teams rely on. Whether you are preparing a fundraise, restructuring your finance function, or benchmarking outsourced CFO pricing, our resources are grounded in real client experience across France, Spain, and Belgium. Every guide is written by a practising CFO, reviewed for accuracy, and updated as regulations evolve.",
     categories: [
       {
         heading: "Case studies",
         seeAllLabel: "See all case studies",
-        seeAllHref: "/en/ressources/testimonials",
+        seeAllHref: "/en/ressources/cas-clients",
         cards: [
           {
             title: "Happy Scribe: financial structuring of a scale-up",
-            href: "/en/ressources/testimonials",
+            href: "/en/ressources/cas-clients",
             image: "/images/logos/logo-happyscribe.webp",
             tag: "Case study",
           },
           {
             title: "Ukio: Series A fundraising support",
-            href: "/en/ressources/testimonials",
+            href: "/en/ressources/cas-clients",
             image: "/images/logos/logo-ukio.webp",
             tag: "Case study",
           },
           {
             title: "Surfe: reporting setup and performance management",
-            href: "/en/ressources/testimonials",
+            href: "/en/ressources/cas-clients",
             image: "/images/logos/logo-surfe.webp",
             tag: "Case study",
           },
           {
             title: "Yego: cash management optimization",
-            href: "/en/ressources/testimonials",
+            href: "/en/ressources/cas-clients",
             image: "/images/logos/logo-yego.webp",
             tag: "Case study",
           },
@@ -165,7 +165,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         cards: [
           {
             title: "AI and automation of repetitive tasks in the Finance department",
-            href: "/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+            href: "/en/ressources/blog",
             image: "/images/blog/ia-automatisation.jpg",
             tag: "Blog",
           },
@@ -219,29 +219,29 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
       {
         heading: "Casos prácticos",
         seeAllLabel: "Ver todos los casos prácticos",
-        seeAllHref: "/es/ressources/testimonials",
+        seeAllHref: "/es/recursos/cas-clients",
         cards: [
           {
             title: "Happy Scribe: estructuración financiera de una scale-up",
-            href: "/es/ressources/testimonials",
+            href: "/es/recursos/cas-clients",
             image: "/images/logos/logo-happyscribe.webp",
             tag: "Caso práctico",
           },
           {
             title: "Ukio: acompañamiento en la ronda de financiación Serie A",
-            href: "/es/ressources/testimonials",
+            href: "/es/recursos/cas-clients",
             image: "/images/logos/logo-ukio.webp",
             tag: "Caso práctico",
           },
           {
             title: "Surfe: implantación del reporting y seguimiento",
-            href: "/es/ressources/testimonials",
+            href: "/es/recursos/cas-clients",
             image: "/images/logos/logo-surfe.webp",
             tag: "Caso práctico",
           },
           {
             title: "Yego: optimización de la gestión de tesorería",
-            href: "/es/ressources/testimonials",
+            href: "/es/recursos/cas-clients",
             image: "/images/logos/logo-yego.webp",
             tag: "Caso práctico",
           },
@@ -250,29 +250,29 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
       {
         heading: "Blog",
         seeAllLabel: "Ver todos los artículos",
-        seeAllHref: "/es/ressources/blog",
+        seeAllHref: "/es/recursos/blog",
         cards: [
           {
             title: "IA y automatización de tareas repetitivas en el departamento de Finanzas",
-            href: "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+            href: "/es/recursos/blog",
             image: "/images/blog/ia-automatisation.jpg",
             tag: "Blog",
           },
           {
             title: "Organizar su departamento financiero",
-            href: "/es/ressources/blog/organiser-sa-direction-financiere",
+            href: "/es/recursos/blog/organiser-sa-direction-financiere",
             image: "/images/blog/organiser-direction-financiere.jpg",
             tag: "Blog",
           },
           {
             title: "Las herramientas tecnológicas esenciales para las finanzas",
-            href: "/es/ressources/blog/essentiels-outils-tech-finance",
+            href: "/es/recursos/blog/essentiels-outils-tech-finance",
             image: "/images/blog/outils-tech-finance.jpg",
             tag: "Blog",
           },
           {
             title: "Cómo estructurar su departamento financiero",
-            href: "/es/ressources/blog",
+            href: "/es/recursos/blog",
             image: "/images/blog/modernisation-cfo.jpg",
             tag: "Blog",
           },
@@ -281,11 +281,11 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
       {
         heading: "Perfiles profesionales",
         seeAllLabel: "Ver todos los perfiles profesionales",
-        seeAllHref: "/es/ressources/fiche-metier",
+        seeAllHref: "/ressources/fiche-metier",
         cards: [
           {
             title: "Perfil profesional: Director Financiero",
-            href: "/es/ressources/fiche-metier",
+            href: "/ressources/fiche-metier",
             image: "/images/logos/logo-og-square.png",
             tag: "Perfil profesional",
           },

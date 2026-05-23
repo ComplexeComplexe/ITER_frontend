@@ -6,8 +6,8 @@ import { getStaticBlogListing } from "@/lib/blog-listing";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "Finance Blog | Iter Advisors",
-  description: "Finance blog: articles on corporate finance, financial management, fractional CFO services, fundraising strategy. Expert tips and guides for SMEs, startups.",
+  title: "Finance & CFO Blog — Guides for Startups | Iter Advisors",
+  description: "Finance blog: articles on corporate finance, fractional CFO, financial management and fundraising strategy. Expert guides for SMEs and startups.",
   path: "/ressources/blog",
 });
 

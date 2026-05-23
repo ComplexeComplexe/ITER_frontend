@@ -7,6 +7,9 @@ import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 export const metadata: Metadata = {
   title: "DAF & DRH externalisés | Iter Advisors",
   description: "DAF et DRH externalisés : synergies et économies. Découvrez comment combiner ces services pour optimiser votre structure RH-Finance.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/daf-drh-externalises-synergie",
+  },
   openGraph: {
     title: "DAF et DRH externalisés : synergie et économies | Iter Advisors",
     description: "Découvrez les synergies quand on externalise DAF et DRH. Économies, efficacité, reporting intégré.",

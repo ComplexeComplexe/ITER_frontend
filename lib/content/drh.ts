@@ -77,7 +77,7 @@ export const drhContent: Record<Locale, DrhContent> = {
   fr: {
     meta: {
       // R4 (2026-05-17) — 70c, keyword principal + variante "direction RH à temps partagé", cibles PME & Startup, brand
-      title: "DRH Externalisé | Direction RH à temps partagé PME & Startup | Iter Advisors",
+      title: "DRH externalisé — Direction RH temps partagé | Iter Advisors",
       description:
         "Cabinet de conseil en ressources humaines : DRH externalisé, DRH à temps partagé. Structuration, recrutement, paie, conformité et culture. Iter Advisors.",
     },
@@ -531,7 +531,7 @@ export const drhContent: Record<Locale, DrhContent> = {
     meta: {
       title: "RRHH externalizado | Dirección de personas | PME & Startup | Iter Advisors",
       description:
-        "Consultoría en recursos humanos: RRHH externalizado, director de RRHH a tiempo compartido. Estructura, reclutamiento, nómina, cumplimiento y cultura. Iter Advisors.",
+        "Consultoría RRHH externalizado: director de RRHH a tiempo compartido. Reclutamiento, nómina, cumplimiento y cultura. Iter Advisors, +85 empresas.",
     },
     breadcrumbLabel: "RRHH externalizado",
     h1: "RRHH externalizado: dirección de personas flexible y experta",

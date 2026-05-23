@@ -278,7 +278,7 @@ export const homeContent = {
     blogCards: [
       {
         title: "AI and automation of repetitive tasks in the Finance department",
-        href: "/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+        href: "/en/ressources/blog",
         image: "/images/blog/ia-automatisation.jpg",
         date: "Mar 12, 2026",
       },
@@ -458,24 +458,24 @@ export const homeContent = {
       paragraph:
         "Encuentre todos los contenidos producidos por nuestros directores financieros: artículos, fichas temáticas, testimonios, plantillas descargables, etc.",
       cta: "Ver nuestros recursos",
-      resourcesHref: "/es/ressources",
+      resourcesHref: "/es/recursos",
     },
     blogCards: [
       {
         title: "IA y automatización de tareas repetitivas en el departamento de Finanzas",
-        href: "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+        href: "/es/recursos/blog",
         image: "/images/blog/ia-automatisation.jpg",
         date: "12 mar. 2026",
       },
       {
         title: "Organizar su departamento financiero",
-        href: "/es/ressources/blog/organiser-sa-direction-financiere",
+        href: "/es/recursos/blog/organiser-sa-direction-financiere",
         image: "/images/blog/organiser-direction-financiere.jpg",
         date: "5 mar. 2026",
       },
       {
         title: "Las herramientas tecnológicas esenciales para las finanzas",
-        href: "/es/ressources/blog/essentiels-outils-tech-finance",
+        href: "/es/recursos/blog/essentiels-outils-tech-finance",
         image: "/images/blog/outils-tech-finance.jpg",
         date: "28 feb. 2026",
       },

@@ -498,9 +498,9 @@ export const dafContent: Record<Locale, DafContent> = {
   },
   en: {
     meta: {
-      title: "Fractional CFO for Startups & SMEs — Missions, Pricing & Benefits | Iter Advisors",
+      title: "Fractional CFO for Startups & SMEs | Iter Advisors",
       description:
-        "Fractional CFO services for startups and SMEs: missions, pricing (daily rate EUR 750-1,250), benefits, case studies. Hire a senior Fractional CFO in Barcelona, Paris, Toulouse.",
+        "Fractional CFO for startups and SMEs: missions, pricing (EUR 750–1 250/day), benefits and case studies. Senior CFO in Barcelona, Paris, Toulouse.",
     },
     breadcrumbLabel: "Fractional CFO",
     h1: "Fractional CFO for Startups & SMEs — Iter Advisors",
@@ -821,7 +821,7 @@ export const dafContent: Record<Locale, DafContent> = {
     meta: {
       title: "CFO Externalizado | Departamento Financiero & Directores Financieros | Iter Advisors",
       description:
-        "CFO externalizado para pymes y startups: dirección del departamento financiero (dpto financiero), directores financieros senior a tiempo compartido. Tarifas TJM 750-1.250 €.",
+        "CFO externalizado para pymes y startups: dirección financiera, tesorería, control de gestión. TJM EUR 750–1 250/día. Barcelona, Paris, Toulouse.",
     },
     breadcrumbLabel: "CFO Externalizado",
     h1: "CFO externalizado: la guia completa para pymes y startups",

@@ -35,7 +35,7 @@ export const controleDeGestionExternaliseeContent = {
       // keyword in first 40c, brand at the end. Meta 150-160c with
       // proof points (2 500€, 3 villes) and a soft CTA.
       title:
-        "Contrôle de gestion externalisé | Pilotage financier startup | Iter Advisors",
+        "Contrôle de gestion externalisé & pilotage | Iter Advisors",
       description:
         "Externalisez votre contrôle de gestion avec un expert dédié. Tableaux de bord, KPIs, reporting mensuel. Dès 2 500 €/mois. Paris, Toulouse, Barcelone. → Découvrir.",
     },

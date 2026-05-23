@@ -74,7 +74,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "la-modernisation-du-role-de-cfo": {
       meta: {
-        title: "La modernisation du rôle de CFO | Iter Advisors",
+        title: "La modernisation du rôle de CFO en 2026 : nouvelles compétences | Iter Advisors",
         description: "Comment le rôle du CFO évolue avec la digitalisation et l'IA. Découvrez les nouvelles compétences et missions du directeur financier moderne.",
       },
       breadcrumbs: {
@@ -302,7 +302,7 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
 <ul>
 <li><strong>Pas de charges sociales</strong> : les cotisations patronales representent 42 a 45 % du brut en France. Cette charge disparait completement avec un DAF externalise.</li>
 <li><strong>Pas d'avantages en nature</strong> : vehicule de fonction, mutuelle complementaire, prevoyance, tickets restaurant -- ces couts accessoires representent 10 000 a 25 000 EUR/an pour un cadre dirigeant.</li>
-<li><strong>Pas de risque de licenciement</strong> : en cas de retournement d'activite, mettre fin a la mission d'un DAF externalise ne genere ni indemnites de licenciement ni preavis couteux. Selon le <a href="https://www.legifrance.gouv.fr/codes/id/LEGIARTI000006901118">Code du travail</a>, les indemnites de licenciement d'un cadre dirigeant avec 5+ ans d'anciennete peuvent atteindre plusieurs mois de salaire.</li>
+<li><strong>Pas de risque de licenciement</strong> : en cas de retournement d'activite, mettre fin a la mission d'un DAF externalise ne genere ni indemnites de licenciement ni preavis couteux. Selon le <a href="https://www.service-public.fr/particuliers/vosdroits/F987">Code du travail</a>, les indemnites de licenciement d'un cadre dirigeant avec 5+ ans d'anciennete peuvent atteindre plusieurs mois de salaire.</li>
 <li><strong>Pas de temps de recrutement</strong> : le recrutement d'un CFO prend en moyenne 4 a 6 mois. Pendant ce temps, l'entreprise navigue sans direction financiere. Un DAF externalise peut commencer en quelques jours.</li>
 <li><strong>Flexibilite totale</strong> : augmenter ou reduire le volume d'intervention en fonction des besoins reels de l'entreprise, sans avenant au contrat de travail.</li>
 </ul>
@@ -462,7 +462,7 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
     "daf-externalise-vs-daf-salarie": {
       meta: {
         title: "DAF externalisé vs salarié : comparatif 2026 | Iter Advisors",
-        description: "DAF externalisé ou salarié ? Comparatif complet des coûts, avantages et cas d'usage pour choisir la meilleure option de direction financière pour votre PME.",
+        description: "DAF externalisé ou salarié ? Comparatif coûts, avantages et cas d'usage pour choisir la meilleure option de direction financière pour PME et startup.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -1314,8 +1314,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "cas-etude-happy-scribe": {
       meta: {
-        title: "Cas d'étude Happy Scribe : de 0€ à 2M€ de revenu avec un DAF externalisé",
-        description: "Comment Happy Scribe a structuré ses finances de la levée de fonds à l'hyper-croissance. La stratégie financière d'une startup SaaS de 200k€/mois de revenu.",
+        title: "Happy Scribe : 0→2M€ de revenu avec un DAF | Iter Advisors",
+        description: "Comment Happy Scribe a structuré ses finances de la levée de fonds à l'hyper-croissance. Stratégie financière d'une startup SaaS à 200 k€/mois de revenu.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -1474,7 +1474,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     "externalisation-comptable": {
       meta: {
         title: "Externalisation Comptable : Guide Complet et Tarifs 2026",
-        description: "Faut-il externaliser sa comptabilité ? Découvrez les avantages, les pièges à éviter et les vrais coûts de la comptabilité externalisée pour PME et startups.",
+        description: "Faut-il externaliser sa comptabilité ? Avantages, pièges à éviter et vrais coûts de la comptabilité externalisée pour PME et startups. Guide pratique.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -1684,8 +1684,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // Pilier 1 — DAF Externalisé (4 articles)
     "quand-embaucher-daf-externalise-5-signes": {
       meta: {
-        title: "5 signes que vous avez besoin d'un DAF externalisé (et comment choisir) | Iter Advisors",
-        description: "Votre startup a-t-elle besoin d'un DAF externalisé ? Les 5 signaux d'alerte, le timing idéal, et comment choisir entre externalisation et salarié. Guide pratique.",
+        title: "5 signes que votre startup a besoin d'un DAF | Iter Advisors",
+        description: "5 signaux qu'une startup a besoin d'un DAF externalisé : timing idéal et comment choisir entre externalisation et embauche. Guide pratique par nos CFOs.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "5 signes que vous avez besoin d'un DAF externalisé (et comment choisir)",
@@ -1806,7 +1806,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "daf-externalise-barcelone-guide-startups-espagnoles": {
       meta: {
-        title: "DAF externalisé à Barcelone : le guide pour startups espagnoles | Iter Advisors",
+        title: "DAF externalisé Barcelone — Guide startups | Iter Advisors",
         description: "Fiscalité espagnole, subventions ACCIO/ENISA, recrutement tech à Barcelone : guide complet pour structurer la finance d'une startup en Catalogne.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -1843,7 +1843,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "cout-daf-externalise-2026-tarifs-par-mission": {
       meta: {
-        title: "Combien coûte un DAF externalisé en 2026 ? Tarifs détaillés par mission | Iter Advisors",
+        title: "Tarifs DAF externalisé 2026 — Par mission | Iter Advisors",
         description: "Tarifs DAF externalisé 2026 par profil de startup : Seed, Series A, Scale-up, Transition. Comparaison avec un DAF salarié. Basé sur 120+ missions.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -1901,7 +1901,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "daf-externalise-vs-expert-comptable": {
       meta: {
-        title: "DAF externalisé vs Expert-Comptable : quelle différence ? | Iter Advisors",
+        title: "DAF externalisé vs Expert-Comptable | Iter Advisors",
         description: "Expert-comptable et DAF sont complémentaires, pas substituables. Tableau comparatif des missions, périmètres, et quand chacun devient indispensable.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -1963,8 +1963,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // Pilier 2 — Outils & Stack Financier (3 articles)
     "pennylane-vs-sage-comparatif-40-deploiements": {
       meta: {
-        title: "Pennylane vs Sage : notre comparatif après 40 déploiements | Iter Advisors",
-        description: "Comparatif terrain Pennylane vs Sage par Iter Advisors : 40+ déploiements analysés. UX, stocks, immobilisations, prix, intégrations. Notre recommandation par profil.",
+        title: "Pennylane vs Sage : comparatif expert 2026 | Iter Advisors",
+        description: "Pennylane vs Sage : comparatif après 40+ déploiements. UX, prix, immobilisations, intégrations. Recommandation par profil d'entreprise et secteur.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Pennylane vs Sage : notre comparatif après 40 déploiements",
@@ -2007,7 +2007,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "agicap-vs-fygr-outil-tresorerie": {
       meta: {
-        title: "Agicap vs Fygr : quel outil de trésorerie choisir ? | Iter Advisors",
+        title: "Agicap vs Fygr — Quel outil trésorerie ? | Iter Advisors",
         description: "Agicap multi-banques et scénarios avancés, ou Fygr économique et simple ? Comparatif terrain par Iter Advisors basé sur 30+ déploiements.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2049,7 +2049,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     "stack-financier-saas-series-a": {
       meta: {
         title: "Stack financier idéal pour une SaaS en Series A (budget &lt; 1 500 €/mois) | Iter Advisors",
-        description: "Quels outils financiers choisir en Series A ? Notre stack recommandé après 40+ déploiements : comptabilité, trésorerie, dépenses, paie, banque. Budget total et ROI détaillé.",
+        description: "Stack financier Series A : comptabilité, trésorerie, dépenses, paie, banque. Recommandé après 40+ déploiements. Budget total et comparatif détaillé.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Le stack financier idéal pour une SaaS en Series A (budget < 1 500 €/mois)",
@@ -2160,7 +2160,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // Pilier 3 — Levée de Fonds & M&A (3 articles)
     "data-room-checklist-levee-de-fonds": {
       meta: {
-        title: "Data Room : la checklist complète pour votre levée de fonds | Iter Advisors",
+        title: "Data Room — Checklist levée de fonds | Iter Advisors",
         description: "Checklist data room levée de fonds : société, financier, KPIs SaaS, juridique, commercial, technique. Basée sur 25+ levées accompagnées.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2240,7 +2240,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "term-sheet-negocier-clauses-cles": {
       meta: {
-        title: "Term Sheet : comment négocier les clauses clés | Iter Advisors",
+        title: "Term Sheet : négocier les clauses clés | Iter Advisors",
         description: "Valorisation, liquidation preference, anti-dilution, vesting, board seats : les 8 clauses term sheet à négocier et notre position par clause.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2278,7 +2278,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "due-diligence-financiere-investisseurs": {
       meta: {
-        title: "Due Diligence financière : ce que les investisseurs vérifient | Iter Advisors",
+        title: "Due diligence financière investisseurs | Iter Advisors",
         description: "Comment les investisseurs analysent vos chiffres : MRR/ARR, CAC, LTV, burn rate, comptabilité, projections, litiges. Les red flags qui tuent une levée.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2333,7 +2333,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // Pilier 4 — Gestion Financière (3 articles)
     "reduire-bfr-7-leviers-actionnables": {
       meta: {
-        title: "Comment réduire votre BFR : 7 leviers actionnables | Iter Advisors",
+        title: "Réduire le BFR : 7 leviers actionnables | Iter Advisors",
         description: "DSO, stocks, fournisseurs, factoring : 7 leviers concrets pour libérer 15-25% de votre CA en cash sans lever de fonds.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2390,7 +2390,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "cash-burn-calculer-runway-anticiper-levee": {
       meta: {
-        title: "Cash Burn : calculer votre runway et anticiper la levée | Iter Advisors",
+        title: "Cash Burn : calculer votre runway | Iter Advisors",
         description: "Méthode complète pour calculer votre burn rate net et votre runway. Seuils critiques, règles du venture capital, scénarios de forecast.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2460,8 +2460,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "tableau-de-bord-financier-startup-12-kpis": {
       meta: {
-        title: "Tableau de bord financier startup : les 12 KPIs que tout CFO doit suivre | Iter Advisors",
-        description: "Quels KPIs financiers suivre dans une startup ? Les 12 indicateurs essentiels par catégorie : croissance, acquisition, trésorerie, rentabilité. Guide avec formules et benchmarks.",
+        title: "Dashboard financier startup : 12 KPIs CFO | Iter Advisors",
+        description: "12 KPIs financiers essentiels pour startups : croissance, acquisition, trésorerie, rentabilité. Formules, benchmarks et tableau de bord par nos CFOs.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Tableau de bord financier startup : les 12 KPIs que tout CFO doit suivre",
@@ -2670,7 +2670,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // Pilier 5 — RH & Paie (2 articles)
     "drh-externalise-quand-et-pourquoi": {
       meta: {
-        title: "DRH externalisé : quand et pourquoi ? | Iter Advisors",
+        title: "DRH externalisé : quand et pourquoi externaliser les RH ? | Iter Advisors",
         description: "À partir de 10 salariés, pendant une hyper-croissance ou en cas de litige, pourquoi externaliser le DRH plutôt que recruter. Coût, périmètre, ROI.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2704,7 +2704,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "payfit-vs-silae-comparatif-pme": {
       meta: {
-        title: "PayFit vs Silae : comparatif pour PME en croissance | Iter Advisors",
+        title: "PayFit vs Silae — Comparatif PME 2026 | Iter Advisors",
         description: "PayFit pour startups SaaS CCN SYNTEC ou Silae pour BTP / spectacle / multi-conventions ? Comparatif terrain par Iter Advisors basé sur 40+ déploiements.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2750,8 +2750,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "impot-revenu-espagne": {
       meta: {
-        title: "Impôt sur le revenu en Espagne (IRPF) : guide complet 2026 | Iter Advisors",
-        description: "Guide complet sur l'impôt sur le revenu en Espagne (IRPF) : barèmes 2026, loi Beckham, déclaration, comparaison France-Espagne. Tout savoir pour s'installer à Barcelone ou Madrid.",
+        title: "IRPF Espagne — Guide complet 2026 | Iter Advisors",
+        description: "IRPF Espagne 2026 : barèmes, loi Beckham, déclaration et comparaison France-Espagne. Guide complet pour s'installer à Barcelone ou Madrid.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Impôt sur le revenu en Espagne (IRPF) : guide complet pour entrepreneurs et expatriés en 2026",
@@ -2889,8 +2889,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "externaliser-comptabilite-guide": {
       meta: {
-        title: "Externaliser la comptabilité : guide complet startups & PME 2026 | Iter Advisors",
-        description: "Tout savoir sur l'externalisation de la comptabilité : coûts, avantages, outils, comparatif expert-comptable vs comptable interne. Guide par des CFO expérimentés.",
+        title: "Externaliser la comptabilité PME 2026 | Iter Advisors",
+        description: "Externaliser la comptabilité : coûts, avantages, outils et comparatif expert-comptable vs interne. Guide complet par des CFOs expérimentés d'Iter Advisors.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Externaliser la comptabilité : guide complet pour startups et PME en 2026",
@@ -3002,7 +3002,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
   en: {
     "essentiels-outils-tech-finance": {
       meta: {
-        title: "Essential financial tech tools | Iter Advisors",
+        title: "Essential Financial Tech Tools for CFOs & SMEs | Iter Advisors",
         description: "Discover the essential technology tools for modern finance departments. Expert guide by Iter Advisors.",
       },
       breadcrumbs: {
@@ -3063,7 +3063,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // ─── FINAL-04: top 4 FR articles translated to EN ─────────────────
     "flux-de-tresorerie": {
       meta: {
-        title: "Cash Flow Management: Definition & Best Practices for SMEs | Iter Advisors",
+        title: "Cash Flow Management for SMEs | Iter Advisors",
         description: "Master cash flow management: definition, the 3 cash flow types, cash conversion cycle, and tools for SMEs and startups. Expert guide by Iter Advisors.",
       },
       breadcrumbs: {
@@ -3116,8 +3116,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "cout-daf-externalise-tarifs-prix-2026": {
       meta: {
-        title: "Fractional CFO Cost in 2026: Pricing, Day Rates & ROI | Iter Advisors",
-        description: "What does a Fractional CFO cost in 2026? Daily rates, monthly retainers, package comparison and ROI. Save 50-70% vs hiring a full-time CFO. Free diagnostic.",
+        title: "Fractional CFO Cost 2026: Pricing & ROI | Iter Advisors",
+        description: "Fractional CFO cost in 2026: daily rates, monthly retainers, package comparison and ROI. Save 50–70% vs a full-time CFO. Free diagnostic.",
       },
       breadcrumbs: {
         resourcesLabel: "Resources",
@@ -3158,7 +3158,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "daf-externalise-vs-daf-salarie": {
       meta: {
-        title: "Fractional CFO vs In-House CFO: Cost, Flexibility & ROI Compared | Iter Advisors",
+        title: "Fractional vs In-House CFO: Cost & ROI | Iter Advisors",
         description: "Fractional CFO vs in-house CFO: side-by-side comparison of cost, flexibility, expertise and ROI. Which model fits your SME or startup in 2026?",
       },
       breadcrumbs: {
@@ -3201,8 +3201,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "externalisation-comptable": {
       meta: {
-        title: "Accounting Outsourcing for Startups & SMEs: Costs, Tools & Guide | Iter Advisors",
-        description: "Outsource accounting: 30-50% cheaper than in-house, modern tools (Pennylane, Sage), and a senior expert. Complete guide for startups and SMEs by Iter Advisors.",
+        title: "Accounting Outsourcing Guide for SMEs 2026 | Iter Advisors",
+        description: "Outsource accounting: 30–50% cheaper than in-house, modern tools (Pennylane, Sage), senior expert. Complete guide for startups and SMEs by Iter Advisors.",
       },
       breadcrumbs: {
         resourcesLabel: "Resources",
@@ -3257,14 +3257,14 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
   es: {
     "essentiels-outils-tech-finance": {
       meta: {
-        title: "Herramientas tecnológicas esenciales para las finanzas | Iter Advisors",
+        title: "Herramientas tech esenciales para finanzas | Iter Advisors",
         description: "Descubra las herramientas tecnológicas esenciales para los departamentos financieros modernos. Guía experta de Iter Advisors.",
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
-        resourcesHref: "/es/ressources",
+        resourcesHref: "/es/recursos",
         blogLabel: "Blog",
-        blogHref: "/es/ressources/blog",
+        blogHref: "/es/recursos/blog",
       },
       h1: "Las herramientas tecnológicas esenciales para las finanzas",
       content: [
@@ -3282,9 +3282,9 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
-        resourcesHref: "/es/ressources",
+        resourcesHref: "/es/recursos",
         blogLabel: "Blog",
-        blogHref: "/es/ressources/blog",
+        blogHref: "/es/recursos/blog",
       },
       h1: "IA y automatización de tareas repetitivas en el departamento de Finanzas",
       content: [
@@ -3297,14 +3297,14 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "organiser-sa-direction-financiere": {
       meta: {
-        title: "Organizar su departamento financiero | Iter Advisors",
+        title: "Organizar su departamento financiero: guía para pymes | Iter Advisors",
         description: "Cómo estructurar y organizar su departamento financiero para un rendimiento óptimo. Guía experta de Iter Advisors.",
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
-        resourcesHref: "/es/ressources",
+        resourcesHref: "/es/recursos",
         blogLabel: "Blog",
-        blogHref: "/es/ressources/blog",
+        blogHref: "/es/recursos/blog",
       },
       h1: "Organizar su departamento financiero",
       content: [
@@ -3317,8 +3317,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "que-es-fractional-cfo": {
       meta: {
-        title: "¿Qué es un Fractional CFO? Guía Completa para Pymes y Startups | Iter Advisors",
-        description: "¿Qué es un Fractional CFO? Definición, misiones, ventajas y coste. Guía completa para pymes y startups que necesitan dirección financiera senior a tiempo parcial.",
+        title: "¿Qué es un Fractional CFO? Guía para Pymes | Iter Advisors",
+        description: "¿Qué es un Fractional CFO? Definición, misiones, ventajas y coste. Guía para pymes y startups que necesitan dirección financiera senior a tiempo parcial.",
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
@@ -3379,8 +3379,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // ─── FINAL-04: top 4 FR articles translated to ES ─────────────────
     "flux-de-tresorerie": {
       meta: {
-        title: "Flujo de Caja: Definición y Buenas Prácticas para Pymes | Iter Advisors",
-        description: "Domine el flujo de caja: definición, los 3 tipos de cash flow, ciclo de conversión de caja y herramientas para pymes y startups. Guía experta de Iter Advisors.",
+        title: "Flujo de Caja : Guía para Pymes | Iter Advisors",
+        description: "Flujo de caja: los 3 tipos de cash flow, ciclo de conversión y herramientas para pymes y startups. Guía experta de Iter Advisors, CFOs senior.",
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
@@ -3432,8 +3432,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "cout-daf-externalise-tarifs-prix-2026": {
       meta: {
-        title: "Coste del CFO Externalizado en 2026: Tarifas, TJM y ROI | Iter Advisors",
-        description: "¿Cuánto cuesta un CFO externalizado en 2026? TJM, suscripciones mensuales, comparación de paquetes y ROI. Ahorre un 50-70% vs un CFO interno. Diagnóstico gratuito.",
+        title: "Coste CFO Externalizado 2026 — Tarifas y ROI | Iter Advisors",
+        description: "¿Cuánto cuesta un CFO externalizado en 2026? TJM, retainer mensual y ROI. Ahorre 50–70% vs un CFO interno. Diagnóstico gratuito de Iter Advisors.",
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
@@ -3474,7 +3474,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "daf-externalise-vs-daf-salarie": {
       meta: {
-        title: "CFO Externalizado vs CFO Interno: Coste, Flexibilidad y ROI | Iter Advisors",
+        title: "CFO Externalizado vs Interno — Coste y ROI | Iter Advisors",
         description: "CFO externalizado vs CFO interno: comparativa de coste, flexibilidad, experiencia y ROI. ¿Qué modelo encaja con su pyme o startup en 2026?",
       },
       breadcrumbs: {
@@ -3517,8 +3517,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "externalisation-comptable": {
       meta: {
-        title: "Externalización Contable para Startups y Pymes: Costes, Herramientas y Guía | Iter Advisors",
-        description: "Externalizar la contabilidad: 30-50% más barato que internamente, herramientas modernas (Pennylane, Sage) y un experto senior. Guía completa por Iter Advisors.",
+        title: "Externalización Contable para Pymes | Iter Advisors",
+        description: "Externalizar la contabilidad: 30–50% más barato, herramientas modernas (Pennylane, Sage) y experto senior. Guía completa por Iter Advisors.",
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",

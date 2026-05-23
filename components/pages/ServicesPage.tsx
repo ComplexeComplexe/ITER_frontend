@@ -27,24 +27,27 @@ import CTASection from "@/components/CTASection";
 export default function ServicesPage({
   locale,
   cmsNavigation,
+  h1Override,
 }: {
   locale: Locale;
   cmsNavigation?: CmsNavItem[];
+  h1Override?: string;
 }) {
   const t = getServicesContent(locale);
   const financeServices = t.services.filter((s) => s.category === "finance");
   const rhServices = t.services.filter((s) => s.category === "rh");
+  const h1 = h1Override ?? t.hero.h1;
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
       <section className="bg-background pt-32 pb-16">
         <div className="container">
-          <Breadcrumb locale={locale} items={[{ label: t.hero.h1 }]} />
+          <Breadcrumb locale={locale} items={[{ label: h1 }]} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl">
-                {t.hero.h1}
+                {h1}
               </h1>
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed mt-6">
                 {t.intro.paragraph}

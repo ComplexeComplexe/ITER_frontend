@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Guide Levée Fonds | Iter Advisors",
   description:
     "Guide complet levée de fonds. Préparation comptable, due diligence, documentation, valorisation. Iter Advisors a assisté startups à lever +100M€.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/levee-de-fonds-guide",
+  },
   robots: {
     index: true,
     follow: true,

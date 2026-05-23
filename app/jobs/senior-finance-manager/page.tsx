@@ -11,6 +11,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Senior Finance Manager — Recrutement | Iter Advisors",
     description:
       "Senior Finance Manager pour piloter et coordonner les missions clients chez Iter Advisors. Cabinet DAF externalisé Barcelone, Paris, Toulouse.",
+    alternates: {
+      canonical: "https://www.iteradvisors.com/jobs/senior-finance-manager",
+    },
     openGraph: {
       title: "Senior Finance Manager — Recrutement | Iter Advisors",
       description:

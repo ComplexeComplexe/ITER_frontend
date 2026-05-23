@@ -7,7 +7,7 @@ import { blogPosts } from "@/lib/content/blog-posts";
 import { BLOG_ILLUSTRATIONS } from "@/lib/blog-illustrations";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 
-const blogBasePath = "/recursos/blog";
+const blogBasePath = "/es/recursos/blog";
 
 const breadcrumbs = {
   resourcesLabel: "Recursos",

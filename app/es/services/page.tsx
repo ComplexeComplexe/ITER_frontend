@@ -15,5 +15,5 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("es");
-  return <ServicesPage locale="es" cmsNavigation={cmsNavigation} />;
+  return <ServicesPage locale="es" cmsNavigation={cmsNavigation} h1Override="Nuestros servicios financieros" />;
 }

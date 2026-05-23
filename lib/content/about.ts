@@ -61,7 +61,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
     meta: {
       title: "À propos | Iter Advisors",
       description:
-        "Cabinet de conseil en finance et DAF externalisé, Iter Advisors accompagne le développement stratégique de ses partenaires par la structuration et le pilotage de leur fonction Finance.",
+        "Cabinet de DAF externalisé, Iter Advisors accompagne PME et startups dans la structuration financière, la levée de fonds et le contrôle de gestion.",
     },
     hero: {
       h1: "À propos d'Iter Advisors : votre cabinet de DAF externalisé",
@@ -112,7 +112,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
           title: "Lancement",
           description:
             "Structurez votre fonction finance dès le départ. Mise en place de la comptabilité, des outils de gestion et des premiers tableaux de bord pour piloter votre activité.",
-          href: "/services/externalisation-comptable",
+          href: "/services/comptabilite-externalisation",
         },
         {
           title: "Croissance",
@@ -124,13 +124,13 @@ export const aboutContent: Record<Locale, AboutContent> = {
           title: "Gestion de crise",
           description:
             "Réagissez rapidement face aux difficultés. Plan de trésorerie d\u2019urgence, renégociation avec les créanciers, restructuration financière et accompagnement stratégique.",
-          href: "/services/gestion-de-tresorerie",
+          href: "/services/previsionnel-tresorerie",
         },
         {
           title: "Levée de fonds",
           description:
             "Préparez et sécurisez vos financements. Construction du dossier investisseur, modélisation financière, due diligence et négociation avec les fonds d\u2019investissement.",
-          href: "/services/levee-de-fonds",
+          href: "/services/accompagnement-levee-de-fond",
         },
         {
           title: "Post-levée",
@@ -206,7 +206,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
     meta: {
       title: "About us | Iter Advisors",
       description:
-        "Iter Advisors is a Fractional CFO and finance advisory firm that supports the strategic growth of its partners by structuring, managing, and scaling their finance function.",
+        "Iter Advisors is a Fractional CFO and finance advisory firm supporting strategic growth through financial structuring, fundraising and management control.",
     },
     hero: {
       h1: "About us",
@@ -346,7 +346,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
     meta: {
       title: "Sobre nosotros | Iter Advisors",
       description:
-        "Iter Advisors es una firma de consultoría financiera y CFO externalizado que apoya el crecimiento estratégico de sus socios estructurando, gestionando y escalando su función financiera.",
+        "Iter Advisors, firma de CFO externalizado y consultoría financiera. Apoyamos pymes y startups en estructuración financiera y captación de fondos.",
     },
     hero: {
       h1: "Sobre nosotros",

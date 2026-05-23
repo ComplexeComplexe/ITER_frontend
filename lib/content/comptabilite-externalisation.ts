@@ -1,9 +1,9 @@
 export const comptabiliteExternalisationContent = {
   fr: {
     meta: {
-      title: "Externalisation comptable pour startups et PME | Iter Advisors",
+      title: "Externalisation comptable startups & PME | Iter Advisors",
       description:
-        "Externalisez votre comptabilité avec Iter Advisors : tenue des comptes, déclarations fiscales, paie et clôture annuelle. Intégration fluide avec Pennylane, Sage, QuickBooks.",
+        "Externalisez votre comptabilité avec Iter Advisors : tenue des comptes, déclarations fiscales, paie et clôture annuelle. Pennylane, Sage, QuickBooks.",
     },
     author: {
       name: "Sébastien Doat",
