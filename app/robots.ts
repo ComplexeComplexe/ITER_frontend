@@ -6,7 +6,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/", "/profil/merci", "/campagne/merci"],
+        // /_next/static/ and /_next/image must be crawlable for JS/CSS/images.
+        // Only block internal data routes (/_next/data/) that have no SEO value.
+        disallow: ["/api/", "/_next/data/", "/profil/merci", "/campagne/merci"],
       },
       // Allow AI bots to crawl the site for maximum LLM visibility
       { userAgent: "GPTBot", allow: "/" },
