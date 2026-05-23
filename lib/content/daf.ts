@@ -118,8 +118,8 @@ export const dafContent: Record<Locale, DafContent> = {
     breadcrumbLabel: "DAF Externalisé",
     h1: "DAF Externalisé : votre direction financière sur-mesure",
     intro: [
-      "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Nos directeurs financiers à temps partagé (aussi appelés CFO à temps partagé) interviennent en mission ponctuelle ou via une direction financière externalisée — opérationnels dès le premier jour, sans engagement long terme. Avec 85 entreprises accompagnées, 100 M€ de levées de fonds réalisées et une note de 5/5 sur Trustfolio (31 avis vérifiés), nous sommes un acteur de référence du DAF externalisé et du directeur financier externalisé en France et en Espagne.",
-      "Un DAF externalisé — aussi appelé DAF à temps partagé, directeur financier externalisé ou CFO externalisé — est un professionnel senior de la finance qui intervient dans votre entreprise sans en être salarié à temps plein. Il devient le co-pilote du dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs, sur un mode flexible (temps partagé, mission ponctuelle ou abonnement mensuel). Pour comprendre la nuance avec son équivalent anglo-saxon, consultez notre fiche [Le CFO (Chief Financial Officer)](/ressources/glossaire/cfo).",
+      "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Nos directeurs financiers à temps partagé interviennent en mission ponctuelle ou via une direction financière externalisée. Opérationnels dès le premier jour, sans engagement long terme. 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (31 avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne.",
+      "Un DAF externalisé — aussi appelé DAF à temps partagé ou CFO externalisé — est un directeur financier senior qui intervient dans votre entreprise sans en être salarié. Il co-pilote le dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs. Le format est flexible : temps partagé, mission ponctuelle ou abonnement mensuel. Pour la nuance avec son équivalent anglo-saxon, consultez notre fiche [Le CFO (Chief Financial Officer)](/ressources/glossaire/cfo).",
       "Vous avez un projet en Espagne ? Nos DAFs basés à Barcelone connaissent en profondeur la fiscalité locale : lisez notre guide complet sur l'[Impôt sur le revenu en Espagne](/ressources/blog/impot-revenu-espagne) et notre [comparaison régimes fiscaux France vs Espagne](/ressources/blog/regimes-fiscaux-france-vs-espagne).",
     ],
     partnerSection: {
@@ -127,21 +127,21 @@ export const dafContent: Record<Locale, DafContent> = {
       content: [
         "Iter Advisors est un cabinet de DAF externalisé présent à Barcelone, Paris et Toulouse. Nous mettons à disposition de nos clients des directeurs financiers expérimentés (10+ ans d'expérience), capables d'intervenir sur l'ensemble des problématiques financières d'une entreprise en croissance.",
         "Notre approche repose sur trois piliers fondamentaux : l'expertise technique, la vision stratégique et la flexibilité d'intervention. Chaque mission est conçue sur mesure pour répondre aux enjeux spécifiques de votre entreprise.",
-        "Avec plus de 85 entreprises accompagnées et plus de 100 millions d'euros de levées de fonds réalisées par nos clients, Iter Advisors s'est imposé comme un acteur de référence dans le domaine du DAF externalisé en France et en Espagne.",
+        "Avec plus de 85 entreprises accompagnées et 100 M€ levés par nos clients, Iter Advisors s'est imposé comme un acteur de référence du DAF externalisé en France et en Espagne.",
       ],
     },
     whatIs: {
       heading: "Qu'est-ce qu'un DAF externalisé ?",
       content: [
-        "Un **DAF externalisé** — ou **directeur administratif et financier externalisé** — est un **directeur financier externalisé** senior qui intervient au sein de votre entreprise sans en être salarié à temps plein. Le **DAF externalisé** assume les mêmes responsabilités qu'un DAF interne (pilotage financier, gestion de trésorerie, reporting, relations investisseurs) mais sur un mode flexible : temps partagé, mission ponctuelle ou abonnement mensuel.",
-        "On parle aussi de **Direction financière externalisée**, **directeur financier à temps partagé**, **CFO externalisé** ou de l'équivalent anglo-saxon **fractional CFO** : ce sont des synonymes du même service, avec des nuances de format (temps partagé récurrent, mission ponctuelle, transition).",
+        "Un **DAF externalisé** (ou **directeur financier externalisé**) est un senior finance qui intègre votre entreprise sans en être salarié. Il assume les mêmes responsabilités qu'un DAF interne : pilotage, trésorerie, reporting, relations investisseurs. La différence ? Un mode flexible : temps partagé, mission ponctuelle ou abonnement mensuel.",
+        "On parle aussi de **Direction financière externalisée**, **directeur financier à temps partagé** ou **fractional CFO** : ce sont des synonymes. Les nuances portent sur le format : temps partagé récurrent, mission ponctuelle ou transition.",
       ],
       subsections: [
         {
           heading: "Définition et rôle principal",
           content: [
             "Le DAF externalisé assure la direction financière de votre entreprise à temps partagé ou en mission ponctuelle. Son rôle est de structurer, piloter et optimiser la fonction finance pour soutenir la croissance de l'entreprise.",
-            "Il intervient sur les sujets clés : élaboration du business plan, construction du budget prévisionnel, mise en place d'outils de reporting financier et de pilotage, préparation des levées de fonds, optimisation des process comptables et financiers.",
+            "Il intervient sur les sujets clés : business plan, budget prévisionnel, outils de reporting, préparation des levées de fonds, optimisation des process financiers.",
           ],
         },
         {
@@ -156,7 +156,7 @@ export const dafContent: Record<Locale, DafContent> = {
           content: [
             "Un DAF interne coûte entre 80 000 et 150 000 EUR brut annuel (hors charges patronales de 25-42 %), soit un coût total employeur de 100 000 à 213 000 EUR par an. Un DAF externalisé représente un budget de 2 000 à 8 000 EUR par mois selon le volume d'intervention, soit 24 000 à 96 000 EUR par an.",
             "Le DAF interne offre une présence quotidienne et une connaissance approfondie de l'entreprise, mais implique un engagement long terme et des coûts fixes élevés. Le DAF externalisé apporte flexibilité, regard extérieur multi-sectoriel et un réseau étendu de partenaires, sans engagement de durée.",
-            "Pour les entreprises de 1 à 50 M EUR de chiffre d'affaires, le DAF externalisé est souvent la solution la plus pertinente : il offre une expertise de haut niveau à un coût maîtrisé, avec la possibilité de moduler l'intervention selon les phases de croissance.",
+            "Pour les entreprises de 1 à 50 M EUR de CA, le DAF externalisé est souvent la solution la plus pertinente. Il apporte une expertise senior à coût maîtrisé. L'intervention se module selon les phases de croissance.",
           ],
         },
       ],
@@ -178,7 +178,7 @@ export const dafContent: Record<Locale, DafContent> = {
       heading: "DAF à temps partagé ou directeur financier à temps partagé : est-ce la même chose ?",
       content: [
         "Oui — les deux expressions désignent la même réalité : un directeur financier senior qui partage son temps entre plusieurs entreprises au lieu d'être salarié à temps plein chez un seul employeur. « DAF externalisé » est le terme générique, « DAF à temps partagé » insiste sur le mode d'organisation (quelques jours par mois ou par semaine de manière récurrente).",
-        "Vous croiserez aussi les termes CFO part-time, CFO fractional, DAF en temps partagé, DAF mutualisé ou directeur financier à temps partiel : ce sont des synonymes du même service. La nuance vient surtout de la durée d'engagement : un DAF à temps partagé s'inscrit dans la durée (12 à 36 mois en moyenne), alors qu'un DAF externalisé peut aussi intervenir en mission ponctuelle (levée de fonds, M&A, transition).",
+        "Vous croiserez aussi les termes CFO part-time, CFO fractional, DAF mutualisé ou directeur financier à temps partiel : ce sont des synonymes. La nuance porte sur la durée. Un DAF à temps partagé s'inscrit dans le long terme (12 à 36 mois). Un DAF externalisé peut aussi intervenir en mission courte : levée de fonds, M&A, transition.",
         "Chez Iter Advisors, nous proposons les deux modes : un accompagnement à temps partagé pour structurer la finance d'une PME en croissance, et des missions courtes pour des opérations stratégiques. La frontière est volontairement floue : c'est votre besoin qui dicte le format, pas l'inverse.",
       ],
     },

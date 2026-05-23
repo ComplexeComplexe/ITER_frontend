@@ -55,10 +55,11 @@ export async function generateMetadata({
     path: getLocalePath("en", `${blogBasePath}/${slug}`),
     fallbackTitle: fallback?.meta.title ?? `${slug} | Iter Advisors`,
     fallbackDescription: fallback?.meta.description ?? "",
+    // SEO-02: ES blog lives at /recursos/blog (different base from FR/EN)
     localizedPaths: {
       fr: `${blogBasePath}/${slug}`,
       en: `${blogBasePath}/${slug}`,
-      es: `${blogBasePath}/${slug}`,
+      es: `/recursos/blog/${slug}`,
     },
   });
 }
