@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServiceSinglePage from "@/components/pages/ServiceSinglePage";
 import {
-  getCmsNavigation,
   SERVICE_PAGE_SLUGS,
   SERVICE_PAGE_API_MAP,
   SERVICE_URL_SLUG_BY_LOCALE,
@@ -117,7 +116,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (!isServicePageSlug(slug)) notFound();
   const page = getStaticServicePage(slug, "fr");
   if (!page) notFound();
-  const cmsNavigation = await getCmsNavigation("fr");
+  const cmsNavigation = undefined;
   return (
     <ServiceSinglePage
       locale="fr"

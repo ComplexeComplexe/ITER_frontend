@@ -87,7 +87,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     ebitda: {
       meta: {
-        title: "EBITDA : Définition, Calcul et Interprétation | Iter Advisors",
+        title: "EBITDA : Définition et Calcul | Iter Advisors",
         description:
           "Définition de l'EBITDA : formule de calcul, différence avec l'EBE, et comment l'utiliser pour évaluer la performance d'une entreprise.",
       },
@@ -712,7 +712,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
   en: {
     bfr: {
       meta: {
-        title: "Working Capital Requirement (WCR): Definition and Optimization | Iter Advisors",
+        title: "Working Capital (WCR): Definition | Iter Advisors",
         description:
           "Working Capital Requirement: definition, calculation formula, and strategies to optimize your cash flow.",
       },
@@ -769,7 +769,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     ebitda: {
       meta: {
-        title: "EBITDA: Definition, Calculation and Interpretation | Iter Advisors",
+        title: "EBITDA: Definition & Calculation | Iter Advisors",
         description:
           "EBITDA definition: calculation formula, difference with EBIT, and how to use it to evaluate company performance.",
       },
@@ -819,7 +819,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     cfo: {
       meta: {
-        title: "CFO: Definition, Role and Difference from Finance Director | Iter Advisors",
+        title: "CFO: Definition vs Finance Director | Iter Advisors",
         description:
           "CFO (Chief Financial Officer) definition: role, responsibilities and difference from traditional finance director. Expert guide from Iter Advisors.",
       },
@@ -973,7 +973,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     cfo: {
       meta: {
-        title: "CFO: Definición, Rol y Diferencia con Director Financiero | Iter Advisors",
+        title: "CFO: Definición vs Director Financiero | Iter Advisors",
         description:
           "Definición de CFO (Chief Financial Officer): rol, responsabilidades y diferencia con Director Financiero. Guía de expertos de Iter Advisors.",
       },

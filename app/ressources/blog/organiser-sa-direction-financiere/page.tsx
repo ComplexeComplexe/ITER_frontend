@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.iteradvisors.com/ressources/blog/organiser-sa-direction-financiere",
   },
   openGraph: {
-    title: "Comment organiser sa direction financière en 2026 | Iter Advisors",
+    title: "Organiser sa direction financière en 2026 | Iter Advisors",
     description: "Guide complet pour structurer et organiser votre département finance. Organigrammes, rôles, responsabilités et best practices.",
     type: "article",
   },

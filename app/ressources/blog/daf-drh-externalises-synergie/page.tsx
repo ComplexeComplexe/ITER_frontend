@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.iteradvisors.com/ressources/blog/daf-drh-externalises-synergie",
   },
   openGraph: {
-    title: "DAF et DRH externalisés : synergie et économies | Iter Advisors",
+    title: "DAF et DRH externalisés : synergie | Iter Advisors",
     description: "Découvrez les synergies quand on externalise DAF et DRH. Économies, efficacité, reporting intégré.",
     type: "article",
   },

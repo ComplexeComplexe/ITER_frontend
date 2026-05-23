@@ -1,7 +1,7 @@
 export const dafExternalisePariEnrichedContent = {
   fr: {
     meta: {
-      title: "DAF externalisé Paris : CFO à temps partagé en Ile-de-France | Iter Advisors",
+      title: "DAF externalisé Paris — CFO temps partagé | Iter Advisors",
       description:
         "DAF externalisé à Paris et en Ile-de-France : CFO à temps partagé pour startups et PME. Levées de fonds, Bpifrance, reporting. Dès 2 000 €/mois.",
     },

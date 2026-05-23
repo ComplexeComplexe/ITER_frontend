@@ -65,7 +65,7 @@ export const drhSubContent: Record<Locale, Record<DrhSubPageSlug, DrhSubContent>
   en: {
     "temps-partage": {
       meta: {
-        title: "Shared-time HR Director | Flexible HR leadership | Iter Advisors",
+        title: "Shared-time HR Director | Flexible HR | Iter Advisors",
         description:
           "The shared-time HR director: a flexible solution to structure and lead your HR function. Discover Iter Advisors' offering.",
       },
@@ -108,7 +108,7 @@ export const drhSubContent: Record<Locale, Record<DrhSubPageSlug, DrhSubContent>
   es: {
     "temps-partage": {
       meta: {
-        title: "RRHH a tiempo compartido | Dirección de personas flexible | Iter Advisors",
+        title: "RRHH a tiempo compartido | Dirección RH | Iter Advisors",
         description:
           "El director de RRHH a tiempo compartido: una solución flexible para estructurar y pilotar su función de personas. Descubra la oferta de Iter Advisors.",
       },

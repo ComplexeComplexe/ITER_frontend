@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import ControleDeGestionExternalisePage from "@/components/pages/ControleDeGestionExternalisePage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
 import { getControleDeGestionExternaliseeContent } from "@/lib/content/controle-de-gestion-externalise";
 
 /**
@@ -137,7 +136,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("fr");
+  const cmsNavigation = undefined;
   const content = getControleDeGestionExternaliseeContent("fr");
   return (
     <ControleDeGestionExternalisePage

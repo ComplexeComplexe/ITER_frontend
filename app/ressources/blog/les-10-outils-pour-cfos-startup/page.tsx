@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: "https://www.iteradvisors.com/ressources/blog/les-10-outils-pour-cfos-startup",
   },
   openGraph: {
-    title: "Les 10 outils indispensables pour CFOs en startup | Iter Advisors",
+    title: "Les 10 outils pour CFOs en startup | Iter Advisors",
     description: "Guide complet des 10 meilleurs outils fintech pour CFOs en startup. Comptabilité, trésorerie, reporting, levée de fonds. Comparaison et ROI.",
     type: "article",
     url: "https://www.iteradvisors.com/ressources/blog/les-10-outils-pour-cfos-startup",

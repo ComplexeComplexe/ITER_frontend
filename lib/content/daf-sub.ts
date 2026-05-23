@@ -22,7 +22,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
   fr: {
     metier: {
       meta: {
-        title: "Métier de DAF : Rôle, Missions et Compétences | Iter Advisors",
+        title: "Métier de DAF : Rôle et Missions | Iter Advisors",
         description:
           "Découvrez le métier de DAF : rôle complet, missions clés, compétences requises et évolution du poste dans les entreprises modernes.",
       },
@@ -182,7 +182,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     transition: {
       meta: {
-        title: "DAF de Transition - Missions, Durée et Tarifs | Iter Advisors",
+        title: "DAF de Transition — Missions et Tarifs | Iter Advisors",
         description:
           "Le DAF de transition intervient à temps plein en cas de crise, vacance de poste ou transformation majeure. Missions, durée et tarifs par Iter Advisors.",
       },
@@ -442,7 +442,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     "temps-partage": {
       meta: {
-        title: "Part-time CFO: Flexible solution for SMEs and startups | Iter Advisors",
+        title: "Part-time CFO for SMEs & Startups | Iter Advisors",
         description:
           "The part-time CFO: a flexible and cost-effective solution for growing companies. Discover the benefits of timeshare CFO services with Iter Advisors.",
       },
@@ -490,7 +490,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     transition: {
       meta: {
-        title: "Transitional CFO: Expert for your key periods | Iter Advisors",
+        title: "Transitional CFO: Expert for Key Periods | Iter Advisors",
         description:
           "The transitional CFO intervenes during critical periods: restructuring, fundraising, temporary replacement. Discover this solution with Iter Advisors.",
       },
@@ -663,7 +663,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
   es: {
     metier: {
       meta: {
-        title: "¿Qué es un Director Financiero? Rol, misiones y competencias | Iter Advisors",
+        title: "¿Qué es un Director Financiero? | Iter Advisors",
         description:
           "Descubra el rol del Director Financiero (CFO): responsabilidades, competencias clave y evolución del puesto en las empresas modernas.",
       },
@@ -711,7 +711,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     "temps-partage": {
       meta: {
-        title: "CFO a tiempo compartido: Solución flexible para pymes y startups | Iter Advisors",
+        title: "CFO a tiempo compartido — Pymes y Startups | Iter Advisors",
         description:
           "El CFO a tiempo compartido: una solución flexible y económica para empresas en crecimiento. Descubra las ventajas del tiempo compartido con Iter Advisors.",
       },
@@ -759,7 +759,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     transition: {
       meta: {
-        title: "CFO de transición: Experto para sus periodos clave | Iter Advisors",
+        title: "CFO de transición — Experto períodos clave | Iter Advisors",
         description:
           "El CFO de transición interviene en periodos críticos: reestructuración, rondas de financiación, reemplazo temporal. Consulte a Iter Advisors.",
       },

@@ -101,7 +101,7 @@ const content: Record<Locale, LeyBeckhamContent> = {
   },
   en: {
     meta: {
-      title: "Beckham Law Spain: Complete Guide 2026 for Expatriates | Iter Advisors",
+      title: "Beckham Law Spain: Guide 2026 Expatriates | Iter Advisors",
       description: "Beckham Law in Spain 2026: tax benefits, eligibility and implementation. Save up to €50,000/year. Complete guide for expat executives and entrepreneurs.",
     },
     hero: {
@@ -174,7 +174,7 @@ const content: Record<Locale, LeyBeckhamContent> = {
   },
   es: {
     meta: {
-      title: "Ley Beckham España: Guía Completa 2026 para Expatriados | Iter Advisors",
+      title: "Ley Beckham España : Guía 2026 Expatriados | Iter Advisors",
       description: "Ley Beckham en España 2026: beneficios fiscales, requisitos y aplicación. Ahorra hasta €50 000/año. Guía para ejecutivos y emprendedores expatriados.",
     },
     hero: {

@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import ComptabiliteExternalisationPage from "@/components/pages/ComptabiliteExternalisationPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
 import { getComptabiliteExternalisationContent } from "@/lib/content/comptabilite-externalisation";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -104,7 +103,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("fr");
+  const cmsNavigation = undefined;
   const content = getComptabiliteExternalisationContent("fr");
   return (
     <ComptabiliteExternalisationPage

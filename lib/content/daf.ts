@@ -819,7 +819,7 @@ export const dafContent: Record<Locale, DafContent> = {
   },
   es: {
     meta: {
-      title: "CFO Externalizado | Departamento Financiero & Directores Financieros | Iter Advisors",
+      title: "CFO Externalizado | Dirección Financiera | Iter Advisors",
       description:
         "CFO externalizado para pymes y startups: dirección financiera, tesorería, control de gestión. TJM EUR 750–1 250/día. Barcelona, Paris, Toulouse.",
     },

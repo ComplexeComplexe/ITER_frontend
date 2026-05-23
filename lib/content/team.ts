@@ -134,11 +134,26 @@ const fallbackData: FallbackMemberData[] = [
       en: "Partner & CFO",
       es: "Partner y CFO"
     },
+    h1Roles: {
+      fr: "Partner & CFO externalisé",
+      en: "Partner & Fractional CFO",
+      es: "Partner y CFO Externalizado",
+    },
     slug: "florent-greth",
     photo: { url: "/images/team/florent-greth.webp" },
     linkedIn: "https://www.linkedin.com/in/florent-greth-cfo-pennylane/?locale=en",
     order: 4,
     showInHero: true,
+    bio: {
+      fr: "Florent est Partner & CFO chez Iter Advisors. Spécialiste des outils finance SaaS (Pennylane, Agicap), il accompagne PME et startups sur la structuration financière et le pilotage de trésorerie.",
+      en: "Florent is a Partner & CFO at Iter Advisors. A specialist in SaaS finance tools (Pennylane, Agicap), he supports SMEs and startups on financial structuring and cash flow management.",
+      es: "Florent es Partner y CFO en Iter Advisors. Especialista en herramientas SaaS de finanzas (Pennylane, Agicap), acompaña a pymes y startups en estructuración financiera y gestión de tesorería.",
+    },
+    bioExtended: {
+      fr: "Chez Iter Advisors, Florent intervient auprès de PME en croissance et de startups pour structurer leur direction financière, mettre en place des outils de pilotage adaptés et optimiser leur trésorerie. Expert reconnu des solutions finance SaaS, notamment Pennylane, il accompagne la migration et l'implémentation de ces outils chez ses clients, réduisant les délais de clôture et automatisant les réconciliations comptables. Ses missions couvrent la mise en place de prévisionnels de trésorerie à 12 mois glissants, la construction de tableaux de bord financiers personnalisés, la préparation aux audits et la structuration des process comptables et financiers. Florent est spécialisé dans les secteurs SaaS, e-commerce et services B2B, où il accompagne les fondateurs dans la compréhension et l'amélioration de leurs métriques financières clés : ARR, MRR, churn, LTV/CAC et free cash flow. Il travaille régulièrement sur la préparation aux levées de fonds (Seed à Série A), en construisant les modèles financiers et les data rooms qui rassurent les investisseurs. Au-delà du pilotage financier opérationnel, Florent conseille sur la sélection et l'intégration de la stack technologique finance : ERP, logiciel de trésorerie, gestion des dépenses, facturation et paie. Son approche : simplifier ce qui peut l'être, automatiser ce qui est répétitif, et libérer du temps au fondateur pour se concentrer sur la croissance.",
+      en: "At Iter Advisors, Florent works with growth-stage SMEs and startups to structure their finance function, implement the right management tools, and optimise their cash flow. A recognised expert in SaaS finance solutions, particularly Pennylane, he supports clients through tool migration and implementation — reducing closing times and automating accounting reconciliations. His engagements cover 12-month rolling cash flow forecasts, custom financial dashboards, audit preparation, and structuring of accounting and finance processes. Florent specialises in SaaS, e-commerce and B2B services sectors, where he guides founders in understanding and improving their key financial metrics: ARR, MRR, churn, LTV/CAC and free cash flow. He regularly supports fundraising preparation (Seed to Series A), building financial models and data rooms that instil investor confidence. Beyond operational financial management, Florent advises on selecting and integrating the finance technology stack: ERP, treasury software, expense management, invoicing and payroll. His approach: simplify where possible, automate what is repetitive, and free up time for founders to focus on growth.",
+      es: "En Iter Advisors, Florent trabaja con pymes en crecimiento y startups para estructurar su dirección financiera, implementar las herramientas de control adecuadas y optimizar su tesorería. Experto reconocido en soluciones SaaS de finanzas, en particular Pennylane, acompaña a los clientes en la migración e implementación de estas herramientas, reduciendo los plazos de cierre y automatizando las reconciliaciones contables. Sus misiones abarcan previsiones de tesorería a 12 meses, cuadros de mando financieros personalizados, preparación de auditorías y estructuración de procesos contables y financieros. Florent está especializado en los sectores SaaS, e-commerce y servicios B2B, donde guía a los fundadores en la comprensión y mejora de sus métricas financieras clave: ARR, MRR, churn, LTV/CAC y free cash flow. Trabaja regularmente en la preparación para la captación de fondos (Seed a Serie A), construyendo modelos financieros y data rooms que generan confianza en los inversores. Más allá de la gestión financiera operativa, Florent asesora sobre la selección e integración del stack tecnológico financiero: ERP, software de tesorería, gestión de gastos, facturación y nómina.",
+    },
   },
   {
     id: 5,
@@ -150,11 +165,26 @@ const fallbackData: FallbackMemberData[] = [
       en: "Partner Human Capital",
       es: "Partner Capital Humano"
     },
+    h1Roles: {
+      fr: "Partner Capital Humain & DRH externalisé",
+      en: "Partner Human Capital & Fractional CHRO",
+      es: "Partner Capital Humano y DRRHH externalizado",
+    },
     slug: "borith-biv",
     photo: { url: "/images/team/borith-biv.webp" },
     linkedIn: "https://www.linkedin.com/in/borith-biv-linkb/",
     order: 5,
     showInHero: false,
+    bio: {
+      fr: "Borith est Partner Capital Humain chez Iter Advisors. Il accompagne les PME et startups sur la structuration RH, le recrutement des profils financiers et la gestion des équipes en croissance.",
+      en: "Borith is a Human Capital Partner at Iter Advisors. He supports SMEs and startups on HR structuring, financial talent recruitment and people management in high-growth contexts.",
+      es: "Borith es Partner de Capital Humano en Iter Advisors. Acompaña a pymes y startups en la estructuración de RRHH, el reclutamiento de perfiles financieros y la gestión de equipos en crecimiento.",
+    },
+    bioExtended: {
+      fr: "Chez Iter Advisors, Borith pilote la practice Capital Humain, qui accompagne les entreprises en croissance sur leurs enjeux RH les plus critiques : recrutement de profils finance et gestion, structuration de la fonction RH, mise en place de politiques salariales et construction d'équipes performantes. Ses missions s'adressent principalement aux startups post-Series A et aux PME de 20 à 150 salariés qui ont besoin d'une direction des ressources humaines opérationnelle mais ne sont pas encore prêtes à recruter un DRH à temps plein. En tant que DRH externalisé à temps partagé, Borith intervient sur la définition des politiques RH, la rédaction et la structuration des fiches de poste, la mise en conformité avec le droit du travail, la gestion de la paie et la coordination avec les partenaires sociaux. Il est également spécialisé dans le recrutement de profils financiers (DAF, RAF, contrôleurs de gestion, analystes financiers), avec une compréhension fine des compétences techniques et des soft skills recherchés dans ces fonctions. Son approche combine rigueur opérationnelle et vision stratégique : il aide les fondateurs à construire des organisations financières qui peuvent absorber une croissance rapide sans perdre en qualité ni en cohésion d'équipe. Borith parle couramment français et anglais et intervient en France, en Espagne et en Belgique.",
+      en: "At Iter Advisors, Borith leads the Human Capital practice, which supports growth-stage companies on their most critical HR challenges: finance and management talent recruitment, HR function structuring, salary policy design and high-performance team building. His engagements primarily target post-Series A startups and SMEs with 20 to 150 employees that need an operational HR function but are not yet ready to hire a full-time CHRO. As a fractional CHRO, Borith works on defining HR policies, writing and structuring job descriptions, ensuring compliance with labour law, managing payroll coordination and engaging with employee representatives. He also specialises in recruiting finance profiles (CFO, Financial Controller, Management Controller, Financial Analysts), with a deep understanding of the technical skills and soft skills these roles require. His approach combines operational rigour with strategic vision: he helps founders build finance organisations that can absorb rapid growth without losing quality or team cohesion. Borith speaks fluent French and English and works across France, Spain, and Belgium.",
+      es: "En Iter Advisors, Borith lidera la práctica de Capital Humano, que acompaña a las empresas en crecimiento en sus retos de RRHH más críticos: reclutamiento de perfiles de finanzas y gestión, estructuración de la función de RRHH, diseño de políticas salariales y construcción de equipos de alto rendimiento. Sus misiones se dirigen principalmente a startups post-Serie A y pymes de 20 a 150 empleados que necesitan una función de RRHH operativa pero aún no están listas para contratar un director de RRHH a tiempo completo. Como director de RRHH externalizado a tiempo parcial, Borith trabaja en la definición de políticas de RRHH, la redacción y estructuración de descripciones de puestos, el cumplimiento del derecho laboral, la coordinación de nóminas y la gestión de las relaciones laborales. También está especializado en el reclutamiento de perfiles financieros (CFO, RAF, controladores de gestión, analistas financieros). Borith habla con fluidez francés e inglés e interviene en Francia, España y Bélgica.",
+    },
   },
 
   // === Finance - CFO ===
@@ -169,6 +199,16 @@ const fallbackData: FallbackMemberData[] = [
     linkedIn: "https://www.linkedin.com/in/deisyarias/",
     order: 6,
     showInHero: false,
+    bio: {
+      fr: "Deisy est CFO chez Iter Advisors. Elle accompagne des startups et PME sur le pilotage financier, la gestion de trésorerie et la préparation aux levées de fonds.",
+      en: "Deisy is a CFO at Iter Advisors, supporting startups and SMEs on financial management, cash flow and fundraising preparation.",
+      es: "Deisy es CFO en Iter Advisors y acompaña a startups y pymes en control financiero, gestión de tesorería y preparación para rondas de inversión.",
+    },
+    bioExtended: {
+      fr: "Chez Iter Advisors, Deisy intervient auprès de startups et PME en croissance pour structurer leur pilotage financier et les préparer aux étapes clés de leur développement. Ses missions couvrent la mise en place de tableaux de bord financiers, la construction de prévisionnels de trésorerie, l'analyse des marges et la préparation des dossiers d'investissement. Elle est spécialisée dans les secteurs SaaS et tech, où elle accompagne les fondateurs sur les métriques financières propres à ces modèles (ARR, CAC, LTV, unit economics). Deisy intervient également sur la structuration comptable et l'optimisation des process financiers, en s'appuyant sur les meilleurs outils du marché. Son approche pragmatique et orientée résultats lui permet d'être rapidement opérationnelle et d'apporter de la valeur dès les premières semaines de mission. Elle parle couramment français, espagnol et anglais.",
+      en: "At Iter Advisors, Deisy works with growth-stage startups and SMEs to structure their financial management and prepare them for key milestones. Her engagements cover financial dashboard setup, cash flow forecasting, margin analysis and investor file preparation. She specialises in SaaS and tech sectors, guiding founders on financial metrics specific to these models (ARR, CAC, LTV, unit economics). Deisy also works on accounting structuring and financial process optimisation, leveraging best-in-class tools. Her pragmatic, results-oriented approach allows her to become operational quickly and deliver value from the first weeks of an engagement. She speaks fluent French, Spanish and English.",
+      es: "En Iter Advisors, Deisy trabaja con startups y pymes en crecimiento para estructurar su control financiero y prepararlas para hitos clave. Sus misiones incluyen implementación de cuadros de mando financieros, previsiones de tesorería, análisis de márgenes y preparación de documentación para inversores. Está especializada en los sectores SaaS y tech, donde guía a los fundadores en las métricas financieras propias de estos modelos (ARR, CAC, LTV, unit economics). Habla con fluidez francés, español e inglés.",
+    },
   },
   {
     id: 7,
@@ -181,6 +221,16 @@ const fallbackData: FallbackMemberData[] = [
     linkedIn: "https://www.linkedin.com/in/spreel/",
     order: 7,
     showInHero: false,
+    bio: {
+      fr: "Sébastien est CFO chez Iter Advisors. Il accompagne PME et ETI sur la structuration financière, le contrôle de gestion et les opérations de M&A.",
+      en: "Sébastien is a CFO at Iter Advisors, supporting SMEs and mid-caps on financial structuring, management control and M&A transactions.",
+      es: "Sébastien es CFO en Iter Advisors y acompaña a pymes y medianas empresas en estructuración financiera, control de gestión y operaciones de M&A.",
+    },
+    bioExtended: {
+      fr: "Chez Iter Advisors, Sébastien intervient auprès de PME et ETI pour structurer leur direction financière, optimiser leur contrôle de gestion et les accompagner dans leurs opérations de croissance externe. Ses missions couvrent la mise en place de reporting de gestion, la construction de modèles financiers pour des opérations de M&A, l'analyse de la rentabilité par activité et la préparation des comités de direction. Il est spécialisé dans les secteurs industriels, de services et de distribution, où il apporte une vision financière structurée au service des décisions opérationnelles. Sébastien intervient également sur les due diligences financières (vendeur ou acquéreur), la valorisation d'entreprises et la négociation avec les partenaires financiers. Son expérience en finance d'entreprise lui permet d'identifier rapidement les leviers de performance et de les traduire en actions concrètes pour les dirigeants. Il parle couramment français et anglais.",
+      en: "At Iter Advisors, Sébastien works with SMEs and mid-caps to structure their finance function, optimise management control and support their external growth transactions. His engagements cover management reporting setup, financial model building for M&A transactions, profitability analysis by business line and board preparation. He specialises in industrial, services and distribution sectors, bringing structured financial vision to operational decisions. Sébastien also works on financial due diligence (sell-side and buy-side), business valuation and negotiations with financial partners. His corporate finance experience allows him to quickly identify performance levers and translate them into concrete actions for management. He speaks fluent French and English.",
+      es: "En Iter Advisors, Sébastien trabaja con pymes y medianas empresas para estructurar su dirección financiera, optimizar el control de gestión y acompañarlas en sus operaciones de crecimiento externo. Sus misiones cubren la implementación de reporting de gestión, la construcción de modelos financieros para operaciones de M&A, el análisis de rentabilidad por línea de negocio y la preparación de comités de dirección. Está especializado en los sectores industrial, de servicios y distribución. Habla con fluidez francés e inglés.",
+    },
   },
   {
     id: 8,
@@ -197,6 +247,16 @@ const fallbackData: FallbackMemberData[] = [
     linkedIn: "https://www.linkedin.com/in/tom-jaufre-65904175/",
     order: 8,
     showInHero: false,
+    bio: {
+      fr: "Tom est CFO & M&A chez Iter Advisors. Spécialiste des opérations de cession-acquisition, il accompagne PME et scale-ups sur la structuration financière et les transactions de croissance externe.",
+      en: "Tom is a CFO & M&A specialist at Iter Advisors, supporting SMEs and scale-ups on financial structuring and external growth transactions.",
+      es: "Tom es CFO y M&A en Iter Advisors. Especialista en operaciones de compraventa, acompaña a pymes y scale-ups en estructuración financiera y transacciones de crecimiento externo.",
+    },
+    bioExtended: {
+      fr: "Chez Iter Advisors, Tom est le spécialiste des opérations M&A. Il intervient sur l'ensemble du cycle d'une transaction : de l'analyse stratégique initiale à la clôture finale, en passant par la due diligence financière, la valorisation et la négociation des termes. Ses missions couvrent aussi bien le conseil aux cédants (structuration de la cession, préparation de la data room, accompagnement des négociations) que l'accompagnement des acquéreurs (due diligence buy-side, analyse des synergies, modélisation du business plan post-acquisition). Au-delà des opérations M&A, Tom assure des missions de CFO externalisé pour des PME en croissance : reporting de gestion, pilotage de trésorerie, préparation aux levées de fonds et structuration des process financiers. Il est spécialisé dans les secteurs tech, services et industrie légère. Son approche combine rigueur financière et sens des affaires, avec une capacité à comprendre rapidement les enjeux spécifiques de chaque entreprise. Tom parle couramment français et anglais.",
+      en: "At Iter Advisors, Tom is the M&A specialist. He is involved throughout the transaction cycle: from initial strategic analysis to final closing, through financial due diligence, valuation and term negotiation. His engagements cover vendor advisory (sale structuring, data room preparation, negotiation support) and buyer advisory (buy-side due diligence, synergy analysis, post-acquisition business plan modelling). Beyond M&A transactions, Tom provides fractional CFO services to growth-stage SMEs: management reporting, cash flow management, fundraising preparation and financial process structuring. He specialises in tech, services and light manufacturing sectors. His approach combines financial rigour with business acumen, with an ability to quickly grasp each company's specific challenges. Tom speaks fluent French and English.",
+      es: "En Iter Advisors, Tom es el especialista en M&A. Interviene en todo el ciclo de una transacción: desde el análisis estratégico inicial hasta el cierre final, pasando por la due diligence financiera, la valoración y la negociación de términos. Sus misiones cubren tanto el asesoramiento al vendedor como al comprador. Más allá de las operaciones de M&A, Tom presta servicios de CFO externalizado para pymes en crecimiento: reporting de gestión, gestión de tesorería y preparación de rondas de financiación. Habla con fluidez francés e inglés.",
+    },
   },
   {
     id: 9,
@@ -209,6 +269,16 @@ const fallbackData: FallbackMemberData[] = [
     linkedIn: "https://www.linkedin.com/in/jessica-barnicaud/",
     order: 9,
     showInHero: false,
+    bio: {
+      fr: "Jessica est CFO chez Iter Advisors. Elle accompagne startups et PME sur le pilotage financier, la structuration des process comptables et la préparation aux levées de fonds.",
+      en: "Jessica is a CFO at Iter Advisors, supporting startups and SMEs on financial management, accounting process structuring and fundraising preparation.",
+      es: "Jessica es CFO en Iter Advisors y acompaña a startups y pymes en control financiero, estructuración de procesos contables y preparación para rondas de inversión.",
+    },
+    bioExtended: {
+      fr: "Chez Iter Advisors, Jessica accompagne startups et PME dans la structuration de leur fonction financière et la mise en place d'outils de pilotage adaptés à leur stade de développement. Ses missions couvrent la mise en place du reporting financier mensuel, la construction de prévisionnels de trésorerie, l'analyse des marges et des coûts, la sélection et l'implémentation d'outils comptables (Pennylane, QuickBooks, Xero) et la préparation des dossiers investisseurs. Elle est spécialisée dans les entreprises SaaS et tech à forte croissance, où elle aide les fondateurs à maîtriser leurs métriques financières et à construire une direction financière solide avant d'accélérer. Jessica travaille également sur la mise en conformité fiscale et sociale, la coordination avec les experts-comptables et la préparation aux due diligences. Son approche pédagogique et opérationnelle lui permet d'accompagner aussi bien des fondateurs non financiers que des équipes finance en cours de structuration. Elle parle couramment français et anglais.",
+      en: "At Iter Advisors, Jessica supports startups and SMEs in structuring their finance function and implementing management tools suited to their stage of development. Her engagements cover monthly financial reporting, cash flow forecasting, margin and cost analysis, selection and implementation of accounting tools (Pennylane, QuickBooks, Xero) and investor file preparation. She specialises in high-growth SaaS and tech companies, where she helps founders master their financial metrics and build a solid finance function before accelerating. Jessica also works on tax and payroll compliance, coordination with external accountants and due diligence preparation. Her educational and operational approach allows her to work equally well with non-financial founders and finance teams in the process of structuring. She speaks fluent French and English.",
+      es: "En Iter Advisors, Jessica acompaña a startups y pymes en la estructuración de su función financiera y la implementación de herramientas de control adaptadas a su etapa de desarrollo. Sus misiones cubren reporting financiero mensual, previsiones de tesorería, análisis de márgenes y costes, selección e implementación de herramientas contables y preparación de documentación para inversores. Está especializada en empresas SaaS y tech de alto crecimiento. Habla con fluidez francés e inglés.",
+    },
   },
   {
     id: 10,
@@ -225,6 +295,16 @@ const fallbackData: FallbackMemberData[] = [
     linkedIn: "https://www.linkedin.com/in/benjamin-carlot-fractional-cfo-43303120/",
     order: 10,
     showInHero: false,
+    bio: {
+      fr: "Benjamin est Head of Finance & Controlling chez Iter Advisors. Il accompagne PME et scale-ups sur le contrôle de gestion, l'analyse de performance et la structuration des process finance.",
+      en: "Benjamin is Head of Finance & Controlling at Iter Advisors, supporting SMEs and scale-ups on management control, performance analysis and finance process structuring.",
+      es: "Benjamin es Jefe de Finanzas y Control en Iter Advisors y acompaña a pymes y scale-ups en control de gestión, análisis de rendimiento y estructuración de procesos financieros.",
+    },
+    bioExtended: {
+      fr: "Chez Iter Advisors, Benjamin pilote les missions de contrôle de gestion externalisé, accompagnant des PME et scale-ups dans la mise en place de systèmes de pilotage de la performance adaptés à leurs enjeux. Ses missions couvrent la construction de plans comptables analytiques, la mise en place d'outils de Business Intelligence (Power BI, Metabase, Google Looker), le suivi des KPIs par activité et la production de reportings mensuels et trimestriels à destination des équipes dirigeantes et des investisseurs. Benjamin est spécialisé dans les entreprises multi-entités et multi-pays, où la consolidation des données financières et la comparabilité des performances constituent un enjeu central. Il travaille également sur la structuration des processus budgétaires (budget annuel, forecasts glissants, analyse des écarts) et la mise en conformité des process de clôture. Son approche est systématique et orientée données : il construit des architectures financières qui permettent une prise de décision rapide et éclairée. Benjamin est certifié CFO à temps partagé et intervient principalement en France et en Belgique. Il parle couramment français et anglais.",
+      en: "At Iter Advisors, Benjamin leads outsourced management control engagements, supporting SMEs and scale-ups in building performance management systems tailored to their needs. His work covers analytical chart of accounts structuring, Business Intelligence tool implementation (Power BI, Metabase, Google Looker), KPI tracking by business line and production of monthly and quarterly reports for management teams and investors. Benjamin specialises in multi-entity and multi-country companies, where financial data consolidation and performance comparability are central challenges. He also works on budgeting process structuring (annual budgets, rolling forecasts, variance analysis) and closing process optimisation. His approach is systematic and data-driven: he builds financial architectures that enable fast, informed decision-making. Benjamin holds a fractional CFO certification and works primarily in France and Belgium. He speaks fluent French and English.",
+      es: "En Iter Advisors, Benjamin lidera los proyectos de control de gestión externalizado, apoyando a pymes y scale-ups en la construcción de sistemas de gestión del rendimiento. Sus misiones cubren estructuración de planes de cuentas analíticos, implementación de herramientas de Business Intelligence (Power BI, Metabase), seguimiento de KPIs y producción de informes mensuales y trimestrales. Está especializado en empresas multi-entidad y multi-país. Habla con fluidez francés e inglés.",
+    },
   },
   {
     id: 11,
@@ -241,6 +321,16 @@ const fallbackData: FallbackMemberData[] = [
     linkedIn: "https://www.linkedin.com/in/christophe-hoarau-2bb8b8ab/",
     order: 11,
     showInHero: false,
+    bio: {
+      fr: "Christophe est CFO & Data Officer chez Iter Advisors. Il combine expertise financière et maîtrise de la data pour accompagner PME et scale-ups sur le pilotage analytique et la Business Intelligence.",
+      en: "Christophe is CFO & Data Officer at Iter Advisors, combining financial expertise and data mastery to support SMEs and scale-ups on analytical management and Business Intelligence.",
+      es: "Christophe es CFO y Data Officer en Iter Advisors. Combina experiencia financiera y dominio de los datos para acompañar a pymes y scale-ups en el pilotaje analítico y la Business Intelligence.",
+    },
+    bioExtended: {
+      fr: "Chez Iter Advisors, Christophe incarne la convergence entre la finance et la data. Il accompagne PME et scale-ups dans la mise en place de systèmes de pilotage financier modernes, combinant les outils CFO traditionnels avec des solutions de Business Intelligence et d'automatisation de la donnée. Ses missions couvrent la construction d'architectures de données financières, l'implémentation de dashboards temps réel (Power BI, Tableau, Metabase), la mise en place de pipelines de données automatisés et la définition d'indicateurs financiers et opérationnels clés. Christophe intervient également comme CFO externalisé classique, assurant la trésorerie, le reporting de gestion et la préparation aux levées de fonds — mais avec une dimension data systématiquement intégrée qui accélère la prise de décision. Il est spécialisé dans les entreprises tech et marketplace, où la volumétrie des données transactionnelles est importante et où la réconciliation entre les métriques produit et les données financières constitue un enjeu central. Son approche : construire un système de mesure de la performance qui réconcilie la vision financière, la vision opérationnelle et la vision produit dans un tableau de bord unique. Christophe parle couramment français et anglais.",
+      en: "At Iter Advisors, Christophe embodies the convergence of finance and data. He supports SMEs and scale-ups in building modern financial management systems, combining traditional CFO tools with Business Intelligence solutions and data automation. His work covers financial data architecture design, real-time dashboard implementation (Power BI, Tableau, Metabase), automated data pipeline setup and definition of key financial and operational indicators. Christophe also acts as a traditional fractional CFO, handling cash management, management reporting and fundraising preparation — but with a data dimension systematically integrated to accelerate decision-making. He specialises in tech and marketplace companies, where transactional data volumes are significant and reconciling product metrics with financial data is a central challenge. His approach: build a performance measurement system that reconciles the financial, operational and product view in a single dashboard. Christophe speaks fluent French and English.",
+      es: "En Iter Advisors, Christophe encarna la convergencia entre las finanzas y los datos. Apoya a pymes y scale-ups en la construcción de sistemas modernos de gestión financiera, combinando herramientas CFO tradicionales con soluciones de Business Intelligence y automatización de datos. Sus misiones cubren diseño de arquitecturas de datos financieros, implementación de dashboards en tiempo real (Power BI, Tableau, Metabase) y definición de indicadores financieros y operativos clave. También actúa como CFO externalizado clásico, gestionando tesorería, reporting y preparación de rondas de financiación. Habla con fluidez francés e inglés.",
+    },
   },
 
   // === Analysts ===

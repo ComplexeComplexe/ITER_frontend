@@ -22,9 +22,9 @@ const breadcrumbsByLocale = {
   },
   es: {
     resourcesLabel: "Recursos",
-    resourcesHref: "/es/ressources",
+    resourcesHref: "/es/recursos",
     fichesLabel: "Perfiles profesionales",
-    fichesHref: "/es/ressources/fiche-metier",
+    fichesHref: "/es/recursos/fiche-metier",
   },
 } as const;
 

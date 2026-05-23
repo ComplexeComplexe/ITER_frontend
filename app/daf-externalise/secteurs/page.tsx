@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-secteurs-page",
     locale: "fr",
     path: "/daf-externalise/secteurs",
-    localizedPaths: { fr: "/daf-externalise/secteurs", en: "/en/fractional-cfo", es: "/externalizacion-daf/sectores" },
+    localizedPaths: { fr: "/daf-externalise/secteurs", en: "/en/fractional-cfo", es: "/externalizacion-daf" },
     fallbackTitle: "DAF Externalisé par Secteur d'Activité | Iter Advisors",
     fallbackDescription: "Iter Advisors propose des DAF externalisés spécialisés par secteur : SaaS, e-commerce, industrie, fintech, santé. Découvrez notre expertise sectorielle.",
   });

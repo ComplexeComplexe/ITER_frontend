@@ -306,7 +306,7 @@ const pageContent: Record<Locale, {
   },
   es: {
     resourcesLabel: "Recursos",
-    resourcesHref: "/es/ressources",
+    resourcesHref: "/es/recursos",
     breadcrumbLabel: "Casos prácticos",
     h1: "Nuestros casos prácticos",
     intro: "Descubra cómo Iter Advisors acompaña a sus clientes en el día a día. Testimonios y experiencias de directivos que confían en nosotros.",

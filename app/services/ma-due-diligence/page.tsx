@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import MaDueDiligencePage from "@/components/pages/MaDueDiligencePage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
 import { getMaDueDiligenceContent } from "@/lib/content/ma-due-diligence";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -15,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("fr");
+  const cmsNavigation = undefined;
   const content = getMaDueDiligenceContent("fr");
   return <MaDueDiligencePage locale="fr" content={content} cmsNavigation={cmsNavigation} />;
 }

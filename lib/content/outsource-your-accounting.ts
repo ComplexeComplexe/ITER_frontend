@@ -28,7 +28,7 @@ export interface OutsourceYourAccountingContent {
 const content: Record<Locale, OutsourceYourAccountingContent> = {
   fr: {
     meta: {
-      title: "Comptabilité externalisée - Services expert-comptable | Iter Advisors",
+      title: "Comptabilité externalisée PME et Startups | Iter Advisors",
       description:
         "Externalisez votre comptabilité : tenue de livres, déclarations fiscales, clôture annuelle. Experts certifiés, Pennylane, Agicap. Démarrage en 2 semaines.",
     },
@@ -195,7 +195,7 @@ const content: Record<Locale, OutsourceYourAccountingContent> = {
   },
   es: {
     meta: {
-      title: "Contabilidad externalizada para startups y PMEs | Iter Advisors",
+      title: "Contabilidad externalizada startups y PMEs | Iter Advisors",
       description:
         "Externaliza tu contabilidad: teneduría de libros, declaraciones fiscales, cierre anual. Expertos certificados, Pennylane, Agicap. Comienza en 2 semanas.",
     },

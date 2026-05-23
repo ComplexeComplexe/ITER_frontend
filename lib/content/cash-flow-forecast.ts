@@ -28,7 +28,7 @@ export interface CashFlowForecastContent {
 const content: Record<Locale, CashFlowForecastContent> = {
   fr: {
     meta: {
-      title: "Flux de trésorerie et prévisionnel - Guide complet | Iter Advisors",
+      title: "Flux de trésorerie et prévisionnel | Iter Advisors",
       description: "Maîtrisez votre flux de trésorerie avec notre guide complet. Modèles 13 semaines, templates et bonnes pratiques pour sécuriser votre runway.",
     },
     hero: {

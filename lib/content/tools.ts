@@ -33,7 +33,7 @@ export function getToolsContent(locale: Locale): ToolsPageContent {
 const toolsContent: Record<Locale, ToolsPageContent> = {
   fr: {
     meta: {
-      title: "Nos outils - Stack technologique DAF externalisé | Iter Advisors",
+      title: "Nos outils — Stack DAF externalisé | Iter Advisors",
       description:
         "Découvrez les outils utilisés par nos DAF externalisés : comptabilité, trésorerie, reporting, ERP. Stack technologique éprouvée sur +85 missions.",
     },
@@ -197,7 +197,7 @@ const toolsContent: Record<Locale, ToolsPageContent> = {
   },
   es: {
     meta: {
-      title: "Nuestras herramientas - Stack tecnológico CFO externalizado | Iter Advisors",
+      title: "Nuestras herramientas — Stack CFO | Iter Advisors",
       description:
         "Descubra las herramientas y software utilizados por nuestros CFOs externalizados: contabilidad, tesorería, reporting, ERP, CRM y colaboración.",
     },

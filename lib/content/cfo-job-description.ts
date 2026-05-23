@@ -41,7 +41,7 @@ export interface CFOJobDescriptionContent {
 const content: Record<Locale, CFOJobDescriptionContent> = {
   fr: {
     meta: {
-      title: "Responsable Financier (DAF) : Rôle, Responsabilités et Compétences | Iter Advisors",
+      title: "Fiche de poste DAF : Rôle et Compétences | Iter Advisors",
       description:
         "Guide complet du rôle de DAF (CFO) : responsabilités, qualifications requises, salaire. Includes full-time vs fractional CFO comparison.",
     },
@@ -145,7 +145,7 @@ const content: Record<Locale, CFOJobDescriptionContent> = {
   },
   en: {
     meta: {
-      title: "CFO Job Description: Roles, Responsibilities & Qualifications | Iter Advisors",
+      title: "CFO Job Description: Roles & Qualifications | Iter Advisors",
       description:
         "Complete guide to CFO role: responsibilities, required qualifications, salary expectations. Includes full-time vs fractional CFO comparison.",
     },
@@ -249,7 +249,7 @@ const content: Record<Locale, CFOJobDescriptionContent> = {
   },
   es: {
     meta: {
-      title: "Descripción de Puesto CFO: Funciones, Responsabilidades y Competencias | Iter Advisors",
+      title: "Descripción de Puesto CFO — Funciones | Iter Advisors",
       description:
         "Guía completa del Director Financiero (CFO): responsabilidades, competencias y salario. Comparación CFO a tiempo completo vs CFO externalizado.",
     },

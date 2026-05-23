@@ -339,7 +339,7 @@ export const drhContent: Record<Locale, DrhContent> = {
 
   en: {
     meta: {
-      title: "Outsourced HR | Fractional HR Director | SME & Startup | Iter Advisors",
+      title: "Outsourced HR | Fractional HR Director | Iter Advisors",
       description:
         "HR consulting: outsourced HR, fractional HR director. Structure, recruitment, payroll, compliance and culture. Iter Advisors.",
     },
@@ -529,7 +529,7 @@ export const drhContent: Record<Locale, DrhContent> = {
 
   es: {
     meta: {
-      title: "RRHH externalizado | Dirección de personas | PME & Startup | Iter Advisors",
+      title: "RRHH externalizado | Dirección de personas | Iter Advisors",
       description:
         "Consultoría RRHH externalizado: director de RRHH a tiempo compartido. Reclutamiento, nómina, cumplimiento y cultura. Iter Advisors, +85 empresas.",
     },

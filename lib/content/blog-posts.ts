@@ -27,7 +27,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
   fr: {
     "flux-de-tresorerie": {
       meta: {
-        title: "Flux de trésorerie : définition et importance | Iter Advisors",
+        title: "Flux de trésorerie — Définition et Calcul | Iter Advisors",
         description: "Comprendre les flux de trésorerie : définition, calcul et importance pour la gestion financière de votre entreprise. Guide complet par Iter Advisors.",
       },
       breadcrumbs: {
@@ -74,7 +74,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "la-modernisation-du-role-de-cfo": {
       meta: {
-        title: "La modernisation du rôle de CFO en 2026 : nouvelles compétences | Iter Advisors",
+        title: "Modernisation du rôle de CFO en 2026 | Iter Advisors",
         description: "Comment le rôle du CFO évolue avec la digitalisation et l'IA. Découvrez les nouvelles compétences et missions du directeur financier moderne.",
       },
       breadcrumbs: {
@@ -94,7 +94,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "cout-daf-externalise-tarifs-prix-2026": {
       meta: {
-        title: "DAF externalisé tarif 2026 : prix, coûts et grille | Iter Advisors",
+        title: "Tarifs DAF externalisé 2026 : grille de prix | Iter Advisors",
         description: "Découvrez les tarifs d'un DAF externalisé en 2026 : TJM, forfaits mensuels et grille de prix. Économisez 50 à 70 % vs un DAF salarié. Diagnostic gratuit.",
       },
       breadcrumbs: {
@@ -747,7 +747,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "checklist-due-diligence-levee-de-fonds": {
       meta: {
-        title: "Due diligence levee de fonds : checklist 2026 | Iter Advisors",
+        title: "Due diligence levée de fonds : checklist | Iter Advisors",
         description: "Checklist complete de due diligence financiere pour preparer votre levee de fonds. 40 documents essentiels, data room et erreurs a eviter.",
       },
       breadcrumbs: {
@@ -2048,7 +2048,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "stack-financier-saas-series-a": {
       meta: {
-        title: "Stack financier idéal pour une SaaS en Series A (budget &lt; 1 500 €/mois) | Iter Advisors",
+        title: "Stack financier pour SaaS Series A | Iter Advisors",
         description: "Stack financier Series A : comptabilité, trésorerie, dépenses, paie, banque. Recommandé après 40+ déploiements. Budget total et comparatif détaillé.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2670,7 +2670,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // Pilier 5 — RH & Paie (2 articles)
     "drh-externalise-quand-et-pourquoi": {
       meta: {
-        title: "DRH externalisé : quand et pourquoi externaliser les RH ? | Iter Advisors",
+        title: "DRH externalisé : quand externaliser les RH | Iter Advisors",
         description: "À partir de 10 salariés, pendant une hyper-croissance ou en cas de litige, pourquoi externaliser le DRH plutôt que recruter. Coût, périmètre, ROI.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -3002,7 +3002,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
   en: {
     "essentiels-outils-tech-finance": {
       meta: {
-        title: "Essential Financial Tech Tools for CFOs & SMEs | Iter Advisors",
+        title: "Financial Tech Tools for CFOs & SMEs | Iter Advisors",
         description: "Discover the essential technology tools for modern finance departments. Expert guide by Iter Advisors.",
       },
       breadcrumbs: {
@@ -3277,7 +3277,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "ia-et-automatisation-des-taches-repetitives-du-departement-finance": {
       meta: {
-        title: "IA y automatización en el departamento de Finanzas | Iter Advisors",
+        title: "IA y automatización en Finanzas | Iter Advisors",
         description: "Cómo la IA y la automatización están transformando las tareas repetitivas en los departamentos financieros. Análisis experto de Iter Advisors.",
       },
       breadcrumbs: {
@@ -3297,7 +3297,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "organiser-sa-direction-financiere": {
       meta: {
-        title: "Organizar su departamento financiero: guía para pymes | Iter Advisors",
+        title: "Organizar el departamento financiero | Iter Advisors",
         description: "Cómo estructurar y organizar su departamento financiero para un rendimiento óptimo. Guía experta de Iter Advisors.",
       },
       breadcrumbs: {

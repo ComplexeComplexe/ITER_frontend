@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.iteradvisors.com/ressources/blog/daf-externalise-vs-daf-salarie",
   },
   openGraph: {
-    title: "DAF externalisé vs DAF salarié | Comparaison complète | Iter Advisors",
+    title: "DAF externalisé vs DAF salarié | Iter Advisors",
     description: "Comparaison détaillée : DAF externalisé vs DAF salarié. Coûts, avantages, inconvénients et matrice de décision.",
     type: "article",
   },

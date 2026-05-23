@@ -9,7 +9,7 @@ import { StrapiTestimonial, strapiMediaUrl } from "@/lib/strapi";
 const labels: Record<Locale, { resources: string; resourcesHref: string; testimonials: string; testimonialsHref: string; challenge: string; solution: string; results: string; industry: string; teamSize: string; revenue: string; engagement: string }> = {
   fr: { resources: "Ressources", resourcesHref: "/ressources", testimonials: "Cas clients", testimonialsHref: "/ressources/testimonials", challenge: "Le défi", solution: "Notre solution", results: "Résultats", industry: "Secteur", teamSize: "Équipe", revenue: "CA initial", engagement: "Type de mission" },
   en: { resources: "Resources", resourcesHref: "/en/ressources", testimonials: "Case studies", testimonialsHref: "/en/ressources/testimonials", challenge: "The challenge", solution: "Our solution", results: "Results", industry: "Industry", teamSize: "Team size", revenue: "Initial revenue", engagement: "Engagement type" },
-  es: { resources: "Recursos", resourcesHref: "/es/ressources", testimonials: "Casos prácticos", testimonialsHref: "/es/ressources/testimonials", challenge: "El desafío", solution: "Nuestra solución", results: "Resultados", industry: "Sector", teamSize: "Equipo", revenue: "Facturación inicial", engagement: "Tipo de misión" },
+  es: { resources: "Recursos", resourcesHref: "/es/recursos", testimonials: "Casos prácticos", testimonialsHref: "/es/recursos/testimonials", challenge: "El desafío", solution: "Nuestra solución", results: "Resultados", industry: "Sector", teamSize: "Equipo", revenue: "Facturación inicial", engagement: "Tipo de misión" },
 };
 
 export default function StrapiTestimonialPage({ locale, testimonial }: { locale: Locale; testimonial: StrapiTestimonial }) {

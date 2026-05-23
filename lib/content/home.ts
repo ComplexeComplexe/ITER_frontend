@@ -373,7 +373,7 @@ export const homeContent = {
   },
   es: {
     meta: {
-      title: "Iter Advisors | Director Financiero Externo, Recaudación de Fondos y Fusiones y Adquisiciones",
+      title: "Iter Advisors | CFO Externo, Fundraising y M&A",
       description:
         "Iter Advisors, vuestro CFO externo. Apoyo experto en gestión financiera externalizada, financiación y operaciones de fusiones y adquisiciones.",
     },
