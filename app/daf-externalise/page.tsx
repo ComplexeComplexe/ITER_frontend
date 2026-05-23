@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-externalise-page",
     locale: "fr",
     path: "/daf-externalise",
-    localizedPaths: { fr: "/daf-externalise", en: "/en/fractional-cfo", es: "/externalizacion-daf" },
+    localizedPaths: { fr: "/daf-externalise", en: "/en/fractional-cfo", es: "/es/externalizacion-daf" },
     fallbackTitle: t.meta.title,
     fallbackDescription: t.meta.description,
   });
