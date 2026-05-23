@@ -125,7 +125,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
     breadcrumbLabel: "Resources",
     h1: "Resources",
     intro:
-      "Browse all the content created by our CFOs: articles, thematic sheets, testimonials, downloadable templates and more. Our goal: to give you the keys to manage your financial growth.",
+      "Browse all the content created by our CFOs: articles, thematic sheets, testimonials, downloadable templates and more. Our goal: to give you the keys to manage your financial growth and make informed decisions at every stage of your company's development. Our library covers fractional CFO and finance management, fundraising, accounting, cash flow, M&A, HR outsourcing, and the tools modern finance teams rely on. Whether you are preparing a fundraise, restructuring your finance function, or benchmarking outsourced CFO pricing, our resources are grounded in real client experience across France, Spain, and Belgium. Every guide is written by a practising CFO, reviewed for accuracy, and updated as regulations evolve.",
     categories: [
       {
         heading: "Case studies",

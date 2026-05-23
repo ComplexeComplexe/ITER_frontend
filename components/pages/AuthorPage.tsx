@@ -18,7 +18,7 @@ interface AuthorPageArticle {
 
 interface AuthorPageProps {
   locale: Locale;
-  member: StrapiTeamMember & { bio: string; h1Role?: string };
+  member: StrapiTeamMember & { bio: string; h1Role?: string; bioExtended?: string };
   articles: AuthorPageArticle[];
   cmsNavigation?: CmsNavItem[];
 }
@@ -91,6 +91,7 @@ export default function AuthorPage({
   articles,
   cmsNavigation,
 }: AuthorPageProps) {
+  const { bioExtended } = member;
   const t = STRINGS[locale];
 
   // Person schema (E-E-A-T / GEO signal). The Person is identified by
@@ -157,9 +158,14 @@ export default function AuthorPage({
               <p className="text-lg text-iter-violet font-medium mb-6">
                 {member.role}
               </p>
-              <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-6">
+              <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-4">
                 {member.bio}
               </p>
+              {bioExtended && (
+                <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-6">
+                  {bioExtended}
+                </p>
+              )}
               {member.linkedIn && (
                 <a
                   href={member.linkedIn}

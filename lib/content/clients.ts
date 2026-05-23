@@ -181,7 +181,7 @@ const contentEn: ClientsPageContent = {
   sectorsHeading: "Sectors covered",
   ctaHeading: "Want to join these companies?",
   ctaParagraph:
-    "We support tech startups, scale-ups and SMEs on cash management, reporting, fundraising, M&A and management control. Let's talk about your project.",
+    "We support tech startups, scale-ups and SMEs on cash management, reporting, fundraising, M&A, management control, and HR outsourcing. Our fractional CFOs have supported over 85 companies across France, Spain, and Belgium — from pre-seed to post-Series B. Let's talk about your project.",
   ctaButton: "Book a call",
 };
 

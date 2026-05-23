@@ -86,7 +86,7 @@ const content: Record<
     breadcrumbLabel: "Blog",
     h1: "The Iter Advisors journal",
     intro:
-      "Guides, comparisons and field notes for founders and CFOs. Written by our team, updated every month.",
+      "Guides, comparisons and field notes for founders and CFOs. Written by our team of practising fractional CFOs, updated every month. Topics include outsourced CFO models, cash flow management, fundraising strategy, due diligence preparation, financial tool selection, SaaS KPIs, and HR outsourcing — all grounded in real client situations across France, Spain, and Belgium.",
     discover: "Read the article",
     discoverByKind: {
       guide: "Read the guide",
