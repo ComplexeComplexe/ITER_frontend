@@ -19,5 +19,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");
-  return <DafSubPage locale="fr" content={content} cmsNavigation={cmsNavigation} />;
+  return (
+    <DafSubPage
+      locale="fr"
+      content={content}
+      cmsNavigation={cmsNavigation}
+      heroImage={{
+        src: "/images/stock/daf-metier-equipe.jpg",
+        alt: "Directeur Administratif et Financier en train de présenter la stratégie financière à son équipe — rôle et missions du DAF",
+      }}
+    />
+  );
 }
