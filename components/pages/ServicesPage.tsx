@@ -55,11 +55,17 @@ export default function ServicesPage({
             </div>
             <div className="relative hidden lg:block">
               <Image
-                src="/images/bg/bg-hero-3d.webp"
-                alt={locale === "fr" ? "Services Iter Advisors" : "Iter Advisors Services"}
+                src="/images/stock/services-hero.png"
+                alt={
+                  locale === "fr"
+                    ? "Services Iter Advisors — DAF et DRH externalisés travaillant sur les tableaux de bord financiers et RH"
+                    : locale === "en"
+                      ? "Iter Advisors services — fractional CFO and HR Director working on financial and HR dashboards"
+                      : "Servicios Iter Advisors — DAF y DRH externalizados trabajando en cuadros de mando financieros y de RRHH"
+                }
                 width={560}
                 height={400}
-                className="rounded-2xl object-contain"
+                className="rounded-2xl object-cover"
                 loading="lazy"
               />
             </div>

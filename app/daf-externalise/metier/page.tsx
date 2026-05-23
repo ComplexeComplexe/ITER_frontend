@@ -19,5 +19,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");
-  return <DafSubPage locale="fr" content={content} cmsNavigation={cmsNavigation} />;
+  return (
+    <DafSubPage
+      locale="fr"
+      content={content}
+      cmsNavigation={cmsNavigation}
+      heroImage={{
+        src: "/images/stock/metier-daf.png",
+        alt: "Fiche métier DAF — directeur administratif et financier consultant ses tableaux de bord sur tablette",
+      }}
+    />
+  );
 }

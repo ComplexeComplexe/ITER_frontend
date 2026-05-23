@@ -215,13 +215,13 @@ export default function DafPage({
             </div>
             <div className="relative hidden lg:flex items-center justify-center lg:sticky lg:top-28">
               <Image
-                src="/images/illustrations/cfo-data-dashboards.svg"
+                src="/images/stock/daf-hero.png"
                 alt={
                   locale === "fr"
-                    ? "DAF externalisé d'Iter Advisors devant ses tableaux de bord financiers : pilotage en temps réel de la trésorerie et de la performance"
+                    ? "DAF externalisé Iter Advisors — directeur administratif et financier analysant les tableaux de bord de performance"
                     : locale === "en"
-                    ? "Iter Advisors fractional CFO in front of financial dashboards: real-time cash and performance monitoring"
-                    : "CFO externalizado de Iter Advisors frente a sus cuadros de mando: pilotaje en tiempo real de tesorería y rendimiento"
+                    ? "Iter Advisors fractional CFO reviewing financial performance dashboards"
+                    : "CFO externalizado de Iter Advisors revisando cuadros de mando financieros"
                 }
                 width={560}
                 height={400}

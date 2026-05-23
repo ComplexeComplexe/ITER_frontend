@@ -233,13 +233,13 @@ export default function DrhPage({
       <section className="bg-background pt-0 pb-8 sm:pb-12">
         <div className="container max-w-3xl">
           <Image
-            src="/images/bg/bg-3d.webp"
+            src="/images/stock/drh-hero.png"
             alt={
               locale === "fr"
-                ? "DRH externalisé — Iter Advisors accompagne les PME et startups dans la gestion de leurs ressources humaines"
+                ? "DRH externalisé Iter Advisors — responsable RH en visioconférence avec son équipe pour piloter les ressources humaines"
                 : locale === "en"
-                  ? "Outsourced HR Director — Iter Advisors supports SMEs and startups with people management"
-                  : "Director de RRHH externalizado — Iter Advisors apoya a pymes y startups en la gestión de personas"
+                  ? "Iter Advisors outsourced HR Director — HR manager on video call managing people operations"
+                  : "Director de RRHH externalizado Iter Advisors — responsable de RRHH en videoconferencia gestionando el equipo"
             }
             width={800}
             height={450}
