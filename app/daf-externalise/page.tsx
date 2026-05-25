@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   // there propagate to the actual <title>/<meta description>. The Strapi CMS
   // entry still wins when present.
   const t = getDafContent("fr");
-  return buildStrapiMetadata({
+  const meta = await buildStrapiMetadata({
     endpoint: "daf-externalise-page",
     locale: "fr",
     path: "/daf-externalise",
@@ -17,6 +17,18 @@ export async function generateMetadata(): Promise<Metadata> {
     fallbackTitle: t.meta.title,
     fallbackDescription: t.meta.description,
   });
+  // SEO-IT-04: page-specific og:image for /daf-externalise
+  if (meta.openGraph && typeof meta.openGraph === "object") {
+    (meta.openGraph as Record<string, unknown>).images = [
+      {
+        url: "https://www.iteradvisors.com/images/stock/daf-hero.png",
+        width: 895,
+        height: 560,
+        alt: "DAF externalisé Iter Advisors — directeur administratif et financier analysant les tableaux de bord",
+      },
+    ];
+  }
+  return meta;
 }
 
 export default async function Page() {

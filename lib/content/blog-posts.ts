@@ -1693,7 +1693,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       author: "Sébastien Doat",
       category: "DAF externalisé",
       htmlContent: `<p>La décision de renforcer la fonction financière est un tournant pour toute entreprise en croissance. Trop tôt, elle constitue un poids financier inutile. Trop tard, elle expose l'entreprise à des risques opérationnels majeurs (défaillance de trésorerie, non-conformité fiscale, décisions stratégiques sans base chiffrée).</p>
-<p>Ce document présente cinq indicateurs factuels qui signalent qu'une entreprise a atteint le seuil de nécessité. Il analyse ensuite les options disponibles : DAF salarié, DAF externalisé, et les modalités de transition entre les deux.</p>
+<p>Ce document présente cinq indicateurs factuels qui signalent qu'une entreprise a atteint le seuil de nécessité. Il analyse ensuite les options disponibles : DAF salarié, <a href="/daf-externalise">DAF externalisé</a>, et les modalités de transition entre les deux.</p>
 <h2 id="signe-1-burn-rate">Section 1 — Le signe n°1 : le burn rate est inconnu</h2>
 <p>Le <em>burn rate</em> (consommation nette de trésorerie par mois) est la métrique vitale de toute startup en phase de croissance. Une entreprise qui ne connaît pas précisément son burn rate navigue sans instrument de pilotage.</p>
 <p><strong>Seuil de criticité :</strong> si la réponse à la question « Quel est votre burn rate exact du mois dernier ? » nécessite plus de 5 minutes de recherche, l'entreprise a besoin d'un DAF.</p>
@@ -1851,7 +1851,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       publishedDate: "2026-05-11",
       author: "Sébastien Doat",
       category: "daf-externalise",
-      htmlContent: `<p>C'est la question que nous entendons le plus souvent : « combien coûte un DAF externalisé ? ». La réponse dépend de votre stade de croissance, de la complexité de votre activité, et du périmètre de la mission. Voici un guide détaillé des tarifs en 2026, basé sur nos 120+ missions réalisées.</p>
+      htmlContent: `<p>C'est la question que nous entendons le plus souvent : « combien coûte un <a href="/daf-externalise">DAF externalisé</a> ? ». La réponse dépend de votre stade de croissance, de la complexité de votre activité, et du périmètre de la mission. Voici un guide détaillé des tarifs en 2026, basé sur nos 120+ missions réalisées.</p>
 <h2 id="seed">Forfait « Seed » — 1 500-2 500 €/mois</h2>
 <p><strong>Périmètre</strong> : 1-2 jours/semaine. Startups de 5-15 personnes avec un CA &lt; 1M€.</p>
 <ul>

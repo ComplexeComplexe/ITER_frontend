@@ -15,6 +15,7 @@ import { faqPageSchema, howToSchema, speakableSchema, reviewsSchema } from "@/li
 import { renderInlineMarkdownLinks } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
+import AuthorByline from "@/components/AuthorByline";
 import References from "@/components/References";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
@@ -151,6 +152,17 @@ export default function DafPage({
                 <p className="text-xs text-muted-foreground mb-4 mt-1">
                   <time dateTime="2026-05-17">Mis à jour en mai 2026</time>
                 </p>
+              )}
+              {/* SEO-IT-05 — E-E-A-T author block */}
+              {locale === "fr" && (
+                <AuthorByline
+                  name="Sébastien Doat"
+                  jobTitle="Co-fondateur, DAF externalisé senior"
+                  linkedInUrl="https://www.linkedin.com/in/sebastien-doat-fractional-cfo/"
+                  avatarUrl="/images/team/sebastien-doat.webp"
+                  updateDate="2026-05-17"
+                  locale={locale}
+                />
               )}
               {t.intro.map((paragraph, i) => (
                 <p
@@ -520,6 +532,12 @@ export default function DafPage({
           <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
             {t.pricing.heading}
           </h2>
+          {/* SEO-IT-06 — Réponse directe pour AI Overviews (40-60 mots, factuel) */}
+          {locale === "fr" && (
+            <p className="text-sm sm:text-base bg-iter-violet/5 border-l-4 border-iter-violet rounded-r-lg px-4 py-3 mb-6 text-foreground/90 leading-relaxed">
+              Un DAF externalisé coûte entre <strong>2 000 et 7 000 € HT/mois</strong> selon le volume d'intervention (2 à 8+ jours/mois). Le TJM moyen 2026 se situe entre <strong>750 et 1 250 € HT</strong>. À titre de comparaison, un DAF salarié revient à 8 300–17 750 €/mois charges comprises.
+            </p>
+          )}
           {t.pricing.content.map((p, i) => (
             <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               {locale === "fr" ? renderRichText(p) : p}

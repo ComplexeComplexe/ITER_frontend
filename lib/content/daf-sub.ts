@@ -1,6 +1,6 @@
 import { Locale } from "../i18n";
 
-export type DafSubPageSlug = "metier" | "temps-partage" | "transition" | "tarifs" | "secteurs";
+export type DafSubPageSlug = "metier" | "temps-partage" | "transition" | "tarifs" | "secteurs" | "ecommerce" | "industrie" | "deep-tech";
 
 export interface DafSubContent {
   meta: {
@@ -390,6 +390,115 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       ],
       ctaButton: "Prendre rendez-vous",
     },
+    ecommerce: {
+      meta: {
+        title: "DAF Externalisé E-Commerce : Pilotez Votre Profitabilité | Iter Advisors",
+        description:
+          "DAF externalisé spécialisé e-commerce : gestion du BFR, saisonnalité, marges produits, trésorerie. Intervention dès 2 jours/mois.",
+      },
+      parentLabel: "DAF Externalisé",
+      parentHref: "/daf-externalise",
+      breadcrumbLabel: "DAF E-Commerce",
+      h1: "DAF Externalisé pour E-Commerce : Pilotez Votre Profitabilité",
+      sections: [
+        {
+          content: [
+            "Le e-commerce est l'un des secteurs où la trésorerie est la plus volatile. Chez Iter Advisors, nos DAFs externalisés spécialisés e-commerce interviennent dès 2 jours/mois.",
+          ],
+        },
+        {
+          heading: "Les défis financiers du e-commerce",
+          content: [
+            "**Saisonnalité :** Le e-commerce connaît des pics (Black Friday, Noël) nécessitant un financement du stock 2 à 3 mois à l'avance. Notre DAF anticipe ces besoins.",
+            "**BFR :** Notre DAF optimise la rotation du stock, négocie les conditions de règlement et étudie l'affacturage sélectif.",
+            "**Marges produits :** Construction d'un P&L par produit, par canal (site propre, Amazon, marketplaces) et par segment client.",
+            "**TVA internationale :** Conformité OSS, TVA par pays européen, optimisation de la trésorerie en devises.",
+          ],
+        },
+        {
+          heading: "Nos missions DAF e-commerce",
+          content: [
+            "**Prévisionnel de trésorerie :** Modélisation 13 semaines glissantes pour anticiper les besoins avant chaque pic.",
+            "**Financement du stock :** Négociation banques + solutions fintech (Karmen, Silvr).",
+            "**Dashboard :** KPIs financiers (marge brute, EBITDA, cash conversion cycle) + opérationnels (LTV, CAC, taux retour).",
+            "Découvrez aussi : **[DAF externalisé](/daf-externalise)**, **[DAF industrie](/daf-externalise/industrie)**, **[DAF Deep Tech](/daf-externalise/deep-tech)**, **[tarifs](/daf-externalise/tarifs)**.",
+          ],
+        },
+      ],
+      ctaButton: "Prendre rendez-vous",
+    },
+    industrie: {
+      meta: {
+        title: "DAF Externalisé Industrie & ETI : Expertise Opérationnelle | Iter Advisors",
+        description:
+          "DAF externalisé pour ETI et entreprises industrielles : contrôle de gestion, supply chain, risques de change, M&A.",
+      },
+      parentLabel: "DAF Externalisé",
+      parentHref: "/daf-externalise",
+      breadcrumbLabel: "DAF Industrie",
+      h1: "DAF Externalisé Industrie : Expertise Financière pour ETI et PMI",
+      sections: [
+        {
+          content: [
+            "Les entreprises industrielles font face à des enjeux financiers que seul un DAF ayant une expérience industrielle peut maîtriser : contrôle analytique, CAPEX, risques de change, M&A. Iter Advisors intervient dès 2 jours/mois.",
+          ],
+        },
+        {
+          heading: "Les enjeux financiers de l'industrie",
+          content: [
+            "**Contrôle analytique :** P&L par ligne de produits, par client et par unité de production pour identifier les marges réelles.",
+            "**CAPEX :** Business cases, financement (crédit-bail, BEI, subventions, CIR/CII) et suivi des ROI.",
+            "**BFR :** Optimisation du cycle de trésorerie et négociation avec la chaîne d'approvisionnement.",
+            "**Change :** Politique de couverture adaptée (forward, options) pour les industriels exportateurs.",
+            "**M&A :** Due diligences, plans de financement et post-merger integration.",
+          ],
+        },
+        {
+          heading: "Notre approche",
+          content: [
+            "Iter Advisors accompagne des PMI et ETI dans toute la France et en Europe : aéronautique, plasturgie, métallurgie, agroalimentaire. En complément : **[DAF externalisé](/daf-externalise)**, **[DAF e-commerce](/daf-externalise/ecommerce)**, **[DAF Deep Tech](/daf-externalise/deep-tech)**.",
+          ],
+        },
+      ],
+      ctaButton: "Prendre rendez-vous",
+    },
+    "deep-tech": {
+      meta: {
+        title: "DAF Externalisé Deep Tech & Biotech : Levée de Fonds & R&D | Iter Advisors",
+        description:
+          "DAF externalisé spécialisé deep tech, biotech et hardware : CIR/CII, levée de fonds Series A/B, data room, valorisation. 30+ tours accompagnés.",
+      },
+      parentLabel: "DAF Externalisé",
+      parentHref: "/daf-externalise",
+      breadcrumbLabel: "DAF Deep Tech",
+      h1: "DAF Externalisé Deep Tech : Levée de Fonds et Pilotage R&D",
+      sections: [
+        {
+          content: [
+            "Les deep tech ont des cycles de développement longs, des besoins de financement importants et des investisseurs exigeants. Iter Advisors a accompagné 30+ tours de financement deep tech pour 100 M€+ levés.",
+          ],
+        },
+        {
+          heading: "Spécificités financières de la deep tech",
+          content: [
+            "**CIR/CII :** Le Crédit d'Impôt Recherche représente 15 à 30 % du financement en phase R&D. Notre DAF sécurise l'éligibilité et maximise l'assiette déclarée.",
+            "**Subventions :** BPI France, Horizon Europe, DGA, ANR — notre DAF identifie les appels à projets et pilote le reporting.",
+            "**Valorisation :** Modèles financiers robustes (DCF, comparables, option pricing biotech) pour crédibiliser la valorisation face aux VCs.",
+            "**Due diligence :** Préparation de la data room et accompagnement jusqu'au closing.",
+          ],
+        },
+        {
+          heading: "Notre accompagnement phase par phase",
+          content: [
+            "**Pré-levée :** Modèle financier, data room, révision des KPIs, optimisation du cap table.",
+            "**Pendant la levée :** Due diligences, Q&A VCs, négociation du term sheet.",
+            "**Post-levée :** Reporting, budget annuel, pilotage du burn rate.",
+            "En complément : **[DAF externalisé](/daf-externalise)**, **[levée de fonds](/services/accompagnement-levee-de-fond)**, **[tarifs](/daf-externalise/tarifs)**.",
+          ],
+        },
+      ],
+      ctaButton: "Prendre rendez-vous",
+    },
   },
   en: {
     metier: {
@@ -656,6 +765,80 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             "Looking for an industry-specialized CFO? Our consultants will recommend the ideal profile. Also see our Part-time CFO, Transition CFO, CFO Role, and Pricing pages.",
           ],
         },
+      ],
+      ctaButton: "Make an appointment",
+    },
+    ecommerce: {
+      meta: {
+        title: "Outsourced CFO for E-Commerce: Manage Profitability | Iter Advisors",
+        description:
+          "Fractional CFO for e-commerce: working capital, seasonality, product margins, cash flow. From 2 days/month.",
+      },
+      parentLabel: "Fractional CFO",
+      parentHref: "/en/fractional-cfo",
+      breadcrumbLabel: "CFO for E-Commerce",
+      h1: "Outsourced CFO for E-Commerce: Manage Your Profitability",
+      sections: [
+        { content: ["Iter Advisors' fractional CFOs for e-commerce step in from 2 days/month to provide specialized financial expertise."] },
+        {
+          heading: "Our E-Commerce CFO Missions",
+          content: [
+            "**Cash flow forecast:** 13-week rolling modeling for seasonal peaks.",
+            "**Working capital optimization:** Supplier terms, returns, marketplace disputes. Average 15-25% WC reduction.",
+            "**E-commerce dashboard:** Gross margin, EBITDA, LTV, CAC, return rate.",
+          ],
+        },
+        { heading: "Contact Us", content: ["See also **[Fractional CFO](/en/fractional-cfo)** and industry specializations."] },
+      ],
+      ctaButton: "Make an appointment",
+    },
+    industrie: {
+      meta: {
+        title: "Outsourced CFO for Manufacturing & Industrial Companies | Iter Advisors",
+        description:
+          "Fractional CFO for manufacturing: cost accounting, supply chain, FX risk, M&A. Proven sector expertise.",
+      },
+      parentLabel: "Fractional CFO",
+      parentHref: "/en/fractional-cfo",
+      breadcrumbLabel: "CFO for Industry",
+      h1: "Outsourced CFO for Industrial Companies",
+      sections: [
+        { content: ["Iter Advisors' specialized industrial CFOs step in from 2 days/month."] },
+        {
+          heading: "Our Industrial CFO Missions",
+          content: [
+            "**Cost-center analytics:** Product-line profitability, margin tracking.",
+            "**CAPEX management:** Business case structuring, financing, ROI monitoring.",
+            "**Working capital:** Inventory cycle, supplier/customer terms.",
+            "**M&A:** Due diligence, financing, post-merger integration.",
+          ],
+        },
+        { heading: "Contact Us", content: ["See also **[Fractional CFO](/en/fractional-cfo)**."] },
+      ],
+      ctaButton: "Make an appointment",
+    },
+    "deep-tech": {
+      meta: {
+        title: "Outsourced CFO for Deep Tech & Biotech: Fundraising & R&D | Iter Advisors",
+        description:
+          "Fractional CFO for deep tech: R&D tax credits, Series A/B fundraising, due diligence. 30+ rounds closed.",
+      },
+      parentLabel: "Fractional CFO",
+      parentHref: "/en/fractional-cfo",
+      breadcrumbLabel: "CFO for Deep Tech",
+      h1: "Outsourced CFO for Deep Tech: Fundraising & R&D Finance",
+      sections: [
+        { content: ["Iter Advisors has supported 30+ fundraising rounds in deep tech companies, totaling over €100M raised."] },
+        {
+          heading: "Our Deep Tech CFO Missions",
+          content: [
+            "**Pre-raise:** Financial model, data room, KPI review, cap table.",
+            "**During raise:** Due diligences, VC Q&A, term sheet negotiation.",
+            "**R&D tax credits:** CIR/CII filing, BPI grants, Horizon Europe.",
+            "**Post-raise:** Reporting, annual budget, burn rate monitoring.",
+          ],
+        },
+        { heading: "Contact Us", content: ["See also **[Fractional CFO](/en/fractional-cfo)** and **[fundraising support](/services/accompagnement-levee-de-fond)**."] },
       ],
       ctaButton: "Make an appointment",
     },
@@ -928,6 +1111,80 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       ],
       ctaButton: "Concierte una cita",
     },
+    ecommerce: {
+      meta: {
+        title: "DAF Externalizado E-Commerce: Controle su Rentabilidad | Iter Advisors",
+        description:
+          "DAF externalizado para e-commerce: gestión del circulante, estacionalidad, márgenes. Desde 2 días/mes.",
+      },
+      parentLabel: "CFO Externalizado",
+      parentHref: "/es/externalizacion-daf",
+      breadcrumbLabel: "DAF E-Commerce",
+      h1: "DAF Externalizado para E-Commerce: Controle su Rentabilidad",
+      sections: [
+        { content: ["Los DAF externalizados de Iter Advisors especializados en e-commerce intervienen desde 2 días/mes."] },
+        {
+          heading: "Nuestras misiones DAF e-commerce",
+          content: [
+            "**Previsión de tesorería:** 13 semanas deslizantes para anticipar picos estacionales.",
+            "**Optimización del circulante:** Plazos de pago, devoluciones, litigios con marketplaces.",
+            "**Cuadro de mando:** Margen bruto, EBITDA, LTV, CAC, tasa de devolución.",
+          ],
+        },
+        { heading: "Contáctenos", content: ["Vea también **[DAF Externalizado](/es/externalizacion-daf)**."] },
+      ],
+      ctaButton: "Concierte una cita",
+    },
+    industrie: {
+      meta: {
+        title: "DAF Externalizado Industria y ETI: Experiencia Operacional | Iter Advisors",
+        description:
+          "DAF externalizado para empresas industriales: control de gestión, supply chain, riesgo de cambio, M&A.",
+      },
+      parentLabel: "CFO Externalizado",
+      parentHref: "/es/externalizacion-daf",
+      breadcrumbLabel: "DAF Industria",
+      h1: "DAF Externalizado Industria: Experiencia Financiera para ETI y PYME",
+      sections: [
+        { content: ["Los DAF externalizados de Iter Advisors especializados en industria intervienen desde 2 días/mes."] },
+        {
+          heading: "Nuestras misiones DAF industrial",
+          content: [
+            "**Control analítico:** Rentabilidad por línea de producto, seguimiento de márgenes.",
+            "**CAPEX:** Business cases, financiación, seguimiento del ROI.",
+            "**Circulante:** Ciclo de inventario, negociación de plazos.",
+            "**M&A:** Due diligences, estructuración de financiación.",
+          ],
+        },
+        { heading: "Contáctenos", content: ["Vea también **[DAF Externalizado](/es/externalizacion-daf)**."] },
+      ],
+      ctaButton: "Concierte una cita",
+    },
+    "deep-tech": {
+      meta: {
+        title: "DAF Externalizado Deep Tech & Biotech: Rondas de Financiación | Iter Advisors",
+        description:
+          "DAF externalizado para deep tech: créditos I+D, Series A/B, due diligence, valoración. +30 rondas cerradas.",
+      },
+      parentLabel: "CFO Externalizado",
+      parentHref: "/es/externalizacion-daf",
+      breadcrumbLabel: "DAF Deep Tech",
+      h1: "DAF Externalizado Deep Tech: Financiación e I+D",
+      sections: [
+        { content: ["Iter Advisors ha acompañado más de 30 rondas de financiación en empresas deep tech, por más de 100 M€ captados."] },
+        {
+          heading: "Nuestras misiones DAF Deep Tech",
+          content: [
+            "**Pre-ronda:** Modelo financiero, data room, revisión de KPIs.",
+            "**Durante la captación:** Due diligences, Q&A con VCs, negociación del term sheet.",
+            "**Créditos I+D:** Deducciones fiscales, subvenciones BPI, Horizon Europe.",
+            "**Post-ronda:** Informes, presupuesto anual, burn rate.",
+          ],
+        },
+        { heading: "Contáctenos", content: ["Vea también **[DAF Externalizado](/es/externalizacion-daf)** y captación de fondos."] },
+      ],
+      ctaButton: "Concierte una cita",
+    },
   },
 };
 
@@ -939,6 +1196,9 @@ const slugMapping: Record<Locale, Record<string, DafSubPageSlug>> = {
     transition: "transition",
     tarifs: "tarifs",
     secteurs: "secteurs",
+    ecommerce: "ecommerce",
+    industrie: "industrie",
+    "deep-tech": "deep-tech",
   },
   en: {
     metier: "metier",
@@ -946,9 +1206,15 @@ const slugMapping: Record<Locale, Record<string, DafSubPageSlug>> = {
     transition: "transition",
     pricing: "tarifs",
     industries: "secteurs",
+    ecommerce: "ecommerce",
+    industrie: "industrie",
+    "deep-tech": "deep-tech",
   },
   es: {
     metier: "metier",
+    ecommerce: "ecommerce",
+    industrie: "industrie",
+    "deep-tech": "deep-tech",
     // Audit V2 R-4: ES URL renamed multipropiedad → tiempo-compartido.
     // Legacy "multipropiedad" key retained as fallback for any direct hits
     // until the 301 in vercel.json fully takes over.
