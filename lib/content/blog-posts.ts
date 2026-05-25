@@ -1815,7 +1815,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       author: "Sébastien Doat",
       category: "daf-externalise",
       htmlContent: `<p>Barcelone est devenue le deuxième écosystème startup d'Europe après Londres. Avec plus de 2 000 startups, des hubs technologiques comme 22@ et le District de la Innovación, et un coût de la vie 30% inférieur à Paris, la ville attire chaque année des centaines d'entrepreneurs français et internationaux.</p>
-<p>Mais gérer la finance d'une startup à Barcelone présente des spécificités : comptabilité espagnole (Plan General Contable), obligations fiscales différentes, subventions régionales, et un écosystème VC en pleine structuration. Voici le guide complet.</p>
+<p>Mais gérer la finance d'une startup à Barcelone présente des spécificités : comptabilité espagnole (Plan General Contable), obligations fiscales différentes, subventions régionales, et un écosystème VC en pleine structuration. C'est pourquoi de nombreuses startups instalées en Catalogne font appel à un <a href="/daf-externalise">DAF externalisé</a> pour sécuriser leur pilotage financier. Voici le guide complet.</p>
 <h2 id="fiscalite">Le paysage fiscal espagnol</h2>
 <p>L'Espagne a un régime fiscal propre avec des spécificités importantes. L'IS (Impuesto de Sociedades) est de 25% — mais les startups peuvent bénéficier du régime « Entidades de Base Tecnológica » avec des allégements fiscaux significatifs. La TVA (IVA) est de 21% avec des taux réduits pour certains services numériques.</p>
 <p>Le principal défi pour les entrepreneurs français : la comptabilité espagnole est en « competencia exclusiva » des experts-comptables (censados). Vous ne pouvez pas gérer votre comptabilité seul comme en France avec <a href="/ressources/outils/pennylane">Pennylane</a> — vous devez obligatoirement passer par un expert-comptable local.</p>
@@ -1837,7 +1837,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <li>Manque de reporting consolidé entre comptabilités française et espagnole</li>
 </ol>
 <h2 id="cout">Le coût d'un DAF à Barcelone</h2>
-<p>Un DAF externalisé basé à Barcelone coûte 15 à 25% moins cher qu'à Paris, avec une expertise équivalente. Nos forfaits démarrent à 1 500 €/mois pour une mission de 2 jours par semaine.</p>
+<p>Un <a href="/daf-externalise">DAF externalisé</a> basé à Barcelone coûte 15 à 25% moins cher qu'à Paris, avec une expertise équivalente. Nos forfaits démarrent à 1 500 €/mois pour une mission de 2 jours par semaine.</p>
 <p><a href="/contact">Contacter notre équipe de Barcelone</a></p>`,
       content: [],
     },

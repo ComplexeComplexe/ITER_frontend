@@ -86,6 +86,8 @@ export const controleDeGestionExternaliseeContent = {
             ],
           ],
         },
+        closingTextHtml:
+          'Le contrôle de gestion externalisé s\'inscrit souvent dans une <a class="prose-link" href="/daf-externalise">direction financière externalisée</a> plus complète, permettant de couvrir à la fois le pilotage opérationnel et la stratégie financière — sans recruter un directeur financier à temps plein.',
       },
 
       // ─────────── SECTION 2 — KPIs ───────────

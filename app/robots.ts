@@ -12,10 +12,13 @@ export default function robots(): MetadataRoute.Robots {
       },
       // Allow AI bots to crawl the site for maximum LLM visibility
       { userAgent: "GPTBot", allow: "/" },
+      { userAgent: "OAI-SearchBot", allow: "/" },
       { userAgent: "ChatGPT-User", allow: "/" },
       { userAgent: "ClaudeBot", allow: "/" },
+      { userAgent: "anthropic-ai", allow: "/" },
       { userAgent: "Anthropic", allow: "/" },
       { userAgent: "CCBot", allow: "/" },
+      { userAgent: "PerplexityBot", allow: "/" },
       { userAgent: "Google-Extended", allow: "/" },
     ],
     sitemap: "https://www.iteradvisors.com/sitemap.xml",

@@ -791,6 +791,19 @@ const nextConfig: NextConfig = {
       { source: "/es/recursos/blog/organiser-sa-direction-financiere",                    destination: "/ressources/blog/organiser-sa-direction-financiere",                   permanent: true },
       { source: "/es/recursos/blog/essentiels-outils-tech-finance",                       destination: "/ressources/blog/essentiels-outils-tech-finance",                     permanent: true },
       { source: "/en/ressources/blog/essentiels-outils-tech-finance",                     destination: "/ressources/blog/essentiels-outils-tech-finance",                     permanent: true },
+
+      // ── Complement SEO-01 (2026-05-25) — résidus de iteradvisors-next-redirects.js
+      // non couverts par les catch-alls existants.
+      { source: "/es/drh-externalise",       destination: "/es/externalizacion-rrhh",                       permanent: true },
+      { source: "/es/drh-externalise/:path*", destination: "/es/externalizacion-rrhh/:path*",               permanent: true },
+      { source: "/en/drh-externalise/:path*", destination: "/en/hr-outsourcing/:path*",                     permanent: true },
+      { source: "/en/services/outsourced-financial-management", destination: "/en/fractional-cfo",          permanent: true },
+      { source: "/es/services/outsourced-management-control",   destination: "/es/services/control-gestion-externalizado", permanent: true },
+      { source: "/services/externalizar-contabilidad",          destination: "/services/comptabilite-externalisation",     permanent: true },
+      { source: "/en/services/externalizar-contabilidad",       destination: "/en/services/outsource-your-accounting",     permanent: true },
+      { source: "/fractional-cfo-barcelona",    destination: "/daf-externalise-barcelone",                  permanent: true },
+      { source: "/es/fractional-cfo-barcelona", destination: "/es/cfo-externalizado-barcelona",             permanent: true },
+      { source: "/en/ressources/blog/la-modernisation-du-role-de-cfo", destination: "/ressources/blog/la-modernisation-du-role-de-cfo", permanent: true },
     ];
   },
 };

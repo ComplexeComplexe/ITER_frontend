@@ -910,11 +910,10 @@ export default function DafPage({
         }}
       />
 
-      {/* D1 (2026-05-17) — FinancialService schema with aggregateRating replacing
-          the previous generic Service type. FinancialService is the Schema.org
-          sub-type that triggers rich-result eligibility for financial advisory
-          firms. aggregateRating surfaces the 5/5 stars in SERP snippets.
-          provider.sameAs adds LinkedIn + Trustfolio for cross-entity linking. */}
+      {/* D1 enrichi (2026-05-25) — Organization (FinancialService) avec founders,
+          knowsAbout, alternateName, foundingDate, numberOfEmployees, taxID/vatID,
+          contactPoint et YouTube dans sameAs. Séparé du bloc Service ci-dessous
+          pour que Google identifie l'entité (KG) indépendamment de l'offre. */}
       {locale === "fr" && (
         <script
           type="application/ld+json"
@@ -922,42 +921,165 @@ export default function DafPage({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FinancialService",
-              "@id": "https://www.iteradvisors.com/daf-externalise#service",
-              name: "DAF externalisé — Iter Advisors",
-              provider: {
-                "@type": "Organization",
-                "@id": "https://www.iteradvisors.com/#organization",
-                name: "Iter Advisors",
-                url: "https://www.iteradvisors.com",
-                logo: "https://www.iteradvisors.com/images/logos/logo-hero.png",
-                sameAs: [
-                  "https://www.linkedin.com/company/iter-advisors",
-                  "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
-                ],
+              "@id": "https://www.iteradvisors.com/#organization",
+              name: "Iter Advisors",
+              alternateName: ["Iter Advisors S.L.", "Iter Advisors Cabinet DAF"],
+              url: "https://www.iteradvisors.com",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.iteradvisors.com/images/logos/logo-hero.webp",
+                width: 512,
+                height: 512,
               },
-              description:
-                "Cabinet de DAF externalisé pour PME, startups et scale-ups. CFO senior dès 2 jours/mois, opérationnel J+1. Trésorerie, reporting financier, tableau de bord financier, budget prévisionnel, levée de fonds et M&A.",
-              dateModified: "2026-05-17",
-              url: "https://www.iteradvisors.com/daf-externalise",
+              image: "https://www.iteradvisors.com/images/og-default.webp",
+              description: "Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Pilotage financier, levée de fonds, trésorerie. Présent à Barcelone, Paris et Toulouse.",
+              slogan: "La meilleure version de votre direction financière",
+              foundingDate: "2019",
+              taxID: "B42960849",
+              vatID: "ESB42960849",
+              address: [{
+                "@type": "PostalAddress",
+                streetAddress: "Carrer Casp, 54, 5-1°",
+                addressLocality: "Barcelona",
+                postalCode: "08010",
+                addressCountry: "ES",
+              }],
               areaServed: [
+                { "@type": "Country", name: "France" },
+                { "@type": "Country", name: "Espagne" },
                 { "@type": "City", name: "Paris" },
                 { "@type": "City", name: "Toulouse" },
                 { "@type": "City", name: "Barcelone" },
               ],
-              hasOfferCatalog: {
-                "@type": "OfferCatalog",
-                name: "Formules DAF externalisé",
-                itemListElement: [
-                  { "@type": "Offer", name: "Essentiel", price: "2000", priceCurrency: "EUR" },
-                  { "@type": "Offer", name: "Croissance", price: "4000", priceCurrency: "EUR" },
-                  { "@type": "Offer", name: "Premium", price: "7000", priceCurrency: "EUR" },
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "contact@iteradvisors.com",
+                contactType: "customer service",
+                areaServed: ["FR", "ES"],
+                availableLanguage: ["French", "English", "Spanish"],
+              },
+              sameAs: [
+                "https://www.linkedin.com/company/iter-advisors/",
+                "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
+                "https://www.youtube.com/@IterAdvisors1",
+              ],
+              knowsAbout: [
+                "DAF externalisé",
+                "Directeur financier externalisé",
+                "CFO à temps partagé",
+                "Fractional CFO",
+                "Direction financière externalisée",
+                "Levée de fonds",
+                "Gestion de trésorerie",
+                "M&A et due diligence financière",
+                "Contrôle de gestion",
+                "Pilotage financier startup",
+                "DRH externalisé",
+              ],
+              numberOfEmployees: { "@type": "QuantitativeValue", value: 15 },
+              founder: [
+                {
+                  "@type": "Person",
+                  name: "Sébastien Doat",
+                  jobTitle: "Associé fondateur - CFO & Investisseur",
+                  sameAs: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
+                },
+                {
+                  "@type": "Person",
+                  name: "Benjamin Ziza",
+                  jobTitle: "Associé fondateur - CFO & Investisseur",
+                  sameAs: "https://www.linkedin.com/in/benjamin-ziza/",
+                },
+                {
+                  "@type": "Person",
+                  name: "Guillaume Rostand",
+                  jobTitle: "Associé fondateur & CMO",
+                  sameAs: "https://www.linkedin.com/in/rostand/",
+                },
+              ],
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5.0",
+                bestRating: "5",
+                worstRating: "1",
+                ratingCount: "31",
+                reviewCount: "31",
+              },
+            }),
+          }}
+        />
+      )}
+
+      {/* Service schema avec AggregateOffer (2026-05-25) — affiche les fourchettes
+          tarifaires 2 000-7 000 €/mois directement dans les snippets SERP.
+          @type Service (pas FinancialService) pour éviter la collision avec l'entité
+          Organization ci-dessus. provider → @id de l'Organization. */}
+      {locale === "fr" && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "@id": "https://www.iteradvisors.com/daf-externalise#service-offer",
+              serviceType: "DAF externalisé",
+              name: "DAF Externalisé pour PME, Startups et Scale-ups",
+              description: "Direction financière sur-mesure, à temps partagé ou en mission ponctuelle. Nos DAFs seniors (10+ ans d'expérience) accompagnent votre entreprise sur le pilotage financier, la levée de fonds, la trésorerie, le M&A et la due diligence. Opérationnels dès le premier jour.",
+              provider: { "@id": "https://www.iteradvisors.com/#organization" },
+              areaServed: [
+                { "@type": "Country", name: "France" },
+                { "@type": "Country", name: "Espagne" },
+              ],
+              url: "https://www.iteradvisors.com/daf-externalise",
+              offers: {
+                "@type": "AggregateOffer",
+                priceCurrency: "EUR",
+                lowPrice: "2000",
+                highPrice: "7000",
+                offerCount: "3",
+                priceSpecification: {
+                  "@type": "UnitPriceSpecification",
+                  priceType: "https://schema.org/MinimumPrice",
+                  price: "2000",
+                  priceCurrency: "EUR",
+                  unitText: "MONTH",
+                },
+                offers: [
+                  {
+                    "@type": "Offer",
+                    name: "Essentiel",
+                    description: "2 à 3 jours par mois — pour startups early-stage (pré-seed à seed)",
+                    price: "2000",
+                    priceCurrency: "EUR",
+                    priceSpecification: { "@type": "UnitPriceSpecification", price: "2000", priceCurrency: "EUR", unitText: "MONTH" },
+                    availability: "https://schema.org/InStock",
+                  },
+                  {
+                    "@type": "Offer",
+                    name: "Croissance",
+                    description: "4 à 6 jours par mois — pour PME en structuration ou scale-up Series A",
+                    price: "4000",
+                    priceCurrency: "EUR",
+                    priceSpecification: { "@type": "UnitPriceSpecification", price: "4000", priceCurrency: "EUR", unitText: "MONTH" },
+                    availability: "https://schema.org/InStock",
+                  },
+                  {
+                    "@type": "Offer",
+                    name: "Premium",
+                    description: "8 jours et plus par mois — pour scale-up, levée de fonds, M&A",
+                    price: "7000",
+                    priceCurrency: "EUR",
+                    priceSpecification: { "@type": "UnitPriceSpecification", price: "7000", priceCurrency: "EUR", unitText: "MONTH" },
+                    availability: "https://schema.org/InStock",
+                  },
                 ],
               },
               aggregateRating: {
                 "@type": "AggregateRating",
-                ratingValue: "5",
-                reviewCount: "31",
+                ratingValue: "5.0",
                 bestRating: "5",
+                worstRating: "1",
+                ratingCount: "31",
               },
             }),
           }}
@@ -1066,14 +1188,60 @@ export default function DafPage({
         }}
       />
 
-      {/*
-        * SEO audit 16 mai 2026 — Article / BlogPosting schema removed.
-        * Rationale: /daf-externalise is a Service landing (commercial
-        * intent), not an editorial article. Emitting BlogPosting here
-        * conflicted with the Service + WebPage schemas already in the
-        * page graph and risked Google ignoring the rich-result
-        * eligibility on the canonical Service type.
-        */}
+      {/* Article schema (2026-05-25) — signal E-E-A-T avec 2 auteurs nommés
+          (Sébastien Doat + Benjamin Ziza) et 5 citations de sources institutionnelles.
+          @type Article (pas BlogPosting) pour une page pilier éditoriale + commerciale.
+          Coexiste avec le Service schema via @id distincts dans le graph. */}
+      {locale === "fr" && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: "DAF Externalisé : votre direction financière sur-mesure",
+              description: "Guide complet sur le DAF externalisé : définition, missions, tarifs 2026, comparaison avec DAF interne et expert-comptable. Par les experts d'Iter Advisors.",
+              image: "https://www.iteradvisors.com/images/og-default.webp",
+              datePublished: "2024-01-15T09:00:00+01:00",
+              dateModified: "2026-05-17T09:00:00+02:00",
+              author: [
+                {
+                  "@type": "Person",
+                  name: "Sébastien Doat",
+                  jobTitle: "Associé fondateur, CFO & Investisseur — Iter Advisors",
+                  url: "https://www.iteradvisors.com/a-propos/sebastien-doat",
+                  sameAs: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
+                  knowsAbout: ["DAF externalisé", "Levée de fonds", "M&A", "Pilotage financier"],
+                },
+                {
+                  "@type": "Person",
+                  name: "Benjamin Ziza",
+                  jobTitle: "Associé fondateur, CFO & Investisseur — Iter Advisors",
+                  url: "https://www.iteradvisors.com/a-propos/benjamin-ziza",
+                  sameAs: "https://www.linkedin.com/in/benjamin-ziza/",
+                },
+              ],
+              publisher: { "@id": "https://www.iteradvisors.com/#organization" },
+              mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": "https://www.iteradvisors.com/daf-externalise",
+              },
+              about: [
+                { "@type": "Thing", name: "DAF externalisé" },
+                { "@type": "Thing", name: "Directeur financier à temps partagé" },
+                { "@type": "Thing", name: "Fractional CFO" },
+              ],
+              citation: [
+                "https://www.dfcg.fr/",
+                "https://www.insee.fr/",
+                "https://www.bpifrance.fr/",
+                "https://www.experts-comptables.fr/",
+                "https://francedigitale.org/",
+              ],
+            }),
+          }}
+        />
+      )}
 
       {/* Vos experts Iter Advisors (audit SEO D.1 / brief Bloc 7) — EEAT signal with named CFOs */}
       {locale === "fr" && featuredExperts.length > 0 && (
