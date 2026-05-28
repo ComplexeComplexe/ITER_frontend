@@ -109,6 +109,12 @@ export default function Header({
               className="relative"
               onMouseEnter={() => item.children && setOpenDropdown(i)}
               onMouseLeave={() => setOpenDropdown(null)}
+              onFocus={() => item.children && setOpenDropdown(i)}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+                  setOpenDropdown((cur) => (cur === i ? null : cur));
+                }
+              }}
             >
               <Link
                 href={item.href}
@@ -193,35 +199,32 @@ export default function Header({
         {/* Right side: lang + CTA (desktop) + menu toggle (mobile) */}
         <div className="flex items-center justify-end gap-3 min-w-0">
           <div className="hidden lg:flex items-center gap-3">
-            {/* Language Switcher */}
-            <div
-              className="relative"
-              ref={langSwitcherRef}
-              onMouseEnter={() => setLangOpen(true)}
-              onMouseLeave={() => setLangOpen(false)}
-            >
+            {/* Language Switcher — pur click-toggle (prévisible souris + tactile) */}
+            <div className="relative" ref={langSwitcherRef}>
               <button
                 type="button"
                 onClick={() => setLangOpen((v) => !v)}
                 aria-haspopup="menu"
                 aria-expanded={langOpen}
-                className="flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-white/50 uppercase tracking-wider hover:text-white transition-colors"
+                aria-label={`Changer de langue (actuelle : ${languageSwitcher[locale].label})`}
+                className="flex items-center gap-1.5 px-3 py-2.5 text-xs font-semibold text-white/70 uppercase tracking-wider hover:text-white hover:bg-white/10 rounded-lg transition-colors cursor-pointer"
               >
                 {locale}
                 <svg
-                  className={`w-2.5 h-2.5 opacity-50 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`}
+                  className={`w-2.5 h-2.5 opacity-60 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               {langOpen && (
-                <div className="absolute top-full right-0 pt-2">
+                <div className="absolute top-full right-0 pt-2 z-50">
                   <div
                     role="menu"
-                    className="w-28 bg-white/95 backdrop-blur-md border border-white/20 rounded-xl p-1 shadow-xl"
+                    className="w-32 bg-white/95 backdrop-blur-md border border-white/20 rounded-xl p-1 shadow-xl"
                   >
                     {(["fr", "en", "es"] as Locale[])
                       .filter((l) => l !== locale)
@@ -231,7 +234,7 @@ export default function Header({
                           role="menuitem"
                           href={getLocaleHref(l)}
                           onClick={() => setLangOpen(false)}
-                          className="block px-3 py-2 text-xs text-iter-dark/60 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors uppercase tracking-wider"
+                          className="block px-3 py-2.5 text-xs font-medium text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors uppercase tracking-wider cursor-pointer"
                         >
                           {languageSwitcher[l].label}
                         </Link>
@@ -325,20 +328,32 @@ export default function Header({
               </Link>
 
               {/* Mobile lang */}
-              <div className="mt-4 mx-4 flex gap-3">
-                {(["fr", "en", "es"] as Locale[]).map((l) => (
-                  <Link
-                    key={l}
-                    href={getLocaleHref(l)}
-                    className={`text-xs uppercase tracking-widest px-3 py-1.5 border rounded-lg ${
-                      l === locale
-                        ? "border-iter-chartreuse text-iter-chartreuse"
-                        : "border-white/10 text-white/40 hover:text-white hover:border-white/30"
-                    } transition-colors`}
-                  >
-                    {l}
-                  </Link>
-                ))}
+              <div className="mt-5 mx-4">
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-2">
+                  {locale === "fr" ? "Langue" : locale === "en" ? "Language" : "Idioma"}
+                </p>
+                <div className="flex gap-2">
+                  {(["fr", "en", "es"] as Locale[]).map((l) =>
+                    l === locale ? (
+                      <span
+                        key={l}
+                        aria-current="true"
+                        className="flex-1 text-center text-sm font-semibold uppercase tracking-widest px-3 py-2.5 border border-iter-chartreuse text-iter-chartreuse rounded-lg"
+                      >
+                        {l}
+                      </span>
+                    ) : (
+                      <Link
+                        key={l}
+                        href={getLocaleHref(l)}
+                        onClick={() => setMobileOpen(false)}
+                        className="flex-1 text-center text-sm font-medium uppercase tracking-widest px-3 py-2.5 border border-white/15 text-white/60 hover:text-white hover:border-white/40 hover:bg-white/5 rounded-lg transition-colors"
+                      >
+                        {l}
+                      </Link>
+                    )
+                  )}
+                </div>
               </div>
             </nav>
           </motion.div>
