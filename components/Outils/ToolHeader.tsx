@@ -38,7 +38,7 @@ export default function ToolHeader({
       <div className="flex flex-col md:flex-row md:items-start gap-6">
         {/* Logo & Basic Info */}
         <div className="flex-shrink-0">
-          <div className="flex items-center justify-center w-24 h-24 md:w-32 md:h-32 bg-gray-50 rounded-lg p-3 md:p-4">
+          <div className="flex items-center justify-center w-24 h-24 md:w-32 md:h-32 bg-white border border-gray-200 rounded-lg p-3 md:p-4">
             <Image
               src={logo}
               alt={logoAlt ?? `Logo ${name}`}

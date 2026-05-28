@@ -44,7 +44,7 @@ export default function ToolCard({
       <div className="flex flex-col h-full p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
         {/* Header with logo and badge */}
         <div className="flex items-start justify-between gap-4 mb-4">
-          <div className="flex-shrink-0 w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center p-2">
+          <div className="flex-shrink-0 w-16 h-16 bg-white border border-gray-200 rounded-lg flex items-center justify-center p-2">
             <Image
               src={logo}
               alt={logoAlt ?? `Logo ${name}`}

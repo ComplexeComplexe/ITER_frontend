@@ -27,7 +27,7 @@ export default function ComparisonTable({ tools, criteria }: ComparisonTableProp
             {tools.map((tool) => (
               <th key={tool.slug} className="px-4 py-3 text-left font-semibold">
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="flex items-center justify-center w-12 h-8 flex-shrink-0 bg-white/10 rounded p-1">
+                  <div className="flex items-center justify-center w-14 h-9 flex-shrink-0 bg-white border border-gray-200 rounded p-1">
                     <Image
                       src={tool.logo}
                       alt={tool.logoAlt ?? `Logo ${tool.name}`}

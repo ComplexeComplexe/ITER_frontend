@@ -222,7 +222,7 @@ export default function CategoryPage({
                 <div key={selectedTool.name} className="bg-background p-8 rounded-lg border border-gray-200">
                   <div className="flex items-start gap-4 mb-6">
                     {toolData?.logo && (
-                      <div className="w-16 h-16 bg-gray-50 rounded-lg flex-shrink-0 flex items-center justify-center p-2">
+                      <div className="w-16 h-16 bg-white border border-gray-200 rounded-lg flex-shrink-0 flex items-center justify-center p-2">
                         <Image
                           src={toolData.logo}
                           alt={toolData.logoAlt ?? `Logo ${selectedTool.name}`}
