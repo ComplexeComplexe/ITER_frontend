@@ -733,11 +733,12 @@ const nextConfig: NextConfig = {
       { source: "/en/services/gestion-paie-charges-sociales",  destination: "/en/services", permanent: true },
       { source: "/es/services/gestion-paie-charges-sociales",  destination: "/es/services", permanent: true },
 
-      // ── Typo / wrong locale prefix
-      { source: "/en/recursos/blog",       destination: "/en/ressources/blog",   permanent: true },
-      { source: "/recursos/blog",          destination: "/ressources/blog",      permanent: true },
-      { source: "/recursos/cas-clients",   destination: "/ressources/cas-clients", permanent: true },
-      { source: "/en/recursos/cas-clients", destination: "/en/ressources/cas-clients", permanent: true },
+      // ── Typo / wrong locale prefix: `recursos` is the Spanish slug, but on
+      // the FR root and on /en it must map to /ressources. Catch-all so every
+      // subpath (blog, cas-clients, glossaire, herramientas, …) resolves
+      // instead of 404ing. ES keeps `recursos` as its own canonical slug.
+      { source: "/recursos/:path*",    destination: "/ressources/:path*",    permanent: true },
+      { source: "/en/recursos/:path*", destination: "/en/ressources/:path*", permanent: true },
 
       // ── Job descriptions (no EN/ES localized versions)
       { source: "/en/ressources/job-descriptions", destination: "/ressources/fiche-metier", permanent: true },
