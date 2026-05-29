@@ -9,7 +9,7 @@ import type { CmsNavItem, StrapiTeamMember } from "@/lib/strapi";
 import { strapiMediaUrl } from "@/lib/strapi";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import { BOOKING_URL } from "@/lib/navigation";
-import { getDafContent, type FaqRichAnswer } from "@/lib/content/daf";
+import { getDafContent, type FaqRichAnswer, type LongTailQA, type SourceCitation } from "@/lib/content/daf";
 import { faqPageSchema, howToSchema, speakableSchema, reviewsSchema } from "@/lib/schemas";
 import { renderInlineMarkdownLinks } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
@@ -307,6 +307,10 @@ export default function DafPage({
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-4 sm:mb-6 leading-tight">
             {t.whatIs.heading}
           </h2>
+          {/* P07 (2026-05-29) — "Réponse rapide" extract (all locales). */}
+          {t.quickAnswers?.comprendre && (
+            <QuickAnswer text={t.quickAnswers.comprendre} locale={locale} />
+          )}
           {/* P03 (2026-05-29) — canonical, extractable definition. The
               semantic <figure>/<dfn> isolates the one-sentence definition that
               answer engines quote, and the synonyms capture long-tail variants.
@@ -980,6 +984,12 @@ export default function DafPage({
         </div>
       </section>
 
+      {/* P15 (2026-05-29) — long-tail Q&A. Renders only once validated content
+          is added to t.longTailFaq (nothing ships until fact-checked). */}
+      {t.longTailFaq && t.longTailFaq.items.length > 0 && (
+        <LongTailFaqSection data={t.longTailFaq} />
+      )}
+
       {/* FAQ Schema */}
       <script
         type="application/ld+json"
@@ -1458,6 +1468,12 @@ export default function DafPage({
 
       {/* External references (CC-18) — EEAT signal via authoritative sources */}
       <References locale={locale} />
+
+      {/* P06 (2026-05-29) — numbered sources for inline citations. Renders only
+          once t.citations is populated during the content-validation pass. */}
+      {t.citations && t.citations.length > 0 && (
+        <Footnotes items={t.citations} locale={locale} />
+      )}
     </PageLayout>
   );
 }
@@ -1652,6 +1668,73 @@ function DafTableOfContents() {
         ))}
       </ol>
     </nav>
+  );
+}
+
+/* P07 — "Réponse rapide": a 40-70 word factual extract under a section H2,
+   optimised for AI Overviews / LLM extraction. Data-driven via t.quickAnswers
+   (keyed by section id) so it generalises the ad-hoc FR block on #tarifs. */
+function QuickAnswer({ text, locale }: { text: string; locale: Locale }) {
+  const label = locale === "fr" ? "Réponse rapide" : locale === "en" ? "Quick answer" : "Respuesta rápida";
+  return (
+    <div className="my-4 sm:my-5 rounded-r-lg border-l-4 border-iter-violet bg-iter-violet/5 px-4 py-3">
+      <div className="text-xs font-bold uppercase tracking-wide text-iter-violet mb-1">{label}</div>
+      <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">{text}</p>
+    </div>
+  );
+}
+
+/* P15 — long-tail Q&A section rendered after the FAQ. Renders only when
+   t.longTailFaq is populated with validated content, so nothing ships until
+   the 15 answers (geo-longtail-content.md) have been fact-checked. */
+function LongTailFaqSection({
+  data,
+}: {
+  data: { heading: string; items: LongTailQA[] };
+}) {
+  return (
+    <section id="questions-precises" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
+      <div className="container max-w-3xl px-4 sm:px-6">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-8 sm:mb-10 leading-tight">
+          {data.heading}
+        </h2>
+        <div className="space-y-6 sm:space-y-8">
+          {data.items.map((item, i) => (
+            <article key={i} className="border-t border-border/50 pt-5 sm:pt-6">
+              <h3 className="text-lg sm:text-xl font-bold font-heading text-foreground mb-2 sm:mb-3">
+                {item.question}
+              </h3>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{item.answer}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* P06 — numbered sources for inline citations. Renders only when t.citations is
+   populated; the inline [n] superscripts are added in the prose during the
+   content-validation pass. */
+function Footnotes({ items, locale }: { items: SourceCitation[]; locale: Locale }) {
+  return (
+    <section className="bg-background py-8 sm:py-10">
+      <div className="container max-w-3xl px-4 sm:px-6">
+        <h2 className="text-sm font-bold uppercase tracking-wide text-muted-foreground mb-3">
+          {locale === "fr" ? "Sources" : locale === "en" ? "Sources" : "Fuentes"}
+        </h2>
+        <ol className="space-y-2 list-decimal pl-5 text-xs sm:text-sm text-muted-foreground">
+          {items.map((c) => (
+            <li key={c.id} id={`footnote-${c.id}`}>
+              {c.text}{" "}
+              <a href={c.url} target="_blank" rel="noopener" className="text-iter-violet hover:underline">
+                ↗
+              </a>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
   );
 }
 

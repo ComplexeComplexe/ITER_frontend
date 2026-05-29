@@ -93,6 +93,26 @@ export interface DefinitionBox {
   synonyms: string;
 }
 
+/** P15 — long-tail Q&A (8+ word conversational questions) rendered after the FAQ. */
+export interface LongTailQA {
+  question: string;
+  answer: string;
+}
+
+/** P05 — short attributed pull-quote distributed through the page. */
+export interface PageQuote {
+  quote: string;
+  author: string;
+  role: string;
+}
+
+/** P06 — numbered source citation for inline footnotes. */
+export interface SourceCitation {
+  id: number;
+  text: string;
+  url: string;
+}
+
 export interface DafContent {
   meta: {
     title: string;
@@ -105,6 +125,14 @@ export interface DafContent {
   essential?: EssentialSummary;
   /** P03 — canonical definition box rendered in the "what is" section. */
   definitionBox?: DefinitionBox;
+  /** P07 — "réponse rapide" extract keyed by section id (40-70 words). */
+  quickAnswers?: Partial<Record<string, string>>;
+  /** P15 — long-tail Q&A block rendered after the FAQ once populated. */
+  longTailFaq?: { heading: string; items: LongTailQA[] };
+  /** P05 — short attributed quotes keyed by section id (validate before use). */
+  pageQuotes?: Partial<Record<string, PageQuote>>;
+  /** P06 — numbered sources for inline citations / footnotes. */
+  citations?: SourceCitation[];
   partnerSection: DafSection;
   whatIs: DafSubSection;
   comparisonTable?: ComparisonTable;
@@ -153,6 +181,19 @@ export const dafContent: Record<Locale, DafContent> = {
       synonymsLabel: "Synonymes",
       synonyms: "directeur financier externalisé, CFO part-time, fractional CFO, DAF à temps partagé, DAF mutualisé.",
     },
+    // P07 — "réponse rapide" par section (40-70 mots, factuel). Réutilise des
+    // chiffres déjà publiés sur la page. Ajouter d'autres sections (tarifs,
+    // vs-expert-comptable, quand…) après validation interne.
+    quickAnswers: {
+      comprendre:
+        "Un DAF externalisé est un directeur financier senior qui pilote la finance d'une entreprise sans en être salarié. Il intervient à temps partagé (2 à 8+ jours/mois) ou en mission ponctuelle. Tarif : 2 000 à 7 000 € HT/mois. Opérationnel sous 7 à 14 jours.",
+    },
+    // P15 / P05 / P06 — structures réservées. À remplir avec le contenu validé
+    // de geo-longtail-content.md (15 Q/R), des 8 quotes et des 8 sources :
+    //   longTailFaq: { heading: "…", items: [{ question, answer }, …] },
+    //   pageQuotes: { comprendre: { quote, author, role }, … },
+    //   citations: [{ id, text, url }, …],
+    // Laissé vide tant que les chiffres ne sont pas vérifiés (rien ne s'affiche).
     h1: "DAF Externalisé : La meilleure version de votre direction financière",
     intro: [
       "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Nos directeurs financiers à temps partagé interviennent en mission ponctuelle ou via une direction financière externalisée. Opérationnels dès le premier jour, sans engagement long terme. 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (31 avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne.",
@@ -558,6 +599,10 @@ export const dafContent: Record<Locale, DafContent> = {
       synonymsLabel: "Synonyms",
       synonyms: "outsourced CFO, part-time CFO, fractional finance director, shared CFO.",
     },
+    quickAnswers: {
+      comprendre:
+        "A Fractional CFO is a senior finance leader who runs a company's finances without being a full-time employee. They work part-time (2 to 8+ days/month) or on a project basis. Pricing: EUR 2,000 to 7,000/month. Operational within 7 to 14 days.",
+    },
     h1: "Fractional CFO for Startups & SMEs — Iter Advisors",
     intro: [
       "A **Fractional CFO** — or outsourced Chief Financial Officer — is a senior finance professional who works within your company without being a full-time employee. When you hire a Fractional CFO, you get the same responsibilities as an in-house CFO (financial strategy, cash flow, reporting, investor relations) but on a flexible basis: part-time, project-based, or monthly retainer.",
@@ -896,6 +941,10 @@ export const dafContent: Record<Locale, DafContent> = {
       definition: "director financiero senior que se integra en una empresa sin ser empleado a tiempo completo. Asume las responsabilidades de un CFO interno (dirección financiera, tesorería, reporting, relaciones con inversores) de forma flexible: tiempo compartido, misión puntual o suscripción mensual.",
       synonymsLabel: "Sinónimos",
       synonyms: "director financiero externalizado, CFO a tiempo parcial, fractional CFO, dirección financiera externalizada.",
+    },
+    quickAnswers: {
+      comprendre:
+        "Un CFO externalizado es un director financiero senior que dirige las finanzas de una empresa sin ser empleado a tiempo completo. Interviene a tiempo compartido (2 a 8+ días/mes) o en misión puntual. Tarifa: 2 000 a 7 000 €/mes. Operativo en 7 a 14 días.",
     },
     h1: "CFO externalizado: la guia completa para pymes y startups",
     intro: [
