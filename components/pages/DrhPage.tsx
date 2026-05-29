@@ -139,13 +139,9 @@ export default function DrhPage({
                       },
                     ],
                   },
-                  aggregateRating: {
-                    "@type": "AggregateRating",
-                    ratingValue: "5",
-                    reviewCount: "31",
-                    bestRating: "5",
-                    worstRating: "1",
-                  },
+                  // Review-snippet fix (2026-05-29): self-serving Trustfolio
+                  // aggregateRating removed from this ProfessionalService — it is
+                  // ineligible for Google review rich results.
                 },
                 {
                   "@type": "FAQPage",

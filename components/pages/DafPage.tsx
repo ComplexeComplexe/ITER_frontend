@@ -10,7 +10,7 @@ import { strapiMediaUrl } from "@/lib/strapi";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import { BOOKING_URL } from "@/lib/navigation";
 import { getDafContent, type FaqRichAnswer, type LongTailQA, type SourceCitation } from "@/lib/content/daf";
-import { faqPageSchema, howToSchema, speakableSchema, reviewsSchema } from "@/lib/schemas";
+import { faqPageSchema, howToSchema, speakableSchema } from "@/lib/schemas";
 import { renderInlineMarkdownLinks } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -1248,25 +1248,10 @@ export default function DafPage({
         />
       )}
 
-      {/* Review Schema with corrections (Corrections 2-4 from ticket) */}
-      {locale === "fr" && t.trustfolioReviews && t.trustfolioReviews.length > 0 && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              reviewsSchema(
-                t.trustfolioReviews.map((review) => ({
-                  author: review.author,
-                  datePublished: review.date,
-                  reviewBody: review.quote,
-                  rating: review.rating,
-                  url: review.url,
-                }))
-              ),
-            ),
-          }}
-        />
-      )}
+      {/* Review Schema removed (2026-05-29): self-serving Trustfolio reviews
+          about Iter Advisors are ineligible for Google review rich results, so
+          the page no longer emits Review structured data. The visible
+          testimonial UI is unaffected. */}
 
       {/* Speakable Schema (content roadmap P1) — voice-search optimization.
         * Targets the hero block (H1 + intro paragraphs) for voice assistants

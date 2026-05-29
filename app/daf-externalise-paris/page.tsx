@@ -75,60 +75,10 @@ export async function generateMetadata(): Promise<Metadata> {
         description: "À partir de 2 000 €/mois",
       },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      bestRating: "5",
-      worstRating: "1",
-      ratingCount: "35",
-    },
-    review: [
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Jean Dupont",
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-          worstRating: "1",
-        },
-        reviewBody:
-          "Sébastien a permis à notre startup d'être prête pour lever 500k€. La préparation du data room était impeccable.",
-      },
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Marie Laurent",
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-          worstRating: "1",
-        },
-        reviewBody:
-          "Une expertise financière senior sans recruter un DAF à plein temps. C'est exactement ce dont nous avions besoin.",
-      },
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Philippe Martin",
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-          worstRating: "1",
-        },
-        reviewBody:
-          "Le réseau de Sébastien à Paris nous a ouvert des portes auprès des VCs et des banquiers. Vraiment précieux.",
-      },
-    ],
+    // Review-snippet fix (2026-05-29): removed the self-serving aggregateRating
+    // and the placeholder Review nodes (generic names, invented quotes). Fake or
+    // self-serving reviews violate Google's review-snippet policy. Reintroduce
+    // star markup only with genuine, verifiable third-party reviews.
   };
 
   const structuredData = {

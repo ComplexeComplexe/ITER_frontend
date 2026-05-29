@@ -10,7 +10,7 @@ import type { CmsNavItem } from "@/lib/strapi";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { getDafLocalContent, DafLocalCity } from "@/lib/content/daf-local";
 import { faqPageSchema } from "@/lib/schemas";
-import { TRUSTFOLIO_REVIEWS, TRUSTFOLIO_REVIEW_COUNT, TRUSTFOLIO_RATING } from "@/lib/content/trustfolio-reviews";
+import { TRUSTFOLIO_REVIEWS, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/trustfolio-reviews";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
@@ -80,43 +80,10 @@ export default function DafLocalPage({
     priceRange: "€€",
     openingHours: "Mo-Fr 09:00-18:00",
     image: "https://www.iteradvisors.com/images/og-default.webp",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: String(TRUSTFOLIO_RATING),
-      reviewCount: String(TRUSTFOLIO_REVIEW_COUNT),
-      bestRating: "5",
-      worstRating: "1",
-    },
-    review: TRUSTFOLIO_REVIEWS.map((review) => ({
-      "@type": "Review",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: String(TRUSTFOLIO_RATING),
-        bestRating: "5",
-      },
-      author: {
-        "@type": "Person",
-        name: review.name,
-        jobTitle: review.jobTitle,
-        worksFor: { "@type": "Organization", "name": review.company },
-      },
-      datePublished: review.datePublished,
-      reviewBody: review.reviewBody,
-      publisher: {
-        "@type": "Organization",
-        name: "Trustfolio",
-        url: "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
-      },
-      itemReviewed: {
-        "@id": `https://www.iteradvisors.com/${
-          locale === "fr"
-            ? `daf-externalise-${city}`
-            : locale === "en"
-              ? `outsourced-cfo-${city === "barcelone" ? "barcelona" : city}`
-              : `cfo-externalizado-${city === "barcelone" ? "barcelona" : city}`
-        }#localbusiness`,
-      },
-    })),
+    // Review-snippet fix (2026-05-29): self-serving aggregateRating + Review
+    // nodes removed. These were Trustfolio (third-party) reviews about Iter
+    // Advisors presented as the local business's own rating — ineligible for
+    // Google review rich results. The visible Trustfolio cards below are UI only.
   };
 
   const serviceSchema = {

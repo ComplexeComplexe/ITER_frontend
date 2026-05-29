@@ -260,13 +260,9 @@ export function financialServiceSchema(): Record<string, unknown> {
       },
     ],
     openingHours: "Mo-Fr 09:00-18:00",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      bestRating: "5",
-      worstRating: "1",
-      reviewCount: "31",
-    },
+    // Review-snippet fix (2026-05-29): no self-serving aggregateRating here
+    // either (this helper is currently unused, but kept consistent with the
+    // policy applied across the live pages).
     sameAs: ["https://www.linkedin.com/company/iter-advisors/"],
   };
 }
