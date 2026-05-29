@@ -1411,6 +1411,49 @@ export default function DafPage({
         </section>
       )}
 
+      {/* P17 (2026-05-29) — contextual internal links above the final CTA for
+          visitors not ready to book. Every target was verified to resolve to a
+          200 in one hop for the current locale (no redirect interception). ES
+          uses the `recursos` path; EN keeps `ressources`. */}
+      <section className="bg-background pb-12 sm:pb-16">
+        <div className="container max-w-3xl px-4 sm:px-6 text-center">
+          <p className="text-sm text-muted-foreground mb-3">
+            {locale === "fr"
+              ? "Pas encore prêt à échanger ?"
+              : locale === "en"
+                ? "Not ready to talk yet?"
+                : "¿Aún no está listo para hablar?"}
+          </p>
+          <div className="flex flex-wrap gap-x-5 gap-y-2 justify-center">
+            {(locale === "fr"
+              ? [
+                  { href: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", label: "Le guide complet des tarifs 2026" },
+                  { href: "/ressources/blog/daf-externalise-vs-daf-salarie", label: "DAF externalisé vs DAF salarié" },
+                  { href: "/ressources/cas-clients", label: "Voir nos cas clients" },
+                ]
+              : locale === "en"
+                ? [
+                    { href: "/en/ressources/blog/cout-daf-externalise-tarifs-prix-2026", label: "The complete 2026 pricing guide" },
+                    { href: "/en/ressources/blog/daf-externalise-vs-daf-salarie", label: "Fractional CFO vs in-house CFO" },
+                    { href: "/en/ressources/cas-clients", label: "See our case studies" },
+                  ]
+                : [
+                    { href: "/es/recursos/blog/cout-daf-externalise-tarifs-prix-2026", label: "La guía completa de tarifas 2026" },
+                    { href: "/es/recursos/blog/daf-externalise-vs-daf-salarie", label: "CFO externalizado vs CFO interno" },
+                    { href: "/es/recursos/cas-clients", label: "Ver nuestros casos de cliente" },
+                  ]).map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="text-sm font-medium text-iter-violet hover:underline"
+              >
+                {l.label} →
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CTASection locale={locale} />
 
       {/* External references (CC-18) — EEAT signal via authoritative sources */}
