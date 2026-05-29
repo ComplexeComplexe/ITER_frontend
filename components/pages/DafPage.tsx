@@ -2,7 +2,6 @@
 
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
-import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown, TrendingDown, Zap, Eye, Network, BarChart3, Wallet, Rocket, Settings, Compass, Clock, Users, Wrench, DollarSign, MapPin, Shield, Linkedin, PlayCircle } from "lucide-react";
 import Image from "next/image";
 import { Locale } from "@/lib/i18n";
@@ -1074,13 +1073,10 @@ export default function DafPage({
                   },
                 ],
               },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5.0",
-                bestRating: "5",
-                worstRating: "1",
-                ratingCount: "31",
-              },
+              // P01 (2026-05-29): aggregateRating intentionally lives ONLY on the
+              // Organization (#organization) block above. Google flags review
+              // markup attached to a Service/Offer as self-serving, so we do not
+              // duplicate it here.
             }),
           }}
         />
@@ -1534,6 +1530,7 @@ function FaqAccordionItem({
     <div className="border border-border/50 rounded-2xl overflow-hidden bg-background">
       <button
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
         className="w-full flex items-start sm:items-center justify-between p-4 sm:p-6 text-left font-semibold hover:text-iter-violet transition-colors gap-3"
       >
         <span className="text-sm sm:text-base">{question}</span>
@@ -1543,40 +1540,41 @@ function FaqAccordionItem({
           style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
         />
       </button>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              {answerRich ? (
-                <>
-                  {answerRich.intro && <p className="mb-3 sm:mb-4">{answerRich.intro}</p>}
-                  {answerRich.bullets && answerRich.bullets.length > 0 && (
-                    <ul className="space-y-2 mb-3 sm:mb-4 list-none">
-                      {answerRich.bullets.map((b, i) => (
-                        <li key={i} className="flex gap-2 sm:gap-3">
-                          <span aria-hidden className="mt-1.5 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-                          <span>
-                            <strong className="text-foreground font-semibold">{b.label} :</strong> {b.text}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {answerRich.outro && <p>{answerRich.outro}</p>}
-                </>
-              ) : (
-                answer
-              )}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* P12 (2026-05-29): the answer is rendered UNCONDITIONALLY in the DOM so
+          it is present in the server-rendered HTML for Googlebot and answer
+          engines. The collapse is pure CSS (grid-template-rows 0fr→1fr), which
+          stays correct without JS and avoids the hydration flash / CLS a
+          JS-gated (`{open && …}`) accordion would cause. */}
+      <div
+        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            {answerRich ? (
+              <>
+                {answerRich.intro && <p className="mb-3 sm:mb-4">{answerRich.intro}</p>}
+                {answerRich.bullets && answerRich.bullets.length > 0 && (
+                  <ul className="space-y-2 mb-3 sm:mb-4 list-none">
+                    {answerRich.bullets.map((b, i) => (
+                      <li key={i} className="flex gap-2 sm:gap-3">
+                        <span aria-hidden className="mt-1.5 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
+                        <span>
+                          <strong className="text-foreground font-semibold">{b.label} :</strong> {b.text}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {answerRich.outro && <p>{answerRich.outro}</p>}
+              </>
+            ) : (
+              answer
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
