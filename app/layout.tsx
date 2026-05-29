@@ -188,13 +188,12 @@ gtag('consent','default',{
                   sameAs: [
                     "https://www.linkedin.com/company/iter-advisors/",
                   ],
-                  aggregateRating: {
-                    "@type": "AggregateRating",
-                    ratingValue: "5",
-                    bestRating: "5",
-                    worstRating: "1",
-                    reviewCount: "31",
-                  },
+                  // Review-snippet fix (2026-05-29): no aggregateRating on the
+                  // Organization. The 5/5 Trustfolio score is a third-party,
+                  // self-serving rating that Google does not accept for review
+                  // rich results — and declaring it here (site-wide) AND again on
+                  // /daf-externalise produced a "multiple aggregate ratings" error
+                  // in Search Console (two aggregateRatings on one #organization).
                 },
                 {
                   "@type": "WebSite",

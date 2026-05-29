@@ -1102,14 +1102,11 @@ export default function DafPage({
                   sameAs: "https://www.linkedin.com/in/rostand/",
                 },
               ],
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5.0",
-                bestRating: "5",
-                worstRating: "1",
-                ratingCount: "31",
-                reviewCount: "31",
-              },
+              // Review-snippet fix (2026-05-29): aggregateRating removed. This
+              // #organization rating is self-serving/third-party (Trustfolio) and
+              // duplicated the site-wide #organization node in the root layout,
+              // which triggered GSC "multiple aggregate ratings". The visible 5/5
+              // badge in the hero is UI only, not structured data.
             }),
           }}
         />
@@ -1179,10 +1176,11 @@ export default function DafPage({
                   },
                 ],
               },
-              // P01 (2026-05-29): aggregateRating intentionally lives ONLY on the
-              // Organization (#organization) block above. Google flags review
-              // markup attached to a Service/Offer as self-serving, so we do not
-              // duplicate it here.
+              // Review-snippet fix (2026-05-29): no aggregateRating on the
+              // Service either. Self-serving/third-party (Trustfolio) review
+              // markup is ineligible for Google review rich results, so it has
+              // been removed from every block on this page (Organization,
+              // Service) and from the site-wide #organization node in the layout.
             }),
           }}
         />
