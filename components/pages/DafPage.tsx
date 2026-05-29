@@ -244,6 +244,41 @@ export default function DafPage({
         </div>
       </section>
 
+      {/* P02 (2026-05-29) — "L'essentiel en 30 secondes": an extractable TL;DR
+          rendered as the first structured block after the hero, to feed AI
+          Overviews / LLM answer extraction. Rendered in every locale. */}
+      {t.essential && (
+        <section className="bg-background pt-2 pb-2">
+          <div className="container max-w-3xl px-4 sm:px-6">
+            <aside
+              aria-label={t.essential.heading}
+              className="rounded-3xl border border-border/60 bg-muted/30 p-5 sm:p-8"
+            >
+              <h2 className="text-lg sm:text-xl font-bold font-heading text-foreground mb-4 sm:mb-5">
+                {t.essential.heading}
+              </h2>
+              <ul className="space-y-2.5 sm:space-y-3">
+                {t.essential.points.map((p, i) => (
+                  <li
+                    key={i}
+                    className="flex gap-2.5 sm:gap-3 text-sm sm:text-base text-muted-foreground leading-relaxed"
+                  >
+                    <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
+                    <span>
+                      <strong className="text-foreground font-semibold">
+                        {p.label}
+                        {locale === "fr" ? " :" : ":"}
+                      </strong>{" "}
+                      {p.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </div>
+        </section>
+      )}
+
       {/* Table of Contents — FR only (audit SEO C.1) */}
       {locale === "fr" && (
         <section className="bg-background pt-2 pb-10">
@@ -272,6 +307,33 @@ export default function DafPage({
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-4 sm:mb-6 leading-tight">
             {t.whatIs.heading}
           </h2>
+          {/* P03 (2026-05-29) — canonical, extractable definition. The
+              semantic <figure>/<dfn> isolates the one-sentence definition that
+              answer engines quote, and the synonyms capture long-tail variants.
+              Rendered before the prose in every locale. */}
+          {t.definitionBox && (
+            <figure className="my-5 sm:my-7 rounded-2xl border-l-4 border-iter-violet bg-iter-violet/5 p-5 sm:p-6">
+              <p className="text-base sm:text-lg text-foreground leading-relaxed">
+                <dfn className="not-italic font-bold text-iter-violet">
+                  {t.definitionBox.term}
+                </dfn>
+                {t.definitionBox.partOfSpeech && (
+                  <span className="font-normal text-muted-foreground">
+                    {" "}({t.definitionBox.partOfSpeech})
+                  </span>
+                )}
+                {" — "}
+                {t.definitionBox.definition}
+              </p>
+              <figcaption className="mt-3 text-xs sm:text-sm text-muted-foreground">
+                <span className="font-semibold text-foreground">
+                  {t.definitionBox.synonymsLabel}
+                </span>
+                {locale === "fr" ? " : " : ": "}
+                {t.definitionBox.synonyms}
+              </figcaption>
+            </figure>
+          )}
           {t.whatIs.content.map((p, i) => (
             <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               {locale === "fr" ? renderRichText(p) : p}
@@ -523,6 +585,40 @@ export default function DafPage({
       </section>
 
       {/* Pricing */}
+      {/* P10 (2026-05-29) — visible 4-step onboarding sequence. Mirrors the
+          HowTo JSON-LD (HOW_TO_COLLAB) emitted further down, giving humans and
+          answer engines a numbered, extractable process. All locales. */}
+      <section id="deroulement" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
+        <div className="container max-w-5xl px-4 sm:px-6">
+          <div className="max-w-2xl mb-8 sm:mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
+              {locale === "fr" ? "Déroulement" : locale === "en" ? "How it works" : "Cómo funciona"}
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground leading-tight">
+              {HOW_TO_COLLAB[locale].name}
+            </h2>
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+              {HOW_TO_COLLAB[locale].description}
+            </p>
+          </div>
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {HOW_TO_COLLAB[locale].steps.map((step, i) => (
+              <li key={i} className="rounded-2xl border border-border/60 bg-muted/20 p-5 sm:p-6">
+                <div className="text-xs font-bold uppercase tracking-wide text-iter-violet mb-2">
+                  {(locale === "fr" ? "Étape " : locale === "en" ? "Step " : "Etapa ") + (i + 1)}
+                </div>
+                <h3 className="text-base sm:text-lg font-bold font-heading text-foreground mb-2 leading-snug">
+                  {step.name}
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  {step.text}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       <section id="tarifs" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
         <div className="container max-w-4xl px-4 sm:px-6">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
@@ -1481,6 +1577,7 @@ function DafTableOfContents() {
     { href: "#avantages", label: "Les 5 avantages clés" },
     { href: "#pour-qui", label: "Pour qui et à quel stade ?" },
     { href: "#missions", label: "Missions principales" },
+    { href: "#deroulement", label: "Déroulement d'une mission (4 étapes)" },
     { href: "#tarifs", label: "Grille tarifaire 2026" },
     { href: "#vs-expert-comptable", label: "DAF externalisé vs expert-comptable" },
     { href: "#quand", label: "Quand faire appel à un DAF externalisé ?" },

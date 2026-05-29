@@ -78,6 +78,21 @@ export interface TrustfolioReview {
   url?: string; // Link to Trustfolio review
 }
 
+/** P02 — "L'essentiel en 30 secondes" TL;DR summary rendered below the hero. */
+export interface EssentialSummary {
+  heading: string;
+  points: { label: string; text: string }[];
+}
+
+/** P03 — canonical, extractable definition box (term + synonyms). */
+export interface DefinitionBox {
+  term: string;
+  partOfSpeech?: string;
+  definition: string;
+  synonymsLabel: string;
+  synonyms: string;
+}
+
 export interface DafContent {
   meta: {
     title: string;
@@ -86,6 +101,10 @@ export interface DafContent {
   breadcrumbLabel: string;
   h1: string;
   intro: string[];
+  /** P02 — "essentials in 30 seconds" TL;DR rendered just below the hero. */
+  essential?: EssentialSummary;
+  /** P03 — canonical definition box rendered in the "what is" section. */
+  definitionBox?: DefinitionBox;
   partnerSection: DafSection;
   whatIs: DafSubSection;
   comparisonTable?: ComparisonTable;
@@ -116,6 +135,24 @@ export const dafContent: Record<Locale, DafContent> = {
         "Cabinet de DAF externalisé pour PME & startups. Tarifs dès 2 000 €/mois. 85 clients, +100 M€ levés. Paris, Toulouse, Barcelone.",
     },
     breadcrumbLabel: "DAF Externalisé",
+    essential: {
+      heading: "L'essentiel en 30 secondes",
+      points: [
+        { label: "Définition", text: "un DAF externalisé est un directeur financier senior qui pilote la finance de votre entreprise sans en être salarié, en temps partagé ou en mission ponctuelle." },
+        { label: "Tarif 2026", text: "2 000 à 7 000 € HT/mois, contre 100 000 à 213 000 €/an chargés pour un DAF salarié." },
+        { label: "Pour qui", text: "startups en levée de fonds, PME en croissance, ETI en transformation." },
+        { label: "Délai", text: "opérationnel sous 7 à 14 jours." },
+        { label: "Engagement", text: "aucun minimum requis, modulable au mois." },
+        { label: "Iter Advisors en chiffres", text: "15 experts CFO, 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (31 avis)." },
+      ],
+    },
+    definitionBox: {
+      term: "DAF externalisé",
+      partOfSpeech: "nom commun, masculin",
+      definition: "directeur financier senior qui intègre une entreprise sans en être salarié. Il assume les responsabilités d'un DAF interne (pilotage, trésorerie, reporting, relations investisseurs) en mode flexible : temps partagé, mission ponctuelle ou abonnement mensuel.",
+      synonymsLabel: "Synonymes",
+      synonyms: "directeur financier externalisé, CFO part-time, fractional CFO, DAF à temps partagé, DAF mutualisé.",
+    },
     h1: "DAF Externalisé : La meilleure version de votre direction financière",
     intro: [
       "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Nos directeurs financiers à temps partagé interviennent en mission ponctuelle ou via une direction financière externalisée. Opérationnels dès le premier jour, sans engagement long terme. 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (31 avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne.",
@@ -503,6 +540,24 @@ export const dafContent: Record<Locale, DafContent> = {
         "Fractional CFO for startups and SMEs: missions, pricing (EUR 750–1 250/day), benefits and case studies. Senior CFO in Barcelona, Paris, Toulouse.",
     },
     breadcrumbLabel: "Fractional CFO",
+    essential: {
+      heading: "The essentials in 30 seconds",
+      points: [
+        { label: "Definition", text: "a Fractional CFO is a senior finance leader who runs your company's finances without being a full-time employee — part-time or project-based." },
+        { label: "2026 pricing", text: "EUR 2,000 to 7,000/month, vs EUR 100,000 to 213,000/year fully loaded for an in-house CFO." },
+        { label: "Who it's for", text: "startups raising funds, growing SMEs, scale-ups in transformation." },
+        { label: "Lead time", text: "operational within 7 to 14 days." },
+        { label: "Commitment", text: "no minimum, adjustable month to month." },
+        { label: "Iter Advisors in numbers", text: "15 CFO experts, 85 companies supported, EUR 100M raised, 5/5 on Trustfolio (31 reviews)." },
+      ],
+    },
+    definitionBox: {
+      term: "Fractional CFO",
+      partOfSpeech: "noun",
+      definition: "a senior finance leader who joins a company without being a full-time employee. They take on the responsibilities of an in-house CFO (financial strategy, cash flow, reporting, investor relations) on a flexible basis: part-time, project-based or monthly retainer.",
+      synonymsLabel: "Synonyms",
+      synonyms: "outsourced CFO, part-time CFO, fractional finance director, shared CFO.",
+    },
     h1: "Fractional CFO for Startups & SMEs — Iter Advisors",
     intro: [
       "A **Fractional CFO** — or outsourced Chief Financial Officer — is a senior finance professional who works within your company without being a full-time employee. When you hire a Fractional CFO, you get the same responsibilities as an in-house CFO (financial strategy, cash flow, reporting, investor relations) but on a flexible basis: part-time, project-based, or monthly retainer.",
@@ -824,6 +879,24 @@ export const dafContent: Record<Locale, DafContent> = {
         "CFO externalizado para pymes y startups: dirección financiera, tesorería, control de gestión. TJM EUR 750–1 250/día. Barcelona, Paris, Toulouse.",
     },
     breadcrumbLabel: "CFO Externalizado",
+    essential: {
+      heading: "Lo esencial en 30 segundos",
+      points: [
+        { label: "Definición", text: "un CFO externalizado es un director financiero senior que dirige las finanzas de su empresa sin ser empleado a tiempo completo, a tiempo compartido o en misión puntual." },
+        { label: "Tarifa 2026", text: "de 2 000 a 7 000 € al mes, frente a 100 000 a 213 000 €/año con cargas de un CFO interno." },
+        { label: "Para quién", text: "startups en ronda de financiación, pymes en crecimiento, empresas en transformación." },
+        { label: "Plazo", text: "operativo en 7 a 14 días." },
+        { label: "Compromiso", text: "sin mínimo, ajustable mes a mes." },
+        { label: "Iter Advisors en cifras", text: "15 expertos CFO, 85 empresas acompañadas, 100 M€ levantados, nota 5/5 en Trustfolio (31 opiniones)." },
+      ],
+    },
+    definitionBox: {
+      term: "CFO externalizado",
+      partOfSpeech: "nombre común, masculino",
+      definition: "director financiero senior que se integra en una empresa sin ser empleado a tiempo completo. Asume las responsabilidades de un CFO interno (dirección financiera, tesorería, reporting, relaciones con inversores) de forma flexible: tiempo compartido, misión puntual o suscripción mensual.",
+      synonymsLabel: "Sinónimos",
+      synonyms: "director financiero externalizado, CFO a tiempo parcial, fractional CFO, dirección financiera externalizada.",
+    },
     h1: "CFO externalizado: la guia completa para pymes y startups",
     intro: [
       "Un CFO externalizado - o Director Financiero externalizado - es un profesional senior de las finanzas que interviene en su empresa sin ser empleado a tiempo completo. Asume las mismas responsabilidades que un CFO interno (gestion financiera, tesoreria, reporting, relaciones con inversores) pero de forma flexible: tiempo compartido, mision puntual o suscripcion mensual.",
