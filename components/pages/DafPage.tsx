@@ -1025,7 +1025,11 @@ export default function DafPage({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "FinancialService",
+              // 2026-05-30: ProfessionalService is a better fit for a consulting
+              // cabinet than FinancialService (which Schema.org positions for
+              // banks / lenders / brokers). Merges with the site-wide
+              // #organization entity declared in app/layout.tsx.
+              "@type": "ProfessionalService",
               "@id": "https://www.iteradvisors.com/#organization",
               name: "Iter Advisors",
               alternateName: ["Iter Advisors S.L.", "Iter Advisors Cabinet DAF"],
