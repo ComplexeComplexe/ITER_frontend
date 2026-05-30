@@ -2998,6 +2998,131 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       content: [],
     },
 
+    "bareme-irpf-espagne-2026": {
+      meta: {
+        title: "Barème IRPF Espagne 2026 : Tranches et calcul de l'impôt | Iter Advisors",
+        description:
+          "Découvrez le barème officiel de l'impôt sur le revenu en Espagne (IRPF) pour 2026. Tranches de 19% à 47%, part étatique et part autonome expliquées.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Barème de l'impôt sur le revenu en Espagne (IRPF) en 2026",
+      publishedDate: "2026-05-31",
+      author: "Sébastien Doat",
+      category: "fiscalite-internationale",
+      htmlContent: `<p>L'impôt sur le revenu des personnes physiques en Espagne (IRPF) est un impôt progressif. Contrairement à la France, il est divisé en deux parties : une part étatique (fixée par le gouvernement central) et une part autonome (fixée par la région où vous résidez, comme la Catalogne ou Madrid).</p>
+<p><strong>Voici le barème étatique général applicable en 2026 :</strong></p>
+<ul>
+<li>Jusqu'à 12 450 € : <strong>19 %</strong></li>
+<li>De 12 450 € à 20 200 € : <strong>24 %</strong></li>
+<li>De 20 200 € à 35 200 € : <strong>30 %</strong></li>
+<li>De 35 200 € à 60 000 € : <strong>37 %</strong></li>
+<li>De 60 000 € à 300 000 € : <strong>45 %</strong></li>
+<li>Au-delà de 300 000 € : <strong>47 %</strong></li>
+</ul>
+<h2>Comment calculer votre impôt réel ?</h2>
+<p>Le taux final que vous paierez dépendra de votre région de résidence. Par exemple, la Communauté de Madrid applique généralement des taux autonomes plus bas que la moyenne nationale, tandis que la Catalogne ou la Communauté Valencienne appliquent des taux marginaux supérieurs (pouvant dépasser les 50% pour les très hauts revenus).</p>
+<p>Il est également crucial de prendre en compte les déductions personnelles et familiales (minimum personnel de 5 550 € pour un contribuable célibataire de moins de 65 ans) avant d'appliquer le barème.</p>
+<p><em>Note : Les revenus de l'épargne (dividendes, plus-values) sont soumis à un barème distinct, allant de 19% (jusqu'à 6 000 €) à 28% (au-delà de 300 000 €).</em></p>`,
+      content: [],
+    },
+
+    "modelo-720-declaration-biens-etranger": {
+      meta: {
+        title: "Modelo 720 en Espagne : Déclaration des biens à l'étranger 2026 | Iter Advisors",
+        description:
+          "Résident espagnol ? Vous devez déclarer vos comptes, assurances-vie et biens immobiliers en France via le Modelo 720 si leur valeur dépasse 50 000 €.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Modelo 720 : l'obligation déclarative redoutée des expatriés en Espagne",
+      publishedDate: "2026-05-31",
+      author: "Florent Greth",
+      category: "fiscalite-internationale",
+      htmlContent: `<p>Le Modelo 720 est une déclaration informative obligatoire pour tout résident fiscal en Espagne possédant des biens ou des droits situés à l'étranger. Bien qu'il ne s'agisse pas d'un impôt à payer, le non-respect de cette obligation peut entraîner des sanctions.</p>
+<h2>Qui est concerné et quels sont les seuils ?</h2>
+<p>Vous devez présenter le Modelo 720 si la valeur totale de vos biens à l'étranger dépasse <strong>50 000 €</strong> dans l'une de ces trois catégories distinctes :</p>
+<ol>
+<li><strong>Comptes bancaires :</strong> Comptes courants, livrets A, LDD, comptes N26 ou Revolut (si l'IBAN n'est pas espagnol).</li>
+<li><strong>Valeurs, droits, assurances et revenus :</strong> Actions, obligations, portefeuilles d'investissement, et surtout les contrats d'assurance-vie français.</li>
+<li><strong>Biens immobiliers :</strong> Maisons, appartements ou terrains situés hors d'Espagne.</li>
+</ol>
+<p><em>Important : Le seuil de 50 000 € s'apprécie par catégorie. Si vous avez 40 000 € sur des comptes bancaires et 40 000 € en assurance-vie, vous n'êtes pas soumis à l'obligation déclarative.</em></p>
+<h2>Délais et sanctions en 2026</h2>
+<p>La déclaration doit être effectuée par voie télématique auprès de l'Agencia Tributaria (AEAT) <strong>entre le 1er janvier et le 31 mars</strong> de l'année suivant l'exercice concerné (ex : avant le 31 mars 2026 pour l'exercice 2025).</p>
+<p>Suite à une condamnation par la Cour de Justice de l'Union Européenne (CJUE) jugeant les sanctions initiales "disproportionnées", l'Espagne a dû revoir son régime de pénalités. Les amendes forfaitaires fixes extrêmement lourdes ont été supprimées, et le régime général des sanctions fiscales s'applique désormais. Néanmoins, l'obligation déclarative reste strictement en vigueur.</p>`,
+      content: [],
+    },
+
+    "loi-beckham-espagne-conditions-2026": {
+      meta: {
+        title: "Loi Beckham en Espagne : Conditions et Taux 24% en 2026 | Iter Advisors",
+        description:
+          "Découvrez les conditions d'éligibilité à la Loi Beckham en 2026. Taux fixe d'IRPF à 24% pendant 6 ans pour les impatriés et digital nomads en Espagne.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Loi Beckham en Espagne : le régime fiscal de faveur des impatriés",
+      publishedDate: "2026-05-31",
+      author: "Sébastien Doat",
+      category: "fiscalite-internationale",
+      htmlContent: `<p>Le "Régime Spécial des Travailleurs Déplacés", plus connu sous le nom de Loi Beckham, est un dispositif fiscal extrêmement attractif conçu pour attirer les talents étrangers en Espagne. Il permet aux nouveaux résidents d'être imposés comme des non-résidents pendant l'année de leur arrivée et les cinq années suivantes (soit 6 ans au total).</p>
+<h2>Le principal avantage : un taux fixe à 24%</h2>
+<p>Sous le régime général de l'IRPF, les revenus du travail sont imposés selon un barème progressif pouvant atteindre 47%. Avec la Loi Beckham, vos revenus du travail de source espagnole sont imposés à un <strong>taux fixe de 24 % jusqu'à 600 000 €</strong>. Au-delà de ce montant, le taux passe à 47 %.</p>
+<p>De plus, seuls les revenus générés en Espagne sont imposables (à l'exception des revenus du travail qui sont imposés mondialement). Vos revenus du capital (dividendes, intérêts) de source étrangère ne sont pas soumis à l'impôt espagnol sous ce régime.</p>
+<h2>Conditions d'éligibilité en 2026</h2>
+<p>Pour bénéficier de ce régime, vous devez remplir plusieurs conditions strictes :</p>
+<ul>
+<li>Ne pas avoir été résident fiscal en Espagne au cours des <strong>5 années fiscales précédentes</strong> (ce délai était de 10 ans avant la récente réforme).</li>
+<li>Le déplacement en Espagne doit être justifié par un contrat de travail, une mutation intra-groupe, ou l'acquisition du statut d'administrateur d'une société (sous certaines conditions de participation).</li>
+<li>Depuis la loi sur les startups, les télétravailleurs internationaux (Digital Nomads) disposant du visa approprié sont également éligibles.</li>
+</ul>
+<p><em>Attention : La demande doit être déposée auprès de l'administration fiscale dans un délai maximum de 6 mois à compter de la date de début de l'activité figurant sur l'inscription à la Sécurité Sociale espagnole.</em></p>`,
+      content: [],
+    },
+
+    "double-imposition-france-espagne-convention": {
+      meta: {
+        title: "Éviter la double imposition France Espagne : Convention fiscale | Iter Advisors",
+        description:
+          "Comment fonctionne la convention fiscale franco-espagnole de 1995 ? Méthodes du crédit d'impôt et de l'exemption pour éviter la double imposition en 2026.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Double imposition France Espagne : comment l'éviter légalement ?",
+      publishedDate: "2026-05-31",
+      author: "Florent Greth",
+      category: "fiscalite-internationale",
+      htmlContent: `<p>Lorsqu'un contribuable perçoit des revenus dans un pays (État source) mais réside dans un autre (État de résidence), le risque d'être imposé deux fois sur le même revenu est réel. Pour éviter cette situation pénalisante, la France et l'Espagne ont signé une convention fiscale bilatérale le 10 octobre 1995.</p>
+<h2>Le principe de la résidence fiscale</h2>
+<p>La convention établit que c'est la résidence fiscale qui détermine quel État a le droit d'imposer vos revenus mondiaux. Si vous êtes résident fiscal en Espagne, vous devez déclarer l'ensemble de vos revenus (français et espagnols) à l'Hacienda. L'Espagne vous accordera ensuite un mécanisme pour neutraliser l'impôt déjà payé en France.</p>
+<h2>Les deux méthodes pour éliminer la double imposition</h2>
+<p>Selon la nature du revenu, la convention franco-espagnole prévoit deux méthodes distinctes :</p>
+<h3>1. La méthode de l'imputation (Crédit d'impôt)</h3>
+<p>C'est la méthode la plus courante (applicable notamment aux dividendes, intérêts et redevances). L'Espagne calcule l'impôt sur votre revenu global, puis déduit de cet impôt le montant que vous avez déjà payé en France.<br>
+<em>Exemple : Si la France a prélevé 15% à la source sur vos dividendes, l'Espagne vous accordera un crédit d'impôt équivalent, dans la limite de l'impôt espagnol correspondant à ce revenu.</em></p>
+<h3>2. La méthode de l'exemption avec progressivité</h3>
+<p>Applicable notamment aux revenus immobiliers de source française ou aux pensions de retraite de la fonction publique française. Ces revenus ne sont imposables qu'en France. Cependant, l'Espagne exige que vous les déclariez : ils ne seront pas taxés directement, mais ils seront pris en compte pour déterminer le taux d'imposition applicable à vos autres revenus espagnols (c'est ce qu'on appelle le taux effectif).</p>
+<p><em>Note pratique : Côté français, pour déclarer des revenus de source étrangère tout en évitant la double imposition, il faut utiliser le formulaire spécifique 2047 en complément de la déclaration classique 2042.</em></p>`,
+      content: [],
+    },
+
   },
   en: {
     "essentiels-outils-tech-finance": {
