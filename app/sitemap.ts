@@ -19,6 +19,7 @@ const D = {
   glossary:      "2026-04-15", // glossary terms built ~April
   author:        "2026-05-17", // Person schema + author bio pages added
   jobs:          "2026-04-01", // noindexed but discoverable (TICKET-12)
+  fiscalite:     "2026-05-31", // Fiscalité Espagne France cocoon — initial publication
 } as const;
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -321,6 +322,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       D.tools
     )
   );
+  // Fiscalité Espagne France cocoon — FR-only (no EN/ES equivalents yet).
+  // Hub + 1 pillar (Résidence fiscale) shipped 2026-05-31; the 13 remaining
+  // pillar/satellite URLs will be added here as each page ships.
+  entries.push({
+    url: `${BASE}/ressources/fiscalite-espagne-france`,
+    lastModified: D.fiscalite,
+  });
+  entries.push({
+    url: `${BASE}/ressources/fiscalite/residence-fiscale-france-espagne`,
+    lastModified: D.fiscalite,
+  });
   // Named-clients page (GEO-5 from AI Visibility audit)
   entries.push(
     ...entryAllLocales(
