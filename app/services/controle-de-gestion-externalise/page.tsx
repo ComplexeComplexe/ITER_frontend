@@ -47,7 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "FinancialService",
+        "@type": "ProfessionalService",
         "@id": `${url}#service`,
         name: "Contrôle de gestion externalisé",
         provider: {

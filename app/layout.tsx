@@ -149,7 +149,7 @@ gtag('consent','default',{
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": ["FinancialService", "Organization"],
+                  "@type": ["ProfessionalService", "Organization"],
                   "@id": "https://www.iteradvisors.com/#organization",
                   name: "Iter Advisors",
                   // Spanish SL (sociedad limitada), NIF B42960849.

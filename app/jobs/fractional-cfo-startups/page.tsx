@@ -44,7 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
       // lives at its dedicated route so Google for Jobs surfaces it cleanly.
       // ── FinancialService (Starter / Growth / Scale) ─────────────
       {
-        "@type": "FinancialService",
+        "@type": "ProfessionalService",
         "@id": `${PAGE_URL}#service`,
         name: "Fractional CFO pour Startups",
         provider: {

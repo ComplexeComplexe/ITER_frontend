@@ -223,7 +223,7 @@ export function speakableSchema({
 export function financialServiceSchema(): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
-    "@type": "FinancialService",
+    "@type": "ProfessionalService",
     name: "Iter Advisors",
     // Spanish SL — keep the legal identifiers in sync with the
     // canonical Organization graph emitted from app/layout.tsx.

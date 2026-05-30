@@ -33,7 +33,7 @@ export default function DafLocalPage({
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "FinancialService",
+    "@type": "ProfessionalService",
     "@id": `https://www.iteradvisors.com/${
       locale === "fr"
         ? `daf-externalise-${city}`

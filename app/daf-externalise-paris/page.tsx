@@ -56,7 +56,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const financialServiceSchema = {
     "@context": "https://schema.org",
-    "@type": "FinancialService",
+    "@type": "ProfessionalService",
     "@id": "https://www.iteradvisors.com/daf-externalise-paris#financial-service",
     name: "DAF Externalisé Paris — Iter Advisors",
     description:
