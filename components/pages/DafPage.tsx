@@ -334,7 +334,7 @@ export default function DafPage({
                   {t.definitionBox.synonymsLabel}
                 </span>
                 {locale === "fr" ? " : " : ": "}
-                {t.definitionBox.synonyms}
+                {renderInlineMarkdownLinks(t.definitionBox.synonyms)}
               </figcaption>
             </figure>
           )}

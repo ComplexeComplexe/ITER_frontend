@@ -179,7 +179,7 @@ export const dafContent: Record<Locale, DafContent> = {
       partOfSpeech: "nom commun, masculin",
       definition: "directeur financier senior qui intègre une entreprise sans en être salarié. Il assume les responsabilités d'un DAF interne (pilotage, trésorerie, reporting, relations investisseurs) en mode flexible : temps partagé, mission ponctuelle ou abonnement mensuel.",
       synonymsLabel: "Synonymes",
-      synonyms: "directeur financier externalisé, CFO part-time, fractional CFO, DAF à temps partagé, DAF mutualisé.",
+      synonyms: "directeur financier externalisé, CFO part-time, [fractional CFO](/jobs/fractional-cfo-startups), DAF à temps partagé, DAF mutualisé.",
     },
     // P07 — "réponse rapide" par section (40-70 mots, factuel). Réutilise des
     // chiffres déjà publiés sur la page. Ajouter d'autres sections (tarifs,
