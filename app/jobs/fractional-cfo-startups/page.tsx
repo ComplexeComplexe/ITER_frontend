@@ -688,27 +688,30 @@ export default async function Page() {
               Ce que nos clients disent de leur Fractional CFO
             </h2>
             <div className="space-y-6">
+              {/* Real Trustfolio reviews (2026-05-30) — replaces 3 prior
+                  placeholder testimonials with initials-only attribution.
+                  Source: lib/content/trustfolio-reviews.ts (verified Trustfolio). */}
               {[
                 {
                   quote:
-                    "Nous avons fait appel à Iter Advisors 4 mois avant notre Series A. Ils ont reconstruit tout notre modèle financier, préparé le data room, et coaché notre CEO sur les questions des investisseurs. Nous avons levé 4,2 M€ en 6 semaines.",
-                  author: "Thomas R.",
-                  role: "CEO, SaaS B2B",
-                  location: "Paris",
+                    "Après avoir levé notre premier tour de table, nous avions besoin de structurer nos opérations financières. Iter a professionnalisé notre fonction financière et s'est avéré être un partenaire financier solide intégré à l'équipe.",
+                  author: "Charles Deknudt",
+                  role: "PDG et fondateur",
+                  location: "Eltex",
                 },
                 {
                   quote:
-                    "En tant que première fois fondatrice, je ne savais pas ce que j'ignorais en finance. Notre Fractional CFO Iter Advisors a mis en place notre reporting, détecté un problème de trésorerie 3 mois avant qu'il ne nous impacte, et m'a donné confiance dans chaque conseil d'administration.",
-                  author: "Sarah M.",
-                  role: "Co-fondatrice, HealthTech",
-                  location: "Barcelone",
+                    "Les équipes d'Iter ont structuré notre fonction finance avec sérieux, disponibilité et efficacité, dépassant même nos attentes initiales.",
+                  author: "Arnaud MEGE",
+                  role: "Co-founder",
+                  location: "Unplexed",
                 },
                 {
                   quote:
-                    "Nous sommes passés d'un big 4 à Iter Advisors. Deux fois moins cher, 3 fois plus réactifs, et quelqu'un qui comprend vraiment les métriques SaaS. Notre burn a baissé de 22 % le premier trimestre.",
-                  author: "Luc B.",
-                  role: "CEO, Marketplace",
-                  location: "Toulouse",
+                    "Après 5 ans de collaboration, Iter demeure un véritable atout stratégique offrant expertise multidisciplinaire et vision à long terme.",
+                  author: "Magali Quentel-Reme",
+                  role: "CEO & Co-Founder",
+                  location: "Opti Digital",
                 },
               ].map((tst, i) => (
                 <figure
