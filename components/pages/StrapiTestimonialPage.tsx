@@ -24,7 +24,7 @@ export default function StrapiTestimonialPage({ locale, testimonial }: { locale:
           <div className="flex items-center gap-6 mb-6">
             {logoSrc && (
               <div className="w-16 h-16 relative flex-shrink-0 bg-white rounded-xl border border-border/50 p-2">
-                <Image src={logoSrc} alt={testimonial.title} fill className="object-contain" />
+                <Image src={logoSrc} alt={testimonial.title} fill sizes="64px" className="object-contain" />
               </div>
             )}
             <h1 className="text-3xl lg:text-4xl font-bold font-heading text-foreground">{testimonial.title}</h1>

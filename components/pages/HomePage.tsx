@@ -573,6 +573,7 @@ export default function HomePage({
             alt=""
             aria-hidden="true"
             fill
+            sizes="100vw"
             className="object-cover"
             loading="lazy"
           />
@@ -1027,6 +1028,7 @@ export default function HomePage({
                     src={card.image}
                     alt={card.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />

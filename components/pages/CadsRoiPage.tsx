@@ -343,6 +343,7 @@ function SocialProofBar() {
                 src={`/images/logos/${logo}`}
                 alt=""
                 fill
+                sizes="96px"
                 className="object-contain"
               />
             </div>
