@@ -5,8 +5,8 @@ import { getCmsNavigation } from "@/lib/strapi";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Ressources DAF externalisé | Iter Advisors",
-  description: "Ressources DAF : blog finance, glossaire, fiches métiers, témoignages. Conseils experts en DAF externalisé, levée de fonds, gestion financière.",
+  title: "Ressources Finance & DAF : blog, outils, fiches métiers | Iter Advisors",
+  description: "Blog finance, glossaire, outils CFO, fiches métiers, cas clients et témoignages : toutes les ressources Iter Advisors pour piloter votre croissance financière.",
   path: "/ressources",
 });
 
