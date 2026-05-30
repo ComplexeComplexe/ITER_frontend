@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Check, Mail, Linkedin } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { getCmsNavigation } from "@/lib/strapi";
 import type { CmsNavItem } from "@/lib/strapi";
+import { BOOKING_URL } from "@/lib/navigation";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
@@ -10,24 +11,25 @@ import CTASection from "@/components/CTASection";
 /**
  * Route for /jobs/fractional-cfo-startups.
  *
- * TICKET F1 (2026-05-17) — Hybrid commercial + job page.
+ * URL kept (preserves SEO authority earned on "fractional CFO" terms), intent
+ * realigned to a pure commercial Service per FCFO-S03 / FCFO-S04 (2026-05-30,
+ * strategie-fractional-cfo-startups.md). The JobPosting JSON-LD and the long
+ * recruitment block moved to /carrieres/fractional-cfo so Google stops seeing
+ * two contradictory intents on this URL.
  *
  * Structure:
- *   - Commercial hero (H1) + trust badges + dual CTA
- *   - 7 commercial H2 sections (définition, avantages, méthodologie,
+ *   - Commercial hero (H1, trust badges, booking + #tarifs CTAs)
+ *   - "L'essentiel en 30 secondes" TL;DR (FCFO-S05)
+ *   - 4-persona "Pour qui ?" section (FCFO-S07)
+ *   - Commercial H2 sections (intro, définition, avantages, méthodologie,
  *     tarifs, témoignages, FAQ, CTA final)
- *   - Job section (id="jobs-section", H2 "Rejoindre notre équipe") —
- *     existing job content preserved verbatim per ticket instruction.
+ *   - Compact recruitment callout (FCFO-S06) linking to /carrieres/fractional-cfo
  *
  * Schema @graph:
- *   - JobPosting (existing, preserved)
- *   - FinancialService (new, Starter/Growth/Scale)
+ *   - FinancialService (Starter / Growth / Scale)
  *   - FAQPage (6 commercial Q/R)
  *   - Organization
- *   - BreadcrumbList
- *
- * Internal links: 3× /daf-externalise per SEO brief
- *   (Section 1 intro, Section 4 tarifs, Section 7 CTA)
+ *   - BreadcrumbList (Accueil > Services > Fractional CFO Startups)
  */
 
 const PAGE_URL =
@@ -37,80 +39,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
-      // ── JobPosting (preserved) ──────────────────────────────────
-      {
-        "@type": "JobPosting",
-        title: "Fractional CFO pour Startups — Postuler | Iter Advisors",
-        description:
-          "Iter Advisors recrute des fractional CFOs seniors pour accompagner un portefeuille de startups tech (SaaS, deep-tech, e-commerce) basées en France et en Espagne. Vous prendrez en charge la direction financière de 3 à 5 clients en parallèle, sur un mode part-time flexible (freelance, portage ou CDI).",
-        datePosted: "2026-05-04",
-        validThrough: "2026-12-31",
-        employmentType: ["CONTRACTOR", "FULL_TIME", "PART_TIME"],
-        hiringOrganization: {
-          "@type": "Organization",
-          name: "Iter Advisors",
-          sameAs: "https://www.iteradvisors.com",
-          logo: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
-        },
-        jobLocation: [
-          {
-            "@type": "Place",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Carrer Casp, 54, 5-1°",
-              addressLocality: "Barcelona",
-              postalCode: "08010",
-              addressRegion: "Catalunya",
-              addressCountry: "ES",
-            },
-          },
-          {
-            "@type": "Place",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Paris",
-              addressRegion: "Île-de-France",
-              addressCountry: "FR",
-            },
-          },
-          {
-            "@type": "Place",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Toulouse",
-              addressRegion: "Occitanie",
-              addressCountry: "FR",
-            },
-          },
-        ],
-        jobLocationType: "TELECOMMUTE",
-        applicantLocationRequirements: [
-          { "@type": "Country", name: "France" },
-          { "@type": "Country", name: "Spain" },
-          { "@type": "Country", name: "European Union" },
-        ],
-        baseSalary: {
-          "@type": "MonetaryAmount",
-          currency: "EUR",
-          value: {
-            "@type": "QuantitativeValue",
-            minValue: 750,
-            maxValue: 1250,
-            unitText: "DAY",
-          },
-        },
-        directApply: true,
-        industry: "Financial Services",
-        occupationalCategory: "11-3031.00 Financial Managers",
-        qualifications:
-          "10+ years of experience as CFO, Head of Finance or DAF in VC-backed startups or growing SMEs. Series A or B fundraising experience required. SaaS metrics expertise highly valued.",
-        responsibilities:
-          "Monthly financial reporting, cash flow management, fundraising support (data room, business plan, term sheet negotiation), management control, KPIs setup, strategic advisory to founders, board meetings preparation.",
-        skills:
-          "Pennylane, Sage, Agicap, Notion, Looker, Power BI, financial modelling, cash flow forecasting, fundraising, M&A",
-        url: PAGE_URL,
-      },
-      // ── FinancialService (new, F1) ──────────────────────────────
+      // JobPosting moved to /carrieres/fractional-cfo (FCFO-S02, 2026-05-30):
+      // this URL is now a pure commercial Service page; recruitment markup
+      // lives at its dedicated route so Google for Jobs surfaces it cleanly.
+      // ── FinancialService (Starter / Growth / Scale) ─────────────
       {
         "@type": "FinancialService",
         "@id": `${PAGE_URL}#service`,
@@ -224,8 +156,8 @@ export async function generateMetadata(): Promise<Metadata> {
           {
             "@type": "ListItem",
             position: 2,
-            name: "Carrières",
-            item: "https://www.iteradvisors.com/jobs",
+            name: "Services",
+            item: "https://www.iteradvisors.com/services",
           },
           {
             "@type": "ListItem",
@@ -240,17 +172,17 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title:
-      "Fractional CFO pour Startups — Postuler | Iter Advisors",
+      "Fractional CFO pour Startups en France | Iter Advisors",
     description:
-      "Embauchez un Fractional CFO pour votre startup. Expertise financière senior à temps partiel dès 4 500 €/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
+      "Embauchez un Fractional CFO senior pour votre startup. Dès 4 500 €/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
     alternates: {
       canonical: PAGE_URL,
     },
     openGraph: {
       title:
-        "Fractional CFO pour Startups — Postuler | Iter Advisors",
+        "Fractional CFO pour Startups en France | Iter Advisors",
       description:
-        "Embauchez un Fractional CFO pour votre startup. Expertise financière senior à temps partiel dès 4 500 €/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
+        "Embauchez un Fractional CFO senior pour votre startup. Dès 4 500 €/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
       url: PAGE_URL,
       type: "website",
     },
@@ -270,13 +202,13 @@ export default async function Page() {
           <Breadcrumb
             locale="fr"
             items={[
-              { label: "Carrières", href: "/jobs" },
-              { label: "Fractional CFO startups" },
+              { label: "Services", href: "/services" },
+              { label: "Fractional CFO Startups" },
             ]}
           />
           <div className="mt-6 sm:mt-8">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6 sm:mb-8 leading-tight">
-              Fractional CFO pour startups — Recruter un CFO à temps partiel
+              Fractional CFO pour startups — Une expertise financière senior pour accélérer votre croissance
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-foreground/80 font-medium leading-relaxed mb-6">
               Une expertise financière senior sans le coût du plein temps. De
@@ -286,17 +218,19 @@ export default async function Page() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
-                href="/daf-externalise"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
-                Découvrir notre service Fractional CFO
+                Demander un Fractional CFO
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
               <Link
-                href="#jobs-section"
+                href="#tarifs"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
               >
-                Vous souhaitez nous rejoindre ? Voir nos offres
+                Voir nos tarifs ↓
               </Link>
             </div>
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
@@ -316,6 +250,42 @@ export default async function Page() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* ─── L'essentiel en 30 secondes (FCFO-S05) — TL;DR optimisé pour
+            AI Overviews / extraction LLM. Figures reprises de l'existant. ─── */}
+      <section className="bg-background pt-2 pb-2">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <aside
+            aria-label="L'essentiel en 30 secondes"
+            className="rounded-3xl border border-border/60 bg-muted/30 p-5 sm:p-8"
+          >
+            <h2 className="text-lg sm:text-xl font-bold font-heading text-foreground mb-4 sm:mb-5">
+              L&apos;essentiel en 30 secondes
+            </h2>
+            <ul className="space-y-2.5 sm:space-y-3">
+              {[
+                { label: "Définition", text: "un fractional CFO est un directeur financier senior à temps partiel (2 à 8 jours/mois)." },
+                { label: "Tarif Iter Advisors", text: "à partir de 4 500 €/mois — 3 formules Starter / Growth / Scale." },
+                { label: "Délai d'intervention", text: "opérationnel en 5 jours ouvrés." },
+                { label: "Pour qui", text: "startups VC-backed, scale-ups Series A/B, SaaS, deep-tech, e-commerce." },
+                { label: "Bureaux", text: "Paris, Toulouse, Barcelone — interventions hybrides." },
+                { label: "Différence vs DAF externalisé", text: "même métier, terminologie anglo-saxonne plus utilisée par les startups VC." },
+              ].map((p, i) => (
+                <li
+                  key={i}
+                  className="flex gap-2.5 sm:gap-3 text-sm sm:text-base text-muted-foreground leading-relaxed"
+                >
+                  <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
+                  <span>
+                    <strong className="text-foreground font-semibold">{p.label} :</strong>{" "}
+                    {p.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </aside>
         </div>
       </section>
 
@@ -443,6 +413,45 @@ export default async function Page() {
           </div>
 
           {/* ── Section 2 — Avantages ── */}
+          {/* Pour qui ? — 4 personas (FCFO-S07) */}
+          <div id="pour-qui" className="scroll-mt-24">
+            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
+              Pour qui ?
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+              {[
+                {
+                  title: "Founder pré-Series A",
+                  text: "Vous préparez votre prochain tour et votre comptable ne suffit plus : prévisionnel, data room, KPIs SaaS, conversations VC.",
+                },
+                {
+                  title: "Scale-up Series A/B",
+                  text: "Vous structurez votre fonction finance avant d'embaucher un CFO salarié — reporting mensuel, budget glissant, contrôle de gestion.",
+                },
+                {
+                  title: "CEO ETI en transformation",
+                  text: "Vous avez besoin d'un senior fractional sur 6 mois pour piloter une transition (départ DAF, M&A, restructuration finance).",
+                },
+                {
+                  title: "Founder espagnol s'implantant en France",
+                  text: "Vous voulez un cabinet bilingue France-Espagne capable d'aligner fiscalité, comptabilité et reporting groupe des deux côtés.",
+                },
+              ].map((p, i) => (
+                <article
+                  key={i}
+                  className="rounded-2xl border border-border/60 bg-muted/20 p-5 sm:p-6"
+                >
+                  <h3 className="text-base sm:text-lg font-bold font-heading text-foreground mb-2 leading-snug">
+                    {p.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    {p.text}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+
           <div id="avantages" className="scroll-mt-24">
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
               6 raisons de choisir un Fractional CFO plutôt qu'un recrutement à
@@ -759,503 +768,32 @@ export default async function Page() {
             </div>
           </div>
 
-          {/* ════════════════════════════════════════════════════════
-              Section 8 — Job (PRÉSERVÉE, NE PAS MODIFIER)
-              id="jobs-section" — anchor for the hero secondary CTA
-              ════════════════════════════════════════════════════════ */}
-          <div id="jobs-section" className="scroll-mt-24">
-            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
-              Rejoindre notre équipe de Fractional CFO
+          {/* ─── Encart recrutement compact (FCFO-S06) ────────────────
+              Le bloc recrutement complet (rôle, profil, ce qu'on propose,
+              process, FAQ candidats, JobPosting JSON-LD…) vit désormais sur
+              /carrieres/fractional-cfo. On garde ici un appel discret pour
+              les CFO seniors qui atterriraient sur la page commerciale. ─── */}
+          <aside
+            id="jobs-section"
+            aria-label="Rejoindre l'équipe Iter Advisors"
+            className="scroll-mt-24 rounded-2xl border border-iter-violet/30 bg-iter-violet/5 p-5 sm:p-6"
+          >
+            <h2 className="text-base sm:text-lg font-bold font-heading text-foreground mb-2">
+              Vous êtes un CFO senior et souhaitez rejoindre notre équipe ?
             </h2>
-
-            <div className="space-y-16 sm:space-y-24">
-
-              {/* Le rôle */}
-              <div>
-                <h3 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-6">
-                  Le rôle d'un fractional CFO chez Iter Advisors
-                </h3>
-                <div className="prose prose-sm sm:prose-base max-w-none space-y-4">
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Un <strong>fractional CFO</strong> (ou DAF à temps partagé)
-                    est un directeur financier senior qui intervient dans
-                    plusieurs entreprises sans être salarié à temps plein dans
-                    aucune. Il assume les mêmes responsabilités qu'un CFO
-                    interne — pilotage financier, trésorerie, reporting,
-                    relations investisseurs — mais sur un mode flexible adapté
-                    aux besoins de chaque startup.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Chez Iter Advisors, vos missions typiques incluent :
-                  </p>
-                  <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>
-                      • Mettre en place et opérer le reporting financier mensuel
-                    </li>
-                    <li>
-                      • Piloter la trésorerie et construire les prévisionnels
-                      (cash flow forecast 13 semaines, plan de trésorerie 12
-                      mois)
-                    </li>
-                    <li>
-                      • Préparer et accompagner les levées de fonds (data room,
-                      business plan, négociation term sheet)
-                    </li>
-                    <li>
-                      • Structurer le contrôle de gestion et les KPIs business
-                      (ARR, NRR, CAC, LTV pour le SaaS)
-                    </li>
-                    <li>
-                      • Conseiller la direction sur les décisions stratégiques
-                      (pricing, recrutements, M&A)
-                    </li>
-                    <li>
-                      • Animer les comités stratégiques et les boards
-                      investisseurs
-                    </li>
-                  </ul>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Vous interviendrez sur un portefeuille de{" "}
-                    <strong>startups tech en croissance</strong> : SaaS B2B,
-                    deep-tech, e-commerce, fintech. La majorité de nos clients
-                    ont entre 10 et 80 personnes, sont basés en France ou en
-                    Espagne, et ont déjà levé un seed ou une Series A.
-                  </p>
-                </div>
-              </div>
-
-              {/* Profil recherché */}
-              <div>
-                <h3 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-6">
-                  Profil recherché
-                </h3>
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-lg font-semibold font-heading text-foreground mb-3">
-                      Expérience
-                    </h4>
-                    <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
-                      <li>
-                        •{" "}
-                        <strong>10 ans minimum</strong> en direction financière
-                        (CFO, DAF, head of finance) dans des startups VC-backed
-                        ou des PME en croissance
-                      </li>
-                      <li>
-                        • Expérience d'au moins une{" "}
-                        <strong>levée de fonds Series A ou B</strong> menée en
-                        tant que CFO
-                      </li>
-                      <li>
-                        • Idéalement une expérience préalable en mode{" "}
-                        <strong>fractional / part-time / freelance</strong>{" "}
-                        (mais pas obligatoire)
-                      </li>
-                      <li>
-                        • Connaissance approfondie du business model SaaS et de
-                        ses métriques (ARR, NRR, CAC, LTV, burn, runway)
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className="text-lg font-semibold font-heading text-foreground mb-3">
-                      Compétences
-                    </h4>
-                    <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
-                      <li>
-                        • Maîtrise des outils modernes : Pennylane, Sage,
-                        Agicap, Notion, Looker / Power BI
-                      </li>
-                      <li>
-                        • Capacité à structurer rapidement une fonction finance
-                        from scratch
-                      </li>
-                      <li>
-                        • Aisance relationnelle avec les fondateurs et les
-                        investisseurs
-                      </li>
-                      <li>
-                        • Anglais professionnel courant (la moitié de nos
-                        clients communiquent en anglais)
-                      </li>
-                      <li>
-                        • Espagnol apprécié (cabinet basé à Barcelone)
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className="text-lg font-semibold font-heading text-foreground mb-3">
-                      Mindset
-                    </h4>
-                    <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
-                      <li>
-                        • Autonomie et capacité à gérer plusieurs clients en
-                        parallèle
-                      </li>
-                      <li>
-                        • Goût pour les environnements entrepreneuriaux et
-                        l'incertitude
-                      </li>
-                      <li>• Pragmatisme : on construit, on teste, on ajuste</li>
-                      <li>
-                        • Volonté de transmettre et de faire grandir ses pairs
-                        au sein du cabinet
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Ce que nous proposons */}
-              <div>
-                <h3 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-6">
-                  Ce que nous proposons
-                </h3>
-                <ul className="space-y-3 text-sm sm:text-base text-muted-foreground">
-                  <li>
-                    •{" "}
-                    <strong>Modèle d'engagement flexible</strong> : freelance,
-                    portage salarial ou CDI selon votre situation
-                  </li>
-                  <li>
-                    •{" "}
-                    <strong>Rémunération attractive</strong> : indexée sur le
-                    volume de missions et le type de client (typiquement 750–
-                    1 250 € HT par jour selon séniorité)
-                  </li>
-                  <li>
-                    •{" "}
-                    <strong>Bureaux centraux</strong> à Barcelone (Rambla de
-                    Catalunya), Paris et Toulouse — mode hybride, pas de
-                    présence imposée
-                  </li>
-                  <li>
-                    •{" "}
-                    <strong>Portefeuille de clients déjà constitué</strong> :
-                    pas de prospection à faire, vous arrivez sur des missions
-                    qualifiées
-                  </li>
-                  <li>
-                    •{" "}
-                    <strong>Équipe support</strong> : analystes financiers et
-                    CFOs partners pour vous épauler sur les missions complexes
-                  </li>
-                  <li>
-                    •{" "}
-                    <strong>Réseau d'experts</strong> : avocats d'affaires,
-                    banquiers, experts-comptables, fonds VCs partenaires
-                  </li>
-                  <li>
-                    •{" "}
-                    <strong>Formation continue</strong> et participation à des
-                    conférences (DFCG, France Digitale, EU-Startups)
-                  </li>
-                  <li>
-                    •{" "}
-                    <strong>
-                      Culture fondée sur la confiance et l'autonomie
-                    </strong>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Pourquoi rejoindre */}
-              <div>
-                <h3 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-6">
-                  Pourquoi rejoindre Iter Advisors plutôt que rester en solo ?
-                </h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-                  Beaucoup de CFOs seniors hésitent entre rester en freelance
-                  indépendant et rejoindre un cabinet. Voici ce que vous gagnez
-                  en rejoignant Iter Advisors :
-                </p>
-                <ul className="space-y-3 text-sm sm:text-base text-muted-foreground">
-                  <li>
-                    •{" "}
-                    <strong>Flux de missions stable</strong> : nous générons les
-                    leads, vous vous concentrez sur la finance
-                  </li>
-                  <li>
-                    •{" "}
-                    <strong>Backup en cas d'imprévu</strong> : un partner peut
-                    prendre le relai sur un client si besoin
-                  </li>
-                  <li>
-                    •{" "}
-                    <strong>Cadre méthodologique partagé</strong> : nos
-                    templates et nos process accélèrent vos missions
-                  </li>
-                  <li>
-                    •{" "}
-                    <strong>Communauté de pairs seniors</strong> : 15 CFOs et
-                    analystes avec qui échanger
-                  </li>
-                  <li>
-                    •{" "}
-                    <strong>Couverture cross-border</strong> : nos clients sont
-                    aussi bien en France qu'en Espagne, vous élargissez votre
-                    champ d'intervention
-                  </li>
-                </ul>
-              </div>
-
-              {/* Chiffres */}
-              <div>
-                <h3 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-6">
-                  Iter Advisors en quelques chiffres
-                </h3>
-                <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
-                  <li>
-                    • <strong>+85 entreprises</strong> tech accompagnées depuis
-                    2019
-                  </li>
-                  <li>
-                    • <strong>+100 M€</strong> levés par nos clients (seed,
-                    Series A, Series B)
-                  </li>
-                  <li>
-                    • <strong>5/5 sur 35 avis Trustfolio</strong>
-                  </li>
-                  <li>
-                    • <strong>3 bureaux</strong> : Barcelone, Paris, Toulouse
-                  </li>
-                  <li>
-                    • Recommandé par{" "}
-                    <Link
-                      href="https://wilco-startup.com"
-                      target="_blank"
-                      rel="noopener"
-                      className="text-iter-violet hover:underline"
-                    >
-                      WILCO
-                    </Link>{" "}
-                    et présent dans l'écosystème{" "}
-                    <Link
-                      href="https://francedigitale.org"
-                      target="_blank"
-                      rel="noopener"
-                      className="text-iter-violet hover:underline"
-                    >
-                      France Digitale
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Comment postuler */}
-              <div>
-                <h3 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-6">
-                  Comment postuler
-                </h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-                  Envoyez votre CV et un message court présentant votre parcours
-                  et vos motivations à{" "}
-                  <a
-                    href="mailto:recrutement@iteradvisors.com"
-                    className="text-iter-violet hover:underline font-semibold"
-                  >
-                    recrutement@iteradvisors.com
-                  </a>
-                  , ou directement à{" "}
-                  <a
-                    href="https://www.linkedin.com/in/sebastien-doat-fractional-cfo/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-iter-violet hover:underline font-semibold"
-                  >
-                    Sébastien Doat sur LinkedIn
-                  </a>
-                  .
-                </p>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 font-semibold">
-                  Le process de recrutement comprend :
-                </p>
-                <ol className="space-y-2 text-sm sm:text-base text-muted-foreground list-decimal list-inside">
-                  <li>
-                    1️⃣ Échange initial de 30 minutes avec Sébastien (founding
-                    partner)
-                  </li>
-                  <li>
-                    2️⃣ Entretien approfondi avec un partner et un CFO senior
-                    (1h30)
-                  </li>
-                  <li>
-                    3️⃣ Cas pratique sur un dossier client réel anonymisé (2h, à
-                    votre rythme)
-                  </li>
-                  <li>4️⃣ Rencontre informelle avec l'équipe</li>
-                  <li>5️⃣ Offre et démarrage sous 4 semaines maximum</li>
-                </ol>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-4">
-                  <strong>
-                    Délai moyen entre la candidature et la première mission : 6
-                    semaines
-                  </strong>
-                  .
-                </p>
-              </div>
-
-              {/* Pour aller plus loin */}
-              <div>
-                <h3 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-6">
-                  Pour aller plus loin
-                </h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-                  Avant de candidater, vous pouvez approfondir votre
-                  compréhension de notre métier et de notre approche :
-                </p>
-                <ul className="space-y-2 text-sm sm:text-base">
-                  <li>
-                    •{" "}
-                    <Link
-                      href="/daf-externalise"
-                      className="text-iter-violet hover:underline"
-                    >
-                      Notre offre de DAF externalisé
-                    </Link>{" "}
-                    — la version FR de ce que vous ferez côté client
-                  </li>
-                  <li>
-                    •{" "}
-                    <Link
-                      href="/daf-externalise"
-                      className="text-iter-violet hover:underline"
-                    >
-                      DAF à temps partagé : missions, formules et tarifs
-                    </Link>
-                  </li>
-                  <li>
-                    •{" "}
-                    <Link
-                      href="/services/controle-de-gestion-externalise"
-                      className="text-iter-violet hover:underline"
-                    >
-                      Contrôle de gestion externalisé
-                    </Link>{" "}
-                    — l'une de vos missions clés côté client
-                  </li>
-                  <li>
-                    •{" "}
-                    <Link
-                      href="/services/comptabilite-externalisation"
-                      className="text-iter-violet hover:underline"
-                    >
-                      Externalisation comptable
-                    </Link>{" "}
-                    — la base de votre travail
-                  </li>
-                </ul>
-              </div>
-
-              {/* FAQ job */}
-              <div>
-                <h3 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-6">
-                  FAQ — questions fréquentes sur le recrutement
-                </h3>
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-lg font-semibold font-heading text-foreground mb-2">
-                      Suis-je obligé(e) d'être en freelance ?
-                    </h4>
-                    <p className="text-sm sm:text-base text-muted-foreground">
-                      Non. Nous proposons trois modes d'engagement : freelance
-                      pur, portage salarial ou CDI temps plein avec rémunération
-                      variable selon les missions. Le choix dépend de votre
-                      situation personnelle et fiscale.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold font-heading text-foreground mb-2">
-                      Puis-je continuer à avoir des clients en propre en
-                      parallèle ?
-                    </h4>
-                    <p className="text-sm sm:text-base text-muted-foreground">
-                      Oui, à condition qu'il n'y ait pas de conflit d'intérêts
-                      avec nos clients (concurrence directe). Nous validons cela
-                      ensemble lors de la signature.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold font-heading text-foreground mb-2">
-                      Combien de jours par mois faut-il être disponible ?
-                    </h4>
-                    <p className="text-sm sm:text-base text-muted-foreground">
-                      Au minimum 8 jours par mois (équivalent 2 missions de
-                      formule Essentiel). La plupart de nos fractional CFOs
-                      travaillent entre 12 et 18 jours par mois pour Iter
-                      Advisors.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold font-heading text-foreground mb-2">
-                      Y a-t-il une obligation de présence à Barcelone, Paris ou
-                      Toulouse ?
-                    </h4>
-                    <p className="text-sm sm:text-base text-muted-foreground">
-                      Non. Vous pouvez résider n'importe où en France, en
-                      Espagne ou en Europe. Une présence ponctuelle dans nos
-                      bureaux est appréciée pour les comités, mais pas
-                      obligatoire. La plupart des missions se déroulent en
-                      hybride (1 jour sur site / 1 jour distant) ou 100 %
-                      distant.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold font-heading text-foreground mb-2">
-                      Quel est le profil typique d'un fractional CFO recruté
-                      chez Iter Advisors ?
-                    </h4>
-                    <p className="text-sm sm:text-base text-muted-foreground">
-                      Ancien CFO ou head of finance dans une scale-up (Series A
-                      à Series C), 10–20 ans d'expérience, ayant déjà mené au
-                      moins une levée de fonds. La majorité de nos CFOs ont une
-                      expérience SaaS, deep-tech ou e-commerce.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold font-heading text-foreground mb-2">
-                      Quel est le délai entre ma candidature et la première
-                      mission ?
-                    </h4>
-                    <p className="text-sm sm:text-base text-muted-foreground">
-                      En moyenne 6 semaines : 3 semaines de process de
-                      recrutement, puis 3 semaines pour vous matcher avec un
-                      client adapté à votre profil.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* CTA job final */}
-              <div className="bg-iter-chartreuse/10 border-l-4 border-iter-chartreuse rounded-r-lg p-6 sm:p-8">
-                <p className="text-base sm:text-lg font-semibold text-foreground mb-4">
-                  Prêt à rejoindre l'équipe ?
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href="mailto:recrutement@iteradvisors.com"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
-                  >
-                    <Mail size={18} />
-                    Envoyer votre CV
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/sebastien-doat-fractional-cfo/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border-2 border-iter-violet text-iter-violet hover:bg-iter-violet/5 transition-all duration-300 font-semibold"
-                  >
-                    <Linkedin size={18} />
-                    Contacter Sébastien
-                  </a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          {/* ── end #jobs-section ── */}
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3">
+              Nous recrutons en continu des fractional CFOs avec 10+ ans
+              d&apos;expérience pour intervenir sur notre portefeuille de 85+
+              startups en France et en Espagne.
+            </p>
+            <Link
+              href="/carrieres/fractional-cfo"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-iter-violet hover:underline"
+            >
+              Découvrir nos opportunités de recrutement
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+          </aside>
 
         </div>
       </section>
