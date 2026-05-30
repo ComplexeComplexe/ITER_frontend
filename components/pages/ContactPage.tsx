@@ -5,19 +5,16 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import {
   ArrowRight,
-  MapPin,
   Mail,
   Phone,
   Clock,
   CheckCircle2,
   Linkedin,
-  Calendar,
   Star,
   Send,
 } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getContactContent, ContactFormField } from "@/lib/content/contact";
-import { BOOKING_URL } from "@/lib/navigation";
 import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -183,8 +180,10 @@ export default function ContactPage({
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-      {/* ═══ HERO ═══ */}
-      <section className="relative bg-gradient-to-br from-iter-violet via-iter-violet to-iter-dark pt-32 pb-20 overflow-hidden">
+      {/* ═══ HERO + FORM ═══ (2026-05-30 redesign — form now lives in the
+            hero as the right column so it's visible above the fold on desktop;
+            on mobile it stacks immediately after the hero copy). ═══ */}
+      <section className="relative bg-gradient-to-br from-iter-violet via-iter-violet to-iter-dark pt-28 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
         {/* Geometric background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <svg className="absolute w-full h-full opacity-[0.06]" viewBox="0 0 1440 600" fill="none">
@@ -196,66 +195,59 @@ export default function ContactPage({
         </div>
 
         <div className="container relative z-10" ref={heroRef}>
-          <Breadcrumb
-            locale={locale}
-            items={[{ label: t.h1 }]}
-            variant="dark"
-          />
+          <Breadcrumb locale={locale} items={[{ label: t.h1 }]} variant="dark" />
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-medium tracking-wide mb-6 backdrop-blur-sm">
-              <Phone size={12} />
-              {tx.badge}
-            </span>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 mt-6 lg:mt-8 items-start">
+            {/* ── Left: hero copy (3/5 on desktop) ── */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-3 text-white"
+            >
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-medium tracking-wide mb-6 backdrop-blur-sm">
+                <Phone size={12} />
+                {tx.badge}
+              </span>
 
-            <h1 className="text-4xl lg:text-6xl font-bold font-heading text-white leading-[1.1] mb-6">
-              {tx.h1}
-            </h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-heading leading-[1.1] mb-6">
+                {tx.h1}
+              </h1>
 
-            <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-2xl mb-8">
-              {tx.subtitle}
-            </p>
+              <p className="text-base sm:text-lg text-white/70 leading-relaxed mb-8">
+                {tx.subtitle}
+              </p>
 
-            {/* Trust badges */}
-            <div className="flex flex-wrap items-center gap-6">
-              <div className="flex items-center gap-2">
-                <div className="flex gap-0.5">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} size={14} className="text-iter-chartreuse fill-iter-chartreuse" />
-                  ))}
+              {/* Trust badges */}
+              <div className="flex flex-wrap items-center gap-6">
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-0.5">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Star key={i} size={14} className="text-iter-chartreuse fill-iter-chartreuse" />
+                    ))}
+                  </div>
+                  <span className="text-white/60 text-sm">{tx.ratingLabel}</span>
                 </div>
-                <span className="text-white/60 text-sm">{tx.ratingLabel}</span>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 size={16} className="text-iter-chartreuse" />
+                  <span className="text-white/60 text-sm">{tx.trustBadge}</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 size={16} className="text-iter-chartreuse" />
-                <span className="text-white/60 text-sm">{tx.trustBadge}</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+            </motion.div>
 
-      {/* ═══ FORM + CONTACT INFO ═══ */}
-      <section className="bg-background py-20 lg:py-28">
-        <div className="container" ref={formRef}>
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
-            {/* ── Form (3/5) ── */}
+            {/* ── Right: form card (2/5 on desktop) ── */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={formInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-3"
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="lg:col-span-2"
+              ref={formRef}
             >
-              <div className="bg-white rounded-3xl border border-border/50 shadow-xl shadow-black/[0.03] p-8 lg:p-10">
-                <h2 className="text-2xl font-bold font-heading text-foreground mb-1">
+              <div className="bg-white rounded-3xl border border-white/10 shadow-2xl shadow-black/10 p-6 sm:p-8">
+                <h2 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-1">
                   {tx.formTitle}
                 </h2>
-                <p className="text-muted-foreground text-sm mb-8">
+                <p className="text-muted-foreground text-sm mb-6">
                   {tx.formSubtitle}
                 </p>
 
@@ -263,17 +255,17 @@ export default function ContactPage({
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="flex flex-col items-center justify-center py-16 text-center"
+                    className="flex flex-col items-center justify-center py-12 text-center"
                   >
-                    <div className="w-16 h-16 rounded-full bg-iter-chartreuse/20 flex items-center justify-center mb-6">
-                      <CheckCircle2 size={32} className="text-iter-violet" />
+                    <div className="w-14 h-14 rounded-full bg-iter-chartreuse/20 flex items-center justify-center mb-5">
+                      <CheckCircle2 size={28} className="text-iter-violet" />
                     </div>
-                    <p className="text-lg font-semibold text-foreground mb-2">
+                    <p className="text-base font-semibold text-foreground mb-2">
                       {tx.successMessage}
                     </p>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-5">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     {error && (
                       <div className="rounded-xl bg-red-50 border border-red-200 p-4 text-sm text-red-700">
                         {error}
@@ -290,11 +282,11 @@ export default function ContactPage({
 
                     {renderFields(t.form.fields)}
 
-                    <div className="pt-2">
+                    <div className="pt-1">
                       <button
                         type="submit"
                         disabled={pending}
-                        className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-iter-violet text-white font-semibold text-base hover:bg-iter-violet/90 hover:shadow-lg hover:shadow-iter-violet/20 transition-all duration-300 disabled:opacity-50 w-full sm:w-auto justify-center"
+                        className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-iter-violet text-white font-semibold text-base hover:bg-iter-violet/90 hover:shadow-lg hover:shadow-iter-violet/20 transition-all duration-300 disabled:opacity-50 w-full justify-center"
                       >
                         {pending ? (
                           <span className="flex items-center gap-2">
@@ -317,78 +309,59 @@ export default function ContactPage({
                 )}
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
 
-            {/* ── Contact Info (2/5) ── */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={formInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="lg:col-span-2 space-y-6"
+      {/* ═══ CONTACT INFO ROW (compact, below the fold; the prior Calendly
+            card was removed because BOOKING_URL now resolves to /contact and
+            the link would have been self-referential). ═══ */}
+      <section className="bg-background py-10 lg:py-14">
+        <div className="container">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">
+            {tx.infoTitle}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-4xl mx-auto">
+            {/* Email */}
+            <a
+              href="mailto:contact@iteradvisors.com"
+              className="group flex items-start gap-3 p-4 rounded-2xl border border-border/50 bg-white hover:border-iter-violet/30 hover:shadow-md transition-all duration-300"
             >
-              <h3 className="text-lg font-semibold text-foreground">
-                {tx.infoTitle}
-              </h3>
-
-              {/* Email */}
-              <a
-                href="mailto:contact@iteradvisors.com"
-                className="group flex items-start gap-4 p-5 rounded-2xl border border-border/50 bg-white hover:border-iter-violet/30 hover:shadow-md transition-all duration-300"
-              >
-                <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
-                  <Mail size={18} className="text-iter-violet" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-foreground">{tx.emailLabel}</p>
-                  <p className="text-sm text-muted-foreground">contact@iteradvisors.com</p>
-                </div>
-              </a>
-
-              {/* Hours */}
-              <div className="flex items-start gap-4 p-5 rounded-2xl border border-border/50 bg-white">
-                <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0">
-                  <Clock size={18} className="text-iter-violet" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-foreground">{tx.hoursLabel}</p>
-                  <p className="text-sm text-muted-foreground">{tx.hoursValue}</p>
-                </div>
+              <div className="w-9 h-9 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
+                <Mail size={16} className="text-iter-violet" />
               </div>
+              <div>
+                <p className="text-xs font-medium text-foreground">{tx.emailLabel}</p>
+                <p className="text-xs text-muted-foreground">contact@iteradvisors.com</p>
+              </div>
+            </a>
 
-              {/* Calendly CTA */}
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-start gap-4 p-5 rounded-2xl border-2 border-iter-chartreuse/50 bg-iter-chartreuse/5 hover:bg-iter-chartreuse/10 hover:border-iter-chartreuse transition-all duration-300"
-              >
-                <div className="w-10 h-10 rounded-xl bg-iter-chartreuse/20 flex items-center justify-center shrink-0">
-                  <Calendar size={18} className="text-iter-dark" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground flex items-center gap-2">
-                    {tx.calendlyLabel}
-                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                  </p>
-                  <p className="text-sm text-muted-foreground">{tx.calendlyDesc}</p>
-                </div>
-              </a>
+            {/* Hours */}
+            <div className="flex items-start gap-3 p-4 rounded-2xl border border-border/50 bg-white">
+              <div className="w-9 h-9 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0">
+                <Clock size={16} className="text-iter-violet" />
+              </div>
+              <div>
+                <p className="text-xs font-medium text-foreground">{tx.hoursLabel}</p>
+                <p className="text-xs text-muted-foreground">{tx.hoursValue}</p>
+              </div>
+            </div>
 
-              {/* LinkedIn */}
-              <a
-                href="https://www.linkedin.com/company/iter-advisors/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-start gap-4 p-5 rounded-2xl border border-border/50 bg-white hover:border-[#0A66C2]/30 hover:shadow-md transition-all duration-300"
-              >
-                <div className="w-10 h-10 rounded-xl bg-[#0A66C2]/10 flex items-center justify-center shrink-0 group-hover:bg-[#0A66C2]/20 transition-colors">
-                  <Linkedin size={18} className="text-[#0A66C2]" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-foreground">LinkedIn</p>
-                  <p className="text-sm text-muted-foreground">Iter Advisors</p>
-                </div>
-              </a>
-            </motion.div>
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/company/iter-advisors/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-3 p-4 rounded-2xl border border-border/50 bg-white hover:border-[#0A66C2]/30 hover:shadow-md transition-all duration-300"
+            >
+              <div className="w-9 h-9 rounded-xl bg-[#0A66C2]/10 flex items-center justify-center shrink-0 group-hover:bg-[#0A66C2]/20 transition-colors">
+                <Linkedin size={16} className="text-[#0A66C2]" />
+              </div>
+              <div>
+                <p className="text-xs font-medium text-foreground">LinkedIn</p>
+                <p className="text-xs text-muted-foreground">Iter Advisors</p>
+              </div>
+            </a>
           </div>
         </div>
       </section>
