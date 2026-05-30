@@ -490,6 +490,24 @@ export const dafContent: Record<Locale, DafContent> = {
           "Le TJM (tarif journalier moyen) d'un DAF externalisé se situe entre 750 et 1 250 EUR HT selon la seniorité et la complexité des missions. Chez Iter Advisors, nos formules vont de 2 000 EUR/mois HT (2-3 jours par mois) à 7 000+ EUR/mois HT (8+ jours par mois). À titre de comparaison, un DAF salarié à temps plein coûte entre 8 300 et 17 750 EUR/mois charges comprises, soit un budget annuel de 100 000 à 213 000 EUR.",
       },
       {
+        // SERP PAA wording variant (différent de \"Combien coûte\") — annual / ROI angle.
+        question: "Quel est le coût d'un DAF externalisé ?",
+        answer:
+          "Sur une base annuelle, un DAF externalisé chez Iter Advisors revient entre 24 000 et 84 000 EUR HT par an selon la formule choisie (2 000 à 7 000 EUR HT/mois). C'est 4 à 8 fois moins qu'un DAF salarié à temps plein (100 000 à 213 000 EUR/an charges comprises). Le coût total dépend du volume d'intervention (jours par mois), de la séniorité du profil et de la complexité de la situation : multi-entités, multi-devises, levée de fonds en cours, opérations de M&A.",
+      },
+      {
+        // SERP PAA.
+        question: "Quel est le salaire d'un DAF externalisé ?",
+        answer:
+          "Le DAF externalisé n'est pas salarié de votre entreprise, donc le terme exact est honoraires (pas salaire). Chez Iter Advisors, le tarif facturé va de 2 000 à 7 000 EUR HT par mois selon la formule (2 à 8+ jours par mois). En tarif journalier moyen (TJM), comptez entre 750 et 1 250 EUR HT/jour pour un DAF senior 10+ ans d'expérience. Pour les freelance DAF solo hors cabinet, les TJM observés en 2026 sont du même ordre de grandeur.",
+      },
+      {
+        // SERP PAA.
+        question: "Comment devenir DAF externalisé ?",
+        answer:
+          "Devenir DAF externalisé suppose en général 10 à 15 ans d'expérience en direction financière (DAF, head of finance, CFO de scale-up), au moins une levée de fonds Series A ou B menée en tant que CFO, et la maîtrise des outils modernes (Pennylane, Agicap, Power BI). Trois voies principales : freelance en solo, portage salarial, ou rejoindre un cabinet comme Iter Advisors qui apporte un flux de missions stable, des pairs seniors et un cadre méthodologique éprouvé. Voir notre page recrutement Fractional CFO pour candidater (/carrieres/fractional-cfo).",
+      },
+      {
         question: "Quelle est la différence entre un DAF externalisé et un expert-comptable ?",
         answer:
           "L'expert-comptable certifie la conformité légale et fiscale de votre comptabilité (bilan annuel, liasse fiscale, déclarations TVA). Il regarde le passé et garantit la régularité des comptes. Le DAF externalisé pilote la performance financière au quotidien : prévisionnel de trésorerie, reporting de gestion, analyse de marges, préparation de levée de fonds. Il anticipe l'avenir et aide à prendre des décisions opérationnelles. Ce sont des rôles complémentaires : une PME structurée a typiquement les deux.",
