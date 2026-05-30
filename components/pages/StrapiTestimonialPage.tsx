@@ -7,9 +7,13 @@ import StrapiBlocks from "@/components/StrapiBlocks";
 import { StrapiTestimonial, strapiMediaUrl } from "@/lib/strapi";
 
 const labels: Record<Locale, { resources: string; resourcesHref: string; testimonials: string; testimonialsHref: string; challenge: string; solution: string; results: string; industry: string; teamSize: string; revenue: string; engagement: string }> = {
-  fr: { resources: "Ressources", resourcesHref: "/ressources", testimonials: "Cas clients", testimonialsHref: "/ressources/testimonials", challenge: "Le défi", solution: "Notre solution", results: "Résultats", industry: "Secteur", teamSize: "Équipe", revenue: "CA initial", engagement: "Type de mission" },
-  en: { resources: "Resources", resourcesHref: "/en/ressources", testimonials: "Case studies", testimonialsHref: "/en/ressources/testimonials", challenge: "The challenge", solution: "Our solution", results: "Results", industry: "Industry", teamSize: "Team size", revenue: "Initial revenue", engagement: "Engagement type" },
-  es: { resources: "Recursos", resourcesHref: "/es/recursos", testimonials: "Casos prácticos", testimonialsHref: "/es/recursos/testimonials", challenge: "El desafío", solution: "Nuestra solución", results: "Resultados", industry: "Sector", teamSize: "Equipo", revenue: "Facturación inicial", engagement: "Tipo de misión" },
+  // T4 (2026-05-31): testimonialsHref now points to /ressources/cas-clients
+  // (the unified social-proof hub). The old /ressources/testimonials path
+  // 301-redirects to cas-clients per next.config.ts UX-02, so internal links
+  // through this breadcrumb must use the canonical destination directly.
+  fr: { resources: "Ressources", resourcesHref: "/ressources", testimonials: "Cas clients", testimonialsHref: "/ressources/cas-clients", challenge: "Le défi", solution: "Notre solution", results: "Résultats", industry: "Secteur", teamSize: "Équipe", revenue: "CA initial", engagement: "Type de mission" },
+  en: { resources: "Resources", resourcesHref: "/en/ressources", testimonials: "Case studies", testimonialsHref: "/en/ressources/cas-clients", challenge: "The challenge", solution: "Our solution", results: "Results", industry: "Industry", teamSize: "Team size", revenue: "Initial revenue", engagement: "Engagement type" },
+  es: { resources: "Recursos", resourcesHref: "/es/recursos", testimonials: "Casos prácticos", testimonialsHref: "/es/recursos/cas-clients", challenge: "El desafío", solution: "Nuestra solución", results: "Resultados", industry: "Sector", teamSize: "Equipo", revenue: "Facturación inicial", engagement: "Tipo de misión" },
 };
 
 export default function StrapiTestimonialPage({ locale, testimonial }: { locale: Locale; testimonial: StrapiTestimonial }) {
