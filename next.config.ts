@@ -805,6 +805,54 @@ const nextConfig: NextConfig = {
       { source: "/fractional-cfo-barcelona",    destination: "/daf-externalise-barcelone",                  permanent: true },
       { source: "/es/fractional-cfo-barcelona", destination: "/es/cfo-externalizado-barcelona",             permanent: true },
       { source: "/en/ressources/blog/la-modernisation-du-role-de-cfo", destination: "/ressources/blog/la-modernisation-du-role-de-cfo", permanent: true },
+
+      // ─── GSC-T7 / T8 (2026-05-31) — final 404 cleanup batch ──────────
+      // T7 — anciennes URLs jamais redirigées (architecture pre-Next.js).
+      // The site never had /notre-equipe, /notre-methode or /notre-expertise
+      // routes under Next.js; they're WordPress-era legacy URLs still
+      // surfacing in GSC. All three best-fit /a-propos (équipe + méthode +
+      // expertise sont consolidés là). Trailing-slash variants get a free
+      // first hop via trailingSlash:false, then land on this rule.
+      { source: "/notre-equipe",    destination: "/a-propos", permanent: true },
+      { source: "/notre-methode",   destination: "/a-propos", permanent: true },
+      { source: "/notre-expertise", destination: "/a-propos", permanent: true },
+
+      // T7 — article moved out of /ressources/<slug> into /ressources/blog/<slug>
+      // long ago; legacy URL still in GSC.
+      { source: "/ressources/organiser-sa-direction-financiere",
+        destination: "/ressources/blog/organiser-sa-direction-financiere",
+        permanent: true },
+
+      // T8 — root-level slug without locale prefix; /en/fractional-cfo is
+      // the canonical EN destination (FR equivalent is /daf-externalise).
+      { source: "/fractional-cfo", destination: "/en/fractional-cfo", permanent: true },
+
+      // T8 — Spanish "fiches métiers" route never existed; route to the
+      // FR canonical (fiche-metier listing) until a localized one ships.
+      { source: "/es/ressources/descripcion-del-puesto",
+        destination: "/ressources/fiche-metier",
+        permanent: true },
+
+      // T8 — broken / truncated blog slugs (article doesn't exist or slug
+      // got cut by GSC). Send to the locale blog hub instead of 404'ing.
+      { source: "/ressources/blog/consequences-financieres-cyberattaques",
+        destination: "/ressources/blog",
+        permanent: true },
+      { source: "/ressources/blog/anticiper-financierement-ses-recrutements-guide-pratiqu",
+        destination: "/ressources/blog",
+        permanent: true },
+      { source: "/en/ressources/blog/anticiper-financierement-ses-recrutements-guide-prat",
+        destination: "/en/ressources/blog",
+        permanent: true },
+      { source: "/en/ressources/blog/les-10-outils-pour-cfos-startup",
+        destination: "/en/ressources/blog",
+        permanent: true },
+
+      // T8 — wrong EN slug variant for the cost article; point to the
+      // canonical EN slug which exists in lib/content/blog-posts.ts.
+      { source: "/en/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission",
+        destination: "/en/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
+        permanent: true },
     ];
   },
 };
