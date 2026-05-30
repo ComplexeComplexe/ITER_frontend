@@ -787,7 +787,10 @@ const nextConfig: NextConfig = {
       { source: "/es/recursos/blog/drh-externalise-quand-et-pourquoi",                    destination: "/ressources/blog/drh-externalise-quand-et-pourquoi",                  permanent: true },
       { source: "/es/recursos/blog/daf-externalise-barcelone-guide-startups-espagnoles",  destination: "/ressources/blog/daf-externalise-barcelone-guide-startups-espagnoles", permanent: true },
       { source: "/es/recursos/blog/quand-embaucher-daf-externalise-5-signes",             destination: "/ressources/blog/quand-embaucher-daf-externalise-5-signes",            permanent: true },
-      { source: "/es/recursos/blog/cout-daf-externalise-2026-tarifs-par-mission",         destination: "/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission",        permanent: true },
+      // 2026-05-31 — same fix as the EN sibling above: destination was
+      // sending ES visitors to the FR article. Now points to the canonical
+      // ES slug (an ES version exists at this slug in lib/content/blog-posts.ts).
+      { source: "/es/recursos/blog/cout-daf-externalise-2026-tarifs-par-mission",         destination: "/es/recursos/blog/cout-daf-externalise-tarifs-prix-2026",        permanent: true },
       { source: "/es/recursos/blog/la-modernisation-du-role-de-cfo",                      destination: "/ressources/blog/la-modernisation-du-role-de-cfo",                    permanent: true },
       { source: "/es/recursos/blog/impot-revenu-espagne",                                 destination: "/ressources/blog/impot-revenu-espagne",                               permanent: true },
       { source: "/es/recursos/blog/daf-drh-externalises-synergie",                        destination: "/ressources/blog/daf-drh-externalises-synergie",                      permanent: true },
