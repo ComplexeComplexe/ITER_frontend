@@ -333,6 +333,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${BASE}/ressources/fiscalite/residence-fiscale-france-espagne`,
     lastModified: D.fiscalite,
   });
+  // Piliers 2-5 shipped 2026-05-31 (ticket: complete fiscalite cocoon).
+  entries.push({
+    url: `${BASE}/ressources/fiscalite/double-imposition-france-espagne`,
+    lastModified: D.fiscalite,
+  });
+  entries.push({
+    url: `${BASE}/ressources/fiscalite/impot-revenu-espagne`,
+    lastModified: D.fiscalite,
+  });
+  entries.push({
+    url: `${BASE}/ressources/fiscalite/beckham-law`,
+    lastModified: D.fiscalite,
+  });
+  entries.push({
+    url: `${BASE}/ressources/fiscalite/modelo-720`,
+    lastModified: D.fiscalite,
+  });
   // Named-clients page (GEO-5 from AI Visibility audit)
   entries.push(
     ...entryAllLocales(

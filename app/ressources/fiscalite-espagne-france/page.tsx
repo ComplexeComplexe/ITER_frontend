@@ -34,10 +34,10 @@ export const metadata: Metadata = buildMetadata({
    so the link becomes clickable; otherwise the entry is rendered as prose. */
 const PILLARS: { id: string; label: string; href: string; ready: boolean; descriptor: string }[] = [
   { id: "residence", label: "Résidence fiscale", href: "/ressources/fiscalite/residence-fiscale-france-espagne", ready: true, descriptor: "Découvrez les 3 critères qui déterminent votre résidence fiscale en Espagne (règle des 183 jours, centre des intérêts économiques, foyer familial)." },
-  { id: "double", label: "Double imposition", href: "/ressources/fiscalite/double-imposition-france-espagne", ready: false, descriptor: "Comprenez comment fonctionne la convention fiscale franco-espagnole pour éviter d'être imposé deux fois sur les mêmes revenus." },
-  { id: "irpf", label: "Impôt sur le revenu", href: "/ressources/fiscalite/impot-revenu-espagne", ready: false, descriptor: "Calculez votre impôt sur le revenu en Espagne et découvrez les tranches d'imposition applicables en 2026." },
-  { id: "beckham", label: "Loi Beckham", href: "/ressources/fiscalite/beckham-law", ready: false, descriptor: "Profitez du régime spécial des impatriés (Loi Beckham) pour bénéficier d'un taux fixe avantageux de 24 % pendant 6 ans." },
-  { id: "modelo720", label: "Modelo 720", href: "/ressources/fiscalite/modelo-720", ready: false, descriptor: "Ne manquez pas l'obligation de déclarer vos biens situés à l'étranger (comptes bancaires, assurance-vie, immobilier en France) sous peine de lourdes sanctions." },
+  { id: "double", label: "Double imposition", href: "/ressources/fiscalite/double-imposition-france-espagne", ready: true, descriptor: "Comprenez comment fonctionne la convention fiscale franco-espagnole pour éviter d'être imposé deux fois sur les mêmes revenus." },
+  { id: "irpf", label: "Impôt sur le revenu", href: "/ressources/fiscalite/impot-revenu-espagne", ready: true, descriptor: "Calculez votre impôt sur le revenu en Espagne et découvrez les tranches d'imposition applicables en 2026." },
+  { id: "beckham", label: "Loi Beckham", href: "/ressources/fiscalite/beckham-law", ready: true, descriptor: "Profitez du régime spécial des impatriés (Loi Beckham) pour bénéficier d'un taux fixe avantageux de 24 % pendant 6 ans." },
+  { id: "modelo720", label: "Modelo 720", href: "/ressources/fiscalite/modelo-720", ready: true, descriptor: "Ne manquez pas l'obligation de déclarer vos biens situés à l'étranger (comptes bancaires, assurance-vie, immobilier en France) sous peine de lourdes sanctions." },
   { id: "entrepreneur", label: "Fiscalité entrepreneur", href: "/ressources/fiscalite/entrepreneur-francais-espagne", ready: false, descriptor: "Comparez l'Impôt sur les Sociétés (IS) et les charges patronales entre la France et l'Espagne." },
   { id: "autonomo", label: "Freelance autónomo", href: "/ressources/fiscalite/freelance-autonomo-espagne", ready: false, descriptor: "Découvrez le statut d'autónomo, ses cotisations sociales (cuota) et ses obligations de facturation (TVA intracommunautaire)." },
   { id: "dividendes", label: "Dividendes", href: "/ressources/fiscalite/dividendes-france-espagne", ready: false, descriptor: "Optimisez la fiscalité de vos dividendes versés par une société française à un résident espagnol." },
@@ -257,6 +257,37 @@ export default async function Page() {
               ))}
             </ul>
           </div>
+
+          {/* Articles récents — cross-linking with the /ressources/blog/* cluster */}
+          <section className="mt-4">
+            <h2 className="text-2xl font-bold font-heading text-foreground mb-6">
+              Articles récents sur la fiscalité franco-espagnole
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { title: "Régimes fiscaux France vs Espagne", href: "/ressources/blog/regimes-fiscaux-france-vs-espagne" },
+                { title: "Impôt sur le revenu en Espagne", href: "/ressources/blog/impot-revenu-espagne" },
+                { title: "Barème IRPF 2026", href: "/ressources/blog/bareme-irpf-espagne-2026" },
+                { title: "Double imposition France-Espagne", href: "/ressources/blog/double-imposition-france-espagne-convention" },
+                { title: "Modelo 720 : déclaration des biens", href: "/ressources/blog/modelo-720-declaration-biens-etranger" },
+              ].map((article) => (
+                <Link
+                  key={article.href}
+                  href={article.href}
+                  className="group flex items-center gap-3 p-4 rounded-xl border border-border/50 hover:border-iter-violet/30 transition-all"
+                >
+                  <ArrowRight
+                    size={16}
+                    className="text-iter-violet shrink-0 group-hover:translate-x-1 transition-transform"
+                    aria-hidden
+                  />
+                  <span className="text-sm font-medium group-hover:text-iter-violet transition-colors">
+                    {article.title}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
 
           {/* CTA */}
           <aside className="rounded-3xl bg-iter-violet/5 border-l-4 border-iter-violet p-6 sm:p-8">

@@ -543,6 +543,7 @@ export default function HomePage({
                     <Link href="/daf-externalise/tarifs" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Tarifs du DAF externalis\u00e9</Link>
                     <Link href="/daf-externalise/temps-partage" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF \u00e0 temps partag\u00e9</Link>
                     <Link href="/daf-externalise/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">M\u00e9tier de DAF</Link>
+                    <Link href="/ressources/fiscalite-espagne-france" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Fiscalit\u00e9 France-Espagne</Link>
                   </>
                 )}
                 {locale === "en" && (

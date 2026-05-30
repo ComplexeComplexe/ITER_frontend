@@ -127,6 +127,34 @@ export default function Footer({ locale }: { locale: Locale }) {
             </div>
           )}
 
+          {/* Fiscalité France-Espagne — cocon sémantique (FR uniquement) */}
+          {locale === "fr" && (
+            <div>
+              <p className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
+                Fiscalité France-Espagne
+              </p>
+              <ul className="space-y-1.5 sm:space-y-2.5">
+                {[
+                  { text: "Guide complet", href: "/ressources/fiscalite-espagne-france" },
+                  { text: "Résidence fiscale Espagne", href: "/ressources/fiscalite/residence-fiscale-france-espagne" },
+                  { text: "Double imposition", href: "/ressources/fiscalite/double-imposition-france-espagne" },
+                  { text: "Impôt sur le revenu", href: "/ressources/fiscalite/impot-revenu-espagne" },
+                  { text: "Modelo 720", href: "/ressources/fiscalite/modelo-720" },
+                  { text: "Loi Beckham", href: "/ressources/fiscalite/beckham-law" },
+                ].map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-white/50 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2"
+                    >
+                      {item.text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {/* Locations */}
           <div>
             <p className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
