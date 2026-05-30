@@ -133,6 +133,38 @@ export async function generateMetadata(): Promise<Metadata> {
               text: "Iter Advisors met en relation les startups avec un Fractional CFO sous 5 jours ouvrés. Le diagnostic et la mise en route sont réalisés sous 2 semaines.",
             },
           },
+          {
+            "@type": "Question",
+            name: "Quelle est la différence entre un fractional CFO et un DAF externalisé ?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Aucune différence métier — ce sont deux noms pour le même rôle. \"DAF externalisé\" est le terme français historique ; \"fractional CFO\" est la terminologie anglo-saxonne plébiscitée par les startups VC-backed. Iter Advisors couvre les deux : pour la version FR généraliste, voir notre offre dédiée DAF externalisé.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Puis-je commencer par une mission ponctuelle (data room, levée) ?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Oui. Nous proposons des missions ponctuelles à durée fixe (data room pour une levée, due diligence, mise en place du reporting, prévisionnel 12 mois). Tarification au forfait selon le périmètre, opérationnel sous 5 jours ouvrés. Beaucoup de missions ponctuelles débouchent ensuite sur un engagement récurrent au mois.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Comment se passe le matching avec le bon fractional CFO ?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Lors de l'échange initial de 30 minutes, nous identifions vos enjeux (stade, secteur, type de levée) ; puis nous proposons un fractional CFO de notre équipe selon son expérience sectorielle et son style d'intervention. Vous rencontrez le profil avant signature : pas de surprise au démarrage.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Que se passe-t-il si on ne s'entend pas avec le fractional CFO ?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Aucun engagement de durée — vous pouvez interrompre la mission au mois suivant, sans frais. En pratique, nous proposons d'abord un autre fractional CFO de l'équipe pour poursuivre la mission sans perdre le contexte : c'est l'avantage d'un cabinet de 15 CFOs vs un freelance solo.",
+            },
+          },
         ],
       },
       // ── Organization ────────────────────────────────────────────
@@ -533,6 +565,24 @@ export default async function Page() {
                 </div>
               ))}
             </div>
+            <p className="mt-6 text-sm sm:text-base text-muted-foreground leading-relaxed">
+              Pour aller plus loin sur deux missions souvent intégrées au scope
+              fractional CFO, voir nos services dédiés :{" "}
+              <Link
+                href="/services/accompagnement-levee-de-fond"
+                className="text-iter-violet hover:underline font-medium"
+              >
+                accompagnement levée de fonds
+              </Link>{" "}
+              et{" "}
+              <Link
+                href="/services/controle-de-gestion-externalise"
+                className="text-iter-violet hover:underline font-medium"
+              >
+                contrôle de gestion externalisé
+              </Link>
+              .
+            </p>
           </div>
 
           {/* ── Section 4 — Tarifs ── */}
@@ -621,7 +671,14 @@ export default async function Page() {
               </Link>{" "}
               pour plus de détails. La tarification varie selon la complexité
               de l'entreprise (multi-entités, multi-devises) et la
-              localisation.
+              localisation. Pour la grille tarifaire FR détaillée, voir aussi{" "}
+              <Link
+                href="/daf-externalise/tarifs"
+                className="text-iter-violet hover:underline font-medium"
+              >
+                les tarifs DAF externalisé
+              </Link>
+              .
             </p>
           </div>
 
@@ -673,6 +730,14 @@ export default async function Page() {
                 </figure>
               ))}
             </div>
+            <p className="mt-6 text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <Link
+                href="/ressources/cas-clients"
+                className="text-iter-violet hover:underline font-medium"
+              >
+                Voir tous nos cas clients →
+              </Link>
+            </p>
           </div>
 
           {/* ── Section 6 — FAQ commerciale ── */}
@@ -715,6 +780,30 @@ export default async function Page() {
                     "Dans quel délai un Fractional CFO peut-il intervenir ?",
                   answer:
                     "Iter Advisors met en relation les startups avec un Fractional CFO sous 5 jours ouvrés. Le diagnostic et la mise en route sont réalisés sous 2 semaines.",
+                },
+                {
+                  question:
+                    "Quelle est la différence entre un fractional CFO et un DAF externalisé ?",
+                  answer:
+                    "Aucune différence métier — ce sont deux noms pour le même rôle. \"DAF externalisé\" est le terme français historique ; \"fractional CFO\" est la terminologie anglo-saxonne plébiscitée par les startups VC-backed. Iter Advisors couvre les deux : pour la version FR généraliste, voir notre offre dédiée DAF externalisé.",
+                },
+                {
+                  question:
+                    "Puis-je commencer par une mission ponctuelle (data room, levée) ?",
+                  answer:
+                    "Oui. Nous proposons des missions ponctuelles à durée fixe (data room pour une levée, due diligence, mise en place du reporting, prévisionnel 12 mois). Tarification au forfait selon le périmètre, opérationnel sous 5 jours ouvrés. Beaucoup de missions ponctuelles débouchent ensuite sur un engagement récurrent au mois.",
+                },
+                {
+                  question:
+                    "Comment se passe le matching avec le bon fractional CFO ?",
+                  answer:
+                    "Lors de l'échange initial de 30 minutes, nous identifions vos enjeux (stade, secteur, type de levée) ; puis nous proposons un fractional CFO de notre équipe selon son expérience sectorielle et son style d'intervention. Vous rencontrez le profil avant signature : pas de surprise au démarrage.",
+                },
+                {
+                  question:
+                    "Que se passe-t-il si on ne s'entend pas avec le fractional CFO ?",
+                  answer:
+                    "Aucun engagement de durée — vous pouvez interrompre la mission au mois suivant, sans frais. En pratique, nous proposons d'abord un autre fractional CFO de l'équipe pour poursuivre la mission sans perdre le contexte : c'est l'avantage d'un cabinet de 15 CFOs vs un freelance solo.",
                 },
               ].map((faq, i) => (
                 <details
