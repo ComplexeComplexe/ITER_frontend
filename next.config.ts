@@ -747,7 +747,10 @@ const nextConfig: NextConfig = {
       // ── EN blog articles that only exist in FR — redirect to FR canonical
       // (preserves link equity flowing to the actual content vs the EN blog hub)
       { source: "/en/ressources/blog/quand-embaucher-daf-externalise-5-signes",            destination: "/ressources/blog/quand-embaucher-daf-externalise-5-signes",            permanent: true },
-      { source: "/en/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission",        destination: "/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission",        permanent: true },
+      // 2026-05-31 (T8 follow-up): destination was sending EN visitors to the
+      // FR article. Now points to the canonical EN slug (an EN version of the
+      // article exists at this slug in lib/content/blog-posts.ts).
+      { source: "/en/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission",        destination: "/en/ressources/blog/cout-daf-externalise-tarifs-prix-2026",        permanent: true },
       { source: "/en/ressources/blog/tableau-de-bord-financier-startup-12-kpis",           destination: "/ressources/blog/tableau-de-bord-financier-startup-12-kpis",           permanent: true },
       { source: "/en/ressources/blog/daf-externalise-vs-expert-comptable",                 destination: "/ressources/blog/daf-externalise-vs-expert-comptable",                 permanent: true },
       { source: "/en/ressources/blog/impot-revenu-espagne",                                destination: "/ressources/blog/impot-revenu-espagne",                                permanent: true },
@@ -848,11 +851,9 @@ const nextConfig: NextConfig = {
         destination: "/en/ressources/blog",
         permanent: true },
 
-      // T8 — wrong EN slug variant for the cost article; point to the
-      // canonical EN slug which exists in lib/content/blog-posts.ts.
-      { source: "/en/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission",
-        destination: "/en/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
-        permanent: true },
+      // (T8 EN cout-daf redirect now lives at the original line ~750 — the
+      // pre-existing rule's destination was updated in place rather than
+      // duplicating the source pattern here, which would have been dead code.)
     ];
   },
 };
