@@ -610,15 +610,13 @@ export default function LandingPageClient() {
                 Planifier un diagnostic financier
               </button>
               <a
-                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2DVmtdvwnZykAPoQC9_BNTFB_wHl1IrNagCAX0AaSbmEs8JmSGsTdWo96WGPzMEYtf_nkILQN8"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contact"
                 onClick={() => {
-                  pushToDataLayer('cta_click', { cta_text: 'Prendre RDV calendar', cta_position: 'hero' });
+                  pushToDataLayer('cta_click', { cta_text: 'Nous contacter', cta_position: 'hero' });
                 }}
                 className="px-8 py-4 rounded-full border-2 border-iter-violet text-iter-violet hover:bg-iter-violet/5 transition-all duration-300 font-semibold"
               >
-                Prendre immédiatement rendez-vous
+                Nous contacter
               </a>
             </div>
 
