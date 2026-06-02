@@ -1,10 +1,11 @@
 'use client';
 
 import Script from 'next/script';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ChevronDown, Star } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { pushLeadFormSubmitted } from '@/lib/analytics/leadForm';
 
 // Type definitions
 interface FormData {
@@ -48,38 +49,6 @@ function pushToDataLayer(event: string, data?: Record<string, any>) {
   }
 }
 
-// Normalization helpers for Google Ads enhanced conversions.
-// Google hashes user_data fields server-side before matching; clean input
-// (trimmed, lowercased email, E.164 phone) improves match rates.
-function normalizeEmail(email?: string) {
-  return (email || '').trim().toLowerCase();
-}
-
-function normalizeName(value?: string) {
-  return (value || '').trim();
-}
-
-function normalizePhone(phone?: string) {
-  const raw = (phone || '').trim();
-  if (!raw) return '';
-
-  let cleaned = raw.replace(/[^\d+]/g, '');
-
-  if (cleaned.startsWith('00')) {
-    cleaned = `+${cleaned.slice(2)}`;
-  }
-
-  if (cleaned.startsWith('0') && !cleaned.startsWith('+')) {
-    cleaned = `+33${cleaned.slice(1)}`;
-  }
-
-  if (!cleaned.startsWith('+')) {
-    cleaned = `+${cleaned}`;
-  }
-
-  return cleaned;
-}
-
 // Form Component
 function ConversionForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -97,6 +66,11 @@ function ConversionForm() {
   const [errors, setErrors] = useState<FormError[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  // Anti-double-push guard for the `lead_form_submitted` event. React
+  // StrictMode (dev) and certain re-renders could otherwise fire the push
+  // twice, which would double-count Google Ads conversions.
+  const leadPushedRef = useRef(false);
 
   // Capture URL parameters on mount
   useEffect(() => {
@@ -187,48 +161,27 @@ function ConversionForm() {
 
       if (response.ok) {
         setSubmitStatus('success');
-        // GTM / Google Ads enhanced conversion event.
+        // Google Ads enhanced conversion event (`lead_form_submitted`).
         // Fires ONLY after the backend confirms the lead (response.ok),
         // so clicks, validation errors, and network failures don't inflate
-        // conversions. `user_data` is structured for GTM's User-Provided
-        // Data variable (Google Ads enhanced conversions tag).
-        // Note: teamSize/mainNeed are the form-state field names; they
-        // map to the business_size/primary_need dataLayer keys.
-        const firstName = normalizeName(formData.firstName);
-        const lastName = normalizeName(formData.lastName);
-        const email = normalizeEmail(formData.email);
-        const phone = normalizePhone(formData.phone);
-        const company = normalizeName(formData.company);
-        const businessSize = (formData.teamSize || '').trim();
-        const primaryNeed = (formData.mainNeed || '').trim();
-        const leadSource = (formData.utm_source || 'direct').trim().toLowerCase();
-
-        pushToDataLayer('generate_lead', {
-          form_name: 'lp_daf_externalise',
-          form_type: 'lead',
-          lead_source: leadSource,
-          lead_page: '/lp/daf-externalise',
-          page_location: window.location.href,
-          page_title: document.title,
-
-          company_name: company,
-          business_size: businessSize,
-          primary_need: primaryNeed,
-
-          user_data: {
-            email_address: email,
-            phone_number: phone,
-            address: {
-              first_name: firstName,
-              last_name: lastName,
-            },
-          },
-
-          // Legacy fields kept for backward compat with existing GTM triggers
-          lead_need: primaryNeed,
-          company_size: businessSize,
-          phone_provided: Boolean(phone),
-        });
+        // conversions. The helper preserves the nested `enhanced_conversion_data`
+        // object so GTM's User-Provided Data variable can read each field
+        // (email, phone_number, first_name, last_name, address.country)
+        // by its dotted path. Anti-double-push guard via leadPushedRef
+        // protects against React StrictMode double-execution in dev.
+        if (!leadPushedRef.current) {
+          leadPushedRef.current = true;
+          pushLeadFormSubmitted({
+            email: formData.email,
+            phone: formData.phone,
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            company: formData.company,
+            companySize: formData.teamSize,
+            mainNeed: formData.mainNeed,
+            formLocation: 'lp-daf-externalise',
+          });
+        }
         setFormData({
           firstName: '',
           lastName: '',

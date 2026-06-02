@@ -18,6 +18,7 @@ import { getContactContent, ContactFormField } from "@/lib/content/contact";
 import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
+import { pushLeadFormSubmitted } from "@/lib/analytics/leadForm";
 
 /* ─── i18n content for the new sections ─── */
 const contactPageText = {
@@ -134,6 +135,10 @@ export default function ContactPage({
 
   const [error, setError] = useState("");
 
+  // Anti-double-push guard for the `lead_form_submitted` event — see
+  // lib/analytics/leadForm.ts. Protects against React StrictMode double-fire.
+  const leadPushedRef = useRef(false);
+
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setPending(true);
@@ -160,6 +165,23 @@ export default function ContactPage({
       if (!res.ok) {
         const body = await res.json().catch(() => null);
         throw new Error(body?.details || "Erreur serveur");
+      }
+
+      // Google Ads enhanced conversion event — fired ONLY after the API
+      // confirms the lead (res.ok), and at most once per page session.
+      // The /contact form has no companySize / mainNeed fields, so those
+      // remain undefined in the dataLayer payload (which is fine — GTM
+      // DLVs simply return undefined for those keys).
+      if (!leadPushedRef.current) {
+        leadPushedRef.current = true;
+        pushLeadFormSubmitted({
+          email: String(data.email || ""),
+          phone: data.phone ? String(data.phone) : undefined,
+          firstName: String(data.firstName || ""),
+          lastName: String(data.lastName || ""),
+          company: data.company ? String(data.company) : undefined,
+          formLocation: "contact",
+        });
       }
 
       setSuccess(true);
