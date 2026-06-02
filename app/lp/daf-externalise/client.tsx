@@ -152,10 +152,33 @@ function ConversionForm() {
 
       if (response.ok) {
         setSubmitStatus('success');
-        pushToDataLayer('lead_form_submit', {
+        // GTM / Google Ads enhanced conversion event.
+        // Fires ONLY after the backend confirms the lead (response.ok),
+        // so clicks, validation errors, and network failures don't inflate
+        // conversions. `user_data` is structured for GTM's User-Provided
+        // Data variable (Google Ads enhanced conversions tag).
+        pushToDataLayer('generate_lead', {
+          form_name: 'lp_daf_externalise',
+          form_type: 'lead',
+          lead_source: formData.utm_source || 'direct',
+          lead_page: '/lp/daf-externalise',
+          page_location: typeof window !== 'undefined' ? window.location.href : '',
+          page_title: typeof document !== 'undefined' ? document.title : '',
+          company_name: formData.company,
+          business_size: formData.teamSize,
+          primary_need: formData.mainNeed,
+          // Legacy fields kept for backward compat with existing GTM triggers
           lead_need: formData.mainNeed,
           company_size: formData.teamSize,
           phone_provided: !!formData.phone,
+          user_data: {
+            email_address: formData.email,
+            phone_number: formData.phone || '',
+            address: {
+              first_name: formData.firstName,
+              last_name: formData.lastName,
+            },
+          },
         });
         setFormData({
           firstName: '',
