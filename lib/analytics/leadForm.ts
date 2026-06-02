@@ -10,6 +10,8 @@
 // (HTTP 2xx). Calling it on click or on validation start inflates Ads
 // conversions and breaks the campaign ROAS reporting.
 
+export type LeadFormLocation = "lp-daf-externalise" | "contact" | string;
+
 export type LeadFormPayload = {
   email: string;
   phone?: string;
@@ -18,7 +20,26 @@ export type LeadFormPayload = {
   company?: string;
   companySize?: string;
   mainNeed?: string;
-  formLocation: "lp-daf-externalise" | "contact" | string;
+  formLocation: LeadFormLocation;
+};
+
+/**
+ * Derive the `form_id` dataLayer key from the form location.
+ * Mapping is centralized here so consumers only pass `formLocation` and the
+ * GTM payload stays internally consistent (no risk of /contact pushing
+ * `form_id: 'daf-diagnostic'` by accident).
+ */
+const deriveFormId = (formLocation: LeadFormLocation): string => {
+  switch (formLocation) {
+    case "lp-daf-externalise":
+      return "daf-diagnostic";
+    case "contact":
+      return "contact";
+    default:
+      // Generic fallback — the location string itself becomes the form_id,
+      // which is at worst readable and at best a valid GTM trigger value.
+      return formLocation;
+  }
 };
 
 /**
@@ -78,7 +99,7 @@ export const pushLeadFormSubmitted = (p: LeadFormPayload): void => {
 
   window.dataLayer.push({
     event: "lead_form_submitted",
-    form_id: "daf-diagnostic",
+    form_id: deriveFormId(p.formLocation),
     form_location: p.formLocation,
     lead: {
       company: p.company,
@@ -94,3 +115,9 @@ export const pushLeadFormSubmitted = (p: LeadFormPayload): void => {
     },
   });
 };
+
+/**
+ * Internal-only export for unit tests. Do NOT use in production code —
+ * the public API surface is `pushLeadFormSubmitted`.
+ */
+export const __test__ = { toE164, deriveFormId };
