@@ -33,6 +33,9 @@ interface FormError {
 }
 
 // GTM event tracking
+// Uses object spread on `data`, so nested objects (e.g. `user_data.address`)
+// are preserved intact. NO flattening, NO JSON.stringify, NO key mutation —
+// GTM Data Layer Variables can read `user_data.address.first_name` directly.
 function pushToDataLayer(event: string, data?: Record<string, any>) {
   if (typeof window !== 'undefined' && window.dataLayer) {
     window.dataLayer.push({
@@ -43,6 +46,38 @@ function pushToDataLayer(event: string, data?: Record<string, any>) {
       ...data,
     });
   }
+}
+
+// Normalization helpers for Google Ads enhanced conversions.
+// Google hashes user_data fields server-side before matching; clean input
+// (trimmed, lowercased email, E.164 phone) improves match rates.
+function normalizeEmail(email?: string) {
+  return (email || '').trim().toLowerCase();
+}
+
+function normalizeName(value?: string) {
+  return (value || '').trim();
+}
+
+function normalizePhone(phone?: string) {
+  const raw = (phone || '').trim();
+  if (!raw) return '';
+
+  let cleaned = raw.replace(/[^\d+]/g, '');
+
+  if (cleaned.startsWith('00')) {
+    cleaned = `+${cleaned.slice(2)}`;
+  }
+
+  if (cleaned.startsWith('0') && !cleaned.startsWith('+')) {
+    cleaned = `+33${cleaned.slice(1)}`;
+  }
+
+  if (!cleaned.startsWith('+')) {
+    cleaned = `+${cleaned}`;
+  }
+
+  return cleaned;
 }
 
 // Form Component
@@ -157,28 +192,42 @@ function ConversionForm() {
         // so clicks, validation errors, and network failures don't inflate
         // conversions. `user_data` is structured for GTM's User-Provided
         // Data variable (Google Ads enhanced conversions tag).
+        // Note: teamSize/mainNeed are the form-state field names; they
+        // map to the business_size/primary_need dataLayer keys.
+        const firstName = normalizeName(formData.firstName);
+        const lastName = normalizeName(formData.lastName);
+        const email = normalizeEmail(formData.email);
+        const phone = normalizePhone(formData.phone);
+        const company = normalizeName(formData.company);
+        const businessSize = (formData.teamSize || '').trim();
+        const primaryNeed = (formData.mainNeed || '').trim();
+        const leadSource = (formData.utm_source || 'direct').trim().toLowerCase();
+
         pushToDataLayer('generate_lead', {
           form_name: 'lp_daf_externalise',
           form_type: 'lead',
-          lead_source: formData.utm_source || 'direct',
+          lead_source: leadSource,
           lead_page: '/lp/daf-externalise',
-          page_location: typeof window !== 'undefined' ? window.location.href : '',
-          page_title: typeof document !== 'undefined' ? document.title : '',
-          company_name: formData.company,
-          business_size: formData.teamSize,
-          primary_need: formData.mainNeed,
-          // Legacy fields kept for backward compat with existing GTM triggers
-          lead_need: formData.mainNeed,
-          company_size: formData.teamSize,
-          phone_provided: !!formData.phone,
+          page_location: window.location.href,
+          page_title: document.title,
+
+          company_name: company,
+          business_size: businessSize,
+          primary_need: primaryNeed,
+
           user_data: {
-            email_address: formData.email,
-            phone_number: formData.phone || '',
+            email_address: email,
+            phone_number: phone,
             address: {
-              first_name: formData.firstName,
-              last_name: formData.lastName,
+              first_name: firstName,
+              last_name: lastName,
             },
           },
+
+          // Legacy fields kept for backward compat with existing GTM triggers
+          lead_need: primaryNeed,
+          company_size: businessSize,
+          phone_provided: Boolean(phone),
         });
         setFormData({
           firstName: '',
