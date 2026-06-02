@@ -2,6 +2,7 @@
 
 import Script from 'next/script';
 import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import { ChevronDown, Star } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -66,6 +67,7 @@ function ConversionForm() {
   const [errors, setErrors] = useState<FormError[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const router = useRouter();
 
   // Anti-double-push guard for the `lead_form_submitted` event. React
   // StrictMode (dev) and certain re-renders could otherwise fire the push
@@ -181,6 +183,12 @@ function ConversionForm() {
             mainNeed: formData.mainNeed,
             formLocation: 'lp-daf-externalise',
           });
+          // Navigate to the dedicated thank-you page AFTER the dataLayer push
+          // so GTM has a stable URL to associate with the conversion (useful
+          // for GA4 thank-you-page tracking and future remarketing audiences).
+          // We don't await — `router.push` returns immediately and the unmount
+          // doesn't block the push that already ran synchronously.
+          router.push('/lp/daf-externalise/merci');
         }
         setFormData({
           firstName: '',
