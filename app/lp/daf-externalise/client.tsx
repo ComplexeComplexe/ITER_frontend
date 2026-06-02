@@ -565,67 +565,84 @@ export default function LandingPageClient() {
       {/* Header */}
       <Header locale="fr" />
 
-      {/* SECTION 1: HERO */}
+      {/* SECTION 1: HERO + FORM (2026-05-31 redesign — form now sits on
+            the right above the fold; the "Planifier un diagnostic financier"
+            CTA was removed since the form itself is now the primary action;
+            "Nous contacter" stays as a small secondary link). */}
       <section className="pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 bg-gradient-to-br from-background via-background to-iter-violet/5">
-        <div className="container max-w-4xl">
-          <div className="text-center">
-            <p className="text-sm sm:text-base font-semibold text-iter-violet mb-4">
-              Cabinet européen — Barcelone, Paris, Toulouse
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-foreground mb-6 leading-tight">
-              DAF externalisé pour PME et startups
-            </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Un DAF senior à temps partagé pour structurer votre trésorerie, vos reportings et votre pilotage financier, sans recruter à temps plein.
-            </p>
-
-            {/* 3 USPs */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 my-8">
-              <div className="text-center">
-                <p className="text-2xl mb-2">💰</p>
-                <p className="font-semibold text-foreground">Trésorerie prévisible à 3 mois</p>
-                <p className="text-sm text-muted-foreground">Une vision claire du cash disponible.</p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl mb-2">📊</p>
-                <p className="font-semibold text-foreground">Reporting prêt pour le board</p>
-                <p className="text-sm text-muted-foreground">KPIs et forecast en 30 jours.</p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl mb-2">⚡</p>
-                <p className="font-semibold text-foreground">DAF senior sans CDI</p>
-                <p className="text-sm text-muted-foreground">Flexible, dès 3 mois d'engagement.</p>
-              </div>
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <button
-                onClick={() => {
-                  pushToDataLayer('cta_click', { cta_text: 'Planifier diagnostic', cta_position: 'hero' });
-                  document.getElementById('conversion-form')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
-              >
-                Planifier un diagnostic financier
-              </button>
-              <a
-                href="/contact"
-                onClick={() => {
-                  pushToDataLayer('cta_click', { cta_text: 'Nous contacter', cta_position: 'hero' });
-                }}
-                className="px-8 py-4 rounded-full border-2 border-iter-violet text-iter-violet hover:bg-iter-violet/5 transition-all duration-300 font-semibold"
-              >
-                Nous contacter
-              </a>
-            </div>
-
-            {/* Social Proof */}
-            <div className="pt-8 border-t border-gray-200">
-              <p className="text-sm text-muted-foreground">
-                ⭐ <strong>5/5 sur Trustfolio</strong> · <strong>85+ entreprises accompagnées</strong> ·{' '}
-                <strong>100 M€+ levés par nos clients</strong>
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 items-start">
+            {/* ── Left: tagline, H1, subtitle, USPs, social proof (3/5) ── */}
+            <div className="lg:col-span-3">
+              <p className="text-sm sm:text-base font-semibold text-iter-violet mb-4">
+                Cabinet européen — Barcelone, Paris, Toulouse
               </p>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-heading text-foreground mb-6 leading-tight">
+                DAF externalisé pour PME et startups
+              </h1>
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-8 max-w-xl">
+                Un DAF senior à temps partagé pour structurer votre trésorerie,
+                vos reportings et votre pilotage financier, sans recruter à
+                temps plein.
+              </p>
+
+              {/* 3 USPs — stacked rows */}
+              <ul className="space-y-5 mb-8 list-none pl-0">
+                <li className="flex items-start gap-4">
+                  <span className="text-2xl shrink-0" aria-hidden>💰</span>
+                  <div>
+                    <p className="font-semibold text-foreground">Trésorerie prévisible à 3 mois</p>
+                    <p className="text-sm text-muted-foreground">Une vision claire du cash disponible.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <span className="text-2xl shrink-0" aria-hidden>📊</span>
+                  <div>
+                    <p className="font-semibold text-foreground">Reporting prêt pour le board</p>
+                    <p className="text-sm text-muted-foreground">KPIs et forecast en 30 jours.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <span className="text-2xl shrink-0" aria-hidden>⚡</span>
+                  <div>
+                    <p className="font-semibold text-foreground">DAF senior sans CDI</p>
+                    <p className="text-sm text-muted-foreground">Flexible, dès 3 mois d&apos;engagement.</p>
+                  </div>
+                </li>
+              </ul>
+
+              {/* Social proof */}
+              <div className="pt-6 border-t border-gray-200">
+                <p className="text-sm text-muted-foreground">
+                  ⭐ <strong>5/5 sur Trustfolio</strong> · <strong>85+ entreprises accompagnées</strong> ·{' '}
+                  <strong>100 M€+ levés par nos clients</strong>
+                </p>
+                <p className="mt-3 text-xs text-muted-foreground">
+                  Vous préférez un échange par email ?{' '}
+                  <a
+                    href="/contact"
+                    onClick={() => {
+                      pushToDataLayer('cta_click', { cta_text: 'Nous contacter', cta_position: 'hero' });
+                    }}
+                    className="text-iter-violet hover:underline font-medium"
+                  >
+                    Nous contacter
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            {/* ── Right: lead form (2/5) — above the fold on desktop ── */}
+            <div className="lg:col-span-2" id="conversion-form">
+              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-xl">
+                <p className="text-base sm:text-lg font-bold text-foreground mb-1">
+                  Faites le point avec un DAF senior
+                </p>
+                <p className="text-sm text-muted-foreground mb-5">
+                  30 minutes, sans engagement. Réponse sous 24 h.
+                </p>
+                <ConversionForm />
+              </div>
             </div>
           </div>
         </div>
@@ -896,23 +913,11 @@ export default function LandingPageClient() {
         </div>
       </section>
 
-      {/* SECTION 8: FORM */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background">
-        <div className="container max-w-2xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
-              Faites le point avec un DAF senior
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              30 minutes pour parler de votre trésorerie, de vos reportings et de vos priorités finance. Sans engagement, sans pression commerciale.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-lg p-8 border border-gray-200" id="conversion-form">
-            <ConversionForm />
-          </div>
-        </div>
-      </section>
+      {/* SECTION 8: FORM — removed 2026-05-31. The conversion form moved
+            into the hero (above the fold, right column). The 4 remaining
+            "scroll to form" CTAs further up the page (Sections 2/3/5/7)
+            still target id="conversion-form" — they now scroll users back
+            up to the hero form, which is the same conversion endpoint. */}
 
       {/* SECTION 9: FAQ */}
       <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
