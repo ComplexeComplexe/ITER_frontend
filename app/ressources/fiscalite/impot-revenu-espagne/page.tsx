@@ -34,6 +34,9 @@ export const metadata: Metadata = buildMetadata({
   title: "Impôt sur le revenu en Espagne (IRPF) : barème et calcul 2026 | Iter Advisors",
   description: "Tout savoir sur l'IRPF en Espagne en 2026 : barème étatique 19-47 %, part autonome par région, déductions, revenus de l'épargne. Guide complet.",
   path: "/ressources/fiscalite/impot-revenu-espagne",
+  // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google
+  // doesn\'t crawl synthetic /en|/es URLs that 404.
+  disableHreflang: ["en", "es"],
 });
 
 /* FAQ derived from the validated content of the source blog article. The

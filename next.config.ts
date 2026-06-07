@@ -92,6 +92,20 @@ const nextConfig: NextConfig = {
         destination: "/es/ressources/:path*",
         permanent: true, // 301 redirect
       },
+      // T2 (2026-06-07): /recursos/ → /ressources/. GSC reports internal
+      // links pointing to /recursos/* that 404 (the Spanish word was used
+      // in some older internal content but the routes were never created).
+      // Catch-all so any /recursos/{slug} hits the matching /ressources/{slug}.
+      {
+        source: "/recursos/:path*",
+        destination: "/ressources/:path*",
+        permanent: true,
+      },
+      {
+        source: "/en/recursos/:path*",
+        destination: "/en/ressources/:path*",
+        permanent: true,
+      },
       // 404 fix: Blog slug inconsistencies
       {
         source: "/ressources/blog/levee-de-fonds-startup",

@@ -34,6 +34,9 @@ export const metadata: Metadata = buildMetadata({
   title: "Éviter la double imposition France Espagne : convention fiscale | Iter Advisors",
   description: "Comment fonctionne la convention fiscale franco-espagnole de 1995 ? Méthodes du crédit d'impôt et de l'exemption avec progressivité pour éviter la double imposition.",
   path: "/ressources/fiscalite/double-imposition-france-espagne",
+  // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google
+  // doesn\'t crawl synthetic /en|/es URLs that 404.
+  disableHreflang: ["en", "es"],
 });
 
 /* FAQ derived from the validated content of the source blog article. The

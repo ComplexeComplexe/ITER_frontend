@@ -28,6 +28,9 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Guide complet de la fiscalité franco-espagnole en 2026. Résidence fiscale, impôt sur le revenu, dividendes, sociétés et loi Beckham. Évitez la double imposition.",
   path: "/ressources/fiscalite-espagne-france",
+  // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google
+  // doesn\'t crawl synthetic /en|/es URLs that 404.
+  disableHreflang: ["en", "es"],
 });
 
 /* Pillar URLs the hub points at. Update `ready: true` as each pillar ships

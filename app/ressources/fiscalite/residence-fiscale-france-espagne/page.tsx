@@ -30,6 +30,9 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Comment déterminer votre résidence fiscale entre la France et l'Espagne ? Règle des 183 jours, centre des intérêts économiques et foyer. Guide complet 2026.",
   path: "/ressources/fiscalite/residence-fiscale-france-espagne",
+  // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google
+  // doesn\'t crawl synthetic /en|/es URLs that 404.
+  disableHreflang: ["en", "es"],
 });
 
 /* FAQ pulled from the H2 structure of contenus_piliers_fiscalite.pdf. The

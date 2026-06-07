@@ -34,6 +34,9 @@ export const metadata: Metadata = buildMetadata({
   title: "Modelo 720 en Espagne : déclaration des biens à l'étranger 2026 | Iter Advisors",
   description: "Résident fiscal en Espagne ? Déclarez vos comptes, assurances-vie et biens immobiliers situés en France via le Modelo 720 si leur valeur dépasse 50 000 €.",
   path: "/ressources/fiscalite/modelo-720",
+  // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google
+  // doesn\'t crawl synthetic /en|/es URLs that 404.
+  disableHreflang: ["en", "es"],
 });
 
 /* FAQ derived from the validated content of the source blog article. The
