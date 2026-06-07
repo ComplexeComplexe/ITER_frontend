@@ -9,7 +9,7 @@ import { getControleDeGestionExternaliseeContent } from "@/lib/content/controle-
  * TICKET F2 (2026-05-17) — Replaces the previous metadata and schemas
  * with the canonical @graph required by the SEO brief:
  *
- *   - FinancialService (provider Iter Advisors, hasOfferCatalog with
+ *   - ProfessionalService (provider Iter Advisors, hasOfferCatalog with — T4 / 2026-06-07
  *     Pilot / Growth / Scale tiers).
  *   - FAQPage (8 questions matching the visible accordion 1:1 so
  *     Google's rich-result validator doesn't reject the schema).

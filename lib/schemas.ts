@@ -218,7 +218,13 @@ export function speakableSchema({
 }
 
 /**
- * Generate FinancialService JSON-LD schema for the organization.
+ * Generate ProfessionalService JSON-LD schema for the organization.
+ *
+ * The function name (`financialServiceSchema`) is kept for backward
+ * compatibility with existing imports, but the emitted @type is
+ * ProfessionalService — Schema.org positions FinancialService for
+ * banks / insurance / lenders, which isn't what Iter Advisors is.
+ * (T4 / 2026-06-07: docstring sync.)
  */
 export function financialServiceSchema(): Record<string, unknown> {
   return {

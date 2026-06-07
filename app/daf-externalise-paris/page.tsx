@@ -7,7 +7,9 @@ import { getDafExternalisePariEnrichedContent } from "@/lib/content/daf-external
 export async function generateMetadata(): Promise<Metadata> {
   const t = getDafExternalisePariEnrichedContent("fr");
 
-  // Build FinancialService + FAQPage + AggregateRating + Review schemas
+  // Build ProfessionalService + FAQPage + AggregateRating + Review schemas
+  // (T4 / 2026-06-07: comment sync — actual @type emitted is
+  // ProfessionalService, see DafLocalPage component output.)
   const faqSection = t.sections.find((s: any) => s.faqs);
 
   const faqSchema = {

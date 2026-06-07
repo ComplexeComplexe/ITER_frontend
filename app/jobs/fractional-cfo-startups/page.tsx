@@ -26,7 +26,7 @@ import CTASection from "@/components/CTASection";
  *   - Compact recruitment callout (FCFO-S06) linking to /carrieres/fractional-cfo
  *
  * Schema @graph:
- *   - FinancialService (Starter / Growth / Scale)
+ *   - ProfessionalService (Starter / Growth / Scale) — T4 / 2026-06-07
  *   - FAQPage (6 commercial Q/R)
  *   - Organization
  *   - BreadcrumbList (Accueil > Services > Fractional CFO Startups)
@@ -42,7 +42,7 @@ export async function generateMetadata(): Promise<Metadata> {
       // JobPosting moved to /carrieres/fractional-cfo (FCFO-S02, 2026-05-30):
       // this URL is now a pure commercial Service page; recruitment markup
       // lives at its dedicated route so Google for Jobs surfaces it cleanly.
-      // ── FinancialService (Starter / Growth / Scale) ─────────────
+      // ── ProfessionalService (Starter / Growth / Scale) ─────────────
       {
         "@type": "ProfessionalService",
         "@id": `${PAGE_URL}#service`,

@@ -34,6 +34,9 @@ export const metadata: Metadata = buildMetadata({
   title: "Loi Beckham en Espagne : conditions et taux 24 % en 2026 | Iter Advisors",
   description: "Le régime fiscal des impatriés en Espagne : taux fixe d'IRPF à 24 % pendant 6 ans, conditions d'éligibilité 2026, digital nomads. Guide complet.",
   path: "/ressources/fiscalite/beckham-law",
+  // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google
+  // doesn\'t crawl synthetic /en|/es URLs that 404.
+  disableHreflang: ["en", "es"],
 });
 
 /* FAQ derived from the validated content of the source blog article. The

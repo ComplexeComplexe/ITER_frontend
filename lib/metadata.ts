@@ -14,6 +14,12 @@ const localeMap: Record<Locale, string> = {
  * `localizedPaths` (optional) allows specifying different paths per locale
  * for correct hreflang generation. When omitted, the same `path` is used
  * for all locales (backward-compatible behavior).
+ *
+ * `disableHreflang` (optional, T1 / 2026-06-07) drops specific locale
+ * hreflang entries so they aren't emitted in <head>. Use on FR-only
+ * content (e.g. the /ressources/fiscalite-* cocoon) where the EN/ES
+ * routes don't exist — Google was otherwise crawling the synthetic
+ * hreflang URLs and reporting them as 404s.
  */
 export function buildMetadata({
   locale,
@@ -23,6 +29,7 @@ export function buildMetadata({
   noindex,
   structuredData,
   localizedPaths,
+  disableHreflang,
 }: {
   locale: Locale;
   title: string;
@@ -31,6 +38,7 @@ export function buildMetadata({
   noindex?: boolean;
   structuredData?: Record<string, unknown> | null;
   localizedPaths?: { fr: string; en: string; es: string };
+  disableHreflang?: ("en" | "es")[];
 }): Metadata {
   const base = "https://www.iteradvisors.com";
 
@@ -56,12 +64,18 @@ export function buildMetadata({
   const frUrl = `${base}${frPath}`;
   const enUrl = `${base}/en${enPath === "/" ? "" : enPath}`;
   const esUrl = `${base}/es${esPath === "/" ? "" : esPath}`;
+  // T1 (2026-06-07): when `disableHreflang` includes a locale, we drop
+  // the corresponding entry entirely. Next.js accepts undefined values
+  // via `delete`; a missing key is the canonical way to tell the
+  // metadata renderer "do not emit this <link rel='alternate'>".
   const languages: Record<string, string> = {
     "x-default": frUrl,
     "fr-FR": frUrl,
     "en-GB": enUrl,
     "es-ES": esUrl,
   };
+  if (disableHreflang?.includes("en")) delete languages["en-GB"];
+  if (disableHreflang?.includes("es")) delete languages["es-ES"];
 
   const meta: Metadata = {
     title,
