@@ -191,6 +191,61 @@ export const comptabiliteExternalisationContent = {
         ],
       },
       {
+        // T5 (2026-06-07) — nouvelle section H2 "tarifs" demandée par
+        // le ticket. La requête "coût externalisation comptabilité"
+        // génère 4600+ impressions / GSC et la page est position 9-12 :
+        // une grille tarifaire concrète peut faire passer en top 5.
+        id: "tarifs",
+        title: "Combien coûte l'externalisation de la comptabilité en 2026 ?",
+        paragraphs: [
+          "Le coût de l'externalisation comptable dépend principalement de quatre facteurs : la taille de votre entreprise (volume de factures), la complexité fiscale (TVA intracommunautaire, multi-entités, exports), le périmètre du service (tenue seule ou tenue + paie + reporting), et le niveau de pilotage attendu (production conforme uniquement ou tableaux de bord et analyse).",
+          "Voici les fourchettes de prix constatées en 2026 sur le marché français, ainsi que la fourchette pratiquée par Iter Advisors selon le profil-type d'entreprise.",
+        ],
+        tables: [
+          {
+            caption: "Grille tarifaire 2026 — Externalisation comptable par taille d'entreprise",
+            headers: [
+              "Profil d'entreprise",
+              "Volume mensuel typique",
+              "Marché (fourchette mensuelle HT)",
+              "Iter Advisors (forfait mensuel HT)",
+            ],
+            rows: [
+              [
+                "Auto-entrepreneur / TPE (1-5 salariés)",
+                "10-40 factures, TVA simple",
+                "200 - 500 €",
+                "350 - 650 €",
+              ],
+              [
+                "Startup early-stage (5-15 salariés)",
+                "30-80 factures, paie",
+                "400 - 900 €",
+                "550 - 1 100 €",
+              ],
+              [
+                "PME en croissance (15-50 salariés)",
+                "100-300 factures, TVA UE, paie",
+                "800 - 1 800 €",
+                "900 - 1 800 €",
+              ],
+              [
+                "PME structurée (50-150 salariés)",
+                "300-800 factures, multi-entités",
+                "1 500 - 3 500 €",
+                "1 800 - 3 200 €",
+              ],
+              [
+                "Scale-up / ETI (150+ salariés)",
+                "800+ factures, consolidation",
+                "3 000 - 8 000 €",
+                "3 500 - 7 000 €",
+              ],
+            ],
+          },
+        ],
+      },
+      {
         id: "approche-iter",
         title: "Comment Iter Advisors accompagne votre comptabilité externalisée",
         paragraphs: [
@@ -200,7 +255,11 @@ export const comptabiliteExternalisationContent = {
           "Des comptables qui comprennent votre business. Nos équipes ne se contentent pas de saisir des écritures. Elles comprennent le contexte de votre entreprise : votre modèle économique, vos enjeux de trésorerie, vos obligations envers des investisseurs. Cette vision globale permet de produire une comptabilité qui sert le pilotage, pas seulement la conformité fiscale.",
         ],
         closingText:
-          "L'externalisation comptable fonctionne d'autant mieux qu'elle s'intègre dans une stratégie financière globale. Pour une vision complète, explorez aussi notre offre [[DAF externalisé|/daf-externalise-paris]] (direction financière complète) et nos services de [[prévisionnel de trésorerie|/services/previsionnel-tresorerie]] et [[contrôle de gestion|/services/controle-de-gestion-externalise]] pour un pilotage à 360°.",
+          // T5 (2026-06-07) — fix lien interne : pointait vers /daf-externalise-paris
+          // (page locale Paris) au lieu de /daf-externalise (page pilier nationale).
+          // L'ancre "DAF externalisé" doit aller vers la page pilier pour éviter
+          // la cannibalisation entre pilier (position 22) et locale Paris (position 11).
+          "L'externalisation comptable fonctionne d'autant mieux qu'elle s'intègre dans une stratégie financière globale. Pour une vision complète, explorez aussi notre offre [[DAF externalisé|/daf-externalise]] (direction financière complète) et nos services de [[prévisionnel de trésorerie|/services/previsionnel-tresorerie]] et [[contrôle de gestion|/services/controle-de-gestion-externalise]] pour un pilotage à 360°.",
       },
       {
         id: "erreurs-eviter",
