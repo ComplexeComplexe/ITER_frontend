@@ -514,6 +514,42 @@ export default function DafPage({
         <div className="border-b border-border/50" />
       </div>
 
+      {/* Inline CTA #1 (T-SEO-3pages 2026-06-07 — analyse_3_pages_html.pdf)
+          Inserted after "Avantages" so visitors who scrolled past the bénéfices
+          have a conversion path before the long "Pour qui / Missions / Tarifs"
+          block. Distinct copy from CTAs #2 and #3 to avoid repetition fatigue. */}
+      <section className="bg-background py-8 sm:py-10">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <div className="rounded-2xl bg-gradient-to-br from-iter-violet to-iter-dark p-6 sm:p-8 text-white text-center shadow-lg">
+            <p className="text-base sm:text-lg font-semibold mb-3">
+              {locale === "fr"
+                ? "Vous voyez le bénéfice ? Parlons de votre situation."
+                : locale === "en"
+                  ? "Convinced by the benefits? Let's talk about your situation."
+                  : "¿Convencido por los beneficios? Hablemos de su situación."}
+            </p>
+            <p className="text-sm text-white/80 mb-5">
+              {locale === "fr"
+                ? "30 minutes avec un DAF senior, sans engagement."
+                : locale === "en"
+                  ? "30 minutes with a senior CFO, no commitment."
+                  : "30 minutos con un CFO senior, sin compromiso."}
+            </p>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold text-sm hover:shadow-xl transition-all"
+            >
+              {locale === "fr"
+                ? "Prendre rendez-vous"
+                : locale === "en"
+                  ? "Book a meeting"
+                  : "Reservar una cita"}
+              <span aria-hidden>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* For Whom (audit SEO Action 11) — long-tail capture per stade / secteur */}
       {t.forWhom && (
         <section id="pour-qui" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
@@ -620,6 +656,41 @@ export default function DafPage({
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* Inline CTA #2 (T-SEO-3pages 2026-06-07) — placed AFTER the "déroulement"
+          steps so a visitor who's read the method has a low-friction
+          conversion point before the long tarifs section. */}
+      <section className="bg-muted/30 py-8 sm:py-10">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <div className="rounded-2xl bg-white border border-iter-violet/20 p-6 sm:p-8 text-center shadow-md">
+            <p className="text-base sm:text-lg font-semibold text-foreground mb-3">
+              {locale === "fr"
+                ? "Notre méthode vous parle ? Réservez votre diagnostic."
+                : locale === "en"
+                  ? "Method speaks to you? Book your diagnostic."
+                  : "¿Le convence el método? Reserve su diagnóstico."}
+            </p>
+            <p className="text-sm text-muted-foreground mb-5">
+              {locale === "fr"
+                ? "Un échange gratuit de 30 minutes pour cadrer vos priorités financières."
+                : locale === "en"
+                  ? "A free 30-minute call to scope your financial priorities."
+                  : "Una llamada gratuita de 30 minutos para enmarcar sus prioridades financieras."}
+            </p>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold text-sm hover:bg-iter-violet/90 hover:shadow-xl transition-all"
+            >
+              {locale === "fr"
+                ? "Réserver un diagnostic gratuit"
+                : locale === "en"
+                  ? "Book a free diagnostic"
+                  : "Reservar un diagnóstico gratuito"}
+              <span aria-hidden>→</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -745,6 +816,41 @@ export default function DafPage({
               )}
             </figure>
           )}
+        </div>
+      </section>
+
+      {/* Inline CTA #3 (T-SEO-3pages 2026-06-07) — last in-body CTA, placed
+          right after the pricing grid where the visitor's question is most
+          likely "OK, what does it cost for ME?". */}
+      <section className="bg-background py-8 sm:py-10">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <div className="rounded-2xl bg-gradient-to-br from-iter-violet/10 to-iter-chartreuse/10 border border-iter-violet/20 p-6 sm:p-8 text-center">
+            <p className="text-base sm:text-lg font-semibold text-foreground mb-3">
+              {locale === "fr"
+                ? "Besoin d'un devis adapté à votre situation ?"
+                : locale === "en"
+                  ? "Need a quote tailored to your situation?"
+                  : "¿Necesita un presupuesto a su medida?"}
+            </p>
+            <p className="text-sm text-muted-foreground mb-5">
+              {locale === "fr"
+                ? "Décrivez votre contexte en 2 minutes — réponse personnalisée sous 24 h ouvrées."
+                : locale === "en"
+                  ? "Tell us your context in 2 minutes — personalised reply within 24 business hours."
+                  : "Cuéntenos su contexto en 2 minutos — respuesta personalizada en 24 horas hábiles."}
+            </p>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-dark text-white font-semibold text-sm hover:bg-iter-violet hover:shadow-xl transition-all"
+            >
+              {locale === "fr"
+                ? "Demander un devis"
+                : locale === "en"
+                  ? "Request a quote"
+                  : "Solicitar un presupuesto"}
+              <span aria-hidden>→</span>
+            </a>
+          </div>
         </div>
       </section>
 
