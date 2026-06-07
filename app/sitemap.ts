@@ -117,6 +117,8 @@ const FR_BLOG_SLUGS = [
   "levee-de-fonds-guide",
   "ia-et-automatisation-des-taches-repetitives",
   "regimes-fiscaux-france-vs-espagne",
+  // T8 (2026-06-07) — new article ciblant "coût externalisation comptable"
+  "cout-externalisation-comptable-2026",
 ] as const;
 
 const EN_BLOG_SLUGS = [

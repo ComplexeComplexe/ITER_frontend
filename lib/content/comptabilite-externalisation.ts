@@ -199,7 +199,7 @@ export const comptabiliteExternalisationContent = {
         title: "Combien coûte l'externalisation de la comptabilité en 2026 ?",
         paragraphs: [
           "Le coût de l'externalisation comptable dépend principalement de quatre facteurs : la taille de votre entreprise (volume de factures), la complexité fiscale (TVA intracommunautaire, multi-entités, exports), le périmètre du service (tenue seule ou tenue + paie + reporting), et le niveau de pilotage attendu (production conforme uniquement ou tableaux de bord et analyse).",
-          "Voici les fourchettes de prix constatées en 2026 sur le marché français, ainsi que la fourchette pratiquée par Iter Advisors selon le profil-type d'entreprise.",
+          "Voici les fourchettes de prix constatées en 2026 sur le marché français, ainsi que la fourchette pratiquée par Iter Advisors selon le profil-type d'entreprise. Pour une analyse complète avec comparatif des 4 modèles disponibles (cabinet traditionnel, plateforme en ligne, cabinet digital hybride, CFO-piloté) et calcul ROI détaillé, consultez notre article dédié : [[Coût de l'externalisation comptable en 2026|/ressources/blog/cout-externalisation-comptable-2026]].",
         ],
         tables: [
           {
