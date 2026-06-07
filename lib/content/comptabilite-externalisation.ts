@@ -14,26 +14,33 @@ export const comptabiliteExternalisationContent = {
     },
     tldr: "Externaliser sa comptabilité coûte 60-85% moins cher qu'un comptable interne, avec une expertise plus large et une flexibilité adaptée aux startups et PME en croissance.",
     h1: "Externalisation comptable : tarifs, méthode et bénéfices pour PME et startups",
+    // T5 (2026-06-07) — replaced 3 fake testimonials (Alain Rousseau /
+    // Valérie Lefevre / Marc Dubois, dont un contenait la coquille
+    // "Impressive professionnalism") par 3 vrais avis Trustfolio
+    // nominatifs, source : https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc
+    // Ces 3 avis ne portent pas spécifiquement sur de la comptabilité
+    // mais sur l'accompagnement financier global Iter Advisors —
+    // honnêteté > vraisemblance fabriquée.
     testimonials: [
       {
-        name: "Alain Rousseau",
-        company: "Tech Startup",
-        sector: "Logiciel SaaS",
-        text: "Nous avions peur de perdre la visibilité sur nos comptes. Au contraire, les tableaux de bord qu'Iter nous a mis en place nous donnent une meilleure vue que nous n'avions jamais eu avec un comptable interne.",
+        name: "Charles Deknudt",
+        company: "Eltex",
+        sector: "PDG et fondateur",
+        text: "Après avoir levé notre premier tour de table, nous avions besoin de structurer nos opérations financières. Iter a professionnalisé notre fonction financière et s'est avéré être un partenaire financier solide intégré à l'équipe.",
         rating: 5,
       },
       {
-        name: "Valérie Lefevre",
-        company: "PME Distribution",
-        sector: "Retail",
-        text: "L'intégration avec notre ERP a été transparente. Pas de rupture de service, pas de perte de données. Impressive professionnalism.",
+        name: "Arnaud MEGE",
+        company: "Unplexed",
+        sector: "Co-founder",
+        text: "Les équipes d'Iter ont structuré notre fonction finance avec sérieux, disponibilité et efficacité, dépassant même nos attentes initiales.",
         rating: 5,
       },
       {
-        name: "Marc Dubois",
-        company: "Consulting & Services",
-        sector: "B2B Services",
-        text: "Nous économisons 30k€ par an en délégant la comptabilité à Iter. Nous avons pu réinvestir cet argent dans le développement commercial.",
+        name: "Mathurin Blouin",
+        company: "MFL",
+        sector: "CEO",
+        text: "Iter nous a accompagnés sur la mise en place du reporting et de la gestion de trésorerie, offrant une meilleure visibilité et sérénité financière.",
         rating: 5,
       },
     ],
