@@ -192,6 +192,19 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       h1: "DAF de Transition : votre direction financière en urgence",
       sections: [
         {
+          // T4 (2026-06-07) — bloc "L'essentiel en 30 secondes" en tête de
+          // page (template /daf-externalise). Donne au visiteur les
+          // éléments-clés avant qu'il ne décide de continuer à lire.
+          heading: "L'essentiel en 30 secondes",
+          content: [
+            "**Définition.** Un DAF de transition est un Directeur Administratif et Financier senior (12 à 20 ans d'expérience) qui intervient à temps plein dans votre entreprise pour une mission limitée, généralement de 3 à 12 mois.",
+            "**Quand faire appel.** Vacance brutale du poste de DAF, crise de trésorerie, restructuration, levée de fonds, M&A, ou transformation digitale de la fonction finance.",
+            "**Tarif.** TJM (Taux Journalier Moyen) entre 800 et 1 500 € HT par jour selon la séniorité et la complexité de la mission. À temps plein (20 jours / mois) : 16 000 à 30 000 € HT / mois.",
+            "**Délai de démarrage.** 48 à 72 heures après signature du contrat chez Iter Advisors, contre 3 à 6 mois en moyenne pour un recrutement classique.",
+            "**Pour qui.** PME en difficulté, ETI en transformation, scale-ups en hyper-croissance, fonds d'investissement (LBO, exit), entreprises familiales en cession.",
+          ],
+        },
+        {
           content: [
             "Le **DAF de transition** est un Directeur Administratif et Financier senior qui intervient à temps plein ou quasi-plein dans une entreprise pour une durée limitée, généralement de 3 à 12 mois. Contrairement au **[DAF à temps partagé](/daf-externalise/temps-partage)** qui s'inscrit dans la durée avec une présence partielle, le DAF de transition mobilise l'intégralité de sa disponibilité pour répondre à une situation d'urgence ou de transformation.",
             "Le **[DAF externalisé](/daf-externalise)** en mode transition est sollicité dans des circonstances précises : départ soudain du DAF en poste, crise de trésorerie, restructuration financière, préparation à une cession ou une acquisition, ou encore accompagnement d'une forte croissance qui dépasse les capacités de l'équipe finance en place.",
@@ -242,11 +255,34 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
         {
-          heading: "Tarifs d'un DAF de Transition",
+          // T4 (2026-06-07) — nouveau H2 ciblant "daf de transition pour eti
+          // et pme" (déjà position 10,2 en GSC, cible à renforcer en
+          // priorité). Contenu spécifique aux problématiques ETI/PME pour
+          // différencier du contenu généraliste.
+          heading: "DAF de transition pour ETI et PME",
           content: [
-            "Le tarif d'un **management de transition finance** est exprimé en TJM (Taux Journalier Moyen). Il est généralement plus élevé que le tarif d'un DAF à temps partagé, car le DAF de transition mobilise l'intégralité de sa disponibilité pour votre entreprise.",
+            "Les **ETI (Entreprises de Taille Intermédiaire, 250 à 5 000 salariés)** et les **PME en croissance (50 à 250 salariés)** ont des besoins de DAF de transition très spécifiques qui les distinguent à la fois des grands groupes et des start-ups early-stage.",
+            "**Contexte typique en ETI :** restructuration suite à un changement d'actionnariat (LBO, cession familiale), intégration post-acquisition d'une cible, préparation d'une cession ou d'un IPO, refonte de la direction financière après le départ du DAF historique. Ces missions impliquent souvent du multi-entités (filiales, holdings), du multi-pays, et une coordination avec des actionnaires institutionnels (private equity, banques d'investissement). Le DAF de transition apporte une expérience M&A et de gestion de gouvernance que peu de DAF salariés possèdent.",
+            "**Contexte typique en PME en croissance :** structuration de la fonction finance qui n'a jamais existé (start-up qui dépasse les 50 salariés et la première levée de Série A), crise de trésorerie liée à une croissance trop rapide (BFR mal piloté), préparation d'une levée de fonds Série B/C. Le DAF de transition stabilise la situation en 30 à 60 jours puis recrute son successeur — souvent un DAF salarié junior qu'il forme avant son départ.",
+            "**Délai de démarrage adapté à l'urgence.** Pour une PME en crise de trésorerie ou une ETI en sortie brutale de son DAF, nous mobilisons un profil senior en **48 à 72 heures**. Cette réactivité, impossible avec un recrutement classique (3 à 6 mois minimum), est ce qui distingue un cabinet de management de transition d'un cabinet de recrutement.",
+            "**Coût rapporté à la valeur créée.** Pour une ETI de 50 M€ de CA, le coût d'un DAF de transition pendant 6 mois (90 à 180 k€ HT) est largement compensé par la sécurisation des flux financiers, l'évitement d'erreurs fiscales et la valorisation accrue lors d'une cession ou d'une levée. Sur les missions que nous avons menées en 2024-2025, le retour sur investissement médian se situe entre **3x et 8x** le coût de la mission.",
+          ],
+        },
+        {
+          heading: "Tarifs d'un DAF de Transition : TJM 2026",
+          content: [
+            "Le tarif d'un **management de transition finance** est exprimé en TJM (Taux Journalier Moyen). Il est généralement plus élevé que le tarif d'un DAF à temps partagé, car le DAF de transition mobilise l'intégralité de sa disponibilité pour votre entreprise et démarre sous 48-72 heures.",
             "Chez Iter Advisors, nos TJM pour les missions de transition varient entre 800 et 1 500 euros HT par jour, selon le profil du DAF et la complexité de la mission. Pour une mission à temps plein (20 jours par mois), cela représente entre 16 000 et 30 000 euros HT par mois.",
-            "Pour une comparaison détaillée des coûts, consultez notre page sur les **[tarifs du DAF externalisé](/daf-externalise/tarifs)**.",
+            // Tableau comparatif rendu en prose markdown car DafSubPage
+            // utilise ReactMarkdown sans support GFM (pas de <table>).
+            // Format choisi : sections **gras** lisibles côté SEO + UX.
+            "**Comparatif 2026 — TJM et engagement par modalité d'intervention :**",
+            "**1. DAF de transition (Iter Advisors)** — TJM 800 à 1 500 € HT, mission temps plein 3 à 12 mois, démarrage 48-72 h, facturation prestation de services (pas de charges sociales). Adapté à crise, restructuration, transformation, vacance brutale du poste.",
+            "**2. DAF à temps partagé (Iter Advisors)** — Forfait mensuel 2 000 à 8 000 € HT (2-8 jours / mois), engagement 12 mois minimum, démarrage 1-2 semaines. Adapté à un besoin récurrent et durable.",
+            "**3. DAF intérimaire (agence d'intérim spécialisée)** — TJM 1 100 à 1 800 € HT (avec marge agence ~25-35 %), salarié mis à disposition, démarrage 1-3 semaines. Plus rigide juridiquement, plus coûteux à mission équivalente.",
+            "**4. Recrutement DAF salarié senior (cabinet de recrutement)** — Salaire brut annuel 90 000 à 150 000 € + 45 % de charges = coût total empreinte 130 000 à 220 000 € / an. Honoraires de recrutement : 20-30 % du salaire annuel (18-45 k€). Délai de mise en poste : 3 à 6 mois. Engagement long. Adapté quand le besoin est durable et le contexte stable.",
+            "**Synthèse.** Pour une crise de 3 à 6 mois, le DAF de transition est 30 à 50 % moins coûteux qu'un DAF intérimaire d'agence et 5 à 10 fois plus rapide à mobiliser qu'un recrutement. Pour un besoin durable de plus de 12 mois, le DAF salarié reste l'option la plus économique à condition d'accepter le délai de recrutement.",
+            "Pour une comparaison détaillée des coûts toutes formules confondues, consultez notre page sur les **[tarifs du DAF externalisé](/daf-externalise/tarifs)**.",
           ],
         },
         {
@@ -261,7 +297,11 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           heading: "Nos Autres Formules d'Intervention",
           content: [
             "Si votre besoin est récurrent et s'inscrit dans la durée, le **[DAF à temps partagé](/daf-externalise/temps-partage)** est plus adapté. Pour comprendre les compétences requises pour ce poste, consultez notre page sur le **[métier de DAF](/daf-externalise/metier)**. Pour une comparaison transparente des coûts, consultez les **[tarifs du DAF externalisé](/daf-externalise/tarifs)**.",
-            "Nous intervenons dans de nombreux secteurs (**[DAF externalisé par secteur](/daf-externalise/secteurs)**) et dans plusieurs villes (**[DAF externalisé près de chez vous](/daf-externalise/locaux)**).",
+            // T7 partial (2026-06-07) — remplacé le lien cassé
+            // /daf-externalise/locaux (404 : la page n'a jamais été créée)
+            // par les 3 vraies pages locales existantes (paris, toulouse,
+            // barcelone) qui ont chacune leur trafic GSC propre.
+            "Nous intervenons dans de nombreux secteurs (**[DAF externalisé par secteur](/daf-externalise/secteurs)**) et dans nos 3 villes d'implantation : **[DAF externalisé à Paris](/daf-externalise-paris)**, **[DAF externalisé à Toulouse](/daf-externalise-toulouse)** et **[DAF externalisé à Barcelone](/daf-externalise-barcelone)**.",
           ],
         },
         {
