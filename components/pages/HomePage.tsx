@@ -538,10 +538,15 @@ export default function HomePage({
                * Distributes homepage PageRank to the 3 cluster pillars so Google
                * can assess the full depth of the DAF expertise. */}
               <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1">
+                {/* T6 (2026-06-07) \u2014 added "DAF de transition" and
+                    "Externalisation comptable" to push internal link juice
+                    to those underserved cibles per the SEO ticket. */}
                 {locale === "fr" && (
                   <>
                     <Link href="/daf-externalise/tarifs" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Tarifs du DAF externalis\u00e9</Link>
                     <Link href="/daf-externalise/temps-partage" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF \u00e0 temps partag\u00e9</Link>
+                    <Link href="/daf-externalise/transition" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF de transition</Link>
+                    <Link href="/services/comptabilite-externalisation" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Externalisation comptable</Link>
                     <Link href="/daf-externalise/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">M\u00e9tier de DAF</Link>
                     <Link href="/ressources/fiscalite-espagne-france" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Fiscalit\u00e9 France-Espagne</Link>
                   </>
@@ -549,15 +554,17 @@ export default function HomePage({
                 {locale === "en" && (
                   <>
                     <Link href="/en/fractional-cfo/shared-time" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Part-time CFO</Link>
-                    <Link href="/en/fractional-cfo/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">CFO role & skills</Link>
                     <Link href="/en/fractional-cfo/transition" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Interim CFO</Link>
+                    <Link href="/en/services/outsource-your-accounting" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Accounting outsourcing</Link>
+                    <Link href="/en/fractional-cfo/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">CFO role & skills</Link>
                   </>
                 )}
                 {locale === "es" && (
                   <>
                     <Link href="/es/externalizacion-daf/tiempo-compartido" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">CFO a tiempo compartido</Link>
-                    <Link href="/es/externalizacion-daf/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Profesi\u00f3n de DAF</Link>
                     <Link href="/es/externalizacion-daf/transition" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF de transici\u00f3n</Link>
+                    <Link href="/es/services/externalizar-contabilidad" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Externalizaci\u00f3n contable</Link>
+                    <Link href="/es/externalizacion-daf/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Profesi\u00f3n de DAF</Link>
                   </>
                 )}
               </div>
