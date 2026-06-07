@@ -3378,6 +3378,30 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p>Explore our <a href="/en/services/outsource-your-accounting">outsourced accounting service</a> or <a href="/en/contact">book a free 30-minute diagnostic</a> with one of our senior advisors.</p>`,
       content: [],
     },
+    // T7 (2026-06-07): EN translation of la-modernisation-du-role-de-cfo
+    // — removed from FR_ONLY_BLOG_SLUGS in middleware.ts as part of the
+    // same change. Matches the FR `content: []` array structure (not
+    // htmlContent) because the FR original uses that shape too.
+    "la-modernisation-du-role-de-cfo": {
+      meta: {
+        title: "Modernization of the CFO role in 2026 | Iter Advisors",
+        description: "How the CFO role is evolving with digitalization and AI. Discover the new skills and missions of the modern Chief Financial Officer.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Resources",
+        resourcesHref: "/en/ressources",
+        blogLabel: "Blog",
+        blogHref: "/en/ressources/blog",
+      },
+      h1: "The modernization of the CFO role",
+      content: [
+        "The role of the CFO (Chief Financial Officer) has evolved considerably over the past few years. Once confined to accounting oversight and reporting, today's finance director is a true strategic partner at the heart of company decisions.",
+        "Digital transformation is the primary driver of this evolution. Automating repetitive tasks (data entry, bank reconciliation, reporting) frees up time for higher-value missions: strategic analysis, decision support, and risk management.",
+        "Artificial intelligence opens new perspectives for the finance function. Machine-learning-based forecasting tools allow finance leaders to anticipate cash flow movements, optimize pricing, and detect accounting anomalies with unprecedented precision.",
+        "The modern CFO must also master ESG (Environmental, Social, Governance) issues, which take an increasing place in corporate strategy. Sustainable finance, non-financial reporting, and impact investing have become essential skills.",
+        "Finally, the human dimension remains central. The CFO must communicate effectively with various stakeholders (executives, investors, operational teams) and translate financial data into actionable recommendations. Leadership and strategic vision are, more than ever, essential qualities.",
+      ],
+    },
   },
   es: {
     "essentiels-outils-tech-finance": {
@@ -3693,6 +3717,28 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <h2 id="cta">¿Listo para externalizar su contabilidad?</h2>
 <p>Descubra nuestro <a href="/es/services/externalizar-contabilidad">servicio de externalización contable</a> o <a href="/es/contact">reserve un diagnóstico gratuito de 30 minutos</a> con uno de nuestros asesores senior.</p>`,
       content: [],
+    },
+    // T7 (2026-06-07): ES translation of la-modernisation-du-role-de-cfo
+    // — same FR `content: []` array shape as the FR original.
+    "la-modernisation-du-role-de-cfo": {
+      meta: {
+        title: "Modernización del rol de CFO en 2026 | Iter Advisors",
+        description: "Cómo evoluciona el rol del CFO con la digitalización y la IA. Descubra las nuevas competencias y misiones del director financiero moderno.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Recursos",
+        resourcesHref: "/es/ressources",
+        blogLabel: "Blog",
+        blogHref: "/es/ressources/blog",
+      },
+      h1: "La modernización del rol de CFO",
+      content: [
+        "El rol del CFO (Chief Financial Officer) ha evolucionado considerablemente en los últimos años. Antes limitado a la supervisión contable y al reporting, el director financiero es hoy un verdadero socio estratégico en el corazón de las decisiones de la empresa.",
+        "La transformación digital es el primer motor de esta evolución. La automatización de tareas repetitivas (asiento contable, conciliación bancaria, reporting) libera tiempo para misiones de mayor valor añadido: análisis estratégico, apoyo a la toma de decisiones, gestión de riesgos.",
+        "La inteligencia artificial abre nuevas perspectivas para la función financiera. Las herramientas de predicción basadas en machine learning permiten anticipar las evoluciones de tesorería, optimizar los precios y detectar anomalías contables con una precisión inédita.",
+        "El CFO moderno también debe dominar los temas ESG (Medio ambiente, Social, Gobernanza) que ocupan un lugar creciente en la estrategia empresarial. Las finanzas sostenibles, el reporting extra-financiero y el impact investing se convierten en competencias imprescindibles.",
+        "Finalmente, la dimensión humana sigue siendo central. El CFO debe saber comunicar con las distintas partes interesadas (directivos, inversores, equipos operativos) y traducir los datos financieros en recomendaciones accionables. El liderazgo y la visión estratégica son, más que nunca, cualidades esenciales.",
+      ],
     },
   },
 };
