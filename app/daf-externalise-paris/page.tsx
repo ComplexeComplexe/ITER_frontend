@@ -38,7 +38,8 @@ export async function generateMetadata(): Promise<Metadata> {
     jobTitle: "Co-fondateur & CFO Advisor",
     url: "https://www.linkedin.com/in/sebastiendoat",
     sameAs: "https://www.linkedin.com/in/sebastiendoat",
-    image: "https://www.iteradvisors.com/images/sebastien-doat.jpg",
+    // Ahrefs T-404 (2026-06-08): was /images/sebastien-doat.jpg → 400/404.
+    image: "https://www.iteradvisors.com/images/team/sebastien-doat.webp",
   };
 
   const articleSchema = {

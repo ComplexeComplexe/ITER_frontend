@@ -139,6 +139,7 @@ export async function buildStrapiMetadata({
   fallbackTitle,
   fallbackDescription,
   localizedPaths,
+  disableHreflang,
 }: {
   endpoint: string;
   locale: Locale;
@@ -146,6 +147,7 @@ export async function buildStrapiMetadata({
   fallbackTitle: string;
   fallbackDescription: string;
   localizedPaths?: { fr: string; en: string; es: string };
+  disableHreflang?: ("en" | "es")[];
 }): Promise<Metadata> {
   try {
     const res = await strapiFetch<StrapiSingleResponse<{ seo: StrapiSeo | null }>>(
@@ -165,6 +167,7 @@ export async function buildStrapiMetadata({
         noindex: seo.noIndex || false,
         structuredData: seo.structuredData || null,
         localizedPaths,
+        disableHreflang,
       });
 
       // Add OG image if available
@@ -189,6 +192,7 @@ export async function buildStrapiMetadata({
     description: fallbackDescription,
     path,
     localizedPaths,
+    disableHreflang,
   });
 }
 
@@ -203,6 +207,7 @@ export async function buildStrapiCollectionMetadata({
   fallbackTitle,
   fallbackDescription,
   localizedPaths,
+  disableHreflang,
 }: {
   endpoint: string;
   slug: string;
@@ -211,6 +216,7 @@ export async function buildStrapiCollectionMetadata({
   fallbackTitle: string;
   fallbackDescription: string;
   localizedPaths?: { fr: string; en: string; es: string };
+  disableHreflang?: ("en" | "es")[];
 }): Promise<Metadata> {
   try {
     // Use the same flat populate[n] syntax as getBlogArticleBySlug (the
@@ -268,6 +274,7 @@ export async function buildStrapiCollectionMetadata({
       noindex: seo?.noIndex || false,
       structuredData: seo?.structuredData || null,
       localizedPaths,
+      disableHreflang,
     });
 
     if (ogImage && meta.openGraph && typeof meta.openGraph === "object") {
@@ -288,5 +295,6 @@ export async function buildStrapiCollectionMetadata({
     description: fallbackDescription,
     path,
     localizedPaths,
+    disableHreflang,
   });
 }

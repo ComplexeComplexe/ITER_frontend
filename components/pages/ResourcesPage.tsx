@@ -60,7 +60,7 @@ export default function ResourcesPage({
           title: article.title,
           // locale is narrowed to "en" | "es" here (FR returns early above)
           href: `/${locale}/ressources/blog/${article.slug}`,
-          image: featured?.url || "/images/blog/placeholder.webp",
+          image: featured?.url || "/images/og-default.webp", // Ahrefs T-404 (2026-06-08): placeholder.webp missing → og-default
           alt: featured?.alternativeText || article.title,
           tag: newsTag,
         };

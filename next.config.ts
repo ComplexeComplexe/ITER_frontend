@@ -815,9 +815,15 @@ const nextConfig: NextConfig = {
 
       // ── Complement SEO-01 (2026-05-25) — résidus de iteradvisors-next-redirects.js
       // non couverts par les catch-alls existants.
-      { source: "/es/drh-externalise",       destination: "/es/externalizacion-rrhh",                       permanent: true },
-      { source: "/es/drh-externalise/:path*", destination: "/es/externalizacion-rrhh/:path*",               permanent: true },
-      { source: "/en/drh-externalise/:path*", destination: "/en/hr-outsourcing/:path*",                     permanent: true },
+      // Ahrefs T-404 (2026-06-08) — REMPLACÉ les wildcards :path* qui
+      // préservaient le slug FR (temps-partage) au lieu de le mapper vers
+      // le slug EN (shared-time) / ES (tiempo-compartido), ce qui produisait
+      // /en/hr-outsourcing/temps-partage (404) et /es/externalizacion-rrhh/temps-partage (404).
+      // Désormais chaque path est mappé explicitement.
+      { source: "/es/drh-externalise",                       destination: "/es/externalizacion-rrhh",                       permanent: true },
+      { source: "/es/drh-externalise/temps-partage",          destination: "/es/externalizacion-rrhh/tiempo-compartido",     permanent: true },
+      { source: "/en/drh-externalise",                       destination: "/en/hr-outsourcing",                             permanent: true },
+      { source: "/en/drh-externalise/temps-partage",          destination: "/en/hr-outsourcing/shared-time",                 permanent: true },
       { source: "/en/services/outsourced-financial-management", destination: "/en/fractional-cfo",          permanent: true },
       { source: "/es/services/outsourced-management-control",   destination: "/es/services/control-gestion-externalizado", permanent: true },
       { source: "/services/externalizar-contabilidad",          destination: "/services/comptabilite-externalisation",     permanent: true },

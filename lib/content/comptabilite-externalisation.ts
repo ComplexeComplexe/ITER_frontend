@@ -9,7 +9,9 @@ export const comptabiliteExternalisationContent = {
       name: "Sébastien Doat",
       jobTitle: "Co-fondateur & CFO Advisor",
       linkedInUrl: "https://www.linkedin.com/in/sebastiendoat",
-      avatarUrl: "https://www.iteradvisors.com/images/sebastien-doat.jpg",
+      // Ahrefs T-404 (2026-06-08): was "/images/sebastien-doat.jpg" → 400/404
+      // (wrong path + wrong extension). The real asset is the .webp under /team/.
+      avatarUrl: "/images/team/sebastien-doat.webp",
       updateDate: "2026-05-05",
     },
     tldr: "Externaliser sa comptabilité coûte 60-85% moins cher qu'un comptable interne, avec une expertise plus large et une flexibilité adaptée aux startups et PME en croissance.",

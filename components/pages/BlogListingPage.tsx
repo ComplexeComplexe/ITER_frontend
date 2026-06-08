@@ -240,7 +240,7 @@ export default function BlogListingPage({
           return {
             title: a.title,
             href: getBlogHref(locale, a.slug),
-            image: imageUrl || "/images/blog/placeholder.webp",
+            image: imageUrl || "/images/og-default.webp", // Ahrefs T-404 (2026-06-08): placeholder.webp missing → og-default
             alt,
             category: categoryLabel(a.category),
             date: formatDate(a.publishedDate, locale),
