@@ -36,7 +36,11 @@ const LEGACY_COVER_BY_SLUG: Record<string, string> = {
   "organiser-sa-direction-financiere": "/images/blog/organiser-sa-direction-financiere.webp",
 };
 
-const DEFAULT_COVER = "/images/blog/placeholder.webp";
+// Ahrefs T-404 (2026-06-08): was "/images/blog/placeholder.webp" but
+// that file doesn't exist in /public, causing 29 inlinks worth of 404s
+// via the _next/image optimizer. Pointing to the always-present site OG
+// default until a real blog placeholder design ships.
+const DEFAULT_COVER = "/images/og-default.webp";
 
 function coverFor(slug: string): string {
   return BLOG_COVERS[slug]?.cover ?? LEGACY_COVER_BY_SLUG[slug] ?? DEFAULT_COVER;
