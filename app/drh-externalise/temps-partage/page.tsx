@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/drh-externalise/temps-partage",
     localizedPaths: { fr: "/drh-externalise/temps-partage", en: "/hr-outsourcing/shared-time", es: "/externalizacion-rrhh/tiempo-compartido" },
     fallbackTitle: "DRH à temps partagé | Iter Advisors",
-    fallbackDescription: "DRH à temps partagé pour PME et startups : une direction des ressources humaines flexible et expérimentée, quelques jours par semaine, sans les coûts d'un poste à temps plein. Découvrez l'offre Iter Advisors.",
+    fallbackDescription: "DRH à temps partagé pour PME et startups : direction RH flexible et senior, quelques jours par semaine, sans les coûts d'un poste à temps plein.",
   });
 }
 

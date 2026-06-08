@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: "Checklist due diligence levée de fonds | Iter Advisors",
     description: "Checklist complète pour préparer la due diligence financière de votre levée de fonds.",
     type: "article",
+    images: [{ url: "/images/blog/checklist-due-diligence-levee-de-fonds.webp", width: 1200, height: 630 }],
   },
 };
 

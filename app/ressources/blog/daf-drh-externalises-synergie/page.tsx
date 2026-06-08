@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: "DAF et DRH externalisés : synergie | Iter Advisors",
     description: "Découvrez les synergies quand on externalise DAF et DRH. Économies, efficacité, reporting intégré.",
     type: "article",
+    images: [{ url: "/images/blog/daf-drh-externalises-synergie.webp", width: 1200, height: 630 }],
   },
 };
 

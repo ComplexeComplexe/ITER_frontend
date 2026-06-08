@@ -3000,7 +3000,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 
     "bareme-irpf-espagne-2026": {
       meta: {
-        title: "Barème IRPF Espagne 2026 : Tranches et calcul de l'impôt | Iter Advisors",
+        title: "Barème IRPF Espagne 2026 : tranches d'imposition | Iter Advisors",
         description:
           "Découvrez le barème officiel de l'impôt sur le revenu en Espagne (IRPF) pour 2026. Tranches de 19% à 47%, part étatique et part autonome expliquées.",
       },
@@ -3033,7 +3033,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 
     "modelo-720-declaration-biens-etranger": {
       meta: {
-        title: "Modelo 720 en Espagne : Déclaration des biens à l'étranger 2026 | Iter Advisors",
+        title: "Modelo 720 Espagne 2026 : déclaration biens étranger | Iter Advisors",
         description:
           "Résident espagnol ? Vous devez déclarer vos comptes, assurances-vie et biens immobiliers en France via le Modelo 720 si leur valeur dépasse 50 000 €.",
       },
@@ -3064,7 +3064,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 
     "loi-beckham-espagne-conditions-2026": {
       meta: {
-        title: "Loi Beckham en Espagne : Conditions et Taux 24% en 2026 | Iter Advisors",
+        title: "Loi Beckham Espagne 2026 : conditions et taux 24% | Iter Advisors",
         description:
           "Découvrez les conditions d'éligibilité à la Loi Beckham en 2026. Taux fixe d'IRPF à 24% pendant 6 ans pour les impatriés et digital nomads en Espagne.",
       },
@@ -3095,7 +3095,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 
     "double-imposition-france-espagne-convention": {
       meta: {
-        title: "Éviter la double imposition France Espagne : Convention fiscale | Iter Advisors",
+        title: "Double imposition France-Espagne : convention 2026 | Iter Advisors",
         description:
           "Comment fonctionne la convention fiscale franco-espagnole de 1995 ? Méthodes du crédit d'impôt et de l'exemption pour éviter la double imposition en 2026.",
       },

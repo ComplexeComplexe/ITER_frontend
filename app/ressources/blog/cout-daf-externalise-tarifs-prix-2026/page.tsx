@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: "Tarifs DAF externalisé 2026 — prix et grille | Iter Advisors",
     description: "Combien coûte un DAF externalisé en 2026 ? Tarifs TJM, forfaits mensuels, grille de prix par profil et ROI.",
     type: "article",
+    images: [{ url: "/images/blog/cout-daf-externalise-tarifs-prix-2026.webp", width: 1200, height: 630 }],
   },
 };
 

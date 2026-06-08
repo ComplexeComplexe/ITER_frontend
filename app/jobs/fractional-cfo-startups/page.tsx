@@ -217,7 +217,8 @@ export async function generateMetadata(): Promise<Metadata> {
         "Embauchez un Fractional CFO senior pour votre startup. Dès 4 500 €/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
       url: PAGE_URL,
       type: "website",
-    },
+    images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
+  },
     other: {
       "application/ld+json": JSON.stringify(structuredData),
     },

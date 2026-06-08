@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: "Flux de trésorerie — Définition et Calcul | Iter Advisors",
     description: "Comprendre les flux de trésorerie (cash flow) : définition, calcul, types, importance pour la gestion financière. Guide complet.",
     type: "article",
+    images: [{ url: "/images/blog/flux-de-tresorerie.webp", width: 1200, height: 630 }],
   },
 };
 

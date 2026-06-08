@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "fr",
     path: "/daf-externalise/transition",
     localizedPaths: { fr: "/daf-externalise/transition", en: "/en/fractional-cfo/transition", es: "/es/externalizacion-daf/transition" },
-    fallbackTitle: "DAF de transition : intervention en 48 h pour PME et ETI | Iter Advisors",
+    fallbackTitle: "DAF de transition 48 h pour PME et ETI | Iter Advisors",
     fallbackDescription: "DAF de transition (TJM 800-1 500 € HT) opérationnel en 48 à 72 h pour vacance de poste, crise de trésorerie, restructuration ou levée de fonds. PME, ETI, scale-ups.",
   });
 

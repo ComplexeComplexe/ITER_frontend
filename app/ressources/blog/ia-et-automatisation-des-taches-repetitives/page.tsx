@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: "IA et automatisation financière | Iter Advisors",
     description: "Découvrez comment l'IA et l'automatisation libèrent 30-40 % du temps de vos équipes finance. Guide pratique avec cas d'usage et outils.",
     type: "article",
+    images: [{ url: "/images/blog/ia-et-automatisation-des-taches-repetitives.webp", width: 1200, height: 630 }],
   },
 };
 

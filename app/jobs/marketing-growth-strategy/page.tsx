@@ -20,7 +20,8 @@ export async function generateMetadata(): Promise<Metadata> {
         "Iter Advisors recrute un(e) responsable Marketing & Growth Strategy. Cabinet de DAF externalisé à Barcelone, Paris, Toulouse. Postes ouverts.",
       url: "https://www.iteradvisors.com/jobs/marketing-growth-strategy",
       type: "website",
-    },
+    images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
+  },
   };
 }
 

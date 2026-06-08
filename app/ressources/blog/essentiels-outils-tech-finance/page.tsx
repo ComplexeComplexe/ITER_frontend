@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: "Essentiels outils tech finance | Iter Advisors",
     description: "Découvrez les outils technologiques essentiels pour moderniser votre département finance. Guide complet des solutions cloud, IA et automatisation.",
     type: "article",
+    images: [{ url: "/images/blog/essentiels-outils-tech-finance.webp", width: 1200, height: 630 }],
   },
 };
 

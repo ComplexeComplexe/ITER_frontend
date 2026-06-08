@@ -26,7 +26,7 @@ const PUBLISHED_DATE = "2026-05-31";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Résidence fiscale Espagne vs France : les 3 critères en 2026 | Iter Advisors",
+  title: "Résidence fiscale Espagne vs France 2026 | Iter Advisors",
   description:
     "Comment déterminer votre résidence fiscale entre la France et l'Espagne ? Règle des 183 jours, centre des intérêts économiques et foyer. Guide complet 2026.",
   path: "/ressources/fiscalite/residence-fiscale-france-espagne",

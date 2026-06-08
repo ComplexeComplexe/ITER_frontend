@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: "Organiser sa direction financière en 2026 | Iter Advisors",
     description: "Guide complet pour structurer et organiser votre département finance. Organigrammes, rôles, responsabilités et best practices.",
     type: "article",
+    images: [{ url: "/images/blog/organiser-sa-direction-financiere.webp", width: 1200, height: 630 }],
   },
 };
 

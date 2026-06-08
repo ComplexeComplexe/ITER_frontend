@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     description: "Guide complet des 10 meilleurs outils fintech pour CFOs en startup. Comptabilité, trésorerie, reporting, levée de fonds. Comparaison et ROI.",
     type: "article",
     url: "https://www.iteradvisors.com/ressources/blog/les-10-outils-pour-cfos-startup",
+    images: [{ url: "/images/blog/les-10-outils-pour-cfos-startup.webp", width: 1200, height: 630 }],
   },
 };
 
