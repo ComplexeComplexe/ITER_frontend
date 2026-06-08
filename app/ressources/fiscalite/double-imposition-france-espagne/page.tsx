@@ -31,7 +31,7 @@ const AUTHOR_URL = "/a-propos/florent-greth";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Éviter la double imposition France Espagne : convention fiscale | Iter Advisors",
+  title: "Double imposition France-Espagne : convention 2026 | Iter Advisors",
   description: "Comment fonctionne la convention fiscale franco-espagnole de 1995 ? Méthodes du crédit d'impôt et de l'exemption avec progressivité pour éviter la double imposition.",
   path: "/ressources/fiscalite/double-imposition-france-espagne",
   // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google

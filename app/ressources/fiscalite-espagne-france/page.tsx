@@ -24,7 +24,7 @@ const PAGE_URL = "https://www.iteradvisors.com/ressources/fiscalite-espagne-fran
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Fiscalité Espagne France : comprendre, comparer et se structurer | Iter Advisors",
+  title: "Fiscalité France-Espagne : guide complet 2026 | Iter Advisors",
   description:
     "Guide complet de la fiscalité franco-espagnole en 2026. Résidence fiscale, impôt sur le revenu, dividendes, sociétés et loi Beckham. Évitez la double imposition.",
   path: "/ressources/fiscalite-espagne-france",

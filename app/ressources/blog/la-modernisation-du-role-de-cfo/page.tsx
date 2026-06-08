@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: "La modernisation du rôle de CFO en 2026 | Iter Advisors",
     description: "Comment le rôle du CFO évolue avec la digitalisation, l'IA et les enjeux ESG. Compétences et missions du directeur financier moderne.",
     type: "article",
+    images: [{ url: "/images/blog/la-modernisation-du-role-de-cfo.webp", width: 1200, height: 630 }],
   },
 };
 

@@ -31,7 +31,7 @@ const AUTHOR_URL = "/a-propos/sebastien-doat";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Loi Beckham en Espagne : conditions et taux 24 % en 2026 | Iter Advisors",
+  title: "Loi Beckham Espagne 2026 : conditions et taux 24% | Iter Advisors",
   description: "Le régime fiscal des impatriés en Espagne : taux fixe d'IRPF à 24 % pendant 6 ans, conditions d'éligibilité 2026, digital nomads. Guide complet.",
   path: "/ressources/fiscalite/beckham-law",
   // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google

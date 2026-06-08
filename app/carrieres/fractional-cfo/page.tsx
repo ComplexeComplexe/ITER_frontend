@@ -146,7 +146,8 @@ export async function generateMetadata(): Promise<Metadata> {
         "Iter Advisors recrute des fractional CFOs seniors (10+ ans) pour accompagner un portefeuille de startups tech VC-backed. Freelance, portage ou CDI. Barcelone, Paris, Toulouse — mode hybride.",
       url: PAGE_URL,
       type: "website",
-    },
+    images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
+  },
     other: {
       "application/ld+json": JSON.stringify(structuredData),
     },

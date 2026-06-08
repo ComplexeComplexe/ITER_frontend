@@ -10,9 +10,9 @@ import { Callout, ProseTable } from "@/components/blog";
 const PAGE_URL = "https://www.iteradvisors.com/ressources/blog/cout-externalisation-comptable-2026";
 
 export const metadata: Metadata = {
-  title: "Coût externalisation comptable 2026 : tarifs et comparatif | Iter Advisors",
+  title: "Coût externalisation comptable 2026 : tarifs PME | Iter Advisors",
   description:
-    "Combien coûte l'externalisation comptable en 2026 ? Grille tarifaire complète par taille d'entreprise, comparatif des 4 modèles (interne, cabinet, plateforme, CFO-piloté). FAQ + calcul ROI.",
+    "Combien coûte l'externalisation comptable en 2026 ? Grille tarifaire par taille d'entreprise + comparatif des 4 modèles disponibles. FAQ + ROI.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Coût de l'externalisation comptable en 2026 : tarifs et comparatif",
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
       "Tarifs externalisation comptable par taille d'entreprise + comparatif des 4 modèles disponibles. Économisez 30-60 % vs comptable interne. Iter Advisors.",
     type: "article",
     url: PAGE_URL,
+    images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
   },
   robots: { index: true, follow: true },
 };

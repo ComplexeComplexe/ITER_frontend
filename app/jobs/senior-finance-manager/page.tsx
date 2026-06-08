@@ -20,7 +20,8 @@ export async function generateMetadata(): Promise<Metadata> {
         "Senior Finance Manager pour piloter et coordonner les missions clients chez Iter Advisors. Cabinet DAF externalisé Barcelone, Paris, Toulouse.",
       url: "https://www.iteradvisors.com/jobs/senior-finance-manager",
       type: "website",
-    },
+    images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
+  },
   };
 }
 
