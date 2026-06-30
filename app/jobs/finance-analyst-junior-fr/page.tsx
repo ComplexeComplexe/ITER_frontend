@@ -52,7 +52,7 @@ export default async function Page() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="mailto:recrutement@iteradvisors.com"
+                href="mailto:contact@iteradvisors.com"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 <Mail size={18} />
@@ -233,10 +233,10 @@ export default async function Page() {
             </ul>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               À : <a
-                href="mailto:recrutement@iteradvisors.com"
+                href="mailto:contact@iteradvisors.com"
                 className="text-iter-violet hover:underline font-semibold"
               >
-                recrutement@iteradvisors.com
+                contact@iteradvisors.com
               </a>
             </p>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-4">
@@ -251,7 +251,7 @@ export default async function Page() {
               Prêt(e) à lancer ta carrière en finance ?
             </p>
             <a
-              href="mailto:recrutement@iteradvisors.com"
+              href="mailto:contact@iteradvisors.com"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
             >
               <Mail size={18} />

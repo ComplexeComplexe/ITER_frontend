@@ -180,7 +180,7 @@ export default async function Page() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
-                href="mailto:recrutement@iteradvisors.com"
+                href="mailto:contact@iteradvisors.com"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 <Mail size={18} aria-hidden="true" />
@@ -465,10 +465,10 @@ export default async function Page() {
               Envoyez votre CV et un message court présentant votre parcours et
               vos motivations à{" "}
               <a
-                href="mailto:recrutement@iteradvisors.com"
+                href="mailto:contact@iteradvisors.com"
                 className="text-iter-violet hover:underline font-semibold"
               >
-                recrutement@iteradvisors.com
+                contact@iteradvisors.com
               </a>
               , ou directement à{" "}
               <a
@@ -633,7 +633,7 @@ export default async function Page() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="mailto:recrutement@iteradvisors.com"
+                href="mailto:contact@iteradvisors.com"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 <Mail size={18} aria-hidden="true" />
