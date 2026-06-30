@@ -522,18 +522,21 @@ export default function DafPage({
         <div className="container max-w-3xl px-4 sm:px-6">
           <div className="rounded-2xl bg-gradient-to-br from-iter-violet to-iter-dark p-6 sm:p-8 text-white text-center shadow-lg">
             <p className="text-base sm:text-lg font-semibold mb-3">
+              {/* T3 (2026-06-30) — copy aligné avec ticket "Remonter sur
+                  DAF externalisé". Mot-clé exact dans le H3 pour booster
+                  la densité keyword sur la page (CTR 0.3 % → cible 1 %+). */}
               {locale === "fr"
-                ? "Vous voyez le bénéfice ? Parlons de votre situation."
+                ? "Vous cherchez un DAF externalisé ?"
                 : locale === "en"
-                  ? "Convinced by the benefits? Let's talk about your situation."
-                  : "¿Convencido por los beneficios? Hablemos de su situación."}
+                  ? "Looking for an outsourced CFO?"
+                  : "¿Busca un CFO externalizado?"}
             </p>
             <p className="text-sm text-white/80 mb-5">
               {locale === "fr"
-                ? "30 minutes avec un DAF senior, sans engagement."
+                ? "Prenez rendez-vous pour un diagnostic gratuit — 30 minutes avec un DAF senior, sans engagement."
                 : locale === "en"
-                  ? "30 minutes with a senior CFO, no commitment."
-                  : "30 minutos con un CFO senior, sin compromiso."}
+                  ? "Book a free diagnostic call — 30 minutes with a senior CFO, no commitment."
+                  : "Reserve un diagnóstico gratuito — 30 minutos con un CFO senior, sin compromiso."}
             </p>
             <a
               href="/contact"
@@ -826,18 +829,21 @@ export default function DafPage({
         <div className="container max-w-3xl px-4 sm:px-6">
           <div className="rounded-2xl bg-gradient-to-br from-iter-violet/10 to-iter-chartreuse/10 border border-iter-violet/20 p-6 sm:p-8 text-center">
             <p className="text-base sm:text-lg font-semibold text-foreground mb-3">
+              {/* T3 (2026-06-30) — copy aligné avec ticket "Remonter sur
+                  DAF externalisé" : promesse explicite "sous 24h" pour
+                  réduire la friction post-tarif. */}
               {locale === "fr"
-                ? "Besoin d'un devis adapté à votre situation ?"
+                ? "Obtenez votre devis personnalisé sous 24h"
                 : locale === "en"
-                  ? "Need a quote tailored to your situation?"
-                  : "¿Necesita un presupuesto a su medida?"}
+                  ? "Get your personalised quote within 24h"
+                  : "Reciba su presupuesto personalizado en 24h"}
             </p>
             <p className="text-sm text-muted-foreground mb-5">
               {locale === "fr"
-                ? "Décrivez votre contexte en 2 minutes — réponse personnalisée sous 24 h ouvrées."
+                ? "Décrivez votre contexte DAF externalisé en 2 minutes — réponse d'un associé sous 24 h ouvrées."
                 : locale === "en"
-                  ? "Tell us your context in 2 minutes — personalised reply within 24 business hours."
-                  : "Cuéntenos su contexto en 2 minutos — respuesta personalizada en 24 horas hábiles."}
+                  ? "Describe your outsourced CFO need in 2 minutes — partner reply within 24 business hours."
+                  : "Describa su necesidad de CFO externalizado en 2 minutos — respuesta de un socio en 24 h hábiles."}
             </p>
             <a
               href="/contact"
