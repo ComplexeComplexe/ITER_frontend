@@ -1,7 +1,12 @@
 export const dafExternalisePariEnrichedContent = {
   fr: {
     meta: {
-      title: "DAF externalisé Paris — CFO temps partagé | Iter Advisors",
+      // T2 (2026-06-30) — Cannibalisation avec /daf-externalise (pilier
+      // national, position 16). Le Title contenait "DAF externalisé" en
+      // intro, créant un signal ambigu pour Google. Recentré sur la cible
+      // locale "Cabinet DAF Paris" pour laisser le pilier ranker sur la
+      // requête nationale.
+      title: "Cabinet DAF Paris : CFO à temps partagé pour PME | Iter Advisors",
       description:
         "DAF externalisé à Paris et en Ile-de-France : CFO à temps partagé pour startups et PME. Levées de fonds, Bpifrance, reporting. Dès 2 000 €/mois.",
     },
@@ -13,7 +18,9 @@ export const dafExternalisePariEnrichedContent = {
       updateDate: "2026-05-05",
     },
     tldr: "Iter Advisors propose des DAF externalisés à Paris dès 2 000 €/mois, avec une expertise spécialisée startups Station F et levées de fonds. Disposer d'une direction financière senior sans recruter un salarié : c'est l'alternative pertinente pour les PME et startups en croissance.",
-    h1: "DAF externalisé Paris : votre direction financière à temps partagé en Ile-de-France",
+    // T2 (2026-06-30) — H1 recentré sur "Cabinet DAF Paris" pour matcher
+    // le Title et éliminer la cannibalisation avec le pilier national.
+    h1: "Cabinet DAF Paris : direction financière à temps partagé en Ile-de-France",
     testimonials: [
       {
         name: "Jean Dupont",

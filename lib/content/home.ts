@@ -187,10 +187,16 @@ export const homeContent = {
     discoverServices: "Découvrir nos services",
   },
   en: {
+    // T4 (2026-06-30) — Meta title + description étaient en FRANÇAIS sur la
+    // page /en, ce qui crée un signal mixte (Google peut associer la page
+    // à des termes hors-domaine comme "cybersecurity SaaS" car le contenu
+    // EN parle de "SaaS startups" sans signal Finance explicite dans le
+    // title). Recentrage explicite sur Outsourced CFO + Finance + 100M€
+    // levés pour éliminer l'ambiguïté sémantique.
     meta: {
-      title: "Iter Advisors | DAF externe, Levée de Fonds et M&A",
+      title: "Outsourced CFO for Startups & SMEs | Iter Advisors",
       description:
-        "Iter Advisors, votre DAF externe. Accompagnement expert en gestion financière externalisée, levée de fonds et opérations M&A.",
+        "Outsourced CFO and finance leadership for startups, scale-ups and SMEs. Fractional CFO, fundraising, M&A, cash management. 85+ companies, €100M+ raised.",
     },
     hero: {
       h1: { before: "The best version of your ", highlight: "financial management", highlightAlt: "human resources management", after: "" },
