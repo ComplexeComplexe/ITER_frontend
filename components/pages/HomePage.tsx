@@ -89,18 +89,22 @@ function AnimatedCounter({
 }
 
 /* ─── Client Logos ─── */
+// SEO-17 (2026-07-01) — Alt text descriptifs sur tous les logos clients.
+// Pattern : "Logo <marque> — client Iter Advisors accompagné en DAF externalisé".
+// Booste le SEO image + le champ sémantique autour de "DAF externalisé".
+// Cf. audit SEO 01/07/2026 §Home "Alt text des logos clients".
 const clientLogos = [
-  { src: "/images/logos/logo-happyscribe.webp", alt: "Happy Scribe" },
-  { src: "/images/logos/logo-impact.webp", alt: "IMPACT+" },
-  { src: "/images/logos/logo-mitiga.webp", alt: "Mitiga Solutions" },
-  { src: "/images/logos/logo-neat.webp", alt: "Neat" },
-  { src: "/images/logos/logo-nuubb.webp", alt: "NuuBB" },
+  { src: "/images/logos/logo-happyscribe.webp", alt: "Logo Happy Scribe — client Iter Advisors accompagné en DAF externalisé" },
+  { src: "/images/logos/logo-impact.webp", alt: "Logo IMPACT+ — client Iter Advisors accompagné en DAF externalisé" },
+  { src: "/images/logos/logo-mitiga.webp", alt: "Logo Mitiga Solutions — client Iter Advisors accompagné en direction financière externalisée" },
+  { src: "/images/logos/logo-neat.webp", alt: "Logo Neat — client Iter Advisors accompagné en CFO externalisé" },
+  { src: "/images/logos/logo-nuubb.webp", alt: "Logo NuuBB — client Iter Advisors accompagné en DAF à temps partagé" },
   { src: "/images/logos/logo-opitdigital.webp", alt: "Logo Opti Digital — client Iter Advisors accompagné en DAF externalisé" },
-  { src: "/images/logos/logo-seasonly.webp", alt: "Seasonly" },
-  { src: "/images/logos/logo-solamente.webp", alt: "Solamente" },
-  { src: "/images/logos/logo-surfe.webp", alt: "Surfe" },
-  { src: "/images/logos/logo-ukio.webp", alt: "Ukio" },
-  { src: "/images/logos/logo-yego.webp", alt: "Yego" },
+  { src: "/images/logos/logo-seasonly.webp", alt: "Logo Seasonly — client Iter Advisors accompagné en DAF externalisé" },
+  { src: "/images/logos/logo-solamente.webp", alt: "Logo Solamente — client Iter Advisors accompagné en direction financière externalisée" },
+  { src: "/images/logos/logo-surfe.webp", alt: "Logo Surfe — client Iter Advisors accompagné en CFO à temps partagé" },
+  { src: "/images/logos/logo-ukio.webp", alt: "Logo Ukio — client Iter Advisors accompagné en DAF externalisé" },
+  { src: "/images/logos/logo-yego.webp", alt: "Logo Yego — client Iter Advisors accompagné en DAF externalisé" },
 ];
 
 /* ─── Icons for service cards ─── */
