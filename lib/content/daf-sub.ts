@@ -337,7 +337,11 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           content: [
             "Combien coûte un DAF externalisé ? C'est souvent la première question que se posent les dirigeants de PME et de startups avant de franchir le pas. La réponse dépend de plusieurs facteurs : la formule choisie (temps partagé, transition ou mission ponctuelle), le nombre de jours d'intervention par mois, et la complexité de la situation financière de l'entreprise.",
-            "Chez Iter Advisors, nous avons fait le choix de la transparence totale sur nos tarifs. Cette page présente notre grille de prix 2026, les facteurs qui influencent le coût, et une comparaison avec les alternatives (recrutement d'un DAF salarié, consultant financier, expert-comptable).",
+            // SEO-02 (2026-07-01) — Cross-link intention. Cette page = grille
+            // tarifaire officielle (intention commerciale). Le blog article
+            // dédié = guide informationnel avec méthodologie et ROI calculator.
+            // Séparation claire des intentions pour éviter la cannibalisation.
+            "Chez Iter Advisors, nous avons fait le choix de la transparence totale sur nos tarifs. Cette page présente notre **grille de prix officielle 2026**, les facteurs qui influencent le coût, et une comparaison avec les alternatives (recrutement d'un DAF salarié, consultant financier, expert-comptable). Pour un **guide informationnel complet avec méthodologie de comparaison, calcul de ROI et analyse marché**, consultez notre article dédié : [Combien coûte un DAF externalisé en 2026 : tarifs, grille de prix et ROI](/ressources/blog/cout-daf-externalise-tarifs-prix-2026).",
           ],
         },
         {

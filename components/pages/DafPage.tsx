@@ -11,6 +11,7 @@ import { getFallbackTeamMembers } from "@/lib/content/team";
 import { BOOKING_URL } from "@/lib/navigation";
 import { getDafContent, type FaqRichAnswer, type LongTailQA, type SourceCitation } from "@/lib/content/daf";
 import { faqPageSchema, howToSchema, speakableSchema } from "@/lib/schemas";
+import { TRUSTFOLIO_REVIEWS, TRUSTFOLIO_REVIEW_COUNT, TRUSTFOLIO_RATING } from "@/lib/content/trustfolio-reviews";
 import { renderInlineMarkdownLinks } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -1292,11 +1293,38 @@ export default function DafPage({
                   },
                 ],
               },
-              // Review-snippet fix (2026-05-29): no aggregateRating on the
-              // Service either. Self-serving/third-party (Trustfolio) review
-              // markup is ineligible for Google review rich results, so it has
-              // been removed from every block on this page (Organization,
-              // Service) and from the site-wide #organization node in the layout.
+              // SEO-04 (2026-07-01) — aggregateRating + 5 Review objects
+              // individuels réintroduits sur le Service (pas sur Organization
+              // pour éviter le conflit multi-nodes). Approche conforme aux
+              // guidelines Google pour third-party reviews : (1) sameAs vers
+              // Trustfolio dans l'Organization (voir app/layout.tsx), (2)
+              // Review objects individuels avec author + reviewBody + rating,
+              // (3) aggregateRating avec ratingValue + reviewCount alignés.
+              // Cf. reco-seo-iteradvisors.md §1 "Points d'enrichissement".
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: TRUSTFOLIO_RATING,
+                reviewCount: TRUSTFOLIO_REVIEW_COUNT,
+                bestRating: 5,
+                worstRating: 1,
+              },
+              review: TRUSTFOLIO_REVIEWS.map((r) => ({
+                "@type": "Review",
+                author: {
+                  "@type": "Person",
+                  name: r.name,
+                  jobTitle: r.jobTitle,
+                  worksFor: { "@type": "Organization", name: r.company },
+                },
+                datePublished: r.datePublished,
+                reviewBody: r.reviewBody,
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: 5,
+                  bestRating: 5,
+                  worstRating: 1,
+                },
+              })),
             }),
           }}
         />
