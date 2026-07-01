@@ -185,15 +185,20 @@ gtag('consent','default',{
                     },
                   ],
                   openingHours: "Mo-Fr 09:00-18:00",
+                  // SEO-09 (2026-07-01) — sameAs consolidé pour renforcer
+                  // l'entité "Iter Advisors" dans le Knowledge Graph. Le
+                  // profil Trustfolio est ajouté comme signal third-party
+                  // vérifiable qui légitime l'aggregateRating porté par
+                  // le Service /daf-externalise (voir DafPage.tsx).
                   sameAs: [
                     "https://www.linkedin.com/company/iter-advisors/",
+                    "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc/reviews",
                   ],
-                  // Review-snippet fix (2026-05-29): no aggregateRating on the
-                  // Organization. The 5/5 Trustfolio score is a third-party,
-                  // self-serving rating that Google does not accept for review
-                  // rich results — and declaring it here (site-wide) AND again on
-                  // /daf-externalise produced a "multiple aggregate ratings" error
-                  // in Search Console (two aggregateRatings on one #organization).
+                  // aggregateRating volontairement absent ici (site-wide) pour
+                  // éviter le conflit "multiple aggregateRatings on one node"
+                  // signalé en 2026-05-29. Il est porté par le Service dédié
+                  // sur /daf-externalise, avec 5 Review objects individuels
+                  // pour respecter les guidelines Google (SEO-04, 2026-07-01).
                 },
                 {
                   "@type": "WebSite",
