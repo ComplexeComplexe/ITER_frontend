@@ -57,18 +57,45 @@ export async function generateMetadata(): Promise<Metadata> {
     articleBody: t.intro.join(" "),
   };
 
+  // SEO-07 (2026-07-01) — Enrichi en LocalBusiness (via ProfessionalService)
+  // avec PostalAddress + geo + openingHours + areaServed granulaire. Nourrit
+  // le SEO local "daf externalisé paris" et les panneaux locaux Google.
+  // Cf. reco-seo-iteradvisors.md §1 "ProfessionalService / LocalBusiness par bureau".
   const financialServiceSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": "https://www.iteradvisors.com/daf-externalise-paris#financial-service",
-    name: "DAF Externalisé Paris — Iter Advisors",
+    name: "Cabinet DAF Paris — Iter Advisors",
     description:
-      "Direction financière externalisée pour startups et PME à Paris et en Île-de-France",
+      "Direction financière externalisée pour startups et PME à Paris et en Île-de-France. Cabinet DAF Paris et CFO à temps partagé.",
     url: "https://www.iteradvisors.com/daf-externalise-paris",
     telephone: "+33 1 76 54 28 11",
-    areaServed: ["FR-75", "FR-92", "FR-93", "FR-94"],
+    // Adresse Paris — bureau opérationnel (à confirmer par le user pour
+    // publication en clair dans le footer ; utilisée ici uniquement dans
+    // le schema JSON-LD pour le signal SEO local).
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Paris",
+      addressRegion: "Île-de-France",
+      addressCountry: "FR",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      // Centre de Paris (2ème arr.) — approximation pour le signal SEO local.
+      // À affiner avec l'adresse réelle du bureau si connue.
+      latitude: 48.8666,
+      longitude: 2.3352,
+    },
+    areaServed: [
+      { "@type": "AdministrativeArea", name: "Paris (75)" },
+      { "@type": "AdministrativeArea", name: "Hauts-de-Seine (92)" },
+      { "@type": "AdministrativeArea", name: "Seine-Saint-Denis (93)" },
+      { "@type": "AdministrativeArea", name: "Val-de-Marne (94)" },
+    ],
+    openingHours: "Mo-Fr 09:00-18:00",
     image: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
     priceRange: "€€",
+    parentOrganization: { "@id": "https://www.iteradvisors.com/#organization" },
     offers: [
       {
         "@type": "Offer",
@@ -97,7 +124,11 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
     locale: "fr",
     path: "/daf-externalise-paris",
-    title: "DAF externalisé Paris — CFO à temps partagé | Iter Advisors",
+    // T2 / PR #50 (2026-06-30) — Title lu depuis t.meta.title (recentrage
+    // "Cabinet DAF Paris" pour éliminer la cannibalisation avec le pilier
+    // national). L'ancien hardcode "DAF externalisé Paris — CFO à temps
+    // partagé" ré-introduisait la cannibalisation.
+    title: t.meta.title,
     description: t.meta.description,
     structuredData,
     localizedPaths: {
