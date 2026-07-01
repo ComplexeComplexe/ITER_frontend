@@ -7,24 +7,17 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
         // /_next/static/ and /_next/image must be crawlable for JS/CSS/images.
-        // Only block internal data routes (/_next/data/) that have no SEO value.
-        // T9 (2026-05-31): also block WordPress residuals (/comments/feed,
-        // /feed, /wp-*) that GSC still occasionally surfaces from the
-        // pre-Next.js era — the Next.js site doesn't generate them, so any
-        // request would 404 anyway, but explicit Disallow keeps them out of
-        // the crawl budget.
+        // Only block internal data routes (/_next/data/) and confirmation pages.
+        // SEO-16 (2026-07-01) — retiré les résidus WordPress (/wp-admin,
+        // /wp-content, /wp-includes, /comments/feed, /feed) qui étaient
+        // hérités du site pre-Next.js. Ces routes n'existent plus, les
+        // requêtes retournent 404 et le Disallow est inutile / trompeur.
+        // Cf. audit SEO 01/07/2026 §1 "Nettoyage du robots.txt".
         disallow: [
           "/api/",
           "/_next/data/",
           "/profil/merci",
           "/campagne/merci",
-          "/comments/feed",
-          "*/comments/feed",
-          "/feed",
-          "*/feed/",
-          "/wp-admin/",
-          "/wp-content/",
-          "/wp-includes/",
         ],
       },
       // Allow AI bots to crawl the site for maximum LLM visibility
