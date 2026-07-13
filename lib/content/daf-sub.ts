@@ -193,14 +193,21 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     transition: {
       meta: {
-        title: "DAF de Transition — Missions et Tarifs | Iter Advisors",
+        // T#11 (2026-07-13) — Title enrichi avec "management de transition"
+        // (intent GSC distinct de "DAF de transition"). La page est déjà
+        // en pos 18 sur 3 441 impressions sur "daf de transition" (0
+        // conversion). Ajout de la variante lexicale pour capter aussi
+        // "management de transition finance" recherchée par les DRH/CEO.
+        title: "DAF de transition & management de transition finance | Iter Advisors",
         description:
-          "Le DAF de transition intervient à temps plein en cas de crise, vacance de poste ou transformation majeure. Missions, durée et tarifs par Iter Advisors.",
+          "DAF de transition & management de transition finance : intervention à temps plein en 48-72 h pour vacance de poste, crise de trésorerie, restructuration ou levée. TJM 800-1 500 € HT.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF de transition",
-      h1: "DAF de Transition : votre direction financière en urgence",
+      // T#11 (2026-07-13) — H1 étendu avec "management de transition"
+      // pour capter la variante lexicale distincte.
+      h1: "DAF de transition & management de transition finance : votre direction financière en urgence",
       sections: [
         {
           // T4 (2026-06-07) — bloc "L'essentiel en 30 secondes" en tête de

@@ -19,7 +19,10 @@ const fallbackTitles: Record<ServicePageSlug, string> = {
   "gestion-financiere-externalisee":
     "Gestion Financière Externalisée | Iter Advisors",
   "accompagnement-levee-de-fond":
-    "Levée de Fonds Startup | Iter Advisors",
+    // T#11 (2026-07-13) — title enrichi pour ranker sur "accompagnement
+    // levée de fonds" (pos 18,4 GSC, 99 impr, 0 clic) et
+    // "préparation levée de fonds" — intent transactionnel service.
+    "Accompagnement levée de fonds startup — Data room & pitch | Iter Advisors",
   "comptabilite-externalisation":
     "Externalisation Comptabilité | Iter Advisors",
   "controle-de-gestion-externalise":
