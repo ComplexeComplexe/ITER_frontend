@@ -13,6 +13,7 @@
     "test:report": "playwright show-report",
     "test:unit": "vitest run",
     "test:unit:watch": "vitest",
+    "audit:hreflang": "tsx scripts/audit-hreflang.ts",
     "seed:blog": "tsx scripts/seed-blog-to-strapi.ts",
     "seed:fiches-metier": "tsx scripts/seed-fiches-metier-to-strapi.ts",
     "seed:glossary": "tsx scripts/seed-glossary-to-strapi.ts",
