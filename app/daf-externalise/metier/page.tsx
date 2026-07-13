@@ -3,8 +3,10 @@ import DafSubPage from "@/components/pages/DafSubPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
 import { getDafSubContent } from "@/lib/content/daf-sub";
 import { getCmsNavigation } from "@/lib/strapi";
+import { buildDafSubFaqSchema, buildDafSubBreadcrumbSchema } from "@/lib/daf-sub-schema";
 
 const content = getDafSubContent("fr", "metier")!;
+const PAGE_URL = "https://www.iteradvisors.com/daf-externalise/metier";
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildStrapiMetadata({
@@ -19,15 +21,30 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");
+  // T#3 (2026-07-13) — FAQPage + BreadcrumbList JSON-LD via helper.
+  const faqSchema = buildDafSubFaqSchema(content);
+  const breadcrumbSchema = buildDafSubBreadcrumbSchema(content, PAGE_URL);
   return (
-    <DafSubPage
-      locale="fr"
-      content={content}
-      cmsNavigation={cmsNavigation}
-      heroImage={{
-        src: "/images/stock/metier-daf.png",
-        alt: "Fiche métier DAF — directeur administratif et financier consultant ses tableaux de bord sur tablette",
-      }}
-    />
+    <>
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <DafSubPage
+        locale="fr"
+        content={content}
+        cmsNavigation={cmsNavigation}
+        heroImage={{
+          src: "/images/stock/metier-daf.png",
+          alt: "Fiche métier DAF — directeur administratif et financier consultant ses tableaux de bord sur tablette",
+        }}
+      />
+    </>
   );
 }
