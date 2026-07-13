@@ -12,8 +12,8 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "en",
     path: "/hr-outsourcing/shared-time",
     localizedPaths: { fr: "/drh-externalise/temps-partage", en: "/hr-outsourcing/shared-time", es: "/externalizacion-rrhh/tiempo-compartido" },
-    fallbackTitle: "Shared-time HR | Iter Advisors",
-    fallbackDescription: "Shared-time HR director: flexible people leadership for SMEs and startups.",
+    fallbackTitle: "Fractional HR Director: 2-8 days/month | Iter Advisors",
+    fallbackDescription: "Fractional HR Director for SMEs & startups: senior people leader 2 to 8 days a month. Recruitment, compliance, employee relations. Free 24h quote.",
   });
 }
 
