@@ -29,7 +29,11 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "Le métier de DAF",
-      h1: "Le Métier de DAF : rôle, missions et compétences en 2026",
+      // T#1 + T#10 (2026-07-13) — H1 recentré sur intent informationnel
+      // pur "fiche métier DAF". Retiré tout ciblage "externalisé" pour
+      // éviter la cannibalisation avec le pilier /daf-externalise.
+      // Cible : "métier de daf", "fiche métier daf", "que fait un daf".
+      h1: "Fiche métier DAF : rôle, missions et compétences du Directeur Administratif et Financier",
       sections: [
         {
           content: [
@@ -106,7 +110,11 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF à temps partagé",
-      h1: "DAF à Temps Partagé : votre directeur financier flexible",
+      // T#1 + T#10 (2026-07-13) — H1 recentré sur intent exclusif "DAF à
+      // temps partagé" avec fourchette jours pour aligner avec le title
+      // (2-8 j/mois). Retire "votre directeur financier flexible" trop
+      // marketing/générique qui cannibalisait avec le pilier.
+      h1: "DAF à temps partagé : votre directeur financier senior 2 à 8 jours par mois",
       sections: [
         {
           content: [

@@ -262,11 +262,15 @@ export const dafContent: Record<Locale, DafContent> = {
       ],
     },
     tempsPartage: {
-      heading: "DAF à temps partagé ou directeur financier à temps partagé : est-ce la même chose ?",
+      // T#1 (2026-07-13) — Section réduite à un résumé + lien vers la page
+      // fille pour éliminer la cannibalisation entre pilier et
+      // /daf-externalise/temps-partage (pos 20,1 GSC). Le H2 reformulé
+      // ciblant "synonymes" (informationnel) au lieu de "DAF à temps
+      // partagé" (cannibalisant avec la page fille). Cf. GSC ticket #1.
+      heading: "DAF externalisé, DAF à temps partagé, CFO fractional : synonymes ou nuances ?",
       content: [
-        "Oui — les deux expressions désignent la même réalité : un directeur financier senior qui partage son temps entre plusieurs entreprises au lieu d'être salarié à temps plein chez un seul employeur. « DAF externalisé » est le terme générique, « DAF à temps partagé » insiste sur le mode d'organisation (quelques jours par mois ou par semaine de manière récurrente).",
-        "Vous croiserez aussi les termes CFO part-time, CFO fractional, DAF mutualisé ou directeur financier à temps partiel : ce sont des synonymes. La nuance porte sur la durée. Un DAF à temps partagé s'inscrit dans le long terme (12 à 36 mois). Un DAF externalisé peut aussi intervenir en mission courte : levée de fonds, M&A, transition.",
-        "Chez Iter Advisors, nous proposons les deux modes : un accompagnement à temps partagé pour structurer la finance d'une PME en croissance, et des missions courtes pour des opérations stratégiques. La frontière est volontairement floue : c'est votre besoin qui dicte le format, pas l'inverse.",
+        "Ces expressions désignent globalement la même réalité — un directeur financier senior qui partage son temps entre plusieurs entreprises — mais la **nuance porte sur la durée et le mode d'intervention** : « DAF externalisé » est le terme générique, « DAF à temps partagé » insiste sur un mode récurrent long (12 à 36 mois), « CFO fractional » est le terme anglo-saxon plébiscité par les startups VC-backed.",
+        "Chez Iter Advisors nous proposons ces trois formats — c'est votre besoin qui dicte le mode, pas l'inverse. Pour l'intervention **récurrente sur la durée** (quelques jours par mois, engagement 12-36 mois), notre page dédiée détaille les missions et tarifs : [DAF à temps partagé : directeur financier 2 à 8 jours par mois](/daf-externalise/temps-partage). Pour une situation d'urgence, voir [DAF de transition](/daf-externalise/transition).",
       ],
     },
     vsExpertComptable: {
