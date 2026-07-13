@@ -16,8 +16,8 @@ export async function generateMetadata(): Promise<Metadata> {
       en: "/fractional-cfo/transition",
       es: "/externalizacion-daf/transition",
     },
-    fallbackTitle: "Transition CFO | Iter Advisors",
-    fallbackDescription: "Transition CFO to support your changes.",
+    fallbackTitle: "Interim CFO: operational in 48h for PE-backed SMEs | Iter Advisors",
+    fallbackDescription: "Interim CFO ready in 48-72h for SME/mid-cap CFO gaps, cash crises, restructurings, fundraises or M&A. €800-1,500/day. 85+ clients, 5/5 Trustfolio.",
   });
 }
 
