@@ -202,19 +202,23 @@ export async function generateMetadata(): Promise<Metadata> {
     ],
   };
 
+  // T#9 (2026-07-13) — Title/meta enrichis avec les variantes GSC sous-
+  // exploitées "CFO externe" (pos 33) et "CFO à temps partagé" (pos 13).
+  // Le mot-clé "Fractional CFO" (pos 10,6) est conservé en premier pour
+  // ne pas perdre l'autorité acquise.
   return {
     title:
-      "Fractional CFO pour Startups en France | Iter Advisors",
+      "Fractional CFO / CFO externe pour startups en France | Iter Advisors",
     description:
-      "Embauchez un Fractional CFO senior pour votre startup. Dès 4 500 €/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
+      "Fractional CFO / CFO à temps partagé senior pour startups VC-backed. Dès 4 500 €/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
     alternates: {
       canonical: PAGE_URL,
     },
     openGraph: {
       title:
-        "Fractional CFO pour Startups en France | Iter Advisors",
+        "Fractional CFO / CFO externe pour startups en France | Iter Advisors",
       description:
-        "Embauchez un Fractional CFO senior pour votre startup. Dès 4 500 €/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
+        "Fractional CFO / CFO à temps partagé senior pour startups VC-backed. Dès 4 500 €/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
       url: PAGE_URL,
       type: "website",
     images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
@@ -240,14 +244,22 @@ export default async function Page() {
             ]}
           />
           <div className="mt-6 sm:mt-8">
+            {/* T#9 (2026-07-13) — H1 enrichi avec "CFO externe" et "CFO à
+                temps partagé" (variantes GSC sous-exploitées pos 33 et 13).
+                Ces trois termes désignent la même réalité — Google les
+                traite en variantes sémantiques. */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6 sm:mb-8 leading-tight">
-              Fractional CFO pour startups — Une expertise financière senior pour accélérer votre croissance
+              Fractional CFO, CFO externe, CFO à temps partagé pour startups — Une expertise financière senior pour accélérer votre croissance
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-foreground/80 font-medium leading-relaxed mb-6">
-              Une expertise financière senior sans le coût du plein temps. De
-              la levée de fonds à la planification financière, nos Fractional
-              CFO accompagnent les fondateurs dans chaque étape de la
-              croissance.
+              Une expertise financière senior sans le coût du plein temps. Que
+              vous cherchiez un <strong>Fractional CFO</strong>, un{" "}
+              <strong>CFO externe</strong>, un <strong>CFO à temps partagé</strong>
+              {" "}ou un <strong>directeur financier externalisé</strong>, ce sont
+              trois façons de nommer la même réalité : un CFO senior qui partage
+              son temps entre plusieurs startups. De la levée de fonds à la
+              planification financière, nos CFOs accompagnent les fondateurs
+              dans chaque étape de la croissance.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
