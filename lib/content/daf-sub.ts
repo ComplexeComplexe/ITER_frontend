@@ -96,9 +96,12 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     "temps-partage": {
       meta: {
-        title: "DAF à Temps Partagé - Missions et Tarifs | Iter Advisors",
+        // T#2 (2026-07-13) — Title recentré sur l'intent exclusif "DAF à
+        // temps partagé" (retrait "Tarifs" qui cannibalise /tarifs) +
+        // fourchette jours pour signal transactionnel dès le SERP.
+        title: "DAF à temps partagé : directeur financier 2-8 j/mois",
         description:
-          "Le DAF à temps partagé intervient plusieurs jours par mois pour structurer votre finance. Missions, audience, tarifs détaillés par Iter Advisors.",
+          "DAF à temps partagé pour PME et startups : un directeur financier senior 2 à 8 jours/mois. 85 clients accompagnés, note 5/5. Devis en 24 h.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
@@ -326,8 +329,12 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     tarifs: {
       meta: {
-        title: "Tarifs DAF Externalisé 2026 - Grille de Prix | Iter Advisors",
-        description: "Combien coûte un DAF externalisé ? Grille de tarifs 2026 : de 2 000 à 8 000 € HT/mois selon la formule. Transparence totale, sans surprise.",
+        // T#2 + T#7 (2026-07-13) — Fourchette de prix dès le title pour
+        // rich snippets sur "tarif daf externalisé" (pos 10,6 GSC).
+        // Le blog cout-daf-externalise-tarifs-prix-2026 capte l'informationnel,
+        // cette page capte le transactionnel (grille officielle + devis).
+        title: "Tarif DAF externalisé 2026 : 2 000-8 000 €/mois | Iter Advisors",
+        description: "Grille tarifaire officielle 2026 : DAF externalisé de 2 000 à 8 000 € HT/mois selon la formule. 85 clients, 5/5 Trustfolio. Devis en 24 h.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",

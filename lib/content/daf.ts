@@ -156,11 +156,12 @@ export interface DafContent {
 export const dafContent: Record<Locale, DafContent> = {
   fr: {
     meta: {
-      title: "DAF Externalisé pour PME & Startups | Iter Advisors",
+      // T#2 (2026-07-13) — Title/meta réécrits pour booster le CTR (0,27 %
+      // GSC 90j → cible 1,5-2,5 %). Chiffres inclus : prix d'entrée, preuve
+      // sociale (85 clients, 5/5, +100 M€), promesse temporelle (24 h).
+      title: "DAF Externalisé : missions & tarifs dès 2 000 €/mois",
       description:
-        // D2-rev (2026-05-17) — tarifs + "+100 M€" pour ranker sur "tarif daf externalisé" ;
-        // "+" devant 100 M€ corrige le check meta et renforce la preuve sociale.
-        "Cabinet de DAF externalisé pour PME & startups. Tarifs dès 2 000 €/mois. 85 clients, +100 M€ levés. Paris, Toulouse, Barcelone.",
+        "Cabinet de DAF externalisé pour PME & startups. 85 clients, +100 M€ levés, note 5/5. Devis en 24 h. Paris · Toulouse · Barcelone.",
     },
     breadcrumbLabel: "DAF Externalisé",
     essential: {
