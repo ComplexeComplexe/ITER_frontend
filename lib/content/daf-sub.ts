@@ -348,7 +348,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         // rich snippets sur "tarif daf externalisé" (pos 10,6 GSC).
         // Le blog cout-daf-externalise-tarifs-prix-2026 capte l'informationnel,
         // cette page capte le transactionnel (grille officielle + devis).
-        title: "Tarif DAF externalisé 2026 : 2 000-8 000 €/mois | Iter Advisors",
+        title: "Tarifs Direction Financière Externalisée 2026 : 2 000-8 000 €/mois | Iter Advisors",
         description: "Grille tarifaire officielle 2026 : DAF externalisé de 2 000 à 8 000 € HT/mois selon la formule. 85 clients, 5/5 Trustfolio. Devis en 24 h.",
       },
       parentLabel: "DAF Externalisé",

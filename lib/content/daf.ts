@@ -203,7 +203,7 @@ export const dafContent: Record<Locale, DafContent> = {
     // des H1 plus directs ("missions, tarifs, avantages"). Les 4 termes
     // — directeur financier externalisé, direction financière externalisée,
     // DAF à temps partagé, CFO externalisé — sont injectés dans le 1er para.
-    h1: "DAF Externalisé pour PME et Startups : missions, tarifs et avantages",
+    h1: "DAF Externalisé : Votre Direction Financière à Temps Partagé",
     intro: [
       "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Notre offre couvre toutes les modalités : directeur financier externalisé en mission longue, direction financière externalisée à l'année, DAF à temps partagé sur 2 à 8 jours par mois, ou CFO externalisé en mission ponctuelle. Opérationnels dès le premier jour, sans engagement long terme. 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (31 avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne.",
       "Un DAF externalisé — aussi appelé DAF à temps partagé ou CFO externalisé — est un directeur financier senior qui intervient dans votre entreprise sans en être salarié. Il co-pilote le dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs. Le format est flexible : temps partagé, mission ponctuelle ou abonnement mensuel. Pour la nuance avec son équivalent anglo-saxon, consultez notre fiche [Le CFO (Chief Financial Officer)](/ressources/glossaire/cfo). Pour la version dédiée aux startups VC-backed, voir notre offre [Fractional CFO pour startups](/jobs/fractional-cfo-startups).",

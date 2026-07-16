@@ -25,7 +25,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
   barcelone: {
     fr: {
       meta: {
-        title: "DAF externalisé Barcelone — CFO partagé | Iter Advisors",
+        title: "CFO Barcelone — Direction Financière à Temps Partagé | Iter Advisors",
         description:
           "Iter Advisors, cabinet de DAF externalisé à Barcelone. CFO à temps partagé pour startups et PME en Espagne. Franco-espagnol, +85 entreprises.",
       },
@@ -386,7 +386,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
   toulouse: {
     fr: {
       meta: {
-        title: "DAF externalisé Toulouse | CFO Occitanie | Iter Advisors",
+        title: "Directeur Financier Externalisé à Toulouse — CFO Occitanie | Iter Advisors",
         description:
           "Iter Advisors, cabinet de DAF externalisé à Toulouse. Direction financière à temps partagé pour PME et startups en Occitanie. +85 entreprises accompagnées.",
       },
