@@ -7,10 +7,14 @@ import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 export const metadata: Metadata = {
   title: "Flux de trésorerie | Iter Advisors",
   description: "Comprendre les flux de trésorerie (cash flow) : définition, calcul, types, importance pour la gestion financière. Guide complet par Iter Advisors.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/flux-de-tresorerie",
+  },
   openGraph: {
-    title: "Flux de trésorerie : définition, calcul et importance | Iter Advisors",
+    title: "Flux de trésorerie — Définition et Calcul | Iter Advisors",
     description: "Comprendre les flux de trésorerie (cash flow) : définition, calcul, types, importance pour la gestion financière. Guide complet.",
     type: "article",
+    images: [{ url: "/images/blog/flux-de-tresorerie.webp", width: 1200, height: 630 }],
   },
 };
 

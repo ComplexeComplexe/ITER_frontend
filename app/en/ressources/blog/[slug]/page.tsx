@@ -25,9 +25,9 @@ const breadcrumbsByLocale = {
   },
   es: {
     resourcesLabel: "Recursos",
-    resourcesHref: "/es/ressources",
+    resourcesHref: "/es/recursos",
     blogLabel: "Blog",
-    blogHref: "/es/ressources/blog",
+    blogHref: "/es/recursos/blog",
   },
 } as const;
 
@@ -55,10 +55,11 @@ export async function generateMetadata({
     path: getLocalePath("en", `${blogBasePath}/${slug}`),
     fallbackTitle: fallback?.meta.title ?? `${slug} | Iter Advisors`,
     fallbackDescription: fallback?.meta.description ?? "",
+    // SEO-02: ES blog lives at /recursos/blog (different base from FR/EN)
     localizedPaths: {
       fr: `${blogBasePath}/${slug}`,
       en: `${blogBasePath}/${slug}`,
-      es: `${blogBasePath}/${slug}`,
+      es: `/recursos/blog/${slug}`,
     },
   });
 }
@@ -111,6 +112,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         author={fallback.author}
         category={fallback.category}
         metaDescription={fallback.meta.description}
+        slug={slug}
         teamMembers={teamSource}
         bodyImage={BLOG_ILLUSTRATIONS[slug]}
       />

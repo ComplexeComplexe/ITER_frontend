@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="tr-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A1060"/>
+      <stop offset="100%" stop-color="#0A0730"/>
+    </linearGradient>
+    <linearGradient id="tr-arrow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#645CFF"/>
+      <stop offset="100%" stop-color="#BFDF00"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#tr-bg)"/>
+  <!-- Left circle — departure entity -->
+  <circle cx="220" cy="225" r="110" fill="rgba(100,92,255,0.12)" stroke="rgba(100,92,255,0.45)" stroke-width="2"/>
+  <circle cx="220" cy="190" r="32" fill="rgba(100,92,255,0.3)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <circle cx="220" cy="178" r="12" fill="rgba(255,255,255,0.55)"/>
+  <path d="M 193 212 Q 193 200 220 200 Q 247 200 247 212" fill="rgba(255,255,255,0.38)"/>
+  <!-- Left circle — label bars -->
+  <rect x="175" y="242" width="90" height="7" rx="3" fill="rgba(255,255,255,0.35)"/>
+  <rect x="190" y="256" width="60" height="5" rx="2" fill="rgba(255,255,255,0.2)"/>
+  <!-- Right circle — incoming entity -->
+  <circle cx="580" cy="225" r="110" fill="rgba(191,223,0,0.08)" stroke="rgba(191,223,0,0.45)" stroke-width="2"/>
+  <circle cx="580" cy="190" r="32" fill="rgba(191,223,0,0.2)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <circle cx="580" cy="178" r="12" fill="rgba(255,255,255,0.55)"/>
+  <path d="M 553 212 Q 553 200 580 200 Q 607 200 607 212" fill="rgba(255,255,255,0.38)"/>
+  <!-- Right circle — label bars -->
+  <rect x="535" y="242" width="90" height="7" rx="3" fill="rgba(255,255,255,0.35)"/>
+  <rect x="550" y="256" width="60" height="5" rx="2" fill="rgba(255,255,255,0.2)"/>
+  <!-- Central arrow — gradient -->
+  <line x1="338" y1="225" x2="462" y2="225" stroke="url(#tr-arrow)" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="462,225 446,215 446,235" fill="#BFDF00" opacity="0.9"/>
+  <!-- Overlap zone (intersection) -->
+  <ellipse cx="400" cy="225" rx="28" ry="28" fill="rgba(100,92,255,0.18)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <!-- Clock over the arrow -->
+  <circle cx="400" cy="145" r="36" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <line x1="400" y1="145" x2="400" y2="117" stroke="rgba(255,255,255,0.65)" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="400" y1="145" x2="420" y2="158" stroke="rgba(191,223,0,0.85)" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="400" cy="145" r="3.5" fill="rgba(255,255,255,0.7)"/>
+  <!-- Top label -->
+  <rect x="330" y="350" width="140" height="28" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="350" y="360" width="100" height="8" rx="3" fill="rgba(255,255,255,0.3)"/>
+  <!-- Decorative -->
+  <circle cx="740" cy="60" r="70" fill="rgba(100,92,255,0.08)"/>
+  <circle cx="55" cy="390" r="85" fill="rgba(191,223,0,0.05)"/>
+</svg>

@@ -11,6 +11,7 @@
 
 import { blogPosts } from "@/lib/content/blog-posts";
 import { BLOG_COVERS } from "@/lib/blog-covers";
+import { estimateReadMinutes } from "@/lib/blog-read-time";
 import type { Locale } from "@/lib/i18n";
 import type { StrapiBlogArticle, StrapiMedia } from "@/lib/strapi";
 
@@ -35,7 +36,11 @@ const LEGACY_COVER_BY_SLUG: Record<string, string> = {
   "organiser-sa-direction-financiere": "/images/blog/organiser-sa-direction-financiere.webp",
 };
 
-const DEFAULT_COVER = "/images/blog/placeholder.webp";
+// Ahrefs T-404 (2026-06-08): was "/images/blog/placeholder.webp" but
+// that file doesn't exist in /public, causing 29 inlinks worth of 404s
+// via the _next/image optimizer. Pointing to the always-present site OG
+// default until a real blog placeholder design ships.
+const DEFAULT_COVER = "/images/og-default.webp";
 
 function coverFor(slug: string): string {
   return BLOG_COVERS[slug]?.cover ?? LEGACY_COVER_BY_SLUG[slug] ?? DEFAULT_COVER;
@@ -63,6 +68,7 @@ export function getStaticBlogListing(locale: Locale): StrapiBlogArticle[] {
   const articles: StrapiBlogArticle[] = entries.map(([slug, post]) => {
     const description = post.meta?.description ?? "";
     const publishedDate = post.publishedDate ?? "";
+    const readMinutes = estimateReadMinutes(post.htmlContent);
     return {
       id: 0,
       documentId: slug,
@@ -75,6 +81,7 @@ export function getStaticBlogListing(locale: Locale): StrapiBlogArticle[] {
       publishedDate,
       tableOfContents: false,
       category: post.category ?? "",
+      readMinutes,
     } as StrapiBlogArticle;
   });
 

@@ -18,7 +18,7 @@ const referencesFr: ExternalReference[] = [
   {
     title: "Démographie et caractéristiques des PME en France",
     source: "INSEE — Institut national de la statistique et des études économiques",
-    url: "https://www.insee.fr/fr/statistiques/4277631",
+    url: "https://www.insee.fr/fr/statistiques?debut=0&categorie=1",
     date: "2024",
   },
   {

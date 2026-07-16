@@ -198,7 +198,7 @@ const content: Record<Locale, FundRaisingSupportContent> = {
     meta: {
       title: "Apoyo a la captación de fondos para startups | Iter Advisors",
       description:
-        "Apoyo a la captación de fondos: modelos financieros, data rooms, validación de pitches. Hemos apoyado 50+ rondas de financiación. Expertise Seed a Series B.",
+        "Apoyo a la captación de fondos: modelos financieros, data rooms, validación de pitches. 50+ rondas acompañadas. Desde Seed hasta Series B.",
     },
     hero: {
       h1: "Apoyo a la captación de fondos para startups",

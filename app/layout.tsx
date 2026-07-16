@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "../components/CookieConsent";
-import HrefLangInjector from "../components/HrefLangInjector";
+// INDEX-01: HrefLangInjector removed. Hreflang is now emitted only
+// server-side via buildStrapiMetadata / buildStrapiCollectionMetadata
+// in lib/metadata.ts. Having both produced 8 conflicting hreflang
+// tags per page (4 SSR + 4 CSR), so Google ignored the entire set
+// and treated the FR/EN/ES variants as duplicate content.
 
 const dmSans = DM_Sans({
   subsets: ["latin", "latin-ext"],
@@ -39,17 +44,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="fr" className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
-      <head>
-        {/* Hreflang injection for multi-language SEO */}
-        <HrefLangInjector />
+  // SEO-03: derive locale from the x-pathname header injected by middleware.
+  // This ensures the <html lang> attribute is correct for every locale on SSR,
+  // fixing the Screaming Frog / GSC signal that all EN and ES pages sent lang="fr".
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") ?? "/";
+  const lang =
+    pathname.startsWith("/en") ? "en" :
+    pathname.startsWith("/es") ? "es" : "fr";
+  const locale = lang as "fr" | "en" | "es";
 
+  return (
+    <html lang={lang} className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
+      <head>
         {/* DNS prefetch & preconnect for 3rd-party origins */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://share.trustfolio.co" />
@@ -137,20 +149,28 @@ gtag('consent','default',{
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": ["FinancialService", "Organization"],
+                  "@type": ["ProfessionalService", "Organization"],
                   "@id": "https://www.iteradvisors.com/#organization",
                   name: "Iter Advisors",
+                  // Spanish SL (sociedad limitada), NIF B42960849.
+                  legalName: "Iter Advisors S.L.",
+                  taxID: "B42960849",
+                  vatID: "ESB42960849",
                   url: "https://www.iteradvisors.com/",
                   description:
                     "Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Présent à Barcelone, Paris et Toulouse.",
                   logo: {
                     "@type": "ImageObject",
-                    url: "https://www.iteradvisors.com/images/logos/logo-hero.png",
+                    url: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
+                    width: 512,
+                    height: 512,
                   },
                   address: [
                     {
                       "@type": "PostalAddress",
-                      addressLocality: "Barcelone",
+                      streetAddress: "Carrer Casp, 54, 5-1°",
+                      addressLocality: "Barcelona",
+                      postalCode: "08010",
                       addressCountry: "ES",
                     },
                     {
@@ -165,16 +185,20 @@ gtag('consent','default',{
                     },
                   ],
                   openingHours: "Mo-Fr 09:00-18:00",
+                  // SEO-09 (2026-07-01) — sameAs consolidé pour renforcer
+                  // l'entité "Iter Advisors" dans le Knowledge Graph. Le
+                  // profil Trustfolio est ajouté comme signal third-party
+                  // vérifiable qui légitime l'aggregateRating porté par
+                  // le Service /daf-externalise (voir DafPage.tsx).
                   sameAs: [
                     "https://www.linkedin.com/company/iter-advisors/",
+                    "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc/reviews",
                   ],
-                  aggregateRating: {
-                    "@type": "AggregateRating",
-                    ratingValue: "5",
-                    bestRating: "5",
-                    worstRating: "1",
-                    reviewCount: "31",
-                  },
+                  // aggregateRating volontairement absent ici (site-wide) pour
+                  // éviter le conflit "multiple aggregateRatings on one node"
+                  // signalé en 2026-05-29. Il est porté par le Service dédié
+                  // sur /daf-externalise, avec 5 Review objects individuels
+                  // pour respecter les guidelines Google (SEO-04, 2026-07-01).
                 },
                 {
                   "@type": "WebSite",
@@ -210,7 +234,7 @@ gtag('consent','default',{
         </noscript>
         {/* End Google Tag Manager (noscript) */}
         {children}
-        <CookieConsent locale="fr" />
+        <CookieConsent locale={locale} />
       </body>
     </html>
   );

@@ -50,6 +50,7 @@ export default function FicheMetierDetailPage({
                 src={strapiMediaUrl(fiche.featuredImage)}
                 alt={fiche.featuredImage.alternativeText || fiche.title}
                 fill
+                sizes="(max-width: 768px) 100vw, 768px"
                 className="object-cover"
               />
             </div>

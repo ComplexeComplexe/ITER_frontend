@@ -7,10 +7,14 @@ import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 export const metadata: Metadata = {
   title: "DAF externalisé vs salarié | Iter Advisors",
   description: "DAF externalisé vs DAF salarié : comparaison complète des coûts, avantages et inconvénients. Découvrez la meilleure solution pour votre PME. Guide 2026.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/daf-externalise-vs-daf-salarie",
+  },
   openGraph: {
-    title: "DAF externalisé vs DAF salarié | Comparaison complète | Iter Advisors",
+    title: "DAF externalisé vs DAF salarié | Iter Advisors",
     description: "Comparaison détaillée : DAF externalisé vs DAF salarié. Coûts, avantages, inconvénients et matrice de décision.",
     type: "article",
+    images: [{ url: "/images/blog/daf-externalise-vs-daf-salarie.webp", width: 1200, height: 630 }],
   },
 };
 

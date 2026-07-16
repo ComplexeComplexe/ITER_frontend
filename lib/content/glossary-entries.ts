@@ -87,7 +87,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     ebitda: {
       meta: {
-        title: "EBITDA : Définition, Calcul et Interprétation | Iter Advisors",
+        title: "EBITDA : Définition et Calcul | Iter Advisors",
         description:
           "Définition de l'EBITDA : formule de calcul, différence avec l'EBE, et comment l'utiliser pour évaluer la performance d'une entreprise.",
       },
@@ -143,9 +143,9 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     cfo: {
       meta: {
-        title: "CFO — Définition, Rôle et Missions du Chief Financial Officer | Iter Advisors",
+        title: "CFO — Rôle, Missions et Définition | Iter Advisors",
         description:
-          "CFO : définition complète du Chief Financial Officer, ses missions, la différence avec un DAF, et pourquoi les startups ont besoin d'un CFO externalisé. Guide par Iter Advisors.",
+          "CFO : définition, missions du Chief Financial Officer, différence avec un DAF et pourquoi les startups ont besoin d'un CFO externalisé. Guide Iter Advisors.",
       },
       h1: "CFO — Définition, Rôle et Missions du Chief Financial Officer",
       sections: [
@@ -214,7 +214,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     // ─── 8 pages glossaire ajoutées via TICKET 21 ──────────────────────
     "besoin-fonds-roulement-bfr": {
       meta: {
-        title: "Besoin en Fonds de Roulement (BFR) — Définition et Calcul Complet | Iter Advisors",
+        title: "BFR — Définition et calcul complet | Iter Advisors",
         description: "BFR : définition, formule de calcul, benchmarks par secteur, leviers d'optimisation. Le guide complet pour piloter votre trésorerie.",
       },
       h1: "Besoin en Fonds de Roulement (BFR) — Définition, Formule et Calcul",
@@ -283,7 +283,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     "cash-burn-runway": {
       meta: {
-        title: "Cash Burn & Runway — Définition, Calcul et Seuils pour Startups | Iter Advisors",
+        title: "Cash Burn & Runway — Calcul et définition | Iter Advisors",
         description: "Cash burn et runway : les 2 métriques vitales de toute startup. Méthode de calcul, seuils critiques, règles du venture capital.",
       },
       h1: "Cash Burn & Runway — Définition et Calcul pour Startups",
@@ -561,7 +561,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     "run-rate": {
       meta: {
-        title: "Run Rate — Définition et Calcul pour Projections | Iter Advisors",
+        title: "Run Rate — Définition et calcul | Iter Advisors",
         description: "Run rate : annualisation d'une performance récente pour estimer le résultat sur 12 mois. Limites, pièges, utilisation correcte.",
       },
       h1: "Run Rate — Définition et Calcul pour Projections",
@@ -628,7 +628,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     "bspce-bsa": {
       meta: {
-        title: "BSPCE & BSA — Guide Complet pour Startups Françaises | Iter Advisors",
+        title: "BSPCE & BSA — Guide pour startups françaises | Iter Advisors",
         description: "BSPCE et BSA : conditions d'attribution, fiscalité, dilution, pièges juridiques. Le guide complet pour structurer votre plan stock-options.",
       },
       h1: "BSPCE & BSA — Guide Complet pour Startups Françaises",
@@ -712,7 +712,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
   en: {
     bfr: {
       meta: {
-        title: "Working Capital Requirement (WCR): Definition and Optimization | Iter Advisors",
+        title: "Working Capital (WCR): Definition | Iter Advisors",
         description:
           "Working Capital Requirement: definition, calculation formula, and strategies to optimize your cash flow.",
       },
@@ -769,7 +769,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     ebitda: {
       meta: {
-        title: "EBITDA: Definition, Calculation and Interpretation | Iter Advisors",
+        title: "EBITDA: Definition & Calculation | Iter Advisors",
         description:
           "EBITDA definition: calculation formula, difference with EBIT, and how to use it to evaluate company performance.",
       },
@@ -819,7 +819,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     cfo: {
       meta: {
-        title: "CFO: Definition, Role and Difference from Finance Director | Iter Advisors",
+        title: "CFO: Definition vs Finance Director | Iter Advisors",
         description:
           "CFO (Chief Financial Officer) definition: role, responsibilities and difference from traditional finance director. Expert guide from Iter Advisors.",
       },
@@ -973,7 +973,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     cfo: {
       meta: {
-        title: "CFO: Definición, Rol y Diferencia con Director Financiero | Iter Advisors",
+        title: "CFO: Definición vs Director Financiero | Iter Advisors",
         description:
           "Definición de CFO (Chief Financial Officer): rol, responsabilidades y diferencia con Director Financiero. Guía de expertos de Iter Advisors.",
       },

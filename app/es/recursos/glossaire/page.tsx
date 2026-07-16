@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   locale: "es",
   title: "Glosario Finanzas | Iter Advisors",
   description: "Glosario financiero completo: tesorería, cash flow, EBITDA, BFR, cap table. Definiciones claras de términos clave de finanzas corporativas.",
-  path: "/ressources/glossaire",
+  path: "/es/recursos/glossaire", // SEO-07: self-canonical (was /ressources/glossaire → wrong FR canonical)
 });
 
 export default async function Page() {

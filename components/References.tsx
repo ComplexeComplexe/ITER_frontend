@@ -14,9 +14,9 @@ export default function References({ locale }: { locale: Locale }) {
   return (
     <section className="bg-background py-12 lg:py-16 border-t border-border/40">
       <div className="container max-w-3xl">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-5">
+        <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-5">
           {getReferencesHeading(locale)}
-        </h2>
+        </p>
         <ol className="space-y-3 text-sm">
           {refs.map((r, i) => (
             <li key={i} className="text-muted-foreground leading-relaxed">

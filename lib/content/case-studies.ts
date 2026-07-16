@@ -329,7 +329,7 @@ const content: Record<Locale, CaseStudiesContent> = {
     intro:
       "Descubre cómo nuestros clientes transformaron su gestión financiera. Desde startups SaaS hasta plataformas de e-commerce, aquí están sus historias de éxito.",
     resourcesLabel: "Recursos",
-    resourcesHref: "/es/ressources",
+    resourcesHref: "/es/recursos",
     breadcrumbLabel: "Casos prácticos",
     challengeLabel: "Desafío",
     solutionLabel: "Solución",

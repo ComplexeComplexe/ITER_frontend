@@ -22,6 +22,10 @@
         {
           "key": "Strict-Transport-Security",
           "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Content-Security-Policy-Report-Only",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://ztynwacifpvzaemkqifh.storage.eu-central-1.nhost.run; frame-src https://www.googletagmanager.com https://share.trustfolio.co; worker-src blob:; report-uri /api/csp-report"
         }
       ]
     },
@@ -150,34 +154,21 @@
     },
     {
       "source": "/ressources/testimonials/:slug",
-      "destination": "/ressources/testimonials",
+      "destination": "/ressources/cas-clients",
       "permanent": true
     },
     {
       "source": "/en/ressources/testimonials/:slug",
-      "destination": "/en/ressources/testimonials",
+      "destination": "/en/ressources/cas-clients",
       "permanent": true
     },
     {
       "source": "/es/ressources/testimonials/:slug",
-      "destination": "/es/ressources/testimonials",
+      "destination": "/es/recursos/cas-clients",
       "permanent": true
     },
-    {
-      "source": "/ressources/glossaire/:slug",
-      "destination": "/ressources/glossaire",
-      "permanent": true
-    },
-    {
-      "source": "/en/ressources/glossaire/:slug",
-      "destination": "/en/ressources/glossaire",
-      "permanent": true
-    },
-    {
-      "source": "/es/ressources/glossaire/:slug",
-      "destination": "/es/ressources/glossaire",
-      "permanent": true
-    },
+
+
     {
       "source": "/category/:path*",
       "destination": "/ressources/blog",
@@ -225,17 +216,17 @@
     },
     {
       "source": "/testimonials/:slug",
-      "destination": "/ressources/testimonials",
+      "destination": "/ressources/cas-clients",
       "permanent": true
     },
     {
       "source": "/en/testimonials/:slug",
-      "destination": "/en/ressources/testimonials",
+      "destination": "/en/ressources/cas-clients",
       "permanent": true
     },
     {
       "source": "/es/testimonials/:slug",
-      "destination": "/es/ressources/testimonials",
+      "destination": "/es/recursos/cas-clients",
       "permanent": true
     },
     {

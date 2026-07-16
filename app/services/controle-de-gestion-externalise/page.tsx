@@ -1,113 +1,142 @@
 import { Metadata } from "next";
 import ControleDeGestionExternalisePage from "@/components/pages/ControleDeGestionExternalisePage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
 import { getControleDeGestionExternaliseeContent } from "@/lib/content/controle-de-gestion-externalise";
 
+/**
+ * Route for /services/controle-de-gestion-externalise.
+ *
+ * TICKET F2 (2026-05-17) — Replaces the previous metadata and schemas
+ * with the canonical @graph required by the SEO brief:
+ *
+ *   - ProfessionalService (provider Iter Advisors, hasOfferCatalog with — T4 / 2026-06-07
+ *     Pilot / Growth / Scale tiers).
+ *   - FAQPage (8 questions matching the visible accordion 1:1 so
+ *     Google's rich-result validator doesn't reject the schema).
+ *   - Organization (logo + url).
+ *   - BreadcrumbList (Accueil → Services → Contrôle de gestion).
+ *
+ * Title + meta description follow the SEO QA skill (50-60c / 150-160c
+ * with primary keyword in first 40c + brand at end).
+ */
 export async function generateMetadata(): Promise<Metadata> {
   const t = getControleDeGestionExternaliseeContent("fr");
+  const url =
+    "https://www.iteradvisors.com/services/controle-de-gestion-externalise";
 
-  // Build Service + FAQPage + Article + Person schemas
-  const faqSection = t.sections.find((s: any) => s.faqs);
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity:
-      faqSection?.faqs?.map((faq: any) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-          speakable: {
-            "@type": "SpeakableSpecification",
-            cssSelector: `.faq-answer-${faq.question.toLowerCase().replace(/\s+/g, "-")}`,
-          },
-        },
-      })) || [],
-  };
-
-  const personSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://www.iteradvisors.com#sebastien-doat",
-    name: "Sébastien Doat",
-    jobTitle: "Co-fondateur & CFO Advisor",
-    url: "https://www.linkedin.com/in/sebastiendoat",
-    sameAs: "https://www.linkedin.com/in/sebastiendoat",
-    image: "https://www.iteradvisors.com/images/sebastien-doat.jpg",
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "@id": "https://www.iteradvisors.com/services/controle-de-gestion-externalise#article",
-    headline: "Contrôle de gestion externalisé : piloter sa rentabilité sans recruter un contrôleur de gestion",
-    description:
-      "Contrôle de gestion externalisé pour PME et startups à Paris et en Île-de-France. Tableaux de bord, KPIs, suivi budgétaire. +85 entreprises accompagnées.",
-    author: {
-      "@type": "Person",
-      "@id": "https://www.iteradvisors.com#sebastien-doat",
-      name: "Sébastien Doat",
+  // Pull the FAQ section once and lift its Q/R pairs into the schema
+  // so visible DOM and FAQPage JSON-LD stay in sync.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const faqSection = t.sections.find((s: any) => s.id === "faq") as
+    | { faqs: { question: string; answer?: string; answerHtml?: string }[] }
+    | undefined;
+  const faqEntities = (faqSection?.faqs ?? []).map((q) => ({
+    "@type": "Question",
+    name: q.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      // Strip HTML so the schema text is plain (Google requires it).
+      text: (q.answerHtml ?? q.answer ?? "")
+        .replace(/<[^>]+>/g, "")
+        .replace(/\s+/g, " ")
+        .trim(),
     },
-    dateModified: new Date().toISOString().split("T")[0],
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": "https://www.iteradvisors.com/services/controle-de-gestion-externalise#service",
-    name: "Contrôle de Gestion Externalisé — Iter Advisors",
-    description:
-      "Contrôle de gestion externalisé pour startups et PME à Paris et en Île-de-France : tableaux de bord, KPIs, suivi budgétaire et analyse des coûts",
-    provider: {
-      "@type": "Organization",
-      name: "Iter Advisors",
-      url: "https://www.iteradvisors.com",
-    },
-    areaServed: ["FR-75", "FR-92", "FR-93", "FR-94"],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Formules Contrôle de Gestion",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          name: "Contrôle de Gestion - Formule Modulaire",
-          description: "Adaptation flexible à votre complexité métier",
-          priceCurrency: "EUR",
-          price: "1500",
-        },
-      ],
-    },
-  };
+  }));
 
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
-      serviceSchema,
-      faqSchema,
-      articleSchema,
-      personSchema,
+      {
+        "@type": "ProfessionalService",
+        "@id": `${url}#service`,
+        name: "Contrôle de gestion externalisé",
+        provider: {
+          "@type": "Organization",
+          name: "Iter Advisors",
+          url: "https://www.iteradvisors.com",
+        },
+        description:
+          "Pilotage financier et reporting de performance pour startups. Tableaux de bord, KPIs, forecast. Dès 2 500 €/mois.",
+        areaServed: ["Paris", "Toulouse", "Barcelone"],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Forfaits contrôle de gestion",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              name: "Pilot",
+              price: "2500",
+              priceCurrency: "EUR",
+            },
+            {
+              "@type": "Offer",
+              name: "Growth",
+              price: "4500",
+              priceCurrency: "EUR",
+            },
+            {
+              "@type": "Offer",
+              name: "Scale",
+              price: "8000",
+              priceCurrency: "EUR",
+            },
+          ],
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${url}#faq`,
+        mainEntity: faqEntities,
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.iteradvisors.com/#organization",
+        name: "Iter Advisors",
+        url: "https://www.iteradvisors.com",
+        logo: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Accueil",
+            item: "https://www.iteradvisors.com/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: "https://www.iteradvisors.com/services",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Contrôle de gestion externalisé",
+            item: url,
+          },
+        ],
+      },
     ],
   };
 
   return buildMetadata({
     locale: "fr",
     path: "/services/controle-de-gestion-externalise",
-    title: "Contrôle Gestion | Iter Advisors",
-    description:
-      "Contrôle de gestion externalisé pour PME et startups à Paris et en Île-de-France. Tableaux de bord, KPIs, suivi budgétaire. +85 entreprises accompagnées.",
+    title: t.meta.title,
+    description: t.meta.description,
     structuredData,
     localizedPaths: {
       fr: "/services/controle-de-gestion-externalise",
-      en: "/services/outsourced-management-accounting",
-      es: "/services/control-de-gestion-externalizado",
+      en: "/services/outsourced-management-control",
+      es: "/services/control-gestion-externalizado",
     },
   });
 }
 
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("fr");
+  const cmsNavigation = undefined;
   const content = getControleDeGestionExternaliseeContent("fr");
   return (
     <ControleDeGestionExternalisePage

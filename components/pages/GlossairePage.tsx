@@ -32,13 +32,13 @@ const content: Record<
     breadcrumbLabel: "Glossary",
     h1: "Financial glossary",
     intro:
-      "Find definitions of key terms in corporate finance, financial management and cash management.",
+      "Find definitions of key terms in corporate finance, financial management and cash management. Our glossary covers the essential vocabulary used by CFOs, founders, and investors — from EBITDA, cash burn, and working capital to cap table, runway, SaaS metrics like MRR and ARR, and fundraising instruments such as BSPCE and SAFE notes. Each definition is written by a practising CFO and contextualised for startups and growth-stage companies.",
     comingSoon:
       "Our glossary is under construction. Come back soon to discover our financial definitions.",
   },
   es: {
     resourcesLabel: "Recursos",
-    resourcesHref: "/es/ressources",
+    resourcesHref: "/es/recursos",
     breadcrumbLabel: "Glosario",
     h1: "Glosario financiero",
     intro:

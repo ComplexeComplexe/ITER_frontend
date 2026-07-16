@@ -31,7 +31,17 @@ export default function AuthorByline({
       )}
       <div>
         <div className="flex items-center gap-2">
-          <span className="font-medium text-slate-900">{author.name}</span>
+          {author.url ? (
+            <a
+              href={author.url}
+              rel="author"
+              className="font-medium text-slate-900 hover:text-iter-violet transition-colors"
+            >
+              {author.name}
+            </a>
+          ) : (
+            <span className="font-medium text-slate-900">{author.name}</span>
+          )}
           {readingTime && (
             <span className="text-sm text-slate-500">
               · {readingTime} min

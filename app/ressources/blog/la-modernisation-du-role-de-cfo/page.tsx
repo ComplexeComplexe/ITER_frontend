@@ -7,10 +7,14 @@ import { Callout, StatGrid, InlineCta } from '@/components/blog';
 export const metadata: Metadata = {
   title: "La modernisation du rôle de CFO en 2026 | Iter Advisors",
   description: "Comment le rôle du CFO évolue avec la digitalisation, l'IA et les enjeux ESG. Compétences, missions et leadership du directeur financier moderne.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/la-modernisation-du-role-de-cfo",
+  },
   openGraph: {
     title: "La modernisation du rôle de CFO en 2026 | Iter Advisors",
     description: "Comment le rôle du CFO évolue avec la digitalisation, l'IA et les enjeux ESG. Compétences et missions du directeur financier moderne.",
     type: "article",
+    images: [{ url: "/images/blog/la-modernisation-du-role-de-cfo.webp", width: 1200, height: 630 }],
   },
 };
 
@@ -144,7 +148,7 @@ export default function ModernisationRoleCfoPage() {
         <li><strong>Trésorerie</strong> (Agicap, Fygr) : Cash forecasting IA, alertes</li>
         <li><strong>BI/Reporting</strong> (Power BI, Looker) : Tableaux de bord temps réel</li>
         <li><strong>Workflow</strong> (Make, Zapier) : Automatisation processus</li>
-        <li><strong>IA intégrée</strong> (Claude, ChatGPT) : Analyse documents, recommendations</li>
+        <li><strong>IA intégrée</strong> (ChatGPT, Gemini) : Analyse documents, recommendations</li>
       </ul>
       <p>
         Le CFO ne doit pas coder, mais comprendre ces outils et savoir s'en servir pour libérer du temps.

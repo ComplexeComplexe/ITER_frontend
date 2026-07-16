@@ -51,9 +51,10 @@ export default function CTASection({ locale }: { locale: Locale }) {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl lg:text-5xl font-bold text-iter-dark leading-tight mb-6">
+          {/* SEO-20: decorative heading — same visual weight, no semantic H2 duplication across pages */}
+          <p className="text-3xl lg:text-5xl font-bold text-iter-dark leading-tight mb-6">
             {t.heading}
-          </h2>
+          </p>
           <p className="text-lg text-iter-dark/70 leading-relaxed mb-10">
             {t.paragraph}
           </p>

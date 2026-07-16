@@ -5,6 +5,8 @@ import { getCmsNavigation } from "@/lib/strapi";
 export const metadata: Metadata = {
   title: "Casos Éxito | Iter Advisors",
   description: "Resultados concretos para empresas ambiciosas. Casos de éxito: startups y pymes. 50+ clientes, €100M+ levantados, 5/5 Trustfolio.",
+  // INDEX-03: campaign landing — duplicates /cas-clients, kept out of index.
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Casos de Éxito | Iter Advisors",
     description:

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { Locale } from "./i18n";
-import { strapiFetch, type StrapiSeo, type StrapiSingleResponse, strapiMediaUrl } from "./strapi";
+import { strapiFetch, STRAPI_ENABLED, type StrapiSeo, type StrapiSingleResponse, strapiMediaUrl } from "./strapi";
 
 const localeMap: Record<Locale, string> = {
   fr: "fr_FR",
@@ -14,6 +14,12 @@ const localeMap: Record<Locale, string> = {
  * `localizedPaths` (optional) allows specifying different paths per locale
  * for correct hreflang generation. When omitted, the same `path` is used
  * for all locales (backward-compatible behavior).
+ *
+ * `disableHreflang` (optional, T1 / 2026-06-07) drops specific locale
+ * hreflang entries so they aren't emitted in <head>. Use on FR-only
+ * content (e.g. the /ressources/fiscalite-* cocoon) where the EN/ES
+ * routes don't exist — Google was otherwise crawling the synthetic
+ * hreflang URLs and reporting them as 404s.
  */
 export function buildMetadata({
   locale,
@@ -23,6 +29,7 @@ export function buildMetadata({
   noindex,
   structuredData,
   localizedPaths,
+  disableHreflang,
 }: {
   locale: Locale;
   title: string;
@@ -31,6 +38,7 @@ export function buildMetadata({
   noindex?: boolean;
   structuredData?: Record<string, unknown> | null;
   localizedPaths?: { fr: string; en: string; es: string };
+  disableHreflang?: ("en" | "es")[];
 }): Metadata {
   const base = "https://www.iteradvisors.com";
 
@@ -49,16 +57,25 @@ export function buildMetadata({
 
   // SEO-P0-01: RFC 5646 language-region codes as keys so Next.js renders
   // <link rel="alternate" hreflang="fr-FR" href="..." /> in <head>.
-  // SSR fallback also lives in components/HrefLangInjector.tsx.
+  // INDEX-01 (mai 2026): this is now the SINGLE source of hreflang
+  // emission — the previous client-side `HrefLangInjector` component
+  // has been removed to stop Google from seeing two contradictory sets
+  // (it ignored the entire group and treated FR/EN/ES as duplicates).
   const frUrl = `${base}${frPath}`;
   const enUrl = `${base}/en${enPath === "/" ? "" : enPath}`;
   const esUrl = `${base}/es${esPath === "/" ? "" : esPath}`;
+  // T1 (2026-06-07): when `disableHreflang` includes a locale, we drop
+  // the corresponding entry entirely. Next.js accepts undefined values
+  // via `delete`; a missing key is the canonical way to tell the
+  // metadata renderer "do not emit this <link rel='alternate'>".
   const languages: Record<string, string> = {
     "x-default": frUrl,
     "fr-FR": frUrl,
     "en-GB": enUrl,
     "es-ES": esUrl,
   };
+  if (disableHreflang?.includes("en")) delete languages["en-GB"];
+  if (disableHreflang?.includes("es")) delete languages["es-ES"];
 
   const meta: Metadata = {
     title,
@@ -122,6 +139,7 @@ export async function buildStrapiMetadata({
   fallbackTitle,
   fallbackDescription,
   localizedPaths,
+  disableHreflang,
 }: {
   endpoint: string;
   locale: Locale;
@@ -129,6 +147,7 @@ export async function buildStrapiMetadata({
   fallbackTitle: string;
   fallbackDescription: string;
   localizedPaths?: { fr: string; en: string; es: string };
+  disableHreflang?: ("en" | "es")[];
 }): Promise<Metadata> {
   try {
     const res = await strapiFetch<StrapiSingleResponse<{ seo: StrapiSeo | null }>>(
@@ -148,6 +167,7 @@ export async function buildStrapiMetadata({
         noindex: seo.noIndex || false,
         structuredData: seo.structuredData || null,
         localizedPaths,
+        disableHreflang,
       });
 
       // Add OG image if available
@@ -158,7 +178,12 @@ export async function buildStrapiMetadata({
       return meta;
     }
   } catch (e) {
-    console.warn(`Failed to fetch Strapi SEO for ${endpoint}:`, e);
+    // T1/T2 (mai 2026): only log when STRAPI_ENABLED — the local
+    // `fallbackTitle` / `fallbackDescription` are now the source of truth,
+    // so a "miss" against a disabled CMS is the expected fast path.
+    if (STRAPI_ENABLED) {
+      console.warn(`Failed to fetch Strapi SEO for ${endpoint}:`, e);
+    }
   }
 
   return buildMetadata({
@@ -167,6 +192,7 @@ export async function buildStrapiMetadata({
     description: fallbackDescription,
     path,
     localizedPaths,
+    disableHreflang,
   });
 }
 
@@ -181,6 +207,7 @@ export async function buildStrapiCollectionMetadata({
   fallbackTitle,
   fallbackDescription,
   localizedPaths,
+  disableHreflang,
 }: {
   endpoint: string;
   slug: string;
@@ -189,6 +216,7 @@ export async function buildStrapiCollectionMetadata({
   fallbackTitle: string;
   fallbackDescription: string;
   localizedPaths?: { fr: string; en: string; es: string };
+  disableHreflang?: ("en" | "es")[];
 }): Promise<Metadata> {
   try {
     // Use the same flat populate[n] syntax as getBlogArticleBySlug (the
@@ -246,6 +274,7 @@ export async function buildStrapiCollectionMetadata({
       noindex: seo?.noIndex || false,
       structuredData: seo?.structuredData || null,
       localizedPaths,
+      disableHreflang,
     });
 
     if (ogImage && meta.openGraph && typeof meta.openGraph === "object") {
@@ -254,7 +283,10 @@ export async function buildStrapiCollectionMetadata({
 
     return meta;
   } catch (e) {
-    console.warn(`Failed to fetch Strapi SEO for ${endpoint}/${slug}:`, e);
+    // T1/T2 (mai 2026): silent when STRAPI_DISABLED — fallback is canonical.
+    if (STRAPI_ENABLED) {
+      console.warn(`Failed to fetch Strapi SEO for ${endpoint}/${slug}:`, e);
+    }
   }
 
   return buildMetadata({
@@ -263,5 +295,6 @@ export async function buildStrapiCollectionMetadata({
     description: fallbackDescription,
     path,
     localizedPaths,
+    disableHreflang,
   });
 }

@@ -25,9 +25,9 @@ const breadcrumbsByLocale = {
   },
   es: {
     resourcesLabel: "Recursos",
-    resourcesHref: "/es/ressources",
+    resourcesHref: "/es/recursos",
     blogLabel: "Blog",
-    blogHref: "/es/ressources/blog",
+    blogHref: "/es/recursos/blog",
   },
 } as const;
 
@@ -110,6 +110,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         author={fallback.author}
         category={fallback.category}
         metaDescription={fallback.meta.description}
+        slug={slug}
         teamMembers={teamSource}
         bodyImage={BLOG_ILLUSTRATIONS[slug]}
       />

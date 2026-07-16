@@ -28,7 +28,7 @@ export interface CashFlowForecastContent {
 const content: Record<Locale, CashFlowForecastContent> = {
   fr: {
     meta: {
-      title: "Flux de trésorerie et prévisionnel - Guide complet | Iter Advisors",
+      title: "Flux de trésorerie et prévisionnel | Iter Advisors",
       description: "Maîtrisez votre flux de trésorerie avec notre guide complet. Modèles 13 semaines, templates et bonnes pratiques pour sécuriser votre runway.",
     },
     hero: {
@@ -95,8 +95,8 @@ const content: Record<Locale, CashFlowForecastContent> = {
   },
   en: {
     meta: {
-      title: "Cash Flow Forecast for Startups: Complete 13-Week Rolling Guide | 2026",
-      description: "Master cash flow forecasting with our complete guide. Learn 13-week rolling models, templates, and best practices to avoid cash crisis and manage startup runway.",
+      title: "Cash Flow Forecast 13-Week Rolling Guide | Iter Advisors",
+      description: "Master cash flow forecasting: 13-week rolling models, templates and best practices to avoid cash crisis and manage startup runway. Guide by Iter Advisors.",
     },
     hero: {
       h1: "Cash Flow Forecasting Services for Growing Businesses",
@@ -197,7 +197,7 @@ const content: Record<Locale, CashFlowForecastContent> = {
   es: {
     meta: {
       title: "Flujo de Caja para Startups: Guía Completa del Modelo Rodante de 13 Semanas | 2026",
-      description: "Domina la previsión de flujo de caja con nuestra guía completa. Aprende modelos rodantes de 13 semanas, plantillas y mejores prácticas para evitar crisis de efectivo.",
+      description: "Domina la previsión de tesorería: modelos rodantes de 13 semanas, plantillas y mejores prácticas para evitar crisis de efectivo. Guía de Iter Advisors.",
     },
     hero: {
       h1: "Flujo de Caja: La Herramienta Financiera Esencial para Startups",

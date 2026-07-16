@@ -31,38 +31,12 @@ const POPULAR_ARTICLES = {
 export default function Footer({ locale }: { locale: Locale }) {
   const content = footerContent[locale];
   const nav = navigation[locale];
-  const baseUrl = "https://iter-advisors.com";
-  const localePrefix = locale === "fr" ? "" : `/${locale}`;
-
-  // Generate WPFooter schema
-  const wpFooterSchema = {
-    "@context": "https://schema.org",
-    "@type": "WPFooter",
-    "name": "Iter Advisors Footer",
-    "url": `${baseUrl}${localePrefix}/`,
-    "hasPart": [
-      ...nav.flatMap((section) => {
-        if (section.children) {
-          return section.children.map((child) => ({
-            "@type": "SiteNavigationElement",
-            "name": child.text,
-            "url": `${baseUrl}${child.href}`,
-          }));
-        }
-        return {
-          "@type": "SiteNavigationElement",
-          "name": section.title,
-          "url": `${baseUrl}${section.href}`,
-        };
-      }),
-      ...content.legalLinks.map((link) => ({
-        "@type": "SiteNavigationElement",
-        "name": link.text,
-        "url": `${baseUrl}${link.href}`,
-      })),
-    ],
-  };
-
+  // SEO audit 16 mai 2026 — `baseUrl` / `localePrefix` and the
+  // `WPFooter` JSON-LD schema were removed. `WPFooter` is a WordPress-
+  // specific schema type; emitting it on a Next.js site signals an
+  // inconsistent / templated stack to Google. The footer's nav is
+  // already exposed via the page's main schema graph (Organization +
+  // WebSite) and the user-facing footer markup itself.
   const serviceNav = nav.find((n) => n.title === "Services" || n.title === "Servicios");
   const resourceNav = nav.find(
     (n) => n.title === "Ressources" || n.title === "Resources" || n.title === "Recursos"
@@ -70,10 +44,6 @@ export default function Footer({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(wpFooterSchema) }}
-      />
       <footer className="bg-iter-dark py-12 sm:py-16">
         <div className="container px-4 sm:px-6">
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10 mb-8 sm:mb-12">
@@ -99,37 +69,23 @@ export default function Footer({ locale }: { locale: Locale }) {
               </div>
               <span className="text-white/40 text-xs">5/5 Trustfolio</span>
             </div>
-            {/* Company Legal Details — E-E-A-T trust signals */}
+            {/* Company Legal Details — E-E-A-T trust signals.
+                Iter Advisors S.L. is registered in Spain (NIF B42960849);
+                Paris and Toulouse are operational offices, the HQ is in
+                Barcelona. */}
             <address className="not-italic text-white/60 text-xs leading-relaxed mt-3 space-y-1">
-              <p className="font-semibold text-white/80">Iter Advisors SAS</p>
+              <p className="font-semibold text-white/80">Iter Advisors S.L.</p>
               <p className="flex items-start gap-1.5">
                 <MapPin size={12} className="shrink-0 mt-0.5 text-iter-chartreuse/80" aria-hidden />
-                {/* TODO(seo-final-02): replace placeholder address with the real
-                    registered HQ once the client confirms. Current value is the
-                    placeholder agreed in the audit ticket. */}
-                <span>10 rue de la Paix, 75002 Paris · Barcelone · Toulouse</span>
+                <span>Carrer Casp, 54, 5-1° · 08010 Barcelona · Paris · Toulouse</span>
               </p>
-              <p className="text-white/40">
-                {/* TODO(seo-final-02): replace placeholder SIRET with the real
-                    registered number once the client confirms. */}
-                SIRET&nbsp;: 851 234 567 00012
-              </p>
+              <p className="text-white/40">NIF&nbsp;: B42960849</p>
               <p>
                 <a
                   href="mailto:contact@iteradvisors.com"
                   className="hover:text-iter-chartreuse transition-colors"
                 >
                   contact@iteradvisors.com
-                </a>
-              </p>
-              <p>
-                {/* TODO(seo-final-qualite): replace placeholder phone with the
-                    real switchboard number once the client confirms. */}
-                <a
-                  href="tel:+33180880001"
-                  className="hover:text-iter-chartreuse transition-colors"
-                >
-                  +33 1 80 88 00 01
                 </a>
               </p>
             </address>
@@ -163,6 +119,34 @@ export default function Footer({ locale }: { locale: Locale }) {
                 {resourceNav.children.map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} className="text-white/50 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2">
+                      {item.text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Fiscalité France-Espagne — cocon sémantique (FR uniquement) */}
+          {locale === "fr" && (
+            <div>
+              <p className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
+                Fiscalité France-Espagne
+              </p>
+              <ul className="space-y-1.5 sm:space-y-2.5">
+                {[
+                  { text: "Guide complet", href: "/ressources/fiscalite-espagne-france" },
+                  { text: "Résidence fiscale Espagne", href: "/ressources/fiscalite/residence-fiscale-france-espagne" },
+                  { text: "Double imposition", href: "/ressources/fiscalite/double-imposition-france-espagne" },
+                  { text: "Impôt sur le revenu", href: "/ressources/fiscalite/impot-revenu-espagne" },
+                  { text: "Modelo 720", href: "/ressources/fiscalite/modelo-720" },
+                  { text: "Loi Beckham", href: "/ressources/fiscalite/beckham-law" },
+                ].map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-white/50 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2"
+                    >
                       {item.text}
                     </Link>
                   </li>
@@ -256,6 +240,18 @@ export default function Footer({ locale }: { locale: Locale }) {
                 );
               })}
             </ul>
+            {/* FCFO-S10 (2026-05-30): permanent FR footer link to the commercial
+                Fractional CFO startups page. The POPULAR_ARTICLES list above
+                hard-wires the /ressources/blog/ prefix, so this lives next to
+                it instead of inside. */}
+            {locale === "fr" && (
+              <Link
+                href="/jobs/fractional-cfo-startups"
+                className="text-white/40 text-xs hover:text-iter-chartreuse transition-colors mt-3 inline-block"
+              >
+                Fractional CFO startups →
+              </Link>
+            )}
           </div>
         </div>
 

@@ -3,8 +3,10 @@ import DafSubPage from "@/components/pages/DafSubPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
 import { getDafSubContent } from "@/lib/content/daf-sub";
 import { getCmsNavigation } from "@/lib/strapi";
+import { buildDafSubBreadcrumbSchema } from "@/lib/daf-sub-schema";
 
 const content = getDafSubContent("fr", "temps-partage")!;
+const PAGE_URL = "https://www.iteradvisors.com/daf-externalise/temps-partage";
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildStrapiMetadata({
@@ -12,8 +14,10 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "fr",
     path: "/daf-externalise/temps-partage",
     localizedPaths: { fr: "/daf-externalise/temps-partage", en: "/en/fractional-cfo/shared-time", es: "/externalizacion-daf/tiempo-compartido" },
-    fallbackTitle: "DAF à temps partagé : CFO senior dès 2 jours/mois | Iter Advisors",
-    fallbackDescription: "DAF à temps partagé pour PME et startups : bénéficiez d'un directeur financier expérimenté quelques jours par semaine. Flexibilité, expertise et réduction des coûts avec Iter Advisors.",
+    // T#2 (2026-07-13) — fallback aligné sur content lib (title T#2 :
+    // "DAF à temps partagé : directeur financier 2-8 j/mois").
+    fallbackTitle: content.meta.title,
+    fallbackDescription: content.meta.description,
   });
 }
 
@@ -63,11 +67,18 @@ const faqSchema = {
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");
+  // T#3 (2026-07-13) — BreadcrumbList ajouté (FAQPage était déjà présent
+  // avec un contenu hardcodé, préservé tel quel).
+  const breadcrumbSchema = buildDafSubBreadcrumbSchema(content, PAGE_URL);
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <DafSubPage
         locale="fr"

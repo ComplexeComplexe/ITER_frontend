@@ -2,15 +2,13 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServiceSinglePage from "@/components/pages/ServiceSinglePage";
 import {
-  getServiceSinglePage,
-  getCmsNavigation,
   SERVICE_PAGE_SLUGS,
-  SERVICE_PAGE_API_MAP,
   SERVICE_URL_SLUG_BY_LOCALE,
   getServiceSlugsForLocale,
   type ServicePageSlug,
-} from "@/lib/strapi";
-import { buildStrapiMetadata } from "@/lib/metadata";
+} from "@/lib/fallback-service-pages";
+import { getStaticServicePage } from "@/lib/fallback-service-pages-localized";
+import { buildMetadata } from "@/lib/metadata";
 
 const basePath = "/services";
 
@@ -21,7 +19,10 @@ const fallbackTitles: Record<ServicePageSlug, string> = {
   "gestion-financiere-externalisee":
     "Gestion Financière Externalisée | Iter Advisors",
   "accompagnement-levee-de-fond":
-    "Levée de Fonds Startup | Iter Advisors",
+    // T#11 (2026-07-13) — title enrichi pour ranker sur "accompagnement
+    // levée de fonds" (pos 18,4 GSC, 99 impr, 0 clic) et
+    // "préparation levée de fonds" — intent transactionnel service.
+    "Accompagnement levée de fonds startup — Data room & pitch | Iter Advisors",
   "comptabilite-externalisation":
     "Externalisation Comptabilité | Iter Advisors",
   "controle-de-gestion-externalise":
@@ -68,23 +69,47 @@ export async function generateMetadata({
   if (!isServicePageSlug(slug)) {
     return { title: "Services | Iter Advisors" };
   }
-  const endpoint = SERVICE_PAGE_API_MAP[slug];
-  return buildStrapiMetadata({
-    endpoint,
+
+  // TICKET F3 (2026-05-17) — gestion-financiere-externalisee is a thin page
+  // that overlaps with the richer controle-de-gestion-externalise. The SEO
+  // canonical is set to the richer page so Google consolidates signals there.
+  if (slug === "gestion-financiere-externalisee") {
+    return buildMetadata({
+      locale: "fr",
+      path: "/services/controle-de-gestion-externalise",
+      localizedPaths: {
+        fr: "/services/controle-de-gestion-externalise",
+        en: "/en/services/outsourced-management-control",
+        es: "/es/services/control-gestion-externalizado",
+      },
+      title: fallbackTitles[slug],
+      description: fallbackDescriptions[slug],
+    });
+  }
+
+  return buildMetadata({
     locale: "fr",
     path: `${basePath}/${slug}`,
     localizedPaths: getServiceLocalizedPaths(slug),
-    fallbackTitle: fallbackTitles[slug],
-    fallbackDescription: fallbackDescriptions[slug],
+    title: fallbackTitles[slug],
+    description: fallbackDescriptions[slug],
   });
 }
+
+/* Per-slug hero images */
+const SLUG_HERO_IMAGES: Partial<Record<ServicePageSlug, { src: string; alt: string }>> = {
+  "accompagnement-levee-de-fond": {
+    src: "/images/stock/levee-de-fonds.png",
+    alt: "Accompagnement levée de fonds Iter Advisors — équipe en train d'analyser les documents de data room pour préparer un tour de financement",
+  },
+};
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   if (!isServicePageSlug(slug)) notFound();
-  const page = await getServiceSinglePage(slug, "fr");
+  const page = getStaticServicePage(slug, "fr");
   if (!page) notFound();
-  const cmsNavigation = await getCmsNavigation("fr");
+  const cmsNavigation = undefined;
   return (
     <ServiceSinglePage
       locale="fr"
@@ -92,6 +117,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       breadcrumbTitle={page.heroTitle}
       slug={slug}
       cmsNavigation={cmsNavigation}
+      heroImage={SLUG_HERO_IMAGES[slug as ServicePageSlug]}
     />
   );
 }

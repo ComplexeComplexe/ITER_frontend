@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Régimes Fiscaux | Iter Advisors",
   description:
     "Guide complet de la comparaison fiscale France-Espagne 2026. IS, TVA, cotisations, régimes spéciaux. Économisez jusqu'à 7 500 €/employé. Audit gratuit.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/regimes-fiscaux-france-vs-espagne",
+  },
   robots: {
     index: true,
     follow: true,
@@ -14,7 +17,9 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/images/blog/regimes-fiscaux-france-vs-espagne.webp",
+        // Ahrefs T-404 (2026-06-08): .webp file doesn't exist in /public/images/blog/.
+        // Until a dedicated cover ships, use the always-present og-default.
+        url: "/images/og-default.webp",
         alt: "Régimes fiscaux : France vs Espagne — Comparaison complète 2026",
       },
     ],
@@ -459,6 +464,66 @@ export default async function Page() {
         <strong>Durée moyenne :</strong> 3-6 mois de préparation + 2-4 semaines
         d'implémentation.
       </p>
+
+      {/* T6 (2026-06-07) — encart maillage interne. Cet article génère
+          45 % des clics du site (1 776/an) mais ne poussait jusqu'ici aucun
+          jus vers les pages business. Ancres exactes "DAF externalisé" et
+          "externalisation comptable" pour matcher les requêtes cibles. */}
+      <div className="my-10 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-6 md:p-8">
+        <h3 className="mb-3 text-lg font-semibold text-slate-900">
+          Vous structurez votre activité entre la France et l&apos;Espagne ?
+        </h3>
+        <p className="mb-5 text-slate-700">
+          Iter Advisors accompagne PME et scale-ups franco-espagnoles depuis Barcelone,
+          Paris et Toulouse. Nos DAF externalisés connaissent les deux environnements
+          fiscaux et comptables — IS / IRPF, TVA intra-UE, régime Beckham, conventions
+          fiscales — et savent structurer une activité binationale sans risque de
+          requalification.
+        </p>
+        <ul className="space-y-2 text-slate-700">
+          <li className="flex gap-2">
+            <span aria-hidden className="text-iter-violet">→</span>
+            <span>
+              Découvrez notre offre de{" "}
+              <a
+                href="/daf-externalise"
+                className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline"
+              >
+                DAF externalisé
+              </a>
+              {" "}— direction financière complète à partir de 2 000 €/mois.
+            </span>
+          </li>
+          <li className="flex gap-2">
+            <span aria-hidden className="text-iter-violet">→</span>
+            <span>
+              Pour la tenue des comptes et la fiscalité du quotidien, voir notre service
+              d&apos;
+              <a
+                href="/services/comptabilite-externalisation"
+                className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline"
+              >
+                externalisation comptable
+              </a>
+              {" "}— Pennylane / Sage / QuickBooks au choix.
+            </span>
+          </li>
+          <li className="flex gap-2">
+            <span aria-hidden className="text-iter-violet">→</span>
+            <span>
+              Besoin d&apos;une intervention urgente (vacance de poste, restructuration) ?
+              Notre{" "}
+              <a
+                href="/daf-externalise/transition"
+                className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline"
+              >
+                DAF de transition
+              </a>
+              {" "}est opérationnel sous 48-72 h.
+            </span>
+          </li>
+        </ul>
+      </div>
     </BlogPostPageRefonte>
   );
 }

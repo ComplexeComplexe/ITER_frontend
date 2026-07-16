@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServiceSinglePage from "@/components/pages/ServiceSinglePage";
 import {
-  getServiceSinglePage,
   getCmsNavigation,
   SERVICE_PAGE_SLUGS,
   SERVICE_PAGE_API_MAP,
@@ -11,6 +10,8 @@ import {
   getServiceSlugsForLocale,
   type ServicePageSlug,
 } from "@/lib/strapi";
+// INDEX-04 — same as FR /services/[slug]: static resolver, no Strapi.
+import { getStaticServicePage } from "@/lib/fallback-service-pages-localized";
 import { buildStrapiMetadata } from "@/lib/metadata";
 
 const basePath = "/es/services";
@@ -76,7 +77,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const { slug } = await params;
   const canonical = getCanonicalServiceSlug("es", slug);
   if (!canonical) notFound();
-  const page = await getServiceSinglePage(canonical, "es");
+  const page = getStaticServicePage(canonical, "es");
   if (!page) notFound();
   const cmsNavigation = await getCmsNavigation("es");
   return (

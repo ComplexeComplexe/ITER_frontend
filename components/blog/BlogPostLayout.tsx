@@ -10,6 +10,9 @@ export interface AuthorInfo {
   name: string;
   avatar?: string;
   jobTitle?: string;
+  /** Optional URL of the author's dedicated bio page. When present,
+   *  the byline links to it with rel="author" (E-E-A-T signal). */
+  url?: string;
 }
 
 export interface TocItem {

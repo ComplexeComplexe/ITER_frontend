@@ -235,22 +235,24 @@ const content: Record<
     testimonials: {
       surtitle: "ILS NOUS FONT CONFIANCE",
       title: "Des résultats concrets, mesurables",
+      // Real Trustfolio reviews (2026-05-30) — replaces 2 placeholder
+      // testimonials. Source: lib/content/trustfolio-reviews.ts.
       items: [
         {
           quote:
-            "Grâce à Iter Advisors, nous avons sécurisé notre levée de 2M€ en 3 mois. Leur DAF a structuré notre data room et piloté tout le processus avec les investisseurs.",
-          name: "Thomas R.",
-          role: "CEO",
-          company: "Startup SaaS B2B",
-          result: "Levée de 2M€ en 3 mois",
+            "Après avoir levé notre premier tour de table, nous avions besoin de structurer nos opérations financières. Iter a professionnalisé notre fonction financière et s'est avéré être un partenaire financier solide intégré à l'équipe.",
+          name: "Charles Deknudt",
+          role: "PDG et fondateur",
+          company: "Eltex",
+          result: "Avis vérifié Trustfolio",
         },
         {
           quote:
-            "Avant Iter, nous n'avions aucune visibilité sur notre trésorerie au-delà de 2 semaines. Aujourd'hui, nous avons un prévisionnel glissant à 12 mois et des KPIs suivis en temps réel.",
-          name: "Sophie M.",
-          role: "COO",
-          company: "E-commerce D2C",
-          result: "+6 mois de runway sécurisé",
+            "Iter nous a accompagnés sur la mise en place du reporting et de la gestion de trésorerie, offrant une meilleure visibilité et sérénité financière.",
+          name: "Mathurin Blouin",
+          role: "CEO",
+          company: "MFL",
+          result: "Avis vérifié Trustfolio",
         },
       ],
     },
@@ -411,22 +413,23 @@ const content: Record<
     testimonials: {
       surtitle: "THEY TRUST US",
       title: "Concrete, measurable results",
+      // Real Trustfolio reviews (translated from French originals).
       items: [
         {
           quote:
-            "Thanks to Iter Advisors, we secured our €2M raise in 3 months. Their CFO structured our data room and managed the entire process with investors.",
-          name: "Thomas R.",
-          role: "CEO",
-          company: "B2B SaaS Startup",
-          result: "€2M raised in 3 months",
+            "After our first fundraising round, we needed to structure our financial operations. Iter professionalized our finance function and proved to be a solid financial partner embedded with the team.",
+          name: "Charles Deknudt",
+          role: "Founder & CEO",
+          company: "Eltex",
+          result: "Verified Trustfolio review",
         },
         {
           quote:
-            "Before Iter, we had no cash visibility beyond 2 weeks. Today, we have a 12-month rolling forecast and real-time KPI tracking.",
-          name: "Sophie M.",
-          role: "COO",
-          company: "D2C E-commerce",
-          result: "+6 months runway secured",
+            "Iter helped us set up our reporting and cash management, giving us much better visibility and financial peace of mind.",
+          name: "Mathurin Blouin",
+          role: "CEO",
+          company: "MFL",
+          result: "Verified Trustfolio review",
         },
       ],
     },
@@ -589,22 +592,23 @@ const content: Record<
     testimonials: {
       surtitle: "CONFÍAN EN NOSOTROS",
       title: "Resultados concretos y medibles",
+      // Real Trustfolio reviews (translated from French originals).
       items: [
         {
           quote:
-            "Gracias a Iter Advisors, aseguramos nuestra ronda de 2M€ en 3 meses. Su DAF estructuró nuestra data room y gestionó todo el proceso con los inversores.",
-          name: "Thomas R.",
-          role: "CEO",
-          company: "Startup SaaS B2B",
-          result: "Ronda de 2M€ en 3 meses",
+            "Tras nuestra primera ronda de financiación, necesitábamos estructurar nuestras operaciones financieras. Iter profesionalizó nuestra función financiera y demostró ser un sólido socio financiero integrado en el equipo.",
+          name: "Charles Deknudt",
+          role: "Fundador y CEO",
+          company: "Eltex",
+          result: "Opinión verificada de Trustfolio",
         },
         {
           quote:
-            "Antes de Iter, no teníamos visibilidad de tesorería más allá de 2 semanas. Hoy tenemos un previsional a 12 meses y KPIs en tiempo real.",
-          name: "Sophie M.",
-          role: "COO",
-          company: "E-commerce D2C",
-          result: "+6 meses de runway asegurado",
+            "Iter nos acompañó en la implementación del reporting y la gestión de tesorería, aportando mucha mejor visibilidad y tranquilidad financiera.",
+          name: "Mathurin Blouin",
+          role: "CEO",
+          company: "MFL",
+          result: "Opinión verificada de Trustfolio",
         },
       ],
     },

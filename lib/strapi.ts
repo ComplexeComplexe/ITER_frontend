@@ -35,7 +35,7 @@ const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN || "";
  * forward-compatibility with old Vercel envs, but the variable can now
  * safely be deleted there — the default behaviour is the same.
  */
-const STRAPI_ENABLED =
+export const STRAPI_ENABLED =
   process.env.STRAPI_ENABLED === "true" || process.env.STRAPI_ENABLED === "1";
 const STRAPI_DISABLED = !STRAPI_ENABLED;
 
@@ -323,6 +323,9 @@ export interface StrapiBlogArticle {
   category: string;
   relatedArticles?: StrapiBlogArticle[];
   seo?: StrapiSeo;
+  /** Estimated reading time in minutes (computed from htmlContent for
+   *  static articles; not provided for Strapi-only ones). */
+  readMinutes?: number;
 }
 
 export interface StrapiTeamMember {
@@ -450,12 +453,15 @@ export async function strapiFetch<T>(
     url.searchParams.set(key, value);
   }
 
+  // LCP-OPT: default to 1-hour ISR when no explicit `revalidate` is
+  // passed. If Strapi is ever re-enabled, this prevents every SSR from
+  // blocking on a fresh fetch and adding 500 ms – 2 s to TTFB.
   const res = await fetch(url.toString(), {
     headers: {
       Authorization: `Bearer ${STRAPI_TOKEN}`,
       "Content-Type": "application/json",
     },
-    next: options.revalidate !== undefined ? { revalidate: options.revalidate } : undefined,
+    next: { revalidate: options.revalidate ?? 3600 },
   });
 
   if (!res.ok) {
@@ -773,8 +779,12 @@ export async function getServiceSinglePage(
     );
     return res.data;
   } catch {
-    // Return fallback content when Strapi is unavailable
-    console.warn(`[Strapi] Fallback used for service page: ${slug}`);
+    // Return fallback content when Strapi is unavailable.
+    // T1/T2 (mai 2026): only log when STRAPI_ENABLED is true; the fallback
+    // is the new source of truth, so silent execution is expected.
+    if (STRAPI_ENABLED) {
+      console.warn(`[Strapi] Fallback used for service page: ${slug}`);
+    }
 
     // Use locale-specific fallbacks
     if (locale !== "fr") {
@@ -802,8 +812,11 @@ export async function getBlogArticles(locale: Locale): Promise<StrapiBlogArticle
     );
     return res.data;
   } catch {
-    // Return fallback blog articles when Strapi is unavailable
-    console.warn(`[Strapi] Fallback used for blog articles (locale: ${locale})`);
+    // Return fallback blog articles when Strapi is unavailable.
+    // T1/T2 (mai 2026): only log when STRAPI_ENABLED.
+    if (STRAPI_ENABLED) {
+      console.warn(`[Strapi] Fallback used for blog articles (locale: ${locale})`);
+    }
     return (fallbackBlogArticles as any[]) || [];
   }
 }
@@ -843,7 +856,11 @@ export async function getTeamMembers(locale: Locale): Promise<StrapiTeamMember[]
     );
     return res.data;
   } catch (err) {
-    console.error("[strapi] getTeamMembers failed, falling back to local data:", err);
+    // T1/T2 (mai 2026): only log when STRAPI_ENABLED — fallback is the
+    // expected path when the CMS is intentionally disabled.
+    if (STRAPI_ENABLED) {
+      console.error("[strapi] getTeamMembers failed, falling back to local data:", err);
+    }
     return [];
   }
 }

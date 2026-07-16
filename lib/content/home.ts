@@ -104,10 +104,10 @@ export const homeContent = {
         date: "5 mars 2026",
       },
       {
-        title: "La modernisation du rôle de CFO",
-        href: "/ressources/blog/la-modernisation-du-role-de-cfo",
-        image: "/images/blog/modernisation-cfo.jpg",
-        date: "28 fév. 2026",
+        title: "Fiscalité France-Espagne : le guide complet 2026",
+        href: "/ressources/fiscalite-espagne-france",
+        image: "/images/blog/regimes-fiscaux-france-vs-espagne.webp",
+        date: "31 mai 2026",
       },
     ],
     discover: "Découvrir",
@@ -165,7 +165,12 @@ export const homeContent = {
       { q: "Comment se déroule un accompagnement type ?", a: "L'accompagnement suit 4 étapes\u00A0: diagnostic initial de votre situation, co-construction d'une feuille de route stratégique, mise en oeuvre opérationnelle avec intégration à votre équipe, puis pilotage continu avec reporting régulier et ajustements." },
       { q: "Pouvez-vous nous accompagner pour une levée de fonds ?", a: "Absolument. L'accompagnement en levée de fonds est l'une de nos expertises phares. Nous préparons votre data room, construisons votre business plan, structurons votre pitch deck financier et vous accompagnons dans les négociations avec les investisseurs." },
     ],
-    servicesHeading: "Deux pôles d'expertise pour structurer et accélérer votre croissance",
+    // SEO-03 (2026-07-01) — Le H1 du hero utilise un système de rotation
+    // "direction financière" ↔ "direction RH" et ne peut pas contenir le
+    // mot-clé cible. On remonte le signal "DAF externalisé" dans le
+    // premier H2 immédiat après le hero pour aligner le signal sémantique
+    // avec la requête tête (position 16 → cible top 10).
+    servicesHeading: "DAF externalisé & DRH externalisé : deux pôles d'expertise pour PME et startups",
     servicesSubtitle: "Nous accompagnons les entreprises à chaque étape de leur développement avec des solutions sur-mesure en finance et ressources humaines.",
     processHeading: "Un accompagnement structuré en 4 étapes",
     processSubtitle: "De l'audit initial au pilotage continu, nous construisons avec vous une trajectoire claire et mesurable.",
@@ -187,10 +192,16 @@ export const homeContent = {
     discoverServices: "Découvrir nos services",
   },
   en: {
+    // T4 (2026-06-30) — Meta title + description étaient en FRANÇAIS sur la
+    // page /en, ce qui crée un signal mixte (Google peut associer la page
+    // à des termes hors-domaine comme "cybersecurity SaaS" car le contenu
+    // EN parle de "SaaS startups" sans signal Finance explicite dans le
+    // title). Recentrage explicite sur Outsourced CFO + Finance + 100M€
+    // levés pour éliminer l'ambiguïté sémantique.
     meta: {
-      title: "Iter Advisors | DAF externe, Levée de Fonds et M&A",
+      title: "Outsourced CFO for Startups & SMEs | Iter Advisors",
       description:
-        "Iter Advisors, votre DAF externe. Accompagnement expert en gestion financière externalisée, levée de fonds et opérations M&A.",
+        "Outsourced CFO and finance leadership for startups, scale-ups and SMEs. Fractional CFO, fundraising, M&A, cash management. 85+ companies, €100M+ raised.",
     },
     hero: {
       h1: { before: "The best version of your ", highlight: "financial management", highlightAlt: "human resources management", after: "" },
@@ -278,7 +289,7 @@ export const homeContent = {
     blogCards: [
       {
         title: "AI and automation of repetitive tasks in the Finance department",
-        href: "/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+        href: "/en/ressources/blog",
         image: "/images/blog/ia-automatisation.jpg",
         date: "Mar 12, 2026",
       },
@@ -350,7 +361,7 @@ export const homeContent = {
       { q: "What does a typical engagement look like?", a: "Our engagement follows 4 steps: initial diagnostic of your situation, co-construction of a strategic roadmap, operational implementation with integration into your team, then continuous management with regular reporting and adjustments." },
       { q: "Can you help us with fundraising?", a: "Absolutely. Fundraising support is one of our flagship services. We prepare your data room, build your business plan, structure your financial pitch deck and support you through negotiations with investors." },
     ],
-    servicesHeading: "Two areas of expertise to structure and accelerate your growth",
+    servicesHeading: "Outsourced CFO & Outsourced HR: two areas of expertise for startups and SMEs",
     servicesSubtitle: "We support businesses at every stage of their development with tailor-made finance and human resources solutions.",
     processHeading: "A structured support in 4 steps",
     processSubtitle: "From initial audit to continuous management, we build a clear and measurable trajectory with you.",
@@ -373,7 +384,7 @@ export const homeContent = {
   },
   es: {
     meta: {
-      title: "Iter Advisors | Director Financiero Externo, Recaudación de Fondos y Fusiones y Adquisiciones",
+      title: "Iter Advisors | CFO Externo, Fundraising y M&A",
       description:
         "Iter Advisors, vuestro CFO externo. Apoyo experto en gestión financiera externalizada, financiación y operaciones de fusiones y adquisiciones.",
     },
@@ -458,24 +469,24 @@ export const homeContent = {
       paragraph:
         "Encuentre todos los contenidos producidos por nuestros directores financieros: artículos, fichas temáticas, testimonios, plantillas descargables, etc.",
       cta: "Ver nuestros recursos",
-      resourcesHref: "/es/ressources",
+      resourcesHref: "/es/recursos",
     },
     blogCards: [
       {
         title: "IA y automatización de tareas repetitivas en el departamento de Finanzas",
-        href: "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+        href: "/es/recursos/blog",
         image: "/images/blog/ia-automatisation.jpg",
         date: "12 mar. 2026",
       },
       {
         title: "Organizar su departamento financiero",
-        href: "/es/ressources/blog/organiser-sa-direction-financiere",
+        href: "/es/recursos/blog/organiser-sa-direction-financiere",
         image: "/images/blog/organiser-direction-financiere.jpg",
         date: "5 mar. 2026",
       },
       {
         title: "Las herramientas tecnológicas esenciales para las finanzas",
-        href: "/es/ressources/blog/essentiels-outils-tech-finance",
+        href: "/es/recursos/blog/essentiels-outils-tech-finance",
         image: "/images/blog/outils-tech-finance.jpg",
         date: "28 feb. 2026",
       },
@@ -535,7 +546,7 @@ export const homeContent = {
       { q: "¿Cómo es un acompañamiento típico?", a: "Nuestro acompañamiento sigue 4 etapas: diagnóstico inicial de su situación, co-construcción de una hoja de ruta estratégica, implementación operativa con integración en su equipo, y luego gestión continua con reporting regular y ajustes." },
       { q: "¿Pueden acompañarnos en una ronda de financiación?", a: "Por supuesto. El acompañamiento en rondas de financiación es una de nuestras especialidades. Preparamos su data room, construimos su business plan, estructuramos su pitch deck financiero y le acompañamos en las negociaciones con los inversores." },
     ],
-    servicesHeading: "Dos áreas de experiencia para estructurar y acelerar su crecimiento",
+    servicesHeading: "CFO externalizado & RRHH externalizado: dos áreas de experiencia para PYMES y startups",
     servicesSubtitle: "Acompañamos a las empresas en cada etapa de su desarrollo con soluciones a medida en finanzas y recursos humanos.",
     processHeading: "Un acompañamiento estructurado en 4 pasos",
     processSubtitle: "Desde la auditoría inicial hasta la gestión continua, construimos con usted una trayectoria clara y medible.",

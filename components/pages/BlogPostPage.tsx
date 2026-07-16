@@ -5,8 +5,17 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import StrapiBlocks from "@/components/StrapiBlocks";
+import MidArticleSoftCTA from "@/components/blog/MidArticleSoftCTA";
+import ArticleMeta from "@/components/blog/ArticleMeta";
+import ArticleTOC from "@/components/blog/ArticleTOC";
+import BlogRelatedArticles from "@/components/blog/BlogRelatedArticles";
 import type { StrapiBlock, CmsNavItem, StrapiTeamMember } from "@/lib/strapi";
-import { articleSchema } from "@/lib/schemas";
+import { articleSchema, faqPageSchema } from "@/lib/schemas";
+import { estimateReadMinutes } from "@/lib/blog-read-time";
+import { splitHtmlAroundMid } from "@/lib/blog-cta-split";
+import { transformArticleHtml } from "@/lib/blog-html-transform";
+import { getRelatedArticles } from "@/lib/related-articles";
+import { extractToc } from "@/lib/blog-toc";
 
 interface BlogPostPageProps {
   locale: Locale;
@@ -44,26 +53,6 @@ interface BlogPostPageProps {
   bodyImage?: { src: string; alt: string };
 }
 
-function formatDate(isoDate: string, locale: Locale): string {
-  const date = new Date(isoDate);
-  const localeMap: Record<Locale, string> = {
-    fr: "fr-FR",
-    en: "en-GB",
-    es: "es-ES",
-  };
-  return date.toLocaleDateString(localeMap[locale], {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
-
-const publishedLabel: Record<Locale, string> = {
-  fr: "Publié le",
-  en: "Published on",
-  es: "Publicado el",
-};
-
 export default function BlogPostPage({
   locale,
   title,
@@ -81,9 +70,46 @@ export default function BlogPostPage({
   teamMembers,
   bodyImage,
 }: BlogPostPageProps) {
-  /* ── Schema.org Article structured data (CC-17) ── */
-  // Build a canonical URL when we know the slug; falls back to the blog hub
-  // otherwise. The schema fires whenever we have a title (always).
+  /* ── Compute reading time + word count from htmlContent (drives both
+   *    ArticleMeta and the Article JSON-LD's wordCount property). */
+  const readMinutes = estimateReadMinutes(htmlContent);
+  const wordCount = htmlContent
+    ? htmlContent
+        .replace(/<style[\s\S]*?<\/style>/gi, " ")
+        .replace(/<script[\s\S]*?<\/script>/gi, " ")
+        .replace(/<[^>]*>/g, " ")
+        .replace(/&[a-z]+;/gi, " ")
+        .replace(/\s+/g, " ")
+        .trim()
+        .split(/\s+/).length
+    : 0;
+
+  /* ── Resolve author URL (links the BlogPosting JSON-LD `author` to
+   *    the canonical author page when we know the team-member slug).
+   *    Falls back to a generic Organization author otherwise. */
+  const authorMember = author && teamMembers
+    ? teamMembers.find(
+        (m) =>
+          `${m.firstName} ${m.lastName}`.toLowerCase() === author.toLowerCase() ||
+          m.slug.replace(/-/g, " ") === author.toLowerCase().replace(/-/g, " "),
+      )
+    : undefined;
+  const authorRole = authorMember
+    ? (authorMember.role && typeof authorMember.role === "string"
+        ? authorMember.role
+        : (authorMember as unknown as { roles?: Record<string, string> })
+            ?.roles?.[locale] ??
+          (authorMember as unknown as { roles?: Record<string, string> })
+            ?.roles?.fr ??
+          "")
+    : "";
+  const authorUrl = authorMember
+    ? locale === "es"
+      ? `/es/quienes-somos/${authorMember.slug}`
+      : `/${locale === "fr" ? "" : locale + "/"}a-propos/${authorMember.slug}`
+    : undefined;
+
+  /* ── Schema.org Article structured data ────────────────────────── */
   const articleUrl = slug ? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
   const structuredData = articleSchema({
     headline: title,
@@ -92,39 +118,82 @@ export default function BlogPostPage({
     datePublished: publishedDate,
     dateModified: publishedDate,
     authorName: author || "Iter Advisors",
+    authorUrl,
     imageSrc: featuredImageUrl,
+    wordCount: wordCount > 0 ? wordCount : undefined,
+    articleSection: category,
   });
+
+  /* ── Server-side HTML transforms (tables + FAQ accordion) ──────── */
+  const transformed = htmlContent
+    ? transformArticleHtml(htmlContent)
+    : { html: "", faqs: [] };
+  const faqJsonLd =
+    transformed.faqs.length > 0
+      ? faqPageSchema(
+          transformed.faqs.map((f) => ({ question: f.question, answer: f.answer })),
+        )
+      : null;
+
+  /* ── Mid-article soft CTA injection (uses the TRANSFORMED html so
+   *    table wrappers / FAQ accordion already applied when we split). */
+  const transformedHtml = transformed.html;
+  const splitForCta =
+    readMinutes >= 6 && transformedHtml
+      ? splitHtmlAroundMid(transformedHtml)
+      : null;
+
+  /* ── Related articles for the bottom of the page. */
+  const relatedItems = slug
+    ? getRelatedArticles(locale, slug, category, 3)
+    : [];
+
+  /* ── TOC headings (server-extracted from the original htmlContent so
+   *    the TOC ships in the SSR markup). */
+  const tocHeadings = extractToc(htmlContent);
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-      {/* Schema.org JSON-LD — Article (CC-17) */}
+      {/* Schema.org JSON-LD — Article */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      {/* Schema.org JSON-LD — FAQPage (only when an FAQ section was
+          detected in the body and converted to an accordion). */}
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
-      <section className="bg-background pt-32 pb-16">
+      <section className="bg-background pt-32 pb-12 lg:pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}
             items={[
-              {
-                label: breadcrumbs.resourcesLabel,
-                href: breadcrumbs.resourcesHref,
-              },
+              { label: breadcrumbs.resourcesLabel, href: breadcrumbs.resourcesHref },
               { label: breadcrumbs.blogLabel, href: breadcrumbs.blogHref },
               { label: title },
             ]}
           />
-          <h1 className="text-3xl lg:text-4xl font-bold font-heading text-foreground max-w-3xl">
+          <h1 className="text-3xl lg:text-4xl font-bold font-heading text-foreground max-w-3xl mt-4 mb-4">
             {title}
           </h1>
 
-          {/* Author and category — publication date is intentionally
-              hidden from the UI (still emitted in the JSON-LD schema
-              above for SEO/freshness). */}
+          {/* Article meta — read time + last update + share buttons.
+              SEO contract: values mirror the Article JSON-LD. */}
+          <ArticleMeta
+            locale={locale}
+            date={publishedDate}
+            readMinutes={readMinutes > 0 ? readMinutes : undefined}
+            shareUrl={articleUrl}
+            shareTitle={title}
+          />
+
           {(author || category) && (
-            <div className="flex flex-col gap-4 mt-6">
+            <div className="flex flex-col gap-4 mt-2">
               <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                 {category && (
                   <span className="flex items-center gap-1.5">
@@ -135,82 +204,65 @@ export default function BlogPostPage({
                 )}
               </div>
 
-              {/* Author bio with photo — DEV-02 */}
-              {author && teamMembers && (
-                (() => {
-                  const authorMember = teamMembers.find(m =>
-                    `${m.firstName} ${m.lastName}`.toLowerCase() === author.toLowerCase() ||
-                    m.slug.replace(/-/g, ' ') === author.toLowerCase().replace(/-/g, ' ')
-                  );
-
-                  if (authorMember && authorMember.photo?.url) {
-                    // Handle both Strapi and fallback role formats
-                    const authorRole = (authorMember.role && typeof authorMember.role === 'string')
-                      ? authorMember.role
-                      : ((authorMember as any)?.roles?.[locale] || (authorMember as any)?.roles?.fr || '');
-
-                    return (
-                      <div className="flex items-center gap-4 pt-4 border-t border-border/50">
-                        <div className="relative w-12 h-12 shrink-0">
-                          <Image
-                            src={authorMember.photo.url}
-                            alt={`${authorMember.firstName} ${authorMember.lastName}`}
-                            fill
-                            className="rounded-full object-cover"
-                            sizes="48px"
-                          />
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-1.5">
-                            <a
-                              href={`/${locale === "fr" ? "" : locale + "/"}a-propos`}
-                              className="font-semibold text-foreground hover:text-iter-violet transition-colors"
-                            >
-                              {authorMember.firstName} {authorMember.lastName}
-                            </a>
-                            {authorMember.linkedIn && (
-                              <a
-                                href={authorMember.linkedIn}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-muted-foreground hover:text-iter-violet transition-colors"
-                                aria-label="LinkedIn profile"
-                              >
-                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
-                                </svg>
-                              </a>
-                            )}
-                          </div>
-                          {authorRole && (
-                            <p className="text-xs text-muted-foreground font-medium">{authorRole}</p>
-                          )}
-                        </div>
-                      </div>
-                    );
-                  }
-
-                  // Fallback: just show author name if no team member found
-                  return (
-                    <span className="flex items-center gap-1.5 text-sm">
-                      <span className="w-1 h-1 rounded-full bg-muted-foreground/50" />
+              {/* Author bio with photo */}
+              {authorMember && authorMember.photo?.url && (
+                <div className="flex items-center gap-4 pt-4 border-t border-border/50">
+                  <div className="relative w-12 h-12 shrink-0">
+                    <Image
+                      src={authorMember.photo.url}
+                      alt={`${authorMember.firstName} ${authorMember.lastName}`}
+                      fill
+                      className="rounded-full object-cover"
+                      sizes="48px"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-1.5">
                       <a
-                        href={`/${locale === "fr" ? "" : locale + "/"}a-propos`}
-                        className="hover:text-iter-violet transition-colors"
+                        href={authorUrl}
+                        className="font-semibold text-foreground hover:text-iter-violet transition-colors"
+                        rel="author"
                       >
-                        {author}
+                        {authorMember.firstName} {authorMember.lastName}
                       </a>
-                    </span>
-                  );
-                })()
+                      {authorMember.linkedIn && (
+                        <a
+                          href={authorMember.linkedIn}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-iter-violet transition-colors"
+                          aria-label="LinkedIn profile"
+                        >
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+                          </svg>
+                        </a>
+                      )}
+                    </div>
+                    {authorRole && (
+                      <p className="text-xs text-muted-foreground font-medium">{authorRole}</p>
+                    )}
+                  </div>
+                </div>
+              )}
+              {author && !authorMember && (
+                <span className="flex items-center gap-1.5 text-sm">
+                  <span className="w-1 h-1 rounded-full bg-muted-foreground/50" />
+                  <a
+                    href={`/${locale === "fr" ? "" : locale + "/"}a-propos`}
+                    className="hover:text-iter-violet transition-colors"
+                    rel="author"
+                  >
+                    {author}
+                  </a>
+                </span>
               )}
             </div>
           )}
         </div>
       </section>
 
-      {/* Body illustration — shown above the article body, distinct from
-          the listing cover. Source-of-truth: lib/blog-illustrations.ts. */}
+      {/* Body illustration */}
       {bodyImage && (
         <section className="bg-background pt-2 pb-8">
           <div className="container max-w-3xl">
@@ -228,42 +280,57 @@ export default function BlogPostPage({
         </section>
       )}
 
-      <article className="bg-background py-24 lg:py-16">
-        <div className="container max-w-3xl">
-          {blocks && blocks.length > 0 ? (
-            <StrapiBlocks
-              blocks={blocks}
-              className="text-muted-foreground"
-              prose
-              contactHref={getContactPath(locale)}
-            />
-          ) : htmlContent ? (
+      {/* Article body — two-column on xl screens (sticky TOC right).
+          One <ArticleTOC> instance: its internal markup renders both
+          a mobile accordion (`xl:hidden`) and a desktop sticky aside
+          (`hidden xl:block`). Flex order swaps the TOC above the body
+          on mobile and into the right column on xl. */}
+      <article className="bg-background py-12 lg:py-16">
+        <div className="container">
+          <div className="flex flex-col xl:grid xl:grid-cols-[minmax(0,1fr)_15rem] xl:gap-12 max-w-6xl mx-auto">
+            {htmlContent && tocHeadings.length > 0 && (
+              <div className="order-1 xl:order-none xl:col-start-2 xl:row-start-1">
+                <ArticleTOC locale={locale} headings={tocHeadings} />
+              </div>
+            )}
+
             <div
-              className="prose prose-lg prose-neutral dark:prose-invert max-w-none
-                prose-headings:font-heading prose-headings:text-foreground
-                prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
-                prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                prose-p:text-muted-foreground prose-p:leading-relaxed
-                prose-a:text-iter-violet prose-a:no-underline hover:prose-a:underline
-                prose-strong:text-foreground
-                prose-table:border-collapse prose-table:w-full
-                prose-th:bg-muted/50 prose-th:p-3 prose-th:text-left prose-th:text-sm prose-th:font-semibold
-                prose-td:p-3 prose-td:text-sm prose-td:border-t prose-td:border-border/50
-                prose-li:text-muted-foreground
-                prose-blockquote:border-l-iter-violet prose-blockquote:bg-muted/20 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg"
-              dangerouslySetInnerHTML={{ __html: htmlContent }}
-            />
-          ) : (
-            content.map((paragraph, i) => (
-              <p key={i} className="text-muted-foreground leading-relaxed mb-6">
-                {paragraph}
-              </p>
-            ))
-          )}
+              data-article-body
+              className="prose-iter-blog max-w-[72ch] mx-auto xl:mx-0 order-2 xl:order-none xl:col-start-1 xl:row-start-1"
+            >
+              {blocks && blocks.length > 0 ? (
+                <StrapiBlocks
+                  blocks={blocks}
+                  className="text-muted-foreground"
+                  prose
+                  contactHref={getContactPath(locale)}
+                />
+              ) : htmlContent ? (
+                splitForCta && splitForCta[1] ? (
+                  <>
+                    <div dangerouslySetInnerHTML={{ __html: splitForCta[0] }} />
+                    <MidArticleSoftCTA locale={locale} />
+                    <div dangerouslySetInnerHTML={{ __html: splitForCta[1] }} />
+                  </>
+                ) : (
+                  <>
+                    <div dangerouslySetInnerHTML={{ __html: transformedHtml }} />
+                    {readMinutes >= 6 && <MidArticleSoftCTA locale={locale} />}
+                  </>
+                )
+              ) : (
+                content.map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
+                ))
+              )}
+            </div>
+          </div>
         </div>
       </article>
 
       <CTASection locale={locale} />
+
+      <BlogRelatedArticles locale={locale} items={relatedItems} />
     </PageLayout>
   );
 }

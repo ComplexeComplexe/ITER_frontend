@@ -150,9 +150,9 @@ export interface ClientsPageContent {
 
 const contentFr: ClientsPageContent = {
   meta: {
-    title: "Nos clients : 85+ startups & PME tech accompagnées | Iter Advisors",
+    title: "Nos clients — 85+ startups & PME tech | Iter Advisors",
     description:
-      "Découvrez les startups et PME tech accompagnées par Iter Advisors : Happy Scribe, IMPACT+, Mitiga Solutions, Neat, OptiDigital, Surfe, Ukio, Yego, Seasonly, Solamente, NuuBB. SaaS, fintech, proptech, climatetech, e-commerce.",
+      "Startups et PME tech accompagnées par Iter Advisors : Happy Scribe, Surfe, Ukio, Yego. SaaS, fintech, proptech. +85 entreprises, 5/5 Trustfolio.",
   },
   breadcrumbLabel: "Nos clients",
   h1: "Nos clients : 85+ startups et PME tech accompagnées",
@@ -169,9 +169,9 @@ const contentFr: ClientsPageContent = {
 
 const contentEn: ClientsPageContent = {
   meta: {
-    title: "Our clients: 85+ tech startups & SMEs we've supported | Iter Advisors",
+    title: "Our clients — 85+ tech startups & SMEs | Iter Advisors",
     description:
-      "Tech startups and SMEs supported by Iter Advisors: Happy Scribe, IMPACT+, Mitiga Solutions, Neat, OptiDigital, Surfe, Ukio, Yego, Seasonly, Solamente, NuuBB. SaaS, fintech, proptech, climatetech, e-commerce.",
+      "Tech startups and SMEs supported by Iter Advisors: Happy Scribe, IMPACT+, Surfe, Ukio. SaaS, fintech, proptech. +85 companies, 5/5 Trustfolio.",
   },
   breadcrumbLabel: "Our clients",
   h1: "Our clients: 85+ tech startups and SMEs we've supported",
@@ -181,7 +181,7 @@ const contentEn: ClientsPageContent = {
   sectorsHeading: "Sectors covered",
   ctaHeading: "Want to join these companies?",
   ctaParagraph:
-    "We support tech startups, scale-ups and SMEs on cash management, reporting, fundraising, M&A and management control. Let's talk about your project.",
+    "We support tech startups, scale-ups and SMEs on cash management, reporting, fundraising, M&A, management control, and HR outsourcing. Our fractional CFOs have supported over 85 companies across France, Spain, and Belgium — from pre-seed to post-Series B. Let's talk about your project.",
   ctaButton: "Book a call",
 };
 
@@ -189,7 +189,7 @@ const contentEs: ClientsPageContent = {
   meta: {
     title: "Nuestros clientes: 85+ startups y PYMES tech | Iter Advisors",
     description:
-      "Startups y PYMES tech acompañadas por Iter Advisors: Happy Scribe, IMPACT+, Mitiga Solutions, Neat, OptiDigital, Surfe, Ukio, Yego, Seasonly, Solamente, NuuBB. SaaS, fintech, proptech, climatetech, e-commerce.",
+      "Startups y PYMES tech con Iter Advisors: Happy Scribe, IMPACT+, Surfe, Ukio. SaaS, fintech, proptech. +85 empresas, 5/5 Trustfolio.",
   },
   breadcrumbLabel: "Nuestros clientes",
   h1: "Nuestros clientes: 85+ startups y PYMES tech acompañadas",

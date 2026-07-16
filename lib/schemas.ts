@@ -218,13 +218,24 @@ export function speakableSchema({
 }
 
 /**
- * Generate FinancialService JSON-LD schema for the organization.
+ * Generate ProfessionalService JSON-LD schema for the organization.
+ *
+ * The function name (`financialServiceSchema`) is kept for backward
+ * compatibility with existing imports, but the emitted @type is
+ * ProfessionalService — Schema.org positions FinancialService for
+ * banks / insurance / lenders, which isn't what Iter Advisors is.
+ * (T4 / 2026-06-07: docstring sync.)
  */
 export function financialServiceSchema(): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
-    "@type": "FinancialService",
+    "@type": "ProfessionalService",
     name: "Iter Advisors",
+    // Spanish SL — keep the legal identifiers in sync with the
+    // canonical Organization graph emitted from app/layout.tsx.
+    legalName: "Iter Advisors S.L.",
+    taxID: "B42960849",
+    vatID: "ESB42960849",
     url: `${BASE}/`,
     description:
       "Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Présent à Barcelone, Paris et Toulouse.",
@@ -238,7 +249,9 @@ export function financialServiceSchema(): Record<string, unknown> {
     address: [
       {
         "@type": "PostalAddress",
-        addressLocality: "Barcelone",
+        streetAddress: "Carrer Casp, 54, 5-1°",
+        addressLocality: "Barcelona",
+        postalCode: "08010",
         addressCountry: "ES",
       },
       {
@@ -253,19 +266,19 @@ export function financialServiceSchema(): Record<string, unknown> {
       },
     ],
     openingHours: "Mo-Fr 09:00-18:00",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      bestRating: "5",
-      worstRating: "1",
-      reviewCount: "31",
-    },
+    // Review-snippet fix (2026-05-29): no self-serving aggregateRating here
+    // either (this helper is currently unused, but kept consistent with the
+    // policy applied across the live pages).
     sameAs: ["https://www.linkedin.com/company/iter-advisors/"],
   };
 }
 
 /**
  * Generate Article / BlogPosting JSON-LD schema.
+ *
+ * Extended (mai 2026 redesign) with `wordCount` + `articleSection` per
+ * the blog-article-redesign ticket §6.6 acceptance criteria — these
+ * boost rich-result eligibility on Google's BlogPosting type.
  */
 export function articleSchema({
   headline,
@@ -274,7 +287,10 @@ export function articleSchema({
   datePublished,
   dateModified,
   authorName = "Iter Advisors",
+  authorUrl,
   imageSrc,
+  wordCount,
+  articleSection,
 }: {
   headline: string;
   description: string;
@@ -282,7 +298,16 @@ export function articleSchema({
   datePublished?: string;
   dateModified?: string;
   authorName?: string;
+  /** Author canonical URL (e.g. /a-propos/benjamin-ziza). When provided
+   *  the schema renders a Person author with a `url` instead of a
+   *  generic Organization fallback. */
+  authorUrl?: string;
   imageSrc?: string;
+  /** Number of words in the article body — Google rewards explicit
+   *  wordCount for ranking long-form content. */
+  wordCount?: number;
+  /** Article section / category (e.g. "Fiscalité"). */
+  articleSection?: string;
 }): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
@@ -292,18 +317,24 @@ export function articleSchema({
     url: url.startsWith("http") ? url : `${BASE}${url}`,
     ...(datePublished && { datePublished }),
     ...(dateModified && { dateModified }),
-    author: {
-      "@type": "Organization",
-      name: authorName,
-      url: `${BASE}/`,
-    },
+    author: authorUrl
+      ? {
+          "@type": "Person",
+          name: authorName,
+          url: authorUrl.startsWith("http") ? authorUrl : `${BASE}${authorUrl}`,
+        }
+      : {
+          "@type": "Organization",
+          name: authorName,
+          url: `${BASE}/`,
+        },
     publisher: {
       "@type": "Organization",
       name: "Iter Advisors",
       url: `${BASE}/`,
       logo: {
         "@type": "ImageObject",
-        url: `${BASE}/images/logos/logo-hero.png`,
+        url: `${BASE}/images/logos/logo-og-square.png`,
       },
     },
     ...(imageSrc && {
@@ -312,6 +343,12 @@ export function articleSchema({
         url: imageSrc.startsWith("http") ? imageSrc : `${BASE}${imageSrc}`,
       },
     }),
+    ...(wordCount && wordCount > 0 && { wordCount }),
+    ...(articleSection && { articleSection }),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url.startsWith("http") ? url : `${BASE}${url}`,
+    },
   };
 }
 

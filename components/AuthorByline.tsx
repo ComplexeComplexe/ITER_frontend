@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Locale } from "@/lib/i18n";
 
 interface AuthorBylineProps {
@@ -25,10 +26,13 @@ export default function AuthorByline({
 
   return (
     <div className="flex items-center gap-4 py-6 px-4 mb-8 bg-iter-violet/5 rounded-lg border border-iter-violet/10">
-      <img
+      {/* SEO-17: use Next.js <Image> so the 300KB+ team photos are auto-compressed to WebP */}
+      <Image
         src={avatarUrl}
         alt={name}
-        className="w-16 h-16 rounded-full object-cover"
+        width={64}
+        height={64}
+        className="rounded-full object-cover"
       />
       <div className="flex-1">
         <div className="flex items-center gap-2 mb-1">

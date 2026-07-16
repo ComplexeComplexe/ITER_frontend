@@ -233,11 +233,19 @@ const ORPHAN_BLOG_SLUGS = [
  * translation in the static content are removed so the [slug] route
  * serves them instead of redirecting EN/ES users to FR; slugs that
  * don't exist anywhere are removed too so they 404 honestly. */
+// T7 (2026-06-07): "la-modernisation-du-role-de-cfo" was removed from this
+// list now that EN + ES translations exist in lib/content/blog-posts.ts.
+// Ahrefs T-404 (2026-06-08): added 4 fiscalité blog articles that are
+// FR-only (their EN/ES variants don't exist in lib/content/blog-posts.ts).
+// Same disableHreflang treatment applied in app/ressources/blog/[slug]/page.tsx.
 const FR_ONLY_BLOG_SLUGS = [
-  "la-modernisation-du-role-de-cfo",
   "regimes-fiscaux-france-vs-espagne",
   "checklist-due-diligence-levee-de-fonds",
   "daf-drh-externalises-synergie",
+  "bareme-irpf-espagne-2026",
+  "modelo-720-declaration-biens-etranger",
+  "double-imposition-france-espagne-convention",
+  "loi-beckham-espagne-conditions-2026",
 ];
 
 /* ------------------------------------------------------------------ */

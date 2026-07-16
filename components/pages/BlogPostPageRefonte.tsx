@@ -64,7 +64,13 @@ export default function BlogPostPageRefonte({
   // Build article URL for schema
   const articleUrl = slug ? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
 
-  // Generate Article schema
+  // SEO-13 (2026-07-13) — passe author.url à articleSchema pour émettre
+  // un author de type Person (E-E-A-T fort) au lieu du fallback
+  // Organization. Tous les articles avaient déjà author.url défini au
+  // niveau du composant BlogPostLayout (byline), mais ce n'était pas
+  // propagé au JSON-LD Article. Amélioration silencieuse mais critique
+  // sur les articles YMYL finance. Cf. reco-seo-iteradvisors.md §2.1
+  // "Signature auteur E-E-A-T sur tous les articles".
   const structuredData = articleSchema({
     headline: title,
     description: metaDescription || dek,
@@ -72,6 +78,7 @@ export default function BlogPostPageRefonte({
     datePublished: dateModified,
     dateModified: dateModified,
     authorName: author.name,
+    authorUrl: author.url,
     imageSrc: heroImage,
   });
 

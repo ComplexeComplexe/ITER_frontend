@@ -111,7 +111,7 @@ const content: Record<Locale, OutsourcedManagementControlContent> = {
   },
   en: {
     meta: {
-      title: "Outsourced Management Control & FP&A Services | Iter Advisors",
+      title: "Outsourced Management Control & FP&A | Iter Advisors",
       description:
         "Management control & FP&A: KPI dashboards, variance analysis, cost optimization. Monthly reporting. Predictable fees. Start in 4 weeks.",
     },

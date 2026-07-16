@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Locale } from "@/lib/i18n";
 import { getAboutContent } from "@/lib/content/about";
 import { getFallbackTeamMembers } from "@/lib/content/team";
+import { renderInlineMarkdownLinks } from "@/lib/render-markdown-inline-links";
 import type { StrapiTeamMember, CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -82,7 +83,7 @@ export default function AboutPage({
             </h2>
             {t.whoWeAre.paragraphs.map((p, i) => (
               <p key={i} className="text-muted-foreground leading-relaxed mb-4">
-                {p}
+                {renderInlineMarkdownLinks(p)}
               </p>
             ))}
           </div>
@@ -170,6 +171,13 @@ export default function AboutPage({
                       {stage.href && (
                         <Link
                           href={stage.href}
+                          aria-label={
+                            locale === "fr"
+                              ? `En savoir plus sur ${stage.title}`
+                              : locale === "en"
+                              ? `Learn more about ${stage.title}`
+                              : `Saber m\u00e1s sobre ${stage.title}`
+                          }
                           className="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-iter-violet hover:underline transition-colors"
                         >
                           {locale === "fr" ? "En savoir plus" : locale === "en" ? "Learn more" : "Saber m\u00e1s"}

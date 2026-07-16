@@ -10,7 +10,7 @@ const basePath = "/ressources/fiche-metier";
 const breadcrumbsByLocale = {
   fr: { resourcesLabel: "Ressources", resourcesHref: "/ressources", fichesLabel: "Fiches métiers", fichesHref: "/ressources/fiche-metier" },
   en: { resourcesLabel: "Resources", resourcesHref: "/en/ressources", fichesLabel: "Job descriptions", fichesHref: "/en/ressources/fiche-metier" },
-  es: { resourcesLabel: "Recursos", resourcesHref: "/es/ressources", fichesLabel: "Perfiles profesionales", fichesHref: "/es/ressources/fiche-metier" },
+  es: { resourcesLabel: "Recursos", resourcesHref: "/es/recursos", fichesLabel: "Perfiles profesionales", fichesHref: "/es/recursos/fiche-metier" },
 } as const;
 
 export async function generateStaticParams() {

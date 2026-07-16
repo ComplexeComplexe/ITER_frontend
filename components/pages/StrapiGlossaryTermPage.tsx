@@ -8,7 +8,7 @@ import { StrapiGlossaryTerm } from "@/lib/strapi";
 const labels: Record<Locale, { resources: string; resourcesHref: string; glossary: string; glossaryHref: string; definition: string }> = {
   fr: { resources: "Ressources", resourcesHref: "/ressources", glossary: "Glossaire", glossaryHref: "/ressources/glossaire", definition: "Définition" },
   en: { resources: "Resources", resourcesHref: "/en/ressources", glossary: "Glossary", glossaryHref: "/en/ressources/glossaire", definition: "Definition" },
-  es: { resources: "Recursos", resourcesHref: "/es/ressources", glossary: "Glosario", glossaryHref: "/es/ressources/glossaire", definition: "Definición" },
+  es: { resources: "Recursos", resourcesHref: "/es/recursos", glossary: "Glosario", glossaryHref: "/es/recursos/glossaire", definition: "Definición" },
 };
 
 export default function StrapiGlossaryTermPage({ locale, term }: { locale: Locale; term: StrapiGlossaryTerm }) {

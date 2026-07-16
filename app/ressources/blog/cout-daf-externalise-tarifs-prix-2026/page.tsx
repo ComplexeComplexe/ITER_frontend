@@ -3,14 +3,19 @@
 import { Metadata } from 'next';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
+import MidArticleSoftCTA from '@/components/blog/MidArticleSoftCTA';
 
 export const metadata: Metadata = {
   title: "Tarifs DAF 2026 | Iter Advisors",
   description: "Combien coûte un DAF externalisé en 2026 ? Tarifs, TJM, forfaits. Comparez avec un DAF salarié. Grille tarifaire complète et ROI calculé.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
+  },
   openGraph: {
-    title: "DAF externalisé : tarifs 2026, prix et grille | Iter Advisors",
+    title: "Tarifs DAF externalisé 2026 — prix et grille | Iter Advisors",
     description: "Combien coûte un DAF externalisé en 2026 ? Tarifs TJM, forfaits mensuels, grille de prix par profil et ROI.",
     type: "article",
+    images: [{ url: "/images/blog/cout-daf-externalise-tarifs-prix-2026.webp", width: 1200, height: 630 }],
   },
 };
 
@@ -32,6 +37,7 @@ export default function CoutDafExternalisePage() {
         name: "Benjamin Ziza",
         avatar: "/images/team/benjamin-ziza.webp",
         jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
+        url: "/a-propos/benjamin-ziza",
       }}
       readingTime={8}
       dateModified="2026-05-01"
@@ -163,6 +169,12 @@ export default function CoutDafExternalisePage() {
         <li>Coût : Expert DAF = €6,500/mois + Comptables = €6,000/mois = €12,500/mois</li>
         <li>Total annuel : €150k</li>
       </ul>
+
+      {/* Soft CTA mid-article (May 2026 design critique) — visitor is
+          in discovery mode after sections 1-3, before the harder
+          "inclus/exclus" details. Strong transactional CTA stays at
+          the end of the article. */}
+      <MidArticleSoftCTA locale="fr" />
 
       <h2 id="inclus-exclus">4. Ce qui est inclus / exclus</h2>
       <p>

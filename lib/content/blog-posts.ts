@@ -27,7 +27,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
   fr: {
     "flux-de-tresorerie": {
       meta: {
-        title: "Flux de trésorerie : définition et importance | Iter Advisors",
+        title: "Flux de trésorerie — Définition et Calcul | Iter Advisors",
         description: "Comprendre les flux de trésorerie : définition, calcul et importance pour la gestion financière de votre entreprise. Guide complet par Iter Advisors.",
       },
       breadcrumbs: {
@@ -74,7 +74,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "la-modernisation-du-role-de-cfo": {
       meta: {
-        title: "La modernisation du rôle de CFO | Iter Advisors",
+        title: "Modernisation du rôle de CFO en 2026 | Iter Advisors",
         description: "Comment le rôle du CFO évolue avec la digitalisation et l'IA. Découvrez les nouvelles compétences et missions du directeur financier moderne.",
       },
       breadcrumbs: {
@@ -94,7 +94,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "cout-daf-externalise-tarifs-prix-2026": {
       meta: {
-        title: "DAF externalisé tarif 2026 : prix, coûts et grille | Iter Advisors",
+        title: "Tarifs DAF externalisé 2026 : grille de prix | Iter Advisors",
         description: "Découvrez les tarifs d'un DAF externalisé en 2026 : TJM, forfaits mensuels et grille de prix. Économisez 50 à 70 % vs un DAF salarié. Diagnostic gratuit.",
       },
       breadcrumbs: {
@@ -105,11 +105,11 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       h1: "Combien coute un DAF externalise en 2026 ? Tarifs, grille de prix et ROI",
       publishedDate: "2026-03-28",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "",
       htmlContent: `<p><strong>Le cout est la premiere question que se posent les dirigeants lorsqu'ils envisagent de faire appel a un DAF externalise.</strong> Et c'est logique : la direction financiere est un poste strategique, mais recruter un directeur administratif et financier a temps plein represente un investissement considerable -- souvent disproportionne pour une PME ou une startup en croissance.</p>
 <p>En 2026, le marche du <a href="https://iteradvisors.com/daf-externalise">DAF externalise</a> a profondement muri en France. Selon les donnees de <a href="https://www.bpifrance.fr/">Bpifrance</a>, plus de 60 % des PME francaises de moins de 50 salaries n'ont pas de directeur financier dedie. Pourtant, ces memes entreprises traversent des phases critiques -- levees de fonds, structuration financiere, croissance rapide -- ou l'absence d'expertise financiere senior coute bien plus cher que le prix d'un DAF externalise.</p>
-<p>Alors, <strong>combien coute un DAF externalise en 2026 ?</strong> Quels sont les tarifs pratiques, les formules disponibles, et surtout, quel retour sur investissement attendre ? Ce guide detaille repond a toutes ces questions avec des chiffres concrets et des grilles tarifaires actualisees.</p>
+<p>Alors, <strong>combien coute un DAF externalise en 2026 ?</strong> Quels sont les tarifs pratiques, les formules disponibles, et surtout, quel retour sur investissement attendre ? Ce guide detaille repond a toutes ces questions avec des chiffres concrets et des grilles tarifaires actualisees. Pour une perspective ciblee startups VC-backed, voir aussi notre offre <a href="/jobs/fractional-cfo-startups">fractional CFO France</a>.</p>
 <hr>
 <h2 id="combien-coute-un-daf-externalise-les-fourchettes-de-prix-en-2026">Combien coute un DAF externalise ? Les fourchettes de prix en 2026</h2>
 <p>Le <strong>tarif d'un directeur financier externalise</strong> varie significativement en fonction du modele de facturation, du niveau de seniorite et de la complexite des missions confiees. Voici les deux principaux modes de tarification pratiques sur le marche francais en 2026.</p>
@@ -302,7 +302,7 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
 <ul>
 <li><strong>Pas de charges sociales</strong> : les cotisations patronales representent 42 a 45 % du brut en France. Cette charge disparait completement avec un DAF externalise.</li>
 <li><strong>Pas d'avantages en nature</strong> : vehicule de fonction, mutuelle complementaire, prevoyance, tickets restaurant -- ces couts accessoires representent 10 000 a 25 000 EUR/an pour un cadre dirigeant.</li>
-<li><strong>Pas de risque de licenciement</strong> : en cas de retournement d'activite, mettre fin a la mission d'un DAF externalise ne genere ni indemnites de licenciement ni preavis couteux. Selon le <a href="https://www.legifrance.gouv.fr/codes/id/LEGIARTI000006901118">Code du travail</a>, les indemnites de licenciement d'un cadre dirigeant avec 5+ ans d'anciennete peuvent atteindre plusieurs mois de salaire.</li>
+<li><strong>Pas de risque de licenciement</strong> : en cas de retournement d'activite, mettre fin a la mission d'un DAF externalise ne genere ni indemnites de licenciement ni preavis couteux. Selon le <a href="https://www.service-public.fr/particuliers/vosdroits/F987">Code du travail</a>, les indemnites de licenciement d'un cadre dirigeant avec 5+ ans d'anciennete peuvent atteindre plusieurs mois de salaire.</li>
 <li><strong>Pas de temps de recrutement</strong> : le recrutement d'un CFO prend en moyenne 4 a 6 mois. Pendant ce temps, l'entreprise navigue sans direction financiere. Un DAF externalise peut commencer en quelques jours.</li>
 <li><strong>Flexibilite totale</strong> : augmenter ou reduire le volume d'intervention en fonction des besoins reels de l'entreprise, sans avenant au contrat de travail.</li>
 </ul>
@@ -462,7 +462,7 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
     "daf-externalise-vs-daf-salarie": {
       meta: {
         title: "CFO à Temps Partagé vs DAF Salarié : Comparatif 2026 | Iter Advisors",
-        description: "DAF externalisé ou salarié ? Comparatif complet des coûts, avantages et cas d'usage pour choisir la meilleure option de direction financière pour votre PME.",
+        description: "DAF externalisé ou salarié ? Comparatif coûts, avantages et cas d'usage pour choisir la meilleure option de direction financière pour PME et startup.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -472,7 +472,7 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
       },
       h1: "DAF externalisé vs DAF salarié : quel choix pour votre entreprise ?",
       publishedDate: "2026-03-28",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "",
       htmlContent: `<p>Votre entreprise grandit, les enjeux financiers se complexifient, et vous réalisez que la gestion financière ne peut plus reposer uniquement sur un comptable ou sur le dirigeant lui-même. Il vous faut un Directeur Administratif et Financier (DAF). Mais une question se pose immédiatement : faut-il recruter un DAF salarié à temps plein ou faire appel à une <a href="/daf-externalise">direction financière externalisée</a> ?</p>
 <p>Ce dilemme est l'un des plus fréquents pour les PME et startups en croissance. D'un côté, le réflexe naturel pousse vers l'embauche d'un cadre en interne. De l'autre, l'externalisation de la direction financière offre une flexibilité et un rapport coût-efficacité difficiles à ignorer.</p>
@@ -747,7 +747,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "checklist-due-diligence-levee-de-fonds": {
       meta: {
-        title: "Due diligence levee de fonds : checklist 2026 | Iter Advisors",
+        title: "Due diligence levée de fonds : checklist | Iter Advisors",
         description: "Checklist complete de due diligence financiere pour preparer votre levee de fonds. 40 documents essentiels, data room et erreurs a eviter.",
       },
       breadcrumbs: {
@@ -763,7 +763,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       htmlContent: `<p><strong>La due diligence est le moment de verite d'une levee de fonds.</strong> Vous avez convaincu des investisseurs avec votre pitch, negocie une term sheet prometteuse, et tout semble sur la bonne voie. Puis arrive la phase de due diligence financiere, et c'est la que tout peut basculer.</p>
 <p>Les chiffres parlent d'eux-memes : <strong>environ 30 % des deals echouent a cette etape</strong> par manque de preparation. Des documents manquants, des incoherences dans les chiffres, un previsionnel bancal -- autant de signaux d'alerte qui poussent les investisseurs a se retirer ou a renegocier drastiquement les termes.</p>
 <p>La bonne nouvelle ? Une due diligence bien preparee n'est pas seulement un passage oblige. C'est un avantage concurrentiel. Les fondateurs qui arrivent avec une data room impeccable envoient un signal fort : ils maitrisent leurs chiffres, leur entreprise est bien geree, et le risque est sous controle.</p>
-<p>Ce guide est concu comme un outil de reference actionnable. Vous y trouverez une <strong>checklist complete de 40 documents</strong>, les 7 piliers de la due diligence financiere, la methode pour organiser votre data room, et les erreurs fatales a eviter. Que vous prepariez un seed, une Serie A ou une Serie B, cette checklist vous accompagnera a chaque etape.</p>
+<p>Ce guide est concu comme un outil de reference actionnable. Vous y trouverez une <strong>checklist complete de 40 documents</strong>, les 7 piliers de la due diligence financiere, la methode pour organiser votre data room, et les erreurs fatales a eviter. Que vous prepariez un seed, une Serie A ou une Serie B, cette checklist vous accompagnera a chaque etape — et si vous souhaitez etre accompagne sur le terrain, notre offre <a href="/jobs/fractional-cfo-startups">fractional CFO levee de fonds</a> couvre la preparation de bout en bout.</p>
 <hr>
 <h2 id="quest-ce-que-la-due-diligence-financiere">Qu'est-ce que la due diligence financiere ?</h2>
 <p>La <a href="/ressources/glossaire/due-diligence">due diligence</a> financiere est un processus d'audit approfondi mene par les investisseurs potentiels (ou pour leur compte) afin de verifier la sante financiere reelle d'une entreprise avant de finaliser un investissement. C'est l'equivalent d'une inspection technique avant l'achat d'un bien immobilier, mais appliquee a votre startup ou PME.</p>
@@ -1150,7 +1150,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "DAF + DRH externalisés : pourquoi combiner les deux fonctions change tout",
       publishedDate: "2026-03-28",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "thought-leadership",
       htmlContent: `<p>Votre startup passe le cap des dix salariés. La trésorerie devient complexe, les obligations sociales s'accumulent, les recrutements s'enchaînent. Vous avez besoin d'un directeur financier. Vous avez besoin d'un directeur des ressources humaines. Mais votre budget ne permet pas deux embauches à plus de 100 000 euros par an chacune.</p>
 <p>Et si la vraie question n'était pas "lequel recruter en premier", mais plutôt : "pourquoi les séparer" ?</p>
@@ -1314,8 +1314,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "cas-etude-happy-scribe": {
       meta: {
-        title: "Cas d'étude Happy Scribe : de 0€ à 2M€ de revenu avec un DAF externalisé",
-        description: "Comment Happy Scribe a structuré ses finances de la levée de fonds à l'hyper-croissance. La stratégie financière d'une startup SaaS de 200k€/mois de revenu.",
+        title: "Happy Scribe : 0→2M€ de revenu avec un DAF | Iter Advisors",
+        description: "Comment Happy Scribe a structuré ses finances de la levée de fonds à l'hyper-croissance. Stratégie financière d'une startup SaaS à 200 k€/mois de revenu.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -1329,7 +1329,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       category: "cas-etudes",
       htmlContent: `<p><strong>Happy Scribe est une startup française fondée en 2016 qui propose une solution SaaS pour la transcription et la sous-titrage automatiques de vidéos.</strong> Parmi ses utilisateurs figurent des producteurs Netflix, des journalistes indépendants, des chaînes YouTube à fort audience, et des agences audiovisuelles.</p>
 <p>En 2024, Happy Scribe avait atteint 200 000€ de revenu mensuel récurrent (MRR) avec une croissance de 20-30% mois après mois. L'équipe comptait une quarantaine de personnes réparties entre Paris, Londres et Barcelone. Et pourtant, la gestion financière restait chaotique : un spreadsheet Excel massif, des bouchons de cash flow malgré d'excellents chiffres, et aucune visibilité sur la profitabilité par client.</p>
-<p>Cet article détaille comment Iter Advisors a accompagné Happy Scribe pour transformer sa direction financière -- non pas en recrutant un CFO en CDI (c'eût été trop coûteux et peu flexible), mais en structurant les finances via un modèle de DAF externalisé et de contrôle de gestion.</p>
+<p>Cet article détaille comment Iter Advisors a accompagné Happy Scribe pour transformer sa direction financière -- non pas en recrutant un CFO en CDI (c'eût été trop coûteux et peu flexible), mais en structurant les finances via un modèle de DAF externalisé et de contrôle de gestion. Découvrir notre approche dédiée aux <a href="/jobs/fractional-cfo-startups">fractional CFO scale-up</a>.</p>
 <hr>
 <h2 id="le-contexte-une-startup-qui-grandit-trop-vite">Le contexte : une startup qui grandit trop vite</h2>
 <h3 id="la-situation-initiale">La situation initiale</h3>
@@ -1474,7 +1474,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     "externalisation-comptable": {
       meta: {
         title: "Externalisation Comptable : Guide Complet et Tarifs 2026",
-        description: "Faut-il externaliser sa comptabilité ? Découvrez les avantages, les pièges à éviter et les vrais coûts de la comptabilité externalisée pour PME et startups.",
+        description: "Faut-il externaliser sa comptabilité ? Avantages, pièges à éviter et vrais coûts de la comptabilité externalisée pour PME et startups. Guide pratique.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -1684,16 +1684,16 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // Pilier 1 — DAF Externalisé (4 articles)
     "quand-embaucher-daf-externalise-5-signes": {
       meta: {
-        title: "5 signes que vous avez besoin d'un DAF externalisé (et comment choisir) | Iter Advisors",
-        description: "Votre startup a-t-elle besoin d'un DAF externalisé ? Les 5 signaux d'alerte, le timing idéal, et comment choisir entre externalisation et salarié. Guide pratique.",
+        title: "5 signes que votre startup a besoin d'un DAF | Iter Advisors",
+        description: "5 signaux qu'une startup a besoin d'un DAF externalisé : timing idéal et comment choisir entre externalisation et embauche. Guide pratique par nos CFOs.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "5 signes que vous avez besoin d'un DAF externalisé (et comment choisir)",
       publishedDate: "2026-05-13",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "DAF externalisé",
       htmlContent: `<p>La décision de renforcer la fonction financière est un tournant pour toute entreprise en croissance. Trop tôt, elle constitue un poids financier inutile. Trop tard, elle expose l'entreprise à des risques opérationnels majeurs (défaillance de trésorerie, non-conformité fiscale, décisions stratégiques sans base chiffrée).</p>
-<p>Ce document présente cinq indicateurs factuels qui signalent qu'une entreprise a atteint le seuil de nécessité. Il analyse ensuite les options disponibles : DAF salarié, DAF externalisé, et les modalités de transition entre les deux.</p>
+<p>Ce document présente cinq indicateurs factuels qui signalent qu'une entreprise a atteint le seuil de nécessité. Il analyse ensuite les options disponibles : DAF salarié, <a href="/daf-externalise">DAF externalisé</a>, et les modalités de transition entre les deux.</p>
 <h2 id="signe-1-burn-rate">Section 1 — Le signe n°1 : le burn rate est inconnu</h2>
 <p>Le <em>burn rate</em> (consommation nette de trésorerie par mois) est la métrique vitale de toute startup en phase de croissance. Une entreprise qui ne connaît pas précisément son burn rate navigue sans instrument de pilotage.</p>
 <p><strong>Seuil de criticité :</strong> si la réponse à la question « Quel est votre burn rate exact du mois dernier ? » nécessite plus de 5 minutes de recherche, l'entreprise a besoin d'un DAF.</p>
@@ -1806,16 +1806,16 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "daf-externalise-barcelone-guide-startups-espagnoles": {
       meta: {
-        title: "DAF externalisé à Barcelone : le guide pour startups espagnoles | Iter Advisors",
+        title: "DAF externalisé Barcelone — Guide startups | Iter Advisors",
         description: "Fiscalité espagnole, subventions ACCIO/ENISA, recrutement tech à Barcelone : guide complet pour structurer la finance d'une startup en Catalogne.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "DAF externalisé à Barcelone : le guide pour les startups espagnoles",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "daf-externalise",
       htmlContent: `<p>Barcelone est devenue le deuxième écosystème startup d'Europe après Londres. Avec plus de 2 000 startups, des hubs technologiques comme 22@ et le District de la Innovación, et un coût de la vie 30% inférieur à Paris, la ville attire chaque année des centaines d'entrepreneurs français et internationaux.</p>
-<p>Mais gérer la finance d'une startup à Barcelone présente des spécificités : comptabilité espagnole (Plan General Contable), obligations fiscales différentes, subventions régionales, et un écosystème VC en pleine structuration. Voici le guide complet.</p>
+<p>Mais gérer la finance d'une startup à Barcelone présente des spécificités : comptabilité espagnole (Plan General Contable), obligations fiscales différentes, subventions régionales, et un écosystème VC en pleine structuration. C'est pourquoi de nombreuses startups instalées en Catalogne font appel à un <a href="/daf-externalise">DAF externalisé</a> pour sécuriser leur pilotage financier. Voici le guide complet.</p>
 <h2 id="fiscalite">Le paysage fiscal espagnol</h2>
 <p>L'Espagne a un régime fiscal propre avec des spécificités importantes. L'IS (Impuesto de Sociedades) est de 25% — mais les startups peuvent bénéficier du régime « Entidades de Base Tecnológica » avec des allégements fiscaux significatifs. La TVA (IVA) est de 21% avec des taux réduits pour certains services numériques.</p>
 <p>Le principal défi pour les entrepreneurs français : la comptabilité espagnole est en « competencia exclusiva » des experts-comptables (censados). Vous ne pouvez pas gérer votre comptabilité seul comme en France avec <a href="/ressources/outils/pennylane">Pennylane</a> — vous devez obligatoirement passer par un expert-comptable local.</p>
@@ -1837,21 +1837,21 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <li>Manque de reporting consolidé entre comptabilités française et espagnole</li>
 </ol>
 <h2 id="cout">Le coût d'un DAF à Barcelone</h2>
-<p>Un DAF externalisé basé à Barcelone coûte 15 à 25% moins cher qu'à Paris, avec une expertise équivalente. Nos forfaits démarrent à 1 500 €/mois pour une mission de 2 jours par semaine.</p>
+<p>Un <a href="/daf-externalise">DAF externalisé</a> basé à Barcelone coûte 15 à 25% moins cher qu'à Paris, avec une expertise équivalente. Nos forfaits démarrent à 1 500 €/mois pour une mission de 2 jours par semaine.</p>
 <p><a href="/contact">Contacter notre équipe de Barcelone</a></p>`,
       content: [],
     },
     "cout-daf-externalise-2026-tarifs-par-mission": {
       meta: {
-        title: "Combien coûte un DAF externalisé en 2026 ? Tarifs détaillés par mission | Iter Advisors",
+        title: "Tarifs DAF externalisé 2026 — Par mission | Iter Advisors",
         description: "Tarifs DAF externalisé 2026 par profil de startup : Seed, Series A, Scale-up, Transition. Comparaison avec un DAF salarié. Basé sur 120+ missions.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Combien coûte un DAF externalisé en 2026 ? Tarifs détaillés par mission",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "daf-externalise",
-      htmlContent: `<p>C'est la question que nous entendons le plus souvent : « combien coûte un DAF externalisé ? ». La réponse dépend de votre stade de croissance, de la complexité de votre activité, et du périmètre de la mission. Voici un guide détaillé des tarifs en 2026, basé sur nos 120+ missions réalisées.</p>
+      htmlContent: `<p>C'est la question que nous entendons le plus souvent : « combien coûte un <a href="/daf-externalise">DAF externalisé</a> ? ». La réponse dépend de votre stade de croissance, de la complexité de votre activité, et du périmètre de la mission. Voici un guide détaillé des tarifs en 2026, basé sur nos 120+ missions réalisées.</p>
 <h2 id="seed">Forfait « Seed » — 1 500-2 500 €/mois</h2>
 <p><strong>Périmètre</strong> : 1-2 jours/semaine. Startups de 5-15 personnes avec un CA &lt; 1M€.</p>
 <ul>
@@ -1907,7 +1907,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "DAF externalisé vs Expert-Comptable : quelle différence ?",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "daf-externalise",
       htmlContent: `<p>« J'ai déjà un expert-comptable, pourquoi aurais-je besoin d'un DAF ? » — c'est une confusion fréquente. L'expert-comptable et le DAF ont des métiers complémentaires mais totalement différents. Comparer un DAF à un expert-comptable, c'est comme comparer un pilote à un mécanicien — les deux sont essentiels, mais ils n'ont pas le même rôle.</p>
 <h2 id="expert-comptable">L'expert-comptable : le gardien de la conformité</h2>
@@ -1963,13 +1963,13 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // Pilier 2 — Outils & Stack Financier (3 articles)
     "pennylane-vs-sage-comparatif-40-deploiements": {
       meta: {
-        title: "Pennylane vs Sage : notre comparatif après 40 déploiements | Iter Advisors",
-        description: "Comparatif terrain Pennylane vs Sage par Iter Advisors : 40+ déploiements analysés. UX, stocks, immobilisations, prix, intégrations. Notre recommandation par profil.",
+        title: "Pennylane vs Sage : comparatif expert 2026 | Iter Advisors",
+        description: "Pennylane vs Sage : comparatif après 40+ déploiements. UX, prix, immobilisations, intégrations. Recommandation par profil d'entreprise et secteur.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Pennylane vs Sage : notre comparatif après 40 déploiements",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "outils-stack",
       htmlContent: `<p>Après avoir déployé <a href="/ressources/outils/pennylane">Pennylane</a> chez plus de 25 clients et <a href="/ressources/outils/sage">Sage</a> chez une quinzaine, nous avons une vision claire : il n'y a pas de « meilleur » outil de comptabilité — il y a un outil adapté à votre situation. Voici notre comparatif terrain.</p>
 <h2 id="verdict">Le verdict en 30 secondes</h2>
@@ -2007,13 +2007,13 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "agicap-vs-fygr-outil-tresorerie": {
       meta: {
-        title: "Agicap vs Fygr : quel outil de trésorerie choisir ? | Iter Advisors",
+        title: "Agicap vs Fygr — Quel outil trésorerie ? | Iter Advisors",
         description: "Agicap multi-banques et scénarios avancés, ou Fygr économique et simple ? Comparatif terrain par Iter Advisors basé sur 30+ déploiements.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Agicap vs Fygr : quel outil de trésorerie choisir ?",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "outils-stack",
       htmlContent: `<p>La trésorerie est le nerf de la guerre des startups. Mais avant d'avoir une trésorerie à gérer, il faut la voir — et c'est précisément le job d'un outil de prévision de trésorerie. Chez Iter Advisors, nous déployons principalement <a href="/ressources/outils/agicap">Agicap</a> et <a href="/ressources/outils/fygr">Fygr</a>. Deux approches, deux positionnements.</p>
 <h2 id="verdict">Le verdict en 30 secondes</h2>
@@ -2048,13 +2048,13 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "stack-financier-saas-series-a": {
       meta: {
-        title: "Stack financier idéal pour une SaaS en Series A (budget &lt; 1 500 €/mois) | Iter Advisors",
-        description: "Quels outils financiers choisir en Series A ? Notre stack recommandé après 40+ déploiements : comptabilité, trésorerie, dépenses, paie, banque. Budget total et ROI détaillé.",
+        title: "Stack financier pour SaaS Series A | Iter Advisors",
+        description: "Stack financier Series A : comptabilité, trésorerie, dépenses, paie, banque. Recommandé après 40+ déploiements. Budget total et comparatif détaillé.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Le stack financier idéal pour une SaaS en Series A (budget < 1 500 €/mois)",
       publishedDate: "2026-05-13",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "Outils & stack",
       htmlContent: `<p>Une startup SaaS en Series A (ARR entre 1 M€ et 5 M€, équipe de 20 à 50 personnes) traverse une phase critique. La fonction finance doit évoluer d'une gestion administrative basique vers un pilotage stratégique, sans pour autant mobiliser des ressources disproportionnées.</p>
 <p>L'objectif de ce guide est de définir un stack financier opérationnel, éprouvé, et maîtrisable en budget. Le budget cible est de 800 € à 1 500 € par mois — ce qui représente environ 1,5 % du burn rate moyen d'une SaaS en Series A (80 000 € à 120 000 € par mois).</p>
@@ -2160,7 +2160,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // Pilier 3 — Levée de Fonds & M&A (3 articles)
     "data-room-checklist-levee-de-fonds": {
       meta: {
-        title: "Data Room : la checklist complète pour votre levée de fonds | Iter Advisors",
+        title: "Data Room — Checklist levée de fonds | Iter Advisors",
         description: "Checklist data room levée de fonds : société, financier, KPIs SaaS, juridique, commercial, technique. Basée sur 25+ levées accompagnées.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2240,7 +2240,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "term-sheet-negocier-clauses-cles": {
       meta: {
-        title: "Term Sheet : comment négocier les clauses clés | Iter Advisors",
+        title: "Term Sheet : négocier les clauses clés | Iter Advisors",
         description: "Valorisation, liquidation preference, anti-dilution, vesting, board seats : les 8 clauses term sheet à négocier et notre position par clause.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2278,7 +2278,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "due-diligence-financiere-investisseurs": {
       meta: {
-        title: "Due Diligence financière : ce que les investisseurs vérifient | Iter Advisors",
+        title: "Due diligence financière investisseurs | Iter Advisors",
         description: "Comment les investisseurs analysent vos chiffres : MRR/ARR, CAC, LTV, burn rate, comptabilité, projections, litiges. Les red flags qui tuent une levée.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2333,13 +2333,13 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // Pilier 4 — Gestion Financière (3 articles)
     "reduire-bfr-7-leviers-actionnables": {
       meta: {
-        title: "Comment réduire votre BFR : 7 leviers actionnables | Iter Advisors",
+        title: "Réduire le BFR : 7 leviers actionnables | Iter Advisors",
         description: "DSO, stocks, fournisseurs, factoring : 7 leviers concrets pour libérer 15-25% de votre CA en cash sans lever de fonds.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Comment réduire votre BFR : 7 leviers actionnables",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "gestion-financiere",
       htmlContent: `<p>Le <a href="/ressources/glossaire/besoin-fonds-roulement-bfr">BFR</a> (Besoin en Fonds de Roulement) est le plus grand consommateur de trésorerie des entreprises en croissance. Une startup qui double son CA doit généralement financer une augmentation de BFR de 20 à 30% de la croissance. Optimiser son BFR, c'est libérer du cash sans lever de fonds.</p>
 <h2 id="dso">Levier 1 — Réduire le DSO (délai client)</h2>
@@ -2390,7 +2390,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "cash-burn-calculer-runway-anticiper-levee": {
       meta: {
-        title: "Cash Burn : calculer votre runway et anticiper la levée | Iter Advisors",
+        title: "Cash Burn : calculer votre runway | Iter Advisors",
         description: "Méthode complète pour calculer votre burn rate net et votre runway. Seuils critiques, règles du venture capital, scénarios de forecast.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2460,16 +2460,16 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "tableau-de-bord-financier-startup-12-kpis": {
       meta: {
-        title: "Tableau de bord financier startup : les 12 KPIs que tout CFO doit suivre | Iter Advisors",
-        description: "Quels KPIs financiers suivre dans une startup ? Les 12 indicateurs essentiels par catégorie : croissance, acquisition, trésorerie, rentabilité. Guide avec formules et benchmarks.",
+        title: "Dashboard financier startup : 12 KPIs CFO | Iter Advisors",
+        description: "12 KPIs financiers essentiels pour startups : croissance, acquisition, trésorerie, rentabilité. Formules, benchmarks et tableau de bord par nos CFOs.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Tableau de bord financier startup : les 12 KPIs que tout CFO doit suivre",
       publishedDate: "2026-05-13",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "Gestion financière",
       htmlContent: `<p>Un tableau de bord financier efficace ne se mesure pas au nombre d'indicateurs qu'il contient, mais à la pertinence de ceux-ci. Un excès de métriques noie l'information ; un déficit masque les signaux d'alerte.</p>
-<p>Ce guide présente 12 KPIs (Key Performance Indicators) structurés en 4 catégories, avec pour chacun : la formule de calcul, le benchmark sectoriel, et la fréquence de suivi recommandée. Ces indicateurs sont applicables à l'ensemble des startups SaaS et PME digitales en phase de croissance.</p>
+<p>Ce guide présente 12 KPIs (Key Performance Indicators) structurés en 4 catégories, avec pour chacun : la formule de calcul, le benchmark sectoriel, et la fréquence de suivi recommandée. Ces indicateurs sont applicables à l'ensemble des startups SaaS et PME digitales en phase de croissance — et constituent le socle du pilotage d'un <a href="/jobs/fractional-cfo-startups">fractional CFO startup</a> chez Iter Advisors.</p>
 <h2 id="categorie-1-croissance">Catégorie 1 — Croissance (3 KPIs)</h2>
 <h3>KPI 1 — MRR (Monthly Recurring Revenue)</h3>
 <p>Le MRR est le revenu récurrent mensuel. Il constitue la métrique fondamentale de toute entreprise en modèle d'abonnement.</p>
@@ -2670,7 +2670,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // Pilier 5 — RH & Paie (2 articles)
     "drh-externalise-quand-et-pourquoi": {
       meta: {
-        title: "DRH externalisé : quand et pourquoi ? | Iter Advisors",
+        title: "DRH externalisé : quand externaliser les RH | Iter Advisors",
         description: "À partir de 10 salariés, pendant une hyper-croissance ou en cas de litige, pourquoi externaliser le DRH plutôt que recruter. Coût, périmètre, ROI.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2704,7 +2704,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "payfit-vs-silae-comparatif-pme": {
       meta: {
-        title: "PayFit vs Silae : comparatif pour PME en croissance | Iter Advisors",
+        title: "PayFit vs Silae — Comparatif PME 2026 | Iter Advisors",
         description: "PayFit pour startups SaaS CCN SYNTEC ou Silae pour BTP / spectacle / multi-conventions ? Comparatif terrain par Iter Advisors basé sur 40+ déploiements.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2750,8 +2750,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "impot-revenu-espagne": {
       meta: {
-        title: "Impôt sur le revenu en Espagne (IRPF) : guide complet 2026 | Iter Advisors",
-        description: "Guide complet sur l'impôt sur le revenu en Espagne (IRPF) : barèmes 2026, loi Beckham, déclaration, comparaison France-Espagne. Tout savoir pour s'installer à Barcelone ou Madrid.",
+        title: "IRPF Espagne — Guide complet 2026 | Iter Advisors",
+        description: "IRPF Espagne 2026 : barèmes, loi Beckham, déclaration et comparaison France-Espagne. Guide complet pour s'installer à Barcelone ou Madrid.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Impôt sur le revenu en Espagne (IRPF) : guide complet pour entrepreneurs et expatriés en 2026",
@@ -2889,8 +2889,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "externaliser-comptabilite-guide": {
       meta: {
-        title: "Externaliser la comptabilité : guide complet startups & PME 2026 | Iter Advisors",
-        description: "Tout savoir sur l'externalisation de la comptabilité : coûts, avantages, outils, comparatif expert-comptable vs comptable interne. Guide par des CFO expérimentés.",
+        title: "Externaliser la comptabilité PME 2026 | Iter Advisors",
+        description: "Externaliser la comptabilité : coûts, avantages, outils et comparatif expert-comptable vs interne. Guide complet par des CFOs expérimentés d'Iter Advisors.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Externaliser la comptabilité : guide complet pour startups et PME en 2026",
@@ -2998,11 +2998,136 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       content: [],
     },
 
+    "bareme-irpf-espagne-2026": {
+      meta: {
+        title: "Barème IRPF Espagne 2026 : tranches d'imposition | Iter Advisors",
+        description:
+          "Découvrez le barème officiel de l'impôt sur le revenu en Espagne (IRPF) pour 2026. Tranches de 19% à 47%, part étatique et part autonome expliquées.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Barème de l'impôt sur le revenu en Espagne (IRPF) en 2026",
+      publishedDate: "2026-05-31",
+      author: "Sébastien Doat",
+      category: "fiscalite-internationale",
+      htmlContent: `<p>L'impôt sur le revenu des personnes physiques en Espagne (IRPF) est un impôt progressif. Contrairement à la France, il est divisé en deux parties : une part étatique (fixée par le gouvernement central) et une part autonome (fixée par la région où vous résidez, comme la Catalogne ou Madrid).</p>
+<p><strong>Voici le barème étatique général applicable en 2026 :</strong></p>
+<ul>
+<li>Jusqu'à 12 450 € : <strong>19 %</strong></li>
+<li>De 12 450 € à 20 200 € : <strong>24 %</strong></li>
+<li>De 20 200 € à 35 200 € : <strong>30 %</strong></li>
+<li>De 35 200 € à 60 000 € : <strong>37 %</strong></li>
+<li>De 60 000 € à 300 000 € : <strong>45 %</strong></li>
+<li>Au-delà de 300 000 € : <strong>47 %</strong></li>
+</ul>
+<h2>Comment calculer votre impôt réel ?</h2>
+<p>Le taux final que vous paierez dépendra de votre région de résidence. Par exemple, la Communauté de Madrid applique généralement des taux autonomes plus bas que la moyenne nationale, tandis que la Catalogne ou la Communauté Valencienne appliquent des taux marginaux supérieurs (pouvant dépasser les 50% pour les très hauts revenus).</p>
+<p>Il est également crucial de prendre en compte les déductions personnelles et familiales (minimum personnel de 5 550 € pour un contribuable célibataire de moins de 65 ans) avant d'appliquer le barème.</p>
+<p><em>Note : Les revenus de l'épargne (dividendes, plus-values) sont soumis à un barème distinct, allant de 19% (jusqu'à 6 000 €) à 28% (au-delà de 300 000 €).</em></p>`,
+      content: [],
+    },
+
+    "modelo-720-declaration-biens-etranger": {
+      meta: {
+        title: "Modelo 720 Espagne 2026 : déclaration biens étranger | Iter Advisors",
+        description:
+          "Résident espagnol ? Vous devez déclarer vos comptes, assurances-vie et biens immobiliers en France via le Modelo 720 si leur valeur dépasse 50 000 €.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Modelo 720 : l'obligation déclarative redoutée des expatriés en Espagne",
+      publishedDate: "2026-05-31",
+      author: "Florent Greth",
+      category: "fiscalite-internationale",
+      htmlContent: `<p>Le Modelo 720 est une déclaration informative obligatoire pour tout résident fiscal en Espagne possédant des biens ou des droits situés à l'étranger. Bien qu'il ne s'agisse pas d'un impôt à payer, le non-respect de cette obligation peut entraîner des sanctions.</p>
+<h2>Qui est concerné et quels sont les seuils ?</h2>
+<p>Vous devez présenter le Modelo 720 si la valeur totale de vos biens à l'étranger dépasse <strong>50 000 €</strong> dans l'une de ces trois catégories distinctes :</p>
+<ol>
+<li><strong>Comptes bancaires :</strong> Comptes courants, livrets A, LDD, comptes N26 ou Revolut (si l'IBAN n'est pas espagnol).</li>
+<li><strong>Valeurs, droits, assurances et revenus :</strong> Actions, obligations, portefeuilles d'investissement, et surtout les contrats d'assurance-vie français.</li>
+<li><strong>Biens immobiliers :</strong> Maisons, appartements ou terrains situés hors d'Espagne.</li>
+</ol>
+<p><em>Important : Le seuil de 50 000 € s'apprécie par catégorie. Si vous avez 40 000 € sur des comptes bancaires et 40 000 € en assurance-vie, vous n'êtes pas soumis à l'obligation déclarative.</em></p>
+<h2>Délais et sanctions en 2026</h2>
+<p>La déclaration doit être effectuée par voie télématique auprès de l'Agencia Tributaria (AEAT) <strong>entre le 1er janvier et le 31 mars</strong> de l'année suivant l'exercice concerné (ex : avant le 31 mars 2026 pour l'exercice 2025).</p>
+<p>Suite à une condamnation par la Cour de Justice de l'Union Européenne (CJUE) jugeant les sanctions initiales "disproportionnées", l'Espagne a dû revoir son régime de pénalités. Les amendes forfaitaires fixes extrêmement lourdes ont été supprimées, et le régime général des sanctions fiscales s'applique désormais. Néanmoins, l'obligation déclarative reste strictement en vigueur.</p>`,
+      content: [],
+    },
+
+    "loi-beckham-espagne-conditions-2026": {
+      meta: {
+        title: "Loi Beckham Espagne 2026 : conditions et taux 24% | Iter Advisors",
+        description:
+          "Découvrez les conditions d'éligibilité à la Loi Beckham en 2026. Taux fixe d'IRPF à 24% pendant 6 ans pour les impatriés et digital nomads en Espagne.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Loi Beckham en Espagne : le régime fiscal de faveur des impatriés",
+      publishedDate: "2026-05-31",
+      author: "Sébastien Doat",
+      category: "fiscalite-internationale",
+      htmlContent: `<p>Le "Régime Spécial des Travailleurs Déplacés", plus connu sous le nom de Loi Beckham, est un dispositif fiscal extrêmement attractif conçu pour attirer les talents étrangers en Espagne. Il permet aux nouveaux résidents d'être imposés comme des non-résidents pendant l'année de leur arrivée et les cinq années suivantes (soit 6 ans au total).</p>
+<h2>Le principal avantage : un taux fixe à 24%</h2>
+<p>Sous le régime général de l'IRPF, les revenus du travail sont imposés selon un barème progressif pouvant atteindre 47%. Avec la Loi Beckham, vos revenus du travail de source espagnole sont imposés à un <strong>taux fixe de 24 % jusqu'à 600 000 €</strong>. Au-delà de ce montant, le taux passe à 47 %.</p>
+<p>De plus, seuls les revenus générés en Espagne sont imposables (à l'exception des revenus du travail qui sont imposés mondialement). Vos revenus du capital (dividendes, intérêts) de source étrangère ne sont pas soumis à l'impôt espagnol sous ce régime.</p>
+<h2>Conditions d'éligibilité en 2026</h2>
+<p>Pour bénéficier de ce régime, vous devez remplir plusieurs conditions strictes :</p>
+<ul>
+<li>Ne pas avoir été résident fiscal en Espagne au cours des <strong>5 années fiscales précédentes</strong> (ce délai était de 10 ans avant la récente réforme).</li>
+<li>Le déplacement en Espagne doit être justifié par un contrat de travail, une mutation intra-groupe, ou l'acquisition du statut d'administrateur d'une société (sous certaines conditions de participation).</li>
+<li>Depuis la loi sur les startups, les télétravailleurs internationaux (Digital Nomads) disposant du visa approprié sont également éligibles.</li>
+</ul>
+<p><em>Attention : La demande doit être déposée auprès de l'administration fiscale dans un délai maximum de 6 mois à compter de la date de début de l'activité figurant sur l'inscription à la Sécurité Sociale espagnole.</em></p>`,
+      content: [],
+    },
+
+    "double-imposition-france-espagne-convention": {
+      meta: {
+        title: "Double imposition France-Espagne : convention 2026 | Iter Advisors",
+        description:
+          "Comment fonctionne la convention fiscale franco-espagnole de 1995 ? Méthodes du crédit d'impôt et de l'exemption pour éviter la double imposition en 2026.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Double imposition France Espagne : comment l'éviter légalement ?",
+      publishedDate: "2026-05-31",
+      author: "Florent Greth",
+      category: "fiscalite-internationale",
+      htmlContent: `<p>Lorsqu'un contribuable perçoit des revenus dans un pays (État source) mais réside dans un autre (État de résidence), le risque d'être imposé deux fois sur le même revenu est réel. Pour éviter cette situation pénalisante, la France et l'Espagne ont signé une convention fiscale bilatérale le 10 octobre 1995.</p>
+<h2>Le principe de la résidence fiscale</h2>
+<p>La convention établit que c'est la résidence fiscale qui détermine quel État a le droit d'imposer vos revenus mondiaux. Si vous êtes résident fiscal en Espagne, vous devez déclarer l'ensemble de vos revenus (français et espagnols) à l'Hacienda. L'Espagne vous accordera ensuite un mécanisme pour neutraliser l'impôt déjà payé en France.</p>
+<h2>Les deux méthodes pour éliminer la double imposition</h2>
+<p>Selon la nature du revenu, la convention franco-espagnole prévoit deux méthodes distinctes :</p>
+<h3>1. La méthode de l'imputation (Crédit d'impôt)</h3>
+<p>C'est la méthode la plus courante (applicable notamment aux dividendes, intérêts et redevances). L'Espagne calcule l'impôt sur votre revenu global, puis déduit de cet impôt le montant que vous avez déjà payé en France.<br>
+<em>Exemple : Si la France a prélevé 15% à la source sur vos dividendes, l'Espagne vous accordera un crédit d'impôt équivalent, dans la limite de l'impôt espagnol correspondant à ce revenu.</em></p>
+<h3>2. La méthode de l'exemption avec progressivité</h3>
+<p>Applicable notamment aux revenus immobiliers de source française ou aux pensions de retraite de la fonction publique française. Ces revenus ne sont imposables qu'en France. Cependant, l'Espagne exige que vous les déclariez : ils ne seront pas taxés directement, mais ils seront pris en compte pour déterminer le taux d'imposition applicable à vos autres revenus espagnols (c'est ce qu'on appelle le taux effectif).</p>
+<p><em>Note pratique : Côté français, pour déclarer des revenus de source étrangère tout en évitant la double imposition, il faut utiliser le formulaire spécifique 2047 en complément de la déclaration classique 2042.</em></p>`,
+      content: [],
+    },
+
   },
   en: {
     "essentiels-outils-tech-finance": {
       meta: {
-        title: "Essential financial tech tools | Iter Advisors",
+        title: "Financial Tech Tools for CFOs & SMEs | Iter Advisors",
         description: "Discover the essential technology tools for modern finance departments. Expert guide by Iter Advisors.",
       },
       breadcrumbs: {
@@ -3063,7 +3188,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // ─── FINAL-04: top 4 FR articles translated to EN ─────────────────
     "flux-de-tresorerie": {
       meta: {
-        title: "Cash Flow Management: Definition & Best Practices for SMEs | Iter Advisors",
+        title: "Cash Flow Management for SMEs | Iter Advisors",
         description: "Master cash flow management: definition, the 3 cash flow types, cash conversion cycle, and tools for SMEs and startups. Expert guide by Iter Advisors.",
       },
       breadcrumbs: {
@@ -3116,8 +3241,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "cout-daf-externalise-tarifs-prix-2026": {
       meta: {
-        title: "Fractional CFO Cost in 2026: Pricing, Day Rates & ROI | Iter Advisors",
-        description: "What does a Fractional CFO cost in 2026? Daily rates, monthly retainers, package comparison and ROI. Save 50-70% vs hiring a full-time CFO. Free diagnostic.",
+        title: "Fractional CFO Cost 2026: Pricing & ROI | Iter Advisors",
+        description: "Fractional CFO cost in 2026: daily rates, monthly retainers, package comparison and ROI. Save 50–70% vs a full-time CFO. Free diagnostic.",
       },
       breadcrumbs: {
         resourcesLabel: "Resources",
@@ -3127,7 +3252,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Fractional CFO Cost in 2026: Day Rates, Packages and ROI",
       publishedDate: "2026-05-12",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "CFO outsourcing",
       htmlContent: `<p><strong>Cost is the first question every founder asks when considering a Fractional CFO.</strong> It's a fair question — financial leadership is a strategic line item, and hiring a full-time CFO is one of the most expensive moves an SME can make. This guide gives you the real 2026 numbers.</p>
 <h2 id="day-rate">Day rate: the building block</h2>
@@ -3158,7 +3283,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "daf-externalise-vs-daf-salarie": {
       meta: {
-        title: "Fractional CFO vs In-House CFO: Cost, Flexibility & ROI Compared | Iter Advisors",
+        title: "Fractional vs In-House CFO: Cost & ROI | Iter Advisors",
         description: "Fractional CFO vs in-house CFO: side-by-side comparison of cost, flexibility, expertise and ROI. Which model fits your SME or startup in 2026?",
       },
       breadcrumbs: {
@@ -3169,7 +3294,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Fractional CFO vs In-House CFO: Which Model Wins in 2026?",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "CFO outsourcing",
       htmlContent: `<p>Your business is growing, the finance topics are getting harder, and you've realised your accountant and your CEO can no longer carry the load alone. You need a CFO. The question is: full-time hire, or <a href="/en/fractional-cfo">Fractional CFO</a>?</p>
 <p>This guide breaks down the trade-offs across cost, flexibility, expertise and ROI — and gives you a clear answer based on your stage.</p>
@@ -3201,8 +3326,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "externalisation-comptable": {
       meta: {
-        title: "Accounting Outsourcing for Startups & SMEs: Costs, Tools & Guide | Iter Advisors",
-        description: "Outsource accounting: 30-50% cheaper than in-house, modern tools (Pennylane, Sage), and a senior expert. Complete guide for startups and SMEs by Iter Advisors.",
+        title: "Accounting Outsourcing Guide for SMEs 2026 | Iter Advisors",
+        description: "Outsource accounting: 30-50% cheaper than in-house, modern tools (Pennylane, Sage), senior expert. Complete guide for startups and SMEs by Iter Advisors.",
       },
       breadcrumbs: {
         resourcesLabel: "Resources",
@@ -3210,54 +3335,235 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
         blogLabel: "Blog",
         blogHref: "/en/ressources/blog",
       },
-      h1: "Outsourcing Accounting: Complete Guide for Startups & SMEs",
-      publishedDate: "2026-05-13",
+      h1: "Accounting Outsourcing: The Complete Guide for SME and Startup Founders",
+      publishedDate: "2026-05-10",
       author: "Benjamin Ziza",
-      category: "Outsourcing",
-      htmlContent: `<p><strong>Outsourcing accounting</strong> is the first move toward a professional finance function — and for startups and SMEs, it's also a 30-50% cost reduction with arguably better expertise than what an in-house accountant could deliver alone. Iter Advisors has helped 85+ companies make this transition. Here's what we learned.</p>
-<h2 id="what">What does accounting outsourcing actually cover?</h2>
-<p>Outsourcing means handing the day-to-day bookkeeping to a specialised firm: bank reconciliation, invoice booking, payroll posting, VAT returns, monthly close, annual statements. You keep ownership of the strategy (the <a href="/en/fractional-cfo">CFO</a> seat) and visibility through cloud tools — the firm runs the operational engine.</p>
-<p>Outsourcing can be total (everything goes external) or partial (you keep payroll or analytical accounting in-house, externalise the rest).</p>
-<h2 id="advantages">The 5 advantages</h2>
-<ol>
-<li><strong>30-50% cost reduction</strong> vs hiring an in-house accountant (€45k-€65k/year all-in).</li>
-<li><strong>Certified expertise</strong> — a chartered accountant who tracks every regulatory change so you don't have to.</li>
-<li><strong>Modern tooling</strong> — Pennylane, Sage, Cegid Loop, Agicap. Real-time data, no Excel.</li>
-<li><strong>Focus on your core</strong> — you spend your hours on growth, not on chasing VAT submissions.</li>
-<li><strong>Scalability</strong> — adjust the scope as you grow, no firing or rehiring.</li>
-</ol>
-<h2 id="vs-internal">Outsourced vs in-house: head to head</h2>
+      category: "Practical guides",
+      // T7-bis (2026-06-07): full EN translation of the FR original (~18k chars).
+      // Replaces the previous ~3k char stub. Preserves all H2/H3 sections,
+      // tables, lists and internal links.
+      htmlContent: `<p><strong>You used to keep the books yourself. Or maybe you've been relying on a freelance accountant friend working informally. Today doubt is setting in: "Do I really need to outsource my accounting? What will I gain? And above all, at what price?"</strong></p>
+<p>Accounting outsourcing is one of the decisions every SME or startup founder must face, typically around the 5- to 10-employee mark. Up to that point, doing it yourself or relying on an informal contractor works. Past that threshold, the obligations become complex, the risk increases, and the time invested becomes too costly.</p>
+<p>This guide details everything you need to know about <strong>accounting outsourcing</strong>: why do it, how to avoid doing it badly, what it really costs, and most importantly, how to structure the partnership so you get the most out of it.</p>
+<hr>
+<h2 id="why-outsource-accounting-the-real-reasons">Why outsource accounting: the real reasons</h2>
+<p>Many founders think accounting outsourcing is purely a cost question. That's a mistake. The real benefits go well beyond the price tag.</p>
+<h3 id="1-you-dont-have-the-time">1. You don't have the time</h3>
+<p>Bookkeeping is far from a few hours a month. Between collecting documents, classifying invoices, maintaining the purchase journal, reconciling the bank, filing VAT returns, and preparing the file for your chartered accountant, you're quickly looking at 4 to 8 hours of work per week for a mid-sized SME.</p>
+<p>Your time has a value. If you run a 10-employee company, your hour is worth at least €80 to €150. At that rate, outsourcing accounting for €2,000 to €3,500 per month amounts to buying back 20 to 40 hours of your time each month — time you can reinvest in growth, customers, or product innovation.</p>
+<h3 id="2-the-regulatory-compliance-impact">2. The impact of regulatory compliance</h3>
+<p>Accounting and tax regulation is a labyrinth. The rules on VAT, social security filings (URSSAF in France, equivalent agencies elsewhere), record-retention obligations, and filing deadlines change constantly.</p>
+<p>One oversight, one misclassification, one late return, and you risk:</p>
+<ul>
+<li><strong>Tax reassessments</strong> potentially representing 20% to 40% of the declared amount</li>
+<li><strong>Penalties and surcharges</strong> that explode fast: up to 80% for omitted amounts in case of bad faith, 10% for a late return</li>
+<li><strong>Lengthy and costly administrative disputes</strong> to resolve</li>
+<li><strong>A damaged corporate image</strong> with bankers, investors, and partners</li>
+</ul>
+<p>Outsourcing to a genuine professional is buying insurance against these risks.</p>
+<h3 id="3-access-to-qualified-expertise">3. Access to qualified expertise</h3>
+<p>Your outsourced accounting firm is not just a vendor that enters your numbers. It's an expert who can help you:</p>
+<ul>
+<li><strong>Optimise your tax structure</strong>: should you stay a sole trader? Move to an LLC equivalent? Each structure has different implications</li>
+<li><strong>Steer your cash flow</strong>: understand your cash cycle and anticipate tensions</li>
+<li><strong>Prepare for fundraising</strong>: clean accounting records reviewed by a chartered accountant are one of the first things investors check</li>
+<li><strong>Analyse performance</strong>: what are my real margins? Where is my money going? Which customers are profitable?</li>
+</ul>
+<h3 id="4-transparency-toward-stakeholders">4. Transparency toward stakeholders</h3>
+<p>If you raise funds or work with investors, bankers, or demanding customers, the quality of your accounting becomes a competitive asset. Regularly updated, third-party-audited accounts are a signal of seriousness and professionalism.</p>
+<hr>
+<h2 id="the-pitfalls-to-avoid-why-accounting-outsourcing-fails">The pitfalls to avoid: why accounting outsourcing fails</h2>
+<p>Outsourcing looks simple in theory. In practice, many companies do it badly. Here are the most common pitfalls.</p>
+<h3 id="pitfall-1-poor-internal-organisation">Pitfall 1: Poor internal organisation</h3>
+<p>Even the most competent accounting provider can't do anything if the data they receive is disorganised. Lost invoices, personal expenses mixed with business expenses, bank statements without context, missing supporting documents — this chaos generates unbilled hours of work or constant delays.</p>
+<p><strong>Fix:</strong> Before outsourcing, structure your internal organisation. Set up a simple document-collection process, designate one person responsible, use basic invoicing software. It costs time upfront but pays off very fast.</p>
+<h3 id="pitfall-2-choosing-the-wrong-provider">Pitfall 2: Choosing the wrong provider</h3>
+<p>Not all accounting firms are alike. Some are stuck in 2000s practices. Others don't understand startup and SME reality. You need:</p>
+<ul>
+<li>A firm that knows your industry (SaaS, e-commerce, services, etc.)</li>
+<li>An expert who uses modern, digitised tools (Pennylane, Dext, etc.) — not Excel</li>
+<li>A real relationship: a fixed point of contact, not constant auditor turnover</li>
+<li>Responsiveness: your questions answered within 24-48 hours, not in two weeks</li>
+</ul>
+<p><strong>Fix:</strong> Get recommendations from other founders. Evaluate 3-4 firms. Ask for references. Ask specific questions about their approach. Confirm they understand your sector.</p>
+<h3 id="pitfall-3-no-real-process">Pitfall 3: No real process in place</h3>
+<p>Even with a good provider, without a clear process the relationship becomes chaotic. Deadlines slip, invoices pile up, documents go missing.</p>
+<p><strong>Fix:</strong> Document the exchange process with your provider. Set hard deadlines: purchase invoices must arrive before the 10th of the following month. Bank transfers must be justified. A monthly meeting should be held to validate the figures before close. It sounds basic, but it's what makes the difference.</p>
+<h3 id="pitfall-4-treating-accounting-as-just-compliance">Pitfall 4: Treating accounting as just a compliance burden</h3>
+<p>Many founders see accounting as an administrative chore, just to stay compliant. Big mistake. Your accounts are a goldmine of information about the health of your business.</p>
+<p><strong>Fix:</strong> Ask your provider for monthly reporting: P&L, cash position, expense analysis. Spend an hour each month understanding those numbers. It's the best investment you can make to steer your growth.</p>
+<hr>
+<h2 id="how-to-succeed-at-accounting-outsourcing">How to succeed at accounting outsourcing</h2>
+<p>Here's the action plan to turn accounting outsourcing into a real asset for your company.</p>
+<h3 id="step-1-prepare-your-internal-organisation">Step 1: Prepare your internal organisation</h3>
+<p>Before even looking for a provider, structure your in-house accounting. This is the foundational investment.</p>
+<ul>
+<li>Choose a cloud invoicing tool (Pennylane, Stripe Billing, Invoicely)</li>
+<li>Put a document-classification procedure in place</li>
+<li>Designate one person responsible for collecting supporting documents</li>
+<li>Create a shared drive or storage space to centralise documents</li>
+</ul>
+<h3 id="step-2-assess-your-real-needs">Step 2: Assess your real needs</h3>
+<p>Accounting outsourcing is not one-size-fits-all. Depending on your size, complexity, and sector, you won't need the same level of service.</p>
+<p>Ask yourself:</p>
+<ul>
+<li>How many customer invoices per month? (&lt; 50, 50-200, &gt; 200)</li>
+<li>How many supplier invoices per month? (&lt; 50, 50-200, &gt; 200)</li>
+<li>Do I deal with complex VAT (intra-EU, exports, etc.) or is it simple?</li>
+<li>Do I need a full audit or just basic bookkeeping?</li>
+<li>Do I need to produce financial reports regularly for investors or bankers?</li>
+</ul>
+<h3 id="step-3-choose-the-right-provider">Step 3: Choose the right provider</h3>
+<p>Don't pick your accountant on price alone. The important criteria:</p>
+<ul>
+<li><strong>Sector competence</strong>: a firm that works with SaaS companies will understand you better than a generalist</li>
+<li><strong>Relationship quality</strong>: a fixed contact, real proximity, not a file number</li>
+<li><strong>Modern tooling</strong>: cloud software, automations, online reporting</li>
+<li><strong>Responsiveness</strong>: your questions answered in 24-48 hours</li>
+<li><strong>Pricing flexibility</strong>: per-action billing, flat fee, or modular flat fee depending on workload</li>
+</ul>
+<h3 id="step-4-document-the-process-with-your-provider">Step 4: Document the process with your provider</h3>
+<p>Sign a contract that specifies:</p>
+<ul>
+<li><strong>Scope</strong>: bookkeeping, tax filings, VAT, payroll (if applicable), reporting?</li>
+<li><strong>Deadlines</strong>: by when must documents arrive? When are the books closed?</li>
+<li><strong>Pricing</strong>: monthly flat fee, per-action billing, or hybrid model?</li>
+<li><strong>Sync points</strong>: a monthly meeting to validate the numbers and discuss issues</li>
+<li><strong>Reporting</strong>: what reporting you'll receive (P&L, balance sheet, cash flow statement) and how often</li>
+</ul>
+<h3 id="step-5-steer-your-accounting">Step 5: Steer your accounting actively</h3>
+<p>Once the process is in place, actively steer your accounting. Don't let your provider decide alone.</p>
+<ul>
+<li>Receive and validate customer and supplier invoices each month</li>
+<li>Participate in the monthly close with your provider</li>
+<li>Comment on variances in your P&L: was this expense planned? Does this revenue match our forecasts?</li>
+<li>Use the numbers to steer your business, not just to satisfy legal obligations</li>
+</ul>
+<hr>
+<h2 id="how-much-does-accounting-outsourcing-cost-pricing-and-billing-models">How much does accounting outsourcing cost? Pricing and billing models</h2>
+<p>Prices vary enormously based on complexity and region. Here are the orders of magnitude for 2026.</p>
+<h3 id="model-1-monthly-flat-fee">Model 1: Monthly flat fee</h3>
+<p>The monthly flat fee is the most common model for micro-businesses and SMEs. You pay a fixed amount every month, regardless of transaction volume.</p>
+<ul>
+<li><strong>Simple bookkeeping</strong> (&lt; 100 transactions/month, low complexity): €400-€800/month</li>
+<li><strong>Standard accounting</strong> (100-500 transactions/month, VAT, some filings): €800-€1,500/month</li>
+<li><strong>Complex accounting</strong> (&gt; 500 transactions/month, intra-EU VAT, payroll, multiple entities): €1,500-€3,500/month</li>
+</ul>
+<h3 id="model-2-per-action-billing">Model 2: Per-action billing</h3>
+<p>Some firms bill per action: a price per invoice, per filing, etc. This model can be interesting for very low volume (&lt; 30 transactions/month).</p>
+<ul>
+<li>Per incoming invoice: €5-€15</li>
+<li>Per outgoing invoice: €8-€20</li>
+<li>Monthly close: €150-€300</li>
+<li>Tax / VAT return: €50-€200</li>
+</ul>
+<h3 id="model-3-subscription-plus-variable">Model 3: Subscription + variable</h3>
+<p>The hybrid model combines a flat fee for base services + variable billing for additional services.</p>
+<p><strong>Example:</strong> €1,000/month flat fee for basic bookkeeping, + €15 per invoice beyond 200 invoices/month.</p>
+<hr>
+<h2 id="when-to-move-to-accounting-outsourcing">When should you switch to accounting outsourcing?</h2>
+<p>You're asking yourself: "Is this the right time to outsource?" Here are the signals.</p>
+<h3 id="positive-signals-you-can-outsource">Positive signals: you can outsource</h3>
+<ul>
+<li>✅ <strong>You have between 5 and 100 employees</strong>: the critical size where outsourcing becomes profitable</li>
+<li>✅ <strong>You have more than 50 accounting transactions per month</strong>: beyond that, doing it yourself becomes a time sink</li>
+<li>✅ <strong>Your cash position is getting complex</strong>: several bank accounts, regular transfers, need for a <a href="/en/services/cash-flow-forecast">cash flow forecast</a></li>
+<li>✅ <strong>You have employees</strong>: payroll becomes a complex obligation</li>
+<li>✅ <strong>You're preparing a fundraise</strong>: clean accounting records are a major asset</li>
+<li>✅ <strong>You don't enjoy doing accounting</strong>: that's the strongest signal. Accounting should be a tool, not a chore.</li>
+</ul>
+<h3 id="negative-signals-wait-a-bit">Negative signals: wait a bit</h3>
+<ul>
+<li>❌ <strong>You're pre-revenue</strong>: wait until you have steady revenue before outsourcing</li>
+<li>❌ <strong>You have very few transactions</strong> (&lt; 20/month): you can do it yourself in a few hours</li>
+<li>❌ <strong>You realise the firm doesn't understand you</strong>: find the right partner first</li>
+<li>❌ <strong>Your legal structure is complicated</strong>: clarify it first, then outsource</li>
+</ul>
+<hr>
+<h2 id="outsourced-accounting-vs-fractional-cfo-whats-the-difference">Outsourced accounting vs Fractional CFO: what's the difference?</h2>
+<p>Many founders confuse outsourcing bookkeeping (an accounting firm) with outsourcing the <a href="/en/services/outsourced-financial-management">finance function</a> (<a href="/en/fractional-cfo">our fractional CFO service</a>). These are two complementary services, not synonyms.</p>
 <table>
-<thead><tr><th>Criterion</th><th>Outsourced</th><th>In-house</th></tr></thead>
+<thead>
+<tr>
+<th></th>
+<th>Outsourced bookkeeping / Accounting firm</th>
+<th>Fractional CFO</th>
+</tr>
+</thead>
 <tbody>
-<tr><td>Annual cost</td><td>€10,000-€30,000</td><td>€45,000-€65,000 (charges in)</td></tr>
-<tr><td>Expertise</td><td>Multi-client, multi-sector</td><td>Single-company</td></tr>
-<tr><td>Tools</td><td>Modern cloud (Pennylane &amp; co)</td><td>Variable</td></tr>
-<tr><td>Availability</td><td>Tickets, email, phone</td><td>In the office</td></tr>
-<tr><td>Scalability</td><td>Change package</td><td>Recruit / fire</td></tr>
+<tr>
+<td><strong>Role</strong></td>
+<td>Enter and classify accounting documents, prepare filings, ensure compliance</td>
+<td>Steer financial strategy, build forecasts, support decision-making</td>
+</tr>
+<tr>
+<td><strong>Engagement frequency</strong></td>
+<td>One-off or regular but limited</td>
+<td>Regular and strategic</td>
+</tr>
+<tr>
+<td><strong>Founder interaction</strong></td>
+<td>Mostly administrative (providing documents)</td>
+<td>Strategic (participates in important decisions)</td>
+</tr>
+<tr>
+<td><strong>Typical cost</strong></td>
+<td>€400-€2,000/month</td>
+<td>€2,000-€8,000/month</td>
+</tr>
+<tr>
+<td><strong>Best for</strong></td>
+<td>Compliance, books quality, audit trail</td>
+<td>Growth, fundraising, financial optimisation</td>
+</tr>
 </tbody>
 </table>
-<h2 id="when">When to outsource (and when not)</h2>
+<p><strong>In practice:</strong> Most startups and SMEs start by outsourcing accounting (an accounting firm), then add an <a href="/en/services/outsourced-financial-management">outsourced finance function</a> when they enter a fast-growth phase or prepare a fundraise.</p>
+<p>Ideally, both services work together: the CFO sets strategy, the accounting firm ensures the books' quality.</p>
+<hr>
+<h2 id="conclusion-accounting-outsourcing-is-not-a-luxury-its-a-necessity">Conclusion: Accounting outsourcing is not a luxury, it's a necessity</h2>
+<p>Let's summarise the key points:</p>
 <ul>
-<li><strong>&lt; 10 employees</strong> — full outsourcing is almost always the right call.</li>
-<li><strong>10-50 employees</strong> — outsourced accounting + part-time CFO is the dominant model.</li>
-<li><strong>50+ employees</strong> — internal accountant + <a href="/en/fractional-cfo">Fractional CFO</a> tends to win.</li>
+<li>🎯 <strong>Outsourcing accounting frees up time</strong>: on average, 4-8 hours a week you can reinvest in growth</li>
+<li>🛡️ <strong>It protects you against compliance risks</strong>: reassessments, penalties, disputes</li>
+<li>💡 <strong>It gives you access to expertise</strong>: tax optimisation, steering, fundraise preparation</li>
+<li>💰 <strong>It costs less than you think</strong>: €800-€2,000/month on average for an SME — nothing compared to the cost of an accounting error</li>
+<li>🚀 <strong>It professionalises your business</strong>: an asset when you raise funds or work with large customers</li>
 </ul>
-<h2 id="tools">The tools we recommend in 2026</h2>
-<ul>
-<li><strong>Pennylane</strong> — best UX for SaaS startups, real-time visibility, deep integrations.</li>
-<li><strong>Sage</strong> — strong for industry, inventory-heavy businesses.</li>
-<li><strong>Cegid Loop</strong> — retail and multi-location operations.</li>
-</ul>
-<h2 id="cta">Ready to outsource your accounting?</h2>
+<p>If you run a 5- to 50-employee SME or startup, accounting outsourcing shouldn't be a question anymore. It should be a standard practice, just like you've probably outsourced your IT infrastructure (cloud instead of on-prem servers).</p>
+<p>The real question is no longer "should I outsource?", but "how do I choose the right partner?". This article gives you all the selection criteria. Now it's up to you to act.</p>
 <p>Explore our <a href="/en/services/outsource-your-accounting">outsourced accounting service</a> or <a href="/en/contact">book a free 30-minute diagnostic</a> with one of our senior advisors.</p>`,
       content: [],
+    },
+    // T7 (2026-06-07): EN translation of la-modernisation-du-role-de-cfo
+    // — removed from FR_ONLY_BLOG_SLUGS in middleware.ts as part of the
+    // same change. Matches the FR `content: []` array structure (not
+    // htmlContent) because the FR original uses that shape too.
+    "la-modernisation-du-role-de-cfo": {
+      meta: {
+        title: "Modernization of the CFO role in 2026 | Iter Advisors",
+        description: "How the CFO role is evolving with digitalization and AI. Discover the new skills and missions of the modern Chief Financial Officer.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Resources",
+        resourcesHref: "/en/ressources",
+        blogLabel: "Blog",
+        blogHref: "/en/ressources/blog",
+      },
+      h1: "The modernization of the CFO role",
+      content: [
+        "The role of the CFO (Chief Financial Officer) has evolved considerably over the past few years. Once confined to accounting oversight and reporting, today's finance director is a true strategic partner at the heart of company decisions.",
+        "Digital transformation is the primary driver of this evolution. Automating repetitive tasks (data entry, bank reconciliation, reporting) frees up time for higher-value missions: strategic analysis, decision support, and risk management.",
+        "Artificial intelligence opens new perspectives for the finance function. Machine-learning-based forecasting tools allow finance leaders to anticipate cash flow movements, optimize pricing, and detect accounting anomalies with unprecedented precision.",
+        "The modern CFO must also master ESG (Environmental, Social, Governance) issues, which take an increasing place in corporate strategy. Sustainable finance, non-financial reporting, and impact investing have become essential skills.",
+        "Finally, the human dimension remains central. The CFO must communicate effectively with various stakeholders (executives, investors, operational teams) and translate financial data into actionable recommendations. Leadership and strategic vision are, more than ever, essential qualities.",
+      ],
     },
   },
   es: {
     "essentiels-outils-tech-finance": {
       meta: {
-        title: "Herramientas tecnológicas esenciales para las finanzas | Iter Advisors",
+        title: "Herramientas tech esenciales para finanzas | Iter Advisors",
         description: "Descubra las herramientas tecnológicas esenciales para los departamentos financieros modernos. Guía experta de Iter Advisors.",
       },
       breadcrumbs: {
@@ -3277,7 +3583,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "ia-et-automatisation-des-taches-repetitives-du-departement-finance": {
       meta: {
-        title: "IA y automatización en el departamento de Finanzas | Iter Advisors",
+        title: "IA y automatización en Finanzas | Iter Advisors",
         description: "Cómo la IA y la automatización están transformando las tareas repetitivas en los departamentos financieros. Análisis experto de Iter Advisors.",
       },
       breadcrumbs: {
@@ -3297,7 +3603,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "organiser-sa-direction-financiere": {
       meta: {
-        title: "Organizar su departamento financiero | Iter Advisors",
+        title: "Organizar el departamento financiero | Iter Advisors",
         description: "Cómo estructurar y organizar su departamento financiero para un rendimiento óptimo. Guía experta de Iter Advisors.",
       },
       breadcrumbs: {
@@ -3317,8 +3623,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "que-es-fractional-cfo": {
       meta: {
-        title: "¿Qué es un Fractional CFO? Guía Completa para Pymes y Startups | Iter Advisors",
-        description: "¿Qué es un Fractional CFO? Definición, misiones, ventajas y coste. Guía completa para pymes y startups que necesitan dirección financiera senior a tiempo parcial.",
+        title: "¿Qué es un Fractional CFO? Guía para Pymes | Iter Advisors",
+        description: "¿Qué es un Fractional CFO? Definición, misiones, ventajas y coste. Guía para pymes y startups que necesitan dirección financiera senior a tiempo parcial.",
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
@@ -3379,8 +3685,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // ─── FINAL-04: top 4 FR articles translated to ES ─────────────────
     "flux-de-tresorerie": {
       meta: {
-        title: "Flujo de Caja: Definición y Buenas Prácticas para Pymes | Iter Advisors",
-        description: "Domine el flujo de caja: definición, los 3 tipos de cash flow, ciclo de conversión de caja y herramientas para pymes y startups. Guía experta de Iter Advisors.",
+        title: "Flujo de Caja : Guía para Pymes | Iter Advisors",
+        description: "Flujo de caja: los 3 tipos de cash flow, ciclo de conversión y herramientas para pymes y startups. Guía experta de Iter Advisors, CFOs senior.",
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
@@ -3432,8 +3738,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "cout-daf-externalise-tarifs-prix-2026": {
       meta: {
-        title: "Coste del CFO Externalizado en 2026: Tarifas, TJM y ROI | Iter Advisors",
-        description: "¿Cuánto cuesta un CFO externalizado en 2026? TJM, suscripciones mensuales, comparación de paquetes y ROI. Ahorre un 50-70% vs un CFO interno. Diagnóstico gratuito.",
+        title: "Coste CFO Externalizado 2026 — Tarifas y ROI | Iter Advisors",
+        description: "¿Cuánto cuesta un CFO externalizado en 2026? TJM, retainer mensual y ROI. Ahorre 50–70% vs un CFO interno. Diagnóstico gratuito de Iter Advisors.",
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
@@ -3443,7 +3749,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "Coste del CFO Externalizado en 2026: TJM, Paquetes y ROI",
       publishedDate: "2026-05-12",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "CFO externalizado",
       htmlContent: `<p><strong>El coste es la primera pregunta que se hace cualquier fundador al considerar un CFO externalizado.</strong> Es justo — la dirección financiera es estratégica, y fichar un CFO a tiempo completo es una de las decisiones más caras que puede tomar una pyme. Esta guía da los números reales de 2026.</p>
 <h2 id="day-rate">El TJM: la unidad básica</h2>
@@ -3474,7 +3780,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "daf-externalise-vs-daf-salarie": {
       meta: {
-        title: "CFO Externalizado vs CFO Interno: Coste, Flexibilidad y ROI | Iter Advisors",
+        title: "CFO Externalizado vs Interno — Coste y ROI | Iter Advisors",
         description: "CFO externalizado vs CFO interno: comparativa de coste, flexibilidad, experiencia y ROI. ¿Qué modelo encaja con su pyme o startup en 2026?",
       },
       breadcrumbs: {
@@ -3485,7 +3791,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       h1: "CFO Externalizado vs CFO Interno: ¿Qué Modelo Gana en 2026?",
       publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
+      author: "Sébastien Doat",
       category: "CFO externalizado",
       htmlContent: `<p>Su negocio crece, los temas financieros se complican y se ha dado cuenta de que su contable y su CEO ya no pueden con todo. Necesita un CFO. La pregunta es: ¿fichaje a tiempo completo o <a href="/es/externalizacion-daf">CFO externalizado</a>?</p>
 <p>Esta guía desglosa los compromisos en coste, flexibilidad, expertise y ROI — y le da una respuesta clara según su etapa.</p>
@@ -3517,57 +3823,235 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "externalisation-comptable": {
       meta: {
-        title: "Externalización Contable para Startups y Pymes: Costes, Herramientas y Guía | Iter Advisors",
-        description: "Externalizar la contabilidad: 30-50% más barato que internamente, herramientas modernas (Pennylane, Sage) y un experto senior. Guía completa por Iter Advisors.",
+        title: "Externalización Contable: Guía Completa Pymes 2026 | Iter Advisors",
+        description: "Externalizar la contabilidad: 30-50% más barato, herramientas modernas (Pennylane, Sage), experto senior. Guía completa para startups y pymes por Iter Advisors.",
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
-        resourcesHref: "/es/recursos",
+        resourcesHref: "/es/ressources",
         blogLabel: "Blog",
-        blogHref: "/es/recursos/blog",
+        blogHref: "/es/ressources/blog",
       },
-      h1: "Externalizar la Contabilidad: Guía Completa para Startups y Pymes",
-      publishedDate: "2026-05-13",
+      h1: "Externalización Contable: Guía Práctica para Directivos de Pymes y Startups",
+      publishedDate: "2026-05-10",
       author: "Benjamin Ziza",
-      category: "Externalización",
-      htmlContent: `<p><strong>Externalizar la contabilidad</strong> es el primer paso hacia una función financiera profesional — y para startups y pymes, es también una reducción de coste del 30-50% con probablemente mejor expertise que un contable interno. Iter Advisors ha acompañado a 85+ empresas en esta transición. Esto es lo que aprendimos.</p>
-<h2 id="what">¿Qué cubre la externalización contable?</h2>
-<p>Externalizar significa confiar la contabilidad del día a día a un gabinete especializado: conciliación bancaria, contabilización de facturas, registro de nóminas, declaraciones de IVA, cierre mensual, cuentas anuales. Usted mantiene el control de la estrategia (el asiento del <a href="/es/externalizacion-daf">CFO</a>) y visibilidad mediante herramientas cloud — el gabinete maneja el motor operativo.</p>
-<p>La externalización puede ser total (todo se externaliza) o parcial (mantiene nóminas o contabilidad analítica internamente, externaliza el resto).</p>
-<h2 id="advantages">Las 5 ventajas</h2>
-<ol>
-<li><strong>Reducción de costes del 30-50%</strong> vs contratar un contable interno (45-65k€/año con todo incluido).</li>
-<li><strong>Expertise certificada</strong> — un contable certificado que sigue todos los cambios normativos por usted.</li>
-<li><strong>Herramientas modernas</strong> — Pennylane, Sage, Cegid Loop, Agicap. Datos en tiempo real, sin Excel.</li>
-<li><strong>Foco en su core</strong> — dedica sus horas al crecimiento, no a perseguir declaraciones de IVA.</li>
-<li><strong>Escalabilidad</strong> — ajusta el perímetro según crece, sin despidos ni nuevos fichajes.</li>
-</ol>
-<h2 id="vs-internal">Externalizado vs interno: cara a cara</h2>
+      category: "Guías prácticas",
+      // T7-bis (2026-06-07): full ES translation of the FR original (~18k chars).
+      // Replaces the previous ~3k char stub.
+      htmlContent: `<p><strong>Usted llevaba la contabilidad de su empresa personalmente. O quizás confiaba en un contable freelance amigo que trabaja en negro. Hoy la duda se instala: "¿Realmente debo externalizar mi contabilidad? ¿Qué voy a ganar? Y sobre todo, ¿a qué precio?"</strong></p>
+<p>La externalización contable es una de las decisiones que todo directivo de pyme o startup debe plantearse, generalmente alrededor de los 5 a 10 empleados. Hasta ese momento, hacerlo uno mismo o delegar en un colaborador informal basta. Pasado ese umbral, las obligaciones se vuelven complejas, el riesgo aumenta, y el tiempo invertido resulta demasiado costoso.</p>
+<p>Esta guía detalla todo lo que hay que saber sobre la <strong>externalización contable</strong>: por qué hacerlo, cómo evitar hacerlo mal, cuánto cuesta realmente, y sobre todo, cómo estructurar esta colaboración para sacarle el máximo provecho.</p>
+<hr>
+<h2 id="por-que-externalizar-la-contabilidad-las-razones-verdaderas">Por qué externalizar la contabilidad: las razones verdaderas</h2>
+<p>Muchos directivos piensan que la externalización contable es una cuestión de costes. Es un error. Los verdaderos beneficios van mucho más allá del precio.</p>
+<h3 id="1-no-tiene-tiempo">1. No tiene tiempo</h3>
+<p>La gestión contable está muy lejos de ser unas pocas horas al mes. Entre la recopilación de documentos, la clasificación de facturas, el mantenimiento del libro de compras, la conciliación bancaria, las declaraciones de IVA, la preparación del expediente para el asesor fiscal, se mira rápidamente entre 4 y 8 horas de trabajo por semana para una pyme de tamaño moderado.</p>
+<p>Su tiempo tiene un valor. Si dirige una empresa de 10 empleados, su hora vale como mínimo 80 a 150 euros. A ese tipo, externalizar la contabilidad por 2.000 a 3.500 euros mensuales equivale a comprar de 20 a 40 horas de su tiempo cada mes — tiempo que puede reinvertir en el crecimiento, los clientes, o la innovación de producto.</p>
+<h3 id="2-el-impacto-de-la-conformidad-normativa">2. El impacto de la conformidad normativa</h3>
+<p>La normativa contable y fiscal española es laberíntica. Las reglas sobre el IVA, las declaraciones a la Seguridad Social, las obligaciones de conservación, el respeto de los plazos de declaración cambian constantemente.</p>
+<p>Un olvido, un error de clasificación, una declaración fuera de plazo, y se arriesga a:</p>
+<ul>
+<li><strong>Sanciones tributarias</strong> que pueden representar del 20% al 40% del importe declarado</li>
+<li><strong>Recargos y sanciones</strong> que se disparan rápidamente: hasta el 80% sobre los derechos omitidos en caso de mala fe, 10% en caso de presentación tardía</li>
+<li><strong>Contenciosos administrativos</strong> largos y costosos de resolver</li>
+<li><strong>Una imagen empresarial deteriorada</strong> ante los banqueros, los inversores y los socios</li>
+</ul>
+<p>Externalizar a un verdadero profesional es comprar un seguro contra estos riesgos.</p>
+<h3 id="3-el-acceso-a-una-expertise-cualificada">3. El acceso a una expertise cualificada</h3>
+<p>Su gabinete contable externalizado no es solo un proveedor que introduce sus cifras. Es un experto que puede ayudarle a:</p>
+<ul>
+<li><strong>Optimizar su estructura fiscal</strong>: ¿conviene quedarse como autónomo? ¿Pasar a SLU? ¿Crear una SL? Cada estructura tiene implicaciones distintas</li>
+<li><strong>Pilotar su tesorería</strong>: comprender su ciclo de tesorería y anticipar las tensiones</li>
+<li><strong>Preparar las captaciones de fondos</strong>: un expediente contable limpio y auditable por un Gabinete de Asesoría Fiscal es uno de los primeros criterios que los inversores verificarán</li>
+<li><strong>Analizar la performance</strong>: ¿cuáles son mis márgenes reales? ¿A dónde van mis gastos? ¿Qué clientes son rentables?</li>
+</ul>
+<h3 id="4-la-transparencia-ante-las-partes-interesadas">4. La transparencia ante las partes interesadas</h3>
+<p>Si capta fondos o si tiene inversores, banqueros o incluso clientes exigentes, la calidad de su contabilidad se convierte en un activo competitivo. Unas cuentas actualizadas regularmente, auditadas por un tercero independiente, son una señal de seriedad y profesionalidad.</p>
+<hr>
+<h2 id="las-trampas-a-evitar-por-que-la-externalizacion-contable-fracasa">Las trampas a evitar: por qué la externalización contable fracasa</h2>
+<p>La externalización contable parece simple en teoría. En la práctica, muchas empresas la realizan mal. He aquí las trampas más habituales.</p>
+<h3 id="trampa-1-mala-organizacion-interna">Trampa 1: Mala organización interna</h3>
+<p>El proveedor contable más competente no puede hacer nada si los datos que recibe están mal organizados. Facturas perdidas, gastos personales mezclados con gastos profesionales, extractos bancarios sin explicaciones, justificantes ausentes — este caos genera horas de trabajo no facturadas o retrasos constantes.</p>
+<p><strong>Solución:</strong> Antes de externalizar, estructure su organización interna. Implante un proceso simple de recopilación de documentos, designe una persona responsable, utilice un software de facturación básico. Cuesta tiempo al principio pero amortiza muy rápido.</p>
+<h3 id="trampa-2-elegir-al-proveedor-equivocado">Trampa 2: Elegir al proveedor equivocado</h3>
+<p>No todos los gabinetes contables son iguales. Algunos siguen anclados en prácticas de los años 2000. Otros no entienden la realidad de las startups y pymes. Usted necesita:</p>
+<ul>
+<li>Un gabinete que domine su sector (SaaS, e-commerce, servicios, etc.)</li>
+<li>Un experto que utilice herramientas modernas y digitalizadas (Pennylane, Dext, etc.) — no Excel</li>
+<li>Una relación real: un interlocutor fijo, no una rotación constante de auditores</li>
+<li>Reactividad: sus preguntas reciben respuesta en 24-48h, no en dos semanas</li>
+</ul>
+<p><strong>Solución:</strong> Pida recomendaciones a otros directivos. Evalúe 3-4 gabinetes. Solicite referencias. Haga preguntas precisas sobre su enfoque. Verifique que comprenden su sector.</p>
+<h3 id="trampa-3-no-implantar-un-proceso-real">Trampa 3: No implantar un proceso real</h3>
+<p>Incluso con un buen proveedor, sin un proceso claro la relación se vuelve caótica. Los plazos se alargan, las facturas se acumulan, los documentos se extravían.</p>
+<p><strong>Solución:</strong> Documente el proceso de intercambio con su proveedor. Defina fechas límite: las facturas de compra deben llegar antes del día 10 del mes siguiente. Las transferencias bancarias deben estar justificadas. Una reunión mensual debe celebrarse para validar las cifras antes del cierre. Parece básico, pero es lo que marca la diferencia.</p>
+<h3 id="trampa-4-considerar-la-contabilidad-solo-como-una-obligacion-normativa">Trampa 4: Considerar la contabilidad solo como una obligación normativa</h3>
+<p>Muchos directivos consideran la contabilidad como una carga administrativa, solo para cumplir con las obligaciones. Grave error. Sus cuentas son una mina de información sobre la salud de su empresa.</p>
+<p><strong>Solución:</strong> Solicite a su proveedor un reporting mensual: P&L, tesorería, análisis de gastos. Dedique una hora cada mes a comprender estas cifras. Es la mejor inversión que puede hacer para pilotar su crecimiento.</p>
+<hr>
+<h2 id="como-tener-exito-en-su-externalizacion-contable">Cómo tener éxito en su externalización contable</h2>
+<p>He aquí el plan de acción para convertir la externalización contable en un verdadero activo para su empresa.</p>
+<h3 id="etapa-1-prepare-su-organizacion-interna">Etapa 1: Prepare su organización interna</h3>
+<p>Antes incluso de buscar un proveedor, estructure su contabilidad interna. Es la inversión fundamental.</p>
+<ul>
+<li>Elija un software de facturación cloud (Pennylane, Stripe Billing, Invoicely)</li>
+<li>Implante un procedimiento de clasificación de documentos</li>
+<li>Designe una persona responsable de la recopilación de justificantes</li>
+<li>Cree un drive compartido o espacio de almacenamiento para centralizar los documentos</li>
+</ul>
+<h3 id="etapa-2-evalue-sus-necesidades-reales">Etapa 2: Evalúe sus necesidades reales</h3>
+<p>La externalización contable no es one-size-fits-all. Según su tamaño, su complejidad y su sector, no necesitará el mismo nivel de servicio.</p>
+<p>Pregúntese:</p>
+<ul>
+<li>¿Cuántas facturas de clientes al mes? (&lt; 50, 50-200, &gt; 200)</li>
+<li>¿Cuántas facturas de proveedores al mes? (&lt; 50, 50-200, &gt; 200)</li>
+<li>¿Debo gestionar IVA complicado (intracomunitario, exportación, etc.) o es sencillo?</li>
+<li>¿Necesito una auditoría completa o solo la teneduría contable?</li>
+<li>¿Debo producir informes financieros regularmente para inversores o banqueros?</li>
+</ul>
+<h3 id="etapa-3-elija-al-proveedor-adecuado">Etapa 3: Elija al proveedor adecuado</h3>
+<p>No elija a su contable únicamente por el precio. Los criterios importantes:</p>
+<ul>
+<li><strong>Competencia en su sector</strong>: un gabinete que trabaja con SaaS tendrá una mejor comprensión que un generalista</li>
+<li><strong>Calidad de la relación</strong>: un interlocutor fijo, una verdadera proximidad, no un número de expediente</li>
+<li><strong>Modernidad de las herramientas</strong>: software cloud, automatizaciones, reporting en línea</li>
+<li><strong>Reactividad</strong>: sus preguntas reciben respuesta en 24-48h</li>
+<li><strong>Flexibilidad de la tarificación</strong>: pago por acto, forfait, o forfait modulable según la carga</li>
+</ul>
+<h3 id="etapa-4-documente-el-proceso-con-su-proveedor">Etapa 4: Documente el proceso con su proveedor</h3>
+<p>Firme un contrato que precise:</p>
+<ul>
+<li><strong>Perímetro</strong>: teneduría contable, declaraciones fiscales, IVA, nóminas (si aplica), reporting?</li>
+<li><strong>Plazos</strong>: ¿en qué fecha deben llegar los documentos? ¿Cuándo se cerrarán las cuentas?</li>
+<li><strong>Tarificación</strong>: forfait mensual, facturación por acto, o modelo híbrido?</li>
+<li><strong>Puntos de sincronización</strong>: una reunión mensual para validar las cifras y discutir los retos</li>
+<li><strong>Reporting</strong>: qué reporting recibirá (P&L, balance, estado de flujos de tesorería) y con qué frecuencia</li>
+</ul>
+<h3 id="etapa-5-pilote-su-contabilidad">Etapa 5: Pilote su contabilidad</h3>
+<p>Una vez implantado el proceso, pilote activamente su contabilidad. No deje que su proveedor decida solo.</p>
+<ul>
+<li>Reciba y valide las facturas de clientes y proveedores cada mes</li>
+<li>Participe en el cierre mensual con su proveedor</li>
+<li>Comente las desviaciones en su P&L: ¿estaba prevista esta partida? ¿Corresponde este ingreso a nuestras previsiones?</li>
+<li>Utilice las cifras para pilotar su empresa, no solo para cumplir las obligaciones legales</li>
+</ul>
+<hr>
+<h2 id="cuanto-cuesta-la-externalizacion-contable-tarifas-y-modelos-de-facturacion">¿Cuánto cuesta la externalización contable? Tarifas y modelos de facturación</h2>
+<p>Los precios varían enormemente según la complejidad y la región. He aquí los órdenes de magnitud 2026.</p>
+<h3 id="modelo-1-forfait-mensual">Modelo 1: Forfait mensual</h3>
+<p>El forfait mensual es el más común para las micropymes y pymes. Paga un importe fijo cada mes, sea cual sea el volumen de transacciones.</p>
+<ul>
+<li><strong>Teneduría contable simple</strong> (&lt; 100 transacciones/mes, poca complejidad): 400 a 800 EUR/mes</li>
+<li><strong>Contabilidad estándar</strong> (100-500 transacciones/mes, IVA, algunas declaraciones): 800 a 1.500 EUR/mes</li>
+<li><strong>Contabilidad compleja</strong> (&gt; 500 transacciones/mes, IVA intracomunitario, nóminas, varias estructuras): 1.500 a 3.500 EUR/mes</li>
+</ul>
+<h3 id="modelo-2-facturacion-por-acto">Modelo 2: Facturación por acto</h3>
+<p>Algunos gabinetes facturan por acto: un precio por factura, por declaración, etc. Este modelo puede ser interesante para un volumen muy bajo (&lt; 30 transacciones/mes).</p>
+<ul>
+<li>Por factura entrante: 5 a 15 EUR</li>
+<li>Por factura saliente: 8 a 20 EUR</li>
+<li>Cierre mensual: 150 a 300 EUR</li>
+<li>Declaración fiscal/IVA: 50 a 200 EUR</li>
+</ul>
+<h3 id="modelo-3-abonos-mas-variable">Modelo 3: Abono + variable</h3>
+<p>El modelo híbrido combina un forfait para los servicios de base + una facturación variable para los servicios adicionales.</p>
+<p><strong>Ejemplo:</strong> Forfait 1.000 EUR/mes para la teneduría contable básica, + 15 EUR por factura más allá de 200 facturas/mes.</p>
+<hr>
+<h2 id="cuando-pasar-a-la-externalizacion-contable">¿Cuándo pasar a la externalización contable?</h2>
+<p>Se hace la pregunta: "¿Estoy en el momento adecuado para externalizar?" He aquí las señales.</p>
+<h3 id="senales-positivas-puede-externalizar">Señales positivas: puede externalizar</h3>
+<ul>
+<li>✅ <strong>Tiene entre 5 y 100 empleados</strong>: el tamaño crítico donde la externalización resulta rentable</li>
+<li>✅ <strong>Tiene más de 50 transacciones contables al mes</strong>: más allá, hacerlo uno mismo consume demasiado tiempo</li>
+<li>✅ <strong>Su tesorería se complica</strong>: varias cuentas bancarias, transferencias regulares, necesidad de una <a href="/es/services/prevision-tesoreria">previsión de tesorería</a></li>
+<li>✅ <strong>Tiene empleados</strong>: las nóminas se convierten en una obligación compleja</li>
+<li>✅ <strong>Prepara una captación de fondos</strong>: un expediente contable limpio es un activo mayor</li>
+<li>✅ <strong>No le gusta hacer la contabilidad</strong>: es la señal más fuerte. La contabilidad debe ser una herramienta, no una carga.</li>
+</ul>
+<h3 id="senales-negativas-espere-un-poco">Señales negativas: espere un poco</h3>
+<ul>
+<li>❌ <strong>Está en fase pre-revenue</strong>: espere a tener ingresos regulares antes de externalizar</li>
+<li>❌ <strong>Tiene muy pocas transacciones</strong> (&lt; 20/mes): puede hacerlo usted mismo en unas horas</li>
+<li>❌ <strong>Descubre que el gabinete no le comprende</strong>: encuentre primero al partner adecuado</li>
+<li>❌ <strong>Su estructura jurídica es complicada</strong>: aclarela primero, luego externalice</li>
+</ul>
+<hr>
+<h2 id="externalizacion-contable-vs-cfo-externalizado-cual-es-la-diferencia">Externalización contable vs CFO externalizado: ¿cuál es la diferencia?</h2>
+<p>Muchos directivos confunden la externalización de la teneduría contable (gabinete contable) y la externalización de la <a href="/es/services/gestion-financiera-externalizada">dirección financiera</a> (<a href="/es/externalizacion-daf">nuestro gabinete de consultoría financiera</a>). Son dos servicios complementarios, no sinónimos.</p>
 <table>
-<thead><tr><th>Criterio</th><th>Externalizado</th><th>Interno</th></tr></thead>
+<thead>
+<tr>
+<th></th>
+<th>Gabinete contable / Teneduría externalizada</th>
+<th>CFO externalizado</th>
+</tr>
+</thead>
 <tbody>
-<tr><td>Coste anual</td><td>10.000-30.000 €</td><td>45.000-65.000 € (cargas in)</td></tr>
-<tr><td>Expertise</td><td>Multi-cliente, multi-sector</td><td>Single-company</td></tr>
-<tr><td>Herramientas</td><td>Cloud moderno (Pennylane &amp; co)</td><td>Variable</td></tr>
-<tr><td>Disponibilidad</td><td>Tickets, email, teléfono</td><td>En la oficina</td></tr>
-<tr><td>Escalabilidad</td><td>Cambiar de paquete</td><td>Reclutar / despedir</td></tr>
+<tr>
+<td><strong>Rol</strong></td>
+<td>Introducir y clasificar los documentos contables, preparar las declaraciones, asegurar la conformidad</td>
+<td>Pilotar la estrategia financiera, construir previsiones, apoyo en la toma de decisiones</td>
+</tr>
+<tr>
+<td><strong>Frecuencia de intervención</strong></td>
+<td>Puntual o regular pero limitada</td>
+<td>Regular y estratégica</td>
+</tr>
+<tr>
+<td><strong>Interacción con el directivo</strong></td>
+<td>Sobre todo administrativa (suministro de documentos)</td>
+<td>Estratégica (participación en las decisiones importantes)</td>
+</tr>
+<tr>
+<td><strong>Coste típico</strong></td>
+<td>400 a 2.000 EUR/mes</td>
+<td>2.000 a 8.000 EUR/mes</td>
+</tr>
+<tr>
+<td><strong>Mejor para</strong></td>
+<td>Conformidad, calidad de cuentas, audit trail</td>
+<td>Crecimiento, captación de fondos, optimización financiera</td>
+</tr>
 </tbody>
 </table>
-<h2 id="when">¿Cuándo externalizar?</h2>
+<p><strong>En la práctica:</strong> La mayoría de startups y pymes empiezan por externalizar la contabilidad (gabinete contable), luego añaden un <a href="/es/services/gestion-financiera-externalizada">servicio de dirección financiera externalizada</a> cuando entran en una fase de crecimiento rápido o de captación de fondos.</p>
+<p>Idealmente, estos dos servicios trabajan juntos: el CFO da la estrategia, el gabinete contable asegura la calidad de las cuentas.</p>
+<hr>
+<h2 id="conclusion-la-externalizacion-contable-no-es-un-lujo-es-una-necesidad">Conclusión: La externalización contable no es un lujo, es una necesidad</h2>
+<p>Resumamos los puntos clave:</p>
 <ul>
-<li><strong>&lt; 10 empleados</strong> — externalización total casi siempre es la opción correcta.</li>
-<li><strong>10-50 empleados</strong> — contabilidad externalizada + CFO a tiempo compartido es el modelo dominante.</li>
-<li><strong>50+ empleados</strong> — contable interno + <a href="/es/externalizacion-daf">CFO externalizado</a> suele ganar.</li>
+<li>🎯 <strong>Externalizar la contabilidad libera tiempo</strong>: en promedio, 4-8 horas por semana que puede reinvertir en el crecimiento</li>
+<li>🛡️ <strong>Le protege contra los riesgos de conformidad</strong>: sanciones, recargos, contenciosos</li>
+<li>💡 <strong>Le da acceso a una expertise</strong>: optimización fiscal, pilotaje, preparación de captación de fondos</li>
+<li>💰 <strong>Cuesta menos de lo que piensa</strong>: 800 a 2.000 EUR/mes en promedio para una pyme, no es nada comparado con el coste de un error contable</li>
+<li>🚀 <strong>Profesionaliza su empresa</strong>: un activo cuando capta fondos o trabaja con grandes clientes</li>
 </ul>
-<h2 id="tools">Las herramientas recomendadas en 2026</h2>
-<ul>
-<li><strong>Pennylane</strong> — mejor UX para startups SaaS, visibilidad en tiempo real, integraciones profundas.</li>
-<li><strong>Sage</strong> — fuerte en industria, negocios con inventario complejo.</li>
-<li><strong>Cegid Loop</strong> — retail y operaciones multi-establecimiento.</li>
-</ul>
-<h2 id="cta">¿Listo para externalizar su contabilidad?</h2>
+<p>Si dirige una pyme o una startup de 5 a 50 empleados, la externalización contable ya no debería ser una pregunta. Debería ser una práctica estándar, igual que probablemente ha externalizado su infraestructura IT (cloud en lugar de servidores on-prem).</p>
+<p>La verdadera pregunta no es "¿debo externalizar?", sino "¿cómo elegir al partner adecuado?". Este artículo le da todos los criterios de selección. Ahora, depende de usted actuar.</p>
 <p>Descubra nuestro <a href="/es/services/externalizar-contabilidad">servicio de externalización contable</a> o <a href="/es/contact">reserve un diagnóstico gratuito de 30 minutos</a> con uno de nuestros asesores senior.</p>`,
       content: [],
+    },
+    // T7 (2026-06-07): ES translation of la-modernisation-du-role-de-cfo
+    // — same FR `content: []` array shape as the FR original.
+    "la-modernisation-du-role-de-cfo": {
+      meta: {
+        title: "Modernización del rol de CFO en 2026 | Iter Advisors",
+        description: "Cómo evoluciona el rol del CFO con la digitalización y la IA. Descubra las nuevas competencias y misiones del director financiero moderno.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Recursos",
+        resourcesHref: "/es/ressources",
+        blogLabel: "Blog",
+        blogHref: "/es/ressources/blog",
+      },
+      h1: "La modernización del rol de CFO",
+      content: [
+        "El rol del CFO (Chief Financial Officer) ha evolucionado considerablemente en los últimos años. Antes limitado a la supervisión contable y al reporting, el director financiero es hoy un verdadero socio estratégico en el corazón de las decisiones de la empresa.",
+        "La transformación digital es el primer motor de esta evolución. La automatización de tareas repetitivas (asiento contable, conciliación bancaria, reporting) libera tiempo para misiones de mayor valor añadido: análisis estratégico, apoyo a la toma de decisiones, gestión de riesgos.",
+        "La inteligencia artificial abre nuevas perspectivas para la función financiera. Las herramientas de predicción basadas en machine learning permiten anticipar las evoluciones de tesorería, optimizar los precios y detectar anomalías contables con una precisión inédita.",
+        "El CFO moderno también debe dominar los temas ESG (Medio ambiente, Social, Gobernanza) que ocupan un lugar creciente en la estrategia empresarial. Las finanzas sostenibles, el reporting extra-financiero y el impact investing se convierten en competencias imprescindibles.",
+        "Finalmente, la dimensión humana sigue siendo central. El CFO debe saber comunicar con las distintas partes interesadas (directivos, inversores, equipos operativos) y traducir los datos financieros en recomendaciones accionables. El liderazgo y la visión estratégica son, más que nunca, cualidades esenciales.",
+      ],
     },
   },
 };

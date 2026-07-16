@@ -4,11 +4,20 @@ import { getBlogArticles, getCmsNavigation } from "@/lib/strapi";
 import { buildMetadata } from "@/lib/metadata";
 import { getStaticBlogListing } from "@/lib/blog-listing";
 
+// SEO-14 (2026-07-13) — localizedPaths ajouté. Sans ça, hreflang par
+// défaut émet /es/ressources/blog qui redirect 308 vers /es/recursos/blog
+// (le blog ES utilise /recursos, pas /ressources). Google traite les
+// hreflang vers URLs 3xx comme signal négatif.
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Blog Finance & DAF externalisé — Conseils & Guides | Iter Advisors",
+  title: "Blog finance d'entreprise & DAF externalisé | Iter Advisors",
   description: "Blog finance et DAF externalisé : articles, guides et tendances. Stratégie financière, levée de fonds, outils. Conseils d'experts pour PME.",
   path: "/ressources/blog",
+  localizedPaths: {
+    fr: "/ressources/blog",
+    en: "/ressources/blog",
+    es: "/recursos/blog",
+  },
 });
 
 export default async function Page() {
