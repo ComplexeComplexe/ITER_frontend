@@ -461,7 +461,7 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
     },
     "daf-externalise-vs-daf-salarie": {
       meta: {
-        title: "DAF externalisé vs salarié : comparatif 2026 | Iter Advisors",
+        title: "CFO à Temps Partagé vs DAF Salarié : Comparatif 2026 | Iter Advisors",
         description: "DAF externalisé ou salarié ? Comparatif complet des coûts, avantages et cas d'usage pour choisir la meilleure option de direction financière pour votre PME.",
       },
       breadcrumbs: {
@@ -474,7 +474,7 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
       publishedDate: "2026-03-28",
       author: "Benjamin Ziza",
       category: "",
-      htmlContent: `<p>Votre entreprise grandit, les enjeux financiers se complexifient, et vous réalisez que la gestion financière ne peut plus reposer uniquement sur un comptable ou sur le dirigeant lui-même. Il vous faut un Directeur Administratif et Financier (DAF). Mais une question se pose immédiatement : faut-il recruter un DAF salarié à temps plein ou faire appel à un <a href="/daf-externalise">DAF externalisé</a> ?</p>
+      htmlContent: `<p>Votre entreprise grandit, les enjeux financiers se complexifient, et vous réalisez que la gestion financière ne peut plus reposer uniquement sur un comptable ou sur le dirigeant lui-même. Il vous faut un Directeur Administratif et Financier (DAF). Mais une question se pose immédiatement : faut-il recruter un DAF salarié à temps plein ou faire appel à une <a href="/daf-externalise">direction financière externalisée</a> ?</p>
 <p>Ce dilemme est l'un des plus fréquents pour les PME et startups en croissance. D'un côté, le réflexe naturel pousse vers l'embauche d'un cadre en interne. De l'autre, l'externalisation de la direction financière offre une flexibilité et un rapport coût-efficacité difficiles à ignorer.</p>
 <p>Dans cet article, nous présentons les deux options de manière factuelle et détaillée, avec leurs avantages, leurs limites et leurs coûts réels. L'objectif n'est pas de promouvoir une solution plutôt qu'une autre, mais de vous donner toutes les clés pour faire le choix le plus adapté à votre situation.</p>
 <h2 id="daf-salarie-profil-missions-et-couts">DAF salarié : profil, missions et coûts</h2>
@@ -712,7 +712,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p>Si vous avez décidé de recruter un DAF salarié mais que le processus prend du temps, un DAF externalisé assure l'intérim. Il maintient la continuité de la fonction finance et peut même participer au recrutement de son successeur en apportant sa vision du profil idéal.</p>
 <h3 id="besoin-de-multi-expertise-daf-drh-combine">Besoin de multi-expertise : DAF + DRH combiné</h3>
 <p>Certaines PME ont simultanément besoin d'un renfort en direction financière et en direction des ressources humaines. Plutôt que de recruter deux cadres dirigeants, elles peuvent externaliser les deux fonctions.</p>
-<p>C'est l'un des avantages distinctifs d'un cabinet comme Iter Advisors, qui propose à la fois des <a href="/daf-externalise">DAF externalisés</a> et des <a href="/drh-externalise">DRH externalisés</a>. Cette double compétence permet une approche cohérente des enjeux de l'entreprise, là où un DAF salarié et un DRH salarié travailleraient potentiellement en silo.</p>
+<p>C'est l'un des avantages distinctifs d'un cabinet comme Iter Advisors, qui propose à la fois des <a href="/daf-externalise">CFOs à temps partagé</a> et des <a href="/drh-externalise">DRH externalisés</a>. Cette double compétence permet une approche cohérente des enjeux de l'entreprise, là où un DAF salarié et un DRH salarié travailleraient potentiellement en silo.</p>
 <p>Un dirigeant de PME peut ainsi disposer d'un binôme DAF + DRH externalisé pour un budget mensuel combiné souvent inférieur au coût d'un seul DAF salarié à temps plein.</p>
 <h2 id="la-solution-hybride-commencer-externalise-internaliser-ensuite">La solution hybride : commencer externalisé, internaliser ensuite</h2>
 <p>La question "DAF externalisé vs DAF salarié" n'est pas forcément un choix définitif. De plus en plus d'entreprises adoptent une approche progressive qui combine les deux modèles.</p>
@@ -1901,7 +1901,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "daf-externalise-vs-expert-comptable": {
       meta: {
-        title: "DAF externalisé vs Expert-Comptable : quelle différence ? | Iter Advisors",
+        title: "Directeur Financier Externalisé vs Expert-Comptable : Comparatif | Iter Advisors",
         description: "Expert-comptable et DAF sont complémentaires, pas substituables. Tableau comparatif des missions, périmètres, et quand chacun devient indispensable.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -3262,9 +3262,9 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
-        resourcesHref: "/es/ressources",
+        resourcesHref: "/es/recursos",
         blogLabel: "Blog",
-        blogHref: "/es/ressources/blog",
+        blogHref: "/es/recursos/blog",
       },
       h1: "Las herramientas tecnológicas esenciales para las finanzas",
       content: [
@@ -3282,9 +3282,9 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
-        resourcesHref: "/es/ressources",
+        resourcesHref: "/es/recursos",
         blogLabel: "Blog",
-        blogHref: "/es/ressources/blog",
+        blogHref: "/es/recursos/blog",
       },
       h1: "IA y automatización de tareas repetitivas en el departamento de Finanzas",
       content: [
@@ -3302,9 +3302,9 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
-        resourcesHref: "/es/ressources",
+        resourcesHref: "/es/recursos",
         blogLabel: "Blog",
-        blogHref: "/es/ressources/blog",
+        blogHref: "/es/recursos/blog",
       },
       h1: "Organizar su departamento financiero",
       content: [
