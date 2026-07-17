@@ -18,11 +18,11 @@ const basePath = "/en/services";
 
 /* ── Fallback titles for EN services ── */
 const fallbackTitles: Record<ServicePageSlug, string> = {
-  "previsionnel-tresorerie": "Cash Flow Forecast | Iter Advisors",
-  "gestion-financiere-externalisee": "Outsourced Financial Management | Iter Advisors",
-  "accompagnement-levee-de-fond": "Fundraising Support | Iter Advisors",
-  "comptabilite-externalisation": "Outsource Your Accounting | Iter Advisors",
-  "controle-de-gestion-externalise": "Outsourced Management Control | Iter Advisors",
+  "previsionnel-tresorerie": "Cash Flow Forecast in 2026 | Iter Advisors",
+  "gestion-financiere-externalisee": "Outsourced Financial Management in 2026 | Iter Advisors",
+  "accompagnement-levee-de-fond": "Fundraising Support in 2026 | Iter Advisors",
+  "comptabilite-externalisation": "Outsource Your Accounting in 2026 | Iter Advisors",
+  "controle-de-gestion-externalise": "Outsourced Management Control in 2026 | Iter Advisors",
 };
 
 /* ── Fallback descriptions for EN services ── */

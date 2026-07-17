@@ -108,7 +108,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       author: "Sébastien Doat",
       category: "",
       htmlContent: `<p><strong>Le cout est la premiere question que se posent les dirigeants lorsqu'ils envisagent de faire appel a un DAF externalise.</strong> Et c'est logique : la direction financiere est un poste strategique, mais recruter un directeur administratif et financier a temps plein represente un investissement considerable -- souvent disproportionne pour une PME ou une startup en croissance.</p>
-<p>En 2026, le marche du <a href="https://iteradvisors.com/daf-externalise">DAF externalise</a> a profondement muri en France. Selon les donnees de <a href="https://www.bpifrance.fr/">Bpifrance</a>, plus de 60 % des PME francaises de moins de 50 salaries n'ont pas de directeur financier dedie. Pourtant, ces memes entreprises traversent des phases critiques -- levees de fonds, structuration financiere, croissance rapide -- ou l'absence d'expertise financiere senior coute bien plus cher que le prix d'un DAF externalise.</p>
+<p>En 2026, le marché du <a href="/daf-externalise">DAF externalisé</a> a profondément muri en France. Selon les donnees de <a href="https://www.bpifrance.fr/">Bpifrance</a>, plus de 60 % des PME francaises de moins de 50 salaries n'ont pas de directeur financier dedie. Pourtant, ces memes entreprises traversent des phases critiques -- levees de fonds, structuration financiere, croissance rapide -- ou l'absence d'expertise financiere senior coute bien plus cher que le prix d'un DAF externalise.</p>
 <p>Alors, <strong>combien coute un DAF externalise en 2026 ?</strong> Quels sont les tarifs pratiques, les formules disponibles, et surtout, quel retour sur investissement attendre ? Ce guide detaille repond a toutes ces questions avec des chiffres concrets et des grilles tarifaires actualisees. Pour une perspective ciblee startups VC-backed, voir aussi notre offre <a href="/jobs/fractional-cfo-startups">fractional CFO France</a>.</p>
 <hr>
 <h2 id="combien-coute-un-daf-externalise-les-fourchettes-de-prix-en-2026">Combien coute un DAF externalise ? Les fourchettes de prix en 2026</h2>
@@ -454,8 +454,8 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
 <p>La vraie question n'est pas "combien coute un DAF externalise ?", mais plutot <strong>"combien vous coute l'absence d'un directeur financier competent ?"</strong></p>
 <hr>
 <p><strong>Pret a structurer votre direction financiere sans recruter a temps plein ?</strong></p>
-<p><a href="https://iteradvisors.com/daf-externalise">Iter Advisors</a> accompagne les startups et PME avec des DAF externalises seniors, a Paris, Barcelone et partout en Europe.</p>
-<p><strong><a href="https://iteradvisors.com/contact">Demandez votre diagnostic financier gratuit -&gt;</a></strong></p>
+<p><a href="/daf-externalise">Nos formules de DAF externalisé</a> accompagnent les startups et PME avec des DAF seniors, à Paris, Barcelone et partout en Europe.</p>
+<p><strong><a href="/contact">Demandez votre diagnostic financier gratuit →</a></strong></p>
 <p><em>Un echange de 30 minutes pour evaluer vos besoins, estimer le budget adapte et definir les priorites de votre direction financiere.</em></p>`,
       content: [],
     },
@@ -2154,7 +2154,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p><strong>Q : Quel est le budget minimum pour un stack financier opérationnel ?</strong><br>R : 500 € à 800 € par mois pour une startup de 10-15 salariés (Pennylane Essential + Agicap Lite + Pleo + PayFit Essential).</p>
 <p><strong>Q : Faut-il changer de stack en passant de la Series A à la Series B ?</strong><br>R : Les mêmes outils conviennent généralement jusqu'à 80-100 salariés. Au-delà, une migration vers des solutions plus robustes (Sage, Kyriba pour la trésorerie) peut être envisagée.</p>
 <p><strong>Q : Combien de temps prend le déploiement du stack ?</strong><br>R : 2 à 4 semaines pour l'ensemble du stack. Pennylane et Qonto se déploient en 1 jour. Spendesk et PayFit en 1 semaine. Agicap en 2 semaines.</p>
-<p>→ <a href="/ressources/outils"><strong>Voir notre comparatif complet des outils</strong></a></p>`,
+<p>→ <a href="/ressources/outils"><strong>Voir notre comparatif complet des outils</strong></a></p>
+<p>Le choix et le déploiement des outils font partie des missions d'un <a href="/daf-externalise">DAF externalisé qui choisit les outils</a> pour votre stack finance.</p>`,
       content: [],
     },
     // Pilier 3 — Levée de Fonds & M&A (3 articles)
@@ -2327,7 +2328,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <li>Conformité réglementaire (RGPD, licences)</li>
 <li>Engagements des fondateurs (vesting, clauses de non-concurrence)</li>
 </ul>
-<p>Notre conseil : anticipez la due diligence. Préparez un « dd package » avec toutes les réponses aux questions classiques. <a href="/contact">Préparer ma due diligence avec un DAF</a>.</p>`,
+<p>Notre conseil : anticipez la due diligence. Préparez un « dd package » avec toutes les réponses aux questions classiques. Un <a href="/daf-externalise">DAF externalisé pour lever des fonds</a> peut structurer ce package en quelques semaines. <a href="/contact">Préparer ma due diligence avec un DAF</a>.</p>`,
       content: [],
     },
     // Pilier 4 — Gestion Financière (3 articles)
@@ -2455,6 +2456,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <li>Augmentation des revenus : hausse de prix, upsell clients existants</li>
 <li>Bridge round : tour d'amorçage auprès des investisseurs existants</li>
 </ol>
+<p>Un <a href="/daf-externalise">DAF externalisé anticipe le cash burn</a> et construit votre forecast à 12 mois.</p>
 <p><a href="/contact">Construire mon forecast avec un DAF</a></p>`,
       content: [],
     },
@@ -2664,6 +2666,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p><strong>Q : À quelle fréquence faut-il les mettre à jour ?</strong><br>R : Le MRR, le burn rate, et le runway : hebdomadairement. Le CAC, le churn, et la marge brute : mensuellement. Le LTV/CAC, le NRR, et la Rule of 40 : trimestriellement.</p>
 <p><strong>Q : Quel outil pour créer un tableau de bord ?</strong><br>R : Google Sheets suffit pour démarrer. Finthesis ou Google Data Studio conviennent pour des dashboards plus sophistiqués.</p>
 <p><strong>Q : La Rule of 40 s'applique-t-elle à toutes les startups ?</strong><br>R : Non. Elle est principalement pertinente pour les SaaS B2B matures (Series B+). En phase seed, le focus doit être sur le MRR et le CAC.</p>
+<p>Un <a href="/daf-externalise">DAF externalisé construit le reporting</a> et met en place ces 12 KPIs pour votre équipe.</p>
 <p>→ <a href="/contact"><strong>Mettre en place mon tableau de bord avec un DAF</strong></a></p>`,
       content: [],
     },

@@ -198,7 +198,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         // en pos 18 sur 3 441 impressions sur "daf de transition" (0
         // conversion). Ajout de la variante lexicale pour capter aussi
         // "management de transition finance" recherchée par les DRH/CEO.
-        title: "DAF de transition & management de transition finance | Iter Advisors",
+        title: "DAF de transition en 2026 : urgence et flexibilité | Iter Advisors",
         description:
           "DAF de transition & management de transition finance : intervention à temps plein en 48-72 h pour vacance de poste, crise de trésorerie, restructuration ou levée. TJM 800-1 500 € HT.",
       },
@@ -420,7 +420,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     secteurs: {
       meta: {
-        title: "DAF Externalisé par Secteur d'Activité | Iter Advisors",
+        title: "DAF externalisé par secteur en 2026 | Iter Advisors",
         description:
           "DAF externalisé spécialisé par secteur (SaaS, e-commerce, industrie, fintech, santé). Notre expertise sectorielle adaptée à votre métier.",
       },

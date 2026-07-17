@@ -24,6 +24,7 @@ export interface ResourcesContent {
   intro: string;
   categories: ResourceCategory[];
   discover: string;
+  faq?: Array<{ question: string; answer: string }>;
 }
 
 export const resourcesContent: Record<Locale, ResourcesContent> = {
@@ -204,6 +205,20 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
       },
     ],
     discover: "Discover",
+    faq: [
+      {
+        question: "What is a fractional CFO?",
+        answer: "A fractional CFO is a senior finance director who splits their time between several companies on a recurring basis (2 to 8 days per month). Unlike a full-time CFO (€100k–€180k/year in total cost), a fractional CFO costs €2,000–€7,000/month — giving you C-suite financial expertise without the full-time salary. At Iter Advisors, our fractional CFOs cover reporting, cash flow management, fundraising preparation, and financial strategy for startups and SMEs across France, Spain, and Belgium.",
+      },
+      {
+        question: "How do I know if I need a fractional CFO?",
+        answer: "Five signals that it's time: (1) your revenue exceeds €500k and spreadsheets no longer cut it; (2) you are preparing a fundraise (Seed to Series B); (3) your full-time CFO has left and you need an immediate replacement; (4) you are expanding internationally and need local expertise; (5) your board or investors are asking for monthly reporting you can't produce. Most of our clients have 10–200 employees and need between 2 and 6 days of CFO time per month.",
+      },
+      {
+        question: "What resources does Iter Advisors offer for free?",
+        answer: "All the guides, templates, and analyses on this page are free. You will find: financial dashboard templates for startups and SMEs, due diligence checklists for fundraising, CFO cost benchmarks and pricing guides, cash flow models, SaaS KPI frameworks, and international tax comparisons (France vs Spain). Our blog is updated every month with articles written by practising CFOs. No email required.",
+      },
+    ],
   },
   es: {
     meta: {
@@ -214,7 +229,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
     breadcrumbLabel: "Recursos",
     h1: "Recursos",
     intro:
-      "Consulte todos los contenidos creados por nuestros CFOs: artículos, fichas temáticas, testimonios, plantillas descargables y mucho más. Nuestro objetivo: darle las claves para gestionar su crecimiento financiero.",
+      "Consulte todos los contenidos creados por nuestros CFOs: artículos, fichas temáticas, testimonios, plantillas descargables y mucho más. Nuestro objetivo: darle las claves para gestionar su crecimiento financiero y tomar decisiones informadas en cada etapa del desarrollo de su empresa. Nuestra biblioteca cubre el DAF externalizado, la gestión financiera, las rondas de inversión, la contabilidad, el flujo de tesorería, la fusiones y adquisiciones, la externalización de RRHH y las herramientas que utilizan los equipos financieros modernos. Tanto si está preparando una ronda de inversión, restructurando su función financiera o comparando precios de DAF externalizados, nuestros recursos se basan en la experiencia real con clientes en España, Francia y Bélgica. Cada guía está redactada por un CFO en ejercicio, revisada para garantizar su exactitud y actualizada cuando evolucionan las normativas.",
     categories: [
       {
         heading: "Casos prácticos",
@@ -293,6 +308,20 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
       },
     ],
     discover: "Descubra",
+    faq: [
+      {
+        question: "¿Qué es un DAF externalizado?",
+        answer: "Un DAF externalizado (Director Administrativo y Financiero externalizado) es un director financiero sénior que dedica parte de su tiempo a varias empresas de forma recurrente (2 a 8 días al mes). A diferencia de un DAF interno (100.000–150.000 €/año en coste total), un DAF externalizado cuesta entre 2.000 y 7.000 €/mes. En Iter Advisors, nuestros DAFs externalizados cubren el reporting, la gestión de tesorería, la preparación de rondas de inversión y la estrategia financiera para startups y PYMEs en España, Francia y Bélgica.",
+      },
+      {
+        question: "¿Cuándo necesito un DAF externalizado?",
+        answer: "Cinco señales que indican que ha llegado el momento: (1) su facturación supera los 500.000 € y las hojas de cálculo ya no son suficientes; (2) está preparando una ronda de inversión (Seed a Series B); (3) su DAF interno se ha ido y necesita un sustituto inmediato; (4) se está expandiendo internacionalmente y necesita experiencia local; (5) su consejo o inversores le piden un reporting mensual que no puede proporcionar. La mayoría de nuestros clientes tienen entre 10 y 200 empleados.",
+      },
+      {
+        question: "¿Son gratuitos los recursos de Iter Advisors?",
+        answer: "Sí, todos los contenidos de esta página son gratuitos. Encontrará: plantillas de dashboard financiero para startups, checklists de due diligence para rondas de inversión, comparativas de costes de DAF externalizado, modelos de flujo de tesorería, marcos de KPIs para SaaS y comparativas fiscales internacionales (Francia vs España). Nuestro blog se actualiza cada mes con artículos escritos por CFOs en ejercicio. Sin registro requerido.",
+      },
+    ],
   },
 };
 
