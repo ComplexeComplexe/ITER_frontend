@@ -68,6 +68,25 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
         children: [
           {
             type: "text",
+            text: "Les enjeux en 2026",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        children: [
+          {
+            type: "text",
+            text: "En 2026, les entreprises font face à une pression accrue sur leur liquidité : hausse des taux d'intérêt, délais de paiement allongés et environnement macro incertain. Les outils de prévision de trésorerie se sont digitalisés (Agicap, Fygr, Pennylane) et l'analyse en temps réel est devenue accessible à toutes les tailles d'entreprise. Un prévisionnel glissant n'est plus un luxe — c'est le tableau de bord de survie de la PME moderne.",
+          },
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        children: [
+          {
+            type: "text",
             text: "Pourquoi un prévisionnel de trésorerie ?",
           },
         ],
@@ -163,6 +182,25 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
           {
             type: "text",
             text: "Que vous soyez une startup, une PME ou une ETI, cette approche offre de nombreux avantages stratégiques : réduction des coûts fixes, accès à des compétences spécialisées et amélioration des processus financiers. Vous bénéficiez ainsi d'un accompagnement sur mesure pour piloter la santé financière de votre entreprise, sans les contraintes d'un recrutement en interne.",
+          },
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        children: [
+          {
+            type: "text",
+            text: "Les enjeux en 2026",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        children: [
+          {
+            type: "text",
+            text: "En 2026, le modèle du DAF externalisé s'est imposé comme standard pour les PME et startups entre 10 et 200 salariés. Face aux contraintes de recrutement (délai moyen 4 à 6 mois pour un DAF salarié, coût chargé 100 000 à 150 000 €/an), de plus en plus d'entreprises choisissent la flexibilité : un DAF senior 2 à 8 jours/mois, opérationnel en 1 à 2 semaines. L'enjeu de 2026 : structurer la finance avant de croître, pas après.",
           },
         ],
       },
@@ -570,6 +608,25 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
         children: [
           {
             type: "text",
+            text: "Les enjeux en 2026",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        children: [
+          {
+            type: "text",
+            text: "En 2026, la comptabilité cloud s'est généralisée : Pennylane, Sage, QuickBooks et Xero capturent les transactions en temps réel, réduisant drastiquement les clôtures manuelles. L'enjeu pour les PME : tirer parti de cette automatisation pour passer d'une comptabilité de conformité (regarder le passé) à une comptabilité de pilotage (anticiper l'avenir). L'externalisation comptable moderne inclut le conseil fiscal, la gestion de TVA cross-border et l'optimisation des délais de clôture.",
+          },
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        children: [
+          {
+            type: "text",
             text: "Périmètre d'externalisation",
           },
         ],
@@ -665,6 +722,25 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
           {
             type: "text",
             text: "Chez Iter Advisors, nous sommes spécialisés dans l'optimisation des projets de financement, en mettant à profit notre expertise et notre réseau pour maximiser vos chances de succès. Avec un accompagnement expert, vous pourrez structurer votre projet, identifier les bons investisseurs et négocier des conditions avantageuses pour accélérer votre développement.",
+          },
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        children: [
+          {
+            type: "text",
+            text: "Les enjeux en 2026",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        children: [
+          {
+            type: "text",
+            text: "En 2026, le marché de la levée de fonds a profondément mûri : les investisseurs exigent des fondamentaux solides (revenus récurrents, maîtrise du burn rate, cash runway supérieur à 18 mois) avant d'entrer en discussion sérieuse. La due diligence s'est intensifiée et les processus s'allongent (6 à 12 mois pour une Series A). L'enjeu : arriver préparé avec une data room complète, des prévisions auditables et un narratif financier cohérent.",
           },
         ],
       },
@@ -1169,6 +1245,25 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
           {
             type: "text",
             text: "Que vous soyez une startup en croissance, une PME ou une ETI, le contrôle de gestion externalisé offre une visibilité accrue sur votre rentabilité, vos marges, et la performance de chaque secteur d'activité. Vous bénéficiez ainsi d'une aide à la décision basée sur des données fiables et en temps réel.",
+          },
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        children: [
+          {
+            type: "text",
+            text: "Les enjeux en 2026",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        children: [
+          {
+            type: "text",
+            text: "En 2026, le contrôle de gestion n'est plus réservé aux grandes entreprises. Les outils de BI (Power BI, Looker Studio) et de gestion budgétaire (Anaplan, Pigment) sont devenus accessibles aux PME. L'enjeu : mettre en place un système de pilotage agile — tableaux de bord en temps réel, suivi des marges par produit ou segment, alertes sur les dérives — sans recruter une équipe finance interne de trois personnes.",
           },
         ],
       },

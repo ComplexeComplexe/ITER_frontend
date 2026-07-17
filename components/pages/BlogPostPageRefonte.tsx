@@ -4,7 +4,7 @@ import { Locale } from "@/lib/i18n";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import { BlogPostLayout, type BlogPostLayoutProps, type TocItem, type AuthorInfo } from "@/components/blog";
-import { articleSchema } from "@/lib/schemas";
+import { articleSchema, faqPageSchema } from "@/lib/schemas";
 import type { CmsNavItem } from "@/lib/strapi";
 import { ReactNode } from "react";
 
@@ -37,6 +37,8 @@ interface BlogPostPageRefonteProps {
   }>;
   /** For schema */
   metaDescription?: string;
+  /** FAQ items — when provided, emits a FAQPage JSON-LD block */
+  faqItems?: Array<{ question: string; answer: string }>;
 }
 
 /**
@@ -60,6 +62,7 @@ export default function BlogPostPageRefonte({
   children,
   relatedArticles,
   metaDescription,
+  faqItems,
 }: BlogPostPageRefonteProps) {
   // Build article URL for schema
   const articleUrl = slug ? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
@@ -82,6 +85,8 @@ export default function BlogPostPageRefonte({
     imageSrc: heroImage,
   });
 
+  const faqJsonLd = faqItems && faqItems.length > 0 ? faqPageSchema(faqItems) : null;
+
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Schema.org JSON-LD — Article */}
@@ -89,6 +94,12 @@ export default function BlogPostPageRefonte({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       {/* Breadcrumb */}
       <div className="bg-background pt-8 pb-4">

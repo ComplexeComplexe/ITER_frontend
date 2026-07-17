@@ -15,18 +15,18 @@ const basePath = "/services";
 /* ── Fallback titles for FR services ── */
 const fallbackTitles: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
-    "Prévisionnel de Trésorerie PME | Iter Advisors",
+    "Prévisionnel de Trésorerie PME en 2026 | Iter Advisors",
   "gestion-financiere-externalisee":
-    "Gestion Financière Externalisée | Iter Advisors",
+    "Gestion Financière Externalisée en 2026 | Iter Advisors",
   "accompagnement-levee-de-fond":
     // T#11 (2026-07-13) — title enrichi pour ranker sur "accompagnement
     // levée de fonds" (pos 18,4 GSC, 99 impr, 0 clic) et
     // "préparation levée de fonds" — intent transactionnel service.
-    "Accompagnement levée de fonds startup — Data room & pitch | Iter Advisors",
+    "Accompagnement levée de fonds startup en 2026 — Data room & pitch | Iter Advisors",
   "comptabilite-externalisation":
-    "Externalisation Comptabilité | Iter Advisors",
+    "Externalisation Comptabilité en 2026 | Iter Advisors",
   "controle-de-gestion-externalise":
-    "Contrôle de Gestion Externalisé | Iter Advisors",
+    "Contrôle de Gestion Externalisé en 2026 | Iter Advisors",
 };
 
 /* ── Fallback descriptions for FR services ── */

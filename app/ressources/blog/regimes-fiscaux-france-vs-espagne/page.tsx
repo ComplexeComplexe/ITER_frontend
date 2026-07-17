@@ -57,6 +57,21 @@ export default async function Page() {
         { id: "cotisations", label: "3. Cotisations sociales et charges employeur" },
         { id: "regimes-speciaux", label: "4. Régimes spéciaux (micro, PVN, PAC)" },
         { id: "profil", label: "5. Quel régime pour votre profil ?" },
+        { id: "faq", label: "FAQ" },
+      ]}
+      faqItems={[
+        {
+          question: "Faut-il créer une holding pour opérer entre la France et l'Espagne ?",
+          answer: "Pas nécessairement. Une holding est pertinente quand votre CA dépasse 2–3 M€ ou que vous gérez plusieurs entités. Pour les PME en phase de croissance, une structure binationale simple (SARL/SAS en France + SL en Espagne) suffit pour bénéficier des différences de charges sociales (~15 points d'écart). Un audit de structure avec un DAF externalisé permet d'identifier le schéma optimal avant tout changement.",
+        },
+        {
+          question: "Comment éviter la double imposition entre la France et l'Espagne ?",
+          answer: "La convention fiscale France-Espagne (signée en 1995, révisée en 2011) prévient la double imposition sur les revenus d'entreprise, les dividendes et les salaires. Concrètement : les bénéfices générés en Espagne sont imposés uniquement en Espagne si vous y avez un établissement stable permanent (local, salarié). Les dividendes versés par la filiale espagnole à la holding française bénéficient d'une retenue à la source réduite (5–15 %). Consultez un expert fiscal avant toute restructuration.",
+        },
+        {
+          question: "La TVA espagnole est-elle récupérable par une société française ?",
+          answer: "Oui, via la directive 2008/9/CE. Une société française assujettie à la TVA peut récupérer la TVA espagnole (IVA) payée sur ses achats professionnels en Espagne, à condition de déposer une demande de remboursement électronique avant le 30 septembre de l'année suivante. Le délai de remboursement est généralement de 4 à 6 mois. Le seuil minimum est 50 € pour une demande trimestrielle.",
+        },
       ]}
       tldr={
         <>
@@ -469,6 +484,14 @@ export default async function Page() {
           45 % des clics du site (1 776/an) mais ne poussait jusqu'ici aucun
           jus vers les pages business. Ancres exactes "DAF externalisé" et
           "externalisation comptable" pour matcher les requêtes cibles. */}
+      <h2 id="faq">FAQ — Fiscalité France vs Espagne</h2>
+      <h3>Faut-il créer une holding pour opérer entre la France et l&apos;Espagne ?</h3>
+      <p>Pas nécessairement. Une holding est pertinente quand votre CA dépasse 2–3 M€ ou que vous gérez plusieurs entités. Pour les PME en phase de croissance, une structure binationale simple (SARL/SAS en France + SL en Espagne) suffit pour bénéficier des différences de charges sociales (~15 points d&apos;écart). Un audit de structure avec un <a href="/daf-externalise">DAF externalisé</a> permet d&apos;identifier le schéma optimal avant tout changement.</p>
+      <h3>Comment éviter la double imposition entre la France et l&apos;Espagne ?</h3>
+      <p>La convention fiscale France-Espagne (signée en 1995, révisée en 2011) prévient la double imposition sur les revenus d&apos;entreprise, les dividendes et les salaires. Concrètement : les bénéfices générés en Espagne sont imposés uniquement en Espagne si vous y avez un établissement stable permanent (local, salarié). Les dividendes versés par la filiale espagnole à la holding française bénéficient d&apos;une retenue à la source réduite (5–15 %). Consultez un expert fiscal avant toute restructuration.</p>
+      <h3>La TVA espagnole est-elle récupérable par une société française ?</h3>
+      <p>Oui, via la directive 2008/9/CE. Une société française assujettie à la TVA peut récupérer la TVA espagnole (IVA) payée sur ses achats professionnels en Espagne, à condition de déposer une demande de remboursement électronique avant le 30 septembre de l&apos;année suivante. Le délai de remboursement est généralement de 4 à 6 mois. Le seuil minimum est 50 € pour une demande trimestrielle.</p>
+
       <div className="my-10 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-6 md:p-8">
         <h3 className="mb-3 text-lg font-semibold text-slate-900">
           Vous structurez votre activité entre la France et l&apos;Espagne ?

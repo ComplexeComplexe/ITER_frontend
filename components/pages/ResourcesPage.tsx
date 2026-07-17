@@ -158,6 +158,25 @@ export default function ResourcesPage({
         </section>
       ))}
 
+      {/* FAQ section */}
+      {t.faq && t.faq.length > 0 && (
+        <section className="bg-background py-16 lg:py-24">
+          <div className="container max-w-3xl">
+            <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-8">
+              FAQ
+            </h2>
+            <dl className="space-y-6">
+              {t.faq.map((item, i) => (
+                <div key={i} className="border-b border-border pb-6">
+                  <dt className="font-semibold text-foreground mb-2">{item.question}</dt>
+                  <dd className="text-muted-foreground leading-relaxed">{item.answer}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
+
       <CTASection locale={locale} />
     </PageLayout>
   );

@@ -23,7 +23,7 @@ const content: Record<
     breadcrumbLabel: string;
     h1: string;
     intro: string;
-    /** Default CTA for cards that don't match a more specific format. */
+    /** Default CTA for cards that don’t match a more specific format. */
     discover: string;
     /** Format-specific CTAs picked by category / title heuristics. */
     discoverByKind: {
@@ -40,6 +40,10 @@ const content: Record<
     featuredEyebrow: string;
     /** CTA on the featured card. */
     featuredCta: string;
+    /** Label for the most-read articles section. */
+    mostReadLabel: string;
+    /** Most-read articles (static curation, updated manually). */
+    mostReadArticles: { title: string; href: string; category: string }[];
     cards: { title: string; href: string; image: string }[];
   }
 > = {
@@ -61,6 +65,14 @@ const content: Record<
     allLabel: "Tous",
     featuredEyebrow: "À la une",
     featuredCta: "Lire l’article",
+    mostReadLabel: "Les articles les plus lus",
+    mostReadArticles: [
+      { title: "Combien coûte un DAF externalisé en 2026 ?", href: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", category: "DAF externalisé" },
+      { title: "DAF externalisé vs DAF salarié : analyse complète", href: "/ressources/blog/daf-externalise-vs-daf-salarie", category: "DAF externalisé" },
+      { title: "Checklist due diligence : préparation financière pour la levée de fonds", href: "/ressources/blog/checklist-due-diligence-levee-de-fonds", category: "Levée de fonds" },
+      { title: "Cash burn : calculer son runway et anticiper sa levée de fonds", href: "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", category: "Levée de fonds" },
+      { title: "Régimes fiscaux : France vs Espagne — Comparaison complète 2026", href: "/ressources/blog/regimes-fiscaux-france-vs-espagne", category: "Fiscalité" },
+    ],
     cards: [
       {
         title: "Les 10 outils pour les CFOs en start-up",
@@ -98,6 +110,14 @@ const content: Record<
     allLabel: "All",
     featuredEyebrow: "Featured",
     featuredCta: "Read the article",
+    mostReadLabel: "Most-read articles",
+    mostReadArticles: [
+      { title: "Fractional CFO cost in 2026: pricing, packages and ROI", href: "/en/ressources/blog/cout-daf-externalise-tarifs-prix-2026", category: "Fractional CFO" },
+      { title: "Fractional CFO vs full-time CFO: complete comparison", href: "/en/ressources/blog/daf-externalise-vs-daf-salarie", category: "Fractional CFO" },
+      { title: "Due diligence checklist: financial preparation for fundraising", href: "/en/ressources/blog/checklist-due-diligence-levee-de-fonds", category: "Fundraising" },
+      { title: "Cash burn: calculate your runway and prepare your raise", href: "/en/ressources/blog/cash-burn-calculer-runway-anticiper-levee", category: "Fundraising" },
+      { title: "Tax regimes: France vs Spain — Full comparison 2026", href: "/en/ressources/blog/regimes-fiscaux-france-vs-espagne", category: "Tax" },
+    ],
     cards: [
       {
         title:
@@ -135,6 +155,14 @@ const content: Record<
     allLabel: "Todos",
     featuredEyebrow: "Destacado",
     featuredCta: "Leer el artículo",
+    mostReadLabel: "Los artículos más leídos",
+    mostReadArticles: [
+      { title: "¿Cuánto cuesta un DAF externalizado en 2026?", href: "/es/recursos/blog/cout-daf-externalise-tarifs-prix-2026", category: "DAF externalizado" },
+      { title: "DAF externalizado vs DAF asalariado: análisis completo", href: "/es/recursos/blog/daf-externalise-vs-daf-salarie", category: "DAF externalizado" },
+      { title: "Checklist due diligence: preparación financiera para la ronda de inversión", href: "/es/recursos/blog/checklist-due-diligence-levee-de-fonds", category: "Inversión" },
+      { title: "Cash burn: calcular el runway y anticipar la ronda", href: "/es/recursos/blog/cash-burn-calculer-runway-anticiper-levee", category: "Inversión" },
+      { title: "Regímenes fiscales: Francia vs España — Comparativa completa 2026", href: "/es/recursos/blog/regimes-fiscaux-france-vs-espagne", category: "Fiscalidad" },
+    ],
     cards: [
       {
         title:
@@ -285,6 +313,31 @@ export default function BlogListingPage({
           <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
             {t.intro}
           </p>
+        </div>
+      </section>
+
+      {/* Most-read articles strip */}
+      <section className="bg-muted/40 border-y border-border py-8">
+        <div className="container">
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+            {t.mostReadLabel}
+          </p>
+          <ul className="flex flex-wrap gap-2">
+            {t.mostReadArticles.map((article) => (
+              <li key={article.href}>
+                <a
+                  href={article.href}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-3 py-1.5 text-sm text-foreground hover:border-iter-violet hover:text-iter-violet transition-colors"
+                >
+                  <span className="text-xs font-medium text-muted-foreground">
+                    {article.category}
+                  </span>
+                  <span className="text-muted-foreground">·</span>
+                  {article.title}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

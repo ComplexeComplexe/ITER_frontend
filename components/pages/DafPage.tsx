@@ -1330,6 +1330,38 @@ export default function DafPage({
         />
       )}
 
+      {/* DAF-04 — FinancialService schema for explicit service categorization by Google. */}
+      {locale === "fr" && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FinancialService",
+              name: "DAF Externalisé — Iter Advisors",
+              provider: { "@id": "https://www.iteradvisors.com/#organization" },
+              areaServed: ["Paris", "Toulouse", "Barcelone"],
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Formules DAF Externalisé",
+                itemListElement: [
+                  { "@type": "Offer", name: "Essentiel", price: "2000", priceCurrency: "EUR" },
+                  { "@type": "Offer", name: "Croissance", price: "4000", priceCurrency: "EUR" },
+                  { "@type": "Offer", name: "Premium", price: "7000", priceCurrency: "EUR" },
+                ],
+              },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5",
+                reviewCount: "31",
+                bestRating: "5",
+                worstRating: "1",
+              },
+            }),
+          }}
+        />
+      )}
+
       {/* GAP 2 (2026-05-19) — Person schemas for named CFO experts (E-E-A-T / YMYL signal).
           Sébastien Doat (founding partner) + Florent Greth (partner CFO).
           sameAs → LinkedIn profiles; knowsAbout → primary expertise signals.
