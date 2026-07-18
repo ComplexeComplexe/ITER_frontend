@@ -1019,6 +1019,36 @@ export const dafContent: Record<Locale, DafContent> = {
         answer:
           "Yes, most engagements are hybrid: on-site 1-2 days per month and remote the rest of the time. Collaboration tools (Slack, Notion, Google Workspace) enable real-time monitoring. At Iter Advisors, we operate in Barcelona, Paris, Toulouse and fully remote.",
       },
+      // T#14 (2026-07-18) — 5 Q&As ajoutées pour enrichir le FAQPage JSON-LD
+      // sur /en/fractional-cfo (JACKPOT keyword 9 900 search/month).
+      // Réponses enrichies avec chiffres précis pour cibler les PAA Google
+      // "fractional cfo cost", "when to hire", "what does it do day to day",
+      // "series a fundraising".
+      {
+        question: "What is the difference between a fractional CFO and a part-time CFO?",
+        answer:
+          "There is no practical difference: both terms refer to a senior finance director who works for several companies on a non-full-time basis. 'Fractional CFO' is the term used in the startup and VC ecosystem, while 'part-time CFO' or 'shared-time CFO' is more common in traditional SME contexts. At Iter Advisors, we use both terms interchangeably — the structure is identical (2 to 8 days per month), only the vocabulary changes depending on your audience.",
+      },
+      {
+        question: "How much does a fractional CFO cost per month in 2026?",
+        answer:
+          "In 2026, a fractional CFO costs between EUR 2,000 and EUR 15,000 per month depending on the volume of engagement. Iter Advisors offers three packages: Advisory (2 days/month, EUR 2,000–4,500/month) for seed-stage startups needing runway monitoring and investor reporting; Growth (4 days/month, EUR 4,500–8,500/month) for Series A companies managing complex treasury and fundraising prep; Embedded (8+ days/month, EUR 8,000–15,000/month) for scale-ups in active fundraising or M&A. The average daily rate is EUR 750–1,250. A full-time CFO costs EUR 120,000–200,000/year gross plus benefits — 3 to 5 times more for the equivalent seniority level.",
+      },
+      {
+        question: "When should a startup hire a fractional CFO?",
+        answer:
+          "Five triggers indicate it is time to hire a fractional CFO: (1) monthly burn rate exceeds EUR 100,000 and cash runway is under 18 months — you need structured monitoring; (2) you are preparing a fundraise (Seed to Series B) — a fractional CFO builds the financial model, data room and manages investor due diligence; (3) you are expanding internationally and need local financial and tax expertise; (4) your board or investors require monthly financial reporting you cannot currently produce; (5) you have a finance team of one (usually a junior accountant) but no senior financial leadership. Most Iter Advisors clients have between 10 and 150 employees.",
+      },
+      {
+        question: "What does a fractional CFO actually do day-to-day?",
+        answer:
+          "A fractional CFO's work typically breaks down into four pillars: Reporting & monitoring (40% of time) — maintaining the monthly P&L, cash flow dashboard and KPI pack for the board; Strategic finance (30%) — financial modelling, budget versus actuals analysis, pricing decisions, capex prioritisation; Fundraising support (20%) — investor relations, data room management, financial due diligence responses; Operational improvements (10%) — ERP selection, accounting close acceleration, working capital optimisation. On a typical 4-day-per-month engagement, expect two days on reporting and one day each on strategy and ad-hoc projects.",
+      },
+      {
+        question: "Can a fractional CFO help with Series A fundraising?",
+        answer:
+          "Yes — Series A preparation is one of the most frequent and highest-value missions for a fractional CFO. A proper Series A process takes 3 to 6 months of CFO-level preparation before the first LP meeting: financial audit and restatement to remove any red flags, 36-month financial model with three scenarios (base, bull, bear), data room covering six sections (company overview, market, financials, legal, product, team), investor pitch deck with five financial slides, and Q&A prep covering 30+ standard due diligence questions. At Iter Advisors, our fractional CFOs have supported over 50 fundraising rounds totalling EUR 100M+.",
+      },
     ],
     ctaButton: "Book a call",
   },

@@ -683,17 +683,110 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
         ],
       },
     ],
+    // T#13 (2026-07-18) — FAQPage JSON-LD complété avec 6 Q&As SEO pour
+    // cibler "externalisation comptable", "comptable externalisé", "coût
+    // comptabilité externalisée" (PAA GSC identifiées dans l'analyse 16 kw).
     faq: [
       {
         id: 1,
-        question: "Quel est le délai de migration ?",
+        question: "Qu'est-ce que l'externalisation comptable ?",
         answer: [
           {
             type: "paragraph",
             children: [
               {
                 type: "text",
-                text: "Environ 2 semaines : 1 semaine pour audit et setup, 1 semaine pour test et validation.",
+                text: "L'externalisation comptable consiste à confier tout ou partie de la fonction comptable à un prestataire externe : saisie des pièces comptables, rapprochements bancaires, déclarations de TVA, établissement de la liasse fiscale, gestion de la paie et production du reporting mensuel. Le prestataire travaille en liaison directe avec l'expert-comptable signataire et l'administration fiscale. C'est une alternative à l'embauche d'un comptable salarié, particulièrement adaptée aux PME, startups et ETI dont le volume de transactions ne justifie pas un poste à temps plein.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 2,
+        question: "Quel est le coût d'une comptabilité externalisée en 2026 ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "Le coût d'une comptabilité externalisée en 2026 varie selon le volume de transactions et le périmètre confié. Ordre de grandeur : micro-entreprise ou auto-entrepreneur (< 50 factures/mois) : 100 à 200 € HT/mois ; TPE (< 5 salariés, < 200 factures/mois) : 200 à 500 € HT/mois ; PME (5 à 50 salariés, comptabilité multi-entités) : 500 à 1 200 € HT/mois ; PME complexe (multi-pays, consolidation, reporting IFRS) : 1 200 à 2 500 € HT/mois. L'externalisation génère en moyenne 30 à 60 % d'économies par rapport à un comptable salarié (40 000 à 60 000 € brut/an hors charges) une fois le volume insuffisant pour justifier un temps plein.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 3,
+        question: "Quelle est la différence entre un expert-comptable et un comptable externalisé ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "L'expert-comptable est un professionnel réglementé inscrit à l'Ordre des Experts-Comptables (OEC) : il est le seul habilité légalement à signer le bilan annuel, la liasse fiscale et les comptes consolidés. Il certifie la conformité légale et fiscale de vos comptes. Le comptable externalisé (ou comptable freelance) effectue les travaux courants — saisie, TVA, rapprochements, clôtures périodiques — sous la supervision et la responsabilité d'un expert-comptable signataire. Les deux rôles sont complémentaires : le comptable externalisé produit la donnée au quotidien, l'expert-comptable l'arrête et la certifie en fin d'exercice. Chez Iter Advisors, nos prestations de comptabilité externalisée sont toujours réalisées sous couverture d'un expert-comptable.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 4,
+        question: "L'externalisation comptable est-elle fiable et sécurisée ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "Oui, à condition de respecter trois critères. Premièrement, la supervision d'un expert-comptable OEC qui co-signe les travaux et engage sa responsabilité professionnelle. Deuxièmement, un prestataire certifié ISO 27001 ou équivalent, avec des engagements contractuels sur la sécurité des données (hébergement France ou UE, chiffrement en transit et au repos, sauvegardes quotidiennes). Troisièmement, un contrat stipulant explicitement que vous restez propriétaire de l'intégralité de vos données comptables et fiscales — vous devez pouvoir reprendre vos données à tout moment sans surcoût. Un prestataire sérieux vous donne accès à vos journaux comptables en temps réel via un portail client ou un outil cloud partagé (Pennylane, Sage, QuickBooks).",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 5,
+        question: "Quels sont les avantages de l'externalisation par rapport à un comptable interne ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "Cinq avantages majeurs par rapport à un comptable salarié : (1) Réduction de coût de 30 à 60 % — pas de charges patronales, pas de congés payés, pas d'équipement informatique dédié ; (2) Accès à une équipe multi-compétences plutôt qu'à une seule personne — un prestataire combine comptable, gestionnaire de paie, fiscaliste et référent TVA internationale ; (3) Continuité de service en cas d'absence, de maladie ou de départ — le prestataire gère la continuité sans interruption ; (4) Outils modernes inclus (Pennylane, Sage, QuickBooks) sans investissement initial ; (5) Évolutivité immédiate — le volume externalisé s'ajuste à la croissance de l'entreprise sans nouvelle embauche. Le principal inconvénient est la moindre immersion dans le quotidien de l'entreprise, compensée par un bon onboarding et des réunions de suivi régulières.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 6,
+        question: "Comment choisir son prestataire de comptabilité externalisée en 2026 ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "Six critères de sélection pour 2026 : (1) Agrément et supervision — le prestataire travaille-t-il sous couverture d'un expert-comptable OEC inscrit ? (2) Outils cloud modernes — maîtrisent-ils Pennylane, Sage ou QuickBooks, ou sont-ils encore sur des ERP vieillissants ? (3) Délais de clôture — peuvent-ils produire une balance mensuelle à J+5 et les déclarations de TVA dans les 48 h suivant la clôture ? (4) Périmètre complet — couvrent-ils la paie, la TVA, les DEB/DES, la liasse fiscale et le reporting de gestion, ou seulement la saisie ? (5) Références sectorielles — ont-ils des clients dans votre secteur (SaaS, e-commerce, industrie) ? (6) Transparence tarifaire — le contrat inclut-il un périmètre et un tarif fixes, ou des suppléments à chaque demande ?",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 7,
+        question: "Quel est le délai de migration vers une comptabilité externalisée ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "Environ 2 semaines : 1 semaine pour audit et setup, 1 semaine pour test et validation. Chez Iter Advisors, la migration se fait sans interruption de service.",
               },
             ],
           },
