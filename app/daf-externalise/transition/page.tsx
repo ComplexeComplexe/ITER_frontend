@@ -111,6 +111,40 @@ export default async function Page() {
     },
   };
 
+  // T#12 (2026-07-18) — JobPosting schema pour signaler à Google que la page
+  // est une fiche métier. Booste les rich results sur "daf de transition"
+  // dans les SERP "emploi / métier" (APEC-like intent).
+  const jobPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "@id": `${PAGE_URL}#jobposting`,
+    title: "DAF de transition",
+    description: "Directeur Administratif et Financier de transition intervenant à temps plein pour une mission de 3 à 12 mois. Missions : pilotage de trésorerie en crise, audit éclair, restructuration, préparation levée de fonds ou cession. Démarrage en 48-72 h.",
+    hiringOrganization: {
+      "@type": "Organization",
+      "@id": "https://www.iteradvisors.com/#organization",
+      name: "Iter Advisors",
+      sameAs: "https://www.iteradvisors.com",
+    },
+    jobLocation: [
+      { "@type": "Place", address: { "@type": "PostalAddress", addressCountry: "FR" } },
+      { "@type": "Place", address: { "@type": "PostalAddress", addressCountry: "ES" } },
+    ],
+    employmentType: "CONTRACTOR",
+    datePosted: PUBLISHED_DATE,
+    validThrough: "2027-12-31",
+    experienceRequirements: "12 à 20 ans d'expérience en finance d'entreprise, dont au moins 5 ans en poste de DAF ou Directeur Financier",
+    estimatedSalary: {
+      "@type": "MonetaryAmountDistribution",
+      name: "TJM DAF de transition",
+      currency: "EUR",
+      duration: "P1D",
+      minValue: 800,
+      maxValue: 1500,
+      unitText: "DAY",
+    },
+  };
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -142,6 +176,10 @@ export default async function Page() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}

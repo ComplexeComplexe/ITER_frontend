@@ -205,9 +205,10 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF de transition",
-      // T#11 (2026-07-13) — H1 étendu avec "management de transition"
-      // pour capter la variante lexicale distincte.
-      h1: "DAF de transition & management de transition finance : votre direction financière en urgence",
+      // T#12 (2026-07-18) — H1 recentré sur l'intent fiche-métier SERP :
+      // "salaire", "missions", "devenir" captent les PAA dominants sur
+      // "daf de transition" tout en évitant la cannibalisation pilier.
+      h1: "DAF de transition : fiche métier, missions, salaire et devenir",
       sections: [
         {
           // T4 (2026-06-07) — bloc "L'essentiel en 30 secondes" en tête de
@@ -229,19 +230,23 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
         {
-          // Fiche métier section (2026-06-07 — SEO analysis 3 pages) :
-          // alignement avec la SERP "daf de transition" dominée par les
-          // fiches métier APEC / Michael Page / Robert Half. Cette section
-          // répond à l'intention "comprendre le rôle" avant le pitch
-          // commercial qui suit.
-          heading: "Fiche métier : le rôle du DAF de transition",
+          // T#12 (2026-07-18) — Fiche métier restructurée comme une vraie
+          // fiche APEC / Michael Page pour coller à l'intent SERP dominant.
+          // Heading "fiche métier complète" pour capter la variante longue.
+          heading: "DAF de transition : fiche métier complète",
           content: [
-            "**Intitulé du poste :** Directeur Administratif et Financier de transition (synonymes : DAF intérimaire, Interim CFO, manager de transition finance). Cadre dirigeant senior, statut indépendant ou salarié porté.",
-            "**Missions principales :** pilotage de la trésorerie en situation critique, audit éclair des comptes, sécurisation des reportings financiers et fiscaux, négociation avec banques et créanciers, préparation de levée de fonds ou de cession, accompagnement d'une restructuration ou d'une intégration post-acquisition. Le DAF de transition assume l'intégralité de la responsabilité financière du dirigeant pendant toute la durée de la mission.",
-            "**Compétences clés :** maîtrise des normes comptables (PCG, IFRS), expertise en pilotage de trésorerie d'urgence et BFR, capacité à manager une équipe finance existante en quelques jours, expérience avérée des situations de crise (LBO, restructuration, départ brutal du DAF en poste), connaissance des outils modernes (ERP, BI, consolidation : SAP, Cegid, MyReport, Power BI).",
-            "**Profil type :** 12 à 20 ans d'expérience en finance d'entreprise, dont au moins 5 ans en poste de DAF ou Directeur Financier de groupe. Souvent ancien associé d'un cabinet d'audit Big Four ou ex-CFO de PME / ETI ayant déjà géré 3 à 5 situations de transition. Anglais courant requis pour les groupes internationaux.",
-            "**Rémunération :** un DAF de transition se rémunère en TJM (Taux Journalier Moyen) entre 800 et 1 500 € HT par jour, soit l'équivalent d'un salaire brut annuel de 180 000 à 350 000 € si l'on rapporte à un temps plein. Pour comparaison, un DAF salarié senior en CDI gagne entre 90 000 et 150 000 € bruts annuels selon la taille de l'entreprise.",
-            "**Modalités d'intervention :** mission de 3 à 12 mois à temps plein (4-5 jours / semaine), généralement sur site puis en remote partiel, avec démarrage en 48 à 72 heures.",
+            "Le DAF de transition (Directeur Administratif et Financier de transition) est un cadre dirigeant senior qui intervient à temps plein dans une entreprise pour une mission limitée, généralement de 3 à 12 mois. Son rôle : assurer la continuité de la direction financière dans des situations critiques — départ brutal du DAF, crise de trésorerie, restructuration, préparation à une cession ou à une levée de fonds. Contrairement au DAF à temps partagé qui s'inscrit dans la durée, le DAF de transition mobilise l'intégralité de sa disponibilité pour répondre à une urgence ou à une transformation majeure.",
+            "**Fiche de poste — données clés :**",
+            "**Intitulé du poste :** DAF de transition — aussi appelé Interim CFO, Manager de transition finance, DAF intérimaire. Cadre dirigeant senior, statut indépendant ou salarié porté.",
+            "**Niveau d'expérience :** 12 à 20 ans d'expérience en finance d'entreprise, dont au moins 5 ans en poste de DAF ou Directeur Financier de groupe.",
+            "**Durée de mission :** 3 à 12 mois (extensible à 18 mois selon la complexité).",
+            "**Temps de travail :** temps plein ou quasi-plein (4 à 5 jours/semaine), contrairement au DAF à temps partagé.",
+            "**Rémunération :** TJM 800–1 500 € HT/jour selon la séniorité. À temps plein (20 jours/mois) : 16 000 à 30 000 € HT/mois, soit l'équivalent brut annuel de 180 000 à 350 000 €.",
+            "**Délai de mise en place :** 48 à 72 heures chez Iter Advisors — contre 3 à 6 mois pour un recrutement classique.",
+            "**Secteurs concernés :** tous secteurs — PME en difficulté, ETI en transformation, scale-ups en hyper-croissance, fonds d'investissement (LBO), entreprises familiales en cession.",
+            "**6 missions principales :** (1) audit éclair de la situation financière dès la 1ère semaine ; (2) pilotage de la trésorerie en situation critique (cash-flow, BFR, négociation bancaire) ; (3) sécurisation des reportings financiers et fiscaux (déclarations, clôture) ; (4) préparation d'une levée de fonds ou d'une cession (data room, projections, due diligence) ; (5) accompagnement d'une restructuration ou d'une intégration post-acquisition (plans sociaux, fusion de SI) ; (6) recrutement et passation au DAF successeur.",
+            "**Profil recherché :** ex-DAF ou CFO de PME/ETI, souvent ancien associé Big Four, ayant géré 3 à 5 situations de crise. Maîtrise des normes comptables (PCG, IFRS), des ERP (SAP, Cegid, NetSuite) et des outils BI (Power BI, MyReport). Anglais courant requis pour les groupes internationaux.",
+            "**Devenir DAF de transition :** la voie classique passe par 10 à 15 ans de direction financière salariée (DAF interne, Head of Finance de scale-up), puis un passage en freelance ou en cabinet de management de transition. Chez Iter Advisors, rejoindre notre vivier de DAFs de transition vous garantit un flux de missions structuré et un accompagnement de vos premières interventions.",
           ],
         },
         {
@@ -331,9 +336,14 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         },
         {
           heading: "FAQ - DAF de Transition",
+          // T#12 (2026-07-18) — Q3 ajoutée "dans quels cas" pour capter
+          // la PAA Google dominante sur "daf de transition". Les Q1/Q2
+          // existantes ciblaient "salaire" et "manager de transition" —
+          // maintenant les 3 requêtes clés sont couvertes en FAQPage JSON-LD.
           content: [
             "**Quel est le salaire d'un DAF de transition ?** Le DAF de transition se rémunère en TJM (Taux Journalier Moyen) entre 800 et 1 500 € HT par jour. Sur une mission à temps plein (20 jours par mois), cela représente une facturation mensuelle de 16 000 à 30 000 € HT, soit l'équivalent d'un salaire brut annuel de 180 000 à 350 000 € rapporté à un temps plein. Pour un DAF salarié senior en CDI à titre de comparaison, la fourchette est de 90 000 à 150 000 € bruts annuels.",
             "**Quelle est la différence entre un DAF de transition et un manager de transition ?** Le manager de transition est un terme générique qui désigne tout cadre dirigeant intervenant en mode transition (DG, DRH, DAF, DSI...). Le DAF de transition est un manager de transition spécialisé dans la direction financière.",
+            "**Dans quels cas fait-on appel à un DAF de transition ?** Six situations déclenchent systématiquement le recours à un DAF de transition : (1) départ brutal ou démission du DAF en poste — la vacance ne peut pas durer 3 à 6 mois ; (2) crise de trésorerie sévère nécessitant un pilotage à temps plein (BFR hors de contrôle, rupture bancaire) ; (3) restructuration ou redressement impliquant banques et créanciers ; (4) préparation à une cession ou un LBO avec data room, audit vendeur et due diligence ; (5) levée de fonds urgente (Série A/B) nécessitant une disponibilité intégrale de 3 à 6 mois ; (6) transformation digitale de la direction financière (migration ERP, refonte des processus). Chez Iter Advisors, nous démarrons sous 48 à 72 heures.",
             "**Le DAF de transition peut-il recruter son successeur ?** Oui, c'est même recommandé. Le DAF de transition connaît les besoins réels du poste et peut aider à définir le profil idéal, participer aux entretiens, et assurer la passation avec le nouveau DAF recruté.",
             "**Peut-on passer d'une mission de transition à un DAF à temps partagé ?** Absolument. C'est même un scénario fréquent : la mission de transition stabilise la situation, puis le DAF reste en mode temps partagé pour assurer la continuité du pilotage financier.",
             "**En combien de temps un DAF de transition peut-il démarrer une mission ?** Chez Iter Advisors, nous démarrons une mission de transition en 48 à 72 heures après la signature du contrat. Notre vivier de DAF seniors disponibles immédiatement permet de répondre aux situations d'urgence — départ brutal, crise de trésorerie, levée de fonds à finaliser — sans le délai de 3 à 6 mois d'un recrutement classique.",
