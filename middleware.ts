@@ -241,6 +241,10 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   /* ── 1. Fix /fr/ prefix (FR is default locale, remove prefix) ──────────── */
+  // EC-01: /fr/fractional-cfo is a real FR-locale page (not a redirect target) — let it pass.
+  if (pathname === "/fr/fractional-cfo") {
+    return NextResponse.next();
+  }
   const frPrefixMatch = pathname.match(/^\/fr(\/.*)?$/);
   if (frPrefixMatch) {
     const rest = frPrefixMatch[1] || "/";

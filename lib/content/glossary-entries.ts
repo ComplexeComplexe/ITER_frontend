@@ -11,7 +11,12 @@ export type GlossaryEntrySlug =
   | "arr-mrr"
   | "churn-rate"
   | "run-rate"
-  | "bspce-bsa";
+  | "bspce-bsa"
+  // EC-02 — 4 nouvelles pages glossaire (DAF, DRH, contrôle de gestion, fractional CFO)
+  | "daf"
+  | "drh-externalise"
+  | "controle-de-gestion"
+  | "fractional-cfo";
 
 export interface GlossaryEntryContent {
   meta: {
@@ -708,6 +713,240 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
       ],
       ctaButton: "Structurer mon plan BSPCE avec un DAF",
     },
+    // EC-02 — 4 nouvelles pages glossaire (DAF, DRH, contrôle de gestion, fractional CFO)
+    daf: {
+      meta: {
+        title: "DAF : Définition du Directeur Administratif et Financier | Missions | Iter Advisors",
+        description: "Le DAF (Directeur Administratif et Financier) pilote la stratégie financière, la gestion administrative et le reporting de l'entreprise. Définition, missions et compétences clés.",
+      },
+      h1: "DAF — Définition du Directeur Administratif et Financier | 2026 | Iter Advisors",
+      sections: [
+        {
+          content: [
+            "Le **DAF** (Directeur Administratif et Financier) est le dirigeant responsable de la gestion financière et administrative d'une entreprise. En France, c'est le titre le plus courant pour désigner la direction financière des PME, ETI, et filiales de grands groupes. Le DAF occupe une fonction transversale qui touche à la comptabilité, la trésorerie, le contrôle de gestion, la fiscalité, et souvent les ressources humaines et le juridique.",
+            "Contrairement au CFO anglo-saxon qui est fortement orienté stratégie financière et relations investisseurs, le DAF français a traditionnellement un périmètre plus large qui inclut la gestion administrative et parfois les RH. Cette distinction s'estompe dans les startups, où le DAF prend souvent un profil très proche du CFO.",
+          ],
+        },
+        {
+          heading: "Définition complète",
+          content: [
+            "Le DAF est un membre de la direction qui supervise l'ensemble des fonctions financières et administratives de l'entreprise. Il participe aux décisions stratégiques et en assure la traduction opérationnelle et financière.",
+            "**1. Pilotage de la performance financière.** Le DAF construit et suit les budgets, analyse les écarts, produit les reportings de gestion, et alerte la direction sur les dérives. Il est le garant de la vision chiffrée de l'entreprise.",
+            "**2. Gestion de la trésorerie et du financement.** Le DAF anticipe les besoins en fonds, négocie les lignes de crédit, optimise le BFR, et pilote les relations bancaires. Il est le dernier rempart contre la cessation de paiement.",
+            "**3. Conformité et reporting réglementaire.** Le DAF supervise la comptabilité, les déclarations fiscales et sociales, les audits légaux, et s'assure de la conformité avec la réglementation en vigueur.",
+            "**4. Accompagnement à la stratégie.** Le DAF évalue la rentabilité des projets, modélise les scénarios de croissance, accompagne les opérations de fusion-acquisition, et participe aux comités de direction.",
+            "**5. Direction administrative et juridique.** Selon la taille de l'entreprise, le DAF peut superviser les fonctions juridique, assurances, immobilier, et parfois ressources humaines.",
+          ],
+        },
+        {
+          heading: "DAF vs Expert-comptable : la complémentarité",
+          content: [
+            "Le DAF et l'expert-comptable sont complémentaires mais distincts. **Le DAF** pilote la stratégie financière avec une vision prospective (prévisions, scénarios, décisions) et est présent de façon continue ou régulière dans l'entreprise. **L'expert-comptable** enregistre les opérations passées avec une vision rétrospective (comptabilité, fiscalité) et intervient mensuellement ou trimestriellement.",
+            "Coût : un [DAF externalisé](/daf-externalise) coûte entre 2 000€ et 7 000€/mois ; un expert-comptable entre 500€ et 3 000€/mois.",
+          ],
+        },
+        {
+          heading: "Quand une entreprise a-t-elle besoin d'un DAF ?",
+          content: [
+            "**CA > 1M€ sans direction financière :** le fondateur ne peut plus tout gérer seul.",
+            "**Préparation d'une levée de fonds :** les investisseurs exigent un reporting professionnel.",
+            "**Départ du DAF interne :** continuité financière à assurer en urgence.",
+            "**Expansion internationale :** multi-devises, prix de transfert, conformité.",
+            "**M&A ou LBO :** due diligence financière à piloter.",
+            "**Problèmes de trésorerie récurrents :** BFR, délais clients, prévisions à structurer.",
+            "Toutes les PME ne peuvent pas justifier le recrutement d'un DAF à plein temps (80 000€-150 000€ chargé/an). Le [DAF externalisé](/daf-externalise) permet d'accéder à une expertise senior pour un budget maîtrisé.",
+          ],
+        },
+        {
+          heading: "FAQ — DAF",
+          content: [
+            "**Quelle est la différence entre DAF et CFO ?** Le CFO est anglo-saxon, fortement orienté stratégie financière et relations investisseurs. Le DAF est français, avec un périmètre plus large incluant l'administratif et parfois les RH. Dans les startups, les deux profils convergent.",
+            "**Quel est le salaire d'un DAF en France ?** Un DAF interne coûte entre 70 000€ et 150 000€ brut chargé. Un [DAF externalisé](/daf-externalise) démarre à 2 000€/mois.",
+            "**Un DAF peut-il être à temps partiel ?** Oui, c'est le modèle du DAF externalisé ou du DAF à temps partagé. C'est particulièrement adapté aux PME de 10 à 200 salariés qui ont besoin d'expertise financière senior sans le coût d'un plein temps.",
+            "**Le DAF gère-t-il les RH ?** Dans certaines structures, oui — le DAF peut superviser les fonctions RH, juridique, et administrative. C'est plus fréquent dans les PME où les rôles sont plus transversaux.",
+          ],
+        },
+      ],
+      ctaButton: "Prendre rendez-vous",
+    },
+    "drh-externalise": {
+      meta: {
+        title: "DRH Externalisé : Définition & Missions | Tarifs 2026 | Iter Advisors",
+        description: "Le DRH externalisé est un directeur des ressources humaines senior qui intervient à temps partagé. Définition complète, missions, tarifs et différences avec le DRH interne.",
+      },
+      h1: "DRH Externalisé — Définition, Missions et Tarifs | 2026 | Iter Advisors",
+      sections: [
+        {
+          content: [
+            "Le **DRH externalisé** est un professionnel senior des ressources humaines qui intervient dans votre entreprise sans en être salarié à plein temps. Généralement recruté sous forme de mission récurrente (2 à 8 jours par mois), il assume les responsabilités stratégiques d'un directeur des ressources humaines pour une fraction du coût d'un salarié permanent.",
+            "Ce modèle connaît une croissance rapide en France, porté par deux tendances : la difficulté des PME à recruter un DRH interne qualifié, et le besoin croissant de structuration RH dans les entreprises en croissance.",
+          ],
+        },
+        {
+          heading: "Les 6 missions du DRH externalisé",
+          content: [
+            "**1. Stratégie RH et plan de transformation.** Le DRH externalisé évalue la maturité RH de l'entreprise, identifie les priorités (recrutement, conformité, rétention), et construit une feuille de route sur 12 à 18 mois.",
+            "**2. Recrutement et acquisition de talents.** Il structure le processus de recrutement (sourcing, entretiens, onboarding), forme les managers aux entretiens, et supervise les recrutements clés.",
+            "**3. Gestion de la paie et conformité sociale.** Il supervise la paie, gère les relations avec l'inspection du travail et l'URSSAF, et assure la conformité en cas d'audit.",
+            "**4. Développement des talents et management.** Il met en place les entretiens annuels, les plans de formation, les grilles de rémunération, et accompagne les managers sur les sujets sensibles.",
+            "**5. Relations sociales et dialogue interne.** Il prépare et anime les réunions avec les représentants du personnel, négocie les accords d'entreprise, et gère les situations de crise sociale.",
+            "**6. Digitalisation RH (SIRH).** Il sélectionne et déploie les outils SIRH (Silae, Lucca, PayFit), automatise les processus RH, et met en place le reporting RH pour la direction.",
+          ],
+        },
+        {
+          heading: "DRH externalisé vs DRH interne",
+          content: [
+            "**Coût annuel :** DRH externalisé 30 000€-96 000€ vs DRH interne 80 000€-150 000€ chargé.",
+            "**Mise en place :** 1 à 2 semaines pour un DRH externalisé vs 3 à 6 mois (recrutement + onboarding) pour un DRH interne.",
+            "**Flexibilité :** volume ajustable mensuellement pour l'externalisé vs CDI fixe pour l'interne.",
+            "**Expertise :** multi-sectorielle avec benchmarks croisés pour l'externalisé vs mono-entreprise pour l'interne.",
+            "**Continuité :** garantie par le cabinet pour l'externalisé vs risque de départ = vide pour l'interne.",
+          ],
+        },
+        {
+          heading: "Tarifs indicatifs 2026",
+          content: [
+            "**Formule Essentiel (2 jours/mois) :** audit RH, recrutement 1-2 postes/mois, conformité de base — 2 500€/mois.",
+            "**Formule Croissance (4 jours/mois) :** + onboarding, gestion des talents, rémunération — 4 500€/mois.",
+            "**Formule Premium (8 jours/mois) :** + SIRH, culture d'entreprise, formation, due diligence RH — 8 000€/mois.",
+            "**Formule Projet (sur mesure) :** audit flash, due diligence, accompagnement levée — 3 000€-6 000€.",
+            "Découvrez notre [service DRH externalisé](/drh-externalise).",
+          ],
+        },
+        {
+          heading: "FAQ — DRH Externalisé",
+          content: [
+            "**Le DRH externalisé gère-t-il la paie ?** Il supervise et coordonne la paie mais ne la traite pas directement. Il travaille avec votre expert-comptable ou un partenaire paie pour garantir la conformité.",
+            "**Quelle est la différence entre DRH externalisé et DRH à temps partagé ?** C'est la même chose. 'DRH externalisé' est le terme générique. 'DRH à temps partagé' insiste sur le mode d'organisation récurrente.",
+            "**Comment mesurer le ROI d'un DRH externalisé ?** Sur 4 axes : time-to-hire réduit (45 à 25 jours), turnover en baisse (15% à 8%), conformité sociale garantie, et 2 à 5 heures/semaine récupérées par le fondateur.",
+            "**Le DRH externalisé intervient-il sur site ?** Oui, selon vos besoins. Nos DRH interviennent sur site et en distanciel, avec une expertise particulière sur les sujets transfrontaliers France-Espagne.",
+          ],
+        },
+      ],
+      ctaButton: "Prendre rendez-vous",
+    },
+    "controle-de-gestion": {
+      meta: {
+        title: "Contrôle de Gestion : Définition & Outils | Pilotage Financier | Iter Advisors",
+        description: "Le contrôle de gestion est la fonction qui mesure, analyse et pilote la performance de l'entreprise. Définition, outils, tableaux de bord et missions du contrôleur de gestion.",
+      },
+      h1: "Contrôle de Gestion — Définition, Outils et Missions | 2026 | Iter Advisors",
+      sections: [
+        {
+          content: [
+            "Le **contrôle de gestion** est la fonction de l'entreprise chargée de mesurer, analyser, et piloter la performance économique et financière. Contrairement à la comptabilité qui enregistre les flux passés, le contrôle de gestion regarde vers l'avenir : il construit des prévisions, identifie les écarts, et recommande des actions correctives.",
+            "Pour les PME et startups en croissance, le contrôle de gestion est souvent négligé — jusqu'au jour où le fondateur se rend compte qu'il ne sait pas si son entreprise est rentable, quels sont ses produits les plus performants, ou où part son argent.",
+          ],
+        },
+        {
+          heading: "Définition complète",
+          content: [
+            "Le contrôle de gestion est un processus par lequel les managers s'assurent que les ressources de l'entreprise sont obtenues et utilisées de façon efficace et efficiente pour atteindre ses objectifs.",
+            "**Efficacité :** faire les bonnes choses (atteindre les objectifs). **Efficience :** faire les choses bien (optimiser l'utilisation des ressources). **Économie :** minimiser les coûts pour un résultat donné.",
+            "Il se décline en trois niveaux : **Contrôle stratégique** (pertinence de la stratégie et allocation des ressources), **Contrôle opérationnel** (suivi des budgets, analyse des écarts, ajustements tactiques), et **Contrôle interne** (conformité des processus, fiabilité de l'information, prévention des risques).",
+          ],
+        },
+        {
+          heading: "Les outils du contrôle de gestion",
+          content: [
+            "**Tableau de bord de pilotage (Dashboard).** Agrège les KPIs sur une base mensuelle et permet au dirigeant de visualiser la santé de l'entreprise. Il comprend des KPIs financiers (CA, marge brute, EBITDA, trésorerie, BFR), commerciaux (clients, panier moyen, taux de conversion, churn), opérationnels (productivité, qualité, délais), et RH (effectifs, turnover, masse salariale).",
+            "**Budget et forecast.** Le budget annuel fixe les objectifs. Le forecast ajuste le budget en fonction de la réalité avec une revue mensuelle et analyse des écarts.",
+            "**Reporting de gestion.** Livrable mensuel du contrôleur : résultats du mois, analyse des écarts par rapport au budget, tendances sur 3 à 12 mois, recommandations d'action.",
+            "**Costing et analyse de rentabilité.** Analyse des coûts par produit, client, ou canal pour identifier les zones de valeur et les fuites de rentabilité.",
+          ],
+        },
+        {
+          heading: "Les 12 KPIs indispensables d'un tableau de bord startup",
+          content: [
+            "**MRR/ARR** (revenu récurrent mensuel/annuel) — alerte si churn > 5%.",
+            "**Burn rate** (dépenses - revenus) — alerte si runway < 6 mois.",
+            "**Runway** (trésorerie / burn) — alerte si < 6 mois.",
+            "**LTV/CAC** (valeur vie client / coût acquisition) — alerte si < 3x.",
+            "**CAC Payback** (CAC / ARPU × marge) — alerte si > 18 mois.",
+            "**NRR** ((MRR début + Expansion - Churn) / début) — alerte si < 100%.",
+            "**Marge brute** ((CA - Coûts directs) / CA) — alerte si < 60% pour le SaaS.",
+            "**BFR/CA** (BFR en jours de CA) — alerte si > 45 jours.",
+            "**Churn client** (clients perdus / total) — alerte si > 3%/mois.",
+            "**NPS** (% promoteurs - % détracteurs) — alerte si < 30.",
+            "**Rétention employés** (1 - départs / effectif) — alerte si < 85%.",
+            "**Productivité** (CA / nombre d'employés) — alerte si baisse > 10%.",
+          ],
+        },
+        {
+          heading: "FAQ — Contrôle de Gestion",
+          content: [
+            "**Quelle est la différence entre comptabilité et contrôle de gestion ?** La comptabilité enregistre et justifie les flux passés. Le contrôle de gestion analyse ces données pour piloter l'avenir : prévisions, budgets, KPIs, et recommandations.",
+            "**Quand une startup a-t-elle besoin d'un contrôleur de gestion ?** Dès que le CA dépasse 500K€ ou que l'équipe dépasse 15 personnes.",
+            "**Combien coûte un contrôleur de gestion externalisé ?** Les formules Iter Advisors démarrent à 1 500€/mois pour un tableau de bord mensuel. La formule complète est à 3 500€/mois. Découvrez notre [service de gestion financière externalisée](/services/gestion-financiere-externalisee).",
+            "**Quels outils utilise un contrôleur de gestion ?** Power BI pour les dashboards, Excel pour les modèles financiers, Pennylane pour la comptabilité, et Agicap pour la trésorerie.",
+          ],
+        },
+      ],
+      ctaButton: "Prendre rendez-vous",
+    },
+    "fractional-cfo": {
+      meta: {
+        title: "Fractional CFO : Définition & Tarifs 2026 | CFO à Temps Partiel | Iter Advisors",
+        description: "Le Fractional CFO est un directeur financier senior qui intervient à temps partiel. Définition, missions, tarifs et différences avec le DAF externalisé. Guide complet 2026.",
+      },
+      h1: "Fractional CFO — Définition, Tarifs et Missions | 2026 | Iter Advisors",
+      sections: [
+        {
+          content: [
+            "Le **Fractional CFO** (Chief Financial Officer à temps partiel) est un modèle de direction financière qui connaît une croissance explosive dans l'écosystème startup. Contrairement au CFO à plein temps qui coûte 120 000€ à 200 000€ par an, le Fractional CFO apporte la même expertise stratégique pour un budget 3 à 5 fois inférieur, en intervenant quelques jours par semaine.",
+            "Ce modèle est né dans la Silicon Valley et s'est rapidement répandu en Europe. En France, on parle également de [DAF externalisé](/daf-externalise) ou de CFO à temps partagé.",
+          ],
+        },
+        {
+          heading: "Définition complète",
+          content: [
+            "Un Fractional CFO est un directeur financier senior qui intervient dans votre entreprise à temps partiel — généralement 1 à 3 jours par semaine. Il assume les responsabilités stratégiques d'un CFO à plein temps sans le coût fixe d'un salarié permanent.",
+            "**Expertise senior à la demande.** Le Fractional CFO a généralement 10 à 20 ans d'expérience en finance d'entreprise, souvent dans des cabinets M&A, des fonds d'investissement, ou des startups en forte croissance.",
+            "**Flexibilité totale.** Vous augmentez l'intervention pendant la levée de fonds, vous réduisez après la clôture. Aucun engagement de long terme, aucune charge sociale.",
+            "**Focus sur la valeur ajoutée.** Le Fractional CFO ne fait pas de la saisie comptable. Il se concentre sur les missions à haute valeur ajoutée : stratégie financière, prévisions, relations investisseurs, et conseil au fondateur.",
+          ],
+        },
+        {
+          heading: "Les 5 missions d'un Fractional CFO",
+          content: [
+            "**1. Planification financière et forecast.** Il construit les modèles financiers à 3 scénarios, produit les forecasts mensuels, et aide le fondateur à anticiper les besoins de trésorerie.",
+            "**2. Accompagnement aux levées de fonds.** Il prépare le data room, construit le modèle financier, rédige le deck investisseur, et coach le fondateur sur les questions de due diligence.",
+            "**3. Reporting aux investisseurs.** Il produit les reportings mensuels pour le board et les investisseurs (KPIs SaaS, burn rate, runway, cohortes) et participe aux board meetings.",
+            "**4. Gestion de la trésorerie et du burn.** Il pilote le cash, optimise le BFR, négocie avec les banques, et alerte le fondateur sur les risques de trésorerie.",
+            "**5. Encadrement de l'équipe comptable et finance.** Il supervise l'expert-comptable, recrute et forme les profils finance, et met en place les processus financiers.",
+          ],
+        },
+        {
+          heading: "Fractional CFO vs DAF Externalisé",
+          content: [
+            "**Contexte :** Fractional CFO pour startups et scale-ups tech ; [DAF externalisé](/daf-externalise) pour PME traditionnelles et ETI.",
+            "**Focus :** Fractional CFO orienté levée de fonds, M&A, relations VC ; DAF externalisé orienté conformité, optimisation, gestion.",
+            "**Profil :** Fractional CFO souvent ex-VC, ex-M&A, ex-startup ; DAF externalisé souvent issu de l'expertise comptable ou du contrôle de gestion.",
+            "En pratique : si vous êtes une startup SaaS qui prépare une Series A, vous avez besoin d'un Fractional CFO. Si vous êtes une PME industrielle qui veut structurer sa fonction financière, vous avez besoin d'un [DAF externalisé](/daf-externalise). Chez Iter Advisors, nos profils couvrent les deux cas de figure.",
+          ],
+        },
+        {
+          heading: "Tarifs Fractional CFO 2026",
+          content: [
+            "**Formule Starter (2 jours/semaine) :** reporting, trésorerie, clôture mensuelle — 4 500€/mois.",
+            "**Formule Growth (4 jours/semaine) :** + levée de fonds, board, KPIs — 8 500€/mois.",
+            "**Formule Scale (8 jours/semaine) :** + planification, relations investisseurs, mentoring — 15 000€/mois.",
+            "**Formule Projet (sur mesure) :** data room, modèle financier, due diligence — 3 000€-8 000€.",
+            "Découvrez notre offre [Fractional CFO](/fr/fractional-cfo).",
+          ],
+        },
+        {
+          heading: "FAQ — Fractional CFO",
+          content: [
+            "**Quelle est la différence entre un Fractional CFO et un comptable ?** Un comptable enregistre et rapproche les transactions. Un Fractional CFO analyse la performance, construit des prévisions, accompagne les levées, et conseille le fondateur sur les décisions stratégiques.",
+            "**Un Fractional CFO peut-il aider pour une levée de fonds ?** Oui, c'est la mission la plus fréquente. Les Fractional CFO d'Iter Advisors ont accompagné plus de 50 levées de fonds du Seed à la Series B.",
+            "**Dans quel délai un Fractional CFO peut-il intervenir ?** Iter Advisors met en relation sous 5 jours ouvrés. Le diagnostic et la mise en route sont réalisés sous 2 semaines.",
+            "**Le Fractional CFO est-il présent sur site ?** Selon vos besoins. Nos Fractional CFO interviennent sur site (Paris, Toulouse, Barcelone) et en distanciel.",
+          ],
+        },
+      ],
+      ctaButton: "Prendre rendez-vous",
+    },
   },
   en: {
     bfr: {
@@ -1019,6 +1258,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
   },
 };
 
+
 // Mapping from URL slug to internal content key
 const slugMapping: Record<Locale, Record<string, GlossaryEntrySlug>> = {
   fr: {
@@ -1033,6 +1273,11 @@ const slugMapping: Record<Locale, Record<string, GlossaryEntrySlug>> = {
     "churn-rate": "churn-rate",
     "run-rate": "run-rate",
     "bspce-bsa": "bspce-bsa",
+    // EC-02 — 4 nouvelles pages glossaire
+    daf: "daf",
+    "drh-externalise": "drh-externalise",
+    "controle-de-gestion": "controle-de-gestion",
+    "fractional-cfo": "fractional-cfo",
   },
   en: {
     bfr: "bfr",
@@ -1046,6 +1291,11 @@ const slugMapping: Record<Locale, Record<string, GlossaryEntrySlug>> = {
     "churn-rate": "churn-rate",
     "run-rate": "run-rate",
     "bspce-bsa": "bspce-bsa",
+    // EC-02 — FR fallback for new glossary pages (EN translation pending)
+    daf: "daf",
+    "drh-externalise": "drh-externalise",
+    "controle-de-gestion": "controle-de-gestion",
+    "fractional-cfo": "fractional-cfo",
   },
   es: {
     bfr: "bfr",
@@ -1059,6 +1309,11 @@ const slugMapping: Record<Locale, Record<string, GlossaryEntrySlug>> = {
     "churn-rate": "churn-rate",
     "run-rate": "run-rate",
     "bspce-bsa": "bspce-bsa",
+    // EC-02 — FR fallback for new glossary pages (ES translation pending)
+    daf: "daf",
+    "drh-externalise": "drh-externalise",
+    "controle-de-gestion": "controle-de-gestion",
+    "fractional-cfo": "fractional-cfo",
   },
 };
 

@@ -346,6 +346,23 @@ const nextConfig: NextConfig = {
         destination: "/ressources/outils/logiciels-tresorerie",
         permanent: true, // 301 redirect (slug rename)
       },
+      // EC-05: Fix /ressources/outils/reporting-dataviz 404
+      {
+        source: "/ressources/outils/reporting-dataviz",
+        destination: "/ressources/outils",
+        permanent: true,
+      },
+      // EC-03: City pages — redirect short slugs to full city pages
+      {
+        source: "/toulouse",
+        destination: "/daf-externalise-toulouse",
+        permanent: true,
+      },
+      {
+        source: "/barcelone",
+        destination: "/daf-externalise-barcelone",
+        permanent: true,
+      },
     ];
   },
 };

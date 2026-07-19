@@ -672,6 +672,15 @@ export default function DafPage({
               {p}
             </p>
           ))}
+          {locale === "fr" && (
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-2">
+              Découvrez notre sélection complète des{" "}
+              <Link href="/ressources/blog/les-10-outils-pour-cfos-startup" className="text-iter-violet hover:underline underline-offset-2 font-medium">
+                10 outils indispensables pour les CFO de startup
+              </Link>
+              , avec verdict d&apos;expert et benchmarks.
+            </p>
+          )}
         </div>
       </section>
 
@@ -695,6 +704,7 @@ export default function DafPage({
               { title: locale === "fr" ? "Métier de DAF" : locale === "en" ? "CFO role & skills" : "Profesión de DAF", href: locale === "fr" ? "/daf-externalise/metier" : `/${locale}/daf-externalise/metier`, icon: Shield },
               { title: locale === "fr" ? "Tarifs du DAF externalisé" : locale === "en" ? "CFO pricing" : "Tarifas DAF externalizado", href: locale === "fr" ? "/daf-externalise/tarifs" : `/${locale}/daf-externalise/tarifs`, icon: DollarSign },
               { title: locale === "fr" ? "DAF externalisé par secteur" : locale === "en" ? "CFO by industry" : "DAF externalizado por sector", href: locale === "fr" ? "/daf-externalise/secteurs" : `/${locale}/daf-externalise/secteurs`, icon: Compass },
+              ...(locale === "fr" ? [{ title: "DRH externalisé", href: "/drh-externalise", icon: Users }] : []),
             ].map((service, i) => (
               <Link
                 key={i}
@@ -806,6 +816,66 @@ export default function DafPage({
       <div className="container">
         <div className="border-b border-border/50" />
       </div>
+
+      {/* Ressources connexes — FR only (EC-04) */}
+      {locale === "fr" && (
+        <section className="bg-background py-16 sm:py-24 lg:py-32">
+          <div className="container px-4 sm:px-6">
+            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
+              Ressources
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading mb-8 sm:mb-10">
+              En savoir plus sur le DAF externalisé
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              {[
+                {
+                  href: "/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission",
+                  title: "Combien coûte un DAF externalisé ? Tarifs 2026",
+                  desc: "Grille tarifaire détaillée avec 3 formules et comparatif DAF salarié.",
+                },
+                {
+                  href: "/ressources/blog/daf-externalise-vs-daf-salarie",
+                  title: "DAF externalisé vs DAF salarié : le comparatif",
+                  desc: "8 critères comparés pour choisir entre externalisation et recrutement.",
+                },
+                {
+                  href: "/ressources/blog/quand-embaucher-daf-externalise-5-signes",
+                  title: "5 signes que vous avez besoin d'un DAF externalisé",
+                  desc: "Les signaux d'alerte qui doivent pousser à l'action.",
+                },
+                {
+                  href: "/ressources/blog/daf-externalise-vs-expert-comptable",
+                  title: "DAF externalisé vs expert-comptable : différences",
+                  desc: "Comprendre la complémentarité entre les deux fonctions.",
+                },
+                {
+                  href: "/ressources/glossaire/daf",
+                  title: "Glossaire : DAF (Directeur Administratif et Financier)",
+                  desc: "Définition complète, missions et compétences clés.",
+                },
+                {
+                  href: "/ressources/cas-clients",
+                  title: "Cas clients : 85 entreprises accompagnées",
+                  desc: "Découvrez comment nos DAF accompagnent PME et startups.",
+                },
+              ].map((item, i) => (
+                <Link
+                  key={i}
+                  href={item.href}
+                  className="group flex flex-col gap-2 bg-muted/40 border border-border/50 rounded-2xl p-6 hover:border-iter-violet/30 transition-all duration-300"
+                >
+                  <h3 className="font-semibold text-foreground group-hover:text-iter-violet transition-colors leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                  <ArrowRight size={14} className="mt-auto text-foreground/30 group-hover:text-iter-violet transition-all group-hover:translate-x-1" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section id="faq" className="bg-muted/30 py-16 sm:py-24 lg:py-32 scroll-mt-24">
@@ -1144,6 +1214,7 @@ function linkifyMissionText(text: string): ReactNode {
     { pattern: /levée de fonds/i, href: "/services/accompagnement-levee-de-fond" },
     { pattern: /opérations de M&A/i, href: "/services/ma-due-diligence" },
     { pattern: /comptabilité analytique/i, href: "/services/controle-de-gestion-externalise" },
+    { pattern: /dossier d['']investissement/i, href: "/ressources/blog/checklist-due-diligence-levee-de-fonds" },
   ];
 
   const parts: ReactNode[] = [];
