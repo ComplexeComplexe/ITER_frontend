@@ -1219,11 +1219,40 @@ export default function DafPage({
                   sameAs: "https://www.linkedin.com/in/rostand/",
                 },
               ],
-              // Review-snippet fix (2026-05-29): aggregateRating removed. This
-              // #organization rating is self-serving/third-party (Trustfolio) and
-              // duplicated the site-wide #organization node in the root layout,
-              // which triggered GSC "multiple aggregate ratings". The visible 5/5
-              // badge in the hero is UI only, not structured data.
+              // Review-snippet fix (2026-07-19): aggregateRating + review[]
+              // réintroduits ICI (ProfessionalService = type supporté par Google
+              // pour Review Snippets), remplacent les blocs Service et
+              // FinancialService rejetés par GSC ("Type d'objet non valide pour
+              // le champ <parent_node>", 6 éléments non valides détectés le
+              // 09/07/2026). Source unique de vérité : TRUSTFOLIO_* constants
+              // (rating = 5, reviewCount = 35), plus de valeurs contradictoires
+              // 5/31 vs 5/35 sur la même page. Le site-wide layout Organization
+              // ne porte volontairement PAS d'aggregateRating (cf. app/layout.tsx)
+              // donc pas de collision "multiple aggregate ratings".
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: TRUSTFOLIO_RATING,
+                reviewCount: TRUSTFOLIO_REVIEW_COUNT,
+                bestRating: 5,
+                worstRating: 1,
+              },
+              review: TRUSTFOLIO_REVIEWS.map((r) => ({
+                "@type": "Review",
+                author: {
+                  "@type": "Person",
+                  name: r.name,
+                  jobTitle: r.jobTitle,
+                  worksFor: { "@type": "Organization", name: r.company },
+                },
+                datePublished: r.datePublished,
+                reviewBody: r.reviewBody,
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: 5,
+                  bestRating: 5,
+                  worstRating: 1,
+                },
+              })),
             }),
           }}
         />
@@ -1293,38 +1322,13 @@ export default function DafPage({
                   },
                 ],
               },
-              // SEO-04 (2026-07-01) — aggregateRating + 5 Review objects
-              // individuels réintroduits sur le Service (pas sur Organization
-              // pour éviter le conflit multi-nodes). Approche conforme aux
-              // guidelines Google pour third-party reviews : (1) sameAs vers
-              // Trustfolio dans l'Organization (voir app/layout.tsx), (2)
-              // Review objects individuels avec author + reviewBody + rating,
-              // (3) aggregateRating avec ratingValue + reviewCount alignés.
-              // Cf. reco-seo-iteradvisors.md §1 "Points d'enrichissement".
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: TRUSTFOLIO_RATING,
-                reviewCount: TRUSTFOLIO_REVIEW_COUNT,
-                bestRating: 5,
-                worstRating: 1,
-              },
-              review: TRUSTFOLIO_REVIEWS.map((r) => ({
-                "@type": "Review",
-                author: {
-                  "@type": "Person",
-                  name: r.name,
-                  jobTitle: r.jobTitle,
-                  worksFor: { "@type": "Organization", name: r.company },
-                },
-                datePublished: r.datePublished,
-                reviewBody: r.reviewBody,
-                reviewRating: {
-                  "@type": "Rating",
-                  ratingValue: 5,
-                  bestRating: 5,
-                  worstRating: 1,
-                },
-              })),
+              // Review Snippet fix (2026-07-19) — aggregateRating + review[]
+              // volontairement retirés de ce type Service. Google ne supporte
+              // pas Review Snippets pour @type "Service" (rejet GSC "Type
+              // d'objet non valide pour le champ <parent_node>", 6 éléments
+              // non valides). Les avis sont désormais portés par le bloc
+              // ProfessionalService (@id #organization) ci-dessus, seul type
+              // supporté par Google pour cette page.
             }),
           }}
         />
@@ -1350,13 +1354,14 @@ export default function DafPage({
                   { "@type": "Offer", name: "Premium", price: "7000", priceCurrency: "EUR" },
                 ],
               },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5",
-                reviewCount: "31",
-                bestRating: "5",
-                worstRating: "1",
-              },
+              // Review Snippet fix (2026-07-19) — aggregateRating (5/31)
+              // supprimé. Il coexistait avec l'aggregateRating (5/35) du
+              // bloc Service ci-dessus, ce qui déclenchait la règle GSC
+              // "avis multiples cumulés" (35 vs 31 sur la même page).
+              // De plus, @type FinancialService n'est pas supporté par
+              // Google pour Review Snippets. La note est désormais
+              // rattachée à ProfessionalService (@id #organization), seul
+              // type supporté.
             }),
           }}
         />
