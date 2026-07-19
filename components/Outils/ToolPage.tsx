@@ -29,6 +29,13 @@ const categoryLabels = {
   tresorerie: 'Trésorerie',
   depenses: 'Gestion des dépenses',
   paie: 'Paie & RH',
+  // Refonte outils (2026-07-17) — 4 nouvelles catégories ajoutées
+  // en même temps que 7 outils (Kyriba, Power BI, Upflow, LeanPay,
+  // Factorial, Carta, Equify).
+  recouvrement: 'Recouvrement client',
+  sirh: 'SIRH & RH',
+  equity: 'Equity / Cap Table',
+  reporting: 'Reporting & Dataviz',
 };
 
 // Predefined stacks for each tool
@@ -382,6 +389,11 @@ export default function ToolPage({
                   tresorerie: 'Trésorerie',
                   depenses: 'Dépenses',
                   paie: 'Paie',
+                  // Refonte outils (2026-07-17) — nouvelles catégories.
+                  recouvrement: 'Recouvrement',
+                  sirh: 'SIRH',
+                  equity: 'Equity',
+                  reporting: 'Reporting',
                 };
                 const comboToRender = stack.tools && stack.tools.length > 0 ?
                   stack.tools.map((toolName: string) => {
