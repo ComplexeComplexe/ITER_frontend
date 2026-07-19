@@ -277,6 +277,112 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
         </div>
       </section>
 
+      {/* GEO-08 (2026-07-17) — Comparison table "Notre verdict Iter Advisors"
+          par catégorie. Information gain : la colonne "Avis Iter Advisors"
+          contient des verdicts personnalisés issus de l'expérience réelle
+          des CFO Iter Advisors, pas des descriptions marketing. Format
+          preferred by LLMs (comparison tables — cf. TICKET-GEO §2). */}
+      <section className="bg-background py-16">
+        <div className="container max-w-5xl">
+          <h2 className="text-3xl font-bold font-heading text-foreground mb-4">
+            Comparatif outils CFO 2026 : notre verdict par catégorie
+          </h2>
+          <p className="text-muted-foreground mb-8 leading-relaxed">
+            Chaque colonne « Avis Iter Advisors » reflète le verdict d&apos;usage
+            après déploiement chez nos 85+ clients — pas une description
+            copiée du site éditeur. Prix HT/mois indicatifs, calibrés pour
+            une PME de 10 à 50 salariés.
+          </p>
+
+          <div className="overflow-x-auto mb-4">
+            <table className="w-full text-sm border-collapse">
+              <thead className="bg-muted/40">
+                <tr>
+                  <th className="text-left p-3 font-semibold border border-border/60">Outil</th>
+                  <th className="text-left p-3 font-semibold border border-border/60">Fonction</th>
+                  <th className="text-left p-3 font-semibold border border-border/60">Prix/mois</th>
+                  <th className="text-left p-3 font-semibold border border-border/60">API compta</th>
+                  <th className="text-left p-3 font-semibold border border-border/60">API banque</th>
+                  <th className="text-left p-3 font-semibold border border-border/60">Avis Iter Advisors</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="p-3 border border-border/60"><strong>Pennylane</strong></td>
+                  <td className="p-3 border border-border/60">Comptabilité + facturation</td>
+                  <td className="p-3 border border-border/60">49-149 €</td>
+                  <td className="p-3 border border-border/60">✅</td>
+                  <td className="p-3 border border-border/60">✅</td>
+                  <td className="p-3 border border-border/60">Le meilleur pour les PME françaises en 2026. Migration en 2 semaines chez nos clients.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 border border-border/60"><strong>Sage</strong></td>
+                  <td className="p-3 border border-border/60">Comptabilité + ERP</td>
+                  <td className="p-3 border border-border/60">30-250 €</td>
+                  <td className="p-3 border border-border/60">Natif</td>
+                  <td className="p-3 border border-border/60">Partiel</td>
+                  <td className="p-3 border border-border/60">Robuste pour l&apos;industrie et le multi-entités. UX datée mais fiable.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 border border-border/60"><strong>Agicap</strong></td>
+                  <td className="p-3 border border-border/60">Trésorerie + forecast</td>
+                  <td className="p-3 border border-border/60">79-249 €</td>
+                  <td className="p-3 border border-border/60">✅</td>
+                  <td className="p-3 border border-border/60">✅</td>
+                  <td className="p-3 border border-border/60">Forecast 12 mois précis à 95 % chez nos clients avec CA {'>'}5 M€.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 border border-border/60"><strong>Kyriba</strong></td>
+                  <td className="p-3 border border-border/60">Trésorerie groupe</td>
+                  <td className="p-3 border border-border/60">Sur devis (5-15 k€)</td>
+                  <td className="p-3 border border-border/60">✅</td>
+                  <td className="p-3 border border-border/60">✅</td>
+                  <td className="p-3 border border-border/60">Overkill sous 20 M€ de CA. Notre choix ETI 50 M€+ multi-devises.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 border border-border/60"><strong>Spendesk</strong></td>
+                  <td className="p-3 border border-border/60">Gestion dépenses</td>
+                  <td className="p-3 border border-border/60">0-99 €/user</td>
+                  <td className="p-3 border border-border/60">✅</td>
+                  <td className="p-3 border border-border/60">❌</td>
+                  <td className="p-3 border border-border/60">Gestion notes de frais fluide. À coupler avec Pennylane pour l&apos;OCR.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 border border-border/60"><strong>Qonto</strong></td>
+                  <td className="p-3 border border-border/60">Banque pro + cartes</td>
+                  <td className="p-3 border border-border/60">9-99 €</td>
+                  <td className="p-3 border border-border/60">✅ Pennylane</td>
+                  <td className="p-3 border border-border/60">—</td>
+                  <td className="p-3 border border-border/60">Best-in-class pour startups jusqu&apos;à 30 salariés. API rich.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 border border-border/60"><strong>Payfit</strong></td>
+                  <td className="p-3 border border-border/60">Paie + RH</td>
+                  <td className="p-3 border border-border/60">39-99 €/mois + 12 €/bulletin</td>
+                  <td className="p-3 border border-border/60">✅</td>
+                  <td className="p-3 border border-border/60">—</td>
+                  <td className="p-3 border border-border/60">Excellent jusqu&apos;à 100 salariés en France. Silae au-delà.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 border border-border/60"><strong>Power BI</strong></td>
+                  <td className="p-3 border border-border/60">Reporting / dataviz</td>
+                  <td className="p-3 border border-border/60">10-20 €/user</td>
+                  <td className="p-3 border border-border/60">Via connecteurs</td>
+                  <td className="p-3 border border-border/60">—</td>
+                  <td className="p-3 border border-border/60">Notre choix par défaut pour board reporting. Alternative : Metabase gratuit.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p className="text-sm text-muted-foreground italic">
+            Verdicts basés sur le retour d&apos;expérience de nos DAF externalisés sur
+            85 missions actives — pas des descriptions marketing du site éditeur.
+            Dernière mise à jour : juillet 2026.
+          </p>
+        </div>
+      </section>
+
       {/* CTA section */}
       <CTASection locale={locale} />
     </PageLayout>
