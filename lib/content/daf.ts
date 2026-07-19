@@ -159,9 +159,13 @@ export const dafContent: Record<Locale, DafContent> = {
       // T#2 (2026-07-13) — Title/meta réécrits pour booster le CTR (0,27 %
       // GSC 90j → cible 1,5-2,5 %). Chiffres inclus : prix d'entrée, preuve
       // sociale (85 clients, 5/5, +100 M€), promesse temporelle (24 h).
-      title: "DAF Externalisé : missions & tarifs dès 2 000 €/mois",
+      // GSC-06 (2026-07-19) — ajout de "2026" pour signal de fraîcheur
+      // (page en chute de position 16→23 sur "daf externalisé" ces 6 mois).
+      // Meta description reformulée avec "(31 avis)" pour préciser la source
+      // du 5/5 et booster le CTR SERP.
+      title: "DAF Externalisé 2026 : missions & tarifs dès 2 000 €/mois | Iter Advisors",
       description:
-        "Cabinet de DAF externalisé pour PME & startups. 85 clients, +100 M€ levés, note 5/5. Devis en 24 h. Paris · Toulouse · Barcelone.",
+        "Cabinet de DAF externalisé pour PME & startups. 85 clients, 5/5★ (31 avis Trustfolio), 100 M€ levés. Paris · Toulouse · Barcelone. Devis en 24 h.",
     },
     breadcrumbLabel: "DAF Externalisé",
     essential: {
@@ -583,6 +587,24 @@ export const dafContent: Record<Locale, DafContent> = {
         question: "Quelle est la différence entre un DAF externalisé et un expert-comptable ?",
         answer:
           "L'expert-comptable certifie la conformité légale et fiscale de votre comptabilité (bilan annuel, liasse fiscale, déclarations TVA). Il regarde le passé et garantit la régularité des comptes. Le DAF externalisé pilote la performance financière au quotidien : prévisionnel de trésorerie, reporting de gestion, analyse de marges, préparation de levée de fonds. Il anticipe l'avenir et aide à prendre des décisions opérationnelles. Ce sont des rôles complémentaires : une PME structurée a typiquement les deux.",
+      },
+      {
+        // GSC-01 (2026-07-19) — question la plus recherchée après le mot-clé
+        // principal ("daf externalisé vs salarié" = variation #2). Un DAF
+        // salarié coûte 100-213 k€ chargé, un externalisé 24-84 k€ HT.
+        // Cette Q&A alimente le rich snippet FAQPage et cible la longue
+        // traîne "différence daf externalisé salarié".
+        question: "Quelle est la différence entre un DAF externalisé et un DAF salarié ?",
+        answer:
+          "Un DAF salarié coûte 100 000 à 213 000 € chargés par an (soit 8 300 à 17 750 € par mois) et nécessite 3 à 6 mois de recrutement avec un risque de départ à zéro coût de remplacement. Un DAF externalisé démarre à 2 000 € HT/mois (24 000 € HT/an), est opérationnel sous 1 à 2 semaines, et offre une flexibilité totale : volume ajustable au mois, aucun engagement de durée, continuité garantie par le cabinet. Le DAF salarié devient préférable au-delà de 200 salariés et d'un CA stable supérieur à 50 M€. En-dessous, le DAF externalisé est 4 à 8 fois plus économique et couvre les mêmes missions : pilotage financier, trésorerie, reporting, levée de fonds.",
+      },
+      {
+        // GSC-01 (2026-07-19) — question People-Also-Ask fréquente. Détaille
+        // les 5 missions cœur (pilotage cash, reporting, BFR, levée, digital)
+        // pour ancrer l'expertise et alimenter l'AI Overview Google.
+        question: "Quelles sont les missions d'un DAF externalisé ?",
+        answer:
+          "Un DAF externalisé assume 5 missions principales : (1) Pilotage de la trésorerie et prévisionnel de cash à 13 semaines minimum, avec suivi hebdomadaire des encaissements et décaissements ; (2) Reporting mensuel et tableaux de bord pour le dirigeant et le board (P&L, cash flow, KPIs métiers, cohortes) ; (3) Structuration et optimisation du BFR (Besoin en Fonds de Roulement) : négociation des délais fournisseurs, réduction du DSO, financement court terme ; (4) Accompagnement aux levées de fonds et opérations de M&A : business plan, modèle financier à 3 scénarios, data room, réponses aux investisseurs ; (5) Transformation digitale de la fonction finance : sélection et implémentation des outils (Pennylane, Agicap, Spendesk, Payfit). Chez Iter Advisors, chaque mission démarre par un audit flash de 2 jours suivi d'une feuille de route à 90 jours.",
       },
       {
         question: "Quand faire appel à un DAF externalisé ?",

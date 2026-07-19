@@ -1,6 +1,7 @@
 
 
 import { Metadata } from 'next';
+import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
@@ -347,6 +348,17 @@ export default function DafExternaliseVsSalariePage() {
       </table>
       <p>
         Chez Iter Advisors, nous avons aidé 500+ PMEs et scale-ups à faire ce choix. Nous accompagnons tant les structure avec DAF salarié que ceux qui nous confient leur rôle en externalisé. Notre objectif : trouver le modèle optimal pour votre croissance.
+      </p>
+      {/* GSC-05 (2026-07-19) — maillage interne vers la page pilier. Ancres
+          variées ("cabinet Iter Advisors" + "service de DAF externalisé")
+          conformes à la règle : jamais >30 % d'exact-match sur "DAF externalisé". */}
+      <p>
+        Envie de creuser le sujet côté offre&nbsp;? Découvrez notre{' '}
+        <Link href="/daf-externalise">service de DAF externalisé</Link> — 3&nbsp;formules
+        (Essentiel, Croissance, Premium) dès 2&nbsp;000&nbsp;€ HT/mois avec un DAF
+        senior opérationnel sous 2&nbsp;semaines. Pour comprendre en profondeur
+        notre méthodologie, notre livret complet est disponible sur la page{' '}
+        <Link href="/daf-externalise">cabinet Iter Advisors</Link>.
       </p>
     </BlogPostPageRefonte>
   );

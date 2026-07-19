@@ -1,6 +1,7 @@
 
 
 import { Metadata } from 'next';
+import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 import MidArticleSoftCTA from '@/components/blog/MidArticleSoftCTA';
@@ -314,6 +315,17 @@ export default function CoutDafExternalisePage() {
       </ul>
       <p>
         Vous êtes prêt à améliorer votre finance ? Planifiez une discussion avec nos experts.
+      </p>
+      {/* GSC-05 (2026-07-19) — maillage vers page pilier avec ancres variées
+          ("nos formules de DAF externalisé" + "découvrir notre service"). */}
+      <p>
+        Pour comparer les 3&nbsp;formules détaillées côte à côte (2&nbsp;000&nbsp;/
+        4&nbsp;000&nbsp;/ 7&nbsp;000&nbsp;€ HT selon le volume) et voir la
+        méthodologie qui va avec, jetez un œil à{' '}
+        <Link href="/daf-externalise">nos formules de DAF externalisé</Link>.
+        Vous pouvez aussi{' '}
+        <Link href="/daf-externalise">découvrir notre service</Link> complet en
+        30 secondes via le bloc «&nbsp;L'essentiel&nbsp;» en haut de page.
       </p>
     </BlogPostPageRefonte>
   );

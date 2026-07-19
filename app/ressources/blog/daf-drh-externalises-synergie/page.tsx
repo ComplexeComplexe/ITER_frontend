@@ -1,6 +1,7 @@
 
 
 import { Metadata } from 'next';
+import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
@@ -293,6 +294,19 @@ export default function DafDrhExternalisationSynergieePage() {
       </ul>
       <p>
         Chez Iter Advisors, nous proposons exactement ce modèle. DAF et DRH sont intégrés dans notre structure pour maximiser synergies. Si vous levez ou êtes en croissance, c'est le moment de structurer votre finance + RH correctement.
+      </p>
+      {/* GSC-05 (2026-07-19) — maillage vers page pilier avec ancres variées
+          ("externaliser votre DAF" + "DAF externalisé pour PME") pour éviter
+          l'exact-match. */}
+      <p>
+        Pour aller plus loin sur le volet finance de cette combinaison,
+        parcourez notre offre complète pour{' '}
+        <Link href="/daf-externalise">externaliser votre DAF</Link> — cadre
+        méthodologique éprouvé, DAF senior mobilisable sous 2&nbsp;semaines et
+        formules à partir de 2&nbsp;000&nbsp;€ HT/mois. Le détail de nos
+        interventions{' '}
+        <Link href="/daf-externalise">DAF externalisé pour PME</Link> et
+        scale-ups y est présenté formule par formule.
       </p>
     </BlogPostPageRefonte>
   );
