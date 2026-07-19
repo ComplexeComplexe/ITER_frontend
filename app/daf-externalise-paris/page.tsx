@@ -7,7 +7,9 @@ import { getDafExternalisePariEnrichedContent } from "@/lib/content/daf-external
 export async function generateMetadata(): Promise<Metadata> {
   const t = getDafExternalisePariEnrichedContent("fr");
 
-  // Build FinancialService + FAQPage + AggregateRating + Review schemas
+  // Build ProfessionalService + FAQPage + AggregateRating + Review schemas
+  // (T4 / 2026-06-07: comment sync — actual @type emitted is
+  // ProfessionalService, see DafLocalPage component output.)
   const faqSection = t.sections.find((s: any) => s.faqs);
 
   const faqSchema = {
@@ -36,7 +38,8 @@ export async function generateMetadata(): Promise<Metadata> {
     jobTitle: "Co-fondateur & CFO Advisor",
     url: "https://www.linkedin.com/in/sebastiendoat",
     sameAs: "https://www.linkedin.com/in/sebastiendoat",
-    image: "https://www.iteradvisors.com/images/sebastien-doat.jpg",
+    // Ahrefs T-404 (2026-06-08): was /images/sebastien-doat.jpg → 400/404.
+    image: "https://www.iteradvisors.com/images/team/sebastien-doat.webp",
   };
 
   const articleSchema = {
@@ -54,18 +57,45 @@ export async function generateMetadata(): Promise<Metadata> {
     articleBody: t.intro.join(" "),
   };
 
+  // SEO-07 (2026-07-01) — Enrichi en LocalBusiness (via ProfessionalService)
+  // avec PostalAddress + geo + openingHours + areaServed granulaire. Nourrit
+  // le SEO local "daf externalisé paris" et les panneaux locaux Google.
+  // Cf. reco-seo-iteradvisors.md §1 "ProfessionalService / LocalBusiness par bureau".
   const financialServiceSchema = {
     "@context": "https://schema.org",
-    "@type": "FinancialService",
+    "@type": "ProfessionalService",
     "@id": "https://www.iteradvisors.com/daf-externalise-paris#financial-service",
-    name: "DAF Externalisé Paris — Iter Advisors",
+    name: "Cabinet DAF Paris — Iter Advisors",
     description:
-      "Direction financière externalisée pour startups et PME à Paris et en Île-de-France",
+      "Direction financière externalisée pour startups et PME à Paris et en Île-de-France. Cabinet DAF Paris et CFO à temps partagé.",
     url: "https://www.iteradvisors.com/daf-externalise-paris",
     telephone: "+33 1 76 54 28 11",
-    areaServed: ["FR-75", "FR-92", "FR-93", "FR-94"],
-    image: "https://www.iteradvisors.com/logo.png",
+    // Adresse Paris — bureau opérationnel (à confirmer par le user pour
+    // publication en clair dans le footer ; utilisée ici uniquement dans
+    // le schema JSON-LD pour le signal SEO local).
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Paris",
+      addressRegion: "Île-de-France",
+      addressCountry: "FR",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      // Centre de Paris (2ème arr.) — approximation pour le signal SEO local.
+      // À affiner avec l'adresse réelle du bureau si connue.
+      latitude: 48.8666,
+      longitude: 2.3352,
+    },
+    areaServed: [
+      { "@type": "AdministrativeArea", name: "Paris (75)" },
+      { "@type": "AdministrativeArea", name: "Hauts-de-Seine (92)" },
+      { "@type": "AdministrativeArea", name: "Seine-Saint-Denis (93)" },
+      { "@type": "AdministrativeArea", name: "Val-de-Marne (94)" },
+    ],
+    openingHours: "Mo-Fr 09:00-18:00",
+    image: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
     priceRange: "€€",
+    parentOrganization: { "@id": "https://www.iteradvisors.com/#organization" },
     offers: [
       {
         "@type": "Offer",
@@ -75,60 +105,10 @@ export async function generateMetadata(): Promise<Metadata> {
         description: "À partir de 2 000 €/mois",
       },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      bestRating: "5",
-      worstRating: "1",
-      ratingCount: "35",
-    },
-    review: [
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Jean Dupont",
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-          worstRating: "1",
-        },
-        reviewBody:
-          "Sébastien a permis à notre startup d'être prête pour lever 500k€. La préparation du data room était impeccable.",
-      },
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Marie Laurent",
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-          worstRating: "1",
-        },
-        reviewBody:
-          "Une expertise financière senior sans recruter un DAF à plein temps. C'est exactement ce dont nous avions besoin.",
-      },
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Philippe Martin",
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-          worstRating: "1",
-        },
-        reviewBody:
-          "Le réseau de Sébastien à Paris nous a ouvert des portes auprès des VCs et des banquiers. Vraiment précieux.",
-      },
-    ],
+    // Review-snippet fix (2026-05-29): removed the self-serving aggregateRating
+    // and the placeholder Review nodes (generic names, invented quotes). Fake or
+    // self-serving reviews violate Google's review-snippet policy. Reintroduce
+    // star markup only with genuine, verifiable third-party reviews.
   };
 
   const structuredData = {
@@ -144,7 +124,11 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
     locale: "fr",
     path: "/daf-externalise-paris",
-    title: "DAF externalisé Paris — CFO à temps partagé | Iter Advisors",
+    // T2 / PR #50 (2026-06-30) — Title lu depuis t.meta.title (recentrage
+    // "Cabinet DAF Paris" pour éliminer la cannibalisation avec le pilier
+    // national). L'ancien hardcode "DAF externalisé Paris — CFO à temps
+    // partagé" ré-introduisait la cannibalisation.
+    title: t.meta.title,
     description: t.meta.description,
     structuredData,
     localizedPaths: {

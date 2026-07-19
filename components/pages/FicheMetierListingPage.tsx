@@ -44,7 +44,7 @@ const content: Record<
   },
   es: {
     resourcesLabel: "Recursos",
-    resourcesHref: "/es/ressources",
+    resourcesHref: "/es/recursos",
     breadcrumbLabel: "Perfiles profesionales",
     h1: "Perfiles profesionales",
     intro:

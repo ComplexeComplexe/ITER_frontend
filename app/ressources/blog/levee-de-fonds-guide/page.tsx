@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Guide Levée Fonds | Iter Advisors",
   description:
     "Guide complet levée de fonds. Préparation comptable, due diligence, documentation, valorisation. Iter Advisors a assisté startups à lever +100M€.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/levee-de-fonds-guide",
+  },
   robots: {
     index: true,
     follow: true,
@@ -39,13 +42,13 @@ export default async function Page() {
       title="Levée de fonds : préparation financière et juridique 2026"
       dek="Comment préparer votre levée de fonds ? Due diligence financière, documentations requises, valorisation. Guide avec checklist."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter-advisors.jpg",
-        jobTitle: "Cabinet de DAF externalisé et CFO à temps partagé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={10}
       dateModified="2026-05-01T00:00:00Z"
-      heroImage="/images/blog/levee-de-fonds.webp"
+      heroImage="/images/blog/covers/levee-de-fonds-guide.svg"
       toc={[
         { id: "pourquoi", label: "1. Pourquoi bien préparer sa levée ?" },
         { id: "timeline", label: "2. Timeline et étapes clés" },

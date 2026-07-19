@@ -1,6 +1,6 @@
 import { Locale } from "../i18n";
 
-export type DafSubPageSlug = "metier" | "temps-partage" | "transition" | "tarifs" | "secteurs";
+export type DafSubPageSlug = "metier" | "temps-partage" | "transition" | "tarifs" | "secteurs" | "ecommerce" | "industrie" | "deep-tech";
 
 export interface DafSubContent {
   meta: {
@@ -22,14 +22,18 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
   fr: {
     metier: {
       meta: {
-        title: "Métier de DAF : Rôle, Missions et Compétences | Iter Advisors",
+        title: "Métier de DAF : Rôle et Missions | Iter Advisors",
         description:
           "Découvrez le métier de DAF : rôle complet, missions clés, compétences requises et évolution du poste dans les entreprises modernes.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "Le métier de DAF",
-      h1: "Le Métier de DAF : rôle, missions et compétences en 2026",
+      // T#1 + T#10 (2026-07-13) — H1 recentré sur intent informationnel
+      // pur "fiche métier DAF". Retiré tout ciblage "externalisé" pour
+      // éviter la cannibalisation avec le pilier /daf-externalise.
+      // Cible : "métier de daf", "fiche métier daf", "que fait un daf".
+      h1: "Fiche métier DAF : rôle, missions et compétences du Directeur Administratif et Financier",
       sections: [
         {
           content: [
@@ -96,14 +100,21 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     "temps-partage": {
       meta: {
-        title: "DAF à Temps Partagé - Missions et Tarifs | Iter Advisors",
+        // T#2 (2026-07-13) — Title recentré sur l'intent exclusif "DAF à
+        // temps partagé" (retrait "Tarifs" qui cannibalise /tarifs) +
+        // fourchette jours pour signal transactionnel dès le SERP.
+        title: "DAF à temps partagé : directeur financier 2-8 j/mois",
         description:
-          "Le DAF à temps partagé intervient plusieurs jours par mois pour structurer votre finance. Missions, audience, tarifs détaillés par Iter Advisors.",
+          "DAF à temps partagé pour PME et startups : un directeur financier senior 2 à 8 jours/mois. 85 clients accompagnés, note 5/5. Devis en 24 h.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF à temps partagé",
-      h1: "DAF à Temps Partagé : votre directeur financier flexible",
+      // T#1 + T#10 (2026-07-13) — H1 recentré sur intent exclusif "DAF à
+      // temps partagé" avec fourchette jours pour aligner avec le title
+      // (2-8 j/mois). Retire "votre directeur financier flexible" trop
+      // marketing/générique qui cannibalisait avec le pilier.
+      h1: "DAF à temps partagé : votre directeur financier senior 2 à 8 jours par mois",
       sections: [
         {
           content: [
@@ -182,19 +193,60 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     transition: {
       meta: {
-        title: "DAF de Transition - Missions, Durée et Tarifs | Iter Advisors",
+        // T#11 (2026-07-13) — Title enrichi avec "management de transition"
+        // (intent GSC distinct de "DAF de transition"). La page est déjà
+        // en pos 18 sur 3 441 impressions sur "daf de transition" (0
+        // conversion). Ajout de la variante lexicale pour capter aussi
+        // "management de transition finance" recherchée par les DRH/CEO.
+        title: "DAF de transition en 2026 : urgence et flexibilité | Iter Advisors",
         description:
-          "Le DAF de transition intervient à temps plein en cas de crise, de vacance de poste ou de transformation. Missions, durée et tarifs détaillés par Iter Advisors.",
+          "DAF de transition & management de transition finance : intervention à temps plein en 48-72 h pour vacance de poste, crise de trésorerie, restructuration ou levée. TJM 800-1 500 € HT.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF de transition",
-      h1: "DAF de Transition : votre direction financière en urgence",
+      // T#12 (2026-07-18) — H1 recentré sur l'intent fiche-métier SERP :
+      // "salaire", "missions", "devenir" captent les PAA dominants sur
+      // "daf de transition" tout en évitant la cannibalisation pilier.
+      h1: "DAF de transition : fiche métier, missions, salaire et devenir",
       sections: [
+        {
+          // T4 (2026-06-07) — bloc "L'essentiel en 30 secondes" en tête de
+          // page (template /daf-externalise). Donne au visiteur les
+          // éléments-clés avant qu'il ne décide de continuer à lire.
+          heading: "L'essentiel en 30 secondes",
+          content: [
+            "**Définition.** Un DAF de transition est un Directeur Administratif et Financier senior (12 à 20 ans d'expérience) qui intervient à temps plein dans votre entreprise pour une mission limitée, généralement de 3 à 12 mois.",
+            "**Quand faire appel.** Vacance brutale du poste de DAF, crise de trésorerie, restructuration, levée de fonds, M&A, ou transformation digitale de la fonction finance.",
+            "**Tarif.** TJM (Taux Journalier Moyen) entre 800 et 1 500 € HT par jour selon la séniorité et la complexité de la mission. À temps plein (20 jours / mois) : 16 000 à 30 000 € HT / mois.",
+            "**Délai de démarrage.** 48 à 72 heures après signature du contrat chez Iter Advisors, contre 3 à 6 mois en moyenne pour un recrutement classique.",
+            "**Pour qui.** PME en difficulté, ETI en transformation, scale-ups en hyper-croissance, fonds d'investissement (LBO, exit), entreprises familiales en cession.",
+          ],
+        },
         {
           content: [
             "Le **DAF de transition** est un Directeur Administratif et Financier senior qui intervient à temps plein ou quasi-plein dans une entreprise pour une durée limitée, généralement de 3 à 12 mois. Contrairement au **[DAF à temps partagé](/daf-externalise/temps-partage)** qui s'inscrit dans la durée avec une présence partielle, le DAF de transition mobilise l'intégralité de sa disponibilité pour répondre à une situation d'urgence ou de transformation.",
             "Le **[DAF externalisé](/daf-externalise)** en mode transition est sollicité dans des circonstances précises : départ soudain du DAF en poste, crise de trésorerie, restructuration financière, préparation à une cession ou une acquisition, ou encore accompagnement d'une forte croissance qui dépasse les capacités de l'équipe finance en place.",
+          ],
+        },
+        {
+          // T#12 (2026-07-18) — Fiche métier restructurée comme une vraie
+          // fiche APEC / Michael Page pour coller à l'intent SERP dominant.
+          // Heading "fiche métier complète" pour capter la variante longue.
+          heading: "DAF de transition : fiche métier complète",
+          content: [
+            "Le DAF de transition (Directeur Administratif et Financier de transition) est un cadre dirigeant senior qui intervient à temps plein dans une entreprise pour une mission limitée, généralement de 3 à 12 mois. Son rôle : assurer la continuité de la direction financière dans des situations critiques — départ brutal du DAF, crise de trésorerie, restructuration, préparation à une cession ou à une levée de fonds. Contrairement au DAF à temps partagé qui s'inscrit dans la durée, le DAF de transition mobilise l'intégralité de sa disponibilité pour répondre à une urgence ou à une transformation majeure.",
+            "**Fiche de poste — données clés :**",
+            "**Intitulé du poste :** DAF de transition — aussi appelé Interim CFO, Manager de transition finance, DAF intérimaire. Cadre dirigeant senior, statut indépendant ou salarié porté.",
+            "**Niveau d'expérience :** 12 à 20 ans d'expérience en finance d'entreprise, dont au moins 5 ans en poste de DAF ou Directeur Financier de groupe.",
+            "**Durée de mission :** 3 à 12 mois (extensible à 18 mois selon la complexité).",
+            "**Temps de travail :** temps plein ou quasi-plein (4 à 5 jours/semaine), contrairement au DAF à temps partagé.",
+            "**Rémunération :** TJM 800–1 500 € HT/jour selon la séniorité. À temps plein (20 jours/mois) : 16 000 à 30 000 € HT/mois, soit l'équivalent brut annuel de 180 000 à 350 000 €.",
+            "**Délai de mise en place :** 48 à 72 heures chez Iter Advisors — contre 3 à 6 mois pour un recrutement classique.",
+            "**Secteurs concernés :** tous secteurs — PME en difficulté, ETI en transformation, scale-ups en hyper-croissance, fonds d'investissement (LBO), entreprises familiales en cession.",
+            "**6 missions principales :** (1) audit éclair de la situation financière dès la 1ère semaine ; (2) pilotage de la trésorerie en situation critique (cash-flow, BFR, négociation bancaire) ; (3) sécurisation des reportings financiers et fiscaux (déclarations, clôture) ; (4) préparation d'une levée de fonds ou d'une cession (data room, projections, due diligence) ; (5) accompagnement d'une restructuration ou d'une intégration post-acquisition (plans sociaux, fusion de SI) ; (6) recrutement et passation au DAF successeur.",
+            "**Profil recherché :** ex-DAF ou CFO de PME/ETI, souvent ancien associé Big Four, ayant géré 3 à 5 situations de crise. Maîtrise des normes comptables (PCG, IFRS), des ERP (SAP, Cegid, NetSuite) et des outils BI (Power BI, MyReport). Anglais courant requis pour les groupes internationaux.",
+            "**Devenir DAF de transition :** la voie classique passe par 10 à 15 ans de direction financière salariée (DAF interne, Head of Finance de scale-up), puis un passage en freelance ou en cabinet de management de transition. Chez Iter Advisors, rejoindre notre vivier de DAFs de transition vous garantit un flux de missions structuré et un accompagnement de vos premières interventions.",
           ],
         },
         {
@@ -226,11 +278,34 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
         {
-          heading: "Tarifs d'un DAF de Transition",
+          // T4 (2026-06-07) — nouveau H2 ciblant "daf de transition pour eti
+          // et pme" (déjà position 10,2 en GSC, cible à renforcer en
+          // priorité). Contenu spécifique aux problématiques ETI/PME pour
+          // différencier du contenu généraliste.
+          heading: "DAF de transition pour ETI et PME",
           content: [
-            "Le tarif d'un **management de transition finance** est exprimé en TJM (Taux Journalier Moyen). Il est généralement plus élevé que le tarif d'un DAF à temps partagé, car le DAF de transition mobilise l'intégralité de sa disponibilité pour votre entreprise.",
+            "Les **ETI (Entreprises de Taille Intermédiaire, 250 à 5 000 salariés)** et les **PME en croissance (50 à 250 salariés)** ont des besoins de DAF de transition très spécifiques qui les distinguent à la fois des grands groupes et des start-ups early-stage.",
+            "**Contexte typique en ETI :** restructuration suite à un changement d'actionnariat (LBO, cession familiale), intégration post-acquisition d'une cible, préparation d'une cession ou d'un IPO, refonte de la direction financière après le départ du DAF historique. Ces missions impliquent souvent du multi-entités (filiales, holdings), du multi-pays, et une coordination avec des actionnaires institutionnels (private equity, banques d'investissement). Le DAF de transition apporte une expérience M&A et de gestion de gouvernance que peu de DAF salariés possèdent.",
+            "**Contexte typique en PME en croissance :** structuration de la fonction finance qui n'a jamais existé (start-up qui dépasse les 50 salariés et la première levée de Série A), crise de trésorerie liée à une croissance trop rapide (BFR mal piloté), préparation d'une levée de fonds Série B/C. Le DAF de transition stabilise la situation en 30 à 60 jours puis recrute son successeur — souvent un DAF salarié junior qu'il forme avant son départ.",
+            "**Délai de démarrage adapté à l'urgence.** Pour une PME en crise de trésorerie ou une ETI en sortie brutale de son DAF, nous mobilisons un profil senior en **48 à 72 heures**. Cette réactivité, impossible avec un recrutement classique (3 à 6 mois minimum), est ce qui distingue un cabinet de management de transition d'un cabinet de recrutement.",
+            "**Coût rapporté à la valeur créée.** Pour une ETI de 50 M€ de CA, le coût d'un DAF de transition pendant 6 mois (90 à 180 k€ HT) est largement compensé par la sécurisation des flux financiers, l'évitement d'erreurs fiscales et la valorisation accrue lors d'une cession ou d'une levée. Sur les missions que nous avons menées en 2024-2025, le retour sur investissement médian se situe entre **3x et 8x** le coût de la mission.",
+          ],
+        },
+        {
+          heading: "Tarifs d'un DAF de Transition : TJM 2026",
+          content: [
+            "Le tarif d'un **management de transition finance** est exprimé en TJM (Taux Journalier Moyen). Il est généralement plus élevé que le tarif d'un DAF à temps partagé, car le DAF de transition mobilise l'intégralité de sa disponibilité pour votre entreprise et démarre sous 48-72 heures.",
             "Chez Iter Advisors, nos TJM pour les missions de transition varient entre 800 et 1 500 euros HT par jour, selon le profil du DAF et la complexité de la mission. Pour une mission à temps plein (20 jours par mois), cela représente entre 16 000 et 30 000 euros HT par mois.",
-            "Pour une comparaison détaillée des coûts, consultez notre page sur les **[tarifs du DAF externalisé](/daf-externalise/tarifs)**.",
+            // Tableau comparatif rendu en prose markdown car DafSubPage
+            // utilise ReactMarkdown sans support GFM (pas de <table>).
+            // Format choisi : sections **gras** lisibles côté SEO + UX.
+            "**Comparatif 2026 — TJM et engagement par modalité d'intervention :**",
+            "**1. DAF de transition (Iter Advisors)** — TJM 800 à 1 500 € HT, mission temps plein 3 à 12 mois, démarrage 48-72 h, facturation prestation de services (pas de charges sociales). Adapté à crise, restructuration, transformation, vacance brutale du poste.",
+            "**2. DAF à temps partagé (Iter Advisors)** — Forfait mensuel 2 000 à 8 000 € HT (2-8 jours / mois), engagement 12 mois minimum, démarrage 1-2 semaines. Adapté à un besoin récurrent et durable.",
+            "**3. DAF intérimaire (agence d'intérim spécialisée)** — TJM 1 100 à 1 800 € HT (avec marge agence ~25-35 %), salarié mis à disposition, démarrage 1-3 semaines. Plus rigide juridiquement, plus coûteux à mission équivalente.",
+            "**4. Recrutement DAF salarié senior (cabinet de recrutement)** — Salaire brut annuel 90 000 à 150 000 € + 45 % de charges = coût total empreinte 130 000 à 220 000 € / an. Honoraires de recrutement : 20-30 % du salaire annuel (18-45 k€). Délai de mise en poste : 3 à 6 mois. Engagement long. Adapté quand le besoin est durable et le contexte stable.",
+            "**Synthèse.** Pour une crise de 3 à 6 mois, le DAF de transition est 30 à 50 % moins coûteux qu'un DAF intérimaire d'agence et 5 à 10 fois plus rapide à mobiliser qu'un recrutement. Pour un besoin durable de plus de 12 mois, le DAF salarié reste l'option la plus économique à condition d'accepter le délai de recrutement.",
+            "Pour une comparaison détaillée des coûts toutes formules confondues, consultez notre page sur les **[tarifs du DAF externalisé](/daf-externalise/tarifs)**.",
           ],
         },
         {
@@ -245,7 +320,11 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           heading: "Nos Autres Formules d'Intervention",
           content: [
             "Si votre besoin est récurrent et s'inscrit dans la durée, le **[DAF à temps partagé](/daf-externalise/temps-partage)** est plus adapté. Pour comprendre les compétences requises pour ce poste, consultez notre page sur le **[métier de DAF](/daf-externalise/metier)**. Pour une comparaison transparente des coûts, consultez les **[tarifs du DAF externalisé](/daf-externalise/tarifs)**.",
-            "Nous intervenons dans de nombreux secteurs (**[DAF externalisé par secteur](/daf-externalise/secteurs)**) et dans plusieurs villes (**[DAF externalisé près de chez vous](/daf-externalise/locaux)**).",
+            // T7 partial (2026-06-07) — remplacé le lien cassé
+            // /daf-externalise/locaux (404 : la page n'a jamais été créée)
+            // par les 3 vraies pages locales existantes (paris, toulouse,
+            // barcelone) qui ont chacune leur trafic GSC propre.
+            "Nous intervenons dans de nombreux secteurs (**[DAF externalisé par secteur](/daf-externalise/secteurs)**) et dans nos 3 villes d'implantation : **[DAF externalisé à Paris](/daf-externalise-paris)**, **[DAF externalisé à Toulouse](/daf-externalise-toulouse)** et **[DAF externalisé à Barcelone](/daf-externalise-barcelone)**.",
           ],
         },
         {
@@ -257,10 +336,17 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         },
         {
           heading: "FAQ - DAF de Transition",
+          // T#12 (2026-07-18) — Q3 ajoutée "dans quels cas" pour capter
+          // la PAA Google dominante sur "daf de transition". Les Q1/Q2
+          // existantes ciblaient "salaire" et "manager de transition" —
+          // maintenant les 3 requêtes clés sont couvertes en FAQPage JSON-LD.
           content: [
+            "**Quel est le salaire d'un DAF de transition ?** Le DAF de transition se rémunère en TJM (Taux Journalier Moyen) entre 800 et 1 500 € HT par jour. Sur une mission à temps plein (20 jours par mois), cela représente une facturation mensuelle de 16 000 à 30 000 € HT, soit l'équivalent d'un salaire brut annuel de 180 000 à 350 000 € rapporté à un temps plein. Pour un DAF salarié senior en CDI à titre de comparaison, la fourchette est de 90 000 à 150 000 € bruts annuels.",
             "**Quelle est la différence entre un DAF de transition et un manager de transition ?** Le manager de transition est un terme générique qui désigne tout cadre dirigeant intervenant en mode transition (DG, DRH, DAF, DSI...). Le DAF de transition est un manager de transition spécialisé dans la direction financière.",
+            "**Dans quels cas fait-on appel à un DAF de transition ?** Six situations déclenchent systématiquement le recours à un DAF de transition : (1) départ brutal ou démission du DAF en poste — la vacance ne peut pas durer 3 à 6 mois ; (2) crise de trésorerie sévère nécessitant un pilotage à temps plein (BFR hors de contrôle, rupture bancaire) ; (3) restructuration ou redressement impliquant banques et créanciers ; (4) préparation à une cession ou un LBO avec data room, audit vendeur et due diligence ; (5) levée de fonds urgente (Série A/B) nécessitant une disponibilité intégrale de 3 à 6 mois ; (6) transformation digitale de la direction financière (migration ERP, refonte des processus). Chez Iter Advisors, nous démarrons sous 48 à 72 heures.",
             "**Le DAF de transition peut-il recruter son successeur ?** Oui, c'est même recommandé. Le DAF de transition connaît les besoins réels du poste et peut aider à définir le profil idéal, participer aux entretiens, et assurer la passation avec le nouveau DAF recruté.",
             "**Peut-on passer d'une mission de transition à un DAF à temps partagé ?** Absolument. C'est même un scénario fréquent : la mission de transition stabilise la situation, puis le DAF reste en mode temps partagé pour assurer la continuité du pilotage financier.",
+            "**En combien de temps un DAF de transition peut-il démarrer une mission ?** Chez Iter Advisors, nous démarrons une mission de transition en 48 à 72 heures après la signature du contrat. Notre vivier de DAF seniors disponibles immédiatement permet de répondre aux situations d'urgence — départ brutal, crise de trésorerie, levée de fonds à finaliser — sans le délai de 3 à 6 mois d'un recrutement classique.",
           ],
         },
       ],
@@ -268,8 +354,12 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     tarifs: {
       meta: {
-        title: "Tarifs DAF Externalisé 2026 - Grille de Prix | Iter Advisors",
-        description: "Combien coûte un DAF externalisé ? Grille de tarifs 2026 : de 2 000 à 8 000 € HT/mois selon la formule. Transparence totale, sans surprise.",
+        // T#2 + T#7 (2026-07-13) — Fourchette de prix dès le title pour
+        // rich snippets sur "tarif daf externalisé" (pos 10,6 GSC).
+        // Le blog cout-daf-externalise-tarifs-prix-2026 capte l'informationnel,
+        // cette page capte le transactionnel (grille officielle + devis).
+        title: "Tarifs Direction Financière Externalisée 2026 : 2 000-8 000 €/mois | Iter Advisors",
+        description: "Grille tarifaire officielle 2026 : DAF externalisé de 2 000 à 8 000 € HT/mois selon la formule. 85 clients, 5/5 Trustfolio. Devis en 24 h.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
@@ -279,7 +369,11 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           content: [
             "Combien coûte un DAF externalisé ? C'est souvent la première question que se posent les dirigeants de PME et de startups avant de franchir le pas. La réponse dépend de plusieurs facteurs : la formule choisie (temps partagé, transition ou mission ponctuelle), le nombre de jours d'intervention par mois, et la complexité de la situation financière de l'entreprise.",
-            "Chez Iter Advisors, nous avons fait le choix de la transparence totale sur nos tarifs. Cette page présente notre grille de prix 2026, les facteurs qui influencent le coût, et une comparaison avec les alternatives (recrutement d'un DAF salarié, consultant financier, expert-comptable).",
+            // SEO-02 (2026-07-01) — Cross-link intention. Cette page = grille
+            // tarifaire officielle (intention commerciale). Le blog article
+            // dédié = guide informationnel avec méthodologie et ROI calculator.
+            // Séparation claire des intentions pour éviter la cannibalisation.
+            "Chez Iter Advisors, nous avons fait le choix de la transparence totale sur nos tarifs. Cette page présente notre **grille de prix officielle 2026**, les facteurs qui influencent le coût, et une comparaison avec les alternatives (recrutement d'un DAF salarié, consultant financier, expert-comptable). Pour un **guide informationnel complet avec méthodologie de comparaison, calcul de ROI et analyse marché**, consultez notre article dédié : [Combien coûte un DAF externalisé en 2026 : tarifs, grille de prix et ROI](/ressources/blog/cout-daf-externalise-tarifs-prix-2026).",
           ],
         },
         {
@@ -336,7 +430,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     secteurs: {
       meta: {
-        title: "DAF Externalisé par Secteur d'Activité | Iter Advisors",
+        title: "DAF externalisé par secteur en 2026 | Iter Advisors",
         description:
           "DAF externalisé spécialisé par secteur (SaaS, e-commerce, industrie, fintech, santé). Notre expertise sectorielle adaptée à votre métier.",
       },
@@ -385,6 +479,115 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           heading: "Contactez-Nous",
           content: [
             "Vous recherchez un DAF externalisé spécialisé dans votre secteur ? Nos consultants sauront vous proposer le profil idéal. Consultez également nos autres pages : **[DAF à temps partagé](/daf-externalise/temps-partage)**, **[DAF de transition](/daf-externalise/transition)**, **[métier de DAF](/daf-externalise/metier)**, et **[tarifs](/daf-externalise/tarifs)**.",
+          ],
+        },
+      ],
+      ctaButton: "Prendre rendez-vous",
+    },
+    ecommerce: {
+      meta: {
+        title: "DAF Externalisé E-Commerce : Pilotez Votre Profitabilité | Iter Advisors",
+        description:
+          "DAF externalisé spécialisé e-commerce : gestion du BFR, saisonnalité, marges produits, trésorerie. Intervention dès 2 jours/mois.",
+      },
+      parentLabel: "DAF Externalisé",
+      parentHref: "/daf-externalise",
+      breadcrumbLabel: "DAF E-Commerce",
+      h1: "DAF Externalisé pour E-Commerce : Pilotez Votre Profitabilité",
+      sections: [
+        {
+          content: [
+            "Le e-commerce est l'un des secteurs où la trésorerie est la plus volatile. Chez Iter Advisors, nos DAFs externalisés spécialisés e-commerce interviennent dès 2 jours/mois.",
+          ],
+        },
+        {
+          heading: "Les défis financiers du e-commerce",
+          content: [
+            "**Saisonnalité :** Le e-commerce connaît des pics (Black Friday, Noël) nécessitant un financement du stock 2 à 3 mois à l'avance. Notre DAF anticipe ces besoins.",
+            "**BFR :** Notre DAF optimise la rotation du stock, négocie les conditions de règlement et étudie l'affacturage sélectif.",
+            "**Marges produits :** Construction d'un P&L par produit, par canal (site propre, Amazon, marketplaces) et par segment client.",
+            "**TVA internationale :** Conformité OSS, TVA par pays européen, optimisation de la trésorerie en devises.",
+          ],
+        },
+        {
+          heading: "Nos missions DAF e-commerce",
+          content: [
+            "**Prévisionnel de trésorerie :** Modélisation 13 semaines glissantes pour anticiper les besoins avant chaque pic.",
+            "**Financement du stock :** Négociation banques + solutions fintech (Karmen, Silvr).",
+            "**Dashboard :** KPIs financiers (marge brute, EBITDA, cash conversion cycle) + opérationnels (LTV, CAC, taux retour).",
+            "Découvrez aussi : **[DAF externalisé](/daf-externalise)**, **[DAF industrie](/daf-externalise/industrie)**, **[DAF Deep Tech](/daf-externalise/deep-tech)**, **[tarifs](/daf-externalise/tarifs)**.",
+          ],
+        },
+      ],
+      ctaButton: "Prendre rendez-vous",
+    },
+    industrie: {
+      meta: {
+        title: "DAF Externalisé Industrie & ETI : Expertise Opérationnelle | Iter Advisors",
+        description:
+          "DAF externalisé pour ETI et entreprises industrielles : contrôle de gestion, supply chain, risques de change, M&A.",
+      },
+      parentLabel: "DAF Externalisé",
+      parentHref: "/daf-externalise",
+      breadcrumbLabel: "DAF Industrie",
+      h1: "DAF Externalisé Industrie : Expertise Financière pour ETI et PMI",
+      sections: [
+        {
+          content: [
+            "Les entreprises industrielles font face à des enjeux financiers que seul un DAF ayant une expérience industrielle peut maîtriser : contrôle analytique, CAPEX, risques de change, M&A. Iter Advisors intervient dès 2 jours/mois.",
+          ],
+        },
+        {
+          heading: "Les enjeux financiers de l'industrie",
+          content: [
+            "**Contrôle analytique :** P&L par ligne de produits, par client et par unité de production pour identifier les marges réelles.",
+            "**CAPEX :** Business cases, financement (crédit-bail, BEI, subventions, CIR/CII) et suivi des ROI.",
+            "**BFR :** Optimisation du cycle de trésorerie et négociation avec la chaîne d'approvisionnement.",
+            "**Change :** Politique de couverture adaptée (forward, options) pour les industriels exportateurs.",
+            "**M&A :** Due diligences, plans de financement et post-merger integration.",
+          ],
+        },
+        {
+          heading: "Notre approche",
+          content: [
+            "Iter Advisors accompagne des PMI et ETI dans toute la France et en Europe : aéronautique, plasturgie, métallurgie, agroalimentaire. En complément : **[DAF externalisé](/daf-externalise)**, **[DAF e-commerce](/daf-externalise/ecommerce)**, **[DAF Deep Tech](/daf-externalise/deep-tech)**.",
+          ],
+        },
+      ],
+      ctaButton: "Prendre rendez-vous",
+    },
+    "deep-tech": {
+      meta: {
+        title: "DAF Externalisé Deep Tech & Biotech : Levée de Fonds & R&D | Iter Advisors",
+        description:
+          "DAF externalisé spécialisé deep tech, biotech et hardware : CIR/CII, levée de fonds Series A/B, data room, valorisation. 30+ tours accompagnés.",
+      },
+      parentLabel: "DAF Externalisé",
+      parentHref: "/daf-externalise",
+      breadcrumbLabel: "DAF Deep Tech",
+      h1: "DAF Externalisé Deep Tech : Levée de Fonds et Pilotage R&D",
+      sections: [
+        {
+          content: [
+            "Les deep tech ont des cycles de développement longs, des besoins de financement importants et des investisseurs exigeants. Iter Advisors a accompagné 30+ tours de financement deep tech pour 100 M€+ levés.",
+          ],
+        },
+        {
+          heading: "Spécificités financières de la deep tech",
+          content: [
+            "**CIR/CII :** Le Crédit d'Impôt Recherche représente 15 à 30 % du financement en phase R&D. Notre DAF sécurise l'éligibilité et maximise l'assiette déclarée.",
+            "**Subventions :** BPI France, Horizon Europe, DGA, ANR — notre DAF identifie les appels à projets et pilote le reporting.",
+            "**Valorisation :** Modèles financiers robustes (DCF, comparables, option pricing biotech) pour crédibiliser la valorisation face aux VCs.",
+            "**Due diligence :** Préparation de la data room et accompagnement jusqu'au closing.",
+          ],
+        },
+        {
+          heading: "Notre accompagnement phase par phase",
+          content: [
+            "**Pré-levée :** Modèle financier, data room, révision des KPIs, optimisation du cap table.",
+            "**Pendant la levée :** Due diligences, Q&A VCs, négociation du term sheet.",
+            "**Post-levée :** Reporting, budget annuel, pilotage du burn rate.",
+            "En complément : **[DAF externalisé](/daf-externalise)**, **[levée de fonds](/services/accompagnement-levee-de-fond)**, **[tarifs](/daf-externalise/tarifs)**.",
           ],
         },
       ],
@@ -442,7 +645,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     "temps-partage": {
       meta: {
-        title: "Part-time CFO: Flexible solution for SMEs and startups | Iter Advisors",
+        title: "Part-time CFO for SMEs & Startups | Iter Advisors",
         description:
           "The part-time CFO: a flexible and cost-effective solution for growing companies. Discover the benefits of timeshare CFO services with Iter Advisors.",
       },
@@ -490,7 +693,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     transition: {
       meta: {
-        title: "Transitional CFO: Expert for your key periods | Iter Advisors",
+        title: "Transitional CFO: Expert for Key Periods | Iter Advisors",
         description:
           "The transitional CFO intervenes during critical periods: restructuring, fundraising, temporary replacement. Discover this solution with Iter Advisors.",
       },
@@ -659,11 +862,85 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       ],
       ctaButton: "Make an appointment",
     },
+    ecommerce: {
+      meta: {
+        title: "Outsourced CFO for E-Commerce: Manage Profitability | Iter Advisors",
+        description:
+          "Fractional CFO for e-commerce: working capital, seasonality, product margins, cash flow. From 2 days/month.",
+      },
+      parentLabel: "Fractional CFO",
+      parentHref: "/en/fractional-cfo",
+      breadcrumbLabel: "CFO for E-Commerce",
+      h1: "Outsourced CFO for E-Commerce: Manage Your Profitability",
+      sections: [
+        { content: ["Iter Advisors' fractional CFOs for e-commerce step in from 2 days/month to provide specialized financial expertise."] },
+        {
+          heading: "Our E-Commerce CFO Missions",
+          content: [
+            "**Cash flow forecast:** 13-week rolling modeling for seasonal peaks.",
+            "**Working capital optimization:** Supplier terms, returns, marketplace disputes. Average 15-25% WC reduction.",
+            "**E-commerce dashboard:** Gross margin, EBITDA, LTV, CAC, return rate.",
+          ],
+        },
+        { heading: "Contact Us", content: ["See also **[Fractional CFO](/en/fractional-cfo)** and industry specializations."] },
+      ],
+      ctaButton: "Make an appointment",
+    },
+    industrie: {
+      meta: {
+        title: "Outsourced CFO for Manufacturing & Industrial Companies | Iter Advisors",
+        description:
+          "Fractional CFO for manufacturing: cost accounting, supply chain, FX risk, M&A. Proven sector expertise.",
+      },
+      parentLabel: "Fractional CFO",
+      parentHref: "/en/fractional-cfo",
+      breadcrumbLabel: "CFO for Industry",
+      h1: "Outsourced CFO for Industrial Companies",
+      sections: [
+        { content: ["Iter Advisors' specialized industrial CFOs step in from 2 days/month."] },
+        {
+          heading: "Our Industrial CFO Missions",
+          content: [
+            "**Cost-center analytics:** Product-line profitability, margin tracking.",
+            "**CAPEX management:** Business case structuring, financing, ROI monitoring.",
+            "**Working capital:** Inventory cycle, supplier/customer terms.",
+            "**M&A:** Due diligence, financing, post-merger integration.",
+          ],
+        },
+        { heading: "Contact Us", content: ["See also **[Fractional CFO](/en/fractional-cfo)**."] },
+      ],
+      ctaButton: "Make an appointment",
+    },
+    "deep-tech": {
+      meta: {
+        title: "Outsourced CFO for Deep Tech & Biotech: Fundraising & R&D | Iter Advisors",
+        description:
+          "Fractional CFO for deep tech: R&D tax credits, Series A/B fundraising, due diligence. 30+ rounds closed.",
+      },
+      parentLabel: "Fractional CFO",
+      parentHref: "/en/fractional-cfo",
+      breadcrumbLabel: "CFO for Deep Tech",
+      h1: "Outsourced CFO for Deep Tech: Fundraising & R&D Finance",
+      sections: [
+        { content: ["Iter Advisors has supported 30+ fundraising rounds in deep tech companies, totaling over €100M raised."] },
+        {
+          heading: "Our Deep Tech CFO Missions",
+          content: [
+            "**Pre-raise:** Financial model, data room, KPI review, cap table.",
+            "**During raise:** Due diligences, VC Q&A, term sheet negotiation.",
+            "**R&D tax credits:** CIR/CII filing, BPI grants, Horizon Europe.",
+            "**Post-raise:** Reporting, annual budget, burn rate monitoring.",
+          ],
+        },
+        { heading: "Contact Us", content: ["See also **[Fractional CFO](/en/fractional-cfo)** and **[fundraising support](/services/accompagnement-levee-de-fond)**."] },
+      ],
+      ctaButton: "Make an appointment",
+    },
   },
   es: {
     metier: {
       meta: {
-        title: "¿Qué es un Director Financiero? Rol, misiones y competencias | Iter Advisors",
+        title: "¿Qué es un Director Financiero? | Iter Advisors",
         description:
           "Descubra el rol del Director Financiero (CFO): responsabilidades, competencias clave y evolución del puesto en las empresas modernas.",
       },
@@ -711,7 +988,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     "temps-partage": {
       meta: {
-        title: "CFO a tiempo compartido: Solución flexible para pymes y startups | Iter Advisors",
+        title: "CFO a tiempo compartido — Pymes y Startups | Iter Advisors",
         description:
           "El CFO a tiempo compartido: una solución flexible y económica para empresas en crecimiento. Descubra las ventajas del tiempo compartido con Iter Advisors.",
       },
@@ -759,9 +1036,9 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     transition: {
       meta: {
-        title: "CFO de transición: Experto para sus periodos clave | Iter Advisors",
+        title: "CFO de transición — Experto períodos clave | Iter Advisors",
         description:
-          "El CFO de transición interviene durante periodos críticos: reestructuración, rondas de financiación, reemplazo temporal. Descubra esta solución con Iter Advisors.",
+          "El CFO de transición interviene en periodos críticos: reestructuración, rondas de financiación, reemplazo temporal. Consulte a Iter Advisors.",
       },
       parentLabel: "CFO Externo",
       parentHref: "/es/externalizacion-daf",
@@ -928,6 +1205,80 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       ],
       ctaButton: "Concierte una cita",
     },
+    ecommerce: {
+      meta: {
+        title: "DAF Externalizado E-Commerce: Controle su Rentabilidad | Iter Advisors",
+        description:
+          "DAF externalizado para e-commerce: gestión del circulante, estacionalidad, márgenes. Desde 2 días/mes.",
+      },
+      parentLabel: "CFO Externalizado",
+      parentHref: "/es/externalizacion-daf",
+      breadcrumbLabel: "DAF E-Commerce",
+      h1: "DAF Externalizado para E-Commerce: Controle su Rentabilidad",
+      sections: [
+        { content: ["Los DAF externalizados de Iter Advisors especializados en e-commerce intervienen desde 2 días/mes."] },
+        {
+          heading: "Nuestras misiones DAF e-commerce",
+          content: [
+            "**Previsión de tesorería:** 13 semanas deslizantes para anticipar picos estacionales.",
+            "**Optimización del circulante:** Plazos de pago, devoluciones, litigios con marketplaces.",
+            "**Cuadro de mando:** Margen bruto, EBITDA, LTV, CAC, tasa de devolución.",
+          ],
+        },
+        { heading: "Contáctenos", content: ["Vea también **[DAF Externalizado](/es/externalizacion-daf)**."] },
+      ],
+      ctaButton: "Concierte una cita",
+    },
+    industrie: {
+      meta: {
+        title: "DAF Externalizado Industria y ETI: Experiencia Operacional | Iter Advisors",
+        description:
+          "DAF externalizado para empresas industriales: control de gestión, supply chain, riesgo de cambio, M&A.",
+      },
+      parentLabel: "CFO Externalizado",
+      parentHref: "/es/externalizacion-daf",
+      breadcrumbLabel: "DAF Industria",
+      h1: "DAF Externalizado Industria: Experiencia Financiera para ETI y PYME",
+      sections: [
+        { content: ["Los DAF externalizados de Iter Advisors especializados en industria intervienen desde 2 días/mes."] },
+        {
+          heading: "Nuestras misiones DAF industrial",
+          content: [
+            "**Control analítico:** Rentabilidad por línea de producto, seguimiento de márgenes.",
+            "**CAPEX:** Business cases, financiación, seguimiento del ROI.",
+            "**Circulante:** Ciclo de inventario, negociación de plazos.",
+            "**M&A:** Due diligences, estructuración de financiación.",
+          ],
+        },
+        { heading: "Contáctenos", content: ["Vea también **[DAF Externalizado](/es/externalizacion-daf)**."] },
+      ],
+      ctaButton: "Concierte una cita",
+    },
+    "deep-tech": {
+      meta: {
+        title: "DAF Externalizado Deep Tech & Biotech: Rondas de Financiación | Iter Advisors",
+        description:
+          "DAF externalizado para deep tech: créditos I+D, Series A/B, due diligence, valoración. +30 rondas cerradas.",
+      },
+      parentLabel: "CFO Externalizado",
+      parentHref: "/es/externalizacion-daf",
+      breadcrumbLabel: "DAF Deep Tech",
+      h1: "DAF Externalizado Deep Tech: Financiación e I+D",
+      sections: [
+        { content: ["Iter Advisors ha acompañado más de 30 rondas de financiación en empresas deep tech, por más de 100 M€ captados."] },
+        {
+          heading: "Nuestras misiones DAF Deep Tech",
+          content: [
+            "**Pre-ronda:** Modelo financiero, data room, revisión de KPIs.",
+            "**Durante la captación:** Due diligences, Q&A con VCs, negociación del term sheet.",
+            "**Créditos I+D:** Deducciones fiscales, subvenciones BPI, Horizon Europe.",
+            "**Post-ronda:** Informes, presupuesto anual, burn rate.",
+          ],
+        },
+        { heading: "Contáctenos", content: ["Vea también **[DAF Externalizado](/es/externalizacion-daf)** y captación de fondos."] },
+      ],
+      ctaButton: "Concierte una cita",
+    },
   },
 };
 
@@ -939,6 +1290,9 @@ const slugMapping: Record<Locale, Record<string, DafSubPageSlug>> = {
     transition: "transition",
     tarifs: "tarifs",
     secteurs: "secteurs",
+    ecommerce: "ecommerce",
+    industrie: "industrie",
+    "deep-tech": "deep-tech",
   },
   en: {
     metier: "metier",
@@ -946,9 +1300,15 @@ const slugMapping: Record<Locale, Record<string, DafSubPageSlug>> = {
     transition: "transition",
     pricing: "tarifs",
     industries: "secteurs",
+    ecommerce: "ecommerce",
+    industrie: "industrie",
+    "deep-tech": "deep-tech",
   },
   es: {
     metier: "metier",
+    ecommerce: "ecommerce",
+    industrie: "industrie",
+    "deep-tech": "deep-tech",
     // Audit V2 R-4: ES URL renamed multipropiedad → tiempo-compartido.
     // Legacy "multipropiedad" key retained as fallback for any direct hits
     // until the 301 in vercel.json fully takes over.

@@ -25,7 +25,7 @@ export const metadata: Metadata = buildMetadata({
 });
 
 const breadcrumbsByLocale: Record<Locale, { label: string; href: string }> = {
-  es: { label: "Recursos", href: "/es/ressources" },
+  es: { label: "Recursos", href: "/es/recursos" },
   fr: { label: "Ressources", href: "/ressources" },
   en: { label: "Resources", href: "/en/ressources" },
 };

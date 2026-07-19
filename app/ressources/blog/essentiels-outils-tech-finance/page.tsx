@@ -7,10 +7,14 @@ import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 export const metadata: Metadata = {
   title: "Essentiels outils tech finance | Iter Advisors",
   description: "Découvrez les outils technologiques essentiels pour moderniser votre département finance. Guide complet des solutions cloud, IA et automatisation par Iter Advisors.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/essentiels-outils-tech-finance",
+  },
   openGraph: {
     title: "Essentiels outils tech finance | Iter Advisors",
     description: "Découvrez les outils technologiques essentiels pour moderniser votre département finance. Guide complet des solutions cloud, IA et automatisation.",
     type: "article",
+    images: [{ url: "/images/blog/essentiels-outils-tech-finance.webp", width: 1200, height: 630 }],
   },
 };
 
@@ -29,13 +33,13 @@ export default function EssentielsOutilsTechFinancePage() {
       title="Les essentiels outils tech pour moderniser votre département finance"
       dek="Découvrez comment les CFOs et directions financières optimisent leurs opérations avec les bonnes technologies : automatisation, IA, reporting temps réel et collaboration."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={9}
       dateModified="2026-05-01"
-      heroImage="/images/blog/essentiels-outils-tech-finance.webp"
+      heroImage="/images/blog/covers/essentiels-outils-tech-finance.svg"
       toc={[
         { id: "pourquoi-digitaliser", label: "1. Pourquoi digitaliser votre finance ?" },
         { id: "stack-essentiels", label: "2. Le stack essentiels : 4 catégories" },
@@ -48,7 +52,7 @@ export default function EssentielsOutilsTechFinancePage() {
       tldr="La digitalisation du département finance n'est plus optionnelle. Les outils cloud (comptabilité, trésorerie, reporting) libèrent 40-50 % du temps des équipes. L'IA et l'automatisation élèvent le niveau d'expertise requis. Une sélection pragmatique adaptée à votre taille et budget garantit un ROI rapide."
       relatedArticles={[
         {
-          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
           category: "Digitalisation",
           title: "IA et automatisation : gagner 30 % de temps dans les tâches répétitives",
         },

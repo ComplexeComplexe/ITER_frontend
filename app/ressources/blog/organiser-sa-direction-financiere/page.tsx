@@ -7,10 +7,14 @@ import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 export const metadata: Metadata = {
   title: "Direction Financière | Iter Advisors",
   description: "Guide complet pour structurer et organiser votre département finance. Organigrammes, rôles, responsabilités et best practices par Iter Advisors.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/organiser-sa-direction-financiere",
+  },
   openGraph: {
-    title: "Comment organiser sa direction financière en 2026 | Iter Advisors",
+    title: "Organiser sa direction financière en 2026 | Iter Advisors",
     description: "Guide complet pour structurer et organiser votre département finance. Organigrammes, rôles, responsabilités et best practices.",
     type: "article",
+    images: [{ url: "/images/blog/organiser-sa-direction-financiere.webp", width: 1200, height: 630 }],
   },
 };
 
@@ -29,13 +33,13 @@ export default function OrganiserDirectionFinancierePage() {
       title="Comment organiser sa direction financière en 2026 ?"
       dek="Structurer votre département finance selon votre taille et maturité. Rôles, responsabilités et modèles d'organisation pour PME, scale-ups et ETI."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={11}
       dateModified="2026-05-01"
-      heroImage="/images/blog/organiser-direction-financiere.webp"
+      heroImage="/images/blog/covers/organiser-sa-direction-financiere.svg"
       toc={[
         { id: "pourquoi-structure", label: "1. Pourquoi structurer votre finance ?" },
         { id: "modeles-par-taille", label: "2. Modèles d'organisation par taille" },
@@ -50,6 +54,11 @@ export default function OrganiserDirectionFinancierePage() {
           url: "/ressources/blog/daf-externalise-vs-daf-salarie",
           category: "DAF externalisé",
           title: "DAF externalisé vs DAF salarié : analyse complète",
+        },
+        {
+          url: "/ressources/blog/daf-drh-externalises-synergie",
+          category: "Stratégie",
+          title: "DAF + DRH externalisés : la synergie qui change tout",
         },
         {
           url: "/ressources/blog/la-modernisation-du-role-de-cfo",

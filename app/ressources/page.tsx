@@ -3,12 +3,17 @@ import ResourcesPage from "@/components/pages/ResourcesPage";
 import { buildMetadata } from "@/lib/metadata";
 import { getCmsNavigation } from "@/lib/strapi";
 
+// SEO-14 (2026-07-13) — localizedPaths ajouté (ES utilise /recursos).
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Ressources DAF externalisé | Iter Advisors",
-  description:
-    "Ressources DAF : blog finance, glossaire, fiches métiers, témoignages, fiscalité France-Espagne. Conseils experts en DAF externalisé et levée de fonds.",
+  title: "Ressources Finance & DAF : blog et outils | Iter Advisors",
+  description: "Blog finance, glossaire, outils CFO, fiches métiers, cas clients et témoignages : toutes les ressources Iter Advisors pour piloter votre croissance financière.",
   path: "/ressources",
+  localizedPaths: {
+    fr: "/ressources",
+    en: "/ressources",
+    es: "/recursos",
+  },
 });
 
 const collectionPageSchema = {

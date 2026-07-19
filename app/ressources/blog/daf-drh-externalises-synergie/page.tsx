@@ -1,16 +1,21 @@
 
 
 import { Metadata } from 'next';
+import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
   title: "DAF & DRH externalisés | Iter Advisors",
   description: "DAF et DRH externalisés : synergies et économies. Découvrez comment combiner ces services pour optimiser votre structure RH-Finance.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/daf-drh-externalises-synergie",
+  },
   openGraph: {
-    title: "DAF et DRH externalisés : synergie et économies | Iter Advisors",
+    title: "DAF et DRH externalisés : synergie | Iter Advisors",
     description: "Découvrez les synergies quand on externalise DAF et DRH. Économies, efficacité, reporting intégré.",
     type: "article",
+    images: [{ url: "/images/blog/daf-drh-externalises-synergie.webp", width: 1200, height: 630 }],
   },
 };
 
@@ -29,13 +34,13 @@ export default function DafDrhExternalisationSynergieePage() {
       title="Externaliser DAF et DRH : synergies, économies et bénéfices operationnels"
       dek="Quand on externalise DAF et DRH ensemble, on crée des synergies majeures. Paie 100 % intégrée, reporting RH-Finance, meilleure conformité. Guide et ROI."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={10}
       dateModified="2026-05-01"
-      heroImage="/images/blog/daf-drh-synergie.webp"
+      heroImage="/images/blog/covers/daf-drh-externalises-synergie.svg"
       toc={[
         { id: "pourquoi-synergie", label: "1. Pourquoi cette synergie ?" },
         { id: "synergies-majeures", label: "2. Les 5 synergies majeures" },
@@ -289,6 +294,19 @@ export default function DafDrhExternalisationSynergieePage() {
       </ul>
       <p>
         Chez Iter Advisors, nous proposons exactement ce modèle. DAF et DRH sont intégrés dans notre structure pour maximiser synergies. Si vous levez ou êtes en croissance, c'est le moment de structurer votre finance + RH correctement.
+      </p>
+      {/* GSC-05 (2026-07-19) — maillage vers page pilier avec ancres variées
+          ("externaliser votre DAF" + "DAF externalisé pour PME") pour éviter
+          l'exact-match. */}
+      <p>
+        Pour aller plus loin sur le volet finance de cette combinaison,
+        parcourez notre offre complète pour{' '}
+        <Link href="/daf-externalise">externaliser votre DAF</Link> — cadre
+        méthodologique éprouvé, DAF senior mobilisable sous 2&nbsp;semaines et
+        formules à partir de 2&nbsp;000&nbsp;€ HT/mois. Le détail de nos
+        interventions{' '}
+        <Link href="/daf-externalise">DAF externalisé pour PME</Link> et
+        scale-ups y est présenté formule par formule.
       </p>
     </BlogPostPageRefonte>
   );

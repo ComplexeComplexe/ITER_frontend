@@ -7,10 +7,14 @@ import { Callout, StatGrid, InlineCta } from '@/components/blog';
 export const metadata: Metadata = {
   title: "La modernisation du rôle de CFO en 2026 | Iter Advisors",
   description: "Comment le rôle du CFO évolue avec la digitalisation, l'IA et les enjeux ESG. Compétences, missions et leadership du directeur financier moderne.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/la-modernisation-du-role-de-cfo",
+  },
   openGraph: {
     title: "La modernisation du rôle de CFO en 2026 | Iter Advisors",
     description: "Comment le rôle du CFO évolue avec la digitalisation, l'IA et les enjeux ESG. Compétences et missions du directeur financier moderne.",
     type: "article",
+    images: [{ url: "/images/blog/la-modernisation-du-role-de-cfo.webp", width: 1200, height: 630 }],
   },
 };
 
@@ -29,13 +33,13 @@ export default function ModernisationRoleCfoPage() {
       title="La modernisation du rôle de CFO en 2026 : de l'administratif à la stratégie"
       dek="Comment le rôle du CFO évolue en 2026. De la gestion administrative à la stratégie financière : digitalisation, IA, ESG, leadership. Compétences clés du CFO moderne."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={10}
       dateModified="2026-05-01"
-      heroImage="/images/blog/modernisation-cfo.webp"
+      heroImage="/images/blog/covers/la-modernisation-du-role-de-cfo.svg"
       toc={[
         { id: "evolution", label: "1. L'évolution du rôle depuis 10 ans" },
         { id: "trois-piliers", label: "2. Les trois piliers du CFO moderne" },
@@ -47,7 +51,7 @@ export default function ModernisationRoleCfoPage() {
       tldr="Le CFO d'aujourd'hui est un partenaire stratégique, pas un comptable. Il maîtrise la digitalisation, utilise l'IA pour prédire, parle ESG et communique avec tous les stakeholders. Les compétences évoluent : moins d'Excel, plus de storytelling et vision stratégique."
       relatedArticles={[
         {
-          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
           category: "Digitalisation",
           title: "IA et automatisation : gagner 30-40 % de temps",
         },
@@ -144,7 +148,7 @@ export default function ModernisationRoleCfoPage() {
         <li><strong>Trésorerie</strong> (Agicap, Fygr) : Cash forecasting IA, alertes</li>
         <li><strong>BI/Reporting</strong> (Power BI, Looker) : Tableaux de bord temps réel</li>
         <li><strong>Workflow</strong> (Make, Zapier) : Automatisation processus</li>
-        <li><strong>IA intégrée</strong> (Claude, ChatGPT) : Analyse documents, recommendations</li>
+        <li><strong>IA intégrée</strong> (ChatGPT, Gemini) : Analyse documents, recommendations</li>
       </ul>
       <p>
         Le CFO ne doit pas coder, mais comprendre ces outils et savoir s'en servir pour libérer du temps.

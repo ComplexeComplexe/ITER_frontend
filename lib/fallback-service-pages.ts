@@ -4,6 +4,49 @@
  */
 
 import type { StrapiServiceSinglePage } from "@/lib/strapi";
+import type { Locale } from "@/lib/i18n";
+
+// ── Routing constants (kept here so service pages don't import lib/strapi) ──
+
+export const SERVICE_PAGE_SLUGS = [
+  "previsionnel-tresorerie",
+  "gestion-financiere-externalisee",
+  "accompagnement-levee-de-fond",
+  "comptabilite-externalisation",
+  "controle-de-gestion-externalise",
+] as const;
+
+export type ServicePageSlug = (typeof SERVICE_PAGE_SLUGS)[number];
+
+/** URL slug per locale (FR = canonical; EN/ES = localized slugs) */
+export const SERVICE_URL_SLUG_BY_LOCALE: Record<Locale, Record<ServicePageSlug, string>> = {
+  fr: {
+    "previsionnel-tresorerie": "previsionnel-tresorerie",
+    "gestion-financiere-externalisee": "gestion-financiere-externalisee",
+    "accompagnement-levee-de-fond": "accompagnement-levee-de-fond",
+    "comptabilite-externalisation": "comptabilite-externalisation",
+    "controle-de-gestion-externalise": "controle-de-gestion-externalise",
+  },
+  en: {
+    "previsionnel-tresorerie": "cash-flow-forecast",
+    "gestion-financiere-externalisee": "outsourced-financial-management",
+    "accompagnement-levee-de-fond": "fund-raising-support",
+    "comptabilite-externalisation": "outsource-your-accounting",
+    "controle-de-gestion-externalise": "outsourced-management-control",
+  },
+  es: {
+    "previsionnel-tresorerie": "prevision-tesoreria",
+    "gestion-financiere-externalisee": "gestion-financiera-externalizada",
+    "accompagnement-levee-de-fond": "soporte-financiacion",
+    "comptabilite-externalisation": "externalizar-contabilidad",
+    "controle-de-gestion-externalise": "control-gestion-externalizado",
+  },
+};
+
+/** List of URL slugs for generateStaticParams for a given locale. */
+export function getServiceSlugsForLocale(locale: Locale): string[] {
+  return SERVICE_PAGE_SLUGS.map((s) => SERVICE_URL_SLUG_BY_LOCALE[locale][s]);
+}
 
 export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
   "previsionnel-tresorerie": {
@@ -16,6 +59,25 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
           {
             type: "text",
             text: "Construisez un prévisionnel de trésorerie robuste pour anticiper les tensions de cash, optimiser votre BFR et sécuriser votre runway financier.",
+          },
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        children: [
+          {
+            type: "text",
+            text: "Les enjeux en 2026",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        children: [
+          {
+            type: "text",
+            text: "En 2026, les entreprises font face à une pression accrue sur leur liquidité : hausse des taux d'intérêt, délais de paiement allongés et environnement macro incertain. Les outils de prévision de trésorerie se sont digitalisés (Agicap, Fygr, Pennylane) et l'analyse en temps réel est devenue accessible à toutes les tailles d'entreprise. Un prévisionnel glissant n'est plus un luxe — c'est le tableau de bord de survie de la PME moderne.",
           },
         ],
       },
@@ -120,6 +182,25 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
           {
             type: "text",
             text: "Que vous soyez une startup, une PME ou une ETI, cette approche offre de nombreux avantages stratégiques : réduction des coûts fixes, accès à des compétences spécialisées et amélioration des processus financiers. Vous bénéficiez ainsi d'un accompagnement sur mesure pour piloter la santé financière de votre entreprise, sans les contraintes d'un recrutement en interne.",
+          },
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        children: [
+          {
+            type: "text",
+            text: "Les enjeux en 2026",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        children: [
+          {
+            type: "text",
+            text: "En 2026, le modèle du DAF externalisé s'est imposé comme standard pour les PME et startups entre 10 et 200 salariés. Face aux contraintes de recrutement (délai moyen 4 à 6 mois pour un DAF salarié, coût chargé 100 000 à 150 000 €/an), de plus en plus d'entreprises choisissent la flexibilité : un DAF senior 2 à 8 jours/mois, opérationnel en 1 à 2 semaines. L'enjeu de 2026 : structurer la finance avant de croître, pas après.",
           },
         ],
       },
@@ -527,6 +608,25 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
         children: [
           {
             type: "text",
+            text: "Les enjeux en 2026",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        children: [
+          {
+            type: "text",
+            text: "En 2026, la comptabilité cloud s'est généralisée : Pennylane, Sage, QuickBooks et Xero capturent les transactions en temps réel, réduisant drastiquement les clôtures manuelles. L'enjeu pour les PME : tirer parti de cette automatisation pour passer d'une comptabilité de conformité (regarder le passé) à une comptabilité de pilotage (anticiper l'avenir). L'externalisation comptable moderne inclut le conseil fiscal, la gestion de TVA cross-border et l'optimisation des délais de clôture.",
+          },
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        children: [
+          {
+            type: "text",
             text: "Périmètre d'externalisation",
           },
         ],
@@ -583,17 +683,110 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
         ],
       },
     ],
+    // T#13 (2026-07-18) — FAQPage JSON-LD complété avec 6 Q&As SEO pour
+    // cibler "externalisation comptable", "comptable externalisé", "coût
+    // comptabilité externalisée" (PAA GSC identifiées dans l'analyse 16 kw).
     faq: [
       {
         id: 1,
-        question: "Quel est le délai de migration ?",
+        question: "Qu'est-ce que l'externalisation comptable ?",
         answer: [
           {
             type: "paragraph",
             children: [
               {
                 type: "text",
-                text: "Environ 2 semaines : 1 semaine pour audit et setup, 1 semaine pour test et validation.",
+                text: "L'externalisation comptable consiste à confier tout ou partie de la fonction comptable à un prestataire externe : saisie des pièces comptables, rapprochements bancaires, déclarations de TVA, établissement de la liasse fiscale, gestion de la paie et production du reporting mensuel. Le prestataire travaille en liaison directe avec l'expert-comptable signataire et l'administration fiscale. C'est une alternative à l'embauche d'un comptable salarié, particulièrement adaptée aux PME, startups et ETI dont le volume de transactions ne justifie pas un poste à temps plein.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 2,
+        question: "Quel est le coût d'une comptabilité externalisée en 2026 ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "Le coût d'une comptabilité externalisée en 2026 varie selon le volume de transactions et le périmètre confié. Ordre de grandeur : micro-entreprise ou auto-entrepreneur (< 50 factures/mois) : 100 à 200 € HT/mois ; TPE (< 5 salariés, < 200 factures/mois) : 200 à 500 € HT/mois ; PME (5 à 50 salariés, comptabilité multi-entités) : 500 à 1 200 € HT/mois ; PME complexe (multi-pays, consolidation, reporting IFRS) : 1 200 à 2 500 € HT/mois. L'externalisation génère en moyenne 30 à 60 % d'économies par rapport à un comptable salarié (40 000 à 60 000 € brut/an hors charges) une fois le volume insuffisant pour justifier un temps plein.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 3,
+        question: "Quelle est la différence entre un expert-comptable et un comptable externalisé ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "L'expert-comptable est un professionnel réglementé inscrit à l'Ordre des Experts-Comptables (OEC) : il est le seul habilité légalement à signer le bilan annuel, la liasse fiscale et les comptes consolidés. Il certifie la conformité légale et fiscale de vos comptes. Le comptable externalisé (ou comptable freelance) effectue les travaux courants — saisie, TVA, rapprochements, clôtures périodiques — sous la supervision et la responsabilité d'un expert-comptable signataire. Les deux rôles sont complémentaires : le comptable externalisé produit la donnée au quotidien, l'expert-comptable l'arrête et la certifie en fin d'exercice. Chez Iter Advisors, nos prestations de comptabilité externalisée sont toujours réalisées sous couverture d'un expert-comptable.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 4,
+        question: "L'externalisation comptable est-elle fiable et sécurisée ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "Oui, à condition de respecter trois critères. Premièrement, la supervision d'un expert-comptable OEC qui co-signe les travaux et engage sa responsabilité professionnelle. Deuxièmement, un prestataire certifié ISO 27001 ou équivalent, avec des engagements contractuels sur la sécurité des données (hébergement France ou UE, chiffrement en transit et au repos, sauvegardes quotidiennes). Troisièmement, un contrat stipulant explicitement que vous restez propriétaire de l'intégralité de vos données comptables et fiscales — vous devez pouvoir reprendre vos données à tout moment sans surcoût. Un prestataire sérieux vous donne accès à vos journaux comptables en temps réel via un portail client ou un outil cloud partagé (Pennylane, Sage, QuickBooks).",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 5,
+        question: "Quels sont les avantages de l'externalisation par rapport à un comptable interne ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "Cinq avantages majeurs par rapport à un comptable salarié : (1) Réduction de coût de 30 à 60 % — pas de charges patronales, pas de congés payés, pas d'équipement informatique dédié ; (2) Accès à une équipe multi-compétences plutôt qu'à une seule personne — un prestataire combine comptable, gestionnaire de paie, fiscaliste et référent TVA internationale ; (3) Continuité de service en cas d'absence, de maladie ou de départ — le prestataire gère la continuité sans interruption ; (4) Outils modernes inclus (Pennylane, Sage, QuickBooks) sans investissement initial ; (5) Évolutivité immédiate — le volume externalisé s'ajuste à la croissance de l'entreprise sans nouvelle embauche. Le principal inconvénient est la moindre immersion dans le quotidien de l'entreprise, compensée par un bon onboarding et des réunions de suivi régulières.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 6,
+        question: "Comment choisir son prestataire de comptabilité externalisée en 2026 ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "Six critères de sélection pour 2026 : (1) Agrément et supervision — le prestataire travaille-t-il sous couverture d'un expert-comptable OEC inscrit ? (2) Outils cloud modernes — maîtrisent-ils Pennylane, Sage ou QuickBooks, ou sont-ils encore sur des ERP vieillissants ? (3) Délais de clôture — peuvent-ils produire une balance mensuelle à J+5 et les déclarations de TVA dans les 48 h suivant la clôture ? (4) Périmètre complet — couvrent-ils la paie, la TVA, les DEB/DES, la liasse fiscale et le reporting de gestion, ou seulement la saisie ? (5) Références sectorielles — ont-ils des clients dans votre secteur (SaaS, e-commerce, industrie) ? (6) Transparence tarifaire — le contrat inclut-il un périmètre et un tarif fixes, ou des suppléments à chaque demande ?",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 7,
+        question: "Quel est le délai de migration vers une comptabilité externalisée ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "Environ 2 semaines : 1 semaine pour audit et setup, 1 semaine pour test et validation. Chez Iter Advisors, la migration se fait sans interruption de service.",
               },
             ],
           },
@@ -622,6 +815,25 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
           {
             type: "text",
             text: "Chez Iter Advisors, nous sommes spécialisés dans l'optimisation des projets de financement, en mettant à profit notre expertise et notre réseau pour maximiser vos chances de succès. Avec un accompagnement expert, vous pourrez structurer votre projet, identifier les bons investisseurs et négocier des conditions avantageuses pour accélérer votre développement.",
+          },
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        children: [
+          {
+            type: "text",
+            text: "Les enjeux en 2026",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        children: [
+          {
+            type: "text",
+            text: "En 2026, le marché de la levée de fonds a profondément mûri : les investisseurs exigent des fondamentaux solides (revenus récurrents, maîtrise du burn rate, cash runway supérieur à 18 mois) avant d'entrer en discussion sérieuse. La due diligence s'est intensifiée et les processus s'allongent (6 à 12 mois pour une Series A). L'enjeu : arriver préparé avec une data room complète, des prévisions auditables et un narratif financier cohérent.",
           },
         ],
       },
@@ -1126,6 +1338,25 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
           {
             type: "text",
             text: "Que vous soyez une startup en croissance, une PME ou une ETI, le contrôle de gestion externalisé offre une visibilité accrue sur votre rentabilité, vos marges, et la performance de chaque secteur d'activité. Vous bénéficiez ainsi d'une aide à la décision basée sur des données fiables et en temps réel.",
+          },
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        children: [
+          {
+            type: "text",
+            text: "Les enjeux en 2026",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        children: [
+          {
+            type: "text",
+            text: "En 2026, le contrôle de gestion n'est plus réservé aux grandes entreprises. Les outils de BI (Power BI, Looker Studio) et de gestion budgétaire (Anaplan, Pigment) sont devenus accessibles aux PME. L'enjeu : mettre en place un système de pilotage agile — tableaux de bord en temps réel, suivi des marges par produit ou segment, alertes sur les dérives — sans recruter une équipe finance interne de trois personnes.",
           },
         ],
       },

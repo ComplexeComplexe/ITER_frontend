@@ -2,7 +2,6 @@
 
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
-import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown, TrendingDown, Zap, Eye, Network, BarChart3, Wallet, Rocket, Settings, Compass, Clock, Users, Wrench, DollarSign, MapPin, Shield, Linkedin, PlayCircle } from "lucide-react";
 import Image from "next/image";
 import { Locale } from "@/lib/i18n";
@@ -10,10 +9,13 @@ import type { CmsNavItem, StrapiTeamMember } from "@/lib/strapi";
 import { strapiMediaUrl } from "@/lib/strapi";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import { BOOKING_URL } from "@/lib/navigation";
-import { getDafContent, type FaqRichAnswer } from "@/lib/content/daf";
-import { faqPageSchema, serviceSchema, howToSchema, articleSchema, speakableSchema, reviewsSchema } from "@/lib/schemas";
+import { getDafContent, type FaqRichAnswer, type LongTailQA, type SourceCitation } from "@/lib/content/daf";
+import { faqPageSchema, howToSchema, speakableSchema } from "@/lib/schemas";
+import { TRUSTFOLIO_REVIEWS, TRUSTFOLIO_REVIEW_COUNT, TRUSTFOLIO_RATING } from "@/lib/content/trustfolio-reviews";
+import { renderInlineMarkdownLinks } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
+import AuthorByline from "@/components/AuthorByline";
 import References from "@/components/References";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
@@ -39,7 +41,7 @@ const HOW_TO_COLLAB: Record<
       },
       {
         name: "Intégration du DAF dans vos équipes",
-        text: "Notre DAF rejoint votre équipe et prend en main les sujets clés : tableaux de bord, prévisionnel de trésorerie, relations investisseurs et expert-comptable.",
+        text: "Notre DAF rejoint votre équipe et prend en main les sujets clés : tableaux de bord financiers, budget prévisionnel, prévisionnel de trésorerie, relations investisseurs et expert-comptable.",
       },
       {
         name: "Pilotage et reporting récurrents",
@@ -120,12 +122,48 @@ export default function DafPage({
       {/* Hero */}
       <section className="bg-background pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container">
-          <Breadcrumb locale={locale} items={[{ label: t.breadcrumbLabel }]} />
+          {/* SEO audit 16 mai 2026 — BreadcrumbList enriched from 2 to
+              3 items so Google can build a proper rich-result chain
+              (Iter Advisors → Services → DAF Externalisé). The middle
+              `Services` segment points to the existing /services hub
+              page (no orphan canonical). */}
+          <Breadcrumb
+            locale={locale}
+            items={[
+              {
+                label:
+                  locale === "fr"
+                    ? "Services"
+                    : locale === "en"
+                      ? "Services"
+                      : "Servicios",
+                href: locale === "fr" ? "/services" : `/${locale}/services`,
+              },
+              { label: t.breadcrumbLabel },
+            ]}
+          />
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-start mt-4 sm:mt-6">
             <div data-speakable="true">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-2 leading-tight">
                 {t.h1}
               </h1>
+              {/* GAP 1 (2026-05-19) — freshness signal: visible dateModified for YMYL ranking */}
+              {locale === "fr" && (
+                <p className="text-xs text-muted-foreground mb-4 mt-1">
+                  <time dateTime="2026-05-17">Mis à jour en mai 2026</time>
+                </p>
+              )}
+              {/* SEO-IT-05 — E-E-A-T author block */}
+              {locale === "fr" && (
+                <AuthorByline
+                  name="Sébastien Doat"
+                  jobTitle="Co-fondateur, DAF externalisé senior"
+                  linkedInUrl="https://www.linkedin.com/in/sebastien-doat-fractional-cfo/"
+                  avatarUrl="/images/team/sebastien-doat.webp"
+                  updateDate="2026-05-17"
+                  locale={locale}
+                />
+              )}
               {t.intro.map((paragraph, i) => (
                 <p
                   key={i}
@@ -133,7 +171,7 @@ export default function DafPage({
                     i === 0 ? "text-base sm:text-lg lg:text-xl text-foreground/80 font-medium" : "text-sm sm:text-base"
                   }`}
                 >
-                  {paragraph}
+                  {renderInlineMarkdownLinks(paragraph)}
                 </p>
               ))}
               <Link
@@ -189,17 +227,58 @@ export default function DafPage({
             </div>
             <div className="relative hidden lg:flex items-center justify-center lg:sticky lg:top-28">
               <Image
-                src="/images/bg/daf-section.webp"
-                alt={locale === "fr" ? "DAF externalisé - pilotage financier" : locale === "en" ? "Outsourced CFO - financial management" : "CFO externalizado - gestion financiera"}
+                src="/images/stock/daf-hero.png"
+                alt={
+                  locale === "fr"
+                    ? "DAF externalisé Iter Advisors — directeur administratif et financier analysant les tableaux de bord de performance"
+                    : locale === "en"
+                    ? "Iter Advisors fractional CFO reviewing financial performance dashboards"
+                    : "CFO externalizado de Iter Advisors revisando cuadros de mando financieros"
+                }
                 width={560}
                 height={400}
-                className="rounded-2xl object-contain w-full max-w-xl"
+                className="rounded-2xl object-cover w-full max-w-xl"
                 priority={true}
               />
             </div>
           </div>
         </div>
       </section>
+
+      {/* P02 (2026-05-29) — "L'essentiel en 30 secondes": an extractable TL;DR
+          rendered as the first structured block after the hero, to feed AI
+          Overviews / LLM answer extraction. Rendered in every locale. */}
+      {t.essential && (
+        <section className="bg-background pt-2 pb-2">
+          <div className="container max-w-3xl px-4 sm:px-6">
+            <aside
+              aria-label={t.essential.heading}
+              className="rounded-3xl border border-border/60 bg-muted/30 p-5 sm:p-8"
+            >
+              <h2 className="text-lg sm:text-xl font-bold font-heading text-foreground mb-4 sm:mb-5">
+                {t.essential.heading}
+              </h2>
+              <ul className="space-y-2.5 sm:space-y-3">
+                {t.essential.points.map((p, i) => (
+                  <li
+                    key={i}
+                    className="flex gap-2.5 sm:gap-3 text-sm sm:text-base text-muted-foreground leading-relaxed"
+                  >
+                    <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
+                    <span>
+                      <strong className="text-foreground font-semibold">
+                        {p.label}
+                        {locale === "fr" ? " :" : ":"}
+                      </strong>{" "}
+                      {p.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </div>
+        </section>
+      )}
 
       {/* Table of Contents — FR only (audit SEO C.1) */}
       {locale === "fr" && (
@@ -210,32 +289,13 @@ export default function DafPage({
         </section>
       )}
 
-      {/* Partner */}
-      <section id="partenaire" className="bg-background py-12 sm:py-16 lg:py-20 scroll-mt-24">
-        <div className="container max-w-3xl px-4 sm:px-6">
-          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
-            {locale === "fr"
-              ? "Votre partenaire"
-              : locale === "en"
-                ? "Your partner"
-                : "Su socio"}
-          </span>
-          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
-            {t.partnerSection.heading}
-          </h2>
-          {t.partnerSection.content.map((p, i) => (
-            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              {p}
-            </p>
-          ))}
-        </div>
-      </section>
+      {/* SEO audit 16 mai 2026 — H2 order inverted: the definition
+          section ("Qu'est-ce qu'un DAF externalisé ?") now comes
+          first so the page answers the searcher's primary intent
+          before pitching the brand. Brand H2 ("Iter Advisors, votre
+          partenaire stratégique") drops to position 2. */}
 
-      <div className="container">
-        <div className="border-b border-border/50" />
-      </div>
-
-      {/* What Is */}
+      {/* What Is — primary intent answer */}
       <section id="comprendre" className="bg-muted/30 py-16 sm:py-24 lg:py-32 scroll-mt-24">
         <div className="container max-w-3xl px-4 sm:px-6">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
@@ -248,6 +308,37 @@ export default function DafPage({
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-4 sm:mb-6 leading-tight">
             {t.whatIs.heading}
           </h2>
+          {/* P07 (2026-05-29) — "Réponse rapide" extract (all locales). */}
+          {t.quickAnswers?.comprendre && (
+            <QuickAnswer text={t.quickAnswers.comprendre} locale={locale} />
+          )}
+          {/* P03 (2026-05-29) — canonical, extractable definition. The
+              semantic <figure>/<dfn> isolates the one-sentence definition that
+              answer engines quote, and the synonyms capture long-tail variants.
+              Rendered before the prose in every locale. */}
+          {t.definitionBox && (
+            <figure className="my-5 sm:my-7 rounded-2xl border-l-4 border-iter-violet bg-iter-violet/5 p-5 sm:p-6">
+              <p className="text-base sm:text-lg text-foreground leading-relaxed">
+                <dfn className="not-italic font-bold text-iter-violet">
+                  {t.definitionBox.term}
+                </dfn>
+                {t.definitionBox.partOfSpeech && (
+                  <span className="font-normal text-muted-foreground">
+                    {" "}({t.definitionBox.partOfSpeech})
+                  </span>
+                )}
+                {" — "}
+                {t.definitionBox.definition}
+              </p>
+              <figcaption className="mt-3 text-xs sm:text-sm text-muted-foreground">
+                <span className="font-semibold text-foreground">
+                  {t.definitionBox.synonymsLabel}
+                </span>
+                {locale === "fr" ? " : " : ": "}
+                {renderInlineMarkdownLinks(t.definitionBox.synonyms)}
+              </figcaption>
+            </figure>
+          )}
           {t.whatIs.content.map((p, i) => (
             <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               {locale === "fr" ? renderRichText(p) : p}
@@ -310,6 +401,31 @@ export default function DafPage({
               </table>
             </div>
           )}
+        </div>
+      </section>
+
+      <div className="container">
+        <div className="border-b border-border/50" />
+      </div>
+
+      {/* Partner — now position 2 (post-definition) per audit 16 mai 2026 */}
+      <section id="partenaire" className="bg-background py-12 sm:py-16 lg:py-20 scroll-mt-24">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
+            {locale === "fr"
+              ? "Votre partenaire"
+              : locale === "en"
+                ? "Your partner"
+                : "Su socio"}
+          </span>
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
+            {t.partnerSection.heading}
+          </h2>
+          {t.partnerSection.content.map((p, i) => (
+            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+              {p}
+            </p>
+          ))}
         </div>
       </section>
 
@@ -399,6 +515,45 @@ export default function DafPage({
         <div className="border-b border-border/50" />
       </div>
 
+      {/* Inline CTA #1 (T-SEO-3pages 2026-06-07 — analyse_3_pages_html.pdf)
+          Inserted after "Avantages" so visitors who scrolled past the bénéfices
+          have a conversion path before the long "Pour qui / Missions / Tarifs"
+          block. Distinct copy from CTAs #2 and #3 to avoid repetition fatigue. */}
+      <section className="bg-background py-8 sm:py-10">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <div className="rounded-2xl bg-gradient-to-br from-iter-violet to-iter-dark p-6 sm:p-8 text-white text-center shadow-lg">
+            <p className="text-base sm:text-lg font-semibold mb-3">
+              {/* T3 (2026-06-30) — copy aligné avec ticket "Remonter sur
+                  DAF externalisé". Mot-clé exact dans le H3 pour booster
+                  la densité keyword sur la page (CTR 0.3 % → cible 1 %+). */}
+              {locale === "fr"
+                ? "Vous cherchez un DAF externalisé ?"
+                : locale === "en"
+                  ? "Looking for an outsourced CFO?"
+                  : "¿Busca un CFO externalizado?"}
+            </p>
+            <p className="text-sm text-white/80 mb-5">
+              {locale === "fr"
+                ? "Prenez rendez-vous pour un diagnostic gratuit — 30 minutes avec un DAF senior, sans engagement."
+                : locale === "en"
+                  ? "Book a free diagnostic call — 30 minutes with a senior CFO, no commitment."
+                  : "Reserve un diagnóstico gratuito — 30 minutos con un CFO senior, sin compromiso."}
+            </p>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold text-sm hover:shadow-xl transition-all"
+            >
+              {locale === "fr"
+                ? "Prendre rendez-vous"
+                : locale === "en"
+                  ? "Book a meeting"
+                  : "Reservar una cita"}
+              <span aria-hidden>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* For Whom (audit SEO Action 11) — long-tail capture per stade / secteur */}
       {t.forWhom && (
         <section id="pour-qui" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
@@ -474,6 +629,75 @@ export default function DafPage({
       </section>
 
       {/* Pricing */}
+      {/* P10 (2026-05-29) — visible 4-step onboarding sequence. Mirrors the
+          HowTo JSON-LD (HOW_TO_COLLAB) emitted further down, giving humans and
+          answer engines a numbered, extractable process. All locales. */}
+      <section id="deroulement" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
+        <div className="container max-w-5xl px-4 sm:px-6">
+          <div className="max-w-2xl mb-8 sm:mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
+              {locale === "fr" ? "Déroulement" : locale === "en" ? "How it works" : "Cómo funciona"}
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground leading-tight">
+              {HOW_TO_COLLAB[locale].name}
+            </h2>
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+              {HOW_TO_COLLAB[locale].description}
+            </p>
+          </div>
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {HOW_TO_COLLAB[locale].steps.map((step, i) => (
+              <li key={i} className="rounded-2xl border border-border/60 bg-muted/20 p-5 sm:p-6">
+                <div className="text-xs font-bold uppercase tracking-wide text-iter-violet mb-2">
+                  {(locale === "fr" ? "Étape " : locale === "en" ? "Step " : "Etapa ") + (i + 1)}
+                </div>
+                <h3 className="text-base sm:text-lg font-bold font-heading text-foreground mb-2 leading-snug">
+                  {step.name}
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  {step.text}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Inline CTA #2 (T-SEO-3pages 2026-06-07) — placed AFTER the "déroulement"
+          steps so a visitor who's read the method has a low-friction
+          conversion point before the long tarifs section. */}
+      <section className="bg-muted/30 py-8 sm:py-10">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <div className="rounded-2xl bg-white border border-iter-violet/20 p-6 sm:p-8 text-center shadow-md">
+            <p className="text-base sm:text-lg font-semibold text-foreground mb-3">
+              {locale === "fr"
+                ? "Notre méthode vous parle ? Réservez votre diagnostic."
+                : locale === "en"
+                  ? "Method speaks to you? Book your diagnostic."
+                  : "¿Le convence el método? Reserve su diagnóstico."}
+            </p>
+            <p className="text-sm text-muted-foreground mb-5">
+              {locale === "fr"
+                ? "Un échange gratuit de 30 minutes pour cadrer vos priorités financières."
+                : locale === "en"
+                  ? "A free 30-minute call to scope your financial priorities."
+                  : "Una llamada gratuita de 30 minutos para enmarcar sus prioridades financieras."}
+            </p>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold text-sm hover:bg-iter-violet/90 hover:shadow-xl transition-all"
+            >
+              {locale === "fr"
+                ? "Réserver un diagnostic gratuit"
+                : locale === "en"
+                  ? "Book a free diagnostic"
+                  : "Reservar un diagnóstico gratuito"}
+              <span aria-hidden>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section id="tarifs" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
         <div className="container max-w-4xl px-4 sm:px-6">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 sm:mb-3 block">
@@ -482,6 +706,12 @@ export default function DafPage({
           <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
             {t.pricing.heading}
           </h2>
+          {/* SEO-IT-06 — Réponse directe pour AI Overviews (40-60 mots, factuel) */}
+          {locale === "fr" && (
+            <p className="text-sm sm:text-base bg-iter-violet/5 border-l-4 border-iter-violet rounded-r-lg px-4 py-3 mb-6 text-foreground/90 leading-relaxed">
+              Un DAF externalisé coûte entre <strong>2 000 et 7 000 € HT/mois</strong> selon le volume d'intervention (2 à 8+ jours/mois). Le TJM moyen 2026 se situe entre <strong>750 et 1 250 € HT</strong>. À titre de comparaison, un DAF salarié revient à 8 300–17 750 €/mois charges comprises.
+            </p>
+          )}
           {t.pricing.content.map((p, i) => (
             <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               {locale === "fr" ? renderRichText(p) : p}
@@ -593,6 +823,44 @@ export default function DafPage({
         </div>
       </section>
 
+      {/* Inline CTA #3 (T-SEO-3pages 2026-06-07) — last in-body CTA, placed
+          right after the pricing grid where the visitor's question is most
+          likely "OK, what does it cost for ME?". */}
+      <section className="bg-background py-8 sm:py-10">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <div className="rounded-2xl bg-gradient-to-br from-iter-violet/10 to-iter-chartreuse/10 border border-iter-violet/20 p-6 sm:p-8 text-center">
+            <p className="text-base sm:text-lg font-semibold text-foreground mb-3">
+              {/* T3 (2026-06-30) — copy aligné avec ticket "Remonter sur
+                  DAF externalisé" : promesse explicite "sous 24h" pour
+                  réduire la friction post-tarif. */}
+              {locale === "fr"
+                ? "Obtenez votre devis personnalisé sous 24h"
+                : locale === "en"
+                  ? "Get your personalised quote within 24h"
+                  : "Reciba su presupuesto personalizado en 24h"}
+            </p>
+            <p className="text-sm text-muted-foreground mb-5">
+              {locale === "fr"
+                ? "Décrivez votre contexte DAF externalisé en 2 minutes — réponse d'un associé sous 24 h ouvrées."
+                : locale === "en"
+                  ? "Describe your outsourced CFO need in 2 minutes — partner reply within 24 business hours."
+                  : "Describa su necesidad de CFO externalizado en 2 minutos — respuesta de un socio en 24 h hábiles."}
+            </p>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-dark text-white font-semibold text-sm hover:bg-iter-violet hover:shadow-xl transition-all"
+            >
+              {locale === "fr"
+                ? "Demander un devis"
+                : locale === "en"
+                  ? "Request a quote"
+                  : "Solicitar un presupuesto"}
+              <span aria-hidden>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* DAF vs Expert-Comptable (audit SEO A.3) */}
       {t.vsExpertComptable && (
         <section id="vs-expert-comptable" className="bg-muted/30 py-16 sm:py-24 lg:py-32 scroll-mt-24">
@@ -669,7 +937,7 @@ export default function DafPage({
           </h2>
           {t.tools.content.map((p, i) => (
             <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              {p}
+              {locale === "fr" ? renderRichText(p) : p}
             </p>
           ))}
           {locale === "fr" && (
@@ -899,6 +1167,12 @@ export default function DafPage({
         </div>
       </section>
 
+      {/* P15 (2026-05-29) — long-tail Q&A. Renders only once validated content
+          is added to t.longTailFaq (nothing ships until fact-checked). */}
+      {t.longTailFaq && t.longTailFaq.items.length > 0 && (
+        <LongTailFaqSection data={t.longTailFaq} />
+      )}
+
       {/* FAQ Schema */}
       <script
         type="application/ld+json"
@@ -924,64 +1198,311 @@ export default function DafPage({
         }}
       />
 
-      {/* Service Schema (CC-05) */}
+      {/* D1 enrichi (2026-05-25) — Organization (FinancialService) avec founders,
+          knowsAbout, alternateName, foundingDate, numberOfEmployees, taxID/vatID,
+          contactPoint et YouTube dans sameAs. Séparé du bloc Service ci-dessous
+          pour que Google identifie l'entité (KG) indépendamment de l'offre. */}
       {locale === "fr" && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              serviceSchema({
-                name: "DAF externalisé",
-                description:
-                  "Cabinet de DAF externalisé pour PME, startups et scale-ups. CFO senior dès 2 jours/mois, opérationnel J+1. Trésorerie, reporting, contrôle de gestion, levée de fonds et M&A.",
-                url: "/daf-externalise",
-                serviceType: "Direction financière externalisée",
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              // 2026-05-30: ProfessionalService is a better fit for a consulting
+              // cabinet than FinancialService (which Schema.org positions for
+              // banks / lenders / brokers). Merges with the site-wide
+              // #organization entity declared in app/layout.tsx.
+              "@type": "ProfessionalService",
+              "@id": "https://www.iteradvisors.com/#organization",
+              name: "Iter Advisors",
+              alternateName: ["Iter Advisors S.L.", "Iter Advisors Cabinet DAF"],
+              url: "https://www.iteradvisors.com",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.iteradvisors.com/images/logos/logo-hero.webp",
+                width: 512,
+                height: 512,
+              },
+              image: "https://www.iteradvisors.com/images/og-default.webp",
+              description: "Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Pilotage financier, levée de fonds, trésorerie. Présent à Barcelone, Paris et Toulouse.",
+              slogan: "La meilleure version de votre direction financière",
+              foundingDate: "2019",
+              taxID: "B42960849",
+              vatID: "ESB42960849",
+              address: [{
+                "@type": "PostalAddress",
+                streetAddress: "Carrer Casp, 54, 5-1°",
+                addressLocality: "Barcelona",
+                postalCode: "08010",
+                addressCountry: "ES",
+              }],
+              areaServed: [
+                { "@type": "Country", name: "France" },
+                { "@type": "Country", name: "Espagne" },
+                { "@type": "City", name: "Paris" },
+                { "@type": "City", name: "Toulouse" },
+                { "@type": "City", name: "Barcelone" },
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "contact@iteradvisors.com",
+                contactType: "customer service",
                 areaServed: ["FR", "ES"],
-                offers: [
-                  {
-                    name: "Essentiel",
-                    description: "2-3 jours par mois — pilotage trésorerie + reporting mensuel",
-                    price: "2000",
-                    priceCurrency: "EUR",
-                  },
-                  {
-                    name: "Croissance",
-                    description: "4-6 jours par mois — DAF opérationnel multi-missions",
-                    price: "4000",
-                    priceCurrency: "EUR",
-                  },
-                  {
-                    name: "Premium",
-                    description: "8 jours et plus par mois — DAF sponsor levée / M&A",
-                    price: "7000",
-                    priceCurrency: "EUR",
-                  },
-                ],
-              }),
-            ),
+                availableLanguage: ["French", "English", "Spanish"],
+              },
+              sameAs: [
+                "https://www.linkedin.com/company/iter-advisors/",
+                "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
+                "https://www.youtube.com/@IterAdvisors1",
+              ],
+              knowsAbout: [
+                "DAF externalisé",
+                "Directeur financier externalisé",
+                "CFO à temps partagé",
+                "Fractional CFO",
+                "Direction financière externalisée",
+                "Levée de fonds",
+                "Gestion de trésorerie",
+                "M&A et due diligence financière",
+                "Contrôle de gestion",
+                "Pilotage financier startup",
+                "DRH externalisé",
+              ],
+              numberOfEmployees: { "@type": "QuantitativeValue", value: 15 },
+              founder: [
+                {
+                  "@type": "Person",
+                  name: "Sébastien Doat",
+                  jobTitle: "Associé fondateur - CFO & Investisseur",
+                  sameAs: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
+                },
+                {
+                  "@type": "Person",
+                  name: "Benjamin Ziza",
+                  jobTitle: "Associé fondateur - CFO & Investisseur",
+                  sameAs: "https://www.linkedin.com/in/benjamin-ziza/",
+                },
+                {
+                  "@type": "Person",
+                  name: "Guillaume Rostand",
+                  jobTitle: "Associé fondateur & CMO",
+                  sameAs: "https://www.linkedin.com/in/rostand/",
+                },
+              ],
+              // Review-snippet fix (2026-07-19): aggregateRating + review[]
+              // réintroduits ICI (ProfessionalService = type supporté par Google
+              // pour Review Snippets), remplacent les blocs Service et
+              // FinancialService rejetés par GSC ("Type d'objet non valide pour
+              // le champ <parent_node>", 6 éléments non valides détectés le
+              // 09/07/2026). Source unique de vérité : TRUSTFOLIO_* constants
+              // (rating = 5, reviewCount = 35), plus de valeurs contradictoires
+              // 5/31 vs 5/35 sur la même page. Le site-wide layout Organization
+              // ne porte volontairement PAS d'aggregateRating (cf. app/layout.tsx)
+              // donc pas de collision "multiple aggregate ratings".
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: TRUSTFOLIO_RATING,
+                reviewCount: TRUSTFOLIO_REVIEW_COUNT,
+                bestRating: 5,
+                worstRating: 1,
+              },
+              review: TRUSTFOLIO_REVIEWS.map((r) => ({
+                "@type": "Review",
+                author: {
+                  "@type": "Person",
+                  name: r.name,
+                  jobTitle: r.jobTitle,
+                  worksFor: { "@type": "Organization", name: r.company },
+                },
+                datePublished: r.datePublished,
+                reviewBody: r.reviewBody,
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: 5,
+                  bestRating: 5,
+                  worstRating: 1,
+                },
+              })),
+            }),
           }}
         />
       )}
 
-      {/* Review Schema with corrections (Corrections 2-4 from ticket) */}
-      {locale === "fr" && t.trustfolioReviews && t.trustfolioReviews.length > 0 && (
+      {/* Service schema avec AggregateOffer (2026-05-25) — affiche les fourchettes
+          tarifaires 2 000-7 000 €/mois directement dans les snippets SERP.
+          @type Service (pas FinancialService) pour éviter la collision avec l'entité
+          Organization ci-dessus. provider → @id de l'Organization. */}
+      {locale === "fr" && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              reviewsSchema(
-                t.trustfolioReviews.map((review) => ({
-                  author: review.author,
-                  datePublished: review.date,
-                  reviewBody: review.quote,
-                  rating: review.rating,
-                  url: review.url,
-                }))
-              ),
-            ),
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "@id": "https://www.iteradvisors.com/daf-externalise#service-offer",
+              serviceType: "DAF externalisé",
+              name: "DAF Externalisé pour PME, Startups et Scale-ups",
+              description: "Direction financière sur-mesure, à temps partagé ou en mission ponctuelle. Nos DAFs seniors (10+ ans d'expérience) accompagnent votre entreprise sur le pilotage financier, la levée de fonds, la trésorerie, le M&A et la due diligence. Opérationnels dès le premier jour.",
+              provider: { "@id": "https://www.iteradvisors.com/#organization" },
+              areaServed: [
+                { "@type": "Country", name: "France" },
+                { "@type": "Country", name: "Espagne" },
+              ],
+              url: "https://www.iteradvisors.com/daf-externalise",
+              offers: {
+                "@type": "AggregateOffer",
+                priceCurrency: "EUR",
+                lowPrice: "2000",
+                highPrice: "7000",
+                offerCount: "3",
+                priceSpecification: {
+                  "@type": "UnitPriceSpecification",
+                  priceType: "https://schema.org/MinimumPrice",
+                  price: "2000",
+                  priceCurrency: "EUR",
+                  unitText: "MONTH",
+                },
+                offers: [
+                  {
+                    "@type": "Offer",
+                    name: "Essentiel",
+                    description: "2 à 3 jours par mois — pour startups early-stage (pré-seed à seed)",
+                    price: "2000",
+                    priceCurrency: "EUR",
+                    priceSpecification: { "@type": "UnitPriceSpecification", price: "2000", priceCurrency: "EUR", unitText: "MONTH" },
+                    availability: "https://schema.org/InStock",
+                  },
+                  {
+                    "@type": "Offer",
+                    name: "Croissance",
+                    description: "4 à 6 jours par mois — pour PME en structuration ou scale-up Series A",
+                    price: "4000",
+                    priceCurrency: "EUR",
+                    priceSpecification: { "@type": "UnitPriceSpecification", price: "4000", priceCurrency: "EUR", unitText: "MONTH" },
+                    availability: "https://schema.org/InStock",
+                  },
+                  {
+                    "@type": "Offer",
+                    name: "Premium",
+                    description: "8 jours et plus par mois — pour scale-up, levée de fonds, M&A",
+                    price: "7000",
+                    priceCurrency: "EUR",
+                    priceSpecification: { "@type": "UnitPriceSpecification", price: "7000", priceCurrency: "EUR", unitText: "MONTH" },
+                    availability: "https://schema.org/InStock",
+                  },
+                ],
+              },
+              // Review Snippet fix (2026-07-19) — aggregateRating + review[]
+              // volontairement retirés de ce type Service. Google ne supporte
+              // pas Review Snippets pour @type "Service" (rejet GSC "Type
+              // d'objet non valide pour le champ <parent_node>", 6 éléments
+              // non valides). Les avis sont désormais portés par le bloc
+              // ProfessionalService (@id #organization) ci-dessus, seul type
+              // supporté par Google pour cette page.
+            }),
           }}
         />
       )}
+
+      {/* DAF-04 — FinancialService schema for explicit service categorization by Google. */}
+      {locale === "fr" && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FinancialService",
+              name: "DAF Externalisé — Iter Advisors",
+              provider: { "@id": "https://www.iteradvisors.com/#organization" },
+              areaServed: ["Paris", "Toulouse", "Barcelone"],
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Formules DAF Externalisé",
+                itemListElement: [
+                  { "@type": "Offer", name: "Essentiel", price: "2000", priceCurrency: "EUR" },
+                  { "@type": "Offer", name: "Croissance", price: "4000", priceCurrency: "EUR" },
+                  { "@type": "Offer", name: "Premium", price: "7000", priceCurrency: "EUR" },
+                ],
+              },
+              // Review Snippet fix (2026-07-19) — aggregateRating (5/31)
+              // supprimé. Il coexistait avec l'aggregateRating (5/35) du
+              // bloc Service ci-dessus, ce qui déclenchait la règle GSC
+              // "avis multiples cumulés" (35 vs 31 sur la même page).
+              // De plus, @type FinancialService n'est pas supporté par
+              // Google pour Review Snippets. La note est désormais
+              // rattachée à ProfessionalService (@id #organization), seul
+              // type supporté.
+            }),
+          }}
+        />
+      )}
+
+      {/* GAP 2 (2026-05-19) — Person schemas for named CFO experts (E-E-A-T / YMYL signal).
+          Sébastien Doat (founding partner) + Florent Greth (partner CFO).
+          sameAs → LinkedIn profiles; knowsAbout → primary expertise signals.
+          These structured entities confirm authorship & domain expertise to Google. */}
+      {locale === "fr" && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Person",
+                  "@id": "https://www.iteradvisors.com/#sebastien-doat",
+                  name: "Sébastien Doat",
+                  jobTitle: "Associé fondateur — DAF externalisé & CFO",
+                  url: "https://www.iteradvisors.com/a-propos",
+                  sameAs: [
+                    "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
+                  ],
+                  worksFor: {
+                    "@type": "Organization",
+                    "@id": "https://www.iteradvisors.com/#organization",
+                    name: "Iter Advisors",
+                  },
+                  knowsAbout: [
+                    "DAF externalisé",
+                    "CFO à temps partagé",
+                    "direction financière externalisée",
+                    "levée de fonds",
+                    "reporting financier",
+                    "budget prévisionnel",
+                  ],
+                },
+                {
+                  "@type": "Person",
+                  "@id": "https://www.iteradvisors.com/#florent-greth",
+                  name: "Florent Greth",
+                  jobTitle: "Partner & CFO",
+                  url: "https://www.iteradvisors.com/a-propos",
+                  sameAs: [
+                    "https://www.linkedin.com/in/florent-greth-cfo-pennylane/",
+                  ],
+                  worksFor: {
+                    "@type": "Organization",
+                    "@id": "https://www.iteradvisors.com/#organization",
+                    name: "Iter Advisors",
+                  },
+                  knowsAbout: [
+                    "DAF externalisé",
+                    "CFO",
+                    "finance startups",
+                    "tableau de bord financier",
+                    "contrôle de gestion",
+                  ],
+                },
+              ],
+            }),
+          }}
+        />
+      )}
+
+      {/* Review Schema removed (2026-05-29): self-serving Trustfolio reviews
+          about Iter Advisors are ineligible for Google review rich results, so
+          the page no longer emits Review structured data. The visible
+          testimonial UI is unaffected. */}
 
       {/* Speakable Schema (content roadmap P1) — voice-search optimization.
         * Targets the hero block (H1 + intro paragraphs) for voice assistants
@@ -1003,30 +1524,60 @@ export default function DafPage({
         }}
       />
 
-      {/* Article Schema (audit V2 R-9) — pillar is also a long-form guide.
-        * Helps Google + AI engines understand the dual nature: a Service page
-        * (commercial intent) AND an editorial guide (informational intent). */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            articleSchema({
-              headline: t.h1,
-              description: t.intro[0] ?? t.meta.description,
-              url:
-                locale === "fr"
-                  ? "/daf-externalise"
-                  : locale === "en"
-                    ? "/en/fractional-cfo"
-                    : "/es/externalizacion-daf",
-              datePublished: "2024-09-01",
-              dateModified: new Date().toISOString().split("T")[0],
-              authorName: "Iter Advisors",
-              imageSrc: "/images/bg/daf-section.webp",
+      {/* Article schema (2026-05-25) — signal E-E-A-T avec 2 auteurs nommés
+          (Sébastien Doat + Benjamin Ziza) et 5 citations de sources institutionnelles.
+          @type Article (pas BlogPosting) pour une page pilier éditoriale + commerciale.
+          Coexiste avec le Service schema via @id distincts dans le graph. */}
+      {locale === "fr" && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: "DAF Externalisé : votre direction financière sur-mesure",
+              description: "Guide complet sur le DAF externalisé : définition, missions, tarifs 2026, comparaison avec DAF interne et expert-comptable. Par les experts d'Iter Advisors.",
+              image: "https://www.iteradvisors.com/images/og-default.webp",
+              datePublished: "2024-01-15T09:00:00+01:00",
+              dateModified: "2026-05-17T09:00:00+02:00",
+              author: [
+                {
+                  "@type": "Person",
+                  name: "Sébastien Doat",
+                  jobTitle: "Associé fondateur, CFO & Investisseur — Iter Advisors",
+                  url: "https://www.iteradvisors.com/a-propos/sebastien-doat",
+                  sameAs: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
+                  knowsAbout: ["DAF externalisé", "Levée de fonds", "M&A", "Pilotage financier"],
+                },
+                {
+                  "@type": "Person",
+                  name: "Benjamin Ziza",
+                  jobTitle: "Associé fondateur, CFO & Investisseur — Iter Advisors",
+                  url: "https://www.iteradvisors.com/a-propos/benjamin-ziza",
+                  sameAs: "https://www.linkedin.com/in/benjamin-ziza/",
+                },
+              ],
+              publisher: { "@id": "https://www.iteradvisors.com/#organization" },
+              mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": "https://www.iteradvisors.com/daf-externalise",
+              },
+              about: [
+                { "@type": "Thing", name: "DAF externalisé" },
+                { "@type": "Thing", name: "Directeur financier à temps partagé" },
+                { "@type": "Thing", name: "Fractional CFO" },
+              ],
+              citation: [
+                "https://www.dfcg.fr/",
+                "https://www.insee.fr/",
+                "https://www.bpifrance.fr/",
+                "https://www.experts-comptables.fr/",
+                "https://francedigitale.org/",
+              ],
             }),
-          ),
-        }}
-      />
+          }}
+        />
+      )}
 
       {/* Vos experts Iter Advisors (audit SEO D.1 / brief Bloc 7) — EEAT signal with named CFOs */}
       {locale === "fr" && featuredExperts.length > 0 && (
@@ -1059,7 +1610,10 @@ export default function DafPage({
                       {photoUrl ? (
                         <Image
                           src={photoUrl}
-                          alt={`${expert.firstName} ${expert.lastName}`}
+                          // SEO audit 16 mai 2026 — alt enriched with
+                          // job title + brand so the image carries the
+                          // expert's signal (was "Sébastien Doat" only).
+                          alt={`${expert.firstName} ${expert.lastName} — ${expert.role}, Iter Advisors`}
                           fill
                           className="object-cover"
                           sizes="(max-width: 640px) 64px, (max-width: 1024px) 80px, 96px"
@@ -1101,10 +1655,59 @@ export default function DafPage({
         </section>
       )}
 
+      {/* P17 (2026-05-29) — contextual internal links above the final CTA for
+          visitors not ready to book. Every target was verified to resolve to a
+          200 in one hop for the current locale (no redirect interception). ES
+          uses the `recursos` path; EN keeps `ressources`. */}
+      <section className="bg-background pb-12 sm:pb-16">
+        <div className="container max-w-3xl px-4 sm:px-6 text-center">
+          <p className="text-sm text-muted-foreground mb-3">
+            {locale === "fr"
+              ? "Pas encore prêt à échanger ?"
+              : locale === "en"
+                ? "Not ready to talk yet?"
+                : "¿Aún no está listo para hablar?"}
+          </p>
+          <div className="flex flex-wrap gap-x-5 gap-y-2 justify-center">
+            {(locale === "fr"
+              ? [
+                  { href: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", label: "Le guide complet des tarifs 2026" },
+                  { href: "/ressources/blog/daf-externalise-vs-daf-salarie", label: "DAF externalisé vs DAF salarié" },
+                  { href: "/ressources/cas-clients", label: "Voir nos cas clients" },
+                ]
+              : locale === "en"
+                ? [
+                    { href: "/en/ressources/blog/cout-daf-externalise-tarifs-prix-2026", label: "The complete 2026 pricing guide" },
+                    { href: "/en/ressources/blog/daf-externalise-vs-daf-salarie", label: "Fractional CFO vs in-house CFO" },
+                    { href: "/en/ressources/cas-clients", label: "See our case studies" },
+                  ]
+                : [
+                    { href: "/es/recursos/blog/cout-daf-externalise-tarifs-prix-2026", label: "La guía completa de tarifas 2026" },
+                    { href: "/es/recursos/blog/daf-externalise-vs-daf-salarie", label: "CFO externalizado vs CFO interno" },
+                    { href: "/es/recursos/cas-clients", label: "Ver nuestros casos de cliente" },
+                  ]).map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="text-sm font-medium text-iter-violet hover:underline"
+              >
+                {l.label} →
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CTASection locale={locale} />
 
       {/* External references (CC-18) — EEAT signal via authoritative sources */}
       <References locale={locale} />
+
+      {/* P06 (2026-05-29) — numbered sources for inline citations. Renders only
+          once t.citations is populated during the content-validation pass. */}
+      {t.citations && t.citations.length > 0 && (
+        <Footnotes items={t.citations} locale={locale} />
+      )}
     </PageLayout>
   );
 }
@@ -1268,6 +1871,7 @@ function DafTableOfContents() {
     { href: "#avantages", label: "Les 5 avantages clés" },
     { href: "#pour-qui", label: "Pour qui et à quel stade ?" },
     { href: "#missions", label: "Missions principales" },
+    { href: "#deroulement", label: "Déroulement d'une mission (4 étapes)" },
     { href: "#tarifs", label: "Grille tarifaire 2026" },
     { href: "#vs-expert-comptable", label: "DAF externalisé vs expert-comptable" },
     { href: "#quand", label: "Quand faire appel à un DAF externalisé ?" },
@@ -1302,6 +1906,73 @@ function DafTableOfContents() {
   );
 }
 
+/* P07 — "Réponse rapide": a 40-70 word factual extract under a section H2,
+   optimised for AI Overviews / LLM extraction. Data-driven via t.quickAnswers
+   (keyed by section id) so it generalises the ad-hoc FR block on #tarifs. */
+function QuickAnswer({ text, locale }: { text: string; locale: Locale }) {
+  const label = locale === "fr" ? "Réponse rapide" : locale === "en" ? "Quick answer" : "Respuesta rápida";
+  return (
+    <div className="my-4 sm:my-5 rounded-r-lg border-l-4 border-iter-violet bg-iter-violet/5 px-4 py-3">
+      <div className="text-xs font-bold uppercase tracking-wide text-iter-violet mb-1">{label}</div>
+      <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">{text}</p>
+    </div>
+  );
+}
+
+/* P15 — long-tail Q&A section rendered after the FAQ. Renders only when
+   t.longTailFaq is populated with validated content, so nothing ships until
+   the 15 answers (geo-longtail-content.md) have been fact-checked. */
+function LongTailFaqSection({
+  data,
+}: {
+  data: { heading: string; items: LongTailQA[] };
+}) {
+  return (
+    <section id="questions-precises" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
+      <div className="container max-w-3xl px-4 sm:px-6">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-8 sm:mb-10 leading-tight">
+          {data.heading}
+        </h2>
+        <div className="space-y-6 sm:space-y-8">
+          {data.items.map((item, i) => (
+            <article key={i} className="border-t border-border/50 pt-5 sm:pt-6">
+              <h3 className="text-lg sm:text-xl font-bold font-heading text-foreground mb-2 sm:mb-3">
+                {item.question}
+              </h3>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{item.answer}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* P06 — numbered sources for inline citations. Renders only when t.citations is
+   populated; the inline [n] superscripts are added in the prose during the
+   content-validation pass. */
+function Footnotes({ items, locale }: { items: SourceCitation[]; locale: Locale }) {
+  return (
+    <section className="bg-background py-8 sm:py-10">
+      <div className="container max-w-3xl px-4 sm:px-6">
+        <h2 className="text-sm font-bold uppercase tracking-wide text-muted-foreground mb-3">
+          {locale === "fr" ? "Sources" : locale === "en" ? "Sources" : "Fuentes"}
+        </h2>
+        <ol className="space-y-2 list-decimal pl-5 text-xs sm:text-sm text-muted-foreground">
+          {items.map((c) => (
+            <li key={c.id} id={`footnote-${c.id}`}>
+              {c.text}{" "}
+              <a href={c.url} target="_blank" rel="noopener" className="text-iter-violet hover:underline">
+                ↗
+              </a>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
 function FaqAccordionItem({
   question,
   answer,
@@ -1317,6 +1988,7 @@ function FaqAccordionItem({
     <div className="border border-border/50 rounded-2xl overflow-hidden bg-background">
       <button
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
         className="w-full flex items-start sm:items-center justify-between p-4 sm:p-6 text-left font-semibold hover:text-iter-violet transition-colors gap-3"
       >
         <span className="text-sm sm:text-base">{question}</span>
@@ -1326,40 +1998,41 @@ function FaqAccordionItem({
           style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
         />
       </button>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              {answerRich ? (
-                <>
-                  {answerRich.intro && <p className="mb-3 sm:mb-4">{answerRich.intro}</p>}
-                  {answerRich.bullets && answerRich.bullets.length > 0 && (
-                    <ul className="space-y-2 mb-3 sm:mb-4 list-none">
-                      {answerRich.bullets.map((b, i) => (
-                        <li key={i} className="flex gap-2 sm:gap-3">
-                          <span aria-hidden className="mt-1.5 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-                          <span>
-                            <strong className="text-foreground font-semibold">{b.label} :</strong> {b.text}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {answerRich.outro && <p>{answerRich.outro}</p>}
-                </>
-              ) : (
-                answer
-              )}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* P12 (2026-05-29): the answer is rendered UNCONDITIONALLY in the DOM so
+          it is present in the server-rendered HTML for Googlebot and answer
+          engines. The collapse is pure CSS (grid-template-rows 0fr→1fr), which
+          stays correct without JS and avoids the hydration flash / CLS a
+          JS-gated (`{open && …}`) accordion would cause. */}
+      <div
+        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            {answerRich ? (
+              <>
+                {answerRich.intro && <p className="mb-3 sm:mb-4">{answerRich.intro}</p>}
+                {answerRich.bullets && answerRich.bullets.length > 0 && (
+                  <ul className="space-y-2 mb-3 sm:mb-4 list-none">
+                    {answerRich.bullets.map((b, i) => (
+                      <li key={i} className="flex gap-2 sm:gap-3">
+                        <span aria-hidden className="mt-1.5 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
+                        <span>
+                          <strong className="text-foreground font-semibold">{b.label} :</strong> {b.text}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {answerRich.outro && <p>{answerRich.outro}</p>}
+              </>
+            ) : (
+              answer
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

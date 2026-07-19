@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="cfo-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4B2EBF"/>
+      <stop offset="100%" stop-color="#1A0A4D"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#cfo-bg)"/>
+  <!-- Grid lines -->
+  <line x1="80" y1="150" x2="560" y2="150" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <line x1="80" y1="240" x2="560" y2="240" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <line x1="80" y1="330" x2="560" y2="330" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <!-- Bar chart -->
+  <rect x="100" y="310" width="44" height="80" rx="4" fill="rgba(255,255,255,0.15)"/>
+  <rect x="162" y="275" width="44" height="115" rx="4" fill="rgba(255,255,255,0.2)"/>
+  <rect x="224" y="240" width="44" height="150" rx="4" fill="rgba(100,92,255,0.55)"/>
+  <rect x="286" y="195" width="44" height="195" rx="4" fill="rgba(100,92,255,0.75)"/>
+  <rect x="348" y="155" width="44" height="235" rx="4" fill="rgba(100,92,255,0.9)"/>
+  <rect x="410" y="120" width="44" height="270" rx="4" fill="rgba(191,223,0,0.75)"/>
+  <!-- Trend line -->
+  <polyline points="122,295 184,258 246,228 308,188 370,148 432,112"
+    fill="none" stroke="rgba(255,255,255,0.65)" stroke-width="2.5"
+    stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="122" cy="295" r="4" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="246" cy="228" r="4" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="370" cy="148" r="4" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="432" cy="112" r="5" fill="#BFDF00"/>
+  <!-- Upward arrow -->
+  <line x1="432" y1="112" x2="472" y2="80" stroke="rgba(191,223,0,0.8)" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="472,80 460,76 464,88" fill="#BFDF00" opacity="0.85"/>
+  <!-- Dashboard panel -->
+  <rect x="560" y="70" width="200" height="290" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <rect x="576" y="90" width="80" height="58" rx="6" fill="rgba(255,255,255,0.08)"/>
+  <rect x="668" y="90" width="76" height="58" rx="6" fill="rgba(255,255,255,0.08)"/>
+  <rect x="576" y="158" width="80" height="58" rx="6" fill="rgba(255,255,255,0.08)"/>
+  <rect x="668" y="158" width="76" height="58" rx="6" fill="rgba(191,223,0,0.12)"/>
+  <rect x="592" y="108" width="44" height="5" rx="2" fill="rgba(255,255,255,0.35)"/>
+  <rect x="592" y="121" width="32" height="10" rx="2" fill="rgba(255,255,255,0.7)"/>
+  <rect x="684" y="108" width="38" height="5" rx="2" fill="rgba(255,255,255,0.35)"/>
+  <rect x="684" y="121" width="44" height="10" rx="2" fill="rgba(191,223,0,0.8)"/>
+  <rect x="592" y="176" width="44" height="5" rx="2" fill="rgba(255,255,255,0.35)"/>
+  <rect x="592" y="189" width="38" height="10" rx="2" fill="rgba(255,255,255,0.7)"/>
+  <rect x="668" y="176" width="38" height="5" rx="2" fill="rgba(255,255,255,0.35)"/>
+  <rect x="668" y="189" width="28" height="10" rx="2" fill="rgba(191,223,0,0.6)"/>
+  <!-- Mini bar chart in panel -->
+  <rect x="576" y="230" width="168" height="115" rx="6" fill="rgba(255,255,255,0.04)"/>
+  <rect x="592" y="280" width="16" height="55" rx="2" fill="rgba(255,255,255,0.18)"/>
+  <rect x="614" y="265" width="16" height="70" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <rect x="636" y="253" width="16" height="82" rx="2" fill="rgba(100,92,255,0.55)"/>
+  <rect x="658" y="245" width="16" height="90" rx="2" fill="rgba(191,223,0,0.6)"/>
+  <rect x="680" y="258" width="16" height="77" rx="2" fill="rgba(100,92,255,0.4)"/>
+  <rect x="702" y="268" width="16" height="67" rx="2" fill="rgba(255,255,255,0.18)"/>
+  <!-- Decorative -->
+  <circle cx="700" cy="390" r="90" fill="rgba(100,92,255,0.1)"/>
+  <circle cx="55" cy="55" r="55" fill="rgba(255,255,255,0.04)"/>
+</svg>

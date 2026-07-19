@@ -131,12 +131,12 @@ const navEs: NavItem[] = [
   },
   {
     title: "Recursos",
-    href: "/es/ressources",
+    href: "/es/recursos",
     children: [
-      { text: "Herramientas", href: "/es/ressources/herramientas" },
-      { text: "Blog & Actualidades", href: "/es/ressources/blog" },
-      { text: "Casos prácticos", href: "/es/ressources/cas-clients" },
-      { text: "Glosario", href: "/es/ressources/glossaire" },
+      { text: "Herramientas", href: "/es/recursos/herramientas" },
+      { text: "Blog & Actualidades", href: "/es/recursos/blog" },
+      { text: "Casos prácticos", href: "/es/recursos/cas-clients" },
+      { text: "Glosario", href: "/es/recursos/glossaire" },
     ],
   },
   {
@@ -219,8 +219,13 @@ export function getContactPath(locale: Locale): string {
   return `/${locale}/contact`;
 }
 
-export const BOOKING_URL =
-  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2DVmtdvwnZykAPoQC9_BNTFB_wHl1IrNagCAX0AaSbmEs8JmSGsTdWo96WGPzMEYtf_nkILQN8";
+// 2026-05-30: Sébastien is on paternity leave, so the "book a meeting"
+// CTAs across the site now route to /contact (the contact form) instead of
+// his Google Calendar appointment scheduler. Centralised here so every
+// caller picks up the change automatically. The original URL is preserved
+// below in comment form so we can restore it when leave ends:
+// "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2DVmtdvwnZykAPoQC9_BNTFB_wHl1IrNagCAX0AaSbmEs8JmSGsTdWo96WGPzMEYtf_nkILQN8"
+export const BOOKING_URL = "/contact";
 
 export function getBookingUrl(): string {
   return BOOKING_URL;

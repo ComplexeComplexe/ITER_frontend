@@ -11,13 +11,17 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Senior Finance Manager — Recrutement | Iter Advisors",
     description:
       "Senior Finance Manager pour piloter et coordonner les missions clients chez Iter Advisors. Cabinet DAF externalisé Barcelone, Paris, Toulouse.",
+    alternates: {
+      canonical: "https://www.iteradvisors.com/jobs/senior-finance-manager",
+    },
     openGraph: {
       title: "Senior Finance Manager — Recrutement | Iter Advisors",
       description:
         "Senior Finance Manager pour piloter et coordonner les missions clients chez Iter Advisors. Cabinet DAF externalisé Barcelone, Paris, Toulouse.",
       url: "https://www.iteradvisors.com/jobs/senior-finance-manager",
       type: "website",
-    },
+    images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
+  },
   };
 }
 
@@ -47,7 +51,7 @@ export default async function Page() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="mailto:recrutement@iteradvisors.com"
+                href="mailto:contact@iteradvisors.com"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 <Mail size={18} />
@@ -195,10 +199,10 @@ export default async function Page() {
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               Envoyez votre CV et une présentation de votre expérience à{" "}
               <a
-                href="mailto:recrutement@iteradvisors.com"
+                href="mailto:contact@iteradvisors.com"
                 className="text-iter-violet hover:underline font-semibold"
               >
-                recrutement@iteradvisors.com
+                contact@iteradvisors.com
               </a>
               . Entretiens : 1h initial + cas pratique + rencontre équipe. Délai
               moyen : 3-4 semaines.
@@ -211,7 +215,7 @@ export default async function Page() {
               Prêt à pilotage des missions et d'une équipe ?
             </p>
             <a
-              href="mailto:recrutement@iteradvisors.com"
+              href="mailto:contact@iteradvisors.com"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
             >
               <Mail size={18} />

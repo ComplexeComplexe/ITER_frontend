@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import ComptabiliteExternalisationPage from "@/components/pages/ComptabiliteExternalisationPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
 import { getComptabiliteExternalisationContent } from "@/lib/content/comptabilite-externalisation";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -35,7 +34,8 @@ export async function generateMetadata(): Promise<Metadata> {
     jobTitle: "Co-fondateur & CFO Advisor",
     url: "https://www.linkedin.com/in/sebastiendoat",
     sameAs: "https://www.linkedin.com/in/sebastiendoat",
-    image: "https://www.iteradvisors.com/images/sebastien-doat.jpg",
+    // Ahrefs T-404 (2026-06-08): was /images/sebastien-doat.jpg → 400/404.
+    image: "https://www.iteradvisors.com/images/team/sebastien-doat.webp",
   };
 
   const articleSchema = {
@@ -104,7 +104,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("fr");
+  const cmsNavigation = undefined;
   const content = getComptabiliteExternalisationContent("fr");
   return (
     <ComptabiliteExternalisationPage

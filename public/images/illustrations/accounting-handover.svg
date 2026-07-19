@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="accounting-handover" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2EC4B6"/>
+      <stop offset="100%" stop-color="#0E5E54"/>
+    </linearGradient>
+    <pattern id="accounting-handover-grid" patternUnits="userSpaceOnUse" width="60" height="60">
+      <path d="M 60 0 L 0 0 L 0 60" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#accounting-handover)"/>
+  <rect width="1200" height="630" fill="url(#accounting-handover-grid)"/>
+  <circle cx="980" cy="120" r="140" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="160" cy="510" r="180" fill="rgba(255,255,255,0.04)"/>
+</svg>

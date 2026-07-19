@@ -7,10 +7,14 @@ import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 export const metadata: Metadata = {
   title: "Flux de trésorerie | Iter Advisors",
   description: "Comprendre les flux de trésorerie (cash flow) : définition, calcul, types, importance pour la gestion financière. Guide complet par Iter Advisors.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/flux-de-tresorerie",
+  },
   openGraph: {
-    title: "Flux de trésorerie : définition, calcul et importance | Iter Advisors",
+    title: "Flux de trésorerie — Définition et Calcul | Iter Advisors",
     description: "Comprendre les flux de trésorerie (cash flow) : définition, calcul, types, importance pour la gestion financière. Guide complet.",
     type: "article",
+    images: [{ url: "/images/blog/flux-de-tresorerie.webp", width: 1200, height: 630 }],
   },
 };
 
@@ -29,13 +33,13 @@ export default function FluxDeTresorerieePage() {
       title="Flux de trésorerie : définition, calcul et importance pour l'entreprise"
       dek="Maîtrisez vos flux de trésorerie : définition, types (opérationnel, investissement, financement), calcul et outils. Essentiel pour piloter votre cash et financer votre croissance."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={10}
       dateModified="2026-05-01"
-      heroImage="/images/blog/flux-de-tresorerie.webp"
+      heroImage="/images/blog/covers/flux-de-tresorerie.svg"
       toc={[
         { id: "definition", label: "1. Définition et importance" },
         { id: "trois-types", label: "2. Les trois types de flux" },
@@ -57,7 +61,7 @@ export default function FluxDeTresorerieePage() {
           title: "Comment organiser sa direction financière en 2026 ?",
         },
         {
-          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
           category: "Automatisation",
           title: "IA et automatisation : gagner 30-40 % de temps",
         },

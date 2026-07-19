@@ -36,9 +36,9 @@ export interface MaDueDiligenceContent {
 const content: Record<Locale, MaDueDiligenceContent> = {
   fr: {
     meta: {
-      title: "M&A et Due Diligence financiere - Accompagnement expert | Iter Advisors",
+      title: "M&A et Due Diligence financière | Iter Advisors",
       description:
-        "Accompagnement M&A et due diligence financiere pour startups et PME. Preparation, execution et negociation. +100M EUR de transactions accompagnees. Diagnostic gratuit.",
+        "M&A et due diligence financière pour startups et PME. Préparation, exécution, négociation. +100 M€ de transactions accompagnées. Diagnostic gratuit.",
     },
     hero: {
       h1: "M&A et Due Diligence financiere : securisez vos operations strategiques",
@@ -158,7 +158,7 @@ const content: Record<Locale, MaDueDiligenceContent> = {
   },
   en: {
     meta: {
-      title: "M&A and Financial Due Diligence - Expert Advisory | Iter Advisors",
+      title: "M&A and Financial Due Diligence | Iter Advisors",
       description:
         "M&A and financial due diligence for startups and SMEs. Preparation, execution and negotiation. 100M+ EUR in transactions supported. Free consultation.",
     },
@@ -280,9 +280,9 @@ const content: Record<Locale, MaDueDiligenceContent> = {
   },
   es: {
     meta: {
-      title: "M&A y Due Diligence financiera - Asesoramiento experto | Iter Advisors",
+      title: "M&A y Due Diligence financiera | Iter Advisors",
       description:
-        "Asesoramiento M&A y due diligence financiera para startups y PYMEs. Preparacion, ejecucion y negociacion. +100M EUR en transacciones acompanadas. Consulta gratuita.",
+        "M&A y due diligence financiera para startups y pymes. Preparación, ejecución, negociación. +100 M€ en transacciones acompañadas. Consulta gratuita.",
     },
     hero: {
       h1: "M&A y Due Diligence financiera: asegure sus operaciones estrategicas",

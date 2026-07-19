@@ -1,16 +1,22 @@
 
 
 import { Metadata } from 'next';
+import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
+import MidArticleSoftCTA from '@/components/blog/MidArticleSoftCTA';
 
 export const metadata: Metadata = {
   title: "Tarifs DAF 2026 | Iter Advisors",
   description: "Combien coûte un DAF externalisé en 2026 ? Tarifs, TJM, forfaits. Comparez avec un DAF salarié. Grille tarifaire complète et ROI calculé.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
+  },
   openGraph: {
-    title: "DAF externalisé : tarifs 2026, prix et grille | Iter Advisors",
+    title: "Tarifs DAF externalisé 2026 — prix et grille | Iter Advisors",
     description: "Combien coûte un DAF externalisé en 2026 ? Tarifs TJM, forfaits mensuels, grille de prix par profil et ROI.",
     type: "article",
+    images: [{ url: "/images/blog/cout-daf-externalise-tarifs-prix-2026.webp", width: 1200, height: 630 }],
   },
 };
 
@@ -29,13 +35,14 @@ export default function CoutDafExternalisePage() {
       title="Combien coûte un DAF externalisé en 2026 ? Tarifs, grille de prix et ROI"
       dek="Grille de prix complète pour DAF externalisé 2026 : TJM, forfaits mensuels par seniority, ROI calculator. Économisez 50-70 % vs DAF salarié."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
+        url: "/a-propos/benjamin-ziza",
       }}
       readingTime={8}
       dateModified="2026-05-01"
-      heroImage="/images/blog/tarifs-daf-2026.webp"
+      heroImage="/images/blog/covers/cout-daf-externalise-tarifs-prix-2026.svg"
       toc={[
         { id: "grille-tarifs", label: "1. Grille tarifaire complète" },
         { id: "tjm-forfait", label: "2. TJM vs forfait mensuel" },
@@ -52,9 +59,14 @@ export default function CoutDafExternalisePage() {
           title: "DAF externalisé vs DAF salarié : analyse complète",
         },
         {
-          url: "/ressources/blog/organiser-sa-direction-financiere",
-          category: "Organisation",
-          title: "Comment organiser sa direction financière en 2026 ?",
+          url: "/ressources/blog/checklist-due-diligence-levee-de-fonds",
+          category: "Levée de fonds",
+          title: "Checklist due diligence financière : bien préparer sa levée de fonds",
+        },
+        {
+          url: "/ressources/blog/levee-de-fonds-guide",
+          category: "Levée de fonds",
+          title: "Lever des fonds : préparation fiscale, juridique et financière",
         },
         {
           url: "/ressources/blog/essentiels-outils-tech-finance",
@@ -158,6 +170,12 @@ export default function CoutDafExternalisePage() {
         <li>Coût : Expert DAF = €6,500/mois + Comptables = €6,000/mois = €12,500/mois</li>
         <li>Total annuel : €150k</li>
       </ul>
+
+      {/* Soft CTA mid-article (May 2026 design critique) — visitor is
+          in discovery mode after sections 1-3, before the harder
+          "inclus/exclus" details. Strong transactional CTA stays at
+          the end of the article. */}
+      <MidArticleSoftCTA locale="fr" />
 
       <h2 id="inclus-exclus">4. Ce qui est inclus / exclus</h2>
       <p>
@@ -297,6 +315,17 @@ export default function CoutDafExternalisePage() {
       </ul>
       <p>
         Vous êtes prêt à améliorer votre finance ? Planifiez une discussion avec nos experts.
+      </p>
+      {/* GSC-05 (2026-07-19) — maillage vers page pilier avec ancres variées
+          ("nos formules de DAF externalisé" + "découvrir notre service"). */}
+      <p>
+        Pour comparer les 3&nbsp;formules détaillées côte à côte (2&nbsp;000&nbsp;/
+        4&nbsp;000&nbsp;/ 7&nbsp;000&nbsp;€ HT selon le volume) et voir la
+        méthodologie qui va avec, jetez un œil à{' '}
+        <Link href="/daf-externalise">nos formules de DAF externalisé</Link>.
+        Vous pouvez aussi{' '}
+        <Link href="/daf-externalise">découvrir notre service</Link> complet en
+        30 secondes via le bloc «&nbsp;L'essentiel&nbsp;» en haut de page.
       </p>
     </BlogPostPageRefonte>
   );

@@ -1,39 +1,48 @@
 export const comptabiliteExternalisationContent = {
   fr: {
     meta: {
-      title: "Externalisation comptable pour startups et PME | Iter Advisors",
+      title: "Externalisation comptable startups & PME | Iter Advisors",
       description:
-        "Externalisez votre comptabilité avec Iter Advisors : tenue des comptes, déclarations fiscales, paie et clôture annuelle. Intégration fluide avec Pennylane, Sage, QuickBooks.",
+        "Externalisez votre comptabilité avec Iter Advisors : tenue des comptes, déclarations fiscales, paie et clôture annuelle. Pennylane, Sage, QuickBooks.",
     },
     author: {
       name: "Sébastien Doat",
       jobTitle: "Co-fondateur & CFO Advisor",
       linkedInUrl: "https://www.linkedin.com/in/sebastiendoat",
-      avatarUrl: "https://www.iteradvisors.com/images/sebastien-doat.jpg",
+      // Ahrefs T-404 (2026-06-08): was "/images/sebastien-doat.jpg" → 400/404
+      // (wrong path + wrong extension). The real asset is the .webp under /team/.
+      avatarUrl: "/images/team/sebastien-doat.webp",
       updateDate: "2026-05-05",
     },
     tldr: "Externaliser sa comptabilité coûte 60-85% moins cher qu'un comptable interne, avec une expertise plus large et une flexibilité adaptée aux startups et PME en croissance.",
     h1: "Externalisation comptable : tarifs, méthode et bénéfices pour PME et startups",
+    // T5 (2026-06-07) — replaced 3 fake testimonials (Alain Rousseau /
+    // Valérie Lefevre / Marc Dubois, dont un contenait la coquille
+    // "Impressive professionnalism") par 3 vrais avis Trustfolio
+    // nominatifs, source : https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc
+    // Ces 3 avis ne portent pas spécifiquement sur de la comptabilité
+    // mais sur l'accompagnement financier global Iter Advisors —
+    // honnêteté > vraisemblance fabriquée.
     testimonials: [
       {
-        name: "Alain Rousseau",
-        company: "Tech Startup",
-        sector: "Logiciel SaaS",
-        text: "Nous avions peur de perdre la visibilité sur nos comptes. Au contraire, les tableaux de bord qu'Iter nous a mis en place nous donnent une meilleure vue que nous n'avions jamais eu avec un comptable interne.",
+        name: "Charles Deknudt",
+        company: "Eltex",
+        sector: "PDG et fondateur",
+        text: "Après avoir levé notre premier tour de table, nous avions besoin de structurer nos opérations financières. Iter a professionnalisé notre fonction financière et s'est avéré être un partenaire financier solide intégré à l'équipe.",
         rating: 5,
       },
       {
-        name: "Valérie Lefevre",
-        company: "PME Distribution",
-        sector: "Retail",
-        text: "L'intégration avec notre ERP a été transparente. Pas de rupture de service, pas de perte de données. Impressive professionnalism.",
+        name: "Arnaud MEGE",
+        company: "Unplexed",
+        sector: "Co-founder",
+        text: "Les équipes d'Iter ont structuré notre fonction finance avec sérieux, disponibilité et efficacité, dépassant même nos attentes initiales.",
         rating: 5,
       },
       {
-        name: "Marc Dubois",
-        company: "Consulting & Services",
-        sector: "B2B Services",
-        text: "Nous économisons 30k€ par an en délégant la comptabilité à Iter. Nous avons pu réinvestir cet argent dans le développement commercial.",
+        name: "Mathurin Blouin",
+        company: "MFL",
+        sector: "CEO",
+        text: "Iter nous a accompagnés sur la mise en place du reporting et de la gestion de trésorerie, offrant une meilleure visibilité et sérénité financière.",
         rating: 5,
       },
     ],
@@ -184,6 +193,61 @@ export const comptabiliteExternalisationContent = {
         ],
       },
       {
+        // T5 (2026-06-07) — nouvelle section H2 "tarifs" demandée par
+        // le ticket. La requête "coût externalisation comptabilité"
+        // génère 4600+ impressions / GSC et la page est position 9-12 :
+        // une grille tarifaire concrète peut faire passer en top 5.
+        id: "tarifs",
+        title: "Combien coûte l'externalisation de la comptabilité en 2026 ?",
+        paragraphs: [
+          "Le coût de l'externalisation comptable dépend principalement de quatre facteurs : la taille de votre entreprise (volume de factures), la complexité fiscale (TVA intracommunautaire, multi-entités, exports), le périmètre du service (tenue seule ou tenue + paie + reporting), et le niveau de pilotage attendu (production conforme uniquement ou tableaux de bord et analyse).",
+          "Voici les fourchettes de prix constatées en 2026 sur le marché français, ainsi que la fourchette pratiquée par Iter Advisors selon le profil-type d'entreprise. Pour une analyse complète avec comparatif des 4 modèles disponibles (cabinet traditionnel, plateforme en ligne, cabinet digital hybride, CFO-piloté) et calcul ROI détaillé, consultez notre article dédié : [[Coût de l'externalisation comptable en 2026|/ressources/blog/cout-externalisation-comptable-2026]].",
+        ],
+        tables: [
+          {
+            caption: "Grille tarifaire 2026 — Externalisation comptable par taille d'entreprise",
+            headers: [
+              "Profil d'entreprise",
+              "Volume mensuel typique",
+              "Marché (fourchette mensuelle HT)",
+              "Iter Advisors (forfait mensuel HT)",
+            ],
+            rows: [
+              [
+                "Auto-entrepreneur / TPE (1-5 salariés)",
+                "10-40 factures, TVA simple",
+                "200 - 500 €",
+                "350 - 650 €",
+              ],
+              [
+                "Startup early-stage (5-15 salariés)",
+                "30-80 factures, paie",
+                "400 - 900 €",
+                "550 - 1 100 €",
+              ],
+              [
+                "PME en croissance (15-50 salariés)",
+                "100-300 factures, TVA UE, paie",
+                "800 - 1 800 €",
+                "900 - 1 800 €",
+              ],
+              [
+                "PME structurée (50-150 salariés)",
+                "300-800 factures, multi-entités",
+                "1 500 - 3 500 €",
+                "1 800 - 3 200 €",
+              ],
+              [
+                "Scale-up / ETI (150+ salariés)",
+                "800+ factures, consolidation",
+                "3 000 - 8 000 €",
+                "3 500 - 7 000 €",
+              ],
+            ],
+          },
+        ],
+      },
+      {
         id: "approche-iter",
         title: "Comment Iter Advisors accompagne votre comptabilité externalisée",
         paragraphs: [
@@ -193,7 +257,11 @@ export const comptabiliteExternalisationContent = {
           "Des comptables qui comprennent votre business. Nos équipes ne se contentent pas de saisir des écritures. Elles comprennent le contexte de votre entreprise : votre modèle économique, vos enjeux de trésorerie, vos obligations envers des investisseurs. Cette vision globale permet de produire une comptabilité qui sert le pilotage, pas seulement la conformité fiscale.",
         ],
         closingText:
-          "L'externalisation comptable fonctionne d'autant mieux qu'elle s'intègre dans une stratégie financière globale. Pour une vision complète, explorez aussi notre offre [[DAF externalisé|/daf-externalise-paris]] (direction financière complète) et nos services de [[prévisionnel de trésorerie|/services/previsionnel-tresorerie]] et [[contrôle de gestion|/services/controle-de-gestion-externalise]] pour un pilotage à 360°.",
+          // T5 (2026-06-07) — fix lien interne : pointait vers /daf-externalise-paris
+          // (page locale Paris) au lieu de /daf-externalise (page pilier nationale).
+          // L'ancre "DAF externalisé" doit aller vers la page pilier pour éviter
+          // la cannibalisation entre pilier (position 22) et locale Paris (position 11).
+          "L'externalisation comptable fonctionne d'autant mieux qu'elle s'intègre dans une stratégie financière globale. Pour une vision complète, explorez aussi notre offre [[DAF externalisé|/daf-externalise]] (direction financière complète) et nos services de [[prévisionnel de trésorerie|/services/previsionnel-tresorerie]] et [[contrôle de gestion|/services/controle-de-gestion-externalise]] pour un pilotage à 360°.",
       },
       {
         id: "erreurs-eviter",

@@ -89,18 +89,22 @@ function AnimatedCounter({
 }
 
 /* ─── Client Logos ─── */
+// SEO-17 (2026-07-01) — Alt text descriptifs sur tous les logos clients.
+// Pattern : "Logo <marque> — client Iter Advisors accompagné en DAF externalisé".
+// Booste le SEO image + le champ sémantique autour de "DAF externalisé".
+// Cf. audit SEO 01/07/2026 §Home "Alt text des logos clients".
 const clientLogos = [
-  { src: "/images/logos/logo-happyscribe.webp", alt: "Happy Scribe" },
-  { src: "/images/logos/logo-impact.webp", alt: "IMPACT+" },
-  { src: "/images/logos/logo-mitiga.webp", alt: "Mitiga Solutions" },
-  { src: "/images/logos/logo-neat.webp", alt: "Neat" },
-  { src: "/images/logos/logo-nuubb.webp", alt: "NuuBB" },
-  { src: "/images/logos/logo-opitdigital.webp", alt: "OptiDigital" },
-  { src: "/images/logos/logo-seasonly.webp", alt: "Seasonly" },
-  { src: "/images/logos/logo-solamente.webp", alt: "Solamente" },
-  { src: "/images/logos/logo-surfe.webp", alt: "Surfe" },
-  { src: "/images/logos/logo-ukio.webp", alt: "Ukio" },
-  { src: "/images/logos/logo-yego.webp", alt: "Yego" },
+  { src: "/images/logos/logo-happyscribe.webp", alt: "Logo Happy Scribe — client Iter Advisors accompagné en DAF externalisé" },
+  { src: "/images/logos/logo-impact.webp", alt: "Logo IMPACT+ — client Iter Advisors accompagné en DAF externalisé" },
+  { src: "/images/logos/logo-mitiga.webp", alt: "Logo Mitiga Solutions — client Iter Advisors accompagné en direction financière externalisée" },
+  { src: "/images/logos/logo-neat.webp", alt: "Logo Neat — client Iter Advisors accompagné en CFO externalisé" },
+  { src: "/images/logos/logo-nuubb.webp", alt: "Logo NuuBB — client Iter Advisors accompagné en DAF à temps partagé" },
+  { src: "/images/logos/logo-opitdigital.webp", alt: "Logo Opti Digital — client Iter Advisors accompagné en DAF externalisé" },
+  { src: "/images/logos/logo-seasonly.webp", alt: "Logo Seasonly — client Iter Advisors accompagné en DAF externalisé" },
+  { src: "/images/logos/logo-solamente.webp", alt: "Logo Solamente — client Iter Advisors accompagné en direction financière externalisée" },
+  { src: "/images/logos/logo-surfe.webp", alt: "Logo Surfe — client Iter Advisors accompagné en CFO à temps partagé" },
+  { src: "/images/logos/logo-ukio.webp", alt: "Logo Ukio — client Iter Advisors accompagné en DAF externalisé" },
+  { src: "/images/logos/logo-yego.webp", alt: "Logo Yego — client Iter Advisors accompagné en DAF externalisé" },
 ];
 
 /* ─── Icons for service cards ─── */
@@ -530,9 +534,43 @@ export default function HomePage({
                   href={locale === "fr" ? "/daf-externalise" : locale === "en" ? "/en/fractional-cfo" : "/es/externalizacion-daf"}
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-iter-violet text-iter-violet font-semibold hover:bg-iter-violet/5 transition-all duration-300"
                 >
-                  {locale === "fr" ? "En savoir plus" : locale === "en" ? "Learn more" : "Saber m\u00e1s"}
+                  {locale === "fr" ? "D\u00e9couvrir le DAF externalis\u00e9" : locale === "en" ? "Explore Fractional CFO services" : "Conocer el DAF externalizado"}
                   <ArrowRight size={16} />
                 </Link>
+              </div>
+              {/* COCON-02 \u2014 Internal links to cocon sub-pages (PDF audit Priorit\u00e9 1).
+               * Distributes homepage PageRank to the 3 cluster pillars so Google
+               * can assess the full depth of the DAF expertise. */}
+              <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1">
+                {/* T6 (2026-06-07) \u2014 added "DAF de transition" and
+                    "Externalisation comptable" to push internal link juice
+                    to those underserved cibles per the SEO ticket. */}
+                {locale === "fr" && (
+                  <>
+                    <Link href="/daf-externalise/tarifs" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Tarifs du DAF externalis\u00e9</Link>
+                    <Link href="/daf-externalise/temps-partage" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF \u00e0 temps partag\u00e9</Link>
+                    <Link href="/daf-externalise/transition" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF de transition</Link>
+                    <Link href="/services/comptabilite-externalisation" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Externalisation comptable</Link>
+                    <Link href="/daf-externalise/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">M\u00e9tier de DAF</Link>
+                    <Link href="/ressources/fiscalite-espagne-france" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Fiscalit\u00e9 France-Espagne</Link>
+                  </>
+                )}
+                {locale === "en" && (
+                  <>
+                    <Link href="/en/fractional-cfo/shared-time" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Part-time CFO</Link>
+                    <Link href="/en/fractional-cfo/transition" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Interim CFO</Link>
+                    <Link href="/en/services/outsource-your-accounting" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Accounting outsourcing</Link>
+                    <Link href="/en/fractional-cfo/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">CFO role & skills</Link>
+                  </>
+                )}
+                {locale === "es" && (
+                  <>
+                    <Link href="/es/externalizacion-daf/tiempo-compartido" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">CFO a tiempo compartido</Link>
+                    <Link href="/es/externalizacion-daf/transition" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF de transici\u00f3n</Link>
+                    <Link href="/es/services/externalizar-contabilidad" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Externalizaci\u00f3n contable</Link>
+                    <Link href="/es/externalizacion-daf/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Profesi\u00f3n de DAF</Link>
+                  </>
+                )}
               </div>
             </motion.div>
           </div>
@@ -547,6 +585,7 @@ export default function HomePage({
             alt=""
             aria-hidden="true"
             fill
+            sizes="100vw"
             className="object-cover"
             loading="lazy"
           />
@@ -1001,6 +1040,7 @@ export default function HomePage({
                     src={card.image}
                     alt={card.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />

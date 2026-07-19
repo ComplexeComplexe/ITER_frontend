@@ -11,13 +11,17 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Analyste financier junior France — Iter Advisors recrute",
     description:
       "Iter Advisors recrute un(e) analyste financier junior à Paris. CDI ou alternance. Cabinet de DAF externalisé. Formation et progression assurées.",
+    alternates: {
+      canonical: "https://www.iteradvisors.com/jobs/finance-analyst-junior-fr",
+    },
     openGraph: {
       title: "Analyste financier junior France — Iter Advisors recrute",
       description:
         "Iter Advisors recrute un(e) analyste financier junior à Paris. CDI ou alternance. Cabinet de DAF externalisé. Formation et progression assurées.",
       url: "https://www.iteradvisors.com/jobs/finance-analyst-junior-fr",
       type: "website",
-    },
+    images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
+  },
   };
 }
 
@@ -48,7 +52,7 @@ export default async function Page() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="mailto:recrutement@iteradvisors.com"
+                href="mailto:contact@iteradvisors.com"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 <Mail size={18} />
@@ -229,10 +233,10 @@ export default async function Page() {
             </ul>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               À : <a
-                href="mailto:recrutement@iteradvisors.com"
+                href="mailto:contact@iteradvisors.com"
                 className="text-iter-violet hover:underline font-semibold"
               >
-                recrutement@iteradvisors.com
+                contact@iteradvisors.com
               </a>
             </p>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-4">
@@ -247,7 +251,7 @@ export default async function Page() {
               Prêt(e) à lancer ta carrière en finance ?
             </p>
             <a
-              href="mailto:recrutement@iteradvisors.com"
+              href="mailto:contact@iteradvisors.com"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
             >
               <Mail size={18} />

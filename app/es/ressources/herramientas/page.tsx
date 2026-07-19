@@ -10,7 +10,7 @@ export const metadata: Metadata = buildMetadata({
   locale: "es",
   title: t.meta.title,
   description: t.meta.description,
-  path: "/es/ressources/herramientas",
+  path: "/es/recursos/herramientas",
 });
 
 export default async function Page() {

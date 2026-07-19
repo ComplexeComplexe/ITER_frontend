@@ -27,7 +27,7 @@ export const metadata: Metadata = buildMetadata({
 const breadcrumbsByLocale: Record<Locale, { label: string; href: string }> = {
   en: { label: "Resources", href: "/en/ressources" },
   fr: { label: "Ressources", href: "/ressources" },
-  es: { label: "Recursos", href: "/es/ressources" },
+  es: { label: "Recursos", href: "/es/recursos" },
 };
 
 function CasClientsPageContent({ locale }: { locale: Locale }) {

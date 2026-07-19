@@ -61,7 +61,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
     meta: {
       title: "À propos | Iter Advisors",
       description:
-        "Cabinet de conseil en finance et DAF externalisé, Iter Advisors accompagne le développement stratégique de ses partenaires par la structuration et le pilotage de leur fonction Finance.",
+        "Cabinet de DAF externalisé, Iter Advisors accompagne PME et startups dans la structuration financière, la levée de fonds et le contrôle de gestion.",
     },
     hero: {
       h1: "À propos d'Iter Advisors : votre cabinet de DAF externalisé",
@@ -71,8 +71,8 @@ export const aboutContent: Record<Locale, AboutContent> = {
     whoWeAre: {
       heading: "Qui sommes-nous",
       paragraphs: [
-        "Iter Advisors est un cabinet de conseil en finance d\u2019entreprise spécialisé dans l\u2019accompagnement des startups, PME et ETI en forte croissance. Nous intervenons en tant que DAF externalisé, à temps partagé ou en transition, pour structurer et piloter la fonction financière de nos partenaires.",
-        "Fondé en 2021, Iter Advisors réunit une équipe de CFOs expérimentés, issus de parcours complémentaires (audit, contrôle de gestion, direction financière, M&A), au service d\u2019une vision commune\u00A0: rendre accessible aux entreprises en croissance une direction financière de premier plan.",
+        "Iter Advisors est un cabinet de conseil en finance d\u2019entreprise spécialisé dans l\u2019accompagnement des startups, PME et ETI en forte croissance. Nous intervenons en tant que DAF externalisé, à temps partagé ou en transition, pour structurer et piloter la fonction financière de nos partenaires. Pour les startups VC-backed, nous proposons aussi une offre dédiée de [fractional CFO](/jobs/fractional-cfo-startups).",
+        "Fondé en 2021, Iter Advisors réunit des CFOs expérimentés aux parcours complémentaires : audit, contrôle de gestion, direction financière, M&A. Leur vision commune\u00A0: rendre accessible aux entreprises en croissance une direction financière de premier plan.",
         "Basés à Barcelone, Paris et Toulouse, nous accompagnons nos clients en France, en Espagne et à l\u2019international, avec une approche sur mesure adaptée à chaque étape de leur développement.",
       ],
     },
@@ -112,7 +112,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
           title: "Lancement",
           description:
             "Structurez votre fonction finance dès le départ. Mise en place de la comptabilité, des outils de gestion et des premiers tableaux de bord pour piloter votre activité.",
-          href: "/services/externalisation-comptable",
+          href: "/services/comptabilite-externalisation",
         },
         {
           title: "Croissance",
@@ -124,13 +124,13 @@ export const aboutContent: Record<Locale, AboutContent> = {
           title: "Gestion de crise",
           description:
             "Réagissez rapidement face aux difficultés. Plan de trésorerie d\u2019urgence, renégociation avec les créanciers, restructuration financière et accompagnement stratégique.",
-          href: "/services/gestion-de-tresorerie",
+          href: "/services/previsionnel-tresorerie",
         },
         {
           title: "Levée de fonds",
           description:
             "Préparez et sécurisez vos financements. Construction du dossier investisseur, modélisation financière, due diligence et négociation avec les fonds d\u2019investissement.",
-          href: "/services/levee-de-fonds",
+          href: "/services/accompagnement-levee-de-fond",
         },
         {
           title: "Post-levée",
@@ -206,7 +206,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
     meta: {
       title: "About us | Iter Advisors",
       description:
-        "Iter Advisors is a Fractional CFO and finance advisory firm that supports the strategic growth of its partners by structuring, managing, and scaling their finance function.",
+        "Iter Advisors is a Fractional CFO and finance advisory firm supporting strategic growth through financial structuring, fundraising and management control.",
     },
     hero: {
       h1: "About us",
@@ -217,7 +217,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
       heading: "Who we are",
       paragraphs: [
         "Iter Advisors is a corporate finance advisory firm specializing in supporting high-growth startups, SMEs and mid-cap companies. We act as an outsourced CFO, on a shared-time or transitional basis, to structure and manage the finance function of our partners.",
-        "Founded in 2021, Iter Advisors brings together a team of experienced CFOs from complementary backgrounds (audit, management control, financial management, M&A), united by a shared vision: making first-class financial management accessible to growing companies.",
+        "Founded in 2021, Iter Advisors brings together experienced CFOs from complementary backgrounds: audit, management control, financial management, M&A. Their shared vision: making first-class financial management accessible to growing companies.",
         "Based in Barcelona, Paris and Toulouse, we support our clients in France, Spain and internationally, with a tailored approach adapted to each stage of their development.",
       ],
     },
@@ -346,7 +346,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
     meta: {
       title: "Sobre nosotros | Iter Advisors",
       description:
-        "Iter Advisors es una firma de consultoría financiera y CFO externalizado que apoya el crecimiento estratégico de sus socios estructurando, gestionando y escalando su función financiera.",
+        "Iter Advisors, firma de CFO externalizado y consultoría financiera. Apoyamos pymes y startups en estructuración financiera y captación de fondos.",
     },
     hero: {
       h1: "Sobre nosotros",
@@ -357,7 +357,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
       heading: "Quiénes somos",
       paragraphs: [
         "Iter Advisors es una firma de consultoría en finanzas corporativas especializada en el acompañamiento de startups, pymes y empresas de mediana capitalización en fuerte crecimiento. Actuamos como CFO externalizado, a tiempo compartido o de transición, para estructurar y gestionar la función financiera de nuestros socios.",
-        "Fundada en 2021, Iter Advisors reúne un equipo de CFOs experimentados de trayectorias complementarias (auditoría, control de gestión, dirección financiera, M&A), unidos por una visión compartida\u00A0: hacer accesible a las empresas en crecimiento una dirección financiera de primer nivel.",
+        "Fundada en 2021, Iter Advisors reúne CFOs experimentados de trayectorias complementarias: auditoría, control de gestión, dirección financiera, M&A. Su visión compartida\u00A0: hacer accesible a las empresas en crecimiento una dirección financiera de primer nivel.",
         "Con sede en Barcelona, París y Toulouse, acompañamos a nuestros clientes en Francia, España e internacionalmente, con un enfoque a medida adaptado a cada etapa de su desarrollo.",
       ],
     },

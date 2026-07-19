@@ -33,9 +33,9 @@ export function getToolsContent(locale: Locale): ToolsPageContent {
 const toolsContent: Record<Locale, ToolsPageContent> = {
   fr: {
     meta: {
-      title: "Nos outils - Stack technologique DAF externalisé | Iter Advisors",
+      title: "Nos outils — Stack DAF externalisé | Iter Advisors",
       description:
-        "Découvrez les outils et logiciels utilisés par nos DAF externalisés : comptabilité, trésorerie, reporting, ERP, CRM et collaboration. Stack technologique éprouvée.",
+        "Découvrez les outils utilisés par nos DAF externalisés : comptabilité, trésorerie, reporting, ERP. Stack technologique éprouvée sur +85 missions.",
     },
     breadcrumbLabel: "Nos outils",
     resourcesLabel: "Ressources",
@@ -197,13 +197,13 @@ const toolsContent: Record<Locale, ToolsPageContent> = {
   },
   es: {
     meta: {
-      title: "Nuestras herramientas - Stack tecnológico CFO externalizado | Iter Advisors",
+      title: "Nuestras herramientas — Stack CFO | Iter Advisors",
       description:
         "Descubra las herramientas y software utilizados por nuestros CFOs externalizados: contabilidad, tesorería, reporting, ERP, CRM y colaboración.",
     },
     breadcrumbLabel: "Nuestras herramientas",
     resourcesLabel: "Recursos",
-    resourcesHref: "/es/ressources",
+    resourcesHref: "/es/recursos",
     h1: "Nuestro stack tecnológico",
     intro:
       "Nuestros CFOs externalizados se apoyan en un ecosistema de herramientas probadas para gestionar eficazmente su dirección financiera. Estas son las soluciones que desplegamos a diario para nuestros clientes.",

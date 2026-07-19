@@ -4,7 +4,7 @@ import { Locale } from "@/lib/i18n";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import { BlogPostLayout, type BlogPostLayoutProps, type TocItem, type AuthorInfo } from "@/components/blog";
-import { articleSchema } from "@/lib/schemas";
+import { articleSchema, faqPageSchema } from "@/lib/schemas";
 import type { CmsNavItem } from "@/lib/strapi";
 import { ReactNode } from "react";
 
@@ -37,6 +37,8 @@ interface BlogPostPageRefonteProps {
   }>;
   /** For schema */
   metaDescription?: string;
+  /** FAQ items — when provided, emits a FAQPage JSON-LD block */
+  faqItems?: Array<{ question: string; answer: string }>;
 }
 
 /**
@@ -60,11 +62,18 @@ export default function BlogPostPageRefonte({
   children,
   relatedArticles,
   metaDescription,
+  faqItems,
 }: BlogPostPageRefonteProps) {
   // Build article URL for schema
   const articleUrl = slug ? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
 
-  // Generate Article schema
+  // SEO-13 (2026-07-13) — passe author.url à articleSchema pour émettre
+  // un author de type Person (E-E-A-T fort) au lieu du fallback
+  // Organization. Tous les articles avaient déjà author.url défini au
+  // niveau du composant BlogPostLayout (byline), mais ce n'était pas
+  // propagé au JSON-LD Article. Amélioration silencieuse mais critique
+  // sur les articles YMYL finance. Cf. reco-seo-iteradvisors.md §2.1
+  // "Signature auteur E-E-A-T sur tous les articles".
   const structuredData = articleSchema({
     headline: title,
     description: metaDescription || dek,
@@ -72,8 +81,11 @@ export default function BlogPostPageRefonte({
     datePublished: dateModified,
     dateModified: dateModified,
     authorName: author.name,
+    authorUrl: author.url,
     imageSrc: heroImage,
   });
+
+  const faqJsonLd = faqItems && faqItems.length > 0 ? faqPageSchema(faqItems) : null;
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
@@ -82,6 +94,12 @@ export default function BlogPostPageRefonte({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       {/* Breadcrumb */}
       <div className="bg-background pt-8 pb-4">

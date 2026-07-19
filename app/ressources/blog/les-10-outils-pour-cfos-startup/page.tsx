@@ -7,10 +7,20 @@ import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 export const metadata: Metadata = {
   title: "Outils CFO Startup | Iter Advisors",
   description: "Guide complet des 10 meilleurs outils fintech pour CFOs et founders en startup. Comptabilité, trésorerie, reporting, levée de fonds. Comparaison et ROI.",
+  // SEO audit 16 mai 2026 — Explicit canonical declared because the
+  // long-slug variant `/les-10-outils-pour-les-cfos-en-start-up` was
+  // also indexed in the past; a 301 redirect (next.config.ts L129)
+  // now resolves it here, and this canonical sets the short slug as
+  // the single indexable URL for the article.
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/les-10-outils-pour-cfos-startup",
+  },
   openGraph: {
-    title: "Les 10 outils indispensables pour CFOs en startup | Iter Advisors",
+    title: "Les 10 outils pour CFOs en startup | Iter Advisors",
     description: "Guide complet des 10 meilleurs outils fintech pour CFOs en startup. Comptabilité, trésorerie, reporting, levée de fonds. Comparaison et ROI.",
     type: "article",
+    url: "https://www.iteradvisors.com/ressources/blog/les-10-outils-pour-cfos-startup",
+    images: [{ url: "/images/blog/les-10-outils-pour-cfos-startup.webp", width: 1200, height: 630 }],
   },
 };
 
@@ -29,13 +39,13 @@ export default function Outils10CfosStartupPage() {
       title="Les 10 outils indispensables pour CFO en startup (2026)"
       dek="Découvrez les 10 meilleurs outils fintech pour startup : comptabilité, trésorerie, reporting, levée de fonds. Sélection, ROI, et stack recommandée."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={12}
       dateModified="2026-05-01"
-      heroImage="/images/blog/10-outils-cfos-startup.webp"
+      heroImage="/images/blog/covers/les-10-outils-pour-cfos-startup.svg"
       toc={[
         { id: "comptabilite", label: "1. Comptabilité cloud et automatisation" },
         { id: "tresorerie", label: "2. Trésorerie et prévisions" },
@@ -52,7 +62,7 @@ export default function Outils10CfosStartupPage() {
           title: "Les essentiels outils tech pour moderniser votre département finance",
         },
         {
-          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
           category: "Automatisation",
           title: "IA et automatisation : gagner 30-40 % de temps",
         },

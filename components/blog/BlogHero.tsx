@@ -46,17 +46,10 @@ export default function BlogHero({
           {dek}
         </p>
 
-        {/* Author & Meta */}
+        {/* Author & Meta — publication date intentionally hidden in the
+            UI (still emitted by the parent JSON-LD schema for SEO). */}
         <div className="flex items-center gap-6 border-t border-slate-200 pt-6">
           <AuthorByline author={author} readingTime={readingTime} />
-          <div className="text-sm text-slate-500">
-            Mis à jour{' '}
-            {dateModified &&
-              new Date(dateModified).toLocaleDateString('fr-FR', {
-                month: 'long',
-                year: 'numeric',
-              })}
-          </div>
         </div>
       </div>
     </div>

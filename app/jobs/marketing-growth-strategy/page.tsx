@@ -11,13 +11,17 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Marketing & Growth Strategy — Recrutement | Iter Advisors",
     description:
       "Iter Advisors recrute un(e) responsable Marketing & Growth Strategy. Cabinet de DAF externalisé à Barcelone, Paris, Toulouse. Postes ouverts.",
+    alternates: {
+      canonical: "https://www.iteradvisors.com/jobs/marketing-growth-strategy",
+    },
     openGraph: {
       title: "Marketing & Growth Strategy — Recrutement | Iter Advisors",
       description:
         "Iter Advisors recrute un(e) responsable Marketing & Growth Strategy. Cabinet de DAF externalisé à Barcelone, Paris, Toulouse. Postes ouverts.",
       url: "https://www.iteradvisors.com/jobs/marketing-growth-strategy",
       type: "website",
-    },
+    images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
+  },
   };
 }
 
@@ -47,7 +51,7 @@ export default async function Page() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="mailto:recrutement@iteradvisors.com"
+                href="mailto:contact@iteradvisors.com"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 <Mail size={18} />
@@ -196,10 +200,10 @@ export default async function Page() {
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               Envoyez votre CV et une lettre de motivation courte à{" "}
               <a
-                href="mailto:recrutement@iteradvisors.com"
+                href="mailto:contact@iteradvisors.com"
                 className="text-iter-violet hover:underline font-semibold"
               >
-                recrutement@iteradvisors.com
+                contact@iteradvisors.com
               </a>
               . Entretien initial : 30 min avec Sébastien. Délai moyen : 3-4
               semaines.
@@ -212,7 +216,7 @@ export default async function Page() {
               Envie de rejoindre une équipe en croissance ?
             </p>
             <a
-              href="mailto:recrutement@iteradvisors.com"
+              href="mailto:contact@iteradvisors.com"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
             >
               <Mail size={18} />

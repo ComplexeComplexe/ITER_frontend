@@ -1,6 +1,17 @@
 /**
- * Strapi API client for fetching CMS content at build time.
- * Supports i18n locales (fr, en, es) and Strapi v5 response format.
+ * @deprecated Strapi has been decommissioned. This module is kept only
+ * to preserve the public surface (types, constants, function signatures)
+ * that 200+ callers across the codebase still import. Every async
+ * fetcher now throws on first call so callers fall through to their
+ * static-content fallback (`lib/content/*.ts`, `lib/fallback-*.ts`).
+ *
+ * Removal plan: `migration/RUNBOOK_STRAPI_DECOMMISSION.md` step 4 —
+ * delete this file and rewrite the 200 imports in a dedicated codemod
+ * PR, once the runtime decoupling has been stable in production for a
+ * while.
+ *
+ * To temporarily re-enable Strapi (for example to run a fresh export):
+ *   STRAPI_ENABLED=true STRAPI_API_URL=… STRAPI_API_TOKEN=… npm run dev
  */
 
 import { Locale } from "@/lib/i18n";
@@ -14,6 +25,19 @@ import { fallbackBlogArticles } from "@/lib/fallback-blog";
 const rawStrapiUrl = process.env.STRAPI_API_URL || "http://localhost:1337";
 const STRAPI_URL = rawStrapiUrl.replace(/\/admin\/?$/, "") || rawStrapiUrl;
 const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN || "";
+
+/**
+ * MIGRATION-03 sunset: Strapi is OFF by default. Every fetch is
+ * short-circuited unless `STRAPI_ENABLED=true` is set in the env (used
+ * only for the one-shot export script `scripts/export-strapi.ts`).
+ *
+ * The legacy `STRAPI_DISABLED=true` opt-in is still honoured for
+ * forward-compatibility with old Vercel envs, but the variable can now
+ * safely be deleted there — the default behaviour is the same.
+ */
+export const STRAPI_ENABLED =
+  process.env.STRAPI_ENABLED === "true" || process.env.STRAPI_ENABLED === "1";
+const STRAPI_DISABLED = !STRAPI_ENABLED;
 
 const isLocalStrapi =
   typeof STRAPI_URL === "string" &&
@@ -299,6 +323,9 @@ export interface StrapiBlogArticle {
   category: string;
   relatedArticles?: StrapiBlogArticle[];
   seo?: StrapiSeo;
+  /** Estimated reading time in minutes (computed from htmlContent for
+   *  static articles; not provided for Strapi-only ones). */
+  readMinutes?: number;
 }
 
 export interface StrapiTeamMember {
@@ -403,6 +430,17 @@ export async function strapiFetch<T>(
   params: Record<string, string> = {},
   options: { locale?: Locale; revalidate?: number } = {}
 ): Promise<T> {
+  // MIGRATION-03 kill switch: when Strapi is disabled, throw so every
+  // caller's try/catch falls through to its static fallback. Returning a
+  // partial envelope (`{ data: [] }`) broke single-type pages because their
+  // callers do `if (!page) notFound()` — an empty array is truthy so it
+  // slipped past the guard and crashed downstream with 500. Throwing is
+  // the consistent contract: collection callers fall back to their
+  // hard-coded data, single-type callers fall back to null/local content.
+  if (STRAPI_DISABLED) {
+    throw new Error("Strapi disabled (STRAPI_DISABLED env flag is set)");
+  }
+
   const url = new URL(`/api/${endpoint}`, STRAPI_URL);
 
   // Add locale if specified (mapped to Strapi Cloud codes)
@@ -415,12 +453,15 @@ export async function strapiFetch<T>(
     url.searchParams.set(key, value);
   }
 
+  // LCP-OPT: default to 1-hour ISR when no explicit `revalidate` is
+  // passed. If Strapi is ever re-enabled, this prevents every SSR from
+  // blocking on a fresh fetch and adding 500 ms – 2 s to TTFB.
   const res = await fetch(url.toString(), {
     headers: {
       Authorization: `Bearer ${STRAPI_TOKEN}`,
       "Content-Type": "application/json",
     },
-    next: options.revalidate !== undefined ? { revalidate: options.revalidate } : undefined,
+    next: { revalidate: options.revalidate ?? 3600 },
   });
 
   if (!res.ok) {
@@ -738,8 +779,12 @@ export async function getServiceSinglePage(
     );
     return res.data;
   } catch {
-    // Return fallback content when Strapi is unavailable
-    console.warn(`[Strapi] Fallback used for service page: ${slug}`);
+    // Return fallback content when Strapi is unavailable.
+    // T1/T2 (mai 2026): only log when STRAPI_ENABLED is true; the fallback
+    // is the new source of truth, so silent execution is expected.
+    if (STRAPI_ENABLED) {
+      console.warn(`[Strapi] Fallback used for service page: ${slug}`);
+    }
 
     // Use locale-specific fallbacks
     if (locale !== "fr") {
@@ -767,8 +812,11 @@ export async function getBlogArticles(locale: Locale): Promise<StrapiBlogArticle
     );
     return res.data;
   } catch {
-    // Return fallback blog articles when Strapi is unavailable
-    console.warn(`[Strapi] Fallback used for blog articles (locale: ${locale})`);
+    // Return fallback blog articles when Strapi is unavailable.
+    // T1/T2 (mai 2026): only log when STRAPI_ENABLED.
+    if (STRAPI_ENABLED) {
+      console.warn(`[Strapi] Fallback used for blog articles (locale: ${locale})`);
+    }
     return (fallbackBlogArticles as any[]) || [];
   }
 }
@@ -808,7 +856,11 @@ export async function getTeamMembers(locale: Locale): Promise<StrapiTeamMember[]
     );
     return res.data;
   } catch (err) {
-    console.error("[strapi] getTeamMembers failed, falling back to local data:", err);
+    // T1/T2 (mai 2026): only log when STRAPI_ENABLED — fallback is the
+    // expected path when the CMS is intentionally disabled.
+    if (STRAPI_ENABLED) {
+      console.error("[strapi] getTeamMembers failed, falling back to local data:", err);
+    }
     return [];
   }
 }

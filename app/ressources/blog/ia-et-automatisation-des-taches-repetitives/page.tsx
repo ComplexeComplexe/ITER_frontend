@@ -5,12 +5,16 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "IA Finance | Iter Advisors",
+  title: "IA et automatisation financière | Iter Advisors",
   description: "Découvrez comment l'IA et l'automatisation libèrent 30-40 % du temps de vos équipes finance. Guide pratique avec cas d'usage et outils par Iter Advisors.",
+  alternates: {
+    canonical: "https://www.iteradvisors.com/ressources/blog/ia-et-automatisation-des-taches-repetitives",
+  },
   openGraph: {
-    title: "IA et automatisation finance | Gagner du temps | Iter Advisors",
+    title: "IA et automatisation financière | Iter Advisors",
     description: "Découvrez comment l'IA et l'automatisation libèrent 30-40 % du temps de vos équipes finance. Guide pratique avec cas d'usage et outils.",
     type: "article",
+    images: [{ url: "/images/blog/ia-et-automatisation-des-taches-repetitives.webp", width: 1200, height: 630 }],
   },
 };
 
@@ -29,13 +33,13 @@ export default function IaAutomatisationFinancePage() {
       title="IA et automatisation : gagner 30-40 % de temps dans les tâches répétitives du département finance"
       dek="L'IA et l'automatisation transforment la finance en 2026. Découvrez quelles tâches automatiser en priorité, comment le faire, et quel impact en attendre."
       author={{
-        name: "Iter Advisors",
-        avatar: "/images/authors/iter.jpg",
-        jobTitle: "Cabinet de DAF externalisé",
+        name: "Benjamin Ziza",
+        avatar: "/images/team/benjamin-ziza.webp",
+        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={12}
       dateModified="2026-05-01"
-      heroImage="/images/blog/ia-automatisation-finance.webp"
+      heroImage="/images/blog/covers/ia-et-automatisation-des-taches-repetitives.svg"
       toc={[
         { id: "pourquoi-ia-maintenant", label: "1. Pourquoi l'IA en finance, maintenant ?" },
         { id: "taches-prioritaires", label: "2. Top 5 des tâches à automatiser" },
@@ -118,7 +122,7 @@ export default function IaAutomatisationFinancePage() {
               <td><strong>4. Détection anomalies</strong></td>
               <td>Continue</td>
               <td>5-10h (enquête)</td>
-              <td>Anaplan, Stripe, Claude API</td>
+              <td>Anaplan, Stripe, OpenAI API</td>
               <td>90 % des cas flaggés</td>
             </tr>
             <tr>
@@ -206,7 +210,7 @@ export default function IaAutomatisationFinancePage() {
         <strong>AI natif :</strong>
       </p>
       <ul>
-        <li><strong>Claude API / OpenAI</strong> : Intégrez des capacités d'analyse de documents, génération de rapports, recommandations.</li>
+        <li><strong>OpenAI / Gemini API</strong> : Intégrez des capacités d'analyse de documents, génération de rapports, recommandations.</li>
         <li><strong>Azure Machine Learning</strong> : Pour des prévisions statistiques plus avancées.</li>
       </ul>
       <p>

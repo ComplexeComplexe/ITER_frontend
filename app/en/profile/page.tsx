@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: "Free Financial Diagnostic | Iter Advisors – Outsourced CFO",
   description:
     "Assess your financial needs in 2 minutes. Discover how an outsourced CFO can structure your growth: forecasting, fundraising, reporting, cash-flow management.",
+  // INDEX-03: lead-gen funnel — no SEO value, dilutes crawl budget.
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Free Financial Diagnostic | Iter Advisors",
     description:

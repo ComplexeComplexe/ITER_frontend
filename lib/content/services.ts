@@ -97,6 +97,7 @@ const servicesFr: ServicesContent = {
     { title: "Prévisionnel de trésorerie", href: "/services/previsionnel-tresorerie", category: "finance" },
     { title: "M&A & Due Diligence", href: "/services/ma-due-diligence", category: "finance" },
     { title: "Gestion financière externalisée", href: "/services/gestion-financiere-externalisee", category: "finance" },
+    { title: "Fractional CFO startups", href: "/jobs/fractional-cfo-startups", category: "finance" },
     { title: "DRH externalisé", href: "/drh-externalise", category: "rh" },
     { title: "Recrutement & talent acquisition", href: "/services/recrutement-talent-acquisition", category: "rh" },
     { title: "Gestion de la paie & charges sociales", href: "/services/gestion-paie-charges-sociales", category: "rh" },
@@ -222,11 +223,11 @@ const servicesEn: ServicesContent = {
     { title: "Cash flow forecast", href: "/en/services/cash-flow-forecast", category: "finance" },
     { title: "M&A & Due Diligence", href: "/en/services/ma-due-diligence", category: "finance" },
     { title: "Outsourced financial management", href: "/en/fractional-cfo", category: "finance" },
-    { title: "Fractional HR Director", href: "/en/drh-externalise", category: "rh" },
-    { title: "Recruitment & talent acquisition", href: "/en/drh-externalise", category: "rh" },
-    { title: "Payroll & social charges", href: "/en/drh-externalise", category: "rh" },
-    { title: "Training & development", href: "/en/drh-externalise", category: "rh" },
-    { title: "Compliance & labor law", href: "/en/drh-externalise", category: "rh" },
+    { title: "Fractional HR Director", href: "/en/hr-outsourcing", category: "rh" },
+    { title: "Recruitment & talent acquisition", href: "/en/hr-outsourcing", category: "rh" },
+    { title: "Payroll & social charges", href: "/en/hr-outsourcing", category: "rh" },
+    { title: "Training & development", href: "/en/hr-outsourcing", category: "rh" },
+    { title: "Compliance & labor law", href: "/en/hr-outsourcing", category: "rh" },
   ],
 };
 
@@ -234,7 +235,7 @@ const servicesEs: ServicesContent = {
   meta: {
     title: "Servicios | Iter Advisors",
     description:
-      "Iter Advisors le acompa\u00f1a con soluciones adaptadas: captaci\u00f3n de fondos, control de gesti\u00f3n, contabilidad, gesti\u00f3n financiera y tesorer\u00eda.",
+      "Iter Advisors: captaci\u00f3n de fondos, control de gesti\u00f3n, contabilidad y tesorer\u00eda para pymes y startups en Espa\u00f1a, Francia, B\u00e9lgica.",
   },
   hero: {
     h1: "Servicios",
@@ -263,11 +264,11 @@ const servicesEs: ServicesContent = {
     { title: "Gestion financiera externalizada", href: "/es/services/gestion-financiera-externalizada", category: "finance" },
     { title: "Prevision de tesoreria", href: "/es/services/prevision-tesoreria", category: "finance" },
     { title: "M&A & Due Diligence", href: "/es/services/ma-due-diligence", category: "finance" },
-    { title: "Director de RRHH externalizado", href: "/es/drh-externalise", category: "rh" },
-    { title: "Reclutamiento & adquisicion de talento", href: "/es/drh-externalise", category: "rh" },
-    { title: "Nomina y cargas sociales", href: "/es/drh-externalise", category: "rh" },
-    { title: "Formacion y desarrollo", href: "/es/drh-externalise", category: "rh" },
-    { title: "Cumplimiento y derecho laboral", href: "/es/drh-externalise", category: "rh" },
+    { title: "Director de RRHH externalizado", href: "/es/externalizacion-rrhh", category: "rh" },
+    { title: "Reclutamiento & adquisicion de talento", href: "/es/externalizacion-rrhh", category: "rh" },
+    { title: "Nomina y cargas sociales", href: "/es/externalizacion-rrhh", category: "rh" },
+    { title: "Formacion y desarrollo", href: "/es/externalizacion-rrhh", category: "rh" },
+    { title: "Cumplimiento y derecho laboral", href: "/es/externalizacion-rrhh", category: "rh" },
   ],
 };
 

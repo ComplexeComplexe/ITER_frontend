@@ -4,10 +4,23 @@ import BlogPostPage from "@/components/pages/BlogPostPage";
 import { getBlogArticleBySlug, getBlogArticles, getCmsNavigation, strapiMediaUrl, getTeamMembers } from "@/lib/strapi";
 import { buildStrapiCollectionMetadata } from "@/lib/metadata";
 import { blogPosts } from "@/lib/content/blog-posts";
+import { BLOG_ILLUSTRATIONS } from "@/lib/blog-illustrations";
 import { getLocalePath } from "@/lib/i18n";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 
 const blogBasePath = "/ressources/blog";
+
+// Ahrefs T-404 (2026-06-08) — these 4 fiscalité blog articles are FR-only
+// (the EN/ES variants don't exist in lib/content/blog-posts.ts). Without
+// `disableHreflang`, buildStrapiCollectionMetadata emits hreflang URLs that
+// 404 (e.g. /en/ressources/blog/bareme-irpf-espagne-2026). We also rely on
+// middleware FR_ONLY_BLOG_SLUGS to 301 any direct EN/ES hits.
+const FR_ONLY_FISCALITE_BLOG_SLUGS = new Set([
+  "bareme-irpf-espagne-2026",
+  "modelo-720-declaration-biens-etranger",
+  "double-imposition-france-espagne-convention",
+  "loi-beckham-espagne-conditions-2026",
+]);
 
 const breadcrumbsByLocale = {
   fr: {
@@ -24,9 +37,9 @@ const breadcrumbsByLocale = {
   },
   es: {
     resourcesLabel: "Recursos",
-    resourcesHref: "/es/ressources",
+    resourcesHref: "/es/recursos",
     blogLabel: "Blog",
-    blogHref: "/es/ressources/blog",
+    blogHref: "/es/recursos/blog",
   },
 } as const;
 
@@ -61,6 +74,15 @@ export async function generateMetadata({
     path: getLocalePath("fr", `${blogBasePath}/${slug}`),
     fallbackTitle: fallback?.meta.title ?? `${slug} | Iter Advisors`,
     fallbackDescription: fallback?.meta.description ?? "",
+    // SEO-02: ES blog lives at /recursos/blog (different base from FR/EN)
+    localizedPaths: {
+      fr: `${blogBasePath}/${slug}`,
+      en: `${blogBasePath}/${slug}`,
+      es: `/recursos/blog/${slug}`,
+    },
+    // Ahrefs T-404: drop EN/ES hreflang on the 4 fiscalité FR-only articles
+    // so Google stops requesting (and reporting) /en/* and /es/* URLs that 404.
+    disableHreflang: FR_ONLY_FISCALITE_BLOG_SLUGS.has(slug) ? ["en", "es"] : undefined,
   });
 }
 
@@ -108,7 +130,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         author={fallback.author}
         category={fallback.category}
         metaDescription={fallback.meta.description}
+        slug={slug}
         teamMembers={teamSource}
+        bodyImage={BLOG_ILLUSTRATIONS[slug]}
       />
     );
   }

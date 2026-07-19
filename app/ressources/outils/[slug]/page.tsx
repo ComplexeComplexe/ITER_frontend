@@ -8,22 +8,22 @@ import ToolPage from "@/components/Outils/ToolPage";
 
 const categoryMeta = {
   "logiciels-comptabilite": {
-    title: "Logiciels de comptabilité pour PME : Pennylane vs Sage vs Cegid — Comparatif 2026",
+    title: "Logiciels comptabilité PME 2026 | Iter Advisors",
     description:
       "Comparatif des meilleurs logiciels comptabilité pour PME 10-100 salariés. Avis d'experts DAF sur Pennylane, Sage, Cegid. Prix, implémentation, avantages.",
   },
   "logiciels-tresorerie": {
-    title: "Logiciels de trésorerie pour PME : Agicap vs Fygr — Comparatif 2026",
+    title: "Agicap vs Fygr — Logiciels trésorerie PME | Iter Advisors",
     description:
       "Guide des logiciels trésorerie pour startups et PME. Avis d'expert sur Agicap, Fygr, Kyriba. Prévisions, DSO/DPO, cash flow automation.",
   },
   "gestion-depenses": {
-    title: "Gestion des dépenses et notes de frais : Spendesk vs Pleo vs Payhawk — Comparatif 2026",
+    title: "Gestion des dépenses : Spendesk vs Pleo 2026 | Iter Advisors",
     description:
       "Comparatif des outils de gestion des dépenses : Spendesk, Pleo, Payhawk. Cartes virtuelles, workflows, intégration compta, reporting.",
   },
   "logiciels-paie": {
-    title: "Logiciels de paie pour PME : PayFit vs Silae vs Lucca — Comparatif 2026",
+    title: "Logiciels de paie PME : PayFit vs Silae 2026 | Iter Advisors",
     description:
       "Meilleurs logiciels paie pour startups et PME. Avis expert sur PayFit, Silae, Lucca. DSN automatique, intégration compta, prix.",
   },
