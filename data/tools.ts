@@ -1,7 +1,10 @@
 export interface Tool {
   slug: string;
   name: string;
-  category: 'comptabilite' | 'tresorerie' | 'depenses' | 'paie';
+  // Refonte outils (2026-07-17) — 4 nouvelles catégories ajoutées :
+  // 'recouvrement' (Upflow, LeanPay), 'sirh' (Factorial en plus de Lucca),
+  // 'equity' (Carta, Equify), 'reporting' (Power BI).
+  category: 'comptabilite' | 'tresorerie' | 'depenses' | 'paie' | 'recouvrement' | 'sirh' | 'equity' | 'reporting';
   categorySlug: string;
   logo: string;
   /**
@@ -375,6 +378,212 @@ export const tools: Tool[] = [
     hasVerbatim: true,
     shortDescription:
       "Le Spendesk des entreprises internationales. 50+ devises, cartes multi-pays, intégrations ERP (SAP, Oracle, NetSuite), reporting consolidé.",
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // Refonte outils (2026-07-17) — 7 outils ajoutés pour combler les gaps
+  // du ticket TICKETS-outils-iteradvisors-refonte.md :
+  //   - Kyriba (tresorerie groupe ETI)
+  //   - Power BI (reporting / dataviz)
+  //   - Upflow, LeanPay (recouvrement client B2B)
+  //   - Factorial (SIRH France + Espagne)
+  //   - Carta, Equify (equity / cap table management)
+  // ═══════════════════════════════════════════════════════════════════════
+
+  {
+    slug: 'kyriba',
+    name: 'Kyriba',
+    category: 'tresorerie',
+    categorySlug: 'logiciels-tresorerie',
+    logo: '/images/logos/tools/kyriba.svg',
+    logoAlt: 'Logo Kyriba — plateforme de trésorerie groupe pour ETI multi-devises',
+    website: 'https://www.kyriba.com/fr/',
+    rating: 4.2,
+    implementationTime: '3-6 mois',
+    priceRange: 'Sur devis (5 000-15 000 €/mois)',
+    phase: 3,
+    forWho: [
+      'ETI et groupes 200+ salariés multi-entités',
+      'Trésorerie multi-devises avec hedging',
+      'Cash pooling multi-pays',
+    ],
+    notForWho: [
+      'PME < 20 M€ de CA (Agicap suffit)',
+      'Équipe finance < 2 FTE dédiés',
+      'Structures purement locales sans change',
+    ],
+    experts: ['benjamin'],
+    hasVerbatim: false,
+    shortDescription:
+      "La trésorerie de groupe pour les ETI. Cash pooling multi-devises, hedging intégré, connexion 2 000+ banques via SWIFT. Notre choix ETI 50 M€+.",
+  },
+
+  {
+    slug: 'power-bi',
+    name: 'Power BI',
+    category: 'reporting',
+    categorySlug: 'reporting-dataviz',
+    logo: '/images/logos/tools/power-bi.svg',
+    logoAlt: 'Logo Microsoft Power BI — outil de reporting financier et dashboards pour CFO',
+    website: 'https://powerbi.microsoft.com/fr-fr/',
+    rating: 4.4,
+    implementationTime: '2-3 jours',
+    priceRange: '10-20 €/utilisateur/mois',
+    phase: 1,
+    forWho: [
+      'PME et scale-ups 20+ salariés avec CFO ou DAF externalisé',
+      'Board reporting mensuel',
+      'Dashboards investisseurs et direction',
+    ],
+    notForWho: [
+      'Startups sans ressource dédiée au reporting',
+      "Structures cherchant du 100% gratuit (voir Metabase)",
+      'Équipes non-Microsoft (Google Workspace pur)',
+    ],
+    experts: ['benjamin'],
+    hasVerbatim: false,
+    shortDescription:
+      "Le reporting financier pour les board meetings. Connexion native Pennylane / Sage, 100+ sources de données, dashboards en 2-3 jours.",
+  },
+
+  {
+    slug: 'upflow',
+    name: 'Upflow',
+    category: 'recouvrement',
+    categorySlug: 'recouvrement-cash-collection',
+    logo: '/images/logos/tools/upflow.svg',
+    logoAlt: 'Logo Upflow — automatisation du recouvrement client B2B pour PME',
+    website: 'https://upflow.io/',
+    rating: 4.5,
+    implementationTime: '1-2 semaines',
+    priceRange: 'Sur devis (à partir de 200 €/mois)',
+    phase: 2,
+    forWho: [
+      'PME B2B 20-200 salariés avec DSO > 45 jours',
+      "Structures avec 20+ factures/mois nécessitant relances",
+      "Équipes cherchant à réduire le temps de recouvrement",
+    ],
+    notForWho: [
+      'B2C ou petits volumes (< 20 factures/mois)',
+      "Structures sans facturation électronique établie",
+      "TPE < 10 personnes",
+    ],
+    experts: ['benjamin'],
+    hasVerbatim: false,
+    shortDescription:
+      "L'automatisation du recouvrement client B2B. DSO réduit de 15-30 % en moyenne. Intégration Pennylane + Stripe native.",
+  },
+
+  {
+    slug: 'leanpay',
+    name: 'LeanPay',
+    category: 'recouvrement',
+    categorySlug: 'recouvrement-cash-collection',
+    logo: '/images/logos/tools/leanpay.svg',
+    logoAlt: 'Logo LeanPay — recouvrement digital français pour PME',
+    website: 'https://www.leanpay.fr/',
+    rating: 4.1,
+    implementationTime: '1 semaine',
+    priceRange: 'Sur devis (à partir de 150 €/mois)',
+    phase: 2,
+    forWho: [
+      'PME françaises 10-100 salariés',
+      "Structures cherchant un support en français",
+      "Petits volumes ne justifiant pas Upflow",
+    ],
+    notForWho: [
+      "Clients internationaux (préférer Upflow pour le cross-border)",
+      "Besoin d'intégration Stripe temps réel",
+      "TPE avec relances manuelles OK",
+    ],
+    experts: ['sebastien'],
+    hasVerbatim: false,
+    shortDescription:
+      "Le recouvrement digital français. Scénarios de relance paramétrables, support FR, 30-40 % moins cher qu'Upflow pour petits volumes.",
+  },
+
+  {
+    slug: 'factorial',
+    name: 'Factorial',
+    category: 'sirh',
+    categorySlug: 'sirh-rh',
+    logo: '/images/logos/tools/factorial.svg',
+    logoAlt: 'Logo Factorial — SIRH complet France + Espagne pour PME',
+    website: 'https://factorialhr.fr/',
+    rating: 4.3,
+    implementationTime: '1-2 semaines',
+    priceRange: '5-10 €/employé/mois',
+    phase: 2,
+    forWho: [
+      'PME 20-200 salariés France et/ou Espagne',
+      "Équipes transfrontalières FR-ES",
+      "Structures cherchant un SIRH centralisé (congés, notes de frais, onboarding)",
+    ],
+    notForWho: [
+      "Besoins de paie multi-convention complexes (BTP, HCR)",
+      "Structures > 200 salariés (préférer Lucca)",
+      "PME cherchant une gestion RH avancée (GPEC, plan formation)",
+    ],
+    experts: ['sebastien'],
+    hasVerbatim: false,
+    shortDescription:
+      "Le SIRH pour équipes France-Espagne. Couverture conforme FR + ES, module performance et onboarding intégrés. 5 €/employé/mois.",
+  },
+
+  {
+    slug: 'carta',
+    name: 'Carta',
+    category: 'equity',
+    categorySlug: 'equity-cap-table',
+    logo: '/images/logos/tools/carta.svg',
+    logoAlt: 'Logo Carta — gestion cap table et BSPCE pour startups levant des fonds',
+    website: 'https://carta.com/',
+    rating: 4.4,
+    implementationTime: '2-4 semaines',
+    priceRange: 'Sur devis (à partir de 2 000 €/an)',
+    phase: 3,
+    forWho: [
+      'Startups avec investisseurs US ou envisageant une cotation',
+      'Cap table complexe avec 5+ actionnaires',
+      "Plans d'actionnariat salarié avec valorisation 409A",
+    ],
+    notForWho: [
+      "Entreprises purement européennes (préférer Equify)",
+      "Startups sans levée de fonds réalisée",
+      "Cap tables simples < 5 actionnaires (Excel suffit)",
+    ],
+    experts: ['benjamin'],
+    hasVerbatim: false,
+    shortDescription:
+      "Le leader mondial de la gestion d'actionnariat. Cap table temps réel, BSPCE, data room investisseurs. Standard pour startups US-backed.",
+  },
+
+  {
+    slug: 'equify',
+    name: 'Equify',
+    category: 'equity',
+    categorySlug: 'equity-cap-table',
+    logo: '/images/logos/tools/equify.svg',
+    logoAlt: 'Logo Equify — alternative française à Carta pour cap table BSPCE',
+    website: 'https://www.equify.io/',
+    rating: 4.2,
+    implementationTime: '1-3 semaines',
+    priceRange: 'Sur devis (à partir de 1 500 €/an)',
+    phase: 2,
+    forWho: [
+      'Startups françaises ayant levé des fonds',
+      'Plans BSPCE et stock-options FR',
+      'PME avec 3+ actionnaires et pactes d\'actionnaires',
+    ],
+    notForWho: [
+      "Startups avec investisseurs américains (préférer Carta)",
+      "Structures sans plan d'actionnariat salarié",
+      "TPE / fondateurs unipersonnels",
+    ],
+    experts: ['sebastien'],
+    hasVerbatim: false,
+    shortDescription:
+      "L'alternative française à Carta. Conformité 100 % droit français (BSPCE, AG, pactes), support FR, 30 % moins cher que Carta.",
   },
 ];
 
