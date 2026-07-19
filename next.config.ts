@@ -363,6 +363,12 @@ const nextConfig: NextConfig = {
         destination: "/daf-externalise-barcelone",
         permanent: true,
       },
+      // BECK-01: English slug variant → canonical FR article
+      {
+        source: "/ressources/fiscalite/beckham-law",
+        destination: "/ressources/fiscalite/loi-beckham",
+        permanent: true,
+      },
     ];
   },
 };
