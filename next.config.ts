@@ -877,6 +877,14 @@ const nextConfig: NextConfig = {
       // (T8 EN cout-daf redirect now lives at the original line ~750 — the
       // pre-existing rule's destination was updated in place rather than
       // duplicating the source pattern here, which would have been dead code.)
+
+      // EC-05: Fix /ressources/outils/reporting-dataviz 404
+      { source: "/ressources/outils/reporting-dataviz", destination: "/ressources/outils", permanent: true },
+      // EC-03: City pages — redirect short slugs to full city pages
+      { source: "/toulouse", destination: "/daf-externalise-toulouse", permanent: true },
+      { source: "/barcelone", destination: "/daf-externalise-barcelone", permanent: true },
+      // BECK-01: English slug variant → canonical FR article
+      { source: "/ressources/fiscalite/beckham-law", destination: "/ressources/fiscalite/loi-beckham", permanent: true },
     ];
   },
 };
