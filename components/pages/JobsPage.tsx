@@ -140,13 +140,17 @@ export default function JobsPage({
               </p>
             </div>
             <div className="relative hidden lg:block">
+              {/* SEO-18 (2026-07-13) — LCP candidate sur /jobs. */}
               <Image
                 src="/images/bg/bg-3d.webp"
                 alt={locale === "fr" ? "Rejoignez l'equipe Iter Advisors" : "Join the Iter Advisors team"}
                 width={560}
                 height={400}
+                sizes="(min-width: 1024px) 560px, 90vw"
                 className="rounded-2xl object-contain"
-                loading="lazy"
+                priority
+                fetchPriority="high"
+                quality={85}
               />
             </div>
           </div>

@@ -106,13 +106,16 @@ export default function ControleDeGestionExternalisePage({
       {/* ─── Hero illustration ─── */}
       <section className="bg-background pt-0 pb-8 sm:pb-12">
         <div className="container max-w-3xl">
+          {/* SEO-18 (2026-07-13) — LCP candidate sur /services/controle-de-gestion-externalise. */}
           <Image
             src="/images/illustrations/management-control.svg"
             alt="Contrôle de gestion externalisé Iter Advisors — tableaux de bord financiers avec KPIs, jauges de rentabilité et suivi des marges"
             width={800}
             height={450}
+            sizes="(min-width: 768px) 800px, 100vw"
             className="rounded-2xl object-cover w-full"
-            loading="lazy"
+            priority
+            fetchPriority="high"
           />
         </div>
       </section>

@@ -54,6 +54,7 @@ export default function ServicesPage({
               </p>
             </div>
             <div className="relative hidden lg:block">
+              {/* SEO-18 (2026-07-13) — LCP candidate sur /services. */}
               <Image
                 src="/images/stock/services-hero.png"
                 alt={
@@ -65,8 +66,11 @@ export default function ServicesPage({
                 }
                 width={560}
                 height={400}
+                sizes="(min-width: 1024px) 560px, 90vw"
                 className="rounded-2xl object-cover"
-                loading="lazy"
+                priority
+                fetchPriority="high"
+                quality={85}
               />
             </div>
           </div>

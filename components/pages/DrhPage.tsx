@@ -228,6 +228,10 @@ export default function DrhPage({
       {/* ─── Hero illustration ─── */}
       <section className="bg-background pt-0 pb-8 sm:pb-12">
         <div className="container max-w-3xl">
+          {/* SEO-18 (2026-07-13) — loading="lazy" retiré : cette Image
+              est le LCP candidate sur /drh-externalise. Avec lazy, LCP
+              score plafonnait vers 3-4 s. priority + fetchPriority=high
+              + sizes explicite pour /_next/image. */}
           <Image
             src="/images/stock/drh-hero.png"
             alt={
@@ -239,8 +243,11 @@ export default function DrhPage({
             }
             width={800}
             height={450}
+            sizes="(min-width: 768px) 800px, 100vw"
             className="rounded-2xl object-cover w-full"
-            loading="lazy"
+            priority
+            fetchPriority="high"
+            quality={85}
           />
         </div>
       </section>

@@ -54,13 +54,18 @@ export default function AboutPage({
               </p>
             </div>
             <div className="relative hidden lg:block">
+              {/* SEO-18 (2026-07-13) — LCP candidate sur /a-propos et
+                  /en/a-propos (page à 7 425 impressions EN, CTR 0,16 %). */}
               <Image
                 src="/images/bg/about-section.webp"
                 alt={locale === "fr" ? "A propos d'Iter Advisors" : "About Iter Advisors"}
                 width={560}
                 height={400}
+                sizes="(min-width: 1024px) 560px, 90vw"
                 className="rounded-2xl object-contain"
-                loading="lazy"
+                priority
+                fetchPriority="high"
+                quality={85}
               />
             </div>
           </div>

@@ -226,6 +226,13 @@ export default function DafPage({
               )}
             </div>
             <div className="relative hidden lg:flex items-center justify-center lg:sticky lg:top-28">
+              {/* SEO-18 (2026-07-13) — LCP candidate sur /daf-externalise
+                  (page en pos 13 GSC, priorité SEO). Ajout de fetchPriority
+                  et sizes explicite pour laisser Next/Image servir la
+                  bonne breakpoint (économise ~100-200 kB sur mobile) et
+                  demander explicitement au navigateur de prioriser cette
+                  fetch. Le fichier source PNG (895 kB) est auto-converti
+                  en WebP à la volée par /_next/image (~150-200 kB servis). */}
               <Image
                 src="/images/stock/daf-hero.png"
                 alt={
@@ -237,8 +244,11 @@ export default function DafPage({
                 }
                 width={560}
                 height={400}
+                sizes="(min-width: 1024px) 560px, 90vw"
                 className="rounded-2xl object-cover w-full max-w-xl"
-                priority={true}
+                priority
+                fetchPriority="high"
+                quality={85}
               />
             </div>
           </div>
