@@ -11,7 +11,12 @@ export type GlossaryEntrySlug =
   | "arr-mrr"
   | "churn-rate"
   | "run-rate"
-  | "bspce-bsa";
+  | "bspce-bsa"
+  // EC-02 — 4 pages glossaire DAF ecosystem
+  | "daf"
+  | "drh-externalise"
+  | "controle-de-gestion"
+  | "fractional-cfo";
 
 export interface GlossaryEntryContent {
   meta: {
@@ -708,6 +713,184 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
       ],
       ctaButton: "Structurer mon plan BSPCE avec un DAF",
     },
+    // EC-02 — DAF ecosystem
+    daf: {
+      meta: {
+        title: "DAF externalisé : définition, missions et salaire | Iter Advisors",
+        description:
+          "DAF (Directeur Administratif et Financier) : définition du rôle, missions, différence avec le CFO et coût d'un DAF externalisé pour PME.",
+      },
+      h1: "DAF externalisé : définition, missions et fonctionnement",
+      sections: [
+        {
+          content: [
+            "Le **DAF** (Directeur Administratif et Financier) est le responsable de la gestion financière et administrative d'une entreprise. En France, il occupe un rôle stratégique au sein du comité de direction et pilote l'ensemble des fonctions financières : comptabilité, trésorerie, contrôle de gestion, relations bancaires et parfois les ressources humaines.",
+            "Un **[DAF externalisé](/daf-externalise)** exerce ces mêmes missions pour plusieurs entreprises en parallèle, à temps partagé — généralement 2 à 8 jours par mois. Ce modèle permet aux PME, startups et ETI d'accéder à une expertise financière senior sans le coût d'un temps plein.",
+          ],
+        },
+        {
+          heading: "Rôle et missions du DAF",
+          content: [
+            "**Pilotage financier :** Construction du budget annuel, prévisions de trésorerie, reporting mensuel et tableaux de bord pour le dirigeant et les investisseurs.",
+            "**Comptabilité et conformité :** Supervision de la comptabilité, liasse fiscale, relations expert-comptable et commissaire aux comptes.",
+            "**Trésorerie :** Gestion du BFR, relations bancaires, négociation des lignes de crédit, optimisation du placement des excédents.",
+            "**Stratégie financière :** Accompagnement des levées de fonds, due diligence, structuration des opérations de M&A.",
+            "**RH et administration :** Dans certaines PME, le DAF supervise la paie, les contrats de travail et les obligations sociales.",
+          ],
+        },
+        {
+          heading: "DAF externalisé : un modèle adapté aux PME",
+          content: [
+            "Le modèle du **DAF externalisé** (aussi appelé DAF à temps partagé) est particulièrement adapté aux entreprises de 10 à 200 salariés qui ont besoin d'expertise financière senior sans pouvoir justifier d'un temps plein.",
+            "Concrètement, un DAF externalisé intervient 2 à 8 jours par mois selon les besoins. Il prend en charge le pilotage financier global, libère le dirigeant des sujets financiers chronophages, et structure l'information financière pour les décisions stratégiques.",
+            "Chez **[Iter Advisors](/daf-externalise)**, nos DAF externalisés accompagnent des PME, startups et entreprises franco-espagnoles depuis 2019. Découvrez nos [tarifs DAF externalisé](/daf-externalise/tarifs) et nos [cas clients](/ressources/cas-clients).",
+          ],
+        },
+        {
+          heading: "Salaire et coût d'un DAF",
+          content: [
+            "**DAF salarié interne :** Entre 70 000 € et 150 000 € brut chargé selon l'expérience et la taille de l'entreprise.",
+            "**DAF externalisé :** Les formules Iter Advisors démarrent à **2 000 €/mois** pour 2 jours/mois. Une mission complète (budget + reporting + conseil) se situe entre 3 500 et 8 000 €/mois.",
+            "Le ROI du DAF externalisé est généralement positif dès le premier mois : optimisation de la trésorerie, renégociation des conditions bancaires, pilotage des charges.",
+          ],
+        },
+      ],
+      ctaButton: "Rencontrer un DAF externalisé",
+    },
+    "drh-externalise": {
+      meta: {
+        title: "DRH externalisé : définition, missions et tarifs | Iter Advisors",
+        description:
+          "DRH externalisé ou DRH à temps partagé : définition, périmètre d'intervention, différence avec un DRH salarié et tarifs 2026.",
+      },
+      h1: "DRH externalisé : définition, missions et fonctionnement",
+      sections: [
+        {
+          content: [
+            "Un **DRH externalisé** (Directeur des Ressources Humaines externalisé) est un professionnel RH senior qui intervient pour plusieurs entreprises en parallèle, à temps partagé. Aussi appelé DRH à temps partagé, ce modèle permet aux PME d'accéder à une direction RH experte sans recruter à temps plein.",
+          ],
+        },
+        {
+          heading: "Missions du DRH externalisé",
+          content: [
+            "**Recrutement et intégration :** Définition des fiches de poste, pilotage des processus de recrutement, onboarding et période d'essai.",
+            "**Relations sociales :** Rédaction et négociation d'accords d'entreprise, animation du CSE, gestion des conflits individuels et collectifs.",
+            "**Conformité sociale :** Veille juridique, conformité RGPD RH, politique de santé au travail, gestion des risques sociaux.",
+            "**Développement RH :** Plans de formation, GPEC/GEPP, politique de rémunération, entretiens annuels.",
+            "**Paie et administration :** Coordination avec l'expert-comptable ou le prestataire paie. Le DRH externalisé supervise sans traiter directement.",
+          ],
+        },
+        {
+          heading: "DRH externalisé vs DRH à temps partagé",
+          content: [
+            "Les deux termes désignent la même réalité. **DRH externalisé** insiste sur le fait que la fonction RH est confiée à l'extérieur. **DRH à temps partagé** insiste sur le mode d'organisation : un professionnel partage son temps entre plusieurs entreprises clientes.",
+            "Chez Iter Advisors, nos **[DRH externalisés](/drh-externalise)** interviennent en France et en Espagne, avec une expertise particulière sur les sujets RH transfrontaliers.",
+          ],
+        },
+        {
+          heading: "Quand faire appel à un DRH externalisé ?",
+          content: [
+            "**10 à 50 salariés :** Besoin ponctuel — recrutements, accord d'entreprise, premier CSE. 1 à 2 jours/mois.",
+            "**50 à 150 salariés :** Besoin récurrent — pilotage RH mensuel, conformité, plans de formation. 4 à 8 jours/mois.",
+            "**Croissance rapide ou situation de crise :** Restructuration, pic de recrutement, fusion-acquisition. Mission à durée déterminée.",
+          ],
+        },
+      ],
+      ctaButton: "Parler à un DRH externalisé",
+    },
+    "controle-de-gestion": {
+      meta: {
+        title: "Contrôle de gestion : définition, outils et missions | Iter Advisors",
+        description:
+          "Contrôle de gestion : définition, différence avec la comptabilité, outils (Power BI, Excel, Agicap), et coût d'un contrôleur de gestion externalisé.",
+      },
+      h1: "Contrôle de gestion : définition, missions et outils",
+      sections: [
+        {
+          content: [
+            "Le **contrôle de gestion** est la fonction qui analyse les données financières et opérationnelles d'une entreprise pour aider les dirigeants à prendre de meilleures décisions. Contrairement à la comptabilité qui enregistre le passé, le contrôle de gestion **pilote l'avenir** : budgets, prévisions, tableaux de bord et analyse des écarts.",
+          ],
+        },
+        {
+          heading: "Différence entre comptabilité et contrôle de gestion",
+          content: [
+            "**Comptabilité :** Enregistrement et justification des flux financiers passés. Obligation légale. Production des bilans, comptes de résultat et liasses fiscales.",
+            "**Contrôle de gestion :** Analyse de la performance pour piloter l'avenir. Production de budgets, forecasts, KPIs et reporting de pilotage.",
+            "En pratique, dans les PME, le **[DAF externalisé](/daf-externalise)** pilote à la fois la comptabilité et le contrôle de gestion.",
+          ],
+        },
+        {
+          heading: "Missions du contrôleur de gestion",
+          content: [
+            "**Budget annuel :** Construction du budget par centre de coût, ventilation par BU, validation avec les managers.",
+            "**Reporting mensuel :** Analyse des écarts réel vs budget, identification des dérives et recommandations correctives.",
+            "**Forecast :** Mise à jour trimestrielle ou mensuelle des prévisions sur 3 à 12 mois glissants.",
+            "**Tableaux de bord (KPIs) :** Conception et maintien des dashboards opérationnels et financiers.",
+            "**Analyse des marges :** Calcul des marges par produit, client ou canal pour identifier les activités rentables.",
+          ],
+        },
+        {
+          heading: "Outils du contrôle de gestion",
+          content: [
+            "**[Power BI](/ressources/outils/power-bi) :** Outil de référence pour les dashboards dynamiques et la visualisation de données.",
+            "**Excel / Google Sheets :** Modélisation financière, budget, scénarios.",
+            "**[Pennylane](/ressources/outils/pennylane) :** Comptabilité connectée aux outils de pilotage.",
+            "**[Agicap](/ressources/outils/agicap) :** Suivi de trésorerie en temps réel avec prévisions automatisées.",
+          ],
+        },
+        {
+          heading: "Contrôleur de gestion externalisé",
+          content: [
+            "Pour les PME qui ne peuvent pas justifier d'un temps plein, un **contrôleur de gestion externalisé** est la solution idéale. Chez Iter Advisors, nos formules démarrent à 1 500 €/mois pour un tableau de bord mensuel. La formule complète avec budget et forecast est à 3 500 €/mois.",
+            "Au-delà de 500K€ de CA ou 15 collaborateurs, le contrôle de gestion devient indispensable pour piloter efficacement la croissance.",
+          ],
+        },
+      ],
+      ctaButton: "Mettre en place mon contrôle de gestion",
+    },
+    "fractional-cfo": {
+      meta: {
+        title: "Fractional CFO : définition, missions et tarifs France | Iter Advisors",
+        description:
+          "Fractional CFO (CFO fractionnel) : définition, différence avec le DAF externalisé, cas d'usage startups et tarifs 2026 en France.",
+      },
+      h1: "Fractional CFO : définition et missions",
+      sections: [
+        {
+          content: [
+            "Un **Fractional CFO** (CFO fractionnel) est un directeur financier senior qui intervient à temps partiel pour plusieurs entreprises en simultané. L'expression, venue du monde anglo-saxon, désigne le même profil qu'un **[DAF externalisé](/daf-externalise)** en France — avec une culture plus orientée startups tech, VCs et relations investisseurs.",
+          ],
+        },
+        {
+          heading: "Fractional CFO vs DAF externalisé",
+          content: [
+            "Les deux termes désignent le même modèle d'intervention (temps partiel, multi-clients) mais avec des cultures différentes :",
+            "**Fractional CFO :** Terminologie anglo-saxonne, dominante dans les startups tech et scale-ups. Profil très orienté levée de fonds, data room, relations VC.",
+            "**DAF externalisé :** Terminologie française, dominante dans les PME et ETI. Périmètre souvent plus large incluant comptabilité, paie, administration.",
+            "Chez Iter Advisors, nos associés interviennent indifféremment sous les deux casquettes selon la culture de l'entreprise cliente.",
+          ],
+        },
+        {
+          heading: "Missions d'un Fractional CFO",
+          content: [
+            "**Levée de fonds :** Préparation de la data room, modèle financier, pitch financier et accompagnement des négociations. Nos Fractional CFO ont accompagné plus de 50 levées du Seed à la Series B.",
+            "**Reporting investisseurs :** Reporting mensuel aux VCs et business angels, tableaux de bord KPIs, board packages.",
+            "**Trésorerie et runway :** Suivi du cash burn, calcul du runway, alertes précoces et plan d'action.",
+            "**Structuration financière :** Mise en place du contrôle de gestion, choix des outils, définition des KPIs.",
+            "**Exit préparation :** Due diligence vendor-side, audit préalable, structuration fiscale de la sortie.",
+          ],
+        },
+        {
+          heading: "Tarifs d'un Fractional CFO en France",
+          content: [
+            "**2-4 jours/mois :** 2 000 à 4 000 €/mois. Pilotage de base, reporting mensuel.",
+            "**4-8 jours/mois :** 4 000 à 8 000 €/mois. Mission complète avec levée de fonds ou restructuration.",
+            "Chez Iter Advisors, nous intervenons sous 5 jours ouvrés et mettons en route la mission sous 2 semaines.",
+          ],
+        },
+      ],
+      ctaButton: "Parler à un Fractional CFO",
+    },
   },
   en: {
     bfr: {
@@ -1033,6 +1216,11 @@ const slugMapping: Record<Locale, Record<string, GlossaryEntrySlug>> = {
     "churn-rate": "churn-rate",
     "run-rate": "run-rate",
     "bspce-bsa": "bspce-bsa",
+    // EC-02 — DAF ecosystem
+    daf: "daf",
+    "drh-externalise": "drh-externalise",
+    "controle-de-gestion": "controle-de-gestion",
+    "fractional-cfo": "fractional-cfo",
   },
   en: {
     bfr: "bfr",
@@ -1046,6 +1234,10 @@ const slugMapping: Record<Locale, Record<string, GlossaryEntrySlug>> = {
     "churn-rate": "churn-rate",
     "run-rate": "run-rate",
     "bspce-bsa": "bspce-bsa",
+    daf: "daf",
+    "drh-externalise": "drh-externalise",
+    "controle-de-gestion": "controle-de-gestion",
+    "fractional-cfo": "fractional-cfo",
   },
   es: {
     bfr: "bfr",
@@ -1059,6 +1251,10 @@ const slugMapping: Record<Locale, Record<string, GlossaryEntrySlug>> = {
     "churn-rate": "churn-rate",
     "run-rate": "run-rate",
     "bspce-bsa": "bspce-bsa",
+    daf: "daf",
+    "drh-externalise": "drh-externalise",
+    "controle-de-gestion": "controle-de-gestion",
+    "fractional-cfo": "fractional-cfo",
   },
 };
 
