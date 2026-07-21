@@ -885,6 +885,9 @@ const nextConfig: NextConfig = {
       { source: "/barcelone", destination: "/daf-externalise-barcelone", permanent: true },
       // BECK-01: English slug variant → canonical FR article
       { source: "/ressources/fiscalite/beckham-law", destination: "/ressources/fiscalite/loi-beckham", permanent: true },
+      // AUDIT-07-21: 404s avec inlinks actifs
+      { source: "/services/ley-beckham", destination: "/ressources/fiscalite/loi-beckham", permanent: true },
+      { source: "/ressources/fiscalite/convention-fiscale-france-espagne", destination: "/ressources/fiscalite-espagne-france", permanent: true },
     ];
   },
 };

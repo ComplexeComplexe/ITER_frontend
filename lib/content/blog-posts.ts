@@ -3036,7 +3036,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 
     "modelo-720-declaration-biens-etranger": {
       meta: {
-        title: "Modelo 720 Espagne 2026 : déclaration biens étranger | Iter Advisors",
+        title: "Modelo 720 : guide pratique de déclaration pour expatriés | Iter Advisors",
         description:
           "Résident espagnol ? Vous devez déclarer vos comptes, assurances-vie et biens immobiliers en France via le Modelo 720 si leur valeur dépasse 50 000 €.",
       },
@@ -3098,7 +3098,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 
     "double-imposition-france-espagne-convention": {
       meta: {
-        title: "Double imposition France-Espagne : convention 2026 | Iter Advisors",
+        title: "Éviter la double imposition France-Espagne : le guide pratique | Iter Advisors",
         description:
           "Comment fonctionne la convention fiscale franco-espagnole de 1995 ? Méthodes du crédit d'impôt et de l'exemption pour éviter la double imposition en 2026.",
       },
