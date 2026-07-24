@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     canonical: "https://www.iteradvisors.com/ressources/fiscalite/loi-beckham",
     languages: {
       "fr-FR": "https://www.iteradvisors.com/ressources/fiscalite/loi-beckham",
+
       "x-default": "https://www.iteradvisors.com/ressources/fiscalite/loi-beckham",
     },
   },

@@ -96,7 +96,7 @@
 }
 
 .animate-marquee {
-  animation: marquee 40s linear infinite;
+  animation: marquee 20s linear infinite;
 }
 
 /* ─── Blog article body — typography foundation (mai 2026 redesign) ───
