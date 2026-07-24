@@ -45,6 +45,14 @@ export const BLOG_COVERS: Record<string, BlogCover> = {
   "levee-de-fonds-guide": { cover: "/images/blog/covers/levee-de-fonds-guide.svg", alt: "Couverture editoriale Iter Advisors — Lever des fonds, le guide complet pour fondateurs" },
   "organiser-sa-direction-financiere": { cover: "/images/blog/covers/organiser-sa-direction-financiere.svg", alt: "Couverture editoriale Iter Advisors — Organiser sa direction financiere, le manuel de structuration" },
   "regimes-fiscaux-france-vs-espagne": { cover: "/images/blog/covers/regimes-fiscaux-france-vs-espagne.svg", alt: "Couverture editoriale Iter Advisors — Regimes fiscaux France vs Espagne, le comparatif pour dirigeants" },
+  "daf-externalise-vs-daf-interimaire": { cover: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80", alt: "DAF externalisé ou DAF intérimaire : comparatif 2026" },
+  "daf-externalise-startup": { cover: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80", alt: "DAF externalisé pour startups en croissance" },
+  "loi-beckham-espagne-conditions-eligibilite": { cover: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1200&q=80", alt: "Conditions d'éligibilité à la loi Beckham en Espagne" },
+  "loi-beckham-economie-impot-simulation": { cover: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=1200&q=80", alt: "Simulation de l'économie d'impôt avec la loi Beckham" },
+  "daf-part-time-tarifs-missions-2026": { cover: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=1200&q=80", alt: "Tarifs d'un DAF à temps partagé en 2026" },
+  "cfo-externe-role-missions-2026": { cover: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80", alt: "CFO externe en mission dans une PME" },
+  "fractional-cfo-cost-services-2026": { cover: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80", alt: "Fractional CFO working with a startup board" },
+  "cfo-externo-pymes-precio-2026": { cover: "https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1200&q=80", alt: "CFO externo para pymes en Barcelona" },
 };
 
 export function getBlogCover(slug: string): BlogCover | undefined {
