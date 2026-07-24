@@ -5,8 +5,8 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "Checklist due diligence levée de fonds | Iter Advisors",
-  description: "Checklist complète pour préparer la due diligence financi de votre levée de fonds. Documentations, analyses, et préparation des investisseurs.",
+  title: "Due diligence financière : la checklist des 47 points vérifiés par les VCs | Iter Advisors",
+  description: "Checklist complète de due diligence financière pour préparer votre levée de fonds. Les 47 points que les VCs et investisseurs vérifient systématiquement. Guide Iter Advisors 2026.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/checklist-due-diligence-levee-de-fonds",
   },
@@ -61,6 +61,18 @@ export default function ChecklistDueDiligencePage() {
         {
           question: "Quel est le rôle d'un DAF externalisé pendant la due diligence ?",
           answer: "Le DAF externalisé joue trois rôles pendant la due diligence : (1) il audite les chiffres historiques et détecte les anomalies avant que les investisseurs les trouvent ; (2) il construit le prévisionnel avec des hypothèses défendables et un modèle sensibilisé ; (3) il répond aux questions financières des VCs et de leurs experts-comptables. Chez Iter Advisors, nos DAFs ont piloté la due diligence de plus de 50 levées en Seed et Series A.",
+        },
+        {
+          question: "Combien de temps dure une due diligence financière ?",
+          answer: "Une due diligence financière standard dure 4 à 8 semaines selon la taille de l'entreprise et la complexité de sa structure financière. Pour une Series A (PME ou startup < 50 salariés), comptez 3 à 4 semaines. Pour une acquisition de PME ou une Series B+ (structure multi-entités, historique plus long), prévoyez 6 à 10 semaines. La clé : avoir une data room complète et organisée réduit le délai de 30 à 50 %.",
+        },
+        {
+          question: "Quels documents préparer pour une due diligence financière ?",
+          answer: "Les documents indispensables sont : (1) 3 derniers bilans et comptes de résultat certifiés par un commissaire aux comptes ; (2) tableaux de flux de trésorerie historiques et prévisionnels (12 mois) ; (3) grand-livre comptable détaillé ; (4) liste des engagements hors-bilan (garanties, litiges, loyers futurs) ; (5) contrats clients majeurs avec clause de renouvellement ; (6) table de capitalisation à jour ; (7) procès-verbaux des assemblées des 3 dernières années. Un DAF externalisé expérimenté peut préparer ce dossier en 2 à 3 semaines.",
+        },
+        {
+          question: "Que regardent en priorité les VCs lors d'une due diligence ?",
+          answer: "Les investisseurs vérifient en priorité : (1) la qualité du MRR/ARR et son taux de croissance (fiabilité du chiffre d'affaires récurrent) ; (2) le churn rate et la rétention nette ; (3) le burn rate et le runway restant ; (4) les marges brutes et leur évolution ; (5) la cohérence entre le compte de résultat et les flux de trésorerie (détection des manipulations comptables) ; (6) la cap table et la structure de gouvernance. Tout écart entre le pitch deck et les chiffres réels est rédhibitoire.",
         },
       ]}
       tldr="La due diligence financière est l'audit le plus critique d'une levée. Préparation : documents financiers (3 ans), cap table, contrats, prévisions, comptes de résultat. Dataroom bien organisée = gain 2-3 semaines. Erreurs à éviter : docs manquants, prévisions pas réalistes, antériorité comptable &lt; 2 ans."

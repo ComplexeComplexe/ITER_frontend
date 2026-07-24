@@ -63,6 +63,11 @@ const FAQ: { question: string; answer: string }[] = [
     answer:
       "Côté français, pour déclarer des revenus de source étrangère tout en évitant la double imposition, il faut utiliser le formulaire spécifique 2047 en complément de la déclaration classique 2042.",
   },
+  {
+    question: "Les expatriés qui s'installent en Espagne peuvent-ils bénéficier de la loi Beckham ?",
+    answer:
+      "Oui. La loi Beckham (régime impatrié espagnol) permet aux personnes qui s'installent en Espagne après 5 ans de résidence à l'étranger d'être imposées à un taux forfaitaire de 24 % sur leurs revenus de source espagnole (jusqu'à 600 000 €), pendant 6 ans — au lieu du barème progressif de l'IRPF (jusqu'à 47 %). Ce régime spécial est totalement distinct de la convention de double imposition franco-espagnole, mais les deux s'articulent : les revenus de source française restent imposables en France, les revenus de source espagnole à 24 % sous Beckham.",
+  },
 ];
 
 export default async function Page() {
@@ -202,6 +207,12 @@ export default async function Page() {
                   className="text-iter-violet hover:underline"
                 >
                   Article blog : {post.h1}
+                </Link>
+              </li>
+              <li className="flex gap-2.5 text-sm sm:text-base">
+                <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
+                <Link href="/ressources/fiscalite/loi-beckham" className="text-iter-violet hover:underline">
+                  Loi Beckham : conditions d&apos;éligibilité et économies d&apos;impôt
                 </Link>
               </li>
             </ul>

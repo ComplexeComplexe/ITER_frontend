@@ -1473,8 +1473,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "externalisation-comptable": {
       meta: {
-        title: "Externalisation Comptable : Guide Complet et Tarifs 2026",
-        description: "Faut-il externaliser sa comptabilité ? Avantages, pièges à éviter et vrais coûts de la comptabilité externalisée pour PME et startups. Guide pratique.",
+        title: "Externalisation comptable en 2026 : guide pratique, tarifs et pièges à éviter | Iter Advisors",
+        description: "Faut-il externaliser sa comptabilité ? Avantages, pièges, tarifs (400–3 500 €/mois) et sélection du bon prestataire. Guide complet 2026 par les experts Iter Advisors.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -1486,7 +1486,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       publishedDate: "2026-05-10",
       author: "Benjamin Ziza",
       category: "guides-pratiques",
-      htmlContent: `<p><strong>Vous teniez les comptes de votre entreprise vous-même. Ou peut-être faites-vous confiance à un ami comptable freelance qui travaille au black. Aujourd'hui, le doute s'installe : "Faut-il vraiment externaliser ma comptabilité ? Qu'est-ce que je vais y gagner ? Et surtout, à quel prix ?"</strong></p>
+      htmlContent: `<p><strong>Vous teniez les comptes de votre entreprise vous-même. Ou peut-être faites-vous confiance à un prestataire informel sans contrat ni garantie. Aujourd'hui, le doute s'installe : "Faut-il vraiment externaliser ma comptabilité ? Qu'est-ce que je vais y gagner ? Et surtout, à quel prix ?"</strong></p>
 <p>L'externalisation comptable est l'une des décisions que tout dirigeant de PME ou startup doit se poser, généralement autour de 5 à 10 salariés. Jusqu'à ce stade, faire soi-même ou confier à un prestataire informel suffit. Passé ce seuil, les obligations deviennent complexes, le risque augmente, et le temps investi devient trop coûteux.</p>
 <p>Ce guide détaille tout ce qu'il faut savoir sur l'<strong>externalisation comptable</strong> : pourquoi le faire, comment l'éviter mal, combien cela coûte vraiment, et surtout, comment structurer ce partenariat pour en tirer le maximum.</p>
 <hr>
@@ -1514,7 +1514,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <li><strong>Analyser la performance</strong> : quels sont mes vrais marges ? Où vont mes dépenses ? Quels clients sont profitables ?</li>
 </ul>
 <h3 id="4-la-transparence-vis-a-vis-des-parties-prenantes">4. La transparence vis-à-vis des parties prenantes</h3>
-<p>Si vous levez des fonds ou si vous avez des investisseurs, des banquiers ou même des clients exigeants, la qualité de votre comptabilité devient un atout compétitif. Des comptes regulierement mis à jour, audités par un tiers indépendant, c'est un signal de sérieux et de professionnalisme.</p>
+<p>Si vous levez des fonds ou si vous avez des investisseurs, des banquiers ou même des clients exigeants, la qualité de votre comptabilité devient un atout compétitif. Des comptes régulièrement mis à jour, audités par un tiers indépendant, c'est un signal de sérieux et de professionnalisme.</p>
 <hr>
 <h2 id="les-pieges-a-eviter-pourquoi-lexternalisation-comptable-echoue">Les pièges à éviter : pourquoi l'externalisation comptable échoue</h2>
 <p>L'externalisation comptable semble simple en théorie. En pratique, beaucoup d'entreprises la mènent mal. Voici les pièges les plus courants.</p>
@@ -1529,7 +1529,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <li>Une vraie relation : un interlocuteur fixe, pas un turnover constant d'auditeurs</li>
 <li>Une réactivité : vos questions trouvent une réponse sous 24-48h, pas dans deux semaines</li>
 </ul>
-<p><strong>Solution :</strong> Cherchez des recommandations auprès d'autres dirigeants. Évaluez 3-4 cabinets. Demandez des références. Posez des questions précises sur leur approche. Vérifiez qu'ils comprenez votre secteur.</p>
+<p><strong>Solution :</strong> Cherchez des recommandations auprès d'autres dirigeants. Évaluez 3-4 cabinets. Demandez des références. Posez des questions précises sur leur approche. Vérifiez qu'ils comprennent votre secteur.</p>
 <h3 id="piege-3-ne-pas-mettre-en-place-un-vrai-processus">Piège 3 : Ne pas mettre en place un vrai processus</h3>
 <p>Même avec un bon prestataire, sans processus clair, la relation devient chaotique. Les délais s'allongent, les factures s'accumulent, les documents s'égarent.</p>
 <p><strong>Solution :</strong> Documentez le process d'échanges avec votre prestataire. Définissez des dates limites : les factures d'achat doivent arriver avant le 10 du mois suivant. Les virements bancaires doivent être justifiés. Un point mensuel doit se tenir pour valider les chiffres avant la clôture. Cela semble basique, mais c'est ce qui fait la différence.</p>
@@ -1549,7 +1549,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 </ul>
 <h3 id="etape-2-evaluez-vos-besoins-reels">Étape 2 : Évaluez vos besoins réels</h3>
 <p>L'externalisation comptable n'est pas one-size-fits-all. Selon votre taille, votre complexité et votre secteur, vous n'aurez pas besoin du même niveau de service.</p>
-<p>Askez-vous :</p>
+<p>Demandez-vous :</p>
 <ul>
 <li>Combien de factures clients par mois ? (< 50, 50-200, > 200)</li>
 <li>Combien de factures fournisseurs par mois ? (< 50, 50-200, > 200)</li>
@@ -1572,7 +1572,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <li><strong>Périmètre</strong> : tenue comptable, déclarations fiscales, TVA, paie (si applicable), reporting ?</li>
 <li><strong>Délais</strong> : à quelle date les documents doivent arriver ? Quand les comptes seront-ils clôturés ?</li>
 <li><strong>Tarification</strong> : forfait mensuel, facturation à l'acte, ou modèle hybride ?</li>
-<li><strong>Points de synchronisation</strong> : une reunion mensuelle pour valider les chiffres et discuter des enjeux</li>
+<li><strong>Points de synchronisation</strong> : une réunion mensuelle pour valider les chiffres et discuter des enjeux</li>
 <li><strong>Reporting</strong> : quel reporting vous aurez (P&L, bilan, tableau de flux de trésorerie) et quelle fréquence</li>
 </ul>
 <h3 id="etape-5-pilotez-votre-comptabilite">Étape 5 : Pilotez votre comptabilité</h3>
@@ -1666,17 +1666,47 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p>Idéalement, ces deux services travaillent ensemble : le DAF donne la stratégie, le cabinet comptable assure la qualité des comptes.</p>
 <hr>
 <h2 id="conclusion-lexternalisation-comptable-nest-pas-un-luxe-cest-une-necessite">Conclusion : L'externalisation comptable n'est pas un luxe, c'est une nécessité</h2>
-<p>Résumons les points clés :</p>
-<ul>
-<li>🎯 <strong>Externaliser la comptabilité libère du temps</strong> : en moyenne, 4-8 heures par semaine que vous pouvez réinvestir dans la croissance</li>
-<li>🛡️ <strong>Cela vous protège contre les risques de conformité</strong> : redressements, pénalités, contentieux</li>
-<li>💡 <strong>Cela vous donne accès à une expertise</strong> : optimisation fiscale, pilotage, préparation levée de fonds</li>
-<li>💰 <strong>Cela coûte moins cher que vous ne le pensez</strong> : 800 à 2 000 EUR/mois en moyenne pour une PME, c'est rien comparé au coût d'une erreur comptable</li>
-<li>🚀 <strong>Cela professionnalise votre entreprise</strong> : un atout quand vous levez des fonds ou travaillez avec de gros clients</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Bénéfice</th>
+<th>Impact concret</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gain de temps</strong></td>
+<td>4 à 8 h/semaine récupérées, réinvesties dans la croissance</td>
+</tr>
+<tr>
+<td><strong>Protection légale</strong></td>
+<td>Zéro redressement fiscal, pénalités ou contentieux</td>
+</tr>
+<tr>
+<td><strong>Expertise</strong></td>
+<td>Optimisation fiscale, pilotage, préparation levée de fonds</td>
+</tr>
+<tr>
+<td><strong>Coût maîtrisé</strong></td>
+<td>800 à 2 000 €/mois — moins cher qu'une erreur comptable</td>
+</tr>
+<tr>
+<td><strong>Crédibilité</strong></td>
+<td>Dossier propre pour investisseurs, banques et grands comptes</td>
+</tr>
+</tbody>
+</table>
 <p>Si vous dirigez une PME ou une startup de 5 à 50 salariés, l'externalisation comptable ne devrait plus être une question. Elle devrait être une pratique standard, tout comme vous avez probablement externalisé votre infrastructure IT (cloud au lieu de serveurs on-prem).</p>
 <p>La vraie question n'est pas "faut-il externaliser ?", mais "comment choisir le bon partenaire ?". Cet article vous donne tous les critères de sélection. Maintenant, c'est à vous d'agir.</p>
-<p><strong>Vous cherchez à structurer votre comptabilité et votre direction financière ?</strong> <a href="/daf-externalise">Chez Iter Advisors</a>, nous accompagnons les startups et PME à mettre en place une comptabilité de qualité couplée à un <a href="/daf-externalise">pilotage financier stratégique</a>. Nous pouvons vous recommander les meilleurs cabinets comptables ou prendre directement en charge votre pilotage financier. <a href="/contact">Contactez-nous pour un diagnostic gratuit</a>.</p>`,
+<p><strong>Vous cherchez à structurer votre comptabilité et votre direction financière ?</strong> <a href="/daf-externalise">Chez Iter Advisors</a>, nous accompagnons les startups et PME à mettre en place une comptabilité de qualité couplée à un <a href="/daf-externalise">pilotage financier stratégique</a>. Nous pouvons vous recommander les meilleurs cabinets comptables ou prendre directement en charge votre pilotage financier. <a href="/contact">Contactez-nous pour un diagnostic gratuit</a>.</p>
+<hr>
+<h2 id="faq-externalisation-comptable">FAQ — Externalisation comptable</h2>
+<h3>Quel est le prix moyen d'une externalisation comptable en 2026 ?</h3>
+<p>Pour une PME de 10 à 50 salariés, le coût moyen est de 800 à 2 000 €/mois selon le volume de transactions et la complexité fiscale. Une TPE (< 50 transactions/mois) peut s'en sortir avec 400 à 700 €/mois. Une structure plus complexe (TVA intracommunautaire, plusieurs entités, paie incluse) monte à 2 000–3 500 €/mois. Ces tarifs incluent généralement la tenue comptable, les déclarations fiscales et un bilan annuel.</p>
+<h3>Quelle est la différence entre un expert-comptable et un DAF externalisé ?</h3>
+<p>L'expert-comptable assure la tenue des comptes, la conformité fiscale et sociale. Le <a href="/daf-externalise">DAF externalisé</a> pilote la stratégie financière : modèles prévisionnels, accompagnement en levée de fonds, optimisation de la structure. Ce sont deux missions complémentaires : l'expert-comptable produit les chiffres, le DAF les utilise pour piloter la croissance.</p>
+<h3>Quand passer de l'externalisation comptable à un DAF externalisé ?</h3>
+<p>L'ajout d'un DAF externalisé devient pertinent dès que vous avez besoin de prévisions, de reportings mensuels pour des investisseurs, ou que vous préparez une levée de fonds. En pratique, cela correspond souvent au stade 1–5 M€ de CA ou à l'arrivée des premiers institutionnels. Les deux services peuvent coexister : l'expert-comptable tient les comptes, le DAF construit la stratégie.</p>`,
       content: [],
     },
 
@@ -2753,7 +2783,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "impot-revenu-espagne": {
       meta: {
-        title: "IRPF Espagne — Guide complet 2026 | Iter Advisors",
+        title: "Impôt sur le revenu en Espagne (IRPF) : barème 2026, calcul et exemptions | Iter Advisors",
         description: "IRPF Espagne 2026 : barèmes, loi Beckham, déclaration et comparaison France-Espagne. Guide complet pour s'installer à Barcelone ou Madrid.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2764,6 +2794,21 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       htmlContent: `<p>L'installation en Espagne — et notamment à Barcelone ou Madrid — représente une opportunité stratégique pour de nombreux entrepreneurs français. Le coût de la vie inférieur de 25 à 35 % par rapport à Paris, un écosystème startup en croissance, et un cadre de vie attractif en font une destination privilégiée.</p>
 <p>Cependant, la fiscalité espagnole présente des spécificités que tout entrepreneur ou salarié expatrié doit maîtriser avant de s'installer. L'impôt sur le revenu en Espagne (IRPF — <em>Impuesto sobre la Renta de las Personas Físicas</em>) fonctionne selon des règles distinctes du système français, avec des opportunités d'optimisation significatives pour ceux qui préparent correctement leur arrivée.</p>
 <p>Ce guide couvre l'ensemble des aspects pratiques : barèmes, régime des expatriés (loi Beckham), démarches administratives, et comparaison avec la fiscalité française.</p>
+<p><strong>Le barème IRPF 2026 applicable aux résidents espagnols :</strong></p>
+<table>
+<thead>
+<tr><th>Tranche de revenus</th><th>Taux IRPF</th><th>Taux communauté (Catalogne)</th></tr>
+</thead>
+<tbody>
+<tr><td>0 – 12 450 €</td><td>9,5 %</td><td>12 %</td></tr>
+<tr><td>12 450 – 20 200 €</td><td>12 %</td><td>14 %</td></tr>
+<tr><td>20 200 – 35 200 €</td><td>15 %</td><td>18,5 %</td></tr>
+<tr><td>35 200 – 60 000 €</td><td>18,5 %</td><td>21,5 %</td></tr>
+<tr><td>60 000 – 300 000 €</td><td>22,5 %</td><td>25,5 %</td></tr>
+<tr><td>Au-dessus de 300 000 €</td><td>24,5 %</td><td>27,5 %</td></tr>
+</tbody>
+</table>
+<p><em>Source : Agencia Tributaria, barème 2026. Le taux total = taux État + taux communauté autonome.</em></p>
 <h2 id="section-1-qu-est-ce-que-irpf">Section 1 — Qu'est-ce que l'IRPF ?</h2>
 <p>L'IRPF est l'impôt progressif sur le revenu des personnes physiques en Espagne. Il s'applique aux résidents fiscaux espagnols, c'est-à-dire aux personnes vivant plus de 183 jours par an sur le territoire espagnol, ou disposant de leur centre d'intérêts économiques en Espagne.</p>
 <h3>Les revenus soumis à l'IRPF</h3>

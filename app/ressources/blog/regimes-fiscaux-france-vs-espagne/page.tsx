@@ -55,7 +55,7 @@ export default async function Page() {
         { id: "impot-societes", label: "1. Impôt sur les sociétés (IS)" },
         { id: "tva", label: "2. TVA et numéro INTRA-communautaire" },
         { id: "cotisations", label: "3. Cotisations sociales et charges employeur" },
-        { id: "regimes-speciaux", label: "4. Régimes spéciaux (micro, PVN, PAC)" },
+        { id: "regimes-speciaux", label: "4. Régimes spéciaux (micro, PVN, PAC, Beckham)" },
         { id: "profil", label: "5. Quel régime pour votre profil ?" },
         { id: "faq", label: "FAQ" },
       ]}
@@ -347,6 +347,31 @@ export default async function Page() {
       <Callout type="info">
         En Espagne, les indépendants doivent cotiser à la Sécurité Sociale même avec
         revenu zéro (minimum €324/mois en 2026), ce qui crée une charge fixe.
+      </Callout>
+
+      <h3>Espagne : Régime Beckham (impatriés)</h3>
+
+      <p>
+        Les personnes physiques qui s&apos;installent en Espagne après avoir résidé hors du
+        pays pendant au moins 5 ans peuvent bénéficier du{" "}
+        <a
+          href="/ressources/fiscalite/loi-beckham"
+          className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline"
+        >
+          régime Beckham
+        </a>{" "}
+        : un taux forfaitaire de 24 % sur les revenus de source espagnole jusqu'à
+        600 000 €, pendant 6 ans. Un avantage considérable pour les dirigeants et
+        cadres supérieurs qui rejoignent une filiale espagnole depuis l&apos;étranger.
+      </p>
+
+      <Callout type="success" title="Régime Beckham : jusqu'à 23 points d'économie">
+        Un cadre imposé à 47 % en France passant au régime Beckham paie 24 % sur ses
+        revenus espagnols — soit une économie pouvant dépasser 50 000 €/an pour un
+        salaire de 150 000 €.{" "}
+        <a href="/ressources/fiscalite/loi-beckham" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
+          Voir les conditions d&apos;éligibilité →
+        </a>
       </Callout>
 
       <h2 id="profil">5. Quel régime pour votre profil ?</h2>
