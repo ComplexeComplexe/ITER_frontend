@@ -96,6 +96,7 @@ function AnimatedCounter({
 const clientLogos = [
   { src: "/images/logos/logo-hosco.svg", alt: "Logo Hosco — client Iter Advisors accompagné en direction financière externalisée" },
   { src: "/images/logos/logo-ai-summit-bcn.svg", alt: "Logo AI Summit Barcelona — partenaire Iter Advisors" },
+  { src: "/images/logos/logo-spring.svg", alt: "Logo SPRiNG — client Iter Advisors accompagné en DAF externalisé" },
   { src: "/images/logos/logo-happyscribe.webp", alt: "Logo Happy Scribe — client Iter Advisors accompagné en DAF externalisé" },
   { src: "/images/logos/logo-impact.webp", alt: "Logo IMPACT+ — client Iter Advisors accompagné en DAF externalisé" },
   { src: "/images/logos/logo-mitiga.webp", alt: "Logo Mitiga Solutions — client Iter Advisors accompagné en direction financière externalisée" },
