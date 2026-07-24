@@ -3126,6 +3126,114 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       content: [],
     },
 
+    "daf-externalise-vs-daf-interimaire": {
+      meta: {
+        title: "DAF externalisé vs DAF intérimaire : lequel choisir en 2026 ? | Iter Advisors",
+        description: "Externalisé ou intérimaire : durée, coût, mission, engagement. Le comparatif complet pour choisir le bon modèle de direction financière.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "DAF externalisé ou DAF intérimaire : que choisir ?",
+      publishedDate: "2026-07-24",
+      category: "Comparaison",
+      htmlContent: `<p>DAF externalisé ou DAF intérimaire : deux modèles de direction financière flexible qui répondent à des besoins très différents. L'un s'inscrit dans la durée avec un engagement récurrent, l'autre intervient en mission ponctuelle. Ce comparatif complet vous aide à choisir le bon modèle selon votre stade, votre budget et vos objectifs.</p>`,
+      content: [],
+    },
+
+    "daf-externalise-startup": {
+      meta: {
+        title: "DAF externalisé pour startup : quand, pourquoi, combien ? | Iter Advisors",
+        description: "Pourquoi les startups choisissent un DAF externalisé : préparation de levée, reporting investisseurs, coût maîtrisé. Le guide 2026.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Le DAF externalisé, l'arme financière des startups",
+      publishedDate: "2026-07-24",
+      category: "DAF externalisé",
+      htmlContent: `<p>Pour une startup, recruter un DAF senior à temps plein est souvent hors de portée. Le DAF externalisé offre une alternative puissante : une expertise financière de haut niveau, disponible à la demande, pour préparer les levées de fonds, structurer le reporting investisseurs et maintenir la trésorerie sous contrôle à un coût maîtrisé.</p>`,
+      content: [],
+    },
+
+    "loi-beckham-espagne-conditions-eligibilite": {
+      meta: {
+        title: "Loi Beckham : les conditions d'éligibilité en 2026 | Iter Advisors",
+        description: "Qui peut bénéficier de la loi Beckham en Espagne ? Conditions, délais de demande, salariés et dirigeants : le point complet 2026.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Loi Beckham : êtes-vous éligible au régime des impatriés ?",
+      publishedDate: "2026-07-24",
+      category: "Fiscalité Espagne",
+      htmlContent: `<p>La loi Beckham permet aux personnes s'installant en Espagne de bénéficier d'un taux fixe d'imposition à 24 % pendant 6 ans. Mais toutes les situations n'ouvrent pas droit à ce régime de faveur. Conditions d'ancienneté, délais de demande, statuts éligibles : voici tout ce qu'il faut vérifier avant de déposer votre demande auprès de l'Agencia Tributaria.</p>`,
+      content: [],
+    },
+
+    "loi-beckham-economie-impot-simulation": {
+      meta: {
+        title: "Loi Beckham : combien d'impôt économisez-vous vraiment ? | Iter Advisors",
+        description: "Taux fixe de 24 % vs barème progressif jusqu'à 47 % : simulation chiffrée de l'économie d'impôt avec le régime Beckham, par niveau de salaire.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Loi Beckham : le calcul de l'économie d'impôt, salaire par salaire",
+      publishedDate: "2026-07-24",
+      category: "Fiscalité Espagne",
+      htmlContent: `<p>Le régime Beckham plafonne l'imposition sur les revenus du travail en Espagne à 24 % jusqu'à 600 000 €, là où le barème progressif peut atteindre 47 %. La différence est considérable selon votre niveau de salaire. Cette simulation chiffrée vous montre, tranche par tranche, l'économie d'impôt réelle que vous pouvez attendre du régime des impatriés.</p>`,
+      content: [],
+    },
+
+    "daf-part-time-tarifs-missions-2026": {
+      meta: {
+        title: "DAF à temps partagé : tarifs et missions en 2026 | Iter Advisors",
+        description: "Combien coûte un DAF à temps partagé ? Tarifs par jour et par mois, missions types, durée d'engagement. Le guide chiffré 2026.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "DAF à temps partagé : combien ça coûte, ce que ça couvre",
+      publishedDate: "2026-07-24",
+      category: "DAF à temps partagé",
+      htmlContent: `<p>Le DAF à temps partagé permet aux PME d'accéder à une direction financière de haut niveau sans supporter le coût d'un poste à temps plein. De 1 à 3 jours par semaine, ce modèle s'adapte à votre stade de développement. Ce guide chiffré détaille les tarifs pratiqués en 2026, les missions couvertes et ce que vous pouvez raisonnablement attendre de cet investissement.</p>`,
+      content: [],
+    },
+
+    "cfo-externe-role-missions-2026": {
+      meta: {
+        title: "CFO externe : rôle, missions et quand y recourir en 2026 | Iter Advisors",
+        description: "Le CFO externe prend en charge votre direction financière sans CDI. Missions, profils concernés, coûts : le guide complet.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Qu'est-ce qu'un CFO externe (et pourquoi de plus en plus d'entreprises y recourent)",
+      publishedDate: "2026-07-24",
+      category: "CFO externalisé",
+      htmlContent: `<p>Le CFO externe assure la direction financière de votre entreprise sans contrat à durée indéterminée. À mi-chemin entre le consultant et le directeur financier salarié, il intervient sur des missions définies : pilotage de trésorerie, préparation de levée, structuration financière. Ce guide complet explique son rôle, ses missions types et les situations où y recourir en 2026.</p>`,
+      content: [],
+    },
+
   },
   en: {
     "essentiels-outils-tech-finance": {
@@ -3561,6 +3669,24 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
         "The modern CFO must also master ESG (Environmental, Social, Governance) issues, which take an increasing place in corporate strategy. Sustainable finance, non-financial reporting, and impact investing have become essential skills.",
         "Finally, the human dimension remains central. The CFO must communicate effectively with various stakeholders (executives, investors, operational teams) and translate financial data into actionable recommendations. Leadership and strategic vision are, more than ever, essential qualities.",
       ],
+    },
+
+    "fractional-cfo-cost-services-2026": {
+      meta: {
+        title: "Fractional CFO: What It Costs and What You Get in 2026 | Iter Advisors",
+        description: "Fractional CFO pricing, scope and ROI for startups and SMEs. When to hire one, what to expect, real 2026 rate ranges.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Resources",
+        resourcesHref: "/en/ressources",
+        blogLabel: "Blog",
+        blogHref: "/en/ressources/blog",
+      },
+      h1: "Fractional CFO: cost, scope and when to hire one",
+      publishedDate: "2026-07-24",
+      category: "Fractional CFO",
+      htmlContent: `<p>A fractional CFO gives startups and SMEs access to senior financial leadership without the cost of a full-time hire. This guide breaks down real 2026 rate ranges, what a fractional CFO typically covers, and the situations where bringing one in delivers the strongest return on investment.</p>`,
+      content: [],
     },
   },
   es: {
@@ -4055,6 +4181,24 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
         "El CFO moderno también debe dominar los temas ESG (Medio ambiente, Social, Gobernanza) que ocupan un lugar creciente en la estrategia empresarial. Las finanzas sostenibles, el reporting extra-financiero y el impact investing se convierten en competencias imprescindibles.",
         "Finalmente, la dimensión humana sigue siendo central. El CFO debe saber comunicar con las distintas partes interesadas (directivos, inversores, equipos operativos) y traducir los datos financieros en recomendaciones accionables. El liderazgo y la visión estratégica son, más que nunca, cualidades esenciales.",
       ],
+    },
+
+    "cfo-externo-pymes-precio-2026": {
+      meta: {
+        title: "CFO externo para pymes: qué es y cuánto cuesta en 2026 | Iter Advisors",
+        description: "Qué hace un CFO externo, cuándo lo necesita una pyme y precios reales en España. Guía completa 2026 con ejemplos.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Recursos",
+        resourcesHref: "/es/recursos",
+        blogLabel: "Blog",
+        blogHref: "/es/recursos/blog",
+      },
+      h1: "CFO externo: la dirección financiera que tu pyme puede pagar",
+      publishedDate: "2026-07-24",
+      category: "CFO externo",
+      htmlContent: `<p>Un CFO externo asume la dirección financiera de tu empresa sin contrato indefinido. Esta guía completa explica qué hace exactamente, en qué situaciones lo necesita una pyme española y cuáles son los precios reales en 2026, con ejemplos concretos para ayudarte a tomar la decisión correcta.</p>`,
+      content: [],
     },
   },
 };

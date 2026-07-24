@@ -367,14 +367,14 @@ export default function HomePage({
             {[...clientLogos, ...clientLogos].map((logo, i) => (
               <div
                 key={i}
-                className="shrink-0 w-48 h-20 flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
+                className="shrink-0 w-56 h-24 flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
               >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={140}
-                  height={56}
-                  className="object-contain max-h-14"
+                  width={180}
+                  height={72}
+                  className="object-contain max-h-[72px]"
                   loading="lazy"
                   unoptimized={logo.src.endsWith('.svg')}
                 />

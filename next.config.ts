@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
     domains: [
       'ztynwacifpvzaemkqifh.storage.eu-central-1.nhost.run', // Strapi CDN
       'share.trustfolio.co', // Trustfolio widgets
+      'images.unsplash.com', // Unsplash editorial covers
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -761,6 +762,7 @@ const nextConfig: NextConfig = {
       // ── EN blog articles that only exist in FR — redirect to FR canonical
       // (preserves link equity flowing to the actual content vs the EN blog hub)
       { source: "/en/ressources/blog/quand-embaucher-daf-externalise-5-signes",            destination: "/ressources/blog/quand-embaucher-daf-externalise-5-signes",            permanent: true },
+      { source: "/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission", destination: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", permanent: true },
       // 2026-05-31 (T8 follow-up): destination was sending EN visitors to the
       // FR article. Now points to the canonical EN slug (an EN version of the
       // article exists at this slug in lib/content/blog-posts.ts).
