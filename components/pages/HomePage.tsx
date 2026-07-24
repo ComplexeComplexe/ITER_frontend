@@ -94,6 +94,8 @@ function AnimatedCounter({
 // Booste le SEO image + le champ sémantique autour de "DAF externalisé".
 // Cf. audit SEO 01/07/2026 §Home "Alt text des logos clients".
 const clientLogos = [
+  { src: "/images/logos/logo-hosco.svg", alt: "Logo Hosco — client Iter Advisors accompagné en direction financière externalisée" },
+  { src: "/images/logos/logo-ai-summit-bcn.svg", alt: "Logo AI Summit Barcelona — partenaire Iter Advisors" },
   { src: "/images/logos/logo-happyscribe.webp", alt: "Logo Happy Scribe — client Iter Advisors accompagné en DAF externalisé" },
   { src: "/images/logos/logo-impact.webp", alt: "Logo IMPACT+ — client Iter Advisors accompagné en DAF externalisé" },
   { src: "/images/logos/logo-mitiga.webp", alt: "Logo Mitiga Solutions — client Iter Advisors accompagné en direction financière externalisée" },
@@ -364,15 +366,16 @@ export default function HomePage({
             {[...clientLogos, ...clientLogos].map((logo, i) => (
               <div
                 key={i}
-                className="shrink-0 w-40 h-16 flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="shrink-0 w-48 h-20 flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
               >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={100}
-                  height={40}
-                  className="object-contain max-h-12"
+                  width={140}
+                  height={56}
+                  className="object-contain max-h-14"
                   loading="lazy"
+                  unoptimized={logo.src.endsWith('.svg')}
                 />
               </div>
             ))}
