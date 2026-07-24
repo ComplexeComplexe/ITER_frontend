@@ -7,8 +7,8 @@ import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 import MidArticleSoftCTA from '@/components/blog/MidArticleSoftCTA';
 
 export const metadata: Metadata = {
-  title: "Tarifs DAF 2026 | Iter Advisors",
-  description: "Combien coûte un DAF externalisé en 2026 ? Tarifs, TJM, forfaits. Comparez avec un DAF salarié. Grille tarifaire complète et ROI calculé.",
+  title: "Coût d'un DAF externalisé en 2026 : tarifs, TJM et grille de prix | Iter Advisors",
+  description: "Combien coûte un DAF externalisé ? Tarifs par profil (startup, PME, industrie), TJM moyen, formules de facturation et calcul du ROI. Grille de prix 2026 complète.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
   },
@@ -52,6 +52,20 @@ export default function CoutDafExternalisePage() {
         { id: "budget-planning", label: "6. Budget planning selon votre CA" },
       ]}
       tldr="DAF externalisé coûte €30-50k/an (2-3 jours/semaine). Plus économique que DAF salarié (€65-90k). ROI en 4-6 mois. Flexibilité du coût selon charge réelle. Prix dépend de complexité, CA, nombre de FTE finance interne."
+      faqItems={[
+        {
+          question: "Combien coûte un DAF externalisé par mois ?",
+          answer: "Un DAF externalisé coûte en moyenne 2 500 à 8 000 €/mois selon le nombre de jours d'intervention. Pour 2 jours/mois (PME en phase de stabilisation) : 2 000–3 500 €. Pour 5 jours/mois (scale-up en croissance) : 4 500–6 500 €. Pour 10 jours/mois (entreprise en phase de levée de fonds) : 8 000–12 000 €. Ces tarifs incluent le reporting mensuel et la disponibilité pour les arbitrages stratégiques.",
+        },
+        {
+          question: "Quel est le taux journalier moyen (TJM) d'un DAF externalisé ?",
+          answer: "Le TJM d'un DAF externalisé senior se situe entre 900 et 1 500 € HT en France, selon l'expérience, le secteur et la région. À Paris, le TJM médian est d'environ 1 200 €. Pour un CFO international ou bilingue (France-Espagne), le TJM peut atteindre 1 500–1 800 €. Ce tarif journalier est 3 à 4 fois inférieur au coût réel d'un DAF salarié à temps plein (salaire + charges + management).",
+        },
+        {
+          question: "DAF externalisé prix par mois : comment est fixé le tarif ?",
+          answer: "Le tarif mensuel d'un DAF externalisé dépend de trois variables : (1) le nombre de jours d'intervention par mois (de 1 à 15 jours) ; (2) le niveau de séniorité et l'expertise sectorielle du profil ; (3) les missions confiées (reporting seul, trésorerie, levée de fonds, restructuration). La facturation se fait soit au forfait mensuel (engagement de jours), soit à la mission (projet ponctuel). Le forfait est plus économique pour une collaboration durable.",
+        },
+      ]}
       relatedArticles={[
         {
           url: "/ressources/blog/daf-externalise-vs-daf-salarie",

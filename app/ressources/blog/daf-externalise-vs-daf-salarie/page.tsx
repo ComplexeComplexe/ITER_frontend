@@ -6,8 +6,8 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "DAF externalisé vs salarié | Iter Advisors",
-  description: "DAF externalisé vs DAF salarié : comparaison complète des coûts, avantages et inconvénients. Découvrez la meilleure solution pour votre PME. Guide 2026.",
+  title: "DAF externalisé ou salarié : le vrai comparatif chiffré 2026 | Iter Advisors",
+  description: "DAF externalisé vs DAF salarié : comparaison chiffrée des coûts, des risques et des avantages. Quel modèle choisir selon votre stade de croissance ? Guide 2026.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/daf-externalise-vs-daf-salarie",
   },
@@ -50,6 +50,16 @@ export default function DafExternaliseVsSalariePage() {
         { id: "matrice-decision", label: "6. Matrice de décision" },
       ]}
       tldr="DAF salarié : meilleur si vous avez des processus stables et complexes, une équipe à superviser. DAF externalisé : meilleur si vous avez une croissance rapide, des besoins variables, ou une taille PME. Le coût : 50-70 % moins cher en externalisé. 60 % des PMEs optent pour l'externalisé."
+      faqItems={[
+        {
+          question: "DAF externalisé ou DAF salarié : quel est le moins cher ?",
+          answer: "Un DAF salarié senior coûte 100 000–150 000 € brut/an, soit 160 000–240 000 € en coût total employeur (charges + avantages + recrutement). Un DAF externalisé à 5 jours/mois revient à 54 000–78 000 €/an — soit 50 à 70 % moins cher. L'avantage du salarié : disponibilité quotidienne. L'avantage de l'externalisé : flexibilité, expertise immédiate, zéro coût de recrutement.",
+        },
+        {
+          question: "À quel stade de croissance passer d'un DAF externalisé à un DAF salarié ?",
+          answer: "Le seuil critique se situe généralement autour de 10–20 M€ de chiffre d'affaires ou lors d'une levée de fonds supérieure à 10 M€ — quand la complexité financière justifie une présence quotidienne. En pratique, beaucoup d'entreprises maintiennent un DAF externalisé jusqu'à la Series B ou jusqu'à 50–80 salariés. L'externalisation reste pertinente même après cette taille si la complexité ne nécessite pas un équivalent temps plein dédié.",
+        },
+      ]}
       relatedArticles={[
         {
           url: "/ressources/blog/organiser-sa-direction-financiere",

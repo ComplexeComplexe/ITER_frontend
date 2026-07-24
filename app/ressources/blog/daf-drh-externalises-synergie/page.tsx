@@ -50,6 +50,20 @@ export default function DafDrhExternalisationSynergieePage() {
         { id: "roi-calcul", label: "6. ROI et économies" },
       ]}
       tldr="Externaliser DAF+DRH ensemble crée €60-100k d'économies/an vs externalisé séparé. Paie 100 % intégrée, reporting unifié, compliance simplifiée. Structure idéale pour PMEs €5-50M CA : 1 équipe RH interne + DAF+DRH externalisés."
+      faqItems={[
+        {
+          question: "Pourquoi combiner DAF externalisé et DRH externalisé ?",
+          answer: "Combiner un DAF et un DRH externalisés crée une synergie concrète : la paie est produite par le DRH et intégrée directement dans les comptes suivis par le DAF, sans ressaisie. Les coûts salariaux — le premier poste de charge pour une PME de services — sont pilotés en temps réel. Cette cohérence permet de déclencher des alertes dès qu'un projet dépasse son budget RH, et de construire des prévisionnels masse salariale fiables pour les levées de fonds.",
+        },
+        {
+          question: "Quel est le coût d'un DAF + DRH externalisés combinés ?",
+          answer: "Le coût d'un binôme DAF + DRH externalisés se situe entre 4 500 et 9 000 €/mois pour une PME de 20 à 80 salariés, selon le nombre de jours d'intervention respectifs. C'est 40 à 60 % moins cher que deux cadres seniors en CDI (un DAF + un DRH), qui représenteraient ensemble 180 000 à 260 000 € de coût employeur annuel. La mutualisation des fonctions support est l'un des leviers les plus efficaces pour les entreprises entre 15 et 100 salariés.",
+        },
+        {
+          question: "À quel stade une PME a-t-elle besoin d'un DRH externalisé ?",
+          answer: "Le seuil critique est généralement 20 salariés : en dessous, le dirigeant ou un office manager peut gérer le quotidien RH avec les bons outils (PayFit, Lucca). Au-delà, la conformité sociale (accords collectifs, entretiens annuels, gestion des IRP), les recrutements réguliers et la gestion des tensions internes justifient une expertise RH dédiée. Entre 20 et 80 salariés, un DRH externalisé à 2–4 jours/mois couvre la majorité des enjeux pour 1 500 à 3 000 €/mois.",
+        },
+      ]}
       relatedArticles={[
         {
           url: "/ressources/blog/organiser-sa-direction-financiere",

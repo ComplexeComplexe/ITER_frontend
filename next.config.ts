@@ -890,6 +890,12 @@ const nextConfig: NextConfig = {
       // AUDIT-07-21: 404s avec inlinks actifs
       { source: "/services/ley-beckham", destination: "/ressources/fiscalite/loi-beckham", permanent: true },
       { source: "/ressources/fiscalite/convention-fiscale-france-espagne", destination: "/ressources/fiscalite-espagne-france", permanent: true },
+      // S2: fusions cannibales blog
+      { source: "/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission", destination: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", permanent: true },
+      { source: "/ressources/blog/externaliser-comptabilite-guide", destination: "/ressources/blog/externalisation-comptable", permanent: true },
+      { source: "/ressources/blog/data-room-checklist-levee-de-fonds", destination: "/ressources/blog/checklist-due-diligence-levee-de-fonds", permanent: true },
+      { source: "/ressources/blog/due-diligence-financiere-investisseurs", destination: "/ressources/blog/checklist-due-diligence-levee-de-fonds", permanent: true },
+      { source: "/ressources/blog/daf-externalise-vs-alternatives", destination: "/ressources/blog/daf-externalise-vs-daf-salarie", permanent: true },
     ];
   },
 };

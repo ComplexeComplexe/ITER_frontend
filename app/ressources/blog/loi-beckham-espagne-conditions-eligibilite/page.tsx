@@ -5,7 +5,7 @@ import { Callout, ProseTable } from '@/components/blog';
 import { getCmsNavigation } from '@/lib/strapi';
 
 export const metadata: Metadata = {
-  title: "Loi Beckham : les conditions d'éligibilité en 2026 | Iter Advisors",
+  title: "Loi Beckham en Espagne : conditions d'éligibilité du régime impatrié 2026 | Iter Advisors",
   description:
     "Qui peut bénéficier de la loi Beckham en Espagne ? Conditions, délais de demande, salariés et dirigeants : le point complet 2026.",
   alternates: {
@@ -96,6 +96,18 @@ export default async function Page() {
           answer:
             "Ces deux dispositifs ont des interactions complexes. La convention franco-espagnole peut limiter la possibilité d'imposition en Espagne sur certains revenus français. Une analyse au cas par cas par un fiscaliste est indispensable.",
         },
+        {
+          question: "Quel est le délai pour demander le régime Beckham après l'arrivée en Espagne ?",
+          answer: "La demande doit être déposée dans les 6 mois suivant l'inscription au registre de la Sécurité Sociale espagnole (numéro de Sécurité Sociale obtenu lors de l'embauche ou de la création d'activité). Passé ce délai, la demande est irrecevable et l'impatrié est soumis au régime général de l'IRPF (jusqu'à 47 %). Il n'existe aucune dérogation pour ce délai — c'est l'erreur la plus fréquente et la plus coûteuse.",
+        },
+        {
+          question: "Peut-on bénéficier de la loi Beckham si on a déjà vécu en Espagne ?",
+          answer: "Non. La condition fondamentale est de ne pas avoir résidé en Espagne au cours des 5 années précédant l'arrivée. Si vous avez été résident fiscal espagnol (même brièvement) dans les 5 ans, la demande sera rejetée. Les courtes visites touristiques ou professionnelles sans établissement de résidence fiscale ne sont pas concernées.",
+        },
+        {
+          question: "La loi Beckham s'applique-t-elle aux revenus de source étrangère ?",
+          answer: "Partiellement. Sous le régime Beckham, les revenus de source espagnole sont imposés à 24 % (jusqu'à 600 000 €). Les revenus de source étrangère (dividendes, loyers, plus-values hors Espagne) sont en revanche exclus de l'assiette espagnole — l'impatrié ne les déclare pas en Espagne. Cette règle est un avantage majeur pour les dirigeants ayant des actifs patrimoniaux à l'étranger.",
+        },
       ]}
       tldr={
         <>
@@ -133,6 +145,10 @@ export default async function Page() {
       ]}
       metaDescription="Qui peut bénéficier de la loi Beckham en Espagne ? Conditions, délais de demande, salariés et dirigeants : le point complet 2026."
     >
+      <Callout type="warning" title="Délai critique : 6 mois pour agir">
+        La demande de régime Beckham doit être déposée dans les <strong>6 mois suivant l&apos;inscription à la Sécurité Sociale</strong> espagnole. Passé ce délai, aucune dérogation n&apos;est possible. C&apos;est l&apos;erreur la plus fréquente — et la plus coûteuse.
+      </Callout>
+
       {/* ─── 1. Le principe du régime ─────────────────────────────────────── */}
       <h2 id="principe">1. Le principe du régime</h2>
 
