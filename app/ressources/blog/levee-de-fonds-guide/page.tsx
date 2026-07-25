@@ -50,11 +50,11 @@ export default async function Page() {
       dateModified="2026-05-01T00:00:00Z"
       heroImage="/images/blog/covers/levee-de-fonds-guide.svg"
       toc={[
-        { id: "pourquoi", label: "1. Pourquoi bien préparer sa levée ?" },
-        { id: "timeline", label: "2. Timeline et étapes clés" },
-        { id: "preparation", label: "3. Préparation financière" },
-        { id: "due-diligence", label: "4. La due diligence financière" },
-        { id: "checklist", label: "5. Checklist complète" },
+        { id: "pourquoi", label: "Pourquoi la préparation fait la différence" },
+        { id: "timeline", label: "Timeline en 7 étapes" },
+        { id: "preparation", label: "Préparation financière" },
+        { id: "due-diligence", label: "Due diligence financière" },
+        { id: "checklist", label: "Checklist 30 points" },
       ]}
       tldr={
         <>
@@ -87,7 +87,7 @@ export default async function Page() {
       ]}
       metaDescription="Levée de fonds : préparation financière et juridique. Due diligence, checklist, valorisation. Iter Advisors a aidé startups à lever 100M€+."
     >
-      <h2 id="pourquoi">1. Pourquoi bien préparer sa levée ?</h2>
+      <h2 id="pourquoi">Pourquoi la préparation fait la différence entre un closing en 4 mois et 18 mois</h2>
 
       <p>
         Une levée de fonds bien préparée multiplie vos chances de succès. Les données
@@ -127,7 +127,7 @@ export default async function Page() {
         intelligemment.
       </p>
 
-      <h2 id="timeline">2. Timeline et étapes clés</h2>
+      <h2 id="timeline">Timeline d'une levée de fonds : de l'amorçage au closing en 7 étapes</h2>
 
       <p>
         Une levée se prépare sur 6-12 mois. Voici le calendrier recommandé :
@@ -236,7 +236,7 @@ export default async function Page() {
         </tbody>
       </ProseTable>
 
-      <h2 id="preparation">3. Préparation financière</h2>
+      <h2 id="preparation">Préparation financière : les documents et modèles attendus par les investisseurs</h2>
 
       <p>
         La préparation financière est le fondement. Elle couvre 4 piliers :
@@ -360,7 +360,7 @@ export default async function Page() {
         </tbody>
       </ProseTable>
 
-      <h2 id="due-diligence">4. La due diligence financière</h2>
+      <h2 id="due-diligence">Due diligence financière : ce que les VCs vérifient en premier</h2>
 
       <p>
         La due diligence est le processus par lequel l'investisseur audite votre
@@ -421,7 +421,7 @@ export default async function Page() {
         ctaHref="/contact"
       />
 
-      <h2 id="checklist">5. Checklist complète de préparation</h2>
+      <h2 id="checklist">Checklist de préparation à la levée : 30 points de contrôle avant le premier RDV</h2>
 
       <h3>Comptabilité & Finance</h3>
 

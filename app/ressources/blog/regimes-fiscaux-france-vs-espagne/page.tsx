@@ -58,11 +58,11 @@ export default async function Page() {
       dateModified="2026-05-01T00:00:00Z"
       heroImage="/images/blog/covers/regimes-fiscaux-france-vs-espagne.svg"
       toc={[
-        { id: "impot-societes", label: "1. Impôt sur les sociétés (IS)" },
-        { id: "tva", label: "2. TVA et numéro INTRA-communautaire" },
-        { id: "cotisations", label: "3. Cotisations sociales et charges employeur" },
-        { id: "regimes-speciaux", label: "4. Régimes spéciaux (micro, PVN, PAC, Beckham)" },
-        { id: "profil", label: "5. Quel régime pour votre profil ?" },
+        { id: "impot-societes", label: "IS : 25,83 % FR vs 25 % ES" },
+        { id: "tva", label: "TVA : 20 % vs 21 % intra-UE" },
+        { id: "cotisations", label: "Cotisations : 45 % vs 30 %" },
+        { id: "regimes-speciaux", label: "Régimes spéciaux et Beckham" },
+        { id: "profil", label: "Choisir selon votre profil" },
         { id: "faq", label: "FAQ" },
       ]}
       faqItems={[
@@ -79,22 +79,6 @@ export default async function Page() {
           answer: "Oui, via la directive 2008/9/CE. Une société française assujettie à la TVA peut récupérer la TVA espagnole (IVA) payée sur ses achats professionnels en Espagne, à condition de déposer une demande de remboursement électronique avant le 30 septembre de l'année suivante. Le délai de remboursement est généralement de 4 à 6 mois. Le seuil minimum est 50 € pour une demande trimestrielle.",
         },
       ]}
-      tldr={
-        <>
-          <p>
-            <strong>France :</strong> IS 25,83% (taux réduit 15% jusqu'à 38k€), TVA
-            20%, cotisations sociales élevées (~45% du salaire brut)
-          </p>
-          <p>
-            <strong>Espagne :</strong> IS 25% (19% pour startups), TVA 21%, PVN et PAC
-            pour petites structures avec cotisations réduites
-          </p>
-          <p>
-            <strong>À retenir :</strong> La différence peut atteindre 7 500 €/employé/an.
-            Consulter un expert fiscal avant changement de régime.
-          </p>
-        </>
-      }
       relatedArticles={[
         {
           url: "/ressources/blog/impot-revenu-espagne",
@@ -119,7 +103,7 @@ export default async function Page() {
       ]}
       metaDescription="Comparaison complète IS, TVA et cotisations France vs Espagne. Économies potentielles et régimes optimisés. Guide expert Iter Advisors 2026."
     >
-      <h2 id="impot-societes">1. Impôt sur les sociétés (IS)</h2>
+      <h2 id="impot-societes">IS : 25,83 % en France, 25 % en Espagne — et les cas où l'écart se creuse</h2>
 
       <p>
         L'impôt sur les sociétés (IS) est l'une des principales différences entre la
@@ -183,7 +167,7 @@ export default async function Page() {
         régime spécial du Impuesto sobre la Renta de las Personas Físicas (PVN).
       </p>
 
-      <h2 id="tva">2. TVA et numéro INTRA-communautaire</h2>
+      <h2 id="tva">TVA : 20 % (France) vs 21 % (Espagne) — ce qui change pour vos opérations intra-UE</h2>
 
       <p>
         La TVA est une taxe indirecte prélevée sur la valeur ajoutée à chaque stade de
@@ -241,7 +225,7 @@ export default async function Page() {
         8 chiffres).
       </p>
 
-      <h2 id="cotisations">3. Cotisations sociales et charges employeur</h2>
+      <h2 id="cotisations">Cotisations sociales : 45 % en France vs 30 % en Espagne — jusqu'à 7 500 €/an d'écart par salarié</h2>
 
       <p>
         Les cotisations sociales représentent la plus grande charge financière pour les
@@ -313,7 +297,7 @@ export default async function Page() {
         en Espagne.
       </Callout>
 
-      <h2 id="regimes-speciaux">4. Régimes spéciaux (micro, PVN, PAC)</h2>
+      <h2 id="regimes-speciaux">Régimes spéciaux : micro-entreprise, PVN, PAC et Beckham — lequel s'applique à votre situation ?</h2>
 
       <p>
         Au-delà des régimes standard, la France et l'Espagne offrent des régimes
@@ -361,7 +345,7 @@ export default async function Page() {
         Les personnes physiques qui s&apos;installent en Espagne après avoir résidé hors du
         pays pendant au moins 5 ans peuvent bénéficier du{" "}
         <a
-          href="/ressources/fiscalite/loi-beckham"
+          href="/ressources/fiscalite/beckham-law"
           className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline"
         >
           régime Beckham
@@ -369,18 +353,25 @@ export default async function Page() {
         : un taux forfaitaire de 24 % sur les revenus de source espagnole jusqu'à
         600 000 €, pendant 6 ans. Un avantage considérable pour les dirigeants et
         cadres supérieurs qui rejoignent une filiale espagnole depuis l&apos;étranger.
+        La condition de non-résidence s&apos;apprécie notamment via la règle des 183 jours — voir notre guide sur la{" "}
+        <a
+          href="/ressources/fiscalite/residence-fiscale-france-espagne"
+          className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline"
+        >
+          résidence fiscale France-Espagne
+        </a>.
       </p>
 
       <Callout type="success" title="Régime Beckham : jusqu'à 23 points d'économie">
         Un cadre imposé à 47 % en France passant au régime Beckham paie 24 % sur ses
         revenus espagnols — soit une économie pouvant dépasser 50 000 €/an pour un
         salaire de 150 000 €.{" "}
-        <a href="/ressources/fiscalite/loi-beckham" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
+        <a href="/ressources/fiscalite/beckham-law" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
           Voir les conditions d&apos;éligibilité →
         </a>
       </Callout>
 
-      <h2 id="profil">5. Quel régime pour votre profil ?</h2>
+      <h2 id="profil">Quel régime fiscal choisir selon votre profil et votre CA ?</h2>
 
       <p>
         Le choix du régime fiscal dépend de votre structure, profitabilité, chiffre
@@ -489,6 +480,16 @@ export default async function Page() {
         <li>
           <strong>Normes BEPS :</strong> Les deux pays appliquent les règles anti-abus
           OCDE
+        </li>
+        <li>
+          <strong>Modelo 720 :</strong> Les résidents fiscaux espagnols qui détiennent des biens en France (comptes bancaires, immobilier, assurance-vie) doivent les déclarer via le{" "}
+          <a
+            href="/ressources/fiscalite/modelo-720"
+            className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline"
+          >
+            Modelo 720
+          </a>{" "}
+          — sanction lourde en cas d&apos;omission.
         </li>
       </ul>
 

@@ -53,12 +53,12 @@ export default async function Page() {
       dateModified="2026-07-24"
       heroImage="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1200&q=80"
       toc={[
-        { id: "principe", label: "1. Le principe du régime" },
-        { id: "conditions-base", label: "2. Les 4 conditions de base" },
-        { id: "profils-eligibles", label: "3. Profils éligibles" },
-        { id: "profils-exclus", label: "4. Profils exclus" },
-        { id: "delai-demande", label: "5. Délai et procédure" },
-        { id: "quiz", label: "6. Test d'éligibilité" },
+        { id: "principe", label: "Principe : 24 % pendant 6 ans" },
+        { id: "conditions-base", label: "Les 4 conditions cumulatives" },
+        { id: "profils-eligibles", label: "Profils éligibles" },
+        { id: "profils-exclus", label: "Profils exclus" },
+        { id: "delai-demande", label: "Délai : 6 mois pour demander" },
+        { id: "quiz", label: "Test d'éligibilité" },
       ]}
       faqItems={[
         {
@@ -128,7 +128,7 @@ export default async function Page() {
       }
       relatedArticles={[
         {
-          url: "/ressources/fiscalite/loi-beckham",
+          url: "/ressources/fiscalite/beckham-law",
           category: "Fiscalité",
           title: "Guide complet de la loi Beckham en Espagne 2026",
         },
@@ -150,7 +150,7 @@ export default async function Page() {
       </Callout>
 
       {/* ─── 1. Le principe du régime ─────────────────────────────────────── */}
-      <h2 id="principe">1. Le principe du régime</h2>
+      <h2 id="principe">Le régime Beckham : 24 % d'IRPF fixe pendant 6 ans pour les impatriés</h2>
 
       <p>
         La loi Beckham — officiellement le <em>Régime spécial des impatriés</em> (article
@@ -208,7 +208,7 @@ export default async function Page() {
       </Callout>
 
       {/* ─── 2. Les 4 conditions de base ──────────────────────────────────── */}
-      <h2 id="conditions-base">2. Les 4 conditions de base</h2>
+      <h2 id="conditions-base">4 conditions cumulatives pour être éligible au régime Beckham en 2026</h2>
 
       <p>
         L&apos;accès au régime Beckham est conditionné à la réunion <strong>simultanée</strong>{' '}
@@ -267,7 +267,7 @@ export default async function Page() {
       </Callout>
 
       {/* ─── 3. Profils éligibles ─────────────────────────────────────────── */}
-      <h2 id="profils-eligibles">3. Profils éligibles</h2>
+      <h2 id="profils-eligibles">Qui peut bénéficier du régime Beckham : salarié, dirigeant, nomade digital</h2>
 
       <p>
         Depuis la réforme de 2023, le spectre des bénéficiaires potentiels du régime
@@ -347,7 +347,7 @@ export default async function Page() {
       </ProseTable>
 
       {/* ─── 4. Profils exclus ────────────────────────────────────────────── */}
-      <h2 id="profils-exclus">4. Profils exclus</h2>
+      <h2 id="profils-exclus">Qui est exclu du régime Beckham : sportifs, anciens résidents, cas particuliers</h2>
 
       <p>
         Certains profils, malgré leur installation en Espagne, ne peuvent pas accéder au
@@ -400,7 +400,7 @@ export default async function Page() {
       </Callout>
 
       {/* ─── 5. Délai et procédure ────────────────────────────────────────── */}
-      <h2 id="delai-demande">5. Délai et procédure</h2>
+      <h2 id="delai-demande">Délai de demande : 6 mois après l'inscription à la Sécurité Sociale espagnole</h2>
 
       <p>
         La demande d&apos;application du régime Beckham est formalisée via le{' '}
@@ -478,14 +478,14 @@ export default async function Page() {
 
       <Callout type="info">
         Pour aller plus loin sur le calcul de l&apos;économie d&apos;impôt réelle, consultez notre{' '}
-        <Link href="/ressources/fiscalite/loi-beckham">
+        <Link href="/ressources/fiscalite/beckham-law">
           guide complet de la loi Beckham
         </Link>{' '}
         qui détaille les simulations chiffrées par tranche de revenus.
       </Callout>
 
       {/* ─── 6. Test d'éligibilité ────────────────────────────────────────── */}
-      <h2 id="quiz">6. Test d&apos;éligibilité</h2>
+      <h2 id="quiz">Test d&apos;éligibilité : êtes-vous concerné par le régime Beckham ?</h2>
 
       <p>
         Parcourez ces 6 questions pour évaluer rapidement votre situation. Un « non » à
@@ -591,7 +591,7 @@ export default async function Page() {
             <span>
               Consultez notre{' '}
               <Link
-                href="/ressources/fiscalite/loi-beckham"
+                href="/ressources/fiscalite/beckham-law"
                 className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline"
               >
                 guide complet de la loi Beckham

@@ -40,7 +40,7 @@ const collectionPageSchema = {
       {
         "@type": "ListItem",
         position: 1,
-        url: "https://www.iteradvisors.com/ressources/fiscalite/loi-beckham",
+        url: "https://www.iteradvisors.com/ressources/fiscalite/beckham-law",
         name: "Loi Beckham Espagne 2026 : guide complet",
       },
       {

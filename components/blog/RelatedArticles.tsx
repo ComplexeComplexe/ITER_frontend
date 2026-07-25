@@ -45,14 +45,6 @@ export default function RelatedArticles({
                   {article.title}
                 </Link>
               </h3>
-
-              <Link
-                href={article.url}
-                className="inline-flex items-center text-sm font-medium text-blue-600 transition-colors group-hover:text-blue-800"
-              >
-                Lire l'article
-                <span className="ml-2">→</span>
-              </Link>
             </article>
           ))}
         </div>

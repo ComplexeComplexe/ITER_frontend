@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import type { RelatedArticleCard } from "@/lib/related-articles";
 
@@ -22,22 +21,19 @@ interface BlogRelatedArticlesProps {
 
 const STRINGS: Record<
   Locale,
-  { heading: string; minRead: string; readMore: string }
+  { heading: string; minRead: string }
 > = {
   fr: {
     heading: "Pour aller plus loin",
     minRead: "min de lecture",
-    readMore: "Lire l’article",
   },
   en: {
     heading: "Read next",
     minRead: "min read",
-    readMore: "Read the article",
   },
   es: {
     heading: "Para profundizar",
     minRead: "min de lectura",
-    readMore: "Leer el artículo",
   },
 };
 
@@ -84,14 +80,6 @@ export default function BlogRelatedArticles({
                   {c.readMinutes} {t.minRead}
                 </p>
               )}
-              <span className="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-foreground/40 group-hover:text-iter-violet transition-colors">
-                {t.readMore}
-                <ArrowRight
-                  size={14}
-                  aria-hidden="true"
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </span>
             </Link>
           ))}
         </div>

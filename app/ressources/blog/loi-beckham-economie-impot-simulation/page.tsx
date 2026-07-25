@@ -53,11 +53,11 @@ export default function Page() {
       dateModified="2026-07-24"
       heroImage="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=1200&q=80"
       toc={[
-        { id: "principe-calcul", label: "1. Comment fonctionne le calcul" },
-        { id: "tableau-simulation", label: "2. Simulation salaire par salaire" },
-        { id: "plafond-600k", label: "3. Le plafond à 600 000 €" },
-        { id: "duree-6-ans", label: "4. La durée : 6 ans maximum" },
-        { id: "comparaison-france", label: "5. Comparaison avec l'imposition française" },
+        { id: "principe-calcul", label: "Comment fonctionne le calcul" },
+        { id: "tableau-simulation", label: "Simulation par niveau de salaire" },
+        { id: "plafond-600k", label: "Le plafond à 600 000 €" },
+        { id: "duree-6-ans", label: "La durée : 6 ans max" },
+        { id: "comparaison-france", label: "Comparaison avec la France" },
       ]}
       tldr="La loi Beckham est avantageuse à partir de 55 000 € de salaire annuel. Pour 80 000 € : économie de ~3 800 €/an (22 800 € sur 6 ans). Pour 120 000 € : économie de ~13 200 €/an (79 200 € sur 6 ans)."
       faqItems={[
@@ -105,7 +105,7 @@ export default function Page() {
         },
       ]}
     >
-      <h2 id="principe-calcul">1. Comment fonctionne le calcul</h2>
+      <h2 id="principe-calcul">Comment est calculé l'impôt sous le régime Beckham</h2>
 
       <p>
         En Espagne, les résidents fiscaux de droit commun sont soumis à l&apos;IRPF
@@ -139,7 +139,7 @@ export default function Page() {
         certaine seuil.
       </Callout>
 
-      <h2 id="tableau-simulation">2. Simulation salaire par salaire</h2>
+      <h2 id="tableau-simulation">Simulation salaire par salaire : votre économie réelle de 60 000 € à 300 000 €</h2>
 
       <p>
         Le tableau ci-dessous compare l&apos;imposition IRPF classique et l&apos;imposition
@@ -228,7 +228,7 @@ export default function Page() {
         régimes et n&apos;entrent pas dans ce calcul.
       </p>
 
-      <h2 id="plafond-600k">3. Le plafond à 600 000 €</h2>
+      <h2 id="plafond-600k">Le plafond à 600 000 € : taux à 47 % au-delà — votre imposition après le cap</h2>
 
       <p>
         Le taux préférentiel de 24 % s&apos;applique uniquement jusqu&apos;à{" "}
@@ -263,7 +263,7 @@ export default function Page() {
         exercées) avant d&apos;opter pour le régime.
       </Callout>
 
-      <h2 id="duree-6-ans">4. La durée : 6 ans maximum</h2>
+      <h2 id="duree-6-ans">La durée : 6 ans maximum et ce qu'il se passe après la fin du régime</h2>
 
       <p>
         Le régime Beckham s&apos;applique pour une durée maximale de{" "}
@@ -303,7 +303,7 @@ export default function Page() {
         </li>
       </ul>
 
-      <h2 id="comparaison-france">5. Comparaison avec l'imposition française</h2>
+      <h2 id="comparaison-france">Comparaison avec la France : jusqu'à 23 points d'écart de taux marginal</h2>
 
       <p>
         Pour les cadres et dirigeants qui partent d&apos;une situation fiscale française,

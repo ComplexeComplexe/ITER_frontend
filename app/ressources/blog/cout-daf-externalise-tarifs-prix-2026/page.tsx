@@ -51,7 +51,6 @@ export default function CoutDafExternalisePage() {
         { id: "roi-calculator", label: "5. ROI calculator" },
         { id: "budget-planning", label: "6. Budget planning selon votre CA" },
       ]}
-      tldr="DAF externalisé coûte €30-50k/an (2-3 jours/semaine). Plus économique que DAF salarié (€65-90k). ROI en 4-6 mois. Flexibilité du coût selon charge réelle. Prix dépend de complexité, CA, nombre de FTE finance interne."
       faqItems={[
         {
           question: "Combien coûte un DAF externalisé par mois ?",

@@ -880,10 +880,12 @@ const nextConfig: NextConfig = {
       // EC-03: City pages — redirect short slugs to full city pages
       { source: "/toulouse", destination: "/daf-externalise-toulouse", permanent: true },
       { source: "/barcelone", destination: "/daf-externalise-barcelone", permanent: true },
-      // BECK-01: English slug variant → canonical FR article
-      { source: "/ressources/fiscalite/beckham-law", destination: "/ressources/fiscalite/loi-beckham", permanent: true },
+      // BECK-01: loi-beckham → beckham-law (canonical) — flat redirect, no chain
+      { source: "/ressources/fiscalite/loi-beckham", destination: "/ressources/fiscalite/beckham-law", permanent: true },
+      // T2: blog duplicate → fiscalite canonical
+      { source: "/ressources/blog/double-imposition-france-espagne-convention", destination: "/ressources/fiscalite/double-imposition-france-espagne", permanent: true },
       // AUDIT-07-21: 404s avec inlinks actifs
-      { source: "/services/ley-beckham", destination: "/ressources/fiscalite/loi-beckham", permanent: true },
+      { source: "/services/ley-beckham", destination: "/ressources/fiscalite/beckham-law", permanent: true },
       { source: "/ressources/fiscalite/convention-fiscale-france-espagne", destination: "/ressources/fiscalite-espagne-france", permanent: true },
       // S2: fusions cannibales blog
       { source: "/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission", destination: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", permanent: true },

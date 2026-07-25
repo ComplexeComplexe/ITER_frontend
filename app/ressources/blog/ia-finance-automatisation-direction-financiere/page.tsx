@@ -59,7 +59,6 @@ export default function IaFinanceAutomatisationPage() {
         { id: 'feuille-de-route', label: '4. Feuille de route à 90 jours' },
         { id: 'role-daf-externalise', label: '5. Le rôle du DAF externalisé' },
       ]}
-      tldr="L'IA peut déjà diviser par trois le temps de clôture mensuelle d'une PME. Les quatre cas d'usage mûrs : clôture automatisée, facturation fournisseurs, prévisionnel de trésorerie assisté, reporting. Budget réaliste : 300–800 €/mois d'outils, zéro développement. La règle d'or : l'IA traite, l'humain décide."
       faqItems={[
         {
           question: "L'IA peut-elle remplacer un expert-comptable ?",
