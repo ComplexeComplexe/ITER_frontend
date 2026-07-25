@@ -122,9 +122,10 @@ const FR_BLOG_SLUGS = [
 ] as const;
 
 const EN_BLOG_SLUGS = [
-  "cout-daf-externalise-tarifs-prix-2026",
+  // AUDIT-EN: cout-daf-externalise-tarifs-prix-2026 renamed → fractional-cfo-cost-services-2026
+  "fractional-cfo-cost-services-2026",
   "daf-externalise-vs-daf-salarie",
-  "essentiels-outils-tech-finance",
+  // AUDIT-EN: essentiels-outils-tech-finance removed — no EN page, redirect to FR
   "externalisation-comptable",
   "flux-de-tresorerie",
   // SITEMAP-FIX: removed — next.config redirects /en/…/organiser-sa-direction-financiere → blog index
@@ -132,13 +133,13 @@ const EN_BLOG_SLUGS = [
 ] as const;
 
 const ES_BLOG_SLUGS = [
-  "cout-daf-externalise-tarifs-prix-2026",
+  // AUDIT-ES: cout-daf-externalise-tarifs-prix-2026 renamed → cfo-externo-pymes-precio-2026
+  "cfo-externo-pymes-precio-2026",
   "daf-externalise-vs-daf-salarie",
-  "essentiels-outils-tech-finance",
+  // AUDIT-ES: essentiels-outils-tech-finance + organiser-sa-direction-financiere removed — FR-only
   "externalisation-comptable",
   "flux-de-tresorerie",
   // SITEMAP-FIX: removed — vercel.json redirects /es/…/ia-et-automatisation-… → blog index
-  "organiser-sa-direction-financiere",
   "que-es-fractional-cfo",
 ] as const;
 
@@ -191,7 +192,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
   entries.push(
     ...entryAllLocales(
-      { fr: "/daf-externalise/metier", en: "/fractional-cfo/metier", es: "/externalizacion-daf/metier" },
+      { fr: "/daf-externalise/metier", en: "/fractional-cfo/role", es: "/externalizacion-daf/funciones" },
       D.pillar
     )
   );
@@ -214,7 +215,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
   entries.push(
     ...entryAllLocales(
-      { fr: "/daf-externalise/transition", en: "/fractional-cfo/transition", es: "/externalizacion-daf/transition" },
+      { fr: "/daf-externalise/transition", en: "/fractional-cfo/transition", es: "/externalizacion-daf/transicion" },
       D.pillar
     )
   );
@@ -307,7 +308,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
   entries.push(
     ...entryAllLocales(
-      { fr: "/ressources/glossaire", en: "/ressources/glossaire", es: "/recursos/glossaire" },
+      { fr: "/ressources/glossaire", en: "/ressources/glossaire", es: "/recursos/glosario" },
       D.glossary
     )
   );
@@ -355,14 +356,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Named-clients page (GEO-5 from AI Visibility audit)
   entries.push(
     ...entryAllLocales(
-      { fr: "/clients", en: "/clients", es: "/clients" },
+      { fr: "/clients", en: "/clients", es: "/clientes" },
       D.institutional
     )
   );
 
   // ── Pages institutionnelles ───────────────────────────────────────────────
   entries.push(
-    ...entryAllLocales({ fr: "/a-propos", en: "/a-propos", es: "/quienes-somos" }, D.institutional)
+    ...entryAllLocales({ fr: "/a-propos", en: "/about", es: "/quienes-somos" }, D.institutional)
   );
   entries.push(
     ...entryAllLocales({ fr: "/contact", en: "/contact", es: "/contact" }, D.institutional)
@@ -401,21 +402,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     )
   );
 
-  // Standalone EN Barcelona landing — self-referencing hreflang so Googlebot
-  // doesn't treat this as a hreflang orphan. No FR/ES equivalent page exists.
-  // (The Barcelona cluster daf-externalise-barcelone↔outsourced-cfo-barcelona↔
-  // cfo-externalizado-barcelona already covers FR/ES geo signals.)
-  // SITEMAP-QA (2026-05-19): alternates added.
-  entries.push({
-    url: `${BASE}/en/fractional-cfo-barcelona`,
-    lastModified: D.local,
-    alternates: {
-      languages: {
-        en:          `${BASE}/en/fractional-cfo-barcelona`,
-        "x-default": `${BASE}/en/fractional-cfo-barcelona`,
-      },
-    },
-  });
+  // AUDIT-2026-07-25: /en/fractional-cfo-barcelona removed — 301 redirect to
+  // /en/outsourced-cfo-barcelona (already in the Barcelona cluster above).
 
   // ── Blog articles ─────────────────────────────────────────────────────────
   //
@@ -485,11 +473,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // ── Author pages ──────────────────────────────────────────────────────────
-  // Hreflang cluster: FR /a-propos/<slug>, EN /en/a-propos/<slug>, ES /es/quienes-somos/<slug>.
+  // Hreflang cluster: FR /a-propos/<slug>, EN /en/about/<slug>, ES /es/quienes-somos/<slug>.
   for (const slug of getAuthorSlugs()) {
     entries.push(
       ...entryAllLocales(
-        { fr: `/a-propos/${slug}`, en: `/a-propos/${slug}`, es: `/quienes-somos/${slug}` },
+        { fr: `/a-propos/${slug}`, en: `/about/${slug}`, es: `/quienes-somos/${slug}` },
         D.author
       )
     );
