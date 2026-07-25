@@ -54,7 +54,7 @@ export default function IaFinanceAutomatisationPage() {
       heroImage="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80"
       toc={[
         { id: 'pourquoi-maintenant', label: '1. Pourquoi maintenant' },
-        { id: 'quatre-cas-usage', label: '2. Les 4 cas d'usage qui marchent' },
+        { id: 'quatre-cas-usage', label: "2. Les 4 cas d'usage qui marchent" },
         { id: 'ce-qui-ne-marche-pas', label: '3. Ce qui ne marche pas (encore)' },
         { id: 'feuille-de-route', label: '4. Feuille de route à 90 jours' },
         { id: 'role-daf-externalise', label: '5. Le rôle du DAF externalisé' },
