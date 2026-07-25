@@ -112,9 +112,9 @@ const content: Record<Locale, FundRaisingSupportContent> = {
   },
   en: {
     meta: {
-      title: "Fund-Raising Support for Startups & SMEs | Iter Advisors",
+      title: "Fundraising Support for Startups | Iter Advisors",
       description:
-        "Fund-raising support: financial models, data rooms, pitch deck validation. We've supported 50+ funding rounds. Seed to Series B expertise.",
+        "Financial model, data room, investor deck: we prepare your Series A from A to Z. €100M+ raised by our clients.",
     },
     hero: {
       h1: "Fund-Raising Support for Startups",

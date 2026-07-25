@@ -459,13 +459,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/en/ressources/blog/regimes-fiscaux-france-vs-espagne",
-        destination: "/en/ressources/blog",
-        permanent: true,
-      },
-      {
         source: "/es/ressources/blog/regimes-fiscaux-france-vs-espagne",
-        destination: "/es/recursos/blog",
+        destination: "/es/recursos/blog/regimes-fiscaux-france-vs-espagne",
         permanent: true,
       },
       // Full-slug variant of the depublished AI/automation article (the
