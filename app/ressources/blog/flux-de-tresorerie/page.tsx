@@ -245,6 +245,10 @@ export default function FluxDeTresorerieePage() {
         <li>☐ Revue hebdomadaire avec le DAF/CFO</li>
       </ul>
 
+      <p>
+        Sur la couche IA appliquée au prévisionnel de trésorerie, voir notre guide <a href="/ressources/blog/ia-finance-automatisation-direction-financiere">IA et automatisation de la fonction finance</a>.
+      </p>
+
       <InlineCta
         title="Vous ne maîtrisez pas votre trésorerie ?"
         body="Nos CFOs externalisés implanent un système complet : prévisionnel robuste, optimisation BFR, outils cloud. En 4-8 semaines, vous avez une visibilité 6 mois et 30-60 jours de cash libéré."

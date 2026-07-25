@@ -8,8 +8,8 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "homepage",
     locale: "en",
     path: "/",
-    fallbackTitle: "Fractional CFO for Fast-Growing Startups | Iter Advisors",
-    fallbackDescription: "Need a CFO without the €150K salary? Expert financial direction for fundraising, cash flow & growth. Trusted by 100+ startups. Free consultation available.",
+    fallbackTitle: "Outsourced CFO for Startups in France & Spain | Iter",
+    fallbackDescription: "Fractional CFO services for startups and SMEs in Paris, Barcelona and Toulouse. Senior finance leadership from 2 days/month. Free assessment.",
   });
 }
 

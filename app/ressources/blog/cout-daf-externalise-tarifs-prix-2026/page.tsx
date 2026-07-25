@@ -140,6 +140,10 @@ export default function CoutDafExternalisePage() {
         Ces tarifs sont les tarifs "standard" du marché France. Iter Advisors propose ses DAFs à ces niveaux. Les tarifs peuvent varier selon votre localisation (Île-de-France +10-15 %, Province -5 %), complexité et urgence.
       </Callout>
 
+      <p>
+        À titre de comparaison, un <Link href="/ressources/blog/daf-externalise-vs-daf-interimaire">DAF intérimaire</Link> à temps plein coûte 20 000 à 30 000 € par mois — soit deux à trois fois plus cher. C'est le format adapté aux crises ou remplacements urgents, pas au pilotage récurrent.
+      </p>
+
       <h2 id="tjm-forfait">2. TJM vs forfait mensuel</h2>
       <p>
         Deux modèles de facturation existent :
@@ -157,6 +161,10 @@ export default function CoutDafExternalisePage() {
       </ul>
       <p>
         En forfait, vous payez un peu plus mais c'est prévisible. En TJM, vous pouvez réduire si la charge baisse (ex: après clôture, vous avez besoin de seulement 1j/semaine).
+      </p>
+
+      <p>
+        Le détail des tarifs par rythme journalier (de 2 jours/mois à 3 jours/semaine) est dans notre guide des <Link href="/ressources/blog/daf-part-time-tarifs-missions-2026">tarifs d'un DAF à temps partagé</Link>.
       </p>
 
       <h2 id="par-profil">3. Tarifs par profil et cas d'usage</h2>

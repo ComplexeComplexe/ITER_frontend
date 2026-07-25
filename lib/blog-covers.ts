@@ -51,7 +51,8 @@ export const BLOG_COVERS: Record<string, BlogCover> = {
   "daf-part-time-tarifs-missions-2026": { cover: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=1200&q=80", alt: "Tarifs d'un DAF à temps partagé en 2026" },
   "cfo-externe-role-missions-2026": { cover: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80", alt: "CFO externe en mission dans une PME" },
   "fractional-cfo-cost-services-2026": { cover: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80", alt: "Fractional CFO working with a startup board" },
-  "cfo-externo-pymes-precio-2026": { cover: "https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1200&q=80", alt: "CFO externo para pymes en Barcelona" },
+  "cfo-externo-pymes-precio-2026": { cover: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=1200&q=80", alt: "CFO externo para pymes: funciones y precio en 2026" },
+  "ia-finance-automatisation-direction-financiere": { cover: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80", alt: "Automatisation et IA pour la fonction finance" },
   // ── Articles tuile pastel conservée (carte bleue Iter Advisors) ──────────
   "la-modernisation-du-role-de-cfo": { cover: "/images/blog/covers/la-modernisation-du-role-de-cfo.svg", alt: "Couverture editoriale Iter Advisors — Le CFO moderne, comment le metier a ete reecrit" },
   "les-10-outils-pour-cfos-startup": { cover: "/images/blog/covers/les-10-outils-pour-cfos-startup.svg", alt: "Couverture editoriale Iter Advisors — 10 outils essentiels pour CFO startup, la shortlist du praticien" },

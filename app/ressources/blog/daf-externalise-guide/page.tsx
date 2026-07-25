@@ -368,6 +368,10 @@ export default async function Page() {
         complémentaires (stratégie).
       </p>
 
+      <p>
+        Pour le détail des <a href="/ressources/blog/daf-part-time-tarifs-missions-2026">missions d'un DAF à temps partagé</a> selon le rythme (de 2 jours/mois à 3 jours/semaine), ou pour comprendre quand un <a href="/ressources/blog/daf-externalise-vs-daf-interimaire">DAF intérimaire</a> est plus adapté qu'un externalisé (missions de crise ou de transition), nos articles comparatifs détaillent chaque format.
+      </p>
+
       <InlineCTA
         title="Quel modèle pour votre entreprise ?"
         body="Simulations gratuites : nous analysons votre CA, complexité et objectifs pour proposer la formule idéale."

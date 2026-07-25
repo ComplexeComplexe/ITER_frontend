@@ -92,6 +92,10 @@ export default function ModernisationRoleCfoPage() {
         La digitalisation a libéré 50-60 % du temps des CFOs. Celui qui ne l'a pas fait reste coincé dans l'opérationnel. Celui qui l'a fait devient stratégique.
       </Callout>
 
+      <p>
+        Le métier lui-même s'est fragmenté : salarié à temps plein, <a href="/ressources/blog/daf-externalise-vs-daf-interimaire">externalisé ou intérimaire</a>, chaque format répond à un besoin différent selon la taille et la maturité de l'entreprise.
+      </p>
+
       <h2 id="trois-piliers">2. Les trois piliers du CFO moderne</h2>
       <p>
         <strong>Pilier 1 : Opérationnel excelent</strong> (automatisé)
@@ -171,6 +175,10 @@ export default function ModernisationRoleCfoPage() {
       <Callout type="info" title="CFO + IA">
         Les CFOs qui ne maîtrisent pas l'IA en 2026 seront en retard. L'IA n'élimine pas le CFO, elle l'élève : moins d'exécution, plus de stratégie.
       </Callout>
+
+      <p>
+        Pour aller plus loin sur l'IA appliquée à la fonction finance d'une PME, voir notre guide <a href="/ressources/blog/ia-finance-automatisation-direction-financiere">automatisation et IA pour la direction financière</a>.
+      </p>
 
       <h2 id="esg-reporting">5. ESG et reporting extra-financier</h2>
       <p>

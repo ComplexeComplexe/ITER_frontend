@@ -9,6 +9,12 @@ export const metadata: Metadata = {
     "Guide complet de la comparaison fiscale France-Espagne 2026. IS, TVA, cotisations, régimes spéciaux. Économisez jusqu'à 7 500 €/employé. Audit gratuit.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/regimes-fiscaux-france-vs-espagne",
+    languages: {
+      "fr": "https://www.iteradvisors.com/ressources/blog/regimes-fiscaux-france-vs-espagne",
+      "en": "https://www.iteradvisors.com/en/ressources/blog/regimes-fiscaux-france-vs-espagne",
+      "es": "https://www.iteradvisors.com/es/recursos/blog/regimes-fiscaux-france-vs-espagne",
+      "x-default": "https://www.iteradvisors.com/ressources/blog/regimes-fiscaux-france-vs-espagne",
+    },
   },
   robots: {
     index: true,

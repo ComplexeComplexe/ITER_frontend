@@ -270,9 +270,9 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
     },
     en: {
       meta: {
-        title: "Fractional CFO in Paris | Ile-de-France | Iter Advisors",
+        title: "Outsourced CFO in Paris from 2 Days/Month | Iter",
         description:
-          "Iter Advisors, fractional CFO firm in Paris. Part-time financial management for SMEs and startups in Ile-de-France. 85+ companies supported.",
+          "Senior CFOs for Paris-based startups and SMEs. Reporting, cash flow, fundraising. Starting within 2 weeks.",
       },
       breadcrumbLabel: "Fractional CFO Paris",
       h1: "Fractional CFO in Paris: your part-time CFO in Ile-de-France",

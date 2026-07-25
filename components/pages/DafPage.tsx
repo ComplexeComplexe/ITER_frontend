@@ -11,7 +11,6 @@ import { getFallbackTeamMembers } from "@/lib/content/team";
 import { BOOKING_URL } from "@/lib/navigation";
 import { getDafContent, type FaqRichAnswer, type LongTailQA, type SourceCitation } from "@/lib/content/daf";
 import { faqPageSchema, howToSchema, speakableSchema } from "@/lib/schemas";
-import { TRUSTFOLIO_REVIEWS, TRUSTFOLIO_REVIEW_COUNT, TRUSTFOLIO_RATING } from "@/lib/content/trustfolio-reviews";
 import { renderInlineMarkdownLinks } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -1289,40 +1288,6 @@ export default function DafPage({
                   sameAs: "https://www.linkedin.com/in/rostand/",
                 },
               ],
-              // Review-snippet fix (2026-07-19): aggregateRating + review[]
-              // réintroduits ICI (ProfessionalService = type supporté par Google
-              // pour Review Snippets), remplacent les blocs Service et
-              // FinancialService rejetés par GSC ("Type d'objet non valide pour
-              // le champ <parent_node>", 6 éléments non valides détectés le
-              // 09/07/2026). Source unique de vérité : TRUSTFOLIO_* constants
-              // (rating = 5, reviewCount = 35), plus de valeurs contradictoires
-              // 5/31 vs 5/35 sur la même page. Le site-wide layout Organization
-              // ne porte volontairement PAS d'aggregateRating (cf. app/layout.tsx)
-              // donc pas de collision "multiple aggregate ratings".
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: TRUSTFOLIO_RATING,
-                reviewCount: TRUSTFOLIO_REVIEW_COUNT,
-                bestRating: 5,
-                worstRating: 1,
-              },
-              review: TRUSTFOLIO_REVIEWS.map((r) => ({
-                "@type": "Review",
-                author: {
-                  "@type": "Person",
-                  name: r.name,
-                  jobTitle: r.jobTitle,
-                  worksFor: { "@type": "Organization", name: r.company },
-                },
-                datePublished: r.datePublished,
-                reviewBody: r.reviewBody,
-                reviewRating: {
-                  "@type": "Rating",
-                  ratingValue: 5,
-                  bestRating: 5,
-                  worstRating: 1,
-                },
-              })),
             }),
           }}
         />

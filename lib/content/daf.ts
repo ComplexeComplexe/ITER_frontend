@@ -163,9 +163,9 @@ export const dafContent: Record<Locale, DafContent> = {
       // (page en chute de position 16→23 sur "daf externalisé" ces 6 mois).
       // Meta description reformulée avec "(31 avis)" pour préciser la source
       // du 5/5 et booster le CTR SERP.
-      title: "DAF Externalisé 2026 : missions & tarifs dès 2 000 €/mois | Iter Advisors",
+      title: "DAF externalisé : un CFO senior dès 2 000 €/mois | Iter Advisors",
       description:
-        "Cabinet de DAF externalisé pour PME & startups. 85 clients, 5/5★ (31 avis Trustfolio), 100 M€ levés. Paris · Toulouse · Barcelone. Devis en 24 h.",
+        "Pilotage, trésorerie, levée de fonds : un DAF externalisé opérationnel en 2 semaines. 85 entreprises accompagnées. Diagnostic gratuit.",
     },
     breadcrumbLabel: "DAF Externalisé",
     essential: {
