@@ -119,8 +119,6 @@ const FR_BLOG_SLUGS = [
   "regimes-fiscaux-france-vs-espagne",
   // T8 (2026-06-07) — new article ciblant "coût externalisation comptable"
   "cout-externalisation-comptable-2026",
-  // T#5 (2026-07-13) — article hub comparatif "DAF externalisé vs alternatives"
-  "daf-externalise-vs-alternatives",
 ] as const;
 
 const EN_BLOG_SLUGS = [

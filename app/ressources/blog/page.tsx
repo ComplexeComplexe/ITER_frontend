@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import BlogListingPage from "@/components/pages/BlogListingPage";
 import { getBlogArticles, getCmsNavigation } from "@/lib/strapi";
 import { buildMetadata } from "@/lib/metadata";
@@ -20,7 +21,13 @@ export const metadata: Metadata = buildMetadata({
   },
 });
 
-export default async function Page() {
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const params = await searchParams;
+  if (params.page !== undefined) notFound();
   // Source of truth is the static lib/content/blog-posts.ts (26 articles).
   // Strapi was previously the primary source but only ever returned a
   // 7-article subset, so the listing was silently truncated.

@@ -202,16 +202,7 @@ export default async function Page() {
               </li>
               <li className="flex gap-2.5 text-sm sm:text-base">
                 <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-                <Link
-                  href={`/ressources/blog/${SOURCE_SLUG}`}
-                  className="text-iter-violet hover:underline"
-                >
-                  Article blog : {post.h1}
-                </Link>
-              </li>
-              <li className="flex gap-2.5 text-sm sm:text-base">
-                <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-                <Link href="/ressources/fiscalite/loi-beckham" className="text-iter-violet hover:underline">
+                <Link href="/ressources/fiscalite/beckham-law" className="text-iter-violet hover:underline">
                   Loi Beckham : conditions d&apos;éligibilité et économies d&apos;impôt
                 </Link>
               </li>

@@ -283,8 +283,8 @@ export const dafContent: Record<Locale, DafContent> = {
     whatIs: {
       heading: "Qu'est-ce qu'un DAF externalisé ?",
       content: [
-        "Un **DAF externalisé** (ou **directeur financier externalisé**) est un senior finance qui intègre votre entreprise sans en être salarié. Il assume les mêmes responsabilités qu'un DAF interne : pilotage, trésorerie, reporting, relations investisseurs. La différence ? Un mode flexible : temps partagé, mission ponctuelle ou abonnement mensuel.",
-        "On parle aussi de **Direction financière externalisée**, **directeur financier à temps partagé** ou **fractional CFO** : ce sont des synonymes. Les nuances portent sur le format : temps partagé récurrent, mission ponctuelle ou transition.",
+        "Un **DAF externalisé** (ou directeur financier externalisé) est un senior finance qui intègre votre entreprise sans en être salarié. Il assume les mêmes responsabilités qu'un DAF interne : pilotage, trésorerie, reporting, relations investisseurs. La différence ? Un mode flexible : temps partagé, mission ponctuelle ou abonnement mensuel.",
+        "On parle aussi de direction financière externalisée, directeur financier à temps partagé ou fractional CFO : ce sont des synonymes. Les nuances portent sur le format : temps partagé récurrent, mission ponctuelle ou transition.",
       ],
       subsections: [
         {
@@ -396,7 +396,7 @@ export const dafContent: Record<Locale, DafContent> = {
     pricing: {
       heading: "Quel est le tarif d'un DAF externalisé ? Grille tarifaire 2026",
       content: [
-        "Le tarif journalier moyen (TJM) d'un **DAF externalisé** se situe entre 750 et 1 250 EUR HT selon le niveau de séniorité et la complexité des missions. Chez Iter Advisors, nous proposons trois formules adaptées aux besoins des PME et startups.",
+        "Le tarif journalier moyen (TJM) d'un DAF externalisé se situe entre 750 et 1 250 EUR HT selon le niveau de séniorité et la complexité des missions. Chez Iter Advisors, nous proposons trois formules adaptées aux besoins des PME et startups.",
       ],
     },
     pricingTable: {
@@ -427,7 +427,7 @@ export const dafContent: Record<Locale, DafContent> = {
     forWhom: {
       heading: "DAF externalisé : pour qui et à quel stade ?",
       intro:
-        "Le **DAF externalisé** n'est pas réservé aux grandes entreprises. Quatre profils types tirent le maximum de valeur de cette solution.",
+        "Le DAF externalisé n'est pas réservé aux grandes entreprises. Quatre profils types tirent le maximum de valeur de cette solution.",
       segments: [
         {
           heading: "Startup early-stage (pré-seed à seed)",
@@ -442,7 +442,7 @@ export const dafContent: Record<Locale, DafContent> = {
         {
           heading: "PME en croissance ou en transmission",
           content:
-            "Vous êtes une PME 10–80 personnes, votre comptable suffisait jusqu'ici mais la croissance ou une opération de cession demande une vraie **direction financière externalisée**. Le **DAF externalisé** apporte le pilotage stratégique sans le coût d'un recrutement à temps plein, avec la flexibilité d'ajuster le volume au mois.",
+            "Vous êtes une PME 10–80 personnes, votre comptable suffisait jusqu'ici mais la croissance ou une opération de cession demande une vraie direction financière externalisée. Le DAF externalisé apporte le pilotage stratégique sans le coût d'un recrutement à temps plein, avec la flexibilité d'ajuster le volume au mois.",
         },
         {
           heading: "ETI ou groupe en transformation",
@@ -468,7 +468,7 @@ export const dafContent: Record<Locale, DafContent> = {
     whenToHire: {
       heading: "Quand faire appel à un DAF externalisé ?",
       content: [
-        "Plusieurs situations justifient le recours à un **DAF externalisé**. Voici les signaux les plus fréquents :",
+        "Plusieurs situations justifient le recours à un DAF externalisé. Voici les signaux les plus fréquents :",
         "Vous préparez une [levée de fonds](/services/accompagnement-levee-de-fond) : vous avez besoin d'un business plan solide, d'une modélisation financière rigoureuse et d'un interlocuteur crédible face aux investisseurs.",
         "Votre croissance s'accélère : le chiffre d'affaires dépasse 500 K EUR et la gestion financière artisanale ne suffit plus. Si vous avez un besoin de 2 à 5 jours par mois sur la durée, le [DAF à temps partagé](/daf-externalise/temps-partage) est la formule la plus adaptée.",
         "Vous recrutez massivement : les charges de personnel explosent et vous devez anticiper financièrement chaque recrutement pour éviter les tensions de trésorerie.",
@@ -480,7 +480,7 @@ export const dafContent: Record<Locale, DafContent> = {
     profiles: {
       heading: "Quels profils : DAF à temps partagé, directeur financier de transition et management de transition finance ?",
       content: [
-        "Le **DAF externalisé** n'est pas un profil unique. Selon votre stade de développement et vos enjeux, le profil idéal varie :",
+        "Le DAF externalisé n'est pas un profil unique. Selon votre stade de développement et vos enjeux, le profil idéal varie :",
         "**DAF à temps partagé** : pour une intervention récurrente de quelques jours par mois, sur la durée. C'est notre offre la plus demandée — voir [DAF à temps partagé](/daf-externalise/temps-partage). Profil typique : 10–15 ans d'expérience, capable de jongler entre 3–5 entreprises simultanément.",
         "**DAF stratégique** : pour les entreprises en phase de croissance qui ont besoin de piloter la rentabilité, préparer des [levées de fonds](/services/accompagnement-levee-de-fond) et accompagner les décisions du COMEX. Profil typique : 15+ ans d'expérience, passage en direction financière de scale-up ou ETI.",
         "**Management de transition finance (DAF de transition)** : pour les situations d'urgence (départ du DAF, crise de trésorerie, restructuration, intégration post-M&A). Intervention intensive sur 3–12 mois pour stabiliser la situation — voir notre offre [DAF de transition](/daf-externalise/transition). Profil typique : 20+ ans d'expérience, habitué aux environnements complexes.",

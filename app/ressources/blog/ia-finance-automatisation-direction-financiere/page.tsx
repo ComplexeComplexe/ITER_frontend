@@ -59,7 +59,6 @@ export default function IaFinanceAutomatisationPage() {
         { id: 'feuille-de-route', label: '4. Feuille de route à 90 jours' },
         { id: 'role-daf-externalise', label: '5. Le rôle du DAF externalisé' },
       ]}
-      tldr="L'IA peut déjà diviser par trois le temps de clôture mensuelle d'une PME. Les quatre cas d'usage mûrs : clôture automatisée, facturation fournisseurs, prévisionnel de trésorerie assisté, reporting. Budget réaliste : 300–800 €/mois d'outils, zéro développement. La règle d'or : l'IA traite, l'humain décide."
       faqItems={[
         {
           question: "L'IA peut-elle remplacer un expert-comptable ?",
@@ -67,7 +66,7 @@ export default function IaFinanceAutomatisationPage() {
             "Non. Elle automatise la saisie et le rapprochement bancaire, mais la production légale des comptes, les déclarations et le conseil fiscal restent du ressort de l'expert-comptable. Les cabinets qui automatisent le plus sont d'ailleurs ceux qui facturent le mieux leur conseil.",
         },
         {
-          question: 'Quel est le premier cas d'usage à automatiser dans une PME ?',
+          question: "Quel est le premier cas d'usage à automatiser dans une PME ?",
           answer:
             "La facturation fournisseurs, dans neuf cas sur dix : c'est le flux le plus volumineux, le plus répétitif et le plus simple à mesurer. Le taux de traitement sans intervention humaine dépasse 70 % sur un flux standard.",
         },
@@ -101,7 +100,7 @@ export default function IaFinanceAutomatisationPage() {
         {
           url: '/ressources/blog/flux-de-tresorerie',
           category: 'Trésorerie',
-          title: 'Flux de trésorerie : définition, calcul et importance pour l'entreprise',
+          title: "Flux de trésorerie : définition, calcul et importance pour l'entreprise",
         },
       ]}
     >

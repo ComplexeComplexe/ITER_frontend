@@ -197,11 +197,20 @@ export default async function Page() {
               </li>
               <li className="flex gap-2.5 text-sm sm:text-base">
                 <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-                <Link
-                  href={`/ressources/blog/${SOURCE_SLUG}`}
-                  className="text-iter-violet hover:underline"
-                >
-                  Article blog : {post.h1}
+                <Link href="/ressources/fiscalite/residence-fiscale-france-espagne" className="text-iter-violet hover:underline">
+                  Résidence fiscale France-Espagne : les critères de détermination
+                </Link>
+              </li>
+              <li className="flex gap-2.5 text-sm sm:text-base">
+                <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
+                <Link href="/ressources/fiscalite/modelo-720" className="text-iter-violet hover:underline">
+                  Modelo 720 : obligations déclaratives pour les biens détenus en France
+                </Link>
+              </li>
+              <li className="flex gap-2.5 text-sm sm:text-base">
+                <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
+                <Link href="/daf-externalise-barcelone" className="text-iter-violet hover:underline">
+                  DAF externalisé à Barcelone : accompagnement CFO pour dirigeants impatriés
                 </Link>
               </li>
             </ul>

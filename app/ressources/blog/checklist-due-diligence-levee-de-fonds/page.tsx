@@ -75,7 +75,6 @@ export default function ChecklistDueDiligencePage() {
           answer: "Les investisseurs vérifient en priorité : (1) la qualité du MRR/ARR et son taux de croissance (fiabilité du chiffre d'affaires récurrent) ; (2) le churn rate et la rétention nette ; (3) le burn rate et le runway restant ; (4) les marges brutes et leur évolution ; (5) la cohérence entre le compte de résultat et les flux de trésorerie (détection des manipulations comptables) ; (6) la cap table et la structure de gouvernance. Tout écart entre le pitch deck et les chiffres réels est rédhibitoire.",
         },
       ]}
-      tldr="La due diligence financière est l'audit le plus critique d'une levée. Préparation : documents financiers (3 ans), cap table, contrats, prévisions, comptes de résultat. Dataroom bien organisée = gain 2-3 semaines. Erreurs à éviter : docs manquants, prévisions pas réalistes, antériorité comptable &lt; 2 ans."
       relatedArticles={[
         {
           url: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",

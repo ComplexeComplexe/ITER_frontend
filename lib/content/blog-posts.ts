@@ -3126,18 +3126,22 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       publishedDate: "2026-05-31",
       author: "Sébastien Doat",
       category: "fiscalite-internationale",
-      htmlContent: `<p>Le "Régime Spécial des Travailleurs Déplacés", plus connu sous le nom de Loi Beckham, est un dispositif fiscal extrêmement attractif conçu pour attirer les talents étrangers en Espagne. Il permet aux nouveaux résidents d'être imposés comme des non-résidents pendant l'année de leur arrivée et les cinq années suivantes (soit 6 ans au total).</p>
-<h2>Le principal avantage : un taux fixe à 24%</h2>
-<p>Sous le régime général de l'IRPF, les revenus du travail sont imposés selon un barème progressif pouvant atteindre 47%. Avec la Loi Beckham, vos revenus du travail de source espagnole sont imposés à un <strong>taux fixe de 24 % jusqu'à 600 000 €</strong>. Au-delà de ce montant, le taux passe à 47 %.</p>
-<p>De plus, seuls les revenus générés en Espagne sont imposables (à l'exception des revenus du travail qui sont imposés mondialement). Vos revenus du capital (dividendes, intérêts) de source étrangère ne sont pas soumis à l'impôt espagnol sous ce régime.</p>
+      htmlContent: `<p>Le "Régime Spécial des Travailleurs Déplacés", plus connu sous le nom de Loi Beckham, est un dispositif fiscal extrêmement attractif conçu pour attirer les talents étrangers en Espagne. Il permet aux nouveaux résidents d'être imposés comme des non-résidents pendant l'année de leur arrivée et les cinq années suivantes (soit <strong>6 ans au total</strong>).</p>
+<h2>Le principal avantage : un taux fixe à 24 %</h2>
+<p>Sous le régime général de l'IRPF, les revenus du travail sont imposés selon un barème progressif pouvant atteindre <strong>47 %</strong>. Avec la Loi Beckham, vos revenus du travail de source espagnole sont imposés à un <strong>taux fixe de 24 % jusqu'à 600 000 €</strong>. Au-delà de ce montant, le taux passe à 47 %.</p>
+<p>De plus, seuls les revenus générés en Espagne sont imposables. Vos revenus du capital (dividendes, intérêts) de source étrangère ne sont pas soumis à l'impôt espagnol sous ce régime — un avantage considérable pour les dirigeants qui conservent des investissements en France.</p>
 <h2>Conditions d'éligibilité en 2026</h2>
-<p>Pour bénéficier de ce régime, vous devez remplir plusieurs conditions strictes :</p>
+<p>Pour bénéficier de ce régime, vous devez remplir plusieurs conditions :</p>
 <ul>
-<li>Ne pas avoir été résident fiscal en Espagne au cours des <strong>5 années fiscales précédentes</strong> (ce délai était de 10 ans avant la récente réforme).</li>
-<li>Le déplacement en Espagne doit être justifié par un contrat de travail, une mutation intra-groupe, ou l'acquisition du statut d'administrateur d'une société (sous certaines conditions de participation).</li>
-<li>Depuis la loi sur les startups, les télétravailleurs internationaux (Digital Nomads) disposant du visa approprié sont également éligibles.</li>
+<li>Ne pas avoir été <a href="/ressources/fiscalite/residence-fiscale-france-espagne">résident fiscal</a> en Espagne au cours des <strong>5 années fiscales précédentes</strong> (ce délai était de 10 ans avant la réforme).</li>
+<li>Le déplacement en Espagne doit être justifié par un contrat de travail, une mutation intra-groupe, ou l'acquisition du statut d'administrateur d'une société.</li>
+<li>Depuis la loi sur les startups (2023), les télétravailleurs internationaux (Digital Nomads) disposant du visa approprié sont également éligibles.</li>
 </ul>
-<p><em>Attention : La demande doit être déposée auprès de l'administration fiscale dans un délai maximum de 6 mois à compter de la date de début de l'activité figurant sur l'inscription à la Sécurité Sociale espagnole.</em></p>`,
+<p><em>Délai impératif : la demande doit être déposée dans un délai maximum de <strong>6 mois</strong> à compter de la date d'inscription à la Sécurité Sociale espagnole. Ce délai est non négociable.</em></p>
+<h2>Obligations déclaratives connexes</h2>
+<p>Si vous détenez des comptes bancaires, valeurs mobilières ou biens immobiliers en France d'une valeur supérieure à <strong>50 000 €</strong>, vous êtes tenu de les déclarer via le <a href="/ressources/fiscalite/modelo-720">Modelo 720</a> chaque année. Cette déclaration informative s'impose à tout résident fiscal espagnol, y compris sous le régime Beckham. L'omission expose à des pénalités.</p>
+<h2>Accompagnement pour les dirigeants qui s'installent à Barcelone</h2>
+<p>La structuration fiscal-sociale d'un dirigeant sous Loi Beckham — résidence, statut d'administrateur, Modelo 720, convention franco-espagnole — est un sujet que notre équipe de <a href="/daf-externalise-barcelone">DAF externalisés à Barcelone</a> traite régulièrement. Un diagnostic de 30 minutes suffit généralement pour clarifier votre situation spécifique.</p>`,
       content: [],
     },
 
@@ -3157,17 +3161,33 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       publishedDate: "2026-05-31",
       author: "Florent Greth",
       category: "fiscalite-internationale",
-      htmlContent: `<p>Lorsqu'un contribuable perçoit des revenus dans un pays (État source) mais réside dans un autre (État de résidence), le risque d'être imposé deux fois sur le même revenu est réel. Pour éviter cette situation pénalisante, la France et l'Espagne ont signé une convention fiscale bilatérale le 10 octobre 1995.</p>
+      htmlContent: `<p>Lorsqu'un contribuable perçoit des revenus dans un pays (État source) mais réside dans un autre (État de résidence), le risque d'être imposé deux fois sur le même revenu est réel. Pour éviter cette situation pénalisante, la France et l'Espagne ont signé une convention fiscale bilatérale le <strong>10 octobre 1995</strong>. Elle s'applique à l'impôt sur le revenu, à l'IS et à la fortune.</p>
 <h2>Le principe de la résidence fiscale</h2>
-<p>La convention établit que c'est la résidence fiscale qui détermine quel État a le droit d'imposer vos revenus mondiaux. Si vous êtes résident fiscal en Espagne, vous devez déclarer l'ensemble de vos revenus (français et espagnols) à l'Hacienda. L'Espagne vous accordera ensuite un mécanisme pour neutraliser l'impôt déjà payé en France.</p>
+<p>La convention établit que c'est la <a href="/ressources/fiscalite/residence-fiscale-france-espagne">résidence fiscale</a> qui détermine quel État a le droit d'imposer vos revenus mondiaux. Si vous êtes résident fiscal en Espagne, vous devez déclarer l'ensemble de vos revenus (français et espagnols) à l'Hacienda. L'Espagne vous accordera ensuite un mécanisme pour neutraliser l'impôt déjà payé en France.</p>
+<p>La résidence fiscale espagnole se détermine selon trois critères alternatifs : présence sur le territoire pendant plus de <strong>183 jours</strong> dans l'année civile, centre d'intérêts économiques en Espagne (principal lieu de travail ou d'activité), ou centre d'intérêts vitaux (famille, logement principal). Un seul critère suffit pour être considéré résident fiscal espagnol.</p>
 <h2>Les deux méthodes pour éliminer la double imposition</h2>
 <p>Selon la nature du revenu, la convention franco-espagnole prévoit deux méthodes distinctes :</p>
-<h3>1. La méthode de l'imputation (Crédit d'impôt)</h3>
-<p>C'est la méthode la plus courante (applicable notamment aux dividendes, intérêts et redevances). L'Espagne calcule l'impôt sur votre revenu global, puis déduit de cet impôt le montant que vous avez déjà payé en France.<br>
-<em>Exemple : Si la France a prélevé 15% à la source sur vos dividendes, l'Espagne vous accordera un crédit d'impôt équivalent, dans la limite de l'impôt espagnol correspondant à ce revenu.</em></p>
+<h3>1. La méthode de l'imputation (crédit d'impôt)</h3>
+<p>C'est la méthode la plus courante, applicable notamment aux dividendes, intérêts et redevances. L'Espagne calcule l'impôt sur votre revenu global, puis déduit de cet impôt le montant que vous avez déjà payé en France, dans la limite de l'impôt espagnol correspondant à ce revenu.</p>
+<p>Exemple chiffré : si la France a prélevé <strong>15 % à la source</strong> sur vos dividendes et que l'IRPF espagnol correspondant est de <strong>19 %</strong>, l'Espagne vous accordera un crédit de <strong>15 %</strong> — vous ne payez plus que la différence de 4 % à l'Hacienda. Si le taux français est égal ou supérieur au taux espagnol, le crédit couvre la totalité : vous n'avez rien de plus à payer en Espagne.</p>
 <h3>2. La méthode de l'exemption avec progressivité</h3>
-<p>Applicable notamment aux revenus immobiliers de source française ou aux pensions de retraite de la fonction publique française. Ces revenus ne sont imposables qu'en France. Cependant, l'Espagne exige que vous les déclariez : ils ne seront pas taxés directement, mais ils seront pris en compte pour déterminer le taux d'imposition applicable à vos autres revenus espagnols (c'est ce qu'on appelle le taux effectif).</p>
-<p><em>Note pratique : Côté français, pour déclarer des revenus de source étrangère tout en évitant la double imposition, il faut utiliser le formulaire spécifique 2047 en complément de la déclaration classique 2042.</em></p>`,
+<p>Applicable notamment aux revenus immobiliers de source française ou aux pensions de retraite de la fonction publique française. Ces revenus ne sont imposables <strong>qu'en France</strong>. Cependant, l'Espagne exige que vous les déclariez : ils ne seront pas taxés directement, mais ils seront pris en compte pour déterminer le taux d'imposition applicable à vos autres revenus espagnols (c'est ce qu'on appelle le taux effectif).</p>
+<p>Concrètement : un loyer français de <strong>15 000 €/an</strong> ne sera pas imposé en Espagne, mais il pourra faire monter votre taux d'imposition de <strong>24 % à 27 %</strong> sur vos revenus espagnols. L'impact varie fortement selon votre niveau de revenus total.</p>
+<h2>Taux retenus à la source sur les revenus transfrontaliers</h2>
+<p>La convention fixe des taux maximaux de retenue à la source pour les flux entre les deux pays :</p>
+<ul>
+<li><strong>Dividendes</strong> : retenue limitée à <strong>15 %</strong> (5 % si la société bénéficiaire détient plus de 25 % du capital)</li>
+<li><strong>Intérêts</strong> : retenue limitée à <strong>10 %</strong></li>
+<li><strong>Redevances</strong> (licences, brevets) : retenue limitée à <strong>5 %</strong></li>
+</ul>
+<p>Ces taux ne peuvent être prélevés que par l'État source ; si le taux interne de cet État est inférieur, c'est le taux interne qui s'applique.</p>
+<h2>Le Modelo 720 : obligation déclarative en Espagne</h2>
+<p>Si vous résidez en Espagne et détenez des biens ou comptes bancaires en France d'une valeur supérieure à <strong>50 000 €</strong>, vous êtes tenu de les déclarer via le <a href="/ressources/fiscalite/modelo-720">Modelo 720</a>. Cette déclaration informative (non imposable en elle-même) recense vos comptes bancaires, valeurs mobilières et biens immobiliers détenus à l'étranger. Le non-respect de cette obligation entraînait historiquement des amendes très élevées — la CJUE les a jugées disproportionnées en 2022, mais l'obligation déclarative reste en vigueur.</p>
+<h2>Le régime Beckham : une alternative fiscale pour les impatriés</h2>
+<p>Pour les personnes qui s'installent en Espagne après avoir résidé à l'étranger pendant au moins 5 ans, le <a href="/ressources/fiscalite/beckham-law">régime des impatriés (loi Beckham)</a> constitue une alternative radicalement différente à la convention classique. Plutôt que d'appliquer le barème progressif de l'IRPF (qui monte jusqu'à <strong>47 %</strong>), le régime Beckham plafonne l'imposition à un taux forfaitaire de <strong>24 % sur les revenus de source espagnole jusqu'à 600 000 €</strong>, pendant 6 ans.</p>
+<p>Ce régime est totalement distinct de la convention de double imposition franco-espagnole : les revenus de source française restent imposables en France, les revenus de source espagnole sont taxés à 24 % sous Beckham. L'articulation des deux mécanismes — convention + Beckham — peut générer une optimisation significative pour les dirigeants et cadres s'installant à Barcelone ou Madrid.</p>
+<h2>Note pratique sur les formulaires</h2>
+<p>Côté français, pour déclarer des revenus de source étrangère tout en évitant la double imposition, il faut utiliser le formulaire <strong>2047</strong> en complément de la déclaration classique 2042. Côté espagnol, la déclaration annuelle de l'IRPF (formulaire 100) prend en compte les crédits d'impôt de la convention. Si vous gérez une activité transfrontalière depuis Barcelone ou San Sebastián, notre équipe de <a href="/daf-externalise-barcelone">DAF externalisés à Barcelone</a> accompagne régulièrement des dirigeants dans la structuration de ce type de situation.</p>`,
       content: [],
     },
 
@@ -3276,6 +3296,78 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       publishedDate: "2026-07-24",
       category: "CFO externalisé",
       htmlContent: `<p>Le CFO externe assure la direction financière de votre entreprise sans contrat à durée indéterminée. À mi-chemin entre le consultant et le directeur financier salarié, il intervient sur des missions définies : pilotage de trésorerie, préparation de levée, structuration financière. Ce guide complet explique son rôle, ses missions types et les situations où y recourir en 2026.</p>`,
+      content: [],
+    },
+
+    "levee-de-fonds-guide": {
+      meta: {
+        title: "Guide Levée Fonds | Iter Advisors",
+        description: "Guide complet levée de fonds. Préparation comptable, due diligence, documentation, valorisation. Iter Advisors a assisté startups à lever +100M€.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Levée de fonds : préparation financière et juridique 2026",
+      publishedDate: "2026-05-01",
+      author: "Benjamin Ziza",
+      category: "Financement",
+      content: [],
+    },
+
+    "daf-externalise-guide": {
+      meta: {
+        title: "Guide DAF externalisé | Iter Advisors",
+        description: "Guide complet du DAF externalisé. Missions, tarifs (à partir de 2 000 €/mois), profils, secteurs. +85 entreprises aidées, +100 M€ levés. Devis gratuit.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "DAF externalisé : guide complet, tarifs et cas client 2026",
+      publishedDate: "2026-05-01",
+      author: "Benjamin Ziza",
+      category: "DAF externalisé",
+      content: [],
+    },
+
+    "ia-et-automatisation-des-taches-repetitives": {
+      meta: {
+        title: "IA et automatisation financière | Iter Advisors",
+        description: "Découvrez comment l'IA et l'automatisation libèrent 30-40 % du temps de vos équipes finance. Guide pratique avec cas d'usage et outils par Iter Advisors.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "IA et automatisation : gagner 30-40 % de temps dans les tâches répétitives",
+      publishedDate: "2026-05-01",
+      author: "Benjamin Ziza",
+      category: "Digitalisation",
+      content: [],
+    },
+
+    "cout-externalisation-comptable-2026": {
+      meta: {
+        title: "Coût externalisation comptable 2026 : tarifs PME | Iter Advisors",
+        description: "Combien coûte l'externalisation comptable en 2026 ? Grille tarifaire par taille d'entreprise + comparatif des 4 modèles disponibles. FAQ + ROI.",
+      },
+      breadcrumbs: {
+        resourcesLabel: "Ressources",
+        resourcesHref: "/ressources",
+        blogLabel: "Blog",
+        blogHref: "/ressources/blog",
+      },
+      h1: "Coût de l'externalisation comptable en 2026 : tarifs et comparatif",
+      publishedDate: "2026-05-01",
+      author: "Benjamin Ziza",
+      category: "Tarifs",
       content: [],
     },
 

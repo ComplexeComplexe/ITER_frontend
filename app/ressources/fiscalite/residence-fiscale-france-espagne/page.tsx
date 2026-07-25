@@ -177,8 +177,9 @@ export default async function Page() {
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               Même si vous passez moins de 183 jours en Espagne, vous y serez
-              résident fiscal si le centre principal ou la base de vos activités
-              économiques s&apos;y trouve. Par exemple, si la majorité de vos
+              résident fiscal si{" "}
+              <strong className="text-foreground">le centre principal ou la base de vos activités économiques</strong>
+              {" "}s&apos;y trouve. Par exemple, si la majorité de vos
               revenus proviennent d&apos;une activité exercée en Espagne ou si
               la majorité de votre patrimoine y est située.
             </p>
@@ -190,9 +191,9 @@ export default async function Page() {
               Critère 3 : le centre des intérêts vitaux (foyer familial)
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              L&apos;Espagne présume que vous êtes résident fiscal si votre
-              conjoint(e) non séparé(e) légalement et/ou vos enfants mineurs à
-              charge résident habituellement en Espagne. C&apos;est une
+              L&apos;Espagne présume que vous êtes résident fiscal si{" "}
+              <strong className="text-foreground">votre conjoint(e) non séparé(e) légalement et/ou vos enfants mineurs à charge</strong>
+              {" "}(votre <strong className="text-foreground">foyer familial</strong>) résident habituellement en Espagne. C&apos;est une
               présomption qui peut être renversée, mais la charge de la preuve
               vous incombe.
             </p>
