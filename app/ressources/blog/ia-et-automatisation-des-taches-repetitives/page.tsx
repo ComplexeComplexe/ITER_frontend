@@ -67,6 +67,10 @@ export default function IaAutomatisationFinancePage() {
         },
       ]}
     >
+      <p>
+        Cet article s'inscrit dans notre guide complet sur <a href="/ressources/blog/ia-finance-automatisation-direction-financiere">l'automatisation de la fonction finance</a> : pour une vue d'ensemble des quatre cas d'usage prioritaires et de la feuille de route à 90 jours, commencez par le guide pilier.
+      </p>
+
       <h2 id="pourquoi-ia-maintenant">1. Pourquoi l'IA en finance, maintenant ?</h2>
       <p>
         L'IA et l'automatisation ne sont plus des buzzwords. En 2026, elles deviennent des attentes standards pour une finance opérationnelle efficace. Trois raisons majeures :

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=1200&q=80",
         width: 1200,
         height: 630,
       },
@@ -47,7 +47,7 @@ export default function CfoExternoPymesPrecio2026Page() {
       }}
       readingTime={6}
       dateModified="2026-07-24"
-      heroImage="https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1200&q=80"
+      heroImage="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=1200&q=80"
       toc={[
         { id: "que-es", label: "1. Qué es un CFO externo" },
         { id: "funciones", label: "2. Sus funciones" },

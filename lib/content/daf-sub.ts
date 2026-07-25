@@ -103,9 +103,9 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         // T#2 (2026-07-13) — Title recentré sur l'intent exclusif "DAF à
         // temps partagé" (retrait "Tarifs" qui cannibalise /tarifs) +
         // fourchette jours pour signal transactionnel dès le SERP.
-        title: "DAF à temps partagé : directeur financier 2-8 j/mois",
+        title: "DAF à temps partagé : missions et tarifs 2026",
         description:
-          "DAF à temps partagé pour PME et startups : un directeur financier senior 2 à 8 jours/mois. 85 clients accompagnés, note 5/5. Devis en 24 h.",
+          "Un directeur financier à temps partagé, de 2 jours/mois à 3 jours/semaine. Missions, prix réels, démarrage en 2 semaines.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
@@ -198,9 +198,9 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         // en pos 18 sur 3 441 impressions sur "daf de transition" (0
         // conversion). Ajout de la variante lexicale pour capter aussi
         // "management de transition finance" recherchée par les DRH/CEO.
-        title: "DAF de transition en 2026 : urgence et flexibilité | Iter Advisors",
+        title: "DAF de transition : un CFO opérationnel sous 15 jours | Iter Advisors",
         description:
-          "DAF de transition & management de transition finance : intervention à temps plein en 48-72 h pour vacance de poste, crise de trésorerie, restructuration ou levée. TJM 800-1 500 € HT.",
+          "Remplacement, crise, restructuration : un DAF de transition senior prend le poste en 15 jours. Missions de 3 à 12 mois.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
@@ -358,8 +358,8 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         // rich snippets sur "tarif daf externalisé" (pos 10,6 GSC).
         // Le blog cout-daf-externalise-tarifs-prix-2026 capte l'informationnel,
         // cette page capte le transactionnel (grille officielle + devis).
-        title: "Tarifs Direction Financière Externalisée 2026 : 2 000-8 000 €/mois | Iter Advisors",
-        description: "Grille tarifaire officielle 2026 : DAF externalisé de 2 000 à 8 000 € HT/mois selon la formule. 85 clients, 5/5 Trustfolio. Devis en 24 h.",
+        title: "Tarifs DAF externalisé 2026 : prix par jour et par mois | Iter Advisors",
+        description: "De 1 500 €/mois (1 jour) à 8 000 € (temps plein) : la grille complète des tarifs d'un DAF externalisé selon votre profil. Devis en 48 h.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",

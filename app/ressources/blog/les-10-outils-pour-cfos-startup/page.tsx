@@ -242,6 +242,10 @@ export default function Outils10CfosStartupPage() {
         },
       ]} />
 
+      <p>
+        Nous avons consolidé le sujet dans notre guide complet <a href="/ressources/blog/ia-finance-automatisation-direction-financiere">IA et automatisation de la fonction finance</a> : les quatre cas d'usage qui marchent vraiment, la feuille de route à 90 jours et le budget réaliste pour une PME.
+      </p>
+
       <h2 id="criteres-selection">6. Critères de sélection d'un outil</h2>
       <p>
         Avant de vous engager sur 1-2 ans, posez-vous 3 questions :

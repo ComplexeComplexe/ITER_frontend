@@ -190,6 +190,10 @@ export default function DafExternaliseVsSalariePage() {
         },
       ]} />
 
+      <p>
+        Il reste une troisième option, souvent confondue avec l'externalisation : le DAF intérimaire, qui intervient à temps plein pour une mission courte (3 à 18 mois). Nous le comparons en détail dans notre article <Link href="/ressources/blog/daf-externalise-vs-daf-interimaire">DAF externalisé ou DAF intérimaire : lequel choisir</Link>.
+      </p>
+
       <h2 id="daf-salarie">3. DAF salarié : avantages et inconvénients</h2>
       <h3>✅ Avantages</h3>
       <ul>
@@ -212,7 +216,7 @@ export default function DafExternaliseVsSalariePage() {
       <h2 id="daf-externalise">4. DAF externalisé : avantages et inconvénients</h2>
       <h3>✅ Avantages</h3>
       <ul>
-        <li><strong>Coût maîtrisé et flexible</strong> : Vous payez à la journée/mois. Si la charge augmente → +1 jour. Si elle baisse → -1 jour.</li>
+        <li><strong>Coût maîtrisé et flexible</strong> : Vous payez à la journée/mois. Si la charge augmente → +1 jour. Si elle baisse → -1 jour. Pour le détail des tarifs par rythme, voir notre guide des <Link href="/ressources/blog/daf-part-time-tarifs-missions-2026">tarifs d'un DAF à temps partagé</Link>.</li>
         <li><strong>Séniorité garantie</strong> : 15-20 ans d'expérience, certifications, réseau</li>
         <li><strong>Zéro risque recrutement/départ</strong> : Si votre DAF part, il est remplacé par le cabinet en 48h</li>
         <li><strong>Expertise multi-métier</strong> : Voit 100+ entreprises/an, benchmarks, best practices</li>
