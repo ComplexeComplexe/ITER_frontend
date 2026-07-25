@@ -76,14 +76,36 @@ export default function Outils10CfosStartupPage() {
       <p>
         La fondation de toute fonction finance. Une startup qui gère encore sa comptabilité sous Excel dépense en moyenne deux journées par mois en ressaisies et rapprochements — autant d'heures qui ne vont pas au produit ni aux ventes.
       </p>
-      <ProseTable
-        headers={["Outil", "Rôle principal", "Prix 2026", "Pour qui"]}
-        rows={[
-          ["Pennylane", "Comptabilité cloud, OCR factures, rapprochement bancaire automatique", "50–150 €/mois", "Startups FR, PME"],
-          ["Dext", "Extraction et OCR de reçus, intégration Pennylane / Xero", "80–200 €/mois", "Complément comptabilité"],
-          ["Xero", "Comptabilité internationale, 3 000+ intégrations", "40–100 €/mois", "Scale-ups à l'international"],
-        ]}
-      />
+      <ProseTable>
+        <thead>
+          <tr>
+            <th>Outil</th>
+            <th>Rôle principal</th>
+            <th>Prix 2026</th>
+            <th>Pour qui</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pennylane</td>
+            <td>Comptabilité cloud, OCR factures, rapprochement bancaire automatique</td>
+            <td>50–150 €/mois</td>
+            <td>Startups FR, PME</td>
+          </tr>
+          <tr>
+            <td>Dext</td>
+            <td>Extraction et OCR de reçus, intégration Pennylane / Xero</td>
+            <td>80–200 €/mois</td>
+            <td>Complément comptabilité</td>
+          </tr>
+          <tr>
+            <td>Xero</td>
+            <td>Comptabilité internationale, 3 000+ intégrations</td>
+            <td>40–100 €/mois</td>
+            <td>Scale-ups à l'international</td>
+          </tr>
+        </tbody>
+      </ProseTable>
       <p>
         Pennylane est l'outil que nous recommandons en premier chez la majorité de nos clients français : natif cloud, API solide, rapprochement bancaire intégré. Dext vient en complément pour automatiser la lecture des flux fournisseurs. Xero est préférable dès lors que la startup a des entités ou des clients hors de France.
       </p>
@@ -92,13 +114,30 @@ export default function Outils10CfosStartupPage() {
       <p>
         La trésorerie est la mesure la plus concrète de la santé d'une startup. Un outil dédié donne 6 mois de visibilité sur les flux entrants et sortants — c'est ce qui transforme une surprise en décision anticipée.
       </p>
-      <ProseTable
-        headers={["Outil", "Rôle principal", "Prix 2026", "Pour qui"]}
-        rows={[
-          ["Agicap", "Centralisation comptes, prévisions assistées, alertes de solde", "200–400 €/mois", "PME et scale-ups à partir de Series A"],
-          ["Fygr", "Prévisions de trésorerie, interface simplifiée", "99–299 €/mois", "Startups early-stage, structure légère"],
-        ]}
-      />
+      <ProseTable>
+        <thead>
+          <tr>
+            <th>Outil</th>
+            <th>Rôle principal</th>
+            <th>Prix 2026</th>
+            <th>Pour qui</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Agicap</td>
+            <td>Centralisation comptes, prévisions assistées, alertes de solde</td>
+            <td>200–400 €/mois</td>
+            <td>PME et scale-ups à partir de Series A</td>
+          </tr>
+          <tr>
+            <td>Fygr</td>
+            <td>Prévisions de trésorerie, interface simplifiée</td>
+            <td>99–299 €/mois</td>
+            <td>Startups early-stage, structure légère</td>
+          </tr>
+        </tbody>
+      </ProseTable>
       <p>
         Agicap s'est imposé comme le standard chez les scale-ups françaises grâce à la centralisation multi-banque et aux alertes automatisées. Fygr répond au même besoin pour une structure plus légère avec un budget plus serré.
       </p>
@@ -107,36 +146,93 @@ export default function Outils10CfosStartupPage() {
       <p>
         Une fois les données fiabilisées, il faut les présenter aux fondateurs, au board et aux investisseurs. Un tableau de bord mensuel produit en moins d'une heure, c'est le signe d'une finance mature.
       </p>
-      <ProseTable
-        headers={["Outil", "Rôle principal", "Prix 2026", "Pour qui"]}
-        rows={[
-          ["Power BI", "Dashboards interactifs, connexion Excel / Azure / ERP", "10–50 €/mois/utilisateur", "Scale-ups avec analyste ou DAF"],
-          ["Finthesis", "Reporting P&L, bilan, KPIs — sans développeur", "200–500 €/mois", "PME et startups sans ressource data"],
-          ["Looker Studio", "Visualisation gratuite, intégration Google Sheets", "Gratuit", "Démarrage rapide, budget serré"],
-        ]}
-      />
+      <ProseTable>
+        <thead>
+          <tr>
+            <th>Outil</th>
+            <th>Rôle principal</th>
+            <th>Prix 2026</th>
+            <th>Pour qui</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Power BI</td>
+            <td>Dashboards interactifs, connexion Excel / Azure / ERP</td>
+            <td>10–50 €/mois/utilisateur</td>
+            <td>Scale-ups avec analyste ou DAF</td>
+          </tr>
+          <tr>
+            <td>Finthesis</td>
+            <td>Reporting P&L, bilan, KPIs — sans développeur</td>
+            <td>200–500 €/mois</td>
+            <td>PME et startups sans ressource data</td>
+          </tr>
+          <tr>
+            <td>Looker Studio</td>
+            <td>Visualisation gratuite, intégration Google Sheets</td>
+            <td>Gratuit</td>
+            <td>Démarrage rapide, budget serré</td>
+          </tr>
+        </tbody>
+      </ProseTable>
 
       <h2 id="levee-fonds">Levée de fonds : dataroom et cap table pour accélérer votre closing</h2>
       <p>
         Quand vous préparez une levée, la qualité de votre dataroom conditionne directement le délai de closing. Une organisation irréprochable peut réduire la phase de due diligence de plusieurs semaines.
       </p>
-      <ProseTable
-        headers={["Outil", "Rôle principal", "Prix 2026", "Pour qui"]}
-        rows={[
-          ["Dealroom / Intralinks", "Dataroom virtuelle sécurisée, audit trail, partage contrôlé", "100–500 €/mois", "Tout tour de financement"],
-          ["Carta / Pulley", "Cap table, stock options, calcul dilution, communication investisseurs", "200–500 €/mois", "Dès la première émission de BSA / BSPCE"],
-        ]}
-      />
+      <ProseTable>
+        <thead>
+          <tr>
+            <th>Outil</th>
+            <th>Rôle principal</th>
+            <th>Prix 2026</th>
+            <th>Pour qui</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dealroom / Intralinks</td>
+            <td>Dataroom virtuelle sécurisée, audit trail, partage contrôlé</td>
+            <td>100–500 €/mois</td>
+            <td>Tout tour de financement</td>
+          </tr>
+          <tr>
+            <td>Carta / Pulley</td>
+            <td>Cap table, stock options, calcul dilution, communication investisseurs</td>
+            <td>200–500 €/mois</td>
+            <td>Dès la première émission de BSA / BSPCE</td>
+          </tr>
+        </tbody>
+      </ProseTable>
 
       <h2 id="stack-recommandee">Stack recommandée par stade : de 300 €/mois au Pré-Seed à 2 500 € en Series A</h2>
-      <ProseTable
-        headers={["Stade", "Outils", "Budget mensuel"]}
-        rows={[
-          ["Pré-Seed (0–500k€ de CA)", "Pennylane + Fygr + Looker Studio", "300–500 €"],
-          ["Seed (500k–3M€ de CA)", "Pennylane + Dext + Agicap + Power BI Lite + Dealroom", "800–1 500 €"],
-          ["Series A (3–20M€ de CA)", "Pennylane + Dext + Agicap + Power BI Pro + Dealroom + Carta", "1 500–2 500 €"],
-        ]}
-      />
+      <ProseTable>
+        <thead>
+          <tr>
+            <th>Stade</th>
+            <th>Outils</th>
+            <th>Budget mensuel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pré-Seed (0–500k€ de CA)</td>
+            <td>Pennylane + Fygr + Looker Studio</td>
+            <td>300–500 €</td>
+          </tr>
+          <tr>
+            <td>Seed (500k–3M€ de CA)</td>
+            <td>Pennylane + Dext + Agicap + Power BI Lite + Dealroom</td>
+            <td>800–1 500 €</td>
+          </tr>
+          <tr>
+            <td>Series A (3–20M€ de CA)</td>
+            <td>Pennylane + Dext + Agicap + Power BI Pro + Dealroom + Carta</td>
+            <td>1 500–2 500 €</td>
+          </tr>
+        </tbody>
+      </ProseTable>
 
       <p>
         Nous avons consolidé le sujet dans notre guide complet <a href="/ressources/blog/ia-finance-automatisation-direction-financiere">IA et automatisation de la fonction finance</a> : les quatre cas d'usage qui marchent vraiment, la feuille de route à 90 jours et le budget réaliste pour une PME.

@@ -27,7 +27,7 @@ interface BlogPostPageRefonteProps {
   dateModified: string;
   heroImage?: string;
   toc: TocItem[];
-  tldr: string | ReactNode;
+  tldr?: string | ReactNode;
   /** Article content (children) */
   children: ReactNode;
   relatedArticles?: Array<{
