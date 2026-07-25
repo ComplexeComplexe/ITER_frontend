@@ -191,7 +191,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/en/daf-outsourcing/metier",
-        destination: "/en/fractional-cfo/metier",
+        destination: "/en/fractional-cfo/role",
         permanent: true,
       },
       // Jobs EN/ES (if positions not translated, redirect to hub)
@@ -367,12 +367,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/en/ressources/fiche-metier/:path*",
-        destination: "/en/daf-externalise/metier",
+        destination: "/en/fractional-cfo/role",
         permanent: true, // 301 redirect (empty page)
       },
       {
         source: "/es/ressources/fiche-metier/:path*",
-        destination: "/es/daf-externalise/metier",
+        destination: "/es/externalizacion-daf/funciones",
         permanent: true, // 301 redirect (empty page)
       },
       // OUTILS CFO: Old URL redirects (from legacy implementation)
@@ -893,6 +893,22 @@ const nextConfig: NextConfig = {
       { source: "/ressources/blog/data-room-checklist-levee-de-fonds", destination: "/ressources/blog/checklist-due-diligence-levee-de-fonds", permanent: true },
       { source: "/ressources/blog/due-diligence-financiere-investisseurs", destination: "/ressources/blog/checklist-due-diligence-levee-de-fonds", permanent: true },
       { source: "/ressources/blog/daf-externalise-vs-alternatives", destination: "/ressources/blog/daf-externalise-vs-daf-salarie", permanent: true },
+
+      // ── MULTILINGUAL URL AUDIT (2026-07-25) ─────────────────────────────────
+      // New canonical URLs for EN/ES pages with localised slugs.
+      // Each source is the old URL that still exists in GSC, inlinks, or redirects.
+      { source: "/en/fractional-cfo/metier",                             destination: "/en/fractional-cfo/role",                          permanent: true },
+      { source: "/es/externalizacion-daf/metier",                        destination: "/es/externalizacion-daf/funciones",                 permanent: true },
+      { source: "/es/clients",                                            destination: "/es/clientes",                                     permanent: true },
+      { source: "/es/externalizacion-daf/transition",                    destination: "/es/externalizacion-daf/transicion",                permanent: true },
+      { source: "/en/fractional-cfo-barcelona",                          destination: "/en/outsourced-cfo-barcelona",                     permanent: true },
+      { source: "/en/ressources/blog/cout-daf-externalise-tarifs-prix-2026", destination: "/en/ressources/blog/fractional-cfo-cost-services-2026", permanent: true },
+      { source: "/es/recursos/blog/cout-daf-externalise-tarifs-prix-2026",   destination: "/es/recursos/blog/cfo-externo-pymes-precio-2026",    permanent: true },
+      { source: "/en/a-propos",                                          destination: "/en/about",                                        permanent: true },
+      { source: "/en/a-propos/:slug*",                                   destination: "/en/about/:slug*",                                 permanent: true },
+      { source: "/es/recursos/cas-clients",                              destination: "/es/recursos/casos-de-exito",                      permanent: true },
+      { source: "/es/recursos/glossaire",                                destination: "/es/recursos/glosario",                            permanent: true },
+      { source: "/es/director-financiero",                               destination: "/es/externalizacion-daf/funciones",                permanent: true },
     ];
   },
 };
