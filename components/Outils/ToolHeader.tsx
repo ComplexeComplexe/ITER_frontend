@@ -76,11 +76,14 @@ export default function ToolHeader({
             </div>
           </div>
 
-          {/* For Who / Not For Who */}
+          {/* Points forts / Points de vigilance — même donnée (forWho/
+              notForWho) que précédemment, mais recadrée en avantages/
+              limites plutôt qu'en dichotomie "pour qui / pour qui pas"
+              qui n'apportait rien de plus que la fiche elle-même. */}
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div>
               <h3 className="font-semibold text-gray-900 text-sm uppercase tracking-wide mb-2">
-                Pour
+                Points forts
               </h3>
               <ul className="space-y-2">
                 {forWho.map((item, idx) => (
@@ -94,7 +97,7 @@ export default function ToolHeader({
 
             <div>
               <h3 className="font-semibold text-gray-900 text-sm uppercase tracking-wide mb-2">
-                Pas pour
+                Points de vigilance
               </h3>
               <ul className="space-y-2">
                 {notForWho.map((item, idx) => (
