@@ -29,25 +29,11 @@ const htmlContent = `<p>malibou combine une plateforme RH, la technologie de pai
 <aside class="callout-tldr">
 <p class="callout-tldr__title">L'essentiel en 30 secondes</p>
 <p>malibou associe une plateforme RH (absences, congés, frais, onboarding) à une production de la paie confiée à un gestionnaire dédié, sur la technologie Silae.</p>
-<p><strong>Pour :</strong> startups et PME de 5 à 80 salariés sans RH senior, dirigeants qui veulent déléguer la paie plutôt que la simple outiller.</p>
-<p><strong>Pas pour :</strong> grandes structures (150-200 salariés et plus) aux besoins RH très avancés, équipes paie internes expertes attachées au self-service intégral.</p>
+<p><strong>Point fort :</strong> délègue la production de la paie à un gestionnaire dédié, utile pour les startups et PME de 5 à 80 salariés sans RH senior.</p>
+<p><strong>Point de vigilance :</strong> moins pertinent au-delà de 150-200 salariés ou pour une équipe paie interne experte attachée au self-service intégral.</p>
 <p><strong>Implémentation :</strong> 1 à 2 semaines, migration prise en charge par le gestionnaire dédié.</p>
 <p><strong>Prix :</strong> environ 20-25 €/salarié/mois, abonnement tout inclus.</p>
 </aside>
-<h2 id="pour-qui-pour-qui-pas">Pour qui / Pour qui pas</h2>
-<p><strong>Pour qui :</strong></p>
-<ul>
-<li>Startups et PME de 5 à 80 salariés</li>
-<li>Dirigeants et office managers sans expertise paie interne</li>
-<li>Entreprises sous convention collective avec des subtilités, qui veulent un expert joignable</li>
-<li>Sociétés qui quittent un cabinet « manuel » ou un self-service sans accompagnement</li>
-</ul>
-<p><strong>Pas pour :</strong></p>
-<ul>
-<li>Grandes structures de 150 à 200 salariés et plus, besoins RH très avancés</li>
-<li>Équipes paie internes expertes attachées au self-service intégral</li>
-<li>Cas très spécifiques (multi-pays complexe, statuts très rares) où un long historique produit est déterminant</li>
-</ul>
 <h2 id="quest-ce-que-malibou">Qu'est-ce que malibou ?</h2>
 <p>malibou est une plateforme RH lancée fin 2023, qui associe un logiciel de gestion RH (absences, congés, notes de frais, temps, entretiens, onboarding — périmètre exact à confirmer selon le contrat) à une production de la paie assurée par un gestionnaire dédié sur la <a href="/ressources/outils/silae">technologie de paie Silae</a>. Selon l'éditeur, la solution est en phase de forte croissance. Plus de détails sur le <a href="https://www.malibou.com/" target="_blank" rel="noopener noreferrer">site officiel de malibou</a>.</p>
 <p>Sa proposition se distingue des logiciels de paie principalement utilisés en autonomie, comme PayFit : plutôt que de mettre à disposition un outil que l'entreprise paramètre et exploite elle-même, malibou combine l'interface RH avec un service de production et de contrôle des bulletins.</p>

@@ -231,37 +231,10 @@ export default function ToolPage({
         </div>
       </section>
 
-      {/* For Who / Not For Who sections */}
-      <section className="bg-background py-16">
-        <div className="container max-w-3xl">
-          <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Pour qui / Pour qui pas</h2>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-4">✓ Pour qui</h3>
-              <ul className="space-y-3">
-                {tool.forWho.map((item, idx) => (
-                  <li key={idx} className="text-gray-700 flex items-start gap-3">
-                    <span className="text-green-600 font-bold mt-0.5">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-4">✗ Pour qui pas</h3>
-              <ul className="space-y-3">
-                {tool.notForWho.map((item, idx) => (
-                  <li key={idx} className="text-gray-700 flex items-start gap-3">
-                    <span className="text-red-600 font-bold mt-0.5">✗</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* La dichotomie "Pour qui / Pour qui pas" a été retirée (2026-07-30)
+          — redondante avec le bloc Points forts/Points de vigilance déjà
+          affiché dans ToolHeader ci-dessus, et avec les sections
+          Avantages/Limitations ci-dessous quand elles existent. */}
 
       {/* Advantages section */}
       {toolDetails?.advantages && toolDetails.advantages.length > 0 && (
