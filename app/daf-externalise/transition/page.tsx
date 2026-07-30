@@ -114,6 +114,14 @@ export default async function Page() {
   // T#12 (2026-07-18) — JobPosting schema pour signaler à Google que la page
   // est une fiche métier. Booste les rich results sur "daf de transition"
   // dans les SERP "emploi / métier" (APEC-like intent).
+  // GSC-07 (2026-07-30): jobLocation/baseSalary/experienceRequirements
+  // rebuilt to match the working pattern already validated on
+  // /carrieres/fractional-cfo/page.tsx — full address for the Barcelona
+  // HQ, city+region for the Paris/Toulouse offices, jobLocationType
+  // TELECOMMUTE (the mission is hybrid/remote-friendly across all three),
+  // baseSalary (not estimatedSalary, which Google doesn't recognize), and
+  // qualifications instead of experienceRequirements (free text — avoids
+  // the "invalid enumeration value" warning tied to that property).
   const jobPostingSchema = {
     "@context": "https://schema.org",
     "@type": "JobPosting",
@@ -125,23 +133,57 @@ export default async function Page() {
       "@id": "https://www.iteradvisors.com/#organization",
       name: "Iter Advisors",
       sameAs: "https://www.iteradvisors.com",
+      logo: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
     },
     jobLocation: [
-      { "@type": "Place", address: { "@type": "PostalAddress", addressCountry: "FR" } },
-      { "@type": "Place", address: { "@type": "PostalAddress", addressCountry: "ES" } },
+      {
+        "@type": "Place",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Carrer Casp, 54, 5-1°",
+          addressLocality: "Barcelona",
+          postalCode: "08010",
+          addressRegion: "Catalunya",
+          addressCountry: "ES",
+        },
+      },
+      {
+        "@type": "Place",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Paris",
+          addressRegion: "Île-de-France",
+          addressCountry: "FR",
+        },
+      },
+      {
+        "@type": "Place",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Toulouse",
+          addressRegion: "Occitanie",
+          addressCountry: "FR",
+        },
+      },
+    ],
+    jobLocationType: "TELECOMMUTE",
+    applicantLocationRequirements: [
+      { "@type": "Country", name: "France" },
+      { "@type": "Country", name: "Spain" },
     ],
     employmentType: "CONTRACTOR",
     datePosted: PUBLISHED_DATE,
     validThrough: "2027-12-31",
-    experienceRequirements: "12 à 20 ans d'expérience en finance d'entreprise, dont au moins 5 ans en poste de DAF ou Directeur Financier",
-    estimatedSalary: {
-      "@type": "MonetaryAmountDistribution",
-      name: "TJM DAF de transition",
+    qualifications: "12 à 20 ans d'expérience en finance d'entreprise, dont au moins 5 ans en poste de DAF ou Directeur Financier",
+    baseSalary: {
+      "@type": "MonetaryAmount",
       currency: "EUR",
-      duration: "P1D",
-      minValue: 800,
-      maxValue: 1500,
-      unitText: "DAY",
+      value: {
+        "@type": "QuantitativeValue",
+        minValue: 800,
+        maxValue: 1500,
+        unitText: "DAY",
+      },
     },
   };
 

@@ -40,6 +40,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     path: `/ressources/glossaire/${slug}`,
     fallbackTitle: content.meta.title,
     fallbackDescription: content.meta.description,
+    // GSC-03 (2026-07-30): no [slug] route exists under /en or /es —
+    // avoids synthetic hreflang URLs Google was crawling and redirecting.
+    disableHreflang: ["en", "es"],
   });
 }
 
