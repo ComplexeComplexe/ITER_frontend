@@ -51,11 +51,10 @@ export async function generateMetadata({
       title: meta.title,
       description: meta.description,
       path: `/ressources/outils/${slug}`,
-      localizedPaths: {
-        fr: `/ressources/outils/${slug}`,
-        en: `/en/ressources/tools/${slug}`,
-        es: `/es/recursos/herramientas/${slug}`,
-      },
+      // GSC-03 (2026-07-30): no [slug] route exists under /en or /es —
+      // only the outils hub is translated. Emitting synthetic hreflang
+      // URLs here made Google crawl and 404/redirect on every tool slug.
+      disableHreflang: ["en", "es"],
     });
   }
 
@@ -69,11 +68,7 @@ export async function generateMetadata({
       title,
       description,
       path: `/ressources/outils/${slug}`,
-      localizedPaths: {
-        fr: `/ressources/outils/${slug}`,
-        en: `/en/ressources/tools/${slug}`,
-        es: `/es/recursos/herramientas/${slug}`,
-      },
+      disableHreflang: ["en", "es"],
     });
   }
 
