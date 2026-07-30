@@ -277,6 +277,44 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
         </div>
       </section>
 
+      {/* Nouveauté — malibou (2026-07-30). Pas de note ni de logo tant
+          qu'aucune méthodologie documentée n'existe pour ce nouvel entrant :
+          carte volontairement distincte de ToolCard (qui impose une note
+          en étoiles) plutôt qu'une entrée dans data/tools.ts. */}
+      <section className="bg-background py-16">
+        <div className="container">
+          <h2 className="text-3xl font-bold font-heading text-foreground mb-8">
+            Nouveau sur notre radar
+          </h2>
+          <Link
+            href="/ressources/outils/malibou"
+            className="group block max-w-2xl p-6 sm:p-8 bg-muted/20 border border-gray-200 rounded-lg hover:border-iter-violet/50 hover:shadow-md transition-all"
+          >
+            <div className="flex items-start justify-between gap-4 mb-3">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-lg bg-iter-violet/10 flex items-center justify-center text-iter-violet font-bold text-lg flex-shrink-0">
+                  m
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground">malibou</h3>
+                  <p className="text-sm text-muted-foreground">Paie &amp; RH</p>
+                </div>
+              </div>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-iter-violet/10 text-iter-violet whitespace-nowrap">
+                Nouveau
+              </span>
+            </div>
+            <p className="text-sm text-gray-700 mb-4">
+              Un SIRH moderne couplé à un gestionnaire de paie dédié qui produit les bulletins sur la technologie Silae — une alternative à PayFit pour les entreprises sans RH senior qui veulent déléguer la paie.
+            </p>
+            <div className="inline-flex items-center gap-1 text-iter-violet font-semibold text-sm group-hover:gap-2 transition-all">
+              Voir la fiche
+              <span>→</span>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* GEO-08 (2026-07-17) — Comparison table "Notre verdict Iter Advisors"
           par catégorie. Information gain : la colonne "Avis Iter Advisors"
           contient des verdicts personnalisés issus de l'expérience réelle
@@ -362,6 +400,14 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
                   <td className="p-3 border border-border/60">✅</td>
                   <td className="p-3 border border-border/60">—</td>
                   <td className="p-3 border border-border/60">Excellent jusqu&apos;à 100 salariés en France. Silae au-delà.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 border border-border/60"><Link href="/ressources/outils/malibou" className="font-bold hover:underline">malibou</Link></td>
+                  <td className="p-3 border border-border/60">Paie + RH avec gestionnaire dédié</td>
+                  <td className="p-3 border border-border/60">~20-25 €/salarié</td>
+                  <td className="p-3 border border-border/60">À confirmer</td>
+                  <td className="p-3 border border-border/60">—</td>
+                  <td className="p-3 border border-border/60">Bonne option pour déléguer la paie sans RH senior, sur la technologie Silae. Recul produit encore limité.</td>
                 </tr>
                 <tr>
                   <td className="p-3 border border-border/60"><strong>Power BI</strong></td>
