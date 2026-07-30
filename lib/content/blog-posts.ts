@@ -17,6 +17,9 @@ export interface BlogPostData {
   htmlContent?: string;
   /** Publication date in ISO format */
   publishedDate?: string;
+  /** Last substantive update date, ISO format. Falls back to
+   *  publishedDate when omitted (existing behavior, unchanged). */
+  updatedDate?: string;
   /** Author name */
   author?: string;
   /** Category */
@@ -2737,32 +2740,35 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "payfit-vs-silae-comparatif-pme": {
       meta: {
-        title: "PayFit vs Silae — Comparatif PME 2026 | Iter Advisors",
-        description: "PayFit pour startups SaaS CCN SYNTEC ou Silae pour BTP / spectacle / multi-conventions ? Comparatif terrain par Iter Advisors basé sur 40+ déploiements.",
+        title: "PayFit vs Silae vs malibou : comparatif paie PME 2026",
+        description: "Comparez PayFit, Silae et malibou : production de la paie, accompagnement, SIRH, intégrations, prix et profils d'entreprise adaptés.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
-      h1: "PayFit vs Silae : comparatif pour PME en croissance",
+      h1: "PayFit vs Silae vs malibou : quel logiciel de paie choisir ?",
       publishedDate: "2026-05-11",
+      updatedDate: "2026-07-30",
       author: "Benjamin Ziza",
       category: "rh-paie",
       htmlContent: `<p>Le choix de l'outil de paie est critique pour une PME en croissance. Une paie erronée, une DSN rejetée, ou une non-conformité sociale peut coûter cher. Chez Iter Advisors, nous déployons principalement deux outils de paie : <a href="/ressources/outils/payfit">PayFit</a> et <a href="/ressources/outils/silae">Silae</a>. Voici notre comparatif basé sur 40+ déploiements.</p>
+<p>Une troisième approche se développe avec <a href="/ressources/outils/malibou">malibou</a> : une plateforme RH associée à une production de la paie prise en charge par un gestionnaire dédié. Contrairement à une solution principalement utilisée en autonomie, malibou combine un SIRH, la technologie de paie Silae et un accompagnement humain récurrent.</p>
 <h2 id="verdict">Le verdict en 30 secondes</h2>
 <p>PayFit pour les startups et PME avec une paie standard (CCN SYNTEC, forfait jours, &lt; 150 salariés) qui privilégient l'UX moderne et le portail collaborateur. Silae pour les structures avec une paie complexe (CCN rares, multi-conventions, gestion des temps, BTP, spectacle).</p>
 <h2 id="comparatif">Comparatif détaillé</h2>
 <table>
-<thead><tr><th>Critère</th><th>PayFit</th><th>Silae</th></tr></thead>
+<thead><tr><th>Critère</th><th>PayFit</th><th>Silae</th><th>malibou</th></tr></thead>
 <tbody>
-<tr><td>UX / Facilité</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
-<tr><td>CCN couvertes</td><td>~40 principales</td><td>600+</td></tr>
-<tr><td>Gestion des temps</td><td>⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
-<tr><td>Portail collaborateur</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
-<tr><td>Intégration comptable</td><td>Pennylane (native)</td><td>Silae Expert</td></tr>
-<tr><td>Prix</td><td>27-49 €/salarié/mois</td><td>60-90 €/salarié/mois</td></tr>
-<tr><td>Implémentation</td><td>1-2 semaines</td><td>2-4 semaines</td></tr>
-<tr><td>Support</td><td>Téléphone + chat</td><td>Téléphone + email</td></tr>
-<tr><td>&gt; 150 salariés</td><td>Ralentissements</td><td>✅ Parfait</td></tr>
+<tr><td>UX / Facilité</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>Plateforme RH centralisée, paie déléguée à un gestionnaire dédié</td></tr>
+<tr><td>CCN couvertes</td><td>~40 principales</td><td>600+</td><td>Accompagnement et contrôle des CCN inclus (nombre à confirmer)</td></tr>
+<tr><td>Gestion des temps</td><td>⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>Incluse dans le périmètre SIRH : temps, absences, congés (détail à confirmer)</td></tr>
+<tr><td>Portail collaborateur</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>Plateforme RH centralisée (absences, congés, frais, onboarding)</td></tr>
+<tr><td>Intégration comptable</td><td>Pennylane (native)</td><td>Silae Expert</td><td>Pennylane, Qonto, Swile et autres (liste à confirmer)</td></tr>
+<tr><td>Prix</td><td>27-49 €/salarié/mois</td><td>60-90 €/salarié/mois</td><td>Sur devis, selon le nombre de bulletins et le périmètre</td></tr>
+<tr><td>Implémentation</td><td>1-2 semaines</td><td>2-4 semaines</td><td>Non communiqué à ce jour</td></tr>
+<tr><td>Support</td><td>Téléphone + chat</td><td>Téléphone + email</td><td>Gestionnaire de paie dédié (chat et téléphone)</td></tr>
+<tr><td>&gt; 150 salariés</td><td>Ralentissements</td><td>✅ Parfait</td><td>Pertinence à confirmer au-delà des TPE/PME</td></tr>
 </tbody>
 </table>
+<p class="text-sm text-muted-foreground">Données malibou sous réserve de validation finale par l'éditeur.</p>
 <h2 id="retour-payfit">Retour terrain — PayFit</h2>
 <p>Déployé chez une SaaS de 45 salariés (CCN SYNTEC, forfait jours). Implémentation en 5 jours. Taux d'erreur de paie : 0 en 18 mois. Satisfaction salariés (portail) : 4,3/5.</p>
 <h2 id="retour-silae">Retour terrain — Silae</h2>
@@ -2776,9 +2782,14 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <tr><td>Industrie, BTP, spectacle</td><td>Silae</td></tr>
 <tr><td>Multi-conventions, temps complexes</td><td>Silae</td></tr>
 <tr><td>&gt; 150 salariés</td><td>Silae ou <a href="/ressources/outils/lucca">Lucca</a> + paie</td></tr>
+<tr><td>Sans équipe paie interne, veut déléguer la production</td><td>malibou (à étudier)</td></tr>
 </tbody>
 </table>
-<p><a href="/ressources/outils/payfit">Fiche PayFit</a> | <a href="/ressources/outils/silae">Fiche Silae</a></p>`,
+<h2 id="analyse">Notre analyse</h2>
+<p>PayFit, Silae et malibou ne répondent pas exactement au même besoin. PayFit convient notamment aux entreprises qui souhaitent gérer leur paie dans une interface largement pensée pour l'autonomie. Silae est avant tout un moteur de paie utilisé par des professionnels. malibou s'appuie sur Silae, mais ajoute une plateforme RH et un gestionnaire dédié qui prend en charge la production et le contrôle des bulletins. Le choix dépend donc moins d'une simple comparaison de fonctionnalités que du niveau d'autonomie ou d'accompagnement recherché.</p>
+<h2 id="en-bref">En bref</h2>
+<p>Pour une entreprise sans équipe paie interne qui souhaite déléguer la production des bulletins, malibou constitue une option à étudier. Pour une structure qui souhaite conserver la production en interne, une solution davantage orientée self-service peut rester plus adaptée. Découvrez notre <a href="/ressources/outils/malibou">analyse complète de malibou</a>.</p>
+<p><a href="/ressources/outils/payfit">Fiche PayFit</a> | <a href="/ressources/outils/silae">Fiche Silae</a> | <a href="/ressources/outils/malibou">Fiche malibou</a></p>`,
       content: [],
     },
     "impot-revenu-espagne": {

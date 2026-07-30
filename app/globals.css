@@ -283,7 +283,7 @@
 /* "Le regard du CFO" — opinionated insider commentary inside an
    otherwise neutral / didactic article body. Lavender background,
    brand-violet left border, italic body, non-italic name line. */
-.prose .callout-cfo {
+.prose-iter-blog .callout-cfo {
   background: #F8F7FF;
   border-left: 4px solid #5B21B6;
   padding: 24px 32px;
@@ -294,7 +294,7 @@
   line-height: 1.6;
   color: #1f2937;
 }
-.prose .callout-cfo .callout-cfo__title {
+.prose-iter-blog .callout-cfo .callout-cfo__title {
   font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
@@ -303,9 +303,9 @@
   color: #5B21B6;
   margin: 0 0 12px;
 }
-.prose .callout-cfo p { margin: 0 0 12px; }
-.prose .callout-cfo p:last-child { margin: 0; }
-.prose .callout-cfo .callout-cfo__author {
+.prose-iter-blog .callout-cfo p { margin: 0 0 12px; }
+.prose-iter-blog .callout-cfo p:last-child { margin: 0; }
+.prose-iter-blog .callout-cfo .callout-cfo__author {
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -315,7 +315,7 @@
 }
 
 /* Pitfall / avertissement — yellow card */
-.prose .callout-pitfall {
+.prose-iter-blog .callout-pitfall {
   background: #FEF3C7;
   border-left: 4px solid #F59E0B;
   padding: 20px 28px;
@@ -325,12 +325,12 @@
   line-height: 1.6;
   color: #1f2937;
 }
-.prose .callout-pitfall .callout-pitfall__title {
+.prose-iter-blog .callout-pitfall .callout-pitfall__title {
   font-weight: 700;
   color: #92400E;
   margin: 0 0 8px;
 }
-.prose .callout-pitfall p { margin: 0; }
+.prose-iter-blog .callout-pitfall p { margin: 0; }
 
 /* TL;DR — « À retenir en 30 secondes ». Cream background + violet left
    filet + body in DM Serif italic. Lifts the best editorial pattern of
@@ -344,7 +344,7 @@
      <p>Idéal pour : PME 1–10 M€ de CA.</p>
    </aside>
 */
-.prose .callout-tldr {
+.prose-iter-blog .callout-tldr {
   background: #FAF7F2;
   border-left: 4px solid #5B21B6;
   padding: 24px 32px;
@@ -356,7 +356,7 @@
   line-height: 1.6;
   color: #1f2937;
 }
-.prose .callout-tldr .callout-tldr__title {
+.prose-iter-blog .callout-tldr .callout-tldr__title {
   font-family: var(--font-heading), 'Space Grotesk', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -366,8 +366,8 @@
   color: #5B21B6;
   margin: 0 0 12px;
 }
-.prose .callout-tldr p { margin: 0 0 8px; }
-.prose .callout-tldr p:last-child { margin: 0; }
+.prose-iter-blog .callout-tldr p { margin: 0 0 8px; }
+.prose-iter-blog .callout-tldr p:last-child { margin: 0; }
 
 /* ─── Custom scrollbar ─── */
 ::-webkit-scrollbar {

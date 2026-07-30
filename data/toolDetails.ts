@@ -38,6 +38,17 @@ export interface ToolDetails {
     relatedCategoryHref?: string;
     relatedCategoryLabel?: string;
   };
+  /**
+   * Contextual editorial mention linking to a related tool fiche —
+   * distinct from the automated "Alternatives" list (same category,
+   * no editorial framing). Added for the malibou integration (2026-07-30).
+   */
+  relatedMention?: {
+    before: string;
+    linkText: string;
+    linkHref: string;
+    after?: string;
+  };
 }
 
 export const toolDetails: Record<string, ToolDetails> = {
@@ -486,6 +497,12 @@ export const toolDetails: Record<string, ToolDetails> = {
       relatedCategoryHref: '/ressources/outils/logiciels-paie',
       relatedCategoryLabel: 'Voir le comparatif complet des logiciels de paie',
     },
+    relatedMention: {
+      before: 'Vous recherchez une solution incluant la production des bulletins par un gestionnaire dédié ? Consultez également notre',
+      linkText: 'avis sur malibou',
+      linkHref: '/ressources/outils/malibou',
+      after: '.',
+    },
   },
   // ─── 9 fiches outils ajoutées via TICKET 5 ───────────────────────────
   sage: {
@@ -645,6 +662,12 @@ export const toolDetails: Record<string, ToolDetails> = {
       { question: 'Quel délai d\'implémentation ?', answer: '2 à 4 semaines selon la complexité. BTP multi-chantiers = 4 semaines.' },
       { question: 'Combien de CCN couvertes ?', answer: 'Plus de 600 conventions collectives — la couverture la plus exhaustive du marché.' },
     ],
+    relatedMention: {
+      before: 'Certaines plateformes, comme',
+      linkText: 'malibou',
+      linkHref: '/ressources/outils/malibou',
+      after: ', utilisent la technologie Silae tout en proposant une interface RH et un accompagnement paie intégré.',
+    },
   },
   lucca: {
     slug: 'lucca',

@@ -127,6 +127,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         htmlContent={fallback.htmlContent}
         cmsNavigation={cmsNavigation}
         publishedDate={fallback.publishedDate}
+        updatedDate={fallback.updatedDate}
         author={fallback.author}
         category={fallback.category}
         metaDescription={fallback.meta.description}

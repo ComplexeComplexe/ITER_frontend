@@ -35,6 +35,10 @@ interface BlogPostPageProps {
   blocks?: StrapiBlock[];
   /** Publication date (ISO format) */
   publishedDate?: string;
+  /** Last substantive update date (ISO format). Drives the visible
+   *  "Mis à jour le" label and dateModified in the Article schema.
+   *  Falls back to publishedDate when omitted. */
+  updatedDate?: string;
   /** Author name */
   author?: string;
   /** Category */
@@ -62,6 +66,7 @@ export default function BlogPostPage({
   blocks,
   cmsNavigation,
   publishedDate,
+  updatedDate,
   author,
   category,
   metaDescription,
@@ -116,7 +121,7 @@ export default function BlogPostPage({
     description: metaDescription || "",
     url: articleUrl,
     datePublished: publishedDate,
-    dateModified: publishedDate,
+    dateModified: updatedDate || publishedDate,
     authorName: author || "Iter Advisors",
     authorUrl,
     imageSrc: featuredImageUrl,
@@ -186,7 +191,7 @@ export default function BlogPostPage({
               SEO contract: values mirror the Article JSON-LD. */}
           <ArticleMeta
             locale={locale}
-            date={publishedDate}
+            date={updatedDate || publishedDate}
             readMinutes={readMinutes > 0 ? readMinutes : undefined}
             shareUrl={articleUrl}
             shareTitle={title}
