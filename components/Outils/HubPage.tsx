@@ -259,59 +259,58 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {phaseDoneTools.map((tool) => (
-              <ToolCard
-                key={tool.slug}
-                name={tool.name}
-                slug={tool.slug}
-                logo={tool.logo}
-                logoAlt={tool.logoAlt}
-                category={tool.category}
-                categorySlug={tool.categorySlug}
-                rating={tool.rating}
-                shortDescription={tool.shortDescription}
-                phase={tool.phase}
-              />
-            ))}
+            {phaseDoneTools
+              .filter((tool) => tool.slug !== 'payfit')
+              .flatMap((tool) => {
+                const card = (
+                  <ToolCard
+                    key={tool.slug}
+                    name={tool.name}
+                    slug={tool.slug}
+                    logo={tool.logo}
+                    logoAlt={tool.logoAlt}
+                    category={tool.category}
+                    categorySlug={tool.categorySlug}
+                    rating={tool.rating}
+                    shortDescription={tool.shortDescription}
+                    phase={tool.phase}
+                  />
+                );
+                // malibou takes PayFit's slot, right after Spendesk — no
+                // ToolCard reuse (its `rating` prop would force an
+                // unverified star display, which the ticket forbids for
+                // this new entrant with no documented methodology yet).
+                if (tool.slug === 'spendesk') {
+                  return [
+                    card,
+                    <Link
+                      key="malibou"
+                      href="/ressources/outils/malibou"
+                      className="flex flex-col h-full p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+                    >
+                      <div className="flex items-start justify-between gap-4 mb-4">
+                        <div className="flex-shrink-0 w-16 h-16 bg-iter-violet/10 rounded-lg flex items-center justify-center text-iter-violet font-bold text-xl">
+                          m
+                        </div>
+                        <div className="px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap bg-iter-violet/10 text-iter-violet">
+                          Nouveau
+                        </div>
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-1">malibou</h3>
+                      <p className="text-sm text-gray-600 mb-2">Paie &amp; RH</p>
+                      <p className="text-sm text-gray-700 mb-4 flex-grow">
+                        SIRH couplé à un gestionnaire de paie dédié qui produit les bulletins sur la technologie Silae — pour déléguer la paie sans RH senior.
+                      </p>
+                      <div className="inline-flex items-center gap-1 text-blue-900 font-semibold text-sm hover:gap-2 transition-all">
+                        Voir la fiche
+                        <span>→</span>
+                      </div>
+                    </Link>,
+                  ];
+                }
+                return [card];
+              })}
           </div>
-        </div>
-      </section>
-
-      {/* Nouveauté — malibou (2026-07-30). Pas de note ni de logo tant
-          qu'aucune méthodologie documentée n'existe pour ce nouvel entrant :
-          carte volontairement distincte de ToolCard (qui impose une note
-          en étoiles) plutôt qu'une entrée dans data/tools.ts. */}
-      <section className="bg-background py-16">
-        <div className="container">
-          <h2 className="text-3xl font-bold font-heading text-foreground mb-8">
-            Nouveau sur notre radar
-          </h2>
-          <Link
-            href="/ressources/outils/malibou"
-            className="group block max-w-2xl p-6 sm:p-8 bg-muted/20 border border-gray-200 rounded-lg hover:border-iter-violet/50 hover:shadow-md transition-all"
-          >
-            <div className="flex items-start justify-between gap-4 mb-3">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-lg bg-iter-violet/10 flex items-center justify-center text-iter-violet font-bold text-lg flex-shrink-0">
-                  m
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-foreground">malibou</h3>
-                  <p className="text-sm text-muted-foreground">Paie &amp; RH</p>
-                </div>
-              </div>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-iter-violet/10 text-iter-violet whitespace-nowrap">
-                Nouveau
-              </span>
-            </div>
-            <p className="text-sm text-gray-700 mb-4">
-              Un SIRH moderne couplé à un gestionnaire de paie dédié qui produit les bulletins sur la technologie Silae — une alternative à PayFit pour les entreprises sans RH senior qui veulent déléguer la paie.
-            </p>
-            <div className="inline-flex items-center gap-1 text-iter-violet font-semibold text-sm group-hover:gap-2 transition-all">
-              Voir la fiche
-              <span>→</span>
-            </div>
-          </Link>
         </div>
       </section>
 
