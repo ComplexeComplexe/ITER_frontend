@@ -72,8 +72,11 @@ function entryAllLocales(
  *  Avoids emitting TODAY for articles that haven't changed since publish. */
 function blogModified(slug: string): string {
   return (
+    blogPosts.fr[slug]?.updatedDate ??
     blogPosts.fr[slug]?.publishedDate ??
+    blogPosts.en[slug]?.updatedDate ??
     blogPosts.en[slug]?.publishedDate ??
+    blogPosts.es[slug]?.updatedDate ??
     blogPosts.es[slug]?.publishedDate ??
     D.tools
   );
@@ -453,6 +456,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: D.tools,
     });
   }
+  // malibou (2026-07-30) — shipped separately from the TOOL_SLUGS batch
+  // above, so it gets its own lastModified instead of bumping D.tools
+  // (which would falsely imply all 13 other tool pages changed today).
+  entries.push({
+    url: `${BASE}/ressources/outils/malibou`,
+    lastModified: "2026-07-30",
+  });
 
   // ── Glossary terms (FR-only) ──────────────────────────────────────────────
   // SITEMAP-FIX: EN/ES glossary have no [slug] routes — FR only.

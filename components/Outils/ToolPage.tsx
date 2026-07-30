@@ -451,6 +451,22 @@ export default function ToolPage({
         </section>
       )}
 
+      {/* Related tool mention — editorial cross-link, distinct from the
+          automated "Alternatives" list above (2026-07-30, malibou integration) */}
+      {toolDetails?.relatedMention && (
+        <section className="bg-background py-8">
+          <div className="container max-w-3xl">
+            <p className="text-gray-700">
+              {toolDetails.relatedMention.before}{' '}
+              <Link href={toolDetails.relatedMention.linkHref} className="text-iter-violet font-semibold hover:underline">
+                {toolDetails.relatedMention.linkText}
+              </Link>
+              {toolDetails.relatedMention.after ?? ''}
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* FAQ section */}
       {faqForTool.length > 0 && (
         <section className="bg-background py-16">
