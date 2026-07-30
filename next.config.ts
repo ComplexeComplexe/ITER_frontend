@@ -290,12 +290,11 @@ const nextConfig: NextConfig = {
         destination: "/en/ressources/job-descriptions",
         permanent: true,
       },
-      // Handle specific ressources → resources mappings for fiche-metier
-      {
-        source: "/en/ressources/fiche-metier/:path*",
-        destination: "/en/ressources/job-descriptions/:path*",
-        permanent: true, // 301 redirect (fiche-metier → job-descriptions)
-      },
+      // GSC-01/03 (2026-07-30): removed the old wildcard
+      // "/en/ressources/fiche-metier/:path*" → "/en/ressources/job-descriptions/:path*"
+      // rule that lived here — it had the exact same source pattern as the
+      // "UX-03" rule further below (now pointing to /en/fractional-cfo/role)
+      // and, being earlier in the array, always won, silently shadowing it.
       // TICKET 4: Spanish service page for accounting externalization
       {
         source: "/es/services/comptabilite-externalisation",
@@ -371,7 +370,13 @@ const nextConfig: NextConfig = {
         permanent: true, // 301 redirect (empty page)
       },
       {
-        source: "/es/ressources/fiche-metier/:path*",
+        // GSC-01/03 (2026-07-30): source uses "recursos" (not "ressources")
+        // because the earlier "/es/ressources/:path*" → "/es/recursos/:path*"
+        // rewrite (TICKET 2, above) always fires first — a source of
+        // "/es/ressources/fiche-metier/:path*" here would never match
+        // anything and 404 downstream. Confirmed via GSC-03 report
+        // (/es/ressources/fiche-metier/director-financiero).
+        source: "/es/recursos/fiche-metier/:path*",
         destination: "/es/externalizacion-daf/funciones",
         permanent: true, // 301 redirect (empty page)
       },
@@ -909,6 +914,27 @@ const nextConfig: NextConfig = {
       { source: "/es/recursos/cas-clients",                              destination: "/es/recursos/casos-de-exito",                      permanent: true },
       { source: "/es/recursos/glossaire",                                destination: "/es/recursos/glosario",                            permanent: true },
       { source: "/es/director-financiero",                               destination: "/es/externalizacion-daf/funciones",                permanent: true },
+
+      // ── GSC-03 (2026-07-30) — 404s from the 30/07/2026 GSC report ───────────
+      // Tool sheets and fiscalité pages are FR-only (see disableHreflang on
+      // their generateMetadata calls) but Google had already crawled/indexed
+      // synthetic EN/ES hreflang URLs from before that fix. These land the
+      // existing indexed URLs on a real 200 instead of leaving them as 404s.
+      //
+      // Tools: "/es/ressources/outils/:slug" hits the TICKET-2 catch-all
+      // above (/es/ressources/:path* → /es/recursos/:path*) first, becoming
+      // "/es/recursos/outils/:slug" — which had no further rule (the existing
+      // ES catch-all only covers "/es/recursos/herramientas/:slug"). EN has
+      // no equivalent locale-word rewrite, so "/en/ressources/outils/:slug"
+      // needs a direct rule.
+      { source: "/es/recursos/outils/:slug",     destination: "/ressources/outils/:slug", permanent: true },
+      { source: "/en/ressources/outils/:slug",   destination: "/ressources/outils/:slug", permanent: true },
+
+      // Fiscalité: same pattern — "/es/ressources/fiscalite/:path*" becomes
+      // "/es/recursos/fiscalite/:path*" via the TICKET-2 catch-all, which had
+      // no further rule; EN has no rewrite at all, so needs a direct rule.
+      { source: "/es/recursos/fiscalite/:path*", destination: "/ressources/fiscalite/:path*", permanent: true },
+      { source: "/en/ressources/fiscalite/:path*", destination: "/ressources/fiscalite/:path*", permanent: true },
     ];
   },
 };

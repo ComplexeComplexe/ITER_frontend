@@ -14,6 +14,8 @@ export async function generateMetadata(): Promise<Metadata> {
     title: content.meta.title,
     description: content.meta.description,
     path: `/services/${SLUG}`,
+    // GSC-03 (2026-07-30): FR-only service, no /en or /es route exists.
+    disableHreflang: ["en", "es"],
   });
 }
 
