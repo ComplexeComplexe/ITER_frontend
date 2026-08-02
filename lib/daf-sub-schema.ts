@@ -12,6 +12,32 @@ import type { DafSubContent } from "@/lib/content/daf-sub";
  * to be reusable across /tarifs, /temps-partage, /metier and the future
  * /transition (also refactored to use this helper).
  */
+/**
+ * Parse one FAQ item into a Q/A pair.
+ *
+ * Deux formes coexistent dans lib/content/daf-sub.ts :
+ *   1. "**Question ?** Réponse."  (métier, temps-partage)
+ *   2. "Question ? Réponse."      (tarifs FR/EN/ES — sans gras)
+ *
+ * La forme 2 n'était reconnue NI ici NI par l'accordéon visible de
+ * DafSubPage (2026-08-02) : les 3 pages /tarifs rendaient donc leur FAQ en
+ * paragraphes plats et n'émettaient aucun FAQPage — sur la page la plus
+ * transactionnelle du site. Le garde-fou {10,200} sur la question évite de
+ * couper sur un « ? » perdu au milieu d'une réponse.
+ *
+ * Exporté pour que le rendu visible et le JSON-LD partagent exactement le
+ * même découpage (exigence Google : schema == contenu visible).
+ */
+export function parseDafSubFaqItem(
+  text: string,
+): { question: string; answer: string } | null {
+  const bold = text.match(/^\*\*(.+?)\*\*\s*([\s\S]+)$/);
+  if (bold) return { question: bold[1].trim(), answer: bold[2].trim() };
+  const plain = text.match(/^([^?]{10,200}\?)\s*([\s\S]+)$/);
+  if (plain) return { question: plain[1].trim(), answer: plain[2].trim() };
+  return null;
+}
+
 export function buildDafSubFaqSchema(content: DafSubContent) {
   const faqSection = content.sections.find((s) =>
     s.heading?.toLowerCase().startsWith("faq"),
@@ -19,13 +45,7 @@ export function buildDafSubFaqSchema(content: DafSubContent) {
   if (!faqSection?.content) return null;
 
   const items = faqSection.content
-    .map((raw) => {
-      // [\s\S] instead of `.` with `/s` flag — the dotAll flag requires
-      // target ≥ ES2018 and tsconfig.json is on ES2017.
-      const m = raw.match(/^\*\*(.+?\?)\*\*\s*([\s\S]+)$/);
-      if (!m) return null;
-      return { question: m[1].trim(), answer: m[2].trim() };
-    })
+    .map(parseDafSubFaqItem)
     .filter((x): x is { question: string; answer: string } => x !== null);
 
   if (items.length === 0) return null;

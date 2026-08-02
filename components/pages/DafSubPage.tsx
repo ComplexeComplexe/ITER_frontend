@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import { Locale } from "@/lib/i18n";
 import { BOOKING_URL } from "@/lib/navigation";
 import { DafSubContent } from "@/lib/content/daf-sub";
+import { parseDafSubFaqItem } from "@/lib/daf-sub-schema";
 import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -33,14 +34,11 @@ function isFaqHeading(heading?: string): boolean {
 }
 
 /**
- * Parse "**Question ?** Answer text." items — the daf-sub FAQ sections store
- * Q/R pairs as Markdown bold on the question part.
+ * Découpage Q/R des items de FAQ. Partagé avec buildDafSubFaqSchema pour que
+ * l'accordéon visible et le JSON-LD FAQPage soient identiques au caractère
+ * près (exigence Google).
  */
-function parseFaqItem(text: string): { question: string; answer: string } | null {
-  const m = text.match(/^\*\*(.+?)\*\*\s+([\s\S]+)/);
-  if (!m) return null;
-  return { question: m[1].trim(), answer: m[2].trim() };
-}
+const parseFaqItem = parseDafSubFaqItem;
 
 /** ReactMarkdown component overrides: inline elements only (no block <p>). */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
