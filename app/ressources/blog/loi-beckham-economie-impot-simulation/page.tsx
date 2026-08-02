@@ -89,7 +89,7 @@ export default function Page() {
       ]}
       relatedArticles={[
         {
-          url: "/ressources/fiscalite/loi-beckham",
+          url: "/ressources/fiscalite/beckham-law",
           category: "Fiscalité",
           title: "Guide complet de la loi Beckham en Espagne",
         },
@@ -115,7 +115,7 @@ export default function Page() {
       </p>
 
       <p>
-        La <Link href="/ressources/fiscalite/loi-beckham">loi Beckham</Link> (régime
+        La <Link href="/ressources/fiscalite/beckham-law">loi Beckham</Link> (régime
         spécial d&apos;imposition pour impatriés — article 93 de la Loi IRPF) remplace
         intégralement ce barème progressif par un <strong>taux fixe de 24 %</strong> sur
         l&apos;ensemble des revenus du travail de source espagnole, jusqu&apos;à
@@ -405,7 +405,7 @@ export default function Page() {
             <span aria-hidden className="text-iter-violet">→</span>
             <span>
               <Link
-                href="/ressources/fiscalite/loi-beckham"
+                href="/ressources/fiscalite/beckham-law"
                 className="font-semibold text-iter-violet underline underline-offset-2 hover:no-underline"
               >
                 Guide complet de la loi Beckham

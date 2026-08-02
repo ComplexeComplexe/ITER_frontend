@@ -100,15 +100,8 @@ export default async function Page() {
         },
       },
       faqPageSchema(FAQ),
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.iteradvisors.com/" },
-          { "@type": "ListItem", position: 2, name: "Ressources", item: "https://www.iteradvisors.com/ressources" },
-          { "@type": "ListItem", position: 3, name: "Fiscalité Espagne France", item: `https://www.iteradvisors.com${HUB_URL}` },
-          { "@type": "ListItem", position: 4, name: "Impôt sur le revenu", item: PAGE_URL },
-        ],
-      },
+      // Pas de BreadcrumbList à la main : le composant <Breadcrumb>
+      // en émet déjà un, cohérent site-wide (2026-08-02).
     ],
   };
 

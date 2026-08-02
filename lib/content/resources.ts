@@ -89,7 +89,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Loi Beckham 2026 : guide complet",
-          href: "/ressources/fiscalite/loi-beckham",
+          href: "/ressources/fiscalite/beckham-law",
           description: "Taux 24 %, conditions, démarches et calcul d'économie d'impôt en Espagne.",
         },
         {
@@ -123,7 +123,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Loi Beckham 2026 : taux 24 %, conditions et démarches",
-          href: "/ressources/fiscalite/loi-beckham",
+          href: "/ressources/fiscalite/beckham-law",
           image: "/images/blog/loi-beckham-espagne.webp",
           tag: "Fiscalité",
         },
@@ -269,7 +269,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Beckham Law 2026: complete guide",
-          href: "/ressources/fiscalite/loi-beckham",
+          href: "/ressources/fiscalite/beckham-law",
           description: "24% flat rate, conditions, and step-by-step guide for expats in Spain.",
         },
         {
@@ -303,7 +303,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Beckham Law 2026: 24% rate, conditions, and process",
-          href: "/ressources/fiscalite/loi-beckham",
+          href: "/ressources/fiscalite/beckham-law",
           image: "/images/blog/loi-beckham-espagne.webp",
           tag: "Taxation",
         },
@@ -463,7 +463,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Ley Beckham 2026: guía completa",
-          href: "/ressources/fiscalite/loi-beckham",
+          href: "/ressources/fiscalite/beckham-law",
           description: "Tipo fijo 24 %, condiciones y trámites para expatriados en España.",
         },
         {
@@ -497,7 +497,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Ley Beckham 2026: tipo 24 %, condiciones y trámites",
-          href: "/ressources/fiscalite/loi-beckham",
+          href: "/ressources/fiscalite/beckham-law",
           image: "/images/blog/loi-beckham-espagne.webp",
           tag: "Fiscalidad",
         },
