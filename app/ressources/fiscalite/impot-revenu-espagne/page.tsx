@@ -31,8 +31,12 @@ const AUTHOR_URL = "/a-propos/sebastien-doat";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "IRPF Espagne 2026 : barème et calcul de l'impôt | Iter Advisors",
-  description: "Tout savoir sur l'IRPF en Espagne en 2026 : barème étatique 19-47 %, part autonome par région, déductions, revenus de l'épargne. Guide complet.",
+  // SEO-08 (S31 2026-07-27) — page en position 1 mais CTR proche de zéro
+  // ("taux imposition espagne" 0,29%, "irpf" 0 clic, "impot espagne" 1,15%
+  // contre 0,44% de référence pour la tranche 6-10 du site) : le chiffre
+  // concret passe en tête du title plutôt qu'en fin de description.
+  title: "IRPF Espagne 2026 : barème 19 à 47 % par tranche | Iter Advisors",
+  description: "Barème IRPF Espagne 2026 : de 19 % à 47 % selon la tranche et la région. Calcul, déductions, revenus de l'épargne. Guide complet par Iter Advisors.",
   path: "/ressources/fiscalite/impot-revenu-espagne",
   // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google
   // doesn\'t crawl synthetic /en|/es URLs that 404.

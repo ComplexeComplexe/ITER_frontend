@@ -540,6 +540,21 @@ const nextConfig: NextConfig = {
         destination: "/daf-externalise/:path*",
         permanent: true,
       },
+      // SEO-23 (S31 2026-07-27) — les wildcards ci-dessous préservent le
+      // segment de chemin : "/es/daf-externalise/metier" devenait
+      // "/es/externalizacion-daf/metier", qui 301 à nouveau vers
+      // "funciones" depuis l'audit multilingue (chaîne à 2 sauts).
+      // Ces règles spécifiques doivent rester AVANT les wildcards pour
+      // court-circuiter la chaîne et livrer la destination finale en 1 saut.
+      { source: "/en/daf-externalise/metier",        destination: "/en/fractional-cfo/role",             permanent: true },
+      { source: "/en/externalizacion-daf/metier",    destination: "/en/fractional-cfo/role",             permanent: true },
+      { source: "/es/daf-externalise/metier",        destination: "/es/externalizacion-daf/funciones",   permanent: true },
+      { source: "/es/daf-outsourcing/metier",        destination: "/es/externalizacion-daf/funciones",   permanent: true },
+      { source: "/es/daf-externalise/transition",    destination: "/es/externalizacion-daf/transicion",  permanent: true },
+      { source: "/es/daf-outsourcing/transition",    destination: "/es/externalizacion-daf/transicion",  permanent: true },
+      { source: "/es/daf-externalise/temps-partage", destination: "/es/externalizacion-daf/tiempo-compartido", permanent: true },
+      { source: "/es/daf-outsourcing/shared-time",   destination: "/es/externalizacion-daf/tiempo-compartido", permanent: true },
+
       // EN site: legacy DAF cluster slugs that still appear in GSC.
       // Canonical EN cluster is /en/fractional-cfo/*.
       {

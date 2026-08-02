@@ -3092,7 +3092,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <h2>Comment calculer votre impôt réel ?</h2>
 <p>Le taux final que vous paierez dépendra de votre région de résidence. Par exemple, la Communauté de Madrid applique généralement des taux autonomes plus bas que la moyenne nationale, tandis que la Catalogne ou la Communauté Valencienne appliquent des taux marginaux supérieurs (pouvant dépasser les 50% pour les très hauts revenus).</p>
 <p>Il est également crucial de prendre en compte les déductions personnelles et familiales (minimum personnel de 5 550 € pour un contribuable célibataire de moins de 65 ans) avant d'appliquer le barème.</p>
-<p><em>Note : Les revenus de l'épargne (dividendes, plus-values) sont soumis à un barème distinct, allant de 19% (jusqu'à 6 000 €) à 28% (au-delà de 300 000 €).</em></p>`,
+<p><em>Note : Les revenus de l'épargne (dividendes, plus-values) sont soumis à un barème distinct, allant de 19% (jusqu'à 6 000 €) à 28% (au-delà de 300 000 €).</em></p>
+<p>Pour les dirigeants et cadres qui s'installent en Espagne, <a href="/ressources/fiscalite/beckham-law">le régime Beckham</a> permet d'échapper à ce barème progressif : un taux forfaitaire de 24 % sur les revenus de source espagnole jusqu'à 600 000 €, sous conditions d'éligibilité. Notre équipe de <a href="/daf-externalise-barcelone">DAF externalisés à Barcelone</a> accompagne régulièrement ce type d'arbitrage.</p>`,
       content: [],
     },
 
@@ -3123,7 +3124,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p><em>Important : Le seuil de 50 000 € s'apprécie par catégorie. Si vous avez 40 000 € sur des comptes bancaires et 40 000 € en assurance-vie, vous n'êtes pas soumis à l'obligation déclarative.</em></p>
 <h2>Délais et sanctions en 2026</h2>
 <p>La déclaration doit être effectuée par voie télématique auprès de l'Agencia Tributaria (AEAT) <strong>entre le 1er janvier et le 31 mars</strong> de l'année suivant l'exercice concerné (ex : avant le 31 mars 2026 pour l'exercice 2025).</p>
-<p>Suite à une condamnation par la Cour de Justice de l'Union Européenne (CJUE) jugeant les sanctions initiales "disproportionnées", l'Espagne a dû revoir son régime de pénalités. Les amendes forfaitaires fixes extrêmement lourdes ont été supprimées, et le régime général des sanctions fiscales s'applique désormais. Néanmoins, l'obligation déclarative reste strictement en vigueur.</p>`,
+<p>Suite à une condamnation par la Cour de Justice de l'Union Européenne (CJUE) jugeant les sanctions initiales "disproportionnées", l'Espagne a dû revoir son régime de pénalités. Les amendes forfaitaires fixes extrêmement lourdes ont été supprimées, et le régime général des sanctions fiscales s'applique désormais. Néanmoins, l'obligation déclarative reste strictement en vigueur.</p>
+<p>Cette obligation déclarative concerne au premier chef les dirigeants qui <a href="/daf-externalise-barcelone">s'installent en Espagne avec une structure française</a> : comptes, portefeuilles et biens détenus en France entrent tous dans le périmètre du Modelo 720 une fois la résidence fiscale espagnole acquise.</p>`,
       content: [],
     },
 
@@ -3204,7 +3206,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p>Pour les personnes qui s'installent en Espagne après avoir résidé à l'étranger pendant au moins 5 ans, le <a href="/ressources/fiscalite/beckham-law">régime des impatriés (loi Beckham)</a> constitue une alternative radicalement différente à la convention classique. Plutôt que d'appliquer le barème progressif de l'IRPF (qui monte jusqu'à <strong>47 %</strong>), le régime Beckham plafonne l'imposition à un taux forfaitaire de <strong>24 % sur les revenus de source espagnole jusqu'à 600 000 €</strong>, pendant 6 ans.</p>
 <p>Ce régime est totalement distinct de la convention de double imposition franco-espagnole : les revenus de source française restent imposables en France, les revenus de source espagnole sont taxés à 24 % sous Beckham. L'articulation des deux mécanismes — convention + Beckham — peut générer une optimisation significative pour les dirigeants et cadres s'installant à Barcelone ou Madrid.</p>
 <h2>Note pratique sur les formulaires</h2>
-<p>Côté français, pour déclarer des revenus de source étrangère tout en évitant la double imposition, il faut utiliser le formulaire <strong>2047</strong> en complément de la déclaration classique 2042. Côté espagnol, la déclaration annuelle de l'IRPF (formulaire 100) prend en compte les crédits d'impôt de la convention. Si vous gérez une activité transfrontalière depuis Barcelone ou San Sebastián, notre équipe de <a href="/daf-externalise-barcelone">DAF externalisés à Barcelone</a> accompagne régulièrement des dirigeants dans la structuration de ce type de situation.</p>`,
+<p>Côté français, pour déclarer des revenus de source étrangère tout en évitant la double imposition, il faut utiliser le formulaire <strong>2047</strong> en complément de la déclaration classique 2042. Côté espagnol, la déclaration annuelle de l'IRPF (formulaire 100) prend en compte les crédits d'impôt de la convention. Si vous gérez une activité transfrontalière depuis Barcelone ou San Sebastián, notre équipe de <a href="/daf-externalise-barcelone">DAF externalisés à Barcelone</a> accompagne régulièrement des dirigeants dans la structuration de ce type de situation.</p>
+<p>Ces mécanismes de crédit d'impôt et d'exemption prennent tout leur sens dès qu'une entreprise française ouvre une filiale en Espagne : chaque flux intragroupe (management fees, dividendes, prêts) est concerné par la convention. <a href="/services/gestion-financiere-externalisee">Piloter une filiale espagnole depuis la France</a> demande alors un suivi rigoureux de ces flux transfrontaliers pour éviter les redressements des deux côtés de la frontière.</p>`,
       content: [],
     },
 

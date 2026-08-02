@@ -8,7 +8,10 @@ import type { NextRequest } from "next/server";
 const SLUG_REDIRECTS: Record<string, string> = {
   /* ── FR slugs appearing in /en/ paths ─────────────────────────────── */
   "/en/daf-externalise": "/en/fractional-cfo",
-  "/en/daf-externalise/metier": "/en/fractional-cfo/metier",
+  // SEO-23 (S31 2026-07-27) — cible mise à jour après le renommage
+  // metier → role : pointait vers /en/fractional-cfo/metier, qui 301
+  // à nouveau vers /role (chaîne à 2 sauts).
+  "/en/daf-externalise/metier": "/en/fractional-cfo/role",
   "/en/daf-externalise/temps-partage": "/en/fractional-cfo/shared-time",
   "/en/daf-externalise/transition": "/en/fractional-cfo/transition",
   "/en/daf-externalise-barcelone": "/en/outsourced-cfo-barcelona",
@@ -21,7 +24,7 @@ const SLUG_REDIRECTS: Record<string, string> = {
 
   /* ── ES slugs appearing in /en/ paths ─────────────────────────────── */
   "/en/externalizacion-daf": "/en/fractional-cfo",
-  "/en/externalizacion-daf/metier": "/en/fractional-cfo/metier",
+  "/en/externalizacion-daf/metier": "/en/fractional-cfo/role",
   "/en/externalizacion-daf/multipropiedad": "/en/fractional-cfo/shared-time",
   "/en/externalizacion-daf/transition": "/en/fractional-cfo/transition",
   "/en/externalizacion-rrhh": "/en/hr-outsourcing",
@@ -31,13 +34,18 @@ const SLUG_REDIRECTS: Record<string, string> = {
   "/en/cfo-externalizado-toulouse": "/en/outsourced-cfo-toulouse",
   "/en/aviso-legal": "/en/legal-notice",
   "/en/politica-de-privacidad": "/en/privacy-policy",
-  "/en/quienes-somos": "/en/a-propos",
+  // SEO-23 — /en/a-propos 301 désormais vers /en/about : cible directe.
+  "/en/quienes-somos": "/en/about",
 
   /* ── FR slugs appearing in /es/ paths ─────────────────────────────── */
   "/es/daf-externalise": "/es/externalizacion-daf",
-  "/es/daf-externalise/metier": "/es/externalizacion-daf/metier",
-  "/es/daf-externalise/temps-partage": "/es/externalizacion-daf/multipropiedad",
-  "/es/daf-externalise/transition": "/es/externalizacion-daf/transition",
+  // SEO-23 (S31 2026-07-27) — cibles mises à jour : metier → funciones et
+  // transition → transicion 301 à nouveau depuis l'audit multilingue ;
+  // "multipropiedad" n'a jamais existé comme route (le slug réel est
+  // tiempo-compartido), la redirection tombait donc en 404.
+  "/es/daf-externalise/metier": "/es/externalizacion-daf/funciones",
+  "/es/daf-externalise/temps-partage": "/es/externalizacion-daf/tiempo-compartido",
+  "/es/daf-externalise/transition": "/es/externalizacion-daf/transicion",
   "/es/daf-externalise-barcelone": "/es/cfo-externalizado-barcelona",
   "/es/daf-externalise-paris": "/es/cfo-externalizado-paris",
   "/es/daf-externalise-toulouse": "/es/cfo-externalizado-toulouse",
@@ -49,9 +57,9 @@ const SLUG_REDIRECTS: Record<string, string> = {
 
   /* ── EN slugs appearing in /es/ paths ─────────────────────────────── */
   "/es/daf-outsourcing": "/es/externalizacion-daf",
-  "/es/daf-outsourcing/metier": "/es/externalizacion-daf/metier",
-  "/es/daf-outsourcing/shared-time": "/es/externalizacion-daf/multipropiedad",
-  "/es/daf-outsourcing/transition": "/es/externalizacion-daf/transition",
+  "/es/daf-outsourcing/metier": "/es/externalizacion-daf/funciones",
+  "/es/daf-outsourcing/shared-time": "/es/externalizacion-daf/tiempo-compartido",
+  "/es/daf-outsourcing/transition": "/es/externalizacion-daf/transicion",
   "/es/hr-outsourcing": "/es/externalizacion-rrhh",
   "/es/hr-outsourcing/shared-time": "/es/externalizacion-rrhh/tiempo-compartido",
   "/es/outsourced-cfo-barcelona": "/es/cfo-externalizado-barcelona",
@@ -159,9 +167,9 @@ const SLUG_REDIRECTS: Record<string, string> = {
   "/en/ressources/outils": "/en/ressources/tools",
   // /es/fractional-cfo — the ES canonical is /es/externalizacion-daf.
   "/es/fractional-cfo": "/es/externalizacion-daf",
-  "/es/fractional-cfo/metier": "/es/externalizacion-daf/metier",
+  "/es/fractional-cfo/metier": "/es/externalizacion-daf/funciones",
   "/es/fractional-cfo/shared-time": "/es/externalizacion-daf/tiempo-compartido",
-  "/es/fractional-cfo/transition": "/es/externalizacion-daf/transition",
+  "/es/fractional-cfo/transition": "/es/externalizacion-daf/transicion",
   // (/es/fractional-cfo-barcelona is already mapped above, line ~141)
 };
 

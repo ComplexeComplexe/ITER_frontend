@@ -354,12 +354,13 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     tarifs: {
       meta: {
-        // T#2 + T#7 (2026-07-13) — Fourchette de prix dès le title pour
-        // rich snippets sur "tarif daf externalisé" (pos 10,6 GSC).
-        // Le blog cout-daf-externalise-tarifs-prix-2026 capte l'informationnel,
-        // cette page capte le transactionnel (grille officielle + devis).
-        title: "Tarifs DAF externalisé 2026 : prix par jour et par mois | Iter Advisors",
-        description: "De 1 500 €/mois (1 jour) à 8 000 € (temps plein) : la grille complète des tarifs d'un DAF externalisé selon votre profil. Devis en 48 h.",
+        // SEO-02 (S31 2026-07-27) — 38 requêtes "prix/tarif/coût/combien
+        // coûte" cumulent 5 640 impressions et 2 clics sur 3 mois ; la
+        // page ne captait pas la formulation "prix" pourtant en position
+        // 6,21 ("prix daf externalisé") et 2,28 ("prix fractional cfo").
+        // Title reformulé pour ouvrir sur "Prix" plutôt que "Tarifs".
+        title: "Prix d'un DAF externalisé : tarifs 2026 par mission | Iter Advisors",
+        description: "Combien coûte un DAF externalisé ? Grille de tarifs par mission et par volume de jours, ce qui fait varier le prix, et comment arbitrer. Devis en 48h.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",

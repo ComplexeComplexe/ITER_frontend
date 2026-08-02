@@ -163,9 +163,15 @@ export const dafContent: Record<Locale, DafContent> = {
       // (page en chute de position 16→23 sur "daf externalisé" ces 6 mois).
       // Meta description reformulée avec "(31 avis)" pour préciser la source
       // du 5/5 et booster le CTR SERP.
-      title: "DAF externalisé : un CFO senior dès 2 000 €/mois | Iter Advisors",
+      // SEO-03 (S31 2026-07-27) — la page perdait 3 formulations du même
+      // besoin à 0 clic malgré des volumes réels : "directeur financier
+      // externalisé" (725 impressions), "direction financière externalisée"
+      // (630), "cfo externalisé" (504). La meta les inclut désormais en
+      // toutes lettres — Google met en gras les termes de la requête dans
+      // le snippet.
+      title: "DAF externalisé pour PME et startups | Iter Advisors",
       description:
-        "Pilotage, trésorerie, levée de fonds : un DAF externalisé opérationnel en 2 semaines. 85 entreprises accompagnées. Diagnostic gratuit.",
+        "Directeur financier externalisé à partir de 2 jours par mois : trésorerie, reporting, levée de fonds. 85 entreprises accompagnées. Diagnostic offert.",
     },
     breadcrumbLabel: "DAF Externalisé",
     essential: {
@@ -330,10 +336,15 @@ export const dafContent: Record<Locale, DafContent> = {
       // /daf-externalise/temps-partage (pos 20,1 GSC). Le H2 reformulé
       // ciblant "synonymes" (informationnel) au lieu de "DAF à temps
       // partagé" (cannibalisant avec la page fille). Cf. GSC ticket #1.
-      heading: "DAF externalisé, DAF à temps partagé, CFO fractional : synonymes ou nuances ?",
+      // SEO-03 (S31 2026-07-27) — ajout du contraste avec "DAF intérimaire",
+      // absent jusqu'ici, pour répondre à "daf externalisé vs daf intérimaire"
+      // (257 impressions, position 8,26, 0 clic) et "différence daf
+      // intérimaire externalise" (222, 10,47, 0 clic).
+      heading: "DAF externalisé, directeur financier externalisé, CFO à temps partagé : quelle différence ?",
       content: [
         "Ces expressions désignent globalement la même réalité — un directeur financier senior qui partage son temps entre plusieurs entreprises — mais la **nuance porte sur la durée et le mode d'intervention** : « DAF externalisé » est le terme générique, « DAF à temps partagé » insiste sur un mode récurrent long (12 à 36 mois), « CFO fractional » est le terme anglo-saxon plébiscité par les startups VC-backed.",
-        "Chez Iter Advisors nous proposons ces trois formats — c'est votre besoin qui dicte le mode, pas l'inverse. Pour l'intervention **récurrente sur la durée** (quelques jours par mois, engagement 12-36 mois), notre page dédiée détaille les missions et tarifs : [DAF à temps partagé : directeur financier 2 à 8 jours par mois](/daf-externalise/temps-partage). Pour une situation d'urgence, voir [DAF de transition](/daf-externalise/transition).",
+        "**DAF intérimaire** désigne un profil placé par une agence d'intérim, en général à temps plein et pour une mission courte de remplacement (congé, vacance de poste). C'est une solution de dépannage sur un modèle salarié classique. Le **DAF externalisé** repose au contraire sur un abonnement de service à temps partagé, sans lien de subordination ni charges sociales à gérer, pensé pour durer et monter en compétence sur l'entreprise plutôt que pour dépanner ponctuellement.",
+        "Chez Iter Advisors nous proposons ces formats — c'est votre besoin qui dicte le mode, pas l'inverse. Pour l'intervention **récurrente sur la durée** (quelques jours par mois, engagement 12-36 mois), notre page dédiée détaille les missions et tarifs : [DAF à temps partagé : directeur financier 2 à 8 jours par mois](/daf-externalise/temps-partage). Pour une situation d'urgence, voir [DAF de transition](/daf-externalise/transition).",
       ],
     },
     vsExpertComptable: {
