@@ -68,7 +68,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <p><strong>Erreur 5 : Pas de rapprochement bancaire régulier</strong> — Sans rapprochement, vous découvrez les erreurs trop tard. Solution : rapprochement bancaire automatisé chaque jour (Pennylane, Stripe, etc.).</p>
 <h3 id="outils-modernes-pour-piloter-la-tresorerie">Outils modernes pour piloter la trésorerie</h3>
 <p>Utiliser Excel pour gérer la trésorerie en 2026, c'est accepter de laisser de l'argent sur la table. Voici les outils qui font la différence :</p>
-<p><strong>Agicap ou Fygr</strong> — Synchronisation automatique de vos données bancaires, prévisionnel en temps réel, alertes sur les tensions de trésorerie.</p>
+<p><strong>Agicap ou Fygr</strong> — Synchronisation automatique de vos données bancaires, prévisionnel en temps réel, alertes sur les tensions de trésorerie. Nous les comparons en détail dans notre <a href="/ressources/outils/logiciels-tresorerie">comparatif des logiciels de trésorerie</a>.</p>
 <p><strong>Stripe ou Paypal pour les paiements</strong> — Webhook automatisé qui alimente votre comptabilité en temps réel. Zéro erreur de saisie.</p>
 <p><strong>Pennylane ou Dext pour la comptabilité</strong> — Rapprochement bancaire automatisé, synchronisation des factures.</p>
 <p><strong>Finthesis ou Looker pour le reporting</strong> — Tableaux de bord en temps réel de votre trésorerie, avec forecast et tendances.</p>
@@ -1528,7 +1528,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p>Tous les cabinets comptables ne se ressemblent pas. Certains sont figés dans des pratiques des années 2000. D'autres ne comprennent rien à la réalité des startups et PME. Vous avez besoin de :</p>
 <ul>
 <li>Un cabinet qui maîtrise votre industrie (SaaS, e-commerce, services, etc.)</li>
-<li>Un expert qui utilise des outils modernes et digitalisés (Pennylane, Dext, etc.) -- pas Excel</li>
+<li>Un expert qui utilise des outils modernes et digitalisés (Pennylane, Dext, etc.) -- pas Excel. Voir notre <a href="/ressources/outils/logiciels-comptabilite">comparatif des logiciels de comptabilité</a> pour savoir lequel exiger de votre prestataire</li>
 <li>Une vraie relation : un interlocuteur fixe, pas un turnover constant d'auditeurs</li>
 <li>Une réactivité : vos questions trouvent une réponse sous 24-48h, pas dans deux semaines</li>
 </ul>

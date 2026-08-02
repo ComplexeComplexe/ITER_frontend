@@ -13,7 +13,10 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-metier-page",
     locale: "fr",
     path: "/daf-externalise/metier",
-    localizedPaths: { fr: "/daf-externalise/metier", en: "/en/fractional-cfo/metier", es: "/es/externalizacion-daf/metier" },
+    // A1/SEO-23 (W31c 2026-08-02) — les cibles EN/ES pointaient vers
+    // /metier, renommé en /role (EN) et /funciones (ES) par l'audit
+    // multilingue : le hreflang désignait donc des URLs qui 301.
+    localizedPaths: { fr: "/daf-externalise/metier", en: "/en/fractional-cfo/role", es: "/es/externalizacion-daf/funciones" },
     fallbackTitle: "Fiche métier DAF | Iter Advisors",
     fallbackDescription: "Fiche métier du DAF (Directeur Administratif et Financier) : rôle, missions, compétences clés, salaire et évolution du poste en 2026.",
   });

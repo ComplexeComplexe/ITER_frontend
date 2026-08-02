@@ -97,6 +97,9 @@ const FR_BLOG_SLUGS = [
   "cout-daf-externalise-tarifs-prix-2026",
   "daf-drh-externalises-synergie",
   "daf-externalise-barcelone-guide-startups-espagnoles",
+  // W31c (2026-08-02) — article publié (route servie via blogPosts.fr)
+  // mais absent du sitemap : il n'était donc pas découvrable.
+  "daf-externalise-vs-daf-interimaire",
   "daf-externalise-vs-daf-salarie",
   "daf-externalise-vs-expert-comptable",
   "data-room-checklist-levee-de-fonds",

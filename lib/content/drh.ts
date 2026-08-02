@@ -101,6 +101,9 @@ export const drhContent: Record<Locale, DrhContent> = {
         "Le DRH externalisé (ou directeur des ressources humaines externalisé) intervient au sein de votre entreprise sans en être salarié. Il assume les mêmes responsabilités qu'un DRH interne : stratégie RH, recrutement, gestion des talents, conformité sociale, relations avec les instances représentatives et pilotage de la fonction RH.",
         // R5-link-2: [[accompagnement levée de fonds|/services/accompagnement-levee-de-fond]]
         "Cette solution s'adresse aux entreprises qui ont besoin d'une expertise RH de haut niveau sans recruter à temps plein. Le DRH externalisé peut intervenir à temps partagé (quelques jours par semaine ou par mois) ou sur des missions ponctuelles (audit, due diligence RH, [[accompagnement levée de fonds|/services/accompagnement-levee-de-fond]], etc.).",
+        // Maillage (2026-08-02) — le cocon RH était isolé : les 4 pages de
+        // service RH ne recevaient aucun lien depuis cette page pilier.
+        "Concrètement, la mission se décline en quatre expertises que nous opérons séparément ou ensemble : la [[gestion de la paie et des charges sociales|/services/gestion-paie-charges-sociales]], le [[recrutement et l'acquisition de talents|/services/recrutement-talent-acquisition]], la [[conformité au droit du travail|/services/conformite-droit-travail]] et la [[formation et le développement des équipes|/services/formation-developpement]].",
       ],
     },
     // R1.1 — Section "5 avantages clés du DRH externalisé"

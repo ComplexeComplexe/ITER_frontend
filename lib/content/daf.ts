@@ -462,7 +462,7 @@ export const dafContent: Record<Locale, DafContent> = {
         },
       ],
       outro:
-        "Sectoriellement, nos **DAF externalisés** sont spécialisés en SaaS, Deep-Tech, e-Commerce, Industrie et Services — secteurs sur lesquels nous avons accompagné +85 entreprises et facilité +100 M€ de levées de fonds.\n\n**Autres services :** Au-delà du DAF externalisé, nous proposons aussi un accompagnement sur d'autres fonctions critiques : **DRH externalisé** pour la structuration RH en croissance, management de transition pour les situations d'urgence, et accompagnement en levée de fonds.",
+        "Sectoriellement, nos **DAF externalisés** sont spécialisés en SaaS, Deep-Tech, e-Commerce, Industrie et Services — secteurs sur lesquels nous avons accompagné +85 entreprises et facilité +100 M€ de levées de fonds.\n\n**Autres services :** Au-delà du DAF externalisé, nous proposons aussi un accompagnement sur d'autres fonctions critiques : le [contrôle de gestion externalisé](/services/controle-de-gestion-externalise) pour le pilotage de la performance, **DRH externalisé** pour la structuration RH en croissance, management de transition pour les situations d'urgence, et accompagnement en levée de fonds.",
     },
     // Vrai témoignage extrait de Trustfolio (https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc)
     // Affiché en bandeau sous la grille tarifaire pour soutenir la conversion (audit SEO D.3).
@@ -1251,7 +1251,9 @@ export const dafContent: Record<Locale, DafContent> = {
         "El CFO externalizado no es un perfil unico. Segun su etapa de desarrollo y sus retos, el perfil ideal varia:",
         "CFO operativo: para empresas que necesitan estructurar su contabilidad, implantar un ERP y fiabilizar el reporting. Perfil tipico: 8-12 anos de experiencia, expertise en procesos y herramientas.",
         "CFO estrategico: para empresas en fase de crecimiento que necesitan pilotar la rentabilidad, preparar rondas de financiacion y acompanar las decisiones del COMEX. Perfil tipico: 15+ anos de experiencia, paso por direccion financiera de scale-up o ETI.",
-        "CFO de transicion: para situaciones de urgencia (salida del CFO, crisis de tesoreria, reestructuracion). Intervencion intensiva durante 3-6 meses para estabilizar la situacion. Perfil tipico: 20+ anos de experiencia, acostumbrado a entornos complejos.",
+        // Maillage (2026-08-02) — /es/externalizacion-daf/transicion était
+        // orpheline (3 liens entrants) : la page pilier ES ne la citait pas.
+        "CFO de transicion: para situaciones de urgencia (salida del CFO, crisis de tesoreria, reestructuracion). Intervencion intensiva durante 3-6 meses para estabilizar la situacion. Perfil tipico: 20+ anos de experiencia, acostumbrado a entornos complejos. Ver nuestra pagina dedicada: [CFO de transicion](/es/externalizacion-daf/transicion).",
         "En Iter Advisors, todos nuestros CFOs tienen un minimo de 10 anos de experiencia en direccion financiera y son seleccionados por su capacidad de integrarse rapidamente en entornos exigentes.",
       ],
     },
