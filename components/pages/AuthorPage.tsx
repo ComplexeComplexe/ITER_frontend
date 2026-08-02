@@ -49,7 +49,7 @@ const STRINGS: Record<
   },
   en: {
     breadcrumbAbout: "About",
-    aboutHref: "/en/a-propos",
+    aboutHref: "/en/about",
     articlesH2: "Published articles",
     articlesEmpty: "No articles published yet. Check back soon.",
     readArticle: "Read the article",
@@ -183,20 +183,21 @@ export default function AuthorPage({
         </div>
       </section>
 
+      {/* Le bloc « articles publiés » n'est rendu que s'il y a des articles.
+          Auparavant, les 17 fiches auteur sans publication affichaient un
+          H2 suivi de « Aucun article publié » : un module vide sur une page
+          indexable, qui dilue le contenu utile de la fiche (2026-08-02). */}
       <section className="bg-background pb-24 lg:pb-16">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-8">
-            {t.articlesH2}{" "}
-            {articles.length > 0 && (
-              <span className="text-base font-normal text-muted-foreground">
-                ({articles.length})
-              </span>
-            )}
-          </h2>
-          {articles.length === 0 ? (
-            <p className="text-muted-foreground">{t.articlesEmpty}</p>
-          ) : (
-            <ul className="divide-y divide-border/60">
+          {articles.length > 0 && (
+            <>
+              <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-8">
+                {t.articlesH2}{" "}
+                <span className="text-base font-normal text-muted-foreground">
+                  ({articles.length})
+                </span>
+              </h2>
+              <ul className="divide-y divide-border/60">
               {articles.map((a) => (
                 <li key={a.slug}>
                   <Link
@@ -229,7 +230,8 @@ export default function AuthorPage({
                   </Link>
                 </li>
               ))}
-            </ul>
+              </ul>
+            </>
           )}
         </div>
       </section>
