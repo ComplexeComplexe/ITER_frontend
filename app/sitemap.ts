@@ -93,7 +93,12 @@ const FR_BLOG_SLUGS = [
   "cas-etude-happy-scribe",
   "cash-burn-calculer-runway-anticiper-levee",
   "checklist-due-diligence-levee-de-fonds",
-  "cout-daf-externalise-2026-tarifs-par-mission",
+  // GEO-P0 (2026-08-02) — 4 slugs retirés : ils 308 vers un canonique déjà
+  // présent dans cette liste, un sitemap ne doit contenir que des 200.
+  //   cout-daf-externalise-2026-tarifs-par-mission → cout-daf-…-prix-2026
+  //   data-room-checklist-levee-de-fonds           → checklist-due-diligence-…
+  //   due-diligence-financiere-investisseurs       → checklist-due-diligence-…
+  //   externaliser-comptabilite-guide              → externalisation-comptable
   "cout-daf-externalise-tarifs-prix-2026",
   "daf-drh-externalises-synergie",
   "daf-externalise-barcelone-guide-startups-espagnoles",
@@ -102,11 +107,8 @@ const FR_BLOG_SLUGS = [
   "daf-externalise-vs-daf-interimaire",
   "daf-externalise-vs-daf-salarie",
   "daf-externalise-vs-expert-comptable",
-  "data-room-checklist-levee-de-fonds",
   "drh-externalise-quand-et-pourquoi",
-  "due-diligence-financiere-investisseurs",
   "externalisation-comptable",
-  "externaliser-comptabilite-guide",
   "flux-de-tresorerie",
   "impot-revenu-espagne",
   "la-modernisation-du-role-de-cfo",
@@ -254,23 +256,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // SITEMAP-FIX: EN "outsourced-financial-management" 308 → /en/fractional-cfo.
   // Emit FR + ES only. SITEMAP-QA (2026-05-19): mutual alternates added so
   // Google can cluster FR↔ES (EN intentionally excluded).
-  // Note: the FR page canonical (ticket F3) points to controle-de-gestion-externalise;
-  // the canonical tag on the page takes precedence — emitting the URL here is still
-  // correct so Googlebot discovers and processes it.
+  // GEO-P0 (2026-08-02) — /services/gestion-financiere-externalisee retiré
+  // du sitemap. La page répond 200 mais déclare un canonical vers
+  // /services/controle-de-gestion-externalise (ticket F3) : déclarer dans le
+  // sitemap une URL qui se canonise ailleurs envoie deux signaux
+  // contradictoires à Google. La version ES, elle, est auto-canonique et
+  // reste déclarée.
+  // NB : le fond reste à arbitrer (garder la 301 implicite via canonical,
+  // ou faire de cette URL un vrai pilier "direction financière
+  // externalisée" avec contenu propre et canonical auto-référent).
   {
     const gfAlternates = {
       languages: {
-        fr:          `${BASE}/services/gestion-financiere-externalisee`,
         es:          `${BASE}/es/services/gestion-financiera-externalizada`,
-        "x-default": `${BASE}/services/gestion-financiere-externalisee`,
+        "x-default": `${BASE}/es/services/gestion-financiera-externalizada`,
       },
     };
     entries.push(
-      {
-        url: `${BASE}/services/gestion-financiere-externalisee`,
-        lastModified: D.service,
-        alternates: gfAlternates,
-      },
       {
         url: `${BASE}/es/services/gestion-financiera-externalizada`,
         lastModified: D.service,
@@ -321,7 +323,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // SITEMAP-FIX: testimonials + case-studies both 308 → /ressources/cas-clients.
   entries.push(
     ...entryAllLocales(
-      { fr: "/ressources/cas-clients", en: "/ressources/cas-clients", es: "/recursos/cas-clients" },
+      // GEO-P0 (2026-08-02) — /es/recursos/cas-clients 308 vers
+      // casos-de-exito depuis l'audit multilingue : le sitemap et le
+      // hreflang pointaient encore sur l'ancienne URL.
+      { fr: "/ressources/cas-clients", en: "/ressources/cas-clients", es: "/recursos/casos-de-exito" },
       D.institutional
     )
   );
@@ -374,10 +379,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   entries.push(
     ...entryAllLocales({ fr: "/contact", en: "/contact", es: "/contact" }, D.institutional)
   );
-  // /jobs is noindexed (TICKET-12) but included for discovery
-  entries.push(
-    ...entryAllLocales({ fr: "/jobs", en: "/jobs", es: "/jobs" }, D.jobs)
-  );
+  // GEO-P0 (2026-08-02) — /jobs, /en/jobs et /es/jobs retirés du sitemap :
+  // les 3 pages portent "noindex, nofollow" (TICKET-12), les déclarer envoie
+  // à Google deux signaux contradictoires. À réintégrer si la politique
+  // d'indexation de ces pages change (elles restent liées depuis la nav).
   entries.push(
     ...entryAllLocales({ fr: "/mentions-legales", en: "/legal-notice", es: "/aviso-legal" }, D.institutional)
   );

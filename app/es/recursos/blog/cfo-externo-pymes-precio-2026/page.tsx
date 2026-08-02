@@ -43,7 +43,9 @@ export default function CfoExternoPymesPrecio2026Page() {
         name: "Benjamin Ziza",
         avatar: "/images/team/benjamin-ziza.webp",
         jobTitle: "Socio fundador — CFO & Inversor, Iter Advisors",
-        url: "/es/sobre-nosotros/benjamin-ziza",
+        // GEO-P0 (2026-08-02) — /es/sobre-nosotros/* n'existe pas (404) :
+        // le segment ES réel est /es/quienes-somos/*.
+        url: "/es/quienes-somos/benjamin-ziza",
       }}
       readingTime={6}
       dateModified="2026-07-24"
