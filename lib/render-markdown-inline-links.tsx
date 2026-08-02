@@ -13,55 +13,71 @@ import Link from "next/link";
  *   for relative URLs (or `<a>` for absolute ones).
  *
  * Scope:
- *   - Only inline links `[label](url)` are parsed. No bold/italic/code.
+ *   - Inline links `[label](url)` and bold `**text**` are parsed.
+ *     No italic/code.
  *   - Relative URLs (`/foo`) render via Next.js `<Link>` (client-side
  *     navigation + prefetch).
  *   - Absolute URLs render via `<a target="_blank" rel="noopener
  *     noreferrer">`.
  *   - HTML in `label` is NOT supported — it's plain text.
+ *
+ * Bold support added 2026-08-02: the ES and EN `intro` blocks of
+ * lib/content/daf.ts carry `**gras**` that was rendering as literal
+ * asterisks in production (the FR copy happened to carry none, so the
+ * bug was invisible on the page most people looked at).
  */
-const LINK_RE = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+const TOKEN_RE = /\*\*([^*]+)\*\*|\[([^\]]+)\]\(([^)\s]+)\)/g;
 
 export function renderInlineMarkdownLinks(text: string): ReactNode {
   if (!text) return text;
-  // Fast-path: no Markdown link → return as-is.
-  if (!LINK_RE.test(text)) return text;
-  LINK_RE.lastIndex = 0;
+  // Fast-path: no Markdown token → return as-is.
+  TOKEN_RE.lastIndex = 0;
+  if (!TOKEN_RE.test(text)) return text;
+  TOKEN_RE.lastIndex = 0;
 
   const parts: ReactNode[] = [];
   let cursor = 0;
   let key = 0;
-  for (const m of text.matchAll(LINK_RE)) {
-    const [full, label, url] = m;
+  for (const m of text.matchAll(TOKEN_RE)) {
+    const [full, boldText, label, url] = m;
     const start = m.index ?? 0;
     if (start > cursor) {
       parts.push(
         <Fragment key={`t-${key++}`}>{text.slice(cursor, start)}</Fragment>,
       );
     }
-    const isAbsolute = /^https?:\/\//i.test(url);
-    if (isAbsolute) {
+
+    if (boldText !== undefined) {
       parts.push(
-        <a
-          key={`l-${key++}`}
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-iter-violet hover:underline"
-        >
-          {label}
-        </a>,
+        <strong key={`b-${key++}`} className="font-semibold text-foreground">
+          {boldText}
+        </strong>,
       );
     } else {
-      parts.push(
-        <Link
-          key={`l-${key++}`}
-          href={url}
-          className="text-iter-violet hover:underline"
-        >
-          {label}
-        </Link>,
-      );
+      const isAbsolute = /^https?:\/\//i.test(url);
+      if (isAbsolute) {
+        parts.push(
+          <a
+            key={`l-${key++}`}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-iter-violet hover:underline"
+          >
+            {label}
+          </a>,
+        );
+      } else {
+        parts.push(
+          <Link
+            key={`l-${key++}`}
+            href={url}
+            className="text-iter-violet hover:underline"
+          >
+            {label}
+          </Link>,
+        );
+      }
     }
     cursor = start + full.length;
   }

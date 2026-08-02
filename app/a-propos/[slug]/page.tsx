@@ -26,7 +26,10 @@ export async function generateStaticParams() {
 function localizedPathsFor(slug: string) {
   return {
     fr: `/a-propos/${slug}`,
-    en: `/en/a-propos/${slug}`,
+    // A1 (W31c 2026-08-02) — /en/a-propos/* 301 vers /en/about/* depuis
+    // l'audit multilingue ; app/sitemap.ts émettait déjà /about, le
+    // hreflang de cette page était resté sur l'ancienne cible.
+    en: `/en/about/${slug}`,
     es: `/es/quienes-somos/${slug}`,
   };
 }

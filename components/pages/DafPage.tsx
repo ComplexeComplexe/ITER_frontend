@@ -340,7 +340,7 @@ export default function DafPage({
           )}
           {t.whatIs.content.map((p, i) => (
             <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              {locale === "fr" ? renderRichText(p) : p}
+              {renderRichText(p)}
             </p>
           ))}
           {t.whatIs.subsections?.map((sub, i) => (
@@ -353,7 +353,7 @@ export default function DafPage({
                   key={j}
                   className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4"
                 >
-                  {locale === "fr" ? renderRichText(p) : p}
+                  {renderRichText(p)}
                 </p>
               ))}
             </div>
@@ -442,7 +442,10 @@ export default function DafPage({
                 </h2>
                 {t.tempsPartage.content.map((p, i) => (
                   <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-                    {p}
+                    {/* Cette section rendait la chaîne brute : les **gras** et
+                        les [liens](url) du contenu s'affichaient littéralement
+                        (bug préexistant, visible en prod sur FR/EN/ES). */}
+                    {renderRichText(p)}
                   </p>
                 ))}
               </div>
@@ -564,7 +567,7 @@ export default function DafPage({
               {t.forWhom.heading}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 sm:mb-10">
-              {locale === "fr" ? renderRichText(t.forWhom.intro) : t.forWhom.intro}
+              {renderRichText(t.forWhom.intro)}
             </p>
             <div className="grid sm:grid-cols-2 gap-3 sm:gap-5">
               {t.forWhom.segments.map((seg, i) => (
@@ -576,14 +579,14 @@ export default function DafPage({
                     {seg.heading}
                   </h3>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    {locale === "fr" ? renderRichText(seg.content) : seg.content}
+                    {renderRichText(seg.content)}
                   </p>
                 </div>
               ))}
             </div>
             {t.forWhom.outro && (
               <p className="text-muted-foreground leading-relaxed mt-10">
-                {locale === "fr" ? renderRichText(t.forWhom.outro) : t.forWhom.outro}
+                {renderRichText(t.forWhom.outro)}
               </p>
             )}
           </div>
@@ -713,7 +716,7 @@ export default function DafPage({
           )}
           {t.pricing.content.map((p, i) => (
             <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              {locale === "fr" ? renderRichText(p) : p}
+              {renderRichText(p)}
             </p>
           ))}
 
@@ -766,9 +769,7 @@ export default function DafPage({
               </table>
               {t.pricingTable.comparisonNote && (
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-4 sm:mt-6">
-                  {locale === "fr"
-                    ? renderRichText(t.pricingTable.comparisonNote)
-                    : t.pricingTable.comparisonNote}
+                  {renderRichText(t.pricingTable.comparisonNote)}
                 </p>
               )}
             </div>
@@ -894,7 +895,7 @@ export default function DafPage({
           </h2>
           {t.whenToHire.content.map((p, i) => (
             <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              {locale === "fr" ? renderRichText(p) : p}
+              {renderRichText(p)}
             </p>
           ))}
         </div>
@@ -915,7 +916,7 @@ export default function DafPage({
           </h2>
           {t.profiles.content.map((p, i) => (
             <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              {locale === "fr" ? renderRichText(p) : p}
+              {renderRichText(p)}
             </p>
           ))}
         </div>
@@ -936,7 +937,7 @@ export default function DafPage({
           </h2>
           {t.tools.content.map((p, i) => (
             <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              {locale === "fr" ? renderRichText(p) : p}
+              {renderRichText(p)}
             </p>
           ))}
           {locale === "fr" && (

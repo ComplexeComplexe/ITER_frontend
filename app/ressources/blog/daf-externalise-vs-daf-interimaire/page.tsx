@@ -455,6 +455,38 @@ export default function DafExternalisVsDafInterimairePage() {
           l&apos;entreprise, la construction progressive d&apos;une fonction finance robuste.
           Il ne peut pas traiter une urgence à 5 % de son temps disponible.
         </p>
+        {/* C3 (W31c 2026-08-02) — maillage vers les pages commerciales du
+            cluster DAF : l'article n'en portait que 2 (contact + gestion
+            financière) alors qu'il traite frontalement l'arbitrage. */}
+        <p>
+          Concrètement, si votre besoin est ponctuel et intensif, c&apos;est une{' '}
+          <Link href="/daf-externalise/transition" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
+            mission de DAF de transition
+          </Link>{' '}
+          qu&apos;il vous faut. S&apos;il est récurrent et étalé dans le temps, c&apos;est{' '}
+          <Link href="/daf-externalise/temps-partage" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
+            un DAF à temps partagé
+          </Link>
+          , la formule la plus courante de notre offre de{' '}
+          <Link href="/daf-externalise" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
+            direction financière externalisée
+          </Link>
+          . Les{' '}
+          <Link href="/daf-externalise/tarifs" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
+            tarifs de DAF externalisé
+          </Link>{' '}
+          varient selon le volume de jours retenu. Si votre échéance est une levée,
+          notre{' '}
+          <Link href="/services/accompagnement-levee-de-fond" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
+            accompagnement de levée de fonds
+          </Link>{' '}
+          se combine avec l&apos;un ou l&apos;autre de ces formats. Pour le détail des
+          missions du poste, voir notre{' '}
+          <Link href="/ressources/blog/cfo-externe-role-missions-2026" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
+            analyse du rôle et des missions d&apos;un CFO externe
+          </Link>
+          .
+        </p>
 
         <Callout type="info" title="Notre approche chez Iter Advisors">
           <p>

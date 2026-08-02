@@ -31,12 +31,14 @@ const AUTHOR_URL = "/a-propos/sebastien-doat";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  // SEO-08 (S31 2026-07-27) — page en position 1 mais CTR proche de zéro
-  // ("taux imposition espagne" 0,29%, "irpf" 0 clic, "impot espagne" 1,15%
-  // contre 0,44% de référence pour la tranche 6-10 du site) : le chiffre
-  // concret passe en tête du title plutôt qu'en fin de description.
-  title: "IRPF Espagne 2026 : barème 19 à 47 % par tranche | Iter Advisors",
-  description: "Barème IRPF Espagne 2026 : de 19 % à 47 % selon la tranche et la région. Calcul, déductions, revenus de l'épargne. Guide complet par Iter Advisors.",
+  // B5 (W31c 2026-08-02) — remplace la version SEO-08 posée le 27/07, qui
+  // ouvrait sur "IRPF". Le title ouvre désormais sur "taux d'imposition en
+  // Espagne", la formulation réellement tapée et de loin la plus grosse des
+  // trois requêtes du hub (1 037 impressions, position 8,62, CTR 0,29 %)
+  // contre "irpf" (379) et "irpf espagne" (255). La description conserve la
+  // fourchette chiffrée en tête, demandée par SEO-08 pour le CTR.
+  title: "Taux d'imposition en Espagne 2026 : barème IRPF | Iter Advisors",
+  description: "Barème IRPF 2026 : de 19 % à 47 % tranche par tranche, taux réels par région, comparaison avec la France et cas des résidents français.",
   path: "/ressources/fiscalite/impot-revenu-espagne",
   // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google
   // doesn\'t crawl synthetic /en|/es URLs that 404.

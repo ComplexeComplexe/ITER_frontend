@@ -37,7 +37,10 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       sections: [
         {
           content: [
-            "Le **DAF**, ou Directeur Administratif et Financier, est l'officier financier senior de l'entreprise. Véritable bras droit du PDG ou du Directeur Général, il supervise l'intégralité de la fonction finance : comptabilité, trésorerie, reporting, fiscalité, et pilotage de la performance. Le DAF n'est pas qu'un expert technique ; c'est un partenaire stratégique qui participe aux décisions clés et contribue à la création de valeur.",
+            // Maillage (2026-08-02) — /ressources/glossaire/daf était
+            // orpheline (3 liens entrants) : la fiche métier, sa page la
+            // plus proche sémantiquement, ne la citait pas.
+            "Le **DAF**, ou Directeur Administratif et Financier, est l'officier financier senior de l'entreprise. Véritable bras droit du PDG ou du Directeur Général, il supervise l'intégralité de la fonction finance : comptabilité, trésorerie, reporting, fiscalité, et pilotage de la performance. Le DAF n'est pas qu'un expert technique ; c'est un partenaire stratégique qui participe aux décisions clés et contribue à la création de valeur. Pour la définition courte du terme, voir notre entrée de glossaire [DAF](/ressources/glossaire/daf).",
             "En 2026, le métier de DAF traverse une transformation profonde. Les tâches administratives et répétitives sont progressivement automatisées, libérant du temps pour les missions à haute valeur ajoutée : stratégie financière, accompagnement du business, gestion des risques et transformation digitale.",
           ],
         },

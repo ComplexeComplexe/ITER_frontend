@@ -1,6 +1,7 @@
 
 
 import { Metadata } from 'next';
+import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
@@ -234,6 +235,16 @@ export default function FluxDeTresorerieePage() {
         <li><strong>Fygr</strong> : Lean, parfait startups, design moderne</li>
         <li><strong>Pennylane</strong> : Comptabilité + trésorerie intégrées</li>
       </ul>
+      {/* Maillage (2026-08-02) — la catégorie outils trésorerie ne recevait
+          que 5 liens entrants alors que cet article cite déjà les outils. */}
+      <p>
+        Nous détaillons les différences de prix, d&apos;implémentation et de périmètre
+        dans notre{' '}
+        <Link href="/ressources/outils/logiciels-tresorerie" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
+          comparatif des logiciels de trésorerie
+        </Link>
+        .
+      </p>
       <p>
         <strong>Checklist de pilotage trésorerie :</strong>
       </p>

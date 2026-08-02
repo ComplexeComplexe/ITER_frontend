@@ -34,10 +34,16 @@ export const controleDeGestionExternaliseeContent = {
       // SEO audit + redesign 2026-05-17 — Title 50-60c with primary
       // keyword in first 40c, brand at the end. Meta 150-160c with
       // proof points (2 500€, 3 villes) and a soft CTA.
+      // B6 (W31c 2026-08-02) — "contrôle de gestion externalisé île de
+      // france" fait 273 impressions en position 5,76 pour 0 clic : déjà
+      // en page 1, géographiquement qualifiée, jamais cliquée. La mention
+      // Île-de-France remplace "Paris" pour capter la requête sans créer
+      // de page locale (cf. D5 : la page Toulouse existante est à 0 clic,
+      // donc pas de nouvelle page locale tant qu'elle ne convertit pas).
       title:
-        "Contrôle de gestion externalisé & pilotage | Iter Advisors",
+        "Contrôle de gestion externalisé : pilotez sans recruter | Iter Advisors",
       description:
-        "Externalisez votre contrôle de gestion avec un expert dédié. Tableaux de bord, KPIs, reporting mensuel. Dès 2 500 €/mois. Paris, Toulouse, Barcelone. → Découvrir.",
+        "Tableaux de bord, analyse des écarts, budget et reporting mensuel pris en charge par un contrôleur de gestion externalisé. Intervention en Île-de-France.",
     },
     h1: "Contrôle de gestion externalisé pour startups et PME",
     hero: {
@@ -170,7 +176,7 @@ export const controleDeGestionExternaliseeContent = {
           },
         ],
         closingTextHtml:
-          'Cette méthodologie s\'inscrit dans notre approche plus large de <a class="prose-link" href="/services/gestion-financiere-externalisee">gestion financière externalisée</a> — le contrôle de gestion en est le pilier central pour les sociétés en phase de structuration.',
+          'Cette méthodologie s\'inscrit dans notre approche plus large de <a class="prose-link" href="/services/gestion-financiere-externalisee">gestion financière externalisée</a> — le contrôle de gestion en est le pilier central pour les sociétés en phase de structuration. Nous intervenons en Île-de-France depuis notre bureau parisien (voir notre page <a class="prose-link" href="/daf-externalise-paris">DAF externalisé à Paris</a>), ainsi qu\'à Toulouse et Barcelone, en présentiel comme à distance. Pour la direction financière complète, voir notre offre de <a class="prose-link" href="/daf-externalise">direction financière externalisée</a> et ses <a class="prose-link" href="/daf-externalise/tarifs">tarifs de mission</a>.',
       },
 
       // ─────────── SECTION 5 — TÉMOIGNAGES ───────────
@@ -279,7 +285,9 @@ export const controleDeGestionExternaliseeContent = {
           {
             question: "Quels outils utilisez-vous pour le contrôle de gestion ?",
             answerHtml:
-              'Nous utilisons Power BI ou Google Data Studio pour les dashboards, Excel avancé pour la modélisation, et nous nous connectons à vos outils existants : <a class="prose-link" href="/ressources/outils/pennylane">Pennylane</a> ou Quickbooks pour la comptabilité, Stripe pour les paiements, HubSpot ou Salesforce pour le CRM. Pas de changement d\'outil requis.',
+              // Maillage (2026-08-02) — /ressources/outils/power-bi était
+              // orpheline (3 liens entrants) alors que l'outil est cité ici.
+              'Nous utilisons <a class="prose-link" href="/ressources/outils/power-bi">Power BI</a> ou Google Data Studio pour les dashboards, Excel avancé pour la modélisation, et nous nous connectons à vos outils existants : <a class="prose-link" href="/ressources/outils/pennylane">Pennylane</a> ou Quickbooks pour la comptabilité, Stripe pour les paiements, HubSpot ou Salesforce pour le CRM. Pas de changement d\'outil requis.',
           },
           {
             question: "Combien de temps faut-il pour mettre en place le reporting ?",

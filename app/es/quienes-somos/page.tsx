@@ -9,7 +9,8 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "about-page",
     locale: "es",
     path: "/es/quienes-somos",
-    localizedPaths: { fr: "/a-propos", en: "/en/a-propos", es: "/es/quienes-somos" },
+    // A1 (W31c 2026-08-02) — /en/a-propos 301 vers /en/about.
+    localizedPaths: { fr: "/a-propos", en: "/en/about", es: "/es/quienes-somos" },
     // P2-03: Shortened from 72 chars to 49 chars
     fallbackTitle: "Quiénes somos - CFO externalizado | Iter Advisors",
     // P1-03: Expanded from 23 chars to full meta description (> 120 chars)
