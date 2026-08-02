@@ -14,7 +14,12 @@ export const dafExternalisePariEnrichedContent = {
       name: "Sébastien Doat",
       jobTitle: "Co-fondateur & CFO Advisor",
       linkedInUrl: "https://www.linkedin.com/in/sebastiendoat",
-      avatarUrl: "https://www.iteradvisors.com/images/sebastien-doat.jpg",
+      // GEO-P0 (2026-08-02) — /daf-externalise-paris renvoyait un 500 :
+      // next/image rejette une src absolue dont l'hôte n'est pas déclaré
+      // dans images.remotePatterns, et le fichier visé n'existait pas non
+      // plus (même erreur corrigée ailleurs le 08/06, cf. Ahrefs T-404,
+      // mais cet avatarUrl avait été oublié).
+      avatarUrl: "/images/team/sebastien-doat.webp",
       updateDate: "2026-05-05",
     },
     tldr: "Iter Advisors propose des DAF externalisés à Paris dès 2 000 €/mois, avec une expertise spécialisée startups Station F et levées de fonds. Disposer d'une direction financière senior sans recruter un salarié : c'est l'alternative pertinente pour les PME et startups en croissance.",

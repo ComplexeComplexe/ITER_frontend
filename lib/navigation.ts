@@ -70,7 +70,7 @@ const navEn: NavItem[] = [
     title: "Expertise",
     href: "/en/fractional-cfo",
     children: [
-      { text: "Financial Direction (CFO)", href: "/en/fractional-cfo/metier" },
+      { text: "Financial Direction (CFO)", href: "/en/fractional-cfo/role" },
       { text: "Human Resources (HR)", href: "/en/hr-outsourcing" },
       { text: "M&A & Fundraising", href: "/en/services/fund-raising-support" },
     ],
@@ -83,7 +83,7 @@ const navEn: NavItem[] = [
       { text: "Transitional CFO", href: "/en/fractional-cfo/transition" },
       { text: "Management Control", href: "/en/services/outsourced-management-control" },
       { text: "Cash Flow Forecast", href: "/en/services/cash-flow-forecast" },
-      { text: "Outsourced Accounting", href: "/en/services/outsource-accounting" },
+      { text: "Outsourced Accounting", href: "/en/services/outsource-your-accounting" },
     ],
   },
   {
@@ -98,9 +98,9 @@ const navEn: NavItem[] = [
   },
   {
     title: "About",
-    href: "/en/a-propos",
+    href: "/en/about",
     children: [
-      { text: "Our Team", href: "/en/a-propos#equipe" },
+      { text: "Our Team", href: "/en/about#equipe" },
       { text: "Our Clients", href: "/en/clients" },
       { text: "Careers", href: "/en/jobs" },
     ],
@@ -113,7 +113,7 @@ const navEs: NavItem[] = [
     title: "Especialidades",
     href: "/es/externalizacion-daf",
     children: [
-      { text: "Dirección Financiera (CFO)", href: "/es/externalizacion-daf/metier" },
+      { text: "Dirección Financiera (CFO)", href: "/es/externalizacion-daf/funciones" },
       { text: "Recursos Humanos (RRHH)", href: "/es/externalizacion-rrhh" },
       { text: "M&A y Financiación", href: "/es/services/soporte-financiacion" },
     ],
@@ -123,10 +123,10 @@ const navEs: NavItem[] = [
     href: "/es/services",
     children: [
       { text: "CFO a tiempo compartido", href: "/es/externalizacion-daf/tiempo-compartido" },
-      { text: "CFO de transición", href: "/es/externalizacion-daf/transition" },
+      { text: "CFO de transición", href: "/es/externalizacion-daf/transicion" },
       { text: "Control de gestión", href: "/es/services/control-gestion-externalizado" },
       { text: "Previsión de tesorería", href: "/es/services/prevision-tesoreria" },
-      { text: "Contabilidad externalizada", href: "/es/services/contabilidad-externalizada" },
+      { text: "Contabilidad externalizada", href: "/es/services/externalizar-contabilidad" },
     ],
   },
   {
@@ -135,8 +135,8 @@ const navEs: NavItem[] = [
     children: [
       { text: "Herramientas", href: "/es/recursos/herramientas" },
       { text: "Blog & Actualidades", href: "/es/recursos/blog" },
-      { text: "Casos prácticos", href: "/es/recursos/cas-clients" },
-      { text: "Glosario", href: "/es/recursos/glossaire" },
+      { text: "Casos prácticos", href: "/es/recursos/casos-de-exito" },
+      { text: "Glosario", href: "/es/recursos/glosario" },
     ],
   },
   {
@@ -144,7 +144,7 @@ const navEs: NavItem[] = [
     href: "/es/quienes-somos",
     children: [
       { text: "Nuestro equipo", href: "/es/quienes-somos#equipo" },
-      { text: "Nuestros clientes", href: "/es/clients" },
+      { text: "Nuestros clientes", href: "/es/clientes" },
       { text: "Carreras", href: "/es/jobs" },
     ],
   },

@@ -209,13 +209,12 @@ gtag('consent','default',{
                     "@id": "https://www.iteradvisors.com/#organization",
                   },
                   inLanguage: ["fr-FR", "en-GB", "es-ES"],
-                  potentialAction: {
-                    "@type": "SearchAction",
-                    target:
-                      "https://www.iteradvisors.com/?s={search_term_string}",
-                    "query-input":
-                      "required name=search_term_string",
-                  },
+                  // GEO-P0 (2026-08-02) — SearchAction retiré : le site n'a
+                  // aucune route de recherche, /?s={terme} renvoyait
+                  // simplement la home (H1 et contenu identiques). Déclarer
+                  // une action inexistante est une donnée structurée fausse,
+                  // et l'URL avait fini par être indexée. À rétablir le jour
+                  // où une vraie recherche interne existe.
                 },
               ],
             }),
