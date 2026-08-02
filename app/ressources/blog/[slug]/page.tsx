@@ -19,7 +19,8 @@ const FR_ONLY_FISCALITE_BLOG_SLUGS = new Set([
   "bareme-irpf-espagne-2026",
   "modelo-720-declaration-biens-etranger",
   "double-imposition-france-espagne-convention",
-  "loi-beckham-espagne-conditions-2026",
+  // B-01 (2026-08-02) — "loi-beckham-espagne-conditions-2026" retiré : le
+  // slug n'existe plus dans blog-posts.ts et l'URL part en 301.
 ]);
 
 const breadcrumbsByLocale = {

@@ -902,6 +902,13 @@ const nextConfig: NextConfig = {
       { source: "/barcelone", destination: "/daf-externalise-barcelone", permanent: true },
       // BECK-01: loi-beckham → beckham-law (canonical) — flat redirect, no chain
       { source: "/ressources/fiscalite/loi-beckham", destination: "/ressources/fiscalite/beckham-law", permanent: true },
+      // B-01 (2026-08-02) — l'article blog "conditions-2026" rendait la MÊME
+      // source que la page pilier /ressources/fiscalite/beckham-law (title et
+      // H1 identiques) : cannibalisation directe sur "loi beckham espagne",
+      // page plafonnée en position 7-9. On conserve le satellite le plus
+      // complet ("conditions-eligibilite", 2 100 mots, déjà maillé) comme
+      // cible ; le pilier porte désormais son propre contenu.
+      { source: "/ressources/blog/loi-beckham-espagne-conditions-2026", destination: "/ressources/blog/loi-beckham-espagne-conditions-eligibilite", permanent: true },
       // T2: blog duplicate → fiscalite canonical
       { source: "/ressources/blog/double-imposition-france-espagne-convention", destination: "/ressources/fiscalite/double-imposition-france-espagne", permanent: true },
       // AUDIT-07-21: 404s avec inlinks actifs

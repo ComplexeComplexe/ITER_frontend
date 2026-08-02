@@ -2859,7 +2859,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <span class="callout-cfo__author">Benjamin Ziza — Associé fondateur, Iter Advisors</span>
 </div>
 <h2 id="section-3-loi-beckham">Section 3 — La loi Beckham : régime des expatriés</h2>
-<p>La loi Beckham (article 93 de la LIRPF) constitue l'outil fiscal le plus puissant pour les expatriés s'installant en Espagne. Ce régime permet d'être imposé comme non-résident pendant les 6 premières années, avec des taux très avantageux.</p>
+<p><a href="/ressources/fiscalite/beckham-law">La loi Beckham</a> (article 93 de la LIRPF) constitue l'outil fiscal le plus puissant pour les expatriés s'installant en Espagne. Ce régime permet d'être imposé comme non-résident pendant les 6 premières années, avec des taux très avantageux.</p>
 <h3>Conditions d'éligibilité</h3>
 <ul>
 <li>Ne pas avoir été résident fiscal en Espagne au cours des 5 années précédant le déménagement</li>
@@ -3129,41 +3129,13 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       content: [],
     },
 
-    "loi-beckham-espagne-conditions-2026": {
-      meta: {
-        title: "Loi Beckham Espagne 2026 : conditions et taux 24% | Iter Advisors",
-        description:
-          "Découvrez les conditions d'éligibilité à la Loi Beckham en 2026. Taux fixe d'IRPF à 24% pendant 6 ans pour les impatriés et digital nomads en Espagne.",
-      },
-      breadcrumbs: {
-        resourcesLabel: "Ressources",
-        resourcesHref: "/ressources",
-        blogLabel: "Blog",
-        blogHref: "/ressources/blog",
-      },
-      h1: "Loi Beckham en Espagne : le régime fiscal de faveur des impatriés",
-      publishedDate: "2026-05-31",
-      author: "Sébastien Doat",
-      category: "fiscalite-internationale",
-      htmlContent: `<p>Le "Régime Spécial des Travailleurs Déplacés", plus connu sous le nom de Loi Beckham, est un dispositif fiscal extrêmement attractif conçu pour attirer les talents étrangers en Espagne. Il permet aux nouveaux résidents d'être imposés comme des non-résidents pendant l'année de leur arrivée et les cinq années suivantes (soit <strong>6 ans au total</strong>).</p>
-<h2>Le principal avantage : un taux fixe à 24 %</h2>
-<p>Sous le régime général de l'IRPF, les revenus du travail sont imposés selon un barème progressif pouvant atteindre <strong>47 %</strong>. Avec la Loi Beckham, vos revenus du travail de source espagnole sont imposés à un <strong>taux fixe de 24 % jusqu'à 600 000 €</strong>. Au-delà de ce montant, le taux passe à 47 %.</p>
-<p>De plus, seuls les revenus générés en Espagne sont imposables. Vos revenus du capital (dividendes, intérêts) de source étrangère ne sont pas soumis à l'impôt espagnol sous ce régime — un avantage considérable pour les dirigeants qui conservent des investissements en France.</p>
-<h2>Conditions d'éligibilité en 2026</h2>
-<p>Pour bénéficier de ce régime, vous devez remplir plusieurs conditions :</p>
-<ul>
-<li>Ne pas avoir été <a href="/ressources/fiscalite/residence-fiscale-france-espagne">résident fiscal</a> en Espagne au cours des <strong>5 années fiscales précédentes</strong> (ce délai était de 10 ans avant la réforme).</li>
-<li>Le déplacement en Espagne doit être justifié par un contrat de travail, une mutation intra-groupe, ou l'acquisition du statut d'administrateur d'une société.</li>
-<li>Depuis la loi sur les startups (2023), les télétravailleurs internationaux (Digital Nomads) disposant du visa approprié sont également éligibles.</li>
-</ul>
-<p><em>Délai impératif : la demande doit être déposée dans un délai maximum de <strong>6 mois</strong> à compter de la date d'inscription à la Sécurité Sociale espagnole. Ce délai est non négociable.</em></p>
-<h2>Obligations déclaratives connexes</h2>
-<p>Si vous détenez des comptes bancaires, valeurs mobilières ou biens immobiliers en France d'une valeur supérieure à <strong>50 000 €</strong>, vous êtes tenu de les déclarer via le <a href="/ressources/fiscalite/modelo-720">Modelo 720</a> chaque année. Cette déclaration informative s'impose à tout résident fiscal espagnol, y compris sous le régime Beckham. L'omission expose à des pénalités.</p>
-<h2>Accompagnement pour les dirigeants qui s'installent à Barcelone</h2>
-<p>La structuration fiscal-sociale d'un dirigeant sous Loi Beckham — résidence, statut d'administrateur, Modelo 720, convention franco-espagnole — est un sujet que notre équipe de <a href="/daf-externalise-barcelone">DAF externalisés à Barcelone</a> traite régulièrement. Un diagnostic de 30 minutes suffit généralement pour clarifier votre situation spécifique.</p>`,
-      content: [],
-    },
-
+    // B-01 (2026-08-02) — entrée supprimée. Elle alimentait À LA FOIS
+    // /ressources/blog/loi-beckham-espagne-conditions-2026 ET la page
+    // pilier /ressources/fiscalite/beckham-law (via SOURCE_SLUG) : un seul
+    // contenu servi à deux URLs, avec title et H1 identiques, donc
+    // cannibalisation sur "loi beckham espagne". La page pilier porte
+    // désormais son propre contenu et l'URL blog part en 301 vers
+    // /ressources/blog/loi-beckham-espagne-conditions-eligibilite.
     "double-imposition-france-espagne-convention": {
       meta: {
         title: "Éviter la double imposition France-Espagne : le guide pratique | Iter Advisors",
