@@ -3,10 +3,15 @@ import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
 import { getCmsNavigation } from "@/lib/strapi";
 import { Callout, StatGrid, ProseTable, InlineCTA } from "@/components/blog";
 
+// SEO-05 (S31 2026-07-27) — page la plus lue du site (13 563 impressions,
+// 339 clics, CTR 2,50%) mais un <title> générique et tronqué en SERP, sans
+// "France", "Espagne" ni "comparatif" — alors que les requêtes qui amènent
+// le trafic sont exactement "fiscalité espagne vs france", "taux
+// imposition espagne vs france", "impôt société espagne vs france".
 export const metadata: Metadata = {
-  title: "Régimes Fiscaux | Iter Advisors",
+  title: "Fiscalité France vs Espagne 2026 : le comparatif complet | Iter Advisors",
   description:
-    "Guide complet de la comparaison fiscale France-Espagne 2026. IS, TVA, cotisations, régimes spéciaux. Économisez jusqu'à 7 500 €/employé. Audit gratuit.",
+    "Impôt sur le revenu, IS, TVA, cotisations sociales : toutes les différences fiscales entre la France et l'Espagne, avec les chiffres et seuils 2026.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/regimes-fiscaux-france-vs-espagne",
     languages: {

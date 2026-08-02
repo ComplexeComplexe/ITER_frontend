@@ -29,10 +29,15 @@ const PUBLISHED_DATE = "2026-05-31";
 const AUTHOR_NAME = "Florent Greth";
 const AUTHOR_URL = "/a-propos/florent-greth";
 
+// SEO-04 (S31 2026-07-27) — le champ sémantique dominant côté requêtes est
+// "convention fiscale", pas "double imposition" : "retraite espagne
+// convention" (2 173 impressions, position 17,34, 0 clic) et "convention
+// fiscale france espagne" (388, 9,54, 0 clic) ne sont pas servies par
+// l'ancien title.
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Double imposition France-Espagne : convention 2026 | Iter Advisors",
-  description: "Comment fonctionne la convention fiscale franco-espagnole de 1995 ? Méthodes du crédit d'impôt et de l'exemption avec progressivité pour éviter la double imposition.",
+  title: "Convention fiscale France Espagne 2026 : guide complet | Iter Advisors",
+  description: "Double imposition, résidence fiscale, retraites, dividendes, plus-values : ce que prévoit la convention France Espagne et comment l'appliquer en 2026.",
   path: "/ressources/fiscalite/double-imposition-france-espagne",
   // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google
   // doesn\'t crawl synthetic /en|/es URLs that 404.

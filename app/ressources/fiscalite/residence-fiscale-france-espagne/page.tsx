@@ -183,6 +183,18 @@ export default async function Page() {
               revenus proviennent d&apos;une activité exercée en Espagne ou si
               la majorité de votre patrimoine y est située.
             </p>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-4">
+              C&apos;est précisément ce critère qui distingue un dirigeant{" "}
+              <Link href="/daf-externalise-barcelone" className="text-iter-violet hover:underline">
+                installé en Espagne avec une structure française
+              </Link>
+              {" "}d&apos;un entrepreneur qui{" "}
+              <Link href="/services/gestion-financiere-externalisee" className="text-iter-violet hover:underline">
+                pilote une filiale espagnole depuis la France
+              </Link>
+              : dans le premier cas la résidence fiscale bascule en Espagne,
+              dans le second elle reste généralement française.
+            </p>
           </div>
 
           {/* Critère 3 */}

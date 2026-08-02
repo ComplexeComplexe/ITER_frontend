@@ -70,7 +70,9 @@ const servicesFr: ServicesContent = {
       "Iter Advisors vous accompagne avec des solutions adaptees : levee de fonds, controle de gestion, comptabilite, gestion financiere et tresorerie.",
   },
   hero: {
-    h1: "Services",
+    // SEO-09 (S31 2026-07-27) — H1 générique sans valeur sémantique sur une
+    // page de hub.
+    h1: "Direction financière, RH et opérations externalisées pour PME et ETI",
   },
   intro: {
     paragraph:
