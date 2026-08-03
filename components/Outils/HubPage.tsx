@@ -309,7 +309,7 @@ const comparisonRows = [
     use: 'Paie déléguée avec gestionnaire dédié',
     size: 'PME sans RH senior',
     effort: 'Modéré',
-    price: 'Environ 20 à 25 € / salarié',
+    price: 'À partir de 25 € / mois, tout inclus',
     verdict:
       "Option intéressante pour externaliser davantage la production de la paie, avec un recul produit encore à construire.",
   },
@@ -365,7 +365,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
       categoryLabel: 'Paie & RH',
       badge: 'Nouveau sur notre radar',
       idealFor: 'Startups et PME de 5 à 80 salariés sans RH senior en interne.',
-      why: 'SIRH couplé à un gestionnaire de paie dédié qui produit les bulletins sur la technologie Silae — pour déléguer la paie, pas seulement l’outiller.',
+      why: 'SIRH complet (paie, absences, planning, frais, temps, entretiens, onboarding) couplé à un gestionnaire de paie dédié qui produit les bulletins sur la technologie Silae, en plan unique tout inclus.',
       watchOut:
         'Solution récente : recul produit et parc installé encore inférieurs aux acteurs historiques.',
     },
