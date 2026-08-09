@@ -10,7 +10,7 @@ import { strapiMediaUrl } from "@/lib/strapi";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import { BOOKING_URL } from "@/lib/navigation";
 import { getDafContent, type FaqRichAnswer, type LongTailQA, type SourceCitation } from "@/lib/content/daf";
-import { faqPageSchema, howToSchema, speakableSchema } from "@/lib/schemas";
+import { faqPageSchema, speakableSchema } from "@/lib/schemas";
 import { renderInlineMarkdownLinks } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -631,9 +631,11 @@ export default function DafPage({
       </section>
 
       {/* Pricing */}
-      {/* P10 (2026-05-29) — visible 4-step onboarding sequence. Mirrors the
-          HowTo JSON-LD (HOW_TO_COLLAB) emitted further down, giving humans and
-          answer engines a numbered, extractable process. All locales. */}
+      {/* P10 (2026-05-29) — visible 4-step onboarding sequence, giving humans
+          and answer engines a numbered, extractable process. All locales.
+          SEO-005 (2026-08-09) : le HowTo JSON-LD qui doublait ce bloc a été
+          retiré (résultats enrichis HowTo supprimés par Google). Ces étapes
+          restent la seule source, et elles sont visibles. */}
       <section id="deroulement" className="bg-background py-16 sm:py-24 lg:py-32 scroll-mt-24">
         <div className="container max-w-5xl px-4 sm:px-6">
           <div className="max-w-2xl mb-8 sm:mb-12">
@@ -1187,20 +1189,13 @@ export default function DafPage({
         }}
       />
 
-      {/* HowTo Schema (T-7) — collaboration steps for AI answer engines */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            howToSchema({
-              name: HOW_TO_COLLAB[locale].name,
-              description: HOW_TO_COLLAB[locale].description,
-              steps: HOW_TO_COLLAB[locale].steps,
-              totalTime: "P14D",
-            }),
-          ),
-        }}
-      />
+      {/* SEO-005 (2026-08-09) — schéma HowTo supprimé.
+
+          Google a retiré les résultats enrichis HowTo de la recherche (annonce
+          d'août 2023, puis suppression complète). Le balisage ne produisait
+          donc plus rien, tandis que les étapes de collaboration restent
+          lisibles en clair dans le corps de la page — qui est ce que lisent
+          les moteurs de réponse. */}
 
       {/* D1 enrichi (2026-05-25) — Organization (FinancialService) avec founders,
           knowsAbout, alternateName, foundingDate, numberOfEmployees, taxID/vatID,
@@ -1374,38 +1369,15 @@ export default function DafPage({
         />
       )}
 
-      {/* DAF-04 — FinancialService schema for explicit service categorization by Google. */}
-      {locale === "fr" && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FinancialService",
-              name: "DAF Externalisé — Iter Advisors",
-              provider: { "@id": "https://www.iteradvisors.com/#organization" },
-              areaServed: ["Paris", "Toulouse", "Barcelone"],
-              hasOfferCatalog: {
-                "@type": "OfferCatalog",
-                name: "Formules DAF Externalisé",
-                itemListElement: [
-                  { "@type": "Offer", name: "Essentiel", price: "2000", priceCurrency: "EUR" },
-                  { "@type": "Offer", name: "Croissance", price: "4000", priceCurrency: "EUR" },
-                  { "@type": "Offer", name: "Premium", price: "7000", priceCurrency: "EUR" },
-                ],
-              },
-              // Review Snippet fix (2026-07-19) — aggregateRating (5/31)
-              // supprimé. Il coexistait avec l'aggregateRating (5/35) du
-              // bloc Service ci-dessus, ce qui déclenchait la règle GSC
-              // "avis multiples cumulés" (35 vs 31 sur la même page).
-              // De plus, @type FinancialService n'est pas supporté par
-              // Google pour Review Snippets. La note est désormais
-              // rattachée à ProfessionalService (@id #organization), seul
-              // type supporté.
-            }),
-          }}
-        />
-      )}
+      {/* SEO-005 (2026-08-09) — schéma FinancialService supprimé.
+
+          Il décrivait une troisième fois la même activité : sans @id (donc
+          nœud anonyme distinct de #organization), et avec exactement le même
+          catalogue d'offres que le bloc Service ci-dessus — Essentiel 2 000 €,
+          Croissance 4 000 €, Premium 7 000 €. Son propre commentaire notait
+          déjà que Google ne supporte pas FinancialService pour les review
+          snippets, seule raison de son ajout ; l'aggregateRating en avait été
+          retiré en juillet. Il ne restait que le doublon. */}
 
       {/* GAP 2 (2026-05-19) — Person schemas for named CFO experts (E-E-A-T / YMYL signal).
           Sébastien Doat (founding partner) + Florent Greth (partner CFO).

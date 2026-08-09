@@ -262,7 +262,7 @@ export const dafContent: Record<Locale, DafContent> = {
         },
         {
           question: "Un CFO fractionnel est-il plus rentable qu'un CFO à temps plein ?",
-          answer: "Oui, dans la majorité des cas. Un CFO salarié à temps plein coûte 100 000 à 213 000 € chargé/an, soit 8 300 à 17 750 €/mois. Un CFO fractionnel coûte 2 000 à 7 000 €/mois pour un niveau de séniorité équivalent. Si votre besoin est inférieur à 3–4 jours par semaine — ce qui est le cas de 90 % des PME et startups — le CFO fractionnel est mécaniquement plus rentable.",
+          answer: "Oui, dans la majorité des cas. Un CFO salarié à temps plein coûte 100 000 à 213 000 € chargé/an, soit 8 300 à 17 750 €/mois. Un CFO fractionnel coûte 2 000 à 7 000 €/mois pour un niveau de séniorité équivalent. Si votre besoin est inférieur à 3–4 jours par semaine, le CFO fractionnel est mécaniquement plus rentable : vous payez le temps réellement utilisé plutôt qu'un poste à temps plein. C'est la situation de la grande majorité des PME et startups que nous accompagnons.",
         },
         {
           question: "Que se passe-t-il pendant les 2 premières semaines d'une mission ?",
@@ -450,7 +450,7 @@ export const dafContent: Record<Locale, DafContent> = {
         },
       ],
       comparisonNote:
-        "À titre de comparaison, un **DAF salarié à temps plein** coûte entre 100 000 € et 213 000 € chargé/an, soit 4 à 8 fois plus qu'un DAF externalisé selon la formule. Pour une intervention récurrente sur le long terme, voir notre offre [DAF à temps partagé](/daf-externalise/temps-partage). Pour une situation d'urgence (départ DAF, restructuration), voir notre offre [DAF de transition](/daf-externalise/transition).",
+        "À titre de comparaison, un **DAF salarié à temps plein** représente un coût employeur estimé entre 100 000 € et 213 000 € par an, charges comprises. L'écart avec un DAF externalisé dépend des deux termes comparés : d'environ 1,2 fois entre notre formule la plus étoffée et un recrutement d'entrée de gamme, jusqu'à 8 fois entre la formule Essentiel et un profil senior à temps plein. Pour une intervention récurrente sur le long terme, voir notre offre [DAF à temps partagé](/daf-externalise/temps-partage). Pour une situation d'urgence (départ DAF, restructuration), voir notre offre [DAF de transition](/daf-externalise/transition).",
     },
     forWhom: {
       heading: "DAF externalisé : pour qui et à quel stade ?",
@@ -597,7 +597,7 @@ export const dafContent: Record<Locale, DafContent> = {
         // SERP PAA wording variant (différent de \"Combien coûte\") — annual / ROI angle.
         question: "Quel est le coût d'un DAF externalisé ?",
         answer:
-          "Sur une base annuelle, un DAF externalisé chez Iter Advisors revient entre 24 000 et 84 000 EUR HT par an selon la formule choisie (2 000 à 7 000 EUR HT/mois). C'est 4 à 8 fois moins qu'un DAF salarié à temps plein (100 000 à 213 000 EUR/an charges comprises). Le coût total dépend du volume d'intervention (jours par mois), de la séniorité du profil et de la complexité de la situation : multi-entités, multi-devises, levée de fonds en cours, opérations de M&A.",
+          "Sur une base annuelle, un DAF externalisé chez Iter Advisors revient entre 24 000 et 84 000 EUR HT par an selon la formule choisie (2 000 à 7 000 EUR HT/mois). Un DAF salarié à temps plein représente en regard un coût employeur estimé de 100 000 à 213 000 EUR/an, charges comprises : l'écart va d'environ 1,2 fois (formule Premium contre recrutement d'entrée de gamme) à 8 fois (formule Essentiel contre profil senior à temps plein). Le coût total dépend du volume d'intervention (jours par mois), de la séniorité du profil et de la complexité de la situation : multi-entités, multi-devises, levée de fonds en cours, opérations de M&A.",
       },
       {
         // SERP PAA.
@@ -626,7 +626,7 @@ export const dafContent: Record<Locale, DafContent> = {
         // traîne "différence daf externalisé salarié".
         question: "Quelle est la différence entre un DAF externalisé et un DAF salarié ?",
         answer:
-          "Un DAF salarié coûte 100 000 à 213 000 € chargés par an (soit 8 300 à 17 750 € par mois) et nécessite 3 à 6 mois de recrutement avec un risque de départ à zéro coût de remplacement. Un DAF externalisé démarre à 2 000 € HT/mois (24 000 € HT/an), est opérationnel sous 1 à 2 semaines, et offre une flexibilité totale : volume ajustable au mois, aucun engagement de durée, continuité garantie par le cabinet. Le DAF salarié devient préférable au-delà de 200 salariés et d'un CA stable supérieur à 50 M€. En-dessous, le DAF externalisé est 4 à 8 fois plus économique et couvre les mêmes missions : pilotage financier, trésorerie, reporting, levée de fonds.",
+          "Un DAF salarié coûte 100 000 à 213 000 € chargés par an (soit 8 300 à 17 750 € par mois) et nécessite 3 à 6 mois de recrutement avec un risque de départ à zéro coût de remplacement. Un DAF externalisé démarre à 2 000 € HT/mois (24 000 € HT/an), est opérationnel sous 1 à 2 semaines, et offre un volume ajustable au mois. En cas d'indisponibilité, le cabinet assure le relais avec un autre profil — un engagement contractuel, à distinguer d'une garantie de résultat. Le recrutement d'un DAF salarié se justifie généralement quand le besoin devient un temps plein durable, ce qui correspond souvent à un effectif de plus de 200 salariés et un CA stable supérieur à 50 M€ — mais le seuil dépend de la complexité de l'entreprise, pas de sa seule taille. En-dessous, le DAF externalisé couvre les mêmes missions pour un budget nettement inférieur : pilotage financier, trésorerie, reporting, levée de fonds.",
       },
       {
         // GSC-01 (2026-07-19) — question People-Also-Ask fréquente. Détaille

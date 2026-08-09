@@ -1806,7 +1806,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <tr><td>Flexibilité</td><td>2 jours/semaine à temps plein, ajustable</td></tr>
 <tr><td>Expertise</td><td>Multi-sectorielle (10-15 entreprises/an)</td></tr>
 <tr><td>Délai de déploiement</td><td>1 à 2 semaines</td></tr>
-<tr><td>Continuité</td><td>Remplacement garanti sous 48h</td></tr>
+<tr><td>Continuité</td><td>Relais assuré par le cabinet sous 48 h (engagement contractuel)</td></tr>
 </tbody>
 </table>
 <h3>Le DAF salarié</h3>
@@ -2997,7 +2997,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 </table>
 <h3>Avantage 2 — Accès à une expertise diversifiée</h3>
 <p>Un expert-comptable traite les comptes de 30 à 80 entreprises par an. Cette exposition multi-sectorielle lui permet d'anticiper les problématiques spécifiques à chaque activité (CIR pour les entreprises de R&amp;D, TVA intracommunautaire pour l'e-commerce, subventions pour les startups innovantes).</p>
-<h3>Avantage 3 — Remplacement garanti</h3>
+<h3>Avantage 3 — Continuité de service contractuelle</h3>
 <p>En cas de départ d'un comptable salarié, l'entreprise perd 3 à 6 mois de productivité (préavis + recrutement + formation). Un prestataire externalisé assure la continuité de service contractuelle, avec un remplacement en 48 à 72 heures.</p>
 <h3>Avantage 4 — Outils modernes et automatisation</h3>
 <p>Les plateformes comptables cloud (<a href="/ressources/outils/pennylane">Pennylane</a>, Sage, Cegid Loop) permettent :</p>

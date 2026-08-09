@@ -323,7 +323,7 @@ export default function CoutDafExternalisePage() {
 
       <h2>Conclusion : un investissement très rentable</h2>
       <p>
-        Un DAF externalisé à €50-70k/an pour une PME n'est pas un coût, c'est un investissement. Les retours sont immédiats : qualité finance, cash mieux géré, levée de fonds facilitée, conformité garantie.
+        Un DAF externalisé à €50-70k/an pour une PME n'est pas un coût, c'est un investissement. Les retours attendus : information financière fiabilisée, trésorerie mieux pilotée, levée de fonds préparée en amont et échéances de conformité tenues.
       </p>
       <p>
         <strong>Chez Iter Advisors :</strong>
@@ -331,7 +331,7 @@ export default function CoutDafExternalisePage() {
       <ul>
         <li>DAF sénior à partir de €3,200/mois (2j/semaine)</li>
         <li>Tous inclus : clôture, reporting, conseil, support équipe</li>
-        <li>Remplacement garanti si besoin (zéro risque continuité)</li>
+        <li>Relais assuré par le cabinet en cas d'indisponibilité du DAF (engagement contractuel)</li>
         <li>Contrat flexible, résiliation 30 jours</li>
       </ul>
       <p>

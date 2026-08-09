@@ -201,17 +201,25 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         // en pos 18 sur 3 441 impressions sur "daf de transition" (0
         // conversion). Ajout de la variante lexicale pour capter aussi
         // "management de transition finance" recherchée par les DRH/CEO.
-        title: "DAF de transition : un CFO opérationnel sous 15 jours | Iter Advisors",
+        // SEO-002 (2026-08-09) — annonçait « sous 15 jours » alors que la
+        // page sert « 48 h » dans son title réel, son OG et neuf fois dans
+        // son corps. Ce titre est un repli (le title effectif est défini
+        // dans app/daf-externalise/transition/page.tsx) mais il portait une
+        // troisième promesse de délai : aligné.
+        title: "DAF de transition : un CFO opérationnel en 48 h | Iter Advisors",
         description:
           "Remplacement, crise, restructuration : un DAF de transition senior prend le poste en 15 jours. Missions de 3 à 12 mois.",
       },
       parentLabel: "DAF Externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF de transition",
-      // T#12 (2026-07-18) — H1 recentré sur l'intent fiche-métier SERP :
-      // "salaire", "missions", "devenir" captent les PAA dominants sur
-      // "daf de transition" tout en évitant la cannibalisation pilier.
-      h1: "DAF de transition : fiche métier, missions, salaire et devenir",
+      // SEO-006 (2026-08-09) — H1 remis sur l'intention commerciale.
+      // « fiche métier, salaire, devenir » vise un candidat, pas un acheteur :
+      // il contredisait le <title> réellement servi (« DAF de transition 48 h
+      // pour PME et ETI ») et le corps de page, qui est entièrement
+      // commercial — cas d'intervention, missions, TJM, comparatifs, CTA.
+      // Le balisage JobPosting qui accompagnait ce cadrage a été retiré.
+      h1: "DAF de transition : un directeur financier senior opérationnel en 48 h",
       sections: [
         {
           // T4 (2026-06-07) — bloc "L'essentiel en 30 secondes" en tête de
@@ -235,8 +243,9 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           // T#12 (2026-07-18) — Fiche métier restructurée comme une vraie
           // fiche APEC / Michael Page pour coller à l'intent SERP dominant.
-          // Heading "fiche métier complète" pour capter la variante longue.
-          heading: "DAF de transition : fiche métier complète",
+          // SEO-006 (2026-08-09) — « fiche métier complète » était le dernier
+          // reliquat du cadrage carrière sur une page commerciale.
+          heading: "DAF de transition : définition et périmètre d'intervention",
           content: [
             "Le DAF de transition (Directeur Administratif et Financier de transition) est un cadre dirigeant senior qui intervient à temps plein dans une entreprise pour une mission limitée, généralement de 3 à 12 mois. Son rôle : assurer la continuité de la direction financière dans des situations critiques — départ brutal du DAF, crise de trésorerie, restructuration, préparation à une cession ou à une levée de fonds. Contrairement au DAF à temps partagé qui s'inscrit dans la durée, le DAF de transition mobilise l'intégralité de sa disponibilité pour répondre à une urgence ou à une transformation majeure.",
             "**Fiche de poste — données clés :**",
@@ -344,7 +353,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           // existantes ciblaient "salaire" et "manager de transition" —
           // maintenant les 3 requêtes clés sont couvertes en FAQPage JSON-LD.
           content: [
-            "**Quel est le salaire d'un DAF de transition ?** Le DAF de transition se rémunère en TJM (Taux Journalier Moyen) entre 800 et 1 500 € HT par jour. Sur une mission à temps plein (20 jours par mois), cela représente une facturation mensuelle de 16 000 à 30 000 € HT, soit l'équivalent d'un salaire brut annuel de 180 000 à 350 000 € rapporté à un temps plein. Pour un DAF salarié senior en CDI à titre de comparaison, la fourchette est de 90 000 à 150 000 € bruts annuels.",
+            "**Combien coûte un DAF de transition par rapport à un DAF salarié ?** Le DAF de transition se rémunère en TJM (Taux Journalier Moyen) entre 800 et 1 500 € HT par jour. Sur une mission à temps plein (20 jours par mois), cela représente une facturation mensuelle de 16 000 à 30 000 € HT, soit l'équivalent d'un salaire brut annuel de 180 000 à 350 000 € rapporté à un temps plein. Pour un DAF salarié senior en CDI à titre de comparaison, la fourchette est de 90 000 à 150 000 € bruts annuels.",
             "**Quelle est la différence entre un DAF de transition et un manager de transition ?** Le manager de transition est un terme générique qui désigne tout cadre dirigeant intervenant en mode transition (DG, DRH, DAF, DSI...). Le DAF de transition est un manager de transition spécialisé dans la direction financière.",
             "**Dans quels cas fait-on appel à un DAF de transition ?** Six situations déclenchent systématiquement le recours à un DAF de transition : (1) départ brutal ou démission du DAF en poste — la vacance ne peut pas durer 3 à 6 mois ; (2) crise de trésorerie sévère nécessitant un pilotage à temps plein (BFR hors de contrôle, rupture bancaire) ; (3) restructuration ou redressement impliquant banques et créanciers ; (4) préparation à une cession ou un LBO avec data room, audit vendeur et due diligence ; (5) levée de fonds urgente (Série A/B) nécessitant une disponibilité intégrale de 3 à 6 mois ; (6) transformation digitale de la direction financière (migration ERP, refonte des processus). Chez Iter Advisors, nous démarrons sous 48 à 72 heures.",
             "**Le DAF de transition peut-il recruter son successeur ?** Oui, c'est même recommandé. Le DAF de transition connaît les besoins réels du poste et peut aider à définir le profil idéal, participer aux entretiens, et assurer la passation avec le nouveau DAF recruté.",
@@ -401,7 +410,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           heading: "Comparaison avec les Alternatives",
           content: [
-            "DAF externalisé vs DAF salarié : un DAF salarié en CDI coûte 80 000-150 000€ brut/an, soit 116 000-217 000€/an charges comprises (45% de charges patronales). Un DAF externalisé à 2 jours/mois coûte 2 500-4 500€ HT/mois, soit 3 à 7 fois moins cher. De plus, si vos besoins évoluent, vous ajustez simplement le nombre de jours sans contrainte administrative.",
+            "DAF externalisé vs DAF salarié : un DAF salarié en CDI coûte 80 000-150 000€ brut/an, soit 116 000-217 000€/an charges comprises (45% de charges patronales). Un DAF externalisé à 2 jours/mois coûte 2 500-4 500€ HT/mois, soit 30 000 à 54 000€ HT/an — l'écart avec un recrutement va donc d'environ 2 à 7 fois selon les deux configurations comparées. De plus, si vos besoins évoluent, vous ajustez simplement le nombre de jours sans contrainte administrative.",
             // SEO-DAF-02 (2026-08-09) — « certifie » relève du commissaire
             // aux comptes. L'expert-comptable produit les comptes et conseille
             // selon sa lettre de mission.

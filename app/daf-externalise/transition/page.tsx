@@ -112,81 +112,17 @@ export default async function Page() {
     },
   };
 
-  // T#12 (2026-07-18) — JobPosting schema pour signaler à Google que la page
-  // est une fiche métier. Booste les rich results sur "daf de transition"
-  // dans les SERP "emploi / métier" (APEC-like intent).
-  // GSC-07 (2026-07-30): jobLocation/baseSalary/experienceRequirements
-  // rebuilt to match the working pattern already validated on
-  // /carrieres/fractional-cfo/page.tsx — full address for the Barcelona
-  // HQ, city+region for the Paris/Toulouse offices, jobLocationType
-  // TELECOMMUTE (the mission is hybrid/remote-friendly across all three),
-  // baseSalary (not estimatedSalary, which Google doesn't recognize), and
-  // qualifications instead of experienceRequirements (free text — avoids
-  // the "invalid enumeration value" warning tied to that property).
-  const jobPostingSchema = {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "@id": `${PAGE_URL}#jobposting`,
-    title: "DAF de transition",
-    description: "Directeur Administratif et Financier de transition intervenant à temps plein pour une mission de 3 à 12 mois. Missions : pilotage de trésorerie en crise, audit éclair, restructuration, préparation levée de fonds ou cession. Démarrage en 48-72 h.",
-    hiringOrganization: {
-      "@type": "Organization",
-      "@id": "https://www.iteradvisors.com/#organization",
-      name: "Iter Advisors",
-      sameAs: "https://www.iteradvisors.com",
-      logo: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
-    },
-    jobLocation: [
-      {
-        "@type": "Place",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Carrer Casp, 54, 5-1°",
-          addressLocality: "Barcelona",
-          postalCode: "08010",
-          addressRegion: "Catalunya",
-          addressCountry: "ES",
-        },
-      },
-      {
-        "@type": "Place",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Paris",
-          addressRegion: "Île-de-France",
-          addressCountry: "FR",
-        },
-      },
-      {
-        "@type": "Place",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Toulouse",
-          addressRegion: "Occitanie",
-          addressCountry: "FR",
-        },
-      },
-    ],
-    jobLocationType: "TELECOMMUTE",
-    applicantLocationRequirements: [
-      { "@type": "Country", name: "France" },
-      { "@type": "Country", name: "Spain" },
-    ],
-    employmentType: "CONTRACTOR",
-    datePosted: PUBLISHED_DATE,
-    validThrough: "2027-12-31",
-    qualifications: "12 à 20 ans d'expérience en finance d'entreprise, dont au moins 5 ans en poste de DAF ou Directeur Financier",
-    baseSalary: {
-      "@type": "MonetaryAmount",
-      currency: "EUR",
-      value: {
-        "@type": "QuantitativeValue",
-        minValue: 800,
-        maxValue: 1500,
-        unitText: "DAY",
-      },
-    },
-  };
+  // SEO-006 / SEO-005 (2026-08-09) — schéma JobPosting supprimé.
+  //
+  // La page vend une prestation ; elle n'ouvre pas un poste. Le balisage
+  // annonçait pourtant une offre d'emploi complète — hiringOrganization,
+  // employmentType CONTRACTOR, baseSalary 800-1 500 €/jour, validThrough —
+  // sur une URL commerciale, sans aucun moyen de candidater. C'est
+  // exactement la configuration déjà corrigée le 30/05 sur
+  // /jobs/fractional-cfo-startups (« commercial Service + JobPosting on the
+  // same URL »), dont le JobPosting avait été déplacé vers
+  // /carrieres/fractional-cfo. Le contenu carrière « salaire / devenir »
+  // suit le même chemin.
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -219,10 +155,6 @@ export default async function Page() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}

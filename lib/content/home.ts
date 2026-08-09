@@ -3,7 +3,12 @@ import { Locale } from "../i18n";
 export const homeContent = {
   fr: {
     meta: {
-      title: "DAF externalisé & DAF à temps partagé | Iter Advisors",
+      // SEO-001 (2026-08-09) — le title reprenait la requête générique
+      // « DAF externalisé », propriété de /daf-externalise. Quatre pages
+      // la portaient (accueil, pilier, /services, /a-propos) : Google
+      // choisissait laquelle classer, et ce n'était pas toujours le pilier.
+      // Chaque page reprend ici son intention propre.
+      title: "Iter Advisors | Direction financière et RH externalisée",
       description:
         "Iter Advisors : DAF externalisé pour PME et startups (pilotage, cash, reporting, levée de fonds). Intervention flexible à Barcelone, Paris, Toulouse.",
     },

@@ -8,7 +8,12 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "homepage",
     locale: "fr",
     path: "/",
-    fallbackTitle: "DAF externalisé & DAF à temps partagé | Iter Advisors",
+    // SEO-001 (2026-08-09) — voir la note dans lib/content/home.ts. Ce title
+    // reprenait à la fois « DAF externalisé » (requête du pilier) et « DAF à
+    // temps partagé » (requête de /daf-externalise/temps-partage) : l'accueil
+    // disputait donc deux requêtes à ses propres pages. Il porte désormais la
+    // marque et le périmètre complet du cabinet, finance et RH.
+    fallbackTitle: "Iter Advisors | Direction financière et RH externalisée",
     fallbackDescription:
       "DAF externalisé et CFO à temps partagé pour PME et startups. Pilotage financier, levée de fonds, trésorerie. Barcelone, Paris, Toulouse.",
   });
