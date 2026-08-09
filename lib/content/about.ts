@@ -64,7 +64,12 @@ export const aboutContent: Record<Locale, AboutContent> = {
         "Cabinet de DAF externalisé, Iter Advisors accompagne PME et startups dans la structuration financière, la levée de fonds et le contrôle de gestion.",
     },
     hero: {
-      h1: "À propos d'Iter Advisors : votre cabinet de DAF externalisé",
+      // SEO-001 (2026-08-09) — le H1 reprenait « cabinet de DAF externalisé »,
+      // en doublon du title (corrigé de son côté) et de la page pilier. Cette
+      // page raconte le cabinet : équipe, histoire, bureaux. Le terme reste
+      // présent dans l'intro et le corps, où il décrit l'activité sans
+      // disputer la requête générique au pilier.
+      h1: "Le cabinet Iter Advisors",
       intro:
         "Cabinet de conseil en finance et DAF externalisé, Iter Advisors accompagne le développement stratégique de ses partenaires par la structuration et le pilotage de leur fonction Finance.",
     },

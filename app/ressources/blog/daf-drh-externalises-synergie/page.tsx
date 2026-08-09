@@ -95,7 +95,7 @@ export default function DafDrhExternalisationSynergieePage() {
         Si DAF et DRH sont externalisés séparément, il y a friction : chacun vu avec ses yeux, deux systèmes, redondance d'info.
       </p>
       <p>
-        Si on les externalise ensemble auprès d'un même cabinet (comme Iter Advisors), on crée une machine fluide : information centralisée, decision rapides, continuité garantie.
+        Si on les externalise ensemble auprès d'un même cabinet (comme Iter Advisors), on crée une machine fluide : information centralisée, décisions plus rapides, et un relais assuré par le cabinet en cas d'absence.
       </p>
 
       <Callout type="success" title="Synergie majeure">

@@ -23,6 +23,18 @@
  * valeur ne peut être retenue sans décision de la direction. Ils ne sont
  * volontairement PAS déclarés ici tant qu'ils ne sont pas tranchés, pour ne
  * pas figer une valeur inventée :
+ *
+ *   - ANNÉE DE FONDATION : 2019 ou 2021 ?
+ *       « Fondé en 2021 » (lib/content/about.ts) et « depuis 2021 »
+ *       (JobsPage, ResourcesPage, home.ts) d'un côté ; « depuis 2019 »
+ *       (carrieres/fractional-cfo, glossary-entries) de l'autre. Les deux
+ *       peuvent coexister si 2019 marque le début de l'activité et 2021
+ *       l'immatriculation — mais il faut alors le formuler, car en l'état le
+ *       site affirme accompagner des clients deux ans avant sa création.
+ *       Le title de /a-propos annonçait « depuis 2019 » au-dessus d'un corps
+ *       de page disant « Fondé en 2021 » : cette contradiction-là est levée
+ *       (SEO-001), les autres occurrences attendent l'arbitrage.
+ *
  *   - engagement : « aucun engagement » / préavis 1 mois / 3-6 mois / 12 mois
  *   - rythme et prix : 2 j/mois à 2 500-4 500 € vs 2 j/semaine à 3 200-8 000 €
  *   - délai de démarrage : 48-72 h / 7-14 jours / 1-2 semaines / 2-4 semaines

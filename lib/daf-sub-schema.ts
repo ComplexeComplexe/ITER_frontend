@@ -62,32 +62,10 @@ export function buildDafSubFaqSchema(content: DafSubContent) {
 }
 
 /**
- * Build a BreadcrumbList JSON-LD payload for a daf-sub page.
- * Chain : Accueil → DAF Externalisé → <sub page label>.
+ * SEO-005 (2026-08-09) — buildDafSubBreadcrumbSchema supprimée.
+ *
+ * Les trois pages qui l'appelaient (/daf-externalise/tarifs, /metier,
+ * /temps-partage) rendent aussi le composant <Breadcrumb>, qui émet son
+ * propre BreadcrumbList depuis le pathname. Chacune servait donc deux fils
+ * d'Ariane pour le même parcours, identiques à un libellé près.
  */
-export function buildDafSubBreadcrumbSchema(content: DafSubContent, pageUrl: string) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Accueil",
-        item: "https://www.iteradvisors.com/",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: content.parentLabel ?? "DAF Externalisé",
-        item: `https://www.iteradvisors.com${content.parentHref ?? "/daf-externalise"}`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: content.breadcrumbLabel ?? content.h1,
-        item: pageUrl,
-      },
-    ],
-  };
-}
