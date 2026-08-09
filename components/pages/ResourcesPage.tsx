@@ -2,6 +2,10 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getResourcesContent } from "@/lib/content/resources";
+import {
+  TRUSTFOLIO_RATING,
+  TRUSTFOLIO_REVIEW_COUNT,
+} from "@/lib/content/facts";
 import type { CmsNavItem } from "@/lib/strapi";
 import { getStaticBlogListing } from "@/lib/blog-listing";
 import PageLayout from "@/components/PageLayout";
@@ -160,8 +164,14 @@ function ResourcesPageFR({ cmsNavigation }: { cmsNavigation?: CmsNavItem[] }) {
           href: "/ressources/blog/checklist-due-diligence-levee-de-fonds",
         },
         {
-          title: "Data room : la checklist complète pour une levée de fonds",
-          href: "/ressources/blog/data-room-checklist-levee-de-fonds",
+          // SEO-DAF-08 (2026-08-09) — pointait vers
+          // /ressources/blog/data-room-checklist-levee-de-fonds, fusionné en
+          // 301 dans l'article due diligence ci-dessus. Rediriger cette carte
+          // vers la même destination aurait donné deux cartes identiques dans
+          // la section : remplacée par un article réellement distinct du même
+          // thème.
+          title: "Cash burn : calculer son runway et anticiper sa levée",
+          href: "/ressources/blog/cash-burn-calculer-runway-anticiper-levee",
         },
       ],
     },
@@ -579,10 +589,14 @@ function ResourcesPageFR({ cmsNavigation }: { cmsNavigation?: CmsNavItem[] }) {
               ⭐ Témoignages clients
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
+              {/* SEO-DAF-02 (2026-08-09) — annonçait 36 avis, troisième
+                  valeur du site après 31 et 35. */}
               Iter Advisors est noté{" "}
-              <strong className="text-foreground">5/5 sur Trustfolio</strong>{" "}
-              avec 36 avis vérifiés de fondateurs, CFOs et investisseurs.
-              Quelques verbatims :
+              <strong className="text-foreground">
+                {TRUSTFOLIO_RATING}/5 sur Trustfolio
+              </strong>{" "}
+              avec {TRUSTFOLIO_REVIEW_COUNT} avis vérifiés de fondateurs, CFOs
+              et investisseurs. Quelques verbatims :
             </p>
             <div className="space-y-5">
               {testimonials.map((tst) => (

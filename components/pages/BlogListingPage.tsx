@@ -112,10 +112,10 @@ const content: Record<
     featuredCta: "Read the article",
     mostReadLabel: "Most-read articles",
     mostReadArticles: [
-      { title: "Fractional CFO cost in 2026: pricing, packages and ROI", href: "/en/ressources/blog/cout-daf-externalise-tarifs-prix-2026", category: "Fractional CFO" },
+      { title: "Fractional CFO cost in 2026: pricing, packages and ROI", href: "/en/ressources/blog/fractional-cfo-cost-services-2026", category: "Fractional CFO" },
       { title: "Fractional CFO vs full-time CFO: complete comparison", href: "/en/ressources/blog/daf-externalise-vs-daf-salarie", category: "Fractional CFO" },
       { title: "Due diligence checklist: financial preparation for fundraising", href: "/en/ressources/blog/checklist-due-diligence-levee-de-fonds", category: "Fundraising" },
-      { title: "Cash burn: calculate your runway and prepare your raise", href: "/en/ressources/blog/cash-burn-calculer-runway-anticiper-levee", category: "Fundraising" },
+      { title: "Cash burn: calculate your runway and prepare your raise", href: "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", category: "Fundraising" },
       { title: "Tax regimes: France vs Spain — Full comparison 2026", href: "/en/ressources/blog/regimes-fiscaux-france-vs-espagne", category: "Tax" },
     ],
     cards: [
@@ -127,12 +127,12 @@ const content: Record<
       },
       {
         title: "Organizing your finance department",
-        href: "/en/ressources/blog/organiser-sa-direction-financiere",
+        href: "/ressources/blog/organiser-sa-direction-financiere",
         image: "/images/blog/organiser-direction-financiere.webp",
       },
       {
         title: "Essential financial tech tools",
-        href: "/en/ressources/blog/essentiels-outils-tech-finance",
+        href: "/ressources/blog/essentiels-outils-tech-finance",
         image: "/images/blog/outils-tech-finance.webp",
       },
     ],
@@ -157,10 +157,10 @@ const content: Record<
     featuredCta: "Leer el artículo",
     mostReadLabel: "Los artículos más leídos",
     mostReadArticles: [
-      { title: "¿Cuánto cuesta un DAF externalizado en 2026?", href: "/es/recursos/blog/cout-daf-externalise-tarifs-prix-2026", category: "DAF externalizado" },
+      { title: "¿Cuánto cuesta un DAF externalizado en 2026?", href: "/es/recursos/blog/cfo-externo-pymes-precio-2026", category: "DAF externalizado" },
       { title: "DAF externalizado vs DAF asalariado: análisis completo", href: "/es/recursos/blog/daf-externalise-vs-daf-salarie", category: "DAF externalizado" },
-      { title: "Checklist due diligence: preparación financiera para la ronda de inversión", href: "/es/recursos/blog/checklist-due-diligence-levee-de-fonds", category: "Inversión" },
-      { title: "Cash burn: calcular el runway y anticipar la ronda", href: "/es/recursos/blog/cash-burn-calculer-runway-anticiper-levee", category: "Inversión" },
+      { title: "Checklist due diligence: preparación financiera para la ronda de inversión", href: "/ressources/blog/checklist-due-diligence-levee-de-fonds", category: "Inversión" },
+      { title: "Cash burn: calcular el runway y anticipar la ronda", href: "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", category: "Inversión" },
       { title: "Regímenes fiscales: Francia vs España — Comparativa completa 2026", href: "/es/recursos/blog/regimes-fiscaux-france-vs-espagne", category: "Fiscalidad" },
     ],
     cards: [
@@ -172,12 +172,12 @@ const content: Record<
       },
       {
         title: "Organizar su departamento financiero",
-        href: "/es/recursos/blog/organiser-sa-direction-financiere",
+        href: "/ressources/blog/organiser-sa-direction-financiere",
         image: "/images/blog/organiser-direction-financiere.webp",
       },
       {
         title: "Las herramientas tecnológicas esenciales para las finanzas",
-        href: "/es/recursos/blog/essentiels-outils-tech-finance",
+        href: "/ressources/blog/essentiels-outils-tech-finance",
         image: "/images/blog/outils-tech-finance.webp",
       },
     ],

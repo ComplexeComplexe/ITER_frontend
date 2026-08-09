@@ -29,6 +29,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Locale } from "@/lib/i18n";
 import { BOOKING_URL } from "@/lib/navigation";
+import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 import type { NavItem } from "@/lib/navigation";
 
 /* ─────────────────────────── i18n Content ─────────────────────────── */
@@ -119,7 +120,9 @@ const content: Record<
         "Évaluez vos besoins financiers en 2 minutes et découvrez comment nos DAF externalisés peuvent structurer votre croissance.",
       cta: "Obtenir mon diagnostic gratuit",
       ctaSecondary: "Découvrir nos services",
-      socialProof: "Rejoint par +100 entreprises",
+      // SEO-DAF-02 (2026-08-09) — « +100 entreprises » se lisait comme le
+      // nombre de clients, en contradiction avec les 85 annoncés ailleurs.
+      socialProof: `Rejoint par ${CLIENTS_ACCOMPAGNES} entreprises`,
       trustfolio: "5/5 Trustfolio",
     },
     problem: {

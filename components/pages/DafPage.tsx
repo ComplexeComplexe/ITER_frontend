@@ -1098,7 +1098,11 @@ export default function DafPage({
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
-                  href: "/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission",
+                  // SEO-DAF-03 (2026-08-09) — pointait vers l'ancienne URL
+                  // fusionnée, redirigée en 301 depuis S2. La page pilier
+                  // faisait donc transiter son lien le plus stratégique par
+                  // une redirection. Cible finale directe.
+                  href: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
                   title: "Combien coûte un DAF externalisé ? Tarifs 2026",
                   desc: "Grille tarifaire détaillée avec 3 formules et comparatif DAF salarié.",
                 },
@@ -1643,14 +1647,14 @@ export default function DafPage({
                 ]
               : locale === "en"
                 ? [
-                    { href: "/en/ressources/blog/cout-daf-externalise-tarifs-prix-2026", label: "The complete 2026 pricing guide" },
+                    { href: "/en/ressources/blog/fractional-cfo-cost-services-2026", label: "The complete 2026 pricing guide" },
                     { href: "/en/ressources/blog/daf-externalise-vs-daf-salarie", label: "Fractional CFO vs in-house CFO" },
                     { href: "/en/ressources/cas-clients", label: "See our case studies" },
                   ]
                 : [
-                    { href: "/es/recursos/blog/cout-daf-externalise-tarifs-prix-2026", label: "La guía completa de tarifas 2026" },
+                    { href: "/es/recursos/blog/cfo-externo-pymes-precio-2026", label: "La guía completa de tarifas 2026" },
                     { href: "/es/recursos/blog/daf-externalise-vs-daf-salarie", label: "CFO externalizado vs CFO interno" },
-                    { href: "/es/recursos/cas-clients", label: "Ver nuestros casos de cliente" },
+                    { href: "/es/recursos/casos-de-exito", label: "Ver nuestros casos de cliente" },
                   ]).map((l) => (
               <Link
                 key={l.href}

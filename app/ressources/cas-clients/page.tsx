@@ -22,7 +22,7 @@ const t = {
   },
   es: {
     title: "Casos de Estudio DAF | Iter Advisors",
-    description: "Casos de estudio DAF externalizado: testimonios de PYMEs, startups, scale-ups. 5/5 en Trustfolio (31 opiniones verificadas). Resultados reales, crecimiento garantizado.",
+    description: "Casos de estudio DAF externalizado: testimonios de PYMEs, startups, scale-ups. 5/5 en Trustfolio (31 opiniones verificadas). Resultados reales y verificables.",
     breadcrumb: "Casos de Estudio",
   },
 };

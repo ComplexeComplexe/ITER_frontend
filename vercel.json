@@ -144,7 +144,7 @@
     },
     {
       "source": "/es/daf-externalizado",
-      "destination": "/es/daf-externalise",
+      "destination": "/es/externalizacion-daf",
       "permanent": true
     },
     {
@@ -164,11 +164,9 @@
     },
     {
       "source": "/es/ressources/testimonials/:slug",
-      "destination": "/es/recursos/cas-clients",
+      "destination": "/es/recursos/casos-de-exito",
       "permanent": true
     },
-
-
     {
       "source": "/category/:path*",
       "destination": "/ressources/blog",
@@ -181,7 +179,7 @@
     },
     {
       "source": "/es/category/:path*",
-      "destination": "/es/ressources/blog",
+      "destination": "/es/recursos/blog",
       "permanent": true
     },
     {
@@ -191,12 +189,12 @@
     },
     {
       "source": "/en/daf-externalise/metier-de-daf",
-      "destination": "/en/fractional-cfo/metier",
+      "destination": "/en/fractional-cfo/role",
       "permanent": true
     },
     {
       "source": "/es/daf-externalise/metier-de-daf",
-      "destination": "/es/externalizacion-daf/metier",
+      "destination": "/es/externalizacion-daf/funciones",
       "permanent": true
     },
     {
@@ -226,7 +224,7 @@
     },
     {
       "source": "/es/testimonials/:slug",
-      "destination": "/es/recursos/cas-clients",
+      "destination": "/es/recursos/casos-de-exito",
       "permanent": true
     },
     {
@@ -241,22 +239,22 @@
     },
     {
       "source": "/es/glossaire/:slug",
-      "destination": "/es/ressources/glossaire",
+      "destination": "/es/recursos/glosario",
       "permanent": true
     },
     {
       "source": "/fiche-metier/:slug",
-      "destination": "/ressources/fiche-metier",
+      "destination": "/daf-externalise/metier",
       "permanent": true
     },
     {
       "source": "/en/fiche-metier/:slug",
-      "destination": "/en/ressources/fiche-metier",
+      "destination": "/en/fractional-cfo/role",
       "permanent": true
     },
     {
       "source": "/es/fiche-metier/:slug",
-      "destination": "/es/ressources/fiche-metier",
+      "destination": "/es/externalizacion-daf/funciones",
       "permanent": true
     },
     {
@@ -276,12 +274,12 @@
     },
     {
       "source": "/en/about-us{/}?",
-      "destination": "/en/a-propos",
+      "destination": "/en/about",
       "permanent": true
     },
     {
       "source": "/es/ressources/descripcion-del-puesto",
-      "destination": "/es/ressources/fiche-metier",
+      "destination": "/es/externalizacion-daf/funciones",
       "permanent": true
     },
     {
@@ -301,7 +299,7 @@
     },
     {
       "source": "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
-      "destination": "/es/ressources/blog",
+      "destination": "/es/recursos/blog",
       "permanent": true
     },
     {
@@ -331,7 +329,7 @@
     },
     {
       "source": "/es/ressources/blog/ia-act-opportunite-fintechs",
-      "destination": "/es/ressources/blog",
+      "destination": "/es/recursos/blog",
       "permanent": true
     }
   ]

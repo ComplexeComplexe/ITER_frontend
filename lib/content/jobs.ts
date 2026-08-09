@@ -64,10 +64,10 @@ const jobsEn: JobsContent = {
       "Iter Advisors is a fast-growing financial advisory firm. Joining us means joining an international, multicultural environment, with the opportunity to share in the adventure of launching a start-up with us.",
   },
   jobs: [
-    { title: "Fractional CFO for startups", href: "/en/jobs/fractional-cfo-startups" },
-    { title: "Marketing & Growth Strategy Manager", href: "/en/jobs/marketing-growth-strategy" },
-    { title: "Senior Finance Manager", href: "/en/jobs/senior-finance-manager" },
-    { title: "Junior Financial Analyst", href: "/en/jobs/finance-analyst-junior-fr" },
+    { title: "Fractional CFO for startups", href: "/jobs/fractional-cfo-startups" },
+    { title: "Marketing & Growth Strategy Manager", href: "/jobs/marketing-growth-strategy" },
+    { title: "Senior Finance Manager", href: "/jobs/senior-finance-manager" },
+    { title: "Junior Financial Analyst", href: "/jobs/finance-analyst-junior-fr" },
   ],
   discoverLabel: "Discover",
 };
@@ -89,10 +89,10 @@ const jobsEs: JobsContent = {
       "Iter Advisors es una empresa de asesoramiento financiero en r\u00e1pido crecimiento. Unirse a nosotros significa integrarse en un entorno internacional y multicultural, con la oportunidad de compartir la aventura de lanzar una start-up con nosotros.",
   },
   jobs: [
-    { title: "CFO Fraccionario para startups", href: "/es/jobs/fractional-cfo-startups" },
-    { title: "Responsable de Marketing y Crecimiento", href: "/es/jobs/marketing-growth-strategy" },
-    { title: "Senior Finance Manager", href: "/es/jobs/senior-finance-manager" },
-    { title: "Analista Financiero Junior", href: "/es/jobs/finance-analyst-junior-fr" },
+    { title: "CFO Fraccionario para startups", href: "/jobs/fractional-cfo-startups" },
+    { title: "Responsable de Marketing y Crecimiento", href: "/jobs/marketing-growth-strategy" },
+    { title: "Senior Finance Manager", href: "/jobs/senior-finance-manager" },
+    { title: "Analista Financiero Junior", href: "/jobs/finance-analyst-junior-fr" },
   ],
   discoverLabel: "Descubra",
 };

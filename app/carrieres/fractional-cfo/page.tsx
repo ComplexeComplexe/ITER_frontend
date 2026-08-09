@@ -2,6 +2,10 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Mail, Linkedin } from "lucide-react";
 import { getCmsNavigation } from "@/lib/strapi";
+import {
+  TRUSTFOLIO_RATING,
+  TRUSTFOLIO_REVIEW_COUNT,
+} from "@/lib/content/facts";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
@@ -428,7 +432,13 @@ export default async function Page() {
                 A, Series B)
               </li>
               <li>
-                • <strong>5/5 sur 35 avis Trustfolio</strong>
+                {/* SEO-DAF-02 (2026-08-09) — annonçait 35 avis quand le reste
+                    du site en annonce 31, balisage JSON-LD compris. */}
+                •{" "}
+                <strong>
+                  {TRUSTFOLIO_RATING}/5 sur {TRUSTFOLIO_REVIEW_COUNT} avis
+                  Trustfolio
+                </strong>
               </li>
               <li>
                 • <strong>3 bureaux</strong> : Barcelone, Paris, Toulouse

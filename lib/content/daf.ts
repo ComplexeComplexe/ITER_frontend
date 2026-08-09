@@ -224,7 +224,13 @@ export const dafContent: Record<Locale, DafContent> = {
         },
         {
           question: "Ai-je besoin d'un CFO fractionnel si j'ai déjà un expert-comptable ?",
-          answer: "L'expert-comptable et le CFO fractionnel sont complémentaires, pas substituables. L'expert-comptable certifie la conformité légale (bilan, liasse fiscale, TVA) et regarde le passé. Le CFO fractionnel pilote la performance au quotidien : prévisionnel, reporting de gestion, stratégie de financement, levée de fonds. Une PME structurée a les deux.",
+          // SEO-DAF-02 (2026-08-09) — corrigé : l'expert-comptable ne
+          // « certifie » pas les comptes, c'est le monopole légal du
+          // commissaire aux comptes. Selon la lettre de mission, il établit
+          // les comptes annuels (mission de présentation, assurance modérée)
+          // ou réalise un examen limité, et conseille sur le fiscal et le
+          // social. Le réduire à « regarder le passé » était inexact.
+          answer: "L'expert-comptable et le CFO fractionnel sont complémentaires, pas substituables. Selon la lettre de mission, l'expert-comptable tient ou révise la comptabilité, établit les comptes annuels et la liasse fiscale, gère les déclarations de TVA et conseille sur le fiscal et le social. Le CFO fractionnel pilote la performance au quotidien : prévisionnel, reporting de gestion, stratégie de financement, levée de fonds. Une PME structurée a les deux.",
         },
         {
           question: "Combien de temps dure généralement une mission de CFO fractionnel ?",
@@ -272,7 +278,15 @@ export const dafContent: Record<Locale, DafContent> = {
     // des H1 plus directs ("missions, tarifs, avantages"). Les 4 termes
     // — directeur financier externalisé, direction financière externalisée,
     // DAF à temps partagé, CFO externalisé — sont injectés dans le 1er para.
-    h1: "DAF Externalisé : Votre Direction Financière à Temps Partagé",
+    // SEO-DAF-04 (2026-08-09) — le H1 revendiquait « à Temps Partagé », qui
+    // est l'intention propriétaire de /daf-externalise/temps-partage : le
+    // pilier et sa page fille se disputaient la même requête. Il divergeait
+    // aussi du <title> (« DAF externalisé pour PME et startups »). Le H1
+    // porte désormais les deux formulations que la meta cible déjà et que la
+    // page doit posséder — « DAF externalisé » et « direction financière
+    // externalisée ». Le temps partagé reste expliqué dans le corps comme
+    // une modalité, avec lien vers sa page propriétaire.
+    h1: "DAF externalisé pour PME et startups : votre direction financière externalisée",
     intro: [
       "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Notre offre couvre toutes les modalités : directeur financier externalisé en mission longue, direction financière externalisée à l'année, DAF à temps partagé sur 2 à 8 jours par mois, ou CFO externalisé en mission ponctuelle. Opérationnels dès le premier jour, sans engagement long terme. 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (31 avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne.",
       "Un DAF externalisé — aussi appelé DAF à temps partagé ou CFO externalisé — est un directeur financier senior qui intervient dans votre entreprise sans en être salarié. Il co-pilote le dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs. Le format est flexible : temps partagé, mission ponctuelle ou abonnement mensuel. Pour la nuance avec son équivalent anglo-saxon, consultez notre fiche [Le CFO (Chief Financial Officer)](/ressources/glossaire/cfo). Pour la version dédiée aux startups VC-backed, voir notre offre [Fractional CFO pour startups](/jobs/fractional-cfo-startups).",
@@ -350,7 +364,10 @@ export const dafContent: Record<Locale, DafContent> = {
     vsExpertComptable: {
       heading: "DAF externalisé ou expert-comptable : quelle différence ?",
       content: [
-        "L'expert-comptable et le DAF externalisé sont complémentaires — pas concurrents. L'expert-comptable certifie la conformité légale et fiscale (bilan annuel, liasse fiscale, déclarations TVA, paie). Il regarde le passé et garantit la régularité des comptes vis-à-vis de l'administration.",
+        // SEO-DAF-02 (2026-08-09) — voir la note du même ticket plus haut :
+        // « certifie » et « garantit la régularité » relèvent du commissaire
+        // aux comptes, pas de l'expert-comptable.
+        "L'expert-comptable et le DAF externalisé sont complémentaires — pas concurrents. L'expert-comptable produit et sécurise l'information comptable et fiscale : tenue ou révision des comptes, comptes annuels, liasse fiscale, déclarations de TVA, paie, et conseil associé selon sa lettre de mission.",
         "Le DAF externalisé pilote la performance financière au quotidien : prévisionnel de trésorerie, reporting de gestion, analyse de marges, préparation de levée de fonds, négociation bancaire, choix d'outils, accompagnement stratégique du dirigeant. Il anticipe l'avenir et aide à prendre des décisions opérationnelles.",
         "Concrètement : votre expert-comptable produit le grand livre, le DAF externalisé en tire un tableau de bord pour votre CODIR. L'un boucle la photo annuelle, l'autre filme le trimestre en cours et projette les 12 prochains mois. Une PME structurée a typiquement les deux : un expert-comptable pour la conformité, un DAF externalisé pour le pilotage.",
       ],
@@ -597,7 +614,9 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "Quelle est la différence entre un DAF externalisé et un expert-comptable ?",
         answer:
-          "L'expert-comptable certifie la conformité légale et fiscale de votre comptabilité (bilan annuel, liasse fiscale, déclarations TVA). Il regarde le passé et garantit la régularité des comptes. Le DAF externalisé pilote la performance financière au quotidien : prévisionnel de trésorerie, reporting de gestion, analyse de marges, préparation de levée de fonds. Il anticipe l'avenir et aide à prendre des décisions opérationnelles. Ce sont des rôles complémentaires : une PME structurée a typiquement les deux.",
+          // SEO-DAF-02 (2026-08-09) — même correction que les deux passages
+          // précédents sur le périmètre réel de l'expert-comptable.
+          "L'expert-comptable produit et sécurise votre information comptable et fiscale : tenue ou révision des comptes, comptes annuels, liasse fiscale, déclarations de TVA, et conseil fiscal et social selon sa lettre de mission. Le DAF externalisé pilote la performance financière au quotidien : prévisionnel de trésorerie, reporting de gestion, analyse de marges, préparation de levée de fonds. Il anticipe l'avenir et aide à prendre des décisions opérationnelles. Ce sont des rôles complémentaires : une PME structurée a typiquement les deux.",
       },
       {
         // GSC-01 (2026-07-19) — question la plus recherchée après le mot-clé

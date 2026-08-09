@@ -104,7 +104,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Les 10 outils indispensables des CFOs",
-          href: "/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
+          href: "/ressources/blog/les-10-outils-pour-cfos-startup",
           description: "Pennylane, Agicap, Pigment, Pleo… la stack finance des startups.",
         },
       ],
@@ -147,7 +147,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Convention fiscale France-Espagne : ce qu'elle change",
-          href: "/ressources/fiscalite/convention-fiscale-france-espagne",
+          href: "/ressources/fiscalite-espagne-france",
           image: "/images/blog/regimes-fiscaux-france-vs-espagne.webp",
           tag: "Fiscalité",
         },
@@ -284,7 +284,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "10 essential CFO tools",
-          href: "/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
+          href: "/ressources/blog/les-10-outils-pour-cfos-startup",
           description: "Pennylane, Agicap, Pigment, Pleo… the finance stack for startups.",
         },
       ],
@@ -327,7 +327,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "France-Spain tax treaty: what it changes",
-          href: "/ressources/fiscalite/convention-fiscale-france-espagne",
+          href: "/ressources/fiscalite-espagne-france",
           image: "/images/blog/regimes-fiscaux-france-vs-espagne.webp",
           tag: "Taxation",
         },
@@ -380,13 +380,13 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
           },
           {
             title: "Organizing your finance department",
-            href: "/en/ressources/blog/organiser-sa-direction-financiere",
+            href: "/ressources/blog/organiser-sa-direction-financiere",
             image: "/images/blog/organiser-direction-financiere.jpg",
             tag: "Blog",
           },
           {
             title: "Essential financial tech tools",
-            href: "/en/ressources/blog/essentiels-outils-tech-finance",
+            href: "/ressources/blog/essentiels-outils-tech-finance",
             image: "/images/blog/outils-tech-finance.jpg",
             tag: "Blog",
           },
@@ -478,7 +478,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Las 10 herramientas esenciales para CFOs",
-          href: "/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
+          href: "/ressources/blog/les-10-outils-pour-cfos-startup",
           description: "Pennylane, Agicap, Pigment, Pleo… el stack financiero de las startups.",
         },
       ],
@@ -521,7 +521,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Convenio fiscal Francia-España: qué cambia",
-          href: "/ressources/fiscalite/convention-fiscale-france-espagne",
+          href: "/ressources/fiscalite-espagne-france",
           image: "/images/blog/regimes-fiscaux-france-vs-espagne.webp",
           tag: "Fiscalidad",
         },
@@ -536,25 +536,25 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         cards: [
           {
             title: "Happy Scribe: estructuración financiera de una scale-up",
-            href: "/es/recursos/cas-clients",
+            href: "/es/recursos/casos-de-exito",
             image: "/images/logos/logo-happyscribe.webp",
             tag: "Caso práctico",
           },
           {
             title: "Ukio: acompañamiento en la ronda de financiación Serie A",
-            href: "/es/recursos/cas-clients",
+            href: "/es/recursos/casos-de-exito",
             image: "/images/logos/logo-ukio.webp",
             tag: "Caso práctico",
           },
           {
             title: "Surfe: implantación del reporting y seguimiento",
-            href: "/es/recursos/cas-clients",
+            href: "/es/recursos/casos-de-exito",
             image: "/images/logos/logo-surfe.webp",
             tag: "Caso práctico",
           },
           {
             title: "Yego: optimización de la gestión de tesorería",
-            href: "/es/recursos/cas-clients",
+            href: "/es/recursos/casos-de-exito",
             image: "/images/logos/logo-yego.webp",
             tag: "Caso práctico",
           },
@@ -574,13 +574,13 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
           },
           {
             title: "Organizar su departamento financiero",
-            href: "/es/recursos/blog/organiser-sa-direction-financiere",
+            href: "/ressources/blog/organiser-sa-direction-financiere",
             image: "/images/blog/organiser-direction-financiere.jpg",
             tag: "Blog",
           },
           {
             title: "Las herramientas tecnológicas esenciales para las finanzas",
-            href: "/es/recursos/blog/essentiels-outils-tech-finance",
+            href: "/ressources/blog/essentiels-outils-tech-finance",
             image: "/images/blog/outils-tech-finance.jpg",
             tag: "Blog",
           },
