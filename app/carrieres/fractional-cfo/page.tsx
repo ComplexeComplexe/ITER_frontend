@@ -425,7 +425,7 @@ export default async function Page() {
             </h2>
             <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
               <li>
-                • <strong>+85 entreprises</strong> tech accompagnées depuis 2019
+                • <strong>+85 entreprises</strong> tech accompagnées depuis 2021
               </li>
               <li>
                 • <strong>+100 M€</strong> levés par nos clients (seed, Series

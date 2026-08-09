@@ -73,7 +73,7 @@ const htmlContent = `<p>Your startup is growing. Investors are asking harder que
 <hr>
 <h2 id="why-choose-iter-advisors-as-your-fractional-cfo-in-barcelona">Why Choose Iter Advisors as Your Fractional CFO in Barcelona</h2>
 <p>Not all outsourced CFO services are equal. Here is what sets Iter Advisors apart.</p>
-<h3 id="based-in-barcelona-since-2019">Based in Barcelona Since 2019</h3>
+<h3 id="based-in-barcelona-since-2021">Based in Barcelona Since 2021</h3>
 <p>We are not a remote team parachuting into your timezone. We are here. We know the local ecosystem, the local advisors, the local investor network, and the local regulatory environment. When you need a face-to-face meeting before your board call, we are 20 minutes away.</p>
 <h3 id="a-team-not-a-solo-consultant">A Team, Not a Solo Consultant</h3>
 <p>When you hire Iter Advisors, you get access to a <strong>team of 15+ CFO experts</strong>, not a single freelancer. That means:</p>
@@ -200,7 +200,7 @@ const htmlContent = `<p>Your startup is growing. Investors are asking harder que
 <p>Whether you are a pre-seed startup setting up your first Spanish SL or a Series B company preparing for international expansion, Iter Advisors has the expertise to guide your financial strategy.</p>
 <p><strong><a href="/en/fractional-cfo">Explore Our Financial Management Services</a></strong> | <strong><a href="/en/services/fund-raising-support">Learn About Our Fundraising Support</a></strong> | <strong><a href="/en/">Visit Our Homepage</a></strong></p>
 <hr>
-<p><em>Iter Advisors is a financial advisory firm based in Barcelona, serving startups and scale-ups across Spain and Europe since 2019. Our team of 15+ experts provides fractional CFO, fundraising, and financial structuring services in English, Spanish, and French.</em></p>`;
+<p><em>Iter Advisors is a financial advisory firm based in Barcelona, serving startups and scale-ups across Spain and Europe since 2021. Our team of 15+ experts provides fractional CFO, fundraising, and financial structuring services in English, Spanish, and French.</em></p>`;
 
 const faqStructuredData = {
   "@context": "https://schema.org",

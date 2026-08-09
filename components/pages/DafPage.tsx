@@ -1174,7 +1174,15 @@ export default function DafPage({
       </section>
 
       {/* P15 (2026-05-29) — long-tail Q&A. Renders only once validated content
-          is added to t.longTailFaq (nothing ships until fact-checked). */}
+          is added to t.longTailFaq (nothing ships until fact-checked).
+
+          SEO-003 (2026-08-09) — le bloc FR « Les questions que se posent les
+          dirigeants » a été retiré : ses 15 questions reposaient toutes le
+          contenu de la FAQ principale en vocabulaire « CFO fractionnel »
+          (coût, missions, durée, outils, choix du prestataire, comparaison
+          avec un temps plein…). La page servait 37 questions en deux blocs.
+          Le mécanisme reste en place pour une future série réellement
+          distincte. */}
       {t.longTailFaq && t.longTailFaq.items.length > 0 && (
         <LongTailFaqSection data={t.longTailFaq} />
       )}
@@ -1225,7 +1233,10 @@ export default function DafPage({
               image: "https://www.iteradvisors.com/images/og-default.webp",
               description: "Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Pilotage financier, levée de fonds, trésorerie. Présent à Barcelone, Paris et Toulouse.",
               slogan: "La meilleure version de votre direction financière",
-              foundingDate: "2019",
+              // SEO-002 (2026-08-09) — 2021 confirmé par la direction comme
+              // année de création. Le balisage annonçait 2019 : c'est ce
+              // qu'un moteur lit en priorité pour dater une entité.
+              foundingDate: "2021",
               taxID: "B42960849",
               vatID: "ESB42960849",
               address: [{
