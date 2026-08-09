@@ -6,11 +6,13 @@
  * — ou un moteur qui extrait des réponses — pouvait relever trois nombres
  * différents pour la même réalité.
  *
- * Contradictions relevées et corrigées dans cette passe :
+ * Contradictions relevées et corrigées :
  *   - avis Trustfolio : 31 (8 occurrences) vs 35 (/carrieres/fractional-cfo)
  *     vs 36 (hub /ressources) ;
  *   - entreprises accompagnées : 85 (12 occurrences) vs « +100 »
- *     (/profil, LeadGenPage).
+ *     (/profil, LeadGenPage) ;
+ *   - année de création : 2021 vs « depuis 2019 » (6 endroits, dont le
+ *     `foundingDate` du balisage Organization). Arbitré le 9 août : 2021.
  *
  * Non contradictoires, donc conservées telles quelles :
  *   - « +100 entreprises diagnostiquées » (QualificationPage) — métrique
@@ -23,18 +25,6 @@
  * valeur ne peut être retenue sans décision de la direction. Ils ne sont
  * volontairement PAS déclarés ici tant qu'ils ne sont pas tranchés, pour ne
  * pas figer une valeur inventée :
- *
- *   - ANNÉE DE FONDATION : 2019 ou 2021 ?
- *       « Fondé en 2021 » (lib/content/about.ts) et « depuis 2021 »
- *       (JobsPage, ResourcesPage, home.ts) d'un côté ; « depuis 2019 »
- *       (carrieres/fractional-cfo, glossary-entries) de l'autre. Les deux
- *       peuvent coexister si 2019 marque le début de l'activité et 2021
- *       l'immatriculation — mais il faut alors le formuler, car en l'état le
- *       site affirme accompagner des clients deux ans avant sa création.
- *       Le title de /a-propos annonçait « depuis 2019 » au-dessus d'un corps
- *       de page disant « Fondé en 2021 » : cette contradiction-là est levée
- *       (SEO-001), les autres occurrences attendent l'arbitrage.
- *
  *   - engagement : « aucun engagement » / préavis 1 mois / 3-6 mois / 12 mois
  *   - rythme et prix : 2 j/mois à 2 500-4 500 € vs 2 j/semaine à 3 200-8 000 €
  *   - délai de démarrage : 48-72 h / 7-14 jours / 1-2 semaines / 2-4 semaines
@@ -49,6 +39,16 @@
  * rédigées. Ce fichier est la référence : toute nouvelle occurrence doit
  * l'importer, et une passe de propagation reste à faire sur l'existant.
  */
+
+/**
+ * Année de création du cabinet.
+ *
+ * Arbitrée par la direction le 9 août 2026 : 2021. Le site annonçait aussi
+ * « depuis 2019 » à six endroits, dont le `foundingDate` du balisage
+ * Organization — il affirmait donc avoir accompagné des clients deux ans avant
+ * sa création. Toutes ces occurrences sont alignées.
+ */
+export const ANNEE_FONDATION = 2021;
 
 /** Note Trustfolio, sur 5. */
 export const TRUSTFOLIO_RATING = "5";

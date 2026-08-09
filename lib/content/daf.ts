@@ -199,77 +199,6 @@ export const dafContent: Record<Locale, DafContent> = {
       comprendre:
         "Un DAF externalisé est un directeur financier senior qui pilote la finance d'une entreprise sans en être salarié. Il intervient à temps partagé (2 à 8+ jours/mois) ou en mission ponctuelle. Tarif : 2 000 à 7 000 € HT/mois. Opérationnel sous 7 à 14 jours.",
     },
-    longTailFaq: {
-      heading: "Les questions que se posent les dirigeants",
-      items: [
-        {
-          question: "Quelle est la différence entre un CFO fractionnel et un DAF à temps partagé ?",
-          answer: "Le CFO fractionnel est le terme anglophone (utilisé par les startups VC-backed), le DAF à temps partagé est son équivalent français. Dans les deux cas, il s'agit d'un directeur financier senior qui partage son temps entre plusieurs entreprises sur une base récurrente (2 à 8 jours par mois). Chez Iter Advisors, nous utilisons les deux termes indifféremment.",
-        },
-        {
-          question: "Combien coûte un CFO fractionnel par mois en 2026 ?",
-          answer: "En 2026, un CFO fractionnel coûte entre 2 000 et 7 000 € HT/mois selon le volume d'intervention. Le tarif journalier moyen (TJM) se situe entre 750 et 1 250 € HT/jour pour un profil 10+ ans d'expérience. Iter Advisors propose trois formules : Essentiel (2–3 jours/mois, à partir de 2 000 €/mois), Croissance (4–6 jours/mois, à partir de 4 000 €/mois), Premium (8+ jours/mois, à partir de 7 000 €/mois).",
-        },
-        {
-          question: "Quand une startup devrait-elle faire appel à un CFO fractionnel ?",
-          answer: "Les cinq signaux déclencheurs : (1) vous préparez une levée de fonds Seed ou Series A, (2) votre CA dépasse 500 K€ et la gestion artisanale ne suffit plus, (3) vous recrutez massivement et devez anticiper l'impact trésorerie, (4) votre DAF interne est parti et vous avez besoin d'un remplaçant en urgence, (5) vous vous internationalisez et avez besoin d'expertise locale (France, Espagne). La plupart de nos clients ont entre 10 et 200 salariés.",
-        },
-        {
-          question: "Que fait un CFO fractionnel au quotidien ?",
-          answer: "Les missions types : suivi du prévisionnel de trésorerie, pilotage du tableau de bord financier, revue des comptes avec l'expert-comptable, préparation du reporting mensuel, animation des comités de direction, et accompagnement du dirigeant sur les décisions à impact financier (recrutements, investissements, contrats). Le CFO fractionnel intervient généralement 2 à 8 jours par mois, en présentiel ou à distance.",
-        },
-        {
-          question: "Un CFO fractionnel peut-il aider à une levée de fonds Series A ?",
-          answer: "Oui, c'est l'une des missions les plus fréquentes et les plus valorisées. Le CFO fractionnel prépare le business plan financier, construit le modèle de valorisation, assemble la data room, brief les co-investisseurs et accompagne les négociations term sheet. Chez Iter Advisors, nos clients ont levé collectivement plus de 100 M€.",
-        },
-        {
-          question: "Ai-je besoin d'un CFO fractionnel si j'ai déjà un expert-comptable ?",
-          // SEO-DAF-02 (2026-08-09) — corrigé : l'expert-comptable ne
-          // « certifie » pas les comptes, c'est le monopole légal du
-          // commissaire aux comptes. Selon la lettre de mission, il établit
-          // les comptes annuels (mission de présentation, assurance modérée)
-          // ou réalise un examen limité, et conseille sur le fiscal et le
-          // social. Le réduire à « regarder le passé » était inexact.
-          answer: "L'expert-comptable et le CFO fractionnel sont complémentaires, pas substituables. Selon la lettre de mission, l'expert-comptable tient ou révise la comptabilité, établit les comptes annuels et la liasse fiscale, gère les déclarations de TVA et conseille sur le fiscal et le social. Le CFO fractionnel pilote la performance au quotidien : prévisionnel, reporting de gestion, stratégie de financement, levée de fonds. Une PME structurée a les deux.",
-        },
-        {
-          question: "Combien de temps dure généralement une mission de CFO fractionnel ?",
-          answer: "La durée moyenne d'une mission de CFO fractionnel est de 18 mois chez Iter Advisors. Elle peut aller de 3 mois pour une mission ponctuelle (levée de fonds, restructuration) à plusieurs années pour un accompagnement récurrent. Il n'y a pas de durée minimale d'engagement.",
-        },
-        {
-          question: "Quels outils utilise un CFO fractionnel en 2026 ?",
-          answer: "Un CFO fractionnel moderne maîtrise : Pennylane ou Sage pour la comptabilité en temps réel, Agicap ou Fygr pour la trésorerie prévisionnelle, Spendesk ou Payhawk pour la gestion des dépenses, Power BI ou Looker pour le reporting, et Google Sheets ou Notion pour les plans financiers. Iter Advisors travaille avec 30+ partenaires technologiques.",
-        },
-        {
-          question: "Comment choisir le bon CFO fractionnel ?",
-          answer: "Cinq critères de sélection : (1) la séniorité (10+ ans d'expérience en direction financière), (2) l'expérience sectorielle dans votre domaine (SaaS, e-commerce, deep-tech, industrie), (3) les références chiffrées chez d'autres clients, (4) la structure — un cabinet offre continuité et réseau, un freelance solo expose à un risque de dépendance, (5) la compatibilité culturelle et la capacité à collaborer avec votre équipe.",
-        },
-        {
-          question: "Quelles sont les erreurs courantes lors du recrutement d'un premier CFO fractionnel ?",
-          answer: "Les trois erreurs les plus fréquentes : (1) confondre CFO fractionnel et comptable externalisé — un CFO pilote la stratégie, il ne tient pas les livres ; (2) ne pas définir clairement le périmètre de la mission avant le démarrage ; (3) choisir un freelance indépendant sans structure — en cas d'absence ou de départ, la continuité est impossible. Privilégiez un cabinet avec équipe et processus définis.",
-        },
-        {
-          question: "Quels secteurs bénéficient le plus d'un CFO fractionnel ?",
-          answer: "Les cinq secteurs les plus porteurs : SaaS et tech (modèles récurrents, burn rate, métriques VC), e-commerce (BFR, saisonnalité, multi-canaux), deep-tech et biotech (cycles de financement R&D, subventions), industrie et ETI (capex, marges, coûts de production), services professionnels (structuration de la croissance, pricing). Iter Advisors est spécialisé sur ces cinq verticales.",
-        },
-        {
-          question: "Combien coûte un CFO fractionnel en France ?",
-          answer: "En France, un CFO fractionnel coûte entre 2 000 et 7 000 € HT/mois selon la formule et le profil. À Paris, les TJM sont légèrement supérieurs (800–1 350 €/jour HT). Iter Advisors intervient depuis Paris, Toulouse et Barcelone avec des tarifs homogènes sur toute la France.",
-        },
-        {
-          question: "Où trouver un CFO à temps partagé à Paris ?",
-          answer: "Iter Advisors dispose d'une équipe de CFOs à temps partagé basés à Paris et en Île-de-France. Nous intervenons en présentiel dans vos locaux ou à distance, avec déplacement sur site pour les comités de direction. Notre processus garantit un CFO opérationnel sous 7 à 14 jours.",
-        },
-        {
-          question: "Un CFO fractionnel est-il plus rentable qu'un CFO à temps plein ?",
-          answer: "Oui, dans la majorité des cas. Un CFO salarié à temps plein coûte 100 000 à 213 000 € chargé/an, soit 8 300 à 17 750 €/mois. Un CFO fractionnel coûte 2 000 à 7 000 €/mois pour un niveau de séniorité équivalent. Si votre besoin est inférieur à 3–4 jours par semaine, le CFO fractionnel est mécaniquement plus rentable : vous payez le temps réellement utilisé plutôt qu'un poste à temps plein. C'est la situation de la grande majorité des PME et startups que nous accompagnons.",
-        },
-        {
-          question: "Que se passe-t-il pendant les 2 premières semaines d'une mission ?",
-          answer: "Les deux premières semaines sont consacrées au diagnostic flash : audit de la trésorerie, revue du reporting existant, inventaire des outils (ERP, comptabilité, CRM), identification des quick wins et des risques cachés. À l'issue de ce diagnostic, le CFO présente au dirigeant une feuille de route prioritaire avec objectifs chiffrés et plan d'actions sur 90 jours.",
-        },
-      ],
-    },
     // T1 (2026-06-30) — H1 et intro réoptimisés pour remonter sur la
     // requête commerciale "DAF externalisé" (position 16 GSC, CTR 0,3 %).
     // L'ancien H1 "DAF Externalisé : La meilleure version de votre direction
@@ -288,16 +217,20 @@ export const dafContent: Record<Locale, DafContent> = {
     // une modalité, avec lien vers sa page propriétaire.
     h1: "DAF externalisé pour PME et startups : votre direction financière externalisée",
     intro: [
-      "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Notre offre couvre toutes les modalités : directeur financier externalisé en mission longue, direction financière externalisée à l'année, DAF à temps partagé sur 2 à 8 jours par mois, ou CFO externalisé en mission ponctuelle. Opérationnels dès le premier jour, sans engagement long terme. 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (31 avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne.",
+      "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Notre offre couvre toutes les modalités : directeur financier externalisé en mission longue, direction financière externalisée à l'année, DAF à temps partagé sur 2 à 8 jours par mois, ou CFO externalisé en mission ponctuelle. Opérationnels dès le premier jour, sans engagement long terme. 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (31 avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne, avec des équipes à Paris, Toulouse et Barcelone.",
       "Un DAF externalisé — aussi appelé DAF à temps partagé ou CFO externalisé — est un directeur financier senior qui intervient dans votre entreprise sans en être salarié. Il co-pilote le dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs. Le format est flexible : temps partagé, mission ponctuelle ou abonnement mensuel. Pour la nuance avec son équivalent anglo-saxon, consultez notre fiche [Le CFO (Chief Financial Officer)](/ressources/glossaire/cfo). Pour la version dédiée aux startups VC-backed, voir notre offre [Fractional CFO pour startups](/jobs/fractional-cfo-startups).",
-      "Vous avez un projet en Espagne ? Nos DAFs basés à Barcelone connaissent en profondeur la fiscalité locale : lisez notre guide complet sur l'[Impôt sur le revenu en Espagne](/ressources/blog/impot-revenu-espagne) et notre [comparaison régimes fiscaux France vs Espagne](/ressources/blog/regimes-fiscaux-france-vs-espagne).",
     ],
+    // SEO-003 (2026-08-09) — section resserrée. Ses trois paragraphes
+    // reprenaient les mêmes preuves que l'introduction (85 entreprises,
+    // 100 M€, présence Barcelone/Paris/Toulouse) et que la section
+    // « Pourquoi choisir Iter Advisors » en bas de page : le même bloc de
+    // réassurance apparaissait trois fois. Il ne reste ici que ce que les
+    // deux autres ne disent pas — comment la mission est structurée.
     partnerSection: {
       heading: "Iter Advisors, votre partenaire stratégique",
       content: [
-        "Iter Advisors est un cabinet de DAF externalisé présent à Barcelone, Paris et Toulouse. Nous mettons à disposition de nos clients des directeurs financiers expérimentés (10+ ans d'expérience), capables d'intervenir sur l'ensemble des problématiques financières d'une entreprise en croissance.",
-        "Notre approche repose sur trois piliers fondamentaux : l'expertise technique, la vision stratégique et la flexibilité d'intervention. Chaque mission est conçue sur mesure pour répondre aux enjeux spécifiques de votre entreprise.",
-        "Avec plus de 85 entreprises accompagnées et 100 M€ levés par nos clients, Iter Advisors s'est imposé comme un acteur de référence du DAF externalisé en France et en Espagne.",
+        "Chaque mission démarre par un diagnostic, puis un cadrage écrit : périmètre, livrables, rythme d'intervention et interlocuteurs. Vous savez ce qui est produit, quand, et par qui.",
+        "Le DAF affecté reste le même tout au long de la mission — c'est lui qui connaît votre historique. Le cabinet assure le relais en cas d'indisponibilité, et l'ensemble de l'équipe reste mobilisable sur les sujets qui sortent de son périmètre : fiscalité espagnole, M&A, structuration de levée.",
       ],
     },
     whatIs: {
@@ -311,7 +244,7 @@ export const dafContent: Record<Locale, DafContent> = {
           heading: "Définition et rôle principal",
           content: [
             "Le DAF externalisé assure la direction financière de votre entreprise à temps partagé ou en mission ponctuelle. Son rôle est de structurer, piloter et optimiser la fonction finance pour soutenir la croissance de l'entreprise.",
-            "Il intervient sur les sujets clés : business plan, budget prévisionnel, outils de reporting, préparation des levées de fonds, optimisation des process financiers.",
+            "Il intervient sur les sujets clés : business plan, budget prévisionnel, outils de reporting, préparation des levées de fonds, optimisation des process financiers. Le détail des responsabilités et des compétences attendues figure sur notre [fiche métier du DAF](/daf-externalise/metier).",
           ],
         },
         {
@@ -354,11 +287,19 @@ export const dafContent: Record<Locale, DafContent> = {
       // absent jusqu'ici, pour répondre à "daf externalisé vs daf intérimaire"
       // (257 impressions, position 8,26, 0 clic) et "différence daf
       // intérimaire externalise" (222, 10,47, 0 clic).
-      heading: "DAF externalisé, directeur financier externalisé, CFO à temps partagé : quelle différence ?",
+      // SEO-003 (2026-08-09) — titre recentré : le paragraphe de synonymie a
+      // été retiré (déjà dit deux fois plus haut), la section ne traite plus
+      // que de la distinction avec l'intérim et du choix du format.
+      heading: "DAF externalisé ou DAF intérimaire : quelle différence ?",
       content: [
-        "Ces expressions désignent globalement la même réalité — un directeur financier senior qui partage son temps entre plusieurs entreprises — mais la **nuance porte sur la durée et le mode d'intervention** : « DAF externalisé » est le terme générique, « DAF à temps partagé » insiste sur un mode récurrent long (12 à 36 mois), « CFO fractional » est le terme anglo-saxon plébiscité par les startups VC-backed.",
+        // SEO-003 (2026-08-09) — paragraphe de synonymie supprimé : la même
+        // équivalence (DAF externalisé / directeur financier externalisé /
+        // CFO fractional / DAF à temps partagé) était déjà posée deux fois
+        // au-dessus, dans l'introduction et dans « Différence entre DAF, RAF
+        // et CFO ». Ne reste ici que ce que ces deux passages ne disent pas :
+        // la distinction avec le DAF intérimaire.
         "**DAF intérimaire** désigne un profil placé par une agence d'intérim, en général à temps plein et pour une mission courte de remplacement (congé, vacance de poste). C'est une solution de dépannage sur un modèle salarié classique. Le **DAF externalisé** repose au contraire sur un abonnement de service à temps partagé, sans lien de subordination ni charges sociales à gérer, pensé pour durer et monter en compétence sur l'entreprise plutôt que pour dépanner ponctuellement.",
-        "Chez Iter Advisors nous proposons ces formats — c'est votre besoin qui dicte le mode, pas l'inverse. Pour l'intervention **récurrente sur la durée** (quelques jours par mois, engagement 12-36 mois), notre page dédiée détaille les missions et tarifs : [DAF à temps partagé : directeur financier 2 à 8 jours par mois](/daf-externalise/temps-partage). Pour une situation d'urgence, voir [DAF de transition](/daf-externalise/transition).",
+        "Chez Iter Advisors nous proposons ces formats — c'est votre besoin qui dicte le mode, pas l'inverse. Pour l'intervention **récurrente sur la durée** (quelques jours par mois, engagement 12-36 mois), notre page dédiée détaille les missions et tarifs : [DAF à temps partagé : directeur financier 2 à 8 jours par mois](/daf-externalise/temps-partage). Le format transition, lui, répond à une urgence : remplacement, crise, restructuration.",
       ],
     },
     vsExpertComptable: {
@@ -379,7 +320,11 @@ export const dafContent: Record<Locale, DafContent> = {
       ],
       subsections: [
         {
-          heading: "Réduction significative des coûts (jusqu'à -60 %)",
+          // SEO-012 (2026-08-09) — « jusqu'à -60 % » retiré : aucun calcul de la
+            // page ne produit ce chiffre, et l'écart réel dépend entièrement
+            // des deux configurations comparées. Le titre annonce désormais
+            // ce que le paragraphe démontre effectivement.
+            heading: "Vous ne payez que le temps réellement utilisé",
           content: [
             "Le coût d'un DAF externalisé est nettement inférieur à celui d'un DAF en interne. Vous ne payez que pour le temps effectivement consacré à votre entreprise, sans charges sociales ni avantages salariaux. Un DAF externalisé à 3 jours par mois coûte environ 3 000 EUR, contre 8 000 à 17 000 EUR par mois pour un DAF salarié (charges comprises).",
           ],
@@ -387,7 +332,7 @@ export const dafContent: Record<Locale, DafContent> = {
         {
           heading: "Flexibilité et adaptabilité",
           content: [
-            "Le DAF externalisé s'adapte à vos besoins réels. Que vous ayez besoin d'une intervention ponctuelle pour une levée de fonds ou d'un accompagnement régulier à temps partagé, le volume d'intervention est ajustable en fonction de l'évolution de votre activité. Pas d'engagement long terme, pas de préavis.",
+            "Le DAF externalisé s'adapte à vos besoins réels. Que vous ayez besoin d'une intervention ponctuelle pour une levée de fonds ou d'un accompagnement régulier à temps partagé, le volume d'intervention est ajustable en fonction de l'évolution de votre activité. Les modalités d'engagement et de préavis sont fixées au contrat.",
           ],
         },
         {
@@ -424,7 +369,7 @@ export const dafContent: Record<Locale, DafContent> = {
     pricing: {
       heading: "Quel est le tarif d'un DAF externalisé ? Grille tarifaire 2026",
       content: [
-        "Le tarif journalier moyen (TJM) d'un DAF externalisé se situe entre 750 et 1 250 EUR HT selon le niveau de séniorité et la complexité des missions. Chez Iter Advisors, nous proposons trois formules adaptées aux besoins des PME et startups.",
+        "Le tarif journalier moyen (TJM) d'un DAF externalisé se situe entre 750 et 1 250 EUR HT selon le niveau de séniorité et la complexité des missions. Chez Iter Advisors, nous proposons trois formules adaptées aux besoins des PME et startups. Le détail de ce qui est inclus dans chacune, et la façon dont le devis se construit, sont sur notre [grille tarifaire détaillée](/daf-externalise/tarifs).",
       ],
     },
     pricingTable: {
@@ -450,22 +395,22 @@ export const dafContent: Record<Locale, DafContent> = {
         },
       ],
       comparisonNote:
-        "À titre de comparaison, un **DAF salarié à temps plein** représente un coût employeur estimé entre 100 000 € et 213 000 € par an, charges comprises. L'écart avec un DAF externalisé dépend des deux termes comparés : d'environ 1,2 fois entre notre formule la plus étoffée et un recrutement d'entrée de gamme, jusqu'à 8 fois entre la formule Essentiel et un profil senior à temps plein. Pour une intervention récurrente sur le long terme, voir notre offre [DAF à temps partagé](/daf-externalise/temps-partage). Pour une situation d'urgence (départ DAF, restructuration), voir notre offre [DAF de transition](/daf-externalise/transition).",
+        "À titre de comparaison, un **DAF salarié à temps plein** représente un coût employeur estimé entre 100 000 € et 213 000 € par an, charges comprises. L'écart avec un DAF externalisé dépend des deux termes comparés : d'environ 1,2 fois entre notre formule la plus étoffée et un recrutement d'entrée de gamme, jusqu'à 8 fois entre la formule Essentiel et un profil senior à temps plein. Une intervention récurrente sur le long terme relève du DAF à temps partagé ; une situation d'urgence — départ du DAF, restructuration — relève du DAF de transition.",
     },
     forWhom: {
       heading: "DAF externalisé : pour qui et à quel stade ?",
       intro:
-        "Le DAF externalisé n'est pas réservé aux grandes entreprises. Quatre profils types tirent le maximum de valeur de cette solution.",
+        "Le DAF externalisé n'est pas réservé aux grandes entreprises. Quatre profils types tirent le maximum de valeur de cette solution. Les enjeux financiers varient aussi fortement d'un métier à l'autre — voir [nos interventions par secteur](/daf-externalise/secteurs).",
       segments: [
         {
           heading: "Startup early-stage (pré-seed à seed)",
           content:
-            "À ce stade, vous n'avez pas le budget pour un DAF salarié (140 000–200 000 € chargé/an) mais vous avez besoin d'un interlocuteur senior pour vos premières levées et votre suivi de runway. Le **DAF externalisé en formule Essentiel** (2–3 jours/mois) couvre vos besoins pour 2 000 à 3 000 € HT/mois. Pour une intervention plus régulière, le format [DAF à temps partagé](/daf-externalise/temps-partage) prend tout son sens.",
+            "À ce stade, vous n'avez pas le budget pour un DAF salarié (140 000–200 000 € chargé/an) mais vous avez besoin d'un interlocuteur senior pour vos premières levées et votre suivi de runway. Le **DAF externalisé en formule Essentiel** (2–3 jours/mois) couvre vos besoins pour 2 000 à 3 000 € HT/mois. Pour une intervention plus régulière, le format DAF à temps partagé prend tout son sens.",
         },
         {
           heading: "Scale-up Series A / B",
           content:
-            "Vous gérez désormais une trésorerie complexe, des reportings investisseurs trimestriels et préparez peut-être votre prochain tour. Le **DAF externalisé en formule Croissance** (4–6 jours/mois) prend en charge la structuration de votre fonction finance avant le recrutement d'un DAF salarié. C'est typiquement le moment idéal pour un [DAF à temps partagé](/daf-externalise/temps-partage) — un même profil senior, présent 1 jour par semaine sur la durée.",
+            "Vous gérez désormais une trésorerie complexe, des reportings investisseurs trimestriels et préparez peut-être votre prochain tour. Le **DAF externalisé en formule Croissance** (4–6 jours/mois) prend en charge la structuration de votre fonction finance avant le recrutement d'un DAF salarié. C'est typiquement le moment idéal pour un DAF à temps partagé — un même profil senior, présent 1 jour par semaine sur la durée.",
         },
         {
           heading: "PME en croissance ou en transmission",
@@ -475,7 +420,7 @@ export const dafContent: Record<Locale, DafContent> = {
         {
           heading: "ETI ou groupe en transformation",
           content:
-            "Pour une période de 3 à 12 mois (départ du DAF, restructuration, intégration post-acquisition), le [DAF de transition](/daf-externalise/transition) intervient en J+5 avec un profil senior 20+ ans d'expérience. C'est une mission ponctuelle intensive, distincte du temps partagé récurrent.",
+            "Pour une période de 3 à 12 mois (départ du DAF, restructuration, intégration post-acquisition), le DAF de transition intervient en J+5 avec un profil senior 20+ ans d'expérience. C'est une mission ponctuelle intensive, distincte du temps partagé récurrent.",
         },
       ],
       outro:
@@ -498,7 +443,7 @@ export const dafContent: Record<Locale, DafContent> = {
       content: [
         "Plusieurs situations justifient le recours à un DAF externalisé. Voici les signaux les plus fréquents :",
         "Vous préparez une [levée de fonds](/services/accompagnement-levee-de-fond) : vous avez besoin d'un business plan solide, d'une modélisation financière rigoureuse et d'un interlocuteur crédible face aux investisseurs.",
-        "Votre croissance s'accélère : le chiffre d'affaires dépasse 500 K EUR et la gestion financière artisanale ne suffit plus. Si vous avez un besoin de 2 à 5 jours par mois sur la durée, le [DAF à temps partagé](/daf-externalise/temps-partage) est la formule la plus adaptée.",
+        "Votre croissance s'accélère : le chiffre d'affaires dépasse 500 K EUR et la gestion financière artisanale ne suffit plus. Si vous avez un besoin de 2 à 5 jours par mois sur la durée, le DAF à temps partagé est la formule la plus adaptée.",
         "Vous recrutez massivement : les charges de personnel explosent et vous devez anticiper financièrement chaque recrutement pour éviter les tensions de trésorerie.",
         "Votre DAF interne est parti : pour gérer cette situation d'urgence (départ DAF, restructuration), notre offre [DAF de transition](/daf-externalise/transition) intervient en J+5 avec un profil senior 20+ ans d'expérience — plutôt que de recruter dans l'urgence (6 mois de process).",
         "Vous préparez une opération de [M&A](/services/ma-due-diligence) : cession, acquisition ou rapprochement, vous avez besoin d'un expert pour la due diligence, la valorisation et les négociations.",
@@ -591,25 +536,7 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "Combien coûte un DAF externalisé ?",
         answer:
-          "Le TJM (tarif journalier moyen) d'un DAF externalisé se situe entre 750 et 1 250 EUR HT selon la seniorité et la complexité des missions. Chez Iter Advisors, nos formules vont de 2 000 EUR/mois HT (2-3 jours par mois) à 7 000+ EUR/mois HT (8+ jours par mois). À titre de comparaison, un DAF salarié à temps plein coûte entre 8 300 et 17 750 EUR/mois charges comprises, soit un budget annuel de 100 000 à 213 000 EUR.",
-      },
-      {
-        // SERP PAA wording variant (différent de \"Combien coûte\") — annual / ROI angle.
-        question: "Quel est le coût d'un DAF externalisé ?",
-        answer:
-          "Sur une base annuelle, un DAF externalisé chez Iter Advisors revient entre 24 000 et 84 000 EUR HT par an selon la formule choisie (2 000 à 7 000 EUR HT/mois). Un DAF salarié à temps plein représente en regard un coût employeur estimé de 100 000 à 213 000 EUR/an, charges comprises : l'écart va d'environ 1,2 fois (formule Premium contre recrutement d'entrée de gamme) à 8 fois (formule Essentiel contre profil senior à temps plein). Le coût total dépend du volume d'intervention (jours par mois), de la séniorité du profil et de la complexité de la situation : multi-entités, multi-devises, levée de fonds en cours, opérations de M&A.",
-      },
-      {
-        // SERP PAA.
-        question: "Quel est le salaire d'un DAF externalisé ?",
-        answer:
-          "Le DAF externalisé n'est pas salarié de votre entreprise, donc le terme exact est honoraires (pas salaire). Chez Iter Advisors, le tarif facturé va de 2 000 à 7 000 EUR HT par mois selon la formule (2 à 8+ jours par mois). En tarif journalier moyen (TJM), comptez entre 750 et 1 250 EUR HT/jour pour un DAF senior 10+ ans d'expérience. Pour les freelance DAF solo hors cabinet, les TJM observés en 2026 sont du même ordre de grandeur.",
-      },
-      {
-        // SERP PAA.
-        question: "Comment devenir DAF externalisé ?",
-        answer:
-          "Devenir DAF externalisé suppose en général 10 à 15 ans d'expérience en direction financière (DAF, head of finance, CFO de scale-up), au moins une levée de fonds Series A ou B menée en tant que CFO, et la maîtrise des outils modernes (Pennylane, Agicap, Power BI). Trois voies principales : freelance en solo, portage salarial, ou rejoindre un cabinet comme Iter Advisors qui apporte un flux de missions stable, des pairs seniors et un cadre méthodologique éprouvé. Voir notre page recrutement Fractional CFO pour candidater (/carrieres/fractional-cfo).",
+          "Le TJM (tarif journalier moyen) d'un DAF externalisé se situe entre 750 et 1 250 EUR HT selon la seniorité et la complexité des missions. Chez Iter Advisors, nos formules vont de 2 000 EUR/mois HT (2-3 jours par mois) à 7 000+ EUR/mois HT (8+ jours par mois). Sur une base annuelle, cela représente 24 000 à 84 000 EUR HT. À titre de comparaison, un DAF salarié à temps plein représente un coût employeur estimé de 8 300 à 17 750 EUR/mois charges comprises, soit 100 000 à 213 000 EUR par an. Le total dépend du volume d'intervention, de la séniorité du profil et de la complexité de la situation : multi-entités, multi-devises, levée de fonds en cours, opérations de M&A.",
       },
       {
         question: "Quelle est la différence entre un DAF externalisé et un expert-comptable ?",
@@ -679,49 +606,14 @@ export const dafContent: Record<Locale, DafContent> = {
           "Techniquement, ce sont deux expressions pour dire la même chose, avec une nuance de durée. Le DAF externalisé est un terme générique qui englobe toutes les formes d'intervention externe (temps partagé, mission ponctuelle, abonnement mensuel). Le DAF à temps partagé est une forme spécifique de DAF externalisé qui intervient de manière récurrente, sur plusieurs mois ou années, généralement quelques jours par semaine ou par mois. Chez Iter Advisors, nous proposons les deux modes : un accompagnement à temps partagé pour structurer la finance d'une PME en croissance (12-36 mois), et des missions courtes de 3-6 mois pour des opérations stratégiques (levée de fonds, M&A, transition).",
       },
       {
-        question: "Quels logiciels et outils de gestion financière utilisez-vous ?",
-        answer:
-          "Nos DAF externalisés s'adaptent à votre écosystème technologique. Nous maîtrisons les meilleurs outils SaaS du marché pour moderniser votre fonction finance : logiciels de gestion de trésorerie (Agicap, Kyriba), outils de pré-comptabilité et facturation (Pennylane, Qonto, Spendesk), ainsi que des ERP ou solutions de Business Intelligence (PowerBI) pour l'automatisation de vos reportings.",
-      },
-      {
         question: "Combien de temps dure une mission de DAF externalisé ?",
         answer:
           "La durée varie selon les besoins : de 3 mois pour une mission ponctuelle (levée de fonds, restructuration) à plusieurs années pour un accompagnement à temps partagé. Chez Iter Advisors, la durée moyenne de collaboration est de 18 mois, sans engagement de durée minimum.",
       },
       {
-        question: "Le DAF externalisé est-il adapté aux startups early-stage ?",
-        answer:
-          "Oui, c'est même l'un des cas d'usage les plus pertinents. Une startup pre-seed ou seed n'a pas les moyens de recruter un DAF à 120 K EUR/an, mais elle a besoin d'un prévisionnel solide, d'un suivi de trésorerie et d'un interlocuteur crédible pour les investisseurs. Le DAF externalisé à 2-3 jours/mois est la solution idéale.",
-      },
-      {
-        question: "Quelle est la différence entre un DAF externalisé et un manager de transition ?",
-        answer:
-          "Le manager de transition intervient à temps plein sur une durée limitée (3-12 mois) pour gérer une situation exceptionnelle (vacance de poste, crise, restructuration). Le DAF externalisé intervient à temps partagé sur une durée plus longue. Le premier remplace, le second complète.",
-      },
-      {
         question: "Comment choisir son cabinet de DAF externalisé ?",
         answer:
           "Vérifiez l'expérience sectorielle, la séniorité des profils (10+ ans minimum), les résultats chiffrés chez d'autres clients, les outils maîtrisés, et la structure du cabinet (un indépendant seul est un risque de continuité). Demandez des références vérifiables.",
-      },
-      {
-        question: "Où vos directeurs financiers interviennent-ils ?",
-        answer:
-          "Les experts d'Iter Advisors accompagnent des startups et PME partout en France. Nous pouvons intervenir physiquement dans vos locaux (notamment à Paris et en Île-de-France, ainsi qu'à Barcelone et Toulouse depuis nos autres bureaux) pour des réunions de pilotage avec les dirigeants, ou travailler 100 % à distance (en remote), en nous intégrant à vos canaux de communication internes (Slack, Teams, Google Workspace).",
-      },
-      {
-        question: "Quelle est la différence entre un DAF externalisé et un freelance DAF ?",
-        answer:
-          "Un freelance DAF travaille de manière indépendante, sans structure d'accompagnement, et offre généralement une expertise limitée à la comptabilité ou au reporting basique. Un DAF externalisé chez Iter Advisors bénéficie d'une structure complète : accès à un réseau d'experts (investisseurs, avocats, consultants), soutien d'une équipe, continuité en cas d'absence, et expertise multisectorielle reconnue. Le freelance est plus économique à court terme, le DAF externalisé offre plus de valeur et de sécurité sur la durée.",
-      },
-      {
-        question: "Quels secteurs d'activité bénéficient le plus d'un DAF externalisé ?",
-        answer:
-          "Les secteurs qui tirent le plus de valeur d'un DAF externalisé : (1) SaaS et tech — modèles de revenus récurrents, gestion du burn rate, métriques VC ; (2) e-commerce — gestion du BFR, saisonnalité, multi-canaux ; (3) deep-tech et biotech — cycles de financement R&D, subventions, levées scientifiques ; (4) industrie et ETI — pilotage des investissements capex, marges et coûts de production ; (5) services professionnels — structuration de la croissance, pricing, gestion des équipes. Iter Advisors est spécialisé sur ces cinq verticales.",
-      },
-      {
-        question: "Le DAF externalisé gère-t-il la relation bancaire ?",
-        answer:
-          "Oui, c'est l'une des missions clés d'un DAF externalisé : préparer les dossiers de financement, négocier les lignes de crédit court terme (Dailly, affacturage, crédit revolving), piloter les relations avec les banques partenaires, et optimiser les conditions de financement. Un DAF senior apporte un réseau bancaire établi et une crédibilité que n'a pas toujours un dirigeant PME seul face à son conseiller. Chez Iter Advisors, nos DAFs ont accompagné leurs clients dans l'obtention de plus de 50 M€ de financement bancaire et non dilutif.",
       },
       {
         question: "Un DAF externalisé est-il responsable en cas d'erreur financière ?",

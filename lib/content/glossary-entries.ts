@@ -743,7 +743,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
           content: [
             "Le modèle du **DAF externalisé** (aussi appelé DAF à temps partagé) est particulièrement adapté aux entreprises de 10 à 200 salariés qui ont besoin d'expertise financière senior sans pouvoir justifier d'un temps plein.",
             "Concrètement, un DAF externalisé intervient 2 à 8 jours par mois selon les besoins. Il prend en charge le pilotage financier global, libère le dirigeant des sujets financiers chronophages, et structure l'information financière pour les décisions stratégiques.",
-            "Chez **[Iter Advisors](/daf-externalise)**, nos DAF externalisés accompagnent des PME, startups et entreprises franco-espagnoles depuis 2019. Découvrez nos [tarifs DAF externalisé](/daf-externalise/tarifs) et nos [cas clients](/ressources/cas-clients).",
+            "Chez **[Iter Advisors](/daf-externalise)**, nos DAF externalisés accompagnent des PME, startups et entreprises franco-espagnoles depuis 2021. Découvrez nos [tarifs DAF externalisé](/daf-externalise/tarifs) et nos [cas clients](/ressources/cas-clients).",
           ],
         },
         {
