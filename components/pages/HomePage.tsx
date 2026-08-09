@@ -564,15 +564,15 @@ export default function HomePage({
                     <Link href="/en/fractional-cfo/shared-time" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Part-time CFO</Link>
                     <Link href="/en/fractional-cfo/transition" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Interim CFO</Link>
                     <Link href="/en/services/outsource-your-accounting" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Accounting outsourcing</Link>
-                    <Link href="/en/fractional-cfo/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">CFO role & skills</Link>
+                    <Link href="/en/fractional-cfo/role" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">CFO role & skills</Link>
                   </>
                 )}
                 {locale === "es" && (
                   <>
                     <Link href="/es/externalizacion-daf/tiempo-compartido" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">CFO a tiempo compartido</Link>
-                    <Link href="/es/externalizacion-daf/transition" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF de transici\u00f3n</Link>
+                    <Link href="/es/externalizacion-daf/transicion" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF de transici\u00f3n</Link>
                     <Link href="/es/services/externalizar-contabilidad" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Externalizaci\u00f3n contable</Link>
-                    <Link href="/es/externalizacion-daf/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Profesi\u00f3n de DAF</Link>
+                    <Link href="/es/externalizacion-daf/funciones" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Profesi\u00f3n de DAF</Link>
                   </>
                 )}
               </div>

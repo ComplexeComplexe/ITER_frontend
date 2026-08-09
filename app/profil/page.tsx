@@ -1,6 +1,10 @@
 import { Metadata } from "next";
 import LeadGenPage from "@/components/pages/LeadGenPage";
 import { getCmsNavigation } from "@/lib/strapi";
+import {
+  CLIENTS_ACCOMPAGNES,
+  TRUSTFOLIO_RATING,
+} from "@/lib/content/facts";
 
 export const metadata: Metadata = {
   title: "Diagnostic DAF | Iter Advisors",
@@ -9,7 +13,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Diagnostic Financier Gratuit | Iter Advisors",
     description:
-      "Évaluez vos besoins en 2 min et obtenez un diagnostic personnalisé. +100 entreprises accompagnées, 5/5 Trustfolio.",
+      // SEO-DAF-02 (2026-08-09) — annonçait « +100 entreprises accompagnées »
+      // quand le reste du site en annonce 85.
+      `Évaluez vos besoins en 2 min et obtenez un diagnostic personnalisé. ${CLIENTS_ACCOMPAGNES} entreprises accompagnées, ${TRUSTFOLIO_RATING}/5 Trustfolio.`,
     type: "website",
   },
 };

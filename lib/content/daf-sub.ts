@@ -402,8 +402,11 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           heading: "Comparaison avec les Alternatives",
           content: [
             "DAF externalisé vs DAF salarié : un DAF salarié en CDI coûte 80 000-150 000€ brut/an, soit 116 000-217 000€/an charges comprises (45% de charges patronales). Un DAF externalisé à 2 jours/mois coûte 2 500-4 500€ HT/mois, soit 3 à 7 fois moins cher. De plus, si vos besoins évoluent, vous ajustez simplement le nombre de jours sans contrainte administrative.",
-            "DAF externalisé vs Expert-Comptable : l'expert-comptable certifie la conformité légale et fiscale. Le DAF externalisé pilote la performance financière au quotidien. Ce sont des rôles complémentaires. Une PME structurée a typiquement les deux : l'expert-comptable pour la conformité, le DAF pour le pilotage.",
-            "DAF externalisé vs Consultant Financier : un consultant intervient sur une mission précise et repart une fois terminée. Le DAF externalisé construit une relation continue et connaît votre historique. Pour des besoins récurrents, le DAF externalisé est toujours plus adapté.",
+            // SEO-DAF-02 (2026-08-09) — « certifie » relève du commissaire
+            // aux comptes. L'expert-comptable produit les comptes et conseille
+            // selon sa lettre de mission.
+            "DAF externalisé vs Expert-Comptable : l'expert-comptable produit les comptes et sécurise la conformité fiscale et sociale. Le DAF externalisé pilote la performance financière au quotidien. Ce sont des rôles complémentaires. Une PME structurée a typiquement les deux : l'expert-comptable pour la conformité, le DAF pour le pilotage.",
+            "DAF externalisé vs Consultant Financier : un consultant intervient sur une mission précise et repart une fois terminée. Le DAF externalisé construit une relation continue et connaît votre historique. Pour des besoins récurrents, le DAF externalisé est en général le format le plus adapté.",
           ],
         },
         {

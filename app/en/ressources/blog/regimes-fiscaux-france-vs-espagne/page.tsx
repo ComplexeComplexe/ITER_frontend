@@ -430,7 +430,7 @@ export default async function Page() {
             <span>
               Discover our{" "}
               <a
-                href="/en/daf-outsourcing"
+                href="/en/fractional-cfo"
                 className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline"
               >
                 fractional CFO service

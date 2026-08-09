@@ -54,7 +54,7 @@ export default function MerciPage() {
                 <li className="flex gap-2">
                   <span className="text-iter-violet">→</span>
                   <Link
-                    href="/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission"
+                    href="/ressources/blog/cout-daf-externalise-tarifs-prix-2026"
                     className="hover:text-iter-violet hover:underline"
                   >
                     Découvrez nos grilles tarifaires DAF externalisé

@@ -295,13 +295,13 @@ export const homeContent = {
       },
       {
         title: "Organizing your finance department",
-        href: "/en/ressources/blog/organiser-sa-direction-financiere",
+        href: "/ressources/blog/organiser-sa-direction-financiere",
         image: "/images/blog/organiser-direction-financiere.jpg",
         date: "Mar 5, 2026",
       },
       {
         title: "Essential financial tech tools",
-        href: "/en/ressources/blog/essentiels-outils-tech-finance",
+        href: "/ressources/blog/essentiels-outils-tech-finance",
         image: "/images/blog/outils-tech-finance.jpg",
         date: "Feb 28, 2026",
       },
@@ -480,13 +480,13 @@ export const homeContent = {
       },
       {
         title: "Organizar su departamento financiero",
-        href: "/es/recursos/blog/organiser-sa-direction-financiere",
+        href: "/ressources/blog/organiser-sa-direction-financiere",
         image: "/images/blog/organiser-direction-financiere.jpg",
         date: "5 mar. 2026",
       },
       {
         title: "Las herramientas tecnológicas esenciales para las finanzas",
-        href: "/es/recursos/blog/essentiels-outils-tech-finance",
+        href: "/ressources/blog/essentiels-outils-tech-finance",
         image: "/images/blog/outils-tech-finance.jpg",
         date: "28 feb. 2026",
       },

@@ -305,7 +305,10 @@ export const comptabiliteExternalisationContent = {
           {
             question: "Quelle différence entre un expert-comptable et un prestataire d'externalisation comptable ?",
             answer:
-              "Un expert-comptable assure souvent la production des liasses fiscales et la certification des comptes, avec un rythme trimestriel ou annuel. Un prestataire d'externalisation comptable traite les opérations au quotidien : saisie des factures, déclarations de TVA, suivi de la trésorerie. Les deux rôles sont complémentaires. Iter Advisors peut coordonner les deux pour une couverture complète.",
+              // SEO-DAF-02 (2026-08-09) — « certification des comptes » est le
+              // monopole du commissaire aux comptes ; l'expert-comptable
+              // établit et atteste les comptes annuels.
+              "Un expert-comptable assure souvent la production des liasses fiscales et l'établissement des comptes annuels, avec un rythme trimestriel ou annuel. Un prestataire d'externalisation comptable traite les opérations au quotidien : saisie des factures, déclarations de TVA, suivi de la trésorerie. Les deux rôles sont complémentaires. Iter Advisors peut coordonner les deux pour une couverture complète.",
           },
           {
             question: "L'externalisation comptable fonctionne-t-elle avec Pennylane, Sage ou QuickBooks ?",

@@ -1,5 +1,17 @@
 import { Tool } from '@/data/tools';
 
+/**
+ * Date de la dernière revue éditoriale du corpus d'avis outils.
+ *
+ * SEO-DAF-13 (2026-08-09) — `datePublished` était calculé avec
+ * `new Date()` : chaque build republiait l'avis « aujourd'hui ». Le balisage
+ * annonçait donc une fraîcheur fabriquée, changeait à chaque déploiement et
+ * rendait la sortie du build non déterministe.
+ *
+ * À remonter à la main quand les avis outils sont réellement revus.
+ */
+export const TOOLS_REVIEW_DATE = '2026-08-09';
+
 export function generateToolReviewSchema(tool: Tool) {
   return {
     '@context': 'https://schema.org',
@@ -22,8 +34,13 @@ export function generateToolReviewSchema(tool: Tool) {
       bestRating: '5',
       worstRating: '1',
     },
-    reviewBody: `Avis expert sur ${tool.name} par nos DAF externalisés. Adapté pour ${tool.forWho.join(', ')}. Non-adapté pour ${tool.notForWho.join(', ')}.`,
-    datePublished: new Date().toISOString().split('T')[0],
+    // SEO-DAF-13 (2026-08-09) — le reviewBody reprenait le cadrage
+    // « Adapté pour / Non-adapté pour », retiré des pages outils en juillet
+    // au profit de « Points forts / Points de vigilance ». Le balisage
+    // décrivait donc un contenu qui n'existe plus à l'écran. Reformulé sur
+    // les mêmes données, avec le vocabulaire réellement affiché.
+    reviewBody: `Avis expert sur ${tool.name} par nos DAF externalisés. Points forts : ${tool.forWho.join(', ')}. Points de vigilance : ${tool.notForWho.join(', ')}.`,
+    datePublished: TOOLS_REVIEW_DATE,
   };
 }
 
@@ -93,18 +110,18 @@ export function generateSoftwareApplicationSchema(tool: Tool) {
     name: tool.name,
     url: tool.website,
     applicationCategory: 'BusinessApplication',
-    offers: {
-      '@type': 'Offer',
-      price: tool.priceRange,
-      priceCurrency: 'EUR',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: tool.rating,
-      bestRating: '5',
-      worstRating: '1',
-      ratingCount: 1,
-    },
+    // SEO-DAF-13 (2026-08-09) — deux corrections sur ce générateur, qui
+    // n'est appelé nulle part aujourd'hui mais reste exporté :
+    //  1. `offers.price` recevait `tool.priceRange` (« 39-199 €/mois »).
+    //     `price` attend une valeur numérique unique ; une fourchette y est
+    //     invalide. `offers` est retiré tant qu'aucun prix atomique n'existe
+    //     dans data/tools.ts — la fourchette reste affichée en clair sur la
+    //     fiche.
+    //  2. `aggregateRating` agrégeait… un seul avis, le nôtre
+    //     (`ratingCount: 1`). Un avis éditorial unique se balise en `Review`
+    //     — c'est ce que fait generateToolReviewSchema ci-dessus. Un
+    //     aggregateRating auto-déclaré n'est pas éligible au review snippet
+    //     et expose à une action manuelle.
     author: {
       '@type': 'Organization',
       name: 'Iter Advisors',

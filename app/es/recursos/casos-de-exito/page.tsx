@@ -11,7 +11,7 @@ import TestimonialsListingPage from "@/components/pages/TestimonialsListingPage"
 const t = {
   es: {
     title: "Casos de Éxito DAF | Iter Advisors",
-    description: "Casos de éxito DAF externalizado: testimonios de PYMEs, startups, scale-ups. 5/5 en Trustfolio (31 opiniones verificadas). Resultados reales, crecimiento garantizado.",
+    description: "Casos de éxito DAF externalizado: testimonios de PYMEs, startups, scale-ups. 5/5 en Trustfolio (31 opiniones verificadas). Resultados reales y verificables.",
     breadcrumb: "Casos de Éxito",
   },
 };

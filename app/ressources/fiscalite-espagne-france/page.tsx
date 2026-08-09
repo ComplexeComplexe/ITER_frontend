@@ -271,7 +271,7 @@ export default async function Page() {
                 { title: "Régimes fiscaux France vs Espagne", href: "/ressources/blog/regimes-fiscaux-france-vs-espagne" },
                 { title: "Impôt sur le revenu en Espagne", href: "/ressources/blog/impot-revenu-espagne" },
                 { title: "Barème IRPF 2026", href: "/ressources/blog/bareme-irpf-espagne-2026" },
-                { title: "Double imposition France-Espagne", href: "/ressources/blog/double-imposition-france-espagne-convention" },
+                { title: "Double imposition France-Espagne", href: "/ressources/fiscalite/double-imposition-france-espagne" },
                 { title: "Modelo 720 : déclaration des biens", href: "/ressources/blog/modelo-720-declaration-biens-etranger" },
               ].map((article) => (
                 <Link

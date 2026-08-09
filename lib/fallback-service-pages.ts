@@ -726,7 +726,7 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
             children: [
               {
                 type: "text",
-                text: "L'expert-comptable est un professionnel réglementé inscrit à l'Ordre des Experts-Comptables (OEC) : il est le seul habilité légalement à signer le bilan annuel, la liasse fiscale et les comptes consolidés. Il certifie la conformité légale et fiscale de vos comptes. Le comptable externalisé (ou comptable freelance) effectue les travaux courants — saisie, TVA, rapprochements, clôtures périodiques — sous la supervision et la responsabilité d'un expert-comptable signataire. Les deux rôles sont complémentaires : le comptable externalisé produit la donnée au quotidien, l'expert-comptable l'arrête et la certifie en fin d'exercice. Chez Iter Advisors, nos prestations de comptabilité externalisée sont toujours réalisées sous couverture d'un expert-comptable.",
+                text: "L'expert-comptable est un professionnel réglementé inscrit à l'Ordre des Experts-Comptables (OEC) : il est le seul habilité légalement à signer le bilan annuel, la liasse fiscale et les comptes consolidés. Il engage sa responsabilité sur les comptes qu'il établit. Le comptable externalisé (ou comptable freelance) effectue les travaux courants — saisie, TVA, rapprochements, clôtures périodiques — sous la supervision et la responsabilité d'un expert-comptable signataire. Les deux rôles sont complémentaires : le comptable externalisé produit la donnée au quotidien, l'expert-comptable l'arrête et l'atteste en fin d'exercice. Chez Iter Advisors, nos prestations de comptabilité externalisée sont toujours réalisées sous couverture d'un expert-comptable.",
               },
             ],
           },

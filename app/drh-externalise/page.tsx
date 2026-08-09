@@ -38,13 +38,14 @@ const professionalServiceSchema = {
       { "@type": "Offer", name: "Premium", price: "8000", priceCurrency: "EUR" },
     ],
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5",
-    reviewCount: "31",
-    bestRating: "5",
-    worstRating: "1",
-  },
+  // SEO-DAF-13 (2026-08-09) — aggregateRating (5/31) retiré.
+  // Google n'accepte pas les avis auto-déclarés en review snippet pour
+  // Organization / LocalBusiness et leurs sous-types (ProfessionalService en
+  // est un) : le balisage ne pouvait donc produire aucune étoile, mais il
+  // exposait le site à une action manuelle « avis auto-servis ». Le même
+  // nettoyage avait été fait sur DafPage (2026-07-19), DafLocalPage et
+  // daf-externalise-paris (2026-05-29) — cette page avait été oubliée.
+  // La note Trustfolio reste affichée en clair dans le contenu.
 };
 
 export default async function Page() {

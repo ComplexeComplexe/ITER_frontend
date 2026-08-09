@@ -90,7 +90,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/es/resources/:path*",
-        destination: "/es/ressources/:path*",
+        destination: "/es/recursos/:path*",
         permanent: true, // 301 redirect
       },
       // T2 (2026-06-07): /recursos/ → /ressources/. GSC reports internal
@@ -136,7 +136,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives",
-        destination: "/es/ressources/blog",
+        destination: "/es/recursos/blog",
         permanent: true, // 301 redirect (article depublished)
       },
       // les-10-outils-pour-les-cfos-en-start-up (long slug) was depublished
@@ -166,11 +166,6 @@ const nextConfig: NextConfig = {
         source: "/es/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
         destination: "/ressources/blog/les-10-outils-pour-cfos-startup",
         permanent: true,
-      },
-      {
-        source: "/es/ressources/tools",
-        destination: "/es/ressources/herramientas",
-        permanent: true, // 301 redirect
       },
       {
         source: "/en/ressources/herramientas",
@@ -236,6 +231,60 @@ const nextConfig: NextConfig = {
         permanent: true, // 301 redirect (not translated)
       },
       // TICKET 2: Spanish slug migration to native Spanish
+      // ── SEO-DAF-08 (2026-08-09) — règles ES spécifiques, AVANT la
+      // normalisation générique /es/ressources/* → /es/recursos/* qui suit.
+      //
+      // Le catch-all ci-dessous capte tout ce qui commence par
+      // /es/ressources/. Toute règle ES plus spécifique placée APRÈS lui est
+      // morte : Next.js retient le premier `source` qui matche. Le fichier
+      // documentait déjà le piège (cf. le commentaire GSC-01/03 sur
+      // /es/recursos/fiche-metier/:path*), mais plusieurs règles étaient
+      // restées du mauvais côté. Deux d'entre elles envoyaient les visiteurs
+      // sur un 404 :
+      //   /es/ressources/blog/levee-de-fonds-dilutif-vs-non-dilutif
+      //   /es/ressources/descripcion-del-puesto
+      // — le catch-all les réécrivait vers /es/recursos/<même slug>, qui
+      // n'existe pas. Les autres partaient bien mais en deux sauts.
+      //
+      // Toute nouvelle règle /es/ressources/... doit être ajoutée ICI.
+      {
+        source: "/es/ressources/blog/levee-de-fonds-dilutif-vs-non-dilutif",
+        destination: "/es/services/soporte-financiacion",
+        permanent: true,
+      },
+      {
+        // Les fiches métiers n'ont jamais eu de version ES. La page ES la
+        // plus proche est le rôle du DAF — préférée au listing FR, qui
+        // renvoyait le visiteur hispanophone vers du français.
+        source: "/es/ressources/descripcion-del-puesto",
+        destination: "/es/externalizacion-daf/funciones",
+        permanent: true,
+      },
+      {
+        source: "/es/ressources/fiche-metier/:path*",
+        destination: "/es/externalizacion-daf/funciones",
+        permanent: true,
+      },
+      {
+        source: "/es/ressources/case-studies",
+        destination: "/es/recursos/casos-de-exito",
+        permanent: true, // 301 redirect (merged content)
+      },
+      {
+        source: "/es/ressources/testimonials",
+        destination: "/es/recursos/casos-de-exito",
+        permanent: true, // 301 redirect (merged content)
+      },
+      {
+        source: "/es/ressources/cas-clients",
+        destination: "/es/recursos/casos-de-exito",
+        permanent: true, // 301 redirect (slug localisé)
+      },
+      {
+        source: "/es/ressources/tools",
+        destination: "/es/recursos/herramientas",
+        permanent: true, // 301 redirect
+      },
       {
         source: "/es/ressources/:path*",
         destination: "/es/recursos/:path*",
@@ -285,11 +334,12 @@ const nextConfig: NextConfig = {
         destination: "/es/services/control-gestion-externalizado",
         permanent: true,
       },
-      {
-        source: "/en/ressources/fiche-metier/expert-paie-et-administration-du-personnel",
-        destination: "/en/ressources/job-descriptions",
-        permanent: true,
-      },
+      // SEO-DAF-08 (2026-08-09): règle spécifique supprimée. Elle envoyait
+      // cette URL EN vers le hub FR /ressources/fiche-metier, lui-même capté
+      // par la règle « /ressources/fiche-metier/:path* » plus bas (`:path*`
+      // matche aussi zéro segment) → 2 sauts, et une arrivée en français.
+      // Le wildcard « /en/ressources/fiche-metier/:path* » plus bas couvre
+      // déjà cette source et l'envoie en un saut vers /en/fractional-cfo/role.
       // GSC-01/03 (2026-07-30): removed the old wildcard
       // "/en/ressources/fiche-metier/:path*" → "/en/ressources/job-descriptions/:path*"
       // rule that lived here — it had the exact same source pattern as the
@@ -346,16 +396,6 @@ const nextConfig: NextConfig = {
       {
         source: "/en/ressources/testimonials",
         destination: "/en/ressources/cas-clients",
-        permanent: true, // 301 redirect (merged content)
-      },
-      {
-        source: "/es/ressources/case-studies",
-        destination: "/es/ressources/cas-clients",
-        permanent: true, // 301 redirect (merged content)
-      },
-      {
-        source: "/es/ressources/testimonials",
-        destination: "/es/ressources/cas-clients",
         permanent: true, // 301 redirect (merged content)
       },
       // UX-03: Remove empty job descriptions hub with redirect to main DAF role page
@@ -442,30 +482,26 @@ const nextConfig: NextConfig = {
       // the post-migration path. Chain: GSC URL → /es/recursos/... → hub.
       {
         source: "/es/recursos/testimonials/:slug*",
-        destination: "/es/recursos/cas-clients",
+        destination: "/es/recursos/casos-de-exito",
         permanent: true,
       },
       // EN/ES orphan blog slugs — article exists only in FR. Redirect to
       // the locale blog hub so Google replaces the indexed URL with the
       // hub instead of keeping the redirect chain.
+      // SEO-DAF-08 (2026-08-09) — alignée sur la règle vercel.json de même
+      // source, qui s'exécute à l'edge et gagnait. Les deux divergeaient :
+      // la version ci-dessous n'avait aucun effet en production et
+      // décrivait une destination erronée.
       {
         source: "/en/ressources/blog/levee-de-fonds-dilutif-vs-non-dilutif",
-        destination: "/en/ressources/blog",
+        destination: "/en/services/fund-raising-support",
         permanent: true,
       },
-      {
-        source: "/es/ressources/blog/levee-de-fonds-dilutif-vs-non-dilutif",
-        destination: "/es/recursos/blog",
-        permanent: true,
-      },
+      // (La variante ES vit désormais au-dessus du catch-all
+      //  /es/ressources/:path*, sans quoi elle ne s'exécutait jamais.)
       {
         source: "/en/ressources/blog/organiser-sa-direction-financiere",
         destination: "/en/ressources/blog",
-        permanent: true,
-      },
-      {
-        source: "/es/ressources/blog/regimes-fiscaux-france-vs-espagne",
-        destination: "/es/recursos/blog/regimes-fiscaux-france-vs-espagne",
         permanent: true,
       },
       // Full-slug variant of the depublished AI/automation article (the
@@ -502,19 +538,25 @@ const nextConfig: NextConfig = {
       // ES site: French-named service routes exist as duplicates of the
       // Spanish canonical slugs. Collapse them so each topic has exactly
       // one indexable URL per locale.
+      // SEO-DAF-08 (2026-08-09) — alignée sur la règle vercel.json de même
+      // source, qui s'exécute à l'edge et gagnait. Les deux divergeaient :
+      // la version ci-dessous n'avait aucun effet en production et
+      // décrivait une destination erronée.
+      // « flujo-de-caja » est le modèle de trésorerie 13 semaines, pas la
+      // prévision de trésorerie : la règle envoyait vers un autre service.
       {
         source: "/es/services/previsionnel-tresorerie",
-        destination: "/es/services/flujo-de-caja",
+        destination: "/es/services/prevision-tesoreria",
         permanent: true,
       },
       {
         source: "/es/services/accompagnement-levee-de-fond",
-        destination: "/es/services",
+        destination: "/es/services/soporte-financiacion",
         permanent: true,
       },
       {
         source: "/es/services/controle-de-gestion-externalise",
-        destination: "/es/services",
+        destination: "/es/services/control-gestion-externalizado",
         permanent: true,
       },
       {
@@ -771,32 +813,41 @@ const nextConfig: NextConfig = {
       { source: "/en/recursos/:path*", destination: "/en/ressources/:path*", permanent: true },
 
       // ── Job descriptions (no EN/ES localized versions)
-      { source: "/en/ressources/job-descriptions", destination: "/ressources/fiche-metier", permanent: true },
-      { source: "/es/recursos/fiche-metier",       destination: "/ressources/fiche-metier", permanent: true },
+      // SEO-DAF-08 (2026-08-09) — les deux pointaient vers
+      // /ressources/fiche-metier, capté juste après par
+      // « /ressources/fiche-metier/:path* » → /daf-externalise/metier
+      // (`:path*` matche aussi zéro segment) : deux sauts, et une arrivée en
+      // français depuis une URL EN ou ES. Chacune vise maintenant la page
+      // équivalente dans sa propre langue, en un saut.
+      { source: "/en/ressources/job-descriptions", destination: "/en/fractional-cfo/role",           permanent: true },
+      { source: "/es/recursos/fiche-metier",       destination: "/es/externalizacion-daf/funciones", permanent: true },
 
       // ── EN blog articles that only exist in FR — redirect to FR canonical
       // (preserves link equity flowing to the actual content vs the EN blog hub)
       { source: "/en/ressources/blog/quand-embaucher-daf-externalise-5-signes",            destination: "/ressources/blog/quand-embaucher-daf-externalise-5-signes",            permanent: true },
       { source: "/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission", destination: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", permanent: true },
       // 2026-05-31 (T8 follow-up): destination was sending EN visitors to the
-      // FR article. Now points to the canonical EN slug (an EN version of the
-      // article exists at this slug in lib/content/blog-posts.ts).
-      { source: "/en/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission",        destination: "/en/ressources/blog/cout-daf-externalise-tarifs-prix-2026",        permanent: true },
+      // FR article. Now points to the canonical EN slug.
+      // SEO-DAF-03/08 (2026-08-09): the previous destination
+      // (/en/…/cout-daf-externalise-tarifs-prix-2026) is itself redirected to
+      // /en/…/fractional-cfo-cost-services-2026 further down in this array —
+      // that made this a 2-hop chain. Pointing straight at the final target.
+      { source: "/en/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission",        destination: "/en/ressources/blog/fractional-cfo-cost-services-2026",           permanent: true },
       { source: "/en/ressources/blog/tableau-de-bord-financier-startup-12-kpis",           destination: "/ressources/blog/tableau-de-bord-financier-startup-12-kpis",           permanent: true },
       { source: "/en/ressources/blog/daf-externalise-vs-expert-comptable",                 destination: "/ressources/blog/daf-externalise-vs-expert-comptable",                 permanent: true },
       { source: "/en/ressources/blog/impot-revenu-espagne",                                destination: "/ressources/blog/impot-revenu-espagne",                                permanent: true },
       { source: "/en/ressources/blog/cash-burn-calculer-runway-anticiper-levee",           destination: "/ressources/blog/cash-burn-calculer-runway-anticiper-levee",           permanent: true },
       { source: "/en/ressources/blog/agicap-vs-fygr-outil-tresorerie",                    destination: "/ressources/blog/agicap-vs-fygr-outil-tresorerie",                    permanent: true },
       { source: "/en/ressources/blog/daf-externalise-barcelone-guide-startups-espagnoles", destination: "/ressources/blog/daf-externalise-barcelone-guide-startups-espagnoles", permanent: true },
-      { source: "/en/ressources/blog/due-diligence-financiere-investisseurs",              destination: "/ressources/blog/due-diligence-financiere-investisseurs",              permanent: true },
+      { source: "/en/ressources/blog/due-diligence-financiere-investisseurs",              destination: "/ressources/blog/checklist-due-diligence-levee-de-fonds",              permanent: true },
       { source: "/en/ressources/blog/drh-externalise-quand-et-pourquoi",                  destination: "/ressources/blog/drh-externalise-quand-et-pourquoi",                  permanent: true },
       { source: "/en/ressources/blog/reduire-bfr-7-leviers-actionnables",                 destination: "/ressources/blog/reduire-bfr-7-leviers-actionnables",                 permanent: true },
       { source: "/en/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",        destination: "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",        permanent: true },
       { source: "/en/ressources/blog/stack-financier-saas-series-a",                      destination: "/ressources/blog/stack-financier-saas-series-a",                      permanent: true },
       { source: "/en/ressources/blog/term-sheet-negocier-clauses-cles",                   destination: "/ressources/blog/term-sheet-negocier-clauses-cles",                   permanent: true },
-      { source: "/en/ressources/blog/data-room-checklist-levee-de-fonds",                 destination: "/ressources/blog/data-room-checklist-levee-de-fonds",                 permanent: true },
+      { source: "/en/ressources/blog/data-room-checklist-levee-de-fonds",                 destination: "/ressources/blog/checklist-due-diligence-levee-de-fonds",                 permanent: true },
       { source: "/en/ressources/blog/cas-etude-happy-scribe",                             destination: "/ressources/cas-clients",                                             permanent: true },
-      { source: "/en/ressources/blog/externaliser-comptabilite-guide",                    destination: "/ressources/blog/externaliser-comptabilite-guide",                    permanent: true },
+      { source: "/en/ressources/blog/externaliser-comptabilite-guide",                    destination: "/ressources/blog/externalisation-comptable",                    permanent: true },
       { source: "/en/ressources/blog/payfit-vs-silae-comparatif-pme",                     destination: "/ressources/blog/payfit-vs-silae-comparatif-pme",                     permanent: true },
       // "que-es-fractional-cfo" is a Spanish-concept article → EN fractional-cfo pillar
       { source: "/en/ressources/blog/que-es-fractional-cfo",                              destination: "/en/fractional-cfo",                                                  permanent: true },
@@ -806,11 +857,11 @@ const nextConfig: NextConfig = {
       { source: "/es/recursos/blog/daf-externalise-vs-expert-comptable",                  destination: "/ressources/blog/daf-externalise-vs-expert-comptable",                 permanent: true },
       { source: "/es/recursos/blog/cash-burn-calculer-runway-anticiper-levee",            destination: "/ressources/blog/cash-burn-calculer-runway-anticiper-levee",           permanent: true },
       { source: "/es/recursos/blog/tableau-de-bord-financier-startup-12-kpis",            destination: "/ressources/blog/tableau-de-bord-financier-startup-12-kpis",           permanent: true },
-      { source: "/es/recursos/blog/due-diligence-financiere-investisseurs",               destination: "/ressources/blog/due-diligence-financiere-investisseurs",              permanent: true },
+      { source: "/es/recursos/blog/due-diligence-financiere-investisseurs",               destination: "/ressources/blog/checklist-due-diligence-levee-de-fonds",              permanent: true },
       { source: "/es/recursos/blog/payfit-vs-silae-comparatif-pme",                       destination: "/ressources/blog/payfit-vs-silae-comparatif-pme",                     permanent: true },
-      { source: "/es/recursos/blog/externaliser-comptabilite-guide",                      destination: "/ressources/blog/externaliser-comptabilite-guide",                    permanent: true },
+      { source: "/es/recursos/blog/externaliser-comptabilite-guide",                      destination: "/ressources/blog/externalisation-comptable",                    permanent: true },
       { source: "/es/recursos/blog/cas-etude-happy-scribe",                               destination: "/ressources/cas-clients",                                             permanent: true },
-      { source: "/es/recursos/blog/data-room-checklist-levee-de-fonds",                   destination: "/ressources/blog/data-room-checklist-levee-de-fonds",                 permanent: true },
+      { source: "/es/recursos/blog/data-room-checklist-levee-de-fonds",                   destination: "/ressources/blog/checklist-due-diligence-levee-de-fonds",                 permanent: true },
       { source: "/es/recursos/blog/stack-financier-saas-series-a",                        destination: "/ressources/blog/stack-financier-saas-series-a",                      permanent: true },
       { source: "/es/recursos/blog/term-sheet-negocier-clauses-cles",                     destination: "/ressources/blog/term-sheet-negocier-clauses-cles",                   permanent: true },
       { source: "/es/recursos/blog/pennylane-vs-sage-comparatif-40-deploiements",         destination: "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",        permanent: true },
@@ -820,8 +871,11 @@ const nextConfig: NextConfig = {
       { source: "/es/recursos/blog/quand-embaucher-daf-externalise-5-signes",             destination: "/ressources/blog/quand-embaucher-daf-externalise-5-signes",            permanent: true },
       // 2026-05-31 — same fix as the EN sibling above: destination was
       // sending ES visitors to the FR article. Now points to the canonical
-      // ES slug (an ES version exists at this slug in lib/content/blog-posts.ts).
-      { source: "/es/recursos/blog/cout-daf-externalise-2026-tarifs-par-mission",         destination: "/es/recursos/blog/cout-daf-externalise-tarifs-prix-2026",        permanent: true },
+      // ES slug.
+      // SEO-DAF-03/08 (2026-08-09): same 2-hop chain as the EN sibling —
+      // /es/…/cout-daf-externalise-tarifs-prix-2026 is redirected further
+      // down to /es/…/cfo-externo-pymes-precio-2026. Collapsed to one hop.
+      { source: "/es/recursos/blog/cout-daf-externalise-2026-tarifs-par-mission",         destination: "/es/recursos/blog/cfo-externo-pymes-precio-2026",               permanent: true },
       { source: "/es/recursos/blog/la-modernisation-du-role-de-cfo",                      destination: "/ressources/blog/la-modernisation-du-role-de-cfo",                    permanent: true },
       { source: "/es/recursos/blog/impot-revenu-espagne",                                 destination: "/ressources/blog/impot-revenu-espagne",                               permanent: true },
       { source: "/es/recursos/blog/daf-drh-externalises-synergie",                        destination: "/ressources/blog/daf-drh-externalises-synergie",                      permanent: true },
@@ -872,9 +926,6 @@ const nextConfig: NextConfig = {
 
       // T8 — Spanish "fiches métiers" route never existed; route to the
       // FR canonical (fiche-metier listing) until a localized one ships.
-      { source: "/es/ressources/descripcion-del-puesto",
-        destination: "/ressources/fiche-metier",
-        permanent: true },
 
       // T8 — broken / truncated blog slugs (article doesn't exist or slug
       // got cut by GSC). Send to the locale blog hub instead of 404'ing.
@@ -885,9 +936,6 @@ const nextConfig: NextConfig = {
         destination: "/ressources/blog",
         permanent: true },
       { source: "/en/ressources/blog/anticiper-financierement-ses-recrutements-guide-prat",
-        destination: "/en/ressources/blog",
-        permanent: true },
-      { source: "/en/ressources/blog/les-10-outils-pour-cfos-startup",
         destination: "/en/ressources/blog",
         permanent: true },
 
@@ -915,7 +963,11 @@ const nextConfig: NextConfig = {
       { source: "/services/ley-beckham", destination: "/ressources/fiscalite/beckham-law", permanent: true },
       { source: "/ressources/fiscalite/convention-fiscale-france-espagne", destination: "/ressources/fiscalite-espagne-france", permanent: true },
       // S2: fusions cannibales blog
-      { source: "/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission", destination: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", permanent: true },
+      // SEO-DAF-03 (2026-08-09): la règle FR pour
+      // cout-daf-externalise-2026-tarifs-par-mission était déclarée deux fois
+      // (ici et ~150 lignes plus haut). Next.js retient la première source qui
+      // matche : ce doublon était mort. Supprimé pour éviter qu'une future
+      // modification soit faite ici sans effet.
       { source: "/ressources/blog/externaliser-comptabilite-guide", destination: "/ressources/blog/externalisation-comptable", permanent: true },
       { source: "/ressources/blog/data-room-checklist-levee-de-fonds", destination: "/ressources/blog/checklist-due-diligence-levee-de-fonds", permanent: true },
       { source: "/ressources/blog/due-diligence-financiere-investisseurs", destination: "/ressources/blog/checklist-due-diligence-levee-de-fonds", permanent: true },
