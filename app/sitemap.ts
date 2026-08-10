@@ -209,6 +209,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${BASE}/daf-externalise/tarifs`,
     lastModified: D.pillar,
   });
+  // SEO-007 (2026-08-10) — page commerciale « Fractional CFO pour startups ».
+  // Elle vivait sous /jobs/, dont le hub est en noindex, et n'avait jamais été
+  // déclarée au sitemap : une page qui se positionne en 10e position sur
+  // « fractional CFO » n'était soumise nulle part. FR-only.
+  entries.push({
+    url: `${BASE}/fractional-cfo-startups`,
+    lastModified: D.pillar,
+  });
   // secteurs — FR-only (SITEMAP-QA 2026-05-19: was missing from sitemap)
   // EN localizedPath points to /en/fractional-cfo; /es/externalizacion-daf/sectores not built yet.
   entries.push({

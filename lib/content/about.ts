@@ -76,7 +76,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
     whoWeAre: {
       heading: "Qui sommes-nous",
       paragraphs: [
-        "Iter Advisors est un cabinet de conseil en finance d\u2019entreprise spécialisé dans l\u2019accompagnement des startups, PME et ETI en forte croissance. Nous intervenons en tant que DAF externalisé, à temps partagé ou en transition, pour structurer et piloter la fonction financière de nos partenaires. Pour les startups VC-backed, nous proposons aussi une offre dédiée de [fractional CFO](/jobs/fractional-cfo-startups).",
+        "Iter Advisors est un cabinet de conseil en finance d\u2019entreprise spécialisé dans l\u2019accompagnement des startups, PME et ETI en forte croissance. Nous intervenons en tant que DAF externalisé, à temps partagé ou en transition, pour structurer et piloter la fonction financière de nos partenaires. Pour les startups VC-backed, nous proposons aussi une offre dédiée de [fractional CFO](/fractional-cfo-startups).",
         "Fondé en 2021, Iter Advisors réunit des CFOs expérimentés aux parcours complémentaires : audit, contrôle de gestion, direction financière, M&A. Leur vision commune\u00A0: rendre accessible aux entreprises en croissance une direction financière de premier plan.",
         "Basés à Barcelone, Paris et Toulouse, nous accompagnons nos clients en France, en Espagne et à l\u2019international, avec une approche sur mesure adaptée à chaque étape de leur développement.",
       ],

@@ -9,7 +9,11 @@ export async function generateMetadata(): Promise<Metadata> {
     "@type": "ItemList",
     name: "Postes ouverts chez Iter Advisors",
     itemListElement: [
-      { "@type": "ListItem", position: 1, url: "https://www.iteradvisors.com/jobs/fractional-cfo-startups" },
+      // SEO-007 (2026-08-10) — pointait vers la page commerciale
+      // /jobs/fractional-cfo-startups (déplacée en /fractional-cfo-startups),
+      // qui vend une prestation. L'offre d'emploi réelle, avec son
+      // JobPosting, vit sur /carrieres/fractional-cfo depuis le 30/05.
+      { "@type": "ListItem", position: 1, url: "https://www.iteradvisors.com/carrieres/fractional-cfo" },
       { "@type": "ListItem", position: 2, url: "https://www.iteradvisors.com/jobs/marketing-growth-strategy" },
       { "@type": "ListItem", position: 3, url: "https://www.iteradvisors.com/jobs/senior-finance-manager" },
       { "@type": "ListItem", position: 4, url: "https://www.iteradvisors.com/jobs/finance-analyst-junior-fr" },
