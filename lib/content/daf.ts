@@ -182,7 +182,10 @@ export const dafContent: Record<Locale, DafContent> = {
         { label: "Pour qui", text: "startups en levée de fonds, PME en croissance, ETI en transformation." },
         { label: "Délai", text: "opérationnel sous 7 à 14 jours." },
         { label: "Engagement", text: "aucun minimum requis, modulable au mois." },
-        { label: "Iter Advisors en chiffres", text: "15 experts CFO, 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (31 avis)." },
+        // SEO-003 (2026-08-10) — ligne retirée : l'introduction juste au-dessus
+        // pose déjà « 85 entreprises accompagnées, 100 M€ levés, 5/5 sur
+        // Trustfolio », et le badge du hero l'affiche une troisième fois. Le
+        // TL;DR reste sur le service, pas sur le cabinet.
       ],
     },
     definitionBox: {
@@ -254,27 +257,30 @@ export const dafContent: Record<Locale, DafContent> = {
             "Le CFO (Chief Financial Officer) est l'équivalent anglo-saxon du DAF, avec une dimension plus stratégique et orientée vers les marchés financiers. Chez Iter Advisors, nos professionnels combinent ces différentes compétences pour offrir un accompagnement complet.",
           ],
         },
-        {
-          heading: "DAF externalisé vs DAF interne : le comparatif",
-          content: [
-            "Un DAF interne coûte entre 80 000 et 150 000 EUR brut annuel (hors charges patronales de 25-42 %), soit un coût total employeur de 100 000 à 213 000 EUR par an. Un DAF externalisé représente un budget de 2 000 à 8 000 EUR par mois selon le volume d'intervention, soit 24 000 à 96 000 EUR par an.",
-            "Le DAF interne offre une présence quotidienne et une connaissance approfondie de l'entreprise, mais implique un engagement long terme et des coûts fixes élevés. Le DAF externalisé apporte flexibilité, regard extérieur multi-sectoriel et un réseau étendu de partenaires, sans engagement de durée.",
-            "Pour les entreprises de 1 à 50 M EUR de CA, le DAF externalisé est souvent la solution la plus pertinente. Il apporte une expertise senior à coût maîtrisé. L'intervention se module selon les phases de croissance.",
-          ],
-        },
+        // SEO-003 (2026-08-10) — sous-section « DAF externalisé vs DAF interne :
+        // le comparatif » supprimée : ses trois paragraphes redisaient en
+        // prose le tableau comparatif affiché juste en dessous, avec des
+        // chiffres qui divergeaient du tableau (24-96 k€ contre 24-84 k€).
+        // Le même écart de coût était par ailleurs exposé trois fois de plus
+        // sur la page — « L'essentiel », « 5 avantages », section tarifs.
       ],
     },
     comparisonTable: {
       caption: "DAF externalisé vs DAF salarié — comparatif 2026",
       headers: ["Critère", "DAF externalisé", "DAF salarié"],
       rows: [
-        ["Coût annuel", "24 000 – 84 000 € HT", "80 000 – 150 000 € chargé"],
+        // SEO-003 (2026-08-10) — la colonne salarié annonçait « 80 000 – 150 000 €
+        // chargé » alors que 80-150 k€ est le brut : le coût employeur est de
+        // 100-213 k€, valeur utilisée partout ailleurs sur la page. Le tableau
+        // sous-estimait donc l'écart qu'il servait à démontrer.
+        ["Coût annuel", "24 000 – 84 000 € HT", "100 000 – 213 000 € chargé"],
         ["Délai de mise en place", "1 à 2 semaines", "3 à 6 mois (recrutement)"],
         ["Engagement", "Mensuel, sans durée minimale", "CDI, 3 mois de préavis"],
         ["Flexibilité", "Volume ajustable chaque mois", "Fixe, 5 jours/semaine"],
         ["Expertise sectorielle", "Multi-clients, benchmarks croisés", "Mono-entreprise"],
-        ["Risque turnover", "Nul — le cabinet garantit la continuité", "Élevé (recrutement à refaire)"],
-        ["Pérennité", "Équipe de remplacement immédiate", "Dépend d'une seule personne"],
+        // SEO-012 (2026-08-10) — « Nul » et « garantit » : promesse absolue.
+        ["Continuité", "Relais assuré par le cabinet (engagement contractuel)", "Recrutement à refaire en cas de départ"],
+        ["Dépendance", "Équipe mobilisable derrière le DAF affecté", "Dépend d'une seule personne"],
       ],
     },
     tempsPartage: {
@@ -326,7 +332,7 @@ export const dafContent: Record<Locale, DafContent> = {
             // ce que le paragraphe démontre effectivement.
             heading: "Vous ne payez que le temps réellement utilisé",
           content: [
-            "Le coût d'un DAF externalisé est nettement inférieur à celui d'un DAF en interne. Vous ne payez que pour le temps effectivement consacré à votre entreprise, sans charges sociales ni avantages salariaux. Un DAF externalisé à 3 jours par mois coûte environ 3 000 EUR, contre 8 000 à 17 000 EUR par mois pour un DAF salarié (charges comprises).",
+            "Vous ne payez que le temps effectivement consacré à votre entreprise, sans charges sociales ni avantages salariaux, et le volume se règle au mois. Les montants sont détaillés dans la grille tarifaire plus bas.",
           ],
         },
         {
@@ -395,7 +401,11 @@ export const dafContent: Record<Locale, DafContent> = {
         },
       ],
       comparisonNote:
-        "À titre de comparaison, un **DAF salarié à temps plein** représente un coût employeur estimé entre 100 000 € et 213 000 € par an, charges comprises. L'écart avec un DAF externalisé dépend des deux termes comparés : d'environ 1,2 fois entre notre formule la plus étoffée et un recrutement d'entrée de gamme, jusqu'à 8 fois entre la formule Essentiel et un profil senior à temps plein. Une intervention récurrente sur le long terme relève du DAF à temps partagé ; une situation d'urgence — départ du DAF, restructuration — relève du DAF de transition.",
+        // SEO-003 (2026-08-10) — note resserrée : elle reprenait pour la cinquième
+      // fois de la page la comparaison avec un DAF salarié, juste sous le
+      // tableau qui la montre déjà, et rappelait un aiguillage temps partagé /
+      // transition traité deux sections plus haut.
+      "Le tableau comparatif plus haut met ces montants en regard du coût d'un DAF salarié et des six autres critères de choix.",
     },
     forWhom: {
       heading: "DAF externalisé : pour qui et à quel stade ?",
@@ -405,12 +415,17 @@ export const dafContent: Record<Locale, DafContent> = {
         {
           heading: "Startup early-stage (pré-seed à seed)",
           content:
-            "À ce stade, vous n'avez pas le budget pour un DAF salarié (140 000–200 000 € chargé/an) mais vous avez besoin d'un interlocuteur senior pour vos premières levées et votre suivi de runway. Le **DAF externalisé en formule Essentiel** (2–3 jours/mois) couvre vos besoins pour 2 000 à 3 000 € HT/mois. Pour une intervention plus régulière, le format DAF à temps partagé prend tout son sens.",
+            // SEO-002 (2026-08-10) — annonçait 140 000–200 000 € chargé pour un DAF
+            // salarié, quatrième fourchette de la page après 100-213 k€ (chargé)
+            // et 80-150 k€ (brut). Alignée sur le coût employeur retenu partout
+            // ailleurs. Les prix de formule sont retirés : la grille tarifaire
+            // les porte, ils étaient répétés dans les quatre segments.
+            "À ce stade, un DAF salarié est hors de portée, mais vous avez besoin d'un interlocuteur senior pour vos premières levées et le suivi de votre runway. La formule **Essentiel**, deux à trois jours par mois, couvre ce besoin.",
         },
         {
           heading: "Scale-up Series A / B",
           content:
-            "Vous gérez désormais une trésorerie complexe, des reportings investisseurs trimestriels et préparez peut-être votre prochain tour. Le **DAF externalisé en formule Croissance** (4–6 jours/mois) prend en charge la structuration de votre fonction finance avant le recrutement d'un DAF salarié. C'est typiquement le moment idéal pour un DAF à temps partagé — un même profil senior, présent 1 jour par semaine sur la durée.",
+            "Vous gérez une trésorerie complexe, des reportings investisseurs trimestriels et préparez peut-être votre prochain tour. La formule **Croissance** structure votre fonction finance avant le recrutement d'un DAF salarié : un même profil senior, environ un jour par semaine sur la durée.",
         },
         {
           heading: "PME en croissance ou en transmission",
@@ -420,11 +435,16 @@ export const dafContent: Record<Locale, DafContent> = {
         {
           heading: "ETI ou groupe en transformation",
           content:
-            "Pour une période de 3 à 12 mois (départ du DAF, restructuration, intégration post-acquisition), le DAF de transition intervient en J+5 avec un profil senior 20+ ans d'expérience. C'est une mission ponctuelle intensive, distincte du temps partagé récurrent.",
+            // SEO-002 (2026-08-10) — annonçait « J+5 » quand la page transition et son
+            // title annoncent 48 à 72 h.
+            "Pour une période de 3 à 12 mois (départ du DAF, restructuration, intégration post-acquisition), le DAF de transition intervient en 48 à 72 h avec un profil senior de 20 ans et plus. Mission ponctuelle intensive, distincte du temps partagé récurrent.",
         },
       ],
       outro:
-        "Sectoriellement, nos **DAF externalisés** sont spécialisés en SaaS, Deep-Tech, e-Commerce, Industrie et Services — secteurs sur lesquels nous avons accompagné +85 entreprises et facilité +100 M€ de levées de fonds.\n\n**Autres services :** Au-delà du DAF externalisé, nous proposons aussi un accompagnement sur d'autres fonctions critiques : le [contrôle de gestion externalisé](/services/controle-de-gestion-externalise) pour le pilotage de la performance, **DRH externalisé** pour la structuration RH en croissance, management de transition pour les situations d'urgence, et accompagnement en levée de fonds.",
+        // SEO-003 (2026-08-10) — « +85 entreprises et +100 M€ » retiré : quatrième
+        // reprise du même bloc de preuves après l'introduction, « votre
+        // partenaire stratégique » et « pourquoi nous choisir ».
+        "Sectoriellement, nos **DAF externalisés** sont spécialisés en SaaS, Deep-Tech, e-Commerce, Industrie et Services.\n\n**Autres services :** Au-delà du DAF externalisé, nous proposons aussi un accompagnement sur d'autres fonctions critiques : le [contrôle de gestion externalisé](/services/controle-de-gestion-externalise) pour le pilotage de la performance, **DRH externalisé** pour la structuration RH en croissance, management de transition pour les situations d'urgence, et accompagnement en levée de fonds.",
     },
     // Vrai témoignage extrait de Trustfolio (https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc)
     // Affiché en bandeau sous la grille tarifaire pour soutenir la conversion (audit SEO D.3).
@@ -439,15 +459,22 @@ export const dafContent: Record<Locale, DafContent> = {
       sourceLabel: "Avis vérifié sur Trustfolio",
     },
     whenToHire: {
-      heading: "Quand faire appel à un DAF externalisé ?",
+      // SEO-003 (2026-08-10) — section resserrée et retitrée. Elle posait la
+      // même question que « pour qui et à quel stade ? » quelques sections plus
+      // haut : le lecteur lisait deux fois « avez-vous besoin d'un DAF ». Le
+      // titre dit désormais ce qu'elle apporte de différent — les déclencheurs,
+      // là où l'autre section raisonne par stade de maturité. Chaque
+      // déclencheur tient sur une ligne ; les développements vivaient déjà sur
+      // les pages qu'ils lient.
+      heading: "Les six situations qui déclenchent une mission",
       content: [
-        "Plusieurs situations justifient le recours à un DAF externalisé. Voici les signaux les plus fréquents :",
-        "Vous préparez une [levée de fonds](/services/accompagnement-levee-de-fond) : vous avez besoin d'un business plan solide, d'une modélisation financière rigoureuse et d'un interlocuteur crédible face aux investisseurs.",
-        "Votre croissance s'accélère : le chiffre d'affaires dépasse 500 K EUR et la gestion financière artisanale ne suffit plus. Si vous avez un besoin de 2 à 5 jours par mois sur la durée, le DAF à temps partagé est la formule la plus adaptée.",
-        "Vous recrutez massivement : les charges de personnel explosent et vous devez anticiper financièrement chaque recrutement pour éviter les tensions de trésorerie.",
-        "Votre DAF interne est parti : pour gérer cette situation d'urgence (départ DAF, restructuration), notre offre [DAF de transition](/daf-externalise/transition) intervient en J+5 avec un profil senior 20+ ans d'expérience — plutôt que de recruter dans l'urgence (6 mois de process).",
-        "Vous préparez une opération de [M&A](/services/ma-due-diligence) : cession, acquisition ou rapprochement, vous avez besoin d'un expert pour la due diligence, la valorisation et les négociations.",
-        "Vous vous internationalisez : implantation en Espagne, en France ou dans un nouveau marché, vous avez besoin d'un CFO qui connaît les deux environnements fiscaux et réglementaires.",
+        "En pratique, la décision se prend presque toujours dans l'une de ces six situations :",
+        "**Vous préparez une [levée de fonds](/services/accompagnement-levee-de-fond)** — business plan, modélisation financière et interlocuteur crédible face aux investisseurs.",
+        "**Votre croissance s'accélère** — la gestion financière artisanale ne suffit plus au-delà de 500 K€ de chiffre d'affaires.",
+        "**Vous recrutez vite** — les charges de personnel deviennent le premier poste et chaque embauche doit être anticipée en trésorerie.",
+        "**Votre DAF interne est parti** — le [DAF de transition](/daf-externalise/transition) prend le relais en 48 à 72 h, contre trois à six mois de recrutement.",
+        "**Vous préparez une opération de [M&A](/services/ma-due-diligence)** — due diligence, valorisation et négociation.",
+        "**Vous vous internationalisez** — un CFO qui connaît les environnements fiscaux français et espagnol.",
       ],
     },
     profiles: {
@@ -464,11 +491,11 @@ export const dafContent: Record<Locale, DafContent> = {
       // D5 (2026-05-17) — liens vers pages outils individuelles + closing text avec 2 liens internes
       heading: "Les outils du DAF externalisé moderne",
       content: [
-        "Un DAF externalisé performant s'appuie sur une stack d'outils modernes pour automatiser les tâches répétitives et se concentrer sur l'analyse et la stratégie :",
-        "Comptabilité et facturation : [Pennylane](/ressources/outils/pennylane), [Sage](/ressources/outils/sage), QuickBooks, Xero. Ces outils permettent une comptabilité en temps réel et une collaboration fluide avec l'expert-comptable.",
-        "Trésorerie et prévisionnel : [Agicap](/ressources/outils/agicap), [Fygr](/ressources/outils/fygr). Pour un suivi quotidien de la trésorerie et des prévisionnels à 12 mois glissants.",
-        "Gestion des dépenses : [Spendesk](/ressources/outils/spendesk), [Pleo](/ressources/outils/pleo), [Payhawk](/ressources/outils/payhawk). Cartes virtuelles, workflows d'approbation et intégration comptable automatisée.",
-        "Reporting financier et BI : Power BI, Looker, Metabase, Google Sheets avancé. Pour construire des tableaux de bord financiers automatisés, suivre les KPIs clés et produire des analyses de rentabilité par produit ou client.",
+        // SEO-003 (2026-08-10) — quatre paragraphes de descriptif outil par outil
+        // condensés : /ressources/outils est la page propriétaire du sujet et
+        // tient ses fiches à jour, celles-ci figeaient un état du marché.
+        "Un DAF externalisé s'appuie sur une stack moderne pour automatiser les tâches répétitives et se concentrer sur l'analyse :",
+        "Comptabilité et facturation avec [Pennylane](/ressources/outils/pennylane) ou [Sage](/ressources/outils/sage) ; trésorerie et prévisionnel glissant avec [Agicap](/ressources/outils/agicap) ou [Fygr](/ressources/outils/fygr) ; dépenses et cartes avec [Spendesk](/ressources/outils/spendesk), [Pleo](/ressources/outils/pleo) ou [Payhawk](/ressources/outils/payhawk) ; reporting sur Power BI, Looker ou Metabase.",
         "Chez Iter Advisors, nous travaillons avec plus de 30 partenaires technologiques. [Découvrez notre sélection complète d'outils finance](/ressources/outils) — mise à jour en continu par nos DAFs selon les retours terrain — et notre guide sur les [10 outils indispensables pour un CFO startup](/ressources/blog/les-10-outils-pour-cfos-startup).",
       ],
     },
@@ -531,19 +558,19 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "Qu'est-ce qu'un DAF externalisé ?",
         answer:
-          "Un DAF externalisé — Directeur Administratif et Financier externalisé — est un professionnel senior de la finance qui intervient au sein de votre entreprise sans être salarié à temps plein. Il assume les mêmes responsabilités qu'un DAF interne (pilotage financier, gestion de trésorerie, reporting, relations investisseurs) mais sur un mode flexible : temps partagé, mission ponctuelle ou abonnement mensuel. On parle aussi de CFO externalisé, directeur financier à temps partagé ou fractional CFO (en anglais).",
+          "Un directeur financier senior qui pilote la finance de votre entreprise sans en être salarié. Il assume les mêmes responsabilités qu'un DAF interne — pilotage, trésorerie, reporting, relations investisseurs — sur un mode flexible : temps partagé, mission ponctuelle ou abonnement mensuel. On dit aussi CFO externalisé ou fractional CFO.",
       },
       {
         question: "Combien coûte un DAF externalisé ?",
         answer:
-          "Le TJM (tarif journalier moyen) d'un DAF externalisé se situe entre 750 et 1 250 EUR HT selon la seniorité et la complexité des missions. Chez Iter Advisors, nos formules vont de 2 000 EUR/mois HT (2-3 jours par mois) à 7 000+ EUR/mois HT (8+ jours par mois). Sur une base annuelle, cela représente 24 000 à 84 000 EUR HT. À titre de comparaison, un DAF salarié à temps plein représente un coût employeur estimé de 8 300 à 17 750 EUR/mois charges comprises, soit 100 000 à 213 000 EUR par an. Le total dépend du volume d'intervention, de la séniorité du profil et de la complexité de la situation : multi-entités, multi-devises, levée de fonds en cours, opérations de M&A.",
+          "Entre 2 000 et 7 000 € HT par mois selon le volume d'intervention, soit un TJM de 750 à 1 250 € HT. Le montant dépend du nombre de jours, de la séniorité du profil et de la complexité de la situation — multi-entités, multi-devises, levée en cours. Le détail des trois formules est dans la [grille tarifaire](/daf-externalise/tarifs).",
       },
       {
         question: "Quelle est la différence entre un DAF externalisé et un expert-comptable ?",
         answer:
           // SEO-DAF-02 (2026-08-09) — même correction que les deux passages
           // précédents sur le périmètre réel de l'expert-comptable.
-          "L'expert-comptable produit et sécurise votre information comptable et fiscale : tenue ou révision des comptes, comptes annuels, liasse fiscale, déclarations de TVA, et conseil fiscal et social selon sa lettre de mission. Le DAF externalisé pilote la performance financière au quotidien : prévisionnel de trésorerie, reporting de gestion, analyse de marges, préparation de levée de fonds. Il anticipe l'avenir et aide à prendre des décisions opérationnelles. Ce sont des rôles complémentaires : une PME structurée a typiquement les deux.",
+          "Ils sont complémentaires, pas substituables. L'expert-comptable produit et sécurise l'information comptable et fiscale selon sa lettre de mission ; le DAF externalisé s'en sert pour piloter — prévisionnel, reporting de gestion, marges, levée de fonds. Une PME structurée a typiquement les deux.",
       },
       {
         // GSC-01 (2026-07-19) — question la plus recherchée après le mot-clé
@@ -553,7 +580,7 @@ export const dafContent: Record<Locale, DafContent> = {
         // traîne "différence daf externalisé salarié".
         question: "Quelle est la différence entre un DAF externalisé et un DAF salarié ?",
         answer:
-          "Un DAF salarié coûte 100 000 à 213 000 € chargés par an (soit 8 300 à 17 750 € par mois) et nécessite 3 à 6 mois de recrutement avec un risque de départ à zéro coût de remplacement. Un DAF externalisé démarre à 2 000 € HT/mois (24 000 € HT/an), est opérationnel sous 1 à 2 semaines, et offre un volume ajustable au mois. En cas d'indisponibilité, le cabinet assure le relais avec un autre profil — un engagement contractuel, à distinguer d'une garantie de résultat. Le recrutement d'un DAF salarié se justifie généralement quand le besoin devient un temps plein durable, ce qui correspond souvent à un effectif de plus de 200 salariés et un CA stable supérieur à 50 M€ — mais le seuil dépend de la complexité de l'entreprise, pas de sa seule taille. En-dessous, le DAF externalisé couvre les mêmes missions pour un budget nettement inférieur : pilotage financier, trésorerie, reporting, levée de fonds.",
+          "Le coût et l'engagement. Un DAF salarié représente 100 000 à 213 000 € de coût employeur annuel et 3 à 6 mois de recrutement ; un DAF externalisé démarre à 2 000 € HT/mois, est opérationnel sous 1 à 2 semaines et se règle au mois. Le recrutement se justifie quand le besoin devient un temps plein durable — un seuil qui dépend de la complexité de l'entreprise, pas de sa seule taille. Le tableau comparatif plus haut détaille les sept critères.",
       },
       {
         // GSC-01 (2026-07-19) — question People-Also-Ask fréquente. Détaille
@@ -561,12 +588,12 @@ export const dafContent: Record<Locale, DafContent> = {
         // pour ancrer l'expertise et alimenter l'AI Overview Google.
         question: "Quelles sont les missions d'un DAF externalisé ?",
         answer:
-          "Un DAF externalisé assume 5 missions principales : (1) Pilotage de la trésorerie et prévisionnel de cash à 13 semaines minimum, avec suivi hebdomadaire des encaissements et décaissements ; (2) Reporting mensuel et tableaux de bord pour le dirigeant et le board (P&L, cash flow, KPIs métiers, cohortes) ; (3) Structuration et optimisation du BFR (Besoin en Fonds de Roulement) : négociation des délais fournisseurs, réduction du DSO, financement court terme ; (4) Accompagnement aux levées de fonds et opérations de M&A : business plan, modèle financier à 3 scénarios, data room, réponses aux investisseurs ; (5) Transformation digitale de la fonction finance : sélection et implémentation des outils (Pennylane, Agicap, Spendesk, Payfit). Chez Iter Advisors, chaque mission démarre par un audit flash de 2 jours suivi d'une feuille de route à 90 jours.",
+          "Cinq missions principales : pilotage de la trésorerie et prévisionnel de cash à 13 semaines, reporting mensuel pour le dirigeant et le board, optimisation du BFR, accompagnement des levées de fonds et opérations de M&A, et modernisation des outils financiers. Chaque mission démarre par un audit flash de deux jours suivi d'une feuille de route à 90 jours.",
       },
       {
         question: "Quand faire appel à un DAF externalisé ?",
         answer:
-          "Un DAF externalisé est pertinent lors de plusieurs phases critiques : (1) hypercroissance — quand la gestion financière devient trop complexe pour le seul dirigeant et que vous avez besoin de structurer le reporting et l'analyse financière; (2) levée de fonds (Seed, Série A, Série B) — pour préparer un business plan solide, construire un modèle financier crédible et animer les discussions avec les investisseurs; (3) tension de trésorerie — pour restructurer la dette, optimiser le BFR (besoin en fonds de roulement) et mettre en place un prévisionnel strict; (4) départ d'un DAF ou CFO — en management de transition pour assurer la continuité sans préavis de recrutement de 6 mois; (5) entrée à l'international — pour comprendre les enjeux fiscaux et réglementaires d'un nouveau marché (France, Espagne).",
+          "Six situations reviennent : accélération de la croissance, levée de fonds, tension de trésorerie, recrutements soutenus, départ du DAF en poste, et implantation à l'international. Elles sont détaillées dans la section « Les six situations qui déclenchent une mission » plus haut.",
         answerRich: {
           intro:
             "Un DAF externalisé est pertinent lors de plusieurs phases critiques :",
@@ -603,7 +630,7 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "Quelle est la différence entre un DAF à temps partagé et un DAF externalisé ?",
         answer:
-          "Techniquement, ce sont deux expressions pour dire la même chose, avec une nuance de durée. Le DAF externalisé est un terme générique qui englobe toutes les formes d'intervention externe (temps partagé, mission ponctuelle, abonnement mensuel). Le DAF à temps partagé est une forme spécifique de DAF externalisé qui intervient de manière récurrente, sur plusieurs mois ou années, généralement quelques jours par semaine ou par mois. Chez Iter Advisors, nous proposons les deux modes : un accompagnement à temps partagé pour structurer la finance d'une PME en croissance (12-36 mois), et des missions courtes de 3-6 mois pour des opérations stratégiques (levée de fonds, M&A, transition).",
+          "Une nuance de durée. « DAF externalisé » est le terme générique ; le [DAF à temps partagé](/daf-externalise/temps-partage) en est la forme récurrente, quelques jours par mois sur 12 à 36 mois. Nous proposons aussi des missions courtes de 3 à 6 mois pour une opération précise : levée, M&A, transition.",
       },
       {
         question: "Combien de temps dure une mission de DAF externalisé ?",
