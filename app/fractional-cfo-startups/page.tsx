@@ -9,13 +9,18 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 
 /**
- * Route for /jobs/fractional-cfo-startups.
+ * Route for /fractional-cfo-startups.
  *
- * URL kept (preserves SEO authority earned on "fractional CFO" terms), intent
- * realigned to a pure commercial Service per FCFO-S03 / FCFO-S04 (2026-05-30,
- * strategie-fractional-cfo-startups.md). The JobPosting JSON-LD and the long
- * recruitment block moved to /carrieres/fractional-cfo so Google stops seeing
- * two contradictory intents on this URL.
+ * SEO-007 (2026-08-10) — déplacée depuis /jobs/fractional-cfo-startups.
+ * La page vend une prestation, mais vivait dans le répertoire des offres
+ * d'emploi : son parent /jobs est en noindex, elle était absente du sitemap,
+ * et le hub /jobs la listait comme un poste ouvert en JSON-LD ItemList. Une
+ * page commerciale qui se positionne en 10e position sur « fractional CFO »
+ * n'avait rien à faire là. L'ancienne URL redirige en 301 (un seul saut).
+ *
+ * Le nettoyage d'intention avait commencé le 30/05 (FCFO-S03 / FCFO-S04) :
+ * le JobPosting JSON-LD et le bloc recrutement étaient déjà partis vers
+ * /carrieres/fractional-cfo. Le déménagement d'URL termine le travail.
  *
  * Structure:
  *   - Commercial hero (H1, trust badges, booking + #tarifs CTAs)
@@ -29,178 +34,166 @@ import CTASection from "@/components/CTASection";
  *   - ProfessionalService (Starter / Growth / Scale) — T4 / 2026-06-07
  *   - FAQPage (6 commercial Q/R)
  *   - Organization
- *   - BreadcrumbList (Accueil > Services > Fractional CFO Startups)
+ *   (BreadcrumbList : émis par le composant <Breadcrumb>)
  */
 
-const PAGE_URL =
-  "https://www.iteradvisors.com/jobs/fractional-cfo-startups";
+const PAGE_URL = "https://www.iteradvisors.com/fractional-cfo-startups";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      // JobPosting moved to /carrieres/fractional-cfo (FCFO-S02, 2026-05-30):
-      // this URL is now a pure commercial Service page; recruitment markup
-      // lives at its dedicated route so Google for Jobs surfaces it cleanly.
-      // ── ProfessionalService (Starter / Growth / Scale) ─────────────
-      {
-        "@type": "ProfessionalService",
-        "@id": `${PAGE_URL}#service`,
-        name: "Fractional CFO pour Startups",
-        provider: {
-          "@type": "Organization",
-          name: "Iter Advisors",
-          url: "https://www.iteradvisors.com",
-        },
-        description:
-          "Expertise financière senior pour startups à temps partiel. Accompagnement levée de fonds, planification financière, reporting mensuel. Dès 4 500 €/mois.",
-        areaServed: ["Paris", "Toulouse", "Barcelone"],
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: "Formules Fractional CFO",
-          itemListElement: [
-            {
-              "@type": "Offer",
-              name: "Starter",
-              price: "4500",
-              priceCurrency: "EUR",
-            },
-            {
-              "@type": "Offer",
-              name: "Growth",
-              price: "8500",
-              priceCurrency: "EUR",
-            },
-            {
-              "@type": "Offer",
-              name: "Scale",
-              price: "15000",
-              priceCurrency: "EUR",
-            },
-          ],
-        },
-      },
-      // ── FAQPage (6 commercial Q/R, mirrors visible accordion) ───
-      {
-        "@type": "FAQPage",
-        "@id": `${PAGE_URL}#faq`,
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "Que fait exactement un Fractional CFO ?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Un Fractional CFO gère la direction financière stratégique à temps partiel : planification financière, accompagnement à la levée de fonds, reporting aux investisseurs, gestion de trésorerie, et encadrement de votre équipe comptable. Contrairement à un comptable qui enregistre les transactions, un Fractional CFO interprète les données et guide les décisions stratégiques.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Combien coûte un Fractional CFO ?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Le service Fractional CFO Iter Advisors démarre à 4 500 €/mois pour 2 jours par semaine. La formule la plus choisie est Growth à 8 500 €/mois pour 4 jours. Un recrutement CFO à plein temps coûte entre 120 000 € et 200 000 € par an plus des actions.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Quand une startup doit-elle recruter un Fractional CFO ?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Les 5 déclencheurs les plus fréquents sont : (1) préparation d'une levée de fonds, (2) burn mensuel dépassant 100 K€, (3) expansion internationale, (4) obligations de reporting au board, et (5) ne disposer que d'un comptable sans direction financière stratégique.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Quelle est la différence entre un Fractional CFO et un comptable ?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Un comptable enregistre et rapproche les transactions. Un Fractional CFO analyse la performance financière, construit des prévisions, accompagne les levées, et apporte des recommandations stratégiques au fondateur et au board.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Un Fractional CFO peut-il aider pour une levée de fonds ?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Oui. Les Fractional CFO Iter Advisors ont accompagné plus de 50 levées de fonds du Seed à la Series B. Ils préparent les data rooms, construisent les modèles financiers, créent les présentations investisseurs, et préparent les fondateurs à la due diligence.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Dans quel délai un Fractional CFO peut-il intervenir ?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Iter Advisors met en relation les startups avec un Fractional CFO sous 5 jours ouvrés. Le diagnostic et la mise en route sont réalisés sous 2 semaines.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Quelle est la différence entre un fractional CFO et un DAF externalisé ?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Aucune différence métier — ce sont deux noms pour le même rôle. \"DAF externalisé\" est le terme français historique ; \"fractional CFO\" est la terminologie anglo-saxonne plébiscitée par les startups VC-backed. Iter Advisors couvre les deux : pour la version FR généraliste, voir notre offre dédiée DAF externalisé.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Puis-je commencer par une mission ponctuelle (data room, levée) ?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Oui. Nous proposons des missions ponctuelles à durée fixe (data room pour une levée, due diligence, mise en place du reporting, prévisionnel 12 mois). Tarification au forfait selon le périmètre, opérationnel sous 5 jours ouvrés. Beaucoup de missions ponctuelles débouchent ensuite sur un engagement récurrent au mois.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Comment se passe le matching avec le bon fractional CFO ?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Lors de l'échange initial de 30 minutes, nous identifions vos enjeux (stade, secteur, type de levée) ; puis nous proposons un fractional CFO de notre équipe selon son expérience sectorielle et son style d'intervention. Vous rencontrez le profil avant signature : pas de surprise au démarrage.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Que se passe-t-il si on ne s'entend pas avec le fractional CFO ?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Aucun engagement de durée — vous pouvez interrompre la mission au mois suivant, sans frais. En pratique, nous proposons d'abord un autre fractional CFO de l'équipe pour poursuivre la mission sans perdre le contexte : c'est l'avantage d'un cabinet de 15 CFOs vs un freelance solo.",
-            },
-          },
-        ],
-      },
-      // ── Organization ────────────────────────────────────────────
-      {
+/**
+ * SEO-007 (2026-08-10) — le JSON-LD était passé par `metadata.other`, qui
+ * rend un `<meta name="application/ld+json" content="…">`. Google ne lit les
+ * données structurées que dans un `<script type="application/ld+json">` : ce
+ * balisage n'a donc jamais été exploitable. Hissé hors de generateMetadata et
+ * émis dans la page, comme partout ailleurs dans ce dépôt.
+ */
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    // JobPosting moved to /carrieres/fractional-cfo (FCFO-S02, 2026-05-30):
+    // this URL is now a pure commercial Service page; recruitment markup
+    // lives at its dedicated route so Google for Jobs surfaces it cleanly.
+    // ── ProfessionalService (Starter / Growth / Scale) ─────────────
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}#service`,
+      name: "Fractional CFO pour Startups",
+      provider: {
         "@type": "Organization",
-        "@id": "https://www.iteradvisors.com/#organization",
         name: "Iter Advisors",
         url: "https://www.iteradvisors.com",
-        logo: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
       },
-      // ── BreadcrumbList ──────────────────────────────────────────
-      {
-        "@type": "BreadcrumbList",
+      description:
+        "Expertise financière senior pour startups à temps partiel. Accompagnement levée de fonds, planification financière, reporting mensuel. Dès 4 500 €/mois.",
+      areaServed: ["Paris", "Toulouse", "Barcelone"],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Formules Fractional CFO",
         itemListElement: [
           {
-            "@type": "ListItem",
-            position: 1,
-            name: "Accueil",
-            item: "https://www.iteradvisors.com/",
+            "@type": "Offer",
+            name: "Starter",
+            price: "4500",
+            priceCurrency: "EUR",
           },
           {
-            "@type": "ListItem",
-            position: 2,
-            name: "Services",
-            item: "https://www.iteradvisors.com/services",
+            "@type": "Offer",
+            name: "Growth",
+            price: "8500",
+            priceCurrency: "EUR",
           },
           {
-            "@type": "ListItem",
-            position: 3,
-            name: "Fractional CFO pour Startups",
-            item: PAGE_URL,
+            "@type": "Offer",
+            name: "Scale",
+            price: "15000",
+            priceCurrency: "EUR",
           },
         ],
       },
-    ],
-  };
+    },
+    // ── FAQPage (6 commercial Q/R, mirrors visible accordion) ───
+    {
+      "@type": "FAQPage",
+      "@id": `${PAGE_URL}#faq`,
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Que fait exactement un Fractional CFO ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Un Fractional CFO gère la direction financière stratégique à temps partiel : planification financière, accompagnement à la levée de fonds, reporting aux investisseurs, gestion de trésorerie, et encadrement de votre équipe comptable. Contrairement à un comptable qui enregistre les transactions, un Fractional CFO interprète les données et guide les décisions stratégiques.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Combien coûte un Fractional CFO ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Le service Fractional CFO Iter Advisors démarre à 4 500 €/mois pour 2 jours par semaine. La formule la plus choisie est Growth à 8 500 €/mois pour 4 jours. Un recrutement CFO à plein temps coûte entre 120 000 € et 200 000 € par an plus des actions.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Quand une startup doit-elle recruter un Fractional CFO ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Les 5 déclencheurs les plus fréquents sont : (1) préparation d'une levée de fonds, (2) burn mensuel dépassant 100 K€, (3) expansion internationale, (4) obligations de reporting au board, et (5) ne disposer que d'un comptable sans direction financière stratégique.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Quelle est la différence entre un Fractional CFO et un comptable ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Un comptable enregistre et rapproche les transactions. Un Fractional CFO analyse la performance financière, construit des prévisions, accompagne les levées, et apporte des recommandations stratégiques au fondateur et au board.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Un Fractional CFO peut-il aider pour une levée de fonds ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Oui. Les Fractional CFO Iter Advisors ont accompagné plus de 50 levées de fonds du Seed à la Series B. Ils préparent les data rooms, construisent les modèles financiers, créent les présentations investisseurs, et préparent les fondateurs à la due diligence.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Dans quel délai un Fractional CFO peut-il intervenir ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Iter Advisors met en relation les startups avec un Fractional CFO sous 5 jours ouvrés. Le diagnostic et la mise en route sont réalisés sous 2 semaines.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Quelle est la différence entre un fractional CFO et un DAF externalisé ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Aucune différence métier — ce sont deux noms pour le même rôle. \"DAF externalisé\" est le terme français historique ; \"fractional CFO\" est la terminologie anglo-saxonne plébiscitée par les startups VC-backed. Iter Advisors couvre les deux : pour la version FR généraliste, voir notre offre dédiée DAF externalisé.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Puis-je commencer par une mission ponctuelle (data room, levée) ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Oui. Nous proposons des missions ponctuelles à durée fixe (data room pour une levée, due diligence, mise en place du reporting, prévisionnel 12 mois). Tarification au forfait selon le périmètre, opérationnel sous 5 jours ouvrés. Beaucoup de missions ponctuelles débouchent ensuite sur un engagement récurrent au mois.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Comment se passe le matching avec le bon fractional CFO ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Lors de l'échange initial de 30 minutes, nous identifions vos enjeux (stade, secteur, type de levée) ; puis nous proposons un fractional CFO de notre équipe selon son expérience sectorielle et son style d'intervention. Vous rencontrez le profil avant signature : pas de surprise au démarrage.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Que se passe-t-il si on ne s'entend pas avec le fractional CFO ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Aucun engagement de durée — vous pouvez interrompre la mission au mois suivant, sans frais. En pratique, nous proposons d'abord un autre fractional CFO de l'équipe pour poursuivre la mission sans perdre le contexte : c'est l'avantage d'un cabinet de 15 CFOs vs un freelance solo.",
+          },
+        },
+      ],
+    },
+    // ── Organization ────────────────────────────────────────────
+    {
+      "@type": "Organization",
+      "@id": "https://www.iteradvisors.com/#organization",
+      name: "Iter Advisors",
+      url: "https://www.iteradvisors.com",
+      logo: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
+    },
+    // SEO-005 (2026-08-10) — BreadcrumbList manuel retiré. Le composant
+    // <Breadcrumb> de la page émet déjà le sien. Tant que ce graphe partait
+    // dans un <meta>, il était ignoré et le doublon invisible ; maintenant
+    // qu'il est réellement rendu, il fallait choisir. Même arbitrage que sur
+    // les pages /daf-externalise/*.
+  ],
+};
+
+export async function generateMetadata(): Promise<Metadata> {
 
   // T#9 (2026-07-13) — Title/meta enrichis avec les variantes GSC sous-
   // exploitées "CFO externe" (pos 33) et "CFO à temps partagé" (pos 13).
@@ -223,9 +216,6 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
     images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
   },
-    other: {
-      "application/ld+json": JSON.stringify(structuredData),
-    },
   };
 }
 
@@ -233,6 +223,10 @@ export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");
   return (
     <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* ─── Hero commercial ─── */}
       <section className="bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container max-w-3xl">

@@ -189,16 +189,27 @@ const nextConfig: NextConfig = {
         destination: "/en/fractional-cfo/role",
         permanent: true,
       },
-      // Jobs EN/ES (if positions not translated, redirect to hub)
+      // SEO-007 (2026-08-10) — /jobs/fractional-cfo-startups déménage vers
+      // /fractional-cfo-startups : c'est une page commerciale, elle vivait dans
+      // le répertoire des offres d'emploi (parent /jobs en noindex, absente du
+      // sitemap, listée comme poste ouvert par le hub). Un seul saut.
+      {
+        source: "/jobs/fractional-cfo-startups",
+        destination: "/fractional-cfo-startups",
+        permanent: true,
+      },
+      // Les variantes EN/ES visaient le hub /en/jobs et /es/jobs, ce qui
+      // envoyait un visiteur en intention d'achat sur une page recrutement
+      // noindex. Elles pointent maintenant sur la page commerciale.
       {
         source: "/en/jobs/fractional-cfo-startups",
-        destination: "/en/jobs",
-        permanent: true, // 301 redirect (not translated)
+        destination: "/fractional-cfo-startups",
+        permanent: true,
       },
       {
         source: "/es/jobs/fractional-cfo-startups",
-        destination: "/es/jobs",
-        permanent: true, // 301 redirect (not translated)
+        destination: "/fractional-cfo-startups",
+        permanent: true,
       },
       {
         source: "/en/jobs/marketing-growth-strategy",

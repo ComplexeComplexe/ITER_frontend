@@ -246,7 +246,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                 it instead of inside. */}
             {locale === "fr" && (
               <Link
-                href="/jobs/fractional-cfo-startups"
+                href="/fractional-cfo-startups"
                 className="text-white/40 text-xs hover:text-iter-chartreuse transition-colors mt-3 inline-block"
               >
                 Fractional CFO startups →

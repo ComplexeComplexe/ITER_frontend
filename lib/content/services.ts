@@ -99,7 +99,7 @@ const servicesFr: ServicesContent = {
     { title: "Prévisionnel de trésorerie", href: "/services/previsionnel-tresorerie", category: "finance" },
     { title: "M&A & Due Diligence", href: "/services/ma-due-diligence", category: "finance" },
     { title: "Gestion financière externalisée", href: "/services/gestion-financiere-externalisee", category: "finance" },
-    { title: "Fractional CFO startups", href: "/jobs/fractional-cfo-startups", category: "finance" },
+    { title: "Fractional CFO startups", href: "/fractional-cfo-startups", category: "finance" },
     { title: "DRH externalisé", href: "/drh-externalise", category: "rh" },
     { title: "Recrutement & talent acquisition", href: "/services/recrutement-talent-acquisition", category: "rh" },
     { title: "Gestion de la paie & charges sociales", href: "/services/gestion-paie-charges-sociales", category: "rh" },

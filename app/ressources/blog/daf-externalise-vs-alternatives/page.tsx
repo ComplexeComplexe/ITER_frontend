@@ -383,7 +383,7 @@ export default function DafExternaliseVsAlternativesPage() {
           <strong>Iter Advisors couvre les deux appellations</strong> avec des profils qui
           maîtrisent à la fois le vocabulaire français traditionnel et anglo-saxon. Pour votre
           startup VC-backed, voir notre offre dédiée :{" "}
-          <a href="/jobs/fractional-cfo-startups">Fractional CFO pour Startups</a>.
+          <a href="/fractional-cfo-startups">Fractional CFO pour Startups</a>.
         </p>
 
         <h2 id="matrice">5. Matrice de décision : quelle solution pour votre stade</h2>

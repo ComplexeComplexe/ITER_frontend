@@ -39,7 +39,9 @@ const jobsFr: JobsContent = {
       "Iter Advisors est une soci\u00e9t\u00e9 de conseil financier en pleine croissance. Nous rejoindre, c\u2019est int\u00e9grer un environnement international et multiculturel avec l\u2019opportunit\u00e9 de partager l\u2019aventure du lancement d\u2019une start-up avec nous.",
   },
   jobs: [
-    { title: "Fractional CFO pour startups", href: "/jobs/fractional-cfo-startups" },
+    // SEO-007 (2026-08-10) — l'entrée listait la page commerciale parmi les
+    // postes ouverts. Elle pointe désormais sur l'offre de recrutement.
+    { title: "Fractional CFO senior", href: "/carrieres/fractional-cfo" },
     { title: "Responsable Marketing & Growth Strategy", href: "/jobs/marketing-growth-strategy" },
     { title: "Senior Finance Manager", href: "/jobs/senior-finance-manager" },
     { title: "Analyste financier junior", href: "/jobs/finance-analyst-junior-fr" },
@@ -64,7 +66,7 @@ const jobsEn: JobsContent = {
       "Iter Advisors is a fast-growing financial advisory firm. Joining us means joining an international, multicultural environment, with the opportunity to share in the adventure of launching a start-up with us.",
   },
   jobs: [
-    { title: "Fractional CFO for startups", href: "/jobs/fractional-cfo-startups" },
+    { title: "Senior Fractional CFO", href: "/carrieres/fractional-cfo" },
     { title: "Marketing & Growth Strategy Manager", href: "/jobs/marketing-growth-strategy" },
     { title: "Senior Finance Manager", href: "/jobs/senior-finance-manager" },
     { title: "Junior Financial Analyst", href: "/jobs/finance-analyst-junior-fr" },
@@ -89,7 +91,7 @@ const jobsEs: JobsContent = {
       "Iter Advisors es una empresa de asesoramiento financiero en r\u00e1pido crecimiento. Unirse a nosotros significa integrarse en un entorno internacional y multicultural, con la oportunidad de compartir la aventura de lanzar una start-up con nosotros.",
   },
   jobs: [
-    { title: "CFO Fraccionario para startups", href: "/jobs/fractional-cfo-startups" },
+    { title: "CFO Fraccionario senior", href: "/carrieres/fractional-cfo" },
     { title: "Responsable de Marketing y Crecimiento", href: "/jobs/marketing-growth-strategy" },
     { title: "Senior Finance Manager", href: "/jobs/senior-finance-manager" },
     { title: "Analista Financiero Junior", href: "/jobs/finance-analyst-junior-fr" },

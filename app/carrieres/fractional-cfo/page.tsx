@@ -28,116 +28,106 @@ import CTASection from "@/components/CTASection";
 
 const PAGE_URL = "https://www.iteradvisors.com/carrieres/fractional-cfo";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      // ── JobPosting (moved from /jobs/fractional-cfo-startups so Google for
-      //    Jobs continues to surface the offer at its canonical URL) ───────
-      {
-        "@type": "JobPosting",
-        title: "Fractional CFO senior — Iter Advisors",
-        description:
-          "Iter Advisors recrute des fractional CFOs seniors pour accompagner un portefeuille de startups tech (SaaS, deep-tech, e-commerce) basées en France et en Espagne. Vous prendrez en charge la direction financière de 3 à 5 clients en parallèle, sur un mode part-time flexible (freelance, portage ou CDI).",
-        datePosted: "2026-05-30",
-        validThrough: "2026-12-31",
-        employmentType: ["CONTRACTOR", "FULL_TIME", "PART_TIME"],
-        hiringOrganization: {
-          "@type": "Organization",
-          name: "Iter Advisors",
-          sameAs: "https://www.iteradvisors.com",
-          logo: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
-        },
-        jobLocation: [
-          {
-            "@type": "Place",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Carrer Casp, 54, 5-1°",
-              addressLocality: "Barcelona",
-              postalCode: "08010",
-              addressRegion: "Catalunya",
-              addressCountry: "ES",
-            },
-          },
-          {
-            "@type": "Place",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Paris",
-              addressRegion: "Île-de-France",
-              addressCountry: "FR",
-            },
-          },
-          {
-            "@type": "Place",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Toulouse",
-              addressRegion: "Occitanie",
-              addressCountry: "FR",
-            },
-          },
-        ],
-        jobLocationType: "TELECOMMUTE",
-        applicantLocationRequirements: [
-          { "@type": "Country", name: "France" },
-          { "@type": "Country", name: "Spain" },
-          { "@type": "Country", name: "European Union" },
-        ],
-        baseSalary: {
-          "@type": "MonetaryAmount",
-          currency: "EUR",
-          value: {
-            "@type": "QuantitativeValue",
-            minValue: 750,
-            maxValue: 1250,
-            unitText: "DAY",
-          },
-        },
-        directApply: true,
-        industry: "Financial Services",
-        occupationalCategory: "11-3031.00 Financial Managers",
-        qualifications:
-          "10+ years of experience as CFO, Head of Finance or DAF in VC-backed startups or growing SMEs. Series A or B fundraising experience required. SaaS metrics expertise highly valued.",
-        responsibilities:
-          "Monthly financial reporting, cash flow management, fundraising support (data room, business plan, term sheet negotiation), management control, KPIs setup, strategic advisory to founders, board meetings preparation.",
-        skills:
-          "Pennylane, Sage, Agicap, Notion, Looker, Power BI, financial modelling, cash flow forecasting, fundraising, M&A",
-        url: PAGE_URL,
-      },
-      {
+/**
+ * SEO-007 (2026-08-10) — le JSON-LD était passé par `metadata.other`, qui
+ * rend un `<meta name="application/ld+json" content="…">`. Google ne lit les
+ * données structurées que dans un `<script type="application/ld+json">` : ce
+ * balisage n'a donc jamais été exploitable. Hissé hors de generateMetadata et
+ * émis dans la page, comme partout ailleurs dans ce dépôt.
+ */
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    // ── JobPosting (moved from /jobs/fractional-cfo-startups so Google for
+    //    Jobs continues to surface the offer at its canonical URL) ───────
+    {
+      "@type": "JobPosting",
+      title: "Fractional CFO senior — Iter Advisors",
+      description:
+        "Iter Advisors recrute des fractional CFOs seniors pour accompagner un portefeuille de startups tech (SaaS, deep-tech, e-commerce) basées en France et en Espagne. Vous prendrez en charge la direction financière de 3 à 5 clients en parallèle, sur un mode part-time flexible (freelance, portage ou CDI).",
+      datePosted: "2026-05-30",
+      validThrough: "2026-12-31",
+      employmentType: ["CONTRACTOR", "FULL_TIME", "PART_TIME"],
+      hiringOrganization: {
         "@type": "Organization",
-        "@id": "https://www.iteradvisors.com/#organization",
         name: "Iter Advisors",
-        url: "https://www.iteradvisors.com",
+        sameAs: "https://www.iteradvisors.com",
         logo: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
       },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Accueil",
-            item: "https://www.iteradvisors.com/",
+      jobLocation: [
+        {
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Carrer Casp, 54, 5-1°",
+            addressLocality: "Barcelona",
+            postalCode: "08010",
+            addressRegion: "Catalunya",
+            addressCountry: "ES",
           },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Carrières",
-            item: "https://www.iteradvisors.com/jobs",
+        },
+        {
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Paris",
+            addressRegion: "Île-de-France",
+            addressCountry: "FR",
           },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: "Fractional CFO",
-            item: PAGE_URL,
+        },
+        {
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Toulouse",
+            addressRegion: "Occitanie",
+            addressCountry: "FR",
           },
-        ],
+        },
+      ],
+      jobLocationType: "TELECOMMUTE",
+      applicantLocationRequirements: [
+        { "@type": "Country", name: "France" },
+        { "@type": "Country", name: "Spain" },
+        { "@type": "Country", name: "European Union" },
+      ],
+      baseSalary: {
+        "@type": "MonetaryAmount",
+        currency: "EUR",
+        value: {
+          "@type": "QuantitativeValue",
+          minValue: 750,
+          maxValue: 1250,
+          unitText: "DAY",
+        },
       },
-    ],
-  };
+      directApply: true,
+      industry: "Financial Services",
+      occupationalCategory: "11-3031.00 Financial Managers",
+      qualifications:
+        "10+ years of experience as CFO, Head of Finance or DAF in VC-backed startups or growing SMEs. Series A or B fundraising experience required. SaaS metrics expertise highly valued.",
+      responsibilities:
+        "Monthly financial reporting, cash flow management, fundraising support (data room, business plan, term sheet negotiation), management control, KPIs setup, strategic advisory to founders, board meetings preparation.",
+      skills:
+        "Pennylane, Sage, Agicap, Notion, Looker, Power BI, financial modelling, cash flow forecasting, fundraising, M&A",
+      url: PAGE_URL,
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.iteradvisors.com/#organization",
+      name: "Iter Advisors",
+      url: "https://www.iteradvisors.com",
+      logo: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
+    },
+    // SEO-005 (2026-08-10) — BreadcrumbList manuel retiré. Le composant
+    // <Breadcrumb> de la page émet déjà le sien. Tant que ce graphe partait
+    // dans un <meta>, il était ignoré et le doublon invisible ; maintenant
+    // qu'il est réellement rendu, il fallait choisir. Même arbitrage que sur
+    // les pages /daf-externalise/*.
+  ],
+};
+
+export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: "Rejoindre Iter Advisors comme Fractional CFO senior | Iter Advisors",
@@ -152,9 +142,6 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
     images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
   },
-    other: {
-      "application/ld+json": JSON.stringify(structuredData),
-    },
   };
 }
 
@@ -162,6 +149,10 @@ export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");
   return (
     <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* ─── Hero ─── */}
       <section className="bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container max-w-3xl">
@@ -191,7 +182,7 @@ export default async function Page() {
                 Envoyer votre CV
               </a>
               <Link
-                href="/jobs/fractional-cfo-startups"
+                href="/fractional-cfo-startups"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
               >
                 Découvrir le service côté client
@@ -533,7 +524,7 @@ export default async function Page() {
               <li>
                 •{" "}
                 <Link
-                  href="/jobs/fractional-cfo-startups"
+                  href="/fractional-cfo-startups"
                   className="text-iter-violet hover:underline"
                 >
                   Le service Fractional CFO côté client
