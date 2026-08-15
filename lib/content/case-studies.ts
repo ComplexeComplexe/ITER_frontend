@@ -55,6 +55,75 @@ const content: Record<Locale, CaseStudiesContent> = {
     filterConseil: "Consulting",
     filterEcommerce: "E-commerce",
     caseStudies: [
+      // ── Cas documentés et validés le 10/08/2026 ────────────────────────
+      // Trois cas nommés, avec période de mesure et méthode de calcul, tirés
+      // du questionnaire de validation. Règle appliquée : aucun résultat
+      // chiffré n'est publié sans période ni base de comparaison — c'est
+      // pourquoi le cas Opti Digital reste qualitatif, faute de chiffres
+      // datés, et s'appuie sur un verbatim déjà autorisé.
+      {
+        slug: "solarmente-serie-b-cleantech",
+        title: "SolarMente — Série B de 50 M$ et croissance externe",
+        sector: "Cleantech",
+        sectorTag: "Cleantech / Énergie",
+        teamSize: "→ 110 collaborateurs",
+        duration: "CFO fractionné 2 ans, puis board advisor",
+        description:
+          "Scale-up cleantech espagnole en hypercroissance, en expansion de l'Espagne vers les États-Unis. La fonction finance était à construire pour supporter un tour international : pas de modèle multi-scénarios, pas de reporting investisseur consolidé, stack finance à intégrer.",
+        challenge:
+          "Piloter une Série B internationale dans un environnement réglementaire et macroéconomique instable, tout en menant en parallèle une opération de croissance externe et en structurant une fonction finance qui n'existait pas encore à cette échelle.",
+        solution:
+          "Direction financière stratégique et externalisation complète de la fonction finance. Pilotage end-to-end de la Série B : modèle financier multi-scénarios avec triggers de décision, data room, coordination des due diligences, valorisation et négociation des term sheets. Exécution de l'acquisition d'Eltex en 2024, du sourcing à l'intégration finance. Intégration de la stack Stripe, Payhawk, PayFit et Vuala. Intervention hebdomadaire, participation aux comités de direction et aux board meetings.",
+        results: [
+          "Série B de 50 M$ bouclée avec la Leonardo DiCaprio Foundation et GNE Ventures (Repsol)",
+          "Acquisition d'Eltex réalisée en 2024, effectif porté à 110 collaborateurs",
+          "Business plan multi-scénarios, data room, reporting board et procédures de contrôle du cash mis en place",
+          "Période de mesure : 2022 à 2024. Méthode : montants levés et effectifs constatés à la clôture des opérations.",
+        ],
+      },
+      {
+        slug: "seasonly-marge-par-canal-bfr",
+        title: "Seasonly — marge brute +8 points et financement du BFR",
+        sector: "D2C",
+        sectorTag: "D2C / Beauté",
+        teamSize: "PME multi-canal",
+        duration: "DAF externalisé récurrent",
+        description:
+          "Marque de beauté clean française vendant en direct, en retail et sur marketplaces, sans lecture de marge par canal. Le financement des stocks créait une tension sur le besoin en fonds de roulement, et ni les dirigeants ni les actionnaires ne disposaient d'un reporting hebdomadaire lisible.",
+        challenge:
+          "Savoir quel canal gagnait réellement de l'argent, et financer le stock sans dégrader la trésorerie.",
+        solution:
+          "Modélisation du P&L par canal — DTC, retail et marketplaces. Pilotage des stocks et structuration du financement du besoin en fonds de roulement. Mise en place d'un tableau de bord hebdomadaire à destination des dirigeants et des actionnaires.",
+        results: [
+          "Marge brute +8 points",
+          "P&L par canal, tableau de bord hebdomadaire et plan de financement du BFR livrés",
+          "Méthode : marge brute consolidée tous canaux, comparée sur deux périodes de douze mois équivalentes, avant et après la mise en place du P&L par canal.",
+        ],
+      },
+      {
+        slug: "opti-digital-structuration-financement",
+        title: "Opti Digital — structuration finance et financement non dilutif",
+        sector: "Adtech",
+        sectorTag: "Adtech / Média",
+        teamSize: "PME en structuration",
+        duration: "5 ans d'accompagnement continu",
+        description:
+          "Société de monétisation publicitaire en structuration : fonction finance à construire, ERP à migrer, sujets fiscaux et juridiques complexes non couverts en interne, et un besoin de financement pour soutenir la croissance sans ouvrir le capital.",
+        challenge:
+          "Construire une fonction finance et un cadre de closing fiables tout en migrant l'ERP, sans diluer les fondateurs pour financer la croissance.",
+        solution:
+          "Migration de l'ERP et structuration complète de la fonction finance. Accompagnement sur les sujets fiscaux et juridiques complexes, en lien avec les conseils externes. Obtention d'un financement non dilutif. Participation aux décisions stratégiques, avec un rôle assumé de contradicteur du dirigeant.",
+        results: [
+          "Fonction finance structurée : reporting mensuel et procédures de closing",
+          "Migration de l'ERP menée à son terme",
+          "Financement non dilutif obtenu, sans ouverture de capital",
+          "Accompagnement continu depuis cinq ans",
+        ],
+        quote:
+          "Bien au-delà d'un DAF externalisé : migration ERP, structuration finance, fiscal, financement non dilutif. Un véritable atout stratégique depuis 5 ans.",
+        quoteAuthor: "Magali Quentel-Reme",
+        quoteRole: "CEO et co-fondatrice, Opti Digital",
+      },
       {
         slug: "saas-series-a",
         title: "SaaS — Préparation Series A",

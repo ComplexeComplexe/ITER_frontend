@@ -33,13 +33,15 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
       h1: "DAF externalisé à Barcelone : votre CFO à temps partagé en Espagne",
       intro: [
         "Barcelone est devenue l'un des hubs technologiques les plus dynamiques d'Europe, attirant startups, scale-ups et PME internationales. Dans cet écosystème en pleine croissance, disposer d'un directeur financier expérimenté est un avantage concurrentiel décisif.",
-        "Iter Advisors est implanté à Barcelone depuis sa création. Nos CFOs bilingues français-espagnol accompagnent les entreprises dans la structuration de leur fonction finance, la préparation de levées de fonds et le pilotage de leur croissance sur le marché espagnol.",
+        // Bloc 3 (10/08/2026) — Barcelone est le siège du cabinet, pas une antenne :
+        // quatre associés et CFOs y sont basés en présence permanente.
+        "Barcelone est le siège d'Iter Advisors, pas une antenne : quatre de nos associés et CFOs y sont basés en permanence — Benjamin Ziza et Florent Greth, associés et CFOs, Tom Jauffre sur les sujets CFO et M&A, et Deisy Arias Ramírez, référente du marché espagnol. Les échanges se font en français, en espagnol et en anglais.",
       ],
       sections: [
         {
           heading: "Pourquoi choisir un DAF externalisé à Barcelone ?",
           content: [
-            "L'écosystème entrepreneurial barcelonais présente des spécificités qui rendent le DAF externalisé particulièrement pertinent : un tissu dense de startups tech, des réglementations fiscales espagnoles complexes (IS, IVA, retenciones), et un besoin fréquent de reporting bilingue pour les investisseurs internationaux.",
+            "Les entreprises que nous accompagnons à Barcelone relèvent surtout de la cleantech et de la transition énergétique, du climate risk et de la deeptech, du SaaS B2B, des marketplaces et de la fintech, ainsi que de l'adtech, du retail et de l'e-commerce. Profil dominant : des startups et scale-ups internationales implantées à Barcelone, souvent financées par des fonds étrangers, avec un besoin de reporting bilingue et de conformité France-Espagne.",
             "Nos CFOs basés à Barcelone maîtrisent l'environnement fiscal et juridique espagnol, les relations avec les banques locales (CaixaBank, Sabadell, BBVA) et les spécificités du marché ibérique. Ils interviennent en français, espagnol et anglais.",
           ],
         },
@@ -48,7 +50,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
           content: [
             "Pilotage financier et reporting mensuel adapté aux normes espagnoles et internationales.",
             "Gestion de trésorerie et optimisation du BFR dans un contexte multi-devises.",
-            "Préparation de levées de fonds auprès d'investisseurs espagnols et internationaux (VCs, family offices).",
+            "Préparation de levées de fonds auprès d'investisseurs espagnols et internationaux : nous avons piloté la Série B de 50 M$ de SolarMente (cleantech) et la Série A de 20 M$ de Mitiga Solutions (climate risk), deux entreprises barcelonaises.",
             "Structuration comptable et fiscale pour les entreprises françaises implantées en Espagne.",
             "Accompagnement M&A et due diligence pour les opérations cross-border France-Espagne.",
           ],
@@ -56,7 +58,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
         {
           heading: "L'avantage Iter Advisors à Barcelone",
           content: [
-            "Notre bureau barcelonais est situé au coeur du quartier de l'Eixample, à proximité des principaux hubs d'innovation (22@, Pier01). Nous travaillons avec un réseau de partenaires locaux : cabinets d'avocats, gestorías, banques et fonds d'investissement.",
+            "Notre siège est situé Carrer Casp 54, dans l'Eixample, à proximité des principaux hubs d'innovation (22@, Pier01). Nous travaillons avec un réseau de partenaires locaux : cabinets d'avocats, gestorías, banques et fonds d'investissement.",
             "Avec plus de 85 entreprises accompagnées entre la France et l'Espagne, nous comprenons les enjeux spécifiques des entreprises qui opèrent sur les deux marchés : double comptabilité, prix de transfert, conventions fiscales franco-espagnoles.",
           ],
         },
@@ -394,21 +396,24 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
       h1: "DAF externalisé à Toulouse : votre CFO à temps partagé en Occitanie",
       intro: [
         "Toulouse, capitale de l'aéronautique et du spatial, est aussi un pôle majeur de l'innovation et de l'entrepreneuriat en France. La région Occitanie abrite un écosystème dynamique de startups, PME industrielles et entreprises de services.",
-        "Iter Advisors accompagne les entreprises toulousaines avec des DAFs externalisés qui comprennent les spécificités du tissu économique local : sous-traitance aéronautique, deeptech, agritech et services aux entreprises.",
+        // Bloc 3 (10/08/2026) — sans mission toulousaine documentée, la page ne
+        // revendique plus d'expertise sectorielle locale. Formulation validée :
+        // couverture depuis Paris et Barcelone, avec déplacements sur site.
+        "Iter Advisors accompagne des startups et PME tech en France et en Espagne, depuis Paris, Barcelone et Toulouse. Les missions toulousaines sont pilotées par nos équipes parisienne et barcelonaise, avec des déplacements sur site.",
       ],
       sections: [
         {
           heading: "Pourquoi choisir un DAF externalisé à Toulouse ?",
           content: [
-            "L'écosystème toulousain se distingue par sa diversité sectorielle (aéronautique, spatial, santé, agritech) et par la présence de grands donneurs d'ordres (Airbus, Thales, Pierre Fabre). Les PME et ETI de la région ont besoin d'un pilotage financier rigoureux pour gérer leurs cycles longs et leurs relations avec les grands comptes.",
-            "Le coût de la vie à Toulouse étant inférieur à Paris, les tarifs de nos DAFs externalisés sont adaptés au marché local, tout en offrant une expertise de niveau national.",
+            "L'écosystème toulousain est diversifié — aéronautique, spatial, santé, agritech — et marqué par la présence de grands donneurs d'ordres. Les PME et ETI de la région ont besoin d'un pilotage financier rigoureux pour gérer leurs cycles longs et leurs relations avec les grands comptes.",
+            "Nos tarifs sont les mêmes qu'ailleurs : la grille est nationale, et le profil engagé dépend de votre besoin, pas de votre implantation.",
           ],
         },
         {
           heading: "Nos missions à Toulouse",
           content: [
             "Pilotage financier et reporting pour PME industrielles et de services en Occitanie.",
-            "Gestion de trésorerie adaptée aux cycles longs de la sous-traitance aéronautique.",
+            "Gestion de trésorerie adaptée aux cycles longs des activités de sous-traitance industrielle.",
             "Accompagnement des levées de fonds et des financements régionaux (Région Occitanie, Bpifrance Toulouse).",
             "Structuration financière pour les entreprises en croissance et préparation aux opérations de M&A.",
             "Accompagnement à l'internationalisation, notamment vers l'Espagne via notre bureau de Barcelone.",
@@ -417,8 +422,13 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
         {
           heading: "L'avantage Iter Advisors à Toulouse",
           content: [
-            "Notre présence à Toulouse complète notre maillage territorial avec Paris et Barcelone. Nous offrons aux entreprises occitanes un accès à un réseau national et international d'investisseurs et de partenaires.",
-            "Notre connaissance du tissu économique local et notre proximité avec l'Espagne font de nous un partenaire idéal pour les entreprises qui cherchent à se développer au-delà de la région.",
+            "Nous n'avons pas de consultant résident à Toulouse : les missions sont pilotées depuis Paris et Barcelone, avec des déplacements sur site dont la cadence est fixée au cadrage — en général sur les phases de démarrage, les comités finance et les board meetings.",
+            "Ce que nous apportons aux entreprises occitanes, c'est un accès à un réseau national et international d'investisseurs et de partenaires, et une expérience du couloir France-Espagne pour celles qui s'y développent.",
+            // Adresse de domiciliation, publiable telle quelle. Elle n'est
+            // volontairement PAS déclarée en PostalAddress dans le schéma de la
+            // page (cf. DafLocalPage) : une domiciliation n'est pas un
+            // établissement, et le balisage ne doit pas en signaler un.
+            "Adresse de domiciliation : 32 boulevard d'Arcole, 31000 Toulouse.",
           ],
         },
       ],
@@ -426,17 +436,17 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
         {
           question: "Combien coûte un DAF externalisé à Toulouse ?",
           answer:
-            "Nos formules à Toulouse vont de 2 000 EUR/mois (2-3 jours) à 6 000+ EUR/mois (8+ jours). Le TJM se situe entre 750 et 1 000 EUR HT, adapté au marché occitan.",
+            "La grille est nationale : de 3 000 à 8 000 EUR HT par mois selon la formule, sans tarif régionalisé. Le montant dépend du scope confié et du profil engagé, pas de votre implantation.",
         },
         {
           question: "Intervenez-vous dans toute l'Occitanie ?",
           answer:
-            "Oui, nous intervenons à Toulouse et dans toute la région Occitanie : Montpellier, Perpignan, Tarbes, Albi. Nos CFOs travaillent en mode hybride.",
+            "Oui, à Toulouse et dans toute l'Occitanie — Montpellier, Perpignan, Tarbes, Albi. Les missions se pilotent à distance depuis Paris et Barcelone, avec des déplacements sur site dont la fréquence est arrêtée au cadrage. Nous n'annonçons pas de présence hebdomadaire.",
         },
         {
           question: "Avez-vous une expertise aéronautique ?",
           answer:
-            "Oui, plusieurs de nos CFOs ont une expérience significative dans le secteur aéronautique et la sous-traitance industrielle. Ils comprennent les enjeux de trésorerie liés aux cycles longs et aux grands donneurs d'ordres.",
+            "Plusieurs de nos CFOs ont une expérience de l'industrie et de la sous-traitance, et des enjeux de trésorerie liés aux cycles longs et aux grands donneurs d'ordres. Nous n'avons pas encore de cas client toulousain publiable : le meilleur moyen de vérifier l'adéquation est un premier échange sur votre situation.",
         },
       ],
       ctaButton: "Prendre rendez-vous à Toulouse",
