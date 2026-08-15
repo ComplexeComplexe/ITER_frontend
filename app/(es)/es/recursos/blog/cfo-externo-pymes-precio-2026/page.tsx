@@ -70,10 +70,12 @@ export default function CfoExternoPymesPrecio2026Page() {
           category: "Localización",
           title: "CFO externalizado en Barcelona",
         },
+        // SEO-ULT §4b (2026-08-15) — l'ancien slug de cet article même : la
+        // redirection ramenait le lecteur sur la page qu'il lisait.
         {
-          url: "/es/recursos/blog/cout-daf-externalise-tarifs-prix-2026",
-          category: "Tarifas",
-          title: "Tarifas del CFO externalizado",
+          url: "/es/recursos/blog/daf-externalise-vs-daf-salarie",
+          category: "Comparativa",
+          title: "CFO externo frente a CFO interno",
         },
       ]}
       faqItems={[

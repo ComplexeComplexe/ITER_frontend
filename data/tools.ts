@@ -587,6 +587,24 @@ export const tools: Tool[] = [
   },
 ];
 
+/**
+ * Catégories qui ont une page à elles.
+ *
+ * SEO-ULT §4b (2026-08-15) — les quatre catégories ajoutées en juillet 2026
+ * (recouvrement, SIRH, equity, reporting) n'ont pas de page : leur URL
+ * redirige vers le hub outils. Les composants qui affichent une catégorie
+ * consultent cette liste avant d'en faire un lien.
+ *
+ * À garder alignée sur `categoryMeta` dans
+ * app/(fr)/ressources/outils/[slug]/page.tsx.
+ */
+export const CATEGORIES_WITH_PAGE = new Set([
+  'logiciels-comptabilite',
+  'logiciels-tresorerie',
+  'gestion-depenses',
+  'logiciels-paie',
+]);
+
 export function getToolBySlug(slug: string): Tool | undefined {
   return tools.find((tool) => tool.slug === slug);
 }

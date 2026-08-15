@@ -222,11 +222,11 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         id: "fiches-metiers",
         heading: "Fiches métiers",
         seeAllLabel: "Voir toutes nos fiches métiers",
-        seeAllHref: "/ressources/fiche-metier",
+        seeAllHref: "/daf-externalise/metier",
         cards: [
           {
             title: "Fiche métier : Directeur Administratif et Financier",
-            href: "/ressources/fiche-metier",
+            href: "/daf-externalise/metier",
             image: "/images/logos/logo-og-square.png",
             tag: "Fiche métier",
           },
@@ -402,11 +402,11 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         id: "fiches-metiers",
         heading: "Job descriptions",
         seeAllLabel: "See all job descriptions",
-        seeAllHref: "/en/ressources/fiche-metier",
+        seeAllHref: "/en/fractional-cfo/role",
         cards: [
           {
             title: "Job description: Chief Financial Officer",
-            href: "/en/ressources/fiche-metier",
+            href: "/en/fractional-cfo/role",
             image: "/images/logos/logo-og-square.png",
             tag: "Job description",
           },
@@ -532,7 +532,10 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         id: "cas-clients",
         heading: "Casos prácticos",
         seeAllLabel: "Ver todos los casos prácticos",
-        seeAllHref: "/es/recursos/cas-clients",
+        // SEO-ULT §4b (2026-08-15) — le slug espagnol est `casos-de-exito`,
+        // comme les quatre liens juste en dessous ; seul le « voir tout »
+        // gardait l'ancien chemin français, qui répond 308.
+        seeAllHref: "/es/recursos/casos-de-exito",
         cards: [
           {
             title: "Happy Scribe: estructuración financiera de una scale-up",
@@ -596,11 +599,15 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         id: "fiches-metiers",
         heading: "Perfiles profesionales",
         seeAllLabel: "Ver todos los perfiles profesionales",
-        seeAllHref: "/ressources/fiche-metier",
+        // SEO-ULT §4b (2026-08-15) — la rubrique « fiches métier » a été
+        // absorbée par le cluster DAF : /ressources/fiche-metier redirige
+        // vers la page métier de chaque locale. La section espagnole portait
+        // en plus le chemin français, sans préfixe de langue.
+        seeAllHref: "/es/externalizacion-daf/funciones",
         cards: [
           {
             title: "Perfil profesional: Director Financiero",
-            href: "/ressources/fiche-metier",
+            href: "/es/externalizacion-daf/funciones",
             image: "/images/logos/logo-og-square.png",
             tag: "Perfil profesional",
           },

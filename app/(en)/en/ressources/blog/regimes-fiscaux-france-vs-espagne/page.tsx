@@ -92,7 +92,7 @@ export default async function Page() {
           title: "Fractional CFO in Barcelona: guide for startups in Spain",
         },
         {
-          url: "/ressources/blog/double-imposition-france-espagne-convention",
+          url: "/ressources/fiscalite/double-imposition-france-espagne",
           category: "International Taxation",
           title: "France-Spain tax treaty: avoiding double taxation",
         },

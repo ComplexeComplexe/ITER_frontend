@@ -183,15 +183,10 @@ export default async function Page() {
                   Hub : Fiscalité Espagne France — guide complet
                 </Link>
               </li>
-              <li className="flex gap-2.5 text-sm sm:text-base">
-                <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-                <Link
-                  href={`/ressources/blog/${SOURCE_SLUG}`}
-                  className="text-iter-violet hover:underline"
-                >
-                  Article blog : {post.h1}
-                </Link>
-              </li>
+              {/* SEO-ULT §4b (2026-08-15) — un lien « Article blog » pointait
+                  ici vers /ressources/blog/${SOURCE_SLUG}, qui redirige vers
+                  cette page même : le lecteur revenait où il était. Cette page
+                  EST l'article, la ligne n'avait plus d'objet. */}
             </ul>
           </div>
 

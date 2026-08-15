@@ -356,7 +356,9 @@ export const drhContent: Record<Locale, DrhContent> = {
       heading: "Your strategic HR partner",
       content: [
         "Our outsourced HR offering covers the full scope of an HR department: from initial audit to employee relations, including recruitment, payroll, training and company culture.",
-        "We adapt to your HR maturity and budget, with flexible formats ([[fractional HR|/drh-externalise/temps-partage]], one-off missions, add-ons) and a clear service grid so you can build the support you need.",
+        // SEO-ULT §4b (2026-08-15) — le chemin français envoyait le lecteur
+        // anglophone sur la page FR sans le prévenir.
+        "We adapt to your HR maturity and budget, with flexible formats ([[fractional HR|/en/hr-outsourcing/shared-time]], one-off missions, add-ons) and a clear service grid so you can build the support you need.",
       ],
     },
     whatIs: {
@@ -546,7 +548,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       heading: "Su socio estratégico en RRHH",
       content: [
         "Nuestra oferta de RRHH externalizado cubre el conjunto de necesidades de una dirección de recursos humanos: desde la auditoría inicial hasta las relaciones con los representantes del personal, pasando por reclutamiento, nómina, formación y cultura de empresa.",
-        "Nos adaptamos a su madurez en RRHH y a su presupuesto, con fórmulas modulables ([[RRHH a tiempo compartido|/drh-externalise/temps-partage]], misiones puntuales, add-ons) y una cuadrícula de servicios clara para diseñar el acompañamiento que necesita.",
+        "Nos adaptamos a su madurez en RRHH y a su presupuesto, con fórmulas modulables ([[RRHH a tiempo compartido|/es/externalizacion-rrhh/tiempo-compartido]], misiones puntuales, add-ons) y una cuadrícula de servicios clara para diseñar el acompañamiento que necesita.",
       ],
     },
     whatIs: {

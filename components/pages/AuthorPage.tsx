@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Linkedin } from "lucide-react";
 import { Locale } from "@/lib/i18n";
-import { getLocalePath } from "@/lib/i18n";
+import { resolveBlogArticleHref } from "@/lib/path-localization";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
@@ -93,6 +93,15 @@ export default function AuthorPage({
 }: AuthorPageProps) {
   const { bioExtended } = member;
   const t = STRINGS[locale];
+
+  // SEO-ULT §4b (2026-08-15) — la bibliographie d'un auteur listait ses
+  // articles à l'URL de la locale courante, sans vérifier qu'elle les sert.
+  // En ES, chaque entrée partait vers `/es/ressources/blog/...` (308), et
+  // l'ancien slug `cout-daf-externalise-tarifs-prix-2026` y figurait encore
+  // alors que sa traduction vit sous un autre nom.
+  const publishedArticles = articles.filter(
+    (a) => resolveBlogArticleHref(locale, a.slug) !== null,
+  );
 
   // Person schema (E-E-A-T / GEO signal). The Person is identified by
   // their slug + linked to the Iter Advisors Organization via worksFor.
@@ -189,22 +198,19 @@ export default function AuthorPage({
           indexable, qui dilue le contenu utile de la fiche (2026-08-02). */}
       <section className="bg-background pb-24 lg:pb-16">
         <div className="container max-w-4xl">
-          {articles.length > 0 && (
+          {publishedArticles.length > 0 && (
             <>
               <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-8">
                 {t.articlesH2}{" "}
                 <span className="text-base font-normal text-muted-foreground">
-                  ({articles.length})
+                  ({publishedArticles.length})
                 </span>
               </h2>
               <ul className="divide-y divide-border/60">
-              {articles.map((a) => (
+              {publishedArticles.map((a) => (
                 <li key={a.slug}>
                   <Link
-                    href={getLocalePath(
-                      locale,
-                      `/ressources/blog/${a.slug}`,
-                    )}
+                    href={resolveBlogArticleHref(locale, a.slug) as string}
                     className="group flex items-start justify-between gap-6 py-5 hover:bg-muted/30 -mx-4 px-4 rounded-xl transition-colors"
                   >
                     <div className="min-w-0">

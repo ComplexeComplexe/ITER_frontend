@@ -14,8 +14,8 @@
 import { blogPosts } from "@/lib/content/blog-posts";
 import { BLOG_COVERS } from "@/lib/blog-covers";
 import { estimateReadMinutes } from "@/lib/blog-read-time";
-import { getLocalePath } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { resolveBlogArticleHref } from "@/lib/path-localization";
 
 export interface RelatedArticleCard {
   slug: string;
@@ -72,14 +72,22 @@ export function getRelatedArticles(
     }
   }
 
-  const picked = [...sameCat, ...others].slice(0, limit);
+  // SEO-ULT §4b (2026-08-15) — deux défauts se cumulaient ici. `getLocalePath`
+  // ne fait que préfixer la locale : en ES il produisait
+  // `/es/ressources/blog/...`, qui redirige vers `/es/recursos/blog/...`.
+  // Et certains articles n'ont pas d'URL propre dans leur locale — proposés
+  // en « articles liés », ils envoyaient le lecteur sur une redirection.
+  // Ceux-là sont écartés avant le découpage, pour que le bloc reste plein.
+  const picked = [...sameCat, ...others]
+    .filter(({ slug }) => resolveBlogArticleHref(locale, slug) !== null)
+    .slice(0, limit);
 
   return picked.map(({ slug, post }) => {
     const title = post.h1 ?? slug;
     const { src, alt } = coverFor(slug, title);
     return {
       slug,
-      href: getLocalePath(locale, `/ressources/blog/${slug}`),
+      href: resolveBlogArticleHref(locale, slug) as string,
       title,
       image: src,
       alt,

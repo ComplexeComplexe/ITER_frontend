@@ -5,20 +5,20 @@ import { getJobMetierBySlugOrSlugifiedTitle, getJobMetiers, getJobMetierSlugForU
 import { buildStrapiCollectionMetadata } from "@/lib/metadata";
 import { getLocalePath } from "@/lib/i18n";
 
-const basePath = "/ressources/fiche-metier";
+const basePath = "/daf-externalise/metier";
 
 const breadcrumbsByLocale = {
   fr: {
     resourcesLabel: "Ressources",
     resourcesHref: "/ressources",
     fichesLabel: "Fiches métiers",
-    fichesHref: "/ressources/fiche-metier",
+    fichesHref: "/daf-externalise/metier",
   },
   en: {
     resourcesLabel: "Resources",
     resourcesHref: "/en/ressources",
     fichesLabel: "Job descriptions",
-    fichesHref: "/en/ressources/fiche-metier",
+    fichesHref: "/en/fractional-cfo/role",
   },
   es: {
     resourcesLabel: "Recursos",

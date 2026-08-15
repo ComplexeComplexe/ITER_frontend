@@ -472,15 +472,11 @@ function ResourcesPageFR({ cmsNavigation }: { cmsNavigation?: CmsNavItem[] }) {
               </Link>
               .
             </p>
-            <p>
-              <Link
-                href="/ressources/fiche-metier"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-iter-violet hover:underline"
-              >
-                👉 Voir toutes les fiches métiers
-                <ArrowRight size={14} aria-hidden />
-              </Link>
-            </p>
+            {/* SEO-ULT §4b (2026-08-15) — « Voir toutes les fiches métiers »
+                menait à /ressources/fiche-metier, hub absorbé depuis par le
+                cluster DAF : la redirection ramenait à la fiche déjà liée
+                juste au-dessus. Deux liens pour une seule destination, dont
+                un via une 308. Le premier suffit. */}
           </div>
 
           <hr className="border-border/50" />

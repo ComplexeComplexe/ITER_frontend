@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import { ArrowRight, TrendingUp, BarChart3, Wallet, Rocket, Compass, Users } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
+import { dafClusterHref, drhClusterHref, serviceHref } from "@/lib/path-localization";
 import { getDrhContent } from "@/lib/content/drh";
 import type { StrapiDrhServiceCategory, CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
@@ -574,8 +575,11 @@ export default function DrhPage({
                     : locale === "en"
                       ? "Outsourced CFO"
                       : "DAF externalizado",
-                href:
-                  locale === "fr" ? "/daf-externalise" : `/${locale}/daf-externalise`,
+                // SEO-ULT §4b (2026-08-15) — ces href étaient composés en
+                // préfixant le slug français ou anglais par la locale. Aucune
+                // des URL ainsi produites n'existe en ES, et /en/daf-externalise
+                // n'existe pas non plus : toutes répondaient en 308.
+                href: dafClusterHref("", locale),
                 icon: TrendingUp,
               },
               {
@@ -585,10 +589,7 @@ export default function DrhPage({
                     : locale === "en"
                       ? "Fund-raising support"
                       : "Acompañamiento captación de fondos",
-                href:
-                  locale === "fr"
-                    ? "/services/accompagnement-levee-de-fond"
-                    : `/${locale}/services/fund-raising-support`,
+                href: serviceHref("accompagnement-levee-de-fond", locale),
                 icon: Rocket,
               },
               {
@@ -598,10 +599,7 @@ export default function DrhPage({
                     : locale === "en"
                       ? "Outsourced management control"
                       : "Control de gestión externalizado",
-                href:
-                  locale === "fr"
-                    ? "/services/controle-de-gestion-externalise"
-                    : `/${locale}/services/outsourced-management-control`,
+                href: serviceHref("controle-de-gestion-externalise", locale),
                 icon: BarChart3,
               },
               {
@@ -611,10 +609,7 @@ export default function DrhPage({
                     : locale === "en"
                       ? "Cash flow forecast"
                       : "Previsión de tesorería",
-                href:
-                  locale === "fr"
-                    ? "/services/previsionnel-tresorerie"
-                    : `/${locale}/services/cash-flow-forecast`,
+                href: serviceHref("previsionnel-tresorerie", locale),
                 icon: Wallet,
               },
               {
@@ -632,10 +627,7 @@ export default function DrhPage({
                     : locale === "en"
                       ? "Part-time HR Director"
                       : "DRH a tiempo compartido",
-                href:
-                  locale === "fr"
-                    ? "/drh-externalise/temps-partage"
-                    : `/${locale}/drh-externalise/temps-partage`,
+                href: drhClusterHref("temps-partage", locale),
                 icon: Users,
               },
             ].map((service, i) => (

@@ -7,7 +7,7 @@ export const metadata: Metadata = buildMetadata({
   locale: "es",
   title: "Perfiles Finance | Iter Advisors",
   description: "Fichas profesionales finanzas: DAF, CFO, Controller, Tesorero. Responsabilidades, skills, salarios. Guía experto gratis 2026 para gestores RH.",
-  path: "/ressources/fiche-metier",
+  path: "/daf-externalise/metier",
 });
 
 export default async function Page() {

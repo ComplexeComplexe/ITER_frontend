@@ -7,7 +7,7 @@ export const metadata: Metadata = buildMetadata({
   locale: "en",
   title: "Finance Job Descriptions | Iter Advisors",
   description: "Finance job descriptions: CFO, Finance Director, Controller, Treasurer. Complete guide to roles, responsibilities, required skills, compensation insights.",
-  path: "/ressources/fiche-metier",
+  path: "/daf-externalise/metier",
 });
 
 export default async function Page() {

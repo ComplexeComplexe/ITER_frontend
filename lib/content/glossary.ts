@@ -153,7 +153,7 @@ const content: Record<Locale, GlossaryContent> = {
         definition:
           "La due diligence (DD) est l'enquête approfondie menée par un investisseur ou un acquéreur avant de finaliser une opération de capital (levée, rachat, M&A). Elle couvre la due diligence financière (qualité du MRR/ARR, CAC/LTV, burn rate, comptabilité, projections), juridique (contrats clients/fournisseurs, IP, litiges, conformité RGPD), commerciale (marché, concurrence, traction) et technique (architecture, sécurité, dette technique). Une DD bien préparée peut réduire sa durée de 4 semaines à 10 jours et augmenter la valorisation de 10-20%. Anticipez avec une data room structurée 3 mois avant les rendez-vous VC.",
         context:
-          "Lors d'une Series A, les VCs passent typiquement 2-4 semaines en DD avec des dizaines de documents demandés. Voir notre [checklist data room](/ressources/blog/data-room-checklist-levee-de-fonds).",
+          "Lors d'une Series A, les VCs passent typiquement 2-4 semaines en DD avec des dizaines de documents demandés. Voir notre [checklist data room](/ressources/blog/checklist-due-diligence-levee-de-fonds).",
       },
       {
         title: "Kicker (dette venture)",

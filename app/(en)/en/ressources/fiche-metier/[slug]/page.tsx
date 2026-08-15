@@ -5,11 +5,11 @@ import { getJobMetierBySlugOrSlugifiedTitle, getJobMetiers, getJobMetierSlugForU
 import { buildStrapiCollectionMetadata } from "@/lib/metadata";
 import { getLocalePath } from "@/lib/i18n";
 
-const basePath = "/ressources/fiche-metier";
+const basePath = "/daf-externalise/metier";
 
 const breadcrumbsByLocale = {
-  fr: { resourcesLabel: "Ressources", resourcesHref: "/ressources", fichesLabel: "Fiches métiers", fichesHref: "/ressources/fiche-metier" },
-  en: { resourcesLabel: "Resources", resourcesHref: "/en/ressources", fichesLabel: "Job descriptions", fichesHref: "/en/ressources/fiche-metier" },
+  fr: { resourcesLabel: "Ressources", resourcesHref: "/ressources", fichesLabel: "Fiches métiers", fichesHref: "/daf-externalise/metier" },
+  en: { resourcesLabel: "Resources", resourcesHref: "/en/ressources", fichesLabel: "Job descriptions", fichesHref: "/en/fractional-cfo/role" },
   es: { resourcesLabel: "Recursos", resourcesHref: "/es/recursos", fichesLabel: "Perfiles profesionales", fichesHref: "/es/recursos/fiche-metier" },
 } as const;
 
