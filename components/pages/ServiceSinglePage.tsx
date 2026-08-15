@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { dafClusterHref } from "@/lib/path-localization";
 import Image from "next/image";
 import { ArrowRight, TrendingUp, BarChart3, Shield, Rocket, Settings, Target, Compass, Zap } from "lucide-react";
 import { Locale } from "@/lib/i18n";
@@ -243,7 +244,7 @@ export default function ServiceSinglePage({
                     : locale === "en"
                       ? "Outsourced CFO"
                       : "DAF externalizado",
-                href: locale === "fr" ? "/daf-externalise" : `/${locale}/daf-externalise`,
+                href: dafClusterHref("", locale),
                 icon: TrendingUp,
               },
               {
@@ -254,9 +255,7 @@ export default function ServiceSinglePage({
                       ? "Fractional CFO"
                       : "DAF a tiempo compartido",
                 href:
-                  locale === "fr"
-                    ? "/daf-externalise/temps-partage"
-                    : `/${locale}/daf-externalise/temps-partage`,
+                  dafClusterHref("temps-partage", locale),
                 icon: Rocket,
               },
               {
@@ -267,9 +266,7 @@ export default function ServiceSinglePage({
                       ? "Transition CFO"
                       : "DAF de transición",
                 href:
-                  locale === "fr"
-                    ? "/daf-externalise/transition"
-                    : `/${locale}/daf-externalise/transition`,
+                  dafClusterHref("transition", locale),
                 icon: BarChart3,
               },
               {
@@ -280,9 +277,7 @@ export default function ServiceSinglePage({
                       ? "CFO role & skills"
                       : "Profesión de DAF",
                 href:
-                  locale === "fr"
-                    ? "/daf-externalise/metier"
-                    : `/${locale}/daf-externalise/metier`,
+                  dafClusterHref("metier", locale),
                 icon: Shield,
               },
               {
@@ -293,9 +288,7 @@ export default function ServiceSinglePage({
                       ? "CFO pricing"
                       : "Tarifas DAF externalizado",
                 href:
-                  locale === "fr"
-                    ? "/daf-externalise/tarifs"
-                    : `/${locale}/daf-externalise/tarifs`,
+                  dafClusterHref("tarifs", locale),
                 icon: Target,
               },
               {
@@ -306,9 +299,7 @@ export default function ServiceSinglePage({
                       ? "CFO by industry"
                       : "DAF externalizado por sector",
                 href:
-                  locale === "fr"
-                    ? "/daf-externalise/secteurs"
-                    : `/${locale}/daf-externalise/secteurs`,
+                  dafClusterHref("secteurs", locale),
                 icon: Compass,
               },
             ].map((service, i) => (

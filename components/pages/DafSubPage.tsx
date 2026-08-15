@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { dafClusterHref } from "@/lib/path-localization";
 import Image from "next/image";
 import { ArrowRight, TrendingUp, BarChart3, Shield, Rocket, Settings, Target, Compass, Zap } from "lucide-react";
 import ReactMarkdown from "react-markdown";
@@ -232,7 +233,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage }
                       ? "Outsourced CFO"
                       : "DAF externalizado",
                 href:
-                  locale === "fr" ? "/daf-externalise" : `/${locale}/daf-externalise`,
+                  dafClusterHref("", locale),
                 icon: TrendingUp,
               },
               {
@@ -243,9 +244,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage }
                       ? "Fractional CFO"
                       : "DAF a tiempo compartido",
                 href:
-                  locale === "fr"
-                    ? "/daf-externalise/temps-partage"
-                    : `/${locale}/daf-externalise/temps-partage`,
+                  dafClusterHref("temps-partage", locale),
                 icon: Rocket,
               },
               {
@@ -256,9 +255,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage }
                       ? "Transition CFO"
                       : "DAF de transición",
                 href:
-                  locale === "fr"
-                    ? "/daf-externalise/transition"
-                    : `/${locale}/daf-externalise/transition`,
+                  dafClusterHref("transition", locale),
                 icon: BarChart3,
               },
               {
@@ -269,9 +266,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage }
                       ? "CFO role & skills"
                       : "Profesión de DAF",
                 href:
-                  locale === "fr"
-                    ? "/daf-externalise/metier"
-                    : `/${locale}/daf-externalise/metier`,
+                  dafClusterHref("metier", locale),
                 icon: Shield,
               },
               {
@@ -282,9 +277,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage }
                       ? "CFO pricing"
                       : "Tarifas DAF externalizado",
                 href:
-                  locale === "fr"
-                    ? "/daf-externalise/tarifs"
-                    : `/${locale}/daf-externalise/tarifs`,
+                  dafClusterHref("tarifs", locale),
                 icon: Target,
               },
               {
@@ -295,9 +288,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage }
                       ? "CFO by industry"
                       : "DAF externalizado por sector",
                 href:
-                  locale === "fr"
-                    ? "/daf-externalise/secteurs"
-                    : `/${locale}/daf-externalise/secteurs`,
+                  dafClusterHref("secteurs", locale),
                 icon: Compass,
               },
             ].map((service, i) => (

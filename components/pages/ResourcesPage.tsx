@@ -63,7 +63,12 @@ export default function ResourcesPage({
         return {
           title: article.title,
           // locale is narrowed to "en" | "es" here (FR returns early above)
-          href: `/${locale}/ressources/blog/${article.slug}`,
+          // SEO-ULT §4 (2026-08-15) — même correctif que BlogListingPage :
+          // la convention ES est /es/recursos/, le gabarit produisait un 308.
+          href:
+            locale === "es"
+              ? `/es/recursos/blog/${article.slug}`
+              : `/${locale}/ressources/blog/${article.slug}`,
           image: featured?.url || "/images/og-default.webp", // Ahrefs T-404 (2026-06-08): placeholder.webp missing → og-default
           alt: featured?.alternativeText || article.title,
           tag: newsTag,

@@ -139,6 +139,50 @@ for (const abs of urls) {
   }
 }
 
+// ── 4. Liens internes rendus : aucun ne doit viser une redirection
+//
+// SEO-ULT §4 (2026-08-15) — ce contrôle est né d'un angle mort. Le footer
+// construisait ses liens à l'exécution (`/${locale}/ressources/blog/${slug}`),
+// donc aucune de ces URL n'existait en dur dans le code : l'audit de
+// configuration ne pouvait pas les voir. Huit liens sur dix partaient sur une
+// 3xx, sur toutes les pages du site.
+//
+// On suit ici chaque lien interne réellement émis dans le HTML et on vérifie
+// qu'il répond 200 sans redirection. C'est plus lent qu'un grep, mais c'est le
+// seul moyen d'attraper les liens assemblés dynamiquement.
+console.log("\nContrôle des liens internes rendus…");
+const liensVus = new Map(); // href → statut (mémoïsé)
+let liensTestes = 0;
+for (const abs of urls) {
+  const path = abs.replace(CANONICAL_HOST, "") || "/";
+  let html;
+  try {
+    const r = await fetch(BASE + path, { redirect: "manual" });
+    if (r.status !== 200) continue;
+    html = await r.text();
+  } catch {
+    continue;
+  }
+  const hrefs = new Set(
+    [...html.matchAll(/href="(\/[^"#?]*)"/g)].map((m) => m[1]).filter((h) => !h.startsWith("/_next")),
+  );
+  for (const href of hrefs) {
+    if (!liensVus.has(href)) {
+      try {
+        const r = await fetch(BASE + href, { redirect: "manual" });
+        liensVus.set(href, r.status);
+      } catch {
+        liensVus.set(href, 0);
+      }
+      liensTestes++;
+    }
+    const st = liensVus.get(href);
+    if (st >= 300 && st < 400) fail("lien/redirection", `${path} → ${href} (${st})`);
+    else if (st >= 400 || st === 0) fail("lien/cassé", `${path} → ${href} (${st})`);
+  }
+}
+console.log(`  ${liensTestes} URL de destination distinctes testées`);
+
 // Les titles longs sont un signal, pas un blocage : la limite réelle est en
 // pixels, et certaines pages assument un title long pour rester explicites.
 console.log(`Titles de plus de 60 caractères : ${titresLongs}`);
