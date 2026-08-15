@@ -8,7 +8,7 @@ const PAGE_URL =
   'https://www.iteradvisors.com/ressources/blog/ia-finance-automatisation-direction-financiere';
 
 export const metadata: Metadata = {
-  title: 'IA et automatisation financière : le guide 2026 pour les PME | Iter Advisors',
+  title: 'IA et automatisation financière pour PME en 2026',
   description:
     "Clôture automatisée, facturation IA, prévisionnel de trésorerie : ce que l'IA change vraiment dans la fonction finance d'une PME. Guide 2026.",
   alternates: { canonical: PAGE_URL },

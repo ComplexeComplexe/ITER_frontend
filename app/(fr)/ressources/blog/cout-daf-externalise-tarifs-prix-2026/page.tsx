@@ -7,7 +7,7 @@ import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 import MidArticleSoftCTA from '@/components/blog/MidArticleSoftCTA';
 
 export const metadata: Metadata = {
-  title: "Coût d'un DAF externalisé en 2026 : tarifs, TJM et grille de prix | Iter Advisors",
+  title: "Coût d'un DAF externalisé : tarifs et TJM 2026",
   description: "Combien coûte un DAF externalisé ? Tarifs par profil (startup, PME, industrie), TJM moyen, formules de facturation et calcul du ROI. Grille de prix 2026 complète.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/cout-daf-externalise-tarifs-prix-2026",

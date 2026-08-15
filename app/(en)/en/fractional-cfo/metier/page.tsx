@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
       en: "/fractional-cfo/metier",
       es: "/externalizacion-daf/metier",
     },
-    fallbackTitle: "CFO Job Description: role, missions, skills & salary 2026 | Iter Advisors",
+    fallbackTitle: "CFO Role, Responsibilities and Salary 2026",
     fallbackDescription: "Complete CFO (Chief Financial Officer) job description: role, missions, key skills, salary and career path in 2026. Written by senior finance leaders.",
   });
 }

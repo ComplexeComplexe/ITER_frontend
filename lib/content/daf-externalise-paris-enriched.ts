@@ -6,7 +6,7 @@ export const dafExternalisePariEnrichedContent = {
       // intro, créant un signal ambigu pour Google. Recentré sur la cible
       // locale "Cabinet DAF Paris" pour laisser le pilier ranker sur la
       // requête nationale.
-      title: "DAF externalisé Paris : CFO à temps partagé dès 2 j/mois | Iter Advisors",
+      title: "DAF externalisé à Paris | Iter Advisors",
       description:
         "Cabinet de DAF externalisés à Paris. CFO seniors pour startups et PME, dès 2 jours/mois. 85 entreprises accompagnées.",
     },

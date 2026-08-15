@@ -72,12 +72,12 @@ const articleSchema = {
 };
 
 export const metadata: Metadata = {
-  title: 'CFO externe : rôle, missions et quand y recourir en 2026 | Iter Advisors',
+  title: 'CFO externe : rôle, missions et tarifs 2026',
   description:
     'Le CFO externe prend en charge votre direction financière sans CDI. Missions, profils concernés, coûts : le guide complet.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: 'CFO externe : rôle, missions et quand y recourir en 2026 | Iter Advisors',
+    title: 'CFO externe : rôle, missions et tarifs 2026',
     description:
       'Le CFO externe prend en charge votre direction financière sans CDI. Missions, profils concernés, coûts : le guide complet.',
     type: 'article',

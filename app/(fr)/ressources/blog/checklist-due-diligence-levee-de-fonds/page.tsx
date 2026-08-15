@@ -5,7 +5,7 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "Due diligence financière : la checklist des 47 points vérifiés par les VCs | Iter Advisors",
+  title: "Due diligence financière : checklist des 47 points",
   description: "Checklist complète de due diligence financière pour préparer votre levée de fonds. Les 47 points que les VCs et investisseurs vérifient systématiquement. Guide Iter Advisors 2026.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/checklist-due-diligence-levee-de-fonds",

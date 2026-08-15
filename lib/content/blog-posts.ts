@@ -1476,7 +1476,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "externalisation-comptable": {
       meta: {
-        title: "Externalisation comptable en 2026 : guide pratique, tarifs et pièges à éviter | Iter Advisors",
+        title: "Externalisation comptable : guide et tarifs 2026",
         description: "Faut-il externaliser sa comptabilité ? Avantages, pièges, tarifs (400–3 500 €/mois) et sélection du bon prestataire. Guide complet 2026 par les experts Iter Advisors.",
       },
       breadcrumbs: {
@@ -1934,7 +1934,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "daf-externalise-vs-expert-comptable": {
       meta: {
-        title: "Directeur Financier Externalisé vs Expert-Comptable : Comparatif | Iter Advisors",
+        title: "DAF externalisé ou expert-comptable : comparatif",
         description: "Expert-comptable et DAF sont complémentaires, pas substituables. Tableau comparatif des missions, périmètres, et quand chacun devient indispensable.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2800,7 +2800,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "impot-revenu-espagne": {
       meta: {
-        title: "Impôt sur le revenu en Espagne (IRPF) : barème 2026, calcul et exemptions | Iter Advisors",
+        title: "Impôt sur le revenu en Espagne : barème IRPF 2026",
         description: "IRPF Espagne 2026 : barèmes, loi Beckham, déclaration et comparaison France-Espagne. Guide complet pour s'installer à Barcelone ou Madrid.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -3185,7 +3185,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 
     "daf-externalise-vs-daf-interimaire": {
       meta: {
-        title: "DAF externalisé vs DAF intérimaire : lequel choisir en 2026 ? | Iter Advisors",
+        title: "DAF externalisé ou intérimaire : comparatif 2026",
         description: "Externalisé ou intérimaire : durée, coût, mission, engagement. Le comparatif complet pour choisir le bon modèle de direction financière.",
       },
       breadcrumbs: {
@@ -3239,7 +3239,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 
     "loi-beckham-economie-impot-simulation": {
       meta: {
-        title: "Loi Beckham : combien d'impôt économisez-vous vraiment ? | Iter Advisors",
+        title: "Loi Beckham : économie d'impôt et simulation",
         description: "Taux fixe de 24 % vs barème progressif jusqu'à 47 % : simulation chiffrée de l'économie d'impôt avec le régime Beckham, par niveau de salaire.",
       },
       breadcrumbs: {
@@ -3275,7 +3275,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 
     "cfo-externe-role-missions-2026": {
       meta: {
-        title: "CFO externe : rôle, missions et quand y recourir en 2026 | Iter Advisors",
+        title: "CFO externe : rôle, missions et tarifs 2026",
         description: "Le CFO externe prend en charge votre direction financière sans CDI. Missions, profils concernés, coûts : le guide complet.",
       },
       breadcrumbs: {
@@ -3802,7 +3802,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 
     "fractional-cfo-cost-services-2026": {
       meta: {
-        title: "Fractional CFO: What It Costs and What You Get in 2026 | Iter Advisors",
+        title: "Fractional CFO Cost and Services in 2026",
         description: "Fractional CFO pricing, scope and ROI for startups and SMEs. When to hire one, what to expect, real 2026 rate ranges.",
       },
       breadcrumbs: {
@@ -4314,7 +4314,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 
     "cfo-externo-pymes-precio-2026": {
       meta: {
-        title: "CFO externo para pymes: qué es y cuánto cuesta en 2026 | Iter Advisors",
+        title: "CFO externo para pymes: precio y servicios 2026",
         description: "Qué hace un CFO externo, cuándo lo necesita una pyme y precios reales en España. Guía completa 2026 con ejemplos.",
       },
       breadcrumbs: {

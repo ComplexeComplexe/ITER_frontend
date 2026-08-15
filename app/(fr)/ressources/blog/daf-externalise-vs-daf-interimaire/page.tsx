@@ -13,7 +13,7 @@ const PAGE_URL =
 
 export const metadata: Metadata = {
   title:
-    'DAF externalisé vs DAF intérimaire : lequel choisir en 2026 ? | Iter Advisors',
+    'DAF externalisé ou intérimaire : comparatif 2026',
   description:
     'Externalisé ou intérimaire : durée, coût, mission, engagement. Le comparatif complet pour choisir le bon modèle de direction financière.',
   alternates: { canonical: PAGE_URL },

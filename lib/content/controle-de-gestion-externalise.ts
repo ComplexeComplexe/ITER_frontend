@@ -41,7 +41,7 @@ export const controleDeGestionExternaliseeContent = {
       // de page locale (cf. D5 : la page Toulouse existante est à 0 clic,
       // donc pas de nouvelle page locale tant qu'elle ne convertit pas).
       title:
-        "Contrôle de gestion externalisé : pilotez sans recruter | Iter Advisors",
+        "Contrôle de gestion externalisé | Iter Advisors",
       description:
         "Tableaux de bord, analyse des écarts, budget et reporting mensuel pris en charge par un contrôleur de gestion externalisé. Intervention en Île-de-France.",
     },

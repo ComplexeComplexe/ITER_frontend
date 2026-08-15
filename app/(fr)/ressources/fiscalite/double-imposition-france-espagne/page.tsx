@@ -36,7 +36,7 @@ const AUTHOR_URL = "/a-propos/florent-greth";
 // l'ancien title.
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Convention fiscale France Espagne 2026 : guide complet | Iter Advisors",
+  title: "Convention fiscale France-Espagne 2026",
   description: "Double imposition, résidence fiscale, retraites, dividendes, plus-values : ce que prévoit la convention France Espagne et comment l'appliquer en 2026.",
   path: "/ressources/fiscalite/double-imposition-france-espagne",
   // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google

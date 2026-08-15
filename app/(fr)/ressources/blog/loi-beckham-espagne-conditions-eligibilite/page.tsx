@@ -5,7 +5,7 @@ import { Callout, ProseTable } from '@/components/blog';
 import { getCmsNavigation } from '@/lib/strapi';
 
 export const metadata: Metadata = {
-  title: "Loi Beckham en Espagne : conditions d'éligibilité du régime impatrié 2026 | Iter Advisors",
+  title: "Loi Beckham : conditions d'éligibilité 2026",
   description:
     "Qui peut bénéficier de la loi Beckham en Espagne ? Conditions, délais de demande, salariés et dirigeants : le point complet 2026.",
   alternates: {

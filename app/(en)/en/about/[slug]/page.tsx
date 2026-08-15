@@ -32,7 +32,11 @@ export async function generateMetadata({
   const fullName = `${member.firstName} ${member.lastName}`;
   return buildMetadata({
     locale: "en",
-    title: `${fullName} — ${member.role} | Iter Advisors`,
+    // SEO-REP §7 (2026-08-15) — le gabarit reprenait le rôle complet
+    // (« Associé fondateur - CFO & Investisseur »), ce qui poussait tous les
+    // titles de fiches équipe à 63-71 caractères. Le rôle reste dans le H1 et
+    // le corps ; le title garde le nom, qui est la requête réelle.
+    title: `${fullName} | Iter Advisors`,
     description: member.bio.slice(0, 160),
     path: `/en/about/${slug}`,
     localizedPaths: localizedPathsFor(slug),
