@@ -2765,13 +2765,13 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <tr><td>Gestion des temps</td><td>⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>Incluse dans le périmètre SIRH : temps, absences, congés, planning</td></tr>
 <tr><td>Portail collaborateur</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>Plateforme RH centralisée (absences, congés, planning, frais, onboarding)</td></tr>
 <tr><td>Intégration comptable</td><td>Pennylane (native)</td><td>Silae Expert</td><td>Qonto, Pennylane, Swile, Benefiz</td></tr>
-<tr><td>Prix</td><td>27-49 €/salarié/mois</td><td>60-90 €/salarié/mois</td><td>À partir de 25 €/mois, tout inclus (plan unique)</td></tr>
+<tr><td>Prix</td><td>109 €/mois pour 3 collaborateurs, soit ~36 €/collaborateur — le prix unitaire décroît avec l'effectif</td><td>60-90 €/salarié/mois</td><td>28 €/collaborateur/mois à partir de 5 salariés, plan unique (+ 50 €/salarié de mise en place)</td></tr>
 <tr><td>Implémentation</td><td>1-2 semaines</td><td>2-4 semaines</td><td>1-2 semaines, migration prise en charge</td></tr>
 <tr><td>Support</td><td>Téléphone + chat</td><td>Téléphone + email</td><td>Gestionnaire de paie dédié (chat et téléphone)</td></tr>
 <tr><td>&gt; 150 salariés</td><td>Ralentissements</td><td>✅ Parfait</td><td>Cœur de cible &lt; 150 salariés, recul à valider au-delà</td></tr>
 </tbody>
 </table>
-<p class="text-sm text-muted-foreground">Tarif, périmètre fonctionnel et intégrations malibou confirmés par l'éditeur en août 2026.</p>
+<p class="text-sm text-muted-foreground">Tarifs relevés le 14 août 2026 sur les pages tarifaires publiques des trois éditeurs. Les unités diffèrent : malibou facture au collaborateur, PayFit affiche un forfait pour un effectif donné dont le prix unitaire décroît avec la taille. La comparaison n'a de sens qu'à effectif identique et à une date donnée.</p>
 <h2 id="retour-payfit">Retour terrain — PayFit</h2>
 <p>Déployé chez une SaaS de 45 salariés (CCN SYNTEC, forfait jours). Implémentation en 5 jours. Taux d'erreur de paie : 0 en 18 mois. Satisfaction salariés (portail) : 4,3/5.</p>
 <h2 id="retour-silae">Retour terrain — Silae</h2>

@@ -309,7 +309,10 @@ const comparisonRows = [
     use: 'Paie déléguée avec gestionnaire dédié',
     size: 'PME sans RH senior',
     effort: 'Modéré',
-    price: 'À partir de 25 € / mois, tout inclus',
+    // Tarif relevé le 14/08/2026 sur malibou.com/tarif. L'unité est un prix
+    // par collaborateur, pas un forfait : la version publiée le 03/08
+    // (« 25 € / mois, tout inclus ») était erronée.
+    price: '28 € / collaborateur / mois (+ 50 € / salarié de mise en place)',
     verdict:
       "Option intéressante pour externaliser davantage la production de la paie, avec un recul produit encore à construire.",
   },
@@ -365,7 +368,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
       categoryLabel: 'Paie & RH',
       badge: 'Nouveau sur notre radar',
       idealFor: 'Startups et PME de 5 à 80 salariés sans RH senior en interne.',
-      why: 'SIRH complet (paie, absences, planning, frais, temps, entretiens, onboarding) couplé à un gestionnaire de paie dédié qui produit les bulletins sur la technologie Silae, en plan unique tout inclus.',
+      why: 'SIRH complet (paie, absences, planning, frais, temps, entretiens, onboarding) couplé à un gestionnaire de paie dédié qui produit les bulletins sur la technologie Silae, en plan unique.',
       watchOut:
         'Solution récente : recul produit et parc installé encore inférieurs aux acteurs historiques.',
     },
