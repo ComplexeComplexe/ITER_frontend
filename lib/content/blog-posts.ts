@@ -582,7 +582,7 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
 - Pas de coût de matériel ou d'espace de bureau dédié
 - Flexibilité totale : ajustement du volume à la hausse ou à la baisse sans contrainte</p>
 <p><strong>Économie réalisée par rapport à un DAF salarié :</strong>
-Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe entre 42 000 et 60 000 euros, contre 130 000 à 250 000 euros pour un DAF salarié à temps plein. L'économie est de l'ordre de 50 à 75%.</p>
+Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe entre 42 000 et 60 000 euros, contre 100 000 à 213 000 euros de coût employeur chargé pour un DAF salarié à temps plein. L'économie est de l'ordre de 30 à 60 %.</p>
 <h3 id="delai-de-demarrage">Délai de démarrage</h3>
 <p>Contrairement au recrutement d'un salarié, faire appel à un DAF externalisé permet un démarrage rapide :</p>
 <ul>
@@ -1267,7 +1267,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <h3 id="le-calcul-economique">Le calcul économique</h3>
 <p>Le coût de l'accompagnement Iter Advisors pour le duo DAF + DRH s'élevait à environ 6 000 euros par mois, soit 72 000 euros par an.</p>
 <p>L'alternative - recruter un DAF salarié (120 000 euros en coût complet) et un DRH salarié (80 000 euros en coût complet) - aurait coûté 200 000 euros par an. Sans compter le temps de recrutement (trois à six mois pour chaque poste), le risque d'erreur de casting, et l'absence de flexibilité.</p>
-<p><strong>L'économie réalisée : plus de 60 %</strong>, avec une qualité d'accompagnement supérieure grâce à la coordination native entre les deux fonctions.</p>
+<p><strong>L'économie réalisée : 30 à 60 %</strong>, avec une qualité d'accompagnement supérieure grâce à la coordination native entre les deux fonctions.</p>
 <hr>
 <h2 id="pour-qui-cette-approche-est-elle-faite">Pour qui cette approche est-elle faite ?</h2>
 <p>Le modèle du <strong>DAF DRH externalisé</strong> combiné ne convient pas à toutes les entreprises. Il est particulièrement pertinent dans quatre situations.</p>
@@ -1833,7 +1833,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p><strong>Q : Quel est le coût d'un DAF externalisé en 2026 ?</strong><br>R : De 2 000 € à 4 000 € par mois pour une mission de 2 à 3 jours par semaine. Temps plein : 5 000 € à 8 000 € par mois.</p>
 <p><strong>Q : Combien de temps faut-il pour mettre en place un DAF externalisé ?</strong><br>R : 1 à 2 semaines en moyenne. Le diagnostic initial est réalisé la première semaine, le déploiement des outils la deuxième.</p>
 <p><strong>Q : Le DAF externalisé peut-il accompagner une levée de fonds ?</strong><br>R : Oui, c'est l'une des missions les plus fréquentes. Le DAF prépare le modèle financier, la data room, et accompagne les fondateurs dans les rendez-vous VC.</p>
-<p><strong>Q : Quelle est la durée minimale d'engagement ?</strong><br>R : La plupart des missions démarrent avec un engagement de 3 à 6 mois, renouvelable.</p>
+<p><strong>Q : Quelle est la durée minimale d'engagement ?</strong><br>R : Aucune. La mission est résiliable avec un préavis de 30 jours.</p>
 <p>→ <a href="/contact"><strong>Prendre rendez-vous avec un DAF</strong></a></p>`,
       content: [],
     },
@@ -2998,7 +2998,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <h3>Avantage 2 — Accès à une expertise diversifiée</h3>
 <p>Un expert-comptable traite les comptes de 30 à 80 entreprises par an. Cette exposition multi-sectorielle lui permet d'anticiper les problématiques spécifiques à chaque activité (CIR pour les entreprises de R&amp;D, TVA intracommunautaire pour l'e-commerce, subventions pour les startups innovantes).</p>
 <h3>Avantage 3 — Continuité de service contractuelle</h3>
-<p>En cas de départ d'un comptable salarié, l'entreprise perd 3 à 6 mois de productivité (préavis + recrutement + formation). Un prestataire externalisé assure la continuité de service contractuelle, avec un remplacement en 48 à 72 heures.</p>
+<p>En cas de départ d'un comptable salarié, l'entreprise perd 3 à 6 mois de productivité (préavis + recrutement + formation). Un prestataire externalisé assure la continuité de service contractuelle, avec un relais sous 7 à 10 jours.</p>
 <h3>Avantage 4 — Outils modernes et automatisation</h3>
 <p>Les plateformes comptables cloud (<a href="/ressources/outils/pennylane">Pennylane</a>, Sage, Cegid Loop) permettent :</p>
 <ul>
@@ -3312,7 +3312,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     "daf-externalise-guide": {
       meta: {
         title: "Guide DAF externalisé | Iter Advisors",
-        description: "Guide complet du DAF externalisé. Missions, tarifs (à partir de 2 000 €/mois), profils, secteurs. +85 entreprises aidées, +100 M€ levés. Devis gratuit.",
+        description: "Guide complet du DAF externalisé. Missions, tarifs (à partir de 3 000 € HT/mois), profils, secteurs. +85 entreprises aidées, +100 M€ levés. Devis gratuit.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",

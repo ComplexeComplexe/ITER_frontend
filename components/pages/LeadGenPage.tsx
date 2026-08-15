@@ -265,11 +265,13 @@ const content: Record<
       items: [
         {
           q: "Combien coûte un DAF externalisé ?",
-          a: "Le tarif dépend de la fréquence d'intervention (1 à 4 jours/mois) et de la complexité de votre situation. Un premier diagnostic gratuit permet de définir précisément vos besoins et le budget associé. En moyenne, un DAF externalisé coûte 3 à 5 fois moins qu'un DAF à temps plein.",
+          a: "Une mission démarre à 3 000 € HT par mois et va jusqu'à 8 000 € selon la formule. Le retainer couvre un scope défini au cadrage, pas un nombre d'heures. Un premier diagnostic gratuit permet de préciser le périmètre et le budget. Face au coût employeur d'un directeur financier salarié, l'économie va de 30 à 60 %.",
         },
         {
           q: "Quel est l'engagement minimum ?",
-          a: "Nous proposons des engagements flexibles à partir de 3 mois, renouvelables. Pas de contrat long terme imposé. L'objectif est de vous apporter de la valeur rapidement et de construire une relation de confiance dans la durée.",
+          // Arbitrage 10/08/2026 — aucune durée minimale sur aucune offre. La
+          // mention « à partir de 3 mois » est retirée du site et des supports.
+          a: "Aucune durée minimale. La mission est résiliable avec un préavis de 30 jours. L'objectif est de vous apporter de la valeur rapidement et de construire une relation de confiance dans la durée.",
         },
         {
           q: "Comment se passe l'intégration ?",

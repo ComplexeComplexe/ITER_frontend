@@ -40,7 +40,7 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Un DAF à temps partagé représente 20-40% du coût d'un DAF en CDI : comptez 2 500 à 4 500 € HT/mois pour 2 jours, contre 80 000-150 000 € brut/an pour un salarié.",
+          "Un DAF à temps partagé représente 30 à 60 % d'économie face au coût employeur d'un salarié : de 3 000 à 8 000 € HT/mois selon la formule, contre 100 000 à 213 000 € par an charges comprises.",
       },
     },
     {
@@ -58,7 +58,7 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Nous démarrons une mission en 48-72 heures après signature. Le diagnostic initial prend 4-6 semaines.",
+          "Du premier échange au démarrage effectif, comptez 8 à 15 jours. Le diagnostic initial prend ensuite 4 à 6 semaines.",
       },
     },
   ],

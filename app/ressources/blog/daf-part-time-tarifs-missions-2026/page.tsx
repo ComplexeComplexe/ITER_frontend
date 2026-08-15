@@ -299,7 +299,7 @@ export default function DafPartTimeTarifsMissions2026Page() {
       </ProseTable>
 
       <p>
-        L'économie de 30 à 50 % s'explique par deux facteurs : l'absence de charges sociales patronales et la facturation proportionnelle au temps réellement nécessaire, sans coût fixe les semaines de faible activité.
+        L'économie de 30 à 60 % s'explique par deux facteurs : l'absence de charges sociales patronales et la facturation proportionnelle au temps réellement nécessaire, sans coût fixe les semaines de faible activité.
       </p>
 
       <Callout type="info" title="Ce que le comparatif ne montre pas">
@@ -329,7 +329,7 @@ export default function DafPartTimeTarifsMissions2026Page() {
       <p>
         Pour explorer comment notre offre se structure concrètement, consultez{' '}
         <Link href="/daf-externalise">notre service de DAF externalisé</Link> — trois formules
-        disponibles dès 2 000 € HT/mois avec un DAF senior opérationnel sous deux semaines.
+        disponibles dès 3 000 € HT/mois avec un DAF senior opérationnel sous deux semaines.
         Vous pouvez également découvrir en détail{' '}
         <Link href="/daf-externalise/temps-partage">notre offre DAF à temps partagé</Link>{' '}
         et les modalités d'engagement.

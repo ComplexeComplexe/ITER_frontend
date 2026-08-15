@@ -218,7 +218,7 @@ export default function DafExternaliseVsSalariePage() {
       <ul>
         <li><strong>Coût maîtrisé et flexible</strong> : Vous payez à la journée/mois. Si la charge augmente → +1 jour. Si elle baisse → -1 jour. Pour le détail des tarifs par rythme, voir notre guide des <Link href="/ressources/blog/daf-part-time-tarifs-missions-2026">tarifs d'un DAF à temps partagé</Link>.</li>
         <li><strong>Séniorité garantie</strong> : 15-20 ans d'expérience, certifications, réseau</li>
-        <li><strong>Zéro risque recrutement/départ</strong> : Si votre DAF part, il est remplacé par le cabinet en 48h</li>
+        <li><strong>Continuité assurée</strong> : si votre DAF est indisponible, le cabinet prend le relais avec un autre profil sous 7 à 10 jours (engagement contractuel)</li>
         <li><strong>Expertise multi-métier</strong> : Voit 100+ entreprises/an, benchmarks, best practices</li>
         <li><strong>Rapidité d'implémentation</strong> : Opérationnel en 2-4 semaines</li>
         <li><strong>Flexibilité croissance</strong> : Ajustez les jours selon levée, audit, acquisition</li>

@@ -539,7 +539,7 @@ export default function DafExternalisVsDafInterimairePage() {
             >
               prenez rendez-vous directement
             </Link>{' '}
-            pour cadrer votre besoin et obtenir une proposition sous 48 h.
+            pour cadrer votre besoin et recevoir une proposition sous 5 jours ouvrés.
           </p>
         </div>
       </BlogPostPageRefonte>

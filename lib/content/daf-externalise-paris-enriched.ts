@@ -22,7 +22,7 @@ export const dafExternalisePariEnrichedContent = {
       avatarUrl: "/images/team/sebastien-doat.webp",
       updateDate: "2026-05-05",
     },
-    tldr: "Iter Advisors propose des DAF externalisés à Paris dès 2 000 €/mois, avec une expertise spécialisée startups Station F et levées de fonds. Disposer d'une direction financière senior sans recruter un salarié : c'est l'alternative pertinente pour les PME et startups en croissance.",
+    tldr: "Iter Advisors propose des DAF externalisés à Paris dès 3 000 € HT/mois, avec une expertise spécialisée startups Station F et levées de fonds. Disposer d'une direction financière senior sans recruter un salarié : c'est l'alternative pertinente pour les PME et startups en croissance.",
     // T2 (2026-06-30) — H1 recentré sur "Cabinet DAF Paris" pour matcher
     // le Title et éliminer la cannibalisation avec le pilier national.
     h1: "Cabinet DAF Paris : direction financière à temps partagé en Ile-de-France",
@@ -57,7 +57,7 @@ export const dafExternalisePariEnrichedContent = {
       "Partech - European Tech Report 2025",
     ],
     intro: [
-      "Paris et l'Ile-de-France concentrent la majorité des startups et PME innovantes françaises. Station F, les incubateurs du 9e arrondissement, les fonds d'investissement de la place parisienne : l'écosystème est dense et compétitif. Dans ce contexte, recruter un DAF senior à temps plein coûte entre 120 000 et 180 000 euros brut annuel, sans compter les charges et les délais de recrutement.",
+      "Paris et l'Ile-de-France concentrent la majorité des startups et PME innovantes françaises. Station F, les incubateurs du 9e arrondissement, les fonds d'investissement de la place parisienne : l'écosystème est dense et compétitif. Dans ce contexte, recruter un directeur financier senior à temps plein représente 100 000 à 213 000 euros brut annuel, sans compter les charges et les délais de recrutement.",
       "Le DAF externalisé à Paris offre une alternative concrète. Il donne accès à une expertise de direction financière de niveau senior, avec une flexibilité adaptée à la croissance de l'entreprise. Pour une startup qui prépare une levée de fonds auprès de Partech ou Breega, ou une PME qui veut structurer son pilotage avant une expansion, disposer d'un DAF à temps partagé est souvent le choix le plus pertinent.",
       "Chez Iter Advisors, nous accompagnons les entreprises parisiennes avec des CFOs expérimentés qui interviennent sur site et en remote dans toute l'Ile-de-France. Notre connaissance de l'écosystème francilien est un atout concret pour nos clients.",
     ],
@@ -77,8 +77,8 @@ export const dafExternalisePariEnrichedContent = {
         comparison: {
           internal: {
             title: "DAF interne à temps plein",
-            price: "120 000 € - 180 000 €",
-            subtitle: "Salaire brut annuel + charges + avantages",
+            price: "100 000 € - 213 000 €",
+            subtitle: "Coût employeur annuel, charges et package compris",
             cons: [
               "Recrutement long (3 à 6 mois)",
               "Coût fixe mensuel élevé",
@@ -290,7 +290,11 @@ export const dafExternalisePariEnrichedContent = {
           {
             question: "Combien coûte un DAF externalisé à Paris ?",
             answer:
-              "Les formules Iter Advisors démarrent à 2 000 euros par mois. Le coût total dépend du nombre de jours d'intervention, de la complexité de l'activité et du périmètre couvert. Pour comparaison, un DAF senior à Paris coûte entre 120 000 et 180 000 euros brut annuel, charges comprises. L'externalisation représente une économie de 60 à 85 %.",
+              // Arbitrage 10/08/2026 — trois corrections : prix d'entrée 2 000 → 3 000 €,
+              // « 120 000 à 180 000 € brut annuel, charges comprises » (formulation
+              // contradictoire, et cinquième fourchette du site) → coût employeur
+              // unique, et économie 60-85 % → fourchette unique 30-60 %.
+              "Les formules Iter Advisors démarrent à 3 000 euros HT par mois et vont jusqu'à 8 000 euros selon la formule. Le retainer couvre un scope défini au cadrage, pas un nombre d'heures. Pour comparaison, un directeur financier salarié de séniorité équivalente représente 100 000 à 213 000 euros de coût employeur annuel, charges comprises : l'externalisation représente 30 à 60 % d'économie.",
           },
           {
             question: "Quelle différence entre un DAF externalisé et un consultant financier ponctuel ?",

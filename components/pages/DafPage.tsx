@@ -44,7 +44,7 @@ const HOW_TO_COLLAB: Record<
       },
       {
         name: "Pilotage et reporting récurrents",
-        text: "Le DAF assure un reporting mensuel, anime les comités stratégiques et adapte le périmètre selon l'évolution de votre activité — sans engagement de durée.",
+        text: "Le DAF assure un reporting mensuel, anime les comités stratégiques et adapte le périmètre selon l'évolution de votre activité — sans durée minimale, avec un préavis de 30 jours.",
       },
     ],
   },

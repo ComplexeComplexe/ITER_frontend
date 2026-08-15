@@ -18,8 +18,12 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/daf-externalise/transition",
     // A1/SEO-23 (W31c 2026-08-02) — cible ES renommée transition → transicion.
     localizedPaths: { fr: "/daf-externalise/transition", en: "/en/fractional-cfo/transition", es: "/es/externalizacion-daf/transicion" },
-    fallbackTitle: "DAF de transition 48 h pour PME et ETI | Iter Advisors",
-    fallbackDescription: "DAF de transition (TJM 800-1 500 € HT) opérationnel en 48 à 72 h pour vacance de poste, crise de trésorerie, restructuration ou levée de fonds. PME, ETI, scale-ups.",
+    // Arbitrage 10/08/2026 — la promesse « 48 à 72 h » est remplacée par
+    // « 7 à 10 jours » sur le DAF de transition urgent. Règle actée : aucune
+    // promesse de démarrage sous 7 jours n'est publiée, et le mot « garanti »
+    // n'accompagne aucun délai. Voir DELAIS dans lib/content/facts.ts.
+    fallbackTitle: "DAF de transition sous 10 jours pour PME et ETI | Iter Advisors",
+    fallbackDescription: "DAF de transition opérationnel en 7 à 10 jours pour vacance de poste, crise de trésorerie, restructuration ou levée de fonds. 8 000 à 12 000 € HT/mois. PME, ETI, scale-ups.",
   });
 
   // Override the OG image with a dedicated illustration (the same SVG used
@@ -34,7 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: "https://www.iteradvisors.com/images/illustrations/daf-transition.svg",
           width: 1200,
           height: 630,
-          alt: "DAF de transition Iter Advisors — intervention en 48 h",
+          alt: "DAF de transition Iter Advisors — intervention sous 7 à 10 jours",
         },
       ],
     },
@@ -89,7 +93,7 @@ export default async function Page() {
     "@id": `${PAGE_URL}#service`,
     serviceType: "DAF de transition",
     name: "DAF de Transition pour PME et ETI",
-    description: "DAF de transition opérationnel sous 48 h pour PME, ETI et scale-ups : vacance de poste, crise de trésorerie, restructuration, levée de fonds, M&A.",
+    description: "DAF de transition opérationnel sous 7 à 10 jours pour PME, ETI et scale-ups : vacance de poste, crise de trésorerie, restructuration, levée de fonds, M&A.",
     provider: { "@id": "https://www.iteradvisors.com/#organization" },
     areaServed: [
       { "@type": "Country", name: "France" },
@@ -128,8 +132,8 @@ export default async function Page() {
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${PAGE_URL}#article`,
-    headline: "DAF de transition : intervention en 48 h pour PME et ETI",
-    description: "Guide complet sur le DAF de transition : missions, profil, tarifs (TJM 800-1500 € HT), délais de démarrage, comparatif avec DAF temps partagé / intérim / recrutement.",
+    headline: "DAF de transition : intervention sous 7 à 10 jours pour PME et ETI",
+    description: "Guide complet sur le DAF de transition : missions, profil, tarifs (8 000 à 12 000 € HT/mois), délais de démarrage, comparatif avec DAF temps partagé / intérim / recrutement.",
     author: {
       "@type": "Person",
       "@id": "https://www.iteradvisors.com/#sebastien-doat",

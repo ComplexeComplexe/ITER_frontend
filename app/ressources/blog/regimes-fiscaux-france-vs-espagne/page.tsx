@@ -551,7 +551,7 @@ export default async function Page() {
               >
                 DAF externalisé
               </a>
-              {" "}— direction financière complète à partir de 2 000 €/mois.
+              {" "}— direction financière complète à partir de 3 000 € HT/mois.
             </span>
           </li>
           <li className="flex gap-2">
@@ -579,7 +579,7 @@ export default async function Page() {
               >
                 DAF de transition
               </a>
-              {" "}est opérationnel sous 48-72 h.
+              {" "}est opérationnel sous 7 à 10 jours.
             </span>
           </li>
         </ul>
