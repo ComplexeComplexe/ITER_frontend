@@ -6,7 +6,7 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "DAF externalisé ou salarié : le vrai comparatif chiffré 2026 | Iter Advisors",
+  title: "DAF externalisé ou salarié : comparatif 2026",
   description: "DAF externalisé vs DAF salarié : comparaison chiffrée des coûts, des risques et des avantages. Quel modèle choisir selon votre stade de croissance ? Guide 2026.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/daf-externalise-vs-daf-salarie",

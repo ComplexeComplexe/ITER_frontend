@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
       en: "/fractional-cfo/role",
       es: "/externalizacion-daf/funciones",
     },
-    fallbackTitle: "Director Financiero: funciones, misiones y perfil 2026 | Iter Advisors",
+    fallbackTitle: "Director financiero: funciones y perfil 2026",
     fallbackDescription: "Ficha de puesto del Director Administrativo y Financiero (DAF): funciones, misiones, competencias clave, salario y trayectoria profesional 2026.",
   });
 }

@@ -4,7 +4,7 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "Loi Beckham : combien d'impôt économisez-vous vraiment ? | Iter Advisors",
+  title: "Loi Beckham : économie d'impôt et simulation",
   description:
     "Taux fixe de 24 % vs barème progressif jusqu'à 47 % : simulation chiffrée de l'économie d'impôt avec le régime Beckham, par niveau de salaire.",
   alternates: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Loi Beckham : combien d'impôt économisez-vous vraiment ? | Iter Advisors",
+    title: "Loi Beckham : économie d'impôt et simulation",
     description:
       "Taux fixe de 24 % vs barème progressif jusqu'à 47 % : simulation chiffrée de l'économie d'impôt avec le régime Beckham, par niveau de salaire.",
     type: "article",

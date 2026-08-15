@@ -6,13 +6,13 @@ import { Callout, ProseTable } from '@/components/blog';
 import MidArticleSoftCTA from '@/components/blog/MidArticleSoftCTA';
 
 export const metadata: Metadata = {
-  title: "CFO externo para pymes: qué es y cuánto cuesta en 2026 | Iter Advisors",
+  title: "CFO externo para pymes: precio y servicios 2026",
   description: "Qué hace un CFO externo, cuándo lo necesita una pyme y precios reales en España. Guía completa 2026 con ejemplos.",
   alternates: {
     canonical: "https://www.iteradvisors.com/es/recursos/blog/cfo-externo-pymes-precio-2026",
   },
   openGraph: {
-    title: "CFO externo para pymes: qué es y cuánto cuesta en 2026 | Iter Advisors",
+    title: "CFO externo para pymes: precio y servicios 2026",
     description: "Qué hace un CFO externo, cuándo lo necesita una pyme y precios reales en España. Guía completa 2026 con ejemplos.",
     type: "article",
     images: [

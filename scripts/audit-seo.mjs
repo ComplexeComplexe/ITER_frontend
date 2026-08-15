@@ -60,7 +60,7 @@ const HORS_ARBITRAGE = [
   { path: /^\/(drh-externalise|services\/comptabilite-externalisation|services\/controle-de-gestion-externalise)/, sujet: /coût DAF salarié/ },
   { path: /^\/(es\/externalizacion-rrhh|en\/hr-outsourcing)/, sujet: /coût DAF salarié/ },
   // Délais de réponse du support (SLA), pas des promesses de démarrage.
-  { path: /^\/(services\/comptabilite-externalisation|ressources\/blog\/cout-externalisation-comptable-2026)/, sujet: /délai de démarrage/ },
+  { path: /^\/(services\/comptabilite-externalisation|es\/services\/externalizar-contabilidad|ressources\/blog\/cout-externalisation-comptable-2026)/, sujet: /délai de démarrage/ },
 ];
 
 const strip = (html) =>

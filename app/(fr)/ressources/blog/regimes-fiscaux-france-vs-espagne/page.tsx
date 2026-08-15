@@ -9,7 +9,7 @@ import { Callout, StatGrid, ProseTable, InlineCTA } from "@/components/blog";
 // le trafic sont exactement "fiscalité espagne vs france", "taux
 // imposition espagne vs france", "impôt société espagne vs france".
 export const metadata: Metadata = {
-  title: "Fiscalité France vs Espagne 2026 : le comparatif complet | Iter Advisors",
+  title: "Fiscalité France-Espagne : comparatif 2026",
   description:
     "Impôt sur le revenu, IS, TVA, cotisations sociales : toutes les différences fiscales entre la France et l'Espagne, avec les chiffres et seuils 2026.",
   alternates: {

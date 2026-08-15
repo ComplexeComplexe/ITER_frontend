@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
       // A1 (W31c 2026-08-02) — cible ES renommée transition → transicion.
       es: "/externalizacion-daf/transicion",
     },
-    fallbackTitle: "Interim CFO: operational within 10 days for PE-backed SMEs | Iter Advisors",
+    fallbackTitle: "Interim CFO for PE-Backed SMEs in 10 Days",
     fallbackDescription: "Interim CFO ready within 7 to 10 days for SME/mid-cap CFO gaps, cash crises, restructurings, fundraises or M&A. €8,000-12,000/month. 85+ clients, 5/5 Trustfolio.",
   });
 }

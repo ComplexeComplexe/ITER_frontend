@@ -388,7 +388,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
   toulouse: {
     fr: {
       meta: {
-        title: "Directeur Financier Externalisé à Toulouse — CFO Occitanie | Iter Advisors",
+        title: "DAF externalisé à Toulouse | Iter Advisors",
         description:
           "Iter Advisors, cabinet de DAF externalisé à Toulouse. Direction financière à temps partagé pour PME et startups en Occitanie. +85 entreprises accompagnées.",
       },

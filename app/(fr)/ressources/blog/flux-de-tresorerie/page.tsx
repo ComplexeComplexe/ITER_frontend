@@ -6,7 +6,7 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "Flux de trésorerie : calcul, exemple et modèle gratuit 2026 | Iter Advisors",
+  title: "Flux de trésorerie : calcul, exemple et modèle",
   description: "Comment calculer les flux de trésorerie ? Formule, exemple chiffré et modèle Excel gratuit. Le guide complet cash flow opérationnel, investissement et financement.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/flux-de-tresorerie",

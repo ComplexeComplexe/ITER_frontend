@@ -6,13 +6,13 @@ import { Callout, ProseTable } from '@/components/blog';
 import MidArticleSoftCTA from '@/components/blog/MidArticleSoftCTA';
 
 export const metadata: Metadata = {
-  title: "Fractional CFO: What It Costs and What You Get in 2026 | Iter Advisors",
+  title: "Fractional CFO Cost and Services in 2026",
   description: "Fractional CFO pricing, scope and ROI for startups and SMEs. When to hire one, what to expect, real 2026 rate ranges.",
   alternates: {
     canonical: "https://www.iteradvisors.com/en/ressources/blog/fractional-cfo-cost-services-2026",
   },
   openGraph: {
-    title: "Fractional CFO: What It Costs and What You Get in 2026 | Iter Advisors",
+    title: "Fractional CFO Cost and Services in 2026",
     description: "Fractional CFO pricing, scope and ROI for startups and SMEs. When to hire one, what to expect, real 2026 rate ranges.",
     type: "article",
     images: [
