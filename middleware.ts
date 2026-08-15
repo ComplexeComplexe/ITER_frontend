@@ -383,12 +383,18 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  /* ── 7. Expose pathname to server components for SSR hreflang ────── */
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-pathname", pathname);
-  return NextResponse.next({
-    request: { headers: requestHeaders },
-  });
+  /* ── 7. Rien à injecter ────────────────────────────────────────────
+     Le header `x-pathname` était lu par le layout racine pour poser
+     `<html lang>`. C'est justement cette lecture qui forçait le rendu
+     dynamique de tout le site : un appel à `headers()` dans le layout racine
+     rend dynamiques les 209 routes qui en dépendent, et Next.js sert alors ses
+     réponses en `no-store`.
+
+     Depuis le 15/08, la locale est connue statiquement — un root layout par
+     groupe (`app/(fr)`, `app/(en)`, `app/(es)`). Plus personne ne lit ce
+     header, et le supprimer évite qu'un futur composant s'y raccroche et
+     redynamise le site sans que ça se voie. */
+  return NextResponse.next();
 }
 
 export const config = {

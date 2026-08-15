@@ -1,13 +1,31 @@
-import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
-import "./globals.css";
-import CookieConsent from "../components/CookieConsent";
-// INDEX-01: HrefLangInjector removed. Hreflang is now emitted only
-// server-side via buildStrapiMetadata / buildStrapiCollectionMetadata
-// in lib/metadata.ts. Having both produced 8 conflicting hreflang
-// tags per page (4 SSR + 4 CSR), so Google ignored the entire set
-// and treated the FR/EN/ES variants as duplicate content.
+import "@/app/globals.css";
+import CookieConsent from "@/components/CookieConsent";
+import type { Locale } from "@/lib/i18n";
+
+/**
+ * Coquille HTML du site — `<html>`, `<head>`, `<body>`.
+ *
+ * SEO-REP §3.2 (2026-08-15) — extraite de l'ancien `app/layout.tsx`.
+ *
+ * Ce layout unique dérivait la locale d'un appel à `headers()`, pour poser le
+ * bon `lang` sur les pages EN et ES. Or `headers()` bascule la route en rendu
+ * dynamique, et comme il s'agissait du layout racine, TOUTES les routes du site
+ * l'étaient : 203 sur 209 au dernier build. Next.js sert alors ses réponses en
+ * `private, no-cache, no-store` et le CDN Vercel ne peut rien mettre en cache —
+ * chaque visite, chaque passage de crawler repartait à l'origine.
+ *
+ * La locale est désormais connue statiquement : il y a un root layout par
+ * groupe de routes — `app/(fr)`, `app/(en)`, `app/(es)` — et chacun passe sa
+ * locale en prop. Plus d'appel à `headers()`, donc plus de rendu dynamique
+ * imposé, donc un HTML réellement cacheable.
+ *
+ * Pourquoi trois root layouts et pas un layout imbriqué : seul un root layout
+ * peut rendre `<html>`. Un `app/en/layout.tsx` imbriqué sous un layout racine
+ * ne peut pas changer `lang` — une tentative précédente avait produit des
+ * documents imbriqués sur les 69 pages EN. Les route groups (parenthèses) ne
+ * modifient pas les URL : `/en/about` reste `/en/about`.
+ */
 
 const dmSans = DM_Sans({
   subsets: ["latin", "latin-ext"],
@@ -21,46 +39,15 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Iter Advisors",
-  description: "DAF externalisé & DAF à temps partagé",
-  metadataBase: new URL("https://www.iteradvisors.com"),
-  openGraph: {
-    type: "website",
-    siteName: "Iter Advisors",
-    locale: "fr_FR",
-    images: [
-      {
-        url: "/images/og-default.webp",
-        width: 1200,
-        height: 630,
-        alt: "Iter Advisors - DAF externalisé & CFO à temps partagé",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: ["/images/og-default.webp"],
-  },
-};
-
-export default async function RootLayout({
+export default function DocumentShell({
+  locale,
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  // SEO-03: derive locale from the x-pathname header injected by middleware.
-  // This ensures the <html lang> attribute is correct for every locale on SSR,
-  // fixing the Screaming Frog / GSC signal that all EN and ES pages sent lang="fr".
-  const headersList = await headers();
-  const pathname = headersList.get("x-pathname") ?? "/";
-  const lang =
-    pathname.startsWith("/en") ? "en" :
-    pathname.startsWith("/es") ? "es" : "fr";
-  const locale = lang as "fr" | "en" | "es";
-
+}: Readonly<{ locale: Locale; children: React.ReactNode }>) {
   return (
-    <html lang={lang} className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
+    <html
+      lang={locale}
+      className={`${dmSans.variable} ${spaceGrotesk.variable}`}
+    >
       <head>
         {/* DNS prefetch & preconnect for 3rd-party origins */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -228,7 +215,7 @@ gtag('consent','default',{
             src="https://www.googletagmanager.com/ns.html?id=GTM-KZZ9L5VZ"
             height="0"
             width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
+            style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
@@ -238,3 +225,15 @@ gtag('consent','default',{
     </html>
   );
 }
+
+/**
+ * Métadonnées communes aux trois root layouts.
+ *
+ * `openGraph.locale` était figé à `fr_FR` pour tout le site, y compris les 69
+ * pages EN et les pages ES. Chaque groupe passe désormais la sienne.
+ */
+export const OG_LOCALE: Record<Locale, string> = {
+  fr: "fr_FR",
+  en: "en_GB",
+  es: "es_ES",
+};
