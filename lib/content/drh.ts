@@ -112,7 +112,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       items: [
         {
           title: "Réduction des coûts (jusqu'à -60 %)",
-          text: "Un DRH salarié à plein temps coûte entre 65 000 et 120 000 € brut annuel, soit 80 000 à 150 000 € chargé. Un DRH externalisé Iter Advisors démarre à 2 500 €/mois pour 2 jours — une réduction de 50 à 70 %.",
+          text: "Un DRH salarié à plein temps coûte entre 65 000 et 120 000 € brut annuel, soit 80 000 à 150 000 € chargé. Un DRH externalisé Iter Advisors démarre à 2 500 €/mois pour 2 jours — une économie de 30 à 60 % face au coût employeur d'un salarié.",
         },
         {
           title: "Flexibilité sans engagement",
@@ -212,7 +212,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       footnote:
         "Toutes nos formules incluent : accès aux benchmarks de rémunération, outils SIRH, réseau de cabinets de recrutement partenaires, et un senior avec 8+ ans d'expérience RH.",
       comparison:
-        "Comparaison : un DRH salarié à plein temps coûte 80 000 à 150 000 € chargé par an, soit 3 à 5 fois plus qu'un DRH externalisé selon la formule.",
+        "Comparaison : un DRH salarié à plein temps coûte 80 000 à 150 000 € chargé par an, soit 30 à 60 % de plus qu'un DRH externalisé selon la formule.",
       engagement: "Engagement de 6 mois minimum, résiliable avec 2 mois de préavis.",
       // R5-link-6: [[DAF externalisé|/daf-externalise]]
       closingText:

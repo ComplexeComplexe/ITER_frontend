@@ -19,6 +19,11 @@ export interface FooterContent {
   copyright: string;
   trustfolio: string;
   legalLinks: { text: string; href: string }[];
+  /** SEO-REP §8 (2026-08-15) — bloc éditorial du footer.
+   *  Le glossaire n'était atteignable que depuis le menu Ressources ; ses
+   *  neuf fiches étaient signalées orphelines par le crawl. Le footer lui
+   *  donne un point d'entrée présent sur toutes les pages. */
+  editorialLinks: { text: string; href: string }[];
   locations: FooterLocation[];
 }
 
@@ -168,6 +173,11 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Politique de confidentialité", href: "/politique-de-confidentialite" },
       { text: "Politique de cookies", href: "/politique-cookies" },
     ],
+    editorialLinks: [
+      { text: "Glossaire financier", href: "/ressources/glossaire" },
+      { text: "Fiche métier DAF", href: "/daf-externalise/metier" },
+      { text: "Outils finance", href: "/ressources/outils" },
+    ],
     locations: [
       { city: "Barcelone", country: "Espagne", href: "/daf-externalise-barcelone" },
       { city: "Paris", country: "France", href: "/daf-externalise-paris" },
@@ -184,6 +194,11 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Privacy policy", href: "/en/privacy-policy" },
       { text: "Cookie policy", href: "/en/cookie-policy" },
     ],
+    editorialLinks: [
+      { text: "Finance glossary", href: "/en/ressources/glossaire" },
+      { text: "CFO role", href: "/en/fractional-cfo/role" },
+      { text: "Finance tools", href: "/en/ressources/tools" },
+    ],
     locations: [
       { city: "Barcelona", country: "Spain", href: "/en/outsourced-cfo-barcelona" },
       { city: "Paris", country: "France", href: "/en/outsourced-cfo-paris" },
@@ -199,6 +214,11 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Información jurídica", href: "/es/aviso-legal" },
       { text: "Política de privacidad", href: "/es/politica-de-privacidad" },
       { text: "Política de cookies", href: "/es/politica-cookies" },
+    ],
+    editorialLinks: [
+      { text: "Glosario financiero", href: "/es/recursos/glosario" },
+      { text: "Funciones del CFO", href: "/es/externalizacion-daf/funciones" },
+      { text: "Herramientas financieras", href: "/es/recursos/herramientas" },
     ],
     locations: [
       { city: "Barcelona", country: "España", href: "/es/cfo-externalizado-barcelona" },

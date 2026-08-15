@@ -204,7 +204,22 @@ export default function Footer({ locale }: { locale: Locale }) {
                 );
               })}
             </div>
+            {/* SEO-REP §8 (2026-08-15) — bloc éditorial : le glossaire et la
+                fiche métier n'étaient atteignables que depuis le menu
+                Ressources, ce qui laissait leurs fiches orphelines au crawl. */}
             <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
+              <p className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-2">
+                {locale === "fr" ? "Ressources" : locale === "en" ? "Resources" : "Recursos"}
+              </p>
+              <ul className="space-y-1 mb-4">
+                {content.editorialLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-white/40 text-xs hover:text-white/60 transition-colors">
+                      {link.text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
               <p className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-2">
                 {locale === "fr" ? "Légal" : locale === "en" ? "Legal" : "Legal"}
               </p>

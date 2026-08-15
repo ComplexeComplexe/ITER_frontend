@@ -494,6 +494,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // SEO-REP §6.2 (2026-08-15) — page recrutement Fractional CFO, distincte de
   // /fractional-cfo-startups (commerciale) et absente du sitemap jusqu'ici.
   entries.push({ url: `${BASE}/carrieres/fractional-cfo`, lastModified: D.jobs });
+  // Offres d'emploi confirmées actives le 15/08/2026. À retirer (410) dès
+  // qu'une offre est pourvue : une annonce expirée au sitemap est un signal
+  // de fraîcheur faux, et Google for Jobs la déclasse.
+  for (const slug of ["finance-analyst-junior-fr", "marketing-growth-strategy", "senior-finance-manager"]) {
+    entries.push({ url: `${BASE}/jobs/${slug}`, lastModified: D.jobs });
+  }
 
   // malibou (2026-07-30) — shipped separately from the TOOL_SLUGS batch
   // above, so it gets its own lastModified instead of bumping D.tools

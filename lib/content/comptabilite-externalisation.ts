@@ -14,7 +14,7 @@ export const comptabiliteExternalisationContent = {
       avatarUrl: "/images/team/sebastien-doat.webp",
       updateDate: "2026-05-05",
     },
-    tldr: "Externaliser sa comptabilité coûte 60-85% moins cher qu'un comptable interne, avec une expertise plus large et une flexibilité adaptée aux startups et PME en croissance.",
+    tldr: "Externaliser sa comptabilité représente 30 à 60 % d'économie face au coût employeur d'un comptable interne, avec une expertise plus large et une flexibilité adaptée aux startups et PME en croissance.",
     h1: "Externalisation comptable : tarifs, méthode et bénéfices pour PME et startups",
     // T5 (2026-06-07) — replaced 3 fake testimonials (Alain Rousseau /
     // Valérie Lefevre / Marc Dubois, dont un contenait la coquille
