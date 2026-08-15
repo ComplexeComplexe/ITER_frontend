@@ -32,7 +32,9 @@ vi.mock("next/navigation", () => ({
 }));
 
 // We import AFTER the mocks are registered so vi.mock hoisting binds first.
-import LandingPageClient from "@/app/lp/daf-externalise/client";
+// Le groupe de routes (fr) a été introduit le 15/08 pour donner un root layout
+// par locale — les URL sont inchangées, seul le chemin sur disque bouge.
+import LandingPageClient from "@/app/(fr)/lp/daf-externalise/client";
 
 // ─── Test helpers ────────────────────────────────────────────────────────
 
