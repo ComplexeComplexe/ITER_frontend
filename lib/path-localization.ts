@@ -29,9 +29,41 @@ const DAF_SUB_PATHS: Record<string, Record<Locale, string>> = {
   "tiempo-compartido": { fr: "temps-partage", en: "shared-time", es: "tiempo-compartido" },
   // Legacy ES slug kept for backwards path-localization until 301s expire:
   multipropiedad: { fr: "temps-partage", en: "shared-time", es: "tiempo-compartido" },
-  transition: { fr: "transition", en: "transition", es: "transition" },
-  metier: { fr: "metier", en: "metier", es: "metier" },
+  // SEO-ULT §4 (2026-08-15) — deux entrées étaient fausses : la page ES de
+  // transition est `transicion`, et la fiche métier est `role` en anglais,
+  // `funciones` en espagnol. Le mapping renvoyait les slugs français, qui
+  // répondent en 308.
+  transition: { fr: "transition", en: "transition", es: "transicion" },
+  transicion: { fr: "transition", en: "transition", es: "transicion" },
+  metier: { fr: "metier", en: "role", es: "funciones" },
+  role: { fr: "metier", en: "role", es: "funciones" },
+  funciones: { fr: "metier", en: "role", es: "funciones" },
 };
+
+/**
+ * URL finale d'une page du cluster DAF, par locale.
+ *
+ * SEO-ULT §4 (2026-08-15) — trois composants construisaient ces liens à la
+ * main, en préfixant le slug français par la locale : `/en/daf-externalise/
+ * metier`, `/es/daf-externalise/tarifs`… Aucune de ces URL n'existe, elles
+ * répondent toutes en 308. Sur les sous-pages EN et ES, cela représentait 162
+ * liens vers des redirections — invisibles pour un audit qui lit le code,
+ * puisque les URL n'y figurent jamais en entier.
+ *
+ * `tarifs` et `secteurs` n'ont pas d'équivalent traduit : on renvoie vers la
+ * page de base de la locale plutôt que vers une URL française, pour ne pas
+ * sortir le lecteur de sa langue au milieu du cluster.
+ */
+export function dafClusterHref(
+  sub: "" | "temps-partage" | "transition" | "metier" | "tarifs" | "secteurs",
+  locale: Locale,
+): string {
+  const base = locale === "fr" ? "/daf-externalise" : `/${locale}/${DAF_BASE[locale]}`;
+  if (!sub) return base;
+  if (locale === "fr") return `${base}/${sub}`;
+  if (sub === "tarifs" || sub === "secteurs") return base;
+  return `${base}/${DAF_SUB_PATHS[sub][locale]}`;
+}
 
 const DRH_BASE: Record<Locale, string> = {
   fr: "drh-externalise",

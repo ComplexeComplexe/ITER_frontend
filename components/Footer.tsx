@@ -4,29 +4,47 @@ import { MapPin, Linkedin, Globe } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { navigation, footerContent, languageSwitcher } from "@/lib/navigation";
 
+/**
+ * SEO-ULT §4 (2026-08-15) — les articles populaires du footer portent
+ * désormais leur URL finale au lieu d'un slug déduit.
+ *
+ * Le gabarit précédent construisait `/${locale}/ressources/blog/${slug}` pour
+ * EN et ES. Sur les dix liens produits, huit partaient sur une redirection, et
+ * trois côté espagnol enchaînaient deux sauts — parce que la convention ES est
+ * /es/recursos/ et que trois de ces articles n'existent qu'en français.
+ *
+ * Le footer étant présent sur toutes les pages, cela faisait de loin la plus
+ * grosse source de liens vers des 3xx du site. Elle échappait à l'audit de
+ * configuration : ces URL n'existaient nulle part en dur, elles étaient
+ * assemblées à l'exécution. C'est ce qui a motivé l'ajout du crawl des liens
+ * rendus dans scripts/audit-seo.mjs.
+ *
+ * Les liens interlangues vers le français sont volontaires : ces articles n'ont
+ * pas de traduction, et pointer vers le hub ferait perdre l'article au lecteur.
+ */
 const POPULAR_ARTICLES = {
   fr: [
-    { slug: "cout-daf-externalise-tarifs-prix-2026", title: "Coût d'un DAF externalisé" },
-    { slug: "daf-externalise-vs-daf-salarie", title: "DAF externalisé vs salarié" },
-    { slug: "checklist-due-diligence-levee-de-fonds", title: "Due diligence & Levée de fonds" },
-    { slug: "daf-drh-externalises-synergie", title: "DRH et synergie d'équipe" },
-    { slug: "les-10-outils-pour-cfos-startup", title: "Les 10 outils pour CFO startup" },
+    { href: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", title: "Coût d'un DAF externalisé" },
+    { href: "/ressources/blog/daf-externalise-vs-daf-salarie", title: "DAF externalisé vs salarié" },
+    { href: "/ressources/blog/checklist-due-diligence-levee-de-fonds", title: "Due diligence & Levée de fonds" },
+    { href: "/ressources/blog/daf-drh-externalises-synergie", title: "DRH et synergie d'équipe" },
+    { href: "/ressources/blog/les-10-outils-pour-cfos-startup", title: "Les 10 outils pour CFO startup" },
   ],
   en: [
-    { slug: "cout-daf-externalise-tarifs-prix-2026", title: "Cost of Outsourced CFO" },
-    { slug: "daf-externalise-vs-daf-salarie", title: "Outsourced CFO vs Employee" },
-    { slug: "checklist-due-diligence-levee-de-fonds", title: "Due Diligence & Fundraising" },
-    { slug: "daf-drh-externalises-synergie", title: "HR and Team Synergy" },
-    { slug: "les-10-outils-pour-cfos-startup", title: "10 CFO Tools for Startups" },
+    { href: "/en/ressources/blog/fractional-cfo-cost-services-2026", title: "Cost of Outsourced CFO" },
+    { href: "/en/ressources/blog/daf-externalise-vs-daf-salarie", title: "Outsourced CFO vs Employee" },
+    { href: "/ressources/blog/checklist-due-diligence-levee-de-fonds", title: "Due Diligence & Fundraising" },
+    { href: "/ressources/blog/daf-drh-externalises-synergie", title: "CFO & HR Director synergy" },
+    { href: "/ressources/blog/les-10-outils-pour-cfos-startup", title: "10 tools for startup CFOs" },
   ],
   es: [
-    { slug: "cout-daf-externalise-tarifs-prix-2026", title: "Costo de CFO externalizado" },
-    { slug: "daf-externalise-vs-daf-salarie", title: "CFO externalizado vs empleado" },
-    { slug: "checklist-due-diligence-levee-de-fonds", title: "Due Diligence y Financiación" },
-    { slug: "daf-drh-externalises-synergie", title: "RRHH y sinergia de equipo" },
-    { slug: "les-10-outils-pour-cfos-startup", title: "10 herramientas para CFO startup" },
+    { href: "/es/recursos/blog/cfo-externo-pymes-precio-2026", title: "Costo de CFO externalizado" },
+    { href: "/es/recursos/blog/daf-externalise-vs-daf-salarie", title: "CFO externalizado vs interno" },
+    { href: "/ressources/blog/checklist-due-diligence-levee-de-fonds", title: "Due diligence y financiación" },
+    { href: "/ressources/blog/daf-drh-externalises-synergie", title: "CFO y RR. HH.: sinergia" },
+    { href: "/ressources/blog/les-10-outils-pour-cfos-startup", title: "10 herramientas para CFO" },
   ],
-};
+} as const;
 
 export default function Footer({ locale }: { locale: Locale }) {
   const content = footerContent[locale];
@@ -242,9 +260,9 @@ export default function Footer({ locale }: { locale: Locale }) {
             </p>
             <ul className="space-y-1.5 sm:space-y-2.5">
               {POPULAR_ARTICLES[locale].map((article) => {
-                const articleHref = locale === "fr" ? `/ressources/blog/${article.slug}` : `/${locale}/ressources/blog/${article.slug}`;
+                const articleHref = article.href;
                 return (
-                  <li key={article.slug}>
+                  <li key={article.href}>
                     <Link
                       href={articleHref}
                       className="text-white/50 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2"

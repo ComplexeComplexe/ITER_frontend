@@ -114,9 +114,9 @@ const content: Record<
     mostReadArticles: [
       { title: "Fractional CFO cost in 2026: pricing, packages and ROI", href: "/en/ressources/blog/fractional-cfo-cost-services-2026", category: "Fractional CFO" },
       { title: "Fractional CFO vs full-time CFO: complete comparison", href: "/en/ressources/blog/daf-externalise-vs-daf-salarie", category: "Fractional CFO" },
-      { title: "Due diligence checklist: financial preparation for fundraising", href: "/en/ressources/blog/checklist-due-diligence-levee-de-fonds", category: "Fundraising" },
+      { title: "Due diligence checklist: financial preparation for fundraising", href: "/ressources/blog/checklist-due-diligence-levee-de-fonds", category: "Fundraising" },
       { title: "Cash burn: calculate your runway and prepare your raise", href: "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", category: "Fundraising" },
-      { title: "Tax regimes: France vs Spain — Full comparison 2026", href: "/en/ressources/blog/regimes-fiscaux-france-vs-espagne", category: "Tax" },
+      { title: "Tax regimes: France vs Spain — Full comparison 2026", href: "/ressources/blog/regimes-fiscaux-france-vs-espagne", category: "Tax" },
     ],
     cards: [
       {
@@ -186,7 +186,19 @@ const content: Record<
 
 const blogBasePath = "/ressources/blog";
 
+/**
+ * SEO-ULT §4 (2026-08-15) — la convention espagnole est `/es/recursos/`, pas
+ * `/es/ressources/`. `getLocalePath` se contente de préfixer la locale, donc
+ * chaque carte de ce listing produisait une URL qui répondait en 308.
+ *
+ * Le correctif est local et non dans `getLocalePath` : pour le blog, le slug
+ * est identique d'une langue à l'autre, alors que les autres rubriques
+ * changent aussi de segment — outils devient herramientas, glossaire devient
+ * glosario. Un remplacement générique de « ressources » par « recursos »
+ * fabriquerait des URL inexistantes ailleurs.
+ */
 function getBlogHref(locale: Locale, slug: string): string {
+  if (locale === "es") return `/es/recursos/blog/${slug}`;
   return getLocalePath(locale, `${blogBasePath}/${slug}`);
 }
 
