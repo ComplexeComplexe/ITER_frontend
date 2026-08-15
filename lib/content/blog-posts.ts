@@ -4088,7 +4088,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
         resourcesLabel: "Recursos",
         resourcesHref: "/es/ressources",
         blogLabel: "Blog",
-        blogHref: "/es/ressources/blog",
+        blogHref: "/es/recursos/blog",
       },
       h1: "Externalización Contable: Guía Práctica para Directivos de Pymes y Startups",
       publishedDate: "2026-05-10",
@@ -4300,7 +4300,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
         resourcesLabel: "Recursos",
         resourcesHref: "/es/ressources",
         blogLabel: "Blog",
-        blogHref: "/es/ressources/blog",
+        blogHref: "/es/recursos/blog",
       },
       h1: "La modernización del rol de CFO",
       content: [

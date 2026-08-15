@@ -376,7 +376,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         // page ne captait pas la formulation "prix" pourtant en position
         // 6,21 ("prix daf externalisé") et 2,28 ("prix fractional cfo").
         // Title reformulé pour ouvrir sur "Prix" plutôt que "Tarifs".
-        title: "Prix d'un DAF externalisé : tarifs 2026 par mission | Iter Advisors",
+        title: "Tarifs DAF externalisé 2026 : prix par mission",
         description: "Combien coûte un DAF externalisé ? Grille de tarifs par mission et par volume de jours, ce qui fait varier le prix, et comment arbitrer. Devis en 48h.",
       },
       parentLabel: "DAF Externalisé",
