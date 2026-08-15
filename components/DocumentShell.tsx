@@ -172,6 +172,63 @@ gtag('consent','default',{
                     },
                   ],
                   openingHours: "Mo-Fr 09:00-18:00",
+                  // SEO-FIN §7.4 (2026-08-15) — enrichissement remonté depuis
+                  // /daf-externalise, qui redéfinissait un second nœud avec le
+                  // même @id=#organization. Deux définitions concurrentes de la
+                  // même entité, dont une seule portait ces propriétés. Elles
+                  // décrivent le cabinet, pas la page : leur place est ici, où
+                  // l'entité est déclarée une fois pour tout le site.
+                  alternateName: ["Iter Advisors S.L.", "Iter Advisors Cabinet DAF"],
+                  slogan: "La meilleure version de votre direction financière",
+                  foundingDate: "2021",
+                  numberOfEmployees: { "@type": "QuantitativeValue", value: 15 },
+                  areaServed: [
+                    { "@type": "Country", name: "France" },
+                    { "@type": "Country", name: "Espagne" },
+                    { "@type": "City", name: "Paris" },
+                    { "@type": "City", name: "Toulouse" },
+                    { "@type": "City", name: "Barcelone" },
+                  ],
+                  contactPoint: {
+                    "@type": "ContactPoint",
+                    email: "contact@iteradvisors.com",
+                    contactType: "customer service",
+                    areaServed: ["FR", "ES"],
+                    availableLanguage: ["French", "English", "Spanish"],
+                  },
+                  knowsAbout: [
+                    "DAF externalisé",
+                    "Directeur financier externalisé",
+                    "CFO à temps partagé",
+                    "Fractional CFO",
+                    "Direction financière externalisée",
+                    "Levée de fonds",
+                    "Gestion de trésorerie",
+                    "M&A et due diligence financière",
+                    "Contrôle de gestion",
+                    "Pilotage financier startup",
+                    "DRH externalisé",
+                  ],
+                  founder: [
+                    {
+                      "@type": "Person",
+                      name: "Sébastien Doat",
+                      jobTitle: "Associé fondateur - CFO & Investisseur",
+                      sameAs: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
+                    },
+                    {
+                      "@type": "Person",
+                      name: "Benjamin Ziza",
+                      jobTitle: "Associé fondateur - CFO & Investisseur",
+                      sameAs: "https://www.linkedin.com/in/benjamin-ziza/",
+                    },
+                    {
+                      "@type": "Person",
+                      name: "Guillaume Rostand",
+                      jobTitle: "Associé fondateur & CMO",
+                      sameAs: "https://www.linkedin.com/in/rostand/",
+                    },
+                  ],
                   // SEO-09 (2026-07-01) — sameAs consolidé pour renforcer
                   // l'entité "Iter Advisors" dans le Knowledge Graph. Le
                   // profil Trustfolio est ajouté comme signal third-party
@@ -180,6 +237,7 @@ gtag('consent','default',{
                   sameAs: [
                     "https://www.linkedin.com/company/iter-advisors/",
                     "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc/reviews",
+                    "https://www.youtube.com/@IterAdvisors1",
                   ],
                   // aggregateRating volontairement absent ici (site-wide) pour
                   // éviter le conflit "multiple aggregateRatings on one node"

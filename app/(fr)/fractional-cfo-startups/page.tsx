@@ -198,9 +198,21 @@ export async function generateMetadata(): Promise<Metadata> {
   // exploitées "CFO externe" (pos 33) et "CFO à temps partagé" (pos 13).
   // Le mot-clé "Fractional CFO" (pos 10,6) est conservé en premier pour
   // ne pas perdre l'autorité acquise.
+  // SEO-FIN §6 (2026-08-15) — décision hreflang documentée : aucun alternate.
+  //
+  // Cette page cible un segment précis, les startups VC-backed, avec un terme
+  // anglais utilisé tel quel en français. /en/fractional-cfo-startups et
+  // /es/fractional-cfo-startups répondent 404 : il n'existe pas d'équivalent.
+  //
+  // Les candidats les plus proches, /en/fractional-cfo et
+  // /es/externalizacion-daf, sont les équivalents du PILIER générique, pas de
+  // cette page. Les déclarer en alternates relierait deux intentions
+  // différentes — un hreflang doit relier des équivalents réels.
+  //
+  // À rouvrir le jour où une vraie traduction segment startup existe.
   return {
     title:
-      "Fractional CFO / CFO externe pour startups en France | Iter Advisors",
+      "Fractional CFO for Startups | Iter Advisors",
     description:
       "Fractional CFO / CFO à temps partagé senior pour startups VC-backed. Dès 3 000 € HT/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
     alternates: {
@@ -208,7 +220,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       title:
-        "Fractional CFO / CFO externe pour startups en France | Iter Advisors",
+        "Fractional CFO for Startups | Iter Advisors",
       description:
         "Fractional CFO / CFO à temps partagé senior pour startups VC-backed. Dès 3 000 € HT/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
       url: PAGE_URL,

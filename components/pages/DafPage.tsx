@@ -1205,104 +1205,14 @@ export default function DafPage({
           lisibles en clair dans le corps de la page — qui est ce que lisent
           les moteurs de réponse. */}
 
-      {/* D1 enrichi (2026-05-25) — Organization (FinancialService) avec founders,
-          knowsAbout, alternateName, foundingDate, numberOfEmployees, taxID/vatID,
-          contactPoint et YouTube dans sameAs. Séparé du bloc Service ci-dessous
-          pour que Google identifie l'entité (KG) indépendamment de l'offre. */}
-      {locale === "fr" && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              // 2026-05-30: ProfessionalService is a better fit for a consulting
-              // cabinet than FinancialService (which Schema.org positions for
-              // banks / lenders / brokers). Merges with the site-wide
-              // #organization entity declared in app/layout.tsx.
-              "@type": "ProfessionalService",
-              "@id": "https://www.iteradvisors.com/#organization",
-              name: "Iter Advisors",
-              alternateName: ["Iter Advisors S.L.", "Iter Advisors Cabinet DAF"],
-              url: "https://www.iteradvisors.com",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://www.iteradvisors.com/images/logos/logo-hero.webp",
-                width: 512,
-                height: 512,
-              },
-              image: "https://www.iteradvisors.com/images/og-default.webp",
-              description: "Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Pilotage financier, levée de fonds, trésorerie. Présent à Barcelone, Paris et Toulouse.",
-              slogan: "La meilleure version de votre direction financière",
-              // SEO-002 (2026-08-09) — 2021 confirmé par la direction comme
-              // année de création. Le balisage annonçait 2019 : c'est ce
-              // qu'un moteur lit en priorité pour dater une entité.
-              foundingDate: "2021",
-              taxID: "B42960849",
-              vatID: "ESB42960849",
-              address: [{
-                "@type": "PostalAddress",
-                streetAddress: "Carrer Casp, 54, 5-1°",
-                addressLocality: "Barcelona",
-                postalCode: "08010",
-                addressCountry: "ES",
-              }],
-              areaServed: [
-                { "@type": "Country", name: "France" },
-                { "@type": "Country", name: "Espagne" },
-                { "@type": "City", name: "Paris" },
-                { "@type": "City", name: "Toulouse" },
-                { "@type": "City", name: "Barcelone" },
-              ],
-              contactPoint: {
-                "@type": "ContactPoint",
-                email: "contact@iteradvisors.com",
-                contactType: "customer service",
-                areaServed: ["FR", "ES"],
-                availableLanguage: ["French", "English", "Spanish"],
-              },
-              sameAs: [
-                "https://www.linkedin.com/company/iter-advisors/",
-                "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
-                "https://www.youtube.com/@IterAdvisors1",
-              ],
-              knowsAbout: [
-                "DAF externalisé",
-                "Directeur financier externalisé",
-                "CFO à temps partagé",
-                "Fractional CFO",
-                "Direction financière externalisée",
-                "Levée de fonds",
-                "Gestion de trésorerie",
-                "M&A et due diligence financière",
-                "Contrôle de gestion",
-                "Pilotage financier startup",
-                "DRH externalisé",
-              ],
-              numberOfEmployees: { "@type": "QuantitativeValue", value: 15 },
-              founder: [
-                {
-                  "@type": "Person",
-                  name: "Sébastien Doat",
-                  jobTitle: "Associé fondateur - CFO & Investisseur",
-                  sameAs: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
-                },
-                {
-                  "@type": "Person",
-                  name: "Benjamin Ziza",
-                  jobTitle: "Associé fondateur - CFO & Investisseur",
-                  sameAs: "https://www.linkedin.com/in/benjamin-ziza/",
-                },
-                {
-                  "@type": "Person",
-                  name: "Guillaume Rostand",
-                  jobTitle: "Associé fondateur & CMO",
-                  sameAs: "https://www.linkedin.com/in/rostand/",
-                },
-              ],
-            }),
-          }}
-        />
-      )}
+      {/* SEO-FIN §7.4 (2026-08-15) — bloc ProfessionalService supprimé.
+
+          Il redéclarait @id=#organization, déjà défini pour tout le site dans
+          components/DocumentShell.tsx : deux définitions concurrentes de la
+          même entité sur une même page. Ses neuf propriétés propres
+          (alternateName, slogan, foundingDate, numberOfEmployees, areaServed,
+          contactPoint, knowsAbout, founder, YouTube dans sameAs) sont remontées
+          dans l'entité globale — elles décrivent le cabinet, pas cette page. */}
 
       {/* Service schema avec AggregateOffer (2026-05-25) — affiche les fourchettes
           tarifaires 2 000-7 000 €/mois directement dans les snippets SERP.
@@ -1477,60 +1387,12 @@ export default function DafPage({
         }}
       />
 
-      {/* Article schema (2026-05-25) — signal E-E-A-T avec 2 auteurs nommés
-          (Sébastien Doat + Benjamin Ziza) et 5 citations de sources institutionnelles.
-          @type Article (pas BlogPosting) pour une page pilier éditoriale + commerciale.
-          Coexiste avec le Service schema via @id distincts dans le graph. */}
-      {locale === "fr" && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Article",
-              headline: "DAF Externalisé : votre direction financière sur-mesure",
-              description: "Guide complet sur le DAF externalisé : définition, missions, tarifs 2026, comparaison avec DAF interne et expert-comptable. Par les experts d'Iter Advisors.",
-              image: "https://www.iteradvisors.com/images/og-default.webp",
-              datePublished: "2024-01-15T09:00:00+01:00",
-              dateModified: "2026-05-17T09:00:00+02:00",
-              author: [
-                {
-                  "@type": "Person",
-                  name: "Sébastien Doat",
-                  jobTitle: "Associé fondateur, CFO & Investisseur — Iter Advisors",
-                  url: "https://www.iteradvisors.com/a-propos/sebastien-doat",
-                  sameAs: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
-                  knowsAbout: ["DAF externalisé", "Levée de fonds", "M&A", "Pilotage financier"],
-                },
-                {
-                  "@type": "Person",
-                  name: "Benjamin Ziza",
-                  jobTitle: "Associé fondateur, CFO & Investisseur — Iter Advisors",
-                  url: "https://www.iteradvisors.com/a-propos/benjamin-ziza",
-                  sameAs: "https://www.linkedin.com/in/benjamin-ziza/",
-                },
-              ],
-              publisher: { "@id": "https://www.iteradvisors.com/#organization" },
-              mainEntityOfPage: {
-                "@type": "WebPage",
-                "@id": "https://www.iteradvisors.com/daf-externalise",
-              },
-              about: [
-                { "@type": "Thing", name: "DAF externalisé" },
-                { "@type": "Thing", name: "Directeur financier à temps partagé" },
-                { "@type": "Thing", name: "Fractional CFO" },
-              ],
-              citation: [
-                "https://www.dfcg.fr/",
-                "https://www.insee.fr/",
-                "https://www.bpifrance.fr/",
-                "https://www.experts-comptables.fr/",
-                "https://francedigitale.org/",
-              ],
-            }),
-          }}
-        />
-      )}
+      {/* SEO-FIN §7.6 (2026-08-15) — schéma Article supprimé.
+
+          /daf-externalise est une page de service, pas un article éditorial :
+          elle n'a ni fil narratif ni date de publication qui fasse sens pour un
+          lecteur. Le Service (@id …#service-offer) et le WebPage décrivent déjà
+          ce qu'elle est. Les auteurs restent déclarés via les entités Person. */}
 
       {/* Vos experts Iter Advisors (audit SEO D.1 / brief Bloc 7) — EEAT signal with named CFOs */}
       {locale === "fr" && featuredExperts.length > 0 && (
