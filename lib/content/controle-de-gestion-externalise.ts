@@ -220,7 +220,7 @@ export const controleDeGestionExternaliseeContent = {
         id: "tarifs",
         title: "Combien coûte un contrôle de gestion externalisé ?",
         paragraphs: [
-          "Le contrôle de gestion externalisé chez Iter Advisors démarre à 2 500 € par mois pour la formule Pilot (2 jours/mois) et monte à 8 000 € par mois pour la formule Scale (8 jours/mois, accompagnement de levée inclus). Cela représente 50 à 70 % de moins qu'un contrôleur de gestion à plein temps (coût annuel : 65 000 à 90 000 € + charges).",
+          "Le contrôle de gestion externalisé chez Iter Advisors démarre à 2 500 € par mois pour la formule Pilot (2 jours/mois) et monte à 8 000 € par mois pour la formule Scale (8 jours/mois, accompagnement de levée inclus). Cela représente 30 à 60 % de moins qu'un contrôleur de gestion à plein temps (coût annuel : 65 000 à 90 000 € + charges).",
         ],
         table: {
           caption: "Forfaits Iter Advisors — contrôle de gestion externalisé",
@@ -275,7 +275,7 @@ export const controleDeGestionExternaliseeContent = {
           {
             question: "Combien coûte un contrôle de gestion externalisé ?",
             answer:
-              "Chez Iter Advisors, les forfaits démarrent à 2 500 €/mois pour 2 jours (formule Pilot) et montent à 8 000 €/mois pour la formule Scale. Cela représente 50 à 70 % de moins qu'un contrôleur de gestion à plein temps (coût annuel : 65 000 à 90 000 € + charges).",
+              "Chez Iter Advisors, les forfaits démarrent à 2 500 €/mois pour 2 jours (formule Pilot) et montent à 8 000 €/mois pour la formule Scale. Cela représente 30 à 60 % de moins qu'un contrôleur de gestion à plein temps (coût annuel : 65 000 à 90 000 € + charges).",
           },
           {
             question: "Quand faut-il externaliser son contrôle de gestion ?",

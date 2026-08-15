@@ -29,7 +29,10 @@ const CANONICAL_HOST = "https://www.iteradvisors.com";
 const VALEURS_INTERDITES = [
   { re: /à partir de 2 000 ?€|dès 2 000 ?€|démarre à 2 000 ?€/i, sujet: "prix d'entrée (3 000 € HT/mois)" },
   { re: /à partir de 4 500 ?€|dès 4 500 ?€/i, sujet: "prix d'entrée fractional (3 000 € HT/mois)" },
-  { re: /(50|60) ?(?:à|-|–) ?(70|75|80|85) ?%/, sujet: "économie annoncée (30 à 60 %)" },
+  // Le motif exige un contexte d'économie : « 60-70 % » désigne aussi, ailleurs
+  // sur le site, une part de temps passé — le contrôler seul produisait un
+  // faux positif sur l'article outils.
+  { re: /(?:économi\w*|moins cher|réduction|de moins)[^.]{0,60}?(?:50|60) ?(?:à|-|–) ?(?:70|75|80|85) ?%|(?:50|60) ?(?:à|-|–) ?(?:70|75|80|85) ?%[^.]{0,40}?(?:moins cher|d'économie|de moins)/i, sujet: "économie annoncée (30 à 60 %)" },
   { re: /48 ?(?:à|-|–) ?72 ?(?:h|heures)/i, sujet: "délai de démarrage (7 à 10 jours)" },
   { re: /engagement de 3 (?:à 6 )?mois|à partir de 3 mois, renouvelable/i, sujet: "engagement (aucune durée minimale)" },
   { re: /80 000 ?(?:à|–|-) ?150 000|90 000 ?(?:à|–|-) ?150 000|120 000 ?(?:et|à|–|-) ?180 000/, sujet: "coût DAF salarié (100 000 à 213 000 €)" },
@@ -49,13 +52,15 @@ const VALEURS_INTERDITES = [
  * sont arbitrées : il suffira de vider cette liste.
  */
 const HORS_ARBITRAGE = [
-  /^\/drh-externalise/,
-  /^\/es\/externalizacion-rrhh/,
-  /^\/en\/hr-outsourcing/,
-  /^\/services\/comptabilite-externalisation/,
-  /^\/services\/controle-de-gestion-externalise/,
-  /^\/ressources\/blog\/cout-externalisation-comptable-2026/,
-  /^\/ressources\/blog\/essentiels-outils-tech-finance/,
+  // Le coût employeur d'un DRH, d'un comptable ou d'un contrôleur de gestion
+  // n'est pas celui d'un DAF : aligner ces fourchettes reviendrait à affirmer
+  // que ces postes se paient au même prix. Seul le motif « coût DAF salarié »
+  // est neutralisé sur ces pages ; économies, délais et engagement y sont
+  // désormais contrôlés comme ailleurs.
+  { path: /^\/(drh-externalise|services\/comptabilite-externalisation|services\/controle-de-gestion-externalise)/, sujet: /coût DAF salarié/ },
+  { path: /^\/(es\/externalizacion-rrhh|en\/hr-outsourcing)/, sujet: /coût DAF salarié/ },
+  // Délais de réponse du support (SLA), pas des promesses de démarrage.
+  { path: /^\/(services\/comptabilite-externalisation|ressources\/blog\/cout-externalisation-comptable-2026)/, sujet: /délai de démarrage/ },
 ];
 
 const strip = (html) =>
@@ -126,8 +131,9 @@ for (const abs of urls) {
 
   // ── 3. Valeurs commerciales retirées lors des arbitrages
   const texte = strip(html);
-  const arbitre = !HORS_ARBITRAGE.some((r) => r.test(path));
-  for (const { re, sujet } of arbitre ? VALEURS_INTERDITES : []) {
+  for (const { re, sujet } of VALEURS_INTERDITES) {
+    const exclu = HORS_ARBITRAGE.some((x) => x.path.test(path) && x.sujet.test(sujet));
+    if (exclu) continue;
     const m = texte.match(re);
     if (m) fail("faits/régression", `${path} — ${sujet} : « ${m[0]} »`);
   }

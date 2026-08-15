@@ -60,11 +60,17 @@ function parseNextConfig(src) {
 
 function parseVercelJson(src) {
   const json = JSON.parse(src);
-  return (json.redirects ?? []).map((r) => ({
-    source: r.source,
-    destination: r.destination,
-    file: "vercel.json",
-  }));
+  return (json.redirects ?? [])
+    // Les règles conditionnelles (`has`) ne se déclenchent pas sur le seul
+    // chemin : la redirection apex → www, par exemple, ne s'applique qu'à
+    // l'hôte iteradvisors.com. Les comparer aux règles de chemin produirait
+    // 500+ fausses chaînes, puisque leur source est `/:path*`.
+    .filter((r) => !r.has && !r.missing)
+    .map((r) => ({
+      source: r.source,
+      destination: r.destination,
+      file: "vercel.json",
+    }));
 }
 
 const rules = [

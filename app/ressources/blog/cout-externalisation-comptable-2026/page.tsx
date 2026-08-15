@@ -208,7 +208,7 @@ export default function CoutExternalisationComptablePage() {
           (révision annuelle approfondie, audit, gestion d&apos;un contrôle URSSAF).
           Iter Advisors pratique des tarifs alignés sur le marché pour le périmètre
           comptable, et facture séparément l&apos;accompagnement CFO stratégique (à partir
-          de 2 000 €/mois additionnel pour une mission de{" "}
+          de 3 000 € HT/mois additionnel pour une mission de{" "}
           <a href="/services/gestion-financiere-externalisee">direction financière externalisée</a>).
         </Callout>
 
