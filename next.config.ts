@@ -43,6 +43,39 @@ const nextConfig: NextConfig = {
           { key: "X-Content-Signal", value: "human-authored, copyright=Iter Advisors S.L., jurisdiction=ES" },
         ],
       },
+      // SEO-REP §3.2 (2026-08-15) — politique CDN pour le HTML éditorial.
+      //
+      // Cause racine : app/layout.tsx appelle `headers()` pour dériver la
+      // locale du pathname, ce qui bascule TOUTES les routes en rendu
+      // dynamique — 203 sur 209 au dernier build. Next.js sert alors ses
+      // réponses avec `private, no-cache, no-store` : le CDN Vercel ne peut
+      // rien mettre en cache, chaque hit crawler ou visiteur repart à
+      // l'origine.
+      //
+      // Le correctif de fond est de sortir `headers()` du layout racine, ce
+      // qui suppose des root layouts par locale (route groups) — une refonte
+      // à part entière. En attendant, on impose ici une politique publique
+      // sur le HTML : `s-maxage` ne concerne que les caches partagés, le
+      // navigateur revalide (`max-age=0`), et `stale-while-revalidate` évite
+      // les à-coups pendant la régénération.
+      //
+      // Exclusions volontaires : /api/* (réponses personnalisées, formulaires)
+      // est traité juste après avec une politique privée.
+      {
+        source: "/((?!api/).*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
+        source: "/api/:path*",
+        headers: [
+          { key: "Cache-Control", value: "private, no-store, max-age=0" },
+        ],
+      },
       // Cache headers for static assets
       {
         source: "/images/:path*",
@@ -968,6 +1001,12 @@ const nextConfig: NextConfig = {
       // complet ("conditions-eligibilite", 2 100 mots, déjà maillé) comme
       // cible ; le pilier porte désormais son propre contenu.
       { source: "/ressources/blog/loi-beckham-espagne-conditions-2026", destination: "/ressources/blog/loi-beckham-espagne-conditions-eligibilite", permanent: true },
+      // SEO-REP §4.3 (2026-08-15) — doublons fiscalité fusionnés.
+      // Deux articles de blog couvraient la même intention que les pages
+      // fiscalité, qui sont les propriétaires : le Modelo 720 et le barème
+      // IRPF. Les quatre URL répondaient 200 en parallèle.
+      { source: "/ressources/blog/modelo-720-declaration-biens-etranger", destination: "/ressources/fiscalite/modelo-720", permanent: true },
+      { source: "/ressources/blog/bareme-irpf-espagne-2026",             destination: "/ressources/fiscalite/impot-revenu-espagne", permanent: true },
       // T2: blog duplicate → fiscalite canonical
       { source: "/ressources/blog/double-imposition-france-espagne-convention", destination: "/ressources/fiscalite/double-imposition-france-espagne", permanent: true },
       // AUDIT-07-21: 404s avec inlinks actifs

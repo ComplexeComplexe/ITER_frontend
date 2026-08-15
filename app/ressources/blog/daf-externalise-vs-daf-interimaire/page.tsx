@@ -55,7 +55,7 @@ const FAQ_ITEMS: { question: string; answer: string }[] = [
   {
     question: 'Le DAF externalisé peut-il remplacer définitivement un DAF salarié ?',
     answer:
-      'Oui, pour les PME et startups qui n\'ont pas besoin d\'un DAF à temps plein. Le DAF externalisé offre le même niveau d\'expertise à 50-70 % du coût d\'un salarié.',
+      'Oui, pour les PME et startups qui n\'ont pas besoin d\'un DAF à temps plein. Le DAF externalisé offre le même niveau d\'expertise pour 30 à 60 % d\'économie face au coût employeur d\'un salarié.',
   },
   {
     question: 'Peut-on passer du DAF intérimaire au DAF externalisé ?',
@@ -304,10 +304,10 @@ export default function DafExternalisVsDafInterimairePage() {
           Le DAF externalisé travaille sur un modèle forfaitaire mensuel, calibré
           en fonction du volume de travail et de la complexité de l&apos;entreprise.
           Pour une PME de 20 à 50 salariés avec un CA compris entre 5 et 20 M€,
-          les forfaits Iter Advisors se situent entre <strong>3 000 et 5 500 € par
-          mois</strong>, soit 36 000 à 66 000 € par an — 50 à 70 % moins cher qu&apos;un
-          DAF salarié équivalent (dont le coût total employeur dépasse les 90 000 €
-          dans cette tranche).
+          les forfaits Iter Advisors se situent entre <strong>3 000 et 6 500 € par
+          mois</strong>, soit 36 000 à 78 000 € par an — 30 à 60 % d&apos;économie
+          face au coût employeur d&apos;un directeur financier salarié de séniorité
+          équivalente, estimé entre 100 000 et 213 000 € par an, charges comprises.
         </p>
         <p>
           Le calcul du TJM implicite d&apos;un DAF externalisé — ramené aux jours

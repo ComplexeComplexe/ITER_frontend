@@ -102,7 +102,7 @@ export async function generateMetadata(): Promise<Metadata> {
         name: "DAF Externalisé - Formule Starter",
         price: "2000",
         priceCurrency: "EUR",
-        description: "À partir de 2 000 €/mois",
+        description: "À partir de 3 000 € HT/mois",
       },
     ],
     // Review-snippet fix (2026-05-29): removed the self-serving aggregateRating

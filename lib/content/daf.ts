@@ -1106,7 +1106,7 @@ export const dafContent: Record<Locale, DafContent> = {
           content: [
             "Externalizar el **departamento financiero** (o **dpto financiero**) consiste en confiar la dirección y la gestión de toda la función finanzas a un cabinet especializado. A diferencia de un único CFO interno, un **dpto financiero externalizado** combina varios perfiles complementarios: CFO, controller, tesorero, contable senior — escalables según el momento de la empresa.",
             "El modelo es ideal para pymes y startups que necesitan un **departamento de finanzas** completo pero no pueden justificar el coste de un equipo interno de 3 a 5 personas. En Iter Advisors, nuestro **dpto financiero externalizado** cubre la planificación, el reporting, la tesorería, el control de gestión y las relaciones con inversores — con la flexibilidad de modular cada bloque según sus prioridades.",
-            "Ventajas de externalizar el **dpto financiero** : (1) acceso inmediato a un equipo senior multi-perfil, (2) coste 50-70% inferior al equivalente interno con cargas, (3) continuidad sin riesgo de salida del CFO, (4) herramientas y procesos rodados en decenas de empresas.",
+            "Ventajas de externalizar el **dpto financiero** : (1) acceso inmediato a un equipo senior multi-perfil, (2) un ahorro del 30 al 60 % frente al coste empresarial de un equivalente interno con cargas, (3) continuidad sin riesgo de salida del CFO, (4) herramientas y procesos rodados en decenas de empresas.",
           ],
         },
         {

@@ -90,7 +90,7 @@ export const dafExternalisePariEnrichedContent = {
           },
           external: {
             title: "DAF externalisé Iter Advisors",
-            price: "À partir de 2 000 €/mois",
+            price: "À partir de 3 000 € HT/mois",
             subtitle: "Formule adaptable selon vos besoins",
             pros: [
               "Mise en place immédiate",

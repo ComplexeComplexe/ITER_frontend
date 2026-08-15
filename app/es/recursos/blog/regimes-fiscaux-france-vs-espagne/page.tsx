@@ -92,7 +92,7 @@ export default async function Page() {
           title: "Convenio fiscal Francia-España: evitar la doble imposición",
         },
         {
-          url: "/ressources/blog/bareme-irpf-espagne-2026",
+          url: "/ressources/fiscalite/impot-revenu-espagne",
           category: "Fiscalidad",
           title: "Barème IRPF Espagne 2026 : tranches et calcul",
         },
