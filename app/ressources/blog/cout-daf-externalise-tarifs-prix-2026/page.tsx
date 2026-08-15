@@ -92,9 +92,9 @@ export default function CoutDafExternalisePage() {
       <p>
         Voici les tarifs pratiqués sur le marché français en 2026. Pour les
         formules et le périmètre inclus chez Iter Advisors,{" "}
-        <a href="/daf-externalise/tarifs">
+        <Link href="/daf-externalise/tarifs">
           consulter la grille tarifaire d&apos;un DAF externalisé
-        </a>{" "}
+        </Link>{" "}
         — cet article traite du marché, la grille traite de notre offre.
       </p>
 
