@@ -124,7 +124,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li><strong>DAF confirme (10-15 ans d'experience)</strong> : 1 000 a 1 200 euros/jour</li>
 <li><strong>DAF senior / ex-CFO grands groupes (15+ ans)</strong> : 1 200 a 1 500 euros/jour</li>
 </ul>
-<p>Ces tarifs s'entendent hors taxes et correspondent a des journees completes de 7 a 8 heures. La majorite des missions de <a href="https://iteradvisors.com/services/gestion-financiere-externalisee">gestion financiere externalisee</a> se situent dans la tranche 1 000 - 1 300 euros/jour, ce qui correspond au profil le plus demande : un DAF avec 10 a 15 ans d'experience operationnelle, capable d'intervenir sur des problematiques allant du pilotage de tresorerie a la structuration d'une levee de fonds.</p>
+<p>Ces tarifs s'entendent hors taxes et correspondent a des journees completes de 7 a 8 heures. La majorite des missions de <a href="/services/gestion-financiere-externalisee">gestion financiere externalisee</a> se situent dans la tranche 1 000 - 1 300 euros/jour, ce qui correspond au profil le plus demande : un DAF avec 10 a 15 ans d'experience operationnelle, capable d'intervenir sur des problematiques allant du pilotage de tresorerie a la structuration d'une levee de fonds.</p>
 <p>A titre de comparaison, les cabinets de conseil de type Big Four facturent leurs directeurs financiers de transition entre 1 500 et 2 500 euros/jour. Le <strong>DAF externalise independant ou en cabinet specialise</strong> offre donc un rapport qualite-prix nettement superieur.</p>
 <h3 id="forfait-mensuel-entre-2-000-et-8-000-eurosmois">Forfait mensuel : entre 2 000 et 8 000 euros/mois</h3>
 <p>Le forfait mensuel est le modele privilegie par les entreprises qui souhaitent une presence reguliere et un suivi continu. Il offre une meilleure visibilite budgetaire et permet de construire une relation de long terme avec le DAF.</p>
@@ -134,17 +134,17 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li><strong>Intervention standard (4-8 jours/mois)</strong> : 3 500 a 6 000 euros/mois</li>
 <li><strong>Intervention intensive (8+ jours/mois)</strong> : 6 000 a 8 000+ euros/mois</li>
 </ul>
-<p>Le forfait inclut generalement un nombre de jours d'intervention defini, l'acces a des outils de reporting, des points reguliers avec la direction, et une disponibilite pour les urgences ponctuelles. C'est le modele que privilegient la plupart des clients d'<a href="https://iteradvisors.com/daf-externalise">Iter Advisors</a> car il combine flexibilite et engagement.</p>
+<p>Le forfait inclut generalement un nombre de jours d'intervention defini, l'acces a des outils de reporting, des points reguliers avec la direction, et une disponibilite pour les urgences ponctuelles. C'est le modele que privilegient la plupart des clients d'<a href="/daf-externalise">Iter Advisors</a> car il combine flexibilite et engagement.</p>
 <h3 id="les-facteurs-qui-influencent-le-prix-dun-daf-externalise">Les facteurs qui influencent le prix d'un DAF externalise</h3>
 <p>Le <strong>cout d'un DAF externalise</strong> n'est pas fige. Plusieurs parametres font varier le tarif de maniere significative :</p>
 <p><strong>1. La taille et la complexite de l'entreprise</strong>
 Une startup pre-revenue avec une comptabilite simple ne requiert pas le meme niveau d'intervention qu'une PME de 15 millions d'euros de CA avec des filiales internationales. Plus la structure est complexe, plus le temps d'intervention et l'expertise requise augmentent.</p>
 <p><strong>2. La nature des missions confiees</strong>
-Un DAF qui intervient uniquement sur le reporting et le suivi de tresorerie coutera moins cher qu'un DAF mandate pour structurer une levee de fonds de Serie A, negocier avec des investisseurs et mettre en place un ERP financier. Les missions d'<a href="https://iteradvisors.com/services/accompagnement-levee-de-fond">accompagnement en levee de fonds</a> impliquent un niveau d'expertise et un engagement en temps superieurs.</p>
+Un DAF qui intervient uniquement sur le reporting et le suivi de tresorerie coutera moins cher qu'un DAF mandate pour structurer une levee de fonds de Serie A, negocier avec des investisseurs et mettre en place un ERP financier. Les missions d'<a href="/services/accompagnement-levee-de-fond">accompagnement en levee de fonds</a> impliquent un niveau d'expertise et un engagement en temps superieurs.</p>
 <p><strong>3. Le niveau de seniorite du DAF</strong>
 Un ancien CFO d'une licorne ou d'un groupe du CAC 40 apporte un reseau, une credibilite et une expertise qui se refletent dans ses tarifs. Pour une mission standard de pilotage financier, un DAF confirme avec 10-12 ans d'experience offre souvent le meilleur rapport qualite-prix.</p>
 <p><strong>4. La localisation geographique</strong>
-Les tarifs a <a href="https://iteradvisors.com/daf-externalise-paris">Paris</a> sont en moyenne 10 a 20 % superieurs a ceux pratiques en region. A l'international, un <a href="https://iteradvisors.com/daf-externalise-barcelone">DAF externalise a Barcelone</a> ou dans d'autres villes europeennes peut offrir des tarifs competitifs avec une expertise equivalente.</p>
+Les tarifs a <a href="/daf-externalise-paris">Paris</a> sont en moyenne 10 a 20 % superieurs a ceux pratiques en region. A l'international, un <a href="/daf-externalise-barcelone">DAF externalise a Barcelone</a> ou dans d'autres villes europeennes peut offrir des tarifs competitifs avec une expertise equivalente.</p>
 <p><strong>5. La duree de l'engagement</strong>
 Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'une mission ponctuelle de 3 mois. Les cabinets specialises proposent des tarifs degressifs en fonction de la duree d'engagement.</p>
 <hr>
@@ -334,7 +334,7 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
 <ul>
 <li><strong>Dossier investisseur professionnel</strong> : business plan financier, modele de valorisation, data room structuree. Un dossier solide reduit le temps de due diligence de 30 a 50 %.</li>
 <li><strong>Credibilite aupres des investisseurs</strong> : la presence d'un DAF senior rassure les VCs et les banques. C'est un signal de maturite de gestion.</li>
-<li><strong>Negociation des termes</strong> : un DAF experimente en <a href="https://iteradvisors.com/services/accompagnement-levee-de-fond">levee de fonds</a> negocie de meilleures conditions (valorisation, dilution, clauses) grace a sa connaissance du marche.</li>
+<li><strong>Negociation des termes</strong> : un DAF experimente en <a href="/services/accompagnement-levee-de-fond">levee de fonds</a> negocie de meilleures conditions (valorisation, dilution, clauses) grace a sa connaissance du marche.</li>
 <li><strong>Gain de temps</strong> : une levee de fonds accompagnee par un DAF prend en moyenne 3 a 5 mois, contre 6 a 12 mois sans accompagnement structure.</li>
 </ul>
 <p><strong>Exemple concret :</strong> Une startup SaaS a 2M EUR d'ARR leve 5M EUR en Serie A. Grace a l'accompagnement d'un DAF externalise, la valorisation negociee est superieure de 15 % a l'offre initiale. Gain direct : 750 000 EUR de valorisation supplementaire, pour un investissement de 50 000 EUR en DAF externalise sur la periode.</p>
@@ -433,8 +433,8 @@ Un contrat de 12 mois offre generalement de meilleures conditions tarifaires qu'
 - Filiales, multi-pays, reglementations specifiques : Premium</p>
 <h3 id="prenez-rendez-vous-pour-un-diagnostic-gratuit">Prenez rendez-vous pour un diagnostic gratuit</h3>
 <p>Chaque entreprise est unique. Les grilles tarifaires donnent un cadre, mais seul un echange approfondi permet de definir la formule optimale pour votre situation.</p>
-<p><strong>Chez <a href="https://iteradvisors.com/daf-externalise">Iter Advisors</a>, nous proposons un diagnostic financier gratuit de 30 minutes</strong> pour evaluer vos besoins, identifier les priorites et vous recommander la formule adaptee -- sans engagement.</p>
-<p><a href="https://iteradvisors.com/contact">Prendre rendez-vous pour un diagnostic gratuit -&gt;</a></p>
+<p><strong>Chez <a href="/daf-externalise">Iter Advisors</a>, nous proposons un diagnostic financier gratuit de 30 minutes</strong> pour evaluer vos besoins, identifier les priorites et vous recommander la formule adaptee -- sans engagement.</p>
+<p><a href="/contact">Prendre rendez-vous pour un diagnostic gratuit -&gt;</a></p>
 <hr>
 <h2 id="faq-les-questions-les-plus-frequentes-sur-le-tarif-dun-daf-externalise">FAQ : les questions les plus frequentes sur le tarif d'un DAF externalise</h2>
 <h3 id="1-un-daf-externalise-est-il-deductible-fiscalement">1. Un DAF externalise est-il deductible fiscalement ?</h3>
@@ -1158,7 +1158,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       htmlContent: `<p>Votre startup passe le cap des dix salariés. La trésorerie devient complexe, les obligations sociales s'accumulent, les recrutements s'enchaînent. Vous avez besoin d'un directeur financier. Vous avez besoin d'un directeur des ressources humaines. Mais votre budget ne permet pas deux embauches à plus de 100 000 euros par an chacune.</p>
 <p>Et si la vraie question n'était pas "lequel recruter en premier", mais plutôt : "pourquoi les séparer" ?</p>
 <p>La grande majorité des startups et PME en croissance traitent la finance et les ressources humaines comme deux silos distincts. Un cabinet comptable d'un côté, un consultant RH ponctuel de l'autre. Pourtant, ces deux fonctions sont si profondément interconnectées que les gérer séparément revient à piloter une entreprise avec deux tableaux de bord qui ne communiquent jamais entre eux.</p>
-<p>C'est précisément ce constat qui a conduit <a href="https://iteradvisors.com/a-propos">Iter Advisors</a> à construire une offre unique sur le marché : un <strong>DAF et un DRH externalisés</strong> qui travaillent ensemble, pour une même entreprise, avec une vision unifiée. Voici pourquoi cette approche change la donne.</p>
+<p>C'est précisément ce constat qui a conduit <a href="/a-propos">Iter Advisors</a> à construire une offre unique sur le marché : un <strong>DAF et un DRH externalisés</strong> qui travaillent ensemble, pour une même entreprise, avec une vision unifiée. Voici pourquoi cette approche change la donne.</p>
 <hr>
 <h2 id="le-probleme-des-fonctions-support-fragmentees">Le problème : des fonctions support fragmentées</h2>
 <h3 id="la-realite-des-startups-en-croissance">La réalité des startups en croissance</h3>
@@ -1187,7 +1187,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p>Chaque embauche modifie le burn rate de l'entreprise. Un plan de recrutement ambitieux - trois embauches en six mois, par exemple - peut transformer un runway de 18 mois en runway de 10 mois. Sans coordination entre la stratégie RH et la stratégie financière, les fondateurs découvrent trop tard qu'ils ont recruté trop vite.</p>
 <p>À l'inverse, un plan de recrutement trop prudent freine la croissance. Le produit n'avance pas assez vite, les clients ne sont pas livrés à temps, le chiffre d'affaires stagne. La bonne décision se trouve à l'intersection de la vision RH (de quels profils avons-nous besoin ?) et de la vision financière (quel rythme de recrutement notre trésorerie peut-elle absorber ?).</p>
 <h3 id="les-investisseurs-regardent-lequipe-et-les-finances">Les investisseurs regardent l'équipe ET les finances</h3>
-<p>Lors d'une <a href="https://iteradvisors.com/services/accompagnement-levee-de-fond">levée de fonds</a>, les investisseurs évaluent simultanément la solidité financière et la qualité de l'équipe. Un business plan impeccable avec une équipe fragile ne convaincra personne. Une équipe brillante avec des finances chaotiques non plus.</p>
+<p>Lors d'une <a href="/services/accompagnement-levee-de-fond">levée de fonds</a>, les investisseurs évaluent simultanément la solidité financière et la qualité de l'équipe. Un business plan impeccable avec une équipe fragile ne convaincra personne. Une équipe brillante avec des finances chaotiques non plus.</p>
 <p>La due diligence porte sur les deux dimensions : les comptes sont-ils fiables ? Les contrats de travail sont-ils conformes ? La politique de rémunération est-elle cohérente avec le marché ? Le prévisionnel de recrutement est-il réaliste au regard du plan de trésorerie ? Quand le DAF et le DRH travaillent séparément, préparer ces réponses prend des semaines. Quand ils travaillent ensemble, la cohérence est native.</p>
 <h3 id="des-obligations-fiscales-et-sociales-interconnectees">Des obligations fiscales et sociales interconnectées</h3>
 <p>La conformité réglementaire ne respecte pas les frontières entre finance et RH. Les déclarations sociales (DSN) mêlent données de paie et données comptables. Le crédit d'impôt recherche (CIR) exige de croiser les temps passés par les salariés (donnée RH) avec les dépenses éligibles (donnée financière). Les aides à l'embauche nécessitent une coordination entre le service RH qui recrute et le service financier qui déclare.</p>
@@ -1205,7 +1205,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p>Exploiter pleinement ces dispositifs exige une double compétence. Le DRH identifie les profils éligibles et structure les contrats en conséquence. Le DAF calcule l'impact financier et intègre les aides dans le prévisionnel. Séparément, chacun ne capture qu'une partie de la valeur. Ensemble, ils peuvent réduire le coût du travail de 15 à 25 % sur certains profils.</p>
 <h3 id="3-une-due-diligence-rh-et-financiere-integree">3. Une due diligence RH et financière intégrée</h3>
 <p>La préparation d'une levée de fonds est un exercice intense qui mobilise toutes les fonctions de l'entreprise. Les investisseurs demandent des informations financières (comptes, prévisionnels, unit economics) et des informations RH (organigramme, contrats clés, politique de rémunération, stock-options).</p>
-<p>Quand un même cabinet coordonne ces deux volets, la <a href="https://iteradvisors.com/services/accompagnement-levee-de-fond">préparation de la levée</a> gagne en cohérence et en rapidité. Le data room est construit de manière unifiée. Les réponses aux questions des investisseurs sont alignées. Le prévisionnel financier et le plan de recrutement racontent la même histoire.</p>
+<p>Quand un même cabinet coordonne ces deux volets, la <a href="/services/accompagnement-levee-de-fond">préparation de la levée</a> gagne en cohérence et en rapidité. Le data room est construit de manière unifiée. Les réponses aux questions des investisseurs sont alignées. Le prévisionnel financier et le plan de recrutement racontent la même histoire.</p>
 <h3 id="4-un-reporting-unifie-pour-le-ceo">4. Un reporting unifié pour le CEO</h3>
 <p>Le dirigeant d'une startup ou d'une PME n'a pas le temps de lire trois rapports différents. Il a besoin d'un tableau de bord unique qui croise les indicateurs financiers et RH :</p>
 <ul>
@@ -1215,7 +1215,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <li>Taux de turnover et coût du remplacement</li>
 <li>Rentabilité par équipe ou par département</li>
 </ul>
-<p>Ce reporting unifié n'existe que si le DAF et le DRH partagent les mêmes données et les mêmes outils. C'est exactement ce que permet une <a href="https://iteradvisors.com/services/gestion-financiere-externalisee">direction financière externalisée</a> couplée à une direction RH externalisée.</p>
+<p>Ce reporting unifié n'existe que si le DAF et le DRH partagent les mêmes données et les mêmes outils. C'est exactement ce que permet une <a href="/services/gestion-financiere-externalisee">direction financière externalisée</a> couplée à une direction RH externalisée.</p>
 <h3 id="5-une-gestion-de-crise-coordonnee">5. Une gestion de crise coordonnée</h3>
 <p>Licenciement économique, plan de sauvegarde de l'emploi, rupture conventionnelle collective : ces situations exigent une coordination parfaite entre finance et RH. Le DAF chiffre l'impact financier de chaque scénario. Le DRH pilote le volet social et juridique. Ensemble, ils construisent une solution qui préserve à la fois la trésorerie de l'entreprise et la dignité des salariés concernés.</p>
 <p>Dans un modèle fragmenté, la gestion de crise devient un cauchemar logistique. L'avocat en droit social ne parle pas au DAF. Le DAF ne connaît pas les contraintes de la convention collective. Les décisions sont prises au coup par coup, sans vision d'ensemble.</p>
@@ -1238,7 +1238,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <li>Un plan de recrutement non chiffré : les fondateurs voulaient recruter cinq personnes sans savoir si la trésorerie le permettait</li>
 </ul>
 <h3 id="la-solution-deployee">La solution déployée</h3>
-<p>Iter Advisors a mis en place un accompagnement combiné : un <a href="https://iteradvisors.com/daf-externalise">DAF externalisé</a> intervenant trois jours par mois et un <a href="https://iteradvisors.com/drh-externalise">DRH externalisé</a> intervenant également trois jours par mois.</p>
+<p>Iter Advisors a mis en place un accompagnement combiné : un <a href="/daf-externalise">DAF externalisé</a> intervenant trois jours par mois et un <a href="/drh-externalise">DRH externalisé</a> intervenant également trois jours par mois.</p>
 <p>Les deux intervenants travaillaient en binôme, avec des points de synchronisation hebdomadaires et un reporting commun adressé au CEO.</p>
 <p><strong>Côté DAF :</strong>
 - Mise en place d'un suivi de trésorerie prévisionnel à 12 mois
@@ -1287,7 +1287,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <h3 id="les-drh-externalises-viennent-du-monde-rh">Les DRH externalisés viennent du monde RH</h3>
 <p>Symétriquement, les consultants RH externalisés sont des professionnels des ressources humaines. Ils maîtrisent le recrutement, la formation, le droit social, la gestion des conflits. Mais ils ne savent pas construire un prévisionnel de trésorerie ou un business plan.</p>
 <h3 id="lapproche-iter-advisors-multidisciplinaire-des-lorigine">L'approche Iter Advisors : multidisciplinaire dès l'origine</h3>
-<p><a href="https://iteradvisors.com/a-propos">Iter Advisors</a> n'a pas ajouté une offre DRH à un cabinet de DAF, ni une offre DAF à un cabinet RH. L'entreprise a été conçue dès le départ comme un cabinet de <strong>fonctions support externalisées</strong> pour startups et PME, avec une équipe qui réunit des profils finance et des profils RH.</p>
+<p><a href="/a-propos">Iter Advisors</a> n'a pas ajouté une offre DRH à un cabinet de DAF, ni une offre DAF à un cabinet RH. L'entreprise a été conçue dès le départ comme un cabinet de <strong>fonctions support externalisées</strong> pour startups et PME, avec une équipe qui réunit des profils finance et des profils RH.</p>
 <p>Cette approche native produit un avantage structurel :</p>
 <ul>
 <li><strong>Un seul interlocuteur</strong> pour le CEO, qui n'a pas à coordonner deux prestataires</li>
@@ -1300,7 +1300,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <hr>
 <h2 id="faq">FAQ</h2>
 <h3 id="peut-on-commencer-par-un-seul-service-et-ajouter-lautre-ensuite">Peut-on commencer par un seul service et ajouter l'autre ensuite ?</h3>
-<p>Absolument. De nombreuses entreprises commencent par un <a href="https://iteradvisors.com/daf-externalise">DAF externalisé</a> ou un <a href="https://iteradvisors.com/drh-externalise">DRH externalisé</a> selon leur besoin le plus urgent, puis ajoutent le second service quelques mois plus tard. L'avantage de travailler avec Iter Advisors dès le départ, même sur un seul service, est que la transition vers le modèle combiné est fluide : les outils, les processus et la connaissance de l'entreprise sont déjà en place.</p>
+<p>Absolument. De nombreuses entreprises commencent par un <a href="/daf-externalise">DAF externalisé</a> ou un <a href="/drh-externalise">DRH externalisé</a> selon leur besoin le plus urgent, puis ajoutent le second service quelques mois plus tard. L'avantage de travailler avec Iter Advisors dès le départ, même sur un seul service, est que la transition vers le modèle combiné est fluide : les outils, les processus et la connaissance de l'entreprise sont déjà en place.</p>
 <h3 id="comment-se-coordonnent-le-daf-et-le-drh-externalises">Comment se coordonnent le DAF et le DRH externalisés ?</h3>
 <p>Chez Iter Advisors, le DAF et le DRH qui interviennent dans une même entreprise ont des points de synchronisation hebdomadaires. Ils partagent les mêmes outils de suivi et produisent un reporting commun. Le CEO n'a pas à jouer le rôle de relais entre deux intervenants : la coordination est intégrée dans le modèle de fonctionnement.</p>
 <h3 id="quel-est-le-cout-dun-duo-daf-drh-externalise">Quel est le coût d'un duo DAF + DRH externalisé ?</h3>
@@ -1312,7 +1312,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p>La distinction traditionnelle entre direction financière et direction des ressources humaines est un héritage des grandes entreprises, où chaque fonction dispose de son propre département, de son propre budget et de ses propres outils. Pour une startup ou une PME, reproduire ce modèle en version externalisée - un prestataire pour la finance, un autre pour les RH - c'est importer les silos des grands groupes sans en avoir les moyens de coordination.</p>
 <p>L'approche combinée du <strong>DAF et DRH externalisé</strong> n'est pas un gadget. C'est une réponse structurelle à la réalité des entreprises en croissance, où chaque euro dépensé en masse salariale est à la fois une décision financière et une décision humaine.</p>
 <p>Les startups et PME qui adoptent ce modèle gagnent en cohérence, en rapidité de décision et en économies. Elles se présentent devant les investisseurs avec une histoire unifiée. Elles traversent les périodes de croissance intense sans créer de dette organisationnelle. Et elles libèrent leurs fondateurs pour qu'ils se concentrent sur ce qui compte vraiment : le produit, les clients et la vision.</p>
-<p><strong>Vous dirigez une startup ou une PME entre 5 et 50 salariés ?</strong> <a href="https://iteradvisors.com/a-propos">Découvrez comment Iter Advisors peut structurer vos fonctions finance et RH</a> avec un modèle qui a fait ses preuves. Prenez rendez-vous pour un diagnostic gratuit de vos besoins.</p>`,
+<p><strong>Vous dirigez une startup ou une PME entre 5 et 50 salariés ?</strong> <a href="/a-propos">Découvrez comment Iter Advisors peut structurer vos fonctions finance et RH</a> avec un modèle qui a fait ses preuves. Prenez rendez-vous pour un diagnostic gratuit de vos besoins.</p>`,
       content: [],
     },
     "cas-etude-happy-scribe": {
