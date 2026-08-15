@@ -237,7 +237,20 @@ export default function DafPage({
                 width={560}
                 height={400}
                 className="rounded-2xl object-cover w-full max-w-xl"
-                priority={true}
+                // SEO-FIN §3.4 (2026-08-15) — image hero.
+                //
+                // Elle est dans un conteneur `hidden lg:*` : elle n'est pas rendue
+                // sur mobile, elle n'y est donc pas candidate LCP. C'est pour ça
+                // qu'on ne met PAS `priority` — cela émettrait un <link preload>
+                // que les mobiles téléchargeraient pour rien.
+                //
+                // `loading="eager"` suffit : sur desktop l'image est dans le HTML
+                // initial, donc découverte immédiatement, sans le lazy qui
+                // retardait le LCP. Le `sizes` plafonne à la largeur réellement
+                // rendue (560 px) et demande la plus petite variante en dessous
+                // du point de bascule, où l'image n'est pas affichée.
+                loading="eager"
+                sizes="(min-width: 1024px) 560px, 1px"
               />
             </div>
           </div>
