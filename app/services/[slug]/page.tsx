@@ -70,27 +70,31 @@ export async function generateMetadata({
     return { title: "Services | Iter Advisors" };
   }
 
-  // TICKET F3 (2026-05-17) — gestion-financiere-externalisee is a thin page
-  // that overlaps with the richer controle-de-gestion-externalise. The SEO
-  // canonical is set to the richer page so Google consolidates signals there.
-  if (slug === "gestion-financiere-externalisee") {
-    return buildMetadata({
-      locale: "fr",
-      path: "/services/controle-de-gestion-externalise",
-      localizedPaths: {
-        fr: "/services/controle-de-gestion-externalise",
-        en: "/en/services/outsourced-management-control",
-        es: "/es/services/control-gestion-externalizado",
-      },
-      title: fallbackTitles[slug],
-      description: fallbackDescriptions[slug],
-    });
-  }
+  // SEO-REP §4.1 (2026-08-15) — canonical croisé supprimé.
+  //
+  // La page servait son propre contenu (H1 « Gestion Financière Externalisée »)
+  // en déclarant le canonical de /services/controle-de-gestion-externalise :
+  // Google se voyait donc proposer une page qu'il ne devait pas indexer, sur
+  // une intention qui n'est pas celle de la cible. Gestion financière
+  // (pilotage global, trésorerie, reporting, financement, organisation) et
+  // contrôle de gestion (budget, écarts, coûts, marges, clôture analytique)
+  // sont deux offres distinctes : chacune redevient auto-canonique.
+  //
+  // Les hreflang croisés partaient aussi vers « outsourced management control »,
+  // qui n'est pas l'équivalent de « gestion financière ». Faute d'équivalent EN
+  // et ES réel, aucun alternate n'est émis pour cette page — mieux vaut pas
+  // d'alternate qu'un alternate mensonger.
 
   return buildMetadata({
     locale: "fr",
     path: `${basePath}/${slug}`,
     localizedPaths: getServiceLocalizedPaths(slug),
+    // SEO-REP §4.1 — pas d'équivalent EN/ES réel pour « gestion financière
+    // externalisée » : les alternates désignaient le contrôle de gestion, une
+    // autre offre. Supprimés en attendant de vraies traductions.
+    ...(slug === "gestion-financiere-externalisee"
+      ? { disableHreflang: ["en", "es"] as ("en" | "es")[] }
+      : {}),
     title: fallbackTitles[slug],
     description: fallbackDescriptions[slug],
   });

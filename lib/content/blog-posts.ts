@@ -3538,7 +3538,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       category: "CFO outsourcing",
       htmlContent: `<p>Your business is growing, the finance topics are getting harder, and you've realised your accountant and your CEO can no longer carry the load alone. You need a CFO. The question is: full-time hire, or <a href="/en/fractional-cfo">Fractional CFO</a>?</p>
 <p>This guide breaks down the trade-offs across cost, flexibility, expertise and ROI — and gives you a clear answer based on your stage.</p>
-<h2 id="cost">Cost: 50-70% gap</h2>
+<h2 id="cost">Cost: a 30-60% gap</h2>
 <p>A salaried CFO in France costs €100,000-€213,000/year all-in. A Fractional CFO costs €24,000-€96,000/year for an equivalent senior profile. Read the detailed pricing in <a href="/en/ressources/blog/fractional-cfo-cost-services-2026">our 2026 cost guide</a>.</p>
 <p>The cost gap is not just salary — it's also:</p>
 <ul>
@@ -4053,7 +4053,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       category: "CFO externalizado",
       htmlContent: `<p>Su negocio crece, los temas financieros se complican y se ha dado cuenta de que su contable y su CEO ya no pueden con todo. Necesita un CFO. La pregunta es: ¿fichaje a tiempo completo o <a href="/es/externalizacion-daf">CFO externalizado</a>?</p>
 <p>Esta guía desglosa los compromisos en coste, flexibilidad, expertise y ROI — y le da una respuesta clara según su etapa.</p>
-<h2 id="cost">Coste: brecha del 50-70%</h2>
+<h2 id="cost">Coste: una brecha del 30-60 %</h2>
 <p>Un CFO asalariado cuesta 100.000-213.000 €/año con todo incluido. Un CFO externalizado cuesta 24.000-96.000 €/año por un perfil senior equivalente. Vea el detalle de tarifas en <a href="/es/recursos/blog/cfo-externo-pymes-precio-2026">nuestra guía de costes 2026</a>.</p>
 <p>La brecha no es solo el salario — también es:</p>
 <ul>

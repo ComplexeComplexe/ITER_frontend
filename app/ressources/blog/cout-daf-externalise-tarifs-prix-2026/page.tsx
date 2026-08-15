@@ -33,7 +33,7 @@ export default function CoutDafExternalisePage() {
       slug="cout-daf-externalise-tarifs-prix-2026"
       category="Tarifs"
       title="Combien coûte un DAF externalisé en 2026 ? Tarifs, grille de prix et ROI"
-      dek="Grille de prix complète pour DAF externalisé 2026 : TJM, forfaits mensuels par seniority, ROI calculator. Économisez 50-70 % vs DAF salarié."
+      dek="Grille de prix complète pour DAF externalisé 2026 : TJM, forfaits mensuels par séniorité, calcul du ROI. 30 à 60 % d'économie face au coût employeur d'un DAF salarié."
       author={{
         name: "Benjamin Ziza",
         avatar: "/images/team/benjamin-ziza.webp",
@@ -90,7 +90,12 @@ export default function CoutDafExternalisePage() {
     >
       <h2 id="grille-tarifs">1. Grille tarifaire complète 2026</h2>
       <p>
-        Voici les tarifs "market" pour un DAF externalisé en France en 2026 :
+        Voici les tarifs pratiqués sur le marché français en 2026. Pour les
+        formules et le périmètre inclus chez Iter Advisors,{" "}
+        <a href="/daf-externalise/tarifs">
+          consulter la grille tarifaire d&apos;un DAF externalisé
+        </a>{" "}
+        — cet article traite du marché, la grille traite de notre offre.
       </p>
 
       <ProseTable>
@@ -340,10 +345,10 @@ export default function CoutDafExternalisePage() {
       {/* GSC-05 (2026-07-19) — maillage vers page pilier avec ancres variées
           ("nos formules de DAF externalisé" + "découvrir notre service"). */}
       <p>
-        Pour comparer les 3&nbsp;formules détaillées côte à côte (2&nbsp;000&nbsp;/
-        4&nbsp;000&nbsp;/ 7&nbsp;000&nbsp;€ HT selon le volume) et voir la
-        méthodologie qui va avec, jetez un œil à{' '}
-        <Link href="/daf-externalise">nos formules de DAF externalisé</Link>.
+        Pour comparer les 3&nbsp;formules détaillées côte à côte (3&nbsp;000
+        à 8&nbsp;000&nbsp;€ HT/mois selon le scope) et voir la méthodologie qui
+        va avec, jetez un œil à{' '}
+        <Link href="/daf-externalise/tarifs">notre grille tarifaire</Link>.
         Vous pouvez aussi{' '}
         <Link href="/daf-externalise">découvrir notre service</Link> complet en
         30 secondes via le bloc «&nbsp;L'essentiel&nbsp;» en haut de page.

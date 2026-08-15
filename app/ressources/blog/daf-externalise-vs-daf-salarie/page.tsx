@@ -49,7 +49,7 @@ export default function DafExternaliseVsSalariePage() {
         { id: "comparaison-directe", label: "5. Comparaison directe (tableau)" },
         { id: "matrice-decision", label: "6. Matrice de décision" },
       ]}
-      tldr="DAF salarié : meilleur si vous avez des processus stables et complexes, une équipe à superviser. DAF externalisé : meilleur si vous avez une croissance rapide, des besoins variables, ou une taille PME. Le coût : 50-70 % moins cher en externalisé. 60 % des PMEs optent pour l'externalisé."
+      tldr="DAF salarié : meilleur si vous avez des processus stables et complexes, une équipe à superviser. DAF externalisé : meilleur si vous avez une croissance rapide, des besoins variables, ou une taille PME. Le coût : 30 à 60 % d'économie face au coût employeur d'un salarié."
       faqItems={[
         {
           question: "DAF externalisé ou DAF salarié : quel est le moins cher ?",
@@ -369,7 +369,7 @@ export default function DafExternaliseVsSalariePage() {
       <p>
         Envie de creuser le sujet côté offre&nbsp;? Découvrez notre{' '}
         <Link href="/daf-externalise">service de DAF externalisé</Link> — 3&nbsp;formules
-        (Essentiel, Croissance, Premium) dès 2&nbsp;000&nbsp;€ HT/mois avec un DAF
+        (Essentiel, Croissance, Premium) dès 3&nbsp;000&nbsp;€ HT/mois avec un DAF
         senior opérationnel sous 2&nbsp;semaines. Pour comprendre en profondeur
         notre méthodologie, notre livret complet est disponible sur la page{' '}
         <Link href="/daf-externalise">cabinet Iter Advisors</Link>.

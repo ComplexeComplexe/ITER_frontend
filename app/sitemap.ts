@@ -127,6 +127,15 @@ const FR_BLOG_SLUGS = [
   "regimes-fiscaux-france-vs-espagne",
   // T8 (2026-06-07) — new article ciblant "coût externalisation comptable"
   "cout-externalisation-comptable-2026",
+  // SEO-REP §6.2 (2026-08-15) — sept articles répondaient 200, étaient
+  // auto-canoniques et indexables, mais n'étaient déclarés nulle part.
+  "cfo-externe-role-missions-2026",
+  "daf-part-time-tarifs-missions-2026",
+  "essentiels-outils-tech-finance",
+  "ia-finance-automatisation-direction-financiere",
+  "loi-beckham-economie-impot-simulation",
+  "loi-beckham-espagne-conditions-eligibilite",
+  "organiser-sa-direction-financiere",
 ] as const;
 
 const EN_BLOG_SLUGS = [
@@ -156,6 +165,16 @@ const TOOL_SLUGS = [
   "pennylane", "agicap", "spendesk", "payfit",
   "sage", "cegid-loop", "fygr", "pleo", "silae",
   "lucca", "qonto", "revolut-business", "payhawk",
+  // SEO-REP §6.2 (2026-08-15) — fiches et hubs catégories manquants.
+  "kyriba", "power-bi",
+];
+
+// Hubs de catégories d'outils (FR-only) — absents du sitemap jusqu'ici.
+const TOOL_CATEGORY_SLUGS = [
+  "gestion-depenses",
+  "logiciels-comptabilite",
+  "logiciels-paie",
+  "logiciels-tresorerie",
 ];
 
 // ── Glossary pages (FR-only — EN/ES glossary have no [slug] routes) ───────────
@@ -172,6 +191,8 @@ const GLOSSARY_SLUGS = [
   "churn-rate",
   "run-rate",
   "bspce-bsa",
+  // SEO-REP §6.2 (2026-08-15)
+  "daf",
 ];
 
 // ── HR service pages (FR-only for now) ───────────────────────────────────────
@@ -274,18 +295,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ou faire de cette URL un vrai pilier "direction financière
   // externalisée" avec contenu propre et canonical auto-référent).
   {
-    const gfAlternates = {
-      languages: {
-        es:          `${BASE}/es/services/gestion-financiera-externalizada`,
-        "x-default": `${BASE}/es/services/gestion-financiera-externalizada`,
-      },
-    };
+    // SEO-REP §4.1 / §6.2 (2026-08-15) — la page FR est réintégrée : son
+    // canonical croisé vers /services/controle-de-gestion-externalise a été
+    // supprimé, elle est de nouveau auto-canonique. Pas d'alternates FR↔ES :
+    // faute d'équivalent EN et ES réel de « gestion financière », les
+    // alternates désignaient le contrôle de gestion, une autre offre.
     entries.push(
-      {
-        url: `${BASE}/es/services/gestion-financiera-externalizada`,
-        lastModified: D.service,
-        alternates: gfAlternates,
-      },
+      { url: `${BASE}/services/gestion-financiere-externalisee`, lastModified: D.service },
+      { url: `${BASE}/es/services/gestion-financiera-externalizada`, lastModified: D.service },
     );
   }
 
@@ -471,7 +488,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE}/ressources/outils/${slug}`,
       lastModified: D.tools,
     });
+  }  for (const slug of TOOL_CATEGORY_SLUGS) {
+    entries.push({ url: `${BASE}/ressources/outils/${slug}`, lastModified: D.tools });
   }
+  // SEO-REP §6.2 (2026-08-15) — page recrutement Fractional CFO, distincte de
+  // /fractional-cfo-startups (commerciale) et absente du sitemap jusqu'ici.
+  entries.push({ url: `${BASE}/carrieres/fractional-cfo`, lastModified: D.jobs });
+
   // malibou (2026-07-30) — shipped separately from the TOOL_SLUGS batch
   // above, so it gets its own lastModified instead of bumping D.tools
   // (which would falsely imply all 13 other tool pages changed today).

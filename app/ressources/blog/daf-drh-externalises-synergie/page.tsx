@@ -317,7 +317,7 @@ export default function DafDrhExternalisationSynergieePage() {
         parcourez notre offre complète pour{' '}
         <Link href="/daf-externalise">externaliser votre DAF</Link> — cadre
         méthodologique éprouvé, DAF senior mobilisable sous 2&nbsp;semaines et
-        formules à partir de 2&nbsp;000&nbsp;€ HT/mois. Le détail de nos
+        formules à partir de 3&nbsp;000&nbsp;€ HT/mois. Le détail de nos
         interventions{' '}
         <Link href="/daf-externalise">DAF externalisé pour PME</Link> et
         scale-ups y est présenté formule par formule.

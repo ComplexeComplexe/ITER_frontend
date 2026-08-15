@@ -400,7 +400,11 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             "Les tarifs d'un DAF externalisé s'expriment généralement en forfait mensuel, calculé sur la base d'un nombre de jours d'intervention défini à l'avance.",
             // Grille officielle (cf. lib/content/facts.ts) : le volume est une moyenne
             // observée, pas un forfait — l'engagement porte sur un scope.
-            "Formule DAF à Temps Partagé : la plus courante chez les PME et startups. Essentiel, 3 000 à 5 000 € HT/mois, pour une startup en Seed de moins de 30 personnes. Croissance, 5 000 à 6 500 € HT/mois, en Série A entre 30 et 100 personnes. Premium, 6 500 à 8 000 € HT/mois, à partir de la Série B et pour les structures multi-entités.",
+            // SEO-REP §4.4 (2026-08-15) — la grille détaillée des trois formules est
+            // retirée : elle appartient à /daf-externalise/tarifs, seule page
+            // propriétaire de l'intention prix. Cette page explique le modèle du
+            // temps partagé et résume le tarif en une phrase, avec le lien.
+            "Formule DAF à Temps Partagé : la plus courante chez les PME et startups. Le budget va de 3 000 à 8 000 € HT par mois selon la formule et le scope confié — le détail des trois formules et de ce qu'elles incluent est sur la [grille tarifaire](/daf-externalise/tarifs).",
             "Formule DAF de Transition : intervention intensive sur 3 à 12 mois en cas de crise ou de transformation majeure. Tarif : 8 000 à 12 000 € HT par mois. Plus élevé que le temps partagé, car la mobilisation est bien plus forte.",
             "Mission Ponctuelle : pour besoins spécifiques et limités (due diligence, modèle financier, audit de trésorerie). TJM : 800-1 200€ HT par jour selon le profil et la complexité.",
           ],
