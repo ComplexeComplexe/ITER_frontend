@@ -155,7 +155,7 @@ export default function DafExternalisVsDafInterimairePage() {
             title: 'DAF externalisé vs DAF salarié : analyse complète',
           },
           {
-            url: '/ressources/blog/daf-externalise-vs-alternatives',
+            url: '/ressources/blog/daf-externalise-vs-daf-salarie',
             category: 'Comparaison',
             title: 'DAF externalisé : comparatif des alternatives',
           },

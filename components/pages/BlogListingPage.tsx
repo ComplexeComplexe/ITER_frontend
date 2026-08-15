@@ -1,5 +1,5 @@
 import { Locale } from "@/lib/i18n";
-import { getLocalePath } from "@/lib/i18n";
+import { resolveBlogArticleHref } from "@/lib/path-localization";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
@@ -184,23 +184,16 @@ const content: Record<
   },
 };
 
-const blogBasePath = "/ressources/blog";
-
 /**
  * SEO-ULT §4 (2026-08-15) — la convention espagnole est `/es/recursos/`, pas
  * `/es/ressources/`. `getLocalePath` se contente de préfixer la locale, donc
  * chaque carte de ce listing produisait une URL qui répondait en 308.
  *
- * Le correctif est local et non dans `getLocalePath` : pour le blog, le slug
- * est identique d'une langue à l'autre, alors que les autres rubriques
- * changent aussi de segment — outils devient herramientas, glossaire devient
- * glosario. Un remplacement générique de « ressources » par « recursos »
- * fabriquerait des URL inexistantes ailleurs.
+ * §4b — le cas particulier espagnol est remonté dans `blogHref`, et le
+ * listing passe désormais par `resolveBlogArticleHref` : certains articles
+ * n'ont pas d'URL propre dans leur locale (traduction redirigée vers le FR,
+ * doublon de slug, article dépublié). Ils sont écartés plus bas.
  */
-function getBlogHref(locale: Locale, slug: string): string {
-  if (locale === "es") return `/es/recursos/blog/${slug}`;
-  return getLocalePath(locale, `${blogBasePath}/${slug}`);
-}
 
 /* ── Card-format heuristics ──────────────────────────────────────────── */
 function inferKind(
@@ -267,9 +260,15 @@ export default function BlogListingPage({
   // Convert StrapiBlogArticle[] into the shape consumed by the client
   // components. We do this here (RSC) so the client never sees the raw
   // Strapi shape and we keep typing tight.
+  // Un article sans URL propre dans cette locale ne peut pas être proposé :
+  // sa carte renverrait vers une redirection, voire vers ce listing même.
+  const listable = (articles ?? []).filter(
+    (a) => resolveBlogArticleHref(locale, a.slug) !== null,
+  );
+
   const fullCards =
-    articles && articles.length > 0
-      ? articles.map((a) => {
+    listable.length > 0
+      ? listable.map((a) => {
           const imageUrl = a.featuredImage?.url
             ? strapiMediaUrl(a.featuredImage)
             : "";
@@ -279,7 +278,7 @@ export default function BlogListingPage({
           const kind = inferKind(a.title, a.category ?? "");
           return {
             title: a.title,
-            href: getBlogHref(locale, a.slug),
+            href: resolveBlogArticleHref(locale, a.slug) as string,
             image: imageUrl || "/images/og-default.webp", // Ahrefs T-404 (2026-06-08): placeholder.webp missing → og-default
             alt,
             category: categoryLabel(a.category),

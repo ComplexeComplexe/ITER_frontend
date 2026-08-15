@@ -7,7 +7,7 @@ export const metadata: Metadata = buildMetadata({
   locale: "fr",
   title: "Fiches Métiers Finance | Iter Advisors",
   description: "Fiches métiers finance : DAF, RAF, CFO, Trésorier, Contrôleur. Missions, compétences, salaires détaillés. Guide expert gratuit 2026 pour managers.",
-  path: "/ressources/fiche-metier",
+  path: "/daf-externalise/metier",
 });
 
 export default async function Page() {

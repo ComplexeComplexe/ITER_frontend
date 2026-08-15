@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Star } from 'lucide-react';
+import { CATEGORIES_WITH_PAGE } from '@/data/tools';
 
 export interface ToolCardProps {
   name: string;
@@ -61,10 +62,16 @@ export default function ToolCard({
 
         {/* Tool name and category */}
         <h3 className="text-lg font-bold text-gray-900 mb-1">{name}</h3>
+        {/* SEO-ULT §4b (2026-08-15) — quatre catégories n'ont pas de page :
+            leur URL redirige vers le hub. On affiche alors le libellé seul. */}
         <p className="text-sm text-gray-600 mb-2">
-          <Link href={`/ressources/outils/${categorySlug}`} className="hover:underline">
-            {category}
-          </Link>
+          {CATEGORIES_WITH_PAGE.has(categorySlug) ? (
+            <Link href={`/ressources/outils/${categorySlug}`} className="hover:underline">
+              {category}
+            </Link>
+          ) : (
+            category
+          )}
         </p>
 
         {/* Rating */}

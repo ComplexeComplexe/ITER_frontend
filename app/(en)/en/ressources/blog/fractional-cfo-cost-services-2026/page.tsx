@@ -63,10 +63,13 @@ export default function FractionalCfoCostServicesPage() {
           category: "Service",
           title: "Our Fractional CFO offering",
         },
+        // SEO-ULT §4b (2026-08-15) — cette entrée pointait vers l'ancien slug
+        // de cet article même : la redirection ramenait le lecteur sur la page
+        // qu'il lisait. Remplacée par une comparaison réellement distincte.
         {
-          url: "/en/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
-          category: "Pricing",
-          title: "Outsourced CFO cost guide 2026",
+          url: "/en/ressources/blog/daf-externalise-vs-daf-salarie",
+          category: "Comparison",
+          title: "Fractional CFO vs in-house CFO",
         },
         {
           url: "/en/outsourced-cfo-paris",

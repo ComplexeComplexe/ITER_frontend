@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
+import { aboutHref } from "@/lib/path-localization";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
@@ -108,11 +109,10 @@ export default function BlogPostPage({
             ?.roles?.fr ??
           "")
     : "";
-  const authorUrl = authorMember
-    ? locale === "es"
-      ? `/es/quienes-somos/${authorMember.slug}`
-      : `/${locale === "fr" ? "" : locale + "/"}a-propos/${authorMember.slug}`
-    : undefined;
+  // SEO-ULT §4b (2026-08-15) — l'espagnol était traité à part, mais l'anglais
+  // recevait `/en/a-propos/<slug>`, qui redirige vers `/en/about/<slug>`. La
+  // signature de chaque article EN portait donc un lien vers une 308.
+  const authorUrl = authorMember ? aboutHref(locale, authorMember.slug) : undefined;
 
   /* ── Schema.org Article structured data ────────────────────────── */
   const articleUrl = slug ? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
@@ -254,7 +254,7 @@ export default function BlogPostPage({
                 <span className="flex items-center gap-1.5 text-sm">
                   <span className="w-1 h-1 rounded-full bg-muted-foreground/50" />
                   <a
-                    href={`/${locale === "fr" ? "" : locale + "/"}a-propos`}
+                    href={aboutHref(locale)}
                     className="hover:text-iter-violet transition-colors"
                     rel="author"
                   >

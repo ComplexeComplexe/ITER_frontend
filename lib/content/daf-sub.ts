@@ -291,7 +291,11 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             "**3 mois** est la durée minimale pour une mission de transition. En dessous, le DAF n'a pas le temps de comprendre l'entreprise, de stabiliser la situation, et de préparer une passation correcte.",
             "**6 mois** est la durée la plus fréquente. Elle permet de couvrir un cycle complet, de mener les principaux chantiers de transformation, et de recruter et former le successeur.",
             "**12 mois** est recommandé pour les situations complexes : restructuration lourde, préparation à une cession, ou transformation digitale de la fonction finance.",
-            "Pour en savoir plus sur **[quand recruter un DAF de transition](/ressources/blog/daf-transition-quand)** et les situations qui le justifient, consultez notre guide pratique.",
+            // SEO-ULT §4b (2026-08-15) — la phrase renvoyait à un article de
+            // blog fusionné depuis, dont l'URL redirige vers la liste des
+            // articles. Le rediriger vers cette page-ci en aurait fait un lien
+            // sur lui-même : le renvoi est supprimé, le propos reste.
+            "Dans tous les cas, la durée se décide au moment du cadrage, à partir de l'urgence de la situation et des chantiers à mener — pas l'inverse.",
           ],
         },
         {

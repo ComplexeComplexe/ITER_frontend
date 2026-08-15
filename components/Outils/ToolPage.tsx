@@ -6,7 +6,7 @@ import CTASection from '@/components/CTASection';
 import ToolHeader from './ToolHeader';
 import VerbatimBlock from './VerbatimBlock';
 import StackCombo from './StackCombo';
-import { Tool, getToolsByCategory, tools as allTools } from '@/data/tools';
+import { Tool, getToolsByCategory, tools as allTools, CATEGORIES_WITH_PAGE } from '@/data/tools';
 import { getVerbatimsByTool } from '@/data/verbatims';
 import { getToolDetails } from '@/data/toolDetails';
 import {
@@ -144,7 +144,13 @@ export default function ToolPage({
               { label: 'Outils', href: '/ressources/outils' },
               {
                 label: categoryLabels[tool.category as keyof typeof categoryLabels],
-                href: `/ressources/outils/${tool.categorySlug}`,
+                // SEO-ULT §4b (2026-08-15) — quatre catégories n'ont pas de
+                // page (equity-cap-table, recouvrement-cash-collection,
+                // reporting-dataviz, sirh-rh) : leur URL redirige vers le hub.
+                // Le fil d'Ariane les affiche sans lien plutôt que d'y envoyer.
+                href: CATEGORIES_WITH_PAGE.has(tool.categorySlug)
+                  ? `/ressources/outils/${tool.categorySlug}`
+                  : undefined,
               },
               { label: tool.name },
             ]}
@@ -380,10 +386,17 @@ export default function ToolPage({
                         role: roleByCategory[t.category],
                       };
                     }
-                    // Unknown tool name (e.g. "Stripe", "SAP" referenced in
-                    // a stack combo but not in our data) — render the label
-                    // without a logo rather than crash.
-                    return { name: toolName, slug: toolName.toLowerCase().replace(/\s+/g, '-'), logo: '', role: '' };
+                    // Unknown tool name (e.g. "Stripe", "SAP / NetSuite"
+                    // referenced in a stack combo but not in our data) —
+                    // render the label without a logo rather than crash.
+                    //
+                    // SEO-ULT §4b (2026-08-15) — le slug était fabriqué en
+                    // slugifiant le nom, ce qui produisait des liens vers des
+                    // fiches inexistantes : /ressources/outils/stripe, et même
+                    // /ressources/outils/sap-/-netsuite, dont la barre oblique
+                    // venait du nom. `slug: null` laisse la carte visible mais
+                    // sans lien.
+                    return { name: toolName, slug: null, logo: '', role: '' };
                   }) : (stack.combo || []);
                 return (
                   <div key={idx}>

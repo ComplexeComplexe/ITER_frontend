@@ -13,7 +13,7 @@ const labels: Record<Locale, { resources: string; resourcesHref: string; testimo
   // through this breadcrumb must use the canonical destination directly.
   fr: { resources: "Ressources", resourcesHref: "/ressources", testimonials: "Cas clients", testimonialsHref: "/ressources/cas-clients", challenge: "Le défi", solution: "Notre solution", results: "Résultats", industry: "Secteur", teamSize: "Équipe", revenue: "CA initial", engagement: "Type de mission" },
   en: { resources: "Resources", resourcesHref: "/en/ressources", testimonials: "Case studies", testimonialsHref: "/en/ressources/cas-clients", challenge: "The challenge", solution: "Our solution", results: "Results", industry: "Industry", teamSize: "Team size", revenue: "Initial revenue", engagement: "Engagement type" },
-  es: { resources: "Recursos", resourcesHref: "/es/recursos", testimonials: "Casos prácticos", testimonialsHref: "/es/recursos/cas-clients", challenge: "El desafío", solution: "Nuestra solución", results: "Resultados", industry: "Sector", teamSize: "Equipo", revenue: "Facturación inicial", engagement: "Tipo de misión" },
+  es: { resources: "Recursos", resourcesHref: "/es/recursos", testimonials: "Casos prácticos", testimonialsHref: "/es/recursos/casos-de-exito", challenge: "El desafío", solution: "Nuestra solución", results: "Resultados", industry: "Sector", teamSize: "Equipo", revenue: "Facturación inicial", engagement: "Tipo de misión" },
 };
 
 export default function StrapiTestimonialPage({ locale, testimonial }: { locale: Locale; testimonial: StrapiTestimonial }) {

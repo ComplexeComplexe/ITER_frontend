@@ -87,7 +87,7 @@ export default async function Page() {
           title: "CFO externo para pymes: funciones y precio en 2026",
         },
         {
-          url: "/ressources/blog/double-imposition-france-espagne-convention",
+          url: "/ressources/fiscalite/double-imposition-france-espagne",
           category: "Fiscalidad internacional",
           title: "Convenio fiscal Francia-España: evitar la doble imposición",
         },

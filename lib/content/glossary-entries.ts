@@ -133,7 +133,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
           content: [
             "Un EBITDA positif signifie que l'entreprise génère de la valeur à partir de son activité opérationnelle. Un EBITDA négatif est un signal d'alerte : l'entreprise consomme plus de ressources qu'elle n'en génère.",
             "La marge d'EBITDA (EBITDA / Chiffre d'affaires) est un indicateur de rentabilité opérationnelle. Une marge d'EBITDA de 15 à 20% est considérée comme bonne dans la plupart des secteurs. Les entreprises SaaS visent souvent des marges supérieures à 20%.",
-            "Un **[DAF externalisé](/daf-externalise)** peut vous aider à calculer et à interpréter votre EBITDA dans le contexte de votre secteur d'activité, et à identifier les leviers d'amélioration. Pour en savoir plus sur les autres indicateurs financiers clés, consultez notre définition du **[BFR](/ressources/glossaire/bfr)**.",
+            "Un **[DAF externalisé](/daf-externalise)** peut vous aider à calculer et à interpréter votre EBITDA dans le contexte de votre secteur d'activité, et à identifier les leviers d'amélioration. Pour en savoir plus sur les autres indicateurs financiers clés, consultez notre définition du **[BFR](/ressources/glossaire/besoin-fonds-roulement-bfr)**.",
           ],
         },
         {

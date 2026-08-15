@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/strapi";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
+import { dafClusterHref, serviceHref } from "@/lib/path-localization";
 import { getDafLocalContent, DafLocalCity } from "@/lib/content/daf-local";
 import { faqPageSchema } from "@/lib/schemas";
 import { TRUSTFOLIO_REVIEWS, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/trustfolio-reviews";
@@ -277,11 +278,16 @@ export default function DafLocalPage({
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { title: locale === "fr" ? "Lev\u00e9e de fonds" : locale === "en" ? "Fund-raising" : "Levantamiento de fondos", href: locale === "fr" ? "/services/accompagnement-levee-de-fond" : `/${locale}/services/fund-raising-support`, icon: Rocket },
-              { title: locale === "fr" ? "Contr\u00f4le de gestion" : locale === "en" ? "Management control" : "Control de gesti\u00f3n", href: locale === "fr" ? "/services/controle-de-gestion-externalise" : `/${locale}/services/outsourced-management-control`, icon: BarChart3 },
-              { title: locale === "fr" ? "Gestion de tr\u00e9sorerie" : locale === "en" ? "Cash flow management" : "Gesti\u00f3n de tesorer\u00eda", href: locale === "fr" ? "/services/previsionnel-tresorerie" : `/${locale}/services/cash-flow-forecast`, icon: Wallet },
+              // SEO-ULT \u00a74b (2026-08-15) \u2014 ces cinq href \u00e9taient compos\u00e9s \u00e0 la
+              // main en pr\u00e9fixant le slug anglais par la locale. En espagnol,
+              // /es/services/fund-raising-support & co n'existent pas : les
+              // trois pages villes ES partaient en 308, et les trois pages EN
+              // faisaient de m\u00eame sur le lien DAF \u00e0 temps partag\u00e9.
+              { title: locale === "fr" ? "Lev\u00e9e de fonds" : locale === "en" ? "Fund-raising" : "Levantamiento de fondos", href: serviceHref("accompagnement-levee-de-fond", locale), icon: Rocket },
+              { title: locale === "fr" ? "Contr\u00f4le de gestion" : locale === "en" ? "Management control" : "Control de gesti\u00f3n", href: serviceHref("controle-de-gestion-externalise", locale), icon: BarChart3 },
+              { title: locale === "fr" ? "Gestion de tr\u00e9sorerie" : locale === "en" ? "Cash flow management" : "Gesti\u00f3n de tesorer\u00eda", href: serviceHref("previsionnel-tresorerie", locale), icon: Wallet },
               { title: locale === "fr" ? "M&A & Due Diligence" : "M&A & Due Diligence", href: locale === "fr" ? "/services/ma-due-diligence" : `/${locale}/services/ma-due-diligence`, icon: Compass },
-              { title: locale === "fr" ? "DAF \u00e0 temps partag\u00e9" : locale === "en" ? "Part-time CFO" : "DAF a tiempo compartido", href: locale === "fr" ? "/daf-externalise/temps-partage" : `/${locale}/daf-externalise/temps-partage`, icon: Network },
+              { title: locale === "fr" ? "DAF \u00e0 temps partag\u00e9" : locale === "en" ? "Part-time CFO" : "DAF a tiempo compartido", href: dafClusterHref("temps-partage", locale), icon: Network },
             ].map((service, i) => (
               <Link
                 key={i}
