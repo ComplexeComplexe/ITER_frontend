@@ -375,7 +375,7 @@ export default function CfoExterneRoleMissions2026Page() {
           Un CFO salarié senior en France coûte entre 90 000 et 140 000 € brut annuel,
           soit 130 000 à 200 000 € de coût total pour l&apos;entreprise (charges
           incluses). Un CFO externe à 2 j/semaine revient à 50 000-70 000 €/an — soit
-          une économie de 60 à 70 % pour une disponibilité adaptée à vos besoins réels.
+          une économie de 30 à 60 % pour une disponibilité adaptée à vos besoins réels.
         </Callout>
 
         <h2 id="vs-daf">5. CFO externe vs DAF externalisé : la nuance</h2>

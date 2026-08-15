@@ -178,10 +178,14 @@ export const dafContent: Record<Locale, DafContent> = {
       heading: "L'essentiel en 30 secondes",
       points: [
         { label: "Définition", text: "un DAF externalisé est un directeur financier senior qui pilote la finance de votre entreprise sans en être salarié, en temps partagé ou en mission ponctuelle." },
-        { label: "Tarif 2026", text: "2 000 à 7 000 € HT/mois, contre 100 000 à 213 000 €/an chargés pour un DAF salarié." },
+        { label: "Tarif 2026", text: "3 000 à 8 000 € HT/mois selon la formule, contre 100 000 à 213 000 €/an de coût employeur chargé pour un DAF salarié." },
         { label: "Pour qui", text: "startups en levée de fonds, PME en croissance, ETI en transformation." },
-        { label: "Délai", text: "opérationnel sous 7 à 14 jours." },
-        { label: "Engagement", text: "aucun minimum requis, modulable au mois." },
+        // Délais arbitrés le 10/08/2026 : le parcours complet, du premier échange
+        // au démarrage effectif, tient en 8 à 15 jours. Voir DELAIS dans facts.ts.
+        { label: "Délai", text: "mission démarrée sous 8 à 15 jours, premiers livrables dès le premier mois." },
+        // « Sans engagement » n'est publiable que si le préavis suit dans la
+        // même phrase (règle 2 de facts.ts).
+        { label: "Engagement", text: "sans durée minimale, résiliable avec un préavis de 30 jours." },
         // SEO-003 (2026-08-10) — ligne retirée : l'introduction juste au-dessus
         // pose déjà « 85 entreprises accompagnées, 100 M€ levés, 5/5 sur
         // Trustfolio », et le badge du hero l'affiche une troisième fois. Le
@@ -200,7 +204,7 @@ export const dafContent: Record<Locale, DafContent> = {
     // vs-expert-comptable, quand…) après validation interne.
     quickAnswers: {
       comprendre:
-        "Un DAF externalisé est un directeur financier senior qui pilote la finance d'une entreprise sans en être salarié. Il intervient à temps partagé (2 à 8+ jours/mois) ou en mission ponctuelle. Tarif : 2 000 à 7 000 € HT/mois. Opérationnel sous 7 à 14 jours.",
+        "Un DAF externalisé est un directeur financier senior qui pilote la finance d'une entreprise sans en être salarié. Il intervient à temps partagé ou en mission ponctuelle. Tarif : 3 000 à 8 000 € HT/mois selon la formule. Mission démarrée sous 8 à 15 jours.",
     },
     // T1 (2026-06-30) — H1 et intro réoptimisés pour remonter sur la
     // requête commerciale "DAF externalisé" (position 16 GSC, CTR 0,3 %).
@@ -220,7 +224,7 @@ export const dafContent: Record<Locale, DafContent> = {
     // une modalité, avec lien vers sa page propriétaire.
     h1: "DAF externalisé pour PME et startups : votre direction financière externalisée",
     intro: [
-      "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Notre offre couvre toutes les modalités : directeur financier externalisé en mission longue, direction financière externalisée à l'année, DAF à temps partagé sur 2 à 8 jours par mois, ou CFO externalisé en mission ponctuelle. Opérationnels dès le premier jour, sans engagement long terme. 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (31 avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne, avec des équipes à Paris, Toulouse et Barcelone.",
+      "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Notre offre couvre toutes les modalités : directeur financier externalisé en mission longue, direction financière externalisée à l'année, DAF à temps partagé sur 2 à 8 jours par mois, ou CFO externalisé en mission ponctuelle. Mission démarrée sous 8 à 15 jours, sans durée minimale et avec un préavis de 30 jours. 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (31 avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne, avec des équipes à Paris, Toulouse et Barcelone.",
       "Un DAF externalisé — aussi appelé DAF à temps partagé ou CFO externalisé — est un directeur financier senior qui intervient dans votre entreprise sans en être salarié. Il co-pilote le dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs. Le format est flexible : temps partagé, mission ponctuelle ou abonnement mensuel. Pour la nuance avec son équivalent anglo-saxon, consultez notre fiche [Le CFO (Chief Financial Officer)](/ressources/glossaire/cfo). Pour la version dédiée aux startups VC-backed, voir notre offre [Fractional CFO pour startups](/fractional-cfo-startups).",
     ],
     // SEO-003 (2026-08-09) — section resserrée. Ses trois paragraphes
@@ -273,7 +277,7 @@ export const dafContent: Record<Locale, DafContent> = {
         // chargé » alors que 80-150 k€ est le brut : le coût employeur est de
         // 100-213 k€, valeur utilisée partout ailleurs sur la page. Le tableau
         // sous-estimait donc l'écart qu'il servait à démontrer.
-        ["Coût annuel", "24 000 – 84 000 € HT", "100 000 – 213 000 € chargé"],
+        ["Coût annuel", "36 000 – 96 000 € HT", "100 000 – 213 000 € chargé"],
         ["Délai de mise en place", "1 à 2 semaines", "3 à 6 mois (recrutement)"],
         ["Engagement", "Mensuel, sans durée minimale", "CDI, 3 mois de préavis"],
         ["Flexibilité", "Volume ajustable chaque mois", "Fixe, 5 jours/semaine"],
@@ -375,29 +379,32 @@ export const dafContent: Record<Locale, DafContent> = {
     pricing: {
       heading: "Quel est le tarif d'un DAF externalisé ? Grille tarifaire 2026",
       content: [
-        "Le tarif journalier moyen (TJM) d'un DAF externalisé se situe entre 750 et 1 250 EUR HT selon le niveau de séniorité et la complexité des missions. Chez Iter Advisors, nous proposons trois formules adaptées aux besoins des PME et startups. Le détail de ce qui est inclus dans chacune, et la façon dont le devis se construit, sont sur notre [grille tarifaire détaillée](/daf-externalise/tarifs).",
+        "Une mission de DAF externalisé chez Iter Advisors démarre à 3 000 € HT par mois et va jusqu'à 8 000 € selon la formule. Nous ne facturons pas à l'heure : le retainer mensuel couvre un scope de travail défini au cadrage, et le prix suit le profil engagé — Finance Manager, CFO senior, ou CFO senior avec analyste dédié. Le détail de ce qui est inclus dans chacune, et la façon dont le devis se construit, sont sur notre [grille tarifaire détaillée](/daf-externalise/tarifs).",
       ],
     },
     pricingTable: {
-      caption: "Tarifs DAF externalisé 2026 — 3 formules adaptées à votre stade",
+      caption: "Tarifs DAF externalisé 2026 — le volume indiqué est une moyenne d'intervention, l'engagement porte sur le scope",
       tiers: [
+        // Grille officielle arbitrée le 10/08/2026 (cf. lib/content/facts.ts).
+        // Le volume est une moyenne d'intervention observée, pas un forfait :
+        // l'engagement porte sur un scope, et le prix suit le profil engagé.
         {
           name: "Essentiel",
-          volume: "2 à 3 jours / mois",
-          price: "À partir de 2 000 € HT/mois",
-          audience: "Startup early-stage (pré-seed à seed)",
+          volume: "1 à 2 jours / mois (indicatif)",
+          price: "3 000 à 5 000 € HT/mois",
+          audience: "Startup en Seed, moins de 30 personnes",
         },
         {
           name: "Croissance",
-          volume: "4 à 6 jours / mois",
-          price: "À partir de 4 000 € HT/mois",
-          audience: "PME en structuration ou scale-up Series A",
+          volume: "3 à 5 jours / mois (indicatif)",
+          price: "5 000 à 6 500 € HT/mois",
+          audience: "Série A, 30 à 100 personnes",
         },
         {
           name: "Premium",
-          volume: "8 jours et plus / mois",
-          price: "À partir de 7 000 € HT/mois",
-          audience: "Scale-up, levée de fonds, M&A",
+          volume: "5 à 8 jours / mois (indicatif)",
+          price: "6 500 à 8 000 € HT/mois",
+          audience: "Série B et au-delà",
         },
       ],
       comparisonNote:
@@ -437,7 +444,7 @@ export const dafContent: Record<Locale, DafContent> = {
           content:
             // SEO-002 (2026-08-10) — annonçait « J+5 » quand la page transition et son
             // title annoncent 48 à 72 h.
-            "Pour une période de 3 à 12 mois (départ du DAF, restructuration, intégration post-acquisition), le DAF de transition intervient en 48 à 72 h avec un profil senior de 20 ans et plus. Mission ponctuelle intensive, distincte du temps partagé récurrent.",
+            "Pour une période de 3 à 12 mois (départ du DAF, restructuration, intégration post-acquisition), le DAF de transition intervient sous 7 à 10 jours avec un profil senior de 20 ans et plus. Mission ponctuelle intensive, distincte du temps partagé récurrent.",
         },
       ],
       outro:
@@ -472,7 +479,7 @@ export const dafContent: Record<Locale, DafContent> = {
         "**Vous préparez une [levée de fonds](/services/accompagnement-levee-de-fond)** — business plan, modélisation financière et interlocuteur crédible face aux investisseurs.",
         "**Votre croissance s'accélère** — la gestion financière artisanale ne suffit plus au-delà de 500 K€ de chiffre d'affaires.",
         "**Vous recrutez vite** — les charges de personnel deviennent le premier poste et chaque embauche doit être anticipée en trésorerie.",
-        "**Votre DAF interne est parti** — le [DAF de transition](/daf-externalise/transition) prend le relais en 48 à 72 h, contre trois à six mois de recrutement.",
+        "**Votre DAF interne est parti** — le [DAF de transition](/daf-externalise/transition) prend le relais sous 7 à 10 jours, contre trois à six mois de recrutement.",
         "**Vous préparez une opération de [M&A](/services/ma-due-diligence)** — due diligence, valorisation et négociation.",
         "**Vous vous internationalisez** — un CFO qui connaît les environnements fiscaux français et espagnol.",
       ],
@@ -563,7 +570,7 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "Combien coûte un DAF externalisé ?",
         answer:
-          "Entre 2 000 et 7 000 € HT par mois selon le volume d'intervention, soit un TJM de 750 à 1 250 € HT. Le montant dépend du nombre de jours, de la séniorité du profil et de la complexité de la situation — multi-entités, multi-devises, levée en cours. Le détail des trois formules est dans la [grille tarifaire](/daf-externalise/tarifs).",
+          "Entre 3 000 et 8 000 € HT par mois selon la formule, soit 36 000 à 96 000 € HT par an. Nous ne facturons pas à l'heure : le retainer couvre un scope défini au cadrage, et le prix suit le profil engagé ainsi que la complexité — multi-entités, multi-devises, levée en cours. Le détail des trois formules est dans la [grille tarifaire](/daf-externalise/tarifs).",
       },
       {
         question: "Quelle est la différence entre un DAF externalisé et un expert-comptable ?",
@@ -580,7 +587,7 @@ export const dafContent: Record<Locale, DafContent> = {
         // traîne "différence daf externalisé salarié".
         question: "Quelle est la différence entre un DAF externalisé et un DAF salarié ?",
         answer:
-          "Le coût et l'engagement. Un DAF salarié représente 100 000 à 213 000 € de coût employeur annuel et 3 à 6 mois de recrutement ; un DAF externalisé démarre à 2 000 € HT/mois, est opérationnel sous 1 à 2 semaines et se règle au mois. Le recrutement se justifie quand le besoin devient un temps plein durable — un seuil qui dépend de la complexité de l'entreprise, pas de sa seule taille. Le tableau comparatif plus haut détaille les sept critères.",
+          "Le coût et l'engagement. Un DAF salarié représente 100 000 à 213 000 € de coût employeur annuel, charges comprises, et 3 à 6 mois de recrutement ; un DAF externalisé démarre à 3 000 € HT/mois, démarre sous 8 à 15 jours, et se résilie avec 30 jours de préavis sans durée minimale. Le recrutement se justifie quand le besoin devient un temps plein durable — un seuil qui dépend de la complexité de l'entreprise, pas de sa seule taille. Le tableau comparatif plus haut détaille les sept critères.",
       },
       {
         // GSC-01 (2026-07-19) — question People-Also-Ask fréquente. Détaille
@@ -635,7 +642,7 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "Combien de temps dure une mission de DAF externalisé ?",
         answer:
-          "La durée varie selon les besoins : de 3 mois pour une mission ponctuelle (levée de fonds, restructuration) à plusieurs années pour un accompagnement à temps partagé. Chez Iter Advisors, la durée moyenne de collaboration est de 18 mois, sans engagement de durée minimum.",
+          "La durée varie selon les besoins : de 3 mois pour une mission ponctuelle (levée de fonds, restructuration) à plusieurs années pour un accompagnement à temps partagé. Chez Iter Advisors, la durée moyenne de collaboration est de 18 mois, sans durée minimale imposée : la mission est résiliable avec un préavis de 30 jours.",
       },
       {
         question: "Comment choisir son cabinet de DAF externalisé ?",

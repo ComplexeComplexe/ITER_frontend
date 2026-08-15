@@ -82,7 +82,7 @@ export default function DafExternaliseStartupPage() {
           answer: "En moyenne 1 à 2 jours par semaine pour une startup de 500k€ à 3M€ de CA. Ce rythme peut monter à 3-4 jours par semaine lors d'une levée de fonds ou d'une clôture annuelle.",
         },
       ]}
-      tldr="Pour une startup, le DAF externalisé coûte 3 à 5 fois moins qu'un CFO interne. Il est indispensable dès la première levée de fonds. Les 5 déclencheurs pour recruter : levée, board, MRR > 100k€, team > 15 personnes, international."
+      tldr="Pour une startup, le DAF externalisé représente 30 à 60 % d'économie face à un CFO interne. Il est indispensable dès la première levée de fonds. Les 5 déclencheurs pour recruter : levée, board, MRR > 100k€, team > 15 personnes, international."
       relatedArticles={[
         {
           url: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",

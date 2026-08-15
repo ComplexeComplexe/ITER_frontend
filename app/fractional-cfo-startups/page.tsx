@@ -63,28 +63,27 @@ const structuredData = {
         url: "https://www.iteradvisors.com",
       },
       description:
-        "Expertise financière senior pour startups à temps partiel. Accompagnement levée de fonds, planification financière, reporting mensuel. Dès 4 500 €/mois.",
+        "Expertise financière senior pour startups à temps partiel. Accompagnement levée de fonds, planification financière, reporting mensuel. Dès 3 000 € HT/mois.",
       areaServed: ["Paris", "Toulouse", "Barcelone"],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Formules Fractional CFO",
+        // Arbitrage 10/08/2026 — le fractional CFO est un positionnement, pas
+        // une quatrième gamme : l'entrée se fait par Essentiel ou Croissance de
+        // la grille officielle. La grille propre à cette page (Starter 4 500 /
+        // Growth 8 500 / Scale 15 000) est supprimée — elle n'existait nulle
+        // part ailleurs et contredisait la grille du pilier.
+        name: "Formules DAF externalisé",
         itemListElement: [
           {
             "@type": "Offer",
-            name: "Starter",
-            price: "4500",
+            name: "Essentiel",
+            price: "3000",
             priceCurrency: "EUR",
           },
           {
             "@type": "Offer",
-            name: "Growth",
-            price: "8500",
-            priceCurrency: "EUR",
-          },
-          {
-            "@type": "Offer",
-            name: "Scale",
-            price: "15000",
+            name: "Croissance",
+            price: "5000",
             priceCurrency: "EUR",
           },
         ],
@@ -108,7 +107,7 @@ const structuredData = {
           name: "Combien coûte un Fractional CFO ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Le service Fractional CFO Iter Advisors démarre à 4 500 €/mois pour 2 jours par semaine. La formule la plus choisie est Growth à 8 500 €/mois pour 4 jours. Un recrutement CFO à plein temps coûte entre 120 000 € et 200 000 € par an plus des actions.",
+            text: "Une mission démarre à 3 000 € HT par mois (formule Essentiel) et va jusqu'à 6 500 € pour un accompagnement de type Croissance, le format le plus fréquent chez les startups en Série A. Un directeur financier salarié de séniorité équivalente représente 100 000 à 213 000 € de coût employeur annuel, charges comprises.",
           },
         },
         {
@@ -203,7 +202,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title:
       "Fractional CFO / CFO externe pour startups en France | Iter Advisors",
     description:
-      "Fractional CFO / CFO à temps partagé senior pour startups VC-backed. Dès 4 500 €/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
+      "Fractional CFO / CFO à temps partagé senior pour startups VC-backed. Dès 3 000 € HT/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
     alternates: {
       canonical: PAGE_URL,
     },
@@ -211,7 +210,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title:
         "Fractional CFO / CFO externe pour startups en France | Iter Advisors",
       description:
-        "Fractional CFO / CFO à temps partagé senior pour startups VC-backed. Dès 4 500 €/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
+        "Fractional CFO / CFO à temps partagé senior pour startups VC-backed. Dès 3 000 € HT/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
       url: PAGE_URL,
       type: "website",
     images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
@@ -306,8 +305,10 @@ export default async function Page() {
             <ul className="space-y-2.5 sm:space-y-3">
               {[
                 { label: "Définition", text: "un fractional CFO est un directeur financier senior à temps partiel (2 à 8 jours/mois)." },
-                { label: "Tarif Iter Advisors", text: "à partir de 4 500 €/mois — 3 formules Starter / Growth / Scale." },
-                { label: "Délai d'intervention", text: "opérationnel en 5 jours ouvrés." },
+                { label: "Tarif Iter Advisors", text: "à partir de 3 000 € HT/mois — formules Essentiel, Croissance et Premium." },
+                // Arbitrage 10/08/2026 — la promesse « 5 jours » est remplacée par le
+                // parcours réel : 8 à 15 jours du premier échange au démarrage.
+                { label: "Délai d'intervention", text: "mission démarrée sous 8 à 15 jours." },
                 { label: "Pour qui", text: "startups VC-backed, scale-ups Series A/B, SaaS, deep-tech, e-commerce." },
                 { label: "Bureaux", text: "Paris, Toulouse, Barcelone — interventions hybrides." },
                 { label: "Différence vs DAF externalisé", text: "même métier, terminologie anglo-saxonne plus utilisée par les startups VC." },
@@ -362,11 +363,11 @@ export default async function Page() {
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               Un Fractional CFO est un directeur financier senior qui intervient
               dans votre entreprise à temps partiel — généralement 1 à 3 jours
-              par semaine. Contrairement à un CFO à plein temps qui coûte entre
-              120 000 € et 200 000 € par an, un Fractional CFO apporte la même
-              expertise stratégique pour un budget 3 à 5 fois inférieur,
-              généralement entre 4 500 € et 15 000 € par mois selon le
-              périmètre.
+              par semaine. Là où un directeur financier salarié de séniorité
+              équivalente représente 100 000 à 213 000 € de coût employeur
+              annuel, charges comprises, un fractional CFO apporte la même
+              expertise stratégique pour 3 000 à 6 500 € HT par mois selon le
+              périmètre — soit 30 à 60 % d&apos;économie.
             </p>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
               Chez Iter Advisors, nos Fractional CFO sont d'anciens directeurs
@@ -500,7 +501,11 @@ export default async function Page() {
               {[
                 {
                   title: "1. Un coût maîtrisé.",
-                  text: "Un CFO à plein temps à Paris coûte entre 120 K€ et 200 K€ + bonus + actions. Un Fractional CFO Iter Advisors démarre à 4 500 €/mois — une réduction de 60 à 80 % du coût.",
+                  // Arbitrage 10/08/2026 — le fractional CFO est un positionnement, pas une
+                    // quatrième formule : l'entrée se fait par Essentiel ou Croissance.
+                    // Le prix d'entrée passe de 4 500 à 3 000 €, le coût salarié à la
+                    // fourchette unique 100-213 k€ et l'économie à 30-60 %.
+                    text: "Un directeur financier salarié de séniorité équivalente représente 100 000 à 213 000 € de coût employeur annuel, charges comprises. Une mission Iter Advisors démarre à 3 000 € HT/mois — soit 30 à 60 % d'économie selon le stade de maturité et le périmètre confié.",
                 },
                 {
                   title: "2. Une mise en route rapide.",
@@ -622,29 +627,32 @@ export default async function Page() {
                 </thead>
                 <tbody>
                   {[
+                    // Grille officielle (cf. lib/content/facts.ts). Le volume est
+                    // une moyenne d'intervention observée, pas un forfait : Iter
+                    // s'engage sur un scope, et le prix suit le profil engagé.
                     [
-                      "Starter",
-                      "2 jours",
-                      "Reporting financier, suivi de trésorerie, clôture mensuelle",
-                      "4 500 €",
+                      "Essentiel",
+                      "1 à 2 j/mois",
+                      "Reporting P&L, cash et KPIs, prévisionnel 13 semaines, revue mensuelle avec le dirigeant",
+                      "3 000 – 5 000 €",
                     ],
                     [
-                      "Growth",
-                      "4 jours",
-                      "+ Accompagnement levée, reporting board, tableau de bord KPIs",
-                      "8 500 €",
+                      "Croissance",
+                      "3 à 5 j/mois",
+                      "+ business plan 3-5 ans, levée de fonds, dette non dilutive, reporting investisseurs",
+                      "5 000 – 6 500 €",
                     ],
                     [
-                      "Scale",
-                      "8 jours",
-                      "+ Planification financière, relations investisseurs, mentoring équipe",
-                      "15 000 €",
+                      "Premium",
+                      "5 à 8 j/mois",
+                      "+ M&A et due diligence, board et gouvernance, internationalisation, BI finance",
+                      "6 500 – 8 000 €",
                     ],
                     [
+                      "Mission ponctuelle",
                       "Projet",
-                      "Sur mesure",
-                      "Ponctuel : data room, modèle financier, due diligence",
-                      "3 000 – 8 000 €",
+                      "Préparation de levée, audit défensif, data room, modèle financier",
+                      "Sur devis",
                     ],
                   ].map((row, ri) => (
                     <tr key={ri} className={ri % 2 === 0 ? "" : "bg-muted/20"}>
@@ -765,7 +773,7 @@ export default async function Page() {
                 {
                   question: "Combien coûte un Fractional CFO ?",
                   answer:
-                    "Le service Fractional CFO Iter Advisors démarre à 4 500 €/mois pour 2 jours par semaine. La plupart des startups choisissent la formule Growth à 8 500 €/mois pour 4 jours. Un recrutement CFO à plein temps coûte entre 120 000 € et 200 000 € par an plus des actions.",
+                    "Une mission démarre à 3 000 € HT par mois (formule Essentiel) et va jusqu'à 6 500 € pour un accompagnement de type Croissance, le format le plus fréquent en Série A. Un directeur financier salarié de séniorité équivalente représente 100 000 à 213 000 € de coût employeur annuel, charges comprises.",
                 },
                 {
                   question:

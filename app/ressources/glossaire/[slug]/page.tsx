@@ -83,7 +83,7 @@ const faqBySlug: Record<string, { question: string; answer: string }[]> = {
     {
       question: "Quel est le salaire d'un DAF en France ?",
       answer:
-        "Un DAF interne coûte entre 70 000 € et 150 000 € brut chargé. Un DAF externalisé démarre à 2 000 €/mois pour 2 jours/mois.",
+        "Un directeur financier salarié représente 100 000 à 213 000 € de coût employeur annuel, charges comprises. Un DAF externalisé démarre à 3 000 € HT/mois pour 2 jours/mois.",
     },
     {
       question: "Un DAF peut-il être à temps partiel ?",
