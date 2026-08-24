@@ -9,7 +9,9 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "about-page",
     locale: "fr",
     path: "/a-propos",
-    localizedPaths: { fr: "/a-propos", en: "/a-propos", es: "/quienes-somos" },
+    // SEO-AUD-0824 §2 — « /a-propos » côté EN produisait /en/a-propos, qui
+    // redirige vers /en/about depuis la refonte multilingue.
+    localizedPaths: { fr: "/a-propos", en: "/about", es: "/quienes-somos" },
     // SEO-001 + SEO-002 (2026-08-09) — deux problèmes sur un seul title.
     // Il reprenait la requête générique du pilier, et il annonçait
     // « depuis 2019 » quand le corps de cette même page dit « Fondé en

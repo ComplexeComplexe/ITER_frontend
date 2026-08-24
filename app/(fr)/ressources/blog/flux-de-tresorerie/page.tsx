@@ -10,6 +10,16 @@ export const metadata: Metadata = {
   description: "Comment calculer les flux de trésorerie ? Formule, exemple chiffré et modèle Excel gratuit. Le guide complet cash flow opérationnel, investissement et financement.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/flux-de-tresorerie",
+    // SEO-AUD-0824 §2 — cet article a bien une version EN et une version ES,
+    // qui désignaient toutes deux celle-ci comme leur traduction française.
+    // La réciproque manquait : cette route a ses métadonnées écrites à la main
+    // et ne passait pas par buildMetadata, qui les aurait déduites.
+    languages: {
+      "x-default": "https://www.iteradvisors.com/ressources/blog/flux-de-tresorerie",
+      "fr-FR": "https://www.iteradvisors.com/ressources/blog/flux-de-tresorerie",
+      "en-GB": "https://www.iteradvisors.com/en/ressources/blog/flux-de-tresorerie",
+      "es-ES": "https://www.iteradvisors.com/es/recursos/blog/flux-de-tresorerie",
+    },
   },
   openGraph: {
     title: "Flux de trésorerie — Définition et Calcul | Iter Advisors",

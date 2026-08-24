@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Locale } from "./i18n";
+import { getLocalizedPath } from "./path-localization";
 import { strapiFetch, STRAPI_ENABLED, type StrapiSeo, type StrapiSingleResponse, strapiMediaUrl } from "./strapi";
 
 const localeMap: Record<Locale, string> = {
@@ -38,7 +39,7 @@ export function buildMetadata({
   noindex?: boolean;
   structuredData?: Record<string, unknown> | null;
   localizedPaths?: { fr: string; en: string; es: string };
-  disableHreflang?: ("en" | "es")[];
+  disableHreflang?: Locale[];
 }): Metadata {
   const base = "https://www.iteradvisors.com";
 
@@ -48,12 +49,33 @@ export function buildMetadata({
 
   const url = locale === "fr" ? `${base}${safePath}` : `${base}/${locale}${safePath === "/" ? "" : safePath}`;
 
-  // Use localizedPaths if provided, otherwise fall back to safePath for all locales
-  // Also strip locale prefix from localizedPaths values to prevent double-locale
-  const stripLocale = (p: string, loc: string) => p.startsWith(`/${loc}`) ? (p.replace(`/${loc}`, '') || '/') : p;
-  const frPath = localizedPaths?.fr ?? safePath;
-  const enPath = stripLocale(localizedPaths?.en ?? safePath, 'en');
-  const esPath = stripLocale(localizedPaths?.es ?? safePath, 'es');
+  // Strip a locale prefix without amputating a path that merely starts with the
+  // same letters (`/energie…` is not an EN path).
+  const stripLocale = (p: string, loc: string) =>
+    p === `/${loc}` ? "/" : p.startsWith(`/${loc}/`) ? p.slice(loc.length + 1) : p;
+
+  /**
+   * SEO-AUD-0824 §2 — sans `localizedPaths`, les trois alternates reprenaient le
+   * chemin de la locale courante. `/ressources/outils` déclarait donc
+   * `/es/ressources/outils`, quand la vraie page est
+   * `/es/recursos/herramientas` : le hreflang partait en 308. Le crawl du
+   * 24 août a relevé 59 balises de ce type sur 34 pages.
+   *
+   * `getLocalizedPath` connaît la traduction de chaque segment — c'est la même
+   * fonction qui alimente le sélecteur de langue, et elle est couverte par
+   * lib/__tests__/path-localization.test.ts. On la réutilise plutôt que de
+   * redemander à chaque page de se souvenir de ses propres traductions.
+   *
+   * `localizedPaths` reste prioritaire : certaines pages ont un slug qui ne se
+   * déduit pas (articles traduits sous un autre nom). Mais ce n'est plus le cas
+   * par défaut, donc plus une source de valeurs périmées.
+   */
+  const currentFull = locale === "fr" ? safePath : `/${locale}${safePath === "/" ? "" : safePath}`;
+  const derive = (target: Locale) => stripLocale(getLocalizedPath(currentFull, target), target);
+
+  const frPath = localizedPaths?.fr ?? derive("fr");
+  const enPath = stripLocale(localizedPaths?.en ?? derive("en"), "en");
+  const esPath = stripLocale(localizedPaths?.es ?? derive("es"), "es");
 
   // SEO-P0-01: RFC 5646 language-region codes as keys so Next.js renders
   // <link rel="alternate" hreflang="fr-FR" href="..." /> in <head>.
@@ -76,6 +98,14 @@ export function buildMetadata({
   };
   if (disableHreflang?.includes("en")) delete languages["en-GB"];
   if (disableHreflang?.includes("es")) delete languages["es-ES"];
+  // SEO-AUD-0824 §2 — le français pouvait lui aussi manquer : un article publié
+  // seulement en espagnol déclarait un alternate FR qui redirige vers la liste
+  // des articles. On retire alors fr-FR, et x-default désigne la page courante
+  // plutôt qu'une traduction française inexistante.
+  if (disableHreflang?.includes("fr")) {
+    delete languages["fr-FR"];
+    languages["x-default"] = url;
+  }
 
   const meta: Metadata = {
     title,
@@ -147,7 +177,7 @@ export async function buildStrapiMetadata({
   fallbackTitle: string;
   fallbackDescription: string;
   localizedPaths?: { fr: string; en: string; es: string };
-  disableHreflang?: ("en" | "es")[];
+  disableHreflang?: Locale[];
 }): Promise<Metadata> {
   try {
     const res = await strapiFetch<StrapiSingleResponse<{ seo: StrapiSeo | null }>>(
@@ -216,7 +246,7 @@ export async function buildStrapiCollectionMetadata({
   fallbackTitle: string;
   fallbackDescription: string;
   localizedPaths?: { fr: string; en: string; es: string };
-  disableHreflang?: ("en" | "es")[];
+  disableHreflang?: Locale[];
 }): Promise<Metadata> {
   try {
     // Use the same flat populate[n] syntax as getBlogArticleBySlug (the

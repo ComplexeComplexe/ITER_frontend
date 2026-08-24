@@ -4,6 +4,7 @@ import BlogPostPage from "@/components/pages/BlogPostPage";
 import { getBlogArticleBySlug, getBlogArticles, getCmsNavigation, getTeamMembers, strapiMediaUrl } from "@/lib/strapi";
 import { buildStrapiCollectionMetadata } from "@/lib/metadata";
 import { blogPosts } from "@/lib/content/blog-posts";
+import { blogHreflangDisabled } from "@/lib/blog-hreflang";
 import { BLOG_ILLUSTRATIONS } from "@/lib/blog-illustrations";
 import { getLocalePath } from "@/lib/i18n";
 import { getFallbackTeamMembers } from "@/lib/content/team";
@@ -61,6 +62,12 @@ export async function generateMetadata({
       en: `${blogBasePath}/${slug}`,
       es: `/recursos/blog/${slug}`,
     },
+    // SEO-AUD-0824 §2 — les trois langues étaient déclarées pour tout article,
+    // y compris ceux qui n'existent que dans une seule : les URL « traduites »
+    // redirigeaient alors vers la version d'origine. Une redirection n'est pas
+    // une traduction. La liste des langues réellement absentes se déduit du
+    // contenu (voir lib/blog-hreflang.ts).
+    disableHreflang: blogHreflangDisabled(slug),
   });
 }
 

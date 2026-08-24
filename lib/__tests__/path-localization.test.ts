@@ -172,3 +172,57 @@ describe("articles sans URL propre dans leur langue", () => {
     );
   });
 });
+
+/**
+ * SEO-AUD-0824 §2 — le hreflang souffrait du même mal que les liens internes :
+ * des URL composées à la main, qui vieillissaient sans que rien ne le signale.
+ * L'audit du 24 août a relevé 59 balises visant une redirection.
+ */
+describe("hreflang des articles de blog", () => {
+  it("n'annonce pas de traduction là où l'article n'existe pas", async () => {
+    const { blogHreflangDisabled } = await import("@/lib/blog-hreflang");
+    // Article publié seulement en français : les URL /en/… et /es/… existent
+    // sous forme de redirections vers lui, ce qui n'en fait pas des traductions.
+    expect(blogHreflangDisabled("agicap-vs-fygr-outil-tresorerie").sort()).toEqual(["en", "es"]);
+    expect(blogHreflangDisabled("term-sheet-negocier-clauses-cles").sort()).toEqual(["en", "es"]);
+  });
+
+  it("garde les trois langues quand les trois versions existent", async () => {
+    const { blogHreflangDisabled } = await import("@/lib/blog-hreflang");
+    expect(blogHreflangDisabled("flux-de-tresorerie")).toEqual([]);
+    expect(blogHreflangDisabled("daf-externalise-vs-daf-salarie")).toEqual([]);
+  });
+
+  it("écarte une traduction écrite mais redirigée vers le français", async () => {
+    const { blogHreflangDisabled } = await import("@/lib/blog-hreflang");
+    // Le contenu EN/ES existe dans blogPosts, mais les deux URL redirigent
+    // vers l'article français : ce ne sont pas des pages à elles.
+    expect(blogHreflangDisabled("essentiels-outils-tech-finance").sort()).toEqual(["en", "es"]);
+  });
+
+  it("écarte le français pour un article qui n'existe qu'en espagnol", async () => {
+    const { blogHreflangDisabled } = await import("@/lib/blog-hreflang");
+    expect(blogHreflangDisabled("que-es-fractional-cfo")).toContain("fr");
+    expect(blogHreflangDisabled("que-es-fractional-cfo")).toContain("en");
+  });
+});
+
+describe("hreflang des pages service", () => {
+  it("isole le service dont les trois pages ne sont pas des traductions", async () => {
+    const { serviceHreflangDisabled } = await import("@/lib/strapi");
+    expect(serviceHreflangDisabled("gestion-financiere-externalisee", "fr").sort()).toEqual([
+      "en",
+      "es",
+    ]);
+    expect(serviceHreflangDisabled("gestion-financiere-externalisee", "es").sort()).toEqual([
+      "en",
+      "fr",
+    ]);
+  });
+
+  it("laisse intacts les services réellement traduits", async () => {
+    const { serviceHreflangDisabled } = await import("@/lib/strapi");
+    expect(serviceHreflangDisabled("previsionnel-tresorerie", "fr")).toEqual([]);
+    expect(serviceHreflangDisabled("accompagnement-levee-de-fond", "es")).toEqual([]);
+  });
+});

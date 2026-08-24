@@ -13,7 +13,12 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-tarifs-page",
     locale: "fr",
     path: "/daf-externalise/tarifs",
-    localizedPaths: { fr: "/daf-externalise/tarifs", en: "/en/fractional-cfo", es: "/es/externalizacion-daf/tarifas" },
+    // SEO-AUD-0824 §2 — cette page n'a pas d'équivalent en EN ni en ES. Elle
+    // désignait la page pilier de ces langues comme sa traduction, mais celle-ci
+    // renvoie vers /daf-externalise, pas ici : le groupe hreflang ne bouclait
+    // pas. Plutôt que de revendiquer une traduction qui n'existe pas, la page
+    // reste seule.
+    disableHreflang: ["en", "es"],
     // T#2 (2026-07-13) — fallback aligné sur content lib (fourchette
     // 2 000-8 000 €/mois dans le title pour rich snippets).
     fallbackTitle: content.meta.title,

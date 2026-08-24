@@ -8,6 +8,7 @@ import {
   type ServicePageSlug,
 } from "@/lib/fallback-service-pages";
 import { getStaticServicePage } from "@/lib/fallback-service-pages-localized";
+import { serviceHreflangDisabled } from "@/lib/strapi";
 import { buildMetadata } from "@/lib/metadata";
 
 const basePath = "/services";
@@ -89,12 +90,10 @@ export async function generateMetadata({
     locale: "fr",
     path: `${basePath}/${slug}`,
     localizedPaths: getServiceLocalizedPaths(slug),
-    // SEO-REP §4.1 — pas d'équivalent EN/ES réel pour « gestion financière
-    // externalisée » : les alternates désignaient le contrôle de gestion, une
-    // autre offre. Supprimés en attendant de vraies traductions.
-    ...(slug === "gestion-financiere-externalisee"
-      ? { disableHreflang: ["en", "es"] as ("en" | "es")[] }
-      : {}),
+    // SEO-AUD-0824 §2 — un slug de service par locale ne garantit pas qu'une
+    // page réponde derrière : la version anglaise de la gestion financière
+    // externalisée a été retirée.
+    disableHreflang: serviceHreflangDisabled(slug, "fr"),
     title: fallbackTitles[slug],
     description: fallbackDescriptions[slug],
   });

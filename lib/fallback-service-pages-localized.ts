@@ -428,10 +428,16 @@ const fallbackServicePagesEs: Record<string, StrapiServiceSinglePage> = {
       ]),
       createHeading("Por Qué Asociarse con Nosotros"),
       createList([
-        "Track record comprobado: 30+ rondas cerradas, 100M€+ levantados desde 2020",
+        // SEO-AUD-0824 §1 — « desde 2020 » contredisait l'année de création
+        // arbitrée (2021, cf. ANNEE_FONDATION dans lib/content/facts.ts).
+        "Track record comprobado: 30+ rondas cerradas, 100M€+ levantados desde 2021",
         "Modelos financieros y materiales listos para inversores, validados por VCs tier 1",
         "Cierre más rápido (mediana 4-5 meses vs. 8-9 meses del mercado) gracias a documentación impecable",
-        "Mejores condiciones: en media, +15% de pre-money valuation gracias a la preparación financiera",
+        // SEO-AUD-0824 §1 — « +15% de pre-money valuation en media » : moyenne
+        // annoncée sans échantillon, période ni base de comparaison. Une
+        // valorisation dépend d'abord du marché et de la traction ; l'attribuer
+        // à la préparation financière n'est pas démontrable.
+        "Mejores condiciones de negociación: un expediente financiero sólido reduce los descuentos exigidos en due diligence",
         "Red de contactos con 200+ inversores activos en España, Francia y Reino Unido",
       ]),
       createHeading("Proceso en 4 fases"),

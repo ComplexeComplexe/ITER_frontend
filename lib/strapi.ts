@@ -294,6 +294,30 @@ export const SERVICE_URL_SLUG_BY_LOCALE: Record<Locale, Record<ServicePageSlug, 
   },
 };
 
+/**
+ * Services qui ne forment aucun groupe hreflang.
+ *
+ * SEO-AUD-0824 §2 — `SERVICE_URL_SLUG_BY_LOCALE` donne un slug pour chaque
+ * couple (service, locale), mais un slug dans la table ne prouve pas qu'une
+ * page équivalente réponde derrière. Pour la gestion financière externalisée,
+ * la page anglaise a été retirée — `/en/services/outsourced-financial-management`
+ * redirige vers `/en/fractional-cfo` — et la page espagnole décrit une autre
+ * offre (constat SEO-REP §4.1). Aucune des trois n'est la traduction des autres.
+ *
+ * La page française avait déjà cessé de les déclarer ; la page espagnole
+ * continuait de désigner la française, d'où un groupe hreflang à sens unique.
+ * Chaque locale reste donc seule, auto-canonique, sans alternate.
+ */
+const SERVICES_SANS_GROUPE_HREFLANG: ReadonlySet<ServicePageSlug> = new Set([
+  "gestion-financiere-externalisee",
+]);
+
+/** Locales à exclure du groupe hreflang de ce service, vu depuis `locale`. */
+export function serviceHreflangDisabled(canonical: ServicePageSlug, locale: Locale): Locale[] {
+  if (!SERVICES_SANS_GROUPE_HREFLANG.has(canonical)) return [];
+  return (["fr", "en", "es"] as const).filter((l) => l !== locale);
+}
+
 /** Resolve URL slug (from route) to canonical slug for API. */
 export function getCanonicalServiceSlug(locale: Locale, urlSlug: string): ServicePageSlug | null {
   if (locale === "fr") {

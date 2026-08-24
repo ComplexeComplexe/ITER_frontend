@@ -11,7 +11,12 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-secteurs-page",
     locale: "fr",
     path: "/daf-externalise/secteurs",
-    localizedPaths: { fr: "/daf-externalise/secteurs", en: "/en/fractional-cfo", es: "/externalizacion-daf" },
+    // SEO-AUD-0824 §2 — cette page n'a pas d'équivalent en EN ni en ES. Elle
+    // désignait la page pilier de ces langues comme sa traduction, mais celle-ci
+    // renvoie vers /daf-externalise, pas ici : le groupe hreflang ne bouclait
+    // pas. Plutôt que de revendiquer une traduction qui n'existe pas, la page
+    // reste seule.
+    disableHreflang: ["en", "es"],
     fallbackTitle: "DAF Externalisé par Secteur d'Activité | Iter Advisors",
     fallbackDescription: "Iter Advisors propose des DAF externalisés spécialisés par secteur : SaaS, e-commerce, industrie, fintech, santé. Découvrez notre expertise sectorielle.",
   });

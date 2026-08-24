@@ -14,10 +14,11 @@ export const metadata: Metadata = {
     "Impôt sur le revenu, IS, TVA, cotisations sociales : toutes les différences fiscales entre la France et l'Espagne, avec les chiffres et seuils 2026.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/regimes-fiscaux-france-vs-espagne",
+    // SEO-AUD-0824 §2 — cet article n'existe qu'en français : les deux
+    // alternates EN et ES pointaient vers des URL qui redirigent ici même.
+    // Une redirection vers une autre langue n'est pas une traduction.
     languages: {
-      "fr": "https://www.iteradvisors.com/ressources/blog/regimes-fiscaux-france-vs-espagne",
-      "en": "https://www.iteradvisors.com/en/ressources/blog/regimes-fiscaux-france-vs-espagne",
-      "es": "https://www.iteradvisors.com/es/recursos/blog/regimes-fiscaux-france-vs-espagne",
+      "fr-FR": "https://www.iteradvisors.com/ressources/blog/regimes-fiscaux-france-vs-espagne",
       "x-default": "https://www.iteradvisors.com/ressources/blog/regimes-fiscaux-france-vs-espagne",
     },
   },

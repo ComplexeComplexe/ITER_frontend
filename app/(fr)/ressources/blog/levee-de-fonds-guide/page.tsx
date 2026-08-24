@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
 import { getCmsNavigation } from "@/lib/strapi";
-import { Callout, StatGrid, ProseTable, InlineCTA } from "@/components/blog";
+import { Callout, ProseTable, InlineCTA } from "@/components/blog";
 
 export const metadata: Metadata = {
   title: "Guide Levée Fonds | Iter Advisors",
@@ -94,26 +94,19 @@ export default async function Page() {
         montrent que :
       </p>
 
-      <StatGrid
-        items={[
-          {
-            label: "Startups bien préparées",
-            value: "90%",
-            sublabel: "succès de levée (vs 40% pour mal préparées)",
-          },
-          {
-            label: "Amélioration valorisation",
-            value: "+25%",
-            sublabel: "en moyenne pour financiers propres",
-          },
-          {
-            label: "Réduction durée levée",
-            value: "-60%",
-            sublabel: "due diligence rapide = closing rapide",
-          },
-        ]}
-        columns={3}
-      />
+      {/* SEO-AUD-0824 §1 — trois statistiques présentées comme des moyennes
+          (« 90 % de succès contre 40 % », « +25 % de valorisation », « -60 % de
+          durée ») sans source, échantillon ni période. Une valorisation et un
+          délai de closing dépendent d'abord du marché et de la traction : les
+          attribuer à la préparation financière n'est pas démontrable. */}
+      <p>
+        Une levée se joue sur la traction et le marché ; la préparation financière ne
+        les remplace pas. Ce qu'elle change est plus circonscrit, et c'est déjà
+        beaucoup : une due diligence qui ne déterre pas de surprise, un prévisionnel
+        dont les hypothèses tiennent à l'interrogatoire, et des délais qui ne dérapent
+        pas faute de pièces. Les dossiers qui échouent en due diligence échouent
+        rarement sur le fond — ils échouent sur ce qui n'avait pas été préparé.
+      </p>
 
       <Callout type="info" title="Réalité des investisseurs">
         Les investisseurs consacrent 30% du temps de due diligence sur finances, 20%
