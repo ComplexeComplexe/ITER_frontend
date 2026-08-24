@@ -12,6 +12,7 @@ import { BOOKING_URL } from "@/lib/navigation";
 import { getDafContent, type FaqRichAnswer, type LongTailQA, type SourceCitation } from "@/lib/content/daf";
 import { faqPageSchema, speakableSchema } from "@/lib/schemas";
 import { dafClusterHref } from "@/lib/path-localization";
+import { COUT_DAF_SALARIE, FORMULES } from "@/lib/content/facts";
 import { renderInlineMarkdownLinks } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -727,7 +728,22 @@ export default function DafPage({
           {/* SEO-IT-06 — Réponse directe pour AI Overviews (40-60 mots, factuel) */}
           {locale === "fr" && (
             <p className="text-sm sm:text-base bg-iter-violet/5 border-l-4 border-iter-violet rounded-r-lg px-4 py-3 mb-6 text-foreground/90 leading-relaxed">
-              Un DAF externalisé coûte entre <strong>2 000 et 7 000 € HT/mois</strong> selon le volume d'intervention (2 à 8+ jours/mois). Le TJM moyen 2026 se situe entre <strong>750 et 1 250 € HT</strong>. À titre de comparaison, un DAF salarié revient à 8 300–17 750 €/mois charges comprises.
+              {/* SEO-AUD-0824 §1 — ce bloc annonçait « 2 000 et 7 000 € HT/mois »
+                  et un TJM de 750 à 1 250 €, deux valeurs retirées lors de
+                  l'arbitrage du 10 août : la grille va de 3 000 à 8 000 €, et
+                  la facturation se fait en retainer mensuel, jamais à l'heure —
+                  publier un tarif journalier contredisait la page elle-même.
+                  Les chiffres viennent désormais de lib/content/facts.ts. */}
+              Un DAF externalisé Iter Advisors coûte entre{" "}
+              <strong>
+                {FORMULES[0].prixMin.toLocaleString("fr-FR")} et{" "}
+                {FORMULES[FORMULES.length - 1].prixMax.toLocaleString("fr-FR")} € HT/mois
+              </strong>{" "}
+              selon la formule et le périmètre confié, en retainer mensuel. À titre de comparaison,
+              un directeur financier salarié de séniorité équivalente représente un{" "}
+              {COUT_DAF_SALARIE.base} de{" "}
+              {COUT_DAF_SALARIE.min.toLocaleString("fr-FR")} à{" "}
+              {COUT_DAF_SALARIE.max.toLocaleString("fr-FR")} € par an.
             </p>
           )}
           {t.pricing.content.map((p, i) => (

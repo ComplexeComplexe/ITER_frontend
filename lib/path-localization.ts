@@ -249,9 +249,18 @@ const BLOG_ARTICLE_OVERRIDES: Record<Locale, Record<string, string | null>> = {
     // coupe les 13 liens qui y menaient. Voir la note de la PR : le remettre
     // en ligne suppose d'aligner d'abord ses tarifs sur lib/content/facts.ts.
     "daf-externalise-startup": null,
+    // SEO-AUD-0824 §2 — articles qui n'existent pas en français. Sans cette
+    // mention, leurs versions EN/ES déclaraient une traduction française vers
+    // une URL qui redirige vers la liste des articles.
+    "que-es-fractional-cfo": null,
+    "cfo-externo-pymes-precio-2026": null,
+    "fractional-cfo-cost-services-2026": null,
   },
   en: {
     "cout-daf-externalise-tarifs-prix-2026": null,
+    // Articles espagnols, sans version anglaise.
+    "que-es-fractional-cfo": null,
+    "cfo-externo-pymes-precio-2026": null,
     "organiser-sa-direction-financiere": null,
     "ia-et-automatisation-des-taches-repetitives-du-departement-finance": null,
     "essentiels-outils-tech-finance": "/ressources/blog/essentiels-outils-tech-finance",
@@ -260,6 +269,8 @@ const BLOG_ARTICLE_OVERRIDES: Record<Locale, Record<string, string | null>> = {
   },
   es: {
     "cout-daf-externalise-tarifs-prix-2026": null,
+    // Article anglais, sans version espagnole.
+    "fractional-cfo-cost-services-2026": null,
     // Aucune redirection ne couvre `/es/recursos/blog/…` pour cet article :
     // l'URL répond 404. C'était le seul lien cassé du site.
     "les-10-outils-pour-cfos-startup": null,

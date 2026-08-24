@@ -10,6 +10,16 @@ export const metadata: Metadata = {
   description: "DAF externalisé vs DAF salarié : comparaison chiffrée des coûts, des risques et des avantages. Quel modèle choisir selon votre stade de croissance ? Guide 2026.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/daf-externalise-vs-daf-salarie",
+    // SEO-AUD-0824 §2 — cet article a bien une version EN et une version ES,
+    // qui désignaient toutes deux celle-ci comme leur traduction française.
+    // La réciproque manquait : cette route a ses métadonnées écrites à la main
+    // et ne passait pas par buildMetadata, qui les aurait déduites.
+    languages: {
+      "x-default": "https://www.iteradvisors.com/ressources/blog/daf-externalise-vs-daf-salarie",
+      "fr-FR": "https://www.iteradvisors.com/ressources/blog/daf-externalise-vs-daf-salarie",
+      "en-GB": "https://www.iteradvisors.com/en/ressources/blog/daf-externalise-vs-daf-salarie",
+      "es-ES": "https://www.iteradvisors.com/es/recursos/blog/daf-externalise-vs-daf-salarie",
+    },
   },
   openGraph: {
     title: "DAF externalisé vs DAF salarié | Iter Advisors",

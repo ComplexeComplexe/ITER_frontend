@@ -11,10 +11,11 @@ export const metadata: Metadata = buildMetadata({
   title: content.meta.title,
   description: content.meta.description,
   path: "/clients",
+  // SEO-AUD-0824 §2 — /es/clients redirige vers /es/clientes.
   localizedPaths: {
     fr: "/clients",
     en: "/clients",
-    es: "/clients",
+    es: "/clientes",
   },
 });
 

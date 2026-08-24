@@ -1,7 +1,12 @@
 import { Metadata } from "next";
 import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
 import { getCmsNavigation } from "@/lib/strapi";
-import { Callout, StatGrid, ProseTable, InlineCTA } from "@/components/blog";
+import { Callout, ProseTable, InlineCTA } from "@/components/blog";
+import {
+  COUT_DAF_SALARIE,
+  ECONOMIE_FORMULATION,
+  FORMULES,
+} from "@/lib/content/facts";
 
 export const metadata: Metadata = {
   title: "Guide DAF externalisé | Iter Advisors",
@@ -59,12 +64,17 @@ export default async function Page() {
       tldr={
         <>
           <p>
-            <strong>DAF externalisé :</strong> CFO à temps partagé qui gère la
-            comptabilité, trésorerie, reporting et stratégie financière.
+            <strong>DAF externalisé :</strong> directeur financier senior externe, qui
+            pilote trésorerie, reporting, prévisionnel et stratégie financière sans être
+            salarié de l'entreprise.
           </p>
+          {/* SEO-AUD-0824 §1 — « +25 % de réduction des coûts administratifs,
+              +15 % d'amélioration du cash flow, expertise CFO au 1/3 du prix » :
+              trois chiffres sans source, sans période ni base de comparaison.
+              Remplacés par la seule formulation arbitrée, dont la méthode de
+              calcul est documentée dans lib/content/facts.ts. */}
           <p>
-            <strong>ROI moyen :</strong> +25% de réduction des coûts administratifs,
-            +15% d'amélioration du cash flow, accès à une expertise CFO au 1/3 du prix.
+            <strong>Économie :</strong> {ECONOMIE_FORMULATION}
           </p>
           <p>
             <strong>Profil idéal :</strong> PME 2-50M€ CA, startups en levée, groupes
@@ -94,10 +104,18 @@ export default async function Page() {
       <h2 id="definition">1. Qu'est-ce qu'un DAF externalisé ?</h2>
 
       <p>
-        Un DAF (Directeur Administratif et Financier) externalisé est un expert-comptable
-        ou CFO à temps partagé qui gère les finances de votre entreprise sans être
-        salarié. Contrairement au DAF salarié (coût : €50-90k/an + charges), le DAF
-        externalisé intervient sur missions ponctuelles ou régulières.
+        {/* SEO-AUD-0824 §1 — la définition assimilait le DAF externalisé à un
+            expert-comptable : ce sont deux métiers distincts, l'un tient les
+            comptes, l'autre dirige la fonction financière. Le coût salarié
+            annoncé (50-90 k€) était par ailleurs bien en dessous du coût
+            employeur réel retenu le 10 août. */}
+        Un DAF (Directeur Administratif et Financier) externalisé est un directeur
+        financier senior qui pilote la fonction finance de votre entreprise sans en être
+        salarié — un rôle de direction, distinct de celui de l'expert-comptable qui tient
+        les comptes. Contrairement au DAF salarié, dont le {COUT_DAF_SALARIE.base} se
+        situe entre {COUT_DAF_SALARIE.min.toLocaleString("fr-FR")} et{" "}
+        {COUT_DAF_SALARIE.max.toLocaleString("fr-FR")} € par an, il intervient sur
+        missions ponctuelles ou régulières.
       </p>
 
       <Callout type="info" title="Distinction clé">
@@ -229,52 +247,24 @@ export default async function Page() {
 
       <h2 id="benefices">3. Bénéfices et ROI</h2>
 
-      <p>
-        L'externalisation financière génère des gains quantifiables rapidement. Voici
-        les gains moyens mesurés chez nos clients :
-      </p>
-
-      <StatGrid
-        items={[
-          {
-            label: "Réduction coûts admin",
-            value: "-25%",
-            sublabel: "vs DAF salarié ou cabinet traditionnel",
-          },
-          {
-            label: "Amélioration cash flow",
-            value: "+15%",
-            sublabel: "via optimisation BFR et trésorerie",
-          },
-          {
-            label: "Temps management",
-            value: "-40%",
-            sublabel: "dédié aux finances (délégation complète)",
-          },
-          {
-            label: "Délai rapport financier",
-            value: "-60%",
-            sublabel: "clôture J+5 au lieu de J+15",
-          },
-        ]}
-        columns={4}
-      />
-
-      <h3>Cas client : Startup scale-up (€2-10M CA)</h3>
+      {/* SEO-AUD-0824 §1 — quatre statistiques présentées comme « gains moyens
+          mesurés chez nos clients » (-25 %, +15 %, -40 %, -60 %) sans période,
+          sans échantillon ni base de comparaison, suivies d'un cas client chiffré
+          concluant à « 200 % de ROI première année » avec des montants qui
+          contredisaient la grille arbitrée. Rien de tout cela n'était vérifiable.
+          Les règles de publication de lib/content/facts.ts interdisent un cas
+          client sans consentement écrit, période de mesure et base de comparaison.
+          Ce qui reste est la seule affirmation chiffrée dont la méthode est
+          documentée ; les cas clients réels vivent sur /ressources/cas-clients. */}
+      <p>{ECONOMIE_FORMULATION}</p>
 
       <p>
-        <strong>Avant (coûts) :</strong> Cabinet comptable €1,500/mois + expert-comptable
-        conseil €500/mois + DAF à 80% absent = €2,500/mois + perte d'expertise.
-      </p>
-
-      <p>
-        <strong>Après (avec Iter Advisors) :</strong> DAF externalisé 2j/semaine
-        €2,200/mois + automatisations = meilleure reporting + trésorerie optimisée.
-      </p>
-
-      <p>
-        <strong>ROI :</strong> Économies €300/mois + amélioration cash flow €50k (via
-        BFR) = 200% ROI première année.
+        L'écart tient à la structure du poste : vous financez un niveau de séniorité,
+        pas un temps plein. Le reste du gain — délai de clôture, fiabilité du
+        prévisionnel, temps de direction rendu — dépend trop du point de départ de
+        chaque entreprise pour être annoncé sous forme de pourcentage moyen. Nos{" "}
+        <a href="/ressources/cas-clients">cas clients</a> détaillent des situations
+        réelles, avec leur périmètre et leur période.
       </p>
 
       <h3>Avantages intangibles</h3>
@@ -299,56 +289,52 @@ export default async function Page() {
       <h2 id="tarifs">4. Tarifs et modèles de pricing</h2>
 
       <p>
-        Les tarifs varient selon la mission, la complexité et la région. Voici les
-        barèmes 2026 :
+        {/* SEO-AUD-0824 §1 et §4 — ce guide publiait sa propre grille : cinq
+            formules de 1 200 à 7 000 € et un tarif journalier de 800 à 1 200 €.
+            Aucune ne correspondait à la grille arbitrée le 10 août, et la page
+            /daf-externalise/tarifs porte déjà cette intention. Deux barèmes
+            concurrents sur le même site, c'est une contradiction pour le lecteur
+            et une cannibalisation pour la requête. La grille vient désormais de
+            lib/content/facts.ts, et le détail reste sur la page qui l'appartient. */}
+        Les tarifs dépendent de la formule et du périmètre confié, pas d'un décompte
+        d'heures : la facturation se fait en retainer mensuel. Voici la grille 2026 :
       </p>
 
       <ProseTable>
         <thead>
           <tr>
             <th>Formule</th>
-            <th>Équivalent temps</th>
-            <th>CA cible</th>
-            <th>Prix mensuel</th>
+            <th>Volume indicatif</th>
+            <th>Cible</th>
+            <th>Prix mensuel HT</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Comptabilité pure</td>
-            <td>0,5 j/sem</td>
-            <td>&lt;€1M</td>
-            <td>€1,200-1,500</td>
-          </tr>
-          <tr>
-            <td>Comptabilité + trésorerie</td>
-            <td>1 j/sem</td>
-            <td>€1-5M</td>
-            <td>€1,800-2,500</td>
-          </tr>
-          <tr>
-            <td>DAF complet (3 piliers)</td>
-            <td>2-3 j/sem</td>
-            <td>€5-20M</td>
-            <td>€2,500-4,500</td>
-          </tr>
-          <tr>
-            <td>CFO à temps partagé</td>
-            <td>4 j/sem</td>
-            <td>&gt;€20M</td>
-            <td>€4,500-7,000</td>
-          </tr>
-          <tr>
-            <td>Missions ponctuelles</td>
-            <td>À la journée</td>
-            <td>Tous</td>
-            <td>€800-1,200/j</td>
-          </tr>
+          {FORMULES.map((f) => (
+            <tr key={f.nom}>
+              <td>{f.nom}</td>
+              <td>{f.volumeIndicatif}</td>
+              <td>{f.cible}</td>
+              <td>
+                {f.prixMin.toLocaleString("fr-FR")} – {f.prixMax.toLocaleString("fr-FR")} €
+              </td>
+            </tr>
+          ))}
         </tbody>
       </ProseTable>
 
+      <p>
+        Le volume indiqué est une moyenne d'intervention observée, jamais un forfait
+        d'heures. Le détail de chaque formule, les missions ponctuelles et les
+        conditions d'engagement sont sur la page{" "}
+        <a href="/daf-externalise/tarifs">tarifs d'un DAF externalisé</a>.
+      </p>
+
       <Callout type="success" title="Avantage coût">
-        Un DAF salarié coûte €50-90k/an (€4,200-7,500/mois) + charges sociales. Le DAF
-        externalisé : €18-54k/an. <strong>Gain : €2,000-5,000/mois.</strong>
+        Un directeur financier salarié de séniorité équivalente représente un{" "}
+        {COUT_DAF_SALARIE.base} de {COUT_DAF_SALARIE.min.toLocaleString("fr-FR")} à{" "}
+        {COUT_DAF_SALARIE.max.toLocaleString("fr-FR")} € par an.{" "}
+        {ECONOMIE_FORMULATION}
       </Callout>
 
       <h3>Modèles de pricing chez Iter Advisors</h3>

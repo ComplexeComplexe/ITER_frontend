@@ -11,7 +11,9 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-temps-partage-page",
     locale: "es",
     path: "/externalizacion-daf/tiempo-compartido",
-    localizedPaths: { fr: "/daf-externalise/temps-partage", en: "/daf-outsourcing/shared-time", es: "/externalizacion-daf/tiempo-compartido" },
+    // SEO-AUD-0824 §2 — le slug anglais du cluster DAF est `fractional-cfo`
+    // depuis HARMO-01 ; `daf-outsourcing` ne subsiste que comme redirection.
+    // Les chemins sont désormais déduits par getLocalizedPath.
     fallbackTitle: "CFO a tiempo compartido | Iter Advisors",
     fallbackDescription: "CFO a tiempo compartido para pymes.",
   });

@@ -36,6 +36,17 @@ const VALEURS_INTERDITES = [
   { re: /48 ?(?:à|-|–) ?72 ?(?:h|heures)/i, sujet: "délai de démarrage (7 à 10 jours)" },
   { re: /engagement de 3 (?:à 6 )?mois|à partir de 3 mois, renouvelable/i, sujet: "engagement (aucune durée minimale)" },
   { re: /80 000 ?(?:à|–|-) ?150 000|90 000 ?(?:à|–|-) ?150 000|120 000 ?(?:et|à|–|-) ?180 000/, sujet: "coût DAF salarié (100 000 à 213 000 €)" },
+  // SEO-AUD-0824 §1 — relevées par l'audit du 24 août. Les cinq premières
+  // contredisaient l'arbitrage du 10 août ; les deux dernières étaient des
+  // affirmations de performance sans source, période ni base de comparaison,
+  // que les règles de publication de lib/content/facts.ts interdisent.
+  { re: /2 ?000 (?:et|à|–|-) ?7 ?000/, sujet: "grille tarifaire (3 000 à 8 000 € HT/mois)" },
+  { re: /50\s?-\s?90\s?k|50 000 (?:à|–|-) ?90 000/i, sujet: "coût DAF salarié (100 000 à 213 000 €)" },
+  { re: /\+ ?25 ?% de réduction|25 ?% de réduction des coûts/i, sujet: "réduction de coûts non sourcée" },
+  { re: /\+ ?15 ?% d'amélioration|15 ?% de pre-?money/i, sujet: "amélioration non sourcée" },
+  { re: /200 ?% (?:de )?ROI|ROI (?:de )?200 ?%/i, sujet: "ROI non sourcé" },
+  { re: /au 1\/3 du prix|1\/3 du prix/i, sujet: "comparaison de prix non sourcée" },
+  { re: /expert-comptable ou (?:un )?CFO à temps partagé/i, sujet: "DAF externalisé assimilé à un expert-comptable" },
 ];
 
 /**
@@ -182,6 +193,66 @@ for (const abs of urls) {
   }
 }
 console.log(`  ${liensTestes} URL de destination distinctes testées`);
+
+// ── 5. hreflang : chaque alternate doit viser une 200 canonique et réciproque
+//
+// SEO-AUD-0824 §2 (2026-08-24) — l'audit a relevé 59 balises sur 34 pages qui
+// désignaient une URL redirigée. Deux causes : les alternates reprenaient par
+// défaut le chemin de la locale courante (`/es/ressources/outils` au lieu de
+// `/es/recursos/herramientas`), et les articles publiés dans une seule langue
+// déclaraient malgré tout les trois. Une redirection vers une autre langue
+// n'est pas une traduction.
+//
+// Le contrôle est ici et pas dans audit-redirects.mjs parce qu'une balise
+// hreflang n'existe qu'une fois la page rendue : elle est calculée à partir du
+// chemin, jamais écrite en entier dans le code.
+console.log("\nContrôle des hreflang rendus…");
+const altsParPage = new Map();
+for (const abs of urls) {
+  const path = abs.replace(CANONICAL_HOST, "") || "/";
+  let html;
+  try {
+    const r = await fetch(BASE + path, { redirect: "manual" });
+    if (r.status !== 200) continue;
+    html = await r.text();
+  } catch {
+    continue;
+  }
+  const head = html.slice(0, html.indexOf("</head>") + 7 || html.length);
+  // Next rend l'attribut `hrefLang` avec un L majuscule : ignorer la casse.
+  const alts = [...head.matchAll(/<link rel="alternate"[^>]*?hreflang="([^"]+)"[^>]*?href="([^"]+)"/gi)].map(
+    (m) => ({ lang: m[1], cible: m[2].replace(CANONICAL_HOST, "") || "/" }),
+  );
+  altsParPage.set(path, alts);
+}
+let altsTestees = 0;
+for (const [path, alts] of altsParPage) {
+  for (const { lang, cible } of alts) {
+    if (!cible.startsWith("/")) continue;
+    if (!liensVus.has(cible)) {
+      try {
+        const r = await fetch(BASE + cible, { redirect: "manual" });
+        liensVus.set(cible, r.status);
+      } catch {
+        liensVus.set(cible, 0);
+      }
+    }
+    altsTestees++;
+    const st = liensVus.get(cible);
+    if (st !== 200) {
+      fail("hreflang/redirection", `${path} — [${lang}] ${cible} (${st})`);
+      continue;
+    }
+    // Réciprocité : la cible doit désigner la source en retour. Non vérifiable
+    // si la cible est hors sitemap — on ne conclut pas dans ce cas.
+    if (cible === path) continue;
+    const retour = altsParPage.get(cible);
+    if (retour && !retour.some((a) => a.cible === path)) {
+      fail("hreflang/réciprocité", `${path} — [${lang}] ${cible} ne renvoie pas en retour`);
+    }
+  }
+}
+console.log(`  ${altsTestees} balises hreflang contrôlées sur ${altsParPage.size} pages`);
 
 // Les titles longs sont un signal, pas un blocage : la limite réelle est en
 // pixels, et certaines pages assument un title long pour rester explicites.

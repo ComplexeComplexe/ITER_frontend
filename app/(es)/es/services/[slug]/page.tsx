@@ -12,6 +12,7 @@ import {
 } from "@/lib/strapi";
 // INDEX-04 — same as FR /services/[slug]: static resolver, no Strapi.
 import { getStaticServicePage } from "@/lib/fallback-service-pages-localized";
+import { serviceHreflangDisabled } from "@/lib/strapi";
 import { buildStrapiMetadata } from "@/lib/metadata";
 
 const basePath = "/es/services";
@@ -68,6 +69,10 @@ export async function generateMetadata({
     locale: "es",
     path: `${basePath}/${slug}`,
     localizedPaths: getServiceLocalizedPaths(canonical),
+    // SEO-AUD-0824 §2 — un slug de service par locale ne garantit pas qu'une
+    // page réponde derrière : la version anglaise de la gestion financière
+    // externalisée a été retirée.
+    disableHreflang: serviceHreflangDisabled(canonical, "es"),
     fallbackTitle: fallbackTitles[canonical],
     fallbackDescription: fallbackDescriptions[canonical],
   });
