@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { getGlossaryPages } from "@/lib/content/glossary-entries";
 import { Locale } from "@/lib/i18n";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -95,6 +97,36 @@ export default function GlossairePage({
                 {t.comingSoon}
               </p>
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* SEO-AUD-0824 §3 (2026-08-24) — cinq fiches détaillées du glossaire
+          n'avaient aucun lien entrant sur tout le site : le hub affichait ses
+          termes avec leur définition, sans jamais mener aux fiches. Elles
+          n'existent qu'en français, d'où la condition sur la locale. */}
+      {locale === "fr" && (
+        <section className="bg-muted/20 py-12 lg:py-16">
+          <div className="container max-w-3xl">
+            <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-3">
+              Fiches détaillées
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              Certaines notions méritent plus qu'une définition : mode de calcul,
+              seuils d'alerte et leviers d'action.
+            </p>
+            <ul className="grid sm:grid-cols-2 gap-3 list-none pl-0">
+              {getGlossaryPages("fr").map((page) => (
+                <li key={page.slug}>
+                  <Link
+                    href={`/ressources/glossaire/${page.slug}`}
+                    className="block rounded-xl border border-border/50 bg-background px-4 py-3 text-sm font-medium text-foreground hover:border-iter-violet/40 hover:text-iter-violet transition-colors"
+                  >
+                    {page.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       )}

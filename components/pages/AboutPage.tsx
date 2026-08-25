@@ -230,7 +230,7 @@ export default function AboutPage({
           </div>
           <div className="flex flex-wrap justify-center gap-6">
             {team.map((member) => (
-              <TeamMemberCard key={member.id} member={member} />
+              <TeamMemberCard key={member.id} member={member} locale={locale} />
             ))}
           </div>
         </div>

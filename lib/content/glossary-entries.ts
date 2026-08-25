@@ -31,6 +31,33 @@ export interface GlossaryEntryContent {
   ctaButton: string;
 }
 
+/**
+ * Termes du glossaire qui ont une fiche à eux.
+ *
+ * SEO-AUD-0824 §3 (2026-08-24) — le hub glossaire affichait chaque terme avec
+ * sa définition, mais sans jamais lier la fiche détaillée : six d'entre elles
+ * étaient orphelines, sans un seul lien entrant sur tout le site.
+ *
+ * `bfr` est volontairement absent : la route existe encore mais redirige vers
+ * `besoin-fonds-roulement-bfr`. Ces fiches n'existent qu'en français — les
+ * variantes EN et ES répondent en 308 ou en 404.
+ */
+export const GLOSSARY_PAGE_SLUGS: ReadonlySet<string> = new Set([
+  "ebitda",
+  "cfo",
+  "besoin-fonds-roulement-bfr",
+  "cash-burn-runway",
+  "cac-ltv",
+  "arr-mrr",
+  "churn-rate",
+  "run-rate",
+  "bspce-bsa",
+  "daf",
+  "drh-externalise",
+  "controle-de-gestion",
+  "fractional-cfo",
+]);
+
 export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, GlossaryEntryContent>>> = {
   fr: {
     bfr: {
@@ -1263,6 +1290,26 @@ const slugMapping: Record<Locale, Record<string, GlossaryEntrySlug>> = {
  * version is missing — used for the TICKET 21 new entries (EN/ES translations
  * not yet produced).
  */
+/**
+ * Fiches détaillées du glossaire, avec leur titre, pour les lister.
+ *
+ * SEO-AUD-0824 §3 — le hub dérive le slug de ses termes depuis leur titre
+ * (« CAC (Customer Acquisition Cost) » devient `cac-customer-acquisition-cost-`),
+ * ce qui ne tombe jamais sur le slug de la fiche correspondante — `cac-ltv`.
+ * Seul « EBITDA » coïncidait, par hasard. Lier depuis une liste explicite est
+ * plus sûr que d'espérer une correspondance de chaînes.
+ */
+export function getGlossaryPages(locale: Locale): { slug: string; title: string }[] {
+  const entries = glossaryEntries[locale] ?? {};
+  return [...GLOSSARY_PAGE_SLUGS]
+    .map((slug) => {
+      const entry = entries[slug as GlossaryEntrySlug] ?? glossaryEntries.fr[slug as GlossaryEntrySlug];
+      return entry ? { slug, title: entry.h1 } : null;
+    })
+    .filter((e): e is { slug: string; title: string } => e !== null)
+    .sort((a, b) => a.title.localeCompare(b.title, "fr"));
+}
+
 function getEntryWithFrFallback(locale: Locale, slug: GlossaryEntrySlug): GlossaryEntryContent | undefined {
   return glossaryEntries[locale]?.[slug] ?? glossaryEntries.fr?.[slug];
 }
