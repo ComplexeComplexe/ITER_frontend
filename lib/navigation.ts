@@ -173,10 +173,17 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Politique de confidentialité", href: "/politique-de-confidentialite" },
       { text: "Politique de cookies", href: "/politique-cookies" },
     ],
+    // SEO-AUD-0824 §3 (2026-08-24) — « Nos clients » et « Carrières » ne
+    // vivaient que dans le second niveau du menu, qui n'est rendu qu'après
+    // ouverture côté client : aucun crawler ne les voyait. /clients et les
+    // trois offres d'emploi étaient donc orphelines, alors qu'un visiteur les
+    // atteignait en deux clics. Le pied de page, lui, est rendu au serveur.
     editorialLinks: [
       { text: "Glossaire financier", href: "/ressources/glossaire" },
       { text: "Fiche métier DAF", href: "/daf-externalise/metier" },
       { text: "Outils finance", href: "/ressources/outils" },
+      { text: "Nos clients", href: "/clients" },
+      { text: "Carrières", href: "/jobs" },
     ],
     locations: [
       { city: "Barcelone", country: "Espagne", href: "/daf-externalise-barcelone" },
@@ -198,6 +205,12 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Finance glossary", href: "/en/ressources/glossaire" },
       { text: "CFO role", href: "/en/fractional-cfo/role" },
       { text: "Finance tools", href: "/en/ressources/tools" },
+      { text: "Our clients", href: "/en/clients" },
+      { text: "Careers", href: "/en/jobs" },
+      // SEO-AUD-0824 §10 — cette page était à quatre clics de l'accueil : le
+      // cluster RH n'est atteignable qu'en passant par la bascule de langue
+      // puis deux niveaux. Le pied de page la ramène à un clic.
+      { text: "Fractional HR Director", href: "/en/hr-outsourcing/shared-time" },
     ],
     locations: [
       { city: "Barcelona", country: "Spain", href: "/en/outsourced-cfo-barcelona" },
@@ -219,6 +232,9 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Glosario financiero", href: "/es/recursos/glosario" },
       { text: "Funciones del CFO", href: "/es/externalizacion-daf/funciones" },
       { text: "Herramientas financieras", href: "/es/recursos/herramientas" },
+      { text: "Nuestros clientes", href: "/es/clientes" },
+      { text: "Empleo", href: "/es/jobs" },
+      { text: "RRHH a tiempo compartido", href: "/es/externalizacion-rrhh/tiempo-compartido" },
     ],
     locations: [
       { city: "Barcelona", country: "España", href: "/es/cfo-externalizado-barcelona" },

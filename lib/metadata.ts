@@ -110,8 +110,14 @@ export function buildMetadata({
   const meta: Metadata = {
     title,
     description,
+    // SEO-AUD-0824 §3 (2026-08-24) — `noindex, nofollow` coupait aussi le
+    // suivi des liens. Le hub carrières, volontairement hors index, était le
+    // seul chemin vers les trois offres d'emploi — lesquelles figurent au
+    // sitemap, donc destinées à être indexées. Un crawler s'arrêtait là.
+    // `noindex, follow` est la déclaration juste : ne référence pas cette
+    // page, mais suis ce qu'elle désigne.
     robots: noindex
-      ? "noindex, nofollow"
+      ? "noindex, follow"
       : "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
     alternates: {
       canonical: url,

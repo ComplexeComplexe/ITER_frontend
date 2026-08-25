@@ -194,6 +194,55 @@ for (const abs of urls) {
 }
 console.log(`  ${liensTestes} URL de destination distinctes testées`);
 
+// ── 4b. Pages orphelines : aucune URL du sitemap sans lien entrant
+//
+// SEO-AUD-0824 §3 (2026-08-24) — l'audit a relevé 38 URL du sitemap qu'aucun
+// lien interne ne désignait : 24 fiches d'expert, 6 fiches de glossaire, les
+// pages clients et les offres d'emploi. Une page sans lien entrant ne reçoit
+// aucun PageRank interne et n'existe, pour un crawler, que par le sitemap.
+//
+// Le comptage part des pages du sitemap, mais suit un saut de plus : le hub
+// carrières est volontairement hors index et n'y figure pas, alors qu'il est
+// le chemin normal vers les trois offres. S'arrêter au sitemap les aurait
+// déclarées orphelines à tort.
+const liensSortants = new Map(); // page → Set(href)
+for (const abs of urls) {
+  const path = abs.replace(CANONICAL_HOST, "") || "/";
+  let html;
+  try {
+    const r = await fetch(BASE + path, { redirect: "manual" });
+    if (r.status !== 200) continue;
+    html = await r.text();
+  } catch {
+    continue;
+  }
+  liensSortants.set(
+    path,
+    new Set([...html.matchAll(/href="(\/[^"#?]*)"/g)].map((m) => m[1]).filter((h) => !h.startsWith("/_next"))),
+  );
+}
+const normalise = (p) => p.replace(/\/$/, "") || "/";
+const dansSitemap = new Set(urls.map((u) => normalise(u.replace(CANONICAL_HOST, "") || "/")));
+const cibles = new Set();
+for (const set of liensSortants.values()) for (const h of set) cibles.add(normalise(h));
+// Un saut supplémentaire, à travers les pages hors sitemap déjà atteintes.
+for (const cible of [...cibles]) {
+  if (dansSitemap.has(cible) || liensSortants.has(cible)) continue;
+  try {
+    const r = await fetch(BASE + cible, { redirect: "manual" });
+    if (r.status !== 200) continue;
+    const html = await r.text();
+    for (const m of html.matchAll(/href="(\/[^"#?]*)"/g)) {
+      if (!m[1].startsWith("/_next")) cibles.add(normalise(m[1]));
+    }
+  } catch {
+    /* injoignable : sans effet sur le comptage */
+  }
+}
+const orphelines = [...dansSitemap].filter((p) => !cibles.has(p));
+for (const p of orphelines) fail("orpheline", p);
+console.log(`  ${orphelines.length} page(s) orpheline(s) sur ${dansSitemap.size}`);
+
 // ── 5. hreflang : chaque alternate doit viser une 200 canonique et réciproque
 //
 // SEO-AUD-0824 §2 (2026-08-24) — l'audit a relevé 59 balises sur 34 pages qui

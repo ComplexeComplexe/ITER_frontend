@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
+import { GLOSSARY_PAGE_SLUGS } from "@/lib/content/glossary-entries";
 import type { StrapiGlossaryTerm } from "@/lib/strapi";
 import type { Locale } from "@/lib/i18n";
 
@@ -90,7 +92,21 @@ export default function GlossaryLetterIndex({
             key={term.documentId ?? term.id}
             className="border border-border/50 rounded-2xl p-6 lg:p-8 bg-background"
           >
-            <h2 className="text-xl font-semibold font-heading text-foreground mb-3">{term.title}</h2>
+            {/* SEO-AUD-0824 §3 — le titre n'était pas cliquable : les fiches
+                détaillées n'avaient aucun lien entrant. Elles n'existent qu'en
+                français, d'où la condition sur la locale. */}
+            {locale === "fr" && GLOSSARY_PAGE_SLUGS.has(term.slug) ? (
+              <h2 className="text-xl font-semibold font-heading mb-3">
+                <Link
+                  href={`/ressources/glossaire/${term.slug}`}
+                  className="text-foreground hover:text-iter-violet transition-colors"
+                >
+                  {term.title}
+                </Link>
+              </h2>
+            ) : (
+              <h2 className="text-xl font-semibold font-heading text-foreground mb-3">{term.title}</h2>
+            )}
             <p className="text-muted-foreground leading-relaxed">{term.definition}</p>
           </li>
         ))}
