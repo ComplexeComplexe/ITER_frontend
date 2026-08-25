@@ -37,7 +37,7 @@ export const metadata: Metadata = buildMetadata({
   // trois requêtes du hub (1 037 impressions, position 8,62, CTR 0,29 %)
   // contre "irpf" (379) et "irpf espagne" (255). La description conserve la
   // fourchette chiffrée en tête, demandée par SEO-08 pour le CTR.
-  title: "Taux d'imposition en Espagne 2026 : barème IRPF | Iter Advisors",
+  title: "Impôt sur le revenu en Espagne : barème 2026 | Iter Advisors",
   description: "Barème IRPF 2026 : de 19 % à 47 % tranche par tranche, taux réels par région, comparaison avec la France et cas des résidents français.",
   path: "/ressources/fiscalite/impot-revenu-espagne",
   // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google

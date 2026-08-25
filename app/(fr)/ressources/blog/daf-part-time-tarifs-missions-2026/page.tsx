@@ -6,13 +6,13 @@ import { Callout, ProseTable } from '@/components/blog';
 import MidArticleSoftCTA from '@/components/blog/MidArticleSoftCTA';
 
 export const metadata: Metadata = {
-  title: "DAF à temps partagé : tarifs et missions en 2026 | Iter Advisors",
+  title: "DAF à temps partagé : tarifs et missions | Iter Advisors",
   description: "Combien coûte un DAF à temps partagé ? Tarifs par jour et par mois, missions types, durée d'engagement. Le guide chiffré 2026.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/daf-part-time-tarifs-missions-2026",
   },
   openGraph: {
-    title: "DAF à temps partagé : tarifs et missions en 2026 | Iter Advisors",
+    title: "DAF à temps partagé : tarifs et missions | Iter Advisors",
     description: "Combien coûte un DAF à temps partagé ? Tarifs par jour et par mois, missions types, durée d'engagement. Le guide chiffré 2026.",
     type: "article",
     images: [

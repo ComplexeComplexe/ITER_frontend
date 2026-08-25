@@ -303,9 +303,15 @@ for (const [path, alts] of altsParPage) {
 }
 console.log(`  ${altsTestees} balises hreflang contrôlées sur ${altsParPage.size} pages`);
 
-// Les titles longs sont un signal, pas un blocage : la limite réelle est en
-// pixels, et certaines pages assument un title long pour rester explicites.
+// SEO-AUD-0824 §6 (2026-08-24) — les douze titles trop longs relevés par
+// l'audit ont été réécrits, le compteur est à zéro. Il devient donc un
+// contrôle : sans quoi il remonterait au premier title écrit sans y penser.
+//
+// La limite réelle est en pixels, pas en caractères — 60 est une approximation
+// prudente. Une page qui assume un title plus long pour rester explicite reste
+// possible : il suffit de l'exempter ici, en disant pourquoi.
 console.log(`Titles de plus de 60 caractères : ${titresLongs}`);
+if (titresLongs > 0) fail("title/longueur", `${titresLongs} title(s) de plus de 60 caractères`);
 
 if (echecs.length === 0) {
   console.log("\n✅ Aucun échec.");

@@ -6,6 +6,8 @@ import { getCmsNavigation } from "@/lib/strapi";
 import {
   getAuthorSlugs,
   getTeamMemberBySlug,
+  authorPageTitle,
+  authorPageDescription,
 } from "@/lib/content/team";
 import { blogPosts } from "@/lib/content/blog-posts";
 
@@ -32,12 +34,12 @@ export async function generateMetadata({
   const fullName = `${member.firstName} ${member.lastName}`;
   return buildMetadata({
     locale: "en",
-    // SEO-REP §7 (2026-08-15) — le gabarit reprenait le rôle complet
-    // (« Associé fondateur - CFO & Investisseur »), ce qui poussait tous les
-    // titles de fiches équipe à 63-71 caractères. Le rôle reste dans le H1 et
-    // le corps ; le title garde le nom, qui est la requête réelle.
-    title: `${fullName} | Iter Advisors`,
-    description: member.bio.slice(0, 160),
+    // `h1Role` porte une formulation plus riche et réellement traduite
+    // (« DAF externalisé » / « Fractional CFO » / « CFO Externalizado ») ;
+    // `role` est parfois identique d'une langue à l'autre — « CFO » s'écrit
+    // pareil dans les trois.
+    title: authorPageTitle(fullName, member.h1Role ?? member.role),
+    description: authorPageDescription(member.bio),
     path: `/en/a-propos/${slug}`,
     localizedPaths: localizedPathsFor(slug),
   });

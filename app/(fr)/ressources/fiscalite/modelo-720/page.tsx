@@ -31,7 +31,7 @@ const AUTHOR_URL = "/a-propos/florent-greth";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Modelo 720 Espagne 2026 : déclaration biens étranger | Iter Advisors",
+  title: "Modelo 720 Espagne : biens à l'étranger | Iter Advisors",
   description: "Résident fiscal en Espagne ? Déclarez vos comptes, assurances-vie et biens immobiliers situés en France via le Modelo 720 si leur valeur dépasse 50 000 €.",
   path: "/ressources/fiscalite/modelo-720",
   // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google

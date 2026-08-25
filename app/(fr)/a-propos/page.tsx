@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
     // 2021 » (lib/content/about.ts). La page se contredisait elle-même.
     // Recentrée sur ce qu'elle est : l'équipe, l'histoire et les bureaux.
     fallbackTitle: "Iter Advisors : équipe, histoire et bureaux",
-    fallbackDescription: "Découvrez Iter Advisors, cabinet de DAF externalisé fondé à Barcelone. 15 experts financiers, +85 entreprises accompagnées et +100M€ de levées de fonds réalisées. Noté 5/5 sur Trustfolio.",
+    fallbackDescription: "Cabinet de DAF externalisé fondé à Barcelone. 15 experts financiers, plus de 85 entreprises accompagnées et 100 M€ de levées. Noté 5/5 sur Trustfolio.",
   });
 }
 

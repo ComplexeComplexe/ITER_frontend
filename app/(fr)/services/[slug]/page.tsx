@@ -33,7 +33,7 @@ const fallbackTitles: Record<ServicePageSlug, string> = {
 /* ── Fallback descriptions for FR services ── */
 const fallbackDescriptions: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
-    "Construisez un prévisionnel de trésorerie glissant sur 13 semaines. Anticipez les tensions de cash, optimisez votre BFR et sécurisez votre runway. +50 PME accompagnées.",
+    "Construisez un prévisionnel de trésorerie glissant sur 13 semaines : anticipez les tensions de cash, optimisez votre BFR et sécurisez votre runway.",
   "gestion-financiere-externalisee":
     "DAF externalisé dès 2 jours/mois. Reporting mensuel, pilotage budgétaire et stratégie financière pour startups et PME. Barcelone, Paris, Toulouse. Devis gratuit.",
   "accompagnement-levee-de-fond":

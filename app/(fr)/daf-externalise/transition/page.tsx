@@ -22,8 +22,8 @@ export async function generateMetadata(): Promise<Metadata> {
     // « 7 à 10 jours » sur le DAF de transition urgent. Règle actée : aucune
     // promesse de démarrage sous 7 jours n'est publiée, et le mot « garanti »
     // n'accompagne aucun délai. Voir DELAIS dans lib/content/facts.ts.
-    fallbackTitle: "DAF de transition sous 10 jours pour PME et ETI | Iter Advisors",
-    fallbackDescription: "DAF de transition opérationnel en 7 à 10 jours pour vacance de poste, crise de trésorerie, restructuration ou levée de fonds. 8 000 à 12 000 € HT/mois. PME, ETI, scale-ups.",
+    fallbackTitle: "DAF de transition pour PME et ETI | Iter Advisors",
+    fallbackDescription: "DAF de transition opérationnel en 7 à 10 jours : vacance de poste, crise de trésorerie, restructuration ou levée. 8 000 à 12 000 € HT/mois.",
   });
 
   // Override the OG image with a dedicated illustration (the same SVG used

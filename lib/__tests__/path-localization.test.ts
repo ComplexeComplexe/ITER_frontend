@@ -226,3 +226,61 @@ describe("hreflang des pages service", () => {
     expect(serviceHreflangDisabled("accompagnement-levee-de-fond", "es")).toEqual([]);
   });
 });
+
+/**
+ * SEO-AUD-0824 §6 et §8 — les fiches de membres partageaient leur title entre
+ * les trois langues (il ne portait que le nom), et douze pages dépassaient
+ * 60 caractères. Le gabarit cède du terrain par étapes plutôt que de tomber
+ * d'emblée sur le nom seul.
+ */
+describe("title des fiches de membre", () => {
+  it("garde le rôle et la marque quand tout tient", async () => {
+    const { authorPageTitle } = await import("@/lib/content/team");
+    expect(authorPageTitle("Deisy Arias Ramirez", "CFO")).toBe(
+      "Deisy Arias Ramirez — CFO | Iter Advisors",
+    );
+  });
+
+  it("sacrifie la marque avant le rôle", async () => {
+    const { authorPageTitle } = await import("@/lib/content/team");
+    const t = authorPageTitle("Sébastien Doat", "Associé fondateur, DAF externalisé");
+    expect(t).toBe("Sébastien Doat — Associé fondateur, DAF externalisé");
+    expect(t.length).toBeLessThanOrEqual(60);
+  });
+
+  it("raccourcit le rôle au séparateur quand il le faut", async () => {
+    const { authorPageTitle } = await import("@/lib/content/team");
+    const t = authorPageTitle("Christophe Hoarau", "Associé fondateur - CFO & Investisseur senior");
+    expect(t.length).toBeLessThanOrEqual(60);
+    expect(t).toContain("Associé fondateur");
+  });
+
+  it("ne dépasse jamais 60 caractères", async () => {
+    const { authorPageTitle } = await import("@/lib/content/team");
+    const cas: [string, string][] = [
+      ["Deisy Arias Ramirez", "Associé fondateur - CFO & Investisseur"],
+      ["Christophe Hoarau", "CFO & Data Officer"],
+      ["Jean-Baptiste de la Rochefoucauld", "Directeur administratif et financier de transition"],
+    ];
+    for (const [nom, role] of cas) {
+      expect(authorPageTitle(nom, role).length).toBeLessThanOrEqual(60);
+    }
+  });
+});
+
+describe("description des fiches de membre", () => {
+  it("coupe sur une frontière de mot, pas au caractère près", async () => {
+    const { authorPageDescription } = await import("@/lib/content/team");
+    const bio = `${"Pilotage financier de scale-ups européennes. ".repeat(6)}fin`;
+    const d = authorPageDescription(bio);
+    expect(d.length).toBeLessThanOrEqual(160);
+    expect(d.endsWith("…")).toBe(true);
+    // Le caractère qui précède les points de suspension ne coupe pas un mot.
+    expect(bio.startsWith(d.slice(0, -1))).toBe(true);
+  });
+
+  it("laisse une bio courte intacte", async () => {
+    const { authorPageDescription } = await import("@/lib/content/team");
+    expect(authorPageDescription("Bio courte.")).toBe("Bio courte.");
+  });
+});

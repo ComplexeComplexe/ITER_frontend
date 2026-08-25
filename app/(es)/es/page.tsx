@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "es",
     path: "/",
     fallbackTitle: "Director Financiero Externo | Iter Advisors",
-    fallbackDescription: "Iter Advisors: CFO externo para pymes y startups.",
+    fallbackDescription: "Iter Advisors: CFO externo para pymes y startups en Barcelona, París y Toulouse. Dirección financiera senior a tiempo compartido, desde 3.000 € al mes.",
   });
 }
 
