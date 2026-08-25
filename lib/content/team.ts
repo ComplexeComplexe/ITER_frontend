@@ -458,6 +458,44 @@ export function getTeamMemberBySlug(
  * Slugs that have a dedicated author page (i.e. have a bio in every
  * locale). Used by `generateStaticParams` and the sitemap.
  */
+/**
+ * Title et description d'une fiche de membre.
+ *
+ * SEO-AUD-0824 §8 (2026-08-24) — les onze fiches partageaient leur title entre
+ * FR, EN et ES : il ne portait que le nom, identique par nature d'une langue à
+ * l'autre. Le rôle, lui, est traduit — c'est donc lui qui distingue les trois
+ * versions, et accessoirement ce qui rend le title informatif.
+ *
+ * SEO-REP §7 (2026-08-15) avait retiré ce rôle parce qu'il poussait les titles
+ * à 63-71 caractères. On le remet, mais en cédant du terrain par étapes :
+ * d'abord la marque, puis la partie du rôle qui suit le séparateur. Le nom
+ * seul reste le dernier recours, jamais le premier choix.
+ */
+export function authorPageTitle(fullName: string, role: string): string {
+  const suffixe = " | Iter Advisors";
+  const court = role.split(/\s[-–&]\s|\s(?:y|e)\s/)[0].trim();
+  const candidats = [
+    `${fullName} — ${role}${suffixe}`,
+    `${fullName} — ${role}`,
+    `${fullName} — ${court}${suffixe}`,
+    `${fullName} — ${court}`,
+  ];
+  return candidats.find((c) => c.length <= 60) ?? `${fullName}${suffixe}`;
+}
+
+/**
+ * Description d'une fiche de membre, coupée sur une frontière de mot.
+ *
+ * `bio.slice(0, 160)` tranchait au caractère près, donc parfois au milieu d'un
+ * mot — ce que le lecteur voit dans les résultats de recherche.
+ */
+export function authorPageDescription(bio: string): string {
+  if (bio.length <= 160) return bio;
+  const coupe = bio.slice(0, 157);
+  const dernierEspace = coupe.lastIndexOf(" ");
+  return `${coupe.slice(0, dernierEspace > 100 ? dernierEspace : 157).replace(/[,;:.\s]+$/, "")}…`;
+}
+
 export function getAuthorSlugs(): string[] {
   return fallbackData
     .filter((m) => m.bio && m.bio.fr && m.bio.en && m.bio.es)

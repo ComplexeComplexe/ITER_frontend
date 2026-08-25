@@ -743,7 +743,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     // EC-02 — DAF ecosystem
     daf: {
       meta: {
-        title: "DAF externalisé : définition, missions et salaire | Iter Advisors",
+        title: "DAF : définition, missions et salaire | Iter Advisors",
         description:
           "DAF (Directeur Administratif et Financier) : définition du rôle, missions, différence avec le CFO et coût d'un DAF externalisé pour PME.",
       },

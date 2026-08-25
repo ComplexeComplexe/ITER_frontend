@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     // depuis HARMO-01 ; `daf-outsourcing` ne subsiste que comme redirection.
     // Les chemins sont désormais déduits par getLocalizedPath.
     fallbackTitle: "CFO a tiempo compartido | Iter Advisors",
-    fallbackDescription: "CFO a tiempo compartido para pymes.",
+    fallbackDescription: "CFO a tiempo compartido para pymes y startups: reporting mensual, previsión de tesorería y pilotaje financiero, sin contratar a jornada completa.",
   });
 }
 

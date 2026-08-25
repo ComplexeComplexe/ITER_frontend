@@ -1477,7 +1477,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     "externalisation-comptable": {
       meta: {
         title: "Externalisation comptable : guide et tarifs 2026",
-        description: "Faut-il externaliser sa comptabilité ? Avantages, pièges, tarifs (400–3 500 €/mois) et sélection du bon prestataire. Guide complet 2026 par les experts Iter Advisors.",
+        description: "Faut-il externaliser sa comptabilité ? Avantages, pièges, tarifs (400 à 3 500 €/mois) et critères pour choisir le bon prestataire en 2026.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -3257,7 +3257,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 
     "daf-part-time-tarifs-missions-2026": {
       meta: {
-        title: "DAF à temps partagé : tarifs et missions en 2026 | Iter Advisors",
+        title: "DAF à temps partagé : tarifs et missions | Iter Advisors",
         description: "Combien coûte un DAF à temps partagé ? Tarifs par jour et par mois, missions types, durée d'engagement. Le guide chiffré 2026.",
       },
       breadcrumbs: {
@@ -3347,7 +3347,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 
     "cout-externalisation-comptable-2026": {
       meta: {
-        title: "Coût externalisation comptable 2026 : tarifs PME | Iter Advisors",
+        title: "Coût de l'externalisation comptable 2026 | Iter Advisors",
         description: "Combien coûte l'externalisation comptable en 2026 ? Grille tarifaire par taille d'entreprise + comparatif des 4 modèles disponibles. FAQ + ROI.",
       },
       breadcrumbs: {
@@ -4081,7 +4081,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "externalisation-comptable": {
       meta: {
-        title: "Externalización Contable: Guía Completa Pymes 2026 | Iter Advisors",
+        title: "Externalización contable para pymes 2026 | Iter Advisors",
         description: "Externalizar la contabilidad: 30-50% más barato, herramientas modernas (Pennylane, Sage), experto senior. Guía completa para startups y pymes por Iter Advisors.",
       },
       breadcrumbs: {

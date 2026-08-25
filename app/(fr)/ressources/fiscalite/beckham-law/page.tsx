@@ -52,7 +52,7 @@ const SIMU_IMG =
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  title: "Loi Beckham Espagne 2026 : conditions et taux 24% | Iter Advisors",
+  title: "Loi Beckham Espagne : conditions et taux | Iter Advisors",
   description:
     "Loi Beckham : taux fixe de 24 % pendant 6 ans, conditions 2026, Modelo 149 et simulation de l'économie d'impôt. Le guide complet du régime des impatriés.",
   path: "/ressources/fiscalite/beckham-law",

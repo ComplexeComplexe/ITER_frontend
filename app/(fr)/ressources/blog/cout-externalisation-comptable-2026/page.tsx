@@ -10,7 +10,7 @@ import { Callout, ProseTable } from "@/components/blog";
 const PAGE_URL = "https://www.iteradvisors.com/ressources/blog/cout-externalisation-comptable-2026";
 
 export const metadata: Metadata = {
-  title: "Coût externalisation comptable 2026 : tarifs PME | Iter Advisors",
+  title: "Coût de l'externalisation comptable 2026 | Iter Advisors",
   description:
     "Combien coûte l'externalisation comptable en 2026 ? Grille tarifaire par taille d'entreprise + comparatif des 4 modèles disponibles. FAQ + ROI.",
   alternates: { canonical: PAGE_URL },

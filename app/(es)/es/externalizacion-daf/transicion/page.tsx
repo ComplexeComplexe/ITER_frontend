@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
       es: "/externalizacion-daf/transicion",
     },
     fallbackTitle: "CFO de transición: acompañamiento al cambio | Iter Advisors",
-    fallbackDescription: "CFO de transición para acompañar sus cambios estratégicos y operativos.",
+    fallbackDescription: "CFO de transición para vacante de puesto, crisis de tesorería o reestructuración. Intervención senior a tiempo casi completo, de 3 a 12 meses.",
   });
 }
 
