@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getGlossaryPages } from "@/lib/content/glossary-entries";
+import { glossaryHref } from "@/lib/path-localization";
 import { Locale } from "@/lib/i18n";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -60,6 +61,9 @@ export default function GlossairePage({
   cmsNavigation?: CmsNavItem[];
 }) {
   const t = content[locale];
+  // Les fiches détaillées n'existent qu'en français et, depuis TRAFIC-01, en
+  // anglais pour trois d'entre elles. L'espagnol n'en a aucune.
+  const fichesDetaillees = locale === "es" ? [] : getGlossaryPages(locale);
   const hasTerms = terms && terms.length > 0;
 
   return (
@@ -103,23 +107,27 @@ export default function GlossairePage({
 
       {/* SEO-AUD-0824 §3 (2026-08-24) — cinq fiches détaillées du glossaire
           n'avaient aucun lien entrant sur tout le site : le hub affichait ses
-          termes avec leur définition, sans jamais mener aux fiches. Elles
-          n'existent qu'en français, d'où la condition sur la locale. */}
-      {locale === "fr" && (
+          termes avec leur définition, sans jamais mener aux fiches.
+
+          TRAFIC-01 (2026-08-31) — trois fiches ont désormais une version
+          anglaise servie ; le hub anglais les liste à son tour. L'espagnol
+          n'en a toujours aucune. */}
+      {fichesDetaillees.length > 0 && (
         <section className="bg-muted/20 py-12 lg:py-16">
           <div className="container max-w-3xl">
             <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-3">
-              Fiches détaillées
+              {locale === "fr" ? "Fiches détaillées" : "In-depth entries"}
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Certaines notions méritent plus qu'une définition : mode de calcul,
-              seuils d'alerte et leviers d'action.
+              {locale === "fr"
+                ? "Certaines notions méritent plus qu'une définition : mode de calcul, seuils d'alerte et leviers d'action."
+                : "Some terms deserve more than a definition: how they are calculated, when they signal trouble, and what to do about them."}
             </p>
             <ul className="grid sm:grid-cols-2 gap-3 list-none pl-0">
-              {getGlossaryPages("fr").map((page) => (
+              {fichesDetaillees.map((page) => (
                 <li key={page.slug}>
                   <Link
-                    href={`/ressources/glossaire/${page.slug}`}
+                    href={glossaryHref(locale, page.slug)}
                     className="block rounded-xl border border-border/50 bg-background px-4 py-3 text-sm font-medium text-foreground hover:border-iter-violet/40 hover:text-iter-violet transition-colors"
                   >
                     {page.title}

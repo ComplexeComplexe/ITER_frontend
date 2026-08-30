@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { Locale } from "@/lib/i18n";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { GlossaryEntryContent } from "@/lib/content/glossary-entries";
+import { glossaryHref } from "@/lib/path-localization";
 import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -27,7 +28,12 @@ export default function GlossaryEntryPage({ locale, content, cmsNavigation }: Gl
           <Breadcrumb
             locale={locale}
             items={[
-              { label: locale === "fr" ? "Glossaire" : locale === "en" ? "Glossary" : "Glosario", href: `/ressources/glossaire` },
+              // TRAFIC-01 (2026-08-31) — le fil d'Ariane renvoyait au glossaire
+              // français depuis n'importe quelle locale.
+              {
+                label: locale === "fr" ? "Glossaire" : locale === "en" ? "Glossary" : "Glosario",
+                href: glossaryHref(locale),
+              },
               { label: content.h1 },
             ]}
           />

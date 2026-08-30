@@ -1028,45 +1028,70 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
       ctaButton: "Make an appointment",
     },
     cfo: {
+      // TRAFIC-01 (2026-08-31) — cette fiche se classait déjà sur 19 requêtes
+      // anglophones, 15 460 recherches mensuelles cumulées, depuis la page
+      // FRANÇAISE : aucune route n'existait sous /en pour la servir. Elle
+      // ouvrait par ailleurs sur le contexte français (« In France, this title
+      // is increasingly used… »), ce qui ne répond pas à quelqu'un qui tape
+      // « cfo meaning ». Réécrite en réponse directe, l'angle français
+      // descend là où il devient utile : le modèle fractional.
       meta: {
-        title: "CFO: Definition vs Finance Director | Iter Advisors",
+        title: "CFO: meaning, role and responsibilities | Iter Advisors",
         description:
-          "CFO (Chief Financial Officer) definition: role, responsibilities and difference from traditional finance director. Expert guide from Iter Advisors.",
+          "CFO stands for Chief Financial Officer — the executive who runs a company's finance function. Definition, responsibilities, and how the role differs from a finance director.",
       },
-      h1: "CFO (Chief Financial Officer): Definition and Role",
+      h1: "CFO (Chief Financial Officer): meaning, role and responsibilities",
       sections: [
         {
           content: [
-            "The **CFO** (Chief Financial Officer) is the English title for a company's Chief Financial Officer. In France, this title is increasingly used in startups, scale-ups, and internationally-minded companies as a replacement for or complement to the traditional title of **[Finance Director](/en/fractional-cfo)**.",
+            "**CFO stands for Chief Financial Officer.** It is the executive who runs a company's finance function: cash, accounting, financial planning, reporting and, in most companies, the relationship with banks and investors. The CFO sits on the executive team and reports to the CEO.",
+            "In finance, the title carries a specific weight. A CFO is not the person who keeps the books — that is the accountant or the controller. The CFO decides what the numbers mean and what the company should do about them.",
           ],
         },
         {
-          heading: "CFO Definition",
+          heading: "What does a CFO do?",
           content: [
-            "The CFO is responsible for an organization's financial management. CFO is a C-suite executive reporting directly to the CEO. Responsibilities span accounting, cash management, financial reporting, financial planning (FP&A), taxation, and often investor relations.",
+            "The scope varies with company size, but six responsibilities are near-universal:",
+            "**Financial planning and analysis (FP&A)** — budgets, forecasts, scenario modelling, variance analysis against plan.",
+            "**Cash and treasury** — cash-flow forecasting, working capital, banking relationships, debt.",
+            "**Accounting and reporting** — monthly close, statutory accounts, audit, management reporting.",
+            "**Fundraising and investor relations** — equity and debt raises, board reporting, due diligence.",
+            "**Risk and compliance** — tax, regulatory obligations, internal controls, insurance.",
+            "**Strategic support to the CEO** — pricing, unit economics, hiring plans, M&A, market entry.",
           ],
         },
         {
-          heading: "CFO vs Finance Director: What's the Difference?",
+          heading: "CFO vs finance director vs controller",
           content: [
-            "In practice, CFO and Finance Director (Director) are the same role. The difference is primarily cultural and sectoral.",
-            "The **Finance Director** title is more common in traditional French companies (SMEs, mid-market, large enterprises). Often includes broader administrative scope (legal, HR in some cases).",
-            "The **CFO** title dominates startups, scale-ups, and internationally-minded companies. Perceived as more modern and strategically-focused.",
-            "In both cases, core responsibilities are similar: cash management, financial reporting, strategic CEO support, bank and investor relations.",
+            "The three titles are often used loosely, and the distinction matters when you are hiring.",
+            "A **controller** owns the accuracy of the numbers: closing the books, compliance, controls. The work looks backwards.",
+            "A **finance director** owns the finance department and its processes. In Europe, and particularly in France, the title covers a broader administrative remit than its Anglo-Saxon equivalent.",
+            "A **CFO** owns the financial strategy and answers to the board for it. The work looks forwards. In practice, a small company's finance director and a startup's CFO do much the same job under different names — the title reflects the company's culture more than the scope.",
           ],
         },
         {
-          heading: "The Outsourced CFO (Fractional CFO)",
+          heading: "When does a company need a CFO?",
           content: [
-            "The **Fractional CFO** (or **[Outsourced CFO](/en/fractional-cfo)**) concept serves internationally-minded companies just as **[Outsourced Finance Director](/en/fractional-cfo)** does for traditional French companies. A senior CFO divides time across multiple client companies, providing high-level expertise at SME/startup-friendly costs.",
-            "At Iter Advisors, our partners work interchangeably as Outsourced Finance Directors or Fractional CFOs based on client company culture. Learn more about our **[Outsourced CFO](/en/fractional-cfo)** services on our dedicated page.",
+            "Revenue alone is a poor trigger. Complexity is the better one: multiple entities, several currencies, a funding round in preparation, an investor on the board, or a management team making decisions without reliable numbers.",
+            "Below that threshold, a controller plus an external accountant usually suffices. Above it, the absence of a CFO shows up as decisions taken late, forecasts nobody trusts, and due diligence that surfaces problems the company did not know it had.",
           ],
         },
         {
-          heading: "FAQ - CFO",
+          heading: "What is a fractional CFO?",
           content: [
-            "**What's the difference between CFO and CFA?** CFA (Chartered Financial Analyst) is a professional certification from the CFA Institute, primarily for asset management and financial analysis. CFO is a job title. They're unrelated.",
-            "**Can a CFO be outsourced?** Yes. Fractional CFO is an increasingly popular model, especially in the US and UK. In France, we typically say Outsourced Finance Director, but it's the same concept.",
+            "A **fractional CFO** is a senior CFO who works for several companies at once, a few days a month each. The model gives a company executive-level financial leadership without the cost of a full-time hire, and it is now common in startups and SMEs across Europe and North America.",
+            "It suits companies that need the judgement of a CFO but not the presence of one every day — typically those preparing a funding round, coming out of one, or running a finance function that has outgrown its bookkeeping.",
+            "Iter Advisors provides fractional CFOs to companies in France and Spain. Our **[outsourced CFO offering](/en/fractional-cfo)** sets out how the engagements work, and our **[shared-time CFO page](/en/fractional-cfo/shared-time)** covers the recurring format specifically.",
+          ],
+        },
+        {
+          heading: "Frequently asked questions",
+          content: [
+            "**What does CFO stand for?** Chief Financial Officer. It is a job title, not a qualification.",
+            "**What is the difference between a CFO and a CEO?** The CEO runs the company and owns its overall direction. The CFO runs the finance function and owns the financial consequences of that direction. The CFO reports to the CEO.",
+            "**Is a CFO the same as an accountant?** No. An accountant records and reports transactions. A CFO uses that record to plan, decide and raise capital. Many CFOs began as accountants, but the roles are distinct.",
+            "**What is the difference between CFO and CFA?** CFA (Chartered Financial Analyst) is a professional certification, mostly held in asset management and investment analysis. CFO is a position on the executive team. The two are unrelated.",
+            "**Can a CFO be part-time or outsourced?** Yes. Fractional and outsourced CFO arrangements are established practice, particularly for companies below the size that justifies a full-time hire.",
           ],
         },
       ],
@@ -1303,8 +1328,20 @@ export function getGlossaryPages(locale: Locale): { slug: string; title: string 
   const entries = glossaryEntries[locale] ?? {};
   return [...GLOSSARY_PAGE_SLUGS]
     .map((slug) => {
-      const entry = entries[slug as GlossaryEntrySlug] ?? glossaryEntries.fr[slug as GlossaryEntrySlug];
-      return entry ? { slug, title: entry.h1 } : null;
+      // TRAFIC-01 (2026-08-31) — pas de repli sur le français hors locale fr :
+      // le hub anglais listerait sinon treize fiches dont dix n'existent pas
+      // en anglais, et chacune de ces cartes serait un lien vers une
+      // redirection. On ne liste que ce qu'on sait servir.
+      //
+      // Cas croisé : la fiche anglaise du BFR vit sous la clé courte `bfr`,
+      // quand le slug canonique français est `besoin-fonds-roulement-bfr`.
+      const cle =
+        locale === "en" && slug === "besoin-fonds-roulement-bfr" ? "bfr" : slug;
+      const entry =
+        locale === "fr"
+          ? entries[cle as GlossaryEntrySlug] ?? glossaryEntries.fr[cle as GlossaryEntrySlug]
+          : entries[cle as GlossaryEntrySlug];
+      return entry ? { slug: cle, title: entry.h1 } : null;
     })
     .filter((e): e is { slug: string; title: string } => e !== null)
     .sort((a, b) => a.title.localeCompare(b.title, "fr"));

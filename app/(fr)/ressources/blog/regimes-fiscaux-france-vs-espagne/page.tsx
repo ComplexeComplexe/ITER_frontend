@@ -55,13 +55,19 @@ export default async function Page() {
       category="Fiscalité internationale"
       title="Régimes fiscaux : France vs Espagne — Comparaison complète 2026"
       dek="IS, TVA, cotisations sociales, régimes spéciaux. Comment optimiser votre structure fiscale entre la France et l'Espagne."
+      // TRAFIC-03 (2026-08-31) — cette page porte à elle seule 39 % du trafic
+      // organique du site (8 mots-clés, dont « impots espagne » en P6). Son
+      // auteur était déclaré sans `url` : pas de lien vers sa fiche, donc pas
+      // de rel="author" ni de Person relié dans le schéma — sur la page où
+      // l'E-E-A-T compte le plus.
       author={{
         name: "Benjamin Ziza",
         avatar: "/images/team/benjamin-ziza.webp",
         jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
+        url: "/a-propos/benjamin-ziza",
       }}
       readingTime={8}
-      dateModified="2026-05-01T00:00:00Z"
+      dateModified="2026-08-31T00:00:00Z"
       heroImage="/images/blog/covers/regimes-fiscaux-france-vs-espagne.svg"
       toc={[
         { id: "impot-societes", label: "IS : 25,83 % FR vs 25 % ES" },
@@ -70,6 +76,7 @@ export default async function Page() {
         { id: "regimes-speciaux", label: "Régimes spéciaux et Beckham" },
         { id: "profil", label: "Choisir selon votre profil" },
         { id: "faq", label: "FAQ" },
+        { id: "sources", label: "Sources officielles" },
       ]}
       faqItems={[
         {
@@ -585,6 +592,35 @@ export default async function Page() {
           </li>
         </ul>
       </div>
+
+      {/* TRAFIC-03 (2026-08-31) — la page compare IS, TVA, cotisations et
+          barèmes des deux pays sans citer une seule source officielle. Sur du
+          contenu fiscal, c'est ce qui sépare une affirmation d'une référence —
+          pour le lecteur comme pour les moteurs. URLs vérifiées une à une
+          (voir lib/content/references.ts pour les constantes partagées). */}
+      <h2 id="sources">Sources officielles</h2>
+      <ul>
+        <li>
+          <a href="https://sede.agenciatributaria.gob.es/Sede/irpf.html" target="_blank" rel="noopener">
+            Agencia Tributaria — IRPF, barèmes et obligations
+          </a>
+        </li>
+        <li>
+          <a href="https://www.boe.es/eli/es/l/2006/11/28/35/con" target="_blank" rel="noopener">
+            Ley 35/2006 del IRPF, texte consolidé (BOE)
+          </a>
+        </li>
+        <li>
+          <a href="https://www.impots.gouv.fr/les-conventions-internationales" target="_blank" rel="noopener">
+            impots.gouv.fr — conventions fiscales internationales
+          </a>
+        </li>
+        <li>
+          <a href="https://bofip.impots.gouv.fr/" target="_blank" rel="noopener">
+            BOFiP-Impôts — doctrine fiscale opposable
+          </a>
+        </li>
+      </ul>
     </BlogPostPageRefonte>
   );
 }
