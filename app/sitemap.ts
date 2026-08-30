@@ -244,6 +244,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${BASE}/daf-externalise/secteurs`,
     lastModified: D.pillar,
   });
+  // GEO-03 (2026-08-26) — trois pages sectorielles répondaient 200 et étaient
+  // indexables, mais ne figuraient ni ici ni dans aucun lien interne. Le seul
+  // document du site à les mentionner était /llms.txt.
+  for (const secteur of ["ecommerce", "industrie", "deep-tech"]) {
+    entries.push({
+      url: `${BASE}/daf-externalise/${secteur}`,
+      lastModified: D.pillar,
+    });
+  }
   entries.push(
     ...entryAllLocales(
       { fr: "/daf-externalise/temps-partage", en: "/fractional-cfo/shared-time", es: "/externalizacion-daf/tiempo-compartido" },

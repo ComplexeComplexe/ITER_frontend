@@ -11,11 +11,11 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-deep-tech-page",
     locale: "fr",
     path: "/daf-externalise/deep-tech",
-    localizedPaths: {
-      fr: "/daf-externalise/deep-tech",
-      en: "/en/fractional-cfo/deep-tech",
-      es: "/es/externalizacion-daf/deep-tech",
-    },
+    // GEO-03 (2026-08-26) — cette page est française uniquement : les deux
+    // URL déclarées comme traductions répondent 404. Le défaut est resté
+    // invisible tant que la page était absente du sitemap, donc hors de
+    // portée de la recette.
+    disableHreflang: ["en", "es"],
     fallbackTitle: content.meta.title,
     fallbackDescription: content.meta.description,
   });

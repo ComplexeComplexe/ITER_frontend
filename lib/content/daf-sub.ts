@@ -485,13 +485,24 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           heading: "DAF Externalisé pour E-Commerce",
           content: [
-            "Les plateformes e-commerce connaissent des cycles financiers particuliers : saisonnalité, gestion du stock et du BFR, marges fines sur les ventes. Notre expertise aide à piloter la profitabilité malgré les contraintes de trésorerie inhérentes au secteur.",
+            // GEO-03 (2026-08-26) — les trois pages sectorielles dédiées
+            // répondaient 200, étaient indexables, et n'étaient liées depuis
+            // aucune page — pas même depuis ce hub, dont c'est pourtant le
+            // rôle. Seul llms.txt les mentionnait : les assistants IA en
+            // étaient les seuls informés.
+            "Les plateformes e-commerce connaissent des cycles financiers particuliers : saisonnalité, gestion du stock et du BFR, marges fines sur les ventes. Notre expertise aide à piloter la profitabilité malgré les contraintes de trésorerie inhérentes au secteur. Le détail de notre approche est sur la page **[DAF externalisé e-commerce](/daf-externalise/ecommerce)**.",
           ],
         },
         {
           heading: "DAF Externalisé pour l'Industrie & ETI",
           content: [
-            "Les entreprises industrielles et les ETI ont besoin d'un DAF qui comprenne la complexité opérationnelle : production, supply chain, risques de change. Nos DAFs externalisés pour l'industrie apportent cette expertise.",
+            "Les entreprises industrielles et les ETI ont besoin d'un DAF qui comprenne la complexité opérationnelle : production, supply chain, risques de change. Nos DAFs externalisés pour l'industrie apportent cette expertise, détaillée sur la page **[DAF externalisé industrie et ETI](/daf-externalise/industrie)**.",
+          ],
+        },
+        {
+          heading: "DAF Externalisé pour la Deep Tech",
+          content: [
+            "Les entreprises deep tech financent des cycles de R&D longs avant tout revenu : subventions, CIR, dette non dilutive et levées successives s'y empilent. Notre page **[DAF externalisé deep tech](/daf-externalise/deep-tech)** détaille ce montage financier particulier.",
           ],
         },
         {
@@ -517,7 +528,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     ecommerce: {
       meta: {
-        title: "DAF Externalisé E-Commerce : Pilotez Votre Profitabilité | Iter Advisors",
+        title: "DAF externalisé e-commerce : marge et BFR | Iter Advisors",
         description:
           "DAF externalisé spécialisé e-commerce : gestion du BFR, saisonnalité, marges produits, trésorerie. Intervention dès 2 jours/mois.",
       },
@@ -554,7 +565,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     industrie: {
       meta: {
-        title: "DAF Externalisé Industrie & ETI : Expertise Opérationnelle | Iter Advisors",
+        title: "DAF externalisé industrie et ETI | Iter Advisors",
         description:
           "DAF externalisé pour ETI et entreprises industrielles : contrôle de gestion, supply chain, risques de change, M&A.",
       },
@@ -589,7 +600,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     "deep-tech": {
       meta: {
-        title: "DAF Externalisé Deep Tech & Biotech : Levée de Fonds & R&D | Iter Advisors",
+        title: "DAF externalisé deep tech et biotech | Iter Advisors",
         description:
           "DAF externalisé spécialisé deep tech, biotech et hardware : CIR/CII, levée de fonds Series A/B, data room, valorisation. 30+ tours accompagnés.",
       },

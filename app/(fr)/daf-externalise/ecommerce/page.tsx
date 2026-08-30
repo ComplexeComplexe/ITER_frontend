@@ -11,11 +11,11 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "daf-ecommerce-page",
     locale: "fr",
     path: "/daf-externalise/ecommerce",
-    localizedPaths: {
-      fr: "/daf-externalise/ecommerce",
-      en: "/en/fractional-cfo/ecommerce",
-      es: "/es/externalizacion-daf/ecommerce",
-    },
+    // GEO-03 (2026-08-26) — cette page est française uniquement : les deux
+    // URL déclarées comme traductions répondent 404. Le défaut est resté
+    // invisible tant que la page était absente du sitemap, donc hors de
+    // portée de la recette.
+    disableHreflang: ["en", "es"],
     fallbackTitle: content.meta.title,
     fallbackDescription: content.meta.description,
   });
