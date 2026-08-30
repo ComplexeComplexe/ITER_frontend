@@ -194,6 +194,43 @@ for (const abs of urls) {
 }
 console.log(`  ${liensTestes} URL de destination distinctes testées`);
 
+// ── 3b. /llms.txt : la fiche de contexte pour les moteurs génératifs
+//
+// GEO-01 (2026-08-26) — ce fichier annonçait « 2 000 à 7 000 € HT/mois » et un
+// TJM, deux valeurs retirées du site le 25 août. Il vivait dans `public/`,
+// écrit à la main : rien ne le rattachait à lib/content/facts.ts, et personne
+// ne le relisait — puisqu'il est écrit pour des machines.
+//
+// Il est désormais généré depuis facts.ts, donc il ne peut plus diverger. Ce
+// contrôle vérifie qu'il est bien servi, et qu'aucune valeur retirée n'y est
+// revenue par un autre chemin.
+{
+  const r = await fetch(`${BASE}/llms.txt`, { redirect: "manual" });
+  if (r.status !== 200) {
+    fail("llms/absent", `/llms.txt → ${r.status}`);
+  } else {
+    const t = await r.text();
+    for (const { re, sujet } of VALEURS_INTERDITES) {
+      const m = t.match(re);
+      if (m) fail("llms/régression", `${sujet} : « ${m[0]} »`);
+    }
+    // Un tarif journalier chiffré contredit la règle « retainer mensuel, jamais
+    // à l'heure ». Le motif exige un nombre : le fichier dit précisément
+    // « sans tarif journalier », et une négation ne doit pas déclencher
+    // l'alerte que la phrase sert justement à écarter.
+    const tarifJour = t.match(/TJM[^.]{0,40}\d|\d[\d\s ]*€[^.]{0,15}(?:\/\s?j\b|par jour)/i);
+    if (tarifJour) fail("llms/régression", `tarif journalier : « ${tarifJour[0]} »`);
+
+    // La ponctuation de fin de phrase ne fait pas partie de l'URL.
+    for (const u of new Set(
+      [...t.matchAll(/https:\/\/www\.iteradvisors\.com(\/[^\s)]*)/g)].map((m) => m[1].replace(/[.,;:]+$/, "")),
+    )) {
+      const rr = await fetch(BASE + u, { redirect: "manual" });
+      if (rr.status !== 200) fail("llms/URL", `${u} → ${rr.status}`);
+    }
+  }
+}
+
 // ── 4b. Pages orphelines : aucune URL du sitemap sans lien entrant
 //
 // SEO-AUD-0824 §3 (2026-08-24) — l'audit a relevé 38 URL du sitemap qu'aucun

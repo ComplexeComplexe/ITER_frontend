@@ -6,6 +6,8 @@ import { getCmsNavigation } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
+import References from "@/components/References";
+import { getFiscaliteReferences } from "@/lib/content/references";
 import { faqPageSchema } from "@/lib/schemas";
 import { blogPosts } from "@/lib/content/blog-posts";
 
@@ -226,6 +228,16 @@ export default async function Page() {
           </aside>
         </div>
       </section>
+
+      {/* GEO-02 (2026-08-26) — cette page décrivait des obligations
+
+          fiscales, leurs seuils et leurs sanctions sans citer une seule
+
+          source. Les références sont vérifiées une à une dans
+
+          lib/content/references.ts. */}
+
+      <References locale="fr" refs={getFiscaliteReferences("double-imposition-france-espagne")} />
 
       <CTASection locale="fr" />
     </PageLayout>
