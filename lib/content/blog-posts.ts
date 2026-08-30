@@ -98,7 +98,10 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     "cout-daf-externalise-tarifs-prix-2026": {
       meta: {
         title: "Tarifs DAF externalisé 2026 : grille de prix | Iter Advisors",
-        description: "Découvrez les tarifs d'un DAF externalisé en 2026 : TJM, forfaits mensuels et grille de prix. Économisez 50 à 70 % vs un DAF salarié. Diagnostic gratuit.",
+        // SEO-02 (2026-08-30) — « 50 à 70 % » et « TJM » sont deux valeurs
+        // retirées le 10 août. Une meta description n'est pas dans le corps de
+        // la page : le contrôle ne la lisait pas.
+        description: "Tarifs d'un DAF externalisé en 2026 : grille par formule, de 3 000 à 8 000 € HT/mois en retainer. Comparaison avec le coût d'un DAF salarié.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",

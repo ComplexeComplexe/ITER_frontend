@@ -1,6 +1,11 @@
 import { Metadata } from "next";
 import DafSubPage from "@/components/pages/DafSubPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
+import { MISSIONS_PONCTUELLES } from "@/lib/content/facts";
+
+/** Fourchette arbitrée du DAF de transition, en € HT par mois. */
+const TRANSITION = MISSIONS_PONCTUELLES.find((m) => m.nom === "DAF de transition")!;
+
 import { getDafSubContent } from "@/lib/content/daf-sub";
 import { getCmsNavigation } from "@/lib/strapi";
 
@@ -100,18 +105,27 @@ export default async function Page() {
       { "@type": "Country", name: "Espagne" },
     ],
     url: PAGE_URL,
+    // SEO-01 (2026-08-30) — ce bloc annonçait un tarif journalier de 800 à
+    // 1 500 € (`unitText: "DAY"`), sur une page dont le prix arbitré est
+    // mensuel : 8 000 à 12 000 € HT/mois. Iter facture en retainer, jamais à
+    // la journée — le balisage disait donc à Google le contraire de la règle
+    // commerciale, et c'est lui qui remonte dans les extraits enrichis.
+    //
+    // Le défaut vient de la même famille que celui du pilier : une valeur
+    // écrite en dur dans du JSON-LD, hors de portée du contrôle qui ne lisait
+    // que le texte visible.
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "EUR",
-      lowPrice: "800",
-      highPrice: "1500",
+      lowPrice: String(TRANSITION.min),
+      highPrice: String(TRANSITION.max),
       offerCount: "1",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
         priceType: "https://schema.org/MinimumPrice",
-        price: "800",
+        price: String(TRANSITION.min),
         priceCurrency: "EUR",
-        unitText: "DAY",
+        unitText: "MONTH",
       },
     },
   };

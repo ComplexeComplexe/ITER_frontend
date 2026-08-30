@@ -110,7 +110,10 @@ const FR_BLOG_SLUGS = [
   "drh-externalise-quand-et-pourquoi",
   "externalisation-comptable",
   "flux-de-tresorerie",
-  "impot-revenu-espagne",
+  // SEO-03 (2026-08-30) — retiré : /ressources/blog/impot-revenu-espagne
+  // redirige désormais vers /ressources/fiscalite/impot-revenu-espagne, qui
+  // sert le même contenu et concentre les 125 liens internes du pied de page.
+  // Les deux se disputaient la requête « impôt sur le revenu espagne ».
   "la-modernisation-du-role-de-cfo",
   "payfit-vs-silae-comparatif-pme",
   "pennylane-vs-sage-comparatif-40-deploiements",

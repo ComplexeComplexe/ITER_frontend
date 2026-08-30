@@ -24,7 +24,23 @@ import { blogPosts } from "@/lib/content/blog-posts";
  * ProfessionalService is already site-wide via app/layout.tsx.
  */
 
-const SOURCE_SLUG = "bareme-irpf-espagne-2026";
+// SEO-03 (2026-08-30) — cette page rendait `bareme-irpf-espagne-2026`, une
+// entrée de 2 600 caractères, alors que `impot-revenu-espagne` en compte
+// 12 700 sur le même sujet : IRPF, barèmes, loi Beckham, démarches,
+// comparaison France-Espagne, erreurs fréquentes.
+//
+// Les deux vivaient en parallèle au sitemap, avec des titles quasi identiques,
+// et se disputaient la même requête — les relevés de position montrent le
+// site sortir deux fois sur « impôt sur le revenu espagne », en P6 et P7.
+//
+// Le déséquilibre était total : cette page-ci reçoit 125 liens internes (elle
+// est au pied de page, donc sur chaque page du site) mais n'était pas classée ;
+// l'article de blog en recevait 6 et portait tout le contenu. L'autorité
+// interne allait à la coquille, le fond à l'orpheline.
+//
+// La page garde donc son URL — c'est elle qui tient les liens — et sert
+// désormais le contenu long. L'ancienne URL de blog redirige ici.
+const SOURCE_SLUG = "impot-revenu-espagne";
 const PAGE_URL = "https://www.iteradvisors.com/ressources/fiscalite/impot-revenu-espagne";
 const HUB_URL = "/ressources/fiscalite-espagne-france";
 const PUBLISHED_DATE = "2026-05-31";

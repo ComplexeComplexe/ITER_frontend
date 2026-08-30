@@ -185,7 +185,7 @@ function ResourcesPageFR({ cmsNavigation }: { cmsNavigation?: CmsNavItem[] }) {
       items: [
         {
           title: "Impôt sur le revenu en Espagne (IRPF) : guide complet 2026",
-          href: "/ressources/blog/impot-revenu-espagne",
+          href: "/ressources/fiscalite/impot-revenu-espagne",
         },
       ],
     },

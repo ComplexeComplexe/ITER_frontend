@@ -239,8 +239,9 @@ const BLOG_ARTICLE_OVERRIDES: Record<Locale, Record<string, string | null>> = {
     "externaliser-comptabilite-guide": null,
     // Le sujet a déjà sa carte sous `impot-revenu-espagne`.
     "bareme-irpf-espagne-2026": null,
-    // Ces deux-là ont quitté le blog pour la section fiscalité, sans y avoir
-    // de jumeau : la carte reste, elle pointe vers leur nouvelle adresse.
+    // Ces trois-là ont quitté le blog pour la section fiscalité : la carte
+    // reste, elle pointe vers leur nouvelle adresse.
+    "impot-revenu-espagne": "/ressources/fiscalite/impot-revenu-espagne",
     "modelo-720-declaration-biens-etranger": "/ressources/fiscalite/modelo-720",
     "double-imposition-france-espagne-convention":
       "/ressources/fiscalite/double-imposition-france-espagne",
