@@ -211,11 +211,38 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
         {
+          heading: "Ce qu'un DAF à temps partagé ne fait pas",
+          content: [
+            // CONTENUS-T5b (2026-08-31) — les limites réelles du format,
+            // énoncées avant que le prospect ne les découvre en mission. Une
+            // page qui assume ce qu'elle ne couvre pas est plus crédible — et
+            // plus citable — qu'une page qui promet tout.
+            "**Il ne remplace pas votre comptable.** Le DAF à temps partagé supervise la fonction comptable et travaille avec votre expert-comptable ou votre comptable interne ; il ne saisit pas les écritures. Si la tenue des comptes est votre besoin, c'est l'**[externalisation comptable](/services/comptabilite-externalisation)** qu'il vous faut.",
+            "**Il n'est pas disponible en continu.** Le format repose sur des jours d'intervention planifiés. Entre deux passages, il reste joignable pour les urgences réelles, mais une entreprise qui a besoin d'une présence quotidienne relève d'un recrutement — c'est d'ailleurs un signe de maturité que nous aidons à préparer.",
+            "**Il ne gère pas l'opérationnel du quotidien.** Relances clients, saisie des factures, paie : ces tâches restent portées par vos équipes ou vos prestataires. Le DAF à temps partagé les structure, les outille et les contrôle ; il ne les exécute pas.",
+          ],
+        },
+        {
+          heading: "Délais de démarrage et engagement",
+          content: [
+            // Valeurs de lib/content/facts.ts — les mêmes que la page tarifs.
+            "Le parcours type : votre besoin est qualifié sous 2 jours ouvrés, un profil vous est présenté sous 5 jours ouvrés, et la mission démarre 8 à 15 jours après le premier contact. Les premiers livrables arrivent dès le premier mois d'intervention.",
+            "Sans durée d'engagement minimale, résiliable avec un préavis de 30 jours. Le volume de jours est une moyenne d'intervention observée, jamais un forfait d'heures : le prix suit le profil engagé et le périmètre confié.",
+          ],
+        },
+        {
           heading: "FAQ - DAF à Temps Partagé",
           content: [
             "**Peut-on passer d'un DAF à temps partagé à un DAF interne ?** Oui, c'est un scénario fréquent. Une fois la structure mise en place, vous pouvez recruter un DAF junior à temps plein et garder le DAF à temps partagé en mode conseil pour quelques jours par trimestre.",
             "**Un DAF à temps partagé peut-il également être DAF de transition sur une autre mission ?** Oui. Chez Iter Advisors, nos DAFs à temps partagé peuvent être mobilisés en mode transition intense pendant 2-3 mois si un besoin urgent surgit chez l'un de leurs clients.",
-            "**Quels sont les délais de mise en place ?** Comptez 7 à 10 jours entre le premier échange et le démarrage effectif, selon la disponibilité du profil et la complexité du dossier. Le premier diagnostic prend généralement 4-6 semaines.",
+            // CONTENUS-T5b (2026-08-31) — « 7 à 10 jours » est le délai du DAF de
+            // transition en situation urgente ; celui du temps partagé, arbitré
+            // le 10 août, est de 8 à 15 jours (lib/content/facts.ts).
+            "**Quels sont les délais de mise en place ?** Comptez 8 à 15 jours entre le premier échange et le démarrage effectif : qualification sous 2 jours ouvrés, profil présenté sous 5 jours ouvrés, contrat signé sous 8 jours ouvrés. Le premier diagnostic complet prend généralement 4 à 6 semaines.",
+            "**Quelle est la différence entre DAF à temps partagé et DAF externalisé ?** Le DAF externalisé est le terme générique — un directeur financier qui n'est pas salarié de l'entreprise. Le temps partagé en est la forme récurrente : quelques jours par mois, dans la durée. L'autre forme est la mission ponctuelle — transition, levée, audit — limitée dans le temps.",
+            "**Combien de jours par mois pour une PME de 50 salariés ?** Le plus souvent 3 à 5 jours par mois, le format de la formule Croissance. Le volume dépend moins de l'effectif que de la complexité : multi-entités, levée en préparation ou reporting investisseurs poussent vers le haut de la fourchette. C'est une moyenne observée, ajustée au cadrage, jamais un forfait.",
+            "**Un DAF à temps partagé peut-il gérer une levée de fonds ?** Oui — c'est même l'un des déclencheurs les plus fréquents. La préparation de levée fait partie de la formule Croissance : business plan, data room, prévisionnel et réponses à la due diligence. Pour une levée imminente sans direction financière en place, la mission ponctuelle dédiée est parfois plus adaptée — nous cadrons cela au premier échange.",
+            "**Comment se passe la facturation ?** En retainer mensuel, jamais à l'heure ni à la journée. Vous achetez un scope de travail et un niveau de séniorité ; aucun dépassement n'est facturé sans avenant signé. Sans durée d'engagement minimale, résiliable avec un préavis de 30 jours.",
           ],
         },
       ],
