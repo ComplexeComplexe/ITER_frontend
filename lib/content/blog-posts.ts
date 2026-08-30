@@ -3141,7 +3141,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     // /ressources/blog/loi-beckham-espagne-conditions-eligibilite.
     "double-imposition-france-espagne-convention": {
       meta: {
-        title: "Éviter la double imposition France-Espagne : le guide pratique | Iter Advisors",
+        title: "Convention fiscale France-Espagne 2026 | Iter Advisors",
         description:
           "Comment fonctionne la convention fiscale franco-espagnole de 1995 ? Méthodes du crédit d'impôt et de l'exemption pour éviter la double imposition en 2026.",
       },
@@ -3151,11 +3151,27 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
         blogLabel: "Blog",
         blogHref: "/ressources/blog",
       },
-      h1: "Double imposition France Espagne : comment l'éviter légalement ?",
+      // TRAFIC-02 (2026-08-31) — cinq variantes de « convention fiscale
+      // france espagne » (960 recherches/mois cumulées) classent cette page
+      // entre P11 et P14. Le H1 disait « double imposition » sans jamais
+      // porter l'expression que tapent les lecteurs.
+      h1: "Convention fiscale France-Espagne : comment éviter la double imposition",
       publishedDate: "2026-05-31",
       author: "Florent Greth",
       category: "fiscalite-internationale",
-      htmlContent: `<p>Lorsqu'un contribuable perçoit des revenus dans un pays (État source) mais réside dans un autre (État de résidence), le risque d'être imposé deux fois sur le même revenu est réel. Pour éviter cette situation pénalisante, la France et l'Espagne ont signé une convention fiscale bilatérale le <strong>10 octobre 1995</strong>. Elle s'applique à l'impôt sur le revenu, à l'IS et à la fortune.</p>
+      htmlContent: `<p><strong>La convention fiscale entre la France et l'Espagne, signée le 10 octobre 1995, détermine lequel des deux États peut imposer chaque catégorie de revenu, et élimine la double imposition par deux mécanismes : le crédit d'impôt et l'exemption avec progressivité.</strong> Elle s'applique à l'impôt sur le revenu, à l'impôt sur les sociétés et à l'impôt sur la fortune.</p>
+<p>Lorsqu'un contribuable perçoit des revenus dans un pays (État source) mais réside dans l'autre (État de résidence), le risque d'être imposé deux fois sur le même revenu est réel. Voici, catégorie par catégorie, ce que la convention prévoit :</p>
+<table>
+<thead><tr><th>Type de revenu</th><th>Qui impose ?</th><th>Mécanisme</th></tr></thead>
+<tbody>
+<tr><td>Salaires du privé</td><td>L'État où l'activité est exercée</td><td>Crédit d'impôt dans l'État de résidence</td></tr>
+<tr><td>Dividendes</td><td>Les deux — retenue à la source limitée à 15 % (5 % au-delà de 25 % de participation)</td><td>Crédit d'impôt</td></tr>
+<tr><td>Intérêts</td><td>Les deux — retenue à la source limitée à 10 %</td><td>Crédit d'impôt</td></tr>
+<tr><td>Redevances</td><td>Les deux — retenue à la source limitée à 5 %</td><td>Crédit d'impôt</td></tr>
+<tr><td>Revenus immobiliers</td><td>L'État où se situe le bien</td><td>Exemption avec progressivité</td></tr>
+<tr><td>Pensions publiques françaises</td><td>La France uniquement</td><td>Exemption avec progressivité</td></tr>
+</tbody>
+</table>
 <h2>Le principe de la résidence fiscale</h2>
 <p>La convention établit que c'est la <a href="/ressources/fiscalite/residence-fiscale-france-espagne">résidence fiscale</a> qui détermine quel État a le droit d'imposer vos revenus mondiaux. Si vous êtes résident fiscal en Espagne, vous devez déclarer l'ensemble de vos revenus (français et espagnols) à l'Hacienda. L'Espagne vous accordera ensuite un mécanisme pour neutraliser l'impôt déjà payé en France.</p>
 <p>La résidence fiscale espagnole se détermine selon trois critères alternatifs : présence sur le territoire pendant plus de <strong>183 jours</strong> dans l'année civile, centre d'intérêts économiques en Espagne (principal lieu de travail ou d'activité), ou centre d'intérêts vitaux (famille, logement principal). Un seul critère suffit pour être considéré résident fiscal espagnol.</p>

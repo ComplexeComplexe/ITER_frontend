@@ -521,12 +521,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: "2026-07-30",
   });
 
-  // ── Glossary terms (FR-only) ──────────────────────────────────────────────
-  // SITEMAP-FIX: EN/ES glossary have no [slug] routes — FR only.
+  // ── Glossary terms ────────────────────────────────────────────────────────
   // "bfr" removed (duplicate of "besoin-fonds-roulement-bfr") — 301 in next.config.ts.
   for (const slug of GLOSSARY_SLUGS) {
     entries.push({
       url: `${BASE}/ressources/glossaire/${slug}`,
+      lastModified: D.glossary,
+    });
+  }
+  // TRAFIC-01 (2026-08-31) — trois fiches ont une version anglaise servie.
+  // La fiche CFO se classait déjà sur 19 requêtes anglophones depuis la page
+  // française : elle a maintenant sa propre URL, encore faut-il la déclarer.
+  for (const slug of ["cfo", "bfr", "ebitda"]) {
+    entries.push({
+      url: `${BASE}/en/ressources/glossaire/${slug}`,
       lastModified: D.glossary,
     });
   }

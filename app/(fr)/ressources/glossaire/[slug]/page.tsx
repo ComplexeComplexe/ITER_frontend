@@ -5,6 +5,17 @@ import { getGlossaryEntryContent } from "@/lib/content/glossary-entries";
 import { getCmsNavigation } from "@/lib/strapi";
 import { Locale } from "@/lib/i18n";
 
+/**
+ * Fiches qui ont une version anglaise servie (voir app/(en)/…/glossaire), avec
+ * le slug anglais correspondant. `besoin-fonds-roulement-bfr` est le cas
+ * croisé : sa version anglaise vit sous le slug court `bfr`.
+ */
+const SLUG_EN: Record<string, string> = {
+  cfo: "cfo",
+  ebitda: "ebitda",
+  "besoin-fonds-roulement-bfr": "bfr",
+};
+
 const validSlugs = [
   "bfr",
   "ebitda",
@@ -40,9 +51,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     path: `/ressources/glossaire/${slug}`,
     fallbackTitle: content.meta.title,
     fallbackDescription: content.meta.description,
-    // GSC-03 (2026-07-30): no [slug] route exists under /en or /es —
-    // avoids synthetic hreflang URLs Google was crawling and redirecting.
-    disableHreflang: ["en", "es"],
+    // GSC-03 (2026-07-30) : aucune route [slug] n'existait sous /en ni /es,
+    // d'où des hreflang synthétiques que Google crawlait puis redirigeait.
+    //
+    // TRAFIC-01 (2026-08-31) — trois fiches ont désormais une vraie version
+    // anglaise. Pour celles-là, et pour elles seules, l'alternate est réel.
+    disableHreflang: slug in SLUG_EN ? ["es"] : ["en", "es"],
+    ...(slug in SLUG_EN
+      ? {
+          localizedPaths: {
+            fr: `/ressources/glossaire/${slug}`,
+            en: `/ressources/glossaire/${SLUG_EN[slug]}`,
+            es: `/ressources/glossaire/${slug}`,
+          },
+        }
+      : {}),
   });
 }
 

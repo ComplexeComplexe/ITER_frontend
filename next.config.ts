@@ -789,14 +789,35 @@ const nextConfig: NextConfig = {
       //  • All redirect to the best semantically equivalent 200 page
 
       // ── CATCH-ALL: EN glossaire slugs (/en/ressources/glossaire/*)
-      // The valid EN glossaire hub is at /en/ressources/glossaire (200 OK).
-      // No [slug] handler exists — all individual slugs 404.
-      // Redirect each slug to its FR canonical (glossaire is FR-only).
-      {
-        source: "/en/ressources/glossaire/:slug",
-        destination: "/ressources/glossaire/:slug",
+      //
+      // Le hub /en/ressources/glossaire répond 200 ; les slugs individuels
+      // n'avaient pas de route et 404aient, d'où cette redirection vers le
+      // canonique français.
+      //
+      // TRAFIC-01 (2026-08-31) — trois fiches ont désormais une route anglaise
+      // (cfo, bfr, ebitda). La règle les excluait : `cfo` répondait 308 vers la
+      // page française alors que la page anglaise existe. Or c'est précisément
+      // cette fiche qui se classe sur 15 460 recherches anglophones mensuelles.
+      //
+      // `missing` ne sait pas filtrer sur la valeur d'un paramètre de chemin :
+      // on liste donc les slugs restants un à un, et le catch-all disparaît.
+      ...[
+        "besoin-fonds-roulement-bfr",
+        "cash-burn-runway",
+        "cac-ltv",
+        "arr-mrr",
+        "churn-rate",
+        "run-rate",
+        "bspce-bsa",
+        "daf",
+        "drh-externalise",
+        "controle-de-gestion",
+        "fractional-cfo",
+      ].map((slug) => ({
+        source: `/en/ressources/glossaire/${slug}`,
+        destination: `/ressources/glossaire/${slug}`,
         permanent: true,
-      },
+      })),
       // ── CATCH-ALL: ES glossaire slugs (/es/recursos/glossaire/*)
       {
         source: "/es/recursos/glossaire/:slug",
