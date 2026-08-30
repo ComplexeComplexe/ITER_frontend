@@ -156,8 +156,10 @@ export default function ToolPage({
             ]}
           />
 
+          {/* CONTENUS-T1/T2 (2026-08-31) — la requête est « avis {outil} » :
+              le mot « avis » ouvre désormais le H1, l'outil suit. */}
           <h1 className="text-3xl lg:text-4xl font-bold font-heading text-foreground mt-8 mb-8">
-            {tool.name} — l'avis de nos DAF externalisés
+            Avis {tool.name} : ce que nos DAF externalisés en pensent
           </h1>
         </div>
       </section>

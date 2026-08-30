@@ -203,7 +203,7 @@ for (const abs of urls) {
     // offres — DRH, comptabilité, contrôle de gestion — n'ont pas été
     // arbitrées : leur appliquer cette grille produirait de faux échecs.
     if (/^\/daf-externalise/.test(path)) {
-      for (const m of jsonld.matchAll(/"(lowPrice|highPrice)"\s*:\s*"?(\d+)"?/g)) {
+      for (const m of jsonld.matchAll(/"(lowPrice|highPrice|price)"\s*:\s*"?(\d+)"?/g)) {
         const v = Number(m[2]);
         if (v >= 1000 && v < 3000) {
           fail("jsonld/prix", `${path} — ${m[1]} = ${v} (grille : 3 000 à 8 000 €)`);

@@ -169,9 +169,17 @@ export const dafContent: Record<Locale, DafContent> = {
       // (630), "cfo externalisé" (504). La meta les inclut désormais en
       // toutes lettres — Google met en gras les termes de la requête dans
       // le snippet.
-      title: "DAF externalisé pour PME et startups | Iter Advisors",
+      // CONTENUS-T12 (2026-08-31) — le concurrent en P5 titre « Rôle,
+      // missions, coût et avantages » et reprend les quatre requêtes
+      // associées les plus tapées ; notre title ne portait que la cible.
+      // À évaluer au CTR dans Search Console, pas à la position seule.
+      title: "DAF externalisé : missions, tarifs 2026 et avantages",
+      // « à partir de 2 jours par mois » contredisait la formule Essentiel,
+      // qui démarre à 1 jour — la même dérive que llms.txt corrigé le 26/08.
+      // La fourchette tarifaire entre dans la méta : c'est l'information que
+      // le chercheur de « daf externalisé tarif » attend dans le snippet.
       description:
-        "Directeur financier externalisé à partir de 2 jours par mois : trésorerie, reporting, levée de fonds. 85 entreprises accompagnées. Diagnostic offert.",
+        "Directeur financier externalisé de 3 000 à 8 000 € HT/mois : trésorerie, reporting, levée de fonds. 85 entreprises accompagnées. Diagnostic offert.",
     },
     breadcrumbLabel: "DAF Externalisé",
     essential: {

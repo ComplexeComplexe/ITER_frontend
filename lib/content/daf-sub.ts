@@ -22,7 +22,10 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
   fr: {
     metier: {
       meta: {
-        title: "Métier de DAF : Rôle et Missions | Iter Advisors",
+        // CONTENUS-T4 (2026-08-31) — la requête est une question : « daf c'est
+      // quoi » (170/mois, P21). Le title disait « fiche métier », la page
+      // répondait au recruteur, pas au curieux.
+      title: "DAF : c'est quoi ? Rôle et missions 2026 | Iter Advisors",
         description:
           "Découvrez le métier de DAF : rôle complet, missions clés, compétences requises et évolution du poste dans les entreprises modernes.",
       },
@@ -33,13 +36,16 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       // pur "fiche métier DAF". Retiré tout ciblage "externalisé" pour
       // éviter la cannibalisation avec le pilier /daf-externalise.
       // Cible : "métier de daf", "fiche métier daf", "que fait un daf".
-      h1: "Fiche métier DAF : rôle, missions et compétences du Directeur Administratif et Financier",
+      h1: "DAF : c'est quoi ? Le rôle du Directeur Administratif et Financier expliqué",
       sections: [
         {
           content: [
             // Maillage (2026-08-02) — /ressources/glossaire/daf était
             // orpheline (3 liens entrants) : la fiche métier, sa page la
             // plus proche sémantiquement, ne la citait pas.
+            // CONTENUS-T4 — réponse directe en 42 mots, format citable, avant
+            // tout développement.
+            "**Un DAF (Directeur Administratif et Financier) est le dirigeant qui pilote les finances d'une entreprise : trésorerie, comptabilité, budgets, reporting et stratégie financière.** Membre du comité de direction, il transforme les chiffres en décisions — là où l'expert-comptable les enregistre.",
             "Le **DAF**, ou Directeur Administratif et Financier, est l'officier financier senior de l'entreprise. Véritable bras droit du PDG ou du Directeur Général, il supervise l'intégralité de la fonction finance : comptabilité, trésorerie, reporting, fiscalité, et pilotage de la performance. Le DAF n'est pas qu'un expert technique ; c'est un partenaire stratégique qui participe aux décisions clés et contribue à la création de valeur. Pour la définition courte du terme, voir notre entrée de glossaire [DAF](/ressources/glossaire/daf).",
             "En 2026, le métier de DAF traverse une transformation profonde. Les tâches administratives et répétitives sont progressivement automatisées, libérant du temps pour les missions à haute valeur ajoutée : stratégie financière, accompagnement du business, gestion des risques et transformation digitale.",
           ],
@@ -95,7 +101,11 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           content: [
             "**Quelle est la différence entre un DAF et un Directeur Financier ?** Les deux termes désignent la même fonction en France. Le titre officiel est DAF (Directeur Administratif et Financier), mais certaines entreprises utilisent Directeur Financier ou CFO (Chief Financial Officer).",
             "**Un DAF doit-il impérativement avoir l'expertise comptable ?** Non. Bien que l'expertise comptable soit un avantage, ce n'est pas une obligation. De nombreux DAFs ont un bac+5 (master finance, diplôme d'école de commerce) et acquièrent l'expérience pratique en cabinet d'audit ou en contrôle de gestion.",
-            "**Quel est le salaire d'un DAF en 2026 ?** Le salaire brut d'un DAF junior (3-5 ans d'expérience) varie de 50 000 à 70 000€. Un DAF confirmé (10-15 ans) gagne entre 80 000 et 120 000€. Un DAF senior de grand groupe peut atteindre 150 000€+, avec participation aux résultats et stock-options.",
+            "**Quel est le salaire d'un DAF en 2026 ?** Le salaire brut d'un DAF junior (3-5 ans d'expérience) varie de 50 000 à 70 000€. Un DAF confirmé (10-15 ans) gagne entre 80 000 et 120 000€. Un DAF senior de grand groupe peut atteindre 150 000€+, avec participation aux résultats et stock-options. En coût employeur chargé, un profil de séniorité équivalente représente 100 000 à 213 000 € par an — c'est la base de comparaison utilisée sur notre page [DAF externalisé vs salarié](/ressources/blog/daf-externalise-vs-daf-salarie).",
+            // CONTENUS-T4 (2026-08-31) — les deux questions que la FAQ ne
+            // couvrait pas, telles qu'elles se posent.
+            "**Quelle est la différence entre un DAF et un expert-comptable ?** L'expert-comptable tient et certifie les comptes ; le DAF dirige la fonction finance et décide de ce que les chiffres impliquent. Ce sont deux métiers complémentaires : la plupart de nos clients gardent leur cabinet comptable et lui adjoignent un DAF. Le détail est sur [DAF externalisé vs expert-comptable](/ressources/blog/daf-externalise-vs-expert-comptable).",
+            "**Un DAF peut-il être externalisé ?** Oui. Le [DAF externalisé](/daf-externalise) intervient quelques jours par mois en retainer, à partir de 3 000 € HT mensuels — un niveau de séniorité de direction sans le coût d'un temps plein. C'est la forme que prend le métier dans la plupart des PME et startups que nous accompagnons.",
           ],
         },
       ],
@@ -121,6 +131,10 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       sections: [
         {
           content: [
+            // CONTENUS-T5 (2026-08-31) — « daf à temps partagé » : 260
+            // recherches/mois, difficulté 4/100, page hors top 100. Réponse
+            // directe en tête, format citable, avant le développement.
+            "**Un DAF à temps partagé est un directeur financier senior qui travaille pour votre entreprise quelques jours par mois, en continu.** Vous accédez à une direction financière complète — trésorerie, reporting, budgets, levée de fonds — pour 3 000 à 8 000 € HT par mois selon la formule, sans recruter à temps plein.",
             "Le **DAF à temps partagé** est un Directeur Administratif et Financier senior qui intervient régulièrement au sein de votre entreprise, généralement 2 à 3 jours par semaine ou par mois. Contrairement au **[DAF de transition](/daf-externalise/transition)** qui mobilise l'intégralité de sa disponibilité pour une durée limitée, le DAF à temps partagé s'inscrit dans la durée : il suit votre entreprise, apprend vos enjeux, et ajuste progressivement sa contribution.",
             "Cette formule offre un accès permanent à une expertise financière de haut niveau, tout en optimisant les coûts. Elle s'adresse particulièrement aux **PME, startups et scale-ups** qui ont besoin d'une direction financière structurée mais dont l'activité ne justifie pas encore un recrutement à temps plein.",
           ],
@@ -131,6 +145,19 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             "Le DAF à temps partagé s'intègre dans votre organisation comme un membre à part entière de votre équipe de direction. Il participe aux réunions stratégiques, travaille en étroite collaboration avec vos équipes opérationnelles et assure un suivi régulier de votre performance financière.",
             "La fréquence d'intervention est définie selon vos besoins : de 1 à 3 jours par semaine ou par mois. Elle peut être ajustée à la hausse lors de périodes intenses (levée de fonds, clôture annuelle, opérations stratégiques, changement d'ERP) ou à la baisse en phase de croisière.",
             "Concrètement, le DAF à temps partagé met en place une organisation régulière : réunion hebdomadaire ou bimensuelle d'une demi-journée pour faire le point sur la trésorerie, les KPIs financiers et les priorités ; jours de travail autonome sur les chantiers identifiés (budgets, analyses de variance, optimisation des processus, etc.) ; disponibilité pour les échanges urgents par email ou téléphone entre les jours formels.",
+          ],
+        },
+        {
+          heading: "Combien coûte un DAF à temps partagé en 2026 ?",
+          content: [
+            // CONTENUS-T5 — la grille vient de lib/content/facts.ts (mêmes
+            // valeurs que /daf-externalise/tarifs) : trois formules, en
+            // retainer mensuel, jamais à la journée. Les volumes sont des
+            // moyennes d'intervention observées, pas des forfaits d'heures.
+            "**Formule Essentiel — 3 000 à 5 000 € HT/mois** pour 1 à 2 jours par mois. Reporting mensuel P&L, cash et KPIs, prévisionnel de trésorerie 13 semaines, revue finance mensuelle avec le dirigeant. La formule des startups en seed, sous 30 collaborateurs.",
+            "**Formule Croissance — 5 000 à 6 500 € HT/mois** pour 3 à 5 jours par mois. S'ajoutent le business plan 3 à 5 ans, la levée de fonds, la dette non dilutive et le reporting investisseurs. Le format des Séries A, 30 à 100 collaborateurs.",
+            "**Formule Premium — 6 500 à 8 000 € HT/mois** pour 5 à 8 jours par mois. S'ajoutent M&A et due diligence, board et gouvernance, internationalisation, data et BI finance. Série B et au-delà.",
+            "La facturation est un retainer mensuel : vous achetez un scope de travail et un niveau de séniorité, pas un décompte d'heures. Sans durée d'engagement minimale, résiliable avec un préavis de 30 jours. Le détail complet est sur la page **[tarifs du DAF externalisé](/daf-externalise/tarifs)**.",
           ],
         },
         {

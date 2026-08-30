@@ -5,7 +5,10 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "Direction Financière | Iter Advisors",
+  // CONTENUS-T7 (2026-08-31) — « directions financières » : 480 recherches
+  // par mois, page en P20. Le title ne disait rien (« Direction Financière »
+  // tout court) ; il porte désormais la requête et son intention.
+  title: "Direction financière : organisation, rôles et processus 2026",
   description: "Guide complet pour structurer et organiser votre département finance. Organigrammes, rôles, responsabilités et best practices par Iter Advisors.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/organiser-sa-direction-financiere",
@@ -30,15 +33,16 @@ export default function OrganiserDirectionFinancierePage() {
       }}
       slug="organiser-sa-direction-financiere"
       category="Organisation"
-      title="Comment organiser sa direction financière en 2026 ?"
+      title="Direction financière : comment l'organiser selon votre taille et votre stade"
       dek="Structurer votre département finance selon votre taille et maturité. Rôles, responsabilités et modèles d'organisation pour PME, scale-ups et ETI."
       author={{
         name: "Benjamin Ziza",
         avatar: "/images/team/benjamin-ziza.webp",
         jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
+        url: "/a-propos/benjamin-ziza",
       }}
       readingTime={11}
-      dateModified="2026-05-01"
+      dateModified="2026-08-31"
       heroImage="/images/blog/covers/organiser-sa-direction-financiere.svg"
       toc={[
         { id: "pourquoi-structure", label: "1. Pourquoi structurer votre finance ?" },
@@ -72,6 +76,14 @@ export default function OrganiserDirectionFinancierePage() {
         },
       ]}
     >
+      {/* CONTENUS-T7 — réponse directe avant tout développement. */}
+      <p>
+        <strong>Une direction financière est l'équipe qui pilote l'argent de l'entreprise :
+        comptabilité, trésorerie, budgets, reporting et financement.</strong> Sa forme dépend
+        de la taille — du fondateur assisté d'un comptable externe à 10 personnes, jusqu'au
+        CFO entouré d'une équipe dédiée en scale-up. Ce guide détaille chaque modèle.
+      </p>
+
       <h2 id="pourquoi-structure">1. Pourquoi structurer votre finance ?</h2>
       <p>
         Beaucoup de PMEs et startups traitent la finance comme une fonction administrative basique : payer les factures, faire les fiches de paie, fermer les comptes. C'est une erreur. Une finance bien structurée est un avantage compétitif majeur :
