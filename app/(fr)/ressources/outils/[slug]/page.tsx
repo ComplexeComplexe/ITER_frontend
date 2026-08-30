@@ -61,8 +61,15 @@ export async function generateMetadata({
   // Check if it's a tool
   const tool = getToolBySlug(slug);
   if (tool) {
-    const title = `${tool.name} — Avis DAF externalisé | Iter Advisors`;
-    const description = `Notre avis sincère sur ${tool.name}. Pour qui ? Combien de temps d'implémentation ? Quels pièges ? Le retour terrain d'Iter Advisors.`;
+    // CONTENUS-T1/T2 (2026-08-31) — la requête réelle est « avis {outil} »
+    // (« avis pennylane » 260/mois P9, « revolut business avis » 260/mois
+    // P11, CPC jusqu'à 10,47 €). Le title générique « {outil} — Avis DAF
+    // externalisé » répondait au métier, pas à la requête : l'internaute
+    // cherche un avis sur l'outil, pas sur les DAF. La note vient de
+    // data/tools.ts — celle que la page affiche déjà, pas une valeur
+    // marketing recalculée pour l'occasion.
+    const title = `Avis ${tool.name} ${new Date().getFullYear()} : notre retour terrain`;
+    const description = `Note ${tool.rating}/5 par nos DAF externalisés. Points forts constatés, limites réelles et pièges d'implémentation de ${tool.name}, observés en mission chez nos clients.`;
     return buildMetadata({
       locale: "fr",
       title,

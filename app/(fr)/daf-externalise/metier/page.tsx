@@ -17,8 +17,12 @@ export async function generateMetadata(): Promise<Metadata> {
     // /metier, renommé en /role (EN) et /funciones (ES) par l'audit
     // multilingue : le hreflang désignait donc des URLs qui 301.
     localizedPaths: { fr: "/daf-externalise/metier", en: "/en/fractional-cfo/role", es: "/es/externalizacion-daf/funciones" },
-    fallbackTitle: "Fiche métier DAF | Iter Advisors",
-    fallbackDescription: "Fiche métier du DAF (Directeur Administratif et Financier) : rôle, missions, compétences clés, salaire et évolution du poste en 2026.",
+    // CONTENUS-T4 (2026-08-31) — la requête est une question, « daf c'est
+    // quoi » (170/mois, P21) ; « Fiche métier » répondait au recruteur.
+    // Aligné sur le title du contenu (lib/content/daf-sub.ts), que ce
+    // fallback surchargeait silencieusement.
+    fallbackTitle: "DAF : c'est quoi ? Rôle et missions 2026 | Iter Advisors",
+    fallbackDescription: "DAF : c'est quoi ? Définition du Directeur Administratif et Financier, ses missions, son salaire et la version externalisée du métier en 2026.",
   });
 }
 

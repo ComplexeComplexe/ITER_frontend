@@ -2427,15 +2427,18 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
     },
     "cash-burn-calculer-runway-anticiper-levee": {
       meta: {
-        title: "Cash Burn : calculer votre runway | Iter Advisors",
-        description: "Méthode complète pour calculer votre burn rate net et votre runway. Seuils critiques, règles du venture capital, scénarios de forecast.",
+        // CONTENUS-T8 (2026-08-31) — la requête est « cash burn » (480/mois,
+        // P31), une demande de définition : le title n'offrait que le calcul.
+        title: "Cash burn : définition, calcul et seuils | Iter Advisors",
+        description: "Cash burn : définition, formule de calcul, différence brut/net et seuils critiques de runway. La méthode que nos DAF appliquent en mission.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
-      h1: "Cash Burn : calculer votre runway et anticiper la levée",
+      h1: "Cash burn : c'est quoi, comment le calculer, et quand s'inquiéter",
       publishedDate: "2026-05-11",
       author: "Benjamin Ziza",
       category: "gestion-financiere",
-      htmlContent: `<p>Le <a href="/ressources/glossaire/cash-burn-runway">cash burn et le runway</a> sont les deux métriques les plus importantes de votre startup. Elles déterminent quand vous devrez lever des fonds, recruter, ou réduire vos coûts. Pourtant, 40% des fondateurs ne connaissent pas précisément leur burn rate.</p>
+      htmlContent: `<p><strong>Le cash burn est la vitesse à laquelle une entreprise consomme sa trésorerie, mesurée en euros par mois. Le runway est le nombre de mois qu'elle peut tenir à ce rythme : trésorerie disponible divisée par le burn mensuel net.</strong></p>
+<p>Le <a href="/ressources/glossaire/cash-burn-runway">cash burn et le runway</a> sont les deux métriques les plus importantes de votre startup. Elles déterminent quand vous devrez lever des fonds, recruter, ou réduire vos coûts. Pourtant, 40% des fondateurs ne connaissent pas précisément leur burn rate.</p>
 <h2 id="methode">Calculer son burn rate : la méthode</h2>
 <pre><code>Burn Rate Net = Dépenses mensuelles totales − Revenus mensuels</code></pre>
 <p>Attention aux pièges :</p>

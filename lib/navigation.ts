@@ -182,6 +182,11 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Glossaire financier", href: "/ressources/glossaire" },
       { text: "Fiche métier DAF", href: "/daf-externalise/metier" },
       { text: "Outils finance", href: "/ressources/outils" },
+      // CONTENUS-T9 (2026-08-31) — /drh-externalise (P18, CPC 13,94 €) : sa
+      // seule ancre depuis l'accueil vivait dans le menu déroulant, monté
+      // côté client, invisible des crawlers. Le pied de page est rendu au
+      // serveur sur chaque page.
+      { text: "Direction RH externalisée", href: "/drh-externalise" },
       { text: "Nos clients", href: "/clients" },
       { text: "Carrières", href: "/jobs" },
     ],
@@ -205,6 +210,7 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Finance glossary", href: "/en/ressources/glossaire" },
       { text: "CFO role", href: "/en/fractional-cfo/role" },
       { text: "Finance tools", href: "/en/ressources/tools" },
+      { text: "Outsourced HR direction", href: "/en/hr-outsourcing" },
       { text: "Our clients", href: "/en/clients" },
       { text: "Careers", href: "/en/jobs" },
       // SEO-AUD-0824 §10 — cette page était à quatre clics de l'accueil : le
@@ -232,6 +238,7 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Glosario financiero", href: "/es/recursos/glosario" },
       { text: "Funciones del CFO", href: "/es/externalizacion-daf/funciones" },
       { text: "Herramientas financieras", href: "/es/recursos/herramientas" },
+      { text: "Dirección de RRHH externalizada", href: "/es/externalizacion-rrhh" },
       { text: "Nuestros clientes", href: "/es/clientes" },
       { text: "Empleo", href: "/es/jobs" },
       { text: "RRHH a tiempo compartido", href: "/es/externalizacion-rrhh/tiempo-compartido" },

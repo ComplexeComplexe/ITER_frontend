@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { FORMULES } from "@/lib/content/facts";
 import DafExternalisePariEnrichedPage from "@/components/pages/DafExternalisePariEnrichedPage";
 import { buildMetadata } from "@/lib/metadata";
 import { getCmsNavigation } from "@/lib/strapi";
@@ -96,13 +97,16 @@ export async function generateMetadata(): Promise<Metadata> {
     image: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
     priceRange: "€€",
     parentOrganization: { "@id": "https://www.iteradvisors.com/#organization" },
+    // CONTENUS-T10 (2026-08-31) — le nœud se contredisait lui-même :
+    // price "2000" et description « À partir de 3 000 € ». La valeur vient
+    // désormais de la grille arbitrée.
     offers: [
       {
         "@type": "Offer",
-        name: "DAF Externalisé - Formule Starter",
-        price: "2000",
+        name: "DAF Externalisé - Formule Essentiel",
+        price: String(FORMULES[0].prixMin),
         priceCurrency: "EUR",
-        description: "À partir de 3 000 € HT/mois",
+        description: `À partir de ${FORMULES[0].prixMin.toLocaleString("fr-FR")} € HT/mois`,
       },
     ],
     // Review-snippet fix (2026-05-29): removed the self-serving aggregateRating

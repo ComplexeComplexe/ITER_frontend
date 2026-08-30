@@ -608,7 +608,10 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
         children: [
           {
             type: "text",
-            text: "Les enjeux en 2026",
+            // CONTENUS-T13 (2026-08-31) — la requête est un verbe (« externaliser
+              // comptabilité », 90/mois P35) ; ce H2 générique devient la
+              // question telle qu'elle se pose.
+              text: "Pourquoi externaliser sa comptabilité en 2026 ?",
           },
         ],
       },
@@ -1310,6 +1313,42 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
               {
                 type: "text",
                 text: "Bien que nous ne soyons pas leveurs de fonds au sens classique, nous offrons un accompagnement complet en gestion financière stratégique, préparation de dossiers, et conseils pour optimiser votre levée de fonds. Notre réseau étendu d'investisseurs et de partenaires est un atout majeur pour maximiser vos opportunités.",
+              },
+            ],
+          },
+        ],
+      },
+      // CONTENUS-T6 (2026-08-31) — la page sort en P17 sur « leveur de
+      // fond » (110/mois) sans jamais définir le métier. La FAQ existante
+      // répond « êtes-vous leveurs de fonds ? » ; ces deux entrées répondent
+      // à « c'est quoi » et « comment le choisir », les deux questions que
+      // tape l'internaute. Aucun pourcentage de success fee n'est publié :
+      // pas de donnée arbitrée, on décrit les modèles, pas les taux.
+      {
+        id: 3,
+        question: "Qu'est-ce qu'un leveur de fonds ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "Un leveur de fonds est un intermédiaire qui met une entreprise en relation avec des investisseurs et pilote le processus de levée : ciblage, mise en concurrence, négociation. Il est généralement rémunéré par un honoraire fixe (retainer), un pourcentage du montant levé (success fee), ou une combinaison des deux. Notre rôle est différent et complémentaire : le DAF externalisé prépare l'entreprise à être investissable — business plan, data room, prévisionnel, due diligence — et reste après le closing pour tenir le reporting investisseurs. Le leveur ouvre des portes ; le DAF fait que ce qu'il y a derrière tient l'examen.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 4,
+        question: "Comment choisir un leveur de fonds ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "Trois vérifications avant de signer : ses références sur des tours comparables au vôtre (stade, secteur, montant), la transparence de sa rémunération, et ce qu'il attend de votre préparation — un bon leveur refuse un dossier dont la data room n'est pas prête. C'est précisément cette préparation que nous assurons en amont.",
               },
             ],
           },
