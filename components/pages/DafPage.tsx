@@ -1308,12 +1308,18 @@ export default function DafPage({
                 })),
               },
               // Review Snippet fix (2026-07-19) — aggregateRating + review[]
-              // volontairement retirés de ce type Service. Google ne supporte
-              // pas Review Snippets pour @type "Service" (rejet GSC "Type
-              // d'objet non valide pour le champ <parent_node>", 6 éléments
-              // non valides). Les avis sont désormais portés par le bloc
-              // ProfessionalService (@id #organization) ci-dessus, seul type
-              // supporté par Google pour cette page.
+              // retirés de ce type Service après rejet GSC ("Type d'objet non
+              // valide pour le champ <parent_node>", 6 éléments non valides).
+              //
+              // SEO-05 (2026-08-31) — la fin de ce commentaire affirmait que
+              // les avis étaient « portés par le bloc ProfessionalService
+              // ci-dessus » : c'était faux, et l'entité #organization (dans
+              // DocumentShell depuis le 15/08) affirmait l'inverse. Aucun
+              // bloc ne les porte, et aucun ne doit les porter : des avis
+              // auto-déclarés sur sa propre organisation sont self-serving
+              // et inéligibles aux étoiles depuis 2019. Les avis Trustfolio
+              // restent visibles en UI (TestimonialsSection) ; les étoiles
+              // passent par les avis Google Business, hors balisage.
             }),
           }}
         />

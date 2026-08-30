@@ -239,11 +239,21 @@ gtag('consent','default',{
                     "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc/reviews",
                     "https://www.youtube.com/@IterAdvisors1",
                   ],
-                  // aggregateRating volontairement absent ici (site-wide) pour
-                  // éviter le conflit "multiple aggregateRatings on one node"
-                  // signalé en 2026-05-29. Il est porté par le Service dédié
-                  // sur /daf-externalise, avec 5 Review objects individuels
-                  // pour respecter les guidelines Google (SEO-04, 2026-07-01).
+                  // SEO-05 (2026-08-31) — aggregateRating volontairement
+                  // absent, ici comme partout : les avis qu'un site porte sur
+                  // sa propre organisation sont « self-serving » au sens des
+                  // guidelines review-snippet de Google (politique de
+                  // septembre 2019) et ne déclenchent aucune étoile en SERP.
+                  // L'historique du repo le confirme deux fois : rejets GSC
+                  // sur @type Service (2026-07-19), retrait du balisage
+                  // self-serving sur les pages villes (2026-05-29).
+                  //
+                  // Ce commentaire disait auparavant que les Review vivaient
+                  // sur /daf-externalise ; le bloc de /daf-externalise disait
+                  // l'inverse. Chacun renvoyait à l'autre, personne ne les
+                  // portait — et c'était très bien ainsi : la seule voie
+                  // restante vers des étoiles est le profil Google Business,
+                  // dont les avis alimentent le local pack. Hors code.
                 },
                 {
                   "@type": "WebSite",
