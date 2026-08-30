@@ -63,7 +63,12 @@ export default function DafExternaliseVsSalariePage() {
       faqItems={[
         {
           question: "DAF externalisé ou DAF salarié : quel est le moins cher ?",
-          answer: "Un DAF salarié senior coûte 100 000–150 000 € brut/an, soit 160 000–240 000 € en coût total employeur (charges + avantages + recrutement). Un DAF externalisé à 5 jours/mois revient à 54 000–78 000 €/an — soit 50 à 70 % moins cher. L'avantage du salarié : disponibilité quotidienne. L'avantage de l'externalisé : flexibilité, expertise immédiate, zéro coût de recrutement.",
+          // SEO-02 (2026-08-30) — cette réponse annonçait « 50 à 70 % moins
+          // cher » et un coût employeur de 160 000 à 240 000 €, deux valeurs
+          // retirées le 10 août. Elle a survécu parce qu'elle n'apparaît que
+          // dans le JSON-LD de la FAQ : le contrôle des valeurs interdites
+          // retirait les balises <script> avant de chercher.
+          answer: "Un directeur financier salarié de séniorité équivalente représente un coût employeur chargé de 100 000 à 213 000 € par an, pour une médiane de 150 000 €. Un DAF externalisé Iter Advisors représente 30 à 60 % d'économie sur cette base, selon le stade de l'entreprise et le périmètre confié. L'avantage du salarié : la disponibilité quotidienne. Celui de l'externalisé : la flexibilité, l'expertise immédiate et l'absence de coût de recrutement.",
         },
         {
           question: "À quel stade de croissance passer d'un DAF externalisé à un DAF salarié ?",

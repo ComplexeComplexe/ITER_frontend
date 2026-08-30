@@ -823,6 +823,9 @@ const nextConfig: NextConfig = {
       { source: "/ressources/outils/stripe",          destination: "/ressources/outils", permanent: true },
       { source: "/daf-externalise/locaux",            destination: "/daf-externalise",   permanent: true },
       { source: "/ressources/blog/daf-transition-quand", destination: "/ressources/blog", permanent: true },
+      // SEO-03 (2026-08-30) — doublon avec la page fiscalité, qui porte le même
+      // sujet, reçoit 125 liens internes et sert désormais le contenu long.
+      { source: "/ressources/blog/impot-revenu-espagne", destination: "/ressources/fiscalite/impot-revenu-espagne", permanent: true },
       { source: "/ressources/blog/que-es-fractional-cfo", destination: "/ressources/blog", permanent: true },
 
       // ── ES locale slug mismatches (old or untranslated subpage slugs)
@@ -879,7 +882,7 @@ const nextConfig: NextConfig = {
       { source: "/en/ressources/blog/cout-daf-externalise-2026-tarifs-par-mission",        destination: "/en/ressources/blog/fractional-cfo-cost-services-2026",           permanent: true },
       { source: "/en/ressources/blog/tableau-de-bord-financier-startup-12-kpis",           destination: "/ressources/blog/tableau-de-bord-financier-startup-12-kpis",           permanent: true },
       { source: "/en/ressources/blog/daf-externalise-vs-expert-comptable",                 destination: "/ressources/blog/daf-externalise-vs-expert-comptable",                 permanent: true },
-      { source: "/en/ressources/blog/impot-revenu-espagne",                                destination: "/ressources/blog/impot-revenu-espagne",                                permanent: true },
+      { source: "/en/ressources/blog/impot-revenu-espagne",                                destination: "/ressources/fiscalite/impot-revenu-espagne",                                permanent: true },
       { source: "/en/ressources/blog/cash-burn-calculer-runway-anticiper-levee",           destination: "/ressources/blog/cash-burn-calculer-runway-anticiper-levee",           permanent: true },
       { source: "/en/ressources/blog/agicap-vs-fygr-outil-tresorerie",                    destination: "/ressources/blog/agicap-vs-fygr-outil-tresorerie",                    permanent: true },
       { source: "/en/ressources/blog/daf-externalise-barcelone-guide-startups-espagnoles", destination: "/ressources/blog/daf-externalise-barcelone-guide-startups-espagnoles", permanent: true },
@@ -921,7 +924,7 @@ const nextConfig: NextConfig = {
       // down to /es/…/cfo-externo-pymes-precio-2026. Collapsed to one hop.
       { source: "/es/recursos/blog/cout-daf-externalise-2026-tarifs-par-mission",         destination: "/es/recursos/blog/cfo-externo-pymes-precio-2026",               permanent: true },
       { source: "/es/recursos/blog/la-modernisation-du-role-de-cfo",                      destination: "/ressources/blog/la-modernisation-du-role-de-cfo",                    permanent: true },
-      { source: "/es/recursos/blog/impot-revenu-espagne",                                 destination: "/ressources/blog/impot-revenu-espagne",                               permanent: true },
+      { source: "/es/recursos/blog/impot-revenu-espagne",                                 destination: "/ressources/fiscalite/impot-revenu-espagne",                               permanent: true },
       { source: "/es/recursos/blog/daf-drh-externalises-synergie",                        destination: "/ressources/blog/daf-drh-externalises-synergie",                      permanent: true },
       // FR-only articles linked from EN/ES featured cards (SEO-06)
       { source: "/es/recursos/blog/organiser-sa-direction-financiere",                    destination: "/ressources/blog/organiser-sa-direction-financiere",                   permanent: true },

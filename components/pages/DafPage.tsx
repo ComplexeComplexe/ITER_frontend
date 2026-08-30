@@ -1244,10 +1244,24 @@ export default function DafPage({
           contactPoint, knowsAbout, founder, YouTube dans sameAs) sont remontées
           dans l'entité globale — elles décrivent le cabinet, pas cette page. */}
 
-      {/* Service schema avec AggregateOffer (2026-05-25) — affiche les fourchettes
-          tarifaires 2 000-7 000 €/mois directement dans les snippets SERP.
+      {/* Service schema avec AggregateOffer.
           @type Service (pas FinancialService) pour éviter la collision avec l'entité
-          Organization ci-dessus. provider → @id de l'Organization. */}
+          Organization ci-dessus. provider → @id de l'Organization.
+
+          SEO-01 (2026-08-30) — ce bloc déclarait la grille d'avant l'arbitrage du
+          10 août : lowPrice 2 000, highPrice 7 000, et trois offres à 2 000 /
+          4 000 / 7 000 € avec des volumes de jours qui n'existent plus. Le texte
+          visible de la page disait 3 000 à 8 000 € depuis le 25 août : Google
+          lisait donc deux prix différents sur la même page, et c'est celui du
+          JSON-LD qui remonte dans les extraits enrichis.
+
+          Le défaut a survécu à trois passes de correction commerciale parce que
+          la recette retire les balises <script> avant de chercher les valeurs
+          interdites — elle ne pouvait pas le voir. Contrôle étendu au JSON-LD
+          dans scripts/audit-seo.mjs.
+
+          La grille vient désormais de lib/content/facts.ts : elle ne peut plus
+          diverger de ce qu'affiche la page. */}
       {locale === "fr" && (
         <script
           type="application/ld+json"
@@ -1258,7 +1272,7 @@ export default function DafPage({
               "@id": "https://www.iteradvisors.com/daf-externalise#service-offer",
               serviceType: "DAF externalisé",
               name: "DAF Externalisé pour PME, Startups et Scale-ups",
-              description: "Direction financière sur-mesure, à temps partagé ou en mission ponctuelle. Nos DAFs seniors (10+ ans d'expérience) accompagnent votre entreprise sur le pilotage financier, la levée de fonds, la trésorerie, le M&A et la due diligence. Opérationnels dès le premier jour.",
+              description: "Direction financière sur-mesure, à temps partagé ou en mission ponctuelle. Nos DAFs seniors (10+ ans d'expérience) accompagnent votre entreprise sur le pilotage financier, la levée de fonds, la trésorerie, le M&A et la due diligence.",
               provider: { "@id": "https://www.iteradvisors.com/#organization" },
               areaServed: [
                 { "@type": "Country", name: "France" },
@@ -1268,45 +1282,30 @@ export default function DafPage({
               offers: {
                 "@type": "AggregateOffer",
                 priceCurrency: "EUR",
-                lowPrice: "2000",
-                highPrice: "7000",
-                offerCount: "3",
+                lowPrice: String(FORMULES[0].prixMin),
+                highPrice: String(FORMULES[FORMULES.length - 1].prixMax),
+                offerCount: String(FORMULES.length),
                 priceSpecification: {
                   "@type": "UnitPriceSpecification",
                   priceType: "https://schema.org/MinimumPrice",
-                  price: "2000",
+                  price: String(FORMULES[0].prixMin),
                   priceCurrency: "EUR",
                   unitText: "MONTH",
                 },
-                offers: [
-                  {
-                    "@type": "Offer",
-                    name: "Essentiel",
-                    description: "2 à 3 jours par mois — pour startups early-stage (pré-seed à seed)",
-                    price: "2000",
+                offers: FORMULES.map((f) => ({
+                  "@type": "Offer",
+                  name: f.nom,
+                  description: `${f.volumeIndicatif} — ${f.cible}`,
+                  price: String(f.prixMin),
+                  priceCurrency: "EUR",
+                  priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: String(f.prixMin),
                     priceCurrency: "EUR",
-                    priceSpecification: { "@type": "UnitPriceSpecification", price: "2000", priceCurrency: "EUR", unitText: "MONTH" },
-                    availability: "https://schema.org/InStock",
+                    unitText: "MONTH",
                   },
-                  {
-                    "@type": "Offer",
-                    name: "Croissance",
-                    description: "4 à 6 jours par mois — pour PME en structuration ou scale-up Series A",
-                    price: "4000",
-                    priceCurrency: "EUR",
-                    priceSpecification: { "@type": "UnitPriceSpecification", price: "4000", priceCurrency: "EUR", unitText: "MONTH" },
-                    availability: "https://schema.org/InStock",
-                  },
-                  {
-                    "@type": "Offer",
-                    name: "Premium",
-                    description: "8 jours et plus par mois — pour scale-up, levée de fonds, M&A",
-                    price: "7000",
-                    priceCurrency: "EUR",
-                    priceSpecification: { "@type": "UnitPriceSpecification", price: "7000", priceCurrency: "EUR", unitText: "MONTH" },
-                    availability: "https://schema.org/InStock",
-                  },
-                ],
+                  availability: "https://schema.org/InStock",
+                })),
               },
               // Review Snippet fix (2026-07-19) — aggregateRating + review[]
               // volontairement retirés de ce type Service. Google ne supporte

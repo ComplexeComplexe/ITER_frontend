@@ -270,7 +270,7 @@ export default async function Page() {
               <li className="flex gap-2.5 text-sm sm:text-base">
                 <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
                 <Link
-                  href="/ressources/blog/impot-revenu-espagne"
+                  href="/ressources/fiscalite/impot-revenu-espagne"
                   className="text-iter-violet hover:underline"
                 >
                   Impôt sur le revenu en Espagne (IRPF) : guide complet 2026

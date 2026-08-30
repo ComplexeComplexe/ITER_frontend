@@ -87,7 +87,7 @@ export default async function Page() {
       ]}
       relatedArticles={[
         {
-          url: "/ressources/blog/impot-revenu-espagne",
+          url: "/ressources/fiscalite/impot-revenu-espagne",
           category: "Fiscalité internationale",
           title: "Impôt sur le revenu en Espagne — Guide complet 2026 (IRPF, Beckham)",
         },

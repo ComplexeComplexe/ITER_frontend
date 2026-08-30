@@ -148,6 +148,69 @@ for (const abs of urls) {
     const m = texte.match(re);
     if (m) fail("faits/régression", `${path} — ${sujet} : « ${m[0]} »`);
   }
+
+  // ── 3a bis. Les mêmes valeurs, dans la meta description
+  //
+  // SEO-02 (2026-08-30) — une meta description ne fait pas partie du corps de
+  // la page : `strip()` ne la voyait pas. L'article tarifs y annonçait
+  // « Économisez 50 à 70 % » et un TJM, deux valeurs retirées le 10 août.
+  const metaDesc = html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "";
+  for (const { re, sujet } of VALEURS_INTERDITES) {
+    const exclu = HORS_ARBITRAGE.some((x) => x.path.test(path) && x.sujet.test(sujet));
+    if (exclu) continue;
+    const m = metaDesc.match(re);
+    if (m) fail("meta/régression", `${path} — ${sujet} : « ${m[0]} »`);
+  }
+
+  // ── 3b. Les mêmes valeurs, dans les données structurées
+  //
+  // SEO-01 (2026-08-30) — angle mort de ce script pendant trois passes de
+  // correction commerciale. `strip()` retire les balises <script> avant de
+  // chercher, ce qui est juste pour le texte lisible mais aveugle sur le
+  // JSON-LD. Le pilier a donc déclaré `lowPrice: 2000, highPrice: 7000` à
+  // Google pendant que sa propre page affichait 3 000 à 8 000 € — et c'est le
+  // JSON-LD qui remonte dans les extraits enrichis.
+  //
+  // Les prix y sont écrits sans espace insécable (« 2000 », pas « 2 000 ») :
+  // les motifs de VALEURS_INTERDITES ne suffisent pas, on contrôle les bornes
+  // de prix directement contre la grille arbitrée.
+  const blocsJsonLd = [...html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(
+    (m) => m[1],
+  );
+  const jsonld = blocsJsonLd.join("\n");
+  if (jsonld) {
+    for (const { re, sujet } of VALEURS_INTERDITES) {
+      const exclu = HORS_ARBITRAGE.some((x) => x.path.test(path) && x.sujet.test(sujet));
+      if (exclu) continue;
+      const m = jsonld.match(re);
+      if (m) fail("jsonld/régression", `${path} — ${sujet} : « ${m[0]} »`);
+    }
+    // Un tarif journalier ou horaire dans une offre commerciale contredit la
+    // règle : Iter facture en retainer mensuel. La page transition annonçait
+    // ainsi `unitText: "DAY"` avec 800 à 1 500 €, quand son prix arbitré est
+    // de 8 000 à 12 000 € par mois.
+    //
+    // Une offre d'emploi est un cas différent : la rémunération journalière
+    // d'un freelance recruté n'a rien à voir avec ce que paie un client. Les
+    // nœuds JobPosting sont donc exclus — sans quoi la page carrières, qui
+    // annonce légitimement 750 à 1 250 € par jour, échouerait à tort.
+    for (const bloc of blocsJsonLd) {
+      if (/"@type"\s*:\s*"?JobPosting/.test(bloc)) continue;
+      const m = bloc.match(/"unitText"\s*:\s*"(DAY|HOUR)"/);
+      if (m) fail("jsonld/prix", `${path} — tarif « ${m[1]} » hors offre d'emploi, la facturation est mensuelle`);
+    }
+    // La grille du cluster DAF va de 3 000 à 8 000 € par mois. Les autres
+    // offres — DRH, comptabilité, contrôle de gestion — n'ont pas été
+    // arbitrées : leur appliquer cette grille produirait de faux échecs.
+    if (/^\/daf-externalise/.test(path)) {
+      for (const m of jsonld.matchAll(/"(lowPrice|highPrice)"\s*:\s*"?(\d+)"?/g)) {
+        const v = Number(m[2]);
+        if (v >= 1000 && v < 3000) {
+          fail("jsonld/prix", `${path} — ${m[1]} = ${v} (grille : 3 000 à 8 000 €)`);
+        }
+      }
+    }
+  }
 }
 
 // ── 4. Liens internes rendus : aucun ne doit viser une redirection
