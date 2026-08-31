@@ -3133,7 +3133,21 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <h2>Délais et sanctions en 2026</h2>
 <p>La déclaration doit être effectuée par voie télématique auprès de l'Agencia Tributaria (AEAT) <strong>entre le 1er janvier et le 31 mars</strong> de l'année suivant l'exercice concerné (ex : avant le 31 mars 2026 pour l'exercice 2025).</p>
 <p>Suite à une condamnation par la Cour de Justice de l'Union Européenne (CJUE) jugeant les sanctions initiales "disproportionnées", l'Espagne a dû revoir son régime de pénalités. Les amendes forfaitaires fixes extrêmement lourdes ont été supprimées, et le régime général des sanctions fiscales s'applique désormais. Néanmoins, l'obligation déclarative reste strictement en vigueur.</p>
-<p>Cette obligation déclarative concerne au premier chef les dirigeants qui <a href="/daf-externalise-barcelone">s'installent en Espagne avec une structure française</a> : comptes, portefeuilles et biens détenus en France entrent tous dans le périmètre du Modelo 720 une fois la résidence fiscale espagnole acquise.</p>`,
+<h2>Comment déclarer le Modelo 720 ?</h2>
+<p>La déclaration se fait exclusivement en ligne, sur le site de l'Agencia Tributaria, avec un certificat numérique ou une identification Cl@ve. Le déroulé tient en quatre étapes :</p>
+<ol>
+<li><strong>Rassembler les justificatifs</strong> : relevés bancaires au 31 décembre et soldes moyens du dernier trimestre, valeurs de rachat des contrats d'assurance-vie, valeur d'acquisition des biens immobiliers.</li>
+<li><strong>Identifier les catégories concernées</strong> : le seuil de 50 000 € s'apprécie séparément pour les comptes, les valeurs et l'immobilier.</li>
+<li><strong>Remplir le formulaire</strong> : chaque bien est déclaré individuellement, avec ses identifiants (IBAN, numéro de contrat, référence cadastrale) et sa valorisation.</li>
+<li><strong>Soumettre avant le 31 mars</strong> : aucune prolongation n'est prévue, et la déclaration papier n'existe pas.</li>
+</ol>
+<p>Une fois la première déclaration faite, vous n'avez à re-déclarer une catégorie que si sa valeur augmente de plus de <strong>20 000 €</strong> par rapport à la dernière déclaration déposée, ou si vous cessez d'être titulaire d'un bien déclaré.</p>
+<h2>Les erreurs les plus fréquentes</h2>
+<p><strong>Oublier les néobanques.</strong> Un compte N26 (IBAN allemand) ou Revolut (IBAN lituanien ou irlandais) est un compte étranger au sens du Modelo 720, même si l'application est en espagnol et la carte utilisée à Barcelone.</p>
+<p><strong>Ignorer l'assurance-vie française.</strong> C'est la catégorie la plus oubliée des expatriés français : les contrats d'assurance-vie entrent dans la catégorie « valeurs, droits et assurances », pour leur valeur de rachat au 31 décembre.</p>
+<p><strong>Croire que les biens en France sont hors périmètre.</strong> Une fois résident fiscal espagnol, votre appartement parisien, vos comptes français et votre PEA sont des biens à l'étranger — du point de vue espagnol.</p>
+<p><strong>Confondre déclaration et imposition.</strong> Le Modelo 720 ne génère aucun impôt en lui-même ; certains en concluent qu'il est facultatif. L'obligation est purement déclarative, mais elle est contrôlée, et son non-respect reste sanctionné.</p>
+<p>Cette obligation déclarative concerne au premier chef les dirigeants qui <a href="/daf-externalise-barcelone">s'installent en Espagne avec une structure française</a> : comptes, portefeuilles et biens détenus en France entrent tous dans le périmètre du Modelo 720 une fois la résidence fiscale espagnole acquise. Pour situer cette déclaration dans l'ensemble de vos obligations, notre <a href="/ressources/fiscalite-espagne-france">guide de la fiscalité France-Espagne</a> fait le tour du sujet.</p>`,
       content: [],
     },
 
