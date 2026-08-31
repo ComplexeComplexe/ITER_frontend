@@ -496,6 +496,22 @@ export function authorPageDescription(bio: string): string {
   return `${coupe.slice(0, dernierEspace > 100 ? dernierEspace : 157).replace(/[,;:.\s]+$/, "")}…`;
 }
 
+/**
+ * URL de la fiche d'un membre à partir de son nom complet, ou undefined si
+ * aucune fiche publiée ne correspond.
+ *
+ * SEO-06 (2026-08-31) — dix articles passaient un auteur sans `url` : le
+ * schéma Article le déclarait alors en Organization. Le nom suffit pourtant à
+ * retrouver la fiche quand elle existe.
+ */
+export function resolveAuthorUrl(fullName: string): string | undefined {
+  const membre = fallbackData.find(
+    (m) => `${m.firstName} ${m.lastName}`.trim().toLowerCase() === fullName.trim().toLowerCase(),
+  );
+  if (!membre) return undefined;
+  return getAuthorSlugs().includes(membre.slug) ? `/a-propos/${membre.slug}` : undefined;
+}
+
 export function getAuthorSlugs(): string[] {
   return fallbackData
     .filter((m) => m.bio && m.bio.fr && m.bio.en && m.bio.es)

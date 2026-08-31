@@ -100,6 +100,9 @@ const FR_BLOG_SLUGS = [
   //   due-diligence-financiere-investisseurs       → checklist-due-diligence-…
   //   externaliser-comptabilite-guide              → externalisation-comptable
   "cout-daf-externalise-tarifs-prix-2026",
+  // CONTENU-C4/B1 (2026-08-31) — deux nouvelles pages du plan éditorial.
+  "filiale-espagnole-pilotage-financier",
+  "choisir-cabinet-daf-externalise",
   "daf-drh-externalises-synergie",
   "daf-externalise-barcelone-guide-startups-espagnoles",
   // W31c (2026-08-02) — article publié (route servie via blogPosts.fr)

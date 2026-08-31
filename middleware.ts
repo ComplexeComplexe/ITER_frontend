@@ -223,7 +223,8 @@ const ORPHAN_BLOG_SLUGS = [
   "daf-externalise-vs-daf-interne",
   "daf-externalise-levee-de-fonds",
   "missions-daf-externalise-temps-partage",
-  "choisir-cabinet-daf-externalise",
+  // "choisir-cabinet-daf-externalise" retiré (CONTENU-B1 2026-08-31) :
+  // le slug est réactivé avec un vrai contenu — la grille de choix.
   "management-transition-financiere",
   "direction-financiere-externalisee",
   "outils-daf-externalise-2026",

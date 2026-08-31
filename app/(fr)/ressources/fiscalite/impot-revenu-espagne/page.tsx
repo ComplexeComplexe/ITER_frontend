@@ -44,6 +44,10 @@ const SOURCE_SLUG = "impot-revenu-espagne";
 const PAGE_URL = "https://www.iteradvisors.com/ressources/fiscalite/impot-revenu-espagne";
 const HUB_URL = "/ressources/fiscalite-espagne-france";
 const PUBLISHED_DATE = "2026-05-31";
+// SEO-07 (2026-08-31) — la page affichait « mis à jour en mai » et déclarait
+// dateModified = datePublished, alors qu'elle a été substantiellement révisée
+// en août (sources primaires, contenu). Date réelle, jamais celle du build.
+const MODIFIED_DATE = "2026-08-31";
 const AUTHOR_NAME = "Sébastien Doat";
 const AUTHOR_URL = "/a-propos/sebastien-doat";
 
@@ -104,7 +108,7 @@ export default async function Page() {
         description:
           "Tout savoir sur l'IRPF en Espagne en 2026 : barème étatique 19-47 %, part autonome par région, déductions, revenus de l'épargne. Guide complet.",
         datePublished: PUBLISHED_DATE,
-        dateModified: PUBLISHED_DATE,
+        dateModified: MODIFIED_DATE,
         inLanguage: "fr-FR",
         author: {
           "@type": "Person",
@@ -146,11 +150,11 @@ export default async function Page() {
           </h1>
           <p className="text-xs text-muted-foreground mb-6">
             Par{" "}
-            <Link href={AUTHOR_URL} className="text-iter-violet hover:underline">
+            <Link href={AUTHOR_URL} rel="author" className="text-iter-violet hover:underline">
               {AUTHOR_NAME}
             </Link>
             {" · "}
-            <time dateTime={PUBLISHED_DATE}>Mis à jour en mai 2026</time>
+            <time dateTime={MODIFIED_DATE}>Mis à jour le 31 août 2026</time>
           </p>
         </div>
       </section>

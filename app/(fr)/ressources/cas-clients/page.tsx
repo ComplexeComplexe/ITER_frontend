@@ -113,6 +113,7 @@ function CasClientsPageContent({ locale }: { locale: Locale }) {
                 { href: "/daf-externalise/metier", label: "Métier de DAF" },
                 { href: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", label: "Coût d'un DAF externalisé" },
                 { href: "/ressources/blog/quand-embaucher-daf-externalise-5-signes", label: "Quand embaucher un DAF externalisé" },
+                { href: "/ressources/blog/choisir-cabinet-daf-externalise", label: "Comment choisir un cabinet de DAF externalisé" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link

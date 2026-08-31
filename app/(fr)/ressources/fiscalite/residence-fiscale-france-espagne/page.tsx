@@ -25,6 +25,10 @@ import { faqPageSchema } from "@/lib/schemas";
 const PAGE_URL = "https://www.iteradvisors.com/ressources/fiscalite/residence-fiscale-france-espagne";
 const HUB_URL = "/ressources/fiscalite-espagne-france";
 const PUBLISHED_DATE = "2026-05-31";
+// SEO-07 (2026-08-31) — la page affichait « mis à jour en mai » et déclarait
+// dateModified = datePublished, alors qu'elle a été substantiellement révisée
+// en août (sources primaires, contenu). Date réelle, jamais celle du build.
+const MODIFIED_DATE = "2026-08-26";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
@@ -82,7 +86,7 @@ export default async function Page() {
         description:
           "Comment déterminer votre résidence fiscale entre la France et l'Espagne ? Règle des 183 jours, centre des intérêts économiques et foyer.",
         datePublished: PUBLISHED_DATE,
-        dateModified: PUBLISHED_DATE,
+        dateModified: MODIFIED_DATE,
         inLanguage: "fr-FR",
         author: {
           "@type": "Person",
@@ -127,12 +131,13 @@ export default async function Page() {
             Par{" "}
             <Link
               href="/a-propos/sebastien-doat"
+              rel="author"
               className="text-iter-violet hover:underline"
             >
               Sébastien Doat
             </Link>
             {" · "}
-            <time dateTime={PUBLISHED_DATE}>Mis à jour en mai 2026</time>
+            <time dateTime={MODIFIED_DATE}>Mis à jour le 26 août 2026</time>
           </p>
           <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
             La détermination de la résidence fiscale est la clé de voûte de

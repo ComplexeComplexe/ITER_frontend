@@ -211,8 +211,55 @@ for (const abs of urls) {
       }
     }
   }
-}
 
+  // ── 3c. E-E-A-T des pages éditoriales : auteur, date, sources
+  //
+  // SEO-19 (2026-08-31) — l'attribution existait mais dérivait en silence :
+  // dix articles déclaraient leur auteur humain en @type Organization (le
+  // gabarit retombait sur ce repli quand l'URL de la fiche manquait), et les
+  // pages fiscalité affichaient « mis à jour en mai » après leurs révisions
+  // d'août. Le composant References existait depuis des mois sans jamais être
+  // étendu : rien n'inscrivait le sourcing dans la définition de « terminé ».
+  // Ces trois exigences cassent désormais la recette.
+  if (/^\/ressources\/(blog|fiscalite)\//.test(path)) {
+    let auteurPerson = false;
+    let auteurOrganisationNomme = null;
+    let dateModifiee = false;
+    for (const bloc of blocsJsonLd) {
+      try {
+        const d = JSON.parse(bloc);
+        for (const n of [].concat(d["@graph"] ?? [d])) {
+          const t = [].concat(n["@type"] ?? []).join("");
+          if (!/Article|BlogPosting/.test(t)) continue;
+          if (n.dateModified) dateModifiee = true;
+          for (const a of [].concat(n.author ?? [])) {
+            if (a["@type"] === "Person") auteurPerson = true;
+            // Une Organization dont le nom contient une espace et pas le mot
+            // « Iter » est presque sûrement une personne mal balisée.
+            else if (a["@type"] === "Organization" && a.name && !/iter/i.test(a.name) && a.name.includes(" ")) {
+              auteurOrganisationNomme = a.name;
+            }
+          }
+        }
+      } catch {
+        /* bloc invalide : déjà couvert ailleurs */
+      }
+    }
+    if (auteurOrganisationNomme) {
+      fail("eeat/auteur", `${path} — « ${auteurOrganisationNomme} » balisé en Organization, pas en Person`);
+    } else if (!auteurPerson) {
+      fail("eeat/auteur", `${path} — aucun author Person dans l'Article`);
+    }
+    if (!dateModifiee) fail("eeat/date", `${path} — pas de dateModified`);
+    if (!/rel="author"/.test(html)) fail("eeat/byline", `${path} — pas de lien visible rel="author"`);
+    // Sources primaires : exigées sur le YMYL fiscal, où l'affirmation sans
+    // source est exactement ce que l'audit GEO a relevé.
+    if (/^\/ressources\/fiscalite\//.test(path)) {
+      const sources = /href="https:\/\/(sede\.agenciatributaria|www\.boe\.es|eur-lex|www\.impots|bofip|www\.service-public)/.test(html);
+      if (!sources) fail("eeat/sources", `${path} — aucune source primaire (AEAT, BOE, impots.gouv…)`);
+    }
+  }
+}
 // ── 4. Liens internes rendus : aucun ne doit viser une redirection
 //
 // SEO-ULT §4 (2026-08-15) — ce contrôle est né d'un angle mort. Le footer

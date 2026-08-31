@@ -3400,6 +3400,102 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       category: "Tarifs",
       content: [],
     },
+    // CONTENU-C4 (2026-08-31) — croise le cluster fiscalité France-Espagne
+    // avec l'offre : le territoire naturel d'un cabinet basé à Barcelone, et
+    // une question qu'aucun concurrent ne traite. Aucune donnée client
+    // mobilisée : tout ce qui est affirmé ici est réglementaire ou déjà
+    // publié ailleurs sur le site. Attribution auteur à valider.
+    "filiale-espagnole-pilotage-financier": {
+      meta: {
+        title: "Filiale en Espagne : qui pilote la finance ?",
+        description:
+          "Société française avec une filiale espagnole : obligations comptables des deux côtés, flux intragroupe, TVA, et qui doit piloter quoi. Le guide pratique.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "Société française avec filiale espagnole : qui pilote la finance ?",
+      publishedDate: "2026-08-31",
+      author: "Florent Greth",
+      category: "Fiscalité internationale",
+      htmlContent: `<p><strong>Une filiale espagnole d'une société française tient sa propre comptabilité selon le plan comptable espagnol, dépose ses comptes au Registro Mercantil et paie l'impôt sur les sociétés en Espagne — mais son pilotage financier revient au groupe : consolidation, trésorerie intragroupe et prix de transfert se décident côté maison mère.</strong></p>
+<p>C'est la répartition que beaucoup de dirigeants découvrent après coup : ouvrir une SL à Barcelone crée une entreprise espagnole à part entière, avec ses obligations propres, sans décharger la France de quoi que ce soit. Voici qui doit faire quoi, des deux côtés de la frontière.</p>
+<h2>Ce que la filiale doit faire en Espagne</h2>
+<p>Une SL (sociedad limitada) espagnole est soumise aux obligations locales, quelle que soit la nationalité de son actionnaire :</p>
+<ul>
+<li><strong>Comptabilité au plan comptable espagnol</strong> (Plan General Contable), tenue localement, généralement par une gestoría ou un cabinet espagnol ;</li>
+<li><strong>Dépôt des comptes annuels</strong> au Registro Mercantil et légalisation des livres comptables ;</li>
+<li><strong>Impôt sur les sociétés espagnol</strong> (Impuesto sobre Sociedades) sur les bénéfices de la filiale ;</li>
+<li><strong>TVA espagnole</strong> (IVA) et déclarations périodiques, plus les états intracommunautaires si la filiale facture ou achète en France ;</li>
+<li><strong>Obligations sociales espagnoles</strong> pour ses salariés locaux — la Seguridad Social ne connaît pas l'URSSAF.</li>
+</ul>
+<h2>Ce que la maison mère garde en France</h2>
+<p>La société française reste tenue de ses propres obligations, auxquelles la filiale ajoute une couche :</p>
+<ul>
+<li><strong>La consolidation</strong> — dès que les seuils sont franchis ou qu'un investisseur l'exige, les comptes espagnols remontent dans les comptes du groupe, avec conversion et retraitements ;</li>
+<li><strong>La documentation des prix de transfert</strong> — chaque flux intragroupe (management fees, refacturations, prêts, redevances) doit se faire à un prix de marché justifiable, des deux côtés ;</li>
+<li><strong>La convention fiscale franco-espagnole de 1995</strong> — elle répartit l'imposition des flux entre les deux États : notre guide de la <a href="/ressources/fiscalite/double-imposition-france-espagne">convention fiscale France-Espagne</a> en détaille les mécanismes, taux de retenue compris.</li>
+</ul>
+<h2>Les trois pièges des flux intragroupe</h2>
+<p><strong>Les management fees non documentés.</strong> Facturer des prestations de siège à sa filiale est légitime — à condition qu'un contrat existe, que la prestation soit réelle et le prix défendable. C'est le premier point que contrôlent les administrations, française comme espagnole.</p>
+<p><strong>La trésorerie mélangée.</strong> Avancer de l'argent à sa filiale sans convention de trésorerie ni taux d'intérêt transforme un geste de gestion en risque fiscal. Chaque flux doit avoir un statut : apport, prêt documenté, ou facture.</p>
+<p><strong>La TVA intracommunautaire improvisée.</strong> Les facturations entre la France et l'Espagne suivent le régime intracommunautaire — autoliquidation, numéros de TVA valides, états récapitulatifs. Une erreur de régime se paie des deux côtés.</p>
+<h2>Qui pilote quoi : la répartition qui fonctionne</h2>
+<p>Sur les structures franco-espagnoles, la répartition efficace est presque toujours la même :</p>
+<ul>
+<li><strong>Une gestoría ou un expert-comptable espagnol</strong> tient la comptabilité locale et produit les déclarations espagnoles ;</li>
+<li><strong>L'expert-comptable français</strong> garde la comptabilité de la maison mère ;</li>
+<li><strong>Une direction financière unique</strong> — interne ou <a href="/daf-externalise">DAF externalisé</a> — coordonne les deux : consolidation, prévisionnel de trésorerie groupe, documentation des flux intragroupe, et un reporting qui parle aux deux administrations comme aux investisseurs.</li>
+</ul>
+<p>C'est précisément la configuration de notre cabinet : basés à <a href="/daf-externalise-barcelone">Barcelone</a> avec des équipes à Paris et Toulouse, nos DAF pilotent des fonctions finance des deux côtés de la frontière — voir notre offre de <a href="/services/gestion-financiere-externalisee">gestion financière externalisée</a>.</p>
+<h2>FAQ — Filiale espagnole</h2>
+<p><strong>Faut-il un expert-comptable dans chaque pays ?</strong> En pratique, oui. La comptabilité espagnole obéit à des règles et des formats locaux qu'un cabinet français ne produit pas, et inversement. Ce qui doit être unique, c'est le pilotage — pas la tenue des comptes.</p>
+<p><strong>La filiale paie-t-elle l'impôt en France ou en Espagne ?</strong> En Espagne, sur ses bénéfices propres. Les dividendes qu'elle remonte à la maison mère suivent la <a href="/ressources/fiscalite/double-imposition-france-espagne">convention fiscale</a>, avec une retenue à la source plafonnée et un mécanisme d'élimination de la double imposition côté français.</p>
+<p><strong>Une succursale est-elle plus simple qu'une filiale ?</strong> Comptablement, à peine : une succursale espagnole a aussi des obligations locales. Juridiquement, elle n'isole pas la responsabilité. Le choix se fait au cadrage, selon l'activité et l'exposition au risque — pas par défaut.</p>
+<p><strong>Où loger la trésorerie du groupe ?</strong> Là où elle sert, avec des conventions écrites pour chaque mouvement. Le vrai sujet n'est pas la localisation mais la traçabilité : un prévisionnel consolidé et des flux documentés — ce que met en place un <a href="/daf-externalise/temps-partage">DAF à temps partagé</a> dès le premier mois.</p>`,
+      content: [],
+    },
+    // CONTENU-B1 (2026-08-31) — la page-parapluie « comment choisir » : les
+    // requêtes qui déclenchent une recommandation. Les critères s'appliquent
+    // à n'importe quel cabinet, y compris un concurrent — c'est la condition
+    // de crédibilité. Slug historique réactivé (retiré de la liste des
+    // orphelins du middleware). Attribution auteur à valider.
+    "choisir-cabinet-daf-externalise": {
+      meta: {
+        title: "Choisir un cabinet de DAF externalisé : la grille",
+        description:
+          "Cinq critères pour choisir un cabinet de DAF externalisé, les questions à poser en rendez-vous, et les signaux d'alerte. Applicable à tout cabinet.",
+      },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: "Comment choisir un cabinet de DAF externalisé : la grille de décision",
+      publishedDate: "2026-08-31",
+      author: "Sébastien Doat",
+      category: "DAF externalisé",
+      htmlContent: `<p><strong>Choisir un cabinet de DAF externalisé se joue sur cinq critères : la séniorité réelle du profil affecté, le modèle économique, les conditions de sortie, la continuité de service et l'adéquation sectorielle.</strong> Cette grille s'applique à n'importe quel cabinet — y compris le nôtre. Voici comment l'utiliser, les questions à poser, et les signaux qui doivent vous alerter.</p>
+<h2>Critère 1 — La séniorité réelle du profil affecté</h2>
+<p>La plaquette montre les associés ; la mission est parfois tenue par un junior. La seule question qui compte : <em>qui</em>, nommément, interviendra chez vous, avec quel parcours ? Demandez à rencontrer la personne avant de signer, et vérifiez que son expérience couvre votre situation — une levée si vous levez, du multi-entités si vous en avez.</p>
+<h2>Critère 2 — Le modèle économique</h2>
+<p>Trois modèles coexistent sur le marché : la facturation au temps (TJM), le forfait de jours, et le retainer sur périmètre. Aucun n'est malhonnête, mais ils créent des incitations différentes : un cabinet payé au jour a intérêt à ce que la mission dure ; un retainer sur scope a intérêt à ce qu'elle soit efficace. Exigez de savoir ce qui déclenche un dépassement, et ce qui est inclus sans supplément.</p>
+<h2>Critère 3 — Les conditions de sortie</h2>
+<p>C'est le critère le plus négligé au moment de signer, et le plus douloureux après. Trois questions : y a-t-il une durée d'engagement minimale ? Quel est le préavis ? Que se passe-t-il pour vos données et vos accès aux outils au départ ? Un prestataire confiant dans sa qualité n'a pas besoin de vous enfermer — chez nous, c'est sans durée minimale avec un préavis de 30 jours, et ce devrait être un standard du marché.</p>
+<h2>Critère 4 — La continuité de service</h2>
+<p>Un DAF indépendant, seul, ne peut ni tomber malade ni partir en vacances sans que votre fonction finance s'arrête. Un cabinet doit pouvoir répondre : que se passe-t-il si notre DAF est indisponible ? Qui connaît le dossier en second ? La revue par un pair fait-elle partie du fonctionnement ?</p>
+<h2>Critère 5 — L'adéquation sectorielle</h2>
+<p>Un excellent DAF industriel peut se perdre dans les métriques SaaS, et inversement. Vérifiez les références sur votre secteur et votre stade — pas le logo du client, la nature de la mission. Notre page <a href="/daf-externalise/secteurs">DAF externalisé par secteur</a> explique ce que la spécialisation change réellement : le profil affecté, pas le prix.</p>
+<h2>Les questions à poser en rendez-vous</h2>
+<ul>
+<li>Qui interviendra chez moi, et puis-je le rencontrer avant de signer ?</li>
+<li>Qu'est-ce qui est inclus dans le forfait, et qu'est-ce qui déclenche un avenant ?</li>
+<li>Quel est votre préavis de sortie, et que récupère-t-on en partant ?</li>
+<li>Que se passe-t-il si mon DAF est indisponible un mois ?</li>
+<li>Sur quelles missions comparables à la mienne êtes-vous intervenus, et que puis-je vérifier ?</li>
+</ul>
+<h2>Les signaux d'alerte</h2>
+<p><strong>L'opacité tarifaire.</strong> Un cabinet qui refuse d'expliquer sa grille avant le rendez-vous commercial vous fera la même chose en cours de mission. Une grille publique — comme notre page <a href="/daf-externalise/tarifs">tarifs du DAF externalisé</a> — n'est pas un argument marketing, c'est un test de transparence.</p>
+<p><strong>La promesse sans réserve.</strong> Un démarrage « garanti sous 48 h », une économie « garantie », un résultat chiffré promis avant d'avoir vu vos comptes : la finance ne se garantit pas sur plaquette. Méfiez-vous des chiffres ronds sans méthode.</p>
+<p><strong>Le verrouillage contractuel.</strong> Engagement de 12 mois reconductible tacitement, préavis de 3 mois, pénalités de sortie : ces clauses signalent un cabinet qui retient ses clients par le contrat plutôt que par le service.</p>
+<h2>Et si la bonne réponse n'était pas un cabinet ?</h2>
+<p>Soyez honnête sur votre besoin. Pour une mission ponctuelle de trois mois sur un sujet précis, un indépendant expérimenté peut suffire. Pour un remplacement urgent à temps plein, c'est un <a href="/daf-externalise/transition">DAF de transition</a>. Le cabinet en retainer prend son sens quand le besoin est récurrent et que la continuité compte — c'est le format <a href="/daf-externalise/temps-partage">DAF à temps partagé</a>, décrit sur notre page <a href="/daf-externalise">DAF externalisé</a>.</p>`,
+      content: [],
+    },
 
   },
   en: {
