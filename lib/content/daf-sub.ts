@@ -29,7 +29,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         description:
           "Découvrez le métier de DAF : rôle complet, missions clés, compétences requises et évolution du poste dans les entreprises modernes.",
       },
-      parentLabel: "DAF Externalisé",
+      parentLabel: "DAF externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "Le métier de DAF",
       // T#1 + T#10 (2026-07-13) — H1 recentré sur intent informationnel
@@ -97,6 +97,18 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
         {
+          heading: "Devenir DAF externalisé",
+          content: [
+            // MAILLAGE-T11 (2026-08-31) — la page capte aussi l'intention
+            // « daf externalisé recrutement / carrière ». Les chiffres sont
+            // ceux de la page carrières (JobPosting), les seuls arbitrés pour
+            // ce cas : c'est ce que gagne le professionnel recruté, sans
+            // rapport avec ce que facture le cabinet à ses clients.
+            "Le métier attire de plus en plus de DAF expérimentés : varier les contextes, choisir ses missions, et retrouver l'impact direct qu'un grand groupe dilue. Chez Iter Advisors, nous recrutons des profils de 10 ans d'expérience et plus, ayant déjà exercé en PME ou en startup, à l'aise avec les outils financiers modernes.",
+            "La rémunération se situe entre 750 et 1 250 € par jour selon l'expérience, en freelance, portage ou CDI, pour un portefeuille de clients accompagnés dans la durée. Le détail du poste et le processus de candidature sont sur notre page **[devenir Fractional CFO chez Iter Advisors](/carrieres/fractional-cfo)**.",
+          ],
+        },
+        {
           heading: "FAQ - Métier de DAF",
           content: [
             "**Quelle est la différence entre un DAF et un Directeur Financier ?** Les deux termes désignent la même fonction en France. Le titre officiel est DAF (Directeur Administratif et Financier), mais certaines entreprises utilisent Directeur Financier ou CFO (Chief Financial Officer).",
@@ -105,7 +117,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             // CONTENUS-T4 (2026-08-31) — les deux questions que la FAQ ne
             // couvrait pas, telles qu'elles se posent.
             "**Quelle est la différence entre un DAF et un expert-comptable ?** L'expert-comptable tient et certifie les comptes ; le DAF dirige la fonction finance et décide de ce que les chiffres impliquent. Ce sont deux métiers complémentaires : la plupart de nos clients gardent leur cabinet comptable et lui adjoignent un DAF. Le détail est sur [DAF externalisé vs expert-comptable](/ressources/blog/daf-externalise-vs-expert-comptable).",
-            "**Un DAF peut-il être externalisé ?** Oui. Le [DAF externalisé](/daf-externalise) intervient quelques jours par mois en retainer, à partir de 3 000 € HT mensuels — un niveau de séniorité de direction sans le coût d'un temps plein. C'est la forme que prend le métier dans la plupart des PME et startups que nous accompagnons.",
+            "**Un DAF peut-il être externalisé ?** Oui. Le [DAF externalisé](/daf-externalise) intervient quelques jours par mois en retainer, à partir de 3 000 € HT mensuels — et en [mission de transition](/daf-externalise/transition) quand l'urgence l'exige — un niveau de séniorité de direction sans le coût d'un temps plein. C'est la forme que prend le métier dans la plupart des PME et startups que nous accompagnons.",
           ],
         },
       ],
@@ -120,7 +132,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         description:
           "Un directeur financier à temps partagé, de 2 jours/mois à 3 jours/semaine. Missions, prix réels, démarrage en 2 semaines.",
       },
-      parentLabel: "DAF Externalisé",
+      parentLabel: "DAF externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF à temps partagé",
       // T#1 + T#10 (2026-07-13) — H1 recentré sur intent exclusif "DAF à
@@ -220,6 +232,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             "**Il ne remplace pas votre comptable.** Le DAF à temps partagé supervise la fonction comptable et travaille avec votre expert-comptable ou votre comptable interne ; il ne saisit pas les écritures. Si la tenue des comptes est votre besoin, c'est l'**[externalisation comptable](/services/comptabilite-externalisation)** qu'il vous faut.",
             "**Il n'est pas disponible en continu.** Le format repose sur des jours d'intervention planifiés. Entre deux passages, il reste joignable pour les urgences réelles, mais une entreprise qui a besoin d'une présence quotidienne relève d'un recrutement — c'est d'ailleurs un signe de maturité que nous aidons à préparer.",
             "**Il ne gère pas l'opérationnel du quotidien.** Relances clients, saisie des factures, paie : ces tâches restent portées par vos équipes ou vos prestataires. Le DAF à temps partagé les structure, les outille et les contrôle ; il ne les exécute pas.",
+            "Pour situer ce format dans l'ensemble de l'offre : la page **[DAF externalisé](/daf-externalise)** présente toutes les formes d'intervention, et la fiche **[métier de DAF](/daf-externalise/metier)** détaille le rôle lui-même.",
           ],
         },
         {
@@ -264,7 +277,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         description:
           "Remplacement, crise, restructuration : un DAF de transition senior prend le poste sous 7 à 10 jours. Missions de 3 à 12 mois.",
       },
-      parentLabel: "DAF Externalisé",
+      parentLabel: "DAF externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF de transition",
       // SEO-006 (2026-08-09) — H1 remis sur l'intention commerciale.
@@ -424,6 +437,20 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             "**En combien de temps un DAF de transition peut-il démarrer une mission ?** Chez Iter Advisors, nous démarrons une mission de transition sous 7 à 10 jours après la signature du contrat. Notre vivier de DAF seniors disponibles immédiatement permet de répondre aux situations d'urgence — départ brutal, crise de trésorerie, levée de fonds à finaliser — sans le délai de 3 à 6 mois d'un recrutement classique.",
           ],
         },
+        {
+          heading: "FAQ - DAF de transition",
+          content: [
+            // MAILLAGE-T12 (2026-08-31) — GSC : « daf de transition » fait 406
+            // impressions par mois en position 30, deuxième requête du cluster,
+            // et la page n'avait pas de FAQ. Réponses autoportantes, valeurs de
+            // lib/content/facts.ts uniquement.
+            "**Qu'est-ce qu'un DAF de transition ?** Un directeur financier senior qui prend la fonction finance à temps plein ou quasi plein, pour une durée limitée — vacance de poste, crise de trésorerie, restructuration ou opération en cours. Il stabilise, transforme, puis transmet.",
+            "**Combien coûte un DAF de transition ?** De 8 000 à 12 000 € HT par mois, facturé en retainer mensuel — jamais à la journée. Le niveau dépend de l'intensité de la mission et de la complexité du dossier.",
+            "**Sous quel délai peut-il démarrer ?** En situation urgente, 7 à 10 jours selon la disponibilité du profil et la complexité. Le parcours standard — qualification, présentation du profil, contrat — tient en 8 jours ouvrés.",
+            "**Quelle est la différence avec un DAF intérimaire ?** L'intérimaire remplace une personne absente, à l'identique. Le DAF de transition porte un mandat de transformation : redresser une trésorerie, préparer une cession, restructurer la fonction. Le premier maintient, le second change.",
+            "**Que se passe-t-il à la fin de la mission ?** Une passation organisée : documentation des processus, formation du successeur — recruté pendant la mission si besoin — et, souvent, un relais en [DAF à temps partagé](/daf-externalise/temps-partage) pour garder la hauteur de vue sans le temps plein.",
+          ],
+        },
       ],
       ctaButton: "Prendre rendez-vous",
     },
@@ -437,7 +464,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         title: "Tarifs DAF externalisé 2026 : prix par mission",
         description: "Combien coûte un DAF externalisé ? Grille de tarifs par mission et par volume de jours, ce qui fait varier le prix, et comment arbitrer. Devis en 48h.",
       },
-      parentLabel: "DAF Externalisé",
+      parentLabel: "DAF externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "Tarifs",
       h1: "Tarifs DAF Externalisé 2026 : grille de prix et comparatif",
@@ -502,6 +529,16 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
         {
+          heading: "Nos autres pages DAF externalisé",
+          content: [
+            // MAILLAGE-T3 (2026-08-31) — cette page ne liait aucune autre page
+            // du cluster : la seule du lot dans ce cas. GSC la montre pourtant
+            // aux portes du top 10 sur « combien coûte un daf externalisé »
+            // (P10,2) : le jus qu'elle reçoit doit circuler.
+            "Cette grille s'applique à toutes les formes d'intervention. Pour comprendre le format récurrent, voir **[DAF à temps partagé](/daf-externalise/temps-partage)** ; pour une intervention d'urgence, **[DAF de transition](/daf-externalise/transition)** ; pour le détail du rôle, **[métier de DAF](/daf-externalise/metier)** ; et pour les spécificités par activité, **[DAF externalisé par secteur](/daf-externalise/secteurs)**. La présentation complète de l'offre est sur la page **[DAF externalisé](/daf-externalise)**.",
+          ],
+        },
+        {
           heading: "FAQ - Tarifs du DAF Externalisé",
           content: [
             "Le tarif est-il déductible fiscalement ? Oui. Les honoraires d'un DAF externalisé sont des charges d'exploitation déductibles du résultat imposable de l'entreprise, au même titre que les honoraires d'un expert-comptable ou d'un avocat.",
@@ -519,13 +556,17 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         description:
           "DAF externalisé spécialisé par secteur (SaaS, e-commerce, industrie, fintech, santé). Notre expertise sectorielle adaptée à votre métier.",
       },
-      parentLabel: "DAF Externalisé",
+      parentLabel: "DAF externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF par secteur",
       h1: "DAF Externalisé par Secteur : notre expertise sectorielle",
       sections: [
         {
           content: [
+            // MAILLAGE-T14 (2026-08-31) — réponse directe en tête. La grille ne
+            // varie pas par secteur : c'est le profil affecté qui change. Publier
+            // des fourchettes par secteur reviendrait à inventer des prix.
+            "**Un DAF externalisé spécialisé par secteur est un directeur financier qui connaît déjà les cycles, les marges et les risques de votre activité** — saisonnalité et stocks en e-commerce, supply chain et change en industrie, R&D longue et financement non dilutif en deep tech. La grille reste celle de toutes nos missions, de 3 000 à 8 000 € HT par mois : c'est le profil qui change, pas le prix.",
             "Chaque secteur d'activité a ses spécificités financières. Une startup **SaaS** n'a pas les mêmes enjeux qu'une **ETI industrielle** ou une plateforme **e-commerce**. Les cycles de vente sont différents, les modèles économiques varient, les risques ne sont pas les mêmes.",
             "Chez Iter Advisors, nos DAFs externalisés disposent d'une expertise sectorielle approfondie. Ils comprennent votre métier, vos défis spécifiques, et les bonnes pratiques de votre industrie.",
           ],
@@ -577,6 +618,14 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             "Vous recherchez un DAF externalisé spécialisé dans votre secteur ? Nos consultants sauront vous proposer le profil idéal. Consultez également nos autres pages : **[DAF à temps partagé](/daf-externalise/temps-partage)**, **[DAF de transition](/daf-externalise/transition)**, **[métier de DAF](/daf-externalise/metier)**, et **[tarifs](/daf-externalise/tarifs)**.",
           ],
         },
+        {
+          heading: "FAQ - DAF externalisé par secteur",
+          content: [
+            "**Un DAF spécialisé coûte-t-il plus cher qu'un généraliste ?** Non. La grille est la même pour toutes nos missions — de 3 000 à 8 000 € HT par mois selon la formule. La spécialisation joue sur le choix du profil affecté, pas sur le prix.",
+            "**Que gagne-t-on avec un DAF qui connaît le secteur ?** Du temps de montée en charge, surtout. Un DAF qui a déjà piloté un BFR industriel ou un stock e-commerce pose les bonnes questions dès la première semaine, et lit vos indicateurs sans qu'on les lui explique.",
+            "**Et si mon secteur n'est pas listé ?** Les pages sectorielles couvrent les cas où la spécialisation change réellement l'intervention. Pour les autres activités, le cadrage initial identifie les enjeux propres à votre modèle — c'est l'objet du premier échange, sans engagement.",
+          ],
+        },
       ],
       ctaButton: "Prendre rendez-vous",
     },
@@ -586,7 +635,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         description:
           "DAF externalisé spécialisé e-commerce : gestion du BFR, saisonnalité, marges produits, trésorerie. Intervention dès 2 jours/mois.",
       },
-      parentLabel: "DAF Externalisé",
+      parentLabel: "DAF externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF E-Commerce",
       h1: "DAF Externalisé pour E-Commerce : Pilotez Votre Profitabilité",
@@ -623,7 +672,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         description:
           "DAF externalisé pour ETI et entreprises industrielles : contrôle de gestion, supply chain, risques de change, M&A.",
       },
-      parentLabel: "DAF Externalisé",
+      parentLabel: "DAF externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF Industrie",
       h1: "DAF Externalisé Industrie : Expertise Financière pour ETI et PMI",
@@ -658,7 +707,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         description:
           "DAF externalisé spécialisé deep tech, biotech et hardware : CIR/CII, levée de fonds Series A/B, data room, valorisation. 30+ tours accompagnés.",
       },
-      parentLabel: "DAF Externalisé",
+      parentLabel: "DAF externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF Deep Tech",
       h1: "DAF Externalisé Deep Tech : Levée de Fonds et Pilotage R&D",

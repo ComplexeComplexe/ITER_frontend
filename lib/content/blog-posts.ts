@@ -44,6 +44,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       author: "Benjamin Ziza",
       category: "guides-pratiques",
       htmlContent: `<p>Le flux de trésorerie, ou cash flow, est un indicateur financier fondamental qui mesure les entrées et sorties d'argent d'une entreprise sur une période donnée. Il constitue le baromètre de la santé financière de votre société et permet d'anticiper les besoins de financement.</p>
+<p>C'est aussi le premier indicateur qu'un <a href="/daf-externalise">DAF externalisé</a> met sous contrôle en arrivant : sans vision fiable des flux, ni le prévisionnel ni les décisions d'investissement ne tiennent.</p>
 <p>Comprendre et maîtriser ses flux de trésorerie est essentiel pour toute entreprise, qu'il s'agisse d'une startup en phase de lancement ou d'une PME en pleine croissance. Un suivi rigoureux permet d'éviter les crises de liquidité et de prendre des décisions éclairées.</p>
 <p>On distingue généralement trois types de flux de trésorerie : le flux opérationnel (lié à l'activité courante), le flux d'investissement (acquisitions et cessions d'actifs) et le flux de financement (emprunts, remboursements, levées de fonds).</p>
 <p>Le <a href="/services/previsionnel-tresorerie">prévisionnel de trésorerie</a> est l'outil indispensable pour piloter votre cash. Il vous permet de projeter vos encaissements et décaissements sur les semaines et mois à venir, d'identifier les périodes de tension et d'anticiper les solutions de financement.</p>
@@ -2438,6 +2439,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       author: "Benjamin Ziza",
       category: "gestion-financiere",
       htmlContent: `<p><strong>Le cash burn est la vitesse à laquelle une entreprise consomme sa trésorerie, mesurée en euros par mois. Le runway est le nombre de mois qu'elle peut tenir à ce rythme : trésorerie disponible divisée par le burn mensuel net.</strong></p>
+<p>Suivre ces deux chiffres chaque mois est l'une des premières missions qu'un <a href="/daf-externalise">DAF externalisé</a> met en place chez ses clients : c'est le tableau de bord minimal d'une startup financée.</p>
 <p>Le <a href="/ressources/glossaire/cash-burn-runway">cash burn et le runway</a> sont les deux métriques les plus importantes de votre startup. Elles déterminent quand vous devrez lever des fonds, recruter, ou réduire vos coûts. Pourtant, 40% des fondateurs ne connaissent pas précisément leur burn rate.</p>
 <h2 id="methode">Calculer son burn rate : la méthode</h2>
 <pre><code>Burn Rate Net = Dépenses mensuelles totales − Revenus mensuels</code></pre>

@@ -81,7 +81,9 @@ export default function OrganiserDirectionFinancierePage() {
         <strong>Une direction financière est l'équipe qui pilote l'argent de l'entreprise :
         comptabilité, trésorerie, budgets, reporting et financement.</strong> Sa forme dépend
         de la taille — du fondateur assisté d'un comptable externe à 10 personnes, jusqu'au
-        CFO entouré d'une équipe dédiée en scale-up. Ce guide détaille chaque modèle.
+        CFO entouré d'une équipe dédiée en scale-up. Entre les deux, beaucoup d'entreprises
+        confient ce rôle à un <a href="/daf-externalise">DAF externalisé</a>, quelques jours
+        par mois. Ce guide détaille chaque modèle.
       </p>
 
       <h2 id="pourquoi-structure">1. Pourquoi structurer votre finance ?</h2>
