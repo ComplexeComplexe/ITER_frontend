@@ -206,7 +206,7 @@ export default async function Page() {
             </span>
             <span className="text-xs text-muted-foreground">
               Par{" "}
-              <Link href={AUTHOR_URL} className={A}>
+              <Link href={AUTHOR_URL} rel="author" className={A}>
                 {AUTHOR_NAME}
               </Link>
               {" · "}

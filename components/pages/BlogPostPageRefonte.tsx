@@ -5,6 +5,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import { BlogPostLayout, type BlogPostLayoutProps, type TocItem, type AuthorInfo } from "@/components/blog";
 import { articleSchema, faqPageSchema } from "@/lib/schemas";
+import { resolveAuthorUrl } from "@/lib/content/team";
 import type { CmsNavItem } from "@/lib/strapi";
 import { ReactNode } from "react";
 
@@ -67,6 +68,14 @@ export default function BlogPostPageRefonte({
   // Build article URL for schema
   const articleUrl = slug ? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
 
+  // SEO-06 (2026-08-31) — dix articles passaient leur auteur sans `url` :
+  // articleSchema retombait alors sur son repli et déclarait à Google un
+  // author de @type Organization portant un nom de PERSONNE — « Benjamin
+  // Ziza » balisé comme personne morale. Pire qu'une absence : une donnée
+  // structurée fausse. Quand la fiche du membre existe, l'URL se déduit du
+  // nom ; la fournir explicitement reste prioritaire.
+  const authorUrl = author.url ?? resolveAuthorUrl(author.name);
+
   // SEO-13 (2026-07-13) — passe author.url à articleSchema pour émettre
   // un author de type Person (E-E-A-T fort) au lieu du fallback
   // Organization. Tous les articles avaient déjà author.url défini au
@@ -81,7 +90,7 @@ export default function BlogPostPageRefonte({
     datePublished: dateModified,
     dateModified: dateModified,
     authorName: author.name,
-    authorUrl: author.url,
+    authorUrl,
     imageSrc: heroImage,
   });
 
@@ -123,7 +132,7 @@ export default function BlogPostPageRefonte({
         category={category}
         title={title}
         dek={dek}
-        author={author}
+        author={{ ...author, url: authorUrl }}
         readingTime={readingTime}
         dateModified={dateModified}
         heroImage={heroImage}

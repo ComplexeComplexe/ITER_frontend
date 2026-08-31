@@ -38,6 +38,9 @@ export const metadata: Metadata = buildMetadata({
 const PILLARS: { id: string; label: string; href: string; ready: boolean; descriptor: string }[] = [
   { id: "residence", label: "Résidence fiscale", href: "/ressources/fiscalite/residence-fiscale-france-espagne", ready: true, descriptor: "Découvrez les 3 critères qui déterminent votre résidence fiscale en Espagne (règle des 183 jours, centre des intérêts économiques, foyer familial)." },
   { id: "double", label: "Double imposition", href: "/ressources/fiscalite/double-imposition-france-espagne", ready: true, descriptor: "Comprenez comment fonctionne la convention fiscale franco-espagnole pour éviter d'être imposé deux fois sur les mêmes revenus." },
+  // CONTENU-C4 (2026-08-31) — la question que le cluster ne traitait pas :
+  // société française avec filiale espagnole, qui pilote la finance.
+  { id: "filiale", label: "Filiale espagnole", href: "/ressources/blog/filiale-espagnole-pilotage-financier", ready: true, descriptor: "Société française avec une filiale en Espagne : obligations des deux côtés, flux intragroupe, et qui pilote quoi." },
   { id: "irpf", label: "Impôt sur le revenu", href: "/ressources/fiscalite/impot-revenu-espagne", ready: true, descriptor: "Calculez votre impôt sur le revenu en Espagne et découvrez les tranches d'imposition applicables en 2026." },
   { id: "beckham", label: "Loi Beckham", href: "/ressources/fiscalite/beckham-law", ready: true, descriptor: "Profitez du régime spécial des impatriés (Loi Beckham) pour bénéficier d'un taux fixe avantageux de 24 % pendant 6 ans." },
   { id: "modelo720", label: "Modelo 720", href: "/ressources/fiscalite/modelo-720", ready: true, descriptor: "Ne manquez pas l'obligation de déclarer vos biens situés à l'étranger (comptes bancaires, assurance-vie, immobilier en France) sous peine de lourdes sanctions." },
