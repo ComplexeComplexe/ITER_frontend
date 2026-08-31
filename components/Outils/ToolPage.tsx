@@ -236,6 +236,20 @@ export default function ToolPage({
           <p className="text-gray-700">
             {toolDetails?.verdict30s || `${tool.name} est notre standard pour ${tool.forWho[0]}. Le rapport prix/qualité est excellent, l'implémentation rapide, et le support réactif.`}
           </p>
+          {/* MAILLAGE-T8 (2026-08-31) — les 20 fiches outils étaient bien
+              maillées entre elles mais coupées du cluster DAF : l'avis venait
+              de nos missions sans jamais lier l'offre qui les porte. */}
+          <p className="text-sm text-gray-600 mt-4">
+            Cet avis vient du terrain : nos{' '}
+            <Link href="/daf-externalise" className="text-blue-900 underline hover:no-underline">
+              DAF externalisés
+            </Link>{' '}
+            déploient et exploitent {tool.name} en mission chez leurs clients — voir aussi les{' '}
+            <Link href="/daf-externalise/tarifs" className="text-blue-900 underline hover:no-underline">
+              tarifs du DAF externalisé
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

@@ -272,6 +272,56 @@ export default function DafExternalisePariEnrichedPage({
       )}
 
       {/* CTA */}
+      {/* MAILLAGE-T2 (2026-08-31) — cette page est la cible du ticket
+          « daf externalisé paris » (30 rech./mois, hors top 100) et c'était
+          la seule page ville sans maillage vers le cluster : son composant
+          dédié ne portait que 2 liens. Les huit autres pages villes passent
+          par DafLocalPage, qui a reçu les mêmes cartes. */}
+      <section className="py-16 bg-muted/30">
+        <div className="container max-w-4xl">
+          <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-8">
+            Nos services DAF externalisé à Paris
+          </h2>
+          <ul className="grid sm:grid-cols-2 gap-3 list-none pl-0 mb-10">
+            {[
+              { href: "/daf-externalise", label: "DAF externalisé — l'offre complète" },
+              { href: "/daf-externalise/tarifs", label: "Tarifs DAF externalisé" },
+              { href: "/daf-externalise/temps-partage", label: "DAF à temps partagé" },
+              { href: "/daf-externalise/transition", label: "DAF de transition" },
+              { href: "/daf-externalise/metier", label: "Métier de DAF" },
+              { href: "/daf-externalise/secteurs", label: "DAF externalisé par secteur" },
+            ].map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="block rounded-xl border border-border/50 bg-background px-4 py-3 text-sm font-medium text-foreground hover:border-iter-violet/40 hover:text-iter-violet transition-colors"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <h3 className="text-xl font-semibold font-heading text-foreground mb-4">
+            Nos autres implantations
+          </h3>
+          <ul className="grid sm:grid-cols-2 gap-3 list-none pl-0">
+            {[
+              { href: "/daf-externalise-barcelone", label: "DAF externalisé à Barcelone" },
+              { href: "/daf-externalise-toulouse", label: "DAF externalisé à Toulouse" },
+            ].map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="block rounded-xl border border-border/50 bg-background px-4 py-3 text-sm font-medium text-foreground hover:border-iter-violet/40 hover:text-iter-violet transition-colors"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <CTASection locale={locale} />
     </PageLayout>
   );

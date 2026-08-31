@@ -194,6 +194,23 @@ export default async function Page() {
               Pour aller plus loin
             </p>
             <ul className="space-y-2 list-none pl-0">
+              {/* MAILLAGE-T7 (2026-08-31) — le cluster fiscalité était bien maillé
+
+                  en interne mais coupé de l'offre : aucun lien vers le cabinet qui
+
+                  traite précisément ces situations depuis Barcelone. */}
+
+              <li className="flex gap-2.5 text-sm sm:text-base">
+
+                <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
+
+                <Link href="/daf-externalise-barcelone" className="text-iter-violet hover:underline">
+
+                  DAF externalisé à Barcelone — pilotage financier France-Espagne
+
+                </Link>
+
+              </li>
               <li className="flex gap-2.5 text-sm sm:text-base">
                 <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
                 <Link href={HUB_URL} className="text-iter-violet hover:underline">

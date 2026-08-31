@@ -288,7 +288,18 @@ export default function DafLocalPage({
               { title: locale === "fr" ? "Gestion de tr\u00e9sorerie" : locale === "en" ? "Cash flow management" : "Gesti\u00f3n de tesorer\u00eda", href: serviceHref("previsionnel-tresorerie", locale), icon: Wallet },
               { title: locale === "fr" ? "M&A & Due Diligence" : "M&A & Due Diligence", href: locale === "fr" ? "/services/ma-due-diligence" : `/${locale}/services/ma-due-diligence`, icon: Compass },
               { title: locale === "fr" ? "DAF \u00e0 temps partag\u00e9" : locale === "en" ? "Part-time CFO" : "DAF a tiempo compartido", href: dafClusterHref("temps-partage", locale), icon: Network },
-            ].map((service, i) => (
+              // MAILLAGE-T2 (2026-08-31) — les pages villes ne liaient ni le
+              // pilier ni les satellites tarifs/métier/transition : Google ne
+              // pouvait pas les rattacher au cluster. Les href passent par
+              // dafClusterHref, donc chaque locale reçoit ses propres URL ;
+              // en EN/ES, tarifs et secteurs retombent sur le pilier — la
+              // déduplication ci-dessous évite les doublons de carte.
+              { title: locale === "fr" ? "DAF externalis\u00e9" : locale === "en" ? "Fractional CFO" : "CFO externalizado", href: dafClusterHref("", locale), icon: BarChart3 },
+              { title: locale === "fr" ? "Tarifs DAF externalis\u00e9" : locale === "en" ? "Fractional CFO pricing" : "Tarifas CFO externalizado", href: dafClusterHref("tarifs", locale), icon: Wallet },
+              { title: locale === "fr" ? "M\u00e9tier de DAF" : locale === "en" ? "The CFO role" : "Funciones del CFO", href: dafClusterHref("metier", locale), icon: Briefcase },
+              { title: locale === "fr" ? "DAF de transition" : locale === "en" ? "Interim CFO" : "CFO de transici\u00f3n", href: dafClusterHref("transition", locale), icon: Users },
+              { title: locale === "fr" ? "DAF externalis\u00e9 par secteur" : locale === "en" ? "Fractional CFO by industry" : "CFO externalizado por sector", href: dafClusterHref("secteurs", locale), icon: Building2 },
+            ].filter((service, i, arr) => arr.findIndex((x) => x.href === service.href) === i).map((service, i) => (
               <Link
                 key={i}
                 href={service.href}

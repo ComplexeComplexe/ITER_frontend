@@ -795,6 +795,26 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
           },
         ],
       },
+      // MAILLAGE-T6 (2026-08-31) — la page était isolée du cluster DAF alors
+      // que l'externalisation comptable est, chez la plupart de nos clients,
+      // la première marche vers une direction financière externalisée. La
+      // question rejoint la FAQ existante ; les cartes « autres expertises »
+      // du gabarit portent déjà les liens.
+      {
+        id: 8,
+        question: "Peut-on combiner comptabilité externalisée et DAF externalisé ?",
+        answer: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                text: "C'est même la combinaison la plus fréquente chez nos clients. Externaliser la comptabilité règle la production des chiffres ; le DAF externalisé s'appuie dessus pour construire le prévisionnel, piloter la trésorerie et préparer les décisions. La comptabilité tourne en continu, la direction financière intervient quelques jours par mois — deux rythmes, une seule fonction finance.",
+              },
+            ],
+          },
+        ],
+      },
     ],
     seo: {},
   },
