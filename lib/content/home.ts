@@ -111,7 +111,7 @@ export const homeContent = {
       {
         title: "Fiscalité France-Espagne : le guide complet 2026",
         href: "/ressources/fiscalite-espagne-france",
-        image: "/images/blog/regimes-fiscaux-france-vs-espagne.webp",
+        image: "/images/blog/covers/regimes-fiscaux-france-vs-espagne.svg",
         date: "31 mai 2026",
       },
     ],

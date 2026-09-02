@@ -551,12 +551,12 @@ export default function HomePage({
                     to those underserved cibles per the SEO ticket. */}
                 {locale === "fr" && (
                   <>
-                    <Link href="/daf-externalise/tarifs" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Tarifs du DAF externalis\u00e9</Link>
-                    <Link href="/daf-externalise/temps-partage" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF \u00e0 temps partag\u00e9</Link>
+                    <Link href="/daf-externalise/tarifs" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Tarifs du DAF externalisé</Link>
+                    <Link href="/daf-externalise/temps-partage" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF à temps partagé</Link>
                     <Link href="/daf-externalise/transition" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF de transition</Link>
                     <Link href="/services/comptabilite-externalisation" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Externalisation comptable</Link>
-                    <Link href="/daf-externalise/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">M\u00e9tier de DAF</Link>
-                    <Link href="/ressources/fiscalite-espagne-france" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Fiscalit\u00e9 France-Espagne</Link>
+                    <Link href="/daf-externalise/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Métier de DAF</Link>
+                    <Link href="/ressources/fiscalite-espagne-france" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Fiscalité France-Espagne</Link>
                   </>
                 )}
                 {locale === "en" && (
@@ -570,9 +570,9 @@ export default function HomePage({
                 {locale === "es" && (
                   <>
                     <Link href="/es/externalizacion-daf/tiempo-compartido" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">CFO a tiempo compartido</Link>
-                    <Link href="/es/externalizacion-daf/transicion" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF de transici\u00f3n</Link>
-                    <Link href="/es/services/externalizar-contabilidad" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Externalizaci\u00f3n contable</Link>
-                    <Link href="/es/externalizacion-daf/funciones" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Profesi\u00f3n de DAF</Link>
+                    <Link href="/es/externalizacion-daf/transicion" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF de transición</Link>
+                    <Link href="/es/services/externalizar-contabilidad" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Externalización contable</Link>
+                    <Link href="/es/externalizacion-daf/funciones" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Profesión de DAF</Link>
                   </>
                 )}
               </div>
