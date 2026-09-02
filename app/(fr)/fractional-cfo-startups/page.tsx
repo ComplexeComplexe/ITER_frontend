@@ -131,7 +131,7 @@ const structuredData = {
           name: "Un Fractional CFO peut-il aider pour une levée de fonds ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Oui. Les Fractional CFO Iter Advisors ont accompagné plus de 50 levées de fonds du Seed à la Series B. Ils préparent les data rooms, construisent les modèles financiers, créent les présentations investisseurs, et préparent les fondateurs à la due diligence.",
+            text: "Oui. Les Fractional CFO Iter Advisors ont accompagné des dizaines de levées de fonds du seed à la série B — plus de 100 M€ levés par nos clients depuis 2021. Ils préparent les data rooms, construisent les modèles financiers, créent les présentations investisseurs, et préparent les fondateurs à la due diligence.",
           },
         },
         {
@@ -803,7 +803,7 @@ export default async function Page() {
                   question:
                     "Un Fractional CFO peut-il aider pour une levée de fonds ?",
                   answer:
-                    "Oui. Les Fractional CFO Iter Advisors ont accompagné plus de 50 levées de fonds du Seed à la Series B. Ils préparent les data rooms, construisent les modèles financiers, créent les présentations investisseurs, et préparent les fondateurs à la due diligence.",
+                    "Oui. Les Fractional CFO Iter Advisors ont accompagné des dizaines de levées de fonds du seed à la série B — plus de 100 M€ levés par nos clients depuis 2021. Ils préparent les data rooms, construisent les modèles financiers, créent les présentations investisseurs, et préparent les fondateurs à la due diligence.",
                 },
                 {
                   question:

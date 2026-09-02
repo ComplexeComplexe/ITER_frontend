@@ -60,6 +60,9 @@ const VALEURS_INTERDITES = [
   // REDESIGN-P4 (2026-09-01) — « Engagement minimum 3 mois » sur la page
   // recrutement échappait au motif « engagement de 3 mois » (ordre des mots).
   { re: /engagement minimum (?:de )?\d+ mois/i, sujet: "engagement (aucune durée minimale)" },
+  // FACTS (2026-09-02) — « plus de 50 levées » / « 50+ rounds » sur quatre pages : chiffre
+  // jamais arbitré. La donnée publiable est FONDS_LEVES (100 M€ depuis 2021).
+  { re: /(?:plus de |\+ ?)50 (?:levées|rounds)|50\+ (?:levées|rounds)/i, sujet: "nombre de levées non arbitré (100 M€ levés depuis 2021)" },
   { re: /TJM ?(?:de |: ?|EUR ?|€ ?)?(?:750|800|900)|(?:750|800|900) ?(?:€|EUR)? ?(?:à|–|-|et) ?1 ?[012][05]0 ?(?:€|EUR)? ?(?:HT ?)?(?:par jour|\/ ?jour|\/ ?día|por día)/i, sujet: "TJM client (retainer mensuel, missions ponctuelles sur devis)" },
 ];
 

@@ -30,7 +30,7 @@ const content: Record<Locale, FundRaisingSupportContent> = {
     meta: {
       title: "Accompagnement levée de fonds - Iter Advisors",
       description:
-        "Levée de fonds externalisée : modèles financiers, data rooms, pitch decks. Nous avons accompagné 50+ rounds de financement. Expertise Seed à Series B.",
+        "Levée de fonds externalisée : modèles financiers, data rooms, pitch decks. Plus de 100 M€ levés par nos clients depuis 2021. Expertise Seed à Series B.",
     },
     hero: {
       h1: "Accompagnement levée de fonds pour startups",
@@ -169,7 +169,7 @@ const content: Record<Locale, FundRaisingSupportContent> = {
         {
           question: "How long does fundraising take?",
           answer:
-            "On the rounds we support, count 6 to 9 months from the start of preparation to closing: 2 to 3 months of preparation (accounts, data room, financial model), then 4 to 6 months with investors, from first contact to signature. Preparation is the phase we compress — not the funds'"'s decision.",
+            "On the rounds we support, count 6 to 9 months from the start of preparation to closing: 2 to 3 months of preparation (accounts, data room, financial model), then 4 to 6 months with investors, from first contact to signature. Preparation is the phase we compress — not the investors' decision.",
         },
         {
           question: "Can you help me if my numbers are bad?",
