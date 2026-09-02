@@ -225,7 +225,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "Fractional CFO / CFO à temps partagé senior pour startups VC-backed. Dès 3 000 € HT/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
       url: PAGE_URL,
       type: "website",
-    images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
+    images: [{ url: "/images/og-logo.png", width: 1200, height: 630 }],
   },
   };
 }

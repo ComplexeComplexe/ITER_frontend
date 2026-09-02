@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "Iter Advisors recrute un(e) analyste financier junior à Paris. CDI ou alternance. Cabinet de DAF externalisé. Formation et progression assurées.",
       url: "https://www.iteradvisors.com/jobs/finance-analyst-junior-fr",
       type: "website",
-    images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
+    images: [{ url: "/images/og-logo.png", width: 1200, height: 630 }],
   },
   };
 }

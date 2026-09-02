@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description:
       "IS, IVA, cotizaciones sociales, régimen Beckham: guía completa para empresas que operan entre Francia y España.",
     type: "article",
-    images: [{ url: "/images/og-default.webp", alt: "Fiscalidad Francia vs España — Comparativa completa 2026" }],
+    images: [{ url: "/images/og-logo.png", alt: "Fiscalidad Francia vs España — Comparativa completa 2026" }],
   },
 };
 

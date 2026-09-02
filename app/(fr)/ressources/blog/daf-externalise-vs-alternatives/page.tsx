@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "Le guide comparatif complet pour choisir entre DAF externalisé, salarié, expert-comptable, contrôleur de gestion et fractional CFO. Tarifs, périmètres, matrice de décision.",
     type: "article",
     url: PAGE_URL,
-    images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
+    images: [{ url: "/images/og-logo.png", width: 1200, height: 630 }],
   },
   robots: { index: true, follow: true },
 };

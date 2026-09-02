@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       "Tarifs externalisation comptable par taille d'entreprise + comparatif des 4 modèles disponibles. Économisez 30-60 % vs comptable interne. Iter Advisors.",
     type: "article",
     url: PAGE_URL,
-    images: [{ url: "/images/og-default.webp", width: 1200, height: 630 }],
+    images: [{ url: "/images/og-logo.png", width: 1200, height: 630 }],
   },
   robots: { index: true, follow: true },
 };
