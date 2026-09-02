@@ -149,6 +149,14 @@ for (const abs of urls) {
     if (m) fail("faits/régression", `${path} — ${sujet} : « ${m[0]} »`);
   }
 
+  // ── 3a ter. Échappements unicode littéraux dans le texte visible
+  //
+  // FIX-HOME (2026-09-01) — la home affichait « externalis\u00e9 » tel quel :
+  // dans du texte JSX, \u00e9 n'est pas un échappement (contrairement aux
+  // chaînes JS) et se rend littéralement. Sept libellés FR/ES étaient touchés.
+  const esc = texte.match(/\\u[0-9a-f]{4}/i);
+  if (esc) fail("texte/échappement", `${path} — séquence littérale « ${esc[0]} »`);
+
   // ── 3a bis. Les mêmes valeurs, dans la meta description
   //
   // SEO-02 (2026-08-30) — une meta description ne fait pas partie du corps de
