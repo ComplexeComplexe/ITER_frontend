@@ -60,7 +60,7 @@ export default function ChecklistDueDiligencePage() {
         },
         {
           question: "Quel est le rôle d'un DAF externalisé pendant la due diligence ?",
-          answer: "Le DAF externalisé joue trois rôles pendant la due diligence : (1) il audite les chiffres historiques et détecte les anomalies avant que les investisseurs les trouvent ; (2) il construit le prévisionnel avec des hypothèses défendables et un modèle sensibilisé ; (3) il répond aux questions financières des VCs et de leurs experts-comptables. Chez Iter Advisors, nos DAFs ont piloté la due diligence de plus de 50 levées en Seed et Series A.",
+          answer: "Le DAF externalisé joue trois rôles pendant la due diligence : (1) il audite les chiffres historiques et détecte les anomalies avant que les investisseurs les trouvent ; (2) il construit le prévisionnel avec des hypothèses défendables et un modèle sensibilisé ; (3) il répond aux questions financières des VCs et de leurs experts-comptables. Chez Iter Advisors, nos DAF ont piloté la due diligence de dizaines de levées en seed et série A — plus de 100 M€ levés par nos clients depuis 2021.",
         },
         {
           question: "Combien de temps dure une due diligence financière ?",
@@ -268,7 +268,7 @@ export default function ChecklistDueDiligencePage() {
       <h3>Quels documents les VCs demandent-ils systématiquement en due diligence ?</h3>
       <p>La liste minimum que tout fonds VC demande : bilans et comptes de résultat 3 ans certifiés, cap table à jour avec les BSA/BSPCE, prévisionnel P&L + trésorerie 3 ans (avec hypothèses détaillées), contrats des 5 à 10 clients représentant 80 % du CA, table d'amortissement des dettes, et rapport KYC sur les fondateurs. Une data room bien structurée (Dealroom, DocSend) accélère le closing de 2 à 3 semaines.</p>
       <h3>Quel est le rôle d'un DAF externalisé pendant la due diligence ?</h3>
-      <p>Le <a href="/daf-externalise">DAF externalisé</a> joue trois rôles pendant la due diligence : (1) il audite les chiffres historiques et détecte les anomalies avant que les investisseurs les trouvent ; (2) il construit le prévisionnel avec des hypothèses défendables et un modèle sensibilisé ; (3) il répond aux questions financières des VCs et de leurs experts-comptables. Chez Iter Advisors, nos DAFs ont piloté la due diligence de plus de 50 levées en Seed et Series A.</p>
+      <p>Le <a href="/daf-externalise">DAF externalisé</a> joue trois rôles pendant la due diligence : (1) il audite les chiffres historiques et détecte les anomalies avant que les investisseurs les trouvent ; (2) il construit le prévisionnel avec des hypothèses défendables et un modèle sensibilisé ; (3) il répond aux questions financières des VCs et de leurs experts-comptables. Chez Iter Advisors, nos DAF ont piloté la due diligence de dizaines de levées en seed et série A — plus de 100 M€ levés par nos clients depuis 2021.</p>
     </BlogPostPageRefonte>
   );
 }

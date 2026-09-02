@@ -900,7 +900,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
         {
           heading: "Missions d'un Fractional CFO",
           content: [
-            "**Levée de fonds :** Préparation de la data room, modèle financier, pitch financier et accompagnement des négociations. Nos Fractional CFO ont accompagné plus de 50 levées du Seed à la Series B.",
+            "**Levée de fonds :** Préparation de la data room, modèle financier, pitch financier et accompagnement des négociations. Nos Fractional CFO ont accompagné des dizaines de levées du seed à la série B — plus de 100 M€ levés par nos clients depuis 2021.",
             "**Reporting investisseurs :** Reporting mensuel aux VCs et business angels, tableaux de bord KPIs, board packages.",
             "**Trésorerie et runway :** Suivi du cash burn, calcul du runway, alertes précoces et plan d'action.",
             "**Structuration financière :** Mise en place du contrôle de gestion, choix des outils, définition des KPIs.",
