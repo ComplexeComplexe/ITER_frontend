@@ -192,8 +192,8 @@ export default function DafExternalisVsDafInterimairePage() {
         <h3>Le DAF externalisé : la direction financière de long terme</h3>
         <p>
           Le DAF externalisé opère sur un modèle radicalement différent. Il intervient à{' '}
-          <strong>temps partagé</strong> — généralement 1 à 3 jours par semaine — sur la
-          durée, dans une relation qui s&apos;étend souvent sur 12 à 36 mois ou plus. Ce
+          <strong>temps partagé</strong> — quelques jours par mois — sur la
+          durée, dans une relation qui s&apos;installe dans la durée. Ce
           n&apos;est pas une solution de crise : c&apos;est une <strong>solution de
           structuration</strong> pour les entreprises qui ont besoin d&apos;une direction
           financière sérieuse sans la charge salariale d&apos;un DAF à temps plein.

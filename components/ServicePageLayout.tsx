@@ -102,8 +102,6 @@ export default function ServicePageLayout({
             {/* CTA Button */}
             <Link
               href={BOOKING_URL}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
               className="inline-flex items-center justify-center sm:justify-start gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-2"
             >
               {locale === "fr" ? "Demander un devis" : "Request a quote"}

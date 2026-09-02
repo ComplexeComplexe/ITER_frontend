@@ -100,9 +100,9 @@ export default async function Page() {
       ]}
       relatedArticles={[
         {
-          url: "/ressources/blog/daf-externalise-guide",
+          url: "/daf-externalise",
           category: "DAF externalisé",
-          title: "DAF externalisé : guide complet et cas clients",
+          title: "Externaliser sa direction financière : l'offre, les tarifs et la méthode",
         },
         {
           url: "/ressources/blog/regimes-fiscaux-france-vs-espagne",

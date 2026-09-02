@@ -28,6 +28,19 @@ import Link from "next/link";
  */
 const TOKEN_RE = /\*\*([^*]+)\*\*|\[([^\]]+)\]\(([^)\s]+)\)/g;
 
+/**
+ * Version texte brut d'une chaîne portant le même Markdown inline : les
+ * liens gardent leur libellé, le gras perd ses astérisques. À utiliser pour
+ * tout ce qui part dans un JSON-LD ou une meta — un lien Markdown y fuyait
+ * (FAQPage du pilier DAF, 3 septembre 2026).
+ */
+export function stripInlineMarkdown(text: string): string {
+  if (!text) return text;
+  return text
+    .replace(/\[([^\]]+)\]\([^)\s]+\)/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1");
+}
+
 export function renderInlineMarkdownLinks(text: string): ReactNode {
   if (!text) return text;
   // Fast-path: no Markdown token → return as-is.

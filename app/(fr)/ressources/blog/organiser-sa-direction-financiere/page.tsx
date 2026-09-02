@@ -82,7 +82,7 @@ export default function OrganiserDirectionFinancierePage() {
         comptabilité, trésorerie, budgets, reporting et financement.</strong> Sa forme dépend
         de la taille — du fondateur assisté d'un comptable externe à 10 personnes, jusqu'au
         CFO entouré d'une équipe dédiée en scale-up. Entre les deux, beaucoup d'entreprises
-        confient ce rôle à un <a href="/daf-externalise">DAF externalisé</a>, quelques jours
+        confient ce rôle à un <a href="/daf-externalise">DAF externalisé pour PME et startups</a>, quelques jours
         par mois. Ce guide détaille chaque modèle.
       </p>
 

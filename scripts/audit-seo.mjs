@@ -60,6 +60,11 @@ const VALEURS_INTERDITES = [
   // REDESIGN-P4 (2026-09-01) — « Engagement minimum 3 mois » sur la page
   // recrutement échappait au motif « engagement de 3 mois » (ordre des mots).
   { re: /engagement minimum (?:de )?\d+ mois/i, sujet: "engagement (aucune durée minimale)" },
+  // REFONTE-DAF (2026-09-03) — « engagement 12-36 mois » et « sur 12 à 36
+  // mois » survivaient sur le pilier et deux articles alors que facts.ts
+  // retire ces durées du site. Le motif exige un mot de durée devant pour
+  // laisser passer un horizon de budget « (12-36 mois) ».
+  { re: /(?:engagement|sur|durent?|s'étend(?:ent)?)[^.]{0,30}12\s*(?:à|-|–)\s*36 mois/i, sujet: "durée 12-36 mois (retirée par l'arbitrage du 10 août)" },
   // FACTS (2026-09-02) — « plus de 50 levées » / « 50+ rounds » sur quatre pages : chiffre
   // jamais arbitré. La donnée publiable est FONDS_LEVES (100 M€ depuis 2021).
   { re: /(?:plus de |\+ ?)50 (?:levées|rounds)|50\+ (?:levées|rounds)/i, sujet: "nombre de levées non arbitré (100 M€ levés depuis 2021)" },

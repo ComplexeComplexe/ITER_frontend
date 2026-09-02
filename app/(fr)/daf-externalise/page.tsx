@@ -1,34 +1,21 @@
 import { Metadata } from "next";
-import DafPage from "@/components/pages/DafPage";
+import DafPillarPage from "@/components/pages/DafPillarPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
 import { getCmsNavigation, getTeamMembers } from "@/lib/strapi";
-import { getDafContent } from "@/lib/content/daf";
+import { dafPillar } from "@/lib/content/daf-pillar";
 
 export async function generateMetadata(): Promise<Metadata> {
-  // Source meta title/description from lib/content/daf.ts so SEO copy edits
-  // there propagate to the actual <title>/<meta description>. The Strapi CMS
-  // entry still wins when present.
-  const t = getDafContent("fr");
-  const meta = await buildStrapiMetadata({
+  // Title et description viennent de lib/content/daf-pillar.ts. L'image
+  // Open Graph est celle du site (logo officiel, décision du 2 septembre
+  // 2026) : plus d'illustration stock spécifique à cette page.
+  return buildStrapiMetadata({
     endpoint: "daf-externalise-page",
     locale: "fr",
     path: "/daf-externalise",
     localizedPaths: { fr: "/daf-externalise", en: "/en/fractional-cfo", es: "/es/externalizacion-daf" },
-    fallbackTitle: t.meta.title,
-    fallbackDescription: t.meta.description,
+    fallbackTitle: dafPillar.meta.title,
+    fallbackDescription: dafPillar.meta.description,
   });
-  // SEO-IT-04: page-specific og:image for /daf-externalise
-  if (meta.openGraph && typeof meta.openGraph === "object") {
-    (meta.openGraph as Record<string, unknown>).images = [
-      {
-        url: "https://www.iteradvisors.com/images/stock/daf-hero.png",
-        width: 895,
-        height: 560,
-        alt: "DAF externalisé Iter Advisors — directeur administratif et financier analysant les tableaux de bord",
-      },
-    ];
-  }
-  return meta;
 }
 
 export default async function Page() {
@@ -36,5 +23,5 @@ export default async function Page() {
     getCmsNavigation("fr"),
     getTeamMembers("fr"),
   ]);
-  return <DafPage locale="fr" cmsNavigation={cmsNavigation} teamMembers={teamMembers} />;
+  return <DafPillarPage cmsNavigation={cmsNavigation} teamMembers={teamMembers} />;
 }

@@ -1050,6 +1050,13 @@ const nextConfig: NextConfig = {
       // ── MULTILINGUAL URL AUDIT (2026-07-25) ─────────────────────────────────
       // New canonical URLs for EN/ES pages with localised slugs.
       // Each source is the old URL that still exists in GSC, inlinks, or redirects.
+      // REFONTE-DAF (2026-09-03) — deux doublons du pilier /daf-externalise :
+      // le guide de blog reprenait son plan sans capter une requête (GSC
+      // juin–août : aucune impression sur la famille). La page
+      // app/(fr)/fr/fractional-cfo (contenu FR intégral de DafPage, grille
+      // 4 500 / 8 500 / 15 000 € contraire à facts.ts) est supprimée ; sa
+      // redirection existait déjà plus haut dans cette liste.
+      { source: "/ressources/blog/daf-externalise-guide",                  destination: "/daf-externalise",                                 permanent: true },
       { source: "/en/fractional-cfo/metier",                             destination: "/en/fractional-cfo/role",                          permanent: true },
       { source: "/es/externalizacion-daf/metier",                        destination: "/es/externalizacion-daf/funciones",                 permanent: true },
       { source: "/es/clients",                                            destination: "/es/clientes",                                     permanent: true },
