@@ -132,7 +132,7 @@ export function buildMetadata({
       type: "website",
       images: [
         {
-          url: `${base}/images/og-default.webp`,
+          url: `${base}/images/og-logo.png`,
           width: 1200,
           height: 630,
           alt: "Iter Advisors - DAF & DRH externalis\u00e9s",
@@ -143,7 +143,7 @@ export function buildMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [`${base}/images/og-default.webp`],
+      images: [`${base}/images/og-logo.png`],
     },
     icons: {
       icon: [

@@ -30,7 +30,7 @@ export interface RelatedArticleCard {
 
 // Ahrefs T-404 (2026-06-08): same fix as lib/blog-listing.ts — the
 // placeholder.webp file doesn't exist in /public. Falling back to og-default.
-const DEFAULT_COVER = "/images/og-default.webp";
+const DEFAULT_COVER = "/images/og-logo.png";
 
 function coverFor(slug: string, fallbackTitle: string): { src: string; alt: string } {
   const c = BLOG_COVERS[slug];

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       {
         // Ahrefs T-404 (2026-06-08): .webp file doesn't exist in /public/images/blog/.
         // Until a dedicated cover ships, use the always-present og-default.
-        url: "/images/og-default.webp",
+        url: "/images/og-logo.png",
         alt: "Régimes fiscaux : France vs Espagne — Comparaison complète 2026",
       },
     ],

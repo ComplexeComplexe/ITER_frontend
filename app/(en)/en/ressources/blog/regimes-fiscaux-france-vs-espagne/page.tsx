@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description:
       "Corporate tax, VAT, social contributions, Beckham law: the complete guide for businesses operating between France and Spain.",
     type: "article",
-    images: [{ url: "/images/og-default.webp", alt: "Tax systems: France vs Spain — Full comparison 2026" }],
+    images: [{ url: "/images/og-logo.png", alt: "Tax systems: France vs Spain — Full comparison 2026" }],
   },
 };
 

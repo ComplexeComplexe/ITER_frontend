@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: 'https://www.iteradvisors.com/lp/daf-externalise',
       images: [
         {
-          url: '/images/og/lp-daf-externalise.webp',
+          url: '/images/og-logo.png',
           width: 1200,
           height: 630,
           alt: 'DAF Externalisé pour PME & Startups',
