@@ -10,9 +10,28 @@ import { Tool } from '@/data/tools';
  *
  * À remonter à la main quand les avis outils sont réellement revus.
  */
-export const TOOLS_REVIEW_DATE = '2026-08-09';
+export const TOOLS_REVIEW_DATE = '2026-09-01';
+export const TOOLS_REVIEW_DATE_LABEL = '1er septembre 2026';
+
+/**
+ * Signataire de l'avis, dérivé de `tool.experts` (le premier expert cité).
+ *
+ * REDESIGN-P3 (2026-09-01) — l'avis était signé « Iter Advisors » en
+ * Organization : sur une requête « avis {outil} », un avis sans personne
+ * derrière ne vaut pas grand-chose, ni pour un lecteur ni pour un moteur.
+ * Attribution à valider par Guillaume.
+ */
+export const TOOL_AUTHORS = {
+  sebastien: { name: 'Sébastien Doat', url: '/a-propos/sebastien-doat' },
+  benjamin: { name: 'Benjamin Ziza', url: '/a-propos/benjamin-ziza' },
+} as const;
+
+export function getToolAuthor(tool: Tool) {
+  return TOOL_AUTHORS[tool.experts[0] ?? 'benjamin'];
+}
 
 export function generateToolReviewSchema(tool: Tool) {
+  const author = getToolAuthor(tool);
   return {
     '@context': 'https://schema.org',
     '@type': 'Review',
@@ -24,10 +43,16 @@ export function generateToolReviewSchema(tool: Tool) {
       applicationCategory: 'BusinessApplication',
     },
     author: {
+      '@type': 'Person',
+      name: author.name,
+      url: `https://www.iteradvisors.com${author.url}`,
+    },
+    publisher: {
       '@type': 'Organization',
       name: 'Iter Advisors',
       url: 'https://www.iteradvisors.com',
     },
+    dateModified: TOOLS_REVIEW_DATE,
     reviewRating: {
       '@type': 'Rating',
       ratingValue: tool.rating,

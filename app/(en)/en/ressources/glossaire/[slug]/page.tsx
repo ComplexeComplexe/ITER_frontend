@@ -68,5 +68,5 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (!content) notFound();
 
   const cmsNavigation = await getCmsNavigation("en");
-  return <GlossaryEntryPage locale="en" content={content} cmsNavigation={cmsNavigation} />;
+  return <GlossaryEntryPage locale="en" content={content} cmsNavigation={cmsNavigation} slug={slug} />;
 }

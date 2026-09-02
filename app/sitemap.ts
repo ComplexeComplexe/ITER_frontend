@@ -15,8 +15,8 @@ const D = {
   service:       "2026-05-17", // /services/* — last content update
   local:         "2026-05-17", // geo pages (Barcelona, Paris, Toulouse)
   institutional: "2026-03-01", // a-propos, contact, legal — stable
-  tools:         "2026-04-01", // tool sheets built ~April
-  glossary:      "2026-04-15", // glossary terms built ~April
+  tools:         "2026-09-01", // REDESIGN-P3 — byline, méthode et limites sur chaque avis
+  glossary:      "2026-09-01", // REDESIGN-P3 — définition en tête, byline, termes liés
   author:        "2026-05-17", // Person schema + author bio pages added
   jobs:          "2026-04-01", // noindexed but discoverable (TICKET-12)
   fiscalite:     "2026-05-31", // Fiscalité Espagne France cocoon — initial publication
