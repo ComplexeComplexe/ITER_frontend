@@ -747,12 +747,15 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
         description:
           "DAF (Directeur Administratif et Financier) : définition du rôle, missions, différence avec le CFO et coût d'un DAF externalisé pour PME.",
       },
-      h1: "DAF externalisé : définition, missions et fonctionnement",
+      // REFONTE-DAF (2026-09-03) — la fiche définit le métier de DAF ; son H1
+      // visait « DAF externalisé » et concourait au pilier (96 impressions à
+      // la position 63 sur la requête de tête, GSC juin–août).
+      h1: "DAF (directeur administratif et financier) : définition, missions et salaire",
       sections: [
         {
           content: [
             "Le **DAF** (Directeur Administratif et Financier) est le responsable de la gestion financière et administrative d'une entreprise. En France, il occupe un rôle stratégique au sein du comité de direction et pilote l'ensemble des fonctions financières : comptabilité, trésorerie, contrôle de gestion, relations bancaires et parfois les ressources humaines.",
-            "Un **[DAF externalisé](/daf-externalise)** exerce ces mêmes missions pour plusieurs entreprises en parallèle, à temps partagé — généralement 2 à 8 jours par mois. Ce modèle permet aux PME, startups et ETI d'accéder à une expertise financière senior sans le coût d'un temps plein.",
+            "Un **[DAF externalisé](/daf-externalise)** exerce ces mêmes missions pour plusieurs entreprises en parallèle, à temps partagé — généralement 1 à 8 jours par mois. Ce modèle permet aux PME, startups et ETI d'accéder à une expertise financière senior sans le coût d'un temps plein.",
           ],
         },
         {

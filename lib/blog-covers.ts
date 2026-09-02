@@ -55,7 +55,6 @@ export const BLOG_COVERS: Record<string, BlogCover> = {
   // ── Articles tuile pastel conservée (carte bleue Iter Advisors) ──────────
   "la-modernisation-du-role-de-cfo": { cover: "/images/blog/covers/la-modernisation-du-role-de-cfo.svg", alt: "Couverture editoriale Iter Advisors — Le CFO moderne, comment le metier a ete reecrit" },
   "les-10-outils-pour-cfos-startup": { cover: "/images/blog/covers/les-10-outils-pour-cfos-startup.svg", alt: "Couverture editoriale Iter Advisors — 10 outils essentiels pour CFO startup, la shortlist du praticien" },
-  "daf-externalise-guide": { cover: "/images/blog/covers/daf-externalise-guide.svg", alt: "Couverture editoriale Iter Advisors — Le guide complet du DAF externalise, tarifs et cas client" },
   "essentiels-outils-tech-finance": { cover: "/images/blog/covers/essentiels-outils-tech-finance.svg", alt: "Couverture editoriale Iter Advisors — Les outils tech essentiels pour la finance, la stack 2026" },
   "ia-et-automatisation-des-taches-repetitives": { cover: "/images/blog/covers/ia-et-automatisation-des-taches-repetitives.svg", alt: "Couverture editoriale Iter Advisors — IA et automatisation finance, repenser les taches repetitives" },
   "levee-de-fonds-guide": { cover: "/images/blog/covers/levee-de-fonds-guide.svg", alt: "Couverture editoriale Iter Advisors — Lever des fonds, le guide complet pour fondateurs" },

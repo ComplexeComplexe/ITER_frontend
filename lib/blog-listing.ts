@@ -26,7 +26,6 @@ import type { StrapiBlogArticle, StrapiMedia } from "@/lib/strapi";
  */
 const LEGACY_COVER_BY_SLUG: Record<string, string> = {
   "10-outils-cfos-startup": "/images/blog/10-outils-cfos-startup.webp",
-  "daf-externalise-guide": "/images/blog/daf-externalise.webp",
   "essentiels-outils-tech-finance": "/images/blog/essentiels-outils-tech-finance.webp",
   "ia-et-automatisation-des-taches-repetitives":
     "/images/blog/ia-et-automatisation-des-taches-repetitives.webp",

@@ -12,6 +12,7 @@ const BASE = "https://www.iteradvisors.com";
 const D = {
   homepage:      "2026-05-19", // illustrations + sitemap refresh
   pillar:        "2026-05-17", // DAF / DRH pillar pages — last major copy update
+  dafPillar:     "2026-09-03", // REFONTE-DAF — pilier /daf-externalise réécrit (12 blocs)
   service:       "2026-09-01", // REDESIGN-P4 — auteur, date, FAQ RH, maillage DRH
   local:         "2026-05-17", // geo pages (Barcelona, Paris, Toulouse)
   institutional: "2026-03-01", // a-propos, contact, legal — stable
@@ -128,7 +129,7 @@ const FR_BLOG_SLUGS = [
   "term-sheet-negocier-clauses-cles",
   /* Dedicated FR-only routes under app/ressources/blog/<slug>/ */
   "les-10-outils-pour-cfos-startup",
-  "daf-externalise-guide",
+  // REFONTE-DAF (2026-09-03) — daf-externalise-guide 301 vers /daf-externalise.
   "levee-de-fonds-guide",
   "ia-et-automatisation-des-taches-repetitives",
   "regimes-fiscaux-france-vs-espagne",
@@ -223,7 +224,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   entries.push(
     ...entryAllLocales(
       { fr: "/daf-externalise", en: "/fractional-cfo", es: "/externalizacion-daf" },
-      D.pillar
+      D.dafPillar
     )
   );
   entries.push(

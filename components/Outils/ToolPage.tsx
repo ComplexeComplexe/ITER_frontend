@@ -258,7 +258,7 @@ export default function ToolPage({
           <p className="text-sm text-gray-600 mt-4">
             Cet avis vient du terrain : nos{' '}
             <Link href="/daf-externalise" className="text-blue-900 underline hover:no-underline">
-              DAF externalisés
+              directeurs financiers externalisés
             </Link>{' '}
             déploient et exploitent {tool.name} en mission chez leurs clients — voir aussi les{' '}
             <Link href="/daf-externalise/tarifs" className="text-blue-900 underline hover:no-underline">

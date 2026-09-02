@@ -59,10 +59,10 @@ export default function CTASection({ locale }: { locale: Locale }) {
             {t.paragraph}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* REFONTE-DAF (2026-09-03) — BOOKING_URL est /contact, une page
+                interne : plus de nofollow ni de nouvel onglet. */}
             <Link
               href={BOOKING_URL}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-dark text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
             >
               {t.button}
