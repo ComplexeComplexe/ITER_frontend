@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import References from "@/components/References";
 import ArticleTOC, { type TocHeading } from "@/components/blog/ArticleTOC";
-import { getFiscaliteReferences } from "@/lib/content/references";
+import { getFiscaliteReferences, type ExternalReference } from "@/lib/content/references";
 import { faqPageSchema } from "@/lib/schemas";
 
 /**
@@ -79,7 +79,11 @@ export interface GuideFiscalPageProps {
   faq: GuideFaqItem[];
   cta: { title: string; text: string; footnote?: ReactNode };
   related: GuideRelated[];
-  referencesKey: Parameters<typeof getFiscaliteReferences>[0];
+  /** Sources : soit une clé du registre fiscalité, soit une liste explicite. */
+  referencesKey?: Parameters<typeof getFiscaliteReferences>[0];
+  references?: ExternalReference[];
+  /** Hub parent (fil d'Ariane + isPartOf). Fiscalité par défaut. */
+  hub?: { label: string; href: string };
 }
 
 export default async function GuideFiscalPage({
@@ -106,9 +110,12 @@ export default async function GuideFiscalPage({
   cta,
   related,
   referencesKey,
+  references,
+  hub = { label: "Fiscalité Espagne France", href: FISCALITE_HUB },
 }: GuideFiscalPageProps) {
   const cmsNavigation = await getCmsNavigation("fr");
   const pageUrl = `${SITE}${path}`;
+  const refs = references ?? (referencesKey ? getFiscaliteReferences(referencesKey) : []);
 
   const headings: TocHeading[] = [
     { id: "essentiel", level: 2, label: essentiel.title },
@@ -137,7 +144,7 @@ export default async function GuideFiscalPage({
         publisher: { "@id": `${SITE}/#organization` },
         isPartOf: {
           "@type": "CollectionPage",
-          "@id": `${SITE}${FISCALITE_HUB}#collection`,
+          "@id": `${SITE}${hub.href}#collection`,
         },
       },
       faqPageSchema(faq),
@@ -162,7 +169,7 @@ export default async function GuideFiscalPage({
             locale="fr"
             items={[
               { label: "Ressources", href: "/ressources" },
-              { label: "Fiscalité Espagne France", href: FISCALITE_HUB },
+              { label: hub.label, href: hub.href },
               { label: breadcrumbLabel },
             ]}
           />
@@ -342,7 +349,7 @@ export default async function GuideFiscalPage({
         </section>
       )}
 
-      <References locale="fr" refs={getFiscaliteReferences(referencesKey)} />
+      {refs.length > 0 && <References locale="fr" refs={refs} />}
 
       <CTASection locale="fr" />
     </PageLayout>

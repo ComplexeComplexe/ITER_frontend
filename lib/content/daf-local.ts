@@ -67,7 +67,10 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
         {
           question: "Combien coûte un DAF externalisé à Barcelone ?",
           answer:
-            "Nos formules à Barcelone vont de 2 000 EUR/mois (2-3 jours) à 7 000+ EUR/mois (8+ jours). Les tarifs sont alignés sur le marché espagnol, avec un TJM de 750 à 1 100 EUR HT.",
+            // FACTS (2026-09-01) — annonçait « 2 000 à 7 000+ EUR » et un TJM :
+            // la grille est la même sur tous nos bureaux (facts.ts, FORMULES),
+            // facturée au forfait mensuel, jamais à la journée.
+            "Nos formules à Barcelone vont de 3 000 à 8 000 € HT par mois selon la formule et le scope confié — la même grille que sur nos autres bureaux. La facturation est un forfait mensuel, sans durée d'engagement minimale (préavis de 30 jours) ; nous ne facturons pas à la journée.",
         },
         {
           question: "Votre DAF externalisé parle-t-il espagnol ?",
@@ -255,7 +258,9 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
         {
           question: "Combien coûte un DAF externalisé à Paris ?",
           answer:
-            "Nos formules à Paris vont de 2 000 EUR/mois (2-3 jours) à 8 000+ EUR/mois (8+ jours). Le TJM se situe entre 900 et 1 250 EUR HT, en ligne avec le marché parisien.",
+            // FACTS (2026-09-01) — même correction qu'à Barcelone : grille unique,
+            // forfait mensuel, pas de TJM côté client.
+            "Nos formules à Paris vont de 3 000 à 8 000 € HT par mois selon la formule et le scope confié, comme sur nos autres bureaux. La facturation est un forfait mensuel, sans durée d'engagement minimale (préavis de 30 jours) ; nous ne facturons pas à la journée.",
         },
         {
           question: "Intervenez-vous sur site à Paris ?",

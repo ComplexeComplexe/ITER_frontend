@@ -2095,7 +2095,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
       category: "Outils & stack",
       htmlContent: `<p>Une startup SaaS en Series A (ARR entre 1 M€ et 5 M€, équipe de 20 à 50 personnes) traverse une phase critique. La fonction finance doit évoluer d'une gestion administrative basique vers un pilotage stratégique, sans pour autant mobiliser des ressources disproportionnées.</p>
 <p>L'objectif de ce guide est de définir un stack financier opérationnel, éprouvé, et maîtrisable en budget. Le budget cible est de 800 € à 1 500 € par mois — ce qui représente environ 1,5 % du burn rate moyen d'une SaaS en Series A (80 000 € à 120 000 € par mois).</p>
-<h2 id="section-1-stack-reference">Section 1 — Le stack de référence : 4 outils</h2>
+<h2 id="section-1-stack-reference">Le stack de référence : 4 outils</h2>
 <p>Après analyse de plus de 40 déploiements chez des startups SaaS en France et en Espagne, le stack suivant émerge comme le plus pertinent pour une Series A :</p>
 <table>
 <thead><tr><th>Fonction</th><th>Outil recommandé</th><th>Prix mensuel</th><th>Justification</th></tr></thead>
@@ -2108,7 +2108,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 </table>
 <p><strong>Budget total pour 30 salariés :</strong> 99 + 99 + 199 + (49 × 30) = <strong>1 686 € par mois</strong>.</p>
 <p>Avec un budget optimisé (<a href="/ressources/outils/pleo">Pleo</a> à la place de Spendesk, PayFit Essential à 27 €) : environ <strong>1 200 € par mois</strong>.</p>
-<h2 id="section-2-pennylane">Section 2 — Pourquoi Pennylane pour la comptabilité</h2>
+<h2 id="section-2-pennylane">Pourquoi Pennylane pour la comptabilité</h2>
 <p>Pennylane est devenu l'outil de référence pour les startups SaaS françaises. Ses avantages distinctifs sont les suivants.</p>
 <p><strong>Rapidité de clôture.</strong> Une clôture comptable en 3 à 5 jours (contre 15 à 20 jours pour une comptabilité traditionnelle). Ce gain de temps se traduit par une visibilité financière temps réel, indispensable pour le pilotage mensuel.</p>
 <p><strong>Intégration native.</strong> Pennylane s'intègre nativement avec Agicap (trésorerie), Spendesk (dépenses), et PayFit (paie). Les écritures comptables sont générées automatiquement à partir des flux bancaires, des notes de frais, et des bulletins de paie.</p>
@@ -2122,13 +2122,13 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <li>La consolidation multi-sociétés avancée</li>
 </ul>
 <p>Si l'entreprise est industrielle ou retail, Sage ou Cegid Loop sont plus adaptés. Voir notre <a href="/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements">comparatif Pennylane vs Sage</a>.</p>
-<h2 id="section-3-agicap">Section 3 — Pourquoi Agicap pour la trésorerie</h2>
+<h2 id="section-3-agicap">Pourquoi Agicap pour la trésorerie</h2>
 <p>Agicap est l'outil de prévision de trésorerie le plus déployé chez les PME et startups françaises.</p>
 <p><strong>Connexion multi-banques.</strong> Agicap se connecte à plus de 120 banques européennes, dont Qonto, Revolut, BNP, Société Générale, et Crédit Mutuel. La synchronisation est automatique et sécurisée (lecture seule).</p>
 <p><strong>Prévisions à 13 semaines.</strong> L'horizon de 13 semaines (un trimestre) correspond au cycle de décision financière des startups en croissance. Il permet d'anticiper les tensions de trésorerie liées aux recrutements, aux investissements, ou aux décalages de paiement clients.</p>
 <p><strong>Scénarios multiples.</strong> Agicap permet de modéliser plusieurs scénarios (pessimiste / base / optimiste) et de visualiser leur impact sur le runway. Cette fonctionnalité est particulièrement utile lors de la préparation d'une levée de fonds.</p>
 <p><strong>Tarification.</strong> 99 € par mois pour le plan standard (prévisions à 13 semaines, 2 scénarios). Le plan Pro (199 €) ajoute les scénarios illimités et l'intégration avec les outils de comptabilité.</p>
-<h2 id="section-4-spendesk">Section 4 — Pourquoi Spendesk pour les dépenses</h2>
+<h2 id="section-4-spendesk">Pourquoi Spendesk pour les dépenses</h2>
 <p>À 30 salariés, les dépenses deviennent un enjeu de contrôle. Les cartes de crédit partagées ne sont plus viables.</p>
 <p><strong>Workflows d'approbation.</strong> Spendesk permet de configurer des règles d'approbation par montant, par département, et par type de dépense. Exemple : le CEO approuve les dépenses &gt; 500 €, le manager celles &lt; 500 €.</p>
 <p><strong>Cartes virtuelles illimitées.</strong> Chaque abonnement SaaS (Stripe, AWS, Google Ads, HubSpot) peut avoir sa propre carte virtuelle. En cas de résiliation, la carte est bloquée instantanément — pas de frais cachés.</p>
@@ -2136,13 +2136,18 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p><strong>Tarification.</strong> 199 € par mois pour le plan Pro (15 cartes, workflows illimités). Le plan Essential (99 €, 5 cartes) convient aux équipes plus petites.</p>
 <h3>Alternative : Pleo</h3>
 <p>Pour les startups &lt; 15 salariés, <a href="/ressources/outils/pleo">Pleo</a> (79 €/mois) constitue une alternative plus légère et plus rapide à déployer (onboarding en 10 minutes).</p>
-<h2 id="section-5-payfit">Section 5 — Pourquoi PayFit pour la paie</h2>
+<h2 id="section-5-payfit">Pourquoi PayFit pour la paie</h2>
 <p>PayFit est le logiciel de paie le plus utilisé par les startups françaises.</p>
 <p><strong>DSN automatique.</strong> La Déclaration Sociale Nominative est générée et transmise automatiquement à l'URSSAF. Le taux d'erreur est proche de 0 %.</p>
 <p><strong>Portail collaborateur.</strong> Les salariés accèdent à leurs fiches de paie, soldes de congés, et demandes d'absence via une interface mobile. Cette autonomie réduit de 40 % les demandes RH adressées au manager.</p>
 <p><strong>Intégration comptable.</strong> Les écritures de paie sont synchronisées automatiquement avec Pennylane. Le rapport de paie mensuel est disponible en 2 clics.</p>
 <p><strong>Tarification.</strong> 27 € à 49 € par salarié et par mois selon le plan (Essential / Performance).</p>
-<h2 id="section-6-variantes">Section 6 — Variantes selon le profil</h2>
+<h2 id="stack-par-stade">La stack selon le stade : ce que nous installons en pré-seed, et ce qui vient ensuite</h2>
+<p>Le stack de référence ci-dessus est celui d'une série A. Il ne s'installe pas d'un bloc : sur nos missions, l'ordre d'arrivée des outils suit le stade de l'entreprise, et il est presque toujours le même.</p>
+<p><strong>Pré-seed et seed : deux outils, pas plus.</strong> <a href="/ressources/outils/pennylane">Pennylane</a> pour la comptabilité et la facturation, <a href="/ressources/outils/qonto">Qonto</a> pour le compte et les cartes. Les deux se connectent nativement, la trésorerie se lit dans Pennylane, et le fondateur tient le prévisionnel dans un tableur. Ajouter un outil de trésorerie ou de gestion des dépenses à ce stade coûte plus en paramétrage qu'il ne rapporte.</p>
+<p><strong>Les autres viennent au fur et à mesure</strong>, chacun quand le problème qu'il résout devient réel : <a href="/ressources/outils/agicap">Agicap</a> quand le prévisionnel de trésorerie ne tient plus dans un tableur — plusieurs comptes, des scénarios, un board qui demande une vue à 13 semaines ; <a href="/ressources/outils/spendesk">Spendesk</a> quand les notes de frais et les abonnements dispersés font perdre la maîtrise des dépenses ; <a href="/ressources/outils/payfit">PayFit</a> quand la paie sort du cabinet comptable pour être pilotée en interne. À la série A, les quatre sont en place : c'est le stack décrit dans cet article.</p>
+<p>La règle qui en découle : n'installez pas la stack de série A en pré-seed. Chaque outil ajouté avant son heure est un abonnement, un paramétrage et une source de données de plus à réconcilier — pour un besoin qui n'existe pas encore.</p>
+<h2 id="section-6-variantes">Variantes selon le profil</h2>
 <h3>Stack « International » (business UK/US)</h3>
 <table>
 <thead><tr><th>Variante</th><th>Ajout</th><th>Prix</th></tr></thead>
@@ -2169,7 +2174,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 </tbody>
 </table>
 <p><strong>Budget total optimisé (20 salariés) :</strong> 39 + 49 + 79 + (27 × 20) = <strong>747 € par mois</strong>.</p>
-<h2 id="section-7-roi">Section 7 — ROI du stack financier</h2>
+<h2 id="section-7-roi">ROI du stack financier</h2>
 <p>Pour une startup de 30 salariés en Series A :</p>
 <table>
 <thead><tr><th>Métrique</th><th>Avant (compta traditionnelle)</th><th>Après (stack cloud)</th><th>Gain</th></tr></thead>

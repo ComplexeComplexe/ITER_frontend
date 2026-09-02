@@ -9,6 +9,7 @@ import {
   FONDS_LEVES,
   FORMULES,
   MISSIONS_PONCTUELLES,
+  REPARTITION_CLIENTS_PAR_FORMULE,
   TRUSTFOLIO_RATING,
   TRUSTFOLIO_REVIEW_COUNT,
 } from "@/lib/content/facts";
@@ -87,6 +88,8 @@ ${grilleTarifaire()}
 Missions ponctuelles, hors retainer :
 
 ${missionsPonctuelles()}
+
+Ce que nos clients paient réellement : ${REPARTITION_CLIENTS_PAR_FORMULE.formulation}
 
 ## Comparaison avec un DAF salarié
 

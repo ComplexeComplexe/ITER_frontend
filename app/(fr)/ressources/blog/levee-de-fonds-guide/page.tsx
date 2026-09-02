@@ -46,33 +46,58 @@ export default async function Page() {
         avatar: "/images/team/benjamin-ziza.webp",
         jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
-      readingTime={10}
-      dateModified="2026-05-01T00:00:00Z"
+      readingTime={11}
+      // DONNÉE (2026-08-31, Guillaume Rostand) — durée réelle et signaux de
+      // due diligence observés sur les levées accompagnées. Le TL;DR annonçait
+      // encore « succès 90 % plus probable » et « +15-30 % de valorisation »,
+      // deux statistiques sans source que le corps avait déjà retirées.
+      dateModified="2026-09-01"
       heroImage="/images/blog/covers/levee-de-fonds-guide.svg"
       toc={[
         { id: "pourquoi", label: "Pourquoi la préparation fait la différence" },
+        { id: "duree", label: "Combien de temps dure vraiment une levée" },
         { id: "timeline", label: "Timeline en 7 étapes" },
         { id: "preparation", label: "Préparation financière" },
         { id: "due-diligence", label: "Due diligence financière" },
+        { id: "signaux", label: "Les 4 signaux qui font douter un investisseur" },
         { id: "checklist", label: "Checklist 30 points" },
       ]}
       tldr={
         <>
           <p>
-            <strong>Levée de fonds bien préparée = succès 90% plus probable.</strong> Les
-            investisseurs jugent d'abord sur finances : croissance, rentabilité,
-            trésorerie.
+            <strong>Une levée dure 6 à 9 mois</strong> entre le début de la préparation et
+            le closing, sur les levées que nous accompagnons. Les investisseurs jugent
+            d&apos;abord la traction et le marché ; la préparation financière décide de
+            ce qui ne déraille pas ensuite.
           </p>
           <p>
-            <strong>Préparation minimale :</strong> 3-6 mois avant pitch. Budget,
-            comptabilité à jour, due diligence décou verte, cap table propre.
+            <strong>Préparation minimale :</strong> 2 à 3 mois avant le premier pitch.
+            Comptes à jour, data room, modèle financier, cap table propre.
           </p>
           <p>
-            <strong>ROI de la préparation :</strong> Meilleure valorisation (+ 15-30%),
-            levée plus rapide (2-4 mois au lieu de 6-12).
+            <strong>Ce qui fait échouer une due diligence :</strong> des documents mal
+            préparés, une trésorerie réelle non signalée, une propriété intellectuelle
+            pas ficelée, des clients présentés sans leur risque de churn.
           </p>
         </>
       }
+      faqItems={[
+        {
+          question: "Combien de temps dure une levée de fonds ?",
+          answer:
+            "Sur les levées que nous accompagnons, 6 à 9 mois entre le début de la préparation et le closing : 2 à 3 mois de préparation (comptes, data room, modèle financier), puis 4 à 6 mois de phase investisseurs, de la prise de contact à la signature. Une préparation incomplète allonge la due diligence, pas l'inverse.",
+        },
+        {
+          question: "Qu'est-ce qui fait échouer une due diligence financière ?",
+          answer:
+            "Quatre signaux reviennent sur nos missions : des documents mal préparés ou incohérents entre eux, une trésorerie réelle non signalée (runway plus court que présenté), une propriété intellectuelle pas ficelée (cessions de droits des salariés et freelances manquantes), et des clients présentés sans leur potentiel de churn.",
+        },
+        {
+          question: "Combien de temps faut-il pour préparer une levée ?",
+          answer:
+            "Comptez 2 à 3 mois si la comptabilité est à jour, davantage si les comptes N-1 ne sont pas clos ou si la cap table n'est pas documentée. La préparation est la seule phase que vous maîtrisez entièrement : c'est celle qu'un DAF externalisé compresse.",
+        },
+      ]}
       relatedArticles={[
         {
           url: "/ressources/blog/daf-externalise-guide",
@@ -120,10 +145,29 @@ export default async function Page() {
         intelligemment.
       </p>
 
+      <h2 id="duree">Combien de temps dure vraiment une levée de fonds</h2>
+
+      <p>
+        Sur les levées que nous avons accompagnées, le délai réel entre le début de la
+        préparation et le virement des fonds se situe entre <strong>6 et 9 mois</strong>.
+        Les récits de levée bouclée en huit semaines existent ; ils concernent des
+        tours relais menés avec des investisseurs déjà au capital, pas une première
+        levée institutionnelle.
+      </p>
+      <p>
+        Le temps se répartit en deux blocs très différents. La préparation — comptes à
+        jour, data room, modèle financier, cap table — prend 2 à 3 mois, et c&apos;est le
+        seul bloc que vous maîtrisez entièrement. La phase investisseurs, de la première
+        prise de contact à la signature, prend 4 à 6 mois : elle dépend du calendrier des
+        fonds, de leurs comités et de la due diligence. Une préparation incomplète ne
+        raccourcit pas ce second bloc, elle l&apos;allonge : chaque pièce manquante devient
+        une question, chaque question une semaine.
+      </p>
+
       <h2 id="timeline">Timeline d'une levée de fonds : de l'amorçage au closing en 7 étapes</h2>
 
       <p>
-        Une levée se prépare sur 6-12 mois. Voici le calendrier recommandé :
+        Une levée se déroule sur 6 à 9 mois. Voici le calendrier recommandé :
       </p>
 
       <h3>T-6 mois : Discovery et diagnostic</h3>
@@ -407,6 +451,54 @@ export default async function Page() {
         </li>
       </ul>
 
+      <h2 id="signaux">Les 4 signaux qui font douter un investisseur en due diligence</h2>
+
+      <p>
+        Les due diligences qui déraillent sur nos missions ne déraillent presque jamais
+        sur le fond du business. Elles déraillent sur quatre points, toujours les mêmes,
+        et tous évitables en amont.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Des documents mal préparés.</strong> Fichiers incomplets, versions
+          contradictoires, un chiffre d&apos;affaires qui diffère entre le bilan, le
+          pitch et le prévisionnel. L&apos;investisseur n&apos;y lit pas une erreur, il y
+          lit un pilotage approximatif — et il rallonge la due diligence pour tout
+          recompter.
+        </li>
+        <li>
+          <strong>La vraie trésorerie non signalée.</strong> Un runway plus court que
+          celui présenté, des dettes fournisseurs ou fiscales qui n&apos;apparaissent que
+          dans les relevés. C&apos;est le signal le plus destructeur : il touche à la
+          confiance, et il déplace immédiatement la négociation vers les conditions,
+          pas la valorisation.
+        </li>
+        <li>
+          <strong>Une propriété intellectuelle pas ficelée.</strong> Code écrit par un
+          freelance sans cession de droits, marque non déposée, clauses de propriété
+          absentes des contrats de travail. Aucun fonds n&apos;investit dans une société qui
+          ne possède pas ce qu&apos;elle vend ; la régularisation prend des semaines et se
+          fait sous pression.
+        </li>
+        <li>
+          <strong>Des clients mal présentés.</strong> Une liste de logos sans le risque de
+          churn qui va avec : contrats à échéance, dépendance à un ou deux comptes,
+          usage réel en baisse. L&apos;investisseur le découvrira dans les appels de
+          référence ; mieux vaut qu&apos;il l&apos;apprenne de vous, avec le plan pour y
+          répondre.
+        </li>
+      </ul>
+
+      <p>
+        Les quatre relèvent de la préparation, pas de la chance. C&apos;est précisément ce
+        que couvre notre{" "}
+        <a href="/ressources/blog/checklist-due-diligence-levee-de-fonds">
+          checklist de due diligence
+        </a>
+        , document par document.
+      </p>
+
       <InlineCTA
         title="Due diligence financière intimidée ?"
         body="Nos CFOs externalisés préparent vos équipes, organisent data room, répondent questions investisseurs."
@@ -481,8 +573,9 @@ export default async function Page() {
       </ul>
 
       <Callout type="success" title="Prochaines étapes">
-        Une fois cette checklist validée, vous êtes prêt pour la levée. Durée totale
-        préparation : 3-6 mois. ROI : meilleure valorisation + process plus rapide.
+        Une fois cette checklist validée, vous êtes prêt pour la levée. Durée de la
+        préparation : 2 à 3 mois si la comptabilité est à jour ; la levée complète,
+        préparation comprise, dure 6 à 9 mois.
       </Callout>
     </BlogPostPageRefonte>
   );

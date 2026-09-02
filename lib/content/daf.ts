@@ -1042,7 +1042,7 @@ export const dafContent: Record<Locale, DafContent> = {
     meta: {
       title: "CFO Externalizado | Dirección Financiera | Iter Advisors",
       description:
-        "CFO externalizado para pymes y startups: dirección financiera, tesorería, control de gestión. TJM EUR 750–1 250/día. Barcelona, Paris, Toulouse.",
+        "CFO externalizado para pymes y startups: dirección financiera, tesorería, control de gestión. Desde 3 000 € al mes, sin permanencia mínima. Barcelona, París, Toulouse.",
     },
     breadcrumbLabel: "CFO Externalizado",
     essential: {
