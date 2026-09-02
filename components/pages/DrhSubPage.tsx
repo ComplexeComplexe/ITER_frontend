@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import type { DrhSubContent } from "@/lib/content/drh-sub";
+import { HR_SERVICE_SLUGS, hrServices } from "@/lib/content/hr-services";
 import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -83,6 +84,48 @@ export default function DrhSubPage({ locale, content, cmsNavigation }: DrhSubPag
           </section>
         );
       })}
+
+      {/* REDESIGN-P4 (2026-09-01) — le cluster DRH n'était pas maillé : cette
+          sous-page ne liait que le rendez-vous, et ne recevait qu'un lien. Les
+          briques de service RH n'existent qu'en français. */}
+      <section className="bg-background pb-16">
+        <div className="container max-w-4xl">
+          <div className="rounded-3xl border border-border/60 bg-muted/30 p-6 sm:p-8">
+            <p className="text-xs font-bold uppercase tracking-widest text-iter-violet mb-2">
+              {locale === "fr" ? "Direction RH externalisée" : locale === "en" ? "Outsourced HR direction" : "Dirección de RRHH externalizada"}
+            </p>
+            <p className="text-base text-foreground leading-relaxed mb-4">
+              {locale === "fr" ? (
+                <>
+                  Le DRH à temps partagé est une modalité de notre{" "}
+                  <Link href={content.parentHref} className="text-iter-violet font-semibold hover:underline">
+                    direction RH externalisée
+                  </Link>
+                  . Ses briques de service :
+                </>
+              ) : (
+                <Link href={content.parentHref} className="text-iter-violet font-semibold hover:underline">
+                  {content.parentLabel}
+                </Link>
+              )}
+            </p>
+            {locale === "fr" && (
+              <ul className="grid sm:grid-cols-2 gap-3 list-none pl-0">
+                {HR_SERVICE_SLUGS.map((s) => (
+                  <li key={s}>
+                    <Link
+                      href={`/services/${s}`}
+                      className="block rounded-xl border border-border/60 bg-background p-4 text-sm font-medium text-foreground hover:border-iter-violet/50 hover:text-iter-violet transition-colors"
+                    >
+                      {hrServices[s].breadcrumb}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      </section>
 
       <TestimonialsSection locale={locale} />
       <CTASection locale={locale} />

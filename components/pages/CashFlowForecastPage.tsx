@@ -7,6 +7,8 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import type { CmsNavItem } from "@/lib/strapi";
 import { motion } from "framer-motion";
+import PageByline from "@/components/PageByline";
+import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
 
 const breadcrumbLabels: Record<Locale, { services: string; servicesHref: string; page: string }> = {
   fr: { services: "Services", servicesHref: "/services", page: "Cash Flow Forecast" },
@@ -41,6 +43,25 @@ export default function CashFlowForecastPage({ locale, content: t, cmsNavigation
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            editorialWebPageSchema({
+              path:
+                locale === "fr"
+                  ? "/services/flux-de-tresorerie"
+                  : locale === "en"
+                    ? "/en/services/cash-flow-forecast"
+                    : "/es/services/flujo-de-caja",
+              name: t.hero.h1,
+              description: t.hero.intro,
+              locale,
+              author: FINANCE_AUTHOR,
+            })
+          ),
+        }}
+      />
 
       {/* Hero */}
       <section className="bg-background pt-32 pb-16">
@@ -53,10 +74,11 @@ export default function CashFlowForecastPage({ locale, content: t, cmsNavigation
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl lg:text-5xl font-bold font-heading text-foreground max-w-3xl mb-6"
+            className="text-3xl lg:text-5xl font-bold font-heading text-foreground max-w-3xl mb-4"
           >
             {t.hero.h1}
           </motion.h1>
+          <PageByline locale={locale} author={FINANCE_AUTHOR} className="mb-6" />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

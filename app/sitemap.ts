@@ -12,7 +12,7 @@ const BASE = "https://www.iteradvisors.com";
 const D = {
   homepage:      "2026-05-19", // illustrations + sitemap refresh
   pillar:        "2026-05-17", // DAF / DRH pillar pages — last major copy update
-  service:       "2026-05-17", // /services/* — last content update
+  service:       "2026-09-01", // REDESIGN-P4 — auteur, date, FAQ RH, maillage DRH
   local:         "2026-05-17", // geo pages (Barcelona, Paris, Toulouse)
   institutional: "2026-03-01", // a-propos, contact, legal — stable
   tools:         "2026-09-01", // REDESIGN-P3 — byline, méthode et limites sur chaque avis

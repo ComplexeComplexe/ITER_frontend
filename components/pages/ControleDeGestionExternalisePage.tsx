@@ -7,6 +7,8 @@ import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
+import PageByline from "@/components/PageByline";
+import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
 
 interface ControleDeGestionExternaliseePageProps {
   locale: Locale;
@@ -58,9 +60,24 @@ export default function ControleDeGestionExternalisePage({
             ]}
           />
           <div className="mt-6 sm:mt-8">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6 sm:mb-8 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-4 leading-tight">
               {t.h1}
             </h1>
+            <PageByline locale={locale} author={FINANCE_AUTHOR} className="mb-6" />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(
+                  editorialWebPageSchema({
+                    path: "/services/controle-de-gestion-externalise",
+                    name: t.h1,
+                    description: t.meta?.description ?? t.h1,
+                    locale,
+                    author: FINANCE_AUTHOR,
+                  })
+                ),
+              }}
+            />
             {t.hero?.lede && (
               <p className="text-base sm:text-lg lg:text-xl text-foreground/80 font-medium leading-relaxed mb-6">
                 {t.hero.lede}

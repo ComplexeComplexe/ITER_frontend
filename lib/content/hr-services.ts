@@ -48,6 +48,8 @@ export interface HRServiceContent {
     rows: HRServicePricingRow[];
     note?: string;
   };
+  /** REDESIGN-P4 (2026-09-01) — le visible et le FAQPage sont générés depuis ce tableau. */
+  faq?: { question: string; answer: string }[];
   cta: {
     heading: string;
     body: string;
@@ -95,7 +97,8 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
         {
           label: "Accélération du time-to-hire",
           description:
-            "Nos clients réduisent leur délai de recrutement de 30 à 40% en moyenne. Un process structuré avec un pipeline de candidats qualifiés évite les blocages et les pertes de candidats.",
+            // FACTS (2026-09-01) — « 30 à 40 % en moyenne » sans source ni échantillon.
+            "Un process structuré, avec un pipeline de candidats qualifiés, évite les blocages et les pertes de candidats — c'est là que se gagne le délai de recrutement.",
         },
         {
           label: "Accès à un réseau élargi",
@@ -105,12 +108,12 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
         {
           label: "Réduction du taux d'erreur de recrutement",
           description:
-            "Process structuré avec critères clairs, entretiens techniques adaptés et vérification rigoureuse des références. Turnover lié à de mauvais recrutements réduit de 25%.",
+            "Process structuré avec critères clairs, entretiens techniques adaptés et vérification rigoureuse des références : moins d'erreurs de casting, donc moins de départs précoces.",
         },
         {
           label: "Focus des fondateurs préservé",
           description:
-            "Chez nos clients seed/Series A, les fondateurs passent 20 à 30% de leur temps sur du recrutement. Externaliser libère ce temps précieux pour le produit et le business.",
+            "Chez nos clients seed et série A, le recrutement est l'un des premiers postes de temps des fondateurs. Externaliser libère ce temps pour le produit et le business.",
         },
         {
           label: "Adaptabilité",
@@ -171,8 +174,33 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
         { formula: "Recrutement clé en main", scope: "Process complet jusqu'à l'intégration", price: "2 000-3 500 €/mois" },
         { formula: "Rétention & culture", scope: "Onboarding + suivi intégration + culture RH", price: "1 500-2 500 €/mois" },
       ],
-      note: "Forfait mensuel, sans commission de placement. Engagement minimum 3 mois.",
+      // FACTS (2026-09-01) — « engagement minimum 3 mois » contredisait la règle
+      // contractuelle unique du site (facts.ts, ENGAGEMENT) : aucune durée
+      // minimale, préavis de 30 jours.
+      note: "Forfait mensuel, sans commission de placement, sans durée d'engagement minimale (préavis de 30 jours).",
     },
+    faq: [
+      {
+        question: "Combien de temps dure un recrutement externalisé ?",
+        answer:
+          "Le process se déroule en quatre phases : cadrage la première semaine, sourcing actif des semaines 2 à 4, sélection des semaines 3 à 6, puis suivi de l'intégration sur les trois premiers mois. Un profil courant est présenté en quelques semaines ; un profil senior ou rare prend plus de temps, et nous le disons au cadrage.",
+      },
+      {
+        question: "Facturez-vous une commission de placement ?",
+        answer:
+          "Non. La prestation est un forfait mensuel selon la formule — sourcing, recrutement clé en main, ou rétention et culture — sans commission au placement, sans durée d'engagement minimale (préavis de 30 jours).",
+      },
+      {
+        question: "Quels profils recrutez-vous ?",
+        answer:
+          "Des profils tech, produit, commerciaux et finance pour des startups et PME en croissance, en France et à Barcelone. Les profils seniors font l'objet d'un headhunting ciblé plutôt que d'une simple diffusion d'annonce.",
+      },
+      {
+        question: "Comment se passe l'intégration du nouveau collaborateur ?",
+        answer:
+          "Nous suivons l'onboarding avec un plan d'intégration à 30, 60 et 90 jours, des points de suivi réguliers et un retour au manager. L'objectif est un collaborateur opérationnel vite, et qui reste.",
+      },
+    ],
     cta: {
       heading: "Vous recrutez sur les 6 prochains mois ?",
       body: "Parlons de votre plan de recrutement. Notre équipe vous aide à structurer votre process et à attirer les talents adaptés à votre culture.",
@@ -190,7 +218,7 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
     breadcrumb: "Gestion de la Paie & Charges Sociales",
     intro: [
       "La paie est le cœur financier et social de votre entreprise. Un bulletin erroné, une DSN rejetée, un calcul de charges incorrect — chaque erreur peut coûter cher en pénalités, en temps de correction et en confiance des salariés. Pour les PME et startups sans RH dédié, la gestion de la paie devient vite un casse-tête complexe : conventions collectives, avantages salariés, provisions, déclarations sociales…",
-      "Chez Iter Advisors, nous gérons la paie de plus de 200 salariés chaque mois pour nos clients. Notre équipe maîtrise les outils modernes comme PayFit et Silae, connaît les spécificités des CCN tech et startups, et assure une conformité sociale sans faille.",
+      "Chez Iter Advisors, nous gérons chaque mois la paie de nos clients. Notre équipe maîtrise les outils modernes comme PayFit et Silae, connaît les spécificités des CCN tech et startups, et assure une conformité sociale sans faille.",
     ],
     whatIs: {
       heading: "Qu'est-ce que la gestion de la paie externalisée ?",
@@ -211,9 +239,10 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
     whyOutsource: {
       heading: "Pourquoi externaliser la paie ?",
       benefits: [
-        { label: "Zéro erreur", description: "Taux d'erreur de paie < 0,5%. Double validation systématique et outils automatisés éliminent les erreurs récurrentes." },
+        // FACTS (2026-09-01) — « taux d'erreur < 0,5 % » sans source.
+        { label: "Fiabilité", description: "Double validation systématique avant envoi et outils automatisés : les erreurs récurrentes disparaissent, et celles qui restent sont vues avant le salarié." },
         { label: "Conformité garantie", description: "Veille réglementaire permanente : taux de cotisation, évolutions légales (TEPA, ancienneté, forfait jours). Vous ne manquez jamais une échéance." },
-        { label: "Gain de temps considérable", description: "Le traitement manuel de la paie pour 20 salariés mobilise 2 à 3 jours par mois. Externalisé : quelques heures de validation de votre côté." },
+        { label: "Gain de temps considérable", description: "Le traitement manuel de la paie mobilise plusieurs jours par mois dès quelques dizaines de salariés. Externalisé : quelques heures de validation de votre côté." },
         { label: "Sécurité juridique", description: "DSN déclarées dans les temps, contrats respectant la législation, procédures de licenciement encadrées. Accompagnement en cas de contrôle URSSAF." },
         { label: "Satisfaction salariée", description: "Bulletins clairs, portail collaborateur accessible, réponses rapides aux questions — des salariés satisfaits restent." },
       ],
@@ -242,7 +271,30 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
         { formula: "Paie complexe (Silae)", scope: "CCN rare, multi-conventions, gestion temps", price: "60-90 €/salarié/mois" },
         { formula: "Accompagnement social", scope: "Conformité, contrôles, veille", price: "500-1 500 €/mois" },
       ],
+      note: "Forfait mensuel, sans durée d'engagement minimale (préavis de 30 jours).",
     },
+    faq: [
+      {
+        question: "Quels outils de paie utilisez-vous ?",
+        answer:
+          "PayFit pour une paie standard (5 à 50 salariés, convention collective courante) et Silae pour une paie complexe : conventions rares, multi-conventions, gestion des temps. Nous paramétrons l'outil avec vos spécificités et migrons l'historique avant la première paie.",
+      },
+      {
+        question: "Qui valide les bulletins avant l'envoi ?",
+        answer:
+          "Vous nous transmettez les éléments variables du mois (absences, primes, heures supplémentaires) ; nous établissons les bulletins, les soumettons à une double validation, puis déclarons la DSN. Vous gardez la main sur les éléments, nous portons la production et la conformité.",
+      },
+      {
+        question: "Gérez-vous la paie de salariés en France et en Espagne ?",
+        answer:
+          "Oui. Notre équipe franco-espagnole structure la paie des deux pays, avec leurs réglementations respectives, et produit un reporting RH unifié pour la direction.",
+      },
+      {
+        question: "Que se passe-t-il en cas de contrôle URSSAF ?",
+        answer:
+          "Nous vous accompagnons pendant le contrôle : dossier documenté, réponses aux demandes, suivi des échéances. La conformité se prépare en amont, par la veille réglementaire et la mise à jour des paramètres à chaque évolution des taux.",
+      },
+    ],
     cta: {
       heading: "La paie de votre équipe mérite l'excellence",
       body: "Confiez-nous la gestion de vos bulletins et déclarations sociales — nos experts RH assurent une conformité sans faille.",
@@ -254,12 +306,13 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
     meta: {
       title: "Formation & Développement des équipes — Iter Advisors",
       description:
-        "Plan de formation structuré pour startups et PME : diagnostic, sourcing OPCO/CPF, animation, mesure du ROI. Rétention talents +25%, productivité +20-30%.",
+        // FACTS (2026-09-01) — « rétention +25 %, productivité +20-30 % » sans source.
+        "Plan de formation structuré pour startups et PME : diagnostic des compétences, sourcing et financement OPCO/CPF, animation de sessions, mesure de l'impact à 30 et 90 jours.",
     },
     h1: "Formation & Développement des équipes — Iter Advisors",
     breadcrumb: "Formation & Développement",
     intro: [
-      "Dans une économie où les compétences techniques évoluent tous les 18 à 24 mois, la formation n'est plus un avantage — c'est une nécessité stratégique. Les startups qui investissent dans le développement de leurs équipes retiennent leurs talents 2,5 fois plus longtemps et augmentent leur productivité de 20 à 30%.",
+      "Dans une économie où les compétences techniques se renouvellent en quelques années, la formation n'est plus un avantage — c'est une nécessité stratégique. Les startups qui investissent dans le développement de leurs équipes retiennent mieux leurs talents et gagnent en productivité.",
       "Mais pour les PME et startups sans DRH, organiser la formation devient un exercice complexe : identification des besoins, choix des programmes, budget, suivi des heures CPF, mesure de l'impact… Chez Iter Advisors, nous structurons des plans de formation adaptés à la réalité des startups en croissance — pragmatiques, orientés résultats, et alignés avec vos objectifs business.",
     ],
     whatIs: {
@@ -279,9 +332,10 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
     whyOutsource: {
       heading: "Pourquoi investir dans le développement des équipes ?",
       benefits: [
-        { label: "Rétention des talents", description: "94% des salariés restent plus longtemps dans une entreprise qui investit dans leur développement. Turnover post-formation réduit de 25%." },
-        { label: "Productivité accrue", description: "Un développeur formé aux bonnes pratiques code 30% plus vite avec moins de bugs. Un manager formé à la délégation gagne 5 heures par semaine." },
-        { label: "Employer branding", description: "Une politique de formation structurée est un argument de poids pour attirer des profils seniors. 60% des candidats tech interrogent sur le budget formation en entretien." },
+        // FACTS (2026-09-01) — « 94 % », « 25 % », « 30 % plus vite », « 5 heures », « 60 % » : sans source.
+        { label: "Rétention des talents", description: "Un plan de formation visible est l'un des premiers leviers de rétention : les salariés restent là où ils progressent." },
+        { label: "Productivité accrue", description: "Un développeur formé aux bonnes pratiques produit moins de bugs ; un manager formé à la délégation récupère du temps chaque semaine." },
+        { label: "Employer branding", description: "Une politique de formation structurée est un argument de poids pour attirer des profils seniors — les candidats tech posent la question du budget formation en entretien." },
         { label: "Agilité organisationnelle", description: "Des équipes polyvalentes s'adaptent plus vite aux changements. La formation cross-fonctionnelle réduit les dépendances individuelles." },
       ],
     },
@@ -309,7 +363,30 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
         { formula: "Accompagnement mensuel", scope: "Plan de formation + sourcing + suivi", price: "1 200-2 000 €/mois" },
         { formula: "Formations internes", scope: "Animation de sessions sur mesure", price: "Sur devis" },
       ],
+      note: "Forfait mensuel ou mission one-shot, sans durée d'engagement minimale (préavis de 30 jours).",
     },
+    faq: [
+      {
+        question: "Comment financer les formations de mon équipe ?",
+        answer:
+          "Par votre OPCO et le CPF des salariés, selon la formation et votre convention collective. Nous montons les dossiers, rédigeons les conventions de formation et tenons le registre : la gestion administrative fait partie de l'accompagnement.",
+      },
+      {
+        question: "Animez-vous des formations en interne ?",
+        answer:
+          "Oui, des sessions sur mesure — onboarding culturel, productivité, communication, management de premier niveau — animées chez vous ou à distance, chiffrées sur devis.",
+      },
+      {
+        question: "Comment mesurez-vous l'impact d'une formation ?",
+        answer:
+          "À 30 et 90 jours après la session : application des acquis observée par le manager, effet sur la performance de l'équipe, et ajustement du plan si nécessaire. Une formation qui ne change rien au poste ne sera pas reconduite.",
+      },
+      {
+        question: "Par où commencer si nous n'avons aucun plan de formation ?",
+        answer:
+          "Par le diagnostic : un audit des compétences par équipe et par personne, qui identifie les savoir-faire critiques, les points de fragilité et les potentiels, puis un plan annuel avec budget et calendrier. C'est la formule « Diagnostic & plan », en one-shot.",
+      },
+    ],
     cta: {
       heading: "Vos équipes sont votre actif le plus précieux",
       body: "Investissez dans leur développement avec un plan de formation structuré et mesurable.",
@@ -321,12 +398,13 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
     meta: {
       title: "Conformité & Droit du Travail externalisé | Iter Advisors",
       description:
-        "Sécurisez vos décisions RH : contrats, règlement intérieur, ruptures, CSE, prud'hommes. Veille réglementaire, taux de victoire prud'homale 85%.",
+        // FACTS (2026-09-01) — « taux de victoire prud'homale 85 % » sans source.
+        "Sécurisez vos décisions RH : contrats, règlement intérieur, ruptures, CSE, prud'hommes. Veille réglementaire et procédures documentées, par une équipe RH opérationnelle.",
     },
     h1: "Conformité & Droit du Travail externalisé — Iter Advisors",
     breadcrumb: "Conformité & Droit du Travail",
     intro: [
-      "Le droit du travail français compte plus de 10 000 pages de textes réglementaires. Pour un dirigeant de startup ou de PME, naviguer dans cette complexité sans expert RH dédié est un défi permanent — et les erreurs coûtent cher : litiges prud'homaux (coût moyen 15 000 €), pénalités URSSAF, amendes pour non-conformité…",
+      "Le droit du travail français est dense et évolue en permanence. Pour un dirigeant de startup ou de PME, naviguer dans cette complexité sans expert RH dédié est un défi permanent — et les erreurs coûtent cher : litiges prud'homaux, pénalités URSSAF, amendes pour non-conformité…",
       "Chez Iter Advisors, nous assurons la conformité sociale de nos clients comme un fondamental. Notre équipe maîtrise le droit du travail, anticipe les évolutions réglementaires et sécurise juridiquement chaque décision RH.",
     ],
     whatIs: {
@@ -351,7 +429,7 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
       benefits: [
         { label: "Sécurité juridique", description: "Chaque décision RH est encadrée et documentée. Vous prenez des décisions en connaissance de cause, avec une traçabilité complète." },
         { label: "Anticipation réglementaire", description: "Loi télétravail, directive Rixain, évolutions du forfait jours… Nous surveillons les évolutions et préconisons les ajustements 3 à 6 mois avant les échéances." },
-        { label: "Réduction des risques prud'homaux", description: "Contrat bien rédigé, procédure disciplinaire respectée, entretien préalable correctement mené. Taux de victoire prud'homale de 85% chez nos clients." },
+        { label: "Réduction des risques prud'homaux", description: "Contrat bien rédigé, procédure disciplinaire respectée, entretien préalable correctement mené : la plupart des contentieux se perdent sur la forme, et c'est la forme que nous sécurisons." },
         { label: "Sérénité du dirigeant", description: "Vous n'avez plus à vous demander si votre règlement intérieur est à jour ou si votre licenciement tiendra la route." },
       ],
     },
@@ -378,7 +456,30 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
         { formula: "Accompagnement juridique", scope: "Conseil + rédaction actes + litiges", price: "1 500-3 000 €/mois" },
         { formula: "Intervention ponctuelle", scope: "Licenciement, rupture, négociation", price: "500-2 000 € (one-shot)" },
       ],
+      note: "Forfait mensuel ou intervention ponctuelle, sans durée d'engagement minimale (préavis de 30 jours).",
     },
+    faq: [
+      {
+        question: "Êtes-vous un cabinet d'avocats ?",
+        answer:
+          "Non. Nous sommes une équipe RH opérationnelle : nous encadrons et documentons les procédures, rédigeons les actes courants et préparons les dossiers. Lorsqu'un contentieux exige un avocat, nous travaillons avec votre conseil ou vous orientons vers un confrère spécialisé.",
+      },
+      {
+        question: "Que couvre la veille réglementaire ?",
+        answer:
+          "Un point mensuel sur les évolutions qui vous concernent — télétravail, égalité de rémunération, forfait jours, taux et seuils — avec les ajustements à prévoir, préconisés plusieurs mois avant l'échéance plutôt que le jour même.",
+      },
+      {
+        question: "Pouvez-vous intervenir ponctuellement, sans abonnement ?",
+        answer:
+          "Oui : licenciement, rupture conventionnelle, négociation de sortie ou mise en conformité d'un lot de contrats se traitent en intervention ponctuelle, chiffrée au cadrage. L'accompagnement mensuel s'adresse aux entreprises qui veulent une veille continue.",
+      },
+      {
+        question: "Quels documents obligatoires vérifiez-vous ?",
+        answer:
+          "Le registre unique du personnel, le document unique d'évaluation des risques (DUERP), les affichages obligatoires, le règlement intérieur dès le seuil applicable, et la cohérence des contrats de travail avec la convention collective.",
+      },
+    ],
     cta: {
       heading: "Ne laissez pas la complexité du droit du travail freiner votre croissance",
       body: "Nos experts RH sécurisent vos décisions et vous permettent de vous concentrer sur votre business.",

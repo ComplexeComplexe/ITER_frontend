@@ -9,6 +9,8 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import ClientTestimonials from "@/components/ClientTestimonials";
+import PageByline from "@/components/PageByline";
+import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
 
 interface ComptabiliteExternalisationPageProps {
   locale: Locale;
@@ -83,9 +85,29 @@ export default function ComptabiliteExternalisationPage({
           </div>
 
           <div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6 sm:mb-8 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-4 leading-tight">
               {t.h1}
             </h1>
+            <PageByline locale={locale} author={FINANCE_AUTHOR} className="mb-6 sm:mb-8" />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(
+                  editorialWebPageSchema({
+                    path:
+                      locale === "es"
+                        ? "/es/services/externalizar-contabilidad"
+                        : locale === "en"
+                          ? "/en/services/outsource-your-accounting"
+                          : "/services/comptabilite-externalisation",
+                    name: t.h1,
+                    description: t.meta?.description ?? t.h1,
+                    locale,
+                    author: FINANCE_AUTHOR,
+                  })
+                ),
+              }}
+            />
             <div className="space-y-4 mb-8">
               <p className="text-base sm:text-lg text-foreground/80 font-medium leading-relaxed">
                 La comptabilité reste l&apos;un des premiers points de friction pour un

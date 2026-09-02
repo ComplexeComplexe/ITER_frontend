@@ -11,6 +11,8 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import StrapiBlocks from "@/components/StrapiBlocks";
 import type { StrapiServiceSinglePage, StrapiBlock, CmsNavItem } from "@/lib/strapi";
 import { serviceSchema, faqPageSchema } from "@/lib/schemas";
+import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
+import PageByline from "@/components/PageByline";
 
 const breadcrumbsByLocale: Record<
   Locale,
@@ -114,6 +116,22 @@ export default function ServiceSinglePage({
         }}
       />
 
+      {/* WebPage JSON-LD — auteur et dates (REDESIGN-P4, 2026-09-01) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            editorialWebPageSchema({
+              path: serviceUrl,
+              name: page.heroTitle || breadcrumbTitle,
+              description: page.heroSubtitle || breadcrumbTitle,
+              locale,
+              author: FINANCE_AUTHOR,
+            })
+          ),
+        }}
+      />
+
       {/* FAQPage JSON-LD */}
       {page.faq && page.faq.length > 0 && (
         <script
@@ -152,10 +170,11 @@ export default function ServiceSinglePage({
               {page.heroTitle}
             </h1>
             {page.heroSubtitle && (
-              <p className="text-base sm:text-lg text-foreground/80 font-medium leading-relaxed mb-6 sm:mb-8">
+              <p className="text-base sm:text-lg text-foreground/80 font-medium leading-relaxed mb-4">
                 {page.heroSubtitle}
               </p>
             )}
+            <PageByline locale={locale} author={FINANCE_AUTHOR} className="mb-6 sm:mb-8" />
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 href={BOOKING_URL}

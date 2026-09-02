@@ -57,6 +57,9 @@ const VALEURS_INTERDITES = [
   { re: /2 ?000 (?:à|–|-) ?8 ?000 ?(?:€|EUR)/, sujet: "grille tarifaire (3 000 à 8 000 € HT/mois)" },
   { re: /2 ?000 ?(?:€|EUR) ?\/ ?mois[^.]{0,40}?(?:7|8) ?000/, sujet: "grille tarifaire (3 000 à 8 000 € HT/mois)" },
   { re: /engagement (?:de )?12 mois/i, sujet: "engagement (aucune durée minimale)" },
+  // REDESIGN-P4 (2026-09-01) — « Engagement minimum 3 mois » sur la page
+  // recrutement échappait au motif « engagement de 3 mois » (ordre des mots).
+  { re: /engagement minimum (?:de )?\d+ mois/i, sujet: "engagement (aucune durée minimale)" },
   { re: /TJM ?(?:de |: ?|EUR ?|€ ?)?(?:750|800|900)|(?:750|800|900) ?(?:€|EUR)? ?(?:à|–|-|et) ?1 ?[012][05]0 ?(?:€|EUR)? ?(?:HT ?)?(?:par jour|\/ ?jour|\/ ?día|por día)/i, sujet: "TJM client (retainer mensuel, missions ponctuelles sur devis)" },
 ];
 
@@ -253,7 +256,13 @@ for (const abs of urls) {
   // REDESIGN-P3 (2026-09-01) — glossaire (Article) et fiches outils (Review)
   // entrent dans le périmètre ; les quatre pages de catégorie d'outils, qui
   // sont des listes, non.
-  if (/^\/ressources\/(blog|fiscalite|ia-finance|glossaire|outils\/(?!gestion-depenses|logiciels-))\//.test(path)) {
+  // REDESIGN-P4 (2026-09-01) — les pages de services (trois locales) entrent
+  // aussi dans le périmètre, via un schéma WebPage portant auteur et dates ;
+  // les hubs /services restent des listes.
+  if (
+    /^\/ressources\/(blog|fiscalite|ia-finance|glossaire|outils\/(?!gestion-depenses|logiciels-))\//.test(path) ||
+    /^\/(?:(?:en|es)\/)?services\/[a-z]/.test(path)
+  ) {
     let auteurPerson = false;
     let auteurOrganisationNomme = null;
     let dateModifiee = false;
@@ -262,7 +271,7 @@ for (const abs of urls) {
         const d = JSON.parse(bloc);
         for (const n of [].concat(d["@graph"] ?? [d])) {
           const t = [].concat(n["@type"] ?? []).join("");
-          if (!/Article|BlogPosting|Review/.test(t)) continue;
+          if (!/Article|BlogPosting|Review|WebPage/.test(t)) continue;
           if (n.dateModified) dateModifiee = true;
           for (const a of [].concat(n.author ?? [])) {
             if (a["@type"] === "Person") auteurPerson = true;
