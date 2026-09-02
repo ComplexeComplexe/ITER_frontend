@@ -1,76 +1,53 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
-import PageLayout from "@/components/PageLayout";
-import Breadcrumb from "@/components/Breadcrumb";
-import CTASection from "@/components/CTASection";
-import References from "@/components/References";
-import { getFiscaliteReferences } from "@/lib/content/references";
-import { faqPageSchema } from "@/lib/schemas";
 import { blogPosts } from "@/lib/content/blog-posts";
+import { transformArticleHtml } from "@/lib/blog-html-transform";
+import { extractToc, injectHeadingIds } from "@/lib/blog-toc";
+import { estimateReadMinutes } from "@/lib/blog-read-time";
+import GuideFiscalPage from "@/components/pages/GuideFiscalPage";
 
 /**
  * Pillar page of the "Fiscalité Espagne France" cocoon.
  * Created 2026-05-31 (ticket: complete fiscalite cocoon — pillars 2-5).
  *
- * Body content is sourced from the validated blog post at slug
- * "bareme-irpf-espagne-2026" in lib/content/blog-posts.ts so the
- * pillar and the corresponding /ressources/blog/<slug> article stay in
- * lockstep without duplicating the htmlContent in two places.
+ * SEO-03 (2026-08-30) — cette page rendait `bareme-irpf-espagne-2026`, une
+ * entrée de 2 600 caractères, alors que `impot-revenu-espagne` en compte
+ * 12 700 sur le même sujet. Les deux vivaient en parallèle au sitemap et se
+ * disputaient la même requête. La page garde son URL — c'est elle qui tient
+ * les 125 liens internes — et sert le contenu long ; l'ancienne URL de blog
+ * redirige ici.
  *
- * Schemas: Article (author Sébastien Doat, datePublished) + FAQPage + BreadcrumbList.
- * ProfessionalService is already site-wide via app/layout.tsx.
+ * REDESIGN-01 (2026-09-01) — rendu via GuideFiscalPage. La FAQ contenue
+ * dans le htmlContent est extraite (transformArticleHtml) et fusionnée avec
+ * celle de la page : une seule FAQ visible, un seul FAQPage JSON-LD. Au
+ * passage, l'article a été aligné sur le pilier Beckham (sanctions Modelo
+ * 720 post-CJUE 2022, règle des 25 %, autónomos depuis 2023) : il les
+ * contredisait sur trois points.
  */
 
-// SEO-03 (2026-08-30) — cette page rendait `bareme-irpf-espagne-2026`, une
-// entrée de 2 600 caractères, alors que `impot-revenu-espagne` en compte
-// 12 700 sur le même sujet : IRPF, barèmes, loi Beckham, démarches,
-// comparaison France-Espagne, erreurs fréquentes.
-//
-// Les deux vivaient en parallèle au sitemap, avec des titles quasi identiques,
-// et se disputaient la même requête — les relevés de position montrent le
-// site sortir deux fois sur « impôt sur le revenu espagne », en P6 et P7.
-//
-// Le déséquilibre était total : cette page-ci reçoit 125 liens internes (elle
-// est au pied de page, donc sur chaque page du site) mais n'était pas classée ;
-// l'article de blog en recevait 6 et portait tout le contenu. L'autorité
-// interne allait à la coquille, le fond à l'orpheline.
-//
-// La page garde donc son URL — c'est elle qui tient les liens — et sert
-// désormais le contenu long. L'ancienne URL de blog redirige ici.
 const SOURCE_SLUG = "impot-revenu-espagne";
-const PAGE_URL = "https://www.iteradvisors.com/ressources/fiscalite/impot-revenu-espagne";
-const HUB_URL = "/ressources/fiscalite-espagne-france";
+const PATH = "/ressources/fiscalite/impot-revenu-espagne";
 const PUBLISHED_DATE = "2026-05-31";
-// SEO-07 (2026-08-31) — la page affichait « mis à jour en mai » et déclarait
-// dateModified = datePublished, alors qu'elle a été substantiellement révisée
-// en août (sources primaires, contenu). Date réelle, jamais celle du build.
-const MODIFIED_DATE = "2026-08-31";
-const AUTHOR_NAME = "Sébastien Doat";
-const AUTHOR_URL = "/a-propos/sebastien-doat";
+// Date réelle de la dernière révision de fond, jamais celle du build.
+const MODIFIED_DATE = "2026-09-01";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
-  // B5 (W31c 2026-08-02) — remplace la version SEO-08 posée le 27/07, qui
-  // ouvrait sur "IRPF". Le title ouvre désormais sur "taux d'imposition en
+  // B5 (W31c 2026-08-02) — le title ouvre sur "taux d'imposition en
   // Espagne", la formulation réellement tapée et de loin la plus grosse des
   // trois requêtes du hub (1 037 impressions, position 8,62, CTR 0,29 %)
-  // contre "irpf" (379) et "irpf espagne" (255). La description conserve la
-  // fourchette chiffrée en tête, demandée par SEO-08 pour le CTR.
+  // contre "irpf" (379) et "irpf espagne" (255).
   title: "Impôt sur le revenu en Espagne : barème 2026 | Iter Advisors",
   description: "Barème IRPF 2026 : de 19 % à 47 % tranche par tranche, taux réels par région, comparaison avec la France et cas des résidents français.",
-  path: "/ressources/fiscalite/impot-revenu-espagne",
+  path: PATH,
   // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google
-  // doesn\'t crawl synthetic /en|/es URLs that 404.
+  // doesn't crawl synthetic /en|/es URLs that 404.
   disableHreflang: ["en", "es"],
 });
 
-/* FAQ derived from the validated content of the source blog article. The
-   visible <details> accordion and the FAQPage JSON-LD render from the same
-   array so they stay 1:1. */
-const FAQ: { question: string; answer: string }[] = [
+/* FAQ propre à la page ; les Q/R de l'article source s'y ajoutent au rendu. */
+const FAQ = [
   {
     question: "Quel est le barème de l'IRPF en Espagne en 2026 ?",
     answer:
@@ -89,183 +66,114 @@ const FAQ: { question: string; answer: string }[] = [
 ];
 
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("fr");
   const post = blogPosts.fr[SOURCE_SLUG];
   if (!post?.htmlContent) {
     // Fail fast in dev if the blog post is removed or renamed in
     // lib/content/blog-posts.ts so this pillar page doesn't silently render empty.
-    throw new Error(`Missing blog post "${SOURCE_SLUG}" for pillar page ${PAGE_URL}`);
+    throw new Error(`Missing blog post "${SOURCE_SLUG}" for pillar page ${PATH}`);
   }
-
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "@id": `${PAGE_URL}#article`,
-        url: PAGE_URL,
-        headline: post.h1,
-        description:
-          "Tout savoir sur l'IRPF en Espagne en 2026 : barème étatique 19-47 %, part autonome par région, déductions, revenus de l'épargne. Guide complet.",
-        datePublished: PUBLISHED_DATE,
-        dateModified: MODIFIED_DATE,
-        inLanguage: "fr-FR",
-        author: {
-          "@type": "Person",
-          name: AUTHOR_NAME,
-          url: `https://www.iteradvisors.com${AUTHOR_URL}`,
-        },
-        publisher: { "@id": "https://www.iteradvisors.com/#organization" },
-        isPartOf: {
-          "@type": "CollectionPage",
-          "@id": `https://www.iteradvisors.com${HUB_URL}#collection`,
-        },
-      },
-      faqPageSchema(FAQ),
-      // Pas de BreadcrumbList à la main : le composant <Breadcrumb>
-      // en émet déjà un, cohérent site-wide (2026-08-02).
-    ],
-  };
+  const withIds = injectHeadingIds(post.htmlContent);
+  // La FAQ de l'article est retirée du corps et fusionnée avec celle de la
+  // page : un seul bloc visible, un seul FAQPage. Le lien de sortie qui la
+  // suivait est repris dans le CTA.
+  const faqStart = withIds.search(/<h2[^>]*id=["']faq["']/i);
+  const bodyOnly = faqStart >= 0 ? withIds.slice(0, faqStart) : withIds;
+  const { html } = transformArticleHtml(bodyOnly);
+  const { faqs: articleFaqs } = transformArticleHtml(withIds);
+  const toc = extractToc(bodyOnly).filter((h) => h.level === 2);
 
   return (
-    <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-
-      {/* Hero */}
-      <section className="bg-background pt-32 pb-12 sm:pb-16">
-        <div className="container max-w-3xl">
-          <Breadcrumb
-            locale="fr"
-            items={[
-              { label: "Ressources", href: "/ressources" },
-              { label: "Fiscalité Espagne France", href: HUB_URL },
-              { label: "Impôt sur le revenu" },
-            ]}
-          />
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6 mt-4 sm:mt-6 leading-tight">
-            {post.h1}
-          </h1>
-          <p className="text-xs text-muted-foreground mb-6">
-            Par{" "}
-            <Link href={AUTHOR_URL} rel="author" className="text-iter-violet hover:underline">
-              {AUTHOR_NAME}
+    <GuideFiscalPage
+      path={PATH}
+      breadcrumbLabel="Impôt sur le revenu"
+      h1={post.h1}
+      description="Tout savoir sur l'IRPF en Espagne en 2026 : barème étatique 19-47 %, part autonome par région, déductions, revenus de l'épargne. Guide complet."
+      author={{ name: "Sébastien Doat", url: "/a-propos/sebastien-doat" }}
+      publishedDate={PUBLISHED_DATE}
+      modifiedDate={MODIFIED_DATE}
+      modifiedLabel="1er septembre 2026"
+      badge="Mis à jour en septembre 2026"
+      readMinutes={estimateReadMinutes(html)}
+      dek={
+        <>
+          L&apos;IRPF — <em>Impuesto sobre la Renta de las Personas Físicas</em> — est l&apos;impôt
+          progressif sur le revenu des résidents fiscaux espagnols. Son barème général va de{" "}
+          <strong className="text-foreground">19 % à 47 %</strong>, mais la moitié du taux est fixée
+          par la communauté autonome : à revenu égal, un contribuable paie sensiblement plus à
+          Barcelone qu&apos;à Madrid. Ce guide détaille les tranches 2026, le régime des impatriés
+          (loi Beckham), la déclaration annuelle et la comparaison poste par poste avec la France.
+        </>
+      }
+      heroImage={{
+        src: "https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1200&q=80",
+        alt: "Impôt sur le revenu en Espagne (IRPF) : barème 2026",
+      }}
+      kpis={[
+        { value: "19–47 %", label: "barème général 2026, six tranches" },
+        { value: "24 %", label: "taux fixe sous loi Beckham" },
+        { value: "avril–juin", label: "campagne de la renta (Modelo 100)" },
+        { value: "8–12 pts", label: "de charges patronales en moins qu'en France" },
+      ]}
+      essentiel={{
+        title: "L'essentiel de l'IRPF en 5 points",
+        items: [
+          <>
+            Un impôt <strong className="text-foreground">progressif en six tranches</strong>, de 19 %
+            à 47 % au barème général — dont une moitié est fixée par la communauté autonome,
+            d&apos;où des écarts marqués entre Madrid et la Catalogne.
+          </>,
+          <>
+            Résident fiscal (183 jours, ou centre d&apos;intérêts économiques en Espagne) = imposé sur
+            ses revenus mondiaux, avec une déclaration annuelle d&apos;avril à juin (Modelo 100).
+          </>,
+          <>
+            Les revenus de l&apos;épargne — dividendes, plus-values — suivent un barème distinct, de
+            19 % à 28 %.
+          </>,
+          <>
+            <strong className="text-foreground">Loi Beckham</strong> : 24 % fixe pendant 6 ans sur
+            les revenus du travail, sans abattement — avantageuse à partir d&apos;environ 66 à 70 000 €
+            de salaire.
+          </>,
+          <>
+            Face à la France, regarder le coût employeur total : les charges patronales sont 8 à 12
+            points plus basses en Espagne, ce qui pèse souvent plus que l&apos;IRPF lui-même.
+          </>,
+        ],
+      }}
+      toc={toc}
+      html={html}
+      faqTitle="Questions fréquentes sur l'impôt sur le revenu en Espagne"
+      faq={[...FAQ, ...articleFaqs]}
+      cta={{
+        title: "Vous installer — ou installer une équipe — en Espagne ?",
+        text:
+          "Barème, communauté autonome, loi Beckham, coût employeur : un diagnostic de 30 minutes suffit à chiffrer votre situation et à sécuriser le calendrier.",
+        footnote: (
+          <>
+            Découvrir{" "}
+            <Link href="/daf-externalise-barcelone" className="underline hover:text-white">
+              nos DAF externalisés à Barcelone
             </Link>
-            {" · "}
-            <time dateTime={MODIFIED_DATE}>Mis à jour le 31 août 2026</time>
-          </p>
-        </div>
-      </section>
-
-      {/* Body — htmlContent from the source blog article */}
-      <section className="bg-background py-2 sm:py-4">
-        <div className="container max-w-3xl">
-          <div
-            className="prose prose-sm sm:prose-base max-w-none prose-headings:font-heading prose-headings:text-foreground prose-a:text-iter-violet prose-strong:text-foreground prose-li:marker:text-iter-violet"
-            dangerouslySetInnerHTML={{ __html: post.htmlContent }}
-          />
-        </div>
-      </section>
-
-      <section className="bg-background py-12 sm:py-16">
-        <div className="container max-w-3xl space-y-12 sm:space-y-14">
-          {/* FAQ — visible accordion synced 1:1 with FAQPage JSON-LD */}
-          <div id="faq" className="scroll-mt-24">
-            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 leading-tight">
-              Questions fréquentes
-            </h2>
-            <div className="space-y-3">
-              {FAQ.map((q) => (
-                <details
-                  key={q.question}
-                  className="group rounded-lg border border-border/60 bg-background"
-                >
-                  <summary className="cursor-pointer p-4 sm:p-5 font-semibold text-foreground flex items-start justify-between gap-3 list-none">
-                    <h3 className="text-base sm:text-lg font-heading m-0">{q.question}</h3>
-                    <span
-                      aria-hidden
-                      className="text-iter-violet shrink-0 transition-transform group-open:rotate-45"
-                    >
-                      +
-                    </span>
-                  </summary>
-                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    <p>{q.answer}</p>
-                  </div>
-                </details>
-              ))}
-            </div>
-          </div>
-
-          {/* Pour aller plus loin */}
-          <div className="rounded-3xl border border-border/60 bg-muted/30 p-6 sm:p-8">
-            <p className="text-base sm:text-lg font-semibold text-foreground mb-3">
-              Pour aller plus loin
-            </p>
-            <ul className="space-y-2 list-none pl-0">
-              {/* MAILLAGE-T7 (2026-08-31) — le cluster fiscalité était bien maillé
-
-                  en interne mais coupé de l'offre : aucun lien vers le cabinet qui
-
-                  traite précisément ces situations depuis Barcelone. */}
-
-              <li className="flex gap-2.5 text-sm sm:text-base">
-
-                <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-
-                <Link href="/daf-externalise-barcelone" className="text-iter-violet hover:underline">
-
-                  DAF externalisé à Barcelone — pilotage financier France-Espagne
-
-                </Link>
-
-              </li>
-              <li className="flex gap-2.5 text-sm sm:text-base">
-                <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-                <Link href={HUB_URL} className="text-iter-violet hover:underline">
-                  Hub : Fiscalité Espagne France — guide complet
-                </Link>
-              </li>
-              {/* SEO-ULT §4b (2026-08-15) — un lien « Article blog » pointait
-                  ici vers /ressources/blog/${SOURCE_SLUG}, qui redirige vers
-                  cette page même : le lecteur revenait où il était. Cette page
-                  EST l'article, la ligne n'avait plus d'objet. */}
-            </ul>
-          </div>
-
-          {/* CTA */}
-          <aside className="rounded-3xl bg-iter-violet/5 border-l-4 border-iter-violet p-6 sm:p-8">
-            <p className="text-base sm:text-lg font-semibold text-foreground mb-2">
-              Une question fiscale franco-espagnole ?
-            </p>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              Nos experts vous accompagnent pour clarifier votre situation et
-              sécuriser votre structuration. Premier échange offert de 30 minutes.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
-            >
-              Demander un diagnostic
-              <ArrowRight size={16} aria-hidden />
-            </Link>
-          </aside>
-        </div>
-      </section>
-
-      {/* GEO-02 (2026-08-26) — cette page décrivait des obligations
-
-          fiscales, leurs seuils et leurs sanctions sans citer une seule
-
-          source. Les références sont vérifiées une à une dans
-
-          lib/content/references.ts. */}
-
-      <References locale="fr" refs={getFiscaliteReferences("impot-revenu-espagne")} />
-
-      <CTASection locale="fr" />
-    </PageLayout>
+            .
+          </>
+        ),
+      }}
+      related={[
+        {
+          href: "/ressources/fiscalite/beckham-law",
+          img: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80",
+          alt: "Loi Beckham en Espagne : le régime des impatriés",
+          title: "Loi Beckham : conditions 2026, simulation salaire par salaire et limites du régime",
+        },
+        {
+          href: "/ressources/blog/regimes-fiscaux-france-vs-espagne",
+          img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80",
+          alt: "Comparaison des régimes fiscaux France et Espagne",
+          title: "Fiscalité France vs Espagne : IS, charges sociales, TVA — le comparatif complet",
+        },
+      ]}
+      referencesKey="impot-revenu-espagne"
+    />
   );
 }

@@ -1,15 +1,10 @@
 import { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
-import PageLayout from "@/components/PageLayout";
-import Breadcrumb from "@/components/Breadcrumb";
-import CTASection from "@/components/CTASection";
-import References from "@/components/References";
-import { getFiscaliteReferences } from "@/lib/content/references";
-import { faqPageSchema } from "@/lib/schemas";
 import { blogPosts } from "@/lib/content/blog-posts";
+import { transformArticleHtml } from "@/lib/blog-html-transform";
+import { extractToc, injectHeadingIds } from "@/lib/blog-toc";
+import { estimateReadMinutes } from "@/lib/blog-read-time";
+import GuideFiscalPage from "@/components/pages/GuideFiscalPage";
 
 /**
  * Pillar page of the "Fiscalité Espagne France" cocoon.
@@ -20,35 +15,30 @@ import { blogPosts } from "@/lib/content/blog-posts";
  * pillar and the corresponding /ressources/blog/<slug> article stay in
  * lockstep without duplicating the htmlContent in two places.
  *
- * Schemas: Article (author Florent Greth, datePublished) + FAQPage + BreadcrumbList.
- * ProfessionalService is already site-wide via app/layout.tsx.
+ * REDESIGN-01 (2026-09-01) — rendu via GuideFiscalPage (voir ce composant
+ * pour le pourquoi). Le corps garde sa source unique ; le gabarit ajoute
+ * chapô, image, chiffres clés, « L'essentiel », sommaire et articles liés.
  */
 
 const SOURCE_SLUG = "modelo-720-declaration-biens-etranger";
-const PAGE_URL = "https://www.iteradvisors.com/ressources/fiscalite/modelo-720";
-const HUB_URL = "/ressources/fiscalite-espagne-france";
+const PATH = "/ressources/fiscalite/modelo-720";
 const PUBLISHED_DATE = "2026-05-31";
-// SEO-07 (2026-08-31) — la page affichait « mis à jour en mai » et déclarait
-// dateModified = datePublished, alors qu'elle a été substantiellement révisée
-// en août (sources primaires, contenu). Date réelle, jamais celle du build.
-const MODIFIED_DATE = "2026-08-31";
-const AUTHOR_NAME = "Florent Greth";
-const AUTHOR_URL = "/a-propos/florent-greth";
+// Date réelle de la dernière révision de fond (chiffres clés + essentiel),
+// jamais celle du build.
+const MODIFIED_DATE = "2026-09-01";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
   title: "Modelo 720 Espagne : biens à l'étranger | Iter Advisors",
   description: "Résident fiscal en Espagne ? Déclarez vos comptes, assurances-vie et biens immobiliers situés en France via le Modelo 720 si leur valeur dépasse 50 000 €.",
-  path: "/ressources/fiscalite/modelo-720",
+  path: PATH,
   // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google
-  // doesn\'t crawl synthetic /en|/es URLs that 404.
+  // doesn't crawl synthetic /en|/es URLs that 404.
   disableHreflang: ["en", "es"],
 });
 
-/* FAQ derived from the validated content of the source blog article. The
-   visible <details> accordion and the FAQPage JSON-LD render from the same
-   array so they stay 1:1. */
-const FAQ: { question: string; answer: string }[] = [
+/* FAQ : le visible et le FAQPage JSON-LD sont générés depuis ce tableau. */
+const FAQ = [
   {
     question: "Qui doit déclarer le Modelo 720 en Espagne ?",
     answer:
@@ -64,186 +54,112 @@ const FAQ: { question: string; answer: string }[] = [
     answer:
       "Suite à la condamnation par la CJUE jugeant les sanctions initiales \"disproportionnées\", les amendes forfaitaires fixes extrêmement lourdes ont été supprimées. Le régime général des sanctions fiscales s'applique désormais, mais l'obligation déclarative reste strictement en vigueur.",
   },
+  {
+    question: "Faut-il redéposer le Modelo 720 chaque année ?",
+    answer:
+      "Non. Une fois la première déclaration déposée, une catégorie n'est à redéclarer que si sa valeur augmente de plus de 20 000 € par rapport à la dernière déclaration, ou si vous cessez d'être titulaire d'un bien déclaré.",
+  },
+  {
+    question: "Le Modelo 720 est-il dû sous la loi Beckham ?",
+    answer:
+      "Non pour le bénéficiaire du régime des impatriés (consulta vinculante DGT V0092/2014), qui n'est pas imposé sur son revenu mondial. Le conjoint résident fiscal ordinaire reste tenu à l'obligation, et l'exemption cesse à la sortie du régime.",
+  },
 ];
 
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("fr");
   const post = blogPosts.fr[SOURCE_SLUG];
   if (!post?.htmlContent) {
     // Fail fast in dev if the blog post is removed or renamed in
     // lib/content/blog-posts.ts so this pillar page doesn't silently render empty.
-    throw new Error(`Missing blog post "${SOURCE_SLUG}" for pillar page ${PAGE_URL}`);
+    throw new Error(`Missing blog post "${SOURCE_SLUG}" for pillar page ${PATH}`);
   }
-
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "@id": `${PAGE_URL}#article`,
-        url: PAGE_URL,
-        headline: post.h1,
-        description:
-          "Résident fiscal en Espagne ? Déclarez vos comptes, assurances-vie et biens immobiliers situés en France via le Modelo 720 si leur valeur dépasse 50 000 €.",
-        datePublished: PUBLISHED_DATE,
-        dateModified: MODIFIED_DATE,
-        inLanguage: "fr-FR",
-        author: {
-          "@type": "Person",
-          name: AUTHOR_NAME,
-          url: `https://www.iteradvisors.com${AUTHOR_URL}`,
-        },
-        publisher: { "@id": "https://www.iteradvisors.com/#organization" },
-        isPartOf: {
-          "@type": "CollectionPage",
-          "@id": `https://www.iteradvisors.com${HUB_URL}#collection`,
-        },
-      },
-      faqPageSchema(FAQ),
-      // Pas de BreadcrumbList à la main : le composant <Breadcrumb>
-      // en émet déjà un, cohérent site-wide (2026-08-02).
-    ],
-  };
+  const withIds = injectHeadingIds(post.htmlContent);
+  const { html } = transformArticleHtml(withIds);
+  const toc = extractToc(withIds);
 
   return (
-    <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-
-      {/* Hero */}
-      <section className="bg-background pt-32 pb-12 sm:pb-16">
-        <div className="container max-w-3xl">
-          <Breadcrumb
-            locale="fr"
-            items={[
-              { label: "Ressources", href: "/ressources" },
-              { label: "Fiscalité Espagne France", href: HUB_URL },
-              { label: "Modelo 720" },
-            ]}
-          />
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6 mt-4 sm:mt-6 leading-tight">
-            {post.h1}
-          </h1>
-          <p className="text-xs text-muted-foreground mb-6">
-            Par{" "}
-            <Link href={AUTHOR_URL} rel="author" className="text-iter-violet hover:underline">
-              {AUTHOR_NAME}
-            </Link>
-            {" · "}
-            <time dateTime={MODIFIED_DATE}>Mis à jour le 31 août 2026</time>
-          </p>
-        </div>
-      </section>
-
-      {/* Body — htmlContent from the source blog article */}
-      <section className="bg-background py-2 sm:py-4">
-        <div className="container max-w-3xl">
-          <div
-            className="prose prose-sm sm:prose-base max-w-none prose-headings:font-heading prose-headings:text-foreground prose-a:text-iter-violet prose-strong:text-foreground prose-li:marker:text-iter-violet"
-            dangerouslySetInnerHTML={{ __html: post.htmlContent }}
-          />
-        </div>
-      </section>
-
-      <section className="bg-background py-12 sm:py-16">
-        <div className="container max-w-3xl space-y-12 sm:space-y-14">
-          {/* FAQ — visible accordion synced 1:1 with FAQPage JSON-LD */}
-          <div id="faq" className="scroll-mt-24">
-            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 leading-tight">
-              Questions fréquentes
-            </h2>
-            <div className="space-y-3">
-              {FAQ.map((q) => (
-                <details
-                  key={q.question}
-                  className="group rounded-lg border border-border/60 bg-background"
-                >
-                  <summary className="cursor-pointer p-4 sm:p-5 font-semibold text-foreground flex items-start justify-between gap-3 list-none">
-                    <h3 className="text-base sm:text-lg font-heading m-0">{q.question}</h3>
-                    <span
-                      aria-hidden
-                      className="text-iter-violet shrink-0 transition-transform group-open:rotate-45"
-                    >
-                      +
-                    </span>
-                  </summary>
-                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    <p>{q.answer}</p>
-                  </div>
-                </details>
-              ))}
-            </div>
-          </div>
-
-          {/* Pour aller plus loin */}
-          <div className="rounded-3xl border border-border/60 bg-muted/30 p-6 sm:p-8">
-            <p className="text-base sm:text-lg font-semibold text-foreground mb-3">
-              Pour aller plus loin
-            </p>
-            <ul className="space-y-2 list-none pl-0">
-              {/* MAILLAGE-T7 (2026-08-31) — le cluster fiscalité était bien maillé
-
-                  en interne mais coupé de l'offre : aucun lien vers le cabinet qui
-
-                  traite précisément ces situations depuis Barcelone. */}
-
-              <li className="flex gap-2.5 text-sm sm:text-base">
-
-                <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-
-                <Link href="/daf-externalise-barcelone" className="text-iter-violet hover:underline">
-
-                  DAF externalisé à Barcelone — pilotage financier France-Espagne
-
-                </Link>
-
-              </li>
-              <li className="flex gap-2.5 text-sm sm:text-base">
-                <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-                <Link href={HUB_URL} className="text-iter-violet hover:underline">
-                  Hub : Fiscalité Espagne France — guide complet
-                </Link>
-              </li>
-              {/* SEO-ULT §4b (2026-08-15) — un lien « Article blog » pointait
-                  ici vers /ressources/blog/${SOURCE_SLUG}, qui redirige vers
-                  cette page même : le lecteur revenait où il était. Cette page
-                  EST l'article, la ligne n'avait plus d'objet. */}
-            </ul>
-          </div>
-
-          {/* CTA */}
-          <aside className="rounded-3xl bg-iter-violet/5 border-l-4 border-iter-violet p-6 sm:p-8">
-            <p className="text-base sm:text-lg font-semibold text-foreground mb-2">
-              Une question fiscale franco-espagnole ?
-            </p>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              Nos experts vous accompagnent pour clarifier votre situation et
-              sécuriser votre structuration. Premier échange offert de 30 minutes.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
-            >
-              Demander un diagnostic
-              <ArrowRight size={16} aria-hidden />
-            </Link>
-          </aside>
-        </div>
-      </section>
-
-      {/* GEO-02 (2026-08-26) — cette page décrivait des obligations
-
-          fiscales, leurs seuils et leurs sanctions sans citer une seule
-
-          source. Les références sont vérifiées une à une dans
-
-          lib/content/references.ts. */}
-
-      <References locale="fr" refs={getFiscaliteReferences("modelo-720")} />
-
-      <CTASection locale="fr" />
-    </PageLayout>
+    <GuideFiscalPage
+      path={PATH}
+      breadcrumbLabel="Modelo 720"
+      h1={post.h1}
+      description="Résident fiscal en Espagne ? Déclarez vos comptes, assurances-vie et biens immobiliers situés en France via le Modelo 720 si leur valeur dépasse 50 000 €."
+      author={{ name: "Florent Greth", url: "/a-propos/florent-greth" }}
+      publishedDate={PUBLISHED_DATE}
+      modifiedDate={MODIFIED_DATE}
+      modifiedLabel="1er septembre 2026"
+      badge="Mis à jour en septembre 2026"
+      readMinutes={estimateReadMinutes(html)}
+      dek={
+        <>
+          Le Modelo 720 est la déclaration informative que tout résident fiscal espagnol doit
+          déposer lorsque ses biens situés hors d&apos;Espagne dépassent{" "}
+          <strong className="text-foreground">50 000 €</strong> dans l&apos;une de trois
+          catégories : comptes bancaires, valeurs et assurances-vie, immobilier. Aucun impôt
+          n&apos;en découle — mais l&apos;obligation est contrôlée, et c&apos;est celle que les
+          dirigeants français installés en Espagne oublient le plus souvent.
+        </>
+      }
+      heroImage={{
+        src: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&w=1200&q=80",
+        alt: "Modelo 720 : déclarer ses biens à l'étranger en Espagne",
+      }}
+      kpis={[
+        { value: "50 000 €", label: "seuil, par catégorie de biens" },
+        { value: "3", label: "catégories appréciées séparément" },
+        { value: "31 mars", label: "date limite de dépôt" },
+        { value: "20 000 €", label: "hausse qui oblige à redéclarer" },
+      ]}
+      essentiel={{
+        title: "L'essentiel du Modelo 720 en 5 points",
+        items: [
+          <>
+            Une <strong className="text-foreground">déclaration informative</strong>, pas un
+            impôt : rien à payer, mais le défaut de dépôt reste sanctionné.
+          </>,
+          <>
+            Concerne tout résident fiscal espagnol dont les biens à l&apos;étranger dépassent{" "}
+            <strong className="text-foreground">50 000 €</strong> dans l&apos;une des trois
+            catégories — comptes, valeurs et assurances-vie, immobilier — appréciées séparément.
+          </>,
+          <>
+            Dépôt <strong className="text-foreground">en ligne uniquement</strong>, sur le site de
+            l&apos;AEAT, entre le 1<sup>er</sup> janvier et le 31 mars.
+          </>,
+          <>
+            Depuis l&apos;arrêt de la CJUE de 2022, les amendes forfaitaires ont disparu ; c&apos;est
+            le régime général des sanctions fiscales qui s&apos;applique.
+          </>,
+          <>
+            Les grands oubliés : les néobanques (N26, Revolut), l&apos;assurance-vie française, et
+            tous les biens restés en France une fois la résidence espagnole acquise.
+          </>,
+        ],
+      }}
+      toc={toc}
+      html={html}
+      faqTitle="Questions fréquentes sur le Modelo 720"
+      faq={FAQ}
+      cta={{
+        title: "Une question fiscale franco-espagnole ?",
+        text:
+          "Comptes, assurance-vie, immobilier resté en France : un diagnostic de 30 minutes suffit à cadrer votre périmètre déclaratif et à sécuriser votre calendrier.",
+        footnote: "Nos DAF externalisés à Barcelone traitent ce sujet chaque semaine.",
+      }}
+      related={[
+        {
+          href: "/ressources/fiscalite/double-imposition-france-espagne",
+          img: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=600&q=80",
+          alt: "Convention fiscale France-Espagne : éviter la double imposition",
+          title: "Convention fiscale France-Espagne : qui impose quoi, et comment éviter la double imposition",
+        },
+        {
+          href: "/ressources/fiscalite/beckham-law",
+          img: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80",
+          alt: "Loi Beckham en Espagne : le régime des impatriés",
+          title: "Loi Beckham : le régime des impatriés — et pourquoi il dispense du Modelo 720",
+        },
+      ]}
+      referencesKey="modelo-720"
+    />
   );
 }

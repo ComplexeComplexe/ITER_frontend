@@ -1,39 +1,29 @@
 import { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
-import PageLayout from "@/components/PageLayout";
-import Breadcrumb from "@/components/Breadcrumb";
-import CTASection from "@/components/CTASection";
-import References from "@/components/References";
-import { getFiscaliteReferences } from "@/lib/content/references";
-import { faqPageSchema } from "@/lib/schemas";
 import { blogPosts } from "@/lib/content/blog-posts";
+import { transformArticleHtml } from "@/lib/blog-html-transform";
+import { extractToc, injectHeadingIds } from "@/lib/blog-toc";
+import { estimateReadMinutes } from "@/lib/blog-read-time";
+import GuideFiscalPage from "@/components/pages/GuideFiscalPage";
 
 /**
  * Pillar page of the "Fiscalité Espagne France" cocoon.
  * Created 2026-05-31 (ticket: complete fiscalite cocoon — pillars 2-5).
  *
  * Body content is sourced from the validated blog post at slug
- * "double-imposition-france-espagne-convention" in lib/content/blog-posts.ts so the
- * pillar and the corresponding /ressources/blog/<slug> article stay in
- * lockstep without duplicating the htmlContent in two places.
+ * "double-imposition-france-espagne-convention" in lib/content/blog-posts.ts
+ * so the pillar and the article stay in lockstep.
  *
- * Schemas: Article (author Florent Greth, datePublished) + FAQPage + BreadcrumbList.
- * ProfessionalService is already site-wide via app/layout.tsx.
+ * REDESIGN-01 (2026-09-01) — rendu via GuideFiscalPage. C'est la page la
+ * plus vue du site en organique (14 000 impressions / 90 j, position 7) :
+ * elle se rendait sans hiérarchie de titres ni tableau lisible.
  */
 
 const SOURCE_SLUG = "double-imposition-france-espagne-convention";
-const PAGE_URL = "https://www.iteradvisors.com/ressources/fiscalite/double-imposition-france-espagne";
-const HUB_URL = "/ressources/fiscalite-espagne-france";
+const PATH = "/ressources/fiscalite/double-imposition-france-espagne";
 const PUBLISHED_DATE = "2026-05-31";
-// SEO-07 (2026-08-31) — la page affichait « mis à jour en mai » et déclarait
-// dateModified = datePublished, alors qu'elle a été substantiellement révisée
-// en août (sources primaires, contenu). Date réelle, jamais celle du build.
-const MODIFIED_DATE = "2026-08-31";
-const AUTHOR_NAME = "Florent Greth";
-const AUTHOR_URL = "/a-propos/florent-greth";
+// Date réelle de la dernière révision de fond, jamais celle du build.
+const MODIFIED_DATE = "2026-09-01";
 
 // SEO-04 (S31 2026-07-27) — le champ sémantique dominant côté requêtes est
 // "convention fiscale", pas "double imposition" : "retraite espagne
@@ -44,16 +34,14 @@ export const metadata: Metadata = buildMetadata({
   locale: "fr",
   title: "Convention fiscale France-Espagne 2026",
   description: "Double imposition, résidence fiscale, retraites, dividendes, plus-values : ce que prévoit la convention France Espagne et comment l'appliquer en 2026.",
-  path: "/ressources/fiscalite/double-imposition-france-espagne",
+  path: PATH,
   // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google
-  // doesn\'t crawl synthetic /en|/es URLs that 404.
+  // doesn't crawl synthetic /en|/es URLs that 404.
   disableHreflang: ["en", "es"],
 });
 
-/* FAQ derived from the validated content of the source blog article. The
-   visible <details> accordion and the FAQPage JSON-LD render from the same
-   array so they stay 1:1. */
-const FAQ: { question: string; answer: string }[] = [
+/* FAQ : le visible et le FAQPage JSON-LD sont générés depuis ce tableau. */
+const FAQ = [
   {
     question: "Comment fonctionne la convention fiscale franco-espagnole ?",
     answer:
@@ -70,6 +58,11 @@ const FAQ: { question: string; answer: string }[] = [
       "Applicable notamment aux revenus immobiliers de source française ou aux pensions de retraite de la fonction publique française. Ces revenus ne sont imposables qu'en France, mais l'Espagne exige que vous les déclariez : ils sont pris en compte pour déterminer le taux d'imposition applicable à vos autres revenus espagnols (taux effectif).",
   },
   {
+    question: "Comment sont imposées les pensions de retraite françaises d'un résident espagnol ?",
+    answer:
+      "Les pensions publiques françaises (fonction publique) restent imposables uniquement en France, avec exemption à progressivité côté espagnol. Les autres revenus d'un résident fiscal espagnol sont déclarés en Espagne, l'impôt éventuellement payé en France étant neutralisé par le crédit d'impôt prévu par la convention.",
+  },
+  {
     question: "Quel formulaire utiliser côté français pour éviter la double imposition ?",
     answer:
       "Côté français, pour déclarer des revenus de source étrangère tout en évitant la double imposition, il faut utiliser le formulaire spécifique 2047 en complément de la déclaration classique 2042.",
@@ -82,185 +75,102 @@ const FAQ: { question: string; answer: string }[] = [
 ];
 
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("fr");
   const post = blogPosts.fr[SOURCE_SLUG];
   if (!post?.htmlContent) {
     // Fail fast in dev if the blog post is removed or renamed in
     // lib/content/blog-posts.ts so this pillar page doesn't silently render empty.
-    throw new Error(`Missing blog post "${SOURCE_SLUG}" for pillar page ${PAGE_URL}`);
+    throw new Error(`Missing blog post "${SOURCE_SLUG}" for pillar page ${PATH}`);
   }
-
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "@id": `${PAGE_URL}#article`,
-        url: PAGE_URL,
-        headline: post.h1,
-        description:
-          "Comment fonctionne la convention fiscale franco-espagnole de 1995 ? Méthodes du crédit d'impôt et de l'exemption avec progressivité pour éviter la double imposition.",
-        datePublished: PUBLISHED_DATE,
-        dateModified: MODIFIED_DATE,
-        inLanguage: "fr-FR",
-        author: {
-          "@type": "Person",
-          name: AUTHOR_NAME,
-          url: `https://www.iteradvisors.com${AUTHOR_URL}`,
-        },
-        publisher: { "@id": "https://www.iteradvisors.com/#organization" },
-        isPartOf: {
-          "@type": "CollectionPage",
-          "@id": `https://www.iteradvisors.com${HUB_URL}#collection`,
-        },
-      },
-      faqPageSchema(FAQ),
-      // Pas de BreadcrumbList à la main : le composant <Breadcrumb>
-      // en émet déjà un, cohérent site-wide (2026-08-02).
-    ],
-  };
+  const withIds = injectHeadingIds(post.htmlContent);
+  const { html } = transformArticleHtml(withIds);
+  const toc = extractToc(withIds).filter((h) => h.level === 2);
 
   return (
-    <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-
-      {/* Hero */}
-      <section className="bg-background pt-32 pb-12 sm:pb-16">
-        <div className="container max-w-3xl">
-          <Breadcrumb
-            locale="fr"
-            items={[
-              { label: "Ressources", href: "/ressources" },
-              { label: "Fiscalité Espagne France", href: HUB_URL },
-              { label: "Double imposition" },
-            ]}
-          />
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6 mt-4 sm:mt-6 leading-tight">
-            {post.h1}
-          </h1>
-          <p className="text-xs text-muted-foreground mb-6">
-            Par{" "}
-            <Link href={AUTHOR_URL} rel="author" className="text-iter-violet hover:underline">
-              {AUTHOR_NAME}
-            </Link>
-            {" · "}
-            <time dateTime={MODIFIED_DATE}>Mis à jour le 31 août 2026</time>
-          </p>
-        </div>
-      </section>
-
-      {/* Body — htmlContent from the source blog article */}
-      <section className="bg-background py-2 sm:py-4">
-        <div className="container max-w-3xl">
-          <div
-            className="prose prose-sm sm:prose-base max-w-none prose-headings:font-heading prose-headings:text-foreground prose-a:text-iter-violet prose-strong:text-foreground prose-li:marker:text-iter-violet"
-            dangerouslySetInnerHTML={{ __html: post.htmlContent }}
-          />
-        </div>
-      </section>
-
-      <section className="bg-background py-12 sm:py-16">
-        <div className="container max-w-3xl space-y-12 sm:space-y-14">
-          {/* FAQ — visible accordion synced 1:1 with FAQPage JSON-LD */}
-          <div id="faq" className="scroll-mt-24">
-            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 leading-tight">
-              Questions fréquentes
-            </h2>
-            <div className="space-y-3">
-              {FAQ.map((q) => (
-                <details
-                  key={q.question}
-                  className="group rounded-lg border border-border/60 bg-background"
-                >
-                  <summary className="cursor-pointer p-4 sm:p-5 font-semibold text-foreground flex items-start justify-between gap-3 list-none">
-                    <h3 className="text-base sm:text-lg font-heading m-0">{q.question}</h3>
-                    <span
-                      aria-hidden
-                      className="text-iter-violet shrink-0 transition-transform group-open:rotate-45"
-                    >
-                      +
-                    </span>
-                  </summary>
-                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    <p>{q.answer}</p>
-                  </div>
-                </details>
-              ))}
-            </div>
-          </div>
-
-          {/* Pour aller plus loin */}
-          <div className="rounded-3xl border border-border/60 bg-muted/30 p-6 sm:p-8">
-            <p className="text-base sm:text-lg font-semibold text-foreground mb-3">
-              Pour aller plus loin
-            </p>
-            <ul className="space-y-2 list-none pl-0">
-              {/* MAILLAGE-T7 (2026-08-31) — le cluster fiscalité était bien maillé
-
-                  en interne mais coupé de l'offre : aucun lien vers le cabinet qui
-
-                  traite précisément ces situations depuis Barcelone. */}
-
-              <li className="flex gap-2.5 text-sm sm:text-base">
-
-                <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-
-                <Link href="/daf-externalise-barcelone" className="text-iter-violet hover:underline">
-
-                  DAF externalisé à Barcelone — pilotage financier France-Espagne
-
-                </Link>
-
-              </li>
-              <li className="flex gap-2.5 text-sm sm:text-base">
-                <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-                <Link href={HUB_URL} className="text-iter-violet hover:underline">
-                  Hub : Fiscalité Espagne France — guide complet
-                </Link>
-              </li>
-              <li className="flex gap-2.5 text-sm sm:text-base">
-                <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-                <Link href="/ressources/fiscalite/beckham-law" className="text-iter-violet hover:underline">
-                  Loi Beckham : conditions d&apos;éligibilité et économies d&apos;impôt
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* CTA */}
-          <aside className="rounded-3xl bg-iter-violet/5 border-l-4 border-iter-violet p-6 sm:p-8">
-            <p className="text-base sm:text-lg font-semibold text-foreground mb-2">
-              Une question fiscale franco-espagnole ?
-            </p>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              Nos experts vous accompagnent pour clarifier votre situation et
-              sécuriser votre structuration. Premier échange offert de 30 minutes.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
-            >
-              Demander un diagnostic
-              <ArrowRight size={16} aria-hidden />
-            </Link>
-          </aside>
-        </div>
-      </section>
-
-      {/* GEO-02 (2026-08-26) — cette page décrivait des obligations
-
-          fiscales, leurs seuils et leurs sanctions sans citer une seule
-
-          source. Les références sont vérifiées une à une dans
-
-          lib/content/references.ts. */}
-
-      <References locale="fr" refs={getFiscaliteReferences("double-imposition-france-espagne")} />
-
-      <CTASection locale="fr" />
-    </PageLayout>
+    <GuideFiscalPage
+      path={PATH}
+      breadcrumbLabel="Convention fiscale"
+      h1={post.h1}
+      description="Comment fonctionne la convention fiscale franco-espagnole de 1995 ? Méthodes du crédit d'impôt et de l'exemption avec progressivité pour éviter la double imposition."
+      author={{ name: "Florent Greth", url: "/a-propos/florent-greth" }}
+      publishedDate={PUBLISHED_DATE}
+      modifiedDate={MODIFIED_DATE}
+      modifiedLabel="1er septembre 2026"
+      badge="Mis à jour en septembre 2026"
+      readMinutes={estimateReadMinutes(html)}
+      dek={
+        <>
+          Signée le 10 octobre 1995, la convention fiscale entre la France et l&apos;Espagne
+          détermine, catégorie de revenu par catégorie, lequel des deux États peut imposer — et
+          neutralise la double imposition par deux mécanismes :{" "}
+          <strong className="text-foreground">le crédit d&apos;impôt</strong> et{" "}
+          <strong className="text-foreground">l&apos;exemption avec progressivité</strong>. Ce guide
+          détaille son application aux salaires, dividendes, loyers et pensions, les formulaires des
+          deux côtés, et son articulation avec le Modelo 720 et la loi Beckham.
+        </>
+      }
+      heroImage={{
+        src: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1200&q=80",
+        alt: "Convention fiscale France-Espagne : éviter la double imposition en 2026",
+      }}
+      kpis={[
+        { value: "1995", label: "convention signée le 10 octobre" },
+        { value: "15 %", label: "retenue max. sur les dividendes" },
+        { value: "10 %", label: "retenue max. sur les intérêts" },
+        { value: "2", label: "méthodes : crédit d'impôt, exemption" },
+      ]}
+      essentiel={{
+        title: "L'essentiel de la convention en 5 points",
+        items: [
+          <>
+            <strong className="text-foreground">La résidence fiscale décide</strong> : l&apos;État de
+            résidence impose les revenus mondiaux, l&apos;autre ne conserve qu&apos;un droit limité sur
+            les revenus qui prennent leur source chez lui.
+          </>,
+          <>
+            <strong className="text-foreground">Crédit d&apos;impôt</strong> pour les dividendes,
+            intérêts et redevances : l&apos;impôt payé en France se déduit de l&apos;impôt espagnol
+            correspondant.
+          </>,
+          <>
+            <strong className="text-foreground">Exemption avec progressivité</strong> pour les
+            revenus immobiliers français et les pensions publiques : imposés en France seulement,
+            mais comptés pour fixer le taux espagnol.
+          </>,
+          <>
+            Retenues à la source plafonnées : 15 % sur les dividendes (5 % au-delà de 25 % de
+            participation), 10 % sur les intérêts, 5 % sur les redevances.
+          </>,
+          <>
+            Formulaires : 2047 + 2042 côté français, Modelo 100 côté espagnol — et Modelo 720 dès
+            50 000 € de biens conservés en France.
+          </>,
+        ],
+      }}
+      toc={toc}
+      html={html}
+      faqTitle="Questions fréquentes sur la convention France-Espagne"
+      faq={FAQ}
+      cta={{
+        title: "Une situation transfrontalière à structurer ?",
+        text:
+          "Salaires, dividendes, loyers, pensions : un diagnostic de 30 minutes suffit à identifier quel État impose quoi et à sécuriser vos déclarations des deux côtés.",
+        footnote: "Nos DAF externalisés à Barcelone accompagnent ces dossiers chaque semaine.",
+      }}
+      related={[
+        {
+          href: "/ressources/fiscalite/residence-fiscale-france-espagne",
+          img: "https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&w=600&q=80",
+          alt: "Résidence fiscale France-Espagne : les trois critères",
+          title: "Résidence fiscale France-Espagne : les 3 critères qui décident où vous payez vos impôts",
+        },
+        {
+          href: "/ressources/fiscalite/modelo-720",
+          img: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&w=600&q=80",
+          alt: "Modelo 720 : déclarer ses biens à l'étranger en Espagne",
+          title: "Modelo 720 : l'obligation déclarative des biens conservés en France",
+        },
+      ]}
+      referencesKey="double-imposition-france-espagne"
+    />
   );
 }
