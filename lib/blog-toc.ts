@@ -34,6 +34,33 @@ function stripTags(s: string): string {
   return s.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
 }
 
+/**
+ * Pose un `id` sur chaque H2/H3 qui n'en a pas, avec le même slug que
+ * celui qu'`extractToc` dériverait — sinon le sommaire pointe vers des
+ * ancres qui n'existent pas dans le DOM. Les ids déjà présents sont
+ * conservés ; les doublons reçoivent un suffixe numérique.
+ */
+export function injectHeadingIds(html: string | undefined): string {
+  if (!html) return "";
+  const seen = new Set<string>();
+  return html.replace(
+    /<(h2|h3)\b([^>]*)>([\s\S]*?)<\/\1>/gi,
+    (full, tag: string, attrs: string, inner: string) => {
+      const existing = attrs.match(/id=["']([^"']+)["']/);
+      if (existing) {
+        seen.add(existing[1]);
+        return full;
+      }
+      const base = slugify(stripTags(inner));
+      if (!base) return full;
+      let id = base;
+      for (let n = 2; seen.has(id); n++) id = `${base}-${n}`;
+      seen.add(id);
+      return `<${tag} id="${id}"${attrs}>${inner}</${tag}>`;
+    },
+  );
+}
+
 export function extractToc(html: string | undefined): TocHeading[] {
   if (!html) return [];
   // Remove the FAQ section to avoid surfacing each Q as a TOC entry.

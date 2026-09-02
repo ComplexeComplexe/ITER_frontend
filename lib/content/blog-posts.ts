@@ -2834,7 +2834,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 </tbody>
 </table>
 <p><em>Source : Agencia Tributaria, barème 2026. Le taux total = taux État + taux communauté autonome.</em></p>
-<h2 id="section-1-qu-est-ce-que-irpf">Section 1 — Qu'est-ce que l'IRPF ?</h2>
+<h2 id="section-1-qu-est-ce-que-irpf">Qu'est-ce que l'IRPF ?</h2>
 <p>L'IRPF est l'impôt progressif sur le revenu des personnes physiques en Espagne. Il s'applique aux résidents fiscaux espagnols, c'est-à-dire aux personnes vivant plus de 183 jours par an sur le territoire espagnol, ou disposant de leur centre d'intérêts économiques en Espagne.</p>
 <h3>Les revenus soumis à l'IRPF</h3>
 <ul>
@@ -2844,7 +2844,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <li>Revenus d'activités économiques (travailleurs indépendants — <em>autónomos</em>)</li>
 </ul>
 <p>Contrairement au système français de prélèvement à la source (PAS), l'IRPF fonctionne principalement sur un modèle de déclaration annuelle. Les employeurs prélèvent des acomptes mensuels (<em>retenciones</em>), mais le solde définitif est calculé lors de la déclaration annuelle.</p>
-<h2 id="section-2-baremes-irpf-2026">Section 2 — Barèmes de l'IRPF 2026</h2>
+<h2 id="section-2-baremes-irpf-2026">Barèmes de l'IRPF 2026</h2>
 <p>L'Espagne applique un barème progressif à l'échelle nationale, auquel s'ajoutent les taux propres à chaque communauté autonome.</p>
 <h3>Barème d'État 2026</h3>
 <table>
@@ -2866,14 +2866,14 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p>« On voit trop d'entrepreneurs choisir Barcelone pour la qualité de vie sans intégrer le paramètre fiscal dans leur modèle. Pour un revenu de 80 000 €, la différence d'imposition entre Barcelone et Madrid dépasse 3 000 € par an. Ce n'est pas négligeable sur 5 ans. »</p>
 <span class="callout-cfo__author">Benjamin Ziza — Associé fondateur, Iter Advisors</span>
 </div>
-<h2 id="section-3-loi-beckham">Section 3 — La loi Beckham : régime des expatriés</h2>
+<h2 id="section-3-loi-beckham">La loi Beckham : régime des expatriés</h2>
 <p><a href="/ressources/fiscalite/beckham-law">La loi Beckham</a> (article 93 de la LIRPF) constitue l'outil fiscal le plus puissant pour les expatriés s'installant en Espagne. Ce régime permet d'être imposé comme non-résident pendant les 6 premières années, avec des taux très avantageux.</p>
 <h3>Conditions d'éligibilité</h3>
 <ul>
 <li>Ne pas avoir été résident fiscal en Espagne au cours des 5 années précédant le déménagement</li>
 <li>S'installer en Espagne pour un emploi (contrat espagnol) ou pour exercer des fonctions de dirigeant</li>
 <li>L'emploi doit être exercé effectivement en Espagne</li>
-<li>Ne pas détenir plus de 25 % du capital de la société (si dirigeant)</li>
+<li>Pour un administrateur de société : depuis la réforme de 2023, la participation au capital n'est plus limitée, sauf pour une société patrimoniale (seuil de 25 %)</li>
 </ul>
 <h3>Avantages fiscaux de la loi Beckham</h3>
 <table>
@@ -2894,11 +2894,11 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <h3>Limites de la loi Beckham</h3>
 <ul>
 <li>Durée limitée à 6 ans</li>
-<li>Impossible de détenir plus de 25 % du capital</li>
+<li>Aucune déduction ni réduction de l'IRPF ordinaire : le taux fixe s'applique dès le premier euro</li>
 <li>Les revenus étrangers issus d'un travail effectif à l'étranger restent imposables en Espagne</li>
-<li>Ne s'applique pas aux <em>autónomos</em> (travailleurs indépendants sans société)</li>
+<li>Exclut l'<em>autónomo</em> classique (une relation de subordination est exigée) ; depuis 2023, le visa nomade digital et la certification ENISA ouvrent toutefois le régime aux télétravailleurs et aux entrepreneurs de startups</li>
 </ul>
-<h2 id="section-4-declaration">Section 4 — Déclaration de l'IRPF : les démarches</h2>
+<h2 id="section-4-declaration">Déclaration de l'IRPF : les démarches</h2>
 <h3>Le calendrier</h3>
 <p>La campagne de déclaration de la <em>renta</em> s'ouvre généralement en avril et se termine fin juin de l'année suivant celle des revenus.</p>
 <h3>Les formulaires principaux</h3>
@@ -2912,8 +2912,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 </tbody>
 </table>
 <h3>Le Modelo 720 : attention</h3>
-<p>Le Modelo 720 est une déclaration obligatoire pour les résidents fiscaux espagnols détenant des actifs à l'étranger supérieurs à 50 000 € (comptes bancaires, placements, immobilier). Les sanctions pour non-déclaration sont sévères : <strong>5 000 € minimum par donnée omise</strong>.</p>
-<h2 id="section-5-comparaison-france-espagne">Section 5 — Comparaison France / Espagne</h2>
+<p>Le Modelo 720 est une déclaration obligatoire pour les résidents fiscaux espagnols détenant des actifs à l'étranger supérieurs à 50 000 € (comptes bancaires, placements, immobilier). Depuis l'arrêt de la Cour de justice de l'Union européenne du 27 janvier 2022, les amendes forfaitaires par donnée omise ont disparu ; c'est le régime général des sanctions fiscales qui s'applique, mais <strong>l'obligation déclarative reste strictement contrôlée</strong>.</p>
+<h2 id="section-5-comparaison-france-espagne">Comparaison France / Espagne</h2>
 <table>
 <thead><tr><th>Critère</th><th>France</th><th>Espagne</th></tr></thead>
 <tbody>
@@ -2922,7 +2922,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <tr><td>Régime expatrié</td><td>PEX / statut impatrié</td><td>Loi Beckham (24 % fixe)</td></tr>
 <tr><td>Imposition couples</td><td>Foyer fiscal commun</td><td>Individuelle</td></tr>
 <tr><td>Charges sociales patronales</td><td>~40-45 %</td><td>~30-32 %</td></tr>
-<tr><td>Déclaration des actifs étrangers</td><td>Oui (déclaration 3916)</td><td>Modelo 720 (sanctions sévères)</td></tr>
+<tr><td>Déclaration des actifs étrangers</td><td>Oui (déclaration 3916)</td><td>Modelo 720 (déclaration informative, contrôlée)</td></tr>
 </tbody>
 </table>
 <h3>Cas pratique : un salarié à 60 000 € brut</h3>
@@ -2941,20 +2941,20 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p>« La comparaison France-Espagne ne se limite pas au taux d'imposition. Les charges sociales patronales sont 8 à 12 points plus basses en Espagne. Pour un salarié à 50 000 € brut, l'économie totale employeur dépasse 8 000 € par an. C'est ce chiffre qu'il faut regarder, pas seulement l'IRPF. »</p>
 <span class="callout-cfo__author">Benjamin Ziza — Associé fondateur, Iter Advisors</span>
 </div>
-<h2 id="section-6-entrepreneurs">Section 6 — L'impôt sur le revenu pour les entrepreneurs</h2>
+<h2 id="section-6-entrepreneurs">L'impôt sur le revenu pour les entrepreneurs</h2>
 <h3>Dirigeant de SL (<em>Sociedad Limitada</em>)</h3>
 <p>La rémunération du dirigeant d'une SL espagnole est soumise à l'IRPF selon les règles classiques. L'intérêt de la loi Beckham est ici maximal : un dirigeant percevant 80 000 € paiera 24 % d'impôt (19 200 €) contre 32 % à 35 % sans Beckham.</p>
 <p>L'IS (<em>Impuesto de Sociedades</em>) s'applique à la société avec un taux standard de 25 %.</p>
 <h3>Travailleur indépendant (<em>autónomo</em>)</h3>
 <p>Le régime des <em>autónomos</em> est distinct et ne bénéficie pas de la loi Beckham. Les revenus sont imposés à l'IRPF selon le barème progressif. Les cotisations sociales obligatoires s'élèvent à environ 230 € par mois minimum (depuis la réforme de 2023).</p>
-<h2 id="section-7-erreurs">Section 7 — Erreurs fréquentes à éviter</h2>
+<h2 id="section-7-erreurs">Erreurs fréquentes à éviter</h2>
 <p><strong>Erreur 1 — Ne pas déclarer les revenus français.</strong> Même avec la loi Beckham, certains revenus non-exonérés doivent être déclarés. L'administration fiscale espagnole échange des informations avec la France.</p>
 <p><strong>Erreur 2 — Confondre résidence administrative et résidence fiscale.</strong> On est résident fiscal espagnol après 183 jours de présence sur le territoire. Le critère des 183 jours est strict.</p>
-<p><strong>Erreur 3 — Oublier le Modelo 720.</strong> Les sanctions pour non-déclaration des actifs étrangers sont de 5 000 € minimum par donnée. Un compte bancaire oublié = 5 000 € d'amende minimum.</p>
+<p><strong>Erreur 3 — Oublier le Modelo 720.</strong> Un compte N26 ou Revolut, une assurance-vie française ou un appartement à Paris sont des biens à l'étranger au sens espagnol. Les amendes forfaitaires ont été supprimées après l'arrêt de la CJUE de 2022, mais la déclaration reste obligatoire et contrôlée.</p>
 <p><strong>Erreur 4 — Sous-estimer les délais de traitement.</strong> L'obtention du NIE (<em>Número de Identidad de Extranjero</em>), l'ouverture du compte bancaire, l'enregistrement fiscal : comptez 4 à 8 semaines au total.</p>
 <h2 id="faq">FAQ</h2>
-<p><strong>Q : La loi Beckham s'applique-t-elle aux freelances ?</strong><br>R : Non, uniquement aux salariés et dirigeants de sociétés (SL, SA). Les <em>autónomos</em> sont exclus.</p>
-<p><strong>Q : Combien de temps faut-il pour obtenir le statut de résident fiscal espagnol ?</strong><br>R : Après 183 jours de présence continue sur le territoire.</p>
+<p><strong>Q : La loi Beckham s'applique-t-elle aux freelances ?</strong><br>R : Pas en tant qu'<em>autónomo</em> classique : le régime exige une relation de subordination. Depuis 2023, deux voies existent pour les indépendants : le visa nomade digital (salarié d'une entreprise étrangère) et la certification ENISA pour les entrepreneurs de startups.</p>
+<p><strong>Q : Combien de temps faut-il pour obtenir le statut de résident fiscal espagnol ?</strong><br>R : Dès que vous dépassez 183 jours de présence sur l'année civile, consécutifs ou non — ou dès que votre centre d'intérêts économiques ou votre foyer familial se trouve en Espagne. Un seul critère suffit.</p>
 <p><strong>Q : Dois-je déclarer mes revenus français en Espagne ?</strong><br>R : Oui si vous êtes résident fiscal espagnol. La convention fiscale France-Espagne évite la double imposition, mais la déclaration reste obligatoire.</p>
 <p><strong>Q : Quel est le coût total employeur d'un salarié à 50 000 € en Espagne ?</strong><br>R : Environ 65 000 € (salaire + charges patronales ~30 %).</p>
 <p>→ <a href="/daf-externalise-barcelone"><strong>Découvrir nos services DAF externalisé à Barcelone</strong></a></p>`,
