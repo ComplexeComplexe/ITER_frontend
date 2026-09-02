@@ -250,7 +250,7 @@ for (const abs of urls) {
   // d'août. Le composant References existait depuis des mois sans jamais être
   // étendu : rien n'inscrivait le sourcing dans la définition de « terminé ».
   // Ces trois exigences cassent désormais la recette.
-  if (/^\/ressources\/(blog|fiscalite)\//.test(path)) {
+  if (/^\/ressources\/(blog|fiscalite|ia-finance)\//.test(path)) {
     let auteurPerson = false;
     let auteurOrganisationNomme = null;
     let dateModifiee = false;

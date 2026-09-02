@@ -127,6 +127,15 @@ Résidence fiscale, convention de non-double imposition, régime des travailleur
 déplacés (loi Beckham), Modelo 720, barème IRPF. Ces pages citent leurs sources
 primaires — Agencia Tributaria, BOE, impots.gouv.fr, CJUE.
 
+### IA & Finance
+Automatisation du reporting financier (méthode en quatre étapes et 90 jours),
+usage encadré de ChatGPT et des LLM en direction financière (charte : données
+anonymisées, rédaction seulement, relecture systématique, offre professionnelle),
+comparatif d'outils sans affiliation (Power BI, Looker Studio, connecteurs
+comptables, offres LLM professionnelles). Position : l'IA ne remplace pas un DAF,
+elle remplace les tâches qui l'empêchent de faire son travail. Aucun chiffre de
+mission n'est publié tant qu'il n'a pas été validé par un DAF du cabinet.
+
 ## Pages principales
 
 - Accueil : ${BASE}/
@@ -141,6 +150,7 @@ primaires — Agencia Tributaria, BOE, impots.gouv.fr, CJUE.
 - DRH externalisé : ${BASE}/drh-externalise
 - Services : ${BASE}/services
 - Fiscalité France-Espagne : ${BASE}/ressources/fiscalite-espagne-france
+- IA & Finance : ${BASE}/ressources/ia-finance
 - Blog : ${BASE}/ressources/blog
 - Glossaire : ${BASE}/ressources/glossaire
 - Cas clients : ${BASE}/ressources/cas-clients

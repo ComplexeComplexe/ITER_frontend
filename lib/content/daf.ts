@@ -512,6 +512,10 @@ export const dafContent: Record<Locale, DafContent> = {
         "Un DAF externalisé s'appuie sur une stack moderne pour automatiser les tâches répétitives et se concentrer sur l'analyse :",
         "Comptabilité et facturation avec [Pennylane](/ressources/outils/pennylane) ou [Sage](/ressources/outils/sage) ; trésorerie et prévisionnel glissant avec [Agicap](/ressources/outils/agicap) ou [Fygr](/ressources/outils/fygr) ; dépenses et cartes avec [Spendesk](/ressources/outils/spendesk), [Pleo](/ressources/outils/pleo) ou [Payhawk](/ressources/outils/payhawk) ; reporting sur Power BI, Looker ou Metabase.",
         "Chez Iter Advisors, nous travaillons avec plus de 30 partenaires technologiques. [Découvrez notre sélection complète d'outils finance](/ressources/outils) — mise à jour en continu par nos DAFs selon les retours terrain — et notre guide sur les [10 outils indispensables pour un CFO startup](/ressources/blog/les-10-outils-pour-cfos-startup).",
+        // IA-FINANCE (2026-09-01) — le pilier ne disait rien de l'IA alors que
+        // la section dédiée existe : c'est le lien entrant qui porte le plus
+        // d'autorité vers le hub.
+        "Un DAF externalisé en 2026 ne produit plus ses reportings à la main. Chez Iter Advisors, nous déployons l'automatisation et l'IA sur chaque mission où elle est rentable : extraction des données, rapprochements, commentaires de clôture — toujours après avoir nettoyé les données, jamais avant. Notre approche, la méthode en 90 jours et nos comparatifs d'outils sont documentés dans notre [hub IA & Finance](/ressources/ia-finance).",
       ],
     },
     whyChoose: {

@@ -189,6 +189,25 @@ function ResourcesPageFR({ cmsNavigation }: { cmsNavigation?: CmsNavItem[] }) {
         },
       ],
     },
+    // IA-FINANCE (2026-09-01) — la section a son hub ; le lier depuis la page
+    // ressources est ce qui en fait un cocon plutôt que des pages isolées.
+    {
+      heading: "IA & Finance",
+      items: [
+        {
+          title: "IA & Finance : le hub — guides, outils et retours de DAF",
+          href: "/ressources/ia-finance",
+        },
+        {
+          title: "Automatiser le reporting financier : la méthode en 90 jours",
+          href: "/ressources/ia-finance/automatiser-reporting-financier",
+        },
+        {
+          title: "ChatGPT pour la finance : les cas d'usage qui marchent, et ceux à proscrire",
+          href: "/ressources/ia-finance/chatgpt-finance",
+        },
+      ],
+    },
   ];
 
   const toolCategories = [
