@@ -170,7 +170,9 @@ const servicesFr: ServicesContent = {
       {
         question: "Quel est le coût d’un DAF externalisé ?",
         answer:
-          "De 2 000 €/mois (2 jours/semaine) à 8 000 €/mois (temps plein), selon la charge et la complexité de la mission.",
+          // FACTS (2026-09-01) — annonçait « 2 000 €/mois … à 8 000 €/mois (temps
+          // plein) » : la grille arbitrée va de 3 000 à 8 000 € HT (facts.ts).
+          "De 3 000 à 8 000 € HT par mois selon la formule et le scope confié, en forfait mensuel — jamais à la journée.",
       },
       {
         question: "Dans quels délais peut-on démarrer ?",

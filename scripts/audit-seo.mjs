@@ -47,6 +47,17 @@ const VALEURS_INTERDITES = [
   { re: /200 ?% (?:de )?ROI|ROI (?:de )?200 ?%/i, sujet: "ROI non sourcé" },
   { re: /au 1\/3 du prix|1\/3 du prix/i, sujet: "comparaison de prix non sourcée" },
   { re: /expert-comptable ou (?:un )?CFO à temps partagé/i, sujet: "DAF externalisé assimilé à un expert-comptable" },
+  // FACTS (2026-09-01) — quatre contradictions trouvées en ligne le même jour,
+  // sur des pages à trafic (transition : 6 000 impressions) : « 2 000 à 8 000 »,
+  // « 2 000 EUR/mois … à 7 000+ », « engagement 12 mois minimum », et des TJM
+  // client (« TJM 800-1 200 € HT par jour », « TJM EUR 750–1 250/día » en meta ES)
+  // alors que la facturation est un retainer mensuel et les missions ponctuelles
+  // sont chiffrées au projet. Les articles de blog qui commentent le marché des
+  // TJM et la page métier (rémunération des DAF) sont hors champ.
+  { re: /2 ?000 (?:à|–|-) ?8 ?000 ?(?:€|EUR)/, sujet: "grille tarifaire (3 000 à 8 000 € HT/mois)" },
+  { re: /2 ?000 ?(?:€|EUR) ?\/ ?mois[^.]{0,40}?(?:7|8) ?000/, sujet: "grille tarifaire (3 000 à 8 000 € HT/mois)" },
+  { re: /engagement (?:de )?12 mois/i, sujet: "engagement (aucune durée minimale)" },
+  { re: /TJM ?(?:de |: ?|EUR ?|€ ?)?(?:750|800|900)|(?:750|800|900) ?(?:€|EUR)? ?(?:à|–|-|et) ?1 ?[012][05]0 ?(?:€|EUR)? ?(?:HT ?)?(?:par jour|\/ ?jour|\/ ?día|por día)/i, sujet: "TJM client (retainer mensuel, missions ponctuelles sur devis)" },
 ];
 
 /**
@@ -72,6 +83,16 @@ const HORS_ARBITRAGE = [
   { path: /^\/(es\/externalizacion-rrhh|en\/hr-outsourcing)/, sujet: /coût DAF salarié/ },
   // Délais de réponse du support (SLA), pas des promesses de démarrage.
   { path: /^\/(services\/comptabilite-externalisation|es\/services\/externalizar-contabilidad|ressources\/blog\/cout-externalisation-comptable-2026)/, sujet: /délai de démarrage/ },
+  // Les articles de blog commentent le marché des TJM (comparatifs, guides de
+  // coût) et la page métier donne la rémunération d'un DAF : ce ne sont pas des
+  // prix Iter. Le contrôle vise les pages commerciales et les métas.
+  { path: /^\/(ressources\/blog|en\/ressources\/blog|es\/recursos\/blog|daf-externalise\/metier|en\/fractional-cfo\/(role|metier)|es\/externalizacion-daf\/(funciones|metier)|carrieres|jobs|en\/jobs|es\/jobs)/, sujet: /TJM client/ },
+  // La comptabilité externalisée a sa propre fourchette (2 000 à 8 000 €),
+  // non arbitrée : ce n'est pas la grille DAF.
+  { path: /^\/(services\/comptabilite-externalisation|es\/services\/externalizar-contabilidad|en\/services\/outsource-your-accounting|ressources\/blog\/(externalisation-comptable|externaliser-comptabilite-guide|cout-externalisation-comptable-2026)|en\/ressources\/blog\/externalisation-comptable|es\/recursos\/blog\/externalisation-comptable)/, sujet: /grille tarifaire/ },
+  // La grille de choix d'un cabinet cite « engagement de 12 mois » comme signal
+  // d'alerte chez d'autres prestataires — pas comme une condition Iter.
+  { path: /^\/ressources\/blog\/choisir-cabinet-daf-externalise/, sujet: /engagement/ },
 ];
 
 const strip = (html) =>

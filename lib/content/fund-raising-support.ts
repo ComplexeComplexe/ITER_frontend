@@ -83,7 +83,9 @@ const content: Record<Locale, FundRaisingSupportContent> = {
         {
           question: "Combien de temps prend une levée de fonds ?",
           answer:
-            "Seed: 2-3 mois de préparation, 3-4 mois de négociation. Series A/B: 2-3 mois de préparation, 4-6 mois de négociation. Nous accélérons la phase de préparation.",
+            // DONNÉE (2026-08-31, Guillaume Rostand) — durée réelle observée sur
+            // les levées accompagnées : 6 à 9 mois de bout en bout.
+            "Sur les levées que nous accompagnons, comptez 6 à 9 mois entre le début de la préparation et le closing. La préparation — comptes, data room, modèle financier — prend 2 à 3 mois ; la phase investisseurs, de la prise de contact à la signature, 4 à 6 mois. C'est la préparation que nous compressons, pas la décision des fonds.",
         },
         {
           question: "Pouvez-vous m'aider même si mes chiffres sont mauvais ?",

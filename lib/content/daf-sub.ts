@@ -380,16 +380,19 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
         {
-          heading: "Tarifs d'un DAF de Transition : TJM 2026",
+          heading: "Tarifs d'un DAF de transition en 2026",
           content: [
             "Le tarif d'un **management de transition finance** prend la forme d'un forfait mensuel. Il est plus élevé que celui d'un DAF à temps partagé, car la mobilisation est bien plus forte et le démarrage intervient sous 7 à 10 jours.",
             "Chez Iter Advisors, une mission de transition représente 8 000 à 12 000 euros HT par mois, selon le profil du DAF et la complexité de la mission. Le budget est arrêté au cadrage, sous forme de forfait mensuel.",
             // Tableau comparatif rendu en prose markdown car DafSubPage
             // utilise ReactMarkdown sans support GFM (pas de <table>).
             // Format choisi : sections **gras** lisibles côté SEO + UX.
-            "**Comparatif 2026 — TJM et engagement par modalité d'intervention :**",
+            "**Comparatif 2026 — coût et engagement par modalité d'intervention :**",
             "**1. DAF de transition (Iter Advisors)** — 8 000 à 12 000 € HT par mois, mission de 3 à 12 mois, démarrage sous 7 à 10 jours, facturation en prestation de services (pas de charges sociales). Adapté à crise, restructuration, transformation, vacance brutale du poste.",
-            "**2. DAF à temps partagé (Iter Advisors)** — Forfait mensuel 2 000 à 8 000 € HT (2-8 jours / mois), engagement 12 mois minimum, démarrage 1-2 semaines. Adapté à un besoin récurrent et durable.",
+            // FACTS (2026-09-01) — cette ligne annonçait « 2 000 à 8 000 € HT,
+            // engagement 12 mois minimum » : deux valeurs contraires à la grille
+            // arbitrée (3 000 à 8 000, aucune durée minimale, préavis 30 jours).
+            "**2. DAF à temps partagé (Iter Advisors)** — Forfait mensuel 3 000 à 8 000 € HT selon la formule et le scope confié, sans durée d'engagement minimale (préavis de 30 jours), démarrage en 8 à 15 jours. Adapté à un besoin récurrent et durable.",
             "**3. DAF intérimaire (agence d'intérim spécialisée)** — TJM 1 100 à 1 800 € HT (avec marge agence ~25-35 %), salarié mis à disposition, démarrage 1-3 semaines. Plus rigide juridiquement, plus coûteux à mission équivalente.",
             "**4. Recrutement DAF salarié senior (cabinet de recrutement)** — 100 000 à 213 000 € de coût employeur annuel, charges comprises. Honoraires de recrutement : 20-30 % du salaire annuel (18-45 k€). Délai de mise en poste : 3 à 6 mois. Engagement long. Adapté quand le besoin est durable et le contexte stable.",
             "**Synthèse.** Pour une crise de 3 à 6 mois, le DAF de transition est 30 à 50 % moins coûteux qu'un DAF intérimaire d'agence et 5 à 10 fois plus rapide à mobiliser qu'un recrutement. Pour un besoin durable de plus de 12 mois, le DAF salarié reste l'option la plus économique à condition d'accepter le délai de recrutement.",
@@ -491,7 +494,20 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             // temps partagé et résume le tarif en une phrase, avec le lien.
             "Formule DAF à Temps Partagé : la plus courante chez les PME et startups. Le budget va de 3 000 à 8 000 € HT par mois selon la formule et le scope confié — le détail des trois formules et de ce qu'elles incluent est sur la [grille tarifaire](/daf-externalise/tarifs).",
             "Formule DAF de Transition : intervention intensive sur 3 à 12 mois en cas de crise ou de transformation majeure. Tarif : 8 000 à 12 000 € HT par mois. Plus élevé que le temps partagé, car la mobilisation est bien plus forte.",
-            "Mission Ponctuelle : pour besoins spécifiques et limités (due diligence, modèle financier, audit de trésorerie). TJM : 800-1 200€ HT par jour selon le profil et la complexité.",
+            // FACTS (2026-09-01) — cette ligne annonçait un « TJM 800-1 200 € HT
+            // par jour » : Iter ne facture jamais à la journée (facts.ts,
+            // MISSIONS_PONCTUELLES). Fourchettes au projet, sur devis.
+            "Mission ponctuelle : pour un besoin délimité — préparation de levée (15 000 à 40 000 € HT), audit défensif ou vendor due diligence (20 000 à 60 000 € HT), audit finance one-shot (10 000 à 25 000 € HT). Chiffrée au projet, sur devis : nous ne facturons pas à la journée.",
+          ],
+        },
+        {
+          heading: "Ce que nos clients paient réellement",
+          content: [
+            // BAROMÈTRE (2026-09-01) — répartition fournie par Guillaume Rostand,
+            // arrondie à la dizaine (facts.ts, REPARTITION_CLIENTS_PAR_FORMULE).
+            // La seule donnée de ce type publiée par un cabinet de DAF externalisé.
+            "Sur l'ensemble de nos missions de DAF externalisé, **40 % de nos clients sont sur la formule Essentiel, autour de 3 000 € HT par mois ; 40 % sur la formule Croissance, autour de 5 000 € HT par mois ; et 20 % au-delà** — formule Premium ou mission de transition. Autrement dit, huit clients sur dix paient entre 3 000 et 5 000 € HT par mois : le haut de la grille est l'exception, pas la règle.",
+            "Cette répartition est observée sur notre portefeuille au 1er septembre 2026 et arrondie à la dizaine ; elle bouge avec les missions. Elle ne remplace pas un devis, mais elle répond à la question que tout dirigeant se pose avant de nous appeler : et concrètement, les autres paient combien ?",
           ],
         },
         {
@@ -542,7 +558,8 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           heading: "FAQ - Tarifs du DAF Externalisé",
           content: [
             "Le tarif est-il déductible fiscalement ? Oui. Les honoraires d'un DAF externalisé sont des charges d'exploitation déductibles du résultat imposable de l'entreprise, au même titre que les honoraires d'un expert-comptable ou d'un avocat.",
-            "Peut-on négocier le tarif ? Nos tarifs sont transparents et basés sur le marché. Nous pouvons adapter le nombre de jours d'intervention à votre budget, mais nous ne pratiquons pas de négociation sur le tarif journalier. La qualité de nos DAF justifie nos prix.",
+            "Peut-on négocier le tarif ? Nos tarifs sont transparents et basés sur le marché. Nous pouvons adapter le périmètre confié à votre budget, mais nous ne négocions pas le prix des formules : il suit le profil engagé. La qualité de nos DAF justifie nos prix.",
+            "Combien paient la plupart de vos clients ? Huit sur dix paient entre 3 000 et 5 000 € HT par mois : 40 % sur la formule Essentiel, 40 % sur la formule Croissance. Les 20 % restants sont au-delà — formule Premium ou mission de transition.",
             "Y a-t-il un engagement de durée minimum ? Non. Nos contrats sont résiliables avec un préavis d'un mois. Nous préférons gagner votre confiance par la qualité de notre travail plutôt que par des clauses contractuelles contraignantes.",
             "Le tarif inclut-il les déplacements ? Pour les interventions en présentiel, les frais de déplacement (transport, hébergement si nécessaire) sont facturés en sus au coût réel. Les interventions en distanciel ne génèrent pas de frais supplémentaires.",
           ],

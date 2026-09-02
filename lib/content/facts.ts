@@ -213,3 +213,20 @@ export const ENGAGEMENT = {
   formulation:
     "Sans durée d'engagement minimale, résiliable avec un préavis de 30 jours.",
 } as const;
+
+/* ── Baromètre ─────────────────────────────────────────────────────────── */
+
+/**
+ * Répartition des clients par niveau de formule, fournie par Guillaume
+ * Rostand le 31 août 2026 et arrondie à la dizaine. Observation de
+ * portefeuille, pas un engagement : la date d'observation accompagne
+ * chaque publication, et la valeur se met à jour ici, nulle part ailleurs.
+ */
+export const REPARTITION_CLIENTS_PAR_FORMULE = {
+  essentielPct: 40,
+  croissancePct: 40,
+  auDelaPct: 20,
+  dateObservation: "2026-09-01",
+  formulation:
+    "40 % de nos clients sont sur la formule Essentiel (autour de 3 000 € HT par mois), 40 % sur la formule Croissance (autour de 5 000 € HT par mois), 20 % au-delà (formule Premium ou mission de transition). Répartition observée sur notre portefeuille au 1er septembre 2026, arrondie à la dizaine.",
+} as const;
