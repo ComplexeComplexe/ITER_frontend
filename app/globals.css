@@ -1,4 +1,10 @@
 @import "tailwindcss";
+/* REDESIGN-02 (2026-09-01) — le plugin Typography était déclaré dans
+   tailwind.config.ts, que Tailwind v4 ne lit pas sans @config : les
+   17 usages de `prose` dans le code n'avaient aucun effet, et le HTML
+   des articles se rendait brut. Le thème `.prose` plus bas aligne le
+   plugin sur la charte. */
+@plugin "@tailwindcss/typography";
 
 @theme inline {
   /* Iter Advisors — Corporate Kinetic palette */
@@ -278,6 +284,42 @@
   color: oklch(0.25 0.02 270);
 }
 .prose-iter-blog details.prose-faq[open] summary { margin-bottom: 0.25em; }
+
+/* ─── Thème `prose` (plugin Typography) aligné sur la charte ───
+ * Le plugin sort en gris neutre et en police système ; ici, encre, violet
+ * et polices du site. Les sélecteurs reprennent la forme `:where()` du
+ * plugin (spécificité 0,1,0) et viennent après lui dans la feuille :
+ * ils gagnent sans !important. */
+.prose {
+  --tw-prose-body: oklch(0.25 0.02 270);
+  --tw-prose-headings: oklch(0.15 0.01 270);
+  --tw-prose-lead: oklch(0.35 0.02 270);
+  --tw-prose-links: oklch(0.42 0.28 275);
+  --tw-prose-bold: oklch(0.15 0.01 270);
+  --tw-prose-counters: oklch(0.42 0.28 275);
+  --tw-prose-bullets: oklch(0.42 0.28 275);
+  --tw-prose-hr: oklch(0.92 0.004 270);
+  --tw-prose-quotes: oklch(0.25 0.02 270);
+  --tw-prose-quote-borders: oklch(0.42 0.28 275);
+  --tw-prose-captions: oklch(0.5 0.01 270);
+  --tw-prose-th-borders: oklch(0.85 0.005 270);
+  --tw-prose-td-borders: oklch(0.92 0.005 270);
+}
+.prose :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  font-family: var(--font-heading);
+  letter-spacing: -0.015em;
+  scroll-margin-top: 96px;
+}
+.prose :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  text-decoration: none;
+  font-weight: 500;
+}
+.prose :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)):hover {
+  text-decoration: underline;
+}
+.prose :where(thead):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  background: oklch(0.97 0.005 270);
+}
 
 /* ─── Editorial blog callouts (BLOG V3 design spec) ─── */
 /* "Le regard du CFO" — opinionated insider commentary inside an

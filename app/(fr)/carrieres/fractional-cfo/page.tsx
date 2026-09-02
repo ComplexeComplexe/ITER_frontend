@@ -219,25 +219,25 @@ export default async function Page() {
                 Chez Iter Advisors, vos missions typiques incluent :
               </p>
               <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
-                <li>• Mettre en place et opérer le reporting financier mensuel</li>
+                <li>Mettre en place et opérer le reporting financier mensuel</li>
                 <li>
-                  • Piloter la trésorerie et construire les prévisionnels (cash
+                  Piloter la trésorerie et construire les prévisionnels (cash
                   flow forecast 13 semaines, plan de trésorerie 12 mois)
                 </li>
                 <li>
-                  • Préparer et accompagner les levées de fonds (data room,
+                  Préparer et accompagner les levées de fonds (data room,
                   business plan, négociation term sheet)
                 </li>
                 <li>
-                  • Structurer le contrôle de gestion et les KPIs business (ARR,
+                  Structurer le contrôle de gestion et les KPIs business (ARR,
                   NRR, CAC, LTV pour le SaaS)
                 </li>
                 <li>
-                  • Conseiller la direction sur les décisions stratégiques
+                  Conseiller la direction sur les décisions stratégiques
                   (pricing, recrutements, M&amp;A)
                 </li>
                 <li>
-                  • Animer les comités stratégiques et les boards investisseurs
+                  Animer les comités stratégiques et les boards investisseurs
                 </li>
               </ul>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -262,22 +262,22 @@ export default async function Page() {
                 </h3>
                 <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
                   <li>
-                    • <strong>10 ans minimum</strong> en direction financière
+                    <strong>10 ans minimum</strong> en direction financière
                     (CFO, DAF, head of finance) dans des startups VC-backed ou
                     des PME en croissance
                   </li>
                   <li>
-                    • Expérience d&apos;au moins une{" "}
+                    Expérience d&apos;au moins une{" "}
                     <strong>levée de fonds Series A ou B</strong> menée en tant
                     que CFO
                   </li>
                   <li>
-                    • Idéalement une expérience préalable en mode{" "}
+                    Idéalement une expérience préalable en mode{" "}
                     <strong>fractional / part-time / freelance</strong> (mais
                     pas obligatoire)
                   </li>
                   <li>
-                    • Connaissance approfondie du business model SaaS et de ses
+                    Connaissance approfondie du business model SaaS et de ses
                     métriques (ARR, NRR, CAC, LTV, burn, runway)
                   </li>
                 </ul>
@@ -289,22 +289,22 @@ export default async function Page() {
                 </h3>
                 <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
                   <li>
-                    • Maîtrise des outils modernes : Pennylane, Sage, Agicap,
+                    Maîtrise des outils modernes : Pennylane, Sage, Agicap,
                     Notion, Looker / Power BI
                   </li>
                   <li>
-                    • Capacité à structurer rapidement une fonction finance from
+                    Capacité à structurer rapidement une fonction finance from
                     scratch
                   </li>
                   <li>
-                    • Aisance relationnelle avec les fondateurs et les
+                    Aisance relationnelle avec les fondateurs et les
                     investisseurs
                   </li>
                   <li>
-                    • Anglais professionnel courant (la moitié de nos clients
+                    Anglais professionnel courant (la moitié de nos clients
                     communiquent en anglais)
                   </li>
-                  <li>• Espagnol apprécié (cabinet basé à Barcelone)</li>
+                  <li>Espagnol apprécié (cabinet basé à Barcelone)</li>
                 </ul>
               </div>
 
@@ -314,16 +314,16 @@ export default async function Page() {
                 </h3>
                 <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
                   <li>
-                    • Autonomie et capacité à gérer plusieurs clients en
+                    Autonomie et capacité à gérer plusieurs clients en
                     parallèle
                   </li>
                   <li>
-                    • Goût pour les environnements entrepreneuriaux et
+                    Goût pour les environnements entrepreneuriaux et
                     l&apos;incertitude
                   </li>
-                  <li>• Pragmatisme : on construit, on teste, on ajuste</li>
+                  <li>Pragmatisme : on construit, on teste, on ajuste</li>
                   <li>
-                    • Volonté de transmettre et de faire grandir ses pairs au
+                    Volonté de transmettre et de faire grandir ses pairs au
                     sein du cabinet
                   </li>
                 </ul>
@@ -338,38 +338,38 @@ export default async function Page() {
             </h2>
             <ul className="space-y-3 text-sm sm:text-base text-muted-foreground">
               <li>
-                • <strong>Modèle d&apos;engagement flexible</strong> : freelance,
+                <strong>Modèle d&apos;engagement flexible</strong> : freelance,
                 portage salarial ou CDI selon votre situation
               </li>
               <li>
-                • <strong>Rémunération attractive</strong> : indexée sur le
+                <strong>Rémunération attractive</strong> : indexée sur le
                 volume de missions et le type de client (typiquement 750–1 250 €
                 HT par jour selon séniorité)
               </li>
               <li>
-                • <strong>Bureaux centraux</strong> à Barcelone (Rambla de
+                <strong>Bureaux centraux</strong> à Barcelone (Rambla de
                 Catalunya), Paris et Toulouse — mode hybride, pas de présence
                 imposée
               </li>
               <li>
-                • <strong>Portefeuille de clients déjà constitué</strong> : pas
+                <strong>Portefeuille de clients déjà constitué</strong> : pas
                 de prospection à faire, vous arrivez sur des missions
                 qualifiées
               </li>
               <li>
-                • <strong>Équipe support</strong> : analystes financiers et CFOs
+                <strong>Équipe support</strong> : analystes financiers et CFOs
                 partners pour vous épauler sur les missions complexes
               </li>
               <li>
-                • <strong>Réseau d&apos;experts</strong> : avocats d&apos;affaires,
+                <strong>Réseau d&apos;experts</strong> : avocats d&apos;affaires,
                 banquiers, experts-comptables, fonds VCs partenaires
               </li>
               <li>
-                • <strong>Formation continue</strong> et participation à des
+                <strong>Formation continue</strong> et participation à des
                 conférences (DFCG, France Digitale, EU-Startups)
               </li>
               <li>
-                •{" "}
+                {" "}
                 <strong>
                   Culture fondée sur la confiance et l&apos;autonomie
                 </strong>
@@ -389,23 +389,23 @@ export default async function Page() {
             </p>
             <ul className="space-y-3 text-sm sm:text-base text-muted-foreground">
               <li>
-                • <strong>Flux de missions stable</strong> : nous générons les
+                <strong>Flux de missions stable</strong> : nous générons les
                 leads, vous vous concentrez sur la finance
               </li>
               <li>
-                • <strong>Backup en cas d&apos;imprévu</strong> : un partner
+                <strong>Backup en cas d&apos;imprévu</strong> : un partner
                 peut prendre le relai sur un client si besoin
               </li>
               <li>
-                • <strong>Cadre méthodologique partagé</strong> : nos templates
+                <strong>Cadre méthodologique partagé</strong> : nos templates
                 et nos process accélèrent vos missions
               </li>
               <li>
-                • <strong>Communauté de pairs seniors</strong> : 15 CFOs et
+                <strong>Communauté de pairs seniors</strong> : 15 CFOs et
                 analystes avec qui échanger
               </li>
               <li>
-                • <strong>Couverture cross-border</strong> : nos clients sont
+                <strong>Couverture cross-border</strong> : nos clients sont
                 aussi bien en France qu&apos;en Espagne, vous élargissez votre
                 champ d&apos;intervention
               </li>
@@ -419,10 +419,10 @@ export default async function Page() {
             </h2>
             <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
               <li>
-                • <strong>+85 entreprises</strong> tech accompagnées depuis 2021
+                <strong>+85 entreprises</strong> tech accompagnées depuis 2021
               </li>
               <li>
-                • <strong>+100 M€</strong> levés par nos clients (seed, Series
+                <strong>+100 M€</strong> levés par nos clients (seed, Series
                 A, Series B)
               </li>
               <li>
@@ -435,10 +435,10 @@ export default async function Page() {
                 </strong>
               </li>
               <li>
-                • <strong>3 bureaux</strong> : Barcelone, Paris, Toulouse
+                <strong>3 bureaux</strong> : Barcelone, Paris, Toulouse
               </li>
               <li>
-                • Recommandé par{" "}
+                Recommandé par{" "}
                 <Link
                   href="https://wilco-startup.com"
                   target="_blank"
@@ -515,7 +515,7 @@ export default async function Page() {
             </p>
             <ul className="space-y-2 text-sm sm:text-base">
               <li>
-                •{" "}
+                {" "}
                 <Link
                   href="/daf-externalise"
                   className="text-iter-violet hover:underline"
@@ -525,7 +525,7 @@ export default async function Page() {
                 — la version FR de ce que vous ferez côté client
               </li>
               <li>
-                •{" "}
+                {" "}
                 <Link
                   href="/fractional-cfo-startups"
                   className="text-iter-violet hover:underline"
@@ -535,7 +535,7 @@ export default async function Page() {
                 — la promesse commerciale que vous délivrerez
               </li>
               <li>
-                •{" "}
+                {" "}
                 <Link
                   href="/services/controle-de-gestion-externalise"
                   className="text-iter-violet hover:underline"
@@ -545,7 +545,7 @@ export default async function Page() {
                 — l&apos;une de vos missions clés côté client
               </li>
               <li>
-                •{" "}
+                {" "}
                 <Link
                   href="/services/comptabilite-externalisation"
                   className="text-iter-violet hover:underline"

@@ -75,7 +75,7 @@ export default function CashFlowForecastPage({ locale, content: t, cmsNavigation
             <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-6">
               {section.heading}
             </h2>
-            <div className="prose prose-lg prose-neutral dark:prose-invert max-w-none prose-headings:font-heading prose-headings:text-foreground">
+            <div className="prose prose-lg max-w-none prose-headings:font-heading prose-headings:text-foreground">
               {section.content.map((para, j) => (
                 <p key={j}>{para}</p>
               ))}
@@ -100,7 +100,7 @@ export default function CashFlowForecastPage({ locale, content: t, cmsNavigation
                   </span>
                   {item.question}
                 </summary>
-                <div className="mt-4 ml-10 text-muted-foreground prose prose-neutral dark:prose-invert max-w-none">
+                <div className="mt-4 ml-10 text-muted-foreground prose max-w-none">
                   <p>{item.answer}</p>
                 </div>
               </details>

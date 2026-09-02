@@ -76,7 +76,7 @@ export default function MaDueDiligencePage({ locale, content: t, cmsNavigation }
               {section.heading}
             </h2>
             <div
-              className="prose prose-lg prose-neutral dark:prose-invert max-w-none
+              className="prose prose-lg max-w-none
                 prose-headings:font-heading prose-headings:text-foreground
                 prose-p:text-muted-foreground prose-p:leading-relaxed
                 prose-a:text-iter-violet prose-a:no-underline hover:prose-a:underline
