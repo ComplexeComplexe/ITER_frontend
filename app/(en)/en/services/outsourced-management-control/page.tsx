@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import { getCmsNavigation } from "@/lib/strapi";
 import { getOutsourcedManagementControlContent } from "@/lib/content/outsourced-management-control";
 import Link from "next/link";
+import PageByline from "@/components/PageByline";
+import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = getOutsourcedManagementControlContent("en");
@@ -32,7 +34,22 @@ export default async function OutsourcedManagementControlPage() {
       {/* Hero */}
       <section className="bg-[#0a1628] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">{content.hero.h1}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">{content.hero.h1}</h1>
+          <PageByline locale="en" author={FINANCE_AUTHOR} tone="dark" className="mb-6 justify-center" />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(
+                editorialWebPageSchema({
+                  path: "/en/services/outsourced-management-control",
+                  name: content.hero.h1,
+                  description: content.hero.intro,
+                  locale: "en",
+                  author: FINANCE_AUTHOR,
+                })
+              ),
+            }}
+          />
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">{content.hero.intro}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

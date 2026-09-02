@@ -169,7 +169,7 @@ const content: Record<Locale, FundRaisingSupportContent> = {
         {
           question: "How long does fundraising take?",
           answer:
-            "Seed round: 2-3 months prep, 3-4 months negotiation. Series A/B: 2-3 months prep, 4-6 months negotiation. We accelerate the prep phase.",
+            "On the rounds we support, count 6 to 9 months from the start of preparation to closing: 2 to 3 months of preparation (accounts, data room, financial model), then 4 to 6 months with investors, from first contact to signature. Preparation is the phase we compress — not the funds'"'s decision.",
         },
         {
           question: "Can you help me if my numbers are bad?",
