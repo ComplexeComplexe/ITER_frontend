@@ -67,9 +67,15 @@ export default function IaAutomatisationFinancePage() {
         },
       ]}
     >
-      <p>
-        Cet article s'inscrit dans notre guide complet sur <a href="/ressources/blog/ia-finance-automatisation-direction-financiere">l'automatisation de la fonction finance</a> : pour une vue d'ensemble des quatre cas d'usage prioritaires et de la feuille de route à 90 jours, commencez par le guide pilier.
-      </p>
+      <Callout type="info" title="Hub IA & Finance">
+        Cet article fait partie de notre <a href="/ressources/ia-finance">hub IA &amp; Finance</a> :
+        guides, outils et retours d&apos;expérience de DAF sur l&apos;intelligence artificielle
+        appliquée à la direction financière. Pour une vue d&apos;ensemble des quatre cas d&apos;usage
+        prioritaires, commencez par le{" "}
+        <a href="/ressources/blog/ia-finance-automatisation-direction-financiere">guide pilier</a> ;
+        pour le plan semaine par semaine, par la{" "}
+        <a href="/ressources/ia-finance/feuille-de-route-90-jours">feuille de route 90 jours</a>.
+      </Callout>
 
       <h2 id="pourquoi-ia-maintenant">1. Pourquoi l'IA en finance, maintenant ?</h2>
       <p>

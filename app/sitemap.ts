@@ -20,6 +20,7 @@ const D = {
   author:        "2026-05-17", // Person schema + author bio pages added
   jobs:          "2026-04-01", // noindexed but discoverable (TICKET-12)
   fiscalite:     "2026-05-31", // Fiscalité Espagne France cocoon — initial publication
+  iaFinance:     "2026-09-01", // IA & Finance section — hub + 5 guides
 } as const;
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -404,6 +405,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${BASE}/ressources/fiscalite/modelo-720`,
     lastModified: D.fiscalite,
   });
+  // IA & Finance section — FR-only (IA-FINANCE, 2026-09-01). The
+  // « retours-experience » page is announced on the hub but not shipped until
+  // real cases are validated with the clients concerned.
+  for (const slug of [
+    "",
+    "/automatiser-reporting-financier",
+    "/chatgpt-finance",
+    "/llm-finance",
+    "/outils",
+    "/feuille-de-route-90-jours",
+  ]) {
+    entries.push({
+      url: `${BASE}/ressources/ia-finance${slug}`,
+      lastModified: D.iaFinance,
+    });
+  }
   // Named-clients page (GEO-5 from AI Visibility audit)
   entries.push(
     ...entryAllLocales(

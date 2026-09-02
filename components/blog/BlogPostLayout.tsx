@@ -77,8 +77,14 @@ export default function BlogPostLayout({
         {/* TL;DR / À retenir section */}
         {tldr && <Tldr>{tldr}</Tldr>}
 
-        {/* Article body (prose) */}
-        <article className="prose-blog mx-auto max-w-[720px] py-8">
+        {/* Article body.
+            REDESIGN-03 (2026-09-01) — la classe était `prose-blog`, définie
+            dans BlogPostLayout.module.css sous le nom `.prose_blog` et jamais
+            importée : 26 articles JSX se rendaient sans hiérarchie de titres,
+            sans puces, sans bordures de tableau. `.prose-iter-blog` est la
+            typographie éditoriale du site (globals.css), déjà utilisée par
+            BlogPostPage et GuideFiscalPage. */}
+        <article className="prose-iter-blog mx-auto max-w-[72ch] py-8">
           {children}
         </article>
       </div>

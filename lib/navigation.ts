@@ -53,6 +53,9 @@ const navFr: NavItem[] = [
     href: "/ressources",
     children: [
       { text: "Outils", href: "/ressources/outils" },
+      // IA-FINANCE (2026-09-01) — hub de la nouvelle section, en sous-menu
+      // (pas d'entrée de niveau 1 : le header en a déjà cinq).
+      { text: "IA & Finance", href: "/ressources/ia-finance" },
       { text: "Blog & Actualités", href: "/ressources/blog" },
       { text: "Cas clients", href: "/ressources/cas-clients" },
       { text: "Glossaire", href: "/ressources/glossaire" },
@@ -182,6 +185,9 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Glossaire financier", href: "/ressources/glossaire" },
       { text: "Fiche métier DAF", href: "/daf-externalise/metier" },
       { text: "Outils finance", href: "/ressources/outils" },
+      // IA-FINANCE (2026-09-01) — le sous-menu est monté côté client ; le
+      // pied de page est rendu au serveur sur chaque page.
+      { text: "IA & Finance", href: "/ressources/ia-finance" },
       // CONTENUS-T9 (2026-08-31) — /drh-externalise (P18, CPC 13,94 €) : sa
       // seule ancre depuis l'accueil vivait dans le menu déroulant, monté
       // côté client, invisible des crawlers. Le pied de page est rendu au

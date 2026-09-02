@@ -104,6 +104,15 @@ export default function IaFinanceAutomatisationPage() {
         },
       ]}
     >
+      <Callout type="info" title="Hub IA & Finance">
+        Cet article fait partie de notre <Link href="/ressources/ia-finance">hub IA &amp; Finance</Link> :
+        guides, outils et retours d&apos;expérience de DAF sur l&apos;intelligence artificielle
+        appliquée à la direction financière — dont la{" "}
+        <Link href="/ressources/ia-finance/automatiser-reporting-financier">
+          méthode pour automatiser le reporting en 90 jours
+        </Link>
+        .
+      </Callout>
       <p>
         La fonction finance est probablement celle que l'IA transforme le plus vite, et celle où l'on raconte le plus de bêtises. Non, l'IA ne remplace pas votre comptable, et oui, elle peut déjà diviser par trois le temps de votre clôture mensuelle. Ce guide fait le tri : ce qui fonctionne vraiment en 2026 dans une PME, ce qui reste du marketing, et par où commencer si vous partez de zéro.
       </p>
