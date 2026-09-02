@@ -15,6 +15,7 @@ import { articleSchema, faqPageSchema } from "@/lib/schemas";
 import { estimateReadMinutes } from "@/lib/blog-read-time";
 import { splitHtmlAroundMid } from "@/lib/blog-cta-split";
 import { transformArticleHtml } from "@/lib/blog-html-transform";
+import { linkGlossaryTerms } from "@/lib/glossary-links";
 import { getRelatedArticles } from "@/lib/related-articles";
 import { extractToc } from "@/lib/blog-toc";
 
@@ -142,7 +143,10 @@ export default function BlogPostPage({
 
   /* ── Mid-article soft CTA injection (uses the TRANSFORMED html so
    *    table wrappers / FAQ accordion already applied when we split). */
-  const transformedHtml = transformed.html;
+  // REDESIGN-P3 (2026-09-01) — première occurrence de chaque terme du
+  // glossaire liée à sa fiche (hors titres, liens, code) : neuf fiches
+  // n'avaient qu'un lien entrant alors que seize articles les citent.
+  const transformedHtml = linkGlossaryTerms(transformed.html, locale);
   const splitForCta =
     readMinutes >= 6 && transformedHtml
       ? splitHtmlAroundMid(transformedHtml)

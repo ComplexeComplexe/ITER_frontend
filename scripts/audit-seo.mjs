@@ -250,7 +250,10 @@ for (const abs of urls) {
   // d'août. Le composant References existait depuis des mois sans jamais être
   // étendu : rien n'inscrivait le sourcing dans la définition de « terminé ».
   // Ces trois exigences cassent désormais la recette.
-  if (/^\/ressources\/(blog|fiscalite|ia-finance)\//.test(path)) {
+  // REDESIGN-P3 (2026-09-01) — glossaire (Article) et fiches outils (Review)
+  // entrent dans le périmètre ; les quatre pages de catégorie d'outils, qui
+  // sont des listes, non.
+  if (/^\/ressources\/(blog|fiscalite|ia-finance|glossaire|outils\/(?!gestion-depenses|logiciels-))\//.test(path)) {
     let auteurPerson = false;
     let auteurOrganisationNomme = null;
     let dateModifiee = false;
@@ -259,7 +262,7 @@ for (const abs of urls) {
         const d = JSON.parse(bloc);
         for (const n of [].concat(d["@graph"] ?? [d])) {
           const t = [].concat(n["@type"] ?? []).join("");
-          if (!/Article|BlogPosting/.test(t)) continue;
+          if (!/Article|BlogPosting|Review/.test(t)) continue;
           if (n.dateModified) dateModifiee = true;
           for (const a of [].concat(n.author ?? [])) {
             if (a["@type"] === "Person") auteurPerson = true;

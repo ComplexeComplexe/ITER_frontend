@@ -2,6 +2,14 @@ import { Metadata } from "next";
 import GlossaryEntryPage from "@/components/pages/GlossaryEntryPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
 import { getGlossaryEntryContent } from "@/lib/content/glossary-entries";
+import { blogPosts } from "@/lib/content/blog-posts";
+import { resolveBlogArticleHref } from "@/lib/path-localization";
+import {
+  GLOSSARY_AUTHOR,
+  GLOSSARY_MODIFIED,
+  GLOSSARY_PUBLISHED,
+  htmlMentionsGlossary,
+} from "@/lib/glossary-links";
 import { getCmsNavigation } from "@/lib/strapi";
 import { Locale } from "@/lib/i18n";
 
@@ -84,7 +92,9 @@ const faqBySlug: Record<string, { question: string; answer: string }[]> = {
     {
       question: "À quel stade une startup a-t-elle besoin d'un CFO ?",
       answer:
-        "Dès 10 salariés et/ou quand vous préparez une levée de fonds. Un CFO seed coûte 2 000 à 3 500 €/mois pour 2 jours/semaine.",
+        // FACTS (2026-09-01) — annonçait « 2 000 à 3 500 €/mois pour 2 jours/semaine » :
+        // la formule d'entrée arbitrée est à 3 000 € HT/mois (facts.ts).
+        "Dès 10 salariés et/ou quand vous préparez une levée de fonds. Chez Iter Advisors, la formule d'entrée démarre à 3 000 € HT par mois pour 1 à 2 jours d'intervention mensuels.",
     },
     {
       question: "CFO salarié vs CFO externalisé : que choisir ?",
@@ -133,7 +143,9 @@ const faqBySlug: Record<string, { question: string; answer: string }[]> = {
     {
       question: "Comment mesurer le ROI d'un DRH externalisé ?",
       answer:
-        "Sur 4 axes : time-to-hire réduit (45 à 25 jours), turnover en baisse (15% à 8%), conformité sociale garantie, et 2 à 5 heures/semaine récupérées par le fondateur.",
+        // FACTS (2026-09-01) — les valeurs chiffrées (45 → 25 jours, 15 → 8 %)
+        // n'avaient ni source ni échantillon : mesures avant/après, mission par mission.
+        "Sur quatre axes, mesurés avant et après sur chaque mission : le délai de recrutement, le turnover, la conformité sociale, et le temps de dirigeant récupéré chaque semaine.",
     },
     {
       question: "Le DRH externalisé intervient-il sur site ?",
@@ -172,12 +184,14 @@ const faqBySlug: Record<string, { question: string; answer: string }[]> = {
     {
       question: "Un Fractional CFO peut-il aider pour une levée de fonds ?",
       answer:
-        "Oui, c'est la mission la plus fréquente. Les Fractional CFO d'Iter Advisors ont accompagné plus de 50 levées de fonds du Seed à la Series B.",
+        "Oui, c'est la mission la plus fréquente. Les Fractional CFO d'Iter Advisors ont accompagné des dizaines de levées, du seed à la série B — plus de 100 M€ levés par nos clients depuis 2021.",
     },
     {
       question: "Dans quel délai un Fractional CFO peut-il intervenir ?",
       answer:
-        "Iter Advisors met en relation sous 5 jours ouvrés. Le diagnostic et la mise en route sont réalisés sous 2 semaines.",
+        // FACTS (2026-09-01) — aligné sur DELAIS (facts.ts) : profil présenté
+        // sous 5 jours ouvrés, mission démarrée en 8 à 15 jours.
+        "Iter Advisors présente un profil sous 5 jours ouvrés après le premier échange ; la mission démarre en 8 à 15 jours, premiers livrables dès le premier mois d'intervention.",
     },
     {
       question: "Quelle est la différence entre Fractional CFO et DAF externalisé ?",
@@ -196,27 +210,76 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   const cmsNavigation = await getCmsNavigation("fr");
   const faqItems = faqBySlug[slug];
-  const faqSchema = faqItems
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faqItems.map((item) => ({
-          "@type": "Question",
-          name: item.question,
-          acceptedAnswer: { "@type": "Answer", text: item.answer },
-        })),
-      }
-    : null;
+  const pageUrl = `https://www.iteradvisors.com/ressources/glossaire/${slug}`;
+
+  // REDESIGN-P3 (2026-09-01) — les articles du blog qui emploient le terme,
+  // pour la section « où ce terme apparaît ». Résolus via
+  // resolveBlogArticleHref pour ne jamais lier un slug qui redirige.
+  const mentions = Object.entries(blogPosts.fr)
+    .filter(([, p]) => p.htmlContent && htmlMentionsGlossary(p.htmlContent, slug))
+    .map(([s, p]) => ({ href: resolveBlogArticleHref("fr", s), title: p.h1 }))
+    .filter((m): m is { href: string; title: string } => m.href !== null && !m.href.includes("/glossaire/"))
+    .filter((m, i, arr) => arr.findIndex((x) => x.href === m.href) === i)
+    .slice(0, 4);
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      // Article : c'est ce qui porte l'auteur et les dates — la garde E-E-A-T
+      // de la recette les exige désormais sur le glossaire aussi.
+      {
+        "@type": "Article",
+        "@id": `${pageUrl}#article`,
+        url: pageUrl,
+        headline: content.h1,
+        description: content.meta.description,
+        datePublished: GLOSSARY_PUBLISHED,
+        dateModified: GLOSSARY_MODIFIED,
+        inLanguage: "fr-FR",
+        author: {
+          "@type": "Person",
+          name: GLOSSARY_AUTHOR.name,
+          url: `https://www.iteradvisors.com${GLOSSARY_AUTHOR.url}`,
+        },
+        publisher: { "@id": "https://www.iteradvisors.com/#organization" },
+        isPartOf: { "@type": "CollectionPage", "@id": "https://www.iteradvisors.com/ressources/glossaire#collection" },
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": `${pageUrl}#term`,
+        name: content.h1.split(/\s[:(]/)[0].trim(),
+        description: content.meta.description,
+        url: pageUrl,
+        inDefinedTermSet: "https://www.iteradvisors.com/ressources/glossaire",
+      },
+      ...(faqItems
+        ? [
+            {
+              "@type": "FAQPage",
+              mainEntity: faqItems.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: { "@type": "Answer", text: item.answer },
+              })),
+            },
+          ]
+        : []),
+    ],
+  };
 
   return (
     <>
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
-      <GlossaryEntryPage locale="fr" content={content} cmsNavigation={cmsNavigation} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <GlossaryEntryPage
+        locale="fr"
+        content={content}
+        cmsNavigation={cmsNavigation}
+        slug={slug}
+        mentions={mentions}
+      />
     </>
   );
 }
