@@ -1,9 +1,11 @@
+import { getDafContent } from "@/lib/content/daf";
 import { Metadata } from "next";
 import DafPage from "@/components/pages/DafPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
 import { getCmsNavigation } from "@/lib/strapi";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const content = getDafContent("es");
   return buildStrapiMetadata({
     endpoint: "daf-externalise-page",
     locale: "es",
@@ -11,8 +13,8 @@ export async function generateMetadata(): Promise<Metadata> {
     // SEO-AUD-0824 §2 — le slug anglais du cluster DAF est `fractional-cfo`
     // depuis HARMO-01 ; `daf-outsourcing` ne subsiste que comme redirection.
     // Les chemins sont désormais déduits par getLocalizedPath.
-    fallbackTitle: "Externalización DAF | Iter Advisors",
-    fallbackDescription: "Iter Advisors, gabinete de CFO externalizado para pymes y startups en España y Francia. 85 empresas acompañadas, 100 M€ de fundraising, 5/5 en Trustfolio.",
+    fallbackTitle: content.meta.title,
+    fallbackDescription: content.meta.description,
   });
 }
 

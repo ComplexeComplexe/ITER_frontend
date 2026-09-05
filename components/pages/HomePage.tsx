@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 // Script import removed - trustfolio loaded lazily via IntersectionObserver
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
@@ -476,7 +477,7 @@ export default function HomePage({
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-iter-violet">
-                      <AnimatedCounter target={100} suffix="+" />
+                      <AnimatedCounter target={CLIENTS_ACCOMPAGNES} suffix="+" />
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">
                       Clients

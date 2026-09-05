@@ -10,9 +10,10 @@ const BASE = "https://www.iteradvisors.com";
 // every Vercel deploy trains Googlebot to ignore the signal entirely.
 // Update each constant only when that category of content meaningfully changes.
 const D = {
-  homepage:      "2026-05-19", // illustrations + sitemap refresh
+  homepage:      "2026-09-05", // client count aligned with approved facts
   pillar:        "2026-05-17", // DAF / DRH pillar pages — last major copy update
-  dafPillar:     "2026-09-03", // REFONTE-DAF — pilier /daf-externalise réécrit (12 blocs)
+  dafPillar:     "2026-09-03", // FR pillar rewrite
+  dafOffer:      "2026-09-05", // EN/ES offer and FR pricing alignment
   service:       "2026-09-01", // REDESIGN-P4 — auteur, date, FAQ RH, maillage DRH
   local:         "2026-05-17", // geo pages (Barcelona, Paris, Toulouse)
   institutional: "2026-03-01", // a-propos, contact, legal — stable
@@ -225,7 +226,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...entryAllLocales(
       { fr: "/daf-externalise", en: "/fractional-cfo", es: "/externalizacion-daf" },
       D.dafPillar
-    )
+    ).map(item => ({ ...item, lastModified: item.url === `${BASE}/daf-externalise` ? D.dafPillar : D.dafOffer }))
   );
   entries.push(
     ...entryAllLocales(
@@ -236,7 +237,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // tarifs — FR-only (no EN/ES equivalent page exists yet)
   entries.push({
     url: `${BASE}/daf-externalise/tarifs`,
-    lastModified: D.pillar,
+    lastModified: D.dafOffer,
   });
   // SEO-007 (2026-08-10) — page commerciale « Fractional CFO pour startups ».
   // Elle vivait sous /jobs/, dont le hub est en noindex, et n'avait jamais été
@@ -579,5 +580,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     );
   }
 
-  return entries;
+  return entries.map(item => ({
+    ...item,
+    lastModified: ["/daf-externalise-paris", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", "/ressources/cas-clients", "/en/ressources/cas-clients"].some(path => item.url === `${BASE}${path}`)
+      ? "2026-09-05" : item.lastModified,
+  }));
 }

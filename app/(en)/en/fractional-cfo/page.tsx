@@ -27,8 +27,7 @@ export default async function FractionalCFOPage() {
   ]);
   const t = getDafContent("en");
 
-  // FAQPage JSON-LD — eligible for rich results on "fractional cfo" queries
-  // (SEO ticket A3 — JACKPOT keyword, 9 900 searches/month).
+  // Structured answers use the same content as the visible FAQ.
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
