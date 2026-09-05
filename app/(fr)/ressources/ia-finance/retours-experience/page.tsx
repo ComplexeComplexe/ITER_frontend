@@ -2,7 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { IA_GUIDES } from "@/lib/content/ia-finance-guides";
 import IaFinanceGuide from "@/components/pages/IaFinanceGuide";
 
-const SLUG = "automatiser-reporting-financier";
+const SLUG = "retours-experience";
 const guide = IA_GUIDES[SLUG];
 export const metadata = buildMetadata({
   locale: "fr", title: guide.title, description: guide.description,

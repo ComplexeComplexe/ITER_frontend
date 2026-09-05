@@ -151,6 +151,7 @@ mission n'est publié tant qu'il n'a pas été validé par un DAF du cabinet.
 - Services : ${BASE}/services
 - Fiscalité France-Espagne : ${BASE}/ressources/fiscalite-espagne-france
 - IA & Finance : ${BASE}/ressources/ia-finance
+- IA et finance : cas publics documentés et limites : ${BASE}/ressources/ia-finance/retours-experience
 - Blog : ${BASE}/ressources/blog
 - Glossaire : ${BASE}/ressources/glossaire
 - Cas clients : ${BASE}/ressources/cas-clients

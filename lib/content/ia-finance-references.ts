@@ -1,109 +1,18 @@
 import type { ExternalReference } from "@/lib/content/references";
 
-/**
- * Sources de la section « IA & Finance » (/ressources/ia-finance/*).
- *
- * IA-FINANCE (2026-09-01) — les contenus livrés par l'audit citaient des
- * prix d'outils et des politiques de confidentialité sans lien. Chaque URL
- * ci-dessous a été vérifiée (200) le 1er septembre 2026 ; les prix cités dans
- * les pages renvoient à ces grilles éditeur, jamais à une estimation maison.
- */
-const REFS = {
-  powerBiPricing: {
-    title: "Power BI : plans de tarification",
-    source: "Microsoft",
-    url: "https://www.microsoft.com/fr-fr/power-platform/products/power-bi/pricing",
-    date: "consulté le 1er septembre 2026",
-  },
-  powerBiLicences: {
-    title: "Types de licences et fonctionnalités du service Power BI",
-    source: "Microsoft Learn",
-    url: "https://learn.microsoft.com/fr-fr/power-bi/fundamentals/service-features-license-type",
-    date: "consulté le 1er septembre 2026",
-  },
-  lookerStudio: {
-    title: "Looker Studio",
-    source: "Google",
-    url: "https://lookerstudio.google.com/",
-    date: "consulté le 1er septembre 2026",
-  },
-  openaiPricing: {
-    title: "Tarification ChatGPT (Team, Enterprise)",
-    source: "OpenAI",
-    url: "https://openai.com/chatgpt/pricing/",
-    date: "consulté le 1er septembre 2026",
-  },
-  openaiData: {
-    title: "How your data is used to improve model performance",
-    source: "OpenAI Help Center",
-    url: "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
-    date: "consulté le 1er septembre 2026",
-  },
-  anthropicPricing: {
-    title: "Plans & Pricing — Claude",
-    source: "Anthropic",
-    url: "https://www.anthropic.com/pricing",
-    date: "consulté le 1er septembre 2026",
-  },
-  anthropicData: {
-    title: "Is my data used for model training?",
-    source: "Anthropic Privacy Center",
-    url: "https://privacy.anthropic.com/en/articles/7996868-is-my-data-used-for-model-training",
-    date: "consulté le 1er septembre 2026",
-  },
-  googlePrivacy: {
-    title: "Guide sur la confidentialité de l'IA générative dans Google Workspace",
-    source: "Google Workspace",
-    url: "https://support.google.com/a/answer/15706919?hl=fr",
-    date: "consulté le 1er septembre 2026",
-  },
-  googlePricing: {
-    title: "Tarifs Google Workspace",
-    source: "Google",
-    url: "https://workspace.google.com/intl/fr/pricing",
-    date: "consulté le 1er septembre 2026",
-  },
-  cnil: {
-    title: "Les fiches pratiques IA",
-    source: "CNIL",
-    url: "https://www.cnil.fr/fr/les-fiches-pratiques-ia",
-    date: "consulté le 1er septembre 2026",
-  },
+/** Sources lues le 5 septembre 2026. Les cas éditeur ne sont pas des missions Iter. */
+export const IA_SOURCES = {
+  usVenture: { title: "U.S. Venture : rapprochements avec Copilot for Finance", source: "Microsoft Customer Stories", url: "https://www.microsoft.com/en/customers/story/20600-us-venture-microsoft-365-copilot-for-finance", date: "28 janvier 2025 ; consulté le 5 septembre 2026" },
+  armanino: { title: "Armanino : assistance à la rédaction des demandes de pièces", source: "Anthropic / Claude", url: "https://claude.com/customers/armanino", date: "consulté le 5 septembre 2026" },
+  hebbia: { title: "Hebbia : analyse de dossiers financiers avec Claude", source: "Anthropic / Claude", url: "https://claude.com/customers/hebbia", date: "consulté le 5 septembre 2026" },
+  dataAnalysis: { title: "Analyse de données avec ChatGPT", source: "OpenAI Help Center", url: "https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt", date: "consulté le 5 septembre 2026" },
+  openaiData: { title: "Protection des données des offres professionnelles", source: "OpenAI", url: "https://openai.com/business-data/", date: "consulté le 5 septembre 2026" },
+  anthropicData: { title: "Utilisation des données pour l’entraînement", source: "Anthropic Privacy Center", url: "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training", date: "consulté le 5 septembre 2026" },
+  powerBi: { title: "Tarification et licences Power BI", source: "Microsoft", url: "https://www.microsoft.com/fr-fr/power-platform/products/power-bi/pricing", date: "consulté le 5 septembre 2026" },
+  pennylane: { title: "Introduction aux API Pennylane", source: "Pennylane", url: "https://pennylane.readme.io/docs/getting-started", date: "consulté le 5 septembre 2026" },
+  googleBi: { title: "Fonctions de Data Studio Pro (anciennement Looker Studio)", source: "Google Cloud", url: "https://docs.cloud.google.com/data-studio/about-pro", date: "consulté le 5 septembre 2026" },
+  cnil: { title: "Fiches pratiques sur le développement des systèmes d’IA", source: "CNIL", url: "https://www.cnil.fr/fr/les-fiches-pratiques-ia", date: "consulté le 5 septembre 2026" },
 } satisfies Record<string, ExternalReference>;
-
-export type IaFinancePage =
-  | "automatiser-reporting-financier"
-  | "chatgpt-finance"
-  | "llm-finance"
-  | "outils"
-  | "feuille-de-route-90-jours";
-
-const BY_PAGE: Record<IaFinancePage, ExternalReference[]> = {
-  "automatiser-reporting-financier": [REFS.powerBiPricing, REFS.lookerStudio, REFS.openaiData],
-  "chatgpt-finance": [REFS.openaiPricing, REFS.openaiData, REFS.cnil],
-  "llm-finance": [
-    REFS.openaiPricing,
-    REFS.openaiData,
-    REFS.anthropicPricing,
-    REFS.anthropicData,
-    REFS.googlePricing,
-    REFS.googlePrivacy,
-    REFS.cnil,
-  ],
-  outils: [
-    REFS.powerBiPricing,
-    REFS.powerBiLicences,
-    REFS.lookerStudio,
-    REFS.openaiPricing,
-    REFS.anthropicPricing,
-    REFS.googlePricing,
-  ],
-  "feuille-de-route-90-jours": [REFS.lookerStudio, REFS.powerBiPricing, REFS.cnil],
-};
-
-export function getIaFinanceReferences(page: IaFinancePage): ExternalReference[] {
-  return BY_PAGE[page];
-}
-
+export type IaSourceKey = keyof typeof IA_SOURCES;
 export const IA_FINANCE_HUB = { label: "IA & Finance", href: "/ressources/ia-finance" } as const;
 export const IA_FINANCE_AUTHOR = { name: "Benjamin Ziza", url: "/a-propos/benjamin-ziza" } as const;

@@ -27,7 +27,7 @@ const D = {
   author:        "2026-05-17", // Person schema + author bio pages added
   jobs:          "2026-04-01", // noindexed but discoverable (TICKET-12)
   fiscalite:     "2026-05-31", // Fiscalité Espagne France cocoon — initial publication
-  iaFinance:     "2026-09-01", // IA & Finance section — hub + 5 guides
+  iaFinance:     "2026-09-05", // IA & Finance: sources, cases and six guides
 } as const;
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -79,6 +79,7 @@ function entryAllLocales(
 /** Real publication date per blog slug, falling back to tools date.
  *  Avoids emitting TODAY for articles that haven't changed since publish. */
 function blogModified(slug: string, locale: Locale = "fr"): string {
+  if (locale === "fr" && ["ia-finance-automatisation-direction-financiere", "ia-et-automatisation-des-taches-repetitives"].includes(slug)) return "2026-09-05";
   if (slug === "regimes-fiscaux-france-vs-espagne") return locale === "es" ? "2026-07-25" : "2026-08-31";
   return (
     blogPosts[locale][slug]?.updatedDate ??
@@ -371,9 +372,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${BASE}/ressources/fiscalite/modelo-720`,
     lastModified: D.fiscalite,
   });
-  // IA & Finance section — FR-only (IA-FINANCE, 2026-09-01). The
-  // « retours-experience » page is announced on the hub but not shipped until
-  // real cases are validated with the clients concerned.
+  // IA & Finance — FR-only, including attributed public case studies.
   for (const slug of [
     "",
     "/automatiser-reporting-financier",
@@ -381,6 +380,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/llm-finance",
     "/outils",
     "/feuille-de-route-90-jours",
+    "/retours-experience",
   ]) {
     entries.push({
       url: `${BASE}/ressources/ia-finance${slug}`,
