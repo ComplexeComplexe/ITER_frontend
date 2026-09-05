@@ -1,5 +1,3 @@
-'use client';
-
 import React, { ReactNode } from 'react';
 import BlogHero from './BlogHero';
 import TableOfContents from './TableOfContents';
@@ -84,9 +82,9 @@ export default function BlogPostLayout({
             sans puces, sans bordures de tableau. `.prose-iter-blog` est la
             typographie éditoriale du site (globals.css), déjà utilisée par
             BlogPostPage et GuideFiscalPage. */}
-        <article className="prose-iter-blog mx-auto max-w-[72ch] py-8">
+        <div className="prose-iter-blog mx-auto max-w-[72ch] py-8">
           {children}
-        </article>
+        </div>
       </div>
 
       {/* Related Articles Section */}

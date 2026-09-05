@@ -1,5 +1,3 @@
-'use client';
-
 import { ReactNode } from 'react';
 
 interface TldrProps {
@@ -12,7 +10,7 @@ interface TldrProps {
  */
 export default function Tldr({ children }: TldrProps) {
   return (
-    <div className="mb-8 rounded-lg border-l-4 border-blue-500 bg-blue-50 p-6">
+    <div className="mb-8 rounded-lg border-l-4 border-iter-violet bg-iter-violet/5 p-6">
       <h3 className="mb-3 font-semibold text-slate-900">
         À retenir en 30 secondes
       </h3>

@@ -63,9 +63,9 @@ export const fallbackBlogArticles = [
     id: 5,
     documentId: "cout-daf-externalise-tarifs-prix-2026",
     slug: "cout-daf-externalise-tarifs-prix-2026",
-    title: "Coût DAF Externalisé : Tarifs et Pricing en 2026",
+    title: "Coût d’un DAF externalisé : comparer les budgets en 2026",
     description:
-      "Combien coûte un DAF externalisé ? Grille tarifaire, facteurs de prix et ROI attendu.",
+      "Comparez le périmètre, la disponibilité, les frais et le budget annuel d’une direction financière.",
     featuredImage: {
       id: 5,
       url: "/images/blog/cout-daf-externalise-tarifs-prix-2026.webp",

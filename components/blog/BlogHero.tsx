@@ -1,5 +1,3 @@
-'use client';
-
 import AuthorByline from './AuthorByline';
 import { AuthorInfo } from './BlogPostLayout';
 
@@ -23,7 +21,6 @@ export default function BlogHero({
   dek,
   author,
   readingTime,
-  dateModified,
 }: BlogHeroProps) {
   return (
     <div className="w-full bg-white">
@@ -31,13 +28,13 @@ export default function BlogHero({
       <div className="mx-auto max-w-4xl px-6 py-12 lg:py-16">
         {/* Category Badge */}
         <div className="mb-6 inline-block">
-          <span className="inline-flex items-center rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-800">
+          <span className="inline-flex items-center rounded-full bg-iter-violet/10 px-4 py-2 text-sm font-medium text-iter-violet">
             {category}
           </span>
         </div>
 
         {/* Title */}
-        <h1 className="mb-6 text-3xl font-medium leading-tight text-slate-900 lg:text-4xl">
+        <h1 className="mb-6 text-3xl sm:text-4xl lg:text-5xl font-bold font-heading leading-tight text-foreground">
           {title}
         </h1>
 

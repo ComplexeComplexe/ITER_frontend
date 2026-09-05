@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 
 interface RelatedArticle {
@@ -35,12 +33,12 @@ export default function RelatedArticles({
               className="group flex flex-col rounded-lg border border-slate-200 bg-white p-6 transition-shadow hover:shadow-lg"
             >
               <div className="mb-3 inline-block">
-                <span className="text-xs font-semibold uppercase tracking-wide text-blue-600">
+                <span className="text-xs font-semibold uppercase tracking-wide text-iter-violet">
                   {article.category}
                 </span>
               </div>
 
-              <h3 className="mb-4 flex-grow text-lg font-medium text-slate-900 group-hover:text-blue-600">
+              <h3 className="mb-4 flex-grow text-lg font-medium text-slate-900 group-hover:text-iter-violet">
                 <Link href={article.url}>
                   {article.title}
                 </Link>

@@ -253,6 +253,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
       sections: [
         {
           content: [
+            "Dans une activité de production, le [DAF externalisé industriel](/daf-externalise/industrie) rapproche stocks, encours et échéances clients pour préparer les décisions de financement.",
             "Le **Besoin en Fonds de Roulement (BFR)** est l'un des indicateurs financiers les plus critiques pour les entreprises en croissance — et pourtant l'un des moins compris. Il mesure le montant de trésorerie que vous devez financer pour couvrir le décalage temporel entre vos décaissements (paiement fournisseurs, salaires) et vos encaissements (paiement clients). Un BFR mal maîtrisé peut asphyxier une entreprise rentable et tuer une startup en pleine croissance.",
           ],
         },

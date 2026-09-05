@@ -557,7 +557,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   entries.push(...DOCUMENTED_CASES.map(item => ({ url: `${BASE}${item.href}`, lastModified: item.modified })));
 
-  const transactionalUpdates = new Set(["/daf-externalise", "/fractional-cfo-startups", "/daf-externalise-toulouse", "/en/outsourced-cfo-toulouse", "/es/cfo-externalizado-toulouse", "/contact", "/en/contact", "/es/contact", "/daf-externalise/temps-partage", "/daf-externalise/secteurs", "/services/accompagnement-levee-de-fond"]);
+  const transactionalUpdates = new Set(["/services/gestion-financiere-externalisee", "/ressources/blog/daf-part-time-tarifs-missions-2026", "/ressources/blog/les-10-outils-pour-cfos-startup", "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", "/daf-externalise", "/fractional-cfo-startups", "/daf-externalise-toulouse", "/en/outsourced-cfo-toulouse", "/es/cfo-externalizado-toulouse", "/contact", "/en/contact", "/es/contact", "/daf-externalise/temps-partage", "/daf-externalise/secteurs", "/services/accompagnement-levee-de-fond"]);
   return entries.map(item => ({
     ...item,
     lastModified: transactionalUpdates.has(item.url.slice(BASE.length)) || [...tools.filter(tool => !tool.logo).map(tool => `/ressources/outils/${tool.slug}`), "/daf-externalise/deep-tech", "/daf-externalise/industrie", "/daf-externalise/ecommerce", "/ressources/outils", "/ressources/blog/stack-financier-saas-series-a", "/daf-externalise-paris", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", "/ressources/cas-clients", "/en/ressources/cas-clients"].some(path => item.url === `${BASE}${path}`)

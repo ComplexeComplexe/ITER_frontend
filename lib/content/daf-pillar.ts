@@ -86,7 +86,7 @@ export const dafPillar = {
 
   hero: {
     h1: "DAF externalisé pour PME et startups : une direction financière senior, sans recruter",
-    lead: `Un directeur financier expérimenté rejoint votre équipe de 1 à 8 jours par mois pour piloter trésorerie, reporting, budget et financement. De ${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois selon le rythme, démarrage en ${DELAIS.missionDemarree}, sans durée d'engagement minimale (préavis de ${ENGAGEMENT.preavisJours} jours).`,
+    lead: `Un directeur financier expérimenté rejoint votre équipe pour piloter trésorerie, reporting, budget et financement. De ${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois selon le périmètre confié ; disponibilité indicative de 1 à 8 jours par mois. Démarrage en ${DELAIS.missionDemarree}, sans durée d'engagement minimale (préavis de ${ENGAGEMENT.preavisJours} jours).`,
     proofs: [
       `${CLIENTS_ACCOMPAGNES} entreprises accompagnées`,
       `${FONDS_LEVES} levés par nos clients depuis ${ANNEE_FONDATION}`,
@@ -305,7 +305,7 @@ export const dafPillar = {
       },
       {
         title: "France et Espagne",
-        text: "Des bureaux à Paris, Toulouse et Barcelone, et des DAF qui pratiquent les deux environnements fiscaux et sociaux au quotidien.",
+        text: "Des équipes à Paris et Barcelone, habituées aux environnements financiers français et espagnol. À Toulouse, les missions sont pilotées à distance, avec des déplacements convenus au cadrage.",
       },
       {
         title: "Des outils modernes, sans dogme",
@@ -331,7 +331,7 @@ export const dafPillar = {
 
   cities: {
     heading: "Où nous intervenons",
-    text: "Sur site ou à distance, le rythme de présence est défini au cadrage. Nos équipes sont basées dans trois villes :",
+    text: "Sur site ou à distance, le rythme de présence est défini au cadrage. Nos équipes sont basées à Paris et Barcelone ; nous accompagnons aussi les entreprises toulousaines à distance et sur site selon accord :",
     items: [
       { label: "DAF externalisé à Paris", href: "/daf-externalise-paris" },
       { label: "DAF externalisé à Toulouse", href: "/daf-externalise-toulouse" },
@@ -358,7 +358,7 @@ export const dafPillar = {
     },
     {
       question: "Un DAF externalisé peut-il travailler à distance ?",
-      answer: "Oui. La plupart des missions combinent des journées sur site, notamment au démarrage et pour les comités, et du travail à distance sur des outils partagés. Le rythme de présence est fixé au cadrage. Nos équipes sont basées à Paris, Toulouse et Barcelone.",
+      answer: "Oui. La plupart des missions combinent des journées sur site, notamment au démarrage et pour les comités, et du travail à distance sur des outils partagés. Le rythme de présence est fixé au cadrage. Nos équipes sont basées à Paris et Barcelone. À Toulouse, nous intervenons à distance, avec des visites convenues au cadrage ; aucun consultant n’y réside actuellement.",
     },
     {
       question: "Quelle différence avec un expert-comptable ?",

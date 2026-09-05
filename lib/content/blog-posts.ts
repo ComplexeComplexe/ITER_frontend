@@ -98,11 +98,11 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "cout-daf-externalise-tarifs-prix-2026": {
       meta: {
-        title: "Tarifs DAF externalisé 2026 : grille de prix | Iter Advisors",
+        title: "Coût d’un DAF externalisé : comparer les budgets en 2026 | Iter Advisors",
         // SEO-02 (2026-08-30) — « 50 à 70 % » et « TJM » sont deux valeurs
         // retirées le 10 août. Une meta description n'est pas dans le corps de
         // la page : le contrôle ne la lisait pas.
-        description: "Tarifs d'un DAF externalisé en 2026 : grille par formule, de 3 000 à 8 000 € HT/mois en retainer. Comparaison avec le coût d'un DAF salarié.",
+        description: "Périmètre, disponibilité, frais et calcul annuel : comparer un tarif journalier, un forfait mensuel et un recrutement.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -110,7 +110,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogLabel: "Blog",
         blogHref: "/ressources/blog",
       },
-      h1: "Combien coute un DAF externalise en 2026 ? Tarifs, grille de prix et ROI",
+      h1: "Coût d’un DAF externalisé : comparer les budgets en 2026",
       publishedDate: "2026-03-28",
       author: "Sébastien Doat",
       category: "",
@@ -2112,7 +2112,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <p>Avant de connecter une nouvelle application, vérifiez les droits d’accès, les exports disponibles et la capacité à retrouver l’origine d’un chiffre. L’<a href="/ressources/ia-finance/automatiser-reporting-financier">automatisation du reporting financier</a> est utile lorsque ces bases sont stables.</p>
 <h2 id="pilotage">Suivre l’usage et le pilotage financier</h2>
 <p>Après déploiement, mesurez le temps de préparation du reporting, les écarts non expliqués et les tâches encore manuelles. Ces observations permettent d’ajuster le dispositif sans promettre un gain identique pour toutes les entreprises.</p>
-<p>Le <a href="/daf-externalise">DAF externalisé</a> peut coordonner cette organisation, en lien avec les équipes et l’expert-comptable. Consultez nos <a href="/ressources/cas-clients">exemples de missions</a> et notre <a href="/ressources/outils">catalogue de fiches outils</a> pour préparer le cadrage.</p>`,
+<p>Le <a href="/daf-externalise">DAF externalisé</a> peut coordonner cette organisation, en lien avec les équipes et l’expert-comptable. Consultez nos <a href="/ressources/cas-clients">exemples de missions</a> et notre <a href="/ressources/outils">catalogue de fiches outils</a> pour préparer le cadrage.</p><p>Pour déployer ces outils et organiser le reporting investisseurs, un <a href="/fractional-cfo-startups">DAF externalisé pour startup et SaaS</a> relie les données au budget, au runway et aux décisions de recrutement.</p>`,
       content: [],
     },
     // Pilier 3 — Levée de Fonds & M&A (3 articles)
@@ -2418,7 +2418,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 <li>Bridge round : tour d'amorçage auprès des investisseurs existants</li>
 </ol>
 <p>Un <a href="/daf-externalise">DAF externalisé anticipe le cash burn</a> et construit votre forecast à 12 mois.</p>
-<p><a href="/contact">Construire mon forecast avec un DAF</a></p>`,
+<p><a href="/contact">Construire mon forecast avec un DAF</a></p><p>Un <a href="/fractional-cfo-startups">DAF externalisé pour startup et SaaS</a> aide à relier ces scénarios au budget et au calendrier des financements. Pour une activité de R&amp;D longue, le <a href="/daf-externalise/deep-tech">pilotage financier deep tech</a> distingue aussi les jalons techniques et les aides confirmées des financements encore sollicités.</p>`,
       content: [],
     },
     "tableau-de-bord-financier-startup-12-kpis": {
@@ -3215,8 +3215,8 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
 
     "daf-part-time-tarifs-missions-2026": {
       meta: {
-        title: "DAF à temps partagé : tarifs et missions | Iter Advisors",
-        description: "Combien coûte un DAF à temps partagé ? Tarifs par jour et par mois, missions types, durée d'engagement. Le guide chiffré 2026.",
+        title: "Travailler avec un DAF à temps partagé : rythme et livrables | Iter Advisors",
+        description: "Calendrier de clôture, trésorerie, réunions et responsabilités : organiser une mission récurrente avec un DAF à temps partagé.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -3224,7 +3224,7 @@ Pour une PME qui a besoin d'un DAF un jour par semaine, le coût annuel se situe
         blogLabel: "Blog",
         blogHref: "/ressources/blog",
       },
-      h1: "DAF à temps partagé : combien ça coûte, ce que ça couvre",
+      h1: "Travailler avec un DAF à temps partagé : rythme et livrables",
       publishedDate: "2026-07-24",
       category: "DAF à temps partagé",
       htmlContent: `<p>Le DAF à temps partagé permet aux PME d'accéder à une direction financière de haut niveau sans supporter le coût d'un poste à temps plein. De 1 à 3 jours par semaine, ce modèle s'adapte à votre stade de développement. Ce guide chiffré détaille les tarifs pratiqués en 2026, les missions couvertes et ce que vous pouvez raisonnablement attendre de cet investissement.</p>`,

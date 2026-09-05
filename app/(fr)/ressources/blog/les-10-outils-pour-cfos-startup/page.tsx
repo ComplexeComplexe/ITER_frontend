@@ -1,6 +1,7 @@
 
 
 import { Metadata } from 'next';
+import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
 
@@ -44,7 +45,8 @@ export default function Outils10CfosStartupPage() {
         jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={12}
-      dateModified="2026-05-01"
+      datePublished="2026-05-01"
+      dateModified="2026-09-05"
       heroImage="/images/blog/covers/les-10-outils-pour-cfos-startup.svg"
       toc={[
         { id: "comptabilite", label: "Comptabilité cloud" },
@@ -278,6 +280,8 @@ export default function Outils10CfosStartupPage() {
       <p>
         Chez Iter Advisors, nous guidons chaque startup à travers cette sélection et implémentation. Résultat : une finance lean, 100 % cloud, prête pour la levée et la croissance.
       </p>
+      <h2 id="accompagnement">Organiser la mise en œuvre</h2>
+      <p>Un <Link href="/fractional-cfo-startups">DAF externalisé pour startup et SaaS</Link> aide à définir les sources de données, les contrôles et les responsabilités avant de connecter les outils. Le choix des logiciels suit les besoins de reporting, de trésorerie et de financement.</p>
     </BlogPostPageRefonte>
   );
 }

@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import { AuthorInfo } from './BlogPostLayout';
 
@@ -19,7 +17,7 @@ export default function AuthorByline({
   return (
     <div className="flex items-center gap-3">
       {author.avatar && (
-        <div className="relative h-10 w-10 overflow-hidden rounded-full bg-slate-200">
+        <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-slate-200">
           <Image
             src={author.avatar}
             alt={author.name}
@@ -30,7 +28,7 @@ export default function AuthorByline({
         </div>
       )}
       <div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
           {author.url ? (
             <a
               href={author.url}

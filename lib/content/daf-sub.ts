@@ -488,7 +488,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             // tarifaire officielle (intention commerciale). Le blog article
             // dédié = guide informationnel avec méthodologie et ROI calculator.
             // Séparation claire des intentions pour éviter la cannibalisation.
-            "Chez Iter Advisors, nous avons fait le choix de la transparence totale sur nos tarifs. Cette page présente notre **grille de prix officielle 2026**, les facteurs qui influencent le coût, et une comparaison avec les alternatives (recrutement d'un DAF salarié, consultant financier, expert-comptable). Pour un **guide informationnel complet avec méthodologie de comparaison, calcul de ROI et analyse marché**, consultez notre article dédié : [Combien coûte un DAF externalisé en 2026 : tarifs, grille de prix et ROI](/ressources/blog/cout-daf-externalise-tarifs-prix-2026).",
+            "Chez Iter Advisors, nous avons fait le choix de la transparence totale sur nos tarifs. Cette page présente notre **grille de prix officielle 2026**, les facteurs qui influencent le coût, et une comparaison avec les alternatives (recrutement d'un DAF salarié, consultant financier, expert-comptable). Pour un **guide de comparaison des budgets, des périmètres et des modes de facturation**, consultez notre article dédié : [Coût d’un DAF externalisé : comparer les budgets en 2026](/ressources/blog/cout-daf-externalise-tarifs-prix-2026).",
           ],
         },
         {
@@ -757,6 +757,43 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       ]
     },
     {
+  "heading": "Exemple de revue : expliquer une marge inférieure au devis",
+  "content": [
+    "Cet exemple décrit une méthode de travail, sans reprendre les données d’un client. Le responsable de production confirme les quantités et temps consommés ; les achats documentent les prix ; la finance rapproche ces éléments du devis initial.",
+    "Le dirigeant peut alors distinguer un effet de prix matière, une série plus courte que prévu ou un temps de fabrication supérieur. La décision porte sur le tarif, le processus ou le volume à produire. Le suivi suivant vérifie l’effet de l’action retenue."
+  ],
+  "table": {
+    "caption": "Structure illustrative d’une revue de coût de revient",
+    "headers": [
+      "Donnée à rapprocher",
+      "Interlocuteur",
+      "Question de gestion"
+    ],
+    "rows": [
+      [
+        "Consommation réelle et nomenclature",
+        "Production",
+        "Quel écart de matière ou de rendement ?"
+      ],
+      [
+        "Prix facturé et prix prévu",
+        "Achats",
+        "Hausse ponctuelle ou nouvelle base de coût ?"
+      ],
+      [
+        "Stocks et commandes à livrer",
+        "Logistique et commerce",
+        "Quel financement avant encaissement ?"
+      ],
+      [
+        "Coût de mise en service et capacité prévue",
+        "Direction industrielle",
+        "L’investissement reste-t-il adapté au scénario ?"
+      ]
+    ]
+  }
+},
+    {
       "heading": "Cadrer la mission et choisir un accompagnement",
       "content": [
         "Le périmètre se définit à partir des données disponibles, des échéances et des décisions à prendre. Un premier échange permet de préciser les livrables, leur fréquence et le rôle des équipes internes.",
@@ -811,6 +848,43 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         "**Gouvernance :** partager les écarts et les arbitrages avec les dirigeants et les investisseurs, sans confondre un objectif technique avec un résultat acquis. Les [outils de pilotage financier](/ressources/outils) sont choisis en fonction de ces besoins."
       ]
     },
+    {
+  "heading": "Exemple de budget par jalon de R&D",
+  "content": [
+    "Le tableau suivant illustre une structure de pilotage, sans données de client ni hypothèse de financement acquise. Chaque ligne du budget doit indiquer un responsable, un degré de certitude et une date de révision.",
+    "Si un essai est reporté, la direction technique précise les ressources supplémentaires nécessaires. La finance recalcule le besoin de trésorerie et présente les options : décaler une dépense, adapter le programme ou chercher un financement. Une aide sollicitée reste séparée du scénario financé tant que ses conditions ne sont pas confirmées."
+  ],
+  "table": {
+    "caption": "Structure illustrative d’un suivi de jalons techniques",
+    "headers": [
+      "Élément",
+      "Donnée nécessaire",
+      "Conséquence à tester"
+    ],
+    "rows": [
+      [
+        "Étape technique",
+        "Livrable et critère de validation",
+        "Coût d’un report de l’essai"
+      ],
+      [
+        "Dépenses engagées",
+        "Contrats, équipes et équipements",
+        "Cash restant à décaisser"
+      ],
+      [
+        "Financement confirmé",
+        "Montant, conditions et calendrier",
+        "Décalage possible de versement"
+      ],
+      [
+        "Financement sollicité",
+        "Statut et dépendances",
+        "Scénario sans obtention"
+      ]
+    ]
+  }
+},
     {
       "heading": "Cadrer la mission et choisir un accompagnement",
       "content": [
