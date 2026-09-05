@@ -5,8 +5,8 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import StrapiBlocks from "@/components/StrapiBlocks";
-import { strapiMediaUrl } from "@/lib/strapi";
-import type { StrapiJobMetier, CmsNavItem } from "@/lib/strapi";
+import { strapiMediaUrl } from "@/lib/static-content";
+import type { StrapiJobMetier, CmsNavItem } from "@/lib/static-content";
 
 interface FicheMetierDetailPageProps {
   locale: Locale;

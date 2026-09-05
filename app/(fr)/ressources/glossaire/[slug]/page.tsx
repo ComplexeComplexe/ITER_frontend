@@ -10,7 +10,7 @@ import {
   GLOSSARY_PUBLISHED,
   htmlMentionsGlossary,
 } from "@/lib/glossary-links";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { Locale } from "@/lib/i18n";
 
 /**

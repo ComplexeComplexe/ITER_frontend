@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import BlogPostPage from "@/components/pages/BlogPostPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 
 const htmlContent = `<p>Your startup is growing. Investors are asking harder questions. Spanish tax deadlines are piling up. And you are still managing finances on spreadsheets between product meetings.</p>
 <p>You don't need a full-time CFO at 150K euros per year. You need a <strong>fractional CFO in Barcelona</strong> who understands your stage, your market, and the regulatory landscape you operate in.</p>

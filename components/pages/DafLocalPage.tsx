@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight, MapPin, Building2, Users, Briefcase, Phone, BarChart3, Wallet, Rocket, Compass, Network, Star } from "lucide-react";
 import Image from "next/image";
 import { Locale } from "@/lib/i18n";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 import { getContactPath } from "@/lib/navigation";
 import { dafClusterHref, serviceHref } from "@/lib/path-localization";
 import { getDafLocalContent, DafLocalCity } from "@/lib/content/daf-local";

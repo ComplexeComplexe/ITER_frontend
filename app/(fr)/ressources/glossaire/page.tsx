@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import GlossairePage from "@/components/pages/GlossairePage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { getGlossaryContent, convertToStrapiTerms } from "@/lib/content/glossary";
 
 // SEO-14 (2026-07-13) — localizedPaths ajouté (voir /ressources/blog).

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import LegalPage from "@/components/pages/LegalPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
 import { getLegalContent } from "@/lib/content/legal";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 
 const content = getLegalContent("politica-de-privacidad");
 

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostPage from "@/components/pages/BlogPostPage";
-import { getBlogArticleBySlug, getBlogArticles, getCmsNavigation, strapiMediaUrl, getTeamMembers } from "@/lib/strapi";
+import { getBlogArticleBySlug, getBlogArticles, getCmsNavigation, strapiMediaUrl, getTeamMembers } from "@/lib/static-content";
 import { buildStrapiCollectionMetadata } from "@/lib/metadata";
 import { blogPosts } from "@/lib/content/blog-posts";
 import { blogHreflangDisabled } from "@/lib/blog-hreflang";

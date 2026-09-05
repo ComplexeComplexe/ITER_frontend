@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Mail, Linkedin } from "lucide-react";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";

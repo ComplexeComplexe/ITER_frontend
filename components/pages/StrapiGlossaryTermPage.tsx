@@ -3,7 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import StrapiBlocks from "@/components/StrapiBlocks";
-import { StrapiGlossaryTerm } from "@/lib/strapi";
+import { StrapiGlossaryTerm } from "@/lib/static-content";
 
 const labels: Record<Locale, { resources: string; resourcesHref: string; glossary: string; glossaryHref: string; definition: string }> = {
   fr: { resources: "Ressources", resourcesHref: "/ressources", glossary: "Glossaire", glossaryHref: "/ressources/glossaire", definition: "Définition" },

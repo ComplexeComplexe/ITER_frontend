@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import BlogListingPage from "@/components/pages/BlogListingPage";
-import { getBlogArticles, getCmsNavigation } from "@/lib/strapi";
+import { getBlogArticles, getCmsNavigation } from "@/lib/static-content";
 import { buildMetadata } from "@/lib/metadata";
 import { getStaticBlogListing } from "@/lib/blog-listing";
 

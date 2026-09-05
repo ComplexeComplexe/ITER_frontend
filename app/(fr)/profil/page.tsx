@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import LeadGenPage from "@/components/pages/LeadGenPage";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import {
   CLIENTS_ACCOMPAGNES,
   TRUSTFOLIO_RATING,

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import DrhPage from "@/components/pages/DrhPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
-import { getDrhExternalisePage, getCmsNavigation } from "@/lib/strapi";
+import { getDrhExternalisePage, getCmsNavigation } from "@/lib/static-content";
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildStrapiMetadata({

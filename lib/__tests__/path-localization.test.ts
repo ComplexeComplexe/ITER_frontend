@@ -209,7 +209,7 @@ describe("hreflang des articles de blog", () => {
 
 describe("hreflang des pages service", () => {
   it("isole le service dont les trois pages ne sont pas des traductions", async () => {
-    const { serviceHreflangDisabled } = await import("@/lib/strapi");
+    const { serviceHreflangDisabled } = await import("@/lib/static-content");
     expect(serviceHreflangDisabled("gestion-financiere-externalisee", "fr").sort()).toEqual([
       "en",
       "es",
@@ -221,7 +221,7 @@ describe("hreflang des pages service", () => {
   });
 
   it("laisse intacts les services réellement traduits", async () => {
-    const { serviceHreflangDisabled } = await import("@/lib/strapi");
+    const { serviceHreflangDisabled } = await import("@/lib/static-content");
     expect(serviceHreflangDisabled("previsionnel-tresorerie", "fr")).toEqual([]);
     expect(serviceHreflangDisabled("accompagnement-levee-de-fond", "es")).toEqual([]);
   });

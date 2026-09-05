@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import FicheMetierDetailPage from "@/components/pages/FicheMetierDetailPage";
-import { getJobMetierBySlugOrSlugifiedTitle, getJobMetiers, getJobMetierSlugForUrl, getCmsNavigation } from "@/lib/strapi";
+import { getJobMetierBySlugOrSlugifiedTitle, getJobMetiers, getJobMetierSlugForUrl, getCmsNavigation } from "@/lib/static-content";
 import { buildStrapiCollectionMetadata } from "@/lib/metadata";
 import { getLocalePath } from "@/lib/i18n";
 

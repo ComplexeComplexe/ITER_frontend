@@ -261,7 +261,7 @@ const FR_ONLY_BLOG_SLUGS = [
 /*  Middleware                                                         */
 /* ------------------------------------------------------------------ */
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   /* ── 1. Fix /fr/ prefix (FR is default locale, remove prefix) ──────────── */

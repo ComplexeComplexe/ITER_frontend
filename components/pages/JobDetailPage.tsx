@@ -10,7 +10,7 @@ import {
   Send,
 } from "lucide-react";
 import { Locale } from "@/lib/i18n";
-import type { StrapiJobOffer, CmsNavItem } from "@/lib/strapi";
+import type { StrapiJobOffer, CmsNavItem } from "@/lib/static-content";
 import StrapiBlocks from "@/components/StrapiBlocks";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";

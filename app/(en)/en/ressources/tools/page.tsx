@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import ToolsPage from "@/components/pages/ToolsPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { getToolsContent } from "@/lib/content/tools";
 
 const t = getToolsContent("en");

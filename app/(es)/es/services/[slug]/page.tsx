@@ -9,10 +9,10 @@ import {
   getCanonicalServiceSlug,
   getServiceSlugsForLocale,
   type ServicePageSlug,
-} from "@/lib/strapi";
+} from "@/lib/static-content";
 // INDEX-04 — same as FR /services/[slug]: static resolver, no Strapi.
 import { getStaticServicePage } from "@/lib/fallback-service-pages-localized";
-import { serviceHreflangDisabled } from "@/lib/strapi";
+import { serviceHreflangDisabled } from "@/lib/static-content";
 import { buildStrapiMetadata } from "@/lib/metadata";
 
 const basePath = "/es/services";

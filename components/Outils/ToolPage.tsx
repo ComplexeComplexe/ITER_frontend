@@ -72,12 +72,12 @@ const faqItems = {
     {
       question: 'Combien coûte Pennylane ?',
       answer:
-        'Pennylane propose 3 plans : Start à 39 €/mois, Pro à 99 €/mois, et Scale à 199 €/mois. Au-delà, sur devis.',
+        "Le prix dépend de la formule et des utilisateurs. Vérifier les modules, chaque entité et la facturation mensuelle ou annuelle.",
     },
     {
       question: 'Pennylane convient-il aux startups ?',
       answer:
-        'Oui, Pennylane est idéal pour les startups de 5 à 80 salariés. Le plan Start à 39 €/mois suffit pour démarrer.',
+        "Le prix dépend de la formule et des utilisateurs. Vérifier les modules, chaque entité et la facturation mensuelle ou annuelle.",
     },
     {
       question: 'Combien de temps pour migrer vers Pennylane ?',
@@ -89,7 +89,7 @@ const faqItems = {
     {
       question: 'Combien coûte Agicap ?',
       answer:
-        'Agicap démarre à 49 €/mois en version Essentials et va jusqu\'à 249 €/mois pour la version Scale.',
+        "Agicap propose une tarification sur mesure. Faire préciser les modules, les entités, les connexions et les frais de déploiement.",
     },
     {
       question: 'Qui devrait utiliser Agicap ?',
@@ -101,7 +101,7 @@ const faqItems = {
     {
       question: 'Combien coûte Spendesk ?',
       answer:
-        'Spendesk démarre à 99 €/mois en version Light et va jusqu\'à 199 €/mois pour les startups Series A/B.',
+        "Les tarifs sont adaptés aux besoins, au périmètre déployé et au niveau de service. Demander un devis détaillé.",
     },
     {
       question: 'Spendesk vs Pleo ?',
@@ -113,12 +113,12 @@ const faqItems = {
     {
       question: 'Combien coûte PayFit ?',
       answer:
-        '27 €/mois/salarié en Essential et 49 €/mois/salarié en Performance. Pour 30 salariés en Essential : 810 €/mois.',
+        "Le coût inclut un forfait qui varie avec l’effectif, le prix par collaborateur selon l’offre et les éventuels établissements et services supplémentaires. Comparer hors promotion.",
     },
     {
       question: 'PayFit pour les startups en seed ?',
       answer:
-        'Oui, dès la première embauche. 27 €/mois pour un salarié, c\'est raisonnable et ça évite un cabinet externe.',
+        "Le coût inclut un forfait qui varie avec l’effectif, le prix par collaborateur selon l’offre et les éventuels établissements et services supplémentaires. Comparer hors promotion.",
     },
   ],
 };
@@ -241,6 +241,7 @@ export default function ToolPage({
             notForWho={tool.notForWho}
             implementationTime={tool.implementationTime}
             priceRange={tool.priceRange}
+            pricingKey={tool.slug}
           />
         </div>
       </section>
@@ -291,8 +292,8 @@ export default function ToolPage({
                 affiliation, aucun lien sponsorisé. Nous ne vendons aucun de ces outils.
               </li>
               <li>
-                <strong className="text-foreground">Les prix.</strong> Ils reprennent la grille publique
-                de l&apos;éditeur à la date de mise à jour ({TOOLS_REVIEW_DATE_LABEL}) ; ils changent, vérifiez
+                <strong className="text-foreground">Les prix.</strong> Les bases de tarification et sources éditeurs ont été revues
+                le {TOOLS_REVIEW_DATE_LABEL}. Aucun montant fixe n’est repris sans périmètre confirmé ; vérifiez
                 sur le site de l&apos;éditeur avant de décider.
               </li>
               <li>

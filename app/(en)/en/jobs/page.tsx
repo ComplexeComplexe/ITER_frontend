@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import JobsPage from "@/components/pages/JobsPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation, getJobOffers } from "@/lib/strapi";
+import { getCmsNavigation, getJobOffers } from "@/lib/static-content";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",

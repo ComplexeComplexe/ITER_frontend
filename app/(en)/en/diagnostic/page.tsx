@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import LeadPage from "@/components/pages/LeadPage";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = {
   title: "Free Assessment | Iter Advisors – Outsourced CFO",

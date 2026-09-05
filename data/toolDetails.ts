@@ -120,9 +120,9 @@ export const toolDetails: Record<string, ToolDetails> = {
     stackCombos: [
       {
         title: 'La trinité SaaS Series A/B',
-        description: 'Le combo gagnant pour 90% des SaaS en croissance',
+        description: "Le combo gagnant pour des SaaS en croissance",
         tools: ['Pennylane', 'Agicap', 'Spendesk'],
-        context: 'Pour startups SaaS, 15-50 pers., CA 2-10M€. Budget: 800-1500€/mois.',
+        context: "Le prix dépend de la formule et des utilisateurs. Vérifier les modules, chaque entité et la facturation mensuelle ou annuelle.",
       },
       {
         title: 'Stack paie complète',
@@ -134,14 +134,14 @@ export const toolDetails: Record<string, ToolDetails> = {
         title: 'Infrastructure financière solide',
         description: 'Comptabilité + trésorerie + dépenses + paie',
         tools: ['Pennylane', 'Agicap', 'Spendesk', 'PayFit'],
-        context: 'Pour Scale-ups 50-100 pers., CA 10-30M€. CFO interne requis.',
+        context: "Le prix dépend de la formule et des utilisateurs. Vérifier les modules, chaque entité et la facturation mensuelle ou annuelle.",
       },
     ],
     faqExpanded: [
       {
         question: 'Combien coûte Pennylane ?',
         answer:
-          'Pennylane fonctionne sur trois plans : Start à 39 €/mois (setup + base), Pro à 99 €/mois (avec API), Scale à 199 €/mois (support prioritaire). Au-delà de 2000 écritures/mois, devis custom.',
+          "Le prix dépend de la formule et des utilisateurs. Vérifier les modules, chaque entité et la facturation mensuelle ou annuelle.",
       },
       {
         question: 'Combien de temps pour migrer vers Pennylane ?',
@@ -151,7 +151,7 @@ export const toolDetails: Record<string, ToolDetails> = {
       {
         question: 'Pennylane convient-il aux startups ?',
         answer:
-          'Oui, Pennylane est idéal pour startups 5-80 salariés. Le plan Start à 39 €/mois suffit pour démarrer. La migration depuis un expert-comptable traditionnel prend 2-3 semaines.',
+          "Le prix dépend de la formule et des utilisateurs. Vérifier les modules, chaque entité et la facturation mensuelle ou annuelle.",
       },
       {
         question: 'Peut-on exporter les données de Pennylane ?',
@@ -164,17 +164,7 @@ export const toolDetails: Record<string, ToolDetails> = {
           'Oui, intégrations natives avec Stripe, Shopify, WooCommerce. Les transactions se synchro automatiquement. Pour les marchés (" marketplace "), un paramétrage custom est nécessaire.',
       },
     ],
-    retourTerrain: {
-      clientStory:
-        "Chez une SaaS B2B de 35 personnes (CA 4M€), nous avons déployé Pennylane en 2 semaines. Le temps de clôture est passé de 8 jours à 3 jours. Le rapprochement bancaire automatique économise 6 heures de traitement par mois. L'intégration native avec Agicap et Spendesk a éliminé les doubles saisies — gain de 8 heures supplémentaires par mois pour l'équipe finance.",
-      recommendedStack: {
-        tools: ['Pennylane', 'Agicap', 'Spendesk'],
-        budget: '800-1 500 €/mois',
-        roi: '3-6 mois',
-      },
-      relatedCategoryHref: '/ressources/outils/logiciels-comptabilite',
-      relatedCategoryLabel: 'Voir le comparatif complet des logiciels de comptabilité',
-    },
+    retourTerrain: undefined,
   },
   agicap: {
     slug: 'agicap',
@@ -253,7 +243,7 @@ export const toolDetails: Record<string, ToolDetails> = {
       {
         question: 'Combien coûte Agicap ?',
         answer:
-          'Agicap démarre à 49 €/mois (Essentials, 1 utilisateur), va à 99 €/mois (Pro, 3 utilisateurs), 199 €/mois (Business, 5 utilisateurs), 249 €/mois (Scale, collaborateurs illimités).',
+          "Agicap propose une tarification sur mesure. Faire préciser les modules, les entités, les connexions et les frais de déploiement.",
       },
       {
         question: 'Qui devrait utiliser Agicap ?',
@@ -271,22 +261,12 @@ export const toolDetails: Record<string, ToolDetails> = {
           'Agicap récupère automatiquement l\'historique via la connexion bancaire (6-12 mois). Pas de migration manuelle.',
       },
     ],
-    retourTerrain: {
-      clientStory:
-        "Chez une scale-up SaaS de 60 personnes avec 4 comptes bancaires et une ligne de crédit, nous avons déployé Agicap en 2 semaines. Avant : le CFO consultait les comptes manuellement chaque lundi. Après : 3 scénarios à 13 semaines (pessimiste -20% CA, base, optimiste +30% CA) avec alertes cash automatiques 6 semaines avant rupture. La levée Series B a été anticipée et lancée 4 mois plus tôt — décote zéro.",
-      recommendedStack: {
-        tools: ['Pennylane', 'Agicap', 'Spendesk'],
-        budget: '800-1 500 €/mois',
-        roi: '3-6 mois',
-      },
-      relatedCategoryHref: '/ressources/outils/logiciels-tresorerie',
-      relatedCategoryLabel: 'Voir le comparatif complet des logiciels de trésorerie',
-    },
+    retourTerrain: undefined,
   },
   spendesk: {
     slug: 'spendesk',
     verdict30s:
-      'Spendesk pour 15+ cartes et workflows complexes. Pleo pour moins de 10 cartes et structures simples. À partir de Series A, le ROI du contrôle des dépenses est rapide : 6-8 heures d\'admin par clôture économisées.',
+      'Spendesk pour 15+ cartes et workflows complexes. Pleo pour moins de 10 cartes et structures simples. Mesurer le temps administratif et les contrôles avant et après déploiement.',
     advantages: [
       {
         title: 'Workflows d\'approbation par montant/département',
@@ -357,7 +337,7 @@ export const toolDetails: Record<string, ToolDetails> = {
       {
         question: 'Combien coûte Spendesk ?',
         answer:
-          'Spendesk démarre à 99 €/mois (Light, 1-5 cartes), 199 €/mois (Pro, 5-15 cartes), 299 €/mois (Business, 15+ cartes). Tarifs dégressifs selon volumes.',
+          "Les tarifs sont adaptés aux besoins, au périmètre déployé et au niveau de service. Demander un devis détaillé.",
       },
       {
         question: 'Spendesk vs Pleo vs Payhawk ?',
@@ -370,17 +350,7 @@ export const toolDetails: Record<string, ToolDetails> = {
           'Oui, avec l\'intégration Pennylane/Sage. Les écritures vont automatiquement dans le bon journal avec le bon code comptable.',
       },
     ],
-    retourTerrain: {
-      clientStory:
-        "Chez un e-commerce D2C de 28 personnes, nous avons déployé Spendesk en 10 jours. Avant : 14 cartes Mastercard partagées entre 8 personnes, justificatifs perdus, 8 heures d'admin par clôture. Après : 28 cartes virtuelles dédiées (une par service SaaS), workflows d'approbation (CEO > 1K€, manager < 500€), export comptable automatique vers Pennylane. Gain : 6-8 heures par clôture mensuelle, zéro justificatif perdu.",
-      recommendedStack: {
-        tools: ['Pennylane', 'Spendesk', 'Agicap'],
-        budget: '800-1 500 €/mois',
-        roi: '3-6 mois',
-      },
-      relatedCategoryHref: '/ressources/outils/gestion-depenses',
-      relatedCategoryLabel: 'Voir le comparatif complet des outils de gestion des dépenses',
-    },
+    retourTerrain: undefined,
   },
   payfit: {
     slug: 'payfit',
@@ -405,7 +375,7 @@ export const toolDetails: Record<string, ToolDetails> = {
       {
         title: 'Tarif prévisible et sans surprise',
         description:
-          '27 €/mois par salarié en Essential, 49 €/mois en Performance. Pas de frais cachés. 30 pers = 810 €/mois (Essential).',
+          "Le coût inclut un forfait qui varie avec l’effectif, le prix par collaborateur selon l’offre et les éventuels établissements et services supplémentaires. Comparer hors promotion.",
       },
       {
         title: 'Support français excellent',
@@ -417,7 +387,7 @@ export const toolDetails: Record<string, ToolDetails> = {
       {
         title: 'Limité pour CCN très spécifiques',
         workaround:
-          'CCN de secteur rares (maritime, spectacle) : passez sur Silae. PayFit couvre 90% des CCN classiques.',
+          "CCN de secteur rares (maritime, spectacle) : passez sur Silae. Vérifier la prise en charge de votre convention auprès de PayFit.",
       },
       {
         title: 'Ralentissements au-delà de 150 pers.',
@@ -468,12 +438,12 @@ export const toolDetails: Record<string, ToolDetails> = {
       {
         question: 'Combien coûte PayFit ?',
         answer:
-          '27 €/mois par salarié en Essential (calcul paie, DSN, portail). 49 €/mois/salarié en Performance (gestion absence, notes de frais intégrées). Pour 30 pers en Essential : 810 €/mois.',
+          "Le coût inclut un forfait qui varie avec l’effectif, le prix par collaborateur selon l’offre et les éventuels établissements et services supplémentaires. Comparer hors promotion.",
       },
       {
         question: 'PayFit pour les startups en seed ?',
         answer:
-          'Oui, dès la première embauche. 27 €/mois pour 1 salarié est raisonnable et ça évite un cabinet de paie externe.',
+          "Le coût inclut un forfait qui varie avec l’effectif, le prix par collaborateur selon l’offre et les éventuels établissements et services supplémentaires. Comparer hors promotion.",
       },
       {
         question: 'PayFit peut-il gérer les primes et bonus ?',
@@ -486,17 +456,7 @@ export const toolDetails: Record<string, ToolDetails> = {
           'PayFit récupère l\'historique du cabinet (dernières 12 fiches). Les paramétrages (CCN, contributions) se configurent en 2 jours. Zéro interruption de service.',
       },
     ],
-    retourTerrain: {
-      clientStory:
-        "Chez une SaaS B2B de 45 personnes (CCN SYNTEC, forfait jours), nous avons migré la paie depuis un cabinet traditionnel vers PayFit en 5 jours. Avant : 3 erreurs de paie sur 18 mois, DSN envoyée en retard 2 fois, satisfaction salariés sur la paie à 3,1/5. Après : zéro erreur en 18 mois, DSN automatique, portail collaborateur ayant réduit de 40% les questions RH, satisfaction salariés à 4,3/5.",
-      recommendedStack: {
-        tools: ['Pennylane', 'PayFit', 'Lucca'],
-        budget: '40-60 €/salarié/mois',
-        roi: '2-3 mois',
-      },
-      relatedCategoryHref: '/ressources/outils/logiciels-paie',
-      relatedCategoryLabel: 'Voir le comparatif complet des logiciels de paie',
-    },
+    retourTerrain: undefined,
     relatedMention: {
       before: 'Vous recherchez une solution incluant la production des bulletins par un gestionnaire dédié ? Consultez également notre',
       linkText: 'avis sur malibou',
@@ -508,7 +468,7 @@ export const toolDetails: Record<string, ToolDetails> = {
   sage: {
     slug: 'sage',
     verdict30s:
-      "Sage est le standard historique de la comptabilité française pour les PME industrielles et les structures avec gestion de stocks complexe. Si vous gérez des lots, de la traçabilité ou des immobilisations lourdes, Sage reste incontournable malgré une UX moins moderne. L'écosystème expert-comptable autour de Sage est le plus dense en France — 99% des cabinets sont familiers avec l'outil. Pour les besoins de comptabilité analytique multi-axes ou de consolidation multi-sociétés, Sage conserve un avantage fonctionnel significatif.",
+      "Sage est le standard historique de la comptabilité française pour les PME industrielles et les structures avec gestion de stocks complexe. Si vous gérez des lots, de la traçabilité ou des immobilisations lourdes, Sage reste incontournable malgré une UX moins moderne. L'écosystème expert-comptable autour de Sage est le plus dense en France — vérifier sa compatibilité avec votre cabinet. Pour les besoins de comptabilité analytique multi-axes ou de consolidation multi-sociétés, Sage conserve un avantage fonctionnel significatif.",
     advantages: [
       { title: 'Gestion stocks avancée', description: 'Lots, traçabilité, numéros de série, gestion des coûts de production — Sage couvre des besoins que Pennylane ne gère pas encore nativement.' },
       { title: 'Module immobilisations complet', description: 'Amortissements linéaires et dégressifs, dépréciations IFRS, suivis des cessions et plus-values — essentiel pour les entreprises avec un parc d\'équipements significatif.' },
@@ -529,11 +489,11 @@ export const toolDetails: Record<string, ToolDetails> = {
     ],
     stackCombos: [
       { title: 'Stack industrie', description: 'PME industrielles avec stocks complexes et immobilisations.', tools: ['Sage', 'Silae', 'Agicap'], context: 'Industrie 30-150 pers. avec gestion de production.' },
-      { title: 'Stack PME établie', description: 'PME services matures avec besoins RH étendus.', tools: ['Sage', 'Lucca', 'Fygr'], context: 'PME 50-150 pers., paie standardisée, budget trésorerie maîtrisé.' },
+      { title: 'Stack PME établie', description: 'PME services matures avec besoins RH étendus.', tools: ['Sage', 'Lucca', 'Okimia (ex-Fygr)'], context: 'PME 50-150 pers., paie standardisée, budget trésorerie maîtrisé.' },
       { title: 'Stack groupe en croissance', description: 'Groupes multi-sociétés avec besoins de consolidation.', tools: ['Sage', 'PayFit', 'Agicap'], context: 'Groupes 100+ pers., 2-5 entités à consolider.' },
     ],
     faqExpanded: [
-      { question: 'Combien coûte Sage ?', answer: 'Sage 100cloud démarre à 99 €/mois, Sage Intacct à 499 €/mois. L\'implémentation coûte entre 3 000 € et 15 000 € selon la complexité.' },
+      { question: 'Combien coûte Sage ?', answer: "Sage désigne plusieurs produits. Identifier la solution, les modules, les licences et les prestations de mise en place avant de comparer les coûts." },
       { question: 'Sage vs Pennylane ?', answer: 'Sage = stocks complexes, immobilisations, industrie, multi-sociétés. Pennylane = SaaS, services, UX moderne, API ouverte. Choisissez selon votre secteur et vos besoins analytiques.' },
       { question: 'Peut-on migrer de Sage à Pennylane ?', answer: 'Oui, mais complexe si vous avez des stocks. La migration des balances prend 2-4 semaines. Les stocks doivent être reconstitués manuellement.' },
       { question: 'Quel délai d\'implémentation ?', answer: '4 à 12 semaines selon la complexité. Une PME simple compte 4-6 semaines, un groupe multi-sites peut monter à 12.' },
@@ -567,15 +527,15 @@ export const toolDetails: Record<string, ToolDetails> = {
     faqExpanded: [
       { question: 'Cegid Loop vs Pennylane ?', answer: 'Cegid Loop = retail, expert-comptable Cegid, multi-établissements. Pennylane = SaaS, UX moderne, écosystème ouvert.' },
       { question: 'Quel délai d\'implémentation ?', answer: '2 à 6 semaines selon la complexité. Retail multi-magasin = 6 semaines.' },
-      { question: 'Quel prix ?', answer: '79-299 €/mois selon les modules. Implémentation : 2 000 € à 8 000 €.' },
+      { question: 'Quel prix ?', answer: "La page éditeur présente ses solutions pour cabinets. Confirmer la disponibilité, le périmètre et le tarif de la solution retenue avant souscription." },
     ],
   },
   fygr: {
     slug: 'fygr',
     verdict30s:
-      "Fygr est l'alternative économique à Agicap pour les PME avec des besoins de trésorerie simples. À moins de 100 €/mois, il offre une visibilité claire sur votre cash position, des prévisions à court terme et un module budget vs réalité. L'onboarding se fait en une demi-journée. L'interface est épurée. Si vous avez 1-2 comptes bancaires et que vous cherchez un outil de trésorerie sans fioritures, Fygr fait le job à 3 fois moins cher qu'Agicap. Dès que vous avez des besoins multi-banques avancés, des scénarios complexes ou une trésorerie internationale, il faut passer à Agicap.",
+      "Okimia (anciennement Fygr) propose le suivi et la prévision de trésorerie. Comparez ses formules selon les entités, banques, scénarios et intégrations nécessaires. Testez vos flux réels et votre prévisionnel avant de retenir la solution ; un prix seul ne permet pas de départager deux outils.",
     advantages: [
-      { title: 'Prix attractif', description: '3 fois moins cher qu\'Agicap. À 49 €/mois en moyenne, le ROI est immédiat pour une PME.' },
+      { title: 'Prix attractif', description: "Fygr est devenu Okimia. Comparer la formule, le nombre d’entités et de banques, les options et la durée de facturation ; ne pas confondre prix annualisé et mensuel." },
       { title: 'Interface simple et rapide', description: 'Pas de courbe d\'apprentissage. Un dirigeant non-financier est autonome en 1 heure.' },
       { title: 'Budget vs réalité intégré', description: 'Suivi mensuel des écarts entre budget et réalisations — essentiel pour le contrôle de gestion des PME.' },
       { title: 'Onboarding express', description: 'En 1-2 jours, votre trésorerie est connectée et vos prévisions sont visibles.' },
@@ -592,12 +552,12 @@ export const toolDetails: Record<string, ToolDetails> = {
       { step: 'Semaine 2 : Ajustements', detail: 'Ajustement des catégories, affinement du budget, activation des alertes.' },
     ],
     stackCombos: [
-      { title: 'PME économique', description: 'PME avec besoins trésorerie simples et budget serré.', tools: ['Pennylane', 'Fygr', 'PayFit'], context: 'PME 10-50 pers., 1-2 banques, paie standard.' },
-      { title: 'Startup budget', description: 'Startup seed avec optimisation des coûts outils.', tools: ['Qonto', 'Fygr', 'Spendesk'], context: 'Startup < 20 pers., trésorerie simple, ROI immédiat.' },
+      { title: 'PME économique', description: 'PME avec besoins trésorerie simples et budget serré.', tools: ['Pennylane', 'Okimia (ex-Fygr)', 'PayFit'], context: 'PME 10-50 pers., 1-2 banques, paie standard.' },
+      { title: 'Startup budget', description: 'Startup seed avec optimisation des coûts outils.', tools: ['Qonto', 'Okimia (ex-Fygr)', 'Spendesk'], context: 'Startup < 20 pers., trésorerie simple, Bilan économique à mesurer.' },
     ],
     faqExpanded: [
       { question: 'Fygr vs Agicap ?', answer: 'Fygr = simple, économique, PME 10-80 pers. Agicap = puissant, multi-banques, scénarios complexes. Budget < 80 pers. = Fygr. Budget > 80 pers. ou multi-banques = Agicap.' },
-      { question: 'Quel prix ?', answer: '29-99 €/mois selon le nombre de comptes connectés.' },
+      { question: 'Quel prix ?', answer: "Fygr est devenu Okimia. Comparer la formule, le nombre d’entités et de banques, les options et la durée de facturation ; ne pas confondre prix annualisé et mensuel." },
       { question: 'Quelles banques ?', answer: '15 banques principales (BNP, Société Générale, Crédit Mutuel, Qonto, Revolut, etc.).' },
     ],
   },
@@ -627,8 +587,8 @@ export const toolDetails: Record<string, ToolDetails> = {
       { title: 'SaaS early', description: 'SaaS en Series A early avec besoin de trésorerie.', tools: ['Pennylane', 'Pleo', 'Agicap Lite'], context: 'SaaS 10-30 pers., budget outils maîtrisé.' },
     ],
     faqExpanded: [
-      { question: 'Pleo vs Spendesk ?', answer: 'Pleo < 15 pers., simplicité, onboarding rapide. Spendesk > 15 pers., workflows complexes, reporting avancé. Budget : Pleo 35-79 €/mois, Spendesk 99-299 €/mois.' },
-      { question: 'Quel prix ?', answer: 'Essential 35 €/mois, Advanced 79 €/mois. Cartes illimitées incluses.' },
+      { question: 'Pleo vs Spendesk ?', answer: "Comparer la formule, les utilisateurs inclus et supplémentaires, les options et la facturation annuelle ou mensuelle." },
+      { question: 'Quel prix ?', answer: "Comparer la formule, les utilisateurs inclus et supplémentaires, les options et la facturation annuelle ou mensuelle." },
       { question: 'Intégration comptable ?', answer: 'Pennylane (native), Sage, Cegid via export.' },
     ],
   },
@@ -645,7 +605,7 @@ export const toolDetails: Record<string, ToolDetails> = {
     limitations: [
       { title: 'Interface moins moderne', workaround: 'L\'UX est fonctionnelle mais datée comparée à PayFit. Les salariés préfèrent généralement le portail PayFit.' },
       { title: "Courbe d'apprentissage", workaround: 'Le paramétrage initial demande une expertise — comptez 2-4 semaines avec accompagnement.' },
-      { title: 'Prix plus élevé', workaround: '60-90 €/salarié/mois contre 27-49 € pour PayFit. Justifié par la complexité gérée.' },
+      { title: "Coût total à comparer", workaround: "Demander au prestataire de distinguer la licence, la production de paie, les modules RH et l’accompagnement : ces périmètres ne sont pas équivalents." },
     ],
     implementationGuide: [
       { step: 'Semaine 1 : Audit & paramétrage', detail: 'Analyse des conventions collectives, statuts salariés, règles de gestion des temps. Paramétrage Silae.' },
@@ -658,7 +618,7 @@ export const toolDetails: Record<string, ToolDetails> = {
       { title: 'PME complexe', description: 'PME avec besoins RH approfondis.', tools: ['Silae', 'Pennylane', 'Lucca'], context: 'PME 50-200 pers., multi-conventions, suite RH étendue.' },
     ],
     faqExpanded: [
-      { question: 'Silae vs PayFit ?', answer: 'Silae = CCN rares, multi-conventions, gestion temps complexe. PayFit = CCN standard, UX moderne, < 150 salariés. Budget : Silae 60-90 €/salarié/mois, PayFit 27-49 €.' },
+      { question: 'Silae vs PayFit ?', answer: "Demander au prestataire de distinguer la licence, la production de paie, les modules RH et l’accompagnement : ces périmètres ne sont pas équivalents." },
       { question: 'Quel délai d\'implémentation ?', answer: '2 à 4 semaines selon la complexité. BTP multi-chantiers = 4 semaines.' },
       { question: 'Combien de CCN couvertes ?', answer: 'Plus de 600 conventions collectives — la couverture la plus exhaustive du marché.' },
     ],
@@ -672,7 +632,7 @@ export const toolDetails: Record<string, ToolDetails> = {
   lucca: {
     slug: 'lucca',
     verdict30s:
-      "Lucca est la suite RH qui va au-delà de la paie. Gestion des absences, temps de travail, notes de frais, onboarding, gestion des talents — tout est intégré dans un seul écosystème modulaire. Notre recommandation quand PayFit devient insuffisant côté RH pur. Lucca + PayFit = stack RH complet : Lucca gère le RH (absences, temps, frais, onboarding), PayFit la paie. La combinaison couvre 95% des besoins RH d'une PME 20-150 personnes. L'implémentation demande un admin RH dédié et un budget qui grimpe vite avec les modules — mais le gain en productivité administrative est considérable.",
+      "Lucca est la suite RH qui va au-delà de la paie. Gestion des absences, temps de travail, notes de frais, onboarding, gestion des talents — tout est intégré dans un seul écosystème modulaire. Notre recommandation quand PayFit devient insuffisant côté RH pur. Lucca + PayFit = stack RH complet : Lucca gère le RH (absences, temps, frais, onboarding), PayFit la paie. La couverture dépend des modules retenus et des besoins de votre équipe. L'implémentation demande un admin RH dédié et un budget qui grimpe vite avec les modules — mais le gain en productivité administrative est considérable.",
     advantages: [
       { title: 'Suite RH complète', description: '8 modules : absences, temps, notes de frais, onboarding, gestion des talents, annuaire, règlement intérieur, entretiens annuels.' },
       { title: 'Intégration PayFit', description: 'La synchronisation paie/RH est fluide. Les absences Lucca alimentent automatiquement les variables de paie PayFit.' },
@@ -681,7 +641,7 @@ export const toolDetails: Record<string, ToolDetails> = {
     ],
     limitations: [
       { title: 'Nécessite un admin RH dédié', workaround: 'Lucca est puissant mais demande un administrateur pour le paramétrer et le maintenir. Budgetez 0,5 ETP RH.' },
-      { title: 'Prix qui grimpe vite', workaround: '39 €/mois pour le module de base, mais chaque module additionnel augmente le coût. PME avec 5 modules = 8 000-12 000 €/an.' },
+      { title: 'Prix qui grimpe vite', workaround: "La tarification varie selon les solutions et les collaborateurs. Additionner les modules nécessaires et faire préciser la mise en place." },
       { title: 'Implémentation plus longue', workaround: '2-4 semaines selon les modules activés — contre 1-2 jours pour PayFit.' },
     ],
     implementationGuide: [
@@ -696,14 +656,14 @@ export const toolDetails: Record<string, ToolDetails> = {
     ],
     faqExpanded: [
       { question: 'Lucca remplace-t-il PayFit ?', answer: 'Non. Lucca gère le RH (absences, temps, frais). PayFit gère la paie. Ils se complètent — la synchronisation est native.' },
-      { question: 'Quel prix ?', answer: '39-149 €/mois selon les modules. Budget annuel moyen pour une PME 50 pers. : 6 000-10 000 €.' },
+      { question: 'Quel prix ?', answer: "La tarification varie selon les solutions et les collaborateurs. Additionner les modules nécessaires et faire préciser la mise en place." },
       { question: 'Quel délai ?', answer: '2-4 semaines selon le nombre de modules.' },
     ],
   },
   qonto: {
     slug: 'qonto',
     verdict30s:
-      "Qonto est la banque des entrepreneurs français. Un IBAN FR, des cartes physiques et virtuelles instantanées, une intégration native avec Pennylane, Agicap et Spendesk — le tout à 9 €/mois pour démarrer. L'ouverture de compte se fait en 10 minutes depuis votre téléphone. Les virements SEPA sont instantanés, les cartes virtuelles permettent de gérer les abonnements SaaS sans risque, et le rapprochement bancaire dans Pennylane est transparent. Ses limites : IBAN FR uniquement, change limité, plafonds de dépôt en espèces. Mais à 9 €/mois, le ROI est immédiat.",
+      "Qonto propose un compte professionnel, des cartes et des outils de gestion des dépenses. Le choix du forfait dépend des utilisateurs, des cartes et des opérations. Vérifiez les intégrations et les frais de change ou de dépassement. Le coût total se compare sur vos flux réels, sans présumer d’un retour sur investissement immédiat.",
     advantages: [
       { title: 'Compte pro en 10 minutes', description: 'Pas de rendez-vous, pas de paperasse. KYC en ligne, IBAN FR immédiat.' },
       { title: 'Cartes physiques et virtuelles instantanées', description: 'Une carte physique par dirigeant, des cartes virtuelles illimitées pour les abonnements — sécurisées par blocage instantané.' },
@@ -713,7 +673,7 @@ export const toolDetails: Record<string, ToolDetails> = {
     limitations: [
       { title: 'IBAN FR uniquement', workaround: 'Pas d\'IBAN GBP ou USD natif. Pour du business UK/US, Revolut Business est mieux adapté.' },
       { title: 'Change limité', workaround: 'Pas de multi-devises avancé. Le change est possible mais avec des taux moins compétitifs que Revolut.' },
-      { title: 'Plafonds de dépôt en espèces', workaround: '3 000 €/mois maximum — insuffisant pour les entreprises cash-heavy.' },
+      { title: "Vérifier les modes d’encaissement acceptés pour votre activité auprès de Qonto.", workaround: "Comparer le forfait, les cartes, les opérations incluses et les frais supplémentaires, hors promotion et selon la durée de facturation." },
     ],
     implementationGuide: [
       { step: 'Jour 1 (10 min) : Inscription', detail: 'Création du compte en ligne, vérification KYC, réception de l\'IBAN.' },
@@ -722,29 +682,29 @@ export const toolDetails: Record<string, ToolDetails> = {
       { step: 'Semaine 1 : Migration', detail: 'Transfert des flux récurrents (abonnements, prélèvements) sur le nouveau compte.' },
     ],
     stackCombos: [
-      { title: 'Startup française', description: 'Startup FR avec stack moderne et budget maîtrisé.', tools: ['Qonto', 'Pennylane', 'Pleo'], context: 'Startup 5-30 pers., 100% France, ROI immédiat.' },
+      { title: 'Startup française', description: 'Startup FR avec stack moderne et budget maîtrisé.', tools: ['Qonto', 'Pennylane', 'Pleo'], context: 'Startup 5-30 pers., 100% France, Bilan économique à mesurer.' },
       { title: 'PME digitale', description: 'PME digitale en croissance.', tools: ['Qonto', 'Pennylane', 'Agicap', 'PayFit'], context: 'PME 20-100 pers., stack financier complet.' },
     ],
     faqExpanded: [
       { question: 'Qonto vs Revolut Business ?', answer: 'Qonto = France, UX pro, intégration comptable. Revolut = international, 30+ devises, change interbancaire. France uniquement = Qonto. Business UK/US = Revolut.' },
-      { question: 'Quel prix ?', answer: 'Basic 9 €/mois, Smart 29 €/mois, Multi 79 €/mois.' },
+      { question: 'Quel prix ?', answer: "Comparer le forfait, les cartes, les opérations incluses et les frais supplémentaires, hors promotion et selon la durée de facturation." },
       { question: 'Protection des fonds ?', answer: 'Oui, Qonto est un établissement de paiement agréé par l\'ACPR. Fonds protégés par le mécanisme de ségrégation.' },
     ],
   },
   'revolut-business': {
     slug: 'revolut-business',
     verdict30s:
-      "Revolut Business est la banque des startups internationales. 30+ devises avec change au taux interbancaire, des IBAN GBP, EUR et USD dans un seul compte, et des intégrations avec Stripe, PayPal et Shopify. Si vous avez des clients ou des fournisseurs à l'étranger, Revolut économise 2 à 3% sur chaque change par rapport aux banques traditionnelles. À 500K€ de flux internationaux annuels, cela représente 10 000-15 000€ d'économie. Le compte Standard est gratuit et suffisant pour démarrer.",
+      "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale.",
     advantages: [
-      { title: '30+ devises, change interbancaire', description: 'Le taux de change est celui du marché — sans marge de la banque. Économie de 2-3% par transaction.' },
+      { title: '30+ devises, change interbancaire', description: "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale." },
       { title: 'IBAN multi-pays', description: 'GBP (UK), EUR (Europe), USD (États-Unis) — dans un seul compte. Vos clients anglais paient en GBP, vos clients américains en USD.' },
       { title: 'Intégration e-commerce', description: 'Connexion native Stripe, PayPal, Shopify. Les encaissements sont centralisés et convertis automatiquement.' },
-      { title: 'Compte gratuit (Standard)', description: 'Suffisant pour démarrer. Les fonctionnalités avancées sont dans les plans payants (Growth 99 €/mois, Scale 139 €/mois).' },
+      { title: "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale.", description: "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale." },
     ],
     limitations: [
       { title: 'Support par chat uniquement', workaround: 'Pas de téléphone, pas de conseiller dédié en Standard. Réponse sous 24h en moyenne.' },
       { title: 'Compte non rémunéré', workaround: 'Les dépôts ne génèrent pas d\'intérêts — contrairement à certaines banques traditionnelles.' },
-      { title: 'Frais de retrait en espèces', workaround: '2% au-delà de 1 000 €/mois.' },
+      { title: 'Frais de retrait en espèces', workaround: "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale." },
       { title: 'Pas de crédit structuré', workaround: 'Pas de ligne de crédit, pas de caution bancaire — il faut compléter avec une banque traditionnelle.' },
     ],
     implementationGuide: [
@@ -759,7 +719,7 @@ export const toolDetails: Record<string, ToolDetails> = {
     ],
     faqExpanded: [
       { question: 'Revolut vs Qonto ?', answer: 'Revolut = international, 30+ devises, change interbancaire. Qonto = France, UX pro, intégration comptable. Beaucoup de clients utilisent les deux : Qonto pour la France, Revolut pour l\'international.' },
-      { question: 'Le compte gratuit suffit-il ?', answer: 'Le Standard (gratuit) suffit pour les flux < 50K€/mois. Au-delà, le Growth (99 €/mois) avec API et multi-utilisateurs est recommandé.' },
+      { question: "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale.", answer: "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale." },
       { question: 'Mes fonds sont-ils sécurisés ?', answer: 'Oui, Revolut est agréé par la FCA (UK) et la BCE. Les fonds sont ségrégués chez des banques tierces de rang A.' },
     ],
   },
@@ -774,7 +734,7 @@ export const toolDetails: Record<string, ToolDetails> = {
       { title: "Workflows d'approbation sophistiqués", description: 'Règles conditionnelles par montant, devise, catégorie, département — avec délégations d\'approbation configurables.' },
     ],
     limitations: [
-      { title: 'Prix élevé', workaround: '149-499 €/mois — 3 fois plus cher que Spendesk. Budget à prévoir en conséquence.' },
+      { title: "Coût total à comparer", workaround: "Les plans couvrent différents modules. Demander un chiffrage comparable des cartes, factures, utilisateurs et entités." },
       { title: 'Implémentation longue', workaround: '2-4 semaines avec un project manager dédié. Pas de setup en 1 jour comme Pleo.' },
       { title: 'Overkill pour les petites structures', workaround: '< 50 pers. avec dépenses locales = Spendesk suffit.' },
     ],
@@ -789,7 +749,7 @@ export const toolDetails: Record<string, ToolDetails> = {
       { title: 'Scale-up multi-pays', description: 'Scale-up en hyper-croissance internationale.', tools: ['Payhawk', 'Pennylane', 'Agicap', 'Revolut Business'], context: 'Scale-up 50-200 pers., 3+ entités, expansion européenne.' },
     ],
     faqExpanded: [
-      { question: 'Payhawk vs Spendesk ?', answer: 'Payhawk = 50+ devises, ERP, multi-entités, 50-500 pers. Spendesk = workflows, < 50 devises, 15-200 pers. Budget : Payhawk 149-499 €/mois, Spendesk 99-299 €/mois.' },
+      { question: 'Payhawk vs Spendesk ?', answer: "Les plans couvrent différents modules. Demander un chiffrage comparable des cartes, factures, utilisateurs et entités." },
       { question: 'Quel délai d\'implémentation ?', answer: '2-4 semaines selon le nombre de pays et d\'entités.' },
       { question: 'Intégration ERP ?', answer: 'SAP, Oracle, NetSuite, Microsoft Dynamics, Datev — synchronisation native.' },
     ],

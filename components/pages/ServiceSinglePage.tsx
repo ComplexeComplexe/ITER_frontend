@@ -9,7 +9,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import StrapiBlocks from "@/components/StrapiBlocks";
-import type { StrapiServiceSinglePage, StrapiBlock, CmsNavItem } from "@/lib/strapi";
+import type { StrapiServiceSinglePage, StrapiBlock, CmsNavItem } from "@/lib/static-content";
 import { serviceSchema, faqPageSchema } from "@/lib/schemas";
 import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
 import PageByline from "@/components/PageByline";

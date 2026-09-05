@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { StrapiTeamMember } from "@/lib/strapi";
-import { strapiMediaUrl } from "@/lib/strapi";
+import type { StrapiTeamMember } from "@/lib/static-content";
+import { strapiMediaUrl } from "@/lib/static-content";
 import { getAuthorSlugs } from "@/lib/content/team";
 import { aboutHref } from "@/lib/path-localization";
 import type { Locale } from "@/lib/i18n";

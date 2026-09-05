@@ -1,4 +1,4 @@
-import { StrapiGlossaryTerm } from "./strapi";
+import { StrapiGlossaryTerm } from "./static-content";
 import { Locale } from "./i18n";
 
 const glossaryFr: StrapiGlossaryTerm[] = [

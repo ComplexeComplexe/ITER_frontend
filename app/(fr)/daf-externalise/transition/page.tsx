@@ -7,7 +7,7 @@ import { MISSIONS_PONCTUELLES } from "@/lib/content/facts";
 const TRANSITION = MISSIONS_PONCTUELLES.find((m) => m.nom === "DAF de transition")!;
 
 import { getDafSubContent } from "@/lib/content/daf-sub";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 
 const content = getDafSubContent("fr", "transition")!;
 const PAGE_URL = "https://www.iteradvisors.com/daf-externalise/transition";

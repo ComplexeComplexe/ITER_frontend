@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Linkedin, MapPin } from "lucide-react";
-import type { CmsNavItem, StrapiTeamMember } from "@/lib/strapi";
-import { strapiMediaUrl } from "@/lib/strapi";
+import type { CmsNavItem, StrapiTeamMember } from "@/lib/static-content";
+import { strapiMediaUrl } from "@/lib/static-content";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import { aboutHref } from "@/lib/path-localization";
 import { FORMULES } from "@/lib/content/facts";

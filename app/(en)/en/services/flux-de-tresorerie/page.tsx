@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import CashFlowForecastPage from "@/components/pages/CashFlowForecastPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { getCashFlowForecastContent } from "@/lib/content/cash-flow-forecast";
 
 export async function generateMetadata(): Promise<Metadata> {

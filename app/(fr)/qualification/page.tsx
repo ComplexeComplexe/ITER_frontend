@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import QualificationPage from "@/components/pages/QualificationPage";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = {
   title: "Qualification | Iter Advisors",

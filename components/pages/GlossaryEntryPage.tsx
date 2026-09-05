@@ -11,7 +11,7 @@ import {
   GLOSSARY_MODIFIED_LABEL,
   getRelatedGlossary,
 } from "@/lib/glossary-links";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import TestimonialsSection from "@/components/TestimonialsSection";

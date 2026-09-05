@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { getOutsourceYourAccountingContent } from "@/lib/content/outsource-your-accounting";
 import Link from "next/link";
 import PageByline from "@/components/PageByline";

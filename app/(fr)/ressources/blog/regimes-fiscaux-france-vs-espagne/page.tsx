@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { Callout, StatGrid, ProseTable, InlineCTA } from "@/components/blog";
 
 // SEO-05 (S31 2026-07-27) — page la plus lue du site (13 563 impressions,

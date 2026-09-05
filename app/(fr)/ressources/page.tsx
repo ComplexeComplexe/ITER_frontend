@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import ResourcesPage from "@/components/pages/ResourcesPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 
 // SEO-14 (2026-07-13) — localizedPaths ajouté (ES utilise /recursos).
 export const metadata: Metadata = buildMetadata({

@@ -28,14 +28,14 @@ export default function ComparisonTable({ tools, criteria }: ComparisonTableProp
               <th key={tool.slug} className="px-4 py-3 text-left font-semibold">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="flex items-center justify-center w-12 h-8 flex-shrink-0 bg-white/10 rounded p-1">
-                    <Image
+                    {tool.logo ? <Image
                       src={tool.logo}
                       alt={tool.logoAlt ?? `Logo ${tool.name}`}
                       width={80}
                       height={30}
                       sizes="80px"
                       className="max-w-full max-h-full object-contain"
-                    />
+                    /> : <span aria-hidden="true" className="text-xs font-semibold">{tool.name.slice(0, 3).toUpperCase()}</span>}
                   </div>
                   <Link href={`/ressources/outils/${tool.slug}`} className="hover:underline">
                     {tool.name}

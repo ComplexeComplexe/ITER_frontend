@@ -1,6 +1,7 @@
 'use client';
 
 import PageLayout from '@/components/PageLayout';
+import { TOOL_PRICING } from "@/data/toolPricing";
 import Breadcrumb from '@/components/Breadcrumb';
 import { tools } from '@/data/tools';
 import Link from 'next/link';
@@ -249,7 +250,7 @@ const comparisonRows = [
     use: 'Comptabilité et facturation connectées',
     size: 'Startups et PME françaises',
     effort: 'Faible à modéré',
-    price: '49 à 149 € / mois',
+    price: TOOL_PRICING["pennylane"].label,
     verdict:
       "Très bon choix pour structurer rapidement une fonction finance moderne, à condition de ne pas être dans un contexte ERP complexe.",
   },
@@ -259,7 +260,7 @@ const comparisonRows = [
     use: 'Comptabilité structurée, contextes industriels ou multi-entités',
     size: 'PME avancées et groupes simples',
     effort: 'Modéré à élevé',
-    price: '30 à 250 € / mois',
+    price: TOOL_PRICING["sage"].label,
     verdict:
       "Plus robuste que séduisant : pertinent quand la profondeur fonctionnelle compte davantage que l'UX.",
   },
@@ -269,7 +270,7 @@ const comparisonRows = [
     use: 'Prévisionnel et pilotage de trésorerie',
     size: 'PME en croissance',
     effort: 'Modéré',
-    price: '79 à 249 € / mois',
+    price: TOOL_PRICING["agicap"].label,
     verdict:
       "Très utile quand le cash devient un sujet de pilotage hebdomadaire et non plus seulement comptable. La qualité des prévisions dépend de celle des flux amont.",
   },
@@ -279,7 +280,7 @@ const comparisonRows = [
     use: 'Dépenses, cartes et validations',
     size: 'PME structurées',
     effort: 'Modéré',
-    price: '0 à 99 € / utilisateur',
+    price: TOOL_PRICING["spendesk"].label,
     verdict:
       "Bon outil de gouvernance des dépenses, surtout s'il est bien connecté à la comptabilité.",
   },
@@ -289,7 +290,7 @@ const comparisonRows = [
     use: 'Banque opérationnelle et cartes',
     size: 'Startups et PME',
     effort: 'Faible',
-    price: '9 à 99 € / mois',
+    price: TOOL_PRICING["qonto"].label,
     verdict:
       "Point d'entrée solide pour une stack finance française simple et connectée. À compléter si besoin de cash pooling ou de multi-entités avancé.",
   },
@@ -299,7 +300,7 @@ const comparisonRows = [
     use: 'Paie et RH en autonomie',
     size: "PME jusqu'à 100 salariés environ",
     effort: 'Faible à modéré',
-    price: '39 à 99 € / mois + 12 € / bulletin',
+    price: TOOL_PRICING["payfit"].label,
     verdict:
       "Très bon compromis entre autonomie, UX et niveau de structuration pour une équipe finance légère.",
   },
@@ -322,7 +323,7 @@ const comparisonRows = [
     use: 'Reporting et dashboards',
     size: 'PME structurées, groupes, board reporting',
     effort: 'Modéré',
-    price: '10 à 20 € / utilisateur',
+    price: TOOL_PRICING["power-bi"].label,
     verdict:
       "Très bon choix pour industrialiser le reporting si les sources et la gouvernance data sont déjà en place. Alternative : Metabase.",
   },

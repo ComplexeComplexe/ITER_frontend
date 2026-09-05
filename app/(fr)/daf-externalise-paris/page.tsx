@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { FORMULES } from "@/lib/content/facts";
 import DafExternalisePariEnrichedPage from "@/components/pages/DafExternalisePariEnrichedPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { getDafExternalisePariEnrichedContent } from "@/lib/content/daf-externalise-paris-enriched";
 
 export async function generateMetadata(): Promise<Metadata> {

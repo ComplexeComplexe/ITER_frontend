@@ -4,7 +4,7 @@ import { Locale } from "@/lib/i18n";
 import { getAboutContent } from "@/lib/content/about";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import { renderInlineMarkdownLinks } from "@/lib/render-markdown-inline-links";
-import type { StrapiTeamMember, CmsNavItem } from "@/lib/strapi";
+import type { StrapiTeamMember, CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import TestimonialsSection from "@/components/TestimonialsSection";

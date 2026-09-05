@@ -40,8 +40,8 @@ import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { getHomeContent } from "@/lib/content/home";
 import { faqPageSchema } from "@/lib/schemas";
 import { getFallbackTeamMembers } from "@/lib/content/team";
-import type { StrapiTeamMember, CmsNavItem, StrapiHomepage } from "@/lib/strapi";
-import { strapiMediaUrl } from "@/lib/strapi";
+import type { StrapiTeamMember, CmsNavItem, StrapiHomepage } from "@/lib/static-content";
+import { strapiMediaUrl } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import HeroSection from "@/components/Home/HeroSection";
 
@@ -437,7 +437,7 @@ export default function HomePage({
       </section>
 
       {/* ═══ DAF SECTION ═══ */}
-      <section className="py-24 lg:py-32 bg-muted/30">
+      <section className="py-24 lg:py-32 bg-muted/30 overflow-x-clip">
         <div className="container">
           <div
             ref={dafRef}

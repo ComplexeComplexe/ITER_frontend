@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ComptabiliteExternalisationPage from "@/components/pages/ComptabiliteExternalisationPage";
 import { buildMetadata } from "@/lib/metadata";
 import { getComptabiliteExternalisationContent } from "@/lib/content/comptabilite-externalisation";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 
 /**
  * SEO-REP §4.2 (2026-08-15) — page reconstruite.

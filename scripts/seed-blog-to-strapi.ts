@@ -26,7 +26,7 @@ loadEnvFiles();
 
 import { blogPosts } from "../lib/content/blog-posts";
 import type { Locale } from "../lib/i18n";
-import type { StrapiParagraphBlock, StrapiTextNode } from "../lib/strapi";
+import type { StrapiParagraphBlock, StrapiTextNode } from "../lib/static-content";
 
 const rawStrapiUrl = process.env.STRAPI_API_URL || "http://localhost:1337";
 const STRAPI_URL = rawStrapiUrl.replace(/\/admin\/?$/, "") || rawStrapiUrl;

@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import BlogHero from './BlogHero';
-import TableOfContents from './TableOfContents';
+import ArticleBodyLayout from './ArticleBodyLayout';
+import type { Locale } from '@/lib/i18n';
 import Tldr from './Tldr';
 import RelatedArticles from './RelatedArticles';
 
@@ -19,13 +20,15 @@ export interface TocItem {
 }
 
 export interface BlogPostLayoutProps {
+  locale: Locale;
+  articleUrl: string;
   category: string;
   title: string;
   dek: string;
   author: AuthorInfo;
   readingTime: number;
   dateModified: string;
-  heroImage?: string;
+  bodyImage?: { src: string; alt: string };
   toc: TocItem[];
   tldr: string | ReactNode;
   children: ReactNode;
@@ -42,13 +45,15 @@ export interface BlogPostLayoutProps {
  * inline CTAs, and related articles recommendation.
  */
 export default function BlogPostLayout({
+  locale,
+  articleUrl,
   category,
   title,
   dek,
   author,
   readingTime,
   dateModified,
-  heroImage,
+  bodyImage,
   toc,
   tldr,
   children,
@@ -58,7 +63,10 @@ export default function BlogPostLayout({
     <article className="w-full bg-white">
       {/* Hero Section */}
       <BlogHero
-        image={heroImage}
+        locale={locale}
+        articleUrl={articleUrl}
+        image={bodyImage?.src}
+        imageAlt={bodyImage?.alt}
         category={category}
         title={title}
         dek={dek}
@@ -67,29 +75,14 @@ export default function BlogPostLayout({
         dateModified={dateModified}
       />
 
-      {/* Main Content Container */}
-      <div className="mx-auto max-w-4xl px-6 py-12 lg:py-16">
-        {/* Table of Contents */}
-        {toc && toc.length > 0 && <TableOfContents items={toc} />}
-
-        {/* TL;DR / À retenir section */}
+      <ArticleBodyLayout locale={locale} headings={toc.map(item => ({ ...item, level: 2 as const }))}>
         {tldr && <Tldr>{tldr}</Tldr>}
-
-        {/* Article body.
-            REDESIGN-03 (2026-09-01) — la classe était `prose-blog`, définie
-            dans BlogPostLayout.module.css sous le nom `.prose_blog` et jamais
-            importée : 26 articles JSX se rendaient sans hiérarchie de titres,
-            sans puces, sans bordures de tableau. `.prose-iter-blog` est la
-            typographie éditoriale du site (globals.css), déjà utilisée par
-            BlogPostPage et GuideFiscalPage. */}
-        <div className="prose-iter-blog mx-auto max-w-[72ch] py-8">
-          {children}
-        </div>
-      </div>
+        {children}
+      </ArticleBodyLayout>
 
       {/* Related Articles Section */}
       {relatedArticles && relatedArticles.length > 0 && (
-        <RelatedArticles articles={relatedArticles} />
+        <RelatedArticles locale={locale} articles={relatedArticles} />
       )}
     </article>
   );

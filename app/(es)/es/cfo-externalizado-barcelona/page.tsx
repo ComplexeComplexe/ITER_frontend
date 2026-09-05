@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import DafLocalPage from "@/components/pages/DafLocalPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { getDafLocalContent } from "@/lib/content/daf-local";
 
 export async function generateMetadata(): Promise<Metadata> {

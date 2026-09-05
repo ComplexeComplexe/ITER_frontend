@@ -4,7 +4,7 @@ import { Locale } from "@/lib/i18n";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import type { DrhSubContent } from "@/lib/content/drh-sub";
 import { HR_SERVICE_SLUGS, hrServices } from "@/lib/content/hr-services";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import TestimonialsSection from "@/components/TestimonialsSection";

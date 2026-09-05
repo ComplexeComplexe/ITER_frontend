@@ -5,7 +5,7 @@ import {
   getJobOffers,
   getJobOfferBySlug,
   getCmsNavigation,
-} from "@/lib/strapi";
+} from "@/lib/static-content";
 
 export async function generateStaticParams() {
   const jobs = await getJobOffers("es");

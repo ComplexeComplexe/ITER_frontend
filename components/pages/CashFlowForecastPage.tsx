@@ -5,7 +5,7 @@ import { CashFlowForecastContent } from "@/lib/content/cash-flow-forecast";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 import { motion } from "framer-motion";
 import PageByline from "@/components/PageByline";
 import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";

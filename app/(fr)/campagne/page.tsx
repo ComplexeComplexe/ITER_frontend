@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import CasClientsPage from "@/components/pages/CasClientsPage";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = {
   title: "Cas clients | Iter Advisors",

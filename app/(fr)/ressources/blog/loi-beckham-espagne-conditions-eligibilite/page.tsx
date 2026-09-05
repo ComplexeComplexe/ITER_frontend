@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, ProseTable } from '@/components/blog';
-import { getCmsNavigation } from '@/lib/strapi';
+import { getCmsNavigation } from '@/lib/static-content';
 
 export const metadata: Metadata = {
   title: "Loi Beckham : conditions d'éligibilité 2026",

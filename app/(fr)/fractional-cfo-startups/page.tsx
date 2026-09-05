@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
-import { getCmsNavigation } from "@/lib/strapi";
-import type { CmsNavItem } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
+import type { CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";

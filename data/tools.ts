@@ -1,3 +1,4 @@
+import { TOOL_PRICING } from "./toolPricing";
 export interface Tool {
   slug: string;
   name: string;
@@ -37,7 +38,7 @@ export const tools: Tool[] = [
     website: 'https://www.pennylane.com',
     rating: 4.5,
     implementationTime: '1-3 semaines',
-    priceRange: '39-199 €/mois',
+    priceRange: TOOL_PRICING["pennylane"].label,
     phase: 1,
     forWho: [
       'Startups SaaS Series A/B (15-50 pers.)',
@@ -64,7 +65,7 @@ export const tools: Tool[] = [
     website: 'https://agicap.com/fr/',
     rating: 4.3,
     implementationTime: '2 semaines',
-    priceRange: '49-249 €/mois',
+    priceRange: TOOL_PRICING["agicap"].label,
     phase: 1,
     forWho: [
       'PME de 10-100 pers.',
@@ -90,7 +91,7 @@ export const tools: Tool[] = [
     website: 'https://www.spendesk.com',
     rating: 4.2,
     implementationTime: '1-2 semaines',
-    priceRange: '29-199 €/mois',
+    priceRange: TOOL_PRICING["spendesk"].label,
     phase: 1,
     forWho: [
       'SaaS avec forte rotation de rôles',
@@ -116,7 +117,7 @@ export const tools: Tool[] = [
     website: 'https://payfit.com/fr/',
     rating: 4.4,
     implementationTime: '1-2 semaines',
-    priceRange: '19-99 €/mois + 1-2 €/salarié',
+    priceRange: TOOL_PRICING["payfit"].label,
     phase: 1,
     forWho: [
       'Startups de 5-200 pers.',
@@ -143,7 +144,7 @@ export const tools: Tool[] = [
     website: 'https://www.sage.com/fr-fr/',
     rating: 3.8,
     implementationTime: '4-12 semaines',
-    priceRange: '99-499 €/mois',
+    priceRange: TOOL_PRICING["sage"].label,
     phase: 2,
     forWho: [
       'Industrie et fabrication avec gestion de stocks complexe',
@@ -171,7 +172,7 @@ export const tools: Tool[] = [
     website: 'https://www.cegid.com/fr/produits/cegid-loop/',
     rating: 3.5,
     implementationTime: '2-6 semaines',
-    priceRange: '79-299 €/mois',
+    priceRange: TOOL_PRICING["cegid-loop"].label,
     phase: 2,
     forWho: [
       'PME françaises avec expert-comptable réseau Cegid',
@@ -190,15 +191,15 @@ export const tools: Tool[] = [
   },
   {
     slug: 'fygr',
-    name: 'Fygr',
+    name: 'Okimia (ex-Fygr)',
     category: 'tresorerie',
     categorySlug: 'logiciels-tresorerie',
     logo: '/images/logos/tools/fygr.png',
     logoAlt: 'Logo Fygr — outil de trésorerie économique pour PME 10-80 salariés',
-    website: 'https://fygr.io',
+    website: 'https://www.okimia.com/fr',
     rating: 4.0,
     implementationTime: '1-2 jours',
-    priceRange: '29-99 €/mois',
+    priceRange: TOOL_PRICING["fygr"].label,
     phase: 1,
     forWho: [
       'PME 10-80 pers. avec trésorerie simple',
@@ -225,7 +226,7 @@ export const tools: Tool[] = [
     website: 'https://www.pleo.io/fr',
     rating: 4.3,
     implementationTime: '1-2 jours',
-    priceRange: '35-129 €/mois',
+    priceRange: TOOL_PRICING["pleo"].label,
     phase: 1,
     forWho: [
       'Startups 5-50 pers. privilégiant la simplicité',
@@ -252,7 +253,7 @@ export const tools: Tool[] = [
     website: 'https://www.silae.fr',
     rating: 3.9,
     implementationTime: '2-4 semaines',
-    priceRange: '49-199 €/mois',
+    priceRange: TOOL_PRICING["silae"].label,
     phase: 2,
     forWho: [
       'PME françaises avec paie complexe',
@@ -280,7 +281,7 @@ export const tools: Tool[] = [
     website: 'https://www.lucca.fr',
     rating: 4.1,
     implementationTime: '2-4 semaines',
-    priceRange: '39-149 €/mois',
+    priceRange: TOOL_PRICING["lucca"].label,
     phase: 2,
     forWho: [
       'PME 20-200 pers. cherchant une suite RH complète',
@@ -306,7 +307,7 @@ export const tools: Tool[] = [
     website: 'https://qonto.com/fr',
     rating: 4.4,
     implementationTime: '1 jour',
-    priceRange: '9-79 €/mois',
+    priceRange: TOOL_PRICING["qonto"].label,
     phase: 1,
     forWho: [
       'TPE et PME françaises',
@@ -322,7 +323,7 @@ export const tools: Tool[] = [
     experts: ['sebastien'],
     hasVerbatim: true,
     shortDescription:
-      "La banque des entrepreneurs français. IBAN FR, cartes virtuelles instantanées, intégration native Pennylane / Agicap / Spendesk dès 9 €/mois.",
+      "La banque des entrepreneurs français. IBAN FR, cartes virtuelles instantanées, intégration native Pennylane / Agicap / Spendesk selon le forfait choisi.",
   },
   {
     slug: 'revolut-business',
@@ -334,7 +335,7 @@ export const tools: Tool[] = [
     website: 'https://www.revolut.com/business/',
     rating: 4.2,
     implementationTime: '1 jour',
-    priceRange: '0-139 €/mois',
+    priceRange: TOOL_PRICING["revolut-business"].label,
     phase: 1,
     forWho: [
       'Startups internationales multi-pays',
@@ -361,7 +362,7 @@ export const tools: Tool[] = [
     website: 'https://payhawk.com/',
     rating: 4.1,
     implementationTime: '2-4 semaines',
-    priceRange: '149-499 €/mois',
+    priceRange: TOOL_PRICING["payhawk"].label,
     phase: 2,
     forWho: [
       'PME / ETI 50-500 pers. avec dépenses internationales',
@@ -400,7 +401,7 @@ export const tools: Tool[] = [
     website: 'https://www.kyriba.com/fr/',
     rating: 4.2,
     implementationTime: '3-6 mois',
-    priceRange: 'Sur devis (5 000-15 000 €/mois)',
+    priceRange: TOOL_PRICING["kyriba"].label,
     phase: 3,
     forWho: [
       'ETI et groupes 200+ salariés multi-entités',
@@ -428,7 +429,7 @@ export const tools: Tool[] = [
     website: 'https://powerbi.microsoft.com/fr-fr/',
     rating: 4.4,
     implementationTime: '2-3 jours',
-    priceRange: '10-20 €/utilisateur/mois',
+    priceRange: TOOL_PRICING["power-bi"].label,
     phase: 1,
     forWho: [
       'PME et scale-ups 20+ salariés avec CFO ou DAF externalisé',
@@ -456,7 +457,7 @@ export const tools: Tool[] = [
     website: 'https://upflow.io/',
     rating: 4.5,
     implementationTime: '1-2 semaines',
-    priceRange: 'Sur devis (à partir de 200 €/mois)',
+    priceRange: TOOL_PRICING["upflow"].label,
     phase: 2,
     forWho: [
       'PME B2B 20-200 salariés avec DSO > 45 jours',
@@ -484,7 +485,7 @@ export const tools: Tool[] = [
     website: 'https://www.leanpay.fr/',
     rating: 4.1,
     implementationTime: '1 semaine',
-    priceRange: 'Sur devis (à partir de 150 €/mois)',
+    priceRange: TOOL_PRICING["leanpay"].label,
     phase: 2,
     forWho: [
       'PME françaises 10-100 salariés',
@@ -512,7 +513,7 @@ export const tools: Tool[] = [
     website: 'https://factorialhr.fr/',
     rating: 4.3,
     implementationTime: '1-2 semaines',
-    priceRange: '5-10 €/employé/mois',
+    priceRange: TOOL_PRICING["factorial"].label,
     phase: 2,
     forWho: [
       'PME 20-200 salariés France et/ou Espagne',
@@ -540,7 +541,7 @@ export const tools: Tool[] = [
     website: 'https://carta.com/',
     rating: 4.4,
     implementationTime: '2-4 semaines',
-    priceRange: 'Sur devis (à partir de 2 000 €/an)',
+    priceRange: TOOL_PRICING["carta"].label,
     phase: 3,
     forWho: [
       'Startups avec investisseurs US ou envisageant une cotation',
@@ -568,7 +569,7 @@ export const tools: Tool[] = [
     website: 'https://www.equify.io/',
     rating: 4.2,
     implementationTime: '1-3 semaines',
-    priceRange: 'Sur devis (à partir de 1 500 €/an)',
+    priceRange: TOOL_PRICING["equify"].label,
     phase: 2,
     forWho: [
       'Startups françaises ayant levé des fonds',

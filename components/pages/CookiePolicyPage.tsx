@@ -1,5 +1,5 @@
 import { Locale } from "@/lib/i18n";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 import { getCookiePolicyContent } from "@/lib/content/cookies";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";

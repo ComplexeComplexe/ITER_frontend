@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import DrhSubPage from "@/components/pages/DrhSubPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
 import { getDrhSubContent } from "@/lib/content/drh-sub";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 
 const content = getDrhSubContent("es", "tiempo-compartido")!;
 

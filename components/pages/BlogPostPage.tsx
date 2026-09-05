@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
 import { aboutHref } from "@/lib/path-localization";
@@ -7,10 +6,10 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import StrapiBlocks from "@/components/StrapiBlocks";
 import MidArticleSoftCTA from "@/components/blog/MidArticleSoftCTA";
-import ArticleMeta from "@/components/blog/ArticleMeta";
-import ArticleTOC from "@/components/blog/ArticleTOC";
+import BlogHero from "@/components/blog/BlogHero";
+import ArticleBodyLayout from "@/components/blog/ArticleBodyLayout";
 import BlogRelatedArticles from "@/components/blog/BlogRelatedArticles";
-import type { StrapiBlock, CmsNavItem, StrapiTeamMember } from "@/lib/strapi";
+import type { StrapiBlock, CmsNavItem, StrapiTeamMember } from "@/lib/static-content";
 import { articleSchema, faqPageSchema } from "@/lib/schemas";
 import { estimateReadMinutes } from "@/lib/blog-read-time";
 import { splitHtmlAroundMid } from "@/lib/blog-cta-split";
@@ -166,147 +165,29 @@ export default function BlogPostPage({
       {/* Schema.org JSON-LD — Article */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
       />
       {/* Schema.org JSON-LD — FAQPage (only when an FAQ section was
           detected in the body and converted to an accordion). */}
       {faqJsonLd && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }}
         />
       )}
 
-      <section className="bg-background pt-32 pb-12 lg:pb-16">
-        <div className="container">
-          <Breadcrumb
-            locale={locale}
-            items={[
-              { label: breadcrumbs.resourcesLabel, href: breadcrumbs.resourcesHref },
-              { label: breadcrumbs.blogLabel, href: breadcrumbs.blogHref },
-              { label: title },
-            ]}
-          />
-          <h1 className="text-3xl lg:text-4xl font-bold font-heading text-foreground max-w-3xl mt-4 mb-4">
-            {title}
-          </h1>
-
-          {/* Article meta — read time + last update + share buttons.
-              SEO contract: values mirror the Article JSON-LD. */}
-          <ArticleMeta
-            locale={locale}
-            date={updatedDate || publishedDate}
-            readMinutes={readMinutes > 0 ? readMinutes : undefined}
-            shareUrl={articleUrl}
-            shareTitle={title}
-          />
-
-          {(author || category) && (
-            <div className="flex flex-col gap-4 mt-2">
-              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                {category && (
-                  <span className="flex items-center gap-1.5">
-                    <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet bg-iter-violet/10 px-2 py-0.5 rounded-full">
-                      {category}
-                    </span>
-                  </span>
-                )}
-              </div>
-
-              {/* Author bio with photo */}
-              {authorMember && authorMember.photo?.url && (
-                <div className="flex items-center gap-4 pt-4 border-t border-border/50">
-                  <div className="relative w-12 h-12 shrink-0">
-                    <Image
-                      src={authorMember.photo.url}
-                      alt={`${authorMember.firstName} ${authorMember.lastName}`}
-                      fill
-                      className="rounded-full object-cover"
-                      sizes="48px"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-1.5">
-                      <a
-                        href={authorUrl}
-                        className="font-semibold text-foreground hover:text-iter-violet transition-colors"
-                        rel="author"
-                      >
-                        {authorMember.firstName} {authorMember.lastName}
-                      </a>
-                      {authorMember.linkedIn && (
-                        <a
-                          href={authorMember.linkedIn}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-iter-violet transition-colors"
-                          aria-label="LinkedIn profile"
-                        >
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
-                          </svg>
-                        </a>
-                      )}
-                    </div>
-                    {authorRole && (
-                      <p className="text-xs text-muted-foreground font-medium">{authorRole}</p>
-                    )}
-                  </div>
-                </div>
-              )}
-              {author && !authorMember && (
-                <span className="flex items-center gap-1.5 text-sm">
-                  <span className="w-1 h-1 rounded-full bg-muted-foreground/50" />
-                  <a
-                    href={aboutHref(locale)}
-                    className="hover:text-iter-violet transition-colors"
-                    rel="author"
-                  >
-                    {author}
-                  </a>
-                </span>
-              )}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Body illustration */}
-      {bodyImage && (
-        <section className="bg-background pt-2 pb-8">
-          <div className="container max-w-3xl">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-3xl bg-muted">
-              <Image
-                src={bodyImage.src}
-                alt={bodyImage.alt}
-                fill
-                sizes="(max-width: 768px) 100vw, 768px"
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Article body — two-column on xl screens (sticky TOC right).
-          One <ArticleTOC> instance: its internal markup renders both
-          a mobile accordion (`xl:hidden`) and a desktop sticky aside
-          (`hidden xl:block`). Flex order swaps the TOC above the body
-          on mobile and into the right column on xl. */}
-      <article className="bg-background py-12 lg:py-16">
-        <div className="container">
-          <div className="flex flex-col xl:grid xl:grid-cols-[minmax(0,1fr)_15rem] xl:gap-12 max-w-6xl mx-auto">
-            {htmlContent && tocHeadings.length > 0 && (
-              <div className="order-1 xl:order-none xl:col-start-2 xl:row-start-1">
-                <ArticleTOC locale={locale} headings={tocHeadings} />
-              </div>
-            )}
-
-            <div
-              data-article-body
-              className="prose-iter-blog max-w-[72ch] mx-auto xl:mx-0 order-2 xl:order-none xl:col-start-1 xl:row-start-1"
-            >
+      <div className="bg-background pt-28 sm:pt-32 pb-4">
+        <div className="container"><Breadcrumb locale={locale} items={[
+          { label: breadcrumbs.resourcesLabel, href: breadcrumbs.resourcesHref },
+          { label: breadcrumbs.blogLabel, href: breadcrumbs.blogHref },
+          { label: title },
+        ]} /></div>
+      </div>
+      <BlogHero locale={locale} title={title} category={category} dek={metaDescription}
+        author={{ name: author || "Iter Advisors", avatar: authorMember?.photo?.url, jobTitle: authorRole, url: authorUrl || aboutHref(locale) }}
+        readingTime={readMinutes || undefined} dateModified={updatedDate || publishedDate} articleUrl={articleUrl}
+        image={bodyImage?.src} imageAlt={bodyImage?.alt} />
+      <ArticleBodyLayout locale={locale} headings={tocHeadings}>
               {blocks && blocks.length > 0 ? (
                 <StrapiBlocks
                   blocks={blocks}
@@ -332,10 +213,7 @@ export default function BlogPostPage({
                   <p key={i}>{paragraph}</p>
                 ))
               )}
-            </div>
-          </div>
-        </div>
-      </article>
+      </ArticleBodyLayout>
 
       <CTASection locale={locale} />
 

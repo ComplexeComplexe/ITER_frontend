@@ -3,7 +3,7 @@
  * Used when Strapi is unavailable to provide non-French content
  */
 
-import type { StrapiServiceSinglePage } from "@/lib/strapi";
+import type { StrapiServiceSinglePage } from "@/lib/static-content";
 import type { Locale } from "@/lib/i18n";
 import { fallbackServicePages } from "@/lib/fallback-service-pages";
 
@@ -239,7 +239,7 @@ const fallbackServicePagesEs: Record<string, StrapiServiceSinglePage> = {
       {
         id: 4,
         question: "¿Cuánto cuesta el servicio?",
-        answer: [createParagraph("La puesta en marcha inicial cuesta entre 3.000 € y 8.000 € según la complejidad. El mantenimiento mensual se integra en un forfait de DAF externalizado a partir de 2.000 €/mes. Solicite un presupuesto personalizado tras un primer diagnóstico gratuito de 30 minutos.")],
+        answer: [createParagraph("La puesta en marcha se presupuesta según los datos y entregables. Una misión de dirección financiera recurrente se sitúa entre 3.000 y 8.000 € sin IVA al mes según el alcance; no es una tarifa de software ni de producción contable aislada.")],
       },
     ],
     seo: {},
@@ -267,18 +267,18 @@ const fallbackServicePagesEs: Record<string, StrapiServiceSinglePage> = {
         "PYMEs en crecimiento (5-50 empleados): la gestoría ya no basta, pero un DAF interno (60-90k €) sería sobredimensionado.",
         "Empresas en transición: cambio de control, integración post-M&A, lanzamiento de filial española — todos casos donde se necesita expertise puntual sin compromiso a largo plazo.",
       ]),
-      createHeading("Nuestras 3 fórmulas"),
+      createHeading("Tres necesidades que deben presupuestarse"),
       createList([
-        "Esencial (2-3 días/mes, 2.000-3.500 €/mes): reporting mensual, supervisión de tesorería, copiloto del CEO.",
-        "Crecimiento (4-8 días/mes, 3.500-6.000 €/mes): añade control de gestión, presupuestos, KPIs operativos.",
-        "Premium (8+ días/mes, 6.000-8.000+ €/mes): para empresas en captación de fondos, M&A o transformación financiera profunda.",
+        "Reporting: definir fuentes, calendario de cierre y revisión de resultados.",
+        "Presupuesto y control: hipótesis, indicadores y análisis de desviaciones.",
+        "Proyectos: preparación financiera, consolidación o transformación con alcance específico.",
       ]),
       createHeading("Beneficios Clave"),
       createList([
         "Acceso inmediato a expertise senior (10+ años) sin coste de contratación",
-        "Reducción de costes operativos del 40-60% vs. una contratación interna equivalente",
+        "Coste ajustado al alcance y comparación sobre responsabilidades equivalentes",
         "Mejora medible de procesos financieros y gobernanza (board reporting, comités financieros)",
-        "Flexibilidad en el engagement: ampliar o reducir según necesidades, sin penalización",
+        "Alcance y cambios definidos en el contrato y sus anexos",
         "Visión 360° gracias a la experiencia multi-sector y multi-cliente de nuestros DAF",
       ]),
     ],
@@ -286,7 +286,7 @@ const fallbackServicePagesEs: Record<string, StrapiServiceSinglePage> = {
       {
         id: 1,
         question: "¿Cuál es el coste comparado con un CFO a tiempo completo?",
-        answer: [createParagraph("Un CFO interno senior en España cuesta 80.000-130.000 € brutos anuales (con cargas sociales: 100.000-170.000 € coste total empresa). Un CFO fraccionario fórmula Crecimiento cuesta 42.000-72.000 €/año — un ahorro del 40% al 60% — con mayor experiencia (los DAF externos rotan en 30-50 empresas a lo largo de su carrera vs. 5-10 para un CFO interno).")],
+        answer: [createParagraph("Compare el coste empresarial completo de una contratación con los honorarios, herramientas y trabajo interno que requiere la externalización. El resultado depende del alcance y de la organización; no existe un porcentaje de ahorro universal.")],
       },
       {
         id: 2,
@@ -397,7 +397,7 @@ const fallbackServicePagesEs: Record<string, StrapiServiceSinglePage> = {
       {
         id: 4,
         question: "¿Qué empresas pueden beneficiarse del control de gestión externalizado?",
-        answer: [createParagraph("Cualquier empresa con más de 10 empleados o más de 1 M€ de facturación. Por debajo, una gestoría contable y un buen Excel suelen ser suficientes. Por encima, la complejidad operativa justifica un sistema de control de gestión estructurado — y externalizarlo es 40-60% más barato que contratar un controller interno.")],
+        answer: [createParagraph("Cualquier empresa con más de 10 empleados o más de 1 M€ de facturación. Por debajo, una gestoría contable y un buen Excel suelen ser suficientes. Por encima, la complejidad operativa justifica un sistema de control de gestión estructurado. El coste se compara según el alcance y el trabajo que conserva la empresa.")],
       },
     ],
     seo: {},
@@ -459,7 +459,7 @@ const fallbackServicePagesEs: Record<string, StrapiServiceSinglePage> = {
       {
         id: 2,
         question: "¿Cuáles son sus tarifas?",
-        answer: [createParagraph("Combinamos un retainer mensual (3.000-6.000 €/mes según la complejidad) con un success fee al cierre (típicamente 1-3% del monto levantado, decreciente con el tamaño de la ronda). El success fee alinea nuestros intereses con los suyos — sólo cobramos si la ronda cierra.")],
+        answer: [createParagraph("Los honorarios se definen en una propuesta según los entregables y el alcance. Cualquier remuneración ligada al cierre debe figurar expresamente en el contrato; no se presupone una comisión estándar.")],
       },
       {
         id: 3,

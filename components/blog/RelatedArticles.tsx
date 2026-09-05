@@ -1,4 +1,6 @@
-import Link from 'next/link';
+import BlogRelatedArticles from './BlogRelatedArticles';
+import { BLOG_COVERS } from '@/lib/blog-covers';
+import type { Locale } from '@/lib/i18n';
 
 interface RelatedArticle {
   url: string;
@@ -7,46 +9,17 @@ interface RelatedArticle {
 }
 
 interface RelatedArticlesProps {
+  locale: Locale;
   articles: RelatedArticle[];
 }
 
-/**
- * RelatedArticles — "À lire ensuite" section with 2-3 semantically-linked articles
- * Important: these should be TARGETED based on content cluster, not generic "latest 3"
- */
-export default function RelatedArticles({
-  articles,
-}: RelatedArticlesProps) {
-  if (!articles || articles.length === 0) return null;
-
-  return (
-    <section className="border-t border-slate-200 bg-slate-50 py-12 lg:py-16">
-      <div className="mx-auto max-w-4xl px-6">
-        <h2 className="mb-8 text-2xl font-semibold text-slate-900">
-          À lire ensuite
-        </h2>
-
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article) => (
-            <article
-              key={article.url}
-              className="group flex flex-col rounded-lg border border-slate-200 bg-white p-6 transition-shadow hover:shadow-lg"
-            >
-              <div className="mb-3 inline-block">
-                <span className="text-xs font-semibold uppercase tracking-wide text-iter-violet">
-                  {article.category}
-                </span>
-              </div>
-
-              <h3 className="mb-4 flex-grow text-lg font-medium text-slate-900 group-hover:text-iter-violet">
-                <Link href={article.url}>
-                  {article.title}
-                </Link>
-              </h3>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+/** Keep hand-picked destinations while sharing the site-wide card treatment. */
+export default function RelatedArticles({ locale, articles }: RelatedArticlesProps) {
+  return <BlogRelatedArticles locale={locale} items={articles.map(article => {
+    const slug = article.url.split('/').filter(Boolean).pop() || article.url;
+    const cover = BLOG_COVERS[slug];
+    return { slug, href: article.url, title: article.title, category: article.category,
+      image: cover?.cover || '/images/og-logo.png', alt: cover?.alt || article.title,
+      readMinutes: 0, publishedDate: '' };
+  })} />;
 }

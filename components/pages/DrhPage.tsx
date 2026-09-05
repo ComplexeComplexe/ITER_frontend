@@ -6,7 +6,7 @@ import { Locale } from "@/lib/i18n";
 import { getContactPath, BOOKING_URL } from "@/lib/navigation";
 import { dafClusterHref, drhClusterHref, serviceHref } from "@/lib/path-localization";
 import { getDrhContent } from "@/lib/content/drh";
-import type { StrapiDrhServiceCategory, CmsNavItem } from "@/lib/strapi";
+import type { StrapiDrhServiceCategory, CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import DrhServicesGrid from "@/components/DrhServicesGrid";

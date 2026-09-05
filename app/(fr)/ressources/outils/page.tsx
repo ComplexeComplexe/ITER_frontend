@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import HubPage from "@/components/Outils/HubPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
