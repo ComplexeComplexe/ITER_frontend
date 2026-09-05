@@ -140,7 +140,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage }
             const Icon = sectionIcons[i % sectionIcons.length];
 
             return (
-              <div key={i} className="scroll-mt-24 mb-12 sm:mb-16 lg:mb-20">
+              <div key={i} id={section.id} className="scroll-mt-24 mb-12 sm:mb-16 lg:mb-20">
 
                 {/* Section heading */}
                 {section.heading && (
@@ -151,6 +151,23 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage }
                     <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground leading-tight">
                       {section.heading}
                     </h2>
+                  </div>
+                )}
+
+                {section.table && (
+                  <div className="overflow-x-auto mb-6" role="region" aria-label={section.table.caption} tabIndex={0}>
+                    <table className="w-full min-w-[640px] text-sm border-collapse">
+                      <caption className="text-left text-muted-foreground mb-3">{section.table.caption}</caption>
+                      <thead className="bg-iter-violet/5">
+                        <tr>{section.table.headers.map(header => <th key={header} scope="col" className="p-3 text-left border-b border-border">{header}</th>)}</tr>
+                      </thead>
+                      <tbody>{section.table.rows.map(([name, ...cells]) => (
+                        <tr key={name} className="even:bg-muted/30">
+                          <th scope="row" className="p-3 text-left align-top border-b border-border">{name}</th>
+                          {cells.map((cell, index) => <td key={index} className="p-3 align-top border-b border-border">{cell}</td>)}
+                        </tr>
+                      ))}</tbody>
+                    </table>
                   </div>
                 )}
 

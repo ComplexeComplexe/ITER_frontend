@@ -61,7 +61,7 @@ function CasClientsPageContent({ locale }: { locale: Locale }) {
 
       {/* Case Studies Section */}
       <div className="bg-background">
-        <CaseStudiesPage locale="es" cmsNavigation={undefined} />
+        <CaseStudiesPage locale="es" cmsNavigation={undefined} asSection />
       </div>
 
       {/* Testimonials Section */}

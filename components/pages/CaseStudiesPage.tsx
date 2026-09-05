@@ -7,14 +7,13 @@ import { getCaseStudiesContent, type CaseStudy } from "@/lib/content/case-studie
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import {
   ArrowRight,
   Clock,
   Users,
   CheckCircle2,
   Quote,
-  ChevronUp,
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -34,12 +33,11 @@ function CaseStudyCardWrapper({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
-  const [expanded, setExpanded] = useState(false);
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
+      initial={false}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.08 }}
       className="border border-border/50 rounded-2xl overflow-hidden bg-background hover:shadow-lg hover:shadow-iter-violet/5 transition-all duration-300"
@@ -72,15 +70,12 @@ function CaseStudyCardWrapper({
           </p>
         </div>
 
-        <AnimatePresence>
-          {expanded && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="overflow-hidden"
-            >
+        <details className="group mt-4">
+          <summary className="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-iter-violet mb-5">
+            {locale === "fr" ? "Voir le cas d'usage" : locale === "en" ? "View case study" : "Ver caso de uso"}
+            <ArrowRight size={14} aria-hidden="true" className="transition-transform group-open:rotate-90" />
+          </summary>
+          <div>
               <div className="mb-4">
                 <h4 className="text-sm font-semibold uppercase tracking-widest text-iter-violet mb-2">
                   {t.solutionLabel}
@@ -121,34 +116,8 @@ function CaseStudyCardWrapper({
                   </div>
                 </div>
               )}
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-iter-violet hover:text-iter-chartreuse transition-colors"
-        >
-          {expanded ? (
-            <>
-              {locale === "fr"
-                ? "Réduire"
-                : locale === "en"
-                ? "Show less"
-                : "Ver menos"}
-              <ChevronUp size={14} />
-            </>
-          ) : (
-            <>
-              {locale === "fr"
-                ? "Voir le cas d'usage"
-                : locale === "en"
-                ? "View case study"
-                : "Ver caso de uso"}
-              <ArrowRight size={14} />
-            </>
-          )}
-        </button>
+          </div>
+        </details>
       </div>
     </motion.div>
   );
@@ -161,9 +130,11 @@ function CaseStudyCardWrapper({
 export default function CaseStudiesPage({
   locale,
   cmsNavigation,
+  asSection = false,
 }: {
   locale: Locale;
   cmsNavigation?: CmsNavItem[];
+  asSection?: boolean;
 }) {
   const t = getCaseStudiesContent(locale);
   const [filter, setFilter] = useState<"all" | "conseil" | "ecommerce">("all");
@@ -173,21 +144,22 @@ export default function CaseStudiesPage({
       ? t.caseStudies
       : t.caseStudies.filter((cs) => cs.sector === filter);
 
-  return (
-    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
+  const Heading = asSection ? "h2" : "h1";
+  const content = (
+    <>
       {/* Hero */}
-      <section className="bg-background pt-32 pb-16">
+      <section className={`bg-background ${asSection ? "pt-8" : "pt-32"} pb-16`}>
         <div className="container">
-          <Breadcrumb
+          {!asSection && <Breadcrumb
             locale={locale}
             items={[
               { label: t.resourcesLabel, href: t.resourcesHref },
               { label: t.breadcrumbLabel },
             ]}
-          />
-          <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-3xl mb-6">
+          />}
+          <Heading className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-3xl mb-6">
             {t.h1}
-          </h2>
+          </Heading>
           <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
             {t.intro}
           </p>
@@ -234,7 +206,9 @@ export default function CaseStudiesPage({
         </div>
       </section>
 
-      <CTASection locale={locale} />
-    </PageLayout>
+      {!asSection && <CTASection locale={locale} />}
+    </>
   );
+
+  return asSection ? content : <PageLayout locale={locale} cmsNavigation={cmsNavigation}>{content}</PageLayout>;
 }

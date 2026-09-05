@@ -1,4 +1,8 @@
 import { Locale } from "../i18n";
+import { FORMULES, ENGAGEMENT } from "./facts";
+import { getDafOffer } from "./daf-offer";
+
+const offerFr = getDafOffer("fr");
 
 export type DafSubPageSlug = "metier" | "temps-partage" | "transition" | "tarifs" | "secteurs" | "ecommerce" | "industrie" | "deep-tech";
 
@@ -12,8 +16,10 @@ export interface DafSubContent {
   breadcrumbLabel: string;
   h1: string;
   sections: {
+    id?: string;
     heading?: string;
     content: string[];
+    table?: { caption: string; headers: string[]; rows: string[][] };
   }[];
   ctaButton: string;
 }
@@ -465,7 +471,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         // 6,21 ("prix daf externalisé") et 2,28 ("prix fractional cfo").
         // Title reformulé pour ouvrir sur "Prix" plutôt que "Tarifs".
         title: "Tarifs DAF externalisé 2026 : prix par mission",
-        description: "Combien coûte un DAF externalisé ? Grille de tarifs par mission et par volume de jours, ce qui fait varier le prix, et comment arbitrer. Devis en 48h.",
+        description: `DAF externalisé : ${offerFr.price}. Comparez les trois formules, leurs livrables et les modalités. Préavis de ${ENGAGEMENT.preavisJours} jours.`,
       },
       parentLabel: "DAF externalisé",
       parentHref: "/daf-externalise",
@@ -474,7 +480,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       sections: [
         {
           content: [
-            "Combien coûte un DAF externalisé ? C'est souvent la première question que se posent les dirigeants de PME et de startups avant de franchir le pas. La réponse dépend de plusieurs facteurs : la formule choisie (temps partagé, transition ou mission ponctuelle), le nombre de jours d'intervention par mois, et la complexité de la situation financière de l'entreprise.",
+            `Un DAF externalisé Iter Advisors coûte ${offerFr.price}. Le prix dépend du périmètre confié, du profil engagé et de la complexité de votre situation financière. Les jours d'intervention sont indicatifs : notre engagement porte sur les livrables définis au cadrage.`,
             // SEO-02 (2026-07-01) — Cross-link intention. Cette page = grille
             // tarifaire officielle (intention commerciale). Le blog article
             // dédié = guide informationnel avec méthodologie et ROI calculator.
@@ -483,16 +489,16 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
         {
+          id: "grille-tarifaire",
           heading: "Grille de Tarifs 2026",
+          table: {
+            caption: "Trois formules mensuelles — prix HT, volumes moyens indicatifs",
+            headers: ["Formule", "Tarif mensuel HT", "Volume indicatif", "Livrables inclus", "Profil"],
+            rows: FORMULES.map((plan, index) => [plan.nom, offerFr.tiers[index].price, plan.volumeIndicatif, plan.inclus, plan.profil]),
+          },
           content: [
-            "Les tarifs d'un DAF externalisé s'expriment généralement en forfait mensuel, calculé sur la base d'un nombre de jours d'intervention défini à l'avance.",
-            // Grille officielle (cf. lib/content/facts.ts) : le volume est une moyenne
-            // observée, pas un forfait — l'engagement porte sur un scope.
-            // SEO-REP §4.4 (2026-08-15) — la grille détaillée des trois formules est
-            // retirée : elle appartient à /daf-externalise/tarifs, seule page
-            // propriétaire de l'intention prix. Cette page explique le modèle du
-            // temps partagé et résume le tarif en une phrase, avec le lien.
-            "Formule DAF à Temps Partagé : la plus courante chez les PME et startups. Le budget va de 3 000 à 8 000 € HT par mois selon la formule et le scope confié — le détail des trois formules et de ce qu'elles incluent est sur la [grille tarifaire](/daf-externalise/tarifs).",
+            offerFr.billing,
+            `Les formules ci-dessus correspondent à l'accompagnement récurrent. ${offerFr.commitment} Les missions ponctuelles et de transition sont chiffrées séparément.`,
             "Formule DAF de Transition : intervention intensive sur 3 à 12 mois en cas de crise ou de transformation majeure. Tarif : 8 000 à 12 000 € HT par mois. Plus élevé que le temps partagé, car la mobilisation est bien plus forte.",
             // FACTS (2026-09-01) — cette ligne annonçait un « TJM 800-1 200 € HT
             // par jour » : Iter ne facture jamais à la journée (facts.ts,
@@ -516,13 +522,13 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             "Plusieurs facteurs influencent le coût final d'un DAF externalisé. L'expérience du DAF : un DAF avec 5 ans d'expérience ne coûte pas le même prix qu'un DAF avec 20 ans d'expérience. Chez Iter Advisors, tous nos associés ont plus de 10 ans d'expérience en finance d'entreprise.",
             "La complexité de la situation : une comptabilité simple avec une seule entité juridique nécessite moins de temps qu'une structure multi-pays avec opérations en devises, filiales et obligations de consolidation.",
             "Le secteur d'activité : certains secteurs comme les SaaS, e-commerce ou biotechs nécessitent une expertise spécifique qui peut justifier un tarif légèrement supérieur.",
-            "La localisation : les tarifs à Paris sont généralement 10-20% supérieurs à ceux pratiqués en province ou à Barcelone, en raison du coût de la vie plus élevé.",
+            "Les modalités de présence sont fixées au cadrage. Les éventuels frais de déplacement sont distincts du forfait et précisés dans le devis.",
           ],
         },
         {
           heading: "Comparaison avec les Alternatives",
           content: [
-            "DAF externalisé vs DAF salarié : un directeur financier salarié représente 100 000 à 213 000 € de coût employeur annuel, charges comprises. Un DAF externalisé va de 3 000 à 8 000 € HT/mois selon la formule, soit 36 000 à 96 000 € HT/an — 30 à 60 % d'économie selon le stade de maturité et le périmètre confié. De plus, si vos besoins évoluent, vous ajustez simplement le nombre de jours sans contrainte administrative.",
+            `DAF externalisé vs DAF salarié : notre référence pour un directeur financier de séniorité équivalente est de ${offerFr.salary} € de coût employeur annuel, charges comprises. Les formules Iter représentent ${offerFr.annualPrice} € HT/an pour un périmètre à temps partagé. Le choix dépend du besoin réel : un accompagnement partiel et un poste à temps plein ne couvrent pas la même disponibilité.`,
             // SEO-DAF-02 (2026-08-09) — « certifie » relève du commissaire
             // aux comptes. L'expert-comptable produit les comptes et conseille
             // selon sa lettre de mission.
@@ -533,8 +539,8 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           heading: "Comment se Passe la Facturation ?",
           content: [
-            "Chez Iter Advisors, la facturation est simple et transparente. Nous établissons un contrat de prestation de services qui précise le nombre de jours d'intervention par mois, le tarif mensuel, et les modalités de résiliation (préavis d'un mois).",
-            "La facturation est mensuelle, avec paiement à 30 jours. Il n'y a pas de frais cachés, pas de facturation supplémentaire pour les échanges par email ou téléphone entre les jours d'intervention formels, et pas d'engagement minimum au-delà du premier mois.",
+            "Le contrat de prestation fixe le périmètre, les livrables, les interlocuteurs et le tarif mensuel. Le volume de jours donne un repère de disponibilité ; il ne constitue pas un forfait contractuel.",
+            `La facturation est mensuelle, avec paiement à 30 jours. Les échanges liés au périmètre convenu sont inclus. Aucun dépassement n'est facturé sans avenant signé. ${offerFr.commitment}`,
           ],
         },
         {

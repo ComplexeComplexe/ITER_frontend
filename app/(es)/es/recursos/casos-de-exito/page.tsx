@@ -63,7 +63,7 @@ function CasosDeExitoPageContent({ locale }: { locale: Locale }) {
       </section>
 
       <div className="bg-background">
-        <CaseStudiesPage locale="es" cmsNavigation={undefined} />
+        <CaseStudiesPage locale="es" cmsNavigation={undefined} asSection />
       </div>
 
       <div className="bg-muted/30">

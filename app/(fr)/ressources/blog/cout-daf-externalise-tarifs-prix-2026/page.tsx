@@ -141,7 +141,7 @@ export default function CoutDafExternalisePage() {
         </ProseTable>
 
       <Callout type="info" title="Pricing 2026">
-        Ces tarifs sont les tarifs "standard" du marché France. Iter Advisors propose ses DAFs à ces niveaux. Les tarifs peuvent varier selon votre localisation (Île-de-France +10-15 %, Province -5 %), complexité et urgence.
+        Les repères de marché ci-dessus ne constituent pas une offre Iter Advisors. Notre accompagnement est facturé au périmètre mensuel, sans tarif journalier. Consultez la <Link href="/daf-externalise/tarifs#grille-tarifaire">grille officielle Iter Advisors</Link> pour comparer les formules, leurs livrables et les modalités.
       </Callout>
 
       <p>

@@ -1,4 +1,8 @@
 import { Locale } from "../i18n";
+import { getDafOffer } from "./daf-offer";
+
+const offerEn = getDafOffer("en");
+const offerEs = getDafOffer("es");
 
 export interface FaqRichBullet {
   label: string;
@@ -673,17 +677,17 @@ export const dafContent: Record<Locale, DafContent> = {
     meta: {
       title: "Fractional CFO for Startups & SMEs | Iter Advisors",
       description:
-        "Fractional CFO for startups and SMEs: missions, pricing (EUR 750–1 250/day), benefits and case studies. Senior CFO in Barcelona, Paris, Toulouse.",
+        `Senior CFO for startups and SMEs: ${offerEn.price}, starting within ${offerEn.start}. ${offerEn.commitment}`,
     },
     breadcrumbLabel: "Fractional CFO",
     essential: {
       heading: "The essentials in 30 seconds",
       points: [
         { label: "Definition", text: "a Fractional CFO is a senior finance leader who runs your company's finances without being a full-time employee — part-time or project-based." },
-        { label: "2026 pricing", text: "EUR 2,000 to 7,000/month, vs EUR 100,000 to 213,000/year fully loaded for an in-house CFO." },
+        { label: "2026 pricing", text: `${offerEn.price}. Reference fully loaded annual employer cost for an equivalent in-house CFO: EUR ${offerEn.salary}.` },
         { label: "Who it's for", text: "startups raising funds, growing SMEs, scale-ups in transformation." },
-        { label: "Lead time", text: "operational within 7 to 14 days." },
-        { label: "Commitment", text: "no minimum, adjustable month to month." },
+        { label: "Lead time", text: `engagement starts within ${offerEn.start}.` },
+        { label: "Commitment", text: offerEn.commitment },
         { label: "Iter Advisors in numbers", text: "15 CFO experts, 85 companies supported, EUR 100M raised, 5/5 on Trustfolio (31 reviews)." },
       ],
     },
@@ -696,7 +700,7 @@ export const dafContent: Record<Locale, DafContent> = {
     },
     quickAnswers: {
       comprendre:
-        "A Fractional CFO is a senior finance leader who runs a company's finances without being a full-time employee. They work part-time (2 to 8+ days/month) or on a project basis. Pricing: EUR 2,000 to 7,000/month. Operational within 7 to 14 days.",
+        `A Fractional CFO runs a company’s finances without being an employee. Iter Advisors offers ${offerEn.price}, starting within ${offerEn.start}. ${offerEn.commitment}`,
     },
     h1: "Fractional CFO for Startups & SMEs — Iter Advisors",
     intro: [
@@ -735,8 +739,8 @@ export const dafContent: Record<Locale, DafContent> = {
         {
           heading: "Fractional CFO vs in-house CFO: the comparison",
           content: [
-            "An in-house CFO costs between EUR 80,000 and 150,000 gross per year (plus 25-42% employer charges), totaling EUR 100,000 to 213,000 per year. A Fractional CFO costs EUR 2,000 to 8,000 per month depending on the scope, or EUR 24,000 to 96,000 per year.",
-            "An in-house CFO offers daily presence and deep company knowledge, but involves long-term commitment and high fixed costs. A Fractional CFO brings flexibility, multi-sector perspective and an extensive partner network, with no long-term commitment.",
+            `Our reference fully loaded employer cost for an equivalent senior in-house CFO is EUR ${offerEn.salary} per year. Iter Advisors costs ${offerEn.price}, or EUR ${offerEn.annualPrice} excl. VAT per year, for a defined part-time scope.`,
+            "An in-house CFO offers daily presence and deep company knowledge. A Fractional CFO supports an agreed part-time scope, with responsibilities and availability defined at the start of the engagement.",
             "For companies with EUR 1-50M in revenue, a Fractional CFO is often the most relevant solution: high-level expertise at a controlled cost, with the ability to scale up or down according to growth phases.",
           ],
         },
@@ -746,12 +750,12 @@ export const dafContent: Record<Locale, DafContent> = {
       caption: "Fractional CFO vs in-house CFO — side-by-side comparison",
       headers: ["Criterion", "Fractional CFO", "In-house CFO"],
       rows: [
-        ["Annual cost", "EUR 24,000 – 96,000", "EUR 100,000 – 213,000 (including employer charges)"],
-        ["Commitment", "No minimum duration, flexible month-to-month", "Full-time employment, 3-month notice period"],
-        ["Time to deployment", "Operational in 1-2 weeks", "3-6 months (recruitment + onboarding)"],
+        ["Annual cost", `EUR ${offerEn.annualPrice} excl. VAT`, `EUR ${offerEn.salary} (fully loaded employer cost)`],
+        ["Commitment", offerEn.commitment, "Full-time employment, 3-month notice period"],
+        ["Time to deployment", offerEn.start, "3-6 months (recruitment + onboarding)"],
         ["Industry expertise", "Multi-sector with external perspective", "Single-company expertise"],
         ["Network (VCs, banks, lawyers)", "Extensive, shared across clients", "Limited to individual background"],
-        ["Presence", "1-8+ days/month, hybrid", "5 days/week, on-site"],
+        ["Presence", "1 to 8 days/month on average, hybrid", "5 days/week, on-site"],
         ["Best for", "SMEs and startups with EUR 1-50M revenue", "Large enterprises >EUR 50M revenue"],
       ],
     },
@@ -759,7 +763,7 @@ export const dafContent: Record<Locale, DafContent> = {
       heading: "Part-time CFO or Fractional CFO: is it the same thing?",
       content: [
         "Yes — both terms refer to the same concept: a senior finance professional who splits their time across multiple companies instead of being a full-time employee at one organization. \"Fractional CFO\" is the generic term, while \"part-time CFO\" emphasizes the engagement model (a few days per month or week on a recurring basis).",
-        "You may also encounter terms like fractional finance leader, part-time financial director, shared CFO, or interim CFO — these are all synonyms for the same service. The key difference lies in duration: a part-time CFO typically commits for 12-36 months, while a Fractional CFO can handle one-off projects (fundraising, M&A, transition).",
+        "Fractional CFO and part-time CFO describe recurring external financial leadership. An interim CFO serves a different need: an intensive, temporary assignment such as replacing a departing finance director.",
         "At Iter Advisors, we offer both models: recurring part-time support to structure finance in a growing SME, and short-term intensive projects for strategic operations. The boundary is intentionally flexible — your needs determine the format, not the other way around.",
       ],
     },
@@ -780,13 +784,13 @@ export const dafContent: Record<Locale, DafContent> = {
         {
           heading: "Significant cost reduction (up to -60%)",
           content: [
-            "The cost of a Fractional CFO is significantly lower than an in-house CFO. You only pay for time actually spent on your company, without social charges or benefits. A Fractional CFO at 3 days/month costs around EUR 3,000, compared to EUR 8,000-17,000/month for a salaried CFO (including charges).",
+            `Iter Advisors offers ${offerEn.price} for a defined part-time scope. ${offerEn.billing}`,
           ],
         },
         {
           heading: "Flexibility and adaptability",
           content: [
-            "The Fractional CFO adapts to your real needs. Whether you need a one-off intervention for fundraising or regular part-time support, the scope is adjustable. No long-term commitment, no notice period.",
+            `The scope can evolve with your needs, whether for recurring support or a specific project. ${offerEn.commitment}`,
           ],
         },
         {
@@ -802,9 +806,9 @@ export const dafContent: Record<Locale, DafContent> = {
           ],
         },
         {
-          heading: "Operational from day one",
+          heading: "A structured start",
           content: [
-            "Unlike an internal hire that requires 3-6 months of onboarding, a Fractional CFO is operational immediately. Our CFOs know the tools, processes and challenges of growing companies. They deliver tangible results from the first weeks.",
+            "Our CFOs know the tools, processes and challenges of growing companies. The engagement begins with a diagnosis and an agreed roadmap, followed by the first deliverables during the first month.",
           ],
         },
       ],
@@ -823,33 +827,13 @@ export const dafContent: Record<Locale, DafContent> = {
     pricing: {
       heading: "How much does a Fractional CFO cost? 2026 pricing guide",
       content: [
-        "The average daily rate for a Fractional CFO ranges from EUR 750 to 1,250 excl. VAT, depending on seniority and mission complexity. At Iter Advisors, we offer three packages tailored to SME and startup needs.",
+        `${offerEn.price}. ${offerEn.billing} ${offerEn.commitment}`,
       ],
     },
     pricingTable: {
-      caption: "Fractional CFO pricing 2026 — three packages for your stage",
-      tiers: [
-        {
-          name: "Essential",
-          volume: "2 to 3 days/month",
-          price: "From EUR 2,000 excl. VAT/month",
-          audience: "Early-stage startups (pre-seed to seed)",
-        },
-        {
-          name: "Growth",
-          volume: "4 to 6 days/month",
-          price: "From EUR 4,000 excl. VAT/month",
-          audience: "SMEs structuring or Series A scale-ups",
-        },
-        {
-          name: "Premium",
-          volume: "8+ days/month",
-          price: "From EUR 7,000 excl. VAT/month",
-          audience: "Scale-ups, fundraising, M&A",
-        },
-      ],
-      comparisonNote:
-        "By comparison, a **full-time salaried CFO** costs EUR 100,000-213,000 per year all-inclusive, or 4-8 times more than a Fractional CFO depending on the package. For recurring long-term support, explore our [part-time CFO service](/en/fractional-cfo/shared-time). For urgent situations (CFO departure, restructuring), see our [transition CFO service](/en/fractional-cfo/transition).",
+      caption: offerEn.caption,
+      tiers: offerEn.tiers,
+      comparisonNote: `Reference annual employer cost for an equivalent senior in-house CFO: EUR ${offerEn.salary}, including charges. The external offer covers a part-time scope. [Part-time CFO](/en/fractional-cfo/shared-time) and [interim CFO](/en/fractional-cfo/transition) address different needs.`,
     },
     forWhom: {
       heading: "Fractional CFO: for whom and at what stage?",
@@ -859,12 +843,12 @@ export const dafContent: Record<Locale, DafContent> = {
         {
           heading: "Early-stage startups (pre-seed to seed)",
           content:
-            "At this stage, you can't afford a salaried CFO (EUR 100,000-150,000+ per year) but you need a senior financial voice for your first fundraises and runway tracking. The **Essential Fractional CFO package** (2-3 days/month) covers your needs for EUR 2,000-3,000 excl. VAT/month. For more regular support, the [part-time CFO model](/en/fractional-cfo/shared-time) becomes highly relevant.",
+            `The Essential package supports runway monitoring, monthly reporting and financial discussions with investors: ${offerEn.tiers[0].price}, with ${offerEn.tiers[0].volume} on average. The scope is agreed at the start of the engagement.`,
         },
         {
           heading: "Series A/B scale-ups",
           content:
-            "You now manage complex treasury, quarterly investor reporting, and perhaps prepare your next round. The **Growth Fractional CFO package** (4-6 days/month) handles finance function structuring before you hire a full-time CFO. This is typically the ideal moment for a [part-time CFO](/en/fractional-cfo/shared-time) — the same senior profile, present 1 day per week over time.",
+            `The Growth package supports financial planning, fundraising and investor reporting: ${offerEn.tiers[1].price}, with ${offerEn.tiers[1].volume} on average. The commitment is to the agreed scope.`,
         },
         {
           heading: "Growing SMEs or companies in transition",
@@ -874,7 +858,7 @@ export const dafContent: Record<Locale, DafContent> = {
         {
           heading: "Enterprises in transformation",
           content:
-            "For 3-12 months (CFO departure, restructuring, post-acquisition integration), the [transition CFO](/en/fractional-cfo/transition) steps in within 5 days with a senior 20+ year profile. This is an intensive one-off engagement, distinct from recurring part-time support.",
+            `For a CFO departure, restructuring or post-acquisition integration, an [interim CFO](/en/fractional-cfo/transition) can start within ${offerEn.transitionStart}, depending on availability and complexity. This intensive assignment is distinct from recurring part-time support.`,
         },
       ],
       outro:
@@ -952,7 +936,7 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "How much does a Fractional CFO cost?",
         answer:
-          "The daily rate for a Fractional CFO ranges from EUR 750 to 1,250 excl. VAT. At Iter Advisors, our packages range from EUR 2,000/month (2-3 days) to EUR 7,000+/month (8+ days). For comparison, a salaried CFO costs EUR 8,300-17,750/month including charges.",
+          `${offerEn.price}. ${offerEn.billing} ${offerEn.commitment}`,
       },
       {
         question: "What is the difference between a Fractional CFO and a part-time CFO?",
@@ -987,12 +971,12 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "How long does a Fractional CFO engagement last?",
         answer:
-          "Duration varies: from 3 months for a one-off mission (fundraising, restructuring) to several years for part-time support. At Iter Advisors, the average collaboration lasts 18 months, with no minimum commitment.",
+          `The duration depends on the agreed scope, from a specific project to recurring support. ${offerEn.commitment}`,
       },
       {
         question: "Is a Fractional CFO suitable for early-stage startups?",
         answer:
-          "Yes, it is one of the most relevant use cases. A pre-seed or seed startup cannot afford a EUR 120K/year CFO, but needs solid forecasting, cash flow monitoring and a credible financial spokesperson for investors. A Fractional CFO at 2-3 days/month is the ideal solution.",
+          "Yes. A startup preparing its first fundraise may need reliable forecasting, cash flow monitoring and a senior financial contact for investors. The Essential package is designed for seed-stage companies; its scope is agreed before the engagement starts.",
       },
       {
         question: "What is the difference between a Fractional CFO and an interim manager?",
@@ -1017,12 +1001,12 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "What is the difference between a fractional CFO and a part-time CFO?",
         answer:
-          "There is no practical difference: both terms refer to a senior finance director who works for several companies on a non-full-time basis. 'Fractional CFO' is the term used in the startup and VC ecosystem, while 'part-time CFO' or 'shared-time CFO' is more common in traditional SME contexts. At Iter Advisors, we use both terms interchangeably — the structure is identical (2 to 8 days per month), only the vocabulary changes depending on your audience.",
+          `${offerEn.billing} Fractional CFO and part-time CFO both describe recurring external financial leadership. The typical scope and availability are agreed at the start.`,
       },
       {
         question: "How much does a fractional CFO cost per month in 2026?",
         answer:
-          "In 2026, a fractional CFO costs between EUR 2,000 and EUR 15,000 per month depending on the volume of engagement. Iter Advisors offers three packages: Advisory (2 days/month, EUR 2,000–4,500/month) for seed-stage startups needing runway monitoring and investor reporting; Growth (4 days/month, EUR 4,500–8,500/month) for Series A companies managing complex treasury and fundraising prep; Embedded (8+ days/month, EUR 8,000–15,000/month) for scale-ups in active fundraising or M&A. The average daily rate is EUR 750–1,250. A full-time CFO costs EUR 120,000–200,000/year gross plus benefits — 3 to 5 times more for the equivalent seniority level.",
+          `Iter Advisors offers Essential (${offerEn.tiers[0].price}), Growth (${offerEn.tiers[1].price}) and Premium (${offerEn.tiers[2].price}). ${offerEn.billing} ${offerEn.commitment}`,
       },
       {
         question: "When should a startup hire a fractional CFO?",
@@ -1032,7 +1016,7 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "What does a fractional CFO actually do day-to-day?",
         answer:
-          "A fractional CFO's work typically breaks down into four pillars: Reporting & monitoring (40% of time) — maintaining the monthly P&L, cash flow dashboard and KPI pack for the board; Strategic finance (30%) — financial modelling, budget versus actuals analysis, pricing decisions, capex prioritisation; Fundraising support (20%) — investor relations, data room management, financial due diligence responses; Operational improvements (10%) — ERP selection, accounting close acceleration, working capital optimisation. On a typical 4-day-per-month engagement, expect two days on reporting and one day each on strategy and ad-hoc projects.",
+          "A fractional CFO maintains management reporting and cash flow forecasts, prepares budgets and financial scenarios, supports fundraising and improves finance processes. The priorities and deliverables depend on the agreed scope; the allocation of time varies between clients.",
       },
       {
         question: "Can a fractional CFO help with Series A fundraising?",
@@ -1046,17 +1030,17 @@ export const dafContent: Record<Locale, DafContent> = {
     meta: {
       title: "CFO Externalizado | Dirección Financiera | Iter Advisors",
       description:
-        "CFO externalizado para pymes y startups: dirección financiera, tesorería, control de gestión. Desde 3 000 € al mes, sin permanencia mínima. Barcelona, París, Toulouse.",
+        `CFO para pymes y startups: ${offerEs.price}, inicio en ${offerEs.start}. ${offerEs.commitment}`,
     },
     breadcrumbLabel: "CFO Externalizado",
     essential: {
       heading: "Lo esencial en 30 segundos",
       points: [
         { label: "Definición", text: "un CFO externalizado es un director financiero senior que dirige las finanzas de su empresa sin ser empleado a tiempo completo, a tiempo compartido o en misión puntual." },
-        { label: "Tarifa 2026", text: "de 2 000 a 7 000 € al mes, frente a 100 000 a 213 000 €/año con cargas de un CFO interno." },
+        { label: "Tarifa 2026", text: `${offerEs.price}. Coste empresarial anual de referencia de un CFO interno equivalente, incluidas cargas: ${offerEs.salary} €.` },
         { label: "Para quién", text: "startups en ronda de financiación, pymes en crecimiento, empresas en transformación." },
-        { label: "Plazo", text: "operativo en 7 a 14 días." },
-        { label: "Compromiso", text: "sin mínimo, ajustable mes a mes." },
+        { label: "Plazo", text: `inicio de la misión en ${offerEs.start}.` },
+        { label: "Compromiso", text: offerEs.commitment },
         { label: "Iter Advisors en cifras", text: "15 expertos CFO, 85 empresas acompañadas, 100 M€ levantados, nota 5/5 en Trustfolio (31 opiniones)." },
       ],
     },
@@ -1069,7 +1053,7 @@ export const dafContent: Record<Locale, DafContent> = {
     },
     quickAnswers: {
       comprendre:
-        "Un CFO externalizado es un director financiero senior que dirige las finanzas de una empresa sin ser empleado a tiempo completo. Interviene a tiempo compartido (2 a 8+ días/mes) o en misión puntual. Tarifa: 2 000 a 7 000 €/mes. Operativo en 7 a 14 días.",
+        `Un CFO externalizado dirige las finanzas de una empresa sin ser empleado a tiempo completo. Iter Advisors ofrece ${offerEs.price}, con inicio en ${offerEs.start}. ${offerEs.commitment}`,
     },
     h1: "CFO externalizado: la guia completa para pymes y startups",
     intro: [
@@ -1108,8 +1092,8 @@ export const dafContent: Record<Locale, DafContent> = {
         {
           heading: "CFO externalizado vs CFO interno: la comparativa",
           content: [
-            "Un CFO interno cuesta entre 80.000 y 150.000 EUR brutos anuales (mas cargas patronales del 25-42%), lo que supone un coste total de 100.000 a 213.000 EUR al ano. Un CFO externalizado representa un presupuesto de 2.000 a 8.000 EUR al mes segun el volumen, es decir, 24.000 a 96.000 EUR al ano.",
-            "El CFO interno ofrece presencia diaria y conocimiento profundo de la empresa, pero implica compromiso a largo plazo y costes fijos elevados. El CFO externalizado aporta flexibilidad, vision multi-sectorial y una red amplia de socios, sin compromiso de duracion.",
+            `El coste empresarial anual de referencia de un CFO interno de experiencia equivalente es de ${offerEs.salary} €, incluidas cargas. Iter Advisors ofrece ${offerEs.price}, o ${offerEs.annualPrice} € sin IVA al año, para un alcance a tiempo parcial definido.`,
+            `El CFO interno ofrece presencia diaria y conocimiento profundo de la empresa. El CFO externalizado aporta flexibilidad y experiencia multisectorial para un alcance acordado. ${offerEs.commitment}`,
             "Para empresas de 1 a 50 M EUR de facturacion, el CFO externalizado es a menudo la solucion mas pertinente: experiencia de alto nivel a un coste controlado, con la posibilidad de modular la intervencion segun las fases de crecimiento.",
           ],
         },
@@ -1140,13 +1124,13 @@ export const dafContent: Record<Locale, DafContent> = {
         {
           heading: "Reduccion significativa de costes (hasta -60%)",
           content: [
-            "El coste de un CFO externalizado es significativamente inferior al de un CFO interno. Solo paga por el tiempo efectivamente dedicado a su empresa, sin cargas sociales ni beneficios salariales. Un CFO externalizado a 3 dias/mes cuesta aproximadamente 3.000 EUR, frente a 8.000-17.000 EUR/mes de un CFO asalariado (cargas incluidas).",
+            `Iter Advisors ofrece ${offerEs.price} para un alcance a tiempo parcial definido. ${offerEs.billing}`,
           ],
         },
         {
           heading: "Flexibilidad y adaptabilidad",
           content: [
-            "El CFO externalizado se adapta a sus necesidades reales. Ya sea una intervencion puntual para una ronda de financiacion o un acompanamiento regular a tiempo compartido, el volumen es ajustable. Sin compromiso a largo plazo, sin preaviso.",
+            `El alcance se adapta a las necesidades de la empresa, tanto para un proyecto concreto como para una colaboración recurrente. ${offerEs.commitment}`,
           ],
         },
         {
@@ -1181,14 +1165,13 @@ export const dafContent: Record<Locale, DafContent> = {
       ],
     },
     pricing: {
-      heading: "Cuanto cuesta un CFO externalizado? Guia de tarifas 2026",
-      content: [
-        "La tarifa diaria media de un CFO externalizado se situa entre 750 y 1.250 EUR sin IVA, segun el nivel de senioridad y la complejidad de las misiones. En Iter Advisors, ofrecemos tres formulas adaptadas a las necesidades de pymes y startups.",
-        "Formula Esencial (2-3 dias/mes): desde 2.000 EUR sin IVA/mes. Ideal para startups early-stage que necesitan seguimiento de tesoreria, reporting mensual y un interlocutor financiero para los inversores.",
-        "Formula Crecimiento (4-6 dias/mes): desde 4.000 EUR sin IVA/mes. Para pymes en estructuracion que necesitan gestion financiera completa, implantacion de herramientas y acompanamiento estrategico regular.",
-        "Formula Premium (8+ dias/mes): desde 7.000 EUR sin IVA/mes. Para scale-ups y empresas en fase de ronda de financiacion o M&A, con un CFO casi integrado en el equipo directivo.",
-        "A modo de comparacion, un CFO asalariado a tiempo completo cuesta entre 100.000 y 213.000 EUR al ano (salario + cargas), es decir, 8.300 a 17.750 EUR al mes. El CFO externalizado permite un ahorro del 50 al 70% segun la formula elegida.",
-      ],
+      heading: "¿Cuánto cuesta un CFO externalizado?",
+      content: [`${offerEs.price}. ${offerEs.billing} ${offerEs.commitment}`],
+    },
+    pricingTable: {
+      caption: offerEs.caption,
+      tiers: offerEs.tiers,
+      comparisonNote: `El coste empresarial anual de referencia de un CFO interno de experiencia equivalente es de ${offerEs.salary} €, incluidas cargas. La oferta externa cubre un alcance a tiempo parcial.`,
     },
     whenToHire: {
       heading: "Cuando recurrir a un CFO externalizado?",
@@ -1238,7 +1221,7 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "Cuanto cuesta un CFO externalizado?",
         answer:
-          "La tarifa diaria de un CFO externalizado se situa entre 750 y 1.250 EUR sin IVA. En Iter Advisors, nuestras formulas van de 2.000 EUR/mes (2-3 dias) a 7.000+ EUR/mes (8+ dias). A modo de comparacion, un CFO asalariado cuesta 8.300-17.750 EUR/mes cargas incluidas.",
+          `${offerEs.price}. ${offerEs.billing} ${offerEs.commitment}`,
       },
       {
         question: "Cual es la diferencia entre un CFO externalizado y un CFO a tiempo compartido?",
@@ -1273,12 +1256,12 @@ export const dafContent: Record<Locale, DafContent> = {
       {
         question: "Cuanto dura una mision de CFO externalizado?",
         answer:
-          "La duracion varia segun las necesidades: de 3 meses para una mision puntual (ronda de financiacion, reestructuracion) a varios anos para un acompanamiento a tiempo compartido. En Iter Advisors, la duracion media de colaboracion es de 18 meses, sin compromiso de duracion minima.",
+          `La duración depende del alcance acordado, desde un proyecto concreto hasta una colaboración recurrente. ${offerEs.commitment}`,
       },
       {
         question: "El CFO externalizado es adecuado para startups early-stage?",
         answer:
-          "Si, es uno de los casos de uso mas pertinentes. Una startup pre-seed o seed no puede permitirse un CFO a 120 K EUR/ano, pero necesita un previsional solido, seguimiento de tesoreria y un interlocutor credible para los inversores. El CFO externalizado a 2-3 dias/mes es la solucion ideal.",
+          "Sí. Una startup que prepara su primera ronda puede necesitar previsiones fiables, seguimiento de tesorería y un interlocutor financiero senior para sus inversores. El plan Esencial está pensado para empresas en fase seed; el alcance se acuerda antes de empezar.",
       },
       {
         question: "Cual es la diferencia entre un CFO externalizado y un manager de transicion?",

@@ -1,3 +1,4 @@
+
 export const dafExternalisePariEnrichedContent = {
   fr: {
     meta: {
@@ -20,35 +21,14 @@ export const dafExternalisePariEnrichedContent = {
       // plus (même erreur corrigée ailleurs le 08/06, cf. Ahrefs T-404,
       // mais cet avatarUrl avait été oublié).
       avatarUrl: "/images/team/sebastien-doat.webp",
-      updateDate: "2026-05-05",
+      updateDate: "2026-09-05",
     },
     tldr: "Iter Advisors propose des DAF externalisés à Paris dès 3 000 € HT/mois, avec une expertise spécialisée startups Station F et levées de fonds. Disposer d'une direction financière senior sans recruter un salarié : c'est l'alternative pertinente pour les PME et startups en croissance.",
     // T2 (2026-06-30) — H1 recentré sur "Cabinet DAF Paris" pour matcher
     // le Title et éliminer la cannibalisation avec le pilier national.
     h1: "Cabinet DAF Paris : direction financière à temps partagé en Ile-de-France",
-    testimonials: [
-      {
-        name: "Jean Dupont",
-        company: "Station F / SaaS",
-        sector: "Fintech",
-        text: "Sébastien a permis à notre startup d'être prête pour lever 500k€. La préparation du data room était impeccable, et nous avons gagné 6 mois sur notre timeline.",
-        rating: 5,
-      },
-      {
-        name: "Marie Laurent",
-        company: "PME Services",
-        sector: "Consulting",
-        text: "Une expertise financière senior sans recruter un DAF à plein temps. C'est exactement ce dont nous avions besoin. Les tableaux de bord qu'Iter nous a mis en place nous donnent une visibilité qu'on n'avait jamais eu.",
-        rating: 5,
-      },
-      {
-        name: "Philippe Martin",
-        company: "Scale-up Tech",
-        sector: "E-commerce",
-        text: "Le réseau de Sébastien à Paris nous a ouvert des portes auprès des VCs et des banquiers. Vraiment précieux pour une expansion rapide. L'accompagnement est très professionnel.",
-        rating: 5,
-      },
-    ],
+    // Individual attributions require a verifiable source. Keep the Trustfolio link.
+    testimonials: [],
     sources: [
       "DFCG (Association des Directeurs Financiers et de Contrôle de Gestion)",
       "INSEE - Chiffres clés de l'entrepreneuriat en Île-de-France",
@@ -57,7 +37,7 @@ export const dafExternalisePariEnrichedContent = {
       "Partech - European Tech Report 2025",
     ],
     intro: [
-      "Paris et l'Ile-de-France concentrent la majorité des startups et PME innovantes françaises. Station F, les incubateurs du 9e arrondissement, les fonds d'investissement de la place parisienne : l'écosystème est dense et compétitif. Dans ce contexte, recruter un directeur financier senior à temps plein représente 100 000 à 213 000 euros brut annuel, sans compter les charges et les délais de recrutement.",
+      "Paris et l'Ile-de-France concentrent la majorité des startups et PME innovantes françaises. Station F, les incubateurs du 9e arrondissement, les fonds d'investissement de la place parisienne : l'écosystème est dense et compétitif. Dans ce contexte, recruter un directeur financier senior à temps plein représente 100 000 à 213 000 euros de coût employeur annuel, charges comprises, hors coût de recrutement et de vacance de poste.",
       "Le DAF externalisé à Paris offre une alternative concrète. Il donne accès à une expertise de direction financière de niveau senior, avec une flexibilité adaptée à la croissance de l'entreprise. Pour une startup qui prépare une levée de fonds auprès de Partech ou Breega, ou une PME qui veut structurer son pilotage avant une expansion, disposer d'un DAF à temps partagé est souvent le choix le plus pertinent.",
       "Chez Iter Advisors, nous accompagnons les entreprises parisiennes avec des CFOs expérimentés qui interviennent sur site et en remote dans toute l'Ile-de-France. Notre connaissance de l'écosystème francilien est un atout concret pour nos clients.",
     ],
@@ -180,7 +160,7 @@ export const dafExternalisePariEnrichedContent = {
           },
           {
             number: "120 K€+",
-            label: "salaire brut annuel\nd'un DAF senior à Paris",
+            label: "coût employeur annuel\nd'un DAF senior, charges comprises",
           },
           {
             number: "3-6 mois",
