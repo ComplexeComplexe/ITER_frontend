@@ -53,6 +53,7 @@ describe("deriveFormId", () => {
 
 describe("pushLeadFormSubmitted", () => {
   beforeEach(() => {
+    window.iterConsent = { necessary: true, analytics: true, marketing: true };
     // Wipe any leftover dataLayer between tests.
     (window as unknown as { dataLayer?: unknown }).dataLayer = undefined;
   });
@@ -164,4 +165,18 @@ describe("pushLeadFormSubmitted", () => {
     // Restore so the rest of the suite keeps a working window.
     globalThis.window = realWindow;
   });
+  it("does not queue a declined lead for a later consent", () => {
+    window.dataLayer = [];
+    window.iterConsent = { necessary: true, analytics: false, marketing: false };
+    pushLeadFormSubmitted({email:"test@example.com",firstName:"Test",lastName:"Example",formLocation:"contact"});
+    expect(window.dataLayer).toHaveLength(0);
+  });
+  it("keeps personal identifiers out of analytics-only leads", () => {
+    window.dataLayer = [];
+    window.iterConsent = { necessary: true, analytics: true, marketing: false };
+    pushLeadFormSubmitted({email:"test@example.com",firstName:"Test",lastName:"Example",company:"Private company",formLocation:"contact"});
+    expect(window.dataLayer[1]).toMatchObject({event:"lead_form_submitted",form_id:"contact"});
+    expect(JSON.stringify(window.dataLayer)).not.toMatch(/test@example|Private company|first_name|phone_number/);
+  });
+
 });

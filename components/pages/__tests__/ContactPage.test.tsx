@@ -20,7 +20,8 @@ function fillAndSubmit(container: HTMLElement) {
   fireEvent.submit(container.querySelector("form")!);
 }
 describe("Contact qualification and attribution", () => {
-  beforeEach(() => { window.dataLayer = []; window.history.replaceState({}, "", "/contact#startup"); });
+  beforeEach(() => {
+    window.iterConsent = { necessary: true, analytics: true, marketing: true }; window.dataLayer = []; window.history.replaceState({}, "", "/contact#startup"); });
   afterEach(() => { cleanup(); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
   it("maps every published case CTA and rejects arbitrary or inherited keys", () => {
     for (const item of DOCUMENTED_CASES) expect(getContactContext(`#cas-${item.slug}`)?.originPage).toBe(item.href);

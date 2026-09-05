@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { ChevronDown, Star } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { currentConsent } from '@/lib/analytics/consent';
 import { pushLeadFormSubmitted } from '@/lib/analytics/leadForm';
 
 // Type definitions
@@ -39,7 +40,7 @@ interface FormError {
 // are preserved intact. NO flattening, NO JSON.stringify, NO key mutation —
 // GTM Data Layer Variables can read `user_data.address.first_name` directly.
 function pushToDataLayer(event: string, data?: Record<string, any>) {
-  if (typeof window !== 'undefined' && window.dataLayer) {
+  if (typeof window !== 'undefined' && window.dataLayer && currentConsent()?.analytics) {
     window.dataLayer.push({
       event,
       page_type: 'landing_page',

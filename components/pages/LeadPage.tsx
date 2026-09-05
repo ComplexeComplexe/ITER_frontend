@@ -1,5 +1,6 @@
 "use client";
 
+import { pushLeadFormSubmitted } from "@/lib/analytics/leadForm";
 import { useState, useRef, FormEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -502,6 +503,7 @@ export default function LeadPage({
     company: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
@@ -532,6 +534,7 @@ export default function LeadPage({
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(false);
     try {
       const stepLabels = ["stage", "challenge", "teamSize", "urgency"];
       const quizAnswers: Record<string, string> = {};
@@ -556,7 +559,7 @@ export default function LeadPage({
         "Taille equipe": quizAnswers.teamSize || "-",
         "Urgence": quizAnswers.urgency || "-",
         // Meta
-        "Source": "Page /profil - Diagnostic financier",
+        "Source": "Page /diagnostic - Diagnostic financier",
         replyto: formData.email,
       };
 
@@ -566,30 +569,17 @@ export default function LeadPage({
         body: JSON.stringify(web3Payload),
       });
       const result = await res.json();
-      if (!result.success) {
-        console.error("Web3Forms error:", result);
-      }
+      if (!res.ok || !result.success) throw new Error("Lead delivery failed");
+      setSubmitted(true);
+      pushLeadFormSubmitted({ ...formData, formLocation: "diagnostic", companySize: answers[2], mainNeed: answers[1] });
     } catch (err) {
       console.error("Failed to send lead:", err);
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
     }
-    setIsSubmitting(false);
-    setSubmitted(true);
 
-    // --- Google Ads Conversion Tracking via GTM dataLayer ---
-    if (typeof window !== "undefined") {
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      (window as any).dataLayer.push({
-        event: "lead_form_submitted",
-        form_name: "diagnostic_financier",
-        lead_source: "profil_page",
-        lead_stage: answers[0] || "",
-        lead_challenge: answers[1] || "",
-        lead_team_size: answers[2] || "",
-        lead_urgency: answers[3] || "",
-        lead_email: formData.email,
-        lead_company: formData.company,
-      });
-    }
+
   };
 
   const progressPercent =
@@ -955,12 +945,13 @@ export default function LeadPage({
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-600 mb-1.5">
+                        <label htmlFor="diagnostic-firstName" className="block text-sm font-medium text-gray-600 mb-1.5">
                           {t.fieldFirstName} *
                         </label>
                         <input
                           type="text"
                           required
+                          id="diagnostic-firstName" name="firstName"
                           value={formData.firstName}
                           onChange={(e) =>
                             setFormData({
@@ -972,12 +963,13 @@ export default function LeadPage({
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-600 mb-1.5">
+                        <label htmlFor="diagnostic-lastName" className="block text-sm font-medium text-gray-600 mb-1.5">
                           {t.fieldLastName} *
                         </label>
                         <input
                           type="text"
                           required
+                          id="diagnostic-lastName" name="lastName"
                           value={formData.lastName}
                           onChange={(e) =>
                             setFormData({
@@ -991,13 +983,14 @@ export default function LeadPage({
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-600 mb-1.5">
+                      <label htmlFor="diagnostic-company" className="block text-sm font-medium text-gray-600 mb-1.5">
                         {t.fieldCompany} *
                       </label>
                       <input
                         type="text"
                         required
-                        value={formData.company}
+                        id="diagnostic-company" name="company"
+                          value={formData.company}
                         onChange={(e) =>
                           setFormData({ ...formData, company: e.target.value })
                         }
@@ -1006,13 +999,14 @@ export default function LeadPage({
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-600 mb-1.5">
+                      <label htmlFor="diagnostic-email" className="block text-sm font-medium text-gray-600 mb-1.5">
                         {t.fieldEmail} *
                       </label>
                       <input
                         type="email"
                         required
-                        value={formData.email}
+                        id="diagnostic-email" name="email"
+                          value={formData.email}
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
                         }
@@ -1021,12 +1015,13 @@ export default function LeadPage({
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-600 mb-1.5">
+                      <label htmlFor="diagnostic-phone" className="block text-sm font-medium text-gray-600 mb-1.5">
                         {t.fieldPhone}
                       </label>
                       <input
                         type="tel"
-                        value={formData.phone}
+                        id="diagnostic-phone" name="phone"
+                          value={formData.phone}
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })
                         }
@@ -1049,6 +1044,7 @@ export default function LeadPage({
                       )}
                     </button>
 
+                    {submitError && <p role="alert" className="text-sm text-red-600 mt-3">{locale === "fr" ? "L’envoi a échoué. Veuillez réessayer." : locale === "es" ? "El envío ha fallado. Inténtelo de nuevo." : "Sending failed. Please try again."}</p>}
                     <p className="text-xs text-gray-400 text-center mt-3">
                       {t.privacyNote}{" "}
                       <Link

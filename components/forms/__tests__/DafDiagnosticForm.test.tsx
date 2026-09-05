@@ -81,6 +81,7 @@ function submitForm(container: HTMLElement) {
 
 describe("DafDiagnosticForm — lead_form_submitted push", () => {
   beforeEach(() => {
+    window.iterConsent = { necessary: true, analytics: true, marketing: true };
     window.dataLayer = [];
     routerPush.mockClear();
   });

@@ -1,14 +1,9 @@
-// Lead form analytics — pushes `lead_form_submitted` to the GTM dataLayer
-// with first-party user data formatted for Google Ads enhanced conversions
-// for leads. The corresponding GTM container (GTM-KZZ9L5VZ) reads the
-// `enhanced_conversion_data.*` fields from this push and feeds them to the
-// User-Provided Data variable on the Ads conversion tag. GTM hashes the
-// values (SHA-256) before transmission, so no PII leaves the browser in
-// clear text.
-//
-// IMPORTANT: only call this helper AFTER the backend confirms the lead
-// (HTTP 2xx). Calling it on click or on validation start inflates Ads
-// conversions and breaks the campaign ROAS reporting.
+import { currentConsent } from "./consent";
+
+// Call only after the backend confirms success. GTM owns the Ads conversion;
+// GA4 receives only the non-personal event parameters configured in its tag.
+// Enhanced data is available only with explicit marketing consent. Its actual
+// hashing/transmission depends on the GTM configuration, not this helper.
 
 export type LeadFormLocation = "lp-daf-externalise" | "contact" | string;
 
@@ -89,6 +84,8 @@ declare global {
  */
 export const pushLeadFormSubmitted = (p: LeadFormPayload): void => {
   if (typeof window === "undefined") return;
+  const consent = currentConsent();
+  if (!consent?.analytics && !consent?.marketing) return;
   window.dataLayer = window.dataLayer || [];
 
   // Reset previous lead / enhanced_conversion_data so the new push isn't
@@ -104,17 +101,17 @@ export const pushLeadFormSubmitted = (p: LeadFormPayload): void => {
     form_location: p.formLocation,
     ...(p.originPage ? { origin_page: p.originPage } : {}),
     lead: {
-      company: p.company,
+      company: consent.marketing ? p.company : undefined,
       company_size: p.companySize,
       main_need: p.mainNeed,
     },
-    enhanced_conversion_data: {
+    enhanced_conversion_data: consent.marketing ? {
       email: p.email.trim().toLowerCase(),
       phone_number: toE164(p.phone),
       first_name: p.firstName.trim(),
       last_name: p.lastName.trim(),
       address: { country: "FR" },
-    },
+    } : undefined,
   });
 };
 
