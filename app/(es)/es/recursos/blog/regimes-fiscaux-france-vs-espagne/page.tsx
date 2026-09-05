@@ -10,9 +10,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.iteradvisors.com/es/recursos/blog/regimes-fiscaux-france-vs-espagne",
     languages: {
-      "fr": "https://www.iteradvisors.com/ressources/blog/regimes-fiscaux-france-vs-espagne",
-      "en": "https://www.iteradvisors.com/en/ressources/blog/regimes-fiscaux-france-vs-espagne",
-      "es": "https://www.iteradvisors.com/es/recursos/blog/regimes-fiscaux-france-vs-espagne",
+      "fr-FR": "https://www.iteradvisors.com/ressources/blog/regimes-fiscaux-france-vs-espagne",
+      "es-ES": "https://www.iteradvisors.com/es/recursos/blog/regimes-fiscaux-france-vs-espagne",
       "x-default": "https://www.iteradvisors.com/ressources/blog/regimes-fiscaux-france-vs-espagne",
     },
   },
@@ -45,6 +44,7 @@ export default async function Page() {
       dek="IS, IVA, cotizaciones sociales, regímenes especiales. Cómo optimizar tu estructura fiscal entre Francia y España con datos actualizados a 2026."
       author={{
         name: "Benjamin Ziza",
+        url: "/es/quienes-somos/benjamin-ziza",
         avatar: "/images/team/benjamin-ziza.webp",
         jobTitle: "Cofundador — CFO e Inversor, Iter Advisors",
       }}

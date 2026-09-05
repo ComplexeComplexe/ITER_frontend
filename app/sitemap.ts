@@ -1,6 +1,10 @@
 import type { MetadataRoute } from "next";
 import { getAuthorSlugs } from "@/lib/content/team";
 import { blogPosts } from "@/lib/content/blog-posts";
+import { tools, CATEGORIES_WITH_PAGE } from "@/data/tools";
+import { getGlossaryPages } from "@/lib/content/glossary-entries";
+import { blogHref, resolveBlogArticleHref } from "@/lib/path-localization";
+import type { Locale } from "@/lib/i18n";
 
 const BASE = "https://www.iteradvisors.com";
 
@@ -73,8 +77,11 @@ function entryAllLocales(
 
 /** Real publication date per blog slug, falling back to tools date.
  *  Avoids emitting TODAY for articles that haven't changed since publish. */
-function blogModified(slug: string): string {
+function blogModified(slug: string, locale: Locale = "fr"): string {
+  if (slug === "regimes-fiscaux-france-vs-espagne") return locale === "es" ? "2026-07-25" : "2026-08-31";
   return (
+    blogPosts[locale][slug]?.updatedDate ??
+    blogPosts[locale][slug]?.publishedDate ??
     blogPosts.fr[slug]?.updatedDate ??
     blogPosts.fr[slug]?.publishedDate ??
     blogPosts.en[slug]?.updatedDate ??
@@ -147,62 +154,18 @@ const FR_BLOG_SLUGS = [
   "organiser-sa-direction-financiere",
 ] as const;
 
-const EN_BLOG_SLUGS = [
-  // AUDIT-EN: cout-daf-externalise-tarifs-prix-2026 renamed → fractional-cfo-cost-services-2026
-  "fractional-cfo-cost-services-2026",
-  "daf-externalise-vs-daf-salarie",
-  // AUDIT-EN: essentiels-outils-tech-finance removed — no EN page, redirect to FR
-  "externalisation-comptable",
-  "flux-de-tresorerie",
-  // SITEMAP-FIX: removed — next.config redirects /en/…/organiser-sa-direction-financiere → blog index
-  // SITEMAP-FIX: removed — vercel.json redirects /en/…/ia-et-automatisation-… → blog index
-] as const;
-
-const ES_BLOG_SLUGS = [
-  // AUDIT-ES: cout-daf-externalise-tarifs-prix-2026 renamed → cfo-externo-pymes-precio-2026
-  "cfo-externo-pymes-precio-2026",
-  "daf-externalise-vs-daf-salarie",
-  // AUDIT-ES: essentiels-outils-tech-finance + organiser-sa-direction-financiere removed — FR-only
-  "externalisation-comptable",
-  "flux-de-tresorerie",
-  // SITEMAP-FIX: removed — vercel.json redirects /es/…/ia-et-automatisation-… → blog index
-  "que-es-fractional-cfo",
-] as const;
 
 // ── Tool pages (FR-only — EN/ES tool pages return 404) ────────────────────────
-const TOOL_SLUGS = [
-  "pennylane", "agicap", "spendesk", "payfit",
-  "sage", "cegid-loop", "fygr", "pleo", "silae",
-  "lucca", "qonto", "revolut-business", "payhawk",
-  // SEO-REP §6.2 (2026-08-15) — fiches et hubs catégories manquants.
-  "kyriba", "power-bi",
-];
+const TOOL_SLUGS = tools.map(tool => tool.slug);
 
 // Hubs de catégories d'outils (FR-only) — absents du sitemap jusqu'ici.
-const TOOL_CATEGORY_SLUGS = [
-  "gestion-depenses",
-  "logiciels-comptabilite",
-  "logiciels-paie",
-  "logiciels-tresorerie",
-];
+const TOOL_CATEGORY_SLUGS = [...CATEGORIES_WITH_PAGE];
 
 // ── Glossary pages (FR-only — EN/ES glossary have no [slug] routes) ───────────
 // SITEMAP-QA (2026-05-19) — "bfr" removed: it duplicates "besoin-fonds-roulement-bfr"
 // (both map to the same concept). A 301 redirect is added in next.config.ts so
 // existing backlinks and internal links to /ressources/glossaire/bfr don't break.
-const GLOSSARY_SLUGS = [
-  "ebitda",
-  "cfo",
-  "besoin-fonds-roulement-bfr",
-  "cash-burn-runway",
-  "cac-ltv",
-  "arr-mrr",
-  "churn-rate",
-  "run-rate",
-  "bspce-bsa",
-  // SEO-REP §6.2 (2026-08-15)
-  "daf",
-];
+const GLOSSARY_SLUGS = getGlossaryPages("fr").map(entry => entry.slug);
 
 // ── HR service pages (FR-only for now) ───────────────────────────────────────
 const HR_SERVICE_SLUGS = [
@@ -480,13 +443,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // INDEX-02 — emit exactly one URL per locale-where-the-article-exists,
   // with hreflang alternates restricted to those same locales.
   // lastModified uses the real publishedDate from blog-posts.ts (not build date).
-  const frSet = new Set<string>(FR_BLOG_SLUGS);
-  const enSet = new Set<string>(EN_BLOG_SLUGS);
-  const esSet = new Set<string>(ES_BLOG_SLUGS);
+  const publishedSlugs = (locale: Locale, dedicated: readonly string[] = []) =>
+    new Set([...dedicated, ...Object.keys(blogPosts[locale])].filter(slug =>
+      resolveBlogArticleHref(locale, slug) === blogHref(locale, slug)
+    ));
+  const frSet = publishedSlugs("fr", FR_BLOG_SLUGS);
+  const enSet = publishedSlugs("en");
+  const esSet = publishedSlugs("es", ["regimes-fiscaux-france-vs-espagne"]);
   const allSlugs = new Set<string>([
-    ...FR_BLOG_SLUGS,
-    ...EN_BLOG_SLUGS,
-    ...ES_BLOG_SLUGS,
+    ...frSet,
+    ...enSet,
+    ...esSet,
   ]);
 
   for (const slug of allSlugs) {
@@ -511,8 +478,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const common = { lastModified, alternates: { languages } };
     if (inFr) entries.push({ url: `${BASE}${frPath}`, ...common });
-    if (inEn) entries.push({ url: `${BASE}/en${frPath}`, ...common });
-    if (inEs) entries.push({ url: esUrl, ...common });
+    if (inEn) entries.push({ url: `${BASE}/en${frPath}`, ...common, lastModified: blogModified(slug, "en") });
+    if (inEs) entries.push({ url: esUrl, ...common, lastModified: blogModified(slug, "es") });
   }
 
   // ── Tool sheets (FR-only) ─────────────────────────────────────────────────
@@ -522,7 +489,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE}/ressources/outils/${slug}`,
       lastModified: D.tools,
     });
-  }  for (const slug of TOOL_CATEGORY_SLUGS) {
+  }
+  for (const slug of TOOL_CATEGORY_SLUGS) {
     entries.push({ url: `${BASE}/ressources/outils/${slug}`, lastModified: D.tools });
   }
   // SEO-REP §6.2 (2026-08-15) — page recrutement Fractional CFO, distincte de
@@ -554,7 +522,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // TRAFIC-01 (2026-08-31) — trois fiches ont une version anglaise servie.
   // La fiche CFO se classait déjà sur 19 requêtes anglophones depuis la page
   // française : elle a maintenant sa propre URL, encore faut-il la déclarer.
-  for (const slug of ["cfo", "bfr", "ebitda"]) {
+  for (const { slug } of getGlossaryPages("en")) {
     entries.push({
       url: `${BASE}/en/ressources/glossaire/${slug}`,
       lastModified: D.glossary,
@@ -567,6 +535,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE}/services/${slug}`,
       lastModified: D.service,
     });
+  }
+
+  // Native EN/ES Beckham guides, reviewed against AEAT on 2026-09-05.
+  // The French guide is broader, so no synthetic translation cluster.
+  for (const locale of ["en", "es"]) {
+    entries.push({ url: `${BASE}/${locale}/services/ley-beckham`, lastModified: "2026-09-05" });
   }
 
   // ── Author pages ──────────────────────────────────────────────────────────
@@ -582,7 +556,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return entries.map(item => ({
     ...item,
-    lastModified: ["/daf-externalise-paris", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", "/ressources/cas-clients", "/en/ressources/cas-clients"].some(path => item.url === `${BASE}${path}`)
+    lastModified: [...tools.filter(tool => !tool.logo).map(tool => `/ressources/outils/${tool.slug}`), "/daf-externalise/deep-tech", "/daf-externalise/industrie", "/daf-externalise/ecommerce", "/ressources/outils", "/ressources/blog/stack-financier-saas-series-a", "/daf-externalise-paris", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", "/ressources/cas-clients", "/en/ressources/cas-clients"].some(path => item.url === `${BASE}${path}`)
       ? "2026-09-05" : item.lastModified,
   }));
 }

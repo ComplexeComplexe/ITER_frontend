@@ -39,7 +39,7 @@ export default function ToolHeader({
         {/* Logo & Basic Info */}
         <div className="flex-shrink-0">
           <div className="flex items-center justify-center w-24 h-24 md:w-32 md:h-32 bg-gray-50 rounded-lg p-3 md:p-4">
-            <Image
+            {logo ? <Image
               src={logo}
               alt={logoAlt ?? `Logo ${name}`}
               width={160}
@@ -47,7 +47,7 @@ export default function ToolHeader({
               sizes="(min-width: 768px) 128px, 96px"
               priority
               className="max-w-full max-h-full object-contain"
-            />
+            /> : <span className="text-sm font-semibold text-center text-gray-700">{name}</span>}
           </div>
         </div>
 

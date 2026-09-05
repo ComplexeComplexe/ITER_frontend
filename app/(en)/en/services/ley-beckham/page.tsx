@@ -9,6 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
     locale: "en",
     path: "/services/ley-beckham",
+    disableHreflang: ["fr"],
     title: t.meta.title,
     description: t.meta.description,
   });

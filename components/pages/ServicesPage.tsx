@@ -312,6 +312,14 @@ export default function ServicesPage({
       )}
 
       <CTASection locale={locale} />
+      {locale !== "fr" && (
+        <section className="bg-background py-12">
+          <div className="container max-w-3xl">
+            <h2 className="text-2xl font-bold mb-4">{locale === "en" ? "Relocating to Spain" : "Trasladarse a España"}</h2>
+            <Link className="text-iter-violet underline" href={`/${locale}/services/ley-beckham`}>{locale === "en" ? "Beckham Law: eligibility and application steps" : "Ley Beckham: requisitos y pasos para solicitar el régimen"}</Link>
+          </div>
+        </section>
+      )}
     </PageLayout>
   );
 }

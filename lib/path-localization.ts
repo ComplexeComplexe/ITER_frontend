@@ -233,6 +233,7 @@ const BLOG_ARTICLE_OVERRIDES: Record<Locale, Record<string, string | null>> = {
   // notant qu'ils « 308 vers un canonique déjà présent dans cette liste » —
   // mais le listing et les fiches auteur continuaient de les proposer.
   fr: {
+    "ia-et-automatisation-des-taches-repetitives-du-departement-finance": null,
     "cout-daf-externalise-2026-tarifs-par-mission": null,
     "data-room-checklist-levee-de-fonds": null,
     "due-diligence-financiere-investisseurs": null,

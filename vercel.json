@@ -145,7 +145,7 @@
     },
     {
       "source": "/es/sobre-nosotros",
-      "destination": "/es/a-propos",
+      "destination": "/es/quienes-somos",
       "permanent": true
     },
     {
@@ -310,7 +310,7 @@
     },
     {
       "source": "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
-      "destination": "/es/recursos/blog",
+      "destination": "/es/recursos/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
       "permanent": true
     },
     {
