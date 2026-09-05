@@ -4,7 +4,6 @@ import { ArrowRight, Linkedin, MapPin } from "lucide-react";
 import type { CmsNavItem, StrapiTeamMember } from "@/lib/strapi";
 import { strapiMediaUrl } from "@/lib/strapi";
 import { getFallbackTeamMembers } from "@/lib/content/team";
-import { BOOKING_URL } from "@/lib/navigation";
 import { aboutHref } from "@/lib/path-localization";
 import { FORMULES } from "@/lib/content/facts";
 import {
@@ -22,6 +21,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import PageByline from "@/components/PageByline";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
+import CaseProofLinks from "@/components/CaseProofLinks";
 
 /**
  * Pilier FR /daf-externalise — refonte du 3 septembre 2026.
@@ -83,7 +83,7 @@ export default function DafPillarPage({
                 {t.hero.lead}
               </p>
               <Link
-                href={BOOKING_URL}
+                href="/contact#daf"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 text-sm sm:text-base"
               >
                 {t.hero.cta}
@@ -219,6 +219,8 @@ export default function DafPillarPage({
           <p className="mt-6 text-sm text-white/60 leading-relaxed max-w-[70ch]">{t.method.note}</p>
         </div>
       </section>
+
+      <CaseProofLinks heading="Ce que nous avons réalisé chez nos clients" />
 
       {/* 06 — Pour qui */}
       <section id="pour-qui" className="bg-background py-14 sm:py-20 scroll-mt-24">

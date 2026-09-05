@@ -38,6 +38,7 @@ const FIELD_MAP: Record<string, string> = {
   challenge: "financial_challenge",
   teamSize: "team_size",
   urgency: "urgency",
+  originPage: "origin_page",
 };
 
 function toCrmPayload(
@@ -82,7 +83,8 @@ const FIELD_LABELS: Record<string, string> = {
   stage: "Stade de développement",
   challenge: "Enjeu financier",
   teamSize: "Taille de l'équipe",
-  urgency: "Urgence",
+  urgency: "Échéance",
+  originPage: "Page de départ de la demande",
 };
 
 function buildSubject(source: string, data: Record<string, string>): string {

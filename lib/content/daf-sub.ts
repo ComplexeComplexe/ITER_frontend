@@ -22,6 +22,7 @@ export interface DafSubContent {
     table?: { caption: string; headers: string[]; rows: string[][] };
   }[];
   ctaButton: string;
+  proofSlugs?: string[];
 }
 
 export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>> = {
@@ -130,6 +131,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       ctaButton: "Prendre rendez-vous",
     },
     "temps-partage": {
+      proofSlugs: ["opti-digital-structuration-financement"],
       meta: {
         // T#2 (2026-07-13) — Title recentré sur l'intent exclusif "DAF à
         // temps partagé" (retrait "Tarifs" qui cannibalise /tarifs) +
@@ -145,7 +147,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       // temps partagé" avec fourchette jours pour aligner avec le title
       // (2-8 j/mois). Retire "votre directeur financier flexible" trop
       // marketing/générique qui cannibalisait avec le pilier.
-      h1: "DAF à temps partagé : votre directeur financier senior 2 à 8 jours par mois",
+      h1: "DAF à temps partagé : un directeur financier dédié à votre PME",
       sections: [
         {
           content: [
@@ -153,7 +155,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             // recherches/mois, difficulté 4/100, page hors top 100. Réponse
             // directe en tête, format citable, avant le développement.
             "**Un DAF à temps partagé est un directeur financier senior qui travaille pour votre entreprise quelques jours par mois, en continu.** Vous accédez à une direction financière complète — trésorerie, reporting, budgets, levée de fonds — pour 3 000 à 8 000 € HT par mois selon la formule, sans recruter à temps plein.",
-            "Le **DAF à temps partagé** est un Directeur Administratif et Financier senior qui intervient régulièrement au sein de votre entreprise, généralement 2 à 3 jours par semaine ou par mois. Contrairement au **[DAF de transition](/daf-externalise/transition)** qui mobilise l'intégralité de sa disponibilité pour une durée limitée, le DAF à temps partagé s'inscrit dans la durée : il suit votre entreprise, apprend vos enjeux, et ajuste progressivement sa contribution.",
+            "Le **DAF à temps partagé** est un Directeur Administratif et Financier senior qui intervient régulièrement au sein de votre entreprise, selon un rythme défini au cadrage. Contrairement au **[DAF de transition](/daf-externalise/transition)** qui mobilise l'intégralité de sa disponibilité pour une durée limitée, le DAF à temps partagé s'inscrit dans la durée : il suit votre entreprise, apprend vos enjeux, et ajuste progressivement sa contribution.",
             "Cette formule offre un accès permanent à une expertise financière de haut niveau, tout en optimisant les coûts. Elle s'adresse particulièrement aux **PME, startups et scale-ups** qui ont besoin d'une direction financière structurée mais dont l'activité ne justifie pas encore un recrutement à temps plein.",
           ],
         },
@@ -161,7 +163,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           heading: "Comment Fonctionne le DAF à Temps Partagé ?",
           content: [
             "Le DAF à temps partagé s'intègre dans votre organisation comme un membre à part entière de votre équipe de direction. Il participe aux réunions stratégiques, travaille en étroite collaboration avec vos équipes opérationnelles et assure un suivi régulier de votre performance financière.",
-            "La fréquence d'intervention est définie selon vos besoins : de 1 à 3 jours par semaine ou par mois. Elle peut être ajustée à la hausse lors de périodes intenses (levée de fonds, clôture annuelle, opérations stratégiques, changement d'ERP) ou à la baisse en phase de croisière.",
+            "La fréquence d'intervention est définie selon vos besoins : en moyenne de 1 à 8 jours par mois selon le périmètre. Elle peut être ajustée à la hausse lors de périodes intenses (levée de fonds, clôture annuelle, opérations stratégiques, changement d'ERP) ou à la baisse en phase de croisière.",
             "Concrètement, le DAF à temps partagé met en place une organisation régulière : réunion hebdomadaire ou bimensuelle d'une demi-journée pour faire le point sur la trésorerie, les KPIs financiers et les priorités ; jours de travail autonome sur les chantiers identifiés (budgets, analyses de variance, optimisation des processus, etc.) ; disponibilité pour les échanges urgents par email ou téléphone entre les jours formels.",
           ],
         },
@@ -464,6 +466,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       ctaButton: "Prendre rendez-vous",
     },
     tarifs: {
+      proofSlugs: ["opti-digital-structuration-financement", "seasonly-marge-par-canal-bfr", "solarmente-serie-b-cleantech"],
       meta: {
         // SEO-02 (S31 2026-07-27) — 38 requêtes "prix/tarif/coût/combien
         // coûte" cumulent 5 640 impressions et 2 clics sur 3 mois ; la
@@ -597,7 +600,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           heading: "DAF Externalisé pour Startups & SaaS",
           content: [
-            "Les startups SaaS ont des enjeux financiers spécifiques : modèle d'abonnement, churn client, LTV/CAC ratio, burn rate, runway. Notre DAF externalisé pour SaaS maîtrise ces KPIs, aide à optimiser le modèle économique, et prépare les levées de fonds successives.",
+            "Notre [offre de DAF externalisé pour startups et SaaS](/fractional-cfo-startups) détaille les livrables, le reporting investisseurs et les formules. Les startups SaaS ont des enjeux financiers spécifiques : modèle d'abonnement, churn client, LTV/CAC ratio, burn rate, runway. Notre DAF externalisé pour SaaS maîtrise ces KPIs, aide à optimiser le modèle économique, et prépare les levées de fonds successives.",
           ],
         },
         {
@@ -653,6 +656,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       ctaButton: "Prendre rendez-vous",
     },
     "ecommerce": {
+      proofSlugs: ["seasonly-marge-par-canal-bfr"],
   "meta": {
     "title": "DAF externalisé e-commerce : marge et trésorerie | Iter Advisors",
     "description": "Pilotez la marge par canal, les stocks, les retours et la trésorerie de votre e-commerce avec un DAF externalisé. Missions et indicateurs à suivre."
