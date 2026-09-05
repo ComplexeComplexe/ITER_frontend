@@ -1,18 +1,13 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { getStoredConsent, storeConsent, applyTrackingConsent as pushConsentToGTM, type ConsentState } from "@/lib/analytics/consent";
 
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
 
 type ConsentCategory = "necessary" | "analytics" | "marketing";
-
-interface ConsentState {
-  necessary: boolean; // Toujours true - cookies essentiels
-  analytics: boolean; // Google Analytics, Hotjar, etc.
-  marketing: boolean; // Google Ads, Facebook Pixel, etc.
-}
 
 interface CookieConsentProps {
   locale?: "fr" | "en" | "es";
@@ -152,77 +147,6 @@ const translations = {
 };
 
 // ---------------------------------------------------------------------------
-// Consent storage helpers
-// ---------------------------------------------------------------------------
-
-const CONSENT_KEY = "iter_cookie_consent";
-const CONSENT_DATE_KEY = "iter_cookie_consent_date";
-const CONSENT_EXPIRY_DAYS = 180; // 6 mois - CNIL recommandation
-
-function getStoredConsent(): ConsentState | null {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = localStorage.getItem(CONSENT_KEY);
-    const date = localStorage.getItem(CONSENT_DATE_KEY);
-    if (!raw || !date) return null;
-
-    // Vérifier l'expiration (6 mois)
-    const consentDate = new Date(date);
-    const now = new Date();
-    const diffDays =
-      (now.getTime() - consentDate.getTime()) / (1000 * 60 * 60 * 24);
-    if (diffDays > CONSENT_EXPIRY_DAYS) {
-      localStorage.removeItem(CONSENT_KEY);
-      localStorage.removeItem(CONSENT_DATE_KEY);
-      return null;
-    }
-
-    return JSON.parse(raw) as ConsentState;
-  } catch {
-    return null;
-  }
-}
-
-function storeConsent(consent: ConsentState): void {
-  localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
-  localStorage.setItem(CONSENT_DATE_KEY, new Date().toISOString());
-}
-
-// ---------------------------------------------------------------------------
-// GTM Consent Mode v2 integration
-// ---------------------------------------------------------------------------
-
-declare global {
-  interface Window {
-    dataLayer: unknown[];
-    gtag: (...args: unknown[]) => void;
-  }
-}
-
-function pushConsentToGTM(consent: ConsentState): void {
-  if (typeof window === "undefined") return;
-
-  // Google Consent Mode v2 — the default was already set in the <head>
-  // script of the layout. We fire a consent update via the gtag() shim, which
-  // pushes an Arguments-like entry into dataLayer (the pattern GTM expects).
-  // If GTM has already loaded its own gtag(), we use that for proper dedupe.
-  window.dataLayer = window.dataLayer || [];
-  const gtagFn =
-    typeof window.gtag === "function"
-      ? window.gtag
-      : (...args: unknown[]) => {
-          window.dataLayer.push(args);
-        };
-
-  gtagFn("consent", "update", {
-    analytics_storage: consent.analytics ? "granted" : "denied",
-    ad_storage: consent.marketing ? "granted" : "denied",
-    ad_user_data: consent.marketing ? "granted" : "denied",
-    ad_personalization: consent.marketing ? "granted" : "denied",
-  });
-}
-
-// ---------------------------------------------------------------------------
 // Component
 // ---------------------------------------------------------------------------
 
@@ -240,16 +164,20 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
 
   // Initialisation
   useEffect(() => {
-    setMounted(true);
-    const stored = getStoredConsent();
-    if (stored) {
-      setConsent(stored);
-      pushConsentToGTM(stored);
-    } else {
-      // Default consent (all denied) is already set by the <head> script in
-      // the root layout before GTM loads. We just need to show the banner.
-      setShowBanner(true);
-    }
+    // Restore browser storage after the first paint; keep server/client markup identical.
+    const frame = requestAnimationFrame(() => {
+      setMounted(true);
+      const stored = getStoredConsent();
+      if (stored) {
+        setConsent(stored);
+        pushConsentToGTM(stored);
+      } else {
+        // Default consent (all denied) is already set by the <head> script in
+        // the root layout before GTM loads. We just need to show the banner.
+        setShowBanner(true);
+      }
+    });
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   // Sauvegarder et appliquer le consentement
