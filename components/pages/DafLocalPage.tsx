@@ -1,13 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronDown, MapPin, Building2, Users, Briefcase, Phone, BarChart3, Wallet, Rocket, Compass, Network, Star } from "lucide-react";
+import { ArrowRight, MapPin, Building2, Users, Briefcase, Phone, BarChart3, Wallet, Rocket, Compass, Network, Star } from "lucide-react";
 import Image from "next/image";
 import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/strapi";
-import { getContactPath, BOOKING_URL } from "@/lib/navigation";
+import { getContactPath } from "@/lib/navigation";
 import { dafClusterHref, serviceHref } from "@/lib/path-localization";
 import { getDafLocalContent, DafLocalCity } from "@/lib/content/daf-local";
 import { faqPageSchema } from "@/lib/schemas";
@@ -15,6 +13,7 @@ import { TRUSTFOLIO_REVIEWS, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/trust
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
+import CaseProofLinks from "@/components/CaseProofLinks";
 
 export default function DafLocalPage({
   locale,
@@ -27,7 +26,6 @@ export default function DafLocalPage({
 }) {
   const t = getDafLocalContent(city, locale);
   const contactPath = getContactPath(locale);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   /* JSON-LD schemas */
   const faqSchema = faqPageSchema(t.faq);
@@ -111,7 +109,7 @@ export default function DafLocalPage({
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      {city !== "toulouse" && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       {/* Hero */}
@@ -144,9 +142,7 @@ export default function DafLocalPage({
                 </p>
               ))}
               <Link
-                href={BOOKING_URL}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
+                href={locale === "fr" && city === "toulouse" ? "/contact#toulouse" : contactPath}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
               >
                 {t.ctaButton}
@@ -189,6 +185,10 @@ export default function DafLocalPage({
         </section>
       ))}
 
+      {locale === "fr" && city === "toulouse" && <>
+        <section className="py-12 bg-muted/30"><div className="container max-w-4xl"><h2 className="text-2xl font-bold mb-4">Choisir le périmètre adapté</h2><div className="flex flex-wrap gap-5 text-iter-violet underline"><Link href="/daf-externalise/tarifs">Comparer les formules</Link><Link href="/fractional-cfo-startups">DAF pour startups et SaaS</Link><Link href="/daf-externalise/industrie">Pilotage d'une activité industrielle</Link><Link href="/daf-externalise">DAF externalisé pour PME</Link></div><p className="mt-6 text-muted-foreground">Les cas ci-dessous décrivent des missions conduites ailleurs. Ils permettent d'examiner les livrables et la méthode, sans constituer des références locales à Toulouse.</p></div></section>
+        <CaseProofLinks slugs={["opti-digital-structuration-financement", "seasonly-marge-par-canal-bfr"]} heading="Examiner notre travail sur d'autres missions" />
+      </>}
       {/* FAQ */}
       <section className="py-20 bg-background">
         <div className="container max-w-3xl">
@@ -196,36 +196,11 @@ export default function DafLocalPage({
             {locale === "fr" ? "Questions fréquentes" : locale === "en" ? "Frequently asked questions" : "Preguntas frecuentes"}
           </h2>
           <div className="space-y-4">
-            {t.faq.map((item, i) => (
-              <div key={i} className="border border-border rounded-xl overflow-hidden">
-                <button
-                  className="w-full flex items-center justify-between p-5 text-left hover:bg-muted/50 transition-colors"
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                >
-                  <span className="text-lg font-semibold text-foreground pr-4">
-                    {item.question}
-                  </span>
-                  <ChevronDown
-                    className={`shrink-0 text-muted-foreground transition-transform duration-300 ${openFaq === i ? "rotate-180" : ""}`}
-                    size={20}
-                  />
-                </button>
-                <AnimatePresence>
-                  {openFaq === i && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <p className="px-5 pb-5 text-muted-foreground leading-relaxed">
-                        {item.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+            {t.faq.map(item => (
+              <details key={item.question} className="group border border-border rounded-xl p-5">
+                <summary className="cursor-pointer text-lg font-semibold">{item.question}</summary>
+                <p className="pt-4 text-muted-foreground leading-relaxed">{item.answer}</p>
+              </details>
             ))}
           </div>
         </div>

@@ -34,8 +34,8 @@ import {
 
 export const DAF_PILLAR_PATH = "/daf-externalise";
 export const DAF_PILLAR_PUBLISHED = "2026-05-17";
-export const DAF_PILLAR_MODIFIED = "2026-09-03";
-export const DAF_PILLAR_MODIFIED_LABEL = "3 septembre 2026";
+export const DAF_PILLAR_MODIFIED = "2026-09-05";
+export const DAF_PILLAR_MODIFIED_LABEL = "5 septembre 2026";
 
 export interface PillarMission {
   title: string;
@@ -187,9 +187,16 @@ export const dafPillar = {
   },
 
   forWhom: {
-    heading: "Pour qui, à quel stade",
+    heading: "Un DAF externalisé pour votre PME ou votre startup",
     intro: "Le bon moment n'est pas une question de chiffre d'affaires mais de complexité : une levée, un board à informer, plusieurs entités, des recrutements à anticiper en trésorerie.",
     segments: [
+      {
+        title: "PME établie, sans levée de fonds",
+        trigger: "La trésorerie varie malgré un carnet de commandes rempli, les marges par activité sont difficiles à lire ou un investissement doit être financé.",
+        answer: "Le DAF organise un prévisionnel de trésorerie, un reporting de marge, un budget et les échanges avec les banques. Il coordonne le pilotage avec votre expert-comptable. La formule dépend du périmètre et de la complexité, sans condition de financement par des investisseurs.",
+        href: "/ressources/cas-clients/opti-digital-structuration-financement",
+        linkLabel: "Voir une mission de structuration de PME",
+      },
       {
         title: FORMULES[0].cible,
         trigger: "Première levée à préparer, runway à suivre de près, besoin d'un interlocuteur senior face aux investisseurs.",
@@ -219,8 +226,8 @@ export const dafPillar = {
         {
           title: "SaaS et logiciel",
           text: "MRR, churn, CAC et marge brute par cohorte : le reporting doit parler la langue des investisseurs, et le prévisionnel suivre les cycles de facturation annuels.",
-          href: "/daf-externalise/secteurs",
-          linkLabel: "Nos interventions par secteur",
+          href: "/fractional-cfo-startups",
+          linkLabel: "DAF externalisé pour les startups et SaaS",
         },
         {
           title: "Deep-tech",

@@ -21,6 +21,7 @@ export type LeadFormPayload = {
   companySize?: string;
   mainNeed?: string;
   formLocation: LeadFormLocation;
+  originPage?: string;
 };
 
 /**
@@ -101,6 +102,7 @@ export const pushLeadFormSubmitted = (p: LeadFormPayload): void => {
     event: "lead_form_submitted",
     form_id: deriveFormId(p.formLocation),
     form_location: p.formLocation,
+    ...(p.originPage ? { origin_page: p.originPage } : {}),
     lead: {
       company: p.company,
       company_size: p.companySize,

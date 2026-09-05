@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent, useRef } from "react";
+import { useState, useEffect, FormEvent, useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import {
@@ -19,6 +19,7 @@ import type { CmsNavItem } from "@/lib/strapi";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import { pushLeadFormSubmitted } from "@/lib/analytics/leadForm";
+import { CONTACT_NEEDS, getContactContext } from "@/lib/contact-context";
 
 /* ─── i18n content for the new sections ─── */
 const contactPageText = {
@@ -29,8 +30,8 @@ const contactPageText = {
       "Échangez avec un DAF expérimenté pour identifier les leviers de croissance de votre entreprise. Premier échange gratuit et sans engagement.",
     trustBadge: "+85 entreprises accompagnées",
     ratingLabel: "5/5 sur Trustfolio",
-    formTitle: "Envoyez-nous un message",
-    formSubtitle: "Nous vous répondons sous 24h.",
+    formTitle: "Décrivez votre besoin",
+    formSubtitle: "Premier échange gratuit. Indiquez votre priorité et votre échéance ; notre équipe vous répond sous 24h pour organiser la suite.",
     infoTitle: "Autres moyens de nous contacter",
     emailLabel: "Email",
     phoneLabel: "Téléphone",
@@ -42,7 +43,7 @@ const contactPageText = {
     offices: [
       { city: "Barcelone", country: "Espagne", flag: "🇪🇸" },
       { city: "Paris", country: "France", flag: "🇫🇷" },
-      { city: "Toulouse", country: "France", flag: "🇫🇷" },
+      { city: "Toulouse (domiciliation)", country: "France", flag: "🇫🇷" },
     ],
     clientsTitle: "Ils nous font confiance",
     successMessage: "Merci\u00A0! Votre message a bien été envoyé. Nous vous répondons sous 24h.",
@@ -67,7 +68,7 @@ const contactPageText = {
     offices: [
       { city: "Barcelona", country: "Spain", flag: "🇪🇸" },
       { city: "Paris", country: "France", flag: "🇫🇷" },
-      { city: "Toulouse", country: "France", flag: "🇫🇷" },
+      { city: "Toulouse (domiciliation)", country: "France", flag: "🇫🇷" },
     ],
     clientsTitle: "They trust us",
     successMessage: "Thank you! Your message has been sent. We'll reply within 24 hours.",
@@ -92,7 +93,7 @@ const contactPageText = {
     offices: [
       { city: "Barcelona", country: "España", flag: "🇪🇸" },
       { city: "París", country: "Francia", flag: "🇫🇷" },
-      { city: "Toulouse", country: "Francia", flag: "🇫🇷" },
+      { city: "Toulouse (domiciliation)", country: "Francia", flag: "🇫🇷" },
     ],
     clientsTitle: "Confían en nosotros",
     successMessage: "Gracias. Su mensaje ha sido enviado. Le responderemos en 24 horas.",
@@ -125,6 +126,18 @@ export default function ContactPage({
   const tx = contactPageText[locale];
   const [pending, setPending] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [need, setNeed] = useState("");
+  const [originPage, setOriginPage] = useState<string>();
+  useEffect(() => {
+    const applyContext = () => {
+      const context = getContactContext(window.location.hash);
+      setNeed(context?.need ?? "");
+      setOriginPage(context?.originPage);
+    };
+    applyContext();
+    window.addEventListener("hashchange", applyContext);
+    return () => window.removeEventListener("hashchange", applyContext);
+  }, []);
 
   const heroRef = useRef<HTMLDivElement>(null);
   const heroInView = useInView(heroRef, { once: true, margin: "-40px" });
@@ -154,6 +167,7 @@ export default function ContactPage({
 
     const data = Object.fromEntries(fd.entries());
     delete data.website;
+    if (originPage) data.originPage = originPage;
 
     try {
       const res = await fetch("/api/lead", {
@@ -167,11 +181,8 @@ export default function ContactPage({
         throw new Error(body?.details || "Erreur serveur");
       }
 
-      // Google Ads enhanced conversion event — fired ONLY after the API
-      // confirms the lead (res.ok), and at most once per page session.
-      // The /contact form has no companySize / mainNeed fields, so those
-      // remain undefined in the dataLayer payload (which is fine — GTM
-      // DLVs simply return undefined for those keys).
+      // Preserve the existing conversion event: it is emitted only after
+      // the API confirms receipt, with optional, selected qualification.
       if (!leadPushedRef.current) {
         leadPushedRef.current = true;
         pushLeadFormSubmitted({
@@ -181,6 +192,8 @@ export default function ContactPage({
           lastName: String(data.lastName || ""),
           company: data.company ? String(data.company) : undefined,
           formLocation: "contact",
+          mainNeed: need || undefined,
+          originPage,
         });
       }
 
@@ -302,6 +315,24 @@ export default function ContactPage({
                       </label>
                     </div>
 
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="challenge" className="block text-sm font-medium text-foreground mb-2">{locale === "fr" ? "Votre priorité (facultatif)" : locale === "en" ? "Your priority (optional)" : "Su prioridad (opcional)"}</label>
+                        <select id="challenge" name="challenge" value={need} onChange={event => setNeed(event.target.value)} className="w-full rounded-xl border border-border px-3 py-3 bg-white text-sm">
+                          <option value="">{locale === "fr" ? "À préciser ensemble" : locale === "en" ? "Let's discuss" : "A definir juntos"}</option>
+                          {CONTACT_NEEDS.map(option => <option key={option.value} value={option.value}>{option[locale]}</option>)}
+                        </select>
+                      </div>
+                      <div>
+                        <label htmlFor="urgency" className="block text-sm font-medium text-foreground mb-2">{locale === "fr" ? "Votre échéance (facultatif)" : locale === "en" ? "Your timeline (optional)" : "Su plazo (opcional)"}</label>
+                        <select id="urgency" name="urgency" className="w-full rounded-xl border border-border px-3 py-3 bg-white text-sm" defaultValue="">
+                          <option value="">{locale === "fr" ? "À préciser ensemble" : locale === "en" ? "Let's discuss" : "A definir juntos"}</option>
+                          <option value="this-month">{locale === "fr" ? "Ce mois-ci" : locale === "en" ? "This month" : "Este mes"}</option>
+                          <option value="1-3-months">{locale === "fr" ? "Dans 1 à 3 mois" : locale === "en" ? "In 1–3 months" : "En 1–3 meses"}</option>
+                          <option value="exploring">{locale === "fr" ? "Je compare les solutions" : locale === "en" ? "I'm comparing options" : "Estoy comparando opciones"}</option>
+                        </select>
+                      </div>
+                    </div>
                     {renderFields(t.form.fields)}
 
                     <div className="pt-1">

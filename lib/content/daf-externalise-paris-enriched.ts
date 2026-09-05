@@ -1,3 +1,7 @@
+import { COUT_DAF_SALARIE, DELAIS, ENGAGEMENT, FORMULES } from "./facts";
+
+const euros = (value: number) => value.toLocaleString("fr-FR");
+
 
 export const dafExternalisePariEnrichedContent = {
   fr: {
@@ -48,7 +52,7 @@ export const dafExternalisePariEnrichedContent = {
         paragraphs: [
           "Un DAF externalisé à Paris est un directeur administratif et financier senior qui intervient à temps partagé dans votre entreprise, sans être salarié. Il assume les responsabilités classiques d'un DAF : pilotage financier, reporting, trésorerie, relations avec les investisseurs et les banques, structuration de la fonction finance.",
           "Contrairement à un consultant ponctuel qui livre une étude puis repart, un DAF externalisé s'intègre dans la durée. Il participe aux comités de direction, prépare les board meetings, accompagne les levées de fonds et structure les processus financiers de l'entreprise. La différence avec un salarié interne réside dans la flexibilité : le nombre de jours d'intervention s'ajuste au rythme de l'activité.",
-          "Sur le marché parisien, cette formule est particulièrement adaptée. Le coût d'un DAF senior à Paris est parmi les plus élevés de France, et la pénurie de profils qualifiés rend les recrutements longs et incertains. L'externalisation permet de démarrer immédiatement, avec un expert qui connaît déjà l'écosystème francilien.",
+          "Sur le marché parisien, cette formule est particulièrement adaptée. Le coût d'un DAF senior à Paris est parmi les plus élevés de France, et la pénurie de profils qualifiés rend les recrutements longs et incertains. Le démarrage se fait en 8 à 15 jours après le premier échange, selon le périmètre et le profil retenu.",
         ],
       },
       {
@@ -62,10 +66,10 @@ export const dafExternalisePariEnrichedContent = {
             cons: [
               "Recrutement long (3 à 6 mois)",
               "Coût fixe mensuel élevé",
-              "Engagement sur 12 à 24 mois",
+              "Contrat de travail et gestion du poste",
               "Risque de turnover coûteux",
-              "Expertise limitée à une seule expérience",
-              "Pas de flexibilité en cas de ralentissement",
+              "Profil recruté pour un périmètre défini",
+              "Disponibilité à temps plein à dimensionner",
             ],
           },
           external: {
@@ -73,7 +77,7 @@ export const dafExternalisePariEnrichedContent = {
             price: "À partir de 3 000 € HT/mois",
             subtitle: "Formule adaptable selon vos besoins",
             pros: [
-              "Mise en place immédiate",
+              `Démarrage en ${DELAIS.missionDemarree}`,
               "Coût proportionnel à l'activité",
               "Flexibilité mensuelle",
               "Expertise multi-sectorielle",
@@ -84,15 +88,14 @@ export const dafExternalisePariEnrichedContent = {
         },
         tables: [
           {
-            caption: "Tableau comparatif détaillé des coûts annuels à Paris",
-            headers: ["Poste", "DAF interne (coût total)", "DAF externalisé Iter Advisors", "Économie"],
+            caption: "Comparer un poste à temps plein et un accompagnement à temps partagé",
+            headers: ["Critère", "DAF salarié", "DAF externalisé Iter Advisors"],
             rows: [
-              ["Salaire / honoraires annuels", "150 000 € - 220 000 €", "24 000 € - 96 000 €", "60 % - 85 %"],
-              ["Charges sociales", "45 000 € - 66 000 €", "Inclus", "100 %"],
-              ["Mutuelle / prévoyance", "3 000 € - 6 000 €", "Inclus", "100 %"],
-              ["Prime de participation / intéressement", "5 000 € - 15 000 €", "Aucune", "100 %"],
-              ["Frais de recrutement", "15 000 € - 30 000 €", "Aucun", "100 %"],
-              ["Coût total annuel estimé", "218 000 € - 337 000 €", "24 000 € - 96 000 €", "70 % - 90 %"],
+              ["Budget annuel", `${euros(COUT_DAF_SALARIE.min)}–${euros(COUT_DAF_SALARIE.max)} € de coût employeur`, `${euros(FORMULES[0].prixMin * 12)}–${euros(FORMULES[2].prixMax * 12)} € HT de forfaits`],
+              ["Base du budget", "Charges et package compris, hors recrutement et vacance du poste", "Forfait mensuel annualisé, hors déplacements ou missions complémentaires"],
+              ["Disponibilité", "Poste à temps plein", "Volume indicatif de 1 à 8 jours par mois selon le périmètre"],
+              ["Démarrage", "Selon le recrutement et le préavis du candidat", DELAIS.missionDemarree],
+              ["Engagement", "Contrat de travail", ENGAGEMENT.formulation],
             ],
           },
         ],

@@ -3,10 +3,11 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { getCmsNavigation } from "@/lib/strapi";
 import type { CmsNavItem } from "@/lib/strapi";
-import { BOOKING_URL } from "@/lib/navigation";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
+import CaseProofLinks from "@/components/CaseProofLinks";
+import { CLIENTS_ACCOMPAGNES, FORMULES, TRUSTFOLIO_RATING } from "@/lib/content/facts";
 
 /**
  * Route for /fractional-cfo-startups.
@@ -155,7 +156,7 @@ const structuredData = {
           name: "Puis-je commencer par une mission ponctuelle (data room, levée) ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Oui. Nous proposons des missions ponctuelles à durée fixe (data room pour une levée, due diligence, mise en place du reporting, prévisionnel 12 mois). Tarification au forfait selon le périmètre, opérationnel sous 5 jours ouvrés. Beaucoup de missions ponctuelles débouchent ensuite sur un engagement récurrent au mois.",
+            text: "Oui. Nous proposons des missions ponctuelles à durée fixe (data room pour une levée, due diligence, mise en place du reporting, prévisionnel 12 mois). Tarification au forfait selon le périmètre, avec un calendrier défini au cadrage. Beaucoup de missions ponctuelles débouchent ensuite sur un engagement récurrent au mois.",
           },
         },
         {
@@ -171,7 +172,7 @@ const structuredData = {
           name: "Que se passe-t-il si on ne s'entend pas avec le fractional CFO ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Aucun engagement de durée — vous pouvez interrompre la mission au mois suivant, sans frais. En pratique, nous proposons d'abord un autre fractional CFO de l'équipe pour poursuivre la mission sans perdre le contexte : c'est l'avantage d'un cabinet de 15 CFOs vs un freelance solo.",
+            text: "Sans durée d'engagement minimale, résiliable avec un préavis de 30 jours. En pratique, nous proposons d'abord un autre fractional CFO de l'équipe pour poursuivre la mission sans perdre le contexte : c'est l'avantage d'un cabinet de 15 CFOs vs un freelance solo.",
           },
         },
       ],
@@ -212,7 +213,7 @@ export async function generateMetadata(): Promise<Metadata> {
   // À rouvrir le jour où une vraie traduction segment startup existe.
   return {
     title:
-      "Fractional CFO for Startups | Iter Advisors",
+      "DAF externalisé startup & SaaS | Fractional CFO | Iter Advisors",
     description:
       "Fractional CFO / CFO à temps partagé senior pour startups VC-backed. Dès 3 000 € HT/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
     alternates: {
@@ -220,7 +221,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       title:
-        "Fractional CFO for Startups | Iter Advisors",
+        "DAF externalisé startup & SaaS | Fractional CFO | Iter Advisors",
       description:
         "Fractional CFO / CFO à temps partagé senior pour startups VC-backed. Dès 3 000 € HT/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
       url: PAGE_URL,
@@ -254,21 +255,14 @@ export default async function Page() {
                 Ces trois termes désignent la même réalité — Google les
                 traite en variantes sémantiques. */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6 sm:mb-8 leading-tight">
-              Fractional CFO, CFO externe, CFO à temps partagé pour startups — Une expertise financière senior pour accélérer votre croissance
+              DAF externalisé pour startups et SaaS : votre fractional CFO
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-foreground/80 font-medium leading-relaxed mb-6">
-              Une expertise financière senior sans le coût du plein temps. Que
-              vous cherchiez un <strong>Fractional CFO</strong>, un{" "}
-              <strong>CFO externe</strong>, un <strong>CFO à temps partagé</strong>
-              {" "}ou un <strong>directeur financier externalisé</strong>, ce sont
-              trois façons de nommer la même réalité : un CFO senior qui partage
-              son temps entre plusieurs startups. De la levée de fonds à la
-              planification financière, nos CFOs accompagnent les fondateurs
-              dans chaque étape de la croissance.
+              Préparer une levée, connaître son runway et fiabiliser le reporting investisseurs : un CFO senior rejoint votre équipe pour structurer ces décisions. Nos missions démarrent à 3 000 € HT par mois, avec un périmètre défini au cadrage et un profil présenté avant signature.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
-                href={BOOKING_URL}
+                href="/contact#startup"
                 target="_blank"
                 rel="nofollow noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
@@ -285,9 +279,9 @@ export default async function Page() {
             </div>
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
               {[
-                "50+ startups accompagnées",
+                `${CLIENTS_ACCOMPAGNES} entreprises accompagnées`,
                 "Paris · Toulouse · Barcelone",
-                "Note moyenne clients : 4,9/5",
+                `${TRUSTFOLIO_RATING}/5 sur Trustfolio`,
               ].map((stat, i) => (
                 <li key={i} className="inline-flex items-center gap-2">
                   <Check
@@ -525,11 +519,11 @@ export default async function Page() {
                 },
                 {
                   title: "3. Des playbooks éprouvés.",
-                  text: "Chaque Fractional CFO Iter Advisors a géré des levées de fonds de 5 M€ à 100 M€+. Il apporte des modèles financiers, des relations avec des investisseurs, et une méthodologie testée sur le terrain.",
+                  text: "Le profil est choisi selon les opérations déjà accompagnées et les besoins de votre startup. Il apporte des modèles financiers, des relations avec des investisseurs, et une méthodologie testée sur le terrain.",
                 },
                 {
                   title: "4. Une flexibilité totale.",
-                  text: "Augmentez l'intervention pendant la levée de fonds. Réduisez après la clôture. Ajustez le périmètre chaque mois. Aucun engagement de long terme.",
+                  text: "Augmentez l'intervention pendant la levée de fonds. Réduisez après la clôture. Ajustez le périmètre chaque mois. Sans durée minimale, avec un préavis de 30 jours.",
                 },
                 {
                   title: "5. Un écosystème complet.",
@@ -537,7 +531,7 @@ export default async function Page() {
                 },
                 {
                   title: "6. Zéro dilution au capital.",
-                  text: "Contrairement à un CFO à plein temps qui demande généralement 0,5 à 1,5 % du capital, un Fractional CFO est un prestataire — aucun impact sur votre cap table.",
+                  text: "La prestation est facturée en honoraires. Les formules présentées ne prévoient pas de rémunération en actions.",
                 },
               ].map((item, i) => (
                 <li
@@ -576,7 +570,7 @@ export default async function Page() {
                 },
                 {
                   title: "Phase 4 — Transition (Mois 6+)",
-                  text: "Lorsque votre équipe finance est prête, nous transférons l'ensemble des processus et de la documentation. La plupart de nos clients recrutent un CFO à plein temps sous 12 à 18 mois, pleinement équipés avec des systèmes propres.",
+                  text: "Lorsque votre équipe finance est prête, nous transférons l'ensemble des processus et de la documentation. Lorsque le besoin devient un temps plein durable, nous préparons la passation au CFO recruté : modèles, procédures et historique des décisions.",
                 },
               ].map((phase, i) => (
                 <div key={i} className="border-l-4 border-iter-chartreuse pl-4">
@@ -623,9 +617,9 @@ export default async function Page() {
                   <tr>
                     {[
                       "Formule",
-                      "Jours/semaine",
+                      "Volume mensuel indicatif",
                       "Périmètre",
-                      "Tarif mensuel",
+                      "Tarif mensuel HT",
                     ].map((h, i) => (
                       <th
                         key={i}
@@ -639,33 +633,8 @@ export default async function Page() {
                 </thead>
                 <tbody>
                   {[
-                    // Grille officielle (cf. lib/content/facts.ts). Le volume est
-                    // une moyenne d'intervention observée, pas un forfait : Iter
-                    // s'engage sur un scope, et le prix suit le profil engagé.
-                    [
-                      "Essentiel",
-                      "1 à 2 j/mois",
-                      "Reporting P&L, cash et KPIs, prévisionnel 13 semaines, revue mensuelle avec le dirigeant",
-                      "3 000 – 5 000 €",
-                    ],
-                    [
-                      "Croissance",
-                      "3 à 5 j/mois",
-                      "+ business plan 3-5 ans, levée de fonds, dette non dilutive, reporting investisseurs",
-                      "5 000 – 6 500 €",
-                    ],
-                    [
-                      "Premium",
-                      "5 à 8 j/mois",
-                      "+ M&A et due diligence, board et gouvernance, internationalisation, BI finance",
-                      "6 500 – 8 000 €",
-                    ],
-                    [
-                      "Mission ponctuelle",
-                      "Projet",
-                      "Préparation de levée, audit défensif, data room, modèle financier",
-                      "Sur devis",
-                    ],
+                    ...FORMULES.map(f => [f.nom, f.volumeIndicatif, f.inclus, `${f.prixMin.toLocaleString("fr-FR")}–${f.prixMax.toLocaleString("fr-FR")} €`]),
+                    ["Mission ponctuelle", "Projet", "Préparation de levée, audit défensif, data room, modèle financier", "Sur devis"],
                   ].map((row, ri) => (
                     <tr key={ri} className={ri % 2 === 0 ? "" : "bg-muted/20"}>
                       <td className="p-3 sm:p-4 font-semibold text-foreground border-b border-border/40 leading-relaxed">
@@ -821,7 +790,7 @@ export default async function Page() {
                   question:
                     "Puis-je commencer par une mission ponctuelle (data room, levée) ?",
                   answer:
-                    "Oui. Nous proposons des missions ponctuelles à durée fixe (data room pour une levée, due diligence, mise en place du reporting, prévisionnel 12 mois). Tarification au forfait selon le périmètre, opérationnel sous 5 jours ouvrés. Beaucoup de missions ponctuelles débouchent ensuite sur un engagement récurrent au mois.",
+                    "Oui. Nous proposons des missions ponctuelles à durée fixe (data room pour une levée, due diligence, mise en place du reporting, prévisionnel 12 mois). Tarification au forfait selon le périmètre, avec un calendrier défini au cadrage. Beaucoup de missions ponctuelles débouchent ensuite sur un engagement récurrent au mois.",
                 },
                 {
                   question:
@@ -833,7 +802,7 @@ export default async function Page() {
                   question:
                     "Que se passe-t-il si on ne s'entend pas avec le fractional CFO ?",
                   answer:
-                    "Aucun engagement de durée — vous pouvez interrompre la mission au mois suivant, sans frais. En pratique, nous proposons d'abord un autre fractional CFO de l'équipe pour poursuivre la mission sans perdre le contexte : c'est l'avantage d'un cabinet de 15 CFOs vs un freelance solo.",
+                    "Sans durée d'engagement minimale, résiliable avec un préavis de 30 jours. En pratique, nous proposons d'abord un autre fractional CFO de l'équipe pour poursuivre la mission sans perdre le contexte : c'est l'avantage d'un cabinet de 15 CFOs vs un freelance solo.",
                 },
               ].map((faq, i) => (
                 <details
@@ -865,14 +834,14 @@ export default async function Page() {
               Prêt à recruter votre Fractional CFO ?
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
-              Réservez un appel découverte gratuit de 30 minutes avec Benjamin
+              Demandez un appel découverte gratuit de 30 minutes avec Benjamin
               Ziza, Founding Partner & CFO chez Iter Advisors. Nous évaluerons
               vos besoins financiers et vous mettrons en relation avec le
               Fractional CFO adapté.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
-                href="/contact"
+                href="/contact#startup"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all"
               >
                 Prendre rendez-vous
@@ -917,6 +886,7 @@ export default async function Page() {
         </div>
       </section>
 
+      <CaseProofLinks heading="Des missions de structuration et de croissance" slugs={["solarmente-serie-b-cleantech", "opti-digital-structuration-financement"]} />
       <CTASection locale="fr" />
     </PageLayout>
   );

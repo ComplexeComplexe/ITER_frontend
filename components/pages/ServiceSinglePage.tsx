@@ -13,6 +13,7 @@ import type { StrapiServiceSinglePage, StrapiBlock, CmsNavItem } from "@/lib/str
 import { serviceSchema, faqPageSchema } from "@/lib/schemas";
 import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
 import PageByline from "@/components/PageByline";
+import CaseProofLinks from "@/components/CaseProofLinks";
 
 const breadcrumbsByLocale: Record<
   Locale,
@@ -383,6 +384,9 @@ export default function ServiceSinglePage({
       )}
 
       <TestimonialsSection locale={locale} />
+      {locale === "fr" && slug === "accompagnement-levee-de-fond" && (
+        <CaseProofLinks slugs={["solarmente-serie-b-cleantech"]} heading="Une mission de préparation financière documentée" />
+      )}
       <CTASection locale={locale} />
     </PageLayout>
   );

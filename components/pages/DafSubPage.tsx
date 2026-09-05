@@ -12,6 +12,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
+import CaseProofLinks from "@/components/CaseProofLinks";
 
 interface DafSubPageProps {
   locale: Locale;
@@ -331,6 +332,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage }
       </section>
 
       <TestimonialsSection locale={locale} />
+      {locale === "fr" && content.proofSlugs && <CaseProofLinks slugs={content.proofSlugs} />}
       <CTASection locale={locale} />
     </PageLayout>
   );

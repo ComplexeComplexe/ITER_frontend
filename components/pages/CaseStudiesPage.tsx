@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Link from "next/link";
+import { getDocumentedCase } from "@/lib/content/documented-cases";
 import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/strapi";
 import { getCaseStudiesContent, type CaseStudy } from "@/lib/content/case-studies";
@@ -31,6 +33,7 @@ function CaseStudyCardWrapper({
   index: number;
   locale: Locale;
 }) {
+  const detail = locale === "fr" ? getDocumentedCase(cs.slug) : undefined;
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
@@ -70,6 +73,7 @@ function CaseStudyCardWrapper({
           </p>
         </div>
 
+        {detail && <Link href={detail.href} className="inline-flex text-sm font-semibold text-iter-violet underline underline-offset-4 mb-4">Lire le cas {detail.company} en détail</Link>}
         <details className="group mt-4">
           <summary className="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-iter-violet mb-5">
             {locale === "fr" ? "Voir le cas d'usage" : locale === "en" ? "View case study" : "Ver caso de uso"}

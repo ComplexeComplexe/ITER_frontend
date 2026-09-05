@@ -393,182 +393,95 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
   toulouse: {
     fr: {
       meta: {
-        title: "DAF externalisé à Toulouse | Iter Advisors",
-        description:
-          "Iter Advisors, cabinet de DAF externalisé à Toulouse. Direction financière à temps partagé pour PME et startups en Occitanie. +85 entreprises accompagnées.",
+        title: "DAF externalisé Toulouse : missions et tarifs | Iter Advisors",
+        description: "DAF externalisé pour PME et startups à Toulouse : trésorerie, reporting et financement. Dès 3 000 € HT/mois, à distance et sur site selon votre besoin.",
       },
       breadcrumbLabel: "DAF externalisé Toulouse",
-      h1: "DAF externalisé à Toulouse : votre CFO à temps partagé en Occitanie",
+      h1: "DAF externalisé à Toulouse : piloter votre PME ou votre startup",
       intro: [
-        "Toulouse, capitale de l'aéronautique et du spatial, est aussi un pôle majeur de l'innovation et de l'entrepreneuriat en France. La région Occitanie abrite un écosystème dynamique de startups, PME industrielles et entreprises de services.",
-        // Bloc 3 (10/08/2026) — sans mission toulousaine documentée, la page ne
-        // revendique plus d'expertise sectorielle locale. Formulation validée :
-        // couverture depuis Paris et Barcelone, avec déplacements sur site.
-        "Iter Advisors accompagne des startups et PME tech en France et en Espagne, depuis Paris, Barcelone et Toulouse. Les missions toulousaines sont pilotées par nos équipes parisienne et barcelonaise, avec des déplacements sur site.",
+        "Votre entreprise est à Toulouse et vous avez besoin de visibilité sur le cash, les marges ou un financement ? Un DAF senior prend en charge le pilotage avec vos équipes et votre expert-comptable, pour un périmètre défini avant le démarrage.",
+        "Nos missions sont pilotées depuis Paris et Barcelone, avec des déplacements à Toulouse convenus au cadrage. Le budget est de 3 000 à 8 000 € HT par mois ; le démarrage intervient en 8 à 15 jours après le premier échange, selon le profil et le périmètre.",
       ],
       sections: [
         {
-          heading: "Pourquoi choisir un DAF externalisé à Toulouse ?",
+          heading: "Ce que nous définissons avant de démarrer",
           content: [
-            "L'écosystème toulousain est diversifié — aéronautique, spatial, santé, agritech — et marqué par la présence de grands donneurs d'ordres. Les PME et ETI de la région ont besoin d'un pilotage financier rigoureux pour gérer leurs cycles longs et leurs relations avec les grands comptes.",
-            "Nos tarifs sont les mêmes qu'ailleurs : la grille est nationale, et le profil engagé dépend de votre besoin, pas de votre implantation.",
+            "Un interlocuteur financier dédié, les priorités de votre dirigeant, les données disponibles et les responsabilités respectives du DAF, de votre équipe et de votre expert-comptable.",
+            "Le calendrier des revues, les livrables et les déplacements sont convenus par écrit. Les échanges courants se font à distance ; les réunions sur site sont organisées selon les besoins de la mission. Nous ne promettons pas de présence hebdomadaire locale.",
           ],
         },
         {
-          heading: "Nos missions à Toulouse",
+          heading: "Trois besoins fréquents à cadrer ensemble",
           content: [
-            "Pilotage financier et reporting pour PME industrielles et de services en Occitanie.",
-            "Gestion de trésorerie adaptée aux cycles longs des activités de sous-traitance industrielle.",
-            "Accompagnement des levées de fonds et des financements régionaux (Région Occitanie, Bpifrance Toulouse).",
-            "Structuration financière pour les entreprises en croissance et préparation aux opérations de M&A.",
-            "Accompagnement à l'internationalisation, notamment vers l'Espagne via notre bureau de Barcelone.",
+            "PME de services ou de production : suivre la marge par activité ou par affaire, prévoir les encaissements, piloter le BFR et préparer un investissement avec vos banques.",
+            "Startup en croissance : fiabiliser le runway, construire le budget et le reporting investisseurs, puis préparer le modèle financier et la data room si une levée est prévue.",
+            "Entreprise qui se développe en Espagne : coordonner les reportings des entités et les interlocuteurs financiers, comptables et juridiques depuis notre implantation à Barcelone.",
           ],
         },
         {
-          heading: "L'avantage Iter Advisors à Toulouse",
+          heading: "Les livrables du premier mois",
           content: [
-            "Nous n'avons pas de consultant résident à Toulouse : les missions sont pilotées depuis Paris et Barcelone, avec des déplacements sur site dont la cadence est fixée au cadrage — en général sur les phases de démarrage, les comités finance et les board meetings.",
-            "Ce que nous apportons aux entreprises occitanes, c'est un accès à un réseau national et international d'investisseurs et de partenaires, et une expérience du couloir France-Espagne pour celles qui s'y développent.",
-            // Adresse de domiciliation, publiable telle quelle. Elle n'est
-            // volontairement PAS déclarée en PostalAddress dans le schéma de la
-            // page (cf. DafLocalPage) : une domiciliation n'est pas un
-            // établissement, et le balisage ne doit pas en signaler un.
-            "Adresse de domiciliation : 32 boulevard d'Arcole, 31000 Toulouse.",
+            "Un prévisionnel de trésorerie à 13 semaines, un premier reporting mensuel P&L, cash et indicateurs, et une revue finance avec le dirigeant constituent le socle de la formule Essentiel.",
+            "Le business plan, le financement, la consolidation ou les opérations de croissance externe complètent le périmètre selon la formule. Les priorités sont ordonnées en fonction de vos données et des échéances réelles.",
+          ],
+        },
+        {
+          heading: "Un budget défini par le travail confié",
+          content: [
+            "La grille nationale s'applique à Toulouse : Essentiel de 3 000 à 5 000 € HT/mois, Croissance de 5 000 à 6 500 €, Premium de 6 500 à 8 000 €. Les volumes indicatifs vont de 1 à 8 jours par mois selon la formule.",
+            "Le forfait porte sur un périmètre et un profil, pas sur un nombre de journées. Les frais de déplacement éventuels sont précisés séparément au devis. Aucun dépassement n'est facturé sans avenant signé. Sans durée d'engagement minimale, résiliable avec un préavis de 30 jours.",
+          ],
+        },
+        {
+          heading: "Notre présence à Toulouse, en pratique",
+          content: [
+            "Nous n'avons pas de consultant résident à Toulouse. Les missions sont suivies par nos équipes parisienne et barcelonaise ; le profil est présenté avant la signature pour vérifier son adéquation à votre activité.",
+            "Notre adresse de domiciliation est le 32 boulevard d'Arcole, 31000 Toulouse. Les rendez-vous se tiennent à distance ou dans vos locaux, selon ce qui est convenu ensemble.",
           ],
         },
       ],
       faq: [
-        {
-          question: "Combien coûte un DAF externalisé à Toulouse ?",
-          answer:
-            "La grille est nationale : de 3 000 à 8 000 EUR HT par mois selon la formule, sans tarif régionalisé. Le montant dépend du scope confié et du profil engagé, pas de votre implantation.",
-        },
-        {
-          question: "Intervenez-vous dans toute l'Occitanie ?",
-          answer:
-            "Oui, à Toulouse et dans toute l'Occitanie — Montpellier, Perpignan, Tarbes, Albi. Les missions se pilotent à distance depuis Paris et Barcelone, avec des déplacements sur site dont la fréquence est arrêtée au cadrage. Nous n'annonçons pas de présence hebdomadaire.",
-        },
-        {
-          question: "Avez-vous une expertise aéronautique ?",
-          answer:
-            "Plusieurs de nos CFOs ont une expérience de l'industrie et de la sous-traitance, et des enjeux de trésorerie liés aux cycles longs et aux grands donneurs d'ordres. Nous n'avons pas encore de cas client toulousain publiable : le meilleur moyen de vérifier l'adéquation est un premier échange sur votre situation.",
-        },
+        { question: "Combien coûte un DAF externalisé à Toulouse ?", answer: "De 3 000 à 8 000 € HT/mois selon le périmètre et le profil. La grille est nationale. Les déplacements éventuels sont chiffrés séparément au devis." },
+        { question: "Le DAF intervient-il dans nos locaux ?", answer: "Oui, selon une cadence fixée au cadrage. Le suivi courant se fait à distance depuis Paris ou Barcelone ; les déplacements concernent notamment le démarrage et les revues financières. Aucun consultant n'est résident à Toulouse." },
+        { question: "Faut-il avoir levé des fonds ?", answer: "Non. Une PME sans investisseurs peut avoir besoin d'un prévisionnel de trésorerie, d'un suivi de marge ou d'un dossier bancaire. Le périmètre découle de ces besoins, pas du mode de financement de l'entreprise." },
+        { question: "Avez-vous un cas client toulousain à présenter ?", answer: "Nous n'avons pas encore de cas client toulousain publiable. Les études présentées sur le site illustrent des missions conduites ailleurs. L'expérience du profil proposé et les livrables attendus sont examinés lors du cadrage." },
+        { question: "Quel est le délai de démarrage ?", answer: "Comptez 8 à 15 jours depuis le premier échange, selon le profil et la complexité. Les premiers livrables de reporting arrivent dès le premier mois d'intervention." },
       ],
-      ctaButton: "Prendre rendez-vous à Toulouse",
+      ctaButton: "Décrire mon besoin à Toulouse",
     },
     en: {
-      meta: {
-        title: "Fractional CFO in Toulouse | Occitanie | Iter Advisors",
-        description:
-          "Iter Advisors, fractional CFO firm in Toulouse. Part-time financial management for SMEs and startups in Occitanie. 85+ companies supported.",
-      },
+      meta: { title: "Fractional CFO in Toulouse: scope and fees | Iter Advisors", description: "Fractional CFO for SMEs and startups in Toulouse. Cash flow, reporting and funding from €3,000 excl. VAT/month, remotely and on site as agreed." },
       breadcrumbLabel: "Fractional CFO Toulouse",
-      h1: "Fractional CFO in Toulouse: your part-time CFO in Occitanie",
-      intro: [
-        "Toulouse, the capital of aerospace, is also a major hub for innovation and entrepreneurship in France. The Occitanie region hosts a dynamic ecosystem of startups, industrial SMEs and service companies.",
-        "Iter Advisors supports Toulouse-based companies with fractional CFOs who understand the specificities of the local economic fabric: aerospace subcontracting, deeptech, agritech and business services.",
-      ],
+      h1: "Fractional CFO for SMEs and startups in Toulouse",
+      intro: ["Build visibility over cash, margins and financing with a senior CFO working alongside your team and accountant.", "Engagements are managed from Paris and Barcelona, with travel to Toulouse agreed during scoping. There is no resident consultant in Toulouse."],
       sections: [
-        {
-          heading: "Why choose a fractional CFO in Toulouse?",
-          content: [
-            "The Toulouse ecosystem stands out for its sector diversity (aerospace, space, health, agritech) and the presence of major contractors (Airbus, Thales, Pierre Fabre). Regional SMEs and mid-caps need rigorous financial management to handle long cycles and large account relationships.",
-            "With Toulouse's lower cost of living compared to Paris, our fractional CFO rates are adapted to the local market while offering national-level expertise.",
-          ],
-        },
-        {
-          heading: "Our missions in Toulouse",
-          content: [
-            "Financial management and reporting for industrial and service SMEs in Occitanie.",
-            "Cash management adapted to the long cycles of aerospace subcontracting.",
-            "Fundraising support and regional financing (Region Occitanie, Bpifrance Toulouse).",
-            "Financial structuring for growing companies and M&A preparation.",
-            "International expansion support, particularly to Spain via our Barcelona office.",
-          ],
-        },
-        {
-          heading: "The Iter Advisors advantage in Toulouse",
-          content: [
-            "Our Toulouse presence completes our territorial coverage with Paris and Barcelona. We offer Occitanie companies access to a national and international network of investors and partners.",
-            "Our knowledge of the local economic fabric and proximity to Spain make us an ideal partner for companies looking to expand beyond the region.",
-          ],
-        },
+        { heading: "Scope and first deliverables", content: ["Define the priorities, data access and reporting cadence before starting: cash forecast, monthly reporting, margin analysis or funding preparation.", "The first month focuses on a financial diagnosis, a cash forecast and a reporting plan adapted to your available data and agreed scope."] },
+        { heading: "National pricing and timing", content: ["Essential: €3,000–€5,000 excluding VAT/month; Growth: €5,000–€6,500; Premium: €6,500–€8,000. Indicative involvement ranges from 1 to 8 days per month, depending on the package.", "Engagements usually start within 8–15 days of the first discussion, depending on scope and profile. Travel is quoted separately. There is no minimum term, with 30 days' notice."] },
+        { heading: "How we work with Toulouse companies", content: ["Our registered address is 32 boulevard d'Arcole, 31000 Toulouse. It is a domiciliation address; meetings take place remotely or at your premises as agreed.", "The proposed CFO is presented before signing so you can assess their fit with your sector and needs. We do not publish a Toulouse-specific client case at this stage."] },
       ],
       faq: [
-        {
-          question: "How much does a fractional CFO cost in Toulouse?",
-          answer:
-            "Our Toulouse packages range from EUR 2,000/month (2-3 days) to EUR 6,000+/month (8+ days). The daily rate is EUR 750-1,000 excl. VAT, adapted to the Occitanie market.",
-        },
-        {
-          question: "Do you operate throughout Occitanie?",
-          answer:
-            "Yes, we operate in Toulouse and throughout the Occitanie region: Montpellier, Perpignan, Tarbes, Albi. Our CFOs work in hybrid mode.",
-        },
-        {
-          question: "Do you have aerospace expertise?",
-          answer:
-            "Yes, several of our CFOs have significant experience in the aerospace sector and industrial subcontracting. They understand the cash flow challenges related to long cycles and major contractors.",
-        },
+        { question: "How much does a fractional CFO cost in Toulouse?", answer: "€3,000–€8,000 excluding VAT per month, depending on scope and seniority. National pricing applies; any travel is quoted separately." },
+        { question: "Will the CFO work at our premises?", answer: "On-site work is agreed during scoping. Day-to-day support is managed remotely from Paris or Barcelona; there is no resident CFO in Toulouse." },
+        { question: "Can you support a company that is not fundraising?", answer: "Yes. An engagement can focus on cash flow, margins, reporting, budgeting and banking relationships without an equity round." },
       ],
-      ctaButton: "Book a call in Toulouse",
+      ctaButton: "Describe your needs in Toulouse",
     },
     es: {
-      meta: {
-        title: "CFO externalizado Toulouse | Occitania | Iter Advisors",
-        description:
-          "Iter Advisors, gabinete de CFO externalizado en Toulouse. Dirección financiera a tiempo compartido para pymes y startups en Occitania. +85 empresas.",
-      },
+      meta: { title: "CFO externalizado en Toulouse: servicios y tarifas | Iter Advisors", description: "CFO para pymes y startups de Toulouse: tesorería, reporting y financiación desde 3.000 € sin IVA/mes, a distancia y presencialmente según lo acordado." },
       breadcrumbLabel: "CFO externalizado Toulouse",
-      h1: "CFO externalizado en Toulouse: su director financiero a tiempo compartido en Occitania",
-      intro: [
-        "Toulouse, capital de la aeronautica y el espacio, es tambien un polo importante de innovacion y emprendimiento en Francia. La region de Occitania alberga un ecosistema dinamico de startups, pymes industriales y empresas de servicios.",
-        "Iter Advisors acompana a las empresas de Toulouse con CFOs externalizados que comprenden las especificidades del tejido economico local: subcontratacion aeronautica, deeptech, agritech y servicios a empresas.",
-      ],
+      h1: "CFO externalizado para pymes y startups en Toulouse",
+      intro: ["Gane visibilidad sobre la tesorería, los márgenes y la financiación con un CFO sénior que colabora con su equipo y su asesor contable.", "Las misiones se coordinan desde París y Barcelona, con desplazamientos a Toulouse acordados al definir el alcance. No hay consultor residente en Toulouse."],
       sections: [
-        {
-          heading: "Por que elegir un CFO externalizado en Toulouse?",
-          content: [
-            "El ecosistema de Toulouse se distingue por su diversidad sectorial (aeronautica, espacio, salud, agritech) y la presencia de grandes contratistas (Airbus, Thales, Pierre Fabre). Las pymes y ETI de la region necesitan una gestion financiera rigurosa para gestionar sus ciclos largos y sus relaciones con las grandes cuentas.",
-            "Con un coste de vida inferior al de Paris, las tarifas de nuestros CFOs externalizados estan adaptadas al mercado local, ofreciendo al mismo tiempo una experiencia de nivel nacional.",
-          ],
-        },
-        {
-          heading: "Nuestras misiones en Toulouse",
-          content: [
-            "Gestion financiera y reporting para pymes industriales y de servicios en Occitania.",
-            "Gestion de tesoreria adaptada a los ciclos largos de la subcontratacion aeronautica.",
-            "Acompanamiento en rondas de financiacion y financiaciones regionales (Region Occitania, Bpifrance Toulouse).",
-            "Estructuracion financiera para empresas en crecimiento y preparacion de operaciones de M&A.",
-            "Acompanamiento a la internacionalizacion, especialmente hacia Espana a traves de nuestra oficina de Barcelona.",
-          ],
-        },
-        {
-          heading: "La ventaja Iter Advisors en Toulouse",
-          content: [
-            "Nuestra presencia en Toulouse completa nuestra cobertura territorial con Paris y Barcelona. Ofrecemos a las empresas de Occitania acceso a una red nacional e internacional de inversores y socios.",
-            "Nuestro conocimiento del tejido economico local y nuestra proximidad con Espana nos convierten en un socio ideal para las empresas que buscan expandirse mas alla de la region.",
-          ],
-        },
+        { heading: "Alcance y primeros entregables", content: ["Antes de empezar, definimos prioridades, acceso a los datos y frecuencia del seguimiento: previsión de tesorería, reporting mensual, márgenes o preparación de financiación.", "El primer mes se centra en un diagnóstico financiero, una previsión de tesorería y un plan de reporting adaptados a los datos disponibles y al alcance contratado."] },
+        { heading: "Tarifas nacionales y plazos", content: ["Esencial: 3.000–5.000 € sin IVA/mes; Crecimiento: 5.000–6.500 €; Premium: 6.500–8.000 €. La dedicación orientativa va de 1 a 8 días al mes según la fórmula.", "El inicio se prevé entre 8 y 15 días tras el primer contacto, según el perfil y el alcance. Los desplazamientos se presupuestan aparte. Sin permanencia mínima, con un preaviso de 30 días."] },
+        { heading: "Cómo trabajamos con las empresas de Toulouse", content: ["Nuestra dirección de domiciliación es 32 boulevard d'Arcole, 31000 Toulouse. Las reuniones se celebran a distancia o en sus instalaciones, según lo acordado.", "Presentamos al CFO propuesto antes de la firma para comprobar su adecuación al sector y las necesidades. Por ahora no publicamos un caso de cliente específico de Toulouse."] },
       ],
       faq: [
-        {
-          question: "Cuanto cuesta un CFO externalizado en Toulouse?",
-          answer:
-            "Nuestras formulas en Toulouse van de 2.000 EUR/mes (2-3 dias) a 6.000+ EUR/mes (8+ dias). La tarifa diaria se situa entre 750 y 1.000 EUR sin IVA, adaptada al mercado occitano.",
-        },
-        {
-          question: "Intervienen en toda Occitania?",
-          answer:
-            "Si, intervenimos en Toulouse y en toda la region de Occitania: Montpellier, Perpignan, Tarbes, Albi. Nuestros CFOs trabajan en modo hibrido.",
-        },
-        {
-          question: "Tienen experiencia aeronautica?",
-          answer:
-            "Si, varios de nuestros CFOs tienen una experiencia significativa en el sector aeronautico y la subcontratacion industrial. Comprenden los retos de tesoreria ligados a los ciclos largos y los grandes contratistas.",
-        },
+        { question: "¿Cuánto cuesta un CFO externalizado en Toulouse?", answer: "Entre 3.000 y 8.000 € sin IVA al mes, según el alcance y el perfil. Se aplica la tarifa nacional y los desplazamientos se presupuestan aparte." },
+        { question: "¿Trabaja el CFO en nuestras instalaciones?", answer: "Las visitas se acuerdan al definir la misión. El seguimiento habitual se realiza a distancia desde París o Barcelona; no hay CFO residente en Toulouse." },
+        { question: "¿Es necesario preparar una ronda de financiación?", answer: "No. La misión puede centrarse en tesorería, márgenes, reporting, presupuestos y relaciones bancarias sin una ampliación de capital." },
       ],
-      ctaButton: "Concierte una cita en Toulouse",
+      ctaButton: "Describa sus necesidades en Toulouse",
     },
   },
 };
