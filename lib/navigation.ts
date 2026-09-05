@@ -1,5 +1,5 @@
 import { Locale } from "./i18n";
-import { SERVICE_PAGE_SLUGS, SERVICE_URL_SLUG_BY_LOCALE } from "./strapi";
+
 
 export interface NavItem {
   title: string;
@@ -168,7 +168,7 @@ export const navigation: Record<Locale, NavItem[]> = {
 export const footerContent: Record<Locale, FooterContent> = {
   fr: {
     description:
-      "Iter Advisors, basé à Barcelone, Paris et Toulouse, est un cabinet spécialisé dans les services de DAF externalisé, de conseil stratégique et d\u2019accompagnement en investissements, fusions-acquisitions.",
+      "Iter Advisors, avec des équipes à Barcelone et Paris et une intervention à distance ou sur accord à Toulouse, est un cabinet spécialisé dans les services de DAF externalisé, de conseil stratégique et d\u2019accompagnement en investissements, fusions-acquisitions.",
     copyright: "Copyright \u00A9 2025-2026 Iter Advisors. Tous droits réservés.",
     trustfolio: "Note de 5/5 sur 31 avis sur notre profil",
     legalLinks: [
@@ -204,7 +204,7 @@ export const footerContent: Record<Locale, FooterContent> = {
   },
   en: {
     description:
-      "Iter Advisors, based in Barcelona, Paris and Toulouse, specializes in outsourced CFO services, strategic consulting and support for investments and mergers & acquisitions.",
+      "Iter Advisors, with teams in Barcelona and Paris, serving Toulouse remotely or on agreed visits, specializes in outsourced CFO services, strategic consulting and support for investments and mergers & acquisitions.",
     copyright: "Copyright \u00A9 2025-2026 Iter Advisors. All Rights Reserved.",
     trustfolio: "5/5 rating based on 31 reviews on our profile",
     legalLinks: [
@@ -232,7 +232,7 @@ export const footerContent: Record<Locale, FooterContent> = {
   },
   es: {
     description:
-      "Iter Advisors, con sedes en Barcelona, París y Toulouse, es una empresa especializada en servicios externos de CFO, consultoría estratégica y apoyo a inversiones, fusiones y adquisiciones.",
+      "Iter Advisors, con equipos en Barcelona y París e intervención en Toulouse a distancia o mediante visitas acordadas, es una empresa especializada en servicios externos de CFO, consultoría estratégica y apoyo a inversiones, fusiones y adquisiciones.",
     copyright: "Copyright \u00A9 2025-2026 Iter Advisors. Todos los derechos reservados.",
     trustfolio: "Puntuación de 5/5 basada en 31 opiniones en nuestro perfil",
     legalLinks: [

@@ -1037,10 +1037,10 @@ export default function DafPage({
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 sm:mb-10 max-w-2xl">
             {locale === "fr"
-              ? "Iter Advisors intervient depuis ses bureaux de Barcelone, Paris et Toulouse. D\u00e9couvrez nos \u00e9quipes locales et les sp\u00e9cificit\u00e9s de chaque march\u00e9."
+              ? "Nos équipes sont basées à Barcelone et Paris. À Toulouse, nous intervenons à distance et lors de visites convenues au cadrage."
               : locale === "en"
-                ? "Iter Advisors operates from its offices in Barcelona, Paris and Toulouse. Discover our local teams and the specificities of each market."
-                : "Iter Advisors opera desde sus oficinas en Barcelona, Par\u00eds y Toulouse. Descubra nuestros equipos locales y las especificidades de cada mercado."}
+                ? "Our teams are based in Barcelona and Paris. We serve Toulouse remotely and through visits agreed when scoping the assignment."
+                : "Nuestros equipos están en Barcelona y París. En Toulouse intervenimos a distancia y mediante visitas acordadas al definir la misión."}
           </p>
           <div className="grid sm:grid-cols-3 gap-3 sm:gap-4">
             {[

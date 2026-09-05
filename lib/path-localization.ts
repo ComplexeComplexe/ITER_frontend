@@ -4,7 +4,7 @@
  */
 
 import { Locale } from "./i18n";
-import { getCanonicalServiceSlug, SERVICE_URL_SLUG_BY_LOCALE, type ServicePageSlug } from "./strapi";
+import { getCanonicalServiceSlug, SERVICE_URL_SLUG_BY_LOCALE, type ServicePageSlug } from "./fallback-service-pages";
 
 // ─── Path segment mappings (canonical key → path per locale) ────────────────
 

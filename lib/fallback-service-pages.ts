@@ -43,6 +43,17 @@ export const SERVICE_URL_SLUG_BY_LOCALE: Record<Locale, Record<ServicePageSlug, 
   },
 };
 
+export function getCanonicalServiceSlug(locale: Locale, urlSlug: string): ServicePageSlug | null {
+  if (locale === "fr") {
+    return (SERVICE_PAGE_SLUGS as readonly string[]).includes(urlSlug) ? (urlSlug as ServicePageSlug) : null;
+  }
+  for (const canonical of SERVICE_PAGE_SLUGS) {
+    if (SERVICE_URL_SLUG_BY_LOCALE[locale][canonical] === urlSlug) return canonical;
+  }
+  return null;
+}
+
+
 /** List of URL slugs for generateStaticParams for a given locale. */
 export function getServiceSlugsForLocale(locale: Locale): string[] {
   return SERVICE_PAGE_SLUGS.map((s) => SERVICE_URL_SLUG_BY_LOCALE[locale][s]);
@@ -164,660 +175,265 @@ export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
   },
 
   "gestion-financiere-externalisee": {
-    heroTitle: "Gestion Financière Externalisée",
-    heroSubtitle: "Une direction financière à la carte, adaptée à la taille et aux enjeux de votre entreprise",
-    content: [
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "La gestion financière externalisée est devenue un levier incontournable pour les entreprises souhaitant mieux maîtriser leurs finances tout en se concentrant sur leur activité principale. Concrètement, il s'agit de confier à un expert externe tout ou partie des fonctions financières, du suivi de la trésorerie au reporting en passant par le contrôle de gestion.",
-          },
-        ],
-      },
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "Que vous soyez une startup, une PME ou une ETI, cette approche offre de nombreux avantages stratégiques : réduction des coûts fixes, accès à des compétences spécialisées et amélioration des processus financiers. Vous bénéficiez ainsi d'un accompagnement sur mesure pour piloter la santé financière de votre entreprise, sans les contraintes d'un recrutement en interne.",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        children: [
-          {
-            type: "text",
-            text: "Les enjeux en 2026",
-          },
-        ],
-      },
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "En 2026, le modèle du DAF externalisé s'est imposé comme standard pour les PME et startups entre 10 et 200 salariés. Face aux contraintes de recrutement (délai moyen 4 à 6 mois pour un DAF salarié, coût chargé 100 000 à 150 000 €/an), de plus en plus d'entreprises choisissent la flexibilité : un DAF senior 2 à 8 jours/mois, opérationnel en 1 à 2 semaines. L'enjeu de 2026 : structurer la finance avant de croître, pas après.",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        children: [
-          {
-            type: "text",
-            text: "Qu'est-ce que la gestion financière externalisée ?",
-          },
-        ],
-      },
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "La gestion financière externalisée consiste à déléguer la gestion de tout ou partie des fonctions financières à un prestataire externe, souvent un consultant en gestion financière ou un DAF externalisé. Les services pris en charge peuvent inclure :",
-          },
-        ],
-      },
-      {
-        type: "list",
-        format: "unordered",
-        children: [
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "La gestion de la trésorerie : suivi des flux financiers, anticipation des besoins en liquidité",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Le contrôle de gestion : analyse des coûts, gestion des marges et reporting",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "La supervision comptable : coordination avec l'expert-comptable, contrôle des déclarations fiscales et sociales",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "L'accompagnement stratégique : soutien dans les décisions de financement, levée de fonds, prévisions budgétaires",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        children: [
-          {
-            type: "text",
-            text: "Les avantages de la gestion financière externalisée",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        level: 3,
-        children: [
-          {
-            type: "text",
-            text: "Expertise et compétences spécialisées",
-          },
-        ],
-      },
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "L'un des principaux atouts de l'externalisation est l'accès immédiat à des compétences pointues :",
-          },
-        ],
-      },
-      {
-        type: "list",
-        format: "unordered",
-        children: [
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Analyse financière avancée : Calcul des marges, gestion des ratios financiers",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Optimisation fiscale : Réduction des charges fiscales et respect des obligations déclaratives",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Gestion des risques : Identification des risques financiers et mise en place de plans correctifs",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "heading",
-        level: 3,
-        children: [
-          {
-            type: "text",
-            text: "Réduction des coûts et flexibilité",
-          },
-        ],
-      },
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "Recruter un DAF en interne représente souvent un coût conséquent. Avec l'externalisation :",
-          },
-        ],
-      },
-      {
-        type: "list",
-        format: "unordered",
-        children: [
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Pas de coût de recrutement ou de formation",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Paiement à la mission : généralement entre 1 500 € et 5 000 € par mois selon l'étendue de la prestation",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Une flexibilité totale : le nombre de jours d'intervention peut être ajusté en fonction de vos besoins",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "heading",
-        level: 3,
-        children: [
-          {
-            type: "text",
-            text: "Amélioration des processus financiers",
-          },
-        ],
-      },
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "Un expert externe apporte non seulement ses compétences techniques mais aussi des solutions pour améliorer vos processus internes :",
-          },
-        ],
-      },
-      {
-        type: "list",
-        format: "unordered",
-        children: [
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Automatisation des tâches répétitives : facturation, rapprochements bancaires, suivi de trésorerie",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Mise en place d'outils de reporting : tableaux de bord financiers clairs et actionnables",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Optimisation des délais de clôture comptable : réduction des délais de clôture mensuelle et annuelle",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        children: [
-          {
-            type: "text",
-            text: "Les principaux services proposés",
-          },
-        ],
-      },
-      {
-        type: "list",
-        format: "unordered",
-        children: [
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Gestion de la trésorerie : suivi quotidien, prévisions et gestion des flux financiers",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Contrôle de gestion : mise en place d'indicateurs, analyse des marges, suivi budgétaire",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Reporting financier : tableaux de bord, rapports mensuels et outils d'analyse",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Accompagnement stratégique : structuration financière, préparation des levées de fonds",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Supervision comptable : coordination avec les experts-comptables et validation des clôtures",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        children: [
-          {
-            type: "text",
-            text: "Pourquoi choisir Iter Advisors ?",
-          },
-        ],
-      },
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "Iter Advisors propose une approche personnalisée et efficace pour répondre à vos besoins financiers. Nos atouts incluent :",
-          },
-        ],
-      },
-      {
-        type: "list",
-        format: "unordered",
-        children: [
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Une expertise sectorielle variée : Plus de 10 ans d'expérience auprès de PME, startups et ETI dans des secteurs comme la tech et les services",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Des outils performants : Nous utilisons des solutions modernes comme Pennylane, Spendesk ou Metabase pour un pilotage en temps réel",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Un accompagnement sur mesure : Que ce soit pour une mission ponctuelle ou un suivi régulier, nos prestations sont adaptées à vos objectifs",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Une coordination fluide : Nous collaborons avec vos équipes internes et vos partenaires comptables pour garantir une gestion optimisée",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-    faq: [
-      {
-        id: 1,
-        question: "À partir de combien de jours/mois ?",
-        answer: [
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "text",
-                text: "À partir de 2 jours par mois. Le nombre de jours dépend de votre complexité comptable, nombre de transactions et besoins en reporting.",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: 2,
-        question: "À qui s'adresse la gestion financière externalisée ?",
-        answer: [
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "text",
-                text: "Cette solution convient aux PME et ETI en croissance qui souhaitent structurer leurs processus financiers, aux startups en développement pour établir des indicateurs solides avant une levée de fonds, et à toute entreprise souhaitant bénéficier d'une expertise pointue sans coûts de recrutement.",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-    seo: {},
-  },
-
-  "comptabilite-externalisation": {
-    heroTitle: "Externalisation Comptabilité",
-    heroSubtitle: "Tenue, Déclarations & Clôture - Migration en 2 semaines",
-    content: [
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "Externalisez votre comptabilité : tenue des comptes, déclarations fiscales et clôture annuelle. Compatible avec Pennylane, Sage, QuickBooks et tous les logiciels cloud.",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        children: [
-          {
-            type: "text",
-            // CONTENUS-T13 (2026-08-31) — la requête est un verbe (« externaliser
-              // comptabilité », 90/mois P35) ; ce H2 générique devient la
-              // question telle qu'elle se pose.
-              text: "Pourquoi externaliser sa comptabilité en 2026 ?",
-          },
-        ],
-      },
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "En 2026, la comptabilité cloud s'est généralisée : Pennylane, Sage, QuickBooks et Xero capturent les transactions en temps réel, réduisant drastiquement les clôtures manuelles. L'enjeu pour les PME : tirer parti de cette automatisation pour passer d'une comptabilité de conformité (regarder le passé) à une comptabilité de pilotage (anticiper l'avenir). L'externalisation comptable moderne inclut le conseil fiscal, la gestion de TVA cross-border et l'optimisation des délais de clôture.",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        children: [
-          {
-            type: "text",
-            text: "Périmètre d'externalisation",
-          },
-        ],
-      },
-      {
-        type: "list",
-        format: "unordered",
-        children: [
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Tenue de comptabilité générale",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Déclarations TVA et fiscales",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Gestion de paie et charges sociales",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Clôture comptable annuelle",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "Migration en 2 semaines, sans interruption de service.",
-          },
-        ],
-      },
-    ],
-    // T#13 (2026-07-18) — FAQPage JSON-LD complété avec 6 Q&As SEO pour
-    // cibler "externalisation comptable", "comptable externalisé", "coût
-    // comptabilité externalisée" (PAA GSC identifiées dans l'analyse 16 kw).
-    faq: [
-      {
-        id: 1,
-        question: "Qu'est-ce que l'externalisation comptable ?",
-        answer: [
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "text",
-                text: "L'externalisation comptable consiste à confier tout ou partie de la fonction comptable à un prestataire externe : saisie des pièces comptables, rapprochements bancaires, déclarations de TVA, établissement de la liasse fiscale, gestion de la paie et production du reporting mensuel. Le prestataire travaille en liaison directe avec l'expert-comptable signataire et l'administration fiscale. C'est une alternative à l'embauche d'un comptable salarié, particulièrement adaptée aux PME, startups et ETI dont le volume de transactions ne justifie pas un poste à temps plein.",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: 2,
-        question: "Quel est le coût d'une comptabilité externalisée en 2026 ?",
-        answer: [
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "text",
-                text: "Le coût d'une comptabilité externalisée en 2026 varie selon le volume de transactions et le périmètre confié. Ordre de grandeur : micro-entreprise ou auto-entrepreneur (< 50 factures/mois) : 100 à 200 € HT/mois ; TPE (< 5 salariés, < 200 factures/mois) : 200 à 500 € HT/mois ; PME (5 à 50 salariés, comptabilité multi-entités) : 500 à 1 200 € HT/mois ; PME complexe (multi-pays, consolidation, reporting IFRS) : 1 200 à 2 500 € HT/mois. L'externalisation génère en moyenne 30 à 60 % d'économies par rapport à un comptable salarié (40 000 à 60 000 € brut/an hors charges) une fois le volume insuffisant pour justifier un temps plein.",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: 3,
-        question: "Quelle est la différence entre un expert-comptable et un comptable externalisé ?",
-        answer: [
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "text",
-                text: "L'expert-comptable est un professionnel réglementé inscrit à l'Ordre des Experts-Comptables (OEC) : il est le seul habilité légalement à signer le bilan annuel, la liasse fiscale et les comptes consolidés. Il engage sa responsabilité sur les comptes qu'il établit. Le comptable externalisé (ou comptable freelance) effectue les travaux courants — saisie, TVA, rapprochements, clôtures périodiques — sous la supervision et la responsabilité d'un expert-comptable signataire. Les deux rôles sont complémentaires : le comptable externalisé produit la donnée au quotidien, l'expert-comptable l'arrête et l'atteste en fin d'exercice. Chez Iter Advisors, nos prestations de comptabilité externalisée sont toujours réalisées sous couverture d'un expert-comptable.",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: 4,
-        question: "L'externalisation comptable est-elle fiable et sécurisée ?",
-        answer: [
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "text",
-                text: "Oui, à condition de respecter trois critères. Premièrement, la supervision d'un expert-comptable OEC qui co-signe les travaux et engage sa responsabilité professionnelle. Deuxièmement, un prestataire certifié ISO 27001 ou équivalent, avec des engagements contractuels sur la sécurité des données (hébergement France ou UE, chiffrement en transit et au repos, sauvegardes quotidiennes). Troisièmement, un contrat stipulant explicitement que vous restez propriétaire de l'intégralité de vos données comptables et fiscales — vous devez pouvoir reprendre vos données à tout moment sans surcoût. Un prestataire sérieux vous donne accès à vos journaux comptables en temps réel via un portail client ou un outil cloud partagé (Pennylane, Sage, QuickBooks).",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: 5,
-        question: "Quels sont les avantages de l'externalisation par rapport à un comptable interne ?",
-        answer: [
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "text",
-                text: "Cinq avantages majeurs par rapport à un comptable salarié : (1) Réduction de coût de 30 à 60 % — pas de charges patronales, pas de congés payés, pas d'équipement informatique dédié ; (2) Accès à une équipe multi-compétences plutôt qu'à une seule personne — un prestataire combine comptable, gestionnaire de paie, fiscaliste et référent TVA internationale ; (3) Continuité de service en cas d'absence, de maladie ou de départ — le prestataire gère la continuité sans interruption ; (4) Outils modernes inclus (Pennylane, Sage, QuickBooks) sans investissement initial ; (5) Évolutivité immédiate — le volume externalisé s'ajuste à la croissance de l'entreprise sans nouvelle embauche. Le principal inconvénient est la moindre immersion dans le quotidien de l'entreprise, compensée par un bon onboarding et des réunions de suivi régulières.",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: 6,
-        question: "Comment choisir son prestataire de comptabilité externalisée en 2026 ?",
-        answer: [
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "text",
-                text: "Six critères de sélection pour 2026 : (1) Agrément et supervision — le prestataire travaille-t-il sous couverture d'un expert-comptable OEC inscrit ? (2) Outils cloud modernes — maîtrisent-ils Pennylane, Sage ou QuickBooks, ou sont-ils encore sur des ERP vieillissants ? (3) Délais de clôture — peuvent-ils produire une balance mensuelle à J+5 et les déclarations de TVA dans les 48 h suivant la clôture ? (4) Périmètre complet — couvrent-ils la paie, la TVA, les DEB/DES, la liasse fiscale et le reporting de gestion, ou seulement la saisie ? (5) Références sectorielles — ont-ils des clients dans votre secteur (SaaS, e-commerce, industrie) ? (6) Transparence tarifaire — le contrat inclut-il un périmètre et un tarif fixes, ou des suppléments à chaque demande ?",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: 7,
-        question: "Quel est le délai de migration vers une comptabilité externalisée ?",
-        answer: [
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "text",
-                text: "Environ 2 semaines : 1 semaine pour audit et setup, 1 semaine pour test et validation. Chez Iter Advisors, la migration se fait sans interruption de service.",
-              },
-            ],
-          },
-        ],
-      },
-      // MAILLAGE-T6 (2026-08-31) — la page était isolée du cluster DAF alors
-      // que l'externalisation comptable est, chez la plupart de nos clients,
-      // la première marche vers une direction financière externalisée. La
-      // question rejoint la FAQ existante ; les cartes « autres expertises »
-      // du gabarit portent déjà les liens.
-      {
-        id: 8,
-        question: "Peut-on combiner comptabilité externalisée et DAF externalisé ?",
-        answer: [
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "text",
-                text: "C'est même la combinaison la plus fréquente chez nos clients. Externaliser la comptabilité règle la production des chiffres ; le DAF externalisé s'appuie dessus pour construire le prévisionnel, piloter la trésorerie et préparer les décisions. La comptabilité tourne en continu, la direction financière intervient quelques jours par mois — deux rythmes, une seule fonction finance.",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-    seo: {},
-  },
+  "heroTitle": "Gestion financière externalisée : organiser les opérations et le reporting",
+  "heroSubtitle": "Données fiables, calendrier de clôture et responsabilités : structurer le fonctionnement quotidien de la finance.",
+  "content": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "La gestion financière externalisée organise la circulation des données entre comptabilité, banque et équipes opérationnelles. Son objectif est de produire une information utilisable : un état des encaissements et décaissements, un reporting expliqué et un calendrier partagé."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Cette page décrit l’organisation opérationnelle de la fonction finance. Pour choisir le profil senior qui la pilote et examiner les modalités d’intervention, consultez notre offre de "
+        },
+        {
+          "type": "link",
+          "url": "/daf-externalise",
+          "children": [
+            {
+              "type": "text",
+              "text": "DAF externalisé"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "children": [
+        {
+          "type": "text",
+          "text": "Commencer par les données et les responsabilités"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Le diagnostic recense les entités, les comptes bancaires, les logiciels et les échéances. Il identifie les sources qui font référence, les écarts à résoudre et les personnes habilitées à valider les informations. L’expert-comptable conserve les responsabilités définies dans sa lettre de mission ; le dirigeant valide les arbitrages."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "children": [
+        {
+          "type": "text",
+          "text": "Installer un calendrier de clôture exploitable"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Une clôture de gestion suit des étapes connues : collecte des pièces, rapprochement des données, identification des écritures manquantes et revue des écarts. Chaque étape a un responsable et une date convenue. Le reporting précise les estimations provisoires pour éviter de présenter une donnée incomplète comme un résultat arrêté."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "children": [
+        {
+          "type": "text",
+          "text": "Relier trésorerie, reporting et opérations"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Le suivi des factures ouvertes et des échéances alimente le "
+        },
+        {
+          "type": "link",
+          "url": "/services/previsionnel-tresorerie",
+          "children": [
+            {
+              "type": "text",
+              "text": "prévisionnel de trésorerie"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ". Les équipes commerciales confirment les encaissements attendus, les achats précisent les engagements et la finance rapproche ces hypothèses de la banque."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Pour suivre les marges par produit ou activité et expliquer les écarts au budget, le "
+        },
+        {
+          "type": "link",
+          "url": "/services/controle-de-gestion-externalise",
+          "children": [
+            {
+              "type": "text",
+              "text": "contrôle de gestion"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " complète ce dispositif. Dans une activité industrielle, il faut aussi rapprocher les stocks et les données de production."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Consultez les missions de "
+        },
+        {
+          "type": "link",
+          "url": "/daf-externalise/industrie",
+          "children": [
+            {
+              "type": "text",
+              "text": "DAF externalisé pour l’industrie"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " pour le pilotage des coûts de revient, du BFR et des investissements."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "children": [
+        {
+          "type": "text",
+          "text": "Automatiser après avoir fiabilisé les flux"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Avant de connecter les outils, définissez les règles de rapprochement, les droits d’accès et les contrôles. Un flux automatisé doit signaler les exceptions et conserver une trace des corrections. La fréquence de mise à jour dépend des décisions à prendre, pas de la seule capacité du logiciel."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "children": [
+        {
+          "type": "text",
+          "text": "Livrables et revue de fonctionnement"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Le périmètre peut inclure une cartographie des flux, un calendrier de clôture, un registre des anomalies et un reporting mensuel accompagné de commentaires. La revue de direction documente les décisions, leur responsable et les points à suivre lors du prochain échange."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Le "
+        },
+        {
+          "type": "link",
+          "url": "/ressources/cas-clients/opti-digital-structuration-financement",
+          "children": [
+            {
+              "type": "text",
+              "text": "cas Opti Digital"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " décrit un accompagnement associant migration ERP, clôtures et reporting. Les résultats présentés restent propres à cette mission."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "children": [
+        {
+          "type": "text",
+          "text": "Définir le périmètre et le budget"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Ces travaux peuvent s’inscrire dans les "
+        },
+        {
+          "type": "link",
+          "url": "/daf-externalise/tarifs",
+          "children": [
+            {
+              "type": "text",
+              "text": "formules de DAF externalisé Iter Advisors"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", de 3 000 à 8 000 € HT par mois pour l’accompagnement récurrent. Le devis précise les livrables et la disponibilité ; les jours affichés sont des repères indicatifs. Une reprise de données ou un projet ponctuel est cadré séparément."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Sans durée d’engagement minimale, résiliable avec un préavis de 30 jours. Aucun dépassement n’est facturé sans avenant signé. Le premier échange permet de préciser la situation de départ, les échéances et les intervenants."
+        }
+      ]
+    }
+  ],
+  "faq": [],
+  "seo": {}
+},
 
   "accompagnement-levee-de-fond": {
     heroTitle: "Accompagnement Levée de Fonds",

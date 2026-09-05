@@ -1,9 +1,7 @@
-'use client';
-
 import { Locale } from "@/lib/i18n";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
-import { BlogPostLayout, type BlogPostLayoutProps, type TocItem, type AuthorInfo } from "@/components/blog";
+import { BlogPostLayout, type TocItem, type AuthorInfo } from "@/components/blog";
 import { articleSchema, faqPageSchema } from "@/lib/schemas";
 import { resolveAuthorUrl } from "@/lib/content/team";
 import type { CmsNavItem } from "@/lib/strapi";
@@ -26,6 +24,7 @@ interface BlogPostPageRefonteProps {
   author: AuthorInfo;
   readingTime: number;
   dateModified: string;
+  datePublished?: string;
   heroImage?: string;
   toc: TocItem[];
   tldr?: string | ReactNode;
@@ -57,6 +56,7 @@ export default function BlogPostPageRefonte({
   author,
   readingTime,
   dateModified,
+  datePublished,
   heroImage,
   toc,
   tldr,
@@ -87,7 +87,7 @@ export default function BlogPostPageRefonte({
     headline: title,
     description: metaDescription || dek,
     url: articleUrl,
-    datePublished: dateModified,
+    datePublished: datePublished ?? dateModified,
     dateModified: dateModified,
     authorName: author.name,
     authorUrl,
@@ -101,17 +101,17 @@ export default function BlogPostPageRefonte({
       {/* Schema.org JSON-LD — Article */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
       />
       {faqJsonLd && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }}
         />
       )}
 
       {/* Breadcrumb */}
-      <div className="bg-background pt-8 pb-4">
+      <div className="bg-background pt-28 sm:pt-32 pb-4">
         <div className="container">
           <Breadcrumb
             locale={locale}

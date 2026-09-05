@@ -18,7 +18,7 @@ const fallbackTitles: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
     "Prévisionnel de Trésorerie PME en 2026 | Iter Advisors",
   "gestion-financiere-externalisee":
-    "Gestion Financière Externalisée en 2026 | Iter Advisors",
+    "Gestion financière externalisée : opérations et reporting",
   "accompagnement-levee-de-fond":
     // T#11 (2026-07-13) — title enrichi pour ranker sur "accompagnement
     // levée de fonds" (pos 18,4 GSC, 99 impr, 0 clic) et
@@ -35,7 +35,7 @@ const fallbackDescriptions: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
     "Construisez un prévisionnel de trésorerie glissant sur 13 semaines : anticipez les tensions de cash, optimisez votre BFR et sécurisez votre runway.",
   "gestion-financiere-externalisee":
-    "DAF externalisé dès 2 jours/mois. Reporting mensuel, pilotage budgétaire et stratégie financière pour startups et PME. Barcelone, Paris, Toulouse. Devis gratuit.",
+    "Organisez les données, les clôtures et le reporting de votre entreprise : responsabilités, trésorerie et processus de gestion financière externalisée.",
   "accompagnement-levee-de-fond":
     "Levée de fonds clé en main : business plan, data room, due diligence et négociation investisseurs. +30 tours accompagnés, 100M EUR+ levés. Diagnostic gratuit.",
   "comptabilite-externalisation":

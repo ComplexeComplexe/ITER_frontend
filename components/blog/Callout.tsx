@@ -1,5 +1,3 @@
-'use client';
-
 import { ReactNode } from 'react';
 
 type CalloutType = 'info' | 'warning' | 'success' | 'danger';
@@ -12,10 +10,10 @@ interface CalloutProps {
 
 const calloutStyles: Record<CalloutType, { bg: string; border: string; titleColor: string; textColor: string }> = {
   info: {
-    bg: 'bg-blue-50',
-    border: 'border-l-blue-500',
-    titleColor: 'text-blue-900',
-    textColor: 'text-blue-800',
+    bg: 'bg-iter-violet/5',
+    border: 'border-l-iter-violet',
+    titleColor: 'text-foreground',
+    textColor: 'text-foreground/80',
   },
   warning: {
     bg: 'bg-yellow-50',

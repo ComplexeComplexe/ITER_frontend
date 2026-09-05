@@ -120,7 +120,7 @@ export default function Header({
           : "bg-transparent"
       }`}
     >
-      <div className="container grid grid-cols-[1fr_auto_1fr] items-center h-16 lg:h-[72px] gap-4">
+      <div className="container grid grid-cols-[1fr_auto] lg:grid-cols-[1fr_auto_1fr] items-center h-16 lg:h-[72px] gap-4">
         {/* Logo */}
         <Link href={homePath} className="flex items-center gap-2 group relative z-10 min-w-0">
           <Image

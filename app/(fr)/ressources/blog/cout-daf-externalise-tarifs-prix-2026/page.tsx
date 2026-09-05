@@ -1,358 +1,46 @@
-
-
-import { Metadata } from 'next';
-import Link from 'next/link';
-import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
-import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
-import MidArticleSoftCTA from '@/components/blog/MidArticleSoftCTA';
-
+import type { Metadata } from "next";
+import Link from "next/link";
+import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
+import ProseTable from "@/components/blog/ProseTable";
+import { getDafOffer } from "@/lib/content/daf-offer";
+const offer = getDafOffer("fr");
 export const metadata: Metadata = {
-  title: "Coût d'un DAF externalisé : tarifs et TJM 2026",
-  description: "Combien coûte un DAF externalisé ? Tarifs par profil (startup, PME, industrie), TJM moyen, formules de facturation et calcul du ROI. Grille de prix 2026 complète.",
-  alternates: {
-    canonical: "https://www.iteradvisors.com/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
+  "title": "Coût d’un DAF externalisé : comparer les budgets en 2026 | Iter Advisors",
+  "description": "Comparez forfait mensuel, tarif journalier et recrutement : périmètre, frais, disponibilité et calcul annuel. Méthode et exemples de budget explicites.",
+  "alternates": {
+    "canonical": "https://www.iteradvisors.com/ressources/blog/cout-daf-externalise-tarifs-prix-2026"
   },
-  openGraph: {
-    title: "Tarifs DAF externalisé 2026 — prix et grille | Iter Advisors",
-    description: "Combien coûte un DAF externalisé en 2026 ? Tarifs TJM, forfaits mensuels, grille de prix par profil et ROI.",
-    type: "article",
-    images: [{ url: "/images/blog/cout-daf-externalise-tarifs-prix-2026.webp", width: 1200, height: 630 }],
-  },
+  "openGraph": {
+    "title": "Coût d’un DAF externalisé : comparer les budgets en 2026",
+    "description": "Comparez forfait mensuel, tarif journalier et recrutement : périmètre, frais, disponibilité et calcul annuel. Méthode et exemples de budget explicites.",
+    "type": "article"
+  }
 };
-
-export default function CoutDafExternalisePage() {
-  return (
-    <BlogPostPageRefonte
-      locale="fr"
-      breadcrumbs={{
-        resourcesLabel: "Ressources",
-        resourcesHref: "/ressources",
-        blogLabel: "Blog",
-        blogHref: "/ressources/blog",
-      }}
-      slug="cout-daf-externalise-tarifs-prix-2026"
-      category="Tarifs"
-      title="Combien coûte un DAF externalisé en 2026 ? Tarifs, grille de prix et ROI"
-      dek="Grille de prix complète pour DAF externalisé 2026 : TJM, forfaits mensuels par séniorité, calcul du ROI. 30 à 60 % d'économie face au coût employeur d'un DAF salarié."
-      author={{
-        name: "Benjamin Ziza",
-        avatar: "/images/team/benjamin-ziza.webp",
-        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
-        url: "/a-propos/benjamin-ziza",
-      }}
-      readingTime={8}
-      dateModified="2026-05-01"
-      heroImage="/images/blog/covers/cout-daf-externalise-tarifs-prix-2026.svg"
-      toc={[
-        { id: "grille-tarifs", label: "1. Grille tarifaire complète" },
-        { id: "tjm-forfait", label: "2. TJM vs forfait mensuel" },
-        { id: "par-profil", label: "3. Tarifs par profil" },
-        { id: "inclus-exclus", label: "4. Ce qui est inclus / exclus" },
-        { id: "roi-calculator", label: "5. ROI calculator" },
-        { id: "budget-planning", label: "6. Budget planning selon votre CA" },
-      ]}
-      faqItems={[
-        {
-          question: "Combien coûte un DAF externalisé par mois ?",
-          answer: "Un DAF externalisé coûte en moyenne 2 500 à 8 000 €/mois selon le nombre de jours d'intervention. Pour 2 jours/mois (PME en phase de stabilisation) : 2 000–3 500 €. Pour 5 jours/mois (scale-up en croissance) : 4 500–6 500 €. Pour 10 jours/mois (entreprise en phase de levée de fonds) : 8 000–12 000 €. Ces tarifs incluent le reporting mensuel et la disponibilité pour les arbitrages stratégiques.",
-        },
-        {
-          question: "Quel est le taux journalier moyen (TJM) d'un DAF externalisé ?",
-          answer: "Le TJM d'un DAF externalisé senior se situe entre 900 et 1 500 € HT en France, selon l'expérience, le secteur et la région. À Paris, le TJM médian est d'environ 1 200 €. Pour un CFO international ou bilingue (France-Espagne), le TJM peut atteindre 1 500–1 800 €. Ce tarif journalier est 3 à 4 fois inférieur au coût réel d'un DAF salarié à temps plein (salaire + charges + management).",
-        },
-        {
-          question: "DAF externalisé prix par mois : comment est fixé le tarif ?",
-          answer: "Le tarif mensuel d'un DAF externalisé dépend de trois variables : (1) le nombre de jours d'intervention par mois (de 1 à 15 jours) ; (2) le niveau de séniorité et l'expertise sectorielle du profil ; (3) les missions confiées (reporting seul, trésorerie, levée de fonds, restructuration). La facturation se fait soit au forfait mensuel (engagement de jours), soit à la mission (projet ponctuel). Le forfait est plus économique pour une collaboration durable.",
-        },
-      ]}
-      relatedArticles={[
-        {
-          url: "/ressources/blog/daf-externalise-vs-daf-salarie",
-          category: "Comparaison",
-          title: "DAF externalisé vs DAF salarié : analyse complète",
-        },
-        {
-          url: "/ressources/blog/checklist-due-diligence-levee-de-fonds",
-          category: "Levée de fonds",
-          title: "Checklist due diligence financière : bien préparer sa levée de fonds",
-        },
-        {
-          url: "/ressources/blog/levee-de-fonds-guide",
-          category: "Levée de fonds",
-          title: "Lever des fonds : préparation fiscale, juridique et financière",
-        },
-        {
-          url: "/ressources/blog/essentiels-outils-tech-finance",
-          category: "Tech",
-          title: "Les essentiels outils tech pour moderniser votre département finance",
-        },
-      ]}
-    >
-      <h2 id="grille-tarifs">1. Grille tarifaire complète 2026</h2>
-      <p>
-        Voici les tarifs pratiqués sur le marché français en 2026. Pour les
-        formules et le périmètre inclus chez Iter Advisors,{" "}
-        <Link href="/daf-externalise/tarifs">
-          consulter la grille tarifaire d&apos;un DAF externalisé
-        </Link>{" "}
-        — cet article traite du marché, la grille traite de notre offre.
-      </p>
-
-      <ProseTable>
-          <thead>
-            <tr>
-              <th>Profil</th>
-              <th>Expérience</th>
-              <th>TJM</th>
-              <th>Forfait mensuel (2j/semaine)</th>
-              <th>Forfait annuel</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Junior DAF</strong></td>
-              <td>3-5 ans</td>
-              <td>€400-500</td>
-              <td>€3,200-4,000</td>
-              <td>€35-45k</td>
-            </tr>
-            <tr>
-              <td><strong>Sénior DAF</strong></td>
-              <td>7-10 ans</td>
-              <td>€600-750</td>
-              <td>€4,800-6,000</td>
-              <td>€55-70k</td>
-            </tr>
-            <tr>
-              <td><strong>Expert DAF / CFO</strong></td>
-              <td>12-20 ans</td>
-              <td>€800-1,000</td>
-              <td>€6,400-8,000</td>
-              <td>€75-100k</td>
-            </tr>
-            <tr>
-              <td><strong>Comptable externalisée</strong></td>
-              <td>3-5 ans</td>
-              <td>€300-400</td>
-              <td>€2,400-3,200</td>
-              <td>€25-35k</td>
-            </tr>
-          </tbody>
-        </ProseTable>
-
-      <Callout type="info" title="Pricing 2026">
-        Les repères de marché ci-dessus ne constituent pas une offre Iter Advisors. Notre accompagnement est facturé au périmètre mensuel, sans tarif journalier. Consultez la <Link href="/daf-externalise/tarifs#grille-tarifaire">grille officielle Iter Advisors</Link> pour comparer les formules, leurs livrables et les modalités.
-      </Callout>
-
-      <p>
-        À titre de comparaison, un <Link href="/ressources/blog/daf-externalise-vs-daf-interimaire">DAF intérimaire</Link> à temps plein coûte 20 000 à 30 000 € par mois — soit deux à trois fois plus cher. C'est le format adapté aux crises ou remplacements urgents, pas au pilotage récurrent.
-      </p>
-
-      <h2 id="tjm-forfait">2. TJM vs forfait mensuel</h2>
-      <p>
-        Deux modèles de facturation existent :
-      </p>
-      <ul>
-        <li><strong>À la journée (TJM)</strong> : Vous payez par jour prestation. Flex total. Bon si charge très variable.</li>
-        <li><strong>Forfait mensuel</strong> : X jours/semaine fixe par mois. Prévisibilité budgétaire. Recommandé pour PMEs en croissance.</li>
-      </ul>
-      <p>
-        <strong>Exemple (comparaison) :</strong>
-      </p>
-      <ul>
-        <li><strong>À la journée</strong> : 8 jours/mois × €600 (Sénior DAF) = €4,800/mois</li>
-        <li><strong>Forfait 2j/semaine</strong> : ~€5,000/mois (8-9 jours/mois)</li>
-      </ul>
-      <p>
-        En forfait, vous payez un peu plus mais c'est prévisible. En TJM, vous pouvez réduire si la charge baisse (ex: après clôture, vous avez besoin de seulement 1j/semaine).
-      </p>
-
-      <p>
-        Le détail des tarifs par rythme journalier (de 2 jours/mois à 3 jours/semaine) est dans notre guide des <Link href="/ressources/blog/daf-part-time-tarifs-missions-2026">tarifs d'un DAF à temps partagé</Link>.
-      </p>
-
-      <h2 id="par-profil">3. Tarifs par profil et cas d'usage</h2>
-      <p>
-        <strong>Startup €1-3M de CA :</strong>
-      </p>
-      <ul>
-        <li>Besoin : Junior DAF (1 jour/semaine) + Comptable interne (0.5 FTE)</li>
-        <li>Coût : Junior DAF = €2,000/mois + Comptable = €1,500/mois = €3,500/mois</li>
-        <li>Total annuel : €42k</li>
-      </ul>
-      <p>
-        <strong>PME croissance €5-15M de CA :</strong>
-      </p>
-      <ul>
-        <li>Besoin : Sénior DAF (2-3j/semaine) + Comptable interne (1 FTE)</li>
-        <li>Coût : Sénior DAF = €5,000/mois + Comptable = €2,500/mois = €7,500/mois</li>
-        <li>Total annuel : €90k</li>
-      </ul>
-      <p>
-        <strong>Scale-up €20-50M de CA :</strong>
-      </p>
-      <ul>
-        <li>Besoin : Expert DAF / CFO (3-4j/semaine) + Équipe comptable (2-3 FTE)</li>
-        <li>Coût : Expert DAF = €6,500/mois + Comptables = €6,000/mois = €12,500/mois</li>
-        <li>Total annuel : €150k</li>
-      </ul>
-
-      {/* Soft CTA mid-article (May 2026 design critique) — visitor is
-          in discovery mode after sections 1-3, before the harder
-          "inclus/exclus" details. Strong transactional CTA stays at
-          the end of the article. */}
-      <MidArticleSoftCTA locale="fr" />
-
-      <h2 id="inclus-exclus">4. Ce qui est inclus / exclus</h2>
-      <p>
-        <strong>Typiquement inclus :</strong>
-      </p>
-      <ul>
-        <li>☑️ Clôture mensuelle et trimestrielle</li>
-        <li>☑️ Reporting et tableaux de bord</li>
-        <li>☑️ Prévisions de trésorerie</li>
-        <li>☑️ Audit interne basique</li>
-        <li>☑️ Support équipe finance interne</li>
-        <li>☑️ Conseil en optimisation coûts / cash</li>
-        <li>☑️ Assistance levée de fonds (due diligence)</li>
-      </ul>
-      <p>
-        <strong>Pas inclus (surcoûts possibles) :</strong>
-      </p>
-      <ul>
-        <li>❌ Assistance juridique / fiscal complexe → +€50-100 TJM</li>
-        <li>❌ M&A (due diligence complète) → €10-30k forfait</li>
-        <li>❌ Audit externe (cabinet auditeur) → €5-15k selon taille</li>
-        <li>❌ Mise en place outils complexes (ERP, BI) → €30-50k projet</li>
-      </ul>
-
-      <StatGrid items={[
-        {
-          label: "Tarif moyen Sénior DAF",
-          value: "€55-70k",
-          sublabel: "par an (2-3j/semaine)",
-        },
-        {
-          label: "ROI moyen",
-          value: "4-6 mois",
-          sublabel: "Avant break-even vs surcharges",
-        },
-        {
-          label: "Flexibilité coûts",
-          value: "±30%",
-          sublabel: "Ajustement selon charge réelle",
-        },
-      ]} />
-
-      <h2 id="roi-calculator">5. ROI calculator</h2>
-      <p>
-        Voici comment calculer votre ROI d'un DAF externalisé :
-      </p>
-      <p>
-        <strong>Gains typiques (annualisés) :</strong>
-      </p>
-      <ul>
-        <li><strong>Temps libéré équipe interne</strong> : 200-300h/an × €50/h (coût FTE) = €10-15k économies</li>
-        <li><strong>Erreurs éliminées</strong> (retraitements, redéclarations) : €2-5k/an</li>
-        <li><strong>Optimisation BFR</strong> (gestion cash meilleure) : 30-60 jours de cash libérés = €20-50k (selon CA)</li>
-        <li><strong>Levée de fonds</strong> (due diligence gratuite) : évite €5-10k de cabinet externe</li>
-        <li><strong>Conformité / audits</strong> (zéro risque) : évite risques de pénalités (€5-20k potentiel)</li>
-      </ul>
-      <p>
-        <strong>Total gains année 1 : €42-100k</strong>
-      </p>
-      <p>
-        <strong>Coûts : DAF externalisé = €50-70k</strong>
-      </p>
-      <p>
-        <strong>ROI net : +€10-50k la première année, puis -€0 (break-even)</strong>
-      </p>
-
-      <Callout type="success" title="ROI réel">
-        En année 2 et après : le DAF externalisé ne coûte "rien" (gains = coûts). Vous gagnez principalement en tranquillité et en qualité de décision stratégique.
-      </Callout>
-
-      <h2 id="budget-planning">6. Budget planning selon votre CA</h2>
-      <p>
-        Voici une règle simple : <strong>Budget finance externalisée = 0.5-1 % de votre CA</strong>
-      </p>
-
-      <ProseTable>
-          <thead>
-            <tr>
-              <th>CA annuel</th>
-              <th>Profil DAF recommandé</th>
-              <th>Jours/semaine</th>
-              <th>Coût annuel</th>
-              <th>% CA</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>€1-2M</td>
-              <td>Junior DAF</td>
-              <td>0.5-1 jour</td>
-              <td>€20-25k</td>
-              <td>1-1.5 %</td>
-            </tr>
-            <tr>
-              <td>€2-5M</td>
-              <td>Sénior DAF</td>
-              <td>1-2 jours</td>
-              <td>€35-50k</td>
-              <td>0.7-1.5 %</td>
-            </tr>
-            <tr>
-              <td>€5-15M</td>
-              <td>Sénior DAF</td>
-              <td>2-3 jours</td>
-              <td>€55-80k</td>
-              <td>0.4-1 %</td>
-            </tr>
-            <tr>
-              <td>€15-50M</td>
-              <td>Expert DAF / CFO</td>
-              <td>3-4 jours</td>
-              <td>€80-120k</td>
-              <td>0.2-0.8 %</td>
-            </tr>
-          </tbody>
-        </ProseTable>
-
-      <InlineCta
-        title="Vous voulez un devis pour votre situation ?"
-        body="Envoyez-nous votre CA, nombre d'équipe finance actuelle, et complexité. Nous vous proposerons le profil DAF optimal et un devis personnalisé en 24h."
-        ctaLabel="Devis gratuit + conseil"
-        ctaHref="/contact?type=devis-daf"
-      />
-
-      <h2>Conclusion : un investissement très rentable</h2>
-      <p>
-        Un DAF externalisé à €50-70k/an pour une PME n'est pas un coût, c'est un investissement. Les retours attendus : information financière fiabilisée, trésorerie mieux pilotée, levée de fonds préparée en amont et échéances de conformité tenues.
-      </p>
-      <p>
-        <strong>Chez Iter Advisors :</strong>
-      </p>
-      <ul>
-        <li>DAF sénior à partir de €3,200/mois (2j/semaine)</li>
-        <li>Tous inclus : clôture, reporting, conseil, support équipe</li>
-        <li>Relais assuré par le cabinet en cas d'indisponibilité du DAF (engagement contractuel)</li>
-        <li>Contrat flexible, résiliation 30 jours</li>
-      </ul>
-      <p>
-        Vous êtes prêt à améliorer votre finance ? Planifiez une discussion avec nos experts.
-      </p>
-      {/* GSC-05 (2026-07-19) — maillage vers page pilier avec ancres variées
-          ("nos formules de DAF externalisé" + "découvrir notre service"). */}
-      <p>
-        Pour comparer les 3&nbsp;formules détaillées côte à côte (3&nbsp;000
-        à 8&nbsp;000&nbsp;€ HT/mois selon le scope) et voir la méthodologie qui
-        va avec, jetez un œil à{' '}
-        <Link href="/daf-externalise/tarifs">notre grille tarifaire</Link>.
-        Vous pouvez aussi{' '}
-        <Link href="/daf-externalise">découvrir notre service</Link> complet en
-        30 secondes via le bloc «&nbsp;L'essentiel&nbsp;» en haut de page.
-      </p>
-    </BlogPostPageRefonte>
-  );
-}
+export default function Page() { return (
+<BlogPostPageRefonte locale="fr"
+ breadcrumbs={{resourcesLabel:"Ressources",resourcesHref:"/ressources",blogLabel:"Blog",blogHref:"/ressources/blog"}}
+ author={{name:"Benjamin Ziza",avatar:"/images/team/benjamin-ziza.webp",jobTitle:"Associé fondateur — CFO & Investisseur, Iter Advisors",url:"/a-propos/benjamin-ziza"}}
+ slug={"cout-daf-externalise-tarifs-prix-2026"}
+ category={"Direction financière"}
+ title={"Coût d’un DAF externalisé : comparer les budgets en 2026"}
+ dek={"Comparez forfait mensuel, tarif journalier et recrutement : périmètre, frais, disponibilité et calcul annuel. Méthode et exemples de budget explicites."}
+ readingTime={5}
+ dateModified={"2026-09-05"}
+ datePublished={"2026-05-01"}
+ toc={[{"id": "grille-tarifs", "label": "Quel budget comparer ?"}, {"id": "tjm-forfait", "label": "Comparer un TJM et un forfait mensuel"}, {"id": "par-profil", "label": "Comparer des propositions de même périmètre"}, {"id": "inclus-exclus", "label": "Faire apparaître les frais et les exclusions"}, {"id": "roi-calculator", "label": "Comparer avec un recrutement sans promettre une économie"}, {"id": "budget-planning", "label": "Préparer une demande de devis utile"}]}
+ faqItems={[]}
+ relatedArticles={[{"url": "/daf-externalise/tarifs", "category": "Offre Iter", "title": "Formules et tarifs de DAF externalisé"}, {"url": "/daf-externalise/temps-partage", "category": "Accompagnement", "title": "Confier votre direction financière à temps partagé"}]}
+>
+<h2 id="grille-tarifs">Quel budget comparer ?</h2>
+<p>Le coût d’un DAF externalisé dépend du travail confié, de la séniorité nécessaire, de la complexité des données et de la disponibilité attendue. Une proposition limitée au reporting ne se compare pas directement à une direction financière couvrant financement, management et opérations internationales.</p><p>Chez Iter Advisors, l’accompagnement récurrent va de 3 000 à 8 000 € HT par mois. Les formules, leurs livrables et leurs conditions figurent sur la <Link href="/daf-externalise/tarifs">page des tarifs Iter Advisors</Link>. Cette fourchette décrit notre offre ; elle ne constitue pas une moyenne du marché. Les missions de transition et les projets ponctuels sont chiffrés séparément.</p>
+<h2 id="tjm-forfait">Comparer un TJM et un forfait mensuel</h2>
+<p>Avec un tarif journalier, demandez le nombre de jours facturables, la définition d’une journée et les conditions de dépassement. Avec un forfait, faites préciser les livrables, les échanges inclus, le niveau de disponibilité et les situations qui nécessitent un avenant.</p><p>Exemple de calcul, purement illustratif : une proposition à 800 € HT par jour pour six jours facturés chaque mois représente 4 800 € HT par mois, soit 57 600 € HT sur douze mois. Un forfait de 5 000 € HT par mois représente 60 000 € HT sur la même période. L’écart de 2 400 € HT n’indique pas lequel offre le meilleur service : le périmètre et les frais doivent encore être comparés. Le tarif de 800 € utilisé ici n’est ni une moyenne de marché ni une offre Iter.</p><p>Un rythme hebdomadaire ne correspond pas exactement à quatre semaines tous les mois. Le devis doit expliciter le calendrier et le nombre de jours retenus ; les frais de déplacement éventuels se calculent à part.</p>
+<h2 id="par-profil">Comparer des propositions de même périmètre</h2>
+<ProseTable><thead><tr><th>Point à examiner</th><th>Question à poser</th></tr></thead><tbody><tr><td>Profil</td><td>Qui réalise le travail et qui le relit ?</td></tr><tr><td>Livrables</td><td>Quels documents sont fournis, à quelle fréquence et avec quelles données ?</td></tr><tr><td>Disponibilité</td><td>Quels échanges, réunions et urgences sont couverts ?</td></tr><tr><td>Continuité</td><td>Comment se passe un remplacement et où se trouve l’historique ?</td></tr><tr><td>Évolution</td><td>Quand faut-il un avenant ou un devis de projet ?</td></tr></tbody></ProseTable><p>Pour une startup, le besoin peut porter sur le runway et les investisseurs ; pour une PME établie, sur les marges et le cycle d’exploitation. Précisez votre situation avant de comparer les prix. Notre <Link href="/ressources/blog/choisir-cabinet-daf-externalise">grille de choix d’un cabinet</Link> complète ces questions.</p>
+<h2 id="inclus-exclus">Faire apparaître les frais et les exclusions</h2>
+<p>Le budget annuel doit distinguer les honoraires récurrents, les projets ponctuels, les licences des outils, les frais de déplacement et le travail éventuel de reprise des données. Demandez également qui conserve les accès, les fichiers et la documentation à la fin de la mission.</p><p>Chez Iter, le forfait porte sur le périmètre convenu. Aucun dépassement n’est facturé sans avenant signé. Les modalités de déplacement sont précisées au devis. {offer.commitment}</p>
+<h2 id="roi-calculator">Comparer avec un recrutement sans promettre une économie</h2>
+<p>Pour un poste salarié, le budget comprend le salaire, les charges employeur, les éventuels frais de recrutement, les outils et le temps de management. Pour une prestation, il comprend les honoraires et les coûts additionnels identifiés. Ces deux modèles ne fournissent pas nécessairement la même disponibilité.</p><p>La décision doit porter sur le besoin : une présence quotidienne durable peut justifier un recrutement ; un périmètre récurrent plus limité peut correspondre au temps partagé. Aucun pourcentage d’économie ne s’applique à toutes les entreprises. Voir le <Link href="/ressources/blog/daf-externalise-vs-daf-salarie">comparatif externalisation et recrutement</Link>.</p><p>Pour évaluer un retour sur investissement, séparez les économies effectivement constatées, la trésorerie libérée et les gains attendus. Évitez de compter deux fois un même effet ou d’attribuer au seul DAF un résultat qui dépend aussi des équipes commerciales et opérationnelles.</p>
+<h2 id="budget-planning">Préparer une demande de devis utile</h2>
+<p>Présentez le nombre d’entités, les outils utilisés, la qualité des données, les échéances et les décisions à préparer. Un chiffre d’affaires seul ne suffit pas : deux entreprises de même taille peuvent avoir des besoins très différents.</p><p>Le <Link href="/ressources/blog/daf-part-time-tarifs-missions-2026">guide d’organisation d’une mission à temps partagé</Link> aide à définir le calendrier et les responsabilités. Vous pouvez ensuite <Link href="/contact#daf">décrire votre besoin</Link> pour cadrer un périmètre et un budget.</p>
+</BlogPostPageRefonte>); }

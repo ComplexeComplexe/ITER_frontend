@@ -316,7 +316,7 @@ export default async function Page() {
                 // parcours réel : 8 à 15 jours du premier échange au démarrage.
                 { label: "Délai d'intervention", text: "mission démarrée sous 8 à 15 jours." },
                 { label: "Pour qui", text: "startups VC-backed, scale-ups Series A/B, SaaS, deep-tech, e-commerce." },
-                { label: "Bureaux", text: "Paris, Toulouse, Barcelone — interventions hybrides." },
+                { label: "Équipes", text: "Paris et Barcelone. Toulouse : accompagnement à distance et visites sur accord." },
                 { label: "Différence vs DAF externalisé", text: "même métier, terminologie anglo-saxonne plus utilisée par les startups VC." },
               ].map((p, i) => (
                 <li
@@ -475,8 +475,8 @@ export default async function Page() {
                   text: "Vous structurez votre fonction finance avant d'embaucher un CFO salarié — reporting mensuel, budget glissant, contrôle de gestion.",
                 },
                 {
-                  title: "CEO ETI en transformation",
-                  text: "Vous avez besoin d'un senior fractional sur 6 mois pour piloter une transition (départ DAF, M&A, restructuration finance).",
+                  title: "SaaS en recherche de rentabilité",
+                  text: "Vous devez rapprocher revenus récurrents, coûts d’acquisition et dépenses engagées pour arbitrer les recrutements et préserver votre trésorerie.",
                 },
                 {
                   title: "Founder espagnol s'implantant en France",

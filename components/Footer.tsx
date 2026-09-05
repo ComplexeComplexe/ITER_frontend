@@ -24,7 +24,7 @@ import { navigation, footerContent, languageSwitcher } from "@/lib/navigation";
  */
 const POPULAR_ARTICLES = {
   fr: [
-    { href: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", title: "Coût d'un DAF externalisé" },
+    { href: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", title: "Comparer le budget d’un DAF" },
     { href: "/ressources/blog/daf-externalise-vs-daf-salarie", title: "DAF externalisé vs salarié" },
     { href: "/ressources/blog/checklist-due-diligence-levee-de-fonds", title: "Due diligence & Levée de fonds" },
     { href: "/ressources/blog/daf-drh-externalises-synergie", title: "DRH et synergie d'équipe" },
@@ -55,7 +55,7 @@ export default function Footer({ locale }: { locale: Locale }) {
   // inconsistent / templated stack to Google. The footer's nav is
   // already exposed via the page's main schema graph (Organization +
   // WebSite) and the user-facing footer markup itself.
-  const serviceNav = nav.find((n) => n.title === "Services" || n.title === "Servicios");
+  const serviceNav = nav.find((n) => n.href === (locale === "fr" ? "/services" : `/${locale}/services`));
   const resourceNav = nav.find(
     (n) => n.title === "Ressources" || n.title === "Resources" || n.title === "Recursos"
   );
@@ -64,7 +64,7 @@ export default function Footer({ locale }: { locale: Locale }) {
     <>
       <footer className="bg-iter-dark py-12 sm:py-16">
         <div className="container px-4 sm:px-6">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10 mb-8 sm:mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-6 sm:gap-8 md:gap-10 mb-8 sm:mb-12">
           {/* Brand */}
           <div className="col-span-2 sm:col-span-1">
             <Image
@@ -74,7 +74,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               height={14}
               className="mb-3 brightness-0 invert"
             />
-            <p className="text-white/50 text-xs sm:text-sm leading-relaxed mb-3">
+            <p className="text-white/70 text-xs sm:text-sm leading-relaxed mb-3">
               {content.description}
             </p>
             <div className="flex items-center gap-2 mb-3">
@@ -85,19 +85,18 @@ export default function Footer({ locale }: { locale: Locale }) {
                   </svg>
                 ))}
               </div>
-              <span className="text-white/40 text-xs">5/5 Trustfolio</span>
+              <span className="text-white/70 text-xs">5/5 Trustfolio</span>
             </div>
             {/* Company Legal Details — E-E-A-T trust signals.
                 Iter Advisors S.L. is registered in Spain (NIF B42960849);
-                Paris and Toulouse are operational offices, the HQ is in
-                Barcelona. */}
+                Barcelona is the headquarters; areas served are listed separately. */}
             <address className="not-italic text-white/60 text-xs leading-relaxed mt-3 space-y-1">
               <p className="font-semibold text-white/80">Iter Advisors S.L.</p>
               <p className="flex items-start gap-1.5">
                 <MapPin size={12} className="shrink-0 mt-0.5 text-iter-chartreuse/80" aria-hidden />
-                <span>Carrer Casp, 54, 5-1° · 08010 Barcelona · Paris · Toulouse</span>
+                <span>Carrer Casp, 54, 5-1° · 08010 Barcelona</span>
               </p>
-              <p className="text-white/40">NIF&nbsp;: B42960849</p>
+              <p className="text-white/70">NIF&nbsp;: B42960849</p>
               <p>
                 <a
                   href="mailto:contact@iteradvisors.com"
@@ -116,9 +115,9 @@ export default function Footer({ locale }: { locale: Locale }) {
                 {serviceNav.title}
               </p>
               <ul className="space-y-1.5 sm:space-y-2.5">
-                {serviceNav.children.map((item) => (
+                {[...(locale === "fr" ? [{ text: "DAF externalisé", href: "/daf-externalise" }, { text: "Tarifs du DAF externalisé", href: "/daf-externalise/tarifs" }] : []), ...serviceNav.children].map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="text-white/50 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2">
+                    <Link href={item.href} className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2">
                       {item.text}
                     </Link>
                   </li>
@@ -136,7 +135,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               <ul className="space-y-1.5 sm:space-y-2.5">
                 {resourceNav.children.map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="text-white/50 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2">
+                    <Link href={item.href} className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2">
                       {item.text}
                     </Link>
                   </li>
@@ -163,7 +162,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-white/50 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2"
+                      className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2"
                     >
                       {item.text}
                     </Link>
@@ -176,7 +175,7 @@ export default function Footer({ locale }: { locale: Locale }) {
           {/* Locations */}
           <div>
             <p className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
-              {locale === "fr" ? "Nos bureaux" : locale === "en" ? "Our offices" : "Nuestras oficinas"}
+              {locale === "fr" ? "Zones d’intervention" : locale === "en" ? "Where we work" : "Dónde intervenimos"}
             </p>
             <div className="space-y-2 sm:space-y-3">
               {content.locations.map((loc) => (
@@ -184,7 +183,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                   <MapPin size={12} className="text-iter-chartreuse mt-0.5 shrink-0 sm:w-4 sm:h-4" />
                   <div>
                     <span className="text-white/70 text-xs sm:text-sm block group-hover:text-iter-chartreuse transition-colors">{loc.city}</span>
-                    <span className="text-white/40 text-xs">{loc.country}</span>
+                    <span className="text-white/70 text-xs">{loc.country}</span>
                   </div>
                 </Link>
               ))}
@@ -192,9 +191,10 @@ export default function Footer({ locale }: { locale: Locale }) {
             <div className="flex items-center gap-3 mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
               <a
                 href="https://www.linkedin.com/company/iter-advisors/"
+                aria-label="Iter Advisors sur LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer me"
-                className="inline-flex items-center gap-2 text-white/50 hover:text-iter-chartreuse transition-colors text-xs sm:text-sm"
+                className="inline-flex min-h-11 min-w-11 items-center gap-2 text-white/70 hover:text-iter-chartreuse transition-colors text-xs sm:text-sm"
               >
                 <Linkedin size={14} className="sm:w-4 sm:h-4" />
                 <span className="hidden sm:inline">LinkedIn</span>
@@ -214,7 +214,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                   <Link
                     key={lang}
                     href={localePath}
-                    className="flex items-center gap-2 text-white/50 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors"
+                    className="flex items-center gap-2 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors"
                   >
                     <Globe size={12} className="sm:w-4 sm:h-4" />
                     <span>{data.label}</span>
@@ -232,7 +232,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               <ul className="space-y-1 mb-4">
                 {content.editorialLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-white/40 text-xs hover:text-white/60 transition-colors">
+                    <Link href={link.href} className="text-white/70 text-xs hover:text-white/60 transition-colors">
                       {link.text}
                     </Link>
                   </li>
@@ -244,7 +244,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               <ul className="space-y-1">
                 {content.legalLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-white/40 text-xs hover:text-white/60 transition-colors line-clamp-2">
+                    <Link href={link.href} className="text-white/70 text-xs hover:text-white/60 transition-colors line-clamp-2">
                       {link.text}
                     </Link>
                   </li>
@@ -254,18 +254,18 @@ export default function Footer({ locale }: { locale: Locale }) {
           </div>
 
           {/* Popular Articles */}
-          <div>
+          <div className="col-span-full">
             <p className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
               {locale === "fr" ? "Articles populaires" : locale === "en" ? "Popular Articles" : "Artículos populares"}
             </p>
-            <ul className="space-y-1.5 sm:space-y-2.5">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-5">
               {POPULAR_ARTICLES[locale].map((article) => {
                 const articleHref = article.href;
                 return (
                   <li key={article.href}>
                     <Link
                       href={articleHref}
-                      className="text-white/50 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2"
+                      className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2"
                     >
                       {article.title}
                     </Link>
@@ -280,7 +280,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             {locale === "fr" && (
               <Link
                 href="/fractional-cfo-startups"
-                className="text-white/40 text-xs hover:text-iter-chartreuse transition-colors mt-3 inline-block"
+                className="text-white/70 text-xs hover:text-iter-chartreuse transition-colors mt-3 inline-block"
               >
                 Fractional CFO startups →
               </Link>
@@ -290,7 +290,7 @@ export default function Footer({ locale }: { locale: Locale }) {
 
           {/* Bottom bar */}
           <div className="pt-6 sm:pt-8 border-t border-white/10 flex flex-col items-center justify-center">
-            <p className="text-white/30 text-xs text-center">{content.copyright}</p>
+            <p className="text-white/70 text-xs text-center">{content.copyright}</p>
           </div>
         </div>
       </footer>

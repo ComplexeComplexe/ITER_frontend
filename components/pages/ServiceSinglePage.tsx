@@ -78,6 +78,7 @@ export default function ServiceSinglePage({
 
   const basePath = locale === "fr" ? `/services` : `/${locale}/services`;
   const serviceUrl = `${basePath}/${slug || ""}`;
+  const updatedOperations = locale === "fr" && slug === "gestion-financiere-externalisee";
 
   const sections = groupBlocksByHeading(page.content);
 
@@ -128,6 +129,7 @@ export default function ServiceSinglePage({
               description: page.heroSubtitle || breadcrumbTitle,
               locale,
               author: FINANCE_AUTHOR,
+              dateModified: updatedOperations ? "2026-09-05" : undefined,
             })
           ),
         }}
@@ -175,7 +177,7 @@ export default function ServiceSinglePage({
                 {page.heroSubtitle}
               </p>
             )}
-            <PageByline locale={locale} author={FINANCE_AUTHOR} className="mb-6 sm:mb-8" />
+            <PageByline locale={locale} author={FINANCE_AUTHOR} dateModified={updatedOperations ? "2026-09-05" : undefined} dateLabel={updatedOperations ? "5 septembre 2026" : undefined} className="mb-6 sm:mb-8" />
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 href={BOOKING_URL}

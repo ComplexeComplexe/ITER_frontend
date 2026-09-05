@@ -1,5 +1,3 @@
-'use client';
-
 import { TocItem } from './BlogPostLayout';
 
 interface TableOfContentsProps {
@@ -23,7 +21,7 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className="text-sm text-blue-600 transition-colors hover:text-blue-800 hover:underline"
+              className="text-sm text-iter-violet transition-colors hover:text-iter-violet hover:underline"
             >
               {item.label}
             </a>
