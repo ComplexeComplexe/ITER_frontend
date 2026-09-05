@@ -130,9 +130,11 @@ function CaseStudyCardWrapper({
 export default function CaseStudiesPage({
   locale,
   cmsNavigation,
+  asSection = false,
 }: {
   locale: Locale;
   cmsNavigation?: CmsNavItem[];
+  asSection?: boolean;
 }) {
   const t = getCaseStudiesContent(locale);
   const [filter, setFilter] = useState<"all" | "conseil" | "ecommerce">("all");
@@ -142,21 +144,22 @@ export default function CaseStudiesPage({
       ? t.caseStudies
       : t.caseStudies.filter((cs) => cs.sector === filter);
 
-  return (
-    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
+  const Heading = asSection ? "h2" : "h1";
+  const content = (
+    <>
       {/* Hero */}
-      <section className="bg-background pt-32 pb-16">
+      <section className={`bg-background ${asSection ? "pt-8" : "pt-32"} pb-16`}>
         <div className="container">
-          <Breadcrumb
+          {!asSection && <Breadcrumb
             locale={locale}
             items={[
               { label: t.resourcesLabel, href: t.resourcesHref },
               { label: t.breadcrumbLabel },
             ]}
-          />
-          <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-3xl mb-6">
+          />}
+          <Heading className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-3xl mb-6">
             {t.h1}
-          </h2>
+          </Heading>
           <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
             {t.intro}
           </p>
@@ -203,7 +206,9 @@ export default function CaseStudiesPage({
         </div>
       </section>
 
-      <CTASection locale={locale} />
-    </PageLayout>
+      {!asSection && <CTASection locale={locale} />}
+    </>
   );
+
+  return asSection ? content : <PageLayout locale={locale} cmsNavigation={cmsNavigation}>{content}</PageLayout>;
 }

@@ -13,12 +13,12 @@ import TestimonialsListingPage from "@/components/pages/TestimonialsListingPage"
 const t = {
   fr: {
     title: "Cas Clients DAF | Iter Advisors",
-    description: "Cas clients DAF externalisé : témoignages PME, startups, scale-ups. 5/5 sur Trustfolio (31 avis vérifiés). Résultats réels, croissance garantie.",
+    description: "Cas clients DAF externalisé : témoignages PME, startups, scale-ups. 5/5 sur Trustfolio (31 avis vérifiés). Missions, accompagnement et résultats documentés.",
     breadcrumb: "Cas clients",
   },
   en: {
     title: "Case Studies CFO | Iter Advisors",
-    description: "CFO outsourcing case studies: testimonials from SMEs, startups, scale-ups. 5/5 on Trustfolio (31 verified reviews). Real results, growth guaranteed.",
+    description: "CFO outsourcing case studies: testimonials from SMEs, startups, scale-ups. 5/5 on Trustfolio (31 verified reviews). Engagements, financial leadership and documented results.",
     breadcrumb: "Case Studies",
   },
   es: {
@@ -78,7 +78,7 @@ function CasClientsPageContent({ locale }: { locale: Locale }) {
 
       {/* Case Studies Section */}
       <div className="bg-background">
-        <CaseStudiesPage locale={locale} cmsNavigation={undefined} />
+        <CaseStudiesPage locale={locale} cmsNavigation={undefined} asSection />
       </div>
 
       {/* Testimonials Section */}
