@@ -86,7 +86,7 @@ export const dafPillar = {
 
   hero: {
     h1: "DAF externalisé pour PME et startups : une direction financière senior, sans recruter",
-    lead: `Un directeur financier expérimenté rejoint votre équipe de 1 à 8 jours par mois pour piloter trésorerie, reporting, budget et financement. De ${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois selon le rythme, démarrage en ${DELAIS.missionDemarree}, sans durée d'engagement minimale (préavis de ${ENGAGEMENT.preavisJours} jours).`,
+    lead: `Un directeur financier expérimenté rejoint votre équipe pour piloter trésorerie, reporting, budget et financement. De ${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois selon le périmètre confié ; disponibilité indicative de 1 à 8 jours par mois. Démarrage en ${DELAIS.missionDemarree}, sans durée d'engagement minimale (préavis de ${ENGAGEMENT.preavisJours} jours).`,
     proofs: [
       `${CLIENTS_ACCOMPAGNES} entreprises accompagnées`,
       `${FONDS_LEVES} levés par nos clients depuis ${ANNEE_FONDATION}`,
