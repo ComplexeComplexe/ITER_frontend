@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { getToolBySlug, getToolsByCategory, tools } from "@/data/tools";
 import CategoryPage from "@/components/Outils/CategoryPage";
 import ToolPage from "@/components/Outils/ToolPage";
@@ -13,9 +13,9 @@ const categoryMeta = {
       "Comparatif des meilleurs logiciels comptabilité pour PME 10-100 salariés. Avis d'experts DAF sur Pennylane, Sage, Cegid. Prix, implémentation, avantages.",
   },
   "logiciels-tresorerie": {
-    title: "Agicap vs Fygr — Logiciels trésorerie PME | Iter Advisors",
+    title: "Agicap vs Okimia (ex-Fygr) — Logiciels trésorerie PME | Iter Advisors",
     description:
-      "Guide des logiciels trésorerie pour startups et PME. Avis d'expert sur Agicap, Fygr, Kyriba. Prévisions, DSO/DPO, cash flow automation.",
+      "Guide des logiciels trésorerie pour startups et PME. Avis d'expert sur Agicap, Okimia (ex-Fygr), Kyriba. Prévisions, DSO/DPO, cash flow automation.",
   },
   "gestion-depenses": {
     title: "Gestion des dépenses : Spendesk vs Pleo 2026 | Iter Advisors",

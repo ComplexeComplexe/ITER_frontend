@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 import { getDocumentedCase } from "@/lib/content/documented-cases";
 import { Locale } from "@/lib/i18n";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 import { getCaseStudiesContent, type CaseStudy } from "@/lib/content/case-studies";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";

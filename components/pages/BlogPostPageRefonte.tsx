@@ -1,10 +1,11 @@
+import { BLOG_ILLUSTRATIONS } from "@/lib/blog-illustrations";
 import { Locale } from "@/lib/i18n";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import { BlogPostLayout, type TocItem, type AuthorInfo } from "@/components/blog";
 import { articleSchema, faqPageSchema } from "@/lib/schemas";
 import { resolveAuthorUrl } from "@/lib/content/team";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 import { ReactNode } from "react";
 
 interface BlogPostPageRefonteProps {
@@ -83,6 +84,7 @@ export default function BlogPostPageRefonte({
   // propagé au JSON-LD Article. Amélioration silencieuse mais critique
   // sur les articles YMYL finance. Cf. reco-seo-iteradvisors.md §2.1
   // "Signature auteur E-E-A-T sur tous les articles".
+  const bodyImage = slug ? BLOG_ILLUSTRATIONS[slug] : undefined;
   const structuredData = articleSchema({
     headline: title,
     description: metaDescription || dek,
@@ -91,7 +93,7 @@ export default function BlogPostPageRefonte({
     dateModified: dateModified,
     authorName: author.name,
     authorUrl,
-    imageSrc: heroImage,
+    imageSrc: bodyImage?.src ?? heroImage,
   });
 
   const faqJsonLd = faqItems && faqItems.length > 0 ? faqPageSchema(faqItems) : null;
@@ -129,13 +131,15 @@ export default function BlogPostPageRefonte({
 
       {/* Blog article using new layout */}
       <BlogPostLayout
+        locale={locale}
+        articleUrl={articleUrl}
         category={category}
         title={title}
         dek={dek}
         author={{ ...author, url: authorUrl }}
         readingTime={readingTime}
         dateModified={dateModified}
-        heroImage={heroImage}
+        bodyImage={bodyImage}
         toc={toc}
         tldr={tldr}
         relatedArticles={relatedArticles}

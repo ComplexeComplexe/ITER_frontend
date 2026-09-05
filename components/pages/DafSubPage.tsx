@@ -7,7 +7,7 @@ import { Locale } from "@/lib/i18n";
 import { BOOKING_URL } from "@/lib/navigation";
 import { DafSubContent } from "@/lib/content/daf-sub";
 import { parseDafSubFaqItem } from "@/lib/daf-sub-schema";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import TestimonialsSection from "@/components/TestimonialsSection";

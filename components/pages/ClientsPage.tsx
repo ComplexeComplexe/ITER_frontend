@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Locale } from "@/lib/i18n";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 import { BOOKING_URL } from "@/lib/navigation";
 import {
   clients,

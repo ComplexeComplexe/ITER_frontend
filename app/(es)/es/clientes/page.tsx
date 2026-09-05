@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import ClientsPage from "@/components/pages/ClientsPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { getClientsPageContent } from "@/lib/content/clients";
 
 const content = getClientsPageContent("es");

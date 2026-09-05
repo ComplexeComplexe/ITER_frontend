@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { Callout, StatGrid, ProseTable, InlineCta } from "@/components/blog";
 
 export const metadata: Metadata = {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Locale } from "@/lib/i18n";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 import { type HRServiceContent, HR_SERVICE_SLUGS, hrServices } from "@/lib/content/hr-services";
 import { faqPageSchema } from "@/lib/schemas";
 import { editorialWebPageSchema, HR_AUTHOR } from "@/lib/schemas/editorial";

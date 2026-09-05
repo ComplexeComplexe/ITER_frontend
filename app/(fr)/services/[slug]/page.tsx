@@ -8,7 +8,7 @@ import {
   type ServicePageSlug,
 } from "@/lib/fallback-service-pages";
 import { getStaticServicePage } from "@/lib/fallback-service-pages-localized";
-import { serviceHreflangDisabled } from "@/lib/strapi";
+import { serviceHreflangDisabled } from "@/lib/static-content";
 import { buildMetadata } from "@/lib/metadata";
 
 const basePath = "/services";

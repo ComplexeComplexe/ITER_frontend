@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { Locale } from "./i18n";
 import { getLocalizedPath } from "./path-localization";
-import { strapiFetch, STRAPI_ENABLED, type StrapiSeo, type StrapiSingleResponse, strapiMediaUrl } from "./strapi";
+
 
 const localeMap: Record<Locale, string> = {
   fr: "fr_FR",
@@ -185,42 +185,7 @@ export async function buildStrapiMetadata({
   localizedPaths?: { fr: string; en: string; es: string };
   disableHreflang?: Locale[];
 }): Promise<Metadata> {
-  try {
-    const res = await strapiFetch<StrapiSingleResponse<{ seo: StrapiSeo | null }>>(
-      endpoint,
-      { "populate[seo][populate]": "ogImage" },
-      { locale }
-    );
-
-    const seo = res.data?.seo;
-    if (seo) {
-      const ogImage = seo.ogImage ? strapiMediaUrl(seo.ogImage) : undefined;
-      const meta = buildMetadata({
-        locale,
-        title: seo.metaTitle || fallbackTitle,
-        description: seo.metaDescription || fallbackDescription,
-        path,
-        noindex: seo.noIndex || false,
-        structuredData: seo.structuredData || null,
-        localizedPaths,
-        disableHreflang,
-      });
-
-      // Add OG image if available
-      if (ogImage && meta.openGraph && typeof meta.openGraph === "object") {
-        (meta.openGraph as Record<string, unknown>).images = [{ url: ogImage }];
-      }
-
-      return meta;
-    }
-  } catch (e) {
-    // T1/T2 (mai 2026): only log when STRAPI_ENABLED — the local
-    // `fallbackTitle` / `fallbackDescription` are now the source of truth,
-    // so a "miss" against a disabled CMS is the expected fast path.
-    if (STRAPI_ENABLED) {
-      console.warn(`Failed to fetch Strapi SEO for ${endpoint}:`, e);
-    }
-  }
+  // Local titles and descriptions are the sole published SEO source.
 
   return buildMetadata({
     locale,
@@ -254,76 +219,7 @@ export async function buildStrapiCollectionMetadata({
   localizedPaths?: { fr: string; en: string; es: string };
   disableHreflang?: Locale[];
 }): Promise<Metadata> {
-  try {
-    // Use the same flat populate[n] syntax as getBlogArticleBySlug (the
-    // populate[seo][populate]=ogImage form returned empty in Strapi v5 cloud,
-    // which is why blog post <title>s were rendering "slug | Iter Advisors"
-    // — TICKET SEO-01). We also pull title and excerpt as natural fallbacks.
-    const res = await strapiFetch<{
-      data: {
-        title?: string;
-        excerpt?: string;
-        seo?: StrapiSeo | null;
-      }[];
-    }>(
-      endpoint,
-      {
-        "filters[slug][$eq]": slug,
-        "populate[0]": "seo",
-      },
-      { locale }
-    );
-
-    const item = res.data?.[0];
-    const seo = item?.seo;
-
-    // Smart fallbacks (SEO-01 / SEO-02):
-    // - Title: prefer seo.metaTitle, else article.title with brand suffix,
-    //   else the static fallback the caller passed.
-    // - Description: prefer seo.metaDescription, else article.excerpt truncated
-    //   to ≤ 160 chars at a word boundary, else the static fallback.
-    const articleTitle = item?.title;
-    const articleExcerpt = item?.excerpt;
-
-    const truncate160 = (s: string): string => {
-      const trimmed = s.trim();
-      if (trimmed.length <= 160) return trimmed;
-      const cut = trimmed.slice(0, 160);
-      const lastSpace = cut.lastIndexOf(" ");
-      return (lastSpace > 100 ? cut.slice(0, lastSpace) : cut).replace(/[.,;:]+$/, "") + "…";
-    };
-
-    const resolvedTitle =
-      seo?.metaTitle ||
-      (articleTitle ? `${articleTitle} | Iter Advisors` : fallbackTitle);
-    const resolvedDescription =
-      seo?.metaDescription ||
-      (articleExcerpt ? truncate160(articleExcerpt) : fallbackDescription);
-
-    const ogImage = seo?.ogImage ? strapiMediaUrl(seo.ogImage) : undefined;
-
-    const meta = buildMetadata({
-      locale,
-      title: resolvedTitle,
-      description: resolvedDescription,
-      path,
-      noindex: seo?.noIndex || false,
-      structuredData: seo?.structuredData || null,
-      localizedPaths,
-      disableHreflang,
-    });
-
-    if (ogImage && meta.openGraph && typeof meta.openGraph === "object") {
-      (meta.openGraph as Record<string, unknown>).images = [{ url: ogImage }];
-    }
-
-    return meta;
-  } catch (e) {
-    // T1/T2 (mai 2026): silent when STRAPI_DISABLED — fallback is canonical.
-    if (STRAPI_ENABLED) {
-      console.warn(`Failed to fetch Strapi SEO for ${endpoint}/${slug}:`, e);
-    }
-  }
+  // Local titles and descriptions are the sole published SEO source.
 
   return buildMetadata({
     locale,

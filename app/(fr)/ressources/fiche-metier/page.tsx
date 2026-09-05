@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import FicheMetierListingPage from "@/components/pages/FicheMetierListingPage";
-import { getJobMetiers, getCmsNavigation } from "@/lib/strapi";
+import { getJobMetiers, getCmsNavigation } from "@/lib/static-content";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({

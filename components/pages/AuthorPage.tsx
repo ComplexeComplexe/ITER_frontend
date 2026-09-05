@@ -6,7 +6,7 @@ import { resolveBlogArticleHref } from "@/lib/path-localization";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
-import type { StrapiTeamMember, CmsNavItem } from "@/lib/strapi";
+import type { StrapiTeamMember, CmsNavItem } from "@/lib/static-content";
 
 interface AuthorPageArticle {
   title: string;

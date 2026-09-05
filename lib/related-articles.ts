@@ -92,7 +92,7 @@ export function getRelatedArticles(
       image: src,
       alt,
       category: post.category ?? null,
-      readMinutes: estimateReadMinutes(post.htmlContent),
+      readMinutes: post.readingMinutes ?? estimateReadMinutes(post.htmlContent),
       publishedDate: post.publishedDate ?? "",
     };
   });

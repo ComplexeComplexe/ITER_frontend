@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import MaDueDiligencePage from "@/components/pages/MaDueDiligencePage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { getMaDueDiligenceContent } from "@/lib/content/ma-due-diligence";
 
 export async function generateMetadata(): Promise<Metadata> {

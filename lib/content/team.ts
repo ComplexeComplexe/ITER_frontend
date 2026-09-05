@@ -1,4 +1,4 @@
-import type { StrapiTeamMember } from "@/lib/strapi";
+import type { StrapiTeamMember } from "@/lib/static-content";
 import type { Locale } from "@/lib/i18n";
 
 interface FallbackMemberData {

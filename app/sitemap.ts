@@ -22,7 +22,7 @@ const D = {
   service:       "2026-09-01", // REDESIGN-P4 — auteur, date, FAQ RH, maillage DRH
   local:         "2026-05-17", // geo pages (Barcelona, Paris, Toulouse)
   institutional: "2026-03-01", // a-propos, contact, legal — stable
-  tools:         "2026-09-01", // REDESIGN-P3 — byline, méthode et limites sur chaque avis
+  tools:         "2026-09-05", // REDESIGN-P3 — byline, méthode et limites sur chaque avis
   glossary:      "2026-09-01", // REDESIGN-P3 — définition en tête, byline, termes liés
   author:        "2026-05-17", // Person schema + author bio pages added
   jobs:          "2026-04-01", // noindexed but discoverable (TICKET-12)
@@ -557,7 +557,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   entries.push(...DOCUMENTED_CASES.map(item => ({ url: `${BASE}${item.href}`, lastModified: item.modified })));
 
-  const transactionalUpdates = new Set(["/services/gestion-financiere-externalisee", "/ressources/blog/daf-part-time-tarifs-missions-2026", "/ressources/blog/les-10-outils-pour-cfos-startup", "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", "/daf-externalise", "/fractional-cfo-startups", "/daf-externalise-toulouse", "/en/outsourced-cfo-toulouse", "/es/cfo-externalizado-toulouse", "/contact", "/en/contact", "/es/contact", "/daf-externalise/temps-partage", "/daf-externalise/secteurs", "/services/accompagnement-levee-de-fond"]);
+  const transactionalUpdates = new Set(["/services/controle-de-gestion-externalise", "/services/comptabilite-externalisation", "/en/services/outsourced-management-control", "/es/services/control-gestion-externalizado", "/es/services/gestion-financiera-externalizada", "/es/services/externalizar-contabilidad", "/es/services/prevision-tesoreria", "/es/services/soporte-financiacion", "/services/gestion-financiere-externalisee", "/ressources/blog/daf-part-time-tarifs-missions-2026", "/ressources/blog/les-10-outils-pour-cfos-startup", "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", "/daf-externalise", "/fractional-cfo-startups", "/daf-externalise-toulouse", "/en/outsourced-cfo-toulouse", "/es/cfo-externalizado-toulouse", "/contact", "/en/contact", "/es/contact", "/daf-externalise/temps-partage", "/daf-externalise/secteurs", "/services/accompagnement-levee-de-fond"]);
   return entries.map(item => ({
     ...item,
     lastModified: transactionalUpdates.has(item.url.slice(BASE.length)) || [...tools.filter(tool => !tool.logo).map(tool => `/ressources/outils/${tool.slug}`), "/daf-externalise/deep-tech", "/daf-externalise/industrie", "/daf-externalise/ecommerce", "/ressources/outils", "/ressources/blog/stack-financier-saas-series-a", "/daf-externalise-paris", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", "/ressources/cas-clients", "/en/ressources/cas-clients"].some(path => item.url === `${BASE}${path}`)

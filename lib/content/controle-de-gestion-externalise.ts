@@ -49,9 +49,9 @@ export const controleDeGestionExternaliseeContent = {
     hero: {
       lede: "Vous ne savez pas si votre startup est rentable ce mois-ci ? Vous prenez des décisions à l'aveugle faute de chiffres fiables ? Un contrôle de gestion externalisé donne aux fondateurs la visibilité financière dont ils ont besoin pour piloter — sans recruter un contrôleur de gestion à plein temps.",
       stats: [
-        "50+ startups accompagnées",
-        "3 villes (Paris, Toulouse, Barcelone)",
-        "Mise en place en 2 semaines",
+        "Accompagnement startups et PME",
+        "Équipes Paris et Barcelone, intervention à Toulouse",
+        "Calendrier défini au cadrage",
       ],
       primaryCta: { label: "Auditer ma gestion gratuitement", href: "/contact" },
       secondaryCta: { label: "Voir nos formules et tarifs", href: "#tarifs" },
@@ -180,81 +180,10 @@ export const controleDeGestionExternaliseeContent = {
       },
 
       // ─────────── SECTION 5 — TÉMOIGNAGES ───────────
-      {
-        id: "temoignages",
-        title:
-          "Ce que disent nos clients de leur contrôle de gestion externalisé",
-        paragraphs: [
-          "Voici trois retours de fondateurs qui ont externalisé leur contrôle de gestion avec Iter Advisors. Pour aller plus loin, consultez nos cas clients complets.",
-        ],
-        testimonials: [
-          {
-            quote:
-              "Avant Iter Advisors, je recevais mon compte de résultat 45 jours après la fin du mois. Je ne savais jamais où j'en étais. Aujourd'hui, j'ai un tableau de bord mis à jour en temps réel et un reporting mensuel sous 5 jours. J'ai pris la décision d'ouvrir une filiale à Barcelone grâce à ces chiffres.",
-            author: "Marc D.",
-            role: "CEO, EdTech",
-            location: "Paris",
-            context: "Contrôle de gestion externalisé depuis 18 mois",
-          },
-          {
-            quote:
-              "Notre contrôleur de gestion Iter Advisors a identifié que notre CAC avait grimpé de 40 % en 3 mois sans que personne ne le voie. Il a isolé le problème (un canal d'acquisition devenu déficitaire) et nous a aidés à réallouer le budget. Nous avons économisé 18 000 € le trimestre suivant.",
-            author: "Julie T.",
-            role: "COO, SaaS B2B",
-            location: "Toulouse",
-          },
-          {
-            quote:
-              "En préparation de notre Series A, Benjamin et son équipe ont construit tout notre reporting investisseur. Le data room était impeccable. Nos investisseurs ont complimenté la qualité financière — ça a fait la différence.",
-            author: "Karim B.",
-            role: "CEO, HealthTech",
-            location: "Barcelone",
-          },
-        ],
-        closingTextHtml:
-          'Découvrez d\'autres retours d\'expérience dans <a class="prose-link" href="/ressources/cas-clients">nos cas clients</a>.',
-      },
+      {"id":"temoignages","title":"Voir des missions documentées","paragraphs":["Les résultats dépendent du contexte de chaque entreprise. Consultez nos cas clients pour comprendre le besoin initial, les travaux réalisés et les résultats publiés."],"closingTextHtml":"<a class=\"prose-link\" href=\"/ressources/cas-clients\">Découvrir les cas clients Iter Advisors</a>"},
 
       // ─────────── SECTION 6 — TARIFS ───────────
-      {
-        id: "tarifs",
-        title: "Combien coûte un contrôle de gestion externalisé ?",
-        paragraphs: [
-          "Le contrôle de gestion externalisé chez Iter Advisors démarre à 2 500 € par mois pour la formule Pilot (2 jours/mois) et monte à 8 000 € par mois pour la formule Scale (8 jours/mois, accompagnement de levée inclus). Cela représente 30 à 60 % de moins qu'un contrôleur de gestion à plein temps (coût annuel : 65 000 à 90 000 € + charges).",
-        ],
-        table: {
-          caption: "Forfaits Iter Advisors — contrôle de gestion externalisé",
-          headers: ["Formule", "Jours / mois", "Périmètre", "Tarif mensuel"],
-          rows: [
-            [
-              "Pilot",
-              "2 jours",
-              "Reporting mensuel, tableau de bord KPIs, suivi trésorerie",
-              "2 500 €",
-            ],
-            [
-              "Growth",
-              "4 jours",
-              "+ Budget vs actual, forecast 12 mois, analyse d'écarts",
-              "4 500 €",
-            ],
-            [
-              "Scale",
-              "8 jours",
-              "+ Reporting investisseur, consolidation multi-entités, accompagnement fundraising",
-              "8 000 €",
-            ],
-            [
-              "Projet",
-              "Sur mesure",
-              "Mise en place tableau de bord, documentation processus, formation équipe",
-              "3 000 – 6 000 €",
-            ],
-          ],
-        },
-        closingText:
-          "Tous nos forfaits incluent : accès au tableau de bord en temps réel, réunion mensuelle de revue, accès à notre base de benchmarks SaaS, et l'intervention d'un senior avec 10+ ans d'expérience. Engagement de 6 mois minimum, résiliable avec 2 mois de préavis. Pas de frais de mise en place.",
-      },
+      {"id":"tarifs","title":"Combien coûte un contrôle de gestion externalisé ?","paragraphs":["Le contrôle de gestion est chiffré sur devis selon les données à reprendre, les entités, les indicateurs et les livrables. Une mission ponctuelle et un accompagnement récurrent se comparent séparément. Pour une direction financière complète, consulter la grille DAF de 3 000 à 8 000 € HT par mois selon le périmètre."],"table":{"caption":"Éléments à cadrer dans le devis","headers":["Besoin","Livrables","Base de chiffrage"],"rows":[["Reporting récurrent","Tableau de bord et revue des écarts","Données, fréquence et entités"],["Budget et prévisions","Hypothèses, scénarios et actualisations","Horizon, complexité et disponibilité"],["Projet ponctuel","Reprise des données, paramétrage et formation","Périmètre et critères de réception"]]},"closingTextHtml":"Le devis précise les responsabilités, la disponibilité, les frais éventuels et les conditions contractuelles. Pour une mission DAF complète, voir les <a class=\"prose-link\" href=\"/daf-externalise/tarifs\">tarifs du DAF externalisé</a>."},
 
       // ─────────── SECTION 7 — FAQ ───────────
       {
@@ -275,7 +204,7 @@ export const controleDeGestionExternaliseeContent = {
           {
             question: "Combien coûte un contrôle de gestion externalisé ?",
             answer:
-              "Chez Iter Advisors, les forfaits démarrent à 2 500 €/mois pour 2 jours (formule Pilot) et montent à 8 000 €/mois pour la formule Scale. Cela représente 30 à 60 % de moins qu'un contrôleur de gestion à plein temps (coût annuel : 65 000 à 90 000 € + charges).",
+              "Le contrôle de gestion est chiffré sur devis selon les données à reprendre, les entités, les indicateurs et les livrables. Une mission ponctuelle et un accompagnement récurrent se comparent séparément. Pour une direction financière complète, consulter la grille DAF de 3 000 à 8 000 € HT par mois selon le périmètre.",
           },
           {
             question: "Quand faut-il externaliser son contrôle de gestion ?",
@@ -310,7 +239,7 @@ export const controleDeGestionExternaliseeContent = {
             question:
               "Comment mesurer le ROI du contrôle de gestion externalisé ?",
             answer:
-              "Nos clients mesurent généralement le ROI sur 3 axes : réduction du burn (grâce à l'identification des dérives, en moyenne −15 à −25 %), accélération des décisions (reporting sous 5 jours vs 45 jours auparavant), et réussite des levées (data room prête en 2 semaines vs 2 mois).",
+              "Mesurer le temps de production du reporting, les écarts identifiés, les décisions prises et leurs effets constatés. Comparer avant et après sur une même période ; aucun pourcentage de gain uniforme ne peut être promis.",
           },
         ],
       },

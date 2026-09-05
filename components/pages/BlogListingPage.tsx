@@ -5,8 +5,8 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import BlogFilterableGrid from "@/components/blog/BlogFilterableGrid";
 import BlogFeaturedCard from "@/components/blog/BlogFeaturedCard";
-import { strapiMediaUrl } from "@/lib/strapi";
-import type { StrapiBlogArticle, CmsNavItem } from "@/lib/strapi";
+import { strapiMediaUrl } from "@/lib/static-content";
+import type { StrapiBlogArticle, CmsNavItem } from "@/lib/static-content";
 
 /* ───────────────────────────────────────────────────────────────────────
  *  Per-locale UI strings.

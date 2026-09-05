@@ -82,7 +82,7 @@ const content: Record<Locale, OutsourcedManagementControlContent> = {
         {
           question: "Quel est le coût du contrôle de gestion externalisé ?",
           answer:
-            "Entre 2 000 € et 6 000 € par mois selon la complexité de votre activité et le nombre de KPI. Nous proposons un devis après audit.",
+            "Sur devis selon les données, les entités, les indicateurs et les livrables. Le cadrage distingue projet initial et accompagnement récurrent.",
         },
         {
           question: "Combien de temps pour mettre en place les tableaux de bord ?",
@@ -248,7 +248,7 @@ const content: Record<Locale, OutsourcedManagementControlContent> = {
         {
           question: "¿Cuál es el costo del control de gestión externalizado?",
           answer:
-            "€2.000–€6.000/mes según complejidad y cantidad de KPI. Ofrecemos presupuesto personalizado.",
+            "Presupuesto según datos, entidades, indicadores y entregables. Se distingue la puesta en marcha del acompañamiento recurrente.",
         },
         {
           question: "¿Cuánto tiempo para implementar los cuadros de mando?",

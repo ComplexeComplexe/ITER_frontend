@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import CookiePolicyPage from "@/components/pages/CookiePolicyPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { getCookiePolicyContent } from "@/lib/content/cookies";
 
 const content = getCookiePolicyContent("es");

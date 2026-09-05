@@ -3,7 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import StrapiBlocks from "@/components/StrapiBlocks";
-import { StrapiServiceDetail } from "@/lib/strapi";
+import { StrapiServiceDetail } from "@/lib/static-content";
 
 const labels: Record<Locale, { services: string; servicesHref: string }> = {
   fr: { services: "Services", servicesHref: "/services" },

@@ -7,8 +7,8 @@
  */
 
 import Image from "next/image";
-import { strapiMediaUrl } from "@/lib/strapi";
-import type { StrapiBlock, StrapiInlineNode } from "@/lib/strapi";
+import { strapiMediaUrl } from "@/lib/static-content";
+import type { StrapiBlock, StrapiInlineNode } from "@/lib/static-content";
 import ContactCTAButton from "@/components/ContactCTAButton";
 
 /** CTA phrases (all locales) that should render as the contact button. Comparison is normalized (lowercase, trim). */

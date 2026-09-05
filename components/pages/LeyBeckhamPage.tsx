@@ -4,7 +4,7 @@ import { LeyBeckhamContent } from "@/lib/content/ley-beckham";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 
 const breadcrumbLabels: Record<Locale, { services: string; servicesHref: string; page: string }> = {
   fr: { services: "Services", servicesHref: "/services", page: "Loi Beckham" },

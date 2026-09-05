@@ -10,8 +10,8 @@ import { Tool } from '@/data/tools';
  *
  * À remonter à la main quand les avis outils sont réellement revus.
  */
-export const TOOLS_REVIEW_DATE = '2026-09-01';
-export const TOOLS_REVIEW_DATE_LABEL = '1er septembre 2026';
+export const TOOLS_REVIEW_DATE = '2026-09-05';
+export const TOOLS_REVIEW_DATE_LABEL = '5 septembre 2026';
 
 /**
  * Signataire de l'avis, dérivé de `tool.experts` (le premier expert cité).
@@ -65,7 +65,7 @@ export function generateToolReviewSchema(tool: Tool) {
     // décrivait donc un contenu qui n'existe plus à l'écran. Reformulé sur
     // les mêmes données, avec le vocabulaire réellement affiché.
     reviewBody: `Avis expert sur ${tool.name} par nos DAF externalisés. Points forts : ${tool.forWho.join(', ')}. Points de vigilance : ${tool.notForWho.join(', ')}.`,
-    datePublished: TOOLS_REVIEW_DATE,
+    datePublished: "2026-09-01",
   };
 }
 

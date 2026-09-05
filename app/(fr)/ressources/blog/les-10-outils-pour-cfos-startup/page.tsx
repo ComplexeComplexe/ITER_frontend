@@ -1,3 +1,4 @@
+import { TOOL_PRICING } from "@/data/toolPricing";
 
 
 import { Metadata } from 'next';
@@ -65,7 +66,7 @@ export default function Outils10CfosStartupPage() {
         {
           url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
           category: "Automatisation",
-          title: "IA et automatisation : gagner 30-40 % de temps",
+          title: "IA et automatisation de la fonction finance",
         },
         {
           url: "/ressources/blog/daf-externalise-vs-daf-salarie",
@@ -74,16 +75,17 @@ export default function Outils10CfosStartupPage() {
         },
       ]}
     >
+      <p>Tarification revue le 5 septembre 2026 à partir des sources éditeurs liées dans les tableaux. Les montants dépendent des options, volumes, pays et engagements. Les combinaisons proposées sont des exemples à chiffrer, pas des forfaits commerciaux.</p>
       <h2 id="comptabilite">Comptabilité cloud : Pennylane, Dext, Xero — quel outil selon votre stade ?</h2>
       <p>
-        La fondation de toute fonction finance. Une startup qui gère encore sa comptabilité sous Excel dépense en moyenne deux journées par mois en ressaisies et rapprochements — autant d'heures qui ne vont pas au produit ni aux ventes.
+        La comptabilité fournit la base du pilotage financier. Mesurez les ressaisies et les rapprochements manuels pour sélectionner les automatisations utiles à votre équipe.
       </p>
       <ProseTable>
         <thead>
           <tr>
             <th>Outil</th>
             <th>Rôle principal</th>
-            <th>Prix 2026</th>
+            <th>Tarification et source éditeur</th>
             <th>Pour qui</th>
           </tr>
         </thead>
@@ -91,19 +93,19 @@ export default function Outils10CfosStartupPage() {
           <tr>
             <td>Pennylane</td>
             <td>Comptabilité cloud, OCR factures, rapprochement bancaire automatique</td>
-            <td>50–150 €/mois</td>
+            <td><a href={TOOL_PRICING["pennylane"].url} target="_blank" rel="noopener noreferrer">{TOOL_PRICING["pennylane"].label}</a></td>
             <td>Startups FR, PME</td>
           </tr>
           <tr>
             <td>Dext</td>
             <td>Extraction et OCR de reçus, intégration Pennylane / Xero</td>
-            <td>80–200 €/mois</td>
+            <td><a href={TOOL_PRICING["dext"].url} target="_blank" rel="noopener noreferrer">{TOOL_PRICING["dext"].label}</a></td>
             <td>Complément comptabilité</td>
           </tr>
           <tr>
             <td>Xero</td>
-            <td>Comptabilité internationale, 3 000+ intégrations</td>
-            <td>40–100 €/mois</td>
+            <td>Comptabilité internationale et intégrations à vérifier selon votre pays</td>
+            <td><a href={TOOL_PRICING["xero"].url} target="_blank" rel="noopener noreferrer">{TOOL_PRICING["xero"].label}</a></td>
             <td>Scale-ups à l'international</td>
           </tr>
         </tbody>
@@ -112,16 +114,16 @@ export default function Outils10CfosStartupPage() {
         Pennylane est l'outil que nous recommandons en premier chez la majorité de nos clients français : natif cloud, API solide, rapprochement bancaire intégré. Dext vient en complément pour automatiser la lecture des flux fournisseurs. Xero est préférable dès lors que la startup a des entités ou des clients hors de France.
       </p>
 
-      <h2 id="tresorerie">Trésorerie : Agicap ou Fygr pour 6 mois de visibilité sur vos flux</h2>
+      <h2 id="tresorerie">Trésorerie : Agicap ou Okimia (ex-Fygr) pour suivre vos scénarios</h2>
       <p>
-        La trésorerie est la mesure la plus concrète de la santé d'une startup. Un outil dédié donne 6 mois de visibilité sur les flux entrants et sortants — c'est ce qui transforme une surprise en décision anticipée.
+        La trésorerie est la mesure la plus concrète de la santé d'une startup. Un outil dédié rapproche les flux réels des hypothèses de prévision. La qualité des données et leur mise à jour déterminent la fiabilité de vos scénarios.
       </p>
       <ProseTable>
         <thead>
           <tr>
             <th>Outil</th>
             <th>Rôle principal</th>
-            <th>Prix 2026</th>
+            <th>Tarification et source éditeur</th>
             <th>Pour qui</th>
           </tr>
         </thead>
@@ -129,31 +131,31 @@ export default function Outils10CfosStartupPage() {
           <tr>
             <td>Agicap</td>
             <td>Centralisation comptes, prévisions assistées, alertes de solde</td>
-            <td>200–400 €/mois</td>
+            <td><a href={TOOL_PRICING["agicap"].url} target="_blank" rel="noopener noreferrer">{TOOL_PRICING["agicap"].label}</a></td>
             <td>PME et scale-ups à partir de Series A</td>
           </tr>
           <tr>
-            <td>Fygr</td>
+            <td>Okimia (ex-Fygr)</td>
             <td>Prévisions de trésorerie, interface simplifiée</td>
-            <td>99–299 €/mois</td>
+            <td><a href={TOOL_PRICING["fygr"].url} target="_blank" rel="noopener noreferrer">{TOOL_PRICING["fygr"].label}</a></td>
             <td>Startups early-stage, structure légère</td>
           </tr>
         </tbody>
       </ProseTable>
       <p>
-        Agicap s'est imposé comme le standard chez les scale-ups françaises grâce à la centralisation multi-banque et aux alertes automatisées. Fygr répond au même besoin pour une structure plus légère avec un budget plus serré.
+        Comparez Agicap et Okimia sur les comptes, entités, scénarios et exports nécessaires. Une démonstration sur vos données et deux devis de même périmètre permettent de départager les offres.
       </p>
 
-      <h2 id="reporting-bi">Reporting BI : Power BI, Finthesis, Looker Studio — sans développeur ni analyste dédié</h2>
+      <h2 id="reporting-bi">Reporting BI : Power BI, Finthesis, Google Data Studio — des données au tableau de bord</h2>
       <p>
-        Une fois les données fiabilisées, il faut les présenter aux fondateurs, au board et aux investisseurs. Un tableau de bord mensuel produit en moins d'une heure, c'est le signe d'une finance mature.
+        Une fois les données fiabilisées, il faut les présenter aux fondateurs, au board et aux investisseurs. La priorité est de rendre chaque indicateur traçable et de documenter les écarts avant diffusion.
       </p>
       <ProseTable>
         <thead>
           <tr>
             <th>Outil</th>
             <th>Rôle principal</th>
-            <th>Prix 2026</th>
+            <th>Tarification et source éditeur</th>
             <th>Pour qui</th>
           </tr>
         </thead>
@@ -161,19 +163,19 @@ export default function Outils10CfosStartupPage() {
           <tr>
             <td>Power BI</td>
             <td>Dashboards interactifs, connexion Excel / Azure / ERP</td>
-            <td>10–50 €/mois/utilisateur</td>
+            <td><a href={TOOL_PRICING["power-bi"].url} target="_blank" rel="noopener noreferrer">{TOOL_PRICING["power-bi"].label}</a></td>
             <td>Scale-ups avec analyste ou DAF</td>
           </tr>
           <tr>
             <td>Finthesis</td>
             <td>Reporting P&L, bilan, KPIs — sans développeur</td>
-            <td>200–500 €/mois</td>
+            <td><a href={TOOL_PRICING["finthesis"].url} target="_blank" rel="noopener noreferrer">{TOOL_PRICING["finthesis"].label}</a></td>
             <td>PME et startups sans ressource data</td>
           </tr>
           <tr>
-            <td>Looker Studio</td>
+            <td>Google Data Studio (ex-Looker Studio)</td>
             <td>Visualisation gratuite, intégration Google Sheets</td>
-            <td>Gratuit</td>
+            <td><a href={TOOL_PRICING["looker-studio"].url} target="_blank" rel="noopener noreferrer">{TOOL_PRICING["looker-studio"].label}</a></td>
             <td>Démarrage rapide, budget serré</td>
           </tr>
         </tbody>
@@ -181,57 +183,58 @@ export default function Outils10CfosStartupPage() {
 
       <h2 id="levee-fonds">Levée de fonds : dataroom et cap table pour accélérer votre closing</h2>
       <p>
-        Quand vous préparez une levée, la qualité de votre dataroom conditionne directement le délai de closing. Une organisation irréprochable peut réduire la phase de due diligence de plusieurs semaines.
+        Quand vous préparez une levée, la qualité de votre dataroom conditionne directement le délai de closing. Une organisation claire facilite les réponses aux demandes ; le calendrier reste dépendant des diligences et des parties prenantes.
       </p>
       <ProseTable>
         <thead>
           <tr>
             <th>Outil</th>
             <th>Rôle principal</th>
-            <th>Prix 2026</th>
+            <th>Tarification et source éditeur</th>
             <th>Pour qui</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Dealroom / Intralinks</td>
+            <td>DealRoom / Intralinks</td>
             <td>Dataroom virtuelle sécurisée, audit trail, partage contrôlé</td>
-            <td>100–500 €/mois</td>
+            <td><a href={TOOL_PRICING["dealroom"].url} target="_blank" rel="noopener noreferrer">{TOOL_PRICING["dealroom"].label}</a></td>
             <td>Tout tour de financement</td>
           </tr>
           <tr>
             <td>Carta / Pulley</td>
             <td>Cap table, stock options, calcul dilution, communication investisseurs</td>
-            <td>200–500 €/mois</td>
+            <td><a href={TOOL_PRICING["carta"].url} target="_blank" rel="noopener noreferrer">{TOOL_PRICING["carta"].label}</a></td>
             <td>Dès la première émission de BSA / BSPCE</td>
           </tr>
         </tbody>
       </ProseTable>
 
-      <h2 id="stack-recommandee">Stack recommandée par stade : de 300 €/mois au Pré-Seed à 2 500 € en Series A</h2>
+      <p>Pour les autres solutions citées, consultez aussi les <a href="https://www.intralinks.com/guides/how-much-does-intralinks-cost-0">conditions de chiffrage Intralinks</a> et les <a href="https://pulley.com/pricing">offres Pulley</a>. Vérifiez leur adéquation à la juridiction et aux instruments de votre entreprise.</p>
+      <h2 id="stack-recommandee">Exemples de combinaisons à adapter à votre organisation</h2>
       <ProseTable>
         <thead>
           <tr>
             <th>Stade</th>
             <th>Outils</th>
-            <th>Budget mensuel</th>
+            <th>Points à chiffrer</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Pré-Seed (0–500k€ de CA)</td>
-            <td>Pennylane + Fygr + Looker Studio</td>
-            <td>300–500 €</td>
+            <td>Pennylane + Okimia + Google Data Studio</td>
+            <td>Licences, utilisateurs et paramétrage</td>
           </tr>
           <tr>
             <td>Seed (500k–3M€ de CA)</td>
-            <td>Pennylane + Dext + Agicap + Power BI Lite + Dealroom</td>
-            <td>800–1 500 €</td>
+            <td>Pennylane + Dext + Agicap + Power BI + Dealroom</td>
+            <td>Modules, intégrations et formation</td>
           </tr>
           <tr>
             <td>Series A (3–20M€ de CA)</td>
             <td>Pennylane + Dext + Agicap + Power BI Pro + Dealroom + Carta</td>
-            <td>1 500–2 500 €</td>
+            <td>Entités, accès investisseurs et reprise des données</td>
           </tr>
         </tbody>
       </ProseTable>
@@ -271,11 +274,11 @@ export default function Outils10CfosStartupPage() {
       </p>
       <ul>
         <li><strong>Comptabilité</strong> — Pennylane</li>
-        <li><strong>Trésorerie</strong> — Agicap ou Fygr</li>
+        <li><strong>Trésorerie</strong> — Agicap ou Okimia</li>
         <li><strong>Reporting</strong> — Power BI ou Finthesis</li>
       </ul>
       <p>
-        Ces trois outils représentent <strong>300 à 800 €/mois</strong> selon votre stade et éliminent la grande majorité des tâches de saisie et de rapprochement. Le temps récupéré va au pilotage et à la préparation des levées — pas à la ressaisie de données.
+        Calculez leur coût total sur douze mois : abonnements, utilisateurs, intégrations, déploiement et temps interne. Mesurez ensuite les tâches réellement automatisées et les contrôles encore nécessaires.
       </p>
       <p>
         Chez Iter Advisors, nous guidons chaque startup à travers cette sélection et implémentation. Résultat : une finance lean, 100 % cloud, prête pour la levée et la croissance.

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Mail, Linkedin } from "lucide-react";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import {
   TRUSTFOLIO_RATING,
   TRUSTFOLIO_REVIEW_COUNT,

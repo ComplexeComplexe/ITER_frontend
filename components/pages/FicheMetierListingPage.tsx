@@ -5,7 +5,7 @@ import { getLocalePath } from "@/lib/i18n";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
-import { getJobMetierSlugForUrl, type StrapiJobMetier, CmsNavItem } from "@/lib/strapi";
+import { getJobMetierSlugForUrl, type StrapiJobMetier, CmsNavItem } from "@/lib/static-content";
 
 const content: Record<
   Locale,

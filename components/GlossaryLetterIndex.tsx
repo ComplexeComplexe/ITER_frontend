@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { GLOSSARY_PAGE_SLUGS } from "@/lib/content/glossary-entries";
-import type { StrapiGlossaryTerm } from "@/lib/strapi";
+import type { StrapiGlossaryTerm } from "@/lib/static-content";
 import type { Locale } from "@/lib/i18n";
 
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");

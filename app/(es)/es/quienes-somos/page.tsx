@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import AboutPage from "@/components/pages/AboutPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { getTeamMembers as getTeamMembersStatic } from "@/lib/content/team";
 
 export async function generateMetadata(): Promise<Metadata> {

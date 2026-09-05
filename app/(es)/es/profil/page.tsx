@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import LeadGenPage from "@/components/pages/LeadGenPage";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = {
   title: "Diagnóstico Financiero | Iter Advisors",

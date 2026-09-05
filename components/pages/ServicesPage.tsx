@@ -19,7 +19,7 @@ const rhIcons = [Users, UserPlus, CreditCard, GraduationCap, Scale];
 
 import { Locale } from "@/lib/i18n";
 import { getServicesContent } from "@/lib/content/services";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";

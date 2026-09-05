@@ -1,3 +1,4 @@
+import { TOOL_PRICING } from "@/data/toolPricing";
 import Image from 'next/image';
 import Link from 'next/link';
 import { Star } from 'lucide-react';
@@ -14,6 +15,7 @@ export interface ToolHeaderProps {
   notForWho: string[];
   implementationTime: string;
   priceRange: string;
+  pricingKey: string;
   ctaUrl?: string;
 }
 
@@ -28,6 +30,7 @@ export default function ToolHeader({
   notForWho,
   implementationTime,
   priceRange,
+  pricingKey,
   ctaUrl = '/contact',
 }: ToolHeaderProps) {
   const fullStars = Math.floor(rating);
@@ -121,6 +124,7 @@ export default function ToolHeader({
             <div>
               <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Tarif</p>
               <p className="text-lg font-semibold text-gray-900">{priceRange}</p>
+              {TOOL_PRICING[pricingKey] && <div className="mt-2 text-sm text-gray-600"><p>{TOOL_PRICING[pricingKey].note}</p><a className="mt-2 inline-block underline text-iter-violet" href={TOOL_PRICING[pricingKey].url} target="_blank" rel="noopener noreferrer">Source éditeur — vérifiée le 5 septembre 2026</a></div>}
             </div>
           </div>
 

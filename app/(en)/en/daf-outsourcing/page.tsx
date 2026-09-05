@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import DafPage from "@/components/pages/DafPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildStrapiMetadata({

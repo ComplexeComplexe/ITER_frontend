@@ -6,7 +6,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import GlossaryLetterIndex from "@/components/GlossaryLetterIndex";
-import type { StrapiGlossaryTerm, CmsNavItem } from "@/lib/strapi";
+import type { StrapiGlossaryTerm, CmsNavItem } from "@/lib/static-content";
 
 const content: Record<
   Locale,

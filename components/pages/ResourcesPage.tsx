@@ -6,7 +6,7 @@ import {
   TRUSTFOLIO_RATING,
   TRUSTFOLIO_REVIEW_COUNT,
 } from "@/lib/content/facts";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 import { getStaticBlogListing } from "@/lib/blog-listing";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import LeyBeckhamPage from "@/components/pages/LeyBeckhamPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { getLeyBeckhamContent } from "@/lib/content/ley-beckham";
 
 export async function generateMetadata(): Promise<Metadata> {

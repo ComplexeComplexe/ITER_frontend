@@ -56,32 +56,9 @@ export async function generateMetadata(): Promise<Metadata> {
           url: "https://www.iteradvisors.com",
         },
         description:
-          "Pilotage financier et reporting de performance pour startups. Tableaux de bord, KPIs, forecast. Dès 2 500 €/mois.",
+          "Pilotage financier, tableaux de bord et analyse des écarts pour startups et PME. Périmètre et tarif définis sur devis.",
         areaServed: ["Paris", "Toulouse", "Barcelone"],
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: "Forfaits contrôle de gestion",
-          itemListElement: [
-            {
-              "@type": "Offer",
-              name: "Pilot",
-              price: "2500",
-              priceCurrency: "EUR",
-            },
-            {
-              "@type": "Offer",
-              name: "Growth",
-              price: "4500",
-              priceCurrency: "EUR",
-            },
-            {
-              "@type": "Offer",
-              name: "Scale",
-              price: "8000",
-              priceCurrency: "EUR",
-            },
-          ],
-        },
+        hasOfferCatalog: undefined,
       },
       {
         "@type": "FAQPage",

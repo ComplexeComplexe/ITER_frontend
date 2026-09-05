@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import DafSubPage from "@/components/pages/DafSubPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
 import { getDafSubContent } from "@/lib/content/daf-sub";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { buildDafSubFaqSchema } from "@/lib/daf-sub-schema";
 
 const content = getDafSubContent("fr", "metier")!;

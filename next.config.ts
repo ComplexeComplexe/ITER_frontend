@@ -2,15 +2,17 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   trailingSlash: false,
+  outputFileTracingRoot: process.cwd(),
+  turbopack: { root: process.cwd() },
   // Hide the X-Powered-By: Next.js header — minor information-disclosure
   // hardening flagged by the technical SEO audit (T-3).
   poweredByHeader: false,
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: [
-      'ztynwacifpvzaemkqifh.storage.eu-central-1.nhost.run', // Strapi CDN
-      'share.trustfolio.co', // Trustfolio widgets
-      'images.unsplash.com', // Unsplash editorial covers
+    remotePatterns: [
+      { protocol: 'https', hostname: 'ztynwacifpvzaemkqifh.storage.eu-central-1.nhost.run', pathname: '/**' },
+      { protocol: 'https', hostname: 'share.trustfolio.co', pathname: '/**' },
+      { protocol: 'https', hostname: 'images.unsplash.com', pathname: '/**' },
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],

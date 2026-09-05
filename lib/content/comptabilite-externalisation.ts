@@ -12,9 +12,9 @@ export const comptabiliteExternalisationContent = {
       // Ahrefs T-404 (2026-06-08): was "/images/sebastien-doat.jpg" → 400/404
       // (wrong path + wrong extension). The real asset is the .webp under /team/.
       avatarUrl: "/images/team/sebastien-doat.webp",
-      updateDate: "2026-05-05",
+      updateDate: "2026-09-05",
     },
-    tldr: "Externaliser sa comptabilité représente 30 à 60 % d'économie face au coût employeur d'un comptable interne, avec une expertise plus large et une flexibilité adaptée aux startups et PME en croissance.",
+    tldr: "Externaliser permet d’adapter la production comptable au volume d’activité. Le bilan économique dépend du périmètre confié, des outils et du travail qui reste dans l’entreprise.",
     h1: "Externalisation comptable : tarifs, méthode et bénéfices pour PME et startups",
     // T5 (2026-06-07) — replaced 3 fake testimonials (Alain Rousseau /
     // Valérie Lefevre / Marc Dubois, dont un contenait la coquille
@@ -140,12 +140,7 @@ export const comptabiliteExternalisationContent = {
               "Externalisation Iter Advisors",
             ],
             rows: [
-              [
-                "Coût annuel (entreprise de 15-20 personnes)",
-                "35 000 € - 55 000 €",
-                "4 000 € - 8 000 €",
-                "4 200 € - 9 600 €",
-              ],
+              ["Coût total à comparer","Salaire, coût employeur, outils et continuité","Honoraires, options et travail interne","Devis selon périmètre et responsabilités"],
               [
                 "Outils et logiciels",
                 "Variable (souvent legacy)",
@@ -192,61 +187,7 @@ export const comptabiliteExternalisationContent = {
           },
         ],
       },
-      {
-        // T5 (2026-06-07) — nouvelle section H2 "tarifs" demandée par
-        // le ticket. La requête "coût externalisation comptabilité"
-        // génère 4600+ impressions / GSC et la page est position 9-12 :
-        // une grille tarifaire concrète peut faire passer en top 5.
-        id: "tarifs",
-        title: "Combien coûte l'externalisation de la comptabilité en 2026 ?",
-        paragraphs: [
-          "Le coût de l'externalisation comptable dépend principalement de quatre facteurs : la taille de votre entreprise (volume de factures), la complexité fiscale (TVA intracommunautaire, multi-entités, exports), le périmètre du service (tenue seule ou tenue + paie + reporting), et le niveau de pilotage attendu (production conforme uniquement ou tableaux de bord et analyse).",
-          "Voici les fourchettes de prix constatées en 2026 sur le marché français, ainsi que la fourchette pratiquée par Iter Advisors selon le profil-type d'entreprise. Pour une analyse complète avec comparatif des 4 modèles disponibles (cabinet traditionnel, plateforme en ligne, cabinet digital hybride, CFO-piloté) et calcul ROI détaillé, consultez notre article dédié : [[Coût de l'externalisation comptable en 2026|/ressources/blog/cout-externalisation-comptable-2026]].",
-        ],
-        tables: [
-          {
-            caption: "Grille tarifaire 2026 — Externalisation comptable par taille d'entreprise",
-            headers: [
-              "Profil d'entreprise",
-              "Volume mensuel typique",
-              "Marché (fourchette mensuelle HT)",
-              "Iter Advisors (forfait mensuel HT)",
-            ],
-            rows: [
-              [
-                "Auto-entrepreneur / TPE (1-5 salariés)",
-                "10-40 factures, TVA simple",
-                "200 - 500 €",
-                "350 - 650 €",
-              ],
-              [
-                "Startup early-stage (5-15 salariés)",
-                "30-80 factures, paie",
-                "400 - 900 €",
-                "550 - 1 100 €",
-              ],
-              [
-                "PME en croissance (15-50 salariés)",
-                "100-300 factures, TVA UE, paie",
-                "800 - 1 800 €",
-                "900 - 1 800 €",
-              ],
-              [
-                "PME structurée (50-150 salariés)",
-                "300-800 factures, multi-entités",
-                "1 500 - 3 500 €",
-                "1 800 - 3 200 €",
-              ],
-              [
-                "Scale-up / ETI (150+ salariés)",
-                "800+ factures, consolidation",
-                "3 000 - 8 000 €",
-                "3 500 - 7 000 €",
-              ],
-            ],
-          },
-        ],
-      },
+      {"id":"tarifs","title":"Comment chiffrer l’externalisation comptable ?","paragraphs":["Demandez des devis sur un périmètre identique : volume de pièces, entités, obligations, paie, clôtures et reporting. Distinguez démarrage, récurrence, options et travail interne. Les anciennes fourchettes ne constituaient pas une moyenne de marché vérifiable. Consultez le [[guide du coût de l’externalisation comptable|/ressources/blog/cout-externalisation-comptable-2026]] pour construire votre comparaison."],"tables":[{"caption":"Postes du devis","headers":["Poste","À vérifier"],"rows":[["Démarrage","Migration, reprise des données et formation"],["Récurrent","Pièces, entités, obligations et clôtures"],["Options","Paie, reporting et travaux exceptionnels"]]}]},
       {
         id: "approche-iter",
         title: "Comment Iter Advisors accompagne votre comptabilité externalisée",
@@ -366,9 +307,9 @@ export const comptabiliteExternalisationContent = {
       jobTitle: "Socio fundador y CFO Advisor",
       linkedInUrl: "https://www.linkedin.com/in/sebastiendoat",
       avatarUrl: "/images/team/sebastien-doat.webp",
-      updateDate: "2026-05-05",
+      updateDate: "2026-09-05",
     },
-    tldr: "Externalizar la contabilidad representa un ahorro del 30 al 60 % frente al coste empresarial de un contable interno, con una experiencia más amplia y una flexibilidad adaptada a startups y pymes en crecimiento.",
+    tldr: "Externalizar permite adaptar la producción contable al volumen de actividad. La comparación económica depende del alcance, las herramientas y el trabajo que permanece en la empresa.",
     h1: "Externalización contable: tarifas, método y beneficios para pymes y startups",
     testimonials: [
       {
@@ -487,12 +428,7 @@ export const comptabiliteExternalisationContent = {
               "Externalización Iter Advisors",
             ],
             rows: [
-              [
-                "Coste anual (empresa de 15-20 personas)",
-                "35 000 € - 55 000 €",
-                "4 000 € - 8 000 €",
-                "4 200 € - 9 600 €",
-              ],
+              ["Coste total a comparar","Salario, costes empresariales, herramientas y continuidad","Honorarios, opciones y trabajo interno","Presupuesto según alcance y responsabilidades"],
               [
                 "Herramientas y software",
                 "Variable (a menudo heredado)",
@@ -539,57 +475,7 @@ export const comptabiliteExternalisationContent = {
           },
         ],
       },
-      {
-        id: "tarifs",
-        title: "¿Cuánto cuesta externalizar la contabilidad en 2026?",
-        paragraphs: [
-          "El coste de la externalización contable depende principalmente de cuatro factores: el tamaño de la empresa (volumen de facturas), la complejidad fiscal (IVA intracomunitario, multi-entidad, exportaciones), el alcance del servicio (solo teneduría, o teneduría más nóminas y reporting) y el nivel de pilotaje esperado (producción conforme, o cuadros de mando y análisis).",
-          "Estas son las horquillas de precio observadas en 2026, junto con la horquilla practicada por Iter Advisors según el perfil de empresa.",
-        ],
-        tables: [
-          {
-            caption: "Tarifas 2026 — Externalización contable por tamaño de empresa",
-            headers: [
-              "Perfil de empresa",
-              "Volumen mensual típico",
-              "Mercado (horquilla mensual sin IVA)",
-              "Iter Advisors (cuota mensual sin IVA)",
-            ],
-            rows: [
-              [
-                "Autónomo / microempresa (1-5 empleados)",
-                "10-40 facturas, IVA simple",
-                "200 - 500 €",
-                "350 - 650 €",
-              ],
-              [
-                "Startup early-stage (5-15 empleados)",
-                "30-80 facturas, nóminas",
-                "400 - 900 €",
-                "550 - 1 100 €",
-              ],
-              [
-                "Pyme en crecimiento (15-50 empleados)",
-                "100-300 facturas, IVA UE, nóminas",
-                "800 - 1 800 €",
-                "900 - 1 800 €",
-              ],
-              [
-                "Pyme estructurada (50-150 empleados)",
-                "300-800 facturas, multi-entidad",
-                "1 500 - 3 500 €",
-                "1 800 - 3 200 €",
-              ],
-              [
-                "Scale-up / gran empresa (150+ empleados)",
-                "800+ facturas, consolidación",
-                "3 000 - 8 000 €",
-                "3 500 - 7 000 €",
-              ],
-            ],
-          },
-        ],
-      },
+      {"id":"tarifs","title":"Cómo presupuestar la externalización contable","paragraphs":["Solicite presupuestos sobre un mismo alcance: volumen de documentos, entidades, obligaciones, nóminas, cierres y reporting. Separe el arranque, el coste recurrente, las opciones y el trabajo interno. No publicamos una media de mercado sin una fuente verificable."],"tables":[{"caption":"Partidas del presupuesto","headers":["Poste","Qué comprobar"],"rows":[["Arranque","Migración, recuperación de datos y formación"],["Recurrente","Documentos, entidades, obligaciones y cierres"],["Opciones","Nóminas, reporting y trabajos excepcionales"]]}]},
       {
         id: "approche-iter",
         title: "Cómo acompaña Iter Advisors tu contabilidad externalizada",

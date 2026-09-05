@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import GlossaryEntryPage from "@/components/pages/GlossaryEntryPage";
 import { buildMetadata } from "@/lib/metadata";
 import { getGlossaryEntryContent } from "@/lib/content/glossary-entries";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 
 /**
  * Fiches de glossaire en anglais.

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import BlogPostPage from "@/components/pages/BlogPostPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 
 const PUBLISHED_DATE = "2026-07-30";
 

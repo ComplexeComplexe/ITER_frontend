@@ -1,6 +1,6 @@
 import { Locale } from "@/lib/i18n";
 import { LegalPageContent } from "@/lib/content/legal";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 

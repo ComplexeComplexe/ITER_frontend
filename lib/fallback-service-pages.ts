@@ -3,7 +3,7 @@
  * Used to display pages with local illustrations and basic content
  */
 
-import type { StrapiServiceSinglePage } from "@/lib/strapi";
+import type { StrapiServiceSinglePage } from "@/lib/static-content";
 import type { Locale } from "@/lib/i18n";
 
 // ── Routing constants (kept here so service pages don't import lib/strapi) ──

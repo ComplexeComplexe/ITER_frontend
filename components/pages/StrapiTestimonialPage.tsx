@@ -4,7 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import StrapiBlocks from "@/components/StrapiBlocks";
-import { StrapiTestimonial, strapiMediaUrl } from "@/lib/strapi";
+import { StrapiTestimonial, strapiMediaUrl } from "@/lib/static-content";
 
 const labels: Record<Locale, { resources: string; resourcesHref: string; testimonials: string; testimonialsHref: string; challenge: string; solution: string; results: string; industry: string; teamSize: string; revenue: string; engagement: string }> = {
   // T4 (2026-05-31): testimonialsHref now points to /ressources/cas-clients

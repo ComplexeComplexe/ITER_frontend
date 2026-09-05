@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check, X } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { BOOKING_URL } from "@/lib/navigation";
-import type { CmsNavItem } from "@/lib/strapi";
+import type { CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";

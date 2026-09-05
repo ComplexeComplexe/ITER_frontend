@@ -24,7 +24,7 @@ function loadEnvFiles() {
 loadEnvFiles();
 
 import { dafSubContent } from "../lib/content/daf-sub";
-import type { StrapiBlock, StrapiParagraphBlock, StrapiHeadingBlock, StrapiTextNode } from "../lib/strapi";
+import type { StrapiBlock, StrapiParagraphBlock, StrapiHeadingBlock, StrapiTextNode } from "../lib/static-content";
 
 // API base URL: Strapi REST API is at the root, not under /admin
 const rawStrapiUrl = process.env.STRAPI_API_URL || "http://localhost:1337";

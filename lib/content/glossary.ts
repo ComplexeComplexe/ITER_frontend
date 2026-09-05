@@ -1,5 +1,5 @@
 import { Locale } from "../i18n";
-import type { StrapiGlossaryTerm } from "../strapi";
+import type { StrapiGlossaryTerm } from "../static-content";
 
 export interface GlossaryTerm {
   title: string;

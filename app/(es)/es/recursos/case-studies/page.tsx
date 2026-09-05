@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import CaseStudiesPage from "@/components/pages/CaseStudiesPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/strapi";
+import { getCmsNavigation } from "@/lib/static-content";
 import { getCaseStudiesContent } from "@/lib/content/case-studies";
 
 const t = getCaseStudiesContent("es");

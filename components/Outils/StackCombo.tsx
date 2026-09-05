@@ -56,7 +56,7 @@ export default function StackCombo({ combo, title, description }: StackComboProp
             </div>
           );
           return (
-          <div key={`${tool.name}-${idx}`} className="flex items-center gap-4 w-full md:w-auto">
+          <div key={`${tool.name}-${idx}`} className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto min-w-0">
             {/* Un outil sans fiche chez nous reste affiché, mais sans lien :
                 mieux vaut une carte inerte qu'un lien vers une page absente. */}
             {tool.slug ? <Link href={`/ressources/outils/${tool.slug}`}>{card}</Link> : card}
