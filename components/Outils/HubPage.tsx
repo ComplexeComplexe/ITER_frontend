@@ -602,7 +602,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
                         className="max-w-full max-h-full object-contain"
                       />
                     ) : (
-                      <span className="text-iter-violet font-bold text-xl">m</span>
+                      <span className="text-iter-violet font-bold text-sm text-center">{t.name}</span>
                     )}
                   </div>
                   {t.badge && (
@@ -774,6 +774,18 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
               80+ déploiements menés chez des startups et PME ces trois dernières années.
             </p>
           </div>
+        </div>
+      </section>
+      <section className="bg-background py-12">
+        <div className="container max-w-5xl">
+          <h2 className="text-2xl font-bold mb-4">Toutes les fiches outils</h2>
+          <p className="text-muted-foreground mb-6">Consultez les fiches par besoin pour préparer votre sélection et les questions à poser aux éditeurs.</p>
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {tools.map(tool => (
+              <li key={tool.slug}><Link className="text-iter-violet underline underline-offset-4" href={`/ressources/outils/${tool.slug}`}>{tool.name} — {categoryLabels[tool.category] ?? tool.category}</Link></li>
+            ))}
+          </ul>
+          <p className="mt-8 text-muted-foreground">Pour organiser leur déploiement : <Link className="text-iter-violet underline" href="/ressources/blog/stack-financier-saas-series-a">structurer la stack financière d’une SaaS en Series A</Link>, puis <Link className="text-iter-violet underline" href="/ressources/ia-finance/automatiser-reporting-financier">automatiser le reporting financier</Link>.</p>
         </div>
       </section>
     </PageLayout>

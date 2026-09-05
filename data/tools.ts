@@ -395,7 +395,7 @@ export const tools: Tool[] = [
     name: 'Kyriba',
     category: 'tresorerie',
     categorySlug: 'logiciels-tresorerie',
-    logo: '/images/logos/tools/kyriba.svg',
+    logo: '',
     logoAlt: 'Logo Kyriba — plateforme de trésorerie groupe pour ETI multi-devises',
     website: 'https://www.kyriba.com/fr/',
     rating: 4.2,
@@ -423,7 +423,7 @@ export const tools: Tool[] = [
     name: 'Power BI',
     category: 'reporting',
     categorySlug: 'reporting-dataviz',
-    logo: '/images/logos/tools/power-bi.svg',
+    logo: '',
     logoAlt: 'Logo Microsoft Power BI — outil de reporting financier et dashboards pour CFO',
     website: 'https://powerbi.microsoft.com/fr-fr/',
     rating: 4.4,
@@ -451,7 +451,7 @@ export const tools: Tool[] = [
     name: 'Upflow',
     category: 'recouvrement',
     categorySlug: 'recouvrement-cash-collection',
-    logo: '/images/logos/tools/upflow.svg',
+    logo: '',
     logoAlt: 'Logo Upflow — automatisation du recouvrement client B2B pour PME',
     website: 'https://upflow.io/',
     rating: 4.5,
@@ -471,7 +471,7 @@ export const tools: Tool[] = [
     experts: ['benjamin'],
     hasVerbatim: false,
     shortDescription:
-      "L'automatisation du recouvrement client B2B. DSO réduit de 15-30 % en moyenne. Intégration Pennylane + Stripe native.",
+      "Un outil de suivi du recouvrement client B2B à évaluer selon vos flux de facturation et vos besoins de relance.",
   },
 
   {
@@ -479,7 +479,7 @@ export const tools: Tool[] = [
     name: 'LeanPay',
     category: 'recouvrement',
     categorySlug: 'recouvrement-cash-collection',
-    logo: '/images/logos/tools/leanpay.svg',
+    logo: '',
     logoAlt: 'Logo LeanPay — recouvrement digital français pour PME',
     website: 'https://www.leanpay.fr/',
     rating: 4.1,
@@ -499,7 +499,7 @@ export const tools: Tool[] = [
     experts: ['sebastien'],
     hasVerbatim: false,
     shortDescription:
-      "Le recouvrement digital français. Scénarios de relance paramétrables, support FR, 30-40 % moins cher qu'Upflow pour petits volumes.",
+      "Une solution de recouvrement à comparer selon les scénarios de relance, les intégrations et le volume de factures.",
   },
 
   {
@@ -507,7 +507,7 @@ export const tools: Tool[] = [
     name: 'Factorial',
     category: 'sirh',
     categorySlug: 'sirh-rh',
-    logo: '/images/logos/tools/factorial.svg',
+    logo: '',
     logoAlt: 'Logo Factorial — SIRH complet France + Espagne pour PME',
     website: 'https://factorialhr.fr/',
     rating: 4.3,
@@ -527,7 +527,7 @@ export const tools: Tool[] = [
     experts: ['sebastien'],
     hasVerbatim: false,
     shortDescription:
-      "Le SIRH pour équipes France-Espagne. Couverture conforme FR + ES, module performance et onboarding intégrés. 5 €/employé/mois.",
+      "Un SIRH à évaluer pour centraliser les processus RH de vos équipes, en vérifiant les modules et les pays couverts.",
   },
 
   {
@@ -535,7 +535,7 @@ export const tools: Tool[] = [
     name: 'Carta',
     category: 'equity',
     categorySlug: 'equity-cap-table',
-    logo: '/images/logos/tools/carta.svg',
+    logo: '',
     logoAlt: 'Logo Carta — gestion cap table et BSPCE pour startups levant des fonds',
     website: 'https://carta.com/',
     rating: 4.4,
@@ -555,7 +555,7 @@ export const tools: Tool[] = [
     experts: ['benjamin'],
     hasVerbatim: false,
     shortDescription:
-      "Le leader mondial de la gestion d'actionnariat. Cap table temps réel, BSPCE, data room investisseurs. Standard pour startups US-backed.",
+      "Une plateforme de gestion de l’actionnariat à étudier selon la structure du capital et les besoins des investisseurs.",
   },
 
   {
@@ -563,7 +563,7 @@ export const tools: Tool[] = [
     name: 'Equify',
     category: 'equity',
     categorySlug: 'equity-cap-table',
-    logo: '/images/logos/tools/equify.svg',
+    logo: '',
     logoAlt: 'Logo Equify — alternative française à Carta pour cap table BSPCE',
     website: 'https://www.equify.io/',
     rating: 4.2,
@@ -583,7 +583,7 @@ export const tools: Tool[] = [
     experts: ['sebastien'],
     hasVerbatim: false,
     shortDescription:
-      "L'alternative française à Carta. Conformité 100 % droit français (BSPCE, AG, pactes), support FR, 30 % moins cher que Carta.",
+      "Une solution de gestion de l’actionnariat à comparer selon les opérations sur le capital et les plans d’intéressement envisagés.",
   },
 ];
 

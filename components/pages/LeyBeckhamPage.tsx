@@ -1,4 +1,3 @@
-"use client";
 
 import { Locale } from "@/lib/i18n";
 import { LeyBeckhamContent } from "@/lib/content/ley-beckham";
@@ -6,7 +5,6 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import type { CmsNavItem } from "@/lib/strapi";
-import { motion } from "framer-motion";
 
 const breadcrumbLabels: Record<Locale, { services: string; servicesHref: string; page: string }> = {
   fr: { services: "Services", servicesHref: "/services", page: "Loi Beckham" },
@@ -49,22 +47,16 @@ export default function LeyBeckhamPage({ locale, content: t, cmsNavigation }: Le
             locale={locale}
             items={[{ label: bc.services, href: bc.servicesHref }, { label: bc.page }]}
           />
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+          <h1
             className="text-3xl lg:text-5xl font-bold font-heading text-foreground max-w-3xl mb-6"
           >
             {t.hero.h1}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+          </h1>
+          <p
             className="text-lg text-muted-foreground max-w-2xl"
           >
             {t.hero.intro}
-          </motion.p>
+          </p>
         </div>
       </section>
 
@@ -83,6 +75,14 @@ export default function LeyBeckhamPage({ locale, content: t, cmsNavigation }: Le
           </div>
         </section>
       ))}
+
+      <section className="bg-background py-8">
+        <div className="container max-w-3xl">
+          <h2 className="text-xl font-bold mb-4">{t.sourcesTitle}</h2>
+          {locale === "es" && <p className="mb-4"><a className="text-iter-violet underline" href="/es/recursos/blog/regimes-fiscaux-france-vs-espagne">Comparar la fiscalidad de Francia y España</a></p>}
+          <ul className="space-y-3">{t.sources.map(source => <li key={source.href}><a className="text-iter-violet underline" href={source.href}>{source.label}</a></li>)}</ul>
+        </div>
+      </section>
 
       {/* FAQ */}
       <section className="bg-muted py-16">

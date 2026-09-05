@@ -652,115 +652,172 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       ],
       ctaButton: "Prendre rendez-vous",
     },
-    ecommerce: {
-      meta: {
-        title: "DAF externalisé e-commerce : marge et BFR | Iter Advisors",
-        description:
-          "DAF externalisé spécialisé e-commerce : gestion du BFR, saisonnalité, marges produits, trésorerie. Intervention dès 2 jours/mois.",
-      },
-      parentLabel: "DAF externalisé",
-      parentHref: "/daf-externalise",
-      breadcrumbLabel: "DAF E-Commerce",
-      h1: "DAF Externalisé pour E-Commerce : Pilotez Votre Profitabilité",
-      sections: [
-        {
-          content: [
-            "Le e-commerce est l'un des secteurs où la trésorerie est la plus volatile. Chez Iter Advisors, nos DAFs externalisés spécialisés e-commerce interviennent dès 2 jours/mois.",
-          ],
-        },
-        {
-          heading: "Les défis financiers du e-commerce",
-          content: [
-            "**Saisonnalité :** Le e-commerce connaît des pics (Black Friday, Noël) nécessitant un financement du stock 2 à 3 mois à l'avance. Notre DAF anticipe ces besoins.",
-            "**BFR :** Notre DAF optimise la rotation du stock, négocie les conditions de règlement et étudie l'affacturage sélectif.",
-            "**Marges produits :** Construction d'un P&L par produit, par canal (site propre, Amazon, marketplaces) et par segment client.",
-            "**TVA internationale :** Conformité OSS, TVA par pays européen, optimisation de la trésorerie en devises.",
-          ],
-        },
-        {
-          heading: "Nos missions DAF e-commerce",
-          content: [
-            "**Prévisionnel de trésorerie :** Modélisation 13 semaines glissantes pour anticiper les besoins avant chaque pic.",
-            "**Financement du stock :** Négociation banques + solutions fintech (Karmen, Silvr).",
-            "**Dashboard :** KPIs financiers (marge brute, EBITDA, cash conversion cycle) + opérationnels (LTV, CAC, taux retour).",
-            "Découvrez aussi : **[DAF externalisé](/daf-externalise)**, **[DAF industrie](/daf-externalise/industrie)**, **[DAF Deep Tech](/daf-externalise/deep-tech)**, **[tarifs](/daf-externalise/tarifs)**.",
-          ],
-        },
-      ],
-      ctaButton: "Prendre rendez-vous",
+    "ecommerce": {
+  "meta": {
+    "title": "DAF externalisé e-commerce : marge et trésorerie | Iter Advisors",
+    "description": "Pilotez la marge par canal, les stocks, les retours et la trésorerie de votre e-commerce avec un DAF externalisé. Missions et indicateurs à suivre."
+  },
+  "parentLabel": "DAF externalisé",
+  "parentHref": "/daf-externalise",
+  "breadcrumbLabel": "DAF e-commerce",
+  "h1": "DAF externalisé e-commerce : relier croissance, marge et trésorerie",
+  "sections": [
+    {
+      "heading": "",
+      "content": [
+        "Un DAF externalisé e-commerce aide le dirigeant à comprendre ce que chaque vente apporte réellement à l’entreprise. Le suivi relie les commandes, les coûts logistiques, les retours, les dépenses d’acquisition et les encaissements, pour décider des achats de stock et des investissements commerciaux."
+      ]
     },
-    industrie: {
-      meta: {
-        title: "DAF externalisé industrie et ETI | Iter Advisors",
-        description:
-          "DAF externalisé pour ETI et entreprises industrielles : contrôle de gestion, supply chain, risques de change, M&A.",
-      },
-      parentLabel: "DAF externalisé",
-      parentHref: "/daf-externalise",
-      breadcrumbLabel: "DAF Industrie",
-      h1: "DAF Externalisé Industrie : Expertise Financière pour ETI et PMI",
-      sections: [
-        {
-          content: [
-            "Les entreprises industrielles font face à des enjeux financiers que seul un DAF ayant une expérience industrielle peut maîtriser : contrôle analytique, CAPEX, risques de change, M&A. Iter Advisors intervient dès 2 jours/mois.",
-          ],
-        },
-        {
-          heading: "Les enjeux financiers de l'industrie",
-          content: [
-            "**Contrôle analytique :** P&L par ligne de produits, par client et par unité de production pour identifier les marges réelles.",
-            "**CAPEX :** Business cases, financement (crédit-bail, BEI, subventions, CIR/CII) et suivi des ROI.",
-            "**BFR :** Optimisation du cycle de trésorerie et négociation avec la chaîne d'approvisionnement.",
-            "**Change :** Politique de couverture adaptée (forward, options) pour les industriels exportateurs.",
-            "**M&A :** Due diligences, plans de financement et post-merger integration.",
-          ],
-        },
-        {
-          heading: "Notre approche",
-          content: [
-            "Iter Advisors accompagne des PMI et ETI dans toute la France et en Europe : aéronautique, plasturgie, métallurgie, agroalimentaire. En complément : **[DAF externalisé](/daf-externalise)**, **[DAF e-commerce](/daf-externalise/ecommerce)**, **[DAF Deep Tech](/daf-externalise/deep-tech)**.",
-          ],
-        },
-      ],
-      ctaButton: "Prendre rendez-vous",
+    {
+      "heading": "Construire une marge exploitable par produit et par canal",
+      "content": [
+        "Un chiffre d’affaires en hausse peut masquer une dégradation de la marge. Le tableau de bord distingue prix net des remises, coût d’achat, commissions de marketplace, préparation, livraison et retours. Les coûts doivent être affectés selon une méthode stable pour comparer les canaux.",
+        "Le reporting sépare les ventes, les remboursements et les décalages de versement des prestataires de paiement. Il permet d’identifier les produits dont la croissance mobilise du cash sans apporter une contribution suffisante."
+      ]
     },
+    {
+      "heading": "Financer les stocks et préparer les pics de vente",
+      "content": [
+        "Le [prévisionnel de trésorerie](/services/previsionnel-tresorerie) rassemble commandes fournisseurs, acomptes, transport, encaissements et charges à venir. Plusieurs hypothèses de ventes permettent de mesurer la marge de sécurité avant une campagne.",
+        "Le suivi du [besoin en fonds de roulement](/ressources/glossaire/besoin-fonds-roulement-bfr) rapproche rotation des stocks, délais fournisseurs et délais d’encaissement. Une commande importante se décide à partir du cash disponible et des scénarios, pas du seul chiffre d’affaires attendu."
+      ]
+    },
+    {
+      "heading": "Les indicateurs à mettre en face des décisions",
+      "content": [
+        "**Marge contributive par canal :** arbitrer entre site marchand, marketplaces et ventes directes après prise en compte des coûts variables.",
+        "**Stocks et retours :** suivre les références immobilisées, la couverture du stock et les remboursements pour adapter les réapprovisionnements.",
+        "**Acquisition et réachat :** rapprocher les dépenses marketing de la contribution des cohortes de clients, en distinguant hypothèses et données observées."
+      ]
+    },
+    {
+      "heading": "Organiser le travail avec les équipes",
+      "content": [
+        "La finance définit avec les responsables e-commerce et logistique les sources de données, les règles de rapprochement et la fréquence des revues. Les écarts entre commandes, factures et banque doivent être expliqués avant d’automatiser le reporting.",
+        "Le DAF coordonne les sujets de TVA et de flux internationaux avec les professionnels compétents. Le périmètre dépend des pays de vente, des canaux utilisés et de l’organisation comptable."
+      ]
+    },
+    {
+      "heading": "Cadrer la mission et choisir un accompagnement",
+      "content": [
+        "Le périmètre se définit à partir des données disponibles, des échéances et des décisions à prendre. Un premier échange permet de préciser les livrables, leur fréquence et le rôle des équipes internes.",
+        "Consultez nos [modalités et tarifs de DAF externalisé](/daf-externalise/tarifs), les [exemples de missions clients](/ressources/cas-clients) et les [critères pour choisir un cabinet](/ressources/blog/choisir-cabinet-daf-externalise)."
+      ]
+    }
+  ],
+  "ctaButton": "Prendre rendez-vous"
+},
+    "industrie": {
+  "meta": {
+    "title": "DAF externalisé industrie : coûts, BFR et investissements | Iter Advisors",
+    "description": "DAF externalisé pour PMI et entreprises industrielles : coûts de revient, marges, stocks, trésorerie et investissements. Découvrez les missions et livrables."
+  },
+  "parentLabel": "DAF externalisé",
+  "parentHref": "/daf-externalise",
+  "breadcrumbLabel": "DAF industrie",
+  "h1": "DAF externalisé industrie : piloter les coûts, les stocks et les investissements",
+  "sections": [
+    {
+      "heading": "",
+      "content": [
+        "Un DAF externalisé industriel relie la comptabilité aux données de production pour éclairer les décisions du dirigeant. Le travail porte sur les coûts de revient, les marges, le financement du cycle d’exploitation et les projets d’investissement, avec les responsables opérationnels."
+      ]
+    },
+    {
+      "heading": "Comprendre les coûts de revient et les écarts",
+      "content": [
+        "Le [contrôle de gestion](/services/controle-de-gestion-externalise) rapproche achats, consommation de matières, temps de production et charges de structure. Les règles d’affectation doivent être documentées pour comparer produits, clients ou lignes de production.",
+        "Une revue des écarts distingue les effets de prix, de volume et de productivité. Elle aide à comprendre pourquoi une activité rentable sur devis peut produire une marge plus faible en pratique."
+      ]
+    },
+    {
+      "heading": "Piloter le cash immobilisé dans le cycle industriel",
+      "content": [
+        "Stocks de matières, encours et produits finis mobilisent de la trésorerie avant l’encaissement client. Le DAF rapproche ces postes des délais de règlement pour identifier les tensions de [BFR](/ressources/glossaire/besoin-fonds-roulement-bfr).",
+        "Le [prévisionnel de trésorerie](/services/previsionnel-tresorerie) traduit le carnet de commandes et le planning des achats en échéances de paiement. Les scénarios rendent visibles les conséquences d’un retard client ou d’un décalage de production."
+      ]
+    },
+    {
+      "heading": "Documenter les décisions d’investissement",
+      "content": [
+        "Un dossier d’investissement explicite le coût initial, les frais de mise en service, les charges récurrentes et les gains attendus. Les hypothèses commerciales et industrielles sont identifiées séparément des résultats déjà observés.",
+        "Le plan de financement est rapproché de la capacité de remboursement et des autres besoins de l’entreprise. Après mise en service, un suivi des écarts permet de revoir les hypothèses et les priorités."
+      ]
+    },
+    {
+      "heading": "Les livrables d’une mission de pilotage industriel",
+      "content": [
+        "**Tableau des marges :** une lecture par activité avec les règles d’imputation et les écarts expliqués.",
+        "**Revue des stocks et encours :** une base réconciliée avec les équipes de production et la comptabilité.",
+        "**Comité de pilotage :** des décisions documentées, des responsables identifiés et des indicateurs suivis d’une période à l’autre. L’[automatisation du reporting](/ressources/ia-finance/automatiser-reporting-financier) intervient une fois les données fiabilisées."
+      ]
+    },
+    {
+      "heading": "Cadrer la mission et choisir un accompagnement",
+      "content": [
+        "Le périmètre se définit à partir des données disponibles, des échéances et des décisions à prendre. Un premier échange permet de préciser les livrables, leur fréquence et le rôle des équipes internes.",
+        "Consultez nos [modalités et tarifs de DAF externalisé](/daf-externalise/tarifs), les [exemples de missions clients](/ressources/cas-clients) et les [critères pour choisir un cabinet](/ressources/blog/choisir-cabinet-daf-externalise)."
+      ]
+    }
+  ],
+  "ctaButton": "Prendre rendez-vous"
+},
     "deep-tech": {
-      meta: {
-        title: "DAF externalisé deep tech et biotech | Iter Advisors",
-        description:
-          "DAF externalisé spécialisé deep tech, biotech et hardware : CIR/CII, levée de fonds Series A/B, data room, valorisation. 30+ tours accompagnés.",
-      },
-      parentLabel: "DAF externalisé",
-      parentHref: "/daf-externalise",
-      breadcrumbLabel: "DAF Deep Tech",
-      h1: "DAF Externalisé Deep Tech : Levée de Fonds et Pilotage R&D",
-      sections: [
-        {
-          content: [
-            "Les deep tech ont des cycles de développement longs, des besoins de financement importants et des investisseurs exigeants. Iter Advisors a accompagné 30+ tours de financement deep tech pour 100 M€+ levés.",
-          ],
-        },
-        {
-          heading: "Spécificités financières de la deep tech",
-          content: [
-            "**CIR/CII :** Le Crédit d'Impôt Recherche représente 15 à 30 % du financement en phase R&D. Notre DAF sécurise l'éligibilité et maximise l'assiette déclarée.",
-            "**Subventions :** BPI France, Horizon Europe, DGA, ANR — notre DAF identifie les appels à projets et pilote le reporting.",
-            "**Valorisation :** Modèles financiers robustes (DCF, comparables, option pricing biotech) pour crédibiliser la valorisation face aux VCs.",
-            "**Due diligence :** Préparation de la data room et accompagnement jusqu'au closing.",
-          ],
-        },
-        {
-          heading: "Notre accompagnement phase par phase",
-          content: [
-            "**Pré-levée :** Modèle financier, data room, révision des KPIs, optimisation du cap table.",
-            "**Pendant la levée :** Due diligences, Q&A VCs, négociation du term sheet.",
-            "**Post-levée :** Reporting, budget annuel, pilotage du burn rate.",
-            "En complément : **[DAF externalisé](/daf-externalise)**, **[levée de fonds](/services/accompagnement-levee-de-fond)**, **[tarifs](/daf-externalise/tarifs)**.",
-          ],
-        },
-      ],
-      ctaButton: "Prendre rendez-vous",
+  "meta": {
+    "title": "DAF externalisé deep tech : runway, R&D et financement | Iter Advisors",
+    "description": "Structurez le pilotage financier de votre deep tech : budget R&D, runway, jalons de financement, data room et reporting investisseurs."
+  },
+  "parentLabel": "DAF externalisé",
+  "parentHref": "/daf-externalise",
+  "breadcrumbLabel": "DAF deep tech",
+  "h1": "DAF externalisé deep tech : financer les étapes de R&D et suivre le runway",
+  "sections": [
+    {
+      "heading": "",
+      "content": [
+        "Un DAF externalisé deep tech aide l’équipe dirigeante à relier les étapes de recherche et de développement aux moyens financiers nécessaires. Le modèle distingue dépenses engagées, hypothèses de revenus et financements confirmés, afin de préparer les décisions avant une tension de trésorerie."
+      ]
     },
+    {
+      "heading": "Traduire les jalons techniques en budget",
+      "content": [
+        "Le budget détaille équipes, sous-traitance, équipements et essais par projet. Chaque jalon technique est associé aux dépenses nécessaires et aux conditions de passage à l’étape suivante.",
+        "Des scénarios permettent de mesurer l’effet d’un retard de développement ou d’une dépense supplémentaire. Le [cash burn et le runway](/ressources/glossaire/cash-burn-runway) se calculent sur des hypothèses explicites, revues avec la direction technique."
+      ]
+    },
+    {
+      "heading": "Distinguer financements acquis et financements espérés",
+      "content": [
+        "Une subvention sollicitée, un versement conditionnel et une somme encaissée n’ont pas le même degré de certitude. Le plan de trésorerie identifie ces différences et le calendrier des justificatifs à produire.",
+        "Le DAF coordonne la documentation financière des aides et dispositifs de recherche avec les spécialistes compétents. Leur éligibilité et leur montant ne sont pas présumés : ils doivent être vérifiés pour la situation de l’entreprise."
+      ]
+    },
+    {
+      "heading": "Préparer la levée de fonds et les échanges investisseurs",
+      "content": [
+        "L’[accompagnement d’une levée de fonds](/services/accompagnement-levee-de-fond) comprend un modèle financier cohérent, des scénarios de financement et une présentation claire de l’utilisation des fonds.",
+        "La [data room de due diligence](/ressources/blog/checklist-due-diligence-levee-de-fonds) rassemble les pièces financières et les hypothèses du modèle. La direction conserve une trace des versions et des réponses transmises aux investisseurs."
+      ]
+    },
+    {
+      "heading": "Installer un reporting après financement",
+      "content": [
+        "**Budget par projet :** suivre les dépenses réalisées, engagées et restant à financer.",
+        "**Trésorerie :** rapprocher le solde bancaire, les échéances et les scénarios de runway.",
+        "**Gouvernance :** partager les écarts et les arbitrages avec les dirigeants et les investisseurs, sans confondre un objectif technique avec un résultat acquis. Les [outils de pilotage financier](/ressources/outils) sont choisis en fonction de ces besoins."
+      ]
+    },
+    {
+      "heading": "Cadrer la mission et choisir un accompagnement",
+      "content": [
+        "Le périmètre se définit à partir des données disponibles, des échéances et des décisions à prendre. Un premier échange permet de préciser les livrables, leur fréquence et le rôle des équipes internes.",
+        "Consultez nos [modalités et tarifs de DAF externalisé](/daf-externalise/tarifs), les [exemples de missions clients](/ressources/cas-clients) et les [critères pour choisir un cabinet](/ressources/blog/choisir-cabinet-daf-externalise)."
+      ]
+    }
+  ],
+  "ctaButton": "Prendre rendez-vous"
+},
+
   },
   en: {
     metier: {

@@ -105,6 +105,54 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Mirror historical middleware redirects in the routing manifest.
+      { source: "/en/ressources/blog/regimes-fiscaux-france-vs-espagne", destination: "/ressources/blog/regimes-fiscaux-france-vs-espagne", permanent: true },
+      { source: "/es/services/cash-flow-forecast", destination: "/es/services/prevision-tesoreria", permanent: true },
+      { source: "/ressources/blog/daf-externalise-startup", destination: "/ressources/blog", permanent: true },
+      // GSC 2026-09-05: canonical destinations for published aliases and observed chains.
+      {source: "/es/recursos/case-studies", destination: "/es/recursos/casos-de-exito", permanent: true},
+      {source: "/es/sobre-nosotros/benjamin-ziza", destination: "/es/quienes-somos/benjamin-ziza", permanent: true},
+      {source: "/es/sobre-nosotros", destination: "/es/quienes-somos", permanent: true},
+      {source: "/en/services/flux-de-tresorerie", destination: "/en/services/cash-flow-forecast", permanent: true},
+      {source: "/es/services/flujo-de-caja", destination: "/es/services/prevision-tesoreria", permanent: true},
+      {source: "/fr/services/flux-de-tresorerie", destination: "/services/previsionnel-tresorerie", permanent: true},
+      {source: "/services/flux-de-tresorerie", destination: "/services/previsionnel-tresorerie", permanent: true},
+      {source: "/es/recursos/blog/les-10-outils-pour-cfos-startup", destination: "/ressources/blog/les-10-outils-pour-cfos-startup", permanent: true},
+      {source: "/en/daf-externalise", destination: "/en/fractional-cfo", permanent: true},
+      {source: "/en/daf-externalise/secteurs", destination: "/en/fractional-cfo", permanent: true},
+      {source: "/en/daf-externalise/temps-partage", destination: "/en/fractional-cfo/shared-time", permanent: true},
+      {source: "/en/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance", destination: "/en/ressources/blog", permanent: true},
+      {source: "/en/en/ressources/blog/organiser-sa-direction-financiere", destination: "/en/ressources/blog", permanent: true},
+      {source: "/en/en/services/outsourced-financial-management", destination: "/en/fractional-cfo", permanent: true},
+      {source: "/en/es/ressources/blog/organiser-sa-direction-financiere", destination: "/ressources/blog/organiser-sa-direction-financiere", permanent: true},
+      {source: "/en/externalizacion-daf", destination: "/en/fractional-cfo", permanent: true},
+      {source: "/en/ressources/job-descriptions", destination: "/en/fractional-cfo/role", permanent: true},
+      {source: "/es/a-propos", destination: "/es/quienes-somos", permanent: true},
+      {source: "/es/daf-externalise/secteurs", destination: "/es/externalizacion-daf", permanent: true},
+      {source: "/es/daf-externalise/tarifs", destination: "/es/externalizacion-daf", permanent: true},
+      {source: "/es/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance", destination: "/en/ressources/blog", permanent: true},
+      {source: "/es/en/ressources/blog/organiser-sa-direction-financiere", destination: "/en/ressources/blog", permanent: true},
+      {source: "/es/es/ressources/blog/organiser-sa-direction-financiere", destination: "/ressources/blog/organiser-sa-direction-financiere", permanent: true},
+      {source: "/es/ressources", destination: "/es/recursos", permanent: true},
+      {source: "/es/ressources/blog/cas-etude-happy-scribe", destination: "/ressources/cas-clients", permanent: true},
+      {source: "/es/ressources/blog/checklist-due-diligence-levee-de-fonds", destination: "/es/recursos/blog", permanent: true},
+      {source: "/es/ressources/blog/cout-daf-externalise-tarifs-prix-2026", destination: "/es/recursos/blog/cfo-externo-pymes-precio-2026", permanent: true},
+      {source: "/es/ressources/blog/daf-drh-externalises-synergie", destination: "/ressources/blog/daf-drh-externalises-synergie", permanent: true},
+      {source: "/es/ressources/blog/daf-externalise-vs-expert-comptable", destination: "/ressources/blog/daf-externalise-vs-expert-comptable", permanent: true},
+      {source: "/es/ressources/blog/essentiels-outils-tech-finance", destination: "/ressources/blog/essentiels-outils-tech-finance", permanent: true},
+      {source: "/es/ressources/blog/la-modernisation-du-role-de-cfo", destination: "/ressources/blog/la-modernisation-du-role-de-cfo", permanent: true},
+      {source: "/es/ressources/blog/organiser-sa-direction-financiere", destination: "/ressources/blog/organiser-sa-direction-financiere", permanent: true},
+      {source: "/es/ressources/blog/stack-financier-saas-series-a", destination: "/ressources/blog/stack-financier-saas-series-a", permanent: true},
+      {source: "/es/ressources/fiscalite/beckham-law", destination: "/ressources/fiscalite/beckham-law", permanent: true},
+      {source: "/es/ressources/glossaire", destination: "/es/recursos/glosario", permanent: true},
+      {source: "/es/ressources/glossaire/cash-burn-runway", destination: "/ressources/glossaire/cash-burn-runway", permanent: true},
+      {source: "/es/ressources/glossaire/fusion-acquisition", destination: "/ressources/glossaire", permanent: true},
+      {source: "/es/ressources/glossaire/run-rate", destination: "/ressources/glossaire/run-rate", permanent: true},
+      {source: "/es/ressources/outils/lucca", destination: "/ressources/outils/lucca", permanent: true},
+      {source: "/es/ressources/outils/revolut-business", destination: "/ressources/outils/revolut-business", permanent: true},
+      {source: "/externalizacion-daf", destination: "/daf-externalise", permanent: true},
+      {source: "/recursos/herramientas", destination: "/ressources/outils", permanent: true},
+      {source: "/fr/services/ley-beckham", destination: "/ressources/fiscalite/beckham-law", permanent: true},
       {
         source: "/en/daf-outsourcing",
         destination: "/en/fractional-cfo",
@@ -559,7 +607,7 @@ const nextConfig: NextConfig = {
       {
         source:
           "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
-        destination: "/es/recursos/blog",
+        destination: "/es/recursos/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
         permanent: true,
       },
       // FR service slugs that GSC has indexed with old names. The
@@ -887,7 +935,7 @@ const nextConfig: NextConfig = {
       // (`:path*` matche aussi zéro segment) : deux sauts, et une arrivée en
       // français depuis une URL EN ou ES. Chacune vise maintenant la page
       // équivalente dans sa propre langue, en un saut.
-      { source: "/en/ressources/job-descriptions", destination: "/en/fractional-cfo/role",           permanent: true },
+
       { source: "/es/recursos/fiche-metier",       destination: "/es/externalizacion-daf/funciones", permanent: true },
 
       // ── EN blog articles that only exist in FR — redirect to FR canonical

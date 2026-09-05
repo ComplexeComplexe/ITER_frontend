@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import GlossaryEntryPage from "@/components/pages/GlossaryEntryPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
-import { getGlossaryEntryContent } from "@/lib/content/glossary-entries";
+import { getGlossaryEntryContent, getGlossaryPages } from "@/lib/content/glossary-entries";
 import { blogPosts } from "@/lib/content/blog-posts";
 import { resolveBlogArticleHref } from "@/lib/path-localization";
 import {
@@ -24,24 +24,7 @@ const SLUG_EN: Record<string, string> = {
   "besoin-fonds-roulement-bfr": "bfr",
 };
 
-const validSlugs = [
-  "bfr",
-  "ebitda",
-  "cfo",
-  // TICKET 21 — 8 nouvelles pages glossaire dédiées
-  "besoin-fonds-roulement-bfr",
-  "cash-burn-runway",
-  "cac-ltv",
-  "arr-mrr",
-  "churn-rate",
-  "run-rate",
-  "bspce-bsa",
-  // EC-02 — 4 nouvelles pages glossaire
-  "daf",
-  "drh-externalise",
-  "controle-de-gestion",
-  "fractional-cfo",
-];
+const validSlugs = getGlossaryPages("fr").map(entry => entry.slug);
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;

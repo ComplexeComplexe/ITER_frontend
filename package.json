@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "next build --webpack && node scripts/check-indexability.mjs",
     "start": "next start",
     "lint": "eslint",
     "test": "playwright test",
@@ -20,7 +20,8 @@
     "seed:service-pages": "tsx scripts/seed-service-single-pages-to-strapi.ts",
     "seed:team": "tsx scripts/seed-team-members-to-strapi.ts",
     "migrate:export-strapi": "tsx scripts/export-strapi.ts",
-    "migrate:images": "tsx scripts/migrate-cdn-images.ts"
+    "migrate:images": "tsx scripts/migrate-cdn-images.ts",
+    "audit:indexability": "node scripts/check-indexability.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

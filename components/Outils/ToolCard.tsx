@@ -46,14 +46,14 @@ export default function ToolCard({
         {/* Header with logo and badge */}
         <div className="flex items-start justify-between gap-4 mb-4">
           <div className="flex-shrink-0 w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center p-2">
-            <Image
+            {logo ? <Image
               src={logo}
               alt={logoAlt ?? `Logo ${name}`}
               width={120}
               height={40}
               sizes="120px"
               className="max-w-full max-h-full object-contain"
-            />
+            /> : <span className="text-sm font-semibold text-center text-gray-700">{name}</span>}
           </div>
           <div className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${phaseBadgeColors[phase]}`}>
             {phaseLabels[phase]}

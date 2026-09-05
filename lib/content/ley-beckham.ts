@@ -17,6 +17,8 @@ export interface LeyBeckhamContent {
     title: string;
     items: { question: string; answer: string }[];
   };
+  sourcesTitle: string;
+  sources: { label: string; href: string }[];
   cta: {
     title: string;
     description: string;
@@ -25,228 +27,228 @@ export interface LeyBeckhamContent {
   };
 }
 
+// Reviewed against Article 93 and AEAT instructions on 2026-09-05.
 const content: Record<Locale, LeyBeckhamContent> = {
-  fr: {
-    meta: {
-      title: "Loi Beckham Espagne - Guide complet 2026 | Iter Advisors",
-      description: "Loi Beckham en Espagne: avantages fiscaux, conditions d'eligibilité et mise en place. Économisez jusqu'à €50,000/an. Guide complet 2026.",
+  "en": {
+    "meta": {
+      "title": "Beckham Law Spain: eligibility and application | Iter Advisors",
+      "description": "Understand Spain’s special tax regime for people relocating to Spain: eligibility, employment income, Form 149 and the documents to prepare."
     },
-    hero: {
-      h1: "Loi Beckham: Le guide complet pour les expatriés en Espagne",
-      intro: "La Loi Beckham est l'opportunité fiscale la plus importante pour les expatriés s'installant en Espagne. Mais beaucoup ne la comprennent pas complètement—et d'autres la perdent par des erreurs administratives.",
+    "hero": {
+      "h1": "Beckham Law in Spain: check eligibility before applying",
+      "intro": "The Beckham Law is the common name for the special regime under Article 93 of Spain’s Personal Income Tax Law. Eligibility depends on the circumstances of the move and the conditions set out in the legislation; it is not an automatic benefit for every expatriate."
     },
-    sections: [
+    "sections": [
       {
-        heading: "Qu'est-ce que la Loi Beckham exactement ?",
-        content: [
-          "La Loi Beckham (officiellement 'Régime Fiscal Spécial des Travailleurs Détachés') est une loi fiscale espagnole qui permet aux cadres, entrepreneurs et professionnels hautement qualifiés s'installant en Espagne de payer l'impôt sur le revenu à un taux réduit de 24%.",
-          "Taux imposable réduit de 24% sur les revenus mondiaux (revenu espagnol), exonération de l'impôt sur les plus-values sur les actifs espagnols (0%), simplification substantielle des obligations.",
-        ],
+        "heading": "Who may qualify?",
+        "content": [
+          "For moves covered by the rules introduced in 2023, the prior non-residence condition concerns the five tax periods before the move. Eligible circumstances include certain employment arrangements, remote employment, company directorships and specified entrepreneurial or highly qualified professional activities.",
+          "Registering as self-employed is not sufficient on its own. The qualifying activity, residence history and other statutory conditions must be checked before choosing the regime."
+        ]
       },
       {
-        heading: "Qui qualifier pour la Loi Beckham",
-        content: [
-          "Ne doit pas avoir été résident fiscal en Espagne au cours des 10 dernières années",
-          "Doit avoir un contrat de travail ou être inscrit comme travailleur indépendant en Espagne",
-          "Doit établir sa résidence en Espagne (>183 jours/an)",
-          "Doit avoir une activité économique pertinente",
-        ],
+        "heading": "How is income treated?",
+        "content": [
+          "Employment income is generally subject to a 24% rate up to €600,000 and 47% above that threshold. Other types of income follow their own rules: there is no blanket 0% exemption for gains on Spanish assets.",
+          "Employment income earned during the regime is generally treated as Spanish-source for these purposes, even when paid from abroad. The treatment of other income and any double-tax relief must be assessed separately."
+        ]
       },
       {
-        heading: "Mise en place : Étape par étape",
-        content: [
-          "Étape 1: Vérifier l'éligibilité - Obtenir le NIE, demander un certificat de 'non-résident préalable'",
-          "Étape 2: Établir la résidence fiscale - S'enregistrer dans la municipalité, demander une déclaration de résidence fiscale",
-          "Étape 3: Demander formellement - Si employé, votre employeur présente le formulaire (20-30 jours), si travailleur indépendant, vous vous inscrivez (60-90 jours)",
-          "Étape 4: Conformité annuelle - Rester en Espagne >183 jours/an, présenter une déclaration fiscale annuelle",
-        ],
+        "heading": "How do you apply?",
+        "content": [
+          "The option is communicated using Form 149. For the principal taxpayer, the general deadline is six months from the activity start date evidenced by Social Security registration or the relevant supporting document. Check the applicable starting date before filing.",
+          "Prepare the documentation supporting the move, activity and eligibility. AEAT requires the supporting documents to be submitted before the option form. Annual reporting under the regime uses Form 151."
+        ]
       },
       {
-        heading: "Pièges courants",
-        content: [
-          "La règle des 10 ans - Si vous aviez travaillé en Madrid il y a 8 ans, vous ne qualifier pas",
-          "Perdre la résidence - Si vous êtes seulement 150 jours en Espagne une année, vous perdez le statut cette année-là",
-          "Ne pas s'enregistrer correctement comme travailleur indépendant - L'inscription à la sécurité sociale est requise d'abord",
-          "Les revenus étrangers ne sont pas inclus - La Loi Beckham ne s'applique qu'aux revenus ESPAGNOLS",
-        ],
-      },
+        "heading": "Prepare the decision",
+        "content": [
+          "Compare the regime with ordinary taxation using your actual income, family situation and expected duration in Spain. Keep the assumptions and supporting documents together; no fixed saving can be promised without that comparison.",
+          "This overview does not determine an individual taxpayer’s eligibility. Use the official guidance below to prepare a review of your circumstances."
+        ]
+      }
     ],
-    faq: {
-      title: "Questions fréquentes",
-      items: [
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
         {
-          question: "Puis-je utiliser la Loi Beckham si je travaille à distance pour une entreprise étrangère ?",
-          answer: "C'est compliqué. Plus sûr d'être employé par une entreprise espagnole ou d'être inscrit comme travailleur indépendant.",
+          "question": "How long can the regime apply?",
+          "answer": "The year in which Spanish tax residence is acquired and the following five tax periods, provided the conditions remain satisfied."
         },
         {
-          question: "Mon conjoint peut-il l'utiliser aussi ?",
-          answer: "Non. Chaque personne doit demander séparément et prouver une activité économique.",
+          "question": "Can family members apply?",
+          "answer": "Certain spouses, children and, in specified cases, the other parent may qualify as associated taxpayers. Their conditions and individual applications must be checked; the benefit is not automatic."
         },
         {
-          question: "Perds-je le statut si je change d'emploi ?",
-          answer: "Non, tant que vous maintenez votre résidence fiscale espagnole et une activité continue.",
-        },
-        {
-          question: "Barcelone et Madrid ont-elles des taux différents ?",
-          answer: "Non. La Loi Beckham est nationale (24% partout en Espagne).",
-        },
-      ],
+          "question": "Is remote work excluded?",
+          "answer": "No. Certain remote employment arrangements are included in the current rules. The contract and circumstances of the move still need to satisfy the relevant conditions."
+        }
+      ]
     },
-    cta: {
-      title: "Besoin d'aide pour mettre en place la Loi Beckham ?",
-      description: "Iter Advisors travaille avec les expatriés à Barcelone et dans d'autres villes espagnoles pour optimiser leur position fiscale en vertu de la Loi Beckham.",
-      buttonText: "Prendre rendez-vous",
-      buttonHref: "/contact",
-    },
-  },
-  en: {
-    meta: {
-      title: "Beckham Law Spain: Guide 2026 Expatriates | Iter Advisors",
-      description: "Beckham Law in Spain 2026: tax benefits, eligibility and implementation. Save up to €50,000/year. Complete guide for expat executives and entrepreneurs.",
-    },
-    hero: {
-      h1: "Beckham Law: The Complete Guide for Expatriates in Spain",
-      intro: "The Beckham Law is the most important tax opportunity for expatriates relocating to Spain. But many don't fully understand it—and others lose it through administrative mistakes.",
-    },
-    sections: [
+    "sourcesTitle": "Official sources — reviewed on 5 September 2026",
+    "sources": [
       {
-        heading: "What Is the Beckham Law Exactly?",
-        content: [
-          "The Beckham Law (officially 'Special Tax Regime for Displaced Workers') is a Spanish tax law allowing executives, entrepreneurs, and highly qualified professionals relocating to Spain to pay income tax at a reduced rate of 24%.",
-          "Fixed 24% tax rate on worldwide income (Spanish source), exemption from capital gains tax on Spanish assets (0%), substantial simplification of obligations.",
-        ],
+        "label": "BOE — Artículo 93, Ley 35/2006",
+        "href": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a93"
       },
       {
-        heading: "Who Qualifies for the Beckham Law",
-        content: [
-          "Must not have been a tax resident in Spain in the last 10 years",
-          "Must have an employment contract or be registered as self-employed in Spain",
-          "Must establish tax residency in Spain (>183 days/year)",
-          "Must have relevant economic activity",
-        ],
+        "label": "AEAT — Régimen especial de impatriados",
+        "href": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-tributacion-no-residentes/regimenes-opcionales/regimen-especial-impatriados.html"
       },
       {
-        heading: "Implementation: Step-by-Step",
-        content: [
-          "Step 1: Verify Eligibility - Get your NIE, request a 'prior non-resident' certificate",
-          "Step 2: Establish Tax Residency - Register in your municipality, request tax residency declaration",
-          "Step 3: Apply Formally - If employed, your employer submits the form (20-30 days); if self-employed, you register (60-90 days)",
-          "Step 4: Annual Compliance - Remain in Spain >183 days/year, file annual tax return",
-        ],
-      },
-      {
-        heading: "Common Traps",
-        content: [
-          "The 10-Year Rule - If you worked in Madrid 8 years ago, you don't qualify",
-          "Losing Residency - If you're only 150 days in Spain one year, you lose the status that year",
-          "Not Registering Properly as Self-Employed - Social Security registration is required first",
-          "Foreign Income Not Included - Beckham Law only applies to SPANISH-source income",
-        ],
-      },
+        "label": "AEAT — Instrucciones del modelo 149",
+        "href": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-personas-fisicas/modelo-149-irpf-comunicacion-opcion-exclusion_/instrucciones-cumplimentar-comunicacion.html"
+      }
     ],
-    faq: {
-      title: "Frequently Asked Questions",
-      items: [
-        {
-          question: "Can I use the Beckham Law if I work remotely for a foreign company?",
-          answer: "Complicated. Safer to be employed by a Spanish company or registered as self-employed.",
-        },
-        {
-          question: "Can my spouse use it too?",
-          answer: "No. Each person must apply separately and demonstrate economic activity.",
-        },
-        {
-          question: "Do I lose the status if I change jobs?",
-          answer: "No, as long as you maintain Spanish tax residency and continuous activity.",
-        },
-        {
-          question: "Do Barcelona and Madrid have different rates?",
-          answer: "No. The Beckham Law is national (24% across all of Spain).",
-        },
-      ],
-    },
-    cta: {
-      title: "Need help implementing the Beckham Law?",
-      description: "Iter Advisors works with expatriates in Barcelona and across Spain to optimize their tax position under the Beckham Law.",
-      buttonText: "Schedule a consultation",
-      buttonHref: "/en/contact",
-    },
+    "cta": {
+      "title": "Prepare your move to Spain",
+      "description": "Identify the financial and administrative questions to review before deciding.",
+      "buttonText": "Contact Iter Advisors",
+      "buttonHref": "/en/contact"
+    }
   },
-  es: {
-    meta: {
-      title: "Ley Beckham España : Guía 2026 Expatriados | Iter Advisors",
-      description: "Ley Beckham en España 2026: beneficios fiscales, requisitos y aplicación. Ahorra hasta €50 000/año. Guía para ejecutivos y emprendedores expatriados.",
+  "es": {
+    "meta": {
+      "title": "Ley Beckham: requisitos y solicitud en España | Iter Advisors",
+      "description": "Requisitos del régimen especial para personas desplazadas a España, tributación del trabajo, modelo 149 y documentación que conviene preparar."
     },
-    hero: {
-      h1: "Ley Beckham: La Guía Completa para Expatriados en España",
-      intro: "La Ley Beckham es la oportunidad fiscal más importante para expatriados que se trasladan a España. Pero muchos no la entienden completamente—y otros la pierden por errores administrativos.",
+    "hero": {
+      "h1": "Ley Beckham en España: comprobar los requisitos antes de solicitarla",
+      "intro": "La Ley Beckham es el nombre habitual del régimen especial del artículo 93 de la Ley del IRPF. Su aplicación depende del motivo del desplazamiento y de las condiciones legales; no es una ventaja automática para cualquier persona que se instale en España."
     },
-    sections: [
+    "sections": [
       {
-        heading: "¿Qué es la Ley Beckham exactamente?",
-        content: [
-          "La Ley Beckham (oficialmente 'Régimen Fiscal Especial de los Trabajadores Desplazados') permite a ejecutivos, emprendedores y profesionales altamente cualificados que se trasladen a España pagar impuestos sobre la renta a una tasa reducida del 24%.",
-          "Tasa fija del 24% sobre renta mundial (ingresos españoles), exención de impuesto sobre plusvalías en activos españoles (0%), simplificación sustancial de obligaciones.",
-        ],
+        "heading": "¿Quién puede acogerse?",
+        "content": [
+          "Para los desplazamientos sujetos a la regulación introducida en 2023, la condición de no residencia previa se refiere a los cinco períodos impositivos anteriores al desplazamiento. Se contemplan determinados contratos laborales, trabajo a distancia, administradores y actividades emprendedoras o profesionales cualificadas.",
+          "El alta como autónomo no basta por sí sola. Deben comprobarse la actividad que permite acceder al régimen, el historial de residencia y las demás condiciones legales."
+        ]
       },
       {
-        heading: "Quién califica para la Ley Beckham",
-        content: [
-          "No debe haber sido residente fiscal en España en los últimos 10 años",
-          "Debe tener contrato laboral o estar registrado como autónomo en España",
-          "Debe establecer residencia en España (>183 días/año)",
-          "Debe tener actividad económica relevante",
-        ],
+        "heading": "¿Cómo tributan las rentas?",
+        "content": [
+          "Los rendimientos del trabajo tributan, con carácter general, al 24 % hasta 600.000 euros y al 47 % por el exceso. Otras rentas siguen sus propias reglas: no existe una exención general del 0 % para las ganancias sobre activos españoles.",
+          "Los rendimientos del trabajo obtenidos durante el régimen se consideran, con carácter general, obtenidos en España a estos efectos, aunque el pagador esté en el extranjero. Las demás rentas y la posible deducción por doble imposición requieren un análisis separado."
+        ]
       },
       {
-        heading: "Implementación: Paso a Paso",
-        content: [
-          "Paso 1: Verificar elegibilidad - Obtén tu NIE, solicita certificado de 'no residente previo'",
-          "Paso 2: Establecer residencia fiscal - Regístrate en tu municipio, solicita declaración de residencia",
-          "Paso 3: Solicita formalmente - Si eres empleado, tu empleador presenta el formulario (20-30 días); si eres autónomo, te registras (60-90 días)",
-          "Paso 4: Cumplimiento anual - Permanece en España >183 días/año, presenta declaración fiscal anual",
-        ],
+        "heading": "¿Cómo se solicita?",
+        "content": [
+          "La opción se comunica mediante el modelo 149. Para el contribuyente principal, el plazo general es de seis meses desde el inicio de actividad acreditado por el alta en la Seguridad Social o el documento justificativo correspondiente. Hay que comprobar la fecha aplicable antes de presentar la solicitud.",
+          "Prepare los documentos del desplazamiento, la actividad y el cumplimiento de los requisitos. La AEAT exige aportar la documentación antes de presentar la comunicación de opción. La declaración anual del régimen se realiza mediante el modelo 151."
+        ]
       },
       {
-        heading: "Trampas comunes",
-        content: [
-          "La regla de los 10 años - Si trabajaste en Madrid hace 8 años, no calificas",
-          "Perder la residencia - Si estás sólo 150 días en España un año, pierdes el estatus ese año",
-          "No registrarse como autónomo correctamente - Requiere registro previo en Seguridad Social",
-          "Ingresos extranjeros no incluidos - La Ley Beckham solo aplica a ingresos ESPAÑOLES",
-        ],
-      },
+        "heading": "Preparar la decisión",
+        "content": [
+          "Compare este régimen con la tributación ordinaria a partir de sus rentas, situación familiar y permanencia prevista en España. Conserve las hipótesis y los documentos: no puede prometerse un ahorro fijo sin esa comparación.",
+          "Este resumen no determina la elegibilidad de una persona concreta. Las fuentes oficiales siguientes permiten preparar la revisión de su situación."
+        ]
+      }
     ],
-    faq: {
-      title: "Preguntas frecuentes",
-      items: [
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": [
         {
-          question: "¿Puedo usar la Ley Beckham si trabajo remotamente para empresa extranjera?",
-          answer: "Complicado. Más seguro estar empleado por empresa española o registrado como autónomo.",
+          "question": "¿Cuánto dura el régimen?",
+          "answer": "El período en el que se adquiere la residencia fiscal en España y los cinco períodos impositivos siguientes, siempre que se mantengan las condiciones."
         },
         {
-          question: "¿Mi cónyuge puede usarla también?",
-          answer: "No. Cada persona debe solicitar por separado y demostrar actividad económica.",
+          "question": "¿Puede aplicarse a familiares?",
+          "answer": "Determinados cónyuges, hijos y, en los supuestos previstos, el otro progenitor pueden acogerse como contribuyentes asociados. Deben revisar sus requisitos y presentar su opción individual; no es automático."
         },
         {
-          question: "¿Pierdo el estatus si cambio de trabajo?",
-          answer: "No, siempre que mantengas residencia fiscal española y actividad continua.",
-        },
-        {
-          question: "¿Barcelona y Madrid tienen tasas diferentes?",
-          answer: "No. La Ley Beckham es nacional (24% en todo el país).",
-        },
-      ],
+          "question": "¿Está excluido el teletrabajo?",
+          "answer": "No. La regulación actual incluye determinados supuestos de trabajo a distancia por cuenta ajena. El contrato y las circunstancias del desplazamiento deben cumplir los requisitos correspondientes."
+        }
+      ]
     },
-    cta: {
-      title: "¿Necesitas ayuda implementando la Ley Beckham?",
-      description: "Iter Advisors trabaja con expatriados en Barcelona y en toda España para optimizar su posición fiscal bajo la Ley Beckham.",
-      buttonText: "Agendar una consulta",
-      buttonHref: "/es/contact",
-    },
+    "sourcesTitle": "Fuentes oficiales — revisadas el 5 de septiembre de 2026",
+    "sources": [
+      {
+        "label": "BOE — Artículo 93, Ley 35/2006",
+        "href": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a93"
+      },
+      {
+        "label": "AEAT — Régimen especial de impatriados",
+        "href": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-tributacion-no-residentes/regimenes-opcionales/regimen-especial-impatriados.html"
+      },
+      {
+        "label": "AEAT — Instrucciones del modelo 149",
+        "href": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-personas-fisicas/modelo-149-irpf-comunicacion-opcion-exclusion_/instrucciones-cumplimentar-comunicacion.html"
+      }
+    ],
+    "cta": {
+      "title": "Preparar su traslado a España",
+      "description": "Identifique las cuestiones financieras y administrativas que necesita revisar.",
+      "buttonText": "Contactar con Iter Advisors",
+      "buttonHref": "/es/contact"
+    }
   },
+  "fr": {
+    "meta": {
+      "title": "Loi Beckham : conditions et démarches en Espagne | Iter Advisors",
+      "description": "Comprendre les conditions du régime spécial espagnol et préparer les documents nécessaires à une demande via le modèle 149."
+    },
+    "hero": {
+      "h1": "Loi Beckham : vérifier les conditions avant de demander le régime",
+      "intro": "La loi Beckham désigne le régime spécial prévu à l’article 93 de la loi espagnole relative à l’impôt sur le revenu. Son application dépend du motif du départ et de conditions légales précises."
+    },
+    "sections": [
+      {
+        "heading": "Vérifier les conditions",
+        "content": [
+          "Pour les situations relevant des règles introduites en 2023, la condition de non-résidence préalable porte sur les cinq périodes fiscales précédant le déplacement. Certains salariés, télétravailleurs salariés, dirigeants, entrepreneurs et professionnels qualifiés peuvent être concernés sous conditions."
+        ]
+      },
+      {
+        "heading": "Distinguer les revenus",
+        "content": [
+          "Les revenus du travail sont en principe imposés à 24 % jusqu’à 600 000 euros et à 47 % au-delà. Le traitement des autres revenus doit être analysé séparément : aucune exonération générale des plus-values espagnoles ne doit être présumée."
+        ]
+      },
+      {
+        "heading": "Préparer la demande",
+        "content": [
+          "La demande passe par le modèle 149. Le délai général du contribuable principal est de six mois à compter du début d’activité attesté par l’affiliation à la Sécurité sociale ou le justificatif applicable. La déclaration annuelle utilise le modèle 151."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Questions fréquentes",
+      "items": [
+        {
+          "question": "Quelle durée ?",
+          "answer": "L’année d’acquisition de la résidence fiscale espagnole et les cinq périodes fiscales suivantes, sous réserve du maintien des conditions."
+        },
+        {
+          "question": "Les proches sont-ils exclus ?",
+          "answer": "Non. Certains membres de la famille peuvent bénéficier du régime comme contribuables associés, sous conditions et avec une demande individuelle."
+        }
+      ]
+    },
+    "sourcesTitle": "Sources officielles — vérifiées le 5 septembre 2026",
+    "sources": [
+      {
+        "label": "BOE — Artículo 93, Ley 35/2006",
+        "href": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a93"
+      },
+      {
+        "label": "AEAT — Régimen especial de impatriados",
+        "href": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-tributacion-no-residentes/regimenes-opcionales/regimen-especial-impatriados.html"
+      },
+      {
+        "label": "AEAT — Instrucciones del modelo 149",
+        "href": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-personas-fisicas/modelo-149-irpf-comunicacion-opcion-exclusion_/instrucciones-cumplimentar-comunicacion.html"
+      }
+    ],
+    "cta": {
+      "title": "Préparer votre installation en Espagne",
+      "description": "Identifiez les éléments de votre situation à examiner.",
+      "buttonText": "Contacter Iter Advisors",
+      "buttonHref": "/contact"
+    }
+  }
 };
 
-export function getLeyBeckhamContent(locale: Locale): LeyBeckhamContent {
-  return content[locale];
-}
+export function getLeyBeckhamContent(locale: Locale): LeyBeckhamContent { return content[locale]; }
