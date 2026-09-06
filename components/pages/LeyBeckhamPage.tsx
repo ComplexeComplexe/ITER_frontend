@@ -1,3 +1,6 @@
+import Link from "next/link";
+import PageByline from "@/components/PageByline";
+import { editorialWebPageSchema } from "@/lib/schemas/editorial";
 
 import { Locale } from "@/lib/i18n";
 import { LeyBeckhamContent } from "@/lib/content/ley-beckham";
@@ -20,6 +23,14 @@ interface LeyBeckhamPageProps {
 
 export default function LeyBeckhamPage({ locale, content: t, cmsNavigation }: LeyBeckhamPageProps) {
   const bc = breadcrumbLabels[locale];
+  const author = { name: "Sébastien Doat", slug: "sebastien-doat" };
+  const dateModified = "2026-09-06";
+  const dateLabel = { fr: "6 septembre 2026", en: "6 September 2026", es: "6 de septiembre de 2026" }[locale];
+  const pageSchema = editorialWebPageSchema({
+    path: `${locale === "fr" ? "" : `/${locale}`}/services/ley-beckham`,
+    name: t.hero.h1, description: t.meta.description, locale, author,
+    datePublished: "2026-09-05", dateModified,
+  });
 
   /* FAQ structured data */
   const faqSchema = {
@@ -40,6 +51,8 @@ export default function LeyBeckhamPage({ locale, content: t, cmsNavigation }: Le
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+
       {/* Hero */}
       <section className="bg-background pt-32 pb-16">
         <div className="container">
@@ -52,6 +65,7 @@ export default function LeyBeckhamPage({ locale, content: t, cmsNavigation }: Le
           >
             {t.hero.h1}
           </h1>
+          <PageByline locale={locale} author={author} dateModified={dateModified} dateLabel={dateLabel} className="mb-6" />
           <p
             className="text-lg text-muted-foreground max-w-2xl"
           >
@@ -79,7 +93,7 @@ export default function LeyBeckhamPage({ locale, content: t, cmsNavigation }: Le
       <section className="bg-background py-8">
         <div className="container max-w-3xl">
           <h2 className="text-xl font-bold mb-4">{t.sourcesTitle}</h2>
-          {locale === "es" && <p className="mb-4"><a className="text-iter-violet underline" href="/es/recursos/blog/regimes-fiscaux-france-vs-espagne">Comparar la fiscalidad de Francia y España</a></p>}
+          {locale === "es" && <p className="mb-4"><Link className="text-iter-violet underline" href="/es/recursos/blog/regimes-fiscaux-france-vs-espagne">Comparar la fiscalidad de Francia y España</Link></p>}
           <ul className="space-y-3">{t.sources.map(source => <li key={source.href}><a className="text-iter-violet underline" href={source.href}>{source.label}</a></li>)}</ul>
         </div>
       </section>

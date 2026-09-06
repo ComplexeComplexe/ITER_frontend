@@ -13,7 +13,7 @@ const categoryMeta = {
       "Comparatif des meilleurs logiciels comptabilité pour PME 10-100 salariés. Avis d'experts DAF sur Pennylane, Sage, Cegid. Prix, implémentation, avantages.",
   },
   "logiciels-tresorerie": {
-    title: "Agicap vs Okimia (ex-Fygr) — Logiciels trésorerie PME | Iter Advisors",
+    title: "Agicap vs Okimia (ex-Fygr) : trésorerie PME | Iter",
     description:
       "Guide des logiciels trésorerie pour startups et PME. Avis d'expert sur Agicap, Okimia (ex-Fygr), Kyriba. Prévisions, DSO/DPO, cash flow automation.",
   },

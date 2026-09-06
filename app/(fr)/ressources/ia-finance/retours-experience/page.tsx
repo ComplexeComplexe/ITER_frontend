@@ -5,7 +5,7 @@ import IaFinanceGuide from "@/components/pages/IaFinanceGuide";
 const SLUG = "retours-experience";
 const guide = IA_GUIDES[SLUG];
 export const metadata = buildMetadata({
-  locale: "fr", title: guide.title, description: guide.description,
+  locale: "fr", title: guide.metaTitle ?? guide.title, description: guide.description,
   path: `/ressources/ia-finance/${SLUG}`, disableHreflang: ["en", "es"],
 });
 export default function Page() { return <IaFinanceGuide slug={SLUG} />; }

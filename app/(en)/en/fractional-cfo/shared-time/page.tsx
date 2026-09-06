@@ -16,8 +16,8 @@ export async function generateMetadata(): Promise<Metadata> {
       en: "/fractional-cfo/shared-time",
       es: "/externalizacion-daf/tiempo-compartido",
     },
-    fallbackTitle: "Fractional CFO, 2 to 8 days per month | Iter Advisors",
-    fallbackDescription: "Fractional CFO for startups and SMEs: senior finance leader 2 to 8 days a month. 85+ companies served, €100M+ raised, 5/5 Trustfolio. Free 24h quote.",
+    fallbackTitle: "Fractional CFO: shared-time finance | Iter Advisors",
+    fallbackDescription: "Fractional CFO for startups and SMEs: indicative involvement of 1 to 8 days a month, agreed scope and monthly fees. Expected start in 8 to 15 days.",
   });
 }
 

@@ -62,7 +62,7 @@ export const controleDeGestionExternaliseeContent = {
         id: "definition",
         title: "Qu'est-ce que le contrôle de gestion externalisé ?",
         paragraphs: [
-          "Le contrôle de gestion externalisé consiste à confier le pilotage financier et le reporting de performance à un expert externe, qui intervient de manière régulière — généralement 2 à 8 jours par mois — sans être salarié de l'entreprise. Il établit les tableaux de bord, suit les indicateurs clés de performance (KPIs), analyse les écarts entre prévisions et réalisations, et accompagne les fondateurs dans leurs décisions stratégiques.",
+          "Le contrôle de gestion externalisé consiste à confier le pilotage financier et le reporting de performance à un expert externe, qui intervient de manière régulière — selon le périmètre convenu — sans être salarié de l'entreprise. Il établit les tableaux de bord, suit les indicateurs clés de performance (KPIs), analyse les écarts entre prévisions et réalisations, et accompagne les fondateurs dans leurs décisions stratégiques.",
           "Contrairement à un comptable qui enregistre les flux passés, le contrôleur de gestion regarde vers l'avant : il modélise, prévient les dérives, et aide à prioriser les investissements.",
           "Le contrôle de gestion externalisé s'adresse particulièrement aux entreprises qui :",
         ],
@@ -193,7 +193,7 @@ export const controleDeGestionExternaliseeContent = {
           {
             question: "Qu'est-ce que le contrôle de gestion externalisé ?",
             answer:
-              "C'est le fait de confier le pilotage financier de votre entreprise à un expert externe qui intervient régulièrement (2 à 8 jours par mois). Il construit vos tableaux de bord, suit vos KPIs, analyse vos écarts et vous accompagne dans vos décisions stratégiques — sans être salarié.",
+              "C'est le fait de confier le pilotage financier de votre entreprise à un expert externe qui intervient régulièrement selon le périmètre convenu. Il construit vos tableaux de bord, suit vos KPIs, analyse vos écarts et vous accompagne dans vos décisions stratégiques — sans être salarié.",
           },
           {
             question:

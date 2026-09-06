@@ -213,7 +213,7 @@ export async function generateMetadata(): Promise<Metadata> {
   // À rouvrir le jour où une vraie traduction segment startup existe.
   return {
     title:
-      "DAF externalisé startup & SaaS | Fractional CFO | Iter Advisors",
+      "DAF externalisé startup et SaaS | Iter Advisors",
     description:
       "Fractional CFO / CFO à temps partagé senior pour startups VC-backed. Dès 3 000 € HT/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
     alternates: {
@@ -221,7 +221,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       title:
-        "DAF externalisé startup & SaaS | Fractional CFO | Iter Advisors",
+        "DAF externalisé startup et SaaS | Iter Advisors",
       description:
         "Fractional CFO / CFO à temps partagé senior pour startups VC-backed. Dès 3 000 € HT/mois. Levée de fonds, reporting, planification. Paris, Toulouse, Barcelone.",
       url: PAGE_URL,
@@ -310,7 +310,7 @@ export default async function Page() {
             </h2>
             <ul className="space-y-2.5 sm:space-y-3">
               {[
-                { label: "Définition", text: "un fractional CFO est un directeur financier senior à temps partiel (2 à 8 jours/mois)." },
+                { label: "Définition", text: "un fractional CFO est un directeur financier senior à temps partiel (1 à 8 jours/mois)." },
                 { label: "Tarif Iter Advisors", text: "à partir de 3 000 € HT/mois — formules Essentiel, Croissance et Premium." },
                 // Arbitrage 10/08/2026 — la promesse « 5 jours » est remplacée par le
                 // parcours réel : 8 à 15 jours du premier échange au démarrage.

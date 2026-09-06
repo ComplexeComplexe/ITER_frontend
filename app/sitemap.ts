@@ -558,9 +558,44 @@ export default function sitemap(): MetadataRoute.Sitemap {
   entries.push(...DOCUMENTED_CASES.map(item => ({ url: `${BASE}${item.href}`, lastModified: item.modified })));
 
   const transactionalUpdates = new Set(["/services/controle-de-gestion-externalise", "/services/comptabilite-externalisation", "/en/services/outsourced-management-control", "/es/services/control-gestion-externalizado", "/es/services/gestion-financiera-externalizada", "/es/services/externalizar-contabilidad", "/es/services/prevision-tesoreria", "/es/services/soporte-financiacion", "/services/gestion-financiere-externalisee", "/ressources/blog/daf-part-time-tarifs-missions-2026", "/ressources/blog/les-10-outils-pour-cfos-startup", "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", "/daf-externalise", "/fractional-cfo-startups", "/daf-externalise-toulouse", "/en/outsourced-cfo-toulouse", "/es/cfo-externalizado-toulouse", "/contact", "/en/contact", "/es/contact", "/daf-externalise/temps-partage", "/daf-externalise/secteurs", "/services/accompagnement-levee-de-fond"]);
+  const consistencyUpdates = new Set([
+    "",
+    "/daf-externalise-toulouse",
+    "/daf-externalise/deep-tech",
+    "/daf-externalise/ecommerce",
+    "/daf-externalise/industrie",
+    "/daf-externalise/temps-partage",
+    "/en",
+    "/en/fractional-cfo/shared-time",
+    "/en/ressources",
+    "/en/services/ley-beckham",
+    "/es",
+    "/es/cfo-externalizado-toulouse",
+    "/es/recursos",
+    "/es/recursos/blog/regimes-fiscaux-france-vs-espagne",
+    "/es/services/ley-beckham",
+    "/fractional-cfo-startups",
+    "/ressources",
+    "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
+    "/ressources/blog/cout-externalisation-comptable-2026",
+    "/ressources/blog/daf-part-time-tarifs-missions-2026",
+    "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
+    "/ressources/blog/stack-financier-saas-series-a",
+    "/ressources/cas-clients/opti-digital-structuration-financement",
+    "/ressources/cas-clients/seasonly-marge-par-canal-bfr",
+    "/ressources/cas-clients/solarmente-serie-b-cleantech",
+    "/ressources/glossaire/controle-de-gestion",
+    "/ressources/glossaire/daf",
+    "/ressources/glossaire/drh-externalise",
+    "/ressources/glossaire/fractional-cfo",
+    "/ressources/ia-finance/automatiser-reporting-financier",
+    "/ressources/ia-finance/outils",
+    "/ressources/outils/logiciels-tresorerie",
+    "/services/controle-de-gestion-externalise"
+  ]);
   return entries.map(item => ({
     ...item,
-    lastModified: transactionalUpdates.has(item.url.slice(BASE.length)) || [...tools.filter(tool => !tool.logo).map(tool => `/ressources/outils/${tool.slug}`), "/daf-externalise/deep-tech", "/daf-externalise/industrie", "/daf-externalise/ecommerce", "/ressources/outils", "/ressources/blog/stack-financier-saas-series-a", "/daf-externalise-paris", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", "/ressources/cas-clients", "/en/ressources/cas-clients"].some(path => item.url === `${BASE}${path}`)
+    lastModified: consistencyUpdates.has(item.url.slice(BASE.length)) ? "2026-09-06" : transactionalUpdates.has(item.url.slice(BASE.length)) || [...tools.filter(tool => !tool.logo).map(tool => `/ressources/outils/${tool.slug}`), "/daf-externalise/deep-tech", "/daf-externalise/industrie", "/daf-externalise/ecommerce", "/ressources/outils", "/ressources/blog/stack-financier-saas-series-a", "/daf-externalise-paris", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", "/ressources/cas-clients", "/en/ressources/cas-clients"].some(path => item.url === `${BASE}${path}`)
       ? "2026-09-05" : item.lastModified,
   }));
 }

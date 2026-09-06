@@ -1,3 +1,4 @@
+import { getDafOfferFacts } from "./offer-facts";
 import { Locale } from "../i18n";
 
 export interface ResourceCard {
@@ -417,7 +418,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
     faq: [
       {
         question: "What is a fractional CFO?",
-        answer: "A fractional CFO is a senior finance director who splits their time between several companies on a recurring basis (2 to 8 days per month). Unlike a full-time CFO (€100k–€180k/year in total cost), a fractional CFO costs €2,000–€7,000/month — giving you C-suite financial expertise without the full-time salary. At Iter Advisors, our fractional CFOs cover reporting, cash flow management, fundraising preparation, and financial strategy for startups and SMEs across France, Spain, and Belgium.",
+        answer: "A fractional CFO is a senior finance director working on a recurring, part-time basis. " + getDafOfferFacts("en").volume + " " + getDafOfferFacts("en").price,
       },
       {
         question: "How do I know if I need a fractional CFO?",
@@ -618,7 +619,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
     faq: [
       {
         question: "¿Qué es un DAF externalizado?",
-        answer: "Un DAF externalizado (Director Administrativo y Financiero externalizado) es un director financiero sénior que dedica parte de su tiempo a varias empresas de forma recurrente (2 a 8 días al mes). A diferencia de un DAF interno (100.000–150.000 €/año en coste total), un DAF externalizado cuesta entre 2.000 y 7.000 €/mes. En Iter Advisors, nuestros DAFs externalizados cubren el reporting, la gestión de tesorería, la preparación de rondas de inversión y la estrategia financiera para startups y PYMEs en España, Francia y Bélgica.",
+        answer: "Un CFO externalizado es un director financiero sénior que trabaja de forma recurrente a tiempo parcial. " + getDafOfferFacts("es").volume + " " + getDafOfferFacts("es").price,
       },
       {
         question: "¿Cuándo necesito un DAF externalizado?",

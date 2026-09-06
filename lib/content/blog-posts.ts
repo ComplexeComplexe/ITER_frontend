@@ -68,7 +68,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "cout-daf-externalise-tarifs-prix-2026": {
       meta: {
-        title: "Coût d’un DAF externalisé : comparer les budgets en 2026 | Iter Advisors",
+        title: "Coût DAF externalisé : comparer les budgets 2026 | Iter",
         // SEO-02 (2026-08-30) — « 50 à 70 % » et « TJM » sont deux valeurs
         // retirées le 10 août. Une meta description n'est pas dans le corps de
         // la page : le contrôle ne la lisait pas.
@@ -915,7 +915,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "stack-financier-saas-series-a": {
       meta: {
-        title: "Stack financier SaaS Series A : organisation et budget | Iter Advisors",
+        title: "Stack financier SaaS Series A : outils et budget | Iter",
         description: "Comment structurer la finance d’une SaaS après une Series A : données, comptabilité, trésorerie, dépenses, paie et coût total des outils.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -2053,7 +2053,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 
     "daf-part-time-tarifs-missions-2026": {
       meta: {
-        title: "Travailler avec un DAF à temps partagé : rythme et livrables | Iter Advisors",
+        title: "DAF à temps partagé : rythme et livrables | Iter Advisors",
         description: "Calendrier de clôture, trésorerie, réunions et responsabilités : organiser une mission récurrente avec un DAF à temps partagé.",
       },
       breadcrumbs: {

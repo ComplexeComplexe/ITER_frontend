@@ -1,5 +1,5 @@
 import type { Locale } from "../i18n";
-import { COUT_DAF_SALARIE, DELAIS, ENGAGEMENT, FORMULES } from "./facts";
+import { COUT_DAF_SALARIE, DELAIS, ENGAGEMENT, FORMULES, VOLUME_DAF_JOURS_MOIS } from "./facts";
 
 /** Localized presentation of the approved offer. Prices and terms stay in facts.ts. */
 export function getDafOffer(locale: Locale) {
@@ -36,6 +36,7 @@ export function getDafOffer(locale: Locale) {
       : "Le forfait mensuel couvre un périmètre de travail et un niveau de séniorité, pas un nombre d'heures ou de journées. Les jours indiqués sont des moyennes observées. Aucun dépassement n'est facturé sans avenant signé.";
   return {
     tiers, commitment, billing,
+    volume: duration(`${VOLUME_DAF_JOURS_MOIS.min} à ${VOLUME_DAF_JOURS_MOIS.max} jours`),
     price: monthly(minimum, maximum),
     annualPrice: range(minimum * 12, maximum * 12),
     salary: range(COUT_DAF_SALARIE.min, COUT_DAF_SALARIE.max),

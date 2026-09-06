@@ -81,7 +81,7 @@ const content: Record<Locale, CFOJobDescriptionContent> = {
     fractionalCFO: {
       title: "DAF Externalisé / Fractional CFO",
       description:
-        "Un DAF externalisé ou fractional CFO fournit des services financiers senior à temps partiel (2-8 jours par mois). Solution flexible et économique pour les startups et PME.",
+        "Un DAF externalisé ou fractional CFO fournit des services financiers senior à temps partiel (1-8 jours par mois). Solution flexible et économique pour les startups et PME.",
       responsibilities: [
         "Modélisation financière et prévisions de trésorerie",
         "Mise en place de dashboards KPI et reporting",
@@ -111,7 +111,7 @@ const content: Record<Locale, CFOJobDescriptionContent> = {
         {
           label: "Disponibilité",
           fullTime: "Full-time (40 heures/semaine)",
-          fractional: "2-8 jours/mois",
+          fractional: "1-8 jours/mois",
         },
         {
           label: "Engagement",

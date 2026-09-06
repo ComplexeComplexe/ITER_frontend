@@ -393,7 +393,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
   toulouse: {
     fr: {
       meta: {
-        title: "DAF externalisé Toulouse : missions et tarifs | Iter Advisors",
+        title: "DAF externalisé Toulouse : missions et tarifs | Iter",
         description: "DAF externalisé pour PME et startups à Toulouse : trésorerie, reporting et financement. Dès 3 000 € HT/mois, à distance et sur site selon votre besoin.",
       },
       breadcrumbLabel: "DAF externalisé Toulouse",
@@ -467,7 +467,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
       ctaButton: "Describe your needs in Toulouse",
     },
     es: {
-      meta: { title: "CFO externalizado en Toulouse: servicios y tarifas | Iter Advisors", description: "CFO para pymes y startups de Toulouse: tesorería, reporting y financiación desde 3.000 € sin IVA/mes, a distancia y presencialmente según lo acordado." },
+      meta: { title: "CFO externalizado en Toulouse: servicios y tarifas | Iter", description: "CFO para pymes y startups de Toulouse: tesorería, reporting y financiación desde 3.000 € sin IVA/mes, a distancia y presencialmente según lo acordado." },
       breadcrumbLabel: "CFO externalizado Toulouse",
       h1: "CFO externalizado para pymes y startups en Toulouse",
       intro: ["Gane visibilidad sobre la tesorería, los márgenes y la financiación con un CFO sénior que colabora con su equipo y su asesor contable.", "Las misiones se coordinan desde París y Barcelona, con desplazamientos a Toulouse acordados al definir el alcance. No hay consultor residente en Toulouse."],

@@ -31,7 +31,7 @@ export interface LeyBeckhamContent {
 const content: Record<Locale, LeyBeckhamContent> = {
   "en": {
     "meta": {
-      "title": "Beckham Law Spain: eligibility and application | Iter Advisors",
+      "title": "Beckham Law Spain: eligibility and application | Iter",
       "description": "Understand Spain’s special tax regime for people relocating to Spain: eligibility, employment income, Form 149 and the documents to prepare."
     },
     "hero": {
@@ -109,7 +109,7 @@ const content: Record<Locale, LeyBeckhamContent> = {
   },
   "es": {
     "meta": {
-      "title": "Ley Beckham: requisitos y solicitud en España | Iter Advisors",
+      "title": "Ley Beckham: requisitos y solicitud | Iter Advisors",
       "description": "Requisitos del régimen especial para personas desplazadas a España, tributación del trabajo, modelo 149 y documentación que conviene preparar."
     },
     "hero": {
