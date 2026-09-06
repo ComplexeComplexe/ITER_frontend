@@ -1,7 +1,7 @@
 import { IA_SOURCES, type IaSourceKey } from "./ia-finance-references";
 
 export interface IaGuide {
-  label: string; title: string; description: string; dek: string;
+  label: string; title: string; metaTitle?: string; description: string; dek: string;
   published: string; image: string; summary: string[];
   sections: { id: string; title: string; html: string }[];
   faq: { question: string; answer: string }[];
@@ -18,6 +18,7 @@ export const IA_GUIDES: Record<string, IaGuide> = {
   "automatiser-reporting-financier": {
     label: "Automatiser le reporting financier",
     title: "Automatiser le reporting financier : méthode, contrôles et ROI",
+    metaTitle: "Automatiser le reporting financier : méthode et contrôles",
     description: "Automatisez le reporting d’une PME : sources, rapprochements, contrôles, exemple de ROI et cas documenté. Une méthode pilotée par la direction financière.",
     dek: "Automatiser le reporting financier consiste à fiabiliser la collecte, appliquer des règles de calcul reproductibles et préparer les commentaires. Le point de départ est un reporting approuvé auquel comparer le nouveau dispositif, avec un responsable pour chaque écart.",
     published: "2026-09-01", image: financeImage,
@@ -68,7 +69,7 @@ export const IA_GUIDES: Record<string, IaGuide> = {
     ], faq:[{question:"Existe-t-il un meilleur LLM pour toutes les directions financières ?",answer:"Non. Le choix dépend du dossier, des outils disponibles, des accès, de la qualité attendue et du coût de vérification. Comparez les environnements sur les mêmes tâches."},{question:"Un LLM peut-il faire des calculs ?",answer:"Un assistant peut utiliser du code, un tableur ou d’autres outils de calcul. Vérifiez les opérations exécutées et leurs hypothèses ; un nombre généré dans du texte n’est pas une preuve de calcul."},{question:"Comment mesurer la qualité d’un résumé financier ?",answer:"Comparez-le à un corrigé : chiffres exacts, sources retrouvables, absence de cause inventée, points matériels couverts et temps de correction. Testez également les informations absentes du dossier."}],sources:["dataAnalysis","hebbia","googleBi","openaiData","anthropicData"],related:["chatgpt-finance","outils"],
   },
   "outils": {
-    label:"Outils de reporting et d’IA",title:"Outils IA et reporting financier : comment choisir pour une PME",
+    label:"Outils de reporting et d’IA",title:"Outils IA et reporting financier : comment choisir pour une PME",metaTitle:"Outils IA et reporting financier : comparatif pour PME",
     description:"Comparez reporting, connecteurs et assistants IA : critères, coût complet, licences et questions à poser avant achat. Liens vers les documentations éditeur.",
     dek:"Choisir un outil financier commence par les données à exploiter et les contrôles attendus. Évaluez séparément le logiciel comptable, la connexion des données, le reporting et l’assistant IA : acheter une licence ne relie pas automatiquement ces quatre éléments.",
     published:"2026-09-01",image:financeImage,

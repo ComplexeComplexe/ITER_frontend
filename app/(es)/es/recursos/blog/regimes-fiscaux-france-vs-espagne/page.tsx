@@ -4,7 +4,7 @@ import { getCmsNavigation } from "@/lib/static-content";
 import { Callout, StatGrid, ProseTable, InlineCta } from "@/components/blog";
 
 export const metadata: Metadata = {
-  title: "Fiscalidad Francia vs España: comparativa completa 2026 | Iter Advisors",
+  title: "Fiscalidad Francia vs España: comparativa 2026 | Iter",
   description:
     "IS, IVA, cotizaciones sociales, régimen Beckham: guía completa para empresas que operan entre Francia y España. Ahorra hasta 7.500 €/empleado. Diagnóstico gratuito.",
   alternates: {
@@ -371,7 +371,7 @@ export default async function Page() {
         title="¿Necesitas una optimización fiscal a medida?"
         body="Nuestro equipo de expertos analiza tu situación e identifica los ahorros potenciales. Auditoría 100% gratuita, sin compromiso."
         ctaLabel="Solicitar una auditoría fiscal gratuita"
-        ctaHref="/es/contacto"
+        ctaHref="/es/contact"
       />
 
       <ProseTable>

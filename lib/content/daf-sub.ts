@@ -138,7 +138,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         // fourchette jours pour signal transactionnel dès le SERP.
         title: "DAF à temps partagé : missions et tarifs 2026",
         description:
-          "Un directeur financier à temps partagé, de 2 jours/mois à 3 jours/semaine. Missions, prix réels, démarrage en 2 semaines.",
+          "DAF à temps partagé : 1 à 8 jours par mois à titre indicatif, selon le périmètre. De 3 000 à 8 000 € HT/mois ; démarrage prévu en 8 à 15 jours.",
       },
       parentLabel: "DAF externalisé",
       parentHref: "/daf-externalise",
@@ -658,7 +658,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     "ecommerce": {
       proofSlugs: ["seasonly-marge-par-canal-bfr"],
   "meta": {
-    "title": "DAF externalisé e-commerce : marge et trésorerie | Iter Advisors",
+    "title": "DAF externalisé e-commerce : marge et trésorerie | Iter",
     "description": "Pilotez la marge par canal, les stocks, les retours et la trésorerie de votre e-commerce avec un DAF externalisé. Missions et indicateurs à suivre."
   },
   "parentLabel": "DAF externalisé",
@@ -713,7 +713,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
 },
     "industrie": {
   "meta": {
-    "title": "DAF externalisé industrie : coûts, BFR et investissements | Iter Advisors",
+    "title": "DAF externalisé industrie : coûts et BFR | Iter Advisors",
     "description": "DAF externalisé pour PMI et entreprises industrielles : coûts de revient, marges, stocks, trésorerie et investissements. Découvrez les missions et livrables."
   },
   "parentLabel": "DAF externalisé",
@@ -805,7 +805,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
 },
     "deep-tech": {
   "meta": {
-    "title": "DAF externalisé deep tech : runway, R&D et financement | Iter Advisors",
+    "title": "DAF externalisé deep tech : runway et financement | Iter",
     "description": "Structurez le pilotage financier de votre deep tech : budget R&D, runway, jalons de financement, data room et reporting investisseurs."
   },
   "parentLabel": "DAF externalisé",

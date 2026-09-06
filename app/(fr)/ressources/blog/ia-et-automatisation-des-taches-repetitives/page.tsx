@@ -5,7 +5,7 @@ import { ProseTable } from "@/components/blog";
 const slug = "ia-et-automatisation-des-taches-repetitives";
 const title = "Automatisation en finance : quelles tâches traiter en premier ?";
 const description = "Une grille pour prioriser les tâches finance : collecte, rapprochements, relances et reporting. Mesurez le volume, les exceptions et le gain après contrôle.";
-export const metadata = buildMetadata({locale:"fr",title,description,path:`/ressources/blog/${slug}`,disableHreflang:["en","es"]});
+export const metadata = buildMetadata({locale:"fr",title:"Automatisation en finance : quelles tâches prioriser ?",description,path:`/ressources/blog/${slug}`,disableHreflang:["en","es"]});
 export default function Page() {
   return <BlogPostPageRefonte locale="fr" slug={slug} category="IA & Finance" title={title} dek={description}
     breadcrumbs={{resourcesLabel:"Ressources",resourcesHref:"/ressources",blogLabel:"Blog",blogHref:"/ressources/blog"}}

@@ -5,7 +5,7 @@ import ProseTable from "@/components/blog/ProseTable";
 import { getDafOffer } from "@/lib/content/daf-offer";
 const offer = getDafOffer("fr");
 export const metadata: Metadata = {
-  "title": "Travailler avec un DAF à temps partagé : rythme et livrables | Iter Advisors",
+  "title": "DAF à temps partagé : rythme et livrables | Iter Advisors",
   "description": "Réunions, calendrier de clôture, trésorerie et responsabilités : organiser une mission de DAF à temps partagé et définir son périmètre.",
   "alternates": {
     "canonical": "https://www.iteradvisors.com/ressources/blog/daf-part-time-tarifs-missions-2026"

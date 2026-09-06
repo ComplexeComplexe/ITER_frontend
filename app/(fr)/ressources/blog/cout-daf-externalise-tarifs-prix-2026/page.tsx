@@ -5,7 +5,7 @@ import ProseTable from "@/components/blog/ProseTable";
 import { getDafOffer } from "@/lib/content/daf-offer";
 const offer = getDafOffer("fr");
 export const metadata: Metadata = {
-  "title": "Coût d’un DAF externalisé : comparer les budgets en 2026 | Iter Advisors",
+  "title": "Coût DAF externalisé : comparer les budgets 2026 | Iter",
   "description": "Comparez forfait mensuel, tarif journalier et recrutement : périmètre, frais, disponibilité et calcul annuel. Méthode et exemples de budget explicites.",
   "alternates": {
     "canonical": "https://www.iteradvisors.com/ressources/blog/cout-daf-externalise-tarifs-prix-2026"

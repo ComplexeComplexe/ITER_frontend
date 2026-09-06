@@ -773,7 +773,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
           heading: "DAF externalisé : un modèle adapté aux PME",
           content: [
             "Le modèle du **DAF externalisé** (aussi appelé DAF à temps partagé) est particulièrement adapté aux entreprises de 10 à 200 salariés qui ont besoin d'expertise financière senior sans pouvoir justifier d'un temps plein.",
-            "Concrètement, un DAF externalisé intervient 2 à 8 jours par mois selon les besoins. Il prend en charge le pilotage financier global, libère le dirigeant des sujets financiers chronophages, et structure l'information financière pour les décisions stratégiques.",
+            "Concrètement, un DAF externalisé intervient 1 à 8 jours par mois selon les besoins. Il prend en charge le pilotage financier global, libère le dirigeant des sujets financiers chronophages, et structure l'information financière pour les décisions stratégiques.",
             "Chez **[Iter Advisors](/daf-externalise)**, nos DAF externalisés accompagnent des PME, startups et entreprises franco-espagnoles depuis 2021. Découvrez nos [tarifs DAF externalisé](/daf-externalise/tarifs) et nos [cas clients](/ressources/cas-clients).",
           ],
         },
@@ -790,7 +790,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     "drh-externalise": {
       meta: {
-        title: "DRH externalisé : définition, missions et tarifs | Iter Advisors",
+        title: "DRH externalisé : définition et missions | Iter Advisors",
         description:
           "DRH externalisé ou DRH à temps partagé : définition, périmètre d'intervention, différence avec un DRH salarié et tarifs 2026.",
       },
@@ -831,7 +831,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     "controle-de-gestion": {
       meta: {
-        title: "Contrôle de gestion : définition, outils et missions | Iter Advisors",
+        title: "Contrôle de gestion : définition et outils | Iter Advisors",
         description:
           "Contrôle de gestion : définition, différence avec la comptabilité, outils (Power BI, Excel, Agicap), et coût d'un contrôleur de gestion externalisé.",
       },
@@ -881,7 +881,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     },
     "fractional-cfo": {
       meta: {
-        title: "Fractional CFO : définition, missions et tarifs France | Iter Advisors",
+        title: "Fractional CFO : définition et missions | Iter Advisors",
         description:
           "Fractional CFO (CFO fractionnel) : définition, différence avec le DAF externalisé, cas d'usage startups et tarifs 2026 en France.",
       },

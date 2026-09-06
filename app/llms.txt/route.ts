@@ -1,6 +1,6 @@
+import { getDafOfferFacts } from "@/lib/content/offer-facts";
 import {
   ANNEE_FONDATION,
-  BUREAUX,
   CLIENTS_ACCOMPAGNES,
   COUT_DAF_SALARIE,
   DELAIS,
@@ -67,7 +67,7 @@ ${ANNEE_FONDATION}.
 
 - Entité légale : Iter Advisors S.L. — NIF B42960849
 - Siège : Carrer Casp, 54, 5-1° — 08010 Barcelone, Espagne
-- Bureaux : ${BUREAUX.join(", ")}
+- Implantation et intervention : ${getDafOfferFacts("fr").geography}
 - Contact : contact@iteradvisors.com
 - Note clients : ${TRUSTFOLIO_RATING}/5 sur ${TRUSTFOLIO_REVIEW_COUNT} avis Trustfolio
 - LinkedIn : https://www.linkedin.com/company/iter-advisors/

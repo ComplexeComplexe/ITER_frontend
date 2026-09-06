@@ -8,7 +8,7 @@ const title = "Coût de l’externalisation comptable : comparer les devis en 20
 const description = "Construire un budget comptable comparable : périmètre, volume de pièces, paie, clôture, logiciels, coûts de démarrage et travail interne.";
 const url = `https://www.iteradvisors.com/ressources/blog/${slug}`;
 export const metadata: Metadata = {
-  title, description, alternates: { canonical: url },
+  title: "Coût externalisation comptable : comparer les devis 2026", description, alternates: { canonical: url },
   openGraph: { title, description, type: "article", url, images: ["/images/og-logo.png"] },
 };
 const faqs = [

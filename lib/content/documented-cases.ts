@@ -6,6 +6,7 @@ const caseDetails = [
   {
     slug: "solarmente-serie-b-cleantech",
     company: "SolarMente",
+    metaTitle: "SolarMente : levée et structuration finance | Iter Advisors",
     title: "SolarMente : structurer la finance pour une levée et une acquisition",
     summary: "Modèle financier, data room, reporting au conseil et intégration financière : le travail d'un CFO externalisé dans une cleantech en croissance.",
     proof: "Modèle multi-scénarios, data room et reporting au conseil",
@@ -18,6 +19,7 @@ const caseDetails = [
   {
     slug: "seasonly-marge-par-canal-bfr",
     company: "Seasonly",
+    metaTitle: "Seasonly : marge par canal et BFR | Iter Advisors",
     title: "Seasonly : piloter la marge par canal et financer le BFR",
     summary: "P&L par canal, pilotage des stocks et reporting hebdomadaire : une mission de DAF externalisé pour une marque de beauté multi-canal.",
     proof: "P&L par canal et plan de financement du BFR",
@@ -28,6 +30,7 @@ const caseDetails = [
   {
     slug: "opti-digital-structuration-financement",
     company: "Opti Digital",
+    metaTitle: "Opti Digital : structurer la finance | Iter Advisors",
     title: "Opti Digital : structurer la fonction finance dans la durée",
     summary: "Migration ERP, reporting, clôture et financement non dilutif : comment Iter accompagne une PME adtech dans la structuration de sa fonction finance.",
     proof: "Fonction finance structurée et financement non dilutif",

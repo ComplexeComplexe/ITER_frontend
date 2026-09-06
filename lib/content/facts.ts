@@ -77,11 +77,13 @@ export const PRIX_ENTREE_HT_MOIS = 3000;
  * Facturation en retainer mensuel, jamais à l'heure, aucun dépassement facturé
  * sans avenant signé.
  */
+export const VOLUME_DAF_JOURS_MOIS = { min: 1, max: 8 } as const;
+
 export const FORMULES = [
   {
     nom: "Essentiel",
     codeInterne: "STARTER",
-    volumeIndicatif: "1 à 2 jours par mois",
+    volumeIndicatif: `${VOLUME_DAF_JOURS_MOIS.min} à 2 jours par mois`,
     prixMin: 3000,
     prixMax: 5000,
     cible: "Startups en Seed, moins de 30 collaborateurs",
@@ -103,7 +105,7 @@ export const FORMULES = [
   {
     nom: "Premium",
     codeInterne: "SCALE",
-    volumeIndicatif: "5 à 8 jours par mois",
+    volumeIndicatif: `5 à ${VOLUME_DAF_JOURS_MOIS.max} jours par mois`,
     prixMin: 6500,
     prixMax: 8000,
     cible: "Série B et au-delà",

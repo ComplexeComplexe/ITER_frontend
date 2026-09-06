@@ -14,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const item = getDocumentedCase((await params).slug);
   if (!item) notFound();
-  return buildMetadata({ locale: "fr", path: item.href, title: `${item.title} | Iter Advisors`, description: item.summary, disableHreflang: ["en", "es"] });
+  return buildMetadata({ locale: "fr", path: item.href, title: item.metaTitle, description: item.summary, disableHreflang: ["en", "es"] });
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

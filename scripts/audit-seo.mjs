@@ -252,6 +252,24 @@ for (const abs of urls) {
     }
   }
 
+  // Commercial FAQ regressions also occur in translations and JSON-LD.
+  // Restrict this check to DAF summaries: other offers have their own terms.
+  const dafSummaryPaths = new Set(["/", "/en", "/es", "/ressources", "/en/ressources", "/es/recursos", "/fractional-cfo-startups", "/daf-externalise/temps-partage", "/en/fractional-cfo/shared-time", "/ressources/glossaire/daf"]);
+  if (dafSummaryPaths.has(path)) {
+    const published = `${texte} ${metaDesc} ${jsonld}`.normalize("NFKC");
+    for (const re of [
+      /2\s*(?:à|to|a|–|-)\s*8\s*(?:jours|days|días)/i,
+      /1[ ,.]*500.{0,30}5[ ,.]*000/i,
+      /2[ ,.]*000.{0,30}7[ ,.]*000/i,
+    ]) {
+      const match = published.match(re);
+      if (match) fail("offre/cohérence", `${path} : ${match[0]}`);
+    }
+    if (["/", "/en", "/es"].includes(path) && /Lyon|Bordeaux|Burdeos|Madrid/.test(published)) {
+      fail("offre/implantations", `${path} : implantation non documentée dans la FAQ`);
+    }
+  }
+
   // ── 3c. E-E-A-T des pages éditoriales : auteur, date, sources
   //
   // SEO-19 (2026-08-31) — l'attribution existait mais dérivait en silence :
