@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Locale } from "@/lib/i18n";
-import { BOOKING_URL } from "@/lib/navigation";
+import { getContactPath } from "@/lib/navigation";
 import type { CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -101,7 +101,7 @@ export default function ServicePageLayout({
 
             {/* CTA Button */}
             <Link
-              href={BOOKING_URL}
+              href={getContactPath(locale)}
               className="inline-flex items-center justify-center sm:justify-start gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-2"
             >
               {locale === "fr" ? "Demander un devis" : "Request a quote"}

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ReactNode } from "react";
 import { ArrowRight, TrendingUp, BarChart3, Wallet, Rocket, Compass, Users } from "lucide-react";
 import { Locale } from "@/lib/i18n";
-import { getContactPath, BOOKING_URL } from "@/lib/navigation";
+import { getContactPath } from "@/lib/navigation";
 import { dafClusterHref, drhClusterHref, serviceHref } from "@/lib/path-localization";
 import { getDrhContent } from "@/lib/content/drh";
 import type { StrapiDrhServiceCategory, CmsNavItem } from "@/lib/static-content";
@@ -207,9 +207,7 @@ export default function DrhPage({
             ))}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">
               <Link
-                href={BOOKING_URL}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
+                href={getContactPath(locale)}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 {t.ctaButton}

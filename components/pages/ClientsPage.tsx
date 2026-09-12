@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/static-content";
-import { BOOKING_URL } from "@/lib/navigation";
+import { getContactPath } from "@/lib/navigation";
 import {
   clients,
   getClientsPageContent,
@@ -139,9 +139,7 @@ export default function ClientsPage({
             {t.ctaParagraph}
           </p>
           <Link
-            href={BOOKING_URL}
-            target="_blank"
-            rel="nofollow noopener noreferrer"
+            href={getContactPath(locale)}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-semibold hover:shadow-xl transition-all duration-300"
           >
             {t.ctaButton}

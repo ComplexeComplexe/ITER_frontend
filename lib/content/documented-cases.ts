@@ -26,6 +26,7 @@ const caseDetails = [
     deliverables: ["P&L distincts pour la vente directe, le retail et les marketplaces", "Suivi des stocks et des besoins de financement", "Plan de financement du besoin en fonds de roulement", "Tableau de bord hebdomadaire pour les dirigeants et actionnaires"],
     limits: "L'évolution de marge publiée est mesurée en points de pourcentage, sur la marge brute consolidée de tous les canaux. La comparaison porte sur deux périodes de douze mois équivalentes, avant et après la mise en place du P&L par canal. Les dates calendaires de ces périodes ne sont pas publiées. Ce résultat est propre à cette mission et ne constitue pas une prévision pour une autre entreprise.",
     offer: { href: "/daf-externalise/ecommerce", label: "DAF externalisé pour le e-commerce" },
+    relatedService: { href: "/services/controle-de-gestion-externalise", label: "contrôle de gestion externalisé" },
   },
   {
     slug: "opti-digital-structuration-financement",

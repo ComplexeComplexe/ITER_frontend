@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { ReactNode } from "react";
 import { Locale } from "@/lib/i18n";
-import { BOOKING_URL } from "@/lib/navigation";
+import { getContactPath } from "@/lib/navigation";
 import type { CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -143,9 +143,7 @@ export default function ComptabiliteExternalisationPage({
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
-                href={BOOKING_URL}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
+                href={getContactPath(locale)}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 Demander un devis

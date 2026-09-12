@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Mail } from "lucide-react";
 import { Locale } from "@/lib/i18n";
-import { BOOKING_URL } from "@/lib/navigation";
+import { getContactPath } from "@/lib/navigation";
 
 const ctaText: Record<Locale, { heading: string; paragraph: string; button: string; email: string }> = {
   fr: {
@@ -59,10 +59,8 @@ export default function CTASection({ locale }: { locale: Locale }) {
             {t.paragraph}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {/* REFONTE-DAF (2026-09-03) — BOOKING_URL est /contact, une page
-                interne : plus de nofollow ni de nouvel onglet. */}
             <Link
-              href={BOOKING_URL}
+              href={getContactPath(locale)}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-dark text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
             >
               {t.button}

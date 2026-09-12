@@ -36,7 +36,7 @@ import {
   Heart,
 } from "lucide-react";
 import { Locale } from "@/lib/i18n";
-import { getContactPath, BOOKING_URL } from "@/lib/navigation";
+import { getContactPath } from "@/lib/navigation";
 import { getHomeContent } from "@/lib/content/home";
 import { faqPageSchema } from "@/lib/schemas";
 import { getFallbackTeamMembers } from "@/lib/content/team";
@@ -270,7 +270,7 @@ export default function HomePage({
     homepage?.heroTitle || `${t.hero.h1.before}${t.hero.h1.highlight}${t.hero.h1.after}`;
   const heroSubtitle = homepage?.heroSubtitle || t.hero.h2;
   const heroCtaLabel = t.hero.cta;
-  const heroCtaUrl = BOOKING_URL;
+  const heroCtaUrl = getContactPath(locale);
 
   const cmsValueProps = homepage?.valuePropositions && homepage.valuePropositions.length > 0
     ? homepage.valuePropositions
@@ -528,9 +528,7 @@ export default function HomePage({
               </div>
               <div className="flex flex-wrap gap-3">
                 <Link
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={getContactPath(locale)}
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-iter-violet text-white font-semibold hover:shadow-lg hover:shadow-iter-violet/20 transition-all duration-300"
                 >
                   {t.dafSection.cta}
@@ -1116,9 +1114,7 @@ export default function HomePage({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={getContactPath(locale)}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-dark text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
               >
                 {t.hero.cta}

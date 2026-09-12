@@ -314,7 +314,7 @@ export const homeContent = {
     ],
     discover: "Discover",
     financeServices: [
-      { title: "Outsourced CFO", href: "/daf-externalise", desc: "A dedicated part-time CFO to structure and manage your finance function." },
+      { title: "Outsourced CFO", href: "/en/fractional-cfo", desc: "A dedicated part-time CFO to structure and manage your finance function." },
       { title: "Management control", href: undefined, desc: "Dashboards, reporting and performance analysis for informed decisions." },
       { title: "Cash management", href: undefined, desc: "Cash flow forecasting, working capital optimization and liquidity management." },
       { title: "Fundraising", href: undefined, desc: "Strategic support to secure your financing and convince investors." },
@@ -499,7 +499,7 @@ export const homeContent = {
     ],
     discover: "Descubra",
     financeServices: [
-      { title: "CFO externalizado", href: "/daf-externalise", desc: "Un director financiero dedicado a tiempo compartido para estructurar y pilotar su función financiera." },
+      { title: "CFO externalizado", href: "/es/externalizacion-daf", desc: "Un director financiero dedicado a tiempo compartido para estructurar y pilotar su función financiera." },
       { title: "Control de gestión", href: undefined, desc: "Cuadros de mando, reporting y análisis de rendimiento para decisiones informadas." },
       { title: "Gestión de tesorería", href: undefined, desc: "Previsión de tesorería, optimización del capital circulante y gestión de la liquidez." },
       { title: "Captación de fondos", href: undefined, desc: "Acompañamiento estratégico para asegurar sus financiaciones y convencer a los inversores." },

@@ -430,36 +430,19 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           heading: "Comment Démarrer une Mission de Transition ?",
           content: [
             "La réactivité est au cœur du DAF de transition. Chez Iter Advisors, comptez 7 à 10 jours entre le premier échange et le démarrage effectif, selon la disponibilité du profil et la complexité du dossier.",
-            "**Jour 1 :** Premier appel de qualification pour comprendre la situation et évaluer l'urgence. **Jour 2-3 :** Présentation du DAF proposé au dirigeant. Signature du contrat de prestation. **Jour 4-5 :** Démarrage de la mission. Accès aux systèmes, rencontre avec l'équipe, début de l'audit.",
-          ],
-        },
-        {
-          heading: "FAQ - DAF de Transition",
-          // T#12 (2026-07-18) — Q3 ajoutée "dans quels cas" pour capter
-          // la PAA Google dominante sur "daf de transition". Les Q1/Q2
-          // existantes ciblaient "salaire" et "manager de transition" —
-          // maintenant les 3 requêtes clés sont couvertes en FAQPage JSON-LD.
-          content: [
-            "**Combien coûte un DAF de transition par rapport à un DAF salarié ?** Une mission de transition représente 8 000 à 12 000 € HT par mois selon la séniorité du profil et la complexité du dossier. À titre de comparaison, un directeur financier salarié de séniorité équivalente représente 100 000 à 213 000 € de coût employeur annuel, charges comprises — mais il faut trois à six mois pour le recruter, là où la transition démarre sous 7 à 10 jours.",
-            "**Quelle est la différence entre un DAF de transition et un manager de transition ?** Le manager de transition est un terme générique qui désigne tout cadre dirigeant intervenant en mode transition (DG, DRH, DAF, DSI...). Le DAF de transition est un manager de transition spécialisé dans la direction financière.",
-            "**Dans quels cas fait-on appel à un DAF de transition ?** Six situations déclenchent systématiquement le recours à un DAF de transition : (1) départ brutal ou démission du DAF en poste — la vacance ne peut pas durer 3 à 6 mois ; (2) crise de trésorerie sévère nécessitant un pilotage à temps plein (BFR hors de contrôle, rupture bancaire) ; (3) restructuration ou redressement impliquant banques et créanciers ; (4) préparation à une cession ou un LBO avec data room, audit vendeur et due diligence ; (5) levée de fonds urgente (Série A/B) nécessitant une disponibilité intégrale de 3 à 6 mois ; (6) transformation digitale de la direction financière (migration ERP, refonte des processus). Chez Iter Advisors, nous démarrons sous 7 à 10 jours.",
-            "**Le DAF de transition peut-il recruter son successeur ?** Oui, c'est même recommandé. Le DAF de transition connaît les besoins réels du poste et peut aider à définir le profil idéal, participer aux entretiens, et assurer la passation avec le nouveau DAF recruté.",
-            "**Peut-on passer d'une mission de transition à un DAF à temps partagé ?** Absolument. C'est même un scénario fréquent : la mission de transition stabilise la situation, puis le DAF reste en mode temps partagé pour assurer la continuité du pilotage financier.",
-            "**En combien de temps un DAF de transition peut-il démarrer une mission ?** Chez Iter Advisors, nous démarrons une mission de transition sous 7 à 10 jours après la signature du contrat. Notre vivier de DAF seniors disponibles immédiatement permet de répondre aux situations d'urgence — départ brutal, crise de trésorerie, levée de fonds à finaliser — sans le délai de 3 à 6 mois d'un recrutement classique.",
+            "**Jour 1 :** Premier appel de qualification pour comprendre la situation et évaluer l'urgence. **Jour 2-3 :** Présentation du DAF proposé au dirigeant. Signature du contrat de prestation. **Jours 4 à 6 :** Préparation des accès et du périmètre avec l’équipe. **Jours 7 à 10 :** Démarrage selon la disponibilité convenue, rencontre avec l’équipe et début du diagnostic.",
           ],
         },
         {
           heading: "FAQ - DAF de transition",
           content: [
-            // MAILLAGE-T12 (2026-08-31) — GSC : « daf de transition » fait 406
-            // impressions par mois en position 30, deuxième requête du cluster,
-            // et la page n'avait pas de FAQ. Réponses autoportantes, valeurs de
-            // lib/content/facts.ts uniquement.
-            "**Qu'est-ce qu'un DAF de transition ?** Un directeur financier senior qui prend la fonction finance à temps plein ou quasi plein, pour une durée limitée — vacance de poste, crise de trésorerie, restructuration ou opération en cours. Il stabilise, transforme, puis transmet.",
-            "**Combien coûte un DAF de transition ?** De 8 000 à 12 000 € HT par mois, facturé en retainer mensuel — jamais à la journée. Le niveau dépend de l'intensité de la mission et de la complexité du dossier.",
-            "**Sous quel délai peut-il démarrer ?** En situation urgente, 7 à 10 jours selon la disponibilité du profil et la complexité. Le parcours standard — qualification, présentation du profil, contrat — tient en 8 jours ouvrés.",
-            "**Quelle est la différence avec un DAF intérimaire ?** L'intérimaire remplace une personne absente, à l'identique. Le DAF de transition porte un mandat de transformation : redresser une trésorerie, préparer une cession, restructurer la fonction. Le premier maintient, le second change.",
-            "**Que se passe-t-il à la fin de la mission ?** Une passation organisée : documentation des processus, formation du successeur — recruté pendant la mission si besoin — et, souvent, un relais en [DAF à temps partagé](/daf-externalise/temps-partage) pour garder la hauteur de vue sans le temps plein.",
+            "**Qu'est-ce qu'un DAF de transition ?** Un directeur financier senior qui prend la fonction finance à temps plein ou quasi plein pour une durée limitée. Il intervient notamment lors d'une vacance de poste, d'une crise de trésorerie, d'une restructuration ou d'une opération financière, puis organise la passation.",
+            "**Combien coûte un DAF de transition par rapport à un DAF salarié ?** Une mission représente 8 000 à 12 000 € HT par mois selon la séniorité du profil et la complexité du dossier. Il s'agit d'un forfait mensuel, pas d'une facturation à la journée. À titre de comparaison, le coût employeur annuel d'un directeur financier salarié de séniorité équivalente se situe entre 100 000 et 213 000 €, charges comprises. La durée et le périmètre doivent être comparables pour évaluer les deux options.",
+            "**Dans quels cas faire appel à un DAF de transition ?** Une vacance du poste de DAF, une crise de trésorerie, une restructuration, une cession ou un LBO, une levée de fonds urgente ou une transformation de la fonction finance peuvent justifier une intervention temporaire. Le cadrage détermine les priorités, les responsabilités et la disponibilité nécessaire.",
+            "**En combien de temps un DAF de transition peut-il démarrer ?** Comptez 7 à 10 jours entre le premier échange et le démarrage effectif, selon la disponibilité du profil et la complexité du dossier. Le calendrier est confirmé lors du cadrage de la mission.",
+            "**Quelle est la différence avec un manager de transition ou un DAF intérimaire ?** Le manager de transition peut intervenir dans différentes fonctions de direction ; le DAF de transition se spécialise dans la finance. Une mission intérimaire vise principalement la continuité du poste. Une mission de transition peut aussi porter un objectif de transformation, défini dans son mandat.",
+            "**Le DAF de transition peut-il recruter son successeur ?** Il peut aider à définir le profil recherché, participer aux entretiens et préparer la transmission des dossiers. Son rôle dans le recrutement est convenu avec le dirigeant.",
+            "**Que se passe-t-il à la fin de la mission ?** La passation comprend la documentation des processus et des dossiers en cours, ainsi que l'accompagnement du successeur si nécessaire. Un relais en [DAF à temps partagé](/daf-externalise/temps-partage) peut être prévu lorsque le besoin ne justifie plus une présence à temps plein.",
           ],
         },
       ],
