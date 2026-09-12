@@ -301,7 +301,7 @@ export default function Header({
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="lg:hidden p-2 text-white relative z-10"
-            aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-label={locale === "en" ? (mobileOpen ? "Close menu" : "Open menu") : locale === "es" ? (mobileOpen ? "Cerrar el menú" : "Abrir el menú") : (mobileOpen ? "Fermer le menu" : "Ouvrir le menu")}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
