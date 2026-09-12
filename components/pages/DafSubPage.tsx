@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ArrowRight, TrendingUp, BarChart3, Shield, Rocket, Settings, Target, Compass, Zap } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { Locale } from "@/lib/i18n";
-import { BOOKING_URL } from "@/lib/navigation";
+import { getContactPath } from "@/lib/navigation";
 import { DafSubContent } from "@/lib/content/daf-sub";
 import { parseDafSubFaqItem } from "@/lib/daf-sub-schema";
 import type { CmsNavItem } from "@/lib/static-content";
@@ -98,9 +98,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage }
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">
               <Link
-                href={BOOKING_URL}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
+                href={getContactPath(locale)}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 {content.ctaButton}

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { Locale } from "@/lib/i18n";
-import { BOOKING_URL } from "@/lib/navigation";
+import { getContactPath } from "@/lib/navigation";
 import { GlossaryEntryContent } from "@/lib/content/glossary-entries";
 import { glossaryHref } from "@/lib/path-localization";
 import {
@@ -226,9 +226,7 @@ export default function GlossaryEntryPage({
             <p className="text-base sm:text-lg font-semibold text-foreground mb-2">{t.ctaTitle}</p>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">{t.ctaText}</p>
             <Link
-              href={BOOKING_URL}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
+              href={getContactPath(locale)}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
             >
               {t.cta}

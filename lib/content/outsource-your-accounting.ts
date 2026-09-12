@@ -190,7 +190,7 @@ const content: Record<Locale, OutsourceYourAccountingContent> = {
       description:
         "Talk to an Iter Advisors expert for free. We'll assess your situation and provide a custom quote—no commitment.",
       buttonText: "Book a free consultation",
-      buttonHref: "/contact",
+      buttonHref: "/en/contact",
     },
   },
   es: {
@@ -273,7 +273,7 @@ const content: Record<Locale, OutsourceYourAccountingContent> = {
       description:
         "Consulta gratis con un experto de Iter Advisors. Evaluamos tu situación y te ofrecemos un presupuesto sin compromiso.",
       buttonText: "Solicitar consulta gratuita",
-      buttonHref: "/contact",
+      buttonHref: "/es/contact",
     },
   },
 };

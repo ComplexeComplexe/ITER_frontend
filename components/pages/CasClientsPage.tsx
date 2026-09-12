@@ -22,7 +22,7 @@ import {
   Target,
 } from "lucide-react";
 import { Locale } from "@/lib/i18n";
-import { getContactPath, BOOKING_URL } from "@/lib/navigation";
+import { getContactPath } from "@/lib/navigation";
 import type { CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -943,9 +943,7 @@ function CaseDetail({
           {/* CTA */}
           <div className="flex gap-3">
             <Link
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={getContactPath(locale)}
               className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl bg-iter-violet text-white font-semibold text-sm hover:bg-iter-violet/90 transition-colors"
             >
               {getContent(locale).hero.cta}
@@ -1020,9 +1018,7 @@ export default function CasClientsPage({
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={getContactPath(locale)}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold text-base hover:shadow-xl transition-all duration-300 group"
               >
                 <Calendar size={18} />

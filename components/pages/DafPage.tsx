@@ -8,7 +8,7 @@ import { Locale } from "@/lib/i18n";
 import type { CmsNavItem, StrapiTeamMember } from "@/lib/static-content";
 import { strapiMediaUrl } from "@/lib/static-content";
 import { getFallbackTeamMembers } from "@/lib/content/team";
-import { BOOKING_URL } from "@/lib/navigation";
+import { getContactPath } from "@/lib/navigation";
 import { getDafContent, type FaqRichAnswer, type LongTailQA, type SourceCitation } from "@/lib/content/daf";
 import { faqPageSchema, speakableSchema } from "@/lib/schemas";
 import { dafClusterHref } from "@/lib/path-localization";
@@ -176,7 +176,7 @@ export default function DafPage({
                 </p>
               ))}
               <Link
-                href={BOOKING_URL}
+                href={getContactPath(locale)}
                 className="inline-flex items-center justify-center sm:justify-start gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4 w-full sm:w-auto text-sm sm:text-base"
               >
                 {t.ctaButton}
@@ -555,7 +555,7 @@ export default function DafPage({
                   : "Reserve un diagnóstico gratuito — 30 minutos con un CFO senior, sin compromiso."}
             </p>
             <a
-              href="/contact"
+              href={getContactPath(locale)}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold text-sm hover:shadow-xl transition-all"
             >
               {locale === "fr"
@@ -701,7 +701,7 @@ export default function DafPage({
                   : "Una llamada gratuita de 30 minutos para enmarcar sus prioridades financieras."}
             </p>
             <a
-              href="/contact"
+              href={getContactPath(locale)}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold text-sm hover:bg-iter-violet/90 hover:shadow-xl transition-all"
             >
               {locale === "fr"
@@ -877,7 +877,7 @@ export default function DafPage({
                   : "Describa su necesidad de CFO externalizado en 2 minutos — respuesta de un socio en 24 h hábiles."}
             </p>
             <a
-              href="/contact"
+              href={getContactPath(locale)}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-dark text-white font-semibold text-sm hover:bg-iter-violet hover:shadow-xl transition-all"
             >
               {locale === "fr"

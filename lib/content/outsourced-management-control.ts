@@ -189,7 +189,7 @@ const content: Record<Locale, OutsourcedManagementControlContent> = {
       description:
         "Talk to an FP&A expert. We'll assess your needs and propose a tailored implementation plan.",
       buttonText: "Book a free consultation",
-      buttonHref: "/contact",
+      buttonHref: "/en/contact",
     },
   },
   es: {
@@ -272,7 +272,7 @@ const content: Record<Locale, OutsourcedManagementControlContent> = {
       description:
         "Consulta con un experto en FP&A. Evaluamos tus necesidades y proponemos un plan de implementación.",
       buttonText: "Solicitar consulta gratuita",
-      buttonHref: "/contact",
+      buttonHref: "/es/contact",
     },
   },
 };

@@ -16,7 +16,7 @@ import { splitHtmlAroundMid } from "@/lib/blog-cta-split";
 import { transformArticleHtml } from "@/lib/blog-html-transform";
 import { linkGlossaryTerms } from "@/lib/glossary-links";
 import { getRelatedArticles } from "@/lib/related-articles";
-import { extractToc } from "@/lib/blog-toc";
+import { extractToc, injectHeadingIds } from "@/lib/blog-toc";
 
 interface BlogPostPageProps {
   locale: Locale;
@@ -131,7 +131,7 @@ export default function BlogPostPage({
 
   /* ── Server-side HTML transforms (tables + FAQ accordion) ──────── */
   const transformed = htmlContent
-    ? transformArticleHtml(htmlContent)
+    ? transformArticleHtml(injectHeadingIds(htmlContent))
     : { html: "", faqs: [] };
   const faqJsonLd =
     transformed.faqs.length > 0
@@ -156,9 +156,8 @@ export default function BlogPostPage({
     ? getRelatedArticles(locale, slug, category, 3)
     : [];
 
-  /* ── TOC headings (server-extracted from the original htmlContent so
-   *    the TOC ships in the SSR markup). */
-  const tocHeadings = extractToc(htmlContent);
+  /* Extract from the rendered HTML so every TOC target exists. */
+  const tocHeadings = extractToc(transformedHtml);
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>

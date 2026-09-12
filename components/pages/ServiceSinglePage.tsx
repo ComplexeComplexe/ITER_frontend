@@ -3,7 +3,7 @@ import { dafClusterHref } from "@/lib/path-localization";
 import Image from "next/image";
 import { ArrowRight, TrendingUp, BarChart3, Shield, Rocket, Settings, Target, Compass, Zap } from "lucide-react";
 import { Locale } from "@/lib/i18n";
-import { getContactPath, BOOKING_URL } from "@/lib/navigation";
+import { getContactPath } from "@/lib/navigation";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
@@ -180,9 +180,7 @@ export default function ServiceSinglePage({
             <PageByline locale={locale} author={FINANCE_AUTHOR} dateModified={updatedOperations ? "2026-09-05" : undefined} dateLabel={updatedOperations ? "5 septembre 2026" : undefined} className="mb-6 sm:mb-8" />
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
-                href={BOOKING_URL}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
+                href={getContactPath(locale)}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 {locale === "fr"

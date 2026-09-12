@@ -1173,7 +1173,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <p>Le factoring vous permet d'encaisser immédiatement vos créances clients — moyennant une commission de 0,5 à 2%. Utilisez-le ponctuellement, pas en permanence.</p>
 <h2 id="experience">Notre expérience</h2>
 <p>Chez nos clients, l'optimisation du BFR libère en moyenne 15 à 25% du CA en cash. Pour une PME de 3M€ de CA : 450 000 à 750 000 € de trésorerie libérée — sans lever de fonds.</p>
-<p><a href="/contact">Auditer mon BFR avec un DAF</a></p>`,
+<p>Un <a href="/services/previsionnel-tresorerie">prévisionnel de trésorerie</a> permet de traduire ces leviers en encaissements et décaissements attendus, puis de suivre les écarts.</p><p><a href="/contact">Auditer mon BFR avec un DAF</a></p>`,
       content: [],
     },
     "cash-burn-calculer-runway-anticiper-levee": {
@@ -1443,6 +1443,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <tr><td>Notion</td><td>Base de données + dashboard</td><td>Gratuit</td></tr>
 </tbody>
 </table>
+<p>Pour confier la construction du tableau de bord et la revue mensuelle des écarts, notre <a href="/services/controle-de-gestion-externalise">contrôle de gestion externalisé</a> relie les indicateurs aux décisions du dirigeant.</p>
 <h3>Fréquence de révision recommandée</h3>
 <table>
 <thead><tr><th>Format</th><th>Participants</th><th>Fréquence</th><th>Durée</th></tr></thead>

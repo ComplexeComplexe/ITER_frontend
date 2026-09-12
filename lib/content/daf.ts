@@ -706,7 +706,7 @@ export const dafContent: Record<Locale, DafContent> = {
     intro: [
       "A **Fractional CFO** — or outsourced Chief Financial Officer — is a senior finance professional who works within your company without being a full-time employee. When you hire a Fractional CFO, you get the same responsibilities as an in-house CFO (financial strategy, cash flow, reporting, investor relations) but on a flexible basis: part-time, project-based, or monthly retainer.",
       "At Iter Advisors, we support 85+ SMEs, startups and scale-ups by deploying a Fractional CFO into their finance function. Our Fractional CFOs are senior operators (10+ years) ready to structure forecasting, lead fundraising, or step in as interim CFO — without the cost or commitment of a full-time hire.",
-      "New to the role? Start with our glossary entry [What is a CFO?](/ressources/glossaire/cfo) to understand the difference between CFO, Finance Director and Controller — and explore [our finance services](/en/services) for the full scope of what an outsourced CFO can deliver.",
+      "New to the role? Start with our glossary entry [What is a CFO?](/en/ressources/glossaire/cfo) to understand the difference between CFO, Finance Director and Controller — and explore [our finance services](/en/services) for the full scope of what an outsourced CFO can deliver.",
     ],
     partnerSection: {
       heading: "Iter Advisors, your strategic partner",
