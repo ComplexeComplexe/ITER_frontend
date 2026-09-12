@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ResourcesPage from "@/components/pages/ResourcesPage";
+import ResourcesPageFR from "@/components/pages/ResourcesPageFR";
 import { buildMetadata } from "@/lib/metadata";
 import { getCmsNavigation } from "@/lib/static-content";
 
@@ -35,45 +35,17 @@ const collectionPageSchema = {
   },
   mainEntity: {
     "@type": "ItemList",
-    name: "Ressources financières — Iter Advisors",
+    name: "Guides, outils et cas clients Iter Advisors",
     itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        url: "https://www.iteradvisors.com/ressources/fiscalite/beckham-law",
-        name: "Loi Beckham Espagne 2026 : guide complet",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        url: "https://www.iteradvisors.com/ressources/blog/regimes-fiscaux-france-vs-espagne",
-        name: "Régimes fiscaux : France vs Espagne",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        url: "https://www.iteradvisors.com/ressources/blog/checklist-due-diligence-levee-de-fonds",
-        name: "Checklist due diligence — levée de fonds",
-      },
-      {
-        "@type": "ListItem",
-        position: 4,
-        url: "https://www.iteradvisors.com/ressources/glossaire",
-        name: "Glossaire financier",
-      },
-      {
-        "@type": "ListItem",
-        position: 5,
-        url: "https://www.iteradvisors.com/ressources/blog/les-10-outils-pour-les-cfos-en-start-up",
-        name: "Les 10 outils indispensables des CFOs",
-      },
-      {
-        "@type": "ListItem",
-        position: 6,
-        url: "https://www.iteradvisors.com/ressources/testimonials",
-        name: "Cas clients — témoignages",
-      },
-    ],
+      ["Tableau de bord financier", "/ressources/blog/tableau-de-bord-financier-startup-12-kpis"],
+      ["Coût d’un DAF externalisé", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026"],
+      ["Checklist de due diligence", "/ressources/blog/checklist-due-diligence-levee-de-fonds"],
+      ["IA et finance", "/ressources/ia-finance"],
+      ["Cas clients documentés", "/ressources/cas-clients"],
+      ["Glossaire financier", "/ressources/glossaire"],
+    ].map(([name, path], index) => ({
+      "@type": "ListItem", position: index + 1, name, url: `https://www.iteradvisors.com${path}`,
+    })),
   },
 };
 
@@ -85,7 +57,7 @@ export default async function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
       />
-      <ResourcesPage locale="fr" cmsNavigation={cmsNavigation} />
+      <ResourcesPageFR cmsNavigation={cmsNavigation} />
     </>
   );
 }

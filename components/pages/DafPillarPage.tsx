@@ -249,6 +249,26 @@ export default function DafPillarPage({
         </div>
       </section>
 
+      <section id="livrables-pme" className="bg-background py-14 sm:py-20 scroll-mt-24">
+        <div className="container max-w-4xl px-4 sm:px-6">
+          <h2 className={h2}>{t.forWhom.monthlyWork.heading}</h2>
+          <p className={`${body} mt-4`}>{t.forWhom.monthlyWork.intro}</p>
+          <ol className="grid sm:grid-cols-3 gap-4 mt-6">
+            {t.forWhom.monthlyWork.steps.map((step, index) => (
+              <li key={step.title} className="rounded-2xl border border-border p-5">
+                <span className="text-sm font-semibold text-iter-violet">0{index + 1}</span>
+                <h3 className="font-semibold text-foreground mt-2 mb-3">{step.title}</h3>
+                <p className={body}>{step.text}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-6 rounded-2xl bg-iter-violet/5 p-5">
+            <p className={body}>{t.forWhom.monthlyWork.proof}</p>
+            <Link href={t.forWhom.monthlyWork.href} className="mt-3 inline-flex items-center gap-2 text-iter-violet font-medium underline underline-offset-4">Lire le cas Opti Digital <ArrowRight size={16} /></Link>
+          </div>
+        </div>
+      </section>
+
       {/* 06 bis — Secteurs : les requêtes « daf externalisé industrie / commerce /
           startup » atteignent le top 10 sans clic ; ce bloc répond et maille
           les pages sectorielles, qui recevaient peu de liens. */}

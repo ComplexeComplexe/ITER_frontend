@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import PageLayout from "@/components/PageLayout";
+import Breadcrumb from "@/components/Breadcrumb";
 import { getCmsNavigation } from "@/lib/static-content";
 import { getOutsourcedManagementControlContent } from "@/lib/content/outsourced-management-control";
 import Link from "next/link";
@@ -28,14 +28,14 @@ export default async function OutsourcedManagementControlPage() {
   const content = getOutsourcedManagementControlContent("en");
 
   return (
-    <>
-      <Header locale="en" cmsNavigation={cmsNavigation} />
+    <PageLayout locale="en" cmsNavigation={cmsNavigation}>
 
       {/* Hero */}
-      <section className="bg-[#0a1628] text-white py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{content.hero.h1}</h1>
-          <PageByline locale="en" author={FINANCE_AUTHOR} tone="dark" className="mb-6 justify-center" />
+      <section className="bg-gradient-to-br from-background via-background to-iter-violet/5 pt-24 sm:pt-32 pb-12 sm:pb-16 px-6">
+        <div className="max-w-3xl mx-auto">
+          <Breadcrumb locale="en" items={[{ label: "Services", href: "/en/services" }, { label: content.hero.h1 }]} />
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading leading-tight mt-6 mb-4">{content.hero.h1}</h1>
+          <PageByline locale="en" author={FINANCE_AUTHOR} className="mb-6" />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -50,11 +50,11 @@ export default async function OutsourcedManagementControlPage() {
               ),
             }}
           />
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">{content.hero.intro}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8">{content.hero.intro}</p>
+          <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/en/contact"
-              className="bg-[#00e5a0] text-[#0a1628] font-semibold px-8 py-3 rounded-lg hover:bg-[#00c98a] transition"
+              className="inline-flex items-center justify-center bg-iter-chartreuse text-iter-dark font-semibold px-8 py-3 rounded-full hover:shadow-lg transition"
             >
               {content.cta.buttonText}
             </Link>
@@ -64,13 +64,13 @@ export default async function OutsourcedManagementControlPage() {
 
       {/* Content Sections */}
       <section className="py-16 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           {content.sections.map((section, idx) => (
             <div key={idx} className={idx > 0 ? "mt-12" : ""}>
-              <h2 className="text-3xl font-bold text-[#0a1628] mb-6">{section.heading}</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6">{section.heading}</h2>
               <div className="space-y-4">
                 {section.content.map((item, itemIdx) => (
-                  <p key={itemIdx} className="text-gray-700 text-lg leading-relaxed">
+                  <p key={itemIdx} className="text-muted-foreground text-base leading-relaxed">
                     {item}
                   </p>
                 ))}
@@ -81,14 +81,14 @@ export default async function OutsourcedManagementControlPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#0a1628] mb-8">{content.faq.title}</h2>
+      <section className="py-16 px-6 bg-muted/30">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-8">{content.faq.title}</h2>
           <div className="space-y-6">
             {content.faq.items.map((faq, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-lg font-semibold text-[#0a1628] mb-3">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
+              <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm">
+                <h3 className="text-lg font-semibold text-foreground mb-3">{faq.question}</h3>
+                <p className="text-muted-foreground">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -96,20 +96,19 @@ export default async function OutsourcedManagementControlPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-6 bg-[#0a1628] text-white text-center">
+      <section className="py-16 px-6 bg-iter-violet text-white text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">{content.cta.title}</h2>
-          <p className="text-gray-300 text-lg mb-8">{content.cta.description}</p>
+          <h2 className="text-2xl sm:text-3xl font-bold font-heading mb-4">{content.cta.title}</h2>
+          <p className="text-white/85 text-base sm:text-lg mb-8">{content.cta.description}</p>
           <Link
             href={content.cta.buttonHref}
-            className="bg-[#00e5a0] text-[#0a1628] font-semibold px-10 py-4 rounded-lg hover:bg-[#00c98a] transition text-lg"
+            className="inline-flex items-center justify-center bg-iter-chartreuse text-iter-dark font-semibold px-10 py-4 rounded-full hover:shadow-lg transition text-lg"
           >
             {content.cta.buttonText}
           </Link>
         </div>
       </section>
 
-      <Footer locale="en" />
-    </>
+    </PageLayout>
   );
 }

@@ -34,8 +34,8 @@ import {
 
 export const DAF_PILLAR_PATH = "/daf-externalise";
 export const DAF_PILLAR_PUBLISHED = "2026-05-17";
-export const DAF_PILLAR_MODIFIED = "2026-09-05";
-export const DAF_PILLAR_MODIFIED_LABEL = "5 septembre 2026";
+export const DAF_PILLAR_MODIFIED = "2026-09-12";
+export const DAF_PILLAR_MODIFIED_LABEL = "12 septembre 2026";
 
 export interface PillarMission {
   title: string;
@@ -220,6 +220,17 @@ export const dafPillar = {
         linkLabel: "Le DAF de transition",
       },
     ] satisfies PillarSegment[],
+    monthlyWork: {
+      heading: "Dans une PME, que livre le DAF chaque mois ?",
+      intro: "Le calendrier est convenu avec votre équipe et votre expert-comptable. Voici une trame de travail à adapter à la qualité des données et au périmètre de la mission.",
+      steps: [
+        { title: "Fiabiliser les chiffres", text: "Rapprocher le reporting des comptes disponibles, identifier les pièces manquantes et expliquer les écarts. Le DAF coordonne les travaux ; la production comptable reste dans la lettre de mission de l’expert-comptable." },
+        { title: "Lire la marge et anticiper le cash", text: "Actualiser la marge par activité, comparer le réalisé au budget et revoir les encaissements, les paiements et les investissements à venir. Les hypothèses et les données encore provisoires sont signalées." },
+        { title: "Décider et suivre les actions", text: "Tenir une revue avec le dirigeant : relances clients, prix, dépenses ou financement. Chaque action a un responsable et une échéance ; la revue suivante vérifie son avancement. Le dirigeant conserve la décision et les autorisations de paiement." },
+      ],
+      proof: "Chez Opti Digital, la mission documentée associe reporting mensuel, procédures de clôture, migration ERP et financement non dilutif. Elle illustre une structuration durable de la fonction finance.",
+      href: "/ressources/cas-clients/opti-digital-structuration-financement",
+    },
     sectors: {
       heading: "Par secteur, les chantiers ne sont pas les mêmes",
       items: [

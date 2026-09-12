@@ -1,8 +1,10 @@
 import { Locale } from "../i18n";
-import { FORMULES, ENGAGEMENT } from "./facts";
+import { FORMULES, ENGAGEMENT, MISSIONS_PONCTUELLES } from "./facts";
 import { getDafOffer } from "./daf-offer";
 
 const offerFr = getDafOffer("fr");
+const transitionOffer = MISSIONS_PONCTUELLES.find(mission => mission.nom === "DAF de transition")!;
+const transitionBudget = (months = 1) => `${(transitionOffer.min * months).toLocaleString("fr-FR")} à ${(transitionOffer.max * months).toLocaleString("fr-FR")} € HT`;
 
 export type DafSubPageSlug = "metier" | "temps-partage" | "transition" | "tarifs" | "secteurs" | "ecommerce" | "industrie" | "deep-tech";
 
@@ -23,6 +25,7 @@ export interface DafSubContent {
   }[];
   ctaButton: string;
   proofSlugs?: string[];
+  modified?: { date: string; label: string };
 }
 
 export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>> = {
@@ -270,185 +273,161 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       ctaButton: "Prendre rendez-vous",
     },
     transition: {
-      meta: {
-        // T#11 (2026-07-13) — Title enrichi avec "management de transition"
-        // (intent GSC distinct de "DAF de transition"). La page est déjà
-        // en pos 18 sur 3 441 impressions sur "daf de transition" (0
-        // conversion). Ajout de la variante lexicale pour capter aussi
-        // "management de transition finance" recherchée par les DRH/CEO.
-        // SEO-002 (2026-08-09) — annonçait « sous 15 jours » alors que la
-        // page sert « 48 h » dans son title réel, son OG et neuf fois dans
-        // son corps. Ce titre est un repli (le title effectif est défini
-        // dans app/daf-externalise/transition/page.tsx) mais il portait une
-        // troisième promesse de délai : aligné.
-        title: "DAF de transition : un CFO opérationnel sous 10 jours | Iter Advisors",
-        description:
-          "Remplacement, crise, restructuration : un DAF de transition senior prend le poste sous 7 à 10 jours. Missions de 3 à 12 mois.",
-      },
-      parentLabel: "DAF externalisé",
-      parentHref: "/daf-externalise",
-      breadcrumbLabel: "DAF de transition",
-      // SEO-006 (2026-08-09) — H1 remis sur l'intention commerciale.
-      // « fiche métier, salaire, devenir » vise un candidat, pas un acheteur :
-      // il contredisait le <title> réellement servi (« DAF de transition 48 h
-      // pour PME et ETI ») et le corps de page, qui est entièrement
-      // commercial — cas d'intervention, missions, TJM, comparatifs, CTA.
-      // Le balisage JobPosting qui accompagnait ce cadrage a été retiré.
-      h1: "DAF de transition : un directeur financier senior opérationnel sous 10 jours",
-      sections: [
-        {
-          // T4 (2026-06-07) — bloc "L'essentiel en 30 secondes" en tête de
-          // page (template /daf-externalise). Donne au visiteur les
-          // éléments-clés avant qu'il ne décide de continuer à lire.
-          heading: "L'essentiel en 30 secondes",
-          content: [
-            "**Définition.** Un DAF de transition est un Directeur Administratif et Financier senior (12 à 20 ans d'expérience) qui intervient à temps plein dans votre entreprise pour une mission limitée, généralement de 3 à 12 mois.",
-            "**Quand faire appel.** Vacance brutale du poste de DAF, crise de trésorerie, restructuration, levée de fonds, M&A, ou transformation digitale de la fonction finance.",
-            // Arbitrage 10/08/2026 — le tarif du DAF de transition passe au montant
-            // mensuel validé (8 000 à 12 000 € HT). La dérivation TJM 800-1 500 €
-            // × 20 jours produisait 16 000 à 30 000 € HT/mois, absente du document
-            // de validation. ⚠ à confirmer : si 8-12 k€ vise une transition à temps
-            // partiel, la mention « temps plein » de cette page est à revoir.
-            "**Tarif.** 8 000 à 12 000 € HT par mois selon la séniorité du profil et la complexité de la mission. Le montant est un forfait mensuel, pas une facturation à la journée.",
-            "**Délai de démarrage.** 7 à 10 jours entre le premier échange et le démarrage chez Iter Advisors, contre 3 à 6 mois en moyenne pour un recrutement classique.",
-            "**Pour qui.** PME en difficulté, ETI en transformation, scale-ups en hyper-croissance, fonds d'investissement (LBO, exit), entreprises familiales en cession.",
-          ],
-        },
-        {
-          content: [
-            "Le **DAF de transition** est un Directeur Administratif et Financier senior qui intervient à temps plein ou quasi-plein dans une entreprise pour une durée limitée, généralement de 3 à 12 mois. Contrairement au **[DAF à temps partagé](/daf-externalise/temps-partage)** qui s'inscrit dans la durée avec une présence partielle, le DAF de transition mobilise l'intégralité de sa disponibilité pour répondre à une situation d'urgence ou de transformation.",
-            "Le **[DAF externalisé](/daf-externalise)** en mode transition est sollicité dans des circonstances précises : départ soudain du DAF en poste, crise de trésorerie, restructuration financière, préparation à une cession ou une acquisition, ou encore accompagnement d'une forte croissance qui dépasse les capacités de l'équipe finance en place.",
-          ],
-        },
-        {
-          // T#12 (2026-07-18) — Fiche métier restructurée comme une vraie
-          // fiche APEC / Michael Page pour coller à l'intent SERP dominant.
-          // SEO-006 (2026-08-09) — « fiche métier complète » était le dernier
-          // reliquat du cadrage carrière sur une page commerciale.
-          heading: "DAF de transition : définition et périmètre d'intervention",
-          content: [
-            "Le DAF de transition (Directeur Administratif et Financier de transition) est un cadre dirigeant senior qui intervient à temps plein dans une entreprise pour une mission limitée, généralement de 3 à 12 mois. Son rôle : assurer la continuité de la direction financière dans des situations critiques — départ brutal du DAF, crise de trésorerie, restructuration, préparation à une cession ou à une levée de fonds. Contrairement au DAF à temps partagé qui s'inscrit dans la durée, le DAF de transition mobilise l'intégralité de sa disponibilité pour répondre à une urgence ou à une transformation majeure.",
-            "**Fiche de poste — données clés :**",
-            "**Intitulé du poste :** DAF de transition — aussi appelé Interim CFO, Manager de transition finance, DAF intérimaire. Cadre dirigeant senior, statut indépendant ou salarié porté.",
-            "**Niveau d'expérience :** 12 à 20 ans d'expérience en finance d'entreprise, dont au moins 5 ans en poste de DAF ou Directeur Financier de groupe.",
-            "**Durée de mission :** 3 à 12 mois (extensible à 18 mois selon la complexité).",
-            "**Temps de travail :** temps plein ou quasi-plein (4 à 5 jours/semaine), contrairement au DAF à temps partagé.",
-            "**Budget :** 8 000 à 12 000 € HT par mois selon la séniorité du profil et la complexité de la mission.",
-            "**Délai de mise en place :** 7 à 10 jours chez Iter Advisors — contre 3 à 6 mois pour un recrutement classique.",
-            "**Secteurs concernés :** tous secteurs — PME en difficulté, ETI en transformation, scale-ups en hyper-croissance, fonds d'investissement (LBO), entreprises familiales en cession.",
-            "**6 missions principales :** (1) audit éclair de la situation financière dès la 1ère semaine ; (2) pilotage de la trésorerie en situation critique (cash-flow, BFR, négociation bancaire) ; (3) sécurisation des reportings financiers et fiscaux (déclarations, clôture) ; (4) préparation d'une levée de fonds ou d'une cession (data room, projections, due diligence) ; (5) accompagnement d'une restructuration ou d'une intégration post-acquisition (plans sociaux, fusion de SI) ; (6) recrutement et passation au DAF successeur.",
-            "**Profil recherché :** ex-DAF ou CFO de PME/ETI, souvent ancien associé Big Four, ayant géré 3 à 5 situations de crise. Maîtrise des normes comptables (PCG, IFRS), des ERP (SAP, Cegid, NetSuite) et des outils BI (Power BI, MyReport). Anglais courant requis pour les groupes internationaux.",
-            "**Devenir DAF de transition :** la voie classique passe par 10 à 15 ans de direction financière salariée (DAF interne, Head of Finance de scale-up), puis un passage en freelance ou en cabinet de management de transition. Chez Iter Advisors, rejoindre notre vivier de DAFs de transition vous garantit un flux de missions structuré et un accompagnement de vos premières interventions.",
-          ],
-        },
-        {
-          heading: "Dans Quels Cas Faire Appel à un DAF de Transition ?",
-          content: [
-            "**Vacance de Poste :** C'est la situation la plus fréquente. Le DAF en poste démissionne, est en arrêt maladie prolongé, ou part en retraite. Le recrutement d'un successeur prend en moyenne 3 à 6 mois. Pendant cette période, la direction financière ne peut pas rester sans pilote. Le DAF de transition prend le relais immédiatement, assure la continuité des opérations, et peut même participer au recrutement de son successeur.",
-            "**Crise de Trésorerie :** Quand une entreprise fait face à une tension de trésorerie sévère - retard de paiement clients, rupture de ligne de crédit, BFR mal maîtrisé - elle a besoin d'un expert financier disponible à temps plein pour gérer la crise. Le DAF de transition analyse la situation, met en place un plan de trésorerie d'urgence, négocie avec les banques et les créanciers, et pilote le retour à l'équilibre.",
-            "**Transformation et Restructuration :** Une fusion-acquisition, une restructuration du groupe, ou une transformation digitale de la fonction finance nécessite une expertise et une disponibilité que l'équipe en place n'a pas toujours. Le DAF de transition apporte l'expertise et la bande passante nécessaires pour mener ces projets à bien sans perturber les opérations courantes.",
-            "**Préparation à une Levée de Fonds ou une Cession :** La préparation d'une levée de fonds ou d'une cession d'entreprise est un processus intensif. Construire la data room, préparer les projections financières, répondre aux questions des investisseurs ou des acquéreurs - tout cela demande une disponibilité que le DAF à temps partagé ne peut pas toujours offrir. Le DAF de transition prend en charge cette phase critique de bout en bout.",
-          ],
-        },
-        {
-          heading: "Les Missions d'un DAF de Transition",
-          content: [
-            "**Audit et Diagnostic Initial :** La première semaine d'une mission de transition est toujours consacrée à un audit complet de la situation financière. Le DAF de transition analyse les états financiers, évalue la qualité de la comptabilité, identifie les risques immédiats (tensions de trésorerie, litiges fiscaux, engagements hors bilan), et rencontre les parties prenantes clés (banquier, expert-comptable, équipe finance).",
-            "À l'issue de cette première semaine, il remet un rapport de diagnostic avec ses recommandations prioritaires et un plan d'action pour les 30 premiers jours.",
-            "**Stabilisation des Opérations :** La priorité absolue est de stabiliser les opérations financières : s'assurer que les paiements fournisseurs sont honorés, que les encaissements clients sont suivis, que les déclarations fiscales sont à jour, et que la trésorerie est sous contrôle. Cette phase de stabilisation dure généralement 4 à 8 semaines.",
-            "**Transformation et Amélioration :** Une fois les opérations stabilisées, le DAF de transition peut s'attaquer aux chantiers de transformation : mise en place d'outils de pilotage modernes, restructuration des processus financiers, formation de l'équipe en place, ou préparation du dossier pour la levée de fonds.",
-            "**Passation et Recrutement :** La mission de transition se termine toujours par une passation soignée. Le DAF de transition documente les processus, forme son successeur, et s'assure que rien n'est perdu dans la transition.",
-          ],
-        },
-        {
-          heading: "Durée d'une Mission de DAF de Transition",
-          content: [
-            "**3 mois** est la durée minimale pour une mission de transition. En dessous, le DAF n'a pas le temps de comprendre l'entreprise, de stabiliser la situation, et de préparer une passation correcte.",
-            "**6 mois** est la durée la plus fréquente. Elle permet de couvrir un cycle complet, de mener les principaux chantiers de transformation, et de recruter et former le successeur.",
-            "**12 mois** est recommandé pour les situations complexes : restructuration lourde, préparation à une cession, ou transformation digitale de la fonction finance.",
-            // SEO-ULT §4b (2026-08-15) — la phrase renvoyait à un article de
-            // blog fusionné depuis, dont l'URL redirige vers la liste des
-            // articles. Le rediriger vers cette page-ci en aurait fait un lien
-            // sur lui-même : le renvoi est supprimé, le propos reste.
-            "Dans tous les cas, la durée se décide au moment du cadrage, à partir de l'urgence de la situation et des chantiers à mener — pas l'inverse.",
-          ],
-        },
-        {
-          // T4 (2026-06-07) — nouveau H2 ciblant "daf de transition pour eti
-          // et pme" (déjà position 10,2 en GSC, cible à renforcer en
-          // priorité). Contenu spécifique aux problématiques ETI/PME pour
-          // différencier du contenu généraliste.
-          heading: "DAF de transition pour ETI et PME",
-          content: [
-            "Les **ETI (Entreprises de Taille Intermédiaire, 250 à 5 000 salariés)** et les **PME en croissance (50 à 250 salariés)** ont des besoins de DAF de transition très spécifiques qui les distinguent à la fois des grands groupes et des start-ups early-stage.",
-            "**Contexte typique en ETI :** restructuration suite à un changement d'actionnariat (LBO, cession familiale), intégration post-acquisition d'une cible, préparation d'une cession ou d'un IPO, refonte de la direction financière après le départ du DAF historique. Ces missions impliquent souvent du multi-entités (filiales, holdings), du multi-pays, et une coordination avec des actionnaires institutionnels (private equity, banques d'investissement). Le DAF de transition apporte une expérience M&A et de gestion de gouvernance que peu de DAF salariés possèdent.",
-            "**Contexte typique en PME en croissance :** structuration de la fonction finance qui n'a jamais existé (start-up qui dépasse les 50 salariés et la première levée de Série A), crise de trésorerie liée à une croissance trop rapide (BFR mal piloté), préparation d'une levée de fonds Série B/C. Le DAF de transition stabilise la situation en 30 à 60 jours puis recrute son successeur — souvent un DAF salarié junior qu'il forme avant son départ.",
-            "**Délai de démarrage adapté à l'urgence.** Pour une PME en crise de trésorerie ou une ETI en sortie brutale de son DAF, nous mobilisons un profil senior sous **7 à 10 jours**, selon sa disponibilité et la complexité du dossier. Cette réactivité, hors de portée d'un recrutement classique (3 à 6 mois minimum), est ce qui distingue un cabinet de management de transition d'un cabinet de recrutement.",
-            "**Coût rapporté à la valeur créée.** Pour une ETI de 50 M€ de CA, le coût d'un DAF de transition pendant 6 mois (48 à 72 k€ HT) est largement compensé par la sécurisation des flux financiers, l'évitement d'erreurs fiscales et la valorisation accrue lors d'une cession ou d'une levée. Sur les missions que nous avons menées en 2024-2025, le retour sur investissement médian se situe entre **3x et 8x** le coût de la mission.",
-          ],
-        },
-        {
-          heading: "Tarifs d'un DAF de transition en 2026",
-          content: [
-            "Le tarif d'un **management de transition finance** prend la forme d'un forfait mensuel. Il est plus élevé que celui d'un DAF à temps partagé, car la mobilisation est bien plus forte et le démarrage intervient sous 7 à 10 jours.",
-            "Chez Iter Advisors, une mission de transition représente 8 000 à 12 000 euros HT par mois, selon le profil du DAF et la complexité de la mission. Le budget est arrêté au cadrage, sous forme de forfait mensuel.",
-            // Tableau comparatif rendu en prose markdown car DafSubPage
-            // utilise ReactMarkdown sans support GFM (pas de <table>).
-            // Format choisi : sections **gras** lisibles côté SEO + UX.
-            "**Comparatif 2026 — coût et engagement par modalité d'intervention :**",
-            "**1. DAF de transition (Iter Advisors)** — 8 000 à 12 000 € HT par mois, mission de 3 à 12 mois, démarrage sous 7 à 10 jours, facturation en prestation de services (pas de charges sociales). Adapté à crise, restructuration, transformation, vacance brutale du poste.",
-            // FACTS (2026-09-01) — cette ligne annonçait « 2 000 à 8 000 € HT,
-            // engagement 12 mois minimum » : deux valeurs contraires à la grille
-            // arbitrée (3 000 à 8 000, aucune durée minimale, préavis 30 jours).
-            "**2. DAF à temps partagé (Iter Advisors)** — Forfait mensuel 3 000 à 8 000 € HT selon la formule et le scope confié, sans durée d'engagement minimale (préavis de 30 jours), démarrage en 8 à 15 jours. Adapté à un besoin récurrent et durable.",
-            "**3. DAF intérimaire (agence d'intérim spécialisée)** — TJM 1 100 à 1 800 € HT (avec marge agence ~25-35 %), salarié mis à disposition, démarrage 1-3 semaines. Plus rigide juridiquement, plus coûteux à mission équivalente.",
-            "**4. Recrutement DAF salarié senior (cabinet de recrutement)** — 100 000 à 213 000 € de coût employeur annuel, charges comprises. Honoraires de recrutement : 20-30 % du salaire annuel (18-45 k€). Délai de mise en poste : 3 à 6 mois. Engagement long. Adapté quand le besoin est durable et le contexte stable.",
-            "**Synthèse.** Pour une crise de 3 à 6 mois, le DAF de transition est 30 à 50 % moins coûteux qu'un DAF intérimaire d'agence et 5 à 10 fois plus rapide à mobiliser qu'un recrutement. Pour un besoin durable de plus de 12 mois, le DAF salarié reste l'option la plus économique à condition d'accepter le délai de recrutement.",
-            "Pour une comparaison détaillée des coûts toutes formules confondues, consultez notre page sur les **[tarifs du DAF externalisé](/daf-externalise/tarifs)**.",
-          ],
-        },
-        {
-          heading: "DAF de Transition vs DAF Intérimaire",
-          content: [
-            "Les termes \"DAF de transition\" et \"DAF intérimaire\" sont souvent utilisés de manière interchangeable, mais ils recouvrent des réalités légèrement différentes.",
-            "Le **DAF intérimaire** est un salarié mis à disposition par une agence d'intérim spécialisée. Cette formule implique des contraintes administratives et un coût souvent plus élevé en raison de la marge de l'agence.",
-            "Le **DAF de transition** chez Iter Advisors est un prestataire indépendant qui intervient dans le cadre d'un contrat de prestation de services. Cette formule est plus flexible, plus rapide à mettre en place, et souvent moins coûteuse.",
-          ],
-        },
-        {
-          heading: "Nos Autres Formules d'Intervention",
-          content: [
-            "Si votre besoin est récurrent et s'inscrit dans la durée, le **[DAF à temps partagé](/daf-externalise/temps-partage)** est plus adapté. Pour comprendre les compétences requises pour ce poste, consultez notre page sur le **[métier de DAF](/daf-externalise/metier)**. Pour une comparaison transparente des coûts, consultez les **[tarifs du DAF externalisé](/daf-externalise/tarifs)**.",
-            // T7 partial (2026-06-07) — remplacé le lien cassé
-            // /daf-externalise/locaux (404 : la page n'a jamais été créée)
-            // par les 3 vraies pages locales existantes (paris, toulouse,
-            // barcelone) qui ont chacune leur trafic GSC propre.
-            "Nous intervenons dans de nombreux secteurs (**[DAF externalisé par secteur](/daf-externalise/secteurs)**) et dans nos 3 villes d'implantation : **[DAF externalisé à Paris](/daf-externalise-paris)**, **[DAF externalisé à Toulouse](/daf-externalise-toulouse)** et **[DAF externalisé à Barcelone](/daf-externalise-barcelone)**.",
-          ],
-        },
-        {
-          heading: "Comment Démarrer une Mission de Transition ?",
-          content: [
-            "La réactivité est au cœur du DAF de transition. Chez Iter Advisors, comptez 7 à 10 jours entre le premier échange et le démarrage effectif, selon la disponibilité du profil et la complexité du dossier.",
-            "**Jour 1 :** Premier appel de qualification pour comprendre la situation et évaluer l'urgence. **Jour 2-3 :** Présentation du DAF proposé au dirigeant. Signature du contrat de prestation. **Jours 4 à 6 :** Préparation des accès et du périmètre avec l’équipe. **Jours 7 à 10 :** Démarrage selon la disponibilité convenue, rencontre avec l’équipe et début du diagnostic.",
-          ],
-        },
-        {
-          heading: "FAQ - DAF de transition",
-          content: [
-            "**Qu'est-ce qu'un DAF de transition ?** Un directeur financier senior qui prend la fonction finance à temps plein ou quasi plein pour une durée limitée. Il intervient notamment lors d'une vacance de poste, d'une crise de trésorerie, d'une restructuration ou d'une opération financière, puis organise la passation.",
-            "**Combien coûte un DAF de transition par rapport à un DAF salarié ?** Une mission représente 8 000 à 12 000 € HT par mois selon la séniorité du profil et la complexité du dossier. Il s'agit d'un forfait mensuel, pas d'une facturation à la journée. À titre de comparaison, le coût employeur annuel d'un directeur financier salarié de séniorité équivalente se situe entre 100 000 et 213 000 €, charges comprises. La durée et le périmètre doivent être comparables pour évaluer les deux options.",
-            "**Dans quels cas faire appel à un DAF de transition ?** Une vacance du poste de DAF, une crise de trésorerie, une restructuration, une cession ou un LBO, une levée de fonds urgente ou une transformation de la fonction finance peuvent justifier une intervention temporaire. Le cadrage détermine les priorités, les responsabilités et la disponibilité nécessaire.",
-            "**En combien de temps un DAF de transition peut-il démarrer ?** Comptez 7 à 10 jours entre le premier échange et le démarrage effectif, selon la disponibilité du profil et la complexité du dossier. Le calendrier est confirmé lors du cadrage de la mission.",
-            "**Quelle est la différence avec un manager de transition ou un DAF intérimaire ?** Le manager de transition peut intervenir dans différentes fonctions de direction ; le DAF de transition se spécialise dans la finance. Une mission intérimaire vise principalement la continuité du poste. Une mission de transition peut aussi porter un objectif de transformation, défini dans son mandat.",
-            "**Le DAF de transition peut-il recruter son successeur ?** Il peut aider à définir le profil recherché, participer aux entretiens et préparer la transmission des dossiers. Son rôle dans le recrutement est convenu avec le dirigeant.",
-            "**Que se passe-t-il à la fin de la mission ?** La passation comprend la documentation des processus et des dossiers en cours, ainsi que l'accompagnement du successeur si nécessaire. Un relais en [DAF à temps partagé](/daf-externalise/temps-partage) peut être prévu lorsque le besoin ne justifie plus une présence à temps plein.",
-          ],
-        },
-      ],
-      ctaButton: "Prendre rendez-vous",
+  modified: { date: "2026-09-12", label: "12 septembre 2026" },
+  "meta": {
+    "title": "DAF de transition pour PME et ETI | Iter Advisors",
+    "description": "Remplacement, trésorerie, transformation : cadrez le mandat de votre DAF de transition. Démarrage envisagé sous 7 à 10 jours, selon disponibilité."
+  },
+  "parentLabel": "DAF externalisé",
+  "parentHref": "/daf-externalise",
+  "breadcrumbLabel": "DAF de transition",
+  "h1": "DAF de transition pour PME et ETI : reprendre le pilotage financier",
+  "sections": [
+    {
+      "content": [
+        "Un **DAF de transition** prend temporairement la direction financière pour assurer un remplacement, traiter une tension de trésorerie ou accompagner une transformation. La mission définit un mandat, des livrables et les conditions de passation.",
+        `**Démarrage envisagé sous 7 à 10 jours**, selon la disponibilité du profil et la complexité du dossier. Budget : **${transitionBudget()} par mois**, sur devis. La durée habituelle est de 3 à 12 mois ; le calendrier est arrêté au cadrage.`
+      ]
     },
+    {
+      "id": "situations",
+      "heading": "Dans quelles situations mobiliser un DAF de transition ?",
+      "table": {
+        "caption": "Choisir un mandat selon votre besoin immédiat",
+        "headers": [
+          "Situation",
+          "Première priorité",
+          "Livrables à cadrer"
+        ],
+        "rows": [
+          [
+            "Départ du DAF",
+            "Assurer les échéances et la continuité de la fonction finance",
+            "Calendrier de clôture, suivi du cash, répartition des responsabilités et dossier de passation"
+          ],
+          [
+            "Tension de trésorerie",
+            "Identifier les échéances critiques et les marges de manœuvre",
+            "Prévisionnel de trésorerie, scénarios d’encaissement et plan d’action avec les dirigeants"
+          ],
+          [
+            "Acquisition ou transformation",
+            "Coordonner l’intégration sans perdre la visibilité sur l’activité",
+            "Reporting consolidé, suivi des risques et feuille de route des processus et outils"
+          ],
+          [
+            "Levée ou cession",
+            "Rendre les données financières exploitables pour les échanges",
+            "Modèle financier, data room et suivi des questions de due diligence"
+          ]
+        ]
+      },
+      "content": [
+        "Un besoin récurrent de reporting ou de budget peut relever du **[DAF à temps partagé](/daf-externalise/temps-partage)**. La transition répond à un besoin temporaire de disponibilité et de prise de responsabilité renforcées."
+      ]
+    },
+    {
+      "id": "premiers-jours",
+      "heading": "Les premiers jours : sécuriser les priorités et fixer le mandat",
+      "content": [
+        "**Avant le démarrage : cadrer la mission.** Nous précisons avec le dirigeant le motif d’intervention, les échéances, les entités concernées et les accès nécessaires. Le profil, la disponibilité, le périmètre et le forfait sont confirmés dans la proposition.",
+        "**À la prise de poste : établir la situation.** Le DAF reprend les données disponibles avec l’équipe et l’expert-comptable : banques, créances, dettes, clôtures et engagements. Il distingue les informations fiables, les données à compléter et les urgences. Un diagnostic initial ne vaut pas audit exhaustif.",
+        "**Définir un plan d’action partagé.** Chaque priorité est associée à un responsable, une échéance et un livrable. Le dirigeant conserve les arbitrages ; les délégations et les autorisations de paiement doivent être explicitement définies.",
+        "**Installer un rythme de suivi.** Les points de trésorerie peuvent être rapprochés en phase critique. Le reporting et la revue de direction suivent un calendrier adapté à la situation. L’objectif est de rendre les décisions traçables et les risques visibles."
+      ]
+    },
+    {
+      "id": "feuille-de-route",
+      "heading": "Une feuille de route pour le premier mois",
+      "table": {
+        "caption": "Trame indicative à adapter après diagnostic, sans garantie de résultat à date fixe",
+        "headers": [
+          "Étape",
+          "Travail prévu",
+          "Point de contrôle"
+        ],
+        "rows": [
+          [
+            "Prise de fonction",
+            "Reprise des dossiers, accès, échéances et interlocuteurs",
+            "Liste des risques et données manquantes partagée avec la direction"
+          ],
+          [
+            "Pilotage prioritaire",
+            "Prévision de cash et suivi des principaux engagements",
+            "Hypothèses explicites et actions attribuées"
+          ],
+          [
+            "Organisation",
+            "Calendrier de reporting et responsabilités avec les équipes",
+            "Sources, validation et fréquence convenues"
+          ],
+          [
+            "Revue de fin de mois",
+            "Bilan des travaux et des écarts au plan initial",
+            "Priorités suivantes, besoin de ressources et conditions de sortie actualisés"
+          ]
+        ]
+      },
+      "content": [
+        "La disponibilité des données, des équipes et des conseils externes peut modifier ce déroulement. Pour le volet cash, voir notre **[prévisionnel de trésorerie](/services/previsionnel-tresorerie)** ; pour une opération financière, notre **[accompagnement en levée de fonds](/services/accompagnement-levee-de-fond)**."
+      ]
+    },
+    {
+      "id": "perimetre",
+      "heading": "Ce que le mandat doit préciser pour une PME ou une ETI",
+      "content": [
+        "**Périmètre.** Entités, pays, outils, sujets prioritaires et sujets confiés aux conseils externes. Une PME à équipe finance réduite et un groupe multi-entités n’ont pas les mêmes besoins de coordination.",
+        "**Responsabilités.** Le DAF pilote les travaux convenus et prépare les décisions. L’expert-comptable conserve les travaux définis dans sa lettre de mission ; les sujets juridiques et sociaux sont coordonnés avec les conseils compétents.",
+        "**Disponibilité et présence.** La mission peut demander une présence intensive, à temps plein ou quasi plein. La disponibilité effective, les déplacements et le mode de travail sont confirmés au devis. Le délai annoncé ne constitue pas une réservation de profil.",
+        "**Sortie de mission.** Les conditions de passation sont prévues dès le départ : documentation, reprise des accès, dossiers en cours et transmission au successeur. La participation au recrutement peut être incluse au mandat."
+      ]
+    },
+    {
+      "id": "experience",
+      "heading": "Des travaux documentés pour apprécier notre expérience",
+      "content": [
+        "Le **[cas SolarMente](/ressources/cas-clients/solarmente-serie-b-cleantech)** décrit le modèle financier, la data room, le reporting au conseil et l’intégration financière d’une acquisition. Le **[cas Opti Digital](/ressources/cas-clients/opti-digital-structuration-financement)** documente une structuration de la fonction finance dans la durée.",
+        "Ces cas permettent d’examiner les travaux réalisés. Ils ne sont pas présentés comme des missions de remplacement urgent de DAF. La proposition de transition doit identifier un profil dont l’expérience correspond à votre contexte."
+      ]
+    },
+    {
+      "id": "budget",
+      "heading": "Budget et durée d’une mission de transition",
+      "content": [
+        `**${transitionBudget()} par mois**, selon le profil et la complexité. Le montant est un forfait mensuel, pas un tarif journalier. Le devis précise les livrables, les modalités de présence et les frais éventuels.`,
+        `**Exemple de budget, sans engagement de durée implicite :** pour trois mois au même forfait, le total serait de ${transitionBudget(3)}, hors frais éventuels prévus au devis. Il s’agit d’une simulation arithmétique, pas d’un résultat client ni d’une offre ferme.`,
+        "Les missions durent habituellement **3 à 12 mois**. La durée nécessaire dépend du besoin de remplacement, de la transformation et de la passation. Elle est discutée au cadrage puis réévaluée aux points de suivi.",
+        "Pour comparer avec un accompagnement récurrent, consultez la **[grille des tarifs DAF](/daf-externalise/tarifs)**. Comparez un même périmètre et une même disponibilité, plutôt que le seul montant mensuel."
+      ]
+    },
+    {
+      "id": "preparer-echange",
+      "heading": "Préparer le premier échange",
+      "content": [
+        "Indiquez la date souhaitée de prise de fonction, le motif de l’urgence, les entités concernées, l’équipe disponible et les échéances importantes. Précisez si le besoin porte d’abord sur le cash, la clôture, une opération ou un remplacement.",
+        "Le premier échange sert à vérifier l’adéquation du besoin et la disponibilité d’un profil. Les documents financiers sensibles se partagent ensuite dans un cadre convenu avec l’équipe.",
+        "**[Décrire mon besoin de DAF de transition](/contact)**"
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ - DAF de transition",
+      "content": [
+        "**Qu'est-ce qu'un DAF de transition ?** Un directeur financier senior qui prend la fonction finance à temps plein ou quasi plein pour une durée limitée. Il intervient notamment lors d'une vacance de poste, d'une crise de trésorerie, d'une restructuration ou d'une opération financière, puis organise la passation.",
+        `**Combien coûte un DAF de transition par rapport à un DAF salarié ?** Une mission représente ${transitionBudget()} par mois selon la séniorité du profil et la complexité du dossier. Il s'agit d'un forfait mensuel, pas d'une facturation à la journée. À titre de comparaison, le coût employeur annuel d'un directeur financier salarié de séniorité équivalente se situe entre 100 000 et 213 000 €, charges comprises. La durée et le périmètre doivent être comparables pour évaluer les deux options.`,
+        "**Dans quels cas faire appel à un DAF de transition ?** Une vacance du poste de DAF, une crise de trésorerie, une restructuration, une cession ou un LBO, une levée de fonds urgente ou une transformation de la fonction finance peuvent justifier une intervention temporaire. Le cadrage détermine les priorités, les responsabilités et la disponibilité nécessaire.",
+        "**En combien de temps un DAF de transition peut-il démarrer ?** Comptez 7 à 10 jours entre le premier échange et le démarrage effectif, selon la disponibilité du profil et la complexité du dossier. Le calendrier est confirmé lors du cadrage de la mission.",
+        "**Quelle est la différence avec un manager de transition ou un DAF intérimaire ?** Le manager de transition peut intervenir dans différentes fonctions de direction ; le DAF de transition se spécialise dans la finance. Une mission intérimaire vise principalement la continuité du poste. Une mission de transition peut aussi porter un objectif de transformation, défini dans son mandat.",
+        "**Le DAF de transition peut-il recruter son successeur ?** Il peut aider à définir le profil recherché, participer aux entretiens et préparer la transmission des dossiers. Son rôle dans le recrutement est convenu avec le dirigeant.",
+        "**Que se passe-t-il à la fin de la mission ?** La passation comprend la documentation des processus et des dossiers en cours, ainsi que l'accompagnement du successeur si nécessaire. Un relais en [DAF à temps partagé](/daf-externalise/temps-partage) peut être prévu lorsque le besoin ne justifie plus une présence à temps plein."
+      ]
+    }
+  ],
+  "ctaButton": "Échanger sur mon besoin de transition"
+},
     tarifs: {
+      modified: { date: "2026-09-12", label: "12 septembre 2026" },
       proofSlugs: ["opti-digital-structuration-financement", "seasonly-marge-par-canal-bfr", "solarmente-serie-b-cleantech"],
       meta: {
         // SEO-02 (S31 2026-07-27) — 38 requêtes "prix/tarif/coût/combien
@@ -462,16 +441,12 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       parentLabel: "DAF externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "Tarifs",
-      h1: "Tarifs DAF Externalisé 2026 : grille de prix et comparatif",
+      h1: "Tarifs DAF externalisé : formules et budget",
       sections: [
         {
           content: [
-            `Un DAF externalisé Iter Advisors coûte ${offerFr.price}. Le prix dépend du périmètre confié, du profil engagé et de la complexité de votre situation financière. Les jours d'intervention sont indicatifs : notre engagement porte sur les livrables définis au cadrage.`,
-            // SEO-02 (2026-07-01) — Cross-link intention. Cette page = grille
-            // tarifaire officielle (intention commerciale). Le blog article
-            // dédié = guide informationnel avec méthodologie et ROI calculator.
-            // Séparation claire des intentions pour éviter la cannibalisation.
-            "Chez Iter Advisors, nous avons fait le choix de la transparence totale sur nos tarifs. Cette page présente notre **grille de prix officielle 2026**, les facteurs qui influencent le coût, et une comparaison avec les alternatives (recrutement d'un DAF salarié, consultant financier, expert-comptable). Pour un **guide de comparaison des budgets, des périmètres et des modes de facturation**, consultez notre article dédié : [Coût d’un DAF externalisé : comparer les budgets en 2026](/ressources/blog/cout-daf-externalise-tarifs-prix-2026).",
+            "Choisissez un périmètre de direction financière, avec un forfait mensuel et des livrables définis au devis. Les formules récurrentes vont de **3 000 à 8 000 € HT par mois** selon le profil et la complexité.",
+            "Retrouvez ci-dessous la grille officielle, des exemples de budget et les éléments à cadrer. Pour comparer les modes de facturation et les alternatives, consultez le **[guide du coût d’un DAF externalisé](/ressources/blog/cout-daf-externalise-tarifs-prix-2026)**.",
           ],
         },
         {
@@ -490,6 +465,31 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             // par jour » : Iter ne facture jamais à la journée (facts.ts,
             // MISSIONS_PONCTUELLES). Fourchettes au projet, sur devis.
             "Mission ponctuelle : pour un besoin délimité — préparation de levée (15 000 à 40 000 € HT), audit défensif ou vendor due diligence (20 000 à 60 000 € HT), audit finance one-shot (10 000 à 25 000 € HT). Chiffrée au projet, sur devis : nous ne facturons pas à la journée.",
+          ],
+        },
+        {
+          id: "exemples-budget",
+          heading: "Trois exemples pour préparer votre budget",
+          table: {
+            caption: "Simulations de budgets HT, hors frais éventuels : le devis confirme le périmètre",
+            headers: ["Exemple de besoin", "Repère mensuel", "Budget sur trois mois", "À vérifier au cadrage"],
+            rows: FORMULES.map((plan, index) => [
+              ["PME : organiser le reporting et le suivi du cash", "Entreprise en croissance : renforcer le budget et le reporting", "Groupe multi-entités : coordonner la direction financière"][index],
+              offerFr.tiers[index].price,
+              `${(plan.prixMin * 3).toLocaleString("fr-FR")} à ${(plan.prixMax * 3).toLocaleString("fr-FR")} € HT`,
+              ["Qualité des comptes, indicateurs et interlocuteurs", "Entités, prévisions et fréquence des revues", "Complexité de consolidation, gouvernance et projets"][index],
+            ]),
+          },
+          content: ["Ces exemples appliquent les fourchettes des formules à trois mois. Ce sont des simulations, pas des missions clients ni une durée minimale d’engagement. Le besoin seul ne détermine pas automatiquement la formule : le profil et le périmètre sont évalués ensemble."],
+        },
+        {
+          id: "inclus-et-a-cadrer",
+          heading: "Ce qui est inclus et ce qui doit être chiffré séparément",
+          content: [
+            "**Inclus dans le forfait :** les livrables et échanges liés au périmètre convenu. Le devis détaille le reporting, les prévisions, les réunions, les interlocuteurs et la disponibilité attendue.",
+            "**À préciser séparément :** les licences d’outils, les honoraires de l’expert-comptable ou des conseils externes, les déplacements et toute opération hors périmètre. Une levée, une due diligence ou une migration importante ne doit pas être présumée incluse sans mention au devis.",
+            "**Évolution du besoin :** aucun dépassement n’est facturé sans avenant signé. Le volume de jours est indicatif ; l’engagement porte sur le périmètre de travail.",
+            "**[Demander un devis pour mon périmètre](/contact)** : indiquez le nombre d’entités, vos outils, votre besoin prioritaire et la date de démarrage souhaitée.",
           ],
         },
         {
@@ -557,7 +557,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
       ],
-      ctaButton: "Prendre rendez-vous",
+      ctaButton: "Obtenir un devis",
     },
     secteurs: {
       meta: {

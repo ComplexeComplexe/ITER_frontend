@@ -63,7 +63,7 @@ export default function ControleDeGestionExternalisePage({
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-4 leading-tight">
               {t.h1}
             </h1>
-            <PageByline locale={locale} author={FINANCE_AUTHOR} dateModified="2026-09-05" dateLabel="5 septembre 2026" className="mb-6" />
+            <PageByline locale={locale} author={FINANCE_AUTHOR} dateModified="2026-09-12" dateLabel="12 septembre 2026" className="mb-6" />
             <script
               type="application/ld+json"
               dangerouslySetInnerHTML={{
@@ -74,7 +74,7 @@ export default function ControleDeGestionExternalisePage({
                     description: t.meta?.description ?? t.h1,
                     locale,
                     author: FINANCE_AUTHOR,
-                    dateModified: "2026-09-05",
+                    dateModified: "2026-09-12",
                   })
                 ),
               }}
@@ -136,13 +136,13 @@ export default function ControleDeGestionExternalisePage({
       </section>
 
       {/* ─── Content sections ─── */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background">
+      <section className="py-10 sm:py-14 bg-background">
         <div className="container max-w-3xl">
           {t.sections.map((section: any, idx: number) => (
             <div
               key={idx}
               id={section.id}
-              className="scroll-mt-24 mb-16 sm:mb-24"
+              className="scroll-mt-24 mb-12 sm:mb-16"
             >
               <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
                 {section.title}
@@ -201,8 +201,8 @@ export default function ControleDeGestionExternalisePage({
                   on every th. Mobile: scroll-x wrapper so the article
                   column stays at ≤ 72ch but the table can overflow. */}
               {section.table && (
-                <div className="mb-6 -mx-4 sm:mx-0 overflow-x-auto rounded-xl border border-border/60">
-                  <table className="w-full text-sm border-collapse">
+                <div className="mb-6 overflow-x-auto rounded-xl border border-border/60" role="region" aria-label={section.table.caption || section.title} tabIndex={0}>
+                  <table className="w-full min-w-[560px] text-sm border-collapse">
                     {section.table.caption && (
                       <caption className="caption-top text-left text-xs font-semibold uppercase tracking-widest text-iter-violet bg-muted/30 px-4 py-3">
                         {section.table.caption}
