@@ -1,3 +1,4 @@
+import { serviceHref } from "../path-localization";
 import { getDafOfferFacts } from "./offer-facts";
 import { Locale } from "../i18n";
 
@@ -119,10 +120,10 @@ export const homeContent = {
     discover: "Découvrir",
     financeServices: [
       { title: "DAF externalisé", href: "/daf-externalise", desc: "Un directeur financier dédié à temps partagé pour structurer et piloter votre fonction finance." },
-      { title: "Contrôle de gestion", href: undefined, desc: "Tableaux de bord, reporting et analyse de performance pour des décisions éclairées." },
-      { title: "Gestion de trésorerie", href: undefined, desc: "Prévisionnel de trésorerie, optimisation du BFR et pilotage de la liquidité." },
-      { title: "Levée de fonds", href: undefined, desc: "Accompagnement stratégique pour sécuriser vos financements et convaincre les investisseurs." },
-      { title: "M&A & Due Diligence", href: undefined, desc: "Conseil en fusions-acquisitions et audits financiers pour sécuriser vos opérations." },
+      { title: "Contrôle de gestion", href: serviceHref("controle-de-gestion-externalise", "fr"), desc: "Tableaux de bord, reporting et analyse de performance pour des décisions éclairées." },
+      { title: "Gestion de trésorerie", href: serviceHref("previsionnel-tresorerie", "fr"), desc: "Prévisionnel de trésorerie, optimisation du BFR et pilotage de la liquidité." },
+      { title: "Levée de fonds", href: serviceHref("accompagnement-levee-de-fond", "fr"), desc: "Accompagnement stratégique pour sécuriser vos financements et convaincre les investisseurs." },
+      { title: "M&A & Due Diligence", href: "/services/ma-due-diligence", desc: "Conseil en fusions-acquisitions et audits financiers pour sécuriser vos opérations." },
     ],
     hrServices: [
       { title: "DRH externalisé", desc: "Un directeur des ressources humaines dédié à temps partagé pour structurer et piloter votre fonction RH." },
@@ -315,10 +316,10 @@ export const homeContent = {
     discover: "Discover",
     financeServices: [
       { title: "Outsourced CFO", href: "/en/fractional-cfo", desc: "A dedicated part-time CFO to structure and manage your finance function." },
-      { title: "Management control", href: undefined, desc: "Dashboards, reporting and performance analysis for informed decisions." },
-      { title: "Cash management", href: undefined, desc: "Cash flow forecasting, working capital optimization and liquidity management." },
-      { title: "Fundraising", href: undefined, desc: "Strategic support to secure your financing and convince investors." },
-      { title: "M&A & Due Diligence", href: undefined, desc: "M&A advisory and financial audits to secure your operations." },
+      { title: "Management control", href: serviceHref("controle-de-gestion-externalise", "en"), desc: "Dashboards, reporting and performance analysis for informed decisions." },
+      { title: "Cash management", href: serviceHref("previsionnel-tresorerie", "en"), desc: "Cash flow forecasting, working capital optimization and liquidity management." },
+      { title: "Fundraising", href: serviceHref("accompagnement-levee-de-fond", "en"), desc: "Strategic support to secure your financing and convince investors." },
+      { title: "M&A & Due Diligence", href: "/en/services/ma-due-diligence", desc: "M&A advisory and financial audits to secure your operations." },
     ],
     hrServices: [
       { title: "Outsourced HR Director", desc: "A dedicated part-time HR director to structure and manage your HR function." },
@@ -500,10 +501,10 @@ export const homeContent = {
     discover: "Descubra",
     financeServices: [
       { title: "CFO externalizado", href: "/es/externalizacion-daf", desc: "Un director financiero dedicado a tiempo compartido para estructurar y pilotar su función financiera." },
-      { title: "Control de gestión", href: undefined, desc: "Cuadros de mando, reporting y análisis de rendimiento para decisiones informadas." },
-      { title: "Gestión de tesorería", href: undefined, desc: "Previsión de tesorería, optimización del capital circulante y gestión de la liquidez." },
-      { title: "Captación de fondos", href: undefined, desc: "Acompañamiento estratégico para asegurar sus financiaciones y convencer a los inversores." },
-      { title: "M&A & Due Diligence", href: undefined, desc: "Asesoramiento en fusiones y adquisiciones y auditorías financieras para asegurar sus operaciones." },
+      { title: "Control de gestión", href: serviceHref("controle-de-gestion-externalise", "es"), desc: "Cuadros de mando, reporting y análisis de rendimiento para decisiones informadas." },
+      { title: "Gestión de tesorería", href: serviceHref("previsionnel-tresorerie", "es"), desc: "Previsión de tesorería, optimización del capital circulante y gestión de la liquidez." },
+      { title: "Captación de fondos", href: serviceHref("accompagnement-levee-de-fond", "es"), desc: "Acompañamiento estratégico para asegurar sus financiaciones y convencer a los inversores." },
+      { title: "M&A & Due Diligence", href: "/es/services/ma-due-diligence", desc: "Asesoramiento en fusiones y adquisiciones y auditorías financieras para asegurar sus operaciones." },
     ],
     hrServices: [
       { title: "Director de RRHH externalizado", desc: "Un director de recursos humanos dedicado a tiempo compartido para estructurar y pilotar su función de RRHH." },

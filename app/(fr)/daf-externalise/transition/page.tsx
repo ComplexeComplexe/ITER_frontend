@@ -12,7 +12,7 @@ import { getCmsNavigation } from "@/lib/static-content";
 const content = getDafSubContent("fr", "transition")!;
 const PAGE_URL = "https://www.iteradvisors.com/daf-externalise/transition";
 const PUBLISHED_DATE = "2026-05-15";
-const MODIFIED_DATE = "2026-06-07";
+const MODIFIED_DATE = "2026-09-12";
 
 export async function generateMetadata(): Promise<Metadata> {
   // T4 (2026-06-07) — title/description optimisées par le ticket :
@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
     // promesse de démarrage sous 7 jours n'est publiée, et le mot « garanti »
     // n'accompagne aucun délai. Voir DELAIS dans lib/content/facts.ts.
     fallbackTitle: "DAF de transition pour PME et ETI | Iter Advisors",
-    fallbackDescription: "DAF de transition opérationnel en 7 à 10 jours : vacance de poste, crise de trésorerie, restructuration ou levée. 8 000 à 12 000 € HT/mois.",
+    fallbackDescription: content.meta.description,
   });
 
   // Override the OG image with a dedicated illustration (the same SVG used
@@ -98,7 +98,7 @@ export default async function Page() {
     "@id": `${PAGE_URL}#service`,
     serviceType: "DAF de transition",
     name: "DAF de Transition pour PME et ETI",
-    description: "DAF de transition opérationnel sous 7 à 10 jours pour PME, ETI et scale-ups : vacance de poste, crise de trésorerie, restructuration, levée de fonds, M&A.",
+    description: content.meta.description,
     provider: { "@id": "https://www.iteradvisors.com/#organization" },
     areaServed: [
       { "@type": "Country", name: "France" },
@@ -146,7 +146,7 @@ export default async function Page() {
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${PAGE_URL}#article`,
-    headline: "DAF de transition : intervention sous 7 à 10 jours pour PME et ETI",
+    headline: content.h1,
     description: "Guide complet sur le DAF de transition : missions, profil, tarifs (8 000 à 12 000 € HT/mois), délais de démarrage, comparatif avec DAF temps partagé / intérim / recrutement.",
     author: {
       "@type": "Person",
@@ -187,7 +187,7 @@ export default async function Page() {
         cmsNavigation={cmsNavigation}
         heroImage={{
           src: "/images/illustrations/daf-transition.svg",
-          alt: "DAF de transition Iter Advisors — passage de relais entre deux directeurs financiers, continuité opérationnelle garantie",
+          alt: "DAF de transition Iter Advisors — passage de relais entre deux directeurs financiers, organisation de la passation",
         }}
       />
     </>

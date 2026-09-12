@@ -1,3 +1,5 @@
+import PageByline from "@/components/PageByline";
+import { FINANCE_AUTHOR } from "@/lib/schemas/editorial";
 import Link from "next/link";
 import { dafClusterHref } from "@/lib/path-localization";
 import Image from "next/image";
@@ -80,6 +82,8 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage }
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6 sm:mb-8 leading-tight">
               {content.h1}
             </h1>
+
+            {content.modified && <PageByline locale={locale} author={FINANCE_AUTHOR} dateModified={content.modified.date} dateLabel={content.modified.label} className="mb-6" />}
 
             {/* Intro paragraphs from section 0 */}
             {firstSection?.content.map((p, i) => (

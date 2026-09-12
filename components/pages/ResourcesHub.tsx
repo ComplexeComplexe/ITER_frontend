@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Search, X } from "lucide-react";
 import type { ResourcesContent, ResourceCard } from "@/lib/content/resources";
+import { glossaryHref } from "@/lib/path-localization";
 import type { Locale } from "@/lib/i18n";
 
 function ResourceImageCard({
@@ -17,12 +18,13 @@ function ResourceImageCard({
   return (
     <Link
       href={card.href}
-      className="group block relative aspect-[3/4] overflow-hidden rounded-2xl bg-iter-dark"
+      className="group block relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden rounded-2xl bg-iter-dark"
     >
       <Image
         src={card.image}
         alt={card.title}
         fill
+        sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
         className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-iter-dark/90 via-iter-dark/30 to-transparent" />
@@ -33,7 +35,7 @@ function ResourceImageCard({
           </span>
         )}
         <h3 className="text-base font-bold text-white mb-3 leading-snug">{card.title}</h3>
-        <span className="inline-flex items-center gap-2 text-[13px] font-medium text-iter-violet group-hover:text-white transition-colors">
+        <span className="inline-flex items-center gap-2 text-[13px] font-medium text-iter-chartreuse group-hover:text-white transition-colors">
           {discover}
           <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
         </span>
@@ -44,27 +46,13 @@ function ResourceImageCard({
 
 export default function ResourcesHub({
   t,
+  locale,
 }: {
   t: ResourcesContent;
   locale: Locale;
 }) {
   const [query, setQuery] = useState("");
   const [activeTab, setActiveTab] = useState<string>("popular");
-  const [stickyNav, setStickyNav] = useState(false);
-  const navRef = useRef<HTMLDivElement>(null);
-  const navSentinelRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const sentinel = navSentinelRef.current;
-    if (!sentinel) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setStickyNav(!entry.isIntersecting),
-      { threshold: 0 }
-    );
-    observer.observe(sentinel);
-    return () => observer.disconnect();
-  }, []);
-
   const allCards: Array<ResourceCard & { sectionId: string }> = [
     ...t.fiscaliteSection.cards.map((c) => ({ ...c, sectionId: "fiscalite" })),
     ...t.categories.flatMap((cat) => cat.cards.map((c) => ({ ...c, sectionId: cat.id }))),
@@ -84,46 +72,19 @@ export default function ResourcesHub({
     { id: "fiscalite", label: t.navLabels.fiscalite, href: "#fiscalite" },
     { id: "cas-clients", label: t.navLabels.casClients, href: "#cas-clients" },
     { id: "blog", label: t.navLabels.blog, href: "#blog" },
-    { id: "glossaire", label: t.navLabels.glossaire, href: "/ressources/glossaire" },
+    { id: "glossaire", label: t.navLabels.glossaire, href: glossaryHref(locale) },
   ];
-
-  function scrollToSection(id: string, href: string) {
-    setActiveTab(id);
-    if (href.startsWith("/")) return;
-    const el = document.getElementById(href.replace("#", ""));
-    if (el) {
-      const offset = navRef.current?.offsetHeight ?? 64;
-      const top = el.getBoundingClientRect().top + window.scrollY - offset - 16;
-      window.scrollTo({ top, behavior: "smooth" });
-    }
-  }
 
   return (
     <div>
-      {/* Sentinel — marks where the nav should become sticky */}
-      <div ref={navSentinelRef} aria-hidden="true" />
-
-      {/* Sticky nav tabs */}
-      <div
-        ref={navRef}
-        className={`z-30 bg-background/95 backdrop-blur-sm border-b border-border transition-shadow ${
-          stickyNav ? "sticky top-0 shadow-sm" : ""
-        }`}
-      >
+      <div className="sticky top-16 lg:top-[72px] z-30 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container">
           <div className="flex items-center gap-1 overflow-x-auto scrollbar-none py-3">
             {navTabs.map((tab) => (
               <Link
                 key={tab.id}
                 href={tab.href}
-                onClick={(e) => {
-                  if (!tab.href.startsWith("/")) {
-                    e.preventDefault();
-                    scrollToSection(tab.id, tab.href);
-                  } else {
-                    setActiveTab(tab.id);
-                  }
-                }}
+                onClick={() => { setActiveTab(tab.id); setQuery(""); }}
                 className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeTab === tab.id
                     ? "bg-iter-violet text-white"
@@ -139,6 +100,7 @@ export default function ResourcesHub({
               <Search size={15} className="absolute left-3 text-muted-foreground pointer-events-none" />
               <input
                 type="search"
+                aria-label={t.searchPlaceholder}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={t.searchPlaceholder}
@@ -148,7 +110,7 @@ export default function ResourcesHub({
                 <button
                   onClick={() => setQuery("")}
                   className="absolute right-3 text-muted-foreground hover:text-foreground"
-                  aria-label="Effacer la recherche"
+                  aria-label={locale === "es" ? "Borrar la búsqueda" : "Clear search"}
                 >
                   <X size={14} />
                 </button>
@@ -178,7 +140,7 @@ export default function ResourcesHub({
       {filteredCards === null && (
         <>
           {/* ── Popular resources ─────────────────────────────────── */}
-          <section id="populaires" className="bg-background py-16 lg:py-20">
+          <section id="populaires" className="bg-background py-10 lg:py-14 scroll-mt-36">
             <div className="container">
               <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-8">
                 {t.popularSection.heading}
@@ -205,7 +167,7 @@ export default function ResourcesHub({
           </section>
 
           {/* ── Fiscalité France-Espagne ────────────────────────────── */}
-          <section id={t.fiscaliteSection.id} className="bg-muted/30 py-16 lg:py-24">
+          <section id={t.fiscaliteSection.id} className="bg-muted/30 py-10 lg:py-14 scroll-mt-36">
             <div className="container">
               <div className="flex items-center justify-between mb-10">
                 <div>
@@ -245,7 +207,7 @@ export default function ResourcesHub({
             <section
               key={ci}
               id={category.id}
-              className={ci % 2 === 0 ? "bg-background py-16 lg:py-24" : "bg-muted/30 py-16 lg:py-24"}
+              className={ci % 2 === 0 ? "bg-background py-10 lg:py-14 scroll-mt-36" : "bg-muted/30 py-10 lg:py-14 scroll-mt-36"}
             >
               <div className="container">
                 <div className="flex items-center justify-between mb-10">

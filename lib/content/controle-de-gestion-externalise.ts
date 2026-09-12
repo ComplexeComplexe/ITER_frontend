@@ -96,6 +96,34 @@ export const controleDeGestionExternaliseeContent = {
           'Le contrôle de gestion externalisé s\'inscrit souvent dans une <a class="prose-link" href="/daf-externalise">direction financière externalisée</a> plus complète, permettant de couvrir à la fois le pilotage opérationnel et la stratégie financière — sans recruter un directeur financier à temps plein.',
       },
 
+      {
+        id: "exemple-tableau-de-bord",
+        title: "Exemple de tableau de bord : du chiffre à la décision",
+        paragraphs: ["Démonstration fictive pour une PME, sur un mois. Ces chiffres illustrent la lecture d’un reporting ; ils ne sont ni des résultats clients ni des objectifs de performance."],
+        table: {
+          caption: "Exemple fictif : budget et réalisé mensuels",
+          headers: ["Indicateur", "Budget", "Réalisé", "Lecture et action"],
+          rows: [
+            ["Chiffre d’affaires HT", "200 000 €", "180 000 €", "Écart de -20 000 € (-10 %). Distinguer commandes décalées, volumes et prix avant de revoir les prévisions."],
+            ["Coûts directs", "100 000 €", "99 000 €", "Les coûts baissent moins vite que le CA. Examiner achats et composition des ventes."],
+            ["Marge brute", "100 000 € (50 %)", "81 000 € (45 %)", "Écart de -5 points. Analyser la marge par activité et décider des ajustements avec le dirigeant."],
+            ["Créances clients échues", "15 000 €", "30 000 €", "15 000 € de plus que prévu. Attribuer les relances et actualiser le calendrier d’encaissement."],
+          ],
+        },
+        closingTextHtml: 'Le livrable comprend les écarts, leurs causes, un responsable et une échéance pour chaque action. Pour un cas réel, voir <a class="prose-link" href="/ressources/cas-clients/seasonly-marge-par-canal-bfr">le P&amp;L par canal et le suivi du BFR chez Seasonly</a>. Pour construire vos indicateurs, consultez le <a class="prose-link" href="/ressources/blog/tableau-de-bord-financier-startup-12-kpis">guide du tableau de bord financier</a>.',
+      },
+      {
+        id: "revue-mensuelle",
+        title: "Le contenu d’une revue mensuelle de gestion",
+        paragraphs: ["La date de remise dépend de la clôture et de la disponibilité des données. Le rythme, les sources et les personnes responsables sont convenus avant le démarrage."],
+        bullets: [
+          { title: "Un dossier de gestion.", text: "Compte de résultat de gestion, marge par activité, comparaison au budget et hypothèses de prévision. Les chiffres provisoires restent identifiés." },
+          { title: "Un point de décision.", text: "Le contrôleur explique les écarts et prépare les options. Le dirigeant arbitre les prix, les dépenses et les priorités commerciales." },
+          { title: "Un suivi des engagements.", text: "Le relevé de décisions précise qui agit et pour quand. La revue suivante mesure les effets et actualise les prévisions." },
+        ],
+        closingTextHtml: 'Le contrôle de gestion complète le <a class="prose-link" href="/services/previsionnel-tresorerie">prévisionnel de trésorerie</a> : la rentabilité et les dates d’encaissement se pilotent ensemble.',
+      },
+
       // ─────────── SECTION 2 — KPIs ───────────
       {
         id: "kpis",
@@ -107,22 +135,22 @@ export const controleDeGestionExternaliseeContent = {
         ],
         table: {
           caption: "Les 10 KPIs les plus suivis en contrôle de gestion startup",
-          headers: ["KPI", "Fréquence", "Formule", "Seuil d'alerte"],
+          headers: ["KPI", "Fréquence", "Formule", "Repère à adapter au modèle"],
           rows: [
-            ["Burn rate mensuel", "Mensuelle", "Dépenses totales − CA récurrent", "> 15 % d'augmentation"],
+            ["Burn rate mensuel", "Mensuelle", "Décaissements − encaissements sur la période", "> 15 % d'augmentation"],
             ["Runway (autonomie de trésorerie)", "Mensuelle", "Trésorerie / Burn rate mensuel", "< 12 mois"],
             ["Marge brute", "Mensuelle", "(CA − Coût direct) / CA", "< 60 % pour du SaaS"],
-            ["CAC (Customer Acquisition Cost)", "Trimestrielle", "Coût marketing + ventes / Nouveaux clients", "> LTV / 3"],
-            ["LTV (Lifetime Value)", "Trimestrielle", "ARPU × Durée de vie moyenne", "CAC / LTV < 1/3"],
+            ["CAC (Customer Acquisition Cost)", "Trimestrielle", "(Coût marketing + ventes) / Nouveaux clients", "> LTV / 3"],
+            ["LTV (Lifetime Value)", "Trimestrielle", "ARPU × Durée de vie moyenne", "LTV / CAC sous le seuil retenu"],
             ["Churn rate", "Mensuelle", "Clients perdus / Clients total", "> 5 % / mois"],
-            ["NRR (Net Revenue Retention)", "Trimestrielle", "(MRR début + expansion − churn) / MRR début", "< 100 % = danger"],
+            ["NRR (Net Revenue Retention)", "Trimestrielle", "(MRR début + expansion − contraction − churn) / MRR début", "< 100 % = danger"],
             ["Délai moyen de paiement clients", "Mensuelle", "Jours entre facturation et encaissement", "> 45 jours"],
             ["Délai de clôture comptable", "Mensuelle", "Jours entre fin du mois et comptes arrêtés", "> 10 jours"],
             ["Ratio charges fixes / variables", "Trimestrielle", "Charges fixes / Charges variables", "> 70 % = rigidité"],
           ],
         },
         closingText:
-          "Ces indicateurs sont présentés dans un tableau de bord Power BI ou Google Data Studio, mis à jour automatiquement et accessible en temps réel par les fondateurs.",
+          "Les seuils ci-dessus sont des repères de discussion, pas des normes universelles. La fréquence d’actualisation dépend des sources connectées et de leur validation. Un tableau de bord ne remplace pas le contrôle de qualité des données.",
       },
 
       // ─────────── SECTION 3 — vs COMPTABLE ───────────
@@ -168,7 +196,7 @@ export const controleDeGestionExternaliseeContent = {
           },
           {
             title: "Phase 3 — Pilotage (Mois 2-6)",
-            text: "Chaque mois, nous produisons : un reporting de clôture sous 5 jours ouvrés, une analyse des écarts budget/réalisé, une mise à jour du forecast à 12 mois, et une réunion de revue avec les fondateurs. Livrable : conseil d'administration prêt.",
+            text: "Chaque mois, nous produisons : un reporting après validation des données de clôture, au calendrier convenu, une analyse des écarts budget/réalisé, une mise à jour du forecast à 12 mois, et une réunion de revue avec les fondateurs. Livrable : conseil d'administration prêt.",
           },
           {
             title: "Phase 4 — Autonomisation (Mois 6+)",

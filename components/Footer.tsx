@@ -227,10 +227,10 @@ export default function Footer({ locale }: { locale: Locale }) {
                 Ressources, ce qui laissait leurs fiches orphelines au crawl. */}
             <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
               <p className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-2">
-                {locale === "fr" ? "Ressources" : locale === "en" ? "Resources" : "Recursos"}
+                {locale === "fr" ? "À découvrir" : locale === "en" ? "Explore Iter" : "Descubrir Iter"}
               </p>
               <ul className="space-y-1 mb-4">
-                {content.editorialLinks.map((link) => (
+                {content.editorialLinks.filter(link => !resourceNav?.children?.some(item => item.href === link.href)).map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className="text-white/70 text-xs hover:text-white/60 transition-colors">
                       {link.text}
