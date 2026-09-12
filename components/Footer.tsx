@@ -214,7 +214,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                   <Link
                     key={lang}
                     href={localePath}
-                    className="flex items-center gap-2 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors"
+                    className="flex min-h-11 items-center gap-2 py-2 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors"
                   >
                     <Globe size={12} className="sm:w-4 sm:h-4" />
                     <span>{data.label}</span>
@@ -232,7 +232,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               <ul className="space-y-1 mb-4">
                 {content.editorialLinks.filter(link => !resourceNav?.children?.some(item => item.href === link.href)).map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-white/70 text-xs hover:text-white/60 transition-colors">
+                    <Link href={link.href} className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs hover:text-white transition-colors">
                       {link.text}
                     </Link>
                   </li>
@@ -244,7 +244,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               <ul className="space-y-1">
                 {content.legalLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-white/70 text-xs hover:text-white/60 transition-colors line-clamp-2">
+                    <Link href={link.href} className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs hover:text-white transition-colors">
                       {link.text}
                     </Link>
                   </li>

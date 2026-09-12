@@ -1,5 +1,5 @@
 import PageByline from "@/components/PageByline";
-import { FINANCE_AUTHOR } from "@/lib/schemas/editorial";
+import { FINANCE_AUTHOR, type EditorialAuthor } from "@/lib/schemas/editorial";
 import Link from "next/link";
 import { dafClusterHref } from "@/lib/path-localization";
 import Image from "next/image";
@@ -20,6 +20,7 @@ interface DafSubPageProps {
   locale: Locale;
   content: DafSubContent;
   cmsNavigation?: CmsNavItem[];
+  author?: EditorialAuthor;
   /** Per-route hero illustration. Displayed below the hero text when provided. */
   heroImage?: { src: string; alt: string };
 }
@@ -61,7 +62,7 @@ const mdComponents: any = {
   ),
 };
 
-export default function DafSubPage({ locale, content, cmsNavigation, heroImage }: DafSubPageProps) {
+export default function DafSubPage({ locale, content, cmsNavigation, heroImage, author = FINANCE_AUTHOR }: DafSubPageProps) {
   const firstSection = content.sections[0];
   const bodySections = content.sections.slice(1);
 
@@ -83,7 +84,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage }
               {content.h1}
             </h1>
 
-            {content.modified && <PageByline locale={locale} author={FINANCE_AUTHOR} dateModified={content.modified.date} dateLabel={content.modified.label} className="mb-6" />}
+            {content.modified && <PageByline locale={locale} author={author} dateModified={content.modified.date} dateLabel={content.modified.label} className="mb-6" />}
 
             {/* Intro paragraphs from section 0 */}
             {firstSection?.content.map((p, i) => (

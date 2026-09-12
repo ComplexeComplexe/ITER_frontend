@@ -184,6 +184,7 @@ export default async function Page() {
       <DafSubPage
         locale="fr"
         content={content}
+        author={{ name: "Sébastien Doat", slug: "sebastien-doat" }}
         cmsNavigation={cmsNavigation}
         heroImage={{
           src: "/images/illustrations/daf-transition.svg",
