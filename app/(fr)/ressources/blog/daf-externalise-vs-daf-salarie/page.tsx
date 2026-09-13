@@ -3,7 +3,11 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
-import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
+import { InlineCta, ProseTable } from '@/components/blog';
+
+import { getDafOffer } from '@/lib/content/daf-offer';
+import { COUT_DAF_SALARIE } from '@/lib/content/facts';
+const offer = getDafOffer('fr');
 
 export const metadata: Metadata = {
   title: "DAF externalisé ou salarié : comparatif 2026",
@@ -48,8 +52,9 @@ export default function DafExternaliseVsSalariePage() {
         avatar: "/images/team/benjamin-ziza.webp",
         jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
-      readingTime={10}
-      dateModified="2026-05-01"
+      readingTime={6}
+      datePublished="2026-05-01"
+      dateModified="2026-09-13"
       heroImage="/images/blog/covers/daf-externalise-vs-daf-salarie.svg"
       toc={[
         { id: "contexte", label: "1. Contexte : pourquoi cette question ?" },
@@ -59,22 +64,7 @@ export default function DafExternaliseVsSalariePage() {
         { id: "comparaison-directe", label: "5. Comparaison directe (tableau)" },
         { id: "matrice-decision", label: "6. Matrice de décision" },
       ]}
-      tldr="DAF salarié : meilleur si vous avez des processus stables et complexes, une équipe à superviser. DAF externalisé : meilleur si vous avez une croissance rapide, des besoins variables, ou une taille PME. Le coût : 30 à 60 % d'économie face au coût employeur d'un salarié."
-      faqItems={[
-        {
-          question: "DAF externalisé ou DAF salarié : quel est le moins cher ?",
-          // SEO-02 (2026-08-30) — cette réponse annonçait « 50 à 70 % moins
-          // cher » et un coût employeur de 160 000 à 240 000 €, deux valeurs
-          // retirées le 10 août. Elle a survécu parce qu'elle n'apparaît que
-          // dans le JSON-LD de la FAQ : le contrôle des valeurs interdites
-          // retirait les balises <script> avant de chercher.
-          answer: "Un directeur financier salarié de séniorité équivalente représente un coût employeur chargé de 100 000 à 213 000 € par an, pour une médiane de 150 000 €. Un DAF externalisé Iter Advisors représente 30 à 60 % d'économie sur cette base, selon le stade de l'entreprise et le périmètre confié. L'avantage du salarié : la disponibilité quotidienne. Celui de l'externalisé : la flexibilité, l'expertise immédiate et l'absence de coût de recrutement.",
-        },
-        {
-          question: "À quel stade de croissance passer d'un DAF externalisé à un DAF salarié ?",
-          answer: "Le seuil critique se situe généralement autour de 10–20 M€ de chiffre d'affaires ou lors d'une levée de fonds supérieure à 10 M€ — quand la complexité financière justifie une présence quotidienne. En pratique, beaucoup d'entreprises maintiennent un DAF externalisé jusqu'à la Series B ou jusqu'à 50–80 salariés. L'externalisation reste pertinente même après cette taille si la complexité ne nécessite pas un équivalent temps plein dédié.",
-        },
-      ]}
+      tldr="Choisissez selon la disponibilité nécessaire, les livrables et le budget total. Un DAF externalisé intervient sur un périmètre convenu ; un poste salarié répond à un besoin de présence quotidienne durable."
       relatedArticles={[
         {
           url: "/ressources/blog/organiser-sa-direction-financiere",
@@ -98,297 +88,45 @@ export default function DafExternaliseVsSalariePage() {
         },
       ]}
     >
-      <h2 id="contexte">1. Contexte : pourquoi cette question ?</h2>
-      <p>
-        En 2026, beaucoup de PMEs et scale-ups hésitent : recruter un DAF salarié ou externaliser ? C'est une décision stratégique qui affecte vos coûts, votre flexibilité, et votre capacité à croître.
-      </p>
-      <p>
-        À titre d'exemple :
-      </p>
-      <ul>
-        <li>Startup en croissance rapide (€2-10M de CA) : charge est instable → externalisé souvent meilleur</li>
-        <li>PME stable (€5-30M de CA, même depuis 10 ans) : processus éprouvés, équipe → salarié souvent plus rentable</li>
-        <li>Scale-up (€10-100M) : charge croissante mais saisonnière → modèle hybride (noyau interne + DAF externalisé)</li>
-      </ul>
-
-      <Callout type="info" title="Tendance 2026">
-        62 % des PMEs choisissent le DAF externalisé (données Iter Advisors, panel 300+ clients). Raisons : coût, flexibilité, séniorité garantie.
-      </Callout>
-
-      <h2 id="cout-total">2. Comparaison des coûts totaux</h2>
-      <p>
-        Mettons les chiffres côte à côte pour une entreprise de €8M de CA (cas type PME de croissance) :
-      </p>
-
+      <h2 id="contexte">1. Choisir selon le travail à accomplir</h2>
+      <p>Un DAF salarié et un DAF externalisé peuvent tous deux piloter un budget, la trésorerie et le reporting. La différence tient à leur disponibilité, à leur intégration dans l’équipe et au périmètre confié. Le nombre de salariés ou le chiffre d’affaires ne suffit pas à imposer un modèle.</p>
+      <p>Listez les décisions financières prises chaque semaine, les personnes à encadrer, les échéances et les livrables manquants. Si la direction financière requiert une présence quotidienne durable, le recrutement peut être pertinent. Si le besoin peut être cadré en missions et rendez-vous réguliers, étudiez l’externalisation.</p>
+      <h2 id="cout-total">2. Comparer des budgets de même périmètre</h2>
       <ProseTable>
-          <thead>
-            <tr>
-              <th>Élément de coût</th>
-              <th>DAF Salarié</th>
-              <th>DAF Externalisé</th>
-              <th>Observation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Salaire brut</strong></td>
-              <td>€50-65k</td>
-              <td>€0</td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td><strong>Charges sociales</strong> (42 %)</td>
-              <td>€21-27k</td>
-              <td>€0</td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td><strong>Frais de recrutement</strong></td>
-              <td>€3-5k</td>
-              <td>€0</td>
-              <td>Cabinet de recrutement</td>
-            </tr>
-            <tr>
-              <td><strong>Formation / certifications</strong></td>
-              <td>€1-2k/an</td>
-              <td>€0</td>
-              <td>Risque de départ</td>
-            </tr>
-            <tr>
-              <td><strong>Assistance DAF externalisé</strong></td>
-              <td>€0</td>
-              <td>€30-50k</td>
-              <td>2-3 jours/semaine</td>
-            </tr>
-            <tr>
-              <td><strong>Assistance comptable interne</strong></td>
-              <td>€20-30k</td>
-              <td>€20-30k</td>
-              <td>Identique dans les 2 cas</td>
-            </tr>
-            <tr>
-              <td><strong>Cabinet expert-comptable</strong></td>
-              <td>€15-25k</td>
-              <td>€10-15k</td>
-              <td>Moins de contrôle si DAF interne</td>
-            </tr>
-            <tr>
-              <td><strong>Outils (logiciels finance)</strong></td>
-              <td>€5-10k</td>
-              <td>€5-10k</td>
-              <td>Identique</td>
-            </tr>
-            <tr>
-              <td style={{ fontWeight: 'bold' }}><strong>TOTAL ANNUEL</strong></td>
-              <td style={{ fontWeight: 'bold', color: '#000' }}>€115-164k</td>
-              <td style={{ fontWeight: 'bold', color: '#000' }}>€65-105k</td>
-              <td style={{ fontWeight: 'bold' }}>-35 % à -50 %</td>
-            </tr>
-          </tbody>
-        </ProseTable>
-
-      <StatGrid items={[
-        {
-          label: "Économie annuelle",
-          value: "€50-60k",
-          sublabel: "En choisissant l'externalisé",
-        },
-        {
-          label: "Séniorité garantie",
-          value: "15-20 ans",
-          sublabel: "DAF externalisé",
-        },
-        {
-          label: "Temps d'implémentation",
-          value: "2-4 semaines",
-          sublabel: "Versus 2-3 mois (recrutement interne)",
-        },
-      ]} />
-
-      <p>
-        Il reste une troisième option, souvent confondue avec l'externalisation : le DAF intérimaire, qui intervient à temps plein pour une mission courte (3 à 18 mois). Nous le comparons en détail dans notre article <Link href="/ressources/blog/daf-externalise-vs-daf-interimaire">DAF externalisé ou DAF intérimaire : lequel choisir</Link>.
-      </p>
-
-      <h2 id="daf-salarie">3. DAF salarié : avantages et inconvénients</h2>
-      <h3>✅ Avantages</h3>
-      <ul>
-        <li><strong>Présence physique</strong> : Disponible en permanence, communication fluide, culture d'entreprise partagée</li>
-        <li><strong>Connaissance métier profonde</strong> : Après 6-12 mois, il maîtrise votre business par cœur</li>
-        <li><strong>Équipe supervisée</strong> : Peut encadrer et développer une équipe comptable/finance</li>
-        <li><strong>Coût marginal si stable</strong> : Si vos besoins restent constants, le coût total annuel peut être inférieur</li>
-        <li><strong>Loyalty</strong> : Engagé dans la croissance long terme, aligné avec vos objectifs</li>
-      </ul>
-
-      <h3>❌ Inconvénients</h3>
-      <ul>
-        <li><strong>Risque départ</strong> : Démission imprévisible, délai de remplacement 2-3 mois minimum</li>
-        <li><strong>Séniorité limitée</strong> : Pour €50-65k, vous trouvez un DAF avec 5-10 ans d'expérience, pas 15-20</li>
-        <li><strong>Coût fixe</strong> : Vous payez plein salaire même si la charge fluctue (pics saisonniers vs périodes calmes)</li>
-        <li><strong>Formation nécessaire</strong> : Budget continu en formations, certifications, outils nouveaux</li>
-        <li><strong>Moins de recul critique</strong> : Plus difficile pour lui d'apporter une vision objective</li>
-      </ul>
-
-      <h2 id="daf-externalise">4. DAF externalisé : avantages et inconvénients</h2>
-      <h3>✅ Avantages</h3>
-      <ul>
-        <li><strong>Coût maîtrisé et flexible</strong> : Vous payez à la journée/mois. Si la charge augmente → +1 jour. Si elle baisse → -1 jour. Pour le détail des tarifs par rythme, voir notre guide des <Link href="/ressources/blog/daf-part-time-tarifs-missions-2026">tarifs d'un DAF à temps partagé</Link>.</li>
-        <li><strong>Séniorité garantie</strong> : 15-20 ans d'expérience, certifications, réseau</li>
-        <li><strong>Continuité assurée</strong> : si votre DAF est indisponible, le cabinet prend le relais avec un autre profil sous 7 à 10 jours (engagement contractuel)</li>
-        <li><strong>Expertise multi-métier</strong> : Voit 100+ entreprises/an, benchmarks, best practices</li>
-        <li><strong>Rapidité d'implémentation</strong> : Opérationnel en 2-4 semaines</li>
-        <li><strong>Flexibilité croissance</strong> : Ajustez les jours selon levée, audit, acquisition</li>
-      </ul>
-
-      <h3>❌ Inconvénients</h3>
-      <ul>
-        <li><strong>Pas de présence physique 100 %</strong> : 2-3 jours par semaine max (sinon pas l'externalisation)</li>
-        <li><strong>Moins de "culture" d'entreprise</strong> : Moins impliqué émotionnellement dans la croissance</li>
-        <li><strong>Risque d'implication légère</strong> : Si mal structuré, le DAF devient "prestataire distant", pas partenaire</li>
-        <li><strong>Changement possible</strong> : Rotation d'experts (rare mais possible si défaut de prestation)</li>
-      </ul>
-
-      <h2 id="comparaison-directe">5. Comparaison directe (tableau synthétique)</h2>
-
-      <ProseTable>
-          <thead>
-            <tr>
-              <th>Critère</th>
-              <th>DAF Salarié</th>
-              <th>DAF Externalisé</th>
-              <th>Gagnant selon contexte</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Coût annuel</strong></td>
-              <td>€115-165k</td>
-              <td>€65-105k</td>
-              <td>✅ Externalisé (-35-50 %)</td>
-            </tr>
-            <tr>
-              <td><strong>Séniorité</strong></td>
-              <td>5-10 ans</td>
-              <td>15-20 ans</td>
-              <td>✅ Externalisé</td>
-            </tr>
-            <tr>
-              <td><strong>Flexibilité coût</strong></td>
-              <td>❌ Fixe 100 %</td>
-              <td>✅ Variable (jours)</td>
-              <td>✅ Externalisé</td>
-            </tr>
-            <tr>
-              <td><strong>Disponibilité</strong></td>
-              <td>✅ 5j/semaine</td>
-              <td>❌ 2-3j/semaine</td>
-              <td>✅ Salarié</td>
-            </tr>
-            <tr>
-              <td><strong>Continuité</strong></td>
-              <td>❌ Risque départ</td>
-              <td>✅ Zéro risque</td>
-              <td>✅ Externalisé</td>
-            </tr>
-            <tr>
-              <td><strong>Connaissance métier</strong></td>
-              <td>✅ Très profonde</td>
-              <td>⚠ Moins, mais polyvalent</td>
-              <td>✅ Salarié (après 6-12 mois)</td>
-            </tr>
-            <tr>
-              <td><strong>Temps implémentation</strong></td>
-              <td>2-3 mois</td>
-              <td>2-4 semaines</td>
-              <td>✅ Externalisé</td>
-            </tr>
-            <tr>
-              <td><strong>Équipe supervisée</strong></td>
-              <td>✅ Oui</td>
-              <td>❌ Non (mais partenaire)</td>
-              <td>✅ Salarié</td>
-            </tr>
-            <tr>
-              <td><strong>Implication long terme</strong></td>
-              <td>✅ Très engagé</td>
-              <td>⚠ Professional mais distant</td>
-              <td>✅ Salarié</td>
-            </tr>
-          </tbody>
-        </ProseTable>
-
-      <h2 id="matrice-decision">6. Matrice de décision : qui choisir ?</h2>
-
-      <h3>✅ Choisissez DAF salarié si :</h3>
-      <ul>
-        <li>CA stable et prévisible depuis 5+ ans (€10M+)</li>
-        <li>Vous avez une équipe de 2-3 comptables/finances à superviser</li>
-        <li>Vous avez une complexité opérationnelle élevée (multi-entités, multi-devises, acquisitions fréquentes)</li>
-        <li>Vous cherchez un partenaire intégré à 100 % à votre stratégie</li>
-        <li>Vous avez atteint une maturité financière stable</li>
-      </ul>
-
-      <h3>✅ Choisissez DAF externalisé si :</h3>
-      <ul>
-        <li>Vous êtes en croissance rapide (CA change 50 %+ par an)</li>
-        <li>CA €2-50M (sweet spot pour l'externalisé)</li>
-        <li>Vous avez une équipe comptable légère (0-1 comptable interne)</li>
-        <li>Vous avez un budget limité mais besoin de séniorité</li>
-        <li>Vous valorisez la flexibilité et le zéro risque</li>
-        <li>Vous préparez une levée de fonds ou une transmission</li>
-      </ul>
-
-      <h3>⚠️ Choisissez modèle hybride si :</h3>
-      <ul>
-        <li>CA €20-100M+, croissance stable mais complexe</li>
-        <li>Vous avez 1 comptable interne + 1 DAF externalisé (2-3j/semaine)</li>
-        <li>Équilibre optimal : noyau opérationnel interne + expertise senior externe</li>
-      </ul>
-
-      <Callout type="success" title="Recommandation Iter Advisors">
-        Pour une PME en croissance €5-20M de CA : modèle hybride = 1 comptable interne + 1 DAF externalisé 2-3j/semaine. Coût total : €50-70k/an. Résultat : séniorité complète, flexibilité, engagement équilibré.
-      </Callout>
-
-      <InlineCta
-        title="Vous hésitez entre salarié et externalisé ?"
-        body="Faisons ensemble l'audit de votre structure finance actuelle. Nous évaluerons votre charge de travail, complexité, et budget pour recommander le modèle optimal pour votre situation."
-        ctaLabel="Audit structure (gratuit, 45 min)"
-        ctaHref="/contact?type=audit-structure-finance"
-      />
-
-      <h2>Conclusion : une décision qui dépend de votre étape</h2>
-      <p>
-        Il n'y a pas une réponse unique. Un startup en hypercroissance ne choisira pas comme une PME stable. Voici le résumé :
-      </p>
-      <table style={{ marginTop: '20px' }}>
+        <thead><tr><th>Base</th><th>DAF salarié</th><th>DAF externalisé Iter</th></tr></thead>
         <tbody>
-          <tr>
-            <td><strong>€2-8M, croissance rapide</strong></td>
-            <td>→ DAF externalisé</td>
-          </tr>
-          <tr>
-            <td><strong>€10-30M, stable</strong></td>
-            <td>→ DAF salarié + cabinet</td>
-          </tr>
-          <tr>
-            <td><strong>€5-50M, tous contextes</strong></td>
-            <td>→ Modèle hybride (noyau interne + DAF externalisé)</td>
-          </tr>
+          <tr><td>Budget annuel de référence</td><td>{offer.salary} € de coût employeur chargé</td><td>{offer.annualPrice} € HT pour douze mois</td></tr>
+          <tr><td>Prix mensuel</td><td>Selon le contrat de travail</td><td>{offer.price}</td></tr>
+          <tr><td>Disponibilité</td><td>Présence quotidienne selon le contrat</td><td>Périmètre convenu, {offer.volume} par mois en moyenne observée</td></tr>
+          <tr><td>Comptabilité et logiciels</td><td>À budgéter selon l’organisation</td><td>À budgéter selon l’organisation</td></tr>
         </tbody>
-      </table>
-      <p>
-        Chez Iter Advisors, nous avons aidé 500+ PMEs et scale-ups à faire ce choix. Nous accompagnons tant les structure avec DAF salarié que ceux qui nous confient leur rôle en externalisé. Notre objectif : trouver le modèle optimal pour votre croissance.
-      </p>
-      {/* GSC-05 (2026-07-19) — maillage interne vers la page pilier. Ancres
-          variées ("cabinet Iter Advisors" + "service de DAF externalisé")
-          conformes à la règle : jamais >30 % d'exact-match sur "DAF externalisé". */}
-      <p>
-        Envie de creuser le sujet côté offre&nbsp;? Découvrez notre{' '}
-        <Link href="/daf-externalise">service de DAF externalisé</Link> — 3&nbsp;formules
-        (Essentiel, Croissance, Premium) dès 3&nbsp;000&nbsp;€ HT/mois avec un DAF
-        senior opérationnel sous 2&nbsp;semaines. Pour comprendre en profondeur
-        notre méthodologie, notre livret complet est disponible sur la page{' '}
-        <Link href="/daf-externalise">cabinet Iter Advisors</Link>.
-      </p>
+      </ProseTable>
+      <p>La référence salariale est le coût employeur complet d’un profil de séniorité équivalente, avec une médiane de {COUT_DAF_SALARIE.median.toLocaleString('fr-FR')} € par an. Cette base interne de comparaison ne constitue pas un devis de recrutement. Le budget externalisé correspond aux formules Iter annualisées, hors missions ponctuelles.</p>
+      <p>La comparaison ne suppose pas une disponibilité identique : une mission à temps partagé ne remplace pas automatiquement un poste à plein temps. Au bas de la référence salariale, l’écart avec une formule Premium peut être limité. Ajoutez dans les deux scénarios les mêmes besoins de comptabilité, logiciels et support, puis comparez les livrables.</p>
+      <p>{offer.billing} Retrouvez les inclusions et les exclusions dans la <Link href="/daf-externalise/tarifs">grille des tarifs du DAF externalisé</Link>.</p>
+      <h2 id="daf-salarie">3. Quand recruter un DAF salarié ?</h2>
+      <p>Le recrutement répond à un besoin de direction financière continue : management d’une équipe importante, décisions quotidiennes, coordination opérationnelle ou gouvernance exigeant un interlocuteur permanent. Un salarié construit sa connaissance de l’entreprise dans la durée.</p>
+      <p>Évaluez la charge réelle et la séniorité nécessaire. Prévoyez le recrutement, la passation et la continuité en cas d’absence. Un poste interne n’exclut pas un appui externe ponctuel pour une acquisition, un financement ou un changement d’outil.</p>
+      <h2 id="daf-externalise">4. Quand choisir un DAF externalisé ?</h2>
+      <p>L’externalisation est adaptée lorsque les besoins peuvent être organisés dans un périmètre explicite : reporting, prévisionnel de trésorerie, budget, préparation des décisions et échanges réguliers avec le dirigeant. La disponibilité proposée doit couvrir les échéances et les périodes de charge.</p>
+      <p>Chez Iter Advisors, le démarrage récurrent est envisagé en {offer.start}, selon le profil disponible et la complexité du dossier. {offer.commitment} Les évolutions du périmètre sont convenues par avenant. L’expert-comptable conserve ses responsabilités ; le DAF utilise les comptes pour piloter l’activité.</p>
+      <p>Demandez le nom du responsable de mission, des exemples de livrables et les modalités de relais. Un <Link href="/ressources/cas-clients/opti-digital-structuration-financement">cas documenté de structuration financière chez Opti Digital</Link> illustre un contexte d’intervention, sans garantir le même résultat dans votre entreprise.</p>
+      <h2 id="comparaison-directe">5. Comparer l’organisation proposée</h2>
+      <ProseTable>
+        <thead><tr><th>Question</th><th>Point à valider dans les deux modèles</th></tr></thead>
+        <tbody>
+          <tr><td>Qui décide ?</td><td>Délégations, arbitrages du dirigeant et préparation des décisions</td></tr>
+          <tr><td>Qui produit ?</td><td>Répartition entre comptabilité, contrôle de gestion et direction financière</td></tr>
+          <tr><td>Qui répond en urgence ?</td><td>Disponibilité, canal de contact et organisation des absences</td></tr>
+          <tr><td>Comment mesurer l’utilité ?</td><td>Fiabilité des données, respect des échéances et décisions rendues possibles</td></tr>
+          <tr><td>Comment transmettre ?</td><td>Documentation, accès aux outils et reprise des dossiers</td></tr>
+        </tbody>
+      </ProseTable>
+      <h2 id="matrice-decision">6. Une décision à partir de votre besoin</h2>
+      <p>Exemple fictif : une PME dispose d’un comptable interne et d’un cabinet d’expertise comptable, mais aucun responsable ne tient le prévisionnel ni n’explique les écarts de marge. Une mission externalisée peut compléter cette organisation si la charge reste compatible avec les disponibilités proposées.</p>
+      <p>À l’inverse, si plusieurs équipes attendent chaque jour des arbitrages financiers et un management de proximité, un poste interne peut être plus adapté. Le modèle hybride conserve une équipe opérationnelle interne et ajoute une expertise externe sur un périmètre défini.</p>
+      <p>Un départ imprévu ou une réorganisation peut appeler une <Link href="/daf-externalise/transition">mission de DAF de transition</Link>. Pour une présence récurrente, comparez le fonctionnement d’un <Link href="/daf-externalise/temps-partage">DAF à temps partagé</Link> et celui du recrutement envisagé.</p>
+      <InlineCta title="Cadrer votre organisation financière" body="Identifions les livrables, la disponibilité et le budget nécessaires à votre entreprise." ctaLabel="Demander un diagnostic" ctaHref="/contact" />
     </BlogPostPageRefonte>
   );
 }

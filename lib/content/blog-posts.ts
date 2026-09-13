@@ -1,3 +1,4 @@
+import { getDafOffer } from "./daf-offer";
 import { Locale } from "../i18n";
 
 export interface BlogPostData {
@@ -320,6 +321,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogHref: "/ressources/blog",
       },
       h1: "Externalisation comptable : le guide pratique pour les dirigeants de PME et startups",
+      updatedDate: "2026-09-13",
       publishedDate: "2026-05-10",
       author: "Benjamin Ziza",
       category: "guides-pratiques",
@@ -490,7 +492,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <tr>
 <td><strong>Coût typique</strong></td>
 <td>400 à 2 000 EUR/mois</td>
-<td>2 000 à 8 000 EUR/mois</td>
+<td>${getDafOffer("fr").price} chez Iter Advisors</td>
 </tr>
 <tr>
 <td><strong>Meilleur pour</strong></td>
@@ -556,6 +558,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "5 signes que vous avez besoin d'un DAF externalisé (et comment choisir)",
+      updatedDate: "2026-09-13",
       publishedDate: "2026-05-13",
       author: "Sébastien Doat",
       category: "DAF externalisé",
@@ -664,7 +667,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 </tbody>
 </table>
 <h2 id="faq">FAQ</h2>
-<p><strong>Q : Quel est le coût d'un DAF externalisé en 2026 ?</strong><br>R : De 2 000 € à 4 000 € par mois pour une mission de 2 à 3 jours par semaine. Temps plein : 5 000 € à 8 000 € par mois.</p>
+<p><strong>Q : Quel est le coût d'un DAF externalisé en 2026 ?</strong><br>R : ${getDafOffer("fr").price}. ${getDafOffer("fr").billing}</p>
 <p><strong>Q : Combien de temps faut-il pour mettre en place un DAF externalisé ?</strong><br>R : 1 à 2 semaines en moyenne. Le diagnostic initial est réalisé la première semaine, le déploiement des outils la deuxième.</p>
 <p><strong>Q : Le DAF externalisé peut-il accompagner une levée de fonds ?</strong><br>R : Oui, c'est l'une des missions les plus fréquentes. Le DAF prépare le modèle financier, la data room, et accompagne les fondateurs dans les rendez-vous VC.</p>
 <p><strong>Q : Quelle est la durée minimale d'engagement ?</strong><br>R : Aucune. La mission est résiliable avec un préavis de 30 jours.</p>
@@ -773,6 +776,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "DAF externalisé vs Expert-Comptable : quelle différence ?",
+      updatedDate: "2026-09-13",
       publishedDate: "2026-05-11",
       author: "Sébastien Doat",
       category: "daf-externalise",
@@ -798,7 +802,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li>Structure le contrôle de gestion</li>
 <li>Anime le reporting au board</li>
 </ul>
-<p>Son horizon est prospectif. Coût moyen : 2 000-5 000 €/mois.</p>
+<p>Son horizon est prospectif. Chez Iter Advisors : ${getDafOffer("fr").price}, selon le périmètre et le profil.</p>
 <h2 id="duo">Le duo gagnant : expert-comptable + DAF</h2>
 <p>L'expert-comptable assure la base comptable — le DAF utilise cette base pour piloter.</p>
 <table>
@@ -831,86 +835,70 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     "pennylane-vs-sage-comparatif-40-deploiements": {
       meta: {
         title: "Pennylane vs Sage : comparatif expert 2026 | Iter Advisors",
-        description: "Pennylane vs Sage : comparatif après 40+ déploiements. UX, prix, immobilisations, intégrations. Recommandation par profil d'entreprise et secteur.",
+        description: "Pennylane vs Sage : comparez le périmètre, les intégrations, les contrôles et le coût total avant de choisir votre logiciel comptable.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
-      h1: "Pennylane vs Sage : notre comparatif après 40 déploiements",
+      h1: "Pennylane vs Sage : quel outil pour votre comptabilité ?",
+      updatedDate: "2026-09-13",
       publishedDate: "2026-05-11",
       author: "Sébastien Doat",
       category: "outils-stack",
-      htmlContent: `<p>Après avoir déployé <a href="/ressources/outils/pennylane">Pennylane</a> chez plus de 25 clients et <a href="/ressources/outils/sage">Sage</a> chez une quinzaine, nous avons une vision claire : il n'y a pas de « meilleur » outil de comptabilité — il y a un outil adapté à votre situation. Voici notre comparatif terrain.</p>
+      htmlContent: `<p>Pour choisir entre Pennylane et Sage, partez des opérations à gérer : achats, ventes, stocks, immobilisations et reporting. Pennylane présente une plateforme financière et comptable intégrée. Sage propose plusieurs produits : une comparaison utile doit préciser lesquels, avec leurs modules et leur mode d’hébergement.</p>
 <h2 id="verdict">Le verdict en 30 secondes</h2>
-<p>Pennylane pour les startups SaaS, les entreprises de services et les PME digitales qui privilégient l'UX et l'intégration avec leur stack d'outils. Sage pour les industriels, les commerçants, et les structures avec des besoins de gestion de stocks et d'immobilisations complexes.</p>
-<h2 id="comparatif">Comparatif détaillé</h2>
-<table>
-<thead><tr><th>Critère</th><th>Pennylane</th><th>Sage</th></tr></thead>
-<tbody>
-<tr><td>UX / Facilité</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
-<tr><td>Gestion de stocks</td><td>⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
-<tr><td>Immobilisations</td><td>⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
-<tr><td>API / Intégrations</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
-<tr><td>Comptabilité analytique</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
-<tr><td>Multi-sociétés</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
-<tr><td>Rapport qualité/prix</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
-<tr><td>Implémentation</td><td>1-3 semaines</td><td>4-12 semaines</td></tr>
-<tr><td>Prix</td><td>39-199 €/mois</td><td>99-499 €/mois</td></tr>
-</tbody>
-</table>
-<h2 id="retour-pennylane">Retour terrain — Pennylane</h2>
-<p>Déployé chez une startup SaaS de 35 personnes à Paris. Temps de clôture passé de 8 jours à 3 jours. Rapprochement bancaire automatique : 6 heures économisées par mois. L'intégration avec <a href="/ressources/outils/agicap">Agicap</a> et <a href="/ressources/outils/spendesk">Spendesk</a> est transparente.</p>
-<h2 id="retour-sage">Retour terrain — Sage</h2>
-<p>Accompagné une PME industrielle de 45 personnes à Toulouse. La gestion des stocks avec lots et numéros de série, le module immobilisations avec amortissements dégressifs, et la comptabilité analytique multi-axes sont des fonctionnalités que Pennylane ne couvre pas encore.</p>
-<h2 id="reco">Notre recommandation par profil</h2>
-<ul>
-<li><strong>Startup SaaS &lt; 50 pers.</strong> : Pennylane</li>
-<li><strong>E-commerce D2C &lt; 100 pers.</strong> : Pennylane (sauf stocks très complexes)</li>
-<li><strong>Industrie / Fabrication</strong> : Sage</li>
-<li><strong>Retail multi-magasin</strong> : Cegid Loop ou Sage</li>
-<li><strong>PME services digitaux</strong> : Pennylane</li>
-<li><strong>Groupe multi-sociétés</strong> : Sage (consolidation)</li>
-</ul>
-<p><a href="/ressources/outils/pennylane">Fiche complète Pennylane</a> | <a href="/ressources/outils/sage">Fiche complète Sage</a></p>`,
+<p>Présélectionnez Pennylane si votre priorité est de relier facturation, dépenses et comptabilité dans un même environnement. Étudiez une offre Sage identifiée si votre projet inclut une gestion commerciale ou un ERP plus étendu. Ce sont des pistes de sélection, à confirmer par une démonstration sur vos données, et non un classement universel.</p>
+<h2 id="comparatif">Les critères à tester</h2>
+<table><thead><tr><th>Besoin</th><th>Vérification à demander aux deux éditeurs</th></tr></thead><tbody>
+<tr><td>Comptabilité</td><td>Plan de comptes, clôture, export des écritures et collaboration avec votre cabinet</td></tr>
+<tr><td>Immobilisations</td><td>Cycle complet sur un actif représentatif : acquisition, amortissement et sortie</td></tr>
+<tr><td>Stocks et production</td><td>Produit exact, module ou connexion externe nécessaire, lots et valorisation</td></tr>
+<tr><td>Analytique</td><td>Axes, ventilation et restitution de vos marges par activité</td></tr>
+<tr><td>Intégrations</td><td>Flux réels avec banques, facturation, paie et outils métiers ; traitement des erreurs</td></tr>
+<tr><td>Coût total</td><td>Abonnement, modules, migration, intégration, formation et support au même périmètre</td></tr>
+</tbody></table>
+<h2 id="retour-pennylane">Ce que la documentation Pennylane permet de vérifier</h2>
+<p>Pennylane mentionne notamment l’analytique multi-axes et les immobilisations dans sa présentation officielle. Il serait donc inexact de les déclarer absentes par principe. Leur adéquation à votre dossier se vérifie sur les règles, les exports et les droits d’accès dont vous avez besoin.</p>
+<h2 id="retour-sage">Préciser la solution Sage comparée</h2>
+<p>La gamme Sage inclut différentes solutions de comptabilité et de gestion. Demandez le nom du produit, les modules inclus et le prestataire chargé du paramétrage. Une conclusion sur une édition ne se transpose pas automatiquement à toute la gamme.</p>
+<h2 id="reco">Un protocole de choix concret</h2>
+<p>Préparez un dossier de démonstration anonymisé avec une facture d’achat, une vente, un avoir, un actif et une ventilation analytique. Demandez à chaque candidat de traiter le même parcours, jusqu’à l’export comptable. Notez les interventions manuelles, les contrôles possibles et les limites constatées. Faites valider le résultat par la personne qui tiendra la comptabilité.</p>
+<p>Avant toute migration, convenez du solde de reprise, des accès, des responsabilités et du rapprochement avec l’ancien système. Le DAF cadre le besoin et le pilotage ; le logiciel ne remplace pas la validation comptable.</p>
+<p>Pour aller plus loin : <a href="/ressources/outils/pennylane">fiche Pennylane</a>, <a href="/ressources/outils/sage">fiche Sage</a> et <a href="/services/comptabilite-externalisation">organisation de votre comptabilité externalisée</a>.</p>
+<h2 id="sources">Sources et méthode</h2>
+<p>Documentation consultée le 13 septembre 2026 : <a href="https://www.pennylane.com/fr">présentation officielle Pennylane</a> et <a href="https://www.sage.com/fr-fr/produits/">gamme officielle Sage</a>. Cette grille est une aide au choix, pas un benchmark chronométré ni un compte rendu de résultats clients. Les tarifs et fonctionnalités doivent être confirmés dans l’offre retenue.</p>`,
       content: [],
     },
     "agicap-vs-fygr-outil-tresorerie": {
       meta: {
         title: "Agicap vs Fygr — Quel outil trésorerie ? | Iter Advisors",
-        description: "Agicap multi-banques et scénarios avancés, ou Fygr économique et simple ? Comparatif terrain par Iter Advisors basé sur 30+ déploiements.",
+        description: "Agicap ou Okimia, anciennement Fygr : comparez les connexions bancaires, les prévisions, les scénarios et le coût total sur votre périmètre.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
-      h1: "Agicap vs Fygr : quel outil de trésorerie choisir ?",
+      h1: "Agicap vs Fygr (Okimia) : quel outil de trésorerie choisir ?",
+      updatedDate: "2026-09-13",
       publishedDate: "2026-05-11",
       author: "Sébastien Doat",
       category: "outils-stack",
-      htmlContent: `<p>La trésorerie est le nerf de la guerre des startups. Mais avant d'avoir une trésorerie à gérer, il faut la voir — et c'est précisément le job d'un outil de prévision de trésorerie. Chez Iter Advisors, nous déployons principalement <a href="/ressources/outils/agicap">Agicap</a> et <a href="/ressources/outils/fygr">Fygr</a>. Deux approches, deux positionnements.</p>
+      htmlContent: `<p>Agicap et Okimia, anciennement Fygr, proposent des outils de suivi et de prévision de trésorerie. Le choix dépend de vos banques, de vos entités et de la façon dont vous construisez vos prévisions. Un nombre de salariés ou un ancien prix d’appel ne suffit pas à départager les deux.</p>
 <h2 id="verdict">Le verdict en 30 secondes</h2>
-<p>Agicap pour les startups et PME avec une trésorerie complexe (multi-banques, scénarios multiples, lignes de crédit) et un budget &gt; 100 €/mois. Fygr pour les PME avec une trésorerie simple (1-2 banques, besoin de visibilité basique) et un budget &lt; 80 €/mois.</p>
-<h2 id="comparatif">Comparatif détaillé</h2>
-<table>
-<thead><tr><th>Critère</th><th>Agicap</th><th>Fygr</th></tr></thead>
-<tbody>
-<tr><td>Banques connectées</td><td>120+</td><td>15</td></tr>
-<tr><td>Prévision (horizon)</td><td>12-52 semaines</td><td>13 semaines</td></tr>
-<tr><td>Scénarios</td><td>Illimités</td><td>2 (opti/pessi)</td></tr>
-<tr><td>Budget vs réalité</td><td>✅</td><td>✅</td></tr>
-<tr><td>Multi-utilisateurs</td><td>✅</td><td>✅</td></tr>
-<tr><td>API</td><td>✅</td><td>❌</td></tr>
-<tr><td>Support</td><td>Téléphone + chat</td><td>Email</td></tr>
-<tr><td>Prix</td><td>49-249 €/mois</td><td>29-99 €/mois</td></tr>
-<tr><td>Implémentation</td><td>2 semaines</td><td>1-2 jours</td></tr>
-</tbody>
-</table>
-<h2 id="retour-agicap">Retour terrain — Agicap</h2>
-<p>Déployé chez une scale-up de 60 personnes avec 4 comptes bancaires et une ligne de crédit. La prévision à 13 semaines avec 3 scénarios (pessimiste -20% CA, réaliste, optimiste +30% CA) permet de prendre des décisions éclairées.</p>
-<h2 id="retour-fygr">Retour terrain — Fygr</h2>
-<p>Déployé chez une PME de 25 personnes avec 2 comptes bancaires. L'interface simple et le module budget vs réalité ont convaincu le dirigeant — non-financier — en 30 minutes.</p>
-<h2 id="reco">Notre recommandation</h2>
-<ul>
-<li>&lt; 20 pers., 1-2 banques, budget serré : <strong>Fygr</strong></li>
-<li>&gt; 20 pers., multi-banques, scénarios complexes : <strong>Agicap</strong></li>
-<li>&gt; 80 pers., trésorerie internationale : <strong>Agicap Pro + Kyriba</strong></li>
-</ul>
-<p><a href="/ressources/outils/agicap">Fiche Agicap</a> | <a href="/ressources/outils/fygr">Fiche Fygr</a></p>`,
+<p>Présélectionnez les solutions sur un même besoin : consolider vos soldes, expliquer les mouvements et anticiper les décaissements. Agicap présente aussi des fonctions de gestion des postes clients et fournisseurs. Okimia présente la connexion des comptes bancaires et de l’ERP. Demandez une démonstration des fonctions incluses dans chaque offre envisagée.</p>
+<h2 id="comparatif">Comparer sur vos flux réels</h2>
+<table><thead><tr><th>Critère</th><th>Question à poser</th><th>Preuve attendue</th></tr></thead><tbody>
+<tr><td>Banques et devises</td><td>Mes comptes exacts sont-ils pris en charge ?</td><td>Connexion testée et fréquence de mise à jour documentée</td></tr>
+<tr><td>Prévision</td><td>Comment importer factures, échéances et hypothèses ?</td><td>Prévision glissante avec rapprochement du réalisé</td></tr>
+<tr><td>Scénarios</td><td>Peut-on simuler retard client et investissement ?</td><td>Hypothèses distinctes et effet visible sur le solde minimum</td></tr>
+<tr><td>Groupe</td><td>Comment traiter les flux intersociétés ?</td><td>Vue par entité et consolidation expliquée</td></tr>
+<tr><td>Exploitation</td><td>Qui corrige une synchronisation ou une catégorie ?</td><td>Droits, piste de contrôle, support et export</td></tr>
+<tr><td>Budget</td><td>Quel coût sur le périmètre demandé ?</td><td>Devis comprenant comptes, entités, utilisateurs et accompagnement</td></tr>
+</tbody></table>
+<h2 id="retour-agicap">Exemple de test pour un groupe</h2>
+<p>Cas fictif de sélection : une société mère et deux filiales échangent de la trésorerie. Chargez les mêmes mouvements dans chaque solution. Vérifiez qu’un virement interne ne gonfle pas artificiellement les encaissements consolidés et que chaque filiale conserve sa propre vision. Ce test décrit un besoin, pas un résultat client Iter.</p>
+<h2 id="retour-fygr">Exemple de test pour une PME</h2>
+<p>Cas fictif : une PME doit payer ses salaires avant l’encaissement de son principal client. Décalez cette recette dans une copie du prévisionnel. Le dirigeant doit pouvoir identifier le point bas, retrouver l’hypothèse et vérifier l’écart avec le scénario initial. Évaluez le temps de mise à jour et la compréhension du résultat par la personne responsable.</p>
+<h2 id="reco">Organiser le pilotage après le choix</h2>
+<p>Le logiciel collecte des données ; une personne doit tenir les hypothèses à jour. Fixez une revue des écarts, un responsable des échéances et les décisions à prendre lorsque la trésorerie passe sous votre seuil de sécurité. Notre <a href="/services/previsionnel-tresorerie">accompagnement en prévisionnel de trésorerie</a> porte sur cette organisation.</p>
+<p>Consultez les <a href="/ressources/outils/agicap">critères de choix Agicap</a> et la <a href="/ressources/outils/fygr">fiche Okimia, ex-Fygr</a>.</p>
+<h2 id="sources">Sources et méthode</h2>
+<p>Vérifié le 13 septembre 2026 : <a href="https://agicap.com/fr/">site officiel Agicap</a> et <a href="https://www.okimia.com/fr">site officiel Okimia</a>, qui annonce le changement de nom de Fygr. Les exemples sont fictifs. Cette comparaison ne revendique ni nombre de déploiements ni gains mesurés ; le périmètre contractuel fait foi.</p>`,
       content: [],
     },
     "stack-financier-saas-series-a": {
@@ -1500,61 +1488,38 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     "payfit-vs-silae-comparatif-pme": {
       meta: {
         title: "PayFit vs Silae vs malibou : comparatif paie PME 2026",
-        description: "Comparez PayFit, Silae et malibou : production de la paie, accompagnement, SIRH, intégrations, prix et profils d'entreprise adaptés.",
+        description: "Comparez PayFit, Silae et malibou : responsabilités, paie, accompagnement, intégrations et coût total pour votre PME.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "PayFit vs Silae vs malibou : quel logiciel de paie choisir ?",
+      updatedDate: "2026-09-13",
       publishedDate: "2026-05-11",
-      updatedDate: "2026-07-30",
       author: "Benjamin Ziza",
       category: "rh-paie",
-      htmlContent: `<p>Le choix de l'outil de paie est critique pour une PME en croissance. Une paie erronée, une DSN rejetée, ou une non-conformité sociale peut coûter cher. Chez Iter Advisors, nous déployons principalement deux outils de paie : <a href="/ressources/outils/payfit">PayFit</a> et <a href="/ressources/outils/silae">Silae</a>. Voici notre comparatif basé sur 40+ déploiements.</p>
-<p>Une troisième approche se développe avec <a href="/ressources/outils/malibou">malibou</a> : une plateforme RH associée à une production de la paie prise en charge par un gestionnaire dédié. Contrairement à une solution principalement utilisée en autonomie, malibou combine un SIRH, la technologie de paie Silae et un accompagnement humain récurrent.</p>
+      htmlContent: `<p>Pour comparer PayFit, Silae et malibou, commencez par décider qui produira et contrôlera la paie. La plateforme choisie et le niveau de délégation sont deux décisions liées. Une interface simple ne suffit pas si personne ne valide les variables, les bulletins et les déclarations.</p>
 <h2 id="verdict">Le verdict en 30 secondes</h2>
-<p>PayFit pour les startups et PME avec une paie standard (CCN SYNTEC, forfait jours, moins de 150 salariés) qui veulent produire leur paie en autonomie. Silae pour les structures à paie complexe (CCN rares, multi-conventions, gestion des temps, BTP, spectacle). Et une troisième voie qui monte : malibou, un logiciel RH moderne couplé à un expert paie dédié, avec une paie produite par un gestionnaire sur le moteur Silae. Pour un dirigeant sans RH senior qui veut déléguer la paie, c'est une alternative à étudier sérieusement.</p>
-<h2 id="comparatif">Comparatif détaillé</h2>
-<table>
-<thead><tr><th>Critère</th><th>PayFit</th><th>Silae</th><th>malibou</th></tr></thead>
-<tbody>
-<tr><td>Modèle</td><td>SIRH self-service</td><td>Moteur de paie (via cabinet)</td><td>SIRH + expert paie dédié</td></tr>
-<tr><td>Production de la paie</td><td>Vous, dans l'outil</td><td>Cabinet / gestionnaire</td><td>Gestionnaire dédié malibou (sur Silae)</td></tr>
-<tr><td>Accompagnement humain</td><td>Support outil</td><td>Via cabinet</td><td>Gestionnaire dédié, chat et téléphone</td></tr>
-<tr><td>UX / Facilité</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>Plateforme RH centralisée, paie déléguée à un gestionnaire dédié</td></tr>
-<tr><td>CCN couvertes</td><td>~40 principales</td><td>600+</td><td>600+ (via le moteur Silae)</td></tr>
-<tr><td>Gestion des temps</td><td>⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>Incluse dans le périmètre SIRH : temps, absences, congés, planning</td></tr>
-<tr><td>Portail collaborateur</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>Plateforme RH centralisée (absences, congés, planning, frais, onboarding)</td></tr>
-<tr><td>Intégration comptable</td><td>Pennylane (native)</td><td>Silae Expert</td><td>Qonto, Pennylane, Swile, Benefiz</td></tr>
-<tr><td>Prix</td><td>109 €/mois pour 3 collaborateurs, soit ~36 €/collaborateur — le prix unitaire décroît avec l'effectif</td><td>60-90 €/salarié/mois</td><td>28 €/collaborateur/mois à partir de 5 salariés, plan unique (+ 50 €/salarié de mise en place)</td></tr>
-<tr><td>Implémentation</td><td>1-2 semaines</td><td>2-4 semaines</td><td>1-2 semaines, migration prise en charge</td></tr>
-<tr><td>Support</td><td>Téléphone + chat</td><td>Téléphone + email</td><td>Gestionnaire de paie dédié (chat et téléphone)</td></tr>
-<tr><td>&gt; 150 salariés</td><td>Ralentissements</td><td>✅ Parfait</td><td>Cœur de cible &lt; 150 salariés, recul à valider au-delà</td></tr>
-</tbody>
-</table>
-<p class="text-sm text-muted-foreground">Tarifs relevés le 14 août 2026 sur les pages tarifaires publiques des trois éditeurs. Les unités diffèrent : malibou facture au collaborateur, PayFit affiche un forfait pour un effectif donné dont le prix unitaire décroît avec la taille. La comparaison n'a de sens qu'à effectif identique et à une date donnée.</p>
-<h2 id="retour-payfit">Retour terrain — PayFit</h2>
-<p>Déployé chez une SaaS de 45 salariés (CCN SYNTEC, forfait jours). Implémentation en 5 jours. Taux d'erreur de paie : 0 en 18 mois. Satisfaction salariés (portail) : 4,3/5.</p>
-<h2 id="retour-silae">Retour terrain — Silae</h2>
-<p>Déployé chez une entreprise de BTP de 35 salariés (CCN BTP, heures réelles, multi-chantiers). Gestion des temps intégrée. Conformité BTP totale. Temps de traitement de la paie : 3 jours → 4 heures.</p>
-<h2 id="retour-malibou">Retour terrain — malibou</h2>
-<p>Nous n'avons pas encore piloté de déploiement client sous malibou : ce paragraphe reflète le positionnement communiqué par l'éditeur, pas un retour terrain Iter Advisors. Lancé fin 2023, malibou se positionne comme le logiciel RH d'un PayFit couplé à l'expertise paie d'un cabinet : la production des bulletins est assurée par un gestionnaire dédié sur le moteur Silae, joignable directement par chat et téléphone. Selon l'éditeur, la solution équipe déjà un nombre croissant d'entreprises tech et annonce environ 30 % d'économies à périmètre équivalent — chiffre communiqué par malibou, non vérifié par Iter Advisors à ce stade. Cette fiche sera mise à jour avec un cas chiffré dès qu'un client Iter sera déployé sous malibou.</p>
-<h2 id="reco">Notre recommandation</h2>
-<table>
-<thead><tr><th>Profil</th><th>Outil recommandé</th></tr></thead>
-<tbody>
-<tr><td>Startup SaaS &lt; 50 pers., CCN SYNTEC, RH à l'aise sur la paie</td><td>PayFit</td></tr>
-<tr><td>Startup / PME 5 à 80 pers. sans RH senior, veut déléguer la paie</td><td>malibou</td></tr>
-<tr><td>Dirigeant qui veut un expert paie dédié inclus et un prix serré</td><td>malibou</td></tr>
-<tr><td>PME services &lt; 100 pers., forfait jours</td><td>PayFit ou malibou</td></tr>
-<tr><td>Industrie, BTP, spectacle</td><td>Silae</td></tr>
-<tr><td>Multi-conventions, temps complexes</td><td>Silae</td></tr>
-<tr><td>&gt; 150 salariés</td><td>Silae ou <a href="/ressources/outils/lucca">Lucca</a> + paie</td></tr>
-</tbody>
-</table>
-<h2 id="analyse">Notre analyse</h2>
-<p>PayFit, Silae et malibou ne répondent pas exactement au même besoin. PayFit convient notamment aux entreprises qui souhaitent gérer leur paie dans une interface largement pensée pour l'autonomie. Silae est avant tout un moteur de paie utilisé par des professionnels. malibou s'appuie sur Silae, mais ajoute une plateforme RH et un gestionnaire dédié qui prend en charge la production et le contrôle des bulletins. Le choix dépend donc moins d'une simple comparaison de fonctionnalités que du niveau d'autonomie ou d'accompagnement recherché.</p>
-<h2 id="en-bref">En bref</h2>
-<p>Pour une entreprise sans équipe paie interne qui souhaite déléguer la production des bulletins, malibou constitue une option à étudier. Pour une structure qui souhaite conserver la production en interne, une solution davantage orientée self-service peut rester plus adaptée. Découvrez notre <a href="/ressources/outils/malibou">analyse complète de malibou</a>.</p>
-<p><a href="/ressources/outils/payfit">Fiche PayFit</a> | <a href="/ressources/outils/silae">Fiche Silae</a> | <a href="/ressources/outils/malibou">Fiche malibou</a></p>`,
+<p>PayFit présente un logiciel et un service de paie en ligne. Silae propose un socle paie et RH utilisé notamment par des cabinets et des intégrateurs. malibou associe une plateforme RH et un accompagnement paie dédié, avec une production sur Silae. Comparez les offres et les responsabilités effectivement incluses, plutôt que les seules marques.</p>
+<h2 id="comparatif">La grille de comparaison</h2>
+<table><thead><tr><th>Critère</th><th>À vérifier pour chaque proposition</th></tr></thead><tbody>
+<tr><td>Production</td><td>Qui saisit les variables, produit les bulletins et valide les déclarations ?</td></tr>
+<tr><td>Conventions et cas particuliers</td><td>Votre convention, vos établissements, absences, primes et temps de travail sont-ils couverts ?</td></tr>
+<tr><td>Accompagnement</td><td>Interlocuteur, délai de réponse, remplacement et traitement des corrections</td></tr>
+<tr><td>SIRH</td><td>Congés, documents, portail salarié, planning et droits nécessaires à votre équipe</td></tr>
+<tr><td>Comptabilité</td><td>Export des écritures et ventilation par entité ou centre de coûts</td></tr>
+<tr><td>Prix</td><td>Coût à effectif identique, migration, options, entrées-sorties et régularisations incluses</td></tr>
+</tbody></table>
+<h2 id="retour-payfit">Tester le parcours PayFit</h2>
+<p>Demandez un parcours complet sur un mois représentatif : collecte des variables, contrôle d’un bulletin, correction et export. Identifiez les actions restant à votre charge dans l’offre choisie et le recours disponible lorsqu’un cas sort du fonctionnement courant.</p>
+<h2 id="retour-silae">Évaluer l’offre Silae avec son prestataire</h2>
+<p>L’éditeur présente son réseau de partenaires. Évaluez donc la solution et l’organisation du prestataire : reprise des historiques, contrôles, calendrier, gestion des anomalies et accès aux données. La qualité de l’accompagnement ne se déduit pas du seul moteur de paie.</p>
+<h2 id="retour-malibou">Vérifier le périmètre malibou</h2>
+<p>malibou indique que des gestionnaires prennent en charge la production de la paie sur Silae. Vérifiez les tâches déléguées, celles qui restent chez vous et les modalités de continuité. Cette description vient de la documentation éditeur ; elle ne constitue pas un retour de déploiement client Iter.</p>
+<h2 id="reco">Préparer une décision documentée</h2>
+<p>Exemple fictif : une PME a des collaborateurs à temps partiel, une prime variable et plusieurs établissements. Présentez ces mêmes cas aux candidats. Comparez les contrôles proposés, le circuit de validation et les exports. Un prix par bulletin isolé ne permet pas de départager des propositions avec des responsabilités différentes.</p>
+<p>Avant la bascule, faites rapprocher les historiques et les soldes, valider les accès et prévoir le contrôle de la première paie. Le <a href="/services/gestion-paie-charges-sociales">pilotage de la paie et des charges sociales</a> reste un processus à organiser, quel que soit le logiciel.</p>
+<p>Voir les fiches <a href="/ressources/outils/payfit">PayFit</a>, <a href="/ressources/outils/silae">Silae</a> et <a href="/ressources/outils/malibou">malibou</a>.</p>
+<h2 id="sources">Sources et limites</h2>
+<p>Documentation consultée le 13 septembre 2026 : <a href="https://payfit.com/fr/">PayFit</a>, <a href="https://www.silae.fr/">Silae</a> et <a href="https://www.malibou.com/">malibou</a>. Cette grille ne promet ni zéro erreur ni économie chiffrée. Faites confirmer couverture, tarifs et engagements par les prestataires sur votre dossier.</p>`,
       content: [],
     },
     "impot-revenu-espagne": {
@@ -2419,24 +2384,25 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogHref: "/en/ressources/blog",
       },
       h1: "Fractional CFO vs In-House CFO: Which Model Wins in 2026?",
+      updatedDate: "2026-09-13",
       publishedDate: "2026-05-11",
       author: "Sébastien Doat",
       category: "CFO outsourcing",
       htmlContent: `<p>Your business is growing, the finance topics are getting harder, and you've realised your accountant and your CEO can no longer carry the load alone. You need a CFO. The question is: full-time hire, or <a href="/en/fractional-cfo">Fractional CFO</a>?</p>
 <p>This guide breaks down the trade-offs across cost, flexibility, expertise and ROI — and gives you a clear answer based on your stage.</p>
 <h2 id="cost">Cost: a 30-60% gap</h2>
-<p>A salaried CFO in France costs €100,000-€213,000/year all-in. A Fractional CFO costs €24,000-€96,000/year for an equivalent senior profile. Read the detailed pricing in <a href="/en/ressources/blog/fractional-cfo-cost-services-2026">our 2026 cost guide</a>.</p>
+<p>A salaried CFO in France costs €100,000-€213,000/year all-in. A Fractional CFO costs EUR ${getDafOffer("en").annualPrice} excl. VAT/year for an equivalent senior profile. Read the detailed pricing in <a href="/en/ressources/blog/fractional-cfo-cost-services-2026">our 2026 cost guide</a>.</p>
 <p>The cost gap is not just salary — it's also:</p>
 <ul>
 <li><strong>No employer charges</strong> (42-45% of gross in France) — disappear entirely with a Fractional CFO.</li>
-<li><strong>No severance risk</strong> — if growth slows, a Fractional CFO engagement ends with 30 days notice instead of 6+ months of severance.</li>
-<li><strong>No recruitment friction</strong> — CFO searches take 4-6 months. A Fractional CFO is operational in 1-2 weeks.</li>
+<li><strong>No severance risk</strong> — if growth slows, a Fractional CFO engagement ends with 30 days notice under the agreed engagement terms; employment termination costs depend on the individual situation.</li>
+<li><strong>No recruitment friction</strong> — CFO searches take 4-6 months. A Fractional CFO is typically ready to start in ${getDafOffer("en").start}, subject to profile availability and scope.</li>
 </ul>
 <h2 id="flexibility">Flexibility &amp; speed</h2>
-<p>A salaried CFO is 5 days/week, every week. A Fractional CFO scales: 2 days/month in calm phases, 8+ days/month during a fundraise. You pay for what you use.</p>
+<p>A salaried CFO is 5 days/week, every week. ${getDafOffer("en").billing} ${getDafOffer("en").commitment}</p>
 <p>This matters because CFO needs are cyclical. A Series A campaign needs 6-8 days/month of CFO bandwidth for 3 months. Once closed, 2-3 days/month is plenty. With a salaried CFO, you pay full-time for both peaks and troughs.</p>
 <h2 id="expertise">Expertise &amp; perspective</h2>
-<p>A salaried CFO knows your business deeply but lives in a single-company bubble. A Fractional CFO works with 5-10 companies in parallel, accumulating cross-sector benchmarks that no single in-house operator can match.</p>
+<p>A salaried CFO knows your business deeply but lives in a single-company bubble. A fractional CFO brings experience from different assignments. Ask for relevant sector experience, examples of deliverables and the proposed availability.</p>
 <p>This translates into faster diagnosis (you've seen this pattern in 8 other startups), better tool choices (you know which ERP actually scales), and a richer network (you've worked with most VCs, banks and law firms in the region).</p>
 <h2 id="when">When to switch from Fractional to full-time</h2>
 <p>Three signals say you've outgrown the Fractional model:</p>
@@ -2445,7 +2411,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li><strong>Multi-entity / international consolidation.</strong> Daily presence across multiple legal entities is hard part-time.</li>
 <li><strong>You've raised a Series B or beyond.</strong> Investors expect a full-time CFO in the C-suite seat.</li>
 </ol>
-<p>Below that threshold, Fractional almost always wins on ROI. Above it, you should hire — but a Fractional CFO can lead the search and onboard the successor.</p>
+<p>These signals warrant a review of the required availability rather than an automatic headcount threshold. If daily leadership is required, consider hiring — but a Fractional CFO can lead the search and onboard the successor.</p>
 <h2 id="cta">Need help deciding?</h2>
 <p>Every situation is different. <a href="/en/contact">Book a free 30-minute diagnostic</a> with one of our Fractional CFOs — we'll tell you straight whether you need us, or whether you're ready for a full-time hire.</p>`,
       content: [],
@@ -2462,6 +2428,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogHref: "/en/ressources/blog",
       },
       h1: "Accounting Outsourcing: The Complete Guide for SME and Startup Founders",
+      updatedDate: "2026-09-13",
       publishedDate: "2026-05-10",
       author: "Benjamin Ziza",
       category: "Practical guides",
@@ -2635,7 +2602,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <tr>
 <td><strong>Typical cost</strong></td>
 <td>€400-€2,000/month</td>
-<td>€2,000-€8,000/month</td>
+<td>${getDafOffer("en").price} at Iter Advisors</td>
 </tr>
 <tr>
 <td><strong>Best for</strong></td>
@@ -2779,6 +2746,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogHref: "/es/recursos/blog",
       },
       h1: "¿Qué es un Fractional CFO? Guía Completa para Pymes y Startups",
+      updatedDate: "2026-09-13",
       publishedDate: "2026-05-13",
       author: "Benjamin Ziza",
       category: "Dirección financiera",
@@ -2798,7 +2766,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <table>
 <thead><tr><th>Criterio</th><th>Fractional CFO</th><th>CFO interno</th></tr></thead>
 <tbody>
-<tr><td>Coste anual</td><td>24 000 – 96 000 €</td><td>100 000 – 213 000 € (cargas incluidas)</td></tr>
+<tr><td>Coste anual</td><td>${getDafOffer("es").annualPrice} € sin IVA, según las fórmulas Iter</td><td>${getDafOffer("es").salary} € (coste empleador de referencia)</td></tr>
 <tr><td>Compromiso</td><td>Sin duración mínima</td><td>Contrato indefinido</td></tr>
 <tr><td>Tiempo de despliegue</td><td>1 – 2 semanas</td><td>3 – 6 meses (reclutamiento)</td></tr>
 <tr><td>Experiencia</td><td>Multi-sectorial</td><td>Single-company</td></tr>
@@ -2936,24 +2904,25 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogHref: "/es/recursos/blog",
       },
       h1: "CFO Externalizado vs CFO Interno: ¿Qué Modelo Gana en 2026?",
+      updatedDate: "2026-09-13",
       publishedDate: "2026-05-11",
       author: "Sébastien Doat",
       category: "CFO externalizado",
       htmlContent: `<p>Su negocio crece, los temas financieros se complican y se ha dado cuenta de que su contable y su CEO ya no pueden con todo. Necesita un CFO. La pregunta es: ¿fichaje a tiempo completo o <a href="/es/externalizacion-daf">CFO externalizado</a>?</p>
 <p>Esta guía desglosa los compromisos en coste, flexibilidad, expertise y ROI — y le da una respuesta clara según su etapa.</p>
 <h2 id="cost">Coste: una brecha del 30-60 %</h2>
-<p>Un CFO asalariado cuesta 100.000-213.000 €/año con todo incluido. Un CFO externalizado cuesta 24.000-96.000 €/año por un perfil senior equivalente. Vea el detalle de tarifas en <a href="/es/recursos/blog/cfo-externo-pymes-precio-2026">nuestra guía de costes 2026</a>.</p>
+<p>Un CFO asalariado cuesta 100.000-213.000 €/año con todo incluido. Un CFO externalizado cuesta ${getDafOffer("es").annualPrice} € sin IVA/año por un perfil senior equivalente. Vea el detalle de tarifas en <a href="/es/recursos/blog/cfo-externo-pymes-precio-2026">nuestra guía de costes 2026</a>.</p>
 <p>La brecha no es solo el salario — también es:</p>
 <ul>
 <li><strong>Sin cargas patronales</strong> (30-42% del bruto en España / Francia) — desaparecen por completo con un CFO externalizado.</li>
-<li><strong>Sin riesgo de indemnización</strong> — si el crecimiento se ralentiza, una misión termina con 30 días de preaviso en lugar de 6+ meses de severance.</li>
-<li><strong>Sin fricción de reclutamiento</strong> — la búsqueda de un CFO lleva 4-6 meses. Un CFO externalizado es operativo en 1-2 semanas.</li>
+<li><strong>Sin riesgo de indemnización</strong> — si el crecimiento se ralentiza, una misión termina con 30 días de preaviso según las condiciones pactadas; los costes de una extinción laboral dependen de cada situación.</li>
+<li><strong>Sin fricción de reclutamiento</strong> — la búsqueda de un CFO lleva 4-6 meses. Un CFO externalizado es disponible para iniciar la misión en ${getDafOffer("es").start} de forma orientativa, según el perfil y el alcance.</li>
 </ul>
 <h2 id="flexibility">Flexibilidad y velocidad</h2>
-<p>Un CFO asalariado es 5 días/semana, todas las semanas. Un CFO externalizado escala: 2 días/mes en fases tranquilas, 8+ días/mes durante un fundraising. Paga lo que usa.</p>
+<p>Un CFO asalariado es 5 días/semana, todas las semanas. ${getDafOffer("es").billing} ${getDafOffer("es").commitment}</p>
 <p>Esto importa porque las necesidades de CFO son cíclicas. Una campaña Series A necesita 6-8 días/mes de bandwidth durante 3 meses. Una vez cerrada, 2-3 días/mes basta. Con un asalariado, paga full-time para picos y valles.</p>
 <h2 id="expertise">Expertise y perspectiva</h2>
-<p>Un CFO asalariado conoce su empresa a fondo pero vive en una burbuja mono-empresa. Un CFO externalizado trabaja con 5-10 empresas en paralelo, acumulando benchmarks cross-sectoriales que ningún CFO interno puede igualar.</p>
+<p>Un CFO asalariado conoce su empresa a fondo pero vive en una burbuja mono-empresa. Un CFO externalizado aporta experiencia de distintas misiones. Pida referencias sectoriales, ejemplos de entregables y la disponibilidad propuesta.</p>
 <p>Esto se traduce en diagnóstico más rápido (ha visto este patrón en otras 8 startups), mejores elecciones de herramientas (sabe qué ERP escala) y una red más rica (ha trabajado con la mayoría de VCs, bancos y bufetes de la región).</p>
 <h2 id="when">¿Cuándo pasar de externalizado a interno?</h2>
 <p>Tres señales indican que ha superado el modelo externalizado:</p>
@@ -2962,7 +2931,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li><strong>Multi-entidad / consolidación internacional.</strong> La presencia diaria en múltiples entidades es difícil a tiempo parcial.</li>
 <li><strong>Ha levantado Series B o más.</strong> Los inversores esperan un CFO a tiempo completo en el C-suite.</li>
 </ol>
-<p>Por debajo de ese umbral, el modelo externalizado casi siempre gana en ROI. Por encima, debe fichar — pero un CFO externalizado puede liderar la búsqueda y onboarding del sucesor.</p>
+<p>Estas señales justifican revisar la disponibilidad necesaria, no aplicar un umbral automático de plantilla. Si necesita dirección diaria, valore la contratación — pero un CFO externalizado puede liderar la búsqueda y onboarding del sucesor.</p>
 <h2 id="cta">¿Le ayudamos a decidir?</h2>
 <p>Cada situación es diferente. <a href="/es/contact">Reserve un diagnóstico gratuito de 30 minutos</a> con uno de nuestros CFO externalizados — le diremos sin rodeos si nos necesita, o si ya está listo para un fichaje a tiempo completo.</p>`,
       content: [],

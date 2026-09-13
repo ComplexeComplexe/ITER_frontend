@@ -58,28 +58,6 @@ export default async function Page() {
         { id: "special-regimes", label: "4. Special regimes (Beckham, micro, PVN)" },
         { id: "your-profile", label: "5. Which regime suits your profile?" },
       ]}
-      faqItems={[
-        {
-          question: "Do I need a holding company to operate between France and Spain?",
-          answer:
-            "Not necessarily. A holding company makes sense when your revenue exceeds €2–3M or when you manage several entities. For growing SMEs, a simple bi-national structure (SARL/SAS in France + SL in Spain) is sufficient to benefit from the social contribution differential (~15 percentage points). A structural audit with a fractional CFO will identify the optimal setup before any change.",
-        },
-        {
-          question: "How do I avoid double taxation between France and Spain?",
-          answer:
-            "The France-Spain tax treaty (signed in 1995, revised in 2011) prevents double taxation on corporate income, dividends, and salaries. In practice: profits generated in Spain are taxed only in Spain if you have a permanent establishment there (office, employees). Dividends paid by the Spanish subsidiary to the French holding benefit from a reduced withholding tax (5–15%). Always consult a tax expert before any restructuring.",
-        },
-        {
-          question: "Can a French company reclaim Spanish VAT?",
-          answer:
-            "Yes, under EU Directive 2008/9/EC. A VAT-registered French company can reclaim Spanish VAT (IVA) paid on professional purchases in Spain, provided a digital refund request is submitted by 30 September of the following year. Refunds typically take 4 to 6 months. The minimum claim is €50 for a quarterly request.",
-        },
-        {
-          question: "Who qualifies for the Beckham regime in Spain?",
-          answer:
-            "Individuals who take up tax residence in Spain after having lived outside the country for at least 5 years. The regime applies for 6 years and caps the tax rate at 24% on Spanish-source income up to €600,000. Senior managers joining a Spanish subsidiary from abroad are the main beneficiaries. Application must be made within 6 months of the first employment contract in Spain.",
-        },
-      ]}
       relatedArticles={[
         {
           url: "/en/ressources/blog/fractional-cfo-cost-services-2026",

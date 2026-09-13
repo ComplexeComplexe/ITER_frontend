@@ -71,3 +71,18 @@ export const TRACKING_BOOTSTRAP = `(function(w,d){
     d.head.appendChild(s);
   };
 })(window,document);`;
+
+// Only controls the initial banner display. It never grants consent or loads tags.
+// A valid refusal is remembered just like a valid acceptance.
+export const CONSENT_DISPLAY_BOOTSTRAP = `(function(w,d){
+  try {
+    var raw=w.localStorage.getItem('${CONSENT_KEY}');
+    var date=w.localStorage.getItem('${CONSENT_DATE_KEY}');
+    if(!raw||!date)return;
+    var age=Date.now()-Date.parse(date), value=JSON.parse(raw);
+    if(Number.isFinite(age)&&age>=0&&age<=${MAX_AGE}&&value&&
+      typeof value.analytics==='boolean'&&typeof value.marketing==='boolean') {
+      d.documentElement.classList.add('iter-consent-stored');
+    }
+  } catch(e) {}
+})(window,document);`;

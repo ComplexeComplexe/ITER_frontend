@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { PAGE_REVISIONS, latestRevision } from "@/lib/content/page-revisions";
 import { DOCUMENTED_CASES } from "@/lib/content/documented-cases";
 import { getAuthorSlugs } from "@/lib/content/team";
 import { blogPosts } from "@/lib/content/blog-posts";
@@ -595,7 +596,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]);
   return entries.map(item => ({
     ...item,
-    lastModified: consistencyUpdates.has(item.url.slice(BASE.length)) ? "2026-09-06" : transactionalUpdates.has(item.url.slice(BASE.length)) || [...tools.filter(tool => !tool.logo).map(tool => `/ressources/outils/${tool.slug}`), "/daf-externalise/deep-tech", "/daf-externalise/industrie", "/daf-externalise/ecommerce", "/ressources/outils", "/ressources/blog/stack-financier-saas-series-a", "/daf-externalise-paris", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", "/ressources/cas-clients", "/en/ressources/cas-clients"].some(path => item.url === `${BASE}${path}`)
-      ? "2026-09-05" : item.lastModified,
+    lastModified: latestRevision(PAGE_REVISIONS[item.url.slice(BASE.length) || "/"], item.lastModified, consistencyUpdates.has(item.url.slice(BASE.length)) ? "2026-09-06" : transactionalUpdates.has(item.url.slice(BASE.length)) || [...tools.filter(tool => !tool.logo).map(tool => `/ressources/outils/${tool.slug}`), "/daf-externalise/deep-tech", "/daf-externalise/industrie", "/daf-externalise/ecommerce", "/ressources/outils", "/ressources/blog/stack-financier-saas-series-a", "/daf-externalise-paris", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", "/ressources/cas-clients", "/en/ressources/cas-clients"].some(path => item.url === `${BASE}${path}`)
+      ? "2026-09-05" : undefined),
   }));
 }

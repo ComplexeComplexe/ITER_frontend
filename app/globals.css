@@ -425,3 +425,8 @@
 ::-webkit-scrollbar-thumb:hover {
   background: oklch(0.42 0.28 275 / 0.5);
 }
+
+/* Preserve stored consent without making first-visit visitors wait for hydration. */
+html.iter-consent-stored [data-consent-banner] {
+  display: none;
+}

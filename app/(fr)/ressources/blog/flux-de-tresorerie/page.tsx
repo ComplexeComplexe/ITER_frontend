@@ -60,20 +60,6 @@ export default function FluxDeTresorerieePage() {
         { id: "outils-pilotage", label: "6. Outils et pilotage" },
       ]}
       tldr="Les flux de trésorerie mesurent les entrées/sorties d'argent réel. Essentiels pour anticiper les besoins de financement. Le prévisionnel trésorerie est l'outil indispensable pour piloter le cash et éviter les crises de liquidité. Un BFR bien géré fait gagner 30-60 jours de cash à l'entreprise."
-      faqItems={[
-        {
-          question: "Comment calculer les flux de trésorerie ?",
-          answer: "Le flux de trésorerie se calcule en trois étapes : (1) Cash flow opérationnel = résultat net + amortissements ± variation du BFR ; (2) Cash flow d'investissement = acquisitions − cessions d'actifs ; (3) Cash flow de financement = emprunts contractés − remboursements − dividendes versés. Le flux net total est la somme des trois. Un cash flow opérationnel positif indique que l'activité génère de la trésorerie de manière autonome.",
-        },
-        {
-          question: "Quelle est la différence entre cash flow et résultat net ?",
-          answer: "Le résultat net mesure la rentabilité comptable (revenus − charges, avec amortissements et provisions). Le cash flow mesure les mouvements réels de trésorerie. Une entreprise peut être rentable (résultat positif) tout en manquant de liquidités si ses clients paient à 90 jours ou si elle investit massivement. C'est pourquoi le tableau de flux de trésorerie est plus fiable que le compte de résultat pour évaluer la santé financière réelle.",
-        },
-        {
-          question: "Qu'est-ce qu'un bon flux de trésorerie pour une PME ?",
-          answer: "Un bon flux de trésorerie opérationnel pour une PME représente 5 à 15 % du chiffre d'affaires. Le seuil critique est zéro : en dessous, l'entreprise consomme ses réserves ou doit recourir à l'emprunt pour financer son fonctionnement courant. En pratique, la Banque de France recommande de maintenir au minimum 30 jours de CA en trésorerie disponible pour faire face aux aléas.",
-        },
-      ]}
       relatedArticles={[
         {
           url: "/ressources/blog/essentiels-outils-tech-finance",

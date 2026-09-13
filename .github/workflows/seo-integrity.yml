@@ -1,0 +1,38 @@
+name: SEO and editorial integrity
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: seo-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test:unit
+      - run: npm run build
+      - name: Start production preview
+        run: |
+          npm run start -- --hostname 127.0.0.1 --port 3100 > /tmp/iter-preview.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl --silent --fail http://127.0.0.1:3100/sitemap.xml > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/iter-preview.log
+          exit 1
+      - name: Validate canonical URLs, internal links and hreflang
+        run: node scripts/audit-seo.mjs http://127.0.0.1:3100
+      - name: Validate FAQ, landmarks and images
+        run: node scripts/audit-structured-data.mjs http://127.0.0.1:3100
+      - name: Validate anchors and localized contact links
+        run: node scripts/audit-navigation.mjs http://127.0.0.1:3100

@@ -438,7 +438,7 @@ const fallbackServicePagesEs: Record<string, StrapiServiceSinglePage> = {
         // valorisation dépend d'abord du marché et de la traction ; l'attribuer
         // à la préparation financière n'est pas démontrable.
         "Mejores condiciones de negociación: un expediente financiero sólido reduce los descuentos exigidos en due diligence",
-        "Red de contactos con 200+ inversores activos en España, Francia y Reino Unido",
+        "Identificación de inversores pertinentes según el sector, la fase y la geografía del proyecto",
       ]),
       createHeading("Proceso en 4 fases"),
       createList([

@@ -153,22 +153,22 @@ const translations = {
 export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
   const t = translations[locale] || translations.fr;
 
-  const [showBanner, setShowBanner] = useState(false);
+  const [showBanner, setShowBanner] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [consent, setConsent] = useState<ConsentState>({
     necessary: true,
     analytics: false,
     marketing: false,
   });
-  const [mounted, setMounted] = useState(false);
 
   // Initialisation
   useEffect(() => {
-    // Restore browser storage after the first paint; keep server/client markup identical.
+    // The first-visit banner is server-rendered. The head script hides it before
+    // paint for valid stored choices; hydration then restores the actual consent.
     const frame = requestAnimationFrame(() => {
-      setMounted(true);
       const stored = getStoredConsent();
       if (stored) {
+        setShowBanner(false);
         setConsent(stored);
         pushConsentToGTM(stored);
       } else {
@@ -212,8 +212,6 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
     setShowBanner(false);
   }, []);
 
-  if (!mounted) return null;
-
   return (
     <>
       {/* ----------------------------------------------------------------- */}
@@ -221,6 +219,8 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
       {/* ----------------------------------------------------------------- */}
       {showBanner && (
         <div
+          data-consent-banner
+          data-nosnippet
           role="dialog"
           aria-label={t.banner.title}
           aria-modal="false"

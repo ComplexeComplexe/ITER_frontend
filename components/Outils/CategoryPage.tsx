@@ -132,7 +132,7 @@ export default function CategoryPage({
               Tableau comparatif détaillé
             </h2>
             <p className="text-muted-foreground mb-8">
-              Comparaison critère par critère, basée sur 40+ déploiements terrain.
+              Comparaison critère par critère pour cadrer vos besoins et préparer une démonstration.
             </p>
             <div className="overflow-x-auto bg-background rounded-2xl border border-gray-200">
               <table className="w-full text-sm">

@@ -58,28 +58,6 @@ export default async function Page() {
         { id: "regimenes-especiales", label: "4. Regímenes especiales (Beckham, autónomo)" },
         { id: "tu-perfil", label: "5. ¿Qué régimen encaja con tu perfil?" },
       ]}
-      faqItems={[
-        {
-          question: "¿Necesito una holding para operar entre Francia y España?",
-          answer:
-            "No necesariamente. Una holding tiene sentido cuando tu facturación supera los 2–3 M€ o gestionas varias entidades. Para pymes en crecimiento, una estructura binacional sencilla (SARL/SAS en Francia + SL en España) es suficiente para aprovechar el diferencial de cotizaciones sociales (~15 puntos porcentuales). Una auditoría de estructura con un CFO externo identificará el esquema óptimo antes de cualquier cambio.",
-        },
-        {
-          question: "¿Cómo evitar la doble imposición entre Francia y España?",
-          answer:
-            "El Convenio de doble imposición Francia-España (firmado en 1995, revisado en 2011) evita la doble imposición sobre beneficios empresariales, dividendos y salarios. En la práctica: los beneficios generados en España tributan sólo en España si existe establecimiento permanente (local, empleados). Los dividendos de la filial española a la holding francesa se benefician de una retención reducida (5–15%). Consulte siempre a un experto fiscal antes de cualquier reestructuración.",
-        },
-        {
-          question: "¿Puede una empresa francesa recuperar el IVA español?",
-          answer:
-            "Sí, conforme a la Directiva 2008/9/CE. Una sociedad francesa sujeta a IVA puede recuperar el IVA español pagado en compras profesionales en España, siempre que presente la solicitud electrónica de devolución antes del 30 de septiembre del año siguiente. El plazo de devolución suele ser de 4 a 6 meses. El importe mínimo para solicitud trimestral es de 50 €.",
-        },
-        {
-          question: "¿Quién puede acogerse al régimen Beckham en España?",
-          answer:
-            "Las personas físicas que trasladen su residencia fiscal a España después de haber permanecido fuera del país al menos 5 años. El régimen se aplica durante 6 años y limita el tipo impositivo al 24% sobre rentas de fuente española hasta 600.000 €. Los directivos que se incorporan a una filial española procedentes del extranjero son los principales beneficiarios. La solicitud debe presentarse en los 6 meses siguientes al primer contrato laboral en España.",
-        },
-      ]}
       relatedArticles={[
         {
           url: "/es/recursos/blog/cfo-externo-pymes-precio-2026",

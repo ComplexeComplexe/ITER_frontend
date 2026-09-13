@@ -81,23 +81,6 @@ export default async function Page() {
           </p>
         </>
       }
-      faqItems={[
-        {
-          question: "Combien de temps dure une levée de fonds ?",
-          answer:
-            "Sur les levées que nous accompagnons, 6 à 9 mois entre le début de la préparation et le closing : 2 à 3 mois de préparation (comptes, data room, modèle financier), puis 4 à 6 mois de phase investisseurs, de la prise de contact à la signature. Une préparation incomplète allonge la due diligence, pas l'inverse.",
-        },
-        {
-          question: "Qu'est-ce qui fait échouer une due diligence financière ?",
-          answer:
-            "Quatre signaux reviennent sur nos missions : des documents mal préparés ou incohérents entre eux, une trésorerie réelle non signalée (runway plus court que présenté), une propriété intellectuelle pas ficelée (cessions de droits des salariés et freelances manquantes), et des clients présentés sans leur potentiel de churn.",
-        },
-        {
-          question: "Combien de temps faut-il pour préparer une levée ?",
-          answer:
-            "Comptez 2 à 3 mois si la comptabilité est à jour, davantage si les comptes N-1 ne sont pas clos ou si la cap table n'est pas documentée. La préparation est la seule phase que vous maîtrisez entièrement : c'est celle qu'un DAF externalisé compresse.",
-        },
-      ]}
       relatedArticles={[
         {
           url: "/daf-externalise",

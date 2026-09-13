@@ -60,28 +60,6 @@ export default function DafExternaliseStartupPage() {
         { id: "vs-cfo-interne", label: "5. DAF externalisé vs CFO interne" },
         { id: "choisir", label: "6. Comment choisir ?" },
       ]}
-      faqItems={[
-        {
-          question: "À quel stade une startup a-t-elle besoin d'un DAF externalisé ?",
-          answer: "Dès la préparation de la première levée de fonds ou à partir de 500k€ de CA. Un DAF externalisé évite les erreurs comptables qui font échouer les due diligences et donne de la crédibilité au board.",
-        },
-        {
-          question: "Combien coûte un DAF externalisé pour une startup ?",
-          answer: "Entre 1 500 et 3 500 € par mois pour une startup (1 à 2 jours par semaine). Soit 18 000 à 42 000 € par an, contre 100 000 à 140 000 € pour un CFO interne charges comprises.",
-        },
-        {
-          question: "Le DAF externalisé peut-il préparer ma data room ?",
-          answer: "Oui, c'est l'une de ses missions prioritaires. Il structure les états financiers historiques, prépare le prévisionnel 3 ans, organise les contrats et les KPIs — tout ce qu'un VC regardera en priorité.",
-        },
-        {
-          question: "Quelle différence entre DAF externalisé et CFO interne pour une startup ?",
-          answer: "Le CFO interne est à temps plein (coût : 10-14k€/mois charges) mais n'est justifié qu'à partir de 5-10M€ de CA. Le DAF externalisé offre la même expertise à temps partagé pour 2-4k€/mois.",
-        },
-        {
-          question: "Combien de temps le DAF externalisé passe-t-il sur mon dossier ?",
-          answer: "En moyenne 1 à 2 jours par semaine pour une startup de 500k€ à 3M€ de CA. Ce rythme peut monter à 3-4 jours par semaine lors d'une levée de fonds ou d'une clôture annuelle.",
-        },
-      ]}
       tldr="Pour une startup, le DAF externalisé représente 30 à 60 % d'économie face à un CFO interne. Il est indispensable dès la première levée de fonds. Les 5 déclencheurs pour recruter : levée, board, MRR > 100k€, team > 15 personnes, international."
       relatedArticles={[
         {

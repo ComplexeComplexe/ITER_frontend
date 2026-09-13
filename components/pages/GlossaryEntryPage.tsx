@@ -35,6 +35,7 @@ interface GlossaryEntryPageProps {
   cmsNavigation?: CmsNavItem[];
   /** Slug de la fiche — sert aux termes liés. */
   slug?: string;
+  modified?: string;
   /** Articles du blog où le terme apparaît (calculés côté serveur). */
   mentions?: { href: string; title: string }[];
 }
@@ -113,8 +114,11 @@ export default function GlossaryEntryPage({
   cmsNavigation,
   slug,
   mentions = [],
+  modified = GLOSSARY_MODIFIED,
 }: GlossaryEntryPageProps) {
   const t = STRINGS[locale];
+  const modifiedLabel = modified === GLOSSARY_MODIFIED ? GLOSSARY_MODIFIED_LABEL[locale]
+    : new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(modified));
   const [first, ...rest] = content.sections;
   const [definition, ...firstRest] = first?.content ?? [];
   const related = slug ? getRelatedGlossary(locale, slug) : [];
@@ -134,7 +138,7 @@ export default function GlossaryEntryPage({
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-iter-violet/5 px-3 py-1 text-sm font-medium text-iter-violet">
               <CheckCircle2 size={16} aria-hidden />
-              {t.updated} {GLOSSARY_MODIFIED_LABEL[locale]}
+              {t.updated} {modifiedLabel}
             </span>
             <span className="text-xs text-muted-foreground">
               {t.by}{" "}
@@ -142,7 +146,7 @@ export default function GlossaryEntryPage({
                 {GLOSSARY_AUTHOR.name}
               </Link>
               {" · "}
-              <time dateTime={GLOSSARY_MODIFIED}>{GLOSSARY_MODIFIED_LABEL[locale]}</time>
+              <time dateTime={modified}>{modifiedLabel}</time>
             </span>
           </div>
 

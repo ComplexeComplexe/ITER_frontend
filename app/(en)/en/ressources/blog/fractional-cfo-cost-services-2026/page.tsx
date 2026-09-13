@@ -78,33 +78,6 @@ export default function FractionalCfoCostServicesPage() {
         },
       ]}
       metaDescription="Fractional CFO pricing, scope and ROI for startups and SMEs. When to hire one, what to expect, real 2026 rate ranges."
-      faqItems={[
-        {
-          question: "What is the difference between a fractional CFO and a part-time CFO?",
-          answer:
-            "They are essentially the same role — a senior finance executive working less than full-time. 'Fractional' is common in startup ecosystems and emphasizes the shared model (serving multiple clients). 'Part-time CFO' is used in more traditional business contexts.",
-        },
-        {
-          question: "When should a startup hire a fractional CFO?",
-          answer:
-            "The key triggers: preparing a seed or Series A fundraise, first institutional investor joining the board, monthly revenue exceeding €50k, hiring beyond 15 employees, or expanding to a new country.",
-        },
-        {
-          question: "Can a fractional CFO represent the company with banks and investors?",
-          answer:
-            "Yes. Fractional CFOs regularly attend board meetings, present financial reports to investors, negotiate credit facilities with banks, and manage investor relations — exactly as an in-house CFO would.",
-        },
-        {
-          question: "How long does a typical fractional CFO engagement last?",
-          answer:
-            "Average engagements last 18-36 months. The minimum is usually 6 months — shorter than that, the onboarding time outweighs the value produced. Some partnerships last 5-10 years as the company grows.",
-        },
-        {
-          question: "What is the difference between a fractional CFO and an outsourced accounting firm?",
-          answer:
-            "An accounting firm handles tax filings, statutory reporting, and bookkeeping — backward-looking, compliance-focused. A fractional CFO handles strategic finance: cash planning, fundraising, investor relations, budget management — forward-looking and decision-focused.",
-        },
-      ]}
     >
       <h2 id="what-is">1. What is a fractional CFO?</h2>
       <p>

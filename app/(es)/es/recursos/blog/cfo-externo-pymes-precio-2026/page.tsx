@@ -78,33 +78,6 @@ export default function CfoExternoPymesPrecio2026Page() {
           title: "CFO externo frente a CFO interno",
         },
       ]}
-      faqItems={[
-        {
-          question: "¿Cuál es la diferencia entre un CFO externo y un director financiero interno?",
-          answer:
-            "El CFO externo trabaja a tiempo parcial (1-3 días por semana) para varias empresas simultáneamente. El director financiero interno está en plantilla a tiempo completo. El coste del CFO externo es 3-5 veces menor, con el mismo nivel de experiencia.",
-        },
-        {
-          question: "¿Cuándo necesita una pyme un CFO externo?",
-          answer:
-            "Los momentos clave son: preparar una ronda de financiación, cuando el CA supera 500.000 €, al alcanzar más de 15 empleados, al internacionalizarse o cuando los inversores exigen un reporting financiero estructurado.",
-        },
-        {
-          question: "¿Cuánto cuesta un CFO externo en España en 2026?",
-          answer:
-            "La tarifa diaria varía entre 400 € (perfil junior) y 1.000 € (experto con 12+ años). En retainer mensual: 1 día por semana cuesta entre 2.400 y 3.200 €/mes; 2 días por semana entre 4.800 y 6.400 €/mes.",
-        },
-        {
-          question: "¿Puede el CFO externo representar a la empresa ante los inversores?",
-          answer:
-            "Sí. El CFO externo asiste habitualmente a los consejos de administración, presenta los reportings financieros a los inversores, negocia con los bancos y gestiona las relaciones con los fondos de inversión.",
-        },
-        {
-          question: "¿Hay CFOs externos especializados en empresas franco-españolas?",
-          answer:
-            "Sí. Iter Advisors cuenta con CFOs externos bilingües francés-español-inglés, especializados en la gestión financiera de empresas que operan entre Francia y España, con conocimiento de los dos sistemas fiscales y contables.",
-        },
-      ]}
     >
       <h2 id="que-es">1. Qué es un CFO externo</h2>
       <p>

@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+const privatePaths = ["/api/", "/_next/data/", "/profil/merci", "/campagne/merci"];
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -13,23 +15,18 @@ export default function robots(): MetadataRoute.Robots {
         // hérités du site pre-Next.js. Ces routes n'existent plus, les
         // requêtes retournent 404 et le Disallow est inutile / trompeur.
         // Cf. audit SEO 01/07/2026 §1 "Nettoyage du robots.txt".
-        disallow: [
-          "/api/",
-          "/_next/data/",
-          "/profil/merci",
-          "/campagne/merci",
-        ],
+        disallow: privatePaths,
       },
       // Allow AI bots to crawl the site for maximum LLM visibility
-      { userAgent: "GPTBot", allow: "/" },
-      { userAgent: "OAI-SearchBot", allow: "/" },
-      { userAgent: "ChatGPT-User", allow: "/" },
-      { userAgent: "ClaudeBot", allow: "/" },
-      { userAgent: "anthropic-ai", allow: "/" },
-      { userAgent: "Anthropic", allow: "/" },
-      { userAgent: "CCBot", allow: "/" },
-      { userAgent: "PerplexityBot", allow: "/" },
-      { userAgent: "Google-Extended", allow: "/" },
+      { userAgent: "GPTBot", allow: "/", disallow: privatePaths },
+      { userAgent: "OAI-SearchBot", allow: "/", disallow: privatePaths },
+      { userAgent: "ChatGPT-User", allow: "/", disallow: privatePaths },
+      { userAgent: "ClaudeBot", allow: "/", disallow: privatePaths },
+      { userAgent: "anthropic-ai", allow: "/", disallow: privatePaths },
+      { userAgent: "Anthropic", allow: "/", disallow: privatePaths },
+      { userAgent: "CCBot", allow: "/", disallow: privatePaths },
+      { userAgent: "PerplexityBot", allow: "/", disallow: privatePaths },
+      { userAgent: "Google-Extended", allow: "/", disallow: privatePaths },
     ],
     sitemap: "https://www.iteradvisors.com/sitemap.xml",
   };
