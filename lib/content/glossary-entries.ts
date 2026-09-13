@@ -1,3 +1,4 @@
+import { getDafOffer } from "./daf-offer";
 import { Locale } from "../i18n";
 
 export type GlossaryEntrySlug =
@@ -234,7 +235,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
           heading: "FAQ - CFO",
           content: [
             "**Quelle est la différence entre un CFO et un expert-comptable ?** L'expert-comptable gère la comptabilité passée (déclarations, bilans). Le CFO pilote la stratégie financière future (prévisions, levées de fonds, board). Les deux sont complémentaires.",
-            "**À quel stade une startup a-t-elle besoin d'un CFO ?** Dès 10 salariés et/ou quand vous préparez une levée de fonds. Un CFO seed coûte 2 000 à 3 500 €/mois pour 2 jours/semaine.",
+            `**À quel stade une startup a-t-elle besoin d’un CFO ?** Lorsque la complexité financière exige un pilotage dédié : trésorerie, budget, financement ou reporting. Chez Iter Advisors : ${getDafOffer("fr").price}, selon le périmètre confié.`,
             "**CFO salarié vs CFO externalisé : que choisir ?** < 50 personnes = externalisé (plus flexible, moins cher). > 50 personnes avec une finance complexe = salarié.",
             "**Le CFO fait-il aussi de la paie et du RH ?** Généralement non. La paie est gérée par un outil ([PayFit](/ressources/outils/payfit), [Silae](/ressources/outils/silae)) ou un cabinet. Le CFO peut superviser la fonction RH mais ne la gère pas directement.",
             "**Quelle est la différence entre CFO et CFA ?** Le CFA (Chartered Financial Analyst) est une certification professionnelle. Le CFO est un titre de poste. Les deux n'ont rien à voir.",
@@ -660,86 +661,81 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
       ctaButton: "Construire mon forecast avec un DAF",
     },
     "bspce-bsa": {
-      meta: {
-        title: "BSPCE & BSA — Guide pour startups françaises | Iter Advisors",
-        description: "BSPCE et BSA : conditions d'attribution, fiscalité, dilution, pièges juridiques. Le guide complet pour structurer votre plan stock-options.",
+      "meta": {
+        "title": "BSPCE, BSA et BSA Air : différences | Iter Advisors",
+        "description": "Comprendre les différences entre BSPCE, BSA et BSA Air, calculer la dilution et préparer les points juridiques et fiscaux avec vos conseils."
       },
-      h1: "BSPCE & BSA — Guide Complet pour Startups Françaises",
-      sections: [
+      "h1": "BSPCE, BSA et BSA Air : comprendre les différences",
+      "sections": [
         {
-          content: [
-            "Les **BSPCE** (Bons de Souscription de Parts de Créateur d'Entreprise) et les **BSA** (Bons de Souscription d'Actions) sont les deux instruments juridiques les plus utilisés par les startups françaises pour attribuer des stock-options à leurs salariés et lever des fonds. Ils sont au cœur de la rémunération des startups tech et constituent un levier de motivation et de rétention des talents.",
-          ],
+          "content": [
+            "Les **BSPCE** donnent à des bénéficiaires éligibles le droit de souscrire des actions à un prix fixé lors de leur attribution. Les **BSA** sont des bons donnant accès à des actions selon leurs conditions d’émission. Le **BSA Air** sert à financer une entreprise avant de déterminer sa valorisation définitive : l’investisseur apporte des fonds et obtient un droit d’accès ultérieur au capital. Ces instruments répondent à des besoins différents."
+          ]
         },
         {
-          heading: "Définition complète",
-          content: [
-            "**BSPCE** : instrument réservé aux salariés et dirigeants de sociétés par actions (SAS, SA) qui leur donne le droit de souscrire des actions à un prix fixé à l'avance. Gratuits à l'attribution, régime fiscal et social avantageux.",
-            "**BSA** : instrument plus souple, utilisable par tous types de sociétés (SAS, SARL, SA) et attribuable à des non-salariés (conseillers, investisseurs, partenaires).",
-            "**BSA Air** : variante du BSA sans prix d'exercice — attribution gratuite d'actions différée.",
-          ],
+          "heading": "Définition complète",
+          "content": [
+            "**BSPCE : intéresser des bénéficiaires éligibles au capital.** L’attribution du bon est gratuite, mais souscrire les actions suppose de payer le prix d’exercice. Détenir un bon ne signifie pas encore détenir une action.",
+            "**BSA : organiser un accès au capital.** Les sociétés par actions peuvent émettre ces valeurs mobilières. Une SARL ne peut pas émettre des BSA sur ses propres parts sociales. Le prix du bon, le prix des actions et les conditions d’exercice doivent être distingués.",
+            "**BSA Air : recevoir un investissement avant un futur tour.** Le contrat détermine les événements d’exercice et la formule de conversion, qui peut intégrer une décote ou des bornes de valorisation. Ce n’est pas une attribution gratuite d’actions à un salarié."
+          ]
         },
         {
-          heading: "Conditions d'attribution des BSPCE",
-          content: [
-            "Pour attribuer des BSPCE, la société doit remplir les conditions suivantes :",
-            "- Être une société par actions (SAS ou SA) — les SARL ne peuvent pas attribuer de BSPCE",
-            "- Avoir moins de 15 ans d'existence",
-            "- Ne pas être issue d'une fusion, scission ou apport partiel d'actif",
-            "- Être soumise à l'IS — exclut les SCIs",
-            "- Ne pas être cotée en bourse (sauf sur Euronext Growth)",
-          ],
+          "heading": "Conditions d’attribution des BSPCE",
+          "content": [
+            "L’éligibilité dépend notamment de la forme sociale, de l’ancienneté de la société, de son régime fiscal, de son actionnariat et du statut du bénéficiaire. Les règles prévoient des cas particuliers pour certaines sociétés cotées, restructurations et filiales. La loi de finances pour 2026 a modifié le champ du dispositif.",
+            "Avant une attribution, faites vérifier les conditions applicables à sa date par votre conseil juridique. Le [BOFiP sur le champ d’application des BSPCE](https://bofip.impots.gouv.fr/bofip/13155-PGP.html/identifiant%3DBOI-RSA-ES-20-40-10-20260528) détaille ces conditions."
+          ]
         },
         {
-          heading: "Formule de calcul",
-          content: [
-            "**Plus-value par BSPCE** = Valeur de l'action au moment de l'exercice − Prix d'exercice du BSPCE",
-            "**Dilution** = Nombre d'actions à créer / (Nombre d'actions existantes + Nombre d'actions à créer) × 100",
-          ],
+          "heading": "Formule de calcul",
+          "content": [
+            "**Dilution liée à une émission** = actions nouvelles / (actions existantes + actions nouvelles) × 100. Pour raisonner sur un capital entièrement dilué, ajoutez aussi les autres instruments donnant accès au capital et les réserves prévues.",
+            "**Exemple fictif :** 100 000 actions existent et 10 000 actions nouvelles sont créées. Les nouvelles actions représentent 9,09 % du total après émission, en l’absence de tout autre instrument. Pour un BSA Air, le nombre d’actions dépend de la formule contractuelle : testez plusieurs valorisations et tailles de tour."
+          ]
         },
         {
-          heading: "Pourquoi c'est important",
-          content: [
-            "**Rétention des talents.** Les BSPCE alignent les intérêts des salariés avec ceux de l'entreprise.",
-            "**Rémunération différée.** En phase de lancement, les BSPCE compensent les salaires sous-market.",
-            "**Avantages fiscaux.** Plus-value taxée à 12,8% (PFU) après 3 ans de détention, contre 30% pour les plus-values classiques.",
-            "**Avantages sociaux.** Pas de cotisations sociales sur l'attribution ni sur l'exercice.",
-            "**Culture d'entreprise.** Attribution à toute l'équipe = culture de propriété.",
-          ],
+          "heading": "Pourquoi c’est important",
+          "content": [
+            "Un plan permet de discuter de rémunération, de fidélisation et de partage de la valeur. Il faut expliquer le prix à payer, les conditions d’exercice, la dilution et l’absence de liquidité garantie.",
+            "**Fiscalité : ne pas confondre ancienneté et durée de détention.** Pour les titres souscrits à compter de 2025, le régime distingue un gain d’exercice et un gain de cession. La date d’attribution, la date d’exercice, l’ancienneté du bénéficiaire et les prélèvements sociaux doivent être examinés. Un taux isolé de 12,8 % ne décrit pas la charge totale. Consultez les [règles publiées par la DGFiP](https://www.impots.gouv.fr/particulier/questions/jai-vendu-des-bons-de-souscription-de-parts-de-createurs-dentreprise-ou-bspce) avec votre fiscaliste."
+          ]
         },
         {
-          heading: "Benchmarks d'attribution",
-          content: [
-            "**CTO / Cofondateur non-fondateur** : 1-3% du capital.",
-            "**VP / Director** : 0,3-1%.",
-            "**Lead / Senior** : 0,1-0,3%.",
-            "**Junior / IC** : 0,05-0,1%.",
-            "**Pool total salariés** : 10-15% du capital.",
-            "**Délai d'exercice** : BSPCE = vesting 3-4 ans avec cliff 1 an. BSA Air = souvent sans vesting ou court (1-2 ans).",
-          ],
+          "heading": "Benchmarks d’attribution",
+          "content": [
+            "Il n’existe pas de pourcentage universel à attribuer à chaque poste. Dimensionnez le plan à partir du recrutement prévu, de la rémunération totale, du capital entièrement dilué et des financements envisagés.",
+            "Le DAF prépare des scénarios de dilution et de trésorerie ; le conseil juridique sécurise l’instrument et ses clauses. Retrouvez les étapes de préparation dans notre [checklist de due diligence financière](/ressources/blog/checklist-due-diligence-levee-de-fonds)."
+          ]
         },
         {
-          heading: "Limites et pièges",
-          content: [
-            "**Dilution mal calculée.** Pool de 15% + BSPCE précédents peuvent cumuler 25-30% de dilution.",
-            "**Prix d'exercice mal fixé.** Doit être à la valeur réelle (fair market value). Trop bas = redressement fiscal. Trop haut = inexerçables.",
-            "**Clauses de sortie manquantes.** Bien prévoir good leaver / bad leaver, licenciement, décès.",
-            "**Condition de présence excessive.** Un vesting de 5 ans avec cliff 2 ans serait contestable.",
-            "**Complexité administrative.** AGE, avenant aux statuts, suivi rigoureux des attributions et exercices.",
-          ],
+          "heading": "Limites et pièges",
+          "content": [
+            "**Départ d’un bénéficiaire.** Les droits conservés, les délais d’exercice et les clauses de départ dépendent du plan et de leur validité juridique. Un départ ne produit pas automatiquement le même résultat dans tous les plans.",
+            "**Absence de prochain tour.** Un BSA Air doit prévoir les situations où le financement attendu n’intervient pas, ainsi que les autres événements de liquidité ou d’échéance.",
+            "**Suivi incomplet.** Conservez les décisions d’émission, les attributions, les exercices et une table de capitalisation à jour. Notre [accompagnement à la levée de fonds](/services/accompagnement-levee-de-fond) aide à structurer les données financières nécessaires."
+          ]
         },
         {
-          heading: "FAQ",
-          content: [
-            "**BSPCE vs BSA Air ?** BSPCE = réservé aux salariés de SAS/SA, prix d'exercice à payer. BSA Air = utilisable par tous, sans prix d'exercice, attribution gratuite.",
-            "**Combien de BSPCE faut-il attribuer ?** Pool de 10-15% du capital est standard.",
-            "**Régime fiscal ?** Plus-value à 12,8% après 3 ans. Avant 3 ans : 30%. Exonération de cotisations sociales.",
-            "**Une SARL peut-elle attribuer des BSPCE ?** Non, uniquement SAS et SA. Les SARL peuvent utiliser des BSA ou des AGA.",
-            "**Que se passe-t-il si le salarié part avant la fin du vesting ?** Il perd les BSPCE non acquises (bad leaver). En cas de départ non-fautif, il conserve les BSPCE acquis (good leaver).",
-          ],
+          "heading": "FAQ",
+          "content": [
+            "**BSPCE vs BSA Air ?** Les BSPCE servent à intéresser des bénéficiaires éligibles au capital. Le BSA Air est un instrument de financement souscrit par un investisseur. Il ne correspond pas à des actions gratuites.",
+            "**Combien de BSPCE faut-il attribuer ?** Le nombre dépend de la politique de rémunération, des recrutements et de la dilution acceptable. Aucun pourcentage ne convient à toutes les entreprises.",
+            "**Régime fiscal ?** Il dépend notamment des dates d’attribution et d’exercice, de l’ancienneté et des types de gains. Vérifiez les règles et prélèvements applicables avec un fiscaliste.",
+            "**Une SARL peut-elle attribuer des BSPCE ?** Non. Les BSPCE supposent une société par actions remplissant les conditions légales. Une SARL ne peut pas davantage émettre des BSA sur ses propres parts.",
+            "**Que se passe-t-il si le salarié part avant la fin du vesting ?** Il faut examiner les droits acquis, les délais d’exercice et les clauses de départ prévus par le plan ; les conséquences ne sont pas automatiques."
+          ]
         },
+        {
+          "heading": "Sources consultées le 13 septembre 2026",
+          "content": [
+            "[Code de commerce, article L. 228-91 : valeurs mobilières donnant accès au capital](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000029329670).",
+            "[BOFiP : aménagements du régime des BSPCE en 2026](https://bofip.impots.gouv.fr/bofip/14965-PGP.html/ACTU-2026-00031).",
+            "[France Digitale : bonnes pratiques de levée de fonds en amorçage, dont BSA Air](https://media.francedigitale.org/app/uploads/prod/2023/12/12090928/10-bonnes-pratiques-pour-re%CC%81aliser-sa-leve%CC%81e-de-fonds-en-amorc%CC%A7age.pdf)."
+          ]
+        }
       ],
-      ctaButton: "Structurer mon plan BSPCE avec un DAF",
+      "ctaButton": "Préparer mes scénarios de dilution avec un DAF"
     },
     // EC-02 — DAF ecosystem
     daf: {

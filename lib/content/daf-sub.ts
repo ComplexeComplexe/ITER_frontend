@@ -1363,7 +1363,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           heading: "La oferta de Iter Advisors en gestión de transición",
           content: [
             "Iter Advisors dispone de un equipo de CFOs de transición experimentados, inmediatamente disponibles. Nuestros profesionales han acompañado con éxito a empresas de diversos sectores: tech, e-commerce, industria, servicios B2B.",
-            "Garantizamos una incorporación rápida (en 48 a 72 horas en caso de urgencia) y un acompañamiento de calidad a lo largo de toda la misión. Contáctenos para evaluar juntos sus necesidades.",
+            "Para una misión de transición urgente, el plazo orientativo de incorporación es de 7 a 10 días, según la disponibilidad del perfil y la complejidad de la misión. El calendario se confirma durante el diagnóstico.",
           ],
         },
       ],

@@ -116,7 +116,7 @@ export const drhContent: Record<Locale, DrhContent> = {
         },
         {
           title: "Flexibilité sans engagement",
-          text: "Le volume d'intervention s'ajuste chaque mois : 2 jours pour un audit, 8 jours pour un recrutement de masse, 4 jours en régime de croisière. Pas de CDI, pas de préavis, pas de charges sociales.",
+          text: "Le volume d'intervention s'ajuste chaque mois : 2 jours pour un audit, 8 jours pour un recrutement de masse, 4 jours en régime de croisière. La durée, le préavis et les modalités d’ajustement sont précisés dans la proposition RH.",
         },
         {
           // R5-link-3: [[85 entreprises accompagnées|/ressources/cas-clients]]
@@ -306,7 +306,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       {
         question: "Combien coûte un DRH externalisé ?",
         answer:
-          "Les formules Iter Advisors démarrent à 2 500 €/mois pour 2 jours (Essentiel) et montent à 8 000 €/mois pour 8 jours (Premium). Un DRH salarié à plein temps coûte 80 000 à 150 000 € chargé par an, soit 3 à 5 fois plus cher. Chaque formule inclut l'accès aux benchmarks de rémunération et aux outils SIRH.",
+          "Les formules Iter Advisors démarrent à 2 500 €/mois pour 2 jours (Essentiel) et montent à 8 000 €/mois pour 8 jours (Premium). Un DRH salarié à plein temps coûte 80 000 à 150 000 € chargé par an, ; la comparaison dépend du périmètre et du temps mobilisé. Chaque formule inclut l'accès aux benchmarks de rémunération et aux outils SIRH.",
       },
       {
         question: "Quand faut-il faire appel à un DRH externalisé ?",
@@ -329,7 +329,7 @@ export const drhContent: Record<Locale, DrhContent> = {
         question: "Comment mesurer le ROI d'un DRH externalisé ?",
         // R5-link-10: [[nos cas clients|/ressources/cas-clients]]
         answer:
-          "Nos clients mesurent le ROI sur 4 axes : réduction du time-to-hire (de 45 à 25 jours en moyenne), baisse du turnover (de 15 à 8 % dans les 12 mois), conformité sociale garantie (zéro audit URSSAF négatif), et productivité du fondateur (2 à 5 heures/semaine récupérées sur les sujets RH). Consultez [[nos cas clients|/ressources/cas-clients]] pour des exemples concrets.",
+          "Mesurez le délai de recrutement, le turnover, les anomalies de paie et le temps consacré aux tâches RH avant la mission, puis à intervalles comparables. Fixez un périmètre, une période et un responsable pour chaque indicateur. Les résultats dépendent du contexte de l'entreprise ; aucun gain chiffré ni résultat de contrôle social n'est garanti.",
       },
       {
         question: "Où interviennent vos DRH externalisés ?",
@@ -377,7 +377,7 @@ export const drhContent: Record<Locale, DrhContent> = {
         },
         {
           title: "Flexibility with no commitment",
-          text: "The volume of work adjusts every month: 2 days for an audit, 8 days for mass recruitment, 4 days in cruising mode. No permanent contract, no notice period, no employer charges.",
+          text: "The volume of work adjusts every month: 2 days for an audit, 8 days for mass recruitment, 4 days in cruising mode. The HR proposal specifies duration, notice and adjustment terms.",
         },
         {
           title: "Multi-sector expertise",
@@ -423,7 +423,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       footnote:
         "All packages include: access to compensation benchmarks, HRIS tools, network of partner recruitment firms, and a senior with 8+ years of HR experience.",
       comparison:
-        "Comparison: a full-time in-house HR director costs €80,000 to €150,000 including charges per year — 3 to 5 times more.",
+        "Comparison: a full-time in-house HR director costs €80,000 to €150,000 including charges per year; compare equivalent scope and availability.",
       engagement: "6-month minimum commitment, cancellable with 2 months' notice.",
       closingText:
         "Compare with the cost of an [[outsourced CFO|/daf-externalise]] — our finance and HR packages are designed to complement each other.",
@@ -501,7 +501,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       {
         question: "How much does an outsourced HR director cost?",
         answer:
-          "Iter Advisors packages start at €2,500/month for 2 days (Essential) and go up to €8,000/month for 8 days (Premium). A full-time in-house HR director costs €80,000 to €150,000 including charges per year — 3 to 5 times more. Each package includes access to compensation benchmarks and HRIS tools.",
+          "Iter Advisors packages start at €2,500/month for 2 days (Essential) and go up to €8,000/month for 8 days (Premium). A full-time in-house HR director costs €80,000 to €150,000 including charges per year; compare equivalent scope and availability. Each package includes access to compensation benchmarks and HRIS tools.",
       },
       {
         question: "When should you bring in an outsourced HR director?",
@@ -521,7 +521,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       {
         question: "How do you measure the ROI of an outsourced HR director?",
         answer:
-          "Our clients measure ROI on 4 axes: reduced time-to-hire (from 45 to 25 days on average), lower turnover (from 15 to 8% in 12 months), guaranteed social compliance (zero negative URSSAF audit), and founder productivity (2 to 5 hours/week recovered from HR topics). See [[our case studies|/ressources/cas-clients]] for concrete examples.",
+          "Measure hiring lead time, turnover, payroll errors and time spent on HR tasks before the engagement, then compare equivalent periods. Define the scope and owner of each metric. Outcomes depend on the company context; no quantified improvement or compliance inspection result is guaranteed.",
       },
       {
         question: "Where do your outsourced HR directors work?",
@@ -567,7 +567,7 @@ export const drhContent: Record<Locale, DrhContent> = {
         },
         {
           title: "Flexibilidad sin compromiso",
-          text: "El volumen de intervención se ajusta cada mes: 2 días para una auditoría, 8 días para una contratación masiva, 4 días en régimen de crucero. Sin contrato indefinido, sin preaviso, sin cargas sociales.",
+          text: "El volumen de intervención se ajusta cada mes: 2 días para una auditoría, 8 días para una contratación masiva, 4 días en régimen de crucero. La propuesta de RRHH especifica duración, preaviso y condiciones de ajuste.",
         },
         {
           title: "Experiencia multisectorial",
@@ -691,7 +691,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       {
         question: "¿Cuánto cuesta un director de RRHH externalizado?",
         answer:
-          "Las fórmulas de Iter Advisors comienzan en 2 500 €/mes por 2 días (Esencial) y llegan a 8 000 €/mes por 8 días (Premium). Un director de RRHH a tiempo completo cuesta de 80 000 a 150 000 € con cargas por año, entre 3 y 5 veces más. Cada fórmula incluye acceso a benchmarks de remuneración y herramientas SIRH.",
+          "Las fórmulas de Iter Advisors comienzan en 2 500 €/mes por 2 días (Esencial) y llegan a 8 000 €/mes por 8 días (Premium). Un director de RRHH a tiempo completo cuesta de 80 000 a 150 000 € con cargas por año; la comparación depende del alcance y la disponibilidad. Cada fórmula incluye acceso a benchmarks de remuneración y herramientas SIRH.",
       },
       {
         question: "¿Cuándo se debe recurrir a un director de RRHH externalizado?",
@@ -711,7 +711,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       {
         question: "¿Cómo medir el ROI de un director de RRHH externalizado?",
         answer:
-          "Nuestros clientes miden el ROI en 4 ejes: reducción del time-to-hire (de 45 a 25 días de media), reducción del turnover (del 15 al 8 % en 12 meses), cumplimiento social garantizado (cero auditoría de Seguridad Social negativa) y productividad del fundador (2 a 5 horas/semana recuperadas en temas de RRHH). Consulte [[nuestros casos de clientes|/ressources/cas-clients]].",
+          "Mida el plazo de contratación, la rotación, los errores de nómina y el tiempo dedicado a RRHH antes de la misión y compare periodos equivalentes. Defina el alcance y el responsable de cada indicador. Los resultados dependen del contexto de la empresa; no se garantiza una mejora cuantificada ni el resultado de una inspección laboral.",
       },
       {
         question: "¿Dónde intervienen sus directores de RRHH externalizados?",

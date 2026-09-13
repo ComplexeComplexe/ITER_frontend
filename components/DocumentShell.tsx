@@ -1,6 +1,6 @@
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "@/app/globals.css";
-import { TRACKING_BOOTSTRAP } from "@/lib/analytics/consent";
+import { TRACKING_BOOTSTRAP, CONSENT_DISPLAY_BOOTSTRAP } from "@/lib/analytics/consent";
 import CookieConsent from "@/components/CookieConsent";
 import type { Locale } from "@/lib/i18n";
 
@@ -47,6 +47,8 @@ export default function DocumentShell({
   return (
     <html
       lang={locale}
+      // The pre-paint consent script adds one display-only class on this node.
+      suppressHydrationWarning
       className={`${dmSans.variable} ${spaceGrotesk.variable}`}
     >
       <head>
@@ -55,6 +57,7 @@ export default function DocumentShell({
         <link rel="dns-prefetch" href="https://ztynwacifpvzaemkqifh.storage.eu-central-1.nhost.run" />
         <link rel="preconnect" href="https://share.trustfolio.co" crossOrigin="anonymous" />
 
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_DISPLAY_BOOTSTRAP }} />
         <script dangerouslySetInnerHTML={{ __html: TRACKING_BOOTSTRAP }} />
 
         {/* Favicons & Manifest */}

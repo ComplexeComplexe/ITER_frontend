@@ -60,55 +60,6 @@ export default async function Page() {
         { id: "delai-demande", label: "Délai : 6 mois pour demander" },
         { id: "quiz", label: "Test d'éligibilité" },
       ]}
-      faqItems={[
-        {
-          question:
-            "Peut-on bénéficier de la loi Beckham en tant qu'indépendant (freelance) ?",
-          answer:
-            "Depuis 2023, oui — uniquement via le visa Digital Nomad qui ouvre le régime aux travailleurs indépendants dont les clients sont majoritairement à l'étranger (>80%). Sans ce visa, un freelance classique ne peut pas accéder au régime Beckham.",
-        },
-        {
-          question:
-            "Combien de temps à l'avance faut-il déposer la demande ?",
-          answer:
-            "La demande (formulaire 149 auprès de l'AEAT) doit être déposée dans les 6 mois suivant l'embauche ou l'entrée en Espagne. Passé ce délai, le droit est définitivement perdu pour le séjour en cours.",
-        },
-        {
-          question: "La loi Beckham s'applique-t-elle aux revenus mondiaux ?",
-          answer:
-            "Non. Le régime Beckham impose les revenus de source espagnole au taux fixe de 24%. Les revenus étrangers sont en principe exonérés d'IRPF (mais peuvent être soumis à d'autres impôts selon les conventions fiscales).",
-        },
-        {
-          question:
-            "Peut-on bénéficier du régime Beckham si on était déjà venu vivre en Espagne il y a 8 ans ?",
-          answer:
-            "Oui, à condition de ne pas avoir été résident fiscal en Espagne pendant les 5 années précédant immédiatement le retour. Un séjour d'il y a 8 ans est donc compatible avec le régime.",
-        },
-        {
-          question:
-            "Le dirigeant d'une SARL française peut-il bénéficier de la loi Beckham en Espagne ?",
-          answer:
-            "Non directement. Le régime exige un contrat de travail espagnol ou une nomination comme dirigeant d'une entité espagnole. Un dirigeant rémunéré uniquement par sa société française ne remplit pas cette condition.",
-        },
-        {
-          question:
-            "La loi Beckham est-elle cumulable avec la convention fiscale franco-espagnole ?",
-          answer:
-            "Ces deux dispositifs ont des interactions complexes. La convention franco-espagnole peut limiter la possibilité d'imposition en Espagne sur certains revenus français. Une analyse au cas par cas par un fiscaliste est indispensable.",
-        },
-        {
-          question: "Quel est le délai pour demander le régime Beckham après l'arrivée en Espagne ?",
-          answer: "La demande doit être déposée dans les 6 mois suivant l'inscription au registre de la Sécurité Sociale espagnole (numéro de Sécurité Sociale obtenu lors de l'embauche ou de la création d'activité). Passé ce délai, la demande est irrecevable et l'impatrié est soumis au régime général de l'IRPF (jusqu'à 47 %). Il n'existe aucune dérogation pour ce délai — c'est l'erreur la plus fréquente et la plus coûteuse.",
-        },
-        {
-          question: "Peut-on bénéficier de la loi Beckham si on a déjà vécu en Espagne ?",
-          answer: "Non. La condition fondamentale est de ne pas avoir résidé en Espagne au cours des 5 années précédant l'arrivée. Si vous avez été résident fiscal espagnol (même brièvement) dans les 5 ans, la demande sera rejetée. Les courtes visites touristiques ou professionnelles sans établissement de résidence fiscale ne sont pas concernées.",
-        },
-        {
-          question: "La loi Beckham s'applique-t-elle aux revenus de source étrangère ?",
-          answer: "Partiellement. Sous le régime Beckham, les revenus de source espagnole sont imposés à 24 % (jusqu'à 600 000 €). Les revenus de source étrangère (dividendes, loyers, plus-values hors Espagne) sont en revanche exclus de l'assiette espagnole — l'impatrié ne les déclare pas en Espagne. Cette règle est un avantage majeur pour les dirigeants ayant des actifs patrimoniaux à l'étranger.",
-        },
-      ]}
       tldr={
         <>
           <p>

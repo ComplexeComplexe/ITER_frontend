@@ -77,20 +77,6 @@ export default async function Page() {
         { id: "faq", label: "FAQ" },
         { id: "sources", label: "Sources officielles" },
       ]}
-      faqItems={[
-        {
-          question: "Faut-il créer une holding pour opérer entre la France et l'Espagne ?",
-          answer: "Pas nécessairement. Une holding est pertinente quand votre CA dépasse 2–3 M€ ou que vous gérez plusieurs entités. Pour les PME en phase de croissance, une structure binationale simple (SARL/SAS en France + SL en Espagne) suffit pour bénéficier des différences de charges sociales (~15 points d'écart). Un audit de structure avec un DAF externalisé permet d'identifier le schéma optimal avant tout changement.",
-        },
-        {
-          question: "Comment éviter la double imposition entre la France et l'Espagne ?",
-          answer: "La convention fiscale France-Espagne (signée en 1995, révisée en 2011) prévient la double imposition sur les revenus d'entreprise, les dividendes et les salaires. Concrètement : les bénéfices générés en Espagne sont imposés uniquement en Espagne si vous y avez un établissement stable permanent (local, salarié). Les dividendes versés par la filiale espagnole à la holding française bénéficient d'une retenue à la source réduite (5–15 %). Consultez un expert fiscal avant toute restructuration.",
-        },
-        {
-          question: "La TVA espagnole est-elle récupérable par une société française ?",
-          answer: "Oui, via la directive 2008/9/CE. Une société française assujettie à la TVA peut récupérer la TVA espagnole (IVA) payée sur ses achats professionnels en Espagne, à condition de déposer une demande de remboursement électronique avant le 30 septembre de l'année suivante. Le délai de remboursement est généralement de 4 à 6 mois. Le seuil minimum est 50 € pour une demande trimestrielle.",
-        },
-      ]}
       relatedArticles={[
         {
           url: "/ressources/fiscalite/impot-revenu-espagne",

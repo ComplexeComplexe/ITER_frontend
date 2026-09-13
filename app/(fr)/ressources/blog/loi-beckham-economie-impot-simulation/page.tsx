@@ -60,33 +60,6 @@ export default function Page() {
         { id: "comparaison-france", label: "Comparaison avec la France" },
       ]}
       tldr="La loi Beckham est avantageuse à partir de 55 000 € de salaire annuel. Pour 80 000 € : économie de ~3 800 €/an (22 800 € sur 6 ans). Pour 120 000 € : économie de ~13 200 €/an (79 200 € sur 6 ans)."
-      faqItems={[
-        {
-          question: "À partir de quel salaire la loi Beckham est-elle intéressante ?",
-          answer:
-            "Le régime Beckham devient véritablement avantageux à partir de 55 000 à 60 000 € de salaire brut annuel. En dessous, le taux fixe de 24% peut être supérieur au taux effectif du barème progressif espagnol pour les tranches basses.",
-        },
-        {
-          question: "Quel est le plafond du taux à 24% avec la loi Beckham ?",
-          answer:
-            "Le taux de 24% s'applique jusqu'à 600 000 € de revenus du travail. Au-delà, le taux de 47% s'applique sur la fraction excédentaire — exactement comme le barème classique.",
-        },
-        {
-          question: "Peut-on cumuler Beckham avec des déductions fiscales espagnoles ?",
-          answer:
-            "Non. Le régime Beckham est un régime optionnel qui remplace intégralement le barème de droit commun. Vous ne pouvez pas déduire les charges familiales, intérêts d'emprunt ou autres déductions habituelles de l'IRPF.",
-        },
-        {
-          question: "Comment se calcule l'impôt avec le régime Beckham ?",
-          answer:
-            "Tous les revenus du travail de source espagnole sont imposés à 24% flat rate (sans progressivité, sans tranches). Exemple : 80 000 € × 24% = 19 200 € d'IRPF annuel, versus ~23 000 € avec le barème classique.",
-        },
-        {
-          question: "Peut-on sortir du régime Beckham si on réalise qu'il n'est pas avantageux ?",
-          answer:
-            "Oui, il est possible de renoncer au régime Beckham lors du dépôt de la déclaration annuelle. Attention : cette renonciation est définitive, vous ne pourrez pas y revenir pour les années suivantes.",
-        },
-      ]}
       relatedArticles={[
         {
           url: "/ressources/fiscalite/beckham-law",

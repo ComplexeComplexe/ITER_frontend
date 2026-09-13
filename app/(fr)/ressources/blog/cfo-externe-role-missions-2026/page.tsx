@@ -4,6 +4,9 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, ProseTable } from '@/components/blog';
 import MidArticleSoftCTA from '@/components/blog/MidArticleSoftCTA';
 
+import { getDafOffer } from '@/lib/content/daf-offer';
+const offer = getDafOffer('fr');
+
 const PAGE_URL =
   'https://www.iteradvisors.com/ressources/blog/cfo-externe-role-missions-2026';
 
@@ -23,7 +26,7 @@ const FAQ_ITEMS: { question: string; answer: string }[] = [
   {
     question: 'Combien coûte un CFO externe par mois ?',
     answer:
-      'Entre 3 000 et 8 000 € par mois selon le rythme (1 à 3 jours par semaine) et le profil (junior à expert). Pour une startup en phase de levée, comptez 4 000 à 6 000 € par mois pour un profil sénior 2 jours/semaine.',
+      `${offer.price}. ${offer.billing} ${offer.commitment}`,
   },
   {
     question: "Le CFO externe peut-il manager l'équipe comptable interne ?",
@@ -62,7 +65,7 @@ const articleSchema = {
     url: 'https://www.iteradvisors.com/a-propos/benjamin-ziza',
   },
   datePublished: '2026-07-24',
-  dateModified: '2026-07-24',
+  dateModified: '2026-09-13',
   mainEntityOfPage: PAGE_URL,
   publisher: {
     '@type': 'Organization',
@@ -122,7 +125,8 @@ export default function CfoExterneRoleMissions2026Page() {
           url: '/a-propos/benjamin-ziza',
         }}
         readingTime={6}
-        dateModified="2026-07-24"
+        datePublished="2026-07-24"
+        dateModified="2026-09-13"
         heroImage="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
         toc={[
           { id: 'definition', label: '1. CFO externe : définition' },
@@ -132,7 +136,7 @@ export default function CfoExterneRoleMissions2026Page() {
           { id: 'vs-daf', label: '5. CFO externe vs DAF externalisé' },
           { id: 'recourir', label: '6. Quand y recourir ?' },
         ]}
-        tldr="CFO externe = DAF externalisé avec la terminologie startup/internationale. Même missions, même tarifs, même modèle. Y recourir dès la première levée de fonds ou à partir de 2M€ de CA pour 2 000 à 5 000 €/mois."
+        tldr={`Un CFO externe exerce les missions d’un DAF externalisé. Chez Iter Advisors : ${offer.price}, selon le périmètre et le profil. ${offer.commitment}`}
         relatedArticles={[
           {
             url: '/daf-externalise',
@@ -184,11 +188,7 @@ export default function CfoExterneRoleMissions2026Page() {
           opérationnel</strong>. La nuance est uniquement terminologique et culturelle.
         </p>
 
-        <Callout type="info" title="Tendance 2022-2026">
-          Depuis 2022, le terme &quot;CFO externalisé&quot; progresse de 35 %/an dans
-          les recherches Google en France, notamment chez les startups financées par des
-          fonds anglo-saxons qui parlent naturellement CFO plutôt que DAF.
-        </Callout>
+
 
         <h2 id="missions">2. Ses missions concrètes</h2>
         <p>
@@ -326,57 +326,15 @@ export default function CfoExterneRoleMissions2026Page() {
 
         <MidArticleSoftCTA locale="fr" />
 
-        <h2 id="cout">4. Coût d&apos;un CFO externe</h2>
-        <p>
-          Les tarifs d&apos;un CFO externe suivent les mêmes grilles qu&apos;un DAF
-          externalisé. Deux modèles de facturation coexistent :
-        </p>
-
+        <h2 id="cout">4. Coût d’un CFO externe</h2>
+        <p>Chez Iter Advisors, les tarifs du CFO externe suivent la grille du DAF externalisé : {offer.price}. Le profil engagé et le périmètre de la mission déterminent la formule.</p>
         <ProseTable>
-          <thead>
-            <tr>
-              <th>Modèle</th>
-              <th>Profil junior</th>
-              <th>Profil sénior</th>
-              <th>Profil expert</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>TJM (taux journalier)</strong></td>
-              <td>400-500 €/j</td>
-              <td>600-750 €/j</td>
-              <td>800-1 000 €/j</td>
-            </tr>
-            <tr>
-              <td><strong>Forfait mensuel (2 j/semaine)</strong></td>
-              <td>3 000-4 000 €/mois</td>
-              <td>4 500-6 000 €/mois</td>
-              <td>6 000-8 000 €/mois</td>
-            </tr>
-            <tr>
-              <td><strong>Forfait mensuel (1 j/semaine)</strong></td>
-              <td>1 500-2 000 €/mois</td>
-              <td>2 500-3 500 €/mois</td>
-              <td>3 500-5 000 €/mois</td>
-            </tr>
-          </tbody>
+          <thead><tr><th>Formule</th><th>Tarif mensuel</th><th>Volume indicatif</th></tr></thead>
+          <tbody>{offer.tiers.map(tier => <tr key={tier.name}><td>{tier.name}</td><td>{tier.price}</td><td>{tier.volume}</td></tr>)}</tbody>
         </ProseTable>
-
-        <p>
-          Pour une startup en phase de première levée de fonds, le budget type est de
-          <strong> 4 000 à 6 000 € par mois</strong> pour un CFO externe sénior à
-          2 jours par semaine. Ce coût représente 0,5 à 1 % du chiffre d&apos;affaires
-          pour une entreprise entre 5 et 15 M€ de CA — un ratio largement rentabilisé
-          par la qualité du pilotage financier apporté.
-        </p>
-
-        <Callout type="success" title="Comparaison avec un CFO salarié">
-          Un CFO salarié senior en France coûte entre 90 000 et 140 000 € brut annuel,
-          soit 130 000 à 200 000 € de coût total pour l&apos;entreprise (charges
-          incluses). Un CFO externe à 2 j/semaine revient à 50 000-70 000 €/an — soit
-          une économie de 30 à 60 % pour une disponibilité adaptée à vos besoins réels.
-        </Callout>
+        <p>{offer.billing} {offer.commitment}</p>
+        <p>La comparaison avec un poste salarié doit distinguer les disponibilités : le coût employeur de référence est de {offer.salary} € par an pour un profil de séniorité équivalente. Les formules externalisées représentent {offer.annualPrice} € HT annualisés, hors missions ponctuelles. Ces montants ne supposent pas la même présence quotidienne.</p>
+        <p>Les projets de levée, d’audit ou de transition peuvent nécessiter un périmètre spécifique. Consultez la <Link href="/daf-externalise/tarifs">grille tarifaire et les livrables inclus</Link>, puis comparez des propositions détaillées.</p>
 
         <h2 id="vs-daf">5. CFO externe vs DAF externalisé : la nuance</h2>
         <p>

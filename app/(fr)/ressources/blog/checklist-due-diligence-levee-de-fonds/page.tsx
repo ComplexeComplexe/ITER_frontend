@@ -5,8 +5,8 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "Due diligence financière : checklist des 47 points",
-  description: "Checklist de due diligence financière pour préparer votre levée : les 47 points que les VCs et investisseurs vérifient systématiquement.",
+  title: "Due diligence financière : documents à préparer",
+  description: "Checklist de due diligence financière pour préparer votre levée : documents comptables, trésorerie, cap table, hypothèses et organisation de la data room.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/checklist-due-diligence-levee-de-fonds",
   },
@@ -37,8 +37,9 @@ export default function ChecklistDueDiligencePage() {
         avatar: "/images/team/benjamin-ziza.webp",
         jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
-      readingTime={13}
-      dateModified="2026-05-01"
+      readingTime={6}
+      datePublished="2026-05-01"
+      dateModified="2026-09-13"
       heroImage="/images/blog/covers/checklist-due-diligence-levee-de-fonds.svg"
       toc={[
         { id: "definition", label: "1. Qu'est-ce que la due diligence ?" },
@@ -48,32 +49,6 @@ export default function ChecklistDueDiligencePage() {
         { id: "timeline", label: "5. Timeline et plannification" },
         { id: "erreurs-eviter", label: "6. Erreurs à éviter" },
         { id: "faq", label: "FAQ" },
-      ]}
-      faqItems={[
-        {
-          question: "Combien de temps faut-il pour préparer une due diligence financière ?",
-          answer: "La préparation d'une due diligence financière complète nécessite 4 à 8 semaines si vos documents comptables sont déjà en ordre. Sans antériorité comptable propre, comptez 10 à 12 semaines. La phase critique : rassembler 3 ans de bilans, comptes de résultat et tableaux de flux de trésorerie, puis construire un prévisionnel 3 ans auditable par un investisseur externe.",
-        },
-        {
-          question: "Quels documents les VCs demandent-ils systématiquement en due diligence ?",
-          answer: "La liste minimum que tout fonds VC demande : bilans et comptes de résultat 3 ans certifiés, cap table à jour avec les BSA/BSPCE, prévisionnel P&L + trésorerie 3 ans (avec hypothèses détaillées), contrats des 5 à 10 clients représentant 80 % du CA, table d'amortissement des dettes, et rapport KYC sur les fondateurs. Une data room bien structurée (Dealroom, DocSend) accélère le closing de 2 à 3 semaines.",
-        },
-        {
-          question: "Quel est le rôle d'un DAF externalisé pendant la due diligence ?",
-          answer: "Le DAF externalisé joue trois rôles pendant la due diligence : (1) il audite les chiffres historiques et détecte les anomalies avant que les investisseurs les trouvent ; (2) il construit le prévisionnel avec des hypothèses défendables et un modèle sensibilisé ; (3) il répond aux questions financières des VCs et de leurs experts-comptables. Chez Iter Advisors, nos DAF ont piloté la due diligence de dizaines de levées en seed et série A — plus de 100 M€ levés par nos clients depuis 2021.",
-        },
-        {
-          question: "Combien de temps dure une due diligence financière ?",
-          answer: "Une due diligence financière standard dure 4 à 8 semaines selon la taille de l'entreprise et la complexité de sa structure financière. Pour une Series A (PME ou startup < 50 salariés), comptez 3 à 4 semaines. Pour une acquisition de PME ou une Series B+ (structure multi-entités, historique plus long), prévoyez 6 à 10 semaines. La clé : avoir une data room complète et organisée réduit le délai de 30 à 50 %.",
-        },
-        {
-          question: "Quels documents préparer pour une due diligence financière ?",
-          answer: "Les documents indispensables sont : (1) 3 derniers bilans et comptes de résultat certifiés par un commissaire aux comptes ; (2) tableaux de flux de trésorerie historiques et prévisionnels (12 mois) ; (3) grand-livre comptable détaillé ; (4) liste des engagements hors-bilan (garanties, litiges, loyers futurs) ; (5) contrats clients majeurs avec clause de renouvellement ; (6) table de capitalisation à jour ; (7) procès-verbaux des assemblées des 3 dernières années. Un DAF externalisé expérimenté peut préparer ce dossier en 2 à 3 semaines.",
-        },
-        {
-          question: "Que regardent en priorité les VCs lors d'une due diligence ?",
-          answer: "Les investisseurs vérifient en priorité : (1) la qualité du MRR/ARR et son taux de croissance (fiabilité du chiffre d'affaires récurrent) ; (2) le churn rate et la rétention nette ; (3) le burn rate et le runway restant ; (4) les marges brutes et leur évolution ; (5) la cohérence entre le compte de résultat et les flux de trésorerie (détection des manipulations comptables) ; (6) la cap table et la structure de gouvernance. Tout écart entre le pitch deck et les chiffres réels est rédhibitoire.",
-        },
       ]}
       relatedArticles={[
         {
@@ -128,7 +103,7 @@ export default function ChecklistDueDiligencePage() {
         <strong>Documents importants :</strong>
       </p>
       <ul>
-        <li>📎 Audits / Certifications : Audit externe (si &gt;€50M), Certifications ISO</li>
+        <li>📎 Audits / Certifications : rapports d’audit disponibles, certifications pertinentes</li>
         <li>📎 Contrats clients clés : Top 20 clients (revenus récurrents ?)</li>
         <li>📎 Contrats fournisseurs : Dépendances critiques</li>
         <li>📎 Analyses de coûts : Détail des marges par business unit</li>
@@ -256,19 +231,19 @@ export default function ChecklistDueDiligencePage() {
 
       <h2>Conclusion</h2>
       <p>
-        Une DD bien préparée accélère votre levée de 2-4 semaines et augmente la confiance des investisseurs. Elle montre que vous prenez votre finance au sérieux.
+        Une data room cohérente limite les demandes de clarification. Le calendrier de la levée dépend aussi des investisseurs, des conseils et des points à résoudre.
       </p>
       <p>
-        Chez Iter Advisors, nous avons accompagné 200+ founders à travers des levées. Nous savons exactement ce que les VCs veulent voir et comment le présenter. Si vous levez, faites-nous un call.
+        Iter Advisors accompagne la préparation financière des levées : fiabilisation des comptes, prévisionnel et réponses aux investisseurs. Le périmètre et le calendrier sont définis après diagnostic.
       </p>
 
       <h2 id="faq">FAQ — Due diligence et levée de fonds</h2>
       <h3>Combien de temps faut-il pour préparer une due diligence financière ?</h3>
       <p>La préparation d'une due diligence financière complète nécessite 4 à 8 semaines si vos documents comptables sont déjà en ordre. Sans antériorité comptable propre, comptez 10 à 12 semaines. La phase critique : rassembler 3 ans de bilans, comptes de résultat et tableaux de flux de trésorerie, puis construire un prévisionnel 3 ans auditable par un investisseur externe.</p>
       <h3>Quels documents les VCs demandent-ils systématiquement en due diligence ?</h3>
-      <p>La liste minimum que tout fonds VC demande : bilans et comptes de résultat 3 ans certifiés, cap table à jour avec les BSA/BSPCE, prévisionnel P&L + trésorerie 3 ans (avec hypothèses détaillées), contrats des 5 à 10 clients représentant 80 % du CA, table d'amortissement des dettes, et rapport KYC sur les fondateurs. Une data room bien structurée (Dealroom, DocSend) accélère le closing de 2 à 3 semaines.</p>
+      <p>La liste minimum que tout fonds VC demande : bilans et comptes de résultat 3 ans certifiés, cap table à jour avec les BSA/BSPCE, prévisionnel P&L + trésorerie 3 ans (avec hypothèses détaillées), contrats des 5 à 10 clients représentant 80 % du CA, table d'amortissement des dettes, et rapport KYC sur les fondateurs. Une data room bien structurée facilite la revue des documents sans garantir le délai de closing.</p>
       <h3>Quel est le rôle d'un DAF externalisé pendant la due diligence ?</h3>
-      <p>Le <a href="/daf-externalise">directeur financier à temps partagé</a> joue trois rôles pendant la due diligence : (1) il audite les chiffres historiques et détecte les anomalies avant que les investisseurs les trouvent ; (2) il construit le prévisionnel avec des hypothèses défendables et un modèle sensibilisé ; (3) il répond aux questions financières des VCs et de leurs experts-comptables. Chez Iter Advisors, nos DAF ont piloté la due diligence de dizaines de levées en seed et série A — plus de 100 M€ levés par nos clients depuis 2021.</p>
+      <p>Le <a href="/daf-externalise">directeur financier à temps partagé</a> joue trois rôles pendant la due diligence : (1) il audite les chiffres historiques et détecte les anomalies avant que les investisseurs les trouvent ; (2) il construit le prévisionnel avec des hypothèses défendables et un modèle sensibilisé ; (3) il répond aux questions financières des VCs et de leurs experts-comptables. Chez Iter Advisors, nos clients accompagnés ont levé plus de 100 M€ depuis 2021.</p>
     </BlogPostPageRefonte>
   );
 }

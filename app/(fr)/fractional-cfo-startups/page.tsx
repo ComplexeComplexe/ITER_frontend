@@ -108,7 +108,7 @@ const structuredData = {
           name: "Combien coûte un Fractional CFO ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Une mission démarre à 3 000 € HT par mois (formule Essentiel) et va jusqu'à 6 500 € pour un accompagnement de type Croissance, le format le plus fréquent chez les startups en Série A. Un directeur financier salarié de séniorité équivalente représente 100 000 à 213 000 € de coût employeur annuel, charges comprises.",
+            text: "Une mission démarre à 3 000 € HT par mois (formule Essentiel) et va jusqu'à 6 500 € pour un accompagnement de type Croissance, le format le plus fréquent en Série A. Un directeur financier salarié de séniorité équivalente représente 100 000 à 213 000 € de coût employeur annuel, charges comprises.",
           },
         },
         {

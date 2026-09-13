@@ -83,7 +83,7 @@ export const BLOG_ILLUSTRATIONS: Record<string, BlogIllustration> = {
   },
   "pennylane-vs-sage-comparatif-40-deploiements": {
     src: "/images/blog/illustrations/pennylane-vs-sage-comparatif-40-deploiements.webp",
-    alt: "Illustration éditoriale : Pennylane vs Sage — comparatif après 40 déploiements",
+    alt: "Illustration éditoriale : Pennylane vs Sage — critères de choix comptable",
   },
   "data-room-checklist-levee-de-fonds": {
     src: "/images/blog/illustrations/data-room-checklist-levee-de-fonds.webp",

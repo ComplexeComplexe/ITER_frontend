@@ -556,7 +556,7 @@ export const toolDetails: Record<string, ToolDetails> = {
       { title: 'Startup budget', description: 'Startup seed avec optimisation des coûts outils.', tools: ['Qonto', 'Okimia (ex-Fygr)', 'Spendesk'], context: 'Startup < 20 pers., trésorerie simple, Bilan économique à mesurer.' },
     ],
     faqExpanded: [
-      { question: 'Fygr vs Agicap ?', answer: 'Fygr = simple, économique, PME 10-80 pers. Agicap = puissant, multi-banques, scénarios complexes. Budget < 80 pers. = Fygr. Budget > 80 pers. ou multi-banques = Agicap.' },
+      { question: 'Fygr vs Agicap ?', answer: 'Fygr porte désormais le nom Okimia. Comparez Okimia et Agicap sur vos connexions bancaires, vos entités, vos scénarios, les exports et le périmètre du devis. Le seul effectif de votre entreprise ne suffit pas à choisir.' },
       { question: 'Quel prix ?', answer: "Fygr est devenu Okimia. Comparer la formule, le nombre d’entités et de banques, les options et la durée de facturation ; ne pas confondre prix annualisé et mensuel." },
       { question: 'Quelles banques ?', answer: '15 banques principales (BNP, Société Générale, Crédit Mutuel, Qonto, Revolut, etc.).' },
     ],
