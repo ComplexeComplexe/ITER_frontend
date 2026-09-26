@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/static-content";
 import { buildMetadata } from "@/lib/metadata";
@@ -13,17 +14,17 @@ import TestimonialsListingPage from "@/components/pages/TestimonialsListingPage"
 const t = {
   fr: {
     title: "Cas Clients DAF | Iter Advisors",
-    description: "Cas clients DAF externalisé : témoignages PME, startups, scale-ups. 5/5 sur Trustfolio (31 avis vérifiés). Missions, accompagnement et résultats documentés.",
+    description: `Cas clients DAF externalisé : témoignages PME, startups, scale-ups. 5/5 sur Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} avis vérifiés). Missions, accompagnement et résultats documentés.`,
     breadcrumb: "Cas clients",
   },
   en: {
     title: "Case Studies CFO | Iter Advisors",
-    description: "CFO outsourcing case studies: testimonials from SMEs, startups, scale-ups. 5/5 on Trustfolio (31 verified reviews). Engagements, financial leadership and documented results.",
+    description: `CFO outsourcing case studies: testimonials from SMEs, startups, scale-ups. 5/5 on Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} verified reviews). Engagements, financial leadership and documented results.`,
     breadcrumb: "Case Studies",
   },
   es: {
     title: "Casos de Estudio DAF | Iter Advisors",
-    description: "Casos de estudio DAF externalizado: testimonios de PYMEs, startups, scale-ups. 5/5 en Trustfolio (31 opiniones verificadas). Resultados reales y verificables.",
+    description: `Casos de estudio DAF externalizado: testimonios de PYMEs, startups, scale-ups. 5/5 en Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} opiniones verificadas). Resultados reales y verificables.`,
     breadcrumb: "Casos de Estudio",
   },
 };

@@ -348,6 +348,7 @@ export default function DafPillarPage({
             <aside className="rounded-2xl border border-iter-violet/30 bg-iter-violet/5 p-5">
               <h3 className="text-sm font-semibold uppercase tracking-widest text-iter-violet">{t.pricing.barometer.heading}</h3>
               <p className={`${body} mt-2 text-foreground/90`}>{t.pricing.barometer.text}</p>
+              <p className="mt-3 text-xs text-muted-foreground">Les chiffres d’activité et cette répartition sont déclarés par le cabinet. Les avis sont consultables sur <a className="underline" href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc">Trustfolio</a>, compteur vérifié le 26 septembre 2026. Les résultats des missions clients sont détaillés dans les cas documentés.</p>
             </aside>
             <div className="rounded-2xl border border-border/50 p-5">
               <p className={body}>{t.pricing.economy}</p>

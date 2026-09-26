@@ -1,4 +1,5 @@
 'use client';
+import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 
 import Script from 'next/script';
 import { useState, useEffect, useRef } from 'react';
@@ -938,7 +939,7 @@ export default function LandingPageClient() {
               ))}
             </div>
             <p className="text-2xl font-bold text-foreground mb-2">5/5 sur Trustfolio</p>
-            <p className="text-sm text-muted-foreground">Basé sur 31+ avis vérifiés</p>
+            <p className="text-sm text-muted-foreground">Basé sur {TRUSTFOLIO_REVIEW_COUNT} avis vérifiés</p>
           </div>
 
           <p className="text-center text-sm text-muted-foreground">

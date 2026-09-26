@@ -1,3 +1,4 @@
+import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 import { Metadata } from "next";
 import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/static-content";
@@ -12,7 +13,7 @@ import TestimonialsListingPage from "@/components/pages/TestimonialsListingPage"
 const t = {
   es: {
     title: "Casos de Estudio DAF | Iter Advisors",
-    description: "Casos de estudio DAF externalizado: testimonios de PYMEs, startups, scale-ups. 5/5 en Trustfolio (31 opiniones verificadas). Resultados reales y verificables.",
+    description: `Casos de estudio DAF externalizado: testimonios de PYMEs, startups, scale-ups. 5/5 en Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} opiniones verificadas). Resultados reales y verificables.`,
     breadcrumb: "Casos de Estudio",
   },
 };

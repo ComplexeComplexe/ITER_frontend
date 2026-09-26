@@ -23,7 +23,6 @@ import {
   CLIENTS_ACCOMPAGNES,
   COUT_DAF_SALARIE,
   DELAIS,
-  ECONOMIE_FORMULATION,
   ENGAGEMENT,
   FONDS_LEVES,
   FORMULES,
@@ -34,8 +33,8 @@ import {
 
 export const DAF_PILLAR_PATH = "/daf-externalise";
 export const DAF_PILLAR_PUBLISHED = "2026-05-17";
-export const DAF_PILLAR_MODIFIED = "2026-09-12";
-export const DAF_PILLAR_MODIFIED_LABEL = "12 septembre 2026";
+export const DAF_PILLAR_MODIFIED = "2026-09-26";
+export const DAF_PILLAR_MODIFIED_LABEL = "26 septembre 2026";
 
 export interface PillarMission {
   title: string;
@@ -286,19 +285,19 @@ export const dafPillar = {
 
   pricing: {
     heading: "Tarifs 2026 : trois formules, un retainer mensuel",
-    intro: `De ${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois selon le profil engagé et le périmètre confié. Nous ne facturons pas à l'heure : le retainer couvre un périmètre de travail défini au cadrage, revu avec vous. Le volume de jours indiqué est une moyenne d'intervention observée, pas un forfait.`,
-    tiers: FORMULES.map((f) => ({
+    intro: `De ${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois selon le profil engagé et le périmètre confié. Nous ne facturons pas à l'heure : le retainer couvre un périmètre de travail défini au cadrage, revu avec vous. Le volume de jours indiqué est une moyenne d'intervention observée, pas un forfait. Une levée de fonds n’est pas nécessaire pour être accompagné : pour une PME, la formule dépend des livrables, des entités et de la complexité.`,
+    tiers: FORMULES.map((f, index) => ({
       name: f.nom,
       volume: f.volumeIndicatif,
       price: `${fmt(f.prixMin)} à ${fmt(f.prixMax)} € HT/mois`,
-      audience: f.cible,
+      audience: ["PME : fiabiliser le cash et le reporting ; startup en Seed", "PME en croissance : budget et financement ; startup en Série A", "PME ou groupe multi-entités : gouvernance et projets complexes ; Série B et au-delà"][index],
       profile: f.profil,
     })),
     barometer: {
       heading: "Ce que nos clients paient réellement",
       text: REPARTITION_CLIENTS_PAR_FORMULE.formulation,
     },
-    economy: `${ECONOMIE_FORMULATION} Notre référence : un directeur financier salarié de séniorité équivalente représente un ${COUT_DAF_SALARIE.base} de ${fmt(COUT_DAF_SALARIE.min)} à ${fmt(COUT_DAF_SALARIE.max)} € par an, hors coût de recrutement et de vacance de poste, en France comme en Espagne.`,
+    economy: `Comparer deux budgets demande de préciser la disponibilité et le périmètre. Nos honoraires récurrents annualisés représentent ${fmt(FORMULES[0].prixMin * 12)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax * 12)} € HT, hors coûts additionnels prévus au devis. Notre repère interne pour un poste salarié est un ${COUT_DAF_SALARIE.base} de ${fmt(COUT_DAF_SALARIE.min)} à ${fmt(COUT_DAF_SALARIE.max)} € par an. Ce repère n’est pas une étude de marché : le salaire, les charges et les frais doivent être chiffrés pour votre recrutement. Le temps partagé et le temps plein ne couvrent pas la même disponibilité ; aucune économie ne s’applique automatiquement.`,
     engagement: ENGAGEMENT.formulation,
     link: { href: "/daf-externalise/tarifs", label: "Ce qui est inclus dans chaque formule et comment se construit un devis" },
   },

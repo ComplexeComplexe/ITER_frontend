@@ -1,10 +1,11 @@
+import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 import { Metadata } from "next";
 import CasClientsPage from "@/components/pages/CasClientsPage";
 import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = {
   title: "Cas clients | Iter Advisors",
-  description: "Découvrez comment Iter Advisors accompagne startups et PME. Cas clients concrets, résultats mesurables, 5/5 sur Trustfolio avec 31 avis vérifiés.",
+  description: `Découvrez comment Iter Advisors accompagne startups et PME. Cas clients concrets, résultats mesurables, 5/5 sur Trustfolio avec ${TRUSTFOLIO_REVIEW_COUNT} avis vérifiés.`,
   robots: { index: false, follow: false },
   openGraph: {
     title: "Cas Clients | Iter Advisors",

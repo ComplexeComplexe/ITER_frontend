@@ -1,3 +1,4 @@
+import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 import { Locale } from "./i18n";
 
 
@@ -170,7 +171,7 @@ export const footerContent: Record<Locale, FooterContent> = {
     description:
       "Iter Advisors, avec des équipes à Barcelone et Paris et une intervention à distance ou sur accord à Toulouse, est un cabinet spécialisé dans les services de DAF externalisé, de conseil stratégique et d\u2019accompagnement en investissements, fusions-acquisitions.",
     copyright: "Copyright \u00A9 2025-2026 Iter Advisors. Tous droits réservés.",
-    trustfolio: "Note de 5/5 sur 31 avis sur notre profil",
+    trustfolio: `Note de 5/5 sur ${TRUSTFOLIO_REVIEW_COUNT} avis sur notre profil`,
     legalLinks: [
       { text: "Mentions légales", href: "/mentions-legales" },
       { text: "Politique de confidentialité", href: "/politique-de-confidentialite" },
@@ -206,7 +207,7 @@ export const footerContent: Record<Locale, FooterContent> = {
     description:
       "Iter Advisors, with teams in Barcelona and Paris, serving Toulouse remotely or on agreed visits, specializes in outsourced CFO services, strategic consulting and support for investments and mergers & acquisitions.",
     copyright: "Copyright \u00A9 2025-2026 Iter Advisors. All Rights Reserved.",
-    trustfolio: "5/5 rating based on 31 reviews on our profile",
+    trustfolio: `5/5 rating based on ${TRUSTFOLIO_REVIEW_COUNT} reviews on our profile`,
     legalLinks: [
       { text: "Terms of use", href: "/en/legal-notice" },
       { text: "Privacy policy", href: "/en/privacy-policy" },
@@ -234,7 +235,7 @@ export const footerContent: Record<Locale, FooterContent> = {
     description:
       "Iter Advisors, con equipos en Barcelona y París e intervención en Toulouse a distancia o mediante visitas acordadas, es una empresa especializada en servicios externos de CFO, consultoría estratégica y apoyo a inversiones, fusiones y adquisiciones.",
     copyright: "Copyright \u00A9 2025-2026 Iter Advisors. Todos los derechos reservados.",
-    trustfolio: "Puntuación de 5/5 basada en 31 opiniones en nuestro perfil",
+    trustfolio: `Puntuación de 5/5 basada en ${TRUSTFOLIO_REVIEW_COUNT} opiniones en nuestro perfil`,
     legalLinks: [
       { text: "Información jurídica", href: "/es/aviso-legal" },
       { text: "Política de privacidad", href: "/es/politica-de-privacidad" },
