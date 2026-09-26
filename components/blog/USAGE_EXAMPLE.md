@@ -50,10 +50,10 @@ export default function BlogArticlePage() {
       tldr={
         <>
           <p>
-            <strong>France :</strong> IS 25,83%, TVA 20%, cotisations élevées
+            <strong>France :</strong> IS et TVA : vérifier les taux et conditions dans les sources officielles
           </p>
           <p>
-            <strong>Espagne :</strong> IS 25%, TVA 21%, PVN/PAC pour petites
+            <strong>Espagne :</strong> IS et TVA : distinguer les régimes applicables aux différentes
             structures
           </p>
           <p>

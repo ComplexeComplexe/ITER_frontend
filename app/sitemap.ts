@@ -1,3 +1,4 @@
+import { TAX_COMPARISON_MODIFIED } from "@/lib/content/tax-comparison";
 import type { MetadataRoute } from "next";
 import { PAGE_REVISIONS, latestRevision } from "@/lib/content/page-revisions";
 import { DOCUMENTED_CASES } from "@/lib/content/documented-cases";
@@ -81,7 +82,7 @@ function entryAllLocales(
  *  Avoids emitting TODAY for articles that haven't changed since publish. */
 function blogModified(slug: string, locale: Locale = "fr"): string {
   if (locale === "fr" && ["ia-finance-automatisation-direction-financiere", "ia-et-automatisation-des-taches-repetitives"].includes(slug)) return "2026-09-05";
-  if (slug === "regimes-fiscaux-france-vs-espagne") return locale === "es" ? "2026-07-25" : "2026-08-31";
+  if (slug === "regimes-fiscaux-france-vs-espagne") return TAX_COMPARISON_MODIFIED;
   return (
     blogPosts[locale][slug]?.updatedDate ??
     blogPosts[locale][slug]?.publishedDate ??

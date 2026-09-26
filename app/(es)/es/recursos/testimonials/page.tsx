@@ -1,3 +1,4 @@
+import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 import { Metadata } from "next";
 import TestimonialsListingPage from "@/components/pages/TestimonialsListingPage";
 import { buildMetadata } from "@/lib/metadata";
@@ -6,7 +7,7 @@ import { getCmsNavigation } from "@/lib/static-content";
 export const metadata: Metadata = buildMetadata({
   locale: "es",
   title: "Casos Clientes CFO | Iter Advisors",
-  description: "Testimonios CFO externalizado: pymes, startups que crecieron con Iter Advisors. Casos de éxito verificados. 5/5 rated en Trustfolio, 31 avis reales.",
+  description: `Testimonios CFO externalizado: pymes, startups que crecieron con Iter Advisors. Casos de éxito verificados. 5/5 rated en Trustfolio, ${TRUSTFOLIO_REVIEW_COUNT} avis reales.`,
   path: "/ressources/testimonials",
 });
 

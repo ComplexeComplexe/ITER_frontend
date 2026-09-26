@@ -50,7 +50,7 @@ export const DOCUMENTED_CASES = caseDetails.map(detail => {
     ...detail,
     href: `/ressources/cas-clients/${detail.slug}`,
     published: "2026-09-05",
-    modified: "2026-09-05",
+    modified: "2026-09-26",
   };
 });
 

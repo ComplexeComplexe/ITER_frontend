@@ -427,7 +427,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
   "ctaButton": "Échanger sur mon besoin de transition"
 },
     tarifs: {
-      modified: { date: "2026-09-12", label: "12 septembre 2026" },
+      modified: { date: "2026-09-26", label: "26 septembre 2026" },
       proofSlugs: ["opti-digital-structuration-financement", "seasonly-marge-par-canal-bfr", "solarmente-serie-b-cleantech"],
       meta: {
         // SEO-02 (S31 2026-07-27) — 38 requêtes "prix/tarif/coût/combien
@@ -498,7 +498,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             // BAROMÈTRE (2026-09-01) — répartition fournie par Guillaume Rostand,
             // arrondie à la dizaine (facts.ts, REPARTITION_CLIENTS_PAR_FORMULE).
             // La seule donnée de ce type publiée par un cabinet de DAF externalisé.
-            "Sur l'ensemble de nos missions de DAF externalisé, **40 % de nos clients sont sur la formule Essentiel, autour de 3 000 € HT par mois ; 40 % sur la formule Croissance, autour de 5 000 € HT par mois ; et 20 % au-delà** — formule Premium ou mission de transition. Autrement dit, huit clients sur dix paient entre 3 000 et 5 000 € HT par mois : le haut de la grille est l'exception, pas la règle.",
+            "Sur l'ensemble de nos missions de DAF externalisé, **40 % de nos clients sont sur la formule Essentiel, autour de 3 000 € HT par mois ; 40 % sur la formule Croissance, autour de 5 000 € HT par mois ; et 20 % au-delà** — formule Premium ou mission de transition. Ces montants sont des repères arrondis, pas les bornes des factures individuelles : la grille reste de 3 000 à 8 000 € HT par mois selon le périmètre.",
             "Cette répartition est observée sur notre portefeuille au 1er septembre 2026 et arrondie à la dizaine ; elle bouge avec les missions. Elle ne remplace pas un devis, mais elle répond à la question que tout dirigeant se pose avant de nous appeler : et concrètement, les autres paient combien ?",
           ],
         },
@@ -551,7 +551,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           content: [
             "Le tarif est-il déductible fiscalement ? Oui. Les honoraires d'un DAF externalisé sont des charges d'exploitation déductibles du résultat imposable de l'entreprise, au même titre que les honoraires d'un expert-comptable ou d'un avocat.",
             "Peut-on négocier le tarif ? Nos tarifs sont transparents et basés sur le marché. Nous pouvons adapter le périmètre confié à votre budget, mais nous ne négocions pas le prix des formules : il suit le profil engagé. La qualité de nos DAF justifie nos prix.",
-            "Combien paient la plupart de vos clients ? Huit sur dix paient entre 3 000 et 5 000 € HT par mois : 40 % sur la formule Essentiel, 40 % sur la formule Croissance. Les 20 % restants sont au-delà — formule Premium ou mission de transition.",
+            "Combien paient la plupart de vos clients ? Au 1er septembre 2026, environ 40 % sont sur Essentiel, autour de 3 000 € HT par mois, 40 % sur Croissance, autour de 5 000 €, et 20 % au-delà. Ces repères sont arrondis : ils ne définissent pas les bornes des factures individuelles et ne remplacent pas le devis.",
             "Y a-t-il un engagement de durée minimum ? Non. Nos contrats sont résiliables avec un préavis d'un mois. Nous préférons gagner votre confiance par la qualité de notre travail plutôt que par des clauses contractuelles contraignantes.",
             "Le tarif inclut-il les déplacements ? Pour les interventions en présentiel, les frais de déplacement (transport, hébergement si nécessaire) sont facturés en sus au coût réel. Les interventions en distanciel ne génèrent pas de frais supplémentaires.",
           ],

@@ -1,4 +1,5 @@
 "use client";
+import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
@@ -203,7 +204,7 @@ export default function DafPage({
                       ))}
                     </span>
                     <span className="text-xs sm:text-sm font-semibold text-foreground">5/5</span>
-                    <span className="text-xs sm:text-sm text-muted-foreground">— 31 avis Trustfolio</span>
+                    <span className="text-xs sm:text-sm text-muted-foreground">{TRUSTFOLIO_REVIEW_COUNT} avis Trustfolio</span>
                   </div>
                   <div className="flex items-center gap-3 sm:gap-5 opacity-70 overflow-x-auto">
                     {["logo-happyscribe", "logo-mitiga", "logo-surfe", "logo-ukio", "logo-yego"].map((logo) => {

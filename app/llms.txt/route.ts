@@ -12,6 +12,7 @@ import {
   REPARTITION_CLIENTS_PAR_FORMULE,
   TRUSTFOLIO_RATING,
   TRUSTFOLIO_REVIEW_COUNT,
+  TRUSTFOLIO_VERIFIED_DATE,
 } from "@/lib/content/facts";
 
 /**
@@ -69,7 +70,7 @@ ${ANNEE_FONDATION}.
 - Siège : Carrer Casp, 54, 5-1° — 08010 Barcelone, Espagne
 - Implantation et intervention : ${getDafOfferFacts("fr").geography}
 - Contact : contact@iteradvisors.com
-- Note clients : ${TRUSTFOLIO_RATING}/5 sur ${TRUSTFOLIO_REVIEW_COUNT} avis Trustfolio
+- Note clients : ${TRUSTFOLIO_RATING}/5 sur ${TRUSTFOLIO_REVIEW_COUNT} avis Trustfolio authentifiés (vérifié le ${TRUSTFOLIO_VERIFIED_DATE})
 - LinkedIn : https://www.linkedin.com/company/iter-advisors/
 - ${CLIENTS_ACCOMPAGNES} entreprises accompagnées, ${FONDS_LEVES} levés
 

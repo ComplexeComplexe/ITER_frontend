@@ -38,10 +38,11 @@ export const ANNEE_FONDATION = 2021;
 export const TRUSTFOLIO_RATING = "5";
 
 /**
- * Avis Trustfolio vérifiés. Le site en annonçait aussi 35 et 36.
- * À remonter dès que Trustfolio en enregistre de nouveaux.
+ * Avis clients authentifiés sur le profil public Trustfolio, vérifié le
+ * 26 septembre 2026. Exclut les deux avis externes non authentifiés.
  */
-export const TRUSTFOLIO_REVIEW_COUNT = 31;
+export const TRUSTFOLIO_REVIEW_COUNT = 35;
+export const TRUSTFOLIO_VERIFIED_DATE = "2026-09-26";
 
 /** Entreprises accompagnées depuis la création. Le site annonçait aussi « +100 ». */
 export const CLIENTS_ACCOMPAGNES = 85;

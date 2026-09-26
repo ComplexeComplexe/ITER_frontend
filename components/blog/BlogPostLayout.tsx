@@ -76,7 +76,7 @@ export default function BlogPostLayout({
       />
 
       <ArticleBodyLayout locale={locale} headings={toc.map(item => ({ ...item, level: 2 as const }))}>
-        {tldr && <Tldr>{tldr}</Tldr>}
+        {tldr && <Tldr locale={locale}>{tldr}</Tldr>}
         {children}
       </ArticleBodyLayout>
 

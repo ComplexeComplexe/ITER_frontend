@@ -1,3 +1,4 @@
+import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 import { Locale } from "../i18n";
 import { getDafOffer } from "./daf-offer";
 
@@ -165,7 +166,7 @@ export const dafContent: Record<Locale, DafContent> = {
       // sociale (85 clients, 5/5, +100 M€), promesse temporelle (24 h).
       // GSC-06 (2026-07-19) — ajout de "2026" pour signal de fraîcheur
       // (page en chute de position 16→23 sur "daf externalisé" ces 6 mois).
-      // Meta description reformulée avec "(31 avis)" pour préciser la source
+      // Meta description reformulée avec `(${TRUSTFOLIO_REVIEW_COUNT} avis)` pour préciser la source
       // du 5/5 et booster le CTR SERP.
       // SEO-03 (S31 2026-07-27) — la page perdait 3 formulations du même
       // besoin à 0 clic malgré des volumes réels : "directeur financier
@@ -236,7 +237,7 @@ export const dafContent: Record<Locale, DafContent> = {
     // une modalité, avec lien vers sa page propriétaire.
     h1: "DAF externalisé pour PME et startups : votre direction financière externalisée",
     intro: [
-      "Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Notre offre couvre toutes les modalités : directeur financier externalisé en mission longue, direction financière externalisée à l'année, DAF à temps partagé sur 1 à 8 jours par mois, ou CFO externalisé en mission ponctuelle. Mission démarrée sous 8 à 15 jours, sans durée minimale et avec un préavis de 30 jours. 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (31 avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne, avec des équipes à Paris et Barcelone, et une intervention à Toulouse à distance ou sur accord.",
+      `Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Notre offre couvre toutes les modalités : directeur financier externalisé en mission longue, direction financière externalisée à l'année, DAF à temps partagé sur 1 à 8 jours par mois, ou CFO externalisé en mission ponctuelle. Mission démarrée sous 8 à 15 jours, sans durée minimale et avec un préavis de 30 jours. 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne, avec des équipes à Paris et Barcelone, et une intervention à Toulouse à distance ou sur accord.`,
       "Un DAF externalisé — aussi appelé DAF à temps partagé ou CFO externalisé — est un directeur financier senior qui intervient dans votre entreprise sans en être salarié. Il co-pilote le dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs. Le format est flexible : temps partagé, mission ponctuelle ou abonnement mensuel. Pour la nuance avec son équivalent anglo-saxon, consultez notre fiche [Le CFO (Chief Financial Officer)](/ressources/glossaire/cfo). Pour la version dédiée aux startups VC-backed, voir notre offre [Fractional CFO pour startups](/fractional-cfo-startups).",
     ],
     // SEO-003 (2026-08-09) — section resserrée. Ses trois paragraphes
@@ -527,7 +528,7 @@ export const dafContent: Record<Locale, DafContent> = {
       content: [
         "Iter Advisors se distingue par la qualité de ses équipes et la profondeur de son accompagnement. Nos 15 collaborateurs, tous experts de la fonction finance, interviennent avec rigueur et engagement auprès de chaque client.",
         "Notre présence à Barcelone, Paris et Toulouse nous permet d'accompagner des entreprises internationales et de comprendre les spécificités de chaque marché. Nous travaillons avec plus de 30 partenaires technologiques pour garantir une gestion financière moderne et efficace.",
-        "La satisfaction de nos clients est notre priorité : nous affichons une note de 5/5 sur Trustfolio, avec 31 avis vérifiés. Cette excellence se traduit par des relations durables et des résultats concrets pour les entreprises que nous accompagnons.",
+        `La satisfaction de nos clients est notre priorité : nous affichons une note de 5/5 sur Trustfolio, avec ${TRUSTFOLIO_REVIEW_COUNT} avis vérifiés. Cette excellence se traduit par des relations durables et des résultats concrets pour les entreprises que nous accompagnons.`,
       ],
     },
     trustfolioReviews: [
@@ -688,7 +689,7 @@ export const dafContent: Record<Locale, DafContent> = {
         { label: "Who it's for", text: "startups raising funds, growing SMEs, scale-ups in transformation." },
         { label: "Lead time", text: `engagement starts within ${offerEn.start}.` },
         { label: "Commitment", text: offerEn.commitment },
-        { label: "Iter Advisors in numbers", text: "15 CFO experts, 85 companies supported, EUR 100M raised, 5/5 on Trustfolio (31 reviews)." },
+        { label: "Iter Advisors in numbers", text: `15 CFO experts, 85 companies supported, EUR 100M raised, 5/5 on Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} reviews).` },
       ],
     },
     definitionBox: {
@@ -912,7 +913,7 @@ export const dafContent: Record<Locale, DafContent> = {
       content: [
         "Iter Advisors stands out for the quality of its teams and the depth of its support. Our 15 employees, all experts in the finance function, work with rigor and commitment for each client.",
         "Our presence in Barcelona, Paris and Toulouse allows us to support international companies and understand the specificities of each market. We work with over 30 technology partners to guarantee modern and efficient financial management.",
-        "Client satisfaction is our priority: we have a 5/5 rating on Trustfolio with 31 verified reviews. This excellence translates into lasting relationships and tangible results for the companies we support.",
+        `Client satisfaction is our priority: we have a 5/5 rating on Trustfolio with ${TRUSTFOLIO_REVIEW_COUNT} verified reviews. This excellence translates into lasting relationships and tangible results for the companies we support.`,
       ],
     },
     trustfolioReviews: [
@@ -1041,7 +1042,7 @@ export const dafContent: Record<Locale, DafContent> = {
         { label: "Para quién", text: "startups en ronda de financiación, pymes en crecimiento, empresas en transformación." },
         { label: "Plazo", text: `inicio de la misión en ${offerEs.start}.` },
         { label: "Compromiso", text: offerEs.commitment },
-        { label: "Iter Advisors en cifras", text: "15 expertos CFO, 85 empresas acompañadas, 100 M€ levantados, nota 5/5 en Trustfolio (31 opiniones)." },
+        { label: "Iter Advisors en cifras", text: `15 expertos CFO, 85 empresas acompañadas, 100 M€ levantados, nota 5/5 en Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} opiniones).` },
       ],
     },
     definitionBox: {
@@ -1213,7 +1214,7 @@ export const dafContent: Record<Locale, DafContent> = {
       content: [
         "Iter Advisors se distingue por la calidad de sus equipos y la profundidad de su acompanamiento. Nuestros 15 colaboradores, todos expertos en la funcion financiera, intervienen con rigor y compromiso junto a cada cliente.",
         "Nuestra presencia en Barcelona, Paris y Toulouse nos permite acompanar a empresas internacionales y comprender las especificidades de cada mercado. Trabajamos con mas de 30 socios tecnologicos para garantizar una gestion financiera moderna y eficiente.",
-        "La satisfaccion de nuestros clientes es nuestra prioridad: contamos con una nota de 5/5 en Trustfolio, con 31 opiniones verificadas. Esta excelencia se traduce en relaciones duraderas y resultados concretos para las empresas que acompanamos.",
+        `La satisfaccion de nuestros clientes es nuestra prioridad: contamos con una nota de 5/5 en Trustfolio, con ${TRUSTFOLIO_REVIEW_COUNT} opiniones verificadas. Esta excelencia se traduce en relaciones duraderas y resultados concretos para las empresas que acompanamos.`,
       ],
     },
     trustfolioReviews: [],
