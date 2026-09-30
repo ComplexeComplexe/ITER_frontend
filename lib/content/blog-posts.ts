@@ -1049,7 +1049,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <h2 id="pro-rata">Clause 8 — Pro-rata Rights</h2>
 <p>Droit des investisseurs de participer aux levées futures pour maintenir leur pourcentage.</p>
 <p><strong>Notre position</strong> : pro-rata standard acceptable. Limitez-les à la prochaine levée uniquement (super pro-rata = à négocier avec prudence).</p>
-<p><strong>Notre conseil</strong> : ne négociez jamais un term sheet seul. Faites relire par un avocat capital-risque ET par un DAF qui a déjà négocié des term sheets. <a href="/contact">Contactez notre équipe</a> pour préparer votre levée.</p>`,
+<p><strong>Notre conseil</strong> : ne négociez jamais un term sheet seul. Faites relire par un avocat capital-risque ET par un DAF qui a déjà négocié des term sheets. <a href="/contact">Contactez notre équipe</a> pour préparer votre levée.</p><p>Avant de négocier les clauses, fiabilisez les hypothèses du modèle et les pièces de la data room. Notre <a href="/services/accompagnement-levee-de-fond">accompagnement en préparation financière de la levée de fonds</a> permet de cadrer ces travaux avec votre équipe et vos conseils.</p>`,
       content: [],
     },
     "due-diligence-financiere-investisseurs": {
@@ -1236,7 +1236,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li>Bridge round : tour d'amorçage auprès des investisseurs existants</li>
 </ol>
 <p>Un <a href="/daf-externalise">DAF externalisé anticipe le cash burn</a> et construit votre forecast à 12 mois.</p>
-<p><a href="/contact">Construire mon forecast avec un DAF</a></p><p>Un <a href="/fractional-cfo-startups">DAF externalisé pour startup et SaaS</a> aide à relier ces scénarios au budget et au calendrier des financements. Pour une activité de R&amp;D longue, le <a href="/daf-externalise/deep-tech">pilotage financier deep tech</a> distingue aussi les jalons techniques et les aides confirmées des financements encore sollicités.</p>`,
+<p><a href="/contact">Construire mon forecast avec un DAF</a></p><p>Un <a href="/fractional-cfo-startups">DAF externalisé pour startup et SaaS</a> aide à relier ces scénarios au budget et au calendrier des financements. Pour une activité de R&amp;D longue, le <a href="/daf-externalise/deep-tech">pilotage financier deep tech</a> distingue aussi les jalons techniques et les aides confirmées des financements encore sollicités.</p><p>Le runway donne un horizon global. Pour identifier la semaine d’une tension et tester un retard d’encaissement, passez au <a href="/services/previsionnel-tresorerie">prévisionnel de trésorerie à 13 semaines</a>.</p>`,
       content: [],
     },
     "tableau-de-bord-financier-startup-12-kpis": {
@@ -2162,7 +2162,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li><strong>L'expert-comptable français</strong> garde la comptabilité de la maison mère ;</li>
 <li><strong>Une direction financière unique</strong> — interne ou <a href="/daf-externalise">DAF externalisé</a> — coordonne les deux : consolidation, prévisionnel de trésorerie groupe, documentation des flux intragroupe, et un reporting qui parle aux deux administrations comme aux investisseurs.</li>
 </ul>
-<p>C'est précisément la configuration de notre cabinet : basés à <a href="/daf-externalise-barcelone">Barcelone</a> avec des équipes à Paris et Toulouse, nos DAF pilotent des fonctions finance des deux côtés de la frontière — voir notre offre de <a href="/services/gestion-financiere-externalisee">gestion financière externalisée</a>.</p>
+<p>C'est précisément la configuration de notre cabinet : basés à <a href="/daf-externalise-barcelone">Barcelone</a> avec une équipe à Paris et un accompagnement à distance ou sur accord à Toulouse, nos DAF pilotent des fonctions finance des deux côtés de la frontière — voir notre offre de <a href="/services/gestion-financiere-externalisee">gestion financière externalisée</a>.</p>
 <h2>FAQ — Filiale espagnole</h2>
 <p><strong>Faut-il un expert-comptable dans chaque pays ?</strong> En pratique, oui. La comptabilité espagnole obéit à des règles et des formats locaux qu'un cabinet français ne produit pas, et inversement. Ce qui doit être unique, c'est le pilotage — pas la tenue des comptes.</p>
 <p><strong>La filiale paie-t-elle l'impôt en France ou en Espagne ?</strong> En Espagne, sur ses bénéfices propres. Les dividendes qu'elle remonte à la maison mère suivent la <a href="/ressources/fiscalite/double-imposition-france-espagne">convention fiscale</a>, avec une retenue à la source plafonnée et un mécanisme d'élimination de la double imposition côté français.</p>

@@ -2,6 +2,13 @@ const contexts: Record<string, { need: string; originPage: string }> = {
   "ia-reporting": { need: "automation", originPage: "/ressources/ia-finance/automatiser-reporting-financier" },
   "ia-chatgpt": { need: "automation", originPage: "/ressources/ia-finance/chatgpt-finance" },
   "ia-finance": { need: "automation", originPage: "/ressources/ia-finance" },
+  tresorerie: { need: "cash", originPage: "/services/previsionnel-tresorerie" },
+  reporting: { need: "cash", originPage: "/services/controle-de-gestion-externalise" },
+  organisation: { need: "daf-pme", originPage: "/services/gestion-financiere-externalisee" },
+  levee: { need: "funding", originPage: "/services/accompagnement-levee-de-fond" },
+  "due-diligence": { need: "funding", originPage: "/services/ma-due-diligence" },
+  "levee-de-fonds": { need: "funding", originPage: "/ressources/blog/checklist-due-diligence-levee-de-fonds" },
+  "audit-structure": { need: "daf-pme", originPage: "/ressources/blog/organiser-sa-direction-financiere" },
   tarifs: { need: "daf-pme", originPage: "/daf-externalise/tarifs" },
   daf: { need: "daf-pme", originPage: "/daf-externalise" },
   startup: { need: "daf-startup", originPage: "/fractional-cfo-startups" },
@@ -13,8 +20,13 @@ const contexts: Record<string, { need: string; originPage: string }> = {
 
 /** Only known CTA contexts are recorded; arbitrary fragments, query strings
  * and referrers (which can contain personal data) never enter analytics. */
-export function getContactContext(hash: string) {
-  return Object.hasOwn(contexts, hash.replace(/^#/, "")) ? contexts[hash.replace(/^#/, "")] : undefined;
+export function getContactContext(hash: string, search = "") {
+  const fragment = hash.replace(/^#/, "");
+  if (Object.hasOwn(contexts, fragment)) return contexts[fragment];
+  const legacyType = new URLSearchParams(search).get("type");
+  return legacyType && ["levee-de-fonds", "audit-structure"].includes(legacyType)
+    ? contexts[legacyType]
+    : undefined;
 }
 
 export const CONTACT_NEEDS = [

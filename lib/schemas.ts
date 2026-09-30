@@ -238,7 +238,7 @@ export function financialServiceSchema(): Record<string, unknown> {
     vatID: "ESB42960849",
     url: `${BASE}/`,
     description:
-      "Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Présent à Barcelone, Paris et Toulouse.",
+      "Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Équipes à Barcelone et Paris ; accompagnement à distance ou sur accord à Toulouse.",
     email: "contact@iteradvisors.com",
     contactPoint: {
       "@type": "ContactPoint",

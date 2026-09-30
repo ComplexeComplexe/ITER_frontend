@@ -130,7 +130,7 @@ export default function ContactPage({
   const [originPage, setOriginPage] = useState<string>();
   useEffect(() => {
     const applyContext = () => {
-      const context = getContactContext(window.location.hash);
+      const context = getContactContext(window.location.hash, window.location.search);
       setNeed(context?.need ?? "");
       setOriginPage(context?.originPage);
     };

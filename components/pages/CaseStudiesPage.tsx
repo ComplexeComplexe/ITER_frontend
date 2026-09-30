@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import { getDocumentedCase } from "@/lib/content/documented-cases";
+import { getPublishedCases } from "@/lib/content/published-cases";
 import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/static-content";
 import { getCaseStudiesContent, type CaseStudy } from "@/lib/content/case-studies";
@@ -33,7 +34,7 @@ function CaseStudyCardWrapper({
   index: number;
   locale: Locale;
 }) {
-  const detail = locale === "fr" ? getDocumentedCase(cs.slug) : undefined;
+  const detail = getDocumentedCase(cs.slug);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
@@ -47,17 +48,17 @@ function CaseStudyCardWrapper({
     >
       <div className="p-6 lg:p-8">
         <div className="flex flex-wrap items-center gap-3 mb-4">
-          <span className="text-xs font-semibold uppercase tracking-widest text-iter-chartreuse bg-iter-chartreuse/10 px-3 py-1 rounded-full">
+          <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet bg-iter-violet/10 px-3 py-1 rounded-full">
             {cs.sectorTag}
           </span>
-          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+          {cs.teamSize && <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <Users size={12} />
             <span>{cs.teamSize}</span>
-          </div>
-          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+          </div>}
+          {cs.duration && <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <Clock size={12} />
             <span>{cs.duration}</span>
-          </div>
+          </div>}
         </div>
 
         <h3 className="text-xl lg:text-2xl font-bold font-heading text-foreground mb-4 leading-tight">
@@ -73,7 +74,7 @@ function CaseStudyCardWrapper({
           </p>
         </div>
 
-        {detail && <Link href={detail.href} className="inline-flex text-sm font-semibold text-iter-violet underline underline-offset-4 mb-4">Lire le cas {detail.company} en détail</Link>}
+        {detail && <Link href={detail.href} className="inline-flex text-sm font-semibold text-iter-violet underline underline-offset-4 mb-4">{locale === "fr" ? `Lire le cas ${detail.company} en détail` : locale === "en" ? `Read the ${detail.company} case (in French)` : `Leer el caso ${detail.company} (en francés)`}</Link>}
         <details className="group mt-4">
           <summary className="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-iter-violet mb-5">
             {locale === "fr" ? "Voir le cas d'usage" : locale === "en" ? "View case study" : "Ver caso de uso"}
@@ -106,6 +107,7 @@ function CaseStudyCardWrapper({
                 </ul>
               </div>
 
+              {locale === "fr" && detail && <p className="text-sm text-muted-foreground mb-5">{detail.limits}</p>}
               {cs.quote && (
                 <div className="bg-muted/30 rounded-xl p-5 mt-4">
                   <Quote size={20} className="text-iter-violet/30 mb-2" />
@@ -140,7 +142,7 @@ export default function CaseStudiesPage({
   cmsNavigation?: CmsNavItem[];
   asSection?: boolean;
 }) {
-  const t = getCaseStudiesContent(locale);
+  const t = { ...getCaseStudiesContent(locale), caseStudies: getPublishedCases(locale) };
   const [filter, setFilter] = useState<"all" | "conseil" | "ecommerce">("all");
 
   const filtered =

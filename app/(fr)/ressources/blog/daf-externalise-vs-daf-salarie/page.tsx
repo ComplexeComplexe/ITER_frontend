@@ -54,15 +54,15 @@ export default function DafExternaliseVsSalariePage() {
       }}
       readingTime={6}
       datePublished="2026-05-01"
-      dateModified="2026-09-13"
+      dateModified="2026-09-30"
       heroImage="/images/blog/covers/daf-externalise-vs-daf-salarie.svg"
       toc={[
-        { id: "contexte", label: "1. Contexte : pourquoi cette question ?" },
-        { id: "cout-total", label: "2. Comparaison des coûts" },
-        { id: "daf-salarie", label: "3. DAF salarié : avantages et inconvénients" },
-        { id: "daf-externalise", label: "4. DAF externalisé : avantages et inconvénients" },
-        { id: "comparaison-directe", label: "5. Comparaison directe (tableau)" },
-        { id: "matrice-decision", label: "6. Matrice de décision" },
+        { id: "contexte", label: "1. Choisir selon le travail à accomplir" },
+        { id: "cout-total", label: "2. Comparer des budgets de même périmètre" },
+        { id: "daf-salarie", label: "3. Quand recruter un DAF salarié ?" },
+        { id: "daf-externalise", label: "4. Quand choisir un DAF externalisé ?" },
+        { id: "comparaison-directe", label: "5. Comparer l’organisation proposée" },
+        { id: "matrice-decision", label: "6. Une décision à partir de votre besoin" },
       ]}
       tldr="Choisissez selon la disponibilité nécessaire, les livrables et le budget total. Un DAF externalisé intervient sur un périmètre convenu ; un poste salarié répond à un besoin de présence quotidienne durable."
       relatedArticles={[
@@ -88,6 +88,7 @@ export default function DafExternaliseVsSalariePage() {
         },
       ]}
     >
+      <p>Pour examiner les missions proposées par Iter, consultez notre <Link href="/daf-externalise">offre de DAF externalisé</Link>.</p>
       <h2 id="contexte">1. Choisir selon le travail à accomplir</h2>
       <p>Un DAF salarié et un DAF externalisé peuvent tous deux piloter un budget, la trésorerie et le reporting. La différence tient à leur disponibilité, à leur intégration dans l’équipe et au périmètre confié. Le nombre de salariés ou le chiffre d’affaires ne suffit pas à imposer un modèle.</p>
       <p>Listez les décisions financières prises chaque semaine, les personnes à encadrer, les échéances et les livrables manquants. Si la direction financière requiert une présence quotidienne durable, le recrutement peut être pertinent. Si le besoin peut être cadré en missions et rendez-vous réguliers, étudiez l’externalisation.</p>

@@ -1,4 +1,5 @@
 import { Locale } from "../i18n";
+import { getDafOfferFacts } from "./offer-facts";
 
 export interface ServiceCard {
   title: string;
@@ -113,11 +114,11 @@ const servicesFr: ServicesContent = {
     benefits: [
       {
         label: "Réduction des coûts",
-        description: "30 à 50 % moins cher qu’un DAF salarié (charges incluses).",
+        description: "Un budget défini selon les livrables et la disponibilité, à comparer au coût complet d’un recrutement.",
       },
       {
         label: "Flexibilité",
-        description: "Missions de 2 jours/mois à temps plein, adaptables à votre charge réelle.",
+        description: getDafOfferFacts("fr").volume,
       },
       {
         label: "Expertise",
@@ -187,7 +188,7 @@ const servicesFr: ServicesContent = {
       {
         question: "Intervenez-vous à l’international ?",
         answer:
-          "Oui, nos bureaux à Barcelone, Paris et Toulouse couvrent la France et l’Espagne. Missions Europe possibles.",
+          getDafOfferFacts("fr").geography,
       },
     ],
   },

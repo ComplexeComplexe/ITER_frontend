@@ -14,6 +14,8 @@ import { serviceSchema, faqPageSchema } from "@/lib/schemas";
 import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
 import PageByline from "@/components/PageByline";
 import CaseProofLinks from "@/components/CaseProofLinks";
+import CashForecastExample from "@/components/finance/CashForecastExample";
+import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 
 const breadcrumbsByLocale: Record<
   Locale,
@@ -74,11 +76,13 @@ export default function ServiceSinglePage({
   heroImage,
 }: ServiceSinglePageProps) {
   const bc = breadcrumbsByLocale[locale];
-  const contactPath = getContactPath(locale);
+  const context = ({ "previsionnel-tresorerie": "tresorerie", "cash-flow-forecast": "tresorerie", "prevision-tesoreria": "tresorerie", "gestion-financiere-externalisee": "organisation", "accompagnement-levee-de-fond": "levee", "fund-raising-support": "levee", "soporte-financiacion": "levee" } as Record<string, string>)[slug ?? ""];
+  const contactPath = getContactPath(locale) + (context ? `#${context}` : "");
+  const isCash = locale === "fr" && slug === "previsionnel-tresorerie";
 
   const basePath = locale === "fr" ? `/services` : `/${locale}/services`;
   const serviceUrl = `${basePath}/${slug || ""}`;
-  const updatedOperations = locale === "fr" && slug === "gestion-financiere-externalisee";
+  const modified = PAGE_REVISIONS[serviceUrl];
 
   const sections = groupBlocksByHeading(page.content);
 
@@ -129,7 +133,7 @@ export default function ServiceSinglePage({
               description: page.heroSubtitle || breadcrumbTitle,
               locale,
               author: FINANCE_AUTHOR,
-              dateModified: updatedOperations ? "2026-09-05" : undefined,
+              dateModified: modified,
             })
           ),
         }}
@@ -177,24 +181,24 @@ export default function ServiceSinglePage({
                 {page.heroSubtitle}
               </p>
             )}
-            <PageByline locale={locale} author={FINANCE_AUTHOR} dateModified={updatedOperations ? "2026-09-05" : undefined} dateLabel={updatedOperations ? "5 septembre 2026" : undefined} className="mb-6 sm:mb-8" />
+            <PageByline locale={locale} author={FINANCE_AUTHOR} dateModified={modified} className="mb-6 sm:mb-8" />
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
-                href={getContactPath(locale)}
+                href={contactPath}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 {locale === "fr"
-                  ? "Prendre rendez-vous"
+                  ? "Décrire mon besoin"
                   : locale === "en"
-                    ? "Book a meeting"
-                    : "Reservar una cita"}
+                    ? "Describe my needs"
+                    : "Describir mi necesidad"}
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <Link
-                href={contactPath}
+                href={isCash ? "#exemple-tresorerie" : "#mission"}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
               >
-                {locale === "fr" ? "Nous contacter" : locale === "en" ? "Contact us" : "Contáctenos"}
+                {locale === "fr" ? (isCash ? "Voir un exemple" : "Comprendre la mission") : locale === "en" ? "Explore the engagement" : "Conocer el servicio"}
               </Link>
             </div>
           </div>
@@ -217,8 +221,9 @@ export default function ServiceSinglePage({
         </section>
       )}
 
+      {isCash && <CashForecastExample />}
       {/* ─── Content sections ─── */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background">
+      <section id="mission" className="py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-3xl">
           {sections.map((section, i) => {
             const Icon = sectionIcons[i % sectionIcons.length];
@@ -383,11 +388,12 @@ export default function ServiceSinglePage({
         </section>
       )}
 
+      {locale === "fr" && slug === "accompagnement-levee-de-fond" && <section className="container max-w-3xl py-10"><h2 className="text-2xl font-semibold mb-4">Préparer votre premier échange</h2><p className="text-muted-foreground">Commencez par la <Link className="text-iter-violet underline" href="/ressources/blog/checklist-due-diligence-levee-de-fonds">checklist des documents de due diligence</Link>, puis consultez les <Link className="text-iter-violet underline" href="/ressources/blog/levee-de-fonds-guide">étapes de préparation d’une levée de fonds</Link>. Ces ressources aident à identifier les pièces disponibles et les travaux à cadrer.</p></section>}
       <TestimonialsSection locale={locale} />
       {locale === "fr" && slug === "accompagnement-levee-de-fond" && (
         <CaseProofLinks slugs={["solarmente-serie-b-cleantech"]} heading="Une mission de préparation financière documentée" />
       )}
-      <CTASection locale={locale} />
+      <CTASection locale={locale} context={context} />
     </PageLayout>
   );
 }

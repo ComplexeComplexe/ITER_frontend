@@ -3,11 +3,11 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
-import { Callout, StatGrid, InlineCta, ProseTable } from '@/components/blog';
+import { Callout, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
-  title: "Flux de trésorerie : calcul, exemple et modèle",
-  description: "Comment calculer les flux de trésorerie ? Formule, exemple chiffré et modèle Excel gratuit. Le guide complet cash flow opérationnel, investissement et financement.",
+  title: "Flux de trésorerie : calcul et prévisionnel",
+  description: "Comprenez les flux de trésorerie avec un exemple fictif : encaissements, décaissements, BFR et passage à un prévisionnel de trésorerie.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/flux-de-tresorerie",
     // SEO-AUD-0824 §2 — cet article a bien une version EN et une version ES,
@@ -49,7 +49,7 @@ export default function FluxDeTresorerieePage() {
         jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={10}
-      dateModified="2026-05-01"
+      dateModified="2026-09-30"
       heroImage="/images/blog/covers/flux-de-tresorerie.svg"
       toc={[
         { id: "definition", label: "1. Définition et importance" },
@@ -59,7 +59,7 @@ export default function FluxDeTresorerieePage() {
         { id: "gestion-optimisation", label: "5. Gestion et optimisation du BFR" },
         { id: "outils-pilotage", label: "6. Outils et pilotage" },
       ]}
-      tldr="Les flux de trésorerie mesurent les entrées/sorties d'argent réel. Essentiels pour anticiper les besoins de financement. Le prévisionnel trésorerie est l'outil indispensable pour piloter le cash et éviter les crises de liquidité. Un BFR bien géré fait gagner 30-60 jours de cash à l'entreprise."
+      tldr="Les flux de trésorerie suivent l’argent encaissé et décaissé. Leur variation s’ajoute au solde d’ouverture. Un prévisionnel précise les dates, les hypothèses et les tensions possibles ; il ne garantit pas un encaissement ni un financement."
       relatedArticles={[
         {
           url: "/ressources/blog/essentiels-outils-tech-finance",
@@ -86,14 +86,12 @@ export default function FluxDeTresorerieePage() {
         Pourquoi c'est critique ?
       </p>
       <ul>
-        <li><strong>Le cash tue plus d'entreprises que les pertes.</strong> Vous pouvez être rentable sur le papier mais en crise de liquidité en réalité (ex: facturation 30 jours, paiements fournisseurs 7 jours = trésorerie négative).</li>
-        <li><strong>C'est le baromètre de la santé financière.</strong> Un flux positif = entreprise saine. Un flux négatif = problème immédiat.</li>
+        <li><strong>Résultat et trésorerie ne se confondent pas.</strong> Vous pouvez être rentable sur le papier mais en crise de liquidité en réalité (ex: facturation 30 jours, paiements fournisseurs 7 jours = trésorerie négative).</li>
+        <li><strong>Le contexte compte.</strong> Un flux négatif peut financer un investissement ; un flux positif peut provenir d’un emprunt. Examinez sa cause et le solde disponible.</li>
         <li><strong>Le cash finance la croissance.</strong> Pour recruter, investir, lancer un produit, il faut du cash. Les profits arrivent trop tard.</li>
       </ul>
 
-      <Callout type="warning" title="Réalité 2026">
-        58 % des PMEs en croissance rapide rencontrent une crise de trésorerie au moins une fois (source Iter Advisors). Cause : mauvaise gestion du BFR (délais de paiement clients vs fournisseurs).
-      </Callout>
+      <Callout type="warning" title="Distinguer prévision et certitude">Une recette attendue reste une hypothèse tant que le paiement n’est pas confirmé. Conservez un scénario de retard et vérifiez les dates des principales échéances.</Callout>
 
       <h2 id="trois-types">2. Les trois types de flux</h2>
       <p>
@@ -117,7 +115,7 @@ export default function FluxDeTresorerieePage() {
             <tr>
               <td><strong>Flux d'investissement</strong></td>
               <td>Acquisition/cession d'actifs (équipements, immobilier, acquisitions)</td>
-              <td>Achat machine (-), vente d'équipement (-), acquisition (+/- selon contexte)</td>
+              <td>Achat machine (-), vente d’équipement (+), acquisition payée (-)</td>
             </tr>
             <tr>
               <td><strong>Flux de financement</strong></td>
@@ -148,7 +146,7 @@ export default function FluxDeTresorerieePage() {
         <li>Moins : Charges décaissées (loyer, énergie, assurances, etc.)</li>
       </ul>
       <p>
-        <strong>Exemple concret (PME €5M de CA) :</strong>
+        <strong>Exemple pédagogique fictif, montants du mois :</strong>
       </p>
       <ul>
         <li>Ventes encaissées le mois : €300k (facturation 30 jours moyenne)</li>
@@ -158,9 +156,7 @@ export default function FluxDeTresorerieePage() {
         <li><strong>Flux opérationnel = 300 - 120 - 100 - 40 = €40k</strong></li>
       </ul>
 
-      <Callout type="success" title="Best practice">
-        Calculez votre flux opérationnel CHAQUE SEMAINE (pas attendre le mois). Un outil comme Agicap vous l'automatise. Vous voyez les crises de trésorerie 2-3 semaines avant qu'elles n'arrivent.
-      </Callout>
+      <Callout type="success" title="Un suivi adapté à vos échéances">Fixez la fréquence de revue selon les risques à suivre. Les outils peuvent faciliter la collecte ; les dates de paiement et les hypothèses restent à vérifier.</Callout>
 
       <h2 id="previsionnel">4. Le prévisionnel de trésorerie</h2>
       <p>
@@ -172,34 +168,18 @@ export default function FluxDeTresorerieePage() {
       <ul>
         <li><strong>Encaissements attendus</strong> (ventes, crédits, levées)</li>
         <li><strong>Décaissements attendus</strong> (achats, salaires, taxes, remboursements dettes)</li>
-        <li><strong>Solde de trésorerie</strong> = Encaissements - Décaissements</li>
-        <li><strong>Trésorerie cumulée</strong> = Solde précédent + Solde du mois</li>
+        <li><strong>Variation de trésorerie</strong> = Encaissements - Décaissements</li>
+        <li><strong>Solde de fin de période</strong> = Solde d’ouverture + Variation de trésorerie</li>
       </ul>
       <p>
-        Si la trésorerie cumulée devient négative = vous avez besoin de financement (découvert, ligne de crédit, dilution equity).
+        Si le solde prévu passe sous votre seuil de sécurité, examinez les hypothèses, les échéances et les solutions de financement possibles avant la date concernée.
       </p>
 
-      <StatGrid items={[
-        {
-          label: "Horizon prévisionnel",
-          value: "3-6 mois",
-          sublabel: "Minimum pour anticiper",
-        },
-        {
-          label: "Fréquence mise à jour",
-          value: "Hebdomadaire",
-          sublabel: "Ou bi-hebdomadaire en croissance",
-        },
-        {
-          label: "Réduction crises",
-          value: "85%",
-          sublabel: "Avec prévisionnel robuste",
-        },
-      ]} />
+      <p>Notre <Link href="/services/previsionnel-tresorerie">accompagnement en prévisionnel de trésorerie à 13 semaines</Link> présente les données à préparer, un exemple fictif et les livrables à cadrer.</p>
 
       <h2 id="gestion-optimisation">5. Gestion et optimisation du BFR</h2>
       <p>
-        Le BFR (Besoin en Fonds de Roulement) est la différence entre vos délais de paiement client et fournisseur. C'est le "trou" de trésorerie que vous devez financer.
+        Le BFR représente le besoin de financement lié au cycle d’exploitation. Il dépend notamment des stocks, des créances et des dettes d’exploitation ; il ne se réduit pas à une différence entre deux délais.
       </p>
       <p>
         <strong>Formule :</strong> BFR = (Stock + Créances clients) - Dettes fournisseurs
@@ -208,16 +188,16 @@ export default function FluxDeTresorerieePage() {
         <strong>Exemple :</strong>
       </p>
       <ul>
-        <li>Vous facturez à 30 jours → créances clients = 1 mois de CA = €400k (si CA €12M)</li>
-        <li>Vos fournisseurs paient à 30 jours → dettes = 1 mois d'achats = €180k</li>
+        <li>Exemple fictif sans stock : créances clients ouvertes = 400 000 €</li>
+        <li>Dettes fournisseurs ouvertes = 180 000 €</li>
         <li><strong>BFR = 400 - 180 = €220k de trésorerie "gelée"</strong></li>
       </ul>
       <p>
         Pour réduire le BFR (et libérer du cash) :
       </p>
       <ul>
-        <li><strong>Réduire les délais clients</strong> : Facturez à 15 jours au lieu de 30 (gain €200k dans l'exemple)</li>
-        <li><strong>Augmenter les délais fournisseurs</strong> : Négociez 60 jours au lieu de 30 (gain €180k)</li>
+        <li><strong>Suivre les encaissements</strong> : facturer sans retard, résoudre les litiges et confirmer les échéances</li>
+        <li><strong>Examiner les échéances fournisseurs</strong> : négocier dans le respect des règles et accords applicables</li>
         <li><strong>Optimiser le stock</strong> : Moins de stock = moins de cash gelé</li>
       </ul>
 
@@ -258,14 +238,14 @@ export default function FluxDeTresorerieePage() {
 
       <InlineCta
         title="Vous ne maîtrisez pas votre trésorerie ?"
-        body="Nos CFOs externalisés implanent un système complet : prévisionnel robuste, optimisation BFR, outils cloud. En 4-8 semaines, vous avez une visibilité 6 mois et 30-60 jours de cash libéré."
-        ctaLabel="Diagnostic trésorerie gratuit"
-        ctaHref="/contact?type=diagnostic-tresorerie"
+        body="Décrivez vos échéances, vos outils et les données disponibles pour cadrer un prévisionnel et son suivi. Le périmètre et les délais sont définis avant le démarrage."
+        ctaLabel="Décrire mon besoin de trésorerie"
+        ctaHref="/contact#tresorerie"
       />
 
       <h2>Conclusion : la trésorerie, c'est votre survie</h2>
       <p>
-        Le cash est le nerf de la guerre. Les entreprises qui gèrent activement leur trésorerie croissent 2x plus vite et ont 5x moins de crises de liquidité.
+        Un suivi utile rend les incertitudes visibles, attribue les mises à jour et prépare les décisions. Son effet dépend de la qualité des données et des actions réellement engagées.
       </p>
       <p>
         <strong>Plan d'action :</strong>

@@ -5,6 +5,7 @@
 
 import type { StrapiServiceSinglePage } from "@/lib/static-content";
 import type { Locale } from "@/lib/i18n";
+import { cashForecastService } from "./content/cash-forecast-service";
 
 // ── Routing constants (kept here so service pages don't import lib/strapi) ──
 
@@ -60,119 +61,7 @@ export function getServiceSlugsForLocale(locale: Locale): string[] {
 }
 
 export const fallbackServicePages: Record<string, StrapiServiceSinglePage> = {
-  "previsionnel-tresorerie": {
-    heroTitle: "Prévisionnel de Trésorerie",
-    heroSubtitle: "Modèle Glissant 13 Semaines - Anticipez vos besoins de cash",
-    content: [
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "Construisez un prévisionnel de trésorerie robuste pour anticiper les tensions de cash, optimiser votre BFR et sécuriser votre runway financier.",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        children: [
-          {
-            type: "text",
-            text: "Les enjeux en 2026",
-          },
-        ],
-      },
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "En 2026, les entreprises font face à une pression accrue sur leur liquidité : hausse des taux d'intérêt, délais de paiement allongés et environnement macro incertain. Les outils de prévision de trésorerie se sont digitalisés (Agicap, Fygr, Pennylane) et l'analyse en temps réel est devenue accessible à toutes les tailles d'entreprise. Un prévisionnel glissant n'est plus un luxe — c'est le tableau de bord de survie de la PME moderne.",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        children: [
-          {
-            type: "text",
-            text: "Pourquoi un prévisionnel de trésorerie ?",
-          },
-        ],
-      },
-      {
-        type: "list",
-        format: "unordered",
-        children: [
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Identifier les périodes de tension de trésorerie",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Optimiser votre besoin en fonds de roulement (BFR)",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Planifier vos besoins de financement",
-              },
-            ],
-          },
-          {
-            type: "list-item",
-            children: [
-              {
-                type: "text",
-                text: "Pilotage mensuel de votre trésorerie",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "Notre équipe vous aide à mettre en place et suivre un prévisionnel de trésorerie glissant sur 13 semaines, adapté à votre secteur d'activité.",
-          },
-        ],
-      },
-    ],
-    faq: [
-      {
-        id: 1,
-        question: "Quel est le délai pour mettre en place un prévisionnel ?",
-        answer: [
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "text",
-                text: "En général, 2 à 3 semaines pour définir la structure et les hypothèses, puis 1 à 2 semaines pour l'intégration dans votre système.",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-    seo: {},
-  },
+  "previsionnel-tresorerie": cashForecastService,
 
   "gestion-financiere-externalisee": {
   "heroTitle": "Gestion financière externalisée : organiser les opérations et le reporting",
