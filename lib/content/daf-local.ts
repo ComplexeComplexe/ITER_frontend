@@ -1,3 +1,4 @@
+import { getDafOffer } from "./daf-offer";
 import { Locale } from "../i18n";
 
 export interface DafLocalContent {
@@ -132,7 +133,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
         {
           question: "How much does a fractional CFO cost in Barcelona?",
           answer:
-            "Our Barcelona packages range from EUR 2,000/month (2-3 days) to EUR 7,000+/month (8+ days). Rates are aligned with the Spanish market, with a daily rate of EUR 750-1,100 excl. VAT.",
+            `Iter Advisors packages range from ${getDafOffer("en").price}. ${getDafOffer("en").billing} ${getDafOffer("en").commitment}`,
         },
         {
           question: "Do your fractional CFOs speak Spanish?",
@@ -194,7 +195,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
         {
           question: "Cuanto cuesta un CFO externalizado en Barcelona?",
           answer:
-            "Nuestras formulas en Barcelona van de 2.000 EUR/mes (2-3 dias) a 7.000+ EUR/mes (8+ dias). Las tarifas estan alineadas con el mercado espanol, con una tarifa diaria de 750 a 1.100 EUR sin IVA.",
+            `Las fórmulas de Iter Advisors van de ${getDafOffer("es").price}. ${getDafOffer("es").billing} ${getDafOffer("es").commitment}`,
         },
         {
           question: "Su CFO externalizado habla espanol?",
@@ -233,7 +234,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
           heading: "Pourquoi choisir un DAF externalisé à Paris ?",
           content: [
             "Le marché parisien se caractérise par une forte densité de startups tech (Station F, incubateurs), un accès privilégié aux investisseurs (VCs de la place parisienne, Bpifrance) et un coût salarial élevé pour les profils financiers seniors.",
-            "Un DAF externalisé à Paris permet de bénéficier d'une expertise de direction financière sans supporter le coût d'un recrutement à temps plein (120-180 K EUR brut annuel à Paris pour un DAF senior). Nos formules démarrent à 2 000 EUR/mois.",
+            `Un DAF externalisé à Paris apporte une direction financière sur un périmètre convenu, sans recrutement à temps plein. Les formules Iter Advisors vont de ${getDafOffer("fr").price}, selon le périmètre et le profil mobilisé.`,
           ],
         },
         {
@@ -292,7 +293,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
           heading: "Why choose a fractional CFO in Paris?",
           content: [
             "The Parisian market is characterized by a high density of tech startups (Station F, incubators), privileged access to investors (Parisian VCs, Bpifrance) and high salary costs for senior finance profiles.",
-            "A fractional CFO in Paris provides finance leadership expertise without the cost of a full-time hire (EUR 120-180K gross annually in Paris for a senior CFO). Our packages start at EUR 2,000/month.",
+            `A fractional CFO in Paris provides finance leadership for a defined scope without recruiting a full-time CFO. Iter Advisors packages range from ${getDafOffer("en").price}, depending on the scope and seniority required.`,
           ],
         },
         {
@@ -317,7 +318,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
         {
           question: "How much does a fractional CFO cost in Paris?",
           answer:
-            "Our Paris packages range from EUR 2,000/month (2-3 days) to EUR 8,000+/month (8+ days). The daily rate is EUR 900-1,250 excl. VAT, in line with the Parisian market.",
+            `Iter Advisors packages range from ${getDafOffer("en").price}. ${getDafOffer("en").billing} ${getDafOffer("en").commitment}`,
         },
         {
           question: "Do you work on-site in Paris?",
@@ -349,7 +350,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
           heading: "Por que elegir un CFO externalizado en Paris?",
           content: [
             "El mercado parisino se caracteriza por una alta densidad de startups tech (Station F, incubadoras), acceso privilegiado a inversores (VCs parisinos, Bpifrance) y un coste salarial elevado para perfiles financieros senior.",
-            "Un CFO externalizado en Paris permite beneficiarse de una experiencia de direccion financiera sin soportar el coste de una contratacion a tiempo completo (120-180 K EUR brutos anuales en Paris para un CFO senior). Nuestras formulas empiezan en 2.000 EUR/mes.",
+            `Un CFO externalizado en París aporta dirección financiera sobre un alcance acordado, sin contratar a tiempo completo. Las fórmulas de Iter Advisors van de ${getDafOffer("es").price}, según el alcance y la experiencia necesaria.`,
           ],
         },
         {
@@ -374,7 +375,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
         {
           question: "Cuanto cuesta un CFO externalizado en Paris?",
           answer:
-            "Nuestras formulas en Paris van de 2.000 EUR/mes (2-3 dias) a 8.000+ EUR/mes (8+ dias). La tarifa diaria se situa entre 900 y 1.250 EUR sin IVA, en linea con el mercado parisino.",
+            `Las fórmulas de Iter Advisors van de ${getDafOffer("es").price}. ${getDafOffer("es").billing} ${getDafOffer("es").commitment}`,
         },
         {
           question: "Intervienen en sitio en Paris?",

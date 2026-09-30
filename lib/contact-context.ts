@@ -1,4 +1,8 @@
 const contexts: Record<string, { need: string; originPage: string }> = {
+  "ia-reporting": { need: "automation", originPage: "/ressources/ia-finance/automatiser-reporting-financier" },
+  "ia-chatgpt": { need: "automation", originPage: "/ressources/ia-finance/chatgpt-finance" },
+  "ia-finance": { need: "automation", originPage: "/ressources/ia-finance" },
+  tarifs: { need: "daf-pme", originPage: "/daf-externalise/tarifs" },
   daf: { need: "daf-pme", originPage: "/daf-externalise" },
   startup: { need: "daf-startup", originPage: "/fractional-cfo-startups" },
   toulouse: { need: "daf-pme", originPage: "/daf-externalise-toulouse" },
@@ -14,6 +18,7 @@ export function getContactContext(hash: string) {
 }
 
 export const CONTACT_NEEDS = [
+  { value: "automation", fr: "IA et automatisation du reporting", en: "AI and reporting automation", es: "IA y automatización del reporting" },
   { value: "daf-pme", fr: "DAF pour une PME", en: "CFO for an SME", es: "CFO para una pyme" },
   { value: "daf-startup", fr: "DAF pour une startup / SaaS", en: "CFO for a startup / SaaS", es: "CFO para una startup / SaaS" },
   { value: "cash", fr: "Trésorerie, marge ou reporting", en: "Cash flow, margins or reporting", es: "Tesorería, margen o reporting" },

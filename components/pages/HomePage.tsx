@@ -8,12 +8,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import {
   ArrowRight,
-  Calendar,
   CheckCircle2,
   TrendingUp,
   PieChart,
   Wallet,
-  FileText,
   BarChart3,
   Briefcase,
   Search,
@@ -27,7 +25,6 @@ import {
   AlertTriangle,
   Banknote,
   ChevronDown,
-  Mail,
   Users,
   UserPlus,
   CreditCard,
@@ -45,48 +42,9 @@ import { strapiMediaUrl } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import HeroSection from "@/components/Home/HeroSection";
 
-/* ─── Animated Counter Hook ─── */
-function AnimatedCounter({
-  target,
-  suffix = "",
-}: {
-  target: number;
-  suffix?: string;
-}) {
-  // SSR fallback: render the real target value on the server so Google
-  // never indexes "0 Entreprises accompagnees". The client will animate
-  // from 0 to target after hydration when the element enters the viewport.
-  const [count, setCount] = useState(target);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    // Reset to 0 on mount so the animation can play from 0 -> target
-    setCount(0);
-  }, []);
-
-  useEffect(() => {
-    if (!isInView || hasAnimated) return;
-    setHasAnimated(true);
-    const duration = 1500;
-    const startTime = Date.now();
-    const step = () => {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [isInView, target, hasAnimated]);
-
-  return (
-    <span ref={ref}>
-      {count}
-      {suffix}
-    </span>
-  );
+/* Keep published figures stable for readers and rendered search crawls. */
+function PublishedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
+  return <span>{target}{suffix}</span>;
 }
 
 /* ─── Client Logos ─── */
@@ -262,19 +220,14 @@ export default function HomePage({
   homepage?: StrapiHomepage | null;
 }) {
   const t = getHomeContent(locale);
-  const contactPath = getContactPath(locale);
 
-  // Hero data — the keyword rotator state and animation now live inside
-  // HeroSection (see components/Home/HeroSection.tsx — FINAL-03 refactor).
+  // Stable hero copy, with existing CMS fallbacks for translated pages.
   const heroTitleRaw =
     homepage?.heroTitle || `${t.hero.h1.before}${t.hero.h1.highlight}${t.hero.h1.after}`;
   const heroSubtitle = homepage?.heroSubtitle || t.hero.h2;
   const heroCtaLabel = t.hero.cta;
   const heroCtaUrl = getContactPath(locale);
 
-  const cmsValueProps = homepage?.valuePropositions && homepage.valuePropositions.length > 0
-    ? homepage.valuePropositions
-    : null;
   // CMS stats disabled: persistent locale issues (ES labels appearing on FR pages)
   // Using static stats from getHomeContent() which are correctly translated per locale
   const cmsWhyChoose = homepage?.whyChooseItems && homepage.whyChooseItems.length > 0
@@ -290,19 +243,7 @@ export default function HomePage({
       return mName === name;
     });
   }).sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
-  const heroAvatars = team
-    .filter((m) => m.showInHero)
-    .map((m) => {
-      // Try Strapi first, then fallback to local image
-      const strapiPhotoUrl = strapiMediaUrl(m.photo);
-      const localPhotoSlug = `${m.firstName}-${m.lastName}`.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[̀-ͯ]/g, '');
-      const localPhotoUrl = `/images/team/${localPhotoSlug}.jpg`;
-      return {
-        initials: `${m.firstName?.[0] ?? ""}${m.lastName?.[0] ?? ""}`.toUpperCase(),
-        imageUrl: strapiPhotoUrl || localPhotoUrl, // Use Strapi if available, else local
-        name: `${m.firstName} ${m.lastName}`.trim(),
-      };
-    });
+
 
   const servicesRef = useRef<HTMLDivElement>(null);
   const servicesInView = useInView(servicesRef, {
@@ -429,7 +370,7 @@ export default function HomePage({
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {t.hrServices.map((s, i) => (
-                <ServiceCard key={s.title} icon={hrServiceIcons[i] ?? Users} title={s.title} desc={s.desc} index={i + 5} theme="chartreuse" />
+                <ServiceCard key={s.title} icon={hrServiceIcons[i] ?? Users} title={s.title} desc={s.desc} index={i + 5} theme="chartreuse" href={locale === "fr" ? ["/drh-externalise", "/services/recrutement-talent-acquisition", "/services/gestion-paie-charges-sociales", "/services/formation-developpement", "/services/conformite-droit-travail", "/drh-externalise"][i] : undefined} />
               ))}
             </div>
           </div>
@@ -469,7 +410,7 @@ export default function HomePage({
                 <div className="grid grid-cols-3 gap-6 text-center">
                   <div>
                     <div className="text-2xl font-bold text-iter-violet">
-                      <AnimatedCounter target={15} suffix="+" />
+                      <PublishedCounter target={15} suffix="+" />
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">
                       Experts CFO
@@ -477,7 +418,7 @@ export default function HomePage({
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-iter-violet">
-                      <AnimatedCounter target={CLIENTS_ACCOMPAGNES} suffix="+" />
+                      <PublishedCounter target={CLIENTS_ACCOMPAGNES} suffix="+" />
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">
                       Clients
@@ -727,7 +668,7 @@ export default function HomePage({
                     className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10"
                   >
                     <div className="text-4xl lg:text-5xl font-bold text-iter-chartreuse mb-2">
-                      <AnimatedCounter target={numVal} suffix={suffix} />
+                      <PublishedCounter target={numVal} suffix={suffix} />
                     </div>
                     <div className="text-sm text-white/60">
                       <strong>{stat.bold}</strong>{stat.rest}

@@ -38,6 +38,18 @@ describe("Contact qualification and attribution", () => {
     expect(events()[0]).toMatchObject({ origin_page: "/fractional-cfo-startups", lead: { main_need: "daf-startup" } });
     expect(screen.getByText(/Votre message a bien été envoyé/)).toBeInTheDocument();
   });
+  it("keeps AI context and optional company/message without inventing a booking", async () => {
+    window.history.replaceState({}, "", "/contact#ia-reporting");
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true }); vi.stubGlobal("fetch", fetchMock);
+    const { container } = render(<ContactPage locale="fr" />);
+    expect(screen.getByLabelText(/Votre priorité/)).toHaveValue("automation");
+    expect(container.querySelector('[name="company"]')).not.toBeRequired();
+    expect(container.querySelector('[name="message"]')).not.toBeRequired();
+    expect(screen.getByText(/Aucun rendez-vous n’est réservé automatiquement/)).toBeInTheDocument();
+    fillAndSubmit(container);
+    await waitFor(() => expect(events()).toHaveLength(1));
+    expect(events()[0]).toMatchObject({ origin_page:"/ressources/ia-finance/automatiser-reporting-financier", lead:{main_need:"automation"} });
+  });
   it("retains qualification after failure and records conversion only on a successful retry", async () => {
     const fetchMock = vi.fn().mockResolvedValueOnce({ ok: false, json: async () => ({}) }).mockResolvedValueOnce({ ok: true });
     vi.stubGlobal("fetch", fetchMock);

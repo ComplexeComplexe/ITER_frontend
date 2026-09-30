@@ -445,7 +445,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       sections: [
         {
           content: [
-            "Choisissez un périmètre de direction financière, avec un forfait mensuel et des livrables définis au devis. Les formules récurrentes vont de **3 000 à 8 000 € HT par mois** selon le profil et la complexité.",
+            `Choisissez un périmètre de direction financière, avec un forfait mensuel et des livrables définis au devis. Les formules récurrentes vont de **${offerFr.price}** selon le profil et la complexité.`,
             "Retrouvez ci-dessous la grille officielle, des exemples de budget et les éléments à cadrer. Pour comparer les modes de facturation et les alternatives, consultez le **[guide du coût d’un DAF externalisé](/ressources/blog/cout-daf-externalise-tarifs-prix-2026)**.",
           ],
         },
