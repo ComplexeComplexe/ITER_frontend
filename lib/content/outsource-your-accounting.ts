@@ -41,7 +41,7 @@ const content: Record<Locale, OutsourceYourAccountingContent> = {
       {
         heading: "Pourquoi externaliser votre comptabilité ?",
         content: [
-          "Conformité garantie : Nous assurons que votre comptabilité respecte les normes françaises et les déclarations obligatoires.",
+          "Contrôles de conformité : les échéances, normes applicables et responsabilités de production et de validation sont définies avec le professionnel compétent.",
           "Coûts prévisibles : Pas de surprises, pas de factures d'expert-comptable imprévisibles.",
           "Libérez votre temps : Votre équipe se concentre sur le business, pas sur les déclarations fiscales.",
           "Expertise externe : Vous accédez à des experts certifiés sans les frais d'une embauche interne.",

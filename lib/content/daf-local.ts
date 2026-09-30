@@ -278,7 +278,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
     },
     en: {
       meta: {
-        title: "Outsourced CFO in Paris from 2 Days/Month | Iter",
+        title: "Outsourced CFO in Paris | Iter Advisors",
         description:
           "Senior CFOs for Paris-based startups and SMEs. Reporting, cash flow, fundraising. Starting within 2 weeks.",
       },
@@ -323,7 +323,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
         {
           question: "Do you work on-site in Paris?",
           answer:
-            "Yes, our CFOs work in hybrid mode: 1-2 days per week on-site at your Paris offices, and the rest remotely. We adapt to your needs.",
+            "Our CFOs can work in hybrid mode. On-site visits and remote work are agreed according to the scope, availability and needs of your Paris team.",
         },
         {
           question: "Can you help with Bpifrance?",

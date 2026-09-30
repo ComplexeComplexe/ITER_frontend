@@ -347,7 +347,7 @@ const fallbackServicePagesEs: Record<string, StrapiServiceSinglePage> = {
       {
         id: 1,
         question: "¿Con qué frecuencia proporcionan reportes?",
-        answer: [createParagraph("Entregamos cuadros de mando mensuales en los 10 días posteriores al cierre. Durante períodos críticos (captación de fondos, M&A, reestructuración), pasamos a un rythmo semanal o quincenal con revisiones específicas según el contexto.")],
+        answer: [createParagraph("Entregamos cuadros de mando mensuales en los 10 días posteriores al cierre. Durante períodos críticos (captación de fondos, M&A, reestructuración), pasamos a un ritmo semanal o quincenal con revisiones específicas según el contexto.")],
       },
       {
         id: 2,

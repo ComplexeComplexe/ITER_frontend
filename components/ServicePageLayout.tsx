@@ -62,7 +62,7 @@ export default function ServicePageLayout({
           <Breadcrumb
             locale={locale}
             items={[
-              { label: locale === "fr" ? "Services" : "Services", href: "/services" },
+              { label: locale === "es" ? "Servicios" : "Services", href: locale === "fr" ? "/services" : `/${locale}/services` },
               { label: breadcrumbLabel },
             ]}
           />
@@ -91,7 +91,7 @@ export default function ServicePageLayout({
             {t.tldr && (
               <div className="mb-8 p-6 bg-iter-chartreuse/10 border-l-4 border-iter-chartreuse rounded-r-lg">
                 <p className="text-sm font-semibold text-foreground mb-2">
-                  {locale === "fr" ? "En une ligne" : "One-liner"}
+                  {locale === "fr" ? "En une ligne" : locale === "es" ? "En breve" : "In brief"}
                 </p>
                 <p className="text-sm sm:text-base text-foreground leading-relaxed">
                   {t.tldr}
@@ -104,7 +104,7 @@ export default function ServicePageLayout({
               href={getContactPath(locale)}
               className="inline-flex items-center justify-center sm:justify-start gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-2"
             >
-              {locale === "fr" ? "Demander un devis" : "Request a quote"}
+              {locale === "fr" ? "Décrire mon besoin" : locale === "es" ? "Describir mi necesidad" : "Describe my needs"}
               <ArrowRight size={18} />
             </Link>
           </div>
@@ -123,10 +123,11 @@ export default function ServicePageLayout({
         <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/5">
           <div className="container max-w-3xl">
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-12 text-center">
-              {locale === "fr" ? "Avis de nos clients" : "Client Reviews"}
+              {locale === "fr" ? "Avis de nos clients" : locale === "es" ? "Opiniones de clientes" : "Client reviews"}
             </h2>
             <ClientTestimonials
               testimonials={t.testimonials}
+              locale={locale}
               trustfolioUrl={trustfolioUrl}
             />
           </div>
@@ -140,7 +141,7 @@ export default function ServicePageLayout({
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-8">
               {locale === "fr"
                 ? "Sources et références"
-                : "Sources and References"}
+                : locale === "es" ? "Fuentes y referencias" : "Sources and References"}
             </h2>
             <div className="prose prose-sm sm:prose-base max-w-none">
               <ul className="space-y-3">
@@ -154,7 +155,7 @@ export default function ServicePageLayout({
             <p className="text-xs text-muted-foreground mt-8 pt-8 border-t">
               {locale === "fr"
                 ? "Les chiffres et références citées dans cet article proviennent de sources publiques officielles. Nous nous engageons à maintenir la pertinence et l'exactitude de ces informations."
-                : "All figures and references mentioned in this article come from official public sources. We commit to maintaining accuracy and relevance of this information."}
+                : locale === "es" ? "Las referencias se facilitan para comprobar el alcance y las condiciones aplicables." : "All figures and references mentioned in this article come from official public sources. We commit to maintaining accuracy and relevance of this information."}
             </p>
           </div>
         </section>

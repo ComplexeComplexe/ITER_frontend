@@ -79,6 +79,10 @@ describe("Contact qualification and attribution", () => {
     expect(getContactContext("", "?type=__proto__")).toBeUndefined();
     expect(getContactContext("", "?type=private@example.com")).toBeUndefined();
     expect(getContactContext("", "?type=audit-structure")?.need).toBe("daf-pme");
+    expect(getContactContext("#diagnostic-finance")?.need).toBe("daf-pme");
+    expect(getContactContext("", "?type=stack-fintech")?.need).toBe("automation");
+    expect(getContactContext("#daf-drh-synergie")?.need).toBe("rh");
+    expect(getContactContext("#formation-cfo")?.need).toBe("other");
   });
   it("retains qualification after failure and records conversion only on a successful retry", async () => {
     const fetchMock = vi.fn().mockResolvedValueOnce({ ok: false, json: async () => ({}) }).mockResolvedValueOnce({ ok: true });

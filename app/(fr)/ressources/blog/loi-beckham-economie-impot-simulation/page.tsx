@@ -112,7 +112,7 @@ export default function Page() {
         certaine seuil.
       </Callout>
 
-      <h2 id="tableau-simulation">Simulation salaire par salaire : votre économie réelle de 60 000 € à 300 000 €</h2>
+      <h2 id="tableau-simulation">Simulation indicative : de 30 000 € à 120 000 €</h2>
 
       <p>
         Le tableau ci-dessous compare l&apos;imposition IRPF classique et l&apos;imposition
@@ -276,92 +276,15 @@ export default function Page() {
         </li>
       </ul>
 
-      <h2 id="comparaison-france">Comparaison avec la France : jusqu'à 23 points d'écart de taux marginal</h2>
-
-      <p>
-        Pour les cadres et dirigeants qui partent d&apos;une situation fiscale française,
-        la comparaison est encore plus marquante. En France en 2026, un salarié à
-        120 000 € brut supporte :
-      </p>
-
-      <ProseTable>
-        <thead>
-          <tr>
-            <th>Régime</th>
-            <th>Impôt sur 120 000 €</th>
-            <th>Taux effectif estimé</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Barème IR français (2026)</td>
-            <td>~36 000 €</td>
-            <td>~30 %</td>
-          </tr>
-          <tr>
-            <td>
-              + Prélèvements sociaux FR
-              <br />
-              <small>(CSG/CRDS sur revenus d&apos;activité : 9,7 %)</small>
-            </td>
-            <td>~11 640 €</td>
-            <td>+9,7 %</td>
-          </tr>
-          <tr>
-            <td>
-              <strong>Total France (IR + PS)</strong>
-            </td>
-            <td>
-              <strong>~47 640 €</strong>
-            </td>
-            <td>
-              <strong>~39,7 %</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>IRPF classique Espagne</td>
-            <td>~42 000 €</td>
-            <td>~35 %</td>
-          </tr>
-          <tr>
-            <td>
-              <strong>Régime Beckham Espagne</strong>
-            </td>
-            <td>
-              <strong>28 800 €</strong>
-            </td>
-            <td>
-              <strong>24 %</strong>
-            </td>
-          </tr>
-        </tbody>
-      </ProseTable>
-
-      <p>
-        Pour le profil 120 000 €, la comparaison France vs Beckham fait apparaître une
-        économie annuelle de l&apos;ordre de <strong>18 840 €</strong> (47 640 € − 28 800 €),
-        soit <strong>plus de 113 000 € sur 6 ans</strong>. Au-delà de l&apos;argument
-        fiscal pur, cette réalité chiffrée éclaire les décisions d&apos;implantation
-        que prennent de nombreux dirigeants et cadres supérieurs.
-      </p>
-
-      <p>
-        La comparaison reste néanmoins incomplète sans intégrer d&apos;autres paramètres :
-        le coût de la vie (Barcelone vs Paris), les droits à retraite acquis dans chaque
-        système, la couverture sociale, les cotisations salariales effectives, et la
-        situation patrimoniale globale (IFI en France, Impuesto sobre el Patrimonio en
-        Espagne). Une analyse de votre situation personnelle avec un expert fiscal
-        franco-espagnol reste indispensable avant toute décision.
-      </p>
-
-      <Callout type="success" title="Beckham + Barcelone : l'équation gagnante pour les cadres seniors">
-        Pour un cadre à 80 000 € ou plus envisageant une expatriation en Espagne, le
-        régime Beckham représente une économie fiscale concrète et quantifiable : de
-        22 800 € sur 6 ans pour 80 000 €/an à plus de 79 200 € pour 120 000 €/an.
-        Ces chiffres ne tiennent pas compte des avantages liés à la non-imposition
-        des revenus étrangers dans le cadre du régime, qui peuvent accroître encore
-        le bénéfice pour certains profils patrimoniaux.
-      </Callout>
+      <h2 id="comparaison-france">Comparer la France et l’Espagne sur un même périmètre</h2>
+      <p>Une comparaison utile doit distinguer l’impôt sur le revenu, les cotisations sociales et les autres prélèvements dans chaque pays. Additionner impôt et prélèvements français, puis les comparer au seul IRPF espagnol, ne permet pas de calculer une économie nette.</p>
+      <ProseTable><thead><tr><th>Hypothèse</th><th>À préciser dans les deux scénarios</th></tr></thead><tbody>
+        <tr><td>Revenu</td><td>Salaire brut, variables, avantages et assiette imposable</td></tr>
+        <tr><td>Situation</td><td>Résidence, région, composition du foyer et année fiscale</td></tr>
+        <tr><td>Prélèvements</td><td>Impôt, cotisations salariales et autres prélèvements, présentés séparément</td></tr>
+        <tr><td>Éligibilité</td><td>Conditions et durée d’application du régime, à confirmer individuellement</td></tr>
+      </tbody></ProseTable>
+      <p>Faites établir une simulation personnalisée par un professionnel compétent avant de prendre une décision d’expatriation. Les exemples indicatifs de cette page ne constituent ni une estimation de votre revenu net ni une garantie d’économie.</p>
 
       <div className="my-10 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-6 md:p-8">
         <h3 className="mb-3 text-lg font-semibold text-slate-900">

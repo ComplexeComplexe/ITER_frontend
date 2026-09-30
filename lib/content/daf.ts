@@ -689,7 +689,7 @@ export const dafContent: Record<Locale, DafContent> = {
         { label: "Who it's for", text: "startups raising funds, growing SMEs, scale-ups in transformation." },
         { label: "Lead time", text: `engagement starts within ${offerEn.start}.` },
         { label: "Commitment", text: offerEn.commitment },
-        { label: "Iter Advisors in numbers", text: `15 CFO experts, 85 companies supported, EUR 100M raised, 5/5 on Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} reviews).` },
+        { label: "Iter Advisors in numbers", text: `15 finance consultants, 85 companies supported, EUR 100M raised, 5/5 on Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} reviews).` },
       ],
     },
     definitionBox: {
@@ -1042,7 +1042,7 @@ export const dafContent: Record<Locale, DafContent> = {
         { label: "Para quién", text: "startups en ronda de financiación, pymes en crecimiento, empresas en transformación." },
         { label: "Plazo", text: `inicio de la misión en ${offerEs.start}.` },
         { label: "Compromiso", text: offerEs.commitment },
-        { label: "Iter Advisors en cifras", text: `15 expertos CFO, 85 empresas acompañadas, 100 M€ levantados, nota 5/5 en Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} opiniones).` },
+        { label: "Iter Advisors en cifras", text: `15 consultores financieros, 85 empresas acompañadas, 100 M€ levantados, nota 5/5 en Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} opiniones).` },
       ],
     },
     definitionBox: {

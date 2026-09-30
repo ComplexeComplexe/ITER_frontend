@@ -1,4 +1,4 @@
-import { Tool } from '@/data/tools';
+import { Tool, CATEGORIES_WITH_PAGE } from '@/data/tools';
 import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
 
 /**
@@ -113,15 +113,15 @@ export function generateBreadcrumbSchema(
         name: 'Outils',
         item: 'https://www.iteradvisors.com/ressources/outils',
       },
-      {
+      ...(CATEGORIES_WITH_PAGE.has(categorySlug) ? [{
         '@type': 'ListItem',
         position: 3,
         name: categoryName,
         item: `https://www.iteradvisors.com/ressources/outils/${categorySlug}`,
-      },
+      }] : []),
       {
         '@type': 'ListItem',
-        position: 4,
+        position: CATEGORIES_WITH_PAGE.has(categorySlug) ? 4 : 3,
         name: toolName,
         item: `https://www.iteradvisors.com/ressources/outils/${toolSlug}`,
       },
@@ -159,7 +159,7 @@ export function generateSoftwareApplicationSchema(tool: Tool) {
 /**
  * HowTo JSON-LD schema for tool implementation guides (TICKET 31).
  * Generates a schema.org/HowTo from a tool's implementationGuide steps,
- * enabling rich-snippet "How to" eligibility in search results.
+ * keeping step references aligned with the visible guide.
  */
 export function generateHowToSchema(
   toolName: string,

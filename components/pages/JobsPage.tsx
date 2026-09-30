@@ -37,7 +37,7 @@ const sectionLabels: Record<Locale, { perks: string; perksItems: string[]; whyTi
     perks: "Pourquoi nous rejoindre ?",
     perksItems: [
       "Environnement international et multiculturel",
-      "Bureaux au cœur de Barcelone (Rambla de Catalunya)",
+      "Équipe basée à Barcelone",
       "Salaire compétitif et assurance santé privée",
       "Culture fondée sur la confiance et l'autonomie",
     ],
@@ -53,7 +53,7 @@ const sectionLabels: Record<Locale, { perks: string; perksItems: string[]; whyTi
     perks: "Why join us?",
     perksItems: [
       "International and multicultural environment",
-      "Offices in the heart of Barcelona (Rambla de Catalunya)",
+      "Team based in Barcelona",
       "Competitive salary and private health insurance",
       "Culture built on trust and autonomy",
     ],
@@ -69,7 +69,7 @@ const sectionLabels: Record<Locale, { perks: string; perksItems: string[]; whyTi
     perks: "¿Por qué unirse a nosotros?",
     perksItems: [
       "Entorno internacional y multicultural",
-      "Oficinas en el corazón de Barcelona (Rambla de Catalunya)",
+      "Equipo ubicado en Barcelona",
       "Salario competitivo y seguro médico privado",
       "Cultura basada en la confianza y la autonomía",
     ],

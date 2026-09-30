@@ -1021,7 +1021,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           heading: "Iter Advisors transition management offering",
           content: [
             "Iter Advisors has a team of experienced transitional CFOs, immediately available. Our professionals have successfully supported companies in various sectors: tech, e-commerce, industry, B2B services.",
-            "We guarantee a rapid start (within 48 to 72 hours in case of emergency) and quality support throughout the mission. Contact us to assess your needs together.",
+            "For an urgent interim assignment, a start within 7 to 10 days may be considered after scoping, subject to profile availability and access to the required information. The timetable is confirmed during the initial assessment.",
           ],
         },
       ],

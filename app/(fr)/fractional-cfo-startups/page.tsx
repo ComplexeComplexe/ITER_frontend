@@ -172,7 +172,7 @@ const structuredData = {
           name: "Que se passe-t-il si on ne s'entend pas avec le fractional CFO ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Sans durée d'engagement minimale, résiliable avec un préavis de 30 jours. En pratique, nous proposons d'abord un autre fractional CFO de l'équipe pour poursuivre la mission sans perdre le contexte : c'est l'avantage d'un cabinet de 15 CFOs vs un freelance solo.",
+            text: "Sans durée d'engagement minimale, résiliable avec un préavis de 30 jours. En pratique, nous proposons d'abord un autre fractional CFO de l'équipe pour poursuivre la mission sans perdre le contexte : c'est l'avantage d'un cabinet de 15 consultants plutôt que d’un intervenant isolé.",
           },
         },
       ],
@@ -802,7 +802,7 @@ export default async function Page() {
                   question:
                     "Que se passe-t-il si on ne s'entend pas avec le fractional CFO ?",
                   answer:
-                    "Sans durée d'engagement minimale, résiliable avec un préavis de 30 jours. En pratique, nous proposons d'abord un autre fractional CFO de l'équipe pour poursuivre la mission sans perdre le contexte : c'est l'avantage d'un cabinet de 15 CFOs vs un freelance solo.",
+                    "Sans durée d'engagement minimale, résiliable avec un préavis de 30 jours. En pratique, nous proposons d'abord un autre fractional CFO de l'équipe pour poursuivre la mission sans perdre le contexte : c'est l'avantage d'un cabinet de 15 consultants plutôt que d’un intervenant isolé.",
                 },
               ].map((faq, i) => (
                 <details

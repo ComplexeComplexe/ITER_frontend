@@ -707,7 +707,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li>Manque de reporting consolidé entre comptabilités française et espagnole</li>
 </ol>
 <h2 id="cout">Le coût d'un DAF à Barcelone</h2>
-<p>Un <a href="/daf-externalise">DAF externalisé pour PME et startups</a> basé à Barcelone coûte 15 à 25% moins cher qu'à Paris, avec une expertise équivalente. Nos forfaits démarrent à 1 500 €/mois pour une mission de 2 jours par semaine.</p>
+<p>Le budget d’un <a href="/daf-externalise">DAF externalisé pour PME et startups</a> dépend du périmètre et du profil mobilisé. Consultez les <a href="/daf-externalise/tarifs">formules et tarifs Iter Advisors</a> : le devis précise les livrables, la disponibilité et les éventuels déplacements. Le lieu de la mission ne permet pas, à lui seul, de déduire une économie.</p>
 <p><a href="/contact">Contacter notre équipe de Barcelone</a></p>`,
       content: [],
     },
@@ -1446,7 +1446,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <p><strong>Coût.</strong> Un DRH salarié senior coûte 70-100K€ brut annuel (charges incluses : 100-140K€). Un DRH externalisé coûte 2 000-4 000 €/mois (24-48K€/an) — soit 50 à 65% de moins cher.</p>
 <p><strong>Flexibilité.</strong> Vous passez de 2 jours/semaine à 4 jours selon vos besoins — sans recrutement ni licenciement.</p>
 <p><strong>Expertise cumulée.</strong> Un DRH externalisé travaille avec 10-15 entreprises par an. Il a vu plus de situations qu'un DRH interne en 5 ans.</p>
-<p><strong>Pas de risque de départ.</strong> Un DRH externalisé est remplacé en 48 heures.</p>
+<p><strong>Continuité à organiser.</strong> Le cabinet prévoit une passation et recherche un relais adapté en cas d’indisponibilité. Les modalités et délais sont précisés dans la mission.</p>
 <h2 id="perimetre">Ce que couvre un DRH externalisé</h2>
 <ul>
 <li><a href="/services/gestion-paie-charges-sociales">Paie &amp; administration</a> : bulletins, DSN, congés, absences, entrées/sorties</li>

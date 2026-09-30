@@ -211,7 +211,7 @@ export default function AboutPage({
       </div>
 
       {/* Team */}
-      <section className="bg-muted/30 py-24 lg:py-32">
+      <section id={locale === "es" ? "equipo" : "equipe"} className="bg-muted/30 py-24 lg:py-32 scroll-mt-28">
         <div className="container">
           <div className="text-center max-w-xl mx-auto mb-14">
             <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">

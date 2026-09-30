@@ -362,7 +362,7 @@ export default function ToolPage({
             <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Guide d'implémentation</h2>
             <div className="space-y-4">
               {toolDetails.implementationGuide.map((item, idx) => (
-                <div key={idx} className="bg-background p-6 rounded-lg border border-gray-200">
+                <div key={idx} id={`step${idx + 1}`} className="bg-background p-6 rounded-lg border border-gray-200 scroll-mt-28">
                   <div className="flex gap-4">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center h-8 w-8 rounded-full bg-iter-violet text-white font-bold text-sm">

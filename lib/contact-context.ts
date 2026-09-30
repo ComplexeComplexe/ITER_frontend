@@ -13,6 +13,10 @@ const contexts: Record<string, { need: string; originPage: string }> = {
   "due-diligence": { need: "funding", originPage: "/services/ma-due-diligence" },
   "levee-de-fonds": { need: "funding", originPage: "/ressources/blog/checklist-due-diligence-levee-de-fonds" },
   "audit-structure": { need: "daf-pme", originPage: "/ressources/blog/organiser-sa-direction-financiere" },
+  "diagnostic-finance": { need: "daf-pme", originPage: "/daf-externalise" },
+  "daf-drh-synergie": { need: "rh", originPage: "/ressources/blog/daf-drh-externalises-synergie" },
+  "formation-cfo": { need: "other", originPage: "/ressources" },
+  "stack-fintech": { need: "automation", originPage: "/ressources/outils" },
   tarifs: { need: "daf-pme", originPage: "/daf-externalise/tarifs" },
   daf: { need: "daf-pme", originPage: "/daf-externalise" },
   startup: { need: "daf-startup", originPage: "/fractional-cfo-startups" },
@@ -28,7 +32,7 @@ export function getContactContext(hash: string, search = "") {
   const fragment = hash.replace(/^#/, "");
   if (Object.hasOwn(contexts, fragment)) return contexts[fragment];
   const legacyType = new URLSearchParams(search).get("type");
-  return legacyType && ["levee-de-fonds", "audit-structure"].includes(legacyType)
+  return legacyType && Object.hasOwn(contexts, legacyType)
     ? contexts[legacyType]
     : undefined;
 }

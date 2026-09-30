@@ -43,6 +43,7 @@ export default function AuthorByline({
             rel="me noopener noreferrer"
             className="text-iter-violet hover:text-iter-violet/80 text-sm"
             title="LinkedIn Profile"
+            aria-label={`LinkedIn : ${name}`}
           >
             <svg
               className="w-4 h-4"
