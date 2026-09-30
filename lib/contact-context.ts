@@ -1,4 +1,8 @@
 const contexts: Record<string, { need: string; originPage: string }> = {
+  "temps-partage": { need: "daf-pme", originPage: "/daf-externalise/temps-partage" },
+  transition: { need: "transition", originPage: "/daf-externalise/transition" },
+  comptabilite: { need: "accounting", originPage: "/services/comptabilite-externalisation" },
+  "services-finance": { need: "daf-pme", originPage: "/services" },
   "ia-reporting": { need: "automation", originPage: "/ressources/ia-finance/automatiser-reporting-financier" },
   "ia-chatgpt": { need: "automation", originPage: "/ressources/ia-finance/chatgpt-finance" },
   "ia-finance": { need: "automation", originPage: "/ressources/ia-finance" },
@@ -35,6 +39,7 @@ export const CONTACT_NEEDS = [
   { value: "daf-startup", fr: "DAF pour une startup / SaaS", en: "CFO for a startup / SaaS", es: "CFO para una startup / SaaS" },
   { value: "cash", fr: "Trésorerie, marge ou reporting", en: "Cash flow, margins or reporting", es: "Tesorería, margen o reporting" },
   { value: "funding", fr: "Financement ou acquisition", en: "Funding or acquisition", es: "Financiación o adquisición" },
+  { value: "accounting", fr: "Organisation comptable", en: "Accounting operations", es: "Organización contable" },
   { value: "transition", fr: "Remplacement d'un DAF", en: "Interim CFO", es: "CFO de transición" },
   { value: "rh", fr: "Accompagnement RH", en: "HR support", es: "Apoyo de RR. HH." },
   { value: "other", fr: "Autre besoin", en: "Another need", es: "Otra necesidad" },

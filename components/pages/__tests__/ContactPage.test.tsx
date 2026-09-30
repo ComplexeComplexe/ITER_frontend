@@ -38,6 +38,20 @@ describe("Contact qualification and attribution", () => {
     expect(events()[0]).toMatchObject({ origin_page: "/fractional-cfo-startups", lead: { main_need: "daf-startup" } });
     expect(screen.getByText(/Votre message a bien été envoyé/)).toBeInTheDocument();
   });
+  it.each([
+    ["transition", "transition", "/daf-externalise/transition"],
+    ["comptabilite", "accounting", "/services/comptabilite-externalisation"],
+  ])("preserves the %s service need through submission and conversion", async (context, need, originPage) => {
+    window.history.replaceState({}, "", `/contact#${context}`);
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true });
+    vi.stubGlobal("fetch", fetchMock);
+    const { container } = render(<ContactPage locale="fr" />);
+    expect(screen.getByLabelText(/Votre priorité/)).toHaveValue(need);
+    fillAndSubmit(container);
+    await waitFor(() => expect(events()).toHaveLength(1));
+    expect(JSON.parse(fetchMock.mock.calls[0][1].body)).toMatchObject({ data: { challenge: need, originPage } });
+    expect(events()[0]).toMatchObject({ origin_page: originPage, lead: { main_need: need } });
+  });
   it("keeps AI context and optional company/message without inventing a booking", async () => {
     window.history.replaceState({}, "", "/contact#ia-reporting");
     const fetchMock = vi.fn().mockResolvedValue({ ok: true }); vi.stubGlobal("fetch", fetchMock);
