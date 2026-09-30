@@ -1,4 +1,8 @@
 const contexts: Record<string, { need: string; originPage: string }> = {
+  "temps-partage": { need: "daf-pme", originPage: "/daf-externalise/temps-partage" },
+  transition: { need: "transition", originPage: "/daf-externalise/transition" },
+  comptabilite: { need: "other", originPage: "/services/comptabilite-externalisation" },
+  "services-finance": { need: "daf-pme", originPage: "/services" },
   "ia-reporting": { need: "automation", originPage: "/ressources/ia-finance/automatiser-reporting-financier" },
   "ia-chatgpt": { need: "automation", originPage: "/ressources/ia-finance/chatgpt-finance" },
   "ia-finance": { need: "automation", originPage: "/ressources/ia-finance" },

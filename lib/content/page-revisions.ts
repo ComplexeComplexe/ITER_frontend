@@ -1,5 +1,6 @@
 /** Substantive page changes. Shared navigation changes do not refresh every URL. */
 export const PAGE_REVISIONS: Record<string, string> = {
+  "/services/comptabilite-externalisation": "2026-09-30",
   "/ressources/ia-finance": "2026-09-30",
   "/daf-externalise/temps-partage": "2026-09-30",
   "/ressources/outils/power-bi": "2026-09-30",
@@ -48,7 +49,7 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/es/recursos": "2026-09-12",
   "/daf-externalise": "2026-09-30",
   "/daf-externalise/tarifs": "2026-09-30",
-  "/daf-externalise/transition": "2026-09-12",
+  "/daf-externalise/transition": "2026-09-30",
   "/services/controle-de-gestion-externalise": "2026-09-30",
   "/en/services/outsource-your-accounting": "2026-09-12",
   "/en/services/outsourced-management-control": "2026-09-12",

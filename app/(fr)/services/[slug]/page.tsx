@@ -1,3 +1,6 @@
+import FinanceServicePage from "@/components/finance/FinanceServicePage";
+import { getFinanceServiceByPath } from "@/lib/content/finance-services";
+import { financeServiceMetadata } from "@/lib/finance-service-metadata";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServiceSinglePage from "@/components/pages/ServiceSinglePage";
@@ -67,9 +70,12 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const finance = getFinanceServiceByPath(`/services/${slug}`);
   if (!isServicePageSlug(slug)) {
     return { title: "Services | Iter Advisors" };
   }
+
+  if (finance) return financeServiceMetadata(finance);
 
   // SEO-REP §4.1 (2026-08-15) — canonical croisé supprimé.
   //
@@ -109,7 +115,9 @@ const SLUG_HERO_IMAGES: Partial<Record<ServicePageSlug, { src: string; alt: stri
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const finance = getFinanceServiceByPath(`/services/${slug}`);
   if (!isServicePageSlug(slug)) notFound();
+  if (finance) return <FinanceServicePage service={finance} />;
   const page = getStaticServicePage(slug, "fr");
   if (!page) notFound();
   const cmsNavigation = undefined;

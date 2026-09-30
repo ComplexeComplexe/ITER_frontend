@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ServicesPage from "@/components/pages/ServicesPage";
+import FinanceServicesHub from "@/components/finance/FinanceServicesHub";
 import { buildMetadata } from "@/lib/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -16,5 +16,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  return <ServicesPage locale="fr" cmsNavigation={undefined} />;
+  return <FinanceServicesHub />;
 }

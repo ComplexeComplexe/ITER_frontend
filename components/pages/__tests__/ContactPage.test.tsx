@@ -38,6 +38,17 @@ describe("Contact qualification and attribution", () => {
     expect(events()[0]).toMatchObject({ origin_page: "/fractional-cfo-startups", lead: { main_need: "daf-startup" } });
     expect(screen.getByText(/Votre message a bien été envoyé/)).toBeInTheDocument();
   });
+  it("carries a transition service request through the contact form and conversion event", async () => {
+    window.history.replaceState({}, "", "/contact#transition");
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true });
+    vi.stubGlobal("fetch", fetchMock);
+    const { container } = render(<ContactPage locale="fr" />);
+    expect(screen.getByLabelText(/Votre priorité/)).toHaveValue("transition");
+    fillAndSubmit(container);
+    await waitFor(() => expect(events()).toHaveLength(1));
+    expect(JSON.parse(fetchMock.mock.calls[0][1].body)).toMatchObject({ data: { challenge: "transition", originPage: "/daf-externalise/transition" } });
+    expect(events()[0]).toMatchObject({ origin_page: "/daf-externalise/transition", lead: { main_need: "transition" } });
+  });
   it("keeps AI context and optional company/message without inventing a booking", async () => {
     window.history.replaceState({}, "", "/contact#ia-reporting");
     const fetchMock = vi.fn().mockResolvedValue({ ok: true }); vi.stubGlobal("fetch", fetchMock);
