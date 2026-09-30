@@ -11,11 +11,13 @@ interface Testimonial {
 interface ClientTestimonialsProps {
   testimonials: Testimonial[];
   trustfolioUrl: string;
+  locale?: "fr" | "en" | "es";
 }
 
 export default function ClientTestimonials({
   testimonials,
   trustfolioUrl,
+  locale = "fr",
 }: ClientTestimonialsProps) {
   return (
     <div className="space-y-6">
@@ -49,7 +51,7 @@ export default function ClientTestimonials({
         ))}
       </div>
       <p className="text-center text-sm text-muted-foreground">
-        Consultez l'intégralité de nos avis clients sur{" "}
+        {{fr: "Consultez nos avis clients sur", en: "Read our client reviews on", es: "Consulte las opiniones de nuestros clientes en"}[locale]}{" "}
         <a
           href={trustfolioUrl}
           target="_blank"

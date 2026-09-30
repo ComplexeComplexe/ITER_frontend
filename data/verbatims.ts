@@ -100,10 +100,13 @@ export const verbatims: Verbatim[] = [
   },
 ];
 
+// Preserve attributed wording in the source; withhold outdated claims until the author validates them.
+const quotesPendingReview = new Set(["cegid-loop", "payfit", "fygr", "payhawk"]);
+
 export function getVerbatimsByTool(toolSlug: string): Verbatim | undefined {
-  return verbatims.find((v) => v.toolSlug === toolSlug);
+  return quotesPendingReview.has(toolSlug) ? undefined : verbatims.find((v) => v.toolSlug === toolSlug);
 }
 
 export function getVerbatimsByExpert(expert: 'sebastien' | 'benjamin'): Verbatim[] {
-  return verbatims.filter((v) => v.expert === expert);
+  return verbatims.filter((v) => v.expert === expert && !quotesPendingReview.has(v.toolSlug));
 }

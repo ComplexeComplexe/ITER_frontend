@@ -10,10 +10,12 @@ export const metadata: Metadata = {
   "alternates": {
     "canonical": "https://www.iteradvisors.com/ressources/blog/daf-part-time-tarifs-missions-2026"
   },
+  "twitter": { "card": "summary_large_image", "images": ["https://www.iteradvisors.com/images/og-logo.png"] },
   "openGraph": {
     "title": "Travailler avec un DAF à temps partagé : rythme et livrables",
     "description": "Réunions, calendrier de clôture, trésorerie et responsabilités : organiser une mission de DAF à temps partagé et définir son périmètre.",
-    "type": "article"
+    "type": "article",
+    "images": [{ "url": "https://www.iteradvisors.com/images/og-logo.png", "width": 1200, "height": 630, "alt": "Iter Advisors : direction financière externalisée" }]
   }
 };
 export default function Page() { return (

@@ -70,7 +70,7 @@ export const TOOL_PRICING: Record<string, ToolPricing> = {
   "revolut-business": {
     "label": "Selon forfait et usage",
     "url": "https://www.revolut.com/fr-FR/business/business-account-plans/",
-    "note": "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale.",
+    "note": "Le coût dépend du forfait, des volumes de change et de virements, ainsi que des frais au-delà des quotas. Comparez le coût complet sur vos flux réels.",
     "checkedAt": "2026-09-05"
   },
   "payhawk": {

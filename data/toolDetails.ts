@@ -151,7 +151,7 @@ export const toolDetails: Record<string, ToolDetails> = {
       {
         question: 'Pennylane convient-il aux startups ?',
         answer:
-          "Le prix dépend de la formule et des utilisateurs. Vérifier les modules, chaque entité et la facturation mensuelle ou annuelle.",
+          "Pennylane peut convenir si les flux comptables, la facturation et les échanges avec le cabinet justifient un outil partagé. Vérifiez les intégrations, les droits utilisateurs et le coût complet selon votre stade et votre volume.",
       },
       {
         question: 'Peut-on exporter les données de Pennylane ?',
@@ -355,12 +355,12 @@ export const toolDetails: Record<string, ToolDetails> = {
   payfit: {
     slug: 'payfit',
     verdict30s:
-      'PayFit est le standard pour 5-150 salariés avec CCN principales. DSN automatique, pas d\'erreur, charges calculées sans risque. Portail collaborateur qui réduit les demandes RH. À 30 pers., le ROI est 3 mois.',
+      'PayFit automatise des étapes de préparation de la paie et de la DSN. Vérifiez la couverture de votre convention collective, le paramétrage et les contrôles de validation. Le gain dépend de votre effectif et de votre organisation.',
     advantages: [
       {
-        title: 'DSN automatique sans erreur',
+        title: 'Préparation automatisée de la DSN',
         description:
-          'La Déclaration Sociale Nominative se génère automatiquement à partir des données PayFit. Pas d\'oubli de ligne, pas de rejet en correction.',
+          'La Déclaration Sociale Nominative se génère automatiquement à partir des données PayFit. Le responsable paie doit vérifier les données et traiter les éventuels rejets.',
       },
       {
         title: 'Interface moderne et intuitive',
@@ -443,7 +443,7 @@ export const toolDetails: Record<string, ToolDetails> = {
       {
         question: 'PayFit pour les startups en seed ?',
         answer:
-          "Le coût inclut un forfait qui varie avec l’effectif, le prix par collaborateur selon l’offre et les éventuels établissements et services supplémentaires. Comparer hors promotion.",
+          "Comparez le coût complet à votre effectif salarié et à la complexité de la paie. Vérifiez la convention collective, les variables et la personne chargée de valider les bulletins avant de choisir.",
       },
       {
         question: 'PayFit peut-il gérer les primes et bonus ?',
@@ -500,36 +500,62 @@ export const toolDetails: Record<string, ToolDetails> = {
     ],
   },
   'cegid-loop': {
-    slug: 'cegid-loop',
-    verdict30s:
-      "Cegid Loop — anciennement Cegid Quadra en ligne — est la version cloud de l'écosystème Cegid. Il brille quand votre expert-comptable est déjà dans cet écosystème : la synchronisation comptable est quasi instantanée. Pour le retail et la distribution, les modules spécifiques (caisse, gestion de magasin, stocks multi-dépôts) sont solides. L'interface s'est modernisée mais reste moins intuitive que Pennylane pour les non-initiés. L'écosystème est relativement fermé mais la couverture fonctionnelle est complète pour les PME françaises.",
-    advantages: [
-      { title: 'Synchronisation native expert-comptable Cegid', description: 'Si votre cabinet utilise Cegid, la reprise comptable est automatisée. Gain de temps : 2-3 heures par clôture.' },
-      { title: 'Modules retail avancés', description: 'Caisse enregistreuse, gestion de magasin, stocks multi-dépôts, promotions — pensés pour le commerce.' },
-      { title: 'Gestion multi-établissements', description: 'Centralisation des comptes, reporting consolidé par point de vente.' },
-      { title: 'Conformité fiscale française', description: 'Mises à jour réglementaires automatiques, conformité TVA, liasses fiscales.' },
+    "slug": "cegid-loop",
+    "verdict30s": "Cegid Loop est une solution de production comptable destinée aux cabinets et à leur collaboration avec les entreprises. Le choix dépend du fonctionnement du cabinet, des données à échanger et des intégrations disponibles. Les solutions de caisse et de gestion retail de Cegid ne doivent pas être confondues avec Loop.",
+    "advantages": [
+        {
+            "title": "Collaboration cabinet et entreprise",
+            "description": "Un environnement partagé pour organiser la collecte et le traitement des données comptables selon les droits accordés."
+        },
+        {
+            "title": "Production comptable",
+            "description": "Le périmètre porte sur la tenue, la révision et les travaux du cabinet ; les fonctions retenues doivent être vérifiées dans la proposition éditeur."
+        }
     ],
-    limitations: [
-      { title: 'Écosystème fermé', workaround: 'Moins d\'intégrations tierces que Pennylane. La connexion avec Agicap ou Spendesk nécessite des développements spécifiques.' },
-      { title: "Courbe d'apprentissage", workaround: 'L\'interface s\'est améliorée mais reste moins intuitive pour les utilisateurs non-comptables.' },
-      { title: 'Support dépendant du réseau', workaround: 'La qualité du support varie selon votre canal de distribution Cegid. Privilégiez les partenaires premium.' },
+    "limitations": [
+        {
+            "title": "Périmètre à confirmer avec le cabinet",
+            "workaround": "Validez les accès de l’entreprise, les imports, les exports et les responsabilités avant de choisir."
+        },
+        {
+            "title": "Gestion commerciale distincte",
+            "workaround": "Pour la caisse ou les stocks, identifiez la solution métier et son intégration comptable ; ne présumez pas que ces fonctions sont incluses dans Loop."
+        }
     ],
-    implementationGuide: [
-      { step: 'Semaine 1 : Paramétrage', detail: 'Configuration du plan comptable, axes analytiques, établissements. Coordination avec l\'expert-comptable.' },
-      { step: 'Semaine 2 : Import & formation', detail: 'Import balances, formation utilisateurs, tests de saisie.' },
-      { step: 'Semaine 3-4 : Clôture test', detail: 'Première clôture en parallèle, ajustements, validation.' },
-      { step: 'Semaine 5-6 : Stabilisation', detail: 'Documentation, autonomie, suivi post-implémentation.' },
+    "implementationGuide": [
+        {
+            "step": "Cadrer les responsabilités",
+            "detail": "Définir les travaux du cabinet et ceux de l’entreprise, les utilisateurs et le calendrier de clôture."
+        },
+        {
+            "step": "Tester les échanges",
+            "detail": "Contrôler les imports, les pièces et les exports sur un dossier test."
+        },
+        {
+            "step": "Valider une clôture",
+            "detail": "Rapprocher les données et faire valider les résultats par le responsable comptable avant de généraliser."
+        }
     ],
-    stackCombos: [
-      { title: 'Stack retail', description: 'Multi-magasin avec besoins caisse et stocks.', tools: ['Cegid Loop', 'PayFit', 'Qonto'], context: 'Retail 5-30 points de vente, gestion stocks multi-dépôts.' },
-      { title: 'Stack distribution', description: 'Distribution avec logistique et paie complexe.', tools: ['Cegid Loop', 'Silae', 'Agicap'], context: 'Distribution multi-sites, salariés multi-conventions.' },
-    ],
-    faqExpanded: [
-      { question: 'Cegid Loop vs Pennylane ?', answer: 'Cegid Loop = retail, expert-comptable Cegid, multi-établissements. Pennylane = SaaS, UX moderne, écosystème ouvert.' },
-      { question: 'Quel délai d\'implémentation ?', answer: '2 à 6 semaines selon la complexité. Retail multi-magasin = 6 semaines.' },
-      { question: 'Quel prix ?', answer: "La page éditeur présente ses solutions pour cabinets. Confirmer la disponibilité, le périmètre et le tarif de la solution retenue avant souscription." },
-    ],
-  },
+    "stackCombos": [],
+    "faqExpanded": [
+        {
+            "question": "Cegid Loop ou Pennylane ?",
+            "answer": "Comparez le périmètre réellement proposé par votre cabinet, les accès, les échanges de pièces, les intégrations et le coût complet. Une démonstration sur vos données est plus utile qu’une recommandation universelle."
+        },
+        {
+            "question": "Quel délai de mise en place ?",
+            "answer": "Le calendrier dépend de la reprise des données, des accès et des contrôles avec le cabinet. Il doit être convenu après examen du dossier."
+        },
+        {
+            "question": "La caisse et les stocks sont-ils inclus ?",
+            "answer": "Ne les supposez pas inclus dans Loop. Demandez quelle solution métier couvre ces besoins et comment elle échange avec la comptabilité."
+        },
+        {
+            "question": "Quel prix ?",
+            "answer": "Demandez au cabinet ou à Cegid un devis précisant les modules, les utilisateurs, la reprise et les services inclus."
+        }
+    ]
+},
   fygr: {
     slug: 'fygr',
     verdict30s:
@@ -694,17 +720,17 @@ export const toolDetails: Record<string, ToolDetails> = {
   'revolut-business': {
     slug: 'revolut-business',
     verdict30s:
-      "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale.",
+      "Revolut Business peut convenir aux entreprises qui encaissent et paient dans plusieurs devises. Comparez les quotas, frais, accès utilisateurs et intégrations sur vos flux réels avant de choisir un forfait.",
     advantages: [
-      { title: '30+ devises, change interbancaire', description: "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale." },
+      { title: '30+ devises, change interbancaire', description: "Les devises disponibles, taux et frais dépendent du forfait et des opérations. Testez le coût du change sur un mois représentatif." },
       { title: 'IBAN multi-pays', description: 'GBP (UK), EUR (Europe), USD (États-Unis) — dans un seul compte. Vos clients anglais paient en GBP, vos clients américains en USD.' },
       { title: 'Intégration e-commerce', description: 'Connexion native Stripe, PayPal, Shopify. Les encaissements sont centralisés et convertis automatiquement.' },
-      { title: "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale.", description: "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale." },
+      { title: "Forfaits adaptés aux usages", description: "Comparez Basic, Grow, Scale et Enterprise selon les opérations incluses, les utilisateurs et les frais supplémentaires." },
     ],
     limitations: [
       { title: 'Support par chat uniquement', workaround: 'Pas de téléphone, pas de conseiller dédié en Standard. Réponse sous 24h en moyenne.' },
-      { title: 'Compte non rémunéré', workaround: 'Les dépôts ne génèrent pas d\'intérêts — contrairement à certaines banques traditionnelles.' },
-      { title: 'Frais de retrait en espèces', workaround: "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale." },
+      { title: 'Compte de paiement et épargne distincts', workaround: 'La rémunération éventuelle concerne un produit épargne Business séparé, soumis aux conditions et à l’éligibilité du client. Vérifiez le pays, le produit et ses modalités auprès de Revolut.' },
+      { title: 'Frais de retrait en espèces', workaround: "Vérifiez les frais et limites de retrait de votre forfait ; privilégiez une comparaison sur votre usage réel." },
       { title: 'Pas de crédit structuré', workaround: 'Pas de ligne de crédit, pas de caution bancaire — il faut compléter avec une banque traditionnelle.' },
     ],
     implementationGuide: [
@@ -719,8 +745,8 @@ export const toolDetails: Record<string, ToolDetails> = {
     ],
     faqExpanded: [
       { question: 'Revolut vs Qonto ?', answer: 'Revolut = international, 30+ devises, change interbancaire. Qonto = France, UX pro, intégration comptable. Beaucoup de clients utilisent les deux : Qonto pour la France, Revolut pour l\'international.' },
-      { question: "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale.", answer: "Comparer Basic, Grow, Scale et Enterprise, les quotas de change et virements et les frais au-delà des limites. Ne pas présenter un compte professionnel gratuit comme offre générale." },
-      { question: 'Mes fonds sont-ils sécurisés ?', answer: 'Oui, Revolut est agréé par la FCA (UK) et la BCE. Les fonds sont ségrégués chez des banques tierces de rang A.' },
+      { question: "Comment comparer les forfaits Revolut Business ?", answer: "Listez vos devises, volumes de change, virements, cartes et utilisateurs. Comparez le coût mensuel complet, y compris les dépassements de quotas, sur la grille officielle." },
+      { question: 'Mes fonds sont-ils sécurisés ?', answer: 'Les protections dépendent de l’entité contractante, du pays et du produit. Consultez les conditions applicables à votre compte et à une éventuelle épargne ; ne confondez pas garantie des dépôts et cantonnement de fonds.' },
     ],
   },
   payhawk: {

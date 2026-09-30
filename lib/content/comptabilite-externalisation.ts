@@ -475,14 +475,14 @@ export const comptabiliteExternalisationContent = {
           },
         ],
       },
-      {"id":"tarifs","title":"Cómo presupuestar la externalización contable","paragraphs":["Solicite presupuestos sobre un mismo alcance: volumen de documentos, entidades, obligaciones, nóminas, cierres y reporting. Separe el arranque, el coste recurrente, las opciones y el trabajo interno. No publicamos una media de mercado sin una fuente verificable."],"tables":[{"caption":"Partidas del presupuesto","headers":["Poste","Qué comprobar"],"rows":[["Arranque","Migración, recuperación de datos y formación"],["Recurrente","Documentos, entidades, obligaciones y cierres"],["Opciones","Nóminas, reporting y trabajos excepcionales"]]}]},
+      {"id":"tarifs","title":"Cómo presupuestar la externalización contable","paragraphs":["Solicite presupuestos sobre un mismo alcance: volumen de documentos, entidades, obligaciones, nóminas, cierres y reporting. Separe el arranque, el coste recurrente, las opciones y el trabajo interno. No publicamos una media de mercado sin una fuente verificable."],"tables":[{"caption":"Partidas del presupuesto","headers":["Partida","Qué comprobar"],"rows":[["Arranque","Migración, recuperación de datos y formación"],["Recurrente","Documentos, entidades, obligaciones y cierres"],["Opciones","Nóminas, reporting y trabajos excepcionales"]]}]},
       {
         id: "approche-iter",
         title: "Cómo acompaña Iter Advisors tu contabilidad externalizada",
         paragraphs: [
           "Nuestro enfoque se apoya en tres principios: integración fluida, herramientas existentes y experiencia financiera de nivel CFO.",
-          "Integración sin ruptura. No te obligamos a cambiar de software de un día para otro. Iter Advisors trabaja con las herramientas que ya utilizas, ya sea Pennylane, Sage, QuickBooks u otras soluciones cloud. La migración, cuando es necesaria, se realiza en dos semanas como máximo, sin interrupción del servicio.",
-          "Un alcance claro y completo. Nuestro acompañamiento cubre la teneduría de la contabilidad general, las declaraciones de IVA y fiscales, la gestión de nóminas y cotizaciones a la Seguridad Social, así como la preparación y el seguimiento del cierre contable anual. Cada punto se trata con el mismo rigor, sin delegación opaca a subcontratistas.",
+          "Integración sin ruptura. No te obligamos a cambiar de software de un día para otro. Iter Advisors trabaja con las herramientas que ya utilizas, ya sea Pennylane, Sage, QuickBooks u otras soluciones cloud. Cuando se necesita una migración, el calendario depende de la calidad de los datos, las integraciones y los controles acordados.",
+          "Responsabilidades explícitas. Organizamos los documentos, el calendario de cierre y los intercambios con la asesoría. La producción contable, las declaraciones y las actividades reservadas corresponden a los profesionales competentes según el país y el mandato. El contrato identifica quién prepara, revisa y valida cada entregable.",
           "Contables que entienden tu negocio. Nuestros equipos no se limitan a registrar asientos. Entienden el contexto de tu empresa: tu modelo de negocio, tus retos de tesorería, tus obligaciones frente a los inversores. Esta visión global permite producir una contabilidad que sirve al pilotaje, no solo al cumplimiento fiscal.",
         ],
         closingText:
@@ -535,7 +535,7 @@ export const comptabiliteExternalisationContent = {
           {
             question: "¿La externalización contable funciona con Pennylane, Sage o QuickBooks?",
             answer:
-              "Sí. Iter Advisors se integra directamente en las herramientas cloud que ya utilizas. Trabajamos con Pennylane, Sage, QuickBooks y otras soluciones. La migración a una nueva herramienta, si es necesaria, se realiza en dos semanas sin interrupción del servicio.",
+              "Sí. Iter Advisors se integra directamente en las herramientas cloud que ya utilizas. Trabajamos con Pennylane, Sage, QuickBooks y otras soluciones. Si se necesita una migración, el calendario y los controles se acuerdan tras revisar los datos y las integraciones.",
           },
           {
             question: "¿Puede la dirección mantener el control de sus cuentas al externalizarlas?",

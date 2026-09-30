@@ -67,7 +67,7 @@ export default function CategoryPage({
         'Taille cible': tool.forWho[0] || '—',
         'Implémentation': tool.implementationTime,
         'Tarif': tool.priceRange,
-        'Avis Iter': '4.5/5',
+        'Avis Iter': `${tool.rating}/5`,
       },
     })),
     criteria: ['Taille cible', 'Implémentation', 'Tarif', 'Avis Iter'],

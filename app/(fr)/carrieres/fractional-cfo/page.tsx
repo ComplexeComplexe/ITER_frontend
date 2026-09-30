@@ -347,9 +347,8 @@ export default async function Page() {
                 HT par jour selon séniorité)
               </li>
               <li>
-                <strong>Bureaux centraux</strong> à Barcelone (Rambla de
-                Catalunya), Paris et Toulouse — mode hybride, pas de présence
-                imposée
+                <strong>Équipes à Barcelone et Paris</strong> ; intervention à Toulouse
+                à distance ou sur accord. Le mode de collaboration est défini selon la mission.
               </li>
               <li>
                 <strong>Portefeuille de clients déjà constitué</strong> : pas
@@ -401,8 +400,8 @@ export default async function Page() {
                 et nos process accélèrent vos missions
               </li>
               <li>
-                <strong>Communauté de pairs seniors</strong> : 15 CFOs et
-                analystes avec qui échanger
+                <strong>Communauté de pairs seniors</strong> : 15 consultants
+                finance avec qui échanger
               </li>
               <li>
                 <strong>Couverture cross-border</strong> : nos clients sont
@@ -435,7 +434,7 @@ export default async function Page() {
                 </strong>
               </li>
               <li>
-                <strong>3 bureaux</strong> : Barcelone, Paris, Toulouse
+                <strong>Équipes</strong> : Barcelone et Paris ; Toulouse à distance ou sur accord
               </li>
               <li>
                 Recommandé par{" "}

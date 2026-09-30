@@ -240,8 +240,8 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
       heading: "Pourquoi externaliser la paie ?",
       benefits: [
         // FACTS (2026-09-01) — « taux d'erreur < 0,5 % » sans source.
-        { label: "Fiabilité", description: "Double validation systématique avant envoi et outils automatisés : les erreurs récurrentes disparaissent, et celles qui restent sont vues avant le salarié." },
-        { label: "Conformité garantie", description: "Veille réglementaire permanente : taux de cotisation, évolutions légales (TEPA, ancienneté, forfait jours). Vous ne manquez jamais une échéance." },
+        { label: "Fiabilité", description: "Contrôles avant envoi et outils automatisés pour repérer les anomalies. Les points de validation et les corrections restent sous la responsabilité des intervenants désignés." },
+        { label: "Contrôles de conformité", description: "Veille réglementaire permanente : taux de cotisation, évolutions légales (TEPA, ancienneté, forfait jours). Le calendrier et les responsabilités de validation sont définis avec votre équipe." },
         { label: "Gain de temps considérable", description: "Le traitement manuel de la paie mobilise plusieurs jours par mois dès quelques dizaines de salariés. Externalisé : quelques heures de validation de votre côté." },
         { label: "Sécurité juridique", description: "DSN déclarées dans les temps, contrats respectant la législation, procédures de licenciement encadrées. Accompagnement en cas de contrôle URSSAF." },
         { label: "Satisfaction salariée", description: "Bulletins clairs, portail collaborateur accessible, réponses rapides aux questions — des salariés satisfaits restent." },

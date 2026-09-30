@@ -81,9 +81,9 @@ export const categoryContent: Record<string, CategoryContent> = {
       },
       {
         name: 'Cegid Loop',
-        forWho: 'Entreprises imposées par leur expert-comptable',
-        pros: ['Comptabilité complète', 'Solutions métier intégrées'],
-        cons: ['Souvent imposé plutôt que choisi', 'Interface datée'],
+        forWho: 'Cabinets comptables et entreprises clientes',
+        pros: ['Production comptable du cabinet', 'Collaboration avec les entreprises clientes'],
+        cons: ['Accès à définir avec le cabinet', 'Périmètre métier et intégrations à vérifier'],
       },
     ],
     decisionCriteria: [
@@ -96,22 +96,20 @@ export const categoryContent: Record<string, CategoryContent> = {
     detailedComparison: {
       tools: ['Pennylane', 'Sage', 'Cegid Loop'],
       criteria: [
-        { label: 'UX / facilité', scores: { Pennylane: '5/5', Sage: '2/5', 'Cegid Loop': '3/5' } },
-        { label: 'Gestion stocks', scores: { Pennylane: '2/5', Sage: '5/5', 'Cegid Loop': '4/5' } },
-        { label: 'Immobilisations', scores: { Pennylane: '2/5', Sage: '5/5', 'Cegid Loop': '3/5' } },
-        { label: 'API / intégrations', scores: { Pennylane: '5/5', Sage: '3/5', 'Cegid Loop': '2/5' } },
-        { label: 'Compta analytique', scores: { Pennylane: '4/5', Sage: '5/5', 'Cegid Loop': '4/5' } },
-        { label: 'Multi-sociétés', scores: { Pennylane: '3/5', Sage: '5/5', 'Cegid Loop': '4/5' } },
-        { label: 'Base de tarification', scores: { Pennylane: "Selon formule et utilisateurs", Sage: "Selon produit, modules et déploiement", 'Cegid Loop': "À confirmer auprès de Cegid" } },
-        { label: 'Implémentation', scores: { Pennylane: '1-3 sem.', Sage: '4-12 sem.', 'Cegid Loop': '2-6 sem.' } },
+        { label: 'Périmètre à comparer', scores: { Pennylane: 'Gestion financière et comptabilité', Sage: 'Identifier le produit et les modules retenus', 'Cegid Loop': 'Production comptable du cabinet' } },
+        { label: 'Stocks et gestion commerciale', scores: { Pennylane: 'Vérifier les fonctions et connecteurs requis', Sage: 'Dépend du produit et des modules', 'Cegid Loop': 'Solution métier distincte à connecter' } },
+        { label: 'API / intégrations', scores: { Pennylane: 'Tester les flux et droits nécessaires', Sage: 'Vérifier la version et les connecteurs', 'Cegid Loop': 'API cabinet et partenaires, accès à confirmer' } },
+        { label: 'Collaboration comptable', scores: { Pennylane: 'Valider le partage avec le cabinet', Sage: 'Définir les échanges et responsabilités', 'Cegid Loop': 'Définir les accès cabinet et entreprise' } },
+        { label: 'Base de tarification', scores: { Pennylane: 'Selon formule et utilisateurs', Sage: 'Selon produit, modules et déploiement', 'Cegid Loop': 'Devis cabinet ou éditeur' } },
+        { label: 'Mise en place', scores: { Pennylane: 'Selon reprise et intégrations', Sage: 'Selon produit et complexité', 'Cegid Loop': 'Calendrier à convenir avec le cabinet' } },
       ],
     },
     verdictByStage: [
-      { stage: 'Seed', tool: 'Pennylane', reason: 'UX moderne, déploiement en 1 semaine, prix faible — parfait pour démarrer.' },
-      { stage: 'Series A/B', tool: 'Pennylane (Sage si stocks)', reason: "Comparer les intégrations et les fonctions de stocks ou d’immobilisations nécessaires." },
-      { stage: 'Industrie', tool: 'Sage', reason: 'Lots, traçabilité, immobilisations IFRS — Sage est indispensable.' },
-      { stage: 'Retail multi-magasin', tool: 'Cegid Loop', reason: 'Modules caisse, gestion magasin et stocks multi-dépôts intégrés.' },
-      { stage: 'Groupe multi-sociétés', tool: 'Sage', reason: 'Consolidation native, multi-axes analytiques, écosystème expert-comptable mature.' },
+      { stage: 'Startup', tool: 'Pennylane à étudier', reason: 'Tester la collecte des pièces, les exports et la collaboration avec le cabinet sur vos flux.' },
+      { stage: 'Croissance', tool: 'Comparer les périmètres', reason: 'Vérifier les axes analytiques, les droits et les intégrations nécessaires au reporting.' },
+      { stage: 'Industrie', tool: 'Solution métier et comptabilité', reason: 'Identifier les besoins de stocks, de traçabilité et leur intégration avant de choisir le produit.' },
+      { stage: 'Retail multi-magasin', tool: 'Solution caisse et stocks dédiée', reason: 'Valider son interface comptable. Ne pas confondre les solutions retail Cegid avec Cegid Loop.' },
+      { stage: 'Cabinet et entreprise', tool: 'Cegid Loop à étudier', reason: 'Définir avec le cabinet les accès, les travaux et les contrôles attendus.' },
     ],
   },
   'logiciels-tresorerie': {
@@ -249,7 +247,7 @@ export const categoryContent: Record<string, CategoryContent> = {
     slug: 'logiciels-paie',
     title: 'Paie & RH',
     intro:
-      'Automatisez votre paie et vos déclarations sociales sans erreur ni surcharge administrative. De la DSN aux bulletins, tout doit être fluide et traçable.',
+      'Automatisez votre paie et vos déclarations sociales avec moins de ressaisies et des contrôles de validation. De la DSN aux bulletins, tout doit être fluide et traçable.',
     verdict:
       'PayFit est le standard pour 5-150 salariés avec CCN principales. Silae pour 150+ salariés ou CCN très complexes. Lucca si vous voulez une suite RH unifiée.',
     selectedTools: [
@@ -257,7 +255,7 @@ export const categoryContent: Record<string, CategoryContent> = {
         name: 'PayFit',
         forWho: 'Startups et PME (5-150 pers.)',
         pros: [
-          'DSN automatique sans erreur',
+          'Préparation automatisée de la DSN',
           'Interface moderne et intuitive',
           'Portail collaborateur fluide',
           'Tarif prévisible et sans surpise',

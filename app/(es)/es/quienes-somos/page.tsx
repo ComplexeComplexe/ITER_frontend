@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
     // P2-03: Shortened from 72 chars to 49 chars
     fallbackTitle: "Quiénes somos - CFO externalizado | Iter Advisors",
     // P1-03: Expanded from 23 chars to full meta description (> 120 chars)
-    fallbackDescription: "Gabinete de CFO externalizado en Barcelona, París y Toulouse. 15 CFOs senior, 85 empresas acompañadas, 100 M€ captados. Valorado 5/5 en Trustfolio.",
+    fallbackDescription: "Conozca al equipo de Iter Advisors: dirección financiera externalizada, equipos en Barcelona y París e intervención remota o acordada en Toulouse.",
   });
 }
 

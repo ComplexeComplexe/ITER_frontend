@@ -168,7 +168,7 @@ export const tools: Tool[] = [
     category: 'comptabilite',
     categorySlug: 'logiciels-comptabilite',
     logo: '/images/logos/tools/cegid-loop.png',
-    logoAlt: 'Logo Cegid Loop — logiciel comptable cloud pour PME et retail multi-établissements',
+    logoAlt: 'Logo Cegid Loop, solution de production comptable',
     website: 'https://www.cegid.com/fr/produits/cegid-loop/',
     rating: 3.5,
     implementationTime: '2-6 semaines',
@@ -176,7 +176,7 @@ export const tools: Tool[] = [
     phase: 2,
     forWho: [
       'PME françaises avec expert-comptable réseau Cegid',
-      'Retail et distribution multi-magasins',
+      'Entreprises accompagnées par un cabinet utilisant Loop',
       'Structures multi-établissements en France',
     ],
     notForWho: [
@@ -187,7 +187,7 @@ export const tools: Tool[] = [
     experts: ['benjamin'],
     hasVerbatim: true,
     shortDescription:
-      "Version cloud de l'écosystème Cegid. Synchronisation native expert-comptable Cegid, modules retail avancés, conformité fiscale française.",
+      "Solution de production comptable et de collaboration entre le cabinet et ses clients. Périmètre et intégrations à confirmer avec le cabinet.",
   },
   {
     slug: 'fygr',

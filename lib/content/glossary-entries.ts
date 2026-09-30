@@ -484,7 +484,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
         {
           heading: "Pourquoi c'est important",
           content: [
-            "**Prédictibilité.** Le revenu récurrent est prévisible. Un ARR de 1M€ = 1M€ de CA garanti l'année suivante (hors churn).",
+            "**Prédictibilité.** Le revenu récurrent est prévisible. L’ARR annualise le revenu récurrent courant ; ce n’est pas une garantie de chiffre d’affaires futur. Résiliations, variations de prix et nouveaux contrats modifient cette trajectoire.",
             "**Base de valorisation.** SaaS en croissance > 100% : valorisation 10-20x ARR. SaaS mature : 5-8x.",
             "**Mesure de la traction.** MRR qui croît 10%/mois = doubling time de 7 mois.",
             "**Pilotage opérationnel.** La décomposition du MRR permet d'identifier les leviers de croissance.",
@@ -504,7 +504,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
         {
           heading: "Limites et pièges",
           content: [
-            "**ARR ≠ trésorerie.** Un ARR de 1M€ avec DSO 60 jours ne génère que ~917K€ de cash annuel.",
+            "**ARR ≠ trésorerie.** Les encaissements dépendent du calendrier de facturation, des créances initiales et finales et des paiements reçus. Le DSO seul ne permet pas de calculer le cash annuel.",
             "**Annual discounts gonflent l'ARR.** Un client qui paie 10K€/an pour un service à 12K€/an contribue 833 €/mois — mais a payé en une fois.",
             "**Churn caché.** L'ARR annuel masque le churn mensuel. 5%/mois = 46% annuel.",
             "**Comptabilisation des trials.** Les trials ne doivent pas être comptés en MRR.",
@@ -868,7 +868,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
         {
           heading: "Contrôleur de gestion externalisé",
           content: [
-            "Pour les PME qui ne peuvent pas justifier d'un temps plein, un **contrôleur de gestion externalisé** est la solution idéale. Chez Iter Advisors, nos formules démarrent à 1 500 €/mois pour un tableau de bord mensuel. La formule complète avec budget et forecast est à 3 500 €/mois.",
+            "Un **contrôleur de gestion externalisé** peut accompagner une PME dont le besoin ne justifie pas un poste à temps plein. Le devis dépend des entités, des sources de données, du reporting, du budget et des prévisions à produire. Le périmètre est précisé avant le démarrage.",
             "Au-delà de 500K€ de CA ou 15 collaborateurs, le contrôle de gestion devient indispensable pour piloter efficacement la croissance.",
           ],
         },

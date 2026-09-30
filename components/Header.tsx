@@ -9,7 +9,7 @@ import { Menu, X } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { navigation, languageSwitcher, getContactPath, getHomePath } from "@/lib/navigation";
 import type { NavItem } from "@/lib/navigation";
-import { getLocalizedPath } from "@/lib/path-localization";
+import { usePageTranslations } from "@/lib/hooks/use-page-translations";
 
 export default function Header({
   locale,
@@ -105,7 +105,8 @@ export default function Header({
     };
   }, [langOpen]);
 
-  const getLocaleHref = (targetLocale: Locale) => getLocalizedPath(pathname, targetLocale);
+  const translations = usePageTranslations(pathname, locale);
+  const unavailable = { fr: "Traduction indisponible", en: "Translation unavailable", es: "Traducción no disponible" }[locale];
   const contactItem = nav[nav.length - 1] ?? { title: "Contact", href: getContactPath(locale) };
   const mainNav = nav.slice(0, -1);
 
@@ -271,16 +272,20 @@ export default function Header({
                     >
                       {(["fr", "en", "es"] as Locale[])
                         .filter((l) => l !== locale)
-                        .map((l) => (
+                        .map((l) => translations[l] ? (
                           <Link
                             key={l}
                             role="menuitem"
-                            href={getLocaleHref(l)}
+                            href={translations[l]!}
                             onClick={() => setLangOpen(false)}
                             className="block px-3 py-2 text-xs text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors uppercase tracking-wider"
                           >
                             {languageSwitcher[l].label}
                           </Link>
+                        ) : (
+                          <span key={l} role="menuitem" aria-disabled="true" className="block px-3 py-2 text-xs text-iter-dark/60">
+                            {languageSwitcher[l].label}<span className="block text-[10px] normal-case">{unavailable}</span>
+                          </span>
                         ))}
                     </div>
                   </motion.div>
@@ -373,10 +378,10 @@ export default function Header({
 
               {/* Mobile lang */}
               <div className="mt-4 mx-4 flex gap-3">
-                {(["fr", "en", "es"] as Locale[]).map((l) => (
+                {(["fr", "en", "es"] as Locale[]).map((l) => translations[l] ? (
                   <Link
                     key={l}
-                    href={getLocaleHref(l)}
+                    href={translations[l]!}
                     className={`text-xs uppercase tracking-widest px-3 py-1.5 border rounded-lg ${
                       l === locale
                         ? "border-iter-chartreuse text-iter-chartreuse"
@@ -385,6 +390,10 @@ export default function Header({
                   >
                     {l}
                   </Link>
+                ) : (
+                  <span key={l} aria-disabled="true" className="text-xs px-3 py-1.5 text-white/60">
+                    {l.toUpperCase()}<span className="block text-[10px]">{unavailable}</span>
+                  </span>
                 ))}
               </div>
             </nav>

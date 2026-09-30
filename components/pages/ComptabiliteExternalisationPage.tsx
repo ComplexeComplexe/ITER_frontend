@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { ReactNode } from "react";
 import { Locale } from "@/lib/i18n";
+import { dafClusterHref } from "@/lib/path-localization";
 import { getContactPath } from "@/lib/navigation";
 import type { CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
@@ -49,6 +49,11 @@ export default function ComptabiliteExternalisationPage({
   cmsNavigation,
 }: ComptabiliteExternalisationPageProps) {
   const t = content;
+  const copy = {
+    fr: { service: "Externalisation comptable", summary: "En une ligne", cta: "Décrire mon besoin", cfo: "DAF externalisé", reviews: "Avis de nos clients", sources: "Sources et références", note: "Le périmètre de production et de validation dépend du pays et des professionnels mandatés.", intro: ["La fiabilité des pièces, le suivi des échéances et la préparation de la clôture demandent une organisation claire entre le dirigeant, son équipe et son cabinet comptable.", "Iter Advisors aide à structurer ces échanges et à rendre les données comptables utilisables pour le pilotage. Le périmètre, les livrables et les responsabilités sont définis au démarrage.", "La tenue, les déclarations et les actes réservés relèvent des professionnels compétents selon le pays et le mandat. Les outils et un éventuel calendrier de migration sont convenus après analyse de vos données."] },
+    en: { service: "Accounting operations", summary: "In brief", cta: "Describe my needs", cfo: "Fractional CFO", reviews: "Client reviews", sources: "Sources and references", note: "Production and sign-off responsibilities depend on the country and the professionals appointed.", intro: ["Reliable records, clear deadlines and an organised close require coordination between management, the internal team and the accounting firm.", "Iter Advisors helps organise these exchanges and make accounting data useful for decision-making. Scope, deliverables and responsibilities are agreed at the start.", "Bookkeeping, filings and reserved activities remain with the appropriately qualified professionals under the applicable mandate. Tools and any migration timetable are agreed after reviewing your data."] },
+    es: { service: "Organización contable", summary: "En breve", cta: "Describir mi necesidad", cfo: "CFO externalizado", reviews: "Opiniones de clientes", sources: "Fuentes y referencias", note: "Las responsabilidades de producción y validación dependen del país y de los profesionales designados.", intro: ["La fiabilidad de los documentos, el seguimiento de los plazos y la preparación del cierre requieren una organización clara entre la dirección, su equipo y la asesoría contable.", "Iter Advisors ayuda a estructurar estos intercambios y a convertir los datos contables en información útil para la gestión. El alcance, los entregables y las responsabilidades se definen al inicio.", "La contabilidad, las declaraciones y las actividades reservadas corresponden a los profesionales competentes según el país y el mandato. Las herramientas y el calendario de una posible migración se acuerdan después de analizar sus datos."] },
+  }[locale];
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
@@ -60,31 +65,16 @@ export default function ComptabiliteExternalisationPage({
             locale={locale}
             items={[
               {
-                label: locale === "fr" ? "Services" : "Services",
-                href: "/services",
+                label: locale === "es" ? "Servicios" : "Services",
+                href: locale === "fr" ? "/services" : `/${locale}/services`,
               },
               {
-                label:
-                  locale === "fr"
-                    ? "Externalisation comptable"
-                    : "Accounting Outsourcing",
+                label: copy.service,
               },
             ]}
           />
 
-          {/* Hero illustration */}
-          <div className="relative mt-6 sm:mt-8 mb-8 aspect-[16/9] overflow-hidden rounded-2xl bg-muted">
-            <Image
-              src="/images/illustrations/accounting-handover.svg"
-              alt="Remise des documents comptables au cabinet Iter Advisors : passation de la tenue comptable et transmission des pièces justificatives"
-              fill
-              sizes="(max-width: 768px) 100vw, 768px"
-              className="object-cover"
-              priority
-            />
-          </div>
-
-          <div>
+          <div className="mt-8">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-4 leading-tight">
               {t.h1}
             </h1>
@@ -109,33 +99,14 @@ export default function ComptabiliteExternalisationPage({
               }}
             />
             <div className="space-y-4 mb-8">
-              <p className="text-base sm:text-lg text-foreground/80 font-medium leading-relaxed">
-                La comptabilité reste l&apos;un des premiers points de friction pour un
-                dirigeant. Entre les échéances fiscales, la gestion des factures et la
-                préparation de la clôture annuelle, le temps consacré à la tenue des comptes
-                s&apos;accumule vite. Pourtant, rares sont les entreprises en croissance qui
-                justifient dès le départ un comptable interne à temps plein.
-              </p>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                L&apos;externalisation comptable permet de résoudre ce dilemme. Elle donne
-                accès à une expertise de niveau professionnel, sans les contraintes d&apos;un
-                recrutement. Pour une startup qui prépare une levée de fonds ou une PME qui
-                veut structurer sa finance, disposer de données comptables fiables et à jour
-                n&apos;est pas un luxe : c&apos;est une condition de pilotage.
-              </p>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Chez Iter Advisors, nous accompagnons les dirigeants sur la tenue comptable,
-                les déclarations fiscales et la clôture annuelle. Notre approche s&apos;appuie
-                sur les outils cloud que vous utilisez déjà, sans imposer de migration forcée
-                ni de rupture dans vos processus.
-              </p>
+              {copy.intro.map((paragraph) => <p key={paragraph} className="text-base text-muted-foreground leading-relaxed">{paragraph}</p>)}
             </div>
 
             {/* TLDR pull-quote */}
             {t.tldr && (
               <div className="mb-8 p-5 sm:p-6 bg-iter-chartreuse/10 border-l-4 border-iter-chartreuse rounded-r-lg">
                 <p className="text-xs sm:text-sm font-semibold text-foreground mb-1.5 uppercase tracking-widest">
-                  En une ligne
+                  {copy.summary}
                 </p>
                 <p className="text-sm sm:text-base text-foreground leading-relaxed">{t.tldr}</p>
               </div>
@@ -146,14 +117,14 @@ export default function ComptabiliteExternalisationPage({
                 href={getContactPath(locale)}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
-                Demander un devis
+                {copy.cta}
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
               <Link
-                href="/daf-externalise"
+                href={dafClusterHref("", locale)}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
               >
-                DAF externalisé
+                {copy.cfo}
               </Link>
             </div>
           </div>
@@ -295,10 +266,11 @@ export default function ComptabiliteExternalisationPage({
         <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/5">
           <div className="container max-w-3xl">
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-10 sm:mb-12 text-center">
-              Avis de nos clients
+              {copy.reviews}
             </h2>
             <ClientTestimonials
               testimonials={t.testimonials}
+              locale={locale}
               trustfolioUrl="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc"
             />
           </div>
@@ -310,7 +282,7 @@ export default function ComptabiliteExternalisationPage({
         <section className="py-12 sm:py-16 bg-background">
           <div className="container max-w-3xl">
             <h2 className="text-lg sm:text-xl font-bold font-heading text-foreground mb-6">
-              Sources et références
+              {copy.sources}
             </h2>
             <ul className="space-y-2">
               {t.sources.map((source: string, idx: number) => (
@@ -320,9 +292,7 @@ export default function ComptabiliteExternalisationPage({
               ))}
             </ul>
             <p className="text-xs text-muted-foreground mt-8 pt-6 border-t border-border/40">
-              Les chiffres et références cités dans cet article proviennent de sources
-              publiques officielles. Nous nous engageons à maintenir la pertinence et
-              l&apos;exactitude de ces informations.
+              {copy.note}
             </p>
           </div>
         </section>

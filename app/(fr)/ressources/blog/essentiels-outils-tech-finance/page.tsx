@@ -49,7 +49,7 @@ export default function EssentielsOutilsTechFinancePage() {
         { id: "securite-et-gouvernance", label: "6. Sécurité, intégration et gouvernance" },
         { id: "methode-selection", label: "7. Méthode de sélection" },
       ]}
-      tldr="La digitalisation du département finance n'est plus optionnelle. Les outils cloud (comptabilité, trésorerie, reporting) libèrent 40-50 % du temps des équipes. L'IA et l'automatisation élèvent le niveau d'expertise requis. Une sélection pragmatique adaptée à votre taille et budget garantit un ROI rapide."
+      tldr="La digitalisation du département finance n'est plus optionnelle. Les outils cloud peuvent réduire les ressaisies en comptabilité, trésorerie et reporting. L'IA et l'automatisation élèvent le niveau d'expertise requis. Une sélection pragmatique adaptée à votre taille et budget permet de mesurer les gains par rapport au coût complet."
       relatedArticles={[
         {
           url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
@@ -187,7 +187,7 @@ export default function EssentielsOutilsTechFinancePage() {
       </ul>
 
       <Callout type="info" title="A savoir">
-        L'intégration de vos outils comptables avec votre solution de BI élimine 100 % de la saisie manuelle dans les tableaux de bord. Cela réduit les erreurs et les délais de reporting.
+        L'intégration de vos outils comptables avec votre solution de BI peut réduire les ressaisies dans les tableaux de bord. Le gain dépend des connecteurs, des données et des contrôles maintenus par l’équipe.
       </Callout>
 
       <h2 id="securite-et-gouvernance">6. Sécurité, intégration et gouvernance</h2>
