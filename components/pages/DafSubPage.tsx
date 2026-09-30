@@ -21,6 +21,7 @@ interface DafSubPageProps {
   content: DafSubContent;
   cmsNavigation?: CmsNavItem[];
   author?: EditorialAuthor;
+  contactContext?: string;
   /** Per-route hero illustration. Displayed below the hero text when provided. */
   heroImage?: { src: string; alt: string };
 }
@@ -62,7 +63,7 @@ const mdComponents: any = {
   ),
 };
 
-export default function DafSubPage({ locale, content, cmsNavigation, heroImage, author = FINANCE_AUTHOR }: DafSubPageProps) {
+export default function DafSubPage({ locale, content, cmsNavigation, heroImage, author = FINANCE_AUTHOR, contactContext }: DafSubPageProps) {
   const firstSection = content.sections[0];
   const bodySections = content.sections.slice(1);
 
@@ -103,7 +104,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">
               <Link
-                href={getContactPath(locale)}
+                href={getContactPath(locale) + (contactContext ? `#${contactContext}` : "")}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 {content.ctaButton}
@@ -336,7 +337,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
 
       <TestimonialsSection locale={locale} />
       {locale === "fr" && content.proofSlugs && <CaseProofLinks slugs={content.proofSlugs} />}
-      <CTASection locale={locale} />
+      <CTASection locale={locale} context={contactContext} />
     </PageLayout>
   );
 }

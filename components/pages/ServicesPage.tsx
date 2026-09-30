@@ -86,12 +86,16 @@ export default function ServicesPage({
         </div>
       </section>
 
+      {locale === "fr" && <section className="pb-8 bg-background"><div className="container"><h2 className="text-2xl font-semibold mb-5">Quel besoin souhaitez-vous traiter ?</h2><div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">{[
+        {title: "Anticiper le cash", href: "/services/previsionnel-tresorerie"},
+        {title: "Budget, marges et reporting", href: "/services/controle-de-gestion-externalise"},
+        {title: "Structurer la fonction finance", href: "/services/gestion-financiere-externalisee"},
+        {title: "Préparer un financement", href: "/services/accompagnement-levee-de-fond"},
+      ].map(item => <Link key={item.href} href={item.href} className="rounded-xl border border-border p-5 font-semibold hover:border-iter-violet hover:text-iter-violet">{item.title}<ArrowRight size={18} className="mt-4" aria-hidden /></Link>)}</div></div></section>}
       {/* Intro */}
       <section className="bg-background py-16 lg:py-20">
         <div className="container max-w-3xl">
-          <p className="text-muted-foreground leading-relaxed text-lg mb-8">
-            {t.intro.paragraph}
-          </p>
+
           <ul className="space-y-3 mb-12">
             {t.intro.bullets.map((bullet, i) => (
               <li

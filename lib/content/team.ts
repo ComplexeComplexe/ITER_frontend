@@ -109,9 +109,9 @@ const fallbackData: FallbackMemberData[] = [
       es: "Socio fundador y CMO"
     },
     h1Roles: {
-      fr: "Co-fondateur, DAF externalisé",
-      en: "Co-Founder, Fractional CFO",
-      es: "Cofundador, CFO Externalizado",
+      fr: "Associé fondateur & CMO",
+      en: "Founding Partner & CMO",
+      es: "Socio fundador y CMO",
     },
     slug: "guillaume-rostand",
     photo: { url: "/images/team/guillaume-rostand.webp" },

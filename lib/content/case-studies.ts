@@ -40,11 +40,11 @@ const content: Record<Locale, CaseStudiesContent> = {
     meta: {
       title: "Cas Pratiques - Iter Advisors",
       description:
-        "Découvrez comment nos clients ont structuré et optimisé leurs finances. Cas pratiques SaaS, e-commerce, consulting et fintech.",
+        "Découvrez les missions Iter auprès de SolarMente, Seasonly et Opti Digital : contexte, livrables, résultats documentés et limites.",
     },
     h1: "Cas Pratiques",
     intro:
-      "Découvrez comment nos clients ont transformé leur gestion financière. Des startups SaaS aux e-commerce, voici leurs histoires de succès.",
+      "SolarMente, Seasonly et Opti Digital : trois missions de direction financière, avec leur contexte, les travaux réalisés et les limites des résultats présentés.",
     resourcesLabel: "Ressources",
     resourcesHref: "/ressources",
     breadcrumbLabel: "Cas pratiques",
@@ -299,11 +299,11 @@ const content: Record<Locale, CaseStudiesContent> = {
     meta: {
       title: "Case Studies - Iter Advisors",
       description:
-        "See how our clients structured and optimized their finances. Case studies in SaaS, e-commerce, consulting, and fintech.",
+        "Explore Iter engagements with SolarMente, Seasonly and Opti Digital: context, deliverables and documented results, with detailed cases in French.",
     },
     h1: "Case Studies",
     intro:
-      "Discover how our clients transformed their financial management. From SaaS startups to e-commerce platforms, here are their success stories.",
+      "SolarMente, Seasonly and Opti Digital: three finance engagements, with context, deliverables and limitations. The detailed case studies are available in French.",
     resourcesLabel: "Resources",
     resourcesHref: "/en/ressources",
     breadcrumbLabel: "Case studies",
@@ -392,11 +392,11 @@ const content: Record<Locale, CaseStudiesContent> = {
     meta: {
       title: "Casos Prácticos - Iter Advisors",
       description:
-        "Descubre cómo nuestros clientes estructuraron y optimizaron sus finanzas. Casos prácticos en SaaS, e-commerce, consulting y fintech.",
+        "Conoce las misiones de Iter con SolarMente, Seasonly y Opti Digital: contexto, entregables y resultados documentados. Casos detallados en francés.",
     },
     h1: "Casos Prácticos",
     intro:
-      "Descubre cómo nuestros clientes transformaron su gestión financiera. Desde startups SaaS hasta plataformas de e-commerce, aquí están sus historias de éxito.",
+      "SolarMente, Seasonly y Opti Digital: tres misiones financieras, con contexto, entregables y límites. Los casos detallados están disponibles en francés.",
     resourcesLabel: "Recursos",
     resourcesHref: "/es/recursos",
     breadcrumbLabel: "Casos prácticos",

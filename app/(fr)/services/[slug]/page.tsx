@@ -16,7 +16,7 @@ const basePath = "/services";
 /* ── Fallback titles for FR services ── */
 const fallbackTitles: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
-    "Prévisionnel de Trésorerie PME en 2026 | Iter Advisors",
+    "Prévisionnel de trésorerie PME : 13 semaines | Iter Advisors",
   "gestion-financiere-externalisee":
     "Gestion financière externalisée : opérations et reporting",
   "accompagnement-levee-de-fond":

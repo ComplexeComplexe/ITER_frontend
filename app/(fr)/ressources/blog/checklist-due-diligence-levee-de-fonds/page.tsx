@@ -1,3 +1,4 @@
+import Link from 'next/link';
 
 
 import { Metadata } from 'next';
@@ -39,14 +40,14 @@ export default function ChecklistDueDiligencePage() {
       }}
       readingTime={6}
       datePublished="2026-05-01"
-      dateModified="2026-09-13"
+      dateModified="2026-09-30"
       heroImage="/images/blog/covers/checklist-due-diligence-levee-de-fonds.svg"
       toc={[
         { id: "definition", label: "1. Qu'est-ce que la due diligence ?" },
         { id: "documents-financiers", label: "2. Documents financiers à préparer" },
-        { id: "analyses-cles", label: "3. Analyses clés à avoir prêts" },
+        { id: "analyses-cles", label: "3. Analyses clés à préparer" },
         { id: "dataroom", label: "4. Organisation dataroom" },
-        { id: "timeline", label: "5. Timeline et plannification" },
+        { id: "timeline", label: "5. Timeline et planification" },
         { id: "erreurs-eviter", label: "6. Erreurs à éviter" },
         { id: "faq", label: "FAQ" },
       ]}
@@ -109,7 +110,7 @@ export default function ChecklistDueDiligencePage() {
         <li>📎 Analyses de coûts : Détail des marges par business unit</li>
       </ul>
 
-      <h2 id="analyses-cles">3. Analyses clés à avoir prêts</h2>
+      <h2 id="analyses-cles">3. Analyses clés à préparer</h2>
       <p>
         Au-delà des documents bruts, les investisseurs veulent des analyses qui montrent votre compréhension du business.
       </p>
@@ -157,6 +158,7 @@ export default function ChecklistDueDiligencePage() {
         },
       ]} />
 
+      <p>Pour cadrer les documents, les responsabilités et le travail de revue, consultez notre <Link href="/services/ma-due-diligence">accompagnement en due diligence financière</Link>.</p>
       <h2 id="dataroom">4. Organisation dataroom</h2>
       <p>
         Tout doit être stocké dans une dataroom virtuelle sécurisée (Dealroom, VDR, Citrix ShareFile).
@@ -181,7 +183,7 @@ export default function ChecklistDueDiligencePage() {
         <li>Accès granulaire par rôle (lead investor vs other angel)</li>
       </ul>
 
-      <h2 id="timeline">5. Timeline et plannification</h2>
+      <h2 id="timeline">5. Timeline et planification</h2>
       <p>
         <strong>T-12 semaines : Préparation</strong>
       </p>

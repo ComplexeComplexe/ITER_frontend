@@ -46,6 +46,7 @@ export default async function Page() {
       <DafSubPage
       locale="fr"
       content={content}
+      contactContext="tarifs"
       cmsNavigation={cmsNavigation}
       heroImage={{
         src: "/images/illustrations/pricing-roi-tablet.svg",

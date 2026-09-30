@@ -10,25 +10,25 @@ import { getContactPath } from "@/lib/navigation";
 const ctaText: Record<Locale, { heading: string; paragraph: string; button: string; email: string }> = {
   fr: {
     heading: "Parlons de votre projet",
-    paragraph: "Faites les bons choix. Maintenant. Dites non au statu quo et faites le choix de la proximité, de l'efficacité et de la flexibilité avec Iter Advisors.",
-    button: "Prendre rendez-vous",
+    paragraph: "Indiquez votre priorité, votre situation et votre échéance. Le premier échange permettra de préciser le périmètre utile et les prochaines étapes.",
+    button: "Décrire mon besoin",
     email: "Nous écrire",
   },
   en: {
     heading: "Let's talk about your project",
-    paragraph: "Make the right choices. Now. Say no to the status quo and choose proximity, efficiency and flexibility with Iter Advisors.",
-    button: "Book a meeting",
+    paragraph: "Tell us your priority, situation and timeline. The first conversation helps define the scope and next steps.",
+    button: "Describe my needs",
     email: "Email us",
   },
   es: {
     heading: "Hablemos de su proyecto",
-    paragraph: "Tome las decisiones correctas. Ahora. Diga no al statu quo y elija la proximidad, la eficiencia y la flexibilidad con Iter Advisors.",
-    button: "Concierte una cita",
+    paragraph: "Cuéntenos su prioridad, situación y plazo. La primera conversación permite definir el alcance y los próximos pasos.",
+    button: "Describir mi necesidad",
     email: "Escríbenos",
   },
 };
 
-export default function CTASection({ locale }: { locale: Locale }) {
+export default function CTASection({ locale, context }: { locale: Locale; context?: string }) {
   const t = ctaText[locale];
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
@@ -60,7 +60,7 @@ export default function CTASection({ locale }: { locale: Locale }) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={getContactPath(locale)}
+              href={getContactPath(locale) + (context ? `#${context}` : "")}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-dark text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
             >
               {t.button}

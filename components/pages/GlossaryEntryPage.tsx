@@ -187,6 +187,7 @@ export default function GlossaryEntryPage({
         </div>
       </section>
 
+      {locale === "fr" && (slug === "cash-burn-runway" || slug === "arr-mrr") && <section className="container max-w-3xl pb-8"><p className="text-muted-foreground leading-relaxed">{slug === "cash-burn-runway" ? <>Le runway donne un horizon global ; pour repérer une semaine sous tension, construisez un <Link href="/services/previsionnel-tresorerie" className="text-iter-violet underline">prévisionnel de trésorerie</Link> à partir de vos échéances.</> : <>Ces métriques prennent leur sens dans une revue des revenus, des coûts et du cash. Découvrez le <Link href="/fractional-cfo-startups" className="text-iter-violet underline">pilotage financier de votre startup SaaS</Link> avec un CFO à temps partagé.</>}</p></section>}
       {(related.length > 0 || mentions.length > 0) && (
         <section className="bg-background pb-10">
           <div className="container max-w-3xl grid gap-6 sm:grid-cols-2">

@@ -36,6 +36,9 @@ import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
 import { getHomeContent } from "@/lib/content/home";
 import { faqPageSchema } from "@/lib/schemas";
+import HomeDecisionResources from "@/components/HomeDecisionResources";
+import { resolveAuthorUrl } from "@/lib/content/team";
+import { aboutHref } from "@/lib/path-localization";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import type { StrapiTeamMember, CmsNavItem, StrapiHomepage } from "@/lib/static-content";
 import { strapiMediaUrl } from "@/lib/static-content";
@@ -771,6 +774,8 @@ export default function HomePage({
                 const photoUrl = strapiPhotoUrl || localPhotoUrl;
                 const initials = `${member.firstName?.[0] ?? ""}${member.lastName?.[0] ?? ""}`.toUpperCase();
                 const hasLinkedin = member.linkedIn && member.linkedIn.trim().length > 0;
+                const profile = resolveAuthorUrl(name);
+                const profileHref = profile ? aboutHref(locale, profile.split("/").at(-1)!) : undefined;
 
                 return (
                   <motion.div
@@ -780,11 +785,11 @@ export default function HomePage({
                     transition={{ duration: 0.4, delay: 0.3 + i * 0.04 }}
                     className={`text-center w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(20%-1.2rem)] ${hasLinkedin ? "" : ""}`}
                   >
-                    {hasLinkedin ? (
+                    {(profileHref || hasLinkedin) ? (
                       <a
-                        href={member.linkedIn}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={profileHref ?? member.linkedIn}
+                        target={profileHref ? undefined : "_blank"}
+                        rel={profileHref ? undefined : "noopener noreferrer"}
                         className="group block"
                       >
                     <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-3 rounded-2xl bg-iter-violet overflow-hidden group-hover:shadow-lg group-hover:shadow-iter-violet/20 transition-all duration-300">
@@ -812,7 +817,7 @@ export default function HomePage({
                     <p className="text-xs text-muted-foreground mt-0.5">
                       {member.role}
                     </p>
-                    {hasLinkedin && (
+                    {!profileHref && hasLinkedin && (
                       <div className="mt-1.5 flex justify-center">
                         <svg
                           className="w-3.5 h-3.5 text-muted-foreground/40 group-hover:text-iter-violet transition-colors"
@@ -956,7 +961,7 @@ export default function HomePage({
       </section>
 
       {/* ═══ BLOG ═══ */}
-      <section className="bg-muted/30 py-24 lg:py-32">
+      {locale === "fr" ? <HomeDecisionResources /> : <section className="bg-muted/30 py-24 lg:py-32">
         <div className="container">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
             <div className="max-w-lg">
@@ -1004,7 +1009,7 @@ export default function HomePage({
             ))}
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* ═══ CONTACT CTA ═══ */}
       <section

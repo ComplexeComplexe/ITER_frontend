@@ -1,5 +1,21 @@
 /** Substantive page changes. Shared navigation changes do not refresh every URL. */
 export const PAGE_REVISIONS: Record<string, string> = {
+  "/es/quienes-somos/guillaume-rostand": "2026-09-30",
+  "/en/about/guillaume-rostand": "2026-09-30",
+  "/a-propos/guillaume-rostand": "2026-09-30",
+  "/es/recursos/casos-de-exito": "2026-09-30",
+  "/en/ressources/case-studies": "2026-09-30",
+  "/ressources/cas-clients": "2026-09-30",
+  "/ressources/glossaire/arr-mrr": "2026-09-30",
+  "/ressources/glossaire/cash-burn-runway": "2026-09-30",
+  "/ressources/blog/filiale-espagnole-pilotage-financier": "2026-09-30",
+  "/ressources/blog/term-sheet-negocier-clauses-cles": "2026-09-30",
+  "/ressources/blog/cash-burn-calculer-runway-anticiper-levee": "2026-09-30",
+  "/ressources/blog/flux-de-tresorerie": "2026-09-30",
+  "/services": "2026-09-30",
+  "/services/accompagnement-levee-de-fond": "2026-09-30",
+  "/services/gestion-financiere-externalisee": "2026-09-30",
+  "/services/previsionnel-tresorerie": "2026-09-30",
   "/es/cfo-externalizado-barcelona": "2026-09-30",
   "/es/cfo-externalizado-paris": "2026-09-30",
   "/en/outsourced-cfo-barcelona": "2026-09-30",
@@ -34,8 +50,8 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/drh-externalise": "2026-09-13",
   "/en/hr-outsourcing": "2026-09-13",
   "/es/externalizacion-rrhh": "2026-09-13",
-  "/ressources/blog/daf-externalise-vs-daf-salarie": "2026-09-13",
-  "/ressources/blog/checklist-due-diligence-levee-de-fonds": "2026-09-13",
+  "/ressources/blog/daf-externalise-vs-daf-salarie": "2026-09-30",
+  "/ressources/blog/checklist-due-diligence-levee-de-fonds": "2026-09-30",
 };
 
 export function latestRevision(...dates: Array<string | Date | undefined>): string {

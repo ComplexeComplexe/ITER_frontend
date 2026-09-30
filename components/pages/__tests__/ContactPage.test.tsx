@@ -50,6 +50,22 @@ describe("Contact qualification and attribution", () => {
     await waitFor(() => expect(events()).toHaveLength(1));
     expect(events()[0]).toMatchObject({ origin_page:"/ressources/ia-finance/automatiser-reporting-financier", lead:{main_need:"automation"} });
   });
+  it("preserves a legacy funding link without capturing unrelated query data", async () => {
+    window.history.replaceState({}, "", "/contact?type=levee-de-fonds&email=private@example.com");
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true }); vi.stubGlobal("fetch", fetchMock);
+    const { container } = render(<ContactPage locale="fr" />);
+    expect(screen.getByLabelText(/Votre priorité/)).toHaveValue("funding");
+    fillAndSubmit(container);
+    await waitFor(() => expect(events()).toHaveLength(1));
+    expect(events()[0]).toMatchObject({ origin_page: "/ressources/blog/checklist-due-diligence-levee-de-fonds", lead: { main_need: "funding" } });
+    expect(JSON.stringify(events())).not.toContain("private@example.com");
+  });
+  it("uses explicit price context first and rejects unknown query contexts", () => {
+    expect(getContactContext("#tarifs", "?type=levee-de-fonds")?.originPage).toBe("/daf-externalise/tarifs");
+    expect(getContactContext("", "?type=__proto__")).toBeUndefined();
+    expect(getContactContext("", "?type=private@example.com")).toBeUndefined();
+    expect(getContactContext("", "?type=audit-structure")?.need).toBe("daf-pme");
+  });
   it("retains qualification after failure and records conversion only on a successful retry", async () => {
     const fetchMock = vi.fn().mockResolvedValueOnce({ ok: false, json: async () => ({}) }).mockResolvedValueOnce({ ok: true });
     vi.stubGlobal("fetch", fetchMock);
