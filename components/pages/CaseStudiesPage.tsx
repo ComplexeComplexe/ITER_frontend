@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import { getDocumentedCase } from "@/lib/content/documented-cases";
 import { getPublishedCases } from "@/lib/content/published-cases";
@@ -143,12 +143,6 @@ export default function CaseStudiesPage({
   asSection?: boolean;
 }) {
   const t = { ...getCaseStudiesContent(locale), caseStudies: getPublishedCases(locale) };
-  const [filter, setFilter] = useState<"all" | "conseil" | "ecommerce">("all");
-
-  const filtered =
-    filter === "all"
-      ? t.caseStudies
-      : t.caseStudies.filter((cs) => cs.sector === filter);
 
   const Heading = asSection ? "h2" : "h1";
   const content = (
@@ -170,28 +164,7 @@ export default function CaseStudiesPage({
             {t.intro}
           </p>
 
-          {/* Filters */}
-          <div className="flex flex-wrap gap-3 mt-8">
-            {(
-              [
-                { key: "all" as const, label: t.filterAll },
-                { key: "conseil" as const, label: t.filterConseil },
-                { key: "ecommerce" as const, label: t.filterEcommerce },
-              ] as const
-            ).map(({ key, label }) => (
-              <button
-                key={key}
-                onClick={() => setFilter(key)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  filter === key
-                    ? "bg-iter-violet text-white"
-                    : "border border-border text-foreground hover:border-iter-violet hover:text-iter-violet"
-                }`}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
+
         </div>
       </section>
 
@@ -199,7 +172,7 @@ export default function CaseStudiesPage({
       <section className="bg-background pb-24">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-6">
-            {filtered.map((cs, i) => (
+            {t.caseStudies.map((cs, i) => (
               <CaseStudyCardWrapper
                 key={cs.slug}
                 cs={cs}
