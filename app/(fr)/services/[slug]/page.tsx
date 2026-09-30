@@ -37,7 +37,7 @@ const fallbackDescriptions: Record<ServicePageSlug, string> = {
   "gestion-financiere-externalisee":
     "Organisez les données, les clôtures et le reporting de votre entreprise : responsabilités, trésorerie et processus de gestion financière externalisée.",
   "accompagnement-levee-de-fond":
-    "Levée de fonds clé en main : business plan, data room, due diligence et négociation investisseurs. +30 tours accompagnés, 100M EUR+ levés. Diagnostic gratuit.",
+    "Préparez les finances de votre levée : modèle financier, data room et réponses aux investisseurs. Travaux, livrables et calendrier définis au cadrage.",
   "comptabilite-externalisation":
     "Externalisez votre comptabilité : tenue, déclarations TVA, paie et clôture annuelle. Pennylane, Sage, QuickBooks - migration en 2 semaines. Devis gratuit.",
   "controle-de-gestion-externalise":

@@ -60,7 +60,7 @@ export default async function Page() {
         <aside id="accompagnement" className="scroll-mt-24 rounded-3xl bg-iter-dark text-white p-8 sm:p-10">
           <h2 className="font-heading text-2xl font-bold mb-3">Un DAF pour cadrer et piloter le chantier</h2>
           <p className="text-white/80 leading-relaxed mb-4">Le <Link href="/daf-externalise" className="underline">DAF externalisé</Link> définit les indicateurs, organise les contrôles et coordonne l’équipe comptable avec les intervenants techniques. Pour préparer l’échange, identifiez votre reporting actuel, les logiciels utilisés et la tâche qui consomme le plus de temps.</p>
-          <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-iter-violet px-6 py-3 font-semibold">Échanger sur votre projet<ArrowRight size={16} aria-hidden /></Link>
+          <Link href="/contact#ia-finance" className="inline-flex items-center gap-2 rounded-full bg-iter-violet px-6 py-3 font-semibold">Échanger sur votre projet<ArrowRight size={16} aria-hidden /></Link>
         </aside>
       </div>
     </section>

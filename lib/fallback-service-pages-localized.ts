@@ -1,3 +1,4 @@
+import { getFundRaisingService } from "./content/fund-raising-support";
 /**
  * Localized fallback content for service pages in English and Spanish
  * Used when Strapi is unavailable to provide non-French content
@@ -143,43 +144,7 @@ const fallbackServicePagesEn: Record<string, StrapiServiceSinglePage> = {
     ],
     seo: {},
   },
-  "accompagnement-levee-de-fond": {
-    heroTitle: "Fundraising Support",
-    heroSubtitle: "Prepare and succeed in your fundraising with an experienced partner",
-    content: [
-      createParagraph("Successful fundraising requires financial credibility, a compelling story, and expert guidance. Our team supports you at every stage."),
-      createHeading("Our Support Includes"),
-      createList([
-        "Financial model development and stress testing",
-        "Investor dataroom preparation and documentation",
-        "Financial narrative and story development",
-        "Due diligence support and Q&A preparation",
-        "Term sheet review and negotiation guidance",
-      ]),
-      createHeading("Why Partner With Us"),
-      createList([
-        "Proven track record with multiple rounds",
-        "Investor-ready financial models and materials",
-        "Faster close with organized documentation",
-        "Better terms through experienced negotiation",
-      ]),
-      createHeading("Process"),
-      createList([
-        "Assessment of your current financials and readiness",
-        "Model development and investor materials preparation",
-        "Mock investor meetings and pitch practice",
-        "Ongoing support through close",
-      ]),
-    ],
-    faq: [
-      {
-        id: 1,
-        question: "How long does the preparation phase take?",
-        answer: [createParagraph("Typically 4-8 weeks to develop your financial model, clean your data, and prepare investor materials, depending on your starting point.")],
-      },
-    ],
-    seo: {},
-  },
+  "accompagnement-levee-de-fond": getFundRaisingService("en"),
 };
 
 // Spanish fallback service pages
@@ -402,78 +367,7 @@ const fallbackServicePagesEs: Record<string, StrapiServiceSinglePage> = {
     ],
     seo: {},
   },
-  "accompagnement-levee-de-fond": {
-    heroTitle: "Apoyo en Captación de Fondos",
-    heroSubtitle: "Prepare y tenga éxito en sus rondas con un socio experimentado",
-    content: [
-      // T8 (2026-06-07): enriched from ~150 → ~620 words.
-      createParagraph("Una captación de fondos exitosa requiere tres ingredientes: credibilidad financiera demostrable, una historia convincente respaldada por números sólidos, y orientación experta para navegar los procesos con inversores profesionales. Iter Advisors acompaña startups y scale-ups en cada etapa — desde la preparación pre-ronda hasta el cierre del wire — con un track record de 30+ rondas cerradas y más de 100 M€ levantados para nuestros clientes."),
-      createParagraph("La diferencia entre una ronda cerrada en 4 meses con buenas condiciones y una ronda que arrastra durante 9 meses con dilución excesiva está, casi siempre, en la calidad de la preparación financiera. Un CFO senior que ya ha cerrado 10-30 rondas anticipa las preguntas de los inversores, prepara las respuestas con anticipación y posiciona la empresa para negociar desde una posición de fuerza."),
-      createHeading("Tipos de rondas que cubrimos"),
-      createList([
-        "Pre-seed y seed (200k€ - 2M€): business angels, microVCs, family offices",
-        "Series A (2-10M€): VCs especializados — Adara, Kibo, JME, Seaya, K Fund",
-        "Series B y C (10M€+): VCs growth — Atomico, Insight Partners, General Atlantic",
-        "Venture debt y growth lending: complemento al equity sin dilución",
-        "Subvenciones públicas: CDTI Neotec, Enisa, ICEX, Horizon Europe, NextGenEU",
-      ]),
-      createHeading("Nuestro Apoyo Incluye"),
-      createList([
-        "Desarrollo y stress-testing del modelo financiero a 3-5 años (escenarios base/optimista/pesimista)",
-        "Preparación completa del dataroom: estados financieros auditables, contratos clave, IP, cap table, cohort analyses",
-        "Construcción de la narrativa financiera: historia de unit economics, justificación del use of proceeds, defensibilidad del moat",
-        "Apoyo en due diligence comercial, financiera y legal — preparación de respuestas anticipadas a los 50 puntos más críticos",
-        "Revisión de term sheet: identificación de cláusulas problemáticas (liquidation preference, anti-dilution, drag-along)",
-        "Orientación en negociación: post-money valuation, dilución óptima, composición del consejo, vesting cliff",
-      ]),
-      createHeading("Por Qué Asociarse con Nosotros"),
-      createList([
-        // SEO-AUD-0824 §1 — « desde 2020 » contredisait l'année de création
-        // arbitrée (2021, cf. ANNEE_FONDATION dans lib/content/facts.ts).
-        "Track record comprobado: 30+ rondas cerradas, 100M€+ levantados desde 2021",
-        "Modelos financieros y materiales listos para inversores, validados por VCs tier 1",
-        "Cierre más rápido (mediana 4-5 meses vs. 8-9 meses del mercado) gracias a documentación impecable",
-        // SEO-AUD-0824 §1 — « +15% de pre-money valuation en media » : moyenne
-        // annoncée sans échantillon, période ni base de comparaison. Une
-        // valorisation dépend d'abord du marché et de la traction ; l'attribuer
-        // à la préparation financière n'est pas démontrable.
-        "Mejores condiciones de negociación: un expediente financiero sólido reduce los descuentos exigidos en due diligence",
-        "Identificación de inversores pertinentes según el sector, la fase y la geografía del proyecto",
-      ]),
-      createHeading("Proceso en 4 fases"),
-      createList([
-        "Fase 1 — Diagnóstico (2 semanas): evaluación de sus finanzas actuales, identificación de gaps a corregir antes de la ronda",
-        "Fase 2 — Preparación (4-6 semanas): construcción del modelo, dataroom, deck financiero, narrativa, lista de inversores objetivo",
-        "Fase 3 — Roadshow (2-4 meses): apoyo en reuniones con inversores, simulacros de Q&A, gestión de las due diligences en paralelo",
-        "Fase 4 — Cierre (3-6 semanas): negociación del term sheet, coordinación con abogados, gestión del proceso legal hasta el wire",
-      ]),
-      createHeading("Subvenciones públicas españolas"),
-      createParagraph("Para startups deeptech, biotech o industriales, las subvenciones públicas pueden representar el 20-40% de la financiación. Acompañamos en los dossieres CDTI Neotec (hasta 250k€ a fondo perdido), Enisa Jóvenes Emprendedores (préstamos participativos), y los programas europeos (Horizon Europe, EIC Accelerator). El éxito en subvenciones aumenta el atractivo de la empresa de cara a inversores privados."),
-    ],
-    faq: [
-      {
-        id: 1,
-        question: "¿Cuánto tiempo toma la fase de preparación?",
-        answer: [createParagraph("Típicamente 4-8 semanas para desarrollar su modelo financiero, limpiar los datos contables, construir el dataroom y preparar todos los materiales para inversores. El plazo depende del punto de partida: una startup con contabilidad limpia y modelo financiero existente puede estar lista en 4 semanas; una empresa con datos desorganizados necesitará 6-8 semanas.")],
-      },
-      {
-        id: 2,
-        question: "¿Cuáles son sus tarifas?",
-        answer: [createParagraph("Los honorarios se definen en una propuesta según los entregables y el alcance. Cualquier remuneración ligada al cierre debe figurar expresamente en el contrato; no se presupone una comisión estándar.")],
-      },
-      {
-        id: 3,
-        question: "¿Trabajan en exclusividad?",
-        answer: [createParagraph("No exigimos exclusividad. Usted puede trabajar en paralelo con un placement agent (banca de inversión) o un broker. En la práctica, el 80% de nuestros clientes nos contratan como su único partner financiero durante la ronda, porque la coordinación entre múltiples actores genera fricciones y ralentiza el proceso.")],
-      },
-      {
-        id: 4,
-        question: "¿Qué ocurre si la ronda no se cierra?",
-        answer: [createParagraph("Tras una preparación de 4-8 semanas, el 85% de las rondas que iniciamos cierran (sobre rangos de valoración realistas). Si la ronda no cierra (mercado adverso, métricas insuficientes), revisamos la estrategia: pivotar hacia subvenciones públicas, venture debt, o esperar 2-3 trimestres para mejorar las métricas antes de retomar.")],
-      },
-    ],
-    seo: {},
-  },
+  "accompagnement-levee-de-fond": getFundRaisingService("es"),
 };
 
 export function getFallbackServicePage(

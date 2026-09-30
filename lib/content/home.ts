@@ -17,7 +17,7 @@ export const homeContent = {
     hero: {
       h1: { before: "La meilleure version de votre ", highlight: "direction financière", highlightAlt: "direction des ressources humaines", after: "" },
       h2: "Cabinet de conseil en finance d\u2019entreprise, DAF externalisé et DRH externalisé. Nous structurons, pilotons et optimisons vos fonctions support pour une croissance saine et durable.",
-      cta: "Prendre rendez-vous",
+      cta: "Décrire mon besoin",
     },
     about: {
       heading: "Pilotez votre croissance en toute sérénité avec Iter Advisors !",
@@ -27,7 +27,7 @@ export const homeContent = {
         "Au cœur de notre mission\u00A0: vous connecter à un réseau d\u2019experts (investisseurs, avocats, banques…) pour sécuriser vos décisions stratégiques.",
         "Déléguez sereinement, concentrez-vous sur ce qui compte vraiment\u00A0: votre développement\u00A0!",
       ],
-      cta: "Prendre rendez-vous",
+      cta: "Décrire mon besoin",
     },
     benefits: [
       {
@@ -137,7 +137,7 @@ export const homeContent = {
       title: "DAF externalisé & CFO à temps partagé",
       paragraph: "Chez Iter Advisors, nos CFO part-time apportent une expertise sectorielle approfondie et une maîtrise des outils digitaux pour moderniser vos processus financiers. Fort de notre culture entrepreneuriale, nous accompagnons efficacement les entreprises dans différentes phases clés de leur développement.",
       benefits: [
-        "Opérationnel dès le 1er jour d'accompagnement",
+        "Un démarrage cadré selon vos priorités et les données disponibles",
         "Expertise sectorielle approfondie (startups, PME, scale-ups)",
         "Maîtrise des outils digitaux pour moderniser vos processus",
         "Interlocuteur dédié à votre dossier",
@@ -155,7 +155,7 @@ export const homeContent = {
       { label: "Lancement", desc: "Structurez vos fonctions finance dès le départ pour poser des bases solides." },
       { label: "Croissance", desc: "Accompagnez votre scaling avec des processus financiers adaptés à votre rythme." },
       { label: "Gestion de crise", desc: "Stabilisez votre trésorerie dans les moments critiques." },
-      { label: "Levée de fonds", desc: "Préparez et sécurisez vos financements avec des données certifiées." },
+      { label: "Levée de fonds", desc: "Préparez vos dossiers de financement avec des données rapprochées et des hypothèses expliquées." },
       { label: "Post-levée", desc: "Structurez votre croissance post-financement avec rigueur et agilité." },
     ],
     faqs: [
@@ -189,10 +189,10 @@ export const homeContent = {
     teamSubtitle: "Un interlocuteur dédié à votre dossier, des outils performants adaptés à votre activité pour optimiser vos opérations au quotidien.",
     successHeading: "Découvrez les témoignages de nos clients",
     whenHeading: "Quand faire appel à Iter Advisors ?",
-    whenSubtitle: "Nous nous intégrons à chaque étape de la vie de votre entreprise, en devenant le partenaire de confiance pour assurer et certifier votre gestion.",
+    whenSubtitle: "Nous nous intégrons à chaque étape de la vie de votre entreprise, en devenant le partenaire de confiance pour organiser le pilotage et fiabiliser vos informations financières.",
     faqHeading: "Questions fréquentes",
     contactHeading: "Parlons de votre projet",
-    contactSubtitle: "Faites les bons choix. Maintenant. Dites non au statu quo et faites le choix de la proximité, de l'efficacité et de la flexibilité avec Iter Advisors.",
+    contactSubtitle: "Décrivez votre situation, votre besoin prioritaire et votre échéance. Nous préciserons ensemble les travaux utiles et le périmètre de l’accompagnement.",
     emailCta: "Nous écrire",
     trustfolioLabel: "sur",
     clientsLabel: "Ils nous font confiance",
@@ -213,7 +213,7 @@ export const homeContent = {
     hero: {
       h1: { before: "The best version of your ", highlight: "financial management", highlightAlt: "human resources management", after: "" },
       h2: "Corporate finance consultancy, outsourced CFO and outsourced HR. We structure, manage and optimize your support functions for healthy, sustainable growth.",
-      cta: "Make an appointment",
+      cta: "Describe my needs",
     },
     about: {
       heading: "Manage your growth with Iter Advisors!",
@@ -223,7 +223,7 @@ export const homeContent = {
         "At the heart of our mission: connecting you to a network of experts (investors, lawyers, banks...) to secure your strategic decisions.",
         "Delegate with peace of mind, and focus on what really matters: your development!",
       ],
-      cta: "Make an appointment",
+      cta: "Describe my needs",
     },
     benefits: [
       {
@@ -333,7 +333,7 @@ export const homeContent = {
       title: "Outsourced CFO & Part-time CFO",
       paragraph: "At Iter Advisors, our part-time CFOs bring deep sector expertise and mastery of digital tools to modernize your financial processes. With our entrepreneurial culture, we effectively support companies through key stages of their development.",
       benefits: [
-        "Operational from day one",
+        "A scoped start based on your priorities and available data",
         "Deep sector expertise (startups, SMEs, scale-ups)",
         "Mastery of digital tools to modernize your processes",
         "Dedicated contact for your project",
@@ -351,7 +351,7 @@ export const homeContent = {
       { label: "Launch", desc: "Structure your finance functions from the start to lay solid foundations." },
       { label: "Growth", desc: "Support your scaling with financial processes adapted to your pace." },
       { label: "Crisis management", desc: "Stabilize your cash flow in critical moments." },
-      { label: "Fundraising", desc: "Prepare and secure your financing with certified data." },
+      { label: "Fundraising", desc: "Prepare financing applications with reconciled data and documented assumptions." },
       { label: "Post-fundraising", desc: "Structure your post-funding growth with rigor and agility." },
     ],
     faqs: [
@@ -380,10 +380,10 @@ export const homeContent = {
     teamSubtitle: "A dedicated contact for your project, high-performance tools adapted to your activity to optimize your daily operations.",
     successHeading: "Discover our clients' testimonials",
     whenHeading: "When should you call Iter Advisors?",
-    whenSubtitle: "We integrate at every stage of your company's life, becoming the trusted partner to ensure and certify your management.",
+    whenSubtitle: "We integrate at every stage of your company's life, becoming the trusted partner to organise financial oversight and improve the reliability of your data.",
     faqHeading: "Frequently asked questions",
     contactHeading: "Let's talk about your project",
-    contactSubtitle: "Make the right choices. Now. Say no to the status quo and choose proximity, efficiency and flexibility with Iter Advisors.",
+    contactSubtitle: "Describe your situation, priority and timing. Together we can define the work needed and the scope of support.",
     emailCta: "Email us",
     trustfolioLabel: "on",
     clientsLabel: "They trust us",
@@ -398,7 +398,7 @@ export const homeContent = {
     hero: {
       h1: { before: "La mejor versión de su ", highlight: "dirección financiera", highlightAlt: "dirección de recursos humanos", after: "" },
       h2: "Consultoría en finanzas corporativas, CFO externalizado y RRHH externalizado. Estructuramos, pilotamos y optimizamos sus funciones de soporte para un crecimiento sano y sostenible.",
-      cta: "Concierte una cita",
+      cta: "Describir mi necesidad",
     },
     about: {
       heading: "¡Gestione su crecimiento con Iter Advisors!",
@@ -408,7 +408,7 @@ export const homeContent = {
         "El corazón de nuestra misión: conectarle con una red de expertos (inversores, abogados, bancos...) para asegurar sus decisiones estratégicas.",
         "¡Delegue con tranquilidad y concéntrese en lo que realmente importa: su desarrollo!",
       ],
-      cta: "Concierte una cita",
+      cta: "Describir mi necesidad",
     },
     benefits: [
       {
@@ -518,7 +518,7 @@ export const homeContent = {
       title: "CFO externalizado y CFO a tiempo compartido",
       paragraph: "En Iter Advisors, nuestros CFO a tiempo parcial aportan una profunda experiencia sectorial y un dominio de las herramientas digitales para modernizar sus procesos financieros. Con nuestra cultura emprendedora, acompañamos eficazmente a las empresas en las fases clave de su desarrollo.",
       benefits: [
-        "Operativo desde el primer día",
+        "Un inicio definido según sus prioridades y los datos disponibles",
         "Experiencia sectorial profunda (startups, pymes, scale-ups)",
         "Dominio de herramientas digitales para modernizar sus procesos",
         "Interlocutor dedicado a su proyecto",
@@ -536,7 +536,7 @@ export const homeContent = {
       { label: "Lanzamiento", desc: "Estructure sus funciones financieras desde el principio para sentar bases sólidas." },
       { label: "Crecimiento", desc: "Acompañe su escalamiento con procesos financieros adaptados a su ritmo." },
       { label: "Gestión de crisis", desc: "Estabilice su tesorería en los momentos críticos." },
-      { label: "Captación de fondos", desc: "Prepare y asegure sus financiaciones con datos certificados." },
+      { label: "Captación de fondos", desc: "Prepare sus expedientes de financiación con datos conciliados e hipótesis documentadas." },
       { label: "Post-captación", desc: "Estructure su crecimiento post-financiación con rigor y agilidad." },
     ],
     faqs: [
@@ -565,10 +565,10 @@ export const homeContent = {
     teamSubtitle: "Un interlocutor dedicado a su proyecto, herramientas eficientes adaptadas a su actividad para optimizar sus operaciones diarias.",
     successHeading: "Descubra los testimonios de nuestros clientes",
     whenHeading: "¿Cuándo llamar a Iter Advisors?",
-    whenSubtitle: "Nos integramos en cada etapa de la vida de su empresa, convirtiéndonos en el socio de confianza para asegurar y certificar su gestión.",
+    whenSubtitle: "Nos integramos en cada etapa de la vida de su empresa, convirtiéndonos en el socio de confianza para organizar el seguimiento y mejorar la fiabilidad de sus datos financieros.",
     faqHeading: "Preguntas frecuentes",
     contactHeading: "Hablemos de su proyecto",
-    contactSubtitle: "Tome las decisiones correctas. Ahora. Diga no al statu quo y elija la proximidad, la eficiencia y la flexibilidad con Iter Advisors.",
+    contactSubtitle: "Describa su situación, su prioridad y sus plazos. Definiremos juntos los trabajos necesarios y el alcance del acompañamiento.",
     emailCta: "Escríbenos",
     trustfolioLabel: "en",
     clientsLabel: "Confían en nosotros",

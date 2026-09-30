@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 import { Locale } from "@/lib/i18n";
 import { MaDueDiligenceContent } from "@/lib/content/ma-due-diligence";
 import PageLayout from "@/components/PageLayout";
@@ -24,6 +26,7 @@ interface MaDueDiligencePageProps {
 
 export default function MaDueDiligencePage({ locale, content: t, cmsNavigation }: MaDueDiligencePageProps) {
   const bc = breadcrumbLabels[locale];
+  const modified = PAGE_REVISIONS[`${locale === "fr" ? "" : `/${locale}`}/services/ma-due-diligence`];
 
   /* FAQ structured data */
   const faqSchema = {
@@ -53,6 +56,7 @@ export default function MaDueDiligencePage({ locale, content: t, cmsNavigation }
               description: t.hero.intro,
               locale,
               author: FINANCE_AUTHOR,
+              dateModified: modified,
             })
           ),
         }}
@@ -73,7 +77,7 @@ export default function MaDueDiligencePage({ locale, content: t, cmsNavigation }
           >
             {t.hero.h1}
           </motion.h1>
-          <PageByline locale={locale} author={FINANCE_AUTHOR} className="mb-6" />
+          <PageByline locale={locale} author={FINANCE_AUTHOR} dateModified={modified} className="mb-6" />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -82,6 +86,7 @@ export default function MaDueDiligencePage({ locale, content: t, cmsNavigation }
           >
             {t.hero.intro}
           </motion.p>
+          <Link href={t.cta.buttonHref} className="inline-flex mt-6 rounded-full bg-iter-violet px-6 py-3 text-white font-semibold">{t.cta.buttonText}</Link>
         </div>
       </section>
 
@@ -175,7 +180,7 @@ export default function MaDueDiligencePage({ locale, content: t, cmsNavigation }
         </div>
       </section>
 
-      <CTASection locale={locale} />
+      <CTASection locale={locale} context="due-diligence" />
     </PageLayout>
   );
 }

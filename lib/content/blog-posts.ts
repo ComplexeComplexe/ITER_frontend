@@ -1110,58 +1110,33 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     "reduire-bfr-7-leviers-actionnables": {
       meta: {
         title: "Réduire le BFR : 7 leviers actionnables | Iter Advisors",
-        description: "DSO, stocks, fournisseurs, factoring : 7 leviers concrets pour libérer 15-25% de votre CA en cash sans lever de fonds.",
+        description: "Facturation, stocks et paiements : 7 leviers pour examiner votre BFR, comparer les coûts et suivre leur effet dans un prévisionnel de trésorerie.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Comment réduire votre BFR : 7 leviers actionnables",
       publishedDate: "2026-05-11",
       author: "Sébastien Doat",
       category: "gestion-financiere",
-      htmlContent: `<p>Le <a href="/ressources/glossaire/besoin-fonds-roulement-bfr">BFR</a> (Besoin en Fonds de Roulement) est le plus grand consommateur de trésorerie des entreprises en croissance. Une startup qui double son CA doit généralement financer une augmentation de BFR de 20 à 30% de la croissance. Optimiser son BFR, c'est libérer du cash sans lever de fonds.</p>
-<h2 id="dso">Levier 1 — Réduire le DSO (délai client)</h2>
-<ul>
-<li>Facturez immédiatement après la prestation</li>
-<li>Passez en paiement anticipé ou à 15 jours pour les nouveaux clients</li>
-<li>Mettez en place des relances automatiques (D+1, D+7, D+14)</li>
-<li>Offrez un escompte de 2% pour paiement à 10 jours</li>
-<li>Pour les gros clients B2B à 60 jours : proposez du factoring</li>
-</ul>
-<p>Impact type : DSO de 60 → 30 jours = 1/12<sup>ème</sup> du CA annuel libéré en cash.</p>
-<h2 id="stocks">Levier 2 — Optimiser les stocks</h2>
-<ul>
-<li>Mettez en place un outil de prévision des ventes (<a href="/ressources/outils/agicap">Agicap</a>)</li>
-<li>Passez à des commandes progressives plutôt que massives</li>
-<li>Liquidez les stocks dormants (&gt; 90 jours sans rotation)</li>
-<li>Négociez du consignement ou du dropshipping avec vos fournisseurs</li>
-<li>Mettez en place des seuils de réapprovisionnement par SKU</li>
-</ul>
-<p>Impact type : stocks de 90 → 45 jours = 1/8<sup>ème</sup> du coût des achats libéré.</p>
-<h2 id="fournisseurs">Levier 3 — Allonger les délais fournisseurs</h2>
-<ul>
-<li>Renégociez vos conditions de paiement (30 → 45 jours)</li>
-<li>Passez en paiement à 60 jours pour les fournisseurs stratégiques</li>
-<li>Mettez en concurrence vos fournisseurs</li>
-<li>Utilisez des cartes corporate avec débit différé</li>
-</ul>
-<h2 id="anticipe">Levier 4 — Paiement anticipé des clients</h2>
-<ul>
-<li>Passez vos clients en abonnement avec paiement en début de période</li>
-<li>Proposez des remises pour paiement anticipé</li>
-<li>Facturez les acomptes (30% à la commande, 70% à la livraison)</li>
-</ul>
-<h2 id="acomptes">Levier 5 — Réduire les acomptes aux fournisseurs</h2>
-<ul>
-<li>Renégociez les acomptes (50% → 30%)</li>
-<li>Stagger les paiements d'acompte sur plusieurs mois</li>
-<li>Privilégiez les fournisseurs qui ne demandent pas d'acompte</li>
-</ul>
-<h2 id="production">Levier 6 — Optimiser le cycle de production</h2>
-<p>Pour les industriels, chaque jour gagné dans le cycle = un jour de BFR en moins. Lean manufacturing, just-in-time, externalisation des étapes longues.</p>
-<h2 id="factoring">Levier 7 — Factoring / affacturage</h2>
-<p>Le factoring vous permet d'encaisser immédiatement vos créances clients — moyennant une commission de 0,5 à 2%. Utilisez-le ponctuellement, pas en permanence.</p>
-<h2 id="experience">Notre expérience</h2>
-<p>Chez nos clients, l'optimisation du BFR libère en moyenne 15 à 25% du CA en cash. Pour une PME de 3M€ de CA : 450 000 à 750 000 € de trésorerie libérée — sans lever de fonds.</p>
-<p>Un <a href="/services/previsionnel-tresorerie">prévisionnel de trésorerie</a> permet de traduire ces leviers en encaissements et décaissements attendus, puis de suivre les écarts.</p><p><a href="/contact">Auditer mon BFR avec un DAF</a></p>`,
+      htmlContent: `<p>Réduire le <a href="/ressources/glossaire/besoin-fonds-roulement-bfr">BFR</a> consiste à examiner l’argent mobilisé dans les stocks et les créances clients, diminué des dettes fournisseurs. Le potentiel dépend du modèle économique, des contrats et des pratiques de paiement. Commencez par rapprocher les données comptables et les échéances réelles avant de fixer un objectif.</p>
+<h2 id="dso">Levier 1 : fiabiliser la facturation et les encaissements</h2>
+<p>Vérifiez les factures non émises, les litiges et les créances échues. Attribuez les relances à un responsable et confirmez les dates attendues avec les clients. Un échéancier documenté est plus utile qu’un objectif uniforme de réduction du délai client.</p>
+<h2 id="stocks">Levier 2 : examiner les stocks par référence</h2>
+<p>Identifiez les références dormantes, la saisonnalité et les délais de réapprovisionnement. Réduire un stock peut mobiliser moins de cash, mais aussi créer une rupture ou une remise commerciale. Comparez ces coûts avant d’ajuster les commandes.</p>
+<h2 id="fournisseurs">Levier 3 : revoir les échéances fournisseurs</h2>
+<p>Comparez les dates négociées aux dates effectivement payées. Discutez les changements avec les fournisseurs dans le respect des contrats et des règles applicables. Un délai plus long peut modifier le prix, la qualité de service ou la relation commerciale.</p>
+<h2 id="anticipe">Levier 4 : étudier les acomptes clients</h2>
+<p>Un acompte ou un paiement par étape peut rapprocher l’encaissement du travail engagé. Sa pertinence dépend de l’activité et de l’accord du client. Si une remise est envisagée, comparez son coût au besoin de financement couvert.</p>
+<h2 id="acomptes">Levier 5 : coordonner les acomptes fournisseurs</h2>
+<p>Placez les acomptes fournisseurs dans le même calendrier que les recettes attendues. Étudiez un échelonnement lié aux étapes du projet, sans supposer que le fournisseur acceptera une baisse des acomptes.</p>
+<h2 id="production">Levier 6 : suivre les travaux en cours</h2>
+<p>En production ou en prestation, repérez les étapes qui immobilisent des ressources avant la facturation. Une meilleure coordination entre opérations et finance peut réduire les retards. Le gain se mesure sur les flux observés et les coûts de mise en œuvre.</p>
+<h2 id="factoring">Levier 7 : comparer les solutions de financement</h2>
+<p>L’affacturage peut financer certaines créances selon leur éligibilité. Examinez le montant réellement disponible, les frais, les garanties, les recours et la gestion de la relation client. Comparez les propositions sur un périmètre identique avec vos partenaires financiers.</p>
+<h2 id="experience">Mesurer l’effet avant de généraliser</h2>
+<p><strong>Exemple fictif :</strong> une facture de 20 000 € prévue en semaine 6 est encaissée en semaine 4 après confirmation du client. Le cash disponible augmente de 20 000 € en semaines 4 et 5 ; le total encaissé sur les six semaines reste identique. Une éventuelle remise diminue le gain net. Ce décalage n’est ni un revenu supplémentaire ni une économie récurrente.</p>
+<p>Utilisez un <a href="/services/previsionnel-tresorerie">prévisionnel de trésorerie à 13 semaines</a> pour comparer le scénario de départ, les actions retenues et le réalisé. Suivez séparément les effets de volume, de saisonnalité et de prix.</p>
+<p>Le <a href="/ressources/cas-clients/seasonly-marge-par-canal-bfr">cas Seasonly</a> décrit une mission associant marges par canal, stocks et financement du BFR. Il présente son périmètre et ses limites, sans extrapoler un gain moyen à toutes les entreprises.</p>
+<p><a href="/contact#tresorerie">Décrire mon besoin de trésorerie</a></p>`,
       content: [],
     },
     "cash-burn-calculer-runway-anticiper-levee": {

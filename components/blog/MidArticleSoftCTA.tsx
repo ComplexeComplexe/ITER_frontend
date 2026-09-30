@@ -25,24 +25,24 @@ const STRINGS: Record<
 > = {
   fr: {
     eyebrow: "Restons en contact",
-    title: "Une question précise sur votre setup finance ?",
-    body: "20 minutes avec un de nos DAFs — sans engagement, pour préciser le diagnostic et chiffrer un accompagnement.",
-    cta: "Réserver un créneau",
-    ariaLabel: "Réserver un appel de 20 minutes avec un DAF d'Iter Advisors",
+    title: "Une question sur votre organisation financière ?",
+    body: "Décrivez votre situation et vos priorités. Un premier échange permettra de préciser le besoin et le périmètre d’un éventuel accompagnement.",
+    cta: "Décrire mon besoin",
+    ariaLabel: "Contacter Iter Advisors pour décrire mon besoin",
   },
   en: {
     eyebrow: "Let’s talk",
     title: "A specific question on your finance setup?",
-    body: "20 minutes with one of our CFOs — no commitment, to sharpen the diagnosis and scope a possible engagement.",
-    cta: "Book a slot",
-    ariaLabel: "Book a 20-minute call with an Iter Advisors CFO",
+    body: "Tell us about your situation and priorities. An initial conversation will help clarify your needs and the scope of a possible engagement.",
+    cta: "Describe my needs",
+    ariaLabel: "Contact Iter Advisors to describe my needs",
   },
   es: {
     eyebrow: "Hablemos",
-    title: "¿Una pregunta concreta sobre su setup financiero?",
-    body: "20 minutos con uno de nuestros CFOs — sin compromiso, para afinar el diagnóstico y dimensionar un acompañamiento.",
-    cta: "Reservar una llamada",
-    ariaLabel: "Reservar una llamada de 20 minutos con un CFO de Iter Advisors",
+    title: "¿Una pregunta sobre su organización financiera?",
+    body: "Cuéntenos su situación y sus prioridades. Una primera conversación permitirá aclarar sus necesidades y el alcance de un posible acompañamiento.",
+    cta: "Explicar mis necesidades",
+    ariaLabel: "Contactar con Iter Advisors para explicar mis necesidades",
   },
 };
 

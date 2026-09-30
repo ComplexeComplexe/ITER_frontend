@@ -19,6 +19,7 @@ import {
   TOOLS_REVIEW_DATE_LABEL,
 } from '@/lib/schemas/toolSchemas';
 import Link from 'next/link';
+import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
 
 export interface ToolPageProps {
   slug: string;
@@ -135,6 +136,8 @@ export default function ToolPage({
   const faqForTool = toolDetails?.faqExpanded || faqItems[slug as keyof typeof faqItems] || [];
   const alternativeTools = getToolsByCategory(tool.category).filter((t) => t.slug !== slug);
   const author = getToolAuthor(tool);
+  const modified = PAGE_REVISIONS[`/ressources/outils/${slug}`] ?? TOOLS_REVIEW_DATE;
+  const modifiedLabel = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${modified}T12:00:00Z`));
 
   return (
     <PageLayout locale={locale}>
@@ -174,7 +177,7 @@ export default function ToolPage({
               {author.name}
             </Link>
             , DAF externalisé chez Iter Advisors · mis à jour le{' '}
-            <time dateTime={TOOLS_REVIEW_DATE}>{TOOLS_REVIEW_DATE_LABEL}</time> · sans affiliation ni
+            <time dateTime={modified}>{modifiedLabel}</time> · sans affiliation ni
             commission
           </p>
         </div>
@@ -251,7 +254,7 @@ export default function ToolPage({
         <div className="container">
           <p className="font-semibold text-gray-900 mb-2">Verdict 30 secondes</p>
           <p className="text-gray-700">
-            {toolDetails?.verdict30s || `${tool.name} est notre standard pour ${tool.forWho[0]}. Le rapport prix/qualité est excellent, l'implémentation rapide, et le support réactif.`}
+            {toolDetails?.verdict30s || `${tool.name} peut répondre aux usages suivants : ${tool.forWho.join(', ')}. Le choix dépend de vos sources, des contrôles attendus, du coût complet et de la personne qui maintiendra l’outil. Validez ces points sur un périmètre limité avant de déployer.`}
           </p>
           {/* MAILLAGE-T8 (2026-08-31) — les 20 fiches outils étaient bien
               maillées entre elles mais coupées du cluster DAF : l'avis venait

@@ -428,7 +428,7 @@ export const tools: Tool[] = [
     logoAlt: 'Logo Microsoft Power BI — outil de reporting financier et dashboards pour CFO',
     website: 'https://powerbi.microsoft.com/fr-fr/',
     rating: 4.4,
-    implementationTime: '2-3 jours',
+    implementationTime: 'À cadrer selon les données et le partage',
     priceRange: TOOL_PRICING["power-bi"].label,
     phase: 1,
     forWho: [
@@ -444,7 +444,7 @@ export const tools: Tool[] = [
     experts: ['benjamin'],
     hasVerbatim: false,
     shortDescription:
-      "Le reporting financier pour les board meetings. Connexion native Pennylane / Sage, 100+ sources de données, dashboards en 2-3 jours.",
+      "Tableaux de bord financiers à partir de sources préparées et rapprochées. Connexions, modèle de données et droits de partage à définir selon vos outils.",
   },
 
   {

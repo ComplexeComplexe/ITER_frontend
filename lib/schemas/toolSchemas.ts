@@ -1,4 +1,5 @@
 import { Tool } from '@/data/tools';
+import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
 
 /**
  * Date de la dernière revue éditoriale du corpus d'avis outils.
@@ -52,7 +53,7 @@ export function generateToolReviewSchema(tool: Tool) {
       name: 'Iter Advisors',
       url: 'https://www.iteradvisors.com',
     },
-    dateModified: TOOLS_REVIEW_DATE,
+    dateModified: PAGE_REVISIONS[`/ressources/outils/${tool.slug}`] ?? TOOLS_REVIEW_DATE,
     reviewRating: {
       '@type': 'Rating',
       ratingValue: tool.rating,

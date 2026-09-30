@@ -131,9 +131,10 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
       ],
-      ctaButton: "Prendre rendez-vous",
+      ctaButton: "Décrire mon besoin",
     },
     "temps-partage": {
+      modified: { date: "2026-09-30", label: "30 septembre 2026" },
       proofSlugs: ["opti-digital-structuration-financement"],
       meta: {
         // T#2 (2026-07-13) — Title recentré sur l'intent exclusif "DAF à
@@ -167,7 +168,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           content: [
             "Le DAF à temps partagé s'intègre dans votre organisation comme un membre à part entière de votre équipe de direction. Il participe aux réunions stratégiques, travaille en étroite collaboration avec vos équipes opérationnelles et assure un suivi régulier de votre performance financière.",
             "La fréquence d'intervention est définie selon vos besoins : en moyenne de 1 à 8 jours par mois selon le périmètre. Elle peut être ajustée à la hausse lors de périodes intenses (levée de fonds, clôture annuelle, opérations stratégiques, changement d'ERP) ou à la baisse en phase de croisière.",
-            "Concrètement, le DAF à temps partagé met en place une organisation régulière : réunion hebdomadaire ou bimensuelle d'une demi-journée pour faire le point sur la trésorerie, les KPIs financiers et les priorités ; jours de travail autonome sur les chantiers identifiés (budgets, analyses de variance, optimisation des processus, etc.) ; disponibilité pour les échanges urgents par email ou téléphone entre les jours formels.",
+            "Concrètement, le DAF à temps partagé met en place une organisation régulière : réunion hebdomadaire ou bimensuelle d'une demi-journée pour faire le point sur la trésorerie, les KPIs financiers et les priorités ; jours de travail autonome sur les chantiers identifiés (budgets, analyses de variance, optimisation des processus, etc.) ; modalités de contact et de traitement des urgences convenues au cadrage, y compris entre les interventions planifiées.",
           ],
         },
         {
@@ -192,29 +193,29 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           heading: "Les Missions Principales",
           content: [
-            "**Pilotage financier et tableaux de bord :** Le DAF à temps partagé met en place les outils de pilotage qui permettent au dirigeant de monitorer sa performance en temps réel : tableau de bord KPI mensuel, analyse de variance (réel vs budget), reporting P&L par produit ou par ligne de business.",
-            "**Gestion de la trésorerie :** Prévisions de trésorerie à 3-6 mois, négociation des conditions bancaires, mise en place d'un système de cash management efficace, suivi quotidien des besoins de trésorerie.",
+            "**Pilotage financier et tableaux de bord :** Le DAF à temps partagé met en place les outils de pilotage qui permettent au dirigeant de suivre sa performance au rythme des données disponibles : tableau de bord KPI mensuel, analyse de variance (réel vs budget), reporting P&L par produit ou par ligne de business.",
+            "**Gestion de la trésorerie :** Prévisions de trésorerie à 3-6 mois, négociation des conditions bancaires, mise en place d'un système de cash management efficace, organisation du suivi des besoins de trésorerie avec l’équipe.",
             "**Élaboration des budgets et des prévisions :** Mise en place du processus budgétaire, construction des prévisionnels financiers à 3-5 ans pour la levée de fonds ou la prise de décision stratégique.",
-            "**Structure financière et comptabilité :** Mise en place de la comptabilité analytique, refonte des plans comptables si nécessaire, organisation de la clôture mensuelle et annuelle, et conformité fiscale.",
-            "**Optimisation des coûts :** Analyse des dépenses, identification des leviers de réduction de coûts (renégociation de contrats, réorganisation de la structure) sans pénaliser la croissance.",
+            "**Structure financière et comptabilité :** Mise en place de la comptabilité analytique, refonte des plans comptables si nécessaire, organisation de la clôture mensuelle et annuelle, et coordination avec les conseils comptables et fiscaux.",
+            "**Optimisation des coûts :** Analyse des dépenses, identification des leviers de réduction de coûts (renégociation de contrats, réorganisation de la structure) en examinant les effets sur l’activité.",
             "**Relations bancaires et financement :** Présentation de la situation financière aux banques, négociation des lignes de crédit, préparation des demandes de financement (crédit d'impôt, subventions).",
           ],
         },
         {
           heading: "Les Avantages du DAF à Temps Partagé",
           content: [
-            "**Économie significative :** 30 à 60 % par rapport au coût employeur d'un directeur financier salarié de séniorité équivalente, selon le stade de maturité et le périmètre confié. Une mission démarre à 3 000 € HT/mois, contre 100 000 à 213 000 € par an charges comprises pour un recrutement.",
-            "**Continuité et connaissance approfondie :** Contrairement à un consultant ponctuel qui intervient une fois et disparaît, le DAF à temps partagé suit votre entreprise dans la durée. Il devient progressivement expert de votre secteur, de vos clients, de vos opérations, de vos défis spécifiques.",
-            "**Regard externe et expérience multisectorielle :** Votre DAF travaille avec d'autres entreprises. Il apporte les meilleures pratiques, les benchmarks du secteur, et des idées novatrices issues de ses autres engagements.",
-            "**Flexibilité totale :** Vous pouvez ajuster le nombre de jours en fonction de votre croissance. Pas d'engagement sur plusieurs années, résiliation possible avec préavis d'un mois chez Iter Advisors.",
-            "**Crédibilité auprès des banques et investisseurs :** Pour une levée de fonds, avoir un DAF structuré (même à temps partagé) renforce votre crédibilité. Les investisseurs savent que vous pilotez vos finances sérieusement.",
+            "**Un budget lié au périmètre :** Les missions récurrentes Iter se situent entre 3 000 et 8 000 € HT/mois selon les travaux et le rythme convenus. La comparaison avec un recrutement doit tenir compte du temps disponible, des responsabilités et des compétences nécessaires.",
+            "**Continuité :** Le suivi régulier permet au DAF de mieux connaître votre activité, vos équipes et vos contraintes. La documentation des travaux facilite la transmission et le suivi des décisions.",
+            "**Regard externe et expérience multisectorielle :** Votre DAF travaille avec d'autres entreprises. Il peut proposer des méthodes et des points de comparaison pertinents, en tenant compte de votre situation.",
+            "**Périmètre ajustable :** Vous pouvez ajuster le nombre de jours en fonction de votre croissance. Pas d'engagement sur plusieurs années, résiliation possible avec préavis d'un mois chez Iter Advisors.",
+            "**Des échanges financiers préparés :** Le DAF aide à présenter des chiffres cohérents, à documenter les hypothèses et à répondre aux questions des banques et investisseurs.",
           ],
         },
         {
           heading: "DAF à Temps Partagé : la Phase 1",
           content: [
-            "Les trois premiers mois d'une mission de DAF à temps partagé sont cruciaux. Le DAF réalise un diagnostic complet de votre situation financière : analyse de la comptabilité existante, constitution du dossier fiscal, identification des risques et des points d'amélioration.",
-            "A l'issue de ce diagnostic, vous recevez un rapport détaillé avec les recommandations prioritaires et un plan d'action pour les 12 prochains mois.",
+            "La première phase précise les priorités, les données disponibles, les rôles et les échéances. Le DAF examine les éléments utiles à la mission avec vos équipes et votre cabinet comptable.",
+            "Les livrables et leur calendrier sont définis au cadrage : état des lieux, premières analyses, plan d’action et rythme des points de suivi selon le besoin.",
           ],
         },
         {
@@ -227,10 +228,10 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           heading: "Cas concrets : DAF à temps partagé chez Iter Advisors",
           content: [
-            "**Startup SaaS Series A (Happy Scribe)** : 4 jours/mois pour structurer le reporting, préparer la Series B et accompagner la consolidation comptable. Économie estimée : 80 000 €/an vs un DAF en CDI.",
-            "**PME e-commerce (35 personnes)** : 6 jours/mois pour piloter la trésorerie, optimiser le BFR et négocier les lignes bancaires. Résultat : -25% de BFR en 9 mois, soit 150 000 € de cash libéré.",
-            "**Scale-up FinTech** : 8 jours/mois en phase de levée Series B (5 M€ levés). Le **DAF à temps partagé** a construit le modèle financier, animé la data room et négocié le term sheet aux côtés du CEO.",
-            "Découvrez d'autres exemples sur notre [page cas clients](/ressources/cas-clients) ou parlez directement à un DAF lors d'un [diagnostic financier gratuit](/contact).",
+            "**Structurer les opérations financières :** le [cas Opti Digital](/ressources/cas-clients/opti-digital-structuration-financement) décrit des travaux de migration ERP, de clôture et de reporting dans la durée.",
+            "**Piloter les marges et le BFR :** le [cas Seasonly](/ressources/cas-clients/seasonly-marge-par-canal-bfr) présente les livrables par canal et les limites du résultat publié.",
+            "**Préparer une opération :** le [cas SolarMente](/ressources/cas-clients/solarmente-serie-b-cleantech) décrit le modèle financier, la data room et le reporting au conseil. Les résultats sont propres à cette mission.",
+            "Découvrez d'autres exemples sur notre [page cas clients](/ressources/cas-clients) ou parlez directement à un DAF lors d'un [premier échange sur votre besoin](/contact#daf).",
           ],
         },
         {
@@ -241,7 +242,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             // page qui assume ce qu'elle ne couvre pas est plus crédible — et
             // plus citable — qu'une page qui promet tout.
             "**Il ne remplace pas votre comptable.** Le DAF à temps partagé supervise la fonction comptable et travaille avec votre expert-comptable ou votre comptable interne ; il ne saisit pas les écritures. Si la tenue des comptes est votre besoin, c'est l'**[externalisation comptable](/services/comptabilite-externalisation)** qu'il vous faut.",
-            "**Il n'est pas disponible en continu.** Le format repose sur des jours d'intervention planifiés. Entre deux passages, il reste joignable pour les urgences réelles, mais une entreprise qui a besoin d'une présence quotidienne relève d'un recrutement — c'est d'ailleurs un signe de maturité que nous aidons à préparer.",
+            "**Il n'est pas disponible en continu.** Le format repose sur des jours d'intervention planifiés. Les canaux de contact et le relais en cas d’urgence sont définis au cadrage, mais une entreprise qui a besoin d'une présence quotidienne relève d'un recrutement — c'est d'ailleurs un signe de maturité que nous aidons à préparer.",
             "**Il ne gère pas l'opérationnel du quotidien.** Relances clients, saisie des factures, paie : ces tâches restent portées par vos équipes ou vos prestataires. Le DAF à temps partagé les structure, les outille et les contrôle ; il ne les exécute pas.",
             "Pour situer ce format dans l'ensemble de l'offre : la page **[DAF externalisé](/daf-externalise)** présente toutes les formes d'intervention, et la fiche **[métier de DAF](/daf-externalise/metier)** détaille le rôle lui-même.",
           ],
@@ -270,7 +271,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
       ],
-      ctaButton: "Prendre rendez-vous",
+      ctaButton: "Décrire mon besoin",
     },
     transition: {
   modified: { date: "2026-09-12", label: "12 septembre 2026" },
@@ -427,7 +428,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
   "ctaButton": "Échanger sur mon besoin de transition"
 },
     tarifs: {
-      modified: { date: "2026-09-26", label: "26 septembre 2026" },
+      modified: { date: "2026-09-30", label: "30 septembre 2026" },
       proofSlugs: ["opti-digital-structuration-financement", "seasonly-marge-par-canal-bfr", "solarmente-serie-b-cleantech"],
       meta: {
         // SEO-02 (S31 2026-07-27) — 38 requêtes "prix/tarif/coût/combien
@@ -464,7 +465,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             // FACTS (2026-09-01) — cette ligne annonçait un « TJM 800-1 200 € HT
             // par jour » : Iter ne facture jamais à la journée (facts.ts,
             // MISSIONS_PONCTUELLES). Fourchettes au projet, sur devis.
-            "Mission ponctuelle : pour un besoin délimité — préparation de levée (15 000 à 40 000 € HT), audit défensif ou vendor due diligence (20 000 à 60 000 € HT), audit finance one-shot (10 000 à 25 000 € HT). Chiffrée au projet, sur devis : nous ne facturons pas à la journée.",
+            "Mission ponctuelle : préparation financière d’une levée, assistance vendeur, due diligence acquéreur ou diagnostic de la fonction finance. Chaque mission fait l’objet d’un devis spécifique selon les entités, les données, les livrables et le calendrier. Ces prestations ne sont pas présumées incluses dans un forfait récurrent.",
           ],
         },
         {
@@ -636,7 +637,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
       ],
-      ctaButton: "Prendre rendez-vous",
+      ctaButton: "Décrire mon besoin",
     },
     "ecommerce": {
       proofSlugs: ["seasonly-marge-par-canal-bfr"],
