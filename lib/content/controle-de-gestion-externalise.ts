@@ -53,7 +53,7 @@ export const controleDeGestionExternaliseeContent = {
         "Équipes Paris et Barcelone, intervention à Toulouse",
         "Calendrier défini au cadrage",
       ],
-      primaryCta: { label: "Auditer ma gestion gratuitement", href: "/contact" },
+      primaryCta: { label: "Décrire mon besoin de reporting", href: "/contact#reporting" },
       secondaryCta: { label: "Voir nos formules et tarifs", href: "#tarifs" },
     },
     sections: [
@@ -168,7 +168,7 @@ export const controleDeGestionExternaliseeContent = {
             ["Regard", "Vers le passé", "Vers l'avenir"],
             ["Mission", "Enregistrer et justifier les flux", "Analyser, prévoir, recommander"],
             ["Livrable", "Bilan, compte de résultat, liasse fiscale", "Tableau de bord, forecast, analyse d'écarts"],
-            ["Fréquence", "Trimestrielle (TVA) ou annuelle", "Mensuelle (voire hebdomadaire)"],
+            ["Fréquence", "Selon les obligations et le calendrier convenu", "Mensuelle (voire hebdomadaire)"],
             ["Outil", "Logiciel comptable (Pennylane, etc.)", "Power BI, Excel avancé, Tableau"],
             ["Question type", "« Combien avons-nous gagné ? »", "« Allons-nous manquer de cash dans 6 mois ? »"],
           ],
@@ -188,11 +188,11 @@ export const controleDeGestionExternaliseeContent = {
         pillars: [
           {
             title: "Phase 1 — Diagnostic (Semaine 1-2)",
-            text: "Nous réalisons un audit de 15 points couvrant : qualité des données comptables, existence de tableaux de bord, processus de clôture, outils utilisés, et compétences de l'équipe existante. Livrable : un scorecard financier avec 5 priorités immédiates.",
+            text: "Nous examinons les données comptables, les tableaux de bord, les processus de clôture, les outils et les compétences disponibles. Le périmètre convenu précise les constats et les priorités à restituer.",
           },
           {
             title: "Phase 2 — Construction (Semaines 3-6)",
-            text: "Nous mettons en place le tableau de bord opérationnel : connexion aux sources de données (banque, outil de facturation, CRM), définition des KPIs pertinents pour votre modèle économique, et automatisation des extractions. Livrable : un dashboard temps réel et un reporting mensuel structuré.",
+            text: "Nous mettons en place le tableau de bord opérationnel : connexion aux sources de données (banque, outil de facturation, CRM), définition des KPIs pertinents pour votre modèle économique, et automatisation des extractions. Livrable : un tableau de bord actualisé selon les sources et un reporting mensuel structuré.",
           },
           {
             title: "Phase 3 — Pilotage (Mois 2-6)",
@@ -278,12 +278,12 @@ export const controleDeGestionExternaliseeContent = {
         title:
           "Prêt à piloter votre entreprise avec un contrôle de gestion externalisé ?",
         paragraphs: [
-          "Réservez un audit gratuit de 30 minutes avec Benjamin Ziza, Founding Partner & CFO chez Iter Advisors. Nous évaluerons vos besoins de pilotage et vous recommanderons la formule adaptée — sans engagement.",
+          "Le premier échange sert à comprendre vos indicateurs, vos outils et vos échéances. Nous définissons ensuite les données à analyser, les livrables et le budget de la mission.",
         ],
         ctaButtons: [
           {
-            label: "Demander un audit gratuit de ma gestion",
-            href: "/contact",
+            label: "Échanger sur mon reporting",
+            href: "/contact#reporting",
             variant: "primary" as const,
           },
           {

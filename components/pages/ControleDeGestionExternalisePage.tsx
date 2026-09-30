@@ -63,7 +63,7 @@ export default function ControleDeGestionExternalisePage({
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-4 leading-tight">
               {t.h1}
             </h1>
-            <PageByline locale={locale} author={FINANCE_AUTHOR} dateModified="2026-09-12" dateLabel="12 septembre 2026" className="mb-6" />
+            <PageByline locale={locale} author={FINANCE_AUTHOR} dateModified="2026-09-30" dateLabel="30 septembre 2026" className="mb-6" />
             <script
               type="application/ld+json"
               dangerouslySetInnerHTML={{
@@ -74,7 +74,7 @@ export default function ControleDeGestionExternalisePage({
                     description: t.meta?.description ?? t.h1,
                     locale,
                     author: FINANCE_AUTHOR,
-                    dateModified: "2026-09-12",
+                    dateModified: "2026-09-30",
                   })
                 ),
               }}
@@ -355,7 +355,7 @@ export default function ControleDeGestionExternalisePage({
         </div>
       </section>
 
-      <CTASection locale={locale} />
+      <CTASection locale={locale} context="reporting" />
     </PageLayout>
   );
 }

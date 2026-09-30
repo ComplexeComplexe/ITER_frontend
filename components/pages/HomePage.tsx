@@ -472,7 +472,7 @@ export default function HomePage({
               </div>
               <div className="flex flex-wrap gap-3">
                 <Link
-                  href={getContactPath(locale)}
+                  href={`${getContactPath(locale)}#daf`}
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-iter-violet text-white font-semibold hover:shadow-lg hover:shadow-iter-violet/20 transition-all duration-300"
                 >
                   {t.dafSection.cta}
@@ -1060,7 +1060,7 @@ export default function HomePage({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href={getContactPath(locale)}
+                href={`${getContactPath(locale)}#daf`}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-dark text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
               >
                 {t.hero.cta}

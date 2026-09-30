@@ -35,7 +35,7 @@ export default async function FundRaisingSupportPage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-6 [&_a]:text-white/80 [&_span]:text-white"><Breadcrumb locale="en" items={[{label: "Services", href: "/en/services"}, {label: "Fundraising support"}]} /></div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">{content.hero.h1}</h1>
-          <PageByline locale="en" author={FINANCE_AUTHOR} tone="dark" className="mb-6 justify-center" />
+          <PageByline locale="en" author={FINANCE_AUTHOR} dateModified="2026-09-30" tone="dark" className="mb-6 justify-center" />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -46,6 +46,7 @@ export default async function FundRaisingSupportPage() {
                   description: content.hero.intro,
                   locale: "en",
                   author: FINANCE_AUTHOR,
+                  dateModified: "2026-09-30",
                 })
               ),
             }}
@@ -53,7 +54,7 @@ export default async function FundRaisingSupportPage() {
           <p className="text-xl text-white/85 mb-8 max-w-3xl mx-auto">{content.hero.intro}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/en/contact"
+              href={content.cta.buttonHref}
               className="bg-iter-chartreuse text-foreground font-semibold px-8 py-3 rounded-2xl hover:opacity-90 transition"
             >
               {content.cta.buttonText}

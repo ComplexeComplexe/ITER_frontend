@@ -34,368 +34,289 @@ export interface MaDueDiligenceContent {
 }
 
 const content: Record<Locale, MaDueDiligenceContent> = {
-  fr: {
-    meta: {
-      title: "M&A et Due Diligence financière | Iter Advisors",
-      description:
-        "M&A et due diligence financière pour startups et PME. Préparation, exécution, négociation. +100 M€ de transactions accompagnées. Diagnostic gratuit.",
+  "fr": {
+    "meta": {
+      "title": "M&A et due diligence financière | Iter Advisors",
+      "description": "Préparez une acquisition, une cession ou une levée : données financières, BFR, dette et scénarios. Périmètre, livrables et honoraires sur devis."
     },
-    hero: {
-      h1: "M&A et Due Diligence financiere : securisez vos operations strategiques",
-      intro:
-        "Que vous prepariez une levee de fonds, une acquisition ou une cession, la due diligence financiere est l'etape critique qui determine le succes de votre operation. Nos CFOs experts vous accompagnent de la preparation a la cloture.",
+    "hero": {
+      "h1": "M&A et due diligence financière : préparer vos décisions",
+      "intro": "Acquéreur, dirigeant ou cédant : nous vous aidons à organiser et analyser les informations financières utiles à votre opération. Le périmètre distingue la préparation du dossier, la revue financière et les travaux des autres conseils."
     },
-    sections: [
+    "sections": [
       {
-        heading: "Pourquoi la due diligence financiere est essentielle",
-        content: `<p>La due diligence financiere est le processus d'investigation approfondie des comptes et de la situation financiere d'une entreprise dans le cadre d'une transaction (levee de fonds, acquisition, cession, fusion). Elle permet aux investisseurs et aux acquereurs de <strong>verifier la realite des chiffres presentes</strong> et d'identifier les risques financiers potentiels.</p>
-<p>Pour les dirigeants, preparer sa due diligence en amont est un avantage strategique majeur. Une entreprise "DD-ready" inspire confiance, accelere les negociations et maximise sa valorisation. A l'inverse, des comptes mal tenus ou des zones d'ombre financieres peuvent faire echouer une operation ou entrainer des decotes significatives.</p>
-<p>Chez Iter Advisors, nous avons accompagne plus de <strong>100 millions d'euros de transactions</strong> - levees de fonds, acquisitions et cessions - pour des startups et PME en France et en Espagne.</p>`,
+        "heading": "Quel besoin souhaitez-vous traiter ?",
+        "content": "<p>Côté dirigeant ou vendeur, il peut s’agir de préparer une data room et d’expliquer les comptes. Côté acquéreur, la revue financière examine les résultats, la dette, le BFR et les hypothèses de la cible. Le mandat précise les destinataires, les documents disponibles et les analyses attendues.</p><p>La préparation d’un dossier ne remplace pas une due diligence indépendante. Les sujets juridiques, fiscaux et sociaux sont traités avec les conseils compétents selon les missions convenues.</p>"
       },
       {
-        heading: "Les composantes d'une due diligence financiere",
-        content: `<ul>
-<li><strong>Analyse des etats financiers</strong> : revue des bilans, comptes de resultat et tableaux de flux sur 3 a 5 ans. Verification de la coherence et de la fiabilite des donnees comptables.</li>
-<li><strong>Qualite des revenus (Quality of Earnings)</strong> : distinction entre revenus recurrents et non-recurrents, analyse de la croissance organique vs. acquisitions, verification du chiffre d'affaires normalise.</li>
-<li><strong>Analyse du BFR et de la tresorerie</strong> : etude du besoin en fonds de roulement, des cycles de paiement clients/fournisseurs, et de la position de tresorerie nette.</li>
-<li><strong>Dette et engagements hors bilan</strong> : identification de toutes les dettes financieres, des engagements de credit-bail, des garanties donnees et des litiges en cours.</li>
-<li><strong>Projections et business plan</strong> : validation des hypotheses de croissance, des marges previsionnelles et de la coherence du plan de financement.</li>
-<li><strong>Conformite fiscale et sociale</strong> : verification des declarations fiscales, des obligations sociales et des risques de redressement.</li>
-</ul>`,
-      },
+        "heading": "Les analyses et livrables à définir",
+        "content": "<ul><li><strong>Résultats :</strong> rapprochement des comptes et du reporting, revenus récurrents ou ponctuels, éléments à retraiter et pièces justificatives.</li><li><strong>Cash et BFR :</strong> créances, stocks, fournisseurs, saisonnalité et hypothèses de financement.</li><li><strong>Dette :</strong> échéanciers, engagements identifiés et questions à approfondir avec les conseils.</li><li><strong>Prévisions :</strong> cohérence des hypothèses, scénarios et besoins de financement.</li></ul><p>Selon la mission, les livrables peuvent comprendre une data room organisée, une liste de questions, une note d’analyse et un suivi des points ouverts. Les données manquantes et les limites de l’analyse sont précisées.</p><p>Pour préparer vos pièces, consultez la <a href=\"/ressources/blog/checklist-due-diligence-levee-de-fonds\">checklist de due diligence</a>. Le <a href=\"/ressources/cas-clients/solarmente-serie-b-cleantech\">cas SolarMente</a> illustre des travaux de préparation financière et d’intégration, avec leur périmètre.</p>"
+      }
     ],
-    services: {
-      title: "Nos services M&A et due diligence",
-      items: [
+    "services": {
+      "title": "Des missions distinctes selon votre opération",
+      "items": [
         {
-          name: "Preparation a la due diligence (Vendor DD)",
-          description:
-            "Nous preparons votre entreprise a recevoir une due diligence : nettoyage des comptes, preparation de la dataroom, redaction du rapport financier vendeur et anticipation des questions des investisseurs.",
+          "name": "Préparation financière côté vendeur",
+          "description": "Organiser les pièces, rapprocher les chiffres et préparer les réponses aux questions. Une éventuelle vendor due diligence et ses destinataires sont cadrés séparément."
         },
         {
-          name: "Due diligence acquereur (Buy-side DD)",
-          description:
-            "Nous realisons la due diligence financiere pour le compte d'acquereurs : analyse des comptes cibles, identification des risques, ajustements de prix et recommandations d'investissement.",
+          "name": "Due diligence financière côté acquéreur",
+          "description": "Examiner les données disponibles de la cible, documenter les points de vigilance et préparer les analyses utiles aux négociations."
         },
         {
-          name: "Accompagnement levee de fonds",
-          description:
-            "De la preparation du financial model a la negociation du term sheet, nous accompagnons les fondateurs a chaque etape de leur levee de fonds. Plus de 100M EUR leves pour nos clients.",
+          "name": "Préparation d’une levée de fonds",
+          "description": "Construire le modèle financier, préparer la data room et accompagner les échanges financiers. Le dirigeant reste responsable des décisions et le rôle du leveur éventuel est distinct."
         },
         {
-          name: "Valorisation d'entreprise",
-          description:
-            "Methodes DCF, multiples de marche et transactions comparables pour etablir une valorisation robuste et defensible de votre entreprise.",
+          "name": "Modélisation et valorisation",
+          "description": "Comparer des hypothèses et méthodes de valorisation, expliciter les sensibilités et les données utilisées. Le prix d’une transaction dépend aussi de la négociation."
         },
         {
-          name: "Integration post-acquisition (PMI)",
-          description:
-            "Accompagnement dans l'integration financiere post-acquisition : harmonisation des systemes comptables, consolidation des reporting et optimisation des synergies.",
-        },
-      ],
+          "name": "Intégration après acquisition",
+          "description": "Définir les priorités de reporting, les responsabilités, les données à reprendre et la coordination avec les équipes comptables."
+        }
+      ]
     },
-    process: {
-      title: "Notre processus d'accompagnement",
-      steps: [
+    "process": {
+      "title": "Comment cadrer et suivre la mission",
+      "steps": [
         {
-          step: "01",
-          title: "Diagnostic initial",
-          description:
-            "Audit de votre situation financiere actuelle, identification des zones de risque et definition du perimetre de la mission. Livrable : rapport de diagnostic avec plan d'action.",
+          "step": "01",
+          "title": "Premier échange et périmètre",
+          "description": "Préciser l’opération, les échéances, les intervenants, les documents disponibles et les livrables attendus. Formaliser les honoraires et le calendrier au devis."
         },
         {
-          step: "02",
-          title: "Preparation de la dataroom",
-          description:
-            "Organisation et verification de tous les documents financiers, juridiques et operationnels. Mise en place de la dataroom virtuelle avec acces securises.",
+          "step": "02",
+          "title": "Collecte et contrôles",
+          "description": "Organiser les accès et rapprocher les informations financières. Identifier les pièces manquantes et convenir du traitement des questions."
         },
         {
-          step: "03",
-          title: "Execution de la due diligence",
-          description:
-            "Analyse approfondie des donnees financieres, sessions de Q&A avec les parties prenantes, et redaction du rapport de due diligence.",
+          "step": "03",
+          "title": "Analyse et restitution",
+          "description": "Présenter les constats, leurs justificatifs et leurs limites. Distinguer les résultats vérifiés des hypothèses et des sujets à approfondir."
         },
         {
-          step: "04",
-          title: "Negociation et closing",
-          description:
-            "Support dans les negociations de prix, les ajustements post-DD et l'accompagnement jusqu'a la signature definitive.",
-        },
-      ],
+          "step": "04",
+          "title": "Suivi des points ouverts",
+          "description": "Préparer les réponses financières et suivre les actions prévues au mandat, en coordination avec le dirigeant et les autres conseils."
+        }
+      ]
     },
-    faq: {
-      title: "Questions frequentes",
-      items: [
+    "faq": {
+      "title": "Questions fréquentes",
+      "items": [
         {
-          question: "Combien de temps dure une due diligence financiere ?",
-          answer:
-            "La duree varie selon la complexite de l'operation : 2 a 4 semaines pour une levee de fonds seed/Serie A, 4 a 8 semaines pour une acquisition de PME, et jusqu'a 12 semaines pour des operations plus complexes. La preparation en amont (vendor DD) peut prendre 4 a 6 semaines supplementaires.",
+          "question": "Combien de temps dure une due diligence financière ?",
+          "answer": "Le calendrier dépend de l’opération, des entités, de la qualité des pièces et de la disponibilité des interlocuteurs. Il est défini après examen du périmètre et actualisé si les données ou les demandes évoluent."
         },
         {
-          question: "Quel est le cout d'un accompagnement due diligence ?",
-          answer:
-            "Nos honoraires dependent du perimetre de la mission. Pour une preparation de levee de fonds, comptez entre 5 000 et 15 000 EUR. Pour une due diligence complete d'acquisition, les honoraires se situent entre 10 000 et 30 000 EUR selon la taille et la complexite de la cible.",
+          "question": "Quel est le coût d’un accompagnement ?",
+          "answer": "Chaque mission ponctuelle fait l’objet d’un devis : préparation de dossier, revue vendeur et analyse acquéreur ne couvrent pas les mêmes travaux. Les honoraires précisent les livrables, les responsabilités et les éventuels travaux complémentaires."
         },
         {
-          question: "Pouvez-vous intervenir en urgence sur une due diligence en cours ?",
-          answer:
-            "Oui, nous avons l'habitude d'intervenir rapidement. Nous pouvons mobiliser une equipe en 48 heures pour des situations urgentes, comme une due diligence deja lancee par un investisseur ou un acquereur.",
+          "question": "Pouvez-vous intervenir en urgence ?",
+          "answer": "Indiquez votre échéance et les travaux déjà engagés. Nous confirmons la disponibilité du profil adapté et les analyses réalisables dans le délai. Aucun démarrage n’est confirmé avant ce cadrage."
         },
         {
-          question: "Travaillez-vous avec des entreprises hors de France ?",
-          answer:
-            "Oui, nous accompagnons des entreprises en France, en Espagne et a l'international. Notre equipe est trilingue (francais, anglais, espagnol) et maitrise les normes comptables francaises (PCG), espagnoles (PGC) et internationales (IFRS).",
-        },
-      ],
+          "question": "La revue garantit-elle la réussite de l’opération ?",
+          "answer": "Non. Elle apporte des analyses financières pour éclairer les décisions. L’accord des parties, le financement et les autres diligences restent déterminants ; les conseils juridiques et fiscaux interviennent dans leur propre périmètre."
+        }
+      ]
     },
-    cta: {
-      title: "Preparez votre prochaine operation",
-      description:
-        "Que vous prepariez une levee de fonds, une acquisition ou une cession, nos experts sont la pour vous accompagner. Prenez rendez-vous pour un diagnostic gratuit de 30 minutes.",
-      buttonText: "Prendre rendez-vous",
-      buttonHref: "/contact",
-    },
+    "cta": {
+      "title": "Préparer votre opération",
+      "description": "Décrivez votre opération, son calendrier et les pièces disponibles pour cadrer un premier échange.",
+      "buttonText": "Décrire mon besoin",
+      "buttonHref": "/contact#due-diligence"
+    }
   },
-  en: {
-    meta: {
-      title: "M&A and Financial Due Diligence | Iter Advisors",
-      description:
-        "M&A and financial due diligence for startups and SMEs. Preparation, execution and negotiation. 100M+ EUR in transactions supported. Free consultation.",
+  "en": {
+    "meta": {
+      "title": "M&A and Financial Due Diligence | Iter Advisors",
+      "description": "Financial due diligence for an acquisition, sale or fundraise. Define the financial work, deliverables and fees for your transaction."
     },
-    hero: {
-      h1: "M&A and Financial Due Diligence: Secure Your Strategic Operations",
-      intro:
-        "Whether you are preparing a fundraise, an acquisition or a divestiture, financial due diligence is the critical step that determines the success of your transaction. Our expert CFOs guide you from preparation to closing.",
+    "hero": {
+      "h1": "M&A and financial due diligence: prepare your decisions",
+      "intro": "We help founders, sellers and acquirers organise and analyse financial information. Preparation, buyer-side review and the work of legal and tax advisers have distinct scopes."
     },
-    sections: [
+    "sections": [
       {
-        heading: "Why financial due diligence matters",
-        content: `<p>Financial due diligence is the process of thoroughly investigating a company's accounts and financial position in the context of a transaction (fundraising, acquisition, divestiture, merger). It allows investors and acquirers to <strong>verify the reality of the figures presented</strong> and identify potential financial risks.</p>
-<p>For business leaders, preparing your due diligence in advance is a major strategic advantage. A "DD-ready" company inspires confidence, accelerates negotiations and maximizes valuation. Conversely, poorly maintained accounts or financial grey areas can derail a transaction or lead to significant discounts.</p>
-<p>At Iter Advisors, we have supported over <strong>100 million euros in transactions</strong> - fundraises, acquisitions and divestitures - for startups and SMEs in France and Spain.</p>`,
-      },
-      {
-        heading: "Components of financial due diligence",
-        content: `<ul>
-<li><strong>Financial statement analysis</strong>: review of balance sheets, income statements and cash flow statements over 3 to 5 years.</li>
-<li><strong>Quality of Earnings</strong>: distinction between recurring and non-recurring revenues, organic vs. acquisition growth analysis.</li>
-<li><strong>Working capital and cash analysis</strong>: study of working capital requirements, customer/supplier payment cycles, and net cash position.</li>
-<li><strong>Debt and off-balance sheet commitments</strong>: identification of all financial debts, lease commitments, guarantees and ongoing litigation.</li>
-<li><strong>Projections and business plan</strong>: validation of growth assumptions, forecast margins and financing plan consistency.</li>
-<li><strong>Tax and social compliance</strong>: verification of tax filings, social obligations and audit risks.</li>
-</ul>`,
-      },
+        "heading": "Scope, evidence and limitations",
+        "content": "<p>Agree the purpose of the engagement, recipients, available information and expected deliverables. Review earnings, working capital, cash, debt and forecast assumptions within that scope. Document missing information and open questions.</p><p>Preparing a data room is distinct from an independent due diligence review. Legal, tax and employment matters are coordinated with the relevant advisers. Financial analysis informs a decision; it does not guarantee a transaction or its valuation.</p>"
+      }
     ],
-    services: {
-      title: "Our M&A and due diligence services",
-      items: [
+    "services": {
+      "title": "Our M&A and due diligence services",
+      "items": [
         {
-          name: "Due diligence preparation (Vendor DD)",
-          description:
-            "We prepare your company to receive due diligence: account clean-up, data room preparation, vendor financial report and anticipation of investor questions.",
+          "name": "Due diligence preparation (Vendor DD)",
+          "description": "We prepare your company to receive due diligence: account clean-up, data room preparation, vendor financial report and anticipation of investor questions."
         },
         {
-          name: "Buy-side due diligence",
-          description:
-            "We conduct financial due diligence on behalf of acquirers: target account analysis, risk identification, price adjustments and investment recommendations.",
+          "name": "Buy-side due diligence",
+          "description": "We conduct financial due diligence on behalf of acquirers: target account analysis, risk identification, price adjustments and investment recommendations."
         },
         {
-          name: "Fundraising support",
-          description:
-            "From financial model preparation to term sheet negotiation, we support founders at every stage of their fundraise. Over 100M EUR raised for our clients.",
+          "name": "Fundraising support",
+          "description": "Financial modelling, data room preparation and support for financial questions. Investor outreach, where needed, is assigned separately to the founder or their appointed adviser."
         },
         {
-          name: "Business valuation",
-          description:
-            "DCF, market multiples and comparable transactions methods to establish a robust and defensible valuation of your company.",
+          "name": "Business valuation",
+          "description": "DCF, market multiples and comparable transactions methods to establish a robust and defensible valuation of your company."
         },
         {
-          name: "Post-acquisition integration (PMI)",
-          description:
-            "Support in post-acquisition financial integration: accounting system harmonization, reporting consolidation and synergy optimization.",
-        },
-      ],
+          "name": "Post-acquisition integration (PMI)",
+          "description": "Support in post-acquisition financial integration: accounting system harmonization, reporting consolidation and synergy optimization."
+        }
+      ]
     },
-    process: {
-      title: "Our advisory process",
-      steps: [
+    "process": {
+      "title": "Our advisory process",
+      "steps": [
         {
-          step: "01",
-          title: "Initial diagnostic",
-          description:
-            "Audit of your current financial situation, identification of risk areas and definition of the engagement scope.",
+          "step": "01",
+          "title": "Initial diagnostic",
+          "description": "Agree the scope, documents, deliverables, fees and timetable."
         },
         {
-          step: "02",
-          title: "Data room preparation",
-          description:
-            "Organization and verification of all financial, legal and operational documents. Virtual data room setup with secure access.",
+          "step": "02",
+          "title": "Data room preparation",
+          "description": "Organise financial documents and identify missing information."
         },
         {
-          step: "03",
-          title: "Due diligence execution",
-          description:
-            "In-depth analysis of financial data, Q&A sessions with stakeholders, and due diligence report drafting.",
+          "step": "03",
+          "title": "Due diligence execution",
+          "description": "Review the agreed data and report findings, assumptions and limitations."
         },
         {
-          step: "04",
-          title: "Negotiation and closing",
-          description:
-            "Support in price negotiations, post-DD adjustments and guidance through to final signing.",
-        },
-      ],
+          "step": "04",
+          "title": "Negotiation and closing",
+          "description": "Follow up the financial questions within the mandate, alongside the founder and other advisers."
+        }
+      ]
     },
-    faq: {
-      title: "Frequently asked questions",
-      items: [
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
         {
-          question: "How long does a financial due diligence take?",
-          answer:
-            "Duration varies by complexity: 2-4 weeks for a seed/Series A fundraise, 4-8 weeks for an SME acquisition, and up to 12 weeks for more complex transactions.",
+          "question": "How long does a financial due diligence take?",
+          "answer": "Timing depends on the transaction, entities, data quality and availability of stakeholders. We agree a schedule after reviewing the scope and revise it if information or requirements change."
         },
         {
-          question: "What does due diligence advisory cost?",
-          answer:
-            "Our fees depend on the scope. For fundraising preparation, expect 5,000-15,000 EUR. For a full acquisition due diligence, fees range from 10,000-30,000 EUR.",
+          "question": "What does due diligence advisory cost?",
+          "answer": "Fees are quoted for the specific engagement. Data room preparation, seller assistance and buyer-side due diligence cover different work. The proposal defines deliverables, responsibilities, timing and any additional work."
         },
         {
-          question: "Can you intervene urgently on an ongoing due diligence?",
-          answer:
-            "Yes, we can mobilize a team within 48 hours for urgent situations such as an already-launched investor or acquirer due diligence.",
+          "question": "Can you intervene urgently on an ongoing due diligence?",
+          "answer": "Tell us your deadline and the work already under way. We confirm availability and a realistic scope before agreeing a start date."
         },
         {
-          question: "Do you work with companies outside France?",
-          answer:
-            "Yes, we support companies in France, Spain and internationally. Our team is trilingual (French, English, Spanish) and masters French (PCG), Spanish (PGC) and international (IFRS) accounting standards.",
-        },
-      ],
+          "question": "Do you work with companies outside France?",
+          "answer": "We work with businesses in France and Spain. Applicable accounting frameworks and the involvement of local legal and tax advisers are defined for each engagement."
+        }
+      ]
     },
-    cta: {
-      title: "Prepare your next transaction",
-      description:
-        "Whether you are preparing a fundraise, an acquisition or a divestiture, our experts are here to guide you. Book a free 30-minute consultation.",
-      buttonText: "Book a consultation",
-      buttonHref: "/en/contact",
-    },
+    "cta": {
+      "title": "Prepare your next transaction",
+      "description": "Describe your transaction, deadline and available documents to scope an initial conversation.",
+      "buttonText": "Describe my needs",
+      "buttonHref": "/en/contact#due-diligence"
+    }
   },
-  es: {
-    meta: {
-      title: "M&A y Due Diligence financiera | Iter Advisors",
-      description:
-        "M&A y due diligence financiera para startups y pymes. Preparación, ejecución, negociación. +100 M€ en transacciones acompañadas. Consulta gratuita.",
+  "es": {
+    "meta": {
+      "title": "M&A y Due Diligence financiera | Iter Advisors",
+      "description": "Due diligence financiera para adquisiciones, ventas y financiación. Defina el alcance, los entregables y los honorarios de su operación."
     },
-    hero: {
-      h1: "M&A y Due Diligence financiera: asegure sus operaciones estrategicas",
-      intro:
-        "Ya sea que prepare una ronda de financiacion, una adquisicion o una desinversion, la due diligence financiera es el paso critico que determina el exito de su operacion. Nuestros CFOs expertos le acompanan desde la preparacion hasta el cierre.",
+    "hero": {
+      "h1": "M&A y due diligence financiera: preparar sus decisiones",
+      "intro": "Ayudamos a dirigentes, vendedores y compradores a organizar y analizar la información financiera. La preparación, la revisión del comprador y el trabajo de los asesores legales y fiscales tienen alcances distintos."
     },
-    sections: [
+    "sections": [
       {
-        heading: "Por que la due diligence financiera es esencial",
-        content: `<p>La due diligence financiera es el proceso de investigacion exhaustiva de las cuentas y la situacion financiera de una empresa en el contexto de una transaccion. Permite a los inversores y adquirentes <strong>verificar la realidad de las cifras presentadas</strong> e identificar los riesgos financieros potenciales.</p>
-<p>En Iter Advisors, hemos acompanado mas de <strong>100 millones de euros en transacciones</strong> para startups y PYMEs en Francia y Espana.</p>`,
-      },
-      {
-        heading: "Componentes de una due diligence financiera",
-        content: `<ul>
-<li><strong>Analisis de estados financieros</strong>: revision de balances, cuentas de resultados y estados de flujo de efectivo.</li>
-<li><strong>Calidad de ingresos</strong>: distincion entre ingresos recurrentes y no recurrentes.</li>
-<li><strong>Analisis de capital circulante y tesoreria</strong>: estudio de las necesidades de capital circulante.</li>
-<li><strong>Deuda y compromisos fuera de balance</strong>: identificacion de todas las deudas financieras.</li>
-<li><strong>Proyecciones y plan de negocio</strong>: validacion de hipotesis de crecimiento.</li>
-<li><strong>Cumplimiento fiscal y social</strong>: verificacion de declaraciones fiscales.</li>
-</ul>`,
-      },
+        "heading": "Alcance, documentación y límites",
+        "content": "<p>Se definen el objetivo, los destinatarios, la información disponible y los entregables. La revisión puede cubrir resultados, circulante, tesorería, deuda e hipótesis financieras. Se identifican las piezas que faltan y las preguntas pendientes.</p><p>Preparar una data room es distinto de una revisión independiente. Las cuestiones legales, fiscales y laborales se coordinan con los asesores correspondientes. El análisis financiero ayuda a decidir; no garantiza el cierre ni la valoración.</p>"
+      }
     ],
-    services: {
-      title: "Nuestros servicios de M&A y due diligence",
-      items: [
+    "services": {
+      "title": "Nuestros servicios de M&A y due diligence",
+      "items": [
         {
-          name: "Preparacion para due diligence (Vendor DD)",
-          description:
-            "Preparamos su empresa para recibir una due diligence: limpieza de cuentas, preparacion del data room y anticipacion de preguntas.",
+          "name": "Preparacion para due diligence (Vendor DD)",
+          "description": "Preparamos su empresa para recibir una due diligence: limpieza de cuentas, preparacion del data room y anticipacion de preguntas."
         },
         {
-          name: "Due diligence del comprador (Buy-side DD)",
-          description:
-            "Realizamos la due diligence financiera en nombre de adquirentes: analisis de cuentas, identificacion de riesgos y recomendaciones.",
+          "name": "Due diligence del comprador (Buy-side DD)",
+          "description": "Realizamos la due diligence financiera en nombre de adquirentes: analisis de cuentas, identificacion de riesgos y recomendaciones."
         },
         {
-          name: "Acompanamiento en rondas de financiacion",
-          description:
-            "Desde la preparacion del modelo financiero hasta la negociacion del term sheet. Mas de 100M EUR levantados para nuestros clientes.",
+          "name": "Acompanamiento en rondas de financiacion",
+          "description": "Modelo financiero, preparación de la data room y apoyo a las preguntas financieras. La búsqueda de inversores, si procede, se asigna por separado al dirigente o a su asesor designado."
         },
         {
-          name: "Valoracion de empresas",
-          description:
-            "Metodos DCF, multiplos de mercado y transacciones comparables para establecer una valoracion robusta.",
+          "name": "Valoracion de empresas",
+          "description": "Metodos DCF, multiplos de mercado y transacciones comparables para establecer una valoracion robusta."
         },
         {
-          name: "Integracion post-adquisicion (PMI)",
-          description:
-            "Acompanamiento en la integracion financiera post-adquisicion: armonizacion de sistemas contables y consolidacion.",
-        },
-      ],
+          "name": "Integracion post-adquisicion (PMI)",
+          "description": "Acompanamiento en la integracion financiera post-adquisicion: armonizacion de sistemas contables y consolidacion."
+        }
+      ]
     },
-    process: {
-      title: "Nuestro proceso de acompanamiento",
-      steps: [
+    "process": {
+      "title": "Nuestro proceso de acompanamiento",
+      "steps": [
         {
-          step: "01",
-          title: "Diagnostico inicial",
-          description: "Auditoria de su situacion financiera actual e identificacion de areas de riesgo.",
+          "step": "01",
+          "title": "Diagnostico inicial",
+          "description": "Definir alcance, documentos, entregables, honorarios y calendario."
         },
         {
-          step: "02",
-          title: "Preparacion del data room",
-          description: "Organizacion y verificacion de todos los documentos financieros, juridicos y operativos.",
+          "step": "02",
+          "title": "Preparacion del data room",
+          "description": "Organizar las piezas financieras e identificar la información que falta."
         },
         {
-          step: "03",
-          title: "Ejecucion de la due diligence",
-          description: "Analisis en profundidad de los datos financieros y redaccion del informe.",
+          "step": "03",
+          "title": "Ejecucion de la due diligence",
+          "description": "Analizar los datos acordados y explicar resultados, hipótesis y límites."
         },
         {
-          step: "04",
-          title: "Negociacion y cierre",
-          description: "Apoyo en las negociaciones de precio y acompanamiento hasta la firma definitiva.",
-        },
-      ],
+          "step": "04",
+          "title": "Negociacion y cierre",
+          "description": "Dar seguimiento a las preguntas financieras dentro del mandato, junto al dirigente y los otros asesores."
+        }
+      ]
     },
-    faq: {
-      title: "Preguntas frecuentes",
-      items: [
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": [
         {
-          question: "Cuanto tiempo dura una due diligence financiera?",
-          answer:
-            "La duracion varia segun la complejidad: 2-4 semanas para una ronda seed/Serie A, 4-8 semanas para una adquisicion de PYME.",
+          "question": "Cuanto tiempo dura una due diligence financiera?",
+          "answer": "El calendario depende de la operación, las entidades, la calidad de los datos y la disponibilidad de los interlocutores. Se acuerda tras revisar el alcance y se actualiza si cambian las necesidades."
         },
         {
-          question: "Cual es el coste de un acompanamiento de due diligence?",
-          answer:
-            "Nuestros honorarios dependen del alcance. Para preparacion de rondas, entre 5.000 y 15.000 EUR. Para due diligence completa, entre 10.000 y 30.000 EUR.",
+          "question": "Cual es el coste de un acompanamiento de due diligence?",
+          "answer": "Cada misión tiene un presupuesto específico. La preparación del expediente, la asistencia al vendedor y la revisión del comprador cubren trabajos distintos. La propuesta define entregables, responsabilidades, calendario y trabajos adicionales."
         },
         {
-          question: "Pueden intervenir de urgencia?",
-          answer: "Si, podemos movilizar un equipo en 48 horas para situaciones urgentes.",
+          "question": "Pueden intervenir de urgencia?",
+          "answer": "Indique su plazo y los trabajos ya iniciados. Confirmamos la disponibilidad y el alcance realizable antes de acordar una fecha de inicio."
         },
         {
-          question: "Trabajan con empresas fuera de Francia?",
-          answer:
-            "Si, acompanamos empresas en Francia, Espana e internacionalmente. Nuestro equipo es trilingue (frances, ingles, espanol).",
-        },
-      ],
+          "question": "Trabajan con empresas fuera de Francia?",
+          "answer": "Acompañamos a empresas en Francia y España. Las normas contables aplicables y la intervención de asesores legales y fiscales locales se definen para cada misión."
+        }
+      ]
     },
-    cta: {
-      title: "Prepare su proxima operacion",
-      description:
-        "Ya sea que prepare una ronda de financiacion, una adquisicion o una desinversion, nuestros expertos estan aqui para acompanarle. Reserve una consulta gratuita de 30 minutos.",
-      buttonText: "Reservar una consulta",
-      buttonHref: "/es/contact",
-    },
-  },
+    "cta": {
+      "title": "Prepare su proxima operacion",
+      "description": "Describa la operación, el calendario y los documentos disponibles para concretar una primera conversación.",
+      "buttonText": "Describir mi necesidad",
+      "buttonHref": "/es/contact#due-diligence"
+    }
+  }
 };
 
-export function getMaDueDiligenceContent(locale: Locale): MaDueDiligenceContent {
-  return content[locale];
-}
+export function getMaDueDiligenceContent(locale: Locale): MaDueDiligenceContent { return content[locale]; }

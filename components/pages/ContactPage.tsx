@@ -31,7 +31,7 @@ const contactPageText = {
     trustBadge: "+85 entreprises accompagnées",
     ratingLabel: "5/5 sur Trustfolio",
     formTitle: "Décrivez votre besoin",
-    formSubtitle: "Premier échange gratuit. Indiquez votre priorité et votre échéance ; notre équipe vous répond sous 24h pour organiser la suite.",
+    formSubtitle: "Premier échange gratuit pour comprendre votre besoin et convenir de la suite. Toute analyse approfondie ou mission fait ensuite l’objet d’un périmètre et d’un devis.",
     infoTitle: "Autres moyens de nous contacter",
     emailLabel: "Email",
     phoneLabel: "Téléphone",
@@ -46,7 +46,7 @@ const contactPageText = {
       { city: "Toulouse (domiciliation)", country: "France", flag: "🇫🇷" },
     ],
     clientsTitle: "Ils nous font confiance",
-    successMessage: "Merci\u00A0! Votre message a bien été envoyé. Nous vous répondons sous 24h.",
+    successMessage: "Merci\u00A0! Votre message a bien été envoyé. Notre équipe reviendra vers vous pour préciser votre besoin et organiser un échange.",
   },
   en: {
     badge: "Let's talk about your project",
@@ -56,7 +56,7 @@ const contactPageText = {
     trustBadge: "+85 companies supported",
     ratingLabel: "5/5 on Trustfolio",
     formTitle: "Send us a message",
-    formSubtitle: "We reply within 24 hours.",
+    formSubtitle: "The first conversation is free and helps define your needs. Any detailed analysis or engagement is then scoped and quoted separately.",
     infoTitle: "Other ways to reach us",
     emailLabel: "Email",
     phoneLabel: "Phone",
@@ -71,7 +71,7 @@ const contactPageText = {
       { city: "Toulouse (domiciliation)", country: "France", flag: "🇫🇷" },
     ],
     clientsTitle: "They trust us",
-    successMessage: "Thank you! Your message has been sent. We'll reply within 24 hours.",
+    successMessage: "Thank you! Your message has been sent. Our team will get back to you to clarify your needs and arrange a conversation.",
   },
   es: {
     badge: "Hablemos de su proyecto",
@@ -81,7 +81,7 @@ const contactPageText = {
     trustBadge: "+85 empresas acompañadas",
     ratingLabel: "5/5 en Trustfolio",
     formTitle: "Envíenos un mensaje",
-    formSubtitle: "Le respondemos en 24 horas.",
+    formSubtitle: "La primera conversación es gratuita y permite definir su necesidad. Un análisis detallado o una misión se concretan después en un alcance y un presupuesto.",
     infoTitle: "Otras formas de contactarnos",
     emailLabel: "Email",
     phoneLabel: "Teléfono",
@@ -96,7 +96,7 @@ const contactPageText = {
       { city: "Toulouse (domiciliation)", country: "Francia", flag: "🇫🇷" },
     ],
     clientsTitle: "Confían en nosotros",
-    successMessage: "Gracias. Su mensaje ha sido enviado. Le responderemos en 24 horas.",
+    successMessage: "Gracias. Su mensaje ha sido enviado. Nuestro equipo le contactará para precisar su necesidad y organizar una conversación.",
   },
 } as const;
 
