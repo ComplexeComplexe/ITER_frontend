@@ -33,8 +33,8 @@ import {
 
 export const DAF_PILLAR_PATH = "/daf-externalise";
 export const DAF_PILLAR_PUBLISHED = "2026-05-17";
-export const DAF_PILLAR_MODIFIED = "2026-09-26";
-export const DAF_PILLAR_MODIFIED_LABEL = "26 septembre 2026";
+export const DAF_PILLAR_MODIFIED = "2026-09-30";
+export const DAF_PILLAR_MODIFIED_LABEL = "30 septembre 2026";
 
 export interface PillarMission {
   title: string;
@@ -84,15 +84,20 @@ export const dafPillar = {
   breadcrumbLabel: "DAF externalisé",
 
   hero: {
-    h1: "DAF externalisé pour PME et startups : une direction financière senior, sans recruter",
-    lead: `Un directeur financier expérimenté rejoint votre équipe pour piloter trésorerie, reporting, budget et financement. De ${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois selon le périmètre confié ; disponibilité indicative de 1 à 8 jours par mois. Démarrage en ${DELAIS.missionDemarree}, sans durée d'engagement minimale (préavis de ${ENGAGEMENT.preavisJours} jours).`,
+    h1: "DAF externalisé pour PME et startups",
+    lead: "Pilotez votre trésorerie, vos marges et vos financements avec un directeur financier senior dédié, sans recruter à temps plein.",
+    landmarks: [
+      { label: "Budget mensuel", value: `${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT` },
+      { label: "Démarrage", value: DELAIS.missionDemarree },
+      { label: "Engagement", value: `Sans durée minimale, préavis de ${ENGAGEMENT.preavisJours} jours` },
+    ],
     proofs: [
       `${CLIENTS_ACCOMPAGNES} entreprises accompagnées`,
       `${FONDS_LEVES} levés par nos clients depuis ${ANNEE_FONDATION}`,
       `${TRUSTFOLIO_RATING}/5 sur ${TRUSTFOLIO_REVIEW_COUNT} avis Trustfolio`,
-      "Paris, Toulouse, Barcelone",
+      "Équipes à Paris et Barcelone",
     ],
-    cta: "Échanger avec un DAF (appel offert)",
+    cta: "Échanger sur mon besoin",
     photo: {
       src: "/images/team/sebastien-doat.webp",
       alt: "Sébastien Doat, associé fondateur et DAF externalisé chez Iter Advisors",
@@ -100,15 +105,12 @@ export const dafPillar = {
   },
 
   nav: [
-    { id: "comprendre", label: "Définition" },
-    { id: "missions", label: "Missions" },
-    { id: "methode", label: "90 premiers jours" },
-    { id: "pour-qui", label: "Pour qui" },
-    { id: "secteurs", label: "Secteurs" },
+    { id: "preuves", label: "Cas clients" },
     { id: "tarifs", label: "Tarifs" },
-    { id: "pourquoi-iter", label: "Pourquoi Iter" },
-    { id: "villes", label: "Où" },
-    { id: "faq", label: "FAQ" },
+    { id: "besoin", label: "Votre besoin" },
+    { id: "missions", label: "Livrables" },
+    { id: "methode", label: "Mise en place" },
+    { id: "faq", label: "Questions fréquentes" },
   ],
 
   definition: {
@@ -278,14 +280,14 @@ export const dafPillar = {
       },
       {
         title: "Le cadre",
-        text: "Cadrage écrit, retainer mensuel sans dépassement facturé sans avenant signé, résiliation avec un préavis de 30 jours : le contrat protège les deux parties.",
+        text: "Cadrage écrit, forfait mensuel sans dépassement facturé sans avenant signé, résiliation avec un préavis de 30 jours : le contrat protège les deux parties.",
       },
     ],
   },
 
   pricing: {
-    heading: "Tarifs 2026 : trois formules, un retainer mensuel",
-    intro: `De ${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois selon le profil engagé et le périmètre confié. Nous ne facturons pas à l'heure : le retainer couvre un périmètre de travail défini au cadrage, revu avec vous. Le volume de jours indiqué est une moyenne d'intervention observée, pas un forfait. Une levée de fonds n’est pas nécessaire pour être accompagné : pour une PME, la formule dépend des livrables, des entités et de la complexité.`,
+    heading: "Tarifs 2026 : trois formules, un forfait mensuel",
+    intro: `De ${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois selon le profil engagé et le périmètre confié. Nous ne facturons pas à l'heure : le forfait couvre un périmètre de travail défini au cadrage, revu avec vous. Le volume de jours indiqué est une moyenne d'intervention observée, pas un forfait. Une levée de fonds n’est pas nécessaire pour être accompagné : pour une PME, la formule dépend des livrables, des entités et de la complexité.`,
     tiers: FORMULES.map((f, index) => ({
       name: f.nom,
       volume: f.volumeIndicatif,
@@ -352,7 +354,7 @@ export const dafPillar = {
   faq: [
     {
       question: "Combien coûte un DAF externalisé ?",
-      answer: `Entre ${fmt(FORMULES[0].prixMin)} et ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois selon la formule, en retainer mensuel, jamais à l'heure. ${REPARTITION_CLIENTS_PAR_FORMULE.formulation} Le détail de ce qui est inclus est sur la [grille tarifaire](/daf-externalise/tarifs).`,
+      answer: `Entre ${fmt(FORMULES[0].prixMin)} et ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois selon la formule, en forfait mensuel, jamais à l'heure. ${REPARTITION_CLIENTS_PAR_FORMULE.formulation} Le détail de ce qui est inclus est sur la [grille tarifaire](/daf-externalise/tarifs).`,
     },
     {
       question: "En combien de temps la mission démarre-t-elle ?",

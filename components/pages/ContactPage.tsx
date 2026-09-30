@@ -140,9 +140,9 @@ export default function ContactPage({
   }, []);
 
   const heroRef = useRef<HTMLDivElement>(null);
-  const heroInView = useInView(heroRef, { once: true, margin: "-40px" });
+
   const formRef = useRef<HTMLDivElement>(null);
-  const formInView = useInView(formRef, { once: true, margin: "-60px" });
+
   const officesRef = useRef<HTMLDivElement>(null);
   const officesInView = useInView(officesRef, { once: true, margin: "-60px" });
 
@@ -235,8 +235,7 @@ export default function ContactPage({
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 mt-6 lg:mt-8 items-start">
             {/* ── Left: hero copy (3/5 on desktop) ── */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              initial={false}
               transition={{ duration: 0.6 }}
               className="lg:col-span-3 text-white"
             >
@@ -246,7 +245,7 @@ export default function ContactPage({
               </span>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-heading leading-[1.1] mb-6">
-                {tx.h1}
+                {need === "automation" ? (locale === "fr" ? "Parlons de votre reporting et de l’IA" : locale === "en" ? "Let’s discuss reporting and AI" : "Hablemos de reporting e IA") : tx.h1}
               </h1>
 
               <p className="text-base sm:text-lg text-white/70 leading-relaxed mb-8">
@@ -272,8 +271,7 @@ export default function ContactPage({
 
             {/* ── Right: form card (2/5 on desktop) ── */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={formInView ? { opacity: 1, y: 0 } : {}}
+              initial={false}
               transition={{ duration: 0.6, delay: 0.15 }}
               className="lg:col-span-2"
               ref={formRef}
@@ -284,12 +282,14 @@ export default function ContactPage({
                 </h2>
                 <p className="text-muted-foreground text-sm mb-6">
                   {tx.formSubtitle}
+                  {need === "automation" && <span className="block mt-2">{locale === "fr" ? "Précisez si possible vos outils et la tâche à améliorer. Le premier échange sert à cadrer le besoin, sans accès à vos données." : locale === "en" ? "Tell us which tools and task you want to improve. The first conversation scopes the need without accessing your data." : "Indique sus herramientas y la tarea que desea mejorar. La primera conversación define la necesidad sin acceder a sus datos."}</span>}
                 </p>
 
                 {success ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
+                    role="status"
                     className="flex flex-col items-center justify-center py-12 text-center"
                   >
                     <div className="w-14 h-14 rounded-full bg-iter-chartreuse/20 flex items-center justify-center mb-5">
@@ -302,7 +302,7 @@ export default function ContactPage({
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     {error && (
-                      <div className="rounded-xl bg-red-50 border border-red-200 p-4 text-sm text-red-700">
+                      <div role="alert" className="rounded-xl bg-red-50 border border-red-200 p-4 text-sm text-red-700">
                         {error}
                       </div>
                     )}
@@ -333,7 +333,9 @@ export default function ContactPage({
                         </select>
                       </div>
                     </div>
-                    {renderFields(t.form.fields)}
+                    {renderFields(t.form.fields.filter(field => field.name !== "phone"))}
+                    <details className="text-sm"><summary className="cursor-pointer py-2 text-iter-violet">{locale === "fr" ? "Ajouter un téléphone (facultatif)" : locale === "en" ? "Add a phone number (optional)" : "Añadir un teléfono (opcional)"}</summary>{renderFields(t.form.fields.filter(field => field.name === "phone"))}</details>
+                    <p className="text-xs text-muted-foreground">{locale === "fr" ? "Nous vous recontactons pour préciser le besoin et convenir d’un échange. Aucun rendez-vous n’est réservé automatiquement." : locale === "en" ? "We will contact you to clarify your needs and arrange a conversation. No appointment is booked automatically." : "Le contactaremos para concretar su necesidad y acordar una conversación. No se reserva una cita automáticamente."}</p>
 
                     <div className="pt-1">
                       <button
@@ -517,7 +519,7 @@ function FieldInput({ field }: { field: ContactFormField }) {
           id={field.name}
           name={field.name}
           required={field.required}
-          rows={5}
+          rows={3}
           className={baseClasses + " resize-none"}
         />
       </div>
@@ -535,6 +537,7 @@ function FieldInput({ field }: { field: ContactFormField }) {
         type={field.type}
         name={field.name}
         required={field.required}
+        autoComplete={({ firstName: "given-name", lastName: "family-name", email: "email", phone: "tel", company: "organization" } as Record<string, string>)[field.name]}
         className={baseClasses}
       />
     </div>

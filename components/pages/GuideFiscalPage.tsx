@@ -77,7 +77,7 @@ export interface GuideFiscalPageProps {
   children?: ReactNode;
   faqTitle: string;
   faq: GuideFaqItem[];
-  cta: { title: string; text: string; footnote?: ReactNode };
+  cta: { title: string; text: string; footnote?: ReactNode; href?: string; label?: string };
   related: GuideRelated[];
   /** Sources : soit une clé du registre fiscalité, soit une liste explicite. */
   referencesKey?: Parameters<typeof getFiscaliteReferences>[0];
@@ -302,10 +302,10 @@ export default async function GuideFiscalPage({
             <p className="font-heading text-2xl font-semibold mb-2">{cta.title}</p>
             <p className="text-white/70 max-w-xl leading-relaxed mb-5">{cta.text}</p>
             <Link
-              href="/contact"
+              href={cta.href ?? "/contact"}
               className="inline-flex items-center gap-2 rounded-full bg-iter-violet px-6 py-3 font-heading font-semibold text-white hover:bg-iter-violet/90 transition-all duration-300"
             >
-              Demander un diagnostic
+              {cta.label ?? "Demander un diagnostic"}
               <ArrowRight size={16} aria-hidden />
             </Link>
             {cta.footnote && <p className="mt-4 text-sm text-white/50">{cta.footnote}</p>}
@@ -351,7 +351,7 @@ export default async function GuideFiscalPage({
 
       {refs.length > 0 && <References locale="fr" refs={refs} />}
 
-      <CTASection locale="fr" />
+      {!cta.href && <CTASection locale="fr" />}
     </PageLayout>
   );
 }

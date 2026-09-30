@@ -2746,7 +2746,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogHref: "/es/recursos/blog",
       },
       h1: "¿Qué es un Fractional CFO? Guía Completa para Pymes y Startups",
-      updatedDate: "2026-09-13",
+      updatedDate: "2026-09-30",
       publishedDate: "2026-05-13",
       author: "Benjamin Ziza",
       category: "Dirección financiera",
@@ -2761,14 +2761,14 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li>Acompañamiento en rondas de financiación</li>
 <li>Optimización fiscal</li>
 </ul>
-<p>La única diferencia : no está presente 5 días por semana. Interviene 1 a 3 días por semana — suficiente para estructurar la función financiera sin sobrecargar el presupuesto. Para más detalles, consulte nuestra página <a href="/es/externalizacion-daf">CFO Externalizado</a>.</p>
+<p>La dedicación depende del alcance acordado. En Iter Advisors, el volumen orientativo es de ${getDafOffer("es").volume} al mes; no es una promesa de cobertura a tiempo completo. Para más detalles, consulte nuestra página <a href="/es/externalizacion-daf">CFO Externalizado</a>.</p>
 <h2 id="vs-interno">Fractional CFO vs CFO interno</h2>
 <table>
 <thead><tr><th>Criterio</th><th>Fractional CFO</th><th>CFO interno</th></tr></thead>
 <tbody>
 <tr><td>Coste anual</td><td>${getDafOffer("es").annualPrice} € sin IVA, según las fórmulas Iter</td><td>${getDafOffer("es").salary} € (coste empleador de referencia)</td></tr>
 <tr><td>Compromiso</td><td>Sin duración mínima</td><td>Contrato indefinido</td></tr>
-<tr><td>Tiempo de despliegue</td><td>1 – 2 semanas</td><td>3 – 6 meses (reclutamiento)</td></tr>
+<tr><td>Tiempo de despliegue</td><td>${getDafOffer("es").start}, según disponibilidad y alcance</td><td>3 – 6 meses (reclutamiento)</td></tr>
 <tr><td>Experiencia</td><td>Multi-sectorial</td><td>Single-company</td></tr>
 <tr><td>Red de contactos</td><td>Extensa (VCs, bancos, abogados)</td><td>Limitada</td></tr>
 </tbody>
@@ -2782,18 +2782,18 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 </ol>
 <h2 id="ventajas">Las 5 ventajas del fractional CFO</h2>
 <ol>
-<li><strong>Reducción de costes hasta un 60 %</strong></li>
-<li><strong>Flexibilidad total</strong> : de 2 días/mes a tiempo completo</li>
+<li><strong>Presupuesto definido según el alcance</strong>, a comparar con el coste real de contratar internamente</li>
+<li><strong>Flexibilidad</strong> : ${getDafOffer("es").commitment}</li>
 <li><strong>Visión externa y multi-sectorial</strong></li>
 <li><strong>Acceso a una red de expertos</strong> (VCs, bancos, abogados)</li>
-<li><strong>Operativo desde el primer día</strong></li>
+<li><strong>Primeros entregables acordados al inicio</strong></li>
 </ol>
-<blockquote><p>« Nuestro fractional CFO de Iter Advisors transformó nuestra gestión financiera en 3 meses. Pasamos de una contabilidad con 3 meses de retraso a un reporting mensual al board. Y nos acompañó en nuestra Series A de 3,2M€. » — <strong>CEO, EdTechFlow (caso cliente)</strong></p></blockquote>
+<p>Para ver misiones documentadas, consulte nuestros <a href="/ressources/cas-clients">casos de clientes (en francés)</a>: contexto, trabajo realizado y entregables. Los resultados dependen de cada empresa.</p>
 <h2 id="faq">FAQ</h2>
-<p><strong>¿Cuánto cuesta un fractional CFO ?</strong> Desde 2 000 €/mes para 2 días/semana. Las tarifas varían según el nivel de seniority y la complejidad de la misión.</p>
+<p><strong>¿Cuánto cuesta un fractional CFO ?</strong> Las fórmulas de Iter Advisors van de ${getDafOffer("es").price}. ${getDafOffer("es").billing}</p>
 <p><strong>¿Qué diferencia hay entre fractional CFO y part-time CFO ?</strong> Son sinónimos. « Fractional » es el término anglosajón estándar; en España también se utiliza « CFO a tiempo compartido ».</p>
 <p><strong>¿Un fractional CFO puede acompañar una ronda de financiación ?</strong> Sí, es una de sus misiones principales. Nuestros fractional CFOs en Iter Advisors han acompañado más de 100 M€ de levantamientos de capital.</p>
-<p><strong>¿Listo para contratar un fractional CFO ?</strong> Descubra nuestro servicio de <a href="/es/externalizacion-daf">CFO Externalizado</a> o <a href="/es/contact">contáctenos para un diagnóstico gratuito</a> de 30 minutos.</p>`,
+<p><strong>¿Listo para contratar un fractional CFO ?</strong> Descubra nuestro servicio de <a href="/es/externalizacion-daf">CFO Externalizado</a> o <a href="/es/contact">cuéntenos sus necesidades</a>.</p>`,
       content: [],
     },
     // ─── FINAL-04: top 4 FR articles translated to ES ─────────────────

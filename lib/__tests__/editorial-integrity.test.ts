@@ -17,7 +17,7 @@ describe('editorial integrity', () => {
   });
   it('keeps current content dates when applying historical sitemap overrides', async () => {
     const entries = await sitemap();
-    expect(entries.find(item => item.url.endsWith('/daf-externalise'))?.lastModified).toBe('2026-09-26');
+    expect(entries.find(item => item.url.endsWith('/daf-externalise'))?.lastModified).toBe('2026-09-30');
     expect(entries.find(item => item.url.endsWith('/en/ressources/blog/daf-externalise-vs-daf-salarie'))?.lastModified).toBe('2026-09-13');
     expect(entries.find(item => item.url.endsWith('/politique-cookies'))?.lastModified).not.toBe('2026-09-13');
   });

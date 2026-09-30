@@ -72,13 +72,6 @@ export default function DafPillarPage({
               <h1 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-heading text-foreground leading-[1.1] text-balance mb-4">
                 {t.hero.h1}
               </h1>
-              <PageByline
-                locale="fr"
-                author={AUTHOR}
-                dateModified={DAF_PILLAR_MODIFIED}
-                dateLabel={DAF_PILLAR_MODIFIED_LABEL}
-                className="mb-5"
-              />
               <p className="text-base sm:text-lg text-foreground/80 leading-relaxed mb-6 max-w-[62ch]">
                 {t.hero.lead}
               </p>
@@ -89,6 +82,10 @@ export default function DafPillarPage({
                 {t.hero.cta}
                 <ArrowRight size={16} />
               </Link>
+              <Link href="#tarifs" className="ml-0 mt-3 sm:mt-0 sm:ml-4 inline-flex min-h-11 items-center justify-center rounded-full border border-iter-violet/30 px-6 py-3 text-sm font-semibold text-iter-violet">Voir les tarifs</Link>
+              <dl className="mt-6 grid gap-3 sm:grid-cols-3">
+                {t.hero.landmarks.map(item => <div key={item.label} className="rounded-xl bg-muted/40 p-3"><dt className="text-xs text-muted-foreground">{item.label}</dt><dd className="mt-1 text-sm font-semibold">{item.value}</dd></div>)}
+              </dl>
               <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-xs sm:text-sm text-muted-foreground">
                 {t.hero.proofs.map((p) => (
                   <li key={p} className="flex items-center gap-2">
@@ -113,13 +110,13 @@ export default function DafPillarPage({
           </div>
 
           {/* Sommaire — même ordre que le DOM */}
-          <nav aria-label="Sommaire" className="mt-10 -mx-4 px-4 overflow-x-auto">
-            <ol className="flex gap-2 min-w-max">
+          <nav aria-label="Sommaire" className="mt-8">
+            <ol className="flex flex-wrap gap-2">
               {t.nav.map((n, i) => (
                 <li key={n.id}>
                   <a
                     href={`#${n.id}`}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-border/60 px-3 py-1.5 text-xs sm:text-sm text-foreground/80 hover:border-iter-violet/50 hover:text-iter-violet transition-colors"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border/60 px-3 py-2.5 text-xs sm:text-sm text-foreground/80 hover:border-iter-violet/50 hover:text-iter-violet transition-colors"
                   >
                     <span className="tabular-nums text-foreground/40">{String(i + 1).padStart(2, "0")}</span>
                     {n.label}
@@ -131,18 +128,115 @@ export default function DafPillarPage({
         </div>
       </section>
 
-      {/* 02 — Définition unique */}
-      <section id="comprendre" className="bg-muted/30 py-12 sm:py-16 scroll-mt-24">
-        <div className="container max-w-3xl px-4 sm:px-6">
-          <h2 className={h2}>{t.definition.heading}</h2>
-          <p className={`${body} mt-4 text-foreground/90`}>
-            <dfn className="not-italic font-semibold text-foreground">{t.definition.dfn}</dfn>
-            {" : "}
-            {renderInlineMarkdownLinks(t.definition.text.replace(/^Un /, "un "))}
+      <section id="preuves" className="bg-muted/30 py-10 scroll-mt-24">
+        <div className="container max-w-4xl">
+          <h2 className="text-2xl font-heading font-bold">Une mission concrète, un avis vérifié</h2>
+          <figure className="mt-8 rounded-3xl bg-iter-violet text-white p-6 sm:p-8">
+            <blockquote className="text-sm sm:text-base leading-relaxed">« {t.why.quote.text} »</blockquote>
+            <figcaption className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm">
+              <span>
+                <span className="font-semibold text-iter-chartreuse block">{t.why.quote.author}</span>
+                <span className="text-white/70">{t.why.quote.role}</span>
+              </span>
+              <a
+                href={t.why.quote.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-auto text-iter-chartreuse/90 hover:text-iter-chartreuse underline underline-offset-2"
+              >
+                {t.why.quote.sourceLabel}
+              </a>
+            </figcaption>
+          </figure>
+          <Link href="/ressources/cas-clients/opti-digital-structuration-financement" className="inline-flex mt-4 font-semibold text-iter-violet underline">Voir les livrables de la mission Opti Digital</Link>
+        </div>
+      </section>
+      {/* 07 — Tarifs */}
+      <section id="tarifs" className="bg-background py-14 sm:py-20 scroll-mt-24">
+        <div className="container max-w-4xl px-4 sm:px-6">
+          <span className={eyebrow}>Tarifs</span>
+          <h2 className={h2}>{t.pricing.heading}</h2>
+          <p className={`${body} mt-3 max-w-[70ch]`}>{t.pricing.intro}</p>
+          <p className="mt-6 text-xs text-muted-foreground">
+            Grille 2026 : le volume est une moyenne d’intervention, l’engagement porte sur le périmètre.
+          </p>
+          {/* Mobile : une carte par formule ; le tableau à cinq colonnes ne tient pas sous 640 px. */}
+          <ul className="mt-3 grid gap-3 sm:hidden">
+            {t.pricing.tiers.map((tier) => (
+              <li key={tier.name} className="rounded-2xl border border-border/60 bg-background p-4">
+                <div className="flex items-baseline justify-between gap-3">
+                  <h3 className="text-base font-semibold font-heading text-foreground">{tier.name}</h3>
+                  <span className="text-xs text-muted-foreground tabular-nums whitespace-nowrap">{tier.volume}</span>
+                </div>
+                <p className="mt-1 text-base font-semibold text-foreground tabular-nums">{tier.price}</p>
+                <p className={`${body} mt-2`}>
+                  <span className="font-semibold text-foreground">Pour qui : </span>
+                  {tier.audience}
+                </p>
+                <p className={body}>
+                  <span className="font-semibold text-foreground">Profil : </span>
+                  {tier.profile.replace("peer review", "relecture")}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-3 hidden sm:block overflow-x-auto">
+            <table className="w-full text-sm border-collapse bg-background border border-border/60 rounded-2xl overflow-hidden">
+              <thead className="bg-iter-violet/5">
+                <tr>
+                  {["Formule", "Volume moyen", "Tarif", "Pour qui", "Profil"].map((h) => (
+                    <th key={h} scope="col" className="text-left font-semibold text-foreground p-3 sm:p-4 border-b border-border/60">
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {t.pricing.tiers.map((tier) => (
+                  <tr key={tier.name} className="even:bg-muted/30 align-top">
+                    <th scope="row" className="p-3 sm:p-4 border-b border-border/40 font-semibold text-foreground text-left">{tier.name}</th>
+                    <td className="p-3 sm:p-4 border-b border-border/40 text-muted-foreground tabular-nums">{tier.volume}</td>
+                    <td className="p-3 sm:p-4 border-b border-border/40 font-semibold text-foreground tabular-nums whitespace-nowrap">{tier.price}</td>
+                    <td className="p-3 sm:p-4 border-b border-border/40 text-muted-foreground">{tier.audience}</td>
+                    <td className="p-3 sm:p-4 border-b border-border/40 text-muted-foreground">{tier.profile.replace("peer review", "relecture")}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-6 grid md:grid-cols-2 gap-4">
+            <aside className="rounded-2xl border border-iter-violet/30 bg-iter-violet/5 p-5">
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-iter-violet">{t.pricing.barometer.heading}</h3>
+              <p className={`${body} mt-2 text-foreground/90`}>{t.pricing.barometer.text}</p>
+              <p className="mt-3 text-xs text-muted-foreground">Les chiffres d’activité et cette répartition sont déclarés par le cabinet. Les avis sont consultables sur <a className="underline" href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc">Trustfolio</a>, compteur vérifié le 26 septembre 2026. Les résultats des missions clients sont détaillés dans les cas documentés.</p>
+            </aside>
+            <div className="rounded-2xl border border-border/50 p-5">
+              <p className={body}>{t.pricing.economy}</p>
+              <p className={`${body} mt-3 font-medium text-foreground`}>{t.pricing.engagement}</p>
+            </div>
+          </div>
+          <p className="mt-6">
+            <Link href={t.pricing.link.href} className="inline-flex items-center gap-1 text-sm font-medium text-iter-violet hover:underline">
+              {t.pricing.link.label}
+              <ArrowRight size={14} />
+            </Link>
           </p>
         </div>
       </section>
 
+      <section id="besoin" className="container max-w-4xl py-12 scroll-mt-24">
+        <h2 className="text-2xl font-heading font-bold">Quelle est votre priorité ?</h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          {[{title:"Anticiper le cash et lire les marges",href:"/services/previsionnel-tresorerie",text:"Prévisionnel, BFR et décisions de financement."},{title:"Fiabiliser le reporting",href:"/services/controle-de-gestion-externalise",text:"Indicateurs, rapprochements et revue mensuelle."},{title:"Financer la croissance",href:"/services/accompagnement-levee-de-fond",text:"Budget, modèle financier et préparation des dossiers."}].map(item => <Link key={item.href} href={item.href} className="rounded-2xl border border-border p-5 hover:border-iter-violet"><h3 className="font-semibold">{item.title}</h3><p className="mt-2 text-sm text-muted-foreground">{item.text}</p><span className="mt-4 block text-sm text-iter-violet">Voir l’accompagnement →</span></Link>)}
+        </div>
+      </section>
+              <PageByline
+                locale="fr"
+                author={AUTHOR}
+                dateModified={DAF_PILLAR_MODIFIED}
+                dateLabel={DAF_PILLAR_MODIFIED_LABEL}
+                className="container max-w-4xl mt-6"
+              />
       {/* 03 — Missions */}
       <section id="missions" className="bg-background py-14 sm:py-20 scroll-mt-24">
         <div className="container max-w-4xl px-4 sm:px-6">
@@ -220,8 +314,21 @@ export default function DafPillarPage({
         </div>
       </section>
 
-      <CaseProofLinks heading="Ce que nous avons réalisé chez nos clients" />
 
+
+      {/* 02 — Définition unique */}
+      <section id="comprendre" className="bg-muted/30 py-12 sm:py-16 scroll-mt-24">
+        <div className="container max-w-3xl px-4 sm:px-6">
+          <h2 className={h2}>{t.definition.heading}</h2>
+          <p className={`${body} mt-4 text-foreground/90`}>
+            <dfn className="not-italic font-semibold text-foreground">{t.definition.dfn}</dfn>
+            {" : "}
+            {renderInlineMarkdownLinks(t.definition.text.replace(/^Un /, "un "))}
+          </p>
+        </div>
+      </section>
+
+      <CaseProofLinks heading="D’autres missions documentées" />
       {/* 06 — Pour qui */}
       <section id="pour-qui" className="bg-background py-14 sm:py-20 scroll-mt-24">
         <div className="container max-w-4xl px-4 sm:px-6">
@@ -291,79 +398,6 @@ export default function DafPillarPage({
         </div>
       </section>
 
-      {/* 07 — Tarifs */}
-      <section id="tarifs" className="bg-background py-14 sm:py-20 scroll-mt-24">
-        <div className="container max-w-4xl px-4 sm:px-6">
-          <span className={eyebrow}>Tarifs</span>
-          <h2 className={h2}>{t.pricing.heading}</h2>
-          <p className={`${body} mt-3 max-w-[70ch]`}>{t.pricing.intro}</p>
-          <p className="mt-6 text-xs text-muted-foreground">
-            Grille 2026 : le volume est une moyenne d'intervention, l'engagement porte sur le périmètre.
-          </p>
-          {/* Mobile : une carte par formule ; le tableau à cinq colonnes ne tient pas sous 640 px. */}
-          <ul className="mt-3 grid gap-3 sm:hidden">
-            {t.pricing.tiers.map((tier) => (
-              <li key={tier.name} className="rounded-2xl border border-border/60 bg-background p-4">
-                <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="text-base font-semibold font-heading text-foreground">{tier.name}</h3>
-                  <span className="text-xs text-muted-foreground tabular-nums whitespace-nowrap">{tier.volume}</span>
-                </div>
-                <p className="mt-1 text-base font-semibold text-foreground tabular-nums">{tier.price}</p>
-                <p className={`${body} mt-2`}>
-                  <span className="font-semibold text-foreground">Pour qui : </span>
-                  {tier.audience}
-                </p>
-                <p className={body}>
-                  <span className="font-semibold text-foreground">Profil : </span>
-                  {tier.profile}
-                </p>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-3 hidden sm:block overflow-x-auto">
-            <table className="w-full text-sm border-collapse bg-background border border-border/60 rounded-2xl overflow-hidden">
-              <thead className="bg-iter-violet/5">
-                <tr>
-                  {["Formule", "Volume moyen", "Tarif", "Pour qui", "Profil"].map((h) => (
-                    <th key={h} scope="col" className="text-left font-semibold text-foreground p-3 sm:p-4 border-b border-border/60">
-                      {h}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {t.pricing.tiers.map((tier) => (
-                  <tr key={tier.name} className="even:bg-muted/30 align-top">
-                    <th scope="row" className="p-3 sm:p-4 border-b border-border/40 font-semibold text-foreground text-left">{tier.name}</th>
-                    <td className="p-3 sm:p-4 border-b border-border/40 text-muted-foreground tabular-nums">{tier.volume}</td>
-                    <td className="p-3 sm:p-4 border-b border-border/40 font-semibold text-foreground tabular-nums whitespace-nowrap">{tier.price}</td>
-                    <td className="p-3 sm:p-4 border-b border-border/40 text-muted-foreground">{tier.audience}</td>
-                    <td className="p-3 sm:p-4 border-b border-border/40 text-muted-foreground">{tier.profile}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="mt-6 grid md:grid-cols-2 gap-4">
-            <aside className="rounded-2xl border border-iter-violet/30 bg-iter-violet/5 p-5">
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-iter-violet">{t.pricing.barometer.heading}</h3>
-              <p className={`${body} mt-2 text-foreground/90`}>{t.pricing.barometer.text}</p>
-              <p className="mt-3 text-xs text-muted-foreground">Les chiffres d’activité et cette répartition sont déclarés par le cabinet. Les avis sont consultables sur <a className="underline" href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc">Trustfolio</a>, compteur vérifié le 26 septembre 2026. Les résultats des missions clients sont détaillés dans les cas documentés.</p>
-            </aside>
-            <div className="rounded-2xl border border-border/50 p-5">
-              <p className={body}>{t.pricing.economy}</p>
-              <p className={`${body} mt-3 font-medium text-foreground`}>{t.pricing.engagement}</p>
-            </div>
-          </div>
-          <p className="mt-6">
-            <Link href={t.pricing.link.href} className="inline-flex items-center gap-1 text-sm font-medium text-iter-violet hover:underline">
-              {t.pricing.link.label}
-              <ArrowRight size={14} />
-            </Link>
-          </p>
-        </div>
-      </section>
-
       {/* 08 — Pourquoi Iter + cabinet + experts */}
       <section id="pourquoi-iter" className="bg-muted/30 py-14 sm:py-20 scroll-mt-24">
         <div className="container max-w-4xl px-4 sm:px-6">
@@ -392,23 +426,7 @@ export default function DafPillarPage({
             </dl>
           </div>
 
-          <figure className="mt-8 rounded-3xl bg-iter-violet text-white p-6 sm:p-8">
-            <blockquote className="text-sm sm:text-base leading-relaxed">« {t.why.quote.text} »</blockquote>
-            <figcaption className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm">
-              <span>
-                <span className="font-semibold text-iter-chartreuse block">{t.why.quote.author}</span>
-                <span className="text-white/70">{t.why.quote.role}</span>
-              </span>
-              <a
-                href={t.why.quote.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-auto text-iter-chartreuse/90 hover:text-iter-chartreuse underline underline-offset-2"
-              >
-                {t.why.quote.sourceLabel}
-              </a>
-            </figcaption>
-          </figure>
+
           <p className="mt-4">
             <Link href={t.why.casesLink.href} className="inline-flex items-center gap-1 text-sm font-medium text-iter-violet hover:underline">
               {t.why.casesLink.label}
@@ -499,7 +517,7 @@ export default function DafPillarPage({
       <section id="faq" className="bg-muted/30 py-14 sm:py-20 scroll-mt-24">
         <div className="container max-w-3xl px-4 sm:px-6">
           <span className={eyebrow}>FAQ</span>
-          <h2 className={h2}>Les questions qu'on nous pose avant de démarrer</h2>
+          <h2 className={h2}>Les questions qu’on nous pose avant de démarrer</h2>
           <div className="mt-6 divide-y divide-border/60 rounded-2xl border border-border/60 bg-background">
             {t.faq.map((item) => (
               <details key={item.question} className="group px-5 py-4">

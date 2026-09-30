@@ -776,9 +776,9 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
         {
           heading: "Salaire et coût d'un DAF",
           content: [
-            "**DAF salarié interne :** Entre 70 000 € et 150 000 € brut chargé selon l'expérience et la taille de l'entreprise.",
-            "**DAF externalisé :** Les formules Iter Advisors démarrent à **2 000 €/mois** pour 2 jours/mois. Une mission complète (budget + reporting + conseil) se situe entre 3 500 et 8 000 €/mois.",
-            "Le ROI du DAF externalisé est généralement positif dès le premier mois : optimisation de la trésorerie, renégociation des conditions bancaires, pilotage des charges.",
+            `**DAF salarié interne :** Notre repère interne de coût employeur annuel est de ${getDafOffer("fr").salary} €. Ce n’est pas une moyenne du marché. Comparez salaire, charges, frais de recrutement et disponibilité sur votre propre périmètre.`,
+            `**DAF externalisé :** Les formules Iter Advisors vont de **${getDafOffer("fr").price}**. ${getDafOffer("fr").billing} Consultez les [livrables et tarifs](/daf-externalise/tarifs).`,
+            "Le retour sur investissement dépend des résultats constatés et des honoraires engagés. Il ne peut être promis dès le premier mois. Définissez au départ les indicateurs à suivre : visibilité sur le cash, qualité du reporting et décisions rendues possibles.",
           ],
         },
       ],
@@ -910,9 +910,9 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
         {
           heading: "Tarifs d'un Fractional CFO en France",
           content: [
-            "**2-4 jours/mois :** 2 000 à 4 000 €/mois. Pilotage de base, reporting mensuel.",
-            "**4-8 jours/mois :** 4 000 à 8 000 €/mois. Mission complète avec levée de fonds ou restructuration.",
-            "Chez Iter Advisors, nous intervenons sous 5 jours ouvrés et mettons en route la mission sous 2 semaines.",
+            `**Honoraires Iter Advisors :** ${getDafOffer("fr").price}. ${getDafOffer("fr").billing}`,
+            `**Démarrage :** ${getDafOffer("fr").start}, selon le cadrage. ${getDafOffer("fr").commitment}`,
+            "Comparez les [formules et livrables](/daf-externalise/tarifs), puis découvrez [notre accompagnement des startups](/fractional-cfo-startups).",
           ],
         },
       ],

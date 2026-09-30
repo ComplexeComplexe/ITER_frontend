@@ -35,12 +35,12 @@ export const contactContent: Record<Locale, ContactContent> = {
     ],
     form: {
       fields: [
-        { name: "company", label: "Entreprise", type: "text", required: true },
+        { name: "company", label: "Entreprise (facultatif)", type: "text", required: false },
         { name: "lastName", label: "Nom", type: "text", required: true, half: true },
         { name: "firstName", label: "Prénom", type: "text", required: true, half: true },
         { name: "email", label: "E-mail", type: "email", required: true, half: true },
         { name: "phone", label: "Téléphone", type: "tel", required: false, half: true },
-        { name: "message", label: "Message", type: "textarea", required: true },
+        { name: "message", label: "Votre besoin en quelques mots (facultatif)", type: "textarea", required: false },
       ],
       submit: "Envoyer",
     },
@@ -58,12 +58,12 @@ export const contactContent: Record<Locale, ContactContent> = {
     ],
     form: {
       fields: [
-        { name: "company", label: "Company", type: "text", required: true },
+        { name: "company", label: "Company (optional)", type: "text", required: false },
         { name: "lastName", label: "Last name", type: "text", required: true, half: true },
         { name: "firstName", label: "First name", type: "text", required: true, half: true },
         { name: "email", label: "E-mail", type: "email", required: true, half: true },
         { name: "phone", label: "Phone", type: "tel", required: false, half: true },
-        { name: "message", label: "Message", type: "textarea", required: true },
+        { name: "message", label: "Your needs in a few words (optional)", type: "textarea", required: false },
       ],
       submit: "Send",
     },
@@ -81,12 +81,12 @@ export const contactContent: Record<Locale, ContactContent> = {
     ],
     form: {
       fields: [
-        { name: "company", label: "Empresa", type: "text", required: true },
+        { name: "company", label: "Empresa (opcional)", type: "text", required: false },
         { name: "lastName", label: "Apellido", type: "text", required: true, half: true },
         { name: "firstName", label: "Nombre", type: "text", required: true, half: true },
         { name: "email", label: "Correo", type: "email", required: true, half: true },
         { name: "phone", label: "Teléfono", type: "tel", required: false, half: true },
-        { name: "message", label: "Mensaje", type: "textarea", required: true },
+        { name: "message", label: "Su necesidad en pocas palabras (opcional)", type: "textarea", required: false },
       ],
       submit: "Enviar",
     },

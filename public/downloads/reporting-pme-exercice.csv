@@ -1,0 +1,5 @@
+﻿id;periode;entite;unite;categorie;poste;budget;reel
+R01;2026-01;Entreprise fictive;kEUR;CA;Activite A;120;110
+R02;2026-01;Entreprise fictive;kEUR;CA;Activite B;80;70
+C01;2026-01;Entreprise fictive;kEUR;Charges;Personnel;100;105
+C02;2026-01;Entreprise fictive;kEUR;Charges;Autres charges;50;50
