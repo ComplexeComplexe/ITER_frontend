@@ -803,7 +803,7 @@ function CaseCard({
         </div>
 
         {/* Highlight metric */}
-        <div className="bg-iter-violet/5 rounded-xl p-4 mb-4">
+        <div className="site-card bg-iter-violet/5 rounded-xl p-4 mb-4">
           <div className="text-2xl font-bold font-heading text-iter-violet">{cs.highlight}</div>
         </div>
 
@@ -915,7 +915,7 @@ function CaseDetail({
             </h4>
             <div className="grid grid-cols-3 gap-3">
               {cs.results.map((r, i) => (
-                <div key={i} className="bg-iter-violet/5 rounded-xl p-4 text-center">
+                <div key={i} className="site-card bg-iter-violet/5 rounded-xl p-4 text-center">
                   <div className="text-xl font-bold font-heading text-iter-violet">{r.value}</div>
                   <div className="text-xs text-muted-foreground mt-1">{r.metric}</div>
                 </div>
@@ -924,7 +924,7 @@ function CaseDetail({
           </div>
 
           {/* Testimonial */}
-          <div className="bg-iter-dark rounded-xl p-6">
+          <div className="site-card bg-iter-dark rounded-xl p-6">
             <Quote size={24} className="text-iter-chartreuse mb-3" />
             <p className="text-white/90 leading-relaxed italic mb-4">
               &ldquo;{cs.testimonial.quote}&rdquo;
@@ -988,7 +988,7 @@ export default function CasClientsPage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
-      <section className="relative bg-iter-violet pt-32 pb-20 lg:pb-28 overflow-hidden">
+      <section className="site-hero site-hero--inverse relative bg-iter-violet pt-32 pb-20 lg:pb-28 overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none">
@@ -1019,7 +1019,7 @@ export default function CasClientsPage({
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href={getContactPath(locale)}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold text-base hover:shadow-xl transition-all duration-300 group"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold text-base hover:shadow-xl transition-all duration-300 group"
               >
                 <Calendar size={18} />
                 {t.hero.cta}
@@ -1027,7 +1027,7 @@ export default function CasClientsPage({
               </Link>
               <Link
                 href={locale === "fr" ? "/services" : `/${locale}/services`}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white font-medium text-base hover:bg-white/10 transition-all duration-300"
+                className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white font-medium text-base hover:bg-white/10 transition-all duration-300"
               >
                 {t.hero.ctaSecondary}
               </Link>
@@ -1066,7 +1066,7 @@ export default function CasClientsPage({
       </section>
 
       {/* Stats bar */}
-      <section className="bg-iter-dark py-12">
+      <section className="site-section bg-iter-dark py-12">
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {t.stats.items.map((stat, i) => (
@@ -1080,7 +1080,7 @@ export default function CasClientsPage({
       </section>
 
       {/* Filters + Cases */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="site-section bg-background py-20 lg:py-28">
         <div className="container">
           {/* Filter bar */}
           <div className="mb-12">
@@ -1135,7 +1135,7 @@ export default function CasClientsPage({
       </section>
 
       {/* Methodology */}
-      <section className="bg-muted/30 py-20 lg:py-28">
+      <section className="site-section bg-muted/30 py-20 lg:py-28">
         <div className="container">
           <div className="text-center mb-16">
             <span className="inline-block text-[11px] font-semibold tracking-widest text-iter-violet uppercase mb-3">
@@ -1153,7 +1153,7 @@ export default function CasClientsPage({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="bg-white rounded-2xl p-6 border border-border/50"
+                  className="site-card bg-white rounded-2xl p-6 border border-border/50"
                 >
                   <div className="w-12 h-12 rounded-xl bg-iter-violet/10 flex items-center justify-center mb-4">
                     <Icon size={22} className="text-iter-violet" />

@@ -13,7 +13,7 @@ export default function ManageCookiesButton({ label }: { label: string }) {
         // Reload to re-trigger the consent banner via CookieConsent effect.
         window.location.reload();
       }}
-      className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted/50"
+      className="site-button site-button-secondary inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted/50"
     >
       {label}
     </button>

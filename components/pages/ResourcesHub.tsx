@@ -122,7 +122,7 @@ export default function ResourcesHub({
 
       {/* Search results overlay */}
       {filteredCards !== null && (
-        <section className="bg-background py-16">
+        <section className="site-section bg-background py-16">
           <div className="container">
             {filteredCards.length === 0 ? (
               <p className="text-muted-foreground">{t.searchNoResult}</p>
@@ -140,7 +140,7 @@ export default function ResourcesHub({
       {filteredCards === null && (
         <>
           {/* ── Popular resources ─────────────────────────────────── */}
-          <section id="populaires" className="bg-background py-10 lg:py-14 scroll-mt-36">
+          <section id="populaires" className="site-section bg-background py-10 lg:py-14 scroll-mt-36">
             <div className="container">
               <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-8">
                 {t.popularSection.heading}
@@ -150,7 +150,7 @@ export default function ResourcesHub({
                   <Link
                     key={i}
                     href={res.href}
-                    className="group flex flex-col gap-2 p-5 rounded-2xl border border-border bg-card hover:border-iter-violet/50 hover:bg-iter-violet/5 transition-all duration-200"
+                    className="site-card group flex flex-col gap-2 p-5 rounded-2xl border border-border bg-card hover:border-iter-violet/50 hover:bg-iter-violet/5 transition-all duration-200"
                   >
                     <h3 className="font-semibold text-foreground group-hover:text-iter-violet transition-colors leading-snug">
                       {res.title}
@@ -167,7 +167,7 @@ export default function ResourcesHub({
           </section>
 
           {/* ── Fiscalité France-Espagne ────────────────────────────── */}
-          <section id={t.fiscaliteSection.id} className="bg-muted/30 py-10 lg:py-14 scroll-mt-36">
+          <section id={t.fiscaliteSection.id} className="site-section bg-muted/30 py-10 lg:py-14 scroll-mt-36">
             <div className="container">
               <div className="flex items-center justify-between mb-10">
                 <div>
@@ -180,7 +180,7 @@ export default function ResourcesHub({
                 </div>
                 <Link
                   href={t.fiscaliteSection.seeAllHref}
-                  className="hidden sm:inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground font-medium hover:bg-iter-violet hover:text-white hover:border-iter-violet transition-all duration-300"
+                  className="site-button site-button-secondary hidden sm:inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground font-medium hover:bg-iter-violet hover:text-white hover:border-iter-violet transition-all duration-300"
                 >
                   {t.fiscaliteSection.seeAllLabel}
                   <ArrowRight size={16} />
@@ -194,7 +194,7 @@ export default function ResourcesHub({
               <div className="mt-6 sm:hidden">
                 <Link
                   href={t.fiscaliteSection.seeAllHref}
-                  className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full border border-border text-foreground font-medium hover:bg-iter-violet hover:text-white hover:border-iter-violet transition-all duration-300"
+                  className="site-button site-button-secondary inline-flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full border border-border text-foreground font-medium hover:bg-iter-violet hover:text-white hover:border-iter-violet transition-all duration-300"
                 >
                   {t.fiscaliteSection.seeAllLabel}
                 </Link>
@@ -219,7 +219,7 @@ export default function ResourcesHub({
                   </div>
                   <Link
                     href={category.seeAllHref}
-                    className="hidden sm:inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground font-medium hover:bg-iter-violet hover:text-white hover:border-iter-violet transition-all duration-300"
+                    className="site-button site-button-secondary hidden sm:inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground font-medium hover:bg-iter-violet hover:text-white hover:border-iter-violet transition-all duration-300"
                   >
                     {category.seeAllLabel}
                     <ArrowRight size={16} />
@@ -233,7 +233,7 @@ export default function ResourcesHub({
                 <div className="mt-6 sm:hidden">
                   <Link
                     href={category.seeAllHref}
-                    className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full border border-border text-foreground font-medium hover:bg-iter-violet hover:text-white hover:border-iter-violet transition-all duration-300"
+                    className="site-button site-button-secondary inline-flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full border border-border text-foreground font-medium hover:bg-iter-violet hover:text-white hover:border-iter-violet transition-all duration-300"
                   >
                     {category.seeAllLabel}
                   </Link>

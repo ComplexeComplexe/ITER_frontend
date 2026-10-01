@@ -92,7 +92,7 @@ export default function CashFlowForecastPage({ locale, content: t, cmsNavigation
 
       {/* Sections */}
       {t.sections.map((section, i) => (
-        <section key={i} className="bg-background py-16">
+        <section key={i} className="site-section bg-background py-16">
           <div className="container max-w-3xl">
             <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-6">
               {section.heading}
@@ -107,7 +107,7 @@ export default function CashFlowForecastPage({ locale, content: t, cmsNavigation
       ))}
 
       {/* FAQ */}
-      <section className="bg-muted py-16">
+      <section className="site-section bg-muted py-16">
         <div className="container max-w-3xl">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-12">
             {t.faq.title}

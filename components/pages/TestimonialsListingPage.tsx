@@ -374,7 +374,7 @@ export default function TestimonialsListingPage({
       </section>
 
       {/* Use Cases Grid */}
-      <section className="py-20 lg:py-28 bg-background">
+      <section className="site-section py-20 lg:py-28 bg-background">
         <div className="container">
           <div className="text-center mb-16">
             <span className="inline-block px-3 py-1 rounded-full bg-iter-violet/10 text-iter-violet text-xs font-semibold uppercase tracking-widest mb-4">
@@ -400,7 +400,7 @@ export default function TestimonialsListingPage({
                   initial={{ opacity: 0, y: 30 }}
                   animate={gridInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="group relative bg-muted/30 border border-border/50 rounded-2xl p-7 lg:p-8 hover:border-iter-violet/30 hover:shadow-lg hover:shadow-iter-violet/5 transition-all duration-300"
+                  className="site-card group relative bg-muted/30 border border-border/50 rounded-2xl p-7 lg:p-8 hover:border-iter-violet/30 hover:shadow-lg hover:shadow-iter-violet/5 transition-all duration-300"
                 >
                   {/* Header */}
                   <div className="flex items-start justify-between mb-5">

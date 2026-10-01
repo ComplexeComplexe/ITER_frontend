@@ -119,7 +119,7 @@ export default function JobsPage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-background via-background to-iter-violet/5 pt-32 pb-20">
+      <section className="site-hero relative bg-gradient-to-br from-background via-background to-iter-violet/5 pt-32 pb-20">
         <div className="container max-w-5xl">
           <Breadcrumb locale={locale} items={[{ label: "Jobs" }]} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -154,7 +154,7 @@ export default function JobsPage({
       </section>
 
       {/* About */}
-      <section className="bg-background py-16 lg:py-20">
+      <section className="site-section bg-background py-16 lg:py-20">
         <div className="container max-w-5xl">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
@@ -164,7 +164,7 @@ export default function JobsPage({
               <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-4">{t.about.heading}</h2>
               <p className="text-muted-foreground leading-relaxed">{t.about.paragraph}</p>
             </div>
-            <div className="bg-iter-violet/5 rounded-2xl p-8">
+            <div className="site-card bg-iter-violet/5 rounded-2xl p-8">
               <h3 className="text-lg font-bold font-heading mb-4">{section.perks}</h3>
               <ul className="space-y-3">
                 {section.perksItems.map((perk, i) => (
@@ -186,7 +186,7 @@ export default function JobsPage({
       <div className="container max-w-5xl"><div className="border-b border-border/50" /></div>
 
       {/* Job Cards - redesigned */}
-      <section className="bg-muted/30 py-24 lg:py-32">
+      <section className="site-section bg-muted/30 py-24 lg:py-32">
         <div className="container max-w-5xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Nos offres" : locale === "en" ? "Open positions" : "Ofertas"}
@@ -208,7 +208,7 @@ export default function JobsPage({
                 <Link
                   key={i}
                   href={job.href}
-                  className="group flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 bg-background border border-border/50 rounded-2xl p-6 sm:p-8 hover:border-iter-violet/30 hover:shadow-lg transition-all duration-300"
+                  className="site-card group flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 bg-background border border-border/50 rounded-2xl p-6 sm:p-8 hover:border-iter-violet/30 hover:shadow-lg transition-all duration-300"
                 >
                   {/* Icon */}
                   <div className="w-12 h-12 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0">
@@ -254,7 +254,7 @@ export default function JobsPage({
       </section>
 
       {/* Why join - 4 cards */}
-      <section className="bg-background py-24 lg:py-32">
+      <section className="site-section bg-background py-24 lg:py-32">
         <div className="container max-w-5xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Culture" : locale === "en" ? "Culture" : "Cultura"}
@@ -262,7 +262,7 @@ export default function JobsPage({
           <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">{section.whyTitle}</h2>
           <div className="grid sm:grid-cols-2 gap-6">
             {section.whyItems.map((item, i) => (
-              <div key={i} className="bg-muted/30 rounded-2xl p-8">
+              <div key={i} className="site-card bg-muted/30 rounded-2xl p-8">
                 <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center mb-4">
                   <span className="text-iter-violet font-bold text-lg">{String(i + 1).padStart(2, "0")}</span>
                 </div>

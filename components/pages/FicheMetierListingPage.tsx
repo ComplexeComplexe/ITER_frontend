@@ -82,7 +82,7 @@ export default function FicheMetierListingPage({
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}
@@ -100,14 +100,14 @@ export default function FicheMetierListingPage({
         </div>
       </section>
 
-      <section className="bg-background py-24 lg:py-16">
+      <section className="site-section bg-background py-24 lg:py-16">
         <div className="container">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {cards.map((card, i) => (
               <Link
                 key={i}
                 href={card.href}
-                className="group bg-background border border-border/50 rounded-2xl p-8 hover:border-iter-violet/30 transition-all duration-300"
+                className="site-card group bg-background border border-border/50 rounded-2xl p-8 hover:border-iter-violet/30 transition-all duration-300"
               >
                 <span className="text-[11px] font-bold text-iter-violet/40 tracking-widest">
                   {card.index}

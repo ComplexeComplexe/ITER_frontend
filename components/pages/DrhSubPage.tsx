@@ -22,7 +22,7 @@ export default function DrhSubPage({ locale, content, cmsNavigation }: DrhSubPag
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}
@@ -44,7 +44,7 @@ export default function DrhSubPage({ locale, content, cmsNavigation }: DrhSubPag
           ))}
           <Link
             href={getContactPath(locale)}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
+            className="site-button site-button-primary inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
           >
             {content.ctaButton}
             <ArrowRight size={16} />
@@ -88,7 +88,7 @@ export default function DrhSubPage({ locale, content, cmsNavigation }: DrhSubPag
           briques de service RH n'existent qu'en français. */}
       <section className="bg-background pb-16">
         <div className="container max-w-4xl">
-          <div className="rounded-3xl border border-border/60 bg-muted/30 p-6 sm:p-8">
+          <div className="site-card rounded-3xl border border-border/60 bg-muted/30 p-6 sm:p-8">
             <p className="text-xs font-bold uppercase tracking-widest text-iter-violet mb-2">
               {locale === "fr" ? "Direction RH externalisée" : locale === "en" ? "Outsourced HR direction" : "Dirección de RRHH externalizada"}
             </p>
@@ -113,7 +113,7 @@ export default function DrhSubPage({ locale, content, cmsNavigation }: DrhSubPag
                   <li key={s}>
                     <Link
                       href={`/services/${s}`}
-                      className="block rounded-xl border border-border/60 bg-background p-4 text-sm font-medium text-foreground hover:border-iter-violet/50 hover:text-iter-violet transition-colors"
+                      className="site-card block rounded-xl border border-border/60 bg-background p-4 text-sm font-medium text-foreground hover:border-iter-violet/50 hover:text-iter-violet transition-colors"
                     >
                       {hrServices[s].breadcrumb}
                     </Link>

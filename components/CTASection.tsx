@@ -34,9 +34,9 @@ export default function CTASection({ locale, context }: { locale: Locale; contex
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24 lg:py-32 bg-iter-chartreuse relative overflow-hidden">
+    <section className="site-section site-contact-band py-24 lg:py-32 bg-iter-chartreuse relative overflow-hidden">
       {/* Subtle pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="site-decoration absolute inset-0 opacity-10">
         <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none">
           <circle cx="200" cy="300" r="300" stroke="#0A0A0A" strokeWidth="0.5" fill="none" />
           <circle cx="1200" cy="200" r="200" stroke="#0A0A0A" strokeWidth="0.5" fill="none" />
@@ -52,16 +52,16 @@ export default function CTASection({ locale, context }: { locale: Locale; contex
           className="text-center max-w-3xl mx-auto"
         >
           {/* SEO-20: decorative heading — same visual weight, no semantic H2 duplication across pages */}
-          <p className="text-3xl lg:text-5xl font-bold text-iter-dark leading-tight mb-6">
+          <p className="site-cta-title text-3xl lg:text-5xl font-bold text-iter-dark leading-tight mb-6">
             {t.heading}
           </p>
-          <p className="text-lg text-iter-dark/70 leading-relaxed mb-10">
+          <p className="site-cta-copy text-lg text-iter-dark/70 leading-relaxed mb-10">
             {t.paragraph}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href={getContactPath(locale) + (context ? `#${context}` : "")}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-dark text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
+              className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-dark text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
             >
               {t.button}
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

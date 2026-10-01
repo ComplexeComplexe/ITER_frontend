@@ -113,7 +113,7 @@ export default function DafLocalPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       {/* Hero */}
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}
@@ -143,7 +143,7 @@ export default function DafLocalPage({
               ))}
               <Link
                 href={locale === "fr" && city === "toulouse" ? "/contact#toulouse" : contactPath}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
+                className="site-button site-button-primary inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
               >
                 {t.ctaButton}
                 <ArrowRight size={16} />
@@ -186,18 +186,18 @@ export default function DafLocalPage({
       ))}
 
       {locale === "fr" && city === "toulouse" && <>
-        <section className="py-12 bg-muted/30"><div className="container max-w-4xl"><h2 className="text-2xl font-bold mb-4">Choisir le périmètre adapté</h2><div className="flex flex-wrap gap-5 text-iter-violet underline"><Link href="/daf-externalise/tarifs">Comparer les formules</Link><Link href="/fractional-cfo-startups">DAF pour startups et SaaS</Link><Link href="/daf-externalise/industrie">Pilotage d'une activité industrielle</Link><Link href="/daf-externalise">DAF externalisé pour PME</Link></div><p className="mt-6 text-muted-foreground">Les cas ci-dessous décrivent des missions conduites ailleurs. Ils permettent d'examiner les livrables et la méthode, sans constituer des références locales à Toulouse.</p></div></section>
+        <section className="site-section py-12 bg-muted/30"><div className="container max-w-4xl"><h2 className="text-2xl font-bold mb-4">Choisir le périmètre adapté</h2><div className="flex flex-wrap gap-5 text-iter-violet underline"><Link href="/daf-externalise/tarifs">Comparer les formules</Link><Link href="/fractional-cfo-startups">DAF pour startups et SaaS</Link><Link href="/daf-externalise/industrie">Pilotage d'une activité industrielle</Link><Link href="/daf-externalise">DAF externalisé pour PME</Link></div><p className="mt-6 text-muted-foreground">Les cas ci-dessous décrivent des missions conduites ailleurs. Ils permettent d'examiner les livrables et la méthode, sans constituer des références locales à Toulouse.</p></div></section>
         <CaseProofLinks slugs={["opti-digital-structuration-financement", "seasonly-marge-par-canal-bfr"]} heading="Examiner notre travail sur d'autres missions" />
       </>}
       {/* FAQ */}
-      <section className="py-20 bg-background">
+      <section className="site-section py-20 bg-background">
         <div className="container max-w-3xl">
           <h2 className="text-3xl font-bold font-heading text-foreground text-center mb-12">
             {locale === "fr" ? "Questions fréquentes" : locale === "en" ? "Frequently asked questions" : "Preguntas frecuentes"}
           </h2>
           <div className="space-y-4">
             {t.faq.map(item => (
-              <details key={item.question} className="group border border-border rounded-xl p-5">
+              <details key={item.question} className="site-card group border border-border rounded-xl p-5">
                 <summary className="cursor-pointer text-lg font-semibold">{item.question}</summary>
                 <p className="pt-4 text-muted-foreground leading-relaxed">{item.answer}</p>
               </details>
@@ -207,7 +207,7 @@ export default function DafLocalPage({
       </section>
 
       {/* Autres implantations - cross-linking */}
-      <section className="py-20 bg-muted/30">
+      <section className="site-section py-20 bg-muted/30">
         <div className="container">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-8">
             {locale === "fr" ? "Nos autres implantations" : locale === "en" ? "Our other locations" : "Nuestras otras sedes"}
@@ -221,7 +221,7 @@ export default function DafLocalPage({
               <Link
                 key={i}
                 href={locale === "fr" ? loc.hrefFr : locale === "en" ? loc.hrefEn : loc.hrefEs}
-                className="group flex items-center gap-4 bg-background border border-border/50 rounded-2xl p-6 hover:border-iter-violet/30 transition-all duration-300"
+                className="site-card group flex items-center gap-4 bg-background border border-border/50 rounded-2xl p-6 hover:border-iter-violet/30 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
                   <MapPin size={20} className="text-iter-violet" />
@@ -246,7 +246,7 @@ export default function DafLocalPage({
       </section>
 
       {/* Services associes */}
-      <section className="py-20 bg-background">
+      <section className="site-section py-20 bg-background">
         <div className="container">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-8">
             {locale === "fr" ? "Services associ\u00e9s" : locale === "en" ? "Related services" : "Servicios asociados"}
@@ -278,7 +278,7 @@ export default function DafLocalPage({
               <Link
                 key={i}
                 href={service.href}
-                className="group flex items-center gap-4 bg-muted/30 border border-border/50 rounded-2xl p-6 hover:border-iter-violet/30 transition-all duration-300"
+                className="site-card group flex items-center gap-4 bg-muted/30 border border-border/50 rounded-2xl p-6 hover:border-iter-violet/30 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
                   <service.icon size={20} className="text-iter-violet" />
@@ -294,7 +294,7 @@ export default function DafLocalPage({
       </section>
 
       {/* Testimonials / Avis clients vérifiés */}
-      <section className="py-20 bg-muted/30" aria-labelledby="testimonials-heading">
+      <section className="site-section py-20 bg-muted/30" aria-labelledby="testimonials-heading">
         <div className="container max-w-4xl">
           <div className="mb-12">
             <h2 id="testimonials-heading" className="text-3xl lg:text-4xl font-bold font-heading text-foreground mb-4">
@@ -347,7 +347,7 @@ export default function DafLocalPage({
 
           <div className="space-y-6">
             {TRUSTFOLIO_REVIEWS.map((review, idx) => (
-              <div key={idx} className="bg-background border border-border rounded-2xl p-8">
+              <div key={idx} className="site-card bg-background border border-border rounded-2xl p-8">
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} size={18} className="fill-iter-chartreuse text-iter-chartreuse" />

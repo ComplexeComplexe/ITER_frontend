@@ -22,7 +22,7 @@ export default function CookiePolicyPage({
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb locale={locale} items={[{ label: content.h1 }]} />
           <h1 className="text-3xl lg:text-4xl font-bold font-heading text-foreground">
@@ -75,7 +75,7 @@ export default function CookiePolicyPage({
             </div>
           ))}
 
-          <div className="mt-12 p-6 rounded-xl bg-muted/30 border border-border/50">
+          <div className="site-card mt-12 p-6 rounded-xl bg-muted/30 border border-border/50">
             <p className="text-muted-foreground leading-relaxed whitespace-pre-line mb-4">
               {content.outro}
             </p>

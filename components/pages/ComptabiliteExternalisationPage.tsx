@@ -59,7 +59,7 @@ export default function ComptabiliteExternalisationPage({
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
 
       {/* ─── Hero ─── */}
-      <section className="bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
+      <section className="site-hero bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container max-w-3xl">
           <Breadcrumb
             locale={locale}
@@ -108,21 +108,21 @@ export default function ComptabiliteExternalisationPage({
                 <p className="text-xs sm:text-sm font-semibold text-foreground mb-1.5 uppercase tracking-widest">
                   {copy.summary}
                 </p>
-                <p className="text-sm sm:text-base text-foreground leading-relaxed">{t.tldr}</p>
+                <p className="site-copy text-sm sm:text-base text-foreground leading-relaxed">{t.tldr}</p>
               </div>
             )}
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 href={getContactPath(locale)}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 {copy.cta}
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
               <Link
                 href={dafClusterHref("", locale)}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
+                className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
               >
                 {copy.cfo}
               </Link>
@@ -132,7 +132,7 @@ export default function ComptabiliteExternalisationPage({
       </section>
 
       {/* ─── Content sections ─── */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background">
+      <section className="site-section py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-3xl">
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {t.sections.map((section: any, idx: number) => (
@@ -149,7 +149,7 @@ export default function ComptabiliteExternalisationPage({
                   {section.paragraphs.map((para: string, pidx: number) => (
                     <p
                       key={pidx}
-                      className="text-sm sm:text-base text-muted-foreground leading-relaxed"
+                      className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed"
                     >
                       {renderLinkedText(para)}
                     </p>
@@ -164,7 +164,7 @@ export default function ComptabiliteExternalisationPage({
                   {section.bullets.map((bullet: any, bidx: number) => (
                     <li
                       key={bidx}
-                      className="text-sm sm:text-base text-muted-foreground leading-relaxed"
+                      className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed"
                     >
                       <strong className="text-foreground">{bullet.title}</strong>{" "}
                       {bullet.text}
@@ -224,7 +224,7 @@ export default function ComptabiliteExternalisationPage({
 
               {/* Closing text — supports [[text|url]] link syntax */}
               {section.closingText && (
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+                <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
                   {renderLinkedText(section.closingText)}
                 </p>
               )}
@@ -249,7 +249,7 @@ export default function ComptabiliteExternalisationPage({
                           +
                         </span>
                       </summary>
-                      <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                      <div className="site-copy px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
                         <p>{faq.answer}</p>
                       </div>
                     </details>
@@ -263,7 +263,7 @@ export default function ComptabiliteExternalisationPage({
 
       {/* ─── Testimonials ─── */}
       {t.testimonials && (
-        <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/5">
+        <section className="site-section py-16 sm:py-24 lg:py-32 bg-iter-violet/5">
           <div className="container max-w-3xl">
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-10 sm:mb-12 text-center">
               {copy.reviews}
@@ -279,7 +279,7 @@ export default function ComptabiliteExternalisationPage({
 
       {/* ─── Sources ─── */}
       {t.sources && (
-        <section className="py-12 sm:py-16 bg-background">
+        <section className="site-section py-12 sm:py-16 bg-background">
           <div className="container max-w-3xl">
             <h2 className="text-lg sm:text-xl font-bold font-heading text-foreground mb-6">
               {copy.sources}

@@ -17,7 +17,7 @@ import { faqPageSchema, speakableSchema } from "@/lib/schemas";
 import { editorialWebPageSchema } from "@/lib/schemas/editorial";
 import { renderInlineMarkdownLinks, stripInlineMarkdown } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
-import Breadcrumb from "@/components/Breadcrumb";
+import ServiceHero from "@/components/design/ServiceHero";
 import PageByline from "@/components/PageByline";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
@@ -60,79 +60,17 @@ export default function DafPillarPage({
 
   return (
     <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
-      {/* 01 — Hero */}
-      <section className="bg-background pt-20 sm:pt-28 lg:pt-32 pb-10 sm:pb-14">
-        <div className="container">
-          <Breadcrumb
-            locale="fr"
-            items={[{ label: "Services", href: "/services" }, { label: t.breadcrumbLabel }]}
-          />
-          <div className="grid lg:grid-cols-[1.35fr_1fr] gap-8 lg:gap-14 items-start mt-4 sm:mt-6">
-            <div data-speakable="true">
-              <h1 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-heading text-foreground leading-[1.1] text-balance mb-4">
-                {t.hero.h1}
-              </h1>
-              <p className="text-base sm:text-lg text-foreground/80 leading-relaxed mb-6 max-w-[62ch]">
-                {t.hero.lead}
-              </p>
-              <Link
-                href="/contact#daf"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 text-sm sm:text-base"
-              >
-                {t.hero.cta}
-                <ArrowRight size={16} />
-              </Link>
-              <Link href="#tarifs" className="ml-0 mt-3 sm:mt-0 sm:ml-4 inline-flex min-h-11 items-center justify-center rounded-full border border-iter-violet/30 px-6 py-3 text-sm font-semibold text-iter-violet">Voir les tarifs</Link>
-              <dl className="mt-6 grid gap-3 sm:grid-cols-3">
-                {t.hero.landmarks.map(item => <div key={item.label} className="rounded-xl bg-muted/40 p-3"><dt className="text-xs text-muted-foreground">{item.label}</dt><dd className="mt-1 text-sm font-semibold">{item.value}</dd></div>)}
-              </dl>
-              <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-xs sm:text-sm text-muted-foreground">
-                {t.hero.proofs.map((p) => (
-                  <li key={p} className="flex items-center gap-2">
-                    <span aria-hidden className="w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-                    <span className="tabular-nums">{p}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="relative hidden lg:block">
-              <div className="relative aspect-[4/5] w-full max-w-sm ml-auto rounded-3xl overflow-hidden bg-muted/40">
-                <Image
-                  src={t.hero.photo.src}
-                  alt={t.hero.photo.alt}
-                  fill
-                  className="object-cover object-top"
-                  sizes="(min-width: 1024px) 384px, 1px"
-                  loading="eager"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Sommaire — même ordre que le DOM */}
-          <nav aria-label="Sommaire" className="mt-8">
-            <ol className="flex flex-wrap gap-2">
-              {t.nav.map((n, i) => (
-                <li key={n.id}>
-                  <a
-                    href={`#${n.id}`}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-border/60 px-3 py-2.5 text-xs sm:text-sm text-foreground/80 hover:border-iter-violet/50 hover:text-iter-violet transition-colors"
-                  >
-                    <span className="tabular-nums text-foreground/40">{String(i + 1).padStart(2, "0")}</span>
-                    {n.label}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </nav>
-        </div>
-      </section>
+      <ServiceHero title={t.hero.h1} label={t.breadcrumbLabel} eyebrow="Iter Advisors · Direction financière" lead={t.hero.lead}
+        primary={{ href: "/contact#daf", label: t.hero.cta }} secondary={{ href: "#tarifs", label: "Voir les tarifs" }}
+        summary={t.hero.landmarks}
+        proof={<ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">{t.hero.proofs.map(item => <li key={item} className="flex items-start gap-2"><span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-iter-violet" />{item}</li>)}</ul>}
+        navigation={t.nav} />
 
       <section id="preuves" className="bg-muted/30 py-10 scroll-mt-24">
         <div className="container max-w-4xl">
           <h2 className="text-2xl font-heading font-bold">Une mission concrète, un avis vérifié</h2>
-          <figure className="mt-8 rounded-3xl bg-iter-violet text-white p-6 sm:p-8">
-            <blockquote className="text-sm sm:text-base leading-relaxed">« {t.why.quote.text} »</blockquote>
+          <figure className="site-card mt-8 rounded-3xl bg-iter-violet text-white p-6 sm:p-8">
+            <blockquote className="site-copy text-sm sm:text-base leading-relaxed">« {t.why.quote.text} »</blockquote>
             <figcaption className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm">
               <span>
                 <span className="font-semibold text-iter-chartreuse block">{t.why.quote.author}</span>
@@ -152,7 +90,7 @@ export default function DafPillarPage({
         </div>
       </section>
       {/* 07 — Tarifs */}
-      <section id="tarifs" className="bg-background py-14 sm:py-20 scroll-mt-24">
+      <section id="tarifs" className="site-section bg-background py-14 sm:py-20 scroll-mt-24">
         <div className="container max-w-4xl px-4 sm:px-6">
           <span className={eyebrow}>Tarifs</span>
           <h2 className={h2}>{t.pricing.heading}</h2>
@@ -163,7 +101,7 @@ export default function DafPillarPage({
           {/* Mobile : une carte par formule ; le tableau à cinq colonnes ne tient pas sous 640 px. */}
           <ul className="mt-3 grid gap-3 sm:hidden">
             {t.pricing.tiers.map((tier) => (
-              <li key={tier.name} className="rounded-2xl border border-border/60 bg-background p-4">
+              <li key={tier.name} className="site-card rounded-2xl border border-border/60 bg-background p-4">
                 <div className="flex items-baseline justify-between gap-3">
                   <h3 className="text-base font-semibold font-heading text-foreground">{tier.name}</h3>
                   <span className="text-xs text-muted-foreground tabular-nums whitespace-nowrap">{tier.volume}</span>
@@ -205,12 +143,12 @@ export default function DafPillarPage({
             </table>
           </div>
           <div className="mt-6 grid md:grid-cols-2 gap-4">
-            <aside className="rounded-2xl border border-iter-violet/30 bg-iter-violet/5 p-5">
+            <aside className="site-card rounded-2xl border border-iter-violet/30 bg-iter-violet/5 p-5">
               <h3 className="text-sm font-semibold uppercase tracking-widest text-iter-violet">{t.pricing.barometer.heading}</h3>
               <p className={`${body} mt-2 text-foreground/90`}>{t.pricing.barometer.text}</p>
               <p className="mt-3 text-xs text-muted-foreground">Les chiffres d’activité et cette répartition sont déclarés par le cabinet. Les avis sont consultables sur <a className="underline" href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc">Trustfolio</a>, compteur vérifié le 26 septembre 2026. Les résultats des missions clients sont détaillés dans les cas documentés.</p>
             </aside>
-            <div className="rounded-2xl border border-border/50 p-5">
+            <div className="site-card rounded-2xl border border-border/50 p-5">
               <p className={body}>{t.pricing.economy}</p>
               <p className={`${body} mt-3 font-medium text-foreground`}>{t.pricing.engagement}</p>
             </div>
@@ -224,10 +162,10 @@ export default function DafPillarPage({
         </div>
       </section>
 
-      <section id="besoin" className="container max-w-4xl py-12 scroll-mt-24">
+      <section id="besoin" className="site-section container max-w-4xl py-12 scroll-mt-24">
         <h2 className="text-2xl font-heading font-bold">Quelle est votre priorité ?</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
-          {[{title:"Anticiper le cash et lire les marges",href:"/services/previsionnel-tresorerie",text:"Prévisionnel, BFR et décisions de financement."},{title:"Fiabiliser le reporting",href:"/services/controle-de-gestion-externalise",text:"Indicateurs, rapprochements et revue mensuelle."},{title:"Financer la croissance",href:"/services/accompagnement-levee-de-fond",text:"Budget, modèle financier et préparation des dossiers."}].map(item => <Link key={item.href} href={item.href} className="rounded-2xl border border-border p-5 hover:border-iter-violet"><h3 className="font-semibold">{item.title}</h3><p className="mt-2 text-sm text-muted-foreground">{item.text}</p><span className="mt-4 block text-sm text-iter-violet">Voir l’accompagnement →</span></Link>)}
+          {[{title:"Anticiper le cash et lire les marges",href:"/services/previsionnel-tresorerie",text:"Prévisionnel, BFR et décisions de financement."},{title:"Fiabiliser le reporting",href:"/services/controle-de-gestion-externalise",text:"Indicateurs, rapprochements et revue mensuelle."},{title:"Financer la croissance",href:"/services/accompagnement-levee-de-fond",text:"Budget, modèle financier et préparation des dossiers."}].map(item => <Link key={item.href} href={item.href} className="site-card rounded-2xl border border-border p-5 hover:border-iter-violet"><h3 className="font-semibold">{item.title}</h3><p className="mt-2 text-sm text-muted-foreground">{item.text}</p><span className="mt-4 block text-sm text-iter-violet">Voir l’accompagnement →</span></Link>)}
         </div>
       </section>
               <PageByline
@@ -238,7 +176,7 @@ export default function DafPillarPage({
                 className="container max-w-4xl mt-6"
               />
       {/* 03 — Missions */}
-      <section id="missions" className="bg-background py-14 sm:py-20 scroll-mt-24">
+      <section id="missions" className="site-section bg-background py-14 sm:py-20 scroll-mt-24">
         <div className="container max-w-4xl px-4 sm:px-6">
           <span className={eyebrow}>Missions</span>
           <h2 className={h2}>{t.missions.heading}</h2>
@@ -247,7 +185,7 @@ export default function DafPillarPage({
             {t.missions.items.map((m, i) => (
               <li
                 key={m.title}
-                className="rounded-2xl border border-border/50 bg-background p-5 flex flex-col gap-2 hover:border-iter-violet/30 transition-colors"
+                className="site-card rounded-2xl border border-border/50 bg-background p-5 flex flex-col gap-2 hover:border-iter-violet/30 transition-colors"
               >
                 <span className="text-xs font-semibold tabular-nums text-iter-violet">
                   {String(i + 1).padStart(2, "0")}
@@ -269,13 +207,13 @@ export default function DafPillarPage({
 
       {/* 04 — Cas clients : rendu seulement avec des cas validés par écrit */}
       {t.cases.length > 0 && (
-        <section id="missions-reelles" className="bg-muted/30 py-14 sm:py-20 scroll-mt-24">
+        <section id="missions-reelles" className="site-section bg-muted/30 py-14 sm:py-20 scroll-mt-24">
           <div className="container max-w-4xl px-4 sm:px-6">
             <span className={eyebrow}>Missions réelles</span>
             <h2 className={h2}>Trois missions, racontées sans enjoliver</h2>
             <div className="mt-8 grid md:grid-cols-3 gap-4">
               {t.cases.map((c) => (
-                <article key={c.sector + c.size} className="rounded-2xl border border-border/50 p-5">
+                <article key={c.sector + c.size} className="site-card rounded-2xl border border-border/50 p-5">
                   <p className="text-xs font-semibold uppercase tracking-widest text-iter-violet">
                     {c.sector} · {c.size}
                   </p>
@@ -292,7 +230,7 @@ export default function DafPillarPage({
       )}
 
       {/* 05 — Les 90 premiers jours */}
-      <section id="methode" className="bg-iter-dark text-white py-14 sm:py-20 scroll-mt-24">
+      <section id="methode" className="site-section bg-iter-dark text-white py-14 sm:py-20 scroll-mt-24">
         <div className="container max-w-4xl px-4 sm:px-6">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-chartreuse mb-2 block">
             Méthode
@@ -300,10 +238,10 @@ export default function DafPillarPage({
           <h2 className="text-2xl sm:text-3xl font-bold font-heading leading-tight text-balance">
             {t.method.heading}
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-white/70 leading-relaxed max-w-[62ch]">{t.method.intro}</p>
+          <p className="site-copy mt-3 text-sm sm:text-base text-white/70 leading-relaxed max-w-[62ch]">{t.method.intro}</p>
           <ol className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {t.method.steps.map((s) => (
-              <li key={s.period} className="rounded-2xl border border-white/15 p-5 flex flex-col gap-2">
+              <li key={s.period} className="site-card rounded-2xl border border-white/15 p-5 flex flex-col gap-2">
                 <span className="text-xs font-semibold uppercase tracking-widest text-iter-chartreuse">{s.period}</span>
                 <h3 className="text-base font-semibold font-heading">{s.title}</h3>
                 <p className="text-sm text-white/70 leading-relaxed">{s.text}</p>
@@ -317,7 +255,7 @@ export default function DafPillarPage({
 
 
       {/* 02 — Définition unique */}
-      <section id="comprendre" className="bg-muted/30 py-12 sm:py-16 scroll-mt-24">
+      <section id="comprendre" className="site-section bg-muted/30 py-12 sm:py-16 scroll-mt-24">
         <div className="container max-w-3xl px-4 sm:px-6">
           <h2 className={h2}>{t.definition.heading}</h2>
           <p className={`${body} mt-4 text-foreground/90`}>
@@ -330,14 +268,14 @@ export default function DafPillarPage({
 
       <CaseProofLinks heading="D’autres missions documentées" />
       {/* 06 — Pour qui */}
-      <section id="pour-qui" className="bg-background py-14 sm:py-20 scroll-mt-24">
+      <section id="pour-qui" className="site-section bg-background py-14 sm:py-20 scroll-mt-24">
         <div className="container max-w-4xl px-4 sm:px-6">
           <span className={eyebrow}>Pour qui</span>
           <h2 className={h2}>{t.forWhom.heading}</h2>
           <p className={`${body} mt-3 max-w-[62ch]`}>{t.forWhom.intro}</p>
           <div className="mt-8 grid sm:grid-cols-2 gap-4">
             {t.forWhom.segments.map((s) => (
-              <article key={s.title} className="rounded-2xl border border-border/50 p-5 flex flex-col gap-2">
+              <article key={s.title} className="site-card rounded-2xl border border-border/50 p-5 flex flex-col gap-2">
                 <h3 className="text-base sm:text-lg font-semibold font-heading text-foreground">{s.title}</h3>
                 <p className={body}>
                   <span className="font-semibold text-foreground">Déclencheur : </span>
@@ -356,20 +294,20 @@ export default function DafPillarPage({
         </div>
       </section>
 
-      <section id="livrables-pme" className="bg-background py-14 sm:py-20 scroll-mt-24">
+      <section id="livrables-pme" className="site-section bg-background py-14 sm:py-20 scroll-mt-24">
         <div className="container max-w-4xl px-4 sm:px-6">
           <h2 className={h2}>{t.forWhom.monthlyWork.heading}</h2>
           <p className={`${body} mt-4`}>{t.forWhom.monthlyWork.intro}</p>
           <ol className="grid sm:grid-cols-3 gap-4 mt-6">
             {t.forWhom.monthlyWork.steps.map((step, index) => (
-              <li key={step.title} className="rounded-2xl border border-border p-5">
+              <li key={step.title} className="site-card rounded-2xl border border-border p-5">
                 <span className="text-sm font-semibold text-iter-violet">0{index + 1}</span>
                 <h3 className="font-semibold text-foreground mt-2 mb-3">{step.title}</h3>
                 <p className={body}>{step.text}</p>
               </li>
             ))}
           </ol>
-          <div className="mt-6 rounded-2xl bg-iter-violet/5 p-5">
+          <div className="site-card mt-6 rounded-2xl bg-iter-violet/5 p-5">
             <p className={body}>{t.forWhom.monthlyWork.proof}</p>
             <Link href={t.forWhom.monthlyWork.href} className="mt-3 inline-flex items-center gap-2 text-iter-violet font-medium underline underline-offset-4">Lire le cas Opti Digital <ArrowRight size={16} /></Link>
           </div>
@@ -379,13 +317,13 @@ export default function DafPillarPage({
       {/* 06 bis — Secteurs : les requêtes « daf externalisé industrie / commerce /
           startup » atteignent le top 10 sans clic ; ce bloc répond et maille
           les pages sectorielles, qui recevaient peu de liens. */}
-      <section id="secteurs" className="bg-muted/30 py-14 sm:py-20 scroll-mt-24">
+      <section id="secteurs" className="site-section bg-muted/30 py-14 sm:py-20 scroll-mt-24">
         <div className="container max-w-4xl px-4 sm:px-6">
           <span className={eyebrow}>Secteurs</span>
           <h2 className={h2}>{t.forWhom.sectors.heading}</h2>
           <div className="mt-8 grid sm:grid-cols-2 gap-4">
             {t.forWhom.sectors.items.map((s) => (
-              <article key={s.title} className="rounded-2xl border border-border/50 bg-background p-5 flex flex-col gap-2">
+              <article key={s.title} className="site-card rounded-2xl border border-border/50 bg-background p-5 flex flex-col gap-2">
                 <h3 className="text-base font-semibold font-heading text-foreground">{s.title}</h3>
                 <p className={body}>{s.text}</p>
                 <Link href={s.href} className="mt-auto inline-flex items-center gap-1 text-sm font-medium text-iter-violet hover:underline">
@@ -399,13 +337,13 @@ export default function DafPillarPage({
       </section>
 
       {/* 08 — Pourquoi Iter + cabinet + experts */}
-      <section id="pourquoi-iter" className="bg-muted/30 py-14 sm:py-20 scroll-mt-24">
+      <section id="pourquoi-iter" className="site-section bg-muted/30 py-14 sm:py-20 scroll-mt-24">
         <div className="container max-w-4xl px-4 sm:px-6">
           <span className={eyebrow}>Pourquoi nous</span>
           <h2 className={h2}>{t.why.heading}</h2>
           <div className="mt-8 grid sm:grid-cols-2 gap-4">
             {t.why.points.map((p) => (
-              <div key={p.title} className="rounded-2xl border border-border/50 bg-background p-5">
+              <div key={p.title} className="site-card rounded-2xl border border-border/50 bg-background p-5">
                 <h3 className="text-base font-semibold font-heading text-foreground">{p.title}</h3>
                 <p className={`${body} mt-2`}>{renderInlineMarkdownLinks(p.text)}</p>
               </div>
@@ -446,7 +384,7 @@ export default function DafPillarPage({
                     strapiMediaUrl(e.photo) ||
                     strapiMediaUrl(getFallbackTeamMembers("fr").find((m) => m.slug === e.slug)?.photo);
                   return (
-                    <li key={e.slug} className="rounded-2xl border border-border/50 p-4 sm:p-5 flex items-center gap-4">
+                    <li key={e.slug} className="site-card rounded-2xl border border-border/50 p-4 sm:p-5 flex items-center gap-4">
                       <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-2xl overflow-hidden bg-iter-violet/10">
                         {photo && (
                           <Image
@@ -493,7 +431,7 @@ export default function DafPillarPage({
       </div>
 
       {/* 10 — Villes : trois liens à ancre locale, pas de texte de ville ici */}
-      <section id="villes" className="bg-background py-12 sm:py-16 scroll-mt-24">
+      <section id="villes" className="site-section bg-background py-12 sm:py-16 scroll-mt-24">
         <div className="container max-w-4xl px-4 sm:px-6">
           <h2 className={h2}>{t.cities.heading}</h2>
           <p className={`${body} mt-3 max-w-[62ch]`}>{t.cities.text}</p>
@@ -502,7 +440,7 @@ export default function DafPillarPage({
               <li key={c.href}>
                 <Link
                   href={c.href}
-                  className="inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm font-medium text-foreground hover:border-iter-violet/50 hover:text-iter-violet transition-colors"
+                  className="site-button site-button-secondary inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm font-medium text-foreground hover:border-iter-violet/50 hover:text-iter-violet transition-colors"
                 >
                   <MapPin size={14} className="text-iter-violet" />
                   {c.label}
@@ -514,14 +452,14 @@ export default function DafPillarPage({
       </section>
 
       {/* 11 — FAQ resserrée */}
-      <section id="faq" className="bg-muted/30 py-14 sm:py-20 scroll-mt-24">
+      <section id="faq" className="site-section bg-muted/30 py-14 sm:py-20 scroll-mt-24">
         <div className="container max-w-3xl px-4 sm:px-6">
           <span className={eyebrow}>FAQ</span>
           <h2 className={h2}>Les questions qu’on nous pose avant de démarrer</h2>
           <div className="mt-6 divide-y divide-border/60 rounded-2xl border border-border/60 bg-background">
             {t.faq.map((item) => (
               <details key={item.question} className="group px-5 py-4">
-                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-sm sm:text-base font-semibold text-foreground">
+                <summary className="site-copy flex cursor-pointer list-none items-start justify-between gap-4 text-sm sm:text-base font-semibold text-foreground">
                   <h3 className="font-semibold">{item.question}</h3>
                   <span
                     aria-hidden
@@ -538,7 +476,7 @@ export default function DafPillarPage({
       </section>
 
       {/* 12 — Ressources */}
-      <section className="bg-background py-12 sm:py-16">
+      <section className="site-section bg-background py-12 sm:py-16">
         <div className="container max-w-3xl px-4 sm:px-6">
           <h2 className="text-lg sm:text-xl font-bold font-heading text-foreground">{t.resources.heading}</h2>
           <ul className="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2">

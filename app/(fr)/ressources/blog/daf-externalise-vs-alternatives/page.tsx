@@ -446,7 +446,7 @@ export default function DafExternaliseVsAlternativesPage() {
 
         <h2 id="faq">6. FAQ — Choisir entre les alternatives</h2>
         {FAQ_ITEMS.map((item, i) => (
-          <details key={i} className="my-3 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-4">
+          <details key={i} className="site-card my-3 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-4">
             <summary className="cursor-pointer font-semibold text-foreground">
               {item.question}
             </summary>
@@ -456,7 +456,7 @@ export default function DafExternaliseVsAlternativesPage() {
           </details>
         ))}
 
-        <div className="my-10 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-6 md:p-8">
+        <div className="site-card my-10 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-6 md:p-8">
           <h3 className="mb-3 text-lg font-semibold text-slate-900">
             Encore hésitant sur la bonne configuration ?
           </h3>

@@ -109,7 +109,7 @@ function CaseStudyCardWrapper({
 
               {locale === "fr" && detail && <p className="text-sm text-muted-foreground mb-5">{detail.limits}</p>}
               {cs.quote && (
-                <div className="bg-muted/30 rounded-xl p-5 mt-4">
+                <div className="site-card bg-muted/30 rounded-xl p-5 mt-4">
                   <Quote size={20} className="text-iter-violet/30 mb-2" />
                   <p className="text-sm italic text-foreground leading-relaxed mb-3">
                     &ldquo;{cs.quote}&rdquo;

@@ -16,7 +16,7 @@ export default function LegalPage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb locale={locale} items={[{ label: content.h1 }]} />
           <h1 className="text-3xl lg:text-4xl font-bold font-heading text-foreground">{content.h1}</h1>
@@ -24,7 +24,7 @@ export default function LegalPage({
       </section>
 
       {/* Content */}
-      <section className="bg-background py-16 lg:py-20">
+      <section className="site-section bg-background py-16 lg:py-20">
         <div className="container max-w-3xl">
           {content.sections.map((section, i) => (
             <div key={i} className="mb-12 last:mb-0">

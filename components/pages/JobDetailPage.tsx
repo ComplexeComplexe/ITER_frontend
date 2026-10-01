@@ -112,7 +112,7 @@ export default function JobDetailPage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container max-w-4xl">
           <Breadcrumb
             locale={locale}
@@ -159,7 +159,7 @@ export default function JobDetailPage({
           {/* CTA */}
           <a
             href="mailto:contact@iteradvisors.com?subject=Candidature%20-%20{job.title}"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-iter-violet text-white font-semibold rounded-xl hover:bg-iter-violet/90 transition-colors"
+            className="site-button site-button-primary inline-flex items-center gap-2 px-6 py-3 bg-iter-violet text-white font-semibold rounded-xl hover:bg-iter-violet/90 transition-colors"
           >
             <Send size={18} />
             {t.applyNow}
@@ -168,7 +168,7 @@ export default function JobDetailPage({
       </section>
 
       {/* Content */}
-      <section className="bg-background py-16 lg:py-24">
+      <section className="site-section bg-background py-16 lg:py-24">
         <div className="container max-w-4xl">
           <div className="grid lg:grid-cols-[1fr_280px] gap-12">
             {/* Main content */}
@@ -216,7 +216,7 @@ export default function JobDetailPage({
             {/* Sidebar */}
             <aside className="space-y-6 lg:sticky lg:top-32 lg:self-start">
               {/* Job details card */}
-              <div className="bg-muted/50 rounded-2xl p-6 space-y-4">
+              <div className="site-card bg-muted/50 rounded-2xl p-6 space-y-4">
                 <h3 className="text-sm font-semibold uppercase tracking-widest text-iter-violet">
                   {t.jobDetails}
                 </h3>
@@ -265,7 +265,7 @@ export default function JobDetailPage({
               </div>
 
               {/* Apply card */}
-              <div className="bg-iter-violet/5 border border-iter-violet/20 rounded-2xl p-6 space-y-4">
+              <div className="site-card bg-iter-violet/5 border border-iter-violet/20 rounded-2xl p-6 space-y-4">
                 <h3 className="text-lg font-bold font-heading">
                   {t.applyTitle}
                 </h3>

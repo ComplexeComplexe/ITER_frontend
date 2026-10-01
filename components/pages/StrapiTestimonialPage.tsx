@@ -22,7 +22,7 @@ export default function StrapiTestimonialPage({ locale, testimonial }: { locale:
 
   return (
     <PageLayout locale={locale}>
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb locale={locale} items={[{ label: t.resources, href: t.resourcesHref }, { label: t.testimonials, href: t.testimonialsHref }, { label: testimonial.title }]} />
           <div className="flex items-center gap-6 mb-6">
@@ -40,16 +40,16 @@ export default function StrapiTestimonialPage({ locale, testimonial }: { locale:
         <div className="container">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {testimonial.industry && (
-              <div className="bg-muted/30 rounded-2xl p-5"><span className="text-xs font-bold text-iter-violet/60 uppercase tracking-widest">{t.industry}</span><p className="font-semibold text-foreground mt-1">{testimonial.industry}</p></div>
+              <div className="site-card bg-muted/30 rounded-2xl p-5"><span className="text-xs font-bold text-iter-violet/60 uppercase tracking-widest">{t.industry}</span><p className="font-semibold text-foreground mt-1">{testimonial.industry}</p></div>
             )}
             {testimonial.teamSize && (
-              <div className="bg-muted/30 rounded-2xl p-5"><span className="text-xs font-bold text-iter-violet/60 uppercase tracking-widest">{t.teamSize}</span><p className="font-semibold text-foreground mt-1">{testimonial.teamSize}</p></div>
+              <div className="site-card bg-muted/30 rounded-2xl p-5"><span className="text-xs font-bold text-iter-violet/60 uppercase tracking-widest">{t.teamSize}</span><p className="font-semibold text-foreground mt-1">{testimonial.teamSize}</p></div>
             )}
             {testimonial.initialRevenue && (
-              <div className="bg-muted/30 rounded-2xl p-5"><span className="text-xs font-bold text-iter-violet/60 uppercase tracking-widest">{t.revenue}</span><p className="font-semibold text-foreground mt-1">{testimonial.initialRevenue}</p></div>
+              <div className="site-card bg-muted/30 rounded-2xl p-5"><span className="text-xs font-bold text-iter-violet/60 uppercase tracking-widest">{t.revenue}</span><p className="font-semibold text-foreground mt-1">{testimonial.initialRevenue}</p></div>
             )}
             {testimonial.engagementType && (
-              <div className="bg-muted/30 rounded-2xl p-5"><span className="text-xs font-bold text-iter-violet/60 uppercase tracking-widest">{t.engagement}</span><p className="font-semibold text-foreground mt-1">{testimonial.engagementType}</p></div>
+              <div className="site-card bg-muted/30 rounded-2xl p-5"><span className="text-xs font-bold text-iter-violet/60 uppercase tracking-widest">{t.engagement}</span><p className="font-semibold text-foreground mt-1">{testimonial.engagementType}</p></div>
             )}
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function StrapiTestimonialPage({ locale, testimonial }: { locale:
               <h2 className="text-2xl font-bold font-heading text-foreground mb-4">{t.results}</h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {testimonial.results.map((r) => (
-                  <div key={r.id} className="bg-muted/30 rounded-2xl p-6 border border-border/30">
+                  <div key={r.id} className="site-card bg-muted/30 rounded-2xl p-6 border border-border/30">
                     <span className="text-2xl font-bold text-iter-violet">{r.metric}</span>
                     <p className="text-muted-foreground mt-1">{r.description}</p>
                   </div>

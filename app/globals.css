@@ -8,23 +8,23 @@
 
 @theme inline {
   /* Iter Advisors — Corporate Kinetic palette */
-  --color-iter-violet: oklch(0.42 0.28 275);
-  --color-iter-chartreuse: oklch(0.91 0.22 120);
-  --color-iter-dark: oklch(0.15 0.01 270);
-  --color-iter-gray: oklch(0.45 0.01 270);
-  --color-iter-light: oklch(0.98 0.002 270);
-  --color-iter-violet-light: oklch(0.92 0.05 275);
+  --color-iter-violet: var(--site-violet, oklch(0.42 0.28 275));
+  --color-iter-chartreuse: var(--site-accent, oklch(0.91 0.22 120));
+  --color-iter-dark: var(--site-ink, oklch(0.15 0.01 270));
+  --color-iter-gray: var(--site-muted, oklch(0.45 0.01 270));
+  --color-iter-light: var(--site-paper, oklch(0.98 0.002 270));
+  --color-iter-violet-light: var(--site-tint, oklch(0.92 0.05 275));
 
   /* Semantic mappings */
   --color-background: oklch(0.995 0 0);
-  --color-foreground: oklch(0.15 0.01 270);
+  --color-foreground: var(--site-ink, oklch(0.15 0.01 270));
   --color-card: oklch(1 0 0);
   --color-card-foreground: oklch(0.15 0.01 270);
-  --color-primary: oklch(0.42 0.28 275);
+  --color-primary: var(--site-violet, oklch(0.42 0.28 275));
   --color-primary-foreground: oklch(1 0 0);
   --color-muted: oklch(0.96 0.003 270);
-  --color-muted-foreground: oklch(0.5 0.01 270);
-  --color-border: oklch(0.92 0.004 270);
+  --color-muted-foreground: var(--site-muted, oklch(0.5 0.01 270));
+  --color-border: var(--site-border, oklch(0.92 0.004 270));
 
   /* Fonts */
   --font-heading: 'Space Grotesk', sans-serif;

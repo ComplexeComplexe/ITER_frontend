@@ -222,12 +222,12 @@ function ConversionForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       {submitStatus === 'success' && (
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
+        <div className="site-card p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
           ✅ Merci ! Nous vous recontacterons dans les 24h.
         </div>
       )}
       {submitStatus === 'error' && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
+        <div className="site-card p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
           ❌ Erreur lors de l'envoi. Veuillez réessayer.
         </div>
       )}
@@ -604,12 +604,12 @@ export default function LandingPageClient() {
             the right above the fold; the "Planifier un diagnostic financier"
             CTA was removed since the form itself is now the primary action;
             "Nous contacter" stays as a small secondary link). */}
-      <section className="pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 bg-gradient-to-br from-background via-background to-iter-violet/5">
+      <section className="site-hero pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 bg-gradient-to-br from-background via-background to-iter-violet/5">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 items-start">
             {/* ── Left: tagline, H1, subtitle, USPs, social proof (3/5) ── */}
             <div className="lg:col-span-3">
-              <p className="text-sm sm:text-base font-semibold text-iter-violet mb-4">
+              <p className="site-copy text-sm sm:text-base font-semibold text-iter-violet mb-4">
                 Cabinet européen — Barcelone, Paris, Toulouse
               </p>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-heading text-foreground mb-6 leading-tight">
@@ -669,7 +669,7 @@ export default function LandingPageClient() {
 
             {/* ── Right: lead form (2/5) — above the fold on desktop ── */}
             <div className="lg:col-span-2" id="conversion-form">
-              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-xl">
+              <div className="site-card bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-xl">
                 <p className="text-base sm:text-lg font-bold text-foreground mb-1">
                   Faites le point avec un DAF senior
                 </p>
@@ -684,7 +684,7 @@ export default function LandingPageClient() {
       </section>
 
       {/* SECTION 2: PROBLEM */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background">
+      <section className="site-section py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
@@ -696,19 +696,19 @@ export default function LandingPageClient() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
+            <div className="site-card p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
               <p className="font-semibold text-foreground mb-2">💧 Vous manquez de visibilité sur votre trésorerie ?</p>
               <p className="text-sm text-muted-foreground">
                 Vous ne savez pas précisément combien de mois vous pouvez tenir, ni quelles décisions prendre avant que la tension n'arrive.
               </p>
             </div>
-            <div className="p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
+            <div className="site-card p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
               <p className="font-semibold text-foreground mb-2">📑 Vos reportings prennent trop de temps ?</p>
               <p className="text-sm text-muted-foreground">
                 Les chiffres circulent dans plusieurs fichiers, les versions changent, et personne n'a la même lecture de la situation.
               </p>
             </div>
-            <div className="p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
+            <div className="site-card p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
               <p className="font-semibold text-foreground mb-2">🤝 Vous devez rassurer votre board ou des investisseurs ?</p>
               <p className="text-sm text-muted-foreground">
                 Prévisionnel, KPIs, data room, scénario de trésorerie : vos chiffres doivent être solides avant les discussions importantes.
@@ -731,7 +731,7 @@ export default function LandingPageClient() {
       </section>
 
       {/* SECTION 3: SOLUTION */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
+      <section className="site-section py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
         <div className="container max-w-4xl">
           <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-8 text-center">
             Un DAF externalisé, pour piloter sans recruter trop tôt
@@ -747,19 +747,19 @@ export default function LandingPageClient() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white p-6 rounded-lg border border-gray-200">
+            <div className="site-card bg-white p-6 rounded-lg border border-gray-200">
               <p className="text-foreground font-semibold mb-2">✅ Accès à un profil senior</p>
               <p className="text-sm text-muted-foreground">
                 Sans supporter le coût d'un recrutement à plein temps.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg border border-gray-200">
+            <div className="site-card bg-white p-6 rounded-lg border border-gray-200">
               <p className="text-foreground font-semibold mb-2">✅ Visibilité sur vos chiffres</p>
               <p className="text-sm text-muted-foreground">
                 Cash, marges, budgets, priorités financières claires.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg border border-gray-200">
+            <div className="site-card bg-white p-6 rounded-lg border border-gray-200">
               <p className="text-foreground font-semibold mb-2">✅ Routines financières simples</p>
               <p className="text-sm text-muted-foreground">
                 Lisibles, utiles et alignées avec votre pilotage.
@@ -767,7 +767,7 @@ export default function LandingPageClient() {
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-lg border border-gray-200 text-center mb-8">
+          <div className="site-card bg-white p-6 rounded-lg border border-gray-200 text-center mb-8">
             <p className="text-sm text-muted-foreground">
               <strong>Iter Advisors ne remplace pas votre expert-comptable.</strong> Nous complétons son travail en transformant vos chiffres en outils de pilotage.
             </p>
@@ -776,7 +776,7 @@ export default function LandingPageClient() {
       </section>
 
       {/* SECTION 4: MISSIONS */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background">
+      <section className="site-section py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-4xl">
           <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4 text-center">
             Ce que votre DAF externalisé peut prendre en main
@@ -794,7 +794,7 @@ export default function LandingPageClient() {
               { title: 'Contrôle de gestion', desc: 'Analyse des marges, rentabilité par activité, pricing.' },
               { title: 'Structuration finance', desc: 'Mise en place des outils, fiabilisation des données.' },
             ].map((mission, idx) => (
-              <div key={idx} className="p-6 rounded-lg bg-white border border-gray-200 hover:border-iter-violet/30 transition-colors">
+              <div key={idx} className="site-card p-6 rounded-lg bg-white border border-gray-200 hover:border-iter-violet/30 transition-colors">
                 <h3 className="font-semibold text-foreground mb-2">{mission.title}</h3>
                 <p className="text-sm text-muted-foreground">{mission.desc}</p>
               </div>
@@ -816,7 +816,7 @@ export default function LandingPageClient() {
       </section>
 
       {/* SECTION 5: COMPARISON */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
+      <section className="site-section py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
         <div className="container max-w-5xl">
           <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4 text-center">
             Expert-comptable, DAF salarié ou DAF externalisé ?
@@ -856,7 +856,7 @@ export default function LandingPageClient() {
             </table>
           </div>
 
-          <div className="bg-white p-6 rounded-lg border border-gray-200 text-center">
+          <div className="site-card bg-white p-6 rounded-lg border border-gray-200 text-center">
             <p className="text-sm text-muted-foreground">
               Le DAF externalisé ne remplace pas votre expert-comptable. Il l'aide à devenir une source fiable pour piloter l'entreprise, pas seulement pour produire les comptes.
             </p>
@@ -865,7 +865,7 @@ export default function LandingPageClient() {
       </section>
 
       {/* SECTION 6: METHOD */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background">
+      <section className="site-section py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-4xl">
           <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-12 text-center">
             Une mise en place simple, en 3 étapes
@@ -889,7 +889,7 @@ export default function LandingPageClient() {
                 desc: 'Nous mettons en place les routines : points cash, reporting mensuel, arbitrages et décisions.',
               },
             ].map((item) => (
-              <div key={item.step} className="p-6 rounded-lg bg-white border border-gray-200">
+              <div key={item.step} className="site-card p-6 rounded-lg bg-white border border-gray-200">
                 <div className="text-4xl font-bold text-iter-violet mb-3">{item.step}</div>
                 <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
@@ -912,7 +912,7 @@ export default function LandingPageClient() {
       </section>
 
       {/* SECTION 7: CREDIBILITY */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
+      <section className="site-section py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
         <div className="container max-w-4xl">
           <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-8 text-center">
             Des DAF qui ont déjà été à votre place
@@ -932,7 +932,7 @@ export default function LandingPageClient() {
             </div>
           </div>
 
-          <div className="bg-white p-8 rounded-lg border border-gray-200 text-center mb-8">
+          <div className="site-card bg-white p-8 rounded-lg border border-gray-200 text-center mb-8">
             <div className="flex justify-center gap-1 mb-3">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
@@ -955,7 +955,7 @@ export default function LandingPageClient() {
             up to the hero form, which is the same conversion endpoint. */}
 
       {/* SECTION 9: FAQ */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
+      <section className="site-section py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
         <div className="container max-w-3xl">
           <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-12 text-center">
             Questions fréquentes

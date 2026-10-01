@@ -592,7 +592,7 @@ export default function LeadPage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-iter-dark via-iter-dark to-[oklch(0.25_0.15_275)]">
+      <section className="site-hero site-hero--inverse relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-iter-dark via-iter-dark to-[oklch(0.25_0.15_275)]">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-[0.04]">
           <svg className="w-full h-full" viewBox="0 0 1440 900" fill="none">
@@ -675,7 +675,7 @@ export default function LeadPage({
             >
               <button
                 onClick={handleStartQuiz}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-bold text-base hover:shadow-[0_0_30px_oklch(0.91_0.22_120/0.4)] transition-all duration-300 group"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-bold text-base hover:shadow-[0_0_30px_oklch(0.91_0.22_120/0.4)] transition-all duration-300 group"
               >
                 {t.ctaPrimary}
                 <ArrowRight
@@ -687,7 +687,7 @@ export default function LeadPage({
                 href={BOOKING_URL}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white font-semibold text-base hover:bg-white/5 transition-all duration-300"
+                className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white font-semibold text-base hover:bg-white/5 transition-all duration-300"
               >
                 <Calendar size={18} />
                 {t.ctaSecondary}
@@ -747,7 +747,7 @@ export default function LeadPage({
       </section>
 
       {/* ─── PROBLEM / SOLUTION ─── */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="site-section py-20 lg:py-28 bg-white">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Problem */}
@@ -765,7 +765,7 @@ export default function LeadPage({
                 {t.problemItems.map((item, i) => (
                   <div
                     key={i}
-                    className="flex items-start gap-4 p-4 rounded-2xl bg-red-50/50 border border-red-100"
+                    className="site-card flex items-start gap-4 p-4 rounded-2xl bg-red-50/50 border border-red-100"
                   >
                     <span className="mt-0.5 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center text-red-500 text-sm font-bold flex-shrink-0">
                       {i + 1}
@@ -791,7 +791,7 @@ export default function LeadPage({
                 {t.solutionItems.map((item, i) => (
                   <div
                     key={i}
-                    className="flex items-start gap-4 p-5 rounded-2xl bg-iter-dark text-white"
+                    className="site-card flex items-start gap-4 p-5 rounded-2xl bg-iter-dark text-white"
                   >
                     <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
                       <SolutionIcon name={item.icon} />
@@ -814,7 +814,7 @@ export default function LeadPage({
       <section
         ref={quizRef}
         id="diagnostic"
-        className="py-20 lg:py-28 bg-gradient-to-b from-iter-violet-light/30 to-white"
+        className="site-section py-20 lg:py-28 bg-gradient-to-b from-iter-violet-light/30 to-white"
       >
         <div className="container">
           <div className="max-w-2xl mx-auto">
@@ -862,7 +862,7 @@ export default function LeadPage({
               >
                 <button
                   onClick={handleStartQuiz}
-                  className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-iter-violet text-white font-bold text-lg hover:shadow-[0_0_40px_oklch(0.42_0.28_275/0.3)] transition-all duration-300 group"
+                  className="site-button site-button-primary inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-iter-violet text-white font-bold text-lg hover:shadow-[0_0_40px_oklch(0.42_0.28_275/0.3)] transition-all duration-300 group"
                 >
                   {t.ctaPrimary}
                   <ArrowRight
@@ -882,7 +882,7 @@ export default function LeadPage({
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10"
+                  className="site-card bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10"
                 >
                   <div className="flex items-center gap-3 mb-8">
                     <div className="w-12 h-12 rounded-2xl bg-iter-violet-light flex items-center justify-center">
@@ -930,7 +930,7 @@ export default function LeadPage({
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10"
+                  className="site-card bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10"
                 >
                   <div className="text-center mb-8">
                     <div className="w-16 h-16 rounded-full bg-iter-chartreuse/20 flex items-center justify-center mx-auto mb-4">
@@ -1032,7 +1032,7 @@ export default function LeadPage({
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full mt-4 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-bold text-base hover:shadow-[0_0_30px_oklch(0.42_0.28_275/0.3)] transition-all duration-300 disabled:opacity-50"
+                      className="site-button site-button-primary w-full mt-4 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-bold text-base hover:shadow-[0_0_30px_oklch(0.42_0.28_275/0.3)] transition-all duration-300 disabled:opacity-50"
                     >
                       {isSubmitting ? (
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -1074,7 +1074,7 @@ export default function LeadPage({
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
-                  className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-12 text-center"
+                  className="site-card bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-12 text-center"
                 >
                   <div className="w-20 h-20 rounded-full bg-iter-chartreuse/20 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle2 size={40} className="text-iter-violet" />
@@ -1092,7 +1092,7 @@ export default function LeadPage({
                     href={BOOKING_URL}
                     target="_blank"
                     rel="nofollow noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-bold text-base hover:shadow-[0_0_30px_oklch(0.42_0.28_275/0.3)] transition-all duration-300 group"
+                    className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-bold text-base hover:shadow-[0_0_30px_oklch(0.42_0.28_275/0.3)] transition-all duration-300 group"
                   >
                     <Calendar size={18} />
                     {t.thankYouCTA}
@@ -1109,7 +1109,7 @@ export default function LeadPage({
       </section>
 
       {/* ─── TESTIMONIALS ─── */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="site-section py-20 lg:py-28 bg-white">
         <div className="container">
           <h2 className="text-3xl lg:text-4xl font-bold text-iter-dark text-center mb-12">
             {t.testimonialsTitle}
@@ -1122,7 +1122,7 @@ export default function LeadPage({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 rounded-3xl bg-gray-50 border border-gray-100"
+                className="site-card p-8 rounded-3xl bg-gray-50 border border-gray-100"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.stars)].map((_, j) => (
@@ -1147,7 +1147,7 @@ export default function LeadPage({
       </section>
 
       {/* ─── FAQ ─── */}
-      <section className="py-20 lg:py-28 bg-gray-50">
+      <section className="site-section py-20 lg:py-28 bg-gray-50">
         <div className="container">
           <h2 className="text-3xl lg:text-4xl font-bold text-iter-dark text-center mb-12">
             {t.faqTitle}
@@ -1192,7 +1192,7 @@ export default function LeadPage({
       </section>
 
       {/* ─── FINAL CTA ─── */}
-      <section className="py-24 lg:py-32 bg-iter-dark relative overflow-hidden">
+      <section className="site-section py-24 lg:py-32 bg-iter-dark relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]">
           <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none">
             <circle
@@ -1223,7 +1223,7 @@ export default function LeadPage({
                 });
               }, 100);
             }}
-            className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-full bg-iter-chartreuse text-iter-dark font-bold text-lg hover:shadow-[0_0_30px_oklch(0.91_0.22_120/0.4)] transition-all duration-300 group"
+            className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-10 py-5 rounded-full bg-iter-chartreuse text-iter-dark font-bold text-lg hover:shadow-[0_0_30px_oklch(0.91_0.22_120/0.4)] transition-all duration-300 group"
           >
             {t.ctaPrimary}
             <ArrowRight

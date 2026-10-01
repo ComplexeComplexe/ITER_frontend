@@ -25,7 +25,7 @@ export interface StackComboProps {
 
 export default function StackCombo({ combo, title, description }: StackComboProps) {
   return (
-    <div className="bg-gradient-to-b from-blue-50 to-gray-50 rounded-lg border border-gray-200 p-6 md:p-8 my-8">
+    <div className="site-card bg-gradient-to-b from-blue-50 to-gray-50 rounded-lg border border-gray-200 p-6 md:p-8 my-8">
       <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">{title}</h3>
 
       {/* Stack visualization */}

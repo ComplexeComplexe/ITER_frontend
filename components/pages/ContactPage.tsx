@@ -218,7 +218,7 @@ export default function ContactPage({
       {/* ═══ HERO + FORM ═══ (2026-05-30 redesign — form now lives in the
             hero as the right column so it's visible above the fold on desktop;
             on mobile it stacks immediately after the hero copy). ═══ */}
-      <section className="relative bg-gradient-to-br from-iter-violet via-iter-violet to-iter-dark pt-28 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
+      <section className="site-hero site-hero--inverse relative bg-gradient-to-br from-iter-violet via-iter-violet to-iter-dark pt-28 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
         {/* Geometric background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <svg className="absolute w-full h-full opacity-[0.06]" viewBox="0 0 1440 600" fill="none">
@@ -276,7 +276,7 @@ export default function ContactPage({
               className="lg:col-span-2"
               ref={formRef}
             >
-              <div className="bg-white rounded-3xl border border-white/10 shadow-2xl shadow-black/10 p-6 sm:p-8">
+              <div className="site-card bg-white rounded-3xl border border-white/10 shadow-2xl shadow-black/10 p-6 sm:p-8">
                 <h2 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-1">
                   {tx.formTitle}
                 </h2>
@@ -302,7 +302,7 @@ export default function ContactPage({
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     {error && (
-                      <div role="alert" className="rounded-xl bg-red-50 border border-red-200 p-4 text-sm text-red-700">
+                      <div role="alert" className="site-card rounded-xl bg-red-50 border border-red-200 p-4 text-sm text-red-700">
                         {error}
                       </div>
                     )}
@@ -341,7 +341,7 @@ export default function ContactPage({
                       <button
                         type="submit"
                         disabled={pending}
-                        className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-iter-violet text-white font-semibold text-base hover:bg-iter-violet/90 hover:shadow-lg hover:shadow-iter-violet/20 transition-all duration-300 disabled:opacity-50 w-full justify-center"
+                        className="site-button site-button-primary group inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-iter-violet text-white font-semibold text-base hover:bg-iter-violet/90 hover:shadow-lg hover:shadow-iter-violet/20 transition-all duration-300 disabled:opacity-50 w-full justify-center"
                       >
                         {pending ? (
                           <span className="flex items-center gap-2">
@@ -371,7 +371,7 @@ export default function ContactPage({
       {/* ═══ CONTACT INFO ROW (compact, below the fold; the prior Calendly
             card was removed because BOOKING_URL now resolves to /contact and
             the link would have been self-referential). ═══ */}
-      <section className="bg-background py-10 lg:py-14">
+      <section className="site-section bg-background py-10 lg:py-14">
         <div className="container">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">
             {tx.infoTitle}
@@ -380,7 +380,7 @@ export default function ContactPage({
             {/* Email */}
             <a
               href="mailto:contact@iteradvisors.com"
-              className="group flex items-start gap-3 p-4 rounded-2xl border border-border/50 bg-white hover:border-iter-violet/30 hover:shadow-md transition-all duration-300"
+              className="site-card group flex items-start gap-3 p-4 rounded-2xl border border-border/50 bg-white hover:border-iter-violet/30 hover:shadow-md transition-all duration-300"
             >
               <div className="w-9 h-9 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
                 <Mail size={16} className="text-iter-violet" />
@@ -392,7 +392,7 @@ export default function ContactPage({
             </a>
 
             {/* Hours */}
-            <div className="flex items-start gap-3 p-4 rounded-2xl border border-border/50 bg-white">
+            <div className="site-card flex items-start gap-3 p-4 rounded-2xl border border-border/50 bg-white">
               <div className="w-9 h-9 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0">
                 <Clock size={16} className="text-iter-violet" />
               </div>
@@ -407,7 +407,7 @@ export default function ContactPage({
               href="https://www.linkedin.com/company/iter-advisors/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-start gap-3 p-4 rounded-2xl border border-border/50 bg-white hover:border-[#0A66C2]/30 hover:shadow-md transition-all duration-300"
+              className="site-card group flex items-start gap-3 p-4 rounded-2xl border border-border/50 bg-white hover:border-[#0A66C2]/30 hover:shadow-md transition-all duration-300"
             >
               <div className="w-9 h-9 rounded-xl bg-[#0A66C2]/10 flex items-center justify-center shrink-0 group-hover:bg-[#0A66C2]/20 transition-colors">
                 <Linkedin size={16} className="text-[#0A66C2]" />
@@ -422,7 +422,7 @@ export default function ContactPage({
       </section>
 
       {/* ═══ OFFICES ═══ */}
-      <section className="bg-muted/30 py-20 lg:py-24">
+      <section className="site-section bg-muted/30 py-20 lg:py-24">
         <div className="container" ref={officesRef}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -442,7 +442,7 @@ export default function ContactPage({
                 initial={{ opacity: 0, y: 20 }}
                 animate={officesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group relative bg-white rounded-2xl border border-border/50 p-8 text-center hover:shadow-lg hover:border-iter-violet/20 transition-all duration-300"
+                className="site-card group relative bg-white rounded-2xl border border-border/50 p-8 text-center hover:shadow-lg hover:border-iter-violet/20 transition-all duration-300"
               >
                 <div className="text-4xl mb-4">{office.flag}</div>
                 <h3 className="text-lg font-bold text-foreground mb-1">{office.city}</h3>
@@ -455,7 +455,7 @@ export default function ContactPage({
       </section>
 
       {/* ═══ CLIENT LOGOS ═══ */}
-      <section className="bg-background py-16 lg:py-20">
+      <section className="site-section bg-background py-16 lg:py-20">
         <div className="container">
           <p className="text-center text-sm font-medium text-muted-foreground uppercase tracking-widest mb-10">
             {tx.clientsTitle}

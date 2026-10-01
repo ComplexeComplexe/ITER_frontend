@@ -53,7 +53,7 @@ const linkStyle = "inline-flex items-center gap-2 text-sm font-medium text-iter-
 export default function ResourcesPageFR({ cmsNavigation }: { cmsNavigation?: CmsNavItem[] }) {
   return (
     <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
-      <section className="bg-gradient-to-br from-background to-iter-violet/5 pt-24 sm:pt-32 pb-8 sm:pb-12">
+      <section className="site-hero bg-gradient-to-br from-background to-iter-violet/5 pt-24 sm:pt-32 pb-8 sm:pb-12">
         <div className="container max-w-6xl">
           <Breadcrumb locale="fr" items={[{ label: "Ressources" }]} />
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading leading-tight mt-5 mb-4 max-w-3xl">Des ressources pour piloter votre finance</h1>
@@ -69,12 +69,12 @@ export default function ResourcesPageFR({ cmsNavigation }: { cmsNavigation?: Cms
           </ul>
         </div>
       </nav>
-      <section id="blog" className="py-10 sm:py-14 scroll-mt-36">
+      <section id="blog" className="site-section py-10 sm:py-14 scroll-mt-36">
         <div className="container max-w-6xl">
           <h2 className="text-2xl sm:text-3xl font-bold font-heading mb-6">Sur quel sujet souhaitez-vous avancer ?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {needs.map(need => (
-              <article key={need.title} className="rounded-2xl border border-border bg-card p-5 sm:p-6">
+              <article key={need.title} className="site-card rounded-2xl border border-border bg-card p-5 sm:p-6">
                 <h3 className="text-lg font-semibold mb-2">{need.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">{need.text}</p>
                 <ul className="space-y-3">{need.links.map(link => <li key={link.href}><Link href={link.href} className={linkStyle}>{link.title}<ArrowRight size={14} className="shrink-0" aria-hidden="true" /></Link></li>)}</ul>
@@ -87,13 +87,13 @@ export default function ResourcesPageFR({ cmsNavigation }: { cmsNavigation?: Cms
           </div>
         </div>
       </section>
-      <section id="cas-clients" className="bg-muted/30 py-10 sm:py-14 scroll-mt-36">
+      <section id="cas-clients" className="site-section bg-muted/30 py-10 sm:py-14 scroll-mt-36">
         <div className="container max-w-6xl">
           <h2 className="text-2xl sm:text-3xl font-bold font-heading mb-3">Voir les travaux réalisés chez nos clients</h2>
           <p className="text-muted-foreground max-w-3xl mb-6">Chaque fiche présente le contexte, les livrables et les limites des résultats publiés. Ces missions illustrent notre travail ; leurs résultats ne préjugent pas des vôtres.</p>
           <div className="grid md:grid-cols-3 gap-4">
             {DOCUMENTED_CASES.map(item => (
-              <Link key={item.slug} href={item.href} className="group block rounded-2xl border border-border bg-background p-5 sm:p-6 hover:border-iter-violet focus-visible:outline-2 focus-visible:outline-iter-violet">
+              <Link key={item.slug} href={item.href} className="site-card group block rounded-2xl border border-border bg-background p-5 sm:p-6 hover:border-iter-violet focus-visible:outline-2 focus-visible:outline-iter-violet">
                 <h3 className="text-lg font-semibold mb-2">{item.company}</h3>
                 <p className="text-sm font-medium text-iter-violet mb-3">{item.proof}</p>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.summary}</p>
@@ -107,7 +107,7 @@ export default function ResourcesPageFR({ cmsNavigation }: { cmsNavigation?: Cms
           </div>
         </div>
       </section>
-      <section className="py-10 sm:py-14">
+      <section className="site-section py-10 sm:py-14">
         <div className="container max-w-6xl grid md:grid-cols-2 gap-8">
           <div id="outils" className="scroll-mt-36">
             <h2 className="text-2xl font-bold font-heading mb-3">Choisir vos outils finance</h2>
@@ -118,10 +118,10 @@ export default function ResourcesPageFR({ cmsNavigation }: { cmsNavigation?: Cms
           <div id="glossaire" className="scroll-mt-36">
             <h2 className="text-2xl font-bold font-heading mb-3">Comprendre les indicateurs</h2>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">Définitions, calculs et exemples pour comprendre vos tableaux de bord et préparer les échanges avec vos partenaires.</p>
-            <ul className="flex flex-wrap gap-2 mb-5">{terms.map(term => <li key={term.href}><Link className="inline-flex rounded-full border border-border px-4 py-2 text-sm hover:border-iter-violet hover:text-iter-violet" href={term.href}>{term.title}</Link></li>)}</ul>
+            <ul className="flex flex-wrap gap-2 mb-5">{terms.map(term => <li key={term.href}><Link className="site-button site-button-secondary inline-flex rounded-full border border-border px-4 py-2 text-sm hover:border-iter-violet hover:text-iter-violet" href={term.href}>{term.title}</Link></li>)}</ul>
             <Link href="/ressources/glossaire" className={linkStyle}>Tout le glossaire financier</Link>
           </div>
-          <div id="fiches-metiers" className="md:col-span-2 rounded-2xl border border-border p-5 sm:p-6 scroll-mt-36">
+          <div id="fiches-metiers" className="site-card md:col-span-2 rounded-2xl border border-border p-5 sm:p-6 scroll-mt-36">
             <h2 className="text-2xl font-bold font-heading mb-3">Organiser votre fonction finance</h2>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">Identifiez les responsabilités du DAF et les complémentarités avec votre expert-comptable. Une organisation claire aide à choisir le bon accompagnement.</p>
             <div className="flex flex-wrap gap-5">

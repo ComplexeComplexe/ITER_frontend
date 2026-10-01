@@ -142,7 +142,7 @@ export default function ToolPage({
   return (
     <PageLayout locale={locale}>
       {/* Hero section */}
-      <section className="bg-background pt-32 pb-12">
+      <section className="site-hero bg-background pt-32 pb-12">
         <div className="container">
           <Breadcrumb
             locale={locale}
@@ -277,14 +277,14 @@ export default function ToolPage({
           comment il a été formé et ce qu'il ne couvre pas. */}
       <section className="bg-background pb-4">
         <div className="container max-w-3xl">
-          <details className="group rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
+          <details className="site-card group rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
             <summary className="cursor-pointer list-none flex items-start justify-between gap-3 font-semibold text-foreground">
               <span>Méthode et limites de cet avis</span>
               <span aria-hidden className="text-iter-violet shrink-0 transition-transform group-open:rotate-45">
                 +
               </span>
             </summary>
-            <ul className="mt-4 space-y-2 text-sm sm:text-base text-muted-foreground leading-relaxed list-disc pl-5 marker:text-iter-violet">
+            <ul className="site-copy mt-4 space-y-2 text-sm sm:text-base text-muted-foreground leading-relaxed list-disc pl-5 marker:text-iter-violet">
               <li>
                 <strong className="text-foreground">D&apos;où vient l&apos;avis.</strong> {tool.name} a été
                 déployé ou exploité par nos DAF externalisés en mission chez des PME et des startups
@@ -317,12 +317,12 @@ export default function ToolPage({
 
       {/* Advantages section */}
       {toolDetails?.advantages && toolDetails.advantages.length > 0 && (
-        <section className="bg-muted/20 py-16">
+        <section className="site-section bg-muted/20 py-16">
           <div className="container max-w-3xl">
             <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Avantages clés</h2>
             <div className="space-y-6">
               {toolDetails.advantages.map((advantage, idx) => (
-                <div key={idx} className="bg-background p-6 rounded-lg border border-green-200 border-l-4 border-l-green-600">
+                <div key={idx} className="site-card bg-background p-6 rounded-lg border border-green-200 border-l-4 border-l-green-600">
                   <h3 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
                     <span className="text-green-600 text-xl">✓</span>
                     {advantage.title}
@@ -337,12 +337,12 @@ export default function ToolPage({
 
       {/* Limitations section */}
       {toolDetails?.limitations && toolDetails.limitations.length > 0 && (
-        <section className="bg-background py-16">
+        <section className="site-section bg-background py-16">
           <div className="container max-w-3xl">
             <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Limitations et solutions</h2>
             <div className="space-y-6">
               {toolDetails.limitations.map((limitation, idx) => (
-                <div key={idx} className="bg-muted/20 p-6 rounded-lg border border-orange-200 border-l-4 border-l-orange-600">
+                <div key={idx} className="site-card bg-muted/20 p-6 rounded-lg border border-orange-200 border-l-4 border-l-orange-600">
                   <h3 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
                     <span className="text-orange-600 text-xl">⚠</span>
                     {limitation.title}
@@ -357,12 +357,12 @@ export default function ToolPage({
 
       {/* Implementation guide section */}
       {toolDetails?.implementationGuide && toolDetails.implementationGuide.length > 0 && (
-        <section className="bg-muted/20 py-16">
+        <section className="site-section bg-muted/20 py-16">
           <div className="container max-w-3xl">
             <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Guide d'implémentation</h2>
             <div className="space-y-4">
               {toolDetails.implementationGuide.map((item, idx) => (
-                <div key={idx} id={`step${idx + 1}`} className="bg-background p-6 rounded-lg border border-gray-200 scroll-mt-28">
+                <div key={idx} id={`step${idx + 1}`} className="site-card bg-background p-6 rounded-lg border border-gray-200 scroll-mt-28">
                   <div className="flex gap-4">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center h-8 w-8 rounded-full bg-iter-violet text-white font-bold text-sm">
@@ -383,13 +383,13 @@ export default function ToolPage({
 
       {/* Retour terrain — TICKET 20 */}
       {toolDetails?.retourTerrain && (
-        <section className="bg-iter-violet/5 border-y border-iter-violet/20 py-16">
+        <section className="site-section bg-iter-violet/5 border-y border-iter-violet/20 py-16">
           <div className="container max-w-3xl">
             <h2 className="text-2xl font-bold font-heading text-foreground mb-6">Retour terrain</h2>
             <p className="text-gray-700 leading-relaxed italic mb-8">
               « {toolDetails.retourTerrain.clientStory} »
             </p>
-            <div className="bg-background p-6 rounded-lg border border-iter-violet/20">
+            <div className="site-card bg-background p-6 rounded-lg border border-iter-violet/20">
               <p className="font-semibold text-gray-900 mb-2">Stack recommandé</p>
               <p className="text-gray-700 mb-2">
                 <strong>{toolDetails.retourTerrain.recommendedStack.tools.join(' + ')}</strong>
@@ -413,7 +413,7 @@ export default function ToolPage({
 
       {/* Verbatim block */}
       {verbatim && (
-        <section className="bg-muted/20 py-16">
+        <section className="site-section bg-muted/20 py-16">
           <div className="container max-w-3xl">
             <VerbatimBlock
               quote={verbatim.quote}
@@ -428,7 +428,7 @@ export default function ToolPage({
 
       {/* Stack Combo sections */}
       {stacksForTool && stacksForTool.length > 0 && (
-        <section className="bg-background py-16">
+        <section className="site-section bg-background py-16">
           <div className="container max-w-3xl">
             <h2 className="text-2xl font-bold font-heading text-foreground mb-12">Stacks recommandés</h2>
             <div className="space-y-12">
@@ -489,7 +489,7 @@ export default function ToolPage({
 
       {/* Alternatives section */}
       {alternativeTools.length > 0 && (
-        <section className="bg-muted/20 py-16">
+        <section className="site-section bg-muted/20 py-16">
           <div className="container max-w-3xl">
             <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Alternatives</h2>
             <div className="space-y-4">
@@ -497,7 +497,7 @@ export default function ToolPage({
                 <Link
                   key={altTool.slug}
                   href={`/ressources/outils/${altTool.slug}`}
-                  className="block p-4 bg-background rounded-lg border border-gray-200 hover:border-iter-violet/50 hover:shadow-md transition-all"
+                  className="site-card block p-4 bg-background rounded-lg border border-gray-200 hover:border-iter-violet/50 hover:shadow-md transition-all"
                 >
                   <h3 className="font-semibold text-gray-900 text-iter-violet hover:underline">
                     {altTool.name}
@@ -528,7 +528,7 @@ export default function ToolPage({
 
       {/* FAQ section */}
       {faqForTool.length > 0 && (
-        <section className="bg-background py-16">
+        <section className="site-section bg-background py-16">
           <div className="container max-w-3xl">
             <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Questions fréquentes</h2>
             <div className="space-y-6">

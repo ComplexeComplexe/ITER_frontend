@@ -57,7 +57,7 @@ export default function ServicePageLayout({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
+      <section className="site-hero bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container max-w-3xl">
           <Breadcrumb
             locale={locale}
@@ -93,7 +93,7 @@ export default function ServicePageLayout({
                 <p className="text-sm font-semibold text-foreground mb-2">
                   {locale === "fr" ? "En une ligne" : locale === "es" ? "En breve" : "In brief"}
                 </p>
-                <p className="text-sm sm:text-base text-foreground leading-relaxed">
+                <p className="site-copy text-sm sm:text-base text-foreground leading-relaxed">
                   {t.tldr}
                 </p>
               </div>
@@ -102,7 +102,7 @@ export default function ServicePageLayout({
             {/* CTA Button */}
             <Link
               href={getContactPath(locale)}
-              className="inline-flex items-center justify-center sm:justify-start gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-2"
+              className="site-button site-button-primary inline-flex items-center justify-center sm:justify-start gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-2"
             >
               {locale === "fr" ? "Décrire mon besoin" : locale === "es" ? "Describir mi necesidad" : "Describe my needs"}
               <ArrowRight size={18} />
@@ -112,7 +112,7 @@ export default function ServicePageLayout({
       </section>
 
       {/* Content Sections */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background">
+      <section className="site-section py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-3xl">
           {t.sections.map(sectionRenderer)}
         </div>
@@ -120,7 +120,7 @@ export default function ServicePageLayout({
 
       {/* Testimonials Section */}
       {t.testimonials && (
-        <section className="py-16 sm:py-24 lg:py-32 bg-iter-violet/5">
+        <section className="site-section py-16 sm:py-24 lg:py-32 bg-iter-violet/5">
           <div className="container max-w-3xl">
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-12 text-center">
               {locale === "fr" ? "Avis de nos clients" : locale === "es" ? "Opiniones de clientes" : "Client reviews"}
@@ -136,7 +136,7 @@ export default function ServicePageLayout({
 
       {/* Sources Section */}
       {t.sources && (
-        <section className="py-16 sm:py-24 lg:py-32 bg-background">
+        <section className="site-section py-16 sm:py-24 lg:py-32 bg-background">
           <div className="container max-w-3xl">
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-8">
               {locale === "fr"
@@ -146,7 +146,7 @@ export default function ServicePageLayout({
             <div className="prose prose-sm sm:prose-base max-w-none">
               <ul className="space-y-3">
                 {t.sources.map((source: string, idx: number) => (
-                  <li key={idx} className="text-sm sm:text-base text-muted-foreground">
+                  <li key={idx} className="site-copy text-sm sm:text-base text-muted-foreground">
                     {source}
                   </li>
                 ))}

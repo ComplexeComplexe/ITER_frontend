@@ -47,7 +47,7 @@ export default function HRServicePage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container max-w-4xl">
           <Breadcrumb
             locale={locale}
@@ -69,7 +69,7 @@ export default function HRServicePage({
       </section>
 
       {/* What is */}
-      <section className="bg-muted/30 py-20">
+      <section className="site-section bg-muted/30 py-20">
         <div className="container max-w-4xl">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
             {content.whatIs.heading}
@@ -93,14 +93,14 @@ export default function HRServicePage({
       </section>
 
       {/* Why outsource */}
-      <section className="bg-background py-20">
+      <section className="site-section bg-background py-20">
         <div className="container max-w-4xl">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
             {content.whyOutsource.heading}
           </h2>
           <div className="grid sm:grid-cols-2 gap-6">
             {content.whyOutsource.benefits.map((b) => (
-              <div key={b.label} className="rounded-2xl border border-border/50 p-6">
+              <div key={b.label} className="site-card rounded-2xl border border-border/50 p-6">
                 <p className="font-semibold mb-2 text-foreground">{b.label}</p>
                 <p className="text-muted-foreground text-sm leading-relaxed">{b.description}</p>
               </div>
@@ -110,7 +110,7 @@ export default function HRServicePage({
       </section>
 
       {/* Approach */}
-      <section className="bg-muted/30 py-20">
+      <section className="site-section bg-muted/30 py-20">
         <div className="container max-w-4xl">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
             {content.approach.heading}
@@ -134,14 +134,14 @@ export default function HRServicePage({
       </section>
 
       {/* Use cases */}
-      <section className="bg-background py-20">
+      <section className="site-section bg-background py-20">
         <div className="container max-w-4xl">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
             {content.useCases.heading}
           </h2>
           <div className="space-y-6">
             {content.useCases.cases.map((c) => (
-              <div key={c.title} className="rounded-2xl border border-border/50 p-6 bg-background">
+              <div key={c.title} className="site-card rounded-2xl border border-border/50 p-6 bg-background">
                 <p className="font-semibold text-foreground mb-2">{c.title}</p>
                 <p className="text-muted-foreground text-sm leading-relaxed">{c.description}</p>
               </div>
@@ -151,7 +151,7 @@ export default function HRServicePage({
       </section>
 
       {/* Pricing */}
-      <section className="bg-muted/30 py-20">
+      <section className="site-section bg-muted/30 py-20">
         <div className="container max-w-4xl">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
             {content.pricing.heading}
@@ -187,7 +187,7 @@ export default function HRServicePage({
 
       {/* FAQ — visible et JSON-LD depuis le même tableau */}
       {content.faq && content.faq.length > 0 && (
-        <section className="bg-background py-20">
+        <section className="site-section bg-background py-20">
           <div className="container max-w-3xl">
             <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-8">Questions fréquentes</h2>
             <div className="space-y-3">
@@ -199,7 +199,7 @@ export default function HRServicePage({
                       +
                     </span>
                   </summary>
-                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <div className="site-copy px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
                     <p>{q.answer}</p>
                   </div>
                 </details>
@@ -210,9 +210,9 @@ export default function HRServicePage({
       )}
 
       {/* Cluster DRH */}
-      <section className="bg-muted/30 py-16">
+      <section className="site-section bg-muted/30 py-16">
         <div className="container max-w-4xl">
-          <div className="rounded-3xl border border-border/60 bg-background p-6 sm:p-8">
+          <div className="site-card rounded-3xl border border-border/60 bg-background p-6 sm:p-8">
             <p className="text-xs font-bold uppercase tracking-widest text-iter-violet mb-2">Direction RH externalisée</p>
             <p className="text-base sm:text-lg text-foreground leading-relaxed mb-4">
               Ce service est l&apos;une des briques de notre{" "}
@@ -230,7 +230,7 @@ export default function HRServicePage({
                 <li key={s.slug}>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="block rounded-xl border border-border/60 p-4 text-sm font-medium text-foreground hover:border-iter-violet/50 hover:text-iter-violet transition-colors"
+                    className="site-card block rounded-xl border border-border/60 p-4 text-sm font-medium text-foreground hover:border-iter-violet/50 hover:text-iter-violet transition-colors"
                   >
                     {s.breadcrumb}
                   </Link>
@@ -242,7 +242,7 @@ export default function HRServicePage({
       </section>
 
       {/* CTA */}
-      <section className="bg-background py-20">
+      <section className="site-section bg-background py-20">
         <div className="container max-w-3xl text-center">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-4">
             {content.cta.heading}
@@ -250,7 +250,7 @@ export default function HRServicePage({
           <p className="text-muted-foreground leading-relaxed mb-8">{content.cta.body}</p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-iter-chartreuse text-iter-dark font-semibold rounded-full hover:brightness-105 transition-all"
+            className="site-button site-button-primary inline-flex items-center gap-2 px-8 py-3 bg-iter-chartreuse text-iter-dark font-semibold rounded-full hover:brightness-105 transition-all"
           >
             {content.cta.buttonLabel}
             <ArrowRight size={18} />

@@ -61,7 +61,7 @@ export default function TestimonialsSection({ locale }: { locale: Locale }) {
   }, [scriptLoaded]);
 
   return (
-    <section className="py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
+    <section className="site-section py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
       <div className="container text-center" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}

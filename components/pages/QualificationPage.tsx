@@ -586,7 +586,7 @@ export default function QualificationPage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* ─── HERO ─── */}
-      <section className="relative py-20 lg:py-28 bg-gradient-to-br from-iter-dark via-iter-dark to-[oklch(0.25_0.15_275)] overflow-hidden">
+      <section className="site-hero site-hero--inverse relative py-20 lg:py-28 bg-gradient-to-br from-iter-dark via-iter-dark to-[oklch(0.25_0.15_275)] overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]">
           <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none">
             <rect x="100" y="100" width="400" height="400" rx="20" stroke="white" strokeWidth="0.5" fill="none" />
@@ -639,7 +639,7 @@ export default function QualificationPage({
       </section>
 
       {/* ─── FORM SECTION ─── */}
-      <section ref={formRef} className="py-16 lg:py-24 bg-gray-50">
+      <section ref={formRef} className="site-section py-16 lg:py-24 bg-gray-50">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             {/* Section tabs */}
@@ -703,7 +703,7 @@ export default function QualificationPage({
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -40 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10"
+                  className="site-card bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10"
                 >
                   <div className="flex items-center gap-3 mb-8">
                     <div className="w-12 h-12 rounded-2xl bg-iter-violet-light flex items-center justify-center">
@@ -801,7 +801,7 @@ export default function QualificationPage({
                     )}
                     <button
                       onClick={handleNext}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold text-sm hover:shadow-lg transition-all group"
+                      className="site-button site-button-primary inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold text-sm hover:shadow-lg transition-all group"
                     >
                       {t.nextButton}
                       <ArrowRight
@@ -821,7 +821,7 @@ export default function QualificationPage({
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -40 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10"
+                  className="site-card bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10"
                 >
                   <div className="text-center mb-8">
                     <div className="w-16 h-16 rounded-full bg-iter-chartreuse/20 flex items-center justify-center mx-auto mb-4">
@@ -922,7 +922,7 @@ export default function QualificationPage({
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full mt-4 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-bold text-base hover:shadow-[0_0_30px_oklch(0.42_0.28_275/0.3)] transition-all duration-300 disabled:opacity-50"
+                      className="site-button site-button-primary w-full mt-4 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-bold text-base hover:shadow-[0_0_30px_oklch(0.42_0.28_275/0.3)] transition-all duration-300 disabled:opacity-50"
                     >
                       {isSubmitting ? (
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -960,7 +960,7 @@ export default function QualificationPage({
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
-                  className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-12 text-center"
+                  className="site-card bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-12 text-center"
                 >
                   <div className="w-20 h-20 rounded-full bg-iter-chartreuse/20 flex items-center justify-center mx-auto mb-6">
                     <BarChart3 size={40} className="text-iter-violet" />
@@ -971,7 +971,7 @@ export default function QualificationPage({
                   <p className="text-gray-500 text-lg mb-8">{t.thankYouSubtitle}</p>
 
                   {/* What you'll receive */}
-                  <div className="bg-gray-50 rounded-2xl p-6 mb-8 text-left max-w-md mx-auto">
+                  <div className="site-card bg-gray-50 rounded-2xl p-6 mb-8 text-left max-w-md mx-auto">
                     <p className="text-sm font-semibold text-gray-600 mb-3 uppercase tracking-wider">
                       {locale === "fr" ? "Vous recevrez :" : locale === "en" ? "You will receive:" : "Recibirá:"}
                     </p>
@@ -988,7 +988,7 @@ export default function QualificationPage({
                     href={BOOKING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-bold text-base hover:shadow-[0_0_30px_oklch(0.42_0.28_275/0.3)] transition-all duration-300 group"
+                    className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-bold text-base hover:shadow-[0_0_30px_oklch(0.42_0.28_275/0.3)] transition-all duration-300 group"
                   >
                     <Calendar size={18} />
                     {t.thankYouCTA}

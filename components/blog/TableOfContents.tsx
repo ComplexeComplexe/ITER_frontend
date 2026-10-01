@@ -12,7 +12,7 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
   if (!items || items.length === 0) return null;
 
   return (
-    <nav className="mb-8 rounded-lg border border-slate-200 bg-slate-50 p-6">
+    <nav className="site-card mb-8 rounded-lg border border-slate-200 bg-slate-50 p-6">
       <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-900">
         Sommaire
       </h2>

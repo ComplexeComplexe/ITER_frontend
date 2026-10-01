@@ -30,7 +30,7 @@ export default async function Page() {
   return (
     <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
+      <section className="site-hero bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container max-w-3xl">
           <Breadcrumb
             locale="fr"
@@ -53,7 +53,7 @@ export default async function Page() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="mailto:contact@iteradvisors.com"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 <Mail size={18} />
                 Envoyer votre CV
@@ -73,17 +73,17 @@ export default async function Page() {
       </section>
 
       {/* Content */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background">
+      <section className="site-section py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-3xl space-y-16 sm:space-y-24">
           {/* Le rôle */}
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
               Le rôle
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               Tu assisteras nos équipes sur les missions chez nos clients :
             </p>
-            <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
+            <ul className="site-copy space-y-2 text-sm sm:text-base text-muted-foreground">
               <li>
                 • Saisir les opérations comptables (factures, notes de frais,
                 déclarations de TVA)
@@ -115,7 +115,7 @@ export default async function Page() {
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-2">
                   Expérience requise
                 </h3>
-                <ul className="space-y-1 text-sm sm:text-base text-muted-foreground">
+                <ul className="site-copy space-y-1 text-sm sm:text-base text-muted-foreground">
                   <li>
                     • Diplôme bac +3/+5 (école de commerce, ingénieur, Master
                     Finance)
@@ -137,7 +137,7 @@ export default async function Page() {
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-2">
                   Soft skills
                 </h3>
-                <ul className="space-y-1 text-sm sm:text-base text-muted-foreground">
+                <ul className="site-copy space-y-1 text-sm sm:text-base text-muted-foreground">
                   <li>
                     • Rigueur : tu aimes les chiffres qui « collent » et tu
                     cherches l'erreur
@@ -162,7 +162,7 @@ export default async function Page() {
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
               Ce que nous proposons
             </h2>
-            <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
+            <ul className="site-copy space-y-2 text-sm sm:text-base text-muted-foreground">
               <li>
                 • <strong>CDI (temps plein) ou alternance (2j/semaine) compatible école</strong>
               </li>
@@ -194,7 +194,7 @@ export default async function Page() {
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
               Pourquoi Iter Advisors c'est différent
             </h2>
-            <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
+            <ul className="site-copy space-y-2 text-sm sm:text-base text-muted-foreground">
               <li>
                 • On te forme vraiment (pas juste du copier-coller de factures)
               </li>
@@ -220,10 +220,10 @@ export default async function Page() {
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
               Comment postuler
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-3">
               Envoie-nous :
             </p>
-            <ul className="space-y-1 text-sm sm:text-base text-muted-foreground mb-4">
+            <ul className="site-copy space-y-1 text-sm sm:text-base text-muted-foreground mb-4">
               <li>
                 • Ton CV (avec tes expériences stages + compétences techniques)
               </li>
@@ -231,7 +231,7 @@ export default async function Page() {
                 • Une présentation courte : pourquoi tu veux rejoindre Iter
               </li>
             </ul>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
               À : <a
                 href="mailto:contact@iteradvisors.com"
                 className="text-iter-violet hover:underline font-semibold"
@@ -239,7 +239,7 @@ export default async function Page() {
                 contact@iteradvisors.com
               </a>
             </p>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-4">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mt-4">
               <strong>Process :</strong> 30 min de discussion (valider les bases) + 1h de cas pratique (Excel + comptabilité) +
               rencontre avec l'équipe. Réponse en moins de 1 semaine.
             </p>
@@ -252,7 +252,7 @@ export default async function Page() {
             </p>
             <a
               href="mailto:contact@iteradvisors.com"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
+              className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
             >
               <Mail size={18} />
               Envoie ton CV

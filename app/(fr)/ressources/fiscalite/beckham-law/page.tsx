@@ -306,12 +306,12 @@ export default function Page() {
       </p>
 
       {/* Callout « bon à savoir » — Modelo 720 */}
-      <div className="my-6 rounded-xl border-l-4 border-iter-violet bg-iter-violet/5 p-4 sm:p-5">
+      <div className="site-card my-6 rounded-xl border-l-4 border-iter-violet bg-iter-violet/5 p-4 sm:p-5">
         <div className="flex items-center gap-2 font-semibold text-foreground mb-2">
           <Info size={18} className="text-iter-violet shrink-0" aria-hidden />
           Le Modelo 720 n&apos;est pas dû sous régime Beckham
         </div>
-        <div className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+        <div className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
           Contrairement à une idée répandue — y compris sur certains sites de conseil — le
           bénéficiaire du régime n&apos;est pas tenu de déclarer ses biens à l&apos;étranger via le{" "}
           <Link href="/ressources/fiscalite/modelo-720">Modelo 720</Link>. La Direction générale des
@@ -539,7 +539,7 @@ export default function Page() {
                 {step.badge}
               </span>
             )}
-            <div className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-1">
+            <div className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mt-1">
               {step.d}
             </div>
           </li>
@@ -586,12 +586,12 @@ export default function Page() {
 
       {/* ── Limites ── */}
       <h2 id="limites">Les limites du régime — ce que la loi Beckham ne permet pas</h2>
-      <div className="my-6 rounded-xl border-l-4 border-amber-500 bg-amber-50 p-4 sm:p-5">
+      <div className="site-card my-6 rounded-xl border-l-4 border-amber-500 bg-amber-50 p-4 sm:p-5">
         <div className="flex items-center gap-2 font-semibold text-amber-900 mb-2">
           <AlertTriangle size={18} className="shrink-0" aria-hidden />
           L&apos;option est irrévocable
         </div>
-        <div className="text-sm sm:text-base text-amber-900/80 leading-relaxed">
+        <div className="site-copy text-sm sm:text-base text-amber-900/80 leading-relaxed">
           Une fois accordée — ou refusée — impossible de revenir en arrière pour la même période. Le
           taux fixe fait rêver, mais le régime a un revers qu&apos;il faut mesurer avant d&apos;opter.
         </div>
@@ -623,12 +623,12 @@ export default function Page() {
           n&apos;est pas concerné par le régime.
         </li>
       </ul>
-      <div className="my-6 rounded-xl border-l-4 border-red-600 bg-red-50 p-4 sm:p-5">
+      <div className="site-card my-6 rounded-xl border-l-4 border-red-600 bg-red-50 p-4 sm:p-5">
         <div className="flex items-center gap-2 font-semibold text-red-900 mb-2">
           <AlertOctagon size={18} className="shrink-0" aria-hidden />
           Le régime se perd
         </div>
-        <div className="text-sm sm:text-base text-red-900/80 leading-relaxed">
+        <div className="site-copy text-sm sm:text-base text-red-900/80 leading-relaxed">
           Départ d&apos;Espagne avant la fin des 6 ans, cessation du contrat qui a justifié
           l&apos;option, non-respect d&apos;une condition en cours de période : le régime cesse à
           partir de l&apos;année du fait générateur. Les années passées ne sont pas remises en cause,

@@ -240,7 +240,7 @@ export default async function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       {/* ─── Hero commercial ─── */}
-      <section className="bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
+      <section className="site-hero bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container max-w-3xl">
           <Breadcrumb
             locale="fr"
@@ -265,14 +265,14 @@ export default async function Page() {
                 href="/contact#startup"
                 target="_blank"
                 rel="nofollow noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 Demander un Fractional CFO
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
               <Link
                 href="#tarifs"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
+                className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
               >
                 Voir nos tarifs ↓
               </Link>
@@ -303,7 +303,7 @@ export default async function Page() {
         <div className="container max-w-3xl px-4 sm:px-6">
           <aside
             aria-label="L'essentiel en 30 secondes"
-            className="rounded-3xl border border-border/60 bg-muted/30 p-5 sm:p-8"
+            className="site-card rounded-3xl border border-border/60 bg-muted/30 p-5 sm:p-8"
           >
             <h2 className="text-lg sm:text-xl font-bold font-heading text-foreground mb-4 sm:mb-5">
               L&apos;essentiel en 30 secondes
@@ -321,7 +321,7 @@ export default async function Page() {
               ].map((p, i) => (
                 <li
                   key={i}
-                  className="flex gap-2.5 sm:gap-3 text-sm sm:text-base text-muted-foreground leading-relaxed"
+                  className="site-copy flex gap-2.5 sm:gap-3 text-sm sm:text-base text-muted-foreground leading-relaxed"
                 >
                   <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
                   <span>
@@ -336,7 +336,7 @@ export default async function Page() {
       </section>
 
       {/* ─── Content sections ─── */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background">
+      <section className="site-section py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-3xl space-y-16 sm:space-y-24">
 
           {/* ── Intro commercial ── */}
@@ -344,7 +344,7 @@ export default async function Page() {
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
               Vous cherchez à embaucher un Fractional CFO ?
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
               Nos Fractional CFO sont d'anciens directeurs financiers de
               startups en forte croissance et de scale-ups. Ils s'intègrent à
               votre équipe, participent aux conseils d'administration,
@@ -366,7 +366,7 @@ export default async function Page() {
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
               Qu'est-ce qu'un Fractional CFO et comment ça fonctionne ?
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               Un Fractional CFO est un directeur financier senior qui intervient
               dans votre entreprise à temps partiel — généralement 1 à 3 jours
               par semaine. Là où un directeur financier salarié de séniorité
@@ -375,7 +375,7 @@ export default async function Page() {
               expertise stratégique pour 3 000 à 6 500 € HT par mois selon le
               périmètre — soit 30 à 60 % d&apos;économie.
             </p>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
               Chez Iter Advisors, nos Fractional CFO sont d'anciens directeurs
               financiers de startups en forte croissance et de scale-ups. Ils
               s'intègrent à votre équipe, participent aux conseils
@@ -383,7 +383,7 @@ export default async function Page() {
               encadrent votre équipe comptable — sans le coût fixe d'un salarié
               permanent.
             </p>
-            <p className="text-sm sm:text-base text-foreground font-semibold mb-3">
+            <p className="site-copy text-sm sm:text-base text-foreground font-semibold mb-3">
               Quand une startup doit-elle recruter un Fractional CFO ? Voici les
               5 déclencheurs les plus courants :
             </p>
@@ -450,7 +450,7 @@ export default async function Page() {
                 </tbody>
               </table>
             </div>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
               <strong className="text-foreground">La différence clé :</strong>{" "}
               un comptable enregistre les flux. Un Fractional CFO les
               interprète, modélise les scénarios, et guide les décisions
@@ -485,12 +485,12 @@ export default async function Page() {
               ].map((p, i) => (
                 <article
                   key={i}
-                  className="rounded-2xl border border-border/60 bg-muted/20 p-5 sm:p-6"
+                  className="site-card rounded-2xl border border-border/60 bg-muted/20 p-5 sm:p-6"
                 >
                   <h3 className="text-base sm:text-lg font-bold font-heading text-foreground mb-2 leading-snug">
                     {p.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {p.text}
                   </p>
                 </article>
@@ -536,7 +536,7 @@ export default async function Page() {
               ].map((item, i) => (
                 <li
                   key={i}
-                  className="text-sm sm:text-base text-muted-foreground leading-relaxed"
+                  className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed"
                 >
                   <strong className="text-foreground">{item.title}</strong>{" "}
                   {item.text}
@@ -550,7 +550,7 @@ export default async function Page() {
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
               Comment fonctionne le service Fractional CFO chez Iter Advisors ?
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
               Nos interventions Fractional CFO suivent une méthodologie
               structurée en 4 phases :
             </p>
@@ -577,13 +577,13 @@ export default async function Page() {
                   <h3 className="text-lg sm:text-xl font-semibold font-heading text-foreground mb-2">
                     {phase.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {phase.text}
                   </p>
                 </div>
               ))}
             </div>
-            <p className="mt-6 text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="site-copy mt-6 text-sm sm:text-base text-muted-foreground leading-relaxed">
               Pour aller plus loin sur deux missions souvent intégrées au scope
               fractional CFO, voir nos services dédiés :{" "}
               <Link
@@ -654,7 +654,7 @@ export default async function Page() {
                 </tbody>
               </table>
             </div>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
               Toutes nos formules incluent : accès aux modèles financiers Iter
               Advisors, base de données de benchmarking SaaS, revues
               stratégiques trimestrielles, et un senior avec 10+ ans
@@ -714,7 +714,7 @@ export default async function Page() {
                   key={i}
                   className="border-l-4 border-iter-violet bg-iter-violet/5 rounded-r-lg p-5 sm:p-6"
                 >
-                  <blockquote className="text-sm sm:text-base text-foreground/80 italic leading-relaxed mb-3">
+                  <blockquote className="site-copy text-sm sm:text-base text-foreground/80 italic leading-relaxed mb-3">
                     « {tst.quote} »
                   </blockquote>
                   <figcaption className="text-xs sm:text-sm">
@@ -729,7 +729,7 @@ export default async function Page() {
                 </figure>
               ))}
             </div>
-            <p className="mt-6 text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="site-copy mt-6 text-sm sm:text-base text-muted-foreground leading-relaxed">
               <Link
                 href="/ressources/cas-clients"
                 className="text-iter-violet hover:underline font-medium"
@@ -820,7 +820,7 @@ export default async function Page() {
                       +
                     </span>
                   </summary>
-                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <div className="site-copy px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
                     <p>{faq.answer}</p>
                   </div>
                 </details>
@@ -833,7 +833,7 @@ export default async function Page() {
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6">
               Prêt à recruter votre Fractional CFO ?
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
               Demandez un appel découverte gratuit de 30 minutes avec Benjamin
               Ziza, Founding Partner & CFO chez Iter Advisors. Nous évaluerons
               vos besoins financiers et vous mettrons en relation avec le
@@ -842,14 +842,14 @@ export default async function Page() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 href="/contact#startup"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all"
               >
                 Prendre rendez-vous
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <Link
                 href="/daf-externalise"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
+                className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
               >
                 En savoir plus sur notre service Fractional CFO
               </Link>
@@ -864,12 +864,12 @@ export default async function Page() {
           <aside
             id="jobs-section"
             aria-label="Rejoindre l'équipe Iter Advisors"
-            className="scroll-mt-24 rounded-2xl border border-iter-violet/30 bg-iter-violet/5 p-5 sm:p-6"
+            className="site-card scroll-mt-24 rounded-2xl border border-iter-violet/30 bg-iter-violet/5 p-5 sm:p-6"
           >
             <h2 className="text-base sm:text-lg font-bold font-heading text-foreground mb-2">
               Vous êtes un CFO senior et souhaitez rejoindre notre équipe ?
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-3">
               Nous recrutons en continu des fractional CFOs avec 10+ ans
               d&apos;expérience pour intervenir sur notre portefeuille de 85+
               startups en France et en Espagne.

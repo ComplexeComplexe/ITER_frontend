@@ -163,7 +163,7 @@ export default function ServiceSinglePage({
       )}
 
       {/* ─── Hero ─── */}
-      <section className="bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
+      <section className="site-hero bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container max-w-3xl">
           <Breadcrumb
             locale={locale}
@@ -185,7 +185,7 @@ export default function ServiceSinglePage({
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 href={contactPath}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 {locale === "fr"
                   ? "Décrire mon besoin"
@@ -196,7 +196,7 @@ export default function ServiceSinglePage({
               </Link>
               <Link
                 href={isCash ? "#exemple-tresorerie" : "#mission"}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
+                className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
               >
                 {locale === "fr" ? (isCash ? "Voir un exemple" : "Comprendre la mission") : locale === "en" ? "Explore the engagement" : "Conocer el servicio"}
               </Link>
@@ -223,7 +223,7 @@ export default function ServiceSinglePage({
 
       {isCash && <CashForecastExample />}
       {/* ─── Content sections ─── */}
-      <section id="mission" className="py-16 sm:py-24 lg:py-32 bg-background">
+      <section id="mission" className="site-section py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-3xl">
           {sections.map((section, i) => {
             const Icon = sectionIcons[i % sectionIcons.length];
@@ -241,7 +241,7 @@ export default function ServiceSinglePage({
                 )}
                 <StrapiBlocks
                   blocks={section.blocks}
-                  className="text-muted-foreground text-sm sm:text-base"
+                  className="site-copy text-muted-foreground text-sm sm:text-base"
                   prose
                   contactHref={contactPath}
                 />
@@ -252,7 +252,7 @@ export default function ServiceSinglePage({
       </section>
 
       {/* ─── Related Services ─── */}
-      <section className="bg-muted/30 py-16 sm:py-24">
+      <section className="site-section bg-muted/30 py-16 sm:py-24">
         <div className="container">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {relatedTagline}
@@ -331,12 +331,12 @@ export default function ServiceSinglePage({
               <Link
                 key={i}
                 href={service.href}
-                className="group flex items-center gap-4 bg-background border border-border/50 rounded-2xl p-5 sm:p-6 hover:border-iter-violet/30 transition-all duration-300"
+                className="site-card group flex items-center gap-4 bg-background border border-border/50 rounded-2xl p-5 sm:p-6 hover:border-iter-violet/30 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
                   <service.icon size={20} className="text-iter-violet" strokeWidth={1.5} />
                 </div>
-                <span className="font-semibold text-foreground group-hover:text-iter-violet transition-colors text-sm sm:text-base">
+                <span className="site-copy font-semibold text-foreground group-hover:text-iter-violet transition-colors text-sm sm:text-base">
                   {service.title}
                 </span>
                 <ArrowRight
@@ -351,7 +351,7 @@ export default function ServiceSinglePage({
 
       {/* ─── FAQ accordion ─── */}
       {page.faq && page.faq.length > 0 && (
-        <section className="py-16 sm:py-24 bg-background">
+        <section className="site-section py-16 sm:py-24 bg-background">
           <div className="container max-w-3xl">
             <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
               FAQ
@@ -374,7 +374,7 @@ export default function ServiceSinglePage({
                       +
                     </span>
                   </summary>
-                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <div className="site-copy px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
                     <StrapiBlocks
                       blocks={item.answer}
                       className="text-muted-foreground"

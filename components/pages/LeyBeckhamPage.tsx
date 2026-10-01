@@ -54,7 +54,7 @@ export default function LeyBeckhamPage({ locale, content: t, cmsNavigation }: Le
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
 
       {/* Hero */}
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}
@@ -76,7 +76,7 @@ export default function LeyBeckhamPage({ locale, content: t, cmsNavigation }: Le
 
       {/* Sections */}
       {t.sections.map((section, i) => (
-        <section key={i} className="bg-background py-16">
+        <section key={i} className="site-section bg-background py-16">
           <div className="container max-w-3xl">
             <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-6">
               {section.heading}
@@ -99,7 +99,7 @@ export default function LeyBeckhamPage({ locale, content: t, cmsNavigation }: Le
       </section>
 
       {/* FAQ */}
-      <section className="bg-muted py-16">
+      <section className="site-section bg-muted py-16">
         <div className="container max-w-3xl">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-12">
             {t.faq.title}

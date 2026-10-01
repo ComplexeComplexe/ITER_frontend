@@ -90,7 +90,7 @@ export default function GlossaryLetterIndex({
         {filteredTerms.map((term) => (
           <li
             key={term.documentId ?? term.id}
-            className="border border-border/50 rounded-2xl p-6 lg:p-8 bg-background"
+            className="site-card border border-border/50 rounded-2xl p-6 lg:p-8 bg-background"
           >
             {/* SEO-AUD-0824 §3 — le titre n'était pas cliquable : les fiches
                 détaillées n'avaient aucun lien entrant. Elles n'existent qu'en

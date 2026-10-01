@@ -286,7 +286,7 @@ export default function Page() {
       </tbody></ProseTable>
       <p>Faites établir une simulation personnalisée par un professionnel compétent avant de prendre une décision d’expatriation. Les exemples indicatifs de cette page ne constituent ni une estimation de votre revenu net ni une garantie d’économie.</p>
 
-      <div className="my-10 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-6 md:p-8">
+      <div className="site-card my-10 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-6 md:p-8">
         <h3 className="mb-3 text-lg font-semibold text-slate-900">
           Simulez votre économie avec le régime Beckham
         </h3>

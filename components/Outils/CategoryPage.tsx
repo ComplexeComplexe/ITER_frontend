@@ -84,7 +84,7 @@ export default function CategoryPage({
       />
 
       {/* Hero section */}
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}
@@ -115,7 +115,7 @@ export default function CategoryPage({
       </section>
 
       {/* Comparison table */}
-      <section className="bg-background py-16">
+      <section className="site-section bg-background py-16">
         <div className="container">
           <h2 className="text-2xl font-bold font-heading text-foreground mb-8">
             Comparatif des outils
@@ -126,7 +126,7 @@ export default function CategoryPage({
 
       {/* Detailed comparison matrix — TICKET 18 */}
       {categoryContent.detailedComparison && (
-        <section className="bg-muted/20 py-16">
+        <section className="site-section bg-muted/20 py-16">
           <div className="container max-w-5xl">
             <h2 className="text-2xl font-bold font-heading text-foreground mb-3">
               Tableau comparatif détaillé
@@ -169,7 +169,7 @@ export default function CategoryPage({
 
       {/* Verdict by profile/stage — TICKET 18 */}
       {categoryContent.verdictByStage && categoryContent.verdictByStage.length > 0 && (
-        <section className="bg-background py-16">
+        <section className="site-section bg-background py-16">
           <div className="container max-w-4xl">
             <h2 className="text-2xl font-bold font-heading text-foreground mb-3">
               Notre recommandation par profil
@@ -181,7 +181,7 @@ export default function CategoryPage({
               {categoryContent.verdictByStage.map((v) => (
                 <div
                   key={v.stage}
-                  className="grid sm:grid-cols-[200px_220px_1fr] gap-4 items-start p-5 rounded-2xl border border-gray-200 bg-muted/10"
+                  className="site-card grid sm:grid-cols-[200px_220px_1fr] gap-4 items-start p-5 rounded-2xl border border-gray-200 bg-muted/10"
                 >
                   <div>
                     <p className="text-xs font-semibold text-iter-violet uppercase tracking-wider">
@@ -209,7 +209,7 @@ export default function CategoryPage({
       )}
 
       {/* Tools detail sections */}
-      <section className="bg-muted/20 py-16">
+      <section className="site-section bg-muted/20 py-16">
         <div className="container">
           <h2 className="text-2xl font-bold font-heading text-foreground mb-12">
             Analyse détaillée par outil
@@ -219,7 +219,7 @@ export default function CategoryPage({
             {categoryContent.selectedTools.map((selectedTool) => {
               const toolData = tools.find((t) => t.name === selectedTool.name);
               return (
-                <div key={selectedTool.name} className="bg-background p-8 rounded-lg border border-gray-200">
+                <div key={selectedTool.name} className="site-card bg-background p-8 rounded-lg border border-gray-200">
                   <div className="flex items-start gap-4 mb-6">
                     {toolData?.logo && (
                       <div className="w-16 h-16 bg-gray-50 rounded-lg flex-shrink-0 flex items-center justify-center p-2">
@@ -281,14 +281,14 @@ export default function CategoryPage({
       </section>
 
       {/* Decision criteria */}
-      <section className="bg-background py-16">
+      <section className="site-section bg-background py-16">
         <div className="container">
           <h2 className="text-2xl font-bold font-heading text-foreground mb-8">
             Critères de décision
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {categoryContent.decisionCriteria.map((criterion, idx) => (
-              <div key={idx} className="p-6 bg-muted/20 rounded-lg border border-gray-200">
+              <div key={idx} className="site-card p-6 bg-muted/20 rounded-lg border border-gray-200">
                 <p className="text-gray-700">{criterion}</p>
               </div>
             ))}

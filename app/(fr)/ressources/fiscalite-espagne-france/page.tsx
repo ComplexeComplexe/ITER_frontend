@@ -54,7 +54,7 @@ const PILLARS: { id: string; label: string; href: string; ready: boolean; descri
 function PillarLink({ p }: { p: (typeof PILLARS)[number] }) {
   if (p.ready) {
     return (
-      <li className="flex gap-2.5 text-sm sm:text-base text-muted-foreground leading-relaxed">
+      <li className="site-copy flex gap-2.5 text-sm sm:text-base text-muted-foreground leading-relaxed">
         <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
         <span>
           <Link
@@ -70,7 +70,7 @@ function PillarLink({ p }: { p: (typeof PILLARS)[number] }) {
     );
   }
   return (
-    <li className="flex gap-2.5 text-sm sm:text-base text-muted-foreground leading-relaxed">
+    <li className="site-copy flex gap-2.5 text-sm sm:text-base text-muted-foreground leading-relaxed">
       <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-muted-foreground/40 shrink-0" />
       <span>
         <span className="font-semibold text-foreground/70">{p.label}</span>
@@ -126,7 +126,7 @@ export default async function Page() {
       />
 
       {/* Hero */}
-      <section className="bg-background pt-32 pb-12 sm:pb-16">
+      <section className="site-hero bg-background pt-32 pb-12 sm:pb-16">
         <div className="container max-w-4xl">
           <Breadcrumb
             locale="fr"
@@ -157,14 +157,14 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="bg-background py-12 sm:py-16">
+      <section className="site-section bg-background py-12 sm:py-16">
         <div className="container max-w-4xl space-y-14 sm:space-y-16">
           {/* H2 1 — Fondamentaux */}
           <div id="fondamentaux" className="scroll-mt-24">
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-4 leading-tight">
               Comprendre les fondamentaux de la fiscalité franco-espagnole
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-5">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-5">
               La première étape de toute expatriation ou création
               d&apos;entreprise transfrontalière consiste à déterminer où vous
               devez payer vos impôts. Cette décision ne se prend pas à la
@@ -184,7 +184,7 @@ export default async function Page() {
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-4 leading-tight">
               Impôts des particuliers et expatriés
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-5">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-5">
               Le système d&apos;imposition espagnol (IRPF) diffère
               significativement du système français, notamment par sa gestion
               régionalisée. Chaque communauté autonome (Catalogne, Madrid,
@@ -204,7 +204,7 @@ export default async function Page() {
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-4 leading-tight">
               Entrepreneurs, freelances et sociétés
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-5">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-5">
               Que vous soyez freelance (<em>autónomo</em>) ou dirigeant d&apos;une
               société (SL), la structuration de votre activité a un impact direct
               sur votre rentabilité nette.
@@ -223,7 +223,7 @@ export default async function Page() {
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-4 leading-tight">
               Patrimoine et immobilier
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-5">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-5">
               La gestion de votre patrimoine transfrontalier nécessite une
               attention particulière, notamment en matière de transmission et
               de revenus locatifs.
@@ -241,12 +241,12 @@ export default async function Page() {
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-4 leading-tight">
               Pourquoi se faire accompagner par Iter Advisors ?
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               La fiscalité internationale ne tolère pas l&apos;approximation. Une
               erreur de structuration ou un oubli déclaratif peut entraîner des
               redressements fiscaux sévères des deux côtés des Pyrénées.
             </p>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-3">
               Nos DAF externalisés et experts financiers vous accompagnent
               pour :
             </p>
@@ -256,7 +256,7 @@ export default async function Page() {
                 "Structurer votre rémunération de dirigeant (salaire vs dividendes).",
                 "Mettre en place des tableaux de bord financiers adaptés à votre activité transfrontalière.",
               ].map((item) => (
-                <li key={item} className="flex gap-2.5 text-sm sm:text-base text-muted-foreground">
+                <li key={item} className="site-copy flex gap-2.5 text-sm sm:text-base text-muted-foreground">
                   <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
                   <span>{item}</span>
                 </li>
@@ -280,7 +280,7 @@ export default async function Page() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="group flex items-center gap-3 p-4 rounded-xl border border-border/50 hover:border-iter-violet/30 transition-all"
+                  className="site-card group flex items-center gap-3 p-4 rounded-xl border border-border/50 hover:border-iter-violet/30 transition-all"
                 >
                   <ArrowRight
                     size={16}
@@ -296,18 +296,18 @@ export default async function Page() {
           </section>
 
           {/* CTA */}
-          <aside className="rounded-3xl bg-iter-violet/5 border-l-4 border-iter-violet p-6 sm:p-8">
+          <aside className="site-card rounded-3xl bg-iter-violet/5 border-l-4 border-iter-violet p-6 sm:p-8">
             <p className="text-base sm:text-lg font-semibold text-foreground mb-2">
               Vous avez un projet d&apos;implantation en Espagne ou des doutes
               sur votre structuration actuelle ?
             </p>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               Prenez rendez-vous pour un diagnostic financier gratuit de 30
               minutes avec nos experts franco-espagnols.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
+              className="site-button site-button-primary inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
             >
               Demander un diagnostic
               <ArrowRight size={16} aria-hidden />

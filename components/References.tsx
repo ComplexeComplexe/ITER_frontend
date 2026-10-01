@@ -27,7 +27,7 @@ export default function References({
   if (refs.length === 0) return null;
 
   return (
-    <section className="bg-background py-12 lg:py-16 border-t border-border/40">
+    <section className="site-section bg-background py-12 lg:py-16 border-t border-border/40">
       <div className="container max-w-3xl">
         <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-5">
           {getReferencesHeading(locale)}

@@ -22,7 +22,7 @@ export default async function Page() {
   const structuredData = {"@context":"https://schema.org", "@type":"CollectionPage", "@id":`https://www.iteradvisors.com${IA_FINANCE_HUB.href}#collection`, url:`https://www.iteradvisors.com${IA_FINANCE_HUB.href}`, name:title, description, inLanguage:"fr-FR", dateModified:"2026-09-05", isPartOf:{"@id":"https://www.iteradvisors.com/#website"}, hasPart:paths.map(slug => ({"@type":"Article", url:`https://www.iteradvisors.com${IA_FINANCE_HUB.href}/${slug}`, name:IA_GUIDES[slug].title}))};
   return <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData)}} />
-    <section className="bg-background pt-32 pb-12">
+    <section className="site-hero bg-background pt-32 pb-12">
       <div className="container max-w-5xl">
         <Breadcrumb locale="fr" items={[{label:"Ressources",href:"/ressources"},{label:"IA & Finance"}]} />
         <h1 className="mt-6 mb-6 font-heading text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-balance">{title}</h1>
@@ -37,13 +37,13 @@ export default async function Page() {
       <div className="container max-w-5xl space-y-14">
         <div id="commencer" className="scroll-mt-24">
           <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-5">Quel est votre point de départ ?</h2>
-          <div className="grid sm:grid-cols-2 gap-4">{intents.map(item => <Link key={item.slug} href={`${IA_FINANCE_HUB.href}/${item.slug}`} className="rounded-2xl border border-border p-6 hover:border-iter-violet focus-visible:outline-2 focus-visible:outline-iter-violet">
+          <div className="grid sm:grid-cols-2 gap-4">{intents.map(item => <Link key={item.slug} href={`${IA_FINANCE_HUB.href}/${item.slug}`} className="site-card rounded-2xl border border-border p-6 hover:border-iter-violet focus-visible:outline-2 focus-visible:outline-iter-violet">
             <h3 className="font-semibold text-lg mb-2">{item.need}</h3><p className="text-iter-violet text-sm flex items-center gap-2">{item.label}<ArrowRight size={16} aria-hidden /></p>
           </Link>)}</div>
         </div>
         <div id="guides" className="scroll-mt-24">
           <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-5">Six guides pour passer du besoin au pilote</h2>
-          <div className="grid sm:grid-cols-2 gap-5">{paths.map((slug,i) => <div key={slug} className="rounded-2xl bg-iter-violet/5 p-6">
+          <div className="grid sm:grid-cols-2 gap-5">{paths.map((slug,i) => <div key={slug} className="site-card rounded-2xl bg-iter-violet/5 p-6">
             <p className="text-sm text-iter-violet font-semibold mb-2">Guide {i+1}</p>
             <h3 className="font-heading font-semibold text-xl mb-3"><Link className="hover:underline" href={`${IA_FINANCE_HUB.href}/${slug}`}>{IA_GUIDES[slug].label}</Link></h3>
             <p className="text-muted-foreground text-sm leading-relaxed">{IA_GUIDES[slug].description}</p>
@@ -57,10 +57,10 @@ export default async function Page() {
           <p>Un connecteur récupère les données. Des règles calculent les indicateurs. Un assistant peut préparer une analyse ou un commentaire. Le responsable financier contrôle les résultats et valide les décisions. Décrivez ces étapes séparément pour identifier les erreurs et mesurer le gain net de temps.</p>
           <p>Pour comprendre les choix d’organisation, lisez <Link href="/ressources/blog/ia-finance-automatisation-direction-financiere">le rôle du DAF dans une finance assistée par IA</Link>. Pour sélectionner les premières tâches, utilisez <Link href="/ressources/blog/ia-et-automatisation-des-taches-repetitives">la grille de priorisation des tâches répétitives</Link>.</p>
         </div>
-        <aside id="accompagnement" className="scroll-mt-24 rounded-3xl bg-iter-dark text-white p-8 sm:p-10">
+        <aside id="accompagnement" className="site-card scroll-mt-24 rounded-3xl bg-iter-dark text-white p-8 sm:p-10">
           <h2 className="font-heading text-2xl font-bold mb-3">Un DAF pour cadrer et piloter le chantier</h2>
           <p className="text-white/80 leading-relaxed mb-4">Le <Link href="/daf-externalise" className="underline">DAF externalisé</Link> définit les indicateurs, organise les contrôles et coordonne l’équipe comptable avec les intervenants techniques. Pour préparer l’échange, identifiez votre reporting actuel, les logiciels utilisés et la tâche qui consomme le plus de temps.</p>
-          <Link href="/contact#ia-finance" className="inline-flex items-center gap-2 rounded-full bg-iter-violet px-6 py-3 font-semibold">Échanger sur votre projet<ArrowRight size={16} aria-hidden /></Link>
+          <Link href="/contact#ia-finance" className="site-button site-button-primary inline-flex items-center gap-2 rounded-full bg-iter-violet px-6 py-3 font-semibold">Échanger sur votre projet<ArrowRight size={16} aria-hidden /></Link>
         </aside>
       </div>
     </section>

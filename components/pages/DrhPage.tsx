@@ -186,7 +186,7 @@ export default function DrhPage({
       )}
 
       {/* ─── Hero ─── */}
-      <section className="bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
+      <section className="site-hero bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container max-w-3xl">
           <Breadcrumb locale={locale} items={[{ label: t.breadcrumbLabel }]} />
           <div className="mt-6 sm:mt-8">
@@ -208,14 +208,14 @@ export default function DrhPage({
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">
               <Link
                 href={getContactPath(locale)}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 {t.ctaButton}
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <Link
                 href={contactPath}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
+                className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
               >
                 {locale === "fr" ? "Nous contacter" : locale === "en" ? "Contact us" : "Contáctenos"}
               </Link>
@@ -245,7 +245,7 @@ export default function DrhPage({
       </section>
 
       {/* ─── Partner section ─── */}
-      <section className="bg-background py-12 sm:py-16 lg:py-20">
+      <section className="site-section bg-background py-12 sm:py-16 lg:py-20">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Votre partenaire" : locale === "en" ? "Your partner" : "Su socio"}
@@ -254,7 +254,7 @@ export default function DrhPage({
             {t.partnerSection.heading}
           </h2>
           {t.partnerSection.content.map((p, i) => (
-            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+            <p key={i} className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               {renderLinkedText(p)}
             </p>
           ))}
@@ -266,7 +266,7 @@ export default function DrhPage({
       </div>
 
       {/* ─── What Is ─── */}
-      <section className="bg-muted/30 py-12 sm:py-16 lg:py-24">
+      <section className="site-section bg-muted/30 py-12 sm:py-16 lg:py-24">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Comprendre" : locale === "en" ? "Understand" : "Comprender"}
@@ -275,7 +275,7 @@ export default function DrhPage({
             {t.whatIs.heading}
           </h2>
           {t.whatIs.content.map((p, i) => (
-            <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+            <p key={i} className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               {renderLinkedText(p)}
             </p>
           ))}
@@ -283,7 +283,7 @@ export default function DrhPage({
       </section>
 
       {/* ─── R1.1 — 5 avantages clés ─── */}
-      <section className="bg-background py-12 sm:py-16 lg:py-24">
+      <section className="site-section bg-background py-12 sm:py-16 lg:py-24">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Avantages" : locale === "en" ? "Benefits" : "Ventajas"}
@@ -299,7 +299,7 @@ export default function DrhPage({
                 </div>
                 <div>
                   <p className="font-semibold text-foreground mb-1">{item.title}</p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {renderLinkedText(item.text)}
                   </p>
                 </div>
@@ -310,7 +310,7 @@ export default function DrhPage({
       </section>
 
       {/* ─── R1.2 — Pour qui et à quel stade ? ─── */}
-      <section className="bg-muted/30 py-12 sm:py-16 lg:py-24">
+      <section className="site-section bg-muted/30 py-12 sm:py-16 lg:py-24">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Pour qui ?" : locale === "en" ? "Who is it for?" : "¿Para quién?"}
@@ -357,7 +357,7 @@ export default function DrhPage({
       </section>
 
       {/* ─── Services Grid ─── */}
-      <section className="bg-background py-12 sm:py-16 lg:py-24">
+      <section className="site-section bg-background py-12 sm:py-16 lg:py-24">
         <div className="container">
           <div className="max-w-3xl mb-10 sm:mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest text-iter-chartreuse mb-3 block">
@@ -370,7 +370,7 @@ export default function DrhPage({
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-4">
               {t.servicesGridHeading}
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
               {locale === "fr"
                 ? "Cliquez sur une catégorie pour découvrir le détail des services inclus dans chaque offre."
                 : locale === "en"
@@ -387,7 +387,7 @@ export default function DrhPage({
       </section>
 
       {/* ─── R1.3 — Grille tarifaire ─── */}
-      <section className="bg-muted/30 py-12 sm:py-16 lg:py-24">
+      <section className="site-section bg-muted/30 py-12 sm:py-16 lg:py-24">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Tarifs" : locale === "en" ? "Pricing" : "Tarifas"}
@@ -442,7 +442,7 @@ export default function DrhPage({
             {t.pricing.engagement}
           </p>
           {t.pricing.closingText && (
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
               {renderLinkedText(t.pricing.closingText)}
             </p>
           )}
@@ -450,7 +450,7 @@ export default function DrhPage({
       </section>
 
       {/* ─── R1.4 — DRH externalisé vs DRH interne ─── */}
-      <section className="bg-background py-12 sm:py-16 lg:py-24">
+      <section className="site-section bg-background py-12 sm:py-16 lg:py-24">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Comparatif" : locale === "en" ? "Comparison" : "Comparativa"}
@@ -498,7 +498,7 @@ export default function DrhPage({
             </table>
           </div>
           {t.vsInternal.closingText && (
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
               {renderLinkedText(t.vsInternal.closingText)}
             </p>
           )}
@@ -506,7 +506,7 @@ export default function DrhPage({
       </section>
 
       {/* ─── R1.5 — Témoignages RH ─── */}
-      <section className="bg-iter-violet/5 py-12 sm:py-16 lg:py-24">
+      <section className="site-section bg-iter-violet/5 py-12 sm:py-16 lg:py-24">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr"
@@ -522,9 +522,9 @@ export default function DrhPage({
             {t.testimonials.items.map((item, i) => (
               <figure
                 key={i}
-                className="bg-background rounded-2xl p-5 sm:p-6 border border-border/50"
+                className="site-card bg-background rounded-2xl p-5 sm:p-6 border border-border/50"
               >
-                <blockquote className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+                <blockquote className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
                   &ldquo;{item.quote}&rdquo;
                 </blockquote>
                 <figcaption className="flex flex-col gap-0.5">
@@ -540,7 +540,7 @@ export default function DrhPage({
             ))}
           </div>
           {t.testimonials.ctaText && (
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
               {renderLinkedText(t.testimonials.ctaText)}
             </p>
           )}
@@ -548,7 +548,7 @@ export default function DrhPage({
       </section>
 
       {/* ─── Related Services ─── */}
-      <section className="bg-muted/30 py-12 sm:py-16 lg:py-24">
+      <section className="site-section bg-muted/30 py-12 sm:py-16 lg:py-24">
         <div className="container">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-chartreuse mb-3 block">
             {locale === "fr"
@@ -632,12 +632,12 @@ export default function DrhPage({
               <Link
                 key={i}
                 href={service.href}
-                className="group flex items-center gap-4 bg-background border border-border/50 rounded-2xl p-5 sm:p-6 hover:border-iter-violet/30 transition-all duration-300"
+                className="site-card group flex items-center gap-4 bg-background border border-border/50 rounded-2xl p-5 sm:p-6 hover:border-iter-violet/30 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
                   <service.icon size={20} className="text-iter-violet" strokeWidth={1.5} />
                 </div>
-                <span className="font-semibold text-foreground group-hover:text-iter-violet transition-colors text-sm sm:text-base">
+                <span className="site-copy font-semibold text-foreground group-hover:text-iter-violet transition-colors text-sm sm:text-base">
                   {service.title}
                 </span>
                 <ArrowRight
@@ -653,7 +653,7 @@ export default function DrhPage({
       <TestimonialsSection locale={locale} />
 
       {/* ─── R2: FAQ — 10 questions, native <details>/<summary> ─── */}
-      <section className="bg-background py-12 sm:py-16 lg:py-24">
+      <section className="site-section bg-background py-12 sm:py-16 lg:py-24">
         <div className="container max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             FAQ
@@ -680,7 +680,7 @@ export default function DrhPage({
                     +
                   </span>
                 </summary>
-                <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                <div className="site-copy px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
                   <p>{renderLinkedText(item.answer)}</p>
                 </div>
               </details>

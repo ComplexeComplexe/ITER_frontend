@@ -69,7 +69,7 @@ export default function GlossairePage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}
@@ -88,15 +88,15 @@ export default function GlossairePage({
       </section>
 
       {hasTerms ? (
-        <section className="bg-background py-12 lg:py-24">
+        <section className="site-section bg-background py-12 lg:py-24">
           <div className="container max-w-3xl">
             <GlossaryLetterIndex terms={terms} locale={locale} />
           </div>
         </section>
       ) : (
-        <section className="bg-background py-24 lg:py-16">
+        <section className="site-section bg-background py-24 lg:py-16">
           <div className="container max-w-3xl text-center">
-            <div className="border border-border/50 rounded-2xl p-12">
+            <div className="site-card border border-border/50 rounded-2xl p-12">
               <p className="text-muted-foreground leading-relaxed">
                 {t.comingSoon}
               </p>
@@ -113,7 +113,7 @@ export default function GlossairePage({
           anglaise servie ; le hub anglais les liste à son tour. L'espagnol
           n'en a toujours aucune. */}
       {fichesDetaillees.length > 0 && (
-        <section className="bg-muted/20 py-12 lg:py-16">
+        <section className="site-section bg-muted/20 py-12 lg:py-16">
           <div className="container max-w-3xl">
             <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-3">
               {locale === "fr" ? "Fiches détaillées" : "In-depth entries"}

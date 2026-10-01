@@ -41,7 +41,7 @@ export default function AboutPage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb locale={locale} items={[{ label: t.hero.h1 }]} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -81,7 +81,7 @@ export default function AboutPage({
       </section>
 
       {/* Who we are */}
-      <section className="bg-background py-24 lg:py-16">
+      <section className="site-section bg-background py-24 lg:py-16">
         <div className="container">
           <div className="max-w-3xl">
             <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
@@ -108,7 +108,7 @@ export default function AboutPage({
       </div>
 
       {/* Vision */}
-      <section className="bg-muted/30 py-24 lg:py-32">
+      <section className="site-section bg-muted/30 py-24 lg:py-32">
         <div className="container">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr"
@@ -127,7 +127,7 @@ export default function AboutPage({
             {t.vision.cards.map((card, i) => (
               <div
                 key={i}
-                className="bg-background border border-border/50 rounded-2xl shadow-sm p-6 group hover:border-iter-violet/30 transition-all duration-300"
+                className="site-card bg-background border border-border/50 rounded-2xl shadow-sm p-6 group hover:border-iter-violet/30 transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-3">
                   {(() => { const Icon = visionIcons[i] || Target; return <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center"><Icon size={20} className="text-iter-violet" /></div>; })()}
@@ -148,7 +148,7 @@ export default function AboutPage({
       </section>
 
       {/* When to call */}
-      <section className="bg-background py-24 lg:py-16">
+      <section className="site-section bg-background py-24 lg:py-16">
         <div className="container">
           <div className="max-w-3xl">
             <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
@@ -211,7 +211,7 @@ export default function AboutPage({
       </div>
 
       {/* Team */}
-      <section id={locale === "es" ? "equipo" : "equipe"} className="bg-muted/30 py-24 lg:py-32 scroll-mt-28">
+      <section id={locale === "es" ? "equipo" : "equipe"} className="site-section bg-muted/30 py-24 lg:py-32 scroll-mt-28">
         <div className="container">
           <div className="text-center max-w-xl mx-auto mb-14">
             <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
@@ -237,7 +237,7 @@ export default function AboutPage({
       </section>
 
       {/* FAQ */}
-      <section className="bg-background py-24 lg:py-16">
+      <section className="site-section bg-background py-24 lg:py-16">
         <div className="container">
           <div className="text-center max-w-xl mx-auto mb-14">
             <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">

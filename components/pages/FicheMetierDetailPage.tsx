@@ -28,7 +28,7 @@ export default function FicheMetierDetailPage({
 }: FicheMetierDetailPageProps) {
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}

@@ -30,7 +30,7 @@ export default function StatGrid({
       {items.map((item, idx) => (
         <div
           key={idx}
-          className="rounded-lg border border-slate-200 bg-slate-50 p-6"
+          className="site-card rounded-lg border border-slate-200 bg-slate-50 p-6"
         >
           <div className="mb-2 text-3xl font-bold text-slate-900">
             {item.value}

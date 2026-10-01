@@ -113,7 +113,7 @@ function MinimalHeader({ onCtaClick }: { onCtaClick: () => void }) {
    ────────────────────────────────────────────────────────────────── */
 function Hero({ formRef }: { formRef: React.RefObject<HTMLDivElement | null> }) {
   return (
-    <section className="relative bg-iter-violet text-white pt-28 lg:pt-32 pb-16 lg:pb-24 overflow-hidden">
+    <section className="site-hero site-hero--inverse relative bg-iter-violet text-white pt-28 lg:pt-32 pb-16 lg:pb-24 overflow-hidden">
       <div
         aria-hidden
         className="absolute inset-0 opacity-30 pointer-events-none"
@@ -236,7 +236,7 @@ function LeadForm() {
 
   if (success) {
     return (
-      <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-2xl shadow-iter-violet/30 text-iter-dark">
+      <div className="site-card bg-white rounded-3xl p-8 lg:p-10 shadow-2xl shadow-iter-violet/30 text-iter-dark">
         <div className="w-12 h-12 rounded-full bg-iter-chartreuse/30 flex items-center justify-center mb-5">
           <Check className="text-iter-violet" size={24} />
         </div>
@@ -250,7 +250,7 @@ function LeadForm() {
   }
 
   return (
-    <div className="bg-white rounded-3xl p-6 lg:p-8 shadow-2xl shadow-iter-violet/30 text-iter-dark">
+    <div className="site-card bg-white rounded-3xl p-6 lg:p-8 shadow-2xl shadow-iter-violet/30 text-iter-dark">
       <div className="mb-6">
         <h2 className="text-xl lg:text-2xl font-bold font-heading mb-2">
           Calculer mon ROI en 30 min
@@ -287,7 +287,7 @@ function LeadForm() {
         <button
           type="submit"
           disabled={pending}
-          className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-iter-violet text-white font-semibold hover:brightness-110 transition-all duration-200 disabled:opacity-50 hover:shadow-lg hover:shadow-iter-violet/30"
+          className="site-button site-button-primary w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-iter-violet text-white font-semibold hover:brightness-110 transition-all duration-200 disabled:opacity-50 hover:shadow-lg hover:shadow-iter-violet/30"
         >
           {pending ? "Envoi…" : "Demander un audit financier"}
           {!pending && <ArrowRight size={16} />}
@@ -382,7 +382,7 @@ function Pains({ onCtaClick }: { onCtaClick: () => void }) {
   ];
 
   return (
-    <section className="bg-background py-20 lg:py-28">
+    <section className="site-section bg-background py-20 lg:py-28">
       <div className="container">
         <div className="max-w-3xl mb-14">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
@@ -401,7 +401,7 @@ function Pains({ onCtaClick }: { onCtaClick: () => void }) {
             return (
               <div
                 key={pain.title}
-                className="border border-border rounded-2xl p-6 lg:p-7 hover:border-iter-violet/30 transition-colors bg-card"
+                className="site-card border border-border rounded-2xl p-6 lg:p-7 hover:border-iter-violet/30 transition-colors bg-card"
               >
                 <div className="w-10 h-10 rounded-lg bg-iter-violet/10 flex items-center justify-center mb-4">
                   <Icon className="text-iter-violet" size={20} />
@@ -416,7 +416,7 @@ function Pains({ onCtaClick }: { onCtaClick: () => void }) {
         <div className="mt-12">
           <button
             onClick={onCtaClick}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-dark text-white font-semibold hover:bg-iter-violet transition-all duration-200"
+            className="site-button site-button-primary inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-dark text-white font-semibold hover:bg-iter-violet transition-all duration-200"
           >
             Chiffrer mes gains accessibles
             <ArrowRight size={16} />
@@ -440,7 +440,7 @@ function Solution() {
   ];
 
   return (
-    <section className="bg-iter-light py-20 lg:py-28">
+    <section className="site-section bg-iter-light py-20 lg:py-28">
       <div className="container max-w-5xl">
         <div className="grid lg:grid-cols-5 gap-12 items-start">
           <div className="lg:col-span-3">
@@ -474,7 +474,7 @@ function Solution() {
             </div>
           </div>
 
-          <div className="lg:col-span-2 bg-iter-violet text-white rounded-3xl p-7 lg:p-8">
+          <div className="site-card lg:col-span-2 bg-iter-violet text-white rounded-3xl p-7 lg:p-8">
             <span className="text-xs font-semibold uppercase tracking-widest text-iter-chartreuse mb-3 block">
               ROI typique
             </span>
@@ -539,7 +539,7 @@ function Testimonials() {
   ];
 
   return (
-    <section className="bg-background py-20 lg:py-28">
+    <section className="site-section bg-background py-20 lg:py-28">
       <div className="container">
         <div className="max-w-3xl mb-14">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
@@ -554,7 +554,7 @@ function Testimonials() {
           {cases.map((c) => (
             <div
               key={c.sector}
-              className="border border-border rounded-2xl p-7 bg-card hover:border-iter-violet/40 hover:shadow-lg hover:shadow-iter-violet/5 transition-all relative overflow-hidden"
+              className="site-card border border-border rounded-2xl p-7 bg-card hover:border-iter-violet/40 hover:shadow-lg hover:shadow-iter-violet/5 transition-all relative overflow-hidden"
             >
               <div className="absolute top-5 right-5">
                 <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-iter-chartreuse text-iter-dark text-xs font-bold font-heading">
@@ -620,7 +620,7 @@ function Methodology() {
   ];
 
   return (
-    <section className="bg-iter-dark text-white py-20 lg:py-28 relative overflow-hidden">
+    <section className="site-section bg-iter-dark text-white py-20 lg:py-28 relative overflow-hidden">
       <div
         aria-hidden
         className="absolute inset-0 opacity-30 pointer-events-none"
@@ -643,7 +643,7 @@ function Methodology() {
           {steps.map((s) => (
             <div
               key={s.n}
-              className="border border-white/10 rounded-2xl p-6 hover:border-iter-chartreuse/40 hover:bg-white/5 transition-all"
+              className="site-card border border-white/10 rounded-2xl p-6 hover:border-iter-chartreuse/40 hover:bg-white/5 transition-all"
             >
               <span className="text-iter-chartreuse font-bold font-heading text-sm tracking-widest">
                 {s.n}
@@ -686,7 +686,7 @@ function Differentiation() {
   ];
 
   return (
-    <section className="bg-iter-light py-20 lg:py-28">
+    <section className="site-section bg-iter-light py-20 lg:py-28">
       <div className="container">
         <div className="max-w-3xl mb-14">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
@@ -703,7 +703,7 @@ function Differentiation() {
             return (
               <div
                 key={item.title}
-                className="bg-white border border-border rounded-2xl p-7 hover:border-iter-violet/30 transition-colors"
+                className="site-card bg-white border border-border rounded-2xl p-7 hover:border-iter-violet/30 transition-colors"
               >
                 <div className="w-10 h-10 rounded-lg bg-iter-violet/10 flex items-center justify-center mb-4">
                   <Icon className="text-iter-violet" size={20} />
@@ -724,7 +724,7 @@ function Differentiation() {
    ────────────────────────────────────────────────────────────────── */
 function FinalCTA({ onCtaClick }: { onCtaClick: () => void }) {
   return (
-    <section className="bg-iter-violet text-white py-20 lg:py-28 relative overflow-hidden">
+    <section className="site-section bg-iter-violet text-white py-20 lg:py-28 relative overflow-hidden">
       <div
         aria-hidden
         className="absolute inset-0 opacity-40 pointer-events-none"
@@ -743,7 +743,7 @@ function FinalCTA({ onCtaClick }: { onCtaClick: () => void }) {
         </p>
         <button
           onClick={onCtaClick}
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:brightness-105 transition-all duration-200 hover:shadow-lg hover:shadow-iter-chartreuse/30 text-base"
+          className="site-button site-button-primary inline-flex items-center gap-2 px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:brightness-105 transition-all duration-200 hover:shadow-lg hover:shadow-iter-chartreuse/30 text-base"
         >
           Calculer mon ROI
           <ArrowRight size={18} />
@@ -807,7 +807,7 @@ function StickyMobileCTA({ onCtaClick }: { onCtaClick: () => void }) {
     >
       <button
         onClick={onCtaClick}
-        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-iter-violet text-white font-semibold hover:brightness-110 transition-all"
+        className="site-button site-button-primary w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-iter-violet text-white font-semibold hover:brightness-110 transition-all"
       >
         Calculer mon ROI
         <ArrowRight size={16} />
