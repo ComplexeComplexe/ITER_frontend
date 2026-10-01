@@ -1,3 +1,4 @@
+import FinanceExpert from "@/components/FinanceExpert";
 import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
 import { aboutHref } from "@/lib/path-localization";
@@ -213,8 +214,9 @@ export default function BlogPostPage({
                 ))
               )}
       </ArticleBodyLayout>
+      {locale === "fr" && <div className="container max-w-4xl"><FinanceExpert /></div>}
 
-      <CTASection locale={locale} />
+      {locale !== "fr" && <CTASection locale={locale} />}
 
       <BlogRelatedArticles locale={locale} items={relatedItems} />
     </PageLayout>

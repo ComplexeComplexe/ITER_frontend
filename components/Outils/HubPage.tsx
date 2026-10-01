@@ -1,4 +1,5 @@
 'use client';
+import FinanceExpert from "@/components/FinanceExpert";
 
 import PageLayout from '@/components/PageLayout';
 import { TOOL_PRICING } from "@/data/toolPricing";
@@ -789,6 +790,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
           <p className="mt-8 text-muted-foreground">Pour organiser leur déploiement : <Link className="text-iter-violet underline" href="/ressources/blog/stack-financier-saas-series-a">structurer la stack financière d’une SaaS en Series A</Link>, puis <Link className="text-iter-violet underline" href="/ressources/ia-finance/automatiser-reporting-financier">automatiser le reporting financier</Link>.</p>
         </div>
       </section>
+      <div className="container max-w-4xl"><FinanceExpert /></div>
     </PageLayout>
   );
 }

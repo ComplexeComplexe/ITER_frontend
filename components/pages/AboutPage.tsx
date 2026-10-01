@@ -1,3 +1,4 @@
+import FinanceExpert from "@/components/FinanceExpert";
 import Link from "next/link";
 import Image from "next/image";
 import { Locale } from "@/lib/i18n";
@@ -279,7 +280,8 @@ export default function AboutPage({
       </section>
 
       <TestimonialsSection locale={locale} />
-      <CTASection locale={locale} />
+      {locale === "fr" && <div className="container max-w-4xl"><FinanceExpert /></div>}
+      {locale !== "fr" && <CTASection locale={locale} />}
 
       {/* Person schemas for founding partners (T-7 — EEAT / GEO signals).
         * Renders one Person JSON-LD per leadership team member (showInHero).
@@ -295,7 +297,7 @@ export default function AboutPage({
             const schema = personSchema({
               name: fullName,
               jobTitle: m.role,
-              url: `/a-propos#${m.slug}`,
+              url: `/a-propos/${m.slug}`,
               imageUrl: photoUrl,
               sameAs,
               knowsAbout: [

@@ -1,3 +1,4 @@
+import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "@/app/globals.css";
 import { TRACKING_BOOTSTRAP, CONSENT_DISPLAY_BOOTSTRAP } from "@/lib/analytics/consent";
@@ -151,8 +152,10 @@ export default function DocumentShell({
                   founder: [
                     {
                       "@type": "Person",
-                      name: "Sébastien Doat",
-                      jobTitle: "Associé fondateur - CFO & Investisseur",
+                      "@id": FINANCE_EXPERT.id,
+                      url: `https://www.iteradvisors.com${FINANCE_EXPERT.href}`,
+                      name: FINANCE_EXPERT.name,
+                      jobTitle: FINANCE_EXPERT.role,
                       sameAs: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
                     },
                     {

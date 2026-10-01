@@ -1,3 +1,4 @@
+import FinanceExpert from "@/components/FinanceExpert";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -30,6 +31,7 @@ export default function ServiceHero({ title, label, eyebrow, lead, intro, primar
               <Link href={secondary.href} className="site-button site-button-secondary">{secondary.label}<span aria-hidden="true">↓</span></Link>
             </div>
             {proof}
+            <FinanceExpert compact />
           </div>
           <aside className="site-brief" aria-label="La mission en bref">
             <p className="site-eyebrow">La mission en bref</p>

@@ -1,4 +1,5 @@
 "use client";
+import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
 import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 
 import { useState, type ReactNode } from "react";
@@ -1347,7 +1348,7 @@ export default function DafPage({
               "@graph": [
                 {
                   "@type": "Person",
-                  "@id": "https://www.iteradvisors.com/#sebastien-doat",
+                  "@id": FINANCE_EXPERT.id,
                   name: "Sébastien Doat",
                   jobTitle: "Associé fondateur — DAF externalisé & CFO",
                   url: "https://www.iteradvisors.com/a-propos",

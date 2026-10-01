@@ -1,3 +1,4 @@
+import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Linkedin, Globe } from "lucide-react";
@@ -87,6 +88,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               </div>
               <span className="text-white/70 text-xs">5/5 Trustfolio</span>
             </div>
+            {locale === "fr" && <p className="text-sm text-white/80 mb-4">Votre interlocuteur finance : <Link href={FINANCE_EXPERT.href} className="text-white underline underline-offset-4">{FINANCE_EXPERT.name}</Link></p>}
             {/* Company Legal Details — E-E-A-T trust signals.
                 Iter Advisors S.L. is registered in Spain (NIF B42960849);
                 Barcelona is the headquarters; areas served are listed separately. */}

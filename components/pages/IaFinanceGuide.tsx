@@ -1,3 +1,4 @@
+import FinanceExpert from "@/components/FinanceExpert";
 import Link from "next/link";
 import ReportingKit from "@/components/finance/ReportingKit";
 import ReportingRoi from "@/components/finance/ReportingRoi";
@@ -44,5 +45,6 @@ export default function IaFinanceGuide({ slug }: { slug: string }) {
     </section>)}
     {hasKit && <ReportingKit />}
     {hasCalculator && <section><h2 id="calculateur-roi" className="scroll-mt-24">Quel gain net sur vos hypothèses ?</h2><ReportingRoi /></section>}
+    <FinanceExpert compact />
   </GuideFiscalPage>;
 }
