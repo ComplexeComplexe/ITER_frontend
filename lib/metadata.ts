@@ -28,7 +28,6 @@ export function buildMetadata({
   description,
   path,
   noindex,
-  structuredData,
   localizedPaths,
   disableHreflang,
 }: {
@@ -37,7 +36,6 @@ export function buildMetadata({
   description: string;
   path: string;
   noindex?: boolean;
-  structuredData?: Record<string, unknown> | null;
   localizedPaths?: { fr: string; en: string; es: string };
   disableHreflang?: Locale[];
 }): Metadata {
@@ -153,13 +151,6 @@ export function buildMetadata({
       apple: "/favicon.png",
     },
   };
-
-  // Inject structured data (JSON-LD) if provided
-  if (structuredData) {
-    meta.other = {
-      "script:ld+json": JSON.stringify(structuredData),
-    };
-  }
 
   return meta;
 }

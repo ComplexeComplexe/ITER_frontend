@@ -202,60 +202,12 @@ const htmlContent = `<p>Your startup is growing. Investors are asking harder que
 <hr>
 <p><em>Iter Advisors is a financial advisory firm based in Barcelona, serving startups and scale-ups across Spain and Europe since 2021. Our team of 15+ experts provides fractional CFO, fundraising, and financial structuring services in English, Spanish, and French.</em></p>`;
 
-const faqStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How much does a fractional CFO cost in Barcelona?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Fractional CFO services in Barcelona typically range from 2,000 to 8,000+ euros per month, depending on the scope of engagement and your company's stage. Compare that to a full-time CFO hire at 120,000-180,000 euros per year.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the difference between a fractional CFO and a gestoria?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A gestoria handles compliance: filing taxes, submitting annual accounts, managing payroll declarations. A fractional CFO operates at the strategic level: financial planning, fundraising, cash flow forecasting, KPI management, and business decision support.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you work with international startups that do not speak Spanish?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "More than half of our clients are international founders who operate primarily in English. Our team is fluent in English, Spanish, and French. All reporting and financial models can be delivered in English.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can you help with fundraising from Spanish and European investors?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, fundraising support is one of our core services. We have helped clients raise over 100 million euros from investors across Spain and Europe, including Nauta Capital, Kfund, Samaipata, and Inveready.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How quickly can you start?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We can typically begin within one to two weeks of signing an engagement letter. For urgent needs, we have deployed resources in as little as 48 hours.",
-      },
-    },
-  ],
-};
-
 export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
     locale: "en",
     path: "/fractional-cfo-barcelona",
     title: "Fractional CFO Barcelona | Startup CFO | Iter Advisors",
     description: "Senior CFO expertise in Barcelona without the full-time cost. Part-time CFO services for startups and SMEs. Flexible engagement from 2 days/month.",
-    structuredData: faqStructuredData,
   });
 }
 

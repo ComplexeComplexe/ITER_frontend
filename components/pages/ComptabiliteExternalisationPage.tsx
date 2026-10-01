@@ -11,6 +11,8 @@ import CTASection from "@/components/CTASection";
 import ClientTestimonials from "@/components/ClientTestimonials";
 import PageByline from "@/components/PageByline";
 import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
+import { faqPageSchema } from "@/lib/schemas";
+import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 
 interface ComptabiliteExternalisationPageProps {
   locale: Locale;
@@ -49,6 +51,9 @@ export default function ComptabiliteExternalisationPage({
   cmsNavigation,
 }: ComptabiliteExternalisationPageProps) {
   const t = content;
+  const pagePath = locale === "es" ? "/es/services/externalizar-contabilidad" : locale === "en" ? "/en/services/outsource-your-accounting" : "/services/comptabilite-externalisation";
+  const modified = PAGE_REVISIONS[pagePath];
+  const faqItems = t.sections.flatMap((section: { faqs?: Array<{ question: string; answer: string }> }) => section.faqs ?? []);
   const copy = {
     fr: { service: "Externalisation comptable", summary: "En une ligne", cta: "Décrire mon besoin", cfo: "DAF externalisé", reviews: "Avis de nos clients", sources: "Sources et références", note: "Le périmètre de production et de validation dépend du pays et des professionnels mandatés.", intro: ["La fiabilité des pièces, le suivi des échéances et la préparation de la clôture demandent une organisation claire entre le dirigeant, son équipe et son cabinet comptable.", "Iter Advisors aide à structurer ces échanges et à rendre les données comptables utilisables pour le pilotage. Le périmètre, les livrables et les responsabilités sont définis au démarrage.", "La tenue, les déclarations et les actes réservés relèvent des professionnels compétents selon le pays et le mandat. Les outils et un éventuel calendrier de migration sont convenus après analyse de vos données."] },
     en: { service: "Accounting operations", summary: "In brief", cta: "Describe my needs", cfo: "Fractional CFO", reviews: "Client reviews", sources: "Sources and references", note: "Production and sign-off responsibilities depend on the country and the professionals appointed.", intro: ["Reliable records, clear deadlines and an organised close require coordination between management, the internal team and the accounting firm.", "Iter Advisors helps organise these exchanges and make accounting data useful for decision-making. Scope, deliverables and responsibilities are agreed at the start.", "Bookkeeping, filings and reserved activities remain with the appropriately qualified professionals under the applicable mandate. Tools and any migration timetable are agreed after reviewing your data."] },
@@ -57,6 +62,7 @@ export default function ComptabiliteExternalisationPage({
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
+      {faqItems.length > 0 && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(faqItems)).replace(/</g, "\\u003c") }} />}
 
       {/* ─── Hero ─── */}
       <section className="site-hero bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
@@ -78,22 +84,18 @@ export default function ComptabiliteExternalisationPage({
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-4 leading-tight">
               {t.h1}
             </h1>
-            <PageByline locale={locale} author={FINANCE_AUTHOR} className="mb-6 sm:mb-8" />
+            <PageByline locale={locale} author={FINANCE_AUTHOR} dateModified={modified} className="mb-6 sm:mb-8" />
             <script
               type="application/ld+json"
               dangerouslySetInnerHTML={{
                 __html: JSON.stringify(
                   editorialWebPageSchema({
-                    path:
-                      locale === "es"
-                        ? "/es/services/externalizar-contabilidad"
-                        : locale === "en"
-                          ? "/en/services/outsource-your-accounting"
-                          : "/services/comptabilite-externalisation",
+                    path: pagePath,
                     name: t.h1,
                     description: t.meta?.description ?? t.h1,
                     locale,
                     author: FINANCE_AUTHOR,
+                    dateModified: modified,
                   })
                 ),
               }}

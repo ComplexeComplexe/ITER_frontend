@@ -118,6 +118,12 @@ export default function JobsPage({
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
+      {locale === "fr" && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: t.hero.h1,
+        itemListElement: jobs.map((job, index) => ({ "@type": "ListItem", position: index + 1, name: job.title, url: `https://www.iteradvisors.com${job.href}` })),
+      }).replace(/</g, "\\u003c") }} />}
       {/* Hero */}
       <section className="site-hero relative bg-gradient-to-br from-background via-background to-iter-violet/5 pt-32 pb-20">
         <div className="container max-w-5xl">

@@ -7,6 +7,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import { IA_GUIDES } from "@/lib/content/ia-finance-guides";
 import { IA_FINANCE_AUTHOR, IA_FINANCE_HUB } from "@/lib/content/ia-finance-references";
+import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 
 const title = "IA et finance : cas réels et guides pratiques pour les PME";
 const description = "Reporting automatisé, ChatGPT, choix des outils et cas documentés : une méthode pour appliquer l’IA à la finance d’une PME avec des résultats vérifiables.";
@@ -20,7 +21,9 @@ const intents = [
 ];
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");
-  const structuredData = {"@context":"https://schema.org", "@type":"CollectionPage", "@id":`https://www.iteradvisors.com${IA_FINANCE_HUB.href}#collection`, url:`https://www.iteradvisors.com${IA_FINANCE_HUB.href}`, name:title, description, inLanguage:"fr-FR", dateModified:"2026-09-05", isPartOf:{"@id":"https://www.iteradvisors.com/#website"}, hasPart:paths.map(slug => ({"@type":"Article", url:`https://www.iteradvisors.com${IA_FINANCE_HUB.href}/${slug}`, name:IA_GUIDES[slug].title}))};
+  const modified = PAGE_REVISIONS[IA_FINANCE_HUB.href] ?? "2026-09-05";
+  const modifiedLabel = new Intl.DateTimeFormat("fr", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${modified}T12:00:00Z`));
+  const structuredData = {"@context":"https://schema.org", "@type":"CollectionPage", "@id":`https://www.iteradvisors.com${IA_FINANCE_HUB.href}#collection`, url:`https://www.iteradvisors.com${IA_FINANCE_HUB.href}`, name:title, description, inLanguage:"fr-FR", dateModified:modified, isPartOf:{"@id":"https://www.iteradvisors.com/#website"}, hasPart:paths.map(slug => ({"@type":"Article", url:`https://www.iteradvisors.com${IA_FINANCE_HUB.href}/${slug}`, name:IA_GUIDES[slug].title}))};
   return <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData)}} />
     <section className="site-hero bg-background pt-32 pb-12">
@@ -28,7 +31,7 @@ export default async function Page() {
         <Breadcrumb locale="fr" items={[{label:"Ressources",href:"/ressources"},{label:"IA & Finance"}]} />
         <h1 className="mt-6 mb-6 font-heading text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-balance">{title}</h1>
         <p className="text-lg text-foreground/80 leading-relaxed max-w-3xl">L’IA peut aider une équipe finance à préparer des commentaires, traiter des documents et repérer des écarts. Les connexions et les règles de calcul restent les fondations du reporting. Ces guides vous aident à choisir un premier usage, le tester et vérifier son intérêt avant de l’étendre.</p>
-        <p className="mt-5 text-sm text-muted-foreground">Par <Link href={IA_FINANCE_AUTHOR.url} rel="author" className="text-iter-violet underline">{IA_FINANCE_AUTHOR.name}</Link> · Mise à jour du <time dateTime="2026-09-05">5 septembre 2026</time></p>
+        <p className="mt-5 text-sm text-muted-foreground">Par <Link href={IA_FINANCE_AUTHOR.url} rel="author" className="text-iter-violet underline">{IA_FINANCE_AUTHOR.name}</Link> · Mise à jour du <time dateTime={modified}>{modifiedLabel}</time></p>
         <FinanceExpert compact />
         <nav aria-label="Sommaire IA et finance" className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-iter-violet">
           <a href="#commencer" className="underline">Par où commencer</a><a href="#guides" className="underline">Les six guides</a><a href="#preuves" className="underline">Cas et méthode</a><a href="#accompagnement" className="underline">Accompagnement DAF</a>

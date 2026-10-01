@@ -1,5 +1,6 @@
 /** Substantive page changes. Shared navigation changes do not refresh every URL. */
 export const PAGE_REVISIONS: Record<string, string> = {
+  "/daf-externalise-paris": "2026-10-01",
   "/a-propos/sebastien-doat": "2026-10-01",
   "/ressources/outils/logiciels-paie": "2026-10-01",
   "/ressources/outils/logiciels-comptabilite": "2026-10-01",

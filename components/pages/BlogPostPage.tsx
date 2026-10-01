@@ -19,6 +19,7 @@ import { transformArticleHtml } from "@/lib/blog-html-transform";
 import { linkGlossaryTerms } from "@/lib/glossary-links";
 import { getRelatedArticles } from "@/lib/related-articles";
 import { extractToc, injectHeadingIds } from "@/lib/blog-toc";
+import { PAGE_REVISIONS, latestRevision } from "@/lib/content/page-revisions";
 
 interface BlogPostPageProps {
   locale: Locale;
@@ -118,12 +119,13 @@ export default function BlogPostPage({
 
   /* ── Schema.org Article structured data ────────────────────────── */
   const articleUrl = slug ? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
+  const modified = latestRevision(updatedDate, publishedDate, PAGE_REVISIONS[articleUrl]) || undefined;
   const structuredData = articleSchema({
     headline: title,
     description: metaDescription || "",
     url: articleUrl,
     datePublished: publishedDate,
-    dateModified: updatedDate || publishedDate,
+    dateModified: modified,
     authorName: author || "Iter Advisors",
     authorUrl,
     imageSrc: featuredImageUrl,
@@ -186,7 +188,7 @@ export default function BlogPostPage({
       </div>
       <BlogHero locale={locale} title={title} category={category} dek={metaDescription}
         author={{ name: author || "Iter Advisors", avatar: authorMember?.photo?.url, jobTitle: authorRole, url: authorUrl || aboutHref(locale) }}
-        readingTime={readMinutes || undefined} dateModified={updatedDate || publishedDate} articleUrl={articleUrl}
+        readingTime={readMinutes || undefined} dateModified={modified} articleUrl={articleUrl}
         image={bodyImage?.src} imageAlt={bodyImage?.alt} />
       <ArticleBodyLayout locale={locale} headings={tocHeadings}>
               {blocks && blocks.length > 0 ? (
