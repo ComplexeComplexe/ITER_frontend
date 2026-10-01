@@ -1,3 +1,4 @@
+import { editorialPersonId } from "@/lib/content/finance-expert";
 import type { Locale } from "@/lib/i18n";
 import { aboutHref } from "@/lib/path-localization";
 
@@ -69,6 +70,7 @@ export function editorialWebPageSchema({
     dateModified,
     author: {
       "@type": "Person",
+      "@id": editorialPersonId(authorHref(locale, author)),
       name: author.name,
       url: `${SITE}${authorHref(locale, author)}`,
     },

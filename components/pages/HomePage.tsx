@@ -1,4 +1,5 @@
 "use client";
+import FinanceExpert from "@/components/FinanceExpert";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -1012,7 +1013,7 @@ export default function HomePage({
       </section>}
 
       {/* ═══ CONTACT CTA ═══ */}
-      <section
+      {locale === "fr" ? <section id="contact" className="site-section bg-iter-light"><div className="container max-w-4xl"><FinanceExpert /></div></section> : <section
         id="contact"
         className="site-section py-24 lg:py-32 bg-iter-chartreuse relative overflow-hidden"
       >
@@ -1072,7 +1073,7 @@ export default function HomePage({
             </div>
           </motion.div>
         </div>
-      </section>
+      </section>}
     </PageLayout>
   );
 }

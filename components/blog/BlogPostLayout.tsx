@@ -1,3 +1,4 @@
+import FinanceExpert from "@/components/FinanceExpert";
 import React, { ReactNode } from 'react';
 import BlogHero from './BlogHero';
 import ArticleBodyLayout from './ArticleBodyLayout';
@@ -79,6 +80,7 @@ export default function BlogPostLayout({
         {tldr && <Tldr locale={locale}>{tldr}</Tldr>}
         {children}
       </ArticleBodyLayout>
+      {locale === "fr" && <div className="container max-w-4xl"><FinanceExpert /></div>}
 
       {/* Related Articles Section */}
       {relatedArticles && relatedArticles.length > 0 && (

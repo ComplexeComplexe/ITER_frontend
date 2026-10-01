@@ -1,4 +1,5 @@
 const contexts: Record<string, { need: string; originPage: string }> = {
+  "sebastien-doat": { need: "daf-pme", originPage: "/a-propos/sebastien-doat" },
   "temps-partage": { need: "daf-pme", originPage: "/daf-externalise/temps-partage" },
   transition: { need: "transition", originPage: "/daf-externalise/transition" },
   comptabilite: { need: "accounting", originPage: "/services/comptabilite-externalisation" },

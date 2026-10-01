@@ -1,3 +1,4 @@
+import { editorialPersonId } from "@/lib/content/finance-expert";
 /**
  * JSON-LD structured data helpers for SEO.
  * Generates FAQPage, BreadcrumbList, Service, and other schemas.
@@ -135,7 +136,7 @@ export function personSchema({
     "@type": "Person",
     name,
     ...(jobTitle && { jobTitle }),
-    ...(url && { url: url.startsWith("http") ? url : `${BASE}${url}` }),
+    ...(url && { "@id": editorialPersonId(url), url: url.startsWith("http") ? url : `${BASE}${url}` }),
     ...(imageUrl && { image: imageUrl.startsWith("http") ? imageUrl : `${BASE}${imageUrl}` }),
     ...(sameAs && sameAs.length > 0 && { sameAs }),
     worksFor: {
@@ -320,6 +321,7 @@ export function articleSchema({
     author: authorUrl
       ? {
           "@type": "Person",
+          "@id": editorialPersonId(authorUrl),
           name: authorName,
           url: authorUrl.startsWith("http") ? authorUrl : `${BASE}${authorUrl}`,
         }

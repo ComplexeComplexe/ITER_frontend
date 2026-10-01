@@ -105,6 +105,7 @@ html[lang="fr"] main #faq summary { padding: 20px 0; gap: 20px; }
 html[lang="fr"] main #faq details > :not(summary) { padding: 0 0 24px; margin: 0; font-size: 1rem; line-height: 1.75; }
 html[lang="fr"] main th { background: var(--site-paper); color: var(--site-ink); font-family: var(--font-body); font-size: .875rem; font-weight: 600; }
 html[lang="fr"] main :is(th,td) { border-color: var(--site-border); }
+html[lang="fr"] .site-expert-compact p { font-size: .8125rem; line-height: 1.5; margin: 0; }
 
 /* Financial formulas remain readable without widening the mobile page. */
 html[lang="fr"] .prose-iter-blog pre { max-width: 100%; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--site-paper); border: 1px solid var(--site-border); border-radius: var(--site-radius); padding: 20px; margin-block: 24px; }

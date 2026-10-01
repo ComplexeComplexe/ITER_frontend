@@ -1,3 +1,4 @@
+import { editorialPersonId } from "@/lib/content/finance-expert";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -138,6 +139,7 @@ export default async function GuideFiscalPage({
         inLanguage: "fr-FR",
         author: {
           "@type": "Person",
+          "@id": editorialPersonId(author.url),
           name: author.name,
           url: `${SITE}${author.url}`,
         },

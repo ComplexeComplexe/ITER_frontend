@@ -1,3 +1,4 @@
+import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Linkedin, MapPin } from "lucide-react";
@@ -578,7 +579,7 @@ export default function DafPillarPage({
             "@graph": [
               {
                 "@type": "Person",
-                "@id": `${SITE}/#sebastien-doat`,
+                "@id": FINANCE_EXPERT.id,
                 name: "Sébastien Doat",
                 jobTitle: "Associé fondateur, DAF externalisé et CFO",
                 url: `${SITE}${aboutHref("fr", "sebastien-doat")}`,

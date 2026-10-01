@@ -1,3 +1,4 @@
+import FinanceExpert from "@/components/FinanceExpert";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { buildMetadata } from "@/lib/metadata";
@@ -28,6 +29,7 @@ export default async function Page() {
         <h1 className="mt-6 mb-6 font-heading text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-balance">{title}</h1>
         <p className="text-lg text-foreground/80 leading-relaxed max-w-3xl">L’IA peut aider une équipe finance à préparer des commentaires, traiter des documents et repérer des écarts. Les connexions et les règles de calcul restent les fondations du reporting. Ces guides vous aident à choisir un premier usage, le tester et vérifier son intérêt avant de l’étendre.</p>
         <p className="mt-5 text-sm text-muted-foreground">Par <Link href={IA_FINANCE_AUTHOR.url} rel="author" className="text-iter-violet underline">{IA_FINANCE_AUTHOR.name}</Link> · Mise à jour du <time dateTime="2026-09-05">5 septembre 2026</time></p>
+        <FinanceExpert compact />
         <nav aria-label="Sommaire IA et finance" className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-iter-violet">
           <a href="#commencer" className="underline">Par où commencer</a><a href="#guides" className="underline">Les six guides</a><a href="#preuves" className="underline">Cas et méthode</a><a href="#accompagnement" className="underline">Accompagnement DAF</a>
         </nav>

@@ -1,3 +1,5 @@
+import ExpertProfileSections from "@/components/ExpertProfileSections";
+import { FINANCE_EXPERT, editorialPersonId } from "@/lib/content/finance-expert";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Linkedin } from "lucide-react";
@@ -109,10 +111,12 @@ export default function AuthorPage({
   // the entity across the web.
   const fullName = `${member.firstName} ${member.lastName}`;
   const canonicalPath = `${t.aboutHref}/${member.slug}`;
+  const isFinanceExpert = member.slug === FINANCE_EXPERT.slug;
+  const personId = editorialPersonId(canonicalPath);
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": `https://www.iteradvisors.com${canonicalPath}#person`,
+    "@id": personId,
     name: fullName,
     givenName: member.firstName,
     familyName: member.lastName,
@@ -122,7 +126,8 @@ export default function AuthorPage({
     image: member.photo?.url
       ? `https://www.iteradvisors.com${member.photo.url}`
       : undefined,
-    sameAs: member.linkedIn ? [member.linkedIn] : undefined,
+    sameAs: isFinanceExpert ? [FINANCE_EXPERT.linkedin, FINANCE_EXPERT.malt] : member.linkedIn ? [member.linkedIn] : undefined,
+    ...(isFinanceExpert && { knowsAbout: [...FINANCE_EXPERT.expertise], subjectOf: { "@type": "PodcastEpisode", name: FINANCE_EXPERT.podcast.title, url: FINANCE_EXPERT.podcast.href } }),
     worksFor: {
       "@type": "Organization",
       "@id": "https://www.iteradvisors.com/#organization",
@@ -135,7 +140,7 @@ export default function AuthorPage({
       {/* Person JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [personSchema, { "@type": "ProfilePage", "@id": `https://www.iteradvisors.com${canonicalPath}#webpage`, url: `https://www.iteradvisors.com${canonicalPath}`, name: fullName, mainEntity: { "@id": personId }, ...(isFinanceExpert && locale === "fr" && { dateModified: "2026-10-01" }) }] }) }}
       />
 
       <section className="site-hero bg-background pt-32 pb-12 lg:pb-16">
@@ -162,7 +167,7 @@ export default function AuthorPage({
             )}
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-3">
-                {fullName} — {member.h1Role ?? member.role}
+                {isFinanceExpert && locale === "fr" ? fullName : `${fullName} : ${member.h1Role ?? member.role}`}
               </h1>
               <p className="text-lg text-iter-violet font-medium mb-6">
                 {member.role}
@@ -175,6 +180,7 @@ export default function AuthorPage({
                   {bioExtended}
                 </p>
               )}
+              {isFinanceExpert && locale === "fr" && <><p className="text-sm text-muted-foreground mb-5">Profil mis à jour le <time dateTime="2026-10-01">1 octobre 2026</time></p><nav aria-label="Dans le profil de Sébastien" className="flex flex-wrap gap-4 text-sm text-iter-violet mb-6"><a className="underline" href="#expertise">Expertise</a><a className="underline" href="#parcours">Parcours</a><a className="underline" href="#interventions">Interventions</a><a className="underline" href="#publications">Articles</a></nav></>}
               {member.linkedIn && (
                 <a
                   href={member.linkedIn}
@@ -192,6 +198,8 @@ export default function AuthorPage({
         </div>
       </section>
 
+      {isFinanceExpert && locale === "fr" && <ExpertProfileSections />}
+
       {/* Le bloc « articles publiés » n'est rendu que s'il y a des articles.
           Auparavant, les 17 fiches auteur sans publication affichaient un
           H2 suivi de « Aucun article publié » : un module vide sur une page
@@ -200,7 +208,7 @@ export default function AuthorPage({
         <div className="container max-w-4xl">
           {publishedArticles.length > 0 && (
             <>
-              <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-8">
+              <h2 id="publications" className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-8">
                 {t.articlesH2}{" "}
                 <span className="text-base font-normal text-muted-foreground">
                   ({publishedArticles.length})
@@ -211,7 +219,7 @@ export default function AuthorPage({
                 <li key={a.slug}>
                   <Link
                     href={resolveBlogArticleHref(locale, a.slug) as string}
-                    className="group flex items-start justify-between gap-6 py-5 hover:bg-muted/30 -mx-4 px-4 rounded-xl transition-colors"
+                    className="group flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-6 py-5 hover:bg-muted/30 -mx-4 px-4 rounded-xl transition-colors"
                   >
                     <div className="min-w-0">
                       <h3 className="text-lg font-semibold font-heading text-foreground group-hover:text-iter-violet transition-colors mb-1">

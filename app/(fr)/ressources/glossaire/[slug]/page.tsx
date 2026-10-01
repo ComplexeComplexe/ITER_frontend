@@ -1,3 +1,4 @@
+import { editorialPersonId } from "@/lib/content/finance-expert";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import GlossaryEntryPage from "@/components/pages/GlossaryEntryPage";
@@ -105,6 +106,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         inLanguage: "fr-FR",
         author: {
           "@type": "Person",
+          "@id": editorialPersonId(GLOSSARY_AUTHOR.url),
           name: GLOSSARY_AUTHOR.name,
           url: `https://www.iteradvisors.com${GLOSSARY_AUTHOR.url}`,
         },

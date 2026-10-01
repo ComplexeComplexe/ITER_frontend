@@ -1,3 +1,4 @@
+import { editorialPersonId } from "@/lib/content/finance-expert";
 import { Tool, CATEGORIES_WITH_PAGE } from '@/data/tools';
 import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
 
@@ -45,6 +46,7 @@ export function generateToolReviewSchema(tool: Tool) {
     },
     author: {
       '@type': 'Person',
+      "@id": editorialPersonId(author.url),
       name: author.name,
       url: `https://www.iteradvisors.com${author.url}`,
     },
