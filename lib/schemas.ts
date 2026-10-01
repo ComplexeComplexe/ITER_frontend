@@ -260,11 +260,6 @@ export function financialServiceSchema(): Record<string, unknown> {
         addressLocality: "Paris",
         addressCountry: "FR",
       },
-      {
-        "@type": "PostalAddress",
-        addressLocality: "Toulouse",
-        addressCountry: "FR",
-      },
     ],
     openingHours: "Mo-Fr 09:00-18:00",
     // Review-snippet fix (2026-05-29): no self-serving aggregateRating here

@@ -28,10 +28,31 @@ const errors = [];
 const pages = new Map();
 const attr = (tag, name) => tag.match(new RegExp(`\\b${name}=["']([^"']*)["']`, 'i'))?.[1];
 const normalize = url => url?.replace(/\/$/, '');
+function* schemaObjects(value) {
+  if (Array.isArray(value)) { for (const item of value) yield* schemaObjects(item); }
+  else if (value && typeof value === 'object') {
+    yield value;
+    for (const item of Object.values(value)) yield* schemaObjects(item);
+  }
+}
 function inspectHtml(rawHtml, meta = {}) {
   const html = rawHtml.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
   const canonicalTag = [...html.matchAll(/<link\b[^>]*>/gi)].map(m => m[0]).find(tag => attr(tag, 'rel') === 'canonical');
   const canonical = canonicalTag && attr(canonicalTag, 'href');
+  if ([...html.matchAll(/<meta\b[^>]*>/gi)].some(m => attr(m[0], 'name') === 'script:ld+json')) {
+    errors.push(`JSON-LD emitted as a meta tag instead of a script: ${canonical}`);
+  }
+  for (const raw of rawHtml.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)) {
+    try {
+      for (const schema of schemaObjects(JSON.parse(raw[1]))) {
+        if (schema['@type'] === 'ProfessionalService' && schema['@id']?.endsWith('#localbusiness') && normalize(schema.url) !== normalize(canonical)) {
+          errors.push(`Local business URL differs from page canonical: ${canonical} -> ${schema.url}`);
+        }
+      }
+    } catch {
+      errors.push(`Invalid JSON-LD script: ${canonical}`);
+    }
+  }
   const noindex = [...html.matchAll(/<meta\b[^>]*>/gi)].some(m => /^(robots|googlebot)$/i.test(attr(m[0], 'name') ?? '') && /noindex/i.test(attr(m[0], 'content') ?? ''))
     || /noindex/i.test(meta.headers?.['x-robots-tag'] ?? '');
   return { canonical, indexable: (meta.status ?? 200) === 200 && !noindex, html };

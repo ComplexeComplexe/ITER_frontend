@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/static-content";
 import { getContactPath } from "@/lib/navigation";
-import { dafClusterHref, serviceHref } from "@/lib/path-localization";
+import { dafClusterHref, getLocalizedPath, serviceHref } from "@/lib/path-localization";
 import { getDafLocalContent, DafLocalCity } from "@/lib/content/daf-local";
 import { faqPageSchema } from "@/lib/schemas";
 import { TRUSTFOLIO_REVIEWS, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/trustfolio-reviews";
@@ -26,6 +26,7 @@ export default function DafLocalPage({
 }) {
   const t = getDafLocalContent(city, locale);
   const contactPath = getContactPath(locale);
+  const canonicalUrl = `https://www.iteradvisors.com${getLocalizedPath(`/daf-externalise-${city}`, locale)}`;
 
   /* JSON-LD schemas */
   const faqSchema = faqPageSchema(t.faq);
@@ -33,26 +34,14 @@ export default function DafLocalPage({
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "@id": `https://www.iteradvisors.com/${
-      locale === "fr"
-        ? `daf-externalise-${city}`
-        : locale === "en"
-          ? `outsourced-cfo-${city === "barcelone" ? "barcelona" : city}`
-          : `cfo-externalizado-${city === "barcelone" ? "barcelona" : city}`
-    }#localbusiness`,
+    "@id": `${canonicalUrl}#localbusiness`,
     name: `Iter Advisors - ${city.charAt(0).toUpperCase() + city.slice(1)}`,
     description: t.meta.description,
-    url: `https://www.iteradvisors.com/${
-      locale === "fr"
-        ? `daf-externalise-${city}`
-        : locale === "en"
-          ? `outsourced-cfo-${city === "barcelone" ? "barcelona" : city}`
-          : `cfo-externalizado-${city === "barcelone" ? "barcelona" : city}`
-    }`,
+    url: canonicalUrl,
     email: "contact@iteradvisors.com",
     // Iter Advisors S.L. — registered office: Carrer Casp, 54, 5-1°,
-    // 08010 Barcelona (NIF B42960849). Paris and Toulouse are
-    // operational offices without a public registered address.
+    // 08010 Barcelona (NIF B42960849). Paris has no public street address.
+    // Toulouse is a service area and does not emit a local business node.
     address:
       city === "barcelone"
         ? {
@@ -88,6 +77,8 @@ export default function DafLocalPage({
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${canonicalUrl}#service`,
+    url: canonicalUrl,
     name: t.h1,
     description: t.meta.description,
     provider: {

@@ -8,6 +8,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import AuthorByline from "@/components/AuthorByline";
 import ClientTestimonials from "@/components/ClientTestimonials";
+import { faqPageSchema, serviceSchema } from "@/lib/schemas";
 
 interface DafExternalisePariEnrichedPageProps {
   locale: Locale;
@@ -21,9 +22,18 @@ export default function DafExternalisePariEnrichedPage({
   cmsNavigation,
 }: DafExternalisePariEnrichedPageProps) {
   const t = content;
+  const faqItems = t.sections.flatMap((section: { faqs?: Array<{ question: string; answer: string }> }) => section.faqs ?? []);
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      serviceSchema({ name: t.h1, description: t.meta.description, url: "/daf-externalise-paris", serviceType: "DAF externalisé", areaServed: ["FR"] }),
+      ...(faqItems.length > 0 ? [faqPageSchema(faqItems)] : []),
+    ],
+  };
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       {/* Hero */}
       <section className="site-hero bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container max-w-3xl">

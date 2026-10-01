@@ -1,4 +1,6 @@
 import { COUT_DAF_SALARIE, DELAIS, ENGAGEMENT, FORMULES } from "./facts";
+import { FINANCE_EXPERT } from "./finance-expert";
+import { PAGE_REVISIONS } from "./page-revisions";
 
 const euros = (value: number) => value.toLocaleString("fr-FR");
 
@@ -18,14 +20,14 @@ export const dafExternalisePariEnrichedContent = {
     author: {
       name: "Sébastien Doat",
       jobTitle: "Co-fondateur & CFO Advisor",
-      linkedInUrl: "https://www.linkedin.com/in/sebastiendoat",
+      linkedInUrl: FINANCE_EXPERT.linkedin,
       // GEO-P0 (2026-08-02) — /daf-externalise-paris renvoyait un 500 :
       // next/image rejette une src absolue dont l'hôte n'est pas déclaré
       // dans images.remotePatterns, et le fichier visé n'existait pas non
       // plus (même erreur corrigée ailleurs le 08/06, cf. Ahrefs T-404,
       // mais cet avatarUrl avait été oublié).
       avatarUrl: "/images/team/sebastien-doat.webp",
-      updateDate: "2026-09-05",
+      updateDate: PAGE_REVISIONS["/daf-externalise-paris"],
     },
     tldr: "Iter Advisors propose des DAF externalisés à Paris dès 3 000 € HT/mois, avec une expertise spécialisée startups Station F et levées de fonds. Disposer d'une direction financière senior sans recruter un salarié : c'est l'alternative pertinente pour les PME et startups en croissance.",
     // T2 (2026-06-30) — H1 recentré sur "Cabinet DAF Paris" pour matcher
@@ -273,11 +275,7 @@ export const dafExternalisePariEnrichedContent = {
           {
             question: "Combien coûte un DAF externalisé à Paris ?",
             answer:
-              // Arbitrage 10/08/2026 — trois corrections : prix d'entrée 2 000 → 3 000 €,
-              // « 120 000 à 180 000 € brut annuel, charges comprises » (formulation
-              // contradictoire, et cinquième fourchette du site) → coût employeur
-              // unique, et économie 60-85 % → fourchette unique 30-60 %.
-              "Les formules Iter Advisors démarrent à 3 000 euros HT par mois et vont jusqu'à 8 000 euros selon la formule. Le retainer couvre un scope défini au cadrage, pas un nombre d'heures. Pour comparaison, un directeur financier salarié de séniorité équivalente représente 100 000 à 213 000 euros de coût employeur annuel, charges comprises : l'externalisation représente 30 à 60 % d'économie.",
+              `Les formules Iter Advisors vont de ${euros(FORMULES[0].prixMin)} à ${euros(FORMULES[2].prixMax)} euros HT par mois, soit ${euros(FORMULES[0].prixMin * 12)} à ${euros(FORMULES[2].prixMax * 12)} euros HT par an. Le retainer couvre un périmètre défini au cadrage, pas un nombre d'heures. Le budget de référence d'un DAF salarié est de ${euros(COUT_DAF_SALARIE.min)} à ${euros(COUT_DAF_SALARIE.max)} euros de coût employeur annuel, charges et package compris. Ces budgets couvrent des disponibilités et des missions différentes : le temps partagé ne remplace pas automatiquement un poste à temps plein. Le devis précise le périmètre adapté à votre besoin.`,
           },
           {
             question: "Quelle différence entre un DAF externalisé et un consultant financier ponctuel ?",

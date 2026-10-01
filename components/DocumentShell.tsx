@@ -105,11 +105,6 @@ export default function DocumentShell({
                       addressLocality: "Paris",
                       addressCountry: "FR",
                     },
-                    {
-                      "@type": "PostalAddress",
-                      addressLocality: "Toulouse",
-                      addressCountry: "FR",
-                    },
                   ],
                   openingHours: "Mo-Fr 09:00-18:00",
                   // SEO-FIN §7.4 (2026-08-15) — enrichissement remonté depuis

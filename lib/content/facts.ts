@@ -51,7 +51,7 @@ export const CLIENTS_ACCOMPAGNES = 85;
 export const FONDS_LEVES = "100 M€";
 
 /** Bureaux. Barcelone est le siège du cabinet, pas une antenne. */
-export const BUREAUX = ["Barcelone", "Paris", "Toulouse"] as const;
+export const BUREAUX = ["Barcelone", "Paris"] as const;
 
 /* ── Tarifs ────────────────────────────────────────────────────────────── */
 

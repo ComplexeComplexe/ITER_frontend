@@ -7,6 +7,7 @@ import { articleSchema, faqPageSchema } from "@/lib/schemas";
 import { resolveAuthorUrl } from "@/lib/content/team";
 import type { CmsNavItem } from "@/lib/static-content";
 import { ReactNode } from "react";
+import { PAGE_REVISIONS, latestRevision } from "@/lib/content/page-revisions";
 
 interface BlogPostPageRefonteProps {
   locale: Locale;
@@ -68,6 +69,7 @@ export default function BlogPostPageRefonte({
 }: BlogPostPageRefonteProps) {
   // Build article URL for schema
   const articleUrl = slug ? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
+  const modified = latestRevision(dateModified, PAGE_REVISIONS[articleUrl]);
 
   // SEO-06 (2026-08-31) — dix articles passaient leur auteur sans `url` :
   // articleSchema retombait alors sur son repli et déclarait à Google un
@@ -90,7 +92,7 @@ export default function BlogPostPageRefonte({
     description: metaDescription || dek,
     url: articleUrl,
     datePublished: datePublished ?? dateModified,
-    dateModified: dateModified,
+    dateModified: modified,
     authorName: author.name,
     authorUrl,
     imageSrc: bodyImage?.src ?? heroImage,
@@ -138,7 +140,7 @@ export default function BlogPostPageRefonte({
         dek={dek}
         author={{ ...author, url: authorUrl }}
         readingTime={readingTime}
-        dateModified={dateModified}
+        dateModified={modified}
         bodyImage={bodyImage}
         toc={toc}
         tldr={tldr}
