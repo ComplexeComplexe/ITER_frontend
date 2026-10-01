@@ -96,63 +96,9 @@ export default function DafPillarPage({
           <span className={eyebrow}>Tarifs</span>
           <h2 className={h2}>{t.pricing.heading}</h2>
           <p className={`${body} mt-3 max-w-[70ch]`}>{t.pricing.intro}</p>
-          <p className="mt-6 text-xs text-muted-foreground">
-            Grille 2026 : le volume est une moyenne d’intervention, l’engagement porte sur le périmètre.
-          </p>
-          {/* Mobile : une carte par formule ; le tableau à cinq colonnes ne tient pas sous 640 px. */}
-          <ul className="mt-3 grid gap-3 sm:hidden">
-            {t.pricing.tiers.map((tier) => (
-              <li key={tier.name} className="site-card rounded-2xl border border-border/60 bg-background p-4">
-                <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="text-base font-semibold font-heading text-foreground">{tier.name}</h3>
-                  <span className="text-xs text-muted-foreground tabular-nums whitespace-nowrap">{tier.volume}</span>
-                </div>
-                <p className="mt-1 text-base font-semibold text-foreground tabular-nums">{tier.price}</p>
-                <p className={`${body} mt-2`}>
-                  <span className="font-semibold text-foreground">Pour qui : </span>
-                  {tier.audience}
-                </p>
-                <p className={body}>
-                  <span className="font-semibold text-foreground">Profil : </span>
-                  {tier.profile.replace("peer review", "relecture")}
-                </p>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-3 hidden sm:block overflow-x-auto">
-            <table className="w-full text-sm border-collapse bg-background border border-border/60 rounded-2xl overflow-hidden">
-              <thead className="bg-iter-violet/5">
-                <tr>
-                  {["Formule", "Volume moyen", "Tarif", "Pour qui", "Profil"].map((h) => (
-                    <th key={h} scope="col" className="text-left font-semibold text-foreground p-3 sm:p-4 border-b border-border/60">
-                      {h}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {t.pricing.tiers.map((tier) => (
-                  <tr key={tier.name} className="even:bg-muted/30 align-top">
-                    <th scope="row" className="p-3 sm:p-4 border-b border-border/40 font-semibold text-foreground text-left">{tier.name}</th>
-                    <td className="p-3 sm:p-4 border-b border-border/40 text-muted-foreground tabular-nums">{tier.volume}</td>
-                    <td className="p-3 sm:p-4 border-b border-border/40 font-semibold text-foreground tabular-nums whitespace-nowrap">{tier.price}</td>
-                    <td className="p-3 sm:p-4 border-b border-border/40 text-muted-foreground">{tier.audience}</td>
-                    <td className="p-3 sm:p-4 border-b border-border/40 text-muted-foreground">{tier.profile.replace("peer review", "relecture")}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="mt-6 grid md:grid-cols-2 gap-4">
-            <aside className="site-card rounded-2xl border border-iter-violet/30 bg-iter-violet/5 p-5">
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-iter-violet">{t.pricing.barometer.heading}</h3>
-              <p className={`${body} mt-2 text-foreground/90`}>{t.pricing.barometer.text}</p>
-              <p className="mt-3 text-xs text-muted-foreground">Les chiffres d’activité et cette répartition sont déclarés par le cabinet. Les avis sont consultables sur <a className="underline" href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc">Trustfolio</a>, compteur vérifié le 26 septembre 2026. Les résultats des missions clients sont détaillés dans les cas documentés.</p>
-            </aside>
-            <div className="site-card rounded-2xl border border-border/50 p-5">
-              <p className={body}>{t.pricing.economy}</p>
-              <p className={`${body} mt-3 font-medium text-foreground`}>{t.pricing.engagement}</p>
-            </div>
+          <div className="site-card mt-6 rounded-2xl border border-border/60 p-5 sm:p-6">
+            <p className={body}>{t.pricing.scope}</p>
+            <p className={`${body} mt-3 font-medium text-foreground`}>{t.pricing.engagement}</p>
           </div>
           <p className="mt-6">
             <Link href={t.pricing.link.href} className="inline-flex items-center gap-1 text-sm font-medium text-iter-violet hover:underline">
@@ -519,7 +465,6 @@ export default function DafPillarPage({
               priceCurrency: "EUR",
               lowPrice: String(FORMULES[0].prixMin),
               highPrice: String(FORMULES[FORMULES.length - 1].prixMax),
-              offerCount: String(FORMULES.length),
               priceSpecification: {
                 "@type": "UnitPriceSpecification",
                 priceType: "https://schema.org/MinimumPrice",
@@ -527,20 +472,6 @@ export default function DafPillarPage({
                 priceCurrency: "EUR",
                 unitText: "MONTH",
               },
-              offers: FORMULES.map((f) => ({
-                "@type": "Offer",
-                name: f.nom,
-                description: `${f.volumeIndicatif} — ${f.cible}`,
-                price: String(f.prixMin),
-                priceCurrency: "EUR",
-                priceSpecification: {
-                  "@type": "UnitPriceSpecification",
-                  price: String(f.prixMin),
-                  priceCurrency: "EUR",
-                  unitText: "MONTH",
-                },
-                availability: "https://schema.org/InStock",
-              })),
             },
           }),
         }}

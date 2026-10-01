@@ -295,6 +295,7 @@ export function resolveBlogArticleHref(locale: Locale, slug: string): string | n
 
 /** URL du glossaire, ou d'une de ses entrées. */
 export function glossaryHref(locale: Locale, slug?: string): string {
+  if (locale === "fr" && slug === "daf") return "/daf-externalise/metier";
   return resourcesHref(locale, slug ? `${GLOSSARY_PATH[locale]}/${slug}` : GLOSSARY_PATH[locale]);
 }
 

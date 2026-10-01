@@ -53,7 +53,6 @@ export const GLOSSARY_PAGE_SLUGS: ReadonlySet<string> = new Set([
   "churn-rate",
   "run-rate",
   "bspce-bsa",
-  "daf",
   "drh-externalise",
   "controle-de-gestion",
   "fractional-cfo",
@@ -736,53 +735,6 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
         }
       ],
       "ctaButton": "Préparer mes scénarios de dilution avec un DAF"
-    },
-    // EC-02 — DAF ecosystem
-    daf: {
-      meta: {
-        title: "DAF : définition, missions et salaire | Iter Advisors",
-        description:
-          "DAF (Directeur Administratif et Financier) : définition du rôle, missions, différence avec le CFO et coût d'un DAF externalisé pour PME.",
-      },
-      // REFONTE-DAF (2026-09-03) — la fiche définit le métier de DAF ; son H1
-      // visait « DAF externalisé » et concourait au pilier (96 impressions à
-      // la position 63 sur la requête de tête, GSC juin–août).
-      h1: "DAF (directeur administratif et financier) : définition, missions et salaire",
-      sections: [
-        {
-          content: [
-            "Le **DAF** (Directeur Administratif et Financier) est le responsable de la gestion financière et administrative d'une entreprise. En France, il occupe un rôle stratégique au sein du comité de direction et pilote l'ensemble des fonctions financières : comptabilité, trésorerie, contrôle de gestion, relations bancaires et parfois les ressources humaines.",
-            "Un **[DAF externalisé](/daf-externalise)** exerce ces mêmes missions pour plusieurs entreprises en parallèle, à temps partagé — généralement 1 à 8 jours par mois. Ce modèle permet aux PME, startups et ETI d'accéder à une expertise financière senior sans le coût d'un temps plein.",
-          ],
-        },
-        {
-          heading: "Rôle et missions du DAF",
-          content: [
-            "**Pilotage financier :** Construction du budget annuel, prévisions de trésorerie, reporting mensuel et tableaux de bord pour le dirigeant et les investisseurs.",
-            "**Comptabilité et conformité :** Supervision de la comptabilité, liasse fiscale, relations expert-comptable et commissaire aux comptes.",
-            "**Trésorerie :** Gestion du BFR, relations bancaires, négociation des lignes de crédit, optimisation du placement des excédents.",
-            "**Stratégie financière :** Accompagnement des levées de fonds, due diligence, structuration des opérations de M&A.",
-            "**RH et administration :** Dans certaines PME, le DAF supervise la paie, les contrats de travail et les obligations sociales.",
-          ],
-        },
-        {
-          heading: "DAF externalisé : un modèle adapté aux PME",
-          content: [
-            "Le modèle du **DAF externalisé** (aussi appelé DAF à temps partagé) est particulièrement adapté aux entreprises de 10 à 200 salariés qui ont besoin d'expertise financière senior sans pouvoir justifier d'un temps plein.",
-            "Concrètement, un DAF externalisé intervient 1 à 8 jours par mois selon les besoins. Il prend en charge le pilotage financier global, libère le dirigeant des sujets financiers chronophages, et structure l'information financière pour les décisions stratégiques.",
-            "Chez **[Iter Advisors](/daf-externalise)**, nos DAF externalisés accompagnent des PME, startups et entreprises franco-espagnoles depuis 2021. Découvrez nos [tarifs DAF externalisé](/daf-externalise/tarifs) et nos [cas clients](/ressources/cas-clients).",
-          ],
-        },
-        {
-          heading: "Salaire et coût d'un DAF",
-          content: [
-            `**DAF salarié interne :** Notre repère interne de coût employeur annuel est de ${getDafOffer("fr").salary} €. Ce n’est pas une moyenne du marché. Comparez salaire, charges, frais de recrutement et disponibilité sur votre propre périmètre.`,
-            `**DAF externalisé :** Les formules Iter Advisors vont de **${getDafOffer("fr").price}**. ${getDafOffer("fr").billing} Consultez les [livrables et tarifs](/daf-externalise/tarifs).`,
-            "Le retour sur investissement dépend des résultats constatés et des honoraires engagés. Il ne peut être promis dès le premier mois. Définissez au départ les indicateurs à suivre : visibilité sur le cash, qualité du reporting et décisions rendues possibles.",
-          ],
-        },
-      ],
-      ctaButton: "Rencontrer un DAF externalisé",
     },
     "drh-externalise": {
       meta: {

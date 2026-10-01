@@ -587,7 +587,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ressources/cas-clients/seasonly-marge-par-canal-bfr",
     "/ressources/cas-clients/solarmente-serie-b-cleantech",
     "/ressources/glossaire/controle-de-gestion",
-    "/ressources/glossaire/daf",
     "/ressources/glossaire/drh-externalise",
     "/ressources/glossaire/fractional-cfo",
     "/ressources/ia-finance/automatiser-reporting-financier",

@@ -21,8 +21,8 @@ export async function generateMetadata(): Promise<Metadata> {
     // quoi » (170/mois, P21) ; « Fiche métier » répondait au recruteur.
     // Aligné sur le title du contenu (lib/content/daf-sub.ts), que ce
     // fallback surchargeait silencieusement.
-    fallbackTitle: "DAF : c'est quoi ? Rôle et missions 2026 | Iter Advisors",
-    fallbackDescription: "DAF : c'est quoi ? Définition du Directeur Administratif et Financier, ses missions, son salaire et la version externalisée du métier en 2026.",
+    fallbackTitle: content.meta.title,
+    fallbackDescription: content.meta.description,
   });
 }
 

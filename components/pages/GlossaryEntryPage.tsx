@@ -198,7 +198,7 @@ export default function GlossaryEntryPage({
                   {related.map((r) => (
                     <li key={r.slug} className="site-copy flex gap-2.5 text-sm sm:text-base">
                       <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
-                      <Link href={`${glossaryHref(locale)}/${r.slug}`} className="text-iter-violet hover:underline">
+                      <Link href={glossaryHref(locale, r.slug)} className="text-iter-violet hover:underline">
                         {r.title}
                       </Link>
                     </li>

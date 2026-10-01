@@ -32,106 +32,77 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
   fr: {
     metier: {
       meta: {
-        // CONTENUS-T4 (2026-08-31) — la requête est une question : « daf c'est
-      // quoi » (170/mois, P21). Le title disait « fiche métier », la page
-      // répondait au recruteur, pas au curieux.
-      title: "DAF : c'est quoi ? Rôle et missions 2026 | Iter Advisors",
-        description:
-          "Découvrez le métier de DAF : rôle complet, missions clés, compétences requises et évolution du poste dans les entreprises modernes.",
+        title: "DAF : définition, rôle et missions | Iter Advisors",
+        description: "Que signifie DAF ? Découvrez les missions du directeur administratif et financier, ses compétences, ses modes d’intervention et la différence avec l’expert-comptable."
       },
       parentLabel: "DAF externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "Le métier de DAF",
-      // T#1 + T#10 (2026-07-13) — H1 recentré sur intent informationnel
-      // pur "fiche métier DAF". Retiré tout ciblage "externalisé" pour
-      // éviter la cannibalisation avec le pilier /daf-externalise.
-      // Cible : "métier de daf", "fiche métier daf", "que fait un daf".
-      h1: "DAF : c'est quoi ? Le rôle du Directeur Administratif et Financier expliqué",
+      "h1": "DAF : définition, rôle et missions du directeur administratif et financier",
+      modified: {
+        date: "2026-10-01",
+        label: "1er octobre 2026"
+      },
       sections: [
         {
           content: [
-            // Maillage (2026-08-02) — /ressources/glossaire/daf était
-            // orpheline (3 liens entrants) : la fiche métier, sa page la
-            // plus proche sémantiquement, ne la citait pas.
-            // CONTENUS-T4 — réponse directe en 42 mots, format citable, avant
-            // tout développement.
-            "**Un DAF (Directeur Administratif et Financier) est le dirigeant qui pilote les finances d'une entreprise : trésorerie, comptabilité, budgets, reporting et stratégie financière.** Membre du comité de direction, il transforme les chiffres en décisions — là où l'expert-comptable les enregistre.",
-            "Le **DAF**, ou Directeur Administratif et Financier, est l'officier financier senior de l'entreprise. Véritable bras droit du PDG ou du Directeur Général, il supervise l'intégralité de la fonction finance : comptabilité, trésorerie, reporting, fiscalité, et pilotage de la performance. Le DAF n'est pas qu'un expert technique ; c'est un partenaire stratégique qui participe aux décisions clés et contribue à la création de valeur. Pour la définition courte du terme, voir notre entrée de glossaire [DAF](/ressources/glossaire/daf).",
-            "En 2026, le métier de DAF traverse une transformation profonde. Les tâches administratives et répétitives sont progressivement automatisées, libérant du temps pour les missions à haute valeur ajoutée : stratégie financière, accompagnement du business, gestion des risques et transformation digitale.",
-          ],
+            "**Le DAF, ou directeur administratif et financier, pilote la fonction finance d’une entreprise : trésorerie, budget, reporting, financement et coordination comptable.** Il aide le dirigeant à comprendre les résultats, à anticiper les besoins et à préparer ses décisions. Son périmètre dépend de la taille et de l’organisation de l’entreprise.",
+            "DAF, directeur financier et CFO désignent des fonctions proches. Le titre DAF souligne la dimension administrative, qui peut inclure la coordination de la paie ou des sujets RH. Ces responsabilités doivent être précisées avec les équipes et les conseils compétents."
+          ]
         },
         {
-          heading: "Les missions principales d'un DAF",
+          heading: "Les missions principales du DAF",
           content: [
-            "**Pilotage de la comptabilité et reporting financier :** Le DAF supervise la tenue de la comptabilité générale et la production des états financiers (bilan, compte de résultat, tableau de flux de trésorerie). Il s'assure que les comptes sont réguliers, sincères et reflètent fidèlement la situation financière de l'entreprise. Il est responsable de la conformité légale et fiscale.",
-            "**Gestion de la trésorerie :** C'est l'une des missions critiques du DAF. Il prévoit les besoins de trésorerie, négocie les conditions bancaires, gère les risques de change et de taux, et s'assure que l'entreprise dispose toujours des ressources nécessaires pour financer son activité.",
-            "**Élaboration de la stratégie financière :** Le DAF élabore les budgets, les prévisions financières (5 ans) et les plans de trésorerie. Il participe à la définition de la stratégie de financement (dette, fonds propres, leasing), et pilote les grands projets d'investissement.",
-            "**Reporting et tableau de bord :** Le DAF met en place les outils de pilotage qui permettent au management de monitorer la performance financière en temps réel : tableaux de bord KPI, analyses de variance, reporting mensuel et trimestral.",
-            "**Gestion des relations bancaires et investisseurs :** Le DAF représente l'entreprise auprès des banquiers, des investisseurs et des fonds de private equity. Il prépare les présentations financières, négocie les contrats de financement et gère les relations à long terme.",
-            "**Fiscalité et conformité :** Le DAF travaille en étroite collaboration avec l'expert-comptable et les conseillers fiscaux pour optimiser la fiscalité de l'entreprise (impôt sur les sociétés, TVA, impôt sur la fortune immobilière). Il s'assure de la conformité avec toutes les obligations légales (paye, normes comptables, etc.).",
-            "**Gestion des risques financiers :** Le DAF identifie les risques financiers (crédit, trésorerie, change, taux), évalue leur impact potentiel, et met en place les mesures d'atténuation appropriées.",
-          ],
+            "**Trésorerie et BFR :** suivre les encaissements, les décaissements et les engagements ; construire un prévisionnel, expliciter ses hypothèses et préparer les échanges avec les banques. Le [besoin en fonds de roulement](/ressources/glossaire/besoin-fonds-roulement-bfr) aide à comprendre le décalage entre activité et trésorerie.",
+            "**Budget et stratégie financière :** établir des scénarios de revenus, charges, investissements et recrutements. Le DAF met en évidence les arbitrages ; le dirigeant conserve les décisions qui lui reviennent.",
+            "**Reporting et contrôle de gestion :** rapprocher les données, suivre les résultats et expliquer les écarts au budget. Le [contrôle de gestion](/services/controle-de-gestion-externalise) permet notamment d’analyser les marges par activité, produit ou canal.",
+            "**Comptabilité et clôture :** organiser la collecte des données, le calendrier et la revue des comptes avec l’équipe comptable, l’expert-comptable et, le cas échéant, le commissaire aux comptes. Les responsabilités de chacun restent définies dans leurs mandats respectifs.",
+            "**Financement et opérations :** préparer un modèle financier, une data room et les échanges avec les investisseurs ou les prêteurs. Selon le mandat, le DAF participe aux travaux financiers d’acquisition, de cession et d’intégration.",
+            "**Administration et risques :** coordonner les échéances, les contrôles et les accès aux outils. Dans certaines PME, il suit aussi des sujets administratifs ou RH avec les professionnels concernés, sans se substituer à leurs compétences."
+          ]
         },
         {
-          heading: "Les compétences clés d'un DAF performant",
+          heading: "Les compétences et le parcours",
           content: [
-            "**Compétences techniques :** Maîtrise approfondie de la comptabilité générale et analytique, de la fiscalité d'entreprise, du droit des affaires, et des normes comptables (IFRS, normes françaises). Connaissance des principaux outils du DAF : ERP (SAP, NetSuite, Sage), logiciels de BI (Tableau, Power BI), outils de planning financier (Adaptive Insights, Anaplan), et logiciels de consolidation (HFM, Essbase).",
-            "**Compétences analytiques et stratégiques :** Capacité à analyser des données financières complexes, identifier les tendances, et proposer des recommandations stratégiques. Le DAF doit être en mesure de synthétiser l'information pour la rendre accessible au management non-financier.",
-            "**Compétences en leadership :** Autonome et proactif, le DAF dirige une équipe finance parfois dispersée géographiquement. Il doit inspirer confiance, communiquer clairement et créer une culture de performance au sein de la fonction finance.",
-            "**Compétences commerciales :** Le DAF n'est plus enfermé dans son bureau. Il doit comprendre l'activité de l'entreprise, parler le langage des opérationnels et des vendeurs, et aider le management à prendre les meilleures décisions commerciales.",
-            "**Agilité technologique :** À l'ère de l'IA et de la cloud, le DAF doit être à l'aise avec les technologies émergentes (automatisation RPA, machine learning, blockchain). Il doit piloter la transformation digitale de la fonction finance.",
-            "**Compétences interpersonnelles :** Capacité à travailler avec différents stakeholders (banquiers, investisseurs, experts-comptables, auditeurs, dirigeants d'autres divisions). Écoute active, diplomatie et capacité à construire des consensus.",
-          ],
+            "Le métier combine maîtrise comptable et financière, analyse des données, compréhension de l’activité et capacité à expliquer les choix au dirigeant. Le DAF doit savoir travailler avec les équipes opérationnelles, les banques et les conseils externes.",
+            "Les parcours peuvent passer par l’audit, le contrôle de gestion, la comptabilité ou une direction financière. Le niveau d’expérience et la connaissance des outils doivent correspondre au contexte : PME, startup, filiale ou groupe multi-entités. Il n’existe pas un parcours unique adapté à toutes les missions.",
+            "L’automatisation peut faciliter la collecte et la préparation du reporting. Le contrôle des données, la confidentialité et la validation humaine restent nécessaires. Nos [ressources IA et finance](/ressources/ia-finance) détaillent des usages et leurs limites."
+          ]
         },
         {
-          heading: "Le profil type d'un DAF : expérience et parcours",
+          heading: "DAF salarié, temps partagé ou transition : quel fonctionnement ?",
           content: [
-            "Un DAF senior a généralement 12 à 15 ans d'expérience en finance d'entreprise. Son parcours type débute dans un cabinet d'audit (Deloitte, EY, KPMG, Grant Thornton) où il acquiert une expertise comptable et d'audit solide. Il passe ensuite 8 à 10 ans en tant que contrôleur de gestion ou responsable finance dans 2 ou 3 entreprises de secteurs différents, ce qui lui permet de comprendre différents métiers et de développer une vision stratégique.",
-            "Certains DAF ont complété leur formation par un MBA ou un master spécialisé (TFAI, MSF, DFCG). Beaucoup détiennent des certifications comme l'expertise comptable ou le DSCG.",
-          ],
+            "**Salarié :** le DAF est intégré à l’entreprise. Ce modèle peut convenir à un besoin durable de présence quotidienne et de management de la fonction finance.",
+            "**Temps partagé :** le professionnel intervient de façon récurrente auprès de plusieurs entreprises, avec un périmètre et une disponibilité convenus. Consultez notre offre de [DAF externalisé](/daf-externalise) pour les missions, les interlocuteurs et les cas documentés, puis le [fonctionnement à temps partagé](/daf-externalise/temps-partage) pour l’organisation du suivi.",
+            "**Transition :** le DAF prend un mandat temporaire de remplacement ou de transformation, puis organise la passation. La [mission de DAF de transition](/daf-externalise/transition) précise les situations concernées et les responsabilités à cadrer."
+          ]
         },
         {
-          heading: "L'évolution du métier : du contrôleur à l'activateur de croissance",
+          heading: "Salaire, honoraires et budget : distinguer les comparaisons",
           content: [
-            "Historiquement, le DAF était d'abord un contrôleur : vérifier la conformité, s'assurer que les règles étaient respectées, sécuriser les chiffres. Aujourd'hui, le DAF est un véritable **activateur de croissance**. Il aide le dirigeant à financer la croissance, à optimiser les investissements, à acquérir des concurrents, et à piloter la transformation numérique.",
-            "La transformation digitale accélère cette évolution. L'automatisation RPA prend en charge les tâches répétitives (rapprochements bancaires, arrêtés de fin de mois, facturation). Le machine learning aide à prédire les besoins de trésorerie et les risques d'impayés. L'IA générative accélère la production des rapports et des analyses.",
-            "Libéré des tâches administratives, le DAF peut se concentrer sur ce qui crée vraiment de la valeur : la stratégie financière, l'accompagnement du business, et la transformation de la fonction finance.",
-          ],
+            "Le salaire brut d’un DAF, son coût employeur et les honoraires d’un cabinet sont trois montants différents. Comparez le périmètre, la séniorité, la disponibilité, les charges et les frais éventuels avant de comparer les budgets.",
+            "La [grille des tarifs Iter](/daf-externalise/tarifs) présente les forfaits du cabinet ; elle ne constitue pas une étude des salaires ou des prix du marché. Le [comparatif DAF externalisé ou salarié](/ressources/blog/daf-externalise-vs-daf-salarie) explique les critères de choix.",
+            "Un retour sur investissement ne se promet pas dès le premier mois. Les résultats se mesurent sur une période définie : qualité du reporting, visibilité sur le cash, économies constatées et décisions rendues possibles."
+          ]
         },
         {
-          heading: "DAF interne vs DAF externalisé",
+          heading: "Exercer ce métier chez Iter",
           content: [
-            "Un directeur financier salarié représente 100 000 à 213 000 € de coût employeur annuel, charges patronales comprises. Recruter un DAF prend 3 à 6 mois. De plus, si le profil ne convient pas, il peut être difficile de changer rapidement.",
-            "Chez Iter Advisors, nos DAFs externalisés apportent la même expertise qu'un DAF interne, avec plusieurs avantages : flexibilité (ajuster les jours d'intervention selon vos besoins), coût maîtrisé (3 000 à 8 000 € HT/mois selon la formule), disponibilité immédiate, et expérience multisectorielle.",
-            "Pour en savoir plus sur nos formules de DAF externalisé (temps partagé, transition, ou mission ponctuelle), consultez la page **[DAF à temps partagé](/daf-externalise/temps-partage)** ou nos **[tarifs](/daf-externalise/tarifs)**.",
-          ],
+            "Pour connaître les profils recherchés et les modalités de candidature, consultez la page [devenir Fractional CFO chez Iter Advisors](/carrieres/fractional-cfo). Les conditions de recrutement se distinguent du prix facturé au client."
+          ]
         },
         {
-          heading: "Devenir DAF externalisé",
+          heading: "FAQ : le métier de DAF",
           content: [
-            // MAILLAGE-T11 (2026-08-31) — la page capte aussi l'intention
-            // « daf externalisé recrutement / carrière ». Les chiffres sont
-            // ceux de la page carrières (JobPosting), les seuls arbitrés pour
-            // ce cas : c'est ce que gagne le professionnel recruté, sans
-            // rapport avec ce que facture le cabinet à ses clients.
-            "Le métier attire de plus en plus de DAF expérimentés : varier les contextes, choisir ses missions, et retrouver l'impact direct qu'un grand groupe dilue. Chez Iter Advisors, nous recrutons des profils de 10 ans d'expérience et plus, ayant déjà exercé en PME ou en startup, à l'aise avec les outils financiers modernes.",
-            "La rémunération se situe entre 750 et 1 250 € par jour selon l'expérience, en freelance, portage ou CDI, pour un portefeuille de clients accompagnés dans la durée. Le détail du poste et le processus de candidature sont sur notre page **[devenir Fractional CFO chez Iter Advisors](/carrieres/fractional-cfo)**.",
-          ],
-        },
-        {
-          heading: "FAQ - Métier de DAF",
-          content: [
-            "**Quelle est la différence entre un DAF et un Directeur Financier ?** Les deux termes désignent la même fonction en France. Le titre officiel est DAF (Directeur Administratif et Financier), mais certaines entreprises utilisent Directeur Financier ou CFO (Chief Financial Officer).",
-            "**Un DAF doit-il impérativement avoir l'expertise comptable ?** Non. Bien que l'expertise comptable soit un avantage, ce n'est pas une obligation. De nombreux DAFs ont un bac+5 (master finance, diplôme d'école de commerce) et acquièrent l'expérience pratique en cabinet d'audit ou en contrôle de gestion.",
-            "**Quel est le salaire d'un DAF en 2026 ?** Le salaire brut d'un DAF junior (3-5 ans d'expérience) varie de 50 000 à 70 000€. Un DAF confirmé (10-15 ans) gagne entre 80 000 et 120 000€. Un DAF senior de grand groupe peut atteindre 150 000€+, avec participation aux résultats et stock-options. En coût employeur chargé, un profil de séniorité équivalente représente 100 000 à 213 000 € par an — c'est la base de comparaison utilisée sur notre page [DAF externalisé vs salarié](/ressources/blog/daf-externalise-vs-daf-salarie).",
-            // CONTENUS-T4 (2026-08-31) — les deux questions que la FAQ ne
-            // couvrait pas, telles qu'elles se posent.
-            "**Quelle est la différence entre un DAF et un expert-comptable ?** L'expert-comptable tient et certifie les comptes ; le DAF dirige la fonction finance et décide de ce que les chiffres impliquent. Ce sont deux métiers complémentaires : la plupart de nos clients gardent leur cabinet comptable et lui adjoignent un DAF. Le détail est sur [DAF externalisé vs expert-comptable](/ressources/blog/daf-externalise-vs-expert-comptable).",
-            "**Un DAF peut-il être externalisé ?** Oui. Le [DAF externalisé](/daf-externalise) intervient quelques jours par mois en retainer, à partir de 3 000 € HT mensuels — et en [mission de transition](/daf-externalise/transition) quand l'urgence l'exige — un niveau de séniorité de direction sans le coût d'un temps plein. C'est la forme que prend le métier dans la plupart des PME et startups que nous accompagnons.",
-          ],
-        },
+            "**Que signifie DAF ?** DAF signifie directeur administratif et financier. Il coordonne le pilotage financier et, selon l’organisation, une partie des fonctions administratives de l’entreprise.",
+            "**Quelle différence entre un DAF et un CFO ?** CFO signifie Chief Financial Officer. Les deux titres recouvrent des fonctions proches ; le périmètre réel du poste compte davantage que son intitulé.",
+            "**Quelle différence entre le DAF et l’expert-comptable ?** Le DAF organise le pilotage financier et prépare les arbitrages avec le dirigeant. L’expert-comptable assure les travaux prévus dans sa lettre de mission. Leurs interventions sont complémentaires et leurs responsabilités doivent être clairement réparties. Voir notre [comparatif DAF et expert-comptable](/ressources/blog/daf-externalise-vs-expert-comptable).",
+            "**Un DAF doit-il être expert-comptable ?** Le diplôme d’expertise comptable n’est pas une condition générale pour occuper une fonction de DAF. Les compétences et les qualifications requises dépendent des travaux confiés ; les actes réservés restent confiés aux professionnels habilités.",
+            "**Une PME peut-elle avoir un DAF sans recruter à temps plein ?** Oui, un [DAF externalisé](/daf-externalise) peut intervenir sur un périmètre convenu. Les besoins, les travaux pris en charge en interne et la disponibilité attendue permettent de choisir l’organisation adaptée."
+          ]
+        }
       ],
-      ctaButton: "Décrire mon besoin",
+      ctaButton: "Échanger sur mon besoin"
     },
     "temps-partage": {
       modified: { date: "2026-09-30", label: "30 septembre 2026" },
