@@ -1,4 +1,5 @@
 "use client";
+import HRSection from "@/components/Home/HRSection";
 import FinanceExpert from "@/components/FinanceExpert";
 
 import Link from "next/link";
@@ -344,10 +345,10 @@ export default function HomePage({
               {locale === "fr" ? "Nos services" : locale === "en" ? "Our services" : "Nuestros servicios"}
             </span>
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-              {t.servicesHeading}
+              {locale === "fr" ? "Des services pour piloter votre finance" : t.servicesHeading}
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              {t.servicesSubtitle}
+              {locale === "fr" ? "Trésorerie, reporting, financements : choisissez le sujet sur lequel avancer avec votre direction financière." : t.servicesSubtitle}
             </p>
           </motion.div>
 
@@ -365,19 +366,19 @@ export default function HomePage({
             </div>
           </div>
 
-          <div className="mb-0">
+          {locale !== "fr" && <div className="mb-0">
             <div className="flex items-center gap-3 mb-8">
               <span className="px-4 py-1.5 rounded-full bg-iter-chartreuse text-iter-dark text-sm font-semibold">
-                {locale === "fr" ? "Ressources humaines" : locale === "en" ? "Human Resources" : "Recursos humanos"}
+                {locale === "en" ? "Human Resources" : "Recursos humanos"}
               </span>
               <div className="h-px flex-1 bg-iter-chartreuse/30" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {t.hrServices.map((s, i) => (
-                <ServiceCard key={s.title} icon={hrServiceIcons[i] ?? Users} title={s.title} desc={s.desc} index={i + 5} theme="chartreuse" href={locale === "fr" ? ["/drh-externalise", "/services/recrutement-talent-acquisition", "/services/gestion-paie-charges-sociales", "/services/formation-developpement", "/services/conformite-droit-travail", "/drh-externalise"][i] : undefined} />
+                <ServiceCard key={s.title} icon={hrServiceIcons[i] ?? Users} title={s.title} desc={s.desc} index={i + 5} theme="chartreuse" href={undefined} />
               ))}
             </div>
-          </div>
+          </div>}
         </div>
       </section>
 
@@ -524,6 +525,8 @@ export default function HomePage({
           </div>
         </div>
       </section>
+
+      {locale === "fr" && <HRSection />}
 
       {/* ═══ PROCESS SECTION ═══ */}
       <section className="site-section py-24 lg:py-32 relative overflow-hidden">

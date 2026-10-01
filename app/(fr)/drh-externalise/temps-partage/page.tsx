@@ -1,10 +1,8 @@
 import { Metadata } from "next";
-import DrhSubPage from "@/components/pages/DrhSubPage";
+import DrhFrenchPage from "@/components/pages/DrhFrenchPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
-import { getDrhSubContent } from "@/lib/content/drh-sub";
 import { getCmsNavigation } from "@/lib/static-content";
 
-const content = getDrhSubContent("fr", "temps-partage")!;
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildStrapiMetadata({
@@ -13,11 +11,11 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/drh-externalise/temps-partage",
     localizedPaths: { fr: "/drh-externalise/temps-partage", en: "/hr-outsourcing/shared-time", es: "/externalizacion-rrhh/tiempo-compartido" },
     fallbackTitle: "DRH à temps partagé | Iter Advisors",
-    fallbackDescription: "DRH à temps partagé pour PME et startups : direction RH flexible et senior, quelques jours par semaine, sans les coûts d'un poste à temps plein.",
+    fallbackDescription: "DRH à temps partagé : comprendre le rythme, les responsabilités, les livrables et la continuité d’une mission RH auprès de vos équipes.",
   });
 }
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");
-  return <DrhSubPage locale="fr" content={content} cmsNavigation={cmsNavigation} />;
+  return <DrhFrenchPage sharedTime cmsNavigation={cmsNavigation} />;
 }

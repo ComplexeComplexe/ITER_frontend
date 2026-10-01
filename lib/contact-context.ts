@@ -1,4 +1,11 @@
 const contexts: Record<string, { need: string; originPage: string }> = {
+  "recrutement-talent-acquisition": { need: "rh", originPage: "/services/recrutement-talent-acquisition" },
+  "gestion-paie-charges-sociales": { need: "rh", originPage: "/services/gestion-paie-charges-sociales" },
+  "formation-developpement": { need: "rh", originPage: "/services/formation-developpement" },
+  "conformite-droit-travail": { need: "rh", originPage: "/services/conformite-droit-travail" },
+  drh: { need: "rh", originPage: "/drh-externalise" },
+  "drh-temps-partage": { need: "rh", originPage: "/drh-externalise/temps-partage" },
+  "borith-biv": { need: "rh", originPage: "/a-propos/borith-biv" },
   "sebastien-doat": { need: "daf-pme", originPage: "/a-propos/sebastien-doat" },
   "temps-partage": { need: "daf-pme", originPage: "/daf-externalise/temps-partage" },
   transition: { need: "transition", originPage: "/daf-externalise/transition" },

@@ -245,11 +245,11 @@ export default function ContactPage({
               </span>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-heading leading-[1.1] mb-6">
-                {need === "automation" ? (locale === "fr" ? "Parlons de votre reporting et de l’IA" : locale === "en" ? "Let’s discuss reporting and AI" : "Hablemos de reporting e IA") : tx.h1}
+                {locale === "fr" && need === "rh" ? "Parlons de votre organisation RH" : need === "automation" ? (locale === "fr" ? "Parlons de votre reporting et de l’IA" : locale === "en" ? "Let’s discuss reporting and AI" : "Hablemos de reporting e IA") : tx.h1}
               </h1>
 
               <p className="text-base sm:text-lg text-white/70 leading-relaxed mb-8">
-                {tx.subtitle}
+                {locale === "fr" && need === "rh" ? "Décrivez vos équipes, vos priorités et les sujets RH à traiter. Nous préciserons ensemble le périmètre et les intervenants nécessaires." : tx.subtitle}
               </p>
 
               {/* Trust badges */}
@@ -264,7 +264,7 @@ export default function ContactPage({
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 size={16} className="text-iter-chartreuse" />
-                  <span className="text-white/60 text-sm">{tx.trustBadge}</span>
+                  <span className="text-white/60 text-sm">{locale === "fr" && need === "rh" ? "Un périmètre RH défini avec vous" : tx.trustBadge}</span>
                 </div>
               </div>
             </motion.div>
@@ -458,7 +458,7 @@ export default function ContactPage({
       <section className="site-section bg-background py-16 lg:py-20">
         <div className="container">
           <p className="text-center text-sm font-medium text-muted-foreground uppercase tracking-widest mb-10">
-            {tx.clientsTitle}
+            {locale === "fr" && need === "rh" ? "Des entreprises accompagnées par Iter en direction financière" : tx.clientsTitle}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-14 opacity-60">
             {clientLogos.map((logo) => (

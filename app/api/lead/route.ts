@@ -81,7 +81,7 @@ const FIELD_LABELS: Record<string, string> = {
   phone: "Téléphone",
   message: "Message",
   stage: "Stade de développement",
-  challenge: "Enjeu financier",
+  challenge: "Besoin principal",
   teamSize: "Taille de l'équipe",
   urgency: "Échéance",
   originPage: "Page de départ de la demande",

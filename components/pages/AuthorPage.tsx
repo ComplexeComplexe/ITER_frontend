@@ -1,3 +1,4 @@
+import HRExpert from "@/components/HRExpert";
 import ExpertProfileSections from "@/components/ExpertProfileSections";
 import { FINANCE_EXPERT, editorialPersonId } from "@/lib/content/finance-expert";
 import Link from "next/link";
@@ -199,6 +200,7 @@ export default function AuthorPage({
       </section>
 
       {isFinanceExpert && locale === "fr" && <ExpertProfileSections />}
+      {member.slug === "borith-biv" && locale === "fr" && <section className="site-section"><div className="site-container max-w-4xl"><HRExpert /><div className="site-actions"><Link className="site-inline-link" href="/drh-externalise/temps-partage">Comprendre le fonctionnement du temps partagé</Link><Link className="site-inline-link" href="/services/recrutement-talent-acquisition">Recrutement et intégration</Link></div></div></section>}
 
       {/* Le bloc « articles publiés » n'est rendu que s'il y a des articles.
           Auparavant, les 17 fiches auteur sans publication affichaient un

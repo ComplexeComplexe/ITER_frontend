@@ -1,0 +1,64 @@
+import Link from "next/link";
+import PageLayout from "@/components/PageLayout";
+import ServiceHero from "@/components/design/ServiceHero";
+import HRExpert from "@/components/HRExpert";
+import { HR_FAQ, HR_TIME_FAQ, HR_LINKS, HR_TERMS } from "@/lib/content/hr-offer";
+import { faqPageSchema } from "@/lib/schemas";
+import type { CmsNavItem } from "@/lib/static-content";
+
+export default function DrhFrenchPage({ sharedTime = false, cmsNavigation }: { sharedTime?: boolean; cmsNavigation?: CmsNavItem[] }) {
+  const path = sharedTime ? "/drh-externalise/temps-partage" : "/drh-externalise";
+  const title = sharedTime ? "Comment fonctionne un DRH à temps partagé ?" : "DRH externalisé : une direction RH à temps partagé";
+  const faq = sharedTime ? HR_TIME_FAQ : HR_FAQ;
+  const needs = sharedTime ? [
+    ["Un rythme convenu", "Définir les jours ou plages d’intervention, les réunions et les moyens de contact. Adapter la présence aux travaux prévus, sans promettre une disponibilité à temps plein."],
+    ["Des responsabilités explicites", "Le dirigeant conserve ses décisions d’employeur. Le DRH prépare les options, accompagne les managers et coordonne les intervenants dans le périmètre convenu."],
+    ["Une continuité organisée", "Partager un suivi des actions et des documents accessibles aux personnes autorisées. Prévoir les relais en cas d’absence et les conditions de passation."],
+  ] : [
+    ["Votre entreprise grandit", "Les recrutements et les arrivées se multiplient. Vous souhaitez organiser les priorités, les responsabilités et l’intégration des collaborateurs."],
+    ["Le dirigeant porte les sujets RH", "Les décisions de rémunération, les demandes des équipes et la coordination des prestataires prennent du temps. Vous avez besoin d’un interlocuteur pour structurer le suivi."],
+    ["Vos managers ont besoin de repères", "Fiches de poste, entretiens, rôles et pratiques managériales doivent être clarifiés pour accompagner les équipes."],
+  ];
+  const deliverables = sharedTime ? [
+    "Un tableau de suivi partagé : sujet, responsable, décision attendue et prochaine échéance.",
+    "Un ordre du jour préparé avant chaque point avec le dirigeant ou les managers.",
+    "Un calendrier des présences et des relais pour les périodes sans intervention.",
+    "Une organisation documentaire avec les accès limités aux personnes concernées.",
+    "Une liste des travaux en cours et des décisions à transmettre lors de la passation.",
+  ] : [
+    "Une feuille de route avec priorités, responsables et prochaines décisions.",
+    "Un plan de recrutement, des fiches de poste et une trame d’intégration.",
+    "Un calendrier RH et une répartition des rôles entre équipe et prestataires.",
+    "Des indicateurs de suivi expliqués et des points réguliers avec les managers.",
+    "Un état des travaux et des documents à transmettre en fin de mission.",
+  ];
+  const steps = sharedTime ? [
+    ["Préparer les accès", "Identifier les interlocuteurs, les documents utiles et les droits nécessaires avant la première intervention."],
+    ["Installer les rendez-vous", "Convenir du calendrier, des points avec les managers et des décisions qui nécessitent le dirigeant."],
+    ["Suivre entre les présences", "Tenir le tableau des actions à jour et préciser qui prend le relais. Le traitement des urgences doit être convenu."],
+    ["Ajuster et transmettre", "Réexaminer le rythme selon les travaux en cours. Préparer une passation documentée si le besoin évolue vers un poste interne."],
+  ] : [
+    ["Comprendre", "Faire le point sur vos équipes, vos ressources RH, les sujets ouverts et les décisions à préparer."],
+    ["Prioriser", "Définir le périmètre, les livrables, les interlocuteurs et le rythme. Identifier les spécialistes nécessaires."],
+    ["Mettre en œuvre", "Travailler avec les managers et prestataires, suivre les actions et documenter les décisions."],
+    ["Réexaminer", "Faire le point sur les travaux, ajuster les priorités et préparer la suite ou la passation."],
+  ];
+  return <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Service", "@id": `https://www.iteradvisors.com${path}#service`, name: title, url: `https://www.iteradvisors.com${path}`, provider: { "@id": "https://www.iteradvisors.com/#organization" }, serviceType: "Direction RH externalisée", description: sharedTime ? "Fonctionnement, rythme, responsabilités et passation d’une direction RH à temps partagé." : "Direction RH pour PME et startups : organisation, recrutement et accompagnement des managers, selon un périmètre convenu." }) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(faq)) }} />
+    <ServiceHero family="rh" title={title} label={sharedTime ? "Temps partagé" : "DRH externalisé"} eyebrow="Iter Advisors · Direction RH"
+      lead={sharedTime ? "Une présence régulière, des priorités suivies, des responsabilités définies." : "Structurer vos équipes, accompagner vos managers, organiser vos priorités RH."}
+      intro={sharedTime ? "Le temps partagé permet de travailler dans la durée avec une direction RH extérieure. Sa valeur dépend du périmètre, des relais internes et de la continuité organisée entre les interventions." : "Pour les PME et startups qui ont besoin d’une direction RH sans recruter à temps plein. Recrutement, organisation et coordination RH : nous définissons avec vous les sujets à traiter et les intervenants nécessaires."}
+      primary={{ href: sharedTime ? "/contact#drh-temps-partage" : "/contact#drh", label: "Parlons de votre besoin RH" }} secondary={{ href: "#fonctionnement", label: "Comprendre la mission" }}
+      summary={[{ label: "Votre besoin", value: sharedTime ? "Un accompagnement RH régulier" : "Organisation, recrutement et management" }, { label: "Le périmètre", value: "Défini selon vos priorités et votre équipe" }, { label: "Le budget", value: "Sur devis, selon les travaux et le rythme convenus" }]}
+      navigation={[{ id: "besoins", label: sharedTime ? "Le rythme" : "Vos besoins" }, { id: "livrables", label: "Les livrables" }, { id: "fonctionnement", label: "La méthode" }, { id: "budget", label: "Le budget" }, { id: "questions", label: "Les réponses" }]} />
+    <section id="besoins" className="site-section"><div className="site-container"><p className="site-eyebrow">Le bon accompagnement</p><h2>{sharedTime ? "Intégrer le DRH dans votre organisation" : "Dans quelles situations faire appel à un DRH externalisé ?"}</h2><div className="grid md:grid-cols-3 gap-6 mt-8">{needs.map(([h,p]) => <article key={h} className="site-card p-6"><h3 className="text-xl font-semibold mb-3">{h}</h3><p className="text-muted-foreground">{p}</p></article>)}</div>
+    {!sharedTime && <div className="grid md:grid-cols-2 gap-6 mt-8"><div id="pme" className="site-copy"><h3>Pour une PME</h3><p>Clarifier la répartition des tâches entre dirigeant, managers, administration du personnel et prestataires. Prioriser les sujets qui nécessitent une direction RH et ceux qui relèvent d’une prestation spécialisée.</p></div><div id="startup" className="site-copy"><h3>Pour une startup</h3><p>Relier le plan de recrutement à la capacité d’intégration et au budget. Formaliser progressivement les rôles et les pratiques utiles, sans multiplier les processus avant qu’ils soient nécessaires.</p></div></div>}</div></section>
+    <section id="livrables" className="site-section bg-iter-light"><div className="site-container site-copy max-w-4xl"><h2>{sharedTime ? "Un suivi partagé pour avancer entre les interventions" : "Des livrables pour faire avancer vos sujets RH"}</h2><p>Les supports sont définis selon la mission. Ils peuvent comprendre :</p><ul>{deliverables.map(item => <li key={item}>{item}</li>)}</ul><p>Ces exemples décrivent des travaux possibles. Leur sélection et les modalités de réalisation figurent dans la proposition.</p></div></section>
+    <section id="fonctionnement" className="site-section"><div className="site-container"><h2>{sharedTime ? "Organiser les premières semaines et le suivi" : "Une mission RH cadrée avec le dirigeant"}</h2><ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">{steps.map(([h,p],i)=><li key={h} className="site-card p-6"><p className="site-eyebrow">0{i+1}</p><h3 className="text-xl font-semibold mb-3">{h}</h3><p className="text-muted-foreground">{p}</p></li>)}</ol><div className="site-actions"><Link className="site-inline-link" href={sharedTime ? "/drh-externalise" : "/drh-externalise/temps-partage"}>{sharedTime ? "Voir l’offre de direction RH externalisée" : "Approfondir le fonctionnement du temps partagé"}</Link></div></div></section>
+    <section id="budget" className="site-section bg-iter-light"><div className="site-container site-copy max-w-4xl"><h2>{sharedTime ? "Définir la présence, la disponibilité et les honoraires" : "Un budget lié au périmètre de la mission"}</h2><p>{HR_TERMS}</p><p>{sharedTime ? "Précisez ce qui est réalisé pendant les plages prévues, ce qui peut être traité entre deux présences et comment une demande supplémentaire est chiffrée. Les déplacements, les relais et la préparation des réunions font partie des points à cadrer." : "Pour comparer les options, examinez aussi les ressources internes nécessaires, les prestations spécialisées et le temps de présence attendu. Un accompagnement à temps partagé et un poste à temps plein ne couvrent pas automatiquement le même besoin."}</p><Link href="/contact#drh" className="site-button site-button-primary">Décrire mon périmètre RH</Link></div></section>
+    <section className="site-section"><div className="site-container max-w-4xl"><HRExpert /><div className="site-copy mt-8"><h2>Des rôles distincts, une coordination utile</h2><p>Le DRH accompagne l’organisation et les équipes. Le DAF éclaire le budget, la masse salariale et les arbitrages financiers. Une mission RH peut être définie indépendamment de notre <Link href="/daf-externalise">direction financière externalisée</Link>.</p><p>Les sujets de droit du travail, de paie et de conformité nécessitant une compétence spécialisée sont coordonnés avec les professionnels concernés. Le périmètre de chacun doit être explicite.</p></div></div></section>
+    <section className="site-section bg-iter-light"><div className="site-container"><h2>Approfondir votre besoin RH</h2><div className="grid sm:grid-cols-2 gap-5 mt-8">{HR_LINKS.map(x=><Link key={x.href} href={x.href} className="site-card p-6"><h3 className="text-xl font-semibold mb-3">{x.label} ↗</h3><p className="text-muted-foreground">{x.description}</p></Link>)}</div><div className="site-actions"><Link className="site-inline-link" href="/ressources/blog/drh-externalise-quand-et-pourquoi">Quand structurer votre fonction RH ?</Link><Link className="site-inline-link" href="/ressources/blog/daf-drh-externalises-synergie">Coordonner le DAF et le DRH</Link></div></div></section>
+    <section id="questions" className="site-section"><div className="site-container max-w-4xl"><h2>Questions fréquentes</h2><div className="space-y-3 mt-8">{faq.map(x=><details key={x.question} className="site-card p-5"><summary className="font-semibold cursor-pointer">{x.question}</summary><p className="mt-4 text-muted-foreground">{x.answer}</p></details>)}</div></div></section>
+  </PageLayout>;
+}

@@ -109,3 +109,20 @@ html[lang="fr"] .site-expert-compact p { font-size: .8125rem; line-height: 1.5; 
 
 /* Financial formulas remain readable without widening the mobile page. */
 html[lang="fr"] .prose-iter-blog pre { max-width: 100%; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--site-paper); border: 1px solid var(--site-border); border-radius: var(--site-radius); padding: 20px; margin-block: 24px; }
+
+/* Finance leads; RH is an explicit, secondary route. */
+html[lang="fr"] .home-hero-layout { display:grid; grid-template-columns: minmax(0,2fr) minmax(250px,1fr); gap:48px; align-items:center; }
+html[lang="fr"] .home-rh-card { padding:24px; background:#f4f1ff; border:1px solid #d8cff8; border-radius:var(--site-radius,16px); color:#2b2148; }
+html[lang="fr"] .home-rh-card h2 { color:#2b2148; font-size:23px; line-height:1.2; margin:0; }
+html[lang="fr"] .home-rh-card p { color:#554970; font-size:15px; margin:12px 0; }
+html[lang="fr"] .home-rh-card a { color:#4323b5; display:inline-flex; align-items:center; gap:8px; min-height:44px; font-size:14px; font-weight:600; text-decoration:underline; text-underline-offset:4px; }
+@media(max-width:767px) {
+ html[lang="fr"] .home-finance-first.site-hero { padding-top:96px; padding-bottom:32px; }
+ html[lang="fr"] .home-hero-layout { display:flex; flex-direction:column; gap:20px; align-items:stretch; }
+ html[lang="fr"] .home-finance-first h1 { font-size:32px; line-height:1.1; }
+ html[lang="fr"] .home-hero-layout > div > p { margin-top:16px; font-size:16px; line-height:1.45; }
+ html[lang="fr"] .home-hero-layout > div > div { margin-top:18px; gap:10px; }
+ html[lang="fr"] .home-rh-card { padding:12px 16px; }
+ html[lang="fr"] .home-rh-card h2 { font-size:17px; line-height:1.25; }
+ html[lang="fr"] .home-rh-card p { display:none; }
+}

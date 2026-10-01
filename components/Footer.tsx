@@ -75,6 +75,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               height={14}
               className="mb-3 brightness-0 invert"
             />
+
             <p className="text-white/70 text-xs sm:text-sm leading-relaxed mb-3">
               {content.description}
             </p>
@@ -125,6 +126,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                   </li>
                 ))}
               </ul>
+            {locale === "fr" && <nav aria-label="Direction RH" className="mt-5 text-xs text-white/80"><Link href="/drh-externalise" className="block py-1">Direction RH externalisée</Link><Link href="/drh-externalise/temps-partage" className="block py-1">Fonctionnement du temps partagé RH</Link></nav>}
             </div>
           )}
 

@@ -1,3 +1,5 @@
+import HRExpert from "@/components/HRExpert";
+import ServiceHero from "@/components/design/ServiceHero";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Locale } from "@/lib/i18n";
@@ -7,8 +9,6 @@ import { faqPageSchema } from "@/lib/schemas";
 import { editorialWebPageSchema, HR_AUTHOR } from "@/lib/schemas/editorial";
 import PageByline from "@/components/PageByline";
 import PageLayout from "@/components/PageLayout";
-import Breadcrumb from "@/components/Breadcrumb";
-import CTASection from "@/components/CTASection";
 
 /**
  * Dedicated HR service page renderer (TICKET 1).
@@ -38,7 +38,6 @@ export default function HRServicePage({
     name: content.h1,
     description: content.meta.description,
     provider: { "@id": "https://www.iteradvisors.com/#organization" },
-    areaServed: ["Barcelone", "Paris", "Toulouse"],
     url: `https://www.iteradvisors.com${path}`,
     serviceType: "Human Resources outsourcing",
   };
@@ -46,30 +45,14 @@ export default function HRServicePage({
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-      {/* Hero */}
-      <section className="site-hero bg-background pt-32 pb-16">
-        <div className="container max-w-4xl">
-          <Breadcrumb
-            locale={locale}
-            items={[
-              { label: "Services", href: "/services" },
-              { label: content.breadcrumb },
-            ]}
-          />
-          <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mt-6">
-            {content.h1}
-          </h1>
-          <PageByline locale={locale} author={HR_AUTHOR} className="mt-4" />
-          {content.intro.map((p, i) => (
-            <p key={i} className="text-lg text-muted-foreground leading-relaxed mt-6">
-              {p}
-            </p>
-          ))}
-        </div>
-      </section>
+      <ServiceHero family="rh" title={content.h1} label={content.breadcrumb} eyebrow="Iter Advisors · Services RH" lead={content.intro[0]} intro={content.intro[1]}
+        primary={{ href: `/contact#${content.slug}`, label: "Présenter mon besoin RH" }} secondary={{ href: "#methode", label: "Voir la méthode" }}
+        summary={[{ label: "Votre besoin", value: content.breadcrumb }, { label: "Les travaux", value: "Un périmètre défini avec votre équipe" }, { label: "Le budget", value: "Sur devis" }]}
+        proof={<PageByline locale={locale} author={HR_AUTHOR} dateModified="2026-10-01" className="mt-4" />}
+        navigation={[{ id: "perimetre", label: "Le périmètre" }, { id: "methode", label: "La méthode" }, { id: "budget", label: "Le budget" }]} />
 
       {/* What is */}
-      <section className="site-section bg-muted/30 py-20">
+      <section id="perimetre" className="site-section bg-muted/30 py-20">
         <div className="container max-w-4xl">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
             {content.whatIs.heading}
@@ -110,7 +93,7 @@ export default function HRServicePage({
       </section>
 
       {/* Approach */}
-      <section className="site-section bg-muted/30 py-20">
+      <section id="methode" className="site-section bg-muted/30 py-20">
         <div className="container max-w-4xl">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
             {content.approach.heading}
@@ -151,7 +134,7 @@ export default function HRServicePage({
       </section>
 
       {/* Pricing */}
-      <section className="site-section bg-muted/30 py-20">
+      <section id="budget" className="site-section bg-muted/30 py-20">
         <div className="container max-w-4xl">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
             {content.pricing.heading}
@@ -249,7 +232,7 @@ export default function HRServicePage({
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-8">{content.cta.body}</p>
           <Link
-            href="/contact"
+            href={`/contact#${content.slug}`}
             className="site-button site-button-primary inline-flex items-center gap-2 px-8 py-3 bg-iter-chartreuse text-iter-dark font-semibold rounded-full hover:brightness-105 transition-all"
           >
             {content.cta.buttonLabel}
@@ -258,7 +241,7 @@ export default function HRServicePage({
         </div>
       </section>
 
-      <CTASection locale={locale} />
+      <section className="site-section"><div className="site-container max-w-4xl"><HRExpert /></div></section>
 
       <script
         type="application/ld+json"
@@ -274,6 +257,7 @@ export default function HRServicePage({
               description: content.meta.description,
               locale,
               author: HR_AUTHOR,
+              dateModified: "2026-10-01",
             })
           ),
         }}

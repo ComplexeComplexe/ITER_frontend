@@ -1,10 +1,12 @@
+import HRExpert from "@/components/HRExpert";
 import FinanceExpert from "@/components/FinanceExpert";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 
 /** Shared French commercial-page heading. Content and anchors remain page-specific. */
-export default function ServiceHero({ title, label, eyebrow, lead, intro, primary, secondary, summary, proof, navigation }: {
+export default function ServiceHero({ title, label, eyebrow, lead, intro, primary, secondary, summary, proof, navigation, family = "finance" }: {
+  family?: "finance" | "rh";
   title: string;
   label: string;
   eyebrow: string;
@@ -19,7 +21,7 @@ export default function ServiceHero({ title, label, eyebrow, lead, intro, primar
   return <>
     <section className="site-hero site-service-hero">
       <div className="site-container">
-        <Breadcrumb locale="fr" items={[{ label: "Services finance", href: "/services" }, { label }]} />
+        <Breadcrumb locale="fr" items={[{ label: family === "rh" ? "Direction RH" : "Services finance", href: family === "rh" ? "/drh-externalise" : "/services" }, { label }]} />
         <div className="site-hero-grid">
           <div data-speakable="true">
             <p className="site-eyebrow">{eyebrow}</p>
@@ -31,7 +33,7 @@ export default function ServiceHero({ title, label, eyebrow, lead, intro, primar
               <Link href={secondary.href} className="site-button site-button-secondary">{secondary.label}<span aria-hidden="true">↓</span></Link>
             </div>
             {proof}
-            <FinanceExpert compact />
+            {family === "rh" ? <HRExpert compact /> : <FinanceExpert compact />}
           </div>
           <aside className="site-brief" aria-label="La mission en bref">
             <p className="site-eyebrow">La mission en bref</p>

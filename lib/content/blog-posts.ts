@@ -132,8 +132,8 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "daf-drh-externalises-synergie": {
       meta: {
-        title: "DAF + DRH externalisés : la combinaison gagnante | Iter",
-        description: "Découvrez pourquoi combiner un DAF et un DRH externalisés transforme la gestion des startups et PME. Synergies concrètes, économies et étude de cas.",
+        title: "DAF et DRH : coordonner les responsabilités | Iter",
+        description: "Coordonner les besoins humains et les décisions financières : rôles du DAF et du DRH, budget, recrutement et paie.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -141,14 +141,15 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogLabel: "Blog",
         blogHref: "/ressources/blog",
       },
-      h1: "DAF + DRH externalisés : pourquoi combiner les deux fonctions change tout",
+      h1: "DAF et DRH externalisés : coordonner les responsabilités",
       publishedDate: "2026-03-28",
-      author: "Sébastien Doat",
+      updatedDate: "2026-10-01",
+      author: "Benjamin Ziza",
       category: "thought-leadership",
       htmlContent: undefined,
       content: [],
       // Full body is served by the dedicated route; the catalog is metadata only.
-      readingMinutes: 10,
+      readingMinutes: 4,
     },
     "cas-etude-happy-scribe": {
       meta: {
@@ -1429,35 +1430,29 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     "drh-externalise-quand-et-pourquoi": {
       meta: {
         title: "DRH externalisé : quand externaliser les RH | Iter Advisors",
-        description: "À partir de 10 salariés, pendant une hyper-croissance ou en cas de litige, pourquoi externaliser le DRH plutôt que recruter. Coût, périmètre, ROI.",
+        description: "Quand faire appel à un DRH externalisé ? Signaux de besoin, alternatives, responsabilités et questions pour cadrer une mission adaptée à votre équipe.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "DRH externalisé : quand et pourquoi ?",
+      updatedDate: "2026-10-01",
       publishedDate: "2026-05-11",
       author: "Benjamin Ziza",
       category: "rh-paie",
-      htmlContent: `<p>La plupart des startups externalisent rapidement leur comptabilité (expert-comptable) et leur finance (DAF). Mais beaucoup oublient une fonction critique : les ressources humaines. Or, les problèmes RH — paie erronée, litiges prud'homaux, turnover incontrôlé — peuvent coûter aussi cher que des problèmes financiers.</p>
-<h2 id="quand">Quand externaliser le DRH ?</h2>
-<p><strong>Seuil n°1 : 10 salariés.</strong> À 10 personnes, la paie devient complexe (congés, absences, variables), le droit du travail s'applique pleinement (CSE obligatoire à 11), et les premières tensions RH apparaissent.</p>
-<p><strong>Seuil n°2 : croissance rapide.</strong> Si vous prévoyez de doubler d'effectifs en 12 mois, vous avez besoin d'un RH pour structurer le recrutement, l'onboarding, et la culture.</p>
-<p><strong>Seuil n°3 : premiers départs / litiges.</strong> Un départ conflictuel, une mise au pied du mur prud'homal, ou un taux de turnover &gt; 20% = il est temps d'appeler un expert.</p>
-<p><strong>Seuil n°4 : internationalisation.</strong> Recruter en Espagne, gérer des expatriés, ou structurer une équipe distribuée nécessite une expertise RH pointue.</p>
-<h2 id="pourquoi">Pourquoi externaliser plutôt qu'embaucher ?</h2>
-<p><strong>Coût.</strong> Un DRH salarié senior coûte 70-100K€ brut annuel (charges incluses : 100-140K€). Un DRH externalisé coûte 2 000-4 000 €/mois (24-48K€/an) — soit 50 à 65% de moins cher.</p>
-<p><strong>Flexibilité.</strong> Vous passez de 2 jours/semaine à 4 jours selon vos besoins — sans recrutement ni licenciement.</p>
-<p><strong>Expertise cumulée.</strong> Un DRH externalisé travaille avec 10-15 entreprises par an. Il a vu plus de situations qu'un DRH interne en 5 ans.</p>
-<p><strong>Continuité à organiser.</strong> Le cabinet prévoit une passation et recherche un relais adapté en cas d’indisponibilité. Les modalités et délais sont précisés dans la mission.</p>
-<h2 id="perimetre">Ce que couvre un DRH externalisé</h2>
-<ul>
-<li><a href="/services/gestion-paie-charges-sociales">Paie &amp; administration</a> : bulletins, DSN, congés, absences, entrées/sorties</li>
-<li><a href="/services/recrutement-talent-acquisition">Recrutement</a> : définition des profils, sourcing, entretiens, intégration</li>
-<li><a href="/services/conformite-droit-travail">Conformité</a> : règlement intérieur, CSE, accords d'entreprise, litiges</li>
-<li><a href="/services/formation-developpement">Développement des compétences</a> : plans de formation, évaluations</li>
-<li>Culture RH : onboarding, engagement, satisfaction, retention</li>
-</ul>
-<h2 id="experience">Notre expérience</h2>
-<p>Nous accompagnons nos clients sur le volet RH depuis 2022. Nos DRH externalisés gèrent la paie de plus de 200 salariés, ont accompagné 50+ recrutements, et réduit le turnover de nos clients de 25% en moyenne.</p>
-<p><a href="/drh-externalise">Découvrir nos missions DRH externalisé</a></p>`,
+      htmlContent: `<p>Le besoin d’une direction RH dépend de votre organisation, des sujets à traiter et des ressources disponibles. Un effectif, à lui seul, ne suffit pas à décider de recruter ou d’externaliser.</p>
+<h2 id="quand">Quand envisager une direction RH ?</h2>
+<p>Le dirigeant passe une part importante de son temps à arbitrer les recrutements, les questions des managers et les échanges avec les prestataires. Les responsabilités sont floues, les décisions se répètent ou les intégrations sont improvisées : ce sont des situations à examiner.</p>
+<p>Une croissance de l’équipe, un changement d’organisation ou une activité dans plusieurs pays peut aussi demander de revoir les pratiques. Les obligations applicables doivent être vérifiées avec les professionnels compétents, indépendamment du choix d’un DRH interne ou externe.</p>
+<h2 id="alternatives">DRH interne, temps partagé ou prestation spécialisée ?</h2>
+<p>Une présence quotidienne durable peut justifier un poste interne. Un besoin régulier de pilotage, avec des relais dans l’équipe, peut se prêter au <a href="/drh-externalise/temps-partage">DRH à temps partagé</a>. Pour une tâche isolée, une prestation de recrutement, de paie ou de conseil juridique peut suffire.</p>
+<p>Comparez les options à périmètre équivalent : présence, disponibilité, responsabilité, livrables et compétences. Un prix mensuel inférieur à un salaire ne démontre pas une économie si la couverture du besoin est différente.</p>
+<h2 id="perimetre">Distinguer les rôles</h2>
+<ul><li><a href="/services/recrutement-talent-acquisition">Recrutement et intégration</a> : cadrer les postes, organiser la sélection et préparer les arrivées.</li><li><a href="/services/gestion-paie-charges-sociales">Paie et coordination</a> : distinguer collecte, production, contrôle et validation.</li><li><a href="/services/conformite-droit-travail">Conformité et relations sociales</a> : identifier les sujets nécessitant un professionnel spécialisé.</li><li><a href="/services/formation-developpement">Développement des compétences</a> : relier les actions aux besoins des équipes.</li></ul>
+<h2 id="cadrage">Les questions à poser avant de choisir</h2>
+<ul><li>Quelles décisions et quels livrables attendons-nous ?</li><li>Qui intervient, avec quel rôle et quelles compétences ?</li><li>Quel rythme est prévu et comment se traitent les demandes entre deux interventions ?</li><li>Qui produit la paie et qui traite les questions juridiques ?</li><li>Quel budget complet, quelle durée, quel préavis et quelle passation ?</li></ul>
+<p>Les réponses doivent figurer dans la proposition. Le cadrage peut conduire à réduire ou à réorienter le besoin plutôt qu’à externaliser toute la fonction.</p>
+<h2 id="interlocuteur">Identifier l’interlocuteur et les preuves</h2>
+<p>Consultez le <a href="/a-propos/borith-biv">profil de Borith Biv, Partner Capital Humain</a>, et demandez des exemples de travaux correspondant à votre situation. Un témoignage financier du cabinet ne démontre pas, à lui seul, une mission RH.</p>
+<p><a href="/drh-externalise">Découvrir notre direction RH externalisée</a> ou <a href="/contact#drh">présenter votre besoin RH</a>.</p>`,
       content: [],
     },
     "payfit-vs-silae-comparatif-pme": {
@@ -1467,7 +1462,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "PayFit vs Silae vs malibou : quel logiciel de paie choisir ?",
-      updatedDate: "2026-09-13",
+      updatedDate: "2026-10-01",
       publishedDate: "2026-05-11",
       author: "Benjamin Ziza",
       category: "rh-paie",
@@ -1494,7 +1489,8 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <p>Avant la bascule, faites rapprocher les historiques et les soldes, valider les accès et prévoir le contrôle de la première paie. Le <a href="/services/gestion-paie-charges-sociales">pilotage de la paie et des charges sociales</a> reste un processus à organiser, quel que soit le logiciel.</p>
 <p>Voir les fiches <a href="/ressources/outils/payfit">PayFit</a>, <a href="/ressources/outils/silae">Silae</a> et <a href="/ressources/outils/malibou">malibou</a>.</p>
 <h2 id="sources">Sources et limites</h2>
-<p>Documentation consultée le 13 septembre 2026 : <a href="https://payfit.com/fr/">PayFit</a>, <a href="https://www.silae.fr/">Silae</a> et <a href="https://www.malibou.com/">malibou</a>. Cette grille ne promet ni zéro erreur ni économie chiffrée. Faites confirmer couverture, tarifs et engagements par les prestataires sur votre dossier.</p>`,
+<p>Documentation consultée le 13 septembre 2026 : <a href="https://payfit.com/fr/">PayFit</a>, <a href="https://www.silae.fr/">Silae</a> et <a href="https://www.malibou.com/">malibou</a>. Cette grille ne promet ni zéro erreur ni économie chiffrée. Faites confirmer couverture, tarifs et engagements par les prestataires sur votre dossier.</p>
+<p>Au-delà du logiciel et de la paie, vous pouvez avoir besoin de <a href="/drh-externalise">piloter votre fonction RH</a> : recrutement, organisation et accompagnement des managers. Le périmètre doit être distingué de la seule production des bulletins.</p>`,
       content: [],
     },
     "impot-revenu-espagne": {
