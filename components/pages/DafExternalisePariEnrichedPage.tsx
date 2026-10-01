@@ -274,8 +274,9 @@ export default function DafExternalisePariEnrichedPage({
               </ul>
             </div>
             <p className="text-xs text-muted-foreground mt-8 pt-8 border-t">
-              Les chiffres et références citées dans cet article proviennent de sources publiques officielles.
-              Nous nous engageons à maintenir la pertinence et l'exactitude de ces informations.
+              Les tarifs, le périmètre d’accompagnement et les chiffres du cabinet sont des données déclarées par Iter Advisors.
+              Les repères de marché restent indicatifs et dépendent des profils et des hypothèses de comparaison.
+              Les organismes ci-dessus sont mentionnés comme références générales ; ils ne valident pas chaque chiffre de cette page.
             </p>
           </div>
         </section>
