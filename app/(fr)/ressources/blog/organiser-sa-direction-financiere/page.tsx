@@ -1,5 +1,6 @@
 
 
+import Link from 'next/link';
 import { Metadata } from 'next';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { InlineCta, ProseTable } from '@/components/blog';
@@ -42,7 +43,7 @@ export default function OrganiserDirectionFinancierePage() {
         url: "/a-propos/benjamin-ziza",
       }}
       readingTime={5}
-      dateModified="2026-09-30"
+      dateModified="2026-10-01"
       heroImage="/images/blog/covers/organiser-sa-direction-financiere.svg"
       toc={[
         { id: "pourquoi-structure", label: "1. Pourquoi structurer votre finance ?" },
@@ -114,6 +115,7 @@ export default function OrganiserDirectionFinancierePage() {
       <p>Comparez les options sur le même périmètre : disponibilité, compétences, outils, coordination et continuité. Les <a href="/daf-externalise/tarifs">formules récurrentes Iter</a> vont de 3 000 à 8 000 € HT par mois. Ce montant ne représente pas le coût total de votre fonction finance : comptabilité, ressources internes et projets distincts restent à examiner.</p>
       <InlineCta title="Organiser votre fonction finance" body="Présentez vos outils, vos échéances et les responsabilités déjà couvertes. Le premier échange sert à cadrer le besoin ; une analyse approfondie et son plan d’action sont définis dans une mission sur devis." ctaLabel="Décrire mon besoin d’organisation" ctaHref="/contact#organisation" />
       <p>Consultez notre <a href="/services/gestion-financiere-externalisee">accompagnement en gestion financière externalisée</a> pour les travaux d’organisation, les livrables et les modalités de suivi.</p>
+      <p>Si le besoin porte sur un nouveau poste, commencez par définir ses responsabilités avant de <Link href="/services/recrutement-talent-acquisition">recruter un profil finance</Link>. Le recrutement et le pilotage financier sont deux périmètres distincts.</p>
     </BlogPostPageRefonte>
   );
 }

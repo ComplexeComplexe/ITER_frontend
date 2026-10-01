@@ -132,6 +132,7 @@ export default function ResourcesPageFR({ cmsNavigation }: { cmsNavigation?: Cms
           </div>
         </div>
       </section>
+      <section className="site-section"><div className="site-container site-copy"><h2>Également, structurer votre fonction RH</h2><p>Identifier les responsabilités et choisir le bon accompagnement pour vos équipes.</p><Link href="/ressources/blog/drh-externalise-quand-et-pourquoi" className="site-inline-link">Quand faire appel à un DRH externalisé ?</Link></div></section>
       <CTASection locale="fr" />
     </PageLayout>
   );

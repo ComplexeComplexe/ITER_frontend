@@ -1,5 +1,6 @@
 "use client";
 
+import { recordServiceNavigation } from "@/lib/analytics/serviceNavigation";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -19,6 +20,18 @@ export default function Header({
   cmsNavigation?: NavItem[];
 }) {
   const pathname = usePathname();
+  useEffect(() => {
+    if (locale !== "fr") return;
+    const onClick = (event: MouseEvent) => {
+      const anchor = event.target instanceof Element ? event.target.closest("a[href]") : null;
+      if (!anchor) return;
+      const placement = anchor.closest("[data-journey]")?.getAttribute("data-journey") ?? (anchor.closest("header") ? "navigation" : anchor.closest("footer") ? "footer" : "content");
+      recordServiceNavigation(anchor.getAttribute("href") ?? "", placement);
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, [locale]);
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
@@ -58,7 +71,7 @@ export default function Header({
         ? !item.href.startsWith("/en/") && !item.href.startsWith("/es/")
         : item.href === localePrefix || item.href.startsWith(`${localePrefix}/`)
     );
-  const nav = cmsLooksRightLocale ? cmsNavigation! : navigation[locale];
+  const nav = locale === "fr" ? navigation.fr : cmsLooksRightLocale ? cmsNavigation! : navigation[locale];
   const homePath = getHomePath(locale);
   const isHome = pathname === "/" || pathname === "/en" || pathname === "/es";
 
@@ -121,7 +134,7 @@ export default function Header({
           : "bg-transparent"
       }`}
     >
-      <div className="container grid grid-cols-[1fr_auto] lg:grid-cols-[1fr_auto_1fr] items-center h-16 lg:h-[72px] gap-4">
+      <div className="container grid grid-cols-[1fr_auto] xl:grid-cols-[1fr_auto_1fr] items-center h-16 lg:h-[72px] gap-4">
         {/* Logo */}
         <Link href={homePath} className="flex items-center gap-2 group relative z-10 min-w-0">
           <Image
@@ -136,7 +149,7 @@ export default function Header({
         </Link>
 
         {/* Desktop Nav — centré */}
-        <nav className="hidden lg:flex items-center justify-center gap-0.5 min-w-0">
+        <nav className="hidden xl:flex items-center justify-center gap-0.5 min-w-0">
           {mainNav.map((item, i) => (
             <div
               key={item.href}
@@ -146,6 +159,9 @@ export default function Header({
                 if (item.children) setOpenDropdown(i);
               }}
               onMouseLeave={() => scheduleClose()}
+              onFocusCapture={() => { cancelClose(); if (item.children) setOpenDropdown(i); }}
+              onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setOpenDropdown(null); }}
+              onKeyDown={(event) => { if (event.key === "Escape") setOpenDropdown(null); }}
             >
               <Link
                 href={item.href}
@@ -167,8 +183,9 @@ export default function Header({
               </Link>
 
               {/* Dropdown / Mega-menu */}
-              {item.children && openDropdown === i && (
+              {item.children && (
                 <div
+                  hidden={openDropdown !== i}
                   className={`absolute top-full ${item.megaMenu ? 'left-1/2 -translate-x-1/2' : 'left-0'} pt-2`}
                   onMouseEnter={cancelClose}
                   onMouseLeave={scheduleClose}
@@ -233,7 +250,7 @@ export default function Header({
 
         {/* Right side: lang + CTA (desktop) + menu toggle (mobile) */}
         <div className="flex items-center justify-end gap-3 min-w-0">
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3">
             {/* Language Switcher — click-driven (mouseenter caused flicker on the
                 ~8px gap between trigger and panel; outside-click + Escape close
                 are handled by the existing useEffect above). The panel uses
@@ -306,7 +323,7 @@ export default function Header({
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
-            className="lg:hidden p-2 text-white relative z-10"
+            className="xl:hidden p-2 text-white relative z-10"
             aria-label={locale === "en" ? (mobileOpen ? "Close menu" : "Open menu") : locale === "es" ? (mobileOpen ? "Cerrar el menú" : "Abrir el menú") : (mobileOpen ? "Fermer le menu" : "Ouvrir le menu")}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -322,7 +339,7 @@ export default function Header({
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-iter-violet border-t border-white/10"
+            className="xl:hidden bg-iter-violet border-t border-white/10"
           >
             <nav className="container py-4 flex flex-col gap-1">
               {mainNav.map((item, i) => (

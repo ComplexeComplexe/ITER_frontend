@@ -39,6 +39,10 @@ describe("Contact qualification and attribution", () => {
     expect(screen.getByText(/Votre message a bien été envoyé/)).toBeInTheDocument();
   });
   it.each([
+    ["drh", "rh", "/drh-externalise"],
+    ["drh-temps-partage", "rh", "/drh-externalise/temps-partage"],
+    ["borith-biv", "rh", "/a-propos/borith-biv"],
+    ["gestion-paie-charges-sociales", "rh", "/services/gestion-paie-charges-sociales"],
     ["transition", "transition", "/daf-externalise/transition"],
     ["comptabilite", "accounting", "/services/comptabilite-externalisation"],
   ])("preserves the %s service need through submission and conversion", async (context, need, originPage) => {
@@ -47,6 +51,7 @@ describe("Contact qualification and attribution", () => {
     vi.stubGlobal("fetch", fetchMock);
     const { container } = render(<ContactPage locale="fr" />);
     expect(screen.getByLabelText(/Votre priorité/)).toHaveValue(need);
+    if (need === "rh") expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Parlons de votre organisation RH");
     fillAndSubmit(container);
     await waitFor(() => expect(events()).toHaveLength(1));
     expect(JSON.parse(fetchMock.mock.calls[0][1].body)).toMatchObject({ data: { challenge: need, originPage } });

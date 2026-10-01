@@ -10,7 +10,7 @@ export const homeContent = {
       // la portaient (accueil, pilier, /services, /a-propos) : Google
       // choisissait laquelle classer, et ce n'était pas toujours le pilier.
       // Chaque page reprend ici son intention propre.
-      title: "Iter Advisors | Direction financière et RH externalisée",
+      title: "Iter Advisors | Direction financière externalisée",
       description:
         "Iter Advisors : DAF externalisé pour PME et startups (pilotage, cash, reporting, levée de fonds). Intervention flexible à Barcelone, Paris, Toulouse.",
     },

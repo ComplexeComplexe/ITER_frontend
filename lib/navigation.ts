@@ -30,11 +30,10 @@ export interface FooterContent {
 
 const navFr: NavItem[] = [
   {
-    title: "Expertises",
+    title: "DAF externalisé",
     href: "/daf-externalise",
     children: [
       { text: "Direction Financière (DAF)", href: "/daf-externalise/metier" },
-      { text: "Ressources Humaines (DRH)", href: "/drh-externalise" },
       { text: "M&A & Levée de fonds", href: "/services/accompagnement-levee-de-fond" },
     ],
   },
@@ -49,6 +48,7 @@ const navFr: NavItem[] = [
       { text: "Comptabilité externalisée", href: "/services/comptabilite-externalisation" },
     ],
   },
+  { title: "DRH à temps partagé", href: "/drh-externalise" },
   {
     title: "Ressources",
     href: "/ressources",

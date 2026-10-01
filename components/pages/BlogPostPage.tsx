@@ -1,3 +1,4 @@
+import HRExpert from "@/components/HRExpert";
 import FinanceExpert from "@/components/FinanceExpert";
 import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
@@ -214,7 +215,7 @@ export default function BlogPostPage({
                 ))
               )}
       </ArticleBodyLayout>
-      {locale === "fr" && <div className="container max-w-4xl"><FinanceExpert /></div>}
+      {locale === "fr" && <div className="container max-w-4xl">{slug?.includes("drh-externalise-quand-et-pourquoi") ? <HRExpert /> : <FinanceExpert />}</div>}
 
       {locale !== "fr" && <CTASection locale={locale} />}
 
