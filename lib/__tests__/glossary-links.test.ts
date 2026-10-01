@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { linkGlossaryTerms, htmlMentionsGlossary } from "../glossary-links";
+import { getRelatedGlossary, linkGlossaryTerms, htmlMentionsGlossary } from "../glossary-links";
 
 describe("linkGlossaryTerms", () => {
   it("lie la première occurrence d'un terme, et seulement la première", () => {
@@ -39,5 +39,29 @@ describe("htmlMentionsGlossary", () => {
   it("détecte un terme dans le texte mais pas dans les balises", () => {
     expect(htmlMentionsGlossary("<p>Notre MRR double.</p>", "arr-mrr")).toBe(true);
     expect(htmlMentionsGlossary('<img alt="EBITDA">', "ebitda")).toBe(false);
+  });
+});
+
+// A merged definition remains discoverable without linking through its redirect.
+import { getGlossaryPages } from "../content/glossary-entries";
+import { glossaryHref } from "../path-localization";
+import nextConfig from "../../next.config";
+
+describe("DAF definition consolidation", () => {
+  it("redirects the retired French definition directly to the retained role page", async () => {
+    const redirects = await nextConfig.redirects!();
+    expect(redirects.find(rule => rule.source === "/ressources/glossaire/daf")).toMatchObject({
+      destination: "/daf-externalise/metier",
+      statusCode: 301,
+    });
+    expect(getGlossaryPages("fr").some(page => page.slug === "daf")).toBe(false);
+  });
+
+  it("keeps related definitions linked to the destination and preserves English routes", () => {
+    const related = getRelatedGlossary("fr", "cfo");
+    expect(related.some(page => page.slug === "daf")).toBe(true);
+    expect(glossaryHref("fr", "daf")).toBe("/daf-externalise/metier");
+    expect(glossaryHref("en", "cfo")).toBe("/en/ressources/glossaire/cfo");
+    expect(glossaryHref("fr", "ebitda")).toBe("/ressources/glossaire/ebitda");
   });
 });

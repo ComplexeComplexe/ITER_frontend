@@ -55,7 +55,7 @@ export function getRelatedGlossary(locale: Locale, slug: string): { slug: string
     .map((s) => {
       // Cas croisé EN : la fiche BFR anglaise vit sous le slug court `bfr`.
       const key = locale === "en" && s === "besoin-fonds-roulement-bfr" ? "bfr" : s;
-      const title = served.get(key);
+      const title = locale === "fr" && key === "daf" ? "DAF : définition, rôle et missions" : served.get(key);
       return title ? { slug: key, title } : null;
     })
     .filter((x): x is { slug: string; title: string } => x !== null)

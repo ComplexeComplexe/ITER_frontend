@@ -63,7 +63,10 @@ export default function GlossairePage({
   const t = content[locale];
   // Les fiches détaillées n'existent qu'en français et, depuis TRAFIC-01, en
   // anglais pour trois d'entre elles. L'espagnol n'en a aucune.
-  const fichesDetaillees = locale === "es" ? [] : getGlossaryPages(locale);
+  const fichesDetaillees = locale === "es" ? [] : [
+    ...getGlossaryPages(locale),
+    ...(locale === "fr" ? [{ slug: "daf", title: "DAF : définition, rôle et missions" }] : []),
+  ];
   const hasTerms = terms && terms.length > 0;
 
   return (

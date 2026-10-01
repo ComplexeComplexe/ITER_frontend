@@ -107,6 +107,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Consolidation FR : la définition et la fiche métier partagent une seule URL.
+      { source: "/ressources/glossaire/daf", destination: "/daf-externalise/metier", statusCode: 301 },
       // Mirror historical middleware redirects in the routing manifest.
       { source: "/en/ressources/blog/regimes-fiscaux-france-vs-espagne", destination: "/ressources/blog/regimes-fiscaux-france-vs-espagne", permanent: true },
       { source: "/es/services/cash-flow-forecast", destination: "/es/services/prevision-tesoreria", permanent: true },

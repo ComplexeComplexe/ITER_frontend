@@ -33,8 +33,8 @@ import {
 
 export const DAF_PILLAR_PATH = "/daf-externalise";
 export const DAF_PILLAR_PUBLISHED = "2026-05-17";
-export const DAF_PILLAR_MODIFIED = "2026-09-30";
-export const DAF_PILLAR_MODIFIED_LABEL = "30 septembre 2026";
+export const DAF_PILLAR_MODIFIED = "2026-10-01";
+export const DAF_PILLAR_MODIFIED_LABEL = "1er octobre 2026";
 
 export interface PillarMission {
   title: string;
@@ -76,9 +76,7 @@ const fmt = (n: number) => n.toLocaleString("fr-FR").replace(/ | /g, " ");
 
 export const dafPillar = {
   meta: {
-    // 56 caractères. Google réécrivait le title précédent en reprenant le H1 :
-    // les deux portent désormais la même promesse.
-    title: "DAF externalisé PME & startups : tarifs et missions 2026",
+    title: "DAF externalisé pour PME et startups | Iter Advisors",
     description: `Directeur financier senior 1 à 8 jours par mois, ${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT. ${FONDS_LEVES} levés par nos clients, démarrage en ${DELAIS.missionDemarree}, sans durée minimale, préavis de ${ENGAGEMENT.preavisJours} jours.`,
   },
   breadcrumbLabel: "DAF externalisé",
@@ -286,22 +284,11 @@ export const dafPillar = {
   },
 
   pricing: {
-    heading: "Tarifs 2026 : trois formules, un forfait mensuel",
-    intro: `De ${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois selon le profil engagé et le périmètre confié. Nous ne facturons pas à l'heure : le forfait couvre un périmètre de travail défini au cadrage, revu avec vous. Le volume de jours indiqué est une moyenne d'intervention observée, pas un forfait. Une levée de fonds n’est pas nécessaire pour être accompagné : pour une PME, la formule dépend des livrables, des entités et de la complexité.`,
-    tiers: FORMULES.map((f, index) => ({
-      name: f.nom,
-      volume: f.volumeIndicatif,
-      price: `${fmt(f.prixMin)} à ${fmt(f.prixMax)} € HT/mois`,
-      audience: ["PME : fiabiliser le cash et le reporting ; startup en Seed", "PME en croissance : budget et financement ; startup en Série A", "PME ou groupe multi-entités : gouvernance et projets complexes ; Série B et au-delà"][index],
-      profile: f.profil,
-    })),
-    barometer: {
-      heading: "Ce que nos clients paient réellement",
-      text: REPARTITION_CLIENTS_PAR_FORMULE.formulation,
-    },
-    economy: `Comparer deux budgets demande de préciser la disponibilité et le périmètre. Nos honoraires récurrents annualisés représentent ${fmt(FORMULES[0].prixMin * 12)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax * 12)} € HT, hors coûts additionnels prévus au devis. Notre repère interne pour un poste salarié est un ${COUT_DAF_SALARIE.base} de ${fmt(COUT_DAF_SALARIE.min)} à ${fmt(COUT_DAF_SALARIE.max)} € par an. Ce repère n’est pas une étude de marché : le salaire, les charges et les frais doivent être chiffrés pour votre recrutement. Le temps partagé et le temps plein ne couvrent pas la même disponibilité ; aucune économie ne s’applique automatiquement.`,
+    heading: "Quel budget prévoir pour votre DAF externalisé ?",
+    intro: `Les missions récurrentes Iter vont de ${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois. Le forfait couvre un périmètre et un niveau de séniorité définis au devis. Le budget dépend des livrables, du nombre d’entités et de la complexité de votre organisation.`,
+    scope: "Le premier échange sert à préciser les travaux attendus et la disponibilité nécessaire. Les missions de transition et les projets ponctuels font l’objet d’un chiffrage distinct.",
     engagement: ENGAGEMENT.formulation,
-    link: { href: "/daf-externalise/tarifs", label: "Ce qui est inclus dans chaque formule et comment se construit un devis" },
+    link: { href: "/daf-externalise/tarifs", label: "Voir les formules, les livrables inclus et les tarifs détaillés" },
   },
 
   why: {

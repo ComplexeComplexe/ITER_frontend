@@ -1,5 +1,7 @@
 "use client";
 
+import { glossaryHref } from "@/lib/path-localization";
+
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { GLOSSARY_PAGE_SLUGS } from "@/lib/content/glossary-entries";
@@ -95,10 +97,10 @@ export default function GlossaryLetterIndex({
             {/* SEO-AUD-0824 §3 — le titre n'était pas cliquable : les fiches
                 détaillées n'avaient aucun lien entrant. Elles n'existent qu'en
                 français, d'où la condition sur la locale. */}
-            {locale === "fr" && GLOSSARY_PAGE_SLUGS.has(term.slug) ? (
+            {locale === "fr" && (GLOSSARY_PAGE_SLUGS.has(term.slug) || term.slug === "daf") ? (
               <h2 className="text-xl font-semibold font-heading mb-3">
                 <Link
-                  href={`/ressources/glossaire/${term.slug}`}
+                  href={glossaryHref(locale, term.slug)}
                   className="text-foreground hover:text-iter-violet transition-colors"
                 >
                   {term.title}

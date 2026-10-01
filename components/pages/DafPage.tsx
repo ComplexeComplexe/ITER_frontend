@@ -1154,7 +1154,7 @@ export default function DafPage({
                   desc: "Comprendre la complémentarité entre les deux fonctions.",
                 },
                 {
-                  href: "/ressources/glossaire/daf",
+                  href: "/daf-externalise/metier",
                   title: "Glossaire : DAF (Directeur Administratif et Financier)",
                   desc: "Définition complète, missions et compétences clés.",
                 },
