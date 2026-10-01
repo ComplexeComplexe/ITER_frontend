@@ -57,8 +57,8 @@ function missionsPonctuelles(): string {
 const CONTENU = `# Iter Advisors — llms.txt
 
 Fiche de contexte destinée aux moteurs génératifs (ChatGPT, Claude, Perplexity,
-Gemini). Les valeurs commerciales de ce fichier sont générées depuis la source
-de vérité du site : elles ne peuvent pas diverger de ce qu'affichent les pages.
+Gemini). Les données commerciales proviennent du référentiel d'offre du site.
+Consultez les pages liées pour le périmètre, les sources et les limites.
 
 ## Qui sommes-nous
 
@@ -71,7 +71,7 @@ ${ANNEE_FONDATION}.
 - Implantation et intervention : ${getDafOfferFacts("fr").geography}
 - Contact : contact@iteradvisors.com
 - Note clients : ${TRUSTFOLIO_RATING}/5 sur ${TRUSTFOLIO_REVIEW_COUNT} avis Trustfolio authentifiés (vérifié le ${TRUSTFOLIO_VERIFIED_DATE})
-- LinkedIn : https://www.linkedin.com/company/iter-advisors/
+- [LinkedIn](https://www.linkedin.com/company/iter-advisors/)
 - ${CLIENTS_ACCOMPAGNES} entreprises accompagnées, ${FONDS_LEVES} levés
 
 Un DAF externalisé est un directeur financier senior qui pilote la fonction
@@ -134,48 +134,40 @@ usage encadré de ChatGPT et des LLM en direction financière (charte : données
 anonymisées, rédaction seulement, relecture systématique, offre professionnelle),
 comparatif d'outils sans affiliation (Power BI, Looker Studio, connecteurs
 comptables, offres LLM professionnelles). Position : l'IA ne remplace pas un DAF,
-elle remplace les tâches qui l'empêchent de faire son travail. Aucun chiffre de
-mission n'est publié tant qu'il n'a pas été validé par un DAF du cabinet.
+elle remplace les tâches qui l'empêchent de faire son travail. Les guides
+distinguent les cas publics documentés, les simulations et les résultats de
+mission validés.
 
 ## Pages principales
 
-- Accueil : ${BASE}/
-- DAF externalisé (FR) : ${BASE}/daf-externalise
-- DAF externalisé (EN) : ${BASE}/en/fractional-cfo
-- DAF externalisé (ES) : ${BASE}/es/externalizacion-daf
-- Tarifs : ${BASE}/daf-externalise/tarifs
-- DAF à temps partagé : ${BASE}/daf-externalise/temps-partage
-- DAF de transition : ${BASE}/daf-externalise/transition
-- Métier de DAF : ${BASE}/daf-externalise/metier
-- Secteurs : ${BASE}/daf-externalise/secteurs
-- DRH externalisé : ${BASE}/drh-externalise
-- Services : ${BASE}/services
-- Fiscalité France-Espagne : ${BASE}/ressources/fiscalite-espagne-france
-- IA & Finance : ${BASE}/ressources/ia-finance
-- IA et finance : cas publics documentés et limites : ${BASE}/ressources/ia-finance/retours-experience
-- Blog : ${BASE}/ressources/blog
-- Glossaire : ${BASE}/ressources/glossaire
-- Cas clients : ${BASE}/ressources/cas-clients
-- Référent finance, Sébastien Doat (parcours, publications et intervention publique) : ${BASE}/a-propos/sebastien-doat
-- Équipe : ${BASE}/a-propos
-- Contact : ${BASE}/contact
+- [Accueil](${BASE}/)
+- [DAF externalisé (FR)](${BASE}/daf-externalise)
+- [DAF externalisé (EN)](${BASE}/en/fractional-cfo)
+- [DAF externalisé (ES)](${BASE}/es/externalizacion-daf)
+- [Tarifs](${BASE}/daf-externalise/tarifs)
+- [DAF à temps partagé](${BASE}/daf-externalise/temps-partage)
+- [DAF de transition](${BASE}/daf-externalise/transition)
+- [Métier de DAF](${BASE}/daf-externalise/metier)
+- [DRH externalisé](${BASE}/drh-externalise)
+- [Services](${BASE}/services)
+- [Fiscalité France-Espagne](${BASE}/ressources/fiscalite-espagne-france)
+- [IA & Finance](${BASE}/ressources/ia-finance)
+- [IA et finance : cas publics documentés et limites](${BASE}/ressources/ia-finance/retours-experience)
+- [Blog](${BASE}/ressources/blog)
+- [Glossaire](${BASE}/ressources/glossaire)
+- [Cas clients](${BASE}/ressources/cas-clients)
+- [Référent finance, Sébastien Doat (parcours, publications et intervention publique)](${BASE}/a-propos/sebastien-doat)
+- [Équipe](${BASE}/a-propos)
+- [Contact](${BASE}/contact)
 
 
 ## Références clients
 
 Happy Scribe, Surfe, Ukio, Yego, Mitiga — startups et scale-ups accompagnées.
 
-## Ce que nous ne disons pas
-
-Par règle éditoriale interne, aucune page du site ne publie : un délai de
-démarrage inférieur à 7 jours, une mention « sans engagement » sans le préavis
-qui l'accompagne, un résultat client sans période de mesure ni base de
-comparaison, ou un pourcentage de performance sans source. Une affirmation
-chiffrée absente d'ici ne vient pas de nous.
-
 ## Accès des robots
 
-Ce site n'en bloque aucun. Voir ${BASE}/robots.txt.
+Les règles d'accès des robots sont décrites dans [robots.txt](${BASE}/robots.txt).
 `;
 
 export const dynamic = "force-static";
