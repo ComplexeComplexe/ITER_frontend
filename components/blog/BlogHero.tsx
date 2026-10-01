@@ -20,7 +20,7 @@ interface BlogHeroProps {
 /** Shared editorial heading; image only when the caller supplies a verified asset. */
 export default function BlogHero({ image, imageAlt, category, title, dek, author, readingTime, dateModified, locale, articleUrl }: BlogHeroProps) {
   return (
-    <section className="bg-background pt-6 pb-8 lg:pb-12">
+    <section className="site-hero site-hero-editorial bg-background pt-6 pb-8 lg:pb-12">
       <div className="container max-w-6xl">
         <div className="max-w-3xl">
           {category && <span className="mb-4 inline-flex rounded-full bg-iter-violet/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-iter-violet">{category}</span>}

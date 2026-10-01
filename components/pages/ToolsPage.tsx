@@ -88,7 +88,7 @@ function CategorySection({
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: ti * 0.06 }}
-                className="group relative flex flex-col justify-between p-6 rounded-2xl border border-border/50 bg-background hover:border-iter-violet/30 hover:shadow-lg hover:shadow-iter-violet/5 transition-all duration-300"
+                className="site-card group relative flex flex-col justify-between p-6 rounded-2xl border border-border/50 bg-background hover:border-iter-violet/30 hover:shadow-lg hover:shadow-iter-violet/5 transition-all duration-300"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
@@ -135,7 +135,7 @@ export default function ToolsPage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}

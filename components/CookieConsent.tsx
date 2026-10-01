@@ -378,7 +378,7 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                   return (
                     <div
                       key={category}
-                      className="rounded-xl border p-4"
+                      className="site-card rounded-xl border p-4"
                       style={{
                         borderColor: isActive
                           ? "oklch(0.42 0.28 275 / 0.3)"

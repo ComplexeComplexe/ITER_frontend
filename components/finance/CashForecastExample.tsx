@@ -2,7 +2,7 @@ import Link from "next/link";
 
 /** Educational example, never client evidence. Amounts are expected bank flows. */
 export default function CashForecastExample() {
-  return <section id="exemple-tresorerie" className="scroll-mt-28 bg-iter-violet/5 py-12 sm:py-16">
+  return <section id="exemple-tresorerie" className="site-section scroll-mt-28 bg-iter-violet/5 py-12 sm:py-16">
     <div className="container max-w-3xl">
       <p className="text-xs font-semibold uppercase tracking-widest text-iter-violet">Exemple pédagogique fictif</p>
       <h2 className="mt-3 text-2xl sm:text-3xl font-bold">Lire les trois premières semaines d’un prévisionnel</h2>

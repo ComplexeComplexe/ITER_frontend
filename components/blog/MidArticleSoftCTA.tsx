@@ -70,7 +70,7 @@ export default function MidArticleSoftCTA({ locale }: { locale: Locale }) {
         </div>
         <Link
           href={contactHref}
-          className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-iter-violet text-white font-semibold text-sm hover:brightness-110 transition-all whitespace-nowrap"
+          className="site-button site-button-primary inline-flex items-center gap-2 px-5 py-3 rounded-full bg-iter-violet text-white font-semibold text-sm hover:brightness-110 transition-all whitespace-nowrap"
         >
           <Mail size={16} aria-hidden="true" />
           {t.cta}

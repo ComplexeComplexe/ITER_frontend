@@ -138,7 +138,7 @@ export default function AuthorPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
 
-      <section className="bg-background pt-32 pb-12 lg:pb-16">
+      <section className="site-hero bg-background pt-32 pb-12 lg:pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}
@@ -180,7 +180,7 @@ export default function AuthorPage({
                   href={member.linkedIn}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-iter-violet text-white font-medium text-sm hover:brightness-110 transition-all"
+                  className="site-button site-button-primary inline-flex items-center gap-2 px-4 py-2 rounded-full bg-iter-violet text-white font-medium text-sm hover:brightness-110 transition-all"
                   aria-label={`${t.linkedInLabel} de ${fullName}`}
                 >
                   <Linkedin size={16} aria-hidden="true" />

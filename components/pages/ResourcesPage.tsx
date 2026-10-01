@@ -75,7 +75,7 @@ export default function ResourcesPage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
-      <section className="bg-background pt-24 sm:pt-32 pb-8 sm:pb-12">
+      <section className="site-hero bg-background pt-24 sm:pt-32 pb-8 sm:pb-12">
         <div className="container">
           <Breadcrumb locale={locale} items={[{ label: t.breadcrumbLabel }]} />
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl mb-6">
@@ -90,7 +90,7 @@ export default function ResourcesPage({
 
       {/* FAQ section */}
       {t.faq && t.faq.length > 0 && (
-        <section className="bg-background py-16 lg:py-24">
+        <section className="site-section bg-background py-16 lg:py-24">
           <div className="container max-w-3xl">
             <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-8">
               FAQ

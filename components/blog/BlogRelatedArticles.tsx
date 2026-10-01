@@ -46,7 +46,7 @@ export default function BlogRelatedArticles({
   return (
     <section
       aria-labelledby="related-articles-heading"
-      className="bg-muted/30 py-16 lg:py-20"
+      className="site-section bg-muted/30 py-16 lg:py-20"
     >
       <div className="container">
         <h2

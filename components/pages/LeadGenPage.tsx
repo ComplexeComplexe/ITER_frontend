@@ -817,7 +817,7 @@ export default function LeadGenPage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* ═══════════════════ HERO SECTION ═══════════════════ */}
-      <section className="relative bg-iter-violet overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28">
+      <section className="site-hero site-hero--inverse relative bg-iter-violet overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28">
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-white/[0.03]" />
@@ -877,7 +877,7 @@ export default function LeadGenPage({
             >
               <button
                 onClick={scrollToForm}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold text-base hover:shadow-xl hover:shadow-iter-chartreuse/20 transition-all duration-300 group"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold text-base hover:shadow-xl hover:shadow-iter-chartreuse/20 transition-all duration-300 group"
               >
                 {t.hero.cta}
                 <ArrowRight
@@ -887,7 +887,7 @@ export default function LeadGenPage({
               </button>
               <Link
                 href={locale === "fr" ? "/services" : `/${locale}/services`}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white font-medium text-base hover:bg-white/10 transition-all duration-300"
+                className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white font-medium text-base hover:bg-white/10 transition-all duration-300"
               >
                 {t.hero.ctaSecondary}
               </Link>
@@ -931,7 +931,7 @@ export default function LeadGenPage({
       </section>
 
       {/* ═══════════════════ PROBLEM / SOLUTION ═══════════════════ */}
-      <section className="py-20 lg:py-28 bg-white" ref={problemRef}>
+      <section className="site-section py-20 lg:py-28 bg-white" ref={problemRef}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -955,7 +955,7 @@ export default function LeadGenPage({
                 initial={{ opacity: 0, y: 30 }}
                 animate={problemInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="text-center p-8 rounded-2xl bg-red-50/50 border border-red-100"
+                className="site-card text-center p-8 rounded-2xl bg-red-50/50 border border-red-100"
               >
                 <div className="w-14 h-14 rounded-xl bg-red-100 flex items-center justify-center mx-auto mb-5">
                   <ProblemIcon icon={problem.icon} />
@@ -975,7 +975,7 @@ export default function LeadGenPage({
             initial={{ opacity: 0, y: 30 }}
             animate={problemInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-iter-violet rounded-3xl p-10 lg:p-16"
+            className="site-card bg-iter-violet rounded-3xl p-10 lg:p-16"
           >
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
@@ -1008,7 +1008,7 @@ export default function LeadGenPage({
       <section
         ref={formRef}
         id="diagnostic"
-        className="py-20 lg:py-28 bg-gradient-to-b from-gray-50 to-white"
+        className="site-section py-20 lg:py-28 bg-gradient-to-b from-gray-50 to-white"
       >
         <div className="container">
           <div className="text-center mb-12">
@@ -1083,7 +1083,7 @@ export default function LeadGenPage({
                       href={BOOKING_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
+                      className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
                     >
                       <Calendar size={18} />
                       {t.form.successStep.cta}
@@ -1278,7 +1278,7 @@ export default function LeadGenPage({
                       </div>
 
                       {submitError && (
-                        <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
+                        <div className="site-card p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
                           {submitError}
                         </div>
                       )}
@@ -1297,7 +1297,7 @@ export default function LeadGenPage({
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold text-base hover:shadow-xl hover:shadow-iter-chartreuse/20 transition-all duration-300 group disabled:opacity-60"
+                          className="site-button site-button-primary inline-flex items-center gap-2 px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold text-base hover:shadow-xl hover:shadow-iter-chartreuse/20 transition-all duration-300 group disabled:opacity-60"
                         >
                           {isSubmitting
                             ? (locale === "fr" ? "Envoi…" : locale === "es" ? "Enviando…" : "Sending…")
@@ -1325,7 +1325,7 @@ export default function LeadGenPage({
       </section>
 
       {/* ═══════════════════ TESTIMONIALS ═══════════════════ */}
-      <section className="py-20 lg:py-28 bg-white" ref={testimonialRef}>
+      <section className="site-section py-20 lg:py-28 bg-white" ref={testimonialRef}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -1348,7 +1348,7 @@ export default function LeadGenPage({
                 initial={{ opacity: 0, y: 30 }}
                 animate={testimonialInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.2 }}
-                className="bg-gray-50 rounded-3xl p-8 lg:p-10 relative"
+                className="site-card bg-gray-50 rounded-3xl p-8 lg:p-10 relative"
               >
                 {/* Result badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-iter-chartreuse/20 text-iter-dark text-sm font-semibold mb-6">
@@ -1380,7 +1380,7 @@ export default function LeadGenPage({
       </section>
 
       {/* ═══════════════════ FAQ ═══════════════════ */}
-      <section className="py-20 lg:py-28 bg-gray-50" ref={faqRef}>
+      <section className="site-section py-20 lg:py-28 bg-gray-50" ref={faqRef}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -1441,7 +1441,7 @@ export default function LeadGenPage({
       </section>
 
       {/* ═══════════════════ FINAL CTA ═══════════════════ */}
-      <section className="py-24 lg:py-32 bg-iter-chartreuse relative overflow-hidden">
+      <section className="site-section py-24 lg:py-32 bg-iter-chartreuse relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none">
             <circle cx="200" cy="300" r="300" stroke="#0A0A0A" strokeWidth="0.5" fill="none" />
@@ -1458,7 +1458,7 @@ export default function LeadGenPage({
             </p>
             <button
               onClick={scrollToForm}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-dark text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
+              className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-dark text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
             >
               {t.finalCta.cta}
               <ArrowRight

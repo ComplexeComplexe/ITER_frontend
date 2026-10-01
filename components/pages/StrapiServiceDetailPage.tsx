@@ -16,7 +16,7 @@ export default function StrapiServiceDetailPage({ locale, service }: { locale: L
 
   return (
     <PageLayout locale={locale}>
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}
@@ -36,12 +36,12 @@ export default function StrapiServiceDetailPage({ locale, service }: { locale: L
       </article>
 
       {service.faq && service.faq.length > 0 && (
-        <section className="bg-muted/30 py-16 lg:py-24">
+        <section className="site-section bg-muted/30 py-16 lg:py-24">
           <div className="container max-w-3xl">
             <h2 className="text-2xl font-bold font-heading text-foreground mb-8">FAQ</h2>
             <div className="space-y-6">
               {service.faq.map((item) => (
-                <details key={item.id} className="group bg-background border border-border/50 rounded-2xl p-6">
+                <details key={item.id} className="site-card group bg-background border border-border/50 rounded-2xl p-6">
                   <summary className="font-semibold font-heading text-foreground cursor-pointer list-none flex items-center justify-between">
                     {item.question}
                     <span className="text-iter-violet transition-transform group-open:rotate-45 text-xl ml-4">+</span>

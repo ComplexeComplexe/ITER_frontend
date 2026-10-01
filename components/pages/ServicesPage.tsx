@@ -41,7 +41,7 @@ export default function ServicesPage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero */}
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb locale={locale} items={[{ label: h1 }]} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -91,9 +91,9 @@ export default function ServicesPage({
         {title: "Budget, marges et reporting", href: "/services/controle-de-gestion-externalise"},
         {title: "Structurer la fonction finance", href: "/services/gestion-financiere-externalisee"},
         {title: "Préparer un financement", href: "/services/accompagnement-levee-de-fond"},
-      ].map(item => <Link key={item.href} href={item.href} className="rounded-xl border border-border p-5 font-semibold hover:border-iter-violet hover:text-iter-violet">{item.title}<ArrowRight size={18} className="mt-4" aria-hidden /></Link>)}</div></div></section>}
+      ].map(item => <Link key={item.href} href={item.href} className="site-card rounded-xl border border-border p-5 font-semibold hover:border-iter-violet hover:text-iter-violet">{item.title}<ArrowRight size={18} className="mt-4" aria-hidden /></Link>)}</div></div></section>}
       {/* Intro */}
-      <section className="bg-background py-16 lg:py-20">
+      <section className="site-section bg-background py-16 lg:py-20">
         <div className="container max-w-3xl">
 
           <ul className="space-y-3 mb-12">
@@ -127,7 +127,7 @@ export default function ServicesPage({
       </div>
 
       {/* Finance Services */}
-      <section className="bg-muted/30 py-24 lg:py-32">
+      <section className="site-section bg-muted/30 py-24 lg:py-32">
         <div className="container">
           <div className="flex items-center gap-3 mb-10">
             <span className="px-4 py-1.5 rounded-full bg-iter-violet text-white text-sm font-semibold">
@@ -140,7 +140,7 @@ export default function ServicesPage({
               <Link
                 key={i}
                 href={service.href}
-                className="group bg-background border border-border/50 rounded-2xl p-8 hover:border-iter-violet/30 transition-all duration-300"
+                className="site-card group bg-background border border-border/50 rounded-2xl p-8 hover:border-iter-violet/30 transition-all duration-300"
               >
                 {(() => {
                   const SIcon = financeIcons[i % financeIcons.length];
@@ -184,7 +184,7 @@ export default function ServicesPage({
               <Link
                 key={i}
                 href={service.href}
-                className="group bg-background border border-border/50 rounded-2xl p-8 hover:border-iter-chartreuse/40 transition-all duration-300"
+                className="site-card group bg-background border border-border/50 rounded-2xl p-8 hover:border-iter-chartreuse/40 transition-all duration-300"
               >
                 {(() => {
                   const SIcon = rhIcons[i % rhIcons.length];
@@ -216,7 +216,7 @@ export default function ServicesPage({
 
       {/* Pourquoi externaliser — TICKET 11 */}
       {t.whyOutsource && (
-        <section className="bg-background py-20 lg:py-24">
+        <section className="site-section bg-background py-20 lg:py-24">
           <div className="container max-w-4xl">
             <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-6">
               {t.whyOutsource.heading}
@@ -226,7 +226,7 @@ export default function ServicesPage({
             </p>
             <div className="grid sm:grid-cols-2 gap-6">
               {t.whyOutsource.benefits.map((b) => (
-                <div key={b.label} className="rounded-2xl border border-border/50 p-6">
+                <div key={b.label} className="site-card rounded-2xl border border-border/50 p-6">
                   <p className="font-semibold mb-2">{b.label}</p>
                   <p className="text-muted-foreground text-sm leading-relaxed">{b.description}</p>
                 </div>
@@ -238,14 +238,14 @@ export default function ServicesPage({
 
       {/* Nos domaines d'expertise */}
       {t.expertise && (
-        <section className="bg-muted/30 py-20 lg:py-24">
+        <section className="site-section bg-muted/30 py-20 lg:py-24">
           <div className="container max-w-4xl">
             <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
               {t.expertise.heading}
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {t.expertise.domains.map((d) => (
-                <div key={d.label} className="bg-background rounded-2xl border border-border/50 p-6">
+                <div key={d.label} className="site-card bg-background rounded-2xl border border-border/50 p-6">
                   <p className="font-semibold mb-2">{d.label}</p>
                   <p className="text-muted-foreground text-sm leading-relaxed">{d.description}</p>
                 </div>
@@ -257,7 +257,7 @@ export default function ServicesPage({
 
       {/* Comment ça marche */}
       {t.methodology && (
-        <section className="bg-background py-20 lg:py-24">
+        <section className="site-section bg-background py-20 lg:py-24">
           <div className="container max-w-4xl">
             <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
               {t.methodology.heading}
@@ -281,14 +281,14 @@ export default function ServicesPage({
 
       {/* FAQ + JSON-LD */}
       {t.faq && (
-        <section className="bg-muted/30 py-20 lg:py-24">
+        <section className="site-section bg-muted/30 py-20 lg:py-24">
           <div className="container max-w-3xl">
             <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-10">
               {t.faq.heading}
             </h2>
             <div className="space-y-4">
               {t.faq.items.map((item) => (
-                <details key={item.question} className="bg-background rounded-2xl border border-border/50 p-6 group">
+                <details key={item.question} className="site-card bg-background rounded-2xl border border-border/50 p-6 group">
                   <summary className="font-semibold cursor-pointer list-none flex justify-between items-center gap-4">
                     {item.question}
                     <span className="text-iter-violet transition-transform group-open:rotate-45 text-xl leading-none">+</span>
@@ -317,7 +317,7 @@ export default function ServicesPage({
 
       <CTASection locale={locale} />
       {locale !== "fr" && (
-        <section className="bg-background py-12">
+        <section className="site-section bg-background py-12">
           <div className="container max-w-3xl">
             <h2 className="text-2xl font-bold mb-4">{locale === "en" ? "Relocating to Spain" : "Trasladarse a España"}</h2>
             <Link className="text-iter-violet underline" href={`/${locale}/services/ley-beckham`}>{locale === "en" ? "Beckham Law: eligibility and application steps" : "Ley Beckham: requisitos y pasos para solicitar el régimen"}</Link>

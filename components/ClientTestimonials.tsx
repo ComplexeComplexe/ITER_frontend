@@ -25,7 +25,7 @@ export default function ClientTestimonials({
         {testimonials.map((testimonial, idx) => (
           <div
             key={idx}
-            className="p-6 rounded-lg border border-gray-200 bg-white hover:shadow-md transition-shadow"
+            className="site-card p-6 rounded-lg border border-gray-200 bg-white hover:shadow-md transition-shadow"
           >
             <div className="flex gap-1 mb-3">
               {Array.from({ length: testimonial.rating }).map((_, i) => (

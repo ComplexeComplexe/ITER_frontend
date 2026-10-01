@@ -157,7 +157,7 @@ export default async function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       {/* ─── Hero ─── */}
-      <section className="bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
+      <section className="site-hero bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container max-w-3xl">
           <Breadcrumb
             locale="fr"
@@ -179,14 +179,14 @@ export default async function Page() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
                 href="mailto:contact@iteradvisors.com"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 <Mail size={18} aria-hidden="true" />
                 Envoyer votre CV
               </a>
               <Link
                 href="/fractional-cfo-startups"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
+                className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
               >
                 Découvrir le service côté client
                 <ArrowRight size={18} aria-hidden="true" />
@@ -198,7 +198,7 @@ export default async function Page() {
 
       {/* ─── Recruitment content (extracted verbatim from the prior
             #jobs-section on /jobs/fractional-cfo-startups) ─── */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background">
+      <section className="site-section py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-3xl space-y-16 sm:space-y-24">
           {/* Le rôle */}
           <div>
@@ -206,7 +206,7 @@ export default async function Page() {
               Le rôle d&apos;un fractional CFO chez Iter Advisors
             </h2>
             <div className="prose prose-sm sm:prose-base max-w-none space-y-4">
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Un <strong>fractional CFO</strong> (ou DAF à temps partagé) est
                 un directeur financier senior qui intervient dans plusieurs
                 entreprises sans être salarié à temps plein dans aucune. Il
@@ -215,10 +215,10 @@ export default async function Page() {
                 investisseurs — mais sur un mode flexible adapté aux besoins de
                 chaque startup.
               </p>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Chez Iter Advisors, vos missions typiques incluent :
               </p>
-              <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
+              <ul className="site-copy space-y-2 text-sm sm:text-base text-muted-foreground">
                 <li>Mettre en place et opérer le reporting financier mensuel</li>
                 <li>
                   Piloter la trésorerie et construire les prévisionnels (cash
@@ -240,7 +240,7 @@ export default async function Page() {
                   Animer les comités stratégiques et les boards investisseurs
                 </li>
               </ul>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Vous interviendrez sur un portefeuille de{" "}
                 <strong>startups tech en croissance</strong> : SaaS B2B,
                 deep-tech, e-commerce, fintech. La majorité de nos clients ont
@@ -260,7 +260,7 @@ export default async function Page() {
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-3">
                   Expérience
                 </h3>
-                <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
+                <ul className="site-copy space-y-2 text-sm sm:text-base text-muted-foreground">
                   <li>
                     <strong>10 ans minimum</strong> en direction financière
                     (CFO, DAF, head of finance) dans des startups VC-backed ou
@@ -287,7 +287,7 @@ export default async function Page() {
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-3">
                   Compétences
                 </h3>
-                <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
+                <ul className="site-copy space-y-2 text-sm sm:text-base text-muted-foreground">
                   <li>
                     Maîtrise des outils modernes : Pennylane, Sage, Agicap,
                     Notion, Looker / Power BI
@@ -312,7 +312,7 @@ export default async function Page() {
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-3">
                   Mindset
                 </h3>
-                <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
+                <ul className="site-copy space-y-2 text-sm sm:text-base text-muted-foreground">
                   <li>
                     Autonomie et capacité à gérer plusieurs clients en
                     parallèle
@@ -336,7 +336,7 @@ export default async function Page() {
             <h2 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-6">
               Ce que nous proposons
             </h2>
-            <ul className="space-y-3 text-sm sm:text-base text-muted-foreground">
+            <ul className="site-copy space-y-3 text-sm sm:text-base text-muted-foreground">
               <li>
                 <strong>Modèle d&apos;engagement flexible</strong> : freelance,
                 portage salarial ou CDI selon votre situation
@@ -381,12 +381,12 @@ export default async function Page() {
             <h2 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-6">
               Pourquoi rejoindre Iter Advisors plutôt que rester en solo ?
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               Beaucoup de CFOs seniors hésitent entre rester en freelance
               indépendant et rejoindre un cabinet. Voici ce que vous gagnez en
               rejoignant Iter Advisors :
             </p>
-            <ul className="space-y-3 text-sm sm:text-base text-muted-foreground">
+            <ul className="site-copy space-y-3 text-sm sm:text-base text-muted-foreground">
               <li>
                 <strong>Flux de missions stable</strong> : nous générons les
                 leads, vous vous concentrez sur la finance
@@ -416,7 +416,7 @@ export default async function Page() {
             <h2 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-6">
               Iter Advisors en quelques chiffres
             </h2>
-            <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
+            <ul className="site-copy space-y-2 text-sm sm:text-base text-muted-foreground">
               <li>
                 <strong>+85 entreprises</strong> tech accompagnées depuis 2021
               </li>
@@ -464,7 +464,7 @@ export default async function Page() {
             <h2 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-6">
               Comment postuler
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               Envoyez votre CV et un message court présentant votre parcours et
               vos motivations à{" "}
               <a
@@ -484,17 +484,17 @@ export default async function Page() {
               </a>
               .
             </p>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 font-semibold">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 font-semibold">
               Le process de recrutement comprend :
             </p>
-            <ol className="space-y-2 text-sm sm:text-base text-muted-foreground list-decimal list-inside">
+            <ol className="site-copy space-y-2 text-sm sm:text-base text-muted-foreground list-decimal list-inside">
               <li>Échange initial de 30 minutes avec Sébastien (founding partner)</li>
               <li>Entretien approfondi avec un partner et un CFO senior (1h30)</li>
               <li>Cas pratique sur un dossier client réel anonymisé (2h, à votre rythme)</li>
               <li>Rencontre informelle avec l&apos;équipe</li>
               <li>Offre et démarrage sous 4 semaines maximum</li>
             </ol>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-4">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mt-4">
               <strong>
                 Délai moyen entre la candidature et la première mission : 6
                 semaines
@@ -508,11 +508,11 @@ export default async function Page() {
             <h2 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-6">
               Pour aller plus loin
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               Avant de candidater, vous pouvez approfondir votre compréhension
               de notre métier et de notre approche :
             </p>
-            <ul className="space-y-2 text-sm sm:text-base">
+            <ul className="site-copy space-y-2 text-sm sm:text-base">
               <li>
                 {" "}
                 <Link
@@ -566,7 +566,7 @@ export default async function Page() {
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-2">
                   Suis-je obligé(e) d&apos;être en freelance ?
                 </h3>
-                <p className="text-sm sm:text-base text-muted-foreground">
+                <p className="site-copy text-sm sm:text-base text-muted-foreground">
                   Non. Nous proposons trois modes d&apos;engagement : freelance
                   pur, portage salarial ou CDI temps plein avec rémunération
                   variable selon les missions. Le choix dépend de votre
@@ -577,7 +577,7 @@ export default async function Page() {
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-2">
                   Puis-je continuer à avoir des clients en propre en parallèle ?
                 </h3>
-                <p className="text-sm sm:text-base text-muted-foreground">
+                <p className="site-copy text-sm sm:text-base text-muted-foreground">
                   Oui, à condition qu&apos;il n&apos;y ait pas de conflit
                   d&apos;intérêts avec nos clients (concurrence directe). Nous
                   validons cela ensemble lors de la signature.
@@ -587,7 +587,7 @@ export default async function Page() {
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-2">
                   Combien de jours par mois faut-il être disponible ?
                 </h3>
-                <p className="text-sm sm:text-base text-muted-foreground">
+                <p className="site-copy text-sm sm:text-base text-muted-foreground">
                   Au minimum 8 jours par mois (équivalent 2 missions de formule
                   Essentiel). La plupart de nos fractional CFOs travaillent
                   entre 12 et 18 jours par mois pour Iter Advisors.
@@ -597,7 +597,7 @@ export default async function Page() {
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-2">
                   Y a-t-il une obligation de présence à Barcelone, Paris ou Toulouse ?
                 </h3>
-                <p className="text-sm sm:text-base text-muted-foreground">
+                <p className="site-copy text-sm sm:text-base text-muted-foreground">
                   Non. Vous pouvez résider n&apos;importe où en France, en
                   Espagne ou en Europe. Une présence ponctuelle dans nos bureaux
                   est appréciée pour les comités, mais pas obligatoire. La
@@ -609,7 +609,7 @@ export default async function Page() {
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-2">
                   Quel est le profil typique d&apos;un fractional CFO recruté chez Iter Advisors ?
                 </h3>
-                <p className="text-sm sm:text-base text-muted-foreground">
+                <p className="site-copy text-sm sm:text-base text-muted-foreground">
                   Ancien CFO ou head of finance dans une scale-up (Series A à
                   Series C), 10–20 ans d&apos;expérience, ayant déjà mené au
                   moins une levée de fonds. La majorité de nos CFOs ont une
@@ -620,7 +620,7 @@ export default async function Page() {
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-2">
                   Quel est le délai entre ma candidature et la première mission ?
                 </h3>
-                <p className="text-sm sm:text-base text-muted-foreground">
+                <p className="site-copy text-sm sm:text-base text-muted-foreground">
                   En moyenne 6 semaines : 3 semaines de process de recrutement,
                   puis 3 semaines pour vous matcher avec un client adapté à
                   votre profil.
@@ -637,7 +637,7 @@ export default async function Page() {
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="mailto:contact@iteradvisors.com"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 <Mail size={18} aria-hidden="true" />
                 Envoyer votre CV

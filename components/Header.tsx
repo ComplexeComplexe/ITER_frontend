@@ -112,7 +112,7 @@ export default function Header({
 
   return (
     <motion.header
-      initial={{ y: -100 }}
+      initial={locale === "fr" ? false : { y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -296,7 +296,7 @@ export default function Header({
             {/* CTA Button */}
             <Link
               href={contactItem.href}
-              className="px-6 py-2.5 text-sm font-semibold rounded-full bg-iter-chartreuse text-iter-dark hover:brightness-105 transition-all duration-200 hover:shadow-lg hover:shadow-iter-chartreuse/30"
+              className="site-header-contact px-6 py-2.5 text-sm font-semibold rounded-full bg-iter-chartreuse text-iter-dark hover:brightness-105 transition-all duration-200 hover:shadow-lg hover:shadow-iter-chartreuse/30"
             >
               {contactItem.title.toUpperCase()}
             </Link>
@@ -305,6 +305,7 @@ export default function Header({
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-expanded={mobileOpen}
             className="lg:hidden p-2 text-white relative z-10"
             aria-label={locale === "en" ? (mobileOpen ? "Close menu" : "Open menu") : locale === "es" ? (mobileOpen ? "Cerrar el menú" : "Abrir el menú") : (mobileOpen ? "Fermer le menu" : "Ouvrir le menu")}
           >
@@ -337,6 +338,8 @@ export default function Header({
                     {item.children && (
                       <button
                         className="p-3 text-white/40"
+                        aria-label={item.title}
+                        aria-expanded={openDropdown === i}
                         onClick={() => setOpenDropdown(openDropdown === i ? null : i)}
                       >
                         <svg
@@ -371,7 +374,7 @@ export default function Header({
               <Link
                 href={contactItem.href}
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 mx-4 px-6 py-3 text-center font-semibold rounded-full bg-iter-chartreuse text-iter-dark"
+                className="site-header-contact mt-2 mx-4 px-6 py-3 text-center font-semibold rounded-full bg-iter-chartreuse text-iter-dark"
               >
                 {contactItem.title.toUpperCase()}
               </Link>

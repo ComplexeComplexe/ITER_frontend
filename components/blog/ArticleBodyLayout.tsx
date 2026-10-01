@@ -9,7 +9,7 @@ export default function ArticleBodyLayout({ locale, headings, children }: {
   children: ReactNode;
 }) {
   return (
-    <section className="bg-background py-12 lg:py-16">
+    <section className="site-section bg-background py-12 lg:py-16">
       <div className="container">
         <div className={`flex flex-col max-w-6xl mx-auto ${headings.length ? "xl:grid xl:grid-cols-[minmax(0,1fr)_15rem] xl:gap-12" : ""}`}>
           {headings.length > 0 && <div className="order-1 xl:order-none xl:col-start-2 xl:row-start-1"><ArticleTOC locale={locale} headings={headings} /></div>}

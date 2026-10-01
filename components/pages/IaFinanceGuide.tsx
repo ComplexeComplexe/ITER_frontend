@@ -35,8 +35,8 @@ export default function IaFinanceGuide({ slug }: { slug: string }) {
   >
     <p className="text-sm">{hasKit ? "Mise à jour du 30 septembre 2026 : ajout d’un kit pédagogique corrigé" + (hasCalculator ? " et d’un calculateur de rentabilité." : ".") + " Sources documentaires vérifiées le 5 septembre 2026." : "Mise à jour du 5 septembre 2026 : cas attribués, méthode de contrôle et liens documentaires vérifiés."}</p>
     {hasKit && <nav aria-label="Outils pratiques du guide" className="not-prose my-6 flex flex-wrap gap-3">
-      <a href="#kit-reporting" className="inline-flex min-h-11 items-center rounded-full border border-iter-violet/30 px-4 py-2 font-medium text-iter-violet">Accéder au kit corrigé</a>
-      {hasCalculator && <a href="#calculateur-roi" className="inline-flex min-h-11 items-center rounded-full border border-iter-violet/30 px-4 py-2 font-medium text-iter-violet">Calculer mon gain net</a>}
+      <a href="#kit-reporting" className="site-button site-button-secondary inline-flex min-h-11 items-center rounded-full border border-iter-violet/30 px-4 py-2 font-medium text-iter-violet">Accéder au kit corrigé</a>
+      {hasCalculator && <a href="#calculateur-roi" className="site-button site-button-secondary inline-flex min-h-11 items-center rounded-full border border-iter-violet/30 px-4 py-2 font-medium text-iter-violet">Calculer mon gain net</a>}
     </nav>}
     {guide.sections.map(section => <section key={section.id}>
       <h2 id={section.id} className="scroll-mt-24">{section.title}</h2>

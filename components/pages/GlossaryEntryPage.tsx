@@ -125,7 +125,7 @@ export default function GlossaryEntryPage({
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-      <section className="bg-background pt-32 pb-8 sm:pb-10">
+      <section className="site-hero bg-background pt-32 pb-8 sm:pb-10">
         <div className="container max-w-3xl">
           <Breadcrumb
             locale={locale}
@@ -151,7 +151,7 @@ export default function GlossaryEntryPage({
           </div>
 
           {definition && (
-            <aside className="rounded-2xl border-l-4 border-iter-violet bg-iter-violet/5 p-6">
+            <aside className="site-card rounded-2xl border-l-4 border-iter-violet bg-iter-violet/5 p-6">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-iter-violet">
                 {t.inOneSentence}
               </p>
@@ -192,11 +192,11 @@ export default function GlossaryEntryPage({
         <section className="bg-background pb-10">
           <div className="container max-w-3xl grid gap-6 sm:grid-cols-2">
             {related.length > 0 && (
-              <div className="rounded-3xl border border-border/60 bg-muted/30 p-6">
+              <div className="site-card rounded-3xl border border-border/60 bg-muted/30 p-6">
                 <p className="text-base font-semibold text-foreground mb-3">{t.related}</p>
                 <ul className="space-y-2 list-none pl-0">
                   {related.map((r) => (
-                    <li key={r.slug} className="flex gap-2.5 text-sm sm:text-base">
+                    <li key={r.slug} className="site-copy flex gap-2.5 text-sm sm:text-base">
                       <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
                       <Link href={`${glossaryHref(locale)}/${r.slug}`} className="text-iter-violet hover:underline">
                         {r.title}
@@ -207,11 +207,11 @@ export default function GlossaryEntryPage({
               </div>
             )}
             {mentions.length > 0 && (
-              <div className="rounded-3xl border border-border/60 bg-muted/30 p-6">
+              <div className="site-card rounded-3xl border border-border/60 bg-muted/30 p-6">
                 <p className="text-base font-semibold text-foreground mb-3">{t.mentions}</p>
                 <ul className="space-y-2 list-none pl-0">
                   {mentions.map((m) => (
-                    <li key={m.href} className="flex gap-2.5 text-sm sm:text-base">
+                    <li key={m.href} className="site-copy flex gap-2.5 text-sm sm:text-base">
                       <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-iter-violet shrink-0" />
                       <Link href={m.href} className="text-iter-violet hover:underline">
                         {m.title}
@@ -227,12 +227,12 @@ export default function GlossaryEntryPage({
 
       <section className="bg-background pb-14">
         <div className="container max-w-3xl">
-          <aside className="rounded-3xl bg-iter-violet/5 border-l-4 border-iter-violet p-6 sm:p-8">
+          <aside className="site-card rounded-3xl bg-iter-violet/5 border-l-4 border-iter-violet p-6 sm:p-8">
             <p className="text-base sm:text-lg font-semibold text-foreground mb-2">{t.ctaTitle}</p>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">{t.ctaText}</p>
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">{t.ctaText}</p>
             <Link
               href={getContactPath(locale)}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
+              className="site-button site-button-primary inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
             >
               {t.cta}
               <ArrowRight size={16} aria-hidden />

@@ -40,7 +40,7 @@ export default function MerciPage() {
               sans engagement.
             </p>
 
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm text-left mb-8">
+            <div className="site-card bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm text-left mb-8">
               <p className="font-semibold text-foreground mb-3">
                 Pendant que vous attendez notre appel :
               </p>

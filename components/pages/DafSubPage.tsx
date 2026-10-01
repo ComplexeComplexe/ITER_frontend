@@ -71,7 +71,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
 
       {/* ─── Hero ─── */}
-      <section className="bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
+      <section className="site-hero bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container max-w-3xl">
           <Breadcrumb
             locale={locale}
@@ -105,14 +105,14 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">
               <Link
                 href={getContactPath(locale) + `#${contactContext ?? "daf"}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 {content.ctaButton}
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <Link
                 href={content.parentHref}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
+                className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
               >
                 {content.parentLabel}
               </Link>
@@ -122,7 +122,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
       </section>
 
       {/* ─── Optional hero illustration ─── */}
-      {heroImage && (
+      {heroImage && !(locale === "fr" && heroImage.src.endsWith(".svg")) && (
         <section className="bg-background pt-0 pb-8 sm:pb-12">
           <div className="container max-w-3xl">
             <Image
@@ -138,7 +138,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
       )}
 
       {/* ─── Body sections ─── */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-background">
+      <section className="site-section py-12 sm:py-16 lg:py-24 bg-background">
         <div className="container max-w-3xl">
           {bodySections.map((section, i) => {
             const isFaq = isFaqHeading(section.heading);
@@ -198,7 +198,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                                 +
                               </span>
                             </summary>
-                            <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                            <div className="site-copy px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
                               <p>{faqItem.answer}</p>
                             </div>
                           </details>
@@ -208,7 +208,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                       return (
                         <div
                           key={j}
-                          className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 prose prose-sm max-w-none [&>p]:m-0 [&>strong]:font-semibold [&>strong]:text-foreground [&>a]:text-iter-violet [&>a]:underline [&>a]:underline-offset-2"
+                          className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 prose prose-sm max-w-none [&>p]:m-0 [&>strong]:font-semibold [&>strong]:text-foreground [&>a]:text-iter-violet [&>a]:underline [&>a]:underline-offset-2"
                         >
                           <ReactMarkdown components={mdComponents}>{item}</ReactMarkdown>
                         </div>
@@ -220,7 +220,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                   section.content.map((p, j) => (
                     <div
                       key={j}
-                      className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 prose prose-sm max-w-none [&>p]:m-0 [&>strong]:font-semibold [&>strong]:text-foreground [&>a]:text-iter-violet [&>a]:underline [&>a]:underline-offset-2 hover:[&>a]:no-underline"
+                      className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 prose prose-sm max-w-none [&>p]:m-0 [&>strong]:font-semibold [&>strong]:text-foreground [&>a]:text-iter-violet [&>a]:underline [&>a]:underline-offset-2 hover:[&>a]:no-underline"
                     >
                       <ReactMarkdown components={mdComponents}>{p}</ReactMarkdown>
                     </div>
@@ -233,7 +233,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
       </section>
 
       {/* ─── Related Services ─── */}
-      <section className="bg-muted/30 py-16 sm:py-24">
+      <section className="site-section bg-muted/30 py-16 sm:py-24">
         <div className="container">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
             {locale === "fr" ? "Services liés" : locale === "en" ? "Related services" : "Servicios relacionados"}
@@ -317,12 +317,12 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
               <Link
                 key={i}
                 href={service.href}
-                className="group flex items-center gap-4 bg-background border border-border/50 rounded-2xl p-5 sm:p-6 hover:border-iter-violet/30 transition-all duration-300"
+                className="site-card group flex items-center gap-4 bg-background border border-border/50 rounded-2xl p-5 sm:p-6 hover:border-iter-violet/30 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
                   <service.icon size={20} className="text-iter-violet" strokeWidth={1.5} />
                 </div>
-                <span className="font-semibold text-foreground group-hover:text-iter-violet transition-colors text-sm sm:text-base">
+                <span className="site-copy font-semibold text-foreground group-hover:text-iter-violet transition-colors text-sm sm:text-base">
                   {service.title}
                 </span>
                 <ArrowRight

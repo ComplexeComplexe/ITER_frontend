@@ -30,7 +30,7 @@ export default async function Page() {
   return (
     <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
+      <section className="site-hero bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container max-w-3xl">
           <Breadcrumb
             locale="fr"
@@ -52,7 +52,7 @@ export default async function Page() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="mailto:contact@iteradvisors.com"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
                 <Mail size={18} />
                 Envoyer votre CV
@@ -72,17 +72,17 @@ export default async function Page() {
       </section>
 
       {/* Content */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background">
+      <section className="site-section py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-3xl space-y-16 sm:space-y-24">
           {/* Le rôle */}
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
               Le rôle
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               Vous piloterez l'ensemble de notre stratégie marketing et croissance :
             </p>
-            <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
+            <ul className="site-copy space-y-2 text-sm sm:text-base text-muted-foreground">
               <li>
                 • Définir et exécuter la stratégie d'acquisition et de
                 positionnement auprès des startups et PME
@@ -118,7 +118,7 @@ export default async function Page() {
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-2">
                   Expérience requise
                 </h3>
-                <ul className="space-y-1 text-sm sm:text-base text-muted-foreground">
+                <ul className="site-copy space-y-1 text-sm sm:text-base text-muted-foreground">
                   <li>
                     • 4-6 ans d'expérience en marketing B2B, idéalement dans
                     le secteur du conseil ou des services
@@ -141,7 +141,7 @@ export default async function Page() {
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-2">
                   Soft skills
                 </h3>
-                <ul className="space-y-1 text-sm sm:text-base text-muted-foreground">
+                <ul className="site-copy space-y-1 text-sm sm:text-base text-muted-foreground">
                   <li>
                     • Créativité et capacité à penser « growth » en
                     permanence
@@ -168,7 +168,7 @@ export default async function Page() {
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
               Ce que nous proposons
             </h2>
-            <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
+            <ul className="site-copy space-y-2 text-sm sm:text-base text-muted-foreground">
               <li>• CDI temps plein, rémunération 50-70 k€/an selon profil</li>
               <li>
                 • Bureaux centraux à Paris (La Défense) et Barcelone — mode
@@ -197,7 +197,7 @@ export default async function Page() {
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
               Comment postuler
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
               Envoyez votre CV et une lettre de motivation courte à{" "}
               <a
                 href="mailto:contact@iteradvisors.com"
@@ -217,7 +217,7 @@ export default async function Page() {
             </p>
             <a
               href="mailto:contact@iteradvisors.com"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
+              className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
             >
               <Mail size={18} />
               Envoyer votre candidature

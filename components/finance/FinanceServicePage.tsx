@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
-import Breadcrumb from "@/components/Breadcrumb";
+import ServiceHero from "@/components/design/ServiceHero";
 import PageByline from "@/components/PageByline";
 import { FINANCE_SERVICES, FINANCE_REVIEW_DATE, type FinanceService } from "@/lib/content/finance-services";
 import { getDocumentedCase } from "@/lib/content/documented-cases";
@@ -36,34 +36,11 @@ export default function FinanceServicePage({ service }: { service: FinanceServic
     <PageLayout locale="fr">
       <div className={styles.root} data-finance-template="service">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
-        <section className={styles.hero}>
-          <div className={styles.wrap}>
-            <Breadcrumb locale="fr" items={[{ label: "Services finance", href: "/services" }, { label: service.label }]} />
-            <div className={styles.heroGrid}>
-              <div>
-                <p className={styles.eyebrow}>Iter Advisors · {service.category}</p>
-                <h1>{service.headline}</h1>
-                <p className={styles.promise}>{service.promise}</p>
-                <p className={styles.intro}>{service.intro}</p>
-                <div className={styles.actions}>
-                  <Link href={contact} className={styles.primary}>Parlons de votre besoin <span aria-hidden="true">↗</span></Link>
-                  <a href="#livrables" className={styles.textLink}>Voir les livrables <span aria-hidden="true">↓</span></a>
-                </div>
-                <p className={styles.micro}>Premier échange pour préciser votre situation et la suite.</p>
-              </div>
-              <aside className={styles.brief} aria-label="La mission en bref">
-                <p className={styles.briefTitle}>La mission en bref</p>
-                <dl>{service.summary.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
-                <Link href="/a-propos#equipe" className={styles.briefLink}>Rencontrer l’équipe <span aria-hidden="true">↗</span></Link>
-              </aside>
-            </div>
-          </div>
-        </section>
-        <nav className={styles.subnav} aria-label="Dans cette page">
-          <div className={styles.wrap}>
-            <a href="#besoin">Votre besoin</a><a href="#livrables">Les livrables</a><a href="#deroulement">La méthode</a><a href="#tarifs">Le budget</a><a href="#faq">Les réponses</a>
-          </div>
-        </nav>
+        <ServiceHero title={service.headline} label={service.label} eyebrow={`Iter Advisors · ${service.category}`} lead={service.promise} intro={service.intro}
+          primary={{ href: contact, label: "Parlons de votre besoin" }} secondary={{ href: "#livrables", label: "Voir les livrables" }}
+          summary={service.summary.map(([label, value]) => ({ label, value }))}
+          proof={<p className={styles.micro}>Premier échange pour préciser votre situation et la suite.</p>}
+          navigation={[{ id: "besoin", label: "Votre besoin" }, { id: "livrables", label: "Les livrables" }, { id: "deroulement", label: "La méthode" }, { id: "tarifs", label: "Le budget" }, { id: "faq", label: "Les réponses" }]} />
         <div className={styles.wrap}>
           <section id="besoin" className={styles.section}>
             <Aliases service={service} section="besoin" />

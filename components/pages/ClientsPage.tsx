@@ -80,7 +80,7 @@ export default function ClientsPage({
       />
 
       {/* Hero */}
-      <section className="bg-background pt-32 pb-12">
+      <section className="site-hero bg-background pt-32 pb-12">
         <div className="container max-w-4xl">
           <Breadcrumb locale={locale} items={[{ label: t.breadcrumbLabel }]} />
           <h1 className="text-3xl lg:text-5xl font-bold font-heading text-foreground mb-6">
@@ -103,7 +103,7 @@ export default function ClientsPage({
       </section>
 
       {/* Textual list grouped by sector — primary food for LLM extraction. */}
-      <section className="bg-muted/30 py-16 lg:py-20">
+      <section className="site-section bg-muted/30 py-16 lg:py-20">
         <div className="container max-w-4xl">
           <h2 className="text-xl font-semibold font-heading mb-8">
             {t.sectorsHeading}
@@ -130,7 +130,7 @@ export default function ClientsPage({
       </section>
 
       {/* CTA */}
-      <section className="bg-background py-20">
+      <section className="site-section bg-background py-20">
         <div className="container max-w-3xl text-center">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading mb-4">
             {t.ctaHeading}
@@ -140,7 +140,7 @@ export default function ClientsPage({
           </p>
           <Link
             href={getContactPath(locale)}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-semibold hover:shadow-xl transition-all duration-300"
+            className="site-button site-button-primary inline-flex items-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-semibold hover:shadow-xl transition-all duration-300"
           >
             {t.ctaButton}
             <ArrowRight size={18} />
@@ -154,7 +154,7 @@ export default function ClientsPage({
 function ClientCard({ client, locale }: { client: Client; locale: Locale }) {
   const sectorLabel = getSectorLabel(locale, client.sector);
   const inner = (
-    <div className="bg-white border border-border/40 rounded-2xl p-6 h-full flex flex-col items-center justify-center text-center hover:border-iter-violet/30 hover:shadow-md transition-all">
+    <div className="site-card bg-white border border-border/40 rounded-2xl p-6 h-full flex flex-col items-center justify-center text-center hover:border-iter-violet/30 hover:shadow-md transition-all">
       <div className="relative w-full h-12 mb-3">
         <Image
           src={client.logoSrc}

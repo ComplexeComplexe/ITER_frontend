@@ -309,7 +309,7 @@ export default function BlogListingPage({
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-      <section className="bg-background pt-32 pb-12 lg:pb-16">
+      <section className="site-hero bg-background pt-32 pb-12 lg:pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}
@@ -338,7 +338,7 @@ export default function BlogListingPage({
               <li key={article.href}>
                 <a
                   href={article.href}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-3 py-1.5 text-sm text-foreground hover:border-iter-violet hover:text-iter-violet transition-colors"
+                  className="site-button site-button-secondary inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-3 py-1.5 text-sm text-foreground hover:border-iter-violet hover:text-iter-violet transition-colors"
                 >
                   <span className="text-xs font-medium text-muted-foreground">
                     {article.category}

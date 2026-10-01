@@ -86,13 +86,13 @@ export default function MaDueDiligencePage({ locale, content: t, cmsNavigation }
           >
             {t.hero.intro}
           </motion.p>
-          <Link href={t.cta.buttonHref} className="inline-flex mt-6 rounded-full bg-iter-violet px-6 py-3 text-white font-semibold">{t.cta.buttonText}</Link>
+          <Link href={t.cta.buttonHref} className="site-button site-button-primary inline-flex mt-6 rounded-full bg-iter-violet px-6 py-3 text-white font-semibold">{t.cta.buttonText}</Link>
         </div>
       </section>
 
       {/* Sections */}
       {t.sections.map((section, i) => (
-        <section key={i} className="bg-background py-16">
+        <section key={i} className="site-section bg-background py-16">
           <div className="container max-w-3xl">
             <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-6">
               {section.heading}
@@ -111,7 +111,7 @@ export default function MaDueDiligencePage({ locale, content: t, cmsNavigation }
       ))}
 
       {/* Services */}
-      <section className="bg-muted/30 py-20">
+      <section className="site-section bg-muted/30 py-20">
         <div className="container">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-12 text-center">
             {t.services.title}
@@ -124,7 +124,7 @@ export default function MaDueDiligencePage({ locale, content: t, cmsNavigation }
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-background p-6 rounded-xl border border-border/50"
+                className="site-card bg-background p-6 rounded-xl border border-border/50"
               >
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-3">{item.name}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
@@ -135,7 +135,7 @@ export default function MaDueDiligencePage({ locale, content: t, cmsNavigation }
       </section>
 
       {/* Process */}
-      <section className="bg-background py-20">
+      <section className="site-section bg-background py-20">
         <div className="container max-w-4xl">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-12 text-center">
             {t.process.title}
@@ -164,14 +164,14 @@ export default function MaDueDiligencePage({ locale, content: t, cmsNavigation }
       </section>
 
       {/* FAQ */}
-      <section className="bg-muted/30 py-20">
+      <section className="site-section bg-muted/30 py-20">
         <div className="container max-w-3xl">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-12 text-center">
             {t.faq.title}
           </h2>
           <div className="space-y-6">
             {t.faq.items.map((item, i) => (
-              <div key={i} className="bg-background p-6 rounded-xl border border-border/50">
+              <div key={i} className="site-card bg-background p-6 rounded-xl border border-border/50">
                 <h3 className="text-lg font-semibold font-heading text-foreground mb-3">{item.question}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.answer}</p>
               </div>

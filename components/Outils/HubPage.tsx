@@ -400,7 +400,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
       />
 
       {/* Hero section */}
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}
@@ -432,14 +432,14 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
               >
                 Auditer ma stack finance
                 <span aria-hidden>→</span>
               </Link>
               <Link
                 href="#recommandation-stade"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
+                className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
               >
                 Voir notre recommandation par stade
               </Link>
@@ -455,7 +455,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
                 <a
                   key={a.href}
                   href={a.href}
-                  className="inline-flex items-center rounded-full border border-border/60 bg-muted/20 px-4 py-2 text-sm font-medium text-foreground hover:border-iter-violet hover:text-iter-violet transition-all"
+                  className="site-button site-button-secondary inline-flex items-center rounded-full border border-border/60 bg-muted/20 px-4 py-2 text-sm font-medium text-foreground hover:border-iter-violet hover:text-iter-violet transition-all"
                 >
                   {a.label}
                 </a>
@@ -466,7 +466,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
       </section>
 
       {/* Stage-based recommendations */}
-      <section id="recommandation-stade" className="bg-muted/20 py-16 scroll-mt-24">
+      <section id="recommandation-stade" className="site-section bg-muted/20 py-16 scroll-mt-24">
         <div className="container">
           <h2 className="text-3xl font-bold font-heading text-foreground mb-3">
             Notre recommandation par stade de croissance
@@ -482,7 +482,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
               <article
                 key={stage.id}
                 id={stage.id}
-                className="flex flex-col bg-background border border-gray-200 rounded-2xl p-6 scroll-mt-24"
+                className="site-card flex flex-col bg-background border border-gray-200 rounded-2xl p-6 scroll-mt-24"
               >
                 <p className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2">
                   {stage.stage}
@@ -524,7 +524,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
           <div className="mt-10">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
+              className="site-button site-button-primary inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
             >
               Auditer ma stack finance
               <span aria-hidden>→</span>
@@ -534,7 +534,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
       </section>
 
       {/* Category overview */}
-      <section id="categories" className="bg-background py-16 scroll-mt-24">
+      <section id="categories" className="site-section bg-background py-16 scroll-mt-24">
         <div className="container">
           <h2 className="text-3xl font-bold font-heading text-foreground mb-3">
             Choisir un outil par besoin métier
@@ -549,7 +549,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
               <Link
                 key={category.href}
                 href={category.href}
-                className="group h-full flex flex-col p-6 bg-muted/20 rounded-2xl border border-gray-200 hover:border-iter-violet/50 hover:shadow-md transition-all"
+                className="site-card group h-full flex flex-col p-6 bg-muted/20 rounded-2xl border border-gray-200 hover:border-iter-violet/50 hover:shadow-md transition-all"
               >
                 <div className="text-4xl mb-3">{category.icon}</div>
                 <h3 className="text-lg font-bold text-foreground mb-2">{category.name}</h3>
@@ -574,7 +574,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
           publiée. Chaque carte suit désormais le même gabarit décisionnel
           (idéal pour / pourquoi / point de vigilance), alimenté par les
           données existantes de data/tools.ts — rien n'est inventé ici. */}
-      <section className="bg-muted/20 py-16">
+      <section className="site-section bg-muted/20 py-16">
         <div className="container">
           <h2 className="text-3xl font-bold font-heading text-foreground mb-3">
             Les outils que nous déployons le plus
@@ -589,9 +589,9 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
               <Link
                 key={t.slug}
                 href={`/ressources/outils/${t.slug}`}
-                className="group flex flex-col h-full p-6 bg-background border border-gray-200 rounded-2xl hover:border-iter-violet/50 hover:shadow-md transition-all"
+                className="site-card group flex min-w-0 flex-col h-full p-6 bg-background border border-gray-200 rounded-2xl hover:border-iter-violet/50 hover:shadow-md transition-all"
               >
-                <div className="flex items-start justify-between gap-4 mb-4">
+                <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                   <div className="flex-shrink-0 w-14 h-14 bg-muted/40 rounded-lg flex items-center justify-center p-2">
                     {t.logo ? (
                       <Image
@@ -607,7 +607,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
                     )}
                   </div>
                   {t.badge && (
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap bg-iter-violet/10 text-iter-violet">
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-iter-violet/10 text-iter-violet">
                       {t.badge}
                     </span>
                   )}
@@ -648,7 +648,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
           contient des verdicts personnalisés issus de l'expérience réelle
           des CFO Iter Advisors, pas des descriptions marketing. Format
           preferred by LLMs (comparison tables — cf. TICKET-GEO §2). */}
-      <section className="bg-background py-16">
+      <section className="site-section bg-background py-16">
         <div className="container max-w-5xl">
           <h2 className="text-3xl font-bold font-heading text-foreground mb-4">
             Comparatif outils CFO 2026 : notre verdict par catégorie
@@ -704,7 +704,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
+            className="site-button site-button-primary inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
           >
             Demander une recommandation de stack
             <span aria-hidden>→</span>
@@ -713,7 +713,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
       </section>
 
       {/* FAQ — visible + FAQPage JSON-LD depuis le même tableau */}
-      <section className="bg-muted/20 py-16">
+      <section className="site-section bg-muted/20 py-16">
         <div className="container max-w-3xl">
           <h2 className="text-3xl font-bold font-heading text-foreground mb-8">
             Questions fréquentes sur le choix des outils
@@ -733,7 +733,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
                     +
                   </span>
                 </summary>
-                <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                <div className="site-copy px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
                   <p>{q.answer}</p>
                 </div>
               </details>
@@ -749,7 +749,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
           bas via CTASection sur les autres pages. */}
       <section className="bg-background pb-16">
         <div className="container max-w-5xl">
-          <div className="rounded-3xl bg-iter-dark p-8 sm:p-10 text-white">
+          <div className="site-card rounded-3xl bg-iter-dark p-8 sm:p-10 text-white">
             <p className="font-heading text-2xl sm:text-3xl font-semibold mb-3">
               Faites auditer votre stack finance
             </p>
@@ -766,7 +766,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
             </ul>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-iter-violet px-6 py-3 font-heading font-semibold text-white hover:bg-iter-violet/90 transition-all duration-300"
+              className="site-button site-button-primary inline-flex items-center gap-2 rounded-full bg-iter-violet px-6 py-3 font-heading font-semibold text-white hover:bg-iter-violet/90 transition-all duration-300"
             >
               Auditer ma stack finance
               <span aria-hidden>→</span>
@@ -777,7 +777,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
           </div>
         </div>
       </section>
-      <section className="bg-background py-12">
+      <section className="site-section bg-background py-12">
         <div className="container max-w-5xl">
           <h2 className="text-2xl font-bold mb-4">Toutes les fiches outils</h2>
           <p className="text-muted-foreground mb-6">Consultez les fiches par besoin pour préparer votre sélection et les questions à poser aux éditeurs.</p>

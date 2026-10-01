@@ -49,7 +49,7 @@ function CasClientsPageContent({ locale }: { locale: Locale }) {
   return (
     <PageLayout locale={locale}>
       {/* Hero Section */}
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}
@@ -93,7 +93,7 @@ function CasClientsPageContent({ locale }: { locale: Locale }) {
           maintenant vers l'offre qu'elle illustre. FR uniquement : les
           satellites tarifs/secteurs n'existent pas dans les autres langues. */}
       {locale === "fr" && (
-        <section className="bg-background py-12 lg:py-16 border-t border-border/40">
+        <section className="site-section bg-background py-12 lg:py-16 border-t border-border/40">
           <div className="container max-w-3xl">
             <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-3">
               L'offre derrière ces résultats

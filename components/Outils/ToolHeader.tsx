@@ -37,11 +37,11 @@ export default function ToolHeader({
   const hasHalfStar = rating % 1 !== 0;
 
   return (
-    <div className="border border-gray-200 rounded-lg p-6 md:p-8 bg-white">
+    <div className="site-card border border-gray-200 rounded-lg p-6 md:p-8 bg-white">
       <div className="flex flex-col md:flex-row md:items-start gap-6">
         {/* Logo & Basic Info */}
         <div className="flex-shrink-0">
-          <div className="flex items-center justify-center w-24 h-24 md:w-32 md:h-32 bg-gray-50 rounded-lg p-3 md:p-4">
+          <div className="site-card flex items-center justify-center w-24 h-24 md:w-32 md:h-32 bg-gray-50 rounded-lg p-3 md:p-4">
             {logo ? <Image
               src={logo}
               alt={logoAlt ?? `Logo ${name}`}

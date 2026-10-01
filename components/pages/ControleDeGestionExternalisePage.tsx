@@ -50,7 +50,7 @@ export default function ControleDeGestionExternalisePage({
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* ─── Hero ─── */}
-      <section className="bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
+      <section className="site-hero bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
         <div className="container max-w-3xl">
           <Breadcrumb
             locale={locale}
@@ -88,7 +88,7 @@ export default function ControleDeGestionExternalisePage({
               {t.hero?.primaryCta && (
                 <Link
                   href={t.hero.primaryCta.href}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
+                  className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
                 >
                   {t.hero.primaryCta.label}
                   <ArrowRight size={18} aria-hidden="true" />
@@ -97,7 +97,7 @@ export default function ControleDeGestionExternalisePage({
               {t.hero?.secondaryCta && (
                 <Link
                   href={t.hero.secondaryCta.href}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
+                  className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
                 >
                   {t.hero.secondaryCta.label}
                 </Link>
@@ -136,7 +136,7 @@ export default function ControleDeGestionExternalisePage({
       </section>
 
       {/* ─── Content sections ─── */}
-      <section className="py-10 sm:py-14 bg-background">
+      <section className="site-section py-10 sm:py-14 bg-background">
         <div className="container max-w-3xl">
           {t.sections.map((section: any, idx: number) => (
             <div
@@ -154,7 +154,7 @@ export default function ControleDeGestionExternalisePage({
                   {section.paragraphs.map((para: string, pidx: number) => (
                     <p
                       key={pidx}
-                      className="text-sm sm:text-base text-muted-foreground leading-relaxed"
+                      className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed"
                     >
                       {para}
                     </p>
@@ -168,7 +168,7 @@ export default function ControleDeGestionExternalisePage({
                   {section.bullets.map((bullet: any, bidx: number) => (
                     <li
                       key={bidx}
-                      className="text-sm sm:text-base text-muted-foreground leading-relaxed"
+                      className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed"
                     >
                       <strong className="text-foreground">{bullet.title}</strong>{" "}
                       {bullet.text}
@@ -188,7 +188,7 @@ export default function ControleDeGestionExternalisePage({
                       <h3 className="text-lg sm:text-xl font-semibold font-heading text-foreground mb-2">
                         {pillar.title}
                       </h3>
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                      <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
                         {pillar.text}
                       </p>
                     </div>
@@ -254,7 +254,7 @@ export default function ControleDeGestionExternalisePage({
                       key={tidx}
                       className="border-l-4 border-iter-violet bg-iter-violet/5 rounded-r-lg p-5 sm:p-6"
                     >
-                      <blockquote className="text-sm sm:text-base text-foreground/80 italic leading-relaxed mb-3">
+                      <blockquote className="site-copy text-sm sm:text-base text-foreground/80 italic leading-relaxed mb-3">
                         « {tst.quote} »
                       </blockquote>
                       <figcaption className="text-xs sm:text-sm">
@@ -296,7 +296,7 @@ export default function ControleDeGestionExternalisePage({
                           +
                         </span>
                       </summary>
-                      <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                      <div className="site-copy px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
                         {faq.answerHtml ? (
                           <p
                             dangerouslySetInnerHTML={{ __html: faq.answerHtml }}
@@ -314,13 +314,13 @@ export default function ControleDeGestionExternalisePage({
                   inline anchor links to other services (outbound
                   internal linking spec, TICKET F2.4). */}
               {section.closingText && (
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
                   {section.closingText}
                 </p>
               )}
               {section.closingTextHtml && (
                 <p
-                  className="text-sm sm:text-base text-muted-foreground leading-relaxed prose-internal"
+                  className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed prose-internal"
                   dangerouslySetInnerHTML={{ __html: section.closingTextHtml }}
                 />
               )}
@@ -333,7 +333,7 @@ export default function ControleDeGestionExternalisePage({
                       <Link
                         key={bidx}
                         href={btn.href}
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all"
+                        className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all"
                       >
                         {btn.label}
                         <ArrowRight size={16} aria-hidden="true" />
@@ -342,7 +342,7 @@ export default function ControleDeGestionExternalisePage({
                       <Link
                         key={bidx}
                         href={btn.href}
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
+                        className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
                       >
                         {btn.label}
                       </Link>

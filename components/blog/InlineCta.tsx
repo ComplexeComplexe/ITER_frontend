@@ -18,7 +18,7 @@ export default function InlineCTA({
   ctaHref,
 }: InlineCTAProps) {
   return (
-    <div className="my-8 rounded-lg border border-blue-200 bg-blue-50 p-6 md:p-8">
+    <div className="site-card my-8 rounded-lg border border-blue-200 bg-blue-50 p-6 md:p-8">
       <h3 className="mb-3 text-lg font-semibold text-slate-900">
         {title}
       </h3>
@@ -27,7 +27,7 @@ export default function InlineCTA({
       </p>
       <a
         href={ctaHref}
-        className="inline-flex items-center rounded-lg border border-blue-600 px-6 py-3 font-medium text-blue-600 transition-colors hover:bg-blue-50 hover:text-blue-700"
+        className="site-button site-button-secondary inline-flex items-center rounded-lg border border-blue-600 px-6 py-3 font-medium text-blue-600 transition-colors hover:bg-blue-50 hover:text-blue-700"
       >
         {ctaLabel}
       </a>

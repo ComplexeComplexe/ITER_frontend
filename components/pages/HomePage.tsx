@@ -110,7 +110,7 @@ function ServiceCard({
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="group p-6 rounded-2xl bg-card border border-border/50 hover:border-transparent hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+      className="site-card group p-6 rounded-2xl bg-card border border-border/50 hover:border-transparent hover:shadow-xl transition-all duration-300 relative overflow-hidden"
     >
       <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br ${hoverBg}`} />
       <div className="relative z-10">
@@ -199,7 +199,7 @@ function TrustfolioLazySection({
   }, [sectionRef, loaded]);
 
   return (
-    <section className="py-24 lg:py-32 bg-background">
+    <section className="site-section py-24 lg:py-32 bg-background">
       <div className="container text-center" ref={sectionRef}>
         {children}
       </div>
@@ -299,7 +299,7 @@ export default function HomePage({
       />
 
       {/* ═══ CLIENT LOGOS ═══ */}
-      <section className="py-16 bg-background border-b border-border/50">
+      <section className="site-section py-16 bg-background border-b border-border/50">
         <div className="container mb-8">
           <p className="text-center text-sm font-medium text-muted-foreground uppercase tracking-widest">
             {t.clientsLabel}
@@ -330,7 +330,7 @@ export default function HomePage({
       </section>
 
       {/* ═══ SERVICES OVERVIEW ═══ */}
-      <section id="services" className="py-24 lg:py-32 bg-background">
+      <section id="services" className="site-section py-24 lg:py-32 bg-background">
         <div className="container">
           <motion.div
             ref={servicesRef}
@@ -381,7 +381,7 @@ export default function HomePage({
       </section>
 
       {/* ═══ DAF SECTION ═══ */}
-      <section className="py-24 lg:py-32 bg-muted/30 overflow-x-clip">
+      <section className="site-section py-24 lg:py-32 bg-muted/30 overflow-x-clip">
         <div className="container">
           <div
             ref={dafRef}
@@ -408,7 +408,7 @@ export default function HomePage({
                 initial={{ opacity: 0, y: 20 }}
                 animate={dafInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="absolute -bottom-6 -right-4 lg:right-8 bg-white rounded-2xl shadow-xl p-5 border border-border/50"
+                className="site-card absolute -bottom-6 -right-4 lg:right-8 bg-white rounded-2xl shadow-xl p-5 border border-border/50"
               >
                 <div className="grid grid-cols-3 gap-6 text-center">
                   <div>
@@ -473,13 +473,13 @@ export default function HomePage({
               <div className="flex flex-wrap gap-3">
                 <Link
                   href={`${getContactPath(locale)}#daf`}
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-iter-violet text-white font-semibold hover:shadow-lg hover:shadow-iter-violet/20 transition-all duration-300"
+                  className="site-button site-button-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-iter-violet text-white font-semibold hover:shadow-lg hover:shadow-iter-violet/20 transition-all duration-300"
                 >
                   {t.dafSection.cta}
                 </Link>
                 <Link
                   href={locale === "fr" ? "/daf-externalise" : locale === "en" ? "/en/fractional-cfo" : "/es/externalizacion-daf"}
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-iter-violet text-iter-violet font-semibold hover:bg-iter-violet/5 transition-all duration-300"
+                  className="site-button site-button-secondary inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-iter-violet text-iter-violet font-semibold hover:bg-iter-violet/5 transition-all duration-300"
                 >
                   {locale === "fr" ? "D\u00e9couvrir le DAF externalis\u00e9" : locale === "en" ? "Explore Fractional CFO services" : "Conocer el DAF externalizado"}
                   <ArrowRight size={16} />
@@ -525,7 +525,7 @@ export default function HomePage({
       </section>
 
       {/* ═══ PROCESS SECTION ═══ */}
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="site-section py-24 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
             src="/images/bg/bg-3d.webp"
@@ -572,7 +572,7 @@ export default function HomePage({
                   {i < t.steps.length - 1 && (
                     <div className="hidden lg:block absolute top-12 left-[calc(50%+32px)] right-0 h-px bg-gradient-to-r from-iter-violet/30 to-iter-violet/5 z-0" />
                   )}
-                  <div className="relative z-10 p-6 rounded-2xl bg-card border border-border/50 hover:border-iter-violet/30 hover:shadow-xl transition-all duration-300 group h-full">
+                  <div className="site-card relative z-10 p-6 rounded-2xl bg-card border border-border/50 hover:border-iter-violet/30 hover:shadow-xl transition-all duration-300 group h-full">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-14 h-14 rounded-2xl bg-iter-violet/10 flex items-center justify-center group-hover:bg-iter-violet group-hover:text-white transition-all duration-300">
                         <StepIcon size={24} className="text-iter-violet group-hover:text-white transition-colors" />
@@ -592,7 +592,7 @@ export default function HomePage({
       </section>
 
       {/* ═══ WHY SECTION ═══ */}
-      <section className="relative py-24 lg:py-32 bg-iter-violet overflow-hidden">
+      <section className="site-section relative py-24 lg:py-32 bg-iter-violet overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <svg className="w-full h-full" viewBox="0 0 1440 800" fill="none">
             <line
@@ -668,7 +668,7 @@ export default function HomePage({
                 return (
                   <div
                     key={i}
-                    className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10"
+                    className="site-card text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10"
                   >
                     <div className="text-4xl lg:text-5xl font-bold text-iter-chartreuse mb-2">
                       <PublishedCounter target={numVal} suffix={suffix} />
@@ -690,7 +690,7 @@ export default function HomePage({
                   initial={{ opacity: 0, y: 30 }}
                   animate={whyInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                  className="p-7 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors duration-300 group"
+                  className="site-card p-7 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors duration-300 group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-iter-chartreuse/20 flex items-center justify-center mb-4 group-hover:bg-iter-chartreuse/30 transition-colors">
                     <WhyIcon size={22} className="text-iter-chartreuse" />
@@ -709,7 +709,7 @@ export default function HomePage({
       </section>
 
       {/* ═══ TEAM SECTION ═══ */}
-      <section id="about" className="py-24 lg:py-32 bg-muted/30">
+      <section id="about" className="site-section py-24 lg:py-32 bg-muted/30">
         <div className="container" ref={teamRef}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24">
             <motion.div
@@ -899,7 +899,7 @@ export default function HomePage({
       </TrustfolioLazySection>
 
       {/* ═══ WHEN + FAQ SECTION ═══ */}
-      <section className="py-24 lg:py-32 bg-background">
+      <section className="site-section py-24 lg:py-32 bg-background">
         <div className="container" ref={whenRef}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -926,7 +926,7 @@ export default function HomePage({
                     initial={{ opacity: 0, y: 20 }}
                     animate={whenInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
-                    className="relative p-5 rounded-2xl bg-muted/50 border border-border/50 hover:border-iter-violet/30 hover:bg-iter-violet/5 transition-all duration-300 group"
+                    className="site-card relative p-5 rounded-2xl bg-muted/50 border border-border/50 hover:border-iter-violet/30 hover:bg-iter-violet/5 transition-all duration-300 group"
                   >
                     <div className="w-10 h-10 rounded-lg bg-iter-violet/10 flex items-center justify-center mb-3 group-hover:bg-iter-violet/20 transition-colors">
                       <PhaseIcon size={18} className="text-iter-violet" />
@@ -951,7 +951,7 @@ export default function HomePage({
             <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-8">
               {t.faqHeading}
             </h3>
-            <div className="bg-card rounded-2xl border border-border/50 p-6 lg:p-8">
+            <div className="site-card bg-card rounded-2xl border border-border/50 p-6 lg:p-8">
               {t.faqs.map((faq) => (
                 <FAQItem key={faq.q} {...faq} />
               ))}
@@ -961,7 +961,7 @@ export default function HomePage({
       </section>
 
       {/* ═══ BLOG ═══ */}
-      {locale === "fr" ? <HomeDecisionResources /> : <section className="bg-muted/30 py-24 lg:py-32">
+      {locale === "fr" ? <HomeDecisionResources /> : <section className="site-section bg-muted/30 py-24 lg:py-32">
         <div className="container">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
             <div className="max-w-lg">
@@ -974,7 +974,7 @@ export default function HomePage({
             </div>
             <Link
               href={t.latestContent.resourcesHref}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground font-medium hover:bg-iter-violet hover:text-white hover:border-iter-violet transition-all duration-300 self-start lg:self-auto"
+              className="site-button site-button-secondary inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground font-medium hover:bg-iter-violet hover:text-white hover:border-iter-violet transition-all duration-300 self-start lg:self-auto"
             >
               {t.latestContent.cta}
               <ArrowRight size={16} />
@@ -1014,7 +1014,7 @@ export default function HomePage({
       {/* ═══ CONTACT CTA ═══ */}
       <section
         id="contact"
-        className="py-24 lg:py-32 bg-iter-chartreuse relative overflow-hidden"
+        className="site-section py-24 lg:py-32 bg-iter-chartreuse relative overflow-hidden"
       >
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none">
@@ -1061,7 +1061,7 @@ export default function HomePage({
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href={`${getContactPath(locale)}#daf`}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-dark text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
+                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-dark text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
               >
                 {t.hero.cta}
                 <ArrowRight

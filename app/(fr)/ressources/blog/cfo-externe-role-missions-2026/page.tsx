@@ -478,7 +478,7 @@ export default function CfoExterneRoleMissions2026Page() {
         {FAQ_ITEMS.map((item, i) => (
           <details
             key={i}
-            className="my-3 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-4"
+            className="site-card my-3 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-4"
           >
             <summary className="cursor-pointer font-semibold text-foreground">
               {item.question}
@@ -489,7 +489,7 @@ export default function CfoExterneRoleMissions2026Page() {
           </details>
         ))}
 
-        <div className="my-10 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-6 md:p-8">
+        <div className="site-card my-10 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-6 md:p-8">
           <h3 className="mb-3 text-lg font-semibold text-slate-900">
             Besoin d&apos;un CFO externe pour votre entreprise ?
           </h3>

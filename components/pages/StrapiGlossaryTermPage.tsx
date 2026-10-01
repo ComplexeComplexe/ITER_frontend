@@ -16,7 +16,7 @@ export default function StrapiGlossaryTermPage({ locale, term }: { locale: Local
 
   return (
     <PageLayout locale={locale}>
-      <section className="bg-background pt-32 pb-16">
+      <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb locale={locale} items={[{ label: t.resources, href: t.resourcesHref }, { label: t.glossary, href: t.glossaryHref }, { label: term.title }]} />
           <h1 className="text-3xl lg:text-4xl font-bold font-heading text-foreground max-w-3xl">{term.title}</h1>

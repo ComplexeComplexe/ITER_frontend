@@ -163,7 +163,7 @@ export default async function GuideFiscalPage({
       />
 
       {/* ─── Hero : fil d'Ariane, H1, fraîcheur + byline, chapô, image ─── */}
-      <section className="bg-background pt-32 pb-8 sm:pb-10">
+      <section className="site-hero bg-background pt-32 pb-8 sm:pb-10">
         <div className="container max-w-3xl">
           <Breadcrumb
             locale="fr"
@@ -220,7 +220,7 @@ export default async function GuideFiscalPage({
               {kpis.map((k) => (
                 <div
                   key={k.label}
-                  className="rounded-2xl border border-border/60 bg-background p-4 text-center"
+                  className="site-card rounded-2xl border border-border/60 bg-background p-4 text-center"
                 >
                   <div className="font-heading text-2xl sm:text-3xl font-bold text-iter-violet tabular-nums text-balance">
                     {k.value}
@@ -234,13 +234,13 @@ export default async function GuideFiscalPage({
           {/* L'essentiel — la réponse directe avant le développement */}
           <aside
             id="essentiel"
-            className="scroll-mt-24 rounded-2xl border-l-4 border-iter-violet bg-iter-violet/5 p-6"
+            className="site-card scroll-mt-24 rounded-2xl border-l-4 border-iter-violet bg-iter-violet/5 p-6"
           >
             <h2 className="mb-3 flex items-center gap-2 font-heading text-xl font-semibold text-iter-violet">
               <Sparkles size={20} aria-hidden />
               {essentiel.title}
             </h2>
-            <ul className="space-y-2 text-sm sm:text-base text-foreground/80 leading-relaxed list-disc pl-5 marker:text-iter-violet">
+            <ul className="site-copy space-y-2 text-sm sm:text-base text-foreground/80 leading-relaxed list-disc pl-5 marker:text-iter-violet">
               {essentiel.items.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
@@ -267,7 +267,7 @@ export default async function GuideFiscalPage({
       </section>
 
       {/* ─── FAQ : visible et JSON-LD générés depuis le même tableau ─── */}
-      <section className="bg-background py-10 sm:py-14">
+      <section className="site-section bg-background py-10 sm:py-14">
         <div className="container max-w-3xl">
           <div id="faq" className="scroll-mt-24">
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 leading-tight">
@@ -285,7 +285,7 @@ export default async function GuideFiscalPage({
                       +
                     </span>
                   </summary>
-                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <div className="site-copy px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
                     <p>{q.answer}</p>
                   </div>
                 </details>
@@ -298,12 +298,12 @@ export default async function GuideFiscalPage({
       {/* ─── CTA ─── */}
       <section className="bg-background pb-10">
         <div className="container max-w-3xl">
-          <div className="rounded-3xl bg-iter-dark p-8 sm:p-10 text-white">
+          <div className="site-card rounded-3xl bg-iter-dark p-8 sm:p-10 text-white">
             <p className="font-heading text-2xl font-semibold mb-2">{cta.title}</p>
             <p className="text-white/70 max-w-xl leading-relaxed mb-5">{cta.text}</p>
             <Link
               href={cta.href ?? "/contact"}
-              className="inline-flex items-center gap-2 rounded-full bg-iter-violet px-6 py-3 font-heading font-semibold text-white hover:bg-iter-violet/90 transition-all duration-300"
+              className="site-button site-button-primary inline-flex items-center gap-2 rounded-full bg-iter-violet px-6 py-3 font-heading font-semibold text-white hover:bg-iter-violet/90 transition-all duration-300"
             >
               {cta.label ?? "Demander un diagnostic"}
               <ArrowRight size={16} aria-hidden />
