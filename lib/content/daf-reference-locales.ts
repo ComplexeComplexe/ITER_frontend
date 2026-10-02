@@ -21,7 +21,7 @@ const role = {
   ],
  },
  es: {
-  meta: { title: "CFO: definición, funciones y responsabilidades | Iter Advisors", description: "¿Qué hace un director financiero? Sus funciones, competencias, modalidades de trabajo y diferencias con la asesoría contable." },
+  meta: { title: "CFO: definición y funciones | Iter Advisors", description: "¿Qué hace un director financiero? Sus funciones, competencias, modalidades de trabajo y diferencias con la asesoría contable." },
   parentLabel: "CFO externo", breadcrumbLabel: "Funciones del CFO", h1: "CFO: definición, papel y funciones del director financiero", ctaButton: "Hablar de mi necesidad",
   headings: [undefined, "Las principales funciones del CFO", "Competencias y trayectoria profesional", "CFO interno, a tiempo parcial o de transición: ¿cómo funciona?", "Salario, honorarios y presupuesto: comparar conceptos equivalentes", "Ejercer esta función en Iter", "FAQ: las funciones del CFO", "Trabajar como CFO en Iter Advisors"],
   paragraphs: [

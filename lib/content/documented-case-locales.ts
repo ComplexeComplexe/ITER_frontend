@@ -10,7 +10,7 @@ interface CaseTranslation {
 const translations: Record<"en" | "es", CaseTranslation[]> = {
   en: [
     {
-      metaTitle: "SolarMente: fundraising and finance operations | Iter Advisors",
+      metaTitle: "SolarMente: finance and fundraising | Iter Advisors",
       title: "SolarMente: preparing finance for fundraising and an acquisition",
       summary: "Financial modelling, a data room, board reporting and financial integration: the work of a Fractional CFO in a growing cleantech business.",
       proof: "Multiple-scenario financial model, data room and board reporting",
@@ -24,7 +24,7 @@ const translations: Record<"en" | "es", CaseTranslation[]> = {
       offerLabel: "Fundraising support", sourceLabel: "Testimonial by Victor Gardrinier, SolarMente co-founder, on Trustfolio",
     },
     {
-      metaTitle: "Seasonly: channel margins and working capital | Iter Advisors",
+      metaTitle: "Seasonly: channel margins and cash | Iter Advisors",
       title: "Seasonly: managing channel margins and financing working capital",
       summary: "Channel P&Ls, inventory management and weekly reporting: a Fractional CFO engagement for a multi-channel beauty brand.",
       proof: "Channel P&Ls and a working capital financing plan", sectorTag: "D2C / Beauty",
@@ -52,7 +52,7 @@ const translations: Record<"en" | "es", CaseTranslation[]> = {
   ],
   es: [
     {
-      metaTitle: "SolarMente: financiación y función financiera | Iter Advisors",
+      metaTitle: "SolarMente: financiación y tesorería | Iter Advisors",
       title: "SolarMente: preparar las finanzas para una ronda y una adquisición",
       summary: "Modelo financiero, data room, reporting al consejo e integración financiera: el trabajo de un CFO externo en una cleantech en crecimiento.",
       proof: "Modelo con varios escenarios, data room y reporting al consejo", sectorTag: "Cleantech / Energía",
@@ -78,7 +78,7 @@ const translations: Record<"en" | "es", CaseTranslation[]> = {
       offerLabel: "CFO externo para e-commerce", relatedLabel: "control de gestión externo",
     },
     {
-      metaTitle: "Opti Digital: organizar la función financiera | Iter Advisors",
+      metaTitle: "Opti Digital: dirección financiera | Iter Advisors",
       title: "Opti Digital: estructurar la función financiera a largo plazo",
       summary: "Migración del ERP, reporting, cierre y financiación no dilutiva: cómo Iter ayuda a una pyme adtech a estructurar su función financiera.",
       proof: "Función financiera estructurada y financiación no dilutiva", sectorTag: "Adtech / Medios",

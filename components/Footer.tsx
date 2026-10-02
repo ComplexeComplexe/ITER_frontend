@@ -164,7 +164,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                   { text: locale === "fr" ? "Double imposition" : locale === "en" ? "Double taxation" : "Doble imposición", href: "/ressources/fiscalite/double-imposition-france-espagne" },
                   { text: locale === "fr" ? "Impôt sur le revenu" : locale === "en" ? "Income tax" : "Impuesto sobre la renta", href: "/ressources/fiscalite/impot-revenu-espagne" },
                   { text: "Modelo 720", href: "/ressources/fiscalite/modelo-720" },
-                  { text: locale === "fr" ? "Loi Beckham" : locale === "en" ? "Beckham Law" : "Ley Beckham", href: "/ressources/fiscalite/beckham-law" },
+                  { text: locale === "fr" ? "Loi Beckham" : locale === "en" ? "Beckham Law" : "Ley Beckham", href: locale === "en" ? "/en/services/ley-beckham" : locale === "es" ? "/es/services/ley-beckham" : "/ressources/fiscalite/beckham-law" },
                 ].map((item) => (
                   <li key={item.href}>
                     <Link

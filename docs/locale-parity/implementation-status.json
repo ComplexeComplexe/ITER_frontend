@@ -4262,8 +4262,14 @@
     "redirectRules": 339,
     "redirectIssues": 0,
     "httpPages": 54,
-    "httpInternalDestinations": 179,
-    "httpIssues": 0
+    "httpInternalDestinations": 181,
+    "httpIssues": 0,
+    "globalSeoFailures": 0,
+    "globalSeoInternalDestinations": 247,
+    "globalSeoHreflang": 728,
+    "structuredDataQuestions": 421,
+    "structuredDataFailures": 0,
+    "workflowAuditsPassedLocally": true
   },
   "additionalCorrection": "FR ROI landing: removed unsubstantiated claims; no success without confirmed webhook delivery."
 }
