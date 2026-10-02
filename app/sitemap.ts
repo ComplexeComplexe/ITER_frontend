@@ -1,3 +1,4 @@
+import { DAF_PILLAR_MODIFIED } from "@/lib/content/daf-pillar";
 import { TAX_COMPARISON_MODIFIED } from "@/lib/content/tax-comparison";
 import type { MetadataRoute } from "next";
 import { PAGE_REVISIONS, latestRevision } from "@/lib/content/page-revisions";
@@ -19,7 +20,7 @@ const BASE = "https://www.iteradvisors.com";
 const D = {
   homepage:      "2026-09-05", // client count aligned with approved facts
   pillar:        "2026-05-17", // DAF / DRH pillar pages — last major copy update
-  dafPillar:     "2026-09-03", // FR pillar rewrite
+  dafPillar:     DAF_PILLAR_MODIFIED, // FR pillar content revision
   dafOffer:      "2026-09-05", // EN/ES offer and FR pricing alignment
   service:       "2026-09-01", // REDESIGN-P4 — auteur, date, FAQ RH, maillage DRH
   local:         "2026-05-17", // geo pages (Barcelona, Paris, Toulouse)
