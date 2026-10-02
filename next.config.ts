@@ -907,16 +907,15 @@ const nextConfig: NextConfig = {
       { source: "/ressources/blog/que-es-fractional-cfo", destination: "/ressources/blog", permanent: true },
 
       // ── ES locale slug mismatches (old or untranslated subpage slugs)
-      { source: "/es/externalizacion-daf/tarifas",      destination: "/es/externalizacion-daf", permanent: true },
-      { source: "/es/externalizacion-daf/tarifs",       destination: "/es/externalizacion-daf", permanent: true },
-      { source: "/es/externalizacion-daf/secteurs",     destination: "/es/externalizacion-daf", permanent: true },
-      { source: "/es/externalizacion-daf/sectores",     destination: "/es/externalizacion-daf", permanent: true },
+      { source: "/es/externalizacion-daf/tarifas",      destination: "/es/externalizacion-daf/precios", permanent: true },
+      { source: "/es/externalizacion-daf/tarifs",       destination: "/es/externalizacion-daf/precios", permanent: true },
+      { source: "/es/externalizacion-daf/secteurs",     destination: "/es/externalizacion-daf/sectores", permanent: true },
       // FR slug for ES page → correct ES slug
       { source: "/es/externalizacion-daf/temps-partage", destination: "/es/externalizacion-daf/tiempo-compartido", permanent: true },
 
       // ── EN locale slug mismatches
-      { source: "/en/fractional-cfo/tarifs",   destination: "/en/fractional-cfo",             permanent: true },
-      { source: "/en/fractional-cfo/secteurs", destination: "/en/fractional-cfo",             permanent: true },
+      { source: "/en/fractional-cfo/tarifs",   destination: "/en/fractional-cfo/pricing",      permanent: true },
+      { source: "/en/fractional-cfo/secteurs", destination: "/en/fractional-cfo/sectors",      permanent: true },
       // FR slug → correct EN slug (page exists)
       { source: "/en/fractional-cfo/temps-partage", destination: "/en/fractional-cfo/shared-time", permanent: true },
 

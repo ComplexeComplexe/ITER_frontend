@@ -53,5 +53,20 @@ const legacy = await fetch(base + '/jobs/fractional-cfo-startups', { redirect: '
 if (![301, 308].includes(legacy.status) || new URL(legacy.headers.get('location') ?? '/', base).pathname !== '/fractional-cfo-startups') failures.push({ path: '/jobs/fractional-cfo-startups', reason: 'preserve-legacy-commercial-redirect' });
 const hub = await (await fetch(base + '/services')).text();
 if (!hub.includes('href="/fractional-cfo-startups"')) failures.push({ path: '/services', reason: 'startup-discoverability' });
+// Historical translated aliases must retain the specific pricing/sector intent.
+const translatedAliases = [
+  ['/es/externalizacion-daf/tarifas', '/es/externalizacion-daf/precios'],
+  ['/es/externalizacion-daf/tarifs', '/es/externalizacion-daf/precios'],
+  ['/es/externalizacion-daf/secteurs', '/es/externalizacion-daf/sectores'],
+  ['/en/fractional-cfo/tarifs', '/en/fractional-cfo/pricing'],
+  ['/en/fractional-cfo/secteurs', '/en/fractional-cfo/sectors'],
+];
+await Promise.all(translatedAliases.map(async ([source, target]) => {
+  const response = await fetch(base + source, { redirect: 'manual' });
+  const destination = new URL(response.headers.get('location') ?? '/', base).pathname;
+  if (![301, 308].includes(response.status) || destination !== target) failures.push({ path: source, reason: 'specific-translated-alias' });
+  const final = await fetch(base + target, { redirect: 'manual' });
+  if (final.status !== 200) failures.push({ path: target, reason: 'alias-target-must-be-final-200' });
+}));
 console.log(JSON.stringify({ results, failures }, null, 2));
 process.exitCode = failures.length ? 1 : 0;

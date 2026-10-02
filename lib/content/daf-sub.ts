@@ -536,12 +536,12 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       meta: {
         title: "DAF externalisé par secteur en 2026 | Iter Advisors",
         description:
-          "DAF externalisé spécialisé par secteur (SaaS, e-commerce, industrie, fintech, santé). Notre expertise sectorielle adaptée à votre métier.",
+          "DAF externalisé pour startups, e-commerce, industrie et deep tech : enjeux financiers, indicateurs, livrables et choix du profil selon votre activité.",
       },
       parentLabel: "DAF externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "DAF par secteur",
-      h1: "DAF Externalisé par Secteur : notre expertise sectorielle",
+      h1: "DAF externalisé par secteur : adapter le pilotage à votre activité",
       sections: [
         {
           content: [
@@ -550,7 +550,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             // des fourchettes par secteur reviendrait à inventer des prix.
             "**Un DAF externalisé spécialisé par secteur est un directeur financier qui connaît déjà les cycles, les marges et les risques de votre activité** — saisonnalité et stocks en e-commerce, supply chain et change en industrie, R&D longue et financement non dilutif en deep tech. La grille reste celle de toutes nos missions, de 3 000 à 8 000 € HT par mois : c'est le profil qui change, pas le prix.",
             "Chaque secteur d'activité a ses spécificités financières. Une startup **SaaS** n'a pas les mêmes enjeux qu'une **ETI industrielle** ou une plateforme **e-commerce**. Les cycles de vente sont différents, les modèles économiques varient, les risques ne sont pas les mêmes.",
-            "Chez Iter Advisors, nos DAFs externalisés disposent d'une expertise sectorielle approfondie. Ils comprennent votre métier, vos défis spécifiques, et les bonnes pratiques de votre industrie.",
+            "Le cadrage permet de présenter un profil et d'examiner son expérience sur les sujets utiles à votre activité. Les pages ci-dessous précisent les enjeux et livrables à discuter ; elles ne constituent pas, à elles seules, une preuve de mission réalisée dans chaque secteur.",
           ],
         },
         {
@@ -585,19 +585,19 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           heading: "DAF Externalisé pour Fintech & Finance",
           content: [
-            "Les entreprises fintech opèrent dans un cadre réglementaire strict. Notre DAF externalisé pour fintech maîtrise la conformité, les reporting réglementaires, et les enjeux de trésorerie en temps réel.",
+            "Les entreprises fintech peuvent avoir des obligations réglementaires propres à leur activité. Le cadrage identifie les besoins de trésorerie et de reporting, ainsi que les responsabilités des équipes conformité et des conseils spécialisés. Une mission de DAF ne remplace pas leur intervention.",
           ],
         },
         {
           heading: "DAF Externalisé pour Santé & Biotech",
           content: [
-            "Les entreprises de santé et biotech font face à des cycles longs de R&D, des cycles de remboursement complexes, et des enjeux réglementaires importants. Notre expertise aide à piloter la performance dans cet environnement.",
+            "Les entreprises de santé et biotech peuvent cumuler R&D longue, délais de remboursement et contraintes réglementaires. La mission doit préciser le budget par projet, les financements confirmés et les interlocuteurs spécialisés. La disponibilité d'un profil adapté est vérifiée avant tout engagement.",
           ],
         },
         {
           heading: "Contactez-Nous",
           content: [
-            "Vous recherchez un DAF externalisé spécialisé dans votre secteur ? Nos consultants sauront vous proposer le profil idéal. Consultez également nos autres pages : **[DAF à temps partagé](/daf-externalise/temps-partage)**, **[DAF de transition](/daf-externalise/transition)**, **[métier de DAF](/daf-externalise/metier)**, et **[tarifs](/daf-externalise/tarifs)**.",
+            "Présentez votre modèle économique, vos outils, vos échéances et les décisions à préparer. Le premier échange permet de vérifier le périmètre et le profil adapté. Consultez également nos pages : **[DAF à temps partagé](/daf-externalise/temps-partage)**, **[DAF de transition](/daf-externalise/transition)**, **[métier de DAF](/daf-externalise/metier)** et **[tarifs](/daf-externalise/tarifs)**.",
           ],
         },
         {

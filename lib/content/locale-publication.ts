@@ -11,6 +11,9 @@ export const ALIGNED_PAGE_IDS = [
   "/services/accompagnement-levee-de-fond", "/services/ma-due-diligence",
   "/ressources/cas-clients/solarmente-serie-b-cleantech", "/ressources/cas-clients/seasonly-marge-par-canal-bfr", "/ressources/cas-clients/opti-digital-structuration-financement",
   "/daf-externalise/tarifs", "/daf-externalise/metier",
+  "/daf-externalise-barcelone", "/daf-externalise-toulouse",
+  "/daf-externalise/secteurs", "/daf-externalise/ecommerce", "/daf-externalise/industrie", "/daf-externalise/deep-tech",
+  "/ressources",
 ] as const;
 export const LOCALE_ALIGNMENT_DATE = "2026-10-02";
 export function alignedPaths(sourcePath: string) {

@@ -1,56 +1,34 @@
-import { Metadata } from "next";
-import ResourcesPageFR from "@/components/pages/ResourcesPageFR";
+import ResourcesDecisionHub from "@/components/pages/ResourcesDecisionHub";
 import { buildMetadata } from "@/lib/metadata";
 import { getCmsNavigation } from "@/lib/static-content";
+import { resourceText } from "@/lib/content/resources-hub-locales";
+import { parityHref } from "@/lib/locale-route-map";
+import { alignedPaths } from "@/lib/content/locale-publication";
 
-// SEO-14 (2026-07-13) — localizedPaths ajouté (ES utilise /recursos).
-export const metadata: Metadata = buildMetadata({
-  locale: "fr",
-  title: "Ressources Finance & DAF : blog et outils | Iter Advisors",
-  description: "Blog finance, glossaire, outils CFO, fiches métiers, cas clients et témoignages : toutes les ressources Iter Advisors pour piloter votre croissance financière.",
-  path: "/ressources",
-  localizedPaths: {
-    fr: "/ressources",
-    en: "/ressources",
-    es: "/recursos",
-  },
-});
-
-const collectionPageSchema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "@id": "https://www.iteradvisors.com/ressources#webpage",
-  name: "Ressources DAF externalisé | Iter Advisors",
-  description:
-    "Ressources DAF : blog finance, glossaire, fiches métiers, témoignages et articles fiscalité France-Espagne.",
-  url: "https://www.iteradvisors.com/ressources",
-  inLanguage: "fr-FR",
+const locale = "fr";
+const title = resourceText(locale, "Ressources Finance & DAF : blog et outils | Iter Advisors");
+const description = resourceText(locale, "Blog finance, glossaire, outils CFO, fiches métiers, cas clients et témoignages : toutes les ressources Iter Advisors pour piloter votre croissance financière.");
+const paths = alignedPaths("/ressources")!;
+export const metadata = buildMetadata({ locale, path: paths[locale], title, description, localizedPaths: paths });
+const schema = {
+  "@context": "https://schema.org", "@type": "CollectionPage",
+  "@id": `https://www.iteradvisors.com${paths[locale]}#webpage`,
+  name: title, description, url: `https://www.iteradvisors.com${paths[locale]}`,
+  inLanguage: { fr: "fr-FR", en: "en-GB", es: "es-ES" }[locale],
   isPartOf: { "@id": "https://www.iteradvisors.com/#website" },
-  mainEntity: {
-    "@type": "ItemList",
-    name: "Guides, outils et cas clients Iter Advisors",
-    itemListElement: [
-      ["Tableau de bord financier", "/ressources/blog/tableau-de-bord-financier-startup-12-kpis"],
-      ["Coût d’un DAF externalisé", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026"],
-      ["Checklist de due diligence", "/ressources/blog/checklist-due-diligence-levee-de-fonds"],
-      ["IA et finance", "/ressources/ia-finance"],
-      ["Cas clients documentés", "/ressources/cas-clients"],
-      ["Glossaire financier", "/ressources/glossaire"],
-    ].map(([name, path], index) => ({
-      "@type": "ListItem", position: index + 1, name, url: `https://www.iteradvisors.com${path}`,
-    })),
-  },
+  mainEntity: { "@type": "ItemList", itemListElement: [
+    ["Tableau de bord : les 12 KPIs financiers", "/ressources/blog/tableau-de-bord-financier-startup-12-kpis"],
+    ["Comprendre le coût d’un DAF externalisé", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026"],
+    ["Checklist de due diligence financière", "/ressources/blog/checklist-due-diligence-levee-de-fonds"],
+    ["Explorer les guides IA et finance", "/ressources/ia-finance"],
+    ["Tous les cas clients", "/ressources/cas-clients"],
+    ["Tout le glossaire financier", "/ressources/glossaire"],
+  ].map(([source, path], index) => ({ "@type": "ListItem", position: index + 1,
+    name: resourceText(locale, source), url: `https://www.iteradvisors.com${parityHref(path, locale)}` })), },
 };
-
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("fr");
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
-      />
-      <ResourcesPageFR cmsNavigation={cmsNavigation} />
-    </>
-  );
+  return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+    <ResourcesDecisionHub locale={locale} cmsNavigation={await getCmsNavigation(locale)} />
+  </>;
 }

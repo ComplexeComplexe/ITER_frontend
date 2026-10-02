@@ -1,27 +1,18 @@
-import { Metadata } from "next";
 import DafSubPage from "@/components/pages/DafSubPage";
-import { buildStrapiMetadata } from "@/lib/metadata";
-import { getDafSubContent } from "@/lib/content/daf-sub";
+import { buildMetadata } from "@/lib/metadata";
+import { getDafSectorContent } from "@/lib/content/daf-sector-locales";
 import { getCmsNavigation } from "@/lib/static-content";
+import { buildDafSubFaqSchema } from "@/lib/daf-sub-schema";
+import { alignedPaths } from "@/lib/content/locale-publication";
 
-const content = getDafSubContent("fr", "ecommerce")!;
-
-export async function generateMetadata(): Promise<Metadata> {
-  return buildStrapiMetadata({
-    endpoint: "daf-ecommerce-page",
-    locale: "fr",
-    path: "/daf-externalise/ecommerce",
-    // GEO-03 (2026-08-26) — cette page est française uniquement : les deux
-    // URL déclarées comme traductions répondent 404. Le défaut est resté
-    // invisible tant que la page était absente du sitemap, donc hors de
-    // portée de la recette.
-    disableHreflang: ["en", "es"],
-    fallbackTitle: content.meta.title,
-    fallbackDescription: content.meta.description,
-  });
-}
-
+const locale = "fr";
+const content = getDafSectorContent(locale, "ecommerce");
+const paths = alignedPaths("/daf-externalise/ecommerce")!;
+export const metadata = buildMetadata({ locale, path: paths[locale], title: content.meta.title, description: content.meta.description, localizedPaths: paths });
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("fr");
-  return <DafSubPage locale="fr" content={content} cmsNavigation={cmsNavigation} />;
+  const schema = buildDafSubFaqSchema(content, locale);
+  return <>
+    {schema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />}
+    <DafSubPage locale={locale} content={content} cmsNavigation={await getCmsNavigation(locale)} contactContext="daf" />
+  </>;
 }

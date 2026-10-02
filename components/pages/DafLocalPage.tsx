@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Link from "@/components/PublishedLocaleLink";
+import { parityHref } from "@/lib/locale-route-map";
 import { ArrowRight, MapPin, Building2, Users, Briefcase, BarChart3, Wallet, Rocket, Compass, Network, Star } from "lucide-react";
 import Image from "next/image";
 import { Locale } from "@/lib/i18n";
@@ -88,21 +89,21 @@ export default function DafLocalPage({
       "@type": "Place",
       name: city === "barcelone" ? "Barcelona" : city === "paris" ? "Paris" : "Toulouse",
     },
-    serviceType: locale === "fr" ? "DAF externalisé" : locale === "en" ? "Fractional CFO" : "CFO externalizado",
+    serviceType: locale === "fr" ? "DAF externalisé" : locale === "en" ? "Fractional CFO" : "CFO externo",
   };
 
   const dafPath = locale === "fr" ? "/daf-externalise" : locale === "en" ? "/en/fractional-cfo" : "/es/externalizacion-daf";
-  const dafLabel = locale === "fr" ? "DAF externalisé" : locale === "en" ? "Fractional CFO" : "CFO externalizado";
+  const dafLabel = locale === "fr" ? "DAF externalisé" : locale === "en" ? "Fractional CFO" : "CFO externo";
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* JSON-LD */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      {city !== "toulouse" && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }} />
+      {city !== "toulouse" && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema).replace(/</g, "\\u003c") }} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema).replace(/</g, "\\u003c") }} />
 
       {/* Hero */}
-      <section className="site-hero bg-background pt-32 pb-16">
+      <section data-block-key="hero" className="site-hero bg-background pt-32 pb-16">
         <div className="container">
           <Breadcrumb
             locale={locale}
@@ -131,7 +132,8 @@ export default function DafLocalPage({
                 </p>
               ))}
               <Link
-                href={locale === "fr" && city === "toulouse" ? "/contact#toulouse" : contactPath}
+                locale={locale}
+                href={city === "toulouse" ? `${contactPath}#toulouse` : contactPath}
                 className="site-button site-button-primary inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 mt-4"
               >
                 {t.ctaButton}
@@ -157,6 +159,7 @@ export default function DafLocalPage({
         <section
           key={idx}
           id={section.id}
+          data-block-key={`content-${idx}`}
           className={`py-16 ${idx % 2 === 0 ? "bg-background" : "bg-muted/30"}`}
         >
           <div className="container max-w-4xl">
@@ -172,17 +175,22 @@ export default function DafLocalPage({
                 {paragraph}
               </p>
             ))}
-            {section.links && <ul className="flex flex-wrap gap-x-6 gap-y-3 mt-6">{section.links.map(link => <li key={link.href}><Link className="site-inline-link" href={link.href}>{link.label} ↗</Link></li>)}</ul>}
+            {section.links && <ul className="flex flex-wrap gap-x-6 gap-y-3 mt-6">{section.links.map(link => <li key={link.href}><Link locale={locale} className="site-inline-link" href={parityHref(link.href, locale)}>{link.label} ↗</Link></li>)}</ul>}
           </div>
         </section>
       ))}
 
-      {locale === "fr" && city === "toulouse" && <>
-        <section className="site-section py-12 bg-muted/30"><div className="container max-w-4xl"><h2 className="text-2xl font-bold mb-4">Choisir le périmètre adapté</h2><div className="flex flex-wrap gap-5 text-iter-violet underline"><Link href="/daf-externalise/tarifs">Comparer les formules</Link><Link href="/fractional-cfo-startups">DAF pour startups et SaaS</Link><Link href="/daf-externalise/industrie">Pilotage d’une activité industrielle</Link><Link href="/daf-externalise">DAF externalisé pour PME</Link></div><p className="mt-6 text-muted-foreground">Les cas ci-dessous décrivent des missions conduites ailleurs. Ils permettent d’examiner les livrables et la méthode, sans constituer des références locales à Toulouse.</p></div></section>
-        <CaseProofLinks slugs={["opti-digital-structuration-financement", "seasonly-marge-par-canal-bfr"]} heading="Examiner notre travail sur d’autres missions" />
+      {city === "toulouse" && <>
+        <section data-block-key="scope" className="site-section py-12 bg-muted/30"><div className="container max-w-4xl"><h2 className="text-2xl font-bold mb-4">{locale === "fr" ? "Choisir le périmètre adapté" : locale === "en" ? "Choose the appropriate scope" : "Elegir el alcance adecuado"}</h2><div className="flex flex-wrap gap-5 text-iter-violet underline">{[
+          { href: "/daf-externalise/tarifs", label: { fr: "Comparer les formules", en: "Compare packages", es: "Comparar los planes" } },
+          { href: "/fractional-cfo-startups", label: { fr: "DAF pour startups et SaaS", en: "Fractional CFO for startups and SaaS", es: "CFO externo para startups y SaaS" } },
+          { href: "/daf-externalise/industrie", label: { fr: "Pilotage d’une activité industrielle", en: "Managing manufacturing finance", es: "Gestión financiera de una actividad industrial" } },
+          { href: "/daf-externalise", label: { fr: "DAF externalisé pour PME", en: "Fractional CFO for SMEs", es: "CFO externo para pymes" } },
+        ].map(item => <Link locale={locale} key={item.href} href={parityHref(item.href, locale)}>{item.label[locale]}</Link>)}</div><p className="mt-6 text-muted-foreground">{locale === "fr" ? "Les cas ci-dessous décrivent des missions conduites ailleurs. Ils permettent d’examiner les livrables et la méthode, sans constituer des références locales à Toulouse." : locale === "en" ? "The cases below describe engagements carried out elsewhere. They illustrate deliverables and methods, and are not local Toulouse references." : "Los casos siguientes describen misiones realizadas en otras ubicaciones. Permiten examinar los entregables y la metodología, pero no son referencias locales de Toulouse."}</p></div></section>
+        <CaseProofLinks locale={locale} slugs={["opti-digital-structuration-financement", "seasonly-marge-par-canal-bfr"]} heading={locale === "fr" ? "Examiner notre travail sur d’autres missions" : locale === "en" ? "Review our work on other engagements" : "Examinar nuestro trabajo en otras misiones"} />
       </>}
       {/* FAQ */}
-      <section className="site-section py-20 bg-background">
+      <section data-block-key="faq" className="site-section py-20 bg-background">
         <div className="container max-w-3xl">
           <h2 className="text-3xl font-bold font-heading text-foreground text-center mb-12">
             {locale === "fr" ? "Questions fréquentes" : locale === "en" ? "Frequently asked questions" : "Preguntas frecuentes"}
@@ -199,7 +207,7 @@ export default function DafLocalPage({
       </section>
 
       {/* Autres implantations - cross-linking */}
-      <section className="site-section py-20 bg-muted/30">
+      <section data-block-key="locations" className="site-section py-20 bg-muted/30">
         <div className="container">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-8">
             {locale === "fr" ? "Nos autres implantations" : locale === "en" ? "Our other locations" : "Nuestras otras sedes"}
@@ -211,6 +219,7 @@ export default function DafLocalPage({
               { key: "toulouse", cityFr: "Toulouse", cityEn: "Toulouse", cityEs: "Toulouse", hrefFr: "/daf-externalise-toulouse", hrefEn: "/en/fractional-cfo-toulouse", hrefEs: "/es/cfo-externalizado-toulouse" },
             ] as const).filter((loc) => loc.key !== city).map((loc, i) => (
               <Link
+                locale={locale}
                 key={i}
                 href={locale === "fr" ? loc.hrefFr : locale === "en" ? loc.hrefEn : loc.hrefEs}
                 className="site-card group flex items-center gap-4 bg-background border border-border/50 rounded-2xl p-6 hover:border-iter-violet/30 transition-all duration-300"
@@ -224,7 +233,7 @@ export default function DafLocalPage({
                       ? `DAF externalis\u00e9 ${loc.cityFr}`
                       : locale === "en"
                         ? `Fractional CFO ${loc.cityEn}`
-                        : `CFO externalizado ${loc.cityEs}`}
+                        : `CFO externo ${loc.cityEs}`}
                   </span>
                   <span className="text-sm text-muted-foreground">
                     {locale === "fr" ? "D\u00e9couvrir" : locale === "en" ? "Learn more" : "Descubrir"}
@@ -238,7 +247,7 @@ export default function DafLocalPage({
       </section>
 
       {/* Services associes */}
-      <section className="site-section py-20 bg-background">
+      <section data-block-key="services" className="site-section py-20 bg-background">
         <div className="container">
           <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-8">
             {locale === "fr" ? "Services associ\u00e9s" : locale === "en" ? "Related services" : "Servicios asociados"}
@@ -250,24 +259,25 @@ export default function DafLocalPage({
               // /es/services/fund-raising-support & co n'existent pas : les
               // trois pages villes ES partaient en 308, et les trois pages EN
               // faisaient de m\u00eame sur le lien DAF \u00e0 temps partag\u00e9.
-              { title: locale === "fr" ? "Lev\u00e9e de fonds" : locale === "en" ? "Fund-raising" : "Levantamiento de fondos", href: serviceHref("accompagnement-levee-de-fond", locale), icon: Rocket },
+              { title: locale === "fr" ? "Lev\u00e9e de fonds" : locale === "en" ? "Fund-raising" : "Captación de financiación", href: serviceHref("accompagnement-levee-de-fond", locale), icon: Rocket },
               { title: locale === "fr" ? "Contr\u00f4le de gestion" : locale === "en" ? "Management control" : "Control de gesti\u00f3n", href: serviceHref("controle-de-gestion-externalise", locale), icon: BarChart3 },
               { title: locale === "fr" ? "Gestion de tr\u00e9sorerie" : locale === "en" ? "Cash flow management" : "Gesti\u00f3n de tesorer\u00eda", href: serviceHref("previsionnel-tresorerie", locale), icon: Wallet },
               { title: locale === "fr" ? "M&A & Due Diligence" : "M&A & Due Diligence", href: locale === "fr" ? "/services/ma-due-diligence" : `/${locale}/services/ma-due-diligence`, icon: Compass },
-              { title: locale === "fr" ? "DAF \u00e0 temps partag\u00e9" : locale === "en" ? "Part-time CFO" : "DAF a tiempo compartido", href: dafClusterHref("temps-partage", locale), icon: Network },
+              { title: locale === "fr" ? "DAF \u00e0 temps partag\u00e9" : locale === "en" ? "Part-time CFO" : "CFO a tiempo parcial", href: dafClusterHref("temps-partage", locale), icon: Network },
               // MAILLAGE-T2 (2026-08-31) — les pages villes ne liaient ni le
               // pilier ni les satellites tarifs/métier/transition : Google ne
               // pouvait pas les rattacher au cluster. Les href passent par
               // dafClusterHref, donc chaque locale reçoit ses propres URL ;
               // en EN/ES, tarifs et secteurs retombent sur le pilier — la
               // déduplication ci-dessous évite les doublons de carte.
-              { title: locale === "fr" ? "DAF externalis\u00e9" : locale === "en" ? "Fractional CFO" : "CFO externalizado", href: dafClusterHref("", locale), icon: BarChart3 },
-              { title: locale === "fr" ? "Tarifs DAF externalis\u00e9" : locale === "en" ? "Fractional CFO pricing" : "Tarifas CFO externalizado", href: dafClusterHref("tarifs", locale), icon: Wallet },
+              { title: locale === "fr" ? "DAF externalis\u00e9" : locale === "en" ? "Fractional CFO" : "CFO externo", href: dafClusterHref("", locale), icon: BarChart3 },
+              { title: locale === "fr" ? "Tarifs DAF externalis\u00e9" : locale === "en" ? "Fractional CFO pricing" : "Precios CFO externo", href: dafClusterHref("tarifs", locale), icon: Wallet },
               { title: locale === "fr" ? "M\u00e9tier de DAF" : locale === "en" ? "The CFO role" : "Funciones del CFO", href: dafClusterHref("metier", locale), icon: Briefcase },
               { title: locale === "fr" ? "DAF de transition" : locale === "en" ? "Interim CFO" : "CFO de transici\u00f3n", href: dafClusterHref("transition", locale), icon: Users },
-              { title: locale === "fr" ? "DAF externalis\u00e9 par secteur" : locale === "en" ? "Fractional CFO by industry" : "CFO externalizado por sector", href: dafClusterHref("secteurs", locale), icon: Building2 },
+              { title: locale === "fr" ? "DAF externalis\u00e9 par secteur" : locale === "en" ? "Fractional CFO by industry" : "CFO externo por sector", href: parityHref("/daf-externalise/secteurs", locale), icon: Building2 },
             ].filter((service, i, arr) => arr.findIndex((x) => x.href === service.href) === i).map((service, i) => (
               <Link
+                locale={locale}
                 key={i}
                 href={service.href}
                 className="site-card group flex items-center gap-4 bg-muted/30 border border-border/50 rounded-2xl p-6 hover:border-iter-violet/30 transition-all duration-300"
@@ -286,7 +296,7 @@ export default function DafLocalPage({
       </section>
 
       {/* Testimonials / Avis clients vérifiés */}
-      <section className="site-section py-20 bg-muted/30" aria-labelledby="testimonials-heading">
+      <section data-block-key="reviews" className="site-section py-20 bg-muted/30" aria-labelledby="testimonials-heading">
         <div className="container max-w-4xl">
           <div className="mb-12">
             <h2 id="testimonials-heading" className="text-3xl lg:text-4xl font-bold font-heading text-foreground mb-4">
@@ -345,16 +355,17 @@ export default function DafLocalPage({
                     <Star key={i} size={18} className="fill-iter-chartreuse text-iter-chartreuse" />
                   ))}
                 </div>
-                <blockquote className="text-lg text-muted-foreground italic mb-4 leading-relaxed">
+                <blockquote lang="fr" className="text-lg text-muted-foreground italic mb-4 leading-relaxed">
                   « {review.reviewBody} »
                 </blockquote>
+                {locale !== "fr" && <p className="text-sm text-muted-foreground mb-4">{locale === "en" ? "Original review in French" : "Opinión original en francés"}</p>}
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <div>
                     <p className="font-semibold text-foreground">
                       {review.name}
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      {review.jobTitle} {locale === "fr" ? "chez" : "at"} <strong>{review.company}</strong>
+                      <span lang="fr">{review.jobTitle}</span> {locale === "fr" ? "chez" : locale === "en" ? "at" : "en"} <strong>{review.company}</strong>
                     </p>
                   </div>
                   <p className="text-sm text-muted-foreground">
