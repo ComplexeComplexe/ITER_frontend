@@ -5,9 +5,9 @@ import { getCmsNavigation } from "@/lib/static-content";
 import { buildDafSubFaqSchema } from "@/lib/daf-sub-schema";
 import { alignedPaths } from "@/lib/content/locale-publication";
 
-const locale = "fr";
-const content = getDafSectorContent(locale, "industrie");
-const paths = alignedPaths("/daf-externalise/industrie")!;
+const locale = "en";
+const content = getDafSectorContent(locale, "secteurs");
+const paths = alignedPaths("/daf-externalise/secteurs")!;
 export const metadata = buildMetadata({ locale, path: paths[locale], title: content.meta.title, description: content.meta.description, localizedPaths: paths });
 export default async function Page() {
   const schema = buildDafSubFaqSchema(content, locale);

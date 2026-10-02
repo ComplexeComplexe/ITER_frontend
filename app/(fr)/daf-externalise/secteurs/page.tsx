@@ -1,28 +1,18 @@
-import { Metadata } from "next";
 import DafSubPage from "@/components/pages/DafSubPage";
-import { buildStrapiMetadata } from "@/lib/metadata";
-import { getDafSubContent } from "@/lib/content/daf-sub";
+import { buildMetadata } from "@/lib/metadata";
+import { getDafSectorContent } from "@/lib/content/daf-sector-locales";
 import { getCmsNavigation } from "@/lib/static-content";
+import { buildDafSubFaqSchema } from "@/lib/daf-sub-schema";
+import { alignedPaths } from "@/lib/content/locale-publication";
 
-const content = getDafSubContent("fr", "secteurs")!;
-
-export async function generateMetadata(): Promise<Metadata> {
-  return buildStrapiMetadata({
-    endpoint: "daf-secteurs-page",
-    locale: "fr",
-    path: "/daf-externalise/secteurs",
-    // SEO-AUD-0824 §2 — cette page n'a pas d'équivalent en EN ni en ES. Elle
-    // désignait la page pilier de ces langues comme sa traduction, mais celle-ci
-    // renvoie vers /daf-externalise, pas ici : le groupe hreflang ne bouclait
-    // pas. Plutôt que de revendiquer une traduction qui n'existe pas, la page
-    // reste seule.
-    disableHreflang: ["en", "es"],
-    fallbackTitle: "DAF Externalisé par Secteur d'Activité | Iter Advisors",
-    fallbackDescription: "Iter Advisors propose des DAF externalisés spécialisés par secteur : SaaS, e-commerce, industrie, fintech, santé. Découvrez notre expertise sectorielle.",
-  });
-}
-
+const locale = "fr";
+const content = getDafSectorContent(locale, "secteurs");
+const paths = alignedPaths("/daf-externalise/secteurs")!;
+export const metadata = buildMetadata({ locale, path: paths[locale], title: content.meta.title, description: content.meta.description, localizedPaths: paths });
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("fr");
-  return <DafSubPage locale="fr" content={content} cmsNavigation={cmsNavigation} />;
+  const schema = buildDafSubFaqSchema(content, locale);
+  return <>
+    {schema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />}
+    <DafSubPage locale={locale} content={content} cmsNavigation={await getCmsNavigation(locale)} contactContext="daf" />
+  </>;
 }

@@ -1,0 +1,315 @@
+{
+  "secteurs": {
+    "meta": {
+      "title": "Fractional CFO by industry | Iter Advisors",
+      "description": "Fractional CFO for startups, e-commerce, manufacturing and deep tech: finance priorities, indicators, deliverables and profile selection for your business."
+    },
+    "parentLabel": "Fractional CFO",
+    "parentHref": "/daf-externalise",
+    "breadcrumbLabel": "CFO by industry",
+    "h1": "Fractional CFO by industry: adapt finance to your business",
+    "sections": [
+      {
+        "content": [
+          "**An industry-specialist Fractional CFO is a finance leader who already understands your business's cycles, margins and risks**: seasonality and inventory in e-commerce, supply chains and foreign exchange in manufacturing, long R&D cycles and non-dilutive funding in deep tech. The same EUR 3,000–8,000 excluding VAT monthly pricing table applies across engagements: the profile changes, not the pricing table.",
+          "Each industry has its own financial characteristics. A **SaaS** startup does not face the same issues as a **mid-sized manufacturer** or an **e-commerce** platform. Sales cycles, business models and risks differ.",
+          "Scoping allows us to propose a professional and assess their experience on the issues relevant to your activity. The pages below describe priorities and deliverables to discuss; they do not, by themselves, prove a completed engagement in every industry."
+        ],
+        "heading": ""
+      },
+      {
+        "heading": "Fractional CFO for startups and SaaS",
+        "content": [
+          "Our [Fractional CFO offer for startups and SaaS](/fractional-cfo-startups) explains deliverables, investor reporting and packages. SaaS startups have specific finance issues: subscription models, customer churn, LTV/CAC, burn rate and runway. CFO support uses these KPIs to inform business model decisions and prepare successive funding rounds."
+        ]
+      },
+      {
+        "heading": "Fractional CFO for e-commerce",
+        "content": [
+          "E-commerce platforms have particular financial cycles: seasonality, inventory and working capital, and narrow sales margins. Finance management helps assess profitability alongside cash constraints. Our approach is detailed on the [Fractional CFO for e-commerce page](/daf-externalise/ecommerce)."
+        ]
+      },
+      {
+        "heading": "Fractional CFO for manufacturing and mid-sized businesses",
+        "content": [
+          "Manufacturers and mid-sized businesses need a CFO who understands operational complexity: production, supply chains and foreign exchange risks. The work is described on our [Fractional CFO for manufacturing page](/daf-externalise/industrie)."
+        ]
+      },
+      {
+        "heading": "Fractional CFO for deep tech",
+        "content": [
+          "Deep tech companies finance long R&D cycles before generating revenue, combining grants, the French research tax credit (CIR), non-dilutive debt and successive equity rounds. Our [Fractional CFO for deep tech page](/daf-externalise/deep-tech) explains how to manage these financing sources."
+        ]
+      },
+      {
+        "heading": "Fractional CFO for fintech and finance",
+        "content": [
+          "Fintech businesses may have regulatory obligations specific to their activity. Scoping identifies cash and reporting needs, and the responsibilities of compliance teams and specialist advisers. A CFO engagement does not replace their work."
+        ]
+      },
+      {
+        "heading": "Fractional CFO for healthcare and biotech",
+        "content": [
+          "Healthcare and biotech businesses may combine long R&D cycles, reimbursement delays and regulatory constraints. The engagement must specify project budgets, confirmed funding and specialist contacts. An appropriate professional's availability is checked before any commitment."
+        ]
+      },
+      {
+        "heading": "Contact us",
+        "content": [
+          "Describe your business model, tools, deadlines and decisions to prepare. The first discussion helps assess the scope and the appropriate professional. See also **[part-time CFO](/daf-externalise/temps-partage)**, **[interim CFO](/daf-externalise/transition)**, **[the CFO role](/daf-externalise/metier)** and **[pricing](/daf-externalise/tarifs)**."
+        ]
+      },
+      {
+        "heading": "FAQ: Fractional CFO by industry",
+        "content": [
+          "**Does a specialist CFO cost more than a generalist?** No. The same pricing table applies to all our engagements, EUR 3,000–8,000 excluding VAT/month depending on the package. Specialisation affects the choice of professional, not the pricing table.",
+          "**What is the benefit of a CFO who knows the industry?** Mainly a shorter familiarisation period. A CFO who has already managed manufacturing working capital or e-commerce inventory can ask relevant questions from the first week and interpret your indicators without introductory explanations.",
+          "**What if my industry is not listed?** Industry pages cover cases where specialisation materially changes the work. For other activities, initial scoping identifies your business model's particular issues. This is the purpose of the first discussion, with no commitment."
+        ]
+      }
+    ],
+    "ctaButton": "Describe my needs"
+  },
+  "ecommerce": {
+    "proofSlugs": [
+      "seasonly-marge-par-canal-bfr"
+    ],
+    "meta": {
+      "title": "Fractional CFO for e-commerce: margins and cash | Iter",
+      "description": "Manage channel margins, inventory, returns and e-commerce cash flow with a Fractional CFO. Explore engagements and decision metrics."
+    },
+    "parentLabel": "Fractional CFO",
+    "parentHref": "/daf-externalise",
+    "breadcrumbLabel": "E-commerce CFO",
+    "h1": "Fractional CFO for e-commerce: connect growth, margins and cash",
+    "sections": [
+      {
+        "heading": "",
+        "content": [
+          "A Fractional CFO for e-commerce helps management understand what each sale actually contributes to the business. Tracking connects orders, logistics costs, returns, acquisition spending and receipts to inform inventory purchases and commercial investments."
+        ]
+      },
+      {
+        "heading": "Build useful margins by product and channel",
+        "content": [
+          "Rising revenue can conceal deteriorating margins. The dashboard distinguishes prices net of discounts, purchase costs, marketplace commissions, fulfilment, delivery and returns. Costs must be allocated using a stable method to compare channels.",
+          "Reporting separates sales, refunds and payment providers' settlement delays. It identifies products whose growth uses cash without generating sufficient contribution."
+        ]
+      },
+      {
+        "heading": "Finance inventory and prepare sales peaks",
+        "content": [
+          "The [cash forecast](/services/previsionnel-tresorerie) brings together supplier orders, deposits, shipping, receipts and upcoming expenses. Different sales assumptions show the safety margin before a campaign.",
+          "[Working capital](/ressources/glossaire/besoin-fonds-roulement-bfr) tracking connects inventory turnover, supplier terms and collection delays. A large order is decided using available cash and scenarios, rather than expected revenue alone."
+        ]
+      },
+      {
+        "heading": "Match indicators to decisions",
+        "content": [
+          "**Contribution margin by channel:** compare the online store, marketplaces and direct sales after variable costs.",
+          "**Inventory and returns:** track tied-up items, stock coverage and refunds to adjust replenishment.",
+          "**Acquisition and repeat purchases:** compare marketing spend with customer cohorts' contribution, distinguishing assumptions from observed data."
+        ]
+      },
+      {
+        "heading": "Organise work with the teams",
+        "content": [
+          "Finance agrees data sources, reconciliation rules and review frequency with e-commerce and logistics managers. Differences between orders, invoices and bank transactions must be explained before reporting is automated.",
+          "The CFO coordinates VAT and international flow matters with qualified professionals. The scope depends on sales countries, channels and the accounting organisation."
+        ]
+      },
+      {
+        "heading": "Scope the engagement and choose support",
+        "content": [
+          "The scope is defined from available data, deadlines and decisions to make. An initial conversation clarifies deliverables, their frequency and the role of internal teams.",
+          "See our [Fractional CFO arrangements and fees](/daf-externalise/tarifs), [client engagement examples](/ressources/cas-clients) and [criteria for choosing a firm](/ressources/blog/choisir-cabinet-daf-externalise)."
+        ]
+      }
+    ],
+    "ctaButton": "Describe my needs"
+  },
+  "industrie": {
+    "meta": {
+      "title": "Fractional CFO for manufacturing: costs and cash | Iter",
+      "description": "Fractional CFO for manufacturers: product costs, margins, inventory, cash and investment. Explore the scope and deliverables of finance support."
+    },
+    "parentLabel": "Fractional CFO",
+    "parentHref": "/daf-externalise",
+    "breadcrumbLabel": "Manufacturing CFO",
+    "h1": "Fractional CFO for manufacturing: manage costs, inventory and investment",
+    "sections": [
+      {
+        "heading": "",
+        "content": [
+          "A manufacturing Fractional CFO connects accounting with production data to inform management decisions. The work covers product costs, margins, financing the operating cycle and investment projects alongside operational managers."
+        ]
+      },
+      {
+        "heading": "Understand product costs and variances",
+        "content": [
+          "[Management control](/services/controle-de-gestion-externalise) reconciles purchases, material consumption, production time and overheads. Allocation rules must be documented to compare products, customers or production lines.",
+          "Variance reviews distinguish price, volume and productivity effects. They help explain why an activity that appears profitable in a quote may produce a lower margin in practice."
+        ]
+      },
+      {
+        "heading": "Manage cash tied up in the manufacturing cycle",
+        "content": [
+          "Raw materials, work in progress and finished goods tie up cash before customer payment. The CFO relates these items to payment terms to identify [working capital](/ressources/glossaire/besoin-fonds-roulement-bfr) pressures.",
+          "The [cash forecast](/services/previsionnel-tresorerie) converts the order book and purchasing schedule into payment dates. Scenarios make the consequences of a delayed customer payment or production shift visible."
+        ]
+      },
+      {
+        "heading": "Document investment decisions",
+        "content": [
+          "An investment file details the initial cost, commissioning expenses, recurring charges and expected benefits. Commercial and manufacturing assumptions are identified separately from results already observed.",
+          "The financing plan is assessed against repayment capacity and the company's other needs. After commissioning, variance tracking allows assumptions and priorities to be reviewed."
+        ]
+      },
+      {
+        "heading": "Deliverables for manufacturing finance management",
+        "content": [
+          "**Margin table:** a view by activity with allocation rules and explained variances.",
+          "**Inventory and work-in-progress review:** a base reconciled with production teams and accounting.",
+          "**Steering meeting:** documented decisions, named owners and indicators tracked from one period to the next. [Reporting automation](/ressources/ia-finance/automatiser-reporting-financier) follows once the data is reliable."
+        ]
+      },
+      {
+        "heading": "Example review: explain a margin below the quote",
+        "content": [
+          "This example describes a working method without using a client's data. The production manager confirms quantities and time consumed; purchasing documents prices; finance reconciles these items with the original quote.",
+          "Management can then distinguish a material price effect, a shorter production run or a longer manufacturing time. The decision concerns pricing, the process or output volume. The next review checks the effect of the chosen action."
+        ],
+        "table": {
+          "caption": "Illustrative structure for a product-cost review",
+          "headers": [
+            "Data to reconcile",
+            "Contact",
+            "Management question"
+          ],
+          "rows": [
+            [
+              "Actual consumption and bill of materials",
+              "Production",
+              "What material or yield variance?"
+            ],
+            [
+              "Invoiced and planned price",
+              "Purchasing",
+              "One-off rise or a new cost baseline?"
+            ],
+            [
+              "Inventory and orders to deliver",
+              "Logistics and sales",
+              "What funding is needed before collection?"
+            ],
+            [
+              "Commissioning cost and planned capacity",
+              "Manufacturing management",
+              "Does the investment still fit the scenario?"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Scope the engagement and choose support",
+        "content": [
+          "The scope is defined from available data, deadlines and decisions to make. An initial conversation clarifies deliverables, their frequency and the role of internal teams.",
+          "See our [Fractional CFO arrangements and fees](/daf-externalise/tarifs), [client engagement examples](/ressources/cas-clients) and [criteria for choosing a firm](/ressources/blog/choisir-cabinet-daf-externalise)."
+        ]
+      }
+    ],
+    "ctaButton": "Describe my needs"
+  },
+  "deep-tech": {
+    "meta": {
+      "title": "Fractional CFO for deep tech: runway and funding | Iter",
+      "description": "Structure deep tech financial management: R&D budgets, runway, funding milestones, data room and investor reporting."
+    },
+    "parentLabel": "Fractional CFO",
+    "parentHref": "/daf-externalise",
+    "breadcrumbLabel": "Deep tech CFO",
+    "h1": "Fractional CFO for deep tech: finance R&D stages and track runway",
+    "sections": [
+      {
+        "heading": "",
+        "content": [
+          "A Fractional CFO for deep tech helps management connect research and development stages with the financial resources required. The model distinguishes committed spending, revenue assumptions and confirmed funding so decisions can be prepared before cash comes under pressure."
+        ]
+      },
+      {
+        "heading": "Translate technical milestones into a budget",
+        "content": [
+          "The budget details teams, subcontracting, equipment and tests by project. Each technical milestone is associated with required spending and the conditions for proceeding to the next stage.",
+          "Scenarios measure the impact of a development delay or an additional expense. [Cash burn and runway](/ressources/glossaire/cash-burn-runway) are calculated using explicit assumptions, reviewed with technical management."
+        ]
+      },
+      {
+        "heading": "Distinguish secured funding from hoped-for funding",
+        "content": [
+          "An applied-for grant, a conditional disbursement and received funds do not have the same degree of certainty. The cash plan identifies these differences and the schedule for supporting documents.",
+          "The CFO coordinates financial documentation for grants and research programmes with qualified specialists. Eligibility and amounts are not presumed: they must be checked against the company's circumstances."
+        ]
+      },
+      {
+        "heading": "Prepare fundraising and investor discussions",
+        "content": [
+          "[Fundraising support](/services/accompagnement-levee-de-fond) includes a consistent financial model, funding scenarios and a clear explanation of the use of funds.",
+          "The [due diligence data room](/ressources/blog/checklist-due-diligence-levee-de-fonds) brings together financial documents and model assumptions. Management retains a record of versions and responses sent to investors."
+        ]
+      },
+      {
+        "heading": "Set up reporting after funding",
+        "content": [
+          "**Project budget:** track spending incurred, committed and still to be financed.",
+          "**Cash:** reconcile bank balances, payment dates and runway scenarios.",
+          "**Governance:** share variances and trade-offs with management and investors, without confusing a technical objective with an achieved result. [Finance tools](/ressources/outils) are chosen according to these needs."
+        ]
+      },
+      {
+        "heading": "Example budget by R&D milestone",
+        "content": [
+          "The following table illustrates a management structure without client data or assumed secured funding. Every budget line must identify an owner, a degree of certainty and a review date.",
+          "If a test is postponed, technical management specifies the additional resources needed. Finance recalculates the cash requirement and presents options: defer spending, adjust the programme or seek funding. Applied-for support remains separate from the funded scenario until its conditions are confirmed."
+        ],
+        "table": {
+          "caption": "Illustrative structure for tracking technical milestones",
+          "headers": [
+            "Item",
+            "Required data",
+            "Consequence to test"
+          ],
+          "rows": [
+            [
+              "Technical stage",
+              "Deliverable and validation criterion",
+              "Cost of postponing the test"
+            ],
+            [
+              "Committed spending",
+              "Contracts, teams and equipment",
+              "Cash still to be paid"
+            ],
+            [
+              "Confirmed funding",
+              "Amount, conditions and schedule",
+              "Possible disbursement delay"
+            ],
+            [
+              "Applied-for funding",
+              "Status and dependencies",
+              "Scenario without approval"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Scope the engagement and choose support",
+        "content": [
+          "The scope is defined from available data, deadlines and decisions to make. An initial conversation clarifies deliverables, their frequency and the role of internal teams.",
+          "See our [Fractional CFO arrangements and fees](/daf-externalise/tarifs), [client engagement examples](/ressources/cas-clients) and [criteria for choosing a firm](/ressources/blog/choisir-cabinet-daf-externalise)."
+        ]
+      }
+    ],
+    "ctaButton": "Describe my needs"
+  }
+}

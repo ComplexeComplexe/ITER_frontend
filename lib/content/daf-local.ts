@@ -1,5 +1,7 @@
 import { getDafOffer } from "./daf-offer";
 import { Locale } from "../i18n";
+import citiesEn from "./locales/daf-cities.en.json";
+import citiesEs from "./locales/daf-cities.es.json";
 
 export interface DafLocalContent {
   meta: {
@@ -162,130 +164,8 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
   ],
   "ctaButton": "Parlons de votre besoin à Barcelone"
 },
-    en: {
-      meta: {
-        title: "Fractional CFO in Barcelona | Part-time CFO | Iter Advisors",
-        description:
-          "Iter Advisors, fractional CFO firm in Barcelona. Part-time CFO for startups and SMEs in Spain. French-Spanish expertise, 85+ companies supported.",
-      },
-      breadcrumbLabel: "Fractional CFO Barcelona",
-      h1: "Fractional CFO in Barcelona: your part-time CFO in Spain",
-      intro: [
-        "Barcelona has become one of Europe's most dynamic tech hubs, attracting startups, scale-ups and international SMEs. In this fast-growing ecosystem, having an experienced CFO is a decisive competitive advantage.",
-        "Iter Advisors has been based in Barcelona since its founding. Our bilingual French-Spanish CFOs support companies in structuring their finance function, preparing fundraises and managing growth in the Spanish market.",
-      ],
-      sections: [
-        {
-          heading: "Why choose a fractional CFO in Barcelona?",
-          content: [
-            "Barcelona's entrepreneurial ecosystem has specificities that make a fractional CFO particularly relevant: a dense network of tech startups, complex Spanish tax regulations (IS, IVA, retenciones), and a frequent need for bilingual reporting for international investors.",
-            "Our Barcelona-based CFOs master the Spanish tax and legal environment, relationships with local banks (CaixaBank, Sabadell, BBVA) and the specificities of the Iberian market. They work in French, Spanish and English.",
-          ],
-        },
-        {
-          heading: "Our missions in Barcelona",
-          content: [
-            "Financial management and monthly reporting adapted to Spanish and international standards.",
-            "Cash management and working capital optimization in a multi-currency context.",
-            "Fundraising preparation with Spanish and international investors (VCs, family offices).",
-            "Accounting and tax structuring for French companies established in Spain.",
-            "M&A support and due diligence for cross-border France-Spain transactions.",
-          ],
-        },
-        {
-          heading: "The Iter Advisors advantage in Barcelona",
-          content: [
-            "Our Barcelona office is located in the heart of the Eixample district, close to the main innovation hubs (22@, Pier01). We work with a network of local partners: law firms, gestorías, banks and investment funds.",
-            "With over 85 companies supported between France and Spain, we understand the specific challenges of companies operating in both markets: dual accounting, transfer pricing, Franco-Spanish tax treaties.",
-          ],
-        },
-      ],
-      faq: [
-        {
-          question: "How much does a fractional CFO cost in Barcelona?",
-          answer:
-            `Iter Advisors packages range from ${getDafOffer("en").price}. ${getDafOffer("en").billing} ${getDafOffer("en").commitment}`,
-        },
-        {
-          question: "Do your fractional CFOs speak Spanish?",
-          answer:
-            "Yes, all our Barcelona-based CFOs are bilingual French-Spanish (and English). They master financial and tax terminology in all three languages.",
-        },
-        {
-          question: "Do you operate throughout Spain?",
-          answer:
-            "Yes, although our office is in Barcelona, we operate throughout Spain in hybrid mode (on-site + remote). We have clients in Madrid, Valencia, Malaga and Bilbao.",
-        },
-        {
-          question: "Can you manage Spanish accounting?",
-          answer:
-            "We are not an accounting firm, but we manage the relationship with your Spanish gestoría or accountant. We handle management control, reporting and financial strategy.",
-        },
-      ],
-      ctaButton: "Book a call in Barcelona",
-    },
-    es: {
-      meta: {
-        title: "CFO externalizado en Barcelona | Iter Advisors",
-        description:
-          "Iter Advisors, gabinete de CFO externalizado en Barcelona. CFO a tiempo compartido para startups y pymes. Franco-español, +85 empresas acompañadas.",
-      },
-      breadcrumbLabel: "CFO externalizado Barcelona",
-      h1: "CFO externalizado en Barcelona: su director financiero a tiempo compartido",
-      intro: [
-        "Barcelona se ha convertido en uno de los hubs tecnologicos mas dinamicos de Europa, atrayendo startups, scale-ups y pymes internacionales. En este ecosistema en pleno crecimiento, disponer de un director financiero experimentado es una ventaja competitiva decisiva.",
-        "Iter Advisors esta implantado en Barcelona desde su creacion. Nuestros CFOs bilingues frances-espanol acompanan a las empresas en la estructuracion de su funcion financiera, la preparacion de rondas de financiacion y la gestion de su crecimiento en el mercado espanol.",
-      ],
-      sections: [
-        {
-          heading: "Por que elegir un CFO externalizado en Barcelona?",
-          content: [
-            "El ecosistema emprendedor barcelones presenta especificidades que hacen del CFO externalizado una solucion particularmente pertinente: un tejido denso de startups tech, regulaciones fiscales espanolas complejas (IS, IVA, retenciones), y una necesidad frecuente de reporting bilingue para inversores internacionales.",
-            "Nuestros CFOs basados en Barcelona dominan el entorno fiscal y juridico espanol, las relaciones con los bancos locales (CaixaBank, Sabadell, BBVA) y las especificidades del mercado iberico. Intervienen en frances, espanol e ingles.",
-          ],
-        },
-        {
-          heading: "Nuestras misiones en Barcelona",
-          content: [
-            "Gestion financiera y reporting mensual adaptado a las normas espanolas e internacionales.",
-            "Gestion de tesoreria y optimizacion del fondo de maniobra en un contexto multi-divisa.",
-            "Preparacion de rondas de financiacion con inversores espanoles e internacionales (VCs, family offices).",
-            "Estructuracion contable y fiscal para empresas francesas implantadas en Espana.",
-            "Acompanamiento M&A y due diligence para operaciones cross-border Francia-Espana.",
-          ],
-        },
-        {
-          heading: "La ventaja Iter Advisors en Barcelona",
-          content: [
-            "Nuestra oficina barcelonesa esta situada en el corazon del barrio del Eixample, cerca de los principales hubs de innovacion (22@, Pier01). Trabajamos con una red de socios locales: despachos de abogados, gestorias, bancos y fondos de inversion.",
-            "Con mas de 85 empresas acompanadas entre Francia y Espana, comprendemos los retos especificos de las empresas que operan en ambos mercados: doble contabilidad, precios de transferencia, convenios fiscales franco-espanoles.",
-          ],
-        },
-      ],
-      faq: [
-        {
-          question: "Cuanto cuesta un CFO externalizado en Barcelona?",
-          answer:
-            `Las fórmulas de Iter Advisors van de ${getDafOffer("es").price}. ${getDafOffer("es").billing} ${getDafOffer("es").commitment}`,
-        },
-        {
-          question: "Su CFO externalizado habla espanol?",
-          answer:
-            "Si, todos nuestros CFOs basados en Barcelona son bilingues frances-espanol (e ingles). Dominan la terminologia financiera y fiscal en los tres idiomas.",
-        },
-        {
-          question: "Intervienen en toda Espana?",
-          answer:
-            "Si, aunque nuestra oficina esta en Barcelona, intervenimos en toda Espana en modo hibrido (presencial + remoto). Tenemos clientes en Madrid, Valencia, Malaga y Bilbao.",
-        },
-        {
-          question: "Pueden gestionar la contabilidad espanola?",
-          answer:
-            "No somos un gabinete contable, pero gestionamos la relacion con su gestoria o contable espanol. Nos encargamos del control de gestion, el reporting y la estrategia financiera.",
-        },
-      ],
-      ctaButton: "Concierte una cita en Barcelona",
-    },
+    en: citiesEn.barcelone,
+    es: citiesEs.barcelone,
   },
   paris: {
     fr: {
@@ -521,43 +401,21 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
       ],
       ctaButton: "Décrire mon besoin à Toulouse",
     },
-    en: {
-      meta: { title: "Fractional CFO in Toulouse: scope and fees | Iter Advisors", description: "Fractional CFO for SMEs and startups in Toulouse. Cash flow, reporting and funding from €3,000 excl. VAT/month, remotely and on site as agreed." },
-      breadcrumbLabel: "Fractional CFO Toulouse",
-      h1: "Fractional CFO for SMEs and startups in Toulouse",
-      intro: ["Build visibility over cash, margins and financing with a senior CFO working alongside your team and accountant.", "Engagements are managed from Paris and Barcelona, with travel to Toulouse agreed during scoping. There is no resident consultant in Toulouse."],
-      sections: [
-        { heading: "Scope and first deliverables", content: ["Define the priorities, data access and reporting cadence before starting: cash forecast, monthly reporting, margin analysis or funding preparation.", "The first month focuses on a financial diagnosis, a cash forecast and a reporting plan adapted to your available data and agreed scope."] },
-        { heading: "National pricing and timing", content: ["Essential: €3,000–€5,000 excluding VAT/month; Growth: €5,000–€6,500; Premium: €6,500–€8,000. Indicative involvement ranges from 1 to 8 days per month, depending on the package.", "Engagements usually start within 8–15 days of the first discussion, depending on scope and profile. Travel is quoted separately. There is no minimum term, with 30 days' notice."] },
-        { heading: "How we work with Toulouse companies", content: ["Our registered address is 32 boulevard d'Arcole, 31000 Toulouse. It is a domiciliation address; meetings take place remotely or at your premises as agreed.", "The proposed CFO is presented before signing so you can assess their fit with your sector and needs. We do not publish a Toulouse-specific client case at this stage."] },
-      ],
-      faq: [
-        { question: "How much does a fractional CFO cost in Toulouse?", answer: "€3,000–€8,000 excluding VAT per month, depending on scope and seniority. National pricing applies; any travel is quoted separately." },
-        { question: "Will the CFO work at our premises?", answer: "On-site work is agreed during scoping. Day-to-day support is managed remotely from Paris or Barcelona; there is no resident CFO in Toulouse." },
-        { question: "Can you support a company that is not fundraising?", answer: "Yes. An engagement can focus on cash flow, margins, reporting, budgeting and banking relationships without an equity round." },
-      ],
-      ctaButton: "Describe your needs in Toulouse",
-    },
-    es: {
-      meta: { title: "CFO externalizado en Toulouse: servicios y tarifas | Iter", description: "CFO para pymes y startups de Toulouse: tesorería, reporting y financiación desde 3.000 € sin IVA/mes, a distancia y presencialmente según lo acordado." },
-      breadcrumbLabel: "CFO externalizado Toulouse",
-      h1: "CFO externalizado para pymes y startups en Toulouse",
-      intro: ["Gane visibilidad sobre la tesorería, los márgenes y la financiación con un CFO sénior que colabora con su equipo y su asesor contable.", "Las misiones se coordinan desde París y Barcelona, con desplazamientos a Toulouse acordados al definir el alcance. No hay consultor residente en Toulouse."],
-      sections: [
-        { heading: "Alcance y primeros entregables", content: ["Antes de empezar, definimos prioridades, acceso a los datos y frecuencia del seguimiento: previsión de tesorería, reporting mensual, márgenes o preparación de financiación.", "El primer mes se centra en un diagnóstico financiero, una previsión de tesorería y un plan de reporting adaptados a los datos disponibles y al alcance contratado."] },
-        { heading: "Tarifas nacionales y plazos", content: ["Esencial: 3.000–5.000 € sin IVA/mes; Crecimiento: 5.000–6.500 €; Premium: 6.500–8.000 €. La dedicación orientativa va de 1 a 8 días al mes según la fórmula.", "El inicio se prevé entre 8 y 15 días tras el primer contacto, según el perfil y el alcance. Los desplazamientos se presupuestan aparte. Sin permanencia mínima, con un preaviso de 30 días."] },
-        { heading: "Cómo trabajamos con las empresas de Toulouse", content: ["Nuestra dirección de domiciliación es 32 boulevard d'Arcole, 31000 Toulouse. Las reuniones se celebran a distancia o en sus instalaciones, según lo acordado.", "Presentamos al CFO propuesto antes de la firma para comprobar su adecuación al sector y las necesidades. Por ahora no publicamos un caso de cliente específico de Toulouse."] },
-      ],
-      faq: [
-        { question: "¿Cuánto cuesta un CFO externalizado en Toulouse?", answer: "Entre 3.000 y 8.000 € sin IVA al mes, según el alcance y el perfil. Se aplica la tarifa nacional y los desplazamientos se presupuestan aparte." },
-        { question: "¿Trabaja el CFO en nuestras instalaciones?", answer: "Las visitas se acuerdan al definir la misión. El seguimiento habitual se realiza a distancia desde París o Barcelona; no hay CFO residente en Toulouse." },
-        { question: "¿Es necesario preparar una ronda de financiación?", answer: "No. La misión puede centrarse en tesorería, márgenes, reporting, presupuestos y relaciones bancarias sin una ampliación de capital." },
-      ],
-      ctaButton: "Describa sus necesidades en Toulouse",
-    },
+    en: citiesEn.toulouse,
+    es: citiesEs.toulouse,
   },
 };
 
 export function getDafLocalContent(city: DafLocalCity, locale: Locale): DafLocalContent {
+  if (city !== "paris" && locale !== "fr") {
+    const content = (locale === "en" ? citiesEn : citiesEs)[city];
+    const offer = getDafOffer(locale);
+    const offerText = `${locale === "en" ? "Iter packages range from" : "Los planes Iter van de"} ${offer.price}. ${offer.billing} ${offer.commitment}`;
+    return {
+      ...content,
+      sections: content.sections.map(section => ({ ...section, content: section.content.map(text => text.replace("__OFFER__", offerText)) })),
+      faq: content.faq.map(item => ({ ...item, answer: item.answer.replace("__OFFER__", offerText) })),
+    };
+  }
   return localContent[city][locale];
 }

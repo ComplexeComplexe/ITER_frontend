@@ -1,0 +1,210 @@
+{
+  "barcelone": {
+    "meta": {
+      "title": "CFO externo en Barcelona para pymes y startups",
+      "description": "Dirección financiera en Barcelona: tesorería, reporting Francia-España, financiación y coordinación con su gestoría. Alcance y presupuesto acordados."
+    },
+    "breadcrumbLabel": "CFO externo Barcelona",
+    "h1": "CFO externo en Barcelona para pymes y startups",
+    "intro": [
+      "Su empresa está ubicada en Barcelona o desarrolla una actividad entre Francia y España. Necesita cifras comparables, previsiones de tesorería y un interlocutor financiero para preparar las decisiones de la dirección.",
+      "Barcelona es la sede de Iter Advisors, en Carrer Casp 54. Benjamin Ziza, Florent Greth, Tom Jauffre y Deisy Arias Ramírez trabajan allí en asuntos financieros. Los idiomas de trabajo, la presencia en sus instalaciones y los interlocutores se precisan al definir el alcance."
+    ],
+    "ctaButton": "Hablemos de sus necesidades en Barcelona",
+    "sections": [
+      {
+        "id": "missions",
+        "heading": "Dirección financiera para su actividad en España",
+        "content": [
+          "La misión puede incluir una previsión de tesorería, el presupuesto y un reporting mensual para la dirección o los inversores. En un grupo presente en ambos países, definimos las categorías, hipótesis y calendarios necesarios para comparar las entidades de forma coherente.",
+          "La financiación se prepara con los dirigentes y sus asesores: modelo financiero, escenarios, data room y seguimiento de preguntas. El caso SolarMente describe trabajos de estructuración financiera y apoyo en una operación; sus resultados no son una previsión para otra empresa."
+        ],
+        "links": [
+          {
+            "href": "/daf-externalise",
+            "label": "Comprender la misión de CFO externo"
+          },
+          {
+            "href": "/ressources/cas-clients/solarmente-serie-b-cleantech",
+            "label": "Leer el alcance de la misión SolarMente"
+          },
+          {
+            "href": "/services/previsionnel-tresorerie",
+            "label": "Preparar una previsión de tesorería"
+          }
+        ]
+      },
+      {
+        "id": "fiscalite",
+        "aliases": [
+          "recrutement"
+        ],
+        "heading": "Coordinar al CFO, la gestoría y sus asesores",
+        "content": [
+          "Iter Advisors no es una asesoría contable. La dirección financiera organiza la gestión y la coordinación con su gestoría o despacho español. La contabilidad, las declaraciones, las nóminas y el asesoramiento especializado quedan asignados en el contrato a los profesionales competentes.",
+          "Para una filial española, identifique quién produce los datos locales, quién controla los flujos intragrupo y quién los concilia con el reporting del grupo. Las normas fiscales y laborales dependen de su situación; ningún tipo ni beneficio debe aplicarse sin el examen de los asesores correspondientes.",
+          "Una contratación también debe incorporarse a las previsiones: remuneración, costes laborales, fecha de incorporación y capacidad de integración. Una diferencia general de salarios entre dos ciudades no permite establecer el coste de su puesto."
+        ],
+        "links": [
+          {
+            "href": "/ressources/blog/filiale-espagnole-pilotage-financier",
+            "label": "Organizar la gestión financiera de una filial española"
+          },
+          {
+            "href": "/services/comptabilite-externalisation",
+            "label": "Aclarar la coordinación contable"
+          },
+          {
+            "href": "/a-propos/benjamin-ziza",
+            "label": "Conocer a Benjamin Ziza"
+          }
+        ]
+      },
+      {
+        "id": "subventions",
+        "heading": "Financiación: partir de los programas oficiales",
+        "content": [
+          "ENISA ofrece préstamos participativos para startups y pymes. ACCIÓ publica convocatorias de ayudas y servicios empresariales. Barcelona Activa ofrece acompañamiento al emprendimiento. Estos programas tienen objetivos, calendarios y condiciones diferentes.",
+          "Consulte las condiciones vigentes y compruebe la elegibilidad de la empresa antes de preparar una solicitud. El plan de tesorería debe distinguir solicitud, decisión y cobro. Una financiación solicitada no está concedida; presupuestos, justificantes y responsabilidades deben definirse con los interlocutores implicados."
+        ],
+        "links": [
+          {
+            "href": "https://www.enisa.es/servicios/financiacion/startups-y-pymes/",
+            "label": "ENISA: financiación para startups y pymes"
+          },
+          {
+            "href": "https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/llistat-ajuts/",
+            "label": "ACCIÓ: convocatorias de ayudas y servicios"
+          },
+          {
+            "href": "https://www.barcelonactiva.cat/ca/assessorament-formacio-networking",
+            "label": "Barcelona Activa: asesoramiento y formación"
+          }
+        ]
+      },
+      {
+        "id": "erreurs",
+        "heading": "Preparar el primer contacto",
+        "content": [
+          "Presente las entidades, países, herramientas, bancos e interlocutores existentes. Añada las decisiones que deben prepararse y los plazos próximos: contratación, cierre, necesidad de financiación o reporting para inversores.",
+          "Los primeros trabajos consisten en examinar los datos disponibles, los accesos y los elementos sin conciliar. Designe una persona responsable de la transmisión y validación en cada entidad. La frecuencia de la misión depende de estas necesidades, más que de la dirección de la sede."
+        ],
+        "links": [
+          {
+            "href": "/daf-externalise/temps-partage",
+            "label": "Definir la dedicación de un CFO a tiempo parcial"
+          },
+          {
+            "href": "/contact#barcelone",
+            "label": "Presentar sus necesidades en Barcelona"
+          }
+        ]
+      },
+      {
+        "id": "cout",
+        "heading": "¿Qué presupuesto prever en Barcelona?",
+        "content": [
+          "__OFFER__",
+          "El presupuesto precisa entregables, interlocutores, disponibilidad y posibles desplazamientos. Iter aplica la misma tabla de precios en sus sedes; la ubicación por sí sola no permite deducir un ahorro. Los proyectos puntuales y los servicios de los asesores deben distinguirse del alcance recurrente."
+        ],
+        "links": [
+          {
+            "href": "/daf-externalise/tarifs",
+            "label": "Comparar los planes y precios de Iter Advisors"
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "¿Cuánto cuesta un CFO externo en Barcelona?",
+        "answer": "__OFFER__"
+      },
+      {
+        "question": "¿Qué idiomas y qué presencia se prevén?",
+        "answer": "Los idiomas de trabajo, las visitas a sus instalaciones, el trabajo a distancia y los interlocutores se precisan al definir el alcance, según las necesidades y los perfiles involucrados."
+      },
+      {
+        "question": "¿Pueden gestionar la contabilidad española?",
+        "answer": "Iter no es una asesoría contable. Organizamos la gestión financiera y la coordinación con su gestoría o despacho español. La preparación de cuentas, las declaraciones y las nóminas se asignan expresamente a los profesionales correspondientes."
+      },
+      {
+        "question": "¿Pueden garantizar una ayuda o financiación?",
+        "answer": "No. Los programas dependen de criterios, calendarios y una decisión del organismo. Preparar una solicitud y previsiones financieras no garantiza la elegibilidad ni la obtención de financiación."
+      }
+    ]
+  },
+  "toulouse": {
+    "meta": {
+      "title": "CFO externo en Toulouse: servicios y precios | Iter",
+      "description": "CFO externo para pymes y startups de Toulouse: tesorería, reporting y financiación desde 3.000 € sin IVA/mes, a distancia y presencialmente según lo acordado."
+    },
+    "breadcrumbLabel": "CFO externo Toulouse",
+    "h1": "CFO externo en Toulouse para su pyme o startup",
+    "intro": [
+      "¿Su empresa está en Toulouse y necesita visibilidad sobre la tesorería, los márgenes o una financiación? Un CFO sénior asume la gestión financiera con su equipo y su asesor contable, con un alcance definido antes de empezar.",
+      "Las misiones se coordinan desde París y Barcelona, con desplazamientos a Toulouse acordados al definir el alcance. El presupuesto es de 3.000 a 8.000 € sin IVA al mes; el inicio se prevé entre 8 y 15 días tras el primer contacto, según el perfil y el alcance."
+    ],
+    "ctaButton": "Describa sus necesidades en Toulouse",
+    "sections": [
+      {
+        "heading": "Qué definimos antes de empezar",
+        "content": [
+          "Un interlocutor financiero dedicado, las prioridades de la dirección, los datos disponibles y las responsabilidades respectivas del CFO, su equipo y su asesor contable.",
+          "El calendario de revisiones, los entregables y los desplazamientos se acuerdan por escrito. El seguimiento habitual se realiza a distancia; las reuniones presenciales se organizan según las necesidades de la misión. No prometemos presencia local semanal."
+        ]
+      },
+      {
+        "heading": "Tres necesidades habituales que deben concretarse",
+        "content": [
+          "Pyme de servicios o de producción: seguir el margen por actividad o proyecto, prever los cobros, gestionar las necesidades de capital circulante y preparar una inversión con sus bancos.",
+          "Startup en crecimiento: determinar de forma fiable el runway, elaborar el presupuesto y el reporting para inversores, y preparar el modelo financiero y la data room si se prevé una ronda.",
+          "Empresa que se desarrolla en España: coordinar el reporting de las entidades y los interlocutores financieros, contables y jurídicos desde nuestra sede en Barcelona."
+        ]
+      },
+      {
+        "heading": "Los entregables del primer mes",
+        "content": [
+          "Una previsión de tesorería a 13 semanas, un primer reporting mensual de P&L, tesorería e indicadores, y una revisión financiera con la dirección constituyen la base del plan Esencial.",
+          "El plan de negocio, la financiación, la consolidación o las adquisiciones completan el alcance según el plan. Las prioridades se ordenan en función de sus datos y de los plazos reales."
+        ]
+      },
+      {
+        "heading": "Un presupuesto definido por el trabajo encargado",
+        "content": [
+          "La tabla nacional se aplica en Toulouse: Esencial de 3.000 a 5.000 € sin IVA/mes, Crecimiento de 5.000 a 6.500 €, Premium de 6.500 a 8.000 €. La dedicación orientativa va de 1 a 8 días al mes según el plan.",
+          "La cuota corresponde a un alcance y un perfil, no a un número de jornadas. Los posibles gastos de desplazamiento se precisan por separado en el presupuesto. No se factura ninguna ampliación sin un acuerdo adicional firmado. Sin duración mínima de compromiso, con cancelación mediante un preaviso de 30 días."
+        ]
+      },
+      {
+        "heading": "Nuestra presencia en Toulouse, en la práctica",
+        "content": [
+          "No tenemos consultor residente en Toulouse. Las misiones las siguen nuestros equipos de París y Barcelona; el perfil se presenta antes de la firma para comprobar su adecuación a su actividad.",
+          "Nuestra dirección de domiciliación es 32 boulevard d'Arcole, 31000 Toulouse. Las reuniones se celebran a distancia o en sus instalaciones, según lo acordado."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "¿Cuánto cuesta un CFO externo en Toulouse?",
+        "answer": "De 3.000 a 8.000 € sin IVA/mes según el alcance y el perfil. Se aplica la tabla nacional. Los posibles desplazamientos se presupuestan por separado."
+      },
+      {
+        "question": "¿Trabaja el CFO en nuestras instalaciones?",
+        "answer": "Sí, con una frecuencia acordada al definir el alcance. El seguimiento habitual se hace a distancia desde París o Barcelona; los desplazamientos se destinan especialmente al inicio y a las revisiones financieras. No hay consultor residente en Toulouse."
+      },
+      {
+        "question": "¿Es necesario haber captado inversión?",
+        "answer": "No. Una pyme sin inversores puede necesitar una previsión de tesorería, un seguimiento de márgenes o un expediente bancario. El alcance depende de estas necesidades, no de la forma de financiación de la empresa."
+      },
+      {
+        "question": "¿Tienen un caso de cliente de Toulouse?",
+        "answer": "Todavía no tenemos un caso de cliente de Toulouse publicable. Los casos del sitio ilustran misiones realizadas en otras ubicaciones. La experiencia del perfil propuesto y los entregables esperados se examinan al definir el alcance."
+      },
+      {
+        "question": "¿Cuál es el plazo de inicio?",
+        "answer": "Prevea entre 8 y 15 días desde el primer contacto, según el perfil y la complejidad. Los primeros entregables de reporting llegan desde el primer mes de intervención."
+      }
+    ]
+  }
+}

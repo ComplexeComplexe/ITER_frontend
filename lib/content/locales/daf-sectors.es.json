@@ -1,0 +1,315 @@
+{
+  "secteurs": {
+    "meta": {
+      "title": "CFO externo por sector | Iter Advisors",
+      "description": "CFO externo para startups, e-commerce, industria y deep tech: prioridades financieras, indicadores, entregables y selección del perfil según su actividad."
+    },
+    "parentLabel": "CFO externo",
+    "parentHref": "/daf-externalise",
+    "breadcrumbLabel": "CFO por sector",
+    "h1": "CFO externo por sector: adaptar la gestión a su actividad",
+    "sections": [
+      {
+        "content": [
+          "**Un CFO externo especializado por sector es un director financiero que ya conoce los ciclos, márgenes y riesgos de su actividad**: estacionalidad y existencias en e-commerce, cadena de suministro y divisas en industria, I+D prolongada y financiación no dilutiva en deep tech. Se aplica la misma tabla de 3.000 a 8.000 € sin IVA al mes: cambia el perfil, no la tabla de precios.",
+          "Cada sector tiene características financieras propias. Una startup **SaaS** no afronta los mismos retos que una **empresa industrial mediana** o una plataforma **e-commerce**. Los ciclos de venta, los modelos económicos y los riesgos difieren.",
+          "Definir el alcance permite presentar un perfil y examinar su experiencia en los asuntos pertinentes para su actividad. Las páginas siguientes precisan prioridades y entregables que deben discutirse; no prueban por sí solas una misión realizada en cada sector."
+        ],
+        "heading": ""
+      },
+      {
+        "heading": "CFO externo para startups y SaaS",
+        "content": [
+          "Nuestra [oferta de CFO externo para startups y SaaS](/fractional-cfo-startups) detalla entregables, reporting para inversores y planes. Las startups SaaS afrontan cuestiones financieras específicas: suscripciones, churn de clientes, ratio LTV/CAC, burn rate y runway. El CFO utiliza estos indicadores para orientar las decisiones sobre el modelo económico y preparar rondas sucesivas."
+        ]
+      },
+      {
+        "heading": "CFO externo para e-commerce",
+        "content": [
+          "Las plataformas e-commerce tienen ciclos financieros particulares: estacionalidad, existencias y capital circulante, y márgenes reducidos. La gestión financiera ayuda a evaluar la rentabilidad junto con las restricciones de tesorería. El enfoque se detalla en la página de [CFO externo para e-commerce](/daf-externalise/ecommerce)."
+        ]
+      },
+      {
+        "heading": "CFO externo para la industria y empresas medianas",
+        "content": [
+          "Las empresas industriales y medianas necesitan un CFO que comprenda la complejidad operativa: producción, cadena de suministro y riesgos de cambio. El trabajo se describe en la página de [CFO externo para industria](/daf-externalise/industrie)."
+        ]
+      },
+      {
+        "heading": "CFO externo para deep tech",
+        "content": [
+          "Las empresas deep tech financian ciclos largos de I+D antes de generar ingresos, combinando ayudas, el crédito fiscal francés de investigación (CIR), deuda no dilutiva y rondas sucesivas. La página de [CFO externo para deep tech](/daf-externalise/deep-tech) explica cómo gestionar estas fuentes de financiación."
+        ]
+      },
+      {
+        "heading": "CFO externo para fintech y finanzas",
+        "content": [
+          "Las empresas fintech pueden tener obligaciones regulatorias propias de su actividad. El alcance identifica las necesidades de tesorería y reporting, así como las responsabilidades de los equipos de cumplimiento y asesores especializados. Una misión de CFO no sustituye su intervención."
+        ]
+      },
+      {
+        "heading": "CFO externo para salud y biotecnología",
+        "content": [
+          "Las empresas de salud y biotecnología pueden combinar I+D prolongada, plazos de reembolso y restricciones regulatorias. La misión debe precisar el presupuesto por proyecto, la financiación confirmada y los interlocutores especializados. La disponibilidad de un perfil adecuado se comprueba antes de cualquier compromiso."
+        ]
+      },
+      {
+        "heading": "Contacte con nosotros",
+        "content": [
+          "Presente su modelo económico, herramientas, plazos y decisiones que deben prepararse. La primera conversación permite comprobar el alcance y el perfil adecuado. Consulte también **[CFO a tiempo parcial](/daf-externalise/temps-partage)**, **[CFO de transición](/daf-externalise/transition)**, **[funciones del CFO](/daf-externalise/metier)** y **[precios](/daf-externalise/tarifs)**."
+        ]
+      },
+      {
+        "heading": "FAQ: CFO externo por sector",
+        "content": [
+          "**¿Cuesta más un CFO especializado que uno generalista?** No. Se aplica la misma tabla a todas nuestras misiones, de 3.000 a 8.000 € sin IVA al mes según el plan. La especialización influye en la selección del perfil, no en la tabla de precios.",
+          "**¿Qué aporta un CFO que conoce el sector?** Principalmente, un periodo de adaptación más corto. Un CFO que ya ha gestionado el capital circulante industrial o las existencias e-commerce puede plantear las preguntas pertinentes desde la primera semana e interpretar sus indicadores sin explicaciones iniciales.",
+          "**¿Y si mi sector no figura?** Las páginas sectoriales cubren los casos en que la especialización modifica realmente la intervención. Para otras actividades, el alcance inicial identifica las particularidades de su modelo. Es el objetivo de la primera conversación, sin compromiso."
+        ]
+      }
+    ],
+    "ctaButton": "Describir mis necesidades"
+  },
+  "ecommerce": {
+    "proofSlugs": [
+      "seasonly-marge-par-canal-bfr"
+    ],
+    "meta": {
+      "title": "CFO externo e-commerce: márgenes y tesorería | Iter",
+      "description": "Gestione margen por canal, existencias, devoluciones y tesorería del e-commerce con un CFO externo. Misiones e indicadores para decidir."
+    },
+    "parentLabel": "CFO externo",
+    "parentHref": "/daf-externalise",
+    "breadcrumbLabel": "CFO e-commerce",
+    "h1": "CFO externo e-commerce: conectar crecimiento, margen y tesorería",
+    "sections": [
+      {
+        "heading": "",
+        "content": [
+          "Un CFO externo e-commerce ayuda a la dirección a comprender qué aporta realmente cada venta a la empresa. El seguimiento relaciona pedidos, costes logísticos, devoluciones, gasto de captación y cobros para decidir las compras de existencias y las inversiones comerciales."
+        ]
+      },
+      {
+        "heading": "Construir un margen útil por producto y canal",
+        "content": [
+          "Un aumento de facturación puede ocultar un deterioro del margen. El cuadro de mando distingue precio neto de descuentos, coste de compra, comisiones de marketplace, preparación, entrega y devoluciones. Los costes deben imputarse con un método estable para comparar canales.",
+          "El reporting separa ventas, reembolsos y retrasos de liquidación de los proveedores de pago. Permite identificar productos cuyo crecimiento consume tesorería sin aportar una contribución suficiente."
+        ]
+      },
+      {
+        "heading": "Financiar las existencias y preparar los picos de venta",
+        "content": [
+          "La [previsión de tesorería](/services/previsionnel-tresorerie) reúne pedidos a proveedores, anticipos, transporte, cobros y gastos futuros. Distintas hipótesis de ventas permiten medir el margen de seguridad antes de una campaña.",
+          "El seguimiento de las [necesidades de capital circulante](/ressources/glossaire/besoin-fonds-roulement-bfr) relaciona rotación de existencias, plazos de proveedores y plazos de cobro. Un pedido importante se decide a partir de la tesorería disponible y los escenarios, no solo de la facturación esperada."
+        ]
+      },
+      {
+        "heading": "Relacionar los indicadores con las decisiones",
+        "content": [
+          "**Margen de contribución por canal:** comparar tienda online, marketplaces y ventas directas tras los costes variables.",
+          "**Existencias y devoluciones:** seguir referencias inmovilizadas, cobertura de existencias y reembolsos para adaptar la reposición.",
+          "**Captación y recompra:** relacionar el gasto de marketing con la contribución de las cohortes de clientes, distinguiendo hipótesis y datos observados."
+        ]
+      },
+      {
+        "heading": "Organizar el trabajo con los equipos",
+        "content": [
+          "Finanzas define con los responsables de e-commerce y logística las fuentes de datos, reglas de conciliación y frecuencia de revisión. Las diferencias entre pedidos, facturas y banco deben explicarse antes de automatizar el reporting.",
+          "El CFO coordina los asuntos de IVA y flujos internacionales con los profesionales competentes. El alcance depende de los países de venta, los canales y la organización contable."
+        ]
+      },
+      {
+        "heading": "Definir la misión y elegir el acompañamiento",
+        "content": [
+          "El alcance se define a partir de los datos disponibles, los plazos y las decisiones que deben tomarse. Una primera conversación permite precisar los entregables, su frecuencia y el papel de los equipos internos.",
+          "Consulte nuestras [modalidades y precios de CFO externo](/daf-externalise/tarifs), los [ejemplos de misiones con clientes](/ressources/cas-clients) y los [criterios para elegir una firma](/ressources/blog/choisir-cabinet-daf-externalise)."
+        ]
+      }
+    ],
+    "ctaButton": "Describir mis necesidades"
+  },
+  "industrie": {
+    "meta": {
+      "title": "CFO externo industria: costes y circulante | Iter",
+      "description": "CFO externo para empresas industriales: costes, márgenes, existencias, tesorería e inversión. Descubra el alcance y los entregables de la misión."
+    },
+    "parentLabel": "CFO externo",
+    "parentHref": "/daf-externalise",
+    "breadcrumbLabel": "CFO industria",
+    "h1": "CFO externo industria: gestionar costes, existencias e inversión",
+    "sections": [
+      {
+        "heading": "",
+        "content": [
+          "Un CFO externo industrial relaciona la contabilidad con los datos de producción para orientar las decisiones de la dirección. El trabajo abarca costes, márgenes, financiación del ciclo de explotación y proyectos de inversión, junto con los responsables operativos."
+        ]
+      },
+      {
+        "heading": "Comprender los costes y las desviaciones",
+        "content": [
+          "El [control de gestión](/services/controle-de-gestion-externalise) concilia compras, consumo de materiales, tiempo de producción y gastos de estructura. Las reglas de imputación deben documentarse para comparar productos, clientes o líneas de producción.",
+          "La revisión de desviaciones distingue efectos de precio, volumen y productividad. Ayuda a entender por qué una actividad rentable en el presupuesto comercial puede producir un margen inferior en la práctica."
+        ]
+      },
+      {
+        "heading": "Gestionar la tesorería inmovilizada en el ciclo industrial",
+        "content": [
+          "Materias primas, producción en curso y productos terminados inmovilizan tesorería antes del cobro del cliente. El CFO relaciona estas partidas con los plazos de pago para identificar tensiones de [capital circulante](/ressources/glossaire/besoin-fonds-roulement-bfr).",
+          "La [previsión de tesorería](/services/previsionnel-tresorerie) traduce la cartera de pedidos y el calendario de compras en vencimientos de pago. Los escenarios hacen visibles las consecuencias de un retraso del cliente o de la producción."
+        ]
+      },
+      {
+        "heading": "Documentar las decisiones de inversión",
+        "content": [
+          "Un expediente de inversión explicita el coste inicial, los gastos de puesta en marcha, los gastos recurrentes y los beneficios esperados. Las hipótesis comerciales e industriales se identifican separadamente de los resultados ya observados.",
+          "El plan de financiación se contrasta con la capacidad de devolución y las demás necesidades de la empresa. Tras la puesta en marcha, el seguimiento de desviaciones permite revisar hipótesis y prioridades."
+        ]
+      },
+      {
+        "heading": "Los entregables de la gestión financiera industrial",
+        "content": [
+          "**Cuadro de márgenes:** una lectura por actividad con reglas de imputación y desviaciones explicadas.",
+          "**Revisión de existencias y producción en curso:** una base conciliada con producción y contabilidad.",
+          "**Comité de gestión:** decisiones documentadas, responsables identificados e indicadores seguidos entre periodos. La [automatización del reporting](/ressources/ia-finance/automatiser-reporting-financier) se realiza una vez que los datos son fiables."
+        ]
+      },
+      {
+        "heading": "Ejemplo de revisión: explicar un margen inferior al previsto",
+        "content": [
+          "Este ejemplo describe un método de trabajo sin utilizar datos de un cliente. Producción confirma cantidades y tiempos consumidos; compras documenta precios; finanzas concilia estos elementos con el presupuesto inicial.",
+          "La dirección puede distinguir un efecto de precio del material, una serie más corta o un tiempo de fabricación superior. La decisión se refiere al precio, proceso o volumen. La siguiente revisión comprueba el efecto de la acción elegida."
+        ],
+        "table": {
+          "caption": "Estructura ilustrativa de una revisión de costes",
+          "headers": [
+            "Dato que debe conciliarse",
+            "Interlocutor",
+            "Pregunta de gestión"
+          ],
+          "rows": [
+            [
+              "Consumo real y lista de materiales",
+              "Producción",
+              "¿Qué desviación de material o rendimiento?"
+            ],
+            [
+              "Precio facturado y previsto",
+              "Compras",
+              "¿Subida puntual o nueva base de coste?"
+            ],
+            [
+              "Existencias y pedidos pendientes",
+              "Logística y ventas",
+              "¿Qué financiación se necesita antes del cobro?"
+            ],
+            [
+              "Coste de puesta en marcha y capacidad prevista",
+              "Dirección industrial",
+              "¿Sigue la inversión ajustada al escenario?"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Definir la misión y elegir el acompañamiento",
+        "content": [
+          "El alcance se define a partir de los datos disponibles, los plazos y las decisiones que deben tomarse. Una primera conversación permite precisar los entregables, su frecuencia y el papel de los equipos internos.",
+          "Consulte nuestras [modalidades y precios de CFO externo](/daf-externalise/tarifs), los [ejemplos de misiones con clientes](/ressources/cas-clients) y los [criterios para elegir una firma](/ressources/blog/choisir-cabinet-daf-externalise)."
+        ]
+      }
+    ],
+    "ctaButton": "Describir mis necesidades"
+  },
+  "deep-tech": {
+    "meta": {
+      "title": "CFO externo deep tech: runway y financiación | Iter",
+      "description": "Estructure la gestión financiera de su deep tech: presupuesto de I+D, runway, hitos de financiación, data room y reporting para inversores."
+    },
+    "parentLabel": "CFO externo",
+    "parentHref": "/daf-externalise",
+    "breadcrumbLabel": "CFO deep tech",
+    "h1": "CFO externo deep tech: financiar las etapas de I+D y seguir el runway",
+    "sections": [
+      {
+        "heading": "",
+        "content": [
+          "Un CFO externo deep tech ayuda a la dirección a relacionar las etapas de investigación y desarrollo con los recursos financieros necesarios. El modelo distingue gastos comprometidos, hipótesis de ingresos y financiación confirmada para preparar decisiones antes de una tensión de tesorería."
+        ]
+      },
+      {
+        "heading": "Traducir los hitos técnicos en presupuesto",
+        "content": [
+          "El presupuesto detalla equipos, subcontratación, equipamiento y ensayos por proyecto. Cada hito técnico se asocia a los gastos necesarios y a las condiciones para pasar a la siguiente etapa.",
+          "Los escenarios permiten medir el efecto de un retraso del desarrollo o un gasto adicional. El [cash burn y el runway](/ressources/glossaire/cash-burn-runway) se calculan con hipótesis explícitas, revisadas con la dirección técnica."
+        ]
+      },
+      {
+        "heading": "Distinguir financiación confirmada y esperada",
+        "content": [
+          "Una ayuda solicitada, un desembolso condicionado y una cantidad cobrada no tienen el mismo grado de certeza. El plan de tesorería identifica estas diferencias y el calendario de justificantes.",
+          "El CFO coordina la documentación financiera de ayudas y programas de investigación con especialistas competentes. No se presumen ni la elegibilidad ni el importe: deben verificarse para la situación de la empresa."
+        ]
+      },
+      {
+        "heading": "Preparar la ronda y el diálogo con inversores",
+        "content": [
+          "El [acompañamiento de una ronda](/services/accompagnement-levee-de-fond) incluye un modelo financiero coherente, escenarios de financiación y una presentación clara del uso de los fondos.",
+          "La [data room de due diligence](/ressources/blog/checklist-due-diligence-levee-de-fonds) reúne documentos financieros e hipótesis del modelo. La dirección conserva un registro de versiones y respuestas enviadas a los inversores."
+        ]
+      },
+      {
+        "heading": "Instalar un reporting después de la financiación",
+        "content": [
+          "**Presupuesto por proyecto:** seguir gastos realizados, comprometidos y pendientes de financiar.",
+          "**Tesorería:** conciliar saldo bancario, vencimientos y escenarios de runway.",
+          "**Gobierno:** compartir desviaciones y decisiones con dirección e inversores, sin confundir un objetivo técnico con un resultado logrado. Las [herramientas financieras](/ressources/outils) se eligen según estas necesidades."
+        ]
+      },
+      {
+        "heading": "Ejemplo de presupuesto por hito de I+D",
+        "content": [
+          "La tabla siguiente ilustra una estructura de gestión, sin datos de cliente ni hipótesis de financiación concedida. Cada línea del presupuesto debe indicar responsable, grado de certeza y fecha de revisión.",
+          "Si se aplaza un ensayo, la dirección técnica precisa los recursos adicionales necesarios. Finanzas recalcula la necesidad de tesorería y presenta opciones: aplazar un gasto, adaptar el programa o buscar financiación. Una ayuda solicitada permanece separada del escenario financiado hasta que se confirmen sus condiciones."
+        ],
+        "table": {
+          "caption": "Estructura ilustrativa del seguimiento de hitos técnicos",
+          "headers": [
+            "Elemento",
+            "Dato necesario",
+            "Consecuencia que debe probarse"
+          ],
+          "rows": [
+            [
+              "Etapa técnica",
+              "Entregable y criterio de validación",
+              "Coste de aplazar el ensayo"
+            ],
+            [
+              "Gastos comprometidos",
+              "Contratos, equipos y equipamiento",
+              "Tesorería pendiente de desembolsar"
+            ],
+            [
+              "Financiación confirmada",
+              "Importe, condiciones y calendario",
+              "Posible retraso del desembolso"
+            ],
+            [
+              "Financiación solicitada",
+              "Estado y dependencias",
+              "Escenario sin concesión"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Definir la misión y elegir el acompañamiento",
+        "content": [
+          "El alcance se define a partir de los datos disponibles, los plazos y las decisiones que deben tomarse. Una primera conversación permite precisar los entregables, su frecuencia y el papel de los equipos internos.",
+          "Consulte nuestras [modalidades y precios de CFO externo](/daf-externalise/tarifs), los [ejemplos de misiones con clientes](/ressources/cas-clients) y los [criterios para elegir una firma](/ressources/blog/choisir-cabinet-daf-externalise)."
+        ]
+      }
+    ],
+    "ctaButton": "Describir mis necesidades"
+  }
+}

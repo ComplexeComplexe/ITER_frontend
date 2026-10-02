@@ -29,23 +29,23 @@ export const LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   },
   "/daf-externalise/secteurs": {
     "fr": "/daf-externalise/secteurs",
-    "en": "/daf-externalise/secteurs",
-    "es": "/daf-externalise/secteurs"
+    "en": "/en/fractional-cfo/sectors",
+    "es": "/es/externalizacion-daf/sectores"
   },
   "/daf-externalise/ecommerce": {
     "fr": "/daf-externalise/ecommerce",
-    "en": "/daf-externalise/ecommerce",
-    "es": "/daf-externalise/ecommerce"
+    "en": "/en/fractional-cfo/ecommerce",
+    "es": "/es/externalizacion-daf/ecommerce"
   },
   "/daf-externalise/industrie": {
     "fr": "/daf-externalise/industrie",
-    "en": "/daf-externalise/industrie",
-    "es": "/daf-externalise/industrie"
+    "en": "/en/fractional-cfo/manufacturing",
+    "es": "/es/externalizacion-daf/industria"
   },
   "/daf-externalise/deep-tech": {
     "fr": "/daf-externalise/deep-tech",
-    "en": "/daf-externalise/deep-tech",
-    "es": "/daf-externalise/deep-tech"
+    "en": "/en/fractional-cfo/deep-tech",
+    "es": "/es/externalizacion-daf/deep-tech"
   },
   "/daf-externalise/temps-partage": {
     "fr": "/daf-externalise/temps-partage",

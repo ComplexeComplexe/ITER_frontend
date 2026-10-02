@@ -1,16 +1,16 @@
 {
   "date": "2026-10-02",
-  "scope": "First reviewed implementation batch, not the full site migration",
+  "scope": "Reviewed finance and resources hub batches; full site migration remains in progress",
   "pullRequest": "https://github.com/ComplexeComplexe/ITER_frontend/pull/164",
   "productionPublished": false,
   "visualReviewCompleted": false,
-  "alignedTrios": 18,
-  "alignedVersions": 54,
-  "newTranslationsImplemented": 11,
-  "existingTranslationsAligned": 25,
-  "newTranslationsRemaining": 181,
-  "existingTranslationsRemaining": 75,
-  "frReferencesRemaining": 128,
+  "alignedTrios": 25,
+  "alignedVersions": 75,
+  "newTranslationsImplemented": 19,
+  "existingTranslationsAligned": 31,
+  "newTranslationsRemaining": 173,
+  "existingTranslationsRemaining": 69,
+  "frReferencesRemaining": 121,
   "aligned": [
     {
       "id": "/",
@@ -155,133 +155,65 @@
         "en": "/en/fractional-cfo/role",
         "es": "/es/externalizacion-daf/funciones"
       }
+    },
+    {
+      "id": "/daf-externalise-barcelone",
+      "paths": {
+        "fr": "/daf-externalise-barcelone",
+        "en": "/en/fractional-cfo-barcelona",
+        "es": "/es/cfo-externalizado-barcelona"
+      }
+    },
+    {
+      "id": "/daf-externalise-toulouse",
+      "paths": {
+        "fr": "/daf-externalise-toulouse",
+        "en": "/en/fractional-cfo-toulouse",
+        "es": "/es/cfo-externalizado-toulouse"
+      }
+    },
+    {
+      "id": "/daf-externalise/secteurs",
+      "paths": {
+        "fr": "/daf-externalise/secteurs",
+        "en": "/en/fractional-cfo/sectors",
+        "es": "/es/externalizacion-daf/sectores"
+      }
+    },
+    {
+      "id": "/daf-externalise/ecommerce",
+      "paths": {
+        "fr": "/daf-externalise/ecommerce",
+        "en": "/en/fractional-cfo/ecommerce",
+        "es": "/es/externalizacion-daf/ecommerce"
+      }
+    },
+    {
+      "id": "/daf-externalise/industrie",
+      "paths": {
+        "fr": "/daf-externalise/industrie",
+        "en": "/en/fractional-cfo/manufacturing",
+        "es": "/es/externalizacion-daf/industria"
+      }
+    },
+    {
+      "id": "/daf-externalise/deep-tech",
+      "paths": {
+        "fr": "/daf-externalise/deep-tech",
+        "en": "/en/fractional-cfo/deep-tech",
+        "es": "/es/externalizacion-daf/deep-tech"
+      }
+    },
+    {
+      "id": "/ressources",
+      "paths": {
+        "fr": "/ressources",
+        "en": "/en/ressources",
+        "es": "/es/recursos"
+      }
     }
   ],
   "remaining": [
-    {
-      "pageId": "daf-externalise:secteurs",
-      "sourcePath": "/daf-externalise/secteurs",
-      "family": "cfo-sector",
-      "locales": {
-        "fr": {
-          "currentPath": "/daf-externalise/secteurs",
-          "targetPath": "/daf-externalise/secteurs",
-          "mainWords": 699,
-          "state": "reference-fr",
-          "translationApproved": true,
-          "publishedAtTarget": true
-        },
-        "en": {
-          "currentPath": null,
-          "targetPath": "/en/fractional-cfo/sectors",
-          "mainWords": null,
-          "state": "translate-new",
-          "translationApproved": false,
-          "publishedAtTarget": false
-        },
-        "es": {
-          "currentPath": null,
-          "targetPath": "/es/externalizacion-daf/sectores",
-          "mainWords": null,
-          "state": "translate-new",
-          "translationApproved": false,
-          "publishedAtTarget": false
-        }
-      }
-    },
-    {
-      "pageId": "daf-externalise:ecommerce",
-      "sourcePath": "/daf-externalise/ecommerce",
-      "family": "cfo-sector",
-      "locales": {
-        "fr": {
-          "currentPath": "/daf-externalise/ecommerce",
-          "targetPath": "/daf-externalise/ecommerce",
-          "mainWords": 538,
-          "state": "reference-fr",
-          "translationApproved": true,
-          "publishedAtTarget": true
-        },
-        "en": {
-          "currentPath": null,
-          "targetPath": "/en/fractional-cfo/ecommerce",
-          "mainWords": null,
-          "state": "translate-new",
-          "translationApproved": false,
-          "publishedAtTarget": false
-        },
-        "es": {
-          "currentPath": null,
-          "targetPath": "/es/externalizacion-daf/ecommerce",
-          "mainWords": null,
-          "state": "translate-new",
-          "translationApproved": false,
-          "publishedAtTarget": false
-        }
-      }
-    },
-    {
-      "pageId": "daf-externalise:industrie",
-      "sourcePath": "/daf-externalise/industrie",
-      "family": "cfo-sector",
-      "locales": {
-        "fr": {
-          "currentPath": "/daf-externalise/industrie",
-          "targetPath": "/daf-externalise/industrie",
-          "mainWords": 643,
-          "state": "reference-fr",
-          "translationApproved": true,
-          "publishedAtTarget": true
-        },
-        "en": {
-          "currentPath": null,
-          "targetPath": "/en/fractional-cfo/manufacturing",
-          "mainWords": null,
-          "state": "translate-new",
-          "translationApproved": false,
-          "publishedAtTarget": false
-        },
-        "es": {
-          "currentPath": null,
-          "targetPath": "/es/externalizacion-daf/industria",
-          "mainWords": null,
-          "state": "translate-new",
-          "translationApproved": false,
-          "publishedAtTarget": false
-        }
-      }
-    },
-    {
-      "pageId": "daf-externalise:deep-tech",
-      "sourcePath": "/daf-externalise/deep-tech",
-      "family": "cfo-sector",
-      "locales": {
-        "fr": {
-          "currentPath": "/daf-externalise/deep-tech",
-          "targetPath": "/daf-externalise/deep-tech",
-          "mainWords": 615,
-          "state": "reference-fr",
-          "translationApproved": true,
-          "publishedAtTarget": true
-        },
-        "en": {
-          "currentPath": null,
-          "targetPath": "/en/fractional-cfo/deep-tech",
-          "mainWords": null,
-          "state": "translate-new",
-          "translationApproved": false,
-          "publishedAtTarget": false
-        },
-        "es": {
-          "currentPath": null,
-          "targetPath": "/es/externalizacion-daf/deep-tech",
-          "mainWords": null,
-          "state": "translate-new",
-          "translationApproved": false,
-          "publishedAtTarget": false
-        }
-      }
-    },
     {
       "pageId": "drh-externalise",
       "sourcePath": "/drh-externalise",
@@ -338,37 +270,6 @@
           "currentPath": "/es/externalizacion-rrhh/tiempo-compartido",
           "targetPath": "/es/externalizacion-rrhh/tiempo-compartido",
           "mainWords": 401,
-          "state": "align-existing",
-          "translationApproved": false,
-          "publishedAtTarget": true
-        }
-      }
-    },
-    {
-      "pageId": "ressources",
-      "sourcePath": "/ressources",
-      "family": "resources-hub",
-      "locales": {
-        "fr": {
-          "currentPath": "/ressources",
-          "targetPath": "/ressources",
-          "mainWords": 545,
-          "state": "reference-fr",
-          "translationApproved": true,
-          "publishedAtTarget": true
-        },
-        "en": {
-          "currentPath": "/en/ressources",
-          "targetPath": "/en/resources",
-          "mainWords": 607,
-          "state": "align-existing",
-          "translationApproved": false,
-          "publishedAtTarget": false
-        },
-        "es": {
-          "currentPath": "/es/recursos",
-          "targetPath": "/es/recursos",
-          "mainWords": 733,
           "state": "align-existing",
           "translationApproved": false,
           "publishedAtTarget": true
@@ -1051,68 +952,6 @@
           "currentPath": "/es/politica-de-privacidad",
           "targetPath": "/es/politica-de-privacidad",
           "mainWords": 1140,
-          "state": "align-existing",
-          "translationApproved": false,
-          "publishedAtTarget": true
-        }
-      }
-    },
-    {
-      "pageId": "daf-externalise-barcelone",
-      "sourcePath": "/daf-externalise-barcelone",
-      "family": "finance-service",
-      "locales": {
-        "fr": {
-          "currentPath": "/daf-externalise-barcelone",
-          "targetPath": "/daf-externalise-barcelone",
-          "mainWords": 1124,
-          "state": "reference-fr",
-          "translationApproved": true,
-          "publishedAtTarget": true
-        },
-        "en": {
-          "currentPath": "/en/fractional-cfo-barcelona",
-          "targetPath": "/en/fractional-cfo-barcelona",
-          "mainWords": 673,
-          "state": "align-existing",
-          "translationApproved": false,
-          "publishedAtTarget": true
-        },
-        "es": {
-          "currentPath": "/es/cfo-externalizado-barcelona",
-          "targetPath": "/es/cfo-externalizado-barcelona",
-          "mainWords": 728,
-          "state": "align-existing",
-          "translationApproved": false,
-          "publishedAtTarget": true
-        }
-      }
-    },
-    {
-      "pageId": "daf-externalise-toulouse",
-      "sourcePath": "/daf-externalise-toulouse",
-      "family": "finance-service",
-      "locales": {
-        "fr": {
-          "currentPath": "/daf-externalise-toulouse",
-          "targetPath": "/daf-externalise-toulouse",
-          "mainWords": 1076,
-          "state": "reference-fr",
-          "translationApproved": true,
-          "publishedAtTarget": true
-        },
-        "en": {
-          "currentPath": "/en/fractional-cfo-toulouse",
-          "targetPath": "/en/fractional-cfo-toulouse",
-          "mainWords": 555,
-          "state": "align-existing",
-          "translationApproved": false,
-          "publishedAtTarget": true
-        },
-        "es": {
-          "currentPath": "/es/cfo-externalizado-toulouse",
-          "targetPath": "/es/cfo-externalizado-toulouse",
-          "mainWords": 592,
           "state": "align-existing",
           "translationApproved": false,
           "publishedAtTarget": true
@@ -4254,22 +4093,48 @@
   "routingMigrationsActivated": 0,
   "routingMigrationsPlanned": 26,
   "checks": {
-    "unitTestsPassed": 137,
+    "unitTestsPassed": 140,
     "lintErrors": 0,
     "lintWarnings": 80,
-    "sitemapUrls": 238,
-    "builtPages": 263,
-    "redirectRules": 339,
+    "sitemapUrls": 246,
+    "builtPages": 271,
+    "redirectRules": 338,
     "redirectIssues": 0,
-    "httpPages": 54,
-    "httpInternalDestinations": 181,
+    "httpPages": 75,
+    "httpInternalDestinations": 203,
     "httpIssues": 0,
     "globalSeoFailures": 0,
-    "globalSeoInternalDestinations": 248,
-    "globalSeoHreflang": 728,
-    "structuredDataQuestions": 421,
+    "globalSeoInternalDestinations": 256,
+    "globalSeoHreflang": 768,
+    "structuredDataQuestions": 434,
     "structuredDataFailures": 0,
     "workflowAuditsPassedLocally": true
   },
-  "additionalCorrection": "FR ROI landing: removed unsubstantiated claims; no success without confirmed webhook delivery."
+  "additionalCorrection": "Removed obsolete redirect for the newly translated ES sectors page. Preserved France-only CIR scope, original French review labels, and Toulouse service-area limits.",
+  "statusRecordedAt": "2026-10-02T17:31:00Z",
+  "publishedBatch": {
+    "pullRequest": "https://github.com/ComplexeComplexe/ITER_frontend/pull/164",
+    "mergeCommit": "ca449a6013626f60a36164d72134f261684551ae",
+    "deployment": "https://vercel.com/gr-2531s-projects/iter-frontend/4ZEQfVoshjzhHTieemw81DWFwsCs",
+    "state": "production-verified",
+    "trios": 18,
+    "pages": 54,
+    "internalDestinations": 181,
+    "httpIssues": 0,
+    "evidence": "../audits/iter-parite-implementation-2026-10-02/recette-production.json"
+  },
+  "pendingBatch": {
+    "references": [
+      "/daf-externalise-barcelone",
+      "/daf-externalise-toulouse",
+      "/daf-externalise/secteurs",
+      "/daf-externalise/ecommerce",
+      "/daf-externalise/industrie",
+      "/daf-externalise/deep-tech",
+      "/ressources"
+    ],
+    "newTranslations": 8,
+    "existingTranslationsAligned": 6,
+    "state": "verified-locally-awaiting-publication"
+  }
 }
