@@ -1,16 +1,15 @@
 {
   "date": "2026-10-02",
-  "scope": "Reviewed finance and resources hub batches; full site migration remains in progress",
+  "scope": "Implementation snapshot: 25 previously published trios plus 7 AI-finance trios verified locally; latest batch awaiting publication",
   "pullRequest": "https://github.com/ComplexeComplexe/ITER_frontend/pull/164",
-  "productionPublished": false,
   "visualReviewCompleted": false,
-  "alignedTrios": 25,
-  "alignedVersions": 75,
-  "newTranslationsImplemented": 19,
+  "alignedTrios": 32,
+  "alignedVersions": 96,
+  "newTranslationsImplemented": 33,
   "existingTranslationsAligned": 31,
-  "newTranslationsRemaining": 173,
+  "newTranslationsRemaining": 159,
   "existingTranslationsRemaining": 69,
-  "frReferencesRemaining": 121,
+  "frReferencesRemaining": 114,
   "aligned": [
     {
       "id": "/",
@@ -210,6 +209,62 @@
         "fr": "/ressources",
         "en": "/en/ressources",
         "es": "/es/recursos"
+      }
+    },
+    {
+      "id": "/ressources/ia-finance",
+      "paths": {
+        "fr": "/ressources/ia-finance",
+        "en": "/en/resources/ai-finance",
+        "es": "/es/recursos/ia-finanzas"
+      }
+    },
+    {
+      "id": "/ressources/ia-finance/automatiser-reporting-financier",
+      "paths": {
+        "fr": "/ressources/ia-finance/automatiser-reporting-financier",
+        "en": "/en/resources/ai-finance/automate-financial-reporting",
+        "es": "/es/recursos/ia-finanzas/automatizar-reporting-financiero"
+      }
+    },
+    {
+      "id": "/ressources/ia-finance/chatgpt-finance",
+      "paths": {
+        "fr": "/ressources/ia-finance/chatgpt-finance",
+        "en": "/en/resources/ai-finance/chatgpt-finance",
+        "es": "/es/recursos/ia-finanzas/chatgpt-finanzas"
+      }
+    },
+    {
+      "id": "/ressources/ia-finance/llm-finance",
+      "paths": {
+        "fr": "/ressources/ia-finance/llm-finance",
+        "en": "/en/resources/ai-finance/llms-finance",
+        "es": "/es/recursos/ia-finanzas/llm-finanzas"
+      }
+    },
+    {
+      "id": "/ressources/ia-finance/outils",
+      "paths": {
+        "fr": "/ressources/ia-finance/outils",
+        "en": "/en/resources/ai-finance/tools",
+        "es": "/es/recursos/ia-finanzas/herramientas"
+      }
+    },
+    {
+      "id": "/ressources/ia-finance/feuille-de-route-90-jours",
+      "paths": {
+        "fr": "/ressources/ia-finance/feuille-de-route-90-jours",
+        "en": "/en/resources/ai-finance/90-day-roadmap",
+        "es": "/es/recursos/ia-finanzas/hoja-ruta-90-dias"
+      }
+    },
+    {
+      "id": "/ressources/ia-finance/retours-experience",
+      "paths": {
+        "fr": "/ressources/ia-finance/retours-experience",
+        "en": "/en/resources/ai-finance/experience-reports",
+        "es": "/es/recursos/ia-finanzas/experiencias"
       }
     }
   ],
@@ -4110,31 +4165,51 @@
     "structuredDataFailures": 0,
     "workflowAuditsPassedLocally": true
   },
-  "additionalCorrection": "Removed obsolete redirect for the newly translated ES sectors page. Preserved France-only CIR scope, original French review labels, and Toulouse service-area limits.",
-  "statusRecordedAt": "2026-10-02T17:31:00Z",
+  "additionalCorrection": "Scoped English resource aliases to retain published /en/resources/ai-finance routes. Direct IA family aliases in one hop. Locale-complete calculator, clipboard feedback and downloadable exercises. Preserved French copy, factual limits and original author identity.",
+  "statusRecordedAt": "2026-10-02T21:54:05.042736+00:00",
   "publishedBatch": {
-    "pullRequest": "https://github.com/ComplexeComplexe/ITER_frontend/pull/164",
-    "mergeCommit": "ca449a6013626f60a36164d72134f261684551ae",
-    "deployment": "https://vercel.com/gr-2531s-projects/iter-frontend/4ZEQfVoshjzhHTieemw81DWFwsCs",
+    "pullRequest": "https://github.com/ComplexeComplexe/ITER_frontend/pull/165",
+    "mergeCommit": "36a58846ac22107cedfcede9cc250e9bcd136613",
+    "deploymentId": "G9zUvcawAJmvg58Q8uUz2JHBRzxf",
     "state": "production-verified",
-    "trios": 18,
-    "pages": 54,
-    "internalDestinations": 181,
-    "httpIssues": 0,
-    "evidence": "../audits/iter-parite-implementation-2026-10-02/recette-production.json"
+    "trios": 25,
+    "pages": 75,
+    "evidence": "../audits/iter-parite-villes-secteurs-2026-10-02/recette-production.json"
   },
   "pendingBatch": {
     "references": [
-      "/daf-externalise-barcelone",
-      "/daf-externalise-toulouse",
-      "/daf-externalise/secteurs",
-      "/daf-externalise/ecommerce",
-      "/daf-externalise/industrie",
-      "/daf-externalise/deep-tech",
-      "/ressources"
+      "/ressources/ia-finance",
+      "/ressources/ia-finance/automatiser-reporting-financier",
+      "/ressources/ia-finance/chatgpt-finance",
+      "/ressources/ia-finance/llm-finance",
+      "/ressources/ia-finance/outils",
+      "/ressources/ia-finance/feuille-de-route-90-jours",
+      "/ressources/ia-finance/retours-experience"
     ],
-    "newTranslations": 8,
-    "existingTranslationsAligned": 6,
-    "state": "verified-locally-awaiting-publication"
+    "newTranslations": 14,
+    "existingTranslationsAligned": 0,
+    "state": "verified-locally-awaiting-publication",
+    "evidence": "../audits/iter-parite-ia-finance-2026-10-02/recette-http.json"
+  },
+  "verification": {
+    "unitTestsPassed": 145,
+    "lintErrors": 0,
+    "lintWarnings": 80,
+    "sitemapUrls": 260,
+    "builtPages": 285,
+    "redirectRules": 391,
+    "redirectIssues": 0,
+    "httpPages": 96,
+    "httpInternalDestinations": 231,
+    "httpIssues": 0,
+    "globalSeoFailures": 0,
+    "globalSeoInternalDestinations": 274,
+    "globalSeoHreflang": 838,
+    "structuredDataQuestions": 470,
+    "structuredDataFailures": 0,
+    "workflowAuditsPassedLocally": true,
+    "frenchPagesUnchanged": 7,
+    "translatedDownloadKitsVerified": 2,
+    "clientCorpusLeak": false
   }
 }

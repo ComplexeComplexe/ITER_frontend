@@ -1,6 +1,9 @@
 import { editorialPersonId } from "@/lib/content/finance-expert";
 import type { ReactNode } from "react";
-import Link from "next/link";
+import Link from "@/components/PublishedLocaleLink";
+import type { Locale } from "@/lib/i18n";
+import { parityHref } from "@/lib/locale-route-map";
+import { iaText } from "@/lib/content/ia-finance-interface";
 import Image from "next/image";
 import { ArrowRight, CheckCircle2, Clock, Sparkles } from "lucide-react";
 import { getCmsNavigation } from "@/lib/static-content";
@@ -54,6 +57,7 @@ export interface GuideRelated {
 }
 
 export interface GuideFiscalPageProps {
+  locale?: Locale;
   path: string;
   breadcrumbLabel: string;
   h1: string;
@@ -88,6 +92,7 @@ export interface GuideFiscalPageProps {
 }
 
 export default async function GuideFiscalPage({
+  locale = "fr",
   path,
   breadcrumbLabel,
   h1,
@@ -114,7 +119,7 @@ export default async function GuideFiscalPage({
   references,
   hub = { label: "Fiscalité Espagne France", href: FISCALITE_HUB },
 }: GuideFiscalPageProps) {
-  const cmsNavigation = await getCmsNavigation("fr");
+  const cmsNavigation = await getCmsNavigation(locale);
   const pageUrl = `${SITE}${path}`;
   const refs = references ?? (referencesKey ? getFiscaliteReferences(referencesKey) : []);
 
@@ -136,7 +141,7 @@ export default async function GuideFiscalPage({
         image: heroImage.src,
         datePublished: publishedDate,
         dateModified: modifiedDate,
-        inLanguage: "fr-FR",
+        inLanguage: { fr: "fr-FR", en: "en-GB", es: "es-ES" }[locale],
         author: {
           "@type": "Person",
           "@id": editorialPersonId(author.url),
@@ -158,19 +163,19 @@ export default async function GuideFiscalPage({
     kpis.length >= 4 ? "sm:grid-cols-4" : kpis.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2";
 
   return (
-    <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
       />
 
       {/* ─── Hero : fil d'Ariane, H1, fraîcheur + byline, chapô, image ─── */}
-      <section className="site-hero bg-background pt-32 pb-8 sm:pb-10">
+      <section data-block-key="hero" className="site-hero bg-background pt-32 pb-8 sm:pb-10">
         <div className="container max-w-3xl">
           <Breadcrumb
-            locale="fr"
+            locale={locale}
             items={[
-              { label: "Ressources", href: "/ressources" },
+              { label: iaText(locale, "Ressources"), href: parityHref("/ressources", locale) },
               { label: hub.label, href: hub.href },
               { label: breadcrumbLabel },
             ]}
@@ -185,8 +190,8 @@ export default async function GuideFiscalPage({
               {badge}
             </span>
             <span className="text-xs text-muted-foreground">
-              Par{" "}
-              <Link href={author.url} rel="author" className="text-iter-violet hover:underline">
+              {iaText(locale, "Par")}{" "}
+              <Link locale={locale} href={parityHref(author.url, locale)} rel="author" className="text-iter-violet hover:underline">
                 {author.name}
               </Link>
               {" · "}
@@ -196,7 +201,7 @@ export default async function GuideFiscalPage({
                   {" · "}
                   <span className="inline-flex items-center gap-1">
                     <Clock size={12} aria-hidden />
-                    {readMinutes} min de lecture
+                    {readMinutes} {iaText(locale, "min de lecture")}
                   </span>
                 </>
               ) : null}
@@ -252,11 +257,11 @@ export default async function GuideFiscalPage({
       </section>
 
       {/* ─── Corps + sommaire collant ─── */}
-      <section className="bg-background py-8 sm:py-10">
+      <section data-block-key="body" className="bg-background py-8 sm:py-10">
         <div className="container">
           <div className="flex flex-col xl:grid xl:grid-cols-[minmax(0,1fr)_15rem] xl:gap-12 max-w-6xl mx-auto">
             <div className="order-1 xl:order-none xl:col-start-2 xl:row-start-1">
-              <ArticleTOC locale="fr" headings={headings} />
+              <ArticleTOC locale={locale} headings={headings} />
             </div>
             <div
               data-article-body
@@ -269,7 +274,7 @@ export default async function GuideFiscalPage({
       </section>
 
       {/* ─── FAQ : visible et JSON-LD générés depuis le même tableau ─── */}
-      <section className="site-section bg-background py-10 sm:py-14">
+      <section data-block-key="faq" className="site-section bg-background py-10 sm:py-14">
         <div className="container max-w-3xl">
           <div id="faq" className="scroll-mt-24">
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 leading-tight">
@@ -298,16 +303,17 @@ export default async function GuideFiscalPage({
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="bg-background pb-10">
+      <section data-block-key="cta" className="bg-background pb-10">
         <div className="container max-w-3xl">
           <div className="site-card rounded-3xl bg-iter-dark p-8 sm:p-10 text-white">
             <p className="font-heading text-2xl font-semibold mb-2">{cta.title}</p>
             <p className="text-white/70 max-w-xl leading-relaxed mb-5">{cta.text}</p>
             <Link
-              href={cta.href ?? "/contact"}
+              locale={locale}
+              href={cta.href ?? parityHref("/contact", locale)}
               className="site-button site-button-primary inline-flex items-center gap-2 rounded-full bg-iter-violet px-6 py-3 font-heading font-semibold text-white hover:bg-iter-violet/90 transition-all duration-300"
             >
-              {cta.label ?? "Demander un diagnostic"}
+              {cta.label ?? iaText(locale, "Demander un diagnostic")}
               <ArrowRight size={16} aria-hidden />
             </Link>
             {cta.footnote && <p className="mt-4 text-sm text-white/50">{cta.footnote}</p>}
@@ -317,16 +323,17 @@ export default async function GuideFiscalPage({
 
       {/* ─── Articles liés ─── */}
       {related.length > 0 && (
-        <section className="bg-background pb-14">
+        <section data-block-key="related" className="bg-background pb-14">
           <div className="container max-w-3xl">
             <h2 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-5">
-              Pour aller plus loin
+              {iaText(locale, "Pour aller plus loin")}
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {related.map((c) => (
                 <Link
                   key={c.href}
-                  href={c.href}
+                  locale={locale}
+                  href={parityHref(c.href, locale)}
                   className="group block rounded-2xl border border-border/60 overflow-hidden hover:border-iter-violet/50 hover:shadow-md transition-all"
                 >
                   <div className="relative aspect-[16/9] bg-muted">
@@ -351,9 +358,9 @@ export default async function GuideFiscalPage({
         </section>
       )}
 
-      {refs.length > 0 && <References locale="fr" refs={refs} />}
+      {refs.length > 0 && <References locale={locale} refs={refs} />}
 
-      {!cta.href && <CTASection locale="fr" />}
+      {!cta.href && <CTASection locale={locale} />}
     </PageLayout>
   );
 }

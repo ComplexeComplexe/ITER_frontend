@@ -2,7 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { alignedPaths } from "@/lib/content/locale-publication";
 import { getIaGuide } from "@/lib/content/ia-finance-locales";
 import IaFinanceGuide from "@/components/pages/IaFinanceGuide";
-const locale = "fr";
+const locale = "en";
 const SLUG = "feuille-de-route-90-jours";
 const guide = getIaGuide(locale, SLUG);
 const paths = alignedPaths("/ressources/ia-finance/feuille-de-route-90-jours")!;

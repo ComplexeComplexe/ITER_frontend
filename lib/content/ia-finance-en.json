@@ -1,0 +1,399 @@
+{
+  "automatiser-reporting-financier": {
+    "label": "Automate financial reporting",
+    "title": "Automating financial reporting: method, controls and ROI",
+    "metaTitle": "Automate financial reporting: method and controls",
+    "description": "Automate SME reporting: sources, reconciliations, controls, an illustrative ROI calculation and a documented case. A finance-led method.",
+    "dek": "Automating financial reporting means making data collection reliable, applying reproducible calculation rules and preparing commentary. Start with an approved report against which to compare the new process, with an owner for each discrepancy.",
+    "published": "2026-09-01",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "summary": [
+      "Separate data connections, calculations and AI-assisted commentary.",
+      "Validate totals and exceptions before distributing a dashboard.",
+      "Include review and maintenance time in the return on investment."
+    ],
+    "sections": [
+      {
+        "id": "perimetre",
+        "title": "Which reporting stages can be automated?",
+        "html": "<p>A scheduled export or a formula does not necessarily require AI. A language model can help explain variances already calculated or prepare a summary. Keep the accounting records and management model as reference points.</p><p><a href=\"/services/controle-de-gestion-externalise\">External management accounting support</a> can help make indicators, reconciliations and variance reviews reliable before automating them.</p><div class=\"prose-table-wrapper\"><table class=\"min-w-[32rem]\"><caption>Tasks and their controls</caption><thead><tr><th scope=\"col\">Stage</th><th scope=\"col\">Possible automation</th><th scope=\"col\">CFO control</th></tr></thead><tbody><tr><th scope=\"row\">Collection</th><td>Scheduled exports, APIs and transaction loading</td><td>Period, entity, row count and data freshness</td></tr><tr><th scope=\"row\">Calculation</th><td>Mapping rules and aggregations in a spreadsheet or BI</td><td>Totals reconciled to the trial balance and versioned formulas</td></tr><tr><th scope=\"row\">Exceptions</th><td>Flagging duplicates and unmapped rows</td><td>Review of rejected rows and ambiguous matches</td></tr><tr><th scope=\"row\">Commentary</th><td>First draft from an approved variance table</td><td>Confirmed causes, figures and decisions reviewed</td></tr></tbody></table></div><p>To design the indicators, use our <a href=\"/ressources/blog/tableau-de-bord-financier-startup-12-kpis\">financial dashboard guide</a>. The number of charts depends on the decisions needed, rather than the software’s capacity.</p>"
+      },
+      {
+        "id": "methode",
+        "title": "How do you move from Excel to connected reporting?",
+        "html": "<ol><li><strong>Freeze the reference:</strong> choose a closed month, document adjustments and retain the approved export.</li><li><strong>Define the dictionary:</strong> specify each indicator’s formula, included accounts, currency and credit-note treatment.</li><li><strong>Connect one source:</strong> start read-only, monitor loading and address missing data.</li><li><strong>Run a parallel comparison:</strong> explain every difference from the previous report before switching.</li><li><strong>Document recovery:</strong> provide a manual export and an owner if the connector stops.</li></ol><p>The schedule and stage gates appear in the <a href=\"/ressources/ia-finance/feuille-de-route-90-jours\">90-day roadmap</a>. Adapt this working framework to access constraints and data quality.</p>"
+      },
+      {
+        "id": "cas",
+        "title": "What real result is documented?",
+        "html": "<p>In the <a href=\"https://www.microsoft.com/en/customers/story/20600-us-venture-microsoft-365-copilot-for-finance\">U.S. Venture case published by Microsoft in January 2025</a>, the U.S. AutoForce division uses Copilot for Finance to reconcile cards and bank statements. Microsoft reports more than 30 hours saved per month for the team concerned.</p><p>This result covers two processes at a large group already using Dynamics 365. It does not measure the benefit across an entire close or at a French SME. Our <a href=\"/ressources/ia-finance/retours-experience\">review of documented cases</a> identifies what can be tested in a pilot.</p>"
+      },
+      {
+        "id": "cout",
+        "title": "How do you calculate ROI without missing hidden costs?",
+        "html": "<p><strong>Monthly capacity value = (hours before − hours after, including controls) × fully loaded hourly cost.</strong> Then deduct additional licences, the connector and maintenance. Released hours are available capacity; they become cash savings only if spending actually falls.</p><div class=\"prose-table-wrapper\"><table class=\"min-w-[32rem]\"><caption>Fictitious teaching example, not a client result</caption><thead><tr><th scope=\"col\">Assumption</th><th scope=\"col\">Value</th></tr></thead><tbody><tr><th scope=\"row\">Monthly production before / after</th><td>20 h / 8 h, including controls</td></tr><tr><th scope=\"row\">Value of time</th><td>12 h × €50 = €600 per month</td></tr><tr><th scope=\"row\">Licences, connector and maintenance</th><td>€250 per month</td></tr><tr><th scope=\"row\">Net value of released capacity</th><td>€350 per month</td></tr><tr><th scope=\"row\">Setup and indicative payback</th><td>€3,000 ÷ €350 ≈ 8.6 months</td></tr></tbody></table></div><p>If the net benefit is zero or negative, there is no payback period on these assumptions. Compare options in our <a href=\"/ressources/ia-finance/outils\">guide to tools and cost items</a>, including training and internal setup time.</p>"
+      },
+      {
+        "id": "erreurs",
+        "title": "Which defects should block production deployment?",
+        "html": "<p>A total that does not reconcile to the trial balance, an unmapped account, an undocumented currency conversion or a refresh that silently stops are reasons to pause. The system must display the data date and exceptions, even when the chart looks consistent.</p><p>The <a href=\"/ressources/cas-clients/opti-digital-structuration-financement\">Iter Advisors Opti Digital case</a> documents ERP migration, reporting and closing deliverables. These illustrate the foundations of the project; the case does not claim an AI-related gain.</p>"
+      },
+      {
+        "id": "commencer",
+        "title": "What should you prepare for an initial scoping session?",
+        "html": "<p>Gather a completed report, its source trial balance, the adjustment list and time spent by task. A <a href=\"/daf-externalise\">Fractional CFO</a> can then prioritise automation and define controls with the accounting team. The <a href=\"/ressources/ia-finance/chatgpt-finance\">ChatGPT for finance guide</a> provides a subsequent variance-commentary exercise.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Do you need AI to automate reporting?",
+        "answer": "No. Collection, aggregation and some controls can use connectors and deterministic rules. AI can complement these for drafting or document analysis."
+      },
+      {
+        "question": "Can a close by day five be guaranteed?",
+        "answer": "No. Timing also depends on receiving supporting documents, inventories, adjustments and approvals. Set a target after measuring the existing process."
+      },
+      {
+        "question": "When does automation pay off?",
+        "answer": "When the value of time actually released and other measurable benefits exceeds setup and operating costs. Reporting duration alone is insufficient to establish this."
+      }
+    ],
+    "sources": [
+      "usVenture",
+      "pennylane",
+      "powerBi"
+    ],
+    "related": [
+      "feuille-de-route-90-jours",
+      "chatgpt-finance"
+    ]
+  },
+  "chatgpt-finance": {
+    "label": "ChatGPT for finance",
+    "title": "ChatGPT for finance: examples, prompts and controls",
+    "description": "Three finance exercises: variance commentary, document requests and board preparation. Prompts, expected answers and data confidentiality.",
+    "dek": "ChatGPT can help a finance team comment on a budget, prepare document requests and analyse files using calculation tools. Reliability depends on the supplied data, checks and context: fluent language does not prove a figure is correct.",
+    "published": "2026-09-01",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "summary": [
+      "The examples below are teaching exercises using fictitious data.",
+      "Ask for the calculation steps and verify results in your reference tool.",
+      "Choose an authorised environment before transferring company data."
+    ],
+    "sections": [
+      {
+        "id": "cas-usage",
+        "title": "How do you comment on a budget-to-actual variance?",
+        "html": "<p>This fictitious example uses thousands of euros. Expenses are positive amounts; the balance is a simplified difference, not accounting EBITDA.</p><div class=\"prose-table-wrapper\"><table class=\"min-w-[32rem]\"><caption>Fictitious dataset: one month, one entity, amounts in k€</caption><thead><tr><th scope=\"col\">Indicator</th><th scope=\"col\">Budget</th><th scope=\"col\">Actual</th><th scope=\"col\">Actual − budget variance</th></tr></thead><tbody><tr><th scope=\"row\">Revenue</th><td>200</td><td>180</td><td>−20 (−10%)</td></tr><tr><th scope=\"row\">Expenses</th><td>150</td><td>155</td><td>+5 (+3.33%)</td></tr><tr><th scope=\"row\">Simplified balance: revenue − expenses</th><td>50</td><td>25</td><td>−25 (−50%)</td></tr></tbody></table></div><p><strong>Prompt to adapt:</strong></p><blockquote><p>Using this fictitious table in k€, write commentary of no more than 120 words. Use the calculated variances. Separate facts, hypotheses and questions to ask. Do not invent any cause or missing data. End with two questions for the sales lead and the expenses owner.</p></blockquote><p><strong>Expected answer:</strong> note that lower revenue and higher expenses reduce the balance. A lost customer, a salary increase or seasonality must remain hypotheses until documented. A percentage with a zero budget must be marked as not calculable.</p><p>The data model and upstream controls are explained in <a href=\"/ressources/ia-finance/automatiser-reporting-financier\">the automated reporting guide</a>.</p>"
+      },
+      {
+        "id": "pieces",
+        "title": "How do you prepare a more precise document request?",
+        "html": "<p>Provide the expected document type, period and exact reason for rejection. Remove unnecessary identifiers before testing. The <a href=\"https://claude.com/customers/armanino\">Armanino case published by Anthropic</a> describes a tool for drafting explanations when an audit document is incorrect.</p><blockquote><p>Write a courteous request of fewer than 100 words. Document received: June trial balance. Document expected: July trial balance after closing. Explain the difference and specify the document to send. Add no amount, deadline or commitment that has not been provided.</p></blockquote><p>Check the recipient, document and period before sending. This draft must not automatically trigger a follow-up. The <a href=\"/ressources/ia-finance/retours-experience\">case details and limitations</a> distinguish the deployed tool from the benefits estimated by the publisher.</p>"
+      },
+      {
+        "id": "board",
+        "title": "How do you prepare board questions?",
+        "html": "<p>Work from an approved reporting version after access has been authorised. Define the decision to prepare: recruitment, funding or expenditure trade-offs.</p><blockquote><p>Using only the supplied indicators and commentary, suggest five questions a board member could ask. For each, cite the row or passage that motivates it, identify missing information and distinguish an observed risk from a hypothesis. Recommend no decision without the necessary data.</p></blockquote><p>Compare the questions with the <a href=\"/services/previsionnel-tresorerie\">cash-flow forecast</a>. Positive profitability does not rule out a short-term financing need.</p>"
+      },
+      {
+        "id": "proscrire",
+        "title": "Can ChatGPT calculate and analyse an Excel file?",
+        "html": "<p>Yes: <a href=\"https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt\">OpenAI’s data-analysis documentation</a> describes file analysis and code use. Distinguish generated prose from a calculation executed by a tool. Request the code or formulas, columns used and exclusions.</p><p>Check totals, signs, currencies, empty rows and duplicates separately. Rerun the calculation in Excel, a controlled script or BI. The presence of code validates neither assumptions nor file quality. Do not delegate account sign-off, payment approval or a tax decision to a model’s answer.</p>"
+      },
+      {
+        "id": "charte",
+        "title": "Which data and plan should you use?",
+        "html": "<p>Start with fictitious or public data. For internal data, the company must authorise the tool, its access and the processing purpose. Removing a name is not always enough to anonymise a file: amounts, dates and job roles may identify someone.</p><p><a href=\"https://openai.com/business-data/\">OpenAI documents no training by default on Business, Enterprise and API data</a>. This does not mean no retention or permission to upload every document. Also check permissions, retention periods, connectors and contractual terms. DPO or security-owner approval depends on the company’s context.</p><p>Record authorised uses, excluded data, the reviewer and error procedures in your policy. Use our <a href=\"/ressources/ia-finance/llm-finance\">LLM selection framework</a> to compare environments on your own documents.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Can ChatGPT be used for a cash-flow forecast?",
+        "answer": "It can help structure assumptions and prepare calculations using tools. Due dates, expected receipts and scenarios must be documented, then verified in the reference financial model."
+      },
+      {
+        "question": "Does a paid plan guarantee confidentiality?",
+        "answer": "Price alone is insufficient. Check the plan’s contract, settings, retention, access and integrations, and comply with company policy."
+      },
+      {
+        "question": "Do these prompts describe Iter Advisors assignments?",
+        "answer": "No. The exercises use fictitious data. Public cases are attributed to their publishers and kept separate from documented Iter assignments."
+      }
+    ],
+    "sources": [
+      "dataAnalysis",
+      "openaiData",
+      "armanino"
+    ],
+    "related": [
+      "llm-finance",
+      "retours-experience"
+    ],
+    "metaTitle": "ChatGPT for finance: examples, prompts and controls"
+  },
+  "llm-finance": {
+    "label": "Choose an LLM for finance",
+    "title": "LLMs in finance: compare ChatGPT, Claude and Gemini",
+    "description": "Choose an LLM for finance: test framework, sources, calculations, confidentiality and integration. A comparison protocol without an artificial ranking.",
+    "dek": "The right LLM for a finance team passes a reproducible business test in an authorised environment. Compare answer quality, traceability of figures and correction time using the same documents and instructions.",
+    "published": "2026-09-01",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "summary": [
+      "Evaluate the model, its host application and its connectors separately.",
+      "Compare answers on an identical file set, with an answer key prepared before testing.",
+      "Record tool versions and settings: product offers evolve."
+    ],
+    "sections": [
+      {
+        "id": "comparatif",
+        "title": "Which criteria should you compare across assistants?",
+        "html": "<p>ChatGPT, Claude and Gemini differ in more than writing style. Available functions depend on the plan, administrator settings and connected tools. This framework is a selection method, not a benchmark carried out by Iter.</p><div class=\"prose-table-wrapper\"><table class=\"min-w-[32rem]\"><caption>Framework to complete for each tested environment</caption><thead><tr><th scope=\"col\">Criterion</th><th scope=\"col\">Test</th><th scope=\"col\">Evidence to retain</th></tr></thead><tbody><tr><th scope=\"row\">Calculation</th><td>Recalculate a table containing credit notes, duplicates and a zero budget</td><td>Formulas or code and results reconciled to the answer key</td></tr><tr><th scope=\"row\">Documents</th><td>Find five clauses in a document set</td><td>File name, page and exact passage</td></tr><tr><th scope=\"row\">Context</th><td>Explain a variance whose cause is not supplied</td><td>Distinction between fact and hypothesis</td></tr><tr><th scope=\"row\">Integration</th><td>Read only authorised folders</td><td>Verification of permissions and possible actions</td></tr><tr><th scope=\"row\">Cost</th><td>Measure test and correction time</td><td>Licences, consumption and review time</td></tr></tbody></table></div><div class=\"prose-table-wrapper\"><table class=\"min-w-[32rem]\"><caption>Three environments: documented functions and test questions</caption><thead><tr><th scope=\"col\">Environment</th><th scope=\"col\">Documented starting point</th><th scope=\"col\">Question to verify</th></tr></thead><tbody><tr><th scope=\"row\">ChatGPT</th><td><a href=\"https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt\">File analysis and code-based calculations</a></td><td>Can you verify operations, exclusions and output files?</td></tr><tr><th scope=\"row\">Claude inside a business application</th><td><a href=\"https://claude.com/customers/hebbia\">Document analysis in the Hebbia case</a></td><td>Does the chosen application preserve references to supporting documents?</td></tr><tr><th scope=\"row\">Gemini in Data Studio</th><td><a href=\"https://docs.cloud.google.com/data-studio/about-pro\">Assistance with questions, calculated fields and presentations</a></td><td>Are these features available in your plan and data context?</td></tr></tbody></table></div><p>These examples involve different products and integrations. They do not rank model quality. Compare the configurations actually available to your team.</p><p>ChatGPT documents <a href=\"https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt\">file analysis using calculation tools</a>. Ask every other candidate environment to demonstrate the same task on authorised company data, without assuming equivalent quality.</p>"
+      },
+      {
+        "id": "font-bien",
+        "title": "How do you run a useful comparative test?",
+        "html": "<ol><li>Prepare an authorised file set: variance table, closing procedure and supporting documents.</li><li>Write an answer key with expected figures, sources and unanswered questions.</li><li>Give every tool the same instructions and retain its complete answers.</li><li>Record errors, fabricated references, omissions and correction minutes.</li><li>Repeat sensitive cases: one correct answer does not demonstrate reliability.</li></ol><p>An accurate result without a verifiable reference is insufficient for an audit note. Reject an environment if the test requires excessive access rights. The <a href=\"/ressources/ia-finance/chatgpt-finance\">ChatGPT guide exercises</a> offer a reproducible starting point.</p>"
+      },
+      {
+        "id": "cas",
+        "title": "What does the Hebbia case show about financial documents?",
+        "html": "<p><a href=\"https://claude.com/customers/hebbia\">Anthropic describes Hebbia’s use of Claude</a> to analyse financial and legal documents. Claude runs inside a platform that organises documents and tasks; the application goes beyond an isolated conversation.</p><p>For an SME, the lesson to test is documentary traceability. Request a supporting file and passage for every statement. The publisher’s cache-related time reduction must not be interpreted as a finance team’s productivity gain. Read the <a href=\"/ressources/ia-finance/retours-experience\">cases and their scope</a>.</p>"
+      },
+      {
+        "id": "jamais",
+        "title": "Which decisions must remain subject to human approval?",
+        "html": "<p>Budget assumptions, provisions, payment approvals and investor communications commit the company. An assistant can prepare a proposal; retain a named owner and a control trail.</p><p>For <a href=\"/ressources/blog/checklist-due-diligence-levee-de-fonds\">financial due diligence</a>, use the model to identify missing documents or prepare questions. A model failing to flag a risk does not prove that none exists. The final review also covers what was not supplied.</p>"
+      },
+      {
+        "id": "confidentialite",
+        "title": "What should you check before connecting financial data?",
+        "html": "<p>Document who can read what, which actions are possible, where data is retained and how access can be revoked. Read <a href=\"https://openai.com/business-data/\">OpenAI’s business-data commitments</a> and <a href=\"https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training\">Anthropic’s training policy</a> for the actual plan selected. Do not transfer a condition from one product to another.</p><p>For the pilot, prefer read-only access and a restricted folder. A <a href=\"/daf-externalise\">Fractional CFO</a> can define the business need with IT and data owners. The <a href=\"/ressources/ia-finance/feuille-de-route-90-jours\">roadmap</a> connects selection to deployment stages.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Is there a best LLM for every finance department?",
+        "answer": "No. Selection depends on the file set, available tools, access, expected quality and verification cost. Compare environments on identical tasks."
+      },
+      {
+        "question": "Can an LLM perform calculations?",
+        "answer": "An assistant can use code, a spreadsheet or other calculation tools. Verify executed operations and assumptions; a number generated in prose is not evidence of calculation."
+      },
+      {
+        "question": "How do you measure financial-summary quality?",
+        "answer": "Compare against an answer key: accurate figures, retrievable sources, no invented causes, material points covered and correction time. Also test information missing from the file set."
+      }
+    ],
+    "sources": [
+      "dataAnalysis",
+      "hebbia",
+      "googleBi",
+      "openaiData",
+      "anthropicData"
+    ],
+    "related": [
+      "chatgpt-finance",
+      "outils"
+    ],
+    "metaTitle": "LLMs for finance: ChatGPT, Claude and Gemini"
+  },
+  "outils": {
+    "label": "Reporting and AI tools",
+    "title": "AI and financial reporting tools: how to choose for an SME",
+    "metaTitle": "AI and financial reporting tools for SMEs",
+    "description": "Compare reporting, connectors and AI assistants: criteria, total costs, licences and questions before buying. Links to vendor documentation.",
+    "dek": "Choosing a financial tool starts with the data to use and the controls required. Assess the accounting software, data connection, reporting and AI assistant separately: buying a licence does not automatically connect these four layers.",
+    "published": "2026-09-01",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "summary": [
+      "An available API is not a ready-to-use connector.",
+      "Include report readers, maintenance and internal time in the budget.",
+      "Request a demonstration on an authorised export before committing."
+    ],
+    "sections": [
+      {
+        "id": "reporting",
+        "title": "Which tool fits which financial need?",
+        "html": "<div class=\"prose-table-wrapper\"><table class=\"min-w-[32rem]\"><caption>Layers of a financial system</caption><thead><tr><th scope=\"col\">Need</th><th scope=\"col\">Option to assess</th><th scope=\"col\">Prior verification</th></tr></thead><tbody><tr><th scope=\"row\">Simple reporting in the existing tool</th><td>Accounting module, Excel or an already familiar spreadsheet</td><td>Available indicators and detailed exports</td></tr><tr><th scope=\"row\">Multiple sources and shared dashboards</th><td>Power BI or an equivalent BI tool</td><td>Reader licences, data model and refresh</td></tr><tr><th scope=\"row\">Reporting in the Google environment</th><td>Data Studio, formerly Looker Studio</td><td>Connectors, report ownership and any Pro subscription</td></tr><tr><th scope=\"row\">Commentary and document analysis</th><td>AI assistant on an authorised plan</td><td>Sources, confidentiality and correction time</td></tr></tbody></table></div><p><a href=\"https://www.microsoft.com/fr-fr/power-platform/products/power-bi/pricing\">Microsoft’s Power BI pricing page</a> distinguishes creation and sharing. <a href=\"https://docs.cloud.google.com/data-studio/about-pro\">Google’s Data Studio Pro documentation</a> describes content management and collaboration. A free tool does not make connectors or reporting operations free.</p>"
+      },
+      {
+        "id": "connecteur",
+        "title": "API, native connector or development: what is the difference?",
+        "html": "<p>An API provides programmatic access to certain data. A connector handles retrieval, transformations and errors. Check transaction coverage, history, quotas, permissions and the subscribed plan’s terms.</p><p><a href=\"https://pennylane.readme.io/docs/getting-started\">Pennylane documents its APIs and access methods</a>. This does not establish that a BI connection is included, free or sufficient. Our <a href=\"/ressources/outils/pennylane\">Pennylane profile</a> helps position the tool; then insist on a test for the required scope.</p><ul><li>Does a new chart-of-accounts item need manual remapping?</li><li>Who receives an alert when loading fails?</li><li>Can a period be reimported without creating duplicates?</li><li>How can you recover the data and rules when leaving the provider?</li></ul>"
+      },
+      {
+        "id": "llm",
+        "title": "How do you choose the AI layer?",
+        "html": "<p>Define a specific task: commenting on a variance, finding a clause or drafting a document request. Compare the result with the process without AI, including review time. The <a href=\"/ressources/ia-finance/llm-finance\">LLM comparison protocol</a> avoids choosing solely on a salesperson’s prepared demonstration.</p><p>The <a href=\"https://claude.com/customers/armanino\">Armanino case</a> illustrates a tool focused on audit-document requests. It suggests a drafting test, rather than a reason to hand the whole close to an assistant.</p>"
+      },
+      {
+        "id": "stack",
+        "title": "Do you need to replace the entire finance stack?",
+        "html": "<p>To compare accounting, treasury or spending software, visit the <a href=\"/ressources/outils\">finance tools directory</a>. The <a href=\"/ressources/blog/essentiels-outils-tech-finance\">selection and integration method</a> covers the general stack; this guide focuses on the reporting and AI layers.</p><p><strong>Small team, one entity:</strong> first check what the existing tool can export. A well-structured file and a few controls may suffice for a pilot.</p><p><strong>SME with multiple sources:</strong> the work often concerns mapping accounting, sales and cash data. A <a href=\"/daf-externalise\">Fractional CFO for SMEs</a> can prioritise which flows to connect.</p><p><strong>Multi-entity group:</strong> address currencies, eliminations and access rights before comparing interfaces. AI does not replace consolidation rules. For a SaaS startup, also read our <a href=\"/ressources/blog/stack-financier-saas-series-a\">Series A finance-stack guide</a>.</p>"
+      },
+      {
+        "id": "regle",
+        "title": "Which items belong in the total cost?",
+        "html": "<p>Request a quote separating licences, connections and historical-data recovery, the data model, training, operations and reversibility. A project quote is useful when these items are explicit.</p><p>On 5 September 2026, Microsoft’s French pricing page listed Power BI Pro at <strong>€12.10 excluding VAT per user per month, paid annually</strong>. This is the licence price, not reporting implementation. Check local pricing and rights when buying on the <a href=\"https://www.microsoft.com/fr-fr/power-platform/products/power-bi/pricing\">Microsoft page</a>. Assistants and features evolve: confirm the selected plan’s limits.</p><p>Use the <a href=\"/ressources/ia-finance/automatiser-reporting-financier\">reporting ROI calculation example</a> to compare costs with time actually recovered. Start with a limited pilot and a backup export.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Is an accounting API enough to automate reporting?",
+        "answer": "No. Data retrieval, transformation, controls, alerts and maintenance must also be organised. Check access and the functions included in the contract."
+      },
+      {
+        "question": "Is Power BI free?",
+        "answer": "Microsoft distinguishes a free account from paid plans for some sharing or capacity uses. Licence needs depend on producers and readers. Integration costs still need budgeting."
+      },
+      {
+        "question": "Do you need to buy an AI assistant at the start?",
+        "answer": "Not necessarily. A collection and reporting pilot can run without AI. Add an assistant when the task and its net benefit after review have been established."
+      }
+    ],
+    "sources": [
+      "powerBi",
+      "pennylane",
+      "googleBi",
+      "armanino"
+    ],
+    "related": [
+      "automatiser-reporting-financier",
+      "llm-finance"
+    ]
+  },
+  "feuille-de-route-90-jours": {
+    "label": "90-day roadmap",
+    "title": "AI and finance: a 90-day roadmap for a pilot",
+    "description": "An AI and reporting rollout plan for SMEs: owners, deliverables, stage gates, measured benefits and a return to manual processes when needed.",
+    "dek": "The 90-day objective is to test one financial process within a controlled scope and decide whether it warrants expansion. Timing depends on access, closing cycles and data quality. It guarantees neither productivity gains nor a close by day five.",
+    "published": "2026-09-01",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "summary": [
+      "One priority process, a business owner and a before-and-after reference.",
+      "Progress depends on quality criteria as well as dates.",
+      "Two monthly closes may not fit into the final month: extend validation when necessary."
+    ],
+    "sections": [
+      {
+        "id": "s1-3",
+        "title": "Weeks 1 to 3: scope the project and measure the baseline",
+        "html": "<p>Choose a frequent, observable task, such as reconciling one account or preparing a report. Time collection, processing and review. Record detected errors and correction requests.</p><p><strong>Owner:</strong> CFO or management accountant, with process users. <strong>Deliverable:</strong> scope sheet, data dictionary, access list and baseline indicators. <strong>Stage gate:</strong> management validates the need and an owner can explain the reference result.</p><p>The <a href=\"/ressources/cas-clients/opti-digital-structuration-financement\">Opti Digital case</a> illustrates the ERP, reporting and closing structure that may precede an AI layer.</p>"
+      },
+      {
+        "id": "s4-6",
+        "title": "Weeks 4 to 6: connect and compare",
+        "html": "<p>Connect just one source in read-only mode or start with a controlled export. Compare the extraction with the reference file: row count, totals, periods and entities. Add an alert for incomplete loads.</p><p><strong>Owners:</strong> IT or an integrator for the connection; finance for mapping. <strong>Deliverable:</strong> variance log and recovery procedure. <strong>Stage gate:</strong> discrepancies are explained and approved, access is restricted, and fallback to a manual export has been tested.</p><p>Prepare the questions from the <a href=\"/ressources/ia-finance/outils\">tool and connector selection guide</a>, including quotas, history and maintenance.</p>"
+      },
+      {
+        "id": "s7-10",
+        "title": "Weeks 7 to 10: build reporting and test the assistant",
+        "html": "<p>Produce the dashboard for the agreed scope. Display the data date and exceptions. Once the calculation layer is validated, test drafting commentary from approved variances alone.</p><p><strong>Owner:</strong> finance, with the security lead for data entrusted to the assistant. <strong>Deliverable:</strong> reconciled report, test answer key and review time. <strong>Stage gate:</strong> no unexplained material variance, no fabricated cause accepted in the final document.</p><p>Use the <a href=\"/ressources/ia-finance/chatgpt-finance\">prompts and fictitious dataset</a> before testing internal figures.</p>"
+      },
+      {
+        "id": "s11-13",
+        "title": "Weeks 11 to 13: decide, document and train",
+        "html": "<p>Compare complete before-and-after time, errors, costs and actual usage. Define who handles exceptions and who may change the rules. Train a second user to avoid dependence on the designer.</p><p><strong>Deliverable:</strong> continue, correct or stop decision, with procedure and budget. <strong>Stage gate:</strong> a user other than the designer can run the process and retrieve supporting evidence. For a monthly close, extend this phase if two comparable cycles have not yet been observed.</p>"
+      },
+      {
+        "id": "derape",
+        "title": "Which indicators should you track and when should you stop?",
+        "html": "<div class=\"prose-table-wrapper\"><table class=\"min-w-[32rem]\"><caption>Pilot acceptance checklist</caption><thead><tr><th scope=\"col\">Indicator</th><th scope=\"col\">Measure</th><th scope=\"col\">Stop or correction signal</th></tr></thead><tbody><tr><th scope=\"row\">Total time</th><td>Production + controls + corrections</td><td>Review eliminates the benefit</td></tr><tr><th scope=\"row\">Reliability</th><td>Differences from the answer key and undetected anomalies</td><td>A material difference remains unexplained</td></tr><tr><th scope=\"row\">Operations</th><td>Successful loads and recovery delays</td><td>Stale data without an alert</td></tr><tr><th scope=\"row\">Adoption</th><td>Users can execute independently</td><td>Only the provider can produce the result</td></tr><tr><th scope=\"row\">Economics</th><td>Net benefit and initial investment</td><td>Costs exceed the benefits used</td></tr></tbody></table></div><p>Agree thresholds during scoping with the finance owner. The <a href=\"/ressources/ia-finance/automatiser-reporting-financier\">reporting ROI calculation</a> distinguishes released capacity from cash savings.</p>"
+      },
+      {
+        "id": "pilote",
+        "title": "What is the Fractional CFO’s role?",
+        "html": "<p>The <a href=\"/daf-externalise\">Fractional CFO</a> defines indicators, validates controls and arbitrates scope. IT secures access and connections; the accounting team verifies rules; management decides objectives. Set out this cooperation before choosing a tool.</p><p>For scoping, bring an approved report, your software list and a time log. The <a href=\"/ressources/ia-finance/retours-experience\">documented cases</a> provide comparisons to adapt to your volumes and organisation.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "question": "What should you have achieved after 90 days?",
+        "answer": "An evaluated pilot, documented controls and a decision on next steps. A general rollout is not mandatory: stopping an uneconomic use case is a useful outcome."
+      },
+      {
+        "question": "Why extend validation beyond 90 days?",
+        "answer": "The closing calendar may not allow enough comparable cycles. Observe the necessary cycles instead of approving on an arbitrary date."
+      },
+      {
+        "question": "Who should lead the project?",
+        "answer": "A finance owner carries business rules, with IT, users, the accountant and data owners as relevant to the scope. Management decides budgets and objectives."
+      }
+    ],
+    "sources": [
+      "pennylane",
+      "dataAnalysis",
+      "openaiData"
+    ],
+    "related": [
+      "automatiser-reporting-financier",
+      "retours-experience"
+    ],
+    "metaTitle": "AI and finance: a 90-day pilot roadmap"
+  },
+  "retours-experience": {
+    "label": "Real cases and experience reports",
+    "title": "AI in finance: real cases, published results and limits",
+    "description": "U.S. Venture, Armanino and Hebbia: three documented AI cases and their relevance to SMEs. Opti Digital is a separate Iter financial-structuring assignment.",
+    "dek": "Three public cases illustrate specific AI uses in finance: reconciliations, document requests and document analysis. We identify each result’s publisher, what is measured and what an SME can test. These companies are not presented as Iter Advisors clients.",
+    "published": "2026-09-05",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "summary": [
+      "Vendor case results are neither independent audits nor promises of gains.",
+      "Suggested SME applications are our interpretation of the cases and require local testing.",
+      "Iter’s Opti Digital case documents financial structuring without claiming AI gains."
+    ],
+    "sections": [
+      {
+        "id": "us-venture",
+        "title": "U.S. Venture: reconcile cards and bank statements",
+        "html": "<p><strong>Published case:</strong> on 28 January 2025, <a href=\"https://www.microsoft.com/en/customers/story/20600-us-venture-microsoft-365-copilot-for-finance\">Microsoft described deployment at U.S. AutoForce, a U.S. Venture division</a>. The team uses Copilot for Finance for two recurring reconciliations. Microsoft reports four weeks to set up and more than 30 hours saved monthly. One manager reports an 80% time reduction for her US Bank reconciliations.</p><p><strong>Scope:</strong> these figures concern specific tasks in a group already using Dynamics 365. They do not describe the whole close and are not an independent benchmark.</p><p><strong>Suggested SME application:</strong> test one account for a closed period, queue ambiguous matches for review, and compare processing plus control time. Our <a href=\"/ressources/ia-finance/automatiser-reporting-financier\">automated reporting method</a> details the stages.</p>"
+      },
+      {
+        "id": "armanino",
+        "title": "Armanino: explain missing or incorrect documents",
+        "html": "<p><strong>Published case:</strong> <a href=\"https://claude.com/customers/armanino\">Anthropic presents a tool built by Armanino using Claude on Amazon Bedrock</a>. It drafts notes explaining why an audit document is unsuitable and what the client should supply. The case reports two weeks from idea to production for the first tool.</p><p><strong>Scope:</strong> the page features a 65% reduction in drafting time but calls the benefits estimated or expected in its text. We therefore do not treat this as a measured, guaranteed gain.</p><p><strong>Suggested SME application:</strong> prepare a draft from an approved rejection reason. Measure writing time and follow-up exchanges, then approve the message. A <a href=\"/ressources/ia-finance/chatgpt-finance#pieces\">document-request prompt example</a> lets you test this approach.</p>"
+      },
+      {
+        "id": "hebbia",
+        "title": "Hebbia: organise financial-document analysis",
+        "html": "<p><strong>Published case:</strong> <a href=\"https://claude.com/customers/hebbia\">Anthropic describes Claude within the Hebbia platform</a>, which handles complex documents for finance and legal professionals.</p><p><strong>Scope:</strong> this is a model integrated into a document platform. Figures in the case’s banner and body differ and concern caching and technical response times; we infer no percentage gain in financial productivity.</p><p><strong>Suggested SME application:</strong> build a matrix of question, answer, file, supporting passage and validation. Start with a small data room and restricted permissions. Our <a href=\"/ressources/ia-finance/llm-finance\">LLM testing framework</a> explains how to verify references and omissions.</p>"
+      },
+      {
+        "id": "opti-digital",
+        "title": "Opti Digital: financial foundations in an Iter assignment",
+        "html": "<p>The <a href=\"/ressources/cas-clients/opti-digital-structuration-financement\">Iter Advisors assignment at Opti Digital</a> documents ERP migration, monthly reporting, closing procedures and financing support. The CEO’s testimonial described five years of collaboration at publication on 12 November 2025.</p><p>This case shows organisational work before automation. It establishes neither use of an AI model nor an AI-related productivity gain. The profile links to the public testimonial and states the limits of available results.</p><p>Also see <a href=\"/ressources/cas-clients/seasonly-marge-par-canal-bfr\">Seasonly’s margin management by channel</a> to define indicators before choosing technology.</p>"
+      },
+      {
+        "id": "transposer",
+        "title": "How do you adapt these cases without copying their promises?",
+        "html": "<div class=\"prose-table-wrapper\"><table class=\"min-w-[32rem]\"><caption>Decide on a first pilot</caption><thead><tr><th scope=\"col\">Your problem</th><th scope=\"col\">Useful case</th><th scope=\"col\">Local measure</th></tr></thead><tbody><tr><th scope=\"row\">Slow reconciliations</th><td>U.S. Venture</td><td>Complete time and exception rate</td></tr><tr><th scope=\"row\">Unclear document requests</th><td>Armanino</td><td>Drafting time and follow-up exchanges</td></tr><tr><th scope=\"row\">Large document sets</th><td>Hebbia</td><td>Reference accuracy and omissions</td></tr><tr><th scope=\"row\">Scattered data</th><td>Opti Digital, financial structuring</td><td>Reporting reliability and closing procedure</td></tr></tbody></table></div><p>The <a href=\"/ressources/ia-finance/feuille-de-route-90-jours\">90-day roadmap</a> turns an idea into a measurable test. A <a href=\"/daf-externalise\">Fractional CFO</a> can lead scoping and controls with your teams.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Are all these companies Iter Advisors clients?",
+        "answer": "No. U.S. Venture, Armanino and Hebbia are public cases published by vendors. Opti Digital is separately presented as an Iter financial-structuring assignment."
+      },
+      {
+        "question": "Can the published benefits be reproduced at an SME?",
+        "answer": "They are not guaranteed. Volumes, technical environments and control costs differ. Measure results on a comparable scope before extending the process."
+      },
+      {
+        "question": "Why distinguish measured results from estimated benefits?",
+        "answer": "An estimate expresses potential. A measured result should specify the process, period, baseline and method. Without these, a figure alone is insufficient to establish ROI."
+      }
+    ],
+    "sources": [
+      "usVenture",
+      "armanino",
+      "hebbia"
+    ],
+    "related": [
+      "feuille-de-route-90-jours",
+      "automatiser-reporting-financier"
+    ],
+    "metaTitle": "AI in finance: real cases, results and limits"
+  }
+}

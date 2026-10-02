@@ -1,0 +1,5 @@
+﻿id;period;entity;unit;category;item;budget;actual
+R01;2026-01;Fictitious company;kEUR;Revenue;Activity A;120;110
+R02;2026-01;Fictitious company;kEUR;Revenue;Activity B;80;70
+C01;2026-01;Fictitious company;kEUR;Expenses;Staff;100;105
+C02;2026-01;Fictitious company;kEUR;Expenses;Other expenses;50;50
