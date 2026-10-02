@@ -4,7 +4,7 @@ const base = (process.argv[2] ?? 'http://127.0.0.1:4048').replace(/\/$/, '');
 const origin = 'https://www.iteradvisors.com';
 const slugs = [...readFileSync('data/tools.ts', 'utf8').matchAll(/    slug: '([^']+)'/g)].map(m => m[1]);
 const paths = [...slugs.map(s => '/ressources/outils/' + s), '/ressources/blog/cfo-externe-role-missions-2026', '/ressources/glossaire/cfo', '/ressources/glossaire/fractional-cfo'];
-const failures = [], results = [];
+const failures = [], results = [], toolTexts = [];
 const flatten = data => Array.isArray(data) ? data.flatMap(flatten) : data?.['@graph'] ? flatten(data['@graph']) : [data];
 const decode = s => s.replaceAll('&amp;', '&').replaceAll('&#x27;', "'").replaceAll('&quot;', '"').replaceAll('&lt;', '<').replaceAll('&gt;', '>');
 for (const path of paths) {
@@ -23,6 +23,7 @@ for (const path of paths) {
   check(articles[0]?.author?.['@type'] === 'Person' && articles[0]?.author?.url, 'identified-author');
   check(main.includes('href="/daf-externalise"'), 'primary-offer-link');
   if (path.startsWith('/ressources/outils/')) {
+    if (!path.endsWith('/malibou')) toolTexts.push({ path, text });
     check(main.includes('Sources et méthode') && main.includes('source officielle'), 'visible-product-source');
     check(!/ROI constaté|Cet avis vient du terrain|déployé ou exploité par nos|leader incontestable|économise des jours|6-8 heures|Aucun verrouillage|sans affiliation ni/.test(text), 'unverified-experience-withheld');
     for (let i = 1; i <= 5; i++) check(main.includes(`id="step${i}"`), 'retained-step-anchor:' + i);
@@ -39,5 +40,19 @@ for (const path of paths) {
   check(schemas.filter(s => s['@type'] === 'FAQPage').length <= 1, 'one-faq');
   results.push({ path, status: response.status, articleCount: articles.length });
 }
-console.log(JSON.stringify({ pages: results.length, results, failures }, null, 2));
+// Conservative overlap metric: five consecutive words shared across the full
+// rendered main text, including template copy, divided by the smaller set.
+const shingles = text => {
+  const words = text.toLowerCase().match(/[\p{L}\p{N}_]+/gu) ?? [];
+  return new Set(words.slice(0, -4).map((_, i) => words.slice(i, i + 5).join(' ')));
+};
+const sets = toolTexts.map(row => shingles(row.text));
+let maximumToolOverlap = 0;
+for (let i = 0; i < sets.length; i++) for (let j = i + 1; j < sets.length; j++) {
+  const shared = [...sets[i]].filter(words => sets[j].has(words)).length;
+  const ratio = shared / Math.min(sets[i].size, sets[j].size);
+  maximumToolOverlap = Math.max(maximumToolOverlap, ratio);
+  if (ratio >= 0.30) failures.push({ path: toolTexts[i].path, other: toolTexts[j].path, reason: 'tool-text-overlap-at-least-30-percent', sharedPercent: +(ratio * 100).toFixed(2) });
+}
+console.log(JSON.stringify({ pages: results.length, results, maximumToolOverlapPercent: +(maximumToolOverlap * 100).toFixed(2), failures }, null, 2));
 process.exitCode = failures.length ? 1 : 0;

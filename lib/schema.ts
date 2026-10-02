@@ -164,11 +164,11 @@ export function validateFrontmatter(data: unknown, type: 'blog' | 'service' | 'c
   return schemaMap[type].parse(data);
 }
 
-export function parseFrontmatter(frontmatterString: string): Record<string, any> {
+export function parseFrontmatter(frontmatterString: string): Record<string, string | number | boolean> {
   // Simple YAML-like frontmatter parser
   // For production, use a proper YAML parser
   const lines = frontmatterString.split('\n');
-  const result: Record<string, any> = {};
+  const result: Record<string, string | number | boolean> = {};
 
   for (const line of lines) {
     if (!line.includes(':')) continue;

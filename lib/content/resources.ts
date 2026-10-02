@@ -104,7 +104,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
           description: "EBITDA, BFR, ARR, BSPCE, cash burn… les définitions par nos CFOs.",
         },
         {
-          title: "Les 10 outils indispensables des CFOs",
+          title: "10 outils CFO en startup : les tests à préparer",
           href: "/ressources/blog/les-10-outils-pour-cfos-startup",
           description: "Pennylane, Agicap, Pigment, Pleo… la stack finance des startups.",
         },
@@ -194,7 +194,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         seeAllHref: "/ressources/blog",
         cards: [
           {
-            title: "Les 10 outils pour les CFOs en start-up",
+            title: "10 outils CFO en startup : les tests à préparer",
             href: "/ressources/blog/les-10-outils-pour-cfos-startup",
             image: "/images/blog/covers/les-10-outils-pour-cfos-startup.svg",
             tag: "Blog",

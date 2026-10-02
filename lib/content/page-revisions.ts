@@ -1,5 +1,9 @@
 /** Substantive page changes. Shared navigation changes do not refresh every URL. */
 export const PAGE_REVISIONS: Record<string, string> = {
+  "/ressources/blog/levee-de-fonds-guide": "2026-10-02",
+  "/ressources/outils/malibou": "2026-10-02",
+  "/ressources/blog/les-10-outils-pour-cfos-startup": "2026-10-02",
+  "/ressources/blog/la-modernisation-du-role-de-cfo": "2026-10-02",
   "/ressources/fiscalite-espagne-france": "2026-10-02",
   "/ressources/blog/quand-embaucher-daf-externalise-5-signes": "2026-10-02",
   "/ressources/blog/daf-externalise-vs-daf-interimaire": "2026-10-02",
@@ -59,7 +63,7 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/ressources/glossaire/arr-mrr": "2026-10-01",
   "/ressources/glossaire/cash-burn-runway": "2026-09-30",
   "/ressources/blog/filiale-espagnole-pilotage-financier": "2026-09-30",
-  "/ressources/blog/term-sheet-negocier-clauses-cles": "2026-09-30",
+  "/ressources/blog/term-sheet-negocier-clauses-cles": "2026-10-02",
   "/ressources/blog/cash-burn-calculer-runway-anticiper-levee": "2026-10-02",
   "/ressources/blog/flux-de-tresorerie": "2026-09-30",
   "/services": "2026-10-02",
@@ -101,7 +105,7 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/en/hr-outsourcing": "2026-10-01",
   "/es/externalizacion-rrhh": "2026-10-01",
   "/ressources/blog/daf-externalise-vs-daf-salarie": "2026-10-02",
-  "/ressources/blog/checklist-due-diligence-levee-de-fonds": "2026-09-30",
+  "/ressources/blog/checklist-due-diligence-levee-de-fonds": "2026-10-02",
   "/a-propos/borith-biv": "2026-10-01",
   "/drh-externalise/temps-partage": "2026-10-01",
   "/ressources/blog/daf-drh-externalises-synergie": "2026-10-01",

@@ -37,7 +37,7 @@ export default function ClientTestimonials({
               ))}
             </div>
             <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-              "{testimonial.text}"
+              &quot;{testimonial.text}&quot;
             </p>
             <div className="border-t pt-3">
               <p className="font-semibold text-sm text-foreground">

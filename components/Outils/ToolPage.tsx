@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import PageLayout from '@/components/PageLayout';
 import Breadcrumb from '@/components/Breadcrumb';
-import CTASection from '@/components/CTASection';
 import ToolHeader from './ToolHeader';
 import type { CmsNavItem } from '@/lib/static-content';
 import { type Tool, getToolsByCategory, CATEGORIES_WITH_PAGE } from '@/data/tools';
 import { toolSelection, TOOL_SELECTION_REVIEW_DATE } from '@/data/toolSelection';
-import { TOOL_PRICING } from '@/data/toolPricing';
 import { generateToolArticleSchema, generateFAQSchema, getToolAuthor } from '@/lib/schemas/toolSchemas';
 import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
 
@@ -25,14 +23,13 @@ const categoryLabels: Record<Tool['category'], string> = {
 /** Static editorial content remains on the server; interactive navigation keeps its own boundary. */
 export default function ToolPage({ slug, locale = 'fr', cmsNavigation, tool }: ToolPageProps) {
   const selection = toolSelection[slug];
-  const pricing = TOOL_PRICING[slug];
   const alternatives = getToolsByCategory(tool.category).filter(t => t.slug !== slug);
   const author = getToolAuthor(tool);
   const modified = PAGE_REVISIONS[`/ressources/outils/${slug}`] ?? TOOL_SELECTION_REVIEW_DATE;
   const label = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${modified}T12:00:00Z`));
   const faq = [
     { question: selection.question, answer: selection.answer },
-    { question: `Quel budget prévoir pour ${tool.name} ?`, answer: `${pricing.note} ${selection.cost}` },
+    { question: `Quel budget prévoir pour ${tool.name} ?`, answer: selection.cost },
   ];
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
@@ -52,12 +49,12 @@ export default function ToolPage({ slug, locale = 'fr', cmsNavigation, tool }: T
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolArticleSchema(tool)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(tool.name, faq, tool.slug)) }} />
       <section className="bg-background py-8">
-        <div className="container max-w-4xl"><ToolHeader name={tool.name} logo={tool.logo} logoAlt={tool.logoAlt} category={categoryLabels[tool.category]} categorySlug={tool.categorySlug} forWho={selection.uses} notForWho={selection.warnings} implementationTime={tool.implementationTime} priceRange={tool.priceRange} pricingKey={slug} /></div>
+        <div className="container max-w-4xl"><ToolHeader name={tool.name} logo={tool.logo} logoAlt={tool.logoAlt} category={categoryLabels[tool.category]} categorySlug={tool.categorySlug} forWho={selection.uses} notForWho={selection.warnings} implementationTime="" priceRange={tool.priceRange} pricingKey={slug} /></div>
       </section>
       <section className="site-section bg-muted/20 py-12">
         <div className="container max-w-3xl">
           <h2 className="mb-5 text-2xl font-bold font-heading">Un parcours à tester avec {tool.name}</h2>
-          <p className="site-copy text-muted-foreground leading-relaxed mb-6">{selection.scenario} Ce parcours est une proposition de test, sans résultat client attribué.</p>
+          <p className="site-copy text-muted-foreground leading-relaxed mb-6">{selection.scenario} Protocole proposé, sans résultat client mesuré.</p>
           <ol className="space-y-5">
             {selection.checks.map((check, index) => <li id={`step${index + 1}`} key={check.title} className="site-card p-5 border border-border rounded-2xl bg-background scroll-mt-28"><h3 className="font-semibold mb-2">{index + 1}. {check.title}</h3><p className="site-copy text-muted-foreground leading-relaxed">{check.text}</p></li>)}
           </ol>
@@ -70,14 +67,13 @@ export default function ToolPage({ slug, locale = 'fr', cmsNavigation, tool }: T
         <div className="container max-w-3xl">
           <h2 className="text-2xl font-bold font-heading mb-6">Questions fréquentes sur {tool.name}</h2>
           <div className="space-y-4">{faq.map(item => <details key={item.question} className="site-card rounded-2xl border border-border p-5"><summary className="cursor-pointer font-semibold">{item.question}</summary><p className="site-copy mt-4 text-muted-foreground leading-relaxed">{item.answer}</p></details>)}</div>
-          <p className="mt-8"><Link href={selection.service.href} className="font-semibold text-iter-violet underline">{selection.service.label}</Link> : convenez du périmètre, du responsable des contrôles et des livrables attendus. Le <Link href="/daf-externalise" className="text-iter-violet underline">DAF externalisé</Link> peut cadrer ce pilotage avec vos équipes et prestataires.</p>
+          <p className="mt-8"><Link href={selection.service.href} className="font-semibold text-iter-violet underline">{selection.service.label}</Link> · <Link href="/daf-externalise" className="text-iter-violet underline">DAF externalisé</Link></p>
           {alternatives.length > 0 && <details className="site-card mt-6 p-5 border border-border rounded-2xl"><summary className="cursor-pointer font-semibold">Autres fiches du même besoin</summary><ul className="mt-4 flex flex-wrap gap-x-6 gap-y-3">{alternatives.map(t => <li key={t.slug}><Link href={`/ressources/outils/${t.slug}`} className="text-iter-violet underline">{t.name}</Link></li>)}</ul></details>}
           <h2 className="text-xl font-bold mt-10 mb-3">Sources et méthode</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed">Présentation et documentation : <a href={selection.source} className="text-iter-violet underline">source officielle {tool.name}</a>, consultée le <time dateTime={TOOL_SELECTION_REVIEW_DATE}>2 octobre 2026</time>. Les questions ci-dessus constituent une grille éditoriale de sélection, pas un benchmark chronométré. Les fonctions incluses et le délai sont à confirmer sur votre dossier.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">Documentation : <a href={selection.source} className="text-iter-violet underline">source officielle {tool.name}</a>, consultée le <time dateTime={TOOL_SELECTION_REVIEW_DATE}>2 octobre 2026</time>.</p>
           <p className="mt-3 text-sm"><Link href="/ressources/blog/essentiels-outils-tech-finance" className="text-iter-violet underline">Méthode complète pour choisir et intégrer les outils finance</Link></p>
         </div>
       </section>
-      <CTASection locale={locale} />
     </PageLayout>
   );
 }

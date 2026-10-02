@@ -194,7 +194,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
         "Permettre au successeur de reprendre le pilotage."
       ]
     ],
-    headings: { need: "Quand envisager un management de transition finance ?", deliverables: "Les livrables du mandat de transition", method: "Du remplacement du DAF à la passation" },
+    headings: { need: "Quand envisager un management de transition finance ?", deliverables: "Les livrables du directeur financier de transition", method: "Directeur administratif et financier de transition : du mandat à la passation" },
     calendar: {
       heading: "Préparer la sortie dès le début du mandat",
       caption: "Jalons à définir pour une mission temporaire",
@@ -788,6 +788,9 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       ]
     ],
     "resources": [
+      ["Préparer les étapes d’une levée", "/ressources/blog/levee-de-fonds-guide"],
+      ["Examiner les clauses d’un term sheet", "/ressources/blog/term-sheet-negocier-clauses-cles"],
+      ["Comprendre les instruments BSPCE et BSA", "/ressources/glossaire/bspce-bsa"],
       [
         "Préparer les pièces de due diligence",
         "/ressources/blog/checklist-due-diligence-levee-de-fonds"

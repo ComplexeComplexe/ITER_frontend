@@ -722,7 +722,7 @@ export default function QualificationPage({
                           {q.required && <span className="text-red-400 ml-1">*</span>}
                           {q.type === "multiselect" && (
                             <span className="text-gray-400 font-normal ml-2">
-                              ({t.selectUpTo} {(q as any).maxSelect} {t.options})
+                              ({t.selectUpTo} {("maxSelect" in q ? q.maxSelect : 3)} {t.options})
                             </span>
                           )}
                         </label>
@@ -755,7 +755,7 @@ export default function QualificationPage({
                                   key={opt}
                                   type="button"
                                   onClick={() =>
-                                    handleMultiSelectToggle(q.id, opt, (q as any).maxSelect || 3)
+                                    handleMultiSelectToggle(q.id, opt, ("maxSelect" in q ? q.maxSelect : 3) || 3)
                                   }
                                   className={`text-left px-4 py-3 rounded-xl border-2 text-sm font-medium transition-all ${
                                     selected

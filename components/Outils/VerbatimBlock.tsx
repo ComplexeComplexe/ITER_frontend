@@ -33,7 +33,7 @@ export default function VerbatimBlock({
   return (
     <div className={`${styles.bg} border-l-4 ${styles.border} rounded-lg p-6 md:p-8 my-8`}>
       {/* Opening quotation mark */}
-      <div className="text-5xl font-bold text-gray-300 mb-2 leading-none">"</div>
+      <div className="text-5xl font-bold text-gray-300 mb-2 leading-none">&quot;</div>
 
       {/* Quote text */}
       <blockquote className="text-base md:text-lg italic text-gray-800 mb-6 leading-relaxed">

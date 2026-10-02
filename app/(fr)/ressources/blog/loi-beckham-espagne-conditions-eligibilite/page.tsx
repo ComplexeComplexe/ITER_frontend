@@ -101,7 +101,7 @@ export default async function Page() {
       </Callout>
 
       {/* ─── 1. Le principe du régime ─────────────────────────────────────── */}
-      <h2 id="principe">Le régime Beckham : 24 % d'IRPF fixe pendant 6 ans pour les impatriés</h2>
+      <h2 id="principe">Le régime Beckham : 24 % d&apos;IRPF fixe pendant 6 ans pour les impatriés</h2>
 
       <p>
         La loi Beckham — officiellement le <em>Régime spécial des impatriés</em> (article
@@ -351,7 +351,7 @@ export default async function Page() {
       </Callout>
 
       {/* ─── 5. Délai et procédure ────────────────────────────────────────── */}
-      <h2 id="delai-demande">Délai de demande : 6 mois après l'inscription à la Sécurité Sociale espagnole</h2>
+      <h2 id="delai-demande">Délai de demande : 6 mois après l&apos;inscription à la Sécurité Sociale espagnole</h2>
 
       <p>
         La demande d&apos;application du régime Beckham est formalisée via le{' '}

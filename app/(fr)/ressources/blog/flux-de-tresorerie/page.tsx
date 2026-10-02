@@ -80,10 +80,10 @@ export default function FluxDeTresorerieePage() {
     >
       <h2 id="definition">1. Définition et importance</h2>
       <p>
-        Le flux de trésorerie, ou cash flow, mesure les mouvements d'argent réel entrant et sortant de votre entreprise. Contrairement au résultat comptable (qui peut être manipulé par les provisions, amortissements), le flux de trésorerie montre si vous avez vraiment du cash en banque.
+        Le flux de trésorerie, ou cash flow, mesure les mouvements d&apos;argent réel entrant et sortant de votre entreprise. Contrairement au résultat comptable (qui peut être manipulé par les provisions, amortissements), le flux de trésorerie montre si vous avez vraiment du cash en banque.
       </p>
       <p>
-        Pourquoi c'est critique ?
+        Pourquoi c&apos;est critique ?
       </p>
       <ul>
         <li><strong>Résultat et trésorerie ne se confondent pas.</strong> Vous pouvez être rentable sur le papier mais en crise de liquidité en réalité (ex: facturation 30 jours, paiements fournisseurs 7 jours = trésorerie négative).</li>
@@ -95,7 +95,7 @@ export default function FluxDeTresorerieePage() {
 
       <h2 id="trois-types">2. Les trois types de flux</h2>
       <p>
-        La trésorerie d'une entreprise est affectée par trois catégories d'activités :
+        La trésorerie d&apos;une entreprise est affectée par trois catégories d&apos;activités :
       </p>
 
       <ProseTable>
@@ -109,12 +109,12 @@ export default function FluxDeTresorerieePage() {
           <tbody>
             <tr>
               <td><strong>Flux opérationnel</strong></td>
-              <td>Entrées/sorties liées à l'activité courante (ventes, achats, salaires, charges)</td>
+              <td>Entrées/sorties liées à l&apos;activité courante (ventes, achats, salaires, charges)</td>
               <td>Ventes clients (+), paiement fournisseurs (-), salaires (-)</td>
             </tr>
             <tr>
-              <td><strong>Flux d'investissement</strong></td>
-              <td>Acquisition/cession d'actifs (équipements, immobilier, acquisitions)</td>
+              <td><strong>Flux d&apos;investissement</strong></td>
+              <td>Acquisition/cession d&apos;actifs (équipements, immobilier, acquisitions)</td>
               <td>Achat machine (-), vente d’équipement (+), acquisition payée (-)</td>
             </tr>
             <tr>
@@ -129,7 +129,7 @@ export default function FluxDeTresorerieePage() {
         <strong>Formule simple :</strong>
       </p>
       <p style={{ backgroundColor: '#f3f4f6', padding: '16px', borderRadius: '8px', marginTop: '16px' }}>
-        Variation de trésorerie = Flux opérationnel + Flux d'investissement + Flux de financement
+        Variation de trésorerie = Flux opérationnel + Flux d&apos;investissement + Flux de financement
       </p>
 
       <h2 id="calcul-pratique">3. Comment calculer ses flux</h2>
@@ -160,7 +160,7 @@ export default function FluxDeTresorerieePage() {
 
       <h2 id="previsionnel">4. Le prévisionnel de trésorerie</h2>
       <p>
-        Le prévisionnel de trésorerie est l'outil le plus important pour un entrepreneur. Il vous permet de projeter vos flux sur 3-6-12 mois et d'identifier les périodes de tension.
+        Le prévisionnel de trésorerie est l&apos;outil le plus important pour un entrepreneur. Il vous permet de projeter vos flux sur 3-6-12 mois et d&apos;identifier les périodes de tension.
       </p>
       <p>
         <strong>Structure simple :</strong>
@@ -190,7 +190,7 @@ export default function FluxDeTresorerieePage() {
       <ul>
         <li>Exemple fictif sans stock : créances clients ouvertes = 400 000 €</li>
         <li>Dettes fournisseurs ouvertes = 180 000 €</li>
-        <li><strong>BFR = 400 - 180 = €220k de trésorerie "gelée"</strong></li>
+        <li><strong>BFR = 400 - 180 = €220k de trésorerie &quot;gelée&quot;</strong></li>
       </ul>
       <p>
         Pour réduire le BFR (et libérer du cash) :
@@ -233,7 +233,7 @@ export default function FluxDeTresorerieePage() {
       </ul>
 
       <p>
-        Sur la couche IA appliquée au prévisionnel de trésorerie, voir notre guide <a href="/ressources/blog/ia-finance-automatisation-direction-financiere">IA et automatisation de la fonction finance</a>.
+        Sur la couche IA appliquée au prévisionnel de trésorerie, voir notre guide <Link href="/ressources/blog/ia-finance-automatisation-direction-financiere">IA et automatisation de la fonction finance</Link>.
       </p>
 
       <InlineCta
@@ -243,12 +243,12 @@ export default function FluxDeTresorerieePage() {
         ctaHref="/contact#tresorerie"
       />
 
-      <h2>Conclusion : la trésorerie, c'est votre survie</h2>
+      <h2>Conclusion : la trésorerie, c&apos;est votre survie</h2>
       <p>
         Un suivi utile rend les incertitudes visibles, attribue les mises à jour et prépare les décisions. Son effet dépend de la qualité des données et des actions réellement engagées.
       </p>
       <p>
-        <strong>Plan d'action :</strong>
+        <strong>Plan d&apos;action :</strong>
       </p>
       <ol>
         <li>Calculez votre flux opérationnel actuel (hebdomadaire)</li>
@@ -258,7 +258,7 @@ export default function FluxDeTresorerieePage() {
         <li>Agissez sur les insights (relancer clients, négocier fournisseurs, réduire stock)</li>
       </ol>
       <p>
-        Chez Iter Advisors, nous accompagnons chaque client sur la trésorerie. C'est souvent là qu'on crée le plus de valeur : sécuriser le cash, financer la croissance, éviter les crises.
+        Chez Iter Advisors, nous accompagnons chaque client sur la trésorerie. C&apos;est souvent là qu&apos;on crée le plus de valeur : sécuriser le cash, financer la croissance, éviter les crises.
       </p>
     </BlogPostPageRefonte>
   );

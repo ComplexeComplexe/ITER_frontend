@@ -1,3 +1,4 @@
+import type { ControleSection, controleDeGestionExternaliseeContent } from "@/lib/content/controle-de-gestion-externalise";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
@@ -17,7 +18,7 @@ interface ControleDeGestionExternaliseePageProps {
   // because individual section types vary (table, testimonials, faqs…)
   // and TypeScript discriminated unions don't add value at this seam.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  content: any;
+  content: Omit<(typeof controleDeGestionExternaliseeContent)["fr"], "sections"> & { sections: ControleSection[] };
   cmsNavigation?: CmsNavItem[];
 }
 
@@ -138,7 +139,7 @@ export default function ControleDeGestionExternalisePage({
       {/* ─── Content sections ─── */}
       <section className="site-section py-10 sm:py-14 bg-background">
         <div className="container max-w-3xl">
-          {t.sections.map((section: any, idx: number) => (
+          {t.sections.map((section, idx) => (
             <div
               key={idx}
               id={section.id}
@@ -165,7 +166,7 @@ export default function ControleDeGestionExternalisePage({
               {/* Bullets */}
               {section.bullets && (
                 <ul className="space-y-4 mb-6">
-                  {section.bullets.map((bullet: any, bidx: number) => (
+                  {section.bullets.map((bullet, bidx) => (
                     <li
                       key={bidx}
                       className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed"
@@ -180,7 +181,7 @@ export default function ControleDeGestionExternalisePage({
               {/* Pillars (Phase 1/2/3/4 in Section 4) */}
               {section.pillars && (
                 <div className="space-y-6 mb-6">
-                  {section.pillars.map((pillar: any, pidx: number) => (
+                  {section.pillars.map((pillar, pidx) => (
                     <div
                       key={pidx}
                       className="border-l-4 border-iter-chartreuse pl-4"
@@ -249,7 +250,7 @@ export default function ControleDeGestionExternalisePage({
               {/* Testimonials (Section 5) */}
               {section.testimonials && (
                 <div className="space-y-6 mb-6">
-                  {section.testimonials.map((tst: any, tidx: number) => (
+                  {section.testimonials.map((tst, tidx) => (
                     <figure
                       key={tidx}
                       className="border-l-4 border-iter-violet bg-iter-violet/5 rounded-r-lg p-5 sm:p-6"
@@ -280,7 +281,7 @@ export default function ControleDeGestionExternalisePage({
                   inside the FAQPage schema emitted at the route level). */}
               {section.faqs && (
                 <div className="space-y-4">
-                  {section.faqs.map((faq: any, fidx: number) => (
+                  {section.faqs.map((faq, fidx) => (
                     <details
                       key={fidx}
                       className="group rounded-lg border border-border/60 bg-background"
@@ -328,7 +329,7 @@ export default function ControleDeGestionExternalisePage({
               {/* CTA buttons (Section 8) */}
               {section.ctaButtons && (
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6">
-                  {section.ctaButtons.map((btn: any, bidx: number) =>
+                  {section.ctaButtons.map((btn, bidx) =>
                     btn.variant === "primary" ? (
                       <Link
                         key={bidx}

@@ -152,7 +152,7 @@ export default function FractionalCfoCostServicesPage() {
         for the same senior profile.
       </p>
 
-      <h2 id="scope">3. What's included in a fractional CFO engagement?</h2>
+      <h2 id="scope">3. What&apos;s included in a fractional CFO engagement?</h2>
       <p>
         The scope of a fractional CFO covers the full strategic finance function. Here is what a standard
         engagement includes — and what it does not.
@@ -176,7 +176,7 @@ export default function FractionalCfoCostServicesPage() {
         <strong>Not included (handled by other specialists):</strong>
       </p>
       <ul>
-        <li>Tax filings and statutory accounts — this is your accountant's job</li>
+        <li>Tax filings and statutory accounts — this is your accountant&apos;s job</li>
         <li>Legal advice — corporate lawyers or employment counsel handle this</li>
         <li>Bookkeeping and payroll processing</li>
         <li>Full-time presence or operational coverage (vacation, illness cover)</li>

@@ -92,12 +92,12 @@ export default function ToolHeader({
 
           {/* Implémentation, Prix */}
           <div className="grid md:grid-cols-2 gap-4 mb-6 pb-6 border-b border-gray-200">
-            <div>
+            {implementationTime && <div>
               <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
                 Implémentation
               </p>
               <p className="text-lg font-semibold text-gray-900">{implementationTime}</p>
-            </div>
+            </div>}
             <div>
               <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Tarif</p>
               <p className="text-lg font-semibold text-gray-900">{priceRange}</p>

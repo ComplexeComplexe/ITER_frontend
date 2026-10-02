@@ -10,7 +10,7 @@ import CTASection from "@/components/CTASection";
 import AuthorByline from "@/components/AuthorByline";
 import ClientTestimonials from "@/components/ClientTestimonials";
 
-export interface ServiceContent {
+export interface ServiceContent<Section = unknown> {
   meta: {
     title: string;
     description: string;
@@ -32,26 +32,26 @@ export interface ServiceContent {
     rating: number;
   }>;
   sources?: string[];
-  sections: Array<any>;
+  sections: Section[];
 }
 
-interface ServicePageLayoutProps {
+interface ServicePageLayoutProps<Section> {
   locale: Locale;
-  content: ServiceContent;
+  content: ServiceContent<Section>;
   cmsNavigation?: CmsNavItem[];
   breadcrumbLabel: string;
-  sectionRenderer: (section: any, idx: number) => React.ReactNode;
+  sectionRenderer: (section: Section, idx: number) => React.ReactNode;
   trustfolioUrl?: string;
 }
 
-export default function ServicePageLayout({
+export default function ServicePageLayout<Section>({
   locale,
   content,
   cmsNavigation,
   breadcrumbLabel,
   sectionRenderer,
   trustfolioUrl = "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
-}: ServicePageLayoutProps) {
+}: ServicePageLayoutProps<Section>) {
   const t = content;
 
   return (

@@ -28,6 +28,17 @@ export interface ControleSectionTestimonial {
   context?: string;
 }
 
+export interface ControleSection {
+  id?: string; title: string; paragraphs?: string[];
+  bullets?: Array<{ title: string; text: string }>;
+  pillars?: Array<{ title: string; text: string }>;
+  table?: ControleSectionTable;
+  testimonials?: ControleSectionTestimonial[];
+  faqs?: Array<{ question: string; answer?: string; answerHtml?: string }>;
+  closingText?: string; closingTextHtml?: string;
+  ctaButtons?: Array<{ label: string; href: string; variant: string }>;
+}
+
 export const controleDeGestionExternaliseeContent = {
   fr: {
     meta: {

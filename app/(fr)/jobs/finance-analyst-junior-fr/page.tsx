@@ -44,7 +44,7 @@ export default async function Page() {
               Analyste financier junior — France | Iter Advisors
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
-              Vous sortez d'une école de commerce ou d'ingénieur et cherchez une
+              Vous sortez d&apos;une école de commerce ou d&apos;ingénieur et cherchez une
               première expérience vraie en finance ? Iter Advisors recrute un(e)
               <strong> analyste financier junior</strong> basé(e) à Paris (Île-de-France) pour
               accompagner nos équipes dans la gestion comptable et le reporting
@@ -65,7 +65,7 @@ export default async function Page() {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border-2 border-iter-violet text-iter-violet hover:bg-iter-violet/5 transition-all duration-300 font-semibold"
               >
                 <Linkedin size={18} />
-                Contacter l'équipe
+                Contacter l&apos;équipe
               </a>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default async function Page() {
                   </li>
                   <li>
                     • Stage en finance/comptabilité (ou alternance, ou sortie
-                    d'école)
+                    d&apos;école)
                   </li>
                   <li>
                     • Notions de comptabilité générale et de fiscalité
@@ -140,13 +140,13 @@ export default async function Page() {
                 <ul className="site-copy space-y-1 text-sm sm:text-base text-muted-foreground">
                   <li>
                     • Rigueur : tu aimes les chiffres qui « collent » et tu
-                    cherches l'erreur
+                    cherches l&apos;erreur
                   </li>
                   <li>
                     • Curiosité : tu poses des questions et tu veux comprendre
                   </li>
                   <li>
-                    • Proactivité : tu ne dis pas « c'est pas mon boulot »
+                    • Proactivité : tu ne dis pas « c&apos;est pas mon boulot »
                   </li>
                   <li>
                     • Bonnes capacités de communication en français (et anglais
@@ -173,14 +173,14 @@ export default async function Page() {
                 • Bureau à Paris (Île-de-France) — mode hybride
               </li>
               <li>
-                • Mentorat d'un manager qui prend le temps de former
+                • Mentorat d&apos;un manager qui prend le temps de former
               </li>
               <li>
-                • Environnement de startup : pas d'usine, des vraies
+                • Environnement de startup : pas d&apos;usine, des vraies
                 responsabilités
               </li>
               <li>
-                • Progression rapide : CDI après 6 mois d'alternance si succès
+                • Progression rapide : CDI après 6 mois d&apos;alternance si succès
               </li>
               <li>
                 • Rembursement de 50 % de la formation continue (certifications
@@ -192,7 +192,7 @@ export default async function Page() {
           {/* Pourquoi rejoindre */}
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 sm:mb-8">
-              Pourquoi Iter Advisors c'est différent
+              Pourquoi Iter Advisors c&apos;est différent
             </h2>
             <ul className="site-copy space-y-2 text-sm sm:text-base text-muted-foreground">
               <li>
@@ -241,7 +241,7 @@ export default async function Page() {
             </p>
             <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mt-4">
               <strong>Process :</strong> 30 min de discussion (valider les bases) + 1h de cas pratique (Excel + comptabilité) +
-              rencontre avec l'équipe. Réponse en moins de 1 semaine.
+              rencontre avec l&apos;équipe. Réponse en moins de 1 semaine.
             </p>
           </div>
 

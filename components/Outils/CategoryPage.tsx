@@ -1,4 +1,3 @@
-'use client';
 
 import PageLayout from '@/components/PageLayout';
 import Breadcrumb from '@/components/Breadcrumb';
@@ -244,6 +243,9 @@ export default function CategoryPage({
           </div>
         </div>
       </section>
+
+      {slug === 'logiciels-tresorerie' && <section className="site-section bg-background py-10"><div className="container max-w-3xl"><h2 className="text-2xl font-semibold mb-4">Quand le problème vient des encaissements</h2><p>Un outil de prévision et un outil de relance traitent des travaux différents. Pour tester la gestion des créances, consultez <Link href="/ressources/outils/upflow" className="text-iter-violet underline">Upflow</Link> et <Link href="/ressources/outils/leanpay" className="text-iter-violet underline">LeanPay</Link>. Vérifiez les litiges, les dates de règlement et la coordination avec l’équipe commerciale avant de connecter ces données au prévisionnel.</p></div></section>}
+      {slug === 'logiciels-paie' && <section className="site-section bg-background py-10"><div className="container max-w-3xl"><h2 className="text-2xl font-semibold mb-4">Distinguer gestion RH et production des bulletins</h2><p>La fiche <Link href="/ressources/outils/factorial" className="text-iter-violet underline">Factorial</Link> aide à préparer les tests d’un SIRH. La fiche <Link href="/ressources/outils/malibou" className="text-iter-violet underline">malibou</Link> traite la gestion accompagnée de la paie. Identifiez qui prépare les variables, produit les bulletins et les valide, ainsi que les prestations réellement incluses au contrat.</p></div></section>}
 
       {/* Decision criteria */}
       <section className="site-section bg-background py-16">

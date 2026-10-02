@@ -71,7 +71,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "la-modernisation-du-role-de-cfo": {
       meta: {
-        title: "Modernisation du rôle de CFO en 2026 | Iter Advisors",
+        title: "Moderniser le travail du CFO : données et IA | Iter Advisors",
         description: "Comment le rôle du CFO évolue avec la digitalisation et l'IA. Découvrez les nouvelles compétences et missions du directeur financier moderne.",
       },
       breadcrumbs: {
@@ -80,10 +80,13 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogLabel: "Blog",
         blogHref: "/ressources/blog",
       },
-      h1: "La modernisation du rôle de CFO",
+      h1: "Moderniser le travail du CFO : données, IA et décisions",
+      publishedDate: "2026-05-01",
+      updatedDate: "2026-10-02",
+      author: "Benjamin Ziza",
       content: [],
       // Full body is served by the dedicated route; the catalog is metadata only.
-      readingMinutes: 10,
+      readingMinutes: 5,
     },
     "cout-daf-externalise-tarifs-prix-2026": {
       meta: {
@@ -677,7 +680,9 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       publishedDate: "2026-05-11",
       author: "Benjamin Ziza",
       category: "levee-de-fonds",
-      htmlContent: `<p>Le term sheet est le document le plus important de votre levée de fonds. C'est la lettre d'intention des investisseurs qui définit les conditions de leur entrée au capital. Une clause mal négociée peut vous coûter des millions d'euros ou le contrôle de votre entreprise.</p>
+      htmlContent: `<p>Pour préparer les données et les scénarios financiers de votre opération, consultez notre <a href="/services/accompagnement-levee-de-fond">accompagnement levée de fonds</a>. Les clauses et les décisions juridiques sont à examiner avec vos conseils.</p>
+<p>Le term sheet est le document le plus important de votre levée de fonds. C'est la lettre d'intention des investisseurs qui définit les conditions de leur entrée au capital. Une clause mal négociée peut vous coûter des millions d'euros ou le contrôle de votre entreprise.</p>
+<p>Pour suivre les scénarios de capitalisation, préparez les tests proposés dans les fiches <a href="/ressources/outils/carta">Carta</a> et <a href="/ressources/outils/equify">Equify</a>, puis faites valider les instruments et les règles par vos conseils.</p>
 <h2 id="valorisation">Clause 1 — Valorisation (Pre-money / Post-money)</h2>
 <p>La valorisation pre-money est la valeur de votre entreprise avant l'injection de capital. Post-money = pre-money + montant levé.</p>
 <p><strong>Notre position</strong> : négociez toujours en pre-money. Les investisseurs préfèrent post-money car cela gonfle artificiellement la valorisation. Exemple : 10M€ pre-money + 2M€ levé = 12M€ post-money. Si vous dites « 12M€ de valorisation », l'investisseur comprend post-money — et votre dilution est plus forte.</p>

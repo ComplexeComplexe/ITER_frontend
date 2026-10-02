@@ -199,7 +199,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
             {
                   "heading": "Les missions d'un CFO dans une startup",
                   "content": [
-                        "Les priorités dépendent du dossier : trésorerie, revenus, marges ou reporting investisseurs. Découvrez le [métier de DAF](/daf-externalise/metier) et les [missions et livrables d’un CFO externe](/ressources/blog/cfo-externe-role-missions-2026)."
+                        "Les priorités dépendent du dossier : trésorerie, revenus, marges ou reporting investisseurs. Découvrez le [le métier de DAF](/daf-externalise/metier) et les [missions et livrables d’un CFO externe](/ressources/blog/cfo-externe-role-missions-2026)."
                   ]
             },
             {
@@ -687,7 +687,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
           "content": [
             "**Départ d’un bénéficiaire.** Les droits conservés, les délais d’exercice et les clauses de départ dépendent du plan et de leur validité juridique. Un départ ne produit pas automatiquement le même résultat dans tous les plans.",
             "**Absence de prochain tour.** Un BSA Air doit prévoir les situations où le financement attendu n’intervient pas, ainsi que les autres événements de liquidité ou d’échéance.",
-            "**Suivi incomplet.** Conservez les décisions d’émission, les attributions, les exercices et une table de capitalisation à jour. Notre [accompagnement à la levée de fonds](/services/accompagnement-levee-de-fond) aide à structurer les données financières nécessaires."
+            "**Suivi incomplet.** Conservez les décisions d’émission, les attributions, les exercices et une table de capitalisation à jour. Pour préparer une démonstration, voir les fiches [Carta](/ressources/outils/carta) et [Equify](/ressources/outils/equify). Notre [accompagnement à la levée de fonds](/services/accompagnement-levee-de-fond) aide à structurer les données financières nécessaires."
           ]
         },
         {
@@ -823,7 +823,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
             {
                   "heading": "Missions d'un Fractional CFO",
                   "content": [
-                        "Le besoin peut porter sur la trésorerie, le budget, le reporting ou la préparation financière d’une opération. Pour les contextes de revenus récurrents et de financement, voir [notre accompagnement des startups](/fractional-cfo-startups). Les priorités et la cadence se définissent sur le dossier.",
+                        "Le besoin peut porter sur la trésorerie, le budget, le reporting ou la préparation financière d’une opération. Pour les contextes de revenus récurrents et de financement, voir [fractional CFO](/fractional-cfo-startups). Les priorités et la cadence se définissent sur le dossier.",
                         "La production comptable, la paie et les conseils juridiques ou fiscaux doivent être attribués aux intervenants compétents. Une disponibilité partagée ne suppose pas une présence quotidienne à temps plein."
                   ]
             },

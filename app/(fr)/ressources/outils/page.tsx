@@ -6,9 +6,9 @@ import { getCmsNavigation } from "@/lib/static-content";
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
   // P2-03: Shortened from 74 chars to 55 chars to prevent SERP truncation
-  title: "Outils CFO & Stack Financier PME 2026 | Iter Advisors",
+  title: "Outils finance : annuaire et critères | Iter Advisors",
   description:
-    "Quels outils pour piloter sa finance entre 10 et 100 employés ? Le stack recommandé par nos DAF externalisés : compta, trésorerie, dépenses, paie.",
+    "Comparez les outils de comptabilité, trésorerie, dépenses, paie et reporting. Critères à tester, sources éditeurs et questions pour préparer vos devis.",
   path: "/ressources/outils",
   localizedPaths: {
     fr: "/ressources/outils",
