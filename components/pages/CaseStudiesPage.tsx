@@ -1,8 +1,5 @@
-"use client";
-
-import { useRef } from "react";
 import Link from "next/link";
-import { getDocumentedCase } from "@/lib/content/documented-cases";
+import { getReviewedCase } from "@/lib/content/documented-case-locales";
 import { getPublishedCases } from "@/lib/content/published-cases";
 import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/static-content";
@@ -10,7 +7,6 @@ import { getCaseStudiesContent, type CaseStudy } from "@/lib/content/case-studie
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
-import { motion, useInView } from "framer-motion";
 import {
   ArrowRight,
   Clock,
@@ -26,24 +22,16 @@ import {
 function CaseStudyCardWrapper({
   cs,
   t,
-  index,
   locale,
 }: {
   cs: CaseStudy;
   t: ReturnType<typeof getCaseStudiesContent>;
-  index: number;
   locale: Locale;
 }) {
-  const detail = getDocumentedCase(cs.slug);
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const detail = getReviewedCase(cs.slug, locale);
 
   return (
-    <motion.div
-      ref={ref}
-      initial={false}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
+    <div
       className="border border-border/50 rounded-2xl overflow-hidden bg-background hover:shadow-lg hover:shadow-iter-violet/5 transition-all duration-300"
     >
       <div className="p-6 lg:p-8">
@@ -74,7 +62,7 @@ function CaseStudyCardWrapper({
           </p>
         </div>
 
-        {detail && <Link href={detail.href} className="inline-flex text-sm font-semibold text-iter-violet underline underline-offset-4 mb-4">{locale === "fr" ? `Lire le cas ${detail.company} en détail` : locale === "en" ? `Read the ${detail.company} case (in French)` : `Leer el caso ${detail.company} (en francés)`}</Link>}
+        {detail && <Link href={detail.href} className="inline-flex text-sm font-semibold text-iter-violet underline underline-offset-4 mb-4">{locale === "fr" ? `Lire le cas ${detail.company} en détail` : locale === "en" ? `Read the ${detail.company} case in detail` : `Leer el caso ${detail.company} en detalle`}</Link>}
         <details className="group mt-4">
           <summary className="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-iter-violet mb-5">
             {locale === "fr" ? "Voir le cas d'usage" : locale === "en" ? "View case study" : "Ver caso de uso"}
@@ -125,7 +113,7 @@ function CaseStudyCardWrapper({
           </div>
         </details>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -177,12 +165,11 @@ export default function CaseStudiesPage({
       <section className="bg-background pb-24">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-6">
-            {t.caseStudies.map((cs, i) => (
+            {t.caseStudies.map((cs) => (
               <CaseStudyCardWrapper
                 key={cs.slug}
                 cs={cs}
                 t={t}
-                index={i}
                 locale={locale}
               />
             ))}

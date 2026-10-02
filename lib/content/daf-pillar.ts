@@ -120,4 +120,5 @@ export const dafPillar = {
     href: "/contact#daf",
   },
 } as const;
-export type DafPillarContent = typeof dafPillar;
+type Widen<T> = T extends string ? string : T extends readonly (infer U)[] ? ReadonlyArray<Widen<U>> : T extends object ? { [K in keyof T]: Widen<T[K]> } : T;
+export type DafPillarContent = Widen<typeof dafPillar>;

@@ -1,0 +1,181 @@
+{
+  "checkedOn": "2026-10-02",
+  "pages": [
+    {
+      "path": "/politique-cookies",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/politique-cookies",
+      "lang": "fr",
+      "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+      "containsROI5x": false
+    },
+    {
+      "path": "/en/cookie-policy",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/en/cookie-policy",
+      "lang": "en",
+      "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+      "containsROI5x": false
+    },
+    {
+      "path": "/es/politica-cookies",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/es/politica-cookies",
+      "lang": "es",
+      "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+      "containsROI5x": false
+    },
+    {
+      "path": "/cads",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/cads",
+      "lang": "fr",
+      "robots": "noindex, nofollow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/cads/roi",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/cads/roi",
+      "lang": "fr",
+      "robots": "noindex, nofollow",
+      "containsROI5x": true
+    },
+    {
+      "path": "/en/jobs",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/en/jobs",
+      "lang": "en",
+      "robots": "noindex, follow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/es/jobs",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/es/jobs",
+      "lang": "es",
+      "robots": "noindex, follow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/es/perfil",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/es/perfil",
+      "lang": "es",
+      "robots": "noindex, nofollow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/en/profile",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/en/profile",
+      "lang": "en",
+      "robots": "noindex, nofollow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/lp/daf-externalise",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/lp/daf-externalise",
+      "lang": "fr",
+      "robots": "noindex, follow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/lp/daf-externalise/merci",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/lp/daf-externalise/merci",
+      "lang": "fr",
+      "robots": "noindex, nofollow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/campagne",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/campagne",
+      "lang": "fr",
+      "robots": "noindex, nofollow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/en/campaign",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/en/campaign",
+      "lang": "en",
+      "robots": "noindex, nofollow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/es/campana",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/es/campana",
+      "lang": "es",
+      "robots": "noindex, nofollow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/diagnostic",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/diagnostic",
+      "lang": "fr",
+      "robots": "noindex, nofollow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/en/diagnostic",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/en/diagnostic",
+      "lang": "en",
+      "robots": "noindex, nofollow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/es/diagnostic",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/es/diagnostic",
+      "lang": "es",
+      "robots": "noindex, nofollow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/jobs",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/jobs",
+      "lang": "fr",
+      "robots": "noindex, follow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/profil",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/profil",
+      "lang": "fr",
+      "robots": "noindex, nofollow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/qualification",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/qualification",
+      "lang": "fr",
+      "robots": "noindex, nofollow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/en/assessment",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/en/assessment",
+      "lang": "en",
+      "robots": "noindex, nofollow",
+      "containsROI5x": false
+    },
+    {
+      "path": "/es/calificacion",
+      "status": 200,
+      "final": "https://www.iteradvisors.com/es/calificacion",
+      "lang": "es",
+      "robots": "noindex, nofollow",
+      "containsROI5x": false
+    }
+  ]
+}

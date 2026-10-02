@@ -1,0 +1,547 @@
+{
+  "proposalOnly": true,
+  "checkedOn": "2026-10-02",
+  "pages": [
+    {
+      "id": "politique-cookies",
+      "sourcePath": "/politique-cookies",
+      "family": "utility-or-consent",
+      "templateReference": "CookiePolicyPage",
+      "robotsToPreserve": "indexable-legal-exception",
+      "proposalOnly": true,
+      "releaseGate": [
+        "localized-interface-and-content",
+        "real-offer-scope",
+        "no-new-indexability",
+        "forms-consent-and-events-tested"
+      ],
+      "locales": {
+        "fr": {
+          "currentPath": "/politique-cookies",
+          "targetPath": "/politique-cookies",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/politique-cookies",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/politique-cookies",
+            "lang": "fr",
+            "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": "/en/cookie-policy",
+          "targetPath": "/en/cookie-policy",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/en/cookie-policy",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/en/cookie-policy",
+            "lang": "en",
+            "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "es": {
+          "currentPath": "/es/politica-cookies",
+          "targetPath": "/es/politica-cookies",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/es/politica-cookies",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/es/politica-cookies",
+            "lang": "es",
+            "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+            "unsubstantiatedROI5x": false
+          }
+        }
+      }
+    },
+    {
+      "id": "cads",
+      "sourcePath": "/cads",
+      "family": "utility-or-consent",
+      "templateReference": "CadsPage",
+      "robotsToPreserve": "noindex,nofollow",
+      "proposalOnly": true,
+      "releaseGate": [
+        "localized-interface-and-content",
+        "real-offer-scope",
+        "no-new-indexability",
+        "forms-consent-and-events-tested"
+      ],
+      "locales": {
+        "fr": {
+          "currentPath": "/cads",
+          "targetPath": "/cads",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/cads",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/cads",
+            "lang": "fr",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/cads",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/cads",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        }
+      },
+      "additionalGate": "Remove unsupported result/ROI/time guarantees in FR before deriving EN/ES; verify whether campaign is still used."
+    },
+    {
+      "id": "cads:roi",
+      "sourcePath": "/cads/roi",
+      "family": "utility-or-consent",
+      "templateReference": "CadsRoiPage",
+      "robotsToPreserve": "noindex,nofollow",
+      "proposalOnly": true,
+      "releaseGate": [
+        "localized-interface-and-content",
+        "real-offer-scope",
+        "no-new-indexability",
+        "forms-consent-and-events-tested"
+      ],
+      "locales": {
+        "fr": {
+          "currentPath": "/cads/roi",
+          "targetPath": "/cads/roi",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/cads/roi",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/cads/roi",
+            "lang": "fr",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": true
+          }
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/cads/roi",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/cads/roi",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        }
+      },
+      "additionalGate": "Remove unsupported result/ROI/time guarantees in FR before deriving EN/ES; verify whether campaign is still used."
+    },
+    {
+      "id": "campagne",
+      "sourcePath": "/campagne",
+      "family": "utility-or-consent",
+      "templateReference": "LeadPage",
+      "robotsToPreserve": "noindex,nofollow",
+      "proposalOnly": true,
+      "releaseGate": [
+        "localized-interface-and-content",
+        "real-offer-scope",
+        "no-new-indexability",
+        "forms-consent-and-events-tested"
+      ],
+      "locales": {
+        "fr": {
+          "currentPath": "/campagne",
+          "targetPath": "/campagne",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/campagne",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/campagne",
+            "lang": "fr",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": "/en/campaign",
+          "targetPath": "/en/campaign",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/en/campaign",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/en/campaign",
+            "lang": "en",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "es": {
+          "currentPath": "/es/campana",
+          "targetPath": "/es/campana",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/es/campana",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/es/campana",
+            "lang": "es",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        }
+      }
+    },
+    {
+      "id": "diagnostic",
+      "sourcePath": "/diagnostic",
+      "family": "utility-or-consent",
+      "templateReference": "LeadGenPage",
+      "robotsToPreserve": "noindex,nofollow",
+      "proposalOnly": true,
+      "releaseGate": [
+        "localized-interface-and-content",
+        "real-offer-scope",
+        "no-new-indexability",
+        "forms-consent-and-events-tested"
+      ],
+      "locales": {
+        "fr": {
+          "currentPath": "/diagnostic",
+          "targetPath": "/diagnostic",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/diagnostic",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/diagnostic",
+            "lang": "fr",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": "/en/diagnostic",
+          "targetPath": "/en/diagnostic",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/en/diagnostic",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/en/diagnostic",
+            "lang": "en",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "es": {
+          "currentPath": "/es/diagnostic",
+          "targetPath": "/es/diagnostic",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/es/diagnostic",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/es/diagnostic",
+            "lang": "es",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        }
+      }
+    },
+    {
+      "id": "jobs",
+      "sourcePath": "/jobs",
+      "family": "utility-or-consent",
+      "templateReference": "JobsPage",
+      "robotsToPreserve": "noindex,follow",
+      "proposalOnly": true,
+      "releaseGate": [
+        "localized-interface-and-content",
+        "real-offer-scope",
+        "no-new-indexability",
+        "forms-consent-and-events-tested"
+      ],
+      "locales": {
+        "fr": {
+          "currentPath": "/jobs",
+          "targetPath": "/jobs",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/jobs",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/jobs",
+            "lang": "fr",
+            "robots": "noindex, follow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": "/en/jobs",
+          "targetPath": "/en/jobs",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/en/jobs",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/en/jobs",
+            "lang": "en",
+            "robots": "noindex, follow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "es": {
+          "currentPath": "/es/jobs",
+          "targetPath": "/es/jobs",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/es/jobs",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/es/jobs",
+            "lang": "es",
+            "robots": "noindex, follow",
+            "unsubstantiatedROI5x": false
+          }
+        }
+      }
+    },
+    {
+      "id": "lp:daf-externalise",
+      "sourcePath": "/lp/daf-externalise",
+      "family": "utility-or-consent",
+      "templateReference": "LandingPageClient",
+      "robotsToPreserve": "noindex,follow",
+      "proposalOnly": true,
+      "releaseGate": [
+        "localized-interface-and-content",
+        "real-offer-scope",
+        "no-new-indexability",
+        "forms-consent-and-events-tested"
+      ],
+      "locales": {
+        "fr": {
+          "currentPath": "/lp/daf-externalise",
+          "targetPath": "/lp/daf-externalise",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/lp/daf-externalise",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/lp/daf-externalise",
+            "lang": "fr",
+            "robots": "noindex, follow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/lp/fractional-cfo",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/lp/cfo-externo",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        }
+      }
+    },
+    {
+      "id": "lp:daf-externalise:merci",
+      "sourcePath": "/lp/daf-externalise/merci",
+      "family": "utility-or-consent",
+      "templateReference": "LandingPageThankYou",
+      "robotsToPreserve": "noindex,nofollow",
+      "proposalOnly": true,
+      "releaseGate": [
+        "localized-interface-and-content",
+        "real-offer-scope",
+        "no-new-indexability",
+        "forms-consent-and-events-tested"
+      ],
+      "locales": {
+        "fr": {
+          "currentPath": "/lp/daf-externalise/merci",
+          "targetPath": "/lp/daf-externalise/merci",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/lp/daf-externalise/merci",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/lp/daf-externalise/merci",
+            "lang": "fr",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/lp/fractional-cfo/thank-you",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/lp/cfo-externo/gracias",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        }
+      }
+    },
+    {
+      "id": "profil",
+      "sourcePath": "/profil",
+      "family": "utility-or-consent",
+      "templateReference": "QualificationPage",
+      "robotsToPreserve": "noindex,nofollow",
+      "proposalOnly": true,
+      "releaseGate": [
+        "localized-interface-and-content",
+        "real-offer-scope",
+        "no-new-indexability",
+        "forms-consent-and-events-tested"
+      ],
+      "locales": {
+        "fr": {
+          "currentPath": "/profil",
+          "targetPath": "/profil",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/profil",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/profil",
+            "lang": "fr",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": "/en/profile",
+          "targetPath": "/en/profile",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/en/profile",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/en/profile",
+            "lang": "en",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "es": {
+          "currentPath": "/es/perfil",
+          "targetPath": "/es/perfil",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/es/perfil",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/es/perfil",
+            "lang": "es",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        }
+      }
+    },
+    {
+      "id": "qualification",
+      "sourcePath": "/qualification",
+      "family": "utility-or-consent",
+      "templateReference": "QualificationPage",
+      "robotsToPreserve": "noindex,nofollow",
+      "proposalOnly": true,
+      "releaseGate": [
+        "localized-interface-and-content",
+        "real-offer-scope",
+        "no-new-indexability",
+        "forms-consent-and-events-tested"
+      ],
+      "locales": {
+        "fr": {
+          "currentPath": "/qualification",
+          "targetPath": "/qualification",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/qualification",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/qualification",
+            "lang": "fr",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": "/en/assessment",
+          "targetPath": "/en/assessment",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/en/assessment",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/en/assessment",
+            "lang": "en",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "es": {
+          "currentPath": "/es/calificacion",
+          "targetPath": "/es/calificacion",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/es/calificacion",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/es/calificacion",
+            "lang": "es",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        }
+      }
+    }
+  ],
+  "newTranslations": {
+    "en": 4,
+    "es": 4
+  },
+  "existingToAlign": {
+    "en": 6,
+    "es": 6
+  },
+  "additionalTargetUrls": 30,
+  "combinedCounts": {
+    "frReferences": 146,
+    "newTranslations": 192,
+    "existingToAlign": 100,
+    "proposedTargetUrlsIncludingLocaleOnly": 441
+  }
+}

@@ -8,8 +8,8 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "homepage",
     locale: "en",
     path: "/",
-    fallbackTitle: "Fractional CFO for Startups in France & Spain | Iter",
-    fallbackDescription: "Fractional CFO services for startups and SMEs in Paris, Barcelona and Toulouse. Senior finance leadership from 2 days/month. Free assessment.",
+    fallbackTitle: "Iter Advisors: CFO and HR support for SMEs and startups",
+    fallbackDescription: "Meet Iter Advisors and its team: Fractional CFO, management accounting and HR leadership for SMEs and startups.",
   });
 }
 

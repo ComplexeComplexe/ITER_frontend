@@ -1,5 +1,8 @@
 import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
-import Link from "next/link";
+import Link from "@/components/PublishedLocaleLink";
+import NativeLink from "next/link";
+import { parityHref } from "@/lib/locale-route-map";
+import { getSiteInterface } from "@/lib/content/site-interface";
 import Image from "next/image";
 import { MapPin, Linkedin, Globe } from "lucide-react";
 import { Locale } from "@/lib/i18n";
@@ -39,8 +42,8 @@ const POPULAR_ARTICLES = {
     { href: "/ressources/blog/les-10-outils-pour-cfos-startup", title: "10 tools for startup CFOs" },
   ],
   es: [
-    { href: "/es/recursos/blog/cfo-externo-pymes-precio-2026", title: "Costo de CFO externalizado" },
-    { href: "/es/recursos/blog/daf-externalise-vs-daf-salarie", title: "CFO externalizado vs interno" },
+    { href: "/es/recursos/blog/cfo-externo-pymes-precio-2026", title: "Precio del CFO externo" },
+    { href: "/es/recursos/blog/daf-externalise-vs-daf-salarie", title: "CFO externo vs interno" },
     { href: "/ressources/blog/checklist-due-diligence-levee-de-fonds", title: "Due diligence y financiación" },
     { href: "/ressources/blog/daf-drh-externalises-synergie", title: "CFO y RR. HH.: sinergia" },
     { href: "/ressources/blog/les-10-outils-pour-cfos-startup", title: "10 herramientas para CFO" },
@@ -49,6 +52,7 @@ const POPULAR_ARTICLES = {
 
 export default function Footer({ locale }: { locale: Locale }) {
   const content = footerContent[locale];
+  const ui = getSiteInterface(locale);
   const nav = navigation[locale];
   // SEO audit 16 mai 2026 — `baseUrl` / `localePrefix` and the
   // `WPFooter` JSON-LD schema were removed. `WPFooter` is a WordPress-
@@ -89,7 +93,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               </div>
               <span className="text-white/70 text-xs">5/5 Trustfolio</span>
             </div>
-            {locale === "fr" && <p className="text-sm text-white/80 mb-4">Votre interlocuteur finance : <Link href={FINANCE_EXPERT.href} className="text-white underline underline-offset-4">{FINANCE_EXPERT.name}</Link></p>}
+            <p className="text-sm text-white/80 mb-4">{ui.financeContact} : <Link locale={locale} href={parityHref(FINANCE_EXPERT.href, locale)} className="text-white underline underline-offset-4">{FINANCE_EXPERT.name}</Link></p>
             {/* Company Legal Details — E-E-A-T trust signals.
                 Iter Advisors S.L. is registered in Spain (NIF B42960849);
                 Barcelona is the headquarters; areas served are listed separately. */}
@@ -118,15 +122,15 @@ export default function Footer({ locale }: { locale: Locale }) {
                 {serviceNav.title}
               </p>
               <ul className="space-y-1.5 sm:space-y-2.5">
-                {[...(locale === "fr" ? [{ text: "DAF externalisé", href: "/daf-externalise" }, { text: "Tarifs du DAF externalisé", href: "/daf-externalise/tarifs" }] : []), ...serviceNav.children].map((item) => (
+                {[{ text: locale === "fr" ? "DAF externalisé" : locale === "en" ? "Fractional CFO" : "CFO externo", href: parityHref("/daf-externalise", locale) }, { text: locale === "fr" ? "Tarifs du DAF externalisé" : locale === "en" ? "Fractional CFO fees" : "Precios del CFO externo", href: parityHref("/daf-externalise/tarifs", locale) }, ...serviceNav.children].map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2">
+                    <Link locale={locale} href={parityHref(item.href, locale)} className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2">
                       {item.text}
                     </Link>
                   </li>
                 ))}
               </ul>
-            {locale === "fr" && <nav aria-label="Direction RH" className="mt-5 text-xs text-white/80"><Link href="/drh-externalise" className="block py-1">Direction RH externalisée</Link><Link href="/drh-externalise/temps-partage" className="block py-1">Fonctionnement du temps partagé RH</Link></nav>}
+            <nav aria-label={locale === "fr" ? "Direction RH" : locale === "en" ? "HR leadership" : "Dirección de RR. HH."} className="mt-5 text-xs text-white/80"><Link locale={locale} href={parityHref("/drh-externalise", locale)} className="block py-1">{ui.hrOffer}</Link><Link locale={locale} href={parityHref("/drh-externalise/temps-partage", locale)} className="block py-1">{locale === "fr" ? "Fonctionnement du temps partagé RH" : locale === "en" ? "How part-time HR works" : "Cómo funciona RR. HH. a tiempo parcial"}</Link></nav>
             </div>
           )}
 
@@ -139,7 +143,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               <ul className="space-y-1.5 sm:space-y-2.5">
                 {resourceNav.children.map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2">
+                    <Link locale={locale} href={parityHref(item.href, locale)} className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2">
                       {item.text}
                     </Link>
                   </li>
@@ -149,23 +153,23 @@ export default function Footer({ locale }: { locale: Locale }) {
           )}
 
           {/* Fiscalité France-Espagne — cocon sémantique (FR uniquement) */}
-          {locale === "fr" && (
-            <div>
+          {(<div>
               <p className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
-                Fiscalité France-Espagne
+                {locale === "fr" ? "Fiscalité France-Espagne" : locale === "en" ? "France-Spain taxation" : "Fiscalidad Francia-España"}
               </p>
               <ul className="space-y-1.5 sm:space-y-2.5">
                 {[
-                  { text: "Guide complet", href: "/ressources/fiscalite-espagne-france" },
-                  { text: "Résidence fiscale Espagne", href: "/ressources/fiscalite/residence-fiscale-france-espagne" },
-                  { text: "Double imposition", href: "/ressources/fiscalite/double-imposition-france-espagne" },
-                  { text: "Impôt sur le revenu", href: "/ressources/fiscalite/impot-revenu-espagne" },
+                  { text: locale === "fr" ? "Guide complet" : locale === "en" ? "Complete guide" : "Guía completa", href: "/ressources/fiscalite-espagne-france" },
+                  { text: locale === "fr" ? "Résidence fiscale Espagne" : locale === "en" ? "Spanish tax residence" : "Residencia fiscal en España", href: "/ressources/fiscalite/residence-fiscale-france-espagne" },
+                  { text: locale === "fr" ? "Double imposition" : locale === "en" ? "Double taxation" : "Doble imposición", href: "/ressources/fiscalite/double-imposition-france-espagne" },
+                  { text: locale === "fr" ? "Impôt sur le revenu" : locale === "en" ? "Income tax" : "Impuesto sobre la renta", href: "/ressources/fiscalite/impot-revenu-espagne" },
                   { text: "Modelo 720", href: "/ressources/fiscalite/modelo-720" },
-                  { text: "Loi Beckham", href: "/ressources/fiscalite/beckham-law" },
+                  { text: locale === "fr" ? "Loi Beckham" : locale === "en" ? "Beckham Law" : "Ley Beckham", href: locale === "en" ? "/en/services/ley-beckham" : locale === "es" ? "/es/services/ley-beckham" : "/ressources/fiscalite/beckham-law" },
                 ].map((item) => (
                   <li key={item.href}>
                     <Link
-                      href={item.href}
+                      locale={locale}
+                      href={parityHref(item.href, locale)}
                       className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2"
                     >
                       {item.text}
@@ -183,7 +187,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             </p>
             <div className="space-y-2 sm:space-y-3">
               {content.locations.map((loc) => (
-                <Link key={loc.city} href={loc.href} className="flex items-start gap-2 group">
+                <Link locale={locale} key={loc.city} href={loc.href} className="flex items-start gap-2 group">
                   <MapPin size={12} className="text-iter-chartreuse mt-0.5 shrink-0 sm:w-4 sm:h-4" />
                   <div>
                     <span className="text-white/70 text-xs sm:text-sm block group-hover:text-iter-chartreuse transition-colors">{loc.city}</span>
@@ -195,7 +199,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             <div className="flex items-center gap-3 mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
               <a
                 href="https://www.linkedin.com/company/iter-advisors/"
-                aria-label="Iter Advisors sur LinkedIn"
+                aria-label={locale === "fr" ? "Iter Advisors sur LinkedIn" : locale === "en" ? "Iter Advisors on LinkedIn" : "Iter Advisors en LinkedIn"}
                 target="_blank"
                 rel="noopener noreferrer me"
                 className="inline-flex min-h-11 min-w-11 items-center gap-2 text-white/70 hover:text-iter-chartreuse transition-colors text-xs sm:text-sm"
@@ -215,14 +219,14 @@ export default function Footer({ locale }: { locale: Locale }) {
               {Object.entries(languageSwitcher).map(([lang, data]) => {
                 const localePath = locale === "fr" && lang === "fr" ? "/" : lang === "fr" ? "/" : `/${lang}`;
                 return (
-                  <Link
+                  <NativeLink
                     key={lang}
                     href={localePath}
                     className="flex min-h-11 items-center gap-2 py-2 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors"
                   >
                     <Globe size={12} className="sm:w-4 sm:h-4" />
                     <span>{data.label}</span>
-                  </Link>
+                  </NativeLink>
                 );
               })}
             </div>
@@ -236,7 +240,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               <ul className="space-y-1 mb-4">
                 {content.editorialLinks.filter(link => !resourceNav?.children?.some(item => item.href === link.href)).map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs hover:text-white transition-colors">
+                    <Link locale={locale} href={link.href} className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs hover:text-white transition-colors">
                       {link.text}
                     </Link>
                   </li>
@@ -248,7 +252,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               <ul className="space-y-1">
                 {content.legalLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs hover:text-white transition-colors">
+                    <Link locale={locale} href={link.href} className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs hover:text-white transition-colors">
                       {link.text}
                     </Link>
                   </li>
@@ -268,6 +272,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                 return (
                   <li key={article.href}>
                     <Link
+                      locale={locale}
                       href={articleHref}
                       className="inline-flex min-h-8 items-center py-1 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors line-clamp-2"
                     >
@@ -281,14 +286,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                 Fractional CFO startups page. The POPULAR_ARTICLES list above
                 hard-wires the /ressources/blog/ prefix, so this lives next to
                 it instead of inside. */}
-            {locale === "fr" && (
-              <Link
-                href="/fractional-cfo-startups"
-                className="text-white/70 text-xs hover:text-iter-chartreuse transition-colors mt-3 inline-block"
-              >
-                Fractional CFO startups →
-              </Link>
-            )}
+            <Link locale={locale} href={parityHref("/fractional-cfo-startups", locale)} className="text-white/70 text-xs hover:text-iter-chartreuse transition-colors mt-3 inline-block">{locale === "es" ? "CFO externo para startups" : "Fractional CFO startups"} →</Link>
           </div>
         </div>
 

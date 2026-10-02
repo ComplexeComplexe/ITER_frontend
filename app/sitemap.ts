@@ -1,3 +1,4 @@
+import { ALIGNED_PAGE_IDS, LOCALE_ALIGNMENT_DATE, alignedPaths } from "@/lib/content/locale-publication";
 import { DAF_PILLAR_MODIFIED } from "@/lib/content/daf-pillar";
 import { TAX_COMPARISON_MODIFIED } from "@/lib/content/tax-comparison";
 import type { MetadataRoute } from "next";
@@ -574,6 +575,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ressources/outils/logiciels-tresorerie",
     "/services/controle-de-gestion-externalise"
   ]);
+  // Replace the migrated clusters atomically: no proposed or duplicate URLs.
+  for (const sourcePath of ALIGNED_PAGE_IDS) {
+    const paths = alignedPaths(sourcePath)!;
+    const urls = new Set(Object.values(paths).map(path => `${BASE}${path}`));
+    const originals = entries.filter(item => urls.has(item.url));
+    for (let i = entries.length - 1; i >= 0; i--) if (urls.has(entries[i].url)) entries.splice(i, 1);
+    const alternates = { languages: { "fr-FR": `${BASE}${paths.fr}`, "en-GB": `${BASE}${paths.en}`, "es-ES": `${BASE}${paths.es}`, "x-default": `${BASE}${paths.fr}` } };
+    for (const locale of ["fr", "en", "es"] as const) {
+      const url = `${BASE}${paths[locale]}`;
+      entries.push({ url, lastModified: locale === "fr" ? originals.find(item => item.url === url)?.lastModified ?? D.service : LOCALE_ALIGNMENT_DATE, alternates });
+    }
+  }
   return entries.map(item => ({
     ...item,
     lastModified: latestRevision(PAGE_REVISIONS[item.url.slice(BASE.length) || "/"], item.lastModified, consistencyUpdates.has(item.url.slice(BASE.length)) ? "2026-09-06" : transactionalUpdates.has(item.url.slice(BASE.length)) || [...tools.filter(tool => !tool.logo).map(tool => `/ressources/outils/${tool.slug}`), "/daf-externalise/deep-tech", "/daf-externalise/industrie", "/daf-externalise/ecommerce", "/ressources/outils", "/ressources/blog/stack-financier-saas-series-a", "/daf-externalise-paris", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", "/ressources/cas-clients", "/en/ressources/cas-clients"].some(path => item.url === `${BASE}${path}`)

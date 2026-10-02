@@ -1,50 +1,18 @@
-import { Metadata } from "next";
-import DafPage from "@/components/pages/DafPage";
-import { buildStrapiMetadata } from "@/lib/metadata";
+import type { Metadata } from "next";
+import DafPillarPage from "@/components/pages/DafPillarPage";
+import { buildMetadata } from "@/lib/metadata";
 import { getCmsNavigation, getTeamMembers } from "@/lib/static-content";
-import { getDafContent } from "@/lib/content/daf";
+import { getDafPillarContent } from "@/lib/content/daf-pillar-locales";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = getDafContent("en");
-  return buildStrapiMetadata({
-    endpoint: "daf-externalise-page",
-    locale: "en",
-    path: "/en/fractional-cfo",
-    localizedPaths: {
-      fr: "/daf-externalise",
-      en: "/en/fractional-cfo",
-      es: "/es/externalizacion-daf",
-    },
-    fallbackTitle: t.meta.title,
-    fallbackDescription: t.meta.description,
+export function generateMetadata(): Metadata {
+  const t = getDafPillarContent("en");
+  return buildMetadata({
+    locale: "en", path: "/en/fractional-cfo", title: t.meta.title, description: t.meta.description,
+    localizedPaths: { fr: "/daf-externalise", en: "/en/fractional-cfo", es: "/es/externalizacion-daf" },
   });
 }
 
-export default async function FractionalCFOPage() {
-  const [cmsNavigation, teamMembers] = await Promise.all([
-    getCmsNavigation("en"),
-    getTeamMembers("en"),
-  ]);
-  const t = getDafContent("en");
-
-  // Structured answers use the same content as the visible FAQ.
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: t.faq.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
-  };
-
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <DafPage locale="en" cmsNavigation={cmsNavigation} teamMembers={teamMembers} />
-    </>
-  );
+export default async function Page() {
+  const [cmsNavigation, teamMembers] = await Promise.all([getCmsNavigation("en"), getTeamMembers("en")]);
+  return <DafPillarPage locale="en" cmsNavigation={cmsNavigation} teamMembers={teamMembers} />;
 }

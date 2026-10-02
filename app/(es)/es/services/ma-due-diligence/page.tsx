@@ -1,21 +1,10 @@
-import { Metadata } from "next";
-import MaDueDiligencePage from "@/components/pages/MaDueDiligencePage";
+import type { Metadata } from "next";
+import FinanceServicePage from "@/components/finance/FinanceServicePage";
+import { getFinanceService } from "@/lib/content/finance-service-locales";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/static-content";
-import { getMaDueDiligenceContent } from "@/lib/content/ma-due-diligence";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = getMaDueDiligenceContent("es");
-  return buildMetadata({
-    locale: "es",
-    path: "/services/ma-due-diligence",
-    title: t.meta.title,
-    description: t.meta.description,
-  });
+export function generateMetadata(): Metadata {
+ const service = getFinanceService("due-diligence", "es");
+ return buildMetadata({ locale: "es", path: "/es/services/ma-due-diligence", title: service.title, description: service.description, localizedPaths: {"fr": "/services/ma-due-diligence", "en": "/en/services/ma-due-diligence", "es": "/es/services/ma-due-diligence"} });
 }
-
-export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("es");
-  const content = getMaDueDiligenceContent("es");
-  return <MaDueDiligencePage locale="es" content={content} cmsNavigation={cmsNavigation} />;
-}
+export default function Page() { return <FinanceServicePage locale="es" service={getFinanceService("due-diligence", "es")} />; }

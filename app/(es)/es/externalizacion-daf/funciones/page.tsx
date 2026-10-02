@@ -1,27 +1,18 @@
-import { Metadata } from "next";
 import DafSubPage from "@/components/pages/DafSubPage";
-import { buildStrapiMetadata } from "@/lib/metadata";
-import { getDafSubContent } from "@/lib/content/daf-sub";
+import { buildMetadata } from "@/lib/metadata";
+import { getDafReferenceContent } from "@/lib/content/daf-reference-locales";
 import { getCmsNavigation } from "@/lib/static-content";
+import { buildDafSubFaqSchema } from "@/lib/daf-sub-schema";
+import { alignedPaths } from "@/lib/content/locale-publication";
 
-const content = getDafSubContent("es", "metier")!;
-
-export async function generateMetadata(): Promise<Metadata> {
-  return buildStrapiMetadata({
-    endpoint: "daf-metier-page",
-    locale: "es",
-    path: "/externalizacion-daf/funciones",
-    localizedPaths: {
-      fr: "/daf-externalise/metier",
-      en: "/fractional-cfo/role",
-      es: "/externalizacion-daf/funciones",
-    },
-    fallbackTitle: "Director financiero: funciones y perfil 2026",
-    fallbackDescription: "Ficha de puesto del Director Administrativo y Financiero (DAF): funciones, misiones, competencias clave, salario y trayectoria profesional 2026.",
-  });
-}
-
+const locale = "es";
+const content = getDafReferenceContent(locale, "metier");
+const paths = alignedPaths("/daf-externalise/metier")!;
+export const metadata = buildMetadata({ locale, path: paths[locale], title: content.meta.title, description: content.meta.description, localizedPaths: paths });
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("es");
-  return <DafSubPage locale="es" content={content} cmsNavigation={cmsNavigation} />;
+  const schema = buildDafSubFaqSchema(content, locale);
+  return <>
+    {schema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />}
+    <DafSubPage locale={locale} content={content} cmsNavigation={await getCmsNavigation(locale)} contactContext="daf" heroImage={{ src: "/images/stock/metier-daf.png", alt: "Un director financiero consulta sus cuadros de mando" }} />
+  </>;
 }

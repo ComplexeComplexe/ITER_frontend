@@ -1,0 +1,128 @@
+/* Shared design contract for the French, English and Spanish site.
+ * Apply semantic classes to templates, never URL-specific overrides.
+ * Reading columns may be narrow; all outer page gutters share one grid. */
+html:is([lang="fr"], [lang="en"], [lang="es"]) {
+  --site-ink: #20202b;
+  --site-muted: #5b5b6b;
+  --site-violet: #4320c5;
+  --site-violet-hover: #331795;
+  --site-accent: #d8ef65;
+  --site-paper: #f7f7fa;
+  --site-tint: #f0edf9;
+  --site-border: #e0dfe8;
+  --site-radius: 16px;
+  --site-button-radius: 10px;
+  --site-width: 1184px;
+  --site-gutter: clamp(20px, 4vw, 40px);
+  --site-section-space: clamp(48px, 6vw, 80px);
+  --site-h1: clamp(2.125rem, 4.4vw, 3.5rem);
+  --site-h2: clamp(1.75rem, 3vw, 2.25rem);
+  --site-h3: 1.25rem;
+  --color-iter-violet: var(--site-violet);
+  --color-primary: var(--site-violet);
+  --color-iter-chartreuse: var(--site-accent);
+  --color-iter-dark: var(--site-ink);
+  --color-foreground: var(--site-ink);
+  --color-muted-foreground: var(--site-muted);
+  --color-background: #fff;
+  --color-border: var(--site-border);
+}
+
+html:is([lang="fr"], [lang="en"], [lang="es"]) main { color: var(--site-ink); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main h1 { font-family: var(--font-heading); font-size: var(--site-h1); font-weight: 600; line-height: 1.12; letter-spacing: -.04em; text-wrap: balance; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main h2 { font-family: var(--font-heading); font-size: var(--site-h2); font-weight: 600; line-height: 1.22; letter-spacing: -.025em; text-wrap: balance; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main h3 { font-family: var(--font-heading); font-size: var(--site-h3); font-weight: 600; line-height: 1.4; letter-spacing: -.015em; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main :is(h1,h2,h3)[id], html:is([lang="fr"], [lang="en"], [lang="es"]) main [id] { scroll-margin-top: 112px; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main :is(a,button,input,select,textarea,summary):focus-visible { outline: 3px solid var(--site-violet); outline-offset: 4px; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-container, html:is([lang="fr"], [lang="en"], [lang="es"]) .container { width: 100%; max-width: calc(var(--site-width) + 2 * var(--site-gutter)); padding-inline: var(--site-gutter); margin-inline: auto; }
+/* Preserve the intentional reading column inside the same page grid. */
+html:is([lang="fr"], [lang="en"], [lang="es"]) .container.max-w-3xl { max-width: calc(768px + 2 * var(--site-gutter)); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .container.max-w-4xl { max-width: calc(896px + 2 * var(--site-gutter)); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-section { padding-block: var(--site-section-space); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-hero + section:not(.site-section):not(.site-hero) { padding-top: var(--site-section-space); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-copy { font-size: 1rem; line-height: 1.75; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-card { border-radius: var(--site-radius); border-color: var(--site-border); box-shadow: none; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-hero { padding-top: 128px; padding-bottom: 56px; background: var(--site-paper); background-image: none; border-bottom: 1px solid var(--site-border); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-hero--inverse { background: var(--site-violet); color: white; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-hero nav:is(.site-breadcrumb, [aria-label="Breadcrumb"]) { margin-bottom: 32px; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) nav:is(.site-breadcrumb, [aria-label="Breadcrumb"]) { font-size: .8125rem; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) nav:is(.site-breadcrumb, [aria-label="Breadcrumb"]) :is(a,span) { color: var(--site-muted); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-hero--inverse nav:is(.site-breadcrumb, [aria-label="Breadcrumb"]) :is(a,span) { color: #eeeafa; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-eyebrow { display: block; color: var(--site-violet); font-family: var(--font-body); font-size: .75rem; font-weight: 650; line-height: 1.5; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 16px; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-hero-grid { display: grid; grid-template-columns: minmax(0,1.6fr) minmax(280px,1fr); gap: 64px; align-items: start; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-service-hero h1 { max-width: 22ch; margin: 0; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-service-hero .site-lead { font-size: clamp(1.125rem, 1.8vw, 1.375rem); font-weight: 400; line-height: 1.6; margin: 24px 0 0; max-width: 56ch; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-service-hero .site-intro { color: var(--site-muted); font-size: 1rem; line-height: 1.75; margin: 20px 0 0; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 28px; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-button { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 48px; padding: 12px 22px; border-radius: var(--site-button-radius); font-family: var(--font-body); font-size: .9375rem; font-weight: 600; line-height: 1.5; text-decoration: none; text-align: center; transition: background-color .15s, border-color .15s; box-shadow: none; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-button-primary { color: #fff; background: var(--site-violet); border: 1px solid var(--site-violet); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-button-primary:hover { color: #fff; background: var(--site-violet-hover); border-color: var(--site-violet-hover); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-button-secondary { color: var(--site-violet); background: #fff; border: 1px solid #bcb1dd; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-button-secondary:hover { background: var(--site-tint); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-hero--inverse .site-button-primary, html:is([lang="fr"], [lang="en"], [lang="es"]) .site-contact-band .site-button-primary { background: var(--site-accent); color: var(--site-ink); border-color: var(--site-accent); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-hero--inverse .site-button-secondary { color: #fff; background: transparent; border-color: #bdb1ed; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-brief { padding: 28px; background: white; border: 1px solid var(--site-border); border-top: 3px solid var(--site-violet); border-radius: var(--site-radius); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-brief dl { margin: 0; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-brief dl > div { padding: 18px 0; border-bottom: 1px solid var(--site-border); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-brief dt { font-size: .8125rem; color: var(--site-muted); margin-bottom: 6px; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-brief dd { font-size: 1rem; font-weight: 600; line-height: 1.5; margin: 0; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-inline-link { color: var(--site-violet); text-decoration: underline; text-underline-offset: 4px; font-size: .9375rem; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-brief .site-inline-link { display: flex; justify-content: space-between; margin-top: 22px; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-section-nav { background: #fff; border-bottom: 1px solid var(--site-border); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-section-nav > div { display: flex; flex-wrap: wrap; gap: 8px 28px; padding-block: 16px; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-section-nav a { color: var(--site-muted); font-size: .875rem; padding-block: 8px; text-decoration: none; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-section-nav a:hover { color: var(--site-violet); text-decoration: underline; text-underline-offset: 5px; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-contact-band { background: var(--site-ink); color: white; padding-block: var(--site-section-space); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-contact-band .site-cta-title { color: white; font-family: var(--font-heading); font-size: var(--site-h2); line-height: 1.22; letter-spacing: -.025em; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-contact-band .site-cta-copy { color: #e3e1eb; font-size: 1.0625rem; line-height: 1.75; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-contact-band > .site-decoration { display: none; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .prose { --tw-prose-body: var(--site-ink); --tw-prose-headings: var(--site-ink); --tw-prose-links: var(--site-violet); font-size: 1rem; line-height: 1.8; }
+@media (max-width: 900px) {
+ html:is([lang="fr"], [lang="en"], [lang="es"]) .site-hero-grid { grid-template-columns: minmax(0,1fr); gap: 32px; }
+ html:is([lang="fr"], [lang="en"], [lang="es"]) .site-hero { padding-top: 104px; padding-bottom: 40px; }
+}
+@media (max-width: 480px) {
+ html:is([lang="fr"], [lang="en"], [lang="es"]) .site-actions { align-items: stretch; flex-direction: column; }
+ html:is([lang="fr"], [lang="en"], [lang="es"]) .site-actions .site-button { width: 100%; }
+ html:is([lang="fr"], [lang="en"], [lang="es"]) .site-brief { padding: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { html:is([lang="fr"], [lang="en"], [lang="es"]) { scroll-behavior: auto; } html:is([lang="fr"], [lang="en"], [lang="es"]) .site-button { transition: none; } }
+
+/* Editorial breadcrumb already reserves space for the fixed header. */
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-hero.site-hero-editorial { padding-top: 24px; }
+
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-header-contact { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--site-button-radius); box-shadow: none; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-hero:not(.site-hero--inverse) .text-iter-chartreuse { color: var(--site-violet); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main :is(input:not([type="checkbox"]):not([type="radio"]),select,textarea) { border-radius: var(--site-button-radius); font-family: var(--font-body); font-size: 1rem; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main :is(input:not([type="checkbox"]):not([type="radio"]),select) { min-height: 48px; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main details { border-color: var(--site-border); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main summary { min-height: 52px; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main summary h3 { font-size: 1.0625rem; line-height: 1.5; }
+
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-hero--inverse form .site-button-primary { background: var(--site-violet); color: white; border-color: var(--site-violet); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main #faq details { border: 0; border-bottom: 1px solid var(--site-border); border-radius: 0; padding: 0; background: transparent; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main #faq summary { padding: 20px 0; gap: 20px; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main #faq details > :not(summary) { padding: 0 0 24px; margin: 0; font-size: 1rem; line-height: 1.75; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main th { background: var(--site-paper); color: var(--site-ink); font-family: var(--font-body); font-size: .875rem; font-weight: 600; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) main :is(th,td) { border-color: var(--site-border); }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .site-expert-compact p { font-size: .8125rem; line-height: 1.5; margin: 0; }
+
+/* Financial formulas remain readable without widening the mobile page. */
+html:is([lang="fr"], [lang="en"], [lang="es"]) .prose-iter-blog pre { max-width: 100%; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--site-paper); border: 1px solid var(--site-border); border-radius: var(--site-radius); padding: 20px; margin-block: 24px; }
+
+/* Finance leads; RH is an explicit, secondary route. */
+html:is([lang="fr"], [lang="en"], [lang="es"]) .home-hero-layout { display:grid; grid-template-columns: minmax(0,2fr) minmax(250px,1fr); gap:48px; align-items:center; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .home-rh-card { padding:24px; background:#f4f1ff; border:1px solid #d8cff8; border-radius:var(--site-radius,16px); color:#2b2148; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .home-rh-card h2 { color:#2b2148; font-size:23px; line-height:1.2; margin:0; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .home-rh-card p { color:#554970; font-size:15px; margin:12px 0; }
+html:is([lang="fr"], [lang="en"], [lang="es"]) .home-rh-card a { color:#4323b5; display:inline-flex; align-items:center; gap:8px; min-height:44px; font-size:14px; font-weight:600; text-decoration:underline; text-underline-offset:4px; }
+@media(max-width:767px) {
+ html:is([lang="fr"], [lang="en"], [lang="es"]) .home-finance-first.site-hero { padding-top:96px; padding-bottom:32px; }
+ html:is([lang="fr"], [lang="en"], [lang="es"]) .home-hero-layout { display:flex; flex-direction:column; gap:20px; align-items:stretch; }
+ html:is([lang="fr"], [lang="en"], [lang="es"]) .home-finance-first h1 { font-size:32px; line-height:1.1; }
+ html:is([lang="fr"], [lang="en"], [lang="es"]) .home-hero-layout > div > p { margin-top:16px; font-size:16px; line-height:1.45; }
+ html:is([lang="fr"], [lang="en"], [lang="es"]) .home-hero-layout > div > div { margin-top:18px; gap:10px; }
+ html:is([lang="fr"], [lang="en"], [lang="es"]) .home-rh-card { padding:12px 16px; }
+ html:is([lang="fr"], [lang="en"], [lang="es"]) .home-rh-card h2 { font-size:17px; line-height:1.25; }
+ html:is([lang="fr"], [lang="en"], [lang="es"]) .home-rh-card p { display:none; }
+}

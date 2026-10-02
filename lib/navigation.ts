@@ -1,3 +1,4 @@
+import { parityHref } from "./locale-route-map";
 import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 import { Locale } from "./i18n";
 
@@ -75,97 +76,25 @@ const navFr: NavItem[] = [
   { title: "Contact", href: "/contact" },
 ];
 
-const navEn: NavItem[] = [
-  {
-    title: "Expertise",
-    href: "/en/fractional-cfo",
-    children: [
-      { text: "Financial Direction (CFO)", href: "/en/fractional-cfo/role" },
-      { text: "Human Resources (HR)", href: "/en/hr-outsourcing" },
-      { text: "M&A & Fundraising", href: "/en/services/fund-raising-support" },
-    ],
+const navigationLabels = {
+  en: {
+    titles: ["Fractional CFO", "Finance Services", "Part-time HR", "Resources", "The Firm", "Contact"],
+    children: [["Finance leadership (CFO)", "M&A and fundraising"], ["Part-time CFO", "Interim CFO", "Management accounting", "Cash flow forecasting", "Accounting coordination"], [], ["Tools", "AI and Finance", "Blog and News", "Case studies", "Glossary", "The CFO role"], ["Our team", "Our clients", "Careers"], []],
+    editorial: ["Finance glossary", "The CFO role", "Finance tools", "AI and Finance", "External HR leadership", "Our clients", "Careers"],
   },
-  {
-    title: "Finance Services",
-    href: "/en/services",
-    children: [
-      { text: "Fractional CFO", href: "/en/fractional-cfo/shared-time" },
-      { text: "Transitional CFO", href: "/en/fractional-cfo/transition" },
-      { text: "Management Control", href: "/en/services/outsourced-management-control" },
-      { text: "Cash Flow Forecast", href: "/en/services/cash-flow-forecast" },
-      { text: "Outsourced Accounting", href: "/en/services/outsource-your-accounting" },
-    ],
+  es: {
+    titles: ["CFO externo", "Servicios financieros", "RR. HH. a tiempo parcial", "Recursos", "La firma", "Contacto"],
+    children: [["Dirección financiera (CFO)", "M&A y financiación"], ["CFO a tiempo parcial", "CFO de transición", "Control de gestión externo", "Previsión de tesorería", "Coordinación contable"], [], ["Herramientas", "IA y Finanzas", "Blog y Noticias", "Casos de éxito", "Glosario", "Funciones del CFO"], ["Nuestro equipo", "Nuestros clientes", "Empleo"], []],
+    editorial: ["Glosario financiero", "Funciones del CFO", "Herramientas financieras", "IA y Finanzas", "Dirección externa de RR. HH.", "Nuestros clientes", "Empleo"],
   },
-  {
-    title: "Resources",
-    href: "/en/ressources",
-    children: [
-      { text: "Tools", href: "/en/ressources/tools" },
-      { text: "Blog & News", href: "/en/ressources/blog" },
-      { text: "Case Studies", href: "/en/ressources/cas-clients" },
-      { text: "Glossary", href: "/en/ressources/glossaire" },
-    ],
-  },
-  {
-    title: "About",
-    href: "/en/about",
-    children: [
-      { text: "Our Team", href: "/en/about#equipe" },
-      { text: "Our Clients", href: "/en/clients" },
-      { text: "Careers", href: "/en/jobs" },
-    ],
-  },
-  { title: "Contact", href: "/en/contact" },
-];
-
-const navEs: NavItem[] = [
-  {
-    title: "Especialidades",
-    href: "/es/externalizacion-daf",
-    children: [
-      { text: "Dirección Financiera (CFO)", href: "/es/externalizacion-daf/funciones" },
-      { text: "Recursos Humanos (RRHH)", href: "/es/externalizacion-rrhh" },
-      { text: "M&A y Financiación", href: "/es/services/soporte-financiacion" },
-    ],
-  },
-  {
-    title: "Servicios Financieros",
-    href: "/es/services",
-    children: [
-      { text: "CFO a tiempo compartido", href: "/es/externalizacion-daf/tiempo-compartido" },
-      { text: "CFO de transición", href: "/es/externalizacion-daf/transicion" },
-      { text: "Control de gestión", href: "/es/services/control-gestion-externalizado" },
-      { text: "Previsión de tesorería", href: "/es/services/prevision-tesoreria" },
-      { text: "Contabilidad externalizada", href: "/es/services/externalizar-contabilidad" },
-    ],
-  },
-  {
-    title: "Recursos",
-    href: "/es/recursos",
-    children: [
-      { text: "Herramientas", href: "/es/recursos/herramientas" },
-      { text: "Blog & Actualidades", href: "/es/recursos/blog" },
-      { text: "Casos prácticos", href: "/es/recursos/casos-de-exito" },
-      { text: "Glosario", href: "/es/recursos/glosario" },
-    ],
-  },
-  {
-    title: "La Empresa",
-    href: "/es/quienes-somos",
-    children: [
-      { text: "Nuestro equipo", href: "/es/quienes-somos#equipo" },
-      { text: "Nuestros clientes", href: "/es/clientes" },
-      { text: "Carreras", href: "/es/jobs" },
-    ],
-  },
-  { title: "Contacto", href: "/es/contact" },
-];
-
-export const navigation: Record<Locale, NavItem[]> = {
-  fr: navFr,
-  en: navEn,
-  es: navEs,
 };
+function localizeNavigation(locale: "en" | "es"): NavItem[] {
+  const t = navigationLabels[locale];
+  return navFr.map((item, i) => ({ ...item, title: t.titles[i], href: parityHref(item.href, locale),
+    ...(item.children ? { children: item.children.map((child, j) => ({ ...child, text: t.children[i][j], href: parityHref(child.href, locale) })) } : {}),
+  }));
+}
+export const navigation: Record<Locale, NavItem[]> = { fr: navFr, en: localizeNavigation("en"), es: localizeNavigation("es") };
 
 export const footerContent: Record<Locale, FooterContent> = {
   fr: {
@@ -258,6 +187,10 @@ export const footerContent: Record<Locale, FooterContent> = {
     ],
   },
 };
+
+for (const locale of ["en", "es"] as const) {
+  footerContent[locale].editorialLinks = footerContent.fr.editorialLinks.map((link, i) => ({ text: navigationLabels[locale].editorial[i], href: parityHref(link.href, locale) }));
+}
 
 export const languageSwitcher: Record<Locale, { label: string; flag: string }> = {
   fr: { label: "Français", flag: "fr" },

@@ -1,24 +1,18 @@
-import { getDafContent } from "@/lib/content/daf";
-import { Metadata } from "next";
-import DafPage from "@/components/pages/DafPage";
-import { buildStrapiMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/static-content";
+import type { Metadata } from "next";
+import DafPillarPage from "@/components/pages/DafPillarPage";
+import { buildMetadata } from "@/lib/metadata";
+import { getCmsNavigation, getTeamMembers } from "@/lib/static-content";
+import { getDafPillarContent } from "@/lib/content/daf-pillar-locales";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const content = getDafContent("es");
-  return buildStrapiMetadata({
-    endpoint: "daf-externalise-page",
-    locale: "es",
-    path: "/externalizacion-daf",
-    // SEO-AUD-0824 §2 — le slug anglais du cluster DAF est `fractional-cfo`
-    // depuis HARMO-01 ; `daf-outsourcing` ne subsiste que comme redirection.
-    // Les chemins sont désormais déduits par getLocalizedPath.
-    fallbackTitle: content.meta.title,
-    fallbackDescription: content.meta.description,
+export function generateMetadata(): Metadata {
+  const t = getDafPillarContent("es");
+  return buildMetadata({
+    locale: "es", path: "/es/externalizacion-daf", title: t.meta.title, description: t.meta.description,
+    localizedPaths: { fr: "/daf-externalise", en: "/en/fractional-cfo", es: "/es/externalizacion-daf" },
   });
 }
 
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("es");
-  return <DafPage locale="es" cmsNavigation={cmsNavigation} />;
+  const [cmsNavigation, teamMembers] = await Promise.all([getCmsNavigation("es"), getTeamMembers("es")]);
+  return <DafPillarPage locale="es" cmsNavigation={cmsNavigation} teamMembers={teamMembers} />;
 }

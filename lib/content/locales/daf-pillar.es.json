@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "title": "CFO externo para pymes y startups | Iter Advisors",
+    "description": "CFO externo para pymes y startups: tesorería, reporting y dirección financiera con un interlocutor dedicado. Conozca el alcance, los entregables y los precios."
+  },
+  "breadcrumbLabel": "CFO externo",
+  "hero": {
+    "h1": "CFO externo para pymes y startups",
+    "lead": "Gestione su tesorería, sus márgenes y su financiación con un director financiero sénior dedicado, sin contratarlo a tiempo completo.",
+    "intro": "Un CFO externo dirige las finanzas de su empresa a tiempo parcial. Convierte los datos contables y operativos en previsiones, decisiones y acciones acordadas con usted. Director financiero externo describe la función; a tiempo parcial indica la dedicación. Fractional CFO es la denominación habitual en inglés.",
+    "landmarks": [
+      {
+        "label": "Presupuesto mensual",
+        "value": "3.000 a 8.000 € sin IVA"
+      },
+      {
+        "label": "Inicio orientativo",
+        "value": "8 a 15 días"
+      },
+      {
+        "label": "Compromiso",
+        "value": "Sin permanencia mínima; preaviso de 30 días"
+      }
+    ],
+    "proofs": [
+      "85 empresas acompañadas",
+      "Equipos en París y Barcelona"
+    ],
+    "cta": "Hablar de mi necesidad"
+  },
+  "nav": [
+    {
+      "id": "missions",
+      "label": "Entregables"
+    },
+    {
+      "id": "preuves",
+      "label": "Casos de clientes"
+    },
+    {
+      "id": "methode",
+      "label": "Cómo trabajamos"
+    },
+    {
+      "id": "tarifs",
+      "label": "Precios"
+    },
+    {
+      "id": "faq",
+      "label": "Preguntas"
+    }
+  ],
+  "needs": {
+    "heading": "¿Cuándo recurrir a un CFO externo?",
+    "intro": "La necesidad aparece cuando las decisiones se vuelven más complejas que la información disponible para tomarlas. Puede tratarse de una pyme rentable, una empresa familiar o una startup: preparar una ronda de financiación no es un requisito. Tres situaciones ayudan a identificar las prioridades.",
+    "items": [
+      {
+        "title": "Recuperar la visibilidad financiera",
+        "text": "Su cartera de pedidos está llena, pero la tesorería fluctúa sin una explicación clara. Conoce la facturación, pero no tanto el margen por cliente o actividad. La prioridad es conciliar las cifras, anticipar los cobros y entender qué consume caja antes de contratar o invertir."
+      },
+      {
+        "title": "Organizar una empresa en crecimiento",
+        "text": "El dirigente centraliza las hojas de cálculo, los equipos utilizan versiones distintas y el reporting llega demasiado tarde. El trabajo se centra en las responsabilidades, el calendario de cierre y los indicadores útiles. El CFO colabora con las personas del equipo para organizar una función financiera adaptada a su empresa."
+      },
+      {
+        "title": "Preparar financiación o una operación",
+        "text": "Necesita presentar un proyecto a un banco, preparar una ronda o estudiar una adquisición. El trabajo consiste en explicitar las hipótesis, probar escenarios y organizar la documentación solicitada. Estos proyectos tienen un alcance definido, separado del seguimiento mensual cuando sea necesario."
+      }
+    ],
+    "note": "Si solo necesita llevar la contabilidad, o requiere un director financiero a tiempo completo, compare la dedicación parcial con otras soluciones antes de decidir."
+  },
+  "missions": {
+    "heading": "Qué recibe y qué decisiones permite preparar",
+    "intro": "El alcance se acuerda al inicio: no todas las misiones incluyen todos los entregables. El trabajo recurrente suele combinar previsiones, reporting y una revisión con el dirigente. Los trabajos de financiación, transformación o adquisición se añaden según su situación.",
+    "items": [
+      {
+        "title": "Anticipar la tesorería",
+        "deliverable": "Una previsión a 13 semanas con cobros, pagos, vencimientos de deuda e hipótesis que conviene seguir. La frecuencia de actualización se acuerda según la volatilidad de la actividad y la disponibilidad de datos.",
+        "decision": "Identificar una posible tensión de caja, preparar una conversación con el banco o decidir cuándo realizar un gasto. La previsión distingue los flujos conocidos de las hipótesis; no garantiza los cobros.",
+        "href": "/services/previsionnel-tresorerie",
+        "linkLabel": "Previsión de tesorería"
+      },
+      {
+        "title": "Entender la rentabilidad",
+        "deliverable": "Un reporting mensual sobre resultados, tesorería e indicadores pertinentes, con un análisis de las desviaciones presupuestarias. Según su modelo, el análisis puede abarcar una actividad, un canal, una entidad o un proyecto.",
+        "decision": "Detectar un margen que se deteriora, revisar un precio o reconsiderar un gasto. Se señalan las cifras provisionales y los límites de comparación para evitar decisiones basadas en información incompleta.",
+        "href": "/services/controle-de-gestion-externalise",
+        "linkLabel": "Control de gestión y reporting"
+      },
+      {
+        "title": "Construir un plan financiable",
+        "deliverable": "Un presupuesto o plan de negocio con escenarios y, si se acuerda, un expediente de financiación. Las necesidades de caja se relacionan con las hipótesis de ventas, contratación e inversión.",
+        "decision": "Comparar posibles trayectorias y preparar las preguntas de bancos o inversores. Obtener financiación también depende del proyecto y de sus decisiones; el CFO no puede prometer el resultado.",
+        "href": "/services/accompagnement-levee-de-fond",
+        "linkLabel": "Preparar una ronda de financiación"
+      }
+    ],
+    "example": {
+      "heading": "Una revisión mensual orientada a la acción",
+      "intro": "Este esquema ilustra una revisión sin utilizar datos de clientes. Cada observación se vincula a una decisión y se comprueba su avance en la siguiente reunión.",
+      "rows": [
+        [
+          "Cobros retrasados",
+          "¿Qué facturas requieren seguimiento?",
+          "Asignar un responsable y una fecha"
+        ],
+        [
+          "Margen inferior al presupuesto",
+          "¿Qué coste o canal explica la desviación?",
+          "Análisis específico antes de decidir"
+        ],
+        [
+          "Inversión prevista",
+          "¿Qué efecto tiene sobre la caja?",
+          "Escenario que debe aprobar el dirigente"
+        ]
+      ]
+    }
+  },
+  "cases": {
+    "heading": "Dos misiones para entender nuestra intervención",
+    "intro": "Estos ejemplos describen trabajos documentados. Ilustran dos necesidades distintas; no anticipan el calendario ni los resultados de una nueva misión.",
+    "items": [
+      {
+        "company": "Opti Digital",
+        "title": "Organizar la función financiera a largo plazo",
+        "text": "En esta pyme adtech, el acompañamiento combina reporting mensual, procedimientos de cierre, migración del ERP y financiación no dilutiva. También incluye la coordinación de asuntos fiscales y jurídicos con asesores externos. Ilustra cómo la gestión financiera recurrente puede combinarse con proyectos de organización.",
+        "takeaway": "Para el dirigente: una función financiera organizada y un interlocutor que conecta los distintos trabajos. Aquí no se anuncia ningún importe de financiación ni aumento de productividad.",
+        "href": "/ressources/cas-clients/opti-digital-structuration-financement",
+        "linkLabel": "Leer la misión de Opti Digital"
+      },
+      {
+        "company": "SolarMente",
+        "title": "Preparar una ronda y una adquisición",
+        "text": "El caso documentado abarca el periodo 2022 a 2024: un modelo financiero con varios escenarios, una data room, reporting para el consejo y procedimientos de control de tesorería. Incluye la integración financiera de Eltex tras su adquisición en 2024, en el contexto de crecimiento de esta cleantech.",
+        "takeaway": "Para el dirigente: organizar la información y las hipótesis necesarias para una operación. La dirección, los inversores y los asesores también contribuyeron; el éxito no puede atribuirse únicamente al acompañamiento de Iter.",
+        "href": "/ressources/cas-clients/solarmente-serie-b-cleantech",
+        "linkLabel": "Leer la misión de SolarMente"
+      }
+    ],
+    "quote": {
+      "text": "Aprecio especialmente su capacidad para cuestionar nuestras hipótesis y orientar nuestras decisiones estratégicas.",
+      "author": "Magali Quentel-Reme",
+      "role": "CEO y cofundadora de Opti Digital",
+      "sourceUrl": "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
+      "sourceLabel": "Extracto traducido del testimonio publicado en Trustfolio el 12 de noviembre de 2025"
+    }
+  },
+  "method": {
+    "heading": "¿Cómo funciona la colaboración?",
+    "intro": "El plazo orientativo de inicio es de 8 a 15 días, sujeto a la confirmación del perfil y del alcance. La puesta en marcha sigue sus prioridades y el estado de sus datos, sin imponer el mismo programa de 90 días a todas las empresas.",
+    "steps": [
+      {
+        "title": "Acordar las responsabilidades",
+        "text": "Revisamos sus herramientas, los datos disponibles y las decisiones que hay que preparar. El alcance escrito define los entregables, su frecuencia, los interlocutores y el trabajo no incluido. Su equipo identifica quién proporciona la información; se aclara el papel de la asesoría contable para evitar duplicidades."
+      },
+      {
+        "title": "Organizar un mes de trabajo",
+        "text": "El ritmo combina la recopilación y conciliación de datos, la preparación de análisis y una revisión con el dirigente. Las acciones acordadas tienen un responsable y una fecha. El trabajo puede repartirse durante el mes: un número orientativo de días no significa que todo ocurra en una sola reunión."
+      },
+      {
+        "title": "Ajustar el funcionamiento",
+        "text": "Las revisiones permiten reconsiderar las hipótesis y las prioridades. Una nueva entidad, una adquisición o un cambio de herramientas puede requerir una modificación contractual. Los canales de contacto, las urgencias y la cobertura de ausencias se acuerdan al definir el alcance, según la disponibilidad que necesita su organización."
+      }
+    ],
+    "note": "Prevea un interlocutor interno, los accesos adecuados y tiempo para validar las hipótesis. La preparación depende de la calidad de los datos y se estima conjuntamente; no prometemos el mismo número de horas para todas las empresas.",
+    "cities": "Nuestros equipos están en París y Barcelona. El trabajo presencial y a distancia se acuerda al definir la misión. En Toulouse, trabajamos a distancia con desplazamientos según lo acordado."
+  },
+  "pricing": {
+    "heading": "¿Qué presupuesto prever y qué incluye la cuota?",
+    "intro": "Las misiones recurrentes de Iter van de 3.000 a 8.000 € sin IVA al mes. La cuota cubre un alcance de trabajo y un nivel de experiencia definidos en la propuesta. Los días indicativos de los paquetes no constituyen una bolsa de horas.",
+    "paragraphs": [
+      "El presupuesto depende de los entregables, el número de entidades, la calidad de los datos y la complejidad de la organización. Una empresa que ya tiene reporting necesita un trabajo distinto de otra que está reconstruyendo su función financiera. Compare conjuntamente la producción, el análisis y la supervisión al revisar propuestas.",
+      "El paquete Essentiel incluye reporting mensual, una previsión de tesorería y una revisión financiera. Los demás paquetes amplían el alcance según las necesidades. Los proyectos puntuales y las misiones de dirección financiera interina se presupuestan por separado; una ronda o una adquisición no están incluidas automáticamente en cada misión recurrente.",
+      "No hay permanencia mínima y el preaviso para finalizar la misión es de 30 días. No se factura trabajo fuera del alcance acordado sin una modificación contractual firmada. Antes de comprometerse, aclare lo incluido, lo que debe aportar su equipo y las condiciones de revisión. Comparar solo una cuota mensual con un salario a tiempo completo no basta: la disponibilidad y las responsabilidades son distintas."
+    ],
+    "link": {
+      "href": "/daf-externalise/tarifs",
+      "label": "Consultar los paquetes y los precios detallados"
+    }
+  },
+  "experts": {
+    "heading": "¿Quién dirige su misión en Iter?",
+    "intro": "Sébastien Doat, socio fundador y CFO externo, es su interlocutor financiero. El perfil asignado depende de la necesidad: CFO o Finance Manager sénior, con el apoyo previsto en el paquete. La primera conversación también comprueba esa adecuación, en lugar de proponer la misma experiencia para todos los trabajos.",
+    "paragraphs": [
+      "Los socios supervisan los compromisos e intervienen en los proyectos de mayor alcance. Al definir la misión, se distingue quién prepara el reporting, quién dirige la revisión y quién comprueba los entregables sensibles. La continuidad depende del conocimiento del expediente y de organizar la cobertura; no significa que una misma persona esté siempre disponible.",
+      "La automatización y la IA pueden facilitar la recopilación de datos o la preparación de análisis cuando responden a una necesidad identificada. No sustituyen la comprobación de las cifras ni la conversación con el dirigente. La prioridad sigue siendo una información comprensible y utilizable, con herramientas adaptadas al equipo."
+    ],
+    "slugs": [
+      "sebastien-doat",
+      "florent-greth"
+    ]
+  },
+  "faq": [
+    {
+      "question": "¿Tengo que cambiar de asesoría contable?",
+      "answer": "Trabajar con un CFO no implica automáticamente cambiar de asesoría. Esta prepara y comprueba la información contable y fiscal según su contrato; el CFO organiza su uso para la gestión financiera. Las responsabilidades y los intercambios se acuerdan conjuntamente. [Comparar las funciones](/ressources/blog/daf-externalise-vs-expert-comptable)."
+    },
+    {
+      "question": "¿Tenemos que cambiar de software?",
+      "answer": "Cambiar de software no es un requisito automático. Primero se revisan el acceso a los datos, su fiabilidad y el tiempo de tratamiento con las herramientas existentes. Una migración necesita un objetivo, un coste y un alcance definidos. [Nuestro enfoque de IA y finanzas](/ressources/ia-finance)."
+    },
+    {
+      "question": "¿Quién mantiene las decisiones y las autorizaciones de pago?",
+      "answer": "El dirigente conserva las decisiones y las autorizaciones de pago. Los análisis del CFO sirven para prepararlas. Los accesos deben corresponder a las tareas asignadas; cualquier delegación necesita un acuerdo explícito, distinto del simple acceso a la información financiera."
+    },
+    {
+      "question": "¿Cómo preparar el final de una misión?",
+      "answer": "El preaviso es de 30 días. El contrato debe precisar la devolución de los archivos, la documentación y el traspaso a su equipo o al siguiente proveedor. Conviene acordarlo desde el inicio, junto con las normas de acceso y confidencialidad de los datos."
+    },
+    {
+      "question": "¿Y si necesitamos un CFO a tiempo completo?",
+      "answer": "Una necesidad permanente de presencia diaria puede justificar una contratación. Para una sustitución o transformación temporal, un [CFO interino](/daf-externalise/transition) es otra opción. La [dirección financiera a tiempo parcial](/daf-externalise/temps-partage) responde a un trabajo recurrente con dedicación parcial. Elija según la carga real."
+    },
+    {
+      "question": "¿También trabajan con startups?",
+      "answer": "Sí. Las prioridades pueden incluir el seguimiento de tesorería, el reporting a inversores y la preparación de financiación. La dedicación depende de su organización y de los datos disponibles, no solo de la ronda. Consulte nuestra [dirección financiera para startups](/fractional-cfo-startups)."
+    }
+  ],
+  "contact": {
+    "heading": "Hablemos de su situación",
+    "text": "Describa su prioridad, su organización actual y su plazo. Le contactaremos para precisar la necesidad y acordar una conversación. Servirá para identificar un alcance útil y la información necesaria para una propuesta. El formulario no reserva una cita automáticamente.",
+    "href": "/contact#daf"
+  }
+}

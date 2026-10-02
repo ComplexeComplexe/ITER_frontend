@@ -3,7 +3,7 @@ import { COUT_DAF_SALARIE, DELAIS, ENGAGEMENT, FORMULES, VOLUME_DAF_JOURS_MOIS }
 
 /** Localized presentation of the approved offer. Prices and terms stay in facts.ts. */
 export function getDafOffer(locale: Locale) {
-  const number = (value: number) => value.toLocaleString(locale === "en" ? "en-GB" : "fr-FR");
+  const number = (value: number) => value.toLocaleString(locale === "en" ? "en-GB" : locale === "es" ? "es-ES" : "fr-FR");
   const range = (min: number, max: number) => `${number(min)}–${number(max)}`;
   const monthly = (min: number, max: number) => locale === "en"
     ? `EUR ${range(min, max)} excl. VAT/month`

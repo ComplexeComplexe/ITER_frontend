@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "title": "Fractional CFO for SMEs and startups | Iter Advisors",
+    "description": "Fractional CFO services for SMEs and startups: cash flow, reporting and financial management with a dedicated contact. Explore scope, deliverables and pricing."
+  },
+  "breadcrumbLabel": "Fractional CFO",
+  "hero": {
+    "h1": "Fractional CFO for SMEs and startups",
+    "lead": "Manage cash flow, margins and financing with a dedicated senior finance professional, without hiring a full-time CFO.",
+    "intro": "A Fractional CFO manages your company’s finance function on a part-time basis. The CFO turns accounting and operational data into forecasts, decisions and actions agreed with you. Part-time describes the working arrangement; Fractional CFO is the term commonly used in English.",
+    "landmarks": [
+      {
+        "label": "Monthly budget",
+        "value": "€3,000 to €8,000 excluding VAT"
+      },
+      {
+        "label": "Indicative start",
+        "value": "8 to 15 days"
+      },
+      {
+        "label": "Commitment",
+        "value": "No minimum term; 30 days’ notice"
+      }
+    ],
+    "proofs": [
+      "85 companies supported",
+      "Teams in Paris and Barcelona"
+    ],
+    "cta": "Discuss my needs"
+  },
+  "nav": [
+    {
+      "id": "missions",
+      "label": "Deliverables"
+    },
+    {
+      "id": "preuves",
+      "label": "Client cases"
+    },
+    {
+      "id": "methode",
+      "label": "How we work"
+    },
+    {
+      "id": "tarifs",
+      "label": "Pricing"
+    },
+    {
+      "id": "faq",
+      "label": "Questions"
+    }
+  ],
+  "needs": {
+    "heading": "When should you work with a Fractional CFO?",
+    "intro": "The need arises when decisions become more complex than the information available to make them. You may run a profitable SME, a family business or a startup: fundraising is not a prerequisite. Three situations help identify the priorities to address.",
+    "items": [
+      {
+        "title": "Regain financial visibility",
+        "text": "Your order book is full, but cash balances fluctuate without a clear explanation. You know your revenue, but less about margins by customer or activity. The priority is to reconcile figures, forecast collections and understand what consumes cash before hiring or investing."
+      },
+      {
+        "title": "Organize a growing business",
+        "text": "The business leader brings together the spreadsheets, teams use different versions and reporting arrives too late. The work focuses on responsibilities, the closing calendar and useful indicators. The CFO works with the people already in place to organize a finance function suited to your business."
+      },
+      {
+        "title": "Prepare financing or a transaction",
+        "text": "You need to present a project to a bank, prepare a funding round or assess an acquisition. The work makes assumptions explicit, tests scenarios and organizes the requested documents. These projects have a defined scope, separate from monthly support where required."
+      }
+    ],
+    "note": "If you only need bookkeeping, or a full-time finance leader, compare the part-time arrangement with other solutions before deciding."
+  },
+  "missions": {
+    "heading": "What you receive and the decisions it supports",
+    "intro": "The scope is agreed at the start: not every engagement includes every deliverable. Recurring work generally combines forecasting, reporting and a review with the business leader. Financing, transformation or acquisition work is added according to your situation.",
+    "items": [
+      {
+        "title": "Anticipate cash flow",
+        "deliverable": "A 13-week forecast covering receipts, payments, debt maturities and the assumptions to monitor. The update frequency is agreed according to business volatility and data availability.",
+        "decision": "Identify a potential cash shortfall, prepare discussions with a bank or decide when to incur an expense. The forecast distinguishes known flows from assumptions; it does not guarantee collections.",
+        "href": "/services/previsionnel-tresorerie",
+        "linkLabel": "Cash flow forecasting"
+      },
+      {
+        "title": "Understand profitability",
+        "deliverable": "Monthly reporting on profit, cash flow and relevant indicators, with an explanation of budget variances. Depending on your business model, analysis covers an activity, channel, entity or project.",
+        "decision": "Identify a deteriorating margin, discuss pricing or review an expense. Provisional figures and comparison limitations are identified to avoid making decisions from incomplete data.",
+        "href": "/services/controle-de-gestion-externalise",
+        "linkLabel": "Management control and reporting"
+      },
+      {
+        "title": "Build a financeable business plan",
+        "deliverable": "A budget or business plan with scenarios and, where agreed, a financing package. Cash requirements are linked to sales, recruitment and investment assumptions.",
+        "decision": "Compare possible paths and prepare for questions from banks or investors. Securing funding also depends on the project and their decisions; the CFO cannot promise an outcome.",
+        "href": "/services/accompagnement-levee-de-fond",
+        "linkLabel": "Prepare for fundraising"
+      }
+    ],
+    "example": {
+      "heading": "A monthly review focused on action",
+      "intro": "This outline illustrates a review without using client data. Each finding is linked to a decision, with progress checked at the next review.",
+      "rows": [
+        [
+          "Delayed collections",
+          "Which invoices need following up?",
+          "Assign a collection owner and deadline"
+        ],
+        [
+          "Margin below budget",
+          "Which cost or channel explains the variance?",
+          "Targeted analysis before a decision"
+        ],
+        [
+          "Planned investment",
+          "What is the effect on cash balances?",
+          "Scenario for the business leader to approve"
+        ]
+      ]
+    }
+  },
+  "cases": {
+    "heading": "Two engagements that show how we work",
+    "intro": "These examples describe documented work. They illustrate two different needs; they do not predict the timing or results of a new engagement.",
+    "items": [
+      {
+        "company": "Opti Digital",
+        "title": "Build the finance function over time",
+        "text": "At this adtech SME, the engagement combines monthly reporting, closing procedures, ERP migration and non-dilutive financing. It also includes coordinating tax and legal matters with external advisers. It shows how recurring financial management can work alongside projects to organize the finance function.",
+        "takeaway": "For the business leader: an organized finance function and a contact who connects the different workstreams. No financing amount or productivity gain is claimed here.",
+        "href": "/ressources/cas-clients/opti-digital-structuration-financement",
+        "linkLabel": "Read the Opti Digital engagement"
+      },
+      {
+        "company": "SolarMente",
+        "title": "Prepare a funding round and an acquisition",
+        "text": "The documented case covers 2022 to 2024: a financial model with multiple scenarios, a data room, board reporting and cash control procedures. It includes the financial integration of Eltex following its acquisition in 2024, as the cleantech company grew.",
+        "takeaway": "For the business leader: organize the information and assumptions needed for a transaction. Management, investors and advisers also contributed; success cannot be attributed solely to Iter’s support.",
+        "href": "/ressources/cas-clients/solarmente-serie-b-cleantech",
+        "linkLabel": "Read the SolarMente engagement"
+      }
+    ],
+    "quote": {
+      "text": "I particularly appreciate their ability to challenge us and inform our strategic decisions.",
+      "author": "Magali Quentel-Reme",
+      "role": "CEO and co-founder, Opti Digital",
+      "sourceUrl": "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
+      "sourceLabel": "Translated excerpt from the testimonial published on Trustfolio on 12 November 2025"
+    }
+  },
+  "method": {
+    "heading": "How does the collaboration work?",
+    "intro": "The indicative start time is 8 to 15 days, subject to confirming the profile and scope. Setup then follows your priorities and the condition of your data, rather than imposing the same 90-day program on every business.",
+    "steps": [
+      {
+        "title": "Agree responsibilities",
+        "text": "We review your tools, available data and upcoming decisions. The written scope defines deliverables, frequency, contacts and work outside the engagement. Your team identifies who supplies information; the accountant’s role is clarified to avoid duplication."
+      },
+      {
+        "title": "Organize a working month",
+        "text": "The process combines collecting and reconciling data, preparing analysis and reviewing it with the business leader. Agreed actions have an owner and a deadline. Work may be spread across the month: an indicative number of days does not mean everything happens in one meeting."
+      },
+      {
+        "title": "Adjust the arrangement",
+        "text": "Regular reviews revisit assumptions and priorities. A new entity, acquisition or tool change may require a contract amendment. Contact channels, urgent requests and cover for absences are agreed during scoping, according to the availability your organization needs."
+      }
+    ],
+    "note": "Plan for an internal contact, appropriate access and time to validate assumptions. Preparation effort depends on data quality and is estimated together; we do not promise the same number of hours for every company.",
+    "cities": "Our teams are based in Paris and Barcelona. On-site and remote working arrangements are agreed during scoping. In Toulouse, support is remote with travel by agreement."
+  },
+  "pricing": {
+    "heading": "What budget should you plan and what does the fee cover?",
+    "intro": "Recurring Iter engagements range from €3,000 to €8,000 excluding VAT per month. The fee covers an agreed scope and level of seniority set out in the proposal. The indicative working days shown in the packages do not represent a bank of hours.",
+    "paragraphs": [
+      "The budget varies with expected deliverables, the number of entities, data quality and organizational complexity. A company with existing reporting needs different work from one rebuilding its finance function. Compare production, analysis and supervision together when reviewing proposals.",
+      "The Essentiel package includes monthly reporting, a cash flow forecast and a finance review. Other packages extend the scope according to needs. One-off projects and interim CFO engagements are priced separately; fundraising or an acquisition is not automatically included in every recurring engagement.",
+      "There is no minimum term, with 30 days’ notice to end the engagement. No work beyond the agreed scope is billed without a signed amendment. Before committing, clarify what is included, what your team must contribute and how the scope can change. Comparing a monthly fee with a full-time salary alone is insufficient: availability and responsibilities differ."
+    ],
+    "link": {
+      "href": "/daf-externalise/tarifs",
+      "label": "View the packages and detailed pricing"
+    }
+  },
+  "experts": {
+    "heading": "Who leads your engagement at Iter?",
+    "intro": "Sébastien Doat, founding partner and Fractional CFO, is your finance contact. The assigned profile depends on your needs: a CFO or senior Finance Manager, with the support included in the package. The first conversation checks that fit, rather than offering the same level of seniority for every task.",
+    "paragraphs": [
+      "Partners oversee commitments and contribute to major projects. Scoping distinguishes who prepares reporting, who leads the review and who checks sensitive deliverables. Continuity depends on understanding the engagement and arranging cover; it does not promise that one person will always be available.",
+      "Automation and AI can help collect data or prepare analysis where they address an identified need. They do not replace checking the figures or discussing them with the business leader. The priority remains understandable, usable information and tools suited to your team."
+    ],
+    "slugs": [
+      "sebastien-doat",
+      "florent-greth"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Do I need to change my accountant?",
+      "answer": "Working with a CFO does not automatically require changing accounting firms. Your accountant produces and checks accounting and tax information under the agreed engagement terms; the CFO organizes its use for financial management. Responsibilities and communication are agreed together. [Compare the roles](/ressources/blog/daf-externalise-vs-expert-comptable)."
+    },
+    {
+      "question": "Do we need to change our software?",
+      "answer": "A software change is not an automatic prerequisite. Existing tools are reviewed for data access, reliability and processing time before proposing changes. Any migration needs a defined objective, cost and scope. [Our approach to AI and finance](/ressources/ia-finance)."
+    },
+    {
+      "question": "Who retains decision-making and payment authorization?",
+      "answer": "The business leader retains decisions and payment authorization. CFO analysis supports those decisions. Tool access must match the assigned tasks; any delegation requires an explicit arrangement, separate from simply accessing financial information."
+    },
+    {
+      "question": "How should we prepare for the end of an engagement?",
+      "answer": "The notice period is 30 days. The contract should specify how files are returned, what documentation is provided and how handover to your team or next provider works. Discuss these points during scoping, alongside data access and confidentiality rules."
+    },
+    {
+      "question": "What if we need a full-time CFO?",
+      "answer": "A lasting need for daily presence may justify hiring. For a temporary replacement or transformation, an [interim CFO](/daf-externalise/transition) is another option. A [part-time CFO](/daf-externalise/temps-partage) suits recurring work with a partial workload. Choose according to the work actually required."
+    },
+    {
+      "question": "Do you also work with startups?",
+      "answer": "Yes. Priorities may include cash flow monitoring, investor reporting and financing preparation. The level of support depends on your organization and available data, rather than only the funding stage. See our [Fractional CFO services for startups](/fractional-cfo-startups)."
+    }
+  ],
+  "contact": {
+    "heading": "Let’s discuss your situation",
+    "text": "Describe your priority, current organization and deadline. We will get back to you to clarify your needs and agree on a conversation. This helps identify a useful scope and the information needed for a proposal. The form does not automatically book an appointment.",
+    "href": "/contact#daf"
+  }
+}

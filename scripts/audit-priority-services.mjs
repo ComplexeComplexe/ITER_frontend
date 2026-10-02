@@ -8,6 +8,8 @@ const routes = [
 ];
 const failures = [], results = [];
 const schemasOf = html => [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)].flatMap(m => { const value = JSON.parse(m[1]); return value['@graph'] ?? [value]; });
+const hasAlternate = (html, language, path) => [...html.matchAll(/<link\b[^>]*>/gi)].some(([tag]) =>
+  /\brel="alternate"/i.test(tag) && tag.match(/\bhreflang="([^"]+)"/i)?.[1] === language && tag.match(/\bhref="([^"]+)"/i)?.[1] === origin + path);
 for (const route of routes) {
   const response = await fetch(base + route.path, { redirect: 'manual' });
   const html = await response.text();
@@ -27,7 +29,17 @@ for (const route of routes) {
   check(schemas.some(s => s['@type'] === 'Service' && s.url === origin + route.path), 'service-schema');
   check(!schemas.some(s => s['@type'] === 'JobPosting'), 'commercial-not-job');
   check(!/30\s*(?:à|-)\s*60\s*%|1\s*(?:à|-)\s*3\s*jours\s*\/\s*semaine|sous 5 jours|relations privilégiées/i.test(text), 'unsupported-promises-removed');
-  if (route.path.includes('startups')) check(!/hreflang="(?:en-GB|es-ES)"/i.test(html), 'no-invented-translations');
+  if (route.path.includes('startups')) {
+    const paths = { 'fr-FR': '/fractional-cfo-startups', 'en-GB': '/en/fractional-cfo-for-startups', 'es-ES': '/es/cfo-externo-startups' };
+    for (const [language, path] of Object.entries(paths)) {
+      check(hasAlternate(html, language, path), `real-startup-alternate:${language}`);
+      const translatedResponse = await fetch(base + path, { redirect: 'manual' });
+      const translatedHtml = await translatedResponse.text();
+      check(translatedResponse.status === 200 && translatedHtml.includes(`rel="canonical" href="${origin + path}"`), `published-startup-translation:${language}`);
+      check(translatedHtml.includes('data-finance-template="service"'), `shared-startup-template:${language}`);
+      for (const [otherLanguage, otherPath] of Object.entries(paths)) check(hasAlternate(translatedHtml, otherLanguage, otherPath), `reciprocal-startup-alternate:${language}:${otherLanguage}`);
+    }
+  }
   if (route.path.includes('paris')) {
     check(/hreflang="en-GB" href="https:\/\/www\.iteradvisors\.com\/en\/fractional-cfo-paris"/i.test(html) && /hreflang="es-ES" href="https:\/\/www\.iteradvisors\.com\/es\/cfo-externalizado-paris"/i.test(html), 'real-paris-alternates');
     check(schemas.some(s => s['@type'] === 'WebPage' && s.author?.['@id'] === origin + route.author), 'preserved-paris-author');
