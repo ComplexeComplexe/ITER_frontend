@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Metadata } from "next";
 import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
 import { Callout, ProseTable } from "@/components/blog";
@@ -140,7 +141,7 @@ export default function DafExternaliseVsAlternativesPage() {
             title: "Combien coûte un DAF externalisé en 2026 ?",
           },
           {
-            url: "/ressources/blog/cout-externalisation-comptable-2026",
+            url: "/ressources/blog/externalisation-comptable",
             category: "Tarifs",
             title: "Coût de l'externalisation comptable en 2026",
           },
@@ -205,9 +206,9 @@ export default function DafExternaliseVsAlternativesPage() {
           une PME de moins de 50 salariés. Au-delà, le DAF salarié devient pertinent — souvent en
           continuant avec le DAF externalisé en rôle d&apos;advisor board. Pour une analyse
           détaillée cas par cas, voir notre article dédié :{" "}
-          <a href="/ressources/blog/daf-externalise-vs-daf-salarie">
+          <Link href="/ressources/blog/daf-externalise-vs-daf-salarie">
             DAF externalisé vs DAF salarié : le comparatif détaillé
-          </a>.
+          </Link>.
         </p>
 
         <h2 id="vs-expert-comptable">2. DAF externalisé vs expert-comptable</h2>

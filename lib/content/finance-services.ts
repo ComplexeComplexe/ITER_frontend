@@ -14,6 +14,8 @@ export interface FinanceService {
   steps: [string, string][]; scopeTitle: string; scope: string[]; budget: string;
   case?: string; faq: [string, string][]; resources: [string, string][]; related: string[];
   headings?: { need: string; deliverables: string; method: string };
+  calendar?: { caption: string; headers: [string, string, string]; rows: [string, string, string][]; note: string };
+  budgetResource?: { href: string; label: string };
 }
 
 export const FINANCE_REVIEW_DATE = "2026-09-30";
@@ -67,14 +69,25 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     ],
     "exampleTitle": "Ce que peut contenir votre rendez-vous finance",
     "example": "Un point sur la trésorerie à venir, une lecture du réalisé face au budget et une liste de décisions avec leurs responsables. Le reporting prépare la discussion ; la réunion se termine par des actions suivies au rendez-vous suivant.",
+    calendar: {
+      caption: "Exemple de calendrier à adapter à votre mission",
+      headers: ["Rendez-vous", "Travaux préparés", "Décision à éclairer"],
+      rows: [
+        ["Chaque semaine, si le besoin le justifie", "Encaissements, paiements et factures en retard", "Prioriser les paiements et les relances"],
+        ["Après la clôture mensuelle", "Résultat, rapprochements et écarts au budget", "Comprendre les écarts et ajuster les hypothèses"],
+        ["Revue avec la direction", "Scénarios de trésorerie, charges et recrutements", "Arbitrer un recrutement ou un investissement"],
+        ["Échéance exceptionnelle", "Scénarios et dossier bancaire ou investisseur", "Examiner les conditions de financement"],
+      ],
+      note: "Ce calendrier est illustratif. Les réunions, les travaux et la disponibilité sont convenus au cadrage. Chaque point se termine par une décision, un responsable et une échéance, suivis au rendez-vous suivant.",
+    },
     "steps": [
       [
         "Cadrer les priorités",
-        "Identifier vos décisions à venir, les interlocuteurs et les sources. Définir les livrables et les modalités de contact."
+        "Identifier les décisions à venir, les interlocuteurs et les sources : balances, grands livres, relevés bancaires, factures ouvertes, contrats de financement et budget. Convenir des accès, des validations et du calendrier avec le cabinet comptable."
       ],
       [
         "Installer le pilotage",
-        "Rapprocher les données, construire les premiers outils et convenir d’un calendrier de mise à jour."
+        "Rapprocher les données et documenter les informations manquantes. Selon le besoin, préparer un prévisionnel de trésorerie à treize semaines, une lecture des résultats et un suivi des anomalies. Aucun délai de mise en place n’est garanti avant d’avoir examiné les données."
       ],
       [
         "Suivre et ajuster",
@@ -84,6 +97,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     "scopeTitle": "Un rôle de direction, articulé avec votre équipe",
     "scope": [
       "Le DAF travaille avec le dirigeant, les responsables opérationnels et le cabinet comptable. Il organise le pilotage ; les tâches quotidiennes et les décisions restent attribuées explicitement. Un besoin de présence permanente appelle une autre organisation.",
+      "Le dirigeant fixe les priorités et valide les engagements. Le DAF construit les scénarios et analyse les écarts. Le cabinet comptable produit les comptes selon sa lettre de mission ; les responsables opérationnels expliquent les commandes, stocks et échéances. Une délégation de signature ou un accès bancaire ne découle pas automatiquement de la mission.",
       "Une levée de fonds, une acquisition ou une transformation importante peut nécessiter une mission complémentaire. Les travaux inclus, le relais en cas d’absence et le traitement des urgences sont précisés au contrat."
     ],
     "budget": `Les missions récurrentes Iter se situent entre 3 000 et 8 000 € HT par mois. Les ${volume} jours mensuels sont un volume indicatif observé, pas un forfait contractuel : le devis porte sur le périmètre et le profil mobilisé. La grille détaillée permet de situer votre besoin.`,
@@ -419,6 +433,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "La paie, la fiscalité particulière, les reprises historiques et la migration d’un outil ne sont pas implicitement incluses. Un changement de cabinet ou de logiciel doit prévoir la reprise des données, la continuité des obligations et les responsabilités de validation."
     ],
     "budget": "Le prix dépend des volumes, du nombre d’entités, des outils, de la qualité des pièces et des travaux confiés à chaque intervenant. Nous cadrons ces éléments avant le devis. Les honoraires du cabinet comptable et les éventuels abonnements doivent être identifiés séparément.",
+    budgetResource: { href: "/ressources/blog/externalisation-comptable#grille", label: "Comparer les devis comptables" },
     "faq": [
       [
         "Dois-je changer d’expert-comptable ?",

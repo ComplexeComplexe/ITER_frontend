@@ -51,20 +51,6 @@ function buildAlternates(paths: LocalizedPaths) {
   };
 }
 
-/** Single FR-canonical URL with hreflang alternates.
- *  Use when one or more locales don't have a page, so we declare the
- *  EN/ES counterparts only in alternates (not as separate sitemap entries). */
-function entry(
-  paths: LocalizedPaths,
-  lastModified: string
-): MetadataRoute.Sitemap[number] {
-  return {
-    url: `${BASE}${paths.fr}`,
-    lastModified,
-    alternates: buildAlternates(paths),
-  };
-}
-
 /** Three explicit URL entries (FR + EN + ES) sharing the same hreflang cluster.
  *  Use when all three locales return a real HTTP 200. */
 function entryAllLocales(
@@ -119,13 +105,11 @@ const FR_BLOG_SLUGS = [
   "filiale-espagnole-pilotage-financier",
   "choisir-cabinet-daf-externalise",
   "daf-drh-externalises-synergie",
-  "daf-externalise-barcelone-guide-startups-espagnoles",
   // W31c (2026-08-02) — article publié (route servie via blogPosts.fr)
   // mais absent du sitemap : il n'était donc pas découvrable.
   "daf-externalise-vs-daf-interimaire",
   "daf-externalise-vs-daf-salarie",
   "daf-externalise-vs-expert-comptable",
-  "drh-externalise-quand-et-pourquoi",
   "externalisation-comptable",
   "flux-de-tresorerie",
   // SEO-03 (2026-08-30) — retiré : /ressources/blog/impot-revenu-espagne
@@ -146,12 +130,9 @@ const FR_BLOG_SLUGS = [
   "levee-de-fonds-guide",
   "ia-et-automatisation-des-taches-repetitives",
   "regimes-fiscaux-france-vs-espagne",
-  // T8 (2026-06-07) — new article ciblant "coût externalisation comptable"
-  "cout-externalisation-comptable-2026",
   // SEO-REP §6.2 (2026-08-15) — sept articles répondaient 200, étaient
   // auto-canoniques et indexables, mais n'étaient déclarés nulle part.
   "cfo-externe-role-missions-2026",
-  "daf-part-time-tarifs-missions-2026",
   "essentiels-outils-tech-finance",
   "ia-finance-automatisation-direction-financiere",
   "loi-beckham-economie-impot-simulation",
@@ -560,7 +541,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   entries.push(...DOCUMENTED_CASES.map(item => ({ url: `${BASE}${item.href}`, lastModified: item.modified })));
 
-  const transactionalUpdates = new Set(["/services/controle-de-gestion-externalise", "/services/comptabilite-externalisation", "/en/services/outsourced-management-control", "/es/services/control-gestion-externalizado", "/es/services/gestion-financiera-externalizada", "/es/services/externalizar-contabilidad", "/es/services/prevision-tesoreria", "/es/services/soporte-financiacion", "/services/gestion-financiere-externalisee", "/ressources/blog/daf-part-time-tarifs-missions-2026", "/ressources/blog/les-10-outils-pour-cfos-startup", "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", "/daf-externalise", "/fractional-cfo-startups", "/daf-externalise-toulouse", "/en/outsourced-cfo-toulouse", "/es/cfo-externalizado-toulouse", "/contact", "/en/contact", "/es/contact", "/daf-externalise/temps-partage", "/daf-externalise/secteurs", "/services/accompagnement-levee-de-fond"]);
+  const transactionalUpdates = new Set(["/services/controle-de-gestion-externalise", "/services/comptabilite-externalisation", "/en/services/outsourced-management-control", "/es/services/control-gestion-externalizado", "/es/services/gestion-financiera-externalizada", "/es/services/externalizar-contabilidad", "/es/services/prevision-tesoreria", "/es/services/soporte-financiacion", "/services/gestion-financiere-externalisee", "/ressources/blog/les-10-outils-pour-cfos-startup", "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", "/daf-externalise", "/fractional-cfo-startups", "/daf-externalise-toulouse", "/en/outsourced-cfo-toulouse", "/es/cfo-externalizado-toulouse", "/contact", "/en/contact", "/es/contact", "/daf-externalise/temps-partage", "/daf-externalise/secteurs", "/services/accompagnement-levee-de-fond"]);
   const consistencyUpdates = new Set([
     "",
     "/daf-externalise-toulouse",
@@ -580,8 +561,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/fractional-cfo-startups",
     "/ressources",
     "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
-    "/ressources/blog/cout-externalisation-comptable-2026",
-    "/ressources/blog/daf-part-time-tarifs-missions-2026",
     "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
     "/ressources/blog/stack-financier-saas-series-a",
     "/ressources/cas-clients/opti-digital-structuration-financement",

@@ -10,6 +10,7 @@ import styles from "./finance.module.css";
 
 // Retain links to sections already shared or indexed before the redesign.
 const anchors: Record<string, Record<string, string[]>> = {
+  "/daf-externalise/temps-partage": { besoin: ["definition"], deroulement: ["premier-mois"], perimetre: ["responsabilites"], tarifs: ["budget"], preuves: ["bilan"] },
   "/daf-externalise/transition": { besoin: ["situations"], livrables: ["premiers-jours"], deroulement: ["feuille-de-route"], perimetre: [], preuves: ["experience"], tarifs: ["budget"], contact: ["preparer-echange"] },
   "/services/controle-de-gestion-externalise": { besoin: ["definition"], livrables: ["kpis"], exemple: ["exemple-tableau-de-bord"], deroulement: ["revue-mensuelle", "methodologie"], perimetre: ["vs-comptable"], preuves: ["temoignages"], contact: ["cta-final"] },
   "/services/comptabilite-externalisation": { besoin: ["definition", "signaux"], livrables: ["benefices"], deroulement: ["approche-iter"], perimetre: ["comparatif", "erreurs-eviter"], contact: ["conclusion"] },
@@ -63,6 +64,13 @@ export default function FinanceServicePage({ service }: { service: FinanceServic
               <div><p className={styles.eyebrow}>En pratique</p><h3>{service.exampleTitle}</h3></div><p>{service.example}</p>
             </aside>
           </section>
+          {service.calendar && <section id="rythme" className={`${styles.section} ${styles.stacked}`}>
+            <div className={styles.sectionHeading}><h2>Un calendrier pour préparer les décisions</h2></div>
+            <div className={styles.tableScroll} tabIndex={0} role="region" aria-label={service.calendar.caption}>
+              <table className={styles.calendar}><caption>{service.calendar.caption}</caption><thead><tr>{service.calendar.headers.map(header => <th key={header} scope="col">{header}</th>)}</tr></thead><tbody>{service.calendar.rows.map(([when, work, decision]) => <tr key={when}><th scope="row">{when}</th><td>{work}</td><td>{decision}</td></tr>)}</tbody></table>
+            </div>
+            <p>{service.calendar.note}</p>
+          </section>}
           <section id="deroulement" className={styles.section}>
             <Aliases service={service} section="deroulement" />
             <div className={styles.sectionHeading}><p className={styles.eyebrow}>03 · Une méthode partagée</p><h2>{service.headings?.method ?? <>Comment nous<br />travaillons ensemble</>}</h2></div>
@@ -76,7 +84,7 @@ export default function FinanceServicePage({ service }: { service: FinanceServic
           <section id="tarifs" className={styles.budget}>
             <Aliases service={service} section="tarifs" />
             <div><p className={styles.eyebrow}>Le budget</p><h2>Un périmètre avant un devis.</h2></div>
-            <div><p>{service.budget}</p><Link href="/daf-externalise/tarifs" className={styles.textLink}>Consulter les tarifs DAF <span aria-hidden="true">↗</span></Link></div>
+            <div><p>{service.budget}</p><Link href={service.budgetResource?.href ?? "/daf-externalise/tarifs"} className={styles.textLink}>{service.budgetResource?.label ?? "Consulter les tarifs DAF"} <span aria-hidden="true">↗</span></Link></div>
           </section>
           <section id="preuves" className={styles.section}>
             <Aliases service={service} section="preuves" />

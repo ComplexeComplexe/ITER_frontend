@@ -62,3 +62,7 @@ No French article or software page has been redirected or removed in this batch.
 The 1 October export covers 28 days versus the previous 28 days. It reports 534 impressions, zero clicks and position 29.93 on “daf externalisé”, before this implementation. The document's three-month figures cover a different period. Neither is a measurement of this branch's impact.
 
 After production approval: verify the deployed commit, repeat HTTP checks on production, then request recrawling only for materially changed canonical pages. Compare equivalent periods, countries and devices over 4 to 8 weeks; do not present a guaranteed ranking threshold as technical acceptance.
+
+## Second batch
+
+The accounting, HR, shared-time and Barcelona consolidation was subsequently implemented on this same branch. See [the second-batch record](seo-consolidation-2026-10-02.md) for its source-to-target map, validation and remaining limits. The first-batch statements above describe its historical scope.

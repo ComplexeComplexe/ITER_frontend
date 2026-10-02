@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { ArrowRight, MapPin, Building2, Users, Briefcase, Phone, BarChart3, Wallet, Rocket, Compass, Network, Star } from "lucide-react";
+import { ArrowRight, MapPin, Building2, Users, Briefcase, BarChart3, Wallet, Rocket, Compass, Network, Star } from "lucide-react";
 import Image from "next/image";
 import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/static-content";
@@ -158,9 +156,11 @@ export default function DafLocalPage({
       {t.sections.map((section, idx) => (
         <section
           key={idx}
+          id={section.id}
           className={`py-16 ${idx % 2 === 0 ? "bg-background" : "bg-muted/30"}`}
         >
           <div className="container max-w-4xl">
+            {section.aliases?.map(id => <span key={id} id={id} aria-hidden="true" />)}
             <h2 className="text-3xl font-bold font-heading text-foreground mb-8">
               {section.heading}
             </h2>
@@ -172,13 +172,14 @@ export default function DafLocalPage({
                 {paragraph}
               </p>
             ))}
+            {section.links && <ul className="flex flex-wrap gap-x-6 gap-y-3 mt-6">{section.links.map(link => <li key={link.href}><Link className="site-inline-link" href={link.href}>{link.label} ↗</Link></li>)}</ul>}
           </div>
         </section>
       ))}
 
       {locale === "fr" && city === "toulouse" && <>
-        <section className="site-section py-12 bg-muted/30"><div className="container max-w-4xl"><h2 className="text-2xl font-bold mb-4">Choisir le périmètre adapté</h2><div className="flex flex-wrap gap-5 text-iter-violet underline"><Link href="/daf-externalise/tarifs">Comparer les formules</Link><Link href="/fractional-cfo-startups">DAF pour startups et SaaS</Link><Link href="/daf-externalise/industrie">Pilotage d'une activité industrielle</Link><Link href="/daf-externalise">DAF externalisé pour PME</Link></div><p className="mt-6 text-muted-foreground">Les cas ci-dessous décrivent des missions conduites ailleurs. Ils permettent d'examiner les livrables et la méthode, sans constituer des références locales à Toulouse.</p></div></section>
-        <CaseProofLinks slugs={["opti-digital-structuration-financement", "seasonly-marge-par-canal-bfr"]} heading="Examiner notre travail sur d'autres missions" />
+        <section className="site-section py-12 bg-muted/30"><div className="container max-w-4xl"><h2 className="text-2xl font-bold mb-4">Choisir le périmètre adapté</h2><div className="flex flex-wrap gap-5 text-iter-violet underline"><Link href="/daf-externalise/tarifs">Comparer les formules</Link><Link href="/fractional-cfo-startups">DAF pour startups et SaaS</Link><Link href="/daf-externalise/industrie">Pilotage d’une activité industrielle</Link><Link href="/daf-externalise">DAF externalisé pour PME</Link></div><p className="mt-6 text-muted-foreground">Les cas ci-dessous décrivent des missions conduites ailleurs. Ils permettent d’examiner les livrables et la méthode, sans constituer des références locales à Toulouse.</p></div></section>
+        <CaseProofLinks slugs={["opti-digital-structuration-financement", "seasonly-marge-par-canal-bfr"]} heading="Examiner notre travail sur d’autres missions" />
       </>}
       {/* FAQ */}
       <section className="site-section py-20 bg-background">
@@ -345,7 +346,7 @@ export default function DafLocalPage({
                   ))}
                 </div>
                 <blockquote className="text-lg text-muted-foreground italic mb-4 leading-relaxed">
-                  "{review.reviewBody}"
+                  « {review.reviewBody} »
                 </blockquote>
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <div>

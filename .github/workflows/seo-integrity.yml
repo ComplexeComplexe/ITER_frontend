@@ -36,3 +36,8 @@ jobs:
         run: node scripts/audit-structured-data.mjs http://127.0.0.1:3100
       - name: Validate anchors and localized contact links
         run: node scripts/audit-navigation.mjs http://127.0.0.1:3100
+      - name: Validate consolidation and software-guide regressions
+        run: |
+          node scripts/audit-redirects.mjs
+          node scripts/audit-blog-consolidation.mjs http://127.0.0.1:3100
+          node scripts/audit-seo-cleanup.mjs http://127.0.0.1:3100

@@ -107,6 +107,11 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Consolidation des intentions FR, avec conservation des contenus utiles.
+      { source: "/ressources/blog/cout-externalisation-comptable-2026", destination: "/ressources/blog/externalisation-comptable", statusCode: 301 },
+      { source: "/ressources/blog/drh-externalise-quand-et-pourquoi", destination: "/drh-externalise", statusCode: 301 },
+      { source: "/ressources/blog/daf-part-time-tarifs-missions-2026", destination: "/daf-externalise/temps-partage", statusCode: 301 },
+      { source: "/ressources/blog/daf-externalise-barcelone-guide-startups-espagnoles", destination: "/daf-externalise-barcelone", statusCode: 301 },
       // Consolidation FR : la définition et la fiche métier partagent une seule URL.
       { source: "/ressources/glossaire/daf", destination: "/daf-externalise/metier", statusCode: 301 },
       // Mirror historical middleware redirects in the routing manifest.
@@ -958,9 +963,9 @@ const nextConfig: NextConfig = {
       { source: "/en/ressources/blog/impot-revenu-espagne",                                destination: "/ressources/fiscalite/impot-revenu-espagne",                                permanent: true },
       { source: "/en/ressources/blog/cash-burn-calculer-runway-anticiper-levee",           destination: "/ressources/blog/cash-burn-calculer-runway-anticiper-levee",           permanent: true },
       { source: "/en/ressources/blog/agicap-vs-fygr-outil-tresorerie",                    destination: "/ressources/blog/agicap-vs-fygr-outil-tresorerie",                    permanent: true },
-      { source: "/en/ressources/blog/daf-externalise-barcelone-guide-startups-espagnoles", destination: "/ressources/blog/daf-externalise-barcelone-guide-startups-espagnoles", permanent: true },
+      { source: "/en/ressources/blog/daf-externalise-barcelone-guide-startups-espagnoles", destination: "/daf-externalise-barcelone", permanent: true },
       { source: "/en/ressources/blog/due-diligence-financiere-investisseurs",              destination: "/ressources/blog/checklist-due-diligence-levee-de-fonds",              permanent: true },
-      { source: "/en/ressources/blog/drh-externalise-quand-et-pourquoi",                  destination: "/ressources/blog/drh-externalise-quand-et-pourquoi",                  permanent: true },
+      { source: "/en/ressources/blog/drh-externalise-quand-et-pourquoi",                  destination: "/drh-externalise",                  permanent: true },
       { source: "/en/ressources/blog/reduire-bfr-7-leviers-actionnables",                 destination: "/ressources/blog/reduire-bfr-7-leviers-actionnables",                 permanent: true },
       { source: "/en/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",        destination: "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",        permanent: true },
       { source: "/en/ressources/blog/stack-financier-saas-series-a",                      destination: "/ressources/blog/stack-financier-saas-series-a",                      permanent: true },
@@ -986,8 +991,8 @@ const nextConfig: NextConfig = {
       { source: "/es/recursos/blog/term-sheet-negocier-clauses-cles",                     destination: "/ressources/blog/term-sheet-negocier-clauses-cles",                   permanent: true },
       { source: "/es/recursos/blog/pennylane-vs-sage-comparatif-40-deploiements",         destination: "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",        permanent: true },
       { source: "/es/recursos/blog/reduire-bfr-7-leviers-actionnables",                   destination: "/ressources/blog/reduire-bfr-7-leviers-actionnables",                 permanent: true },
-      { source: "/es/recursos/blog/drh-externalise-quand-et-pourquoi",                    destination: "/ressources/blog/drh-externalise-quand-et-pourquoi",                  permanent: true },
-      { source: "/es/recursos/blog/daf-externalise-barcelone-guide-startups-espagnoles",  destination: "/ressources/blog/daf-externalise-barcelone-guide-startups-espagnoles", permanent: true },
+      { source: "/es/recursos/blog/drh-externalise-quand-et-pourquoi",                    destination: "/drh-externalise",                  permanent: true },
+      { source: "/es/recursos/blog/daf-externalise-barcelone-guide-startups-espagnoles",  destination: "/daf-externalise-barcelone", permanent: true },
       { source: "/es/recursos/blog/quand-embaucher-daf-externalise-5-signes",             destination: "/ressources/blog/quand-embaucher-daf-externalise-5-signes",            permanent: true },
       // 2026-05-31 — same fix as the EN sibling above: destination was
       // sending ES visitors to the FR article. Now points to the canonical

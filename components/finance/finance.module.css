@@ -1,4 +1,10 @@
 .root { --ink: var(--site-ink); --muted: var(--site-muted); --line: var(--site-border); --paper: var(--site-paper); color: var(--ink); background: #fff; }
+.tableScroll { max-width: 100%; overflow-x: auto; }
+.tableScroll:focus-visible { outline: 3px solid var(--site-violet); outline-offset: 4px; }
+.calendar { width: 100%; min-width: 560px; border-collapse: collapse; text-align: left; font-size: .95rem; line-height: 1.6; }
+.calendar caption { text-align: left; color: var(--site-muted); padding-bottom: 16px; }
+.calendar th, .calendar td { vertical-align: top; padding: 16px; border-bottom: 1px solid var(--site-border); }
+.calendar thead { background: var(--site-paper); }
 .wrap { width: 100%; max-width: calc(var(--site-width) + 2 * var(--site-gutter)); padding-inline: var(--site-gutter); margin-inline: auto; }
 .root h1, .root h2, .root h3, .root p { margin: 0; }
 .root a { text-underline-offset: 5px; }
