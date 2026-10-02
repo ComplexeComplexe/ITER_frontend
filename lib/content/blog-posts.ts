@@ -1,3 +1,4 @@
+import { CFO_EXTERNE_GUIDE } from "./cfo-externe-guide";
 import { FINANCE_STACK_GUIDE, FINANCE_STACK_GUIDE_HTML } from "./finance-stack-guide";
 import { estimateReadMinutes } from "../blog-read-time";
 import { SALARIED_DAF_GUIDE } from "./decision-guide-meta";
@@ -1558,22 +1559,16 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 
 
     "cfo-externe-role-missions-2026": {
-      meta: {
-        title: "CFO externe : rôle, missions et tarifs 2026",
-        description: "Le CFO externe prend en charge votre direction financière sans CDI. Missions, profils concernés, coûts : le guide complet.",
-      },
-      breadcrumbs: {
-        resourcesLabel: "Ressources",
-        resourcesHref: "/ressources",
-        blogLabel: "Blog",
-        blogHref: "/ressources/blog",
-      },
-      h1: "Qu'est-ce qu'un CFO externe (et pourquoi de plus en plus d'entreprises y recourent)",
-      publishedDate: "2026-07-24",
-      category: "CFO externalisé",
+      meta: { title: CFO_EXTERNE_GUIDE.title, description: CFO_EXTERNE_GUIDE.description },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: CFO_EXTERNE_GUIDE.h1,
+      publishedDate: CFO_EXTERNE_GUIDE.publishedDate,
+      updatedDate: CFO_EXTERNE_GUIDE.modifiedDate,
+      author: "Benjamin Ziza",
+      category: "Métier finance",
       htmlContent: undefined,
       content: [],
-      // Full body is served by the dedicated route; the catalog is metadata only.
+      // The dedicated route owns the body.
       readingMinutes: 6,
     },
 

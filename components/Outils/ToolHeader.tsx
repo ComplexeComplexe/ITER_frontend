@@ -63,7 +63,7 @@ export default function ToolHeader({
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div>
               <h3 className="font-semibold text-gray-900 text-sm uppercase tracking-wide mb-2">
-                Points forts
+                Usages à examiner
               </h3>
               <ul className="space-y-2">
                 {forWho.map((item, idx) => (
@@ -101,7 +101,7 @@ export default function ToolHeader({
             <div>
               <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Tarif</p>
               <p className="text-lg font-semibold text-gray-900">{priceRange}</p>
-              {TOOL_PRICING[pricingKey] && <div className="mt-2 text-sm text-gray-600"><p>{TOOL_PRICING[pricingKey].note}</p><a className="mt-2 inline-block underline text-iter-violet" href={TOOL_PRICING[pricingKey].url} target="_blank" rel="noopener noreferrer">Source éditeur — vérifiée le 5 septembre 2026</a></div>}
+              {TOOL_PRICING[pricingKey] && <div className="mt-2 text-sm text-gray-600"><p>{TOOL_PRICING[pricingKey].note}</p><a className="mt-2 inline-block underline text-iter-violet" href={TOOL_PRICING[pricingKey].url} target="_blank" rel="noopener noreferrer">Source tarifaire consultée le {new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${TOOL_PRICING[pricingKey].checkedAt}T12:00:00Z`))}</a></div>}
             </div>
           </div>
 

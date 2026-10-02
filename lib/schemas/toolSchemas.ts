@@ -41,7 +41,7 @@ export function generateToolArticleSchema(tool: Tool) {
     '@type': 'Article',
     '@id': `${url}#article`,
     url,
-    headline: `Avis ${tool.name} : ce que nos DAF externalisés en pensent`,
+    headline: `Avis ${tool.name} : usages et critères de choix`,
     description: `Points forts : ${tool.forWho.join(', ')}. Points de vigilance : ${tool.notForWho.join(', ')}.`,
     inLanguage: 'fr-FR',
     about: {

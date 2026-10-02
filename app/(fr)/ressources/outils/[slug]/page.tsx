@@ -61,7 +61,7 @@ export async function generateMetadata({
   // Check if it's a tool
   const tool = getToolBySlug(slug);
   if (tool) {
-    const title = `Avis ${tool.name} : usages et limites pour PME`;
+    const title = `Avis ${tool.name} : usages et critères de choix`;
     const description = `Avis ${tool.name} : points forts, limites, intégrations et critères de choix pour PME et startups. Sources de tarification et questions à poser à l’éditeur.`;
     return buildMetadata({
       locale: "fr",
