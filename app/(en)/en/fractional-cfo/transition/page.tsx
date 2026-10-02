@@ -1,28 +1,10 @@
-import { Metadata } from "next";
-import DafSubPage from "@/components/pages/DafSubPage";
-import { buildStrapiMetadata } from "@/lib/metadata";
-import { getDafSubContent } from "@/lib/content/daf-sub";
-import { getCmsNavigation } from "@/lib/static-content";
+import type { Metadata } from "next";
+import FinanceServicePage from "@/components/finance/FinanceServicePage";
+import { getFinanceService } from "@/lib/content/finance-service-locales";
+import { buildMetadata } from "@/lib/metadata";
 
-const content = getDafSubContent("en", "transition")!;
-
-export async function generateMetadata(): Promise<Metadata> {
-  return buildStrapiMetadata({
-    endpoint: "daf-transition-page",
-    locale: "en",
-    path: "/fractional-cfo/transition",
-    localizedPaths: {
-      fr: "/daf-externalise/transition",
-      en: "/fractional-cfo/transition",
-      // A1 (W31c 2026-08-02) — cible ES renommée transition → transicion.
-      es: "/externalizacion-daf/transicion",
-    },
-    fallbackTitle: "Interim CFO for SMEs and growing businesses | Iter",
-    fallbackDescription: "Interim CFO ready within 7 to 10 days for SME/mid-cap CFO gaps, cash crises, restructurings, fundraises or M&A. €8,000-12,000/month. 85+ clients, 5/5 Trustfolio.",
-  });
+export function generateMetadata(): Metadata {
+ const service = getFinanceService("transition", "en");
+ return buildMetadata({ locale: "en", path: "/en/fractional-cfo/transition", title: service.title, description: service.description, localizedPaths: {"fr": "/daf-externalise/transition", "en": "/en/fractional-cfo/transition", "es": "/es/externalizacion-daf/transicion"} });
 }
-
-export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("en");
-  return <DafSubPage locale="en" content={content} cmsNavigation={cmsNavigation} />;
-}
+export default function Page() { return <FinanceServicePage locale="en" service={getFinanceService("transition", "en")} />; }

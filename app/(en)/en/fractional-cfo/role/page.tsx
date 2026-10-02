@@ -1,27 +1,18 @@
-import { Metadata } from "next";
 import DafSubPage from "@/components/pages/DafSubPage";
-import { buildStrapiMetadata } from "@/lib/metadata";
-import { getDafSubContent } from "@/lib/content/daf-sub";
+import { buildMetadata } from "@/lib/metadata";
+import { getDafReferenceContent } from "@/lib/content/daf-reference-locales";
 import { getCmsNavigation } from "@/lib/static-content";
+import { buildDafSubFaqSchema } from "@/lib/daf-sub-schema";
+import { alignedPaths } from "@/lib/content/locale-publication";
 
-const content = getDafSubContent("en", "metier")!;
-
-export async function generateMetadata(): Promise<Metadata> {
-  return buildStrapiMetadata({
-    endpoint: "daf-metier-page",
-    locale: "en",
-    path: "/fractional-cfo/role",
-    localizedPaths: {
-      fr: "/daf-externalise/metier",
-      en: "/fractional-cfo/role",
-      es: "/externalizacion-daf/funciones",
-    },
-    fallbackTitle: "CFO Role, Responsibilities and Salary 2026",
-    fallbackDescription: "Complete CFO (Chief Financial Officer) job description: role, missions, key skills, salary and career path in 2026. Written by senior finance leaders.",
-  });
-}
-
+const locale = "en";
+const content = getDafReferenceContent(locale, "metier");
+const paths = alignedPaths("/daf-externalise/metier")!;
+export const metadata = buildMetadata({ locale, path: paths[locale], title: content.meta.title, description: content.meta.description, localizedPaths: paths });
 export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("en");
-  return <DafSubPage locale="en" content={content} cmsNavigation={cmsNavigation} />;
+  const schema = buildDafSubFaqSchema(content, locale);
+  return <>
+    {schema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />}
+    <DafSubPage locale={locale} content={content} cmsNavigation={await getCmsNavigation(locale)} contactContext="daf" heroImage={{ src: "/images/stock/metier-daf.png", alt: "A CFO reviews financial dashboards" }} />
+  </>;
 }

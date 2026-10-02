@@ -1,6 +1,7 @@
 import PageByline from "@/components/PageByline";
 import { FINANCE_AUTHOR, type EditorialAuthor } from "@/lib/schemas/editorial";
-import Link from "next/link";
+import Link from "@/components/PublishedLocaleLink";
+import { parityHref } from "@/lib/locale-route-map";
 import { dafClusterHref } from "@/lib/path-localization";
 import Image from "next/image";
 import { ArrowRight, TrendingUp, BarChart3, Shield, Rocket, Settings, Target, Compass, Zap } from "lucide-react";
@@ -47,22 +48,24 @@ function isFaqHeading(heading?: string): boolean {
 const parseFaqItem = parseDafSubFaqItem;
 
 /** ReactMarkdown component overrides: inline elements only (no block <p>). */
-const mdComponents: Components = {
+const markdownComponents = (locale: Locale): Components => ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   p: ({ node, ...props }) => <span {...props} />,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   a: ({ node, href, children, ...props }) => (
     <Link
-      href={href || "#"}
+      locale={locale}
+      href={parityHref(href || "#", locale)}
       className="text-iter-violet underline underline-offset-2 hover:no-underline"
       {...props}
     >
       {children}
     </Link>
   ),
-};
+});
 
 export default function DafSubPage({ locale, content, cmsNavigation, heroImage, author = FINANCE_AUTHOR, contactContext }: DafSubPageProps) {
+  const mdComponents = markdownComponents(locale);
   const firstSection = content.sections[0];
   const bodySections = content.sections.slice(1);
 
@@ -103,6 +106,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">
               <Link
+                locale={locale}
                 href={getContactPath(locale) + `#${contactContext ?? "daf"}`}
                 className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300"
               >
@@ -110,6 +114,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <Link
+                locale={locale}
                 href={content.parentHref}
                 className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
               >
@@ -121,7 +126,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
       </section>
 
       {/* ─── Optional hero illustration ─── */}
-      {heroImage && !(locale === "fr" && heroImage.src.endsWith(".svg")) && (
+      {heroImage && !heroImage.src.endsWith(".svg") && (
         <section className="bg-background pt-0 pb-8 sm:pb-12">
           <div className="container max-w-3xl">
             <Image
@@ -144,7 +149,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
             const Icon = sectionIcons[i % sectionIcons.length];
 
             return (
-              <div key={i} id={section.id} className="scroll-mt-24 mb-12 sm:mb-16 lg:mb-20">
+              <div key={i} data-block-key={section.id ?? `section-${i + 1}`} id={section.id} className="scroll-mt-24 mb-12 sm:mb-16 lg:mb-20">
 
                 {/* Section heading */}
                 {section.heading && (
@@ -198,7 +203,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                               </span>
                             </summary>
                             <div className="site-copy px-4 sm:px-5 pb-4 sm:pb-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
-                              <p>{faqItem.answer}</p>
+                              <ReactMarkdown components={mdComponents}>{faqItem.answer}</ReactMarkdown>
                             </div>
                           </details>
                         );
@@ -252,7 +257,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                     ? "DAF externalisé"
                     : locale === "en"
                       ? "Fractional CFO"
-                      : "DAF externalizado",
+                      : "CFO externo",
                 href:
                   dafClusterHref("", locale),
                 icon: TrendingUp,
@@ -263,7 +268,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                     ? "DAF à temps partagé"
                     : locale === "en"
                       ? "Recurring Fractional CFO"
-                      : "DAF a tiempo compartido",
+                      : "CFO a tiempo parcial",
                 href:
                   dafClusterHref("temps-partage", locale),
                 icon: Rocket,
@@ -273,8 +278,8 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                   locale === "fr"
                     ? "DAF de transition"
                     : locale === "en"
-                      ? "Transition CFO"
-                      : "DAF de transición",
+                      ? "Interim CFO"
+                      : "CFO de transición",
                 href:
                   dafClusterHref("transition", locale),
                 icon: BarChart3,
@@ -285,7 +290,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                     ? "Métier de DAF"
                     : locale === "en"
                       ? "CFO role & skills"
-                      : "Profesión de DAF",
+                      : "Funciones del CFO",
                 href:
                   dafClusterHref("metier", locale),
                 icon: Shield,
@@ -296,7 +301,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                     ? "Tarifs du DAF externalisé"
                     : locale === "en"
                       ? "CFO pricing"
-                      : "Tarifas DAF externalizado",
+                      : "Precios del CFO externo",
                 href:
                   dafClusterHref("tarifs", locale),
                 icon: Target,
@@ -307,15 +312,16 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                     ? "DAF externalisé par secteur"
                     : locale === "en"
                       ? "CFO by industry"
-                      : "DAF externalizado por sector",
+                      : "CFO externo por sector",
                 href:
-                  dafClusterHref("secteurs", locale),
+                  parityHref("/daf-externalise/secteurs", locale),
                 icon: Compass,
               },
             ].map((service, i) => (
               <Link
+                locale={locale}
                 key={i}
-                href={service.href}
+                href={parityHref(service.href, locale)}
                 className="site-card group flex items-center gap-4 bg-background border border-border/50 rounded-2xl p-5 sm:p-6 hover:border-iter-violet/30 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
@@ -335,7 +341,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
       </section>
 
       <TestimonialsSection locale={locale} />
-      {locale === "fr" && content.proofSlugs && <CaseProofLinks slugs={content.proofSlugs} />}
+      {content.proofSlugs && <CaseProofLinks locale={locale} slugs={content.proofSlugs} />}
       <CTASection locale={locale} context={contactContext ?? "daf"} />
     </PageLayout>
   );

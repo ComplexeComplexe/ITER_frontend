@@ -399,7 +399,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
   "ctaButton": "Échanger sur mon besoin de transition"
 },
     tarifs: {
-      modified: { date: "2026-09-30", label: "30 septembre 2026" },
+      modified: { date: "2026-10-02", label: "2 octobre 2026" },
       proofSlugs: ["opti-digital-structuration-financement", "seasonly-marge-par-canal-bfr", "solarmente-serie-b-cleantech"],
       meta: {
         // SEO-02 (S31 2026-07-27) — 38 requêtes "prix/tarif/coût/combien
@@ -432,7 +432,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           content: [
             offerFr.billing,
             `Les formules ci-dessus correspondent à l'accompagnement récurrent. ${offerFr.commitment} Les missions ponctuelles et de transition sont chiffrées séparément.`,
-            "Formule DAF de Transition : intervention intensive sur 3 à 12 mois en cas de crise ou de transformation majeure. Tarif : 8 000 à 12 000 € HT par mois. Plus élevé que le temps partagé, car la mobilisation est bien plus forte.",
+            "DAF de transition : intervention intensive pour un remplacement, une crise ou une transformation. Tarif indicatif : 8 000 à 12 000 € HT par mois, sur devis distinct. La durée et la passation sont convenues au cadrage.",
             // FACTS (2026-09-01) — cette ligne annonçait un « TJM 800-1 200 € HT
             // par jour » : Iter ne facture jamais à la journée (facts.ts,
             // MISSIONS_PONCTUELLES). Fourchettes au projet, sur devis.
@@ -506,7 +506,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           heading: "Comment Obtenir un Devis ?",
           content: [
             "Pour obtenir un devis personnalisé, le plus simple est de nous contacter pour un premier échange de 30 minutes. Lors de cet appel, nous évaluons ensemble vos besoins, votre situation financière actuelle, et le nombre de jours d'intervention adapté.",
-            "Nous vous envoyons ensuite une proposition commerciale détaillée sous 48 heures.",
+            "Nous préparons ensuite une proposition commerciale détaillée, avec un périmètre et un calendrier convenus ensemble.",
           ],
         },
         {
@@ -516,16 +516,16 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             // du cluster : la seule du lot dans ce cas. GSC la montre pourtant
             // aux portes du top 10 sur « combien coûte un daf externalisé »
             // (P10,2) : le jus qu'elle reçoit doit circuler.
-            "Cette grille s'applique à toutes les formes d'intervention. Pour comprendre le format récurrent, voir **[DAF à temps partagé](/daf-externalise/temps-partage)** ; pour une intervention d'urgence, **[DAF de transition](/daf-externalise/transition)** ; pour le détail du rôle, **[métier de DAF](/daf-externalise/metier)** ; et pour les spécificités par activité, **[DAF externalisé par secteur](/daf-externalise/secteurs)**. La présentation complète de l'offre est sur la page **[DAF externalisé](/daf-externalise)**.",
+            "Les missions de transition et de projet font l'objet d'un devis distinct. Pour comprendre le format récurrent, voir **[DAF à temps partagé](/daf-externalise/temps-partage)** ; pour une intervention d'urgence, **[DAF de transition](/daf-externalise/transition)** ; pour le détail du rôle, **[métier de DAF](/daf-externalise/metier)** ; et pour les spécificités par activité, **[DAF externalisé par secteur](/daf-externalise/secteurs)**. La présentation complète de l'offre est sur la page **[DAF externalisé](/daf-externalise)**.",
           ],
         },
         {
           heading: "FAQ - Tarifs du DAF Externalisé",
           content: [
-            "Le tarif est-il déductible fiscalement ? Oui. Les honoraires d'un DAF externalisé sont des charges d'exploitation déductibles du résultat imposable de l'entreprise, au même titre que les honoraires d'un expert-comptable ou d'un avocat.",
+            "Le tarif est-il déductible fiscalement ? À vérifier avec votre conseil fiscal selon la situation de l'entreprise, les règles applicables et les justificatifs. Cette page ne constitue pas une évaluation fiscale.",
             "Peut-on négocier le tarif ? Nos tarifs sont transparents et basés sur le marché. Nous pouvons adapter le périmètre confié à votre budget, mais nous ne négocions pas le prix des formules : il suit le profil engagé. La qualité de nos DAF justifie nos prix.",
             "Combien paient la plupart de vos clients ? Au 1er septembre 2026, environ 40 % sont sur Essentiel, autour de 3 000 € HT par mois, 40 % sur Croissance, autour de 5 000 €, et 20 % au-delà. Ces repères sont arrondis : ils ne définissent pas les bornes des factures individuelles et ne remplacent pas le devis.",
-            "Y a-t-il un engagement de durée minimum ? Non. Nos contrats sont résiliables avec un préavis d'un mois. Nous préférons gagner votre confiance par la qualité de notre travail plutôt que par des clauses contractuelles contraignantes.",
+            "Y a-t-il un engagement de durée minimum ? Non. La résiliation est possible avec un préavis de 30 jours.",
             "Le tarif inclut-il les déplacements ? Pour les interventions en présentiel, les frais de déplacement (transport, hébergement si nécessaire) sont facturés en sus au coût réel. Les interventions en distanciel ne génèrent pas de frais supplémentaires.",
           ],
         },

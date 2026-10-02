@@ -1,3 +1,4 @@
+import "@/app/design-system.css";
 import type { Metadata } from "next";
 import DocumentShell, { OG_LOCALE } from "@/components/DocumentShell";
 

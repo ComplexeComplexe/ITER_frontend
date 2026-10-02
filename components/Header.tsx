@@ -2,7 +2,8 @@
 
 import { recordServiceNavigation } from "@/lib/analytics/serviceNavigation";
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
+import Link from "@/components/PublishedLocaleLink";
+import NativeLink from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -14,7 +15,6 @@ import { usePageTranslations } from "@/lib/hooks/use-page-translations";
 
 export default function Header({
   locale,
-  cmsNavigation,
 }: {
   locale: Locale;
   cmsNavigation?: NavItem[];
@@ -56,24 +56,8 @@ export default function Header({
   // Clear pending timer on unmount
   useEffect(() => () => cancelClose(), []);
 
-  // FIX(i18n): the Strapi-driven `cmsNavigation` was returning the Spanish
-  // navigation for every locale (the CMS `global` single-type only had its
-  // ES translation populated, so the fallback chain in getGlobal() ended up
-  // serving ES on FR and EN pages). Until the CMS is properly translated,
-  // we use the locale-correct static `navigation[locale]` as the source of
-  // truth. The CMS source is still accepted but only when it actually
-  // returns at least one item whose href matches the current locale prefix
-  // — a cheap sanity check that prevents cross-locale bleed.
-  const localePrefix = locale === "fr" ? "/" : `/${locale}`;
-  const cmsLooksRightLocale =
-    !!cmsNavigation &&
-    cmsNavigation.length > 0 &&
-    cmsNavigation.some((item) =>
-      locale === "fr"
-        ? !item.href.startsWith("/en/") && !item.href.startsWith("/es/")
-        : item.href === localePrefix || item.href.startsWith(`${localePrefix}/`)
-    );
-  const nav = locale === "fr" ? navigation.fr : cmsLooksRightLocale ? cmsNavigation! : navigation[locale];
+  // Shared static contract: CMS overrides must not reintroduce different groups.
+  const nav = navigation[locale];
   const homePath = getHomePath(locale);
   const isHome = pathname === "/" || pathname === "/en" || pathname === "/es";
 
@@ -124,7 +108,7 @@ export default function Header({
 
   return (
     <motion.header
-      initial={locale === "fr" ? false : { y: -100 }}
+      initial={false}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -135,7 +119,7 @@ export default function Header({
     >
       <div className="container grid grid-cols-[1fr_auto] xl:grid-cols-[1fr_auto_1fr] items-center h-16 lg:h-[72px] gap-4">
         {/* Logo */}
-        <Link href={homePath} className="flex items-center gap-2 group relative z-10 min-w-0">
+        <Link locale={locale} href={homePath} className="flex items-center gap-2 group relative z-10 min-w-0">
           <Image
             src="/images/logos/logo-hero.webp"
             alt="Iter Advisors"
@@ -163,6 +147,7 @@ export default function Header({
               onKeyDown={(event) => { if (event.key === "Escape") setOpenDropdown(null); }}
             >
               <Link
+                locale={locale}
                 href={item.href}
                 className="flex items-center gap-1 px-4 py-2.5 text-sm font-medium text-white/80 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/10"
               >
@@ -200,6 +185,7 @@ export default function Header({
                           <div className="space-y-0.5">
                             {item.children.filter(c => c.group === 'Finance').map((child) => (
                               <Link
+                locale={locale}
                                 key={child.href + child.text}
                                 href={child.href}
                                 className="block px-3 py-2.5 text-sm text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors"
@@ -212,11 +198,12 @@ export default function Header({
                         {/* RH column */}
                         <div>
                           <span className="inline-block px-2.5 py-1 rounded-full bg-iter-chartreuse/20 text-iter-dark text-[11px] font-semibold uppercase tracking-wider mb-3">
-                            Ressources humaines
+                            {locale === "fr" ? "Ressources humaines" : locale === "en" ? "Human resources" : "Recursos humanos"}
                           </span>
                           <div className="space-y-0.5">
                             {item.children.filter(c => c.group === 'RH').map((child) => (
                               <Link
+                locale={locale}
                                 key={child.href + child.text}
                                 href={child.href}
                                 className="block px-3 py-2.5 text-sm text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors"
@@ -232,6 +219,7 @@ export default function Header({
                     <div className="w-64 bg-white/95 backdrop-blur-md border border-white/20 rounded-xl p-1.5 shadow-xl shadow-iter-violet/20">
                       {item.children.map((child) => (
                         <Link
+                locale={locale}
                           key={child.href}
                           href={child.href}
                           className="block px-3 py-2.5 text-sm text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors"
@@ -289,7 +277,7 @@ export default function Header({
                       {(["fr", "en", "es"] as Locale[])
                         .filter((l) => l !== locale)
                         .map((l) => translations[l] ? (
-                          <Link
+                          <NativeLink
                             key={l}
                             role="menuitem"
                             href={translations[l]!}
@@ -297,7 +285,7 @@ export default function Header({
                             className="block px-3 py-2 text-xs text-iter-dark/70 hover:text-iter-violet hover:bg-iter-violet/5 rounded-lg transition-colors uppercase tracking-wider"
                           >
                             {languageSwitcher[l].label}
-                          </Link>
+                          </NativeLink>
                         ) : (
                           <span key={l} role="menuitem" aria-disabled="true" className="block px-3 py-2 text-xs text-iter-dark/60">
                             {languageSwitcher[l].label}<span className="block text-[10px] normal-case">{unavailable}</span>
@@ -311,6 +299,7 @@ export default function Header({
 
             {/* CTA Button */}
             <Link
+                locale={locale}
               href={contactItem.href}
               className="site-header-contact px-6 py-2.5 text-sm font-semibold rounded-full bg-iter-chartreuse text-iter-dark hover:brightness-105 transition-all duration-200 hover:shadow-lg hover:shadow-iter-chartreuse/30"
             >
@@ -345,6 +334,7 @@ export default function Header({
                 <div key={item.href}>
                   <div className="flex items-center justify-between">
                     <Link
+                locale={locale}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
                       className="py-3 px-4 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors flex-1"
@@ -375,6 +365,7 @@ export default function Header({
                     <div className="pl-6 pb-2 space-y-0.5">
                       {item.children.map((child) => (
                         <Link
+                locale={locale}
                           key={child.href}
                           href={child.href}
                           className="block py-2 px-4 text-sm text-white/40 hover:text-white transition-colors rounded-lg"
@@ -388,6 +379,7 @@ export default function Header({
                 </div>
               ))}
               <Link
+                locale={locale}
                 href={contactItem.href}
                 onClick={() => setMobileOpen(false)}
                 className="site-header-contact mt-2 mx-4 px-6 py-3 text-center font-semibold rounded-full bg-iter-chartreuse text-iter-dark"
@@ -399,6 +391,7 @@ export default function Header({
               <div className="mt-4 mx-4 flex gap-3">
                 {(["fr", "en", "es"] as Locale[]).map((l) => translations[l] ? (
                   <Link
+                locale={locale}
                     key={l}
                     href={translations[l]!}
                     className={`text-xs uppercase tracking-widest px-3 py-1.5 border rounded-lg ${

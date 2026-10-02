@@ -100,7 +100,7 @@ function MinimalHeader({ onCtaClick }: { onCtaClick: () => void }) {
             onClick={onCtaClick}
             className="px-5 py-2.5 text-sm font-semibold rounded-full bg-iter-chartreuse text-iter-dark hover:brightness-105 transition-all duration-200 hover:shadow-lg hover:shadow-iter-chartreuse/30"
           >
-            Calculer mon ROI
+            Présenter mon besoin
           </button>
         </div>
       </div>
@@ -134,19 +134,19 @@ function Hero({ formRef }: { formRef: React.RefObject<HTMLDivElement | null> }) 
           </h1>
 
           <p className="text-lg lg:text-xl text-white/85 leading-relaxed mb-4 max-w-xl">
-            +3 points de marge en moyenne. Cash maîtrisé. Levées débloquées.
-            Un DAF senior qui livre des résultats chiffrés dès le 1er trimestre.
+            Une direction financière pour comprendre vos marges, anticiper votre
+            trésorerie et préparer vos décisions avec un interlocuteur dédié.
           </p>
 
           <p className="text-base text-white/60 leading-relaxed mb-8 max-w-xl">
-            Pas de slides. Pas de théorie. Des décisions et du ROI.
+            Un périmètre, des livrables et des responsabilités définis ensemble.
           </p>
 
           <ul className="space-y-3 mb-8 max-w-xl">
             {[
-              "Diagnostic financier livré en 2 semaines",
+              "Diagnostic et calendrier définis après examen des données",
               "KPI et marge par produit pilotés au mois",
-              "ROI moyen 5× le coût de la mission sur 12 mois",
+              "Résultats examinés selon une période et une base de comparaison explicites",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-white/90">
                 <span className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-iter-chartreuse/20 flex items-center justify-center">
@@ -158,9 +158,9 @@ function Hero({ formRef }: { formRef: React.RefObject<HTMLDivElement | null> }) 
           </ul>
 
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-white/70">
-            <TrustItem value="+3 pts" label="marge brute moyenne" />
-            <TrustItem value="60+" label="missions livrées" />
-            <TrustItem value="6 M€" label="levés en 4 mois" />
+            <TrustItem value="13 semaines" label="horizon indicatif du prévisionnel" />
+            <TrustItem value="85" label="entreprises accompagnées" />
+            <TrustItem value="30 jours" label="préavis de fin de mission récurrente" />
           </div>
         </div>
 
@@ -184,7 +184,7 @@ function TrustItem({ value, label }: { value: string; label: string }) {
 /* ──────────────────────────────────────────────────────────────────
    Lead Form
    ────────────────────────────────────────────────────────────────── */
-function LeadForm() {
+export function LeadForm() {
   const [pending, setPending] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -220,7 +220,7 @@ function LeadForm() {
         });
         if (!res.ok) throw new Error("Erreur d'envoi");
       } else {
-        console.log("Cads ROI form submission:", payload);
+        throw new Error("Lead delivery is not configured");
       }
       setSuccess(true);
       form.reset();
@@ -240,10 +240,10 @@ function LeadForm() {
         <div className="w-12 h-12 rounded-full bg-iter-chartreuse/30 flex items-center justify-center mb-5">
           <Check className="text-iter-violet" size={24} />
         </div>
-        <h3 className="text-2xl font-bold font-heading mb-3">Audit demandé.</h3>
+        <h3 className="text-2xl font-bold font-heading mb-3">Demande reçue.</h3>
         <p className="text-iter-gray leading-relaxed">
-          Un CFO Iter Advisors vous recontacte sous 24h ouvrées avec une première
-          lecture de vos enjeux et le périmètre du diagnostic.
+          Un membre de l’équipe vous recontactera pour préciser votre besoin
+          et convenir d’un échange.
         </p>
       </div>
     );
@@ -253,10 +253,10 @@ function LeadForm() {
     <div className="site-card bg-white rounded-3xl p-6 lg:p-8 shadow-2xl shadow-iter-violet/30 text-iter-dark">
       <div className="mb-6">
         <h2 className="text-xl lg:text-2xl font-bold font-heading mb-2">
-          Calculer mon ROI en 30 min
+          Présenter mon besoin financier
         </h2>
         <p className="text-sm text-iter-gray">
-          Premier audit offert. Réponse sous 24h ouvrées. Sans engagement.
+          Présentez votre besoin et votre calendrier. Le périmètre sera défini après un premier échange.
         </p>
       </div>
 
@@ -361,23 +361,23 @@ function Pains({ onCtaClick }: { onCtaClick: () => void }) {
   const pains = [
     {
       icon: TrendingUp,
-      title: "3 à 5 points de marge laissés sur la table",
-      text: "Sans pilotage analytique, vous vendez des produits ou clients à perte sans le savoir. Ça se chiffre vite en centaines de k€.",
+      title: "Une marge difficile à expliquer",
+      text: "Une analyse par produit ou canal aide à comprendre la contribution de chaque activité. Le travail commence par vérifier les données et les règles de calcul.",
     },
     {
       icon: Wallet,
-      title: "Votre BFR finance vos concurrents",
+      title: "Des stocks et des délais qui mobilisent la trésorerie",
       text: "Délais de paiement non négociés, stocks mal calibrés : votre cash dort dans le bilan au lieu de financer la croissance.",
     },
     {
       icon: AlertTriangle,
-      title: "Chaque mois sans CFO = trésorerie qui fuit",
-      text: "Coûts non challengés, contrats non renégociés, abonnements oubliés. La facture mensuelle dépasse celle d'une mission DAF.",
+      title: "Des coûts qui demandent une revue",
+      text: "Les contrats, abonnements et dépenses méritent d’être examinés avec leurs responsables. Les économies éventuelles doivent être mesurées, pas présumées.",
     },
     {
       icon: Target,
       title: "Vos investisseurs réclament des chiffres que vous n'avez pas",
-      text: "Pas de cohort, pas d'unit economics, pas de prévisionnel solide : les levées traînent, voire échouent.",
+      text: "Des définitions partagées des indicateurs, un prévisionnel et des hypothèses documentées facilitent les échanges. Ils ne garantissent pas une levée.",
     },
   ];
 
@@ -432,11 +432,11 @@ function Pains({ onCtaClick }: { onCtaClick: () => void }) {
    ────────────────────────────────────────────────────────────────── */
 function Solution() {
   const benefits = [
-    "+3 pts de marge brute en moyenne sur 12 mois",
-    "Cash visible à 13 semaines, BFR optimisé",
-    "Décisions investissement avec ROI quantifié",
-    "Coûts non productifs identifiés et coupés",
-    "Data room et BP qui débloquent les levées",
+    "Analyse des marges et des écarts au budget",
+    "Prévisionnel de trésorerie à 13 semaines, avec hypothèses",
+    "Scénarios documentés pour préparer les investissements",
+    "Coûts et anomalies à examiner avec les responsables",
+    "Data room et business plan pour préparer les échanges investisseurs",
   ];
 
   return (
@@ -457,7 +457,7 @@ function Solution() {
               sur la création de valeur — pas sur la production de tableurs.
             </p>
             <p className="text-iter-gray leading-relaxed mb-8">
-              Concrètement : <strong className="text-iter-dark">1 à 5 jours par mois</strong>,
+              Concrètement : <strong className="text-iter-dark">1 à 8 jours par mois, à titre indicatif</strong>,
               avec des objectifs chiffrés posés dès le départ
               (marge, BFR, cash, valorisation) et un suivi mensuel des résultats.
             </p>
@@ -476,13 +476,13 @@ function Solution() {
 
           <div className="site-card lg:col-span-2 bg-iter-violet text-white rounded-3xl p-7 lg:p-8">
             <span className="text-xs font-semibold uppercase tracking-widest text-iter-chartreuse mb-3 block">
-              ROI typique
+              Un périmètre à convenir
             </span>
-            <h3 className="text-2xl font-bold font-heading mb-5">5× le coût de la mission.</h3>
+            <h3 className="text-2xl font-bold font-heading mb-5">Des décisions mieux préparées.</h3>
             <ul className="space-y-4 text-white/90 text-sm">
               <li className="flex gap-3">
                 <ShieldCheck size={18} className="text-iter-chartreuse flex-shrink-0 mt-0.5" />
-                <span>Gains marge identifiés sous 60 jours</span>
+                <span>Travaux et calendrier confirmés au cadrage</span>
               </li>
               <li className="flex gap-3">
                 <ShieldCheck size={18} className="text-iter-chartreuse flex-shrink-0 mt-0.5" />
@@ -490,11 +490,11 @@ function Solution() {
               </li>
               <li className="flex gap-3">
                 <ShieldCheck size={18} className="text-iter-chartreuse flex-shrink-0 mt-0.5" />
-                <span>Pas de CDI, pas de surcoût RH ni de séparation</span>
+                <span>Mission récurrente sans durée minimale, préavis de 30 jours</span>
               </li>
               <li className="flex gap-3">
                 <ShieldCheck size={18} className="text-iter-chartreuse flex-shrink-0 mt-0.5" />
-                <span>Transition vers CFO interne quand le ROI le justifie</span>
+                <span>Passation à un CFO interne si ce format répond au besoin</span>
               </li>
             </ul>
           </div>
@@ -509,33 +509,9 @@ function Solution() {
    ────────────────────────────────────────────────────────────────── */
 function Testimonials() {
   const cases = [
-    {
-      sector: "SaaS B2B • Série A",
-      problem:
-        "Visibilité cash à 4 semaines, équipe finance débordée à l'approche d'une levée.",
-      action:
-        "Mise en place d'un cash forecast 13 semaines, build du business plan et data room.",
-      result: "Levée de 6 M€ closée en 4 mois.",
-      kpi: "+6 M€",
-    },
-    {
-      sector: "PME industrielle • 12 M€ CA",
-      problem:
-        "Marge en baisse depuis 3 trimestres, dirigeant sans lecture claire des coûts.",
-      action:
-        "Refonte de la comptabilité analytique et reporting marge par produit.",
-      result: "+3,2 pts de marge brute en 9 mois.",
-      kpi: "+3,2 pts",
-    },
-    {
-      sector: "Scale-up DTC • 8 M€ CA",
-      problem:
-        "Croissance rapide, BFR qui explose, fondateur seul à bord.",
-      action:
-        "Renégociation fournisseurs, ERP léger, prévisionnel glissant hebdo.",
-      result: "BFR -22 jours, cap des 10 M€ franchi sans dilution.",
-      kpi: "-22 jours",
-    },
+    { sector: "Opti Digital · adtech", problem: "Structurer la fonction finance dans la durée.", action: "Reporting mensuel, procédures de clôture, migration ERP et accompagnement au financement non dilutif.", result: "Résultats qualitatifs : aucun montant de financement ni gain de productivité chiffré n’est publié.", kpi: "Mission documentée", href: "/ressources/cas-clients/opti-digital-structuration-financement" },
+    { sector: "Seasonly · beauté multi-canal", problem: "Comprendre les marges par canal et les besoins de financement du stock.", action: "P&L par canal, suivi des stocks, plan de financement du BFR et reporting hebdomadaire.", result: "Le cas décrit le périmètre, la méthode de comparaison et ses limites. Il ne prédit pas les résultats d’une autre entreprise.", kpi: "Mission documentée", href: "/ressources/cas-clients/seasonly-marge-par-canal-bfr" },
+    { sector: "SolarMente · cleantech", problem: "Préparer les finances d’une levée et d’une acquisition entre 2022 et 2024.", action: "Modèle multi-scénarios, data room, reporting au conseil et intégration financière d’Eltex en 2024.", result: "Dirigeants, investisseurs et conseils ont contribué aux opérations ; leur réussite n’est pas attribuée au seul accompagnement d’Iter.", kpi: "2022 à 2024", href: "/ressources/cas-clients/solarmente-serie-b-cleantech" },
   ];
 
   return (
@@ -543,10 +519,10 @@ function Testimonials() {
       <div className="container">
         <div className="max-w-3xl mb-14">
           <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-3 block">
-            Résultats mesurables
+            Des missions documentées
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold font-heading leading-tight">
-            Trois missions, trois ROI chiffrés.
+            Trois missions avec un périmètre documenté.
           </h2>
         </div>
 
@@ -581,7 +557,7 @@ function Testimonials() {
                   <p className="text-iter-gray font-semibold mb-1 text-xs uppercase tracking-wider">
                     Résultat
                   </p>
-                  <p className="text-iter-dark font-semibold leading-relaxed">{c.result}</p>
+                  <p className="text-iter-dark font-semibold leading-relaxed">{c.result}</p><a href={c.href} className="text-iter-violet underline">Lire le cas et ses limites</a>
                 </div>
               </div>
             </div>
@@ -600,12 +576,12 @@ function Methodology() {
     {
       n: "01",
       title: "Audit financier",
-      text: "2 semaines. Identification chiffrée des gains accessibles : marge, cash, BFR.",
+      text: "Examen des données, des échéances et des priorités. Le calendrier est convenu après cadrage.",
     },
     {
       n: "02",
-      title: "Plan d'action ROI",
-      text: "Quick wins sous 60 jours. Outils (reporting, cash forecast, dashboards) déployés.",
+      title: "Plan d'action",
+      text: "Livrables, sources, responsables et calendrier définis selon vos besoins.",
     },
     {
       n: "03",
@@ -635,7 +611,7 @@ function Methodology() {
             Méthode
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold font-heading leading-tight">
-            Du diagnostic au ROI, en 4 étapes.
+            Du cadrage au suivi, en 4 étapes.
           </h2>
         </div>
 
@@ -666,12 +642,12 @@ function Differentiation() {
     {
       icon: Zap,
       title: "Résultats, pas livrables",
-      text: "On engage des objectifs chiffrés. Marge, cash, valorisation. Vous mesurez le ROI mois après mois.",
+      text: "Nous convenons des livrables, des indicateurs et de leur suivi. Un gain éventuel se mesure sans être garanti.",
     },
     {
       icon: LineChart,
       title: "Des CFO opérateurs",
-      text: "Tous nos intervenants ont déjà été DAF en PME ou scale-up. Ils ont délivré ces chiffres ailleurs avant chez vous.",
+      text: "Le profil et l’expérience mobilisés sont précisés au cadrage selon votre équipe et vos sujets.",
     },
     {
       icon: Target,
@@ -681,7 +657,7 @@ function Differentiation() {
     {
       icon: ShieldCheck,
       title: "Engagement modulable",
-      text: "1 jour par mois ou 4 jours par semaine. Vous ajustez selon les cycles, sans contrainte RH.",
+      text: "Les volumes mensuels sont indicatifs. Le contrat précise le périmètre et le préavis de 30 jours, sans durée minimale pour le suivi récurrent.",
     },
   ];
 
@@ -738,17 +714,17 @@ function FinalCTA({ onCtaClick }: { onCtaClick: () => void }) {
           Combien vous coûte chaque mois sans CFO ?
         </h2>
         <p className="text-lg lg:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-          30 minutes avec un DAF senior. Vous repartez avec un chiffrage des gains
-          accessibles sur 12 mois et un plan d&apos;action priorisé.
+          Un premier échange pour préciser votre situation, votre organisation et
+          les travaux utiles. Un devis définit ensuite le périmètre et le calendrier.
         </p>
         <button
           onClick={onCtaClick}
           className="site-button site-button-primary inline-flex items-center gap-2 px-8 py-4 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:brightness-105 transition-all duration-200 hover:shadow-lg hover:shadow-iter-chartreuse/30 text-base"
         >
-          Calculer mon ROI
+          Présenter mon besoin
           <ArrowRight size={18} />
         </button>
-        <p className="text-sm text-white/60 mt-5">Premier audit offert. Sans engagement.</p>
+        <p className="text-sm text-white/60 mt-5">Le premier échange sert à qualifier votre besoin ; ce n’est pas un audit financier.</p>
       </div>
     </section>
   );
@@ -809,7 +785,7 @@ function StickyMobileCTA({ onCtaClick }: { onCtaClick: () => void }) {
         onClick={onCtaClick}
         className="site-button site-button-primary w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-iter-violet text-white font-semibold hover:brightness-110 transition-all"
       >
-        Calculer mon ROI
+        Présenter mon besoin
         <ArrowRight size={16} />
       </button>
     </div>

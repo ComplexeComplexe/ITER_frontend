@@ -4,7 +4,7 @@ import CadsRoiPage from "@/components/pages/CadsRoiPage";
 export const metadata: Metadata = {
   title: "DAF ROI | Iter Advisors",
   description:
-    "DAF externalisé / CFO part-time : +3 pts de marge, cash maîtrisé, levées débloquées. Audit financier livré en 2 semaines. ROI 5x sur 12 mois.",
+    "DAF externalisé : précisez vos besoins de trésorerie, de reporting et de pilotage financier. Périmètre, livrables et calendrier à définir ensemble.",
   robots: {
     index: false,
     follow: false,

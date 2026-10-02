@@ -3,6 +3,7 @@
  * Maps the current path to the equivalent path in the target locale.
  */
 
+import { alignedPaths, ALIGNED_PAGE_IDS } from "./content/locale-publication";
 import { Locale } from "./i18n";
 import { getCanonicalServiceSlug, SERVICE_URL_SLUG_BY_LOCALE, type ServicePageSlug } from "./fallback-service-pages";
 
@@ -58,6 +59,8 @@ export function dafClusterHref(
   sub: "" | "temps-partage" | "transition" | "metier" | "tarifs" | "secteurs",
   locale: Locale,
 ): string {
+  const reviewed = alignedPaths(`/daf-externalise${sub ? `/${sub}` : ""}`);
+  if (reviewed) return reviewed[locale];
   const base = locale === "fr" ? "/daf-externalise" : `/${locale}/${DAF_BASE[locale]}`;
   if (!sub) return base;
   if (locale === "fr") return `${base}/${sub}`;
@@ -349,6 +352,10 @@ function getPathWithoutLocale(pathname: string): { locale: Locale; path: string 
  * Falls back to home if the route cannot be mapped.
  */
 export function getLocalizedPath(pathname: string, targetLocale: Locale): string {
+  for (const id of ALIGNED_PAGE_IDS) {
+    const paths = alignedPaths(id)!;
+    if (Object.values(paths).includes(pathname)) return paths[targetLocale];
+  }
   const { locale: currentLocale, path } = getPathWithoutLocale(pathname);
   if (currentLocale === targetLocale) {
     return pathname;

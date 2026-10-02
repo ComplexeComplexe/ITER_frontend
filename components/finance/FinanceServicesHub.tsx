@@ -1,38 +1,39 @@
-import Link from "next/link";
+import { LOCALE_ALIGNMENT_DATE } from "@/lib/content/locale-publication";
+import PublishedLocaleLink from "@/components/PublishedLocaleLink";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import PageByline from "@/components/PageByline";
-import { FINANCE_SERVICES, FINANCE_REVIEW_DATE } from "@/lib/content/finance-services";
+import { FINANCE_REVIEW_DATE } from "@/lib/content/finance-services";
 import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
+import type { Locale } from "@/lib/i18n";
+import { parityHref } from "@/lib/locale-route-map";
+import { getFinanceHub } from "@/lib/content/finance-hub-locales";
+import { getFinanceServices } from "@/lib/content/finance-service-locales";
 import { getServicesContent } from "@/lib/content/services";
 import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 import styles from "./finance.module.css";
 
-const groups = [
-  { id: "direction", title: "Une direction financière adaptée à votre rythme", intro: "Un interlocuteur pour le pilotage récurrent, ou un relais pour une période définie.", keys: ["temps-partage", "transition", "fractional"] },
-  { id: "pilotage", title: "Des chiffres pour préparer vos décisions", intro: "Commencer par un besoin précis : comprendre vos marges ou anticiper les échéances de cash.", keys: ["controle", "tresorerie"] },
-  { id: "organisation", title: "Une organisation qui tient dans la durée", intro: "Clarifier les responsabilités et la circulation des données, avec votre équipe et vos conseils.", keys: ["comptabilite", "organisation"] },
-  { id: "operations", title: "La préparation financière de vos opérations", intro: "Des missions définies selon le projet, les informations disponibles et les autres intervenants.", keys: ["levee", "due-diligence"] },
-];
-
-export default function FinanceServicesHub() {
-  const modified = PAGE_REVISIONS["/services"] ?? FINANCE_REVIEW_DATE;
-  const schema = editorialWebPageSchema({ path: "/services", name: "Services finance pour PME et startups", description: "Choisir un accompagnement de direction financière, de reporting, de trésorerie ou d’organisation selon votre besoin.", locale: "fr", author: FINANCE_AUTHOR, dateModified: modified });
-  return <PageLayout locale="fr"><div className={styles.root} data-finance-template="hub">
+export default function FinanceServicesHub({ locale = "fr" }: { locale?: Locale }) {
+  const t = getFinanceHub(locale);
+  const services = getFinanceServices(locale);
+  const href = (path: string) => parityHref(path, locale);
+  const modified = locale === "fr" ? (PAGE_REVISIONS["/services"] ?? FINANCE_REVIEW_DATE) : LOCALE_ALIGNMENT_DATE;
+  const schema = editorialWebPageSchema({ path: href("/services"), name: t.title, description: t.description, locale, author: FINANCE_AUTHOR, dateModified: modified });
+  return <PageLayout locale={locale}><div className={styles.root} data-finance-template="hub">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-    <section className={`${styles.hero} site-hero`}><div className={styles.wrap}><Breadcrumb locale="fr" items={[{ label: "Services finance" }]} /><div className={styles.hubHero}>
-      <p className={styles.eyebrow}>Les services finance d’Iter Advisors</p><h1>Services finance pour PME et startups</h1><p className={styles.promise}>Le bon accompagnement, au bon endroit.</p><p className={styles.intro}>Partons du besoin à traiter : un DAF dans la durée, un remplacement, des marges à comprendre ou une opération à préparer. Chaque mission précise les travaux, les responsabilités et les livrables.</p><div className={styles.actions}><a href="#direction" className={`${styles.primary} site-button site-button-primary`}>Trouver mon accompagnement <span aria-hidden="true">↓</span></a><Link href="/daf-externalise" className={styles.textLink}>Découvrir notre direction financière externalisée ↗</Link></div>
+    <section className={`${styles.hero} site-hero`}><div className={styles.wrap}><Breadcrumb locale={locale} items={[{ label: t.label }]} /><div className={styles.hubHero}>
+      <p className={styles.eyebrow}>{t.eyebrow}</p><h1>{t.title}</h1><p className={styles.promise}>{t.promise}</p><p className={styles.intro}>{t.intro}</p><div className={styles.actions}><a href="#direction" className={`${styles.primary} site-button site-button-primary`}>{t.find} <span aria-hidden="true">↓</span></a><PublishedLocaleLink locale={locale} href={href("/daf-externalise")} className={styles.textLink}>{t.offer} <span aria-hidden="true">↗</span></PublishedLocaleLink></div>
     </div></div></section>
-    <nav className={styles.subnav} aria-label="Les besoins financiers"><div className={styles.wrap}><a href="#direction">Direction financière</a><a href="#pilotage">Reporting et trésorerie</a><a href="#organisation">Organisation</a><a href="#operations">Opérations</a></div></nav>
-    <div className={styles.wrap}>{groups.map((group, index) => <section id={group.id} key={group.id} className={`${styles.section} ${styles.stacked}`}>
-      <div className={styles.sectionHeading}><p className={styles.eyebrow}>0{index + 1} · Votre priorité</p><h2>{group.title}</h2><p>{group.intro}</p></div>
-      <div className={styles.hubGrid}>{group.keys.map(key => { const service = FINANCE_SERVICES[key]; return <article key={key} className={styles.hubItem}><h3><Link href={service.path}>{service.label}<span aria-hidden="true">↗</span></Link></h3><p>{service.promise}</p><p>{service.summary[0][1]}.</p><Link href={service.path} className={styles.textLink}>Voir les missions et les livrables</Link></article>; })}</div>
+    <nav className={styles.subnav} aria-label={t.navLabel}><div className={styles.wrap}><a href="#direction">{t.nav[0]}</a><a href="#pilotage">{t.nav[1]}</a><a href="#organisation">{t.nav[2]}</a><a href="#operations">{t.nav[3]}</a></div></nav>
+    <div className={styles.wrap}>{t.groups.map((group, index) => <section id={group.id} key={group.id} className={`${styles.section} ${styles.stacked}`}>
+      <div className={styles.sectionHeading}><p className={styles.eyebrow}>0{index + 1} · {t.priority}</p><h2>{group.title}</h2><p>{group.intro}</p></div>
+      <div className={styles.hubGrid}>{group.keys.map(key => { const service = services[key]; return <article key={key} className={styles.hubItem}><h3><PublishedLocaleLink locale={locale} href={href(service.path)}>{service.label}<span aria-hidden="true">↗</span></PublishedLocaleLink></h3><p>{service.promise}</p><p>{service.summary[0][1]}.</p><PublishedLocaleLink locale={locale} href={href(service.path)} className={styles.textLink}>{t.work}</PublishedLocaleLink></article>; })}</div>
     </section>)}
-    <section className={styles.section}><div className={styles.sectionHeading}><p className={styles.eyebrow}>Comment choisir ?</p><h2>Commencer par la décision à préparer.</h2></div><div className={styles.sectionBody}><p>Un besoin transversal et récurrent appelle souvent un DAF à temps partagé. Un sujet ciblé peut justifier une mission de reporting, de trésorerie ou d’organisation. Un remplacement temporaire relève de la transition.</p><p>Le premier échange sert à situer votre priorité, votre équipe et vos échéances. Le devis distingue les travaux inclus, les projets complémentaires et les interventions de vos autres conseils.</p><Link className={styles.textLink} href="/daf-externalise/tarifs">Consulter les tarifs DAF ↗</Link></div></section>
-    <section className={`${styles.section} ${styles.stacked}`}><div className={styles.sectionHeading}><p className={styles.eyebrow}>Explorer une mission réelle</p><h2>Des cas pour comprendre notre travail</h2></div><div className={styles.resourceList}><Link href="/ressources/cas-clients/opti-digital-structuration-financement">Opti Digital : structurer la fonction finance <span aria-hidden="true">↗</span></Link><Link href="/ressources/cas-clients/seasonly-marge-par-canal-bfr">Seasonly : marge par canal et BFR <span aria-hidden="true">↗</span></Link><Link href="/ressources/cas-clients/solarmente-serie-b-cleantech">SolarMente : préparation financière et financement <span aria-hidden="true">↗</span></Link></div></section>
-    <section className={styles.contact}><p className={styles.eyebrow}>Un point de départ simple</p><h2>Quel sujet finance<br />prend trop de place aujourd’hui ?</h2><p>Décrivez votre besoin et votre échéance. Nous préciserons le type d’accompagnement à envisager.</p><Link href="/contact#services-finance" className={`${styles.primary} site-button site-button-primary`}>Décrire mon besoin <span aria-hidden="true">↗</span></Link></section>
-    <section className={`${styles.section} ${styles.stacked}`}><div className={styles.sectionHeading}><h2>Vous cherchez un accompagnement RH ?</h2><p>Découvrez l’autre pôle d’expertise du cabinet.</p></div><div className={styles.related}><Link href="/drh-externalise">DRH externalisé ↗</Link>{getServicesContent("fr").services.filter(service => service.category === "rh").map(service => <Link key={service.href} href={service.href}>{service.title} ↗</Link>)}</div></section>
-    <div className={styles.byline}><PageByline locale="fr" author={FINANCE_AUTHOR} dateModified={modified} /></div>
+    <section className={styles.section}><div className={styles.sectionHeading}><p className={styles.eyebrow}>{t.choose}</p><h2>{t.decision}</h2></div><div className={styles.sectionBody}><p>{t.chooseCopy[0]}</p><p>{t.chooseCopy[1]}</p><PublishedLocaleLink locale={locale} className={styles.textLink} href={href("/daf-externalise/tarifs")}>{t.prices} <span aria-hidden="true">↗</span></PublishedLocaleLink></div></section>
+    <section className={`${styles.section} ${styles.stacked}`}><div className={styles.sectionHeading}><p className={styles.eyebrow}>{t.explore}</p><h2>{t.cases}</h2></div><div className={styles.resourceList}><PublishedLocaleLink locale={locale} href={href("/ressources/cas-clients/opti-digital-structuration-financement")}>{t.caseLabels[0]} <span aria-hidden="true">↗</span></PublishedLocaleLink><PublishedLocaleLink locale={locale} href={href("/ressources/cas-clients/seasonly-marge-par-canal-bfr")}>{t.caseLabels[1]} <span aria-hidden="true">↗</span></PublishedLocaleLink><PublishedLocaleLink locale={locale} href={href("/ressources/cas-clients/solarmente-serie-b-cleantech")}>{t.caseLabels[2]} <span aria-hidden="true">↗</span></PublishedLocaleLink></div></section>
+    <section className={styles.contact}><p className={styles.eyebrow}>{t.start}</p><h2>{t.contactTitle}</h2><p>{t.contact}</p><PublishedLocaleLink locale={locale} href={href("/contact#services-finance")} className={`${styles.primary} site-button site-button-primary`}>{t.cta} <span aria-hidden="true">↗</span></PublishedLocaleLink></section>
+    <section className={`${styles.section} ${styles.stacked}`}><div className={styles.sectionHeading}><h2>{t.hrTitle}</h2><p>{t.hrIntro}</p></div><div className={styles.related}><PublishedLocaleLink locale={locale} href={href("/drh-externalise")}>{t.hr} <span aria-hidden="true">↗</span></PublishedLocaleLink>{getServicesContent(locale).services.filter(service => service.category === "rh").map(service => <PublishedLocaleLink locale={locale} key={service.href} href={service.href}>{service.title} ↗</PublishedLocaleLink>)}</div></section>
+    <div className={styles.byline}><PageByline locale={locale} author={FINANCE_AUTHOR} dateModified={modified} /></div>
     </div>
   </div></PageLayout>;
 }

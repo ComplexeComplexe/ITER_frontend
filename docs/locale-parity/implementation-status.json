@@ -1,0 +1,4269 @@
+{
+  "date": "2026-10-02",
+  "scope": "First reviewed implementation batch, not the full site migration",
+  "pullRequest": "https://github.com/ComplexeComplexe/ITER_frontend/pull/164",
+  "productionPublished": false,
+  "visualReviewCompleted": false,
+  "alignedTrios": 18,
+  "alignedVersions": 54,
+  "newTranslationsImplemented": 11,
+  "existingTranslationsAligned": 25,
+  "newTranslationsRemaining": 181,
+  "existingTranslationsRemaining": 75,
+  "frReferencesRemaining": 128,
+  "aligned": [
+    {
+      "id": "/",
+      "paths": {
+        "fr": "/",
+        "en": "/en",
+        "es": "/es"
+      }
+    },
+    {
+      "id": "/daf-externalise",
+      "paths": {
+        "fr": "/daf-externalise",
+        "en": "/en/fractional-cfo",
+        "es": "/es/externalizacion-daf"
+      }
+    },
+    {
+      "id": "/services",
+      "paths": {
+        "fr": "/services",
+        "en": "/en/services",
+        "es": "/es/services"
+      }
+    },
+    {
+      "id": "/fractional-cfo-startups",
+      "paths": {
+        "fr": "/fractional-cfo-startups",
+        "en": "/en/fractional-cfo-for-startups",
+        "es": "/es/cfo-externo-startups"
+      }
+    },
+    {
+      "id": "/daf-externalise-paris",
+      "paths": {
+        "fr": "/daf-externalise-paris",
+        "en": "/en/fractional-cfo-paris",
+        "es": "/es/cfo-externalizado-paris"
+      }
+    },
+    {
+      "id": "/daf-externalise/temps-partage",
+      "paths": {
+        "fr": "/daf-externalise/temps-partage",
+        "en": "/en/fractional-cfo/shared-time",
+        "es": "/es/externalizacion-daf/tiempo-compartido"
+      }
+    },
+    {
+      "id": "/daf-externalise/transition",
+      "paths": {
+        "fr": "/daf-externalise/transition",
+        "en": "/en/fractional-cfo/transition",
+        "es": "/es/externalizacion-daf/transicion"
+      }
+    },
+    {
+      "id": "/services/controle-de-gestion-externalise",
+      "paths": {
+        "fr": "/services/controle-de-gestion-externalise",
+        "en": "/en/services/outsourced-management-control",
+        "es": "/es/services/control-gestion-externalizado"
+      }
+    },
+    {
+      "id": "/services/comptabilite-externalisation",
+      "paths": {
+        "fr": "/services/comptabilite-externalisation",
+        "en": "/en/services/outsource-your-accounting",
+        "es": "/es/services/externalizar-contabilidad"
+      }
+    },
+    {
+      "id": "/services/previsionnel-tresorerie",
+      "paths": {
+        "fr": "/services/previsionnel-tresorerie",
+        "en": "/en/services/cash-flow-forecast",
+        "es": "/es/services/prevision-tesoreria"
+      }
+    },
+    {
+      "id": "/services/gestion-financiere-externalisee",
+      "paths": {
+        "fr": "/services/gestion-financiere-externalisee",
+        "en": "/en/services/financial-operations-organization",
+        "es": "/es/services/gestion-financiera-externalizada"
+      }
+    },
+    {
+      "id": "/services/accompagnement-levee-de-fond",
+      "paths": {
+        "fr": "/services/accompagnement-levee-de-fond",
+        "en": "/en/services/fund-raising-support",
+        "es": "/es/services/soporte-financiacion"
+      }
+    },
+    {
+      "id": "/services/ma-due-diligence",
+      "paths": {
+        "fr": "/services/ma-due-diligence",
+        "en": "/en/services/ma-due-diligence",
+        "es": "/es/services/ma-due-diligence"
+      }
+    },
+    {
+      "id": "/ressources/cas-clients/solarmente-serie-b-cleantech",
+      "paths": {
+        "fr": "/ressources/cas-clients/solarmente-serie-b-cleantech",
+        "en": "/en/ressources/cas-clients/solarmente-serie-b-cleantech",
+        "es": "/es/recursos/casos-de-exito/solarmente-serie-b-cleantech"
+      }
+    },
+    {
+      "id": "/ressources/cas-clients/seasonly-marge-par-canal-bfr",
+      "paths": {
+        "fr": "/ressources/cas-clients/seasonly-marge-par-canal-bfr",
+        "en": "/en/ressources/cas-clients/seasonly-marge-par-canal-bfr",
+        "es": "/es/recursos/casos-de-exito/seasonly-marge-par-canal-bfr"
+      }
+    },
+    {
+      "id": "/ressources/cas-clients/opti-digital-structuration-financement",
+      "paths": {
+        "fr": "/ressources/cas-clients/opti-digital-structuration-financement",
+        "en": "/en/ressources/cas-clients/opti-digital-structuration-financement",
+        "es": "/es/recursos/casos-de-exito/opti-digital-structuration-financement"
+      }
+    },
+    {
+      "id": "/daf-externalise/tarifs",
+      "paths": {
+        "fr": "/daf-externalise/tarifs",
+        "en": "/en/fractional-cfo/pricing",
+        "es": "/es/externalizacion-daf/precios"
+      }
+    },
+    {
+      "id": "/daf-externalise/metier",
+      "paths": {
+        "fr": "/daf-externalise/metier",
+        "en": "/en/fractional-cfo/role",
+        "es": "/es/externalizacion-daf/funciones"
+      }
+    }
+  ],
+  "remaining": [
+    {
+      "pageId": "daf-externalise:secteurs",
+      "sourcePath": "/daf-externalise/secteurs",
+      "family": "cfo-sector",
+      "locales": {
+        "fr": {
+          "currentPath": "/daf-externalise/secteurs",
+          "targetPath": "/daf-externalise/secteurs",
+          "mainWords": 699,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/fractional-cfo/sectors",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/externalizacion-daf/sectores",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "daf-externalise:ecommerce",
+      "sourcePath": "/daf-externalise/ecommerce",
+      "family": "cfo-sector",
+      "locales": {
+        "fr": {
+          "currentPath": "/daf-externalise/ecommerce",
+          "targetPath": "/daf-externalise/ecommerce",
+          "mainWords": 538,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/fractional-cfo/ecommerce",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/externalizacion-daf/ecommerce",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "daf-externalise:industrie",
+      "sourcePath": "/daf-externalise/industrie",
+      "family": "cfo-sector",
+      "locales": {
+        "fr": {
+          "currentPath": "/daf-externalise/industrie",
+          "targetPath": "/daf-externalise/industrie",
+          "mainWords": 643,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/fractional-cfo/manufacturing",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/externalizacion-daf/industria",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "daf-externalise:deep-tech",
+      "sourcePath": "/daf-externalise/deep-tech",
+      "family": "cfo-sector",
+      "locales": {
+        "fr": {
+          "currentPath": "/daf-externalise/deep-tech",
+          "targetPath": "/daf-externalise/deep-tech",
+          "mainWords": 615,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/fractional-cfo/deep-tech",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/externalizacion-daf/deep-tech",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "drh-externalise",
+      "sourcePath": "/drh-externalise",
+      "family": "hr-offer",
+      "locales": {
+        "fr": {
+          "currentPath": "/drh-externalise",
+          "targetPath": "/drh-externalise",
+          "mainWords": 1263,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/hr-outsourcing",
+          "targetPath": "/en/hr-outsourcing",
+          "mainWords": 1252,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/externalizacion-rrhh",
+          "targetPath": "/es/externalizacion-rrhh",
+          "mainWords": 1418,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "drh-externalise:temps-partage",
+      "sourcePath": "/drh-externalise/temps-partage",
+      "family": "hr-offer",
+      "locales": {
+        "fr": {
+          "currentPath": "/drh-externalise/temps-partage",
+          "targetPath": "/drh-externalise/temps-partage",
+          "mainWords": 852,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/hr-outsourcing/shared-time",
+          "targetPath": "/en/hr-outsourcing/shared-time",
+          "mainWords": 343,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/externalizacion-rrhh/tiempo-compartido",
+          "targetPath": "/es/externalizacion-rrhh/tiempo-compartido",
+          "mainWords": 401,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "ressources",
+      "sourcePath": "/ressources",
+      "family": "resources-hub",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources",
+          "targetPath": "/ressources",
+          "mainWords": 545,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/ressources",
+          "targetPath": "/en/resources",
+          "mainWords": 607,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": "/es/recursos",
+          "targetPath": "/es/recursos",
+          "mainWords": 733,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog",
+      "sourcePath": "/ressources/blog",
+      "family": "blog-list",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog",
+          "targetPath": "/ressources/blog",
+          "mainWords": 873,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/ressources/blog",
+          "targetPath": "/en/resources/blog",
+          "mainWords": 248,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": "/es/recursos/blog",
+          "targetPath": "/es/recursos/blog",
+          "mainWords": 276,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "ressources:glossaire",
+      "sourcePath": "/ressources/glossaire",
+      "family": "glossary-hub",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/glossaire",
+          "targetPath": "/ressources/glossaire",
+          "mainWords": 1702,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/ressources/glossaire",
+          "targetPath": "/en/resources/glossary",
+          "mainWords": 375,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": "/es/recursos/glosario",
+          "targetPath": "/es/recursos/glosario",
+          "mainWords": 311,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "ressources:cas-clients",
+      "sourcePath": "/ressources/cas-clients",
+      "family": "cases-hub",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/cas-clients",
+          "targetPath": "/ressources/cas-clients",
+          "mainWords": 1200,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/ressources/cas-clients",
+          "targetPath": "/en/resources/case-studies",
+          "mainWords": 667,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": "/es/recursos/casos-de-exito",
+          "targetPath": "/es/recursos/casos-de-exito",
+          "mainWords": 752,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils",
+      "sourcePath": "/ressources/outils",
+      "family": "tools-hub",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils",
+          "targetPath": "/ressources/outils",
+          "mainWords": 1852,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/ressources/tools",
+          "targetPath": "/en/resources/tools",
+          "mainWords": 493,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": "/es/recursos/herramientas",
+          "targetPath": "/es/recursos/herramientas",
+          "mainWords": 548,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "ressources:fiscalite-espagne-france",
+      "sourcePath": "/ressources/fiscalite-espagne-france",
+      "family": "tax-hub",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/fiscalite-espagne-france",
+          "targetPath": "/ressources/fiscalite-espagne-france",
+          "mainWords": 634,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/france-spain-tax",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/fiscalidad-francia-espana",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:fiscalite:residence-fiscale-france-espagne",
+      "sourcePath": "/ressources/fiscalite/residence-fiscale-france-espagne",
+      "family": "tax-guide",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/fiscalite/residence-fiscale-france-espagne",
+          "targetPath": "/ressources/fiscalite/residence-fiscale-france-espagne",
+          "mainWords": 1150,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tax/france-spain-tax-residence",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/fiscalidad/residencia-fiscal-francia-espana",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:fiscalite:double-imposition-france-espagne",
+      "sourcePath": "/ressources/fiscalite/double-imposition-france-espagne",
+      "family": "tax-guide",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/fiscalite/double-imposition-france-espagne",
+          "targetPath": "/ressources/fiscalite/double-imposition-france-espagne",
+          "mainWords": 1908,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tax/france-spain-double-taxation",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/fiscalidad/doble-imposicion-francia-espana",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:fiscalite:impot-revenu-espagne",
+      "sourcePath": "/ressources/fiscalite/impot-revenu-espagne",
+      "family": "tax-guide",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/fiscalite/impot-revenu-espagne",
+          "targetPath": "/ressources/fiscalite/impot-revenu-espagne",
+          "mainWords": 2386,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tax/spain-income-tax",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/fiscalidad/irpf-espana",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:fiscalite:beckham-law",
+      "sourcePath": "/ressources/fiscalite/beckham-law",
+      "family": "tax-guide",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/fiscalite/beckham-law",
+          "targetPath": "/ressources/fiscalite/beckham-law",
+          "mainWords": 3153,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tax/beckham-law",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/fiscalidad/ley-beckham",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:fiscalite:modelo-720",
+      "sourcePath": "/ressources/fiscalite/modelo-720",
+      "family": "tax-guide",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/fiscalite/modelo-720",
+          "targetPath": "/ressources/fiscalite/modelo-720",
+          "mainWords": 1319,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tax/form-720",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/fiscalidad/modelo-720",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:ia-finance",
+      "sourcePath": "/ressources/ia-finance",
+      "family": "ai-hub",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/ia-finance",
+          "targetPath": "/ressources/ia-finance",
+          "mainWords": 561,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/ai-finance",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/ia-finanzas",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:ia-finance:automatiser-reporting-financier",
+      "sourcePath": "/ressources/ia-finance/automatiser-reporting-financier",
+      "family": "ai-guide",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/ia-finance/automatiser-reporting-financier",
+          "targetPath": "/ressources/ia-finance/automatiser-reporting-financier",
+          "mainWords": 1648,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/ai-finance/automate-financial-reporting",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/ia-finanzas/automatizar-reporting-financiero",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:ia-finance:chatgpt-finance",
+      "sourcePath": "/ressources/ia-finance/chatgpt-finance",
+      "family": "ai-guide",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/ia-finance/chatgpt-finance",
+          "targetPath": "/ressources/ia-finance/chatgpt-finance",
+          "mainWords": 1447,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/ai-finance/chatgpt-finance",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/ia-finanzas/chatgpt-finanzas",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:ia-finance:llm-finance",
+      "sourcePath": "/ressources/ia-finance/llm-finance",
+      "family": "ai-guide",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/ia-finance/llm-finance",
+          "targetPath": "/ressources/ia-finance/llm-finance",
+          "mainWords": 1164,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/ai-finance/llms-finance",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/ia-finanzas/llm-finanzas",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:ia-finance:outils",
+      "sourcePath": "/ressources/ia-finance/outils",
+      "family": "ai-guide",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/ia-finance/outils",
+          "targetPath": "/ressources/ia-finance/outils",
+          "mainWords": 1076,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/ai-finance/tools",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/ia-finanzas/herramientas",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:ia-finance:feuille-de-route-90-jours",
+      "sourcePath": "/ressources/ia-finance/feuille-de-route-90-jours",
+      "family": "ai-guide",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/ia-finance/feuille-de-route-90-jours",
+          "targetPath": "/ressources/ia-finance/feuille-de-route-90-jours",
+          "mainWords": 1083,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/ai-finance/90-day-roadmap",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/ia-finanzas/hoja-ruta-90-dias",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:ia-finance:retours-experience",
+      "sourcePath": "/ressources/ia-finance/retours-experience",
+      "family": "ai-guide",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/ia-finance/retours-experience",
+          "targetPath": "/ressources/ia-finance/retours-experience",
+          "mainWords": 1079,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/ai-finance/experience-reports",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/ia-finanzas/experiencias",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "clients",
+      "sourcePath": "/clients",
+      "family": "clients",
+      "locales": {
+        "fr": {
+          "currentPath": "/clients",
+          "targetPath": "/clients",
+          "mainWords": 185,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/clients",
+          "targetPath": "/en/clients",
+          "mainWords": 187,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/clientes",
+          "targetPath": "/es/clientes",
+          "mainWords": 174,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "a-propos",
+      "sourcePath": "/a-propos",
+      "family": "about",
+      "locales": {
+        "fr": {
+          "currentPath": "/a-propos",
+          "targetPath": "/a-propos",
+          "mainWords": 1124,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/about",
+          "targetPath": "/en/about",
+          "mainWords": 968,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/quienes-somos",
+          "targetPath": "/es/quienes-somos",
+          "mainWords": 1034,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "contact",
+      "sourcePath": "/contact",
+      "family": "contact",
+      "locales": {
+        "fr": {
+          "currentPath": "/contact",
+          "targetPath": "/contact",
+          "mainWords": 197,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/contact",
+          "targetPath": "/en/contact",
+          "mainWords": 189,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/contact",
+          "targetPath": "/es/contact",
+          "mainWords": 196,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "mentions-legales",
+      "sourcePath": "/mentions-legales",
+      "family": "legal",
+      "locales": {
+        "fr": {
+          "currentPath": "/mentions-legales",
+          "targetPath": "/mentions-legales",
+          "mainWords": 210,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/legal-notice",
+          "targetPath": "/en/legal-notice",
+          "mainWords": 203,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/aviso-legal",
+          "targetPath": "/es/aviso-legal",
+          "mainWords": 217,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "politique-de-confidentialite",
+      "sourcePath": "/politique-de-confidentialite",
+      "family": "legal",
+      "locales": {
+        "fr": {
+          "currentPath": "/politique-de-confidentialite",
+          "targetPath": "/politique-de-confidentialite",
+          "mainWords": 1129,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/privacy-policy",
+          "targetPath": "/en/privacy-policy",
+          "mainWords": 1064,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/politica-de-privacidad",
+          "targetPath": "/es/politica-de-privacidad",
+          "mainWords": 1140,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "daf-externalise-barcelone",
+      "sourcePath": "/daf-externalise-barcelone",
+      "family": "finance-service",
+      "locales": {
+        "fr": {
+          "currentPath": "/daf-externalise-barcelone",
+          "targetPath": "/daf-externalise-barcelone",
+          "mainWords": 1124,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/fractional-cfo-barcelona",
+          "targetPath": "/en/fractional-cfo-barcelona",
+          "mainWords": 673,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/cfo-externalizado-barcelona",
+          "targetPath": "/es/cfo-externalizado-barcelona",
+          "mainWords": 728,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "daf-externalise-toulouse",
+      "sourcePath": "/daf-externalise-toulouse",
+      "family": "finance-service",
+      "locales": {
+        "fr": {
+          "currentPath": "/daf-externalise-toulouse",
+          "targetPath": "/daf-externalise-toulouse",
+          "mainWords": 1076,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/fractional-cfo-toulouse",
+          "targetPath": "/en/fractional-cfo-toulouse",
+          "mainWords": 555,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/cfo-externalizado-toulouse",
+          "targetPath": "/es/cfo-externalizado-toulouse",
+          "mainWords": 592,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:agicap-vs-fygr-outil-tresorerie",
+      "sourcePath": "/ressources/blog/agicap-vs-fygr-outil-tresorerie",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/agicap-vs-fygr-outil-tresorerie",
+          "targetPath": "/ressources/blog/agicap-vs-fygr-outil-tresorerie",
+          "mainWords": 682,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/agicap-vs-fygr-cash-flow-tools",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/agicap-vs-fygr-tesoreria",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:cas-etude-happy-scribe",
+      "sourcePath": "/ressources/blog/cas-etude-happy-scribe",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/cas-etude-happy-scribe",
+          "targetPath": "/ressources/blog/cas-etude-happy-scribe",
+          "mainWords": 2194,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/happy-scribe-finance-case-study",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/caso-happy-scribe-finanzas",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:cash-burn-calculer-runway-anticiper-levee",
+      "sourcePath": "/ressources/blog/cash-burn-calculer-runway-anticiper-levee",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/cash-burn-calculer-runway-anticiper-levee",
+          "targetPath": "/ressources/blog/cash-burn-calculer-runway-anticiper-levee",
+          "mainWords": 1130,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/cash-burn-runway-fundraising",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/cash-burn-runway-financiacion",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:checklist-due-diligence-levee-de-fonds",
+      "sourcePath": "/ressources/blog/checklist-due-diligence-levee-de-fonds",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/checklist-due-diligence-levee-de-fonds",
+          "targetPath": "/ressources/blog/checklist-due-diligence-levee-de-fonds",
+          "mainWords": 1102,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/fundraising-due-diligence-checklist",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/checklist-due-diligence-financiacion",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:cout-daf-externalise-tarifs-prix-2026",
+      "sourcePath": "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
+          "targetPath": "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
+          "mainWords": 877,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/ressources/blog/fractional-cfo-cost-services-2026",
+          "targetPath": "/en/resources/blog/fractional-cfo-cost-services-2026",
+          "mainWords": 1544,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": "/es/recursos/blog/cfo-externo-pymes-precio-2026",
+          "targetPath": "/es/recursos/blog/cfo-externo-pymes-precio-2026",
+          "mainWords": 1483,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:filiale-espagnole-pilotage-financier",
+      "sourcePath": "/ressources/blog/filiale-espagnole-pilotage-financier",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/filiale-espagnole-pilotage-financier",
+          "targetPath": "/ressources/blog/filiale-espagnole-pilotage-financier",
+          "mainWords": 979,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/spanish-subsidiary-financial-management",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/gestion-financiera-filial-espana",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:choisir-cabinet-daf-externalise",
+      "sourcePath": "/ressources/blog/choisir-cabinet-daf-externalise",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/choisir-cabinet-daf-externalise",
+          "targetPath": "/ressources/blog/choisir-cabinet-daf-externalise",
+          "mainWords": 966,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/choose-fractional-cfo-firm",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/elegir-consultora-cfo-externo",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:daf-drh-externalises-synergie",
+      "sourcePath": "/ressources/blog/daf-drh-externalises-synergie",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/daf-drh-externalises-synergie",
+          "targetPath": "/ressources/blog/daf-drh-externalises-synergie",
+          "mainWords": 704,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/fractional-cfo-hr-director-coordination",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/coordinacion-cfo-director-rrhh",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:daf-externalise-vs-daf-interimaire",
+      "sourcePath": "/ressources/blog/daf-externalise-vs-daf-interimaire",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/daf-externalise-vs-daf-interimaire",
+          "targetPath": "/ressources/blog/daf-externalise-vs-daf-interimaire",
+          "mainWords": 1503,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/fractional-cfo-vs-interim-cfo",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/cfo-externo-vs-cfo-interino",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:daf-externalise-vs-daf-salarie",
+      "sourcePath": "/ressources/blog/daf-externalise-vs-daf-salarie",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/daf-externalise-vs-daf-salarie",
+          "targetPath": "/ressources/blog/daf-externalise-vs-daf-salarie",
+          "mainWords": 994,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/ressources/blog/daf-externalise-vs-daf-salarie",
+          "targetPath": "/en/resources/blog/fractional-cfo-vs-in-house-cfo",
+          "mainWords": 646,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": "/es/recursos/blog/daf-externalise-vs-daf-salarie",
+          "targetPath": "/es/recursos/blog/cfo-externo-vs-cfo-interno",
+          "mainWords": 691,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:daf-externalise-vs-expert-comptable",
+      "sourcePath": "/ressources/blog/daf-externalise-vs-expert-comptable",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/daf-externalise-vs-expert-comptable",
+          "targetPath": "/ressources/blog/daf-externalise-vs-expert-comptable",
+          "mainWords": 523,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/fractional-cfo-vs-accountant",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/cfo-externo-vs-asesoria-contable",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:externalisation-comptable",
+      "sourcePath": "/ressources/blog/externalisation-comptable",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/externalisation-comptable",
+          "targetPath": "/ressources/blog/externalisation-comptable",
+          "mainWords": 1692,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/ressources/blog/externalisation-comptable",
+          "targetPath": "/en/resources/blog/accounting-outsourcing",
+          "mainWords": 2387,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": "/es/recursos/blog/externalisation-comptable",
+          "targetPath": "/es/recursos/blog/externalizacion-contable",
+          "mainWords": 2593,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:flux-de-tresorerie",
+      "sourcePath": "/ressources/blog/flux-de-tresorerie",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/flux-de-tresorerie",
+          "targetPath": "/ressources/blog/flux-de-tresorerie",
+          "mainWords": 1094,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/ressources/blog/flux-de-tresorerie",
+          "targetPath": "/en/resources/blog/cash-flow",
+          "mainWords": 731,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": "/es/recursos/blog/flux-de-tresorerie",
+          "targetPath": "/es/recursos/blog/flujo-de-caja",
+          "mainWords": 788,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:la-modernisation-du-role-de-cfo",
+      "sourcePath": "/ressources/blog/la-modernisation-du-role-de-cfo",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/la-modernisation-du-role-de-cfo",
+          "targetPath": "/ressources/blog/la-modernisation-du-role-de-cfo",
+          "mainWords": 1156,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/modern-cfo-role",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/evolucion-funcion-cfo",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:payfit-vs-silae-comparatif-pme",
+      "sourcePath": "/ressources/blog/payfit-vs-silae-comparatif-pme",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/payfit-vs-silae-comparatif-pme",
+          "targetPath": "/ressources/blog/payfit-vs-silae-comparatif-pme",
+          "mainWords": 721,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/payfit-vs-silae-sme-comparison",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/payfit-vs-silae-comparativa-pymes",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:pennylane-vs-sage-comparatif-40-deploiements",
+      "sourcePath": "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",
+          "targetPath": "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",
+          "mainWords": 658,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/pennylane-vs-sage-comparison",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/pennylane-vs-sage-comparativa",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:quand-embaucher-daf-externalise-5-signes",
+      "sourcePath": "/ressources/blog/quand-embaucher-daf-externalise-5-signes",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/quand-embaucher-daf-externalise-5-signes",
+          "targetPath": "/ressources/blog/quand-embaucher-daf-externalise-5-signes",
+          "mainWords": 1109,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/when-to-hire-fractional-cfo",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/cuando-contratar-cfo-externo",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:reduire-bfr-7-leviers-actionnables",
+      "sourcePath": "/ressources/blog/reduire-bfr-7-leviers-actionnables",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/reduire-bfr-7-leviers-actionnables",
+          "targetPath": "/ressources/blog/reduire-bfr-7-leviers-actionnables",
+          "mainWords": 770,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/reduce-working-capital-requirements",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/reducir-necesidades-capital-circulante",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:stack-financier-saas-series-a",
+      "sourcePath": "/ressources/blog/stack-financier-saas-series-a",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/stack-financier-saas-series-a",
+          "targetPath": "/ressources/blog/stack-financier-saas-series-a",
+          "mainWords": 752,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/saas-series-a-finance-stack",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/herramientas-financieras-saas-serie-a",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:tableau-de-bord-financier-startup-12-kpis",
+      "sourcePath": "/ressources/blog/tableau-de-bord-financier-startup-12-kpis",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/tableau-de-bord-financier-startup-12-kpis",
+          "targetPath": "/ressources/blog/tableau-de-bord-financier-startup-12-kpis",
+          "mainWords": 1856,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/startup-financial-dashboard-kpis",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/cuadro-mando-financiero-startup-kpis",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:term-sheet-negocier-clauses-cles",
+      "sourcePath": "/ressources/blog/term-sheet-negocier-clauses-cles",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/term-sheet-negocier-clauses-cles",
+          "targetPath": "/ressources/blog/term-sheet-negocier-clauses-cles",
+          "mainWords": 778,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/term-sheet-key-clauses",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/term-sheet-clausulas-clave",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:les-10-outils-pour-cfos-startup",
+      "sourcePath": "/ressources/blog/les-10-outils-pour-cfos-startup",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/les-10-outils-pour-cfos-startup",
+          "targetPath": "/ressources/blog/les-10-outils-pour-cfos-startup",
+          "mainWords": 995,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/startup-cfo-tools",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/herramientas-cfo-startup",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:levee-de-fonds-guide",
+      "sourcePath": "/ressources/blog/levee-de-fonds-guide",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/levee-de-fonds-guide",
+          "targetPath": "/ressources/blog/levee-de-fonds-guide",
+          "mainWords": 1868,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/fundraising-guide",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/guia-rondas-financiacion",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:ia-et-automatisation-des-taches-repetitives",
+      "sourcePath": "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
+          "targetPath": "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
+          "mainWords": 689,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/ai-automation-repetitive-finance-tasks",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": "/es/recursos/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
+          "targetPath": "/es/recursos/blog/ia-automatizacion-tareas-repetitivas-finanzas",
+          "mainWords": 344,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:regimes-fiscaux-france-vs-espagne",
+      "sourcePath": "/ressources/blog/regimes-fiscaux-france-vs-espagne",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/regimes-fiscaux-france-vs-espagne",
+          "targetPath": "/ressources/blog/regimes-fiscaux-france-vs-espagne",
+          "mainWords": 1464,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/france-spain-tax-comparison",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": "/es/recursos/blog/regimes-fiscaux-france-vs-espagne",
+          "targetPath": "/es/recursos/blog/regimenes-fiscales-francia-espana",
+          "mainWords": 1373,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:cfo-externe-role-missions-2026",
+      "sourcePath": "/ressources/blog/cfo-externe-role-missions-2026",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/cfo-externe-role-missions-2026",
+          "targetPath": "/ressources/blog/cfo-externe-role-missions-2026",
+          "mainWords": 1422,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/external-cfo-role-responsibilities",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/cfo-externo-funciones",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:essentiels-outils-tech-finance",
+      "sourcePath": "/ressources/blog/essentiels-outils-tech-finance",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/essentiels-outils-tech-finance",
+          "targetPath": "/ressources/blog/essentiels-outils-tech-finance",
+          "mainWords": 1266,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/essential-finance-technology-tools",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/herramientas-tecnologia-financiera",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:ia-finance-automatisation-direction-financiere",
+      "sourcePath": "/ressources/blog/ia-finance-automatisation-direction-financiere",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/ia-finance-automatisation-direction-financiere",
+          "targetPath": "/ressources/blog/ia-finance-automatisation-direction-financiere",
+          "mainWords": 705,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/ai-finance-department-automation",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/ia-automatizacion-direccion-financiera",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:loi-beckham-economie-impot-simulation",
+      "sourcePath": "/ressources/blog/loi-beckham-economie-impot-simulation",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/loi-beckham-economie-impot-simulation",
+          "targetPath": "/ressources/blog/loi-beckham-economie-impot-simulation",
+          "mainWords": 1362,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/beckham-law-tax-savings-simulation",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/ley-beckham-simulacion-ahorro-fiscal",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:loi-beckham-espagne-conditions-eligibilite",
+      "sourcePath": "/ressources/blog/loi-beckham-espagne-conditions-eligibilite",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/loi-beckham-espagne-conditions-eligibilite",
+          "targetPath": "/ressources/blog/loi-beckham-espagne-conditions-eligibilite",
+          "mainWords": 2138,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/beckham-law-spain-eligibility",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/ley-beckham-espana-requisitos",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:blog:organiser-sa-direction-financiere",
+      "sourcePath": "/ressources/blog/organiser-sa-direction-financiere",
+      "family": "blog-article",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/blog/organiser-sa-direction-financiere",
+          "targetPath": "/ressources/blog/organiser-sa-direction-financiere",
+          "mainWords": 988,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/blog/organize-finance-department",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/blog/organizar-direccion-financiera",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:pennylane",
+      "sourcePath": "/ressources/outils/pennylane",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/pennylane",
+          "targetPath": "/ressources/outils/pennylane",
+          "mainWords": 452,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/pennylane",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/pennylane",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:agicap",
+      "sourcePath": "/ressources/outils/agicap",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/agicap",
+          "targetPath": "/ressources/outils/agicap",
+          "mainWords": 420,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/agicap",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/agicap",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:spendesk",
+      "sourcePath": "/ressources/outils/spendesk",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/spendesk",
+          "targetPath": "/ressources/outils/spendesk",
+          "mainWords": 420,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/spendesk",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/spendesk",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:payfit",
+      "sourcePath": "/ressources/outils/payfit",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/payfit",
+          "targetPath": "/ressources/outils/payfit",
+          "mainWords": 418,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/payfit",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/payfit",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:sage",
+      "sourcePath": "/ressources/outils/sage",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/sage",
+          "targetPath": "/ressources/outils/sage",
+          "mainWords": 304,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/sage",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/sage",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:cegid-loop",
+      "sourcePath": "/ressources/outils/cegid-loop",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/cegid-loop",
+          "targetPath": "/ressources/outils/cegid-loop",
+          "mainWords": 332,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/cegid-loop",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/cegid-loop",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:fygr",
+      "sourcePath": "/ressources/outils/fygr",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/fygr",
+          "targetPath": "/ressources/outils/fygr",
+          "mainWords": 325,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/fygr",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/fygr",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:pleo",
+      "sourcePath": "/ressources/outils/pleo",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/pleo",
+          "targetPath": "/ressources/outils/pleo",
+          "mainWords": 306,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/pleo",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/pleo",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:silae",
+      "sourcePath": "/ressources/outils/silae",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/silae",
+          "targetPath": "/ressources/outils/silae",
+          "mainWords": 320,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/silae",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/silae",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:lucca",
+      "sourcePath": "/ressources/outils/lucca",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/lucca",
+          "targetPath": "/ressources/outils/lucca",
+          "mainWords": 320,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/lucca",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/lucca",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:qonto",
+      "sourcePath": "/ressources/outils/qonto",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/qonto",
+          "targetPath": "/ressources/outils/qonto",
+          "mainWords": 327,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/qonto",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/qonto",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:revolut-business",
+      "sourcePath": "/ressources/outils/revolut-business",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/revolut-business",
+          "targetPath": "/ressources/outils/revolut-business",
+          "mainWords": 342,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/revolut-business",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/revolut-business",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:payhawk",
+      "sourcePath": "/ressources/outils/payhawk",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/payhawk",
+          "targetPath": "/ressources/outils/payhawk",
+          "mainWords": 315,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/payhawk",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/payhawk",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:kyriba",
+      "sourcePath": "/ressources/outils/kyriba",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/kyriba",
+          "targetPath": "/ressources/outils/kyriba",
+          "mainWords": 311,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/kyriba",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/kyriba",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:power-bi",
+      "sourcePath": "/ressources/outils/power-bi",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/power-bi",
+          "targetPath": "/ressources/outils/power-bi",
+          "mainWords": 345,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/power-bi",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/power-bi",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:upflow",
+      "sourcePath": "/ressources/outils/upflow",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/upflow",
+          "targetPath": "/ressources/outils/upflow",
+          "mainWords": 316,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/upflow",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/upflow",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:leanpay",
+      "sourcePath": "/ressources/outils/leanpay",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/leanpay",
+          "targetPath": "/ressources/outils/leanpay",
+          "mainWords": 314,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/leanpay",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/leanpay",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:factorial",
+      "sourcePath": "/ressources/outils/factorial",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/factorial",
+          "targetPath": "/ressources/outils/factorial",
+          "mainWords": 322,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/factorial",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/factorial",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:carta",
+      "sourcePath": "/ressources/outils/carta",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/carta",
+          "targetPath": "/ressources/outils/carta",
+          "mainWords": 326,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/carta",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/carta",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:equify",
+      "sourcePath": "/ressources/outils/equify",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/equify",
+          "targetPath": "/ressources/outils/equify",
+          "mainWords": 313,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/equify",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/equify",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:logiciels-comptabilite",
+      "sourcePath": "/ressources/outils/logiciels-comptabilite",
+      "family": "tool-category",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/logiciels-comptabilite",
+          "targetPath": "/ressources/outils/logiciels-comptabilite",
+          "mainWords": 593,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/accounting-software",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/software-contabilidad",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:logiciels-tresorerie",
+      "sourcePath": "/ressources/outils/logiciels-tresorerie",
+      "family": "tool-category",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/logiciels-tresorerie",
+          "targetPath": "/ressources/outils/logiciels-tresorerie",
+          "mainWords": 556,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/cash-flow-software",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/software-tesoreria",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:gestion-depenses",
+      "sourcePath": "/ressources/outils/gestion-depenses",
+      "family": "tool-category",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/gestion-depenses",
+          "targetPath": "/ressources/outils/gestion-depenses",
+          "mainWords": 500,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/expense-management",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/gestion-gastos",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:logiciels-paie",
+      "sourcePath": "/ressources/outils/logiciels-paie",
+      "family": "tool-category",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/logiciels-paie",
+          "targetPath": "/ressources/outils/logiciels-paie",
+          "mainWords": 586,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/payroll-software",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/software-nominas",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "carrieres:fractional-cfo",
+      "sourcePath": "/carrieres/fractional-cfo",
+      "family": "careers",
+      "locales": {
+        "fr": {
+          "currentPath": "/carrieres/fractional-cfo",
+          "targetPath": "/carrieres/fractional-cfo",
+          "mainWords": 1123,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/careers/fractional-cfo",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/carreras/cfo-externo",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "jobs:finance-analyst-junior-fr",
+      "sourcePath": "/jobs/finance-analyst-junior-fr",
+      "family": "job",
+      "locales": {
+        "fr": {
+          "currentPath": "/jobs/finance-analyst-junior-fr",
+          "targetPath": "/jobs/finance-analyst-junior-fr",
+          "mainWords": 467,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/jobs/junior-finance-analyst",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/empleos/analista-financiero-junior",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "jobs:marketing-growth-strategy",
+      "sourcePath": "/jobs/marketing-growth-strategy",
+      "family": "job",
+      "locales": {
+        "fr": {
+          "currentPath": "/jobs/marketing-growth-strategy",
+          "targetPath": "/jobs/marketing-growth-strategy",
+          "mainWords": 358,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/jobs/marketing-growth-strategy",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/empleos/marketing-estrategia-crecimiento",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "jobs:senior-finance-manager",
+      "sourcePath": "/jobs/senior-finance-manager",
+      "family": "job",
+      "locales": {
+        "fr": {
+          "currentPath": "/jobs/senior-finance-manager",
+          "targetPath": "/jobs/senior-finance-manager",
+          "mainWords": 374,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/jobs/senior-finance-manager",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/empleos/responsable-financiero-senior",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:outils:malibou",
+      "sourcePath": "/ressources/outils/malibou",
+      "family": "tool-detail",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/outils/malibou",
+          "targetPath": "/ressources/outils/malibou",
+          "mainWords": 2511,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/tools/malibou",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/herramientas/malibou",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:glossaire:arr-mrr",
+      "sourcePath": "/ressources/glossaire/arr-mrr",
+      "family": "glossary-entry",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/glossaire/arr-mrr",
+          "targetPath": "/ressources/glossaire/arr-mrr",
+          "mainWords": 701,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/glossary/arr-mrr",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/glosario/arr-mrr",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:glossaire:besoin-fonds-roulement-bfr",
+      "sourcePath": "/ressources/glossaire/besoin-fonds-roulement-bfr",
+      "family": "glossary-entry",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/glossaire/besoin-fonds-roulement-bfr",
+          "targetPath": "/ressources/glossaire/besoin-fonds-roulement-bfr",
+          "mainWords": 809,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/ressources/glossaire/bfr",
+          "targetPath": "/en/resources/glossary/working-capital-requirement",
+          "mainWords": 547,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/glosario/necesidades-capital-circulante",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:glossaire:bspce-bsa",
+      "sourcePath": "/ressources/glossaire/bspce-bsa",
+      "family": "glossary-entry",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/glossaire/bspce-bsa",
+          "targetPath": "/ressources/glossaire/bspce-bsa",
+          "mainWords": 982,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/glossary/french-equity-incentives-bspce-bsa",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/glosario/incentivos-capital-francia-bspce-bsa",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:glossaire:cac-ltv",
+      "sourcePath": "/ressources/glossaire/cac-ltv",
+      "family": "glossary-entry",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/glossaire/cac-ltv",
+          "targetPath": "/ressources/glossaire/cac-ltv",
+          "mainWords": 622,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/glossary/cac-ltv",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/glosario/cac-ltv",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:glossaire:cash-burn-runway",
+      "sourcePath": "/ressources/glossaire/cash-burn-runway",
+      "family": "glossary-entry",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/glossaire/cash-burn-runway",
+          "targetPath": "/ressources/glossaire/cash-burn-runway",
+          "mainWords": 694,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/glossary/cash-burn-runway",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/glosario/cash-burn-runway",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:glossaire:cfo",
+      "sourcePath": "/ressources/glossaire/cfo",
+      "family": "glossary-entry",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/glossaire/cfo",
+          "targetPath": "/ressources/glossaire/cfo",
+          "mainWords": 391,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/ressources/glossaire/cfo",
+          "targetPath": "/en/resources/glossary/cfo",
+          "mainWords": 755,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/glosario/cfo",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:glossaire:churn-rate",
+      "sourcePath": "/ressources/glossaire/churn-rate",
+      "family": "glossary-entry",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/glossaire/churn-rate",
+          "targetPath": "/ressources/glossaire/churn-rate",
+          "mainWords": 681,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/glossary/churn-rate",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/glosario/tasa-churn",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:glossaire:controle-de-gestion",
+      "sourcePath": "/ressources/glossaire/controle-de-gestion",
+      "family": "glossary-entry",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/glossaire/controle-de-gestion",
+          "targetPath": "/ressources/glossaire/controle-de-gestion",
+          "mainWords": 471,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/glossary/management-control",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/glosario/control-gestion",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:glossaire:drh-externalise",
+      "sourcePath": "/ressources/glossaire/drh-externalise",
+      "family": "glossary-entry",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/glossaire/drh-externalise",
+          "targetPath": "/ressources/glossaire/drh-externalise",
+          "mainWords": 393,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/glossary/external-hr-director",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/glosario/director-rrhh-externo",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:glossaire:ebitda",
+      "sourcePath": "/ressources/glossaire/ebitda",
+      "family": "glossary-entry",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/glossaire/ebitda",
+          "targetPath": "/ressources/glossaire/ebitda",
+          "mainWords": 728,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/ressources/glossaire/ebitda",
+          "targetPath": "/en/resources/glossary/ebitda",
+          "mainWords": 370,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/glosario/ebitda",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:glossaire:fractional-cfo",
+      "sourcePath": "/ressources/glossaire/fractional-cfo",
+      "family": "glossary-entry",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/glossaire/fractional-cfo",
+          "targetPath": "/ressources/glossaire/fractional-cfo",
+          "mainWords": 321,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/glossary/fractional-cfo",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/glosario/cfo-tiempo-parcial",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "ressources:glossaire:run-rate",
+      "sourcePath": "/ressources/glossaire/run-rate",
+      "family": "glossary-entry",
+      "locales": {
+        "fr": {
+          "currentPath": "/ressources/glossaire/run-rate",
+          "targetPath": "/ressources/glossaire/run-rate",
+          "mainWords": 637,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/resources/glossary/run-rate",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/recursos/glosario/run-rate",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "services:recrutement-talent-acquisition",
+      "sourcePath": "/services/recrutement-talent-acquisition",
+      "family": "hr-service",
+      "locales": {
+        "fr": {
+          "currentPath": "/services/recrutement-talent-acquisition",
+          "targetPath": "/services/recrutement-talent-acquisition",
+          "mainWords": 616,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/services/recruitment-talent-acquisition",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/servicios/seleccion-talento",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "services:gestion-paie-charges-sociales",
+      "sourcePath": "/services/gestion-paie-charges-sociales",
+      "family": "hr-service",
+      "locales": {
+        "fr": {
+          "currentPath": "/services/gestion-paie-charges-sociales",
+          "targetPath": "/services/gestion-paie-charges-sociales",
+          "mainWords": 624,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/services/payroll-coordination",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/servicios/coordinacion-nominas",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "services:formation-developpement",
+      "sourcePath": "/services/formation-developpement",
+      "family": "hr-service",
+      "locales": {
+        "fr": {
+          "currentPath": "/services/formation-developpement",
+          "targetPath": "/services/formation-developpement",
+          "mainWords": 585,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/services/training-development",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/servicios/formacion-desarrollo",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "services:conformite-droit-travail",
+      "sourcePath": "/services/conformite-droit-travail",
+      "family": "hr-service",
+      "locales": {
+        "fr": {
+          "currentPath": "/services/conformite-droit-travail",
+          "targetPath": "/services/conformite-droit-travail",
+          "mainWords": 607,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/services/employment-compliance",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/servicios/cumplimiento-laboral",
+          "mainWords": null,
+          "state": "translate-new",
+          "translationApproved": false,
+          "publishedAtTarget": false
+        }
+      }
+    },
+    {
+      "pageId": "a-propos:sebastien-doat",
+      "sourcePath": "/a-propos/sebastien-doat",
+      "family": "expert-profile",
+      "locales": {
+        "fr": {
+          "currentPath": "/a-propos/sebastien-doat",
+          "targetPath": "/a-propos/sebastien-doat",
+          "mainWords": 627,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/about/sebastien-doat",
+          "targetPath": "/en/about/sebastien-doat",
+          "mainWords": 242,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/quienes-somos/sebastien-doat",
+          "targetPath": "/es/quienes-somos/sebastien-doat",
+          "mainWords": 241,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "a-propos:benjamin-ziza",
+      "sourcePath": "/a-propos/benjamin-ziza",
+      "family": "expert-profile",
+      "locales": {
+        "fr": {
+          "currentPath": "/a-propos/benjamin-ziza",
+          "targetPath": "/a-propos/benjamin-ziza",
+          "mainWords": 550,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/about/benjamin-ziza",
+          "targetPath": "/en/about/benjamin-ziza",
+          "mainWords": 249,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/quienes-somos/benjamin-ziza",
+          "targetPath": "/es/quienes-somos/benjamin-ziza",
+          "mainWords": 318,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "a-propos:guillaume-rostand",
+      "sourcePath": "/a-propos/guillaume-rostand",
+      "family": "expert-profile",
+      "locales": {
+        "fr": {
+          "currentPath": "/a-propos/guillaume-rostand",
+          "targetPath": "/a-propos/guillaume-rostand",
+          "mainWords": 294,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/about/guillaume-rostand",
+          "targetPath": "/en/about/guillaume-rostand",
+          "mainWords": 271,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/quienes-somos/guillaume-rostand",
+          "targetPath": "/es/quienes-somos/guillaume-rostand",
+          "mainWords": 278,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "a-propos:florent-greth",
+      "sourcePath": "/a-propos/florent-greth",
+      "family": "expert-profile",
+      "locales": {
+        "fr": {
+          "currentPath": "/a-propos/florent-greth",
+          "targetPath": "/a-propos/florent-greth",
+          "mainWords": 376,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/about/florent-greth",
+          "targetPath": "/en/about/florent-greth",
+          "mainWords": 232,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/quienes-somos/florent-greth",
+          "targetPath": "/es/quienes-somos/florent-greth",
+          "mainWords": 243,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "a-propos:borith-biv",
+      "sourcePath": "/a-propos/borith-biv",
+      "family": "expert-profile",
+      "locales": {
+        "fr": {
+          "currentPath": "/a-propos/borith-biv",
+          "targetPath": "/a-propos/borith-biv",
+          "mainWords": 191,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/about/borith-biv",
+          "targetPath": "/en/about/borith-biv",
+          "mainWords": 230,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/quienes-somos/borith-biv",
+          "targetPath": "/es/quienes-somos/borith-biv",
+          "mainWords": 234,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "a-propos:deisy-arias-ramirez",
+      "sourcePath": "/a-propos/deisy-arias-ramirez",
+      "family": "expert-profile",
+      "locales": {
+        "fr": {
+          "currentPath": "/a-propos/deisy-arias-ramirez",
+          "targetPath": "/a-propos/deisy-arias-ramirez",
+          "mainWords": 201,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/about/deisy-arias-ramirez",
+          "targetPath": "/en/about/deisy-arias-ramirez",
+          "mainWords": 157,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/quienes-somos/deisy-arias-ramirez",
+          "targetPath": "/es/quienes-somos/deisy-arias-ramirez",
+          "mainWords": 141,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "a-propos:sebastien-preel",
+      "sourcePath": "/a-propos/sebastien-preel",
+      "family": "expert-profile",
+      "locales": {
+        "fr": {
+          "currentPath": "/a-propos/sebastien-preel",
+          "targetPath": "/a-propos/sebastien-preel",
+          "mainWords": 204,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/about/sebastien-preel",
+          "targetPath": "/en/about/sebastien-preel",
+          "mainWords": 158,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/quienes-somos/sebastien-preel",
+          "targetPath": "/es/quienes-somos/sebastien-preel",
+          "mainWords": 140,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "a-propos:tom-jaufre",
+      "sourcePath": "/a-propos/tom-jaufre",
+      "family": "expert-profile",
+      "locales": {
+        "fr": {
+          "currentPath": "/a-propos/tom-jaufre",
+          "targetPath": "/a-propos/tom-jaufre",
+          "mainWords": 223,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/about/tom-jaufre",
+          "targetPath": "/en/about/tom-jaufre",
+          "mainWords": 173,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/quienes-somos/tom-jaufre",
+          "targetPath": "/es/quienes-somos/tom-jaufre",
+          "mainWords": 155,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "a-propos:jessica-barnicaud",
+      "sourcePath": "/a-propos/jessica-barnicaud",
+      "family": "expert-profile",
+      "locales": {
+        "fr": {
+          "currentPath": "/a-propos/jessica-barnicaud",
+          "targetPath": "/a-propos/jessica-barnicaud",
+          "mainWords": 218,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/about/jessica-barnicaud",
+          "targetPath": "/en/about/jessica-barnicaud",
+          "mainWords": 176,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/quienes-somos/jessica-barnicaud",
+          "targetPath": "/es/quienes-somos/jessica-barnicaud",
+          "mainWords": 136,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "a-propos:benjamin-carlot",
+      "sourcePath": "/a-propos/benjamin-carlot",
+      "family": "expert-profile",
+      "locales": {
+        "fr": {
+          "currentPath": "/a-propos/benjamin-carlot",
+          "targetPath": "/a-propos/benjamin-carlot",
+          "mainWords": 249,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/about/benjamin-carlot",
+          "targetPath": "/en/about/benjamin-carlot",
+          "mainWords": 194,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/quienes-somos/benjamin-carlot",
+          "targetPath": "/es/quienes-somos/benjamin-carlot",
+          "mainWords": 143,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "a-propos:christophe-hoarau",
+      "sourcePath": "/a-propos/christophe-hoarau",
+      "family": "expert-profile",
+      "locales": {
+        "fr": {
+          "currentPath": "/a-propos/christophe-hoarau",
+          "targetPath": "/a-propos/christophe-hoarau",
+          "mainWords": 263,
+          "state": "reference-fr",
+          "translationApproved": true,
+          "publishedAtTarget": true
+        },
+        "en": {
+          "currentPath": "/en/about/christophe-hoarau",
+          "targetPath": "/en/about/christophe-hoarau",
+          "mainWords": 206,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        },
+        "es": {
+          "currentPath": "/es/quienes-somos/christophe-hoarau",
+          "targetPath": "/es/quienes-somos/christophe-hoarau",
+          "mainWords": 167,
+          "state": "align-existing",
+          "translationApproved": false,
+          "publishedAtTarget": true
+        }
+      }
+    },
+    {
+      "pageId": "politique-cookies",
+      "sourcePath": "/politique-cookies",
+      "family": "utility-or-consent",
+      "locales": {
+        "fr": {
+          "currentPath": "/politique-cookies",
+          "targetPath": "/politique-cookies",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/politique-cookies",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/politique-cookies",
+            "lang": "fr",
+            "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": "/en/cookie-policy",
+          "targetPath": "/en/cookie-policy",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/en/cookie-policy",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/en/cookie-policy",
+            "lang": "en",
+            "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "es": {
+          "currentPath": "/es/politica-cookies",
+          "targetPath": "/es/politica-cookies",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/es/politica-cookies",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/es/politica-cookies",
+            "lang": "es",
+            "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+            "unsubstantiatedROI5x": false
+          }
+        }
+      }
+    },
+    {
+      "pageId": "cads",
+      "sourcePath": "/cads",
+      "family": "utility-or-consent",
+      "locales": {
+        "fr": {
+          "currentPath": "/cads",
+          "targetPath": "/cads",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/cads",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/cads",
+            "lang": "fr",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/cads",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/cads",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        }
+      }
+    },
+    {
+      "pageId": "cads:roi",
+      "sourcePath": "/cads/roi",
+      "family": "utility-or-consent",
+      "locales": {
+        "fr": {
+          "currentPath": "/cads/roi",
+          "targetPath": "/cads/roi",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/cads/roi",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/cads/roi",
+            "lang": "fr",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": true
+          }
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/cads/roi",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/cads/roi",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        }
+      }
+    },
+    {
+      "pageId": "campagne",
+      "sourcePath": "/campagne",
+      "family": "utility-or-consent",
+      "locales": {
+        "fr": {
+          "currentPath": "/campagne",
+          "targetPath": "/campagne",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/campagne",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/campagne",
+            "lang": "fr",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": "/en/campaign",
+          "targetPath": "/en/campaign",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/en/campaign",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/en/campaign",
+            "lang": "en",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "es": {
+          "currentPath": "/es/campana",
+          "targetPath": "/es/campana",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/es/campana",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/es/campana",
+            "lang": "es",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        }
+      }
+    },
+    {
+      "pageId": "diagnostic",
+      "sourcePath": "/diagnostic",
+      "family": "utility-or-consent",
+      "locales": {
+        "fr": {
+          "currentPath": "/diagnostic",
+          "targetPath": "/diagnostic",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/diagnostic",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/diagnostic",
+            "lang": "fr",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": "/en/diagnostic",
+          "targetPath": "/en/diagnostic",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/en/diagnostic",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/en/diagnostic",
+            "lang": "en",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "es": {
+          "currentPath": "/es/diagnostic",
+          "targetPath": "/es/diagnostic",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/es/diagnostic",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/es/diagnostic",
+            "lang": "es",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        }
+      }
+    },
+    {
+      "pageId": "jobs",
+      "sourcePath": "/jobs",
+      "family": "utility-or-consent",
+      "locales": {
+        "fr": {
+          "currentPath": "/jobs",
+          "targetPath": "/jobs",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/jobs",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/jobs",
+            "lang": "fr",
+            "robots": "noindex, follow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": "/en/jobs",
+          "targetPath": "/en/jobs",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/en/jobs",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/en/jobs",
+            "lang": "en",
+            "robots": "noindex, follow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "es": {
+          "currentPath": "/es/jobs",
+          "targetPath": "/es/jobs",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/es/jobs",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/es/jobs",
+            "lang": "es",
+            "robots": "noindex, follow",
+            "unsubstantiatedROI5x": false
+          }
+        }
+      }
+    },
+    {
+      "pageId": "lp:daf-externalise",
+      "sourcePath": "/lp/daf-externalise",
+      "family": "utility-or-consent",
+      "locales": {
+        "fr": {
+          "currentPath": "/lp/daf-externalise",
+          "targetPath": "/lp/daf-externalise",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/lp/daf-externalise",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/lp/daf-externalise",
+            "lang": "fr",
+            "robots": "noindex, follow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/lp/fractional-cfo",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/lp/cfo-externo",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        }
+      }
+    },
+    {
+      "pageId": "lp:daf-externalise:merci",
+      "sourcePath": "/lp/daf-externalise/merci",
+      "family": "utility-or-consent",
+      "locales": {
+        "fr": {
+          "currentPath": "/lp/daf-externalise/merci",
+          "targetPath": "/lp/daf-externalise/merci",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/lp/daf-externalise/merci",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/lp/daf-externalise/merci",
+            "lang": "fr",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": null,
+          "targetPath": "/en/lp/fractional-cfo/thank-you",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        },
+        "es": {
+          "currentPath": null,
+          "targetPath": "/es/lp/cfo-externo/gracias",
+          "state": "translate-new",
+          "translationApproved": false,
+          "httpEvidence": null
+        }
+      }
+    },
+    {
+      "pageId": "profil",
+      "sourcePath": "/profil",
+      "family": "utility-or-consent",
+      "locales": {
+        "fr": {
+          "currentPath": "/profil",
+          "targetPath": "/profil",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/profil",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/profil",
+            "lang": "fr",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": "/en/profile",
+          "targetPath": "/en/profile",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/en/profile",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/en/profile",
+            "lang": "en",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "es": {
+          "currentPath": "/es/perfil",
+          "targetPath": "/es/perfil",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/es/perfil",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/es/perfil",
+            "lang": "es",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        }
+      }
+    },
+    {
+      "pageId": "qualification",
+      "sourcePath": "/qualification",
+      "family": "utility-or-consent",
+      "locales": {
+        "fr": {
+          "currentPath": "/qualification",
+          "targetPath": "/qualification",
+          "state": "reference-fr",
+          "translationApproved": true,
+          "httpEvidence": {
+            "path": "/qualification",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/qualification",
+            "lang": "fr",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "en": {
+          "currentPath": "/en/assessment",
+          "targetPath": "/en/assessment",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/en/assessment",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/en/assessment",
+            "lang": "en",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        },
+        "es": {
+          "currentPath": "/es/calificacion",
+          "targetPath": "/es/calificacion",
+          "state": "align-existing",
+          "translationApproved": false,
+          "httpEvidence": {
+            "path": "/es/calificacion",
+            "status": 200,
+            "final": "https://www.iteradvisors.com/es/calificacion",
+            "lang": "es",
+            "robots": "noindex, nofollow",
+            "unsubstantiatedROI5x": false
+          }
+        }
+      }
+    }
+  ],
+  "routingMigrationsActivated": 0,
+  "routingMigrationsPlanned": 26,
+  "checks": {
+    "unitTestsPassed": 137,
+    "lintErrors": 0,
+    "lintWarnings": 80,
+    "sitemapUrls": 238,
+    "builtPages": 263,
+    "redirectRules": 339,
+    "redirectIssues": 0,
+    "httpPages": 54,
+    "httpInternalDestinations": 179,
+    "httpIssues": 0
+  },
+  "additionalCorrection": "FR ROI landing: removed unsubstantiated claims; no success without confirmed webhook delivery."
+}

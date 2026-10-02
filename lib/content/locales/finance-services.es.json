@@ -1,0 +1,1257 @@
+{
+  "fractional": {
+    "path": "/fractional-cfo-startups",
+    "label": "CFO para startups",
+    "title": "CFO externo para startups y SaaS | Iter Advisors",
+    "description": "Un CFO externo para conectar tesorería, runway, ingresos SaaS y reporting a inversores. Entregables, escenarios, responsabilidades y presupuesto.",
+    "headline": "CFO externo para startups y SaaS",
+    "promise": "Relacionar las hipótesis de crecimiento con las decisiones de financiación.",
+    "intro": "Su startup debe decidir cuándo contratar, cuánto invertir y cómo financiar los próximos meses. El CFO externo construye con sus equipos una visión coherente de caja, ingresos y presupuesto. Prepara decisiones del dirigente e intercambios con inversores.",
+    "context": "daf",
+    "category": "Finanzas para startups y SaaS",
+    "summary": [
+      [
+        "Su necesidad",
+        "Runway, presupuesto y reporting a inversores"
+      ],
+      [
+        "Su organización",
+        "Un CFO a tiempo parcial con su equipo"
+      ],
+      [
+        "Presupuesto Iter",
+        "De 3.000 a 8.000 € sin IVA al mes, según el alcance"
+      ]
+    ],
+    "headings": {
+      "need": "¿Cuándo necesita su startup un CFO?",
+      "deliverables": "Tesorería, ingresos y reporting: los entregables",
+      "method": "Construir un modelo que su equipo pueda utilizar"
+    },
+    "signals": [
+      "Antes de una ronda: las hipótesis comerciales, el presupuesto de contratación y la necesidad de financiación no están conciliados.",
+      "Después de una ronda: el dirigente debe traducir el plan en gastos, hitos y reporting al consejo.",
+      "Para un SaaS: ingresos recurrentes, churn, cobros y margen se siguen en herramientas distintas con definiciones a veces incompatibles.",
+      "En un crecimiento con varias entidades: el equipo debe explicar desviaciones entre países, actividades o canales antes de decidir dónde invertir."
+    ],
+    "definition": "Fractional CFO describe una dirección financiera a tiempo parcial. Esta página trata necesidades de startups y SaaS; la oferta general explica otras modalidades. La necesidad depende de decisiones, calidad de datos y competencias internas. La facturación o el consumo de caja por sí solos no justifican una misión. Si necesita presencia permanente, contratar puede ser más adecuado.",
+    "deliverables": [
+      [
+        "Previsión de tesorería y runway",
+        "Conciliación de caja disponible, cobros esperados y vencimientos. Las hipótesis de financiación se separan de los fondos confirmados.",
+        "Probar retrasos de ronda, cobros o contratación antes de comprometer gastos."
+      ],
+      [
+        "Presupuesto y modelo con escenarios",
+        "Un modelo que conecta ventas, costes, plantilla y tesorería. El escenario central y las alternativas identifican hipótesis y fuentes.",
+        "Comparar el crecimiento previsto con costes y financiación disponible."
+      ],
+      [
+        "Reporting SaaS y a inversores",
+        "Definiciones compartidas de MRR o ARR, churn, margen y desviaciones presupuestarias. Los datos y comentarios para el consejo se preparan conjuntamente.",
+        "Explicar el rendimiento sin confundir ingresos contractuales, facturación y cobros."
+      ]
+    ],
+    "exampleTitle": "Una decisión de contratación sin resultados inventados",
+    "example": "Antes de abrir dos puestos, el dirigente puede comparar una incorporación inmediata, un retraso y un escenario de ventas prudente. Cada opción incluye costes completos facilitados por el equipo, fechas de incorporación y cobros esperados. El CFO explica el efecto en caja y las hipótesis; el dirigente aprueba el compromiso. Es un ejemplo de trabajo, no un resultado de cliente ni una recomendación de financiación.",
+    "calendar": {
+      "heading": "Indicadores vinculados a su actividad",
+      "caption": "Ejemplos de datos SaaS que conciliar",
+      "headers": [
+        "Tema",
+        "Datos que examinar",
+        "Punto de atención"
+      ],
+      "rows": [
+        [
+          "Ingresos recurrentes",
+          "Contratos, nuevos clientes, ampliaciones y cancelaciones",
+          "Definir MRR y ARR sin servicios puntuales"
+        ],
+        [
+          "Tesorería",
+          "Saldo bancario, vencimientos, impagados y gastos comprometidos",
+          "No confundir caja disponible con financiación solicitada"
+        ],
+        [
+          "Captación y margen",
+          "Gastos comerciales, cohortes y costes del servicio",
+          "Documentar periodo, atribución y costes incluidos"
+        ],
+        [
+          "Consejo e inversores",
+          "Resultados, presupuesto, desviaciones y decisiones próximas",
+          "Mantener las mismas definiciones entre informes"
+        ]
+      ],
+      "note": "Los indicadores y la frecuencia dependen de su modelo. Ningún umbral universal de runway, CAC o crecimiento sustituye el análisis de su situación. Un histórico corto o datos incompletos limitan la fiabilidad de los escenarios."
+    },
+    "steps": [
+      [
+        "Identificar decisiones",
+        "Compartir plazos, organización financiera, expectativas del consejo y documentos disponibles. Identificar lo que producen el equipo y la asesoría; acordar accesos y responsabilidades."
+      ],
+      [
+        "Conciliar datos",
+        "Examinar contabilidad, bancos, facturación, suscripciones e hipótesis comerciales. Documentar desviaciones, datos que faltan y definiciones antes de construir el reporting."
+      ],
+      [
+        "Organizar revisiones de decisión",
+        "Presentar escenarios y límites, asignar responsables y fechas, y actualizar hipótesis. Los primeros entregables y el calendario se acuerdan sin prometer una puesta en marcha idéntica para todas las startups."
+      ]
+    ],
+    "scopeTitle": "Un CFO con sus equipos, sin prometer una ronda",
+    "scope": [
+      "El dirigente fija prioridades y decide. El CFO prepara el modelo, cuestiona hipótesis y organiza el seguimiento. La asesoría conserva la responsabilidad de su contrato; los equipos comerciales y operativos explican los datos.",
+      "Preparar una ronda puede incluir modelo, data room y preguntas de due diligence. Participan dirigentes, inversores y asesores. No se garantizan una ronda, su valoración ni acceso privilegiado a fondos.",
+      "Si se incorpora un CFO interno, el traspaso abarca fuentes, hipótesis, accesos autorizados y calendario. La dirección financiera no otorga automáticamente facultad de firma ni poderes bancarios."
+    ],
+    "budget": "El acompañamiento recurrente de Iter va de 3.000 a 8.000 € sin IVA al mes. La propuesta depende de entidades, datos, reporting y perfil. Los proyectos excepcionales, desplazamientos y trabajos de otros asesores se distinguen. Comparar con una contratación requiere considerar disponibilidad y responsabilidades: son servicios distintos.",
+    "case": "solarmente-serie-b-cleantech",
+    "proofNote": "Este caso cleantech abarca 2022 a 2024 e ilustra preparación financiera de operaciones. No es un caso SaaS ni una previsión de resultados; contribuyeron dirigentes, inversores y asesores.",
+    "faq": [
+      [
+        "¿Cómo responde un CFO externo a las necesidades de una startup?",
+        "Presta dirección financiera a tiempo parcial. La especificidad startup incluye hipótesis de crecimiento, consumo de caja, financiación y expectativas de inversores. Para SaaS también incluye coherencia de datos de ingresos recurrentes."
+      ],
+      [
+        "¿Podemos conservar la asesoría contable?",
+        "Sí. Se distingue producción contable, conciliación y gestión. El CFO trabaja con la asesoría y los equipos; el contrato precisa trabajos e interlocutores."
+      ],
+      [
+        "¿Acompañan antes de la primera ronda?",
+        "La necesidad se evalúa según decisiones y datos disponibles. Una misión concreta de modelización puede ser más adecuada que un seguimiento recurrente. Ninguna etapa exige automáticamente un CFO externo."
+      ],
+      [
+        "¿Qué preparar para la primera conversación?",
+        "Organización, plazos, últimas cuentas, presupuesto e indicadores principales. Para SaaS, herramientas de facturación y suscripciones. Después se acuerda cómo compartir documentos detallados de forma segura."
+      ],
+      [
+        "¿Qué plazo y disponibilidad prever?",
+        "El inicio depende del perfil, alcance y accesos. La referencia de Iter es de 1 a 8 días mensuales orientativos, sin paquete de días garantizado. Revisiones, urgencias y primeros entregables se acuerdan juntos."
+      ],
+      [
+        "¿Qué compromiso exige el apoyo recurrente?",
+        "Acompañamiento mensual sin permanencia mínima, con preaviso de 30 días. El contrato precisa alcance y proyectos adicionales. Una misión puntual se define por separado."
+      ]
+    ],
+    "resources": [
+      [
+        "Calcular el cash burn y examinar el runway",
+        "/ressources/glossaire/cash-burn-runway"
+      ],
+      [
+        "Entender ingresos recurrentes MRR y ARR",
+        "/ressources/glossaire/arr-mrr"
+      ],
+      [
+        "Preparar las finanzas de una ronda",
+        "/services/accompagnement-levee-de-fond"
+      ],
+      [
+        "Estructurar las herramientas del CFO",
+        "/ressources/outils"
+      ],
+      [
+        "¿Busca un puesto en Iter?",
+        "/jobs"
+      ]
+    ],
+    "related": [
+      "temps-partage",
+      "tresorerie",
+      "controle"
+    ]
+  },
+  "paris": {
+    "path": "/daf-externalise-paris",
+    "label": "CFO externo en París",
+    "title": "CFO externo en París e Île-de-France | Iter Advisors",
+    "description": "CFO externo en París e Île-de-France: tesorería, reporting y presupuestos para pymes y startups. Presencia, responsabilidades y alcance acordados.",
+    "headline": "CFO externo en París e Île-de-France",
+    "promise": "Organizar la gestión financiera de su empresa en la región parisina.",
+    "intro": "Su pyme, startup o filial está en París o Île-de-France. Busca un interlocutor que conecte caja, resultados y decisiones de dirección. Iter Advisors estudia un acompañamiento adaptado al equipo, con trabajo presencial y a distancia acordado al definir la misión.",
+    "context": "daf",
+    "category": "París e Île-de-France",
+    "areaServed": "París e Île-de-France",
+    "author": {
+      "name": "Sébastien Doat",
+      "slug": "sebastien-doat"
+    },
+    "summary": [
+      [
+        "Su empresa",
+        "Pyme, startup o filial en Île-de-France"
+      ],
+      [
+        "Colaboración",
+        "Presencial y a distancia según lo acordado"
+      ],
+      [
+        "Presupuesto Iter",
+        "De 3.000 a 8.000 € sin IVA al mes, según el alcance"
+      ]
+    ],
+    "headings": {
+      "need": "¿Qué asunto financiero necesita tratar en París?",
+      "deliverables": "Entregables para decisiones de dirección",
+      "method": "Acordar el ritmo y los interlocutores"
+    },
+    "signals": [
+      "El dirigente prepara solo las cifras para dirección o un encuentro bancario.",
+      "El equipo y la asesoría tienen datos, pero cuesta conciliar presupuesto y previsiones.",
+      "Una contratación, una nueva implantación o varias entidades exigen comparar escenarios antes de gastar."
+    ],
+    "definition": "La necesidad local se refiere a organizar la colaboración: lugares, disponibilidad, acceso a datos y coordinación. La misión puede ser recurrente o temporal. La página nacional describe las modalidades de CFO externo; esta explica cómo preparar una intervención en una empresa de la región parisina.",
+    "deliverables": [
+      [
+        "Previsión de tesorería",
+        "Cobros, pagos e hipótesis que examinar con dirección. Se identifican datos pendientes y vencimientos sensibles.",
+        "Anticipar retrasos de pago y examinar necesidades de financiación."
+      ],
+      [
+        "Reporting y presupuesto",
+        "Interpretación de resultados, márgenes y desviaciones. En una filial, categorías y fechas se alinean con el grupo.",
+        "Entender desviaciones y decidir recursos con responsables operativos."
+      ],
+      [
+        "Expediente de decisión",
+        "Escenarios documentados para contratación, inversión o financiación, con hipótesis y trabajos pendientes.",
+        "Preparar conversaciones con bancos, accionistas o consejo."
+      ]
+    ],
+    "exampleTitle": "Preparar una revisión presencial útil",
+    "example": "Antes de revisar con dirección, el equipo comparte cuentas, vencimientos de caja y decisiones próximas. El CFO prepara preguntas y escenarios. El encuentro se centra en decisiones y responsabilidades, no en recopilar archivos. Frecuencia y lugar se acuerdan; no se incluyen implícitamente presencia diaria ni disponibilidad permanente.",
+    "steps": [
+      [
+        "Situar su empresa",
+        "Precisar la ubicación en Île-de-France, entidades, interlocutores y fechas. Examinar herramientas, documentos y trabajos de otros asesores."
+      ],
+      [
+        "Organizar la colaboración",
+        "Acordar perfil, reuniones presenciales, trabajo a distancia y reglas para compartir documentos. La propuesta precisa desplazamientos y urgencias."
+      ],
+      [
+        "Realizar la revisión financiera",
+        "Conciliar datos y documentar hipótesis. Seguir desviaciones, decisiones y fechas. Revisar el alcance cuando cambian necesidades o datos disponibles."
+      ]
+    ],
+    "scopeTitle": "Coordinación con sus equipos y asesores",
+    "scope": [
+      "La asesoría prepara cuentas según su contrato; el CFO organiza su interpretación, previsiones y decisiones con dirección. Los asesores fiscales, jurídicos o laborales intervienen en su ámbito. Iter no es un despacho de expertos contables.",
+      "Para una empresa de la región parisina con actividad en España, se identifican responsables locales, flujos y reporting de grupo. No se presuponen ventajas fiscales automáticas ni acceso privilegiado a inversores o programas públicos.",
+      "El perfil, la disponibilidad y la presencia se confirman antes del compromiso. Un proyecto de financiación o relevo diario puede necesitar un mandato específico, distinto del seguimiento recurrente."
+    ],
+    "budget": "Las misiones recurrentes de Iter van de 3.000 a 8.000 € sin IVA al mes. Son rangos del despacho, no una media del mercado parisino. La propuesta depende del alcance, perfil y organización; distingue desplazamientos y proyectos complementarios. El inicio se confirma tras evaluar la necesidad.",
+    "case": "opti-digital-structuration-financement",
+    "proofNote": "Esta referencia describe una misión de Iter y resultados cualitativos. No se presenta como referencia parisina: la fuente no establece la ubicación de la misión. No se promete ningún beneficio cuantificado para su empresa.",
+    "faq": [
+      [
+        "¿Trabajan presencialmente en Île-de-France?",
+        "Pueden acordarse reuniones según necesidad, lugar y disponibilidad. Perfil, frecuencia, desplazamientos y trabajo a distancia se precisan antes del compromiso. No se prevé automáticamente presencia diaria."
+      ],
+      [
+        "¿París es la sede de Iter Advisors?",
+        "No. La sede está en Barcelona. París es una zona de intervención; esta página no anuncia una dirección de oficina abierta al público ni horarios de atención en París."
+      ],
+      [
+        "¿A quién presentamos la necesidad?",
+        "Sébastien Doat es el interlocutor financiero de esta página. La primera conversación identifica competencias, perfil y modalidades. La persona asignada se precisa al definir el alcance."
+      ],
+      [
+        "¿Qué formato elegir?",
+        "La dedicación parcial responde a necesidades recurrentes; el mandato interino organiza un relevo temporal. Tesorería o reporting pueden tratar un asunto concreto. Se elige por organización y decisiones, no solo ubicación."
+      ],
+      [
+        "¿Qué información preparar?",
+        "Ubicación, entidades, equipos financieros, herramientas, vencimientos y presencia deseada. Cuentas y documentos sensibles se comparten después según lo acordado."
+      ]
+    ],
+    "resources": [
+      [
+        "El alcance del CFO externo",
+        "/daf-externalise"
+      ],
+      [
+        "Seguimiento a tiempo parcial",
+        "/daf-externalise/temps-partage"
+      ],
+      [
+        "Un relevo temporal de dirección financiera",
+        "/daf-externalise/transition"
+      ],
+      [
+        "Finanzas para startups y SaaS",
+        "/fractional-cfo-startups"
+      ],
+      [
+        "Acompañar actividad en España",
+        "/daf-externalise-barcelone"
+      ]
+    ],
+    "related": [
+      "temps-partage",
+      "transition",
+      "tresorerie"
+    ]
+  },
+  "temps-partage": {
+    "path": "/daf-externalise/temps-partage",
+    "label": "CFO a tiempo parcial",
+    "title": "CFO a tiempo parcial para pymes | Iter Advisors",
+    "description": "Un CFO a tiempo parcial para gestionar tesorería, presupuestos y decisiones. Entregables, dedicación y precios para pymes y startups.",
+    "headline": "CFO a tiempo parcial",
+    "headings": {
+      "need": "¿Cuándo elegir un CFO a tiempo parcial?",
+      "deliverables": "Los entregables para dirigir las finanzas",
+      "method": "¿Cómo trabaja un director financiero a tiempo parcial?"
+    },
+    "promise": "Una dirección financiera que acompaña a su empresa a largo plazo.",
+    "intro": "Necesita cifras claras y un interlocutor para decidir, sin contratar a un director financiero a tiempo completo. El CFO a tiempo parcial organiza la gestión con su equipo a un ritmo acordado conjuntamente.",
+    "context": "temps-partage",
+    "category": "Gestión financiera recurrente",
+    "summary": [
+      [
+        "Para quién",
+        "Pymes, startups y filiales con necesidades recurrentes"
+      ],
+      [
+        "Ritmo",
+        "Intervenciones planificadas y revisiones de seguimiento"
+      ],
+      [
+        "Presupuesto",
+        "De 3.000 a 8.000 € sin IVA al mes, según el alcance"
+      ]
+    ],
+    "signals": [
+      "El dirigente reúne las cifras antes de cada decisión.",
+      "La contabilidad está disponible, pero las previsiones y el reporting siguen siendo irregulares.",
+      "El crecimiento, los inversores o varias entidades hacen más compleja la gestión."
+    ],
+    "definition": "La dedicación parcial es la modalidad recurrente del CFO externo. Combina un interlocutor financiero sénior, trabajos acordados y reuniones para decidir. La intervención depende de los temas que hay que tratar, de la calidad de los datos y de las competencias del equipo.",
+    "deliverables": [
+      [
+        "Tesorería",
+        "Una previsión con hipótesis documentadas y seguimiento de las desviaciones.",
+        "Ver los vencimientos y decidir sobre los gastos."
+      ],
+      [
+        "Reporting de dirección",
+        "Un cuadro de mando de resultados, márgenes e indicadores útiles para su actividad.",
+        "Entender qué cambia y por qué."
+      ],
+      [
+        "Presupuesto y decisiones",
+        "Escenarios de ingresos, gastos y contrataciones documentados con los equipos.",
+        "Comparar las opciones antes de comprometerse."
+      ]
+    ],
+    "exampleTitle": "Qué puede incluir su revisión financiera",
+    "example": "Una revisión de la tesorería prevista, de los resultados frente al presupuesto y de las decisiones con sus responsables. El reporting prepara la conversación; la reunión termina con acciones cuyo avance se revisa en el siguiente encuentro.",
+    "calendar": {
+      "caption": "Ejemplo de calendario que debe adaptarse a la misión",
+      "headers": [
+        "Revisión",
+        "Trabajo preparado",
+        "Decisión que se apoya"
+      ],
+      "rows": [
+        [
+          "Cada semana, si es necesario",
+          "Cobros, pagos y facturas pendientes",
+          "Priorizar pagos y seguimiento de cobros"
+        ],
+        [
+          "Después del cierre mensual",
+          "Resultados, conciliaciones y desviaciones presupuestarias",
+          "Entender las desviaciones y actualizar las hipótesis"
+        ],
+        [
+          "Revisión con la dirección",
+          "Escenarios de tesorería, gastos y contrataciones",
+          "Decidir sobre una contratación o inversión"
+        ],
+        [
+          "Vencimiento excepcional",
+          "Escenarios y documentación para bancos o inversores",
+          "Examinar las condiciones de financiación"
+        ]
+      ],
+      "note": "El calendario es ilustrativo. Las reuniones, el trabajo y la disponibilidad se acuerdan al definir el alcance. Cada revisión concluye con una decisión, un responsable y una fecha, que se siguen en la próxima reunión."
+    },
+    "steps": [
+      [
+        "Acordar las prioridades",
+        "Identificar decisiones, interlocutores y fuentes: balances de comprobación, libros mayores, extractos bancarios, facturas pendientes, contratos de financiación y presupuesto. Acordar accesos, validaciones y calendario con la asesoría contable."
+      ],
+      [
+        "Organizar la gestión",
+        "Conciliar los datos y documentar la información que falta. Según el caso, preparar una previsión de tesorería a 13 semanas, un análisis de resultados y un seguimiento de anomalías. No se garantiza un plazo de puesta en marcha antes de revisar los datos."
+      ],
+      [
+        "Seguir y ajustar",
+        "Analizar desviaciones, preparar decisiones y revisar el alcance cuando cambia su situación."
+      ]
+    ],
+    "scopeTitle": "Una función de dirección coordinada con su equipo",
+    "scope": [
+      "El CFO trabaja con el dirigente, los responsables operativos y la asesoría contable. Organiza la gestión; las tareas diarias y las decisiones tienen responsables explícitos. Una necesidad de presencia permanente requiere otra organización.",
+      "El dirigente fija las prioridades y aprueba los compromisos. El CFO construye escenarios y analiza desviaciones. La asesoría prepara las cuentas según su contrato; los responsables operativos explican pedidos, existencias y vencimientos. La facultad de firma o el acceso bancario no se derivan automáticamente de la misión.",
+      "Una ronda, una adquisición o una transformación importante pueden requerir trabajo adicional. El contrato precisa los trabajos incluidos, la cobertura de ausencias y el tratamiento de urgencias."
+    ],
+    "budget": "Las misiones recurrentes de Iter van de 3.000 a 8.000 € sin IVA al mes. Los 1 a 8 días mensuales observados son orientativos, no un paquete contractual: la propuesta define el alcance y el perfil asignado. La tabla detallada permite situar su necesidad.",
+    "case": "opti-digital-structuration-financement",
+    "faq": [
+      [
+        "¿Qué relación tiene con un CFO externo?",
+        "CFO externo describe una dirección financiera prestada fuera de una relación laboral. La dedicación parcial es su modalidad recurrente, con intervenciones planificadas. Un CFO interino responde a una necesidad temporal de continuidad o transformación."
+      ],
+      [
+        "¿Cuántos días hay que prever?",
+        "La referencia orientativa de Iter es de 1 a 8 días al mes. Depende de las entidades, las herramientas, los vencimientos y el trabajo realizado internamente. El número de empleados no basta para determinarlo."
+      ],
+      [
+        "¿Hay que cambiar de asesoría contable?",
+        "No necesariamente. Al definir el alcance se identifican los trabajos de la asesoría, los datos esperados y el papel del CFO. Una coordinación clara evita duplicidades."
+      ],
+      [
+        "¿Podemos contratar después a un CFO?",
+        "Sí. La misión puede preparar el traspaso de herramientas, hipótesis y calendario a una persona contratada internamente. Ese traspaso debe incluirse en el alcance."
+      ],
+      [
+        "¿Qué compromiso se exige?",
+        "La tabla de Iter prevé acompañamiento mensual sin permanencia mínima, rescindible con un preaviso de 30 días. Los servicios y los cambios de alcance se formalizan en el contrato."
+      ]
+    ],
+    "resources": [
+      [
+        "Comparar los paquetes y precios",
+        "/daf-externalise/tarifs"
+      ],
+      [
+        "Entender las modalidades del CFO externo",
+        "/daf-externalise"
+      ],
+      [
+        "CFO externo o en plantilla: criterios de elección",
+        "/ressources/blog/daf-externalise-vs-daf-salarie"
+      ]
+    ],
+    "related": [
+      "transition",
+      "controle",
+      "organisation"
+    ]
+  },
+  "transition": {
+    "path": "/daf-externalise/transition",
+    "label": "CFO interino",
+    "title": "CFO interino y dirección financiera | Iter Advisors",
+    "description": "Dirección financiera interina: sustitución del CFO, mandato temporal y traspaso para pymes y empresas medianas. Prioridades, disponibilidad y presupuesto.",
+    "headline": "CFO interino",
+    "promise": "Mantener la continuidad. Preparar la siguiente etapa.",
+    "intro": "Una salida, una ausencia o una transformación dejan vencimientos financieros que atender. El CFO interino asume un mandato temporal con prioridades, responsabilidades y condiciones de salida definidas.",
+    "context": "transition",
+    "category": "Tomar el relevo temporalmente",
+    "summary": [
+      [
+        "Para quién",
+        "Pymes y empresas medianas con necesidades temporales"
+      ],
+      [
+        "Prioridad",
+        "Continuidad, vencimientos y traspaso"
+      ],
+      [
+        "Presupuesto",
+        "De 8.000 a 12.000 € sin IVA al mes, según el mandato"
+      ]
+    ],
+    "signals": [
+      "Su CFO deja la empresa o se ausenta durante un periodo sensible.",
+      "Un cierre, una financiación o un cambio de herramientas requiere más apoyo directivo.",
+      "Está contratando a un director financiero y necesita organizar el relevo."
+    ],
+    "definition": "La dirección financiera interina consiste en confiar temporalmente la gestión a un CFO con un periodo y un mandato definidos. La misión combina la atención a las prioridades inmediatas y la preparación de una organización duradera. La dedicación parcial responde, en cambio, a una necesidad recurrente de dirección financiera.",
+    "deliverables": [
+      [
+        "Diagnóstico priorizado",
+        "Un calendario de vencimientos, una lista de riesgos y los accesos necesarios.",
+        "Identificar qué debe atenderse primero."
+      ],
+      [
+        "Hoja de ruta",
+        "Trabajos, responsables y puntos de decisión seguidos con la dirección.",
+        "Organizar la continuidad y los cambios."
+      ],
+      [
+        "Documentación de traspaso",
+        "Herramientas, procedimientos, hipótesis y asuntos pendientes.",
+        "Permitir que el sucesor retome la gestión."
+      ]
+    ],
+    "headings": {
+      "need": "¿Cuándo considerar una dirección financiera interina?",
+      "deliverables": "Los entregables del CFO interino",
+      "method": "Del mandato temporal al traspaso"
+    },
+    "calendar": {
+      "heading": "Preparar la salida desde el inicio",
+      "caption": "Hitos que deben acordarse para un mandato temporal",
+      "headers": [
+        "Hito",
+        "Trabajo que debe documentarse",
+        "Validación esperada"
+      ],
+      "rows": [
+        [
+          "Antes de asumir el cargo",
+          "Prioridades, accesos, calendario y delegaciones escritas",
+          "Mandato y responsabilidades aprobados por la dirección"
+        ],
+        [
+          "Durante la misión",
+          "Vencimientos atendidos, riesgos abiertos y decisiones documentadas",
+          "Revisión de avances y ajuste del alcance"
+        ],
+        [
+          "Antes de la salida",
+          "Documentación de traspaso, procedimientos e interlocutores de relevo",
+          "El sucesor retoma las herramientas y los asuntos pendientes"
+        ]
+      ],
+      "note": "La duración depende de la sustitución o del proyecto. La propuesta fija los hitos y las condiciones de una posible prórroga; ningún calendario estándar sustituye el examen de su situación."
+    },
+    "exampleTitle": "Los primeros asuntos que conviene abordar",
+    "example": "Saldo de tesorería, nóminas, pagos sensibles, cierre, compromisos bancarios y decisiones pendientes: la primera revisión identifica los vencimientos y las responsabilidades. No sustituye un diagnóstico completo si faltan datos.",
+    "steps": [
+      [
+        "Definir el mandato",
+        "Precisar el motivo, la duración prevista, la presencia necesaria y las delegaciones."
+      ],
+      [
+        "Tomar el relevo",
+        "Organizar accesos y calendario, priorizar trabajos y coordinar los intercambios con el equipo."
+      ],
+      [
+        "Organizar el traspaso",
+        "Preparar procedimientos, documentar decisiones y transmitir los asuntos pendientes al sucesor."
+      ]
+    ],
+    "scopeTitle": "Una presencia adaptada al mandato",
+    "scope": [
+      "La presencia y la facultad de decisión se acuerdan con la dirección. La misión no supone automáticamente una delegación de firma ni poderes sobre las cuentas bancarias.",
+      "El CFO coordina a los equipos y asesores dentro del alcance acordado. Los asuntos jurídicos, fiscales o concursales también corresponden a los profesionales competentes. La preparación de la salida empieza al definir el alcance."
+    ],
+    "budget": "La referencia de Iter es de 8.000 a 12.000 € sin IVA al mes, según el mandato, la disponibilidad y la complejidad. Tras evaluar la necesidad, puede considerarse un inicio en 7 a 10 días, sujeto a disponibilidad y acceso a la información.",
+    "faq": [
+      [
+        "¿Cuánto dura una misión interina?",
+        "La duración depende del motivo de la sustitución, los vencimientos y la disponibilidad del sucesor. El mandato precisa los objetivos de salida, las condiciones de prórroga y el tiempo de traspaso."
+      ],
+      [
+        "¿Cuándo elegir un CFO interino en lugar de uno a tiempo parcial?",
+        "El mandato interino responde a una situación temporal: sustitución, continuidad o transformación. La dedicación parcial atiende una necesidad recurrente con intervenciones planificadas."
+      ],
+      [
+        "¿Pueden intervenir con urgencia?",
+        "La necesidad y la disponibilidad se revisan en la primera conversación. Puede considerarse un inicio en 7 a 10 días según el contexto; no se garantiza ningún plazo antes de definir el alcance."
+      ],
+      [
+        "¿Cómo preparan el traspaso?",
+        "La misión precisa los documentos, accesos, procedimientos, hipótesis y asuntos pendientes que deben transmitirse. El calendario se acuerda con el dirigente y el sucesor."
+      ],
+      [
+        "¿Qué debemos preparar para contactarles?",
+        "El motivo de la sustitución, los vencimientos próximos, la organización actual, las herramientas y la presencia deseada. Después se acuerda cómo compartir los documentos."
+      ]
+    ],
+    "resources": [
+      [
+        "La función del director financiero",
+        "/daf-externalise/metier"
+      ],
+      [
+        "Preparar una organización financiera duradera",
+        "/ressources/blog/organiser-sa-direction-financiere"
+      ],
+      [
+        "Precios de las misiones CFO",
+        "/daf-externalise/tarifs"
+      ]
+    ],
+    "related": [
+      "temps-partage",
+      "tresorerie",
+      "organisation"
+    ]
+  },
+  "controle": {
+    "path": "/services/controle-de-gestion-externalise",
+    "label": "Control de gestión",
+    "title": "Control de gestión para pymes: presupuestos y márgenes",
+    "description": "Presupuestos, márgenes y reporting: control de gestión externo para entender sus resultados. Entregables, revisión mensual y coordinación con sus equipos.",
+    "headline": "Control de gestión externo",
+    "promise": "Entender sus márgenes. Dar continuidad a sus cifras.",
+    "intro": "Sus cuentas muestran lo ocurrido. El control de gestión compara los resultados con los objetivos y la actividad operativa para identificar desviaciones y preparar decisiones con los responsables.",
+    "context": "reporting",
+    "category": "Gestionar el rendimiento",
+    "headings": {
+      "need": "¿Cuándo recurrir a un control de gestión externo?",
+      "deliverables": "Presupuestos, márgenes y reporting: los entregables",
+      "method": "El seguimiento con su controller de gestión"
+    },
+    "summary": [
+      [
+        "Su necesidad",
+        "Presupuestos, márgenes, costes e indicadores"
+      ],
+      [
+        "Su apoyo",
+        "Un reporting explicado y vinculado a decisiones"
+      ],
+      [
+        "Alcance",
+        "Puesta en marcha o seguimiento recurrente, bajo presupuesto"
+      ]
+    ],
+    "signals": [
+      "Conoce la facturación, pero no el margen por actividad o canal.",
+      "El reporting exige muchas tareas manuales y llega después de decidir.",
+      "Se registran desviaciones presupuestarias sin explicación ni responsable identificado."
+    ],
+    "definition": "El control de gestión externo consiste en confiar todo o parte del presupuesto, el reporting y el análisis del rendimiento a un profesional dedicado. Parte de datos contables y operativos y los relaciona con las decisiones de su empresa.",
+    "deliverables": [
+      [
+        "Cuadro de mando",
+        "Indicadores definidos, una fuente por indicador y una frecuencia de actualización.",
+        "Leer los resultados sin multiplicar los archivos."
+      ],
+      [
+        "Análisis de márgenes",
+        "Una cuenta de resultados por actividad, producto o canal, con reglas de reparto.",
+        "Identificar las contribuciones y los costes que hay que examinar."
+      ],
+      [
+        "Presupuesto y desviaciones",
+        "Un presupuesto, resultados comparables y comentarios sobre desviaciones significativas.",
+        "Ajustar acciones y revisar las previsiones."
+      ]
+    ],
+    "exampleTitle": "Ejemplo de esquema para una revisión mensual",
+    "example": "Resultados y márgenes frente al presupuesto, evolución de volúmenes y precios, gastos que analizar y decisiones pendientes. Cada indicador precisa su definición, fuente y responsable. El esquema es ilustrativo: el cuadro de mando debe adaptarse a su modelo de negocio.",
+    "steps": [
+      [
+        "Elegir las preguntas útiles",
+        "Definir decisiones, dimensiones de análisis e indicadores realmente necesarios."
+      ],
+      [
+        "Fiabilizar el reporting",
+        "Conciliar fuentes, explicar las reglas de cálculo y documentar los ajustes."
+      ],
+      [
+        "Dirigir la revisión",
+        "Explicar las desviaciones con los equipos operativos y seguir las decisiones hasta la próxima revisión."
+      ]
+    ],
+    "scopeTitle": "La conexión entre contabilidad, operaciones y dirección",
+    "scope": [
+      "La contabilidad aporta una base indispensable. El control de gestión organiza su interpretación económica, por ejemplo un margen por canal o un presupuesto por responsable. Ambas funciones coordinan sus calendarios y reglas.",
+      "La automatización es útil cuando las fuentes y las definiciones son estables. Un cuadro de mando actualizado automáticamente sigue necesitando controles, un responsable y comentarios sobre anomalías. Una herramienta no sustituye el análisis."
+    ],
+    "budget": "La propuesta distingue la construcción inicial del reporting y su seguimiento. El número de entidades, las fuentes, los ejes analíticos y la frecuencia de las revisiones determinan el alcance. Si también necesita financiación y decisiones de dirección, una misión de CFO a tiempo parcial puede ser más adecuada.",
+    "case": "seasonly-marge-par-canal-bfr",
+    "faq": [
+      [
+        "¿Qué indicadores debemos seguir?",
+        "Los que respondan a sus decisiones: ingresos, margen, costes, tesorería o indicadores operativos según la actividad. Las definiciones y fuentes deben acordarse antes de construir el cuadro de mando."
+      ],
+      [
+        "¿Pueden trabajar con nuestras herramientas actuales?",
+        "Se revisan los datos exportables, los accesos y los límites de las herramientas. Migrar no es automático; debe justificarse por las necesidades, los costes y la capacidad del equipo para mantener el sistema."
+      ],
+      [
+        "¿Hace falta un reporting en tiempo real?",
+        "La frecuencia depende de la decisión y de los datos disponibles. Un seguimiento semanal de caja o una revisión mensual de márgenes pueden ser más útiles que una visualización continua pero incompleta."
+      ],
+      [
+        "¿En qué se diferencia de un CFO a tiempo parcial?",
+        "El control de gestión se centra en presupuestos, costes, márgenes y reporting. El CFO también cubre decisiones financieras transversales, tesorería, financiación y coordinación de la función financiera."
+      ]
+    ],
+    "resources": [
+      [
+        "Elegir indicadores para el cuadro de mando",
+        "/ressources/blog/tableau-de-bord-financier-startup-12-kpis"
+      ],
+      [
+        "Automatizar el reporting con controles",
+        "/ressources/ia-finance/automatiser-reporting-financier"
+      ],
+      [
+        "Seguir los vencimientos de tesorería",
+        "/services/previsionnel-tresorerie"
+      ]
+    ],
+    "related": [
+      "temps-partage",
+      "organisation",
+      "tresorerie"
+    ]
+  },
+  "comptabilite": {
+    "path": "/services/comptabilite-externalisation",
+    "label": "Coordinación contable",
+    "title": "Coordinación contable para pymes | Iter Advisors",
+    "description": "Organice la contabilidad externa: recopilación de documentos, cierre, herramientas y coordinación con su asesoría. Alcance y propuesta adaptados.",
+    "headline": "Coordinación de la contabilidad externa",
+    "promise": "Cuentas utilizables y responsabilidades claras.",
+    "intro": "Documentos dispersos, cierres tardíos y responsabilidades poco claras: externalizar exige organizar primero los intercambios. Le ayudamos a estructurar el funcionamiento contable y conectarlo con la gestión financiera.",
+    "context": "comptabilite",
+    "category": "Organizar la producción contable",
+    "summary": [
+      [
+        "Su necesidad",
+        "Documentos, procesos y calendario de cierre"
+      ],
+      [
+        "Interlocutores",
+        "Su equipo, Iter y la asesoría contable"
+      ],
+      [
+        "Presupuesto",
+        "Según los trabajos asignados"
+      ]
+    ],
+    "signals": [
+      "Los documentos que faltan bloquean el cierre y requieren tiempo del dirigente.",
+      "No sabe quién comprueba los datos ni quién valida los vencimientos.",
+      "Sus herramientas contables y su reporting utilizan información distinta."
+    ],
+    "definition": "La contabilidad externa puede cubrir distintos alcances. Antes de comparar propuestas, distinga la recopilación y preparación de documentos, la llevanza y las declaraciones, el cierre y el análisis de las cifras. El contrato precisa los trabajos y el profesional responsable de cada parte.",
+    "deliverables": [
+      [
+        "Circuito documental",
+        "Un proceso de recopilación, accesos definidos y una lista de documentos pendientes.",
+        "Reducir intercambios y seguir los puntos bloqueantes."
+      ],
+      [
+        "Calendario de cierre",
+        "Tareas, fechas y validaciones repartidas entre los profesionales.",
+        "Saber cuándo estarán disponibles las cuentas comprobadas."
+      ],
+      [
+        "Paso al reporting",
+        "Datos exportados y conciliados, con reglas de interpretación acordadas con finanzas.",
+        "Utilizar las cuentas para seguir la actividad."
+      ]
+    ],
+    "exampleTitle": "¿Quién hace qué en el circuito contable?",
+    "example": "El equipo entrega los documentos y valida los datos operativos. La asesoría realiza los trabajos de su contrato. Iter puede coordinar el calendario, los controles de gestión y el uso de las cifras. La distribución se acuerda antes de empezar.",
+    "steps": [
+      [
+        "Definir responsabilidades",
+        "Inventariar los trabajos, vencimientos y compromisos de la asesoría."
+      ],
+      [
+        "Organizar intercambios",
+        "Acordar herramientas, accesos, circuito de validación y documentos necesarios."
+      ],
+      [
+        "Seguir el cierre",
+        "Resolver los asuntos pendientes, comprobar la disponibilidad de datos exportables y preparar su uso en el reporting."
+      ]
+    ],
+    "scopeTitle": "Un alcance explícito con su asesoría contable",
+    "scope": [
+      "La llevanza, las declaraciones, la revisión o certificación deben asignarse al profesional habilitado conforme al marco aplicable. La propuesta distingue la intervención de Iter de la de su asesoría o de los socios pertinentes.",
+      "Las nóminas, la fiscalidad específica, la recuperación de históricos y la migración de herramientas no están implícitamente incluidas. Cambiar de asesoría o software requiere prever el traspaso de datos, la continuidad de obligaciones y las responsabilidades de validación."
+    ],
+    "budget": "El precio depende de los volúmenes, las entidades, las herramientas, la calidad documental y los trabajos de cada profesional. Acordamos estos puntos antes de presupuestar. Los honorarios de la asesoría y las suscripciones deben identificarse por separado.",
+    "budgetResource": {
+      "href": "/ressources/blog/externalisation-comptable#grille",
+      "label": "Comparar propuestas contables"
+    },
+    "faq": [
+      [
+        "¿Tengo que cambiar de asesoría contable?",
+        "No necesariamente. El acompañamiento puede partir de su asesoría actual, aclarando intercambios, vencimientos y funciones. La necesidad de cambio se evalúa al definir el alcance."
+      ],
+      [
+        "¿Están incluidas la llevanza y las declaraciones?",
+        "No debe suponerse que estén incluidas. El contrato precisa los trabajos del profesional habilitado y su coste. La organización contable y la gestión financiera son alcances distintos."
+      ],
+      [
+        "¿Pueden ayudarnos a cambiar de software?",
+        "La migración puede ser un proyecto definido: históricos, pruebas, derechos de acceso, validación y calendario. El plazo depende especialmente de la calidad de los datos y de los profesionales implicados."
+      ],
+      [
+        "¿Cómo conectar contabilidad y gestión financiera?",
+        "Acordando fechas de disponibilidad, datos exportables, reglas analíticas y controles. El reporting puede utilizar una base conciliada y explicar las desviaciones útiles para decidir."
+      ]
+    ],
+    "resources": [
+      [
+        "Organizar la dirección financiera",
+        "/ressources/blog/organiser-sa-direction-financiere"
+      ],
+      [
+        "Estructurar las operaciones financieras",
+        "/services/gestion-financiere-externalisee"
+      ],
+      [
+        "Pasar de las cuentas al control de gestión",
+        "/services/controle-de-gestion-externalise"
+      ],
+      [
+        "Contrato de servicios: guía del organismo francés de expertos contables (francés)",
+        "https://www.experts-comptables.fr/index.php/faq"
+      ]
+    ],
+    "related": [
+      "organisation",
+      "controle",
+      "temps-partage"
+    ]
+  },
+  "tresorerie": {
+    "path": "/services/previsionnel-tresorerie",
+    "label": "Previsión de tesorería",
+    "title": "Previsión de tesorería a 13 semanas | Iter Advisors",
+    "description": "Construya y siga una previsión de tesorería a 13 semanas: cobros, vencimientos, hipótesis y escenarios para preparar decisiones.",
+    "headline": "Previsión de tesorería",
+    "promise": "Ver los vencimientos antes de que sean urgentes.",
+    "intro": "Un saldo bancario no indica lo que queda disponible después de los próximos pagos. Una previsión móvil conecta los cobros y pagos esperados para preparar decisiones con su equipo.",
+    "context": "tresorerie",
+    "category": "Anticipar las necesidades de caja",
+    "summary": [
+      [
+        "Horizonte",
+        "13 semanas móviles, adaptadas a la necesidad"
+      ],
+      [
+        "Su apoyo",
+        "Flujos previstos, hipótesis y desviaciones"
+      ],
+      [
+        "Alcance",
+        "Construcción y seguimiento definidos en la propuesta"
+      ]
+    ],
+    "signals": [
+      "La tesorería varía mucho entre dos revisiones mensuales.",
+      "Las fechas de cobro son inciertas mientras los gastos ya están comprometidos.",
+      "Debe decidir sobre una contratación, una compra o una financiación."
+    ],
+    "definition": "La previsión de tesorería sigue las fechas y los importes de cobros y pagos. Se distingue de la cuenta de resultados: una venta puede contabilizarse antes de cobrarse. Un horizonte de 13 semanas aporta una visión operativa, complementada con escenarios más largos si es necesario.",
+    "deliverables": [
+      [
+        "Previsión móvil",
+        "Un saldo inicial conciliado y flujos previstos por semana.",
+        "Identificar periodos de tensión de caja."
+      ],
+      [
+        "Registro de hipótesis",
+        "Fechas de pago, pagos sensibles e incertidumbres explícitas.",
+        "Ver qué puede modificar el escenario."
+      ],
+      [
+        "Previsión frente a realidad",
+        "Desviaciones explicadas y actualizadas regularmente.",
+        "Decidir con la información más reciente."
+      ]
+    ],
+    "headings": {
+      "need": "¿Cuándo construir una previsión de tesorería?",
+      "deliverables": "Los documentos para seguir los próximos vencimientos",
+      "method": "Construir, conciliar y actualizar la previsión"
+    },
+    "calendar": {
+      "heading": "Un saldo final positivo puede ocultar una tensión intermedia",
+      "caption": "Ejemplo ficticio de dos semanas con 20.000 € de caja inicial",
+      "headers": [
+        "Periodo",
+        "Cobros y pagos supuestos",
+        "Saldo al final de la semana"
+      ],
+      "rows": [
+        [
+          "Semana 1",
+          "20.000 € cobrados − 45.000 € pagados = −25.000 €",
+          "−5.000 €"
+        ],
+        [
+          "Semana 2",
+          "50.000 € cobrados − 30.000 € pagados = +20.000 €",
+          "15.000 €"
+        ]
+      ],
+      "note": "Todos los importes son ficticios. El saldo de la segunda semana es positivo, pero la primera revela una necesidad de 5.000 € si se cumplen las hipótesis. Identificar la tensión no garantiza un descubierto autorizado ni financiación: hay que examinar las opciones y condiciones antes del vencimiento."
+    },
+    "exampleTitle": "Ejemplo de interpretación de la previsión",
+    "example": "Si un cobro cambia de fecha, el equipo actualiza la hipótesis y compara los saldos semanales. Puede probar distintos calendarios y examinar decisiones con la dirección. La previsión no convierte un crédito incierto en caja disponible; comparar lo previsto y lo realizado explica la desviación.",
+    "steps": [
+      [
+        "Conciliar el punto de partida",
+        "Identificar cuentas bancarias, créditos, deudas y compromisos conocidos."
+      ],
+      [
+        "Construir escenarios",
+        "Situar flujos, documentar hipótesis y probar las incertidumbres más sensibles."
+      ],
+      [
+        "Actualizar y decidir",
+        "Comparar con lo realizado, revisar las próximas semanas y seguir las acciones acordadas."
+      ]
+    ],
+    "scopeTitle": "Una previsión mantenida por las personas adecuadas",
+    "scope": [
+      "Los responsables comerciales, de compras y operaciones aportan las fechas esperadas. El CFO consolida, comprueba coherencias y prepara decisiones. La frecuencia depende de la situación.",
+      "La obtención de financiación, las negociaciones y las decisiones de pago son acciones distintas. Las opciones se comparan teniendo en cuenta sus costes y restricciones."
+    ],
+    "budget": "La propuesta depende de las entidades, los bancos, la calidad de los calendarios de pago y la frecuencia de seguimiento. La previsión puede ser una misión específica o un entregable de un acompañamiento recurrente de CFO.",
+    "case": "seasonly-marge-par-canal-bfr",
+    "faq": [
+      [
+        "¿Por qué un horizonte de 13 semanas?",
+        "Permite una visión semanal de los vencimientos próximos. Un presupuesto de tesorería más largo puede complementarlo si lo requiere una inversión o financiación."
+      ],
+      [
+        "¿Qué documentos debemos preparar?",
+        "Saldos bancarios, balances de clientes y proveedores, calendarios de préstamos, gastos recurrentes, obligaciones conocidas e hipótesis comerciales. Se identifican los documentos que faltan."
+      ],
+      [
+        "¿Qué herramienta debemos utilizar?",
+        "Una hoja de cálculo estructurada puede bastar para ciertas necesidades. Una herramienta especializada se justifica según las fuentes, la frecuencia, los controles y las personas que la actualizan."
+      ]
+    ],
+    "resources": [
+      [
+        "Reducir las necesidades de capital circulante: palancas que examinar",
+        "/ressources/blog/reduire-bfr-7-leviers-actionnables"
+      ],
+      [
+        "Entender los flujos de tesorería",
+        "/ressources/blog/flux-de-tresorerie"
+      ]
+    ],
+    "related": [
+      "temps-partage",
+      "controle",
+      "organisation"
+    ]
+  },
+  "organisation": {
+    "path": "/services/gestion-financiere-externalisee",
+    "label": "Organización financiera",
+    "title": "Operaciones financieras para pymes | Iter Advisors",
+    "description": "Estructure las operaciones financieras: responsabilidades, datos, cierre y reporting. Un alcance adaptado a su equipo.",
+    "headline": "Gestión de operaciones financieras",
+    "promise": "Una función financiera que sabe quién hace qué.",
+    "intro": "Cuando se acumulan archivos, herramientas y responsabilidades, producir las cifras se convierte en un proyecto. El acompañamiento organiza las operaciones financieras para que su equipo disponga de un funcionamiento compartido.",
+    "context": "organisation",
+    "category": "Estructurar la función financiera",
+    "summary": [
+      [
+        "Su necesidad",
+        "Procesos, datos y responsabilidades"
+      ],
+      [
+        "Su apoyo",
+        "Un calendario y procedimientos utilizables"
+      ],
+      [
+        "Alcance",
+        "Organización inicial y seguimiento bajo presupuesto"
+      ]
+    ],
+    "signals": [
+      "Los mismos datos se introducen varias veces en distintos archivos.",
+      "Las validaciones y los seguimientos dependen de una sola persona.",
+      "El crecimiento o una nueva entidad exige una organización más explícita."
+    ],
+    "definition": "Las operaciones financieras organizan la circulación de datos, las responsabilidades y el calendario para producir las cifras. Para facturas, pagos o conciliaciones, la misión comienza por identificar quién prepara, comprueba y valida. El CFO externo atiende la gestión y las decisiones de dirección; el contrato precisa los trabajos de Iter y los que conserva su equipo.",
+    "deliverables": [
+      [
+        "Reparto de funciones",
+        "Una matriz de tareas, validaciones y responsabilidades.",
+        "Reducir las tareas sin responsable."
+      ],
+      [
+        "Calendario financiero",
+        "Vencimientos, dependencias y puntos de control.",
+        "Coordinar la producción de cifras."
+      ],
+      [
+        "Procedimientos y datos",
+        "Reglas documentadas, accesos definidos y modelos compartidos.",
+        "Mantener el funcionamiento a largo plazo."
+      ]
+    ],
+    "exampleTitle": "Un proceso descrito de principio a fin",
+    "example": "Procedimiento ilustrativo que debe adaptarse: el equipo entrega documentos, contabilidad prepara conciliaciones, el responsable financiero revisa excepciones y la persona habilitada valida el reporting. Las delegaciones y los controles de pagos se documentan por separado. Describe una organización, no un caso de cliente ni la realización automática de todas las tareas por Iter.",
+    "steps": [
+      [
+        "Mapear",
+        "Revisar flujos, herramientas y tareas con quienes las realizan."
+      ],
+      [
+        "Organizar",
+        "Acordar responsabilidades, documentos y controles necesarios."
+      ],
+      [
+        "Transmitir",
+        "Probar el funcionamiento con el equipo, documentarlo y seguir las correcciones."
+      ]
+    ],
+    "scopeTitle": "Partir del equipo y de las herramientas existentes",
+    "scope": [
+      "El proyecto no empieza necesariamente por un software nuevo. Las dificultades, la fiabilidad de las fuentes y la capacidad de mantener los procesos orientan las decisiones.",
+      "El alcance distingue la organización, la producción contable y las decisiones financieras. Cada tarea externalizada debe tener un responsable, un entregable y un procedimiento de validación."
+    ],
+    "budget": "La propuesta depende de los procesos, las entidades, las herramientas y el nivel de intervención esperado. Se explicitan los posibles costes de migración o suscripción.",
+    "case": "opti-digital-structuration-financement",
+    "faq": [
+      [
+        "¿En qué se diferencia del control de gestión?",
+        "La organización financiera abarca operaciones, datos y responsabilidades. El control de gestión utiliza esos datos para analizar costes, márgenes y desviaciones presupuestarias."
+      ],
+      [
+        "¿Debemos sustituir las herramientas?",
+        "No automáticamente. El mapa de procesos permite decidir si bastan las existentes, si pueden conectarse mejor o si se justifica un cambio."
+      ],
+      [
+        "¿Podemos automatizar algunos trabajos?",
+        "Sí, tras aclarar fuentes, reglas y controles. El proyecto debe prever excepciones, mantenimiento y validación humana de los resultados."
+      ]
+    ],
+    "resources": [
+      [
+        "Organizar la dirección financiera",
+        "/ressources/blog/organiser-sa-direction-financiere"
+      ],
+      [
+        "Automatizar el reporting financiero",
+        "/ressources/ia-finance/automatiser-reporting-financier"
+      ]
+    ],
+    "related": [
+      "comptabilite",
+      "controle",
+      "temps-partage"
+    ]
+  },
+  "levee": {
+    "path": "/services/accompagnement-levee-de-fond",
+    "label": "Preparación de rondas",
+    "title": "Preparación financiera de rondas | Iter Advisors",
+    "description": "Prepare las finanzas de su ronda: modelo financiero, data room y respuestas a inversores. Entregables y calendario definidos según su proyecto.",
+    "headline": "Preparación financiera de rondas",
+    "promise": "Hipótesis explicadas. Un expediente financiero coherente.",
+    "intro": "El CFO traduce su proyecto en escenarios financieros y organiza los datos que esperan los inversores. El dirigente presenta el proyecto; buscar inversores es un mandato distinto.",
+    "context": "levee",
+    "category": "Preparar una operación",
+    "summary": [
+      [
+        "Su necesidad",
+        "Modelo, necesidad de financiación y data room"
+      ],
+      [
+        "Su apoyo",
+        "Cifras conciliadas e hipótesis documentadas"
+      ],
+      [
+        "Presupuesto",
+        "Misión puntual o complementaria, bajo presupuesto"
+      ]
+    ],
+    "signals": [
+      "Su proyecto debe traducirse en una necesidad de financiación.",
+      "Las cifras del modelo, del reporting y del expediente para inversores difieren.",
+      "Las preguntas financieras requieren tiempo del equipo sin coordinación."
+    ],
+    "definition": "El acompañamiento abarca la preparación y el seguimiento financieros. El modelo, los escenarios y la data room explican las cifras y las incertidumbres. La misión no garantiza importe captado, valoración ni fecha de cierre.",
+    "deliverables": [
+      [
+        "Modelo financiero",
+        "Ingresos, gastos, contrataciones y tesorería vinculados a las hipótesis del proyecto.",
+        "Identificar la necesidad de financiación."
+      ],
+      [
+        "Data room financiera",
+        "Documentos organizados y cifras conciliadas con las cuentas.",
+        "Facilitar la lectura y las comprobaciones."
+      ],
+      [
+        "Respuestas financieras",
+        "Seguimiento de preguntas y documentos preparados con el equipo.",
+        "Mantener una información coherente durante los intercambios."
+      ]
+    ],
+    "exampleTitle": "Hacer que una hipótesis pueda discutirse",
+    "example": "Acelerar las ventas implica gastos y contrataciones. El modelo relaciona estas decisiones con la caja y prueba retrasos de ingresos o financiación para que el dirigente compare opciones.",
+    "steps": [
+      [
+        "Definir la preparación",
+        "Precisar la etapa, los vencimientos, los datos y los interlocutores."
+      ],
+      [
+        "Construir el expediente",
+        "Documentar hipótesis, conciliar cifras y organizar documentos financieros."
+      ],
+      [
+        "Acompañar los intercambios",
+        "Preparar respuestas y actualizar escenarios; organizar el reporting posterior si está previsto."
+      ]
+    ],
+    "scopeTitle": "CFO, dirigente y asesor de financiación: funciones complementarias",
+    "scope": [
+      "El dirigente presenta el proyecto y decide las condiciones aceptables. El CFO prepara y explica las cifras. Un asesor contratado puede buscar y contactar a inversores conforme a su mandato.",
+      "Las posibles presentaciones, los intercambios y las responsabilidades se acuerdan al definir el alcance. Los aspectos jurídicos y fiscales se revisan con asesores competentes en sus propias misiones."
+    ],
+    "budget": "La propuesta depende de la madurez del modelo, los datos, las entidades y los intercambios previstos. Precisa entregables y calendario de trabajo. El plazo de financiación también depende de inversores y negociaciones.",
+    "case": "solarmente-serie-b-cleantech",
+    "faq": [
+      [
+        "¿Actúan como asesores de captación de fondos?",
+        "El servicio descrito abarca la preparación y el seguimiento financieros. La búsqueda de inversores corresponde al dirigente o a un asesor contratado. Las posibles presentaciones se acuerdan al definir el alcance."
+      ],
+      [
+        "¿Qué preparar para la primera conversación?",
+        "Cuentas y reporting disponibles, tesorería, calendarios de deuda e hipótesis del proyecto. Después se acuerda cómo compartirlos de forma segura."
+      ],
+      [
+        "¿Continúa el acompañamiento después de la ronda?",
+        "Si lo prevé el mandato, puede incluir actualizar el presupuesto, seguir la caja y preparar reporting para inversores."
+      ]
+    ],
+    "resources": [
+      [
+        "Preparar las etapas de una ronda",
+        "/ressources/blog/levee-de-fonds-guide"
+      ],
+      [
+        "Examinar las cláusulas de un term sheet",
+        "/ressources/blog/term-sheet-negocier-clauses-cles"
+      ],
+      [
+        "Entender los instrumentos franceses BSPCE y BSA",
+        "/ressources/glossaire/bspce-bsa"
+      ],
+      [
+        "Preparar los documentos de due diligence",
+        "/ressources/blog/checklist-due-diligence-levee-de-fonds"
+      ],
+      [
+        "Seguir el cash burn y el runway",
+        "/ressources/blog/cash-burn-calculer-runway-anticiper-levee"
+      ]
+    ],
+    "related": [
+      "due-diligence",
+      "tresorerie",
+      "temps-partage"
+    ]
+  },
+  "due-diligence": {
+    "path": "/services/ma-due-diligence",
+    "label": "M&A y due diligence",
+    "title": "M&A y due diligence financiera | Iter Advisors",
+    "description": "Prepare una adquisición, venta o ronda: resultados, deuda, capital circulante y escenarios. Análisis, entregables y honorarios definidos en la propuesta.",
+    "headline": "M&A y due diligence financiera",
+    "promise": "Analizar una operación con datos examinados.",
+    "intro": "Comprador, dirigente o vendedor: le ayudamos a organizar y analizar información financiera útil para su operación. El mandato distingue preparación del expediente, revisión financiera y trabajos de otros asesores.",
+    "context": "due-diligence",
+    "category": "Preparar una operación",
+    "summary": [
+      [
+        "Su necesidad",
+        "Adquisición, venta o preparación del expediente"
+      ],
+      [
+        "Su apoyo",
+        "Análisis, preguntas y asuntos pendientes"
+      ],
+      [
+        "Presupuesto",
+        "Según trabajos y destinatarios"
+      ]
+    ],
+    "signals": [
+      "Debe entender los resultados y compromisos de una empresa objetivo.",
+      "Prepara una data room y respuestas a solicitudes financieras.",
+      "Una adquisición requiere organizar el reporting y las responsabilidades después de la operación."
+    ],
+    "definition": "Para el vendedor, la preparación organiza documentos y explica cuentas. Para el comprador, la revisión financiera examina resultados, deuda, necesidades de capital circulante e hipótesis. Preparar el expediente no sustituye una due diligence independiente.",
+    "deliverables": [
+      [
+        "Análisis de resultados",
+        "Conciliaciones, partidas recurrentes o puntuales y ajustes documentados.",
+        "Entender las cifras presentadas."
+      ],
+      [
+        "Caja, deuda y capital circulante",
+        "Calendarios, estacionalidad y compromisos identificados.",
+        "Examinar necesidades y cuestiones que profundizar."
+      ],
+      [
+        "Síntesis de revisión",
+        "Preguntas, hipótesis, datos pendientes y asuntos para los asesores.",
+        "Preparar decisiones y siguientes trabajos."
+      ]
+    ],
+    "exampleTitle": "Los asuntos pendientes siguen visibles",
+    "example": "Una cifra no conciliada, un crédito antiguo o una hipótesis injustificada no se convierte en certeza. La síntesis indica la pregunta, los documentos esperados y el interlocutor que debe tratarla.",
+    "steps": [
+      [
+        "Definir el mandato",
+        "Precisar la operación, destinatarios, datos accesibles y análisis esperados."
+      ],
+      [
+        "Examinar y documentar",
+        "Conciliar información, analizar los puntos acordados y organizar preguntas."
+      ],
+      [
+        "Presentar y transmitir",
+        "Presentar hallazgos y límites; organizar trabajos adicionales o integración."
+      ]
+    ],
+    "scopeTitle": "Un análisis financiero con límites explícitos",
+    "scope": [
+      "Los asuntos jurídicos, fiscales y laborales corresponden a asesores competentes. El mandato define destinatarios, responsabilidades y condiciones de uso de los entregables.",
+      "Una valoración se basa en métodos e hipótesis que deben explicarse. La revisión no garantiza el precio, la negociación ni el éxito de la operación."
+    ],
+    "budget": "Los honorarios y el calendario dependen del alcance, entidades, documentos e intercambios previstos. Preparar una data room, revisar para el comprador e integrar son trabajos distintos que deben presupuestarse.",
+    "case": "solarmente-serie-b-cleantech",
+    "faq": [
+      [
+        "¿Preparación y due diligence son la misma misión?",
+        "No. Preparar el expediente consiste en organizar y explicar información. Una revisión independiente la examina para sus destinatarios según un mandato propio."
+      ],
+      [
+        "¿Pueden intervenir para el comprador?",
+        "El alcance puede cubrir la revisión financiera de los datos disponibles de la empresa objetivo, los puntos de atención y los análisis útiles para negociar. Se define al acordar la misión."
+      ],
+      [
+        "¿Qué documentos se necesitan?",
+        "Cuentas, reporting, calendarios, datos de clientes y proveedores, previsiones y documentos que justifican las principales partidas. La lista se adapta a la operación y al mandato."
+      ]
+    ],
+    "resources": [
+      [
+        "Checklist de due diligence",
+        "/ressources/blog/checklist-due-diligence-levee-de-fonds"
+      ],
+      [
+        "Preparar las finanzas de una ronda",
+        "/services/accompagnement-levee-de-fond"
+      ]
+    ],
+    "related": [
+      "levee",
+      "organisation",
+      "transition"
+    ]
+  }
+}

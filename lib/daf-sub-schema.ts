@@ -1,4 +1,6 @@
 import type { DafSubContent } from "@/lib/content/daf-sub";
+import type { Locale } from "@/lib/i18n";
+import { parityHref } from "@/lib/locale-route-map";
 
 /**
  * Extract FAQ items from a DafSubContent and build a FAQPage JSON-LD payload.
@@ -38,7 +40,7 @@ export function parseDafSubFaqItem(
   return null;
 }
 
-export function buildDafSubFaqSchema(content: DafSubContent) {
+export function buildDafSubFaqSchema(content: DafSubContent, locale: Locale = "fr") {
   const faqSection = content.sections.find((s) =>
     s.heading?.toLowerCase().startsWith("faq"),
   );
@@ -56,7 +58,11 @@ export function buildDafSubFaqSchema(content: DafSubContent) {
     mainEntity: items.map((it) => ({
       "@type": "Question",
       name: it.question,
-      acceptedAnswer: { "@type": "Answer", text: it.answer },
+      acceptedAnswer: { "@type": "Answer", text: it.answer.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label: string, href: string) => {
+        const destination = parityHref(href, locale);
+        const french = locale !== "fr" && destination.startsWith("/") && !destination.startsWith(`/${locale}/`) && destination !== `/${locale}`;
+        return `${label}${french ? " (FR)" : ""}`;
+      }).replace(/\*\*([^*]+)\*\*/g, "$1").replace(/`([^`]+)`/g, "$1") },
     })),
   };
 }

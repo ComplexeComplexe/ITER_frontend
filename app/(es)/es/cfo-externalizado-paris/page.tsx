@@ -1,21 +1,10 @@
-import { Metadata } from "next";
-import DafLocalPage from "@/components/pages/DafLocalPage";
+import type { Metadata } from "next";
+import FinanceServicePage from "@/components/finance/FinanceServicePage";
+import { getFinanceService } from "@/lib/content/finance-service-locales";
 import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/static-content";
-import { getDafLocalContent } from "@/lib/content/daf-local";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = getDafLocalContent("paris", "es");
-  return buildMetadata({
-    locale: "es",
-    path: "/cfo-externalizado-paris",
-    localizedPaths: { fr: "/daf-externalise-paris", en: "/fractional-cfo-paris", es: "/cfo-externalizado-paris" },
-    title: t.meta.title,
-    description: t.meta.description,
-  });
+export function generateMetadata(): Metadata {
+ const service = getFinanceService("paris", "es");
+ return buildMetadata({ locale: "es", path: "/es/cfo-externalizado-paris", title: service.title, description: service.description, localizedPaths: {"fr": "/daf-externalise-paris", "en": "/en/fractional-cfo-paris", "es": "/es/cfo-externalizado-paris"} });
 }
-
-export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("es");
-  return <DafLocalPage locale="es" city="paris" cmsNavigation={cmsNavigation} />;
-}
+export default function Page() { return <FinanceServicePage locale="es" service={getFinanceService("paris", "es")} />; }

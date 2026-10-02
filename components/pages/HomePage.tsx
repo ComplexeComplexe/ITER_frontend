@@ -1,4 +1,7 @@
 "use client";
+import { getHomeJourney, HOME_CLUSTER_PATHS } from "@/lib/content/home-journey";
+import PublishedLocaleLink from "@/components/PublishedLocaleLink";
+import { parityHref } from "@/lib/locale-route-map";
 import HRSection from "@/components/Home/HRSection";
 import FinanceExpert from "@/components/FinanceExpert";
 
@@ -27,12 +30,6 @@ import {
   AlertTriangle,
   Banknote,
   ChevronDown,
-  Users,
-  UserPlus,
-  CreditCard,
-  GraduationCap,
-  Handshake,
-  Heart,
 } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
@@ -76,7 +73,6 @@ const clientLogos = [
 
 /* ─── Icons for service cards ─── */
 const serviceIcons = [TrendingUp, PieChart, Wallet, BarChart3, Briefcase];
-const hrServiceIcons = [Users, UserPlus, CreditCard, GraduationCap, Handshake, Heart];
 const stepIcons = [Search, Lightbulb, Cog, Rocket];
 const phaseIcons = [Rocket, TrendingUp, AlertTriangle, Banknote, BarChart3];
 const whyIcons = [Zap, Globe, Clock, Award];
@@ -225,6 +221,7 @@ export default function HomePage({
   homepage?: StrapiHomepage | null;
 }) {
   const t = getHomeContent(locale);
+  const journey = getHomeJourney(locale);
 
   // Stable hero copy, with existing CMS fallbacks for translated pages.
   const heroTitleRaw =
@@ -274,8 +271,6 @@ export default function HomePage({
   const whenRef = useRef<HTMLDivElement>(null);
   const whenInView = useInView(whenRef, { once: true, margin: "-80px" });
 
-  const contactRef = useRef<HTMLDivElement>(null);
-  const contactInView = useInView(contactRef, { once: true, margin: "-80px" });
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
@@ -318,7 +313,7 @@ export default function HomePage({
               >
                 <Image
                   src={logo.src}
-                  alt={logo.alt}
+                  alt={locale === "fr" ? logo.alt : `${logo.alt.split(" — ")[0].replace("Solamente", "SolarMente")} ${locale === "en" ? "| Iter Advisors reference" : "| Referencia de Iter Advisors"}`}
                   width={234}
                   height={94}
                   className="object-contain max-h-[94px]"
@@ -345,10 +340,10 @@ export default function HomePage({
               {locale === "fr" ? "Nos services" : locale === "en" ? "Our services" : "Nuestros servicios"}
             </span>
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-              {locale === "fr" ? "Des services pour piloter votre finance" : t.servicesHeading}
+              {journey.servicesTitle}
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              {locale === "fr" ? "Trésorerie, reporting, financements : choisissez le sujet sur lequel avancer avec votre direction financière." : t.servicesSubtitle}
+              {journey.servicesText}
             </p>
           </motion.div>
 
@@ -366,19 +361,7 @@ export default function HomePage({
             </div>
           </div>
 
-          {locale !== "fr" && <div className="mb-0">
-            <div className="flex items-center gap-3 mb-8">
-              <span className="px-4 py-1.5 rounded-full bg-iter-chartreuse text-iter-dark text-sm font-semibold">
-                {locale === "en" ? "Human Resources" : "Recursos humanos"}
-              </span>
-              <div className="h-px flex-1 bg-iter-chartreuse/30" />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {t.hrServices.map((s, i) => (
-                <ServiceCard key={s.title} icon={hrServiceIcons[i] ?? Users} title={s.title} desc={s.desc} index={i + 5} theme="chartreuse" href={undefined} />
-              ))}
-            </div>
-          </div>}
+
         </div>
       </section>
 
@@ -398,7 +381,7 @@ export default function HomePage({
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-iter-violet/10">
                 <Image
                   src="/images/bg/daf-section.webp"
-                  alt="Consultants financiers collaborant dans un bureau moderne"
+                  alt={locale === "fr" ? "Consultants financiers collaborant dans un bureau moderne" : locale === "en" ? "Finance consultants working together in a modern office" : "Consultores financieros colaborando en una oficina"}
                   width={600}
                   height={520}
                   className="w-full h-[400px] lg:h-[520px] object-cover"
@@ -483,7 +466,7 @@ export default function HomePage({
                   href={locale === "fr" ? "/daf-externalise" : locale === "en" ? "/en/fractional-cfo" : "/es/externalizacion-daf"}
                   className="site-button site-button-secondary inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-iter-violet text-iter-violet font-semibold hover:bg-iter-violet/5 transition-all duration-300"
                 >
-                  {locale === "fr" ? "D\u00e9couvrir le DAF externalis\u00e9" : locale === "en" ? "Explore Fractional CFO services" : "Conocer el DAF externalizado"}
+                  {locale === "fr" ? "D\u00e9couvrir le DAF externalis\u00e9" : locale === "en" ? "Explore Fractional CFO services" : "Descubrir los servicios de CFO externo"}
                   <ArrowRight size={16} />
                 </Link>
               </div>
@@ -494,39 +477,14 @@ export default function HomePage({
                 {/* T6 (2026-06-07) \u2014 added "DAF de transition" and
                     "Externalisation comptable" to push internal link juice
                     to those underserved cibles per the SEO ticket. */}
-                {locale === "fr" && (
-                  <>
-                    <Link href="/daf-externalise/tarifs" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Tarifs du DAF externalisé</Link>
-                    <Link href="/daf-externalise/temps-partage" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF à temps partagé</Link>
-                    <Link href="/daf-externalise/transition" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF de transition</Link>
-                    <Link href="/services/comptabilite-externalisation" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Comptabilité externalisée</Link>
-                    <Link href="/daf-externalise/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Métier de DAF</Link>
-                    <Link href="/ressources/fiscalite-espagne-france" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Fiscalité France-Espagne</Link>
-                  </>
-                )}
-                {locale === "en" && (
-                  <>
-                    <Link href="/en/fractional-cfo/shared-time" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Part-time CFO</Link>
-                    <Link href="/en/fractional-cfo/transition" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Interim CFO</Link>
-                    <Link href="/en/services/outsource-your-accounting" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Accounting outsourcing</Link>
-                    <Link href="/en/fractional-cfo/role" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">CFO role & skills</Link>
-                  </>
-                )}
-                {locale === "es" && (
-                  <>
-                    <Link href="/es/externalizacion-daf/tiempo-compartido" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">CFO a tiempo compartido</Link>
-                    <Link href="/es/externalizacion-daf/transicion" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF de transición</Link>
-                    <Link href="/es/services/externalizar-contabilidad" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Externalización contable</Link>
-                    <Link href="/es/externalizacion-daf/funciones" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Profesión de DAF</Link>
-                  </>
-                )}
+                {HOME_CLUSTER_PATHS.map((href, index) => <PublishedLocaleLink key={href} locale={locale} href={parityHref(href, locale)} className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">{journey.cluster[index]}</PublishedLocaleLink>)}
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {locale === "fr" && <HRSection />}
+      <HRSection locale={locale} />
 
       {/* ═══ PROCESS SECTION ═══ */}
       <section className="site-section py-24 lg:py-32 relative overflow-hidden">
@@ -742,7 +700,7 @@ export default function HomePage({
             >
               <Image
                 src="/images/bg/about-section.webp"
-                alt="Équipe Iter Advisors collaborant autour de dashboards financiers et RH"
+                alt={locale === "fr" ? "Équipe Iter Advisors collaborant autour de dashboards financiers et RH" : locale === "en" ? "The Iter Advisors team reviewing finance and HR dashboards" : "El equipo de Iter Advisors revisa cuadros de mando financieros y de recursos humanos"}
                 width={600}
                 height={420}
                 className="w-full h-[350px] lg:h-[420px] object-cover"
@@ -965,118 +923,9 @@ export default function HomePage({
       </section>
 
       {/* ═══ BLOG ═══ */}
-      {locale === "fr" ? <HomeDecisionResources /> : <section className="site-section bg-muted/30 py-24 lg:py-32">
-        <div className="container">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
-            <div className="max-w-lg">
-              <span className="inline-block px-3 py-1 rounded-full bg-iter-violet/10 text-iter-violet text-xs font-semibold uppercase tracking-widest mb-4">
-                Blog
-              </span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
-                {t.latestContent.heading}
-              </h2>
-            </div>
-            <Link
-              href={t.latestContent.resourcesHref}
-              className="site-button site-button-secondary inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground font-medium hover:bg-iter-violet hover:text-white hover:border-iter-violet transition-all duration-300 self-start lg:self-auto"
-            >
-              {t.latestContent.cta}
-              <ArrowRight size={16} />
-            </Link>
-          </div>
+      <HomeDecisionResources locale={locale} />
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {t.blogCards.map((card, i) => (
-              <Link key={i} href={card.href} className="group block">
-                <div className="relative aspect-[4/3] overflow-hidden mb-5 rounded-2xl bg-muted">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-                {card.date && (
-                  <p className="text-xs text-muted-foreground mb-2">
-                    {card.date}
-                  </p>
-                )}
-                <p className="text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2">
-                  {t.discover}
-                </p>
-                <h3 className="text-lg font-semibold group-hover:text-iter-violet transition-colors leading-snug">
-                  {card.title}
-                </h3>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>}
-
-      {/* ═══ CONTACT CTA ═══ */}
-      {locale === "fr" ? <section id="contact" className="site-section bg-iter-light"><div className="container max-w-4xl"><FinanceExpert /></div></section> : <section
-        id="contact"
-        className="site-section py-24 lg:py-32 bg-iter-chartreuse relative overflow-hidden"
-      >
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none">
-            <circle
-              cx="200"
-              cy="300"
-              r="300"
-              stroke="#0A0A0A"
-              strokeWidth="0.5"
-              fill="none"
-            />
-            <circle
-              cx="1200"
-              cy="200"
-              r="200"
-              stroke="#0A0A0A"
-              strokeWidth="0.5"
-              fill="none"
-            />
-            <line
-              x1="0"
-              y1="100"
-              x2="1440"
-              y2="500"
-              stroke="#0A0A0A"
-              strokeWidth="0.3"
-            />
-          </svg>
-        </div>
-
-        <div className="container relative z-10" ref={contactRef}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={contactInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h2 className="text-3xl lg:text-5xl font-bold text-iter-dark leading-tight mb-6">
-              {t.contactHeading}
-            </h2>
-            <p className="text-lg text-iter-dark/70 leading-relaxed mb-10">
-              {t.contactSubtitle}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href={`${getContactPath(locale)}#daf`}
-                className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-dark text-white font-semibold text-base hover:shadow-xl transition-all duration-300 group"
-              >
-                {t.hero.cta}
-                <ArrowRight
-                  size={18}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>}
+      <section id="contact" className="site-section bg-iter-light"><div className="container max-w-4xl"><FinanceExpert locale={locale} /></div></section>
     </PageLayout>
   );
 }

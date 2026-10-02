@@ -1,0 +1,1257 @@
+{
+  "fractional": {
+    "path": "/fractional-cfo-startups",
+    "label": "Fractional CFO for startups",
+    "title": "Fractional CFO for startups and SaaS | Iter Advisors",
+    "description": "A Fractional CFO to connect cash flow, runway, SaaS revenue and investor reporting. Deliverables, scenarios, responsibilities and budget for your startup.",
+    "headline": "Fractional CFO for startups and SaaS",
+    "promise": "Connect growth assumptions to financing decisions.",
+    "intro": "Your startup must decide when to hire, how much to invest and how to fund the coming months. A Fractional CFO builds a consistent view of cash flow, revenue and budgets with your teams, preparing leadership decisions and investor discussions.",
+    "context": "daf",
+    "category": "Startup and SaaS finance",
+    "summary": [
+      [
+        "Your need",
+        "Runway, budget and investor reporting"
+      ],
+      [
+        "Your organization",
+        "A part-time CFO working with your team"
+      ],
+      [
+        "Iter budget",
+        "€3,000 to €8,000 excluding VAT per month, depending on scope"
+      ]
+    ],
+    "headings": {
+      "need": "When does your startup need a CFO?",
+      "deliverables": "Cash flow, revenue and reporting deliverables",
+      "method": "Build a model your team can use"
+    },
+    "signals": [
+      "Before fundraising: commercial assumptions, the recruitment budget and financing requirements are not reconciled.",
+      "After fundraising: the business leader must translate the plan into spending, milestones and board reporting.",
+      "For SaaS: recurring revenue, churn, collections and margins are tracked in separate tools with sometimes incompatible definitions.",
+      "For multi-entity growth: the team must explain variances between countries, activities or channels before deciding where to invest."
+    ],
+    "definition": "Fractional CFO describes finance leadership on a part-time basis. This page addresses startup and SaaS needs; the general offer explains other arrangements. The need depends on decisions, data quality and internal skills. Revenue or cash burn alone does not justify an engagement. If permanent presence is required, hiring may be more suitable.",
+    "deliverables": [
+      [
+        "Cash flow forecast and runway",
+        "Reconciled available cash, expected receipts and payment dates. Financing assumptions are separated from confirmed funds.",
+        "Test delayed fundraising, customer payment or recruitment before committing spending."
+      ],
+      [
+        "Budget and multi-scenario model",
+        "A model connecting sales, costs, headcount and cash flow. The base case and alternatives identify assumptions and sources.",
+        "Compare expected growth with resource costs and available funding."
+      ],
+      [
+        "SaaS and investor reporting",
+        "Shared definitions of MRR or ARR, churn, margins and budget variances. Data and comments for the board are prepared together.",
+        "Explain performance without confusing contracted revenue, invoicing and collections."
+      ]
+    ],
+    "exampleTitle": "A recruitment decision without invented results",
+    "example": "Before opening two roles, a business leader can compare immediate hiring, a delay and a more cautious sales scenario. Each option includes full costs provided by the team, start dates and expected collections. The CFO explains the effect on cash flow and assumptions to watch; the leader approves the commitment. This is an illustrative working example, not a client result or financing recommendation.",
+    "calendar": {
+      "heading": "Indicators connected to your business",
+      "caption": "Examples of SaaS data to reconcile",
+      "headers": [
+        "Topic",
+        "Data to examine",
+        "Point to watch"
+      ],
+      "rows": [
+        [
+          "Recurring revenue",
+          "Contracts, new customers, expansions and cancellations",
+          "Define MRR and ARR without including one-off services"
+        ],
+        [
+          "Cash flow",
+          "Bank balances, due dates, overdue receivables and committed expenses",
+          "Do not confuse available cash with requested financing"
+        ],
+        [
+          "Acquisition and margin",
+          "Sales expenses, cohorts and service costs",
+          "Document periods, attribution and included costs"
+        ],
+        [
+          "Board and investors",
+          "Actuals, budget, variances and upcoming decisions",
+          "Use consistent definitions between reports"
+        ]
+      ],
+      "note": "Indicators and frequency depend on your model. No universal runway, CAC or growth threshold replaces analysis of your situation. Models retain limitations: short histories or incomplete data reduce scenario reliability."
+    },
+    "steps": [
+      [
+        "Identify decisions",
+        "Share deadlines, finance organization, board expectations and available documents. Identify what the team and accountant produce, then agree access and responsibilities."
+      ],
+      [
+        "Reconcile data",
+        "Review accounts, banks, invoicing, subscriptions and commercial assumptions. Document variances, missing information and indicator definitions before building reporting."
+      ],
+      [
+        "Set up decision reviews",
+        "Present scenarios and limitations, assign decision owners and deadlines, then update assumptions. Initial deliverables and timing are agreed during scoping, without promising identical setup for every startup."
+      ]
+    ],
+    "scopeTitle": "A CFO alongside your teams, without a fundraising guarantee",
+    "scope": [
+      "The leader sets priorities and decides. The CFO prepares the model, challenges assumptions and organizes follow-up. The accountant remains responsible for work under its engagement terms; sales and operations explain activity data.",
+      "Fundraising preparation may include the model, data room and due diligence questions. Discussions involve leaders, investors and advisers. Funding, valuation or privileged access to funds are not guaranteed.",
+      "If an internal CFO joins, handover covers sources, assumptions, authorized access and the calendar. Finance leadership does not automatically confer signing authority or power over bank accounts."
+    ],
+    "budget": "Recurring Iter support ranges from €3,000 to €8,000 excluding VAT per month. The quote depends on entities, data, reporting and the assigned profile. Exceptional projects, travel and other advisers’ work are identified separately. Comparison with hiring should include availability and responsibilities: these are different services.",
+    "case": "solarmente-serie-b-cleantech",
+    "proofNote": "This cleantech case covers 2022 to 2024 and illustrates financial preparation for transactions. It is not a SaaS case or a forecast of results; leaders, investors and advisers contributed.",
+    "faq": [
+      [
+        "How does a Fractional CFO address startup needs?",
+        "The arrangement provides part-time finance leadership. Startup needs include growth assumptions, cash consumption, financing and investor expectations. For SaaS, this also includes consistent recurring revenue data."
+      ],
+      [
+        "Can we keep our accountant?",
+        "Yes. Scoping distinguishes accounting production, data reconciliation and financial management. The CFO works with your firm and teams; included work and contacts are specified in the contract."
+      ],
+      [
+        "Do you support startups before their first funding round?",
+        "Needs are assessed according to decisions and available data. A focused modelling project may be more appropriate than recurring support. No funding stage automatically requires a Fractional CFO."
+      ],
+      [
+        "What should we prepare for the first conversation?",
+        "Organization, deadlines, recent accounts, budget and key indicators. For SaaS, identify invoicing and subscription tools. Secure sharing of detailed documents is agreed afterwards."
+      ],
+      [
+        "What timing and availability should we expect?",
+        "Starting depends on the available profile, scope and access. Iter’s indicative range is 1 to 8 days per month, without a guaranteed day package. Review frequency, urgent requests and initial deliverables are agreed together."
+      ],
+      [
+        "What commitment applies to recurring support?",
+        "Iter provides monthly support without a minimum term, with 30 days’ notice. The contract specifies scope and additional projects. One-off work is agreed separately."
+      ]
+    ],
+    "resources": [
+      [
+        "Calculate cash burn and assess runway",
+        "/ressources/glossaire/cash-burn-runway"
+      ],
+      [
+        "Understand MRR and ARR recurring revenue",
+        "/ressources/glossaire/arr-mrr"
+      ],
+      [
+        "Prepare fundraising finances",
+        "/services/accompagnement-levee-de-fond"
+      ],
+      [
+        "Structure CFO tools",
+        "/ressources/outils"
+      ],
+      [
+        "Looking for a role at Iter?",
+        "/jobs"
+      ]
+    ],
+    "related": [
+      "temps-partage",
+      "tresorerie",
+      "controle"
+    ]
+  },
+  "paris": {
+    "path": "/daf-externalise-paris",
+    "label": "Fractional CFO in Paris",
+    "title": "Fractional CFO in Paris and Île-de-France | Iter Advisors",
+    "description": "Fractional CFO in Paris and Île-de-France: cash flow, reporting and budgets for SMEs and startups. On-site work, responsibilities and scope agreed together.",
+    "headline": "Fractional CFO in Paris and Île-de-France",
+    "promise": "Organize financial management for your Paris-region business.",
+    "intro": "Your SME, startup or subsidiary is based in Paris or Île-de-France. You need a contact to connect cash flow, results and leadership decisions. Iter Advisors assesses support suited to your team, with on-site and remote arrangements agreed during scoping.",
+    "context": "daf",
+    "category": "Paris and Île-de-France",
+    "areaServed": "Paris and Île-de-France",
+    "author": {
+      "name": "Sébastien Doat",
+      "slug": "sebastien-doat"
+    },
+    "summary": [
+      [
+        "Your business",
+        "SME, startup or subsidiary in Île-de-France"
+      ],
+      [
+        "Collaboration",
+        "On-site and remote according to agreed needs"
+      ],
+      [
+        "Iter budget",
+        "€3,000 to €8,000 excluding VAT per month, depending on scope"
+      ]
+    ],
+    "headings": {
+      "need": "Which finance issue do you need to address in Paris?",
+      "deliverables": "Deliverables for leadership decisions",
+      "method": "Agree working arrangements and contacts"
+    },
+    "signals": [
+      "The business leader prepares figures alone for management meetings or bank discussions.",
+      "Your team and accountant have data, but reconciling budgets and forecasts remains difficult.",
+      "Recruitment, a new location or multiple entities require comparing scenarios before committing spending."
+    ],
+    "definition": "Local needs concern how collaboration is organized: work locations, availability, data access and team coordination. Support can be recurring or temporary. The national page describes Fractional CFO arrangements; this page explains preparing support for a Paris-region business.",
+    "deliverables": [
+      [
+        "Cash flow forecast",
+        "Receipts, payments and assumptions to examine with management. Missing information and sensitive deadlines are identified.",
+        "Anticipate payment delays and examine financing needs."
+      ],
+      [
+        "Reporting and budget",
+        "An interpretation of results, margins and variances. For subsidiaries, categories and deadlines align with group expectations.",
+        "Understand variances and decide on resources with operational managers."
+      ],
+      [
+        "Decision file",
+        "Documented scenarios for recruitment, investment or financing, with assumptions and remaining work.",
+        "Prepare discussions with banks, shareholders or the board."
+      ]
+    ],
+    "exampleTitle": "Prepare a useful on-site review",
+    "example": "Before a management review, the team shares available accounts, cash deadlines and upcoming decisions. The CFO prepares questions and scenarios. The meeting can focus on decisions and responsibilities rather than collecting files. Meeting frequency and location are agreed; daily presence and permanent availability are not implicit.",
+    "steps": [
+      [
+        "Understand your business",
+        "Specify your Île-de-France location, entities, contacts and deadlines. Review tools, existing documents and work expected from other advisers."
+      ],
+      [
+        "Organize collaboration",
+        "Agree the assigned profile, on-site reviews, remote work and document-sharing rules. The proposal specifies travel and urgent requests."
+      ],
+      [
+        "Hold the financial review",
+        "Reconcile data and document assumptions. Follow budget variances, decisions and deadlines. Review scope when team needs or data availability change."
+      ]
+    ],
+    "scopeTitle": "Coordination with your teams and advisers",
+    "scope": [
+      "The accounting firm prepares accounts under its engagement terms; the CFO organizes interpretation, forecasts and decisions with management. Tax, legal and employment advisers work within their own scope. Iter is not a chartered accountancy firm.",
+      "For a Paris-region business also active in Spain, scoping identifies local owners, flows and group reporting. It implies neither automatic tax advantages nor privileged access to investors or public schemes.",
+      "The assigned profile, availability and presence are confirmed before commitment. Financing projects or daily replacement needs may require a specific assignment separate from recurring support."
+    ],
+    "budget": "Recurring Iter engagements range from €3,000 to €8,000 excluding VAT per month. These are Iter’s ranges, not a Paris-market average. The quote depends on scope, profile and working arrangements; it distinguishes travel and additional projects. Start arrangements are confirmed after assessing needs.",
+    "case": "opti-digital-structuration-financement",
+    "proofNote": "This reference describes an Iter engagement and qualitative results. It is not presented as a Paris reference: the published source does not establish the engagement’s location. No quantified gain is promised for your business.",
+    "faq": [
+      [
+        "Do you work on site in Île-de-France?",
+        "On-site reviews can be agreed according to needs, location and availability. Profile, frequency, travel and remote work are specified before commitment. Daily presence is not automatic."
+      ],
+      [
+        "Is Paris Iter Advisors’ headquarters?",
+        "No. Iter Advisors’ headquarters is in Barcelona. Paris is an area served; this page does not present a public office address or Paris opening hours."
+      ],
+      [
+        "Who should we contact?",
+        "Sébastien Doat is the finance contact shown here. The first conversation identifies suitable skills, profile and arrangements. The team member assigned is specified during scoping."
+      ],
+      [
+        "Which arrangement should we choose?",
+        "Part-time support meets recurring needs; interim work provides temporary cover. Cash flow or reporting engagements can address focused issues. Choose according to organization and decisions, not location alone."
+      ],
+      [
+        "What information should we prepare?",
+        "Business location, entities, finance teams, tools, key deadlines and required presence. Accounts and sensitive documents are shared afterwards under agreed arrangements."
+      ]
+    ],
+    "resources": [
+      [
+        "Fractional CFO scope",
+        "/daf-externalise"
+      ],
+      [
+        "Ongoing part-time support",
+        "/daf-externalise/temps-partage"
+      ],
+      [
+        "Temporary finance leadership cover",
+        "/daf-externalise/transition"
+      ],
+      [
+        "Startup and SaaS financial management",
+        "/fractional-cfo-startups"
+      ],
+      [
+        "Support for business activity in Spain",
+        "/daf-externalise-barcelone"
+      ]
+    ],
+    "related": [
+      "temps-partage",
+      "transition",
+      "tresorerie"
+    ]
+  },
+  "temps-partage": {
+    "path": "/daf-externalise/temps-partage",
+    "label": "Part-time CFO",
+    "title": "Part-time CFO for SMEs | Iter Advisors",
+    "description": "A part-time CFO to manage cash flow, budgets and decisions. Explore deliverables, working arrangements and pricing for SMEs and startups.",
+    "headline": "Part-time CFO",
+    "headings": {
+      "need": "When should you choose a part-time CFO?",
+      "deliverables": "Part-time CFO deliverables for financial management",
+      "method": "How does a part-time CFO work?"
+    },
+    "promise": "Finance leadership that supports your business over time.",
+    "intro": "You need clear figures and a finance contact to support decisions, without hiring a full-time CFO. A part-time CFO organizes financial management with your team at a frequency agreed together.",
+    "context": "temps-partage",
+    "category": "Ongoing financial management",
+    "summary": [
+      [
+        "Who it is for",
+        "SMEs, startups and subsidiaries with recurring needs"
+      ],
+      [
+        "Working arrangement",
+        "Planned work and follow-up reviews"
+      ],
+      [
+        "Budget",
+        "€3,000 to €8,000 excluding VAT per month, depending on scope"
+      ]
+    ],
+    "signals": [
+      "The business leader assembles the figures before every decision.",
+      "Accounting records are available, but forecasts and reporting remain irregular.",
+      "Growth, investors or multiple entities make financial management more complex."
+    ],
+    "definition": "Part-time work is the recurring arrangement for a Fractional CFO. It combines a senior finance contact, agreed work and decision-making reviews. The level of support depends on the issues to address, data quality and skills already in the team.",
+    "deliverables": [
+      [
+        "Cash flow",
+        "A forecast with documented assumptions and variance monitoring.",
+        "See upcoming obligations and decide on spending."
+      ],
+      [
+        "Management reporting",
+        "A dashboard of results, margins and indicators relevant to your business.",
+        "Understand what is changing and why."
+      ],
+      [
+        "Budget and decisions",
+        "Revenue, expense and recruitment scenarios documented with the teams.",
+        "Compare options before committing."
+      ]
+    ],
+    "exampleTitle": "What your finance review can cover",
+    "example": "A review of upcoming cash flow, actual results against budget and a list of decisions with assigned owners. Reporting prepares the discussion; the meeting ends with actions reviewed at the next meeting.",
+    "calendar": {
+      "caption": "Example calendar to adapt to your engagement",
+      "headers": [
+        "Review",
+        "Prepared work",
+        "Decision to support"
+      ],
+      "rows": [
+        [
+          "Weekly, where needed",
+          "Collections, payments and overdue invoices",
+          "Prioritize payments and collection follow-ups"
+        ],
+        [
+          "After the monthly close",
+          "Results, reconciliations and budget variances",
+          "Understand variances and update assumptions"
+        ],
+        [
+          "Review with management",
+          "Cash flow, expense and recruitment scenarios",
+          "Decide on a hire or investment"
+        ],
+        [
+          "An exceptional deadline",
+          "Scenarios and bank or investor documentation",
+          "Assess financing terms"
+        ]
+      ],
+      "note": "This calendar is illustrative. Reviews, work and availability are agreed during scoping. Each review ends with a decision, an owner and a deadline, followed up at the next review."
+    },
+    "steps": [
+      [
+        "Agree priorities",
+        "Identify upcoming decisions, contacts and sources: trial balances, general ledgers, bank statements, outstanding invoices, financing agreements and the budget. Agree access, approval steps and the calendar with the accounting firm."
+      ],
+      [
+        "Set up financial management",
+        "Reconcile data and document missing information. Where needed, prepare a 13-week cash flow forecast, results analysis and exception monitoring. Setup timing cannot be guaranteed before reviewing the data."
+      ],
+      [
+        "Monitor and adjust",
+        "Analyze variances, prepare decisions and review the scope as your situation changes."
+      ]
+    ],
+    "scopeTitle": "A leadership role coordinated with your team",
+    "scope": [
+      "The CFO works with the business leader, operational managers and the accounting firm. The CFO organizes financial management; daily tasks and decisions have explicitly assigned owners. A need for permanent presence calls for a different arrangement.",
+      "The business leader sets priorities and approves commitments. The CFO builds scenarios and analyzes variances. The accounting firm prepares accounts under its engagement terms; operational managers explain orders, inventory and deadlines. Signing authority or bank access does not automatically follow from the engagement.",
+      "Fundraising, an acquisition or a major transformation may require additional work. Included deliverables, cover for absences and handling urgent requests are specified in the contract."
+    ],
+    "budget": "Recurring Iter engagements range from €3,000 to €8,000 excluding VAT per month. The observed 1 to 8 days per month are indicative, not a contractual package: the proposal defines the scope and assigned profile. Detailed pricing helps you assess your needs.",
+    "case": "opti-digital-structuration-financement",
+    "faq": [
+      [
+        "How does this relate to a Fractional CFO?",
+        "Fractional CFO describes finance leadership provided outside a salaried role. Part-time work is its recurring arrangement, with planned interventions. An interim CFO addresses a temporary need for continuity or transformation."
+      ],
+      [
+        "How many days should we plan for?",
+        "The indicative Iter range is 1 to 8 days per month. It depends on entities, tools, deadlines and work carried out internally. Headcount alone is insufficient to determine it."
+      ],
+      [
+        "Do we need to change accountants?",
+        "Not necessarily. Scoping identifies the accounting firm’s work, expected data and the CFO’s role. Clear coordination avoids duplication."
+      ],
+      [
+        "Can we hire a CFO afterwards?",
+        "Yes. The engagement can prepare the handover of tools, assumptions and calendars to an internal hire. Handover needs to be included in the scope."
+      ],
+      [
+        "What commitment is required?",
+        "Iter pricing provides for monthly support without a minimum term, terminable with 30 days’ notice. Services and changes to scope are recorded in the contract."
+      ]
+    ],
+    "resources": [
+      [
+        "Compare packages and pricing",
+        "/daf-externalise/tarifs"
+      ],
+      [
+        "Understand Fractional CFO arrangements",
+        "/daf-externalise"
+      ],
+      [
+        "Fractional CFO or salaried CFO: selection criteria",
+        "/ressources/blog/daf-externalise-vs-daf-salarie"
+      ]
+    ],
+    "related": [
+      "transition",
+      "controle",
+      "organisation"
+    ]
+  },
+  "transition": {
+    "path": "/daf-externalise/transition",
+    "label": "Interim CFO",
+    "title": "Interim CFO and finance leadership | Iter Advisors",
+    "description": "Interim finance leadership: CFO replacement, temporary responsibilities and handover for SMEs and mid-sized businesses. Priorities, availability and budget.",
+    "headline": "Interim CFO",
+    "promise": "Maintain continuity. Prepare the next stage.",
+    "intro": "A departure, absence or transformation leaves financial deadlines to meet. An interim CFO takes a temporary assignment with defined priorities, responsibilities and exit arrangements.",
+    "context": "transition",
+    "category": "Taking over temporarily",
+    "summary": [
+      [
+        "Who it is for",
+        "SMEs and mid-sized businesses with temporary needs"
+      ],
+      [
+        "Priority",
+        "Continuity, deadlines and handover"
+      ],
+      [
+        "Budget",
+        "€8,000 to €12,000 excluding VAT per month, depending on the assignment"
+      ]
+    ],
+    "signals": [
+      "Your CFO leaves or is absent during a sensitive period.",
+      "A financial close, financing project or software change needs reinforced leadership.",
+      "You are recruiting a finance leader and need to organize cover."
+    ],
+    "definition": "Interim finance leadership means temporarily entrusting financial management to an interim CFO. The CFO works within a defined period and assignment. The engagement addresses immediate priorities and prepares a lasting arrangement. A part-time CFO instead meets a recurring finance leadership need.",
+    "deliverables": [
+      [
+        "Prioritized assessment",
+        "A calendar of deadlines, a risk list and required access.",
+        "Identify what needs attention first."
+      ],
+      [
+        "Action plan",
+        "Workstreams, owners and decision points followed with management.",
+        "Organize continuity and change."
+      ],
+      [
+        "Handover file",
+        "Tools, procedures, assumptions and open issues to transfer.",
+        "Allow the successor to take over financial management."
+      ]
+    ],
+    "headings": {
+      "need": "When should you consider interim finance leadership?",
+      "deliverables": "Interim CFO deliverables",
+      "method": "From the interim assignment to handover"
+    },
+    "calendar": {
+      "heading": "Prepare the exit from the start",
+      "caption": "Milestones to agree for a temporary assignment",
+      "headers": [
+        "Milestone",
+        "Work to document",
+        "Required approval"
+      ],
+      "rows": [
+        [
+          "Before taking office",
+          "Priorities, access, calendar and written delegations",
+          "Assignment and responsibilities approved by management"
+        ],
+        [
+          "During the assignment",
+          "Deadlines met, open risks and documented decisions",
+          "Progress review and scope adjustment"
+        ],
+        [
+          "Before departure",
+          "Handover file, procedures and replacement contacts",
+          "Successor takes over tools and open issues"
+        ]
+      ],
+      "note": "Duration depends on the replacement or project. The proposal sets milestones and possible extension terms; a standard calendar cannot replace a review of your situation."
+    },
+    "exampleTitle": "The first issues to discuss",
+    "example": "Cash balances, payroll, sensitive payments, financial close, banking commitments and pending decisions: the initial review identifies deadlines and responsibilities. It does not replace a full assessment when data is missing.",
+    "steps": [
+      [
+        "Define the assignment",
+        "Clarify the reason, expected duration, required presence and necessary delegations."
+      ],
+      [
+        "Take over",
+        "Arrange access and the calendar, prioritize work and organize communication with the team."
+      ],
+      [
+        "Organize handover",
+        "Prepare procedures, document decisions and transfer open issues to the successor."
+      ]
+    ],
+    "scopeTitle": "Availability suited to the assignment",
+    "scope": [
+      "Presence and decision-making authority are agreed with management. The engagement does not automatically confer signing authority or power over bank accounts.",
+      "The CFO coordinates teams and advisers within the agreed scope. Legal, tax or insolvency issues also involve the relevant qualified professionals. Planning the exit begins during scoping."
+    ],
+    "budget": "The Iter range is €8,000 to €12,000 excluding VAT per month, depending on the assignment, availability and complexity. A start within 7 to 10 days may be considered after qualification, subject to availability and information access.",
+    "faq": [
+      [
+        "How long does an interim engagement last?",
+        "Duration depends on the reason for replacement, deadlines and the successor’s availability. The assignment specifies exit objectives, extension terms and handover time."
+      ],
+      [
+        "When should we choose an interim CFO rather than a part-time CFO?",
+        "An interim CFO addresses a temporary situation: replacement, continuity or transformation. A part-time CFO meets recurring needs with planned work over time."
+      ],
+      [
+        "Can you start urgently?",
+        "Needs and availability are reviewed during the first conversation. A start within 7 to 10 days may be possible depending on context; no timing is guaranteed before scoping."
+      ],
+      [
+        "How do you prepare handover?",
+        "The engagement defines the documents, access, procedures, assumptions and open issues to transfer. Handover timing is agreed with the business leader and successor."
+      ],
+      [
+        "What should we prepare before contacting you?",
+        "The reason for replacement, upcoming deadlines, current organization, tools and required presence. Document-sharing arrangements are agreed afterwards."
+      ]
+    ],
+    "resources": [
+      [
+        "The role of the CFO",
+        "/daf-externalise/metier"
+      ],
+      [
+        "Prepare a lasting finance organization",
+        "/ressources/blog/organiser-sa-direction-financiere"
+      ],
+      [
+        "CFO engagement pricing",
+        "/daf-externalise/tarifs"
+      ]
+    ],
+    "related": [
+      "temps-partage",
+      "tresorerie",
+      "organisation"
+    ]
+  },
+  "controle": {
+    "path": "/services/controle-de-gestion-externalise",
+    "label": "Management control",
+    "title": "Management control for SMEs: budgets and margins",
+    "description": "Budgets, margins and reporting: dedicated management control to understand your results. Deliverables, monthly reviews and coordination with your teams.",
+    "headline": "Management control and reporting",
+    "promise": "Understand your margins. Turn figures into actions.",
+    "intro": "Your accounts show what happened. Management control compares results with objectives and operational activity to identify variances and prepare decisions with the people responsible.",
+    "context": "reporting",
+    "category": "Managing performance",
+    "headings": {
+      "need": "When should you bring in management control support?",
+      "deliverables": "Budgets, margins and reporting: the deliverables",
+      "method": "Ongoing work with your management controller"
+    },
+    "summary": [
+      [
+        "Your need",
+        "Budgets, margins, costs and indicators"
+      ],
+      [
+        "Your support",
+        "Explained reporting connected to decisions"
+      ],
+      [
+        "Scope",
+        "Setup or recurring monitoring, quoted separately"
+      ]
+    ],
+    "signals": [
+      "You know revenue, but not margins by activity or channel.",
+      "Reporting takes extensive manual work and arrives after decisions.",
+      "Budget variances are recorded without an explanation or an assigned owner."
+    ],
+    "definition": "External management control means entrusting all or part of budgeting, reporting and performance analysis to a dedicated professional. The work starts with accounting and operational data, then connects it to your business decisions.",
+    "deliverables": [
+      [
+        "Dashboard",
+        "Defined indicators, a source for each one and an update frequency.",
+        "Read results without multiplying files."
+      ],
+      [
+        "Margin analysis",
+        "A profit and loss statement by activity, product or channel, with allocation rules.",
+        "Identify contributions and costs to examine."
+      ],
+      [
+        "Budget and variances",
+        "A budget, comparable actuals and comments on significant variances.",
+        "Adjust actions and revise forecasts."
+      ]
+    ],
+    "exampleTitle": "Example outline for a monthly review",
+    "example": "Results and margins against budget, changes in volumes and prices, expenses to analyze and decisions required. Each indicator specifies its definition, source and owner. This outline is illustrative: the dashboard needs to suit your business model.",
+    "steps": [
+      [
+        "Choose useful questions",
+        "Define decisions, analysis dimensions and the indicators actually needed."
+      ],
+      [
+        "Make reporting reliable",
+        "Reconcile sources, explain calculation rules and document adjustments."
+      ],
+      [
+        "Lead the review",
+        "Explain variances with operational teams and follow decisions through to the next review."
+      ]
+    ],
+    "scopeTitle": "Connecting accounting, operations and management",
+    "scope": [
+      "Accounting provides an essential foundation. Management control organizes its economic interpretation, such as margins by channel or budgets by owner. The two functions coordinate their calendars and rules.",
+      "Automation is useful when sources and definitions are stable. An automatically updated dashboard still needs checks, an owner and comments on anomalies. Software does not replace analysis."
+    ],
+    "budget": "The proposal separates initial reporting setup from ongoing monitoring. The number of entities, sources, analytical dimensions and review frequency determine the scope. If the need also includes financing and leadership decisions, a part-time CFO engagement may be more suitable.",
+    "case": "seasonly-marge-par-canal-bfr",
+    "faq": [
+      [
+        "Which indicators should we monitor?",
+        "Those that support your decisions: revenue, margin, costs, cash flow or operational indicators, depending on the activity. Definitions and sources need to be agreed before building a dashboard."
+      ],
+      [
+        "Can you work with our current tools?",
+        "Scoping examines exports, access and tool limitations. Migration is not automatic; it needs to be justified by needs, costs and the team’s ability to maintain the arrangement."
+      ],
+      [
+        "Do we need real-time reporting?",
+        "Frequency depends on the decision and data availability. Weekly cash monitoring or monthly margin reviews may be more relevant than a continuously displayed but incomplete picture."
+      ],
+      [
+        "How does this differ from a part-time CFO?",
+        "Management control focuses on budgets, costs, margins and reporting. The CFO also covers broader financial decisions, cash flow, financing and coordination of the finance function."
+      ]
+    ],
+    "resources": [
+      [
+        "Choose financial dashboard indicators",
+        "/ressources/blog/tableau-de-bord-financier-startup-12-kpis"
+      ],
+      [
+        "Automate reporting with controls",
+        "/ressources/ia-finance/automatiser-reporting-financier"
+      ],
+      [
+        "Monitor cash flow deadlines",
+        "/services/previsionnel-tresorerie"
+      ]
+    ],
+    "related": [
+      "temps-partage",
+      "organisation",
+      "tresorerie"
+    ]
+  },
+  "comptabilite": {
+    "path": "/services/comptabilite-externalisation",
+    "label": "Accounting coordination",
+    "title": "Accounting coordination for SMEs | Iter Advisors",
+    "description": "Organize external accounting: document collection, financial close, tools and coordination with your accountant. Defined scope and tailored proposal.",
+    "headline": "Accounting coordination",
+    "promise": "Usable accounts and clear responsibilities.",
+    "intro": "Scattered documents, late closes and unclear responsibilities: external accounting first requires organized communication. We help structure accounting operations and connect them to financial management.",
+    "context": "comptabilite",
+    "category": "Organizing accounting operations",
+    "summary": [
+      [
+        "Your need",
+        "Documents, processes and closing calendar"
+      ],
+      [
+        "Contacts",
+        "Your team, Iter and the accounting firm"
+      ],
+      [
+        "Budget",
+        "Quoted according to the assigned work"
+      ]
+    ],
+    "signals": [
+      "Missing documents hold up the close and take up the business leader’s time.",
+      "You do not know who checks data or approves deadlines.",
+      "Your accounting tools and reporting use different information."
+    ],
+    "definition": "External accounting can cover different scopes. Before comparing proposals, distinguish document collection and preparation, bookkeeping and filings, closing work and analysis of figures. The engagement terms specify the work and the professional responsible for each part.",
+    "deliverables": [
+      [
+        "Document workflow",
+        "A collection process, defined access and a missing-document list.",
+        "Reduce back-and-forth and monitor blockers."
+      ],
+      [
+        "Closing calendar",
+        "Tasks, deadlines and approvals assigned to the relevant people.",
+        "Know when checked accounts will be available."
+      ],
+      [
+        "Transition to reporting",
+        "Reconciled exports and interpretation rules agreed with finance.",
+        "Use accounts to monitor activity."
+      ]
+    ],
+    "exampleTitle": "Who does what in the accounting workflow?",
+    "example": "The team provides documents and validates operational details. The accounting firm carries out work under its engagement terms. Iter can coordinate the calendar, management controls and the use of figures. Responsibilities are clarified before starting.",
+    "steps": [
+      [
+        "Define responsibilities",
+        "List existing work, deadlines and accounting firm commitments."
+      ],
+      [
+        "Organize communication",
+        "Agree tools, access, approval steps and required documents."
+      ],
+      [
+        "Monitor closing",
+        "Address open issues, check export availability and prepare their use in reporting."
+      ]
+    ],
+    "scopeTitle": "An explicit scope with your accountant",
+    "scope": [
+      "Bookkeeping, filings, review or certification work must be assigned to appropriately qualified professionals under applicable requirements. The proposal distinguishes Iter’s work from that of your accounting firm or relevant partners.",
+      "Payroll, specific tax matters, historical data recovery and tool migration are not implicitly included. Changing firms or software must account for data transfer, continuity of obligations and approval responsibilities."
+    ],
+    "budget": "Pricing depends on volumes, entities, tools, document quality and work assigned to each professional. We define these points before quoting. Accounting firm fees and any subscriptions must be identified separately.",
+    "budgetResource": {
+      "href": "/ressources/blog/externalisation-comptable#grille",
+      "label": "Compare accounting proposals"
+    },
+    "faq": [
+      [
+        "Do I need to change accountants?",
+        "Not necessarily. Support can start with your current firm by clarifying communication, deadlines and each party’s role. The need for a change is assessed during scoping."
+      ],
+      [
+        "Are bookkeeping and filings included?",
+        "They should not be assumed to be included. Engagement terms specify work assigned to the qualified professional and its cost. Accounting organization and financial management are distinct scopes."
+      ],
+      [
+        "Can you help us change software?",
+        "Migration can be a defined project covering historical data, tests, access rights, approval and timing. Duration depends particularly on data quality and the people involved."
+      ],
+      [
+        "How do we connect accounting and financial management?",
+        "By agreeing availability dates, exports, analytical rules and controls. Reporting can then use reconciled data and explain variances relevant to decisions."
+      ]
+    ],
+    "resources": [
+      [
+        "Organize the finance function",
+        "/ressources/blog/organiser-sa-direction-financiere"
+      ],
+      [
+        "Structure financial operations",
+        "/services/gestion-financiere-externalisee"
+      ],
+      [
+        "Connect accounts to management control",
+        "/services/controle-de-gestion-externalise"
+      ],
+      [
+        "Engagement terms: guidance from the French accounting body (French)",
+        "https://www.experts-comptables.fr/index.php/faq"
+      ]
+    ],
+    "related": [
+      "organisation",
+      "controle",
+      "temps-partage"
+    ]
+  },
+  "tresorerie": {
+    "path": "/services/previsionnel-tresorerie",
+    "label": "Cash flow forecasting",
+    "title": "13-week cash flow forecasting | Iter Advisors",
+    "description": "Build and maintain a 13-week cash flow forecast: collections, payment dates, assumptions and scenarios to support your decisions.",
+    "headline": "Cash flow forecasting",
+    "promise": "See upcoming obligations before they become urgent.",
+    "intro": "A bank balance does not show what remains after the next payments. A rolling forecast connects expected receipts and payments to prepare decisions with your team.",
+    "context": "tresorerie",
+    "category": "Anticipating cash needs",
+    "summary": [
+      [
+        "Working horizon",
+        "A rolling 13 weeks, adapted to your needs"
+      ],
+      [
+        "Your support",
+        "Expected flows, assumptions and variances"
+      ],
+      [
+        "Scope",
+        "Setup and monitoring defined in the proposal"
+      ]
+    ],
+    "signals": [
+      "Cash balances fluctuate sharply between monthly reviews.",
+      "Collection dates are uncertain while costs have been committed.",
+      "You need to decide on recruitment, purchasing or financing."
+    ],
+    "definition": "A cash flow forecast tracks the dates and amounts of receipts and payments. It differs from a profit and loss statement: a sale can be recognized before payment. A 13-week horizon provides an operational view, supplemented by longer scenarios where necessary.",
+    "deliverables": [
+      [
+        "Rolling forecast",
+        "A reconciled opening balance and expected weekly flows.",
+        "Identify periods of cash pressure."
+      ],
+      [
+        "Assumption register",
+        "Payment dates, sensitive payments and explicit uncertainties.",
+        "See what could change the scenario."
+      ],
+      [
+        "Forecast versus actuals",
+        "Variances and their explanations, updated regularly.",
+        "Decide using the latest information."
+      ]
+    ],
+    "headings": {
+      "need": "When should you build a cash flow forecast?",
+      "deliverables": "Documents to monitor upcoming obligations",
+      "method": "Build, reconcile and update the forecast"
+    },
+    "calendar": {
+      "heading": "A positive closing balance can conceal a shortfall along the way",
+      "caption": "Fictitious two-week example with €20,000 opening cash",
+      "headers": [
+        "Period",
+        "Assumed receipts and payments",
+        "Week-end balance"
+      ],
+      "rows": [
+        [
+          "Week 1",
+          "€20,000 received − €45,000 paid = −€25,000",
+          "−€5,000"
+        ],
+        [
+          "Week 2",
+          "€50,000 received − €30,000 paid = +€20,000",
+          "€15,000"
+        ]
+      ],
+      "note": "All amounts are fictitious. The second week ends positive, but the first reveals a €5,000 requirement if the assumptions occur. Identifying a shortfall guarantees neither an authorized overdraft nor financing: assess options and terms before the deadline."
+    },
+    "exampleTitle": "Example of interpreting a forecast",
+    "example": "If a receipt changes date, the team updates the assumption and compares weekly balances. It can test different calendars and assess possible decisions with management. A forecast does not turn an uncertain receivable into available cash; comparing forecast with actuals explains the variance.",
+    "steps": [
+      [
+        "Reconcile the opening position",
+        "List bank accounts, receivables, payables and known commitments."
+      ],
+      [
+        "Build scenarios",
+        "Schedule flows, document assumptions and test the most sensitive uncertainties."
+      ],
+      [
+        "Update and decide",
+        "Compare with actuals, revise the next weeks and follow agreed actions."
+      ]
+    ],
+    "scopeTitle": "A forecast maintained by the right people",
+    "scope": [
+      "Sales, purchasing and operations contribute expected dates. The CFO consolidates, checks consistency and prepares decisions. Update frequency depends on the situation.",
+      "Obtaining financing, negotiating with third parties and authorizing payments are separate actions. Options are compared with their costs and constraints."
+    ],
+    "budget": "The proposal depends on the number of entities and banks, the quality of payment schedules and monitoring frequency. Forecasting can be a dedicated engagement or a deliverable within recurring CFO support.",
+    "case": "seasonly-marge-par-canal-bfr",
+    "faq": [
+      [
+        "Why a 13-week horizon?",
+        "It provides a weekly view of upcoming obligations. A longer cash budget can supplement it when an investment or financing decision requires one."
+      ],
+      [
+        "Which documents should we prepare?",
+        "Bank balances, customer and supplier trial balances, loan schedules, recurring costs, known obligations and commercial assumptions. Missing documents are identified."
+      ],
+      [
+        "Which tool should we use?",
+        "A structured spreadsheet may be sufficient for some needs. A dedicated tool is justified by sources, frequency, controls and the people responsible for updating it."
+      ]
+    ],
+    "resources": [
+      [
+        "Reduce working capital requirements: levers to examine",
+        "/ressources/blog/reduire-bfr-7-leviers-actionnables"
+      ],
+      [
+        "Understand cash flows",
+        "/ressources/blog/flux-de-tresorerie"
+      ]
+    ],
+    "related": [
+      "temps-partage",
+      "controle",
+      "organisation"
+    ]
+  },
+  "organisation": {
+    "path": "/services/gestion-financiere-externalisee",
+    "label": "Finance organization",
+    "title": "Financial operations for SMEs | Iter Advisors",
+    "description": "Structure your financial operations: responsibilities, data, financial close and reporting. A scope suited to your team.",
+    "headline": "Financial operations",
+    "promise": "A finance function with clear responsibilities.",
+    "intro": "As files, tools and responsibilities accumulate, producing figures becomes a project in itself. Support organizes financial operations so your team has an agreed way of working.",
+    "context": "organisation",
+    "category": "Structuring the finance function",
+    "summary": [
+      [
+        "Your need",
+        "Processes, data and responsibilities"
+      ],
+      [
+        "Your support",
+        "A usable calendar and procedures"
+      ],
+      [
+        "Scope",
+        "Initial organization and monitoring quoted separately"
+      ]
+    ],
+    "signals": [
+      "The same data is re-entered into multiple files.",
+      "Approvals and follow-ups rely on one person.",
+      "Growth or a new entity requires clearer organization."
+    ],
+    "definition": "Financial operations organize data flows, responsibilities and the timetable for producing figures. For invoices, payments or reconciliations, the work starts by identifying who prepares, checks and approves. The Fractional CFO handles financial management and leadership decisions; the contract specifies work assigned to Iter and work retained by your team.",
+    "deliverables": [
+      [
+        "Role allocation",
+        "A matrix of tasks, approvals and responsibilities.",
+        "Reduce tasks without an owner."
+      ],
+      [
+        "Finance calendar",
+        "Deadlines, dependencies and control points.",
+        "Coordinate the production of figures."
+      ],
+      [
+        "Procedures and data",
+        "Documented rules, defined access and shared templates.",
+        "Maintain the arrangement over time."
+      ]
+    ],
+    "exampleTitle": "An end-to-end process",
+    "example": "Example procedure to adapt: the team provides documents, accounting prepares reconciliations, the finance manager reviews exceptions and the authorized person approves reporting. Payment delegations and controls are documented separately. This illustrates organization, not a client case or automatic delivery of every task by Iter.",
+    "steps": [
+      [
+        "Map the work",
+        "Review flows, tools and tasks with the people carrying them out."
+      ],
+      [
+        "Organize",
+        "Agree responsibilities, documents and necessary controls."
+      ],
+      [
+        "Transfer",
+        "Test the process with the team, document it and track issues to correct."
+      ]
+    ],
+    "scopeTitle": "Start with existing teams and tools",
+    "scope": [
+      "A project does not necessarily start with new software. Pain points, source reliability and the ability to maintain processes guide choices.",
+      "The scope distinguishes organization, accounting production and financial decisions. Every external task needs an owner, deliverable and approval process."
+    ],
+    "budget": "The quote depends on processes, entities, tools and the required level of involvement. Possible migration and subscription costs are specified.",
+    "case": "opti-digital-structuration-financement",
+    "faq": [
+      [
+        "How does this differ from management control?",
+        "Finance organization concerns operations, data and responsibilities. Management control uses that data to analyze costs, margins and budget variances."
+      ],
+      [
+        "Do we need to replace our tools?",
+        "Not automatically. Mapping helps decide whether existing tools suffice, can work better together or justify a change."
+      ],
+      [
+        "Can we automate some work?",
+        "Yes, after clarifying sources, rules and controls. The project must cover exceptions, maintenance and human validation of results."
+      ]
+    ],
+    "resources": [
+      [
+        "Organize the finance function",
+        "/ressources/blog/organiser-sa-direction-financiere"
+      ],
+      [
+        "Automate financial reporting",
+        "/ressources/ia-finance/automatiser-reporting-financier"
+      ]
+    ],
+    "related": [
+      "comptabilite",
+      "controle",
+      "temps-partage"
+    ]
+  },
+  "levee": {
+    "path": "/services/accompagnement-levee-de-fond",
+    "label": "Fundraising preparation",
+    "title": "Fundraising financial preparation | Iter Advisors",
+    "description": "Prepare the finances for a funding round: financial model, data room and investor answers. Deliverables and calendar agreed for your project.",
+    "headline": "Fundraising financial preparation",
+    "promise": "Explained assumptions. A consistent financial file.",
+    "intro": "The CFO translates your project into financial scenarios and organizes the data investors expect. The business leader presents the project; finding investors is a separate assignment.",
+    "context": "levee",
+    "category": "Preparing a transaction",
+    "summary": [
+      [
+        "Your need",
+        "Model, financing requirement and data room"
+      ],
+      [
+        "Your support",
+        "Reconciled figures and documented assumptions"
+      ],
+      [
+        "Budget",
+        "One-off or additional engagement, quoted separately"
+      ]
+    ],
+    "signals": [
+      "Your project needs to be translated into a financing requirement.",
+      "Figures differ between the model, reporting and investor file.",
+      "Financial questions take up team time without coordination."
+    ],
+    "definition": "This support covers financial preparation and follow-up. The model, scenarios and data room explain figures and uncertainties. The engagement guarantees neither funds raised, valuation nor a closing date.",
+    "deliverables": [
+      [
+        "Financial model",
+        "Revenue, expenses, recruitment and cash flow connected to project assumptions.",
+        "Identify the financing requirement."
+      ],
+      [
+        "Financial data room",
+        "Organized documents and figures reconciled with accounts.",
+        "Make review and checks easier."
+      ],
+      [
+        "Financial answers",
+        "Tracking questions and material prepared with the team.",
+        "Maintain consistent information throughout discussions."
+      ]
+    ],
+    "exampleTitle": "Make an assumption open to discussion",
+    "example": "Accelerating sales entails expenses and recruitment. The model connects these choices to cash flow and tests delayed revenue or financing, so the business leader can compare options.",
+    "steps": [
+      [
+        "Scope preparation",
+        "Clarify the stage, deadlines, available data and people involved."
+      ],
+      [
+        "Build the file",
+        "Document assumptions, reconcile figures and organize financial documents."
+      ],
+      [
+        "Support discussions",
+        "Prepare answers and update scenarios; organize post-transaction reporting if included."
+      ]
+    ],
+    "scopeTitle": "CFO, business leader and fundraising adviser: complementary roles",
+    "scope": [
+      "The business leader presents the project and decides on acceptable terms. The CFO prepares and explains figures. An appointed fundraising adviser may search for and approach investors under a separate agreement.",
+      "Potential introductions, communication and responsibilities are agreed during scoping. Legal and tax matters are reviewed by relevant advisers within their own engagements."
+    ],
+    "budget": "The quote depends on model maturity, data, entities and expected communication. It specifies deliverables and the working calendar. Financing timing also depends on investors and negotiations.",
+    "case": "solarmente-serie-b-cleantech",
+    "faq": [
+      [
+        "Do you act as fundraising advisers?",
+        "The service described here covers financial preparation and follow-up. Investor sourcing is handled by the business leader or an appointed fundraising adviser. Potential introductions are agreed during scoping."
+      ],
+      [
+        "What should we prepare for the first conversation?",
+        "Available accounts and reporting, cash balances, debt schedules and project assumptions. Secure sharing arrangements are agreed afterwards."
+      ],
+      [
+        "Does support continue after the funding round?",
+        "If included in the assignment, support can cover budget updates, cash monitoring and investor reporting."
+      ]
+    ],
+    "resources": [
+      [
+        "Prepare the stages of fundraising",
+        "/ressources/blog/levee-de-fonds-guide"
+      ],
+      [
+        "Examine term sheet clauses",
+        "/ressources/blog/term-sheet-negocier-clauses-cles"
+      ],
+      [
+        "Understand French BSPCE and BSA instruments",
+        "/ressources/glossaire/bspce-bsa"
+      ],
+      [
+        "Prepare due diligence documents",
+        "/ressources/blog/checklist-due-diligence-levee-de-fonds"
+      ],
+      [
+        "Monitor cash burn and runway",
+        "/ressources/blog/cash-burn-calculer-runway-anticiper-levee"
+      ]
+    ],
+    "related": [
+      "due-diligence",
+      "tresorerie",
+      "temps-partage"
+    ]
+  },
+  "due-diligence": {
+    "path": "/services/ma-due-diligence",
+    "label": "M&A and due diligence",
+    "title": "M&A and financial due diligence | Iter Advisors",
+    "description": "Prepare an acquisition, sale or funding round: results, debt, working capital and scenarios. Analyses, deliverables and fees defined in the proposal.",
+    "headline": "M&A and financial due diligence",
+    "promise": "Assess a transaction using examined data.",
+    "intro": "Buyer, business leader or seller: we help organize and analyze financial information relevant to your transaction. The assignment distinguishes preparing the file, financial review and other advisers’ work.",
+    "context": "due-diligence",
+    "category": "Preparing a transaction",
+    "summary": [
+      [
+        "Your need",
+        "Acquisition, sale or file preparation"
+      ],
+      [
+        "Your support",
+        "Analyses, questions and open issues"
+      ],
+      [
+        "Budget",
+        "Quoted according to work and recipients"
+      ]
+    ],
+    "signals": [
+      "You need to understand a target’s results and commitments.",
+      "You are preparing a data room and answers to financial requests.",
+      "An acquisition requires post-transaction reporting and responsibilities to be organized."
+    ],
+    "definition": "For sellers, preparation organizes documents and explains accounts. For buyers, financial review examines results, debt, working capital requirements and assumptions. Preparing the file does not replace independent due diligence.",
+    "deliverables": [
+      [
+        "Results analysis",
+        "Reconciliations, recurring or one-off items and documented adjustments.",
+        "Understand the figures presented."
+      ],
+      [
+        "Cash, debt and working capital",
+        "Schedules, seasonality and identified commitments.",
+        "Examine requirements and issues to investigate."
+      ],
+      [
+        "Review summary",
+        "Questions, assumptions, missing data and matters for advisers.",
+        "Prepare decisions and subsequent work."
+      ]
+    ],
+    "exampleTitle": "Open issues remain visible",
+    "example": "An unreconciled figure, an old receivable or an unsupported assumption does not become a certainty. The summary states the question, required documents and the person who must address it.",
+    "steps": [
+      [
+        "Define the assignment",
+        "Clarify the transaction, recipients, accessible data and expected analyses."
+      ],
+      [
+        "Examine and document",
+        "Reconcile information, analyze agreed matters and organize questions."
+      ],
+      [
+        "Present and hand over",
+        "Present findings and limitations, then organize additional work or integration."
+      ]
+    ],
+    "scopeTitle": "Financial analysis with explicit limitations",
+    "scope": [
+      "Legal, tax and employment matters involve relevant qualified advisers. Recipients, responsibilities and deliverable usage conditions are specified in the assignment.",
+      "Valuation relies on methods and assumptions that need explanation. Price, negotiation and transaction success are not guaranteed by the review."
+    ],
+    "budget": "Fees and timing depend on scope, entities, available documents and expected discussions. Data room preparation, buyer review and integration are distinct workstreams to quote.",
+    "case": "solarmente-serie-b-cleantech",
+    "faq": [
+      [
+        "Are preparation and due diligence the same engagement?",
+        "No. Preparing a file organizes and explains information. An independent review examines it for its recipients under a separate assignment."
+      ],
+      [
+        "Can you support the buyer?",
+        "The scope can include financial review of available target data, issues to watch and analyses relevant to negotiations. Conditions are defined during scoping."
+      ],
+      [
+        "Which documents are needed?",
+        "Accounts, reporting, schedules, customer and supplier data, forecasts and documents supporting key items. The list is adapted to the transaction and assignment."
+      ]
+    ],
+    "resources": [
+      [
+        "Due diligence checklist",
+        "/ressources/blog/checklist-due-diligence-levee-de-fonds"
+      ],
+      [
+        "Prepare the finances for a funding round",
+        "/services/accompagnement-levee-de-fond"
+      ]
+    ],
+    "related": [
+      "levee",
+      "organisation",
+      "transition"
+    ]
+  }
+}

@@ -1,19 +1,6 @@
-import { Metadata } from "next";
-import ServicesPage from "@/components/pages/ServicesPage";
-import { buildStrapiMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/static-content";
-
-export async function generateMetadata(): Promise<Metadata> {
-  return buildStrapiMetadata({
-    endpoint: "services-page",
-    locale: "es",
-    path: "/services",
-    fallbackTitle: "Servicios CFO Externalizado | Iter Advisors",
-    fallbackDescription: "Servicios de dirección financiera externalizada: tesorería, control de gestión, financiación.",
-  });
-}
-
-export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("es");
-  return <ServicesPage locale="es" cmsNavigation={cmsNavigation} h1Override="Nuestros servicios financieros" />;
-}
+import type { Metadata } from "next";
+import FinanceServicesHub from "@/components/finance/FinanceServicesHub";
+import { getFinanceHub } from "@/lib/content/finance-hub-locales";
+import { buildMetadata } from "@/lib/metadata";
+export function generateMetadata(): Metadata { const t = getFinanceHub("es"); return buildMetadata({ locale: "es", path: "/es/services", title: t.title + " | Iter Advisors", description: t.description }); }
+export default function Page() { return <FinanceServicesHub locale="es" />; }

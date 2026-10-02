@@ -47,7 +47,7 @@ export default function Breadcrumb({
           }}
         />
       )}
-      <nav className="mb-8" aria-label="Breadcrumb">
+      <nav className="site-breadcrumb mb-8" aria-label={locale === "fr" ? "Fil d’Ariane" : locale === "es" ? "Ruta de navegación" : "Breadcrumb"}>
         <ol className="flex items-center gap-2 flex-wrap text-[12px] tracking-wide">
           <li>
             <Link

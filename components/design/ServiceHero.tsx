@@ -3,9 +3,13 @@ import FinanceExpert from "@/components/FinanceExpert";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
+import type { Locale } from "@/lib/i18n";
+import { getSiteInterface } from "@/lib/content/site-interface";
+import { parityHref } from "@/lib/locale-route-map";
 
 /** Shared French commercial-page heading. Content and anchors remain page-specific. */
-export default function ServiceHero({ title, label, eyebrow, lead, intro, primary, secondary, summary, proof, navigation, family = "finance" }: {
+export default function ServiceHero({ title, label, eyebrow, lead, intro, primary, secondary, summary, proof, navigation, family = "finance", locale = "fr" }: {
+  locale?: Locale;
   family?: "finance" | "rh";
   title: string;
   label: string;
@@ -18,10 +22,11 @@ export default function ServiceHero({ title, label, eyebrow, lead, intro, primar
   proof?: ReactNode;
   navigation: ReadonlyArray<{ id: string; label: string }>;
 }) {
+  const ui = getSiteInterface(locale);
   return <>
     <section className="site-hero site-service-hero">
       <div className="site-container">
-        <Breadcrumb locale="fr" items={[{ label: family === "rh" ? "Direction RH" : "Services finance", href: family === "rh" ? "/drh-externalise" : "/services" }, { label }]} />
+        <Breadcrumb locale={locale} items={[{ label: family === "rh" ? ui.hr : ui.finance, href: parityHref(family === "rh" ? "/drh-externalise" : "/services", locale) }, { label }]} />
         <div className="site-hero-grid">
           <div data-speakable="true">
             <p className="site-eyebrow">{eyebrow}</p>
@@ -33,16 +38,16 @@ export default function ServiceHero({ title, label, eyebrow, lead, intro, primar
               <Link href={secondary.href} className="site-button site-button-secondary">{secondary.label}<span aria-hidden="true">↓</span></Link>
             </div>
             {proof}
-            {family === "rh" ? <HRExpert compact /> : <FinanceExpert compact />}
+            {family === "rh" ? <HRExpert compact locale={locale} /> : <FinanceExpert compact locale={locale} />}
           </div>
-          <aside className="site-brief" aria-label="La mission en bref">
-            <p className="site-eyebrow">La mission en bref</p>
+          <aside className="site-brief" aria-label={ui.brief}>
+            <p className="site-eyebrow">{ui.brief}</p>
             <dl>{summary.map(item => <div key={item.label}><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl>
-            <Link href="/a-propos#equipe" className="site-inline-link">Rencontrer l’équipe <span aria-hidden="true">↗</span></Link>
+            <Link href={parityHref("/a-propos#equipe", locale)} className="site-inline-link">{ui.team} <span aria-hidden="true">↗</span></Link>
           </aside>
         </div>
       </div>
     </section>
-    <nav className="site-section-nav" aria-label="Dans cette page"><div className="site-container">{navigation.map(item => <a key={item.id} href={`#${item.id}`}>{item.label}</a>)}</div></nav>
+    <nav className="site-section-nav" aria-label={ui.pageNav}><div className="site-container">{navigation.map(item => <a key={item.id} href={`#${item.id}`}>{item.label}</a>)}</div></nav>
   </>;
 }
