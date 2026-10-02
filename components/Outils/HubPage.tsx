@@ -1,8 +1,6 @@
-'use client';
 import FinanceExpert from "@/components/FinanceExpert";
 
 import PageLayout from '@/components/PageLayout';
-import { TOOL_PRICING } from "@/data/toolPricing";
 import Breadcrumb from '@/components/Breadcrumb';
 import { tools } from '@/data/tools';
 import Link from 'next/link';
@@ -18,9 +16,9 @@ const hubCollectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': 'https://www.iteradvisors.com/ressources/outils',
-  name: 'Stack financier idéal pour startups et PME',
+  name: 'Outils de la fonction finance : annuaire et critères de choix',
   description:
-    'Guide complet des outils de finance (comptabilité, trésorerie, dépenses, paie) recommandés par nos DAF externalisés.',
+    'Annuaire des logiciels de finance et critères à tester pour choisir une organisation adaptée.',
   url: 'https://www.iteradvisors.com/ressources/outils',
   author: {
     '@type': 'Organization',
@@ -78,36 +76,16 @@ const hubCollectionSchema = {
    tableau comparatif). Le texte visible et le JSON-LD sortent du même
    tableau, donc restent identiques (exigence Google). */
 const FAQ = [
-  {
-    question: 'Quel outil choisir entre Pennylane et Sage ?',
-    answer:
-      "Pennylane convient aux startups et PME françaises qui veulent une comptabilité moderne, connectée et rapide à clôturer, avec un effort de mise en place faible à modéré. Sage devient pertinent quand la profondeur fonctionnelle prime sur l'expérience utilisateur : contextes industriels, multi-entités, groupes simples. L'effort de déploiement y est modéré à élevé.",
-  },
-  {
-    question: "À partir de quand faut-il un outil de trésorerie dédié ?",
-    answer:
-      "En général à partir de 2 M€ de chiffre d'affaires, quand le cash devient un sujet de pilotage hebdomadaire et non plus seulement comptable. Les signaux concrets : les prévisions de trésorerie ne suffisent plus, les exports Excel se multiplient, les board packs deviennent trop manuels. En dessous, un suivi bancaire et comptable bien tenu suffit le plus souvent.",
-  },
-  {
-    question: 'Qonto suffit-il pour une PME ?',
-    answer:
-      "Pour la majorité des startups et PME françaises, oui : Qonto couvre les opérations courantes, les cartes et s'intègre aux principaux outils de comptabilité et de gestion des dépenses. Il faut le compléter ou le challenger si l'entreprise a des besoins de cash pooling, de multi-entités avancé ou d'opérations internationales plus complexes.",
-  },
-  {
-    question: 'Combien coûte une stack finance complète ?',
-    answer:
-      "Comptez 250 à 400 € HT par mois en seed, 800 à 1 500 € entre 2 et 10 M€ de CA, et 2 000 à 4 000 € au-delà de 10 M€. Ces montants sont des ordres de grandeur : ils varient selon le nombre d'utilisateurs, le volume de bulletins et les modules activés.",
-  },
-  {
-    question: 'Faut-il tout déployer en même temps ?',
-    answer:
-      "Non. Dans nos déploiements, l'ordre le plus efficace est banque et comptabilité d'abord, puis dépenses, puis paie, et enfin trésorerie et reporting quand les flux amont sont fiables. Un outil de prévision branché sur des données incomplètes produit des prévisions fausses.",
-  },
+  { question: 'Quel outil choisir entre Pennylane et Sage ?', answer: "Comparez les versions réellement proposées sur votre dossier : reprise des données, plans comptables, droits, exports et interfaces avec les outils conservés. Une démonstration sur vos propres données est plus utile qu’un classement général des marques." },
+  { question: 'Quand faut-il un outil de trésorerie dédié ?', answer: "Il n’existe pas de seuil de chiffre d’affaires universel. Examinez les échéances à prévoir, le nombre de comptes, les devises et le temps nécessaire pour actualiser les hypothèses. Un outil dédié doit améliorer une prévision dont les sources et le responsable sont déjà identifiés." },
+  { question: 'Un compte professionnel suffit-il pour piloter la finance ?', answer: "Un compte donne une vue des opérations bancaires. Il ne remplace ni les travaux comptables, ni les hypothèses du prévisionnel, ni la validation des dépenses. Vérifiez les besoins de financement, les devises, les pouvoirs de paiement et les exports avant de choisir votre organisation." },
+  { question: 'Comment comparer le coût d’une stack finance ?', answer: "Demandez un devis daté, à périmètre identique, comprenant abonnements, utilisateurs, volumes, modules, intégrations, reprise, formation et support. Distinguez les coûts de démarrage et les coûts récurrents. Les montants d’une fiche éditeur ne constituent pas le budget complet de votre entreprise." },
+  { question: 'Faut-il tout déployer en même temps ?', answer: "Définissez un besoin prioritaire, les dépendances et un pilote réversible. Rapprochez les données produites avec la source de référence avant d’étendre le périmètre. Convenez des responsables de validation et d’une solution de retour arrière." },
 ];
 
 export interface HubPageProps {
   locale: 'fr' | 'en' | 'es';
-  cmsNavigation?: any;
+  cmsNavigation?: import("@/lib/static-content").CmsNavItem[];
 }
 
 /* Refonte 2026-08-02 — chaque stade suit désormais la même structure :
@@ -115,63 +93,11 @@ export interface HubPageProps {
    budget, puis un « signal de bascule » qui dit quand changer de stack.
    La mention « vous avez probablement un CFO interne » a été retirée du
    stade mature : elle excluait de fait la cible du temps partagé. */
-const stageRecommendations = {
-  fr: [
-    {
-      id: 'seed',
-      stage: 'Seed / Early stage',
-      revenue: 'Moins de 2 M€ de CA, équipe de 5 à 15 personnes.',
-      headline: 'Une stack simple, connectée et suffisante pour bien démarrer',
-      description:
-        "À ce stade, l'objectif n'est pas d'empiler des logiciels mais de fiabiliser les flux de base avec une stack simple, connectée et peu coûteuse. Le bon choix consiste à couvrir cinq besoins sans sur-outillage : banque, comptabilité, dépenses, paie et premiers tableaux de pilotage.",
-      stack: [
-        { role: 'Banque', tools: 'Qonto' },
-        { role: 'Comptabilité', tools: 'Pennylane' },
-        { role: 'Dépenses', tools: 'Spendesk ou Pleo selon le niveau de process' },
-        { role: 'Paie', tools: 'Payfit' },
-      ],
-      budget: '250 à 400 € HT / mois',
-      switchSignal:
-        'Vous devez passer à une stack plus structurée lorsque les clôtures ralentissent, que plusieurs responsables valident des dépenses ou que la visibilité cash devient hebdomadaire au lieu d\'être quotidienne.',
-    },
-    {
-      id: 'series-a-b',
-      stage: 'Series A / B',
-      revenue: 'Entre 2 et 10 M€ de CA, équipe de 15 à 50 personnes.',
-      headline: 'Visibilité temps réel sur le cash et clôtures fiables',
-      description:
-        "Entre 2 et 10 M€ de chiffre d'affaires, la complexité opérationnelle augmente vite : plus de flux, plus de validations, plus d'exigence investisseurs. La priorité devient la visibilité en temps réel sur le cash, la qualité de clôture et la capacité à produire un reporting fiable sans mobiliser l'équipe pendant des jours.",
-      stack: [
-        { role: 'Banque', tools: 'Qonto ou Revolut Business si multi-devises' },
-        { role: 'Comptabilité', tools: 'Pennylane' },
-        { role: 'Trésorerie', tools: 'Agicap' },
-        { role: 'Dépenses', tools: 'Spendesk' },
-        { role: 'Paie', tools: 'Payfit' },
-      ],
-      budget: '800 à 1 500 € HT / mois',
-      switchSignal:
-        'Vous devez renforcer la stack lorsque les prévisions de trésorerie ne suffisent plus, que les exports Excel se multiplient ou que les board packs deviennent trop manuels.',
-    },
-    {
-      id: 'scale-up',
-      stage: 'Scale-up / PME mature',
-      revenue: 'Entre 10 et 30 M€ de CA, équipe de 50 à 100 personnes.',
-      headline: 'Orchestrer un système financier cohérent et multi-entités',
-      description:
-        "Entre 10 et 30 M€ de chiffre d'affaires, la question n'est plus seulement de choisir un bon logiciel, mais d'orchestrer un système financier cohérent, documenté et robuste. L'enjeu principal est la fiabilité multi-entités, le pilotage cash avancé, la maîtrise des workflows et un reporting exploitable par la direction et les investisseurs.",
-      stack: [
-        { role: 'Comptabilité', tools: 'Pennylane ou Sage selon complexité' },
-        { role: 'Trésorerie', tools: 'Agicap' },
-        { role: 'Dépenses', tools: 'Spendesk ou Payhawk' },
-        { role: 'Paie', tools: 'Payfit ou Silae selon volumétrie' },
-        { role: 'Reporting', tools: 'Power BI si dashboards finance consolidés' },
-      ],
-      budget: '2 000 à 4 000 € HT / mois',
-      switchSignal:
-        'Vous devez professionnaliser la stack quand le multi-entités, les filiales, les cut-offs ou le reporting de direction rendent les outils historiques trop limitants.',
-    },
-  ],
-};
+const stageRecommendations = { fr: [
+  { id: 'seed', stage: 'Première organisation', revenue: 'Peu de flux, une équipe finance limitée.', headline: 'Fiabiliser les données de départ', description: 'Commencez par les pièces comptables, les échéances et les droits de paiement. Un responsable doit savoir quelles données sont complètes et quels contrôles restent manuels. La simplicité se mesure à la capacité de suivre et corriger les flux.', stack: [{ role: 'Comptabilité', tools: 'Reprise et rapprochement avec le cabinet' }, { role: 'Banque', tools: 'Droits, justificatifs et exports' }, { role: 'Dépenses', tools: 'Validation et affectation des achats' }], budget: 'Chiffrer les utilisateurs, les volumes et la reprise dans le devis.', switchSignal: 'Les mêmes erreurs réapparaissent, des pièces manquent ou personne ne peut expliquer les écarts.' },
+  { id: 'series-a-b', stage: 'Activité en croissance', revenue: 'Davantage de flux et plusieurs responsables.', headline: 'Relier clôture, cash et décisions', description: 'La priorité est une cadence de mise à jour fiable. Identifiez qui transmet les hypothèses commerciales, les recrutements et les échéances. Vérifiez ensuite si une connexion réduit les ressaisies sans masquer les erreurs.', stack: [{ role: 'Trésorerie', tools: 'Hypothèses datées et prévision glissante' }, { role: 'Dépenses', tools: 'Circuits de validation et rapprochement' }, { role: 'Reporting', tools: 'Définitions communes et analyse des écarts' }], budget: 'Comparer le coût récurrent, les interfaces et le support.', switchSignal: 'Les prévisions arrivent trop tard ou les exports demandent une réconciliation répétée.' },
+  { id: 'scale-up', stage: 'Organisation multi-entités', revenue: 'Plusieurs sociétés, devises ou systèmes sources.', headline: 'Documenter les dépendances', description: 'Testez les flux entre entités, les dates de clôture, les droits et la restitution consolidée. L’achat d’un module ne suffit pas à harmoniser les règles de gestion. Une reprise doit prévoir les contrôles et le maintien des accès aux données historiques.', stack: [{ role: 'Comptabilité', tools: 'Règles de clôture et données par entité' }, { role: 'Trésorerie', tools: 'Soldes, devises et scénarios distincts' }, { role: 'Reporting', tools: 'Référentiel partagé et traçabilité des calculs' }], budget: 'Inclure les entités, les licences et la maintenance des interfaces.', switchSignal: 'Les données de plusieurs sociétés ne peuvent plus être rapprochées avec les mêmes définitions.' },
+] };
 
 /* Refonte 2026-08-02 — 4 → 6 besoins métier. Banque et Reporting étaient
    absents de la navigation alors que Qonto, Revolut et Power BI figurent
@@ -245,89 +171,14 @@ const categories = {
      « API rich » ;
    - ajout de malibou, cohérent avec le reste de la page. */
 const comparisonRows = [
-  {
-    tool: 'Pennylane',
-    href: '/ressources/outils/pennylane',
-    use: 'Comptabilité et facturation connectées',
-    size: 'Startups et PME françaises',
-    effort: 'Faible à modéré',
-    price: TOOL_PRICING["pennylane"].label,
-    verdict:
-      "Très bon choix pour structurer rapidement une fonction finance moderne, à condition de ne pas être dans un contexte ERP complexe.",
-  },
-  {
-    tool: 'Sage',
-    href: '/ressources/outils/sage',
-    use: 'Comptabilité structurée, contextes industriels ou multi-entités',
-    size: 'PME avancées et groupes simples',
-    effort: 'Modéré à élevé',
-    price: TOOL_PRICING["sage"].label,
-    verdict:
-      "Plus robuste que séduisant : pertinent quand la profondeur fonctionnelle compte davantage que l'UX.",
-  },
-  {
-    tool: 'Agicap',
-    href: '/ressources/outils/agicap',
-    use: 'Prévisionnel et pilotage de trésorerie',
-    size: 'PME en croissance',
-    effort: 'Modéré',
-    price: TOOL_PRICING["agicap"].label,
-    verdict:
-      "Très utile quand le cash devient un sujet de pilotage hebdomadaire et non plus seulement comptable. La qualité des prévisions dépend de celle des flux amont.",
-  },
-  {
-    tool: 'Spendesk',
-    href: '/ressources/outils/spendesk',
-    use: 'Dépenses, cartes et validations',
-    size: 'PME structurées',
-    effort: 'Modéré',
-    price: TOOL_PRICING["spendesk"].label,
-    verdict:
-      "Bon outil de gouvernance des dépenses, surtout s'il est bien connecté à la comptabilité.",
-  },
-  {
-    tool: 'Qonto',
-    href: '/ressources/outils/qonto',
-    use: 'Banque opérationnelle et cartes',
-    size: 'Startups et PME',
-    effort: 'Faible',
-    price: TOOL_PRICING["qonto"].label,
-    verdict:
-      "Point d'entrée solide pour une stack finance française simple et connectée. À compléter si besoin de cash pooling ou de multi-entités avancé.",
-  },
-  {
-    tool: 'PayFit',
-    href: '/ressources/outils/payfit',
-    use: 'Paie et RH en autonomie',
-    size: "PME jusqu'à 100 salariés environ",
-    effort: 'Faible à modéré',
-    price: TOOL_PRICING["payfit"].label,
-    verdict:
-      "Très bon compromis entre autonomie, UX et niveau de structuration pour une équipe finance légère.",
-  },
-  {
-    tool: 'malibou',
-    href: '/ressources/outils/malibou',
-    use: 'Paie déléguée avec gestionnaire dédié',
-    size: 'PME sans RH senior',
-    effort: 'Modéré',
-    // Tarif relevé le 14/08/2026 sur malibou.com/tarif. L'unité est un prix
-    // par collaborateur, pas un forfait : la version publiée le 03/08
-    // (« 25 € / mois, tout inclus ») était erronée.
-    price: '28 € / collaborateur / mois (+ 50 € / salarié de mise en place)',
-    verdict:
-      "Option intéressante pour externaliser davantage la production de la paie, avec un recul produit encore à construire.",
-  },
-  {
-    tool: 'Power BI',
-    href: '/ressources/outils/power-bi',
-    use: 'Reporting et dashboards',
-    size: 'PME structurées, groupes, board reporting',
-    effort: 'Modéré',
-    price: TOOL_PRICING["power-bi"].label,
-    verdict:
-      "Très bon choix pour industrialiser le reporting si les sources et la gouvernance data sont déjà en place. Alternative : Metabase.",
-  },
+  { tool: 'Pennylane', href: '/ressources/outils/pennylane', use: 'Comptabilité et facturation', verdict: 'Faire reprendre un jeu de données avec le cabinet et rapprocher les écritures.' },
+  { tool: 'Sage', href: '/ressources/outils/sage', use: 'Gestion comptable selon la version', verdict: 'Identifier la version, les modules, les interfaces et les possibilités d’export.' },
+  { tool: 'Agicap', href: '/ressources/outils/agicap', use: 'Prévision de trésorerie', verdict: 'Tester les hypothèses d’encaissement, les échéances et le suivi des écarts.' },
+  { tool: 'Spendesk', href: '/ressources/outils/spendesk', use: 'Dépenses et validations', verdict: 'Tester une demande, sa validation, le justificatif et son rapprochement comptable.' },
+  { tool: 'Qonto', href: '/ressources/outils/qonto', use: 'Compte professionnel et paiements', verdict: 'Vérifier les droits de paiement, les devises et la qualité des exports.' },
+  { tool: 'PayFit', href: '/ressources/outils/payfit', use: 'Paie et gestion RH', verdict: 'Faire tester les situations contractuelles et les corrections avec le responsable paie.' },
+  { tool: 'malibou', href: '/ressources/outils/malibou', use: 'Gestion de la paie accompagnée', verdict: 'Cadrer qui transmet, produit et valide les éléments variables et les bulletins.' },
+  { tool: 'Power BI', href: '/ressources/outils/power-bi', use: 'Reporting et modèles de données', verdict: 'Rapprocher les indicateurs avec les sources et vérifier les actualisations.' },
 ];
 
 const categoryLabels: Record<string, string> = {
@@ -357,7 +208,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
         logo: t.logo,
         logoAlt: t.logoAlt,
         categoryLabel: categoryLabels[t.category] ?? t.category,
-        badge: `Déploiement ${t.implementationTime}`,
+        badge: 'Critères à tester sur votre dossier',
         idealFor: t.forWho[0],
         why: t.shortDescription,
         watchOut: t.notForWho[0],
@@ -369,15 +220,15 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
       logoAlt: '',
       categoryLabel: 'Paie & RH',
       badge: 'Nouveau sur notre radar',
-      idealFor: 'Startups et PME de 5 à 80 salariés sans RH senior en interne.',
-      why: 'SIRH complet (paie, absences, planning, frais, temps, entretiens, onboarding) couplé à un gestionnaire de paie dédié qui produit les bulletins sur la technologie Silae, en plan unique.',
+      idealFor: 'Entreprises qui recherchent une gestion accompagnée de la paie.',
+      why: 'Comparer le périmètre de la paie, le rôle du gestionnaire et les modules inclus dans le devis.',
       watchOut:
-        'Solution récente : recul produit et parc installé encore inférieurs aux acteurs historiques.',
+        'Faire confirmer les prestations incluses et la responsabilité de validation des bulletins.',
     },
   ];
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* JSON-LD Schemas */}
       <script
         type="application/ld+json"
@@ -416,18 +267,15 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
               chaîne JS, donc l'échappement s'affichait tel quel. */}
           <div className="max-w-[70ch] mt-8">
             <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
-              La stack financière adaptée à votre stade de croissance
+              Choisir les outils de votre fonction finance
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              Startup en seed, PME en structuration ou société multi-entités : découvrez les
-              outils que nos CFO à temps partagé recommandent, déploient et connectent sur le
-              terrain pour fiabiliser la comptabilité, la trésorerie, les dépenses, la paie et le
-              reporting.
+              Comptabilité, trésorerie, dépenses, paie et reporting : partez des flux à fiabiliser. Cet annuaire aide à préparer une sélection et les tests à effectuer avec les éditeurs. Les critères proposés ne sont pas des résultats de missions clients.
             </p>
             <p className="text-base text-foreground/70 leading-relaxed mb-8">
-              Cette sélection s&apos;appuie sur plus de 80 déploiements menés chez des startups et
-              PME au cours des trois dernières années, avec un retour d&apos;expérience cabinet —
-              pas un simple comparatif d&apos;éditeurs.
+              Comparez les usages, les intégrations et les limites de chaque outil avec vos
+              besoins. Les fiches précisent les sources de tarification et les questions à
+              examiner avec l&apos;éditeur avant de choisir.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8">
@@ -442,15 +290,15 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
                 href="#recommandation-stade"
                 className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border/60 text-foreground font-medium hover:border-iter-violet hover:text-iter-violet transition-all"
               >
-                Voir notre recommandation par stade
+                Comparer les besoins par organisation
               </Link>
             </div>
 
             <nav aria-label="Accès rapide par profil" className="flex flex-wrap gap-2.5">
               {[
-                { href: '#seed', label: 'Moins de 2 M€ de CA' },
-                { href: '#series-a-b', label: '2 à 10 M€ de CA' },
-                { href: '#scale-up', label: 'Plus de 10 M€ de CA' },
+                { href: '#seed', label: 'Première organisation' },
+                { href: '#series-a-b', label: 'Activité en croissance' },
+                { href: '#scale-up', label: 'Multi-entités' },
                 { href: '#categories', label: 'Par besoin métier' },
               ].map((a) => (
                 <a
@@ -470,12 +318,10 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
       <section id="recommandation-stade" className="site-section bg-muted/20 py-16 scroll-mt-24">
         <div className="container">
           <h2 className="text-3xl font-bold font-heading text-foreground mb-3">
-            Notre recommandation par stade de croissance
+            Adapter le choix à votre organisation
           </h2>
           <p className="text-muted-foreground max-w-[70ch] mb-12">
-            Trois profils, la même grille de lecture : ce que vous devez couvrir, avec quels
-            outils, pour quel budget — et le signal qui indique qu&apos;il est temps de changer
-            de stack.
+            Trois situations à examiner sans seuil automatique de chiffre d’affaires. La grille aide à préciser les responsabilités, les tests et les coûts à chiffrer.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -496,7 +342,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
 
                 <div className="mb-5">
                   <p className="text-xs font-semibold text-muted-foreground mb-2.5">
-                    STACK RECOMMANDÉE
+                    POINTS À COUVRIR
                   </p>
                   <ul className="space-y-1.5">
                     {stage.stack.map((s) => (
@@ -509,7 +355,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
                 </div>
 
                 <p className="text-sm font-semibold text-foreground mb-4">
-                  Budget cible : {stage.budget}
+                  Budget à cadrer : {stage.budget}
                 </p>
 
                 <div className="mt-auto pt-4 border-t border-border/60">
@@ -578,10 +424,10 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
       <section className="site-section bg-muted/20 py-16">
         <div className="container">
           <h2 className="text-3xl font-bold font-heading text-foreground mb-3">
-            Les outils que nous déployons le plus
+            Quelques outils à comparer
           </h2>
           <p className="text-muted-foreground max-w-[70ch] mb-12">
-            Pour chacun : à qui il convient, pourquoi nous le recommandons, et le point à
+            Pour chacun : à qui il convient, quel besoin examiner, et le point à
             vérifier avant de vous engager.
           </p>
 
@@ -619,11 +465,11 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
 
                 <dl className="space-y-2.5 text-sm flex-grow">
                   <div>
-                    <dt className="font-semibold text-foreground">Idéal pour</dt>
+                    <dt className="font-semibold text-foreground">Usage envisagé</dt>
                     <dd className="text-gray-700">{t.idealFor}</dd>
                   </div>
                   <div>
-                    <dt className="font-semibold text-foreground">Pourquoi nous le recommandons</dt>
+                    <dt className="font-semibold text-foreground">Besoin à examiner</dt>
                     <dd className="text-gray-700">{t.why}</dd>
                   </div>
                   {t.watchOut && (
@@ -652,12 +498,10 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
       <section className="site-section bg-background py-16">
         <div className="container max-w-5xl">
           <h2 className="text-3xl font-bold font-heading text-foreground mb-4">
-            Comparatif outils CFO 2026 : notre verdict par catégorie
+            Les tests à demander lors d’une démonstration
           </h2>
           <p className="text-muted-foreground mb-8 leading-relaxed max-w-[75ch]">
-            Voici le verdict cabinet par grand outil, avec un angle d&apos;usage concret : à quel
-            moment il devient pertinent, quel niveau d&apos;effort il demande et dans quel
-            contexte il crée le plus de valeur.
+            Ces exemples de tests servent à préparer une démonstration sur votre dossier. Les fiches donnent les liens vers les sources officielles et les limites à examiner.
           </p>
 
           <div className="overflow-x-auto mb-4 rounded-2xl border border-border/60">
@@ -665,11 +509,8 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
               <thead className="bg-muted/40">
                 <tr>
                   <th scope="col" className="text-left p-3 font-semibold border-b border-border/60">Outil</th>
-                  <th scope="col" className="text-left p-3 font-semibold border-b border-border/60">Meilleur usage</th>
-                  <th scope="col" className="text-left p-3 font-semibold border-b border-border/60">Taille recommandée</th>
-                  <th scope="col" className="text-left p-3 font-semibold border-b border-border/60">Effort de mise en place</th>
-                  <th scope="col" className="text-left p-3 font-semibold border-b border-border/60">Budget indicatif</th>
-                  <th scope="col" className="text-left p-3 font-semibold border-b border-border/60">Avis cabinet</th>
+                  <th scope="col" className="text-left p-3 font-semibold border-b border-border/60">Périmètre à examiner</th>
+                  <th scope="col" className="text-left p-3 font-semibold border-b border-border/60">Test à demander</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border/60">
@@ -685,9 +526,6 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
                       )}
                     </td>
                     <td className="p-3 align-top text-muted-foreground">{r.use}</td>
-                    <td className="p-3 align-top text-muted-foreground">{r.size}</td>
-                    <td className="p-3 align-top text-muted-foreground">{r.effort}</td>
-                    <td className="p-3 align-top text-muted-foreground">{r.price}</td>
                     <td className="p-3 align-top text-muted-foreground">{r.verdict}</td>
                   </tr>
                 ))}
@@ -696,11 +534,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
           </div>
 
           <p className="text-sm text-muted-foreground italic mb-8">
-            Les prix sont donnés à titre indicatif pour une PME et peuvent varier selon le
-            volume, le nombre d&apos;utilisateurs, les modules activés et le niveau
-            d&apos;accompagnement attendu. Verdicts issus du retour d&apos;expérience de nos DAF
-            externalisés — pas des descriptions marketing des éditeurs. Dernière vérification :
-            août 2026.
+            Les fonctionnalités, prix et conditions dépendent des versions et du devis de l’éditeur. Consultez les sources datées de chaque fiche. Un gain de temps ou un retour sur investissement doit être mesuré après validation des données, de la reprise et du périmètre.
           </p>
 
           <Link
@@ -773,7 +607,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
               <span aria-hidden>→</span>
             </Link>
             <p className="mt-4 text-sm text-white/50">
-              80+ déploiements menés chez des startups et PME ces trois dernières années.
+              Le périmètre et les livrables de l’accompagnement sont convenus après examen de votre besoin.
             </p>
           </div>
         </div>

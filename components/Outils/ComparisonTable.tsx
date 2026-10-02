@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Star } from 'lucide-react';
 
 export interface ComparisonTableTool {
   name: string;
@@ -9,7 +8,6 @@ export interface ComparisonTableTool {
   /** SEO-optimized alt text for the logo (TICKET T3/T4). */
   logoAlt?: string;
   features: Record<string, string>;
-  rating: number;
 }
 
 export interface ComparisonTableProps {
@@ -41,20 +39,7 @@ export default function ComparisonTable({ tools, criteria }: ComparisonTableProp
                     {tool.name}
                   </Link>
                 </div>
-                <div className="flex gap-1 items-center">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={14}
-                      className={`${
-                        i < Math.floor(tool.rating)
-                          ? 'fill-yellow-400 text-yellow-400'
-                          : 'text-gray-400'
-                      }`}
-                    />
-                  ))}
-                  <span className="text-xs text-gray-300 ml-1">{tool.rating}</span>
-                </div>
+
               </th>
             ))}
           </tr>

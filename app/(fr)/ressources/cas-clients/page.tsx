@@ -96,14 +96,14 @@ function CasClientsPageContent({ locale }: { locale: Locale }) {
         <section className="site-section bg-background py-12 lg:py-16 border-t border-border/40">
           <div className="container max-w-3xl">
             <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground mb-3">
-              L'offre derrière ces résultats
+              L&apos;offre derrière ces résultats
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Ces missions ont un point commun : un{" "}
               <Link href="/daf-externalise" className="text-iter-violet hover:underline">
                 DAF externalisé
               </Link>{" "}
-              qui s'intègre à l'équipe de direction, quelques jours par mois ou en mission
+              qui s&apos;intègre à l&apos;équipe de direction, quelques jours par mois ou en mission
               intensive. Pour comprendre comment cela fonctionne :
             </p>
             <ul className="grid sm:grid-cols-2 gap-3 list-none pl-0">

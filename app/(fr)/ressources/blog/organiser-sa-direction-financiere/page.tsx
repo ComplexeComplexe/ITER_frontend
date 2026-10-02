@@ -77,7 +77,7 @@ export default function OrganiserDirectionFinancierePage() {
         },
       ]}
     >
-      <p>La direction financière organise les données, les prévisions et les décisions de l’entreprise. Sa structure dépend des entités, des flux et des compétences disponibles. Un <a href="/daf-externalise">DAF externalisé</a> peut coordonner ce travail avec votre équipe et votre expert-comptable.</p>
+      <p>La direction financière organise les données, les prévisions et les décisions de l’entreprise. Sa structure dépend des entités, des flux et des compétences disponibles. Un <Link href="/daf-externalise">DAF externalisé</Link> peut coordonner ce travail avec votre équipe et votre expert-comptable.</p>
       <h2 id="pourquoi-structure">1. Pourquoi structurer votre finance ?</h2>
       <p>Commencez par les difficultés observées : reporting tardif, trésorerie peu prévisible, factures manquantes ou responsabilités dispersées. L’objectif est de savoir quels chiffres sont fiables, quelles décisions ils éclairent et qui suit les actions. Une organisation financière ne garantit ni financement ni croissance.</p>
       <h2 id="modeles-par-taille">2. Modèles d’organisation selon la complexité</h2>
@@ -106,15 +106,15 @@ export default function OrganiserDirectionFinancierePage() {
         <li><strong>Prévoir :</strong> actualiser le cash et les scénarios selon les nouvelles informations.</li>
         <li><strong>Suivre :</strong> conserver les décisions, leur responsable, leur échéance et leur état au prochain point.</li>
       </ol>
-      <p>Un calendrier mensuel peut prévoir une collecte des données, une revue des anomalies, puis une réunion de gestion. Les dates dépendent de vos sources et des intervenants. Le <a href="/services/controle-de-gestion-externalise">contrôle de gestion externalisé</a> illustre cette revue ; le <a href="/services/previsionnel-tresorerie">prévisionnel de trésorerie</a> complète la lecture de rentabilité.</p>
+      <p>Un calendrier mensuel peut prévoir une collecte des données, une revue des anomalies, puis une réunion de gestion. Les dates dépendent de vos sources et des intervenants. Le <Link href="/services/controle-de-gestion-externalise">contrôle de gestion externalisé</Link> illustre cette revue ; le <Link href="/services/previsionnel-tresorerie">prévisionnel de trésorerie</Link> complète la lecture de rentabilité.</p>
       <h2 id="transition-croissance">5. Transition et croissance</h2>
       <p>Revoyez l’organisation lorsqu’un signal apparaît : multiplication des entités, retards récurrents, dépendance à une personne, reporting investisseur ou acquisition. Commencez par cartographier les tâches et les accès. Définissez ensuite les travaux prioritaires, le relais pendant les absences et les critères d’une transmission réussie.</p>
-      <p>Le <a href="/ressources/cas-clients/opti-digital-structuration-financement">cas Opti Digital</a> décrit une mission de structuration associant ERP, clôture et reporting. Il permet de voir les travaux concernés, sans transformer cette expérience en résultat garanti pour une autre entreprise.</p>
+      <p>Le <Link href="/ressources/cas-clients/opti-digital-structuration-financement">cas Opti Digital</Link> décrit une mission de structuration associant ERP, clôture et reporting. Il permet de voir les travaux concernés, sans transformer cette expérience en résultat garanti pour une autre entreprise.</p>
       <h2 id="externalisation">6. Le modèle hybride : en interne et externalisé</h2>
       <p>Un noyau interne peut gérer les opérations quotidiennes, tandis qu’un DAF à temps partagé prépare les revues et les chantiers plus complexes. Le contrat précise les responsabilités, le rythme, les échanges entre interventions et le passage à une équipe interne si nécessaire.</p>
-      <p>Comparez les options sur le même périmètre : disponibilité, compétences, outils, coordination et continuité. Les <a href="/daf-externalise/tarifs">formules récurrentes Iter</a> vont de 3 000 à 8 000 € HT par mois. Ce montant ne représente pas le coût total de votre fonction finance : comptabilité, ressources internes et projets distincts restent à examiner.</p>
+      <p>Comparez les options sur le même périmètre : disponibilité, compétences, outils, coordination et continuité. Les <Link href="/daf-externalise/tarifs">formules récurrentes Iter</Link> vont de 3 000 à 8 000 € HT par mois. Ce montant ne représente pas le coût total de votre fonction finance : comptabilité, ressources internes et projets distincts restent à examiner.</p>
       <InlineCta title="Organiser votre fonction finance" body="Présentez vos outils, vos échéances et les responsabilités déjà couvertes. Le premier échange sert à cadrer le besoin ; une analyse approfondie et son plan d’action sont définis dans une mission sur devis." ctaLabel="Décrire mon besoin d’organisation" ctaHref="/contact#organisation" />
-      <p>Consultez notre <a href="/services/gestion-financiere-externalisee">accompagnement en gestion financière externalisée</a> pour les travaux d’organisation, les livrables et les modalités de suivi.</p>
+      <p>Consultez notre <Link href="/services/gestion-financiere-externalisee">accompagnement en gestion financière externalisée</Link> pour les travaux d’organisation, les livrables et les modalités de suivi.</p>
       <p>Si le besoin porte sur un nouveau poste, commencez par définir ses responsabilités avant de <Link href="/services/recrutement-talent-acquisition">recruter un profil finance</Link>. Le recrutement et le pilotage financier sont deux périmètres distincts.</p>
     </BlogPostPageRefonte>
   );

@@ -1,5 +1,5 @@
 import { editorialPersonId } from "@/lib/content/finance-expert";
-import { Tool, CATEGORIES_WITH_PAGE } from '@/data/tools';
+import { Tool } from '@/data/tools';
 import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
 
 /**
@@ -32,13 +32,19 @@ export function getToolAuthor(tool: Tool) {
   return TOOL_AUTHORS[tool.experts[0] ?? 'benjamin'];
 }
 
-export function generateToolReviewSchema(tool: Tool) {
+/** An editorial guide, without an undocumented numerical product rating. */
+export function generateToolArticleSchema(tool: Tool) {
   const author = getToolAuthor(tool);
+  const url = `https://www.iteradvisors.com/ressources/outils/${tool.slug}`;
   return {
     '@context': 'https://schema.org',
-    '@type': 'Review',
-    '@id': `https://www.iteradvisors.com/ressources/outils/${tool.slug}`,
-    itemReviewed: {
+    '@type': 'Article',
+    '@id': `${url}#article`,
+    url,
+    headline: `Avis ${tool.name} : usages et critères de choix`,
+    description: `Points forts : ${tool.forWho.join(', ')}. Points de vigilance : ${tool.notForWho.join(', ')}.`,
+    inLanguage: 'fr-FR',
+    about: {
       '@type': 'SoftwareApplication',
       name: tool.name,
       url: tool.website,
@@ -46,29 +52,14 @@ export function generateToolReviewSchema(tool: Tool) {
     },
     author: {
       '@type': 'Person',
-      "@id": editorialPersonId(author.url),
+      '@id': editorialPersonId(author.url),
       name: author.name,
       url: `https://www.iteradvisors.com${author.url}`,
     },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Iter Advisors',
-      url: 'https://www.iteradvisors.com',
-    },
+    publisher: { '@id': 'https://www.iteradvisors.com/#organization' },
+    mainEntityOfPage: url,
     dateModified: PAGE_REVISIONS[`/ressources/outils/${tool.slug}`] ?? TOOLS_REVIEW_DATE,
-    reviewRating: {
-      '@type': 'Rating',
-      ratingValue: tool.rating,
-      bestRating: '5',
-      worstRating: '1',
-    },
-    // SEO-DAF-13 (2026-08-09) — le reviewBody reprenait le cadrage
-    // « Adapté pour / Non-adapté pour », retiré des pages outils en juillet
-    // au profit de « Points forts / Points de vigilance ». Le balisage
-    // décrivait donc un contenu qui n'existe plus à l'écran. Reformulé sur
-    // les mêmes données, avec le vocabulaire réellement affiché.
-    reviewBody: `Avis expert sur ${tool.name} par nos DAF externalisés. Points forts : ${tool.forWho.join(', ')}. Points de vigilance : ${tool.notForWho.join(', ')}.`,
-    datePublished: "2026-09-01",
+    datePublished: '2026-09-01',
   };
 }
 
@@ -92,72 +83,6 @@ export function generateFAQSchema(
   };
 }
 
-export function generateBreadcrumbSchema(
-  toolName: string,
-  toolSlug: string,
-  categoryName: string,
-  categorySlug: string
-) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    '@id': `https://www.iteradvisors.com/ressources/outils/${toolSlug}#breadcrumb`,
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Ressources',
-        item: 'https://www.iteradvisors.com/ressources',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Outils',
-        item: 'https://www.iteradvisors.com/ressources/outils',
-      },
-      ...(CATEGORIES_WITH_PAGE.has(categorySlug) ? [{
-        '@type': 'ListItem',
-        position: 3,
-        name: categoryName,
-        item: `https://www.iteradvisors.com/ressources/outils/${categorySlug}`,
-      }] : []),
-      {
-        '@type': 'ListItem',
-        position: CATEGORIES_WITH_PAGE.has(categorySlug) ? 4 : 3,
-        name: toolName,
-        item: `https://www.iteradvisors.com/ressources/outils/${toolSlug}`,
-      },
-    ],
-  };
-}
-
-export function generateSoftwareApplicationSchema(tool: Tool) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: tool.name,
-    url: tool.website,
-    applicationCategory: 'BusinessApplication',
-    // SEO-DAF-13 (2026-08-09) — deux corrections sur ce générateur, qui
-    // n'est appelé nulle part aujourd'hui mais reste exporté :
-    //  1. `offers.price` recevait `tool.priceRange` (« 39-199 €/mois »).
-    //     `price` attend une valeur numérique unique ; une fourchette y est
-    //     invalide. `offers` est retiré tant qu'aucun prix atomique n'existe
-    //     dans data/tools.ts — la fourchette reste affichée en clair sur la
-    //     fiche.
-    //  2. `aggregateRating` agrégeait… un seul avis, le nôtre
-    //     (`ratingCount: 1`). Un avis éditorial unique se balise en `Review`
-    //     — c'est ce que fait generateToolReviewSchema ci-dessus. Un
-    //     aggregateRating auto-déclaré n'est pas éligible au review snippet
-    //     et expose à une action manuelle.
-    author: {
-      '@type': 'Organization',
-      name: 'Iter Advisors',
-      url: 'https://www.iteradvisors.com',
-    },
-  };
-}
-
 /**
  * HowTo JSON-LD schema for tool implementation guides (TICKET 31).
  * Generates a schema.org/HowTo from a tool's implementationGuide steps,
@@ -175,7 +100,8 @@ export function generateHowToSchema(
     '@id': `https://www.iteradvisors.com/ressources/outils/${toolSlug}#howto`,
     name: `Comment implémenter ${toolName}`,
     description: `Guide d'implémentation de ${toolName} étape par étape, par les DAF externalisés d'Iter Advisors.`,
-    ...(totalDuration ? { totalTime: totalDuration } : {}),
+    // schema.org expects an ISO 8601 duration, not a human label such as '2 semaines'.
+    ...(/^P(?=\d|T\d)(?:\d+(?:\.\d+)?[YMWD])*(?:T(?:\d+(?:\.\d+)?[HMS])*)?$/.test(totalDuration ?? '') ? { totalTime: totalDuration } : {}),
     step: steps.map((s, i) => ({
       '@type': 'HowToStep',
       position: i + 1,

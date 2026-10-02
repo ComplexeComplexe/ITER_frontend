@@ -80,11 +80,11 @@ export default async function Page() {
               Le rôle
             </h2>
             <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              Vous piloterez l'ensemble de notre stratégie marketing et croissance :
+              Vous piloterez l&apos;ensemble de notre stratégie marketing et croissance :
             </p>
             <ul className="site-copy space-y-2 text-sm sm:text-base text-muted-foreground">
               <li>
-                • Définir et exécuter la stratégie d'acquisition et de
+                • Définir et exécuter la stratégie d&apos;acquisition et de
                 positionnement auprès des startups et PME
               </li>
               <li>
@@ -100,7 +100,7 @@ export default async function Page() {
                 taux de conversion)
               </li>
               <li>
-                • Coordonner avec l'équipe ventes pour l'inbound et l'outbound
+                • Coordonner avec l&apos;équipe ventes pour l&apos;inbound et l&apos;outbound
               </li>
               <li>
                 • Suivre la réputation et la présence de marque en ligne
@@ -120,11 +120,11 @@ export default async function Page() {
                 </h3>
                 <ul className="site-copy space-y-1 text-sm sm:text-base text-muted-foreground">
                   <li>
-                    • 4-6 ans d'expérience en marketing B2B, idéalement dans
+                    • 4-6 ans d&apos;expérience en marketing B2B, idéalement dans
                     le secteur du conseil ou des services
                   </li>
                   <li>
-                    • Expérience du growth hacking ou de l'inbound marketing
+                    • Expérience du growth hacking ou de l&apos;inbound marketing
                   </li>
                   <li>
                     • Maîtrise des outils : Google Analytics, CMS, SEO tools,

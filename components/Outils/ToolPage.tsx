@@ -1,550 +1,79 @@
-'use client';
-
+import Link from 'next/link';
 import PageLayout from '@/components/PageLayout';
 import Breadcrumb from '@/components/Breadcrumb';
-import CTASection from '@/components/CTASection';
 import ToolHeader from './ToolHeader';
-import VerbatimBlock from './VerbatimBlock';
-import StackCombo from './StackCombo';
-import { Tool, getToolsByCategory, tools as allTools, CATEGORIES_WITH_PAGE } from '@/data/tools';
-import { getVerbatimsByTool } from '@/data/verbatims';
-import { getToolDetails } from '@/data/toolDetails';
-import {
-  generateToolReviewSchema,
-  generateFAQSchema,
-  generateBreadcrumbSchema,
-  generateHowToSchema,
-  getToolAuthor,
-  TOOLS_REVIEW_DATE,
-  TOOLS_REVIEW_DATE_LABEL,
-} from '@/lib/schemas/toolSchemas';
-import Link from 'next/link';
+import type { CmsNavItem } from '@/lib/static-content';
+import { type Tool, getToolsByCategory, CATEGORIES_WITH_PAGE } from '@/data/tools';
+import { toolSelection, TOOL_SELECTION_REVIEW_DATE } from '@/data/toolSelection';
+import { generateToolArticleSchema, generateFAQSchema, getToolAuthor } from '@/lib/schemas/toolSchemas';
 import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
 
 export interface ToolPageProps {
   slug: string;
   locale: 'fr' | 'en' | 'es';
-  cmsNavigation?: any;
+  cmsNavigation?: CmsNavItem[];
   tool: Tool;
 }
-
-const categoryLabels = {
-  comptabilite: 'Comptabilité',
-  tresorerie: 'Trésorerie',
-  depenses: 'Gestion des dépenses',
-  paie: 'Paie & RH',
-  // Refonte outils (2026-07-17) — 4 nouvelles catégories ajoutées
-  // en même temps que 7 outils (Kyriba, Power BI, Upflow, LeanPay,
-  // Factorial, Carta, Equify).
-  recouvrement: 'Recouvrement client',
-  sirh: 'SIRH & RH',
-  equity: 'Equity / Cap Table',
-  reporting: 'Reporting & Dataviz',
+const categoryLabels: Record<Tool['category'], string> = {
+  comptabilite: 'Comptabilité', tresorerie: 'Trésorerie', depenses: 'Gestion des dépenses',
+  paie: 'Paie et RH', recouvrement: 'Recouvrement client', sirh: 'SIRH et RH',
+  equity: 'Actionnariat et cap table', reporting: 'Reporting et BI',
 };
 
-// Predefined stacks for each tool
-const toolStacks: Record<string, any[]> = {
-  pennylane: [
-    {
-      combo: [
-        { name: 'Pennylane', slug: 'pennylane', logo: '/images/logos/tools/pennylane.svg', role: 'Comptabilité' },
-        { name: 'Agicap', slug: 'agicap', logo: '/images/logos/tools/agicap.svg', role: 'Trésorerie' },
-        { name: 'Spendesk', slug: 'spendesk', logo: '/images/logos/tools/spendesk.svg', role: 'Dépenses' },
-      ],
-      title: 'Le combo gagnant',
-      description: 'La trinité pour une SaaS Series A/B',
-    },
-  ],
-  agicap: [
-    {
-      combo: [
-        { name: 'Pennylane', slug: 'pennylane', logo: '/images/logos/tools/pennylane.svg', role: 'Comptabilité' },
-        { name: 'Agicap', slug: 'agicap', logo: '/images/logos/tools/agicap.svg', role: 'Trésorerie' },
-        { name: 'Spendesk', slug: 'spendesk', logo: '/images/logos/tools/spendesk.svg', role: 'Dépenses' },
-      ],
-      title: 'Le combo gagnant',
-      description: 'La trinité pour une SaaS Series A/B',
-    },
-  ],
-};
-
-const faqItems = {
-  pennylane: [
-    {
-      question: 'Combien coûte Pennylane ?',
-      answer:
-        "Le prix dépend de la formule et des utilisateurs. Vérifier les modules, chaque entité et la facturation mensuelle ou annuelle.",
-    },
-    {
-      question: 'Pennylane convient-il aux startups ?',
-      answer:
-        "Le prix dépend de la formule et des utilisateurs. Vérifier les modules, chaque entité et la facturation mensuelle ou annuelle.",
-    },
-    {
-      question: 'Combien de temps pour migrer vers Pennylane ?',
-      answer:
-        'La migration vers Pennylane prend 1 à 3 semaines selon la propreté de la comptabilité existante.',
-    },
-  ],
-  agicap: [
-    {
-      question: 'Combien coûte Agicap ?',
-      answer:
-        "Agicap propose une tarification sur mesure. Faire préciser les modules, les entités, les connexions et les frais de déploiement.",
-    },
-    {
-      question: 'Qui devrait utiliser Agicap ?',
-      answer:
-        'PME et startups de 10-100 personnes ayant besoin d\'une visibilité trésorerie à 13 semaines.',
-    },
-  ],
-  spendesk: [
-    {
-      question: 'Combien coûte Spendesk ?',
-      answer:
-        "Les tarifs sont adaptés aux besoins, au périmètre déployé et au niveau de service. Demander un devis détaillé.",
-    },
-    {
-      question: 'Spendesk vs Pleo ?',
-      answer:
-        'Spendesk pour 15+ cartes et workflows complexes. Pleo pour moins de 10 cartes et structures simples.',
-    },
-  ],
-  payfit: [
-    {
-      question: 'Combien coûte PayFit ?',
-      answer:
-        "Le coût inclut un forfait qui varie avec l’effectif, le prix par collaborateur selon l’offre et les éventuels établissements et services supplémentaires. Comparer hors promotion.",
-    },
-    {
-      question: 'PayFit pour les startups en seed ?',
-      answer:
-        "Le coût inclut un forfait qui varie avec l’effectif, le prix par collaborateur selon l’offre et les éventuels établissements et services supplémentaires. Comparer hors promotion.",
-    },
-  ],
-};
-
-export default function ToolPage({
-  slug,
-  locale = 'fr',
-  cmsNavigation,
-  tool,
-}: ToolPageProps) {
-  const verbatim = getVerbatimsByTool(slug);
-  const toolDetails = getToolDetails(slug);
-  const stacksForTool = toolDetails?.stackCombos || toolStacks[slug] || [];
-  const faqForTool = toolDetails?.faqExpanded || faqItems[slug as keyof typeof faqItems] || [];
-  const alternativeTools = getToolsByCategory(tool.category).filter((t) => t.slug !== slug);
+/** Static editorial content remains on the server; interactive navigation keeps its own boundary. */
+export default function ToolPage({ slug, locale = 'fr', cmsNavigation, tool }: ToolPageProps) {
+  const selection = toolSelection[slug];
+  const alternatives = getToolsByCategory(tool.category).filter(t => t.slug !== slug);
   const author = getToolAuthor(tool);
-  const modified = PAGE_REVISIONS[`/ressources/outils/${slug}`] ?? TOOLS_REVIEW_DATE;
-  const modifiedLabel = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${modified}T12:00:00Z`));
-
+  const modified = PAGE_REVISIONS[`/ressources/outils/${slug}`] ?? TOOL_SELECTION_REVIEW_DATE;
+  const label = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${modified}T12:00:00Z`));
+  const faq = [
+    { question: selection.question, answer: selection.answer },
+    { question: `Quel budget prévoir pour ${tool.name} ?`, answer: selection.cost },
+  ];
   return (
-    <PageLayout locale={locale}>
-      {/* Hero section */}
-      <section className="site-hero bg-background pt-32 pb-12">
-        <div className="container">
-          <Breadcrumb
-            locale={locale}
-            items={[
-              { label: 'Ressources', href: '/ressources' },
-              { label: 'Outils', href: '/ressources/outils' },
-              {
-                label: categoryLabels[tool.category as keyof typeof categoryLabels],
-                // SEO-ULT §4b (2026-08-15) — quatre catégories n'ont pas de
-                // page (equity-cap-table, recouvrement-cash-collection,
-                // reporting-dataviz, sirh-rh) : leur URL redirige vers le hub.
-                // Le fil d'Ariane les affiche sans lien plutôt que d'y envoyer.
-                href: CATEGORIES_WITH_PAGE.has(tool.categorySlug)
-                  ? `/ressources/outils/${tool.categorySlug}`
-                  : undefined,
-              },
-              { label: tool.name },
-            ]}
-          />
-
-          {/* CONTENUS-T1/T2 (2026-08-31) — la requête est « avis {outil} » :
-              le mot « avis » ouvre désormais le H1, l'outil suit. */}
-          <h1 className="text-3xl lg:text-4xl font-bold font-heading text-foreground mt-8 mb-4">
-            Avis {tool.name} : ce que nos DAF externalisés en pensent
-          </h1>
-          {/* REDESIGN-P3 (2026-09-01) — un avis sans auteur ni date ne vaut
-              rien sur une requête « avis {outil} » : byline visible, reliée
-              à la fiche du signataire, et date de dernière revue. */}
-          <p className="text-sm text-muted-foreground mb-8">
-            Avis rédigé par{' '}
-            <Link href={author.url} rel="author" className="text-iter-violet font-medium hover:underline">
-              {author.name}
-            </Link>
-            , DAF externalisé chez Iter Advisors · mis à jour le{' '}
-            <time dateTime={modified}>{modifiedLabel}</time> · sans affiliation ni
-            commission
-          </p>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
+      <section className="site-hero bg-background pt-32 pb-8">
+        <div className="container max-w-4xl">
+          <Breadcrumb locale={locale} items={[
+            { label: 'Ressources', href: '/ressources' }, { label: 'Outils', href: '/ressources/outils' },
+            { label: categoryLabels[tool.category], href: CATEGORIES_WITH_PAGE.has(tool.categorySlug) ? `/ressources/outils/${tool.categorySlug}` : undefined },
+            { label: tool.name },
+          ]} />
+          <h1 className="mt-8 mb-4 text-3xl lg:text-4xl font-bold font-heading text-foreground">Avis {tool.name} : usages et critères de choix</h1>
+          <p className="text-sm text-muted-foreground mb-6">Repères éditoriaux par <Link href={author.url} rel="author" className="text-iter-violet underline">{author.name}</Link> · mis à jour le <time dateTime={modified}>{label}</time></p>
+          <p className="site-copy text-lg text-foreground/85 leading-relaxed">{selection.intro}</p>
+          <p className="mt-4"><Link href={selection.comparison.href} className="text-iter-violet font-semibold underline">{selection.comparison.label}</Link></p>
         </div>
       </section>
-
-      {/* JSON-LD Schemas */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateToolReviewSchema(tool)),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            generateBreadcrumbSchema(
-              tool.name,
-              tool.slug,
-              categoryLabels[tool.category as keyof typeof categoryLabels],
-              tool.categorySlug
-            )
-          ),
-        }}
-      />
-      {faqForTool.length > 0 && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              generateFAQSchema(tool.name, faqForTool, tool.slug)
-            ),
-          }}
-        />
-      )}
-      {/* HowTo JSON-LD — TICKET 31 */}
-      {toolDetails?.implementationGuide && toolDetails.implementationGuide.length > 0 && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              generateHowToSchema(
-                tool.name,
-                tool.slug,
-                toolDetails.implementationGuide,
-                tool.implementationTime
-              )
-            ),
-          }}
-        />
-      )}
-
-      {/* Tool Header Component */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolArticleSchema(tool)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(tool.name, faq, tool.slug)) }} />
       <section className="bg-background py-8">
-        <div className="container">
-          <ToolHeader
-            name={tool.name}
-            logo={tool.logo}
-            logoAlt={tool.logoAlt}
-            category={categoryLabels[tool.category as keyof typeof categoryLabels]}
-            categorySlug={tool.categorySlug}
-            rating={tool.rating}
-            forWho={tool.forWho}
-            notForWho={tool.notForWho}
-            implementationTime={tool.implementationTime}
-            priceRange={tool.priceRange}
-            pricingKey={tool.slug}
-          />
-        </div>
+        <div className="container max-w-4xl"><ToolHeader name={tool.name} logo={tool.logo} logoAlt={tool.logoAlt} category={categoryLabels[tool.category]} categorySlug={tool.categorySlug} forWho={selection.uses} notForWho={selection.warnings} implementationTime="" priceRange={tool.priceRange} pricingKey={slug} /></div>
       </section>
-
-      {/* Verdict section */}
-      <section className="bg-blue-50 border-l-4 border-l-blue-900 py-8 px-6 my-12">
-        <div className="container">
-          <p className="font-semibold text-gray-900 mb-2">Verdict 30 secondes</p>
-          <p className="text-gray-700">
-            {toolDetails?.verdict30s || `${tool.name} peut répondre aux usages suivants : ${tool.forWho.join(', ')}. Le choix dépend de vos sources, des contrôles attendus, du coût complet et de la personne qui maintiendra l’outil. Validez ces points sur un périmètre limité avant de déployer.`}
-          </p>
-          {/* MAILLAGE-T8 (2026-08-31) — les 20 fiches outils étaient bien
-              maillées entre elles mais coupées du cluster DAF : l'avis venait
-              de nos missions sans jamais lier l'offre qui les porte. */}
-          <p className="text-sm text-gray-600 mt-4">
-            Cet avis vient du terrain : nos{' '}
-            <Link href="/daf-externalise" className="text-blue-900 underline hover:no-underline">
-              directeurs financiers externalisés
-            </Link>{' '}
-            déploient et exploitent {tool.name} en mission chez leurs clients — voir aussi les{' '}
-            <Link href="/daf-externalise/tarifs" className="text-blue-900 underline hover:no-underline">
-              tarifs du DAF externalisé
-            </Link>
-            .
-          </p>
-        </div>
-      </section>
-
-      {/* Méthode et limites — REDESIGN-P3 (2026-09-01). Un avis honnête dit
-          comment il a été formé et ce qu'il ne couvre pas. */}
-      <section className="bg-background pb-4">
+      <section className="site-section bg-muted/20 py-12">
         <div className="container max-w-3xl">
-          <details className="site-card group rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
-            <summary className="cursor-pointer list-none flex items-start justify-between gap-3 font-semibold text-foreground">
-              <span>Méthode et limites de cet avis</span>
-              <span aria-hidden className="text-iter-violet shrink-0 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <ul className="site-copy mt-4 space-y-2 text-sm sm:text-base text-muted-foreground leading-relaxed list-disc pl-5 marker:text-iter-violet">
-              <li>
-                <strong className="text-foreground">D&apos;où vient l&apos;avis.</strong> {tool.name} a été
-                déployé ou exploité par nos DAF externalisés en mission chez des PME et des startups
-                de 10 à 200 personnes. Nous jugeons l&apos;outil sur ce périmètre, pas au-delà.
-              </li>
-              <li>
-                <strong className="text-foreground">Indépendance.</strong> Aucune commission, aucune
-                affiliation, aucun lien sponsorisé. Nous ne vendons aucun de ces outils.
-              </li>
-              <li>
-                <strong className="text-foreground">Les prix.</strong> Les bases de tarification et sources éditeurs ont été revues
-                le {TOOLS_REVIEW_DATE_LABEL}. Aucun montant fixe n’est repris sans périmètre confirmé ; vérifiez
-                sur le site de l&apos;éditeur avant de décider.
-              </li>
-              <li>
-                <strong className="text-foreground">Ce que la note mesure.</strong> L&apos;adéquation au
-                besoin d&apos;une PME pilotée par un DAF externalisé — pas une notation absolue de
-                l&apos;outil. Un {tool.rating}/5 ici peut être un mauvais choix pour un groupe, et
-                inversement.
-              </li>
-            </ul>
-          </details>
+          <h2 className="mb-5 text-2xl font-bold font-heading">Un parcours à tester avec {tool.name}</h2>
+          <p className="site-copy text-muted-foreground leading-relaxed mb-6">{selection.scenario} Protocole proposé, sans résultat client mesuré.</p>
+          <ol className="space-y-5">
+            {selection.checks.map((check, index) => <li id={`step${index + 1}`} key={check.title} className="site-card p-5 border border-border rounded-2xl bg-background scroll-mt-28"><h3 className="font-semibold mb-2">{index + 1}. {check.title}</h3><p className="site-copy text-muted-foreground leading-relaxed">{check.text}</p></li>)}
+          </ol>
+          {/* Previously published implementation links still land at the relevant verification section. */}
+          {Array.from({ length: 5 - selection.checks.length }, (_, i) => <span key={i} id={`step${selection.checks.length + i + 1}`} className="block scroll-mt-28" />)}
+          <p className="site-copy mt-6 text-muted-foreground leading-relaxed">{selection.limit}</p>
         </div>
       </section>
-
-      {/* La dichotomie "Pour qui / Pour qui pas" a été retirée (2026-07-30)
-          — redondante avec le bloc Points forts/Points de vigilance déjà
-          affiché dans ToolHeader ci-dessus, et avec les sections
-          Avantages/Limitations ci-dessous quand elles existent. */}
-
-      {/* Advantages section */}
-      {toolDetails?.advantages && toolDetails.advantages.length > 0 && (
-        <section className="site-section bg-muted/20 py-16">
-          <div className="container max-w-3xl">
-            <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Avantages clés</h2>
-            <div className="space-y-6">
-              {toolDetails.advantages.map((advantage, idx) => (
-                <div key={idx} className="site-card bg-background p-6 rounded-lg border border-green-200 border-l-4 border-l-green-600">
-                  <h3 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                    <span className="text-green-600 text-xl">✓</span>
-                    {advantage.title}
-                  </h3>
-                  <p className="text-gray-700">{advantage.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Limitations section */}
-      {toolDetails?.limitations && toolDetails.limitations.length > 0 && (
-        <section className="site-section bg-background py-16">
-          <div className="container max-w-3xl">
-            <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Limitations et solutions</h2>
-            <div className="space-y-6">
-              {toolDetails.limitations.map((limitation, idx) => (
-                <div key={idx} className="site-card bg-muted/20 p-6 rounded-lg border border-orange-200 border-l-4 border-l-orange-600">
-                  <h3 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                    <span className="text-orange-600 text-xl">⚠</span>
-                    {limitation.title}
-                  </h3>
-                  <p className="text-gray-700"><strong>Solution :</strong> {limitation.workaround}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Implementation guide section */}
-      {toolDetails?.implementationGuide && toolDetails.implementationGuide.length > 0 && (
-        <section className="site-section bg-muted/20 py-16">
-          <div className="container max-w-3xl">
-            <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Guide d'implémentation</h2>
-            <div className="space-y-4">
-              {toolDetails.implementationGuide.map((item, idx) => (
-                <div key={idx} id={`step${idx + 1}`} className="site-card bg-background p-6 rounded-lg border border-gray-200 scroll-mt-28">
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center h-8 w-8 rounded-full bg-iter-violet text-white font-bold text-sm">
-                        {idx + 1}
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-bold text-gray-900 mb-1">{item.step}</h3>
-                      <p className="text-gray-700 text-sm">{item.detail}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Retour terrain — TICKET 20 */}
-      {toolDetails?.retourTerrain && (
-        <section className="site-section bg-iter-violet/5 border-y border-iter-violet/20 py-16">
-          <div className="container max-w-3xl">
-            <h2 className="text-2xl font-bold font-heading text-foreground mb-6">Retour terrain</h2>
-            <p className="text-gray-700 leading-relaxed italic mb-8">
-              « {toolDetails.retourTerrain.clientStory} »
-            </p>
-            <div className="site-card bg-background p-6 rounded-lg border border-iter-violet/20">
-              <p className="font-semibold text-gray-900 mb-2">Stack recommandé</p>
-              <p className="text-gray-700 mb-2">
-                <strong>{toolDetails.retourTerrain.recommendedStack.tools.join(' + ')}</strong>
-                {' = notre stack le plus déployé pour ce besoin.'}
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Budget total : <strong>{toolDetails.retourTerrain.recommendedStack.budget}</strong>. ROI constaté : <strong>{toolDetails.retourTerrain.recommendedStack.roi}</strong>.
-              </p>
-              {toolDetails.retourTerrain.relatedCategoryHref && (
-                <Link
-                  href={toolDetails.retourTerrain.relatedCategoryHref}
-                  className="inline-block mt-4 text-iter-violet font-semibold hover:underline text-sm"
-                >
-                  → {toolDetails.retourTerrain.relatedCategoryLabel ?? 'Voir le comparatif complet'}
-                </Link>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Verbatim block */}
-      {verbatim && (
-        <section className="site-section bg-muted/20 py-16">
-          <div className="container max-w-3xl">
-            <VerbatimBlock
-              quote={verbatim.quote}
-              author={verbatim.toolSlug === 'pennylane' ? 'Sébastien Doat' : 'Benjamin Ziza'}
-              role="Founding Partner & CFO"
-              company="Iter Advisors"
-              variant={verbatim.expert === 'sebastien' ? 'sebastien' : 'benjamin'}
-            />
-          </div>
-        </section>
-      )}
-
-      {/* Stack Combo sections */}
-      {stacksForTool && stacksForTool.length > 0 && (
-        <section className="site-section bg-background py-16">
-          <div className="container max-w-3xl">
-            <h2 className="text-2xl font-bold font-heading text-foreground mb-12">Stacks recommandés</h2>
-            <div className="space-y-12">
-              {stacksForTool.map((stack: any, idx: number) => {
-                // Derive the stack tool map from the canonical tools array so
-                // every tool (incl. the 9 added via TICKET 5) renders with
-                // its real logo + SEO alt text in stack combos.
-                const roleByCategory: Record<Tool['category'], string> = {
-                  comptabilite: 'Comptabilité',
-                  tresorerie: 'Trésorerie',
-                  depenses: 'Dépenses',
-                  paie: 'Paie',
-                  // Refonte outils (2026-07-17) — nouvelles catégories.
-                  recouvrement: 'Recouvrement',
-                  sirh: 'SIRH',
-                  equity: 'Equity',
-                  reporting: 'Reporting',
-                };
-                const comboToRender = stack.tools && stack.tools.length > 0 ?
-                  stack.tools.map((toolName: string) => {
-                    const t = allTools.find((x) => x.name === toolName);
-                    if (t) {
-                      return {
-                        name: t.name,
-                        slug: t.slug,
-                        logo: t.logo,
-                        logoAlt: t.logoAlt,
-                        role: roleByCategory[t.category],
-                      };
-                    }
-                    // Unknown tool name (e.g. "Stripe", "SAP / NetSuite"
-                    // referenced in a stack combo but not in our data) —
-                    // render the label without a logo rather than crash.
-                    //
-                    // SEO-ULT §4b (2026-08-15) — le slug était fabriqué en
-                    // slugifiant le nom, ce qui produisait des liens vers des
-                    // fiches inexistantes : /ressources/outils/stripe, et même
-                    // /ressources/outils/sap-/-netsuite, dont la barre oblique
-                    // venait du nom. `slug: null` laisse la carte visible mais
-                    // sans lien.
-                    return { name: toolName, slug: null, logo: '', role: '' };
-                  }) : (stack.combo || []);
-                return (
-                  <div key={idx}>
-                    <StackCombo
-                      combo={comboToRender}
-                      title={stack.title}
-                      description={stack.description}
-                    />
-                    <p className="text-sm text-muted-foreground mt-4">{stack.context}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Alternatives section */}
-      {alternativeTools.length > 0 && (
-        <section className="site-section bg-muted/20 py-16">
-          <div className="container max-w-3xl">
-            <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Alternatives</h2>
-            <div className="space-y-4">
-              {alternativeTools.map((altTool) => (
-                <Link
-                  key={altTool.slug}
-                  href={`/ressources/outils/${altTool.slug}`}
-                  className="site-card block p-4 bg-background rounded-lg border border-gray-200 hover:border-iter-violet/50 hover:shadow-md transition-all"
-                >
-                  <h3 className="font-semibold text-gray-900 text-iter-violet hover:underline">
-                    {altTool.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mt-1">{altTool.shortDescription}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Related tool mention — editorial cross-link, distinct from the
-          automated "Alternatives" list above (2026-07-30, malibou integration) */}
-      {toolDetails?.relatedMention && (
-        <section className="bg-background py-8">
-          <div className="container max-w-3xl">
-            <p className="text-gray-700">
-              {toolDetails.relatedMention.before}{' '}
-              <Link href={toolDetails.relatedMention.linkHref} className="text-iter-violet font-semibold hover:underline">
-                {toolDetails.relatedMention.linkText}
-              </Link>
-              {toolDetails.relatedMention.after ?? ''}
-            </p>
-          </div>
-        </section>
-      )}
-
-      {/* FAQ section */}
-      {faqForTool.length > 0 && (
-        <section className="site-section bg-background py-16">
-          <div className="container max-w-3xl">
-            <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Questions fréquentes</h2>
-            <div className="space-y-6">
-              {faqForTool.map((item, idx) => (
-                <div key={idx}>
-                  <h3 className="font-bold text-gray-900 mb-2">{item.question}</h3>
-                  <p className="text-gray-700">{item.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* CTA section */}
-      <CTASection locale={locale} />
+      <section className="bg-background py-12">
+        <div className="container max-w-3xl">
+          <h2 className="text-2xl font-bold font-heading mb-6">Questions fréquentes sur {tool.name}</h2>
+          <div className="space-y-4">{faq.map(item => <details key={item.question} className="site-card rounded-2xl border border-border p-5"><summary className="cursor-pointer font-semibold">{item.question}</summary><p className="site-copy mt-4 text-muted-foreground leading-relaxed">{item.answer}</p></details>)}</div>
+          <p className="mt-8"><Link href={selection.service.href} className="font-semibold text-iter-violet underline">{selection.service.label}</Link> · <Link href="/daf-externalise" className="text-iter-violet underline">DAF externalisé</Link></p>
+          {alternatives.length > 0 && <details className="site-card mt-6 p-5 border border-border rounded-2xl"><summary className="cursor-pointer font-semibold">Autres fiches du même besoin</summary><ul className="mt-4 flex flex-wrap gap-x-6 gap-y-3">{alternatives.map(t => <li key={t.slug}><Link href={`/ressources/outils/${t.slug}`} className="text-iter-violet underline">{t.name}</Link></li>)}</ul></details>}
+          <h2 className="text-xl font-bold mt-10 mb-3">Sources et méthode</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed">Documentation : <a href={selection.source} className="text-iter-violet underline">source officielle {tool.name}</a>, consultée le <time dateTime={TOOL_SELECTION_REVIEW_DATE}>2 octobre 2026</time>.</p>
+          <p className="mt-3 text-sm"><Link href="/ressources/blog/essentiels-outils-tech-finance" className="text-iter-violet underline">Méthode complète pour choisir et intégrer les outils finance</Link></p>
+        </div>
+      </section>
     </PageLayout>
   );
 }

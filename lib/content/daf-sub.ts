@@ -40,14 +40,14 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       breadcrumbLabel: "Le métier de DAF",
       "h1": "DAF : définition, rôle et missions du directeur administratif et financier",
       modified: {
-        date: "2026-10-01",
-        label: "1er octobre 2026"
+        date: "2026-10-02",
+        label: "2 octobre 2026"
       },
       sections: [
         {
           content: [
             "**Le DAF, ou directeur administratif et financier, pilote la fonction finance d’une entreprise : trésorerie, budget, reporting, financement et coordination comptable.** Il aide le dirigeant à comprendre les résultats, à anticiper les besoins et à préparer ses décisions. Son périmètre dépend de la taille et de l’organisation de l’entreprise.",
-            "DAF, directeur financier et CFO désignent des fonctions proches. Le titre DAF souligne la dimension administrative, qui peut inclure la coordination de la paie ou des sujets RH. Ces responsabilités doivent être précisées avec les équipes et les conseils compétents."
+            "DAF, directeur financier et CFO désignent des fonctions proches. Le titre DAF souligne la dimension administrative, qui peut inclure la coordination de la paie ou des sujets RH. Ces responsabilités doivent être précisées avec les équipes et les conseils compétents. Pour confier ce pilotage à un [directeur financier externalisé](/daf-externalise), consultez la présentation de notre accompagnement."
           ]
         },
         {

@@ -10,8 +10,11 @@ export interface DafLocalContent {
   h1: string;
   intro: string[];
   sections: {
+    id?: string;
+    aliases?: string[];
     heading: string;
     content: string[];
+    links?: { href: string; label: string }[];
   }[];
   faq: {
     question: string;
@@ -25,72 +28,140 @@ export type DafLocalCity = "barcelone" | "paris" | "toulouse";
 const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
   barcelone: {
     fr: {
-      meta: {
-        title: "DAF & CFO externalisé à Barcelone | Iter Advisors",
-        description:
-          "Iter Advisors, cabinet de DAF externalisé à Barcelone. CFO à temps partagé pour startups et PME en Espagne. Franco-espagnol, +85 entreprises.",
-      },
-      breadcrumbLabel: "DAF externalisé Barcelone",
-      h1: "DAF externalisé à Barcelone : votre CFO à temps partagé en Espagne",
-      intro: [
-        "Barcelone est devenue l'un des hubs technologiques les plus dynamiques d'Europe, attirant startups, scale-ups et PME internationales. Dans cet écosystème en pleine croissance, disposer d'un directeur financier expérimenté est un avantage concurrentiel décisif.",
-        // Bloc 3 (10/08/2026) — Barcelone est le siège du cabinet, pas une antenne :
-        // quatre associés et CFOs y sont basés en présence permanente.
-        "Barcelone est le siège d'Iter Advisors, pas une antenne : quatre de nos associés et CFOs y sont basés en permanence — Benjamin Ziza et Florent Greth, associés et CFOs, Tom Jauffre sur les sujets CFO et M&A, et Deisy Arias Ramírez, référente du marché espagnol. Les échanges se font en français, en espagnol et en anglais.",
+  "meta": {
+    "title": "DAF externalisé à Barcelone pour PME et startups",
+    "description": "Direction financière à Barcelone : trésorerie, reporting France-Espagne, financement et coordination avec votre gestoría. Périmètre et budget définis ensemble."
+  },
+  "breadcrumbLabel": "DAF externalisé Barcelone",
+  "h1": "DAF externalisé à Barcelone pour PME et startups",
+  "intro": [
+    "Votre entreprise est implantée à Barcelone ou développe une activité entre la France et l’Espagne. Vous cherchez des chiffres comparables, des prévisions de trésorerie et un interlocuteur pour préparer les décisions de la direction.",
+    "Barcelone est le siège d’Iter Advisors, Carrer Casp 54. Benjamin Ziza, Florent Greth, Tom Jauffre et Deisy Arias Ramírez y interviennent sur les sujets financiers. Les langues de travail, la présence sur site et les relais sont précisés au cadrage."
+  ],
+  "sections": [
+    {
+      "id": "missions",
+      "heading": "Une direction financière pour votre activité en Espagne",
+      "content": [
+        "La mission peut comprendre un prévisionnel de trésorerie, le budget et un reporting mensuel pour votre direction ou vos investisseurs. Pour un groupe présent dans les deux pays, nous définissons les rubriques, hypothèses et calendriers nécessaires à une lecture cohérente des entités.",
+        "Le financement se prépare avec les dirigeants et leurs conseils : modèle financier, scénarios, data room et suivi des questions. Le cas SolarMente décrit des travaux de structuration financière et d’accompagnement d’une opération ; ses résultats ne constituent pas une prévision pour une autre entreprise."
       ],
-      sections: [
+      "links": [
         {
-          heading: "Pourquoi choisir un DAF externalisé à Barcelone ?",
-          content: [
-            "Les entreprises que nous accompagnons à Barcelone relèvent surtout de la cleantech et de la transition énergétique, du climate risk et de la deeptech, du SaaS B2B, des marketplaces et de la fintech, ainsi que de l'adtech, du retail et de l'e-commerce. Profil dominant : des startups et scale-ups internationales implantées à Barcelone, souvent financées par des fonds étrangers, avec un besoin de reporting bilingue et de conformité France-Espagne.",
-            "Nos CFOs basés à Barcelone maîtrisent l'environnement fiscal et juridique espagnol, les relations avec les banques locales (CaixaBank, Sabadell, BBVA) et les spécificités du marché ibérique. Ils interviennent en français, espagnol et anglais.",
-          ],
+          "href": "/daf-externalise",
+          "label": "Comprendre la mission de DAF externalisé"
         },
         {
-          heading: "Nos missions à Barcelone",
-          content: [
-            "Pilotage financier et reporting mensuel adapté aux normes espagnoles et internationales.",
-            "Gestion de trésorerie et optimisation du BFR dans un contexte multi-devises.",
-            "Préparation de levées de fonds auprès d'investisseurs espagnols et internationaux : nous avons piloté la Série B de 50 M$ de SolarMente (cleantech) et la Série A de 20 M$ de Mitiga Solutions (climate risk), deux entreprises barcelonaises.",
-            "Structuration comptable et fiscale pour les entreprises françaises implantées en Espagne.",
-            "Accompagnement M&A et due diligence pour les opérations cross-border France-Espagne.",
-          ],
+          "href": "/ressources/cas-clients/solarmente-serie-b-cleantech",
+          "label": "Lire le périmètre de la mission SolarMente"
         },
         {
-          heading: "L'avantage Iter Advisors à Barcelone",
-          content: [
-            "Notre siège est situé Carrer Casp 54, dans l'Eixample, à proximité des principaux hubs d'innovation (22@, Pier01). Nous travaillons avec un réseau de partenaires locaux : cabinets d'avocats, gestorías, banques et fonds d'investissement.",
-            "Avec plus de 85 entreprises accompagnées entre la France et l'Espagne, nous comprenons les enjeux spécifiques des entreprises qui opèrent sur les deux marchés : double comptabilité, prix de transfert, conventions fiscales franco-espagnoles.",
-          ],
-        },
-      ],
-      faq: [
-        {
-          question: "Combien coûte un DAF externalisé à Barcelone ?",
-          answer:
-            // FACTS (2026-09-01) — annonçait « 2 000 à 7 000+ EUR » et un TJM :
-            // la grille est la même sur tous nos bureaux (facts.ts, FORMULES),
-            // facturée au forfait mensuel, jamais à la journée.
-            "Nos formules à Barcelone vont de 3 000 à 8 000 € HT par mois selon la formule et le scope confié — la même grille que sur nos autres bureaux. La facturation est un forfait mensuel, sans durée d'engagement minimale (préavis de 30 jours) ; nous ne facturons pas à la journée.",
-        },
-        {
-          question: "Votre DAF externalisé parle-t-il espagnol ?",
-          answer:
-            "Oui, tous nos CFOs basés à Barcelone sont bilingues français-espagnol (et anglais). Ils maîtrisent la terminologie financière et fiscale dans les trois langues.",
-        },
-        {
-          question: "Intervenez-vous dans toute l'Espagne ?",
-          answer:
-            "Oui, bien que notre bureau soit à Barcelone, nous intervenons dans toute l'Espagne en mode hybride (présentiel + remote). Nous avons des clients à Madrid, Valence, Malaga et Bilbao.",
-        },
-        {
-          question: "Pouvez-vous gérer la comptabilité espagnole ?",
-          answer:
-            "Nous ne sommes pas un cabinet comptable, mais nous pilotons la relation avec votre gestoría ou expert-comptable espagnol. Nous assurons le contrôle de gestion, le reporting et la stratégie financière.",
-        },
-      ],
-      ctaButton: "Prendre rendez-vous à Barcelone",
+          "href": "/services/previsionnel-tresorerie",
+          "label": "Préparer un prévisionnel de trésorerie"
+        }
+      ]
     },
+    {
+      "id": "fiscalite",
+      "aliases": [
+        "recrutement"
+      ],
+      "heading": "Articuler le DAF, la gestoría et vos conseils",
+      "content": [
+        "Iter Advisors n’est pas un cabinet comptable. La mission de direction financière organise le pilotage et la coordination avec votre gestoría ou cabinet espagnol. La tenue, les déclarations, la paie et les conseils spécialisés restent attribués aux intervenants compétents dans le contrat.",
+        "Pour une filiale espagnole, identifiez qui produit les données locales, qui contrôle les flux intragroupe et qui les rapproche avec le reporting du groupe. Les règles fiscales et sociales dépendent de votre situation ; aucun taux ou avantage ne doit être appliqué sans examen par les conseils concernés.",
+        "Un recrutement doit aussi être inscrit dans les prévisions : rémunération, charges, date d’arrivée et capacité d’intégration. Un écart général de salaire entre deux villes ne permet pas d’établir le coût de votre poste."
+      ],
+      "links": [
+        {
+          "href": "/ressources/blog/filiale-espagnole-pilotage-financier",
+          "label": "Organiser le pilotage d’une filiale espagnole"
+        },
+        {
+          "href": "/services/comptabilite-externalisation",
+          "label": "Clarifier la coordination comptable"
+        },
+        {
+          "href": "/a-propos/benjamin-ziza",
+          "label": "Découvrir le profil de Benjamin Ziza"
+        }
+      ]
+    },
+    {
+      "id": "subventions",
+      "heading": "Financement : partir des dispositifs officiels",
+      "content": [
+        "ENISA présente des prêts participatifs pour startups et PME. ACCIÓ publie les appels à aides et services pour les entreprises. Barcelona Activa propose de l’accompagnement à l’entrepreneuriat. Ces dispositifs ont des objets, calendriers et conditions différents.",
+        "Consultez les conditions en vigueur et vérifiez l’éligibilité de l’entreprise avant de construire un dossier. Le plan de trésorerie doit distinguer demande, décision et encaissement. Un financement demandé n’est pas acquis ; les budgets, justificatifs et responsabilités sont à définir avec les intervenants concernés."
+      ],
+      "links": [
+        {
+          "href": "https://www.enisa.es/servicios/financiacion/startups-y-pymes/",
+          "label": "ENISA : financement des startups et PME"
+        },
+        {
+          "href": "https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/llistat-ajuts/",
+          "label": "ACCIÓ : appels à aides et services"
+        },
+        {
+          "href": "https://www.barcelonactiva.cat/ca/assessorament-formacio-networking",
+          "label": "Barcelona Activa : accompagnement et formation"
+        }
+      ]
+    },
+    {
+      "id": "erreurs",
+      "heading": "Préparer votre premier échange",
+      "content": [
+        "Présentez les entités, pays, outils, banques et interlocuteurs déjà en place. Ajoutez les décisions à préparer et les échéances proches : recrutement, clôture, besoin de financement ou reporting investisseur.",
+        "Les premiers travaux consistent à examiner les données disponibles, les accès et les points non rapprochés. Prévoyez une personne responsable de la transmission et des validations dans chaque entité. Le rythme de la mission dépend de ces besoins, plutôt que de la seule adresse du siège."
+      ],
+      "links": [
+        {
+          "href": "/daf-externalise/temps-partage",
+          "label": "Définir le rythme d’un DAF à temps partagé"
+        },
+        {
+          "href": "/contact#barcelone",
+          "label": "Présenter votre besoin à Barcelone"
+        }
+      ]
+    },
+    {
+      "id": "cout",
+      "heading": "Quel budget prévoir à Barcelone ?",
+      "content": [
+        `Les formules Iter vont de ${getDafOffer("fr").price}. ${getDafOffer("fr").billing} ${getDafOffer("fr").commitment}`,
+        "Le devis précise les livrables, les interlocuteurs, la disponibilité et les éventuels déplacements. La même grille Iter s’applique à ses implantations ; le lieu ne permet pas, à lui seul, de déduire une économie. Les travaux ponctuels et les prestations des conseils sont à distinguer du périmètre récurrent."
+      ],
+      "links": [
+        {
+          "href": "/daf-externalise/tarifs",
+          "label": "Comparer les formules et tarifs Iter Advisors"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Combien coûte un DAF externalisé à Barcelone ?",
+      "answer": `Les formules Iter vont de ${getDafOffer("fr").price}. ${getDafOffer("fr").billing} ${getDafOffer("fr").commitment}`
+    },
+    {
+      "question": "Quelles langues et quelle présence sont prévues ?",
+      "answer": "Les langues de travail, les interventions sur site, le travail à distance et les interlocuteurs sont précisés au cadrage, selon les besoins et les profils mobilisés."
+    },
+    {
+      "question": "Pouvez-vous gérer la comptabilité espagnole ?",
+      "answer": "Iter n’est pas un cabinet comptable. Nous organisons le pilotage et la coordination avec votre gestoría ou cabinet espagnol. La production des comptes, les déclarations et la paie sont attribuées explicitement aux professionnels concernés."
+    },
+    {
+      "question": "Pouvez-vous garantir une aide ou un financement ?",
+      "answer": "Non. Les dispositifs dépendent de critères, de calendriers et d’une décision de l’organisme. La préparation d’un dossier et des prévisions financières ne garantit ni l’éligibilité ni l’obtention du financement."
+    }
+  ],
+  "ctaButton": "Parlons de votre besoin à Barcelone"
+},
     en: {
       meta: {
         title: "Fractional CFO in Barcelona | Part-time CFO | Iter Advisors",

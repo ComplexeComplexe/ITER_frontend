@@ -23,15 +23,16 @@ export async function generateMetadata(): Promise<Metadata> {
 const htmlContent = `<p>malibou combine une plateforme RH, la technologie de paie Silae et un gestionnaire dédié qui produit et contrôle les bulletins. Cette approche vise les entreprises qui souhaitent disposer d'un SIRH moderne sans gérer seules la complexité de la paie. Nous avons analysé son fonctionnement, ses avantages, ses limites et son positionnement face à <a href="/ressources/outils/payfit">PayFit</a>.</p>
 <div class="not-prose rounded-2xl border border-border/60 bg-muted/20 p-6 my-8">
 <p class="text-xs font-bold uppercase tracking-widest text-iter-violet mb-3">Méthodologie de notre analyse</p>
-<p class="mb-0">À la date de publication, Iter Advisors n'a pas encore piloté de déploiement complet de malibou chez l'un de ses clients. Notre analyse repose sur l'étude de la solution, les informations communiquées par l'éditeur et les retours clients disponibles publiquement. Les tarifs affichés ont été relevés le 14 août 2026 sur les pages tarifaires publiques des deux éditeurs, malibou.com/tarif et payfit.com/fr/nos-offres, et sont revérifiés tous les six mois. Le périmètre fonctionnel et la liste des intégrations ont été confirmés par l'éditeur. En revanche, les chiffres de performance commerciale qu'il avance — dont l'économie moyenne annoncée — sont rapportés comme tels et n'ont pas été vérifiés de façon indépendante par Iter Advisors. Cette fiche sera actualisée à partir de nos futurs retours terrain.</p>
+<p class="mb-0">À la date de publication, Iter Advisors n'a pas encore piloté de déploiement complet de malibou chez l'un de ses clients. Notre analyse repose sur l'étude de la solution, les informations communiquées par l'éditeur et les retours clients disponibles publiquement. Les tarifs affichés ont été relevés le 14 août 2026 sur les pages tarifaires publiques des deux éditeurs, malibou.com/tarif et payfit.com/fr/nos-offres, Cette fiche ne garantit pas une actualisation automatique de ces tarifs. Le périmètre fonctionnel et la liste des intégrations ont été confirmés par l'éditeur. En revanche, les chiffres de performance commerciale qu'il avance — dont l'économie moyenne annoncée — sont rapportés comme tels et n'ont pas été vérifiés de façon indépendante par Iter Advisors. Cette fiche sera actualisée à partir de nos futurs retours terrain.</p>
 </div>
+<p>La <a href="https://www.malibou.com/tarif">page tarifaire de malibou</a>, consultée le 2 octobre 2026, affiche 28 € par collaborateur et par mois pour l’offre présentée aux entreprises de moins de 30 salariés, à partir de 5 salariés, et 50 € de mise en place par salarié. Elle présente aussi une offre sur mesure pour plus de 30 salariés. Demandez un devis précisant le périmètre et la fiscalité. Les chiffres PayFit du tableau restent des relevés historiques du 14 août.</p>
 <h2 id="essentiel">L'essentiel en 30 secondes</h2>
 <aside class="callout-tldr">
 <p class="callout-tldr__title">L'essentiel en 30 secondes</p>
 <p>malibou associe une plateforme RH (absences, congés, frais, onboarding) à une production de la paie confiée à un gestionnaire dédié, sur la technologie Silae.</p>
-<p><strong>Point fort :</strong> délègue la production de la paie à un gestionnaire dédié, utile pour les startups et PME de 5 à 80 salariés sans RH senior.</p>
-<p><strong>Point de vigilance :</strong> moins pertinent au-delà de 150-200 salariés ou pour une équipe paie interne experte attachée au self-service intégral.</p>
-<p><strong>Implémentation :</strong> 1 à 2 semaines, migration prise en charge par le gestionnaire dédié.</p>
+<p><strong>Point fort :</strong> délègue la production de la paie à un gestionnaire dédié, à examiner avec le responsable RH et paie selon le dossier.</p>
+<p><strong>Point de vigilance :</strong> faire confirmer la couverture des conventions, les établissements et la répartition des validations.</p>
+<p><strong>Implémentation :</strong> calendrier et responsabilités à convenir avant signature.</p>
 <p><strong>Prix :</strong> 28 € HT par collaborateur et par mois, à partir de 5 salariés, plus 50 € par salarié de frais de mise en place la première année. Un plan unique donnant accès à l'ensemble des fonctionnalités. <em>Tarifs relevés le 14 août 2026 sur malibou.com/tarif.</em></p>
 </aside>
 <h2 id="quest-ce-que-malibou">Qu'est-ce que malibou ?</h2>
@@ -48,9 +49,9 @@ const htmlContent = `<p>malibou combine une plateforme RH, la technologie de pai
 <p>malibou répond à un besoin moins bien couvert par les solutions principalement utilisées en autonomie : disposer d'une interface RH moderne tout en déléguant la production de la paie à un gestionnaire dédié. C'est un choix pertinent pour une entreprise qui ne dispose pas d'équipe paie interne et qui souhaite limiter le temps consacré au paramétrage et au contrôle mensuel des bulletins.</p>
 <h2 id="avantages">Avantages clés</h2>
 <p><strong>Un expert paie dédié, pas un ticket.</strong> Un gestionnaire de paie dédié suit le dossier de bout en bout, produit les bulletins chaque mois et gère les déclarations (DSN, événementiel), en échange direct par chat et téléphone.</p>
-<p><strong>Un accompagnement sur les conventions collectives.</strong> Avec plusieurs centaines de conventions collectives en France, disposer d'un expert qui vérifie la conformité au bon texte est une sécurité que le pur self-service n'offre pas.</p>
+<p><strong>Un accompagnement sur les conventions collectives.</strong> Avec plusieurs centaines de conventions collectives en France, disposer d'un expert qui vérifie la conformité au bon texte doit être cadré selon les conventions de votre entreprise.</p>
 <p><strong>Un SIRH tout-en-un.</strong> Paie, absences, congés, notes de frais, temps, entretiens, onboarding : tout est centralisé dans une seule plateforme.</p>
-<p><strong>Une paie produite sur Silae.</strong> La production s'appuie sur la technologie Silae, un moteur de paie déjà établi sur le marché français, plutôt que sur un moteur propriétaire non éprouvé.</p>
+<p><strong>Une paie produite sur Silae.</strong> La production s'appuie sur la technologie Silae, un moteur de paie déjà établi sur le marché français, plutôt que sur un autre moteur de paie.</p>
 <p><strong>Un tarif lisible.</strong> Un plan unique à 28 € HT par collaborateur et par mois, à partir de 5 salariés, donnant accès à l'ensemble des fonctionnalités — pas de module optionnel ni de palier à débloquer. Comptez en plus 50 € par salarié de frais de mise en place, à intégrer dans tout calcul sur douze mois. Selon l'éditeur, malibou permettrait environ 30 % d'économies à périmètre équivalent par rapport à des solutions comparables — chiffre communiqué par malibou, non vérifié de façon indépendante par Iter Advisors.</p>
 <p><strong>Une migration depuis PayFit prise en charge.</strong> Selon l'éditeur, une partie des clients malibou vient de PayFit ; le gestionnaire dédié prend en charge la récupération de l'historique et la migration du dossier.</p>
 <h2 id="comparatif-malibou-payfit">Comparatif malibou vs PayFit</h2>
@@ -69,7 +70,7 @@ const htmlContent = `<p>malibou combine une plateforme RH, la technologie de pai
 <tr><td>Maturité</td><td>Solution lancée en 2023, en phase de forte croissance</td><td>Solution établie, standard du marché startups/PME</td></tr>
 <tr><td>Entreprises cibles</td><td>TPE, startups et PME à partir de 5 salariés (borne haute à confirmer)</td><td>Startups et PME de 5 à 150 salariés</td></tr>
 <tr><td>Principal avantage</td><td>Déléguer la production de la paie tout en conservant une interface RH moderne</td><td>Autonomie complète, coût prévisible, portail collaborateur fluide</td></tr>
-<tr><td>Limite principale</td><td>Recul et parc installé encore inférieurs à ceux des acteurs historiques</td><td>Ralentissements au-delà de 150 salariés, CCN très spécifiques non couvertes</td></tr>
+<tr><td>Limite principale</td><td>Recul et parc installé encore inférieurs à ceux des acteurs historiques</td><td>Couverture de vos conventions et situations à tester avec l’éditeur</td></tr>
 </tbody>
 </table>
 <p>Tarifs relevés le 14 août 2026 sur les pages tarifaires publiques des deux éditeurs. Les unités diffèrent : malibou facture au collaborateur, PayFit affiche un forfait mensuel pour un effectif donné, et son prix unitaire décroît quand l'effectif augmente. La comparaison n'a donc de sens qu'à effectif identique et à une date donnée — demandez un devis à chaque éditeur pour votre propre effectif.</p>
@@ -90,7 +91,7 @@ const htmlContent = `<p>malibou combine une plateforme RH, la technologie de pai
 <h2 id="alternatives">Alternatives</h2>
 <p><strong><a href="/ressources/outils/payfit">PayFit</a></strong> — le standard self-service pour 5 à 150 salariés avec les CCN principales : l'entreprise produit sa paie dans l'outil. La référence à laquelle malibou se compare.</p>
 <p><strong><a href="/ressources/outils/silae">Silae</a></strong> — le moteur de paie de référence pour les structures complexes (600+ CCN, multi-conventions, gestion des temps). malibou s'appuie d'ailleurs sur cette même technologie pour produire la paie.</p>
-<p><strong><a href="/ressources/outils/lucca">Lucca</a></strong> — suite RH complète (absences, temps, frais, entretiens) à coupler à une brique paie séparée. Pertinent au-delà de 150 salariés.</p>
+<p><strong><a href="/ressources/outils/lucca">Lucca</a></strong> — suite RH complète (absences, temps, frais, entretiens) à coupler à une brique paie séparée. Vérifier la reprise et les interfaces avec la paie.</p>
 <h2 id="notre-avis">Notre avis</h2>
 <p>Pour les startups et PME qui souhaitent déléguer la production de la paie sans renoncer à une plateforme RH moderne, malibou fait partie des alternatives à considérer. Sa proposition — un SIRH centralisé associé à un gestionnaire de paie dédié — répond à un besoin réel pour les entreprises sans équipe paie interne.</p>
 <p>Le choix d'un outil de paie doit tenir compte du coût, du niveau d'autonomie recherché, de la convention collective et de l'organisation financière de l'entreprise. C'est précisément le type d'arbitrage qu'un <a href="/daf-externalise">DAF externalisé</a> peut cadrer avec le dirigeant et les équipes RH.</p>
@@ -123,7 +124,7 @@ export default async function Page() {
       htmlContent={htmlContent}
       cmsNavigation={cmsNavigation}
       publishedDate={PUBLISHED_DATE}
-      updatedDate={PUBLISHED_DATE}
+      updatedDate="2026-10-02"
       author="Benjamin Ziza"
       category="rh-paie"
       metaDescription="Notre avis sur malibou : fonctionnement, accompagnement paie, prix, avantages, limites et comparaison avec PayFit pour les startups et PME."

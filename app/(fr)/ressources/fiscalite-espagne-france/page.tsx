@@ -26,7 +26,7 @@ export const metadata: Metadata = buildMetadata({
   locale: "fr",
   title: "Fiscalité France-Espagne : le guide 2026 | Iter Advisors",
   description:
-    "Guide complet de la fiscalité franco-espagnole en 2026. Résidence fiscale, impôt sur le revenu, dividendes, sociétés et loi Beckham. Évitez la double imposition.",
+    "Repères fiscaux France-Espagne pour dirigeants et entrepreneurs : résidence, IRPF et convention fiscale, avec parcours filiale et coordination des conseils.",
   path: "/ressources/fiscalite-espagne-france",
   // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google
   // doesn\'t crawl synthetic /en|/es URLs that 404.
@@ -42,7 +42,7 @@ const PILLARS: { id: string; label: string; href: string; ready: boolean; descri
   // société française avec filiale espagnole, qui pilote la finance.
   { id: "filiale", label: "Filiale espagnole", href: "/ressources/blog/filiale-espagnole-pilotage-financier", ready: true, descriptor: "Société française avec une filiale en Espagne : obligations des deux côtés, flux intragroupe, et qui pilote quoi." },
   { id: "irpf", label: "Impôt sur le revenu", href: "/ressources/fiscalite/impot-revenu-espagne", ready: true, descriptor: "Calculez votre impôt sur le revenu en Espagne et découvrez les tranches d'imposition applicables en 2026." },
-  { id: "beckham", label: "Loi Beckham", href: "/ressources/fiscalite/beckham-law", ready: true, descriptor: "Profitez du régime spécial des impatriés (Loi Beckham) pour bénéficier d'un taux fixe avantageux de 24 % pendant 6 ans." },
+  { id: "beckham", label: "Loi Beckham", href: "/ressources/fiscalite/beckham-law", ready: true, descriptor: "Examinez les conditions, les limites et les démarches du régime des impatriés avant toute simulation." },
   { id: "modelo720", label: "Modelo 720", href: "/ressources/fiscalite/modelo-720", ready: true, descriptor: "Ne manquez pas l'obligation de déclarer vos biens situés à l'étranger (comptes bancaires, assurance-vie, immobilier en France) sous peine de lourdes sanctions." },
   { id: "entrepreneur", label: "Fiscalité entrepreneur", href: "/ressources/fiscalite/entrepreneur-francais-espagne", ready: false, descriptor: "Comparez l'Impôt sur les Sociétés (IS) et les charges patronales entre la France et l'Espagne." },
   { id: "autonomo", label: "Freelance autónomo", href: "/ressources/fiscalite/freelance-autonomo-espagne", ready: false, descriptor: "Découvrez le statut d'autónomo, ses cotisations sociales (cuota) et ses obligations de facturation (TVA intracommunautaire)." },
@@ -87,8 +87,7 @@ export default async function Page() {
 
   const readyPillars = PILLARS.filter((p) => p.ready);
 
-  /* JSON-LD per livrable_final §2: CollectionPage + BreadcrumbList.
-     ProfessionalService is already site-wide via app/layout.tsx. */
+  // The visible Breadcrumb component emits the matching BreadcrumbList.
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -96,9 +95,9 @@ export default async function Page() {
         "@type": "CollectionPage",
         "@id": `${PAGE_URL}#collection`,
         url: PAGE_URL,
-        name: "Fiscalité Espagne France : le guide complet",
+        name: "Fiscalité Espagne France : repères pour dirigeants et entrepreneurs",
         description:
-          "Guide complet de la fiscalité franco-espagnole : résidence fiscale, IRPF, double imposition, Modelo 720, loi Beckham, sociétés et patrimoine.",
+          "Ressources fiscales France-Espagne pour dirigeants, entrepreneurs et filiales : résidence, revenus, déclarations et coordination des conseils.",
         inLanguage: "fr-FR",
         isPartOf: { "@id": "https://www.iteradvisors.com/#website" },
         hasPart: readyPillars.map((p) => ({
@@ -106,14 +105,6 @@ export default async function Page() {
           url: `https://www.iteradvisors.com${p.href}`,
           name: p.label,
         })),
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.iteradvisors.com/" },
-          { "@type": "ListItem", position: 2, name: "Ressources", item: "https://www.iteradvisors.com/ressources" },
-          { "@type": "ListItem", position: 3, name: "Fiscalité Espagne France", item: PAGE_URL },
-        ],
       },
     ],
   };
@@ -136,23 +127,22 @@ export default async function Page() {
             ]}
           />
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6 mt-4 sm:mt-6 leading-tight">
-            Fiscalité Espagne France : le guide complet pour les entrepreneurs et expatriés
+            Fiscalité Espagne France : repères pour dirigeants et entrepreneurs
           </h1>
           <p className="text-base sm:text-lg text-foreground/80 leading-relaxed mb-4">
-            S&apos;installer en Espagne ou y développer son entreprise offre un
-            cadre de vie exceptionnel et des opportunités de croissance uniques.
-            Cependant, la transition entre le système fiscal français et espagnol
-            est souvent source de confusion. Entre la détermination de la
-            résidence fiscale, l&apos;application de la convention bilatérale
-            pour éviter la double imposition, et les obligations déclaratives
-            spécifiques comme le Modelo 720, les pièges sont nombreux.
+            Vous dirigez une entreprise française implantée en Espagne, préparez une
+            filiale ou examinez une mobilité personnelle ? Distinguez les obligations
+            de la société de la situation fiscale de son dirigeant. Ce hub rassemble
+            les guides de résidence, de revenus et de déclaration pour préparer les
+            questions à soumettre à vos conseils.
           </p>
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Chez Iter Advisors, nos experts financiers accompagnent au quotidien
-            des dirigeants, freelances et expatriés dans leur structuration
-            franco-espagnole. Ce guide centralise toutes les informations
-            essentielles pour comprendre, comparer et optimiser votre situation
-            fiscale entre la France et l&apos;Espagne en 2026.
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4">
+            Pour l’organisation de l’entreprise, le guide du{" "}
+            <Link href="/ressources/blog/filiale-espagnole-pilotage-financier" className="text-iter-violet underline">pilotage financier d’une filiale espagnole</Link>{" "}
+            précise les données, les interlocuteurs et le reporting. Notre offre de{" "}
+            <Link href="/daf-externalise-barcelone" className="text-iter-violet underline">DAF externalisé à Barcelone</Link>{" "}
+            présente la coordination finance France-Espagne. Le choix d’un régime et
+            les déclarations fiscales sont à valider avec les professionnels compétents.
           </p>
         </div>
       </section>
@@ -172,8 +162,7 @@ export default async function Page() {
               administrations fiscales des deux pays.
             </p>
             <ul className="space-y-2.5 list-none pl-0">
-              <PillarLink p={PILLARS[0]} />
-              <PillarLink p={PILLARS[1]} />
+              {PILLARS.filter(p => ["residence", "double"].includes(p.id)).map(p => <PillarLink key={p.id} p={p} />)}
             </ul>
           </div>
 
@@ -191,9 +180,7 @@ export default async function Page() {
               Andalousie) applique ses propres barèmes et déductions.
             </p>
             <ul className="space-y-2.5 list-none pl-0">
-              <PillarLink p={PILLARS[2]} />
-              <PillarLink p={PILLARS[3]} />
-              <PillarLink p={PILLARS[4]} />
+              {PILLARS.filter(p => ["irpf", "beckham", "modelo720"].includes(p.id)).map(p => <PillarLink key={p.id} p={p} />)}
             </ul>
           </div>
 
@@ -210,9 +197,7 @@ export default async function Page() {
               sur votre rentabilité nette.
             </p>
             <ul className="space-y-2.5 list-none pl-0">
-              <PillarLink p={PILLARS[5]} />
-              <PillarLink p={PILLARS[6]} />
-              <PillarLink p={PILLARS[7]} />
+              {PILLARS.filter(p => ["filiale", "entrepreneur", "autonomo"].includes(p.id)).map(p => <PillarLink key={p.id} p={p} />)}
             </ul>
           </div>
 
@@ -229,8 +214,7 @@ export default async function Page() {
               de revenus locatifs.
             </p>
             <ul className="space-y-2.5 list-none pl-0">
-              <PillarLink p={PILLARS[8]} />
-              <PillarLink p={PILLARS[9]} />
+              {PILLARS.filter(p => ["dividendes", "locatifs", "succession"].includes(p.id)).map(p => <PillarLink key={p.id} p={p} />)}
             </ul>
           </div>
 
@@ -242,9 +226,9 @@ export default async function Page() {
               Pourquoi se faire accompagner par Iter Advisors ?
             </h2>
             <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              La fiscalité internationale ne tolère pas l&apos;approximation. Une
-              erreur de structuration ou un oubli déclaratif peut entraîner des
-              redressements fiscaux sévères des deux côtés des Pyrénées.
+              Le pilotage financier demande des données cohérentes et une répartition
+              claire du travail entre votre équipe, les cabinets comptables et les
+              conseils fiscaux de chaque pays.
             </p>
             <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-3">
               Nos DAF externalisés et experts financiers vous accompagnent
@@ -252,8 +236,8 @@ export default async function Page() {
             </p>
             <ul className="space-y-2 list-none pl-0 mb-6">
               {[
-                "Auditer votre situation actuelle et identifier les risques.",
-                "Structurer votre rémunération de dirigeant (salaire vs dividendes).",
+                "Rassembler les données financières et les questions à examiner avec vos conseils.",
+                "Coordonner les interlocuteurs et les échéances convenues dans chaque pays.",
                 "Mettre en place des tableaux de bord financiers adaptés à votre activité transfrontalière.",
               ].map((item) => (
                 <li key={item} className="site-copy flex gap-2.5 text-sm sm:text-base text-muted-foreground">
@@ -273,7 +257,7 @@ export default async function Page() {
               {[
                 { title: "Régimes fiscaux France vs Espagne", href: "/ressources/blog/regimes-fiscaux-france-vs-espagne" },
                 { title: "Impôt sur le revenu en Espagne", href: "/ressources/fiscalite/impot-revenu-espagne" },
-                { title: "Barème IRPF 2026", href: "/ressources/fiscalite/impot-revenu-espagne" },
+                { title: "Piloter une filiale espagnole", href: "/ressources/blog/filiale-espagnole-pilotage-financier" },
                 { title: "Double imposition France-Espagne", href: "/ressources/fiscalite/double-imposition-france-espagne" },
                 { title: "Modelo 720 : déclaration des biens", href: "/ressources/fiscalite/modelo-720" },
               ].map((article) => (

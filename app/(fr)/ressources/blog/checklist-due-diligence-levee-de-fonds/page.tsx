@@ -69,9 +69,10 @@ export default function ChecklistDueDiligencePage() {
         },
       ]}
     >
-      <h2 id="definition">1. Qu'est-ce que la due diligence ?</h2>
+      <p>Pour préparer le modèle et les données financières du dossier, consultez notre <Link href="/services/accompagnement-levee-de-fond">accompagnement levée de fonds</Link>. Les clauses juridiques sont à examiner avec vos conseils.</p>
+      <h2 id="definition">1. Qu&apos;est-ce que la due diligence ?</h2>
       <p>
-        La due diligence est l'audit complet que les investisseurs (VCs, business angels, fonds) effectuent avant d'investir. Elle comprend plusieurs dimensions : financière, légale, technique, commerciale. Nous nous concentrons ici sur la financière, qui est souvent la plus chronophage.
+        La due diligence est l&apos;audit complet que les investisseurs (VCs, business angels, fonds) effectuent avant d&apos;investir. Elle comprend plusieurs dimensions : financière, légale, technique, commerciale. Nous nous concentrons ici sur la financière, qui est souvent la plus chronophage.
       </p>
       <p>
         <strong>Objectifs de la DD financière :</strong>
@@ -85,7 +86,7 @@ export default function ChecklistDueDiligencePage() {
       </ul>
 
       <Callout type="warning" title="Attention">
-        Si votre DD financière est mal préparée, l'investisseur va douter de votre sérieux. Cela peut couler une levée avant même de discuter des termes.
+        Si votre DD financière est mal préparée, l&apos;investisseur va douter de votre sérieux. Cela peut couler une levée avant même de discuter des termes.
       </Callout>
 
       <h2 id="documents-financiers">2. Documents financiers à préparer</h2>
@@ -98,7 +99,7 @@ export default function ChecklistDueDiligencePage() {
         <li>☑️ <strong>Tableaux de flux de trésorerie</strong> : 24 mois historique + 12 mois prévisions</li>
         <li>☑️ <strong>Cap table</strong> : Actions, options, ESOP, pourcentages</li>
         <li>☑️ <strong>Prévisions 3 ans</strong> : P&L, bilan, trésorerie (détaillé)</li>
-        <li>☑️ <strong>Dossier d'imposition</strong> : Liasses fiscales, déclarations TVA</li>
+        <li>☑️ <strong>Dossier d&apos;imposition</strong> : Liasses fiscales, déclarations TVA</li>
       </ul>
       <p>
         <strong>Documents importants :</strong>
@@ -118,7 +119,7 @@ export default function ChecklistDueDiligencePage() {
         <strong>Analyse 1 : Unit Economics</strong>
       </p>
       <ul>
-        <li>Coût d'acquisition client (CAC) par canal</li>
+        <li>Coût d&apos;acquisition client (CAC) par canal</li>
         <li>Lifetime value (LTV)</li>
         <li>Ratio LTV/CAC (cible : &gt;3)</li>
       </ul>
@@ -203,7 +204,7 @@ export default function ChecklistDueDiligencePage() {
         <strong>T-4 semaines : Pitch + DataRoom</strong>
       </p>
       <ul>
-        <li>Launch dataroom (accès restreint d'abord)</li>
+        <li>Launch dataroom (accès restreint d&apos;abord)</li>
         <li>Documents disponibles pour lead investor</li>
       </ul>
       <p>
@@ -241,10 +242,10 @@ export default function ChecklistDueDiligencePage() {
 
       <h2 id="faq">FAQ — Due diligence et levée de fonds</h2>
       <h3>Combien de temps faut-il pour préparer une due diligence financière ?</h3>
-      <p>La préparation d'une due diligence financière complète nécessite 4 à 8 semaines si vos documents comptables sont déjà en ordre. Sans antériorité comptable propre, comptez 10 à 12 semaines. La phase critique : rassembler 3 ans de bilans, comptes de résultat et tableaux de flux de trésorerie, puis construire un prévisionnel 3 ans auditable par un investisseur externe.</p>
+      <p>La préparation d&apos;une due diligence financière complète nécessite 4 à 8 semaines si vos documents comptables sont déjà en ordre. Sans antériorité comptable propre, comptez 10 à 12 semaines. La phase critique : rassembler 3 ans de bilans, comptes de résultat et tableaux de flux de trésorerie, puis construire un prévisionnel 3 ans auditable par un investisseur externe.</p>
       <h3>Quels documents les VCs demandent-ils systématiquement en due diligence ?</h3>
-      <p>La liste minimum que tout fonds VC demande : bilans et comptes de résultat 3 ans certifiés, cap table à jour avec les BSA/BSPCE, prévisionnel P&L + trésorerie 3 ans (avec hypothèses détaillées), contrats des 5 à 10 clients représentant 80 % du CA, table d'amortissement des dettes, et rapport KYC sur les fondateurs. Une data room bien structurée facilite la revue des documents sans garantir le délai de closing.</p>
-      <h3>Quel est le rôle d'un DAF externalisé pendant la due diligence ?</h3>
+      <p>La liste minimum que tout fonds VC demande : bilans et comptes de résultat 3 ans certifiés, cap table à jour avec les BSA/BSPCE, prévisionnel P&L + trésorerie 3 ans (avec hypothèses détaillées), contrats des 5 à 10 clients représentant 80 % du CA, table d&apos;amortissement des dettes, et rapport KYC sur les fondateurs. Une data room bien structurée facilite la revue des documents sans garantir le délai de closing.</p>
+      <h3>Quel est le rôle d&apos;un DAF externalisé pendant la due diligence ?</h3>
       <p>Le <a href="/daf-externalise">directeur financier à temps partagé</a> joue trois rôles pendant la due diligence : (1) il audite les chiffres historiques et détecte les anomalies avant que les investisseurs les trouvent ; (2) il construit le prévisionnel avec des hypothèses défendables et un modèle sensibilisé ; (3) il répond aux questions financières des VCs et de leurs experts-comptables. Chez Iter Advisors, nos clients accompagnés ont levé plus de 100 M€ depuis 2021.</p>
     </BlogPostPageRefonte>
   );

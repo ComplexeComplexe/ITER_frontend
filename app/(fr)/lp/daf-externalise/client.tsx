@@ -40,7 +40,7 @@ interface FormError {
 // Uses object spread on `data`, so nested objects (e.g. `user_data.address`)
 // are preserved intact. NO flattening, NO JSON.stringify, NO key mutation —
 // GTM Data Layer Variables can read `user_data.address.first_name` directly.
-function pushToDataLayer(event: string, data?: Record<string, any>) {
+function pushToDataLayer(event: string, data?: Record<string, unknown>) {
   if (typeof window !== 'undefined' && window.dataLayer && currentConsent()?.analytics) {
     window.dataLayer.push({
       event,
@@ -228,7 +228,7 @@ function ConversionForm() {
       )}
       {submitStatus === 'error' && (
         <div className="site-card p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
-          ❌ Erreur lors de l'envoi. Veuillez réessayer.
+          ❌ Erreur lors de l&apos;envoi. Veuillez réessayer.
         </div>
       )}
 
@@ -332,7 +332,7 @@ function ConversionForm() {
       {/* Taille équipe */}
       <div>
         <label htmlFor="teamSize" className="block text-sm font-medium text-foreground mb-1">
-          Taille de l'entreprise *
+          Taille de l&apos;entreprise *
         </label>
         <select
           id="teamSize"
@@ -409,7 +409,7 @@ function ConversionForm() {
           className="w-5 h-5 mt-1 cursor-pointer"
         />
         <label htmlFor="rgpd" className="text-sm text-muted-foreground">
-          J'accepte qu'Iter Advisors utilise mes données pour me recontacter.{' '}
+          J&apos;accepte qu&apos;Iter Advisors utilise mes données pour me recontacter.{' '}
           <a href="/politique-de-confidentialite" className="text-iter-violet hover:underline">
             Politique de confidentialité
           </a>
@@ -483,7 +483,7 @@ function FAQ() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   useEffect(() => {
-    let depths = new Set<string>();
+    const depths = new Set<string>();
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -691,7 +691,7 @@ export default function LandingPageClient() {
               Pourquoi attendre que la trésorerie devienne un sujet urgent ?
             </h2>
             <p className="text-lg text-muted-foreground">
-              La comptabilité vous dit ce qui s'est passé. Le DAF vous aide à décider ce qui doit se passer ensuite.
+              La comptabilité vous dit ce qui s&apos;est passé. Le DAF vous aide à décider ce qui doit se passer ensuite.
             </p>
           </div>
 
@@ -699,13 +699,13 @@ export default function LandingPageClient() {
             <div className="site-card p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
               <p className="font-semibold text-foreground mb-2">💧 Vous manquez de visibilité sur votre trésorerie ?</p>
               <p className="text-sm text-muted-foreground">
-                Vous ne savez pas précisément combien de mois vous pouvez tenir, ni quelles décisions prendre avant que la tension n'arrive.
+                Vous ne savez pas précisément combien de mois vous pouvez tenir, ni quelles décisions prendre avant que la tension n&apos;arrive.
               </p>
             </div>
             <div className="site-card p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
               <p className="font-semibold text-foreground mb-2">📑 Vos reportings prennent trop de temps ?</p>
               <p className="text-sm text-muted-foreground">
-                Les chiffres circulent dans plusieurs fichiers, les versions changent, et personne n'a la même lecture de la situation.
+                Les chiffres circulent dans plusieurs fichiers, les versions changent, et personne n&apos;a la même lecture de la situation.
               </p>
             </div>
             <div className="site-card p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
@@ -742,7 +742,7 @@ export default function LandingPageClient() {
               Un DAF externalisé, aussi appelé DAF à temps partagé ou CFO part-time, intervient auprès de votre entreprise quelques jours par mois ou sur une mission précise.
               <br />
               <br />
-              Il devient le bras droit financier du dirigeant : il met de l'ordre dans les chiffres, structure les reportings, anticipe la trésorerie et aide à prendre les bonnes décisions au bon moment.
+              Il devient le bras droit financier du dirigeant : il met de l&apos;ordre dans les chiffres, structure les reportings, anticipe la trésorerie et aide à prendre les bonnes décisions au bon moment.
             </p>
           </div>
 
@@ -750,7 +750,7 @@ export default function LandingPageClient() {
             <div className="site-card bg-white p-6 rounded-lg border border-gray-200">
               <p className="text-foreground font-semibold mb-2">✅ Accès à un profil senior</p>
               <p className="text-sm text-muted-foreground">
-                Sans supporter le coût d'un recrutement à plein temps.
+                Sans supporter le coût d&apos;un recrutement à plein temps.
               </p>
             </div>
             <div className="site-card bg-white p-6 rounded-lg border border-gray-200">
@@ -782,7 +782,7 @@ export default function LandingPageClient() {
             Ce que votre DAF externalisé peut prendre en main
           </h2>
           <p className="text-lg text-muted-foreground text-center mb-12">
-            L'intervention s'adapte à votre niveau de maturité : urgence cash, reporting board, structuration finance, levée de fonds ou renfort ponctuel.
+            L&apos;intervention s&apos;adapte à votre niveau de maturité : urgence cash, reporting board, structuration finance, levée de fonds ou renfort ponctuel.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -822,7 +822,7 @@ export default function LandingPageClient() {
             Expert-comptable, DAF salarié ou DAF externalisé ?
           </h2>
           <p className="text-lg text-muted-foreground text-center mb-12">
-            Ces rôles ne répondent pas au même besoin. L'expert-comptable sécurise la production comptable. Le DAF salarié structure une direction financière. Le DAF externalisé vous donne un pilotage senior sans recruter trop tôt.
+            Ces rôles ne répondent pas au même besoin. L&apos;expert-comptable sécurise la production comptable. Le DAF salarié structure une direction financière. Le DAF externalisé vous donne un pilotage senior sans recruter trop tôt.
           </p>
 
           <div className="overflow-x-auto mb-8">
@@ -858,7 +858,7 @@ export default function LandingPageClient() {
 
           <div className="site-card bg-white p-6 rounded-lg border border-gray-200 text-center">
             <p className="text-sm text-muted-foreground">
-              Le DAF externalisé ne remplace pas votre expert-comptable. Il l'aide à devenir une source fiable pour piloter l'entreprise, pas seulement pour produire les comptes.
+              Le DAF externalisé ne remplace pas votre expert-comptable. Il l&apos;aide à devenir une source fiable pour piloter l&apos;entreprise, pas seulement pour produire les comptes.
             </p>
           </div>
         </div>

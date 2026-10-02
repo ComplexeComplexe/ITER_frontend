@@ -1,3 +1,5 @@
+import { PRIORITY_FINANCE_SERVICES } from "./priority-finance-services";
+import type { EditorialAuthor } from "../schemas/editorial";
 import { FORMULES, MISSIONS_PONCTUELLES, VOLUME_DAF_JOURS_MOIS, ENGAGEMENT } from "./facts";
 
 const euros = (amount: number) => new Intl.NumberFormat("fr-FR").format(amount);
@@ -12,11 +14,15 @@ export interface FinanceService {
   summary: [string, string][]; signals: string[]; definition: string;
   deliverables: [string, string, string][]; exampleTitle: string; example: string;
   steps: [string, string][]; scopeTitle: string; scope: string[]; budget: string;
-  case?: string; faq: [string, string][]; resources: [string, string][]; related: string[];
+  case?: string; proofNote?: string; author?: EditorialAuthor; areaServed?: string; faq: [string, string][]; resources: [string, string][]; related: string[];
+  headings?: { need: string; deliverables: string; method: string };
+  calendar?: { heading?: string; caption: string; headers: [string, string, string]; rows: [string, string, string][]; note: string };
+  budgetResource?: { href: string; label: string };
 }
 
 export const FINANCE_REVIEW_DATE = "2026-09-30";
 export const FINANCE_SERVICES: Record<string, FinanceService> = {
+  ...PRIORITY_FINANCE_SERVICES,
   "temps-partage": {
     "path": "/daf-externalise/temps-partage",
     "label": "DAF à temps partagé",
@@ -66,14 +72,25 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     ],
     "exampleTitle": "Ce que peut contenir votre rendez-vous finance",
     "example": "Un point sur la trésorerie à venir, une lecture du réalisé face au budget et une liste de décisions avec leurs responsables. Le reporting prépare la discussion ; la réunion se termine par des actions suivies au rendez-vous suivant.",
+    calendar: {
+      caption: "Exemple de calendrier à adapter à votre mission",
+      headers: ["Rendez-vous", "Travaux préparés", "Décision à éclairer"],
+      rows: [
+        ["Chaque semaine, si le besoin le justifie", "Encaissements, paiements et factures en retard", "Prioriser les paiements et les relances"],
+        ["Après la clôture mensuelle", "Résultat, rapprochements et écarts au budget", "Comprendre les écarts et ajuster les hypothèses"],
+        ["Revue avec la direction", "Scénarios de trésorerie, charges et recrutements", "Arbitrer un recrutement ou un investissement"],
+        ["Échéance exceptionnelle", "Scénarios et dossier bancaire ou investisseur", "Examiner les conditions de financement"],
+      ],
+      note: "Ce calendrier est illustratif. Les réunions, les travaux et la disponibilité sont convenus au cadrage. Chaque point se termine par une décision, un responsable et une échéance, suivis au rendez-vous suivant.",
+    },
     "steps": [
       [
         "Cadrer les priorités",
-        "Identifier vos décisions à venir, les interlocuteurs et les sources. Définir les livrables et les modalités de contact."
+        "Identifier les décisions à venir, les interlocuteurs et les sources : balances, grands livres, relevés bancaires, factures ouvertes, contrats de financement et budget. Convenir des accès, des validations et du calendrier avec le cabinet comptable."
       ],
       [
         "Installer le pilotage",
-        "Rapprocher les données, construire les premiers outils et convenir d’un calendrier de mise à jour."
+        "Rapprocher les données et documenter les informations manquantes. Selon le besoin, préparer un prévisionnel de trésorerie à treize semaines, une lecture des résultats et un suivi des anomalies. Aucun délai de mise en place n’est garanti avant d’avoir examiné les données."
       ],
       [
         "Suivre et ajuster",
@@ -83,6 +100,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     "scopeTitle": "Un rôle de direction, articulé avec votre équipe",
     "scope": [
       "Le DAF travaille avec le dirigeant, les responsables opérationnels et le cabinet comptable. Il organise le pilotage ; les tâches quotidiennes et les décisions restent attribuées explicitement. Un besoin de présence permanente appelle une autre organisation.",
+      "Le dirigeant fixe les priorités et valide les engagements. Le DAF construit les scénarios et analyse les écarts. Le cabinet comptable produit les comptes selon sa lettre de mission ; les responsables opérationnels expliquent les commandes, stocks et échéances. Une délégation de signature ou un accès bancaire ne découle pas automatiquement de la mission.",
       "Une levée de fonds, une acquisition ou une transformation importante peut nécessiter une mission complémentaire. Les travaux inclus, le relais en cas d’absence et le traitement des urgences sont précisés au contrat."
     ],
     "budget": `Les missions récurrentes Iter se situent entre 3 000 et 8 000 € HT par mois. Les ${volume} jours mensuels sont un volume indicatif observé, pas un forfait contractuel : le devis porte sur le périmètre et le profil mobilisé. La grille détaillée permet de situer votre besoin.`,
@@ -132,8 +150,8 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
   "transition": {
     "path": "/daf-externalise/transition",
     "label": "DAF de transition",
-    "title": "DAF de transition pour PME et ETI | Iter Advisors",
-    "description": "Remplacement, clôture ou transformation : un DAF de transition pour organiser la continuité. Priorités, livrables, passation et budget de la mission.",
+    "title": "DAF de transition : management financier | Iter Advisors",
+    "description": "Management de transition finance : remplacement du DAF, mandat temporaire et passation pour PME et ETI. Priorités, responsabilités, disponibilité et budget.",
     "headline": "DAF de transition",
     "promise": "Assurer la continuité. Préparer la suite.",
     "intro": "Un départ, une absence ou une transformation laisse des échéances financières à tenir. Le DAF de transition prend un mandat temporaire avec des priorités, des responsabilités et une sortie de mission définies.",
@@ -158,7 +176,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "Une clôture, un financement ou un changement d’outil nécessite un pilotage renforcé.",
       "Vous recrutez une direction financière et devez organiser le relais."
     ],
-    "definition": "Le DAF de transition intervient sur une période et un mandat définis. Sa mission associe la prise en charge des priorités immédiates et la préparation d’une organisation durable. Le temps partagé répond, lui, à un besoin régulier de direction financière.",
+    "definition": "Le management de transition finance consiste à confier temporairement le pilotage à un directeur administratif et financier de transition. Le DAF intervient sur une période et un mandat définis. Sa mission associe la prise en charge des priorités immédiates et la préparation d’une organisation durable. Le temps partagé répond, lui, à un besoin régulier de direction financière.",
     "deliverables": [
       [
         "État des lieux priorisé",
@@ -176,6 +194,18 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
         "Permettre au successeur de reprendre le pilotage."
       ]
     ],
+    headings: { need: "Quand envisager un management de transition finance ?", deliverables: "Les livrables du directeur financier de transition", method: "Directeur administratif et financier de transition : du mandat à la passation" },
+    calendar: {
+      heading: "Préparer la sortie dès le début du mandat",
+      caption: "Jalons à définir pour une mission temporaire",
+      headers: ["Jalon", "Travail à formaliser", "Validation attendue"],
+      rows: [
+        ["Avant la prise de fonction", "Priorités, accès, calendrier et délégations écrites", "Mandat et responsabilités approuvés par la direction"],
+        ["Pendant la mission", "Échéances tenues, risques ouverts et décisions documentées", "Revue de l’avancement et ajustement du périmètre"],
+        ["Avant le départ", "Dossier de passation, procédures et personnes de relais", "Reprise des outils et sujets ouverts par le successeur"],
+      ],
+      note: "La durée dépend du remplacement ou du chantier. Le devis fixe les jalons et les conditions d’une éventuelle prolongation ; aucun calendrier standard ne remplace l’examen de votre situation.",
+    },
     "exampleTitle": "Les premiers sujets à mettre sur la table",
     "example": "Solde de trésorerie, paie, paiements sensibles, clôture, engagements bancaires et décisions en attente : la première revue situe les échéances et les responsabilités. Elle ne remplace pas un diagnostic complet lorsque des données manquent.",
     "steps": [
@@ -199,6 +229,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     ],
     "budget": `La fourchette Iter est de ${transitionRange} € HT par mois selon le mandat, la disponibilité et la complexité. Un démarrage sous 7 à 10 jours peut être envisagé après qualification, sous réserve de disponibilité et d’accès aux informations.`,
     "faq": [
+      ["Combien de temps dure une mission de transition ?", "La durée est définie à partir du motif du remplacement, des échéances et de la disponibilité du successeur. Le mandat prévoit les objectifs de sortie, les modalités de prolongation et le temps nécessaire à la passation."],
       [
         "Quand choisir la transition plutôt que le temps partagé ?",
         "La transition répond à une situation temporaire : remplacement, continuité ou transformation. Le temps partagé correspond à un besoin récurrent avec des interventions planifiées dans la durée."
@@ -238,14 +269,19 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
   },
   "controle": {
     "path": "/services/controle-de-gestion-externalise",
-    "label": "Contrôle de gestion",
-    "title": "Contrôle de gestion externalisé | Iter Advisors",
+    "label": "Contrôle de gestion externalisé",
+    "title": "Contrôle de gestion externalisé pour PME : budget et marges",
     "description": "Budget, marges et reporting : un contrôle de gestion externalisé pour comprendre vos résultats. Livrables, revue mensuelle et articulation avec vos équipes.",
     "headline": "Contrôle de gestion externalisé",
     "promise": "Comprendre vos marges. Donner une suite à vos chiffres.",
     "intro": "Vos comptes disent ce qui s’est passé. Le contrôle de gestion rapproche ces résultats de vos objectifs et de l’activité réelle, pour identifier les écarts et préparer les décisions avec les responsables.",
     "context": "reporting",
     "category": "Piloter la performance",
+    "headings": {
+      "need": "Quand externaliser le contrôle de gestion ?",
+      "deliverables": "Budget, marges et reporting : les livrables",
+      "method": "Le suivi avec votre contrôleur de gestion"
+    },
     "summary": [
       [
         "Votre besoin",
@@ -413,6 +449,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "La paie, la fiscalité particulière, les reprises historiques et la migration d’un outil ne sont pas implicitement incluses. Un changement de cabinet ou de logiciel doit prévoir la reprise des données, la continuité des obligations et les responsabilités de validation."
     ],
     "budget": "Le prix dépend des volumes, du nombre d’entités, des outils, de la qualité des pièces et des travaux confiés à chaque intervenant. Nous cadrons ces éléments avant le devis. Les honoraires du cabinet comptable et les éventuels abonnements doivent être identifiés séparément.",
+    budgetResource: { href: "/ressources/blog/externalisation-comptable#grille", label: "Comparer les devis comptables" },
     "faq": [
       [
         "Dois-je changer d’expert-comptable ?",
@@ -502,8 +539,19 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
         "Décider à partir des dernières informations."
       ]
     ],
+    headings: { need: "Quand construire un prévisionnel de trésorerie ?", deliverables: "Les supports pour suivre les prochaines échéances", method: "Construire, rapprocher et actualiser le prévisionnel" },
+    calendar: {
+      heading: "Un solde final positif peut cacher une tension intermédiaire",
+      caption: "Exemple fictif sur deux semaines, avec 20 000 € de trésorerie au départ",
+      headers: ["Période", "Encaissements et décaissements supposés", "Solde de fin de semaine"],
+      rows: [
+        ["Semaine 1", "20 000 € encaissés − 45 000 € décaissés = −25 000 €", "−5 000 €"],
+        ["Semaine 2", "50 000 € encaissés − 30 000 € décaissés = +20 000 €", "15 000 €"],
+      ],
+      note: "Tous ces montants sont fictifs. Le solde de la deuxième semaine est positif, mais la première révèle un besoin de 5 000 € si les hypothèses se réalisent. Identifier la tension ne garantit ni découvert autorisé ni financement : il faut examiner les options et leurs conditions avant l’échéance.",
+    },
     "exampleTitle": "Exemple de lecture du prévisionnel",
-    "example": "Un règlement client arrive plus tard que prévu : l’équipe met à jour la date, mesure l’effet sur les prochaines échéances et examine les options. Le prévisionnel rend l’arbitrage visible ; il ne transforme pas une créance incertaine en trésorerie acquise.",
+    "example": "Si une recette change de date, l’équipe actualise l’hypothèse et compare les soldes de chaque semaine. Elle peut tester plusieurs calendriers, puis examiner les décisions possibles avec la direction. Le prévisionnel ne transforme pas une créance incertaine en cash disponible ; le suivi du prévu face au réalisé permet d’expliquer l’écart.",
     "steps": [
       [
         "Rapprocher le point de départ",
@@ -558,9 +606,9 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
   "organisation": {
     "path": "/services/gestion-financiere-externalisee",
     "label": "Organisation financière",
-    "title": "Gestion financière externalisée | Iter Advisors",
+    "title": "Gestion financière opérationnelle pour PME | Iter Advisors",
     "description": "Structurez les opérations financières de votre entreprise : responsabilités, données, clôture et reporting. Un périmètre adapté à votre équipe.",
-    "headline": "Gestion financière externalisée",
+    "headline": "Gestion financière opérationnelle",
     "promise": "Une fonction finance qui sait qui fait quoi.",
     "intro": "Quand les fichiers, les outils et les responsabilités s’accumulent, produire les chiffres devient un projet en soi. L’accompagnement organise les opérations financières pour que votre équipe dispose d’un fonctionnement partagé.",
     "context": "organisation",
@@ -584,7 +632,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "Les validations et les relances reposent sur une seule personne.",
       "La croissance ou une nouvelle entité exige une organisation plus explicite."
     ],
-    "definition": "La gestion financière externalisée traite ici l’organisation opérationnelle : circulation des données, répartition des tâches, clôture et production du reporting. Le DAF à temps partagé apporte en complément le suivi régulier des décisions de direction.",
+    "definition": "La gestion financière opérationnelle organise la circulation des données, les responsabilités et le calendrier de production des chiffres. Pour les factures, les paiements ou les rapprochements, la mission commence par identifier qui produit, qui contrôle et qui valide. Le DAF externalisé traite le pilotage et les arbitrages de direction ; les travaux confiés à Iter et ceux conservés par votre équipe sont précisés au contrat.",
     "deliverables": [
       [
         "Répartition des rôles",
@@ -603,7 +651,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       ]
     ],
     "exampleTitle": "Un processus décrit de bout en bout",
-    "example": "Pour une clôture mensuelle : qui fournit les pièces, qui contrôle les données, qui explique les écarts et qui valide le reporting ? Cette chaîne rend les dépendances visibles avant de chercher à l’automatiser.",
+    "example": "Exemple de procédure à adapter : l’équipe transmet les pièces, la comptabilité prépare les rapprochements, le responsable finance examine les exceptions et la personne habilitée valide le reporting. Pour les paiements, les délégations et les contrôles sont documentés séparément. Cette illustration décrit une organisation, pas un cas client ni une prise en charge automatique de toutes les tâches par Iter.",
     "steps": [
       [
         "Cartographier",
@@ -740,6 +788,9 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       ]
     ],
     "resources": [
+      ["Préparer les étapes d’une levée", "/ressources/blog/levee-de-fonds-guide"],
+      ["Examiner les clauses d’un term sheet", "/ressources/blog/term-sheet-negocier-clauses-cles"],
+      ["Comprendre les instruments BSPCE et BSA", "/ressources/glossaire/bspce-bsa"],
       [
         "Préparer les pièces de due diligence",
         "/ressources/blog/checklist-due-diligence-levee-de-fonds"

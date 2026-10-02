@@ -26,13 +26,6 @@ const collectionPageSchema = {
   url: "https://www.iteradvisors.com/ressources",
   inLanguage: "fr-FR",
   isPartOf: { "@id": "https://www.iteradvisors.com/#website" },
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.iteradvisors.com" },
-      { "@type": "ListItem", position: 2, name: "Ressources", item: "https://www.iteradvisors.com/ressources" },
-    ],
-  },
   mainEntity: {
     "@type": "ItemList",
     name: "Guides, outils et cas clients Iter Advisors",

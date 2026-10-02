@@ -19,7 +19,7 @@ export default function HomeDecisionResources() {
         <h3 className="mt-6 text-xl font-semibold leading-snug group-hover:text-iter-violet">{r.title}</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{r.text}</p>
         <span className="mt-auto pt-6 text-sm font-medium flex items-center justify-between gap-3">{r.detail}<ArrowRight size={18} className="shrink-0 text-iter-violet" aria-hidden /></span>
       </Link>)}</div>
-      <p className="mt-6 text-sm"><Link href="/ressources/blog/drh-externalise-quand-et-pourquoi" className="site-inline-link">Également : quand structurer votre fonction RH ?</Link></p>
+      <p className="mt-6 text-sm"><Link href="/drh-externalise" className="site-inline-link">Également : quand structurer votre fonction RH ?</Link></p>
     </div>
   </section>;
 }

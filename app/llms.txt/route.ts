@@ -1,3 +1,4 @@
+import { CABINET_EXPERTISES } from "@/lib/content/cabinet-expertise";
 import { getDafOfferFacts } from "@/lib/content/offer-facts";
 import {
   ANNEE_FONDATION,
@@ -113,20 +114,9 @@ ${ENGAGEMENT.formulation}
 
 ## Expertises
 
-### DAF externalisé
-Trésorerie et prévisionnel, reporting financier et board pack, business plan,
-levée de fonds et dette non dilutive, M&A et due diligence, contrôle de gestion,
-structuration post-levée. Secteurs : SaaS, e-commerce, industrie, deep tech,
-fintech, santé.
-
-### DRH externalisé
-Recrutement, SIRH, paie et charges sociales, relations sociales, formation,
-conformité en droit du travail.
-
-### Fiscalité France-Espagne
-Résidence fiscale, convention de non-double imposition, régime des travailleurs
-déplacés (loi Beckham), Modelo 720, barème IRPF. Ces pages citent leurs sources
-primaires — Agencia Tributaria, BOE, impots.gouv.fr, CJUE.
+${CABINET_EXPERTISES.map(({ label, description, href }) => `### ${label}
+${description}
+[Offre ou ressources](${BASE}${href})`).join("\n\n")}
 
 ### IA & Finance
 Automatisation du reporting financier (méthode en quatre étapes et 90 jours),

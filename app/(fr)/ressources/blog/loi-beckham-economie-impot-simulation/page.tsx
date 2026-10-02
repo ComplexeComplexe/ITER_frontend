@@ -78,7 +78,7 @@ export default function Page() {
         },
       ]}
     >
-      <h2 id="principe-calcul">Comment est calculé l'impôt sous le régime Beckham</h2>
+      <h2 id="principe-calcul">Comment est calculé l&apos;impôt sous le régime Beckham</h2>
 
       <p>
         En Espagne, les résidents fiscaux de droit commun sont soumis à l&apos;IRPF
@@ -236,7 +236,7 @@ export default function Page() {
         exercées) avant d&apos;opter pour le régime.
       </Callout>
 
-      <h2 id="duree-6-ans">La durée : 6 ans maximum et ce qu'il se passe après la fin du régime</h2>
+      <h2 id="duree-6-ans">La durée : 6 ans maximum et ce qu&apos;il se passe après la fin du régime</h2>
 
       <p>
         Le régime Beckham s&apos;applique pour une durée maximale de{" "}

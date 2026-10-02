@@ -1,7 +1,6 @@
 import { TOOL_PRICING } from "@/data/toolPricing";
 import Image from 'next/image';
 import Link from 'next/link';
-import { Star } from 'lucide-react';
 
 export interface ToolHeaderProps {
   name: string;
@@ -10,7 +9,6 @@ export interface ToolHeaderProps {
   logoAlt?: string;
   category: string;
   categorySlug: string;
-  rating: number;
   forWho: string[];
   notForWho: string[];
   implementationTime: string;
@@ -24,8 +22,6 @@ export default function ToolHeader({
   logo,
   logoAlt,
   category,
-  categorySlug,
-  rating,
   forWho,
   notForWho,
   implementationTime,
@@ -33,9 +29,6 @@ export default function ToolHeader({
   pricingKey,
   ctaUrl = '/contact',
 }: ToolHeaderProps) {
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 !== 0;
-
   return (
     <div className="site-card border border-gray-200 rounded-lg p-6 md:p-8 bg-white">
       <div className="flex flex-col md:flex-row md:items-start gap-6">
@@ -61,22 +54,6 @@ export default function ToolHeader({
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">{name}</h2>
               <p className="text-lg text-gray-600">{category}</p>
             </div>
-
-            {/* Rating */}
-            <div className="flex items-center gap-2">
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={20}
-                    className={`${
-                      i < fullStars ? 'fill-yellow-400 text-yellow-400' : i === fullStars && hasHalfStar ? 'text-yellow-400' : 'text-gray-300'
-                    }`}
-                  />
-                ))}
-              </div>
-              <span className="text-sm font-semibold text-gray-700">{rating}/5</span>
-            </div>
           </div>
 
           {/* Points forts / Points de vigilance — même donnée (forWho/
@@ -86,7 +63,7 @@ export default function ToolHeader({
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div>
               <h3 className="font-semibold text-gray-900 text-sm uppercase tracking-wide mb-2">
-                Points forts
+                Usages à examiner
               </h3>
               <ul className="space-y-2">
                 {forWho.map((item, idx) => (
@@ -115,16 +92,16 @@ export default function ToolHeader({
 
           {/* Implémentation, Prix */}
           <div className="grid md:grid-cols-2 gap-4 mb-6 pb-6 border-b border-gray-200">
-            <div>
+            {implementationTime && <div>
               <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
                 Implémentation
               </p>
               <p className="text-lg font-semibold text-gray-900">{implementationTime}</p>
-            </div>
+            </div>}
             <div>
               <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Tarif</p>
               <p className="text-lg font-semibold text-gray-900">{priceRange}</p>
-              {TOOL_PRICING[pricingKey] && <div className="mt-2 text-sm text-gray-600"><p>{TOOL_PRICING[pricingKey].note}</p><a className="mt-2 inline-block underline text-iter-violet" href={TOOL_PRICING[pricingKey].url} target="_blank" rel="noopener noreferrer">Source éditeur — vérifiée le 5 septembre 2026</a></div>}
+              {TOOL_PRICING[pricingKey] && <div className="mt-2 text-sm text-gray-600"><p>{TOOL_PRICING[pricingKey].note}</p><a className="mt-2 inline-block underline text-iter-violet" href={TOOL_PRICING[pricingKey].url} target="_blank" rel="noopener noreferrer">Source tarifaire consultée le {new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${TOOL_PRICING[pricingKey].checkedAt}T12:00:00Z`))}</a></div>}
             </div>
           </div>
 

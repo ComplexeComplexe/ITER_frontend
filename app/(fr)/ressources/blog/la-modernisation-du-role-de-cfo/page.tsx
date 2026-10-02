@@ -2,16 +2,16 @@
 
 import { Metadata } from 'next';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
-import { Callout, StatGrid, InlineCta } from '@/components/blog';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "La modernisation du rôle de CFO en 2026 | Iter Advisors",
+  title: "Moderniser le travail du CFO : données et IA | Iter Advisors",
   description: "Comment le rôle du CFO évolue avec la digitalisation, l'IA et les enjeux ESG. Compétences, missions et leadership du directeur financier moderne.",
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/la-modernisation-du-role-de-cfo",
   },
   openGraph: {
-    title: "La modernisation du rôle de CFO en 2026 | Iter Advisors",
+    title: "Moderniser le travail du CFO : données et IA | Iter Advisors",
     description: "Comment le rôle du CFO évolue avec la digitalisation, l'IA et les enjeux ESG. Compétences et missions du directeur financier moderne.",
     type: "article",
     images: [{ url: "/images/blog/la-modernisation-du-role-de-cfo.webp", width: 1200, height: 630 }],
@@ -30,15 +30,16 @@ export default function ModernisationRoleCfoPage() {
       }}
       slug="la-modernisation-du-role-de-cfo"
       category="CFO"
-      title="La modernisation du rôle de CFO en 2026 : de l'administratif à la stratégie"
+      title="Moderniser le travail du CFO : données, IA et décisions"
       dek="Comment le rôle du CFO évolue en 2026. De la gestion administrative à la stratégie financière : digitalisation, IA, ESG, leadership. Compétences clés du CFO moderne."
       author={{
         name: "Benjamin Ziza",
         avatar: "/images/team/benjamin-ziza.webp",
         jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
-      readingTime={10}
-      dateModified="2026-05-01"
+      readingTime={5}
+      datePublished="2026-05-01"
+      dateModified="2026-10-02"
       heroImage="/images/blog/covers/la-modernisation-du-role-de-cfo.svg"
       toc={[
         { id: "evolution", label: "1. L'évolution du rôle depuis 10 ans" },
@@ -48,12 +49,12 @@ export default function ModernisationRoleCfoPage() {
         { id: "esg-reporting", label: "5. ESG et reporting extra-financier" },
         { id: "leadership", label: "6. Leadership et communication" },
       ]}
-      tldr="Le CFO d'aujourd'hui est un partenaire stratégique, pas un comptable. Il maîtrise la digitalisation, utilise l'IA pour prédire, parle ESG et communique avec tous les stakeholders. Les compétences évoluent : moins d'Excel, plus de storytelling et vision stratégique."
+      tldr="La modernisation de la finance commence par des données contrôlées, des responsabilités définies et des tests sur un flux limité. Les gains se mesurent sur le dossier ; l’IA ne remplace pas la revue des sources et des résultats."
       relatedArticles={[
         {
-          url: "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
+          url: "/ressources/blog/ia-finance-automatisation-direction-financiere",
           category: "Digitalisation",
-          title: "IA et automatisation : gagner 30-40 % de temps",
+          title: "IA en finance : usages et contrôles",
         },
         {
           url: "/ressources/blog/organiser-sa-direction-financiere",
@@ -67,187 +68,31 @@ export default function ModernisationRoleCfoPage() {
         },
       ]}
     >
-      <h2 id="evolution">1. L'évolution du rôle depuis 10 ans</h2>
-      <p>
-        Il y a 10 ans (2016), le CFO typique passait 70 % de son temps sur de l'exécution administrative :
-      </p>
-      <ul>
-        <li>Clôture comptable manuelle</li>
-        <li>Reporting Excel (30 h/mois à copier-coller)</li>
-        <li>Rapprochements bancaires manuels</li>
-        <li>Contrôles internes papier</li>
-      </ul>
-      <p>
-        En 2026, le CFO moderne passe 70 % de son temps sur :
-      </p>
-      <ul>
-        <li>Analyse stratégique et prévisions</li>
-        <li>Optimisation des coûts et cash</li>
-        <li>Levée de fonds et accès capital</li>
-        <li>Reporting aux investisseurs / board</li>
-        <li>Risques financiers et conformité</li>
-      </ul>
-
-      <Callout type="success" title="Transformation majeure">
-        La digitalisation a libéré 50-60 % du temps des CFOs. Celui qui ne l'a pas fait reste coincé dans l'opérationnel. Celui qui l'a fait devient stratégique.
-      </Callout>
-
-      <p>
-        Le métier lui-même s'est fragmenté : salarié à temps plein, <a href="/ressources/blog/daf-externalise-vs-daf-interimaire">externalisé ou intérimaire</a>, chaque format répond à un besoin différent selon la taille et la maturité de l'entreprise.
-      </p>
-
-      <h2 id="trois-piliers">2. Les trois piliers du CFO moderne</h2>
-      <p>
-        <strong>Pilier 1 : Opérationnel excelent</strong> (automatisé)
-      </p>
-      <ul>
-        <li>Comptabilité cloud 100 % digitalisée</li>
-        <li>Reporting automatisé (zéro Excel)</li>
-        <li>Contrôles internes via workflow numérique</li>
-        <li>Compliance et audit faciles (audit trail complet)</li>
-      </ul>
-      <p>
-        <strong>Pilier 2 : Analyses et insights</strong>
-      </p>
-      <ul>
-        <li>Data-driven decision making (BI tools)</li>
-        <li>Variance analysis et root cause (pourquoi le CA a baissé ? Quels clients ?)</li>
-        <li>Benchmarking vs competitors</li>
-        <li>Simulations et scénarios (what-if)</li>
-      </ul>
-      <p>
-        <strong>Pilier 3 : Leadership et communication</strong>
-      </p>
-      <ul>
-        <li>Storytelling (transformer les chiffres en narration)</li>
-        <li>Stakeholder management (board, investors, équipe, management)</li>
-        <li>Influence stratégique (assis à la table du CEO)</li>
-        <li>Gestion du changement (transformation organisationnelle)</li>
-      </ul>
-
-      <StatGrid items={[
-        {
-          label: "Temps opérationnel (CFO automatisé)",
-          value: "15-20%",
-          sublabel: "versus 70% avant digitalisation",
-        },
-        {
-          label: "Temps analyse / stratégie",
-          value: "50-60%",
-          sublabel: "Augmenté grâce à l'automation",
-        },
-        {
-          label: "Compétences critiques",
-          value: "3",
-          sublabel: "Opérationnel, analyse, leadership",
-        },
-      ]} />
-
-      <h2 id="digitalisation">3. Digitalisation et automatisation</h2>
-      <p>
-        Le CFO 2026 doit maîtriser une stack de 4-5 outils :
-      </p>
-      <ul>
-        <li><strong>Comptabilité cloud</strong> (Pennylane, Sage, Xero) : OCR factures, rapprochement automatique</li>
-        <li><strong>Trésorerie</strong> (Agicap, Fygr) : Cash forecasting IA, alertes</li>
-        <li><strong>BI/Reporting</strong> (Power BI, Looker) : Tableaux de bord temps réel</li>
-        <li><strong>Workflow</strong> (Make, Zapier) : Automatisation processus</li>
-        <li><strong>IA intégrée</strong> (ChatGPT, Gemini) : Analyse documents, recommendations</li>
-      </ul>
-      <p>
-        Le CFO ne doit pas coder, mais comprendre ces outils et savoir s'en servir pour libérer du temps.
-      </p>
-
-      <h2 id="ia-data">4. IA, data et prédictions</h2>
-      <p>
-        L'IA transforme trois domaines clés :
-      </p>
-      <p>
-        <strong>Prévisions :</strong> L'IA apprend des patterns historiques et prédit avec 20-30 % plus de précision qu'une prévision manuelle. Exemple : "Sur la base des 3 dernières années et des commandes prévisionnelles, voici le CA prévisionnel 12 mois".
-      </p>
-      <p>
-        <strong>Détection anomalies :</strong> L'IA flag automatiquement les transactions suspectes (doublon, montant anormal, nouveau fournisseur). Le CFO économise 10-15 h/mois d'audit.
-      </p>
-      <p>
-        <strong>Optimisation coûts :</strong> L'IA analyse tous les postes de charges et recommande où cut/réduire. Exemple : "Votre coût de shipping est 20 % au-dessus du benchmark industry. Étudier ces 3 alternatives."
-      </p>
-
-      <Callout type="info" title="CFO + IA">
-        Les CFOs qui ne maîtrisent pas l'IA en 2026 seront en retard. L'IA n'élimine pas le CFO, elle l'élève : moins d'exécution, plus de stratégie.
-      </Callout>
-
-      <p>
-        Pour aller plus loin sur l'IA appliquée à la fonction finance d'une PME, voir notre guide <a href="/ressources/blog/ia-finance-automatisation-direction-financiere">automatisation et IA pour la direction financière</a>.
-      </p>
-
-      <h2 id="esg-reporting">5. ESG et reporting extra-financier</h2>
-      <p>
-        Un nouveau domaine émerge : l'ESG (Environnement, Social, Gouvernance). Les investisseurs, clients, et régulateurs exigent du reporting extra-financier.
-      </p>
-      <p>
-        Le CFO doit désormais mesurer et rapporter :
-      </p>
-      <ul>
-        <li><strong>Émissions carbone</strong> (Scope 1, 2, 3)</li>
-        <li><strong>Égalité salariale</strong> (homme/femme, par niveau)</li>
-        <li><strong>Diversité management</strong> (% femmes au management)</li>
-        <li><strong>Traçabilité supply chain</strong> (fournisseurs éthiques)</li>
-        <li><strong>Gouvernance</strong> (board independence, risk management)</li>
-      </ul>
-      <p>
-        Le CFO devient responsable de cette transparence financière + extra-financière. C'est une compétence nouvelle en 2026.
-      </p>
-
-      <h2 id="leadership">6. Leadership et communication</h2>
-      <p>
-        <strong>Communication vers le board / investisseurs :</strong>
-      </p>
-      <ul>
-        <li>Présenter les chiffres de manière narrative (story, pas juste tableaux)</li>
-        <li>Préparer board decks clairs et concis (pas 50 pages Excel)</li>
-        <li>Anticiper les questions (qu'aurais-je demandé moi aussi ?)</li>
-      </ul>
-      <p>
-        <strong>Leadership interne :</strong>
-      </p>
-      <ul>
-        <li>Gérer le changement (transition cloud, nouvelle IA, restructuration)</li>
-        <li>Former et développer l'équipe (moins manuelle, plus analytique)</li>
-        <li>Collaborer avec CEO, COO, CMO (finance partenaire, pas police)</li>
-      </ul>
-      <p>
-        <strong>Communication vers le marché :</strong>
-      </p>
-      <ul>
-        <li>Parler aux investisseurs en levée de fonds (storytelling impact)</li>
-        <li>Gérer les audits externes (confiance, transparence)</li>
-        <li>Participer aux événements industrie (penseur financier, pas just manager)</li>
-      </ul>
-
-      <InlineCta
-        title="Vous avez un CFO / DAF qui doit se moderniser ?"
-        body="Nos programmes de formation et coaching aident les directeurs financiers à maîtriser les outils modernes, l'IA, et le leadership stratégique. 2-3 jours, résultats immédiats."
-        ctaLabel="Formation CFO 2026 (devis)"
-        ctaHref="/contact?type=formation-cfo"
-      />
-
-      <h2>Conclusion : le CFO de 2026 est un leader stratégique</h2>
-      <p>
-        Le CFO n'est plus un gestionnaire de chiffres. Il est un partenaire stratégique du CEO, responsable de la création de valeur financière, de la gestion des risques, et de la communication transparente.
-      </p>
-      <p>
-        <strong>Checklist du CFO moderne :</strong>
-      </p>
-      <ul>
-        <li>☑️ Stack digitalisé (comptabilité cloud, trésorerie automatisée, BI)</li>
-        <li>☑️ Comprendre l'IA et l'utiliser pour prédire / optimiser</li>
-        <li>☑️ Piloter ESG reporting (compétence nouvelle, critique)</li>
-        <li>☑️ Communiquer clair avec board / investisseurs / équipe</li>
-        <li>☑️ Être un partenaire stratégique du CEO, pas un contrôleur</li>
-      </ul>
-      <p>
-        Chez Iter Advisors, nos DAFs externalisés maîtrisent ces compétences modernes. Nous accompagnons les PMEs à structurer une finance 2026-ready : opérationnelle, analytique, et stratégique.
-      </p>
+      <p>Le rôle du CFO évolue lorsque l’entreprise change ses sources de données, ses outils ou son organisation. La priorité reste la même : rendre les chiffres fiables et expliquer leurs conséquences pour les décisions. Pour les responsabilités du poste, consultez <Link href="/daf-externalise/metier">le métier de DAF</Link>. Ce guide traite les évolutions des pratiques, sans présumer d’un gain de temps ni d’une répartition universelle du travail.</p>
+      <h2 id="evolution">1. Évaluer ce qui change dans le travail financier</h2>
+      <p>Une clôture, un budget et une réunion de direction n’utilisent pas les mêmes données. Avant de moderniser la fonction, observez comment les informations sont produites, corrigées et validées. Les ressaisies, les pièces absentes et les écarts non expliqués sont des problèmes différents. Ils ne se résolvent pas tous par un logiciel.</p>
+      <p>Il n’est pas possible de déduire le temps libéré par la digitalisation à partir de l’intitulé de poste. Une mesure utile porte sur une tâche définie, pendant une période comparable, en incluant les corrections et la revue. Un résultat obtenu dans une entreprise ne décrit pas automatiquement le marché.</p>
+      <p>La direction doit aussi préciser ce qui reste dans l’équipe et ce qui peut être confié à un intervenant. Le guide <Link href="/ressources/blog/daf-externalise-vs-daf-interimaire">DAF externalisé ou intérimaire</Link> distingue les formats de mission. Changer le mode d’intervention ne dispense pas d’attribuer les décisions et les pouvoirs de validation.</p>
+      <h2 id="trois-piliers">2. Relier données, arbitrages et responsabilités</h2>
+      <p>Le premier chantier est la définition des données : périodes, sources, règles de calcul et responsables. Un indicateur de marge n’est utile que si l’on sait quelles charges il couvre. Un solde de trésorerie ne décrit pas les dépenses déjà engagées. Le CFO organise cette lecture avec les personnes qui connaissent les opérations.</p>
+      <p>Le deuxième chantier est la préparation des arbitrages. Le reporting doit permettre de discuter un recrutement, un investissement, une dépense ou une échéance de financement. Présentez les hypothèses et leurs effets sur le cash, les résultats et le calendrier. Une prévision sert à discuter des scénarios ; elle ne garantit pas leur réalisation.</p>
+      <p>Le troisième chantier est l’attribution des responsabilités. Produire un fichier, vérifier une écriture, présenter une analyse et autoriser un paiement sont des actions distinctes. Définissez les accès, les contrôles et les personnes habilitées. Le <Link href="/services/controle-de-gestion-externalise">contrôle de gestion</Link> apporte une lecture des écarts, tandis que la décision relève des responsables convenus.</p>
+      <h2 id="digitalisation">3. Digitaliser un flux avant d’étendre le système</h2>
+      <p>Choisissez un flux limité : collecte des pièces, rapprochement, actualisation d’un prévisionnel ou diffusion d’un reporting. Comparez les données produites avec une source de référence. Testez aussi une pièce manquante, un doublon et une correction de période. Ces exceptions permettent de voir si l’équipe peut réellement exploiter le système.</p>
+      <p>Dans Power BI, l’actualisation dépend des sources et du modèle utilisé. La <a href="https://learn.microsoft.com/en-us/power-bi/connect-data/refresh-data">documentation Microsoft sur l’actualisation des données</a> explique ces mécanismes. Pour le pilotage financier, précisez surtout la date de la dernière mise à jour et la conduite à tenir en cas d’échec.</p>
+      <p>Le guide <Link href="/ressources/blog/essentiels-outils-tech-finance">choisir et intégrer les outils finance</Link> présente les contrôles de sélection. L’<Link href="/ressources/outils">annuaire des outils finance</Link> complète cette méthode par des critères propres aux produits. Une démonstration doit porter sur votre dossier et les fonctions comprises dans le devis.</p>
+      <h2 id="ia-data">4. Encadrer l’IA dans la production financière</h2>
+      <p>Un assistant peut aider à préparer une synthèse, classer des informations ou proposer une première analyse. Le résultat doit pouvoir être rapproché des sources. Les calculs, dates et références doivent rester vérifiables ; une formulation convaincante n’est pas une preuve de justesse.</p>
+      <p>Commencez par un usage limité avec des données autorisées et un responsable de revue. Définissez ce qui peut être transmis au fournisseur, les conditions de conservation et les accès. Les <a href="https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative">questions-réponses de la CNIL sur l’IA générative</a> aident à examiner les risques liés aux données personnelles. Les choix doivent être validés selon le contexte de l’organisation.</p>
+      <p>Le guide <Link href="/ressources/blog/ia-finance-automatisation-direction-financiere">IA et automatisation de la direction financière</Link> distingue les usages et les contrôles. Pour mesurer un pilote, notez le temps de préparation, les corrections et la revue sur un périmètre constant. N’annoncez un résultat client qu’avec la période, la méthode de mesure et son accord de publication.</p>
+      <h2 id="esg-reporting">5. Préparer les données extra-financières pertinentes</h2>
+      <p>Les demandes de clients, financeurs ou partenaires peuvent porter sur des données extra-financières. Identifiez d’abord les demandes réellement applicables à l’entreprise, avec les interlocuteurs compétents. Une liste d’indicateurs trouvée en ligne ne suffit pas à définir une obligation ni une méthode de calcul.</p>
+      <p>Pour chaque donnée retenue, documentez le périmètre, la source et la personne qui la valide. Séparez les informations mesurées, les estimations et les éléments indisponibles. Conservez les justificatifs et expliquez les changements de méthode entre deux périodes. Le CFO peut coordonner ces travaux sans se substituer aux spécialistes techniques ou juridiques.</p>
+      <h2 id="leadership">6. Faire du reporting un support de décision</h2>
+      <p>Une réunion financière doit aboutir à quelques décisions attribuées à des responsables. Présentez les écarts qui demandent une action, leurs causes connues et les hypothèses encore incertaines. Convenez de la prochaine revue et des informations à obtenir avant de décider.</p>
+      <p>La communication utile distingue le réalisé, le prévisionnel et les recommandations. Une hausse du revenu n’explique pas à elle seule l’évolution du cash. Un financement ne constitue pas une amélioration de la rentabilité. L’analyse doit relier ces dimensions sans transformer une corrélation en résultat de mission.</p>
+      <p>Pour reprendre l’organisation, examinez les responsabilités et le calendrier dans <Link href="/ressources/blog/organiser-sa-direction-financiere">organiser sa direction financière</Link>. Un <Link href="/daf-externalise">DAF externalisé</Link> peut contribuer à ces travaux dans un périmètre convenu. Les données, l’équipe disponible et les décisions attendues déterminent la mission.</p>
+      <p>Sources consultées le 2 octobre 2026 : Microsoft Learn et CNIL. Les exemples de contrôle sont une méthode de travail proposée, pas des résultats de missions Iter ni des statistiques de marché.</p>
     </BlogPostPageRefonte>
   );
 }

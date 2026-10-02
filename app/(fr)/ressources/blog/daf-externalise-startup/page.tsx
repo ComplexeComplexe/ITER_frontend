@@ -82,44 +82,44 @@ export default function DafExternaliseStartupPage() {
       <h2 id="pourquoi-startup">1. Pourquoi un DAF en startup ?</h2>
 
       <p>
-        La plupart des startups font la même erreur : elles sous-estiment leur besoin en direction financière, puis le sur-estiment. Avant 5 M€ de CA, recruter un CFO interne à temps plein n'est pas rentable — le poste coûte entre 10 000 et 14 000 € par mois charges comprises pour un profil senior, alors que la charge réelle ne dépasse pas 1 à 2 jours par semaine. Mais laisser la finance au fondateur — ou à un cabinet comptable traditionnel — conduit inévitablement aux mêmes problèmes : reporting imprécis, trésorerie mal pilotée, et une data room trouée le jour de la levée.
+        La plupart des startups font la même erreur : elles sous-estiment leur besoin en direction financière, puis le sur-estiment. Avant 5 M€ de CA, recruter un CFO interne à temps plein n&apos;est pas rentable — le poste coûte entre 10 000 et 14 000 € par mois charges comprises pour un profil senior, alors que la charge réelle ne dépasse pas 1 à 2 jours par semaine. Mais laisser la finance au fondateur — ou à un cabinet comptable traditionnel — conduit inévitablement aux mêmes problèmes : reporting imprécis, trésorerie mal pilotée, et une data room trouée le jour de la levée.
       </p>
 
       <p>
-        Le DAF externalisé répond précisément à ce gap. Il apporte une expertise CFO de niveau senior, à temps partagé, sans le coût d'une embauche permanente. Pour une startup en phase de croissance, c'est le modèle qui offre le meilleur ratio expertise / budget — et surtout, le meilleur ratio crédibilité / vitesse d'exécution face aux investisseurs.
+        Le DAF externalisé répond précisément à ce gap. Il apporte une expertise CFO de niveau senior, à temps partagé, sans le coût d&apos;une embauche permanente. Pour une startup en phase de croissance, c&apos;est le modèle qui offre le meilleur ratio expertise / budget — et surtout, le meilleur ratio crédibilité / vitesse d&apos;exécution face aux investisseurs.
       </p>
 
       <p>
-        Une startup dont les finances sont bien tenues dès le départ n'est pas seulement plus rassurante pour un VC : elle prend de meilleures décisions opérationnelles. Savoir combien de mois de runway il reste, à quel MRR on atteint le break-even, ou quel levier de croissance est le plus rentable — ce sont des questions auxquelles seul un pilotage financier rigoureux permet de répondre en temps réel.
+        Une startup dont les finances sont bien tenues dès le départ n&apos;est pas seulement plus rassurante pour un VC : elle prend de meilleures décisions opérationnelles. Savoir combien de mois de runway il reste, à quel MRR on atteint le break-even, ou quel levier de croissance est le plus rentable — ce sont des questions auxquelles seul un pilotage financier rigoureux permet de répondre en temps réel.
       </p>
 
       <h2 id="quand-recruter">2. Les 5 déclencheurs pour recruter un DAF externalisé</h2>
 
       <p>
-        Il n'existe pas d'âge minimum pour structurer sa finance. En revanche, il existe cinq signaux qui indiquent qu'un DAF externalisé devient indispensable — souvent simultanément.
+        Il n&apos;existe pas d&apos;âge minimum pour structurer sa finance. En revanche, il existe cinq signaux qui indiquent qu&apos;un DAF externalisé devient indispensable — souvent simultanément.
       </p>
 
       <h3>Déclencheur 1 : la première levée de fonds</h3>
       <p>
-        C'est le déclencheur le plus fréquent, et le plus urgent. Un VC ou un business angel regarde d'abord les chiffres historiques, puis le prévisionnel. Si vos bilans présentent des irrégularités, si votre compte de résultat est difficile à lire, ou si votre cap table n'est pas à jour, le closing prend plusieurs semaines de retard — voire échoue. Un DAF externalisé prépare la data room, assainit la comptabilité historique et construit un prévisionnel 3 ans avec des hypothèses défendables.
+        C&apos;est le déclencheur le plus fréquent, et le plus urgent. Un VC ou un business angel regarde d&apos;abord les chiffres historiques, puis le prévisionnel. Si vos bilans présentent des irrégularités, si votre compte de résultat est difficile à lire, ou si votre cap table n&apos;est pas à jour, le closing prend plusieurs semaines de retard — voire échoue. Un DAF externalisé prépare la data room, assainit la comptabilité historique et construit un prévisionnel 3 ans avec des hypothèses défendables.
       </p>
 
-      <h3>Déclencheur 2 : l'entrée d'un board ou d'investisseurs</h3>
+      <h3>Déclencheur 2 : l&apos;entrée d&apos;un board ou d&apos;investisseurs</h3>
       <p>
         Dès que vous avez un board (même informel), vous devez produire un reporting mensuel ou trimestriel structuré : P&L, trésorerie, KPIs, analyse des écarts vs budget. Sans DAF, ce reporting prend du temps à un fondateur qui devrait être focalisé sur la croissance. Avec un DAF externalisé, le board reçoit un pack financier clair sous 5 jours après la clôture mensuelle.
       </p>
 
       <h3>Déclencheur 3 : MRR supérieur à 100 k€</h3>
       <p>
-        À ce stade, les flux financiers deviennent suffisamment complexes pour justifier un suivi rigoureux : reconnaissance des revenus, gestion des débiteurs, suivi des coûts variables vs fixes, pilotage du burn rate. C'est aussi le seuil à partir duquel les erreurs comptables ont un impact matériel sur vos décisions de recrutement ou d'investissement.
+        À ce stade, les flux financiers deviennent suffisamment complexes pour justifier un suivi rigoureux : reconnaissance des revenus, gestion des débiteurs, suivi des coûts variables vs fixes, pilotage du burn rate. C&apos;est aussi le seuil à partir duquel les erreurs comptables ont un impact matériel sur vos décisions de recrutement ou d&apos;investissement.
       </p>
 
-      <h3>Déclencheur 4 : l'équipe dépasse 15 personnes</h3>
+      <h3>Déclencheur 4 : l&apos;équipe dépasse 15 personnes</h3>
       <p>
-        Au-delà de 15 salariés, la masse salariale représente généralement 50 à 70 % des dépenses totales. Piloter la rémunération, les provisions pour congés, les BSPCE, et l'impact du recrutement sur le runway devient un travail à part entière. Un DAF externalisé prend en charge ce suivi et alerte le fondateur dès que le budget de recrutement dépasse les limites du plan.
+        Au-delà de 15 salariés, la masse salariale représente généralement 50 à 70 % des dépenses totales. Piloter la rémunération, les provisions pour congés, les BSPCE, et l&apos;impact du recrutement sur le runway devient un travail à part entière. Un DAF externalisé prend en charge ce suivi et alerte le fondateur dès que le budget de recrutement dépasse les limites du plan.
       </p>
 
-      <h3>Déclencheur 5 : l'internationalisation</h3>
+      <h3>Déclencheur 5 : l&apos;internationalisation</h3>
       <p>
         Ouvrir une entité en Espagne, aux États-Unis ou au Royaume-Uni génère immédiatement des questions de consolidation, de fiscalité internationale, de transfer pricing et de gestion multi-devises. Un DAF externalisé avec expérience cross-border vous évite les erreurs structurelles coûteuses à corriger après coup.
       </p>
@@ -127,7 +127,7 @@ export default function DafExternaliseStartupPage() {
       <h2 id="missions-cles">3. Les missions clés du DAF externalisé en startup</h2>
 
       <p>
-        Le périmètre d'un DAF externalisé en startup est différent de celui d'une PME mature. Les priorités sont plus tactiques, plus liées aux cycles de financement, et plus orientées données que comptabilité pure.
+        Le périmètre d&apos;un DAF externalisé en startup est différent de celui d&apos;une PME mature. Les priorités sont plus tactiques, plus liées aux cycles de financement, et plus orientées données que comptabilité pure.
       </p>
 
       <h3>Reporting investisseurs et board pack</h3>
@@ -137,12 +137,12 @@ export default function DafExternaliseStartupPage() {
 
       <h3>Préparation et suivi de la data room</h3>
       <p>
-        La data room est l'outil central de toute levée de fonds. Le DAF externalisé la construit et la maintient à jour : bilans et comptes de résultat certifiés sur 3 ans, prévisionnel P&L et trésorerie 36 mois avec hypothèses documentées, cap table, contrats clés, tableau des effectifs et masse salariale, et tableaux de bord KPIs. Une data room bien structurée réduit le délai de closing de 2 à 4 semaines.
+        La data room est l&apos;outil central de toute levée de fonds. Le DAF externalisé la construit et la maintient à jour : bilans et comptes de résultat certifiés sur 3 ans, prévisionnel P&L et trésorerie 36 mois avec hypothèses documentées, cap table, contrats clés, tableau des effectifs et masse salariale, et tableaux de bord KPIs. Une data room bien structurée réduit le délai de closing de 2 à 4 semaines.
       </p>
 
       <h3>Prévisionnel de trésorerie et pilotage du runway</h3>
       <p>
-        Le risque numéro un d'une startup n'est pas de manquer de clients — c'est de manquer de cash sans l'avoir anticipé. Le DAF externalisé produit une projection de trésorerie glissante à 12 mois, mise à jour chaque mois, avec trois scénarios (optimiste, central, prudent). Le fondateur sait à tout moment combien de mois de runway il lui reste et à quel rythme il doit lever.
+        Le risque numéro un d&apos;une startup n&apos;est pas de manquer de clients — c&apos;est de manquer de cash sans l&apos;avoir anticipé. Le DAF externalisé produit une projection de trésorerie glissante à 12 mois, mise à jour chaque mois, avec trois scénarios (optimiste, central, prudent). Le fondateur sait à tout moment combien de mois de runway il lui reste et à quel rythme il doit lever.
       </p>
 
       <h3>Structuration comptable et clôtures mensuelles</h3>
@@ -156,7 +156,7 @@ export default function DafExternaliseStartupPage() {
 
       <MidArticleSoftCTA locale="fr" />
 
-      <h2 id="cout-startup">4. Coût d'un DAF externalisé pour une startup</h2>
+      <h2 id="cout-startup">4. Coût d&apos;un DAF externalisé pour une startup</h2>
 
       <p>
         Le coût dépend essentiellement du temps passé, lui-même fonction de la complexité et du stade de la startup. Pour une startup de 500 k€ à 3 M€ de CA, le rythme standard est de 1 à 2 jours par semaine. Voici les fourchettes observées en 2026 :
@@ -206,7 +206,7 @@ export default function DafExternaliseStartupPage() {
       </ProseTable>
 
       <p>
-        Ces tarifs correspondent à des DAFs avec 10 à 20 ans d'expérience, ayant déjà piloté des levées de fonds ou des exits. Le coût peut varier selon la complexité fiscale (multi-entités, international), la qualité de la comptabilité existante, et les outils en place.
+        Ces tarifs correspondent à des DAFs avec 10 à 20 ans d&apos;expérience, ayant déjà piloté des levées de fonds ou des exits. Le coût peut varier selon la complexité fiscale (multi-entités, international), la qualité de la comptabilité existante, et les outils en place.
       </p>
 
       <h2 id="vs-cfo-interne">5. DAF externalisé vs CFO interne : la comparaison qui compte</h2>
@@ -236,7 +236,7 @@ export default function DafExternaliseStartupPage() {
           </tr>
           <tr>
             <td><strong>Séniorité garantie</strong></td>
-            <td>10 – 20 ans d'expérience</td>
+            <td>10 – 20 ans d&apos;expérience</td>
             <td>Variable selon budget</td>
           </tr>
           <tr>
@@ -267,18 +267,18 @@ export default function DafExternaliseStartupPage() {
       </p>
 
       <Callout type="info" title="Règle empirique">
-        Le passage au CFO interne se justifie généralement quand vous avez besoin d'une présence quotidienne (plus de 4 jours par semaine) de manière structurelle — ce qui correspond typiquement à 5 – 10 M€ de CA avec une équipe finance d'au moins 2 personnes à superviser.
+        Le passage au CFO interne se justifie généralement quand vous avez besoin d&apos;une présence quotidienne (plus de 4 jours par semaine) de manière structurelle — ce qui correspond typiquement à 5 – 10 M€ de CA avec une équipe finance d&apos;au moins 2 personnes à superviser.
       </Callout>
 
       <h2 id="choisir">6. Comment choisir son DAF externalisé quand on est une startup ?</h2>
 
       <p>
-        Toutes les offres de DAF externalisé ne se valent pas, surtout pour les startups. Un cabinet qui excelle sur des PME industrielles de 20 M€ n'est pas nécessairement adapté à une startup SaaS en pré-Série A. Voici les critères qui comptent vraiment.
+        Toutes les offres de DAF externalisé ne se valent pas, surtout pour les startups. Un cabinet qui excelle sur des PME industrielles de 20 M€ n&apos;est pas nécessairement adapté à une startup SaaS en pré-Série A. Voici les critères qui comptent vraiment.
       </p>
 
       <h3>Expérience en levée de fonds</h3>
       <p>
-        Le critère numéro un pour une startup. Demandez combien de levées votre futur DAF a pilotées, pour quels montants, et avec quels types d'investisseurs (business angels, VCs, family offices). Un DAF qui n'a jamais construit de data room ne peut pas vous préparer efficacement à une levée.
+        Le critère numéro un pour une startup. Demandez combien de levées votre futur DAF a pilotées, pour quels montants, et avec quels types d&apos;investisseurs (business angels, VCs, family offices). Un DAF qui n&apos;a jamais construit de data room ne peut pas vous préparer efficacement à une levée.
       </p>
 
       <h3>Connaissance des modèles économiques tech</h3>
@@ -293,12 +293,12 @@ export default function DafExternaliseStartupPage() {
 
       <h3>Outils et stack tech</h3>
       <p>
-        Un bon DAF pour startup travaille avec des outils modernes : Pennylane, Qonto, Finary, Notion pour la data room, Google Sheets ou Pigment pour la modélisation financière. S'il travaille encore principalement sur des tableurs locaux et un logiciel comptable installé, c'est un signe de décalage par rapport aux standards du marché.
+        Un bon DAF pour startup travaille avec des outils modernes : Pennylane, Qonto, Finary, Notion pour la data room, Google Sheets ou Pigment pour la modélisation financière. S&apos;il travaille encore principalement sur des tableurs locaux et un logiciel comptable installé, c&apos;est un signe de décalage par rapport aux standards du marché.
       </p>
 
       <h3>Références dans votre secteur et votre stade</h3>
       <p>
-        Demandez systématiquement 2 à 3 références de startups comparables à la vôtre (stade, secteur, taille d'équipe). Un bon DAF externalisé sera heureux de vous mettre en contact avec ses clients actuels. Un prestataire qui hésite ou qui ne peut donner que des références génériques doit vous alerter.
+        Demandez systématiquement 2 à 3 références de startups comparables à la vôtre (stade, secteur, taille d&apos;équipe). Un bon DAF externalisé sera heureux de vous mettre en contact avec ses clients actuels. Un prestataire qui hésite ou qui ne peut donner que des références génériques doit vous alerter.
       </p>
 
       <p>

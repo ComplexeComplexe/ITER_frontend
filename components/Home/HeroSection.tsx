@@ -24,7 +24,7 @@ export default function HeroSection(props: HeroSectionProps) {
           <p className="mt-6 text-base sm:text-lg text-white/85 leading-relaxed max-w-2xl">{isFrench ? "Un DAF senior à temps partagé pour piloter votre trésorerie, fiabiliser le reporting et préparer vos financements. Pour les PME et startups, avec des équipes à Paris et Barcelone." : heroSubtitle}</p>
           <div className="mt-7 flex flex-col sm:flex-row gap-3">
             <Link href={isFrench ? "/contact#daf" : heroCtaUrl} className="site-button site-button-primary inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-iter-chartreuse px-6 py-3 text-iter-dark font-semibold">{isFrench ? "Échanger sur mon besoin finance" : heroCtaLabel}<ArrowRight size={18} /></Link>
-            <Link href={isFrench ? "/daf-externalise" : `/${locale}/services`} className="site-button site-button-secondary inline-flex min-h-12 items-center justify-center rounded-full border border-white/50 px-6 py-3 font-medium hover:bg-white/10">{isFrench ? "Missions et tarifs DAF" : discoverServicesLabel}</Link>
+            <Link href={isFrench ? "/daf-externalise" : `/${locale}/services`} className="site-button site-button-secondary inline-flex min-h-12 items-center justify-center rounded-full border border-white/50 px-6 py-3 font-medium hover:bg-white/10">{isFrench ? "Direction financière externalisée" : discoverServicesLabel}</Link>
           </div>
         </div>
           {isFrench && <aside className="home-rh-card" aria-label="Offre DRH"><h2>Direction RH à temps partagé</h2><p>Recrutement, organisation, management : un accompagnement RH pour vos équipes.</p><Link href="/drh-externalise">Découvrir l’offre DRH <span aria-hidden="true">→</span></Link></aside>}

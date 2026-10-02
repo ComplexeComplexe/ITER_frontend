@@ -20,7 +20,7 @@ describe('editorial integrity', () => {
     const entries = await sitemap();
     expect(entries.find(item => item.url.endsWith('/daf-externalise'))?.lastModified).toBe(DAF_PILLAR_MODIFIED);
     expect(entries.some(item => item.url.endsWith('/ressources/glossaire/daf'))).toBe(false);
-    expect(entries.find(item => item.url.endsWith('/daf-externalise/metier'))?.lastModified).toBe('2026-10-01');
+    expect(entries.find(item => item.url.endsWith('/daf-externalise/metier'))?.lastModified).toBe('2026-10-02');
     expect(entries.find(item => item.url.endsWith('/en/ressources/blog/daf-externalise-vs-daf-salarie'))?.lastModified).toBe('2026-09-13');
     expect(entries.find(item => item.url.endsWith('/politique-cookies'))?.lastModified).not.toBe('2026-09-13');
   });

@@ -1,4 +1,3 @@
-import { getDafOffer } from "./daf-offer";
 import { Locale } from "../i18n";
 
 export type GlossaryEntrySlug =
@@ -174,75 +173,51 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
       ctaButton: "Prendre rendez-vous",
     },
     cfo: {
-      meta: {
-        title: "CFO — Rôle, Missions et Définition | Iter Advisors",
-        description:
-          "CFO : définition, missions du Chief Financial Officer, différence avec un DAF et pourquoi les startups ont besoin d'un CFO externalisé. Guide Iter Advisors.",
+      "meta": {
+            "title": "CFO : définition du Chief Financial Officer | Iter Advisors",
+            "description": "CFO signifie Chief Financial Officer, ou directeur financier. Définition du poste, différence avec DAF et liens vers les missions et le mode externalisé."
       },
-      h1: "CFO — Définition, Rôle et Missions du Chief Financial Officer",
-      sections: [
-        {
-          content: [
-            "Le **CFO** (Chief Financial Officer) est le dirigeant financier d'une entreprise. Il dirige la fonction finance, assure la gestion de la trésorerie, supervise la comptabilité, et conseille la direction générale sur les décisions stratégiques à impact financier. Dans une startup, le CFO peut être la différence entre une croissance maîtrisée et une faillite évitable.",
-            "En France, le CFO est souvent appelé **[DAF](/daf-externalise/metier)** (Directeur Administratif et Financier). Les deux termes désignent globalement le même poste, même si le DAF français a traditionnellement une dimension administrative plus marquée.",
-          ],
-        },
-        {
-          heading: "Définition du CFO",
-          content: [
-            "Le **Chief Financial Officer** (CFO) est le membre de la direction chargé de la stratégie financière de l'entreprise. Il est responsable de :",
-            "**La stratégie financière** : planification, prévisions, modèles financiers",
-            "**La gestion de la trésorerie** : cash-flow, prévisions de trésorerie, relations bancaires",
-            "**La comptabilité et le reporting** : comptes annuels, reporting mensuel, audit",
-            "**Le contrôle de gestion** : budgets, analyse des écarts, KPIs financiers",
-            "**Les relations avec les investisseurs** : levées de fonds, reporting board, M&A",
-            "**La fiscalité** : optimisation fiscale, conformité, subventions (CIR)",
-          ],
-        },
-        {
-          heading: "CFO vs DAF : quelle différence ?",
-          content: [
-            "**Appellation** : « CFO » est anglo-saxonne ; « DAF » est française.",
-            "**Focus principal** : le CFO se concentre sur la stratégie financière et les investisseurs ; le DAF combine administration et finance.",
-            "**Typologie d'entreprise** : on parle plus de CFO dans les startups, scale-ups et entreprises multinationales ; le DAF est la norme dans les PME, ETI et groupes français.",
-            "**Relations investisseurs** : centrales chez le CFO (VC, M&A), moindres chez le DAF.",
-            "**Dimension administrative** : limitée chez le CFO, marquée chez le DAF (juridique, RH).",
-            "**International** : très présent chez le CFO, plus local chez le DAF.",
-            "« Dans la pratique, chez nos clients startups, le DAF externalisé joue exactement le même rôle qu'un CFO. Il gère la stratégie financière, accompagne les levées de fonds, et présente au board. La différence est dans le nom, pas dans les missions. » — **Benjamin Ziza, Founding Partner & CFO, Iter Advisors**",
-          ],
-        },
-        {
-          heading: "Les missions d'un CFO dans une startup",
-          content: [
-            "**Phase Seed (CA < 1M€, < 15 personnes)** : mise en place de la comptabilité et des outils, suivi de la trésorerie, déclarations fiscales, premiers budgets.",
-            "**Phase Series A (CA 1-5M€, 15-50 personnes)** : construction du modèle financier, reporting mensuel au board, accompagnement à la levée de fonds, contrôle de gestion, optimisation fiscale (CIR).",
-            "**Phase Series B+ (CA > 5M€, > 50 personnes)** : stratégie financière et M&A, consolidation multi-sociétés, relations bancaires et dette, supervision de l'équipe finance, préparation à l'exit (IPO ou rachat).",
-          ],
-        },
-        {
-          heading: "Le CFO externalisé : la solution pour les PME et startups",
-          content: [
-            "Toutes les entreprises n'ont pas besoin (ni les moyens) d'un CFO à temps plein. Le **CFO externalisé** (ou [DAF externalisé](/daf-externalise)) offre :",
-            "**Un accès à une expertise de niveau C-suite** sans le coût d'un salarié (30 à 50 % moins cher)",
-            "**Une flexibilité totale** : de 2 jours/mois à temps plein selon les besoins",
-            "**Une vision multi-sectorielle** : nos CFOs interviennent sur 10 à 15 entreprises par an",
-            "**Un réseau** : accès à des VCs, banquiers, avocats, experts-comptables",
-            "Pour aller plus loin, découvrez notre offre de [DAF externalisé](/daf-externalise) ou comparez avec un [expert-comptable](/ressources/blog/daf-externalise-vs-expert-comptable). En anglais, lisez notre page [Fractional CFO](/en/fractional-cfo).",
-          ],
-        },
-        {
-          heading: "FAQ - CFO",
-          content: [
-            "**Quelle est la différence entre un CFO et un expert-comptable ?** L'expert-comptable gère la comptabilité passée (déclarations, bilans). Le CFO pilote la stratégie financière future (prévisions, levées de fonds, board). Les deux sont complémentaires.",
-            `**À quel stade une startup a-t-elle besoin d’un CFO ?** Lorsque la complexité financière exige un pilotage dédié : trésorerie, budget, financement ou reporting. Chez Iter Advisors : ${getDafOffer("fr").price}, selon le périmètre confié.`,
-            "**CFO salarié vs CFO externalisé : que choisir ?** < 50 personnes = externalisé (plus flexible, moins cher). > 50 personnes avec une finance complexe = salarié.",
-            "**Le CFO fait-il aussi de la paie et du RH ?** Généralement non. La paie est gérée par un outil ([PayFit](/ressources/outils/payfit), [Silae](/ressources/outils/silae)) ou un cabinet. Le CFO peut superviser la fonction RH mais ne la gère pas directement.",
-            "**Quelle est la différence entre CFO et CFA ?** Le CFA (Chartered Financial Analyst) est une certification professionnelle. Le CFO est un titre de poste. Les deux n'ont rien à voir.",
-          ],
-        },
+      "h1": "CFO : définition du Chief Financial Officer",
+      "sections": [
+            {
+                  "content": [
+                        "Le **CFO**, pour Chief Financial Officer, est le responsable de la direction financière. Il coordonne le pilotage des résultats, de la trésorerie et des risques financiers, selon les responsabilités confiées par l’entreprise."
+                  ]
+            },
+            {
+                  "heading": "Définition du CFO",
+                  "content": [
+                        "CFO est un titre de fonction. Il ne décrit ni le statut salarié, ni un mode de prestation, ni une certification. Le périmètre peut inclure budget, reporting, financement et coordination des travaux comptables."
+                  ]
+            },
+            {
+                  "heading": "CFO vs DAF : quelle différence ?",
+                  "content": [
+                        "DAF signifie directeur administratif et financier. Les deux appellations peuvent désigner le même poste. Le titre seul ne permet pas de déduire les pouvoirs de signature, le rôle RH ou la place dans la gouvernance."
+                  ]
+            },
+            {
+                  "heading": "Les missions d'un CFO dans une startup",
+                  "content": [
+                        "Les priorités dépendent du dossier : trésorerie, revenus, marges ou reporting investisseurs. Découvrez le [le métier de DAF](/daf-externalise/metier) et les [missions et livrables d’un CFO externe](/ressources/blog/cfo-externe-role-missions-2026)."
+                  ]
+            },
+            {
+                  "heading": "Le CFO externalisé : la solution pour les PME et startups",
+                  "content": [
+                        "Un [DAF externalisé](/daf-externalise) intervient dans un cadre de prestation. Le temps partagé décrit une disponibilité partielle convenue. Aucun seuil d’effectif ne détermine automatiquement le choix entre salarié et prestataire."
+                  ]
+            },
+            {
+                  "heading": "FAQ - CFO",
+                  "content": [
+                        "**CFO et expert-comptable : quelle différence ?** Le CFO pilote la fonction financière ; l’expert-comptable réalise les missions convenues avec son client, qui peuvent aussi inclure du conseil. Précisez leurs responsabilités respectives.",
+                        "**CFO et CFA : quelle différence ?** CFO est un poste ; CFA désigne une qualification professionnelle en analyse financière."
+                  ]
+            }
       ],
-      ctaButton: "Besoin d'un CFO ? Diagnostic gratuit",
-    },
+      "ctaButton": "Cadrer ma direction financière"
+},
     // ─── 8 pages glossaire ajoutées via TICKET 21 ──────────────────────
     "besoin-fonds-roulement-bfr": {
       meta: {
@@ -712,7 +687,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
           "content": [
             "**Départ d’un bénéficiaire.** Les droits conservés, les délais d’exercice et les clauses de départ dépendent du plan et de leur validité juridique. Un départ ne produit pas automatiquement le même résultat dans tous les plans.",
             "**Absence de prochain tour.** Un BSA Air doit prévoir les situations où le financement attendu n’intervient pas, ainsi que les autres événements de liquidité ou d’échéance.",
-            "**Suivi incomplet.** Conservez les décisions d’émission, les attributions, les exercices et une table de capitalisation à jour. Notre [accompagnement à la levée de fonds](/services/accompagnement-levee-de-fond) aide à structurer les données financières nécessaires."
+            "**Suivi incomplet.** Conservez les décisions d’émission, les attributions, les exercices et une table de capitalisation à jour. Pour préparer une démonstration, voir les fiches [Carta](/ressources/outils/carta) et [Equify](/ressources/outils/equify). Notre [accompagnement à la levée de fonds](/services/accompagnement-levee-de-fond) aide à structurer les données financières nécessaires."
           ]
         },
         {
@@ -828,48 +803,39 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
       ctaButton: "Mettre en place mon contrôle de gestion",
     },
     "fractional-cfo": {
-      meta: {
-        title: "Fractional CFO : définition et missions | Iter Advisors",
-        description:
-          "Fractional CFO (CFO fractionnel) : définition, différence avec le DAF externalisé, cas d'usage startups et tarifs 2026 en France.",
+      "meta": {
+            "title": "Fractional CFO : définition du temps partagé | Iter Advisors",
+            "description": "Un fractional CFO intervient à temps partagé. Définition du modèle, responsabilités à convenir et lien vers le pilotage financier des startups."
       },
-      h1: "Fractional CFO : définition et missions",
-      sections: [
-        {
-          content: [
-            "Un **Fractional CFO** (CFO fractionnel) est un directeur financier senior qui intervient à temps partiel pour plusieurs entreprises en simultané. L'expression, venue du monde anglo-saxon, désigne le même profil qu'un **[DAF externalisé](/daf-externalise)** en France — avec une culture plus orientée startups tech, VCs et relations investisseurs.",
-          ],
-        },
-        {
-          heading: "Fractional CFO vs DAF externalisé",
-          content: [
-            "Les deux termes désignent le même modèle d'intervention (temps partiel, multi-clients) mais avec des cultures différentes :",
-            "**Fractional CFO :** Terminologie anglo-saxonne, dominante dans les startups tech et scale-ups. Profil très orienté levée de fonds, data room, relations VC.",
-            "**DAF externalisé :** Terminologie française, dominante dans les PME et ETI. Périmètre souvent plus large incluant comptabilité, paie, administration.",
-            "Chez Iter Advisors, nos associés interviennent indifféremment sous les deux casquettes selon la culture de l'entreprise cliente.",
-          ],
-        },
-        {
-          heading: "Missions d'un Fractional CFO",
-          content: [
-            "**Levée de fonds :** Préparation de la data room, modèle financier, pitch financier et accompagnement des négociations. Nos Fractional CFO ont accompagné des dizaines de levées du seed à la série B — plus de 100 M€ levés par nos clients depuis 2021.",
-            "**Reporting investisseurs :** Reporting mensuel aux VCs et business angels, tableaux de bord KPIs, board packages.",
-            "**Trésorerie et runway :** Suivi du cash burn, calcul du runway, alertes précoces et plan d'action.",
-            "**Structuration financière :** Mise en place du contrôle de gestion, choix des outils, définition des KPIs.",
-            "**Exit préparation :** Due diligence vendor-side, audit préalable, structuration fiscale de la sortie.",
-          ],
-        },
-        {
-          heading: "Tarifs d'un Fractional CFO en France",
-          content: [
-            `**Honoraires Iter Advisors :** ${getDafOffer("fr").price}. ${getDafOffer("fr").billing}`,
-            `**Démarrage :** ${getDafOffer("fr").start}, selon le cadrage. ${getDafOffer("fr").commitment}`,
-            "Comparez les [formules et livrables](/daf-externalise/tarifs), puis découvrez [notre accompagnement des startups](/fractional-cfo-startups).",
-          ],
-        },
+      "h1": "Fractional CFO : définition du temps partagé",
+      "sections": [
+            {
+                  "content": [
+                        "Un **fractional CFO** est un directeur financier dont la disponibilité est partagée entre plusieurs missions. Le terme décrit un mode d’intervention à temps partiel, proche du **[DAF externalisé](/daf-externalise)** à temps partagé."
+                  ]
+            },
+            {
+                  "heading": "Fractional CFO vs DAF externalisé",
+                  "content": [
+                        "Fractional CFO et DAF externalisé peuvent désigner le même accompagnement. Le nom ne garantit ni expérience sectorielle, ni accès à des investisseurs. Le contrat doit préciser périmètre, disponibilité, livrables et responsabilités."
+                  ]
+            },
+            {
+                  "heading": "Missions d'un Fractional CFO",
+                  "content": [
+                        "Le besoin peut porter sur la trésorerie, le budget, le reporting ou la préparation financière d’une opération. Pour les contextes de revenus récurrents et de financement, voir [fractional CFO](/fractional-cfo-startups). Les priorités et la cadence se définissent sur le dossier.",
+                        "La production comptable, la paie et les conseils juridiques ou fiscaux doivent être attribués aux intervenants compétents. Une disponibilité partagée ne suppose pas une présence quotidienne à temps plein."
+                  ]
+            },
+            {
+                  "heading": "Tarifs d'un Fractional CFO en France",
+                  "content": [
+                        "Comparez les missions et les disponibilités au même périmètre. Les [formules et tarifs Iter](/daf-externalise/tarifs) sont présentés sur une page dédiée ; aucun montant moyen de marché n’est déduit de cette définition."
+                  ]
+            }
       ],
-      ctaButton: "Parler à un Fractional CFO",
-    },
+      "ctaButton": "Cadrer une mission à temps partagé"
+},
   },
   en: {
     bfr: {

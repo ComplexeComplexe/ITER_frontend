@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Metadata } from "next";
 import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
 import { getCmsNavigation } from "@/lib/static-content";
@@ -95,6 +96,7 @@ export default async function Page() {
       ]}
       metaDescription="Levée de fonds : préparation financière et juridique. Due diligence, checklist, valorisation. Iter Advisors a aidé startups à lever 100M€+."
     >
+      <p>Pour structurer le modèle et les données de votre dossier, voir notre <Link href="/services/accompagnement-levee-de-fond">accompagnement levée de fonds</Link>. La décision de financement appartient aux investisseurs.</p>
       <h2 id="pourquoi">Pourquoi la préparation fait la différence entre un closing en 4 mois et 18 mois</h2>
 
       <p>
@@ -109,11 +111,11 @@ export default async function Page() {
           attribuer à la préparation financière n'est pas démontrable. */}
       <p>
         Une levée se joue sur la traction et le marché ; la préparation financière ne
-        les remplace pas. Ce qu'elle change est plus circonscrit, et c'est déjà
+        les remplace pas. Ce qu&apos;elle change est plus circonscrit, et c&apos;est déjà
         beaucoup : une due diligence qui ne déterre pas de surprise, un prévisionnel
-        dont les hypothèses tiennent à l'interrogatoire, et des délais qui ne dérapent
+        dont les hypothèses tiennent à l&apos;interrogatoire, et des délais qui ne dérapent
         pas faute de pièces. Les dossiers qui échouent en due diligence échouent
-        rarement sur le fond — ils échouent sur ce qui n'avait pas été préparé.
+        rarement sur le fond — ils échouent sur ce qui n&apos;avait pas été préparé.
       </p>
 
       <Callout type="info" title="Réalité des investisseurs">
@@ -147,7 +149,7 @@ export default async function Page() {
         une question, chaque question une semaine.
       </p>
 
-      <h2 id="timeline">Timeline d'une levée de fonds : de l'amorçage au closing en 7 étapes</h2>
+      <h2 id="timeline">Timeline d&apos;une levée de fonds : de l&apos;amorçage au closing en 7 étapes</h2>
 
       <p>
         Une levée se déroule sur 6 à 9 mois. Voici le calendrier recommandé :
@@ -158,7 +160,7 @@ export default async function Page() {
       <ul>
         <li>Audit financier interne : historique 2-3 ans, identifier holes</li>
         <li>Audit juridique : statuts, cap table, contrats salariés/fournisseurs</li>
-        <li>Audit fiscal : structures, expositions, crédits d'impôt</li>
+        <li>Audit fiscal : structures, expositions, crédits d&apos;impôt</li>
         <li>Construction du data room (centralisé et versionnée)</li>
       </ul>
 
@@ -166,8 +168,8 @@ export default async function Page() {
 
       <ul>
         <li>Corriger cap table (actions de complaisance, BSPCE non documentés)</li>
-        <li>Mettre à jour statuts et registre d'actionnaires</li>
-        <li>Signer les documents manquants (contrats d'emploi, NDA)</li>
+        <li>Mettre à jour statuts et registre d&apos;actionnaires</li>
+        <li>Signer les documents manquants (contrats d&apos;emploi, NDA)</li>
         <li>Clôturer comptes N-2, N-1 complètement</li>
       </ul>
 
@@ -176,7 +178,7 @@ export default async function Page() {
       <ul>
         <li>Projections financières 3-5 ans (revenue, EBITDA, burn rate)</li>
         <li>Modèle de valorisation DCF (discounted cash flow)</li>
-        <li>Budget d'utilisation des fonds (use of proceeds)</li>
+        <li>Budget d&apos;utilisation des fonds (use of proceeds)</li>
         <li>Pitch deck financier (10-15 slides avec métriques)</li>
       </ul>
 
@@ -195,7 +197,7 @@ export default async function Page() {
           Répondre questions financières détaillées (cohort analysis, unit economics,
           CAC/LTV)
         </li>
-        <li>Accès data room aux avocats/auditeurs de l'investisseur</li>
+        <li>Accès data room aux avocats/auditeurs de l&apos;investisseur</li>
         <li>Appels référence clients, partenaires, clients</li>
       </ul>
 
@@ -271,7 +273,7 @@ export default async function Page() {
 
       <ul>
         <li>Comptes annuels certifiés (non certifiés = red flag)</li>
-        <li>Compte de résultat détaillé (par produit, par canal d'acquisition)</li>
+        <li>Compte de résultat détaillé (par produit, par canal d&apos;acquisition)</li>
         <li>Bilan consolidant tous les actifs/passifs</li>
         <li>Cash flow statement (SG&A vs dépenses croissance)</li>
       </ul>
@@ -326,14 +328,14 @@ export default async function Page() {
       </ul>
 
       <p>
-        Exemple : "Hypothèse CAC $500, LTV $5k, payback 2 mois = croissance 120%/an"
-        (cohérent). vs "Projection 500% croissance" (non crédible).
+        Exemple : &quot;Hypothèse CAC $500, LTV $5k, payback 2 mois = croissance 120%/an&quot;
+        (cohérent). vs &quot;Projection 500% croissance&quot; (non crédible).
       </p>
 
       <h3>Pilier 4 : Budget use of proceeds</h3>
 
       <p>
-        Les investisseurs exigent un budget détaillé d'utilisation des fonds. Exemple
+        Les investisseurs exigent un budget détaillé d&apos;utilisation des fonds. Exemple
         pour levée €2M :
       </p>
 
@@ -383,14 +385,14 @@ export default async function Page() {
       <h2 id="due-diligence">Due diligence financière : ce que les VCs vérifient en premier</h2>
 
       <p>
-        La due diligence est le processus par lequel l'investisseur audite votre
+        La due diligence est le processus par lequel l&apos;investisseur audite votre
         entreprise. Financièrement, cela inclut :
       </p>
 
       <h3>Phase 1 : Desk review (2 sem)</h3>
 
       <p>
-        L'investisseur examine documents sans rencontres. Il vérifie :
+        L&apos;investisseur examine documents sans rencontres. Il vérifie :
       </p>
 
       <ul>
@@ -403,20 +405,20 @@ export default async function Page() {
       <h3>Phase 2 : Management meetings (3-4 sem)</h3>
 
       <p>
-        L'investisseur rencontre équipe et demande clarifications. Questions typiques :
+        L&apos;investisseur rencontre équipe et demande clarifications. Questions typiques :
       </p>
 
       <ul>
-        <li>"Pourquoi churn a augmenté T2?" (analyse par cohorte)</li>
-        <li>"Quels sont les clients &gt;10% de revenue?" (concentration risk)</li>
-        <li>"Burn rate ? Runway ?" (projections de trésorerie)</li>
-        <li>"Unit economics par segment ?" (profitabilité granulaire)</li>
+        <li>&quot;Pourquoi churn a augmenté T2?&quot; (analyse par cohorte)</li>
+        <li>&quot;Quels sont les clients &gt;10% de revenue?&quot; (concentration risk)</li>
+        <li>&quot;Burn rate ? Runway ?&quot; (projections de trésorerie)</li>
+        <li>&quot;Unit economics par segment ?&quot; (profitabilité granulaire)</li>
       </ul>
 
       <h3>Phase 3 : Audit externe (4-6 sem)</h3>
 
       <p>
-        L'investisseur fait auditer par cabinet indépendant :
+        L&apos;investisseur fait auditer par cabinet indépendant :
       </p>
 
       <ul>
@@ -429,7 +431,7 @@ export default async function Page() {
           employeurs)
         </li>
         <li>
-          <strong>Audit fiscal :</strong> Exposition fiscale, crédits d'impôt,
+          <strong>Audit fiscal :</strong> Exposition fiscale, crédits d&apos;impôt,
           restructuration
         </li>
       </ul>
@@ -476,9 +478,9 @@ export default async function Page() {
       <p>
         Les quatre relèvent de la préparation, pas de la chance. C&apos;est précisément ce
         que couvre notre{" "}
-        <a href="/ressources/blog/checklist-due-diligence-levee-de-fonds">
+        <Link href="/ressources/blog/checklist-due-diligence-levee-de-fonds">
           checklist de due diligence
-        </a>
+        </Link>
         , document par document.
       </p>
 
@@ -507,11 +509,11 @@ export default async function Page() {
 
       <ul>
         <li>☐ Cap table Excel clean (actionnaires, nombre actions, %) à jour</li>
-        <li>☐ Pas d'actions de complaisance (accordées sans trace)</li>
+        <li>☐ Pas d&apos;actions de complaisance (accordées sans trace)</li>
         <li>☐ BSPCE documentés et signés (stock-options plan)</li>
         <li>☐ Statuts à jour + enregistrement RCS</li>
         <li>☐ Procès-verbaux assemblées/conseil 2 ans</li>
-        <li>☐ Pas de conflits d'intérêt non déclarés</li>
+        <li>☐ Pas de conflits d&apos;intérêt non déclarés</li>
       </ul>
 
       <h3>Contrats & Juridique</h3>
@@ -522,15 +524,15 @@ export default async function Page() {
         <li>☐ Contrats fournisseurs critiques</li>
         <li>☐ NDAs et contrats confidentialité</li>
         <li>☐ Accord partenariats stratégiques (si relevant)</li>
-        <li>☐ Pas de litigations en cours (certification d'avocat)</li>
+        <li>☐ Pas de litigations en cours (certification d&apos;avocat)</li>
       </ul>
 
       <h3>Fiscalité & Conformité</h3>
 
       <ul>
         <li>☐ Certifications fiscales N-2, N-1 et provisions</li>
-        <li>☐ Crédits d'impôt identifiés (CIR, JEI si applicable)</li>
-        <li>☐ Pas d'exposition URSSAF ou tax back (vérification)
+        <li>☐ Crédits d&apos;impôt identifiés (CIR, JEI si applicable)</li>
+        <li>☐ Pas d&apos;exposition URSSAF ou tax back (vérification)
 </li>
         <li>☐ Structure optimisée pour impôts post-levée</li>
         <li>☐ RGPD/data privacy audit (si collecte données)</li>
@@ -540,8 +542,8 @@ export default async function Page() {
 
       <ul>
         <li>☐ Brevets/marques enregistrés (liste et statuts)</li>
-        <li>☐ Code source déposé (escrow ou cabinet d'avocats)</li>
-        <li>☐ Contrats de cession d'IP des salariés</li>
+        <li>☐ Code source déposé (escrow ou cabinet d&apos;avocats)</li>
+        <li>☐ Contrats de cession d&apos;IP des salariés</li>
         <li>☐ Pas de dépendance à code tiers (licences open source vérifiées)</li>
       </ul>
 

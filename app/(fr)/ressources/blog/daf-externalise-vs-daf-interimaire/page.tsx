@@ -3,6 +3,8 @@ import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, ProseTable } from '@/components/blog';
 import MidArticleSoftCTA from '@/components/blog/MidArticleSoftCTA';
+import { getDafOffer } from '@/lib/content/daf-offer';
+import { MISSIONS_PONCTUELLES } from '@/lib/content/facts';
 
 // COMP-01 (2026-07-24) — article comparatif ciblant la requête
 // "DAF externalisé vs DAF intérimaire" + variantes (directeur financier
@@ -35,514 +37,67 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const FAQ_ITEMS: { question: string; answer: string }[] = [
-  {
-    question:
-      'Quelle est la différence principale entre DAF externalisé et DAF intérimaire ?',
-    answer:
-      'Le DAF intérimaire intervient à temps plein (ou quasi) pour une mission courte (3-18 mois), souvent en situation de crise ou transition. Le DAF externalisé travaille à temps partagé (1-3 jours/semaine) dans une relation longue durée avec l\'entreprise.',
-  },
-  {
-    question: 'Quel est le coût d\'un DAF intérimaire ?',
-    answer:
-      'Le TJM d\'un DAF intérimaire est généralement de 900 à 1 500 € par jour. Sur une mission de 6 mois à 4 jours/semaine, cela représente 90 000 à 160 000 €.',
-  },
-  {
-    question: 'Dans quel cas choisir un DAF intérimaire ?',
-    answer:
-      'Le DAF intérimaire est adapté en cas de départ inattendu du DAF, de fusion-acquisition, de restructuration financière ou de situation de crise nécessitant une présence quotidienne.',
-  },
-  {
-    question: 'Le DAF externalisé peut-il remplacer définitivement un DAF salarié ?',
-    answer:
-      'Oui, pour les PME et startups qui n\'ont pas besoin d\'un DAF à temps plein. Le DAF externalisé offre le même niveau d\'expertise pour 30 à 60 % d\'économie face au coût employeur d\'un salarié.',
-  },
-  {
-    question: 'Peut-on passer du DAF intérimaire au DAF externalisé ?',
-    answer:
-      'Oui, c\'est même une pratique recommandée. Le DAF intérimaire stabilise la situation en urgence, puis le DAF externalisé prend le relais pour assurer la continuité à moindre coût.',
-  },
-  {
-    question: 'Quel modèle choisir pour une PME de 5-20M€ de CA ?',
-    answer:
-      'Pour une PME en croissance régulière, le DAF externalisé est généralement plus adapté et plus économique. Le DAF intérimaire n\'est justifié qu\'en situation exceptionnelle.',
-  },
+const offer = getDafOffer('fr');
+const transition = MISSIONS_PONCTUELLES.find(item => item.nom === 'DAF de transition')!;
+const transitionPrice = `${transition.min.toLocaleString('fr-FR')} à ${transition.max.toLocaleString('fr-FR')} € HT par mois`;
+const FAQ_ITEMS = [
+  { question: 'Quelle est la différence principale entre DAF externalisé et DAF intérimaire ?', answer: 'Externalisé décrit le recours à un professionnel hors salariat. Une mission intérimaire ou de transition répond à un mandat temporaire ; le temps partagé répond à un besoin récurrent. La disponibilité, les responsabilités et la sortie de mission sont à préciser, sans déduire le format du seul chiffre d’affaires.' },
+  { question: 'Quel est le coût d’un DAF intérimaire ?', answer: `Les propositions se comparent sur le mandat, la durée, la présence et les frais inclus. Iter présente ses missions de DAF de transition entre ${transitionPrice}, selon le périmètre. Cette fourchette est celle du cabinet, pas une moyenne du marché des intérimaires.` },
+  { question: 'Dans quel cas choisir un DAF intérimaire ?', answer: 'Un départ, une absence, une transformation ou un relais pendant un recrutement peut justifier un mandat temporaire. Le niveau de présence et les pouvoirs nécessaires sont examinés avec la direction ; une urgence ne garantit pas la disponibilité immédiate d’un profil.' },
+  { question: 'Le DAF externalisé peut-il remplacer définitivement un DAF salarié ?', answer: 'Un accompagnement récurrent peut convenir si sa disponibilité couvre les décisions et les échéances. Un besoin de management quotidien durable peut justifier un poste interne. Le budget seul ne permet pas de comparer deux niveaux de disponibilité différents.' },
+  { question: 'Peut-on passer du DAF intérimaire au DAF externalisé ?', answer: 'Oui, un relais récurrent peut suivre une mission temporaire si le besoin évolue. Il faut préparer les hypothèses, les accès autorisés, les outils, les sujets ouverts et les personnes responsables de la reprise. Ce passage n’est pas automatique ni toujours préférable à un recrutement.' },
+  { question: 'Quel modèle choisir pour une PME ?', answer: 'Listez les décisions, les équipes à encadrer, les échéances et la disponibilité nécessaire. Comparez ensuite mission ciblée, transition, temps partagé et poste salarié. Aucun seuil universel de chiffre d’affaires ne détermine le bon modèle.' },
 ];
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: FAQ_ITEMS.map((it) => ({
-    '@type': 'Question',
-    name: it.question,
-    acceptedAnswer: { '@type': 'Answer', text: it.answer },
-  })),
-};
-
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  '@id': `${PAGE_URL}#article`,
-  headline: 'DAF externalisé ou DAF intérimaire : que choisir ?',
-  description:
-    'Durée, coût, continuité, engagement : le tableau comparatif complet pour choisir entre DAF externalisé et DAF intérimaire selon votre situation.',
-  author: {
-    '@type': 'Person',
-    name: 'Benjamin Ziza',
-    jobTitle: 'Associé fondateur — CFO & Investisseur, Iter Advisors',
-    url: 'https://www.iteradvisors.com/a-propos/benjamin-ziza',
-  },
-  datePublished: '2026-07-24',
-  dateModified: '2026-07-24',
-  mainEntityOfPage: PAGE_URL,
-  publisher: {
-    '@type': 'Organization',
-    '@id': 'https://www.iteradvisors.com/#organization',
-    name: 'Iter Advisors',
-  },
-};
-
 export default function DafExternalisVsDafInterimairePage() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <BlogPostPageRefonte
-        locale="fr"
-        breadcrumbs={{
-          resourcesLabel: 'Ressources',
-          resourcesHref: '/ressources',
-          blogLabel: 'Blog',
-          blogHref: '/ressources/blog',
-        }}
-        slug="daf-externalise-vs-daf-interimaire"
-        category="Comparaison"
-        title="DAF externalisé ou DAF intérimaire : que choisir ?"
-        dek="Durée, coût, continuité, engagement : le tableau comparatif complet pour choisir entre DAF externalisé et DAF intérimaire selon votre situation."
-        author={{
-          name: 'Benjamin Ziza',
-          avatar: '/images/team/benjamin-ziza.webp',
-          jobTitle: 'Associé fondateur — CFO & Investisseur, Iter Advisors',
-          url: '/a-propos/benjamin-ziza',
-        }}
-        readingTime={7}
-        dateModified="2026-07-24"
-        heroImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
-        toc={[
-          { id: 'differences-fondamentales', label: '1. Différences fondamentales' },
-          { id: 'tableau-comparatif', label: '2. Tableau comparatif' },
-          { id: 'cout-tjm', label: '3. Coûts et TJM' },
-          { id: 'quand-choisir', label: '4. Quand choisir lequel ?' },
-          { id: 'cas-usage', label: '5. Cas d\'usage concrets' },
-          { id: 'conclusion', label: '6. Notre recommandation' },
-        ]}
-        tldr="DAF intérimaire pour les missions courtes et la gestion de crise (3-18 mois, TJM 900-1500€). DAF externalisé pour une direction financière structurée dans la durée (temps partagé, €30-70k/an). 80% des PME en croissance choisissent l'externalisé."
-        relatedArticles={[
-          {
-            url: '/ressources/blog/cout-daf-externalise-tarifs-prix-2026',
-            category: 'Tarifs',
-            title: 'Combien coûte un DAF externalisé en 2026 ?',
-          },
-          {
-            url: '/ressources/blog/daf-externalise-vs-daf-salarie',
-            category: 'Comparaison',
-            title: 'DAF externalisé vs DAF salarié : analyse complète',
-          },
-          {
-            url: '/ressources/blog/daf-externalise-vs-daf-salarie',
-            category: 'Comparaison',
-            title: 'DAF externalisé : comparatif des alternatives',
-          },
-        ]}
-      >
-        <h2 id="differences-fondamentales">1. Différences fondamentales</h2>
-        <p>
-          Lorsqu&apos;une PME ou une scale-up cherche à renforcer sa direction financière
-          sans recruter un DAF à temps plein, deux options reviennent systématiquement dans
-          les discussions : le <strong>DAF intérimaire</strong> et le{' '}
-          <strong>DAF externalisé</strong>. Ces deux modèles partagent un point commun —
-          ils font appel à un professionnel externe — mais leurs logiques d&apos;intervention,
-          leur durée et leur structure de coût sont fondamentalement différentes.
-        </p>
-
-        <h3>Le DAF intérimaire : la réponse à l&apos;urgence</h3>
-        <p>
-          Le DAF intérimaire est un directeur financier sénior qui intervient{' '}
-          <strong>à temps quasi-plein</strong> (3 à 5 jours par semaine) pour une durée
-          délimitée, typiquement <strong>3 à 18 mois</strong>. Sa mission est le plus
-          souvent définie par une situation exceptionnelle : départ soudain du DAF en
-          poste, restructuration financière, fusion-acquisition, dépôt de bilan à prévenir,
-          ou préparation d&apos;une levée de fonds imminente.
-        </p>
-        <p>
-          Le DAF intérimaire s&apos;intègre à l&apos;équipe comme s&apos;il était salarié.
-          Il assiste aux comités de direction, participe aux négociations bancaires, manage
-          l&apos;équipe finance en place. Sa valeur réside dans sa <strong>disponibilité
-          quasi-totale</strong> et sa capacité à absorber l&apos;urgence. En contrepartie,
-          son coût est élevé : un TJM entre <strong>900 et 1 500 € par jour</strong>, pour
-          une facture mensuelle souvent comprise entre 15 000 et 26 000 €.
-        </p>
-
-        <h3>Le DAF externalisé : la direction financière de long terme</h3>
-        <p>
-          Le DAF externalisé opère sur un modèle radicalement différent. Il intervient à{' '}
-          <strong>temps partagé</strong> — quelques jours par mois — sur la
-          durée, dans une relation qui s&apos;installe dans la durée. Ce
-          n&apos;est pas une solution de crise : c&apos;est une <strong>solution de
-          structuration</strong> pour les entreprises qui ont besoin d&apos;une direction
-          financière sérieuse sans la charge salariale d&apos;un DAF à temps plein.
-        </p>
-        <p>
-          Concrètement, un DAF externalisé prend en charge le reporting mensuel, la
-          gestion du cash et du BFR, la relation avec les banques et les actionnaires,
-          la supervision de la comptabilité, et — selon le stade de l&apos;entreprise —
-          la préparation de levées de fonds ou d&apos;opérations de croissance externe.
-          Son tarif, calculé sur une base mensuelle forfaitaire, est généralement compris
-          entre <strong>2 500 et 6 000 € par mois</strong>, soit 30 000 à 70 000 € par an.
-        </p>
-
-        <h2 id="tableau-comparatif">2. Tableau comparatif</h2>
-        <p>
-          Ce tableau synthétise les critères décisifs pour choisir entre les deux modèles :
-        </p>
-
-        <ProseTable>
-          <thead>
-            <tr>
-              <th>Critère</th>
-              <th>DAF intérimaire</th>
-              <th>DAF externalisé</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Durée de mission</strong></td>
-              <td>3 à 18 mois (délimitée)</td>
-              <td>12 mois et plus (ouverte)</td>
-            </tr>
-            <tr>
-              <td><strong>Présence hebdomadaire</strong></td>
-              <td>3 à 5 jours / semaine</td>
-              <td>1 à 3 jours / semaine</td>
-            </tr>
-            <tr>
-              <td><strong>TJM moyen</strong></td>
-              <td>900 – 1 500 € / jour</td>
-              <td>600 – 1 000 € / jour</td>
-            </tr>
-            <tr>
-              <td><strong>Coût mensuel estimé</strong></td>
-              <td>15 000 – 26 000 €</td>
-              <td>2 500 – 6 000 €</td>
-            </tr>
-            <tr>
-              <td><strong>Coût annuel estimé</strong></td>
-              <td>80 000 – 200 000 € (mission)</td>
-              <td>30 000 – 70 000 €</td>
-            </tr>
-            <tr>
-              <td><strong>Profil idéal</strong></td>
-              <td>Crise, transition, M&amp;A, départ DAF</td>
-              <td>Croissance, structuration, pilotage</td>
-            </tr>
-            <tr>
-              <td><strong>Continuité long terme</strong></td>
-              <td>Non — mission définie dans le temps</td>
-              <td>Oui — relation durable</td>
-            </tr>
-            <tr>
-              <td><strong>Connaissance de l&apos;entreprise</strong></td>
-              <td>Se construit rapidement, puis repart</td>
-              <td>S&apos;approfondit au fil du temps</td>
-            </tr>
-            <tr>
-              <td><strong>Flexibilité du temps</strong></td>
-              <td>Faible (mobilisation quasi-totale)</td>
-              <td>Forte (ajustable au besoin)</td>
-            </tr>
-            <tr>
-              <td><strong>Sourcing</strong></td>
-              <td>Cabinets spécialisés interim management</td>
-              <td>Cabinets DAF externalisé, indépendants</td>
-            </tr>
-          </tbody>
-        </ProseTable>
-
-        <h2 id="cout-tjm">3. Coûts et TJM : ce que vous payez vraiment</h2>
-        <p>
-          Le coût est souvent le premier critère de différenciation, mais il faut le
-          lire avec nuance. Le TJM affiché n&apos;est pas le seul facteur — la durée
-          de la mission et le niveau de présence hebdomadaire sont tout aussi
-          déterminants.
-        </p>
-
-        <h3>Le coût réel d&apos;un DAF intérimaire</h3>
-        <p>
-          Prenons un cas typique : un DAF intérimaire mobilisé 4 jours par semaine pendant
-          6 mois, à un TJM de 1 200 €. Le calcul est le suivant :{' '}
-          <strong>4 jours × 4,3 semaines × 6 mois × 1 200 € = 123 840 €</strong> sur la
-          période. Auxquels il faut ajouter les frais de cabinet (10 à 20 % du TJM pour
-          un cabinet d&apos;interim management), soit un budget total de{' '}
-          <strong>136 000 à 149 000 € HT</strong> pour six mois.
-        </p>
-        <p>
-          Ce coût est justifié lorsque la situation l&apos;exige : un départ de DAF
-          trois semaines avant un audit de data room, une crise de trésorerie aiguë
-          ou une opération de M&amp;A imposent une présence intensive qui ne peut
-          pas attendre. Mais en dehors de ces situations exceptionnelles, ce niveau
-          de dépense est rarement optimisé.
-        </p>
-
-        <h3>Le coût réel d&apos;un DAF externalisé</h3>
-        <p>
-          Le DAF externalisé travaille sur un modèle forfaitaire mensuel, calibré
-          en fonction du volume de travail et de la complexité de l&apos;entreprise.
-          Pour une PME de 20 à 50 salariés avec un CA compris entre 5 et 20 M€,
-          les forfaits Iter Advisors se situent entre <strong>3 000 et 6 500 € par
-          mois</strong>, soit 36 000 à 78 000 € par an — 30 à 60 % d&apos;économie
-          face au coût employeur d&apos;un directeur financier salarié de séniorité
-          équivalente, estimé entre 100 000 et 213 000 € par an, charges comprises.
-        </p>
-        <p>
-          Le calcul du TJM implicite d&apos;un DAF externalisé — ramené aux jours
-          effectifs de présence — donne une fourchette de <strong>600 à 1 000 €</strong>,
-          inférieure à celle de l&apos;intérimaire. Cette différence s&apos;explique
-          par plusieurs facteurs : le DAF externalisé mutualise ses coûts entre
-          plusieurs clients, il n&apos;a pas les contraintes d&apos;exclusivité
-          d&apos;un intérimaire, et il s&apos;appuie souvent sur une infrastructure
-          partagée (outils, templates, équipe comptable).
-        </p>
-
-        <MidArticleSoftCTA locale="fr" />
-
-        <h2 id="quand-choisir">4. Quand choisir lequel ?</h2>
-        <p>
-          La question n&apos;est pas &laquo; lequel est meilleur &raquo; — les deux
-          modèles répondent à des besoins distincts. La vraie question est : quelle est
-          votre situation aujourd&apos;hui ?
-        </p>
-
-        <Callout type="warning" title="Choisissez le DAF intérimaire si…">
-          <ul>
-            <li>
-              <strong>Votre DAF vient de partir sans préavis</strong> et l&apos;entreprise
-              ne peut pas se permettre un vide de plusieurs mois dans la fonction financière.
-            </li>
-            <li>
-              <strong>Vous êtes engagé dans une opération de M&amp;A</strong> (acquisition,
-              cession, fusion) qui requiert une disponibilité quasi-totale du directeur
-              financier pendant 6 à 12 mois.
-            </li>
-            <li>
-              <strong>Vous traversez une crise de trésorerie</strong> ou êtes en situation
-              de pré-défaillance, où chaque jour compte et où la négociation bancaire
-              exige une présence physique intensive.
-            </li>
-            <li>
-              <strong>Vous devez préparer une data room en urgence</strong> pour une due
-              diligence dans les 4 à 8 semaines à venir, avec un périmètre documentaire
-              conséquent.
-            </li>
-            <li>
-              Vous avez besoin d&apos;un DAF qui <strong>manage une équipe finance
-              existante</strong> au quotidien, avec une autorité hiérarchique claire
-              pendant la transition.
-            </li>
-          </ul>
-        </Callout>
-
-        <Callout type="success" title="Choisissez le DAF externalisé si…">
-          <ul>
-            <li>
-              <strong>Votre entreprise est en croissance régulière</strong> et vous avez
-              besoin d&apos;une direction financière structurée sur le long terme, sans
-              justifier un DAF à temps plein.
-            </li>
-            <li>
-              <strong>Vous préparez une levée de fonds dans les 12 à 18 mois</strong> et
-              souhaitez un partenaire financier qui construit le modèle, prépare les
-              documents et accompagne les discussions avec les fonds sur la durée.
-            </li>
-            <li>
-              <strong>Votre comptabilité est externalisée</strong> et vous cherchez
-              un interlocuteur senior qui pilote la fonction finance de bout en bout,
-              y compris la supervision du cabinet comptable.
-            </li>
-            <li>
-              <strong>Votre CA est compris entre 2 et 30 M€</strong> — la tranche dans
-              laquelle un DAF à temps plein est souvent surdimensionné mais où l&apos;absence
-              de DAF crée des angles morts réels (BFR, budget, reporting investisseurs).
-            </li>
-            <li>
-              Vous souhaitez une <strong>relation de confiance qui s&apos;inscrit dans
-              la durée</strong>, où votre DAF connaît l&apos;historique de l&apos;entreprise,
-              les actionnaires, les partenaires bancaires.
-            </li>
-          </ul>
-        </Callout>
-
-        <h2 id="cas-usage">5. Cas d&apos;usage concrets</h2>
-        <p>
-          Pour rendre ces critères plus tangibles, voici trois scénarios réels rencontrés
-          chez nos clients ou dans notre réseau.
-        </p>
-
-        <h3>Cas 1 — Départ du DAF en pleine négociation bancaire (intérimaire)</h3>
-        <p>
-          Une PME industrielle de 12 M€ de CA perd son DAF de 8 ans, partant pour raisons
-          personnelles, en plein milieu d&apos;une renégociation de lignes de crédit avec
-          deux banques partenaires. La direction générale n&apos;a pas le profil pour
-          conduire ces négociations seule. La solution retenue : un DAF intérimaire mobilisé
-          4 jours par semaine pendant 5 mois, le temps de finaliser les accords bancaires,
-          de stabiliser la fonction finance, et de recruter un DAF permanent.{' '}
-          <strong>Coût : ~110 000 € sur la période.</strong> Entièrement justifié au regard
-          du risque représenté par un échec des négociations.
-        </p>
-
-        <h3>Cas 2 — Scale-up SaaS B2B en hypercroissance (externalisé)</h3>
-        <p>
-          Une scale-up SaaS de 7 M€ ARR, 45 salariés, passe de 3 M€ à 7 M€ de revenus
-          en 18 mois. Le fondateur gère lui-même les finances avec un contrôleur de gestion
-          junior. Il a besoin d&apos;un DAF pour structurer le reporting MRR/ARR/Churn,
-          préparer la prochaine levée de fonds Série A, et mettre en place un modèle
-          financier robuste. Un DAF externalisé intervient 2 jours par semaine.{' '}
-          <strong>Coût : 4 200 €/mois, soit 50 400 €/an.</strong> Un DAF salarié équivalent
-          coûterait 95 000 à 110 000 € par an tout compris.
-        </p>
-
-        <h3>Cas 3 — Transition intérimaire → externalisé post-crise (les deux)</h3>
-        <p>
-          Une ETI de distribution (28 M€ de CA) traverse une rupture de trésorerie liée
-          à un pic de BFR saisonnier amplifié par une erreur de prévision. Un DAF
-          intérimaire est mobilisé en urgence (6 semaines, 5 jours/semaine) pour sécuriser
-          les lignes de crédit court terme et mettre en place un suivi de trésorerie
-          hebdomadaire. Une fois la crise résolue, un DAF externalisé prend le relais
-          à 2 jours par semaine pour pérenniser les outils et piloter la fonction finance
-          dans la durée. <strong>Ce passage de relais est la séquence la plus efficace</strong>{' '}
-          dans les situations de crise résolue qui nécessitent ensuite une vraie structure.
-        </p>
-
-        <h2 id="conclusion">6. Notre recommandation</h2>
-        <p>
-          La règle empirique que nous appliquons chez Iter Advisors est simple :{' '}
-          <strong>si la situation est exceptionnelle et urgente, prenez un intérimaire.
-          Si la situation est normale ou en croissance, prenez un externalisé.</strong>
-        </p>
-        <p>
-          Plus précisément, notre expérience auprès des PME et startups françaises nous
-          montre que <strong>environ 80 % des dirigeants qui pensent avoir besoin d&apos;un
-          DAF intérimaire ont en réalité besoin d&apos;un DAF externalisé</strong>. La
-          confusion vient du fait que les deux répondent au même besoin apparent —{' '}
-          &laquo; avoir un DAF sans l&apos;embaucher &raquo; — mais leurs cas d&apos;usage
-          sont très différents.
-        </p>
-        <p>
-          Le DAF intérimaire est une réponse chirurgicale à une situation de crise ou
-          de transition intensive. Il coûte cher parce qu&apos;il vaut cher dans ce contexte
-          précis. Mais le mobiliser pour structurer la croissance d&apos;une PME de 8 M€ de
-          CA sur 24 mois, c&apos;est utiliser un scalpel là où une main régulière suffit —
-          et payer trois fois le prix nécessaire.
-        </p>
-        <p>
-          À l&apos;inverse, le DAF externalisé n&apos;est pas l&apos;outil adapté lorsque
-          la maison brûle. Sa force est la continuité, la profondeur de connaissance de
-          l&apos;entreprise, la construction progressive d&apos;une fonction finance robuste.
-          Il ne peut pas traiter une urgence à 5 % de son temps disponible.
-        </p>
-        {/* C3 (W31c 2026-08-02) — maillage vers les pages commerciales du
-            cluster DAF : l'article n'en portait que 2 (contact + gestion
-            financière) alors qu'il traite frontalement l'arbitrage. */}
-        <p>
-          Concrètement, si votre besoin est ponctuel et intensif, c&apos;est une{' '}
-          <Link href="/daf-externalise/transition" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
-            mission de DAF de transition
-          </Link>{' '}
-          qu&apos;il vous faut. S&apos;il est récurrent et étalé dans le temps, c&apos;est{' '}
-          <Link href="/daf-externalise/temps-partage" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
-            un DAF à temps partagé
-          </Link>
-          , la formule la plus courante de notre offre de{' '}
-          <Link href="/daf-externalise" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
-            direction financière externalisée
-          </Link>
-          . Les{' '}
-          <Link href="/daf-externalise/tarifs" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
-            tarifs de DAF externalisé
-          </Link>{' '}
-          varient selon le volume de jours retenu. Si votre échéance est une levée,
-          notre{' '}
-          <Link href="/services/accompagnement-levee-de-fond" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
-            accompagnement de levée de fonds
-          </Link>{' '}
-          se combine avec l&apos;un ou l&apos;autre de ces formats. Pour le détail des
-          missions du poste, voir notre{' '}
-          <Link href="/ressources/blog/cfo-externe-role-missions-2026" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
-            analyse du rôle et des missions d&apos;un CFO externe
-          </Link>
-          .
-        </p>
-
-        <Callout type="info" title="Notre approche chez Iter Advisors">
-          <p>
-            Iter Advisors positionne exclusivement ses DAFs sur des <strong>missions
-            externalisées de longue durée</strong>. Nous n&apos;intervenons pas sur des
-            missions intérimaires pures (crise aiguë, M&amp;A en cours), mais nous
-            accompagnons régulièrement des entreprises qui sortent d&apos;une mission
-            intérimaire et cherchent à <strong>pérenniser la fonction finance à un coût
-            maîtrisé</strong>. Si vous êtes dans cette situation, notre{' '}
-            <Link href="/contact" className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline">
-              appel de découverte de 30 minutes
-            </Link>{' '}
-            permet de cadrer rapidement le bon dispositif.
-          </p>
-        </Callout>
-
-        <h2 id="faq">FAQ — DAF externalisé vs DAF intérimaire</h2>
-
-        {FAQ_ITEMS.map((item, i) => (
-          <details
-            key={i}
-            className="site-card my-3 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-4"
-          >
-            <summary className="cursor-pointer font-semibold text-foreground">
-              {item.question}
-            </summary>
-            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              {item.answer}
-            </p>
-          </details>
-        ))}
-
-        <div className="site-card my-10 rounded-lg border border-iter-violet/20 bg-iter-violet/5 p-6 md:p-8">
-          <h3 className="mb-3 text-lg font-semibold text-slate-900">
-            Vous hésitez encore entre les deux modèles ?
-          </h3>
-          <p className="mb-5 text-slate-700">
-            Nos DAFs vous donnent un avis clair en 30 minutes sur le modèle adapté à
-            votre situation — sans engagement. Découvrez aussi notre page dédiée à la{' '}
-            <Link
-              href="/services/gestion-financiere-externalisee"
-              className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline"
-            >
-              direction financière externalisée
-            </Link>{' '}
-            ou{' '}
-            <Link
-              href="/contact"
-              className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline"
-            >
-              prenez rendez-vous directement
-            </Link>{' '}
-            pour cadrer votre besoin et recevoir une proposition sous 5 jours ouvrés.
-          </p>
-        </div>
-      </BlogPostPageRefonte>
-    </>
-  );
+  return <BlogPostPageRefonte locale="fr"
+    breadcrumbs={{ resourcesLabel: 'Ressources', resourcesHref: '/ressources', blogLabel: 'Blog', blogHref: '/ressources/blog' }}
+    slug="daf-externalise-vs-daf-interimaire" category="Comparaison"
+    title="DAF externalisé ou DAF intérimaire : que choisir ?"
+    dek="Durée, disponibilité, responsabilités et budget : comparer un mandat temporaire et une direction financière à temps partagé."
+    author={{ name: 'Benjamin Ziza', avatar: '/images/team/benjamin-ziza.webp', jobTitle: 'Associé fondateur et CFO, Iter Advisors', url: '/a-propos/benjamin-ziza' }}
+    readingTime={6} datePublished="2026-07-24" dateModified="2026-10-02"
+    heroImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+    toc={[{ id: 'differences-fondamentales', label: '1. Différences fondamentales' }, { id: 'tableau-comparatif', label: '2. Tableau comparatif' }, { id: 'cout-tjm', label: '3. Comparer les budgets' }, { id: 'quand-choisir', label: '4. Quand choisir lequel ?' }, { id: 'cas-usage', label: '5. Scénarios illustratifs' }, { id: 'conclusion', label: '6. Préparer votre décision' }]}
+    tldr="Le mandat temporaire précise un relais et sa sortie. Le temps partagé organise un suivi récurrent. Comparez la disponibilité et les responsabilités avant le prix ; un statut externe ne garantit ni un délai ni une économie."
+    faqItems={FAQ_ITEMS}
+    relatedArticles={[{ url: '/ressources/blog/daf-externalise-vs-daf-salarie', category: 'Comparaison', title: 'DAF salarié ou externalisé : les critères de choix' }, { url: '/ressources/blog/choisir-cabinet-daf-externalise', category: 'Sélection', title: 'Choisir un cabinet : les questions à poser' }, { url: '/ressources/blog/cout-daf-externalise-tarifs-prix-2026', category: 'Budget', title: 'Comparer les budgets d’une mission DAF' }]}>
+    <p>Le terme <Link href="/daf-externalise">DAF externalisé</Link> désigne le recours à une direction financière hors salariat. Pour comparer les offres, distinguez surtout le mandat temporaire, souvent appelé intérim ou transition, du suivi récurrent à temps partagé. Les mots employés par un prestataire ne suffisent pas à connaître sa disponibilité ou ses responsabilités.</p>
+    <h2 id="differences-fondamentales">1. Différences fondamentales</h2>
+    <h3>Un mandat temporaire avec une sortie définie</h3>
+    <p>Un départ, une absence, une transformation ou un recrutement en cours peut nécessiter un relais de direction financière. La mission identifie les échéances, les pouvoirs nécessaires, les personnes à encadrer et les conditions de passation. Une présence importante peut être requise, mais elle ne découle pas automatiquement du mot « intérimaire ».</p>
+    <p>Précisez aussi le cadre d’intervention : la qualification du contrat, la délégation de signature et les accès bancaires doivent être examinés avec les professionnels compétents. Le DAF coordonne les travaux dans son mandat ; les responsabilités des autres conseils et du dirigeant restent explicites.</p>
+    <h3>Un suivi récurrent à temps partagé</h3>
+    <p>Le temps partagé organise le reporting, le budget, les scénarios de trésorerie et les décisions avec la direction. Le rythme dépend des travaux, des données et de l’équipe. Une intervention planifiée peut suffire à certains besoins ; un management quotidien durable appelle une autre organisation.</p>
+    <p>Il ne s’agit pas d’opposer une solution réservée à la crise à une solution réservée à la croissance. Une transformation peut être préparée dans la durée ; une entreprise en croissance peut avoir besoin d’un relais temporaire. Le périmètre et les disponibilités déterminent la réponse.</p>
+    <h2 id="tableau-comparatif">2. Tableau comparatif</h2>
+    <ProseTable><caption>Deux formats à comparer sur votre besoin réel</caption><thead><tr><th scope="col">Critère</th><th scope="col">Mandat temporaire / transition</th><th scope="col">Temps partagé récurrent</th></tr></thead><tbody>
+      <tr><th scope="row">Objectif</th><td>Relais, continuité ou chantier avec conditions de sortie</td><td>Pilotage régulier et revue des décisions</td></tr>
+      <tr><th scope="row">Durée</th><td>Fixée au mandat, avec modalités de prolongation</td><td>{offer.commitment}</td></tr>
+      <tr><th scope="row">Présence</th><td>Définie selon la charge et les échéances</td><td>{offer.volume} mensuels indicatifs observés chez Iter, sans forfait de jours</td></tr>
+      <tr><th scope="row">Budget Iter</th><td>{transitionPrice}, selon mandat</td><td>{offer.price}, selon périmètre et profil</td></tr>
+      <tr><th scope="row">Responsabilités</th><td>Mandat et délégations écrites à préciser</td><td>Travaux, validations et relais à préciser</td></tr>
+      <tr><th scope="row">Transmission</th><td>Prévue dès le cadrage avec le successeur</td><td>Documents et accès organisés pour assurer la continuité</td></tr>
+    </tbody></ProseTable>
+    <h2 id="cout-tjm">3. Coûts et TJM : comparer ce qui est inclus</h2>
+    <p>Un tarif journalier et un forfait mensuel ne couvrent pas forcément le même travail. Demandez la durée envisagée, les disponibilités, les livrables, les frais de déplacement et le traitement d’une prolongation. Comparez aussi la production comptable, les logiciels et le travail conservé en interne.</p>
+    <p>Exemple de calcul fictif, sans référence à un prix de marché : une proposition à 1 000 € HT par jour pour 20 jours représente 20 000 € HT avant les éventuels frais explicités au devis. Une proposition forfaitaire s’examine sur ses livrables et ses exclusions. Ce calcul ne prouve ni équivalence de service ni économie.</p>
+    <p>Chez Iter, le suivi récurrent couvre un périmètre de travail et une séniorité. {offer.billing} Consultez les <Link href="/daf-externalise/tarifs">tarifs DAF externalisé</Link> et demandez un mandat distinct pour la transition. Aucune moyenne de TJM ou commission de cabinet n’est présentée ici comme une donnée de marché vérifiée.</p>
+    <MidArticleSoftCTA locale="fr" />
+    <h2 id="quand-choisir">4. Quand choisir lequel ?</h2>
+    <Callout type="info" title="Examiner un relais temporaire"><ul><li>Un départ ou une absence laisse des échéances à tenir.</li><li>Un chantier demande une présence et des responsabilités dédiées.</li><li>Un recrutement est engagé et une passation doit être organisée.</li></ul></Callout>
+    <Callout type="info" title="Examiner le temps partagé"><ul><li>La direction a besoin d’un reporting et de prévisions régulières.</li><li>L’équipe et le cabinet comptable produisent les données, mais les arbitrages restent à préparer.</li><li>Le rythme convenu couvre les décisions sans nécessiter de présence quotidienne permanente.</li></ul></Callout>
+    <p>Listez les décisions et les personnes à encadrer, puis comparez les disponibilités proposées. Une acquisition, une levée ou une difficulté de trésorerie n’impose pas automatiquement un format unique. Les conseils juridiques, fiscaux et spécialisés restent mobilisés selon la situation.</p>
+    <h2 id="cas-usage">5. Trois scénarios illustratifs, pas des cas clients</h2>
+    <p>Les situations suivantes sont fictives. Elles décrivent des critères de choix, sans résultat mesuré, budget réel ni référence client.</p>
+    <h3>Départ pendant une négociation bancaire</h3><p>Le dirigeant identifie les échéances et les documents, puis examine un relais temporaire avec responsabilités définies. Le mandat prévoit la continuité et la passation au successeur. L’acceptation d’un financement reste une décision des parties concernées.</p>
+    <h3>SaaS avec des indicateurs dispersés</h3><p>Les contrats, la facturation et le reporting utilisent des définitions différentes du revenu récurrent. Une mission ciblée peut rapprocher les données ; un suivi à temps partagé peut ensuite préparer les revues investisseurs. L’offre <Link href="/fractional-cfo-startups">Fractional CFO pour startups et SaaS</Link> détaille ces travaux.</p>
+    <h3>Passage d’un relais à une organisation durable</h3><p>Une mission temporaire se termine. L’équipe prépare les procédures, les hypothèses et les sujets ouverts. Selon la charge, la suite peut être un recrutement, un temps partagé ou une reprise complète en interne. Aucun passage de relais n’est présenté comme systématiquement plus efficace.</p>
+    <h2 id="conclusion">6. Préparer votre décision</h2>
+    <p>Définissez d’abord le besoin : échéances, disponibilité, responsabilités et sortie. La <Link href="/daf-externalise/transition">DAF de transition</Link> organise un mandat temporaire ; le <Link href="/daf-externalise/temps-partage">DAF à temps partagé</Link> organise le suivi récurrent. Iter présente les deux formats, sous réserve d’un cadrage et de la disponibilité des profils.</p>
+    <p>Demandez qui intervient, quels accès sont nécessaires, qui valide les engagements et comment la transmission se fera. Le <Link href="/ressources/cas-clients/opti-digital-structuration-financement">cas documenté Opti Digital</Link> illustre une structuration dans la durée ; il n’est pas présenté comme une mission de transition ni un résultat reproductible.</p>
+    <h2 id="faq">FAQ : DAF externalisé et DAF intérimaire</h2>
+    {FAQ_ITEMS.map(item => <details key={item.question} className="site-card my-3 rounded-lg border border-border p-4"><summary className="cursor-pointer font-semibold">{item.question}</summary><p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.answer}</p></details>)}
+    <p>Présentez votre organisation, vos échéances et le besoin de présence. Le premier échange sert à qualifier le mandat ; aucun délai de proposition ou de démarrage n’est garanti avant cadrage. <Link href="/contact#transition">Décrire mon besoin de relais finance</Link>.</p>
+  </BlogPostPageRefonte>;
 }

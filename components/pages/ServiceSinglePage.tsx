@@ -52,7 +52,7 @@ function groupBlocksByHeading(blocks: StrapiBlock[]): Array<{
       }
       const headingText =
         "children" in block && Array.isArray(block.children)
-          ? block.children.map((child: any) => child.text || "").join("")
+          ? block.children.map(child => "text" in child ? child.text : "").join("")
           : "";
       currentGroup = { heading: headingText, blocks: [] };
     } else {

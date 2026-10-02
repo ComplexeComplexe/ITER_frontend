@@ -4,7 +4,7 @@ import Link from "next/link";
 import { dafClusterHref } from "@/lib/path-localization";
 import Image from "next/image";
 import { ArrowRight, TrendingUp, BarChart3, Shield, Rocket, Settings, Target, Compass, Zap } from "lucide-react";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { type Components } from "react-markdown";
 import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
 import { DafSubContent } from "@/lib/content/daf-sub";
@@ -47,12 +47,11 @@ function isFaqHeading(heading?: string): boolean {
 const parseFaqItem = parseDafSubFaqItem;
 
 /** ReactMarkdown component overrides: inline elements only (no block <p>). */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const mdComponents: any = {
+const mdComponents: Components = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  p: ({ node, ...props }: any) => <span {...props} />,
+  p: ({ node, ...props }) => <span {...props} />,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  a: ({ node, href, children, ...props }: any) => (
+  a: ({ node, href, children, ...props }) => (
     <Link
       href={href || "#"}
       className="text-iter-violet underline underline-offset-2 hover:no-underline"

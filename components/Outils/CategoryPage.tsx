@@ -1,4 +1,3 @@
-'use client';
 
 import PageLayout from '@/components/PageLayout';
 import Breadcrumb from '@/components/Breadcrumb';
@@ -8,38 +7,12 @@ import { Tool } from '@/data/tools';
 import { getCategoryContent } from '@/data/categoryContent';
 import Link from 'next/link';
 import Image from 'next/image';
-
-function generateCategoryBreadcrumbSchema(categoryTitle: string, slug: string) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Ressources',
-        item: 'https://www.iteradvisors.com/ressources',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Outils',
-        item: 'https://www.iteradvisors.com/ressources/outils',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: categoryTitle,
-        item: `https://www.iteradvisors.com/ressources/outils/${slug}`,
-      },
-    ],
-  };
-}
+import type { CmsNavItem } from '@/lib/static-content';
 
 export interface CategoryPageProps {
   slug: string;
   locale: 'fr' | 'en' | 'es';
-  cmsNavigation?: any;
+  cmsNavigation?: CmsNavItem[];
   tools: Tool[];
 }
 
@@ -62,27 +35,17 @@ export default function CategoryPage({
       slug: tool.slug,
       logo: tool.logo,
       logoAlt: tool.logoAlt,
-      rating: tool.rating,
       features: {
         'Taille cible': tool.forWho[0] || '—',
         'Implémentation': tool.implementationTime,
         'Tarif': tool.priceRange,
-        'Avis Iter': `${tool.rating}/5`,
       },
     })),
-    criteria: ['Taille cible', 'Implémentation', 'Tarif', 'Avis Iter'],
+    criteria: ['Taille cible', 'Implémentation', 'Tarif'],
   };
 
   return (
-    <PageLayout locale={locale}>
-      {/* JSON-LD Schemas */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateCategoryBreadcrumbSchema(categoryContent.title, slug)),
-        }}
-      />
-
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero section */}
       <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
@@ -100,6 +63,7 @@ export default function CategoryPage({
               {categoryContent.title} pour PME : le comparatif de nos DAF externalisés
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">{categoryContent.intro}</p>
+            {locale === "fr" && slug === "logiciels-tresorerie" && <p className="text-muted-foreground"><Link href="/ressources/blog/flux-de-tresorerie" className="text-iter-violet underline underline-offset-4">Comprendre les flux de trésorerie</Link> avant de choisir les connexions et les scénarios de votre outil.</p>}
           </div>
         </div>
       </section>
@@ -269,7 +233,7 @@ export default function CategoryPage({
                       href={`/ressources/outils/${toolData.slug}`}
                       className="inline-flex items-center gap-2 px-6 py-3 text-iter-violet font-semibold hover:gap-3 transition-all"
                     >
-                      Lire l'avis complet
+                      Lire l&apos;avis complet
                       <span>→</span>
                     </Link>
                   )}
@@ -279,6 +243,9 @@ export default function CategoryPage({
           </div>
         </div>
       </section>
+
+      {slug === 'logiciels-tresorerie' && <section className="site-section bg-background py-10"><div className="container max-w-3xl"><h2 className="text-2xl font-semibold mb-4">Quand le problème vient des encaissements</h2><p>Un outil de prévision et un outil de relance traitent des travaux différents. Pour tester la gestion des créances, consultez <Link href="/ressources/outils/upflow" className="text-iter-violet underline">Upflow</Link> et <Link href="/ressources/outils/leanpay" className="text-iter-violet underline">LeanPay</Link>. Vérifiez les litiges, les dates de règlement et la coordination avec l’équipe commerciale avant de connecter ces données au prévisionnel.</p></div></section>}
+      {slug === 'logiciels-paie' && <section className="site-section bg-background py-10"><div className="container max-w-3xl"><h2 className="text-2xl font-semibold mb-4">Distinguer gestion RH et production des bulletins</h2><p>La fiche <Link href="/ressources/outils/factorial" className="text-iter-violet underline">Factorial</Link> aide à préparer les tests d’un SIRH. La fiche <Link href="/ressources/outils/malibou" className="text-iter-violet underline">malibou</Link> traite la gestion accompagnée de la paie. Identifiez qui prépare les variables, produit les bulletins et les valide, ainsi que les prestations réellement incluses au contrat.</p></div></section>}
 
       {/* Decision criteria */}
       <section className="site-section bg-background py-16">

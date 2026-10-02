@@ -1,3 +1,10 @@
+import { CFO_EXTERNE_GUIDE } from "./cfo-externe-guide";
+import { FINANCE_STACK_GUIDE, FINANCE_STACK_GUIDE_HTML } from "./finance-stack-guide";
+import { estimateReadMinutes } from "../blog-read-time";
+import { SALARIED_DAF_GUIDE } from "./decision-guide-meta";
+import { FINANCE_NEED_GUIDE_HTML } from "./finance-need-guide";
+import { CASH_BURN_GUIDE_HTML } from "./cash-burn-guide";
+import { ACCOUNTING_GUIDE_HTML } from "./accounting-guide";
 import { getDafOffer } from "./daf-offer";
 import { Locale } from "../i18n";
 
@@ -31,10 +38,21 @@ export interface BlogPostData {
 
 export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
   fr: {
+    "essentiels-outils-tech-finance": {
+      meta: { title: FINANCE_STACK_GUIDE.title, description: FINANCE_STACK_GUIDE.description },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: FINANCE_STACK_GUIDE.h1,
+      publishedDate: FINANCE_STACK_GUIDE.publishedDate,
+      updatedDate: "2026-10-02",
+      author: FINANCE_STACK_GUIDE.author,
+      category: "Outils & stack",
+      content: [],
+      readingMinutes: estimateReadMinutes(FINANCE_STACK_GUIDE_HTML),
+    },
     "flux-de-tresorerie": {
       meta: {
-        title: "Flux de trésorerie — Définition et Calcul | Iter Advisors",
-        description: "Comprendre les flux de trésorerie : définition, calcul et importance pour la gestion financière de votre entreprise. Guide complet par Iter Advisors.",
+        title: "Flux de trésorerie : calcul et prévisionnel",
+        description: "Comprenez les flux de trésorerie avec un exemple fictif : encaissements, décaissements, BFR et passage à un prévisionnel de trésorerie.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -42,7 +60,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogLabel: "Blog",
         blogHref: "/ressources/blog",
       },
-      h1: "Flux de trésorerie : définition et importance pour les entreprises",
+      h1: "Flux de trésorerie : définition, calcul et importance pour l'entreprise",
       publishedDate: "2026-05-10",
       author: "Benjamin Ziza",
       category: "guides-pratiques",
@@ -53,7 +71,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "la-modernisation-du-role-de-cfo": {
       meta: {
-        title: "Modernisation du rôle de CFO en 2026 | Iter Advisors",
+        title: "Moderniser le travail du CFO : données et IA | Iter Advisors",
         description: "Comment le rôle du CFO évolue avec la digitalisation et l'IA. Découvrez les nouvelles compétences et missions du directeur financier moderne.",
       },
       breadcrumbs: {
@@ -62,10 +80,13 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogLabel: "Blog",
         blogHref: "/ressources/blog",
       },
-      h1: "La modernisation du rôle de CFO",
+      h1: "Moderniser le travail du CFO : données, IA et décisions",
+      publishedDate: "2026-05-01",
+      updatedDate: "2026-10-02",
+      author: "Benjamin Ziza",
       content: [],
       // Full body is served by the dedicated route; the catalog is metadata only.
-      readingMinutes: 10,
+      readingMinutes: 5,
     },
     "cout-daf-externalise-tarifs-prix-2026": {
       meta: {
@@ -91,24 +112,21 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       readingMinutes: 5,
     },
     "daf-externalise-vs-daf-salarie": {
-      meta: {
-        title: "CFO à Temps Partagé vs DAF Salarié : Comparatif 2026 | Iter Advisors",
-        description: "DAF externalisé ou salarié ? Comparatif coûts, avantages et cas d'usage pour choisir la meilleure option de direction financière pour PME et startup.",
-      },
+      meta: { title: SALARIED_DAF_GUIDE.title, description: SALARIED_DAF_GUIDE.description },
       breadcrumbs: {
         resourcesLabel: "Ressources",
         resourcesHref: "/ressources",
         blogLabel: "Blog",
         blogHref: "/ressources/blog",
       },
-      h1: "DAF externalisé vs DAF salarié : quel choix pour votre entreprise ?",
-      publishedDate: "2026-03-28",
-      author: "Sébastien Doat",
-      category: "",
+      h1: SALARIED_DAF_GUIDE.h1,
+      publishedDate: SALARIED_DAF_GUIDE.publishedDate,
+      author: SALARIED_DAF_GUIDE.author,
+      category: "Comparaison",
       htmlContent: undefined,
       content: [],
       // Full body is served by the dedicated route; the catalog is metadata only.
-      readingMinutes: 10,
+      readingMinutes: 6,
     },
     "checklist-due-diligence-levee-de-fonds": {
       meta: {
@@ -311,407 +329,42 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       content: [],
     },
     "externalisation-comptable": {
-      meta: {
-        title: "Externalisation comptable : guide et tarifs 2026",
-        description: "Faut-il externaliser sa comptabilité ? Avantages, pièges, tarifs (400 à 3 500 €/mois) et critères pour choisir le bon prestataire en 2026.",
-      },
-      breadcrumbs: {
-        resourcesLabel: "Ressources",
-        resourcesHref: "/ressources",
-        blogLabel: "Blog",
-        blogHref: "/ressources/blog",
-      },
-      h1: "Externalisation comptable : le guide pratique pour les dirigeants de PME et startups",
-      updatedDate: "2026-09-13",
-      publishedDate: "2026-05-10",
-      author: "Benjamin Ziza",
-      category: "guides-pratiques",
-      htmlContent: `<p><strong>Vous teniez les comptes de votre entreprise vous-même. Ou peut-être faites-vous confiance à un prestataire informel sans contrat ni garantie. Aujourd'hui, le doute s'installe : "Faut-il vraiment externaliser ma comptabilité ? Qu'est-ce que je vais y gagner ? Et surtout, à quel prix ?"</strong></p>
-<p>L'externalisation comptable est l'une des décisions que tout dirigeant de PME ou startup doit se poser, généralement autour de 5 à 10 salariés. Jusqu'à ce stade, faire soi-même ou confier à un prestataire informel suffit. Passé ce seuil, les obligations deviennent complexes, le risque augmente, et le temps investi devient trop coûteux.</p>
-<p>Ce guide détaille tout ce qu'il faut savoir sur l'<strong>externalisation comptable</strong> : pourquoi le faire, comment l'éviter mal, combien cela coûte vraiment, et surtout, comment structurer ce partenariat pour en tirer le maximum.</p>
-<hr>
-<h2 id="pourquoi-externaliser-la-comptabilite-les-vraies-raisons">Pourquoi externaliser la comptabilité : les vraies raisons</h2>
-<p>Beaucoup de dirigeants pensent que l'externalisation comptable est une question de coûts. C'est une erreur. Les vrais bénéfices vont bien au-delà du prix.</p>
-<h3 id="1-vous-navez-pas-le-temps">1. Vous n'avez pas le temps</h3>
-<p>La gestion comptable, c'est loin d'être quelques heures par mois. Entre la collecte des documents, la classement des factures, la tenue du journal d'achat, le rapprochement bancaire, les déclarations de TVA, la préparation du dossier d'expertise comptable, vous regardez rapidement 4 à 8 heures de travail par semaine pour une PME de taille modérée.</p>
-<p>Votre temps a une valeur. Si vous êtes à la tête d'une entreprise de 10 salariés, votre heure vaut au minimum 80 à 150 euros. À ce taux, externaliser la comptabilité pour 2 000 à 3 500 euros par mois revient à acheter 20 à 40 heures de votre temps chaque mois -- du temps que vous pouvez reinvestir dans la croissance, les clients, ou l'innovation produit.</p>
-<h3 id="2-limpact-de-la-conformite-reglementaire">2. L'impact de la conformité réglementaire</h3>
-<p>La réglementation comptable et fiscale française est labyrinthique. Les règles sur la TVA, les déclarations URSSAF, les obligations de conservation, le respect des délais de déclaration changent constamment.</p>
-<p>Un oubli, une erreur de classement, une déclaration tardive, et vous risquez :</p>
-<ul>
-<li>Des <strong>redressements fiscaux</strong> pouvant représenter 20 à 40 % du montant déclaré</li>
-<li>Des <strong>pénalités et majorations</strong> qui explosent vite : 80 % sur les droits omis en cas de mauvaise foi, 10 % en cas de retard de déclaration</li>
-<li>Des <strong>contentieux administratifs</strong> longs et coûteux à résoudre</li>
-<li>Une <strong>image d'entreprise détériorée</strong> auprès des banquiers, des investisseurs et des partenaires</li>
-</ul>
-<p>Externaliser auprès d'un vrai professionnel, c'est acheter une assurance contre ces risques.</p>
-<h3 id="3-lacces-a-une-expertise-qualifiee">3. L'accès à une expertise qualifiée</h3>
-<p>Votre cabinet comptable externalisé n'est pas juste un prestataire qui saisit vos chiffres. C'est un expert qui peut vous aider à :</p>
-<ul>
-<li><strong>Optimiser votre structure fiscale</strong> : faut-il rester en auto-entrepreneur ? Passer en EIRL ? Créer une SARL ? Chaque structure a des implications différentes</li>
-<li><strong>Piloter votre trésorerie</strong> : comprendre votre cycle de trésorerie et anticiper les tensions</li>
-<li><strong>Préparer les levées de fonds</strong> : un dossier comptable propre et auditabilité avec un Cabinet d'Expertise Comptable c'est l'un des premiers critères que les investisseurs vérifieront</li>
-<li><strong>Analyser la performance</strong> : quels sont mes vrais marges ? Où vont mes dépenses ? Quels clients sont profitables ?</li>
-</ul>
-<h3 id="4-la-transparence-vis-a-vis-des-parties-prenantes">4. La transparence vis-à-vis des parties prenantes</h3>
-<p>Si vous levez des fonds ou si vous avez des investisseurs, des banquiers ou même des clients exigeants, la qualité de votre comptabilité devient un atout compétitif. Des comptes régulièrement mis à jour, audités par un tiers indépendant, c'est un signal de sérieux et de professionnalisme.</p>
-<hr>
-<h2 id="les-pieges-a-eviter-pourquoi-lexternalisation-comptable-echoue">Les pièges à éviter : pourquoi l'externalisation comptable échoue</h2>
-<p>L'externalisation comptable semble simple en théorie. En pratique, beaucoup d'entreprises la mènent mal. Voici les pièges les plus courants.</p>
-<h3 id="piege-1-mauvaise-organisation-en-interne">Piège 1 : Mauvaise organisation en interne</h3>
-<p>Le prestataire comptable le plus compétent ne peut rien faire si les données qu'il reçoit sont mal organisées. Factures perdues, frais personnels mélangés aux frais professionnels, relevés bancaires sans explications, justificatifs manquants -- ce chaos génère des heures de travail non facturées ou des retards constants.</p>
-<p><strong>Solution :</strong> Avant d'externaliser, structurez votre organisation interne. Mettre en place un process simple de collecte des documents, désigner une personne responsable, utiliser un logiciel de facturation basique. Cela coûte du temps en amont mais paie très vite.</p>
-<h3 id="piege-2-choisir-le-mauvais-prestataire">Piège 2 : Choisir le mauvais prestataire</h3>
-<p>Tous les cabinets comptables ne se ressemblent pas. Certains sont figés dans des pratiques des années 2000. D'autres ne comprennent rien à la réalité des startups et PME. Vous avez besoin de :</p>
-<ul>
-<li>Un cabinet qui maîtrise votre industrie (SaaS, e-commerce, services, etc.)</li>
-<li>Un expert qui utilise des outils modernes et digitalisés (Pennylane, Dext, etc.) -- pas Excel. Voir notre <a href="/ressources/outils/logiciels-comptabilite">comparatif des logiciels de comptabilité</a> pour savoir lequel exiger de votre prestataire</li>
-<li>Une vraie relation : un interlocuteur fixe, pas un turnover constant d'auditeurs</li>
-<li>Une réactivité : vos questions trouvent une réponse sous 24-48h, pas dans deux semaines</li>
-</ul>
-<p><strong>Solution :</strong> Cherchez des recommandations auprès d'autres dirigeants. Évaluez 3-4 cabinets. Demandez des références. Posez des questions précises sur leur approche. Vérifiez qu'ils comprennent votre secteur.</p>
-<h3 id="piege-3-ne-pas-mettre-en-place-un-vrai-processus">Piège 3 : Ne pas mettre en place un vrai processus</h3>
-<p>Même avec un bon prestataire, sans processus clair, la relation devient chaotique. Les délais s'allongent, les factures s'accumulent, les documents s'égarent.</p>
-<p><strong>Solution :</strong> Documentez le process d'échanges avec votre prestataire. Définissez des dates limites : les factures d'achat doivent arriver avant le 10 du mois suivant. Les virements bancaires doivent être justifiés. Un point mensuel doit se tenir pour valider les chiffres avant la clôture. Cela semble basique, mais c'est ce qui fait la différence.</p>
-<h3 id="piege-4-ne-voir-la-comptabilite-que-comme-une-obligation-reglementaire">Piège 4 : Ne voir la comptabilité que comme une obligation réglementaire</h3>
-<p>Beaucoup de dirigeants considèrent la comptabilité comme une corvée administrative, juste pour se conformer aux obligations. Grave erreur. Vos comptes sont une mine d'informations sur la santé de votre entreprise.</p>
-<p><strong>Solution :</strong> Demandez à votre prestataire un reporting mensuel : P&L, trésorerie, analyse des dépenses. Passez une heure chaque mois à comprendre ces chiffres. C'est le meilleur investissement que vous puissiez faire pour piloter votre croissance.</p>
-<hr>
-<h2 id="comment-reussir-son-externalisation-comptable">Comment réussir son externalisation comptable</h2>
-<p>Voici le plan d'action pour faire de l'externalisation comptable un vrai actif pour votre entreprise.</p>
-<h3 id="etape-1-preparez-votre-organisation-interne">Étape 1 : Préparez votre organisation interne</h3>
-<p>Avant même de chercher un prestataire, structurez votre comptabilité interne. C'est l'investissement fondamental.</p>
-<ul>
-<li>Choisissez un logiciel de facturation cloud (Pennylane, Stripe Billing, Invoicely)</li>
-<li>Mettez en place une procédure de classement des documents</li>
-<li>Désignez une personne responsable de la collecte des justificatifs</li>
-<li>Créez un drive partagé ou un espace de stockage pour centraliser les documents</li>
-</ul>
-<h3 id="etape-2-evaluez-vos-besoins-reels">Étape 2 : Évaluez vos besoins réels</h3>
-<p>L'externalisation comptable n'est pas one-size-fits-all. Selon votre taille, votre complexité et votre secteur, vous n'aurez pas besoin du même niveau de service.</p>
-<p>Demandez-vous :</p>
-<ul>
-<li>Combien de factures clients par mois ? (< 50, 50-200, > 200)</li>
-<li>Combien de factures fournisseurs par mois ? (< 50, 50-200, > 200)</li>
-<li>Dois-je gérer de la TVA compliquée (intracommunautaire, export, etc.) ou c'est simple ?</li>
-<li>Ai-je besoin d'un audit complet ou juste une tenue comptable ?</li>
-<li>Dois-je produire des rapports financiers régulièrement pour des investisseurs ou des banquiers ?</li>
-</ul>
-<h3 id="etape-3-choisissez-le-bon-prestataire">Étape 3 : Choisissez le bon prestataire</h3>
-<p>Ne choisissez pas votre comptable sur le prix uniquement. Les critères importants :</p>
-<ul>
-<li><strong>Compétence dans votre secteur</strong> : un cabinet qui travaille avec des SaaS aura une meilleure compréhension que un généraliste</li>
-<li><strong>Qualité de la relation</strong> : un interlocuteur fixe, une vraie proximité, pas un numéro de dossier</li>
-<li><strong>Modernité des outils</strong> : logiciels cloud, automatisations, reporting en ligne</li>
-<li><strong>Réactivité</strong> : vos questions trouvent une réponse en 24-48h</li>
-<li><strong>Flexibilité de la tarification</strong> : paiement à l'acte, forfait, ou forfait modulable selon la charge</li>
-</ul>
-<h3 id="etape-4-documentez-le-process-avec-votre-prestataire">Étape 4 : Documentez le process avec votre prestataire</h3>
-<p>Signez un contrat qui précise :</p>
-<ul>
-<li><strong>Périmètre</strong> : tenue comptable, déclarations fiscales, TVA, paie (si applicable), reporting ?</li>
-<li><strong>Délais</strong> : à quelle date les documents doivent arriver ? Quand les comptes seront-ils clôturés ?</li>
-<li><strong>Tarification</strong> : forfait mensuel, facturation à l'acte, ou modèle hybride ?</li>
-<li><strong>Points de synchronisation</strong> : une réunion mensuelle pour valider les chiffres et discuter des enjeux</li>
-<li><strong>Reporting</strong> : quel reporting vous aurez (P&L, bilan, tableau de flux de trésorerie) et quelle fréquence</li>
-</ul>
-<h3 id="etape-5-pilotez-votre-comptabilite">Étape 5 : Pilotez votre comptabilité</h3>
-<p>Une fois le processus en place, pilotez activement votre comptabilité. Ne laissez pas votre prestataire seul décider.</p>
-<ul>
-<li>Recevez et validez les factures clients et fournisseurs chaque mois</li>
-<li>Participez à la clôture mensuelle avec votre prestataire</li>
-<li>Commentez les écarts dans votre P&L : cette dépense était-elle prévue ? Ce revenu correspond-il à nos prévisions ?</li>
-<li>Utilisez les chiffres pour piloter votre entreprise, pas juste pour remplir les obligations légales</li>
-</ul>
-<hr>
-<h2 id="combien-coute-lexternalisation-comptable-tarifs-et-modeles-de-facturation">Combien coûte l'externalisation comptable ? Tarifs et modèles de facturation</h2>
-<p>Les prix varient énormément selon la complexité et la région. Voici les ordres de grandeur 2026.</p>
-<h3 id="modele-1-forfait-mensuel">Modèle 1 : Forfait mensuel</h3>
-<p>Le forfait mensuel est le plus courant pour les TPE et PME. Vous payez un montant fixe chaque mois, quel que soit le volume de transactions.</p>
-<ul>
-<li><strong>Tenue comptable simple</strong> (< 100 transactions/mois, peu de complexité) : 400 à 800 EUR/mois</li>
-<li><strong>Comptabilité standard</strong> (100-500 transactions/mois, TVA, quelques déclarations) : 800 à 1 500 EUR/mois</li>
-<li><strong>Comptabilité complexe</strong> (> 500 transactions/mois, TVA intracommunautaire, paie, plusieurs structures) : 1 500 à 3 500 EUR/mois</li>
-</ul>
-<h3 id="modele-2-facturation-a-lacte">Modèle 2 : Facturation à l'acte</h3>
-<p>Certains cabinets facturent à l'acte : un prix par facture, par déclaration, etc. Ce modèle peut être intéressant pour un volume très faible (< 30 transactions/mois).</p>
-<ul>
-<li>Par facture entrante : 5 à 15 EUR</li>
-<li>Par facture sortante : 8 à 20 EUR</li>
-<li>Clôture mensuelle : 150 à 300 EUR</li>
-<li>Déclaration fiscale/TVA : 50 à 200 EUR</li>
-</ul>
-<h3 id="modele-3-abo-plus-variable">Modèle 3 : Abonnement + variable</h3>
-<p>Le modèle hybride combine un forfait pour les services de base + une facturation variable pour les services supplémentaires.</p>
-<p><strong>Exemple :</strong> Forfait 1 000 EUR/mois pour la tenue comptable basique, + 15 EUR par facture au-delà de 200 factures/mois.</p>
-<hr>
-<h2 id="quand-passer-a-lexternalisation-comptable">Quand passer à l'externalisation comptable ?</h2>
-<p>Vous vous posez la question : "Suis-je au bon moment pour externaliser ?" Voici les signaux.</p>
-<h3 id="signaux-positifs-vous-pouvez-externaliser">Signaux positifs : vous pouvez externaliser</h3>
-<ul>
-<li>✅ <strong>Vous avez entre 5 et 100 salariés</strong> : la taille critique où l'externalisation devient rentable</li>
-<li>✅ <strong>Vous avez plus de 50 transactions comptables par mois</strong> : au-delà, faire soi-même devient chronophage</li>
-<li>✅ <strong>Votre trésorerie se complique</strong> : plusieurs comptes bancaires, virements réguliers, besoin d'un <a href="/services/previsionnel-tresorerie">prévisionnel de trésorerie</a></li>
-<li>✅ <strong>Vous avez des salariés</strong> : la paie devient une obligation complexe</li>
-<li>✅ <strong>Vous préparez une levée de fonds</strong> : un dossier comptable propre est un atout majeur</li>
-<li>✅ <strong>Vous n'aimez pas faire la comptabilité</strong> : c'est le signal le plus fort. La comptabilité doit être un outil, pas une corvée.</li>
-</ul>
-<h3 id="signaux-negatifs-attendez-un-peu">Signaux négatifs : attendez un peu</h3>
-<ul>
-<li>❌ <strong>Vous êtes en phase pre-revenue</strong> : attendez d'avoir des revenus réguliers avant d'externaliser</li>
-<li>❌ <strong>Vous avez très peu de transactions</strong> (< 20/mois) : vous pouvez faire vous-même en quelques heures</li>
-<li>❌ <strong>Vous découvrez que le cabinet ne vous comprend pas</strong> : trouvez d'abord le bon partenaire</li>
-<li>❌ <strong>Votre structure juridique est compliquée</strong> : clarifiez-la d'abord, puis externalisez</li>
-</ul>
-<hr>
-<h2 id="internalisation-comptable-vs-daf-externalise-quelle-difference">Internalisation comptable vs DAF externalisé : quelle différence ?</h2>
-<p>Beaucoup de dirigeants confondent l'externalisation de la tenue comptable (cabinet comptable) et l'externalisation de la <a href="/services/gestion-financiere-externalisee">direction financière</a> (<a href="/daf-externalise">notre cabinet de conseil financier</a>). Ce sont deux services complémentaires, pas synonymes.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Cabinet comptable / Tenue comptable externalisée</th>
-<th>DAF externalisé</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Rôle</strong></td>
-<td>Saisir et classer les documents comptables, préparer les déclarations, assurer la conformité</td>
-<td>Piloter la stratégie financière, construire des prévisionnels, aide aux décisions</td>
-</tr>
-<tr>
-<td><strong>Fréquence d'intervention</strong></td>
-<td>Ponctuelle ou régulière mais limitée</td>
-<td>Régulière et stratégique</td>
-</tr>
-<tr>
-<td><strong>Interaction avec le dirigeant</strong></td>
-<td>Surtout administrative (fourniture de documents)</td>
-<td>Stratégique (participations aux décisions importantes)</td>
-</tr>
-<tr>
-<td><strong>Coût typique</strong></td>
-<td>400 à 2 000 EUR/mois</td>
-<td>${getDafOffer("fr").price} chez Iter Advisors</td>
-</tr>
-<tr>
-<td><strong>Meilleur pour</strong></td>
-<td>Conformité, qualité des comptes, audit trail</td>
-<td>Croissance, levée de fonds, optimisation financière</td>
-</tr>
-</tbody>
-</table>
-<p><strong>En pratique :</strong> La plupart des startups et PME commencent par externaliser la comptabilité (cabinet comptable), puis ajoutent un <a href="/daf-externalise">service de direction financière externalisée</a> quand elles entrent dans une phase de croissance rapide ou de levée de fonds.</p>
-<p>Idéalement, ces deux services travaillent ensemble : le DAF donne la stratégie, le cabinet comptable assure la qualité des comptes.</p>
-<hr>
-<h2 id="conclusion-lexternalisation-comptable-nest-pas-un-luxe-cest-une-necessite">Conclusion : L'externalisation comptable n'est pas un luxe, c'est une nécessité</h2>
-<table>
-<thead>
-<tr>
-<th>Bénéfice</th>
-<th>Impact concret</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Gain de temps</strong></td>
-<td>4 à 8 h/semaine récupérées, réinvesties dans la croissance</td>
-</tr>
-<tr>
-<td><strong>Protection légale</strong></td>
-<td>Zéro redressement fiscal, pénalités ou contentieux</td>
-</tr>
-<tr>
-<td><strong>Expertise</strong></td>
-<td>Optimisation fiscale, pilotage, préparation levée de fonds</td>
-</tr>
-<tr>
-<td><strong>Coût maîtrisé</strong></td>
-<td>800 à 2 000 €/mois — moins cher qu'une erreur comptable</td>
-</tr>
-<tr>
-<td><strong>Crédibilité</strong></td>
-<td>Dossier propre pour investisseurs, banques et grands comptes</td>
-</tr>
-</tbody>
-</table>
-<p>Si vous dirigez une PME ou une startup de 5 à 50 salariés, l'externalisation comptable ne devrait plus être une question. Elle devrait être une pratique standard, tout comme vous avez probablement externalisé votre infrastructure IT (cloud au lieu de serveurs on-prem).</p>
-<p>La vraie question n'est pas "faut-il externaliser ?", mais "comment choisir le bon partenaire ?". Cet article vous donne tous les critères de sélection. Maintenant, c'est à vous d'agir.</p>
-<p><strong>Vous cherchez à structurer votre comptabilité et votre direction financière ?</strong> <a href="/daf-externalise">Chez Iter Advisors</a>, nous accompagnons les startups et PME à mettre en place une comptabilité de qualité couplée à un <a href="/daf-externalise">pilotage financier stratégique</a>. Nous pouvons vous recommander les meilleurs cabinets comptables ou prendre directement en charge votre pilotage financier. <a href="/contact">Contactez-nous pour un diagnostic gratuit</a>.</p>
-<hr>
-<h2 id="faq-externalisation-comptable">FAQ — Externalisation comptable</h2>
-<h3>Quel est le prix moyen d'une externalisation comptable en 2026 ?</h3>
-<p>Pour une PME de 10 à 50 salariés, le coût moyen est de 800 à 2 000 €/mois selon le volume de transactions et la complexité fiscale. Une TPE (< 50 transactions/mois) peut s'en sortir avec 400 à 700 €/mois. Une structure plus complexe (TVA intracommunautaire, plusieurs entités, paie incluse) monte à 2 000–3 500 €/mois. Ces tarifs incluent généralement la tenue comptable, les déclarations fiscales et un bilan annuel.</p>
-<h3>Quelle est la différence entre un expert-comptable et un DAF externalisé ?</h3>
-<p>L'expert-comptable assure la tenue des comptes, la conformité fiscale et sociale. Le <a href="/daf-externalise">DAF externalisé</a> pilote la stratégie financière : modèles prévisionnels, accompagnement en levée de fonds, optimisation de la structure. Ce sont deux missions complémentaires : l'expert-comptable produit les chiffres, le DAF les utilise pour piloter la croissance.</p>
-<h3>Quand passer de l'externalisation comptable à un DAF externalisé ?</h3>
-<p>L'ajout d'un DAF externalisé devient pertinent dès que vous avez besoin de prévisions, de reportings mensuels pour des investisseurs, ou que vous préparez une levée de fonds. En pratique, cela correspond souvent au stade 1–5 M€ de CA ou à l'arrivée des premiers institutionnels. Les deux services peuvent coexister : l'expert-comptable tient les comptes, le DAF construit la stratégie.</p>`,
-      content: [],
-    },
+  "meta": {
+    "title": "Externalisation comptable : organisation et coût",
+    "description": "Choisir un prestataire comptable : responsabilités, reprise des données, comparaison des devis et coût complet. Distinguer comptabilité et DAF."
+  },
+  "breadcrumbs": {
+    "resourcesLabel": "Ressources",
+    "resourcesHref": "/ressources",
+    "blogLabel": "Blog",
+    "blogHref": "/ressources/blog"
+  },
+  "h1": "Externalisation comptable : organiser la mission et comparer les coûts",
+  "publishedDate": "2026-05-10",
+  "updatedDate": "2026-10-02",
+  "author": "Benjamin Ziza",
+  "category": "guides-pratiques",
+  "htmlContent": ACCOUNTING_GUIDE_HTML,
+  "content": []
+},
 
     // ─── 15 articles ajoutés via TICKET 23 ─────────────────────────────
     // Pilier 1 — DAF Externalisé (4 articles)
     "quand-embaucher-daf-externalise-5-signes": {
       meta: {
-        title: "5 signes que votre startup a besoin d'un DAF | Iter Advisors",
-        description: "5 signaux qu'une startup a besoin d'un DAF externalisé : timing idéal et comment choisir entre externalisation et embauche. Guide pratique par nos CFOs.",
+        title: "Quand faire appel à un DAF : 5 signaux | Iter Advisors",
+        description: "Trésorerie, reporting, financement et responsabilités : cinq signaux à examiner avant de choisir une mission finance, un temps partagé ou un recrutement.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
-      h1: "5 signes que vous avez besoin d'un DAF externalisé (et comment choisir)",
-      updatedDate: "2026-09-13",
+      h1: "Quand faire appel à un DAF : cinq signaux à examiner",
+      updatedDate: "2026-10-02",
       publishedDate: "2026-05-13",
       author: "Sébastien Doat",
       category: "DAF externalisé",
-      htmlContent: `<p>La décision de renforcer la fonction financière est un tournant pour toute entreprise en croissance. Trop tôt, elle constitue un poids financier inutile. Trop tard, elle expose l'entreprise à des risques opérationnels majeurs (défaillance de trésorerie, non-conformité fiscale, décisions stratégiques sans base chiffrée).</p>
-<p>Ce document présente cinq indicateurs factuels qui signalent qu'une entreprise a atteint le seuil de nécessité. Il analyse ensuite les options disponibles : DAF salarié, <a href="/daf-externalise">directeur financier à temps partagé</a>, et les modalités de transition entre les deux.</p>
-<h2 id="signe-1-burn-rate">Section 1 — Le signe n°1 : le burn rate est inconnu</h2>
-<p>Le <em>burn rate</em> (consommation nette de trésorerie par mois) est la métrique vitale de toute startup en phase de croissance. Une entreprise qui ne connaît pas précisément son burn rate navigue sans instrument de pilotage.</p>
-<p><strong>Seuil de criticité :</strong> si la réponse à la question « Quel est votre burn rate exact du mois dernier ? » nécessite plus de 5 minutes de recherche, l'entreprise a besoin d'un DAF.</p>
-<h3>Indicateurs associés</h3>
-<ul>
-<li>Absence de prévision de trésorerie à 3 mois</li>
-<li>Décisions de recrutement prises sans simulation d'impact financier</li>
-<li>Découvert bancaire récurrent non anticipé</li>
-</ul>
-<p><strong>Coût du problème :</strong> un recrutement non budgété de 3 personnes (coût total 180 000 € à 240 000 € par an) peut réduire le runway de 6 à 9 mois sans que le dirigeant en mesure l'impact exact.</p>
-<h2 id="signe-2-compta-retard">Section 2 — Le signe n°2 : la comptabilité a plus de 6 semaines de retard</h2>
-<p>Le délai de clôture comptable est un indicateur de maturité financière. Les standards sectoriels sont les suivants :</p>
-<table>
-<thead><tr><th>Type d'entreprise</th><th>Délai de clôture acceptable</th></tr></thead>
-<tbody>
-<tr><td>Startup SaaS (outils cloud)</td><td>3 à 7 jours</td></tr>
-<tr><td>PME digitale</td><td>5 à 10 jours</td></tr>
-<tr><td>PME industrielle</td><td>10 à 15 jours</td></tr>
-<tr><td>PME avec compta traditionnelle</td><td>15 à 30 jours</td></tr>
-</tbody>
-</table>
-<p>Un retard supérieur à 6 semaines signale généralement l'un des problèmes suivants :</p>
-<ul>
-<li>Expert-comptable sous-dimensionné ou débordé</li>
-<li>Absence d'outils de comptabilité modernes</li>
-<li>Manque de supervision interne</li>
-<li>Problèmes de réconciliation bancaire récurrents</li>
-</ul>
-<p><strong>Impact :</strong> des décisions stratégiques prises sur la base de données obsolètes. Un décalage de 6 semaines entre la réalité financière et la perception du dirigeant peut entraîner des décisions inadaptées (recrutements non financés, dépenses non maîtrisées).</p>
-<h2 id="signe-3-levee-engagee">Section 3 — Le signe n°3 : la préparation d'une levée de fonds est engagée</h2>
-<p>La préparation d'une levée de fonds constitue un point de non-retour. Les investisseurs professionnels (VC, fonds de croissance) exigent un niveau de rigueur financière que l'expert-comptable seul ne peut fournir.</p>
-<h3>Les livrables attendus par les investisseurs</h3>
-<table>
-<thead><tr><th>Document</th><th>Délai de préparation</th></tr></thead>
-<tbody>
-<tr><td>Modèle financier sur 3 ans</td><td>3 à 4 semaines</td></tr>
-<tr><td>Data room structurée</td><td>2 à 3 semaines</td></tr>
-<tr><td>Tableau de bord mensuel</td><td>En continu</td></tr>
-<tr><td>Prévision de trésorerie</td><td>Mensuelle</td></tr>
-<tr><td>KPIs SaaS (MRR, CAC, LTV, churn)</td><td>En continu</td></tr>
-</tbody>
-</table>
-<p>Le délai total de préparation d'une levée de fonds varie de 2 à 6 mois selon l'état initial de la documentation financière. Un DAF externalisé dédié à la préparation de la levée peut réduire ce délai de 30 à 40 %.</p>
-<div class="callout-cfo">
-<p class="callout-cfo__title">Le regard du CFO</p>
-<p>« On accompagne une dizaine de levées par an. Le motif récurrent du retard ou de l'échec, c'est une préparation financière insuffisante. Un fondateur qui arrive chez un VC avec un Excel mal construit et des KPIs non trackés perd 80 % de sa crédibilité en 10 minutes. La qualité du modèle financier est le document le plus consulté de la data room. »</p>
-<span class="callout-cfo__author">Benjamin Ziza — Associé fondateur, Iter Advisors</span>
-</div>
-<h2 id="signe-4-controle-gestion">Section 4 — Le signe n°4 : plus de 10 salariés sans contrôle de gestion</h2>
-<p>À 10 salariés, la complexité organisationnelle atteint un seuil critique. La gestion « à vue » du dirigeant ne suffit plus. Un contrôle de gestion structuré devient nécessaire.</p>
-<h3>Les composants du contrôle de gestion minimum</h3>
-<ul>
-<li>Budget annuel détaillé (P&amp;L, cash-flow, hiring plan)</li>
-<li>Suivi mensuel des écarts budget / réalisé</li>
-<li>Reporting mensuel à destination du dirigeant et/ou du board</li>
-<li>Tableau de bord avec 8 à 12 KPIs pertinents</li>
-</ul>
-<p><strong>Seuil d'alerte :</strong> si l'entreprise emploie plus de 10 personnes et ne dispose d'aucun de ces quatre éléments, le besoin de renforcement financier est impératif.</p>
-<h2 id="signe-5-fondateurs-finance">Section 5 — Le signe n°5 : les fondateurs consacrent plus de 8h/semaine à la finance</h2>
-<p>Le temps des fondateurs est l'actif le plus précieux de l'entreprise. Son allocation doit être optimisée.</p>
-<table>
-<thead><tr><th>Temps consacré à la finance / semaine</th><th>Diagnostic</th><th>Action recommandée</th></tr></thead>
-<tbody>
-<tr><td>&lt; 2 heures</td><td>Supervision ponctuelle</td><td>Maintien de l'existant</td></tr>
-<tr><td>2 à 5 heures</td><td>Supervision active</td><td>Renforcement ponctuel</td></tr>
-<tr><td>5 à 8 heures</td><td>Surcharge</td><td>DAF à temps partagé</td></tr>
-<tr><td>&gt; 8 heures</td><td>Surcharge critique</td><td>DAF externalisé urgent</td></tr>
-</tbody>
-</table>
-<p>Le coût d'opportunité est mesurable. Un fondateur dont le TJM estimé est de 500 € à 1 000 € qui consacre 10 heures par semaine à la finance supporte un coût de 20 000 € à 40 000 € par trimestre.</p>
-<h2 id="section-6-daf-externalise-vs-salarie">Section 6 — DAF externalisé vs DAF salarié : les critères de choix</h2>
-<h3>Le DAF externalisé</h3>
-<table>
-<thead><tr><th>Avantage</th><th>Détail</th></tr></thead>
-<tbody>
-<tr><td>Coût</td><td>30 à 50 % moins cher qu'un salarié équivalent</td></tr>
-<tr><td>Flexibilité</td><td>2 jours/semaine à temps plein, ajustable</td></tr>
-<tr><td>Expertise</td><td>Multi-sectorielle (10-15 entreprises/an)</td></tr>
-<tr><td>Délai de déploiement</td><td>1 à 2 semaines</td></tr>
-<tr><td>Continuité</td><td>Relais assuré par le cabinet sous 48 h (engagement contractuel)</td></tr>
-</tbody>
-</table>
-<h3>Le DAF salarié</h3>
-<table>
-<thead><tr><th>Avantage</th><th>Détail</th></tr></thead>
-<tbody>
-<tr><td>Disponibilité</td><td>Présent 5 jours/semaine</td></tr>
-<tr><td>Culture d'entreprise</td><td>Immersion totale</td></tr>
-<tr><td>Équipe à construire</td><td>Peut recruter et manager une équipe finance</td></tr>
-<tr><td>Coût annuel</td><td>65 000 € à 130 000 € charges comprises</td></tr>
-</tbody>
-</table>
-<h3>Recommandation par profil</h3>
-<table>
-<thead><tr><th>Profil</th><th>Recommandation</th></tr></thead>
-<tbody>
-<tr><td>Startup &lt; 15 salariés, CA &lt; 1 M€</td><td>DAF externalisé (2 jours/sem.)</td></tr>
-<tr><td>Startup 15-40 salariés, CA 1-5 M€</td><td>DAF externalisé (3-4 jours/sem.)</td></tr>
-<tr><td>Scale-up 40-80 salariés, CA &gt; 5 M€</td><td>DAF externalisé temps plein ou salarié</td></tr>
-<tr><td>Entreprise &gt; 80 salariés</td><td>DAF salarié + comptable interne</td></tr>
-</tbody>
-</table>
-<h2 id="faq">FAQ</h2>
-<p><strong>Q : Quel est le coût d'un DAF externalisé en 2026 ?</strong><br>R : ${getDafOffer("fr").price}. ${getDafOffer("fr").billing}</p>
-<p><strong>Q : Combien de temps faut-il pour mettre en place un DAF externalisé ?</strong><br>R : 1 à 2 semaines en moyenne. Le diagnostic initial est réalisé la première semaine, le déploiement des outils la deuxième.</p>
-<p><strong>Q : Le DAF externalisé peut-il accompagner une levée de fonds ?</strong><br>R : Oui, c'est l'une des missions les plus fréquentes. Le DAF prépare le modèle financier, la data room, et accompagne les fondateurs dans les rendez-vous VC.</p>
-<p><strong>Q : Quelle est la durée minimale d'engagement ?</strong><br>R : Aucune. La mission est résiliable avec un préavis de 30 jours.</p>
-<p>→ <a href="/contact"><strong>Prendre rendez-vous avec un DAF</strong></a></p>`,
+      htmlContent: FINANCE_NEED_GUIDE_HTML,
       content: [],
     },
-    "daf-externalise-barcelone-guide-startups-espagnoles": {
-      meta: {
-        title: "DAF externalisé Barcelone — Guide startups | Iter Advisors",
-        description: "Fiscalité espagnole, subventions ACCIO/ENISA, recrutement tech à Barcelone : guide complet pour structurer la finance d'une startup en Catalogne.",
-      },
-      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
-      h1: "DAF externalisé à Barcelone : le guide pour les startups espagnoles",
-      publishedDate: "2026-05-11",
-      author: "Sébastien Doat",
-      category: "daf-externalise",
-      htmlContent: `<p>Barcelone est devenue le deuxième écosystème startup d'Europe après Londres. Avec plus de 2 000 startups, des hubs technologiques comme 22@ et le District de la Innovación, et un coût de la vie 30% inférieur à Paris, la ville attire chaque année des centaines d'entrepreneurs français et internationaux.</p>
-<p>Mais gérer la finance d'une startup à Barcelone présente des spécificités : comptabilité espagnole (Plan General Contable), obligations fiscales différentes, subventions régionales, et un écosystème VC en pleine structuration. C'est pourquoi de nombreuses startups instalées en Catalogne font appel à un <a href="/daf-externalise">DAF externalisé</a> pour sécuriser leur pilotage financier. Voici le guide complet.</p>
-<h2 id="fiscalite">Le paysage fiscal espagnol</h2>
-<p>L'Espagne a un régime fiscal propre avec des spécificités importantes. L'IS (Impuesto de Sociedades) est de 25% — mais les startups peuvent bénéficier du régime « Entidades de Base Tecnológica » avec des allégements fiscaux significatifs. La TVA (IVA) est de 21% avec des taux réduits pour certains services numériques.</p>
-<p>Le principal défi pour les entrepreneurs français : la comptabilité espagnole est en « competencia exclusiva » des experts-comptables (censados). Vous ne pouvez pas gérer votre comptabilité seul comme en France avec <a href="/ressources/outils/pennylane">Pennylane</a> — vous devez obligatoirement passer par un expert-comptable local.</p>
-<h2 id="subventions">Les subventions et aides catalanes</h2>
-<ul>
-<li><strong>ACCIO</strong> (Generalitat de Catalunya) : subventions à l'innovation jusqu'à 150K€</li>
-<li><strong>ENISA</strong> (gouvernement espagnol) : prêts participatifs pour startups</li>
-<li><strong>ICF</strong> (Institut Català de Finances) : lignes de trésorerie et prêts</li>
-<li><strong>Barcelona Activa</strong> : accompagnement et financement pour les startups en phase de lancement</li>
-</ul>
-<p>Notre équipe de DAF basée à <a href="/daf-externalise-barcelone">Barcelone</a> connaît ces dispositifs sur le bout des doigts. Nous avons accompagné plus de 15 startups dans leurs demandes de subventions catalanes, avec un taux de succès de 75%.</p>
-<h2 id="recrutement">Le recrutement tech à Barcelone</h2>
-<p>Le pool de talents tech est profond — mais le marché devient compétitif. Un développeur senior coûte 45-65K€ brut annuel (contre 65-85K€ à Paris). Les charges sociales sont de 30% (contre 45% en France). La différence de coût total est de 25 à 35%.</p>
-<h2 id="erreurs">Les erreurs à éviter</h2>
-<ol>
-<li>Mauvaise structure juridique : choisir entre filiale espagnole (SL) et succursale sans analyse préalable</li>
-<li>Non-respect des obligations fiscales locales : modèle 720, censos fiscaux</li>
-<li>Gestion de la trésorerie bi-pays sans outil de consolidation</li>
-<li>Manque de reporting consolidé entre comptabilités française et espagnole</li>
-</ol>
-<h2 id="cout">Le coût d'un DAF à Barcelone</h2>
-<p>Le budget d’un <a href="/daf-externalise">DAF externalisé pour PME et startups</a> dépend du périmètre et du profil mobilisé. Consultez les <a href="/daf-externalise/tarifs">formules et tarifs Iter Advisors</a> : le devis précise les livrables, la disponibilité et les éventuels déplacements. Le lieu de la mission ne permet pas, à lui seul, de déduire une économie.</p>
-<p><a href="/contact">Contacter notre équipe de Barcelone</a></p>`,
-      content: [],
-    },
+
     "cout-daf-externalise-2026-tarifs-par-mission": {
       meta: {
         title: "Tarifs DAF externalisé 2026 — Par mission | Iter Advisors",
@@ -880,6 +533,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       author: "Sébastien Doat",
       category: "outils-stack",
       htmlContent: `<p>Agicap et Okimia, anciennement Fygr, proposent des outils de suivi et de prévision de trésorerie. Le choix dépend de vos banques, de vos entités et de la façon dont vous construisez vos prévisions. Un nombre de salariés ou un ancien prix d’appel ne suffit pas à départager les deux.</p>
+<p>Avant de comparer les logiciels, distinguez solde, encaissements et décaissements dans le guide des <a href="/ressources/blog/flux-de-tresorerie">flux de trésorerie</a>.</p>
 <h2 id="verdict">Le verdict en 30 secondes</h2>
 <p>Présélectionnez les solutions sur un même besoin : consolider vos soldes, expliquer les mouvements et anticiper les décaissements. Agicap présente aussi des fonctions de gestion des postes clients et fournisseurs. Okimia présente la connexion des comptes bancaires et de l’ERP. Demandez une démonstration des fonctions incluses dans chaque offre envisagée.</p>
 <h2 id="comparatif">Comparer sur vos flux réels</h2>
@@ -913,7 +567,8 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       updatedDate: "2026-09-05",
       author: "Sébastien Doat",
       category: "Outils & stack",
-      htmlContent: `<p>Après une Series A, la fonction finance doit produire des chiffres cohérents pour la direction et les investisseurs. La priorité est de relier les abonnements clients, la comptabilité, les dépenses et la trésorerie avec des responsabilités claires. Le choix des logiciels vient ensuite.</p>
+      htmlContent: `<p>Pour comparer les connexions, les contrôles et le coût complet, consultez la <a href="/ressources/blog/essentiels-outils-tech-finance">méthode de sélection des outils finance</a>. Le guide ci-dessous traite les décisions et les indicateurs propres à une SaaS après une Series A.</p>
+<p>Après une Series A, la fonction finance doit produire des chiffres cohérents pour la direction et les investisseurs. La priorité est de relier les abonnements clients, la comptabilité, les dépenses et la trésorerie avec des responsabilités claires. Le choix des logiciels vient ensuite.</p>
 <h2 id="diagnostic">Commencer par les décisions et les données</h2>
 <p>Recensez les décisions que le reporting doit permettre : recrutements, niveau de dépenses, horizon de financement et allocation des ressources. Pour chaque indicateur, précisez sa définition, sa source, son responsable et sa fréquence de mise à jour.</p>
 <p>Une même métrique ne doit pas changer de sens entre le tableau commercial et le reporting financier. L’<a href="/ressources/glossaire/arr-mrr">ARR et le MRR</a> doivent notamment être rapprochés des contrats et de la facturation. Les encaissements ne se confondent pas avec le chiffre d’affaires reconnu.</p>
@@ -1025,7 +680,9 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       publishedDate: "2026-05-11",
       author: "Benjamin Ziza",
       category: "levee-de-fonds",
-      htmlContent: `<p>Le term sheet est le document le plus important de votre levée de fonds. C'est la lettre d'intention des investisseurs qui définit les conditions de leur entrée au capital. Une clause mal négociée peut vous coûter des millions d'euros ou le contrôle de votre entreprise.</p>
+      htmlContent: `<p>Pour préparer les données et les scénarios financiers de votre opération, consultez notre <a href="/services/accompagnement-levee-de-fond">accompagnement levée de fonds</a>. Les clauses et les décisions juridiques sont à examiner avec vos conseils.</p>
+<p>Le term sheet est le document le plus important de votre levée de fonds. C'est la lettre d'intention des investisseurs qui définit les conditions de leur entrée au capital. Une clause mal négociée peut vous coûter des millions d'euros ou le contrôle de votre entreprise.</p>
+<p>Pour suivre les scénarios de capitalisation, préparez les tests proposés dans les fiches <a href="/ressources/outils/carta">Carta</a> et <a href="/ressources/outils/equify">Equify</a>, puis faites valider les instruments et les règles par vos conseils.</p>
 <h2 id="valorisation">Clause 1 — Valorisation (Pre-money / Post-money)</h2>
 <p>La valorisation pre-money est la valeur de votre entreprise avant l'injection de capital. Post-money = pre-money + montant levé.</p>
 <p><strong>Notre position</strong> : négociez toujours en pre-money. Les investisseurs préfèrent post-money car cela gonfle artificiellement la valorisation. Exemple : 10M€ pre-money + 2M€ levé = 12M€ post-money. Si vous dites « 12M€ de valorisation », l'investisseur comprend post-money — et votre dilution est plus forte.</p>
@@ -1144,75 +801,16 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       meta: {
         // CONTENUS-T8 (2026-08-31) — la requête est « cash burn » (480/mois,
         // P31), une demande de définition : le title n'offrait que le calcul.
-        title: "Cash burn : définition, calcul et seuils | Iter Advisors",
-        description: "Cash burn : définition, formule de calcul, différence brut/net et seuils critiques de runway. La méthode que nos DAF appliquent en mission.",
+        title: "Cash burn et runway : calcul et limites | Iter Advisors",
+        description: "Cash burn et runway : définir les flux, vérifier le calcul et tester les hypothèses. Exemple fictif et limites du ratio pour préparer vos décisions.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
-      h1: "Cash burn : c'est quoi, comment le calculer, et quand s'inquiéter",
+      h1: "Cash burn et runway : calculer la consommation de trésorerie",
+      updatedDate: "2026-10-02",
       publishedDate: "2026-05-11",
       author: "Benjamin Ziza",
       category: "gestion-financiere",
-      htmlContent: `<p><strong>Le cash burn est la vitesse à laquelle une entreprise consomme sa trésorerie, mesurée en euros par mois. Le runway est le nombre de mois qu'elle peut tenir à ce rythme : trésorerie disponible divisée par le burn mensuel net.</strong></p>
-<p>Suivre ces deux chiffres chaque mois est l'une des premières missions qu'un <a href="/daf-externalise">directeur financier externalisé</a> met en place chez ses clients : c'est le tableau de bord minimal d'une startup financée.</p>
-<p>Le <a href="/ressources/glossaire/cash-burn-runway">cash burn et le runway</a> sont les deux métriques les plus importantes de votre startup. Elles déterminent quand vous devrez lever des fonds, recruter, ou réduire vos coûts. Pourtant, 40% des fondateurs ne connaissent pas précisément leur burn rate.</p>
-<h2 id="methode">Calculer son burn rate : la méthode</h2>
-<pre><code>Burn Rate Net = Dépenses mensuelles totales − Revenus mensuels</code></pre>
-<p>Attention aux pièges :</p>
-<ul>
-<li>Incluez TOUTES les dépenses : salaires (charges incluses), loyer, outils, marketing, services</li>
-<li>Les revenus = trésorerie encaissée, pas le CA comptable</li>
-<li>Calculez sur une moyenne de 3 mois pour lisser les variations</li>
-<li>Intégrez les dépenses à venir (recrutements planifiés, loyer qui augmente)</li>
-</ul>
-<h2 id="exemple">Exemple concret</h2>
-<table>
-<thead><tr><th>Poste</th><th>Mensuel</th></tr></thead>
-<tbody>
-<tr><td>Salaires bruts (15 pers. × 4 500 €)</td><td>67 500 €</td></tr>
-<tr><td>Charges sociales (45%)</td><td>30 375 €</td></tr>
-<tr><td>Loyer &amp; charges</td><td>4 500 €</td></tr>
-<tr><td>Outils &amp; logiciels</td><td>3 200 €</td></tr>
-<tr><td>Marketing &amp; acquisition</td><td>12 000 €</td></tr>
-<tr><td>Services externes</td><td>5 800 €</td></tr>
-<tr><td>Frais généraux</td><td>2 500 €</td></tr>
-<tr><td><strong>Dépenses totales</strong></td><td><strong>125 875 €</strong></td></tr>
-<tr><td>Revenus (MRR)</td><td>45 000 €</td></tr>
-<tr><td><strong>Burn rate net</strong></td><td><strong>80 875 €</strong></td></tr>
-</tbody>
-</table>
-<h2 id="runway">Calculer son runway</h2>
-<pre><code>Runway (mois) = Trésorerie disponible / Burn rate net</code></pre>
-<p>Avec 650 000 € de trésorerie et un burn de 80 875 € : runway = 8 mois.</p>
-<h2 id="seuils">Les seuils critiques</h2>
-<table>
-<thead><tr><th>Runway</th><th>Zone</th><th>Action</th></tr></thead>
-<tbody>
-<tr><td>&gt; 18 mois</td><td>🟢 Verte</td><td>Focus croissance</td></tr>
-<tr><td>12-18 mois</td><td>🟡 Jaune</td><td>Préparer la prochaine étape</td></tr>
-<tr><td>9-12 mois</td><td>🟠 Orange</td><td>Lancer la levée activement</td></tr>
-<tr><td>6-9 mois</td><td>🔴 Rouge</td><td>Levée urgente + réduction coûts</td></tr>
-<tr><td>&lt; 6 mois</td><td>⚫ Noire</td><td>Plan de survie</td></tr>
-</tbody>
-</table>
-<h2 id="regle-or">La règle d'or du venture capital</h2>
-<p>Levez quand vous avez 12-18 mois de runway. Jamais avec moins de 9 mois. Pourquoi ? Parce qu'avec moins de 9 mois, vous perdez tout leverage de négociation. L'investisseur sait que vous êtes dans l'urgence — et il en profite pour décoter votre valorisation de 20 à 40%.</p>
-<h2 id="forecast">Anticiper avec un forecast</h2>
-<ol>
-<li>Plan de hiring : chaque recrutement ajoute 6 000-10 000 €/mois de burn</li>
-<li>Investissements : bureaux, équipements, R&amp;D</li>
-<li>Scénarios de croissance / de réduction</li>
-</ol>
-<p>Utilisez un modèle avec 3 scénarios (pessimiste / base / optimiste) et mettez-le à jour mensuellement.</p>
-<h2 id="reduire-burn">Comment réduire son burn rate</h2>
-<ol>
-<li>Freeze des recrutements : économie immédiate de 6-10K€/mois par poste</li>
-<li>Réduction du marketing : coupez les canaux à CAC élevé</li>
-<li>Renégociation des contrats : outils SaaS, loyer, services</li>
-<li>Augmentation des revenus : hausse de prix, upsell clients existants</li>
-<li>Bridge round : tour d'amorçage auprès des investisseurs existants</li>
-</ol>
-<p>Un <a href="/daf-externalise">DAF externalisé anticipe le cash burn</a> et construit votre forecast à 12 mois.</p>
-<p><a href="/contact">Construire mon forecast avec un DAF</a></p><p>Un <a href="/fractional-cfo-startups">DAF externalisé pour startup et SaaS</a> aide à relier ces scénarios au budget et au calendrier des financements. Pour une activité de R&amp;D longue, le <a href="/daf-externalise/deep-tech">pilotage financier deep tech</a> distingue aussi les jalons techniques et les aides confirmées des financements encore sollicités.</p><p>Le runway donne un horizon global. Pour identifier la semaine d’une tension et tester un retard d’encaissement, passez au <a href="/services/previsionnel-tresorerie">prévisionnel de trésorerie à 13 semaines</a>.</p>`,
+      htmlContent: CASH_BURN_GUIDE_HTML,
       content: [],
     },
     "tableau-de-bord-financier-startup-12-kpis": {
@@ -1427,34 +1025,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       content: [],
     },
     // Pilier 5 — RH & Paie (2 articles)
-    "drh-externalise-quand-et-pourquoi": {
-      meta: {
-        title: "DRH externalisé : quand externaliser les RH | Iter Advisors",
-        description: "Quand faire appel à un DRH externalisé ? Signaux de besoin, alternatives, responsabilités et questions pour cadrer une mission adaptée à votre équipe.",
-      },
-      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
-      h1: "DRH externalisé : quand et pourquoi ?",
-      updatedDate: "2026-10-01",
-      publishedDate: "2026-05-11",
-      author: "Benjamin Ziza",
-      category: "rh-paie",
-      htmlContent: `<p>Le besoin d’une direction RH dépend de votre organisation, des sujets à traiter et des ressources disponibles. Un effectif, à lui seul, ne suffit pas à décider de recruter ou d’externaliser.</p>
-<h2 id="quand">Quand envisager une direction RH ?</h2>
-<p>Le dirigeant passe une part importante de son temps à arbitrer les recrutements, les questions des managers et les échanges avec les prestataires. Les responsabilités sont floues, les décisions se répètent ou les intégrations sont improvisées : ce sont des situations à examiner.</p>
-<p>Une croissance de l’équipe, un changement d’organisation ou une activité dans plusieurs pays peut aussi demander de revoir les pratiques. Les obligations applicables doivent être vérifiées avec les professionnels compétents, indépendamment du choix d’un DRH interne ou externe.</p>
-<h2 id="alternatives">DRH interne, temps partagé ou prestation spécialisée ?</h2>
-<p>Une présence quotidienne durable peut justifier un poste interne. Un besoin régulier de pilotage, avec des relais dans l’équipe, peut se prêter au <a href="/drh-externalise/temps-partage">DRH à temps partagé</a>. Pour une tâche isolée, une prestation de recrutement, de paie ou de conseil juridique peut suffire.</p>
-<p>Comparez les options à périmètre équivalent : présence, disponibilité, responsabilité, livrables et compétences. Un prix mensuel inférieur à un salaire ne démontre pas une économie si la couverture du besoin est différente.</p>
-<h2 id="perimetre">Distinguer les rôles</h2>
-<ul><li><a href="/services/recrutement-talent-acquisition">Recrutement et intégration</a> : cadrer les postes, organiser la sélection et préparer les arrivées.</li><li><a href="/services/gestion-paie-charges-sociales">Paie et coordination</a> : distinguer collecte, production, contrôle et validation.</li><li><a href="/services/conformite-droit-travail">Conformité et relations sociales</a> : identifier les sujets nécessitant un professionnel spécialisé.</li><li><a href="/services/formation-developpement">Développement des compétences</a> : relier les actions aux besoins des équipes.</li></ul>
-<h2 id="cadrage">Les questions à poser avant de choisir</h2>
-<ul><li>Quelles décisions et quels livrables attendons-nous ?</li><li>Qui intervient, avec quel rôle et quelles compétences ?</li><li>Quel rythme est prévu et comment se traitent les demandes entre deux interventions ?</li><li>Qui produit la paie et qui traite les questions juridiques ?</li><li>Quel budget complet, quelle durée, quel préavis et quelle passation ?</li></ul>
-<p>Les réponses doivent figurer dans la proposition. Le cadrage peut conduire à réduire ou à réorienter le besoin plutôt qu’à externaliser toute la fonction.</p>
-<h2 id="interlocuteur">Identifier l’interlocuteur et les preuves</h2>
-<p>Consultez le <a href="/a-propos/borith-biv">profil de Borith Biv, Partner Capital Humain</a>, et demandez des exemples de travaux correspondant à votre situation. Un témoignage financier du cabinet ne démontre pas, à lui seul, une mission RH.</p>
-<p><a href="/drh-externalise">Découvrir notre direction RH externalisée</a> ou <a href="/contact#drh">présenter votre besoin RH</a>.</p>`,
-      content: [],
-    },
+
     "payfit-vs-silae-comparatif-pme": {
       meta: {
         title: "PayFit vs Silae vs malibou : comparatif paie PME 2026",
@@ -1920,12 +1491,14 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogHref: "/ressources/blog",
       },
       h1: "DAF externalisé ou DAF intérimaire : que choisir ?",
+      author: "Benjamin Ziza",
+      updatedDate: "2026-10-02",
       publishedDate: "2026-07-24",
       category: "Comparaison",
       htmlContent: undefined,
       content: [],
       // Full body is served by the dedicated route; the catalog is metadata only.
-      readingMinutes: 7,
+      readingMinutes: 6,
     },
 
     "daf-externalise-startup": {
@@ -1988,43 +1561,19 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       readingMinutes: 5,
     },
 
-    "daf-part-time-tarifs-missions-2026": {
-      meta: {
-        title: "DAF à temps partagé : rythme et livrables | Iter Advisors",
-        description: "Calendrier de clôture, trésorerie, réunions et responsabilités : organiser une mission récurrente avec un DAF à temps partagé.",
-      },
-      breadcrumbs: {
-        resourcesLabel: "Ressources",
-        resourcesHref: "/ressources",
-        blogLabel: "Blog",
-        blogHref: "/ressources/blog",
-      },
-      h1: "Travailler avec un DAF à temps partagé : rythme et livrables",
-      publishedDate: "2026-07-24",
-      category: "DAF à temps partagé",
-      htmlContent: undefined,
-      content: [],
-      // Full body is served by the dedicated route; the catalog is metadata only.
-      readingMinutes: 5,
-    },
+
 
     "cfo-externe-role-missions-2026": {
-      meta: {
-        title: "CFO externe : rôle, missions et tarifs 2026",
-        description: "Le CFO externe prend en charge votre direction financière sans CDI. Missions, profils concernés, coûts : le guide complet.",
-      },
-      breadcrumbs: {
-        resourcesLabel: "Ressources",
-        resourcesHref: "/ressources",
-        blogLabel: "Blog",
-        blogHref: "/ressources/blog",
-      },
-      h1: "Qu'est-ce qu'un CFO externe (et pourquoi de plus en plus d'entreprises y recourent)",
-      publishedDate: "2026-07-24",
-      category: "CFO externalisé",
+      meta: { title: CFO_EXTERNE_GUIDE.title, description: CFO_EXTERNE_GUIDE.description },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: CFO_EXTERNE_GUIDE.h1,
+      publishedDate: CFO_EXTERNE_GUIDE.publishedDate,
+      updatedDate: CFO_EXTERNE_GUIDE.modifiedDate,
+      author: "Benjamin Ziza",
+      category: "Métier finance",
       htmlContent: undefined,
       content: [],
-      // Full body is served by the dedicated route; the catalog is metadata only.
+      // The dedicated route owns the body.
       readingMinutes: 6,
     },
 
@@ -2068,26 +1617,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       readingMinutes: 12,
     },
 
-    "cout-externalisation-comptable-2026": {
-      meta: {
-        title: "Coût de l'externalisation comptable 2026 | Iter Advisors",
-        description: "Comparer les devis comptables : périmètre, pièces, paie, clôture, logiciels et coût total sur douze mois.",
-      },
-      breadcrumbs: {
-        resourcesLabel: "Ressources",
-        resourcesHref: "/ressources",
-        blogLabel: "Blog",
-        blogHref: "/ressources/blog",
-      },
-      h1: "Coût de l’externalisation comptable : comparer les devis en 2026",
-      publishedDate: "2026-05-01",
-      author: "Benjamin Ziza",
-      category: "Tarifs",
-      updatedDate: "2026-09-05",
-      content: [],
-      // Full body is served by the dedicated route; the catalog is metadata only.
-      readingMinutes: 5,
-    },
+
     // CONTENU-C4 (2026-08-31) — croise le cluster fiscalité France-Espagne
     // avec l'offre : le territoire naturel d'un cabinet basé à Barcelone, et
     // une question qu'aucun concurrent ne traite. Aucune donnée client
@@ -2157,7 +1687,8 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       publishedDate: "2026-08-31",
       author: "Sébastien Doat",
       category: "DAF externalisé",
-      htmlContent: `<p><strong>Choisir un cabinet de DAF externalisé se joue sur cinq critères : la séniorité réelle du profil affecté, le modèle économique, les conditions de sortie, la continuité de service et l'adéquation sectorielle.</strong> Cette grille s'applique à n'importe quel cabinet — y compris le nôtre. Voici comment l'utiliser, les questions à poser, et les signaux qui doivent vous alerter.</p>
+      htmlContent: `<p>Cette grille aide à comparer les propositions. Pour connaître les missions, le budget et les modalités d’intervention d’Iter, consultez notre offre de <a href="/daf-externalise">DAF externalisé</a>.</p>
+<p><strong>Choisir un cabinet de DAF externalisé se joue sur cinq critères : la séniorité réelle du profil affecté, le modèle économique, les conditions de sortie, la continuité de service et l'adéquation sectorielle.</strong> Cette grille s'applique à n'importe quel cabinet — y compris le nôtre. Voici comment l'utiliser, les questions à poser, et les signaux qui doivent vous alerter.</p>
 <h2>Critère 1 — La séniorité réelle du profil affecté</h2>
 <p>La plaquette montre les associés ; la mission est parfois tenue par un junior. La seule question qui compte : <em>qui</em>, nommément, interviendra chez vous, avec quel parcours ? Demandez à rencontrer la personne avant de signer, et vérifiez que son expérience couvre votre situation — une levée si vous levez, du multi-entités si vous en avez.</p>
 <h2>Critère 2 — Le modèle économique</h2>

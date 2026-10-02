@@ -6,7 +6,7 @@ describe("consent-gated Google loader", () => {
   beforeEach(() => { localStorage.clear(); window.dataLayer = []; delete window.iterConsent; delete window.iterLoadGTM; });
   it("makes no script request initially and loads GTM only once after consent", () => {
     const scripts: Record<string, unknown>[] = [];
-    const w: Record<string, any> = {};
+    const w = {} as { iterLoadGTM: () => void; iterConsent: { analytics: boolean }; dataLayer: unknown[][] };
     const d = {createElement: () => ({}), head: {appendChild: (s: Record<string, unknown>) => scripts.push(s)}};
     runInNewContext(TRACKING_BOOTSTRAP, {window:w,document:d});
     expect(scripts).toHaveLength(0);

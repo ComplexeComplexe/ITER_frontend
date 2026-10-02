@@ -44,8 +44,8 @@ export default async function Page() {
               Senior Finance Manager — rejoindre Iter Advisors
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
-              Rejoignez Iter Advisors en tant que <strong>Senior Finance Manager</strong> pour piloter l'exécution des missions
-              clients, coordonner les équipes d'analystes et accompagner nos
+              Rejoignez Iter Advisors en tant que <strong>Senior Finance Manager</strong> pour piloter l&apos;exécution des missions
+              clients, coordonner les équipes d&apos;analystes et accompagner nos
               fractional CFOs dans la gestion de notre portefeuille de startups
               tech.
             </p>
@@ -89,14 +89,14 @@ export default async function Page() {
                 clients (reporting, trésorerie, clôtures)
               </li>
               <li>
-                • Animer les équipes d'analystes financiers sur chaque mission
+                • Animer les équipes d&apos;analystes financiers sur chaque mission
               </li>
               <li>
                 • Assurer la qualité et la conformité des livrables (normes
                 comptables, best practices)
               </li>
               <li>
-                • Être l'interlocuteur privilegié du client pour les questions
+                • Être l&apos;interlocuteur privilegié du client pour les questions
                 opérationnelles
               </li>
               <li>
@@ -121,7 +121,7 @@ export default async function Page() {
                 </h3>
                 <ul className="site-copy space-y-1 text-sm sm:text-base text-muted-foreground">
                   <li>
-                    • 5-8 ans d'expérience en cabinet d'expertise comptable ou
+                    • 5-8 ans d&apos;expérience en cabinet d&apos;expertise comptable ou
                     en direction financière interne
                   </li>
                   <li>
@@ -147,11 +147,11 @@ export default async function Page() {
                     analystes
                   </li>
                   <li>
-                    • Rigueur et attention aux détails (les chiffres, c'est
+                    • Rigueur et attention aux détails (les chiffres, c&apos;est
                     important !)
                   </li>
                   <li>
-                    • Relationnel client : à l'aise avec la communication et la
+                    • Relationnel client : à l&apos;aise avec la communication et la
                     négociation
                   </li>
                   <li>
@@ -212,7 +212,7 @@ export default async function Page() {
           {/* CTA Final */}
           <div className="bg-iter-chartreuse/10 border-l-4 border-iter-chartreuse rounded-r-lg p-6 sm:p-8">
             <p className="text-base sm:text-lg font-semibold text-foreground mb-4">
-              Prêt à pilotage des missions et d'une équipe ?
+              Prêt à pilotage des missions et d&apos;une équipe ?
             </p>
             <a
               href="mailto:contact@iteradvisors.com"

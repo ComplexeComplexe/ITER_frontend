@@ -7,6 +7,6 @@ export function financeServiceMetadata(service: FinanceService) {
     path: service.path,
     title: service.title,
     description: service.description,
-    disableHreflang: service.path === "/services/gestion-financiere-externalisee" ? ["en", "es"] : undefined,
+    disableHreflang: ["/services/gestion-financiere-externalisee", "/fractional-cfo-startups"].includes(service.path) ? ["en", "es"] : undefined,
   });
 }

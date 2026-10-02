@@ -6,12 +6,13 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { InlineCta, ProseTable } from '@/components/blog';
 
 import { getDafOffer } from '@/lib/content/daf-offer';
+import { SALARIED_DAF_GUIDE } from '@/lib/content/decision-guide-meta';
 import { COUT_DAF_SALARIE } from '@/lib/content/facts';
 const offer = getDafOffer('fr');
 
 export const metadata: Metadata = {
-  title: "DAF externalisé ou salarié : comparatif 2026",
-  description: "DAF externalisé vs DAF salarié : comparaison chiffrée des coûts, des risques et des avantages. Quel modèle choisir selon votre stade de croissance ? Guide 2026.",
+  title: SALARIED_DAF_GUIDE.title,
+  description: SALARIED_DAF_GUIDE.description,
   alternates: {
     canonical: "https://www.iteradvisors.com/ressources/blog/daf-externalise-vs-daf-salarie",
     // SEO-AUD-0824 §2 — cet article a bien une version EN et une version ES,
@@ -26,8 +27,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "DAF externalisé vs DAF salarié | Iter Advisors",
-    description: "Comparaison détaillée : DAF externalisé vs DAF salarié. Coûts, avantages, inconvénients et matrice de décision.",
+    title: SALARIED_DAF_GUIDE.title,
+    description: SALARIED_DAF_GUIDE.description,
     type: "article",
     images: [{ url: "/images/blog/daf-externalise-vs-daf-salarie.webp", width: 1200, height: 630 }],
   },
@@ -45,15 +46,15 @@ export default function DafExternaliseVsSalariePage() {
       }}
       slug="daf-externalise-vs-daf-salarie"
       category="DAF externalisé"
-      title="DAF externalisé vs DAF salarié : quelle option choisir ?"
+      title={SALARIED_DAF_GUIDE.h1}
       dek="Comparez les deux modèles : coûts, avantages, inconvénients. Analyse détaillée pour PME et scale-ups. Matrice de décision et recommandations."
       author={{
-        name: "Benjamin Ziza",
+        name: SALARIED_DAF_GUIDE.author,
         avatar: "/images/team/benjamin-ziza.webp",
         jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
       }}
       readingTime={6}
-      datePublished="2026-05-01"
+      datePublished={SALARIED_DAF_GUIDE.publishedDate}
       dateModified="2026-09-30"
       heroImage="/images/blog/covers/daf-externalise-vs-daf-salarie.svg"
       toc={[
@@ -74,7 +75,7 @@ export default function DafExternaliseVsSalariePage() {
         {
           url: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
           category: "Tarifs",
-          title: "Combien coûte un DAF externalisé en 2026 ? Tarifs et ROI",
+          title: "Comparer les budgets d’une mission DAF",
         },
         {
           url: "/ressources/blog/daf-drh-externalises-synergie",

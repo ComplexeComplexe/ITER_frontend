@@ -187,7 +187,7 @@ export const comptabiliteExternalisationContent = {
           },
         ],
       },
-      {"id":"tarifs","title":"Comment chiffrer l’externalisation comptable ?","paragraphs":["Demandez des devis sur un périmètre identique : volume de pièces, entités, obligations, paie, clôtures et reporting. Distinguez démarrage, récurrence, options et travail interne. Les anciennes fourchettes ne constituaient pas une moyenne de marché vérifiable. Consultez le [[guide du coût de l’externalisation comptable|/ressources/blog/cout-externalisation-comptable-2026]] pour construire votre comparaison."],"tables":[{"caption":"Postes du devis","headers":["Poste","À vérifier"],"rows":[["Démarrage","Migration, reprise des données et formation"],["Récurrent","Pièces, entités, obligations et clôtures"],["Options","Paie, reporting et travaux exceptionnels"]]}]},
+      {"id":"tarifs","title":"Comment chiffrer l’externalisation comptable ?","paragraphs":["Demandez des devis sur un périmètre identique : volume de pièces, entités, obligations, paie, clôtures et reporting. Distinguez démarrage, récurrence, options et travail interne. Les anciennes fourchettes ne constituaient pas une moyenne de marché vérifiable. Consultez le [[guide du coût de l’externalisation comptable|/ressources/blog/externalisation-comptable]] pour construire votre comparaison."],"tables":[{"caption":"Postes du devis","headers":["Poste","À vérifier"],"rows":[["Démarrage","Migration, reprise des données et formation"],["Récurrent","Pièces, entités, obligations et clôtures"],["Options","Paie, reporting et travaux exceptionnels"]]}]},
       {
         id: "approche-iter",
         title: "Comment Iter Advisors accompagne votre comptabilité externalisée",

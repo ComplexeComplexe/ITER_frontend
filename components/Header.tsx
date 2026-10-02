@@ -35,7 +35,9 @@ export default function Header({
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
-  const [langOpen, setLangOpen] = useState(false);
+  const [langOpenPath, setLangOpenPath] = useState<string | null>(null);
+  const langOpen = langOpenPath === pathname;
+  const setLangOpen = (open: boolean) => setLangOpenPath(open ? pathname : null);
   const langSwitcherRef = useRef<HTMLDivElement | null>(null);
   // Close timer so the dropdown survives a brief mouse exit (44ms WCAG target
   // is wider than the link, so a quick slide off-link should not close it).
@@ -93,9 +95,6 @@ export default function Header({
   }, [mobileOpen]);
 
   // Close language switcher on route change, outside click, or Escape.
-  useEffect(() => {
-    setLangOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     if (!langOpen) return;
@@ -258,7 +257,7 @@ export default function Header({
             <div className="relative" ref={langSwitcherRef}>
               <button
                 type="button"
-                onClick={() => setLangOpen((v) => !v)}
+                onClick={() => setLangOpen(!langOpen)}
                 aria-haspopup="menu"
                 aria-expanded={langOpen}
                 className="flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-white/50 uppercase tracking-wider hover:text-white transition-colors"
