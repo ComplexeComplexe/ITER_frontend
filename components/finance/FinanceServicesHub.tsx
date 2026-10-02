@@ -9,7 +9,7 @@ import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 import styles from "./finance.module.css";
 
 const groups = [
-  { id: "direction", title: "Une direction financière adaptée à votre rythme", intro: "Un interlocuteur pour le pilotage récurrent, ou un relais pour une période définie.", keys: ["temps-partage", "transition"] },
+  { id: "direction", title: "Une direction financière adaptée à votre rythme", intro: "Un interlocuteur pour le pilotage récurrent, ou un relais pour une période définie.", keys: ["temps-partage", "transition", "fractional"] },
   { id: "pilotage", title: "Des chiffres pour préparer vos décisions", intro: "Commencer par un besoin précis : comprendre vos marges ou anticiper les échéances de cash.", keys: ["controle", "tresorerie"] },
   { id: "organisation", title: "Une organisation qui tient dans la durée", intro: "Clarifier les responsabilités et la circulation des données, avec votre équipe et vos conseils.", keys: ["comptabilite", "organisation"] },
   { id: "operations", title: "La préparation financière de vos opérations", intro: "Des missions définies selon le projet, les informations disponibles et les autres intervenants.", keys: ["levee", "due-diligence"] },

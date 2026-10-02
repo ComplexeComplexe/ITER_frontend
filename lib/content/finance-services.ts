@@ -1,3 +1,5 @@
+import { PRIORITY_FINANCE_SERVICES } from "./priority-finance-services";
+import type { EditorialAuthor } from "../schemas/editorial";
 import { FORMULES, MISSIONS_PONCTUELLES, VOLUME_DAF_JOURS_MOIS, ENGAGEMENT } from "./facts";
 
 const euros = (amount: number) => new Intl.NumberFormat("fr-FR").format(amount);
@@ -12,14 +14,15 @@ export interface FinanceService {
   summary: [string, string][]; signals: string[]; definition: string;
   deliverables: [string, string, string][]; exampleTitle: string; example: string;
   steps: [string, string][]; scopeTitle: string; scope: string[]; budget: string;
-  case?: string; faq: [string, string][]; resources: [string, string][]; related: string[];
+  case?: string; proofNote?: string; author?: EditorialAuthor; areaServed?: string; faq: [string, string][]; resources: [string, string][]; related: string[];
   headings?: { need: string; deliverables: string; method: string };
-  calendar?: { caption: string; headers: [string, string, string]; rows: [string, string, string][]; note: string };
+  calendar?: { heading?: string; caption: string; headers: [string, string, string]; rows: [string, string, string][]; note: string };
   budgetResource?: { href: string; label: string };
 }
 
 export const FINANCE_REVIEW_DATE = "2026-09-30";
 export const FINANCE_SERVICES: Record<string, FinanceService> = {
+  ...PRIORITY_FINANCE_SERVICES,
   "temps-partage": {
     "path": "/daf-externalise/temps-partage",
     "label": "DAF à temps partagé",
@@ -147,8 +150,8 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
   "transition": {
     "path": "/daf-externalise/transition",
     "label": "DAF de transition",
-    "title": "DAF de transition pour PME et ETI | Iter Advisors",
-    "description": "Remplacement, clôture ou transformation : un DAF de transition pour organiser la continuité. Priorités, livrables, passation et budget de la mission.",
+    "title": "DAF de transition : management financier | Iter Advisors",
+    "description": "Management de transition finance : remplacement du DAF, mandat temporaire et passation pour PME et ETI. Priorités, responsabilités, disponibilité et budget.",
     "headline": "DAF de transition",
     "promise": "Assurer la continuité. Préparer la suite.",
     "intro": "Un départ, une absence ou une transformation laisse des échéances financières à tenir. Le DAF de transition prend un mandat temporaire avec des priorités, des responsabilités et une sortie de mission définies.",
@@ -173,7 +176,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "Une clôture, un financement ou un changement d’outil nécessite un pilotage renforcé.",
       "Vous recrutez une direction financière et devez organiser le relais."
     ],
-    "definition": "Le DAF de transition intervient sur une période et un mandat définis. Sa mission associe la prise en charge des priorités immédiates et la préparation d’une organisation durable. Le temps partagé répond, lui, à un besoin régulier de direction financière.",
+    "definition": "Le management de transition finance consiste à confier temporairement le pilotage à un directeur administratif et financier de transition. Le DAF intervient sur une période et un mandat définis. Sa mission associe la prise en charge des priorités immédiates et la préparation d’une organisation durable. Le temps partagé répond, lui, à un besoin régulier de direction financière.",
     "deliverables": [
       [
         "État des lieux priorisé",
@@ -191,6 +194,18 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
         "Permettre au successeur de reprendre le pilotage."
       ]
     ],
+    headings: { need: "Quand envisager un management de transition finance ?", deliverables: "Les livrables du mandat de transition", method: "Du remplacement du DAF à la passation" },
+    calendar: {
+      heading: "Préparer la sortie dès le début du mandat",
+      caption: "Jalons à définir pour une mission temporaire",
+      headers: ["Jalon", "Travail à formaliser", "Validation attendue"],
+      rows: [
+        ["Avant la prise de fonction", "Priorités, accès, calendrier et délégations écrites", "Mandat et responsabilités approuvés par la direction"],
+        ["Pendant la mission", "Échéances tenues, risques ouverts et décisions documentées", "Revue de l’avancement et ajustement du périmètre"],
+        ["Avant le départ", "Dossier de passation, procédures et personnes de relais", "Reprise des outils et sujets ouverts par le successeur"],
+      ],
+      note: "La durée dépend du remplacement ou du chantier. Le devis fixe les jalons et les conditions d’une éventuelle prolongation ; aucun calendrier standard ne remplace l’examen de votre situation.",
+    },
     "exampleTitle": "Les premiers sujets à mettre sur la table",
     "example": "Solde de trésorerie, paie, paiements sensibles, clôture, engagements bancaires et décisions en attente : la première revue situe les échéances et les responsabilités. Elle ne remplace pas un diagnostic complet lorsque des données manquent.",
     "steps": [
@@ -214,6 +229,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     ],
     "budget": `La fourchette Iter est de ${transitionRange} € HT par mois selon le mandat, la disponibilité et la complexité. Un démarrage sous 7 à 10 jours peut être envisagé après qualification, sous réserve de disponibilité et d’accès aux informations.`,
     "faq": [
+      ["Combien de temps dure une mission de transition ?", "La durée est définie à partir du motif du remplacement, des échéances et de la disponibilité du successeur. Le mandat prévoit les objectifs de sortie, les modalités de prolongation et le temps nécessaire à la passation."],
       [
         "Quand choisir la transition plutôt que le temps partagé ?",
         "La transition répond à une situation temporaire : remplacement, continuité ou transformation. Le temps partagé correspond à un besoin récurrent avec des interventions planifiées dans la durée."

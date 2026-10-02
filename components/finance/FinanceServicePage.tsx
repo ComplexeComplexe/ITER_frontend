@@ -10,6 +10,8 @@ import styles from "./finance.module.css";
 
 // Retain links to sections already shared or indexed before the redesign.
 const anchors: Record<string, Record<string, string[]>> = {
+  "/fractional-cfo-startups": { besoin: ["commercial-intro", "definition", "pour-qui"], livrables: ["avantages"], deroulement: ["methodologie"], preuves: ["temoignages"], faq: ["faq-commercial"], contact: ["cta-service", "jobs-section"] },
+  "/daf-externalise-paris": { besoin: ["definition", "signaux", "comparatif"], livrables: ["missions"], deroulement: ["parcours"], perimetre: ["marche-parisien"], preuves: ["avantage-iter"], contact: ["conclusion"] },
   "/daf-externalise/temps-partage": { besoin: ["definition"], deroulement: ["premier-mois"], perimetre: ["responsabilites"], tarifs: ["budget"], preuves: ["bilan"] },
   "/daf-externalise/transition": { besoin: ["situations"], livrables: ["premiers-jours"], deroulement: ["feuille-de-route"], perimetre: [], preuves: ["experience"], tarifs: ["budget"], contact: ["preparer-echange"] },
   "/services/controle-de-gestion-externalise": { besoin: ["definition"], livrables: ["kpis"], exemple: ["exemple-tableau-de-bord"], deroulement: ["revue-mensuelle", "methodologie"], perimetre: ["vs-comptable"], preuves: ["temoignages"], contact: ["cta-final"] },
@@ -26,12 +28,13 @@ function Aliases({ service, section }: { service: FinanceService; section: strin
 export default function FinanceServicePage({ service }: { service: FinanceService }) {
   const proof = service.case ? getDocumentedCase(service.case) : undefined;
   const contact = `/contact#${service.context}`;
+  const author = service.author ?? FINANCE_AUTHOR;
   const modified = PAGE_REVISIONS[service.path] ?? FINANCE_REVIEW_DATE;
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
-      editorialWebPageSchema({ path: service.path, name: service.headline, description: service.description, locale: "fr", author: FINANCE_AUTHOR, dateModified: modified }),
-      { "@type": "Service", "@id": `https://www.iteradvisors.com${service.path}#service`, name: service.headline, description: service.intro, url: `https://www.iteradvisors.com${service.path}`, provider: { "@id": "https://www.iteradvisors.com/#organization" } },
+      editorialWebPageSchema({ path: service.path, name: service.headline, description: service.description, locale: "fr", author, dateModified: modified }),
+      { "@type": "Service", "@id": `https://www.iteradvisors.com${service.path}#service`, name: service.headline, description: service.intro, url: `https://www.iteradvisors.com${service.path}`, provider: { "@id": "https://www.iteradvisors.com/#organization" }, ...(service.areaServed ? { areaServed: { "@type": "Place", name: service.areaServed } } : {}) },
       { "@type": "FAQPage", mainEntity: service.faq.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
     ],
   };
@@ -65,7 +68,7 @@ export default function FinanceServicePage({ service }: { service: FinanceServic
             </aside>
           </section>
           {service.calendar && <section id="rythme" className={`${styles.section} ${styles.stacked}`}>
-            <div className={styles.sectionHeading}><h2>Un calendrier pour préparer les décisions</h2></div>
+            <div className={styles.sectionHeading}><h2>{service.calendar.heading ?? "Un calendrier pour préparer les décisions"}</h2></div>
             <div className={styles.tableScroll} tabIndex={0} role="region" aria-label={service.calendar.caption}>
               <table className={styles.calendar}><caption>{service.calendar.caption}</caption><thead><tr>{service.calendar.headers.map(header => <th key={header} scope="col">{header}</th>)}</tr></thead><tbody>{service.calendar.rows.map(([when, work, decision]) => <tr key={when}><th scope="row">{when}</th><td>{work}</td><td>{decision}</td></tr>)}</tbody></table>
             </div>
@@ -89,9 +92,10 @@ export default function FinanceServicePage({ service }: { service: FinanceServic
           <section id="preuves" className={styles.section}>
             <Aliases service={service} section="preuves" />
             <div className={styles.sectionHeading}><p className={styles.eyebrow}>{proof ? "Une mission documentée" : "Avant de vous engager"}</p><h2>{proof ? proof.company : "Parler avec les personnes qui interviennent."}</h2></div>
-            <div className={styles.sectionBody}>{proof ? <><h3>{proof.proof}</h3><p>{proof.summary}</p><Link href={proof.href} className={styles.textLink}>Lire le cas et son périmètre <span aria-hidden="true">↗</span></Link></> : <><p>Le premier échange permet de préciser votre situation. Le cadrage identifie ensuite le profil, les compétences et les modalités de collaboration adaptés à la mission.</p><Link href="/a-propos#equipe" className={styles.textLink}>Découvrir l’équipe Iter <span aria-hidden="true">↗</span></Link></>}</div>
+            <div className={styles.sectionBody}>{proof ? <><h3>{proof.proof}</h3><p>{proof.summary}</p>{service.proofNote && <p>{service.proofNote}</p>}<Link href={proof.href} className={styles.textLink}>Lire le cas et son périmètre <span aria-hidden="true">↗</span></Link></> : <><p>Le premier échange permet de préciser votre situation. Le cadrage identifie ensuite le profil, les compétences et les modalités de collaboration adaptés à la mission.</p><Link href="/a-propos#equipe" className={styles.textLink}>Découvrir l’équipe Iter <span aria-hidden="true">↗</span></Link></>}</div>
           </section>
           <section id="faq" className={styles.section}>
+            <Aliases service={service} section="faq" />
             <div className={styles.sectionHeading}><p className={styles.eyebrow}>Vos questions</p><h2>{`FAQ : ${service.label.toLowerCase()}`}</h2></div>
             <div className={styles.faq}>{service.faq.map(([question, answer]) => <details key={question}><summary><h3>{question}</h3><span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
           </section>
@@ -104,7 +108,7 @@ export default function FinanceServicePage({ service }: { service: FinanceServic
             <Aliases service={service} section="contact" />
             <p className={styles.eyebrow}>Commençons par votre situation</p><h2>Quelle décision ou échéance<br />souhaitez-vous préparer ?</h2><p>Décrivez votre besoin, votre organisation actuelle et votre calendrier. Nous préciserons ensemble les travaux utiles.</p><Link href={contact} className={styles.primary}>Décrire mon besoin <span aria-hidden="true">↗</span></Link>
           </section>
-          <div className={styles.byline}><PageByline locale="fr" author={FINANCE_AUTHOR} dateModified={modified} /></div>
+          <div className={styles.byline}><PageByline locale="fr" author={author} dateModified={modified} /></div>
         </div>
       </div>
     </PageLayout>
