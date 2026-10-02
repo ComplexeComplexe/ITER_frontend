@@ -5,8 +5,8 @@ import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "Outsourced CFO case studies - Client results | Iter Advisors",
-  description: "Outsourced CFO case studies: SMEs, startups, scale-ups. Real results from Iter Advisors' fractional CFO services. Verified client testimonials, 5/5 rated.",
+  title: "Fractional CFO case studies - Client results | Iter Advisors",
+  description: "Fractional CFO case studies: SMEs, startups, scale-ups. Real results from Iter Advisors' fractional CFO services. Verified client testimonials, 5/5 rated.",
   path: "/ressources/testimonials",
 });
 

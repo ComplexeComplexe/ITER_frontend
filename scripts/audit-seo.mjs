@@ -271,7 +271,7 @@ for (const abs of urls) {
   }
 
   // Protect the definitions and localized CFO offers against old entry prices.
-  if (["/ressources/glossaire/daf", "/ressources/glossaire/fractional-cfo", "/en/outsourced-cfo-barcelona", "/en/outsourced-cfo-paris", "/es/cfo-externalizado-barcelona", "/es/cfo-externalizado-paris", "/es/recursos/blog/que-es-fractional-cfo"].includes(path)) {
+  if (["/ressources/glossaire/daf", "/ressources/glossaire/fractional-cfo", "/en/fractional-cfo-barcelona", "/en/fractional-cfo-paris", "/es/cfo-externalizado-barcelona", "/es/cfo-externalizado-paris", "/es/recursos/blog/que-es-fractional-cfo"].includes(path)) {
     const published = `${texte} ${metaDesc} ${jsonld}`.normalize("NFKC");
     const obsoletePrice = published.match(/\b2[ ,.]*000\s*(?:(?:€|EUR)\s*)?(?:\/|par |per |al )(?:mois|month|mes)/i);
     if (obsoletePrice) fail("offre/prix-obsolete", `${path} : ${obsoletePrice[0]}`);

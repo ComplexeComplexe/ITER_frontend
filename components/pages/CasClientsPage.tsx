@@ -283,7 +283,7 @@ function getContent(locale: Locale) {
         all: "All",
         sectors: ["SaaS / Tech", "Marketplace", "E-commerce", "Mobility", "PropTech", "FoodTech"],
         services: [
-          "Outsourced CFO",
+          "Fractional CFO",
           "Fundraising",
           "Treasury",
           "Management control",
@@ -298,7 +298,7 @@ function getContent(locale: Locale) {
           logo: "/images/logos/logo-happyscribe.webp",
           sector: "SaaS / Tech",
           sectorTag: "SaaS / Tech",
-          serviceTag: "Outsourced CFO",
+          serviceTag: "Fractional CFO",
           stage: "Series A",
           location: "Barcelona",
           challenge:
@@ -402,13 +402,13 @@ function getContent(locale: Locale) {
           logo: "/images/logos/logo-neat.webp",
           sector: "FoodTech",
           sectorTag: "FoodTech",
-          serviceTag: "Outsourced CFO",
+          serviceTag: "Fractional CFO",
           stage: "Seed",
           location: "Barcelona",
           challenge:
             "Neat, a Seed-stage FoodTech startup, needed a CFO to structure its accounting, financial processes and prepare its first investor reporting.",
           solution:
-            "Part-time outsourced CFO (2 days/week) to set up analytical accounting, monthly reporting and invoicing/collection processes.",
+            "Part-time Fractional CFO (2 days/week) to set up analytical accounting, monthly reporting and invoicing/collection processes.",
           results: [
             { metric: "Financial processes", value: "100% structured" },
             { metric: "Investor reporting", value: "Monthly" },

@@ -3,9 +3,9 @@ import LeadGenPage from "@/components/pages/LeadGenPage";
 import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = {
-  title: "Free Financial Diagnostic | Iter Advisors – Outsourced CFO",
+  title: "Free Financial Diagnostic | Iter Advisors – Fractional CFO",
   description:
-    "Assess your financial needs in 2 minutes. Discover how an outsourced CFO can structure your growth: forecasting, fundraising, reporting, cash-flow management.",
+    "Assess your financial needs in 2 minutes. Discover how a Fractional CFO can structure your growth: forecasting, fundraising, reporting, cash-flow management.",
   robots: { index: false, follow: false },
   openGraph: {
     title: "Free Financial Diagnostic | Iter Advisors",

@@ -4,7 +4,7 @@ import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = {
   title: "Company Qualification | Iter Advisors",
-  description: "Qualify your company's financial needs in 5 minutes. Receive a personalized assessment and expert recommendations for outsourced CFO services.",
+  description: "Qualify your company's financial needs in 5 minutes. Receive a personalized assessment and expert recommendations for Fractional CFO services.",
   robots: { index: false, follow: false },
   openGraph: {
     title: "Company Qualification | Iter Advisors",

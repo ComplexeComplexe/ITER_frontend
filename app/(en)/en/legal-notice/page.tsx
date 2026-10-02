@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/legal-notice",
     localizedPaths: { fr: "/mentions-legales", en: "/legal-notice", es: "/aviso-legal" },
     fallbackTitle: "Legal Notice - Terms & Conditions | Iter Advisors",
-    fallbackDescription: "Read the legal notice, terms and conditions, and publisher information for the Iter Advisors website. Outsourced CFO services in France and Spain.",
+    fallbackDescription: "Read the legal notice, terms and conditions, and publisher information for the Iter Advisors website. Fractional CFO services in France and Spain.",
   });
 }
 

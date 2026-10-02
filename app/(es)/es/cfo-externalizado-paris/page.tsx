@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
     locale: "es",
     path: "/cfo-externalizado-paris",
-    localizedPaths: { fr: "/daf-externalise-paris", en: "/outsourced-cfo-paris", es: "/cfo-externalizado-paris" },
+    localizedPaths: { fr: "/daf-externalise-paris", en: "/fractional-cfo-paris", es: "/cfo-externalizado-paris" },
     title: t.meta.title,
     description: t.meta.description,
   });

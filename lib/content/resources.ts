@@ -1,3 +1,4 @@
+import { editorialLinkLabel, localizeEditorialLink } from "../editorial-links";
 import { getDafOfferFacts } from "./offer-facts";
 import { Locale } from "../i18n";
 
@@ -245,7 +246,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
     breadcrumbLabel: "Resources",
     h1: "Resources",
     intro:
-      "Browse all the content created by our CFOs: articles, thematic sheets, testimonials, downloadable templates and more. Our goal: to give you the keys to manage your financial growth and make informed decisions at every stage of your company's development. Our library covers fractional CFO and finance management, fundraising, accounting, cash flow, M&A, HR outsourcing, and the tools modern finance teams rely on. Whether you are preparing a fundraise, restructuring your finance function, or benchmarking outsourced CFO pricing, our resources are grounded in real client experience across France, Spain, and Belgium. Every guide is written by a practising CFO, reviewed for accuracy, and updated as regulations evolve.",
+      "Guides, comparisons and definitions for founders and finance teams. Explore Fractional CFO services, cash flow, fundraising preparation and financial tools. Check each resource for its author and sources. Where no translation is available, French-language resources are explicitly identified.",
     searchPlaceholder: "Search a resource…",
     searchNoResult: "No resource matches your search.",
     navLabels: {
@@ -634,5 +635,20 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
 };
 
 export function getResourcesContent(locale: Locale) {
-  return resourcesContent[locale];
+  const t = resourcesContent[locale];
+  if (locale === "fr") return t;
+  const card = <T extends { title: string; href: string }>(item: T): T => {
+    const href = localizeEditorialLink(item.href, locale);
+    return { ...item, href, title: editorialLinkLabel(item.title, href, locale) };
+  };
+  const section = <T extends { seeAllHref: string; seeAllLabel: string; cards: ResourceCard[] }>(item: T): T => {
+    const seeAllHref = localizeEditorialLink(item.seeAllHref, locale);
+    return { ...item, seeAllHref, seeAllLabel: editorialLinkLabel(item.seeAllLabel, seeAllHref, locale), cards: item.cards.map(card) };
+  };
+  return {
+    ...t,
+    popularSection: { ...t.popularSection, resources: t.popularSection.resources.map(card) },
+    fiscaliteSection: section(t.fiscaliteSection),
+    categories: t.categories.map(section),
+  };
 }

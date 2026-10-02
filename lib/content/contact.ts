@@ -54,7 +54,7 @@ export const contactContent: Record<Locale, ContactContent> = {
     h1: "Discover our services and take action!",
     paragraphs: [
       "At Iter Advisors, we understand the unique financial challenges your business faces.",
-      "Thanks to our outsourced CFOs (or CFO part-time), we can offer you customized support tailored to your strategic and operational needs.",
+      "Thanks to our Fractional CFOs (or CFO part-time), we can offer you customized support tailored to your strategic and operational needs.",
     ],
     form: {
       fields: [

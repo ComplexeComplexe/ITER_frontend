@@ -221,7 +221,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
     whoWeAre: {
       heading: "Who we are",
       paragraphs: [
-        "Iter Advisors is a corporate finance advisory firm specializing in supporting high-growth startups, SMEs and mid-cap companies. We act as an outsourced CFO, on a shared-time or transitional basis, to structure and manage the finance function of our partners.",
+        "Iter Advisors is a corporate finance advisory firm specializing in supporting high-growth startups, SMEs and mid-cap companies. We act as a Fractional CFO, on a shared-time or transitional basis, to structure and manage the finance function of our partners.",
         "Founded in 2021, Iter Advisors brings together experienced CFOs from complementary backgrounds: audit, management control, financial management, M&A. Their shared vision: making first-class financial management accessible to growing companies.",
         "With teams in Barcelona and Paris, serving Toulouse remotely or through agreed visits, we support our clients in France, Spain and internationally, with a tailored approach adapted to each stage of their development.",
       ],

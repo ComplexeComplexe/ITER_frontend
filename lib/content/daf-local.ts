@@ -349,7 +349,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
     },
     en: {
       meta: {
-        title: "Outsourced CFO in Paris | Iter Advisors",
+        title: "Fractional CFO in Paris | Iter Advisors",
         description:
           "Senior CFOs for Paris-based startups and SMEs. Reporting, cash flow, fundraising. Starting within 2 weeks.",
       },

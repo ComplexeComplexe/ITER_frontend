@@ -697,7 +697,7 @@ export const dafContent: Record<Locale, DafContent> = {
       partOfSpeech: "noun",
       definition: "a senior finance leader who joins a company without being a full-time employee. They take on the responsibilities of an in-house CFO (financial strategy, cash flow, reporting, investor relations) on a flexible basis: part-time, project-based or monthly retainer.",
       synonymsLabel: "Synonyms",
-      synonyms: "outsourced CFO, part-time CFO, fractional finance director, shared CFO.",
+      synonyms: "Fractional CFO, part-time CFO, fractional finance director, shared CFO.",
     },
     quickAnswers: {
       comprendre:
@@ -705,22 +705,22 @@ export const dafContent: Record<Locale, DafContent> = {
     },
     h1: "Fractional CFO for Startups & SMEs — Iter Advisors",
     intro: [
-      "A **Fractional CFO** — or outsourced Chief Financial Officer — is a senior finance professional who works within your company without being a full-time employee. When you hire a Fractional CFO, you get the same responsibilities as an in-house CFO (financial strategy, cash flow, reporting, investor relations) but on a flexible basis: part-time, project-based, or monthly retainer.",
+      "A **Fractional CFO** — or Fractional Chief Financial Officer — is a senior finance professional who works within your company without being a full-time employee. When you hire a Fractional CFO, you get the same responsibilities as an in-house CFO (financial strategy, cash flow, reporting, investor relations) but on a flexible basis: part-time, project-based, or monthly retainer.",
       "At Iter Advisors, we support 85+ SMEs, startups and scale-ups by deploying a Fractional CFO into their finance function. Our Fractional CFOs are senior operators (10+ years) ready to structure forecasting, lead fundraising, or step in as interim CFO — without the cost or commitment of a full-time hire.",
-      "New to the role? Start with our glossary entry [What is a CFO?](/en/ressources/glossaire/cfo) to understand the difference between CFO, Finance Director and Controller — and explore [our finance services](/en/services) for the full scope of what an outsourced CFO can deliver.",
+      "New to the role? Start with our glossary entry [What is a CFO?](/en/ressources/glossaire/cfo) to understand the difference between CFO, Finance Director and Controller — and explore [our finance services](/en/services) for the full scope of what a Fractional CFO can deliver.",
     ],
     partnerSection: {
       heading: "Iter Advisors, your strategic partner",
       content: [
         "Iter Advisors is a Fractional CFO firm with teams in Barcelona and Paris, serving Toulouse remotely or through agreed visits. We provide our clients with experienced finance directors (10+ years of experience) capable of addressing all the financial challenges of a growing company.",
         "Our approach is built on three fundamental pillars: technical expertise, strategic vision and flexibility. Each engagement is tailored to meet the specific challenges of your business.",
-        "With over 85 companies supported and more than EUR 100 million in fundraising completed by our clients, Iter Advisors has established itself as a leading player in outsourced CFO services in France and Spain.",
+        "With over 85 companies supported and more than EUR 100 million in fundraising completed by our clients, Iter Advisors has established itself as a leading player in Fractional CFO services in France and Spain.",
       ],
     },
     whatIs: {
       heading: "What is a Fractional CFO?",
       content: [
-        "A Fractional CFO, or outsourced Chief Financial Officer, is a finance professional who works within your company without being a full-time employee. They assume the same responsibilities as an in-house CFO: financial management, cash flow, reporting, strategic support and investor relations.",
+        "A Fractional CFO, or Fractional Chief Financial Officer, is a finance professional who works within your company without being a full-time employee. They assume the same responsibilities as an in-house CFO: financial management, cash flow, reporting, strategic support and investor relations.",
       ],
       subsections: [
         {

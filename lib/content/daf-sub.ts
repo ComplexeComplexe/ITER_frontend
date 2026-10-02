@@ -860,7 +860,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         description:
           "Discover the CFO role: responsibilities, key skills and how the position has evolved in modern companies.",
       },
-      parentLabel: "CFO Outsourced",
+      parentLabel: "Fractional CFO",
       parentHref: "/en/fractional-cfo",
       breadcrumbLabel: "The CFO role",
       h1: "What is a CFO?",
@@ -908,7 +908,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         description:
           "The part-time CFO: a flexible and cost-effective solution for growing companies. Discover the benefits of timeshare CFO services with Iter Advisors.",
       },
-      parentLabel: "CFO Outsourced",
+      parentLabel: "Fractional CFO",
       parentHref: "/en/fractional-cfo",
       breadcrumbLabel: "Shared-time CFO",
       h1: "The timeshare CFO: A flexible, efficient solution",
@@ -956,7 +956,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         description:
           "The transitional CFO intervenes during critical periods: restructuring, fundraising, temporary replacement. Discover this solution with Iter Advisors.",
       },
-      parentLabel: "CFO Outsourced",
+      parentLabel: "Fractional CFO",
       parentHref: "/en/fractional-cfo",
       breadcrumbLabel: "Transitional CFO",
       h1: "What is a transitional CFO?",
@@ -1001,24 +1001,24 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     tarifs: {
       meta: {
-        title: "Outsourced CFO Pricing 2026 - Rates | Iter Advisors",
-        description: "How much does an outsourced CFO cost? Pricing from €2,000 to €8,000 per month depending on the formula. Complete transparency, no surprises.",
+        title: "Fractional CFO Pricing 2026 - Rates | Iter Advisors",
+        description: "How much does a Fractional CFO cost? Pricing from €2,000 to €8,000 per month depending on the formula. Complete transparency, no surprises.",
       },
-      parentLabel: "CFO Outsourced",
+      parentLabel: "Fractional CFO",
       parentHref: "/en/fractional-cfo",
       breadcrumbLabel: "Pricing",
-      h1: "Outsourced CFO Pricing 2026: rates and comparison",
+      h1: "Fractional CFO Pricing 2026: rates and comparison",
       sections: [
         {
           content: [
-            "How much does an outsourced CFO cost? This is often the first question asked by SME and startup leaders. The answer depends on several factors: the formula chosen (part-time, transitional, or specific mission), the number of intervention days per month, and the complexity of your company's financial situation.",
+            "How much does a Fractional CFO cost? This is often the first question asked by SME and startup leaders. The answer depends on several factors: the formula chosen (part-time, transitional, or specific mission), the number of intervention days per month, and the complexity of your company's financial situation.",
             "At Iter Advisors, we have chosen complete transparency on our rates. This page presents our 2026 pricing grid, the factors that influence the cost, and a comparison with alternatives (hiring a full-time CFO, financial consultant, or accounting firm).",
           ],
         },
         {
           heading: "2026 Pricing Grid",
           content: [
-            "Outsourced CFO rates are generally expressed as a monthly fee, calculated on the basis of a predetermined number of intervention days.",
+            "Fractional CFO rates are generally expressed as a monthly fee, calculated on the basis of a predetermined number of intervention days.",
             "Part-time CFO Formula: 1 day/month €1,500-2,500; 2 days/month €2,500-4,500 (most popular); 3-4 days/month €4,500-8,000.",
             "Transition CFO Formula: €800-1,500 daily rate, or €16,000-30,000/month full-time.",
             "Specific Mission: €800-1,200 daily rate for audits, financial models, or treasury reviews.",
@@ -1036,9 +1036,9 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           heading: "Comparison with Alternatives",
           content: [
-            "Outsourced CFO vs In-house CFO: Full-time CFO costs €80,000-150,000 gross/year (€116,000-217,000 with benefits). Part-time outsourced CFO at 2 days/month costs €2,500-4,500/month = 3-7x less. Plus full flexibility.",
-            "Outsourced CFO vs Accounting Firm: Accounting firms ensure legal compliance. CFOs drive daily financial performance. Most structured SMEs use both.",
-            "Outsourced CFO vs Financial Consultant: Consultants handle one project then leave. CFOs build ongoing relationships and know your business.",
+            "Fractional CFO vs In-house CFO: Full-time CFO costs €80,000-150,000 gross/year (€116,000-217,000 with benefits). Part-time Fractional CFO at 2 days/month costs €2,500-4,500/month = 3-7x less. Plus full flexibility.",
+            "Fractional CFO vs Accounting Firm: Accounting firms ensure legal compliance. CFOs drive daily financial performance. Most structured SMEs use both.",
+            "Fractional CFO vs Financial Consultant: Consultants handle one project then leave. CFOs build ongoing relationships and know your business.",
           ],
         },
         {
@@ -1054,7 +1054,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
         {
-          heading: "FAQ - Outsourced CFO Pricing",
+          heading: "FAQ - Fractional CFO Pricing",
           content: [
             "Is the fee tax deductible? Yes. CFO fees are operating expenses deductible from taxable income.",
             "Can we negotiate? Our rates are market-based and transparent. We can adjust intervention days to fit your budget, but not the daily rate.",
@@ -1067,47 +1067,47 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     secteurs: {
       meta: {
-        title: "Outsourced CFO by Industry | Iter Advisors",
+        title: "Fractional CFO by Industry | Iter Advisors",
         description:
           "Specialized CFO services by industry (SaaS, e-commerce, manufacturing, fintech, healthcare). Industry-specific financial expertise.",
       },
-      parentLabel: "CFO Outsourced",
+      parentLabel: "Fractional CFO",
       parentHref: "/en/fractional-cfo",
       breadcrumbLabel: "CFO by industry",
-      h1: "Outsourced CFO by Industry: Our sectoral expertise",
+      h1: "Fractional CFO by Industry: Our sectoral expertise",
       sections: [
         {
           content: [
             "Each industry has unique financial challenges. A SaaS startup has different financial priorities than a manufacturing company or e-commerce platform. Sales cycles differ, business models vary, and risks are distinct.",
-            "At Iter Advisors, our outsourced CFOs bring deep industry expertise. They understand your business, your specific challenges, and best practices in your sector.",
+            "At Iter Advisors, our Fractional CFOs bring deep industry expertise. They understand your business, your specific challenges, and best practices in your sector.",
           ],
         },
         {
-          heading: "Outsourced CFO for Startups & SaaS",
+          heading: "Fractional CFO for Startups & SaaS",
           content: [
             "SaaS startups face specific financial challenges: subscription models, customer churn, LTV/CAC ratio, burn rate, runway. Our SaaS CFO masters these KPIs and helps optimize your business model.",
           ],
         },
         {
-          heading: "Outsourced CFO for E-Commerce",
+          heading: "Fractional CFO for E-Commerce",
           content: [
             "E-commerce platforms face unique cycles: seasonality, inventory and working capital management, thin margins. Our expertise helps you navigate these challenges profitably.",
           ],
         },
         {
-          heading: "Outsourced CFO for Manufacturing & Mid-Market",
+          heading: "Fractional CFO for Manufacturing & Mid-Market",
           content: [
             "Industrial companies need CFOs who understand operational complexity: production, supply chain, currency risks. Our manufacturing CFO brings this expertise.",
           ],
         },
         {
-          heading: "Outsourced CFO for Fintech & Finance",
+          heading: "Fractional CFO for Fintech & Finance",
           content: [
             "Fintech companies operate in strict regulatory environments. Our fintech CFO masters compliance, regulatory reporting, and real-time treasury management.",
           ],
         },
         {
-          heading: "Outsourced CFO for Healthcare & Biotech",
+          heading: "Fractional CFO for Healthcare & Biotech",
           content: [
             "Healthcare and biotech companies face long R&D cycles and complex reimbursement models. Our expertise helps you navigate these specialized challenges.",
           ],
@@ -1123,14 +1123,14 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     ecommerce: {
       meta: {
-        title: "Outsourced CFO for E-Commerce: Manage Profitability | Iter Advisors",
+        title: "Fractional CFO for E-Commerce: Manage Profitability | Iter Advisors",
         description:
           "Fractional CFO for e-commerce: working capital, seasonality, product margins, cash flow. From 2 days/month.",
       },
       parentLabel: "Fractional CFO",
       parentHref: "/en/fractional-cfo",
       breadcrumbLabel: "CFO for E-Commerce",
-      h1: "Outsourced CFO for E-Commerce: Manage Your Profitability",
+      h1: "Fractional CFO for E-Commerce: Manage Your Profitability",
       sections: [
         { content: ["Iter Advisors' fractional CFOs for e-commerce step in from 2 days/month to provide specialized financial expertise."] },
         {
@@ -1147,14 +1147,14 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     industrie: {
       meta: {
-        title: "Outsourced CFO for Manufacturing & Industrial Companies | Iter Advisors",
+        title: "Fractional CFO for Manufacturing & Industrial Companies | Iter Advisors",
         description:
           "Fractional CFO for manufacturing: cost accounting, supply chain, FX risk, M&A. Proven sector expertise.",
       },
       parentLabel: "Fractional CFO",
       parentHref: "/en/fractional-cfo",
       breadcrumbLabel: "CFO for Industry",
-      h1: "Outsourced CFO for Industrial Companies",
+      h1: "Fractional CFO for Industrial Companies",
       sections: [
         { content: ["Iter Advisors' specialized industrial CFOs step in from 2 days/month."] },
         {
@@ -1172,14 +1172,14 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
     },
     "deep-tech": {
       meta: {
-        title: "Outsourced CFO for Deep Tech & Biotech: Fundraising & R&D | Iter Advisors",
+        title: "Fractional CFO for Deep Tech & Biotech: Fundraising & R&D | Iter Advisors",
         description:
           "Fractional CFO for deep tech: R&D tax credits, Series A/B fundraising, due diligence. 30+ rounds closed.",
       },
       parentLabel: "Fractional CFO",
       parentHref: "/en/fractional-cfo",
       breadcrumbLabel: "CFO for Deep Tech",
-      h1: "Outsourced CFO for Deep Tech: Fundraising & R&D Finance",
+      h1: "Fractional CFO for Deep Tech: Fundraising & R&D Finance",
       sections: [
         { content: ["Iter Advisors has supported 30+ fundraising rounds in deep tech companies, totaling over €100M raised."] },
         {
@@ -1582,5 +1582,12 @@ const slugMapping: Record<Locale, Record<string, DafSubPageSlug>> = {
 export function getDafSubContent(locale: Locale, urlSlug: string): DafSubContent | undefined {
   const key = slugMapping[locale]?.[urlSlug];
   if (!key) return undefined;
-  return dafSubContent[locale][key];
+  const content = dafSubContent[locale][key];
+  if (locale === "fr" && key === "metier") {
+    return { ...content, sections: [...content.sections, {
+      heading: "Exercer le métier de DAF chez Iter Advisors",
+      content: ["Vous cherchez à exercer ce métier ? Notre page **[carrière de Fractional CFO](/carrieres/fractional-cfo)** présente le cadre de travail. Les **[offres actuellement ouvertes](/jobs)** précisent les profils recherchés et les modalités de candidature. Ce parcours de recrutement est distinct de l’offre de DAF destinée aux entreprises."],
+    }] };
+  }
+  return content;
 }

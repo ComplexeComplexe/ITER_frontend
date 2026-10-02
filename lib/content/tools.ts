@@ -115,18 +115,18 @@ const toolsContent: Record<Locale, ToolsPageContent> = {
   },
   en: {
     meta: {
-      title: "Our tools - Outsourced CFO tech stack | Iter Advisors",
+      title: "Our tools - Fractional CFO tech stack | Iter Advisors",
       description:
-        "Discover the tools and software used by our outsourced CFOs: accounting, treasury, reporting, ERP, CRM and collaboration. Proven technology stack.",
+        "Compare finance software categories: accounting, cash flow, reporting, ERP and collaboration. Our Fractional CFOs help assess the fit with your existing systems.",
     },
     breadcrumbLabel: "Our tools",
     resourcesLabel: "Resources",
     resourcesHref: "/en/ressources",
     h1: "Our technology stack",
     intro:
-      "Our outsourced CFOs rely on a proven ecosystem of tools to effectively manage your financial operations. Here are the solutions we deploy daily for our clients.",
+      "Explore software categories that can support your finance function. Tool selection depends on your existing systems, data quality and agreed scope; listing a tool does not imply a certified partnership.",
     ctaHeading: "Need help structuring your finance stack?",
-    ctaText: "Our outsourced CFOs guide you in choosing and deploying the right tools for your business.",
+    ctaText: "Our Fractional CFOs guide you in choosing and deploying the right tools for your business.",
     categories: [
       {
         id: "accounting",
