@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import HomePage from "@/components/pages/HomePage";
+import { getHomeContent } from "@/lib/content/home";
 import { buildStrapiMetadata } from "@/lib/metadata";
 import { getTeamMembers, getCmsNavigation, getHomepage } from "@/lib/static-content";
 
@@ -8,10 +9,8 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "homepage",
     locale: "fr",
     path: "/",
-    // Finance remains the homepage positioning; RH is a secondary route.
-    fallbackTitle: "Iter Advisors | Direction financière externalisée",
-    fallbackDescription:
-      "DAF externalisé et CFO à temps partagé pour PME et startups. Pilotage financier, levée de fonds, trésorerie. Barcelone, Paris, Toulouse.",
+    fallbackTitle: getHomeContent("fr").meta.title,
+    fallbackDescription: getHomeContent("fr").meta.description,
   });
 }
 

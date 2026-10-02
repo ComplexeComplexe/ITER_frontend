@@ -606,9 +606,9 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
   "organisation": {
     "path": "/services/gestion-financiere-externalisee",
     "label": "Organisation financière",
-    "title": "Gestion financière externalisée | Iter Advisors",
+    "title": "Gestion financière opérationnelle pour PME | Iter Advisors",
     "description": "Structurez les opérations financières de votre entreprise : responsabilités, données, clôture et reporting. Un périmètre adapté à votre équipe.",
-    "headline": "Gestion financière externalisée",
+    "headline": "Gestion financière opérationnelle",
     "promise": "Une fonction finance qui sait qui fait quoi.",
     "intro": "Quand les fichiers, les outils et les responsabilités s’accumulent, produire les chiffres devient un projet en soi. L’accompagnement organise les opérations financières pour que votre équipe dispose d’un fonctionnement partagé.",
     "context": "organisation",
@@ -632,7 +632,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "Les validations et les relances reposent sur une seule personne.",
       "La croissance ou une nouvelle entité exige une organisation plus explicite."
     ],
-    "definition": "La gestion financière externalisée traite ici l’organisation opérationnelle : circulation des données, répartition des tâches, clôture et production du reporting. Le DAF à temps partagé apporte en complément le suivi régulier des décisions de direction.",
+    "definition": "La gestion financière opérationnelle organise la circulation des données, les responsabilités et le calendrier de production des chiffres. Pour les factures, les paiements ou les rapprochements, la mission commence par identifier qui produit, qui contrôle et qui valide. Le DAF externalisé traite le pilotage et les arbitrages de direction ; les travaux confiés à Iter et ceux conservés par votre équipe sont précisés au contrat.",
     "deliverables": [
       [
         "Répartition des rôles",
@@ -651,7 +651,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       ]
     ],
     "exampleTitle": "Un processus décrit de bout en bout",
-    "example": "Pour une clôture mensuelle : qui fournit les pièces, qui contrôle les données, qui explique les écarts et qui valide le reporting ? Cette chaîne rend les dépendances visibles avant de chercher à l’automatiser.",
+    "example": "Exemple de procédure à adapter : l’équipe transmet les pièces, la comptabilité prépare les rapprochements, le responsable finance examine les exceptions et la personne habilitée valide le reporting. Pour les paiements, les délégations et les contrôles sont documentés séparément. Cette illustration décrit une organisation, pas un cas client ni une prise en charge automatique de toutes les tâches par Iter.",
     "steps": [
       [
         "Cartographier",

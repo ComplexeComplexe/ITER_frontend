@@ -1,3 +1,4 @@
+import { CABINET_EXPERTISES } from "@/lib/content/cabinet-expertise";
 import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "@/app/globals.css";
@@ -132,17 +133,14 @@ export default function DocumentShell({
                     availableLanguage: ["French", "English", "Spanish"],
                   },
                   knowsAbout: [
-                    "DAF externalisé",
+                    ...CABINET_EXPERTISES.map(({ label }) => label),
                     "Directeur financier externalisé",
                     "CFO à temps partagé",
                     "Fractional CFO",
                     "Direction financière externalisée",
-                    "Levée de fonds",
                     "Gestion de trésorerie",
                     "M&A et due diligence financière",
-                    "Contrôle de gestion",
                     "Pilotage financier startup",
-                    "DRH externalisé",
                   ],
                   founder: [
                     {

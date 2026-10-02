@@ -1,3 +1,5 @@
+import { FINANCE_STACK_GUIDE, FINANCE_STACK_GUIDE_HTML } from "./finance-stack-guide";
+import { estimateReadMinutes } from "../blog-read-time";
 import { SALARIED_DAF_GUIDE } from "./decision-guide-meta";
 import { FINANCE_NEED_GUIDE_HTML } from "./finance-need-guide";
 import { CASH_BURN_GUIDE_HTML } from "./cash-burn-guide";
@@ -35,6 +37,17 @@ export interface BlogPostData {
 
 export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
   fr: {
+    "essentiels-outils-tech-finance": {
+      meta: { title: FINANCE_STACK_GUIDE.title, description: FINANCE_STACK_GUIDE.description },
+      breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
+      h1: FINANCE_STACK_GUIDE.h1,
+      publishedDate: FINANCE_STACK_GUIDE.publishedDate,
+      updatedDate: "2026-10-02",
+      author: FINANCE_STACK_GUIDE.author,
+      category: "Outils & stack",
+      content: [],
+      readingMinutes: estimateReadMinutes(FINANCE_STACK_GUIDE_HTML),
+    },
     "flux-de-tresorerie": {
       meta: {
         title: "Flux de trésorerie : calcul et prévisionnel",
@@ -550,7 +563,8 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       updatedDate: "2026-09-05",
       author: "Sébastien Doat",
       category: "Outils & stack",
-      htmlContent: `<p>Après une Series A, la fonction finance doit produire des chiffres cohérents pour la direction et les investisseurs. La priorité est de relier les abonnements clients, la comptabilité, les dépenses et la trésorerie avec des responsabilités claires. Le choix des logiciels vient ensuite.</p>
+      htmlContent: `<p>Pour comparer les connexions, les contrôles et le coût complet, consultez la <a href="/ressources/blog/essentiels-outils-tech-finance">méthode de sélection des outils finance</a>. Le guide ci-dessous traite les décisions et les indicateurs propres à une SaaS après une Series A.</p>
+<p>Après une Series A, la fonction finance doit produire des chiffres cohérents pour la direction et les investisseurs. La priorité est de relier les abonnements clients, la comptabilité, les dépenses et la trésorerie avec des responsabilités claires. Le choix des logiciels vient ensuite.</p>
 <h2 id="diagnostic">Commencer par les décisions et les données</h2>
 <p>Recensez les décisions que le reporting doit permettre : recrutements, niveau de dépenses, horizon de financement et allocation des ressources. Pour chaque indicateur, précisez sa définition, sa source, son responsable et sa fréquence de mise à jour.</p>
 <p>Une même métrique ne doit pas changer de sens entre le tableau commercial et le reporting financier. L’<a href="/ressources/glossaire/arr-mrr">ARR et le MRR</a> doivent notamment être rapprochés des contrats et de la facturation. Les encaissements ne se confondent pas avec le chiffre d’affaires reconnu.</p>

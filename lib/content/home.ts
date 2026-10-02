@@ -5,14 +5,8 @@ import { Locale } from "../i18n";
 export const homeContent = {
   fr: {
     meta: {
-      // SEO-001 (2026-08-09) — le title reprenait la requête générique
-      // « DAF externalisé », propriété de /daf-externalise. Quatre pages
-      // la portaient (accueil, pilier, /services, /a-propos) : Google
-      // choisissait laquelle classer, et ce n'était pas toujours le pilier.
-      // Chaque page reprend ici son intention propre.
-      title: "Iter Advisors | Direction financière externalisée",
-      description:
-        "Iter Advisors : DAF externalisé pour PME et startups (pilotage, cash, reporting, levée de fonds). Intervention flexible à Barcelone, Paris, Toulouse.",
+      title: "Iter Advisors : cabinet DAF et DRH pour PME et startups",
+      description: "Découvrez Iter Advisors, son équipe et ses missions finance et RH pour PME et startups : direction financière, contrôle de gestion et organisation.",
     },
     hero: {
       h1: { before: "La meilleure version de votre ", highlight: "direction financière", highlightAlt: "direction des ressources humaines", after: "" },

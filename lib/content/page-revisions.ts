@@ -1,5 +1,6 @@
 /** Substantive page changes. Shared navigation changes do not refresh every URL. */
 export const PAGE_REVISIONS: Record<string, string> = {
+  "/ressources/fiscalite-espagne-france": "2026-10-02",
   "/ressources/blog/quand-embaucher-daf-externalise-5-signes": "2026-10-02",
   "/ressources/blog/daf-externalise-vs-daf-interimaire": "2026-10-02",
   "/daf-externalise-barcelone": "2026-10-02",
@@ -29,7 +30,7 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/ressources/outils/revolut-business": "2026-10-02",
   "/ressources/outils/cegid-loop": "2026-10-02",
   "/ressources/blog/loi-beckham-economie-impot-simulation": "2026-10-01",
-  "/ressources/blog/essentiels-outils-tech-finance": "2026-10-01",
+  "/ressources/blog/essentiels-outils-tech-finance": "2026-10-02",
   "/ressources/glossaire/controle-de-gestion": "2026-10-01",
   "/fractional-cfo-startups": "2026-10-02",
   "/es/quienes-somos/benjamin-ziza": "2026-10-01",
@@ -81,7 +82,7 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/ressources/glossaire/bspce-bsa": "2026-09-13",
   "/ressources/blog/cfo-externe-role-missions-2026": "2026-09-13",
   "/ressources/glossaire/cfo": "2026-09-13",
-  "/": "2026-10-01",
+  "/": "2026-10-02",
   "/en": "2026-09-30",
   "/es": "2026-09-30",
   "/ressources": "2026-10-01",
