@@ -1,0 +1,11 @@
+﻿FR;EN cible;EN action;ES cible;ES action;Gabarit;Robots à conserver;Conditions de livraison
+/politique-cookies;/en/cookie-policy;align-existing;/es/politica-cookies;align-existing;CookiePolicyPage;indexable-legal-exception;Parcours traduit, formulaires/consentement vérifiés, même indexabilité
+/cads;/en/cads;translate-new;/es/cads;translate-new;CadsPage;noindex,nofollow;"Remove unsupported result/ROI/time guarantees in FR before deriving EN/ES; verify whether campaign is still used."
+/cads/roi;/en/cads/roi;translate-new;/es/cads/roi;translate-new;CadsRoiPage;noindex,nofollow;"Remove unsupported result/ROI/time guarantees in FR before deriving EN/ES; verify whether campaign is still used."
+/campagne;/en/campaign;align-existing;/es/campana;align-existing;LeadPage;noindex,nofollow;Parcours traduit, formulaires/consentement vérifiés, même indexabilité
+/diagnostic;/en/diagnostic;align-existing;/es/diagnostic;align-existing;LeadGenPage;noindex,nofollow;Parcours traduit, formulaires/consentement vérifiés, même indexabilité
+/jobs;/en/jobs;align-existing;/es/jobs;align-existing;JobsPage;noindex,follow;Parcours traduit, formulaires/consentement vérifiés, même indexabilité
+/lp/daf-externalise;/en/lp/fractional-cfo;translate-new;/es/lp/cfo-externo;translate-new;LandingPageClient;noindex,follow;Parcours traduit, formulaires/consentement vérifiés, même indexabilité
+/lp/daf-externalise/merci;/en/lp/fractional-cfo/thank-you;translate-new;/es/lp/cfo-externo/gracias;translate-new;LandingPageThankYou;noindex,nofollow;Parcours traduit, formulaires/consentement vérifiés, même indexabilité
+/profil;/en/profile;align-existing;/es/perfil;align-existing;QualificationPage;noindex,nofollow;Parcours traduit, formulaires/consentement vérifiés, même indexabilité
+/qualification;/en/assessment;align-existing;/es/calificacion;align-existing;QualificationPage;noindex,nofollow;Parcours traduit, formulaires/consentement vérifiés, même indexabilité

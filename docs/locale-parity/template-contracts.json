@@ -1,0 +1,1581 @@
+{
+  "proposalOnly": true,
+  "families": [
+    {
+      "family": "home",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/HomePage.tsx",
+      "target": "shared-layout-with-locale-data-and-client-islands",
+      "referencePages": [
+        "home"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "cfo-pillar",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/DafPillarPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "daf-externalise"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "cfo-role",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/DafSubPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "daf-externalise:metier"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "pricing",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/DafSubPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "daf-externalise:tarifs"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "finance-service",
+      "proposalOnly": true,
+      "referenceFile": "components/finance/FinanceServicePage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "fractional-cfo-startups",
+        "daf-externalise:temps-partage",
+        "daf-externalise:transition",
+        "services:previsionnel-tresorerie",
+        "services:gestion-financiere-externalisee",
+        "services:accompagnement-levee-de-fond",
+        "services:comptabilite-externalisation",
+        "services:controle-de-gestion-externalise",
+        "services:ma-due-diligence",
+        "daf-externalise-barcelone",
+        "daf-externalise-paris",
+        "daf-externalise-toulouse"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "cfo-sector",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/DafSubPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "daf-externalise:secteurs",
+        "daf-externalise:ecommerce",
+        "daf-externalise:industrie",
+        "daf-externalise:deep-tech"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "hr-offer",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/DrhFrenchPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "drh-externalise",
+        "drh-externalise:temps-partage"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "finance-hub",
+      "proposalOnly": true,
+      "referenceFile": "components/finance/FinanceServicesHub.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "services"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "resources-hub",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/ResourcesPageFR.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "ressources"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "blog-list",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/BlogListingPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "ressources:blog"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "glossary-hub",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/GlossairePage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "ressources:glossaire"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "cases-hub",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/CasClientsPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "ressources:cas-clients"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "tools-hub",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/ToolsPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "ressources:outils"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "tax-hub",
+      "proposalOnly": true,
+      "referenceFile": "app/(fr)/ressources/fiscalite-espagne-france/page.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "ressources:fiscalite-espagne-france"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "tax-guide",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/GuideFiscalPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "ressources:fiscalite:residence-fiscale-france-espagne",
+        "ressources:fiscalite:double-imposition-france-espagne",
+        "ressources:fiscalite:impot-revenu-espagne",
+        "ressources:fiscalite:beckham-law",
+        "ressources:fiscalite:modelo-720"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "ai-hub",
+      "proposalOnly": true,
+      "referenceFile": "app/(fr)/ressources/ia-finance/page.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "ressources:ia-finance"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "ai-guide",
+      "proposalOnly": true,
+      "referenceFile": "lib/content/ia-finance-guides.ts",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "ressources:ia-finance:automatiser-reporting-financier",
+        "ressources:ia-finance:chatgpt-finance",
+        "ressources:ia-finance:llm-finance",
+        "ressources:ia-finance:outils",
+        "ressources:ia-finance:feuille-de-route-90-jours",
+        "ressources:ia-finance:retours-experience"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "clients",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/ClientsPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "clients"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "about",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/AboutPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "a-propos"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "contact",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/ContactPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "contact"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "legal",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/LegalPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "mentions-legales",
+        "politique-de-confidentialite"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "blog-article",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/BlogPostPageRefonte.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "ressources:blog:agicap-vs-fygr-outil-tresorerie",
+        "ressources:blog:cas-etude-happy-scribe",
+        "ressources:blog:cash-burn-calculer-runway-anticiper-levee",
+        "ressources:blog:checklist-due-diligence-levee-de-fonds",
+        "ressources:blog:cout-daf-externalise-tarifs-prix-2026",
+        "ressources:blog:filiale-espagnole-pilotage-financier",
+        "ressources:blog:choisir-cabinet-daf-externalise",
+        "ressources:blog:daf-drh-externalises-synergie",
+        "ressources:blog:daf-externalise-vs-daf-interimaire",
+        "ressources:blog:daf-externalise-vs-daf-salarie",
+        "ressources:blog:daf-externalise-vs-expert-comptable",
+        "ressources:blog:externalisation-comptable",
+        "ressources:blog:flux-de-tresorerie",
+        "ressources:blog:la-modernisation-du-role-de-cfo",
+        "ressources:blog:payfit-vs-silae-comparatif-pme",
+        "ressources:blog:pennylane-vs-sage-comparatif-40-deploiements",
+        "ressources:blog:quand-embaucher-daf-externalise-5-signes",
+        "ressources:blog:reduire-bfr-7-leviers-actionnables",
+        "ressources:blog:stack-financier-saas-series-a",
+        "ressources:blog:tableau-de-bord-financier-startup-12-kpis",
+        "ressources:blog:term-sheet-negocier-clauses-cles",
+        "ressources:blog:les-10-outils-pour-cfos-startup",
+        "ressources:blog:levee-de-fonds-guide",
+        "ressources:blog:ia-et-automatisation-des-taches-repetitives",
+        "ressources:blog:regimes-fiscaux-france-vs-espagne",
+        "ressources:blog:cfo-externe-role-missions-2026",
+        "ressources:blog:essentiels-outils-tech-finance",
+        "ressources:blog:ia-finance-automatisation-direction-financiere",
+        "ressources:blog:loi-beckham-economie-impot-simulation",
+        "ressources:blog:loi-beckham-espagne-conditions-eligibilite",
+        "ressources:blog:organiser-sa-direction-financiere"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "tool-detail",
+      "proposalOnly": true,
+      "referenceFile": "lib/content/tools.ts",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "ressources:outils:pennylane",
+        "ressources:outils:agicap",
+        "ressources:outils:spendesk",
+        "ressources:outils:payfit",
+        "ressources:outils:sage",
+        "ressources:outils:cegid-loop",
+        "ressources:outils:fygr",
+        "ressources:outils:pleo",
+        "ressources:outils:silae",
+        "ressources:outils:lucca",
+        "ressources:outils:qonto",
+        "ressources:outils:revolut-business",
+        "ressources:outils:payhawk",
+        "ressources:outils:kyriba",
+        "ressources:outils:power-bi",
+        "ressources:outils:upflow",
+        "ressources:outils:leanpay",
+        "ressources:outils:factorial",
+        "ressources:outils:carta",
+        "ressources:outils:equify",
+        "ressources:outils:malibou"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "tool-category",
+      "proposalOnly": true,
+      "referenceFile": "lib/content/tools.ts",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "ressources:outils:logiciels-comptabilite",
+        "ressources:outils:logiciels-tresorerie",
+        "ressources:outils:gestion-depenses",
+        "ressources:outils:logiciels-paie"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "careers",
+      "proposalOnly": true,
+      "referenceFile": "app/(fr)/carrieres/fractional-cfo/page.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "carrieres:fractional-cfo"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "job",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/JobDetailPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "jobs:finance-analyst-junior-fr",
+        "jobs:marketing-growth-strategy",
+        "jobs:senior-finance-manager"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "glossary-entry",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/GlossaryEntryPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "ressources:glossaire:arr-mrr",
+        "ressources:glossaire:besoin-fonds-roulement-bfr",
+        "ressources:glossaire:bspce-bsa",
+        "ressources:glossaire:cac-ltv",
+        "ressources:glossaire:cash-burn-runway",
+        "ressources:glossaire:cfo",
+        "ressources:glossaire:churn-rate",
+        "ressources:glossaire:controle-de-gestion",
+        "ressources:glossaire:drh-externalise",
+        "ressources:glossaire:ebitda",
+        "ressources:glossaire:fractional-cfo",
+        "ressources:glossaire:run-rate"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "hr-service",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/HRServicePage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "services:recrutement-talent-acquisition",
+        "services:gestion-paie-charges-sociales",
+        "services:formation-developpement",
+        "services:conformite-droit-travail"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "expert-profile",
+      "proposalOnly": true,
+      "referenceFile": "components/pages/AuthorPage.tsx",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "a-propos:sebastien-doat",
+        "a-propos:benjamin-ziza",
+        "a-propos:guillaume-rostand",
+        "a-propos:florent-greth",
+        "a-propos:borith-biv",
+        "a-propos:deisy-arias-ramirez",
+        "a-propos:sebastien-preel",
+        "a-propos:tom-jaufre",
+        "a-propos:jessica-barnicaud",
+        "a-propos:benjamin-carlot",
+        "a-propos:christophe-hoarau"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    },
+    {
+      "family": "case-study",
+      "proposalOnly": true,
+      "referenceFile": "lib/content/published-cases.ts",
+      "target": "shared-server-template-and-locale-data",
+      "referencePages": [
+        "ressources:cas-clients:solarmente-serie-b-cleantech",
+        "ressources:cas-clients:seasonly-marge-par-canal-bfr",
+        "ressources:cas-clients:opti-digital-structuration-financement"
+      ],
+      "structuralRule": "For each pageId, render the same semantic block keys and order in fr/en/es; derive from FR reference and documented variant.",
+      "variantRule": "Optional proof/calendar/sector blocks depend on the page variant, never on locale alone.",
+      "markerProposal": {
+        "template": "data-template-family",
+        "page": "data-page-id",
+        "block": "data-block-key",
+        "variant": "data-template-variant"
+      },
+      "mustLocalize": [
+        "body",
+        "metadata",
+        "breadcrumbs",
+        "navigation",
+        "aria-labels",
+        "table-headers",
+        "captions",
+        "byline-labels",
+        "form-validation",
+        "success-messages",
+        "contact-links"
+      ],
+      "mustPreserve": [
+        "real-authors",
+        "real-review-dates",
+        "facts.ts-values",
+        "case-attribution",
+        "commercial-scope",
+        "source-links",
+        "original-job-identifiers"
+      ],
+      "releaseGate": [
+        "translation-reviewed",
+        "targets-200",
+        "self-canonical",
+        "reciprocal-alternates",
+        "block-order-parity",
+        "visual-review-360-768-1440",
+        "no-unlabelled-foreign-links",
+        "schema-visible-content-consistency"
+      ]
+    }
+  ]
+}
