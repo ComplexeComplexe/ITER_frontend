@@ -197,16 +197,16 @@ export const homeContent = {
     // page /en, ce qui crée un signal mixte (Google peut associer la page
     // à des termes hors-domaine comme "cybersecurity SaaS" car le contenu
     // EN parle de "SaaS startups" sans signal Finance explicite dans le
-    // title). Recentrage explicite sur Outsourced CFO + Finance + 100M€
+    // title). Recentrage explicite sur Fractional CFO + Finance + 100M€
     // levés pour éliminer l'ambiguïté sémantique.
     meta: {
-      title: "Outsourced CFO for Startups & SMEs | Iter Advisors",
+      title: "Fractional CFO for Startups & SMEs | Iter Advisors",
       description:
-        "Outsourced CFO and finance leadership for startups, scale-ups and SMEs. Fractional CFO, fundraising, M&A, cash management. 85+ companies, €100M+ raised.",
+        "Fractional CFO and finance leadership for startups, scale-ups and SMEs. Fractional CFO, fundraising, M&A, cash management. 85+ companies, €100M+ raised.",
     },
     hero: {
       h1: { before: "The best version of your ", highlight: "financial management", highlightAlt: "human resources management", after: "" },
-      h2: "Corporate finance consultancy, outsourced CFO and outsourced HR. We structure, manage and optimize your support functions for healthy, sustainable growth.",
+      h2: "Corporate finance consultancy, Fractional CFO and outsourced HR. We structure, manage and optimize your support functions for healthy, sustainable growth.",
       cta: "Describe my needs",
     },
     about: {
@@ -295,13 +295,13 @@ export const homeContent = {
         date: "Mar 12, 2026",
       },
       {
-        title: "Organizing your finance department",
+        title: "Organizing your finance department (in French)",
         href: "/ressources/blog/organiser-sa-direction-financiere",
         image: "/images/blog/organiser-direction-financiere.jpg",
         date: "Mar 5, 2026",
       },
       {
-        title: "Essential financial tech tools",
+        title: "Essential financial tech tools (in French)",
         href: "/ressources/blog/essentiels-outils-tech-finance",
         image: "/images/blog/outils-tech-finance.jpg",
         date: "Feb 28, 2026",
@@ -309,7 +309,7 @@ export const homeContent = {
     ],
     discover: "Discover",
     financeServices: [
-      { title: "Outsourced CFO", href: "/en/fractional-cfo", desc: "A dedicated part-time CFO to structure and manage your finance function." },
+      { title: "Fractional CFO", href: "/en/fractional-cfo", desc: "A dedicated part-time CFO to structure and manage your finance function." },
       { title: "Management control", href: serviceHref("controle-de-gestion-externalise", "en"), desc: "Dashboards, reporting and performance analysis for informed decisions." },
       { title: "Cash management", href: serviceHref("previsionnel-tresorerie", "en"), desc: "Cash flow forecasting, working capital optimization and liquidity management." },
       { title: "Fundraising", href: serviceHref("accompagnement-levee-de-fond", "en"), desc: "Strategic support to secure your financing and convince investors." },
@@ -324,7 +324,7 @@ export const homeContent = {
       { title: "Culture & employer brand", desc: "Building a strong company culture and an attractive employer brand." },
     ],
     dafSection: {
-      title: "Outsourced CFO & Part-time CFO",
+      title: "Fractional CFO & Part-time CFO",
       paragraph: "At Iter Advisors, our part-time CFOs bring deep sector expertise and mastery of digital tools to modernize your financial processes. With our entrepreneurial culture, we effectively support companies through key stages of their development.",
       benefits: [
         "A scoped start based on your priorities and available data",
@@ -349,20 +349,20 @@ export const homeContent = {
       { label: "Post-fundraising", desc: "Structure your post-funding growth with rigor and agility." },
     ],
     faqs: [
-      { q: "What is an outsourced CFO?", a: "An outsourced CFO is a finance director who works part-time or on a contractual basis for companies that don't need or can't afford a full-time position. They bring their expertise to help with strategic and operational management." },
+      { q: "What is a Fractional CFO?", a: "A Fractional CFO is a finance director who works part-time or on a contractual basis for companies that don't need or can't afford a full-time position. They bring their expertise to help with strategic and operational management." },
       { q: "What types of companies need these services?", a: "Our services are primarily aimed at startups, SMEs and scale-ups in the launch, growth, restructuring or fundraising phases. Any company wishing to structure its support functions without hiring full-time can benefit from our support." },
       { q: "How much time should an expert dedicate to my company?", a: getDafOfferFacts("en").volume },
       { q: "How does the transition with an outsourced expert work?", a: getDafOfferFacts("en").start },
-      { q: "What is the difference between an outsourced CFO and an accountant?", a: "An accountant manages bookkeeping and reporting obligations. An outsourced CFO goes much further: financial strategy, performance management, fundraising, investor relations, cost optimization and growth structuring." },
-      { q: "How much does an outsourced CFO cost?", a: getDafOfferFacts("en").price },
+      { q: "What is the difference between a Fractional CFO and an accountant?", a: "An accountant manages bookkeeping and reporting obligations. A Fractional CFO goes much further: financial strategy, performance management, fundraising, investor relations, cost optimization and growth structuring." },
+      { q: "How much does a Fractional CFO cost?", a: getDafOfferFacts("en").price },
       { q: "What tools do you use on a daily basis?", a: "We work with the best tools on the market: Pennylane, Agicap, Fygr, Qonto, PowerBI, and many more. We adapt to your existing stack or help you choose the most suitable solutions for your business." },
-      { q: "How quickly can an outsourced CFO become operational?", a: getDafOfferFacts("en").start },
+      { q: "How quickly can a Fractional CFO become operational?", a: getDafOfferFacts("en").start },
       { q: "Do you also offer outsourced HR Director services?", a: "Yes, Iter Advisors offers a complete HR division: outsourced HR Director, part-time HR Director, payroll management, recruitment, social compliance and HR process implementation. Our HR experts operate with the same flexibility as our CFOs." },
       { q: "In which geographic areas do you operate?", a: getDafOfferFacts("en").geography },
       { q: "What does a typical engagement look like?", a: "Our engagement follows 4 steps: initial diagnostic of your situation, co-construction of a strategic roadmap, operational implementation with integration into your team, then continuous management with regular reporting and adjustments." },
       { q: "Can you help us with fundraising?", a: "Absolutely. Fundraising support is one of our flagship services. We prepare your data room, build your business plan, structure your financial pitch deck and support you through negotiations with investors." },
     ],
-    servicesHeading: "Outsourced CFO & Outsourced HR: two areas of expertise for startups and SMEs",
+    servicesHeading: "Fractional CFO & Outsourced HR: two areas of expertise for startups and SMEs",
     servicesSubtitle: "We support businesses at every stage of their development with tailor-made finance and human resources solutions.",
     processHeading: "A structured support in 4 steps",
     processSubtitle: "From initial audit to continuous management, we build a clear and measurable trajectory with you.",
@@ -480,13 +480,13 @@ export const homeContent = {
         date: "12 mar. 2026",
       },
       {
-        title: "Organizar su departamento financiero",
+        title: "Organizar su departamento financiero (en francés)",
         href: "/ressources/blog/organiser-sa-direction-financiere",
         image: "/images/blog/organiser-direction-financiere.jpg",
         date: "5 mar. 2026",
       },
       {
-        title: "Las herramientas tecnológicas esenciales para las finanzas",
+        title: "Las herramientas tecnológicas esenciales para las finanzas (en francés)",
         href: "/ressources/blog/essentiels-outils-tech-finance",
         image: "/images/blog/outils-tech-finance.jpg",
         date: "28 feb. 2026",

@@ -308,7 +308,7 @@ const qualContent = {
           },
           {
             id: "budget",
-            label: "Monthly budget for an outsourced CFO",
+            label: "Monthly budget for a Fractional CFO",
             type: "select" as const,
             options: ["< €1,500/month", "€1,500 – €3,000/month", "€3,000 – €6,000/month", "€6,000+/month", "I don't know yet"],
             required: false,

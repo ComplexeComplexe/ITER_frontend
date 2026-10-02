@@ -183,7 +183,7 @@ const content: Record<Locale, CFOJobDescriptionContent> = {
       salary: "$120,000 - $200,000/year + benefits",
     },
     fractionalCFO: {
-      title: "Fractional CFO / Outsourced CFO",
+      title: "Fractional CFO",
       description:
         "A fractional CFO provides senior financial services on a part-time basis (2-8 days per month). A flexible, cost-effective solution for startups and SMEs.",
       responsibilities: [

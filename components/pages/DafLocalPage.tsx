@@ -88,11 +88,11 @@ export default function DafLocalPage({
       "@type": "Place",
       name: city === "barcelone" ? "Barcelona" : city === "paris" ? "Paris" : "Toulouse",
     },
-    serviceType: locale === "fr" ? "DAF externalisé" : locale === "en" ? "Outsourced CFO" : "CFO externalizado",
+    serviceType: locale === "fr" ? "DAF externalisé" : locale === "en" ? "Fractional CFO" : "CFO externalizado",
   };
 
   const dafPath = locale === "fr" ? "/daf-externalise" : locale === "en" ? "/en/fractional-cfo" : "/es/externalizacion-daf";
-  const dafLabel = locale === "fr" ? "DAF externalisé" : locale === "en" ? "Outsourced CFO" : "CFO externalizado";
+  const dafLabel = locale === "fr" ? "DAF externalisé" : locale === "en" ? "Fractional CFO" : "CFO externalizado";
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
@@ -206,9 +206,9 @@ export default function DafLocalPage({
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {([
-              { key: "barcelone", cityFr: "Barcelone", cityEn: "Barcelona", cityEs: "Barcelona", hrefFr: "/daf-externalise-barcelone", hrefEn: "/en/outsourced-cfo-barcelona", hrefEs: "/es/cfo-externalizado-barcelona" },
-              { key: "paris", cityFr: "Paris", cityEn: "Paris", cityEs: "Paris", hrefFr: "/daf-externalise-paris", hrefEn: "/en/outsourced-cfo-paris", hrefEs: "/es/cfo-externalizado-paris" },
-              { key: "toulouse", cityFr: "Toulouse", cityEn: "Toulouse", cityEs: "Toulouse", hrefFr: "/daf-externalise-toulouse", hrefEn: "/en/outsourced-cfo-toulouse", hrefEs: "/es/cfo-externalizado-toulouse" },
+              { key: "barcelone", cityFr: "Barcelone", cityEn: "Barcelona", cityEs: "Barcelona", hrefFr: "/daf-externalise-barcelone", hrefEn: "/en/fractional-cfo-barcelona", hrefEs: "/es/cfo-externalizado-barcelona" },
+              { key: "paris", cityFr: "Paris", cityEn: "Paris", cityEs: "Paris", hrefFr: "/daf-externalise-paris", hrefEn: "/en/fractional-cfo-paris", hrefEs: "/es/cfo-externalizado-paris" },
+              { key: "toulouse", cityFr: "Toulouse", cityEn: "Toulouse", cityEs: "Toulouse", hrefFr: "/daf-externalise-toulouse", hrefEn: "/en/fractional-cfo-toulouse", hrefEs: "/es/cfo-externalizado-toulouse" },
             ] as const).filter((loc) => loc.key !== city).map((loc, i) => (
               <Link
                 key={i}
@@ -223,7 +223,7 @@ export default function DafLocalPage({
                     {locale === "fr"
                       ? `DAF externalis\u00e9 ${loc.cityFr}`
                       : locale === "en"
-                        ? `Outsourced CFO ${loc.cityEn}`
+                        ? `Fractional CFO ${loc.cityEn}`
                         : `CFO externalizado ${loc.cityEs}`}
                   </span>
                   <span className="text-sm text-muted-foreground">

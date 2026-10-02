@@ -546,7 +546,7 @@ export default function DafPage({
               {locale === "fr"
                 ? "Vous cherchez un DAF externalisé ?"
                 : locale === "en"
-                  ? "Looking for an outsourced CFO?"
+                  ? "Looking for a Fractional CFO?"
                   : "¿Busca un CFO externalizado?"}
             </p>
             <p className="text-sm text-white/80 mb-5">
@@ -875,7 +875,7 @@ export default function DafPage({
               {locale === "fr"
                 ? "Décrivez votre contexte DAF externalisé en 2 minutes — réponse d'un associé sous 24 h ouvrées."
                 : locale === "en"
-                  ? "Describe your outsourced CFO need in 2 minutes — partner reply within 24 business hours."
+                  ? "Describe your Fractional CFO need in 2 minutes — partner reply within 24 business hours."
                   : "Describa su necesidad de CFO externalizado en 2 minutos — respuesta de un socio en 24 h hábiles."}
             </p>
             <a
@@ -1034,7 +1034,7 @@ export default function DafPage({
             {locale === "fr"
               ? "Un DAF externalis\u00e9 proche de chez vous"
               : locale === "en"
-                ? "An outsourced CFO near you"
+                ? "A Fractional CFO near you"
                 : "Un CFO externalizado cerca de usted"}
           </h2>
           <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 sm:mb-10 max-w-2xl">
@@ -1051,21 +1051,21 @@ export default function DafPage({
                 cityEn: "Barcelona",
                 cityEs: "Barcelona",
                 desc: locale === "fr" ? "Hub tech & startups internationales" : locale === "en" ? "Tech hub & international startups" : "Hub tech y startups internacionales",
-                href: locale === "fr" ? "/daf-externalise-barcelone" : locale === "en" ? "/en/outsourced-cfo-barcelona" : "/es/cfo-externalizado-barcelona",
+                href: locale === "fr" ? "/daf-externalise-barcelone" : locale === "en" ? "/en/fractional-cfo-barcelona" : "/es/cfo-externalizado-barcelona",
               },
               {
                 city: "Paris",
                 cityEn: "Paris",
                 cityEs: "Paris",
                 desc: locale === "fr" ? "Si\u00e8ges sociaux & scale-ups" : locale === "en" ? "Headquarters & scale-ups" : "Sedes sociales y scale-ups",
-                href: locale === "fr" ? "/daf-externalise-paris" : locale === "en" ? "/en/outsourced-cfo-paris" : "/es/cfo-externalizado-paris",
+                href: locale === "fr" ? "/daf-externalise-paris" : locale === "en" ? "/en/fractional-cfo-paris" : "/es/cfo-externalizado-paris",
               },
               {
                 city: "Toulouse",
                 cityEn: "Toulouse",
                 cityEs: "Toulouse",
                 desc: locale === "fr" ? "A\u00e9ronautique, sant\u00e9 & industrie" : locale === "en" ? "Aerospace, health & industry" : "Aeron\u00e1utica, salud e industria",
-                href: locale === "fr" ? "/daf-externalise-toulouse" : locale === "en" ? "/en/outsourced-cfo-toulouse" : "/es/cfo-externalizado-toulouse",
+                href: locale === "fr" ? "/daf-externalise-toulouse" : locale === "en" ? "/en/fractional-cfo-toulouse" : "/es/cfo-externalizado-toulouse",
               },
             ].map((loc, i) => (
               <Link

@@ -1775,7 +1775,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         "The first step is defining clear roles and responsibilities. In a small company, one person may wear many hats. As the business grows, specialization becomes important: accounting, treasury, controlling, FP&A (Financial Planning & Analysis), and strategic finance each require distinct skills.",
         "Process documentation is another critical element. Standard operating procedures (SOPs) for month-end close, budgeting cycles, and financial reporting ensure consistency and make it easier to onboard new team members or work with external partners.",
         "Technology plays a central role in modern finance organization. The right tools can automate routine tasks, improve data accuracy, and provide real-time visibility into financial performance. A well-integrated tech stack reduces manual work and enables data-driven decision-making.",
-        "For many growing companies, a hybrid model works best: an outsourced CFO provides strategic oversight and expertise, while an internal finance team handles day-to-day operations. This approach combines flexibility with continuity, and is the model we champion at Iter Advisors.",
+        "For many growing companies, a hybrid model works best: a Fractional CFO provides strategic oversight and expertise, while an internal finance team handles day-to-day operations. This approach combines flexibility with continuity, and is the model we champion at Iter Advisors.",
       ],
     },
     // ─── FINAL-04: top 4 FR articles translated to EN ─────────────────
@@ -1846,7 +1846,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       h1: "Fractional CFO Cost in 2026: Day Rates, Packages and ROI",
       publishedDate: "2026-05-12",
       author: "Sébastien Doat",
-      category: "CFO outsourcing",
+      category: "Fractional CFO",
       htmlContent: `<p><strong>Cost is the first question every founder asks when considering a Fractional CFO.</strong> It's a fair question — financial leadership is a strategic line item, and hiring a full-time CFO is one of the most expensive moves an SME can make. This guide gives you the real 2026 numbers.</p>
 <h2 id="day-rate">Day rate: the building block</h2>
 <p>In 2026, the day rate for a senior <a href="/en/fractional-cfo">Fractional CFO</a> in France &amp; Spain ranges from <strong>€750 to €1,250 ex VAT</strong>. Variation depends on seniority (10 vs 20+ years), sector expertise (SaaS, biotech, industry) and complexity of the engagement.</p>
@@ -1889,7 +1889,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       updatedDate: "2026-09-13",
       publishedDate: "2026-05-11",
       author: "Sébastien Doat",
-      category: "CFO outsourcing",
+      category: "Fractional CFO",
       htmlContent: `<p>Your business is growing, the finance topics are getting harder, and you've realised your accountant and your CEO can no longer carry the load alone. You need a CFO. The question is: full-time hire, or <a href="/en/fractional-cfo">Fractional CFO</a>?</p>
 <p>This guide breaks down the trade-offs across cost, flexibility, expertise and ROI — and gives you a clear answer based on your stage.</p>
 <h2 id="cost">Cost: a 30-60% gap</h2>

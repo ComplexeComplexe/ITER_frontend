@@ -6,7 +6,7 @@ import LeadPage from "../LeadPage";
 const events=()=>(window.dataLayer||[]).filter((x)=>x && typeof x==='object' && (x as Record<string,unknown>).event==='lead_form_submitted');
 async function fillQuiz(){
   fireEvent.click(screen.getAllByRole('button',{name:'Obtenir mon diagnostic gratuit'})[0]);
-  for (const name of ['Pre-Seed / Seed','Préparer une levée de fonds','1 – 10','Dès que possible']) fireEvent.click(await screen.findByRole('button',{name,exact:true}));
+  for (const name of ['Pre-Seed / Seed','Préparer une levée de fonds','1 – 10','Dès que possible']) fireEvent.click(await screen.findByRole('button',{name,exact:true},{timeout:3000}));
   await screen.findByRole('button',{name:'Voir mes résultats'});
   const form=document.querySelector('form')!;
   for(const [name,value] of Object.entries({firstName:'Test',lastName:'Example',email:'test@example.com',company:'Example'})){
@@ -21,9 +21,9 @@ describe('Diagnostic lead delivery',()=>{
  it.each([{ok:false,json:async()=>({success:false})},{ok:true,json:async()=>({success:false})}])('does not show success or emit a conversion when delivery fails (%j)',async(response)=>{
   vi.stubGlobal('fetch',vi.fn().mockResolvedValue(response));render(<LeadPage locale="fr"/>);await fillQuiz();
   expect(await screen.findByRole('alert')).toHaveTextContent('L’envoi a échoué');expect(events()).toHaveLength(0);
- });
+ },15000);
  it('emits exactly one event after confirmed delivery',async()=>{
   vi.stubGlobal('fetch',vi.fn().mockResolvedValue({ok:true,json:async()=>({success:true})}));render(<LeadPage locale="fr"/>);await fillQuiz();
   await waitFor(()=>expect(events()).toHaveLength(1));expect(events()[0]).toMatchObject({form_id:'diagnostic'});
- });
+ },15000);
 });

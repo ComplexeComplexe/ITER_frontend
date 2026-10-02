@@ -163,6 +163,11 @@ export default function CaseStudiesPage({
           <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
             {t.intro}
           </p>
+          <p className="mt-5 text-sm text-muted-foreground">
+            <Link href={locale === "fr" ? "/clients" : locale === "en" ? "/en/clients" : "/es/clientes"} className="text-iter-violet underline underline-offset-2">
+              {locale === "fr" ? "Voir les entreprises accompagnées et distinguer les références des cas détaillés" : locale === "en" ? "View company references alongside the documented case studies" : "Ver las empresas acompañadas y los casos documentados"}
+            </Link>
+          </p>
 
 
         </div>

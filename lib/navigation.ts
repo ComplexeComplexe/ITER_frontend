@@ -206,7 +206,7 @@ export const footerContent: Record<Locale, FooterContent> = {
   },
   en: {
     description:
-      "Iter Advisors, with teams in Barcelona and Paris, serving Toulouse remotely or on agreed visits, specializes in outsourced CFO services, strategic consulting and support for investments and mergers & acquisitions.",
+      "Iter Advisors, with teams in Barcelona and Paris, serving Toulouse remotely or on agreed visits, specializes in Fractional CFO services, strategic consulting and support for investments and mergers & acquisitions.",
     copyright: "Copyright \u00A9 2025-2026 Iter Advisors. All Rights Reserved.",
     trustfolio: `5/5 rating based on ${TRUSTFOLIO_REVIEW_COUNT} reviews on our profile`,
     legalLinks: [
@@ -227,9 +227,9 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Fractional HR Director", href: "/en/hr-outsourcing/shared-time" },
     ],
     locations: [
-      { city: "Barcelona", country: "Spain", href: "/en/outsourced-cfo-barcelona" },
-      { city: "Paris", country: "France", href: "/en/outsourced-cfo-paris" },
-      { city: "Toulouse", country: "France", href: "/en/outsourced-cfo-toulouse" },
+      { city: "Barcelona", country: "Spain", href: "/en/fractional-cfo-barcelona" },
+      { city: "Paris", country: "France", href: "/en/fractional-cfo-paris" },
+      { city: "Toulouse", country: "France", href: "/en/fractional-cfo-toulouse" },
     ],
   },
   es: {

@@ -267,7 +267,7 @@ export default function ServiceSinglePage({
                   locale === "fr"
                     ? "DAF externalisé"
                     : locale === "en"
-                      ? "Outsourced CFO"
+                      ? "Fractional CFO"
                       : "DAF externalizado",
                 href: dafClusterHref("", locale),
                 icon: TrendingUp,

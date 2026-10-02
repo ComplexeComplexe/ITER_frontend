@@ -251,7 +251,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                   locale === "fr"
                     ? "DAF externalisé"
                     : locale === "en"
-                      ? "Outsourced CFO"
+                      ? "Fractional CFO"
                       : "DAF externalizado",
                 href:
                   dafClusterHref("", locale),
@@ -262,7 +262,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                   locale === "fr"
                     ? "DAF à temps partagé"
                     : locale === "en"
-                      ? "Fractional CFO"
+                      ? "Recurring Fractional CFO"
                       : "DAF a tiempo compartido",
                 href:
                   dafClusterHref("temps-partage", locale),

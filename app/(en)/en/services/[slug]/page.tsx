@@ -31,7 +31,7 @@ const fallbackDescriptions: Record<ServicePageSlug, string> = {
   "previsionnel-tresorerie":
     "Build a 13-week rolling cash flow forecast. Anticipate cash tensions, optimize working capital and secure your runway. 50+ SMEs supported.",
   "gestion-financiere-externalisee":
-    "Outsourced CFO from 2 days/month. Monthly reporting, budget management and financial strategy for startups and SMEs. Free quote.",
+    "Fractional CFO from 2 days/month. Monthly reporting, budget management and financial strategy for startups and SMEs. Free quote.",
   "accompagnement-levee-de-fond":
     "End-to-end fundraising: business plan, data room, due diligence and investor negotiations. 30+ rounds supported, 100M EUR+ raised.",
   "comptabilite-externalisation":

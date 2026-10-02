@@ -751,7 +751,7 @@ const nextConfig: NextConfig = {
       // A. Locale-prefixed geo pages that used the wrong slug convention.
       {
         source: "/en/daf-externalise-paris",
-        destination: "/en/outsourced-cfo-paris",
+        destination: "/en/fractional-cfo-paris",
         permanent: true,
       },
       {
@@ -1118,7 +1118,9 @@ const nextConfig: NextConfig = {
       { source: "/es/externalizacion-daf/metier",                        destination: "/es/externalizacion-daf/funciones",                 permanent: true },
       { source: "/es/clients",                                            destination: "/es/clientes",                                     permanent: true },
       { source: "/es/externalizacion-daf/transition",                    destination: "/es/externalizacion-daf/transicion",                permanent: true },
-      { source: "/en/fractional-cfo-barcelona",                          destination: "/en/outsourced-cfo-barcelona",                     permanent: true },
+      { source: "/en/outsourced-cfo-barcelona", destination: "/en/fractional-cfo-barcelona", statusCode: 301 },
+      { source: "/en/outsourced-cfo-paris", destination: "/en/fractional-cfo-paris", statusCode: 301 },
+      { source: "/en/outsourced-cfo-toulouse", destination: "/en/fractional-cfo-toulouse", statusCode: 301 },
       { source: "/en/ressources/blog/cout-daf-externalise-tarifs-prix-2026", destination: "/en/ressources/blog/fractional-cfo-cost-services-2026", permanent: true },
       { source: "/es/recursos/blog/cout-daf-externalise-tarifs-prix-2026",   destination: "/es/recursos/blog/cfo-externo-pymes-precio-2026",    permanent: true },
       { source: "/en/a-propos",                                          destination: "/en/about",                                        permanent: true },

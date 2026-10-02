@@ -1,3 +1,4 @@
+import { resolveBlogArticleHref } from "./path-localization";
 /**
  * Helper that assembles the blog listing from the static
  * `lib/content/blog-posts.ts` source (instead of Strapi). It returns
@@ -63,7 +64,10 @@ function buildMedia(slug: string, title: string): StrapiMedia {
  * `BlogListingPage` as the `articles` prop with no other changes.
  */
 export function getStaticBlogListing(locale: Locale): StrapiBlogArticle[] {
-  const entries = Object.entries(blogPosts[locale] ?? {});
+  const entries = Object.entries(blogPosts[locale] ?? {}).filter(([slug]) => {
+    const href = resolveBlogArticleHref(locale, slug);
+    return href !== null && (locale === "fr" || href.startsWith(`/${locale}/`));
+  });
   const articles: StrapiBlogArticle[] = entries.map(([slug, post]) => {
     const description = post.meta?.description ?? "";
     const publishedDate = post.publishedDate ?? "";

@@ -1,5 +1,7 @@
 "use client";
 
+import { getDafOfferFacts } from "@/lib/content/offer-facts";
+import { getDafOffer } from "@/lib/content/daf-offer";
 import { pushLeadFormSubmitted } from "@/lib/analytics/leadForm";
 import { useState, useRef, FormEvent } from "react";
 import Image from "next/image";
@@ -171,7 +173,7 @@ const leadContent = {
     h1: "The best version of your financial management",
     h1Accent: "without the cost of a full-time hire.",
     subtitle:
-      "Assess your financial needs and discover how our outsourced CFOs can structure your growth.",
+      "Assess your financial needs and discover how our Fractional CFOs can structure your growth.",
     ctaPrimary: "Get my free assessment",
     ctaSecondary: "Book a meeting",
     trustLine: "companies supported",
@@ -183,7 +185,7 @@ const leadContent = {
       "Non-existent or approximate financial reporting",
       "Difficulty convincing investors and banks",
     ],
-    solutionTitle: "Iter Advisors, your outsourced CFO",
+    solutionTitle: "Iter Advisors, your Fractional CFO",
     solutionItems: [
       {
         icon: "chart",
@@ -275,20 +277,20 @@ const leadContent = {
     faqTitle: "Frequently asked questions",
     faqs: [
       {
-        q: "How much does an outsourced CFO cost?",
-        a: "Our plans start from 1 day per month. The rate depends on the seniority level and scope of work. Contact us for a personalized quote.",
+        q: "How much does a Fractional CFO cost?",
+        a: getDafOfferFacts("en").price,
       },
       {
         q: "What is the minimum commitment?",
-        a: "We offer flexible commitments with no minimum duration. You can adjust the volume month by month according to your needs.",
+        a: getDafOffer("en").commitment,
       },
       {
         q: "How does onboarding work?",
-        a: "Your outsourced CFO is operational from the first week. They integrate with your existing tools (Pennylane, Qonto, etc.) and attend your meetings.",
+        a: getDafOfferFacts("en").start,
       },
       {
         q: "What's the difference with an accounting firm?",
-        a: "An outsourced CFO is a financial strategist who drives your performance. They go far beyond accounting: forecasts, fundraising, KPIs, investor relations.",
+        a: "A Fractional CFO is a financial strategist who drives your performance. They go far beyond accounting: forecasts, fundraising, KPIs, investor relations.",
       },
     ],
     nextButton: "Next",

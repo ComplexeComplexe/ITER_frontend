@@ -32,8 +32,8 @@ const POPULAR_ARTICLES = {
     { href: "/ressources/blog/les-10-outils-pour-cfos-startup", title: "Les 10 outils pour CFO startup" },
   ],
   en: [
-    { href: "/en/ressources/blog/fractional-cfo-cost-services-2026", title: "Cost of Outsourced CFO" },
-    { href: "/en/ressources/blog/daf-externalise-vs-daf-salarie", title: "Outsourced CFO vs Employee" },
+    { href: "/en/ressources/blog/fractional-cfo-cost-services-2026", title: "Cost of Fractional CFO" },
+    { href: "/en/ressources/blog/daf-externalise-vs-daf-salarie", title: "Fractional CFO vs Employee" },
     { href: "/ressources/blog/checklist-due-diligence-levee-de-fonds", title: "Due Diligence & Fundraising" },
     { href: "/ressources/blog/daf-drh-externalises-synergie", title: "CFO & HR Director synergy" },
     { href: "/ressources/blog/les-10-outils-pour-cfos-startup", title: "10 tools for startup CFOs" },

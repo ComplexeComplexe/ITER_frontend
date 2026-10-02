@@ -130,21 +130,21 @@ const CAMPAIGN_PATH: Record<Locale, string> = {
   es: "campana",
 };
 
-// City landing pages: daf-externalise-{city} ↔ outsourced-cfo-{city} ↔ cfo-externalizado-{city}
+// City landing pages: daf-externalise-{city} ↔ fractional-cfo-{city} ↔ cfo-externalizado-{city}
 const CITY_PAGES: Record<string, Record<Locale, string>> = {
   barcelone: {
     fr: "daf-externalise-barcelone",
-    en: "outsourced-cfo-barcelona",
+    en: "fractional-cfo-barcelona",
     es: "cfo-externalizado-barcelona",
   },
   paris: {
     fr: "daf-externalise-paris",
-    en: "outsourced-cfo-paris",
+    en: "fractional-cfo-paris",
     es: "cfo-externalizado-paris",
   },
   toulouse: {
     fr: "daf-externalise-toulouse",
-    en: "outsourced-cfo-toulouse",
+    en: "fractional-cfo-toulouse",
     es: "cfo-externalizado-toulouse",
   },
 };
@@ -152,6 +152,10 @@ const CITY_PAGES: Record<string, Record<Locale, string>> = {
 const CITY_PAGE_LOOKUP = new Map<string, string>();
 for (const [key, paths] of Object.entries(CITY_PAGES)) {
   for (const v of Object.values(paths)) CITY_PAGE_LOOKUP.set(v, key);
+}
+
+for (const [legacy, city] of [["outsourced-cfo-barcelona", "barcelone"], ["outsourced-cfo-paris", "paris"], ["outsourced-cfo-toulouse", "toulouse"]]) {
+  CITY_PAGE_LOOKUP.set(legacy, city);
 }
 
 // Resources sub-paths that vary by locale (excluding blog/glossaire which have [slug] handling)
@@ -403,7 +407,7 @@ export function getLocalizedPath(pathname: string, targetLocale: Locale): string
     return `${prefix}/${CAMPAIGN_PATH[targetLocale]}`;
   }
 
-  // City landing pages: daf-externalise-{city} ↔ outsourced-cfo-{city} ↔ cfo-externalizado-{city}
+  // City landing pages: daf-externalise-{city} ↔ fractional-cfo-{city} ↔ cfo-externalizado-{city}
   if (segs.length === 1) {
     const cityKey = CITY_PAGE_LOOKUP.get(segs[0]);
     if (cityKey) return `${prefix}/${CITY_PAGES[cityKey][targetLocale]}`;

@@ -100,7 +100,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       content: [
         "Le DRH externalisé (ou directeur des ressources humaines externalisé) intervient au sein de votre entreprise sans en être salarié. Il assume les mêmes responsabilités qu'un DRH interne : stratégie RH, recrutement, gestion des talents, conformité sociale, relations avec les instances représentatives et pilotage de la fonction RH.",
         // R5-link-2: [[accompagnement levée de fonds|/services/accompagnement-levee-de-fond]]
-        "Cette solution s'adresse aux entreprises qui ont besoin d'une expertise RH de haut niveau sans recruter à temps plein. Le DRH externalisé peut intervenir à temps partagé (quelques jours par semaine ou par mois) ou sur des missions ponctuelles (audit, due diligence RH, [[accompagnement levée de fonds|/services/accompagnement-levee-de-fond]], etc.).",
+        "La [[définition du DRH externalisé|/ressources/glossaire/drh-externalise]] précise ce rôle de direction. Cette solution s'adresse aux entreprises qui ont besoin d'une expertise RH de haut niveau sans recruter à temps plein. Le DRH externalisé peut intervenir à temps partagé (quelques jours par semaine ou par mois) ou sur des missions ponctuelles (audit, due diligence RH, [[accompagnement levée de fonds|/services/accompagnement-levee-de-fond]], etc.).",
         // Maillage (2026-08-02) — le cocon RH était isolé : les 4 pages de
         // service RH ne recevaient aucun lien depuis cette page pilier.
         "Concrètement, la mission se décline en quatre expertises que nous opérons séparément ou ensemble : la [[gestion de la paie et des charges sociales|/services/gestion-paie-charges-sociales]], le [[recrutement et l'acquisition de talents|/services/recrutement-talent-acquisition]], la [[conformité au droit du travail|/services/conformite-droit-travail]] et la [[formation et le développement des équipes|/services/formation-developpement]].",
@@ -131,7 +131,7 @@ export const drhContent: Record<Locale, DrhContent> = {
         {
           // R5-link-5: [[outils SIRH|/ressources/outils]]
           title: "Réseau et outils mutualisés",
-          text: "Accès à notre écosystème : cabinets de recrutement partenaires, [[outils SIRH|/ressources/outils]] négociés en volume, bases de CV pré-qualifiées, et benchmarks de rémunération par secteur.",
+          text: "Le choix d’un [[outil SIRH|/ressources/outils]] dépend de vos processus, de la gestion de la paie et des droits d’accès. Notre [[analyse de Factorial|/ressources/outils/factorial]] présente les critères à vérifier avant de retenir une solution.",
         },
       ],
     },
@@ -365,7 +365,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       heading: "What is an outsourced HR director?",
       content: [
         "An outsourced HR director (or fractional Chief People Officer) works within your company without being an employee. They assume the same responsibilities as an internal HR director: HR strategy, recruitment, talent management, social compliance, relations with employee representatives and HR function leadership.",
-        "This solution is for companies that need high-level HR expertise without a full-time hire. The outsourced HR director can work on a shared-time basis (e.g. a few days per week or month) or on one-off missions (audit, HR due diligence, [[fundraising support|/services/accompagnement-levee-de-fond]], etc.).",
+        "This solution is for companies that need high-level HR expertise without a full-time hire. The outsourced HR director can work on a shared-time basis (e.g. a few days per week or month) or on one-off missions (audit, HR due diligence, [[fundraising support|/en/services/fund-raising-support]], etc.).",
       ],
     },
     advantages: {
@@ -381,15 +381,15 @@ export const drhContent: Record<Locale, DrhContent> = {
         },
         {
           title: "Multi-sector expertise",
-          text: "With [[85+ companies supported|/ressources/cas-clients]], our HR directors work across 5 sectors (SaaS, Deep-Tech, e-Commerce, Industry, Services) and bring cross-sector best practices to your organisation.",
+          text: "With [[85+ companies supported|/en/ressources/cas-clients]], our HR directors work across 5 sectors (SaaS, Deep-Tech, e-Commerce, Industry, Services) and bring cross-sector best practices to your organisation.",
         },
         {
           title: "Operational from day one",
-          text: "Unlike an internal hire (3 to 6 months of onboarding), the outsourced HR director is productive within 1 to 2 weeks thanks to [[structured recruitment processes|/ressources/blog]] and proven playbooks.",
+          text: "Unlike an internal hire (3 to 6 months of onboarding), the outsourced HR director is productive within 1 to 2 weeks thanks to [[structured recruitment processes|/en/ressources/blog]] and proven playbooks.",
         },
         {
           title: "Shared network and tools",
-          text: "Access to our ecosystem: partner recruitment firms, [[HRIS tools|/ressources/outils]] negotiated in volume, pre-qualified CV pools, and sector-specific compensation benchmarks.",
+          text: "Access to our ecosystem: partner recruitment firms, [[HRIS tools|/en/ressources/tools]] negotiated in volume, pre-qualified CV pools, and sector-specific compensation benchmarks.",
         },
       ],
     },
@@ -426,7 +426,7 @@ export const drhContent: Record<Locale, DrhContent> = {
         "Comparison: a full-time in-house HR director costs €80,000 to €150,000 including charges per year; compare equivalent scope and availability.",
       engagement: "6-month minimum commitment, cancellable with 2 months' notice.",
       closingText:
-        "Compare with the cost of an [[outsourced CFO|/daf-externalise]] — our finance and HR packages are designed to complement each other.",
+        "Compare with the cost of a [[Fractional CFO|/en/fractional-cfo]] — our finance and HR packages are designed to complement each other.",
     },
     vsInternal: {
       heading: "Outsourced HR vs in-house HR: the comparison",
@@ -442,40 +442,14 @@ export const drhContent: Record<Locale, DrhContent> = {
         ],
       },
       closingText:
-        "Our outsourced HR director works hand in hand with your [[accountant|/services/comptabilite-externalisation]] to ensure social and fiscal compliance.",
+        "Our outsourced HR director works hand in hand with your [[accountant|/en/services/outsource-your-accounting]] to ensure social and fiscal compliance.",
     },
     testimonials: {
       heading: "What our clients say about their outsourced HR director",
-      items: [
-        {
-          quote:
-            "We went from 15 to 45 people in 8 months. Our Iter Advisors HR director structured our entire recruitment process, set up quality onboarding, and negotiated our group insurance contracts in volume. Without her, I would have spent 30% of my time on HR instead of driving growth.",
-          author: "Marc D.",
-          role: "CEO",
-          company: "EdTech",
-          city: "Paris",
-          formula: "Growth package, 18 months",
-        },
-        {
-          quote:
-            "We integrated 3 teams after an acquisition. The HR director harmonised pay grids, aligned cultures, and handled all IRP negotiations in 6 months. Remarkable work in a very tense context.",
-          author: "Sophie L.",
-          role: "MD",
-          company: "Industry",
-          city: "Toulouse",
-        },
-        {
-          quote:
-            "In preparation for our Series B, our HR director built the entire HR data room (org chart, payroll, recruitment plan) and reassured our investors on social compliance. It was a key point in the due diligence.",
-          author: "Karim B.",
-          role: "CEO",
-          company: "HealthTech",
-          city: "Barcelona",
-        },
-      ],
+      items: [],
       ctaText:
-        "Discover [[our detailed case studies|/ressources/cas-clients]] to see how our HR directors have supported growing SMEs and startups.",
-      ctaHref: "/ressources/cas-clients",
+        "Discover [[our detailed case studies|/en/ressources/cas-clients]] to see how our HR directors have supported growing SMEs and startups.",
+      ctaHref: "/en/ressources/cas-clients",
     },
     faq: [
       {
@@ -511,7 +485,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       {
         question: "Does the outsourced HR director handle payroll?",
         answer:
-          "The outsourced HR director oversees and coordinates payroll (checking payslips, monitoring charges, arbitrating complex cases) but does not process it directly. They work with your [[accountant or our payroll partner|/services/comptabilite-externalisation]] to ensure compliance. This separation of roles ensures quality control without conflict of interest.",
+          "The outsourced HR director oversees and coordinates payroll (checking payslips, monitoring charges, arbitrating complex cases) but does not process it directly. They work with your [[accountant or our payroll partner|/en/services/outsource-your-accounting]] to ensure compliance. This separation of roles ensures quality control without conflict of interest.",
       },
       {
         question: "What is the difference between an outsourced HR director and a freelance HR consultant?",
@@ -555,7 +529,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       heading: "¿Qué es un director de RRHH externalizado?",
       content: [
         "El director de RRHH externalizado interviene en su empresa sin ser empleado. Asume las mismas responsabilidades que un director de RRHH interno: estrategia de personas, reclutamiento, gestión del talento, cumplimiento normativo laboral, relaciones con la representación del personal y pilotaje de la función RRHH.",
-        "Esta solución está dirigida a empresas que necesitan una experiencia RRHH de alto nivel sin contratar a tiempo completo. El director de RRHH externalizado puede intervenir a tiempo compartido (por ejemplo, unos días por semana o al mes) o en misiones puntuales (auditoría, due diligence RRHH, [[acompañamiento en financiación|/services/accompagnement-levee-de-fond]], etc.).",
+        "Esta solución está dirigida a empresas que necesitan una experiencia RRHH de alto nivel sin contratar a tiempo completo. El director de RRHH externalizado puede intervenir a tiempo compartido (por ejemplo, unos días por semana o al mes) o en misiones puntuales (auditoría, due diligence RRHH, [[acompañamiento en financiación|/es/services/soporte-financiacion]], etc.).",
       ],
     },
     advantages: {
@@ -571,15 +545,15 @@ export const drhContent: Record<Locale, DrhContent> = {
         },
         {
           title: "Experiencia multisectorial",
-          text: "Con [[85+ empresas acompañadas|/ressources/cas-clients]], nuestros directores de RRHH trabajan en 5 sectores (SaaS, Deep-Tech, e-Commerce, Industria, Servicios) y aplican las mejores prácticas intersectoriales.",
+          text: "Con [[85+ empresas acompañadas|/es/recursos/casos-de-exito]], nuestros directores de RRHH trabajan en 5 sectores (SaaS, Deep-Tech, e-Commerce, Industria, Servicios) y aplican las mejores prácticas intersectoriales.",
         },
         {
           title: "Operativo desde el primer día",
-          text: "A diferencia de una contratación interna (3 a 6 meses de incorporación), el director de RRHH externalizado es productivo en 1 a 2 semanas gracias a [[procesos de contratación estructurados|/ressources/blog]] y playbooks probados.",
+          text: "A diferencia de una contratación interna (3 a 6 meses de incorporación), el director de RRHH externalizado es productivo en 1 a 2 semanas gracias a [[procesos de contratación estructurados|/es/recursos/blog]] y playbooks probados.",
         },
         {
           title: "Red y herramientas compartidas",
-          text: "Acceso a nuestro ecosistema: empresas de selección asociadas, [[herramientas SIRH|/ressources/outils]] negociadas en volumen, bases de CV precalificados y benchmarks de remuneración por sector.",
+          text: "Acceso a nuestro ecosistema: empresas de selección asociadas, [[herramientas SIRH|/es/recursos/herramientas]] negociadas en volumen, bases de CV precalificados y benchmarks de remuneración por sector.",
         },
       ],
     },
@@ -616,7 +590,7 @@ export const drhContent: Record<Locale, DrhContent> = {
         "Comparativa: un director de RRHH a tiempo completo cuesta de 80 000 a 150 000 € con cargas por año, entre 3 y 5 veces más que un RRHH externalizado.",
       engagement: "Compromiso mínimo de 6 meses, rescindible con 2 meses de preaviso.",
       closingText:
-        "Compare con el coste de un [[DAF externalizado|/daf-externalise]] — nuestras ofertas de finanzas y RRHH están diseñadas para complementarse.",
+        "Compare con el coste de un [[DAF externalizado|/es/externalizacion-daf]] — nuestras ofertas de finanzas y RRHH están diseñadas para complementarse.",
     },
     vsInternal: {
       heading: "RRHH externalizado vs director de RRHH interno: la comparativa",
@@ -632,40 +606,14 @@ export const drhContent: Record<Locale, DrhContent> = {
         ],
       },
       closingText:
-        "Nuestro director de RRHH externalizado trabaja mano a mano con su [[asesor fiscal|/services/comptabilite-externalisation]] para garantizar el cumplimiento social y fiscal.",
+        "Nuestro director de RRHH externalizado trabaja mano a mano con su [[asesor fiscal|/es/services/externalizar-contabilidad]] para garantizar el cumplimiento social y fiscal.",
     },
     testimonials: {
       heading: "Lo que nuestros clientes dicen de su director de RRHH externalizado",
-      items: [
-        {
-          quote:
-            "Pasamos de 15 a 45 personas en 8 meses. Nuestra directora de RRHH externalizada de Iter Advisors estructuró todo nuestro proceso de contratación, implantó un onboarding de calidad y negoció nuestros contratos de seguro médico en volumen. Sin ella, habría dedicado el 30 % de mi tiempo a temas de RRHH en lugar de impulsar el crecimiento.",
-          author: "Marc D.",
-          role: "CEO",
-          company: "EdTech",
-          city: "París",
-          formula: "RRHH externalizado Crecimiento, 18 meses",
-        },
-        {
-          quote:
-            "Integramos 3 equipos tras una adquisición. La directora de RRHH armonizó las escalas salariales, alineó las culturas y gestionó todas las negociaciones con los representantes de los trabajadores en 6 meses. Un trabajo sobresaliente en un contexto muy tenso.",
-          author: "Sophie L.",
-          role: "DG",
-          company: "Industria",
-          city: "Toulouse",
-        },
-        {
-          quote:
-            "En preparación de nuestra Serie B, nuestra directora de RRHH construyó todo el data room de RRHH (organigrama, masa salarial, plan de contratación) y tranquilizó a nuestros inversores sobre el cumplimiento social. Fue un punto clave en la due diligence.",
-          author: "Karim B.",
-          role: "CEO",
-          company: "HealthTech",
-          city: "Barcelona",
-        },
-      ],
+      items: [],
       ctaText:
-        "Descubra [[nuestros casos de clientes detallados|/ressources/cas-clients]] para ver cómo nuestros directores de RRHH han apoyado a pymes y startups en crecimiento.",
-      ctaHref: "/ressources/cas-clients",
+        "Descubra [[nuestros casos de clientes detallados|/es/recursos/casos-de-exito]] para ver cómo nuestros directores de RRHH han apoyado a pymes y startups en crecimiento.",
+      ctaHref: "/es/recursos/casos-de-exito",
     },
     faq: [
       {
@@ -701,7 +649,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       {
         question: "¿El director de RRHH externalizado gestiona las nóminas?",
         answer:
-          "El director de RRHH externalizado supervisa y coordina las nóminas (verificación de recibos de salario, control de cargas, arbitraje en casos complejos) pero no las procesa directamente. Trabaja con su [[asesor fiscal o nuestro socio de nóminas|/services/comptabilite-externalisation]] para garantizar el cumplimiento. Esta separación de funciones garantiza un control de calidad sin conflicto de intereses.",
+          "El director de RRHH externalizado supervisa y coordina las nóminas (verificación de recibos de salario, control de cargas, arbitraje en casos complejos) pero no las procesa directamente. Trabaja con su [[asesor fiscal o nuestro socio de nóminas|/es/services/externalizar-contabilidad]] para garantizar el cumplimiento. Esta separación de funciones garantiza un control de calidad sin conflicto de intereses.",
       },
       {
         question: "¿Cuál es la diferencia entre un director de RRHH externalizado y un consultor freelance de RRHH?",
@@ -724,5 +672,36 @@ export const drhContent: Record<Locale, DrhContent> = {
 };
 
 export function getDrhContent(locale: Locale): DrhContent {
-  return drhContent[locale];
+  const t = drhContent[locale];
+  if (locale === "fr") return t;
+  const english = locale === "en";
+  const terms = english
+    ? "The HR proposal specifies deliverables, working cadence, budget, duration, notice and adjustment terms. Finance engagement conditions do not automatically apply to HR."
+    : "La propuesta de RRHH especifica los entregables, el ritmo de trabajo, el presupuesto, la duración, el preaviso y las condiciones de ajuste. Las condiciones de Finanzas no se aplican automáticamente a RRHH.";
+  return {
+    ...t,
+    advantages: { ...t.advantages, items: [
+      { title: english ? "A defined scope" : "Un alcance definido", text: terms },
+      { title: english ? "Responsibilities agreed upfront" : "Responsabilidades acordadas", text: english ? "Your company retains its employer decisions. The HR lead prepares options and coordinates managers and specialist advisers within the agreed mandate." : "La empresa conserva sus decisiones como empleador. El responsable de RRHH prepara opciones y coordina a los managers y asesores especializados dentro del mandato acordado." },
+      { title: english ? "Onboarding based on your situation" : "Incorporación según su situación", text: english ? "Priorities, access to information and availability are reviewed before an implementation schedule is agreed. No immediate operational outcome is guaranteed." : "Las prioridades, el acceso a la información y la disponibilidad se revisan antes de acordar el calendario. No se garantiza un resultado operativo inmediato." },
+      { title: english ? "Tools fitted to your processes" : "Herramientas adaptadas a sus procesos", text: english ? "An HRIS is selected according to your processes, access rights and payroll provider. Listing a tool does not imply a negotiated discount or a certified partnership." : "El SIRH se elige según los procesos, los derechos de acceso y el proveedor de nóminas. La mención de una herramienta no implica un descuento negociado ni una certificación." },
+    ] },
+    pricing: {
+      ...t.pricing,
+      heading: english ? "Budget and terms of your HR engagement" : "Presupuesto y condiciones de la misión de RRHH",
+      table: { headers: english ? ["Scope", "Working cadence", "Deliverables", "Budget"] : ["Alcance", "Ritmo", "Entregables", "Presupuesto"], rows: [[english ? "Agreed mandate" : "Mandato acordado", english ? "Defined during scoping" : "Definido al acordar el alcance", english ? "Specified in the proposal" : "Detallados en la propuesta", english ? "Individual quotation" : "Presupuesto individual"]] },
+      footnote: terms, comparison: english ? "Compare equivalent responsibilities and availability before comparing costs." : "Compare las responsabilidades y la disponibilidad a un alcance equivalente antes de comparar costes.", engagement: terms,
+    },
+    vsInternal: { ...t.vsInternal, table: {
+      headers: english ? ["Criterion", "External HR lead", "Internal HR lead"] : ["Criterio", "Responsable externo", "Responsable interno"],
+      rows: english ? [["Scope", "Agreed priorities and deliverables", "Ongoing organisational responsibility"], ["Availability", "Working cadence agreed in the proposal", "Employment contract and organisation"], ["Budget", "Quotation for the agreed scope", "Employer cost and recruitment"]] : [["Alcance", "Prioridades y entregables acordados", "Responsabilidad permanente"], ["Disponibilidad", "Ritmo acordado en la propuesta", "Contrato y organización"], ["Presupuesto", "Presupuesto según alcance", "Coste del empleador y selección"]],
+    } },
+    testimonials: { ...t.testimonials, heading: english ? "Company references" : "Referencias de empresas", ctaText: english ? "View [[documented company references|/en/ressources/cas-clients]]. Finance cases do not establish outcomes for an HR engagement." : "Consulte las [[referencias documentadas|/es/recursos/casos-de-exito]]. Los casos de Finanzas no acreditan resultados de una misión de RRHH." },
+    faq: t.faq.map(item => {
+      if (/cost|budget|commitment|cuánto cuesta|coste|precio|compromiso/i.test(item.question)) return { ...item, answer: terms };
+      if (/freelance/i.test(item.question)) return { ...item, answer: english ? "Compare the named expert, their availability, the scope and the arrangements for continuity. A firm or an independent consultant may be suitable depending on your needs; assess the actual proposal." : "Compare el experto asignado, su disponibilidad, el alcance y la continuidad prevista. Un gabinete o un profesional independiente pueden ser adecuados según la necesidad; revise la propuesta concreta." };
+      return item;
+    }),
+  };
+
 }

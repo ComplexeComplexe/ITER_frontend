@@ -571,7 +571,7 @@ export default function DrhPage({
                   locale === "fr"
                     ? "DAF externalisé"
                     : locale === "en"
-                      ? "Outsourced CFO"
+                      ? "Fractional CFO"
                       : "DAF externalizado",
                 // SEO-ULT §4b (2026-08-15) — ces href étaient composés en
                 // préfixant le slug français ou anglais par la locale. Aucune

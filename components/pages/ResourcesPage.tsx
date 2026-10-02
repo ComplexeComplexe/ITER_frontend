@@ -1,3 +1,4 @@
+import { resolveBlogArticleHref } from "@/lib/path-localization";
 import { Locale } from "@/lib/i18n";
 import { getResourcesContent } from "@/lib/content/resources";
 import type { CmsNavItem } from "@/lib/static-content";
@@ -60,10 +61,7 @@ export default function ResourcesPage({
           // locale is narrowed to "en" | "es" here (FR returns early above)
           // SEO-ULT §4 (2026-08-15) — même correctif que BlogListingPage :
           // la convention ES est /es/recursos/, le gabarit produisait un 308.
-          href:
-            locale === "es"
-              ? `/es/recursos/blog/${article.slug}`
-              : `/${locale}/ressources/blog/${article.slug}`,
+          href: resolveBlogArticleHref(locale, article.slug)!,
           image: featured?.url || "/images/og-logo.png", // Ahrefs T-404 (2026-06-08): placeholder.webp missing → og-default
           alt: featured?.alternativeText || article.title,
           tag: newsTag,

@@ -932,7 +932,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
           content: [
             "Positive EBITDA means generating value from operations. Negative EBITDA signals distress.",
             "EBITDA margin (EBITDA/Revenue) indicates operational profitability. 15-20% is good for most sectors; SaaS typically targets 20%+.",
-            "An **[Outsourced CFO](/en/fractional-cfo)** can help calculate and contextualize your EBITDA within your industry and identify improvement levers.",
+            "An **[Fractional CFO](/en/fractional-cfo)** can help calculate and contextualize your EBITDA within your industry and identify improvement levers.",
           ],
         },
         {
@@ -999,7 +999,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
           content: [
             "A **fractional CFO** is a senior CFO who works for several companies at once, a few days a month each. The model gives a company executive-level financial leadership without the cost of a full-time hire, and it is now common in startups and SMEs across Europe and North America.",
             "It suits companies that need the judgement of a CFO but not the presence of one every day — typically those preparing a funding round, coming out of one, or running a finance function that has outgrown its bookkeeping.",
-            "Iter Advisors provides fractional CFOs to companies in France and Spain. Our **[outsourced CFO offering](/en/fractional-cfo)** sets out how the engagements work, and our **[shared-time CFO page](/en/fractional-cfo/shared-time)** covers the recurring format specifically.",
+            "Iter Advisors provides fractional CFOs to companies in France and Spain. Our **[Fractional CFO offering](/en/fractional-cfo)** sets out how the engagements work, and our **[shared-time CFO page](/en/fractional-cfo/shared-time)** covers the recurring format specifically.",
           ],
         },
         {
@@ -1009,7 +1009,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
             "**What is the difference between a CFO and a CEO?** The CEO runs the company and owns its overall direction. The CFO runs the finance function and owns the financial consequences of that direction. The CFO reports to the CEO.",
             "**Is a CFO the same as an accountant?** No. An accountant records and reports transactions. A CFO uses that record to plan, decide and raise capital. Many CFOs began as accountants, but the roles are distinct.",
             "**What is the difference between CFO and CFA?** CFA (Chartered Financial Analyst) is a professional certification, mostly held in asset management and investment analysis. CFO is a position on the executive team. The two are unrelated.",
-            "**Can a CFO be part-time or outsourced?** Yes. Fractional and outsourced CFO arrangements are established practice, particularly for companies below the size that justifies a full-time hire.",
+            "**Can a CFO be part-time or outsourced?** Yes. Fractional CFO arrangements are established practice, particularly for companies below the size that justifies a full-time hire.",
           ],
         },
       ],

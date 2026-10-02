@@ -1,5 +1,7 @@
 "use client";
 
+import { getDafOfferFacts } from "@/lib/content/offer-facts";
+import { getDafOffer } from "@/lib/content/daf-offer";
 import { pushLeadFormSubmitted } from "@/lib/analytics/leadForm";
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
@@ -302,7 +304,7 @@ const content: Record<
       title: "The best version of your finance department,",
       titleHighlight: "without the cost of a full-time hire.",
       subtitle:
-        "Assess your financial needs in 2 minutes and discover how our outsourced CFOs can structure your growth.",
+        "Assess your financial needs in 2 minutes and discover how our Fractional CFOs can structure your growth.",
       cta: "Get my free diagnostic",
       ctaSecondary: "Discover our services",
       socialProof: "Trusted by 100+ companies",
@@ -382,7 +384,7 @@ const content: Record<
           ],
         },
         {
-          question: "When would you like an outsourced CFO to be operational?",
+          question: "When would you like a Fractional CFO to be operational?",
           options: [
             { label: "As soon as possible", icon: "asap" },
             { label: "Within a month", icon: "month" },
@@ -444,20 +446,20 @@ const content: Record<
       title: "Everything you need to know",
       items: [
         {
-          q: "How much does an outsourced CFO cost?",
-          a: "Pricing depends on frequency (1 to 4 days/month) and complexity. A free initial diagnostic defines your needs and budget. On average, an outsourced CFO costs 3 to 5 times less than a full-time hire.",
+          q: "How much does a Fractional CFO cost?",
+          a: getDafOfferFacts("en").price,
         },
         {
           q: "What is the minimum commitment?",
-          a: "We offer flexible commitments starting from 3 months, renewable. No long-term contract required. The goal is to deliver value quickly and build trust over time.",
+          a: getDafOffer("en").commitment,
         },
         {
           q: "How does onboarding work?",
-          a: "Your outsourced CFO integrates with your existing tools (Slack, Google Workspace, ERP, accounting software) and joins key meetings. Within 2 weeks, they're fully operational.",
+          a: getDafOfferFacts("en").start,
         },
         {
           q: "What's the difference with an accounting firm?",
-          a: "An accounting firm produces your annual accounts and tax filings. An outsourced CFO drives your financial strategy: forecasting, fundraising, investor reporting, cash-flow optimization. Both are complementary.",
+          a: "An accounting firm produces your annual accounts and tax filings. A Fractional CFO drives your financial strategy: forecasting, fundraising, investor reporting, cash-flow optimization. Both are complementary.",
         },
         {
           q: "Do you work with early-stage startups?",
@@ -468,7 +470,7 @@ const content: Record<
     finalCta: {
       title: "Ready to structure your finance department?",
       subtitle:
-        "Get your free diagnostic in 2 minutes and discover how an outsourced CFO can accelerate your growth.",
+        "Get your free diagnostic in 2 minutes and discover how a Fractional CFO can accelerate your growth.",
       cta: "Start my diagnostic",
     },
   },

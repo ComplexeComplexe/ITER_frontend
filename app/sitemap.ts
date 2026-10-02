@@ -403,25 +403,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ── Pages locales DAF ─────────────────────────────────────────────────────
   entries.push(
     ...entryAllLocales(
-      { fr: "/daf-externalise-barcelone", en: "/outsourced-cfo-barcelona", es: "/cfo-externalizado-barcelona" },
+      { fr: "/daf-externalise-barcelone", en: "/fractional-cfo-barcelona", es: "/cfo-externalizado-barcelona" },
       D.local
     )
   );
   entries.push(
     ...entryAllLocales(
-      { fr: "/daf-externalise-paris", en: "/outsourced-cfo-paris", es: "/cfo-externalizado-paris" },
+      { fr: "/daf-externalise-paris", en: "/fractional-cfo-paris", es: "/cfo-externalizado-paris" },
       D.local
     )
   );
   entries.push(
     ...entryAllLocales(
-      { fr: "/daf-externalise-toulouse", en: "/outsourced-cfo-toulouse", es: "/cfo-externalizado-toulouse" },
+      { fr: "/daf-externalise-toulouse", en: "/fractional-cfo-toulouse", es: "/cfo-externalizado-toulouse" },
       D.local
     )
   );
 
   // AUDIT-2026-07-25: /en/fractional-cfo-barcelona removed — 301 redirect to
-  // /en/outsourced-cfo-barcelona (already in the Barcelona cluster above).
+  // /en/fractional-cfo-barcelona (already in the Barcelona cluster above).
 
   // ── Blog articles ─────────────────────────────────────────────────────────
   //
@@ -541,7 +541,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   entries.push(...DOCUMENTED_CASES.map(item => ({ url: `${BASE}${item.href}`, lastModified: item.modified })));
 
-  const transactionalUpdates = new Set(["/services/controle-de-gestion-externalise", "/services/comptabilite-externalisation", "/en/services/outsourced-management-control", "/es/services/control-gestion-externalizado", "/es/services/gestion-financiera-externalizada", "/es/services/externalizar-contabilidad", "/es/services/prevision-tesoreria", "/es/services/soporte-financiacion", "/services/gestion-financiere-externalisee", "/ressources/blog/les-10-outils-pour-cfos-startup", "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", "/daf-externalise", "/fractional-cfo-startups", "/daf-externalise-toulouse", "/en/outsourced-cfo-toulouse", "/es/cfo-externalizado-toulouse", "/contact", "/en/contact", "/es/contact", "/daf-externalise/temps-partage", "/daf-externalise/secteurs", "/services/accompagnement-levee-de-fond"]);
+  const transactionalUpdates = new Set(["/services/controle-de-gestion-externalise", "/services/comptabilite-externalisation", "/en/services/outsourced-management-control", "/es/services/control-gestion-externalizado", "/es/services/gestion-financiera-externalizada", "/es/services/externalizar-contabilidad", "/es/services/prevision-tesoreria", "/es/services/soporte-financiacion", "/services/gestion-financiere-externalisee", "/ressources/blog/les-10-outils-pour-cfos-startup", "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", "/daf-externalise", "/fractional-cfo-startups", "/daf-externalise-toulouse", "/en/fractional-cfo-toulouse", "/es/cfo-externalizado-toulouse", "/contact", "/en/contact", "/es/contact", "/daf-externalise/temps-partage", "/daf-externalise/secteurs", "/services/accompagnement-levee-de-fond"]);
   const consistencyUpdates = new Set([
     "",
     "/daf-externalise-toulouse",

@@ -1,3 +1,4 @@
+import { editorialLinkLabel, localizeEditorialLink } from "@/lib/editorial-links";
 import { Locale } from "@/lib/i18n";
 import { resolveBlogArticleHref } from "@/lib/path-localization";
 import PageLayout from "@/components/PageLayout";
@@ -42,7 +43,7 @@ const content: Record<
     featuredCta: string;
     /** Label for the most-read articles section. */
     mostReadLabel: string;
-    /** Most-read articles (static curation, updated manually). */
+    /** Recommended guides (static curation, updated manually). */
     mostReadArticles: { title: string; href: string; category: string }[];
     cards: { title: string; href: string; image: string }[];
   }
@@ -65,7 +66,7 @@ const content: Record<
     allLabel: "Tous",
     featuredEyebrow: "À la une",
     featuredCta: "Lire l’article",
-    mostReadLabel: "Les articles les plus lus",
+    mostReadLabel: "Guides à consulter",
     mostReadArticles: [
       { title: "Combien coûte un DAF externalisé en 2026 ?", href: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", category: "DAF externalisé" },
       { title: "DAF externalisé vs DAF salarié : analyse complète", href: "/ressources/blog/daf-externalise-vs-daf-salarie", category: "DAF externalisé" },
@@ -98,7 +99,7 @@ const content: Record<
     breadcrumbLabel: "Blog",
     h1: "The Iter Advisors journal",
     intro:
-      "Guides, comparisons and field notes for founders and CFOs. Written by our team of practising fractional CFOs, updated every month. Topics include outsourced CFO models, cash flow management, fundraising strategy, due diligence preparation, financial tool selection, SaaS KPIs, and HR outsourcing — all grounded in real client situations across France, Spain, and Belgium.",
+      "Guides and comparisons for founders and finance teams: Fractional CFO engagements, cash flow, fundraising preparation and financial tools. Client case studies are distinguished from illustrative examples. Check each article for its author, sources and publication date.",
     discover: "Read the article",
     discoverByKind: {
       guide: "Read the guide",
@@ -110,7 +111,7 @@ const content: Record<
     allLabel: "All",
     featuredEyebrow: "Featured",
     featuredCta: "Read the article",
-    mostReadLabel: "Most-read articles",
+    mostReadLabel: "Recommended guides",
     mostReadArticles: [
       { title: "Fractional CFO cost in 2026: pricing, packages and ROI", href: "/en/ressources/blog/fractional-cfo-cost-services-2026", category: "Fractional CFO" },
       { title: "Fractional CFO vs full-time CFO: complete comparison", href: "/en/ressources/blog/daf-externalise-vs-daf-salarie", category: "Fractional CFO" },
@@ -155,7 +156,7 @@ const content: Record<
     allLabel: "Todos",
     featuredEyebrow: "Destacado",
     featuredCta: "Leer el artículo",
-    mostReadLabel: "Los artículos más leídos",
+    mostReadLabel: "Guías recomendadas",
     mostReadArticles: [
       { title: "¿Cuánto cuesta un DAF externalizado en 2026?", href: "/es/recursos/blog/cfo-externo-pymes-precio-2026", category: "DAF externalizado" },
       { title: "DAF externalizado vs DAF asalariado: análisis completo", href: "/es/recursos/blog/daf-externalise-vs-daf-salarie", category: "DAF externalizado" },
@@ -255,7 +256,12 @@ export default function BlogListingPage({
   articles?: StrapiBlogArticle[] | null;
   cmsNavigation?: CmsNavItem[];
 }) {
-  const t = content[locale];
+  const base = content[locale];
+  const localizedCard = <T extends { title: string; href: string }>(card: T): T => {
+    const href = localizeEditorialLink(card.href, locale);
+    return { ...card, href, title: editorialLinkLabel(card.title, href, locale) };
+  };
+  const t = { ...base, mostReadArticles: base.mostReadArticles.map(localizedCard), cards: base.cards.map(localizedCard) };
 
   // Convert StrapiBlogArticle[] into the shape consumed by the client
   // components. We do this here (RSC) so the client never sees the raw
@@ -277,7 +283,7 @@ export default function BlogListingPage({
               ?.alternativeText || a.title;
           const kind = inferKind(a.title, a.category ?? "");
           return {
-            title: a.title,
+            title: editorialLinkLabel(a.title, resolveBlogArticleHref(locale, a.slug) as string, locale),
             href: resolveBlogArticleHref(locale, a.slug) as string,
             image: imageUrl || "/images/og-logo.png", // Ahrefs T-404 (2026-06-08): placeholder.webp missing → og-default
             alt,
@@ -327,7 +333,7 @@ export default function BlogListingPage({
         </div>
       </section>
 
-      {/* Most-read articles strip */}
+      {/* Recommended guides strip */}
       <section className="bg-muted/40 border-y border-border py-8">
         <div className="container">
           <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">

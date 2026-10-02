@@ -13,7 +13,7 @@ import TestimonialsListingPage from "@/components/pages/TestimonialsListingPage"
 const t = {
   en: {
     title: "Case Studies CFO | Iter Advisors",
-    description: `CFO outsourcing case studies: testimonials from SMEs, startups, scale-ups. 5/5 on Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} verified reviews). Engagements, financial leadership and documented results.`,
+    description: `Fractional CFO case studies: testimonials from SMEs, startups, scale-ups. 5/5 on Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} verified reviews). Engagements, financial leadership and documented results.`,
     breadcrumb: "Case Studies",
   },
 };

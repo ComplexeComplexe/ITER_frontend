@@ -29,7 +29,7 @@ for (const route of routes) {
   check(!/30\s*(?:à|-)\s*60\s*%|1\s*(?:à|-)\s*3\s*jours\s*\/\s*semaine|sous 5 jours|relations privilégiées/i.test(text), 'unsupported-promises-removed');
   if (route.path.includes('startups')) check(!/hreflang="(?:en-GB|es-ES)"/i.test(html), 'no-invented-translations');
   if (route.path.includes('paris')) {
-    check(/hreflang="en-GB" href="https:\/\/www\.iteradvisors\.com\/en\/outsourced-cfo-paris"/i.test(html) && /hreflang="es-ES" href="https:\/\/www\.iteradvisors\.com\/es\/cfo-externalizado-paris"/i.test(html), 'real-paris-alternates');
+    check(/hreflang="en-GB" href="https:\/\/www\.iteradvisors\.com\/en\/fractional-cfo-paris"/i.test(html) && /hreflang="es-ES" href="https:\/\/www\.iteradvisors\.com\/es\/cfo-externalizado-paris"/i.test(html), 'real-paris-alternates');
     check(schemas.some(s => s['@type'] === 'WebPage' && s.author?.['@id'] === origin + route.author), 'preserved-paris-author');
     check(!schemas.some(s => s['@type'] === 'ProfessionalService' && s.address?.addressLocality === 'Paris'), 'no-invented-paris-business-address');
     check(text.includes('pas présentée comme une référence parisienne'), 'case-location-qualification');

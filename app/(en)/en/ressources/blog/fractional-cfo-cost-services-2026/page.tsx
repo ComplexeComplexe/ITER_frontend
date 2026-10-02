@@ -72,7 +72,7 @@ export default function FractionalCfoCostServicesPage() {
           title: "Fractional CFO vs in-house CFO",
         },
         {
-          url: "/en/outsourced-cfo-paris",
+          url: "/en/fractional-cfo-paris",
           category: "Location",
           title: "Fractional CFO in Paris",
         },

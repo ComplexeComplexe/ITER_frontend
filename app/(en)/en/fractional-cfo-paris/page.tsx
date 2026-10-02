@@ -5,11 +5,11 @@ import { getCmsNavigation } from "@/lib/static-content";
 import { getDafLocalContent } from "@/lib/content/daf-local";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = getDafLocalContent("toulouse", "en");
+  const t = getDafLocalContent("paris", "en");
   return buildMetadata({
     locale: "en",
-    path: "/outsourced-cfo-toulouse",
-    localizedPaths: { fr: "/daf-externalise-toulouse", en: "/outsourced-cfo-toulouse", es: "/cfo-externalizado-toulouse" },
+    path: "/fractional-cfo-paris",
+    localizedPaths: { fr: "/daf-externalise-paris", en: "/fractional-cfo-paris", es: "/cfo-externalizado-paris" },
     title: t.meta.title,
     description: t.meta.description,
   });
@@ -17,5 +17,5 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("en");
-  return <DafLocalPage locale="en" city="toulouse" cmsNavigation={cmsNavigation} />;
+  return <DafLocalPage locale="en" city="paris" cmsNavigation={cmsNavigation} />;
 }
