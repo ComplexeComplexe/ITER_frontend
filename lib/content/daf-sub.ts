@@ -486,6 +486,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           heading: "Comparaison avec les Alternatives",
           content: [
+            "Le [tarif comptabilité externalisée](/ressources/blog/externalisation-comptable) dépend d’une mission distincte, précisée avec le cabinet comptable.",
             `DAF externalisé vs DAF salarié : notre référence pour un directeur financier de séniorité équivalente est de ${offerFr.salary} € de coût employeur annuel, charges comprises. Les formules Iter représentent ${offerFr.annualPrice} € HT/an pour un périmètre à temps partagé. Le choix dépend du besoin réel : un accompagnement partiel et un poste à temps plein ne couvrent pas la même disponibilité.`,
             // SEO-DAF-02 (2026-08-09) — « certifie » relève du commissaire
             // aux comptes. L'expert-comptable produit les comptes et conseille

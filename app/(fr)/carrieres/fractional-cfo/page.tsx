@@ -549,7 +549,7 @@ export default async function Page() {
                   href="/services/comptabilite-externalisation"
                   className="text-iter-violet hover:underline"
                 >
-                  Externalisation comptable
+                  Comptabilité externalisée
                 </Link>{" "}
                 — la base de votre travail
               </li>

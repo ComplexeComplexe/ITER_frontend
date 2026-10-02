@@ -29,6 +29,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     "title": "DAF à temps partagé pour PME | Iter Advisors",
     "description": "Un DAF à temps partagé pour suivre votre trésorerie, vos budgets et vos décisions. Missions, livrables, rythme et tarifs pour PME et startups.",
     "headline": "DAF à temps partagé",
+    headings: { need: "Quand choisir un DAF à temps partagé ?", deliverables: "DAF part time : les livrables pour piloter", method: "Comment intervient un directeur financier à temps partagé ?" },
     "promise": "Une direction financière qui suit votre entreprise dans la durée.",
     "intro": "Vous avez besoin de visibilité sur vos chiffres et d’un interlocuteur pour décider, sans recruter un directeur financier à temps plein. Le DAF à temps partagé organise le pilotage avec votre équipe, à un rythme défini ensemble.",
     "context": "temps-partage",

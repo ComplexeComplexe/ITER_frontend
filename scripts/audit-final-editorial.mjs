@@ -34,5 +34,38 @@ for (const path of paths) {
     check(path, /<h2\b[^>]*>[^<]*directeur administratif et financier de transition/i.test(main), 'administrative-financial-transition-heading');
   }
 }
-console.log(JSON.stringify({ pages: blogs.length + paths.length, failures }, null, 2));
+const anchorPaths = ['/', '/carrieres/fractional-cfo', '/ressources/ia-finance/chatgpt-finance'];
+const anchorTargets = new Map([
+  ['externalisation comptable', '/ressources/blog/externalisation-comptable'],
+  ['comptabilité externalisée', '/services/comptabilite-externalisation'],
+  ['prévisionnel de trésorerie', '/services/previsionnel-tresorerie'],
+]);
+for (const path of anchorPaths) {
+  const response = await fetch(base + path);
+  check(path, response.ok, 'anchor-page-served');
+  const html = await response.text();
+  const main = html.match(/<main\b[^>]*>(.*?)<\/main>/s)?.[1] ?? '';
+  for (const match of main.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>(.*?)<\/a>/gs)) {
+    const anchor = match[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
+    const target = anchorTargets.get(anchor);
+    if (target) check(path, new URL(match[1], base).pathname === target, 'one-intent-one-anchor:' + anchor);
+  }
+}
+const briefPages = ['/drh-externalise', '/daf-externalise/temps-partage', '/daf-externalise/tarifs', '/ressources/blog/externalisation-comptable'];
+for (const path of briefPages) {
+  const html = await (await fetch(base + path)).text();
+  const main = html.match(/<main\b[^>]*>(.*?)<\/main>/s)?.[1] ?? '';
+  if (path === '/drh-externalise') {
+    check(path, html.includes('<title>DRH externalisé pour PME et startups | Iter Advisors</title>'), 'hr-offer-title');
+    check(path, /<h1\b[^>]*>DRH externalisé pour PME et startups<\/h1>/.test(main), 'hr-offer-h1');
+    check(path, /<h2\b[^>]*>Quand faire appel à un DRH externalisé/.test(main), 'hr-offer-need-heading');
+  }
+  if (path.endsWith('/temps-partage')) {
+    check(path, /<h2\b[^>]*>DAF part time/.test(main), 'part-time-heading');
+    check(path, /<h2\b[^>]*>[^<]*directeur financier à temps partagé/.test(main), 'shared-time-heading');
+  }
+  if (path.endsWith('/tarifs')) check(path, /href="\/ressources\/blog\/externalisation-comptable"[^>]*>tarif comptabilité externalisée/.test(main), 'accounting-pricing-referred-to-guide');
+  if (path.endsWith('/externalisation-comptable')) check(path, /<title>[^<]*tarifs/.test(html), 'accounting-guide-price-intent');
+}
+console.log(JSON.stringify({ pages: blogs.length + paths.length + anchorPaths.length + briefPages.length, failures }, null, 2));
 process.exitCode = failures.length ? 1 : 0;
