@@ -499,7 +499,7 @@ export default function HomePage({
                     <Link href="/daf-externalise/tarifs" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Tarifs du DAF externalisé</Link>
                     <Link href="/daf-externalise/temps-partage" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF à temps partagé</Link>
                     <Link href="/daf-externalise/transition" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">DAF de transition</Link>
-                    <Link href="/services/comptabilite-externalisation" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Externalisation comptable</Link>
+                    <Link href="/services/comptabilite-externalisation" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Comptabilité externalisée</Link>
                     <Link href="/daf-externalise/metier" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Métier de DAF</Link>
                     <Link href="/ressources/fiscalite-espagne-france" className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">Fiscalité France-Espagne</Link>
                   </>

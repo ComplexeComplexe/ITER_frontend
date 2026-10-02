@@ -34,5 +34,22 @@ for (const path of paths) {
     check(path, /<h2\b[^>]*>[^<]*directeur administratif et financier de transition/i.test(main), 'administrative-financial-transition-heading');
   }
 }
-console.log(JSON.stringify({ pages: blogs.length + paths.length, failures }, null, 2));
+const anchorPaths = ['/', '/carrieres/fractional-cfo', '/ressources/ia-finance/chatgpt-finance'];
+const anchorTargets = new Map([
+  ['externalisation comptable', '/ressources/blog/externalisation-comptable'],
+  ['comptabilité externalisée', '/services/comptabilite-externalisation'],
+  ['prévisionnel de trésorerie', '/services/previsionnel-tresorerie'],
+]);
+for (const path of anchorPaths) {
+  const response = await fetch(base + path);
+  check(path, response.ok, 'anchor-page-served');
+  const html = await response.text();
+  const main = html.match(/<main\b[^>]*>(.*?)<\/main>/s)?.[1] ?? '';
+  for (const match of main.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>(.*?)<\/a>/gs)) {
+    const anchor = match[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
+    const target = anchorTargets.get(anchor);
+    if (target) check(path, new URL(match[1], base).pathname === target, 'one-intent-one-anchor:' + anchor);
+  }
+}
+console.log(JSON.stringify({ pages: blogs.length + paths.length + anchorPaths.length, failures }, null, 2));
 process.exitCode = failures.length ? 1 : 0;
