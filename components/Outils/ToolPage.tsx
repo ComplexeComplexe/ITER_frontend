@@ -5,14 +5,14 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import ToolHeader from './ToolHeader';
 import VerbatimBlock from './VerbatimBlock';
-import StackCombo from './StackCombo';
+import StackCombo, { type StackComboTool } from './StackCombo';
+import type { CmsNavItem } from '@/lib/static-content';
 import { Tool, getToolsByCategory, tools as allTools, CATEGORIES_WITH_PAGE } from '@/data/tools';
 import { getVerbatimsByTool } from '@/data/verbatims';
 import { getToolDetails } from '@/data/toolDetails';
 import {
-  generateToolReviewSchema,
+  generateToolArticleSchema,
   generateFAQSchema,
-  generateBreadcrumbSchema,
   generateHowToSchema,
   getToolAuthor,
   TOOLS_REVIEW_DATE,
@@ -24,7 +24,7 @@ import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
 export interface ToolPageProps {
   slug: string;
   locale: 'fr' | 'en' | 'es';
-  cmsNavigation?: any;
+  cmsNavigation?: CmsNavItem[];
   tool: Tool;
 }
 
@@ -43,7 +43,14 @@ const categoryLabels = {
 };
 
 // Predefined stacks for each tool
-const toolStacks: Record<string, any[]> = {
+interface ToolStack {
+  title: string;
+  description: string;
+  context?: string;
+  tools?: string[];
+  combo?: StackComboTool[];
+}
+const toolStacks: Record<string, ToolStack[]> = {
   pennylane: [
     {
       combo: [
@@ -140,7 +147,7 @@ export default function ToolPage({
   const modifiedLabel = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${modified}T12:00:00Z`));
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero section */}
       <section className="site-hero bg-background pt-32 pb-12">
         <div className="container">
@@ -187,20 +194,7 @@ export default function ToolPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateToolReviewSchema(tool)),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            generateBreadcrumbSchema(
-              tool.name,
-              tool.slug,
-              categoryLabels[tool.category as keyof typeof categoryLabels],
-              tool.categorySlug
-            )
-          ),
+          __html: JSON.stringify(generateToolArticleSchema(tool)),
         }}
       />
       {faqForTool.length > 0 && (
@@ -239,7 +233,6 @@ export default function ToolPage({
             logoAlt={tool.logoAlt}
             category={categoryLabels[tool.category as keyof typeof categoryLabels]}
             categorySlug={tool.categorySlug}
-            rating={tool.rating}
             forWho={tool.forWho}
             notForWho={tool.notForWho}
             implementationTime={tool.implementationTime}
@@ -300,10 +293,10 @@ export default function ToolPage({
                 sur le site de l&apos;éditeur avant de décider.
               </li>
               <li>
-                <strong className="text-foreground">Ce que la note mesure.</strong> L&apos;adéquation au
-                besoin d&apos;une PME pilotée par un DAF externalisé — pas une notation absolue de
-                l&apos;outil. Un {tool.rating}/5 ici peut être un mauvais choix pour un groupe, et
-                inversement.
+                <strong className="text-foreground">Les critères de choix.</strong> Le périmètre,
+                les intégrations, les contrôles et les compétences disponibles comptent davantage
+                qu’une note globale. Comparez les points forts et les limites avec vos besoins,
+                puis vérifiez-les en démonstration avec l’éditeur.
               </li>
             </ul>
           </details>
@@ -359,7 +352,7 @@ export default function ToolPage({
       {toolDetails?.implementationGuide && toolDetails.implementationGuide.length > 0 && (
         <section className="site-section bg-muted/20 py-16">
           <div className="container max-w-3xl">
-            <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Guide d'implémentation</h2>
+            <h2 className="text-2xl font-bold font-heading text-foreground mb-8">Guide d&apos;implémentation</h2>
             <div className="space-y-4">
               {toolDetails.implementationGuide.map((item, idx) => (
                 <div key={idx} id={`step${idx + 1}`} className="site-card bg-background p-6 rounded-lg border border-gray-200 scroll-mt-28">
@@ -432,7 +425,7 @@ export default function ToolPage({
           <div className="container max-w-3xl">
             <h2 className="text-2xl font-bold font-heading text-foreground mb-12">Stacks recommandés</h2>
             <div className="space-y-12">
-              {stacksForTool.map((stack: any, idx: number) => {
+              {stacksForTool.map((stack: ToolStack, idx: number) => {
                 // Derive the stack tool map from the canonical tools array so
                 // every tool (incl. the 9 added via TICKET 5) renders with
                 // its real logo + SEO alt text in stack combos.

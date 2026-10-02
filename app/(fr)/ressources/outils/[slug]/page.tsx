@@ -61,15 +61,8 @@ export async function generateMetadata({
   // Check if it's a tool
   const tool = getToolBySlug(slug);
   if (tool) {
-    // CONTENUS-T1/T2 (2026-08-31) — la requête réelle est « avis {outil} »
-    // (« avis pennylane » 260/mois P9, « revolut business avis » 260/mois
-    // P11, CPC jusqu'à 10,47 €). Le title générique « {outil} — Avis DAF
-    // externalisé » répondait au métier, pas à la requête : l'internaute
-    // cherche un avis sur l'outil, pas sur les DAF. La note vient de
-    // data/tools.ts — celle que la page affiche déjà, pas une valeur
-    // marketing recalculée pour l'occasion.
-    const title = `Avis ${tool.name} ${new Date().getFullYear()} : notre retour terrain`;
-    const description = `Note ${tool.rating}/5 par nos DAF externalisés. Points forts constatés, limites réelles et pièges d'implémentation de ${tool.name}, observés en mission chez nos clients.`;
+    const title = `Avis ${tool.name} : usages et limites pour PME`;
+    const description = `Avis ${tool.name} : points forts, limites, intégrations et critères de choix pour PME et startups. Sources de tarification et questions à poser à l’éditeur.`;
     return buildMetadata({
       locale: "fr",
       title,
@@ -92,7 +85,7 @@ export default async function Page({ params }: PageParams) {
 
   // Check if it's a category
   if (Object.keys(categoryMeta).includes(slug)) {
-    const categorySlugMap: Record<string, any> = {
+    const categorySlugMap: Record<string, (typeof tools)[number]["category"]> = {
       "logiciels-comptabilite": "comptabilite",
       "logiciels-tresorerie": "tresorerie",
       "gestion-depenses": "depenses",

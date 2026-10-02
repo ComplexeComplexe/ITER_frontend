@@ -33,7 +33,7 @@ const navFr: NavItem[] = [
     title: "DAF externalisé",
     href: "/daf-externalise",
     children: [
-      { text: "Direction Financière (DAF)", href: "/daf-externalise/metier" },
+      { text: "Direction Financière (DAF)", href: "/daf-externalise" },
       { text: "M&A & Levée de fonds", href: "/services/accompagnement-levee-de-fond" },
     ],
   },
@@ -43,7 +43,7 @@ const navFr: NavItem[] = [
     children: [
       { text: "DAF à temps partagé", href: "/daf-externalise/temps-partage" },
       { text: "DAF de transition", href: "/daf-externalise/transition" },
-      { text: "Contrôle de gestion", href: "/services/controle-de-gestion-externalise" },
+      { text: "Contrôle de gestion externalisé", href: "/services/controle-de-gestion-externalise" },
       { text: "Prévisionnel de trésorerie", href: "/services/previsionnel-tresorerie" },
       { text: "Comptabilité externalisée", href: "/services/comptabilite-externalisation" },
     ],
@@ -60,6 +60,7 @@ const navFr: NavItem[] = [
       { text: "Blog & Actualités", href: "/ressources/blog" },
       { text: "Cas clients", href: "/ressources/cas-clients" },
       { text: "Glossaire", href: "/ressources/glossaire" },
+      { text: "Le métier de DAF", href: "/daf-externalise/metier" },
     ],
   },
   {

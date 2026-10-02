@@ -1,7 +1,6 @@
 import { TOOL_PRICING } from "@/data/toolPricing";
 import Image from 'next/image';
 import Link from 'next/link';
-import { Star } from 'lucide-react';
 
 export interface ToolHeaderProps {
   name: string;
@@ -10,7 +9,6 @@ export interface ToolHeaderProps {
   logoAlt?: string;
   category: string;
   categorySlug: string;
-  rating: number;
   forWho: string[];
   notForWho: string[];
   implementationTime: string;
@@ -24,8 +22,6 @@ export default function ToolHeader({
   logo,
   logoAlt,
   category,
-  categorySlug,
-  rating,
   forWho,
   notForWho,
   implementationTime,
@@ -33,9 +29,6 @@ export default function ToolHeader({
   pricingKey,
   ctaUrl = '/contact',
 }: ToolHeaderProps) {
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 !== 0;
-
   return (
     <div className="site-card border border-gray-200 rounded-lg p-6 md:p-8 bg-white">
       <div className="flex flex-col md:flex-row md:items-start gap-6">
@@ -60,22 +53,6 @@ export default function ToolHeader({
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">{name}</h2>
               <p className="text-lg text-gray-600">{category}</p>
-            </div>
-
-            {/* Rating */}
-            <div className="flex items-center gap-2">
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={20}
-                    className={`${
-                      i < fullStars ? 'fill-yellow-400 text-yellow-400' : i === fullStars && hasHalfStar ? 'text-yellow-400' : 'text-gray-300'
-                    }`}
-                  />
-                ))}
-              </div>
-              <span className="text-sm font-semibold text-gray-700">{rating}/5</span>
             </div>
           </div>
 

@@ -126,7 +126,7 @@ const nextConfig: NextConfig = {
       {source: "/en/daf-externalise/secteurs", destination: "/en/fractional-cfo", permanent: true},
       {source: "/en/daf-externalise/temps-partage", destination: "/en/fractional-cfo/shared-time", permanent: true},
       {source: "/en/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance", destination: "/en/ressources/blog", permanent: true},
-      {source: "/en/en/ressources/blog/organiser-sa-direction-financiere", destination: "/en/ressources/blog", permanent: true},
+      {source: "/en/en/ressources/blog/organiser-sa-direction-financiere", destination: "/en/fractional-cfo/role", permanent: true},
       {source: "/en/en/services/outsourced-financial-management", destination: "/en/fractional-cfo", permanent: true},
       {source: "/en/es/ressources/blog/organiser-sa-direction-financiere", destination: "/ressources/blog/organiser-sa-direction-financiere", permanent: true},
       {source: "/en/externalizacion-daf", destination: "/en/fractional-cfo", permanent: true},
@@ -135,7 +135,7 @@ const nextConfig: NextConfig = {
       {source: "/es/daf-externalise/secteurs", destination: "/es/externalizacion-daf", permanent: true},
       {source: "/es/daf-externalise/tarifs", destination: "/es/externalizacion-daf", permanent: true},
       {source: "/es/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance", destination: "/en/ressources/blog", permanent: true},
-      {source: "/es/en/ressources/blog/organiser-sa-direction-financiere", destination: "/en/ressources/blog", permanent: true},
+      {source: "/es/en/ressources/blog/organiser-sa-direction-financiere", destination: "/en/fractional-cfo/role", permanent: true},
       {source: "/es/es/ressources/blog/organiser-sa-direction-financiere", destination: "/ressources/blog/organiser-sa-direction-financiere", permanent: true},
       {source: "/es/ressources", destination: "/es/recursos", permanent: true},
       {source: "/es/ressources/blog/cas-etude-happy-scribe", destination: "/ressources/cas-clients", permanent: true},
@@ -288,7 +288,7 @@ const nextConfig: NextConfig = {
       // noindex. Elles pointent maintenant sur la page commerciale.
       {
         source: "/en/jobs/fractional-cfo-startups",
-        destination: "/fractional-cfo-startups",
+        destination: "/en/fractional-cfo",
         permanent: true,
       },
       {
@@ -597,7 +597,7 @@ const nextConfig: NextConfig = {
       //  /es/ressources/:path*, sans quoi elle ne s'exécutait jamais.)
       {
         source: "/en/ressources/blog/organiser-sa-direction-financiere",
-        destination: "/en/ressources/blog",
+        destination: "/en/fractional-cfo/role",
         permanent: true,
       },
       // Full-slug variant of the depublished AI/automation article (the

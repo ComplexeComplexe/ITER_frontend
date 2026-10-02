@@ -107,7 +107,7 @@ const FAQ = [
 
 export interface HubPageProps {
   locale: 'fr' | 'en' | 'es';
-  cmsNavigation?: any;
+  cmsNavigation?: import("@/lib/static-content").CmsNavItem[];
 }
 
 /* Refonte 2026-08-02 — chaque stade suit désormais la même structure :
@@ -377,7 +377,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
   ];
 
   return (
-    <PageLayout locale={locale}>
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* JSON-LD Schemas */}
       <script
         type="application/ld+json"
@@ -425,9 +425,9 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
               reporting.
             </p>
             <p className="text-base text-foreground/70 leading-relaxed mb-8">
-              Cette sélection s&apos;appuie sur plus de 80 déploiements menés chez des startups et
-              PME au cours des trois dernières années, avec un retour d&apos;expérience cabinet —
-              pas un simple comparatif d&apos;éditeurs.
+              Comparez les usages, les intégrations et les limites de chaque outil avec vos
+              besoins. Les fiches précisent les sources de tarification et les questions à
+              examiner avec l&apos;éditeur avant de choisir.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8">

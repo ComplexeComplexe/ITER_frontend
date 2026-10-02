@@ -87,8 +87,7 @@ export default async function Page() {
 
   const readyPillars = PILLARS.filter((p) => p.ready);
 
-  /* JSON-LD per livrable_final §2: CollectionPage + BreadcrumbList.
-     ProfessionalService is already site-wide via app/layout.tsx. */
+  // The visible Breadcrumb component emits the matching BreadcrumbList.
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -106,14 +105,6 @@ export default async function Page() {
           url: `https://www.iteradvisors.com${p.href}`,
           name: p.label,
         })),
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.iteradvisors.com/" },
-          { "@type": "ListItem", position: 2, name: "Ressources", item: "https://www.iteradvisors.com/ressources" },
-          { "@type": "ListItem", position: 3, name: "Fiscalité Espagne France", item: PAGE_URL },
-        ],
       },
     ],
   };

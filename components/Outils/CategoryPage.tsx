@@ -8,38 +8,12 @@ import { Tool } from '@/data/tools';
 import { getCategoryContent } from '@/data/categoryContent';
 import Link from 'next/link';
 import Image from 'next/image';
-
-function generateCategoryBreadcrumbSchema(categoryTitle: string, slug: string) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Ressources',
-        item: 'https://www.iteradvisors.com/ressources',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Outils',
-        item: 'https://www.iteradvisors.com/ressources/outils',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: categoryTitle,
-        item: `https://www.iteradvisors.com/ressources/outils/${slug}`,
-      },
-    ],
-  };
-}
+import type { CmsNavItem } from '@/lib/static-content';
 
 export interface CategoryPageProps {
   slug: string;
   locale: 'fr' | 'en' | 'es';
-  cmsNavigation?: any;
+  cmsNavigation?: CmsNavItem[];
   tools: Tool[];
 }
 
@@ -62,27 +36,17 @@ export default function CategoryPage({
       slug: tool.slug,
       logo: tool.logo,
       logoAlt: tool.logoAlt,
-      rating: tool.rating,
       features: {
         'Taille cible': tool.forWho[0] || '—',
         'Implémentation': tool.implementationTime,
         'Tarif': tool.priceRange,
-        'Avis Iter': `${tool.rating}/5`,
       },
     })),
-    criteria: ['Taille cible', 'Implémentation', 'Tarif', 'Avis Iter'],
+    criteria: ['Taille cible', 'Implémentation', 'Tarif'],
   };
 
   return (
-    <PageLayout locale={locale}>
-      {/* JSON-LD Schemas */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateCategoryBreadcrumbSchema(categoryContent.title, slug)),
-        }}
-      />
-
+    <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* Hero section */}
       <section className="site-hero bg-background pt-32 pb-16">
         <div className="container">
@@ -269,7 +233,7 @@ export default function CategoryPage({
                       href={`/ressources/outils/${toolData.slug}`}
                       className="inline-flex items-center gap-2 px-6 py-3 text-iter-violet font-semibold hover:gap-3 transition-all"
                     >
-                      Lire l'avis complet
+                      Lire l&apos;avis complet
                       <span>→</span>
                     </Link>
                   )}

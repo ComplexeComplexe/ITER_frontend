@@ -13,6 +13,7 @@ export interface FinanceService {
   deliverables: [string, string, string][]; exampleTitle: string; example: string;
   steps: [string, string][]; scopeTitle: string; scope: string[]; budget: string;
   case?: string; faq: [string, string][]; resources: [string, string][]; related: string[];
+  headings?: { need: string; deliverables: string; method: string };
 }
 
 export const FINANCE_REVIEW_DATE = "2026-09-30";
@@ -238,14 +239,19 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
   },
   "controle": {
     "path": "/services/controle-de-gestion-externalise",
-    "label": "Contrôle de gestion",
-    "title": "Contrôle de gestion externalisé | Iter Advisors",
+    "label": "Contrôle de gestion externalisé",
+    "title": "Contrôle de gestion externalisé pour PME : budget et marges",
     "description": "Budget, marges et reporting : un contrôle de gestion externalisé pour comprendre vos résultats. Livrables, revue mensuelle et articulation avec vos équipes.",
     "headline": "Contrôle de gestion externalisé",
     "promise": "Comprendre vos marges. Donner une suite à vos chiffres.",
     "intro": "Vos comptes disent ce qui s’est passé. Le contrôle de gestion rapproche ces résultats de vos objectifs et de l’activité réelle, pour identifier les écarts et préparer les décisions avec les responsables.",
     "context": "reporting",
     "category": "Piloter la performance",
+    "headings": {
+      "need": "Quand externaliser le contrôle de gestion ?",
+      "deliverables": "Budget, marges et reporting : les livrables",
+      "method": "Le suivi avec votre contrôleur de gestion"
+    },
     "summary": [
       [
         "Votre besoin",
