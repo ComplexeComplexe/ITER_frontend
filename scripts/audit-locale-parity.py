@@ -35,9 +35,13 @@ opener = urllib.request.build_opener(NoRedirect)
 def get(path):
     try:
         with opener.open(args.base.rstrip("/") + path, timeout=30) as response:
-            return response.status, response.read().decode("utf-8"), dict(response.headers)
+            body = response.read()
+            # Linked ZIP exercises are binary; only HTML/text bodies need parsing.
+            content_type = response.headers.get_content_type()
+            html = body.decode(response.headers.get_content_charset() or "utf-8") if content_type.startswith("text/") or content_type in ("application/xhtml+xml", "application/json", "application/xml") else ""
+            return response.status, html, {key.title(): value for key, value in response.headers.items()}
     except urllib.error.HTTPError as error:
-        return error.code, error.read().decode("utf-8"), dict(error.headers)
+        return error.code, error.read().decode("utf-8"), {key.title(): value for key, value in error.headers.items()}
 
 
 def inspect(target):

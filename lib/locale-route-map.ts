@@ -159,39 +159,39 @@ export const LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   },
   "/ressources/ia-finance": {
     "fr": "/ressources/ia-finance",
-    "en": "/ressources/ia-finance",
-    "es": "/ressources/ia-finance"
-  },
+    "en": "/en/resources/ai-finance",
+    "es": "/es/recursos/ia-finanzas"
+},
   "/ressources/ia-finance/automatiser-reporting-financier": {
     "fr": "/ressources/ia-finance/automatiser-reporting-financier",
-    "en": "/ressources/ia-finance/automatiser-reporting-financier",
-    "es": "/ressources/ia-finance/automatiser-reporting-financier"
-  },
+    "en": "/en/resources/ai-finance/automate-financial-reporting",
+    "es": "/es/recursos/ia-finanzas/automatizar-reporting-financiero"
+},
   "/ressources/ia-finance/chatgpt-finance": {
     "fr": "/ressources/ia-finance/chatgpt-finance",
-    "en": "/ressources/ia-finance/chatgpt-finance",
-    "es": "/ressources/ia-finance/chatgpt-finance"
-  },
+    "en": "/en/resources/ai-finance/chatgpt-finance",
+    "es": "/es/recursos/ia-finanzas/chatgpt-finanzas"
+},
   "/ressources/ia-finance/llm-finance": {
     "fr": "/ressources/ia-finance/llm-finance",
-    "en": "/ressources/ia-finance/llm-finance",
-    "es": "/ressources/ia-finance/llm-finance"
-  },
+    "en": "/en/resources/ai-finance/llms-finance",
+    "es": "/es/recursos/ia-finanzas/llm-finanzas"
+},
   "/ressources/ia-finance/outils": {
     "fr": "/ressources/ia-finance/outils",
-    "en": "/ressources/ia-finance/outils",
-    "es": "/ressources/ia-finance/outils"
-  },
+    "en": "/en/resources/ai-finance/tools",
+    "es": "/es/recursos/ia-finanzas/herramientas"
+},
   "/ressources/ia-finance/feuille-de-route-90-jours": {
     "fr": "/ressources/ia-finance/feuille-de-route-90-jours",
-    "en": "/ressources/ia-finance/feuille-de-route-90-jours",
-    "es": "/ressources/ia-finance/feuille-de-route-90-jours"
-  },
+    "en": "/en/resources/ai-finance/90-day-roadmap",
+    "es": "/es/recursos/ia-finanzas/hoja-ruta-90-dias"
+},
   "/ressources/ia-finance/retours-experience": {
     "fr": "/ressources/ia-finance/retours-experience",
-    "en": "/ressources/ia-finance/retours-experience",
-    "es": "/ressources/ia-finance/retours-experience"
-  },
+    "en": "/en/resources/ai-finance/experience-reports",
+    "es": "/es/recursos/ia-finanzas/experiencias"
+},
   "/clients": {
     "fr": "/clients",
     "en": "/en/clients",

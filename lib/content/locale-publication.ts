@@ -14,6 +14,14 @@ export const ALIGNED_PAGE_IDS = [
   "/daf-externalise-barcelone", "/daf-externalise-toulouse",
   "/daf-externalise/secteurs", "/daf-externalise/ecommerce", "/daf-externalise/industrie", "/daf-externalise/deep-tech",
   "/ressources",
+  "/ressources/ia-finance",
+  "/ressources/ia-finance/automatiser-reporting-financier",
+  "/ressources/ia-finance/chatgpt-finance",
+  "/ressources/ia-finance/llm-finance",
+  "/ressources/ia-finance/outils",
+  "/ressources/ia-finance/feuille-de-route-90-jours",
+  "/ressources/ia-finance/retours-experience",
+
 ] as const;
 export const LOCALE_ALIGNMENT_DATE = "2026-10-02";
 export function alignedPaths(sourcePath: string) {

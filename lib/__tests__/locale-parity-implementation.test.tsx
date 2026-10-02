@@ -71,7 +71,7 @@ describe("reviewed locale parity", () => {
       }
     }
     // A proposed guide is not promoted as if a translation existed.
-    expect(parityHref("/ressources/ia-finance/automatiser-reporting-financier", "es")).toBe("/ressources/ia-finance/automatiser-reporting-financier");
+    expect(parityHref("/ressources/fiscalite/beckham-law", "es")).toBe("/ressources/fiscalite/beckham-law");
   });
   it("keeps the accounting scope explicit and avoids untranslated CFO terminology", () => {
     const en = getFinanceServices("en"), es = getFinanceServices("es");

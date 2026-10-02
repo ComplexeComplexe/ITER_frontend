@@ -1,0 +1,5 @@
+﻿id;periodo;entidad;unidad;categoria;concepto;presupuesto;real
+R01;2026-01;Empresa ficticia;kEUR;Ingresos;Actividad A;120;110
+R02;2026-01;Empresa ficticia;kEUR;Ingresos;Actividad B;80;70
+C01;2026-01;Empresa ficticia;kEUR;Gastos;Personal;100;105
+C02;2026-01;Empresa ficticia;kEUR;Gastos;Otros gastos;50;50

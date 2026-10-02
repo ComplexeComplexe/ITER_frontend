@@ -29,8 +29,8 @@ describe("complete city and industry translations", () => {
       const casePaths = ["solarmente-serie-b-cleantech", "seasonly-marge-par-canal-bfr", "opti-digital-structuration-financement"];
       for (const slug of casePaths) expect(page.querySelector(`a[href="${parityHref(`/ressources/cas-clients/${slug}`, locale)}"]`)).not.toBeNull();
       if (locale !== "fr") {
-        expect(page.querySelector('a[href="/ressources/ia-finance"]')!.getAttribute("hreflang")).toBe("fr");
-        expect(page.querySelector('a[href="/ressources/ia-finance"]')!.textContent).toContain("(FR)");
+        expect(page.querySelector(`a[href="${parityHref("/ressources/ia-finance", locale)}"]`)).not.toBeNull();
+        expect(page.querySelector('a[href="/ressources/ia-finance"]')).toBeNull();
         expect(page.querySelector("h1")!.textContent).not.toMatch(/ressources pour piloter/);
       }
     }
