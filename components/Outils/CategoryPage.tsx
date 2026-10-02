@@ -64,6 +64,7 @@ export default function CategoryPage({
               {categoryContent.title} pour PME : le comparatif de nos DAF externalisés
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">{categoryContent.intro}</p>
+            {locale === "fr" && slug === "logiciels-tresorerie" && <p className="text-muted-foreground"><Link href="/ressources/blog/flux-de-tresorerie" className="text-iter-violet underline underline-offset-4">Comprendre les flux de trésorerie</Link> avant de choisir les connexions et les scénarios de votre outil.</p>}
           </div>
         </div>
       </section>

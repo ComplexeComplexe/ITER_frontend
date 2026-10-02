@@ -1,3 +1,6 @@
+import { SALARIED_DAF_GUIDE } from "./decision-guide-meta";
+import { FINANCE_NEED_GUIDE_HTML } from "./finance-need-guide";
+import { CASH_BURN_GUIDE_HTML } from "./cash-burn-guide";
 import { ACCOUNTING_GUIDE_HTML } from "./accounting-guide";
 import { getDafOffer } from "./daf-offer";
 import { Locale } from "../i18n";
@@ -34,8 +37,8 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
   fr: {
     "flux-de-tresorerie": {
       meta: {
-        title: "Flux de trésorerie — Définition et Calcul | Iter Advisors",
-        description: "Comprendre les flux de trésorerie : définition, calcul et importance pour la gestion financière de votre entreprise. Guide complet par Iter Advisors.",
+        title: "Flux de trésorerie : calcul et prévisionnel",
+        description: "Comprenez les flux de trésorerie avec un exemple fictif : encaissements, décaissements, BFR et passage à un prévisionnel de trésorerie.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -43,7 +46,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogLabel: "Blog",
         blogHref: "/ressources/blog",
       },
-      h1: "Flux de trésorerie : définition et importance pour les entreprises",
+      h1: "Flux de trésorerie : définition, calcul et importance pour l'entreprise",
       publishedDate: "2026-05-10",
       author: "Benjamin Ziza",
       category: "guides-pratiques",
@@ -92,24 +95,21 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       readingMinutes: 5,
     },
     "daf-externalise-vs-daf-salarie": {
-      meta: {
-        title: "CFO à Temps Partagé vs DAF Salarié : Comparatif 2026 | Iter Advisors",
-        description: "DAF externalisé ou salarié ? Comparatif coûts, avantages et cas d'usage pour choisir la meilleure option de direction financière pour PME et startup.",
-      },
+      meta: { title: SALARIED_DAF_GUIDE.title, description: SALARIED_DAF_GUIDE.description },
       breadcrumbs: {
         resourcesLabel: "Ressources",
         resourcesHref: "/ressources",
         blogLabel: "Blog",
         blogHref: "/ressources/blog",
       },
-      h1: "DAF externalisé vs DAF salarié : quel choix pour votre entreprise ?",
-      publishedDate: "2026-03-28",
-      author: "Sébastien Doat",
-      category: "",
+      h1: SALARIED_DAF_GUIDE.h1,
+      publishedDate: SALARIED_DAF_GUIDE.publishedDate,
+      author: SALARIED_DAF_GUIDE.author,
+      category: "Comparaison",
       htmlContent: undefined,
       content: [],
       // Full body is served by the dedicated route; the catalog is metadata only.
-      readingMinutes: 10,
+      readingMinutes: 6,
     },
     "checklist-due-diligence-levee-de-fonds": {
       meta: {
@@ -335,125 +335,16 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     // Pilier 1 — DAF Externalisé (4 articles)
     "quand-embaucher-daf-externalise-5-signes": {
       meta: {
-        title: "5 signes que votre startup a besoin d'un DAF | Iter Advisors",
-        description: "5 signaux qu'une startup a besoin d'un DAF externalisé : timing idéal et comment choisir entre externalisation et embauche. Guide pratique par nos CFOs.",
+        title: "Quand faire appel à un DAF : 5 signaux | Iter Advisors",
+        description: "Trésorerie, reporting, financement et responsabilités : cinq signaux à examiner avant de choisir une mission finance, un temps partagé ou un recrutement.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
-      h1: "5 signes que vous avez besoin d'un DAF externalisé (et comment choisir)",
-      updatedDate: "2026-09-13",
+      h1: "Quand faire appel à un DAF : cinq signaux à examiner",
+      updatedDate: "2026-10-02",
       publishedDate: "2026-05-13",
       author: "Sébastien Doat",
       category: "DAF externalisé",
-      htmlContent: `<p>La décision de renforcer la fonction financière est un tournant pour toute entreprise en croissance. Trop tôt, elle constitue un poids financier inutile. Trop tard, elle expose l'entreprise à des risques opérationnels majeurs (défaillance de trésorerie, non-conformité fiscale, décisions stratégiques sans base chiffrée).</p>
-<p>Ce document présente cinq indicateurs factuels qui signalent qu'une entreprise a atteint le seuil de nécessité. Il analyse ensuite les options disponibles : DAF salarié, <a href="/daf-externalise">directeur financier à temps partagé</a>, et les modalités de transition entre les deux.</p>
-<h2 id="signe-1-burn-rate">Section 1 — Le signe n°1 : le burn rate est inconnu</h2>
-<p>Le <em>burn rate</em> (consommation nette de trésorerie par mois) est la métrique vitale de toute startup en phase de croissance. Une entreprise qui ne connaît pas précisément son burn rate navigue sans instrument de pilotage.</p>
-<p><strong>Seuil de criticité :</strong> si la réponse à la question « Quel est votre burn rate exact du mois dernier ? » nécessite plus de 5 minutes de recherche, l'entreprise a besoin d'un DAF.</p>
-<h3>Indicateurs associés</h3>
-<ul>
-<li>Absence de prévision de trésorerie à 3 mois</li>
-<li>Décisions de recrutement prises sans simulation d'impact financier</li>
-<li>Découvert bancaire récurrent non anticipé</li>
-</ul>
-<p><strong>Coût du problème :</strong> un recrutement non budgété de 3 personnes (coût total 180 000 € à 240 000 € par an) peut réduire le runway de 6 à 9 mois sans que le dirigeant en mesure l'impact exact.</p>
-<h2 id="signe-2-compta-retard">Section 2 — Le signe n°2 : la comptabilité a plus de 6 semaines de retard</h2>
-<p>Le délai de clôture comptable est un indicateur de maturité financière. Les standards sectoriels sont les suivants :</p>
-<table>
-<thead><tr><th>Type d'entreprise</th><th>Délai de clôture acceptable</th></tr></thead>
-<tbody>
-<tr><td>Startup SaaS (outils cloud)</td><td>3 à 7 jours</td></tr>
-<tr><td>PME digitale</td><td>5 à 10 jours</td></tr>
-<tr><td>PME industrielle</td><td>10 à 15 jours</td></tr>
-<tr><td>PME avec compta traditionnelle</td><td>15 à 30 jours</td></tr>
-</tbody>
-</table>
-<p>Un retard supérieur à 6 semaines signale généralement l'un des problèmes suivants :</p>
-<ul>
-<li>Expert-comptable sous-dimensionné ou débordé</li>
-<li>Absence d'outils de comptabilité modernes</li>
-<li>Manque de supervision interne</li>
-<li>Problèmes de réconciliation bancaire récurrents</li>
-</ul>
-<p><strong>Impact :</strong> des décisions stratégiques prises sur la base de données obsolètes. Un décalage de 6 semaines entre la réalité financière et la perception du dirigeant peut entraîner des décisions inadaptées (recrutements non financés, dépenses non maîtrisées).</p>
-<h2 id="signe-3-levee-engagee">Section 3 — Le signe n°3 : la préparation d'une levée de fonds est engagée</h2>
-<p>La préparation d'une levée de fonds constitue un point de non-retour. Les investisseurs professionnels (VC, fonds de croissance) exigent un niveau de rigueur financière que l'expert-comptable seul ne peut fournir.</p>
-<h3>Les livrables attendus par les investisseurs</h3>
-<table>
-<thead><tr><th>Document</th><th>Délai de préparation</th></tr></thead>
-<tbody>
-<tr><td>Modèle financier sur 3 ans</td><td>3 à 4 semaines</td></tr>
-<tr><td>Data room structurée</td><td>2 à 3 semaines</td></tr>
-<tr><td>Tableau de bord mensuel</td><td>En continu</td></tr>
-<tr><td>Prévision de trésorerie</td><td>Mensuelle</td></tr>
-<tr><td>KPIs SaaS (MRR, CAC, LTV, churn)</td><td>En continu</td></tr>
-</tbody>
-</table>
-<p>Le délai total de préparation d'une levée de fonds varie de 2 à 6 mois selon l'état initial de la documentation financière. Un DAF externalisé dédié à la préparation de la levée peut réduire ce délai de 30 à 40 %.</p>
-<div class="callout-cfo">
-<p class="callout-cfo__title">Le regard du CFO</p>
-<p>« On accompagne une dizaine de levées par an. Le motif récurrent du retard ou de l'échec, c'est une préparation financière insuffisante. Un fondateur qui arrive chez un VC avec un Excel mal construit et des KPIs non trackés perd 80 % de sa crédibilité en 10 minutes. La qualité du modèle financier est le document le plus consulté de la data room. »</p>
-<span class="callout-cfo__author">Benjamin Ziza — Associé fondateur, Iter Advisors</span>
-</div>
-<h2 id="signe-4-controle-gestion">Section 4 — Le signe n°4 : plus de 10 salariés sans contrôle de gestion</h2>
-<p>À 10 salariés, la complexité organisationnelle atteint un seuil critique. La gestion « à vue » du dirigeant ne suffit plus. Un contrôle de gestion structuré devient nécessaire.</p>
-<h3>Les composants du contrôle de gestion minimum</h3>
-<ul>
-<li>Budget annuel détaillé (P&amp;L, cash-flow, hiring plan)</li>
-<li>Suivi mensuel des écarts budget / réalisé</li>
-<li>Reporting mensuel à destination du dirigeant et/ou du board</li>
-<li>Tableau de bord avec 8 à 12 KPIs pertinents</li>
-</ul>
-<p><strong>Seuil d'alerte :</strong> si l'entreprise emploie plus de 10 personnes et ne dispose d'aucun de ces quatre éléments, le besoin de renforcement financier est impératif.</p>
-<h2 id="signe-5-fondateurs-finance">Section 5 — Le signe n°5 : les fondateurs consacrent plus de 8h/semaine à la finance</h2>
-<p>Le temps des fondateurs est l'actif le plus précieux de l'entreprise. Son allocation doit être optimisée.</p>
-<table>
-<thead><tr><th>Temps consacré à la finance / semaine</th><th>Diagnostic</th><th>Action recommandée</th></tr></thead>
-<tbody>
-<tr><td>&lt; 2 heures</td><td>Supervision ponctuelle</td><td>Maintien de l'existant</td></tr>
-<tr><td>2 à 5 heures</td><td>Supervision active</td><td>Renforcement ponctuel</td></tr>
-<tr><td>5 à 8 heures</td><td>Surcharge</td><td>DAF à temps partagé</td></tr>
-<tr><td>&gt; 8 heures</td><td>Surcharge critique</td><td>DAF externalisé urgent</td></tr>
-</tbody>
-</table>
-<p>Le coût d'opportunité est mesurable. Un fondateur dont le TJM estimé est de 500 € à 1 000 € qui consacre 10 heures par semaine à la finance supporte un coût de 20 000 € à 40 000 € par trimestre.</p>
-<h2 id="section-6-daf-externalise-vs-salarie">Section 6 — DAF externalisé vs DAF salarié : les critères de choix</h2>
-<h3>Le DAF externalisé</h3>
-<table>
-<thead><tr><th>Avantage</th><th>Détail</th></tr></thead>
-<tbody>
-<tr><td>Coût</td><td>30 à 50 % moins cher qu'un salarié équivalent</td></tr>
-<tr><td>Flexibilité</td><td>2 jours/semaine à temps plein, ajustable</td></tr>
-<tr><td>Expertise</td><td>Multi-sectorielle (10-15 entreprises/an)</td></tr>
-<tr><td>Délai de déploiement</td><td>1 à 2 semaines</td></tr>
-<tr><td>Continuité</td><td>Relais assuré par le cabinet sous 48 h (engagement contractuel)</td></tr>
-</tbody>
-</table>
-<h3>Le DAF salarié</h3>
-<table>
-<thead><tr><th>Avantage</th><th>Détail</th></tr></thead>
-<tbody>
-<tr><td>Disponibilité</td><td>Présent 5 jours/semaine</td></tr>
-<tr><td>Culture d'entreprise</td><td>Immersion totale</td></tr>
-<tr><td>Équipe à construire</td><td>Peut recruter et manager une équipe finance</td></tr>
-<tr><td>Coût annuel</td><td>65 000 € à 130 000 € charges comprises</td></tr>
-</tbody>
-</table>
-<h3>Recommandation par profil</h3>
-<table>
-<thead><tr><th>Profil</th><th>Recommandation</th></tr></thead>
-<tbody>
-<tr><td>Startup &lt; 15 salariés, CA &lt; 1 M€</td><td>DAF externalisé (2 jours/sem.)</td></tr>
-<tr><td>Startup 15-40 salariés, CA 1-5 M€</td><td>DAF externalisé (3-4 jours/sem.)</td></tr>
-<tr><td>Scale-up 40-80 salariés, CA &gt; 5 M€</td><td>DAF externalisé temps plein ou salarié</td></tr>
-<tr><td>Entreprise &gt; 80 salariés</td><td>DAF salarié + comptable interne</td></tr>
-</tbody>
-</table>
-<h2 id="faq">FAQ</h2>
-<p><strong>Q : Quel est le coût d'un DAF externalisé en 2026 ?</strong><br>R : ${getDafOffer("fr").price}. ${getDafOffer("fr").billing}</p>
-<p><strong>Q : Combien de temps faut-il pour mettre en place un DAF externalisé ?</strong><br>R : 1 à 2 semaines en moyenne. Le diagnostic initial est réalisé la première semaine, le déploiement des outils la deuxième.</p>
-<p><strong>Q : Le DAF externalisé peut-il accompagner une levée de fonds ?</strong><br>R : Oui, c'est l'une des missions les plus fréquentes. Le DAF prépare le modèle financier, la data room, et accompagne les fondateurs dans les rendez-vous VC.</p>
-<p><strong>Q : Quelle est la durée minimale d'engagement ?</strong><br>R : Aucune. La mission est résiliable avec un préavis de 30 jours.</p>
-<p>→ <a href="/contact"><strong>Prendre rendez-vous avec un DAF</strong></a></p>`,
+      htmlContent: FINANCE_NEED_GUIDE_HTML,
       content: [],
     },
 
@@ -625,6 +516,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       author: "Sébastien Doat",
       category: "outils-stack",
       htmlContent: `<p>Agicap et Okimia, anciennement Fygr, proposent des outils de suivi et de prévision de trésorerie. Le choix dépend de vos banques, de vos entités et de la façon dont vous construisez vos prévisions. Un nombre de salariés ou un ancien prix d’appel ne suffit pas à départager les deux.</p>
+<p>Avant de comparer les logiciels, distinguez solde, encaissements et décaissements dans le guide des <a href="/ressources/blog/flux-de-tresorerie">flux de trésorerie</a>.</p>
 <h2 id="verdict">Le verdict en 30 secondes</h2>
 <p>Présélectionnez les solutions sur un même besoin : consolider vos soldes, expliquer les mouvements et anticiper les décaissements. Agicap présente aussi des fonctions de gestion des postes clients et fournisseurs. Okimia présente la connexion des comptes bancaires et de l’ERP. Demandez une démonstration des fonctions incluses dans chaque offre envisagée.</p>
 <h2 id="comparatif">Comparer sur vos flux réels</h2>
@@ -889,75 +781,16 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       meta: {
         // CONTENUS-T8 (2026-08-31) — la requête est « cash burn » (480/mois,
         // P31), une demande de définition : le title n'offrait que le calcul.
-        title: "Cash burn : définition, calcul et seuils | Iter Advisors",
-        description: "Cash burn : définition, formule de calcul, différence brut/net et seuils critiques de runway. La méthode que nos DAF appliquent en mission.",
+        title: "Cash burn et runway : calcul et limites | Iter Advisors",
+        description: "Cash burn et runway : définir les flux, vérifier le calcul et tester les hypothèses. Exemple fictif et limites du ratio pour préparer vos décisions.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
-      h1: "Cash burn : c'est quoi, comment le calculer, et quand s'inquiéter",
+      h1: "Cash burn et runway : calculer la consommation de trésorerie",
+      updatedDate: "2026-10-02",
       publishedDate: "2026-05-11",
       author: "Benjamin Ziza",
       category: "gestion-financiere",
-      htmlContent: `<p><strong>Le cash burn est la vitesse à laquelle une entreprise consomme sa trésorerie, mesurée en euros par mois. Le runway est le nombre de mois qu'elle peut tenir à ce rythme : trésorerie disponible divisée par le burn mensuel net.</strong></p>
-<p>Suivre ces deux chiffres chaque mois est l'une des premières missions qu'un <a href="/daf-externalise">directeur financier externalisé</a> met en place chez ses clients : c'est le tableau de bord minimal d'une startup financée.</p>
-<p>Le <a href="/ressources/glossaire/cash-burn-runway">cash burn et le runway</a> sont les deux métriques les plus importantes de votre startup. Elles déterminent quand vous devrez lever des fonds, recruter, ou réduire vos coûts. Pourtant, 40% des fondateurs ne connaissent pas précisément leur burn rate.</p>
-<h2 id="methode">Calculer son burn rate : la méthode</h2>
-<pre><code>Burn Rate Net = Dépenses mensuelles totales − Revenus mensuels</code></pre>
-<p>Attention aux pièges :</p>
-<ul>
-<li>Incluez TOUTES les dépenses : salaires (charges incluses), loyer, outils, marketing, services</li>
-<li>Les revenus = trésorerie encaissée, pas le CA comptable</li>
-<li>Calculez sur une moyenne de 3 mois pour lisser les variations</li>
-<li>Intégrez les dépenses à venir (recrutements planifiés, loyer qui augmente)</li>
-</ul>
-<h2 id="exemple">Exemple concret</h2>
-<table>
-<thead><tr><th>Poste</th><th>Mensuel</th></tr></thead>
-<tbody>
-<tr><td>Salaires bruts (15 pers. × 4 500 €)</td><td>67 500 €</td></tr>
-<tr><td>Charges sociales (45%)</td><td>30 375 €</td></tr>
-<tr><td>Loyer &amp; charges</td><td>4 500 €</td></tr>
-<tr><td>Outils &amp; logiciels</td><td>3 200 €</td></tr>
-<tr><td>Marketing &amp; acquisition</td><td>12 000 €</td></tr>
-<tr><td>Services externes</td><td>5 800 €</td></tr>
-<tr><td>Frais généraux</td><td>2 500 €</td></tr>
-<tr><td><strong>Dépenses totales</strong></td><td><strong>125 875 €</strong></td></tr>
-<tr><td>Revenus (MRR)</td><td>45 000 €</td></tr>
-<tr><td><strong>Burn rate net</strong></td><td><strong>80 875 €</strong></td></tr>
-</tbody>
-</table>
-<h2 id="runway">Calculer son runway</h2>
-<pre><code>Runway (mois) = Trésorerie disponible / Burn rate net</code></pre>
-<p>Avec 650 000 € de trésorerie et un burn de 80 875 € : runway = 8 mois.</p>
-<h2 id="seuils">Les seuils critiques</h2>
-<table>
-<thead><tr><th>Runway</th><th>Zone</th><th>Action</th></tr></thead>
-<tbody>
-<tr><td>&gt; 18 mois</td><td>🟢 Verte</td><td>Focus croissance</td></tr>
-<tr><td>12-18 mois</td><td>🟡 Jaune</td><td>Préparer la prochaine étape</td></tr>
-<tr><td>9-12 mois</td><td>🟠 Orange</td><td>Lancer la levée activement</td></tr>
-<tr><td>6-9 mois</td><td>🔴 Rouge</td><td>Levée urgente + réduction coûts</td></tr>
-<tr><td>&lt; 6 mois</td><td>⚫ Noire</td><td>Plan de survie</td></tr>
-</tbody>
-</table>
-<h2 id="regle-or">La règle d'or du venture capital</h2>
-<p>Levez quand vous avez 12-18 mois de runway. Jamais avec moins de 9 mois. Pourquoi ? Parce qu'avec moins de 9 mois, vous perdez tout leverage de négociation. L'investisseur sait que vous êtes dans l'urgence — et il en profite pour décoter votre valorisation de 20 à 40%.</p>
-<h2 id="forecast">Anticiper avec un forecast</h2>
-<ol>
-<li>Plan de hiring : chaque recrutement ajoute 6 000-10 000 €/mois de burn</li>
-<li>Investissements : bureaux, équipements, R&amp;D</li>
-<li>Scénarios de croissance / de réduction</li>
-</ol>
-<p>Utilisez un modèle avec 3 scénarios (pessimiste / base / optimiste) et mettez-le à jour mensuellement.</p>
-<h2 id="reduire-burn">Comment réduire son burn rate</h2>
-<ol>
-<li>Freeze des recrutements : économie immédiate de 6-10K€/mois par poste</li>
-<li>Réduction du marketing : coupez les canaux à CAC élevé</li>
-<li>Renégociation des contrats : outils SaaS, loyer, services</li>
-<li>Augmentation des revenus : hausse de prix, upsell clients existants</li>
-<li>Bridge round : tour d'amorçage auprès des investisseurs existants</li>
-</ol>
-<p>Un <a href="/daf-externalise">DAF externalisé anticipe le cash burn</a> et construit votre forecast à 12 mois.</p>
-<p><a href="/contact">Construire mon forecast avec un DAF</a></p><p>Un <a href="/fractional-cfo-startups">DAF externalisé pour startup et SaaS</a> aide à relier ces scénarios au budget et au calendrier des financements. Pour une activité de R&amp;D longue, le <a href="/daf-externalise/deep-tech">pilotage financier deep tech</a> distingue aussi les jalons techniques et les aides confirmées des financements encore sollicités.</p><p>Le runway donne un horizon global. Pour identifier la semaine d’une tension et tester un retard d’encaissement, passez au <a href="/services/previsionnel-tresorerie">prévisionnel de trésorerie à 13 semaines</a>.</p>`,
+      htmlContent: CASH_BURN_GUIDE_HTML,
       content: [],
     },
     "tableau-de-bord-financier-startup-12-kpis": {
@@ -1638,12 +1471,14 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogHref: "/ressources/blog",
       },
       h1: "DAF externalisé ou DAF intérimaire : que choisir ?",
+      author: "Benjamin Ziza",
+      updatedDate: "2026-10-02",
       publishedDate: "2026-07-24",
       category: "Comparaison",
       htmlContent: undefined,
       content: [],
       // Full body is served by the dedicated route; the catalog is metadata only.
-      readingMinutes: 7,
+      readingMinutes: 6,
     },
 
     "daf-externalise-startup": {
@@ -1838,7 +1673,8 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       publishedDate: "2026-08-31",
       author: "Sébastien Doat",
       category: "DAF externalisé",
-      htmlContent: `<p><strong>Choisir un cabinet de DAF externalisé se joue sur cinq critères : la séniorité réelle du profil affecté, le modèle économique, les conditions de sortie, la continuité de service et l'adéquation sectorielle.</strong> Cette grille s'applique à n'importe quel cabinet — y compris le nôtre. Voici comment l'utiliser, les questions à poser, et les signaux qui doivent vous alerter.</p>
+      htmlContent: `<p>Cette grille aide à comparer les propositions. Pour connaître les missions, le budget et les modalités d’intervention d’Iter, consultez notre offre de <a href="/daf-externalise">DAF externalisé</a>.</p>
+<p><strong>Choisir un cabinet de DAF externalisé se joue sur cinq critères : la séniorité réelle du profil affecté, le modèle économique, les conditions de sortie, la continuité de service et l'adéquation sectorielle.</strong> Cette grille s'applique à n'importe quel cabinet — y compris le nôtre. Voici comment l'utiliser, les questions à poser, et les signaux qui doivent vous alerter.</p>
 <h2>Critère 1 — La séniorité réelle du profil affecté</h2>
 <p>La plaquette montre les associés ; la mission est parfois tenue par un junior. La seule question qui compte : <em>qui</em>, nommément, interviendra chez vous, avec quel parcours ? Demandez à rencontrer la personne avant de signer, et vérifiez que son expérience couvre votre situation — une levée si vous levez, du multi-entités si vous en avez.</p>
 <h2>Critère 2 — Le modèle économique</h2>

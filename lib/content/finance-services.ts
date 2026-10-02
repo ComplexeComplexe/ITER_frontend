@@ -539,8 +539,19 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
         "Décider à partir des dernières informations."
       ]
     ],
+    headings: { need: "Quand construire un prévisionnel de trésorerie ?", deliverables: "Les supports pour suivre les prochaines échéances", method: "Construire, rapprocher et actualiser le prévisionnel" },
+    calendar: {
+      heading: "Un solde final positif peut cacher une tension intermédiaire",
+      caption: "Exemple fictif sur deux semaines, avec 20 000 € de trésorerie au départ",
+      headers: ["Période", "Encaissements et décaissements supposés", "Solde de fin de semaine"],
+      rows: [
+        ["Semaine 1", "20 000 € encaissés − 45 000 € décaissés = −25 000 €", "−5 000 €"],
+        ["Semaine 2", "50 000 € encaissés − 30 000 € décaissés = +20 000 €", "15 000 €"],
+      ],
+      note: "Tous ces montants sont fictifs. Le solde de la deuxième semaine est positif, mais la première révèle un besoin de 5 000 € si les hypothèses se réalisent. Identifier la tension ne garantit ni découvert autorisé ni financement : il faut examiner les options et leurs conditions avant l’échéance.",
+    },
     "exampleTitle": "Exemple de lecture du prévisionnel",
-    "example": "Un règlement client arrive plus tard que prévu : l’équipe met à jour la date, mesure l’effet sur les prochaines échéances et examine les options. Le prévisionnel rend l’arbitrage visible ; il ne transforme pas une créance incertaine en trésorerie acquise.",
+    "example": "Si une recette change de date, l’équipe actualise l’hypothèse et compare les soldes de chaque semaine. Elle peut tester plusieurs calendriers, puis examiner les décisions possibles avec la direction. Le prévisionnel ne transforme pas une créance incertaine en cash disponible ; le suivi du prévu face au réalisé permet d’expliquer l’écart.",
     "steps": [
       [
         "Rapprocher le point de départ",
