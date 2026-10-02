@@ -1,328 +1,92 @@
-import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Linkedin, MapPin } from "lucide-react";
+import { Linkedin } from "lucide-react";
+import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
 import type { CmsNavItem, StrapiTeamMember } from "@/lib/static-content";
 import { strapiMediaUrl } from "@/lib/static-content";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import { aboutHref } from "@/lib/path-localization";
 import { FORMULES } from "@/lib/content/facts";
-import {
-  dafPillar,
-  DAF_PILLAR_MODIFIED,
-  DAF_PILLAR_MODIFIED_LABEL,
-  DAF_PILLAR_PATH,
-  DAF_PILLAR_PUBLISHED,
-} from "@/lib/content/daf-pillar";
-import { faqPageSchema, speakableSchema } from "@/lib/schemas";
+import { dafPillar, DAF_PILLAR_MODIFIED, DAF_PILLAR_MODIFIED_LABEL, DAF_PILLAR_PATH, DAF_PILLAR_PUBLISHED } from "@/lib/content/daf-pillar";
+import { faqPageSchema } from "@/lib/schemas";
 import { editorialWebPageSchema } from "@/lib/schemas/editorial";
 import { renderInlineMarkdownLinks, stripInlineMarkdown } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import ServiceHero from "@/components/design/ServiceHero";
 import PageByline from "@/components/PageByline";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import CTASection from "@/components/CTASection";
-import CaseProofLinks from "@/components/CaseProofLinks";
 
-/**
- * Pilier FR /daf-externalise — refonte du 3 septembre 2026.
- *
- * Douze blocs dans l'ordre des questions d'un dirigeant : promesse et
- * preuves, définition unique, missions, méthode, pour qui, tarifs, pourquoi
- * nous, experts, avis, villes, FAQ, ressources. Le sommaire suit le DOM.
- * Composant serveur : la FAQ utilise <details>, aucun état client.
- *
- * Ce qui a quitté la page (et où cela vit) : DAF vs intérimaire
- * (/daf-externalise/transition et l'article dédié), outils du DAF
- * (/ressources/ia-finance/outils), profils temps partagé / transition (pages
- * filles), « L'essentiel en 30 secondes » (redondant avec le hero), neuf
- * questions de FAQ sur dix-sept.
- */
 const AUTHOR = { name: "Sébastien Doat", slug: "sebastien-doat" };
 const SITE = "https://www.iteradvisors.com";
+const body = "text-base text-muted-foreground leading-relaxed";
+const link = "text-iter-violet underline underline-offset-4 font-medium";
 
-export default function DafPillarPage({
-  cmsNavigation,
-  teamMembers,
-}: {
-  cmsNavigation?: CmsNavItem[];
-  teamMembers?: StrapiTeamMember[];
-}) {
+function Section({ id, title, children, tinted = false }: { id: string; title: string; children: ReactNode; tinted?: boolean }) {
+  return <section id={id} className={`site-section scroll-mt-24 ${tinted ? "bg-muted/30" : "bg-background"}`}>
+    <div className="container max-w-4xl">
+      <h2 className="font-heading font-bold text-foreground text-balance">{title}</h2>
+      <div className="mt-6 space-y-6">{children}</div>
+    </div>
+  </section>;
+}
+
+/** Server-rendered content and native FAQ; shared navigation remains interactive. */
+export default function DafPillarPage({ cmsNavigation, teamMembers }: { cmsNavigation?: CmsNavItem[]; teamMembers?: StrapiTeamMember[] }) {
   const t = dafPillar;
-  const teamSource =
-    teamMembers && teamMembers.length > 0 ? teamMembers : getFallbackTeamMembers("fr");
-  const experts = t.experts.slugs
-    .map((slug) => teamSource.find((m) => m.slug === slug))
-    .filter((m): m is StrapiTeamMember => Boolean(m));
+  const teamSource = teamMembers?.length ? teamMembers : getFallbackTeamMembers("fr");
+  const experts = t.experts.slugs.map(slug => teamSource.find(m => m.slug === slug)).filter((m): m is StrapiTeamMember => Boolean(m));
+  return <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
+    <ServiceHero title={t.hero.h1} label={t.breadcrumbLabel} eyebrow="Iter Advisors · Direction financière"
+      lead={t.hero.lead} intro={t.hero.intro}
+      primary={{ href: t.contact.href, label: t.hero.cta }} secondary={{ href: "#tarifs", label: "Voir les tarifs" }}
+      summary={t.hero.landmarks} navigation={t.nav}
+      proof={<div className="mt-6 space-y-3"><ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">{t.hero.proofs.map(item => <li key={item}>{item}</li>)}</ul><a href="#preuves" className={link}>Lire les missions clients et le témoignage d’Opti Digital</a></div>} />
 
-  const eyebrow = "text-xs font-semibold uppercase tracking-widest text-iter-violet mb-2 block";
-  const h2 = "text-2xl sm:text-3xl font-bold font-heading text-foreground leading-tight text-balance";
-  const body = "text-sm sm:text-base text-muted-foreground leading-relaxed";
+    <Section id="besoin" title={t.needs.heading}>
+      <span id="pour-qui" className="block scroll-mt-24" />
+      <span id="comprendre" className="block scroll-mt-24" />
+      <p className={body}>{t.needs.intro}</p>
+      <div className="space-y-6">{t.needs.items.map(item => <div key={item.title}><h3 className="font-semibold text-foreground">{item.title}</h3><p className={`${body} mt-2`}>{item.text}</p></div>)}</div>
+      <p className={`${body} border-l-2 border-iter-violet pl-5`}>{t.needs.note}</p>
+    </Section>
 
-  return (
-    <PageLayout locale="fr" cmsNavigation={cmsNavigation}>
-      <ServiceHero title={t.hero.h1} label={t.breadcrumbLabel} eyebrow="Iter Advisors · Direction financière" lead={t.hero.lead}
-        primary={{ href: "/contact#daf", label: t.hero.cta }} secondary={{ href: "#tarifs", label: "Voir les tarifs" }}
-        summary={t.hero.landmarks}
-        proof={<ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">{t.hero.proofs.map(item => <li key={item} className="flex items-start gap-2"><span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-iter-violet" />{item}</li>)}</ul>}
-        navigation={t.nav} />
+    <Section id="missions" title={t.missions.heading} tinted>
+      <span id="livrables-pme" className="block scroll-mt-24" />
+      <p className={body}>{t.missions.intro}</p>
+      <div className="divide-y divide-border">{t.missions.items.map(item => <article key={item.title} className="py-6 first:pt-0">
+        <h3 className="font-semibold text-foreground">{item.title}</h3>
+        <dl className="mt-4 grid sm:grid-cols-2 gap-5"><div><dt className="font-semibold text-foreground">Votre livrable</dt><dd className={`${body} mt-2`}>{item.deliverable}</dd></div><div><dt className="font-semibold text-foreground">Pour décider</dt><dd className={`${body} mt-2`}>{item.decision}</dd></div></dl>
+        <Link className={`${link} inline-flex mt-4`} href={item.href}>{item.linkLabel}</Link>
+      </article>)}</div>
+      <figure className="site-card bg-white border border-border p-5 sm:p-7">
+        <figcaption><h3 className="font-semibold text-foreground">{t.missions.example.heading}</h3><p className={`${body} mt-2`}>{t.missions.example.intro}</p></figcaption>
+        <div className="overflow-x-auto mt-5"><table className="w-full text-sm text-left border-collapse"><caption className="sr-only">Trame illustrative de revue mensuelle, sans données client</caption><thead><tr>{["Constat", "Question à examiner", "Action à suivre"].map(label => <th scope="col" key={label} className="p-3 border-b border-border">{label}</th>)}</tr></thead><tbody>{t.missions.example.rows.map(row => <tr key={row[0]}>{row.map((cell, index) => index === 0 ? <th scope="row" key={cell} className="p-3 border-b border-border font-medium">{cell}</th> : <td key={cell} className="p-3 border-b border-border">{cell}</td>)}</tr>)}</tbody></table></div>
+      </figure>
+    </Section>
 
-      <section id="preuves" className="bg-muted/30 py-10 scroll-mt-24">
-        <div className="container max-w-4xl">
-          <h2 className="text-2xl font-heading font-bold">Une mission concrète, un avis vérifié</h2>
-          <figure className="site-card mt-8 rounded-3xl bg-iter-violet text-white p-6 sm:p-8">
-            <blockquote className="site-copy text-sm sm:text-base leading-relaxed">« {t.why.quote.text} »</blockquote>
-            <figcaption className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm">
-              <span>
-                <span className="font-semibold text-iter-chartreuse block">{t.why.quote.author}</span>
-                <span className="text-white/70">{t.why.quote.role}</span>
-              </span>
-              <a
-                href={t.why.quote.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-auto text-iter-chartreuse/90 hover:text-iter-chartreuse underline underline-offset-2"
-              >
-                {t.why.quote.sourceLabel}
-              </a>
-            </figcaption>
-          </figure>
-          <Link href="/ressources/cas-clients/opti-digital-structuration-financement" className="inline-flex mt-4 font-semibold text-iter-violet underline">Voir les livrables de la mission Opti Digital</Link>
-        </div>
-      </section>
-      {/* 07 — Tarifs */}
-      <section id="tarifs" className="site-section bg-background py-14 sm:py-20 scroll-mt-24">
-        <div className="container max-w-4xl px-4 sm:px-6">
-          <span className={eyebrow}>Tarifs</span>
-          <h2 className={h2}>{t.pricing.heading}</h2>
-          <p className={`${body} mt-3 max-w-[70ch]`}>{t.pricing.intro}</p>
-          <div className="site-card mt-6 rounded-2xl border border-border/60 p-5 sm:p-6">
-            <p className={body}>{t.pricing.scope}</p>
-            <p className={`${body} mt-3 font-medium text-foreground`}>{t.pricing.engagement}</p>
-          </div>
-          <p className="mt-6">
-            <Link href={t.pricing.link.href} className="inline-flex items-center gap-1 text-sm font-medium text-iter-violet hover:underline">
-              {t.pricing.link.label}
-              <ArrowRight size={14} />
-            </Link>
-          </p>
-        </div>
-      </section>
+    <Section id="preuves" title={t.cases.heading}>
+      <p className={body}>{t.cases.intro}</p>
+      <div className="grid md:grid-cols-2 gap-6">{t.cases.items.map(item => <article className="site-card border border-border p-5 sm:p-7 flex flex-col" key={item.company}><p className="site-eyebrow">{item.company}</p><h3 className="font-semibold text-foreground">{item.title}</h3><p className={`${body} mt-4`}>{item.text}</p><p className={`${body} mt-4 mb-5`}>{item.takeaway}</p><Link href={item.href} className={`${link} mt-auto`}>{item.linkLabel}</Link></article>)}</div>
+      <figure id="avis" className="border-l-2 border-iter-violet pl-5 scroll-mt-24"><blockquote className="site-copy text-foreground">« {t.cases.quote.text} »</blockquote><figcaption className="mt-3 text-sm text-muted-foreground"><strong className="text-foreground">{t.cases.quote.author}</strong>, {t.cases.quote.role}<br /><a className={link} href={t.cases.quote.sourceUrl} target="_blank" rel="noopener noreferrer">{t.cases.quote.sourceLabel}</a></figcaption></figure>
+      <Link href={t.contact.href} className="site-button site-button-primary">{t.hero.cta}</Link>
+    </Section>
 
-      <section id="besoin" className="site-section container max-w-4xl py-12 scroll-mt-24">
-        <h2 className="text-2xl font-heading font-bold">Quelle est votre priorité ?</h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-3">
-          {[{title:"Anticiper le cash et lire les marges",href:"/services/previsionnel-tresorerie",text:"Prévisionnel, BFR et décisions de financement."},{title:"Fiabiliser le reporting",href:"/services/controle-de-gestion-externalise",text:"Indicateurs, rapprochements et revue mensuelle."},{title:"Financer la croissance",href:"/services/accompagnement-levee-de-fond",text:"Budget, modèle financier et préparation des dossiers."}].map(item => <Link key={item.href} href={item.href} className="site-card rounded-2xl border border-border p-5 hover:border-iter-violet"><h3 className="font-semibold">{item.title}</h3><p className="mt-2 text-sm text-muted-foreground">{item.text}</p><span className="mt-4 block text-sm text-iter-violet">Voir l’accompagnement →</span></Link>)}
-        </div>
-      </section>
-              <PageByline
-                locale="fr"
-                author={AUTHOR}
-                dateModified={DAF_PILLAR_MODIFIED}
-                dateLabel={DAF_PILLAR_MODIFIED_LABEL}
-                className="container max-w-4xl mt-6"
-              />
-      {/* 03 — Missions */}
-      <section id="missions" className="site-section bg-background py-14 sm:py-20 scroll-mt-24">
-        <div className="container max-w-4xl px-4 sm:px-6">
-          <span className={eyebrow}>Missions</span>
-          <h2 className={h2}>{t.missions.heading}</h2>
-          <p className={`${body} mt-3 max-w-[62ch]`}>{t.missions.intro}</p>
-          <ol className="mt-8 grid sm:grid-cols-2 gap-4">
-            {t.missions.items.map((m, i) => (
-              <li
-                key={m.title}
-                className="site-card rounded-2xl border border-border/50 bg-background p-5 flex flex-col gap-2 hover:border-iter-violet/30 transition-colors"
-              >
-                <span className="text-xs font-semibold tabular-nums text-iter-violet">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="text-base sm:text-lg font-semibold font-heading text-foreground">{m.title}</h3>
-                <p className={body}>{m.deliverable}</p>
-                <Link
-                  href={m.href}
-                  className="mt-auto inline-flex items-center gap-1 text-sm font-medium text-iter-violet hover:underline"
-                >
-                  {m.linkLabel}
-                  <ArrowRight size={14} />
-                </Link>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+    <Section id="methode" title={t.method.heading} tinted>
+      <p className={body}>{t.method.intro}</p>
+      <ol className="space-y-6">{t.method.steps.map((step, index) => <li key={step.title}><h3 className="font-semibold text-foreground"><span className="text-iter-violet">{index + 1}. </span>{step.title}</h3><p className={`${body} mt-2`}>{step.text}</p></li>)}</ol>
+      <p className={body}>{t.method.note}</p>
+      <div id="villes" className="scroll-mt-24"><p className={body}>{t.method.cities}</p><ul className="mt-3 flex flex-wrap gap-x-5 gap-y-3">{[["Paris", "/daf-externalise-paris"], ["Barcelone", "/daf-externalise-barcelone"], ["Toulouse", "/daf-externalise-toulouse"]].map(([label, href]) => <li key={href}><Link className={link} href={href}>DAF externalisé à {label}</Link></li>)}</ul></div>
+    </Section>
 
-      {/* 04 — Cas clients : rendu seulement avec des cas validés par écrit */}
-      {t.cases.length > 0 && (
-        <section id="missions-reelles" className="site-section bg-muted/30 py-14 sm:py-20 scroll-mt-24">
-          <div className="container max-w-4xl px-4 sm:px-6">
-            <span className={eyebrow}>Missions réelles</span>
-            <h2 className={h2}>Trois missions, racontées sans enjoliver</h2>
-            <div className="mt-8 grid md:grid-cols-3 gap-4">
-              {t.cases.map((c) => (
-                <article key={c.sector + c.size} className="site-card rounded-2xl border border-border/50 p-5">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-iter-violet">
-                    {c.sector} · {c.size}
-                  </p>
-                  <dl className={`${body} mt-3 space-y-2`}>
-                    <div><dt className="font-semibold text-foreground">Situation</dt><dd>{c.situation}</dd></div>
-                    <div><dt className="font-semibold text-foreground">Intervention</dt><dd>{c.action}</dd></div>
-                    <div><dt className="font-semibold text-foreground">Résultat</dt><dd>{c.result}</dd></div>
-                  </dl>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+    <Section id="tarifs" title={t.pricing.heading}>
+      <p className={`${body} font-medium text-foreground`}>{t.pricing.intro}</p>
+      {t.pricing.paragraphs.map(text => <p key={text} className={body}>{text}</p>)}
+      <Link href={t.pricing.link.href} className={link}>{t.pricing.link.label}</Link>
+    </Section>
 
-      {/* 05 — Les 90 premiers jours */}
-      <section id="methode" className="site-section bg-iter-dark text-white py-14 sm:py-20 scroll-mt-24">
-        <div className="container max-w-4xl px-4 sm:px-6">
-          <span className="text-xs font-semibold uppercase tracking-widest text-iter-chartreuse mb-2 block">
-            Méthode
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-bold font-heading leading-tight text-balance">
-            {t.method.heading}
-          </h2>
-          <p className="site-copy mt-3 text-sm sm:text-base text-white/70 leading-relaxed max-w-[62ch]">{t.method.intro}</p>
-          <ol className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {t.method.steps.map((s) => (
-              <li key={s.period} className="site-card rounded-2xl border border-white/15 p-5 flex flex-col gap-2">
-                <span className="text-xs font-semibold uppercase tracking-widest text-iter-chartreuse">{s.period}</span>
-                <h3 className="text-base font-semibold font-heading">{s.title}</h3>
-                <p className="text-sm text-white/70 leading-relaxed">{s.text}</p>
-              </li>
-            ))}
-          </ol>
-          <p className="mt-6 text-sm text-white/60 leading-relaxed max-w-[70ch]">{t.method.note}</p>
-        </div>
-      </section>
-
-
-
-      {/* 02 — Définition unique */}
-      <section id="comprendre" className="site-section bg-muted/30 py-12 sm:py-16 scroll-mt-24">
-        <div className="container max-w-3xl px-4 sm:px-6">
-          <h2 className={h2}>{t.definition.heading}</h2>
-          <p className={`${body} mt-4 text-foreground/90`}>
-            <dfn className="not-italic font-semibold text-foreground">{t.definition.dfn}</dfn>
-            {" : "}
-            {renderInlineMarkdownLinks(t.definition.text.replace(/^Un /, "un "))}
-          </p>
-        </div>
-      </section>
-
-      <CaseProofLinks heading="D’autres missions documentées" />
-      {/* 06 — Pour qui */}
-      <section id="pour-qui" className="site-section bg-background py-14 sm:py-20 scroll-mt-24">
-        <div className="container max-w-4xl px-4 sm:px-6">
-          <span className={eyebrow}>Pour qui</span>
-          <h2 className={h2}>{t.forWhom.heading}</h2>
-          <p className={`${body} mt-3 max-w-[62ch]`}>{t.forWhom.intro}</p>
-          <div className="mt-8 grid sm:grid-cols-2 gap-4">
-            {t.forWhom.segments.map((s) => (
-              <article key={s.title} className="site-card rounded-2xl border border-border/50 p-5 flex flex-col gap-2">
-                <h3 className="text-base sm:text-lg font-semibold font-heading text-foreground">{s.title}</h3>
-                <p className={body}>
-                  <span className="font-semibold text-foreground">Déclencheur : </span>
-                  {s.trigger}
-                </p>
-                <p className={body}>{s.answer}</p>
-                {s.href && s.linkLabel && (
-                  <Link href={s.href} className="mt-auto inline-flex items-center gap-1 text-sm font-medium text-iter-violet hover:underline">
-                    {s.linkLabel}
-                    <ArrowRight size={14} />
-                  </Link>
-                )}
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="livrables-pme" className="site-section bg-background py-14 sm:py-20 scroll-mt-24">
-        <div className="container max-w-4xl px-4 sm:px-6">
-          <h2 className={h2}>{t.forWhom.monthlyWork.heading}</h2>
-          <p className={`${body} mt-4`}>{t.forWhom.monthlyWork.intro}</p>
-          <ol className="grid sm:grid-cols-3 gap-4 mt-6">
-            {t.forWhom.monthlyWork.steps.map((step, index) => (
-              <li key={step.title} className="site-card rounded-2xl border border-border p-5">
-                <span className="text-sm font-semibold text-iter-violet">0{index + 1}</span>
-                <h3 className="font-semibold text-foreground mt-2 mb-3">{step.title}</h3>
-                <p className={body}>{step.text}</p>
-              </li>
-            ))}
-          </ol>
-          <div className="site-card mt-6 rounded-2xl bg-iter-violet/5 p-5">
-            <p className={body}>{t.forWhom.monthlyWork.proof}</p>
-            <Link href={t.forWhom.monthlyWork.href} className="mt-3 inline-flex items-center gap-2 text-iter-violet font-medium underline underline-offset-4">Lire le cas Opti Digital <ArrowRight size={16} /></Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 06 bis — Secteurs : les requêtes « daf externalisé industrie / commerce /
-          startup » atteignent le top 10 sans clic ; ce bloc répond et maille
-          les pages sectorielles, qui recevaient peu de liens. */}
-      <section id="secteurs" className="site-section bg-muted/30 py-14 sm:py-20 scroll-mt-24">
-        <div className="container max-w-4xl px-4 sm:px-6">
-          <span className={eyebrow}>Secteurs</span>
-          <h2 className={h2}>{t.forWhom.sectors.heading}</h2>
-          <div className="mt-8 grid sm:grid-cols-2 gap-4">
-            {t.forWhom.sectors.items.map((s) => (
-              <article key={s.title} className="site-card rounded-2xl border border-border/50 bg-background p-5 flex flex-col gap-2">
-                <h3 className="text-base font-semibold font-heading text-foreground">{s.title}</h3>
-                <p className={body}>{s.text}</p>
-                <Link href={s.href} className="mt-auto inline-flex items-center gap-1 text-sm font-medium text-iter-violet hover:underline">
-                  {s.linkLabel}
-                  <ArrowRight size={14} />
-                </Link>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 08 — Pourquoi Iter + cabinet + experts */}
-      <section id="pourquoi-iter" className="site-section bg-muted/30 py-14 sm:py-20 scroll-mt-24">
-        <div className="container max-w-4xl px-4 sm:px-6">
-          <span className={eyebrow}>Pourquoi nous</span>
-          <h2 className={h2}>{t.why.heading}</h2>
-          <div className="mt-8 grid sm:grid-cols-2 gap-4">
-            {t.why.points.map((p) => (
-              <div key={p.title} className="site-card rounded-2xl border border-border/50 bg-background p-5">
-                <h3 className="text-base font-semibold font-heading text-foreground">{p.title}</h3>
-                <p className={`${body} mt-2`}>{renderInlineMarkdownLinks(p.text)}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* « cabinet de directeur externalisé » : 248 impressions, position 15,
-              aucun clic. La question derrière est « pourquoi pas un indépendant ». */}
-          <div className="mt-10">
-            <h3 className="text-xl sm:text-2xl font-bold font-heading text-foreground text-balance">{t.cabinet.heading}</h3>
-            <dl className="mt-5 grid sm:grid-cols-2 gap-x-6 gap-y-4">
-              {t.cabinet.points.map((p) => (
-                <div key={p.title} className="border-l-2 border-iter-violet/40 pl-4">
-                  <dt className="text-sm font-semibold text-foreground">{p.title}</dt>
-                  <dd className={`${body} mt-1`}>{p.text}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-
-
-          <p className="mt-4">
-            <Link href={t.why.casesLink.href} className="inline-flex items-center gap-1 text-sm font-medium text-iter-violet hover:underline">
-              {t.why.casesLink.label}
-              <ArrowRight size={14} />
-            </Link>
-          </p>
-
-          {experts.length > 0 && (
-            <div id="experts" className="mt-12 scroll-mt-24">
-              <h3 className="text-xl sm:text-2xl font-bold font-heading text-foreground">{t.experts.heading}</h3>
-              <p className={`${body} mt-2 max-w-[62ch]`}>{t.experts.intro}</p>
+    <Section id="pourquoi-iter" title={t.experts.heading} tinted>
+      <p className={body}>{t.experts.intro}</p>
+      <div id="experts" className="scroll-mt-24">
               <ul className="mt-6 grid sm:grid-cols-2 gap-4">
                 {experts.map((e) => {
                   // Strapi ne renvoie pas toujours la photo : repli sur le
@@ -345,7 +109,7 @@ export default function DafPillarPage({
                       </div>
                       <div className="min-w-0">
                         <p className="text-base font-semibold font-heading text-foreground">
-                          <Link href={aboutHref("fr", e.slug)} rel="author" className="hover:text-iter-violet">
+                          <Link href={aboutHref("fr", e.slug)} className="hover:text-iter-violet">
                             {e.firstName} {e.lastName}
                           </Link>
                         </p>
@@ -367,83 +131,18 @@ export default function DafPillarPage({
                   );
                 })}
               </ul>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* 09 — Avis Trustfolio (widget existant, sans AggregateRating) */}
-      <div id="avis" className="scroll-mt-24">
-        <TestimonialsSection locale="fr" />
       </div>
+      {t.experts.paragraphs.map(text => <p className={body} key={text}>{text}</p>)}
+      <Link href="/ressources/ia-finance" className={link}>Notre approche de l’IA en finance</Link>
+      <PageByline locale="fr" author={AUTHOR} dateModified={DAF_PILLAR_MODIFIED} dateLabel={DAF_PILLAR_MODIFIED_LABEL} />
+    </Section>
 
-      {/* 10 — Villes : trois liens à ancre locale, pas de texte de ville ici */}
-      <section id="villes" className="site-section bg-background py-12 sm:py-16 scroll-mt-24">
-        <div className="container max-w-4xl px-4 sm:px-6">
-          <h2 className={h2}>{t.cities.heading}</h2>
-          <p className={`${body} mt-3 max-w-[62ch]`}>{t.cities.text}</p>
-          <ul className="mt-5 flex flex-wrap gap-3">
-            {t.cities.items.map((c) => (
-              <li key={c.href}>
-                <Link
-                  href={c.href}
-                  className="site-button site-button-secondary inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm font-medium text-foreground hover:border-iter-violet/50 hover:text-iter-violet transition-colors"
-                >
-                  <MapPin size={14} className="text-iter-violet" />
-                  {c.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+    <Section id="faq" title="Les questions à clarifier avant de démarrer">
+      <div>{t.faq.map(item => <details key={item.question} className="group border-b border-border"><summary className="flex cursor-pointer list-none items-start justify-between gap-4 py-5"><h3 className="font-semibold text-foreground">{item.question}</h3><span aria-hidden="true" className="shrink-0 text-iter-violet group-open:rotate-45">+</span></summary><p className={body}>{renderInlineMarkdownLinks(item.answer)}</p></details>)}</div>
+      <nav id="secteurs" aria-label="Accompagnements sectoriels" className="scroll-mt-24 text-sm"><p className="font-semibold mb-3">Approfondir selon votre activité</p><ul className="flex flex-wrap gap-x-5 gap-y-3">{[["Startups et SaaS", "/fractional-cfo-startups"], ["E-commerce", "/daf-externalise/ecommerce"], ["Industrie", "/daf-externalise/industrie"], ["Deep-tech", "/daf-externalise/deep-tech"]].map(([label, href]) => <li key={href}><Link href={href} className={link}>{label}</Link></li>)}</ul></nav>
+    </Section>
 
-      {/* 11 — FAQ resserrée */}
-      <section id="faq" className="site-section bg-muted/30 py-14 sm:py-20 scroll-mt-24">
-        <div className="container max-w-3xl px-4 sm:px-6">
-          <span className={eyebrow}>FAQ</span>
-          <h2 className={h2}>Les questions qu’on nous pose avant de démarrer</h2>
-          <div className="mt-6 divide-y divide-border/60 rounded-2xl border border-border/60 bg-background">
-            {t.faq.map((item) => (
-              <details key={item.question} className="group px-5 py-4">
-                <summary className="site-copy flex cursor-pointer list-none items-start justify-between gap-4 text-sm sm:text-base font-semibold text-foreground">
-                  <h3 className="font-semibold">{item.question}</h3>
-                  <span
-                    aria-hidden
-                    className="mt-1 shrink-0 text-iter-violet transition-transform group-open:rotate-45 text-lg leading-none"
-                  >
-                    +
-                  </span>
-                </summary>
-                <p className={`${body} mt-3`}>{renderInlineMarkdownLinks(item.answer)}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 12 — Ressources */}
-      <section className="site-section bg-background py-12 sm:py-16">
-        <div className="container max-w-3xl px-4 sm:px-6">
-          <h2 className="text-lg sm:text-xl font-bold font-heading text-foreground">{t.resources.heading}</h2>
-          <ul className="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2">
-            {t.resources.items.map((r) => (
-              <li key={r.href}>
-                <Link href={r.href} className="inline-flex items-start gap-1.5 text-sm text-iter-violet hover:underline">
-                  <ArrowRight size={14} className="mt-0.5 shrink-0" />
-                  {r.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <CTASection locale="fr" />
-
-      {/* Données structurées : Service + AggregateOffer (grille de facts.ts),
-          WebPage (auteur, dates), FAQPage (réponses sans Markdown), Person
-          des associés, Speakable. Le BreadcrumbList vient du composant. */}
+    <section className="site-section site-contact-band"><div className="container max-w-3xl text-center"><h2 className="site-cta-title">{t.contact.heading}</h2><p className="site-cta-copy mt-5 mb-8">{t.contact.text}</p><Link href={t.contact.href} className="site-button site-button-primary">{t.hero.cta}</Link></div></section>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -480,7 +179,7 @@ export default function DafPillarPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            editorialWebPageSchema({
+            { ...editorialWebPageSchema({
               path: DAF_PILLAR_PATH,
               name: t.meta.title,
               description: t.meta.description,
@@ -488,7 +187,7 @@ export default function DafPillarPage({
               author: AUTHOR,
               datePublished: DAF_PILLAR_PUBLISHED,
               dateModified: DAF_PILLAR_MODIFIED,
-            }),
+            }), mainEntity: { "@id": `${SITE}${DAF_PILLAR_PATH}#service-offer` } },
           ),
         }}
       />
@@ -532,12 +231,5 @@ export default function DafPillarPage({
           }),
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(speakableSchema({ url: DAF_PILLAR_PATH, cssSelectors: ["[data-speakable]"] })),
-        }}
-      />
-    </PageLayout>
-  );
+    </PageLayout>;
 }

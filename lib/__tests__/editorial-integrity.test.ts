@@ -1,3 +1,4 @@
+import { DAF_PILLAR_MODIFIED } from "../content/daf-pillar";
 import { describe, it, expect } from 'vitest';
 import { glossaryFaqItems } from '../glossary-faq';
 import { getGlossaryEntryContent } from '../content/glossary-entries';
@@ -17,7 +18,7 @@ describe('editorial integrity', () => {
   });
   it('keeps current content dates when applying historical sitemap overrides', async () => {
     const entries = await sitemap();
-    expect(entries.find(item => item.url.endsWith('/daf-externalise'))?.lastModified).toBe('2026-10-01');
+    expect(entries.find(item => item.url.endsWith('/daf-externalise'))?.lastModified).toBe(DAF_PILLAR_MODIFIED);
     expect(entries.some(item => item.url.endsWith('/ressources/glossaire/daf'))).toBe(false);
     expect(entries.find(item => item.url.endsWith('/daf-externalise/metier'))?.lastModified).toBe('2026-10-01');
     expect(entries.find(item => item.url.endsWith('/en/ressources/blog/daf-externalise-vs-daf-salarie'))?.lastModified).toBe('2026-09-13');

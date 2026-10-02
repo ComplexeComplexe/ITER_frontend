@@ -1,388 +1,123 @@
-/**
- * Contenu du pilier FR /daf-externalise — refonte du 3 septembre 2026.
- *
- * Pourquoi un fichier séparé de lib/content/daf.ts : ce dernier alimente le
- * gabarit DafPage partagé par les pages EN et ES ; la refonte du pilier FR
- * change l'ordre, le périmètre et le volume des blocs, sans toucher aux deux
- * autres langues.
- *
- * Diagnostic qui a conduit à la refonte (GSC juin–août 2026) : 7 353
- * impressions, 8 clics, position 21 ; zéro clic sur 1 548 impressions en
- * positions 4 à 10 ; page de 4 391 mots qui définissait cinq fois le DAF
- * externalisé et débordait sur ses propres pages filles (Paris, coût,
- * intérimaire). Cible : une page de vente d'environ 2 700 mots, dans l'ordre
- * des questions d'un dirigeant, qui joue les deux atouts que les concurrents
- * classés n'ont pas — des prix vérifiables et un baromètre propriétaire.
- *
- * Tout chiffre vient de lib/content/facts.ts. Aucun cas client chiffré n'est
- * publié tant que les données validées ne sont pas fournies (règle 4 de
- * facts.ts) : le bloc `cases` reste vide et n'est pas rendu.
- */
-import {
-  ANNEE_FONDATION,
-  CLIENTS_ACCOMPAGNES,
-  COUT_DAF_SALARIE,
-  DELAIS,
-  ENGAGEMENT,
-  FONDS_LEVES,
-  FORMULES,
-  REPARTITION_CLIENTS_PAR_FORMULE,
-  TRUSTFOLIO_RATING,
-  TRUSTFOLIO_REVIEW_COUNT,
-} from "@/lib/content/facts";
+/** French transactional pillar. Commercial facts stay shared with the pricing page. */
+import { CLIENTS_ACCOMPAGNES, DELAIS, ENGAGEMENT, FORMULES } from "@/lib/content/facts";
 
 export const DAF_PILLAR_PATH = "/daf-externalise";
 export const DAF_PILLAR_PUBLISHED = "2026-05-17";
-export const DAF_PILLAR_MODIFIED = "2026-10-01";
-export const DAF_PILLAR_MODIFIED_LABEL = "1er octobre 2026";
-
-export interface PillarMission {
-  title: string;
-  /** Le livrable concret, pas la promesse. */
-  deliverable: string;
-  href: string;
-  linkLabel: string;
-}
-
-export interface PillarStep {
-  period: string;
-  title: string;
-  text: string;
-}
-
-export interface PillarSegment {
-  title: string;
-  trigger: string;
-  answer: string;
-  href?: string;
-  linkLabel?: string;
-}
-
-export interface PillarCase {
-  sector: string;
-  size: string;
-  situation: string;
-  action: string;
-  result: string;
-}
-
-export interface PillarFaq {
-  question: string;
-  /** Peut contenir des liens Markdown `[texte](/chemin)` ; retirés du JSON-LD. */
-  answer: string;
-}
-
+export const DAF_PILLAR_MODIFIED = "2026-10-02";
+export const DAF_PILLAR_MODIFIED_LABEL = "2 octobre 2026";
 const fmt = (n: number) => n.toLocaleString("fr-FR").replace(/ | /g, " ");
+const budget = `${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT`;
 
 export const dafPillar = {
   meta: {
     title: "DAF externalisé pour PME et startups | Iter Advisors",
-    description: `Directeur financier senior 1 à 8 jours par mois, ${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT. ${FONDS_LEVES} levés par nos clients, démarrage en ${DELAIS.missionDemarree}, sans durée minimale, préavis de ${ENGAGEMENT.preavisJours} jours.`,
+    description: "DAF externalisé pour PME et startups : trésorerie, reporting et pilotage financier avec un interlocuteur dédié. Découvrez nos missions et nos tarifs.",
   },
   breadcrumbLabel: "DAF externalisé",
-
   hero: {
     h1: "DAF externalisé pour PME et startups",
     lead: "Pilotez votre trésorerie, vos marges et vos financements avec un directeur financier senior dédié, sans recruter à temps plein.",
+    intro: "Un DAF externalisé prend en charge le pilotage financier de votre entreprise quelques jours par mois. Il transforme les données comptables et opérationnelles en prévisions, en décisions et en actions suivies avec vous. Le temps partagé décrit ce rythme d’intervention ; fractional CFO est l’appellation anglophone courante.",
     landmarks: [
-      { label: "Budget mensuel", value: `${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT` },
-      { label: "Démarrage", value: DELAIS.missionDemarree },
+      { label: "Budget mensuel", value: budget },
+      { label: "Démarrage indicatif", value: DELAIS.missionDemarree },
       { label: "Engagement", value: `Sans durée minimale, préavis de ${ENGAGEMENT.preavisJours} jours` },
     ],
-    proofs: [
-      `${CLIENTS_ACCOMPAGNES} entreprises accompagnées`,
-      `${FONDS_LEVES} levés par nos clients depuis ${ANNEE_FONDATION}`,
-      `${TRUSTFOLIO_RATING}/5 sur ${TRUSTFOLIO_REVIEW_COUNT} avis Trustfolio`,
-      "Équipes à Paris et Barcelone",
-    ],
+    proofs: [`${CLIENTS_ACCOMPAGNES} entreprises accompagnées`, "Équipes à Paris et Barcelone"],
     cta: "Échanger sur mon besoin",
-    photo: {
-      src: "/images/team/sebastien-doat.webp",
-      alt: "Sébastien Doat, associé fondateur et DAF externalisé chez Iter Advisors",
-    },
   },
-
   nav: [
+    { id: "missions", label: "Missions" },
     { id: "preuves", label: "Cas clients" },
+    { id: "methode", label: "Fonctionnement" },
     { id: "tarifs", label: "Tarifs" },
-    { id: "besoin", label: "Votre besoin" },
-    { id: "missions", label: "Livrables" },
-    { id: "methode", label: "Mise en place" },
-    { id: "faq", label: "Questions fréquentes" },
+    { id: "faq", label: "Questions" },
   ],
-
-  definition: {
-    heading: "Un DAF externalisé, c'est quoi ?",
-    dfn: "DAF externalisé",
-    text: "Un directeur administratif et financier senior qui pilote la finance d'une entreprise sans en être salarié. Il intervient quelques jours par mois, dans la durée ou pour une mission précise, avec les responsabilités d'un DAF interne : trésorerie, reporting, budget, financement, relations investisseurs. On dit aussi directeur financier externalisé, direction financière externalisée ou CFO externalisé ; le [fractional CFO](/fractional-cfo-startups) en est la variante pensée pour les startups financées.",
-  },
-
-  missions: {
-    heading: "Ce qu'un DAF externalisé fait chez vous",
-    intro: "Cinq chantiers reviennent dans la quasi-totalité des missions. Pour chacun, ce que vous recevez concrètement.",
+  needs: {
+    heading: "À quel moment faire appel à un DAF externalisé ?",
+    intro: "Le besoin apparaît quand les décisions deviennent plus complexes que les informations disponibles. Vous pouvez être une PME rentable, une entreprise familiale ou une startup : une levée de fonds n’est pas un préalable. Trois situations permettent de reconnaître les priorités à traiter.",
     items: [
-      {
-        title: "Trésorerie et prévisionnel",
-        deliverable: "Un prévisionnel de trésorerie à 13 semaines tenu chaque semaine, le suivi du cash et de la dette, la relation avec vos banques.",
-        href: "/ressources/blog/cash-burn-calculer-runway-anticiper-levee",
-        linkLabel: "Calculer son cash burn et son runway",
-      },
-      {
-        title: "Reporting et pilotage",
-        deliverable: "Un reporting mensuel P&L, cash et KPI lisible par le dirigeant et le board, et une revue finance mensuelle pour décider.",
-        href: "/services/controle-de-gestion-externalise",
-        linkLabel: "Le contrôle de gestion externalisé",
-      },
-      {
-        title: "Budget et business plan",
-        deliverable: "Un budget annuel, un business plan à 3 ou 5 ans avec ses scénarios, et des hypothèses défendables devant un investisseur.",
-        href: "/ressources/blog/organiser-sa-direction-financiere",
-        linkLabel: "Organiser sa direction financière",
-      },
-      {
-        title: "Financement",
-        deliverable: "Dossier, modèle financier, data room et pilotage de la due diligence pour une levée de fonds ou une dette non dilutive.",
-        href: "/services/accompagnement-levee-de-fond",
-        linkLabel: "L'accompagnement en levée de fonds",
-      },
-      {
-        title: "M&A et structuration",
-        deliverable: "Due diligence, valorisation et intégration côté acquéreur ou cédant ; comptabilité analytique et outils quand la fonction finance doit grandir.",
-        href: "/services/ma-due-diligence",
-        linkLabel: "M&A et due diligence",
-      },
-    ] satisfies PillarMission[],
+      { title: "Retrouver de la visibilité", text: "Votre carnet de commandes est rempli, mais votre trésorerie varie sans explication claire. Vous connaissez le chiffre d’affaires, moins la marge par client ou activité. La priorité est de rapprocher les chiffres, d’anticiper les encaissements et de comprendre ce qui consomme du cash avant un recrutement ou un investissement." },
+      { title: "Structurer une entreprise qui grandit", text: "Le dirigeant centralise les tableaux, les équipes utilisent des versions différentes et le reporting arrive trop tard. Le chantier porte sur les responsabilités, le calendrier de clôture et les indicateurs utiles. Le DAF travaille avec les personnes déjà en place pour organiser une fonction finance adaptée à votre taille." },
+      { title: "Préparer un financement ou une opération", text: "Vous devez présenter un projet à une banque, préparer une levée ou étudier une acquisition. Le travail consiste à rendre les hypothèses explicites, tester les scénarios et organiser les documents demandés. Ces projets font l’objet d’un périmètre précis, distinct du suivi mensuel lorsqu’ils le nécessitent." },
+    ],
+    note: "Si vous cherchez uniquement une tenue comptable, ou une présence de direction à temps plein, le dispositif à temps partagé doit être comparé aux autres solutions avant de décider.",
   },
-
-  /** Rendu uniquement quand des cas validés par écrit sont fournis (règle 4). */
-  cases: [] as PillarCase[],
-
-  method: {
-    heading: "Les 90 premiers jours d'une mission",
-    intro: `Du premier échange au démarrage effectif, comptez ${DELAIS.missionDemarree}. Ensuite, la mission suit un déroulé que nous appliquons à chaque client.`,
-    steps: [
-      {
-        period: "Semaines 1 et 2",
-        title: "Diagnostic et cadrage écrit",
-        text: "Revue du cash, de la dette, du reporting existant, des outils et des process. Le cadrage écrit fixe le périmètre, les livrables, le rythme d'intervention et vos interlocuteurs.",
-      },
-      {
-        period: "Mois 1",
-        title: "Des chiffres fiables",
-        text: "Prévisionnel de trésorerie à 13 semaines, premier reporting mensuel P&L, cash et KPI, revue finance avec le dirigeant. Vous savez ce qui est produit, quand, et par qui.",
-      },
-      {
-        period: "Mois 2",
-        title: "Piloter",
-        text: "Budget ou business plan selon votre stade, reporting investisseurs ou board, et suppression des tâches manuelles qui font perdre du temps à l'équipe.",
-      },
-      {
-        period: "Mois 3",
-        title: "Le chantier structurant",
-        text: "Selon la formule : préparation d'une levée ou d'une dette non dilutive, automatisation du reporting, due diligence, internationalisation ou structuration post-levée.",
-      },
-    ] satisfies PillarStep[],
-    note: "Le DAF affecté reste le même tout au long de la mission. Un associé relit le travail et assure le relais en cas d'indisponibilité.",
-  },
-
-  forWhom: {
-    heading: "Un DAF externalisé pour votre PME ou votre startup",
-    intro: "Le bon moment n'est pas une question de chiffre d'affaires mais de complexité : une levée, un board à informer, plusieurs entités, des recrutements à anticiper en trésorerie.",
-    segments: [
-      {
-        title: "PME établie, sans levée de fonds",
-        trigger: "La trésorerie varie malgré un carnet de commandes rempli, les marges par activité sont difficiles à lire ou un investissement doit être financé.",
-        answer: "Le DAF organise un prévisionnel de trésorerie, un reporting de marge, un budget et les échanges avec les banques. Il coordonne le pilotage avec votre expert-comptable. La formule dépend du périmètre et de la complexité, sans condition de financement par des investisseurs.",
-        href: "/ressources/cas-clients/opti-digital-structuration-financement",
-        linkLabel: "Voir une mission de structuration de PME",
-      },
-      {
-        title: FORMULES[0].cible,
-        trigger: "Première levée à préparer, runway à suivre de près, besoin d'un interlocuteur senior face aux investisseurs.",
-        answer: `Formule ${FORMULES[0].nom}, ${FORMULES[0].volumeIndicatif} en moyenne : ${FORMULES[0].inclus}`,
-      },
-      {
-        title: FORMULES[1].cible,
-        trigger: "Trésorerie plus complexe, reporting investisseurs trimestriel, prochain tour ou dette non dilutive à structurer.",
-        answer: `Formule ${FORMULES[1].nom}, ${FORMULES[1].volumeIndicatif} en moyenne : ${FORMULES[1].inclus}`,
-      },
-      {
-        title: `${FORMULES[2].cible}, PME multi-entités`,
-        trigger: "Opérations de M&A, gouvernance et board, consolidation, internationalisation, data finance.",
-        answer: `Formule ${FORMULES[2].nom}, ${FORMULES[2].volumeIndicatif} en moyenne : ${FORMULES[2].inclus}`,
-      },
-      {
-        title: "ETI ou PME dont le DAF est parti",
-        trigger: "Départ du directeur financier, restructuration, intégration post-acquisition.",
-        answer: `Un DAF de transition intervient sous ${DELAIS.transitionUrgent}, à temps plein ou presque, jusqu'au recrutement ou à la fin de l'opération.`,
-        href: "/daf-externalise/transition",
-        linkLabel: "Le DAF de transition",
-      },
-    ] satisfies PillarSegment[],
-    monthlyWork: {
-      heading: "Dans une PME, que livre le DAF chaque mois ?",
-      intro: "Le calendrier est convenu avec votre équipe et votre expert-comptable. Voici une trame de travail à adapter à la qualité des données et au périmètre de la mission.",
-      steps: [
-        { title: "Fiabiliser les chiffres", text: "Rapprocher le reporting des comptes disponibles, identifier les pièces manquantes et expliquer les écarts. Le DAF coordonne les travaux ; la production comptable reste dans la lettre de mission de l’expert-comptable." },
-        { title: "Lire la marge et anticiper le cash", text: "Actualiser la marge par activité, comparer le réalisé au budget et revoir les encaissements, les paiements et les investissements à venir. Les hypothèses et les données encore provisoires sont signalées." },
-        { title: "Décider et suivre les actions", text: "Tenir une revue avec le dirigeant : relances clients, prix, dépenses ou financement. Chaque action a un responsable et une échéance ; la revue suivante vérifie son avancement. Le dirigeant conserve la décision et les autorisations de paiement." },
-      ],
-      proof: "Chez Opti Digital, la mission documentée associe reporting mensuel, procédures de clôture, migration ERP et financement non dilutif. Elle illustre une structuration durable de la fonction finance.",
-      href: "/ressources/cas-clients/opti-digital-structuration-financement",
-    },
-    sectors: {
-      heading: "Par secteur, les chantiers ne sont pas les mêmes",
-      items: [
-        {
-          title: "SaaS et logiciel",
-          text: "MRR, churn, CAC et marge brute par cohorte : le reporting doit parler la langue des investisseurs, et le prévisionnel suivre les cycles de facturation annuels.",
-          href: "/fractional-cfo-startups",
-          linkLabel: "DAF externalisé pour les startups et SaaS",
-        },
-        {
-          title: "Deep-tech",
-          text: "Financements non dilutifs, crédit d'impôt recherche, subventions et jalons techniques : la trésorerie se pilote au rythme des programmes, pas du chiffre d'affaires.",
-          href: "/daf-externalise/deep-tech",
-          linkLabel: "DAF externalisé pour la deep-tech",
-        },
-        {
-          title: "E-commerce et retail",
-          text: "Stocks, BFR saisonnier, marges par canal et coûts d'acquisition : le sujet est le cash immobilisé, et sa rotation.",
-          href: "/daf-externalise/ecommerce",
-          linkLabel: "DAF externalisé pour le e-commerce",
-        },
-        {
-          title: "Industrie et services",
-          text: "Coûts de revient, affaires et projets, investissements et financement bancaire : comptabilité analytique et dialogue avec les banques au premier plan.",
-          href: "/daf-externalise/industrie",
-          linkLabel: "DAF externalisé pour l'industrie",
-        },
+  missions: {
+    heading: "Ce que vous recevez et les décisions que cela prépare",
+    intro: "Le périmètre est défini au départ : toutes les missions n’incluent pas tous les livrables. Le socle récurrent associe généralement prévisionnel, reporting et revue avec le dirigeant. Les travaux de financement, de transformation ou d’acquisition sont ajoutés selon votre situation.",
+    items: [
+      { title: "Anticiper la trésorerie", deliverable: "Un prévisionnel à 13 semaines, avec les encaissements, paiements, échéances de dette et hypothèses à surveiller. La fréquence d’actualisation est convenue selon la volatilité de votre activité et la disponibilité des données.", decision: "Identifier une tension à venir, préparer un échange bancaire ou arbitrer le calendrier d’une dépense. Le prévisionnel distingue les flux connus des hypothèses ; il ne garantit pas les encaissements.", href: "/services/previsionnel-tresorerie", linkLabel: "Prévisionnel de trésorerie" },
+      { title: "Comprendre la rentabilité", deliverable: "Un reporting mensuel du résultat, de la trésorerie et des indicateurs pertinents, avec une lecture des écarts au budget. Selon votre modèle, l’analyse porte sur une activité, un canal, une entité ou un projet.", decision: "Repérer une marge qui se dégrade, discuter d’un prix ou revoir une dépense. Les données provisoires et les limites de comparaison sont signalées pour éviter de décider sur un chiffre incomplet.", href: "/services/controle-de-gestion-externalise", linkLabel: "Contrôle de gestion externalisé" },
+      { title: "Construire une trajectoire finançable", deliverable: "Un budget ou un business plan avec ses scénarios et, si la mission le prévoit, un dossier de financement. Les besoins de trésorerie sont reliés aux hypothèses de vente, de recrutement et d’investissement.", decision: "Comparer plusieurs trajectoires et préparer les questions des banques ou investisseurs. L’obtention d’un financement dépend aussi du projet et de leurs décisions ; elle ne peut pas être promise par le DAF.", href: "/services/accompagnement-levee-de-fond", linkLabel: "Préparer une levée de fonds" },
+    ],
+    example: {
+      heading: "Une revue mensuelle orientée vers l’action",
+      intro: "Cette trame illustre le déroulé d’un échange, sans présenter de données client. L’objectif est de relier chaque constat à une décision, puis de vérifier son avancement lors de la revue suivante.",
+      rows: [
+        ["Encaissements décalés", "Quelles factures nécessitent une relance ?", "Responsable et échéance de relance"],
+        ["Marge inférieure au budget", "Quel coût ou canal explique l’écart ?", "Analyse ciblée avant arbitrage"],
+        ["Investissement envisagé", "Quel effet sur le solde de trésorerie ?", "Scénario à valider par le dirigeant"],
       ],
     },
   },
-
-  cabinet: {
-    heading: "Un cabinet plutôt qu'un indépendant : ce que ça change",
-    points: [
-      {
-        title: "La continuité",
-        text: "Si votre DAF est indisponible, un autre membre de l'équipe prend le relais avec l'historique du dossier. Un indépendant seul, c'est un point de défaillance unique.",
-      },
-      {
-        title: "La relecture",
-        text: "Les livrables sensibles (business plan, dossier de levée, due diligence) sont relus par un associé avant d'être présentés à un tiers.",
-      },
-      {
-        title: "Les spécialistes",
-        text: "Fiscalité franco-espagnole, M&A, structuration de levée, automatisation et IA : l'équipe couvre ce qui sort du périmètre d'un DAF généraliste, sans changer d'interlocuteur.",
-      },
-      {
-        title: "Le cadre",
-        text: "Cadrage écrit, forfait mensuel sans dépassement facturé sans avenant signé, résiliation avec un préavis de 30 jours : le contrat protège les deux parties.",
-      },
+  cases: {
+    heading: "Deux missions pour comprendre notre intervention",
+    intro: "Les exemples suivants décrivent des travaux documentés. Leur périmètre illustre deux besoins différents ; il ne préjuge ni du calendrier ni des résultats d’une nouvelle mission.",
+    items: [
+      { company: "Opti Digital", title: "Structurer la fonction finance dans la durée", text: "Dans cette PME adtech, l’accompagnement associe reporting mensuel, procédures de clôture, migration ERP et financement non dilutif. La mission comprend aussi la coordination des sujets fiscaux et juridiques avec les conseils externes. Elle montre comment le pilotage récurrent peut s’articuler avec des chantiers de structuration.", takeaway: "Pour le dirigeant : disposer d’une fonction finance organisée et d’un interlocuteur pour relier les différents travaux. Aucun montant de financement ni gain de productivité n’est annoncé ici.", href: "/ressources/cas-clients/opti-digital-structuration-financement", linkLabel: "Voir la mission Opti Digital" },
+      { company: "SolarMente", title: "Préparer une levée et une acquisition", text: "Le cas documenté sur la période 2022 à 2024 porte sur un modèle financier multi-scénarios, une data room, le reporting au conseil et des procédures de contrôle de trésorerie. Il comprend l’intégration financière de l’acquisition d’Eltex en 2024, dans un contexte de croissance d’une cleantech.", takeaway: "Pour le dirigeant : organiser les informations et les hypothèses nécessaires à une opération. Les dirigeants, investisseurs et conseils ont également contribué à ces projets ; leur réussite ne peut pas être attribuée au seul accompagnement d’Iter.", href: "/ressources/cas-clients/solarmente-serie-b-cleantech", linkLabel: "Voir la mission SolarMente" },
     ],
-  },
-
-  pricing: {
-    heading: "Quel budget prévoir pour votre DAF externalisé ?",
-    intro: `Les missions récurrentes Iter vont de ${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois. Le forfait couvre un périmètre et un niveau de séniorité définis au devis. Le budget dépend des livrables, du nombre d’entités et de la complexité de votre organisation.`,
-    scope: "Le premier échange sert à préciser les travaux attendus et la disponibilité nécessaire. Les missions de transition et les projets ponctuels font l’objet d’un chiffrage distinct.",
-    engagement: ENGAGEMENT.formulation,
-    link: { href: "/daf-externalise/tarifs", label: "Voir les formules, les livrables inclus et les tarifs détaillés" },
-  },
-
-  why: {
-    heading: "Pourquoi Iter Advisors",
-    points: [
-      {
-        title: "Un DAF dédié, qui reste",
-        text: "Le même directeur financier tout au long de la mission : c'est lui qui connaît votre historique. Le cabinet assure le relais en cas d'indisponibilité.",
-      },
-      {
-        title: "Des associés qui interviennent",
-        text: "Les associés relisent les missions et interviennent eux-mêmes sur les sujets structurants : levée, M&A, fiscalité franco-espagnole.",
-      },
-      {
-        title: "France et Espagne",
-        text: "Des équipes à Paris et Barcelone, habituées aux environnements financiers français et espagnol. À Toulouse, les missions sont pilotées à distance, avec des déplacements convenus au cadrage.",
-      },
-      {
-        title: "Des outils modernes, sans dogme",
-        text: "Automatisation et IA déployées là où elles sont rentables, après avoir fiabilisé les données. Notre méthode est documentée dans le [hub IA & Finance](/ressources/ia-finance).",
-      },
-    ],
-    // Témoignage vérifié sur Trustfolio (profil public du cabinet).
     quote: {
-      text: "Nous collaborons avec Iter Advisors depuis 5 ans, et cette relation s'est révélée être un véritable atout stratégique. Bien au-delà d'un simple DAF externalisé, leurs équipes nous ont accompagnés sur des sujets structurants : migration ERP, structuration de la fonction finance, sujets légaux et fiscaux complexes, financement non dilutif. J'apprécie particulièrement leur capacité à nous challenger et à éclairer nos décisions stratégiques.",
+      text: "J'apprécie particulièrement leur capacité à nous challenger et à éclairer nos décisions stratégiques.",
       author: "Magali Quentel-Reme",
       role: "CEO et co-fondatrice, Opti Digital",
       sourceUrl: "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
-      sourceLabel: "Avis vérifié sur Trustfolio",
+      sourceLabel: "Extrait du témoignage publié sur Trustfolio le 12 novembre 2025",
     },
-    casesLink: { href: "/ressources/cas-clients", label: "Voir nos cas clients" },
   },
-
+  method: {
+    heading: "Comment se passe la collaboration ?",
+    intro: `Le délai indicatif de démarrage est de ${DELAIS.missionDemarree}, à confirmer selon le profil et le périmètre. La mise en place suit ensuite vos priorités et l’état de vos données, sans imposer le même programme de 90 jours à chaque entreprise.`,
+    steps: [
+      { title: "Cadrer les responsabilités", text: "Nous examinons vos outils, les données disponibles et les décisions à préparer. Le cadrage écrit précise les livrables, leur fréquence, les interlocuteurs et les travaux hors périmètre. Votre équipe identifie qui transmet les informations ; le rôle de l’expert-comptable est clarifié pour éviter les doublons." },
+      { title: "Organiser un mois de travail", text: "Le rythme associe collecte et rapprochement des données, préparation des analyses, puis revue avec le dirigeant. Les actions retenues ont un responsable et une échéance. Ce travail peut être réparti sur le mois : un volume indicatif de jours ne signifie pas que tout se joue lors d’une seule réunion." },
+      { title: "Ajuster le dispositif", text: "Le suivi permet de revoir les hypothèses et les priorités. Une nouvelle entité, une acquisition ou un changement d’outil peut nécessiter un avenant. Les canaux de contact, le traitement des urgences et le relais en cas d’absence sont à préciser au cadrage, selon la disponibilité nécessaire à votre organisation." },
+    ],
+    note: "Prévoyez un interlocuteur interne, les accès adaptés et du temps pour valider les hypothèses. La charge de préparation dépend de la qualité des données : elle est à estimer ensemble, sans promettre un nombre d’heures identique à toutes les entreprises.",
+    cities: "Nos équipes sont basées à Paris et Barcelone. Le rythme sur site et à distance est convenu au cadrage. À Toulouse, les interventions se font à distance et avec des déplacements selon accord.",
+  },
+  pricing: {
+    heading: "Quel budget prévoir et que couvre le forfait ?",
+    intro: `Les missions récurrentes Iter vont de ${budget} par mois. Le forfait porte sur un périmètre de travail et un niveau de séniorité définis au devis. Les volumes de jours présentés dans les formules sont indicatifs : ils ne constituent pas un crédit d’heures.`,
+    paragraphs: [
+      "Le budget varie avec les livrables attendus, le nombre d’entités, la qualité des données et la complexité de l’organisation. Une entreprise dont le reporting existe déjà n’appelle pas le même travail qu’une fonction finance à reconstruire. La production, l’analyse et la supervision doivent donc être comparées ensemble lorsque vous examinez plusieurs propositions.",
+      "Le socle Essentiel comprend notamment un reporting mensuel, un prévisionnel de trésorerie et une revue finance. Les autres formules élargissent le périmètre selon les besoins. Les projets ponctuels et les missions de transition font l’objet d’un chiffrage distinct ; une levée de fonds ou une acquisition n’est pas incluse par défaut dans toute mission récurrente.",
+      `${ENGAGEMENT.formulation} Aucun dépassement n’est facturé sans avenant signé. Avant de vous engager, faites préciser ce qui est inclus, les contributions attendues de votre équipe et les conditions de révision. Comparer uniquement un forfait mensuel à un salaire à temps plein ne suffit pas : la présence et les responsabilités confiées diffèrent.`,
+    ],
+    link: { href: "/daf-externalise/tarifs", label: "Consulter les formules et les tarifs détaillés" },
+  },
   experts: {
-    heading: "Qui intervient chez vous",
-    intro: "Les associés interviennent eux-mêmes sur les missions stratégiques et supervisent l'ensemble des engagements.",
+    heading: "Qui pilote votre mission chez Iter ?",
+    intro: "Sébastien Doat, associé fondateur et DAF externalisé, est votre interlocuteur finance. Le profil affecté à la mission dépend du besoin : CFO ou Finance Manager senior, avec l’appui prévu dans la formule. Le premier échange sert aussi à vérifier cette adéquation, plutôt qu’à vous proposer un niveau de séniorité identique pour tous les travaux.",
+    paragraphs: [
+      "Les associés supervisent les engagements et interviennent sur les sujets structurants. Le cadrage permet de distinguer la personne qui produit le reporting, celle qui conduit la revue et celle qui relit les livrables sensibles. La continuité repose sur la connaissance du dossier et l’organisation d’un relais, sans promettre qu’une même personne sera disponible en toutes circonstances.",
+      "L’automatisation et l’IA peuvent faciliter la collecte ou la préparation des analyses lorsqu’elles répondent à un besoin identifié. Elles ne remplacent ni le contrôle des chiffres ni la discussion avec le dirigeant. La priorité reste une information compréhensible et utilisable, avec des outils adaptés à votre équipe.",
+    ],
     slugs: ["sebastien-doat", "florent-greth"],
   },
-
-  cities: {
-    heading: "Où nous intervenons",
-    text: "Sur site ou à distance, le rythme de présence est défini au cadrage. Nos équipes sont basées à Paris et Barcelone ; nous accompagnons aussi les entreprises toulousaines à distance et sur site selon accord :",
-    items: [
-      { label: "DAF externalisé à Paris", href: "/daf-externalise-paris" },
-      { label: "DAF externalisé à Toulouse", href: "/daf-externalise-toulouse" },
-      { label: "DAF externalisé à Barcelone", href: "/daf-externalise-barcelone" },
-    ],
-  },
-
   faq: [
-    {
-      question: "Combien coûte un DAF externalisé ?",
-      answer: `Entre ${fmt(FORMULES[0].prixMin)} et ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT par mois selon la formule, en forfait mensuel, jamais à l'heure. ${REPARTITION_CLIENTS_PAR_FORMULE.formulation} Le détail de ce qui est inclus est sur la [grille tarifaire](/daf-externalise/tarifs).`,
-    },
-    {
-      question: "En combien de temps la mission démarre-t-elle ?",
-      answer: `Du premier échange au démarrage effectif, comptez ${DELAIS.missionDemarree} : qualification sous ${DELAIS.qualification}, profil présenté sous ${DELAIS.profilPresente}, contrat signé sous ${DELAIS.contratSigne}. Les premiers livrables arrivent ${DELAIS.premiersLivrables}.`,
-    },
-    {
-      question: "Y a-t-il une durée d'engagement ?",
-      answer: `Non. ${ENGAGEMENT.formulation} L'engagement porte sur un périmètre de travail, revu avec vous quand votre activité change.`,
-    },
-    {
-      question: "À partir de quelle taille d'entreprise un DAF externalisé a-t-il du sens ?",
-      answer: `Il n'y a pas de seuil de chiffre d'affaires. Le déclencheur est la complexité : une levée à préparer, un board ou des investisseurs à informer, plusieurs entités, des recrutements à anticiper en trésorerie. Nos plus petits clients sont des ${FORMULES[0].cible.toLowerCase()} ; les plus grands, des groupes en série B et au-delà.`,
-    },
-    {
-      question: "Un DAF externalisé peut-il travailler à distance ?",
-      answer: "Oui. La plupart des missions combinent des journées sur site, notamment au démarrage et pour les comités, et du travail à distance sur des outils partagés. Le rythme de présence est fixé au cadrage. Nos équipes sont basées à Paris et Barcelone. À Toulouse, nous intervenons à distance, avec des visites convenues au cadrage ; aucun consultant n’y réside actuellement.",
-    },
-    {
-      question: "Quelle différence avec un expert-comptable ?",
-      answer: "Ils sont complémentaires, pas substituables. L'expert-comptable produit et sécurise l'information comptable et fiscale selon sa lettre de mission ; le DAF externalisé s'en sert pour piloter : prévisionnel, reporting de gestion, marges, financement. Une PME structurée a typiquement les deux. Voir [DAF externalisé ou expert-comptable](/ressources/blog/daf-externalise-vs-expert-comptable).",
-    },
-    {
-      question: "Quelle différence avec un DAF intérimaire ou de transition ?",
-      answer: `Le DAF externalisé intervient quelques jours par mois, dans la durée. Le [DAF de transition](/daf-externalise/transition) intervient à temps plein ou presque, sous ${DELAIS.transitionUrgent}, pour une période définie : départ du DAF, restructuration, intégration. Le comparatif détaillé est dans [DAF externalisé ou DAF intérimaire](/ressources/blog/daf-externalise-vs-daf-interimaire).`,
-    },
-    {
-      question: "Quelle différence avec un DAF salarié ?",
-      answer: `Le coût, le délai et l'engagement. Un DAF salarié représente un ${COUT_DAF_SALARIE.base} de ${fmt(COUT_DAF_SALARIE.min)} à ${fmt(COUT_DAF_SALARIE.max)} € par an et plusieurs mois de recrutement ; un DAF externalisé démarre à ${fmt(FORMULES[0].prixMin)} € HT par mois, en ${DELAIS.missionDemarree}, sans durée minimale. Le recrutement se justifie quand le besoin devient un temps plein durable. Voir [DAF externalisé ou DAF salarié](/ressources/blog/daf-externalise-vs-daf-salarie).`,
-    },
-  ] satisfies PillarFaq[],
-
-  resources: {
-    heading: "Aller plus loin",
-    items: [
-      { label: "La direction financière à temps partagé, quelques jours par mois", href: "/daf-externalise/temps-partage" },
-      { label: "Le DAF de transition, quand le poste est vacant", href: "/daf-externalise/transition" },
-      { label: "Notre grille tarifaire détaillée", href: "/daf-externalise/tarifs" },
-      { label: "Externaliser ou recruter son directeur financier", href: "/ressources/blog/daf-externalise-vs-daf-salarie" },
-      { label: "Cinq critères pour choisir son cabinet", href: "/ressources/blog/choisir-cabinet-daf-externalise" },
-    ],
+    { question: "Dois-je changer d’expert-comptable ?", answer: "L’intervention du DAF n’implique pas, en elle-même, de changer de cabinet. L’expert-comptable produit et sécurise l’information comptable et fiscale selon sa lettre de mission ; le DAF organise son utilisation pour piloter. Les échanges et responsabilités sont définis ensemble. [Comparer les rôles](/ressources/blog/daf-externalise-vs-expert-comptable)." },
+    { question: "Faut-il changer nos logiciels ?", answer: "Un changement ne doit pas être un préalable automatique. L’existant est examiné avant de proposer une évolution : données accessibles, fiabilité et temps de traitement. Une migration éventuelle doit avoir un objectif, un coût et un périmètre définis. [Notre approche IA et finance](/ressources/ia-finance)." },
+    { question: "Qui garde la décision et les autorisations de paiement ?", answer: "Le dirigeant conserve les décisions et les autorisations de paiement. Les analyses du DAF servent à préparer les arbitrages. Les accès aux outils doivent correspondre aux tâches confiées ; toute délégation éventuelle nécessite un cadre explicite, distinct d’un simple accès aux informations financières." },
+    { question: "Comment préparer la fin d’une mission ?", answer: `Le préavis est de ${ENGAGEMENT.preavisJours} jours. Faites préciser au contrat les modalités de restitution des fichiers, la documentation et la passation à votre équipe ou au prochain intervenant. Ces points doivent être abordés dès le cadrage, avec les règles d’accès et de confidentialité applicables aux données.` },
+    { question: "Et si nous avons besoin d’un DAF à temps plein ?", answer: "Une présence quotidienne durable peut justifier un recrutement. Pour un remplacement ou une transformation temporaire, le [DAF de transition](/daf-externalise/transition) est une autre réponse. Le [temps partagé](/daf-externalise/temps-partage) convient à un besoin récurrent dont le volume reste partiel : ces dispositifs se choisissent selon la charge réelle." },
+    { question: "Accompagnez-vous aussi les startups ?", answer: "Oui. Les priorités peuvent inclure le suivi de trésorerie, le reporting investisseurs et la préparation d’un financement. Le niveau d’intervention dépend de l’organisation et des données disponibles, pas seulement du tour de financement. La page [fractional CFO pour startups](/fractional-cfo-startups) détaille cet accompagnement." },
+  ],
+  contact: {
+    heading: "Échangeons sur votre situation",
+    text: "Décrivez votre priorité, votre organisation actuelle et votre échéance. Nous vous recontactons pour préciser le besoin et convenir d’un échange. Il servira à identifier un périmètre utile et les informations nécessaires à une proposition. Aucun rendez-vous n’est réservé automatiquement par le formulaire.",
+    href: "/contact#daf",
   },
 } as const;
-
 export type DafPillarContent = typeof dafPillar;
