@@ -517,7 +517,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <h2 id="reco">Un protocole de choix concret</h2>
 <p>Préparez un dossier de démonstration anonymisé avec une facture d’achat, une vente, un avoir, un actif et une ventilation analytique. Demandez à chaque candidat de traiter le même parcours, jusqu’à l’export comptable. Notez les interventions manuelles, les contrôles possibles et les limites constatées. Faites valider le résultat par la personne qui tiendra la comptabilité.</p>
 <p>Avant toute migration, convenez du solde de reprise, des accès, des responsabilités et du rapprochement avec l’ancien système. Le DAF cadre le besoin et le pilotage ; le logiciel ne remplace pas la validation comptable.</p>
-<p>Pour aller plus loin : <a href="/ressources/outils/pennylane">fiche Pennylane</a>, <a href="/ressources/outils/sage">fiche Sage</a> et <a href="/services/comptabilite-externalisation">organisation de votre comptabilité externalisée</a>.</p>
+<p>Pour aller plus loin : <a href="/ressources/outils/pennylane">notre avis Pennylane</a>, <a href="/ressources/outils/sage">fiche Sage</a> et <a href="/services/comptabilite-externalisation">organisation de votre comptabilité externalisée</a>.</p>
 <h2 id="sources">Sources et méthode</h2>
 <p>Documentation consultée le 13 septembre 2026 : <a href="https://www.pennylane.com/fr">présentation officielle Pennylane</a> et <a href="https://www.sage.com/fr-fr/produits/">gamme officielle Sage</a>. Cette grille est une aide au choix, pas un benchmark chronométré ni un compte rendu de résultats clients. Les tarifs et fonctionnalités doivent être confirmés dans l’offre retenue.</p>`,
       content: [],
@@ -1270,7 +1270,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <p>Les plateformes comptables cloud (<a href="/ressources/outils/pennylane">Pennylane</a>, Sage, Cegid Loop) permettent :</p>
 <ul>
 <li>Rapprochement bancaire automatique</li>
-<li>Clôture mensuelle en 3 à 5 jours (contre 15 à 20 jours en comptabilité traditionnelle)</li>
+<li>Clôture mensuelle à organiser avec des données complètes et des contrôles définis</li>
 <li>Accès temps réel aux données pour le dirigeant</li>
 <li>Intégration avec les outils de trésorerie et de dépenses</li>
 </ul>
@@ -1303,7 +1303,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <p>L'embauche d'un comptable interne devient pertinente, mais supervisée par un DAF externalisé. La fonction comptable interne traite le quotidien ; le DAF gère la stratégie financière, le reporting, et les relations avec les investisseurs.</p>
 <h2 id="section-5-outils">Section 5 — Les outils recommandés par profil</h2>
 <h3>Startups SaaS et PME digitales</h3>
-<p><strong><a href="/ressources/outils/pennylane">Pennylane</a></strong> : la meilleure expérience utilisateur du marché. Clôture en 3-5 jours, API ouverte, intégration native avec Agicap, Spendesk, PayFit. Prix : 39 € à 199 € par mois.</p>
+<p><strong><a href="/ressources/outils/pennylane">Pennylane</a></strong> : examiner les échanges avec le cabinet, l’analytique, les accès et la reprise. Les fonctions et les prix dépendent de la formule et des utilisateurs ; consultez notre avis détaillé pour vérifier le périmètre et la source tarifaire.</p>
 <h3>Industrie et stocks complexes</h3>
 <p><strong>Sage</strong> : gestion de stocks avancée (lots, traçabilité, numéros de série), module immobilisations complet, consolidation multi-sociétés. Prix : 99 € à 499 € par mois.</p>
 <h3>Retail et multi-établissements</h3>

@@ -63,13 +63,15 @@ export default function CategoryPage({
               {categoryContent.title} pour PME : le comparatif de nos DAF externalisés
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">{categoryContent.intro}</p>
+            {slug === 'logiciels-comptabilite' && <p className="mb-4 text-muted-foreground">Pour approfondir une solution, consultez notre <Link href="/ressources/outils/pennylane" className="text-iter-violet underline underline-offset-4">avis Pennylane</Link> : périmètre, tarifs par formule et contrôles de migration.</p>}
+            <p className="text-sm text-muted-foreground mb-4"><Link href="/ressources/outils/methode" className="text-iter-violet underline underline-offset-4">Notre méthode d’analyse des outils finance</Link></p>
             {locale === "fr" && slug === "logiciels-tresorerie" && <p className="text-muted-foreground"><Link href="/ressources/blog/flux-de-tresorerie" className="text-iter-violet underline underline-offset-4">Comprendre les flux de trésorerie</Link> avant de choisir les connexions et les scénarios de votre outil.</p>}
           </div>
         </div>
       </section>
 
       {/* Quick verdict */}
-      <section className="bg-blue-50 border-l-4 border-l-blue-900 py-6 px-6 my-12">
+      <section className="bg-iter-violet/5 border-l-4 border-l-iter-violet py-6 px-6 my-12">
         <div className="container">
           <p className="font-semibold text-gray-900 mb-2">Verdict rapide (30 secondes)</p>
           <p className="text-gray-700">

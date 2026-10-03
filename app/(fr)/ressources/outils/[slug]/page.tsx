@@ -5,6 +5,8 @@ import { getCmsNavigation } from "@/lib/static-content";
 import { getToolBySlug, getToolsByCategory, tools } from "@/data/tools";
 import CategoryPage from "@/components/Outils/CategoryPage";
 import ToolPage from "@/components/Outils/ToolPage";
+import PennylaneReviewPage from "@/components/Outils/PennylaneReviewPage";
+import { PENNYLANE_REVIEW } from "@/data/pennylaneReview";
 
 const categoryMeta = {
   "logiciels-comptabilite": {
@@ -61,8 +63,8 @@ export async function generateMetadata({
   // Check if it's a tool
   const tool = getToolBySlug(slug);
   if (tool) {
-    const title = `Avis ${tool.name} : usages et critères de choix`;
-    const description = `Avis ${tool.name} : points forts, limites, intégrations et critères de choix pour PME et startups. Sources de tarification et questions à poser à l’éditeur.`;
+    const title = slug === 'pennylane' ? PENNYLANE_REVIEW.title : `Avis ${tool.name} : usages et critères de choix`;
+    const description = slug === 'pennylane' ? PENNYLANE_REVIEW.description : `Avis ${tool.name} : points forts, limites, intégrations et critères de choix pour PME et startups. Sources de tarification et questions à poser à l’éditeur.`;
     return buildMetadata({
       locale: "fr",
       title,
@@ -112,6 +114,10 @@ export default async function Page({ params }: PageParams) {
   const tool = getToolBySlug(slug);
   if (!tool) {
     return notFound();
+  }
+
+  if (slug === 'pennylane') {
+    return <PennylaneReviewPage slug={slug} locale="fr" cmsNavigation={cmsNavigation} tool={tool} />;
   }
 
   return (

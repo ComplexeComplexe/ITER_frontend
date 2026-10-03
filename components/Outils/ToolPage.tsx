@@ -72,6 +72,7 @@ export default function ToolPage({ slug, locale = 'fr', cmsNavigation, tool }: T
           <h2 className="text-xl font-bold mt-10 mb-3">Sources et méthode</h2>
           <p className="text-sm text-muted-foreground leading-relaxed">Documentation : <a href={selection.source} className="text-iter-violet underline">source officielle {tool.name}</a>, consultée le <time dateTime={TOOL_SELECTION_REVIEW_DATE}>2 octobre 2026</time>.</p>
           <p className="mt-3 text-sm"><Link href="/ressources/blog/essentiels-outils-tech-finance" className="text-iter-violet underline">Méthode complète pour choisir et intégrer les outils finance</Link></p>
+          <p className="mt-3 text-sm"><Link href="/ressources/outils/methode" className="text-iter-violet underline">Sources, critères et preuves : notre méthode éditoriale</Link></p>
         </div>
       </section>
     </PageLayout>

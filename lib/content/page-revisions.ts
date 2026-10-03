@@ -1,5 +1,6 @@
 /** Substantive page changes. Shared navigation changes do not refresh every URL. */
 export const PAGE_REVISIONS: Record<string, string> = {
+  "/ressources/outils/methode": "2026-10-03",
   "/ressources/blog/daf-externalise-startup": "2026-10-03",
   "/es/externalizacion-daf": "2026-10-03",
   "/en/fractional-cfo": "2026-10-03",
@@ -45,11 +46,11 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/daf-externalise-paris": "2026-10-02",
   "/a-propos/sebastien-doat": "2026-10-01",
   "/ressources/outils/logiciels-paie": "2026-10-01",
-  "/ressources/outils/logiciels-comptabilite": "2026-10-01",
+  "/ressources/outils/logiciels-comptabilite": "2026-10-03",
   "/ressources/outils/payhawk": "2026-10-02",
   "/ressources/outils/fygr": "2026-10-02",
   "/ressources/outils/payfit": "2026-10-02",
-  "/ressources/outils/pennylane": "2026-10-02",
+  "/ressources/outils/pennylane": "2026-10-03",
   "/ressources/outils/revolut-business": "2026-10-02",
   "/ressources/outils/cegid-loop": "2026-10-02",
   "/ressources/blog/loi-beckham-economie-impot-simulation": "2026-10-01",
