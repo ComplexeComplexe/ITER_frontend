@@ -1,3 +1,4 @@
+import { CLIENTS_ACCOMPAGNES, CONSULTANTS } from "@/lib/content/facts";
 import { CABINET_EXPERTISES } from "@/lib/content/cabinet-expertise";
 import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
@@ -86,7 +87,7 @@ export default function DocumentShell({
                   vatID: "ESB42960849",
                   url: "https://www.iteradvisors.com/",
                   description:
-                    "Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Équipes à Barcelone et Paris ; accompagnement à distance ou sur accord à Toulouse.",
+                    `Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. ${CONSULTANTS} consultants, ${CLIENTS_ACCOMPAGNES} entreprises accompagnées. Équipes à Barcelone et Paris ; accompagnement à distance ou sur accord à Toulouse.`,
                   logo: {
                     "@type": "ImageObject",
                     url: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
@@ -117,7 +118,6 @@ export default function DocumentShell({
                   alternateName: ["Iter Advisors S.L.", "Iter Advisors Cabinet DAF"],
                   slogan: "La meilleure version de votre direction financière",
                   foundingDate: "2021",
-                  numberOfEmployees: { "@type": "QuantitativeValue", value: 15 },
                   areaServed: [
                     { "@type": "Country", name: "France" },
                     { "@type": "Country", name: "Espagne" },

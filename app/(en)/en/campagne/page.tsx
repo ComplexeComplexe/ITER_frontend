@@ -1,10 +1,11 @@
+import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 import { Metadata } from "next";
 import CasClientsPage from "@/components/pages/CasClientsPage";
 import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = {
   title: "Case Studies | Iter Advisors",
-  description: "Case studies: How Iter Advisors supports startups, scale-ups and SMEs. Real results: 50+ companies, €100M+ raised. Client testimonials.",
+  description: `Case studies: How Iter Advisors supports startups, scale-ups and SMEs. Real results: ${CLIENTS_ACCOMPAGNES} companies, €100M+ raised. Client testimonials.`,
   openGraph: {
     title: "Case Studies | Iter Advisors",
     description:

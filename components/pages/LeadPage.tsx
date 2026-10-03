@@ -1,4 +1,5 @@
 "use client";
+import { CLIENTS_ACCOMPAGNES, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 
 import { getDafOfferFacts } from "@/lib/content/offer-facts";
 import { getDafOffer } from "@/lib/content/daf-offer";
@@ -705,7 +706,7 @@ export default function LeadPage({
             >
               <span className="flex items-center gap-2">
                 <Shield size={16} className="text-iter-chartreuse" />
-                <strong className="text-white">+100</strong> {t.trustLine}
+                <strong className="text-white">{CLIENTS_ACCOMPAGNES}</strong> {t.trustLine}
               </span>
               <span className="hidden sm:block w-px h-4 bg-white/20" />
               <span className="flex items-center gap-1">
@@ -720,7 +721,7 @@ export default function LeadPage({
               </span>
               <span className="hidden sm:block w-px h-4 bg-white/20" />
               <span>
-                <strong className="text-white">32</strong> {t.trustReviews}
+                <strong className="text-white">{TRUSTFOLIO_REVIEW_COUNT}</strong> {t.trustReviews}
               </span>
             </motion.div>
           </div>
@@ -754,8 +755,8 @@ export default function LeadPage({
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Problem */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
@@ -780,8 +781,8 @@ export default function LeadPage({
 
             {/* Solution */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >

@@ -45,9 +45,11 @@ const categoryIcons: Record<string, typeof Calculator> = {
 function CategorySection({
   category,
   index,
+  profileLabel,
 }: {
   category: ToolCategory;
   index: number;
+  profileLabel: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
@@ -109,6 +111,7 @@ function CategorySection({
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {tool.description}
                   </p>
+                  {tool.profile && <p className="text-sm text-muted-foreground mt-3"><span className="font-medium text-foreground">{profileLabel} : </span>{tool.profile}</p>}
                 </div>
               </motion.a>
             ))}
@@ -177,7 +180,7 @@ export default function ToolsPage({
 
       {/* Categories */}
       {t.categories.map((category, i) => (
-        <CategorySection key={category.id} category={category} index={i} />
+        <CategorySection profileLabel={locale === "fr" ? "Profil typique" : locale === "en" ? "Typical profile" : "Perfil habitual"} key={category.id} category={category} index={i} />
       ))}
 
       <CTASection locale={locale} />

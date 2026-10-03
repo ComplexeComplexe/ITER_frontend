@@ -1,4 +1,5 @@
-import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
+import { CLIENTS_ACCOMPAGNES, CONSULTANTS, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
+import { getFinanceStackSummary } from "./finance-stack";
 import { Locale } from "../i18n";
 import { getDafOffer } from "./daf-offer";
 
@@ -184,7 +185,7 @@ export const dafContent: Record<Locale, DafContent> = {
       // La fourchette tarifaire entre dans la méta : c'est l'information que
       // le chercheur de « daf externalisé tarif » attend dans le snippet.
       description:
-        "Directeur financier externalisé de 3 000 à 8 000 € HT/mois : trésorerie, reporting, levée de fonds. 85 entreprises accompagnées. Diagnostic offert.",
+        `Directeur financier externalisé de 3 000 à 8 000 € HT/mois : trésorerie, reporting, levée de fonds. ${CLIENTS_ACCOMPAGNES} entreprises accompagnées. Diagnostic offert.`,
     },
     breadcrumbLabel: "DAF Externalisé",
     essential: {
@@ -237,7 +238,7 @@ export const dafContent: Record<Locale, DafContent> = {
     // une modalité, avec lien vers sa page propriétaire.
     h1: "DAF externalisé pour PME et startups : votre direction financière externalisée",
     intro: [
-      `Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Notre offre couvre toutes les modalités : directeur financier externalisé en mission longue, direction financière externalisée à l'année, DAF à temps partagé sur 1 à 8 jours par mois, ou CFO externalisé en mission ponctuelle. Mission démarrée sous 8 à 15 jours, sans durée minimale et avec un préavis de 30 jours. 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne, avec des équipes à Paris et Barcelone, et une intervention à Toulouse à distance ou sur accord.`,
+      `Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Notre offre couvre toutes les modalités : directeur financier externalisé en mission longue, direction financière externalisée à l'année, DAF à temps partagé sur 1 à 8 jours par mois, ou CFO externalisé en mission ponctuelle. Mission démarrée sous 8 à 15 jours, sans durée minimale et avec un préavis de 30 jours. ${CLIENTS_ACCOMPAGNES} entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne, avec des équipes à Paris et Barcelone, et une intervention à Toulouse à distance ou sur accord.`,
       "Un DAF externalisé — aussi appelé DAF à temps partagé ou CFO externalisé — est un directeur financier senior qui intervient dans votre entreprise sans en être salarié. Il co-pilote le dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs. Le format est flexible : temps partagé, mission ponctuelle ou abonnement mensuel. Pour la nuance avec son équivalent anglo-saxon, consultez notre fiche [Le CFO (Chief Financial Officer)](/ressources/glossaire/cfo). Pour la version dédiée aux startups VC-backed, voir notre offre [Fractional CFO pour startups](/fractional-cfo-startups).",
     ],
     // SEO-003 (2026-08-09) — section resserrée. Ses trois paragraphes
@@ -516,7 +517,7 @@ export const dafContent: Record<Locale, DafContent> = {
         // tient ses fiches à jour, celles-ci figeaient un état du marché.
         "Un DAF externalisé s'appuie sur une stack moderne pour automatiser les tâches répétitives et se concentrer sur l'analyse :",
         "Comptabilité et facturation avec [Pennylane](/ressources/outils/pennylane) ou [Sage](/ressources/outils/sage) ; trésorerie et prévisionnel glissant avec [Agicap](/ressources/outils/agicap) ou [Fygr](/ressources/outils/fygr) ; dépenses et cartes avec [Spendesk](/ressources/outils/spendesk), [Pleo](/ressources/outils/pleo) ou [Payhawk](/ressources/outils/payhawk) ; reporting sur Power BI, Looker ou Metabase.",
-        "Chez Iter Advisors, nous travaillons avec plus de 30 partenaires technologiques. [Découvrez notre sélection complète d'outils finance](/ressources/outils) — mise à jour en continu par nos DAFs selon les retours terrain — et notre guide sur les [10 outils indispensables pour un CFO startup](/ressources/blog/les-10-outils-pour-cfos-startup).",
+        `${getFinanceStackSummary("fr")} [Découvrez nos outils finance](/ressources/outils) et notre guide sur les [10 outils pour un CFO startup](/ressources/blog/les-10-outils-pour-cfos-startup).`,
         // IA-FINANCE (2026-09-01) — le pilier ne disait rien de l'IA alors que
         // la section dédiée existe : c'est le lien entrant qui porte le plus
         // d'autorité vers le hub.
@@ -526,8 +527,8 @@ export const dafContent: Record<Locale, DafContent> = {
     whyChoose: {
       heading: "Pourquoi choisir Iter Advisors comme cabinet de DAF externalisé ?",
       content: [
-        "Iter Advisors se distingue par la qualité de ses équipes et la profondeur de son accompagnement. Nos 15 collaborateurs, tous experts de la fonction finance, interviennent avec rigueur et engagement auprès de chaque client.",
-        "Notre présence à Barcelone, Paris et Toulouse nous permet d'accompagner des entreprises internationales et de comprendre les spécificités de chaque marché. Nous travaillons avec plus de 30 partenaires technologiques pour garantir une gestion financière moderne et efficace.",
+        `Iter Advisors se distingue par la qualité de ses équipes et la profondeur de son accompagnement. Nos ${CONSULTANTS} consultants interviennent sur le pilotage financier et la structuration de la fonction finance.`,
+        getFinanceStackSummary("fr"),
         `La satisfaction de nos clients est notre priorité : nous affichons une note de 5/5 sur Trustfolio, avec ${TRUSTFOLIO_REVIEW_COUNT} avis vérifiés. Cette excellence se traduit par des relations durables et des résultats concrets pour les entreprises que nous accompagnons.`,
       ],
     },
@@ -689,7 +690,7 @@ export const dafContent: Record<Locale, DafContent> = {
         { label: "Who it's for", text: "startups raising funds, growing SMEs, scale-ups in transformation." },
         { label: "Lead time", text: `engagement starts within ${offerEn.start}.` },
         { label: "Commitment", text: offerEn.commitment },
-        { label: "Iter Advisors in numbers", text: `15 finance consultants, 85 companies supported, EUR 100M raised, 5/5 on Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} reviews).` },
+        { label: "Iter Advisors in numbers", text: `${CONSULTANTS} finance consultants, ${CLIENTS_ACCOMPAGNES} companies supported, EUR 100M raised, 5/5 on Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} reviews).` },
       ],
     },
     definitionBox: {
@@ -706,7 +707,7 @@ export const dafContent: Record<Locale, DafContent> = {
     h1: "Fractional CFO for Startups & SMEs — Iter Advisors",
     intro: [
       "A **Fractional CFO** — or Fractional Chief Financial Officer — is a senior finance professional who works within your company without being a full-time employee. When you hire a Fractional CFO, you get the same responsibilities as an in-house CFO (financial strategy, cash flow, reporting, investor relations) but on a flexible basis: part-time, project-based, or monthly retainer.",
-      "At Iter Advisors, we support 85+ SMEs, startups and scale-ups by deploying a Fractional CFO into their finance function. Our Fractional CFOs are senior operators (10+ years) ready to structure forecasting, lead fundraising, or step in as interim CFO — without the cost or commitment of a full-time hire.",
+      `At Iter Advisors, we support ${CLIENTS_ACCOMPAGNES} SMEs, startups and scale-ups by deploying a Fractional CFO into their finance function. Our Fractional CFOs are senior operators (10+ years) ready to structure forecasting, lead fundraising, or step in as interim CFO — without the cost or commitment of a full-time hire.`,
       "New to the role? Start with our glossary entry [What is a CFO?](/en/ressources/glossaire/cfo) to understand the difference between CFO, Finance Director and Controller — and explore [our finance services](/en/services) for the full scope of what a Fractional CFO can deliver.",
     ],
     partnerSection: {
@@ -714,7 +715,7 @@ export const dafContent: Record<Locale, DafContent> = {
       content: [
         "Iter Advisors is a Fractional CFO firm with teams in Barcelona and Paris, serving Toulouse remotely or through agreed visits. We provide our clients with experienced finance directors (10+ years of experience) capable of addressing all the financial challenges of a growing company.",
         "Our approach is built on three fundamental pillars: technical expertise, strategic vision and flexibility. Each engagement is tailored to meet the specific challenges of your business.",
-        "With over 85 companies supported and more than EUR 100 million in fundraising completed by our clients, Iter Advisors has established itself as a leading player in Fractional CFO services in France and Spain.",
+        `With ${CLIENTS_ACCOMPAGNES} companies supported and more than EUR 100 million in fundraising completed by our clients, Iter Advisors has established itself as a leading player in Fractional CFO services in France and Spain.`,
       ],
     },
     whatIs: {
@@ -863,7 +864,7 @@ export const dafContent: Record<Locale, DafContent> = {
         },
       ],
       outro:
-        "Sector-wise, our **Fractional CFOs** specialize in SaaS, Deep-Tech, e-Commerce, Manufacturing, and Services — sectors where we've supported 85+ companies and facilitated EUR 100M+ in fundraising.\n\n**Additional services:** Beyond Fractional CFO support, we also offer guidance in other critical functions: **outsourced HR** for scaling team structuring, interim management for urgent situations, and fundraising support.",
+        `Sector-wise, our **Fractional CFOs** specialize in SaaS, Deep-Tech, e-Commerce, Manufacturing, and Services — sectors where we've supported ${CLIENTS_ACCOMPAGNES} companies and facilitated EUR 100M+ in fundraising.\n\n**Additional services:** Beyond Fractional CFO support, we also offer guidance in other critical functions: **outsourced HR** for scaling team structuring, interim management for urgent situations, and fundraising support.`,
     },
     featuredQuote: {
       quote:
@@ -905,14 +906,14 @@ export const dafContent: Record<Locale, DafContent> = {
         "Cash flow and forecasting: Agicap, Fygr, Cashflow. For daily cash monitoring and 12-month rolling forecasts.",
         "Reporting and BI: Power BI, Looker, Metabase, advanced Google Sheets. For automated dashboards and profitability analysis.",
         "ERP and management: Odoo, NetSuite, SAP Business One. For companies that need to integrate finance with operations (purchasing, inventory, production).",
-        "At Iter Advisors, we work with over 30 technology partners and help our clients choose and deploy the tools best suited to their size and sector.",
+        getFinanceStackSummary("en"),
       ],
     },
     whyChoose: {
       heading: "Why choose Iter Advisors as your Fractional CFO firm?",
       content: [
-        "Iter Advisors stands out for the quality of its teams and the depth of its support. Our 15 employees, all experts in the finance function, work with rigor and commitment for each client.",
-        "Our presence in Barcelona, Paris and Toulouse allows us to support international companies and understand the specificities of each market. We work with over 30 technology partners to guarantee modern and efficient financial management.",
+        `Iter Advisors stands out for the quality of its teams and the depth of its support. Our ${CONSULTANTS} consultants support financial management and the structuring of the finance function.`,
+        getFinanceStackSummary("en"),
         `Client satisfaction is our priority: we have a 5/5 rating on Trustfolio with ${TRUSTFOLIO_REVIEW_COUNT} verified reviews. This excellence translates into lasting relationships and tangible results for the companies we support.`,
       ],
     },
@@ -961,8 +962,7 @@ export const dafContent: Record<Locale, DafContent> = {
       },
       {
         question: "What tools does a Fractional CFO use?",
-        answer:
-          "Key tools include: Pennylane or Sage for accounting, Agicap or Fygr for cash flow, Power BI or Looker for reporting, and Odoo or NetSuite for ERP. At Iter Advisors, we work with over 30 technology partners.",
+        answer: getFinanceStackSummary("en"),
       },
       {
         question: "Fractional CFO vs accountant: what is the difference?",
@@ -1042,7 +1042,7 @@ export const dafContent: Record<Locale, DafContent> = {
         { label: "Para quién", text: "startups en ronda de financiación, pymes en crecimiento, empresas en transformación." },
         { label: "Plazo", text: `inicio de la misión en ${offerEs.start}.` },
         { label: "Compromiso", text: offerEs.commitment },
-        { label: "Iter Advisors en cifras", text: `15 consultores financieros, 85 empresas acompañadas, 100 M€ levantados, nota 5/5 en Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} opiniones).` },
+        { label: "Iter Advisors en cifras", text: `${CONSULTANTS} consultores financieros, ${CLIENTS_ACCOMPAGNES} empresas acompañadas, 100 M€ levantados, nota 5/5 en Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} opiniones).` },
       ],
     },
     definitionBox: {
@@ -1067,7 +1067,7 @@ export const dafContent: Record<Locale, DafContent> = {
       content: [
         "Iter Advisors es un gabinete de CFO externalizado con presencia en Barcelona, Paris y Toulouse. Ponemos a disposicion de nuestros clientes directores financieros experimentados (10+ anos de experiencia), capaces de intervenir en todas las problematicas financieras de una empresa en crecimiento.",
         "Nuestro enfoque se basa en tres pilares fundamentales: la experiencia tecnica, la vision estrategica y la flexibilidad de intervencion. Cada mision esta disenada a medida para responder a los retos especificos de su empresa.",
-        "Con mas de 85 empresas acompanadas y mas de 100 millones de euros en rondas de financiacion realizadas por nuestros clientes, Iter Advisors se ha posicionado como un actor de referencia en el ambito del CFO externalizado en Francia y Espana.",
+        `Con ${CLIENTS_ACCOMPAGNES} empresas acompanadas y mas de 100 millones de euros en rondas de financiacion realizadas por nuestros clientes, Iter Advisors se ha posicionado como un actor de referencia en el ambito del CFO externalizado en Francia y Espana.`,
       ],
     },
     whatIs: {
@@ -1206,14 +1206,14 @@ export const dafContent: Record<Locale, DafContent> = {
         "Tesoreria y previsional: Agicap, Fygr, Cashflow. Para un seguimiento diario de la tesoreria y previsionales a 12 meses.",
         "Reporting y BI: Power BI, Looker, Metabase, Google Sheets avanzado. Para construir cuadros de mando automatizados y analisis de rentabilidad.",
         "ERP y gestion: Odoo, NetSuite, SAP Business One. Para empresas que necesitan integrar las finanzas con las operaciones (compras, inventario, produccion).",
-        "En Iter Advisors, trabajamos con mas de 30 socios tecnologicos y ayudamos a nuestros clientes a elegir y desplegar las herramientas mas adaptadas a su tamano y sector.",
+        getFinanceStackSummary("es"),
       ],
     },
     whyChoose: {
       heading: "Por que elegir Iter Advisors como su gabinete de CFO externalizado?",
       content: [
-        "Iter Advisors se distingue por la calidad de sus equipos y la profundidad de su acompanamiento. Nuestros 15 colaboradores, todos expertos en la funcion financiera, intervienen con rigor y compromiso junto a cada cliente.",
-        "Nuestra presencia en Barcelona, Paris y Toulouse nos permite acompanar a empresas internacionales y comprender las especificidades de cada mercado. Trabajamos con mas de 30 socios tecnologicos para garantizar una gestion financiera moderna y eficiente.",
+        `Iter Advisors se distingue por la calidad de sus equipos y la profundidad de su acompanamiento. Nuestros ${CONSULTANTS} consultores acompañan la gestión financiera y la estructuración de la función financiera.`,
+        getFinanceStackSummary("es"),
         `La satisfaccion de nuestros clientes es nuestra prioridad: contamos con una nota de 5/5 en Trustfolio, con ${TRUSTFOLIO_REVIEW_COUNT} opiniones verificadas. Esta excelencia se traduce en relaciones duraderas y resultados concretos para las empresas que acompanamos.`,
       ],
     },
@@ -1246,8 +1246,7 @@ export const dafContent: Record<Locale, DafContent> = {
       },
       {
         question: "Que herramientas utiliza un CFO externalizado?",
-        answer:
-          "Las principales herramientas son: Pennylane o Sage para la contabilidad, Agicap o Fygr para la tesoreria, Power BI o Looker para el reporting, y Odoo o NetSuite para el ERP. En Iter Advisors, trabajamos con mas de 30 socios tecnologicos.",
+        answer: getFinanceStackSummary("es"),
       },
       {
         question: "CFO externalizado o contable: cual es la diferencia?",

@@ -1,3 +1,4 @@
+import { getFinanceStackSummary } from "./finance-stack";
 import { CFO_EXTERNE_GUIDE } from "./cfo-externe-guide";
 import { FINANCE_STACK_GUIDE, FINANCE_STACK_GUIDE_HTML } from "./finance-stack-guide";
 import { estimateReadMinutes } from "../blog-read-time";
@@ -1735,7 +1736,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         "Cloud accounting platforms like Xero, QuickBooks Online, and Pennylane have revolutionized how companies manage their books. These solutions offer real-time visibility into financial data, automated bank reconciliation, and seamless integration with other business tools.",
         "Cash management tools such as Agicap and Float provide real-time cash flow monitoring and automated forecasting. For startups and growing businesses where cash is king, these tools are invaluable for anticipating funding needs and optimizing working capital.",
         "Business Intelligence and reporting tools like Power BI, Looker, and Finthesis enable CFOs to build dynamic dashboards and share clear performance insights with investors and board members. The ability to transform raw data into actionable insights is a key differentiator for modern finance teams.",
-        "At Iter Advisors, we work with over 30 technology partners to help our clients select and implement the right tools for their specific needs. Our CFOs bring both financial expertise and tech-savvy to ensure your finance stack supports your growth ambitions.",
+        getFinanceStackSummary("en"),
       ],
     },
     "ia-et-automatisation-des-taches-repetitives-du-departement-finance": {
@@ -2193,7 +2194,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         "Las plataformas de contabilidad en la nube como Xero, QuickBooks Online y Pennylane han revolucionado la forma en que las empresas gestionan sus libros contables. Estas soluciones ofrecen visibilidad en tiempo real de los datos financieros, conciliación bancaria automatizada e integración perfecta con otras herramientas empresariales.",
         "Las herramientas de gestión de tesorería como Agicap y Float proporcionan un seguimiento en tiempo real del flujo de caja y previsiones automatizadas. Para startups y empresas en crecimiento donde el efectivo es clave, estas herramientas son invaluables para anticipar necesidades de financiación y optimizar el capital de trabajo.",
         "Las herramientas de Business Intelligence y reporting como Power BI, Looker y Finthesis permiten a los CFOs construir cuadros de mando dinámicos y compartir insights claros de rendimiento con inversores y consejeros. La capacidad de transformar datos brutos en insights accionables es un diferenciador clave para los equipos financieros modernos.",
-        "En Iter Advisors, trabajamos con más de 30 socios tecnológicos para ayudar a nuestros clientes a seleccionar e implementar las herramientas adecuadas para sus necesidades específicas. Nuestros CFOs aportan tanto experiencia financiera como conocimiento tecnológico.",
+        getFinanceStackSummary("es"),
       ],
     },
     "ia-et-automatisation-des-taches-repetitives-du-departement-finance": {

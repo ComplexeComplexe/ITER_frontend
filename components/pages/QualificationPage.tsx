@@ -1,4 +1,5 @@
 "use client";
+import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 
 import { useState, useRef, FormEvent } from "react";
 import Link from "next/link";
@@ -36,7 +37,7 @@ const qualContent = {
     h1Accent: "en 5 minutes",
     subtitle:
       "Répondez à nos questions pour recevoir une analyse personnalisée de votre maturité financière et des recommandations sur mesure.",
-    trustLine: "+100 entreprises diagnostiquées",
+    trustLine: `${CLIENTS_ACCOMPAGNES} entreprises accompagnées`,
     /* Sections */
     sections: [
       {
@@ -195,7 +196,7 @@ const qualContent = {
     h1Accent: "in 5 minutes",
     subtitle:
       "Answer our questions to receive a personalized analysis of your financial maturity and tailored recommendations.",
-    trustLine: "+100 companies assessed",
+    trustLine: `${CLIENTS_ACCOMPAGNES} companies supported`,
     sections: [
       {
         id: "company",
@@ -350,7 +351,7 @@ const qualContent = {
     h1Accent: "en 5 minutos",
     subtitle:
       "Responda a nuestras preguntas para recibir un análisis personalizado de su madurez financiera y recomendaciones a medida.",
-    trustLine: "+100 empresas diagnosticadas",
+    trustLine: `${CLIENTS_ACCOMPAGNES} empresas acompañadas`,
     sections: [
       {
         id: "company",

@@ -307,7 +307,7 @@ const content: Record<
         "Assess your financial needs in 2 minutes and discover how our Fractional CFOs can structure your growth.",
       cta: "Get my free diagnostic",
       ctaSecondary: "Discover our services",
-      socialProof: "Trusted by 100+ companies",
+      socialProof: `Trusted by ${CLIENTS_ACCOMPAGNES} companies`,
       trustfolio: "5/5 Trustfolio",
     },
     problem: {
@@ -484,7 +484,7 @@ const content: Record<
         "Evalúe sus necesidades financieras en 2 minutos y descubra cómo nuestros DAF externalizados pueden estructurar su crecimiento.",
       cta: "Obtener mi diagnóstico gratuito",
       ctaSecondary: "Descubrir nuestros servicios",
-      socialProof: "Más de 100 empresas confían en nosotros",
+      socialProof: `${CLIENTS_ACCOMPAGNES} empresas acompañadas`,
       trustfolio: "5/5 Trustfolio",
     },
     problem: {

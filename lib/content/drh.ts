@@ -1,3 +1,4 @@
+import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 import { Locale } from "../i18n";
 
 export interface DrhFaqItem {
@@ -121,7 +122,7 @@ export const drhContent: Record<Locale, DrhContent> = {
         {
           // R5-link-3: [[85 entreprises accompagnées|/ressources/cas-clients]]
           title: "Expertise multi-sectorielle",
-          text: "Forts de [[85 entreprises accompagnées|/ressources/cas-clients]], nos DRH externalisés interviennent dans 5 secteurs (SaaS, Deep-Tech, e-Commerce, Industrie, Services) et appliquent les meilleures pratiques cross-sectorielles à votre organisation.",
+          text: `Forts de [[${CLIENTS_ACCOMPAGNES} entreprises accompagnées|/ressources/cas-clients]], nos DRH externalisés interviennent dans 5 secteurs (SaaS, Deep-Tech, e-Commerce, Industrie, Services) et appliquent les meilleures pratiques cross-sectorielles à votre organisation.`,
         },
         {
           // R5-link-4: [[processus de recrutement structurés|/ressources/blog]]
@@ -323,7 +324,7 @@ export const drhContent: Record<Locale, DrhContent> = {
         question:
           "Quelle est la différence entre un DRH externalisé et un freelance RH ?",
         answer:
-          "Un freelance apporte une expertise individuelle. Un cabinet comme Iter Advisors apporte : (1) une équipe de plusieurs experts RH, (2) des playbooks éprouvés par 85+ entreprises, (3) une continuité de service si votre interlocuteur est indisponible, (4) des outils et benchmarks mutualisés, (5) un réseau de partenaires (recrutement, formation, juridique).",
+          `Un freelance apporte une expertise individuelle. Un cabinet comme Iter Advisors apporte : (1) une équipe de plusieurs experts RH, (2) des playbooks éprouvés par ${CLIENTS_ACCOMPAGNES} entreprises, (3) une continuité de service si votre interlocuteur est indisponible, (4) des outils et benchmarks mutualisés, (5) un réseau de partenaires (recrutement, formation, juridique).`,
       },
       {
         question: "Comment mesurer le ROI d'un DRH externalisé ?",
@@ -381,7 +382,7 @@ export const drhContent: Record<Locale, DrhContent> = {
         },
         {
           title: "Multi-sector expertise",
-          text: "With [[85+ companies supported|/en/ressources/cas-clients]], our HR directors work across 5 sectors (SaaS, Deep-Tech, e-Commerce, Industry, Services) and bring cross-sector best practices to your organisation.",
+          text: `With [[${CLIENTS_ACCOMPAGNES} companies supported|/en/ressources/cas-clients]], our HR directors work across 5 sectors (SaaS, Deep-Tech, e-Commerce, Industry, Services) and bring cross-sector best practices to your organisation.`,
         },
         {
           title: "Operational from day one",
@@ -490,7 +491,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       {
         question: "What is the difference between an outsourced HR director and a freelance HR consultant?",
         answer:
-          "A freelancer brings individual expertise. A firm like Iter Advisors brings: (1) a team of several HR experts, (2) playbooks proven across 85+ companies, (3) continuity of service if your contact is unavailable, (4) shared tools and benchmarks, (5) a network of partners (recruitment, training, legal).",
+          `A freelancer brings individual expertise. A firm like Iter Advisors brings: (1) a team of several HR experts, (2) playbooks proven across ${CLIENTS_ACCOMPAGNES} companies, (3) continuity of service if your contact is unavailable, (4) shared tools and benchmarks, (5) a network of partners (recruitment, training, legal).`,
       },
       {
         question: "How do you measure the ROI of an outsourced HR director?",
@@ -510,7 +511,7 @@ export const drhContent: Record<Locale, DrhContent> = {
     meta: {
       title: "RRHH externalizado | Dirección de personas | Iter Advisors",
       description:
-        "Consultoría RRHH externalizado: director de RRHH a tiempo compartido. Reclutamiento, nómina, cumplimiento y cultura. Iter Advisors, +85 empresas.",
+        `Consultoría RRHH externalizado: director de RRHH a tiempo compartido. Reclutamiento, nómina, cumplimiento y cultura. Iter Advisors, ${CLIENTS_ACCOMPAGNES} empresas.`,
     },
     breadcrumbLabel: "RRHH externalizado",
     h1: "RRHH externalizado: dirección de personas flexible y experta",
@@ -545,7 +546,7 @@ export const drhContent: Record<Locale, DrhContent> = {
         },
         {
           title: "Experiencia multisectorial",
-          text: "Con [[85+ empresas acompañadas|/es/recursos/casos-de-exito]], nuestros directores de RRHH trabajan en 5 sectores (SaaS, Deep-Tech, e-Commerce, Industria, Servicios) y aplican las mejores prácticas intersectoriales.",
+          text: `Con [[${CLIENTS_ACCOMPAGNES} empresas acompañadas|/es/recursos/casos-de-exito]], nuestros directores de RRHH trabajan en 5 sectores (SaaS, Deep-Tech, e-Commerce, Industria, Servicios) y aplican las mejores prácticas intersectoriales.`,
         },
         {
           title: "Operativo desde el primer día",
@@ -654,7 +655,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       {
         question: "¿Cuál es la diferencia entre un director de RRHH externalizado y un consultor freelance de RRHH?",
         answer:
-          "Un freelance aporta experiencia individual. Un gabinete como Iter Advisors aporta: (1) un equipo de varios expertos en RRHH, (2) playbooks probados en 85+ empresas, (3) continuidad del servicio si su interlocutor no está disponible, (4) herramientas y benchmarks compartidos, (5) una red de socios (selección, formación, jurídico).",
+          `Un freelance aporta experiencia individual. Un gabinete como Iter Advisors aporta: (1) un equipo de varios expertos en RRHH, (2) playbooks probados en ${CLIENTS_ACCOMPAGNES} empresas, (3) continuidad del servicio si su interlocutor no está disponible, (4) herramientas y benchmarks compartidos, (5) una red de socios (selección, formación, jurídico).`,
       },
       {
         question: "¿Cómo medir el ROI de un director de RRHH externalizado?",

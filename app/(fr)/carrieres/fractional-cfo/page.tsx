@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ArrowRight, Mail, Linkedin } from "lucide-react";
 import { getCmsNavigation } from "@/lib/static-content";
 import {
+  CLIENTS_ACCOMPAGNES,
+  CONSULTANTS,
   TRUSTFOLIO_RATING,
   TRUSTFOLIO_REVIEW_COUNT,
 } from "@/lib/content/facts";
@@ -400,7 +402,7 @@ export default async function Page() {
                 et nos process accélèrent vos missions
               </li>
               <li>
-                <strong>Communauté de pairs seniors</strong> : 15 consultants
+                <strong>Communauté de pairs seniors</strong> : {CONSULTANTS} consultants
                 finance avec qui échanger
               </li>
               <li>
@@ -418,7 +420,7 @@ export default async function Page() {
             </h2>
             <ul className="site-copy space-y-2 text-sm sm:text-base text-muted-foreground">
               <li>
-                <strong>+85 entreprises</strong> tech accompagnées depuis 2021
+                <strong>{CLIENTS_ACCOMPAGNES} entreprises</strong> tech accompagnées depuis 2021
               </li>
               <li>
                 <strong>+100 M€</strong> levés par nos clients (seed, Series

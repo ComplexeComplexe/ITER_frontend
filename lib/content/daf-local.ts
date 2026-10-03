@@ -1,3 +1,4 @@
+import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 import { getDafOffer } from "./daf-offer";
 import { Locale } from "../i18n";
 import citiesEn from "./locales/daf-cities.en.json";
@@ -172,7 +173,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
       meta: {
         title: "DAF externalisé Paris — CFO temps partagé | Iter Advisors",
         description:
-          "Iter Advisors, cabinet de DAF externalisé à Paris. CFO à temps partagé pour PME et startups en Ile-de-France. +85 entreprises, dès 3 000 € HT/mois.",
+          `Iter Advisors, cabinet de DAF externalisé à Paris. CFO à temps partagé pour PME et startups en Ile-de-France. ${CLIENTS_ACCOMPAGNES} entreprises, dès 3 000 € HT/mois.`,
       },
       breadcrumbLabel: "DAF externalisé Paris",
       h1: "DAF externalisé à Paris : votre CFO à temps partagé en Ile-de-France",
@@ -288,7 +289,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
       meta: {
         title: "CFO externalizado París | Tiempo compartido | Iter Advisors",
         description:
-          "Iter Advisors, gabinete de CFO externalizado en París. Dirección financiera a tiempo compartido para pymes y startups en Île-de-France. +85 empresas.",
+          `Iter Advisors, gabinete de CFO externalizado en París. Dirección financiera a tiempo compartido para pymes y startups en Île-de-France. ${CLIENTS_ACCOMPAGNES} empresas.`,
       },
       breadcrumbLabel: "CFO externalizado Paris",
       h1: "CFO externalizado en Paris: su director financiero a tiempo compartido en Ile-de-France",

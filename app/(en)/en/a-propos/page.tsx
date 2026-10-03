@@ -1,3 +1,4 @@
+import { CLIENTS_ACCOMPAGNES, CONSULTANTS } from "@/lib/content/facts";
 import { Metadata } from "next";
 import AboutPage from "@/components/pages/AboutPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
@@ -12,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     localizedPaths: { fr: "/a-propos", en: "/en/a-propos", es: "/es/quienes-somos" },
     // SEO-002 (2026-08-09) — 2021 confirmé par la direction.
     fallbackTitle: "About Iter Advisors | Fractional CFO Firm Since 2021",
-    fallbackDescription: "15+ senior CFOs, 85+ companies, €100M+ raised. Iter Advisors brings hands-on CFO leadership to startups and SMEs across France and Spain. Meet the team.",
+    fallbackDescription: `${CONSULTANTS} consultants, ${CLIENTS_ACCOMPAGNES} companies, €100M+ raised. Iter Advisors brings hands-on CFO leadership to startups and SMEs across France and Spain. Meet the team.`,
   });
 }
 

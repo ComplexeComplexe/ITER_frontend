@@ -1,4 +1,5 @@
 "use client";
+import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 
 import { useState, useEffect, FormEvent, useRef } from "react";
 import Image from "next/image";
@@ -159,7 +160,7 @@ function Hero({ formRef }: { formRef: React.RefObject<HTMLDivElement | null> }) 
 
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-white/70">
             <TrustItem value="13 semaines" label="horizon indicatif du prévisionnel" />
-            <TrustItem value="85" label="entreprises accompagnées" />
+            <TrustItem value={`${CLIENTS_ACCOMPAGNES}`} label="entreprises accompagnées" />
             <TrustItem value="30 jours" label="préavis de fin de mission récurrente" />
           </div>
         </div>
