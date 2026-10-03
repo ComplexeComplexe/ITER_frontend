@@ -157,12 +157,12 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           question: "Qu\u2019est-ce qu\u2019un DAF externalisé\u00A0?",
           answer:
-            "Un DAF externalisé est un Directeur Administratif et Financier qui intervient au sein de votre entreprise à temps partiel ou en mission ponctuelle, sans être salarié. Il apporte la même expertise qu\u2019un DAF en interne, avec plus de flexibilité et à moindre coût.",
+            "Un DAF externalisé accompagne le dirigeant sur le pilotage financier, selon un périmètre et un rythme convenus. Sa présence, ses responsabilités et ses livrables doivent être comparés à ceux d’un poste interne.",
         },
         {
           question: "Quelle est la différence entre un DAF à temps partagé et un DAF de transition\u00A0?",
           answer:
-            "Le DAF à temps partagé intervient de manière récurrente sur une période longue (quelques jours par semaine ou par mois). Le DAF de transition intervient à temps plein sur une durée limitée, généralement pour gérer une situation spécifique (restructuration, levée de fonds, remplacement temporaire).",
+            "Le temps partagé répond à un besoin régulier de pilotage. Une mission de transition couvre une situation temporaire, comme un remplacement ou une réorganisation. La présence et la disponibilité sont définies dans la proposition.",
         },
         {
           question: "À quel type d\u2019entreprise s\u2019adresse Iter Advisors\u00A0?",
@@ -177,7 +177,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           question: "Combien coûte un DAF externalisé\u00A0?",
           answer:
-            "Le coût varie en fonction du volume d\u2019intervention et de la complexité de la mission. En général, un DAF externalisé coûte entre 30\u00A0% et 60\u00A0% moins cher qu\u2019un DAF salarié à temps plein, tout en offrant une expertise de haut niveau.",
+            "Le devis dépend des livrables, du rythme et de la complexité. La page tarifs présente des repères indicatifs. Une prestation à temps partagé et un poste à temps plein ne couvrent pas automatiquement le même besoin.",
         },
         {
           question: "Quels outils utilisez-vous\u00A0?",
@@ -197,12 +197,12 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           question: "Quelle est la durée moyenne d\u2019une mission\u00A0?",
           answer:
-            "La durée dépend du type de mission. Un DAF à temps partagé intervient généralement sur 6 à 24 mois. Un DAF de transition intervient sur 3 à 6 mois. Une mission ponctuelle (levée de fonds, restructuration) dure en moyenne 2 à 4 mois.",
+            "La durée, le rythme, le préavis et la passation sont convenus selon la mission. Nous ne publions pas de durée moyenne sans données comparables et datées.",
         },
         {
           question: "Comment prendre contact avec Iter Advisors\u00A0?",
           answer:
-            "Vous pouvez nous contacter via notre formulaire en ligne, par email ou en prenant directement rendez-vous sur notre site. Nous vous répondons sous 24 heures et organisons un premier échange gratuit pour comprendre vos besoins.",
+            "Le formulaire et nos coordonnées permettent de présenter votre besoin. Nous vous recontactons pour préciser la situation et organiser un échange. Aucun rendez-vous n’est réservé automatiquement.",
         },
       ],
     },
@@ -221,7 +221,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
     whoWeAre: {
       heading: "Who we are",
       paragraphs: [
-        "Iter Advisors is a corporate finance advisory firm specializing in supporting high-growth startups, SMEs and mid-cap companies. We act as a Fractional CFO, on a shared-time or transitional basis, to structure and manage the finance function of our partners.",
+        "Iter Advisors is a corporate finance advisory firm supporting growing startups, SMEs and mid-sized companies. We provide fractional, part-time or interim CFO support to structure and manage their finance function. For VC-backed startups, we also offer dedicated [fractional CFO support](/fractional-cfo-startups).",
         "Founded in 2021, Iter Advisors brings together experienced CFOs from complementary backgrounds: audit, management control, financial management, M&A. Their shared vision: making first-class financial management accessible to growing companies.",
         "With teams in Barcelona and Paris, serving Toulouse remotely or through agreed visits, we support our clients in France, Spain and internationally, with a tailored approach adapted to each stage of their development.",
       ],
@@ -279,7 +279,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
             "Prepare and secure your financing. Building the investor file, financial modeling, due diligence and negotiation with investment funds.",
         },
         {
-          title: "Post-emergence",
+          title: "After fundraising",
           description:
             "Deploy raised funds effectively. Setting up investor reporting, structuring growth, recruiting and organizing the finance department.",
         },
@@ -297,12 +297,12 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           question: "What is a fractional CFO?",
           answer:
-            "A fractional CFO is a Chief Financial Officer who works within your company on a part-time or project basis, without being a full-time employee. They bring the same expertise as an in-house CFO, with greater flexibility and at a lower cost.",
+            "A fractional CFO supports the business leader with financial management within an agreed scope and schedule. Presence, responsibilities and deliverables should be compared with those of an internal position.",
         },
         {
           question: "What is the difference between a shared-time CFO and a transitional CFO?",
           answer:
-            "A shared-time CFO works on a recurring basis over a long period (a few days per week or per month). A transitional CFO works full-time for a limited period, usually to manage a specific situation (restructuring, fundraising, temporary replacement).",
+            "Part-time support addresses an ongoing management need. An interim engagement covers a temporary situation such as a replacement or reorganisation. Presence and availability are set out in the proposal.",
         },
         {
           question: "What type of company does Iter Advisors work with?",
@@ -317,7 +317,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           question: "How much does a fractional CFO cost?",
           answer:
-            "The cost varies depending on the volume of work and the complexity of the engagement. In general, a fractional CFO costs between 30% and 60% less than a full-time salaried CFO, while providing high-level expertise.",
+            "The quotation depends on deliverables, schedule and complexity. The pricing page provides indicative benchmarks. Part-time support and a full-time position do not automatically cover the same need.",
         },
         {
           question: "What tools do you use?",
@@ -337,12 +337,12 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           question: "What is the average duration of an engagement?",
           answer:
-            "The duration depends on the type of engagement. A shared-time CFO typically works over 6 to 24 months. A transitional CFO works over 3 to 6 months. A specific engagement (fundraising, restructuring) lasts on average 2 to 4 months.",
+            "Duration, schedule, notice period and handover are agreed for the engagement. We do not publish an average duration without comparable, dated data.",
         },
         {
           question: "How can I get in touch with Iter Advisors?",
           answer:
-            "You can contact us via our online form, by email or by booking an appointment directly on our website. We respond within 24 hours and organize a free initial call to understand your needs.",
+            "Use our form or contact details to describe your needs. We will contact you to clarify the situation and arrange a conversation. No appointment is booked automatically.",
         },
       ],
     },
@@ -351,17 +351,17 @@ export const aboutContent: Record<Locale, AboutContent> = {
     meta: {
       title: "Sobre nosotros | Iter Advisors",
       description:
-        "Iter Advisors, firma de CFO externalizado y consultoría financiera. Apoyamos pymes y startups en estructuración financiera y captación de fondos.",
+        "Iter Advisors, firma de CFO externo y consultoría financiera. Apoyamos pymes y startups en estructuración financiera y captación de fondos.",
     },
     hero: {
       h1: "Sobre nosotros",
       intro:
-        "Iter Advisors es una firma de consultoría financiera y CFO externalizado que apoya el crecimiento estratégico de sus socios estructurando, gestionando y escalando su función financiera.",
+        "Iter Advisors es una firma de consultoría financiera y CFO externo que apoya el crecimiento estratégico de sus socios estructurando, gestionando y escalando su función financiera.",
     },
     whoWeAre: {
       heading: "Quiénes somos",
       paragraphs: [
-        "Iter Advisors es una firma de consultoría en finanzas corporativas especializada en el acompañamiento de startups, pymes y empresas de mediana capitalización en fuerte crecimiento. Actuamos como CFO externalizado, a tiempo compartido o de transición, para estructurar y gestionar la función financiera de nuestros socios.",
+        "Iter Advisors es una firma de consultoría financiera que acompaña a startups, pymes y empresas medianas en crecimiento. Intervenimos como CFO externo, a tiempo parcial o de transición para estructurar y gestionar su función financiera. Para startups financiadas por capital riesgo ofrecemos también [CFO para startups](/fractional-cfo-startups).",
         "Fundada en 2021, Iter Advisors reúne CFOs experimentados de trayectorias complementarias: auditoría, control de gestión, dirección financiera, M&A. Su visión compartida\u00A0: hacer accesible a las empresas en crecimiento una dirección financiera de primer nivel.",
         "Con equipos en Barcelona y París e intervención en Toulouse en remoto o mediante visitas acordadas, acompañamos a nuestros clientes en Francia, España e internacionalmente, con un enfoque a medida adaptado a cada etapa de su desarrollo.",
       ],
@@ -435,14 +435,14 @@ export const aboutContent: Record<Locale, AboutContent> = {
       heading: "Preguntas frecuentes",
       items: [
         {
-          question: "¿Qué es un CFO externalizado?",
+          question: "¿Qué es un CFO externo?",
           answer:
-            "Un CFO externalizado es un Director Financiero que trabaja en su empresa a tiempo parcial o por proyecto, sin ser empleado a tiempo completo. Aporta la misma experiencia que un CFO interno, con mayor flexibilidad y a menor coste.",
+            "Un CFO externo acompaña al directivo en la gestión financiera según un alcance y una dedicación acordados. Su presencia, responsabilidades y entregables deben compararse con los de un puesto interno.",
         },
         {
           question: "¿Cuál es la diferencia entre un CFO a tiempo compartido y un CFO de transición?",
           answer:
-            "El CFO a tiempo compartido interviene de forma recurrente durante un período largo (algunos días por semana o por mes). El CFO de transición interviene a tiempo completo por un período limitado, generalmente para gestionar una situación específica (reestructuración, ronda de financiación, sustitución temporal).",
+            "El tiempo parcial responde a una necesidad regular de gestión. Una misión de transición cubre una situación temporal, como una sustitución o reorganización. La presencia y disponibilidad se precisan en la propuesta.",
         },
         {
           question: "¿A qué tipo de empresa se dirige Iter Advisors?",
@@ -455,9 +455,9 @@ export const aboutContent: Record<Locale, AboutContent> = {
             "Tras un primer intercambio para comprender sus necesidades, le proponemos un CFO adaptado a su contexto. La misión comienza con un diagnóstico de su función financiera, seguido de un plan de acción concreto. Luego intervenimos de forma regular según la fórmula elegida.",
         },
         {
-          question: "¿Cuánto cuesta un CFO externalizado?",
+          question: "¿Cuánto cuesta un CFO externo?",
           answer:
-            "El coste varía en función del volumen de intervención y la complejidad de la misión. En general, un CFO externalizado cuesta entre un 30% y un 60% menos que un CFO asalariado a tiempo completo, ofreciendo al mismo tiempo una experiencia de alto nivel.",
+            "El presupuesto depende de los entregables, la dedicación y la complejidad. La página de precios presenta referencias indicativas. Un acompañamiento a tiempo parcial y un puesto a tiempo completo no cubren automáticamente la misma necesidad.",
         },
         {
           question: "¿Qué herramientas utilizáis?",
@@ -477,12 +477,12 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           question: "¿Cuál es la duración media de una misión?",
           answer:
-            "La duración depende del tipo de misión. Un CFO a tiempo compartido interviene generalmente de 6 a 24 meses. Un CFO de transición interviene de 3 a 6 meses. Una misión puntual (ronda de financiación, reestructuración) dura en promedio de 2 a 4 meses.",
+            "La duración, dedicación, preaviso y traspaso se acuerdan según la misión. No publicamos una duración media sin datos comparables y fechados.",
         },
         {
           question: "¿Cómo contactar con Iter Advisors?",
           answer:
-            "Puede contactarnos a través de nuestro formulario en línea, por correo electrónico o reservando directamente una cita en nuestra web. Le respondemos en 24 horas y organizamos una primera llamada gratuita para comprender sus necesidades.",
+            "El formulario y nuestros datos de contacto permiten presentar tu necesidad. Te contactaremos para precisar la situación y organizar una conversación. No se reserva una cita automáticamente.",
         },
       ],
     },
@@ -490,5 +490,6 @@ export const aboutContent: Record<Locale, AboutContent> = {
 } as const;
 
 export function getAboutContent(locale: Locale): AboutContent {
-  return aboutContent[locale];
+  const content = aboutContent[locale];
+  return { ...content, whenToCall: { ...content.whenToCall, stages: content.whenToCall.stages.map((stage, i) => ({ ...stage, href: aboutContent.fr.whenToCall.stages[i].href })) } };
 }

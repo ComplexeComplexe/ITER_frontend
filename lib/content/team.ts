@@ -38,13 +38,13 @@ const fallbackData: FallbackMemberData[] = [
     lastName: "Doat",
     roles: {
       fr: "Associé fondateur et DAF externalisé",
-      en: "Founding Partner - CFO & Investor",
-      es: "Socio fundador - CFO e Inversor"
+      en: "Founding partner and Fractional CFO",
+      es: "Socio fundador y CFO externo"
     },
     h1Roles: {
       fr: "Associé fondateur, DAF externalisé",
-      en: "Founding Partner, Fractional CFO",
-      es: "Socio fundador, CFO Externalizado",
+      en: "Founding partner, Fractional CFO",
+      es: "Socio fundador, CFO externo",
     },
     slug: "sebastien-doat",
     photo: { url: "/images/team/sebastien-doat.webp" },
@@ -53,13 +53,13 @@ const fallbackData: FallbackMemberData[] = [
     showInHero: true,
     bio: {
       fr: "Sébastien Doat est associé fondateur et DAF externalisé chez Iter Advisors. Basé à Barcelone, il accompagne les dirigeants dans le pilotage de la trésorerie, le reporting et la préparation des financements. Son parcours comprend des fonctions de direction financière chez Carts Guru et Terres de Café.",
-      en: "Sébastien has spent 15 years structuring finance for startups and scale-ups across France and Spain. Before co-founding Iter Advisors, he held CFO roles at several hyper-growth companies, supporting fundraises totalling over €65M. His focus areas: cash management, financial modelling, and investor negotiations.",
-      es: "Sébastien ha pasado 15 años estructurando las finanzas de startups y scale-ups en Francia y España. Antes de cofundar Iter Advisors, ocupó el puesto de CFO en varias empresas de hipercrecimiento, acompañando rondas de financiación por más de 65 M€. Sus áreas de enfoque: tesorería, modelización financiera y negociación con inversores.",
+      en: "Sébastien Doat is a founding partner and fractional CFO at Iter Advisors. Based in Barcelona, he supports business leaders with cash management, reporting and financing preparation. His background includes finance leadership roles at Carts Guru and Terres de Café.",
+      es: "Sébastien Doat es socio fundador y CFO externo en Iter Advisors. Desde Barcelona acompaña a directivos en la gestión de tesorería, el reporting y la preparación de financiación. Su trayectoria incluye funciones de dirección financiera en Carts Guru y Terres de Café.",
     },
     bioExtended: {
       fr: "Ses missions associent modélisation financière, suivi des indicateurs et échanges avec les fondateurs et investisseurs. Sur les projets d’automatisation et d’IA en finance, l’accompagnement part des processus, de la qualité des données et des contrôles attendus.",
-      en: "At Iter Advisors, Sébastien works directly with founders at every stage of their financial journey — from setting up the first KPI dashboard and cash flow model to preparing Series B board presentations and managing investor negotiations. He specialises in 13-week rolling cash forecasts, financial modelling, M&A advisory, and fundraising preparation. His client portfolio spans SaaS, fintech, proptech, and deep tech companies operating across France, Spain, and Belgium, covering transactions from €2M seed rounds to €40M+ growth rounds and two secondary exits. He advises on working capital optimisation, ERP and tool selection, due diligence readiness, and post-acquisition financial integration. Sébastien contributes regularly to the Iter Advisors journal on fractional CFO pricing, cash burn benchmarks, and fundraising strategy. He holds a Master's in Finance and speaks French, Spanish, and English.",
-      es: "En Iter Advisors, trabaja directamente con fundadores en todas las etapas de su recorrido financiero — desde la creación del primer cuadro de mando KPI hasta la preparación de board decks de Serie B. Asesora sobre previsión de tesorería a 13 semanas, optimización del capital circulante, selección de herramientas financieras y preparación de due diligence. Su cartera de clientes abarca empresas SaaS, fintech, proptech y deep tech en Francia, España y Bélgica, con operaciones desde rondas seed de 2 M€ hasta levantamientos de crecimiento superiores a 40 M€. Sébastien contribuye regularmente al diario de Iter Advisors sobre precios de CFO externalizado, benchmarks de cash burn y estrategia de captación de fondos. Habla francés, español e inglés con fluidez.",
+      en: "His engagements combine financial modelling, indicator monitoring and discussions with founders and investors. Automation and AI projects in finance start with processes, data quality and expected controls.",
+      es: "Sus misiones combinan modelización financiera, seguimiento de indicadores e intercambios con fundadores e inversores. Los proyectos de automatización e IA en finanzas parten de los procesos, la calidad de los datos y los controles esperados.",
     },
   },
   {
@@ -74,8 +74,8 @@ const fallbackData: FallbackMemberData[] = [
     },
     h1Roles: {
       fr: "Associé fondateur, DAF externalisé",
-      en: "Founding Partner, Fractional CFO",
-      es: "Socio fundador, CFO Externalizado",
+      en: "Founding partner, Fractional CFO",
+      es: "Socio fundador, CFO externo",
     },
     slug: "benjamin-ziza",
     photo: { url: "/images/team/benjamin-ziza.webp" },
@@ -164,13 +164,13 @@ const fallbackData: FallbackMemberData[] = [
     lastName: "Biv",
     roles: {
       fr: "Partner Capital Humain",
-      en: "Partner Human Capital",
-      es: "Partner Capital Humano"
+      en: "Human Capital Partner",
+      es: "Socio de Capital Humano"
     },
     h1Roles: {
       fr: "Partner Capital Humain & DRH externalisé",
-      en: "Partner Human Capital & Fractional CHRO",
-      es: "Partner Capital Humano y DRRHH externalizado",
+      en: "Human Capital Partner and external HR director",
+      es: "Socio de Capital Humano y dirección de RRHH externa",
     },
     slug: "borith-biv",
     photo: { url: "/images/team/borith-biv.webp" },
@@ -179,13 +179,13 @@ const fallbackData: FallbackMemberData[] = [
     showInHero: false,
     bio: {
       fr: "Borith est Partner Capital Humain chez Iter Advisors. Il accompagne les PME et startups sur la structuration RH, le recrutement des profils financiers et la gestion des équipes en croissance.",
-      en: "Borith is a Human Capital Partner at Iter Advisors. He supports SMEs and startups on HR structuring, financial talent recruitment and people management in high-growth contexts.",
-      es: "Borith es Partner de Capital Humano en Iter Advisors. Acompaña a pymes y startups en la estructuración de RRHH, el reclutamiento de perfiles financieros y la gestión de equipos en crecimiento.",
+      en: "Borith is Human Capital Partner at Iter Advisors. He supports SMEs and startups with HR organisation, recruitment of finance professionals and management of growing teams.",
+      es: "Borith es socio de Capital Humano en Iter Advisors. Acompaña a pymes y startups en la estructuración de RRHH, la contratación de perfiles financieros y la gestión de equipos en crecimiento.",
     },
     bioExtended: {
       fr: "La mission commence par la compréhension de votre organisation, des ressources internes et des sujets à traiter. Les responsabilités, le rythme et les intervenants nécessaires sont définis au cadrage. Les prestations de paie et les sujets juridiques spécialisés doivent être identifiés séparément. Le parcours détaillé, les références pertinentes et les modalités d’intervention peuvent être précisés lors du premier échange.",
-      en: "At Iter Advisors, Borith leads the Human Capital practice, which supports growth-stage companies on their most critical HR challenges: finance and management talent recruitment, HR function structuring, salary policy design and high-performance team building. His engagements primarily target post-Series A startups and SMEs with 20 to 150 employees that need an operational HR function but are not yet ready to hire a full-time CHRO. As a fractional CHRO, Borith works on defining HR policies, writing and structuring job descriptions, ensuring compliance with labour law, managing payroll coordination and engaging with employee representatives. He also specialises in recruiting finance profiles (CFO, Financial Controller, Management Controller, Financial Analysts), with a deep understanding of the technical skills and soft skills these roles require. His approach combines operational rigour with strategic vision: he helps founders build finance organisations that can absorb rapid growth without losing quality or team cohesion. Borith speaks fluent French and English and works across France, Spain, and Belgium.",
-      es: "En Iter Advisors, Borith lidera la práctica de Capital Humano, que acompaña a las empresas en crecimiento en sus retos de RRHH más críticos: reclutamiento de perfiles de finanzas y gestión, estructuración de la función de RRHH, diseño de políticas salariales y construcción de equipos de alto rendimiento. Sus misiones se dirigen principalmente a startups post-Serie A y pymes de 20 a 150 empleados que necesitan una función de RRHH operativa pero aún no están listas para contratar un director de RRHH a tiempo completo. Como director de RRHH externalizado a tiempo parcial, Borith trabaja en la definición de políticas de RRHH, la redacción y estructuración de descripciones de puestos, el cumplimiento del derecho laboral, la coordinación de nóminas y la gestión de las relaciones laborales. También está especializado en el reclutamiento de perfiles financieros (CFO, RAF, controladores de gestión, analistas financieros). Borith habla con fluidez francés e inglés e interviene en Francia, España y Bélgica.",
+      en: "The engagement starts with understanding your organisation, internal resources and matters to address. Responsibilities, schedule and required professionals are agreed at scoping. Payroll services and specialist legal matters must be identified separately. Detailed experience, relevant references and working arrangements can be discussed in the first conversation.",
+      es: "La misión empieza por comprender tu organización, los recursos internos y los asuntos que tratar. Las responsabilidades, dedicación y profesionales necesarios se definen al delimitar el alcance. Las prestaciones de nóminas y los asuntos jurídicos especializados se identifican por separado. La experiencia detallada, referencias pertinentes y condiciones de intervención pueden precisarse en la primera conversación.",
     },
   },
 

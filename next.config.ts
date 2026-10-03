@@ -969,15 +969,15 @@ const nextConfig: NextConfig = {
       // FR slug → correct EN slug (page exists)
       { source: "/en/fractional-cfo/temps-partage", destination: "/en/fractional-cfo/shared-time", permanent: true },
 
-      // ── Services pages that only exist in FR (no EN/ES equivalents)
-      { source: "/en/services/conformite-droit-travail",    destination: "/en/services",  permanent: true },
-      { source: "/es/services/conformite-droit-travail",    destination: "/es/services",  permanent: true },
-      { source: "/en/services/formation-developpement",     destination: "/en/services",  permanent: true },
-      { source: "/es/services/formation-developpement",     destination: "/es/services",  permanent: true },
-      { source: "/en/services/recrutement-talent-acquisition", destination: "/en/services", permanent: true },
-      { source: "/es/services/recrutement-talent-acquisition", destination: "/es/services", permanent: true },
-      { source: "/en/services/gestion-paie-charges-sociales",  destination: "/en/services", permanent: true },
-      { source: "/es/services/gestion-paie-charges-sociales",  destination: "/es/services", permanent: true },
+      // ── Legacy French HR service slugs now point to published EN/ES equivalents
+      { source: "/en/services/conformite-droit-travail", destination: "/en/services/employment-compliance", permanent: true },
+      { source: "/es/services/conformite-droit-travail", destination: "/es/servicios/cumplimiento-laboral", permanent: true },
+      { source: "/en/services/formation-developpement", destination: "/en/services/training-development", permanent: true },
+      { source: "/es/services/formation-developpement", destination: "/es/servicios/formacion-desarrollo", permanent: true },
+      { source: "/en/services/recrutement-talent-acquisition", destination: "/en/services/recruitment-talent-acquisition", permanent: true },
+      { source: "/es/services/recrutement-talent-acquisition", destination: "/es/servicios/seleccion-talento", permanent: true },
+      { source: "/en/services/gestion-paie-charges-sociales", destination: "/en/services/payroll-coordination", permanent: true },
+      { source: "/es/services/gestion-paie-charges-sociales", destination: "/es/servicios/coordinacion-nominas", permanent: true },
 
       // ── Typo / wrong locale prefix: `recursos` is the Spanish slug, but on
       // the FR root and on /en it must map to /ressources. Catch-all so every

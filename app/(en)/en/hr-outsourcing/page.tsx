@@ -1,29 +1,7 @@
 import { Metadata } from "next";
-import DrhPage from "@/components/pages/DrhPage";
+import DrhFrenchPage from "@/components/pages/DrhFrenchPage";
 import { buildMetadata } from "@/lib/metadata";
-import { getDrhExternalisePage, getCmsNavigation } from "@/lib/static-content";
-
-export async function generateMetadata(): Promise<Metadata> {
-  /* Use static fallback because Strapi SEO component is shared across locales */
-  return buildMetadata({
-    locale: "en",
-    title: "Outsourced HR Director - Shared-time HR | Iter Advisors",
-    description: "Outsource your HR management with an experienced HR Director. Recruitment, social management, compliance and tailored HR strategy by Iter Advisors.",
-    path: "/hr-outsourcing",
-    localizedPaths: { fr: "/drh-externalise", en: "/hr-outsourcing", es: "/externalizacion-rrhh" },
-  });
-}
-
-export default async function Page() {
-  const [strapiData, cmsNavigation] = await Promise.all([
-    getDrhExternalisePage("en"),
-    getCmsNavigation("en"),
-  ]);
-  return (
-    <DrhPage
-      locale="en"
-      strapiCategories={strapiData?.serviceCategories ?? null}
-      cmsNavigation={cmsNavigation}
-    />
-  );
-}
+import { getCmsNavigation } from "@/lib/static-content";
+import { LOCALE_ROUTES } from "@/lib/locale-route-map";
+export function generateMetadata(): Metadata { return buildMetadata({locale:"en", path:"/en/hr-outsourcing", title:"HR director for SMEs and startups | Iter Advisors", description:"HR management, recruitment and team organisation. Agree deliverables, schedule and budget with the right professionals.", localizedPaths:LOCALE_ROUTES["/drh-externalise"]}); }
+export default async function Page() { return <DrhFrenchPage locale="en" sharedTime={false} cmsNavigation={await getCmsNavigation("en")} />; }

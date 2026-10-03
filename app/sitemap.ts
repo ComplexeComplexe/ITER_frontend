@@ -1,4 +1,4 @@
-import { ALIGNED_PAGE_IDS, LOCALE_ALIGNMENT_DATE, alignedPaths } from "@/lib/content/locale-publication";
+import { ALIGNED_PAGE_IDS, localeAlignmentDate, alignedPaths } from "@/lib/content/locale-publication";
 import { DAF_PILLAR_MODIFIED } from "@/lib/content/daf-pillar";
 import { TAX_COMPARISON_MODIFIED } from "@/lib/content/tax-comparison";
 import type { MetadataRoute } from "next";
@@ -584,7 +584,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const alternates = { languages: { "fr-FR": `${BASE}${paths.fr}`, "en-GB": `${BASE}${paths.en}`, "es-ES": `${BASE}${paths.es}`, "x-default": `${BASE}${paths.fr}` } };
     for (const locale of ["fr", "en", "es"] as const) {
       const url = `${BASE}${paths[locale]}`;
-      entries.push({ url, lastModified: locale === "fr" ? originals.find(item => item.url === url)?.lastModified ?? D.service : LOCALE_ALIGNMENT_DATE, alternates });
+      entries.push({ url, lastModified: locale === "fr" ? originals.find(item => item.url === url)?.lastModified ?? D.service : localeAlignmentDate(sourcePath), alternates });
     }
   }
   return entries.map(item => ({

@@ -1,0 +1,414 @@
+{
+  "recrutement-talent-acquisition": {
+    "slug": "recrutement-talent-acquisition",
+    "meta": {
+      "title": "Recruitment support | Iter Advisors",
+      "description": "Organise recruitment from defining the role to onboarding. Agree the scope, method and responsibilities with your team."
+    },
+    "h1": "Recruitment support for SMEs and startups",
+    "breadcrumb": "Recruitment and onboarding",
+    "intro": [
+      "You want to hire a finance professional or strengthen your teams. The first step is to define the role, budget, skills and your organisation's ability to onboard the person.",
+      "We agree the support with you: defining the role, sourcing candidates, preparing interviews or following up onboarding. Decision-making responsibilities remain explicit."
+    ],
+    "whatIs": {
+      "heading": "What the engagement can cover",
+      "paragraphs": [
+        "Organise recruitment from defining the role to onboarding.",
+        "Deliverables and the allocation of responsibilities are set out in the proposal."
+      ],
+      "bullets": [
+        "A job description and agreed selection criteria",
+        "An interview process with roles, stages and candidate feedback",
+        "A record of applications and upcoming decisions",
+        "An onboarding framework with follow-up meetings"
+      ]
+    },
+    "whyOutsource": {
+      "heading": "Support suited to your organisation",
+      "benefits": [
+        {
+          "label": "Explicit priorities",
+          "description": "Define the issues to address and decisions to prepare with the relevant people."
+        },
+        {
+          "label": "Clear roles",
+          "description": "Coordinate the work of the business leader, managers and providers within the agreed scope."
+        }
+      ]
+    },
+    "approach": {
+      "heading": "How to organise the engagement",
+      "phases": [
+        {
+          "step": "Define the role",
+          "description": "Agree the need, proposed remuneration, criteria and decision-makers."
+        },
+        {
+          "step": "Organise sourcing",
+          "description": "Choose suitable channels and screening arrangements. Timing depends, among other things, on the profile and market."
+        },
+        {
+          "step": "Prepare selection",
+          "description": "Structure interviews and compare applications against the agreed criteria."
+        },
+        {
+          "step": "Support onboarding",
+          "description": "Prepare initial objectives, contacts and follow-up meetings with the manager."
+        }
+      ]
+    },
+    "useCases": {
+      "heading": "Examples of needs to scope",
+      "cases": [
+        {
+          "title": "Hiring a first finance lead",
+          "description": "Clarify the role across accounting, reporting and financial management, then organise selection with the business leader."
+        },
+        {
+          "title": "Preparing several hires",
+          "description": "Prioritise roles, allocate interviews and check onboarding capacity before accelerating sourcing."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Budget and scope",
+      "rows": [
+        {
+          "formula": "An engagement agreed with you",
+          "scope": "Agreed work, deliverables and schedule",
+          "price": "By quotation"
+        }
+      ],
+      "note": "The quotation specifies deliverables, schedule, budget, duration, notice period and adjustment arrangements. Specialist services and any expenses are identified separately."
+    },
+    "faq": [
+      {
+        "question": "How long does recruitment take?",
+        "answer": "It depends on the profile, market, decision-makers' availability and selected process. The schedule and follow-up meetings are agreed when scoping the engagement; no recruitment deadline is guaranteed."
+      },
+      {
+        "question": "How are fees calculated?",
+        "answer": "The quotation specifies deliverables, schedule, budget, duration, notice period and adjustment arrangements. Specialist services and any expenses are identified separately."
+      },
+      {
+        "question": "Who chooses the candidate?",
+        "answer": "The company retains its hiring decision. The engagement prepares comparison information and facilitates discussion with the people involved."
+      }
+    ],
+    "cta": {
+      "heading": "Which HR issue would you like to address?",
+      "body": "Describe your organisation, existing contacts and priorities. The first discussion will help clarify the next steps.",
+      "buttonLabel": "Discuss my HR needs"
+    }
+  },
+  "gestion-paie-charges-sociales": {
+    "slug": "gestion-paie-charges-sociales",
+    "meta": {
+      "title": "Payroll coordination | Iter Advisors",
+      "description": "Clarify who collects, produces, checks and approves payroll. Agree the scope, method and responsibilities with your team."
+    },
+    "h1": "Payroll management: organise roles and checks",
+    "breadcrumb": "Payroll and coordination",
+    "intro": [
+      "Payroll relies on reliable information flows between employees, managers, personnel administration, the payroll provider and the finance team.",
+      "The HR engagement can organise this coordination and follow-up checks. Producing payslips and filings requires an explicit scope with the relevant provider; it is not automatically included in an HR director engagement."
+    ],
+    "whatIs": {
+      "heading": "What the engagement can cover",
+      "paragraphs": [
+        "Clarify who collects, produces, checks and approves payroll.",
+        "Deliverables and the allocation of responsibilities are set out in the proposal."
+      ],
+      "bullets": [
+        "A schedule for collecting and approving payroll inputs",
+        "An allocation of responsibilities with the provider",
+        "A checklist and discrepancy log",
+        "A procedure for starters, leavers and changes in circumstances"
+      ]
+    },
+    "whyOutsource": {
+      "heading": "Support suited to your organisation",
+      "benefits": [
+        {
+          "label": "Explicit priorities",
+          "description": "Define the issues to address and decisions to prepare with the relevant people."
+        },
+        {
+          "label": "Clear roles",
+          "description": "Coordinate the work of the business leader, managers and providers within the agreed scope."
+        }
+      ]
+    },
+    "approach": {
+      "heading": "How to organise the engagement",
+      "phases": [
+        {
+          "step": "Cartographier",
+          "description": "Identify tools, providers, shared data and the people authorised to access it."
+        },
+        {
+          "step": "Define checks",
+          "description": "Agree approvals, required documents and dates with the relevant people."
+        },
+        {
+          "step": "Organise information exchange",
+          "description": "Document transfers and the handling of questions without creating unnecessary copies of personal data."
+        },
+        {
+          "step": "Track discrepancies",
+          "description": "Review anomalies and their resolution, then adapt practices with the provider and team."
+        }
+      ]
+    },
+    "useCases": {
+      "heading": "Examples of needs to scope",
+      "cases": [
+        {
+          "title": "Payroll involving several contacts",
+          "description": "Clarify responsibilities and the schedule to avoid conflicting requests or implicit approvals."
+        },
+        {
+          "title": "Changing software or providers",
+          "description": "Prepare data, migration checks and handover within the agreed scope."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Budget and scope",
+      "rows": [
+        {
+          "formula": "An engagement agreed with you",
+          "scope": "Agreed work, deliverables and schedule",
+          "price": "By quotation"
+        }
+      ],
+      "note": "The quotation specifies deliverables, schedule, budget, duration, notice period and adjustment arrangements. Specialist services and any expenses are identified separately."
+    },
+    "faq": [
+      {
+        "question": "Is payroll production included?",
+        "answer": "It must be explicitly specified in the proposal, including the provider, countries and responsibilities. HR supervision and payslip production are distinct roles."
+      },
+      {
+        "question": "Which tools do you use?",
+        "answer": "Scoping starts with your organisation and existing software. The choice of tool depends on needs, country and the level of delegation."
+      },
+      {
+        "question": "How are the budget and commitment agreed?",
+        "answer": "The quotation specifies deliverables, schedule, budget, duration, notice period and adjustment arrangements. Specialist services and any expenses are identified separately."
+      }
+    ],
+    "cta": {
+      "heading": "Which HR issue would you like to address?",
+      "body": "Describe your organisation, existing contacts and priorities. The first discussion will help clarify the next steps.",
+      "buttonLabel": "Discuss my HR needs"
+    }
+  },
+  "formation-developpement": {
+    "slug": "formation-developpement",
+    "meta": {
+      "title": "HR training and development | Iter Advisors",
+      "description": "Connect skills needs to the team's work. Agree the scope, method and responsibilities with your team."
+    },
+    "h1": "Team training and development",
+    "breadcrumb": "Training and development",
+    "intro": [
+      "A development plan starts with work situations: which skills are missing, for which tasks and with which expected effects?",
+      "Iter can help structure these needs, coordinate actions and follow up with managers. Specialist training, providers and their terms are identified separately."
+    ],
+    "whatIs": {
+      "heading": "What the engagement can cover",
+      "paragraphs": [
+        "Connect skills needs to the team's work.",
+        "Deliverables and the allocation of responsibilities are set out in the proposal."
+      ],
+      "bullets": [
+        "A summary of skills needs by team",
+        "Priorities agreed with managers",
+        "An action plan with owners and a schedule",
+        "Follow-up meetings to review how learning is applied"
+      ]
+    },
+    "whyOutsource": {
+      "heading": "Support suited to your organisation",
+      "benefits": [
+        {
+          "label": "Explicit priorities",
+          "description": "Define the issues to address and decisions to prepare with the relevant people."
+        },
+        {
+          "label": "Clear roles",
+          "description": "Coordinate the work of the business leader, managers and providers within the agreed scope."
+        }
+      ]
+    },
+    "approach": {
+      "heading": "How to organise the engagement",
+      "phases": [
+        {
+          "step": "Understand needs",
+          "description": "Discuss tasks, difficulties and the expectations of employees and managers."
+        },
+        {
+          "step": "Choose actions",
+          "description": "Compare training, on-the-job support, internal knowledge transfer and organisational changes."
+        },
+        {
+          "step": "Organise delivery",
+          "description": "Define participants, arrangements and required providers while accounting for business activity."
+        },
+        {
+          "step": "Evaluate use",
+          "description": "Review what is put into practice and the adjustments needed with the team."
+        }
+      ]
+    },
+    "useCases": {
+      "heading": "Examples of needs to scope",
+      "cases": [
+        {
+          "title": "Supporting new managers",
+          "description": "Identify situations in which they need guidance and organise suitable support."
+        },
+        {
+          "title": "Preparing changes in tools",
+          "description": "Connect learning needs to the tasks that actually change and plan follow-up after adoption."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Budget and scope",
+      "rows": [
+        {
+          "formula": "An engagement agreed with you",
+          "scope": "Agreed work, deliverables and schedule",
+          "price": "By quotation"
+        }
+      ],
+      "note": "The quotation specifies deliverables, schedule, budget, duration, notice period and adjustment arrangements. Specialist services and any expenses are identified separately."
+    },
+    "faq": [
+      {
+        "question": "Do you deliver all training?",
+        "answer": "The proposal distinguishes HR support, internal actions and training delivered by specialist organisations."
+      },
+      {
+        "question": "Is funding guaranteed?",
+        "answer": "No. Funding options and conditions must be checked with the relevant organisations for the situation and selected action."
+      },
+      {
+        "question": "How can we assess the usefulness of actions?",
+        "answer": "Define the work situations targeted at the outset, then review with the manager whether learning is applied. Attendance at training is not enough to demonstrate a result."
+      }
+    ],
+    "cta": {
+      "heading": "Which HR issue would you like to address?",
+      "body": "Describe your organisation, existing contacts and priorities. The first discussion will help clarify the next steps.",
+      "buttonLabel": "Discuss my HR needs"
+    }
+  },
+  "conformite-droit-travail": {
+    "slug": "conformite-droit-travail",
+    "meta": {
+      "title": "HR compliance and employment law | Iter Advisors",
+      "description": "Identify issues to address and involve the right professionals. Agree the scope, method and responsibilities with your team."
+    },
+    "h1": "HR compliance and adviser coordination",
+    "breadcrumb": "Compliance and employee relations",
+    "intro": [
+      "HR management organises the monitoring of practices, documents and employee relations matters. It identifies questions requiring specialist advice and prepares useful information for their review.",
+      "Applicable law, employer responsibilities and advisers' roles must be examined in the context of your company and the country concerned. HR support does not automatically replace legal advice."
+    ],
+    "whatIs": {
+      "heading": "What the engagement can cover",
+      "paragraphs": [
+        "Identify issues to address and involve the right professionals.",
+        "Deliverables and the allocation of responsibilities are set out in the proposal."
+      ],
+      "bullets": [
+        "A review list of HR matters and documents",
+        "A list of priorities and suitable professionals",
+        "A schedule for following up agreed actions",
+        "Documentation of decisions and necessary exchanges"
+      ]
+    },
+    "whyOutsource": {
+      "heading": "Support suited to your organisation",
+      "benefits": [
+        {
+          "label": "Explicit priorities",
+          "description": "Define the issues to address and decisions to prepare with the relevant people."
+        },
+        {
+          "label": "Clear roles",
+          "description": "Coordinate the work of the business leader, managers and providers within the agreed scope."
+        }
+      ]
+    },
+    "approach": {
+      "heading": "How to organise the engagement",
+      "phases": [
+        {
+          "step": "Define the engagement",
+          "description": "Specify establishments, practices and matters concerned, as well as advisers already involved."
+        },
+        {
+          "step": "Review the organisation",
+          "description": "Collect useful documents from authorised people and identify questions requiring further review."
+        },
+        {
+          "step": "Coordinate specialists",
+          "description": "Prepare the necessary information and organise discussions with qualified advisers."
+        },
+        {
+          "step": "Follow up actions",
+          "description": "Allocate responsibilities, track deadlines and document agreed changes."
+        }
+      ]
+    },
+    "useCases": {
+      "heading": "Examples of needs to scope",
+      "cases": [
+        {
+          "title": "Structuring an HR function",
+          "description": "Distinguish routine tasks, checks and matters that require specialist review."
+        },
+        {
+          "title": "Supporting organisational change",
+          "description": "Prepare the necessary information and discussions with an adviser suited to the legal context."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Budget and scope",
+      "rows": [
+        {
+          "formula": "An engagement agreed with you",
+          "scope": "Agreed work, deliverables and schedule",
+          "price": "By quotation"
+        }
+      ],
+      "note": "The quotation specifies deliverables, schedule, budget, duration, notice period and adjustment arrangements. Specialist services and any expenses are identified separately."
+    },
+    "faq": [
+      {
+        "question": "Does HR support replace a lawyer?",
+        "answer": "No. Matters requiring specialist legal advice are handled with a qualified professional. The proposal defines each person's role."
+      },
+      {
+        "question": "Do you work across several countries?",
+        "answer": "Scoping identifies countries, available skills and required partners. Practices are not automatically transferred from one country to another."
+      },
+      {
+        "question": "Can we define a one-off engagement?",
+        "answer": "The quotation specifies deliverables, schedule, budget, duration, notice period and adjustment arrangements. Specialist services and any expenses are identified separately."
+      }
+    ],
+    "cta": {
+      "heading": "Which HR issue would you like to address?",
+      "body": "Describe your organisation, existing contacts and priorities. The first discussion will help clarify the next steps.",
+      "buttonLabel": "Discuss my HR needs"
+    }
+  }
+}
