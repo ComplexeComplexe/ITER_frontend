@@ -594,24 +594,24 @@ export const LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   },
   "/services/recrutement-talent-acquisition": {
     "fr": "/services/recrutement-talent-acquisition",
-    "en": "/services/recrutement-talent-acquisition",
-    "es": "/services/recrutement-talent-acquisition"
-  },
+    "en": "/en/services/recruitment-talent-acquisition",
+    "es": "/es/servicios/seleccion-talento"
+},
   "/services/gestion-paie-charges-sociales": {
     "fr": "/services/gestion-paie-charges-sociales",
-    "en": "/services/gestion-paie-charges-sociales",
-    "es": "/services/gestion-paie-charges-sociales"
-  },
+    "en": "/en/services/payroll-coordination",
+    "es": "/es/servicios/coordinacion-nominas"
+},
   "/services/formation-developpement": {
     "fr": "/services/formation-developpement",
-    "en": "/services/formation-developpement",
-    "es": "/services/formation-developpement"
-  },
+    "en": "/en/services/training-development",
+    "es": "/es/servicios/formacion-desarrollo"
+},
   "/services/conformite-droit-travail": {
     "fr": "/services/conformite-droit-travail",
-    "en": "/services/conformite-droit-travail",
-    "es": "/services/conformite-droit-travail"
-  },
+    "en": "/en/services/employment-compliance",
+    "es": "/es/servicios/cumplimiento-laboral"
+},
   "/a-propos/sebastien-doat": {
     "fr": "/a-propos/sebastien-doat",
     "en": "/en/about/sebastien-doat",

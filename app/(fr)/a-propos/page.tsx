@@ -1,12 +1,11 @@
 import { Metadata } from "next";
 import AboutPage from "@/components/pages/AboutPage";
-import { buildStrapiMetadata } from "@/lib/metadata";
+import { buildMetadata } from "@/lib/metadata";
 import { getTeamMembers as getTeamMembersStatic } from "@/lib/content/team";
 import { getCmsNavigation } from "@/lib/static-content";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return buildStrapiMetadata({
-    endpoint: "about-page",
+  return buildMetadata({
     locale: "fr",
     path: "/a-propos",
     // SEO-AUD-0824 §2 — « /a-propos » côté EN produisait /en/a-propos, qui
@@ -17,8 +16,8 @@ export async function generateMetadata(): Promise<Metadata> {
     // « depuis 2019 » quand le corps de cette même page dit « Fondé en
     // 2021 » (lib/content/about.ts). La page se contredisait elle-même.
     // Recentrée sur ce qu'elle est : l'équipe, l'histoire et les bureaux.
-    fallbackTitle: "Iter Advisors : équipe, histoire et bureaux",
-    fallbackDescription: "Cabinet de DAF externalisé fondé à Barcelone. 15 experts financiers, plus de 85 entreprises accompagnées et 100 M€ de levées. Noté 5/5 sur Trustfolio.",
+    title: "Iter Advisors : équipe, histoire et bureaux",
+    description: "Découvrez l’équipe Iter Advisors, son histoire et son organisation. Direction financière, RH et accompagnement en France et en Espagne.",
   });
 }
 

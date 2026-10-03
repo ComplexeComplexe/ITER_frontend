@@ -1,15 +1,15 @@
 {
-  "date": "2026-10-02",
-  "scope": "Implementation snapshot: 25 previously published trios plus 7 AI-finance trios verified locally; latest batch awaiting publication",
-  "pullRequest": "https://github.com/ComplexeComplexe/ITER_frontend/pull/164",
+  "date": "2026-10-03",
+  "scope": "Implementation snapshot: 32 published trios plus 10 HR/cabinet/contact trios under final review; current publication evidence in external audit",
+  "pullRequest": null,
   "visualReviewCompleted": false,
-  "alignedTrios": 32,
-  "alignedVersions": 96,
-  "newTranslationsImplemented": 33,
-  "existingTranslationsAligned": 31,
-  "newTranslationsRemaining": 159,
-  "existingTranslationsRemaining": 69,
-  "frReferencesRemaining": 114,
+  "alignedTrios": 42,
+  "alignedVersions": 126,
+  "newTranslationsImplemented": 41,
+  "existingTranslationsAligned": 43,
+  "newTranslationsRemaining": 151,
+  "existingTranslationsRemaining": 57,
+  "frReferencesRemaining": 104,
   "aligned": [
     {
       "id": "/",
@@ -265,6 +265,86 @@
         "fr": "/ressources/ia-finance/retours-experience",
         "en": "/en/resources/ai-finance/experience-reports",
         "es": "/es/recursos/ia-finanzas/experiencias"
+      }
+    },
+    {
+      "id": "/services/recrutement-talent-acquisition",
+      "paths": {
+        "fr": "/services/recrutement-talent-acquisition",
+        "en": "/en/services/recruitment-talent-acquisition",
+        "es": "/es/servicios/seleccion-talento"
+      }
+    },
+    {
+      "id": "/services/gestion-paie-charges-sociales",
+      "paths": {
+        "fr": "/services/gestion-paie-charges-sociales",
+        "en": "/en/services/payroll-coordination",
+        "es": "/es/servicios/coordinacion-nominas"
+      }
+    },
+    {
+      "id": "/services/formation-developpement",
+      "paths": {
+        "fr": "/services/formation-developpement",
+        "en": "/en/services/training-development",
+        "es": "/es/servicios/formacion-desarrollo"
+      }
+    },
+    {
+      "id": "/services/conformite-droit-travail",
+      "paths": {
+        "fr": "/services/conformite-droit-travail",
+        "en": "/en/services/employment-compliance",
+        "es": "/es/servicios/cumplimiento-laboral"
+      }
+    },
+    {
+      "id": "/drh-externalise",
+      "paths": {
+        "fr": "/drh-externalise",
+        "en": "/en/hr-outsourcing",
+        "es": "/es/externalizacion-rrhh"
+      }
+    },
+    {
+      "id": "/drh-externalise/temps-partage",
+      "paths": {
+        "fr": "/drh-externalise/temps-partage",
+        "en": "/en/hr-outsourcing/shared-time",
+        "es": "/es/externalizacion-rrhh/tiempo-compartido"
+      }
+    },
+    {
+      "id": "/a-propos",
+      "paths": {
+        "fr": "/a-propos",
+        "en": "/en/about",
+        "es": "/es/quienes-somos"
+      }
+    },
+    {
+      "id": "/contact",
+      "paths": {
+        "fr": "/contact",
+        "en": "/en/contact",
+        "es": "/es/contact"
+      }
+    },
+    {
+      "id": "/a-propos/sebastien-doat",
+      "paths": {
+        "fr": "/a-propos/sebastien-doat",
+        "en": "/en/about/sebastien-doat",
+        "es": "/es/quienes-somos/sebastien-doat"
+      }
+    },
+    {
+      "id": "/a-propos/borith-biv",
+      "paths": {
+        "fr": "/a-propos/borith-biv",
+        "en": "/en/about/borith-biv",
+        "es": "/es/quienes-somos/borith-biv"
       }
     }
   ],
@@ -4148,68 +4228,70 @@
   "routingMigrationsActivated": 0,
   "routingMigrationsPlanned": 26,
   "checks": {
-    "unitTestsPassed": 140,
+    "unitTestsPassed": 148,
     "lintErrors": 0,
     "lintWarnings": 80,
-    "sitemapUrls": 246,
-    "builtPages": 271,
-    "redirectRules": 338,
+    "sitemapUrls": 268,
+    "builtPages": 293,
+    "redirectRules": 391,
     "redirectIssues": 0,
-    "httpPages": 75,
-    "httpInternalDestinations": 203,
+    "httpPages": 126,
+    "httpInternalDestinations": 243,
     "httpIssues": 0,
     "globalSeoFailures": 0,
-    "globalSeoInternalDestinations": 256,
-    "globalSeoHreflang": 768,
-    "structuredDataQuestions": 434,
+    "globalSeoInternalDestinations": 282,
+    "globalSeoHreflang": 878,
+    "structuredDataQuestions": 512,
     "structuredDataFailures": 0,
-    "workflowAuditsPassedLocally": true
+    "workflowAuditsPassedLocally": true,
+    "visualReviewCompleted": false
   },
-  "additionalCorrection": "Scoped English resource aliases to retain published /en/resources/ai-finance routes. Direct IA family aliases in one hop. Locale-complete calculator, clipboard feedback and downloadable exercises. Preserved French copy, factual limits and original author identity.",
+  "additionalCorrection": "Complete HR service and offer templates in three locales; shared cabinet, contact and expert sections. Removed unsupported savings, average durations, response-time guarantees and extra biography claims. Direct HR alias migrations in one hop. Unsupported client results remain unpublished pending proof collection.",
   "statusRecordedAt": "2026-10-02T21:54:05.042736+00:00",
   "publishedBatch": {
-    "pullRequest": "https://github.com/ComplexeComplexe/ITER_frontend/pull/165",
-    "mergeCommit": "36a58846ac22107cedfcede9cc250e9bcd136613",
-    "deploymentId": "G9zUvcawAJmvg58Q8uUz2JHBRzxf",
+    "pullRequest": "https://github.com/ComplexeComplexe/ITER_frontend/pull/166",
+    "mergeCommit": "edaac2f728298371277145f4e952e56b50e92298",
+    "deploymentId": "EdkYcAi15xSJy84fDp5UTYxg3Yc7",
     "state": "production-verified",
-    "trios": 25,
-    "pages": 75,
-    "evidence": "../audits/iter-parite-villes-secteurs-2026-10-02/recette-production.json"
+    "trios": 32,
+    "pages": 96,
+    "evidence": "../audits/iter-parite-ia-finance-2026-10-02/recette-production.json"
   },
   "pendingBatch": {
     "references": [
-      "/ressources/ia-finance",
-      "/ressources/ia-finance/automatiser-reporting-financier",
-      "/ressources/ia-finance/chatgpt-finance",
-      "/ressources/ia-finance/llm-finance",
-      "/ressources/ia-finance/outils",
-      "/ressources/ia-finance/feuille-de-route-90-jours",
-      "/ressources/ia-finance/retours-experience"
+      "/services/recrutement-talent-acquisition",
+      "/services/gestion-paie-charges-sociales",
+      "/services/formation-developpement",
+      "/services/conformite-droit-travail",
+      "/drh-externalise",
+      "/drh-externalise/temps-partage",
+      "/a-propos",
+      "/contact",
+      "/a-propos/sebastien-doat",
+      "/a-propos/borith-biv"
     ],
-    "newTranslations": 14,
-    "existingTranslationsAligned": 0,
+    "newTranslations": 8,
+    "existingTranslationsAligned": 12,
     "state": "verified-locally-awaiting-publication",
-    "evidence": "../audits/iter-parite-ia-finance-2026-10-02/recette-http.json"
+    "evidence": "../audits/iter-rh-cabinet-preuves-2026-10-03/recette-locale-parite.json"
   },
   "verification": {
-    "unitTestsPassed": 145,
+    "unitTestsPassed": 148,
     "lintErrors": 0,
     "lintWarnings": 80,
-    "sitemapUrls": 260,
-    "builtPages": 285,
+    "sitemapUrls": 268,
+    "builtPages": 293,
     "redirectRules": 391,
     "redirectIssues": 0,
-    "httpPages": 96,
-    "httpInternalDestinations": 231,
+    "httpPages": 126,
+    "httpInternalDestinations": 243,
     "httpIssues": 0,
     "globalSeoFailures": 0,
-    "globalSeoInternalDestinations": 274,
-    "globalSeoHreflang": 838,
-    "structuredDataQuestions": 470,
+    "globalSeoInternalDestinations": 282,
+    "globalSeoHreflang": 878,
+    "structuredDataQuestions": 512,
     "structuredDataFailures": 0,
     "workflowAuditsPassedLocally": true,
-    "frenchPagesUnchanged": 7,
-    "translatedDownloadKitsVerified": 2,
-    "clientCorpusLeak": false
+    "visualReviewCompleted": false
   }
 }

@@ -1,0 +1,414 @@
+{
+  "recrutement-talent-acquisition": {
+    "slug": "recrutement-talent-acquisition",
+    "meta": {
+      "title": "Apoyo a la contratación | Iter Advisors",
+      "description": "Organiza la contratación desde la definición del puesto hasta la incorporación. Alcance, método y responsabilidades acordados con tu equipo."
+    },
+    "h1": "Apoyo a la contratación para pymes y startups",
+    "breadcrumb": "Selección e incorporación",
+    "intro": [
+      "Quieres contratar un perfil financiero o reforzar tus equipos. El primer paso es precisar el puesto, el presupuesto, las competencias y la capacidad de tu organización para incorporar a la persona.",
+      "El acompañamiento se acuerda contigo: definición del puesto, búsqueda de candidatos, preparación de entrevistas o seguimiento de la incorporación. Las responsabilidades de decisión quedan explícitas."
+    ],
+    "whatIs": {
+      "heading": "Qué puede cubrir la misión",
+      "paragraphs": [
+        "Organiza la contratación desde la definición del puesto hasta la incorporación.",
+        "Los entregables y el reparto de responsabilidades se precisan en la propuesta."
+      ],
+      "bullets": [
+        "Una descripción del puesto y criterios de selección acordados",
+        "Un proceso de entrevistas con funciones, etapas y respuestas a los candidatos",
+        "Un seguimiento de candidaturas y próximas decisiones",
+        "Un esquema de incorporación con reuniones de seguimiento"
+      ]
+    },
+    "whyOutsource": {
+      "heading": "Un acompañamiento adaptado a tu organización",
+      "benefits": [
+        {
+          "label": "Prioridades explícitas",
+          "description": "Definir los asuntos que deben tratarse y las decisiones que preparar con los interlocutores correspondientes."
+        },
+        {
+          "label": "Funciones claras",
+          "description": "Coordinar el trabajo del directivo, los responsables y los proveedores dentro del alcance acordado."
+        }
+      ]
+    },
+    "approach": {
+      "heading": "Cómo organizar el acompañamiento",
+      "phases": [
+        {
+          "step": "Definir el puesto",
+          "description": "Acordar la necesidad, la remuneración prevista, los criterios y los responsables de la decisión."
+        },
+        {
+          "step": "Organizar la búsqueda",
+          "description": "Elegir los canales adecuados y las modalidades de preselección. Los plazos dependen, entre otros factores, del perfil y del mercado."
+        },
+        {
+          "step": "Preparar la selección",
+          "description": "Estructurar las entrevistas y comparar las candidaturas según los criterios acordados."
+        },
+        {
+          "step": "Acompañar la incorporación",
+          "description": "Preparar los primeros objetivos, los interlocutores y las reuniones de seguimiento con el responsable."
+        }
+      ]
+    },
+    "useCases": {
+      "heading": "Ejemplos de necesidades que delimitar",
+      "cases": [
+        {
+          "title": "Contratar al primer responsable financiero",
+          "description": "Clarificar la función entre contabilidad, reporting y gestión financiera, y organizar la selección con el directivo."
+        },
+        {
+          "title": "Preparar varias contrataciones",
+          "description": "Priorizar puestos, repartir entrevistas y comprobar la capacidad de incorporación antes de acelerar la búsqueda."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Presupuesto y alcance",
+      "rows": [
+        {
+          "formula": "Una misión acordada contigo",
+          "scope": "Trabajos, entregables y dedicación acordados",
+          "price": "Según presupuesto"
+        }
+      ],
+      "note": "El presupuesto especifica entregables, dedicación, importe, duración, preaviso y condiciones de ajuste. Las prestaciones especializadas y los posibles gastos se identifican por separado."
+    },
+    "faq": [
+      {
+        "question": "¿Cuánto tiempo requiere una contratación?",
+        "answer": "Depende del perfil, del mercado, de la disponibilidad de quienes deciden y del proceso elegido. El calendario y el seguimiento se acuerdan al delimitar la misión; no se garantiza un plazo de contratación."
+      },
+      {
+        "question": "¿Cómo se calculan los honorarios?",
+        "answer": "El presupuesto especifica entregables, dedicación, importe, duración, preaviso y condiciones de ajuste. Las prestaciones especializadas y los posibles gastos se identifican por separado."
+      },
+      {
+        "question": "¿Quién elige al candidato?",
+        "answer": "La empresa conserva su decisión de contratación. El acompañamiento prepara los elementos de comparación y facilita los intercambios con las personas implicadas."
+      }
+    ],
+    "cta": {
+      "heading": "Qué asunto de RRHH quieres abordar",
+      "body": "Describe tu organización, tus interlocutores actuales y tus prioridades. La primera conversación permitirá precisar los siguientes pasos.",
+      "buttonLabel": "Presentar mi necesidad de RRHH"
+    }
+  },
+  "gestion-paie-charges-sociales": {
+    "slug": "gestion-paie-charges-sociales",
+    "meta": {
+      "title": "Coordinación de nóminas | Iter Advisors",
+      "description": "Clarifica quién recopila, produce, revisa y valida las nóminas. Alcance, método y responsabilidades acordados con tu equipo."
+    },
+    "h1": "Gestión de nóminas y organización de controles",
+    "breadcrumb": "Nóminas y coordinación",
+    "intro": [
+      "Las nóminas dependen de un flujo fiable de información entre empleados, responsables, administración de personal, proveedor de nóminas y dirección financiera.",
+      "La misión de RRHH puede organizar esta coordinación y el seguimiento de los controles. La elaboración de nóminas y declaraciones requiere un alcance explícito con el proveedor correspondiente; no se incluye automáticamente en una misión de dirección de RRHH."
+    ],
+    "whatIs": {
+      "heading": "Qué puede cubrir la misión",
+      "paragraphs": [
+        "Clarificar quién recopila, produce, revisa y valida las nóminas.",
+        "Los entregables y el reparto de responsabilidades se precisan en la propuesta."
+      ],
+      "bullets": [
+        "Un calendario de recogida y validación de variables",
+        "Un reparto de responsabilidades con el proveedor",
+        "Una lista de controles y un seguimiento de diferencias",
+        "Un procedimiento para altas, bajas y cambios de situación"
+      ]
+    },
+    "whyOutsource": {
+      "heading": "Un acompañamiento adaptado a tu organización",
+      "benefits": [
+        {
+          "label": "Prioridades explícitas",
+          "description": "Definir los asuntos que deben tratarse y las decisiones que preparar con los interlocutores correspondientes."
+        },
+        {
+          "label": "Funciones claras",
+          "description": "Coordinar el trabajo del directivo, los responsables y los proveedores dentro del alcance acordado."
+        }
+      ]
+    },
+    "approach": {
+      "heading": "Cómo organizar el acompañamiento",
+      "phases": [
+        {
+          "step": "Cartographier",
+          "description": "Identificar herramientas, proveedores, datos intercambiados y personas autorizadas para consultarlos."
+        },
+        {
+          "step": "Definir los controles",
+          "description": "Acordar validaciones, documentos necesarios y fechas con los interlocutores correspondientes."
+        },
+        {
+          "step": "Organizar los intercambios",
+          "description": "Documentar las transmisiones y la gestión de consultas sin multiplicar las copias de datos personales."
+        },
+        {
+          "step": "Seguir las diferencias",
+          "description": "Examinar las anomalías y su resolución, y adaptar las prácticas con el proveedor y el equipo."
+        }
+      ]
+    },
+    "useCases": {
+      "heading": "Ejemplos de necesidades que delimitar",
+      "cases": [
+        {
+          "title": "Nóminas gestionadas por varios interlocutores",
+          "description": "Clarificar responsabilidades y calendario para evitar peticiones contradictorias o validaciones implícitas."
+        },
+        {
+          "title": "Un cambio de software o proveedor",
+          "description": "Preparar los datos, los controles de migración y el traspaso dentro del alcance acordado."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Presupuesto y alcance",
+      "rows": [
+        {
+          "formula": "Una misión acordada contigo",
+          "scope": "Trabajos, entregables y dedicación acordados",
+          "price": "Según presupuesto"
+        }
+      ],
+      "note": "El presupuesto especifica entregables, dedicación, importe, duración, preaviso y condiciones de ajuste. Las prestaciones especializadas y los posibles gastos se identifican por separado."
+    },
+    "faq": [
+      {
+        "question": "¿Está incluida la elaboración de nóminas?",
+        "answer": "Debe indicarse expresamente en la propuesta, con el proveedor, los países y las responsabilidades. La supervisión de RRHH y la elaboración de nóminas son funciones distintas."
+      },
+      {
+        "question": "¿Qué herramientas utilizáis?",
+        "answer": "La definición de la misión parte de tu organización y de tu software actual. La herramienta depende de las necesidades, del país y del nivel de delegación."
+      },
+      {
+        "question": "¿Cómo se acuerdan el presupuesto y el compromiso?",
+        "answer": "El presupuesto especifica entregables, dedicación, importe, duración, preaviso y condiciones de ajuste. Las prestaciones especializadas y los posibles gastos se identifican por separado."
+      }
+    ],
+    "cta": {
+      "heading": "Qué asunto de RRHH quieres abordar",
+      "body": "Describe tu organización, tus interlocutores actuales y tus prioridades. La primera conversación permitirá precisar los siguientes pasos.",
+      "buttonLabel": "Presentar mi necesidad de RRHH"
+    }
+  },
+  "formation-developpement": {
+    "slug": "formation-developpement",
+    "meta": {
+      "title": "Formación y desarrollo de RRHH | Iter Advisors",
+      "description": "Relaciona las necesidades de competencias con el trabajo del equipo. Alcance, método y responsabilidades acordados con tu equipo."
+    },
+    "h1": "Formación y desarrollo de equipos",
+    "breadcrumb": "Formación y desarrollo",
+    "intro": [
+      "Un plan de desarrollo empieza por las situaciones de trabajo: qué competencias faltan, para qué tareas y con qué efectos esperados.",
+      "Iter puede ayudarte a estructurar estas necesidades, coordinar las acciones y realizar el seguimiento con los responsables. Las formaciones especializadas, los proveedores y sus condiciones se identifican por separado."
+    ],
+    "whatIs": {
+      "heading": "Qué puede cubrir la misión",
+      "paragraphs": [
+        "Relacionar las necesidades de competencias con el trabajo del equipo.",
+        "Los entregables y el reparto de responsabilidades se precisan en la propuesta."
+      ],
+      "bullets": [
+        "Una síntesis de necesidades de competencias por equipo",
+        "Prioridades acordadas con los responsables",
+        "Un plan de acción con responsables y calendario",
+        "Reuniones de seguimiento para examinar la aplicación de lo aprendido"
+      ]
+    },
+    "whyOutsource": {
+      "heading": "Un acompañamiento adaptado a tu organización",
+      "benefits": [
+        {
+          "label": "Prioridades explícitas",
+          "description": "Definir los asuntos que deben tratarse y las decisiones que preparar con los interlocutores correspondientes."
+        },
+        {
+          "label": "Funciones claras",
+          "description": "Coordinar el trabajo del directivo, los responsables y los proveedores dentro del alcance acordado."
+        }
+      ]
+    },
+    "approach": {
+      "heading": "Cómo organizar el acompañamiento",
+      "phases": [
+        {
+          "step": "Comprender las necesidades",
+          "description": "Hablar sobre tareas, dificultades y expectativas de empleados y responsables."
+        },
+        {
+          "step": "Elegir las acciones",
+          "description": "Comparar formación, acompañamiento en el puesto, transmisión interna y cambios organizativos."
+        },
+        {
+          "step": "Organizar la ejecución",
+          "description": "Definir participantes, modalidades y proveedores necesarios teniendo en cuenta la actividad."
+        },
+        {
+          "step": "Evaluar el uso",
+          "description": "Examinar lo que se aplica y los ajustes necesarios con el equipo."
+        }
+      ]
+    },
+    "useCases": {
+      "heading": "Ejemplos de necesidades que delimitar",
+      "cases": [
+        {
+          "title": "Acompañar a nuevos responsables",
+          "description": "Identificar las situaciones en las que necesitan orientación y organizar un acompañamiento adaptado."
+        },
+        {
+          "title": "Preparar cambios de herramientas",
+          "description": "Relacionar el aprendizaje con las tareas realmente modificadas y prever seguimiento tras la adopción."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Presupuesto y alcance",
+      "rows": [
+        {
+          "formula": "Una misión acordada contigo",
+          "scope": "Trabajos, entregables y dedicación acordados",
+          "price": "Según presupuesto"
+        }
+      ],
+      "note": "El presupuesto especifica entregables, dedicación, importe, duración, preaviso y condiciones de ajuste. Las prestaciones especializadas y los posibles gastos se identifican por separado."
+    },
+    "faq": [
+      {
+        "question": "¿Impartís todas las formaciones?",
+        "answer": "La propuesta distingue el acompañamiento de RRHH, las acciones internas y las formaciones impartidas por entidades especializadas."
+      },
+      {
+        "question": "¿Se garantiza la financiación?",
+        "answer": "No. Las posibilidades y condiciones de financiación deben comprobarse con las entidades correspondientes según la situación y la acción elegida."
+      },
+      {
+        "question": "¿Cómo medir la utilidad de las acciones?",
+        "answer": "Definir al inicio las situaciones de trabajo objetivo y revisar con el responsable si se aplica lo aprendido. Asistir a una formación no basta para demostrar un resultado."
+      }
+    ],
+    "cta": {
+      "heading": "Qué asunto de RRHH quieres abordar",
+      "body": "Describe tu organización, tus interlocutores actuales y tus prioridades. La primera conversación permitirá precisar los siguientes pasos.",
+      "buttonLabel": "Presentar mi necesidad de RRHH"
+    }
+  },
+  "conformite-droit-travail": {
+    "slug": "conformite-droit-travail",
+    "meta": {
+      "title": "Conformidad laboral y RRHH | Iter Advisors",
+      "description": "Identifica los asuntos que tratar e involucra a los profesionales adecuados. Alcance, método y responsabilidades acordados con tu equipo."
+    },
+    "h1": "Conformidad de RRHH y coordinación de asesores",
+    "breadcrumb": "Conformidad y relaciones laborales",
+    "intro": [
+      "La dirección de RRHH organiza el seguimiento de prácticas, documentos y cuestiones laborales. Identifica asuntos que requieren asesoramiento especializado y prepara información útil para examinarlos.",
+      "La legislación aplicable, las responsabilidades del empleador y las funciones de los asesores deben examinarse en el contexto de la empresa y del país correspondiente. Un acompañamiento de RRHH no sustituye automáticamente una consulta jurídica."
+    ],
+    "whatIs": {
+      "heading": "Qué puede cubrir la misión",
+      "paragraphs": [
+        "Identificar los asuntos que tratar e involucrar a los profesionales adecuados.",
+        "Los entregables y el reparto de responsabilidades se precisan en la propuesta."
+      ],
+      "bullets": [
+        "Un estado de los asuntos de RRHH y documentos que revisar",
+        "Una lista de prioridades e interlocutores competentes",
+        "Un calendario de seguimiento de las acciones acordadas",
+        "Una documentación de decisiones e intercambios necesarios"
+      ]
+    },
+    "whyOutsource": {
+      "heading": "Un acompañamiento adaptado a tu organización",
+      "benefits": [
+        {
+          "label": "Prioridades explícitas",
+          "description": "Definir los asuntos que deben tratarse y las decisiones que preparar con los interlocutores correspondientes."
+        },
+        {
+          "label": "Funciones claras",
+          "description": "Coordinar el trabajo del directivo, los responsables y los proveedores dentro del alcance acordado."
+        }
+      ]
+    },
+    "approach": {
+      "heading": "Cómo organizar el acompañamiento",
+      "phases": [
+        {
+          "step": "Delimitar la misión",
+          "description": "Precisar centros de trabajo, prácticas y asuntos implicados, así como asesores ya involucrados."
+        },
+        {
+          "step": "Examinar la organización",
+          "description": "Recoger documentos útiles de las personas autorizadas e identificar cuestiones que profundizar."
+        },
+        {
+          "step": "Coordinar a los especialistas",
+          "description": "Preparar la información necesaria y organizar los intercambios con los asesores competentes."
+        },
+        {
+          "step": "Seguir las acciones",
+          "description": "Asignar responsabilidades, seguir plazos y documentar los cambios acordados."
+        }
+      ]
+    },
+    "useCases": {
+      "heading": "Ejemplos de necesidades que delimitar",
+      "cases": [
+        {
+          "title": "Estructurar una función de RRHH",
+          "description": "Distinguir las tareas habituales, los controles y los asuntos que debe examinar un especialista."
+        },
+        {
+          "title": "Acompañar un cambio organizativo",
+          "description": "Preparar la información y los intercambios necesarios con un asesor adaptado al contexto jurídico."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Presupuesto y alcance",
+      "rows": [
+        {
+          "formula": "Una misión acordada contigo",
+          "scope": "Trabajos, entregables y dedicación acordados",
+          "price": "Según presupuesto"
+        }
+      ],
+      "note": "El presupuesto especifica entregables, dedicación, importe, duración, preaviso y condiciones de ajuste. Las prestaciones especializadas y los posibles gastos se identifican por separado."
+    },
+    "faq": [
+      {
+        "question": "¿El acompañamiento de RRHH sustituye a un abogado?",
+        "answer": "No. Los asuntos que requieren asesoramiento jurídico especializado se tratan con un profesional competente. La propuesta define la función de cada participante."
+      },
+      {
+        "question": "¿Intervenís en varios países?",
+        "answer": "La definición de la misión identifica países, competencias disponibles y socios necesarios. Las prácticas no se trasladan automáticamente de un país a otro."
+      },
+      {
+        "question": "¿Puede definirse una misión puntual?",
+        "answer": "El presupuesto especifica entregables, dedicación, importe, duración, preaviso y condiciones de ajuste. Las prestaciones especializadas y los posibles gastos se identifican por separado."
+      }
+    ],
+    "cta": {
+      "heading": "Qué asunto de RRHH quieres abordar",
+      "body": "Describe tu organización, tus interlocutores actuales y tus prioridades. La primera conversación permitirá precisar los siguientes pasos.",
+      "buttonLabel": "Presentar mi necesidad de RRHH"
+    }
+  }
+}

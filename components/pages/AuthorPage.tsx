@@ -1,3 +1,4 @@
+import { parityHref } from "@/lib/locale-route-map";
 import HRExpert from "@/components/HRExpert";
 import ExpertProfileSections from "@/components/ExpertProfileSections";
 import { FINANCE_EXPERT, editorialPersonId } from "@/lib/content/finance-expert";
@@ -141,7 +142,7 @@ export default function AuthorPage({
       {/* Person JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [personSchema, { "@type": "ProfilePage", "@id": `https://www.iteradvisors.com${canonicalPath}#webpage`, url: `https://www.iteradvisors.com${canonicalPath}`, name: fullName, mainEntity: { "@id": personId }, ...(isFinanceExpert && locale === "fr" && { dateModified: "2026-10-01" }) }] }) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [personSchema, { "@type": "ProfilePage", "@id": `https://www.iteradvisors.com${canonicalPath}#webpage`, url: `https://www.iteradvisors.com${canonicalPath}`, name: fullName, mainEntity: { "@id": personId }, ...(isFinanceExpert && { dateModified: locale === "fr" ? "2026-10-01" : "2026-10-03" }) }] }) }}
       />
 
       <section className="site-hero bg-background pt-32 pb-12 lg:pb-16">
@@ -168,7 +169,7 @@ export default function AuthorPage({
             )}
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-3">
-                {isFinanceExpert && locale === "fr" ? fullName : `${fullName} : ${member.h1Role ?? member.role}`}
+                {isFinanceExpert ? fullName : `${fullName} : ${member.h1Role ?? member.role}`}
               </h1>
               <p className="text-lg text-iter-violet font-medium mb-6">
                 {member.role}
@@ -181,14 +182,14 @@ export default function AuthorPage({
                   {bioExtended}
                 </p>
               )}
-              {isFinanceExpert && locale === "fr" && <><p className="text-sm text-muted-foreground mb-5">Profil mis à jour le <time dateTime="2026-10-01">1 octobre 2026</time></p><nav aria-label="Dans le profil de Sébastien" className="flex flex-wrap gap-4 text-sm text-iter-violet mb-6"><a className="underline" href="#expertise">Expertise</a><a className="underline" href="#parcours">Parcours</a><a className="underline" href="#interventions">Interventions</a><a className="underline" href="#publications">Articles</a></nav></>}
+              {isFinanceExpert && <><p className="text-sm text-muted-foreground mb-5">{{ fr: "Profil mis à jour le ", en: "Profile updated on ", es: "Perfil actualizado el " }[locale]}<time dateTime={locale === "fr" ? "2026-10-01" : "2026-10-03"}>{formatDate(locale === "fr" ? "2026-10-01" : "2026-10-03", locale)}</time></p><nav aria-label={{ fr: "Dans le profil de Sébastien", en: "In Sébastien's profile", es: "En el perfil de Sébastien" }[locale]} className="flex flex-wrap gap-4 text-sm text-iter-violet mb-6">{[{ id: "expertise", label: { fr: "Expertise", en: "Expertise", es: "Especialidades" } }, { id: "parcours", label: { fr: "Parcours", en: "Background", es: "Trayectoria" } }, { id: "interventions", label: { fr: "Interventions", en: "Public speaking", es: "Intervenciones" } }].map(item => <a key={item.id} className="underline" href={`#${item.id}`}>{item.label[locale]}</a>)}{publishedArticles.length > 0 && <a className="underline" href="#publications">{t.articlesH2}</a>}</nav></>}
               {member.linkedIn && (
                 <a
                   href={member.linkedIn}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="site-button site-button-primary inline-flex items-center gap-2 px-4 py-2 rounded-full bg-iter-violet text-white font-medium text-sm hover:brightness-110 transition-all"
-                  aria-label={`${t.linkedInLabel} de ${fullName}`}
+                  aria-label={`${t.linkedInLabel}: ${fullName}`}
                 >
                   <Linkedin size={16} aria-hidden="true" />
                   {t.linkedInLabel}
@@ -199,8 +200,8 @@ export default function AuthorPage({
         </div>
       </section>
 
-      {isFinanceExpert && locale === "fr" && <ExpertProfileSections />}
-      {member.slug === "borith-biv" && locale === "fr" && <section className="site-section"><div className="site-container max-w-4xl"><HRExpert /><div className="site-actions"><Link className="site-inline-link" href="/drh-externalise/temps-partage">Comprendre le fonctionnement du temps partagé</Link><Link className="site-inline-link" href="/services/recrutement-talent-acquisition">Recrutement et intégration</Link></div></div></section>}
+      {isFinanceExpert && <ExpertProfileSections locale={locale} />}
+      {member.slug === "borith-biv" && <section className="site-section"><div className="site-container max-w-4xl"><HRExpert locale={locale} /><div className="site-actions"><Link className="site-inline-link" href={parityHref("/drh-externalise/temps-partage", locale)}>{{ fr: "Comprendre le fonctionnement du temps partagé", en: "Understand part-time HR support", es: "Comprender el apoyo de RRHH a tiempo parcial" }[locale]}</Link><Link className="site-inline-link" href={parityHref("/services/recrutement-talent-acquisition", locale)}>{{ fr: "Recrutement et intégration", en: "Recruitment and onboarding", es: "Selección e incorporación" }[locale]}</Link></div></div></section>}
 
       {/* Le bloc « articles publiés » n'est rendu que s'il y a des articles.
           Auparavant, les 17 fiches auteur sans publication affichaient un

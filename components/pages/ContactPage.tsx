@@ -106,9 +106,9 @@ const clientLogos = [
   { src: "/images/logos/logo-mitiga.webp", alt: "Mitiga Solutions" },
   { src: "/images/logos/logo-neat.webp", alt: "Neat" },
   { src: "/images/logos/logo-nuubb.webp", alt: "NuuBB" },
-  { src: "/images/logos/logo-opitdigital.webp", alt: "Logo Opti Digital — client Iter Advisors accompagné en DAF externalisé" },
+  { src: "/images/logos/logo-opitdigital.webp", alt: "Opti Digital" },
   { src: "/images/logos/logo-seasonly.webp", alt: "Seasonly" },
-  { src: "/images/logos/logo-solamente.webp", alt: "Solamente" },
+  { src: "/images/logos/logo-solamente.webp", alt: "SolarMente" },
   { src: "/images/logos/logo-surfe.webp", alt: "Surfe" },
   { src: "/images/logos/logo-ukio.webp", alt: "Ukio" },
   { src: "/images/logos/logo-yego.webp", alt: "Yego" },
@@ -245,11 +245,11 @@ export default function ContactPage({
               </span>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-heading leading-[1.1] mb-6">
-                {locale === "fr" && need === "rh" ? "Parlons de votre organisation RH" : need === "automation" ? (locale === "fr" ? "Parlons de votre reporting et de l’IA" : locale === "en" ? "Let’s discuss reporting and AI" : "Hablemos de reporting e IA") : tx.h1}
+                {need === "rh" ? ({ fr: "Parlons de votre organisation RH", en: "Let us discuss your HR organisation", es: "Hablemos de tu organización de RRHH" }[locale]) : need === "automation" ? (locale === "fr" ? "Parlons de votre reporting et de l’IA" : locale === "en" ? "Let’s discuss reporting and AI" : "Hablemos de reporting e IA") : tx.h1}
               </h1>
 
               <p className="text-base sm:text-lg text-white/70 leading-relaxed mb-8">
-                {locale === "fr" && need === "rh" ? "Décrivez vos équipes, vos priorités et les sujets RH à traiter. Nous préciserons ensemble le périmètre et les intervenants nécessaires." : tx.subtitle}
+                {need === "rh" ? ({ fr: "Décrivez vos équipes, vos priorités et les sujets RH à traiter. Nous préciserons ensemble le périmètre et les intervenants nécessaires.", en: "Describe your teams, priorities and HR matters. We will agree the scope and professionals needed.", es: "Describe tus equipos, prioridades y asuntos de RRHH. Acordaremos el alcance y los profesionales necesarios." }[locale]) : tx.subtitle}
               </p>
 
               {/* Trust badges */}
@@ -264,7 +264,7 @@ export default function ContactPage({
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 size={16} className="text-iter-chartreuse" />
-                  <span className="text-white/60 text-sm">{locale === "fr" && need === "rh" ? "Un périmètre RH défini avec vous" : tx.trustBadge}</span>
+                  <span className="text-white/60 text-sm">{need === "rh" ? ({ fr: "Un périmètre RH défini avec vous", en: "An HR scope agreed with you", es: "Un alcance de RRHH acordado contigo" }[locale]) : tx.trustBadge}</span>
                 </div>
               </div>
             </motion.div>
@@ -458,7 +458,7 @@ export default function ContactPage({
       <section className="site-section bg-background py-16 lg:py-20">
         <div className="container">
           <p className="text-center text-sm font-medium text-muted-foreground uppercase tracking-widest mb-10">
-            {locale === "fr" && need === "rh" ? "Des entreprises accompagnées par Iter en direction financière" : tx.clientsTitle}
+            {need === "rh" ? ({ fr: "Des entreprises accompagnées par Iter en direction financière", en: "Companies supported by Iter in finance", es: "Empresas acompañadas por Iter en finanzas" }[locale]) : tx.clientsTitle}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-14 opacity-60">
             {clientLogos.map((logo) => (

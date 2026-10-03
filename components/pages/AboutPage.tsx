@@ -1,3 +1,4 @@
+import { parityHref } from "@/lib/locale-route-map";
 import FinanceExpert from "@/components/FinanceExpert";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,7 +10,6 @@ import type { StrapiTeamMember, CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import CTASection from "@/components/CTASection";
 import TeamMemberCard from "@/components/TeamMemberCard";
 import { personSchema } from "@/lib/schemas";
 import { Target, Users, Lightbulb, Handshake, Rocket, TrendingUp, Building2, BarChart3 } from "lucide-react";
@@ -97,7 +97,7 @@ export default function AboutPage({
             </h2>
             {t.whoWeAre.paragraphs.map((p, i) => (
               <p key={i} className="text-muted-foreground leading-relaxed mb-4">
-                {renderInlineMarkdownLinks(p)}
+                {renderInlineMarkdownLinks(p.replace(/\]\((\/[^)]+)\)/g, (_, path: string) => `](${parityHref(path, locale)})`))}
               </p>
             ))}
           </div>
@@ -184,7 +184,7 @@ export default function AboutPage({
                       </p>
                       {stage.href && (
                         <Link
-                          href={stage.href}
+                          href={parityHref(stage.href, locale)}
                           aria-label={
                             locale === "fr"
                               ? `En savoir plus sur ${stage.title}`
@@ -280,8 +280,7 @@ export default function AboutPage({
       </section>
 
       <TestimonialsSection locale={locale} />
-      {locale === "fr" && <div className="container max-w-4xl"><FinanceExpert /></div>}
-      {locale !== "fr" && <CTASection locale={locale} />}
+      <div className="container max-w-4xl"><FinanceExpert locale={locale} /></div>
 
       {/* Person schemas for founding partners (T-7 — EEAT / GEO signals).
         * Renders one Person JSON-LD per leadership team member (showInHero).
