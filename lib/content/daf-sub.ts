@@ -1,3 +1,4 @@
+import { getFinanceStackSummary } from "./finance-stack";
 import { Locale } from "../i18n";
 import { FORMULES, ENGAGEMENT, MISSIONS_PONCTUELLES } from "./facts";
 import { getDafOffer } from "./daf-offer";
@@ -943,7 +944,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           heading: "The Iter Advisors approach",
           content: [
-            "At Iter Advisors, we have developed a proven methodology for timeshare CFO services. Each engagement begins with a comprehensive diagnosis of your financial situation, followed by a prioritized action plan. Our CFO leverages a network of 30 technology partners to implement the best tools.",
+            `Each engagement begins with a diagnosis of your financial situation, followed by a prioritized action plan. ${getFinanceStackSummary("en")}`,
             "Our presence in Barcelona, Paris and Toulouse allows us to work with French and international companies. Contact us to discuss your needs.",
           ],
         },
@@ -1286,7 +1287,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           heading: "El enfoque de Iter Advisors",
           content: [
-            "En Iter Advisors, hemos desarrollado una metodología probada para el CFO a tiempo compartido. Cada misión comienza con un diagnóstico completo de su situación financiera, seguido de un plan de acción priorizado. Nuestro CFO se apoya en una red de 30 socios tecnológicos para implantar las mejores herramientas.",
+            `Cada misión comienza con un diagnóstico de su situación financiera, seguido de un plan de acción priorizado. ${getFinanceStackSummary("es")}`,
             "Nuestra presencia en Barcelona, París y Toulouse nos permite intervenir junto a empresas francesas e internacionales. Contáctenos para hablar de sus necesidades.",
           ],
         },

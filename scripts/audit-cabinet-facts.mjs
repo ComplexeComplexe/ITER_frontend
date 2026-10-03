@@ -4,7 +4,7 @@ import { join } from "node:path";
 // Check the generated site, including metadata and JSON-LD, not only source literals.
 const root = ".next/server/app";
 const stale =
-  /(?:\+?(?:85|100|50)\+?\s+(?:entreprises|companies|businesses|empresas|clients)|15\+?\s+(?:consultants|consultores|finance consultants)|"numberOfEmployees"\s*:\s*\{[^}]*"value"\s*:\s*15\b)/i;
+  /(?:\+?(?:85|100|50)\+?\s+(?:entreprises|companies|businesses|empresas|clients)|15\+?\s+(?:consultants|consultores|finance consultants|collaborateurs|colaboradores|employees)|30\s+(?:partenaires technologiques|technology partners|socios tecnol[oó]gicos)|"numberOfEmployees"\s*:\s*\{[^}]*"value"\s*:\s*15\b)/i;
 const failures = [];
 let checked = 0;
 async function visit(directory) {
