@@ -17,6 +17,7 @@ import type { ToolPageProps } from "./ToolPage";
 
 const sections = [
   ["verdict", "Notre avis"],
+  ["experience", "Notre expérience"],
   ["profils", "Pour qui ?"],
   ["analyse", "Avantages et limites"],
   ["tarifs", "Tarifs"],
@@ -90,14 +91,13 @@ export default function PennylaneReviewPage({
             <Link href={author.url} rel="author" className={link}>
               {author.name}
             </Link>{" "}
-            ({FINANCE_EXPERT.role}){" "}
-            · documentation vérifiée le{" "}
+            ({FINANCE_EXPERT.role}) · documentation vérifiée le{" "}
             <time dateTime={review.reviewedAt}>3 octobre 2026</time>
           </p>
           <p className={`${copy} text-lg max-w-3xl`}>{review.intro}</p>
           <p className="mt-4 text-sm text-muted-foreground">
-            Analyse documentaire et critères de CFO. Les exemples de tests
-            ci-dessous ne sont pas des résultats clients mesurés.{" "}
+            Retour d’usage du cabinet et documentation éditeur. Les exemples de
+            tests ci-dessous ne sont pas des résultats clients mesurés.{" "}
             <Link href="/ressources/outils/methode" className={link}>
               Lire notre méthode éditoriale
             </Link>
@@ -148,6 +148,28 @@ export default function PennylaneReviewPage({
             <a href="#analyse" className={link}>
               Voir les sources et les vérifications pour chaque point
             </a>
+          </p>
+        </section>
+        <section id="experience" className="scroll-mt-28 pt-12">
+          <h2 className={heading}>{review.experience.heading}</h2>
+          <div className="grid sm:grid-cols-2 gap-4 mb-5">
+            <p className="rounded-2xl border border-border p-5 font-semibold">
+              {review.experience.duration}
+            </p>
+            <p className="rounded-2xl border border-border p-5 font-semibold">
+              {review.experience.coverage}
+            </p>
+          </div>
+          <p className={`${copy} max-w-3xl`}>{review.experience.benefits}</p>
+          <p className={`${copy} max-w-3xl mt-4`}>
+            {review.experience.limitation}
+          </p>
+          <p className="text-sm text-muted-foreground mt-5">
+            {review.experience.attribution}{" "}
+            <Link href="/a-propos/guillaume-rostand" className={link}>
+              Son rôle chez Iter Advisors
+            </Link>
+            .
           </p>
         </section>
         <section id="profils" className="scroll-mt-28 py-12">
@@ -334,10 +356,11 @@ export default function PennylaneReviewPage({
           <h2 className={heading}>Sources et méthode</h2>
           <p className={`${copy} max-w-3xl`}>
             Chaque source officielle ci-dessous a été consultée le 3 octobre
-            2026. Les faits produit sont distingués de notre analyse. Les
-            fonctions et les tarifs peuvent évoluer ; vérifiez leur
-            disponibilité dans votre offre avant de signer. Cette page ne publie
-            pas de note ni de mesure de performance client.
+            2026. Les faits produit sont distingués de notre analyse et du
+            retour d’usage du cabinet, confirmé par Guillaume Rostand le 3
+            octobre 2026. Les fonctions et les tarifs peuvent évoluer ; vérifiez
+            leur disponibilité dans votre offre avant de signer. Cette page ne
+            publie pas de note ni de mesure de performance client.
           </p>
           <ul className="mt-5 space-y-2">
             {Object.values(sources).map((source) => (

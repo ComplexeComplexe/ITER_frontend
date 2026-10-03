@@ -17,7 +17,9 @@ check(html.includes(`rel="canonical" href="${origin}${path}"`), 'one-self-canoni
 check(!/hreflang="(?:en|es)"/.test(html), 'no-alternates-to-nonexistent-translations');
 check(article?.headline === text(main.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1] || ''), 'article-matches-visible-headline');
 check(!/"(?:reviewRating|aggregateRating|ratingValue)"/.test(html), 'no-undocumented-product-rating');
-check(visible.includes('ne sont pas des résultats clients mesurés'), 'documentary-evidence-explicit');
+check(visible.includes('ne sont pas des résultats clients mesurés'), 'test-protocol-not-presented-as-measured-result');
+check(visible.includes('4 ans d’utilisation') && visible.includes('Environ 50 % de nos clients') && visible.includes('confirmés par Guillaume Rostand le 3 octobre 2026'), 'cabinet-experience-attributed-and-dated');
+check(!/45 (?:clients|dossiers)|50 % de gains/.test(visible), 'usage-share-is-not-a-derived-client-count-or-performance-gain');
 const faqs = schemas.filter(s => s['@type'] === 'FAQPage');
 check(faqs.length === 1, 'one-faq');
 for (const question of faqs[0]?.mainEntity || []) {

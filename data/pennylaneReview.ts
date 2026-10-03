@@ -1,25 +1,36 @@
-/** Product facts come from the linked documentation, not invented deployment results. */
+/** Product documentation and dated cabinet experience are attributed separately. */
 export const PENNYLANE_REVIEW = {
   path: "/ressources/outils/pennylane",
   reviewedAt: "2026-10-03",
-  title: "Avis Pennylane : avantages, limites et choix d’un DAF",
+  title: "Avis Pennylane : 4 ans d’usage, atouts et limites",
   description:
-    "Notre avis Pennylane pour dirigeants et DAF : comptabilité, analytique, tarifs par formule, limites et contrôles de migration. Sources vérifiées et critères concrets.",
-  headline: "Avis Pennylane : faut-il le choisir pour votre finance ?",
+    "Avis Pennylane après 4 ans d’usage chez Iter : centralisation comptable, précomptabilité, reporting encore limité, tarifs et critères de choix pour votre finance.",
+  headline: "Avis Pennylane : notre retour après quatre ans d’utilisation",
   intro:
-    "Un dirigeant attend plus qu’une liste de fonctionnalités : des comptes compréhensibles, des échéances fiables et des données utilisables pour décider. Voici notre analyse de Pennylane sous l’angle de la direction financière, avec les conditions qui rendent le choix pertinent et les contrôles à effectuer avant de migrer.",
+    "Iter Advisors utilise Pennylane depuis quatre ans et pour environ 50 % de ses clients. Notre avis est positif sur la centralisation de la comptabilité et la préparation d’une précomptabilité propre. Notre principale réserve concerne le reporting, que nous jugeons encore un peu faible pour les besoins de pilotage d’un CFO. Voici ce retour de cabinet et les critères à examiner sur votre dossier.",
   verdict:
-    "Pennylane mérite d’être présélectionné pour rapprocher facturation, dépenses et comptabilité dans un environnement partagé avec le cabinet comptable. Le point décisif reste votre organisation : qui complète les pièces, contrôle les écritures et explique les écarts ? Pour une activité avec stocks, production ou consolidation complexe, partez des flux à couvrir avant de décider s’il suffit seul ou doit être connecté à un autre système.",
+    "Notre expérience met en avant deux points forts : centraliser la comptabilité et préparer une précomptabilité propre. Pennylane est donc une solution que nous utilisons régulièrement dans nos missions. Le reporting reste son principal point faible à nos yeux : il faut vérifier si les restitutions disponibles répondent à vos besoins de direction financière. Ce retour porte sur les usages d’Iter ; la pertinence pour votre entreprise dépend aussi de vos flux et de votre organisation comptable.",
   strengths: [
-    "Des échanges autour des mêmes documents plutôt que des fichiers dispersés.",
-    "Une analyse des activités à construire à partir de catégories et de règles communes.",
+    "La centralisation de la comptabilité, un point fort constaté dans nos usages.",
+    "La préparation d’une précomptabilité propre avant les contrôles et la validation comptables.",
     "Une API Entreprise documentée pour relier les outils conservés, selon l’abonnement.",
   ],
   cautions: [
-    "La formule et les accès conditionnent les fonctions réellement disponibles.",
+    "Notre principale réserve d’usage : un reporting que nous jugeons encore un peu faible. La formule et les accès restent à vérifier.",
     "La migration d’un dossier déjà actif demande un contrôle des doublons.",
     "Le tableau de bord reste dépendant des comptes, des pièces et des écritures disponibles.",
   ],
+  experience: {
+    heading: "Notre expérience Pennylane chez Iter",
+    duration: "4 ans d’utilisation",
+    coverage: "Environ 50 % de nos clients",
+    attribution:
+      "Périmètre d’usage et appréciations du cabinet confirmés par Guillaume Rostand le 3 octobre 2026.",
+    benefits:
+      "Dans notre pratique, Pennylane permet de centraliser la comptabilité et de préparer une précomptabilité propre. Ces deux aspects constituent les points forts que nous retenons de notre utilisation de l’outil.",
+    limitation:
+      "Le reporting est la principale limite que nous relevons : nous le jugeons encore un peu faible pour les besoins de pilotage financier d’un CFO. Évaluez les restitutions dont vous avez besoin avant de décider si elles suffisent à votre organisation.",
+  },
   profiles: [
     {
       title: "Une présélection pertinente",
@@ -49,7 +60,7 @@ export const PENNYLANE_REVIEW = {
       title: "Reporting : expliquer le chiffre avant de l’utiliser",
       fact: "Le tableau de bord analytique décrit par le centre d’aide est disponible en Premium. Il utilise les données présentes dans Pennylane ; un compte bancaire absent réduit le périmètre du solde affiché.",
       analysis:
-        "Rapprochez les indicateurs avec les sources et précisez leur date d’arrêté. Chiffre d’affaires, factures émises et encaissements ne répondent pas à la même question. Pour un comité de direction, ajoutez le budget, les hypothèses et les commentaires nécessaires. Un outil de BI complémentaire se justifie par une restitution manquante, pas par principe.",
+        "Dans notre usage, le reporting reste encore un peu faible pour les besoins de pilotage d’un CFO. Cette appréciation d’Iter ne signifie pas que le logiciel est dépourvu de tableaux de bord. Rapprochez les indicateurs avec les sources et précisez leur date d’arrêté. Chiffre d’affaires, factures émises et encaissements ne répondent pas à la même question. Pour un comité de direction, ajoutez le budget, les hypothèses et les commentaires nécessaires. Un outil de BI complémentaire se justifie par une restitution manquante, pas par principe.",
       source: "dashboard",
     },
     {
@@ -150,7 +161,7 @@ export const PENNYLANE_REVIEW = {
     {
       question: "Cet avis Pennylane est-il un test client chiffré ?",
       answer:
-        "Cette version est une analyse éditoriale du cabinet, fondée sur la documentation citée et des critères de direction financière. Elle ne présente ni note produit, ni gain client mesuré. Les protocoles proposés sont des tests à effectuer sur votre dossier, pas des résultats de missions publiés.",
+        "Cet avis combine quatre ans d’utilisation déclarés par Iter, pour environ 50 % de ses clients, et la documentation citée. Guillaume Rostand a confirmé ce périmètre et les observations du cabinet le 3 octobre 2026. Il ne s’agit pas d’un benchmark de performance : aucun gain de temps ou résultat client chiffré n’est annoncé. Les protocoles proposés restent des tests à effectuer sur votre dossier.",
     },
   ],
 } as const;
