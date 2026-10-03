@@ -23,7 +23,7 @@
       }
     ],
     "proofs": [
-      "85 companies supported",
+      "{{clients}} companies supported",
       "Teams in Paris and Barcelona"
     ],
     "cta": "Discuss my needs"

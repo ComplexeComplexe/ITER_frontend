@@ -1,6 +1,6 @@
 "use client";
 import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
-import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
+import { CLIENTS_ACCOMPAGNES, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
@@ -1160,7 +1160,7 @@ export default function DafPage({
                 },
                 {
                   href: "/ressources/cas-clients",
-                  title: "Cas clients : 85 entreprises accompagnées",
+                  title: `Cas clients : ${CLIENTS_ACCOMPAGNES} entreprises accompagnées`,
                   desc: "Découvrez comment nos DAF accompagnent PME et startups.",
                 },
               ].map((item, i) => (

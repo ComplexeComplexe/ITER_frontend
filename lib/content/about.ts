@@ -1,3 +1,5 @@
+import { CLIENTS_ACCOMPAGNES, CONSULTANTS } from "./facts";
+import { getFinanceStackSummary } from "./finance-stack";
 import { Locale } from "../i18n";
 
 export interface TeamMember {
@@ -76,6 +78,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
     whoWeAre: {
       heading: "Qui sommes-nous",
       paragraphs: [
+        `Notre équipe compte ${CONSULTANTS} consultants et nous avons accompagné ${CLIENTS_ACCOMPAGNES} entreprises depuis la création du cabinet.`,
         "Iter Advisors est un cabinet de conseil en finance d\u2019entreprise spécialisé dans l\u2019accompagnement des startups, PME et ETI en forte croissance. Nous intervenons en tant que DAF externalisé, à temps partagé ou en transition, pour structurer et piloter la fonction financière de nos partenaires. Pour les startups VC-backed, nous proposons aussi une offre dédiée de [fractional CFO](/fractional-cfo-startups).",
         "Fondé en 2021, Iter Advisors réunit des CFOs expérimentés aux parcours complémentaires : audit, contrôle de gestion, direction financière, M&A. Leur vision commune\u00A0: rendre accessible aux entreprises en croissance une direction financière de premier plan.",
         "Avec des équipes à Barcelone et Paris, et une intervention à Toulouse à distance ou sur accord, nous accompagnons nos clients en France, en Espagne et à l\u2019international, avec une approche sur mesure adaptée à chaque étape de leur développement.",
@@ -182,7 +185,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           question: "Quels outils utilisez-vous\u00A0?",
           answer:
-            "Nous travaillons avec les meilleurs outils du marché\u00A0: Pennylane, QuickBooks, Xero pour la comptabilité\u00A0; Agicap, Fygr pour la trésorerie\u00A0; Google Sheets, Excel, Notion pour le reporting\u00A0; et bien d\u2019autres solutions adaptées à chaque besoin.",
+            getFinanceStackSummary("fr"),
         },
         {
           question: "Intervenez-vous à l\u2019international\u00A0?",
@@ -221,6 +224,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
     whoWeAre: {
       heading: "Who we are",
       paragraphs: [
+        `Our team includes ${CONSULTANTS} consultants and we have supported ${CLIENTS_ACCOMPAGNES} companies since the firm was founded.`,
         "Iter Advisors is a corporate finance advisory firm supporting growing startups, SMEs and mid-sized companies. We provide fractional, part-time or interim CFO support to structure and manage their finance function. For VC-backed startups, we also offer dedicated [fractional CFO support](/fractional-cfo-startups).",
         "Founded in 2021, Iter Advisors brings together experienced CFOs from complementary backgrounds: audit, management control, financial management, M&A. Their shared vision: making first-class financial management accessible to growing companies.",
         "With teams in Barcelona and Paris, serving Toulouse remotely or through agreed visits, we support our clients in France, Spain and internationally, with a tailored approach adapted to each stage of their development.",
@@ -322,7 +326,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           question: "What tools do you use?",
           answer:
-            "We work with the best tools on the market: Pennylane, QuickBooks, Xero for accounting; Agicap, Fygr for cash management; Google Sheets, Excel, Notion for reporting; and many other solutions tailored to each need.",
+            getFinanceStackSummary("en"),
         },
         {
           question: "Do you work internationally?",
@@ -361,6 +365,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
     whoWeAre: {
       heading: "Quiénes somos",
       paragraphs: [
+        `Nuestro equipo cuenta con ${CONSULTANTS} consultores y hemos acompañado a ${CLIENTS_ACCOMPAGNES} empresas desde la creación del gabinete.`,
         "Iter Advisors es una firma de consultoría financiera que acompaña a startups, pymes y empresas medianas en crecimiento. Intervenimos como CFO externo, a tiempo parcial o de transición para estructurar y gestionar su función financiera. Para startups financiadas por capital riesgo ofrecemos también [CFO para startups](/fractional-cfo-startups).",
         "Fundada en 2021, Iter Advisors reúne CFOs experimentados de trayectorias complementarias: auditoría, control de gestión, dirección financiera, M&A. Su visión compartida\u00A0: hacer accesible a las empresas en crecimiento una dirección financiera de primer nivel.",
         "Con equipos en Barcelona y París e intervención en Toulouse en remoto o mediante visitas acordadas, acompañamos a nuestros clientes en Francia, España e internacionalmente, con un enfoque a medida adaptado a cada etapa de su desarrollo.",
@@ -462,7 +467,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           question: "¿Qué herramientas utilizáis?",
           answer:
-            "Trabajamos con las mejores herramientas del mercado: Pennylane, QuickBooks, Xero para la contabilidad; Agicap, Fygr para la tesorería; Google Sheets, Excel, Notion para el reporting; y muchas otras soluciones adaptadas a cada necesidad.",
+            getFinanceStackSummary("es"),
         },
         {
           question: "¿Trabajáis a nivel internacional?",

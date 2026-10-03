@@ -1,4 +1,4 @@
-import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
+import { CLIENTS_ACCOMPAGNES, CONSULTANTS, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 import { Locale } from "../i18n";
 import { getDafOffer } from "./daf-offer";
 
@@ -184,7 +184,7 @@ export const dafContent: Record<Locale, DafContent> = {
       // La fourchette tarifaire entre dans la méta : c'est l'information que
       // le chercheur de « daf externalisé tarif » attend dans le snippet.
       description:
-        "Directeur financier externalisé de 3 000 à 8 000 € HT/mois : trésorerie, reporting, levée de fonds. 85 entreprises accompagnées. Diagnostic offert.",
+        `Directeur financier externalisé de 3 000 à 8 000 € HT/mois : trésorerie, reporting, levée de fonds. ${CLIENTS_ACCOMPAGNES} entreprises accompagnées. Diagnostic offert.`,
     },
     breadcrumbLabel: "DAF Externalisé",
     essential: {
@@ -237,7 +237,7 @@ export const dafContent: Record<Locale, DafContent> = {
     // une modalité, avec lien vers sa page propriétaire.
     h1: "DAF externalisé pour PME et startups : votre direction financière externalisée",
     intro: [
-      `Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Notre offre couvre toutes les modalités : directeur financier externalisé en mission longue, direction financière externalisée à l'année, DAF à temps partagé sur 1 à 8 jours par mois, ou CFO externalisé en mission ponctuelle. Mission démarrée sous 8 à 15 jours, sans durée minimale et avec un préavis de 30 jours. 85 entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne, avec des équipes à Paris et Barcelone, et une intervention à Toulouse à distance ou sur accord.`,
+      `Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Notre offre couvre toutes les modalités : directeur financier externalisé en mission longue, direction financière externalisée à l'année, DAF à temps partagé sur 1 à 8 jours par mois, ou CFO externalisé en mission ponctuelle. Mission démarrée sous 8 à 15 jours, sans durée minimale et avec un préavis de 30 jours. ${CLIENTS_ACCOMPAGNES} entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne, avec des équipes à Paris et Barcelone, et une intervention à Toulouse à distance ou sur accord.`,
       "Un DAF externalisé — aussi appelé DAF à temps partagé ou CFO externalisé — est un directeur financier senior qui intervient dans votre entreprise sans en être salarié. Il co-pilote le dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs. Le format est flexible : temps partagé, mission ponctuelle ou abonnement mensuel. Pour la nuance avec son équivalent anglo-saxon, consultez notre fiche [Le CFO (Chief Financial Officer)](/ressources/glossaire/cfo). Pour la version dédiée aux startups VC-backed, voir notre offre [Fractional CFO pour startups](/fractional-cfo-startups).",
     ],
     // SEO-003 (2026-08-09) — section resserrée. Ses trois paragraphes
@@ -689,7 +689,7 @@ export const dafContent: Record<Locale, DafContent> = {
         { label: "Who it's for", text: "startups raising funds, growing SMEs, scale-ups in transformation." },
         { label: "Lead time", text: `engagement starts within ${offerEn.start}.` },
         { label: "Commitment", text: offerEn.commitment },
-        { label: "Iter Advisors in numbers", text: `15 finance consultants, 85 companies supported, EUR 100M raised, 5/5 on Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} reviews).` },
+        { label: "Iter Advisors in numbers", text: `${CONSULTANTS} finance consultants, ${CLIENTS_ACCOMPAGNES} companies supported, EUR 100M raised, 5/5 on Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} reviews).` },
       ],
     },
     definitionBox: {
@@ -706,7 +706,7 @@ export const dafContent: Record<Locale, DafContent> = {
     h1: "Fractional CFO for Startups & SMEs — Iter Advisors",
     intro: [
       "A **Fractional CFO** — or Fractional Chief Financial Officer — is a senior finance professional who works within your company without being a full-time employee. When you hire a Fractional CFO, you get the same responsibilities as an in-house CFO (financial strategy, cash flow, reporting, investor relations) but on a flexible basis: part-time, project-based, or monthly retainer.",
-      "At Iter Advisors, we support 85+ SMEs, startups and scale-ups by deploying a Fractional CFO into their finance function. Our Fractional CFOs are senior operators (10+ years) ready to structure forecasting, lead fundraising, or step in as interim CFO — without the cost or commitment of a full-time hire.",
+      `At Iter Advisors, we support ${CLIENTS_ACCOMPAGNES} SMEs, startups and scale-ups by deploying a Fractional CFO into their finance function. Our Fractional CFOs are senior operators (10+ years) ready to structure forecasting, lead fundraising, or step in as interim CFO — without the cost or commitment of a full-time hire.`,
       "New to the role? Start with our glossary entry [What is a CFO?](/en/ressources/glossaire/cfo) to understand the difference between CFO, Finance Director and Controller — and explore [our finance services](/en/services) for the full scope of what a Fractional CFO can deliver.",
     ],
     partnerSection: {
@@ -714,7 +714,7 @@ export const dafContent: Record<Locale, DafContent> = {
       content: [
         "Iter Advisors is a Fractional CFO firm with teams in Barcelona and Paris, serving Toulouse remotely or through agreed visits. We provide our clients with experienced finance directors (10+ years of experience) capable of addressing all the financial challenges of a growing company.",
         "Our approach is built on three fundamental pillars: technical expertise, strategic vision and flexibility. Each engagement is tailored to meet the specific challenges of your business.",
-        "With over 85 companies supported and more than EUR 100 million in fundraising completed by our clients, Iter Advisors has established itself as a leading player in Fractional CFO services in France and Spain.",
+        `With ${CLIENTS_ACCOMPAGNES} companies supported and more than EUR 100 million in fundraising completed by our clients, Iter Advisors has established itself as a leading player in Fractional CFO services in France and Spain.`,
       ],
     },
     whatIs: {
@@ -863,7 +863,7 @@ export const dafContent: Record<Locale, DafContent> = {
         },
       ],
       outro:
-        "Sector-wise, our **Fractional CFOs** specialize in SaaS, Deep-Tech, e-Commerce, Manufacturing, and Services — sectors where we've supported 85+ companies and facilitated EUR 100M+ in fundraising.\n\n**Additional services:** Beyond Fractional CFO support, we also offer guidance in other critical functions: **outsourced HR** for scaling team structuring, interim management for urgent situations, and fundraising support.",
+        `Sector-wise, our **Fractional CFOs** specialize in SaaS, Deep-Tech, e-Commerce, Manufacturing, and Services — sectors where we've supported ${CLIENTS_ACCOMPAGNES} companies and facilitated EUR 100M+ in fundraising.\n\n**Additional services:** Beyond Fractional CFO support, we also offer guidance in other critical functions: **outsourced HR** for scaling team structuring, interim management for urgent situations, and fundraising support.`,
     },
     featuredQuote: {
       quote:
@@ -1042,7 +1042,7 @@ export const dafContent: Record<Locale, DafContent> = {
         { label: "Para quién", text: "startups en ronda de financiación, pymes en crecimiento, empresas en transformación." },
         { label: "Plazo", text: `inicio de la misión en ${offerEs.start}.` },
         { label: "Compromiso", text: offerEs.commitment },
-        { label: "Iter Advisors en cifras", text: `15 consultores financieros, 85 empresas acompañadas, 100 M€ levantados, nota 5/5 en Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} opiniones).` },
+        { label: "Iter Advisors en cifras", text: `${CONSULTANTS} consultores financieros, ${CLIENTS_ACCOMPAGNES} empresas acompañadas, 100 M€ levantados, nota 5/5 en Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} opiniones).` },
       ],
     },
     definitionBox: {
@@ -1067,7 +1067,7 @@ export const dafContent: Record<Locale, DafContent> = {
       content: [
         "Iter Advisors es un gabinete de CFO externalizado con presencia en Barcelona, Paris y Toulouse. Ponemos a disposicion de nuestros clientes directores financieros experimentados (10+ anos de experiencia), capaces de intervenir en todas las problematicas financieras de una empresa en crecimiento.",
         "Nuestro enfoque se basa en tres pilares fundamentales: la experiencia tecnica, la vision estrategica y la flexibilidad de intervencion. Cada mision esta disenada a medida para responder a los retos especificos de su empresa.",
-        "Con mas de 85 empresas acompanadas y mas de 100 millones de euros en rondas de financiacion realizadas por nuestros clientes, Iter Advisors se ha posicionado como un actor de referencia en el ambito del CFO externalizado en Francia y Espana.",
+        `Con ${CLIENTS_ACCOMPAGNES} empresas acompanadas y mas de 100 millones de euros en rondas de financiacion realizadas por nuestros clientes, Iter Advisors se ha posicionado como un actor de referencia en el ambito del CFO externalizado en Francia y Espana.`,
       ],
     },
     whatIs: {

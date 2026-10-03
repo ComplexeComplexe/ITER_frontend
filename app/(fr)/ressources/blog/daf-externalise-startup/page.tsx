@@ -1,3 +1,4 @@
+import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
@@ -302,7 +303,7 @@ export default function DafExternaliseStartupPage() {
       </p>
 
       <p>
-        Chez Iter Advisors, nos DAFs ont accompagné plus de 85 entreprises en croissance, dont une quarantaine de startups en phase de levée. Pour en savoir plus sur notre approche et nos formules adaptées aux startups, consultez notre{' '}
+        Chez Iter Advisors, nos DAFs ont accompagné {CLIENTS_ACCOMPAGNES} entreprises en croissance, dont une quarantaine de startups en phase de levée. Pour en savoir plus sur notre approche et nos formules adaptées aux startups, consultez notre{' '}
         <Link href="/daf-externalise">page dédiée au DAF externalisé</Link> — ou{' '}
         <Link href="/contact">prenez contact directement</Link> pour un premier échange sans engagement.
       </p>

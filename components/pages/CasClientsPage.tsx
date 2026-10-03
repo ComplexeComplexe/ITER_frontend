@@ -1,4 +1,5 @@
 "use client";
+import { CLIENTS_ACCOMPAGNES, CONSULTANTS, FONDS_LEVES } from "@/lib/content/facts";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView, AnimatePresence } from "framer-motion";
@@ -230,9 +231,9 @@ function getContent(locale: Locale) {
       stats: {
         heading: "L'impact Iter Advisors en chiffres",
         items: [
-          { value: "50+", label: "Entreprises accompagnées" },
-          { value: "15+", label: "Experts CFO" },
-          { value: "€200M+", label: "De fonds levés par nos clients" },
+          { value: String(CLIENTS_ACCOMPAGNES), label: "Entreprises accompagnées" },
+          { value: String(CONSULTANTS), label: "Consultants" },
+          { value: FONDS_LEVES, label: "De fonds levés par nos clients" },
           { value: "5/5", label: "Note Trustfolio" },
         ],
       },
@@ -452,9 +453,9 @@ function getContent(locale: Locale) {
       stats: {
         heading: "The Iter Advisors impact in numbers",
         items: [
-          { value: "50+", label: "Companies supported" },
-          { value: "15+", label: "CFO experts" },
-          { value: "€200M+", label: "Raised by our clients" },
+          { value: String(CLIENTS_ACCOMPAGNES), label: "Companies supported" },
+          { value: String(CONSULTANTS), label: "Consultants" },
+          { value: FONDS_LEVES, label: "Raised by our clients" },
           { value: "5/5", label: "Trustfolio rating" },
         ],
       },
@@ -674,9 +675,9 @@ function getContent(locale: Locale) {
       stats: {
         heading: "El impacto de Iter Advisors en cifras",
         items: [
-          { value: "50+", label: "Empresas acompañadas" },
-          { value: "15+", label: "Expertos CFO" },
-          { value: "€200M+", label: "Levantados por nuestros clientes" },
+          { value: String(CLIENTS_ACCOMPAGNES), label: "Empresas acompañadas" },
+          { value: String(CONSULTANTS), label: "Consultores" },
+          { value: FONDS_LEVES, label: "Levantados por nuestros clientes" },
           { value: "5/5", label: "Nota Trustfolio" },
         ],
       },

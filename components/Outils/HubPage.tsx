@@ -1,3 +1,4 @@
+import FinanceStackSection from "@/components/FinanceStackSection";
 import FinanceExpert from "@/components/FinanceExpert";
 
 import PageLayout from '@/components/PageLayout';
@@ -625,6 +626,7 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
         </div>
       </section>
       <div className="container max-w-4xl"><FinanceExpert /></div>
-    </PageLayout>
+    <FinanceStackSection locale={locale} />
+      </PageLayout>
   );
 }

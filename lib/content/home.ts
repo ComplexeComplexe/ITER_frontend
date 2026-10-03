@@ -1,3 +1,5 @@
+import { getFinanceStackSummary } from "./finance-stack";
+import { CLIENTS_ACCOMPAGNES, CONSULTANTS } from "@/lib/content/facts";
 import { serviceHref } from "../path-localization";
 import { getDafOfferFacts } from "./offer-facts";
 import { Locale } from "../i18n";
@@ -50,9 +52,9 @@ export const homeContent = {
       },
     ],
     stats: [
-      { value: "+85", bold: "Entreprises accompagnées", rest: " par Iter Advisors" },
+      { value: `${CLIENTS_ACCOMPAGNES}`, bold: "Entreprises accompagnées", rest: " par Iter Advisors" },
       { value: "+100\u00A0M", bold: "Levées de fonds", rest: " par nos clients depuis 2021" },
-      { value: "15", bold: "Consultants", rest: " experts de la fonction Finance au service de nos clients" },
+      { value: String(CONSULTANTS), bold: "Consultants", rest: " experts de la fonction Finance au service de nos clients" },
       { value: "30", bold: "Partenaires technologiques", rest: " au service de la performance financière" },
     ],
     whyChoose: {
@@ -159,7 +161,7 @@ export const homeContent = {
       { q: "Comment se passe la transition avec un expert externalisé ?", a: getDafOfferFacts("fr").start },
       { q: "Quelle est la différence entre un DAF externalisé et un comptable ?", a: "Un comptable gère la tenue des comptes et les obligations déclaratives. Un DAF externalisé va bien au-delà\u00A0: stratégie financière, pilotage de la performance, levée de fonds, relations investisseurs, optimisation des coûts et structuration de la croissance." },
       { q: "Combien coûte un DAF externalisé ?", a: getDafOfferFacts("fr").price },
-      { q: "Quels outils utilisez-vous au quotidien ?", a: "Nous travaillons avec les meilleurs outils du marché\u00A0: Pennylane, Agicap, Fygr, Qonto, PowerBI, et bien d'autres. Nous nous adaptons à votre stack existant ou vous aidons à choisir les solutions les plus adaptées à votre activité." },
+      { q: "Quels outils utilisez-vous au quotidien ?", a: getFinanceStackSummary("fr") },
       { q: "En combien de temps un DAF externalisé est-il opérationnel ?", a: getDafOfferFacts("fr").start },
       { q: "Proposez-vous aussi des services de DRH externalisé ?", a: "Oui, Iter Advisors propose un pôle RH complet\u00A0: DRH externalisé, DRH à temps partagé, gestion de la paie, recrutement, conformité sociale et mise en place de processus RH. Nos experts RH interviennent avec la même flexibilité que nos DAF." },
       { q: "Dans quelles zones géographiques intervenez-vous ?", a: getDafOfferFacts("fr").geography },
@@ -202,7 +204,7 @@ export const homeContent = {
     meta: {
       title: "Fractional CFO for Startups & SMEs | Iter Advisors",
       description:
-        "Fractional CFO and finance leadership for startups, scale-ups and SMEs. Fractional CFO, fundraising, M&A, cash management. 85+ companies, €100M+ raised.",
+        `Fractional CFO and finance leadership for startups, scale-ups and SMEs. Fractional CFO, fundraising, M&A, cash management. ${CLIENTS_ACCOMPAGNES} companies, €100M+ raised.`,
     },
     hero: {
       h1: { before: "The best version of your ", highlight: "financial management", highlightAlt: "human resources management", after: "" },
@@ -246,9 +248,9 @@ export const homeContent = {
       },
     ],
     stats: [
-      { value: "+85", bold: "Companies supported", rest: " by Iter Advisors" },
+      { value: `${CLIENTS_ACCOMPAGNES}`, bold: "Companies supported", rest: " by Iter Advisors" },
       { value: "+100\u00A0M", bold: "Funds raised by", rest: " our customers since 2021" },
-      { value: "15", bold: "Consultants", rest: " Finance experts at the service of our customers" },
+      { value: String(CONSULTANTS), bold: "Consultants", rest: " Finance experts at the service of our customers" },
       { value: "30", bold: "Technology partners", rest: " for financial performance" },
     ],
     whyChoose: {
@@ -355,7 +357,7 @@ export const homeContent = {
       { q: "How does the transition with an outsourced expert work?", a: getDafOfferFacts("en").start },
       { q: "What is the difference between a Fractional CFO and an accountant?", a: "An accountant manages bookkeeping and reporting obligations. A Fractional CFO goes much further: financial strategy, performance management, fundraising, investor relations, cost optimization and growth structuring." },
       { q: "How much does a Fractional CFO cost?", a: getDafOfferFacts("en").price },
-      { q: "What tools do you use on a daily basis?", a: "We work with the best tools on the market: Pennylane, Agicap, Fygr, Qonto, PowerBI, and many more. We adapt to your existing stack or help you choose the most suitable solutions for your business." },
+      { q: "What tools do you use on a daily basis?", a: getFinanceStackSummary("en") },
       { q: "How quickly can a Fractional CFO become operational?", a: getDafOfferFacts("en").start },
       { q: "Do you also offer outsourced HR Director services?", a: "Yes, Iter Advisors offers a complete HR division: outsourced HR Director, part-time HR Director, payroll management, recruitment, social compliance and HR process implementation. Our HR experts operate with the same flexibility as our CFOs." },
       { q: "In which geographic areas do you operate?", a: getDafOfferFacts("en").geography },
@@ -431,9 +433,9 @@ export const homeContent = {
       },
     ],
     stats: [
-      { value: "+85", bold: "Empresas acompañadas", rest: " por Iter Advisors" },
+      { value: `${CLIENTS_ACCOMPAGNES}`, bold: "Empresas acompañadas", rest: " por Iter Advisors" },
       { value: "+100\u00A0M", bold: "Fondos recaudados por", rest: " nuestros clientes desde 2021" },
-      { value: "15", bold: "Consultores", rest: " expertos en finanzas al servicio de nuestros clientes" },
+      { value: String(CONSULTANTS), bold: "Consultores", rest: " expertos en finanzas al servicio de nuestros clientes" },
       { value: "30", bold: "Socios tecnológicos", rest: " al servicio del rendimiento financiero" },
     ],
     whyChoose: {
@@ -540,7 +542,7 @@ export const homeContent = {
       { q: "¿Cómo funciona la transición con un experto externalizado?", a: getDafOfferFacts("es").start },
       { q: "¿Cuál es la diferencia entre un CFO externalizado y un contable?", a: "Un contable gestiona la contabilidad y las obligaciones declarativas. Un CFO externalizado va mucho más allá: estrategia financiera, gestión del rendimiento, captación de fondos, relaciones con inversores, optimización de costes y estructuración del crecimiento." },
       { q: "¿Cuánto cuesta un CFO externalizado?", a: getDafOfferFacts("es").price },
-      { q: "¿Qué herramientas utilizan en el día a día?", a: "Trabajamos con las mejores herramientas del mercado: Pennylane, Agicap, Fygr, Qonto, PowerBI, y muchas más. Nos adaptamos a su stack existente o le ayudamos a elegir las soluciones más adecuadas para su actividad." },
+      { q: "¿Qué herramientas utilizan en el día a día?", a: getFinanceStackSummary("es") },
       { q: "¿En cuánto tiempo un CFO externalizado es operativo?", a: getDafOfferFacts("es").start },
       { q: "¿Ofrecen también servicios de Director de RRHH externalizado?", a: "Sí, Iter Advisors ofrece una división de RRHH completa: Director de RRHH externalizado, Director de RRHH a tiempo compartido, gestión de nóminas, reclutamiento, cumplimiento social e implementación de procesos de RRHH. Nuestros expertos de RRHH intervienen con la misma flexibilidad que nuestros CFOs." },
       { q: "¿En qué zonas geográficas operan?", a: getDafOfferFacts("es").geography },

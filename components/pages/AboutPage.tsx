@@ -1,3 +1,4 @@
+import FinanceStackSection from "@/components/FinanceStackSection";
 import { parityHref } from "@/lib/locale-route-map";
 import FinanceExpert from "@/components/FinanceExpert";
 import Link from "next/link";
@@ -279,6 +280,7 @@ export default function AboutPage({
         </div>
       </section>
 
+      <FinanceStackSection locale={locale} />
       <TestimonialsSection locale={locale} />
       <div className="container max-w-4xl"><FinanceExpert locale={locale} /></div>
 

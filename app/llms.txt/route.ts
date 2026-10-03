@@ -1,8 +1,10 @@
+import { getFinanceStackSummary } from "@/lib/content/finance-stack";
 import { CABINET_EXPERTISES } from "@/lib/content/cabinet-expertise";
 import { getDafOfferFacts } from "@/lib/content/offer-facts";
 import {
   ANNEE_FONDATION,
   CLIENTS_ACCOMPAGNES,
+  CONSULTANTS,
   COUT_DAF_SALARIE,
   DELAIS,
   ECONOMIE_FORMULATION,
@@ -73,11 +75,17 @@ ${ANNEE_FONDATION}.
 - Contact : contact@iteradvisors.com
 - Note clients : ${TRUSTFOLIO_RATING}/5 sur ${TRUSTFOLIO_REVIEW_COUNT} avis Trustfolio authentifiés (vérifié le ${TRUSTFOLIO_VERIFIED_DATE})
 - [LinkedIn](https://www.linkedin.com/company/iter-advisors/)
-- ${CLIENTS_ACCOMPAGNES} entreprises accompagnées, ${FONDS_LEVES} levés
+- ${CLIENTS_ACCOMPAGNES} entreprises accompagnées depuis la création
+- ${CONSULTANTS} consultants
+- ${FONDS_LEVES} levés par les clients accompagnés
 
 Un DAF externalisé est un directeur financier senior qui pilote la fonction
 finance sans être salarié de l'entreprise. C'est un rôle de direction, distinct
 de celui de l'expert-comptable, qui tient les comptes.
+
+## Outils
+
+${getFinanceStackSummary("fr")}
 
 ## Tarifs
 

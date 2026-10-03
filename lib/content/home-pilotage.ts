@@ -1,6 +1,7 @@
 import type { Locale } from "@/lib/i18n";
 import {
   CLIENTS_ACCOMPAGNES,
+  CONSULTANTS,
   FONDS_LEVES,
   FORMULES,
   ENGAGEMENT,
@@ -48,7 +49,7 @@ const copy = {
     meta: {
       title: "Iter Advisors : DAF & DRH à temps partagé | Paris, Barcelone",
       description:
-        "Un DAF senior pour piloter vos finances. Équipe finance et RH à Paris et Barcelone, 85 entreprises accompagnées. Découvrez nos missions et tarifs.",
+        `Un DAF senior pour piloter vos finances. Équipe finance et RH à Paris et Barcelone, ${CLIENTS_ACCOMPAGNES} entreprises accompagnées. Découvrez nos missions et tarifs.`,
     },
     eyebrow: "Cabinet finance & RH · Paris / Barcelone",
     headline: ["Un ", "DAF senior", " pour piloter vos finances."],
@@ -217,7 +218,7 @@ const copy = {
     meta: {
       title: "Iter Advisors: Fractional CFO & HR | Paris, Barcelona",
       description:
-        "A senior CFO to lead your finances. Finance and HR teams in Paris and Barcelona, 85 businesses supported. Explore our services, people and fees.",
+        `A senior CFO to lead your finances. Finance and HR teams in Paris and Barcelona, ${CLIENTS_ACCOMPAGNES} businesses supported. Explore our services, people and fees.`,
     },
     eyebrow: "Finance & HR firm · Paris / Barcelona",
     headline: ["A ", "senior CFO", " to lead your finances."],
@@ -389,7 +390,7 @@ const copy = {
     meta: {
       title: "Iter Advisors: CFO externo y RR. HH. | París, Barcelona",
       description:
-        "Un CFO sénior para dirigir sus finanzas. Equipos de finanzas y RR. HH. en París y Barcelona, 85 empresas acompañadas. Conozca servicios y honorarios.",
+        `Un CFO sénior para dirigir sus finanzas. Equipos de finanzas y RR. HH. en París y Barcelona, ${CLIENTS_ACCOMPAGNES} empresas acompañadas. Conozca servicios y honorarios.`,
     },
     eyebrow: "Consultoría de finanzas y RR. HH. · París / Barcelona",
     headline: ["Un ", "CFO sénior", " para dirigir sus finanzas."],
@@ -574,6 +575,7 @@ export function getHomePilotage(locale: Locale) {
   );
   return {
     ...t,
+    team: { ...t.team, eyebrow: `${t.team.eyebrow} · ${CONSULTANTS} ${locale === "es" ? "consultores" : "consultants"}` },
     price: `${min} ${locale === "en" ? "to" : locale === "es" ? "a" : "à"} ${max} ${t.month}`,
     engagement: `${t.notice} ${ENGAGEMENT.preavisJours} ${t.days}`,
     priceDetail: facts.price,

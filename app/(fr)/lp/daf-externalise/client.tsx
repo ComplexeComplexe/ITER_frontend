@@ -1,5 +1,5 @@
 'use client';
-import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
+import { CLIENTS_ACCOMPAGNES, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 
 import Script from 'next/script';
 import { useState, useEffect, useRef } from 'react';
@@ -649,7 +649,7 @@ export default function LandingPageClient() {
               {/* Social proof */}
               <div className="pt-6 border-t border-gray-200">
                 <p className="text-sm text-muted-foreground">
-                  ⭐ <strong>5/5 sur Trustfolio</strong> · <strong>85+ entreprises accompagnées</strong> ·{' '}
+                  ⭐ <strong>5/5 sur Trustfolio</strong> · <strong>{CLIENTS_ACCOMPAGNES} entreprises accompagnées</strong> ·{' '}
                   <strong>100 M€+ levés par nos clients</strong>
                 </p>
                 <p className="mt-3 text-xs text-muted-foreground">
@@ -923,7 +923,7 @@ export default function LandingPageClient() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
             <div className="text-center">
-              <p className="text-4xl font-bold text-iter-violet mb-2">85+</p>
+              <p className="text-4xl font-bold text-iter-violet mb-2">{CLIENTS_ACCOMPAGNES}</p>
               <p className="text-muted-foreground">Entreprises accompagnées</p>
             </div>
             <div className="text-center">

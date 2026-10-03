@@ -44,8 +44,12 @@ export const TRUSTFOLIO_RATING = "5";
 export const TRUSTFOLIO_REVIEW_COUNT = 35;
 export const TRUSTFOLIO_VERIFIED_DATE = "2026-09-26";
 
-/** Entreprises accompagnées depuis la création. Le site annonçait aussi « +100 ». */
-export const CLIENTS_ACCOMPAGNES = 85;
+/** Entreprises accompagnées depuis la création, confirmé par Guillaume le 3 octobre 2026. */
+export const CLIENTS_ACCOMPAGNES = 90;
+
+/** Effectif de consultants confirmé par Guillaume le 3 octobre 2026. */
+export const CONSULTANTS = 20;
+export const CABINET_METRICS_VALIDATED_DATE = "2026-10-03";
 
 /** Montant levé par les clients accompagnés, formaté. */
 export const FONDS_LEVES = "100 M€";

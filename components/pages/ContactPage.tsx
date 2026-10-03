@@ -1,4 +1,5 @@
 "use client";
+import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 
 import { useState, useEffect, FormEvent, useRef } from "react";
 import Image from "next/image";
@@ -28,7 +29,7 @@ const contactPageText = {
     h1: "Contactez nos experts financiers",
     subtitle:
       "Échangez avec un DAF expérimenté pour identifier les leviers de croissance de votre entreprise. Premier échange gratuit et sans engagement.",
-    trustBadge: "+85 entreprises accompagnées",
+    trustBadge: `${CLIENTS_ACCOMPAGNES} entreprises accompagnées`,
     ratingLabel: "5/5 sur Trustfolio",
     formTitle: "Décrivez votre besoin",
     formSubtitle: "Premier échange gratuit pour comprendre votre besoin et convenir de la suite. Toute analyse approfondie ou mission fait ensuite l’objet d’un périmètre et d’un devis.",
@@ -53,7 +54,7 @@ const contactPageText = {
     h1: "Contact our financial experts",
     subtitle:
       "Talk with an experienced CFO to identify growth levers for your business. First call is free, no commitment.",
-    trustBadge: "+85 companies supported",
+    trustBadge: `${CLIENTS_ACCOMPAGNES} companies supported`,
     ratingLabel: "5/5 on Trustfolio",
     formTitle: "Send us a message",
     formSubtitle: "The first conversation is free and helps define your needs. Any detailed analysis or engagement is then scoped and quoted separately.",
@@ -78,7 +79,7 @@ const contactPageText = {
     h1: "Contacte con nuestros expertos financieros",
     subtitle:
       "Hable con un CFO experimentado para identificar las palancas de crecimiento de su empresa. Primera llamada gratuita y sin compromiso.",
-    trustBadge: "+85 empresas acompañadas",
+    trustBadge: `${CLIENTS_ACCOMPAGNES} empresas acompañadas`,
     ratingLabel: "5/5 en Trustfolio",
     formTitle: "Envíenos un mensaje",
     formSubtitle: "La primera conversación es gratuita y permite definir su necesidad. Un análisis detallado o una misión se concretan después en un alcance y un presupuesto.",
