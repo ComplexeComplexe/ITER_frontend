@@ -34,6 +34,13 @@ function Aliases({ service, section }: { service: FinanceService; section: strin
   return (anchors[service.path]?.[section] ?? []).map(id => <span key={id} id={id} className={styles.anchor} aria-hidden="true" />);
 }
 
+function ContextLinks({ service, section, locale }: { service: FinanceService; section: "livrables" | "perimetre"; locale: Locale }) {
+  const links = service.contextLinks?.[section];
+  return links?.length ? <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+    {links.map(([label, path]) => <li key={path}><PublishedLocaleLink locale={locale} href={parityHref(path, locale)} className="text-iter-violet underline underline-offset-4 font-medium">{label}</PublishedLocaleLink></li>)}
+  </ul> : null;
+}
+
 export default function FinanceServicePage({ service, locale = "fr" }: { service: FinanceService; locale?: Locale }) {
   const ui = financeInterface[locale];
   const services = getFinanceServices(locale);
@@ -83,6 +90,7 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
           <Aliases service={service} section="exemple" />
           <p className="site-eyebrow">{ui.practice}</p><h3 className="font-semibold text-foreground">{service.exampleTitle}</h3><p className={`${copy} mt-4`}>{service.example}</p>
         </aside>
+        <ContextLinks service={service} section="livrables" locale={locale} />
       </ServiceSection>
       <ServiceSection id="preuves" title={proofTitle}>
         <Aliases service={service} section="preuves" />
@@ -102,6 +110,7 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
       <ServiceSection id="perimetre" title={service.scopeTitle}>
         <Aliases service={service} section="perimetre" />
         {service.scope.map(text => <p key={text} className={copy}>{text}</p>)}
+        <ContextLinks service={service} section="perimetre" locale={locale} />
         <PublishedLocaleLink locale={locale} href={href("/daf-externalise")} className={link}>{service.context === "organisation" ? ui.overall : ui.position}</PublishedLocaleLink>
       </ServiceSection>
       <ServiceSection id="tarifs" title={ui.quote}>

@@ -64,7 +64,12 @@ describe("reviewed AI-finance journeys", () => {
       expect(blocks(rendered[i])).toEqual(blocks(rendered[0]));
       const page = doc(rendered[i]);
       expect(page.querySelectorAll("h1")).toHaveLength(1);
-      expect(page.querySelectorAll("h2")).toHaveLength(5);
+      expect(page.querySelectorAll("h2")).toHaveLength(6);
+      expect(page.querySelectorAll("#questions details")).toHaveLength(3);
+      for (const question of page.querySelectorAll("#questions details")) {
+        expect(question.querySelector("p")!.textContent!.length).toBeGreaterThan(80);
+        expect(Object.keys(IA_GUIDES).map(slug => iaGuideHref(slug, locale))).toContain(question.querySelector("a")!.getAttribute("href"));
+      }
       for (const slug of Object.keys(IA_GUIDES)) expect(page.querySelector(`a[href="${iaGuideHref(slug, locale)}"]`)).not.toBeNull();
       const schema = JSON.parse(page.querySelector('script[type="application/ld+json"]')!.textContent!);
       expect(schema.hasPart).toHaveLength(6);

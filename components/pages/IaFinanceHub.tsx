@@ -8,8 +8,9 @@ import { ArrowRight } from "lucide-react";
 import { getCmsNavigation } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
-import { IA_FINANCE_AUTHOR, IA_FINANCE_HUB } from "@/lib/content/ia-finance-references";
+import { IA_FINANCE_AUTHOR } from "@/lib/content/ia-finance-references";
 import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
+import { IA_HUB_QUESTIONS } from "@/lib/content/ia-hub-questions";
 
 export const IA_HUB_TITLE = "IA et finance : cas réels et guides pratiques pour les PME";
 export const IA_HUB_DESCRIPTION = "Reporting automatisé, ChatGPT, choix des outils et cas documentés : une méthode pour appliquer l’IA à la finance d’une PME avec des résultats vérifiables.";
@@ -25,9 +26,11 @@ export default async function IaFinanceHub({ locale = "fr" }: { locale?: Locale 
   const title = t(IA_HUB_TITLE), description = t(IA_HUB_DESCRIPTION);
   const hub = iaHub(locale);
   const cmsNavigation = await getCmsNavigation(locale);
-  const modified = locale === "fr" ? (PAGE_REVISIONS[IA_FINANCE_HUB.href] ?? "2026-09-05") : "2026-10-02";
+  const modified = PAGE_REVISIONS[hub.href] ?? (locale === "fr" ? "2026-09-05" : "2026-10-02");
+  const guideDate = (slug: string) => PAGE_REVISIONS[iaGuideHref(slug, locale)] ?? getIaGuide(locale, slug).published;
+  const dateLabel = (date: string) => new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T12:00:00Z`));
   const modifiedLabel = new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${modified}T12:00:00Z`));
-  const structuredData = {"@context":"https://schema.org", "@type":"CollectionPage", "@id":`https://www.iteradvisors.com${hub.href}#collection`, url:`https://www.iteradvisors.com${hub.href}`, name:title, description, inLanguage:{fr:"fr-FR",en:"en-GB",es:"es-ES"}[locale], dateModified:modified, isPartOf:{"@id":"https://www.iteradvisors.com/#website"}, hasPart:paths.map(slug => ({"@type":"Article", url:`https://www.iteradvisors.com${iaGuideHref(slug, locale)}`, name:getIaGuide(locale, slug).title}))};
+  const structuredData = {"@context":"https://schema.org", "@type":"CollectionPage", "@id":`https://www.iteradvisors.com${hub.href}#collection`, url:`https://www.iteradvisors.com${hub.href}`, name:title, description, inLanguage:{fr:"fr-FR",en:"en-GB",es:"es-ES"}[locale], dateModified:modified, isPartOf:{"@id":"https://www.iteradvisors.com/#website"}, hasPart:paths.map(slug => ({"@type":"Article", url:`https://www.iteradvisors.com${iaGuideHref(slug, locale)}`, name:getIaGuide(locale, slug).title, datePublished:getIaGuide(locale, slug).published, dateModified:guideDate(slug), author:{"@type":"Person", name:IA_FINANCE_AUTHOR.name, url:`https://www.iteradvisors.com${parityHref(IA_FINANCE_AUTHOR.url, locale)}`}}))};
   return <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData).replace(/</g, "\\u003c")}} />
     <section data-block-key="hero" className="site-hero bg-background pt-32 pb-12">
@@ -56,6 +59,7 @@ export default async function IaFinanceHub({ locale = "fr" }: { locale?: Locale 
             <p className="text-sm text-iter-violet font-semibold mb-2">{t("Guide")} {i+1}</p>
             <h3 className="font-heading font-semibold text-xl mb-3"><Link locale={locale} className="hover:underline" href={iaGuideHref(slug, locale)}>{getIaGuide(locale, slug).label}</Link></h3>
             <p className="text-muted-foreground text-sm leading-relaxed">{getIaGuide(locale, slug).description}</p>
+            <p className="mt-4 text-xs text-muted-foreground">{t("Par")} <Link locale={locale} href={parityHref(IA_FINANCE_AUTHOR.url, locale)} rel="author" className="underline">{IA_FINANCE_AUTHOR.name}</Link> · {t("Mise à jour du")} <time dateTime={guideDate(slug)}>{dateLabel(guideDate(slug))}</time></p>
           </div>)}</div>
         </div>
         <div data-block-key="evidence" id="preuves" className="scroll-mt-24 prose-iter-blog max-w-none">
@@ -65,6 +69,14 @@ export default async function IaFinanceHub({ locale = "fr" }: { locale?: Locale 
           <h2>{t("Automatisation, IA et responsabilité : qui fait quoi ?")}</h2>
           <p>{t("Un connecteur récupère les données. Des règles calculent les indicateurs. Un assistant peut préparer une analyse ou un commentaire. Le responsable financier contrôle les résultats et valide les décisions. Décrivez ces étapes séparément pour identifier les erreurs et mesurer le gain net de temps.")}</p>
           <p>{t("Pour comprendre les choix d’organisation, lisez")} <Link locale={locale} href={parityHref("/ressources/blog/ia-finance-automatisation-direction-financiere", locale)}>{t("le rôle du DAF dans une finance assistée par IA")}</Link>{t(". Pour sélectionner les premières tâches, utilisez")} <Link locale={locale} href={parityHref("/ressources/blog/ia-et-automatisation-des-taches-repetitives", locale)}>{t("la grille de priorisation des tâches répétitives")}</Link>.</p>
+        </div>
+        <div data-block-key="hub-questions" id="questions" className="scroll-mt-24">
+          <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-5">{t("Questions fréquentes")}</h2>
+          <div className="space-y-4">{IA_HUB_QUESTIONS[locale].map(item => <details key={item.slug} className="site-card rounded-2xl border border-border p-5">
+            <summary className="cursor-pointer font-semibold"><h3 className="inline">{item.question}</h3></summary>
+            <p className="mt-4 text-muted-foreground leading-relaxed">{item.answer}</p>
+            <Link locale={locale} href={iaGuideHref(item.slug, locale)} className="mt-3 inline-block text-iter-violet underline underline-offset-4">{item.link}</Link>
+          </details>)}</div>
         </div>
         <aside data-block-key="cta" id="accompagnement" className="site-card scroll-mt-24 rounded-3xl bg-iter-dark text-white p-8 sm:p-10">
           <h2 className="font-heading text-2xl font-bold mb-3">{t("Un DAF pour cadrer et piloter le chantier")}</h2>
