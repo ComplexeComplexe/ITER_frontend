@@ -155,7 +155,7 @@ export default function DocumentShell({
                       "@type": "Person",
                       name: "Benjamin Ziza",
                       jobTitle: "Associé fondateur - CFO & Investisseur",
-                      sameAs: "https://www.linkedin.com/in/benjamin-ziza/",
+                      sameAs: "https://www.linkedin.com/in/benjaminziza/",
                     },
                     {
                       "@type": "Person",

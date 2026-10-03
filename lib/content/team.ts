@@ -80,7 +80,7 @@ const fallbackData: FallbackMemberData[] = [
     },
     slug: "benjamin-ziza",
     photo: { url: "/images/team/benjamin-ziza.webp" },
-    linkedIn: "https://www.linkedin.com/in/benjamin-ziza/",
+    linkedIn: "https://www.linkedin.com/in/benjaminziza/",
     order: 2,
     showInHero: true,
     bio: {
