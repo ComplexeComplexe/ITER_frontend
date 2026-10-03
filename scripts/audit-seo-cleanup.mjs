@@ -48,8 +48,15 @@ await Promise.all(Array.from({ length: 4 }, async () => {
       const editorial = main.replace(/<header\b[\s\S]*?<\/header>|<footer\b[\s\S]*?<\/footer>/gi, '');
       if (['/services', '/services/gestion-financiere-externalisee'].includes(path) && !/href="\/daf-externalise"[^>]*>[^<]*direction financière externalisée/i.test(editorial)) failures.push({ path, test: 'commercial-context-link' });
       if (path === '/services/controle-de-gestion-externalise' && !html.includes('<title>Contrôle de gestion externalisé pour PME : budget et marges</title>')) failures.push({ path, test: 'control-title' });
-      const commercial = html.match(/<a\b[^>]*href="([^"]+)"[^>]*>Direction Financière \(DAF\)<\/a>/i)?.[1];
-      if (!path.startsWith('/en') && !path.startsWith('/es') && commercial !== '/daf-externalise') failures.push({ path, test: 'commercial-menu-destination', commercial });
+      // The pillar is now a direct header entry, not a duplicated submenu item.
+      const header = html.match(/<header\b[^>]*>([\s\S]*?)<\/header>/i)?.[1] ?? '';
+      const locale = path === '/en' || path.startsWith('/en/') ? 'en' : path === '/es' || path.startsWith('/es/') ? 'es' : 'fr';
+      const pillar = { fr: '/daf-externalise', en: '/en/fractional-cfo', es: '/es/externalizacion-daf' }[locale];
+      const label = { fr: 'DAF externalisé', en: 'Fractional CFO', es: 'CFO externo' }[locale];
+      const commercial = [...header.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi)]
+        .filter(match => match[1] === pillar)
+        .map(match => match[2].replace(/<[^>]+>/g, '').trim());
+      if (commercial.length !== 1 || commercial[0] !== label) failures.push({ path, test: 'single-localized-commercial-menu-destination', commercial });
       pages.push({ path, breadcrumbs: breadcrumbs.length, softwareArticles: schemas.filter(schema => schema['@type'] === 'Article' && schema.about?.['@type'] === 'SoftwareApplication').length });
     } catch (error) { failures.push({ path, test: 'fetch-or-parse', error: error.message }); }
   }
