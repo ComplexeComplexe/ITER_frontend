@@ -61,7 +61,7 @@ for (const path of briefPages) {
     check(path, /<h2\b[^>]*>Quand faire appel à un DRH externalisé/.test(main), 'hr-offer-need-heading');
   }
   if (path.endsWith('/temps-partage')) {
-    check(path, /<h2\b[^>]*>DAF part time/.test(main), 'part-time-heading');
+    check(path, /<h2\b[^>]*>Les livrables d’un DAF à temps partagé/.test(main), 'shared-time-deliverables-heading');
     check(path, /<h2\b[^>]*>[^<]*directeur financier à temps partagé/.test(main), 'shared-time-heading');
   }
   if (path.endsWith('/tarifs')) check(path, /href="\/ressources\/blog\/externalisation-comptable"[^>]*>tarif comptabilité externalisée/.test(main), 'accounting-pricing-referred-to-guide');

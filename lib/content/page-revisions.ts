@@ -1,5 +1,9 @@
 /** Substantive page changes. Shared navigation changes do not refresh every URL. */
 export const PAGE_REVISIONS: Record<string, string> = {
+  "/es/recursos/ia-finanzas": "2026-10-03",
+  "/en/resources/ai-finance": "2026-10-03",
+  "/es/services": "2026-10-03",
+  "/en/services": "2026-10-03",
   "/es/services/gestion-financiera-externalizada": "2026-10-03",
   "/en/services/financial-operations-organization": "2026-10-03",
   "/es/services/prevision-tesoreria": "2026-10-03",
@@ -89,7 +93,7 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/en/fractional-cfo/transition": "2026-10-03",
   "/es/services/externalizar-contabilidad": "2026-10-03",
   "/services/comptabilite-externalisation": "2026-10-03",
-  "/ressources/ia-finance": "2026-09-30",
+  "/ressources/ia-finance": "2026-10-03",
   "/daf-externalise/temps-partage": "2026-10-03",
   "/ressources/outils/power-bi": "2026-10-03",
   "/es/services/ma-due-diligence": "2026-10-03",
@@ -106,7 +110,7 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/ressources/blog/term-sheet-negocier-clauses-cles": "2026-10-02",
   "/ressources/blog/cash-burn-calculer-runway-anticiper-levee": "2026-10-02",
   "/ressources/blog/flux-de-tresorerie": "2026-09-30",
-  "/services": "2026-10-02",
+  "/services": "2026-10-03",
   "/services/accompagnement-levee-de-fond": "2026-10-03",
   "/services/gestion-financiere-externalisee": "2026-10-03",
   "/services/previsionnel-tresorerie": "2026-10-03",

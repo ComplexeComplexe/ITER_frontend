@@ -298,16 +298,16 @@
   "temps-partage": {
     "path": "/daf-externalise/temps-partage",
     "label": "CFO a tiempo parcial",
-    "title": "CFO a tiempo parcial para pymes | Iter Advisors",
-    "description": "Un CFO a tiempo parcial para gestionar tesorería, presupuestos y decisiones. Entregables, dedicación y precios para pymes y startups.",
+    "title": "CFO a tiempo parcial: funciones y dedicación | Iter Advisors",
+    "description": "CFO a tiempo parcial para su pyme: tesorería, márgenes, presupuesto y coordinación contable. Entregables, dedicación y presupuesto adaptados a su equipo.",
     "headline": "CFO a tiempo parcial",
     "headings": {
       "need": "¿Cuándo elegir un CFO a tiempo parcial?",
-      "deliverables": "Los entregables para dirigir las finanzas",
+      "deliverables": "Los entregables de un CFO a tiempo parcial",
       "method": "¿Cómo trabaja un director financiero a tiempo parcial?"
     },
     "promise": "Una dirección financiera que acompaña a su empresa a largo plazo.",
-    "intro": "Necesita cifras claras y un interlocutor para decidir, sin contratar a un director financiero a tiempo completo. El CFO a tiempo parcial organiza la gestión con su equipo a un ritmo acordado conjuntamente.",
+    "intro": "Un CFO a tiempo parcial dirige la función financiera durante varios días al mes, con una dedicación acordada. Relaciona tesorería, reporting y presupuesto con las decisiones de dirección, en coordinación con su equipo y asesor contable.",
     "context": "temps-partage",
     "category": "Gestión financiera recurrente",
     "summary": [
@@ -332,19 +332,19 @@
     "definition": "La dedicación parcial es la modalidad recurrente del CFO externo. Combina un interlocutor financiero sénior, trabajos acordados y reuniones para decidir. La intervención depende de los temas que hay que tratar, de la calidad de los datos y de las competencias del equipo.",
     "deliverables": [
       [
-        "Tesorería",
-        "Una previsión con hipótesis documentadas y seguimiento de las desviaciones.",
-        "Ver los vencimientos y decidir sobre los gastos."
+        "Tesorería y necesidades operativas de fondos",
+        "Una previsión móvil a 13 semanas cuando procede, vencimientos de clientes y proveedores e hipótesis de cobro. Los retrasos y la información pendiente permanecen visibles.",
+        "Priorizar pagos y cobros antes de contratar o invertir."
       ],
       [
-        "Reporting de dirección",
-        "Un cuadro de mando de resultados, márgenes e indicadores útiles para su actividad.",
-        "Entender qué cambia y por qué."
+        "Reporting y análisis de márgenes",
+        "Un reporting mensual de resultados y márgenes por actividad o canal, gastos y desviaciones presupuestarias. Se documentan definiciones, fuentes y criterios de reparto de costes.",
+        "Explicar las desviaciones con los responsables y seguir las acciones acordadas."
       ],
       [
-        "Presupuesto y decisiones",
-        "Escenarios de ingresos, gastos y contrataciones documentados con los equipos.",
-        "Comparar las opciones antes de comprometerse."
+        "Presupuesto y escenarios de financiación",
+        "Escenarios que relacionan ventas, gastos, contrataciones y tesorería. En una startup, el seguimiento puede incluir cash burn y runway; las hipótesis de financiación se distinguen de los fondos confirmados.",
+        "Comparar opciones y preparar conversaciones con bancos o inversores."
       ]
     ],
     "exampleTitle": "Qué puede incluir su revisión financiera",
@@ -422,6 +422,10 @@
       [
         "¿Qué compromiso se exige?",
         "La tabla de Iter prevé acompañamiento mensual sin permanencia mínima, rescindible con un preaviso de 30 días. Los servicios y los cambios de alcance se formalizan en el contrato."
+      ],
+      [
+        "¿Qué herramientas utilizan?",
+        "Partimos de sus herramientas actuales. Pennylane, Holded o una herramienta de tesorería como Agicap pueden formar parte del sistema según la necesidad. Una migración no es un requisito automático: examinamos accesos, exportaciones, controles y la capacidad del equipo para mantener los datos."
       ]
     ],
     "resources": [
@@ -442,16 +446,34 @@
       "transition",
       "controle",
       "organisation"
-    ]
+    ],
+    "contextLinks": {
+      "livrables": [
+        [
+          "Construir una previsión de tesorería",
+          "/services/previsionnel-tresorerie"
+        ],
+        [
+          "Profundizar en el control de gestión",
+          "/services/controle-de-gestion-externalise"
+        ]
+      ],
+      "perimetre": [
+        [
+          "Organizar el trabajo con su asesor contable",
+          "/services/comptabilite-externalisation"
+        ]
+      ]
+    }
   },
   "transition": {
     "path": "/daf-externalise/transition",
     "label": "CFO interino",
-    "title": "CFO interino y dirección financiera | Iter Advisors",
-    "description": "Dirección financiera interina: sustitución del CFO, mandato temporal y traspaso para pymes y empresas medianas. Prioridades, disponibilidad y presupuesto.",
+    "title": "CFO interino: sustitución y continuidad | Iter Advisors",
+    "description": "Sustitución de CFO, continuidad financiera y traspaso para pymes y empresas medianas. Mandato temporal con responsabilidades y calendario definidos.",
     "headline": "CFO interino",
     "promise": "Mantener la continuidad. Preparar la siguiente etapa.",
-    "intro": "Una salida, una ausencia o una transformación dejan vencimientos financieros que atender. El CFO interino asume un mandato temporal con prioridades, responsabilidades y condiciones de salida definidas.",
+    "intro": "Un CFO interino asume temporalmente la dirección financiera ante una salida, una ausencia o una transformación. El mandato precisa los vencimientos prioritarios, las responsabilidades y el traspaso. La dirección recurrente corresponde al CFO a tiempo parcial.",
     "context": "transition",
     "category": "Tomar el relevo temporalmente",
     "summary": [
@@ -585,7 +607,15 @@
       "temps-partage",
       "tresorerie",
       "organisation"
-    ]
+    ],
+    "contextLinks": {
+      "perimetre": [
+        [
+          "Preparar o revisar una adquisición o venta",
+          "/services/ma-due-diligence"
+        ]
+      ]
+    }
   },
   "controle": {
     "path": "/services/controle-de-gestion-externalise",
@@ -594,7 +624,7 @@
     "description": "Presupuestos, márgenes y reporting: control de gestión externo para entender sus resultados. Entregables, revisión mensual y coordinación con sus equipos.",
     "headline": "Control de gestión externo",
     "promise": "Entender sus márgenes. Dar continuidad a sus cifras.",
-    "intro": "Sus cuentas muestran lo ocurrido. El control de gestión compara los resultados con los objetivos y la actividad operativa para identificar desviaciones y preparar decisiones con los responsables.",
+    "intro": "El control de gestión externo cubre presupuesto, reporting y análisis de márgenes. El controller relaciona las cuentas con la actividad real, explica las desviaciones con los responsables y prepara las decisiones.",
     "context": "reporting",
     "category": "Gestionar el rendimiento",
     "headings": {
@@ -624,19 +654,19 @@
     "definition": "El control de gestión externo consiste en confiar todo o parte del presupuesto, el reporting y el análisis del rendimiento a un profesional dedicado. Parte de datos contables y operativos y los relaciona con las decisiones de su empresa.",
     "deliverables": [
       [
-        "Cuadro de mando",
-        "Indicadores definidos, una fuente por indicador y una frecuencia de actualización.",
-        "Leer los resultados sin multiplicar los archivos."
+        "Cuadro de mando e indicadores",
+        "Reporting mensual de ingresos, márgenes, gastos y desviaciones presupuestarias. Cada indicador identifica su definición, fuente y responsable.",
+        "Leer cifras comparables entre periodos."
       ],
       [
-        "Análisis de márgenes",
-        "Una cuenta de resultados por actividad, producto o canal, con reglas de reparto.",
-        "Identificar las contribuciones y los costes que hay que examinar."
+        "Análisis de márgenes por actividad",
+        "Una lectura por producto, canal o cliente, con criterios documentados de reparto de costes.",
+        "Examinar la contribución al margen antes de decidir."
       ],
       [
-        "Presupuesto y desviaciones",
-        "Un presupuesto, resultados comparables y comentarios sobre desviaciones significativas.",
-        "Ajustar acciones y revisar las previsiones."
+        "Presupuesto, previsiones actualizadas y desviaciones",
+        "Un presupuesto conciliado con los datos reales y las previsiones actualizadas. Las desviaciones se explican con los equipos operativos y las hipótesis son trazables.",
+        "Ajustar las acciones y revisar sus efectos en la siguiente reunión."
       ]
     ],
     "exampleTitle": "Ejemplo de esquema para una revisión mensual",
@@ -698,16 +728,24 @@
       "temps-partage",
       "organisation",
       "tresorerie"
-    ]
+    ],
+    "contextLinks": {
+      "perimetre": [
+        [
+          "Anticipar vencimientos de caja con una previsión",
+          "/services/previsionnel-tresorerie"
+        ]
+      ]
+    }
   },
   "comptabilite": {
     "path": "/services/comptabilite-externalisation",
     "label": "Coordinación contable",
-    "title": "Coordinación contable para pymes | Iter Advisors",
-    "description": "Organice la contabilidad externa: recopilación de documentos, cierre, herramientas y coordinación con su asesoría. Alcance y propuesta adaptados.",
-    "headline": "Coordinación de la contabilidad externa",
+    "title": "Organización contable y cierre para pymes | Iter Advisors",
+    "description": "Iter organiza documentos, cierre y reporting con su asesor contable. La llevanza y las declaraciones quedan a cargo del profesional designado.",
+    "headline": "Organización de su contabilidad externa",
     "promise": "Cuentas utilizables y responsabilidades claras.",
-    "intro": "Documentos dispersos, cierres tardíos y responsabilidades poco claras: externalizar exige organizar primero los intercambios. Le ayudamos a estructurar el funcionamiento contable y conectarlo con la gestión financiera.",
+    "intro": "Iter organiza el circuito documental, el calendario de cierre y el trabajo entre su equipo y su asesor contable. No realizamos la llevanza ni las declaraciones: corresponden al profesional designado en su encargo.",
     "context": "comptabilite",
     "category": "Organizar la producción contable",
     "summary": [
@@ -729,7 +767,7 @@
       "No sabe quién comprueba los datos ni quién valida los vencimientos.",
       "Sus herramientas contables y su reporting utilizan información distinta."
     ],
-    "definition": "La contabilidad externa puede cubrir distintos alcances. Antes de comparar propuestas, distinga la recopilación y preparación de documentos, la llevanza y las declaraciones, el cierre y el análisis de las cifras. El contrato precisa los trabajos y el profesional responsable de cada parte.",
+    "definition": "Externalizar la contabilidad puede significar llevar las cuentas u organizar su producción. Esta página trata la segunda necesidad: recopilación, responsabilidades, calendario y uso de datos para el reporting. La propuesta distingue el trabajo de Iter, su equipo y su asesor contable.",
     "deliverables": [
       [
         "Circuito documental",
@@ -789,6 +827,10 @@
       [
         "¿Cómo conectar contabilidad y gestión financiera?",
         "Acordando fechas de disponibilidad, datos exportables, reglas analíticas y controles. El reporting puede utilizar una base conciliada y explicar las desviaciones útiles para decidir."
+      ],
+      [
+        "¿Cómo se reparten los costes?",
+        "Los honorarios del asesor contable, las suscripciones de software y la organización realizada por Iter se identifican por separado. La propuesta depende de los volúmenes, entidades, calidad documental y tareas asignadas a cada parte. Comparar organización con llevanza requiere comprobar sus respectivos alcances."
       ]
     ],
     "resources": [
@@ -813,7 +855,15 @@
       "organisation",
       "controle",
       "temps-partage"
-    ]
+    ],
+    "contextLinks": {
+      "perimetre": [
+        [
+          "Estructurar los procesos de la función financiera",
+          "/services/gestion-financiere-externalisee"
+        ]
+      ]
+    }
   },
   "tresorerie": {
     "path": "/services/previsionnel-tresorerie",
@@ -822,7 +872,7 @@
     "description": "Construya y siga una previsión de tesorería a 13 semanas: cobros, vencimientos, hipótesis y escenarios para preparar decisiones.",
     "headline": "Previsión de tesorería",
     "promise": "Ver los vencimientos antes de que sean urgentes.",
-    "intro": "Un saldo bancario no indica lo que queda disponible después de los próximos pagos. Una previsión móvil conecta los cobros y pagos esperados para preparar decisiones con su equipo.",
+    "intro": "Una previsión de tesorería, también llamada plan de tesorería, sitúa los cobros y pagos esperados semana a semana. Relaciona el saldo bancario con los próximos vencimientos para anticipar tensiones y preparar decisiones con su equipo.",
     "context": "tresorerie",
     "category": "Anticipar las necesidades de caja",
     "summary": [
@@ -924,6 +974,10 @@
       [
         "¿Qué herramienta debemos utilizar?",
         "Una hoja de cálculo estructurada puede bastar para ciertas necesidades. Una herramienta especializada se justifica según las fuentes, la frecuencia, los controles y las personas que la actualizan."
+      ],
+      [
+        "¿Qué diferencia hay entre presupuesto y previsión de tesorería?",
+        "El presupuesto relaciona los objetivos de ingresos y gastos durante un periodo. La previsión de tesorería sigue las fechas previstas de cobro y pago. Una venta presupuestada o contabilizada no es todavía efectivo disponible: ambos documentos se concilian, pero responden a preguntas diferentes."
       ]
     ],
     "resources": [
@@ -1040,16 +1094,24 @@
       "comptabilite",
       "controle",
       "temps-partage"
-    ]
+    ],
+    "contextLinks": {
+      "perimetre": [
+        [
+          "Organizar el circuito contable y el cierre",
+          "/services/comptabilite-externalisation"
+        ]
+      ]
+    }
   },
   "levee": {
     "path": "/services/accompagnement-levee-de-fond",
     "label": "Preparación de rondas",
-    "title": "Preparación financiera de rondas | Iter Advisors",
+    "title": "Financiación: modelo financiero y data room | Iter Advisors",
     "description": "Prepare las finanzas de su ronda: modelo financiero, data room y respuestas a inversores. Entregables y calendario definidos según su proyecto.",
     "headline": "Preparación financiera de rondas",
     "promise": "Hipótesis explicadas. Un expediente financiero coherente.",
-    "intro": "El CFO traduce su proyecto en escenarios financieros y organiza los datos que esperan los inversores. El dirigente presenta el proyecto; buscar inversores es un mandato distinto.",
+    "intro": "El CFO traduce su plan de negocio en escenarios financieros y organiza los datos que esperan los inversores. Esta misión prepara una operación de financiación y se distingue de la dirección recurrente de la startup. El fundador lidera el proyecto y la búsqueda de inversores es un mandato distinto.",
     "context": "levee",
     "category": "Preparar una operación",
     "summary": [
@@ -1124,6 +1186,10 @@
       [
         "¿Continúa el acompañamiento después de la ronda?",
         "Si lo prevé el mandato, puede incluir actualizar el presupuesto, seguir la caja y preparar reporting para inversores."
+      ],
+      [
+        "¿Qué calendario prever para la preparación financiera?",
+        "El alcance distingue el trabajo de Iter del calendario de financiación. El modelo, las conciliaciones y la data room dependen de la documentación disponible y de las preguntas de los inversores. Las conversaciones, negociaciones y cierre siguen su propio calendario; no se garantiza una fecha de financiación."
       ]
     ],
     "resources": [
@@ -1152,13 +1218,25 @@
       "due-diligence",
       "tresorerie",
       "temps-partage"
-    ]
+    ],
+    "contextLinks": {
+      "perimetre": [
+        [
+          "Seguir el runway y el reporting de la startup a largo plazo",
+          "/fractional-cfo-startups"
+        ],
+        [
+          "Preparar una adquisición o venta",
+          "/services/ma-due-diligence"
+        ]
+      ]
+    }
   },
   "due-diligence": {
     "path": "/services/ma-due-diligence",
     "label": "M&A y due diligence",
     "title": "M&A y due diligence financiera | Iter Advisors",
-    "description": "Prepare una adquisición, venta o ronda: resultados, deuda, capital circulante y escenarios. Análisis, entregables y honorarios definidos en la propuesta.",
+    "description": "Preparación o revisión financiera de una adquisición o venta: resultados, deuda y necesidades operativas de fondos. Alcance, destinatarios y límites definidos.",
     "headline": "M&A y due diligence financiera",
     "promise": "Analizar una operación con datos examinados.",
     "intro": "Comprador, dirigente o vendedor: le ayudamos a organizar y analizar información financiera útil para su operación. El mandato distingue preparación del expediente, revisión financiera y trabajos de otros asesores.",
@@ -1183,7 +1261,7 @@
       "Prepara una data room y respuestas a solicitudes financieras.",
       "Una adquisición requiere organizar el reporting y las responsabilidades después de la operación."
     ],
-    "definition": "Para el vendedor, la preparación organiza documentos y explica cuentas. Para el comprador, la revisión financiera examina resultados, deuda, necesidades de capital circulante e hipótesis. Preparar el expediente no sustituye una due diligence independiente.",
+    "definition": "Del lado vendedor, la preparación organiza documentos y explica las cuentas. Del lado comprador, la revisión financiera examina resultados, deuda y necesidades operativas de fondos. Estos trabajos corresponden a una adquisición o venta; la data room de financiación es una misión distinta. Preparar un expediente no sustituye una revisión independiente.",
     "deliverables": [
       [
         "Análisis de resultados",
@@ -1236,6 +1314,10 @@
       [
         "¿Qué documentos se necesitan?",
         "Cuentas, reporting, calendarios, datos de clientes y proveedores, previsiones y documentos que justifican las principales partidas. La lista se adapta a la operación y al mandato."
+      ],
+      [
+        "¿Cómo se acuerda el calendario de revisión?",
+        "El mandato define análisis, destinatarios e hitos según la disponibilidad documental y las conversaciones necesarias. La revisión financiera se distingue del calendario de toda la operación y de la integración. La información pendiente y sus efectos sobre las conclusiones permanecen explícitos."
       ]
     ],
     "resources": [
@@ -1252,6 +1334,15 @@
       "levee",
       "organisation",
       "transition"
-    ]
+    ],
+    "contextLinks": {
+      "perimetre": [
+        [
+          "Preparar el expediente financiero de una ronda",
+          "/services/accompagnement-levee-de-fond"
+        ]
+      ]
+    },
+    "proofNote": "El caso SolarMente ilustra la preparación financiera y la integración de Eltex. No demuestra una due diligence independiente realizada por Iter ni anticipa el resultado de otra operación."
   }
 }

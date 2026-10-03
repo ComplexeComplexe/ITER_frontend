@@ -18,6 +18,7 @@ export interface FinanceService {
   headings?: { need: string; deliverables: string; method: string };
   calendar?: { heading?: string; caption: string; headers: [string, string, string]; rows: [string, string, string][]; note: string };
   budgetResource?: { href: string; label: string };
+  contextLinks?: Partial<Record<"livrables" | "perimetre", [string, string][]>>;
 }
 
 export const FINANCE_REVIEW_DATE = "2026-09-30";
@@ -26,12 +27,16 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
   "temps-partage": {
     "path": "/daf-externalise/temps-partage",
     "label": "DAF à temps partagé",
-    "title": "DAF à temps partagé pour PME | Iter Advisors",
-    "description": "Un DAF à temps partagé pour suivre votre trésorerie, vos budgets et vos décisions. Missions, livrables, rythme et tarifs pour PME et startups.",
+    "title": "DAF à temps partagé : missions et rythme | Iter Advisors",
+    "description": "Un DAF à temps partagé pour votre PME : trésorerie, marges, budget et coordination comptable. Livrables, rythme et budget adaptés à votre équipe.",
     "headline": "DAF à temps partagé",
-    headings: { need: "Quand choisir un DAF à temps partagé ?", deliverables: "DAF part time : les livrables pour piloter", method: "Comment intervient un directeur financier à temps partagé ?" },
+    headings: {
+      "need": "Quand choisir un DAF à temps partagé ?",
+      "deliverables": "Les livrables d’un DAF à temps partagé",
+      "method": "Comment intervient un directeur financier à temps partagé ?"
+    },
     "promise": "Une direction financière qui suit votre entreprise dans la durée.",
-    "intro": "Vous avez besoin de visibilité sur vos chiffres et d’un interlocuteur pour décider, sans recruter un directeur financier à temps plein. Le DAF à temps partagé organise le pilotage avec votre équipe, à un rythme défini ensemble.",
+    "intro": "Un DAF à temps partagé pilote la fonction finance de votre entreprise quelques jours par mois, à un rythme convenu avec vous. Il relie trésorerie, reporting et budget aux décisions du dirigeant, en travaillant avec votre équipe et votre expert-comptable.",
     "context": "temps-partage",
     "category": "Piloter dans la durée",
     "summary": [
@@ -56,19 +61,19 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     "definition": "Le temps partagé est la forme récurrente du DAF externalisé. Il associe un interlocuteur financier senior, des travaux convenus et des rendez-vous de décision. Le niveau d’intervention dépend des sujets à traiter, de la qualité des données et des compétences déjà présentes.",
     "deliverables": [
       [
-        "Trésorerie",
-        "Un prévisionnel, des hypothèses identifiées et un suivi des écarts.",
-        "Voir les échéances et arbitrer les dépenses."
+        "Trésorerie et besoin en fonds de roulement",
+        "Un prévisionnel glissant à 13 semaines selon le besoin, les échéances clients et fournisseurs et les hypothèses de règlement. Les retards et informations manquantes restent visibles.",
+        "Prioriser les paiements et les relances avant un recrutement ou un investissement."
       ],
       [
-        "Reporting de direction",
-        "Un tableau de bord des résultats, marges et indicateurs utiles à votre activité.",
-        "Comprendre ce qui évolue et pourquoi."
+        "Reporting et analyse des marges",
+        "Un reporting mensuel : résultats et marges par activité ou canal, frais et écarts au budget. Les définitions, sources et règles de répartition sont documentées.",
+        "Comprendre les écarts avec les responsables et suivre les actions convenues."
       ],
       [
-        "Budget et décisions",
-        "Des scénarios de revenus, de charges et de recrutements, documentés avec les équipes.",
-        "Comparer les options avant de vous engager."
+        "Budget et scénarios de financement",
+        "Des scénarios reliant ventes, charges, recrutements et trésorerie. Pour une startup, le suivi peut inclure le cash burn et le runway ; les hypothèses de financement restent distinctes des fonds confirmés.",
+        "Comparer les options et préparer les échanges bancaires ou investisseurs."
       ]
     ],
     "exampleTitle": "Ce que peut contenir votre rendez-vous finance",
@@ -126,6 +131,10 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       [
         "Quel engagement est prévu ?",
         `La grille Iter prévoit un accompagnement mensuel sans durée minimale, résiliable avec un préavis de ${ENGAGEMENT.preavisJours} jours. Les prestations et toute évolution de périmètre sont formalisées dans le contrat.`
+      ],
+      [
+        "Quels outils utilisez-vous ?",
+        "Le cadrage part de vos outils existants. Pennylane, Holded ou un outil de trésorerie comme Agicap peuvent faire partie du dispositif selon le besoin. Une migration n’est pas un préalable automatique : nous examinons les accès, les exports, les contrôles et la capacité de votre équipe à maintenir les données."
       ]
     ],
     "resources": [
@@ -146,16 +155,34 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "transition",
       "controle",
       "organisation"
-    ]
+    ],
+    "contextLinks": {
+      "livrables": [
+        [
+          "Construire un prévisionnel de trésorerie",
+          "/services/previsionnel-tresorerie"
+        ],
+        [
+          "Approfondir le contrôle de gestion",
+          "/services/controle-de-gestion-externalise"
+        ]
+      ],
+      "perimetre": [
+        [
+          "Organiser les échanges avec le cabinet comptable",
+          "/services/comptabilite-externalisation"
+        ]
+      ]
+    }
   },
   "transition": {
     "path": "/daf-externalise/transition",
     "label": "DAF de transition",
-    "title": "DAF de transition : management financier | Iter Advisors",
-    "description": "Management de transition finance : remplacement du DAF, mandat temporaire et passation pour PME et ETI. Priorités, responsabilités, disponibilité et budget.",
+    "title": "DAF de transition : continuité et passation | Iter Advisors",
+    "description": "Remplacement d’un DAF, continuité financière et passation pour PME et ETI. Mandat temporaire, responsabilités et calendrier définis après cadrage.",
     "headline": "DAF de transition",
     "promise": "Assurer la continuité. Préparer la suite.",
-    "intro": "Un départ, une absence ou une transformation laisse des échéances financières à tenir. Le DAF de transition prend un mandat temporaire avec des priorités, des responsabilités et une sortie de mission définies.",
+    "intro": "Un DAF de transition assure temporairement la direction financière lors d’un départ, d’une absence ou d’une transformation. Le mandat précise les échéances à sécuriser, les responsabilités et la passation à préparer. Le pilotage récurrent relève du temps partagé.",
     "context": "transition",
     "category": "Prendre le relais",
     "summary": [
@@ -266,7 +293,15 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "temps-partage",
       "tresorerie",
       "organisation"
-    ]
+    ],
+    "contextLinks": {
+      "perimetre": [
+        [
+          "Préparer ou examiner une acquisition ou une cession",
+          "/services/ma-due-diligence"
+        ]
+      ]
+    }
   },
   "controle": {
     "path": "/services/controle-de-gestion-externalise",
@@ -275,7 +310,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     "description": "Budget, marges et reporting : un contrôle de gestion externalisé pour comprendre vos résultats. Livrables, revue mensuelle et articulation avec vos équipes.",
     "headline": "Contrôle de gestion externalisé",
     "promise": "Comprendre vos marges. Donner une suite à vos chiffres.",
-    "intro": "Vos comptes disent ce qui s’est passé. Le contrôle de gestion rapproche ces résultats de vos objectifs et de l’activité réelle, pour identifier les écarts et préparer les décisions avec les responsables.",
+    "intro": "Le contrôle de gestion externalisé confie le budget, le reporting et l’analyse des marges à un intervenant extérieur. Le contrôleur de gestion rapproche vos comptes de l’activité réelle, explique les écarts avec les responsables et prépare les décisions.",
     "context": "reporting",
     "category": "Piloter la performance",
     "headings": {
@@ -305,19 +340,19 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     "definition": "Externaliser le contrôle de gestion consiste à confier tout ou partie du budget, du reporting et de l’analyse de performance à un intervenant dédié. Le travail part des données comptables et opérationnelles, puis les relie aux décisions de votre entreprise.",
     "deliverables": [
       [
-        "Tableau de bord",
-        "Des indicateurs définis, une source par indicateur et une fréquence de mise à jour.",
-        "Lire les résultats sans multiplier les fichiers."
+        "Tableau de bord et indicateurs",
+        "Un reporting mensuel de revenus, marges, frais et écarts au budget. Chaque indicateur précise sa définition, sa source et son responsable.",
+        "Lire des chiffres comparables d’une période à l’autre."
       ],
       [
-        "Analyse des marges",
-        "Un compte de résultat par activité, produit ou canal, avec les règles de répartition.",
-        "Identifier les contributions et les coûts à examiner."
+        "Analyse des marges par activité",
+        "Une lecture par produit, canal ou client, avec des règles documentées de ventilation des coûts.",
+        "Examiner ce qui contribue à la marge avant d’arbitrer."
       ],
       [
-        "Budget et écarts",
-        "Un budget, un réalisé comparable et des commentaires sur les écarts significatifs.",
-        "Ajuster les actions et réviser les prévisions."
+        "Budget, atterrissages et écarts",
+        "Un budget rapproché du réalisé et des prévisions actualisées. Les écarts sont expliqués avec les opérationnels et les hypothèses restent identifiables.",
+        "Ajuster les actions et suivre leur effet à la revue suivante."
       ]
     ],
     "exampleTitle": "Exemple de trame pour une revue mensuelle",
@@ -379,16 +414,24 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "temps-partage",
       "organisation",
       "tresorerie"
-    ]
+    ],
+    "contextLinks": {
+      "perimetre": [
+        [
+          "Anticiper les échéances de cash avec un prévisionnel",
+          "/services/previsionnel-tresorerie"
+        ]
+      ]
+    }
   },
   "comptabilite": {
     "path": "/services/comptabilite-externalisation",
     "label": "Comptabilité externalisée",
-    "title": "Comptabilité externalisée pour PME | Iter Advisors",
-    "description": "Organisez votre comptabilité externalisée : collecte des pièces, clôture, outils et coordination avec votre expert-comptable. Périmètre et devis adaptés.",
-    "headline": "Comptabilité externalisée",
+    "title": "Organisation comptable et clôture pour PME | Iter Advisors",
+    "description": "Iter organise les pièces, la clôture et le reporting avec votre expert-comptable. La tenue et les déclarations restent confiées au professionnel désigné.",
+    "headline": "Organisation de votre comptabilité externalisée",
     "promise": "Des comptes exploitables, une organisation claire.",
-    "intro": "Pièces dispersées, clôture tardive, responsabilités floues : externaliser demande d’abord d’organiser les échanges. Nous vous aidons à structurer le fonctionnement comptable et son articulation avec le pilotage financier.",
+    "intro": "Iter organise le circuit des pièces, le calendrier de clôture et les échanges entre votre équipe et votre expert-comptable. Nous ne réalisons pas la tenue ni les déclarations : ces travaux restent confiés au professionnel désigné dans sa lettre de mission.",
     "context": "comptabilite",
     "category": "Organiser la production comptable",
     "summary": [
@@ -410,7 +453,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "Vous ne savez pas qui contrôle les données ni qui valide les échéances.",
       "Vos outils comptables et votre reporting ne partagent pas les mêmes informations."
     ],
-    "definition": "L’externalisation comptable peut couvrir des périmètres différents. Avant de comparer les offres, il faut distinguer la collecte et la préparation des pièces, la tenue et les déclarations, la clôture, puis l’analyse des chiffres. La lettre de mission précise les travaux et le professionnel responsable de chacun.",
+    "definition": "Externaliser la comptabilité peut désigner la tenue des comptes ou l’organisation de leur production. Cette page porte sur le second besoin : collecte, responsabilités, calendrier et utilisation des données pour le reporting. Le devis distingue les travaux d’Iter, de votre équipe et de votre cabinet comptable.",
     "deliverables": [
       [
         "Organisation des pièces",
@@ -467,6 +510,10 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       [
         "Comment relier comptabilité et pilotage ?",
         "En convenant des dates de disponibilité, des exports, des règles analytiques et des contrôles. Le reporting peut alors utiliser une base rapprochée et expliquer les écarts utiles aux décisions."
+      ],
+      [
+        "Comment se répartit le coût de l’accompagnement ?",
+        "Les honoraires du cabinet comptable, les abonnements logiciels et l’organisation assurée par Iter sont identifiés séparément. Le devis dépend des volumes, des entités, de la qualité des pièces et des travaux confiés à chacun. Il ne faut pas comparer une mission d’organisation avec une prestation de tenue sans vérifier leur périmètre."
       ]
     ],
     "resources": [
@@ -491,7 +538,15 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "organisation",
       "controle",
       "temps-partage"
-    ]
+    ],
+    "contextLinks": {
+      "perimetre": [
+        [
+          "Structurer les processus de la fonction finance",
+          "/services/gestion-financiere-externalisee"
+        ]
+      ]
+    }
   },
   "tresorerie": {
     "path": "/services/previsionnel-tresorerie",
@@ -500,7 +555,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     "description": "Construisez et suivez un prévisionnel de trésorerie à 13 semaines : encaissements, échéances, hypothèses et scénarios pour préparer vos décisions.",
     "headline": "Prévisionnel de trésorerie",
     "promise": "Voir les échéances avant qu’elles deviennent urgentes.",
-    "intro": "Un solde bancaire ne dit pas ce qui reste disponible après les prochaines échéances. Un prévisionnel glissant relie les encaissements et les paiements attendus pour préparer les arbitrages avec votre équipe.",
+    "intro": "Un prévisionnel de trésorerie, aussi appelé plan de trésorerie, positionne les encaissements et les paiements attendus semaine par semaine. Il rapproche le solde bancaire des prochaines échéances pour anticiper les tensions et préparer les arbitrages avec votre équipe.",
     "context": "tresorerie",
     "category": "Anticiper le cash",
     "summary": [
@@ -586,6 +641,10 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       [
         "Quel outil faut-il utiliser ?",
         "Un fichier structuré peut suffire à certains besoins. Un outil spécialisé se justifie selon les sources, la fréquence, les contrôles et les personnes chargées de l’actualisation."
+      ],
+      [
+        "Quelle différence entre budget et prévisionnel de trésorerie ?",
+        "Le budget relie les objectifs de revenus et de charges sur une période. Le prévisionnel de trésorerie suit les dates attendues d’encaissement et de paiement. Une vente budgétée ou comptabilisée n’est pas encore du cash disponible : les deux supports se rapprochent, mais ne répondent pas à la même question."
       ]
     ],
     "resources": [
@@ -702,16 +761,24 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "comptabilite",
       "controle",
       "temps-partage"
-    ]
+    ],
+    "contextLinks": {
+      "perimetre": [
+        [
+          "Organiser le circuit comptable et la clôture",
+          "/services/comptabilite-externalisation"
+        ]
+      ]
+    }
   },
   "levee": {
     "path": "/services/accompagnement-levee-de-fond",
     "label": "Levée de fonds",
-    "title": "Accompagnement levée de fonds | Iter Advisors",
+    "title": "Levée de fonds : business plan et data room | Iter Advisors",
     "description": "Préparez les finances de votre levée : modèle financier, data room et réponses aux investisseurs. Livrables et calendrier définis selon votre projet.",
     "headline": "Accompagnement à la levée de fonds",
     "promise": "Des hypothèses expliquées. Un dossier financier cohérent.",
-    "intro": "Le DAF traduit votre projet en scénarios financiers et organise les données attendues par les investisseurs. Le dirigeant porte le projet ; la recherche d’investisseurs est un mandat distinct.",
+    "intro": "Le DAF traduit votre business plan en scénarios financiers et organise les données attendues par les investisseurs. Cette mission prépare une opération de financement ; elle se distingue du pilotage récurrent de la startup. Le dirigeant porte le projet et la recherche d’investisseurs relève d’un mandat distinct.",
     "context": "levee",
     "category": "Préparer une opération",
     "summary": [
@@ -786,6 +853,10 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       [
         "L’accompagnement continue-t-il après la levée ?",
         "Si le mandat le prévoit, il peut inclure l’actualisation du budget, le suivi du cash et le reporting destiné aux investisseurs."
+      ],
+      [
+        "Quel calendrier prévoir pour la préparation financière ?",
+        "Le cadrage distingue les travaux d’Iter du calendrier de la levée. Le modèle, les rapprochements et la data room dépendent des pièces disponibles et des questions des investisseurs. Les échanges, les négociations et le closing suivent leur propre calendrier ; aucun délai de financement n’est garanti."
       ]
     ],
     "resources": [
@@ -805,13 +876,25 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "due-diligence",
       "tresorerie",
       "temps-partage"
-    ]
+    ],
+    "contextLinks": {
+      "perimetre": [
+        [
+          "Piloter le runway et le reporting de votre startup dans la durée",
+          "/fractional-cfo-startups"
+        ],
+        [
+          "Préparer une acquisition ou une cession",
+          "/services/ma-due-diligence"
+        ]
+      ]
+    }
   },
   "due-diligence": {
     "path": "/services/ma-due-diligence",
     "label": "M&A et due diligence",
     "title": "M&A et due diligence financière | Iter Advisors",
-    "description": "Préparez une acquisition, une cession ou une levée : résultats, dette, BFR et scénarios. Analyses, livrables et honoraires définis sur devis.",
+    "description": "Préparation ou revue financière d’une acquisition ou cession : résultats, dette et BFR. Périmètre, destinataires et limites définis dans le mandat.",
     "headline": "M&A et due diligence financière",
     "promise": "Éclairer une opération avec des données examinées.",
     "intro": "Acquéreur, dirigeant ou cédant : nous vous aidons à organiser et analyser les informations financières utiles à votre opération. Le mandat distingue la préparation du dossier, la revue financière et les travaux des autres conseils.",
@@ -836,7 +919,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "Vous préparez une data room et les réponses aux demandes financières.",
       "Une acquisition exige d’organiser le reporting et les responsabilités après l’opération."
     ],
-    "definition": "Côté vendeur, la préparation organise les pièces et explique les comptes. Côté acquéreur, la revue financière examine les résultats, la dette, le BFR et les hypothèses. Préparer le dossier ne remplace pas une due diligence indépendante.",
+    "definition": "Côté vendeur, la préparation organise les pièces et explique les comptes. Côté acquéreur, la revue financière examine les résultats, la dette et le besoin en fonds de roulement. Ces travaux concernent une acquisition ou une cession ; la data room d’une levée de fonds relève d’une mission distincte. Préparer un dossier ne remplace pas une revue indépendante.",
     "deliverables": [
       [
         "Analyse des résultats",
@@ -889,6 +972,10 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       [
         "Quels documents sont nécessaires ?",
         "Comptes, reporting, échéanciers, données clients et fournisseurs, prévisions et pièces justifiant les principaux postes. La liste est adaptée à l’opération et au mandat."
+      ],
+      [
+        "Comment fixer le calendrier de la revue ?",
+        "Le mandat précise les analyses, les destinataires et les jalons, selon la disponibilité des pièces et les échanges nécessaires. La durée d’une revue financière doit être distinguée de celle de l’opération entière et des travaux d’intégration. Les informations manquantes et leurs conséquences sur les conclusions restent explicites."
       ]
     ],
     "resources": [
@@ -905,7 +992,16 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "levee",
       "organisation",
       "transition"
-    ]
+    ],
+    "contextLinks": {
+      "perimetre": [
+        [
+          "Préparer le dossier financier d’une levée de fonds",
+          "/services/accompagnement-levee-de-fond"
+        ]
+      ]
+    },
+    "proofNote": "Le cas SolarMente illustre la préparation financière et l’intégration d’Eltex. Il ne démontre pas la réalisation d’une due diligence indépendante par Iter et ne préjuge pas du résultat d’une autre opération."
   }
 };
 
