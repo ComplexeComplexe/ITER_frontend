@@ -1,23 +1,30 @@
 import { Metadata } from "next";
 import HomePage from "@/components/pages/HomePage";
+import { getHomePilotage } from "@/lib/content/home-pilotage";
 import { buildStrapiMetadata } from "@/lib/metadata";
-import { getTeamMembers, getCmsNavigation, getHomepage } from "@/lib/static-content";
+import { getTeamMembers, getCmsNavigation } from "@/lib/static-content";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const { meta } = getHomePilotage("en");
   return buildStrapiMetadata({
     endpoint: "homepage",
     locale: "en",
     path: "/",
-    fallbackTitle: "Iter Advisors: CFO and HR support for SMEs and startups",
-    fallbackDescription: "Meet Iter Advisors and its team: Fractional CFO, management accounting and HR leadership for SMEs and startups.",
+    fallbackTitle: meta.title,
+    fallbackDescription: meta.description,
   });
 }
 
 export default async function Page() {
-  const [teamMembers, cmsNavigation, homepage] = await Promise.all([
+  const [teamMembers, cmsNavigation] = await Promise.all([
     getTeamMembers("en"),
     getCmsNavigation("en"),
-    getHomepage("en"),
   ]);
-  return <HomePage locale="en" teamMembers={teamMembers} cmsNavigation={cmsNavigation} homepage={homepage} />;
+  return (
+    <HomePage
+      locale="en"
+      teamMembers={teamMembers}
+      cmsNavigation={cmsNavigation}
+    />
+  );
 }
