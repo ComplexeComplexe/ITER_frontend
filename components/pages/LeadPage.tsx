@@ -1,4 +1,5 @@
 "use client";
+import { CLIENTS_ACCOMPAGNES, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 
 import { getDafOfferFacts } from "@/lib/content/offer-facts";
 import { getDafOffer } from "@/lib/content/daf-offer";
@@ -705,7 +706,7 @@ export default function LeadPage({
             >
               <span className="flex items-center gap-2">
                 <Shield size={16} className="text-iter-chartreuse" />
-                <strong className="text-white">+100</strong> {t.trustLine}
+                <strong className="text-white">{CLIENTS_ACCOMPAGNES}</strong> {t.trustLine}
               </span>
               <span className="hidden sm:block w-px h-4 bg-white/20" />
               <span className="flex items-center gap-1">
@@ -720,7 +721,7 @@ export default function LeadPage({
               </span>
               <span className="hidden sm:block w-px h-4 bg-white/20" />
               <span>
-                <strong className="text-white">32</strong> {t.trustReviews}
+                <strong className="text-white">{TRUSTFOLIO_REVIEW_COUNT}</strong> {t.trustReviews}
               </span>
             </motion.div>
           </div>

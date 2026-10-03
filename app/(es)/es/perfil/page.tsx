@@ -1,3 +1,4 @@
+import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 import { Metadata } from "next";
 import LeadGenPage from "@/components/pages/LeadGenPage";
 import { getCmsNavigation } from "@/lib/static-content";
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Diagnóstico Financiero Gratuito | Iter Advisors",
     description:
-      "Evalúe sus necesidades en 2 min y obtenga un diagnóstico personalizado. +100 empresas acompañadas, 5/5 Trustfolio.",
+      `Evalúe sus necesidades en 2 min y obtenga un diagnóstico personalizado. ${CLIENTS_ACCOMPAGNES} empresas acompañadas, 5/5 Trustfolio.`,
     type: "website",
   },
 };

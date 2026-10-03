@@ -1,3 +1,4 @@
+import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 import { Metadata } from "next";
 import DafPage from "@/components/pages/DafPage";
 import { buildStrapiMetadata } from "@/lib/metadata";
@@ -13,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/en/fractional-cfo",
     localizedPaths: { fr: "/daf-externalise", en: "/en/fractional-cfo", es: "/externalizacion-daf" },
     fallbackTitle: "Fractional CFO for Startups & SMEs | Iter Advisors",
-    fallbackDescription: "Hire a part-time CFO from 2 days/month. Cash-flow forecasting, fundraising support, financial reporting - 50+ companies served across Barcelona, Paris and Toulouse. Free consultation.",
+    fallbackDescription: `Hire a part-time CFO from 2 days/month. Cash-flow forecasting, fundraising support, financial reporting - ${CLIENTS_ACCOMPAGNES} companies served across Barcelona, Paris and Toulouse. Free consultation.`,
   });
 }
 

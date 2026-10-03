@@ -1,3 +1,4 @@
+import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 import { Metadata } from "next";
 import LeadGenPage from "@/components/pages/LeadGenPage";
 import { getCmsNavigation } from "@/lib/static-content";
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Financial Diagnostic | Iter Advisors",
     description:
-      "Assess your needs in 2 min and get a personalized diagnostic. 100+ companies supported, 5/5 Trustfolio.",
+      `Assess your needs in 2 min and get a personalized diagnostic. ${CLIENTS_ACCOMPAGNES} companies supported, 5/5 Trustfolio.`,
     type: "website",
   },
 };
