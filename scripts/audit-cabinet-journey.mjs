@@ -18,11 +18,21 @@ for (const path of paths) {
   const organization = schemas.filter(s => s['@id'] === origin + '/#organization' && s.name === 'Iter Advisors');
   check(organization.length === 1, 'one-cabinet-entity');
   check(JSON.stringify(organization[0]?.knowsAbout?.slice(0, 5)) === JSON.stringify(expertise), 'shared-expertise-order');
-  if (path === '/') {
-    check(html.includes('<title>Iter Advisors : cabinet DAF et DRH pour PME et startups</title>'), 'cabinet-title');
+  if (['/', '/en', '/es'].includes(path)) {
+    const locale = path === '/' ? 'fr' : path.slice(1);
+    const expected = {
+      fr: { title: 'Iter Advisors : DAF &amp; DRH à temps partagé | Paris, Barcelone', headline: 'Un DAF senior pour piloter vos finances.', contact: '/contact#daf', fees: '/daf-externalise/tarifs', offer: '/daf-externalise', fiction: 'Données fictives' },
+      en: { title: 'Iter Advisors: Fractional CFO &amp; HR | Paris, Barcelona', headline: 'A senior CFO to lead your finances.', contact: '/en/contact#daf', fees: '/en/fractional-cfo/pricing', offer: '/en/fractional-cfo', fiction: 'Fictional data' },
+      es: { title: 'Iter Advisors: CFO externo y RR. HH. | París, Barcelona', headline: 'Un CFO sénior para dirigir sus finanzas.', contact: '/es/contact#daf', fees: '/es/externalizacion-daf/precios', offer: '/es/externalizacion-daf', fiction: 'Datos ficticios' },
+    }[locale];
+    check(html.includes(`<title>${expected.title}</title>`), 'cabinet-title');
     const hero = main.match(/data-journey="home-hero".*?<\/section>/s)?.[0] ?? '';
-    check(hero.includes('href="/daf-externalise"') && hero.includes('Direction financière externalisée'), 'visible-offer-link');
-    check(hero.includes('Votre direction financière externalisée, du cash au reporting'), 'preserved-h1');
+    const headline = hero.match(/<h1[^>]*>(.*?)<\/h1>/s)?.[1].replace(/<[^>]*>/g, '') ?? '';
+    check(main.includes('data-home-template="pilotage"'), 'shared-pilotage-template');
+    check(headline === expected.headline, 'approved-h1');
+    check(hero.includes(`href="${expected.contact}"`) && hero.includes(`href="${expected.fees}"`), 'localized-hero-journey');
+    check(main.includes(`href="${expected.offer}"`), 'retained-offer-link');
+    check(hero.includes(expected.fiction), 'illustrative-forecast-labelled');
   }
   if (path === '/services/gestion-financiere-externalisee') {
     check(text.includes('Gestion financière opérationnelle'), 'operations-intent');

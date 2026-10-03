@@ -1,927 +1,411 @@
-"use client";
-import { getHomeJourney, HOME_CLUSTER_PATHS } from "@/lib/content/home-journey";
-import PublishedLocaleLink from "@/components/PublishedLocaleLink";
-import { parityHref } from "@/lib/locale-route-map";
-import HRSection from "@/components/Home/HRSection";
-import FinanceExpert from "@/components/FinanceExpert";
-
-import Link from "next/link";
 import Image from "next/image";
-import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
-// Script import removed - trustfolio loaded lazily via IntersectionObserver
-import { motion, useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
-import {
-  ArrowRight,
-  CheckCircle2,
-  TrendingUp,
-  PieChart,
-  Wallet,
-  BarChart3,
-  Briefcase,
-  Search,
-  Lightbulb,
-  Cog,
-  Rocket,
-  Zap,
-  Globe,
-  Clock,
-  Award,
-  AlertTriangle,
-  Banknote,
-  ChevronDown,
-} from "lucide-react";
-import { Locale } from "@/lib/i18n";
-import { getContactPath } from "@/lib/navigation";
-import { getHomeContent } from "@/lib/content/home";
-import { faqPageSchema } from "@/lib/schemas";
-import HomeDecisionResources from "@/components/HomeDecisionResources";
-import { resolveAuthorUrl } from "@/lib/content/team";
-import { aboutHref } from "@/lib/path-localization";
-import { getFallbackTeamMembers } from "@/lib/content/team";
-import type { StrapiTeamMember, CmsNavItem, StrapiHomepage } from "@/lib/static-content";
-import { strapiMediaUrl } from "@/lib/static-content";
+import Link from "@/components/PublishedLocaleLink";
 import PageLayout from "@/components/PageLayout";
+import TeamMemberCard from "@/components/TeamMemberCard";
 import HeroSection from "@/components/Home/HeroSection";
+import HomeDecisionResources from "@/components/HomeDecisionResources";
+import styles from "@/components/Home/pilotage.module.css";
+import { getHomeContent } from "@/lib/content/home";
+import {
+  getHomeJourney,
+  HOME_CLUSTER_PATHS,
+  HOME_HR_PATHS,
+} from "@/lib/content/home-journey";
+import {
+  getHomePilotage,
+  HOME_CLIENT_LOGOS,
+  HOME_CLIENT_NAMES,
+  HOME_LEAD_SLUGS,
+  HOME_NEED_PATHS,
+  HOME_TRUSTFOLIO_URL,
+} from "@/lib/content/home-pilotage";
+import { getFallbackTeamMembers } from "@/lib/content/team";
+import { parityHref } from "@/lib/locale-route-map";
+import { faqPageSchema } from "@/lib/schemas";
+import { strapiMediaUrl } from "@/lib/static-content";
+import type { Locale } from "@/lib/i18n";
+import type { StrapiTeamMember, CmsNavItem } from "@/lib/static-content";
 
-/* Keep published figures stable for readers and rendered search crawls. */
-function PublishedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
-  return <span>{target}{suffix}</span>;
-}
-
-/* ─── Client Logos ─── */
-// SEO-17 (2026-07-01) — Alt text descriptifs sur tous les logos clients.
-// Pattern : "Logo <marque> — client Iter Advisors accompagné en DAF externalisé".
-// Booste le SEO image + le champ sémantique autour de "DAF externalisé".
-// Cf. audit SEO 01/07/2026 §Home "Alt text des logos clients".
-const clientLogos = [
-  { src: "/images/logos/logo-hosco.svg", alt: "Logo Hosco — client Iter Advisors accompagné en direction financière externalisée" },
-  { src: "/images/logos/logo-ai-summit-bcn.svg", alt: "Logo AI Summit Barcelona — partenaire Iter Advisors" },
-  { src: "/images/logos/logo-spring.svg", alt: "Logo SPRiNG — client Iter Advisors accompagné en DAF externalisé" },
-  { src: "/images/logos/logo-happyscribe.webp", alt: "Logo Happy Scribe — client Iter Advisors accompagné en DAF externalisé" },
-  { src: "/images/logos/logo-impact.webp", alt: "Logo IMPACT+ — client Iter Advisors accompagné en DAF externalisé" },
-  { src: "/images/logos/logo-mitiga.webp", alt: "Logo Mitiga Solutions — client Iter Advisors accompagné en direction financière externalisée" },
-  { src: "/images/logos/logo-neat.webp", alt: "Logo Neat — client Iter Advisors accompagné en CFO externalisé" },
-  { src: "/images/logos/logo-nuubb.webp", alt: "Logo NuuBB — client Iter Advisors accompagné en DAF à temps partagé" },
-  { src: "/images/logos/logo-opitdigital.webp", alt: "Logo Opti Digital — client Iter Advisors accompagné en DAF externalisé" },
-  { src: "/images/logos/logo-seasonly.webp", alt: "Logo Seasonly — client Iter Advisors accompagné en DAF externalisé" },
-  { src: "/images/logos/logo-solamente.webp", alt: "Logo Solamente — client Iter Advisors accompagné en direction financière externalisée" },
-  { src: "/images/logos/logo-surfe.webp", alt: "Logo Surfe — client Iter Advisors accompagné en CFO à temps partagé" },
-  { src: "/images/logos/logo-ukio.webp", alt: "Logo Ukio — client Iter Advisors accompagné en DAF externalisé" },
-  { src: "/images/logos/logo-yego.webp", alt: "Logo Yego — client Iter Advisors accompagné en DAF externalisé" },
-];
-
-/* ─── Icons for service cards ─── */
-const serviceIcons = [TrendingUp, PieChart, Wallet, BarChart3, Briefcase];
-const stepIcons = [Search, Lightbulb, Cog, Rocket];
-const phaseIcons = [Rocket, TrendingUp, AlertTriangle, Banknote, BarChart3];
-const whyIcons = [Zap, Globe, Clock, Award];
-
-/* ─── Hero avatars: driven by Team Member showInHero boolean ─── */
-
-/* ─── Service Card ─── */
-function ServiceCard({
-  icon: Icon,
-  title,
-  desc,
-  index,
-  theme = "violet",
-  href,
-}: {
-  icon: typeof TrendingUp;
-  title: string;
-  desc: string;
-  index: number;
-  theme?: "violet" | "chartreuse";
-  href?: string;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  const isGreen = theme === "chartreuse";
-  const iconBg = isGreen ? "bg-iter-chartreuse/15 text-iter-dark" : "bg-iter-violet/10 text-iter-violet";
-  const hoverBg = isGreen ? "from-iter-chartreuse/8 to-transparent" : "from-iter-violet/5 to-transparent";
-
-  const cardContent = (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="site-card group p-6 rounded-2xl bg-card border border-border/50 hover:border-transparent hover:shadow-xl transition-all duration-300 relative overflow-hidden"
-    >
-      <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br ${hoverBg}`} />
-      <div className="relative z-10">
-        <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${iconBg}`}>
-          <Icon size={22} />
-        </div>
-        <h3 className="text-lg font-semibold mb-2 text-foreground">{title}</h3>
-        <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
-      </div>
-    </motion.div>
-  );
-
-  if (href) {
-    return (
-      <Link href={href} className="no-underline">
-        {cardContent}
-      </Link>
-    );
-  }
-
-  return <>{cardContent}</>;
-}
-
-/* ─── FAQ Item ─── */
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div className="border-b border-border/50 last:border-0">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-5 text-left group"
-      >
-        <span className="text-base font-medium text-foreground pr-4 group-hover:text-iter-violet transition-colors">
-          {q}
-        </span>
-        <ChevronDown
-          size={20}
-          className={`shrink-0 text-muted-foreground transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-        />
-      </button>
-      <motion.div
-        initial={false}
-        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
-        transition={{ duration: 0.3 }}
-        className="overflow-hidden"
-      >
-        <p className="pb-5 text-sm text-muted-foreground leading-relaxed pr-8">
-          {a}
-        </p>
-      </motion.div>
-    </div>
-  );
-}
-
-/* ─── Trustfolio Lazy Section ─── */
-const TRUSTFOLIO_SCRIPT_URL = "https://share.trustfolio.co/scripts/embed-v2.js";
-
-function TrustfolioLazySection({
-  sectionRef,
-  children,
-}: {
-  sectionRef: React.RefObject<HTMLDivElement | null>;
-  children: React.ReactNode;
-}) {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    if (!sectionRef.current || loaded) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          const script = document.createElement("script");
-          script.src = TRUSTFOLIO_SCRIPT_URL;
-          script.async = true;
-          script.defer = true;
-          document.body.appendChild(script);
-          setLoaded(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "300px" }
-    );
-    observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, [sectionRef, loaded]);
-
-  return (
-    <section className="site-section py-24 lg:py-32 bg-background">
-      <div className="container text-center" ref={sectionRef}>
-        {children}
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════ */
-/*                        HOME PAGE                           */
-/* ═══════════════════════════════════════════════════════════ */
-
+/** Shared server-rendered homepage. PageLayout keeps the existing footer. */
 export default function HomePage({
   locale,
-  teamMembers: strapiTeam = [],
+  teamMembers = [],
   cmsNavigation,
-  homepage,
 }: {
   locale: Locale;
   teamMembers?: StrapiTeamMember[];
   cmsNavigation?: CmsNavItem[];
-  homepage?: StrapiHomepage | null;
 }) {
-  const t = getHomeContent(locale);
-  const journey = getHomeJourney(locale);
-
-  // Stable hero copy, with existing CMS fallbacks for translated pages.
-  const heroTitleRaw =
-    homepage?.heroTitle || `${t.hero.h1.before}${t.hero.h1.highlight}${t.hero.h1.after}`;
-  const heroSubtitle = homepage?.heroSubtitle || t.hero.h2;
-  const heroCtaLabel = t.hero.cta;
-  const heroCtaUrl = getContactPath(locale);
-
-  // CMS stats disabled: persistent locale issues (ES labels appearing on FR pages)
-  // Using static stats from getHomeContent() which are correctly translated per locale
-  const cmsWhyChoose = homepage?.whyChooseItems && homepage.whyChooseItems.length > 0
-    ? homepage.whyChooseItems
-    : null;
-
-  const rawTeam = strapiTeam.length > 0 ? strapiTeam : getFallbackTeamMembers(locale);
-  // Deduplicate team members by normalized name (firstName + lastName)
-  const team = rawTeam.filter((member, index, self) => {
-    const name = `${member.firstName} ${member.lastName}`.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-    return index === self.findIndex((m) => {
-      const mName = `${m.firstName} ${m.lastName}`.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-      return mName === name;
-    });
-  }).sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
-
-
-  const servicesRef = useRef<HTMLDivElement>(null);
-  const servicesInView = useInView(servicesRef, {
-    once: true,
-    margin: "-80px",
-  });
-
-  const dafRef = useRef<HTMLDivElement>(null);
-  const dafInView = useInView(dafRef, { once: true, margin: "-80px" });
-
-  const processRef = useRef<HTMLDivElement>(null);
-  const processInView = useInView(processRef, { once: true, margin: "-80px" });
-
-  const whyRef = useRef<HTMLDivElement>(null);
-  const whyInView = useInView(whyRef, { once: true, margin: "-80px" });
-
-  const teamRef = useRef<HTMLDivElement>(null);
-  const teamInView = useInView(teamRef, { once: true, margin: "-80px" });
-
-  const successRef = useRef<HTMLDivElement>(null);
-  const successInView = useInView(successRef, { once: true, margin: "-80px" });
-
-  const whenRef = useRef<HTMLDivElement>(null);
-  const whenInView = useInView(whenRef, { once: true, margin: "-80px" });
-
-
+  const t = getHomePilotage(locale),
+    journey = getHomeJourney(locale);
+  const services = getHomeContent(locale).financeServices;
+  const href = (path: string) => parityHref(path, locale);
+  const members = [...getFallbackTeamMembers(locale), ...teamMembers]
+    .filter((m, i, all) => all.findIndex((item) => item.slug === m.slug) === i)
+    .sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+  const leads = HOME_LEAD_SLUGS.map((slug) =>
+    members.find((m) => m.slug === slug),
+  ).filter((member): member is StrapiTeamMember => !!member);
+  const others = members.filter(
+    (m) => !(HOME_LEAD_SLUGS as readonly string[]).includes(m.slug),
+  );
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-      {/* ═══ JSON-LD Schema: FAQPage ═══ */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            faqPageSchema(t.faqs.map((faq) => ({ question: faq.q, answer: faq.a })))
-          ),
-        }}
-      />
-
-
-      <HeroSection
-        locale={locale}
-        heroTitleRaw={heroTitleRaw}
-        heroSubtitle={heroSubtitle}
-        heroCtaLabel={heroCtaLabel}
-        heroCtaUrl={heroCtaUrl}
-        discoverServicesLabel={t.discoverServices}
-        trustfolioLabel={t.trustfolioLabel}
-      />
-
-      {/* ═══ CLIENT LOGOS ═══ */}
-      <section className="site-section py-16 bg-background border-b border-border/50">
-        <div className="container mb-8">
-          <p className="text-center text-sm font-medium text-muted-foreground uppercase tracking-widest">
-            {t.clientsLabel}
-          </p>
-        </div>
-        <div className="relative overflow-hidden">
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
-          <div className="flex gap-16 items-center animate-marquee">
-            {[...clientLogos, ...clientLogos].map((logo, i) => (
-              <div
-                key={i}
-                className="shrink-0 w-[292px] h-[125px] flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
-              >
+      <div className={styles.page} data-home-template="pilotage">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              faqPageSchema(
+                t.faqItems.map((f) => ({ question: f.q, answer: f.a })),
+              ),
+            ),
+          }}
+        />
+        <HeroSection locale={locale} />
+        <section className={styles.logos} aria-label={t.logoLabel}>
+          <div className={styles.wrap}>
+            <p>{t.logoLabel}</p>
+            <div>
+              {HOME_CLIENT_LOGOS.map((slug, i) => (
                 <Image
-                  src={logo.src}
-                  alt={locale === "fr" ? logo.alt : `${logo.alt.split(" — ")[0].replace("Solamente", "SolarMente")} ${locale === "en" ? "| Iter Advisors reference" : "| Referencia de Iter Advisors"}`}
-                  width={234}
-                  height={94}
-                  className="object-contain max-h-[94px]"
-                  loading="lazy"
-                  unoptimized={logo.src.endsWith('.svg')}
+                  key={slug}
+                  src={`/images/logos/logo-${slug}.${slug === "hosco" ? "svg" : "webp"}`}
+                  alt={HOME_CLIENT_NAMES[i]}
+                  width={140}
+                  height={48}
+                  sizes="(max-width: 600px) 100px, 140px"
+                  unoptimized={slug === "hosco"}
                 />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ SERVICES OVERVIEW ═══ */}
-      <section id="services" className="site-section py-24 lg:py-32 bg-background">
-        <div className="container">
-          <motion.div
-            ref={servicesRef}
-            initial={{ opacity: 0, y: 30 }}
-            animate={servicesInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mb-20"
-          >
-            <span className="inline-block px-3 py-1 rounded-full bg-iter-violet/10 text-iter-violet text-xs font-semibold uppercase tracking-widest mb-4">
-              {locale === "fr" ? "Nos services" : locale === "en" ? "Our services" : "Nuestros servicios"}
-            </span>
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-              {journey.servicesTitle}
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {journey.servicesText}
-            </p>
-          </motion.div>
-
-          <div className="mb-20">
-            <div className="flex items-center gap-3 mb-8">
-              <span className="px-4 py-1.5 rounded-full bg-iter-violet text-white text-sm font-semibold">
-                Finance
-              </span>
-              <div className="h-px flex-1 bg-iter-violet/20" />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {t.financeServices.map((s, i) => (
-                <ServiceCard key={s.title} icon={serviceIcons[i] ?? TrendingUp} title={s.title} desc={s.desc} index={i} href={s.href} />
               ))}
             </div>
           </div>
-
-
-        </div>
-      </section>
-
-      {/* ═══ DAF SECTION ═══ */}
-      <section className="site-section py-24 lg:py-32 bg-muted/30 overflow-x-clip">
-        <div className="container">
-          <div
-            ref={dafRef}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
-          >
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={dafInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.7 }}
-              className="relative"
-            >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-iter-violet/10">
-                <Image
-                  src="/images/bg/daf-section.webp"
-                  alt={locale === "fr" ? "Consultants financiers collaborant dans un bureau moderne" : locale === "en" ? "Finance consultants working together in a modern office" : "Consultores financieros colaborando en una oficina"}
-                  width={600}
-                  height={520}
-                  className="w-full h-[400px] lg:h-[520px] object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-iter-dark/40 to-transparent" />
-              </div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={dafInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="site-card absolute -bottom-6 -right-4 lg:right-8 bg-white rounded-2xl shadow-xl p-5 border border-border/50"
-              >
-                <div className="grid grid-cols-3 gap-6 text-center">
-                  <div>
-                    <div className="text-2xl font-bold text-iter-violet">
-                      <PublishedCounter target={15} suffix="+" />
-                    </div>
-                    <div className="text-xs text-muted-foreground mt-1">
-                      Experts CFO
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-iter-violet">
-                      <PublishedCounter target={CLIENTS_ACCOMPAGNES} suffix="+" />
-                    </div>
-                    <div className="text-xs text-muted-foreground mt-1">
-                      Clients
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-iter-violet">
-                      5/5
-                    </div>
-                    <div className="text-xs text-muted-foreground mt-1">
-                      Trustfolio
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={dafInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.2 }}
-            >
-              <span className="inline-block px-3 py-1 rounded-full bg-iter-violet text-white text-xs font-semibold uppercase tracking-widest mb-4">
-                Finance
-              </span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight mb-6">
-                {t.dafSection.title}
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                {t.dafSection.paragraph}
-              </p>
-              <div className="space-y-3 mb-8">
-                {t.dafSection.benefits.map((b, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={dafInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
-                    className="flex items-start gap-3"
-                  >
-                    <CheckCircle2
-                      size={18}
-                      className="text-iter-violet mt-0.5 shrink-0"
-                    />
-                    <span className="text-sm text-foreground/80">{b}</span>
-                  </motion.div>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-3">
+        </section>
+        <section className={styles.section} data-journey="home-needs">
+          <div className={styles.wrap}>
+            <div className={styles.heading}>
+              <p className={styles.eyebrow}>{t.needs.eyebrow}</p>
+              <h2>{t.needs.title}</h2>
+              <p>{t.needs.intro}</p>
+            </div>
+            <div className={styles.needs}>
+              {t.needs.cards.map((item, i) => (
                 <Link
-                  href={`${getContactPath(locale)}#daf`}
-                  className="site-button site-button-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-iter-violet text-white font-semibold hover:shadow-lg hover:shadow-iter-violet/20 transition-all duration-300"
+                  key={item.title}
+                  locale={locale}
+                  href={href(HOME_NEED_PATHS[i])}
                 >
-                  {t.dafSection.cta}
+                  <span className={styles.number}>
+                    {String(i + 1).padStart(2, "0")} / {item.label}
+                  </span>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                  <span className={styles.arrow} aria-hidden="true">
+                    ↗
+                  </span>
                 </Link>
-                <Link
-                  href={locale === "fr" ? "/daf-externalise" : locale === "en" ? "/en/fractional-cfo" : "/es/externalizacion-daf"}
-                  className="site-button site-button-secondary inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-iter-violet text-iter-violet font-semibold hover:bg-iter-violet/5 transition-all duration-300"
-                >
-                  {locale === "fr" ? "D\u00e9couvrir le DAF externalis\u00e9" : locale === "en" ? "Explore Fractional CFO services" : "Descubrir los servicios de CFO externo"}
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-              {/* COCON-02 \u2014 Internal links to cocon sub-pages (PDF audit Priorit\u00e9 1).
-               * Distributes homepage PageRank to the 3 cluster pillars so Google
-               * can assess the full depth of the DAF expertise. */}
-              <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1">
-                {/* T6 (2026-06-07) \u2014 added "DAF de transition" and
-                    "Externalisation comptable" to push internal link juice
-                    to those underserved cibles per the SEO ticket. */}
-                {HOME_CLUSTER_PATHS.map((href, index) => <PublishedLocaleLink key={href} locale={locale} href={parityHref(href, locale)} className="text-xs text-muted-foreground hover:text-iter-violet transition-colors hover:underline underline-offset-2">{journey.cluster[index]}</PublishedLocaleLink>)}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <HRSection locale={locale} />
-
-      {/* ═══ PROCESS SECTION ═══ */}
-      <section className="site-section py-24 lg:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            src="/images/bg/bg-3d.webp"
-            alt=""
-            aria-hidden="true"
-            fill
-            sizes="100vw"
-            className="object-cover"
-            loading="lazy"
-          />
-        </div>
-        <div className="absolute inset-0 bg-background/90" />
-
-        <div className="container relative z-10" ref={processRef}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={processInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <span className="inline-block px-3 py-1 rounded-full bg-iter-violet/10 text-iter-violet text-xs font-semibold uppercase tracking-widest mb-4">
-              {locale === "fr" ? "Notre méthode" : locale === "en" ? "Our method" : "Nuestro método"}
-            </span>
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-              {t.processHeading}
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {t.processSubtitle}
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
-            {t.steps.map((step, i) => {
-              const StepIcon = stepIcons[i] ?? Search;
-              const num = String(i + 1).padStart(2, "0");
-              return (
-                <motion.div
-                  key={num}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={processInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.2 + i * 0.15 }}
-                  className="relative"
-                >
-                  {i < t.steps.length - 1 && (
-                    <div className="hidden lg:block absolute top-12 left-[calc(50%+32px)] right-0 h-px bg-gradient-to-r from-iter-violet/30 to-iter-violet/5 z-0" />
-                  )}
-                  <div className="site-card relative z-10 p-6 rounded-2xl bg-card border border-border/50 hover:border-iter-violet/30 hover:shadow-xl transition-all duration-300 group h-full">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-14 h-14 rounded-2xl bg-iter-violet/10 flex items-center justify-center group-hover:bg-iter-violet group-hover:text-white transition-all duration-300">
-                        <StepIcon size={24} className="text-iter-violet group-hover:text-white transition-colors" />
-                      </div>
-                      <span className="text-3xl font-bold text-iter-violet/20 group-hover:text-iter-violet/40 transition-colors">
-                        {num}
-                      </span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ WHY SECTION ═══ */}
-      <section className="site-section relative py-24 lg:py-32 bg-iter-violet overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <svg className="w-full h-full" viewBox="0 0 1440 800" fill="none">
-            <line
-              x1="0"
-              y1="200"
-              x2="1440"
-              y2="100"
-              stroke="white"
-              strokeWidth="1"
-            />
-            <line
-              x1="0"
-              y1="400"
-              x2="1440"
-              y2="300"
-              stroke="white"
-              strokeWidth="0.5"
-            />
-            <line
-              x1="0"
-              y1="600"
-              x2="1440"
-              y2="500"
-              stroke="white"
-              strokeWidth="0.5"
-            />
-            <line
-              x1="300"
-              y1="0"
-              x2="500"
-              y2="800"
-              stroke="white"
-              strokeWidth="0.5"
-            />
-            <line
-              x1="900"
-              y1="0"
-              x2="1100"
-              y2="800"
-              stroke="white"
-              strokeWidth="0.5"
-            />
-          </svg>
-        </div>
-
-        <div className="container relative z-10" ref={whyRef}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={whyInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <h2 className="text-3xl lg:text-5xl font-bold text-white leading-tight mb-6">
-              {t.whyChoose.heading}
-            </h2>
-            <p className="text-lg text-white/70 leading-relaxed">
-              {t.whySubtitle}
-            </p>
-          </motion.div>
-
-          {/* Always use static stats (correctly translated per locale) */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={whyInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
-            >
-              {t.stats.map((stat, i) => {
-                const val = stat.value ?? "";
-                const numMatch = val.match(/(\d+)/);
-                const numVal = numMatch ? parseInt(numMatch[1], 10) : 0;
-                const suffix = val.replace(/.*?\d+/, "");
-                return (
-                  <div
-                    key={i}
-                    className="site-card text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10"
-                  >
-                    <div className="text-4xl lg:text-5xl font-bold text-iter-chartreuse mb-2">
-                      <PublishedCounter target={numVal} suffix={suffix} />
-                    </div>
-                    <div className="text-sm text-white/60">
-                      <strong>{stat.bold}</strong>{stat.rest}
-                    </div>
-                  </div>
-                );
-              })}
-            </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {(cmsWhyChoose ?? t.whyChoose.features).map((r, i) => {
-              const WhyIcon = whyIcons[i % whyIcons.length];
-              return (
-                <motion.div
-                  key={r.title + i}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={whyInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                  className="site-card p-7 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors duration-300 group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-iter-chartreuse/20 flex items-center justify-center mb-4 group-hover:bg-iter-chartreuse/30 transition-colors">
-                    <WhyIcon size={22} className="text-iter-chartreuse" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">
-                    {r.title}
-                  </h3>
-                  <p className="text-white/60 leading-relaxed text-sm">
-                    {r.description}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ TEAM SECTION ═══ */}
-      <section id="about" className="site-section py-24 lg:py-32 bg-muted/30">
-        <div className="container" ref={teamRef}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={teamInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-block px-3 py-1 rounded-full bg-iter-violet/10 text-iter-violet text-xs font-semibold uppercase tracking-widest mb-4">
-                {locale === "fr" ? "À propos" : locale === "en" ? "About" : "Sobre nosotros"}
-              </span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight mb-6">
-                {t.aboutTitle}
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                {t.aboutP1}
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                {t.aboutP2}
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={teamInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="rounded-3xl overflow-hidden shadow-xl"
-            >
-              <Image
-                src="/images/bg/about-section.webp"
-                alt={locale === "fr" ? "Équipe Iter Advisors collaborant autour de dashboards financiers et RH" : locale === "en" ? "The Iter Advisors team reviewing finance and HR dashboards" : "El equipo de Iter Advisors revisa cuadros de mando financieros y de recursos humanos"}
-                width={600}
-                height={420}
-                className="w-full h-[350px] lg:h-[420px] object-cover"
-                loading="lazy"
-              />
-            </motion.div>
-          </div>
-
-          <div id="team">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={teamInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="mb-12"
-            >
-              <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
-                {t.teamHeading}
-              </h3>
-              <p className="text-muted-foreground max-w-2xl">
-                {t.teamSubtitle}
-              </p>
-            </motion.div>
-
-            <div className="flex flex-wrap justify-center gap-6">
-              {team.map((member, i) => {
-                const name = `${member.firstName} ${member.lastName}`.trim();
-                // Use a declared asset; a member without a photo gets initials.
-                // Constructing a JPG from their name can emit a broken image.
-                const photoUrl = strapiMediaUrl(member.photo);
-                const initials = `${member.firstName?.[0] ?? ""}${member.lastName?.[0] ?? ""}`.toUpperCase();
-                const hasLinkedin = member.linkedIn && member.linkedIn.trim().length > 0;
-                const profile = resolveAuthorUrl(name);
-                const profileHref = profile ? aboutHref(locale, profile.split("/").at(-1)!) : undefined;
-
-                return (
-                  <motion.div
-                    key={member.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={teamInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.3 + i * 0.04 }}
-                    className={`text-center w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(20%-1.2rem)] ${hasLinkedin ? "" : ""}`}
-                  >
-                    {(profileHref || hasLinkedin) ? (
-                      <a
-                        href={profileHref ?? member.linkedIn}
-                        target={profileHref ? undefined : "_blank"}
-                        rel={profileHref ? undefined : "noopener noreferrer"}
-                        className="group block"
-                      >
-                    <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-3 rounded-2xl bg-iter-violet overflow-hidden group-hover:shadow-lg group-hover:shadow-iter-violet/20 transition-all duration-300">
-                      {photoUrl ? (
-                        <Image
-                          src={photoUrl}
-                          alt={name}
-                          width={96}
-                          height={96}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          unoptimized
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center">
-                          <span className="text-white font-bold text-lg md:text-xl">
-                            {initials}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                    <h4 className="font-semibold text-sm group-hover:text-iter-violet transition-colors">
-                      {name}
-                    </h4>
-                    <p className="text-xs text-muted-foreground mt-0.5">
-                      {member.role}
-                    </p>
-                    {!profileHref && hasLinkedin && (
-                      <div className="mt-1.5 flex justify-center">
-                        <svg
-                          className="w-3.5 h-3.5 text-muted-foreground/40 group-hover:text-iter-violet transition-colors"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
-                      </div>
-                    )}
-                      </a>
-                    ) : (
-                      <div className="block">
-                        <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-3 rounded-2xl bg-iter-violet overflow-hidden group-hover:shadow-lg group-hover:shadow-iter-violet/20 transition-all duration-300">
-                          {photoUrl ? (
-                            <Image
-                              src={photoUrl}
-                              alt={name}
-                              width={96}
-                              height={96}
-                              className="w-full h-full object-cover"
-                              unoptimized
-                              loading="lazy"
-                            />
-                          ) : (
-                            <div className="w-full h-full flex items-center justify-center">
-                              <span className="text-white font-bold text-lg md:text-xl">
-                                {initials}
-                              </span>
-                            </div>
-                          )}
-                        </div>
-                        <h4 className="font-semibold text-sm">
-                          {name}
-                        </h4>
-                        <p className="text-xs text-muted-foreground mt-0.5">
-                          {member.role}
-                        </p>
-                      </div>
-                    )}
-                  </motion.div>
-                );
-              })}
+              ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ═══ SUCCESS STORIES ═══ */}
-      <TrustfolioLazySection sectionRef={successRef}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={successInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-block px-3 py-1 rounded-full bg-iter-violet/10 text-iter-violet text-xs font-semibold uppercase tracking-widest mb-4">
-              {locale === "fr"
-                ? "Témoignages clients"
-                : locale === "en"
-                  ? "Success Stories"
-                  : "Casos de éxito"}
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-10">
-              {t.successHeading}
-            </h2>
+        </section>
+        <section
+          id="services"
+          className={`${styles.section} ${styles.inverse}`}
+        >
+          <div className={`${styles.wrap} ${styles.split}`}>
+            <div className={styles.heading}>
+              <p className={styles.eyebrow}>{t.services.eyebrow}</p>
+              <h2>{t.services.title}</h2>
+            </div>
+            <div className={styles.services}>
+              {services.map((item, i) => (
+                <details key={item.title} open={i === 0}>
+                  <summary>
+                    <span>{String(i + 1).padStart(2, "0")}</span>
+                    {item.title}
+                  </summary>
+                  <p>{item.desc}</p>
+                  <Link locale={locale} href={item.href}>
+                    {t.services.link} <span aria-hidden="true">→</span>
+                  </Link>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className={styles.section} data-journey="home-finance-offer">
+          <div className={`${styles.wrap} ${styles.split}`}>
+            <div>
+              <p className={styles.eyebrow}>{t.offer.eyebrow}</p>
+              <h2>{t.offer.title}</h2>
+            </div>
+            <div>
+              <p>{t.offer.text}</p>
+              <p>
+                {t.offer.link}{" "}
+                <Link
+                  locale={locale}
+                  className={styles.textLink}
+                  href={href("/daf-externalise")}
+                >
+                  {t.offer.anchor} <span aria-hidden="true">→</span>
+                </Link>
+              </p>
+              <div className={styles.pricing}>
+                <strong>{t.price}</strong>
+                <p>{t.priceDetail}</p>
+                <Link
+                  locale={locale}
+                  className={styles.textLink}
+                  href={href("/daf-externalise/tarifs")}
+                >
+                  {t.fees} →
+                </Link>
+              </div>
+              <nav className={styles.related} aria-label={t.offer.related}>
+                {HOME_CLUSTER_PATHS.map((path, i) => (
+                  <Link locale={locale} key={path} href={href(path)}>
+                    {journey.cluster[i]}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          </div>
+        </section>
+        <section
+          id="direction-rh"
+          data-journey="home-rh-section"
+          className={`${styles.section} ${styles.tint}`}
+        >
+          <div className={`${styles.wrap} ${styles.hrGrid}`}>
+            <figure className={styles.hrPortrait}>
+              <Image
+                src="/images/team/borith-biv.webp"
+                alt="Borith Biv"
+                width={320}
+                height={380}
+                sizes="(max-width: 600px) 220px, 320px"
+              />
+              <figcaption>
+                <Link locale={locale} href={href("/a-propos/borith-biv")}>
+                  Borith Biv
+                </Link>{" "}
+                · {t.rh.role}
+              </figcaption>
+            </figure>
+            <div>
+              <p className={styles.eyebrow}>{t.rh.eyebrow}</p>
+              <h2>{t.rh.title}</h2>
+              <p className={styles.intro}>{t.rh.text}</p>
+              <nav className={styles.related} aria-label={journey.hr.nav}>
+                {HOME_HR_PATHS.map((path, i) => (
+                  <Link key={path} locale={locale} href={href(path)}>
+                    {journey.hr.links[i]}
+                  </Link>
+                ))}
+              </nav>
+              <Link
+                locale={locale}
+                href={href("/drh-externalise")}
+                className={styles.textLink}
+              >
+                {t.rhLink} →
+              </Link>
+            </div>
+          </div>
+        </section>
+        <section className={styles.section} data-journey="home-method">
+          <div className={styles.wrap}>
+            <div className={styles.heading}>
+              <p className={styles.eyebrow}>{t.method.eyebrow}</p>
+              <h2>{t.method.title}</h2>
+            </div>
+            <ol className={styles.method}>
+              {t.method.steps.map((step, i) => (
+                <li key={step.title}>
+                  <b>{String(i + 1).padStart(2, "0")}</b>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+        <section
+          className={`${styles.section} ${styles.tint}`}
+          data-journey="home-why"
+        >
+          <div className={styles.wrap}>
+            <p className={styles.eyebrow}>{t.why.eyebrow}</p>
+            <h2>{t.why.title}</h2>
+            <div className={styles.three}>
+              {t.why.items.map((item) => (
+                <div key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section
+          id="equipe"
+          className={styles.section}
+          data-journey="home-team"
+        >
+          <div className={styles.wrap}>
+            <div className={`${styles.heading} ${styles.headingLink}`}>
+              <div>
+                <p className={styles.eyebrow}>{t.team.eyebrow}</p>
+                <h2>{t.team.title}</h2>
+              </div>
+              <Link
+                locale={locale}
+                className={styles.textLink}
+                href={href("/a-propos")}
+              >
+                {t.team.link} →
+              </Link>
+            </div>
+            <div className={styles.leads}>
+              {leads.map((member) => (
+                <figure key={member.slug}>
+                  <Link locale={locale} href={href(`/a-propos/${member.slug}`)}>
+                    <Image
+                      src={strapiMediaUrl(member.photo)}
+                      alt={`${member.firstName} ${member.lastName}`}
+                      width={280}
+                      height={320}
+                      sizes="(max-width: 600px) 45vw, 24vw"
+                    />
+                    <figcaption>
+                      <strong>
+                        {member.firstName} {member.lastName}
+                      </strong>
+                      <span>{member.role}</span>
+                    </figcaption>
+                  </Link>
+                </figure>
+              ))}
+            </div>
+            <div className={styles.teamRest}>
+              {others.map((member) => (
+                <TeamMemberCard
+                  key={member.slug}
+                  member={member}
+                  locale={locale}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+        <section
+          className={`${styles.section} ${styles.inverse}`}
+          data-journey="home-reviews"
+        >
+          <div className={styles.wrap}>
+            <p className={styles.eyebrow}>{t.reviews.eyebrow}</p>
+            <h2>{t.reviews.title}</h2>
+            <div className={styles.quotes}>
+              {t.reviewItems.map((review) => (
+                <figure key={review.name}>
+                  <blockquote>« {review.body} »</blockquote>
+                  <figcaption>
+                    <strong>{review.name}</strong>
+                    <span>
+                      {review.jobTitle} · {review.company}
+                    </span>
+                    {t.reviews.translated && (
+                      <small>{t.reviews.translated}</small>
+                    )}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
             <a
-              className="trustfolio-widget"
-              data-config-id="d_TvhPTQ1j3"
-              data-mode="default"
-              data-lazyload="true"
-              data-initial-height="200"
+              href={HOME_TRUSTFOLIO_URL}
+              className={styles.reviewSource}
               target="_blank"
               rel="noopener noreferrer"
-              href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc"
             >
-              {t.successHeading}
+              {t.reviews.source} →
             </a>
-          </motion.div>
-      </TrustfolioLazySection>
-
-      {/* ═══ WHEN + FAQ SECTION ═══ */}
-      <section className="site-section py-24 lg:py-32 bg-background">
-        <div className="container" ref={whenRef}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={whenInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="mb-20"
-          >
-            <span className="inline-block px-3 py-1 rounded-full bg-iter-violet/10 text-iter-violet text-xs font-semibold uppercase tracking-widest mb-4">
-              {locale === "fr" ? "Accompagnement" : locale === "en" ? "Support" : "Acompañamiento"}
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight mb-6">
-              {t.whenHeading}
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mb-12">
-              {t.whenSubtitle}
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              {t.phases.map((phase, i) => {
-                const PhaseIcon = phaseIcons[i] ?? Rocket;
-                return (
-                  <motion.div
-                    key={phase.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={whenInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
-                    className="site-card relative p-5 rounded-2xl bg-muted/50 border border-border/50 hover:border-iter-violet/30 hover:bg-iter-violet/5 transition-all duration-300 group"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-iter-violet/10 flex items-center justify-center mb-3 group-hover:bg-iter-violet/20 transition-colors">
-                      <PhaseIcon size={18} className="text-iter-violet" />
-                    </div>
-                    <h4 className="text-sm font-semibold text-foreground mb-1">{phase.label}</h4>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{phase.desc}</p>
-                    {i < t.phases.length - 1 && (
-                      <div className="hidden lg:block absolute top-1/2 -right-2 w-4 h-px bg-iter-violet/20" />
-                    )}
-                  </motion.div>
-                );
-              })}
+          </div>
+        </section>
+        <section className={styles.section} data-journey="home-moments">
+          <div className={`${styles.wrap} ${styles.split}`}>
+            <div>
+              <p className={styles.eyebrow}>{t.moments.eyebrow}</p>
+              <h2>{t.moments.title}</h2>
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={whenInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="max-w-3xl"
-          >
-            <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-8">
-              {t.faqHeading}
-            </h3>
-            <div className="site-card bg-card rounded-2xl border border-border/50 p-6 lg:p-8">
-              {t.faqs.map((faq) => (
-                <FAQItem key={faq.q} {...faq} />
+            <ul className={styles.moments}>
+              {t.moments.items.map((item) => (
+                <li key={item}>{item}</li>
               ))}
+            </ul>
+          </div>
+        </section>
+        <section className={styles.section} data-journey="home-faq">
+          <div className={`${styles.wrap} ${styles.split}`}>
+            <div>
+              <p className={styles.eyebrow}>{t.faq.eyebrow}</p>
+              <h2>{t.faq.title}</h2>
             </div>
-          </motion.div>
+            <div className={styles.faq}>
+              {t.faqItems.map((faq, i) => (
+                <details key={faq.q} open={i === 0}>
+                  <summary>{faq.q}</summary>
+                  <p>{faq.a}</p>
+                </details>
+              ))}
+              <Link
+                locale={locale}
+                className={styles.textLink}
+                href={href("/daf-externalise")}
+              >
+                {t.faq.link} →
+              </Link>
+            </div>
+          </div>
+        </section>
+        <div className={styles.resources}>
+          <HomeDecisionResources locale={locale} />
         </div>
-      </section>
-
-      {/* ═══ BLOG ═══ */}
-      <HomeDecisionResources locale={locale} />
-
-      <section id="contact" className="site-section bg-iter-light"><div className="container max-w-4xl"><FinanceExpert locale={locale} /></div></section>
+        <section
+          className={`${styles.section} ${styles.inverse}`}
+          data-journey="home-contact"
+        >
+          <div className={`${styles.wrap} ${styles.final}`}>
+            <div>
+              <p className={styles.eyebrow}>{t.final.eyebrow}</p>
+              <h2>{t.final.title}</h2>
+              <p className={styles.intro}>{t.final.text}</p>
+              <Link
+                locale={locale}
+                className={styles.primary}
+                href={href("/contact#daf")}
+              >
+                {t.contact}
+                <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
+            <figure>
+              <Image
+                src="/images/team/sebastien-doat.webp"
+                alt="Sébastien Doat"
+                width={140}
+                height={170}
+              />
+              <figcaption>
+                <Link locale={locale} href={href("/a-propos/sebastien-doat")}>
+                  Sébastien Doat
+                </Link>
+                <span>{t.final.role}</span>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      </div>
     </PageLayout>
   );
 }

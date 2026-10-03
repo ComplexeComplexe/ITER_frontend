@@ -36,4 +36,4 @@ export function alignedPaths(sourcePath: string) {
 
 /** Dates reflect the actual reviewed family, not the most recent batch globally. */
 const HR_CABINET_IDS = new Set<string>(["/drh-externalise", "/drh-externalise/temps-partage", "/services/recrutement-talent-acquisition", "/services/gestion-paie-charges-sociales", "/services/formation-developpement", "/services/conformite-droit-travail", "/a-propos", "/contact", "/a-propos/sebastien-doat", "/a-propos/borith-biv"]);
-export function localeAlignmentDate(sourcePath: string): string { return HR_CABINET_IDS.has(sourcePath) ? "2026-10-03" : LOCALE_ALIGNMENT_DATE; }
+export function localeAlignmentDate(sourcePath: string): string { return sourcePath === "/" || HR_CABINET_IDS.has(sourcePath) ? "2026-10-03" : LOCALE_ALIGNMENT_DATE; }

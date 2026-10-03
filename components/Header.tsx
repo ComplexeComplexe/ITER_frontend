@@ -301,7 +301,7 @@ export default function Header({
             <Link
                 locale={locale}
               href={contactItem.href}
-              className="site-header-contact px-6 py-2.5 text-sm font-semibold rounded-full bg-iter-chartreuse text-iter-dark hover:brightness-105 transition-all duration-200 hover:shadow-lg hover:shadow-iter-chartreuse/30"
+              className={`site-header-contact px-6 py-2.5 text-sm font-semibold rounded-full transition-all duration-200 ${isHome ? "border border-white/60 bg-transparent text-white hover:bg-white/10" : "bg-iter-chartreuse text-iter-dark hover:brightness-105 hover:shadow-lg hover:shadow-iter-chartreuse/30"}`}
             >
               {contactItem.title.toUpperCase()}
             </Link>
@@ -382,7 +382,7 @@ export default function Header({
                 locale={locale}
                 href={contactItem.href}
                 onClick={() => setMobileOpen(false)}
-                className="site-header-contact mt-2 mx-4 px-6 py-3 text-center font-semibold rounded-full bg-iter-chartreuse text-iter-dark"
+                className={`site-header-contact mt-2 mx-4 px-6 py-3 text-center font-semibold rounded-full ${isHome ? "border border-white/60 bg-transparent text-white" : "bg-iter-chartreuse text-iter-dark"}`}
               >
                 {contactItem.title.toUpperCase()}
               </Link>
