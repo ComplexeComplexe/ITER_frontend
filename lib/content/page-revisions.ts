@@ -1,5 +1,8 @@
 /** Substantive page changes. Shared navigation changes do not refresh every URL. */
 export const PAGE_REVISIONS: Record<string, string> = {
+  "/a-propos/guillaume-rostand": "2026-10-03",
+  "/en/about/guillaume-rostand": "2026-10-03",
+  "/es/quienes-somos/guillaume-rostand": "2026-10-03",
   "/ressources/blog/daf-externalise-startup": "2026-10-03",
   "/es/externalizacion-daf": "2026-10-03",
   "/en/fractional-cfo": "2026-10-03",
@@ -73,9 +76,6 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/services/ma-due-diligence": "2026-09-30",
   "/ressources/blog/organiser-sa-direction-financiere": "2026-09-30",
   "/ressources/blog/reduire-bfr-7-leviers-actionnables": "2026-09-30",
-  "/es/quienes-somos/guillaume-rostand": "2026-09-30",
-  "/en/about/guillaume-rostand": "2026-09-30",
-  "/a-propos/guillaume-rostand": "2026-09-30",
   "/es/recursos/casos-de-exito": "2026-09-30",
   "/en/ressources/case-studies": "2026-09-30",
   "/ressources/cas-clients": "2026-09-30",

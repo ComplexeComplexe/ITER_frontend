@@ -2,6 +2,8 @@ import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 import { parityHref } from "@/lib/locale-route-map";
 import HRExpert from "@/components/HRExpert";
 import ExpertProfileSections from "@/components/ExpertProfileSections";
+import PartnerProfileSections from "@/components/PartnerProfileSections";
+import { GUILLAUME_PROFILE } from "@/lib/content/guillaume-profile";
 import { FINANCE_EXPERT, editorialPersonId } from "@/lib/content/finance-expert";
 import Link from "next/link";
 import Image from "next/image";
@@ -115,6 +117,7 @@ export default function AuthorPage({
   const fullName = `${member.firstName} ${member.lastName}`;
   const canonicalPath = `${t.aboutHref}/${member.slug}`;
   const isFinanceExpert = member.slug === FINANCE_EXPERT.slug;
+  const profile = member.slug === "guillaume-rostand" ? GUILLAUME_PROFILE[locale] : undefined;
   const isNewCfo = ["hugo-lepresle", "gonzalo-serratosa-de-caralt"].includes(member.slug);
   const personId = editorialPersonId(canonicalPath);
   const personSchema = {
@@ -132,6 +135,7 @@ export default function AuthorPage({
       : undefined,
     sameAs: isFinanceExpert ? [FINANCE_EXPERT.linkedin, FINANCE_EXPERT.malt] : member.linkedIn ? [member.linkedIn] : undefined,
     ...(isFinanceExpert && { knowsAbout: [...FINANCE_EXPERT.expertise], subjectOf: { "@type": "PodcastEpisode", name: FINANCE_EXPERT.podcast.title, url: FINANCE_EXPERT.podcast.href } }),
+    ...(profile && { knowsAbout: profile.expertise, alumniOf: [{ "@type": "EducationalOrganization", name: "CELSA" }, { "@type": "EducationalOrganization", name: "Sciences Po" }] }),
     worksFor: {
       "@type": "Organization",
       "@id": "https://www.iteradvisors.com/#organization",
@@ -144,7 +148,7 @@ export default function AuthorPage({
       {/* Person JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [personSchema, { "@type": "ProfilePage", "@id": `https://www.iteradvisors.com${canonicalPath}#webpage`, url: `https://www.iteradvisors.com${canonicalPath}`, name: fullName, mainEntity: { "@id": personId }, ...(isFinanceExpert && { dateModified: locale === "fr" ? "2026-10-01" : "2026-10-03" }), ...(isNewCfo && { datePublished: PAGE_REVISIONS[canonicalPath], dateModified: PAGE_REVISIONS[canonicalPath] }) }] }) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [personSchema, { "@type": "ProfilePage", "@id": `https://www.iteradvisors.com${canonicalPath}#webpage`, url: `https://www.iteradvisors.com${canonicalPath}`, name: fullName, mainEntity: { "@id": personId }, ...(isFinanceExpert && { dateModified: locale === "fr" ? "2026-10-01" : "2026-10-03" }), ...(profile && { dateModified: PAGE_REVISIONS[canonicalPath] }), ...(isNewCfo && { datePublished: PAGE_REVISIONS[canonicalPath], dateModified: PAGE_REVISIONS[canonicalPath] }) }] }) }}
       />
 
       <section className="site-hero bg-background pt-32 pb-12 lg:pb-16">
@@ -171,10 +175,10 @@ export default function AuthorPage({
             )}
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-3">
-                {isFinanceExpert ? fullName : `${fullName} : ${member.h1Role ?? member.role}`}
+                {isFinanceExpert || profile ? fullName : `${fullName} : ${member.h1Role ?? member.role}`}
               </h1>
               <p className="text-lg text-iter-violet font-medium mb-6">
-                {member.role}
+                {profile?.role ?? member.role}
               </p>
               <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-4">
                 {member.bio}
@@ -184,6 +188,9 @@ export default function AuthorPage({
                   {bioExtended}
                 </p>
               )}
+              {profile && <nav aria-label={{ fr: "Dans le profil", en: "In this profile", es: "En este perfil" }[locale]} className="mb-6 flex flex-wrap gap-x-5 gap-y-3 text-sm text-iter-violet">
+                {profile.sections.map(section => <a key={section.id} href={`#${section.id}`} className="underline">{section.title}</a>)}
+              </nav>}
               {isFinanceExpert && <><p className="text-sm text-muted-foreground mb-5">{{ fr: "Profil mis à jour le ", en: "Profile updated on ", es: "Perfil actualizado el " }[locale]}<time dateTime={locale === "fr" ? "2026-10-01" : "2026-10-03"}>{formatDate(locale === "fr" ? "2026-10-01" : "2026-10-03", locale)}</time></p><nav aria-label={{ fr: "Dans le profil de Sébastien", en: "In Sébastien's profile", es: "En el perfil de Sébastien" }[locale]} className="flex flex-wrap gap-4 text-sm text-iter-violet mb-6">{[{ id: "expertise", label: { fr: "Expertise", en: "Expertise", es: "Especialidades" } }, { id: "parcours", label: { fr: "Parcours", en: "Background", es: "Trayectoria" } }, { id: "interventions", label: { fr: "Interventions", en: "Public speaking", es: "Intervenciones" } }].map(item => <a key={item.id} className="underline" href={`#${item.id}`}>{item.label[locale]}</a>)}{publishedArticles.length > 0 && <a className="underline" href="#publications">{t.articlesH2}</a>}</nav></>}
               {member.linkedIn && (
                 <a
@@ -203,6 +210,7 @@ export default function AuthorPage({
       </section>
 
       {isFinanceExpert && <ExpertProfileSections locale={locale} />}
+      {profile && <PartnerProfileSections profile={profile} locale={locale} />}
       {member.slug === "borith-biv" && <section className="site-section"><div className="site-container max-w-4xl"><HRExpert locale={locale} /><div className="site-actions"><Link className="site-inline-link" href={parityHref("/drh-externalise/temps-partage", locale)}>{{ fr: "Comprendre le fonctionnement du temps partagé", en: "Understand part-time HR support", es: "Comprender el apoyo de RRHH a tiempo parcial" }[locale]}</Link><Link className="site-inline-link" href={parityHref("/services/recrutement-talent-acquisition", locale)}>{{ fr: "Recrutement et intégration", en: "Recruitment and onboarding", es: "Selección e incorporación" }[locale]}</Link></div></div></section>}
 
       {/* Le bloc « articles publiés » n'est rendu que s'il y a des articles.
