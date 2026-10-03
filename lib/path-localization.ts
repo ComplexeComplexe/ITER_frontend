@@ -1,3 +1,4 @@
+import { LOCALE_ROUTES, publishedPaths, parityHref } from "./locale-route-map";
 /**
  * Path localization for the language switcher.
  * Maps the current path to the equivalent path in the target locale.
@@ -299,13 +300,22 @@ const BLOG_ARTICLE_OVERRIDES: Record<Locale, Record<string, string | null>> = {
  * liste plutôt que d'émettre un lien.
  */
 export function resolveBlogArticleHref(locale: Locale, slug: string): string | null {
+  const source = `/ressources/blog/${slug}`;
+  if (source in LOCALE_ROUTES) return parityHref(source, locale);
   const override = BLOG_ARTICLE_OVERRIDES[locale];
-  if (slug in override) return override[slug];
+  if (slug in override) return override[slug] === null ? null : parityHref(override[slug], locale);
+  // Tax articles were moved out of the blog before their translations existed.
+  const historical = publishedPaths(source);
+  // A native Spanish article can exist even when its French alias was retired
+  // to the blog hub. That hub is not an equivalent of the Spanish article.
+  if (historical && historical.fr !== "/ressources/blog") return parityHref(source, locale);
   return blogHref(locale, slug);
 }
 
 /** URL du glossaire, ou d'une de ses entrées. */
 export function glossaryHref(locale: Locale, slug?: string): string {
+  const source = `/ressources/glossaire${slug ? `/${slug}` : ""}`;
+  if (publishedPaths(source)) return parityHref(source, locale);
   if (locale === "fr" && slug === "daf") return "/daf-externalise/metier";
   return resourcesHref(locale, slug ? `${GLOSSARY_PATH[locale]}/${slug}` : GLOSSARY_PATH[locale]);
 }
@@ -317,6 +327,8 @@ export function caseStudiesHref(locale: Locale, slug?: string): string {
 
 /** URL du hub outils, ou d'une de ses fiches / catégories. */
 export function toolsHref(locale: Locale, sub?: string): string {
+  const source = `/ressources/outils${sub ? `/${sub}` : ""}`;
+  if (publishedPaths(source)) return parityHref(source, locale);
   return resourcesHref(locale, sub ? `${RESOURCES_TOOLS[locale]}/${sub}` : RESOURCES_TOOLS[locale]);
 }
 
@@ -352,6 +364,7 @@ function getPathWithoutLocale(pathname: string): { locale: Locale; path: string 
  * Falls back to home if the route cannot be mapped.
  */
 export function getLocalizedPath(pathname: string, targetLocale: Locale): string {
+  if (publishedPaths(pathname)) return parityHref(pathname, targetLocale);
   for (const id of ALIGNED_PAGE_IDS) {
     const paths = alignedPaths(id)!;
     if (Object.values(paths).includes(pathname)) return paths[targetLocale];

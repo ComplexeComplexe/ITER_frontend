@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Mail, Linkedin } from "lucide-react";
@@ -6,24 +7,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: "Analyste financier junior France — Iter Advisors recrute",
-    description:
-      "Iter Advisors recrute un(e) analyste financier junior à Paris. CDI ou alternance. Cabinet de DAF externalisé. Formation et progression assurées.",
-    alternates: {
-      canonical: "https://www.iteradvisors.com/jobs/finance-analyst-junior-fr",
-    },
-    openGraph: {
-      title: "Analyste financier junior France — Iter Advisors recrute",
-      description:
-        "Iter Advisors recrute un(e) analyste financier junior à Paris. CDI ou alternance. Cabinet de DAF externalisé. Formation et progression assurées.",
-      url: "https://www.iteradvisors.com/jobs/finance-analyst-junior-fr",
-      type: "website",
-    images: [{ url: "/images/logos/iter-advisors-brand.png", width: 1200, height: 630 }],
-  },
-  };
-}
+export async function generateMetadata(): Promise<Metadata> { return buildMetadata({"locale": "fr", "path": "/jobs/finance-analyst-junior-fr", "title": "Analyste financier junior France — Iter Advisors recrute", "description": "Iter Advisors recrute un(e) analyste financier junior à Paris. CDI ou alternance. Cabinet de DAF externalisé. Formation et progression assurées."}); }
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");

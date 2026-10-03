@@ -61,7 +61,7 @@ describe("complete city and industry translations", () => {
           expect(content.sections[2].links!.map(s => s.href)).toEqual(source.sections[2].links!.map(s => s.href));
         }
         if (locale !== "fr") {
-          expect(page.querySelectorAll('blockquote[lang="fr"]')).toHaveLength(5);
+          expect(page.querySelectorAll(`blockquote[lang="${locale}"]`)).toHaveLength(5);
           expect(page.querySelector('a[href="/daf-externalise/industrie"]')).toBeNull();
         }
       }

@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import type { Metadata } from "next";
 import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
 import { FINANCE_STACK_GUIDE, FINANCE_STACK_GUIDE_HTML } from "@/lib/content/finance-stack-guide";
@@ -7,7 +8,7 @@ const PAGE_URL = "https://www.iteradvisors.com/ressources/blog/essentiels-outils
 export const metadata: Metadata = {
   title: FINANCE_STACK_GUIDE.title,
   description: FINANCE_STACK_GUIDE.description,
-  alternates: { canonical: PAGE_URL },
+  alternates: {...publishedMetadataAlternates("/ressources/blog/essentiels-outils-tech-finance"),  canonical: PAGE_URL },
   openGraph: {
     title: FINANCE_STACK_GUIDE.title,
     description: FINANCE_STACK_GUIDE.description,

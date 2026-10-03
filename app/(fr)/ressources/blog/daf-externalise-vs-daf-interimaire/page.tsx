@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     'DAF externalisé ou intérimaire : comparatif 2026',
   description:
     'Externalisé ou intérimaire : durée, coût, mission, engagement. Le comparatif complet pour choisir le bon modèle de direction financière.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {...publishedMetadataAlternates("/ressources/blog/daf-externalise-vs-daf-interimaire"),  canonical: PAGE_URL },
   openGraph: {
     title:
       'DAF externalisé vs DAF intérimaire : lequel choisir en 2026 ?',

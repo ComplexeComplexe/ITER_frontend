@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import Link from "next/link";
 import { Metadata } from "next";
 import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: "Guide Levée Fonds | Iter Advisors",
   description:
     "Guide complet levée de fonds. Préparation comptable, due diligence, documentation, valorisation. Iter Advisors a assisté startups à lever +100M€.",
-  alternates: {
+  alternates: {...publishedMetadataAlternates("/ressources/blog/levee-de-fonds-guide"),
     canonical: "https://www.iteradvisors.com/ressources/blog/levee-de-fonds-guide",
   },
   robots: {

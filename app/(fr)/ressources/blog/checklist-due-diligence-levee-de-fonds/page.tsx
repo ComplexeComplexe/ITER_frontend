@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import Link from 'next/link';
 
 
@@ -8,7 +9,7 @@ import { Callout, StatGrid, InlineCta } from '@/components/blog';
 export const metadata: Metadata = {
   title: "Due diligence financière : documents à préparer",
   description: "Checklist de due diligence financière pour préparer votre levée : documents comptables, trésorerie, cap table, hypothèses et organisation de la data room.",
-  alternates: {
+  alternates: {...publishedMetadataAlternates("/ressources/blog/checklist-due-diligence-levee-de-fonds"),
     canonical: "https://www.iteradvisors.com/ressources/blog/checklist-due-diligence-levee-de-fonds",
   },
   openGraph: {

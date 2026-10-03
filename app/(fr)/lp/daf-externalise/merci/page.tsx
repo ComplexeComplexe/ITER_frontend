@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -13,6 +14,7 @@ import { CheckCircle2 } from "lucide-react";
 // surfacing in search results without a real entry path.
 
 export const metadata: Metadata = {
+  alternates: publishedMetadataAlternates("/lp/daf-externalise/merci"),
   title: "Merci — votre demande est bien reçue | Iter Advisors",
   description:
     "Votre demande de diagnostic DAF externalisé a bien été enregistrée. Un de nos experts vous recontacte sous 24 h ouvrées.",

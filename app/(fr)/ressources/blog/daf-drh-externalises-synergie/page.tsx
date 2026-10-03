@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import { Metadata } from "next";
 import Link from "next/link";
 import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
@@ -5,7 +6,7 @@ import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
 export const metadata: Metadata = {
   title: "DAF et DRH : coordonner les responsabilités | Iter Advisors",
   description: "Budget, recrutements et paie : comment coordonner DAF et DRH externalisés, clarifier les rôles et comparer les périmètres sans promettre une économie automatique.",
-  alternates: { canonical: "https://www.iteradvisors.com/ressources/blog/daf-drh-externalises-synergie" },
+  alternates: {...publishedMetadataAlternates("/ressources/blog/daf-drh-externalises-synergie"),  canonical: "https://www.iteradvisors.com/ressources/blog/daf-drh-externalises-synergie" },
 };
 export default function Page() {
   return <BlogPostPageRefonte locale="fr" breadcrumbs={{ resourcesLabel:"Ressources", resourcesHref:"/ressources", blogLabel:"Blog", blogHref:"/ressources/blog" }} slug="daf-drh-externalises-synergie" category="Organisation"

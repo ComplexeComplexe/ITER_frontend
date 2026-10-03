@@ -1,7 +1,9 @@
 import type { Locale } from "./i18n";
+import paths from "./content/editorial-locales/paths.json";
+import aliases from "./content/editorial-locales/aliases.json";
 
 /** Published routes only. The proposed translations are not navigation targets. */
-export const LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
+const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   "/ressources/outils/methodologie": { fr: "/ressources/outils/methodologie", en: "/en/ressources/tools/methodology", es: "/es/recursos/herramientas/metodologia" },
   "/": {
     "fr": "/",
@@ -745,9 +747,25 @@ export const LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   }
 };
 
+export const LOCALE_ROUTES: Record<string, Record<Locale, string>> = { ...LEGACY_LOCALE_ROUTES, ...paths };
+
+export function publishedPaths(path: string): Record<Locale, string> | undefined {
+  const original = path.replace(/[?#].*$/, '').replace(/\/$/, '') || '/';
+  const direct = LOCALE_ROUTES[original] ?? Object.values(LOCALE_ROUTES).find(paths => Object.values(paths).includes(original));
+  if (direct && direct.en.startsWith('/en') && direct.es.startsWith('/es')) return direct;
+  const base = (aliases as Record<string, string>)[original] ?? original;
+  const routes = LOCALE_ROUTES[base] ?? Object.values(LOCALE_ROUTES).find(paths => Object.values(paths).includes(base));
+  return routes && routes.en.startsWith('/en') && routes.es.startsWith('/es') ? routes : undefined;
+}
+/** Resolve from any language and retain the visitor's section and query. */
 export function parityHref(source: string, locale: Locale): string {
-  if (!source.startsWith("/") || source.startsWith("//")) return source;
-  const match = source.match(/^([^?#]*)(.*)$/)!;
-  const routes = LOCALE_ROUTES[match[1]];
-  return routes ? routes[locale] + match[2] : source;
+  const origin = 'https://www.iteradvisors.com';
+  const absolute = source.startsWith(origin);
+  const input = absolute ? source.slice(origin.length) || '/' : source;
+  if (!input.startsWith('/') || input.startsWith('//')) return source;
+  const [, base, suffix = ''] = input.match(/^([^?#]+)([\s\S]*)$/) ?? [];
+  if (!base) return source;
+  const routes = publishedPaths(base);
+  if (!routes) return source;
+  return (absolute ? origin : '') + routes[locale] + suffix;
 }

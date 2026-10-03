@@ -24,7 +24,10 @@ await Promise.all(Array.from({ length: 5 }, async () => {
       if (response.status !== 200) throw new Error(`HTTP ${response.status}`);
       const html = await response.text();
       const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]));
-      const anchors = [...html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>/g)].map(m => m[1]);
+      // A language switch on the contact page intentionally links to another locale.
+      // Other contact links must still stay in the reader's language.
+      const anchors = [...html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>/g)]
+        .filter(m => !/\bhreflang=/i.test(m[0])).map(m => m[1]);
       const locale = path.match(/^\/(en|es)(?:\/|$)/)?.[1];
       for (const href of new Set(anchors)) {
         if (href.startsWith("#") && href.length > 1) {

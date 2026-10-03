@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Mail, Linkedin } from "lucide-react";
@@ -6,24 +7,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: "Marketing & Growth Strategy — Recrutement | Iter Advisors",
-    description:
-      "Iter Advisors recrute un(e) responsable Marketing & Growth Strategy. Cabinet de DAF externalisé à Barcelone, Paris, Toulouse. Postes ouverts.",
-    alternates: {
-      canonical: "https://www.iteradvisors.com/jobs/marketing-growth-strategy",
-    },
-    openGraph: {
-      title: "Marketing & Growth Strategy — Recrutement | Iter Advisors",
-      description:
-        "Iter Advisors recrute un(e) responsable Marketing & Growth Strategy. Cabinet de DAF externalisé à Barcelone, Paris, Toulouse. Postes ouverts.",
-      url: "https://www.iteradvisors.com/jobs/marketing-growth-strategy",
-      type: "website",
-    images: [{ url: "/images/logos/iter-advisors-brand.png", width: 1200, height: 630 }],
-  },
-  };
-}
+export async function generateMetadata(): Promise<Metadata> { return buildMetadata({"locale": "fr", "path": "/jobs/marketing-growth-strategy", "title": "Marketing & Growth Strategy — Recrutement | Iter Advisors", "description": "Iter Advisors recrute un(e) responsable Marketing & Growth Strategy. Cabinet de DAF externalisé à Barcelone, Paris, Toulouse. Postes ouverts."}); }
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");

@@ -1,3 +1,5 @@
+import { resolveBlogArticleHref } from "@/lib/path-localization";
+import { editorialText } from "@/lib/content/editorial-text";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import AuthorPage from "@/components/pages/AuthorPage";
@@ -56,14 +58,15 @@ export default async function Page({
   if (!member) notFound();
 
   const fullName = `${member.firstName} ${member.lastName}`;
-  const posts = Object.entries(blogPosts.es ?? {})
+  const posts = Object.entries(blogPosts.fr ?? {})
     .filter(([, post]) => (post.author ?? "").toLowerCase() === fullName.toLowerCase())
+    .filter(([articleSlug]) => resolveBlogArticleHref("fr", articleSlug) !== null)
     .map(([articleSlug, post]) => ({
-      title: post.h1 ?? articleSlug,
+      title: editorialText(post.h1 ?? articleSlug, "es"),
       slug: articleSlug,
       publishedDate: post.publishedDate,
-      excerpt: post.meta?.description,
-      category: post.category ?? null,
+      excerpt: editorialText(post.meta?.description ?? "", "es"),
+      category: post.category ? editorialText(post.category, "es") : null,
     }))
     .sort((a, b) => {
       if (!a.publishedDate && !b.publishedDate) return 0;

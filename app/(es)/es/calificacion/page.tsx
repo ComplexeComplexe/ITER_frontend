@@ -1,8 +1,10 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import { Metadata } from "next";
 import QualificationPage from "@/components/pages/QualificationPage";
 import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = {
+  alternates: publishedMetadataAlternates("/es/calificacion"),
   title: "Calificación Empresas | Iter Advisors",
   description:
     "Califique su empresa en 5 minutos y reciba un análisis personalizado de su madurez financiera. Recomendaciones a medida de nuestros expertos DAF.",

@@ -133,7 +133,7 @@ export default function AuthorPage({
       ? `https://www.iteradvisors.com${member.photo.url}`
       : undefined,
     sameAs: isFinanceExpert ? [FINANCE_EXPERT.linkedin, FINANCE_EXPERT.malt] : member.linkedIn ? [member.linkedIn] : undefined,
-    ...(isFinanceExpert && { subjectOf: { "@type": "PodcastEpisode", name: FINANCE_EXPERT.podcast.title, url: FINANCE_EXPERT.podcast.href } }),
+    ...(isFinanceExpert && { subjectOf: { "@type": "PodcastEpisode", inLanguage: "fr-FR", name: FINANCE_EXPERT.podcast.title, url: FINANCE_EXPERT.podcast.href } }),
     ...(profile && { knowsAbout: profile.expertise }),
     ...(member.slug === "guillaume-rostand" && { alumniOf: [{ "@type": "EducationalOrganization", name: "CELSA" }, { "@type": "EducationalOrganization", name: "Sciences Po" }] }),
     worksFor: {

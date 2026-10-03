@@ -1,4 +1,7 @@
 "use client";
+import FooterLanguages from "@/components/FooterLanguages";
+import type { Locale } from "@/lib/i18n";
+import { CadsLocale, useCadsLocale, cadsElement } from "@/lib/content/cads-copy";
 
 import { useState, useEffect, FormEvent, useRef } from "react";
 import Image from "next/image";
@@ -28,14 +31,15 @@ const CLIENT_LOGOS = [
   "logo-yego.jpg",
 ];
 
-export default function CadsPage() {
+function CadsPageContent() {
+  const locale = useCadsLocale();
   const formRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  return (
+  return cadsElement((
     <main className="bg-background text-foreground">
       <MinimalHeader onCtaClick={scrollToForm} />
 
@@ -59,13 +63,14 @@ export default function CadsPage() {
 
       <StickyMobileCTA onCtaClick={scrollToForm} />
     </main>
-  );
+  ), locale);
 }
 
 /* ──────────────────────────────────────────────────────────────────
    Minimal header — logo + phone CTA only, no nav
    ────────────────────────────────────────────────────────────────── */
 function MinimalHeader({ onCtaClick }: { onCtaClick: () => void }) {
+  const locale = useCadsLocale();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -74,7 +79,7 @@ function MinimalHeader({ onCtaClick }: { onCtaClick: () => void }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  return (
+  return cadsElement((
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
@@ -104,14 +109,15 @@ function MinimalHeader({ onCtaClick }: { onCtaClick: () => void }) {
         </div>
       </div>
     </header>
-  );
+  ), locale);
 }
 
 /* ──────────────────────────────────────────────────────────────────
    Hero — H1 keyword + sub + form visible above the fold
    ────────────────────────────────────────────────────────────────── */
 function Hero({ formRef }: { formRef: React.RefObject<HTMLDivElement | null> }) {
-  return (
+  const locale = useCadsLocale();
+  return cadsElement((
     <section className="site-hero site-hero--inverse relative bg-iter-violet text-white pt-28 lg:pt-32 pb-16 lg:pb-24 overflow-hidden">
       <div
         aria-hidden
@@ -172,22 +178,24 @@ function Hero({ formRef }: { formRef: React.RefObject<HTMLDivElement | null> }) 
         </div>
       </div>
     </section>
-  );
+  ), locale);
 }
 
 function TrustItem({ value, label }: { value: string; label: string }) {
-  return (
+  const locale = useCadsLocale();
+  return cadsElement((
     <div className="flex items-baseline gap-2">
       <span className="text-iter-chartreuse font-bold font-heading text-lg">{value}</span>
       <span className="text-white/60">{label}</span>
     </div>
-  );
+  ), locale);
 }
 
 /* ──────────────────────────────────────────────────────────────────
    Lead Form — short, embedded, with rassurance
    ────────────────────────────────────────────────────────────────── */
 function LeadForm() {
+  const locale = useCadsLocale();
   const [pending, setPending] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -238,7 +246,7 @@ function LeadForm() {
   }
 
   if (success) {
-    return (
+    return cadsElement((
       <div className="site-card bg-white rounded-3xl p-8 lg:p-10 shadow-2xl shadow-iter-violet/30 text-iter-dark">
         <div className="w-12 h-12 rounded-full bg-iter-chartreuse/30 flex items-center justify-center mb-5">
           <Check className="text-iter-violet" size={24} />
@@ -249,10 +257,10 @@ function LeadForm() {
           premier échange de 30 minutes — sans engagement.
         </p>
       </div>
-    );
+    ), locale);
   }
 
-  return (
+  return cadsElement((
     <div className="site-card bg-white rounded-3xl p-6 lg:p-8 shadow-2xl shadow-iter-violet/30 text-iter-dark">
       <div className="mb-6">
         <h2 className="text-xl lg:text-2xl font-bold font-heading mb-2">
@@ -305,7 +313,7 @@ function LeadForm() {
         </p>
       </form>
     </div>
-  );
+  ), locale);
 }
 
 function FormField({
@@ -319,7 +327,8 @@ function FormField({
   type?: string;
   required?: boolean;
 }) {
-  return (
+  const locale = useCadsLocale();
+  return cadsElement((
     <input
       type={type}
       name={name}
@@ -327,14 +336,15 @@ function FormField({
       required={required}
       className="w-full bg-iter-light border border-border rounded-xl px-4 py-3 text-iter-dark placeholder:text-iter-gray/60 focus:outline-none focus:border-iter-violet/50 focus:ring-2 focus:ring-iter-violet/15 transition-all text-sm"
     />
-  );
+  ), locale);
 }
 
 /* ──────────────────────────────────────────────────────────────────
    Social proof bar — client logos
    ────────────────────────────────────────────────────────────────── */
 function SocialProofBar() {
-  return (
+  const locale = useCadsLocale();
+  return cadsElement((
     <section className="bg-background border-y border-border py-10">
       <div className="container">
         <p className="text-center text-xs uppercase tracking-widest text-iter-gray mb-6">
@@ -355,13 +365,14 @@ function SocialProofBar() {
         </div>
       </div>
     </section>
-  );
+  ), locale);
 }
 
 /* ──────────────────────────────────────────────────────────────────
    Pains — section empathie
    ────────────────────────────────────────────────────────────────── */
 function Pains({ onCtaClick }: { onCtaClick: () => void }) {
+  const locale = useCadsLocale();
   const pains = [
     {
       icon: Wallet,
@@ -385,7 +396,7 @@ function Pains({ onCtaClick }: { onCtaClick: () => void }) {
     },
   ];
 
-  return (
+  return cadsElement((
     <section className="site-section bg-background py-20 lg:py-28">
       <div className="container">
         <div className="max-w-3xl mb-14">
@@ -428,13 +439,14 @@ function Pains({ onCtaClick }: { onCtaClick: () => void }) {
         </div>
       </div>
     </section>
-  );
+  ), locale);
 }
 
 /* ──────────────────────────────────────────────────────────────────
    Solution — what is, how, benefits
    ────────────────────────────────────────────────────────────────── */
 function Solution() {
+  const locale = useCadsLocale();
   const benefits = [
     "Visibilité financière permanente",
     "Décisions éclairées et plus rapides",
@@ -443,7 +455,7 @@ function Solution() {
     "Crédibilité renforcée auprès des investisseurs",
   ];
 
-  return (
+  return cadsElement((
     <section className="site-section bg-iter-light py-20 lg:py-28">
       <div className="container max-w-5xl">
         <div className="grid lg:grid-cols-5 gap-12 items-start">
@@ -506,13 +518,14 @@ function Solution() {
         </div>
       </div>
     </section>
-  );
+  ), locale);
 }
 
 /* ──────────────────────────────────────────────────────────────────
    Testimonials — short cases problem → action → result
    ────────────────────────────────────────────────────────────────── */
 function Testimonials() {
+  const locale = useCadsLocale();
   const cases = [
     {
       sector: "SaaS B2B • Série A",
@@ -540,7 +553,7 @@ function Testimonials() {
     },
   ];
 
-  return (
+  return cadsElement((
     <section className="site-section bg-background py-20 lg:py-28">
       <div className="container">
         <div className="max-w-3xl mb-14">
@@ -586,13 +599,14 @@ function Testimonials() {
         </div>
       </div>
     </section>
-  );
+  ), locale);
 }
 
 /* ──────────────────────────────────────────────────────────────────
    Methodology — 4 steps
    ────────────────────────────────────────────────────────────────── */
 function Methodology() {
+  const locale = useCadsLocale();
   const steps = [
     {
       n: "01",
@@ -616,7 +630,7 @@ function Methodology() {
     },
   ];
 
-  return (
+  return cadsElement((
     <section className="site-section bg-iter-dark text-white py-20 lg:py-28 relative overflow-hidden">
       <div
         aria-hidden
@@ -652,13 +666,14 @@ function Methodology() {
         </div>
       </div>
     </section>
-  );
+  ), locale);
 }
 
 /* ──────────────────────────────────────────────────────────────────
    Differentiation — why Iter Advisors
    ────────────────────────────────────────────────────────────────── */
 function Differentiation() {
+  const locale = useCadsLocale();
   const items = [
     {
       icon: ClipboardList,
@@ -682,7 +697,7 @@ function Differentiation() {
     },
   ];
 
-  return (
+  return cadsElement((
     <section className="site-section bg-iter-light py-20 lg:py-28">
       <div className="container">
         <div className="max-w-3xl mb-14">
@@ -713,14 +728,15 @@ function Differentiation() {
         </div>
       </div>
     </section>
-  );
+  ), locale);
 }
 
 /* ──────────────────────────────────────────────────────────────────
    Final CTA
    ────────────────────────────────────────────────────────────────── */
 function FinalCTA({ onCtaClick }: { onCtaClick: () => void }) {
-  return (
+  const locale = useCadsLocale();
+  return cadsElement((
     <section className="site-section bg-iter-violet text-white py-20 lg:py-28 relative overflow-hidden">
       <div
         aria-hidden
@@ -748,14 +764,15 @@ function FinalCTA({ onCtaClick }: { onCtaClick: () => void }) {
         <p className="text-sm text-white/60 mt-5">Réponse sous 24h ouvrées.</p>
       </div>
     </section>
-  );
+  ), locale);
 }
 
 /* ──────────────────────────────────────────────────────────────────
    Minimal footer — legal links only
    ────────────────────────────────────────────────────────────────── */
 function MinimalFooter() {
-  return (
+  const locale = useCadsLocale();
+  return cadsElement((
     <footer className="bg-iter-dark text-white/50 py-8 text-sm">
       <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
@@ -768,6 +785,7 @@ function MinimalFooter() {
           />
           <span className="text-white/40">© {new Date().getFullYear()}</span>
         </div>
+        <div><FooterLanguages locale={locale} /></div>
         <div className="flex items-center gap-5">
           <Link href="/mentions-legales" className="hover:text-white transition-colors">
             Mentions légales
@@ -781,13 +799,14 @@ function MinimalFooter() {
         </div>
       </div>
     </footer>
-  );
+  ), locale);
 }
 
 /* ──────────────────────────────────────────────────────────────────
    Sticky mobile CTA
    ────────────────────────────────────────────────────────────────── */
 function StickyMobileCTA({ onCtaClick }: { onCtaClick: () => void }) {
+  const locale = useCadsLocale();
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -796,7 +815,7 @@ function StickyMobileCTA({ onCtaClick }: { onCtaClick: () => void }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  return (
+  return cadsElement((
     <div
       className={`lg:hidden fixed bottom-0 left-0 right-0 z-30 p-3 bg-white/95 backdrop-blur-md border-t border-border shadow-[0_-4px_20px_rgba(0,0,0,0.06)] transition-transform duration-300 ${
         show ? "translate-y-0" : "translate-y-full"
@@ -810,5 +829,7 @@ function StickyMobileCTA({ onCtaClick }: { onCtaClick: () => void }) {
         <ArrowRight size={16} />
       </button>
     </div>
-  );
+  ), locale);
 }
+
+export default function CadsPage({ locale = 'fr' }: { locale?: Locale }) { return <CadsLocale.Provider value={locale}><CadsPageContent /></CadsLocale.Provider>; }

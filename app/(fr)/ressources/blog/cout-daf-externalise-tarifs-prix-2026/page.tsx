@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
@@ -7,7 +8,7 @@ const offer = getDafOffer("fr");
 export const metadata: Metadata = {
   "title": "Coût DAF externalisé : comparer les budgets 2026 | Iter",
   "description": "Comparez forfait mensuel, tarif journalier et recrutement : périmètre, frais, disponibilité et calcul annuel. Méthode et exemples de budget explicites.",
-  "alternates": {
+  "alternates": {...publishedMetadataAlternates("/ressources/blog/cout-daf-externalise-tarifs-prix-2026"),
     "canonical": "https://www.iteradvisors.com/ressources/blog/cout-daf-externalise-tarifs-prix-2026"
   },
   "twitter": { "card": "summary_large_image", "images": ["https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"] },

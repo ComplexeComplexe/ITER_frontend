@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack && node scripts/check-indexability.mjs",
+    "build": "next build --webpack && node scripts/check-indexability.mjs && node scripts/check-locale-parity.mjs",
     "start": "next start",
     "lint": "eslint",
     "test": "playwright test",
@@ -22,10 +22,12 @@
     "seed:team": "tsx scripts/seed-team-members-to-strapi.ts",
     "migrate:export-strapi": "tsx scripts/export-strapi.ts",
     "migrate:images": "tsx scripts/migrate-cdn-images.ts",
-    "audit:indexability": "node scripts/check-indexability.mjs"
+    "audit:indexability": "node scripts/check-indexability.mjs",
+    "audit:locales": "node scripts/check-locale-parity.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
+    "entities": "^8.0.0",
     "framer-motion": "^12.34.3",
     "gray-matter": "^4.0.3",
     "jose": "^6.2.2",

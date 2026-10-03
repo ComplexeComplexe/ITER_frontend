@@ -150,17 +150,17 @@ describe("articles sans URL propre dans leur langue", () => {
 
   it("renvoie vers le français les traductions retirées de la circulation", () => {
     expect(resolveBlogArticleHref("en", "essentiels-outils-tech-finance")).toBe(
-      "/ressources/blog/essentiels-outils-tech-finance",
+      "/en/ressources/blog/essential-finance-technology-tools",
     );
     expect(resolveBlogArticleHref("es", "organiser-sa-direction-financiere")).toBe(
-      "/ressources/blog/organiser-sa-direction-financiere",
+      "/es/recursos/blog/organizar-direccion-financiera",
     );
   });
 
   it("écarte les doublons de slug entre langues", () => {
     // La version EN vit sous `fractional-cfo-cost-services-2026`, déjà listée.
-    expect(resolveBlogArticleHref("en", "cout-daf-externalise-tarifs-prix-2026")).toBeNull();
-    expect(resolveBlogArticleHref("es", "cout-daf-externalise-tarifs-prix-2026")).toBeNull();
+    expect(resolveBlogArticleHref("en", "cout-daf-externalise-tarifs-prix-2026")).toBe("/en/ressources/blog/fractional-cfo-cost-services-2026");
+    expect(resolveBlogArticleHref("es", "cout-daf-externalise-tarifs-prix-2026")).toBe("/es/recursos/blog/cfo-externo-pymes-precio-2026");
   });
 
   it("laisse passer un article publié normalement", () => {
@@ -183,8 +183,8 @@ describe("hreflang des articles de blog", () => {
     const { blogHreflangDisabled } = await import("@/lib/blog-hreflang");
     // Article publié seulement en français : les URL /en/… et /es/… existent
     // sous forme de redirections vers lui, ce qui n'en fait pas des traductions.
-    expect(blogHreflangDisabled("agicap-vs-fygr-outil-tresorerie").sort()).toEqual(["en", "es"]);
-    expect(blogHreflangDisabled("term-sheet-negocier-clauses-cles").sort()).toEqual(["en", "es"]);
+    expect(blogHreflangDisabled("agicap-vs-fygr-outil-tresorerie").sort()).toEqual([]);
+    expect(blogHreflangDisabled("term-sheet-negocier-clauses-cles").sort()).toEqual([]);
   });
 
   it("garde les trois langues quand les trois versions existent", async () => {
@@ -197,7 +197,7 @@ describe("hreflang des articles de blog", () => {
     const { blogHreflangDisabled } = await import("@/lib/blog-hreflang");
     // Le contenu EN/ES existe dans blogPosts, mais les deux URL redirigent
     // vers l'article français : ce ne sont pas des pages à elles.
-    expect(blogHreflangDisabled("essentiels-outils-tech-finance").sort()).toEqual(["en", "es"]);
+    expect(blogHreflangDisabled("essentiels-outils-tech-finance").sort()).toEqual([]);
   });
 
   it("écarte le français pour un article qui n'existe qu'en espagnol", async () => {

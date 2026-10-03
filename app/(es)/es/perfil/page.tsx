@@ -1,9 +1,11 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 import { Metadata } from "next";
 import LeadGenPage from "@/components/pages/LeadGenPage";
 import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = {
+  alternates: publishedMetadataAlternates("/es/perfil"),
   title: "Diagnóstico Financiero | Iter Advisors",
   description: "Evalúe sus necesidades financieras en 2 minutos. Diagnóstico personalizado gratis. Descubra cómo un CFO externalizado puede ayudar.",
   // INDEX-03: lead-gen funnel — no SEO value, dilutes crawl budget.

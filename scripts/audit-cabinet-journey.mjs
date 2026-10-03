@@ -2,6 +2,11 @@
 const base = (process.argv[2] ?? 'http://127.0.0.1:4047').replace(/\/$/, '');
 const origin = 'https://www.iteradvisors.com';
 const expertise = ['DAF externalisé', 'DRH externalisé', 'Contrôle de gestion', 'Levée de fonds', 'Fiscalité France-Espagne'];
+const localizedExpertise = {
+  fr: expertise,
+  en: ['Fractional CFO', 'External HR director', 'Management accounting', 'Fundraising preparation', 'France-Spain taxation'],
+  es: ['CFO externo', 'Director de RR. HH. externo', 'Control de gestión', 'Preparación de rondas de financiación', 'Fiscalidad Francia-España'],
+};
 const paths = ['/', '/services/gestion-financiere-externalisee', '/ressources/fiscalite-espagne-france', '/ressources/blog/essentiels-outils-tech-finance', '/ressources/blog/stack-financier-saas-series-a', '/ressources/ia-finance/outils', '/en', '/es'];
 const failures = [], results = [];
 const flat = data => Array.isArray(data) ? data.flatMap(flat) : data?.['@graph'] ? flat(data['@graph']) : [data];
@@ -17,7 +22,8 @@ for (const path of paths) {
   check([...main.matchAll(/<h1\b/g)].length === 1, 'one-h1');
   const organization = schemas.filter(s => s['@id'] === origin + '/#organization' && s.name === 'Iter Advisors');
   check(organization.length === 1, 'one-cabinet-entity');
-  check(JSON.stringify(organization[0]?.knowsAbout?.slice(0, 5)) === JSON.stringify(expertise), 'shared-expertise-order');
+  const documentLocale = html.match(/<html\b[^>]*lang="([^"]+)"/)?.[1] ?? 'fr';
+  check(JSON.stringify(organization[0]?.knowsAbout?.slice(0, 5)) === JSON.stringify(localizedExpertise[documentLocale]), 'shared-expertise-order');
   if (['/', '/en', '/es'].includes(path)) {
     const locale = path === '/' ? 'fr' : path.slice(1);
     const expected = {

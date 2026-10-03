@@ -1,12 +1,12 @@
 import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
 import Link from "@/components/PublishedLocaleLink";
-import NativeLink from "next/link";
+import FooterLanguages from "./FooterLanguages";
 import { parityHref } from "@/lib/locale-route-map";
 import { getSiteInterface } from "@/lib/content/site-interface";
 import Image from "next/image";
-import { MapPin, Linkedin, Globe } from "lucide-react";
+import { MapPin, Linkedin } from "lucide-react";
 import { Locale } from "@/lib/i18n";
-import { navigation, footerContent, languageSwitcher } from "@/lib/navigation";
+import { navigation, footerContent } from "@/lib/navigation";
 
 /**
  * SEO-ULT §4 (2026-08-15) — les articles populaires du footer portent
@@ -215,21 +215,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             <p className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider mb-3 sm:mb-4">
               {locale === "fr" ? "Autres langues" : locale === "en" ? "Languages" : "Idiomas"}
             </p>
-            <div className="space-y-1.5 sm:space-y-2.5">
-              {Object.entries(languageSwitcher).map(([lang, data]) => {
-                const localePath = locale === "fr" && lang === "fr" ? "/" : lang === "fr" ? "/" : `/${lang}`;
-                return (
-                  <NativeLink
-                    key={lang}
-                    href={localePath}
-                    className="flex min-h-11 items-center gap-2 py-2 text-white/70 text-xs sm:text-sm hover:text-iter-chartreuse transition-colors"
-                  >
-                    <Globe size={12} className="sm:w-4 sm:h-4" />
-                    <span>{data.label}</span>
-                  </NativeLink>
-                );
-              })}
-            </div>
+            <FooterLanguages locale={locale} />
             {/* SEO-REP §8 (2026-08-15) — bloc éditorial : le glossaire et la
                 fiche métier n'étaient atteignables que depuis le menu
                 Ressources, ce qui laissait leurs fiches orphelines au crawl. */}

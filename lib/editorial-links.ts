@@ -1,9 +1,11 @@
+import { parityHref, publishedPaths } from "./locale-route-map";
 import type { Locale } from "./i18n";
 import { blogPosts } from "./content/blog-posts";
 import { caseStudiesHref, dafClusterHref, glossaryHref, resolveBlogArticleHref } from "./path-localization";
 
 /** Only replace a French link when an equivalent is actually published. */
 export function localizeEditorialLink(href: string, locale: Locale): string {
+  if (publishedPaths(href)) return parityHref(href, locale);
   if (locale === "fr" || !href.startsWith("/") || /^\/(en|es)(\/|$)/.test(href)) return href;
   const blog = href.match(/^\/ressources\/blog\/([^/#?]+)$/);
   if (blog && blogPosts[locale]?.[blog[1]]) {
@@ -18,6 +20,7 @@ export function localizeEditorialLink(href: string, locale: Locale): string {
 }
 
 export function editorialLinkLabel(title: string, href: string, locale: Locale): string {
+  href = localizeEditorialLink(href, locale);
   const french = locale !== "fr" && href.startsWith("/") && !/^\/(en|es)(\/|$)/.test(href);
   return french ? `${title} ${locale === "en" ? "(in French)" : "(en francés)"}` : title;
 }

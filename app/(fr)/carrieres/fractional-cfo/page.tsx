@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Mail, Linkedin } from "lucide-react";
@@ -129,26 +130,7 @@ const structuredData = {
   ],
 };
 
-export async function generateMetadata(): Promise<Metadata> {
-
-  return {
-    // SEO-AUD-0824 §6 — 67 caractères, et la marque y figurait deux fois :
-    // une fois dans la phrase, une fois dans le suffixe. La retirer du suffixe
-    // suffisait à ramener le title dans une longueur sûre.
-    title: "Devenir Fractional CFO senior chez Iter Advisors",
-    description:
-      "Iter Advisors recrute des fractional CFOs seniors (10 ans et plus) pour un portefeuille de startups tech. Freelance, portage ou CDI, mode hybride.",
-    alternates: { canonical: PAGE_URL },
-    openGraph: {
-      title: "Rejoindre Iter Advisors comme Fractional CFO senior",
-      description:
-        "Iter Advisors recrute des fractional CFOs seniors (10 ans et plus) pour un portefeuille de startups tech. Freelance, portage ou CDI, mode hybride.",
-      url: PAGE_URL,
-      type: "website",
-    images: [{ url: "/images/logos/iter-advisors-brand.png", width: 1200, height: 630 }],
-  },
-  };
-}
+export async function generateMetadata(): Promise<Metadata> { return buildMetadata({"locale": "fr", "path": "/carrieres/fractional-cfo", "title": "Devenir Fractional CFO senior chez Iter Advisors", "description": "Iter Advisors recrute des fractional CFOs seniors (10 ans et plus) pour un portefeuille de startups tech. Freelance, portage ou CDI, mode hybride."}); }
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");

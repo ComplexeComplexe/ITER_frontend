@@ -1,4 +1,5 @@
 "use client";
+import { parityHref } from "@/lib/locale-route-map";
 import { CLIENTS_ACCOMPAGNES, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 
 import { getDafOfferFacts } from "@/lib/content/offer-facts";
@@ -687,7 +688,7 @@ export default function LeadPage({
                 />
               </button>
               <Link
-                href={BOOKING_URL}
+                href={parityHref(BOOKING_URL, locale)}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
                 className="site-button site-button-secondary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white font-semibold text-base hover:bg-white/5 transition-all duration-300"
@@ -1092,7 +1093,7 @@ export default function LeadPage({
                     {t.thankYouCalendly}
                   </p>
                   <Link
-                    href={BOOKING_URL}
+                    href={parityHref(BOOKING_URL, locale)}
                     target="_blank"
                     rel="nofollow noopener noreferrer"
                     className="site-button site-button-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-iter-violet text-white font-bold text-base hover:shadow-[0_0_30px_oklch(0.42_0.28_275/0.3)] transition-all duration-300 group"

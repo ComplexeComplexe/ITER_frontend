@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
@@ -7,17 +8,12 @@ import { getCmsNavigation } from "@/lib/static-content";
 import { taxComparison, TAX_COMPARISON_MODIFIED, TAX_COMPARISON_PATHS, TAX_COMPARISON_SLUG, TAX_SOURCES } from "@/lib/content/tax-comparison";
 
 type TaxLocale = keyof typeof taxComparison;
-const BASE = "https://www.iteradvisors.com";
 
 export function taxComparisonMetadata(locale: TaxLocale): Metadata {
   const t = taxComparison[locale];
   return {
     title: t.title, description: t.description,
-    alternates: { canonical: BASE + TAX_COMPARISON_PATHS[locale], languages: {
-      "fr-FR": BASE + TAX_COMPARISON_PATHS.fr,
-      "es-ES": BASE + TAX_COMPARISON_PATHS.es,
-      "x-default": BASE + TAX_COMPARISON_PATHS.fr,
-    } },
+    alternates: publishedMetadataAlternates(TAX_COMPARISON_PATHS[locale]),
     robots: { index: true, follow: true },
     openGraph: { title: t.title, description: t.description, type: "article", images: [{ url: "/images/logos/iter-advisors-brand.png", alt: t.title }] },
   };

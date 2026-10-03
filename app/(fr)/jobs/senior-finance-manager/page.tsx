@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Mail, Linkedin } from "lucide-react";
@@ -6,24 +7,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: "Senior Finance Manager — Recrutement | Iter Advisors",
-    description:
-      "Senior Finance Manager pour piloter et coordonner les missions clients chez Iter Advisors. Cabinet DAF externalisé Barcelone, Paris, Toulouse.",
-    alternates: {
-      canonical: "https://www.iteradvisors.com/jobs/senior-finance-manager",
-    },
-    openGraph: {
-      title: "Senior Finance Manager — Recrutement | Iter Advisors",
-      description:
-        "Senior Finance Manager pour piloter et coordonner les missions clients chez Iter Advisors. Cabinet DAF externalisé Barcelone, Paris, Toulouse.",
-      url: "https://www.iteradvisors.com/jobs/senior-finance-manager",
-      type: "website",
-    images: [{ url: "/images/logos/iter-advisors-brand.png", width: 1200, height: 630 }],
-  },
-  };
-}
+export async function generateMetadata(): Promise<Metadata> { return buildMetadata({"locale": "fr", "path": "/jobs/senior-finance-manager", "title": "Senior Finance Manager — Recrutement | Iter Advisors", "description": "Senior Finance Manager pour piloter et coordonner les missions clients chez Iter Advisors. Cabinet DAF externalisé Barcelone, Paris, Toulouse."}); }
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");

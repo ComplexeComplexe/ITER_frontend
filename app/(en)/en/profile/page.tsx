@@ -1,9 +1,11 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 import { Metadata } from "next";
 import LeadGenPage from "@/components/pages/LeadGenPage";
 import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = {
+  alternates: publishedMetadataAlternates("/en/profile"),
   title: "Free Financial Diagnostic | Iter Advisors – Fractional CFO",
   description:
     "Assess your financial needs in 2 minutes. Discover how a Fractional CFO can structure your growth: forecasting, fundraising, reporting, cash-flow management.",

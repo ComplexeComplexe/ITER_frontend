@@ -43,7 +43,7 @@ describe('Validated HR commercial offer', () => {
       expect(person.reviewedBy).toBeUndefined();
       expect(page.querySelector(`a[href="${parityHref('/a-propos/borith-biv', locale)}"]`)).not.toBeNull();
       expect(page.querySelector('#piliers')!.querySelectorAll('article')).toHaveLength(4);
-      for (const slug of ['payfit', 'lucca', 'factorial', 'silae']) expect(page.querySelector(`#outils-rh a[href="/ressources/outils/${slug}"]`)).not.toBeNull();
+      for (const slug of ['payfit', 'lucca', 'factorial', 'silae']) expect(page.querySelector(`#outils-rh a[href="${parityHref(`/ressources/outils/${slug}`, locale)}"]`)).not.toBeNull();
     }
   });
 });

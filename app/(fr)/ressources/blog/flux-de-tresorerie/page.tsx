@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 
 
 import { Metadata } from 'next';
@@ -8,7 +9,7 @@ import { Callout, InlineCta, ProseTable } from '@/components/blog';
 export const metadata: Metadata = {
   title: "Flux de trésorerie : calcul et prévisionnel",
   description: "Comprenez les flux de trésorerie avec un exemple fictif : encaissements, décaissements, BFR et passage à un prévisionnel de trésorerie.",
-  alternates: {
+  alternates: {...publishedMetadataAlternates("/ressources/blog/flux-de-tresorerie"),
     canonical: "https://www.iteradvisors.com/ressources/blog/flux-de-tresorerie",
     // SEO-AUD-0824 §2 — cet article a bien une version EN et une version ES,
     // qui désignaient toutes deux celle-ci comme leur traduction française.

@@ -1,3 +1,4 @@
+import { reviewsForLocale } from "@/lib/content/review-translations";
 import Link from "@/components/PublishedLocaleLink";
 import { parityHref } from "@/lib/locale-route-map";
 import { ArrowRight, MapPin, Building2, Users, Briefcase, BarChart3, Wallet, Rocket, Compass, Network, Star } from "lucide-react";
@@ -348,24 +349,24 @@ export default function DafLocalPage({
           </div>
 
           <div className="space-y-6">
-            {TRUSTFOLIO_REVIEWS.map((review, idx) => (
+            {reviewsForLocale(locale).map((review, idx) => (
               <div key={idx} className="site-card bg-background border border-border rounded-2xl p-8">
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} size={18} className="fill-iter-chartreuse text-iter-chartreuse" />
                   ))}
                 </div>
-                <blockquote lang="fr" className="text-lg text-muted-foreground italic mb-4 leading-relaxed">
+                <blockquote lang={locale} className="text-lg text-muted-foreground italic mb-4 leading-relaxed">
                   « {review.reviewBody} »
                 </blockquote>
-                {locale !== "fr" && <p className="text-sm text-muted-foreground mb-4">{locale === "en" ? "Original review in French" : "Opinión original en francés"}</p>}
+                {locale !== "fr" && <p className="text-sm text-muted-foreground mb-4">{locale === "en" ? "Translated from the original French review" : "Traducción de la opinión original en francés"}</p>}
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <div>
                     <p className="font-semibold text-foreground">
                       {review.name}
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      <span lang="fr">{review.jobTitle}</span> {locale === "fr" ? "chez" : locale === "en" ? "at" : "en"} <strong>{review.company}</strong>
+                      <span lang={locale}>{review.jobTitle}</span> {locale === "fr" ? "chez" : locale === "en" ? "at" : "en"} <strong>{review.company}</strong>
                     </p>
                   </div>
                   <p className="text-sm text-muted-foreground">

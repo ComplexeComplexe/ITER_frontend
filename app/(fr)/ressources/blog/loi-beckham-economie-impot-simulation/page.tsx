@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   title: "Loi Beckham : économie d'impôt et simulation",
   description:
     "Taux fixe de 24 % vs barème progressif jusqu'à 47 % : simulation chiffrée de l'économie d'impôt avec le régime Beckham, par niveau de salaire.",
-  alternates: {
+  alternates: {...publishedMetadataAlternates("/ressources/blog/loi-beckham-economie-impot-simulation"),
     canonical:
       "https://www.iteradvisors.com/ressources/blog/loi-beckham-economie-impot-simulation",
   },

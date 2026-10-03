@@ -1,8 +1,10 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import { Metadata } from "next";
 import LeadPage from "@/components/pages/LeadPage";
 import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = {
+  alternates: publishedMetadataAlternates("/en/diagnostic"),
   title: "Free Assessment | Iter Advisors – Fractional CFO",
   description: "Assess your financial needs in 2 minutes. Discover how a fractional CFO can help your startup or SME. Get a free personalized diagnostic report.",
   // INDEX-03: diagnostic funnel — conversion page, no SEO value.

@@ -1,3 +1,5 @@
+import localeAliases from "@/lib/content/editorial-locales/aliases.json";
+import registry from "@/lib/content/editorial-locales/registry.json";
 import { ALIGNED_PAGE_IDS, localeAlignmentDate, alignedPaths } from "@/lib/content/locale-publication";
 import { DAF_PILLAR_MODIFIED } from "@/lib/content/daf-pillar";
 import { TAX_COMPARISON_MODIFIED } from "@/lib/content/tax-comparison";
@@ -589,7 +591,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({ url, lastModified: locale === "fr" ? originals.find(item => item.url === url)?.lastModified ?? D.service : localeAlignmentDate(sourcePath), alternates });
     }
   }
-  return entries.map(item => ({
+  // Full translations are indexed as one reciprocal three-language cluster.
+  for (const [source, page] of Object.entries(registry)) {
+    if (page.noindex) continue;
+    const paths = page.paths;
+    const originals = entries.filter(item => Object.values(paths).some(path => item.url === BASE + path));
+    for (let i = entries.length - 1; i >= 0; i--) if (Object.values(paths).some(path => entries[i].url === BASE + path)) entries.splice(i, 1);
+    const alternates = { languages: { "fr-FR": BASE + paths.fr, "en-GB": BASE + paths.en, "es-ES": BASE + paths.es, "x-default": BASE + paths.fr } };
+    for (const locale of ['fr', 'en', 'es'] as const) entries.push({ url: BASE + paths[locale], lastModified: locale === 'fr' ? originals.find(item => item.url === BASE + source)?.lastModified ?? D.service : page.sharedEditorial ? '2026-10-03' : originals.find(item => item.url === BASE + paths[locale])?.lastModified ?? localeAlignmentDate(source), alternates });
+  }
+  if (!entries.some(item => item.url === BASE + "/es/recursos/blog/que-es-fractional-cfo")) entries.push({ url: BASE + "/es/recursos/blog/que-es-fractional-cfo", lastModified: blogModified("que-es-fractional-cfo", "es") });
+  return entries.filter(item => !(item.url.slice(BASE.length) in localeAliases)).map(item => ({
     ...item,
     lastModified: latestRevision(PAGE_REVISIONS[item.url.slice(BASE.length) || "/"], item.lastModified, consistencyUpdates.has(item.url.slice(BASE.length)) ? "2026-09-06" : transactionalUpdates.has(item.url.slice(BASE.length)) || [...tools.filter(tool => !tool.logo).map(tool => `/ressources/outils/${tool.slug}`), "/daf-externalise/deep-tech", "/daf-externalise/industrie", "/daf-externalise/ecommerce", "/ressources/outils", "/ressources/blog/stack-financier-saas-series-a", "/daf-externalise-paris", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", "/ressources/cas-clients", "/en/ressources/cas-clients"].some(path => item.url === `${BASE}${path}`)
       ? "2026-09-05" : undefined),
