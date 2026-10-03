@@ -1,5 +1,15 @@
 /** Substantive page changes. Shared navigation changes do not refresh every URL. */
 export const PAGE_REVISIONS: Record<string, string> = {
+  "/a-propos/sebastien-doat": "2026-10-03",
+  "/a-propos/benjamin-ziza": "2026-10-03",
+  "/a-propos/florent-greth": "2026-10-03",
+  "/en/about/sebastien-doat": "2026-10-03",
+  "/en/about/benjamin-ziza": "2026-10-03",
+  "/en/about/florent-greth": "2026-10-03",
+  "/es/quienes-somos/sebastien-doat": "2026-10-03",
+  "/es/quienes-somos/benjamin-ziza": "2026-10-03",
+  "/es/quienes-somos/florent-greth": "2026-10-03",
+
   "/a-propos/guillaume-rostand": "2026-10-03",
   "/en/about/guillaume-rostand": "2026-10-03",
   "/es/quienes-somos/guillaume-rostand": "2026-10-03",
@@ -46,7 +56,6 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/ressources/outils/agicap": "2026-10-02",
   "/ressources/outils": "2026-10-03",
   "/daf-externalise-paris": "2026-10-02",
-  "/a-propos/sebastien-doat": "2026-10-01",
   "/ressources/outils/logiciels-paie": "2026-10-01",
   "/ressources/outils/logiciels-comptabilite": "2026-10-01",
   "/ressources/outils/payhawk": "2026-10-02",
@@ -59,9 +68,6 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/ressources/blog/essentiels-outils-tech-finance": "2026-10-02",
   "/ressources/glossaire/controle-de-gestion": "2026-10-01",
   "/fractional-cfo-startups": "2026-10-02",
-  "/es/quienes-somos/benjamin-ziza": "2026-10-01",
-  "/en/about/benjamin-ziza": "2026-10-01",
-  "/a-propos/benjamin-ziza": "2026-10-01",
   "/es/quienes-somos": "2026-10-03",
   "/en/about": "2026-10-03",
   "/a-propos": "2026-10-03",

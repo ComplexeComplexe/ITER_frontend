@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function Page() { return (
 <BlogPostPageRefonte locale="fr"
  breadcrumbs={{resourcesLabel:"Ressources",resourcesHref:"/ressources",blogLabel:"Blog",blogHref:"/ressources/blog"}}
- author={{name:"Benjamin Ziza",avatar:"/images/team/benjamin-ziza.webp",jobTitle:"Associé fondateur — CFO & Investisseur, Iter Advisors",url:"/a-propos/benjamin-ziza"}}
+ author={{name:"Benjamin Ziza",avatar:"/images/team/benjamin-ziza.webp",jobTitle:"Cofondateur et CFO, Iter Advisors",url:"/a-propos/benjamin-ziza"}}
  slug={"cout-daf-externalise-tarifs-prix-2026"}
  category={"Direction financière"}
  title={"Coût d’un DAF externalisé : comparer les budgets en 2026"}

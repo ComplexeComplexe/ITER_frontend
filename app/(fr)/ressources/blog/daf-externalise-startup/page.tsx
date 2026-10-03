@@ -47,7 +47,7 @@ export default function DafExternaliseStartupPage() {
       author={{
         name: "Benjamin Ziza",
         avatar: "/images/team/benjamin-ziza.webp",
-        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
+        jobTitle: "Cofondateur et CFO, Iter Advisors",
         url: "/a-propos/benjamin-ziza",
       }}
       readingTime={6}

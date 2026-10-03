@@ -1,6 +1,8 @@
 import { CLIENTS_ACCOMPAGNES, CONSULTANTS } from "@/lib/content/facts";
 import { CABINET_EXPERTISES } from "@/lib/content/cabinet-expertise";
-import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
+import { FINANCE_EXPERT, editorialPersonId } from "@/lib/content/finance-expert";
+import { getPartnerProfile } from "@/lib/content/partner-profiles";
+import { parityHref } from "@/lib/locale-route-map";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "@/app/globals.css";
 import { TRACKING_BOOTSTRAP, CONSENT_DISPLAY_BOOTSTRAP } from "@/lib/analytics/consent";
@@ -148,19 +150,23 @@ export default function DocumentShell({
                       "@id": FINANCE_EXPERT.id,
                       url: `https://www.iteradvisors.com${FINANCE_EXPERT.href}`,
                       name: FINANCE_EXPERT.name,
-                      jobTitle: FINANCE_EXPERT.role,
+                      jobTitle: getPartnerProfile("sebastien-doat", locale)?.teamRole,
                       sameAs: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
                     },
                     {
                       "@type": "Person",
                       name: "Benjamin Ziza",
-                      jobTitle: "Associé fondateur - CFO & Investisseur",
+                      "@id": editorialPersonId("/a-propos/benjamin-ziza"),
+                      url: `https://www.iteradvisors.com${parityHref("/a-propos/benjamin-ziza", locale)}`,
+                      jobTitle: getPartnerProfile("benjamin-ziza", locale)?.teamRole,
                       sameAs: "https://www.linkedin.com/in/benjaminziza/",
                     },
                     {
                       "@type": "Person",
                       name: "Guillaume Rostand",
-                      jobTitle: "Associé fondateur & CMO",
+                      "@id": editorialPersonId("/a-propos/guillaume-rostand"),
+                      url: `https://www.iteradvisors.com${parityHref("/a-propos/guillaume-rostand", locale)}`,
+                      jobTitle: getPartnerProfile("guillaume-rostand", locale)?.teamRole,
                       sameAs: "https://www.linkedin.com/in/rostand/",
                     },
                   ],

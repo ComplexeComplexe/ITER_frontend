@@ -43,7 +43,7 @@ export default function Outils10CfosStartupPage() {
       author={{
         name: "Benjamin Ziza",
         avatar: "/images/team/benjamin-ziza.webp",
-        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
+        jobTitle: "Cofondateur et CFO, Iter Advisors",
       }}
       readingTime={5}
       datePublished="2026-05-01"

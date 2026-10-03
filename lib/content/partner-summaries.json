@@ -1,0 +1,82 @@
+{
+  "guillaume-rostand": {
+    "fr": {
+      "role": "Cofondateur · Entrepreneur et investisseur",
+      "metaRole": "Cofondateur",
+      "bio": "Guillaume Rostand a créé Iter Advisors avec Benjamin Ziza et Sébastien Doat. Entrepreneur français installé à Barcelone depuis 2011, il apporte au cabinet son expérience du marketing digital, du développement commercial et de l’accompagnement des fondateurs.",
+      "bioExtended": "Également cofondateur et CEO d’AI Summit Barcelona, il consacre aujourd’hui une part importante de son activité aux applications de l’intelligence artificielle et aux rencontres entre entreprises, chercheurs, investisseurs et communautés technologiques."
+    },
+    "en": {
+      "role": "Co-founder · Entrepreneur and investor",
+      "metaRole": "Co-founder",
+      "bio": "Guillaume Rostand founded Iter Advisors with Benjamin Ziza and Sébastien Doat. A French entrepreneur based in Barcelona since 2011, he brings the firm his experience in digital marketing, business development and supporting founders.",
+      "bioExtended": "As co-founder and CEO of AI Summit Barcelona, he now devotes a significant part of his work to artificial intelligence applications and bringing together businesses, researchers, investors and technology communities."
+    },
+    "es": {
+      "role": "Cofundador · Emprendedor e inversor",
+      "metaRole": "Cofundador",
+      "bio": "Guillaume Rostand creó Iter Advisors con Benjamin Ziza y Sébastien Doat. Emprendedor francés instalado en Barcelona desde 2011, aporta al despacho su experiencia en marketing digital, desarrollo comercial y acompañamiento de fundadores.",
+      "bioExtended": "También cofundador y CEO de AI Summit Barcelona, dedica hoy una parte importante de su actividad a las aplicaciones de la inteligencia artificial y a los encuentros entre empresas, investigadores, inversores y comunidades tecnológicas."
+    }
+  },
+  "benjamin-ziza": {
+    "fr": {
+      "role": "Cofondateur et CFO",
+      "metaRole": "Cofondateur, CFO",
+      "bio": "Benjamin Ziza a créé Iter Advisors avec Sébastien Doat et Guillaume Rostand. Basé à Barcelone, il accompagne les dirigeants de startups et de PME dans la structuration de leur fonction financière, le pilotage de leur trésorerie et la préparation de leurs projets de financement.",
+      "bioExtended": "Son activité se situe à la rencontre de la gestion quotidienne et des décisions qui engagent l’entreprise : organiser les chiffres, comprendre les besoins de financement et préparer les échanges avec les investisseurs et les autres conseils."
+    },
+    "en": {
+      "role": "Co-founder and CFO",
+      "metaRole": "Co-founder, CFO",
+      "bio": "Benjamin Ziza founded Iter Advisors with Sébastien Doat and Guillaume Rostand. Based in Barcelona, he supports startup and SME leaders in structuring their finance function, managing cash flow and preparing their funding plans.",
+      "bioExtended": "His work connects day-to-day management with decisions that shape the business: organising financial information, understanding funding requirements and preparing discussions with investors and other advisers."
+    },
+    "es": {
+      "role": "Cofundador y CFO",
+      "metaRole": "Cofundador, CFO",
+      "bio": "Benjamin Ziza creó Iter Advisors con Sébastien Doat y Guillaume Rostand. Desde Barcelona, acompaña a los responsables de startups y pymes en la estructuración de su función financiera, la gestión de su tesorería y la preparación de sus proyectos de financiación.",
+      "bioExtended": "Su trabajo conecta la gestión diaria con las decisiones que marcan el rumbo de la empresa: organizar los datos financieros, comprender las necesidades de financiación y preparar las conversaciones con inversores y otros asesores."
+    }
+  },
+  "sebastien-doat": {
+    "fr": {
+      "role": "Cofondateur et DAF externalisé",
+      "metaRole": "Cofondateur, DAF",
+      "bio": "Sébastien Doat a créé Iter Advisors avec Benjamin Ziza et Guillaume Rostand. Basé à Barcelone, il accompagne les dirigeants dans le pilotage financier de leur entreprise, avec une attention particulière à la trésorerie, aux prévisions et à la préparation des décisions de financement.",
+      "bioExtended": "Son parcours comprend des fonctions de direction financière chez Carts Guru et Terres de Café. Chez Iter, son intervention associe le travail sur les données financières et les échanges avec les fondateurs et investisseurs."
+    },
+    "en": {
+      "role": "Co-founder and Fractional CFO",
+      "metaRole": "Co-founder, CFO",
+      "bio": "Sébastien Doat founded Iter Advisors with Benjamin Ziza and Guillaume Rostand. Based in Barcelona, he supports business leaders in managing their company’s finances, with a particular focus on cash flow, forecasts and preparing funding decisions.",
+      "bioExtended": "His background includes finance leadership roles at Carts Guru and Terres de Café. At Iter, his work combines financial data with discussions with founders and investors."
+    },
+    "es": {
+      "role": "Cofundador y CFO externo",
+      "metaRole": "Cofundador, CFO",
+      "bio": "Sébastien Doat creó Iter Advisors con Benjamin Ziza y Guillaume Rostand. Desde Barcelona, acompaña a los directivos en la gestión financiera de sus empresas, con especial atención a la tesorería, las previsiones y la preparación de decisiones de financiación.",
+      "bioExtended": "Su trayectoria incluye funciones de dirección financiera en Carts Guru y Terres de Café. En Iter, su intervención combina el trabajo con los datos financieros y las conversaciones con fundadores e inversores."
+    }
+  },
+  "florent-greth": {
+    "fr": {
+      "role": "Associé et CFO",
+      "metaRole": "Associé, CFO",
+      "bio": "Florent Greth est associé et CFO chez Iter Advisors. Il accompagne les entreprises dans la structuration de leur fonction financière et l’organisation de leurs outils. Son domaine d’intervention comprend notamment l’intégration et la migration Pennylane.",
+      "bioExtended": "Son expérience relie la direction financière, le contrôle de gestion et les processus comptables. Elle complète celle de Benjamin Ziza, de Sébastien Doat et des équipes qui interviennent dans les missions du cabinet."
+    },
+    "en": {
+      "role": "Partner and CFO",
+      "metaRole": "Partner, CFO",
+      "bio": "Florent Greth is a partner and CFO at Iter Advisors. He supports businesses in structuring their finance function and organising their tools. His work includes Pennylane integration and migration.",
+      "bioExtended": "His experience connects finance leadership, management control and accounting processes. It complements that of Benjamin Ziza, Sébastien Doat and the teams involved in the firm’s engagements."
+    },
+    "es": {
+      "role": "Socio y CFO",
+      "metaRole": "Socio, CFO",
+      "bio": "Florent Greth es socio y CFO de Iter Advisors. Acompaña a las empresas en la estructuración de su función financiera y la organización de sus herramientas. Su ámbito de intervención incluye la integración y la migración a Pennylane.",
+      "bioExtended": "Su experiencia conecta la dirección financiera, el control de gestión y los procesos contables. Complementa la de Benjamin Ziza, Sébastien Doat y los equipos que participan en los proyectos del despacho."
+    }
+  }
+}
