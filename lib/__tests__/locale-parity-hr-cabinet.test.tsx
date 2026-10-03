@@ -28,7 +28,7 @@ describe("HR and cabinet parity", () => {
         faqMatches(pages[i]);
         for (const slug of HR_SERVICE_SLUGS) expect(pages[i].querySelector(`a[href="${parityHref(`/services/${slug}`, locale)}"]`)).not.toBeNull();
         if (locale !== "fr") {
-          expect(pages[i].querySelectorAll('a[hreflang="fr"]')).toHaveLength(3);
+          expect(pages[i].querySelectorAll('a[hreflang="fr"]')).toHaveLength(sharedTime ? 3 : 7);
           expect(pages[i].body.textContent).not.toContain("Parlons de votre besoin RH");
           expect(pages[i].body.textContent).toMatch(/not automatically|no.*automáticamente/);
         }

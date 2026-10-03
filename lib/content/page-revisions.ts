@@ -1,6 +1,8 @@
 /** Substantive page changes. Shared navigation changes do not refresh every URL. */
 export const PAGE_REVISIONS: Record<string, string> = {
   "/ressources/outils/methodologie": "2026-10-03",
+  "/en/hr-outsourcing/shared-time": "2026-10-03",
+  "/es/externalizacion-rrhh/tiempo-compartido": "2026-10-03",
   "/en/ressources/tools/methodology": "2026-10-03",
   "/es/recursos/herramientas/metodologia": "2026-10-03",
 
@@ -136,7 +138,7 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/ressources/blog/daf-externalise-vs-daf-salarie": "2026-10-02",
   "/ressources/blog/checklist-due-diligence-levee-de-fonds": "2026-10-02",
   "/a-propos/borith-biv": "2026-10-01",
-  "/drh-externalise/temps-partage": "2026-10-01",
+  "/drh-externalise/temps-partage": "2026-10-03",
   "/ressources/blog/daf-drh-externalises-synergie": "2026-10-01",
   "/services/recrutement-talent-acquisition": "2026-10-01",
   "/services/gestion-paie-charges-sociales": "2026-10-01",
