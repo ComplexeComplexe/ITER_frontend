@@ -5,8 +5,9 @@
     "source": "https://www.spendesk.com",
     "kind": "publisher-inline-svg",
     "checkedAt": "2026-10-03",
-    "bytes": 3985,
-    "sha256": "a86b6d7984defb56c2cd9dcfb80150e9ac7dc29584d3dcd6e46438082a56bb86"
+    "bytes": 3968,
+    "sha256": "75c02f84aec34d50b47f1bb931f32d87afb27091269709bc7ae5480ecc9d0868",
+    "preparation": "Resolve publisher CSS variable --brand-deep-purple to its official #7136ed value for standalone SVG rendering."
   },
   {
     "slug": "fygr",
