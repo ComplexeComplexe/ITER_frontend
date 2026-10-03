@@ -40,7 +40,7 @@ const LEGACY_COVER_BY_SLUG: Record<string, string> = {
 // that file doesn't exist in /public, causing 29 inlinks worth of 404s
 // via the _next/image optimizer. Pointing to the always-present site OG
 // default until a real blog placeholder design ships.
-const DEFAULT_COVER = "/images/og-logo.png";
+const DEFAULT_COVER = "/images/logos/iter-advisors-brand.png";
 
 function coverFor(slug: string): string {
   return BLOG_COVERS[slug]?.cover ?? LEGACY_COVER_BY_SLUG[slug] ?? DEFAULT_COVER;

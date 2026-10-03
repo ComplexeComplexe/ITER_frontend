@@ -46,7 +46,7 @@ export function frontmatterToMetadata(
   // OpenGraph
   const ogTitle = frontmatter.ogTitle || frontmatter.title;
   const ogDescription = frontmatter.ogDescription || frontmatter.description;
-  const ogImage = frontmatter.ogImage || `${baseUrl}/images/og-logo.png`;
+  const ogImage = frontmatter.ogImage || `${baseUrl}/images/logos/iter-advisors-brand.png`;
 
   return {
     title: frontmatter.title,

@@ -62,7 +62,7 @@ export default function ResourcesPage({
           // SEO-ULT §4 (2026-08-15) — même correctif que BlogListingPage :
           // la convention ES est /es/recursos/, le gabarit produisait un 308.
           href: resolveBlogArticleHref(locale, article.slug)!,
-          image: featured?.url || "/images/og-logo.png", // Ahrefs T-404 (2026-06-08): placeholder.webp missing → og-default
+          image: featured?.url || "/images/logos/iter-advisors-brand.png", // Ahrefs T-404 (2026-06-08): placeholder.webp missing → og-default
           alt: featured?.alternativeText || article.title,
           tag: newsTag,
         };

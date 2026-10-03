@@ -20,16 +20,16 @@ export const metadata: Metadata = {
     locale: OG_LOCALE.en,
     images: [
       {
-        url: "/images/og-logo.png",
+        url: "/images/logos/iter-advisors-brand.png",
         width: 1200,
         height: 630,
-        alt: "Iter Advisors - DAF externalisé & CFO à temps partagé",
+        alt: "Logo Iter Advisors",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/images/og-logo.png"],
+    images: ["/images/logos/iter-advisors-brand.png"],
   },
 };
 

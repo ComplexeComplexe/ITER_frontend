@@ -285,7 +285,7 @@ export default function BlogListingPage({
           return {
             title: editorialLinkLabel(a.title, resolveBlogArticleHref(locale, a.slug) as string, locale),
             href: resolveBlogArticleHref(locale, a.slug) as string,
-            image: imageUrl || "/images/og-logo.png", // Ahrefs T-404 (2026-06-08): placeholder.webp missing → og-default
+            image: imageUrl || "/images/logos/iter-advisors-brand.png", // Ahrefs T-404 (2026-06-08): placeholder.webp missing → og-default
             alt,
             category: categoryLabel(a.category),
             date: formatDate(a.publishedDate, locale),

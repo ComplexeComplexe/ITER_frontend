@@ -90,7 +90,7 @@ export default function DocumentShell({
                     `Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. ${CONSULTANTS} consultants, ${CLIENTS_ACCOMPAGNES} entreprises accompagnées. Équipes à Barcelone et Paris ; accompagnement à distance ou sur accord à Toulouse.`,
                   logo: {
                     "@type": "ImageObject",
-                    url: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
+                    url: "https://www.iteradvisors.com/images/logos/iter-advisors-brand-square.png",
                     width: 512,
                     height: 512,
                   },

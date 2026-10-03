@@ -19,7 +19,7 @@ export function taxComparisonMetadata(locale: TaxLocale): Metadata {
       "x-default": BASE + TAX_COMPARISON_PATHS.fr,
     } },
     robots: { index: true, follow: true },
-    openGraph: { title: t.title, description: t.description, type: "article", images: [{ url: "/images/og-logo.png", alt: t.title }] },
+    openGraph: { title: t.title, description: t.description, type: "article", images: [{ url: "/images/logos/iter-advisors-brand.png", alt: t.title }] },
   };
 }
 

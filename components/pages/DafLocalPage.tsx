@@ -66,7 +66,7 @@ export default function DafLocalPage({
     },
     priceRange: "€€",
     openingHours: "Mo-Fr 09:00-18:00",
-    image: "https://www.iteradvisors.com/images/og-logo.png",
+    image: "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png",
     // Review-snippet fix (2026-05-29): self-serving aggregateRating + Review
     // nodes removed. These were Trustfolio (third-party) reviews about Iter
     // Advisors presented as the local business's own rating — ineligible for
