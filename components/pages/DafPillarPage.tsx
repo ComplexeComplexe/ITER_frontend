@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import PublishedLocaleLink from "@/components/PublishedLocaleLink";
 import Image from "next/image";
 import { Linkedin } from "lucide-react";
@@ -17,6 +16,10 @@ import { editorialWebPageSchema } from "@/lib/schemas/editorial";
 import { renderInlineMarkdownLinks, stripInlineMarkdown } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import ServiceHero from "@/components/design/ServiceHero";
+import ServiceTable from "@/components/design/ServiceTable";
+import ServiceFaq from "@/components/design/ServiceFaq";
+import Section from "@/components/design/ServiceSection";
+import ServiceContact from "@/components/design/ServiceContact";
 import PageByline from "@/components/PageByline";
 
 const AUTHOR = { name: "Sébastien Doat", slug: "sebastien-doat" };
@@ -24,15 +27,6 @@ const SITE = "https://www.iteradvisors.com";
 const safeJson = (value: unknown) => JSON.stringify(value).replace(/</g, "\\u003c");
 const body = "text-base text-muted-foreground leading-relaxed";
 const link = "text-iter-violet underline underline-offset-4 font-medium";
-
-function Section({ id, title, children, tinted = false }: { id: string; title: string; children: ReactNode; tinted?: boolean }) {
-  return <section id={id} data-block-key={id} className={`site-section scroll-mt-24 ${tinted ? "bg-muted/30" : "bg-background"}`}>
-    <div className="container max-w-4xl">
-      <h2 className="font-heading font-bold text-foreground text-balance">{title}</h2>
-      <div className="mt-6 space-y-6">{children}</div>
-    </div>
-  </section>;
-}
 
 /** Server-rendered content and native FAQ; shared navigation remains interactive. */
 export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr" }: { locale?: Locale; cmsNavigation?: CmsNavItem[]; teamMembers?: StrapiTeamMember[] }) {
@@ -43,7 +37,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
   const teamSource = teamMembers?.length ? teamMembers : getFallbackTeamMembers(locale);
   const experts = t.experts.slugs.map(slug => teamSource.find(m => m.slug === slug)).filter((m): m is StrapiTeamMember => Boolean(m));
   return <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-    <ServiceHero title={t.hero.h1} label={t.breadcrumbLabel} eyebrow={ui.eyebrow}
+    <ServiceHero locale={locale} title={t.hero.h1} label={t.breadcrumbLabel} eyebrow={ui.eyebrow}
       lead={t.hero.lead} intro={t.hero.intro}
       primary={{ href: href(t.contact.href), label: t.hero.cta }} secondary={{ href: "#tarifs", label: ui.pricing }}
       summary={t.hero.landmarks} navigation={t.nav}
@@ -67,7 +61,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
       </article>)}</div>
       <figure className="site-card bg-white border border-border p-5 sm:p-7">
         <figcaption><h3 className="font-semibold text-foreground">{t.missions.example.heading}</h3><p className={`${body} mt-2`}>{t.missions.example.intro}</p></figcaption>
-        <div className="overflow-x-auto mt-5"><table className="w-full text-sm text-left border-collapse"><caption className="sr-only">{ui.caption}</caption><thead><tr>{ui.headers.map(label => <th scope="col" key={label} className="p-3 border-b border-border">{label}</th>)}</tr></thead><tbody>{t.missions.example.rows.map(row => <tr key={row[0]}>{row.map((cell, index) => index === 0 ? <th scope="row" key={cell} className="p-3 border-b border-border font-medium">{cell}</th> : <td key={cell} className="p-3 border-b border-border">{cell}</td>)}</tr>)}</tbody></table></div>
+        <ServiceTable caption={ui.caption} headers={ui.headers} rows={t.missions.example.rows} captionHidden />
       </figure>
     </Section>
 
@@ -145,11 +139,11 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
     </Section>
 
     <Section id="faq" title={ui.faq}>
-      <div>{t.faq.map(item => <details key={item.question} className="group border-b border-border"><summary className="flex cursor-pointer list-none items-start justify-between gap-4 py-5"><h3 className="font-semibold text-foreground">{item.question}</h3><span aria-hidden="true" className="shrink-0 text-iter-violet group-open:rotate-45">+</span></summary><p className={body}>{renderInlineMarkdownLinks(item.answer.replace(/\]\((\/[^)]+)\)/g, (_, linkPath: string) => `](${href(linkPath)})`))}</p></details>)}</div>
+      <ServiceFaq items={t.faq.map(item => ({ question: item.question, answer: renderInlineMarkdownLinks(item.answer.replace(/\]\((\/[^)]+)\)/g, (_, linkPath: string) => `](${href(linkPath)})`)) }))} />
       <nav id="secteurs" aria-label={ui.sectors} className="scroll-mt-24 text-sm"><p className="font-semibold mb-3">{ui.explore}</p><ul className="flex flex-wrap gap-x-5 gap-y-3">{[["Startups et SaaS", "/fractional-cfo-startups"], ["E-commerce", "/daf-externalise/ecommerce"], [ui.industry, "/daf-externalise/industrie"], ["Deep-tech", "/daf-externalise/deep-tech"]].map(([label, sectorPath]) => <li key={sectorPath}><PublishedLocaleLink locale={locale} href={href(sectorPath)} className={link}>{label}</PublishedLocaleLink></li>)}</ul></nav>
     </Section>
 
-    <section data-block-key="contact" className="site-section site-contact-band"><div className="container max-w-3xl text-center"><h2 className="site-cta-title">{t.contact.heading}</h2><p className="site-cta-copy mt-5 mb-8">{t.contact.text}</p><PublishedLocaleLink locale={locale} href={href(t.contact.href)} className="site-button site-button-primary">{t.hero.cta}</PublishedLocaleLink></div></section>
+    <ServiceContact locale={locale} title={t.contact.heading} text={t.contact.text} href={href(t.contact.href)} label={t.hero.cta} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

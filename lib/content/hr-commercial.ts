@@ -10,6 +10,9 @@ export const HR_COMMERCIAL_TERMS = {
 
 interface CommercialCopy {
   budget: string;
+  updated: string;
+  contactTitle: string;
+  contactText: string;
   pillarsTitle: string;
   pillarsIntro: string;
   pillars: { title: string; text: string; output: string; href: string; link: string }[];
@@ -41,6 +44,9 @@ interface CommercialCopy {
 export const HR_COMMERCIAL_COPY = {
   fr: {
     budget: 'Sur devis, selon le périmètre et la disponibilité attendue',
+    updated: 'Mis à jour le',
+    contactTitle: 'Quelles priorités RH souhaitez-vous traiter ?',
+    contactText: 'Présentez vos équipes, les sujets ouverts et les échéances. Le premier échange permet de préciser les travaux utiles, les responsabilités et le rythme.',
     pillarsTitle: 'Quatre piliers pour structurer votre fonction RH',
     pillarsIntro: 'La mission part de vos sujets concrets. Les travaux sont choisis avec le dirigeant, les managers et les prestataires concernés.',
     output: 'Exemple de livrable',
@@ -84,6 +90,9 @@ export const HR_COMMERCIAL_COPY = {
   },
   en: {
     budget: 'By quotation, depending on scope and availability required',
+    updated: 'Updated on',
+    contactTitle: 'Which HR priorities do you need to address?',
+    contactText: 'Describe your teams, open issues and deadlines. The initial conversation clarifies useful work, responsibilities and the schedule.',
     pillarsTitle: 'Four areas to structure your HR function',
     pillarsIntro: 'The engagement starts with your practical needs. Work is agreed with the business leader, managers and relevant providers.', output: 'Example deliverable',
     pillars: [
@@ -111,6 +120,9 @@ export const HR_COMMERCIAL_COPY = {
   },
   es: {
     budget: 'Según presupuesto, alcance y disponibilidad necesaria',
+    updated: 'Actualizado el',
+    contactTitle: '¿Qué prioridades de RRHH necesita abordar?',
+    contactText: 'Describa sus equipos, los asuntos abiertos y los plazos. La primera conversación precisa el trabajo útil, las responsabilidades y la dedicación.',
     pillarsTitle: 'Cuatro áreas para estructurar su función de RRHH', pillarsIntro: 'La misión parte de sus necesidades concretas. Los trabajos se acuerdan con la dirección, los responsables de equipos y los proveedores implicados.', output: 'Ejemplo de entregable',
     pillars: [
       { title: 'Cumplimiento y relaciones laborales', text: 'Organizar el calendario de RRHH, identificar documentos que revisar y preparar los asuntos de representación del personal, incluido el CSE francés cuando corresponda. Las decisiones y validaciones jurídicas se delimitan con profesionales competentes.', output: 'Un calendario de plazos, asuntos abiertos y responsables.', href: '/services/conformite-droit-travail', link: 'Cumplimiento y relaciones laborales' },

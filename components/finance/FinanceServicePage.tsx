@@ -12,6 +12,10 @@ import { getDocumentedCase } from "@/lib/content/documented-cases";
 import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
 import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 import styles from "./finance.module.css";
+import ServiceSection from "@/components/design/ServiceSection";
+import ServiceFaq from "@/components/design/ServiceFaq";
+import ServiceTable from "@/components/design/ServiceTable";
+import ServiceContact from "@/components/design/ServiceContact";
 
 // Retain links to sections already shared or indexed before the redesign.
 const anchors: Record<string, Record<string, string[]>> = {
@@ -40,7 +44,7 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
   const proof = originalProof && { ...originalProof, ...(translatedProof ? { proof: translatedProof.solution, summary: translatedProof.challenge } : {}) };
   const contact = href(`/contact#${service.context}`);
   const author = service.author ?? FINANCE_AUTHOR;
-  const modified = locale === "fr" ? (PAGE_REVISIONS[service.path] ?? FINANCE_REVIEW_DATE) : LOCALE_ALIGNMENT_DATE;
+  const modified = PAGE_REVISIONS[path] ?? (locale === "fr" ? FINANCE_REVIEW_DATE : LOCALE_ALIGNMENT_DATE);
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -49,79 +53,73 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
       { "@type": "FAQPage", mainEntity: service.faq.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
     ],
   };
-  return (
-    <PageLayout locale={locale}>
-      <div className={styles.root} data-finance-template="service" data-page-id={service.path}>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
-        <ServiceHero locale={locale} title={service.headline} label={service.label} eyebrow={`Iter Advisors · ${service.category}`} lead={service.promise} intro={service.intro}
-          primary={{ href: contact, label: ui.cta }} secondary={{ href: "#livrables", label: ui.deliverables }}
-          summary={service.summary.map(([label, value]) => ({ label, value }))}
-          proof={<p className={styles.micro}>{ui.intro}</p>}
-          navigation={[{ id: "besoin", label: ui.need }, { id: "livrables", label: ui.outputs }, { id: "deroulement", label: ui.method }, { id: "tarifs", label: ui.budget }, { id: "faq", label: ui.answers }]} />
-        <div className={styles.wrap}>
-          <section data-block-key="besoin" id="besoin" className={styles.section}>
-            <Aliases service={service} section="besoin" />
-            <div className={styles.sectionHeading}><p className={styles.eyebrow}>01 · {ui.fit}</p><h2>{service.headings?.need ?? ui.fitHeading}</h2></div>
-            <div className={styles.sectionBody}>
-              <ul className={styles.signals}>{service.signals.map(item => <li key={item}>{item}</li>)}</ul>
-              <p>{service.definition}</p>
-            </div>
-          </section>
-          <section data-block-key="livrables" id="livrables" className={`${styles.section} ${styles.stacked}`}>
-            <Aliases service={service} section="livrables" />
-            <div className={styles.sectionHeading}><p className={styles.eyebrow}>02 · {ui.concrete}</p><h2>{service.headings?.deliverables ?? ui.inHand}</h2><p>{ui.chosen}</p></div>
-            <div className={styles.deliverables}>{service.deliverables.map(([title, detail, decision], i) => <article key={title} className={styles.deliverable}>
-              <span className={styles.number} aria-hidden="true">0{i + 1}</span><h3>{title}</h3><p>{detail}</p><div className={styles.use}><span>{ui.decide}</span><p>{decision}</p></div>
-            </article>)}</div>
-            <aside id="exemple" className={styles.example}>
-              <Aliases service={service} section="exemple" />
-              <div><p className={styles.eyebrow}>{ui.practice}</p><h3>{service.exampleTitle}</h3></div><p>{service.example}</p>
-            </aside>
-          </section>
-          {service.calendar && <section data-block-key="rythme" id="rythme" className={`${styles.section} ${styles.stacked}`}>
-            <div className={styles.sectionHeading}><h2>{service.calendar.heading ?? ui.calendar}</h2></div>
-            <div className={styles.tableScroll} tabIndex={0} role="region" aria-label={service.calendar.caption}>
-              <table className={styles.calendar}><caption>{service.calendar.caption}</caption><thead><tr>{service.calendar.headers.map(header => <th key={header} scope="col">{header}</th>)}</tr></thead><tbody>{service.calendar.rows.map(([when, work, decision]) => <tr key={when}><th scope="row">{when}</th><td>{work}</td><td>{decision}</td></tr>)}</tbody></table>
-            </div>
-            <p>{service.calendar.note}</p>
-          </section>}
-          <section data-block-key="deroulement" id="deroulement" className={styles.section}>
-            <Aliases service={service} section="deroulement" />
-            <div className={styles.sectionHeading}><p className={styles.eyebrow}>03 · {ui.shared}</p><h2>{service.headings?.method ?? ui.together}</h2></div>
-            <ol className={styles.steps}>{service.steps.map(([title, text], i) => <li key={title}><span className={styles.stepNumber} aria-hidden="true">{i + 1}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol>
-          </section>
-          <section data-block-key="perimetre" id="perimetre" className={styles.section}>
-            <Aliases service={service} section="perimetre" />
-            <div className={styles.sectionHeading}><p className={styles.eyebrow}>04 · {ui.responsibilities}</p><h2>{service.scopeTitle}</h2></div>
-            <div className={styles.sectionBody}>{service.scope.map(text => <p key={text}>{text}</p>)}<PublishedLocaleLink locale={locale} href={href("/daf-externalise")} className={styles.textLink}>{service.context === "organisation" ? ui.overall : ui.position} <span aria-hidden="true">↗</span></PublishedLocaleLink></div>
-          </section>
-          <section data-block-key="tarifs" id="tarifs" className={styles.budget}>
-            <Aliases service={service} section="tarifs" />
-            <div><p className={styles.eyebrow}>{ui.budget}</p><h2>{ui.quote}</h2></div>
-            <div><p>{service.budget}</p><PublishedLocaleLink locale={locale} href={href(service.budgetResource?.href ?? "/daf-externalise/tarifs")} className={styles.textLink}>{service.budgetResource?.label ?? ui.prices} <span aria-hidden="true">↗</span></PublishedLocaleLink></div>
-          </section>
-          <section data-block-key="preuves" id="preuves" className={styles.section}>
-            <Aliases service={service} section="preuves" />
-            <div className={styles.sectionHeading}><p className={styles.eyebrow}>{proof ? ui.documented : ui.before}</p><h2>{proof ? proof.company : ui.people}</h2></div>
-            <div className={styles.sectionBody}>{proof ? <><h3>{proof.proof}</h3><p>{proof.summary}</p>{service.proofNote && <p>{service.proofNote}</p>}<PublishedLocaleLink locale={locale} href={href(proof.href)} className={styles.textLink}>{ui.readCase} <span aria-hidden="true">↗</span></PublishedLocaleLink></> : <><p>{ui.caseIntro}</p><PublishedLocaleLink locale={locale} href={href("/a-propos#equipe")} className={styles.textLink}>{ui.team} <span aria-hidden="true">↗</span></PublishedLocaleLink></>}</div>
-          </section>
-          <section data-block-key="faq" id="faq" className={styles.section}>
-            <Aliases service={service} section="faq" />
-            <div className={styles.sectionHeading}><p className={styles.eyebrow}>{ui.questions}</p><h2>{`FAQ : ${service.label.toLowerCase()}`}</h2></div>
-            <div className={styles.faq}>{service.faq.map(([question, answer]) => <details key={question}><summary><h3>{question}</h3><span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
-          </section>
-          <section className={`${styles.section} ${styles.stacked}`} aria-labelledby="aller-plus-loin">
-            <div className={styles.sectionHeading}><p className={styles.eyebrow}>{ui.next}</p><h2 id="aller-plus-loin">{ui.resources}</h2></div>
-            <div className={styles.resourceList}>{service.resources.map(([title, resourcePath]) => <PublishedLocaleLink locale={locale} key={resourcePath} href={href(resourcePath)}>{title}<span aria-hidden="true">↗</span></PublishedLocaleLink>)}</div>
-            <div className={styles.related}><p>{ui.related}</p>{service.related.map(key => <PublishedLocaleLink locale={locale} key={key} href={href(services[key].path)}>{services[key].label} <span aria-hidden="true">↗</span></PublishedLocaleLink>)}</div>
-          </section>
-          <section data-block-key="contact" id="contact" className={styles.contact}>
-            <Aliases service={service} section="contact" />
-            <p className={styles.eyebrow}>{ui.start}</p><h2>{ui.decision}</h2><p>{ui.contact}</p><PublishedLocaleLink locale={locale} href={contact} className={styles.primary}>{ui.describe} <span aria-hidden="true">↗</span></PublishedLocaleLink>
-          </section>
-          <div className={styles.byline}><PageByline locale={locale} author={author} dateModified={modified} /></div>
-        </div>
-      </div>
-    </PageLayout>
-  );
+  const copy = "text-base text-muted-foreground leading-relaxed";
+  const link = "text-iter-violet underline underline-offset-4 font-medium";
+  const proofTitle = proof ? `${ui.documented} : ${proof.company}` : ui.people;
+  return <PageLayout locale={locale}>
+    <div data-finance-template="service" data-page-id={service.path}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+      <ServiceHero locale={locale} title={service.headline} label={service.label} eyebrow={`Iter Advisors · ${service.category}`} lead={service.promise} intro={service.intro}
+        primary={{ href: contact, label: ui.cta }} secondary={{ href: "#livrables", label: ui.deliverables }}
+        summary={service.summary.map(([label, value]) => ({ label, value }))}
+        proof={<p className="text-sm text-muted-foreground mt-4">{ui.intro}</p>}
+        navigation={[{ id: "besoin", label: ui.need }, { id: "livrables", label: ui.outputs }, { id: "preuves", label: proof ? ui.caseNav : ui.teamNav }, { id: "deroulement", label: ui.method }, { id: "tarifs", label: ui.budget }, { id: "faq", label: ui.answers }]} />
+      <ServiceSection id="besoin" title={service.headings?.need ?? ui.fitHeading}>
+        <Aliases service={service} section="besoin" />
+        <p className={copy}>{service.definition}</p>
+        <ul className="space-y-3 list-disc pl-5 text-muted-foreground leading-relaxed">{service.signals.map(item => <li key={item}>{item}</li>)}</ul>
+      </ServiceSection>
+      <ServiceSection id="livrables" title={service.headings?.deliverables ?? ui.inHand}>
+        <Aliases service={service} section="livrables" />
+        <p className={copy}>{ui.chosen}</p>
+        <div className="divide-y divide-border">{service.deliverables.map(([title, detail, decision]) => <article key={title} className="py-6 first:pt-0">
+          <h3 className="font-semibold text-foreground">{title}</h3>
+          <dl className="mt-4 grid sm:grid-cols-2 gap-5">
+            <div><dt className="font-semibold text-foreground">{ui.outputs}</dt><dd className={`${copy} mt-2`}>{detail}</dd></div>
+            <div><dt className="font-semibold text-foreground">{ui.decide}</dt><dd className={`${copy} mt-2`}>{decision}</dd></div>
+          </dl>
+        </article>)}</div>
+        <aside id="exemple" className="relative site-card border border-border border-l-2 border-l-iter-violet p-5 sm:p-7">
+          <Aliases service={service} section="exemple" />
+          <p className="site-eyebrow">{ui.practice}</p><h3 className="font-semibold text-foreground">{service.exampleTitle}</h3><p className={`${copy} mt-4`}>{service.example}</p>
+        </aside>
+      </ServiceSection>
+      <ServiceSection id="preuves" title={proofTitle}>
+        <Aliases service={service} section="preuves" />
+        {proof ? <article className="site-card border border-border p-5 sm:p-7">
+          <h3 className="font-semibold text-foreground">{proof.proof}</h3><p className={`${copy} mt-4`}>{proof.summary}</p>
+          {service.proofNote && <p className={`${copy} mt-4`}>{service.proofNote}</p>}
+          <PublishedLocaleLink locale={locale} href={href(proof.href)} className={`${link} inline-flex mt-5`}>{ui.readCase}</PublishedLocaleLink>
+        </article> : <><p className={copy}>{ui.caseIntro}</p><PublishedLocaleLink locale={locale} href={href("/a-propos#equipe")} className={link}>{ui.team}</PublishedLocaleLink></>}
+      </ServiceSection>
+      {service.calendar && <ServiceSection id="rythme" title={service.calendar.heading ?? ui.calendar}>
+        <ServiceTable caption={service.calendar.caption} headers={service.calendar.headers} rows={service.calendar.rows} /><p className={copy}>{service.calendar.note}</p>
+      </ServiceSection>}
+      <ServiceSection id="deroulement" title={service.headings?.method ?? ui.together} tinted>
+        <Aliases service={service} section="deroulement" />
+        <ol className="space-y-6">{service.steps.map(([title, text], i) => <li key={title}><h3 className="font-semibold text-foreground"><span className="text-iter-violet">{i + 1}. </span>{title}</h3><p className={`${copy} mt-2`}>{text}</p></li>)}</ol>
+      </ServiceSection>
+      <ServiceSection id="perimetre" title={service.scopeTitle}>
+        <Aliases service={service} section="perimetre" />
+        {service.scope.map(text => <p key={text} className={copy}>{text}</p>)}
+        <PublishedLocaleLink locale={locale} href={href("/daf-externalise")} className={link}>{service.context === "organisation" ? ui.overall : ui.position}</PublishedLocaleLink>
+      </ServiceSection>
+      <ServiceSection id="tarifs" title={ui.quote}>
+        <Aliases service={service} section="tarifs" /><p className={copy}>{service.budget}</p>
+        <PublishedLocaleLink locale={locale} href={href(service.budgetResource?.href ?? "/daf-externalise/tarifs")} className={link}>{service.budgetResource?.label ?? ui.prices}</PublishedLocaleLink>
+      </ServiceSection>
+      <ServiceSection id="faq" title={`FAQ : ${service.label.toLowerCase()}`}>
+        <Aliases service={service} section="faq" />
+        <ServiceFaq items={service.faq.map(([question, answer]) => ({ question, answer }))} />
+      </ServiceSection>
+      <ServiceSection id="aller-plus-loin" title={ui.resources}>
+        <ul className="space-y-4">{service.resources.map(([title, resourcePath]) => <li key={resourcePath}><PublishedLocaleLink locale={locale} href={href(resourcePath)} className={link}>{title}</PublishedLocaleLink></li>)}</ul>
+        <nav aria-label={ui.related} className="text-sm"><p className="font-semibold mb-3">{ui.related}</p><ul className="flex flex-wrap gap-x-5 gap-y-3">{service.related.map(key => <li key={key}><PublishedLocaleLink locale={locale} href={href(services[key].path)} className={link}>{services[key].label}</PublishedLocaleLink></li>)}</ul></nav>
+        <PageByline locale={locale} author={author} dateModified={modified} />
+      </ServiceSection>
+      <ServiceContact locale={locale} title={ui.decision} text={ui.contact} href={contact} label={ui.describe}>
+        <Aliases service={service} section="contact" />
+      </ServiceContact>
+    </div>
+  </PageLayout>;
 }

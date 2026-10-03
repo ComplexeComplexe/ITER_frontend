@@ -132,43 +132,39 @@ export default function Header({
         </Link>
 
         {/* Desktop Nav — centré */}
-        <nav className="hidden xl:flex items-center justify-center gap-0.5 min-w-0">
+        <nav aria-label={locale === "fr" ? "Navigation principale" : locale === "en" ? "Main navigation" : "Navegación principal"} data-navigation="desktop" className="hidden xl:flex items-center justify-center gap-0.5 min-w-0">
           {mainNav.map((item, i) => (
             <div
               key={item.href}
               className="relative"
-              onMouseEnter={() => {
+              onPointerEnter={(event) => {
+                if (event.pointerType !== "mouse") return;
                 cancelClose();
                 if (item.children) setOpenDropdown(i);
               }}
               onMouseLeave={() => scheduleClose()}
-              onFocusCapture={() => { cancelClose(); if (item.children) setOpenDropdown(i); }}
               onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setOpenDropdown(null); }}
-              onKeyDown={(event) => { if (event.key === "Escape") setOpenDropdown(null); }}
+              onKeyDown={(event) => { if (event.key === "Escape") { setOpenDropdown(null); event.currentTarget.querySelector<HTMLButtonElement>("button[data-dropdown-toggle]")?.focus(); } }}
             >
-              <Link
-                locale={locale}
-                href={item.href}
-                className="flex items-center gap-1 px-4 py-2.5 text-sm font-medium text-white/80 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/10"
-              >
-                {item.title}
-                {item.children && (
-                  <svg
-                    className={`w-3 h-3 opacity-50 transition-transform duration-200 ${
-                      openDropdown === i ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                )}
-              </Link>
+              <div className="flex items-center">
+                <Link locale={locale} href={item.href} className={`py-2.5 text-sm font-medium text-white/80 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/10 ${item.children ? "pl-3 pr-1" : "px-3"}`}>
+                  {item.title}
+                </Link>
+                {item.children && <button
+                  type="button" data-dropdown-toggle
+                  aria-label={`${locale === "fr" ? "Sous-menu" : locale === "en" ? "Submenu" : "Submenú"} ${item.title}`}
+                  aria-expanded={openDropdown === i} aria-controls={`header-desktop-panel-${i}`}
+                  onClick={() => { cancelClose(); setOpenDropdown(openDropdown === i ? null : i); }}
+                  className="p-2.5 text-white/80 hover:text-white rounded-lg hover:bg-white/10"
+                >
+                  <svg aria-hidden="true" className={`w-3 h-3 transition-transform duration-200 ${openDropdown === i ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                </button>}
+              </div>
 
               {/* Dropdown / Mega-menu */}
               {item.children && (
                 <div
+                  id={`header-desktop-panel-${i}`}
                   hidden={openDropdown !== i}
                   className={`absolute top-full ${item.megaMenu ? 'left-1/2 -translate-x-1/2' : 'left-0'} pt-2`}
                   onMouseEnter={cancelClose}
@@ -329,7 +325,7 @@ export default function Header({
             transition={{ duration: 0.3 }}
             className="xl:hidden bg-iter-violet border-t border-white/10"
           >
-            <nav className="container py-4 flex flex-col gap-1">
+            <nav aria-label={locale === "fr" ? "Navigation mobile" : locale === "en" ? "Mobile navigation" : "Navegación móvil"} data-navigation="mobile" className="container py-4 flex flex-col gap-1 max-h-[calc(100dvh-72px)] overflow-y-auto">
               {mainNav.map((item, i) => (
                 <div key={item.href}>
                   <div className="flex items-center justify-between">
@@ -344,7 +340,9 @@ export default function Header({
                     {item.children && (
                       <button
                         className="p-3 text-white/40"
-                        aria-label={item.title}
+                        type="button"
+                        aria-controls={`header-mobile-panel-${i}`}
+                        aria-label={`${locale === "fr" ? "Sous-menu" : locale === "en" ? "Submenu" : "Submenú"} ${item.title}`}
                         aria-expanded={openDropdown === i}
                         onClick={() => setOpenDropdown(openDropdown === i ? null : i)}
                       >
@@ -361,8 +359,8 @@ export default function Header({
                       </button>
                     )}
                   </div>
-                  {item.children && openDropdown === i && (
-                    <div className="pl-6 pb-2 space-y-0.5">
+                  {item.children && (
+                    <div id={`header-mobile-panel-${i}`} hidden={openDropdown !== i} className="pl-6 pb-2 space-y-0.5">
                       {item.children.map((child) => (
                         <Link
                 locale={locale}
@@ -389,16 +387,17 @@ export default function Header({
 
               {/* Mobile lang */}
               <div className="mt-4 mx-4 flex gap-3">
-                {(["fr", "en", "es"] as Locale[]).map((l) => translations[l] ? (
+                {(["fr", "en", "es"] as Locale[]).map((l) => l === locale ? (
+                  <span key={l} aria-current="true" className="text-xs uppercase tracking-widest px-3 py-1.5 border rounded-lg border-iter-chartreuse text-iter-chartreuse">
+                    {l}
+                  </span>
+                ) : translations[l] ? (
                   <Link
                 locale={locale}
                     key={l}
                     href={translations[l]!}
-                    className={`text-xs uppercase tracking-widest px-3 py-1.5 border rounded-lg ${
-                      l === locale
-                        ? "border-iter-chartreuse text-iter-chartreuse"
-                        : "border-white/10 text-white/40 hover:text-white hover:border-white/30"
-                    } transition-colors`}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-xs uppercase tracking-widest px-3 py-1.5 border rounded-lg border-white/10 text-white/40 hover:text-white hover:border-white/30 transition-colors"
                   >
                     {l}
                   </Link>
