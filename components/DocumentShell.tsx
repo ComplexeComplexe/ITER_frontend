@@ -49,6 +49,26 @@ export default function DocumentShell({
   locale,
   children,
 }: Readonly<{ locale: Locale; children: React.ReactNode }>) {
+  const organizationCopy = {
+    fr: {
+      description: `Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. ${CONSULTANTS} consultants, ${CLIENTS_ACCOMPAGNES} entreprises accompagnées. Équipes à Barcelone et Paris ; accompagnement à distance ou sur accord à Toulouse.`,
+      slogan: "La meilleure version de votre direction financière",
+      expertise: [...CABINET_EXPERTISES.map(({ label }) => label), "Directeur financier externalisé", "CFO à temps partagé", "Fractional CFO", "Direction financière externalisée", "Gestion de trésorerie", "M&A et due diligence financière", "Pilotage financier startup"],
+      france: "France", spain: "Espagne", barcelona: "Barcelone",
+    },
+    en: {
+      description: `Fractional CFO firm for SMEs, startups and scale-ups. ${CONSULTANTS} consultants and ${CLIENTS_ACCOMPAGNES} companies supported. Teams in Barcelona and Paris; remote support or an agreed arrangement in Toulouse.`,
+      slogan: "A stronger finance function for your business",
+      expertise: ["Fractional CFO", "External HR director", "Management accounting", "Fundraising preparation", "France-Spain taxation", "Cash flow management", "M&A and financial due diligence", "Startup financial management"],
+      france: "France", spain: "Spain", barcelona: "Barcelona",
+    },
+    es: {
+      description: `Firma de CFO externo para pymes, startups y scale-ups. ${CONSULTANTS} consultores y ${CLIENTS_ACCOMPAGNES} empresas acompañadas. Equipos en Barcelona y París; apoyo a distancia o según acuerdo en Toulouse.`,
+      slogan: "Una función financiera más sólida para tu empresa",
+      expertise: ["CFO externo", "Director de RR. HH. externo", "Control de gestión", "Preparación de rondas de financiación", "Fiscalidad Francia-España", "Gestión de tesorería", "M&A y due diligence financiera", "Gestión financiera para startups"],
+      france: "Francia", spain: "España", barcelona: "Barcelona",
+    },
+  }[locale];
   return (
     <html
       lang={locale}
@@ -88,8 +108,7 @@ export default function DocumentShell({
                   taxID: "B42960849",
                   vatID: "ESB42960849",
                   url: "https://www.iteradvisors.com/",
-                  description:
-                    `Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. ${CONSULTANTS} consultants, ${CLIENTS_ACCOMPAGNES} entreprises accompagnées. Équipes à Barcelone et Paris ; accompagnement à distance ou sur accord à Toulouse.`,
+                  description: organizationCopy.description,
                   logo: {
                     "@type": "ImageObject",
                     url: "https://www.iteradvisors.com/images/logos/iter-advisors-brand-square.png",
@@ -118,14 +137,14 @@ export default function DocumentShell({
                   // décrivent le cabinet, pas la page : leur place est ici, où
                   // l'entité est déclarée une fois pour tout le site.
                   alternateName: ["Iter Advisors S.L.", "Iter Advisors Cabinet DAF"],
-                  slogan: "La meilleure version de votre direction financière",
+                  slogan: organizationCopy.slogan,
                   foundingDate: "2021",
                   areaServed: [
-                    { "@type": "Country", name: "France" },
-                    { "@type": "Country", name: "Espagne" },
+                    { "@type": "Country", name: organizationCopy.france },
+                    { "@type": "Country", name: organizationCopy.spain },
                     { "@type": "City", name: "Paris" },
                     { "@type": "City", name: "Toulouse" },
-                    { "@type": "City", name: "Barcelone" },
+                    { "@type": "City", name: organizationCopy.barcelona },
                   ],
                   contactPoint: {
                     "@type": "ContactPoint",
@@ -134,21 +153,12 @@ export default function DocumentShell({
                     areaServed: ["FR", "ES"],
                     availableLanguage: ["French", "English", "Spanish"],
                   },
-                  knowsAbout: [
-                    ...CABINET_EXPERTISES.map(({ label }) => label),
-                    "Directeur financier externalisé",
-                    "CFO à temps partagé",
-                    "Fractional CFO",
-                    "Direction financière externalisée",
-                    "Gestion de trésorerie",
-                    "M&A et due diligence financière",
-                    "Pilotage financier startup",
-                  ],
+                  knowsAbout: organizationCopy.expertise,
                   founder: [
                     {
                       "@type": "Person",
                       "@id": FINANCE_EXPERT.id,
-                      url: `https://www.iteradvisors.com${FINANCE_EXPERT.href}`,
+                      url: `https://www.iteradvisors.com${parityHref(FINANCE_EXPERT.href, locale)}`,
                       name: FINANCE_EXPERT.name,
                       jobTitle: getPartnerProfile("sebastien-doat", locale)?.teamRole,
                       sameAs: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",

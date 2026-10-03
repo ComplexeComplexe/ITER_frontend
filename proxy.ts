@@ -1,3 +1,4 @@
+import { publishedPaths } from "./lib/locale-route-map";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
@@ -272,6 +273,9 @@ export function proxy(request: NextRequest) {
     url.pathname = rest;
     return NextResponse.redirect(url, 301);
   }
+
+  // Published equivalents supersede the former FR-only fallback rules.
+  if (publishedPaths(pathname)?.[pathname.startsWith('/en/') ? 'en' : pathname.startsWith('/es/') ? 'es' : 'fr'] === pathname) return NextResponse.next();
 
   /* ── 2. Fix double-locale prefixes (/en/es/, /es/en/, /en/en/, /es/es/) ── */
   const doubleLocaleMatch = pathname.match(

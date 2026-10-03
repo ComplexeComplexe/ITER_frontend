@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import { Metadata } from "next";
 import CadsPage from "@/components/pages/CadsPage";
 
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
     index: false,
     follow: false,
   },
-  alternates: {
+  alternates: {...publishedMetadataAlternates("/cads"),
     canonical: "https://www.iteradvisors.com/cads",
   },
 };

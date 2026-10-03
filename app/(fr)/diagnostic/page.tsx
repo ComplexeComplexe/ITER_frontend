@@ -1,8 +1,10 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import { Metadata } from "next";
 import LeadPage from "@/components/pages/LeadPage";
 import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = {
+  alternates: publishedMetadataAlternates("/diagnostic"),
   title: "Diagnostic Gratuit | Iter Advisors – DAF Externalisé",
   description:
     "Évaluez vos besoins financiers en 2 minutes et découvrez comment un DAF externalisé peut structurer votre croissance. Diagnostic gratuit et sans engagement.",

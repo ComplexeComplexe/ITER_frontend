@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { Locale } from "@/lib/i18n";
+import { publishedPaths } from "@/lib/locale-route-map";
 
 type Translations = Partial<Record<Locale, string>>;
 const normalize = (path: string) => path.replace(/\/$/, "") || "/";
@@ -27,15 +28,17 @@ export function usePageTranslations(pathname: string, locale: Locale): Translati
   const [state, setState] = useState<{ pathname: string; links: Translations } | null>(null);
   useEffect(() => {
     const refresh = () => {
-      const links = readPageTranslations(pathname, locale);
+      const suffix = window.location.search + window.location.hash;
+      const links = Object.fromEntries(Object.entries(readPageTranslations(pathname, locale)).map(([language, path]) => [language, path + suffix]));
       setState((previous) => previous?.pathname === pathname && JSON.stringify(previous.links) === JSON.stringify(links)
         ? previous : { pathname, links });
     };
     refresh();
+    window.addEventListener("hashchange", refresh);
     // Next can replace metadata after client navigation; never retain the previous page's links.
     const observer = new MutationObserver(refresh);
     observer.observe(document.head, { childList: true, subtree: true, attributes: true, attributeFilter: ["href", "hreflang"] });
-    return () => observer.disconnect();
+    return () => { observer.disconnect(); window.removeEventListener("hashchange", refresh); };
   }, [pathname, locale]);
-  return state?.pathname === pathname ? state.links : { [locale]: pathname };
+  return state?.pathname === pathname ? state.links : publishedPaths(pathname) ?? { [locale]: pathname };
 }

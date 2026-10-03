@@ -42,7 +42,7 @@ describe("Published partner profiles", () => {
         }
         if (slug === "florent-greth") {
           for (const fact of ["Pennylane", "50", "PACCOR", "VIIA", "Abertis", "KPMG"]) expect(text).toContain(fact);
-          expect(doc.querySelector('a[href="/ressources/outils/pennylane"]')).not.toBeNull();
+          expect(doc.querySelector(`a[href="${parityHref("/ressources/outils/pennylane", locale)}"]`)).not.toBeNull();
           expect(doc.querySelector(`a[href="${parityHref("/services/controle-de-gestion-externalise", locale)}"]`)).not.toBeNull();
         }
         const graph = JSON.parse(doc.querySelector('script[type="application/ld+json"]')!.textContent!)["@graph"];

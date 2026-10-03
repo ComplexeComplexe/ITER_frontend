@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { parityHref } from "@/lib/locale-route-map";
 import PageByline from "@/components/PageByline";
 import { editorialWebPageSchema } from "@/lib/schemas/editorial";
 
@@ -93,7 +94,7 @@ export default function LeyBeckhamPage({ locale, content: t, cmsNavigation }: Le
       <section className="bg-background py-8">
         <div className="container max-w-3xl">
           <h2 className="text-xl font-bold mb-4">{t.sourcesTitle}</h2>
-          {locale === "es" && <p className="mb-4"><Link className="text-iter-violet underline" href="/es/recursos/blog/regimes-fiscaux-france-vs-espagne">Comparar la fiscalidad de Francia y España</Link></p>}
+          {locale === "es" && <p className="mb-4"><Link className="text-iter-violet underline" href={parityHref("/ressources/blog/regimes-fiscaux-france-vs-espagne", locale)}>Comparar la fiscalidad de Francia y España</Link></p>}
           <ul className="space-y-3">{t.sources.map(source => <li key={source.href}><a className="text-iter-violet underline" href={source.href}>{source.label}</a></li>)}</ul>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import { LOCALE_ROUTES } from "./locale-route-map";
 import { blogPosts } from "@/lib/content/blog-posts";
 import { resolveBlogArticleHref } from "@/lib/path-localization";
 import type { Locale } from "@/lib/i18n";
@@ -24,6 +25,7 @@ import type { Locale } from "@/lib/i18n";
  * doublons de slug.
  */
 export function blogHreflangDisabled(slug: string): Locale[] {
+  if (`/ressources/blog/${slug}` in LOCALE_ROUTES) return [];
   const absentes: Locale[] = [];
   for (const locale of ["fr", "en", "es"] as const) {
     // Le français ne peut pas se contenter de `blogPosts.fr` : une vingtaine

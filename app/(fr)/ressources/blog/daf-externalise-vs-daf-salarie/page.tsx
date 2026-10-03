@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 
 
 import { Metadata } from 'next';
@@ -13,7 +14,7 @@ const offer = getDafOffer('fr');
 export const metadata: Metadata = {
   title: SALARIED_DAF_GUIDE.title,
   description: SALARIED_DAF_GUIDE.description,
-  alternates: {
+  alternates: {...publishedMetadataAlternates("/ressources/blog/daf-externalise-vs-daf-salarie"),
     canonical: "https://www.iteradvisors.com/ressources/blog/daf-externalise-vs-daf-salarie",
     // SEO-AUD-0824 §2 — cet article a bien une version EN et une version ES,
     // qui désignaient toutes deux celle-ci comme leur traduction française.

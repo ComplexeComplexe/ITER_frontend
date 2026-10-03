@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 
 
 import Link from 'next/link';
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   // tout court) ; il porte désormais la requête et son intention.
   title: "Direction financière : organisation, rôles et processus 2026",
   description: "Organisez votre finance : responsabilités, calendrier de clôture, reporting et coordination avec le DAF. Méthode à adapter à votre entreprise.",
-  alternates: {
+  alternates: {...publishedMetadataAlternates("/ressources/blog/organiser-sa-direction-financiere"),
     canonical: "https://www.iteradvisors.com/ressources/blog/organiser-sa-direction-financiere",
   },
   openGraph: {

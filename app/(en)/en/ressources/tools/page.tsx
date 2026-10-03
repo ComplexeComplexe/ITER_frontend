@@ -1,19 +1,7 @@
-import { Metadata } from "next";
-import ToolsPage from "@/components/pages/ToolsPage";
-import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation } from "@/lib/static-content";
-import { getToolsContent } from "@/lib/content/tools";
-
-const t = getToolsContent("en");
-
-export const metadata: Metadata = buildMetadata({
-  locale: "en",
-  title: t.meta.title,
-  description: t.meta.description,
-  path: "/en/ressources/tools",
-});
-
-export default async function Page() {
-  const cmsNavigation = await getCmsNavigation("en");
-  return <ToolsPage locale="en" cmsNavigation={cmsNavigation} />;
+import LocalizedEditorialPage, { editorialMetadata } from '@/lib/content/localized-editorial';
+const source = "/ressources/outils";
+const locale = 'en' as const;
+export const metadata = editorialMetadata(source, locale);
+export default function Page({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  return <LocalizedEditorialPage source={source} locale={locale} searchParams={searchParams} />;
 }

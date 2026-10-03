@@ -1,0 +1,747 @@
+{
+  "/": {
+    "fr": "/",
+    "en": "/en",
+    "es": "/es"
+  },
+  "/a-propos": {
+    "fr": "/a-propos",
+    "en": "/en/about",
+    "es": "/es/quienes-somos"
+  },
+  "/a-propos/benjamin-carlot": {
+    "fr": "/a-propos/benjamin-carlot",
+    "en": "/en/about/benjamin-carlot",
+    "es": "/es/quienes-somos/benjamin-carlot"
+  },
+  "/a-propos/benjamin-ziza": {
+    "fr": "/a-propos/benjamin-ziza",
+    "en": "/en/about/benjamin-ziza",
+    "es": "/es/quienes-somos/benjamin-ziza"
+  },
+  "/a-propos/borith-biv": {
+    "fr": "/a-propos/borith-biv",
+    "en": "/en/about/borith-biv",
+    "es": "/es/quienes-somos/borith-biv"
+  },
+  "/a-propos/christophe-hoarau": {
+    "fr": "/a-propos/christophe-hoarau",
+    "en": "/en/about/christophe-hoarau",
+    "es": "/es/quienes-somos/christophe-hoarau"
+  },
+  "/a-propos/deisy-arias-ramirez": {
+    "fr": "/a-propos/deisy-arias-ramirez",
+    "en": "/en/about/deisy-arias-ramirez",
+    "es": "/es/quienes-somos/deisy-arias-ramirez"
+  },
+  "/a-propos/florent-greth": {
+    "fr": "/a-propos/florent-greth",
+    "en": "/en/about/florent-greth",
+    "es": "/es/quienes-somos/florent-greth"
+  },
+  "/a-propos/gonzalo-serratosa-de-caralt": {
+    "fr": "/a-propos/gonzalo-serratosa-de-caralt",
+    "en": "/en/about/gonzalo-serratosa-de-caralt",
+    "es": "/es/quienes-somos/gonzalo-serratosa-de-caralt"
+  },
+  "/a-propos/guillaume-rostand": {
+    "fr": "/a-propos/guillaume-rostand",
+    "en": "/en/about/guillaume-rostand",
+    "es": "/es/quienes-somos/guillaume-rostand"
+  },
+  "/a-propos/hugo-lepresle": {
+    "fr": "/a-propos/hugo-lepresle",
+    "en": "/en/about/hugo-lepresle",
+    "es": "/es/quienes-somos/hugo-lepresle"
+  },
+  "/a-propos/jessica-barnicaud": {
+    "fr": "/a-propos/jessica-barnicaud",
+    "en": "/en/about/jessica-barnicaud",
+    "es": "/es/quienes-somos/jessica-barnicaud"
+  },
+  "/a-propos/sebastien-doat": {
+    "fr": "/a-propos/sebastien-doat",
+    "en": "/en/about/sebastien-doat",
+    "es": "/es/quienes-somos/sebastien-doat"
+  },
+  "/a-propos/sebastien-preel": {
+    "fr": "/a-propos/sebastien-preel",
+    "en": "/en/about/sebastien-preel",
+    "es": "/es/quienes-somos/sebastien-preel"
+  },
+  "/a-propos/tom-jaufre": {
+    "fr": "/a-propos/tom-jaufre",
+    "en": "/en/about/tom-jaufre",
+    "es": "/es/quienes-somos/tom-jaufre"
+  },
+  "/cads": {
+    "fr": "/cads",
+    "en": "/en/cads",
+    "es": "/es/cads"
+  },
+  "/cads/roi": {
+    "fr": "/cads/roi",
+    "en": "/en/cads/roi",
+    "es": "/es/cads/roi"
+  },
+  "/campagne": {
+    "fr": "/campagne",
+    "en": "/en/campaign",
+    "es": "/es/campana"
+  },
+  "/carrieres/fractional-cfo": {
+    "fr": "/carrieres/fractional-cfo",
+    "en": "/en/careers/fractional-cfo",
+    "es": "/es/carreras/cfo-externo"
+  },
+  "/clients": {
+    "fr": "/clients",
+    "en": "/en/clients",
+    "es": "/es/clientes"
+  },
+  "/contact": {
+    "fr": "/contact",
+    "en": "/en/contact",
+    "es": "/es/contact"
+  },
+  "/daf-externalise": {
+    "fr": "/daf-externalise",
+    "en": "/en/fractional-cfo",
+    "es": "/es/externalizacion-daf"
+  },
+  "/daf-externalise-barcelone": {
+    "fr": "/daf-externalise-barcelone",
+    "en": "/en/fractional-cfo-barcelona",
+    "es": "/es/cfo-externalizado-barcelona"
+  },
+  "/daf-externalise-paris": {
+    "fr": "/daf-externalise-paris",
+    "en": "/en/fractional-cfo-paris",
+    "es": "/es/cfo-externalizado-paris"
+  },
+  "/daf-externalise-toulouse": {
+    "fr": "/daf-externalise-toulouse",
+    "en": "/en/fractional-cfo-toulouse",
+    "es": "/es/cfo-externalizado-toulouse"
+  },
+  "/daf-externalise/deep-tech": {
+    "fr": "/daf-externalise/deep-tech",
+    "en": "/en/fractional-cfo/deep-tech",
+    "es": "/es/externalizacion-daf/deep-tech"
+  },
+  "/daf-externalise/ecommerce": {
+    "fr": "/daf-externalise/ecommerce",
+    "en": "/en/fractional-cfo/ecommerce",
+    "es": "/es/externalizacion-daf/ecommerce"
+  },
+  "/daf-externalise/industrie": {
+    "fr": "/daf-externalise/industrie",
+    "en": "/en/fractional-cfo/manufacturing",
+    "es": "/es/externalizacion-daf/industria"
+  },
+  "/daf-externalise/metier": {
+    "fr": "/daf-externalise/metier",
+    "en": "/en/fractional-cfo/role",
+    "es": "/es/externalizacion-daf/funciones"
+  },
+  "/daf-externalise/secteurs": {
+    "fr": "/daf-externalise/secteurs",
+    "en": "/en/fractional-cfo/sectors",
+    "es": "/es/externalizacion-daf/sectores"
+  },
+  "/daf-externalise/tarifs": {
+    "fr": "/daf-externalise/tarifs",
+    "en": "/en/fractional-cfo/pricing",
+    "es": "/es/externalizacion-daf/precios"
+  },
+  "/daf-externalise/temps-partage": {
+    "fr": "/daf-externalise/temps-partage",
+    "en": "/en/fractional-cfo/shared-time",
+    "es": "/es/externalizacion-daf/tiempo-compartido"
+  },
+  "/daf-externalise/transition": {
+    "fr": "/daf-externalise/transition",
+    "en": "/en/fractional-cfo/transition",
+    "es": "/es/externalizacion-daf/transicion"
+  },
+  "/diagnostic": {
+    "fr": "/diagnostic",
+    "en": "/en/diagnostic",
+    "es": "/es/diagnostic"
+  },
+  "/drh-externalise": {
+    "fr": "/drh-externalise",
+    "en": "/en/hr-outsourcing",
+    "es": "/es/externalizacion-rrhh"
+  },
+  "/drh-externalise/temps-partage": {
+    "fr": "/drh-externalise/temps-partage",
+    "en": "/en/hr-outsourcing/shared-time",
+    "es": "/es/externalizacion-rrhh/tiempo-compartido"
+  },
+  "/fractional-cfo-startups": {
+    "fr": "/fractional-cfo-startups",
+    "en": "/en/fractional-cfo-for-startups",
+    "es": "/es/cfo-externo-startups"
+  },
+  "/jobs": {
+    "fr": "/jobs",
+    "en": "/en/jobs",
+    "es": "/es/jobs"
+  },
+  "/jobs/finance-analyst-junior-fr": {
+    "fr": "/jobs/finance-analyst-junior-fr",
+    "en": "/en/jobs/junior-finance-analyst",
+    "es": "/es/empleos/analista-financiero-junior"
+  },
+  "/jobs/marketing-growth-strategy": {
+    "fr": "/jobs/marketing-growth-strategy",
+    "en": "/en/jobs/marketing-growth-strategy",
+    "es": "/es/empleos/marketing-estrategia-crecimiento"
+  },
+  "/jobs/senior-finance-manager": {
+    "fr": "/jobs/senior-finance-manager",
+    "en": "/en/jobs/senior-finance-manager",
+    "es": "/es/empleos/responsable-financiero-senior"
+  },
+  "/lp/daf-externalise": {
+    "fr": "/lp/daf-externalise",
+    "en": "/en/lp/fractional-cfo",
+    "es": "/es/lp/cfo-externo"
+  },
+  "/lp/daf-externalise/merci": {
+    "fr": "/lp/daf-externalise/merci",
+    "en": "/en/lp/fractional-cfo/thank-you",
+    "es": "/es/lp/cfo-externo/gracias"
+  },
+  "/mentions-legales": {
+    "fr": "/mentions-legales",
+    "en": "/en/legal-notice",
+    "es": "/es/aviso-legal"
+  },
+  "/politique-cookies": {
+    "fr": "/politique-cookies",
+    "en": "/en/cookie-policy",
+    "es": "/es/politica-cookies"
+  },
+  "/politique-de-confidentialite": {
+    "fr": "/politique-de-confidentialite",
+    "en": "/en/privacy-policy",
+    "es": "/es/politica-de-privacidad"
+  },
+  "/profil": {
+    "fr": "/profil",
+    "en": "/en/profile",
+    "es": "/es/perfil"
+  },
+  "/qualification": {
+    "fr": "/qualification",
+    "en": "/en/assessment",
+    "es": "/es/calificacion"
+  },
+  "/ressources": {
+    "fr": "/ressources",
+    "en": "/en/ressources",
+    "es": "/es/recursos"
+  },
+  "/ressources/blog": {
+    "fr": "/ressources/blog",
+    "en": "/en/ressources/blog",
+    "es": "/es/recursos/blog"
+  },
+  "/ressources/blog/agicap-vs-fygr-outil-tresorerie": {
+    "fr": "/ressources/blog/agicap-vs-fygr-outil-tresorerie",
+    "en": "/en/ressources/blog/agicap-vs-fygr-cash-flow-tools",
+    "es": "/es/recursos/blog/agicap-vs-fygr-tesoreria"
+  },
+  "/ressources/blog/cas-etude-happy-scribe": {
+    "fr": "/ressources/blog/cas-etude-happy-scribe",
+    "en": "/en/ressources/blog/happy-scribe-finance-case-study",
+    "es": "/es/recursos/blog/caso-happy-scribe-finanzas"
+  },
+  "/ressources/blog/cash-burn-calculer-runway-anticiper-levee": {
+    "fr": "/ressources/blog/cash-burn-calculer-runway-anticiper-levee",
+    "en": "/en/ressources/blog/cash-burn-runway-fundraising",
+    "es": "/es/recursos/blog/cash-burn-runway-financiacion"
+  },
+  "/ressources/blog/cfo-externe-role-missions-2026": {
+    "fr": "/ressources/blog/cfo-externe-role-missions-2026",
+    "en": "/en/ressources/blog/external-cfo-role-responsibilities",
+    "es": "/es/recursos/blog/cfo-externo-funciones"
+  },
+  "/ressources/blog/checklist-due-diligence-levee-de-fonds": {
+    "fr": "/ressources/blog/checklist-due-diligence-levee-de-fonds",
+    "en": "/en/ressources/blog/fundraising-due-diligence-checklist",
+    "es": "/es/recursos/blog/checklist-due-diligence-financiacion"
+  },
+  "/ressources/blog/choisir-cabinet-daf-externalise": {
+    "fr": "/ressources/blog/choisir-cabinet-daf-externalise",
+    "en": "/en/ressources/blog/choose-fractional-cfo-firm",
+    "es": "/es/recursos/blog/elegir-consultora-cfo-externo"
+  },
+  "/ressources/blog/cout-daf-externalise-tarifs-prix-2026": {
+    "fr": "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
+    "en": "/en/ressources/blog/fractional-cfo-cost-services-2026",
+    "es": "/es/recursos/blog/cfo-externo-pymes-precio-2026"
+  },
+  "/ressources/blog/daf-drh-externalises-synergie": {
+    "fr": "/ressources/blog/daf-drh-externalises-synergie",
+    "en": "/en/ressources/blog/fractional-cfo-hr-director-coordination",
+    "es": "/es/recursos/blog/coordinacion-cfo-director-rrhh"
+  },
+  "/ressources/blog/daf-externalise-vs-daf-interimaire": {
+    "fr": "/ressources/blog/daf-externalise-vs-daf-interimaire",
+    "en": "/en/ressources/blog/fractional-cfo-vs-interim-cfo",
+    "es": "/es/recursos/blog/cfo-externo-vs-cfo-interino"
+  },
+  "/ressources/blog/daf-externalise-vs-daf-salarie": {
+    "fr": "/ressources/blog/daf-externalise-vs-daf-salarie",
+    "en": "/en/ressources/blog/daf-externalise-vs-daf-salarie",
+    "es": "/es/recursos/blog/daf-externalise-vs-daf-salarie"
+  },
+  "/ressources/blog/daf-externalise-vs-expert-comptable": {
+    "fr": "/ressources/blog/daf-externalise-vs-expert-comptable",
+    "en": "/en/ressources/blog/fractional-cfo-vs-accountant",
+    "es": "/es/recursos/blog/cfo-externo-vs-asesoria-contable"
+  },
+  "/ressources/blog/essentiels-outils-tech-finance": {
+    "fr": "/ressources/blog/essentiels-outils-tech-finance",
+    "en": "/en/ressources/blog/essential-finance-technology-tools",
+    "es": "/es/recursos/blog/herramientas-tecnologia-financiera"
+  },
+  "/ressources/blog/externalisation-comptable": {
+    "fr": "/ressources/blog/externalisation-comptable",
+    "en": "/en/ressources/blog/externalisation-comptable",
+    "es": "/es/recursos/blog/externalisation-comptable"
+  },
+  "/ressources/blog/filiale-espagnole-pilotage-financier": {
+    "fr": "/ressources/blog/filiale-espagnole-pilotage-financier",
+    "en": "/en/ressources/blog/spanish-subsidiary-financial-management",
+    "es": "/es/recursos/blog/gestion-financiera-filial-espana"
+  },
+  "/ressources/blog/flux-de-tresorerie": {
+    "fr": "/ressources/blog/flux-de-tresorerie",
+    "en": "/en/ressources/blog/flux-de-tresorerie",
+    "es": "/es/recursos/blog/flux-de-tresorerie"
+  },
+  "/ressources/blog/ia-et-automatisation-des-taches-repetitives": {
+    "fr": "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
+    "en": "/en/ressources/blog/ai-automation-repetitive-finance-tasks",
+    "es": "/es/recursos/blog/ia-automatizacion-tareas-repetitivas-finanzas"
+  },
+  "/ressources/blog/ia-finance-automatisation-direction-financiere": {
+    "fr": "/ressources/blog/ia-finance-automatisation-direction-financiere",
+    "en": "/en/ressources/blog/ai-finance-department-automation",
+    "es": "/es/recursos/blog/ia-automatizacion-direccion-financiera"
+  },
+  "/ressources/blog/la-modernisation-du-role-de-cfo": {
+    "fr": "/ressources/blog/la-modernisation-du-role-de-cfo",
+    "en": "/en/ressources/blog/modern-cfo-role",
+    "es": "/es/recursos/blog/evolucion-funcion-cfo"
+  },
+  "/ressources/blog/les-10-outils-pour-cfos-startup": {
+    "fr": "/ressources/blog/les-10-outils-pour-cfos-startup",
+    "en": "/en/ressources/blog/startup-cfo-tools",
+    "es": "/es/recursos/blog/herramientas-cfo-startup"
+  },
+  "/ressources/blog/levee-de-fonds-guide": {
+    "fr": "/ressources/blog/levee-de-fonds-guide",
+    "en": "/en/ressources/blog/fundraising-guide",
+    "es": "/es/recursos/blog/guia-rondas-financiacion"
+  },
+  "/ressources/blog/loi-beckham-economie-impot-simulation": {
+    "fr": "/ressources/blog/loi-beckham-economie-impot-simulation",
+    "en": "/en/ressources/blog/beckham-law-tax-savings-simulation",
+    "es": "/es/recursos/blog/ley-beckham-simulacion-ahorro-fiscal"
+  },
+  "/ressources/blog/loi-beckham-espagne-conditions-eligibilite": {
+    "fr": "/ressources/blog/loi-beckham-espagne-conditions-eligibilite",
+    "en": "/en/ressources/blog/beckham-law-spain-eligibility",
+    "es": "/es/recursos/blog/ley-beckham-espana-requisitos"
+  },
+  "/ressources/blog/organiser-sa-direction-financiere": {
+    "fr": "/ressources/blog/organiser-sa-direction-financiere",
+    "en": "/en/ressources/blog/organize-finance-department",
+    "es": "/es/recursos/blog/organizar-direccion-financiera"
+  },
+  "/ressources/blog/payfit-vs-silae-comparatif-pme": {
+    "fr": "/ressources/blog/payfit-vs-silae-comparatif-pme",
+    "en": "/en/ressources/blog/payfit-vs-silae-sme-comparison",
+    "es": "/es/recursos/blog/payfit-vs-silae-comparativa-pymes"
+  },
+  "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements": {
+    "fr": "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",
+    "en": "/en/ressources/blog/pennylane-vs-sage-comparison",
+    "es": "/es/recursos/blog/pennylane-vs-sage-comparativa"
+  },
+  "/ressources/blog/quand-embaucher-daf-externalise-5-signes": {
+    "fr": "/ressources/blog/quand-embaucher-daf-externalise-5-signes",
+    "en": "/en/ressources/blog/when-to-hire-fractional-cfo",
+    "es": "/es/recursos/blog/cuando-contratar-cfo-externo"
+  },
+  "/ressources/blog/reduire-bfr-7-leviers-actionnables": {
+    "fr": "/ressources/blog/reduire-bfr-7-leviers-actionnables",
+    "en": "/en/ressources/blog/reduce-working-capital-requirements",
+    "es": "/es/recursos/blog/reducir-necesidades-capital-circulante"
+  },
+  "/ressources/blog/regimes-fiscaux-france-vs-espagne": {
+    "fr": "/ressources/blog/regimes-fiscaux-france-vs-espagne",
+    "en": "/en/ressources/blog/france-spain-tax-comparison",
+    "es": "/es/recursos/blog/regimenes-fiscales-francia-espana"
+  },
+  "/ressources/blog/stack-financier-saas-series-a": {
+    "fr": "/ressources/blog/stack-financier-saas-series-a",
+    "en": "/en/ressources/blog/saas-series-a-finance-stack",
+    "es": "/es/recursos/blog/herramientas-financieras-saas-serie-a"
+  },
+  "/ressources/blog/tableau-de-bord-financier-startup-12-kpis": {
+    "fr": "/ressources/blog/tableau-de-bord-financier-startup-12-kpis",
+    "en": "/en/ressources/blog/startup-financial-dashboard-kpis",
+    "es": "/es/recursos/blog/cuadro-mando-financiero-startup-kpis"
+  },
+  "/ressources/blog/term-sheet-negocier-clauses-cles": {
+    "fr": "/ressources/blog/term-sheet-negocier-clauses-cles",
+    "en": "/en/ressources/blog/term-sheet-key-clauses",
+    "es": "/es/recursos/blog/term-sheet-clausulas-clave"
+  },
+  "/ressources/cas-clients": {
+    "fr": "/ressources/cas-clients",
+    "en": "/en/ressources/cas-clients",
+    "es": "/es/recursos/casos-de-exito"
+  },
+  "/ressources/cas-clients/opti-digital-structuration-financement": {
+    "fr": "/ressources/cas-clients/opti-digital-structuration-financement",
+    "en": "/en/ressources/cas-clients/opti-digital-structuration-financement",
+    "es": "/es/recursos/casos-de-exito/opti-digital-structuration-financement"
+  },
+  "/ressources/cas-clients/seasonly-marge-par-canal-bfr": {
+    "fr": "/ressources/cas-clients/seasonly-marge-par-canal-bfr",
+    "en": "/en/ressources/cas-clients/seasonly-marge-par-canal-bfr",
+    "es": "/es/recursos/casos-de-exito/seasonly-marge-par-canal-bfr"
+  },
+  "/ressources/cas-clients/solarmente-serie-b-cleantech": {
+    "fr": "/ressources/cas-clients/solarmente-serie-b-cleantech",
+    "en": "/en/ressources/cas-clients/solarmente-serie-b-cleantech",
+    "es": "/es/recursos/casos-de-exito/solarmente-serie-b-cleantech"
+  },
+  "/ressources/fiscalite-espagne-france": {
+    "fr": "/ressources/fiscalite-espagne-france",
+    "en": "/en/ressources/france-spain-tax",
+    "es": "/es/recursos/fiscalidad-francia-espana"
+  },
+  "/ressources/fiscalite/beckham-law": {
+    "fr": "/ressources/fiscalite/beckham-law",
+    "en": "/en/ressources/tax/beckham-law",
+    "es": "/es/recursos/fiscalidad/ley-beckham"
+  },
+  "/ressources/fiscalite/double-imposition-france-espagne": {
+    "fr": "/ressources/fiscalite/double-imposition-france-espagne",
+    "en": "/en/ressources/tax/france-spain-double-taxation",
+    "es": "/es/recursos/fiscalidad/doble-imposicion-francia-espana"
+  },
+  "/ressources/fiscalite/impot-revenu-espagne": {
+    "fr": "/ressources/fiscalite/impot-revenu-espagne",
+    "en": "/en/ressources/tax/spain-income-tax",
+    "es": "/es/recursos/fiscalidad/irpf-espana"
+  },
+  "/ressources/fiscalite/modelo-720": {
+    "fr": "/ressources/fiscalite/modelo-720",
+    "en": "/en/ressources/tax/form-720",
+    "es": "/es/recursos/fiscalidad/modelo-720"
+  },
+  "/ressources/fiscalite/residence-fiscale-france-espagne": {
+    "fr": "/ressources/fiscalite/residence-fiscale-france-espagne",
+    "en": "/en/ressources/tax/france-spain-tax-residence",
+    "es": "/es/recursos/fiscalidad/residencia-fiscal-francia-espana"
+  },
+  "/ressources/glossaire": {
+    "fr": "/ressources/glossaire",
+    "en": "/en/ressources/glossaire",
+    "es": "/es/recursos/glosario"
+  },
+  "/ressources/glossaire/arr-mrr": {
+    "fr": "/ressources/glossaire/arr-mrr",
+    "en": "/en/ressources/glossaire/arr-mrr",
+    "es": "/es/recursos/glosario/arr-mrr"
+  },
+  "/ressources/glossaire/besoin-fonds-roulement-bfr": {
+    "fr": "/ressources/glossaire/besoin-fonds-roulement-bfr",
+    "en": "/en/ressources/glossaire/bfr",
+    "es": "/es/recursos/glosario/necesidades-capital-circulante"
+  },
+  "/ressources/glossaire/bspce-bsa": {
+    "fr": "/ressources/glossaire/bspce-bsa",
+    "en": "/en/ressources/glossaire/french-equity-incentives-bspce-bsa",
+    "es": "/es/recursos/glosario/incentivos-capital-francia-bspce-bsa"
+  },
+  "/ressources/glossaire/cac-ltv": {
+    "fr": "/ressources/glossaire/cac-ltv",
+    "en": "/en/ressources/glossaire/cac-ltv",
+    "es": "/es/recursos/glosario/cac-ltv"
+  },
+  "/ressources/glossaire/cash-burn-runway": {
+    "fr": "/ressources/glossaire/cash-burn-runway",
+    "en": "/en/ressources/glossaire/cash-burn-runway",
+    "es": "/es/recursos/glosario/cash-burn-runway"
+  },
+  "/ressources/glossaire/cfo": {
+    "fr": "/ressources/glossaire/cfo",
+    "en": "/en/ressources/glossaire/cfo",
+    "es": "/es/recursos/glosario/cfo"
+  },
+  "/ressources/glossaire/churn-rate": {
+    "fr": "/ressources/glossaire/churn-rate",
+    "en": "/en/ressources/glossaire/churn-rate",
+    "es": "/es/recursos/glosario/tasa-churn"
+  },
+  "/ressources/glossaire/controle-de-gestion": {
+    "fr": "/ressources/glossaire/controle-de-gestion",
+    "en": "/en/ressources/glossaire/management-control",
+    "es": "/es/recursos/glosario/control-gestion"
+  },
+  "/ressources/glossaire/drh-externalise": {
+    "fr": "/ressources/glossaire/drh-externalise",
+    "en": "/en/ressources/glossaire/external-hr-director",
+    "es": "/es/recursos/glosario/director-rrhh-externo"
+  },
+  "/ressources/glossaire/ebitda": {
+    "fr": "/ressources/glossaire/ebitda",
+    "en": "/en/ressources/glossaire/ebitda",
+    "es": "/es/recursos/glosario/ebitda"
+  },
+  "/ressources/glossaire/fractional-cfo": {
+    "fr": "/ressources/glossaire/fractional-cfo",
+    "en": "/en/ressources/glossaire/fractional-cfo",
+    "es": "/es/recursos/glosario/cfo-tiempo-parcial"
+  },
+  "/ressources/glossaire/run-rate": {
+    "fr": "/ressources/glossaire/run-rate",
+    "en": "/en/ressources/glossaire/run-rate",
+    "es": "/es/recursos/glosario/run-rate"
+  },
+  "/ressources/ia-finance": {
+    "fr": "/ressources/ia-finance",
+    "en": "/en/resources/ai-finance",
+    "es": "/es/recursos/ia-finanzas"
+  },
+  "/ressources/ia-finance/automatiser-reporting-financier": {
+    "fr": "/ressources/ia-finance/automatiser-reporting-financier",
+    "en": "/en/resources/ai-finance/automate-financial-reporting",
+    "es": "/es/recursos/ia-finanzas/automatizar-reporting-financiero"
+  },
+  "/ressources/ia-finance/chatgpt-finance": {
+    "fr": "/ressources/ia-finance/chatgpt-finance",
+    "en": "/en/resources/ai-finance/chatgpt-finance",
+    "es": "/es/recursos/ia-finanzas/chatgpt-finanzas"
+  },
+  "/ressources/ia-finance/feuille-de-route-90-jours": {
+    "fr": "/ressources/ia-finance/feuille-de-route-90-jours",
+    "en": "/en/resources/ai-finance/90-day-roadmap",
+    "es": "/es/recursos/ia-finanzas/hoja-ruta-90-dias"
+  },
+  "/ressources/ia-finance/llm-finance": {
+    "fr": "/ressources/ia-finance/llm-finance",
+    "en": "/en/resources/ai-finance/llms-finance",
+    "es": "/es/recursos/ia-finanzas/llm-finanzas"
+  },
+  "/ressources/ia-finance/outils": {
+    "fr": "/ressources/ia-finance/outils",
+    "en": "/en/resources/ai-finance/tools",
+    "es": "/es/recursos/ia-finanzas/herramientas"
+  },
+  "/ressources/ia-finance/retours-experience": {
+    "fr": "/ressources/ia-finance/retours-experience",
+    "en": "/en/resources/ai-finance/experience-reports",
+    "es": "/es/recursos/ia-finanzas/experiencias"
+  },
+  "/ressources/outils": {
+    "fr": "/ressources/outils",
+    "en": "/en/ressources/tools",
+    "es": "/es/recursos/herramientas"
+  },
+  "/ressources/outils/agicap": {
+    "fr": "/ressources/outils/agicap",
+    "en": "/en/ressources/tools/agicap",
+    "es": "/es/recursos/herramientas/agicap"
+  },
+  "/ressources/outils/carta": {
+    "fr": "/ressources/outils/carta",
+    "en": "/en/ressources/tools/carta",
+    "es": "/es/recursos/herramientas/carta"
+  },
+  "/ressources/outils/cegid-loop": {
+    "fr": "/ressources/outils/cegid-loop",
+    "en": "/en/ressources/tools/cegid-loop",
+    "es": "/es/recursos/herramientas/cegid-loop"
+  },
+  "/ressources/outils/equify": {
+    "fr": "/ressources/outils/equify",
+    "en": "/en/ressources/tools/equify",
+    "es": "/es/recursos/herramientas/equify"
+  },
+  "/ressources/outils/factorial": {
+    "fr": "/ressources/outils/factorial",
+    "en": "/en/ressources/tools/factorial",
+    "es": "/es/recursos/herramientas/factorial"
+  },
+  "/ressources/outils/fygr": {
+    "fr": "/ressources/outils/fygr",
+    "en": "/en/ressources/tools/fygr",
+    "es": "/es/recursos/herramientas/fygr"
+  },
+  "/ressources/outils/gestion-depenses": {
+    "fr": "/ressources/outils/gestion-depenses",
+    "en": "/en/ressources/tools/expense-management",
+    "es": "/es/recursos/herramientas/gestion-gastos"
+  },
+  "/ressources/outils/kyriba": {
+    "fr": "/ressources/outils/kyriba",
+    "en": "/en/ressources/tools/kyriba",
+    "es": "/es/recursos/herramientas/kyriba"
+  },
+  "/ressources/outils/leanpay": {
+    "fr": "/ressources/outils/leanpay",
+    "en": "/en/ressources/tools/leanpay",
+    "es": "/es/recursos/herramientas/leanpay"
+  },
+  "/ressources/outils/logiciels-comptabilite": {
+    "fr": "/ressources/outils/logiciels-comptabilite",
+    "en": "/en/ressources/tools/accounting-software",
+    "es": "/es/recursos/herramientas/software-contabilidad"
+  },
+  "/ressources/outils/logiciels-paie": {
+    "fr": "/ressources/outils/logiciels-paie",
+    "en": "/en/ressources/tools/payroll-software",
+    "es": "/es/recursos/herramientas/software-nominas"
+  },
+  "/ressources/outils/logiciels-tresorerie": {
+    "fr": "/ressources/outils/logiciels-tresorerie",
+    "en": "/en/ressources/tools/cash-flow-software",
+    "es": "/es/recursos/herramientas/software-tesoreria"
+  },
+  "/ressources/outils/lucca": {
+    "fr": "/ressources/outils/lucca",
+    "en": "/en/ressources/tools/lucca",
+    "es": "/es/recursos/herramientas/lucca"
+  },
+  "/ressources/outils/malibou": {
+    "fr": "/ressources/outils/malibou",
+    "en": "/en/ressources/tools/malibou",
+    "es": "/es/recursos/herramientas/malibou"
+  },
+  "/ressources/outils/methodologie": {
+    "fr": "/ressources/outils/methodologie",
+    "en": "/en/ressources/tools/methodology",
+    "es": "/es/recursos/herramientas/metodologia"
+  },
+  "/ressources/outils/payfit": {
+    "fr": "/ressources/outils/payfit",
+    "en": "/en/ressources/tools/payfit",
+    "es": "/es/recursos/herramientas/payfit"
+  },
+  "/ressources/outils/payhawk": {
+    "fr": "/ressources/outils/payhawk",
+    "en": "/en/ressources/tools/payhawk",
+    "es": "/es/recursos/herramientas/payhawk"
+  },
+  "/ressources/outils/pennylane": {
+    "fr": "/ressources/outils/pennylane",
+    "en": "/en/ressources/tools/pennylane",
+    "es": "/es/recursos/herramientas/pennylane"
+  },
+  "/ressources/outils/pleo": {
+    "fr": "/ressources/outils/pleo",
+    "en": "/en/ressources/tools/pleo",
+    "es": "/es/recursos/herramientas/pleo"
+  },
+  "/ressources/outils/power-bi": {
+    "fr": "/ressources/outils/power-bi",
+    "en": "/en/ressources/tools/power-bi",
+    "es": "/es/recursos/herramientas/power-bi"
+  },
+  "/ressources/outils/qonto": {
+    "fr": "/ressources/outils/qonto",
+    "en": "/en/ressources/tools/qonto",
+    "es": "/es/recursos/herramientas/qonto"
+  },
+  "/ressources/outils/revolut-business": {
+    "fr": "/ressources/outils/revolut-business",
+    "en": "/en/ressources/tools/revolut-business",
+    "es": "/es/recursos/herramientas/revolut-business"
+  },
+  "/ressources/outils/sage": {
+    "fr": "/ressources/outils/sage",
+    "en": "/en/ressources/tools/sage",
+    "es": "/es/recursos/herramientas/sage"
+  },
+  "/ressources/outils/silae": {
+    "fr": "/ressources/outils/silae",
+    "en": "/en/ressources/tools/silae",
+    "es": "/es/recursos/herramientas/silae"
+  },
+  "/ressources/outils/spendesk": {
+    "fr": "/ressources/outils/spendesk",
+    "en": "/en/ressources/tools/spendesk",
+    "es": "/es/recursos/herramientas/spendesk"
+  },
+  "/ressources/outils/upflow": {
+    "fr": "/ressources/outils/upflow",
+    "en": "/en/ressources/tools/upflow",
+    "es": "/es/recursos/herramientas/upflow"
+  },
+  "/services": {
+    "fr": "/services",
+    "en": "/en/services",
+    "es": "/es/services"
+  },
+  "/services/accompagnement-levee-de-fond": {
+    "fr": "/services/accompagnement-levee-de-fond",
+    "en": "/en/services/fund-raising-support",
+    "es": "/es/services/soporte-financiacion"
+  },
+  "/services/comptabilite-externalisation": {
+    "fr": "/services/comptabilite-externalisation",
+    "en": "/en/services/outsource-your-accounting",
+    "es": "/es/services/externalizar-contabilidad"
+  },
+  "/services/conformite-droit-travail": {
+    "fr": "/services/conformite-droit-travail",
+    "en": "/en/services/employment-compliance",
+    "es": "/es/servicios/cumplimiento-laboral"
+  },
+  "/services/controle-de-gestion-externalise": {
+    "fr": "/services/controle-de-gestion-externalise",
+    "en": "/en/services/outsourced-management-control",
+    "es": "/es/services/control-gestion-externalizado"
+  },
+  "/services/formation-developpement": {
+    "fr": "/services/formation-developpement",
+    "en": "/en/services/training-development",
+    "es": "/es/servicios/formacion-desarrollo"
+  },
+  "/services/gestion-financiere-externalisee": {
+    "fr": "/services/gestion-financiere-externalisee",
+    "en": "/en/services/financial-operations-organization",
+    "es": "/es/services/gestion-financiera-externalizada"
+  },
+  "/services/gestion-paie-charges-sociales": {
+    "fr": "/services/gestion-paie-charges-sociales",
+    "en": "/en/services/payroll-coordination",
+    "es": "/es/servicios/coordinacion-nominas"
+  },
+  "/services/ma-due-diligence": {
+    "fr": "/services/ma-due-diligence",
+    "en": "/en/services/ma-due-diligence",
+    "es": "/es/services/ma-due-diligence"
+  },
+  "/services/previsionnel-tresorerie": {
+    "fr": "/services/previsionnel-tresorerie",
+    "en": "/en/services/cash-flow-forecast",
+    "es": "/es/services/prevision-tesoreria"
+  },
+  "/services/recrutement-talent-acquisition": {
+    "fr": "/services/recrutement-talent-acquisition",
+    "en": "/en/services/recruitment-talent-acquisition",
+    "es": "/es/servicios/seleccion-talento"
+  }
+}

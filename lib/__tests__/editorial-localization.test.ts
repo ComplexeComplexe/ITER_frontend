@@ -9,8 +9,8 @@ import { getResourcesContent } from "../content/resources";
 describe("published translations, rather than synthetic links", () => {
   it("uses a real translated article and preserves a French-only resource", () => {
     expect(localizeEditorialLink("/ressources/blog/flux-de-tresorerie", "en")).toBe("/en/ressources/blog/flux-de-tresorerie");
-    expect(localizeEditorialLink("/ressources/blog/essentiels-outils-tech-finance", "en")).toBe("/ressources/blog/essentiels-outils-tech-finance");
-    expect(editorialLinkLabel("Finance tools", "/ressources/blog/essentiels-outils-tech-finance", "en")).toBe("Finance tools (in French)");
+    expect(localizeEditorialLink("/ressources/blog/essentiels-outils-tech-finance", "en")).toBe("/en/ressources/blog/essential-finance-technology-tools");
+    expect(editorialLinkLabel("Finance tools", "/ressources/blog/essentiels-outils-tech-finance", "en")).toBe("Finance tools");
     expect(localizeEditorialLink("mailto:hello@iteradvisors.com", "es")).toBe("mailto:hello@iteradvisors.com");
   });
 

@@ -1,4 +1,7 @@
 'use client';
+import type { Locale } from '@/lib/i18n';
+import { parityHref } from '@/lib/locale-route-map';
+import { lpText } from '@/lib/content/landing-copy';
 import { CLIENTS_ACCOMPAGNES, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 
 import Script from 'next/script';
@@ -53,7 +56,7 @@ function pushToDataLayer(event: string, data?: Record<string, unknown>) {
 }
 
 // Form Component
-function ConversionForm() {
+function ConversionForm({ locale }: { locale: Locale }) {
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -134,14 +137,14 @@ function ConversionForm() {
   const validateForm = (): boolean => {
     const newErrors: FormError[] = [];
 
-    if (!formData.firstName.trim()) newErrors.push({ field: 'firstName', message: 'Prénom requis' });
-    if (!formData.lastName.trim()) newErrors.push({ field: 'lastName', message: 'Nom requis' });
+    if (!formData.firstName.trim()) newErrors.push({ field: 'firstName', message: lpText(locale, "Prénom requis") });
+    if (!formData.lastName.trim()) newErrors.push({ field: 'lastName', message: lpText(locale, "Nom requis") });
     if (!formData.email.trim() || !validateEmail(formData.email))
-      newErrors.push({ field: 'email', message: 'Email invalide' });
-    if (!formData.company.trim()) newErrors.push({ field: 'company', message: 'Société requise' });
-    if (!formData.teamSize) newErrors.push({ field: 'teamSize', message: 'Taille équipe requise' });
-    if (!formData.mainNeed) newErrors.push({ field: 'mainNeed', message: 'Besoin requis' });
-    if (!formData.rgpd) newErrors.push({ field: 'rgpd', message: 'Acceptation RGPD requise' });
+      newErrors.push({ field: 'email', message: lpText(locale, "Email invalide") });
+    if (!formData.company.trim()) newErrors.push({ field: 'company', message: lpText(locale, "Société requise") });
+    if (!formData.teamSize) newErrors.push({ field: 'teamSize', message: lpText(locale, "Taille équipe requise") });
+    if (!formData.mainNeed) newErrors.push({ field: 'mainNeed', message: lpText(locale, "Besoin requis") });
+    if (!formData.rgpd) newErrors.push({ field: 'rgpd', message: lpText(locale, "Acceptation RGPD requise") });
 
     setErrors(newErrors);
     return newErrors.length === 0;
@@ -190,7 +193,7 @@ function ConversionForm() {
           // for GA4 thank-you-page tracking and future remarketing audiences).
           // We don't await — `router.push` returns immediately and the unmount
           // doesn't block the push that already ran synchronously.
-          router.push('/lp/daf-externalise/merci');
+          router.push(parityHref('/lp/daf-externalise/merci', locale));
         }
         setFormData({
           firstName: '',
@@ -223,20 +226,18 @@ function ConversionForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       {submitStatus === 'success' && (
         <div className="site-card p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
-          ✅ Merci ! Nous vous recontacterons dans les 24h.
+          {lpText(locale, "✅ Merci ! Nous vous recontacterons dans les 24h.")}
         </div>
       )}
       {submitStatus === 'error' && (
         <div className="site-card p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
-          ❌ Erreur lors de l&apos;envoi. Veuillez réessayer.
+          {lpText(locale, "❌ Erreur lors de l'envoi. Veuillez réessayer.")}
         </div>
       )}
 
       {/* Prénom */}
       <div>
-        <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-1">
-          Prénom *
-        </label>
+        <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-1">{lpText(locale, "Prénom *")}</label>
         <input
           id="firstName"
           type="text"
@@ -255,9 +256,7 @@ function ConversionForm() {
 
       {/* Nom */}
       <div>
-        <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-1">
-          Nom *
-        </label>
+        <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-1">{lpText(locale, "Nom *")}</label>
         <input
           id="lastName"
           type="text"
@@ -275,9 +274,7 @@ function ConversionForm() {
 
       {/* Email */}
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">
-          Email professionnel *
-        </label>
+        <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">{lpText(locale, "Email professionnel *")}</label>
         <input
           id="email"
           type="email"
@@ -295,9 +292,7 @@ function ConversionForm() {
 
       {/* Société */}
       <div>
-        <label htmlFor="company" className="block text-sm font-medium text-foreground mb-1">
-          Société *
-        </label>
+        <label htmlFor="company" className="block text-sm font-medium text-foreground mb-1">{lpText(locale, "Société *")}</label>
         <input
           id="company"
           type="text"
@@ -315,9 +310,7 @@ function ConversionForm() {
 
       {/* Téléphone */}
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-1">
-          Téléphone
-        </label>
+        <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-1">{lpText(locale, "Téléphone")}</label>
         <input
           id="phone"
           type="tel"
@@ -331,9 +324,7 @@ function ConversionForm() {
 
       {/* Taille équipe */}
       <div>
-        <label htmlFor="teamSize" className="block text-sm font-medium text-foreground mb-1">
-          Taille de l&apos;entreprise *
-        </label>
+        <label htmlFor="teamSize" className="block text-sm font-medium text-foreground mb-1">{lpText(locale, "Taille de l'entreprise *")}</label>
         <select
           id="teamSize"
           name="teamSize"
@@ -342,11 +333,11 @@ function ConversionForm() {
           required
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-iter-violet focus:border-transparent outline-none"
         >
-          <option value="">-- Sélectionner --</option>
-          <option value="1-10">1-10 collaborateurs</option>
-          <option value="11-50">11-50 collaborateurs</option>
-          <option value="51-200">51-200 collaborateurs</option>
-          <option value="200+">200+ collaborateurs</option>
+          <option value="">{lpText(locale, "-- Sélectionner --")}</option>
+          <option value="1-10">{lpText(locale, "1-10 collaborateurs")}</option>
+          <option value="11-50">{lpText(locale, "11-50 collaborateurs")}</option>
+          <option value="51-200">{lpText(locale, "51-200 collaborateurs")}</option>
+          <option value="200+">{lpText(locale, "200+ collaborateurs")}</option>
         </select>
         {getFieldError('teamSize') && (
           <p className="text-red-600 text-sm mt-1">{getFieldError('teamSize')}</p>
@@ -355,9 +346,7 @@ function ConversionForm() {
 
       {/* Besoin principal */}
       <div>
-        <label htmlFor="mainNeed" className="block text-sm font-medium text-foreground mb-1">
-          Besoin principal *
-        </label>
+        <label htmlFor="mainNeed" className="block text-sm font-medium text-foreground mb-1">{lpText(locale, "Besoin principal *")}</label>
         <select
           id="mainNeed"
           name="mainNeed"
@@ -366,15 +355,15 @@ function ConversionForm() {
           required
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-iter-violet focus:border-transparent outline-none"
         >
-          <option value="">-- Sélectionner --</option>
-          <option value="Trésorerie">Trésorerie et cash flow</option>
-          <option value="Reporting">Reporting et board</option>
-          <option value="Budget">Budget et forecast</option>
-          <option value="Levée de fonds">Levée de fonds</option>
-          <option value="Contrôle de gestion">Contrôle de gestion</option>
-          <option value="Structuration finance">Structuration finance</option>
-          <option value="Renfort">Renfort DAF</option>
-          <option value="Autre">Autre</option>
+          <option value="">{lpText(locale, "-- Sélectionner --")}</option>
+          <option value="Trésorerie">{lpText(locale, "Trésorerie et cash flow")}</option>
+          <option value="Reporting">{lpText(locale, "Reporting et board")}</option>
+          <option value="Budget">{lpText(locale, "Budget et forecast")}</option>
+          <option value="Levée de fonds">{lpText(locale, "Levée de fonds")}</option>
+          <option value="Contrôle de gestion">{lpText(locale, "Contrôle de gestion")}</option>
+          <option value="Structuration finance">{lpText(locale, "Structuration finance")}</option>
+          <option value="Renfort">{lpText(locale, "Renfort DAF")}</option>
+          <option value="Autre">{lpText(locale, "Autre")}</option>
         </select>
         {getFieldError('mainNeed') && (
           <p className="text-red-600 text-sm mt-1">{getFieldError('mainNeed')}</p>
@@ -383,15 +372,13 @@ function ConversionForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1">
-          Message (optionnel)
-        </label>
+        <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1">{lpText(locale, "Message (optionnel)")}</label>
         <textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="Parlez-nous de votre situation financière..."
+          placeholder={lpText(locale, "Parlez-nous de votre situation financière...")}
           rows={3}
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-iter-violet focus:border-transparent outline-none"
         />
@@ -408,11 +395,8 @@ function ConversionForm() {
           required
           className="w-5 h-5 mt-1 cursor-pointer"
         />
-        <label htmlFor="rgpd" className="text-sm text-muted-foreground">
-          J&apos;accepte qu&apos;Iter Advisors utilise mes données pour me recontacter.{' '}
-          <a href="/politique-de-confidentialite" className="text-iter-violet hover:underline">
-            Politique de confidentialité
-          </a>
+        <label htmlFor="rgpd" className="text-sm text-muted-foreground">{lpText(locale, "J'accepte qu'Iter Advisors utilise mes données pour me recontacter.")}{' '}
+          <a href={parityHref("/politique-de-confidentialite", locale)} className="text-iter-violet hover:underline">{lpText(locale, "Politique de confidentialité")}</a>
         </label>
       </div>
       {getFieldError('rgpd') && (
@@ -437,18 +421,16 @@ function ConversionForm() {
         onClick={() => pushToDataLayer('cta_click', { cta_text: 'Planifier mon diagnostic', cta_position: 'form' })}
         className="w-full px-6 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all duration-300 disabled:opacity-50"
       >
-        {isSubmitting ? 'Envoi en cours...' : 'Planifier mon diagnostic financier'}
+        {isSubmitting ? 'Envoi en cours...' : lpText(locale, "Planifier mon diagnostic financier")}
       </button>
 
-      <p className="text-xs text-muted-foreground text-center">
-        Nous revenons vers vous sous 24h ouvrées.
-      </p>
+      <p className="text-xs text-muted-foreground text-center">{lpText(locale, "Nous revenons vers vous sous 24h ouvrées.")}</p>
     </form>
   );
 }
 
 // Sticky Mobile CTA
-function StickyCTAFooter() {
+function StickyCTAFooter({ locale }: { locale: Locale }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -479,7 +461,7 @@ function StickyCTAFooter() {
 }
 
 // FAQ with schema
-function FAQ() {
+function FAQ({ locale }: { locale: Locale }) {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   useEffect(() => {
@@ -509,34 +491,34 @@ function FAQ() {
 
   const faqs = [
     {
-      question: 'Qu\'est-ce qu\'un DAF externalisé ?',
+      question: lpText(locale, "Qu'est-ce qu'un DAF externalisé ?"),
       answer:
-        'Un DAF externalisé est un directeur financier senior qui accompagne une entreprise sans être recruté à temps plein. Il intervient à temps partagé ou sur mission pour structurer la trésorerie, le budget, les reportings, le contrôle de gestion et les décisions financières. Aussi appelé DAF à temps partagé ou CFO part-time.',
+        lpText(locale, "Un DAF externalisé est un directeur financier senior qui accompagne une entreprise sans être recruté à temps plein. Il intervient à temps partagé ou sur mission pour structurer la trésorerie, le budget, les reportings, le contrôle de gestion et les décisions financières. Aussi appelé DAF à temps partagé ou CFO part-time."),
     },
     {
-      question: 'Quelle différence avec un expert-comptable ?',
+      question: lpText(locale, "Quelle différence avec un expert-comptable ?"),
       answer:
-        'L\'expert-comptable sécurise la production comptable, fiscale et légale. Le DAF externalisé utilise ces chiffres pour aider le dirigeant à piloter l\'entreprise : trésorerie, marge, forecast, financement, budget et décisions stratégiques. Ils se complètent.',
+        lpText(locale, "L'expert-comptable sécurise la production comptable, fiscale et légale. Le DAF externalisé utilise ces chiffres pour aider le dirigeant à piloter l'entreprise : trésorerie, marge, forecast, financement, budget et décisions stratégiques. Ils se complètent."),
     },
     {
-      question: 'Combien coûte un DAF externalisé ?',
+      question: lpText(locale, "Combien coûte un DAF externalisé ?"),
       answer:
-        'Le coût dépend du niveau d\'intervention, du rythme souhaité et de la complexité des sujets. L\'intérêt du modèle est d\'adapter l\'accompagnement au besoin réel, sans supporter le coût fixe d\'un DAF salarié à plein temps. Généralement 80% moins cher qu\'un DAF recruté en CDI.',
+        lpText(locale, "Le coût dépend du niveau d'intervention, du rythme souhaité et de la complexité des sujets. L'intérêt du modèle est d'adapter l'accompagnement au besoin réel, sans supporter le coût fixe d'un DAF salarié à plein temps. Généralement 80% moins cher qu'un DAF recruté en CDI."),
     },
     {
-      question: 'À partir de quand faut-il faire appel à un DAF externalisé ?',
+      question: lpText(locale, "À partir de quand faut-il faire appel à un DAF externalisé ?"),
       answer:
-        'Le besoin apparaît souvent quand le dirigeant manque de visibilité sur la trésorerie, prépare une levée de fonds, doit produire un reporting fiable, ou ne peut plus piloter l\'entreprise uniquement avec la comptabilité et quelques fichiers Excel.',
+        lpText(locale, "Le besoin apparaît souvent quand le dirigeant manque de visibilité sur la trésorerie, prépare une levée de fonds, doit produire un reporting fiable, ou ne peut plus piloter l'entreprise uniquement avec la comptabilité et quelques fichiers Excel."),
     },
     {
-      question: 'Est-ce adapté aux PME qui ne lèvent pas de fonds ?',
+      question: lpText(locale, "Est-ce adapté aux PME qui ne lèvent pas de fonds ?"),
       answer:
-        'Oui. Le DAF externalisé n\'est pas réservé aux startups. Il est utile dès qu\'une entreprise veut mieux piloter son cash, ses marges, son budget, ses financements ou ses décisions de croissance, qu\'elle soit en levée ou non.',
+        lpText(locale, "Oui. Le DAF externalisé n'est pas réservé aux startups. Il est utile dès qu'une entreprise veut mieux piloter son cash, ses marges, son budget, ses financements ou ses décisions de croissance, qu'elle soit en levée ou non."),
     },
     {
-      question: 'Combien de temps faut-il pour démarrer ?',
+      question: lpText(locale, "Combien de temps faut-il pour démarrer ?"),
       answer:
-        'Après un premier diagnostic, nous pouvons cadrer rapidement les priorités, définir le rythme d\'intervention et lancer les premiers chantiers : trésorerie, reporting, budget ou structuration finance. Mise en place possible en quelques semaines.',
+        lpText(locale, "Après un premier diagnostic, nous pouvons cadrer rapidement les priorités, définir le rythme d'intervention et lancer les premiers chantiers : trésorerie, reporting, budget ou structuration finance. Mise en place possible en quelques semaines."),
     },
   ];
 
@@ -570,7 +552,7 @@ function FAQ() {
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
             mainEntity: faqs.map((faq) => ({
-              '@type': 'Question',
+              '@type': lpText(locale, "Question"),
               name: faq.question,
               acceptedAnswer: {
                 '@type': 'Answer',
@@ -585,7 +567,7 @@ function FAQ() {
 }
 
 // Main Client Component
-export default function LandingPageClient() {
+export default function LandingPageClient({ locale = "fr" }: { locale?: Locale }) {
   return (
     <main className="min-h-screen bg-background">
       {/* GTM */}
@@ -598,7 +580,7 @@ export default function LandingPageClient() {
       />
 
       {/* Header */}
-      <Header locale="fr" />
+      <Header locale={locale} />
 
       {/* SECTION 1: HERO + FORM (2026-05-31 redesign — form now sits on
             the right above the fold; the "Planifier un diagnostic financier"
@@ -609,39 +591,31 @@ export default function LandingPageClient() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 items-start">
             {/* ── Left: tagline, H1, subtitle, USPs, social proof (3/5) ── */}
             <div className="lg:col-span-3">
-              <p className="site-copy text-sm sm:text-base font-semibold text-iter-violet mb-4">
-                Cabinet européen — Barcelone, Paris, Toulouse
-              </p>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-heading text-foreground mb-6 leading-tight">
-                DAF externalisé pour PME et startups
-              </h1>
-              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-8 max-w-xl">
-                Un DAF senior à temps partagé pour structurer votre trésorerie,
-                vos reportings et votre pilotage financier, sans recruter à
-                temps plein.
-              </p>
+              <p className="site-copy text-sm sm:text-base font-semibold text-iter-violet mb-4">{lpText(locale, "Cabinet européen — Barcelone, Paris, Toulouse")}</p>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-heading text-foreground mb-6 leading-tight">{lpText(locale, "DAF externalisé pour PME et startups")}</h1>
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-8 max-w-xl">{lpText(locale, "Un DAF senior à temps partagé pour structurer votre trésorerie, vos reportings et votre pilotage financier, sans recruter à temps plein.")}</p>
 
               {/* 3 USPs — stacked rows */}
               <ul className="space-y-5 mb-8 list-none pl-0">
                 <li className="flex items-start gap-4">
                   <span className="text-2xl shrink-0" aria-hidden>💰</span>
                   <div>
-                    <p className="font-semibold text-foreground">Trésorerie prévisible à 3 mois</p>
-                    <p className="text-sm text-muted-foreground">Une vision claire du cash disponible.</p>
+                    <p className="font-semibold text-foreground">{lpText(locale, "Trésorerie prévisible à 3 mois")}</p>
+                    <p className="text-sm text-muted-foreground">{lpText(locale, "Une vision claire du cash disponible.")}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <span className="text-2xl shrink-0" aria-hidden>📊</span>
                   <div>
-                    <p className="font-semibold text-foreground">Reporting prêt pour le board</p>
-                    <p className="text-sm text-muted-foreground">KPIs et forecast en 30 jours.</p>
+                    <p className="font-semibold text-foreground">{lpText(locale, "Reporting prêt pour le board")}</p>
+                    <p className="text-sm text-muted-foreground">{lpText(locale, "KPIs et forecast en 30 jours.")}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <span className="text-2xl shrink-0" aria-hidden>⚡</span>
                   <div>
-                    <p className="font-semibold text-foreground">DAF senior sans CDI</p>
-                    <p className="text-sm text-muted-foreground">Flexible, dès 3 mois d&apos;engagement.</p>
+                    <p className="font-semibold text-foreground">{lpText(locale, "DAF senior sans CDI")}</p>
+                    <p className="text-sm text-muted-foreground">{lpText(locale, "Flexible, dès 3 mois d'engagement.")}</p>
                   </div>
                 </li>
               </ul>
@@ -649,20 +623,17 @@ export default function LandingPageClient() {
               {/* Social proof */}
               <div className="pt-6 border-t border-gray-200">
                 <p className="text-sm text-muted-foreground">
-                  ⭐ <strong>5/5 sur Trustfolio</strong> · <strong>{CLIENTS_ACCOMPAGNES} entreprises accompagnées</strong> ·{' '}
-                  <strong>100 M€+ levés par nos clients</strong>
+                  ⭐ <strong>{lpText(locale, "5/5 sur Trustfolio")}</strong> · <strong>{CLIENTS_ACCOMPAGNES}{lpText(locale, " entreprises accompagnées")}</strong> ·{' '}
+                  <strong>{lpText(locale, "100 M€+ levés par nos clients")}</strong>
                 </p>
-                <p className="mt-3 text-xs text-muted-foreground">
-                  Vous préférez un échange par email ?{' '}
+                <p className="mt-3 text-xs text-muted-foreground">{lpText(locale, "Vous préférez un échange par email ?")}{' '}
                   <a
-                    href="/contact"
+                    href={parityHref("/contact", locale)}
                     onClick={() => {
-                      pushToDataLayer('cta_click', { cta_text: 'Nous contacter', cta_position: 'hero' });
+                      pushToDataLayer('cta_click', { cta_text: "Nous contacter", cta_position: 'hero' });
                     }}
                     className="text-iter-violet hover:underline font-medium"
-                  >
-                    Nous contacter
-                  </a>
+                  >{lpText(locale, "Nous contacter")}</a>
                 </p>
               </div>
             </div>
@@ -670,13 +641,9 @@ export default function LandingPageClient() {
             {/* ── Right: lead form (2/5) — above the fold on desktop ── */}
             <div className="lg:col-span-2" id="conversion-form">
               <div className="site-card bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-xl">
-                <p className="text-base sm:text-lg font-bold text-foreground mb-1">
-                  Faites le point avec un DAF senior
-                </p>
-                <p className="text-sm text-muted-foreground mb-5">
-                  30 minutes, sans engagement. Réponse sous 24 h.
-                </p>
-                <ConversionForm />
+                <p className="text-base sm:text-lg font-bold text-foreground mb-1">{lpText(locale, "Faites le point avec un DAF senior")}</p>
+                <p className="text-sm text-muted-foreground mb-5">{lpText(locale, "30 minutes, sans engagement. Réponse sous 24 h.")}</p>
+                <ConversionForm locale={locale} />
               </div>
             </div>
           </div>
@@ -687,45 +654,33 @@ export default function LandingPageClient() {
       <section className="site-section py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
-              Pourquoi attendre que la trésorerie devienne un sujet urgent ?
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              La comptabilité vous dit ce qui s&apos;est passé. Le DAF vous aide à décider ce qui doit se passer ensuite.
-            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">{lpText(locale, "Pourquoi attendre que la trésorerie devienne un sujet urgent ?")}</h2>
+            <p className="text-lg text-muted-foreground">{lpText(locale, "La comptabilité vous dit ce qui s'est passé. Le DAF vous aide à décider ce qui doit se passer ensuite.")}</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <div className="site-card p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
-              <p className="font-semibold text-foreground mb-2">💧 Vous manquez de visibilité sur votre trésorerie ?</p>
-              <p className="text-sm text-muted-foreground">
-                Vous ne savez pas précisément combien de mois vous pouvez tenir, ni quelles décisions prendre avant que la tension n&apos;arrive.
-              </p>
+              <p className="font-semibold text-foreground mb-2">{lpText(locale, "💧 Vous manquez de visibilité sur votre trésorerie ?")}</p>
+              <p className="text-sm text-muted-foreground">{lpText(locale, "Vous ne savez pas précisément combien de mois vous pouvez tenir, ni quelles décisions prendre avant que la tension n'arrive.")}</p>
             </div>
             <div className="site-card p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
-              <p className="font-semibold text-foreground mb-2">📑 Vos reportings prennent trop de temps ?</p>
-              <p className="text-sm text-muted-foreground">
-                Les chiffres circulent dans plusieurs fichiers, les versions changent, et personne n&apos;a la même lecture de la situation.
-              </p>
+              <p className="font-semibold text-foreground mb-2">{lpText(locale, "📑 Vos reportings prennent trop de temps ?")}</p>
+              <p className="text-sm text-muted-foreground">{lpText(locale, "Les chiffres circulent dans plusieurs fichiers, les versions changent, et personne n'a la même lecture de la situation.")}</p>
             </div>
             <div className="site-card p-6 rounded-lg bg-iter-violet/5 border border-iter-violet/10">
-              <p className="font-semibold text-foreground mb-2">🤝 Vous devez rassurer votre board ou des investisseurs ?</p>
-              <p className="text-sm text-muted-foreground">
-                Prévisionnel, KPIs, data room, scénario de trésorerie : vos chiffres doivent être solides avant les discussions importantes.
-              </p>
+              <p className="font-semibold text-foreground mb-2">{lpText(locale, "🤝 Vous devez rassurer votre board ou des investisseurs ?")}</p>
+              <p className="text-sm text-muted-foreground">{lpText(locale, "Prévisionnel, KPIs, data room, scénario de trésorerie : vos chiffres doivent être solides avant les discussions importantes.")}</p>
             </div>
           </div>
 
           <div className="text-center mt-12">
             <button
               onClick={() => {
-                pushToDataLayer('cta_click', { cta_text: 'Parler de ma situation', cta_position: 'problem_section' });
+                pushToDataLayer('cta_click', { cta_text: "Parler de ma situation", cta_position: 'problem_section' });
                 document.getElementById('conversion-form')?.scrollIntoView({ behavior: 'smooth' });
               }}
               className="inline-block px-8 py-3 rounded-full border-2 border-iter-violet text-iter-violet hover:bg-iter-violet/5 transition-all duration-300 font-semibold"
-            >
-              Parler de ma situation
-            </button>
+            >{lpText(locale, "Parler de ma situation")}</button>
           </div>
         </div>
       </section>
@@ -733,44 +688,31 @@ export default function LandingPageClient() {
       {/* SECTION 3: SOLUTION */}
       <section className="site-section py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
         <div className="container max-w-4xl">
-          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-8 text-center">
-            Un DAF externalisé, pour piloter sans recruter trop tôt
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-8 text-center">{lpText(locale, "Un DAF externalisé, pour piloter sans recruter trop tôt")}</h2>
 
           <div className="prose prose-sm max-w-none mb-12 text-center">
-            <p className="text-lg text-muted-foreground">
-              Un DAF externalisé, aussi appelé DAF à temps partagé ou CFO part-time, intervient auprès de votre entreprise quelques jours par mois ou sur une mission précise.
-              <br />
-              <br />
-              Il devient le bras droit financier du dirigeant : il met de l&apos;ordre dans les chiffres, structure les reportings, anticipe la trésorerie et aide à prendre les bonnes décisions au bon moment.
-            </p>
+            <p className="text-lg text-muted-foreground">{lpText(locale, "Un DAF externalisé, aussi appelé DAF à temps partagé ou CFO part-time, intervient auprès de votre entreprise quelques jours par mois ou sur une mission précise.")}<br />
+              <br />{lpText(locale, "Il devient le bras droit financier du dirigeant : il met de l'ordre dans les chiffres, structure les reportings, anticipe la trésorerie et aide à prendre les bonnes décisions au bon moment.")}</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
             <div className="site-card bg-white p-6 rounded-lg border border-gray-200">
-              <p className="text-foreground font-semibold mb-2">✅ Accès à un profil senior</p>
-              <p className="text-sm text-muted-foreground">
-                Sans supporter le coût d&apos;un recrutement à plein temps.
-              </p>
+              <p className="text-foreground font-semibold mb-2">{lpText(locale, "✅ Accès à un profil senior")}</p>
+              <p className="text-sm text-muted-foreground">{lpText(locale, "Sans supporter le coût d'un recrutement à plein temps.")}</p>
             </div>
             <div className="site-card bg-white p-6 rounded-lg border border-gray-200">
-              <p className="text-foreground font-semibold mb-2">✅ Visibilité sur vos chiffres</p>
-              <p className="text-sm text-muted-foreground">
-                Cash, marges, budgets, priorités financières claires.
-              </p>
+              <p className="text-foreground font-semibold mb-2">{lpText(locale, "✅ Visibilité sur vos chiffres")}</p>
+              <p className="text-sm text-muted-foreground">{lpText(locale, "Cash, marges, budgets, priorités financières claires.")}</p>
             </div>
             <div className="site-card bg-white p-6 rounded-lg border border-gray-200">
-              <p className="text-foreground font-semibold mb-2">✅ Routines financières simples</p>
-              <p className="text-sm text-muted-foreground">
-                Lisibles, utiles et alignées avec votre pilotage.
-              </p>
+              <p className="text-foreground font-semibold mb-2">{lpText(locale, "✅ Routines financières simples")}</p>
+              <p className="text-sm text-muted-foreground">{lpText(locale, "Lisibles, utiles et alignées avec votre pilotage.")}</p>
             </div>
           </div>
 
           <div className="site-card bg-white p-6 rounded-lg border border-gray-200 text-center mb-8">
             <p className="text-sm text-muted-foreground">
-              <strong>Iter Advisors ne remplace pas votre expert-comptable.</strong> Nous complétons son travail en transformant vos chiffres en outils de pilotage.
-            </p>
+              <strong>{lpText(locale, "Iter Advisors ne remplace pas votre expert-comptable.")}</strong>{lpText(locale, " Nous complétons son travail en transformant vos chiffres en outils de pilotage.")}</p>
           </div>
         </div>
       </section>
@@ -778,21 +720,17 @@ export default function LandingPageClient() {
       {/* SECTION 4: MISSIONS */}
       <section className="site-section py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-4xl">
-          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4 text-center">
-            Ce que votre DAF externalisé peut prendre en main
-          </h2>
-          <p className="text-lg text-muted-foreground text-center mb-12">
-            L&apos;intervention s&apos;adapte à votre niveau de maturité : urgence cash, reporting board, structuration finance, levée de fonds ou renfort ponctuel.
-          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4 text-center">{lpText(locale, "Ce que votre DAF externalisé peut prendre en main")}</h2>
+          <p className="text-lg text-muted-foreground text-center mb-12">{lpText(locale, "L'intervention s'adapte à votre niveau de maturité : urgence cash, reporting board, structuration finance, levée de fonds ou renfort ponctuel.")}</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'Pilotage de trésorerie', desc: 'Prévisions 13 semaines, suivi du cash, anticipation des tensions.' },
-              { title: 'Budget et forecast', desc: 'Business plan, reforecast mensuel et analyse des écarts.' },
-              { title: 'Reporting dirigeant et board', desc: 'KPIs financiers, tableaux de bord prêts à partager.' },
-              { title: 'Levée de fonds et financement', desc: 'Prévisionnel, business plan, data room financière.' },
-              { title: 'Contrôle de gestion', desc: 'Analyse des marges, rentabilité par activité, pricing.' },
-              { title: 'Structuration finance', desc: 'Mise en place des outils, fiabilisation des données.' },
+              { title: lpText(locale, "Pilotage de trésorerie"), desc: lpText(locale, "Prévisions 13 semaines, suivi du cash, anticipation des tensions.") },
+              { title: lpText(locale, "Budget et forecast"), desc: lpText(locale, "Business plan, reforecast mensuel et analyse des écarts.") },
+              { title: lpText(locale, "Reporting dirigeant et board"), desc: lpText(locale, "KPIs financiers, tableaux de bord prêts à partager.") },
+              { title: lpText(locale, "Levée de fonds et financement"), desc: lpText(locale, "Prévisionnel, business plan, data room financière.") },
+              { title: lpText(locale, "Contrôle de gestion"), desc: lpText(locale, "Analyse des marges, rentabilité par activité, pricing.") },
+              { title: lpText(locale, "Structuration finance"), desc: lpText(locale, "Mise en place des outils, fiabilisation des données.") },
             ].map((mission, idx) => (
               <div key={idx} className="site-card p-6 rounded-lg bg-white border border-gray-200 hover:border-iter-violet/30 transition-colors">
                 <h3 className="font-semibold text-foreground mb-2">{mission.title}</h3>
@@ -808,9 +746,7 @@ export default function LandingPageClient() {
                 document.getElementById('conversion-form')?.scrollIntoView({ behavior: 'smooth' });
               }}
               className="inline-block px-8 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all"
-            >
-              Identifier mes priorités finance
-            </button>
+            >{lpText(locale, "Identifier mes priorités finance")}</button>
           </div>
         </div>
       </section>
@@ -818,32 +754,28 @@ export default function LandingPageClient() {
       {/* SECTION 5: COMPARISON */}
       <section className="site-section py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
         <div className="container max-w-5xl">
-          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4 text-center">
-            Expert-comptable, DAF salarié ou DAF externalisé ?
-          </h2>
-          <p className="text-lg text-muted-foreground text-center mb-12">
-            Ces rôles ne répondent pas au même besoin. L&apos;expert-comptable sécurise la production comptable. Le DAF salarié structure une direction financière. Le DAF externalisé vous donne un pilotage senior sans recruter trop tôt.
-          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4 text-center">{lpText(locale, "Expert-comptable, DAF salarié ou DAF externalisé ?")}</h2>
+          <p className="text-lg text-muted-foreground text-center mb-12">{lpText(locale, "Ces rôles ne répondent pas au même besoin. L'expert-comptable sécurise la production comptable. Le DAF salarié structure une direction financière. Le DAF externalisé vous donne un pilotage senior sans recruter trop tôt.")}</p>
 
           <div className="overflow-x-auto mb-8">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-300">
-                  <th className="text-left p-3 font-semibold">Critère</th>
-                  <th className="text-left p-3 font-semibold">Expert-comptable</th>
-                  <th className="text-left p-3 font-semibold">DAF salarié</th>
-                  <th className="text-left p-3 font-semibold bg-iter-chartreuse/10">DAF externalisé Iter</th>
+                  <th className="text-left p-3 font-semibold">{lpText(locale, "Critère")}</th>
+                  <th className="text-left p-3 font-semibold">{lpText(locale, "Expert-comptable")}</th>
+                  <th className="text-left p-3 font-semibold">{lpText(locale, "DAF salarié")}</th>
+                  <th className="text-left p-3 font-semibold bg-iter-chartreuse/10">{lpText(locale, "DAF externalisé Iter")}</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  ['Rôle principal', 'Comptabilité, fiscalité, obligations', 'Direction financière interne', 'Pilotage financier partagé'],
-                  ['Trésorerie et forecast', 'Variable', 'Fort', 'Fort, rapidement'],
-                  ['Reporting board', 'Variable', 'Fort', 'Structuré en semaines'],
-                  ['Budget et contrôle de gestion', 'Variable', 'Fort', 'Fort, adapté'],
-                  ['Coût annuel', 'Selon périmètre', 'Élevé, charge fixe', 'Adapté au besoin'],
-                  ['Délai de mise en place', 'Variable', '3-6 mois', 'Rapide'],
-                  ['Engagement', 'Mission ou forfait', 'CDI', '3 mois initial'],
+                  [lpText(locale, "Rôle principal"), lpText(locale, "Comptabilité, fiscalité, obligations"), lpText(locale, "Direction financière interne"), lpText(locale, "Pilotage financier partagé")],
+                  [lpText(locale, "Trésorerie et forecast"), lpText(locale, "Variable"), lpText(locale, "Fort"), lpText(locale, "Fort, rapidement")],
+                  [lpText(locale, "Reporting board"), lpText(locale, "Variable"), lpText(locale, "Fort"), lpText(locale, "Structuré en semaines")],
+                  [lpText(locale, "Budget et contrôle de gestion"), lpText(locale, "Variable"), lpText(locale, "Fort"), lpText(locale, "Fort, adapté")],
+                  [lpText(locale, "Coût annuel"), lpText(locale, "Selon périmètre"), lpText(locale, "Élevé, charge fixe"), lpText(locale, "Adapté au besoin")],
+                  [lpText(locale, "Délai de mise en place"), lpText(locale, "Variable"), lpText(locale, "3-6 mois"), lpText(locale, "Rapide")],
+                  [lpText(locale, "Engagement"), lpText(locale, "Mission ou forfait"), lpText(locale, "CDI"), lpText(locale, "3 mois initial")],
                 ].map((row, idx) => (
                   <tr key={idx} className="border-b border-gray-200">
                     <td className="p-3 font-semibold text-foreground">{row[0]}</td>
@@ -857,9 +789,7 @@ export default function LandingPageClient() {
           </div>
 
           <div className="site-card bg-white p-6 rounded-lg border border-gray-200 text-center">
-            <p className="text-sm text-muted-foreground">
-              Le DAF externalisé ne remplace pas votre expert-comptable. Il l&apos;aide à devenir une source fiable pour piloter l&apos;entreprise, pas seulement pour produire les comptes.
-            </p>
+            <p className="text-sm text-muted-foreground">{lpText(locale, "Le DAF externalisé ne remplace pas votre expert-comptable. Il l'aide à devenir une source fiable pour piloter l'entreprise, pas seulement pour produire les comptes.")}</p>
           </div>
         </div>
       </section>
@@ -867,26 +797,24 @@ export default function LandingPageClient() {
       {/* SECTION 6: METHOD */}
       <section className="site-section py-16 sm:py-24 lg:py-32 bg-background">
         <div className="container max-w-4xl">
-          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-12 text-center">
-            Une mise en place simple, en 3 étapes
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-12 text-center">{lpText(locale, "Une mise en place simple, en 3 étapes")}</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
             {[
               {
                 step: '1',
-                title: 'Diagnostic rapide',
-                desc: 'Nous analysons votre situation, vos chiffres, vos outils, vos urgences et priorités financières.',
+                title: lpText(locale, "Diagnostic rapide"),
+                desc: lpText(locale, "Nous analysons votre situation, vos chiffres, vos outils, vos urgences et priorités financières."),
               },
               {
                 step: '2',
-                title: 'Plan d\'action priorisé',
-                desc: 'Nous définissons les premiers sujets : trésorerie, reporting, budget, forecast ou financement.',
+                title: lpText(locale, "Plan d'action priorisé"),
+                desc: lpText(locale, "Nous définissons les premiers sujets : trésorerie, reporting, budget, forecast ou financement."),
               },
               {
                 step: '3',
-                title: 'Pilotage régulier',
-                desc: 'Nous mettons en place les routines : points cash, reporting mensuel, arbitrages et décisions.',
+                title: lpText(locale, "Pilotage régulier"),
+                desc: lpText(locale, "Nous mettons en place les routines : points cash, reporting mensuel, arbitrages et décisions."),
               },
             ].map((item) => (
               <div key={item.step} className="site-card p-6 rounded-lg bg-white border border-gray-200">
@@ -904,9 +832,7 @@ export default function LandingPageClient() {
                 document.getElementById('conversion-form')?.scrollIntoView({ behavior: 'smooth' });
               }}
               className="inline-block px-8 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold hover:shadow-lg transition-all"
-            >
-              Lancer le diagnostic
-            </button>
+            >{lpText(locale, "Lancer le diagnostic")}</button>
           </div>
         </div>
       </section>
@@ -914,21 +840,17 @@ export default function LandingPageClient() {
       {/* SECTION 7: CREDIBILITY */}
       <section className="site-section py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
         <div className="container max-w-4xl">
-          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-8 text-center">
-            Des DAF qui ont déjà été à votre place
-          </h2>
-          <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            Un bon DAF externalisé ne se contente pas de commenter les chiffres. Il aide le dirigeant à prendre de meilleures décisions, avec des données fiables, des priorités claires et une vraie compréhension des enjeux business.
-          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-8 text-center">{lpText(locale, "Des DAF qui ont déjà été à votre place")}</h2>
+          <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">{lpText(locale, "Un bon DAF externalisé ne se contente pas de commenter les chiffres. Il aide le dirigeant à prendre de meilleures décisions, avec des données fiables, des priorités claires et une vraie compréhension des enjeux business.")}</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
             <div className="text-center">
               <p className="text-4xl font-bold text-iter-violet mb-2">{CLIENTS_ACCOMPAGNES}</p>
-              <p className="text-muted-foreground">Entreprises accompagnées</p>
+              <p className="text-muted-foreground">{lpText(locale, "Entreprises accompagnées")}</p>
             </div>
             <div className="text-center">
-              <p className="text-4xl font-bold text-iter-violet mb-2">100 M€+</p>
-              <p className="text-muted-foreground">Levés par nos clients</p>
+              <p className="text-4xl font-bold text-iter-violet mb-2">{lpText(locale, "100 M€+")}</p>
+              <p className="text-muted-foreground">{lpText(locale, "Levés par nos clients")}</p>
             </div>
           </div>
 
@@ -938,13 +860,11 @@ export default function LandingPageClient() {
                 <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
               ))}
             </div>
-            <p className="text-2xl font-bold text-foreground mb-2">5/5 sur Trustfolio</p>
-            <p className="text-sm text-muted-foreground">Basé sur {TRUSTFOLIO_REVIEW_COUNT} avis vérifiés</p>
+            <p className="text-2xl font-bold text-foreground mb-2">{lpText(locale, "5/5 sur Trustfolio")}</p>
+            <p className="text-sm text-muted-foreground">{lpText(locale, "Basé sur ")}{TRUSTFOLIO_REVIEW_COUNT}{lpText(locale, " avis vérifiés")}</p>
           </div>
 
-          <p className="text-center text-sm text-muted-foreground">
-            Cabinet basé à Barcelone, Paris et Toulouse, Iter Advisors accompagne des PME, startups et scale-ups dans leur pilotage financier, leur structuration finance et leurs opérations de croissance.
-          </p>
+          <p className="text-center text-sm text-muted-foreground">{lpText(locale, "Cabinet basé à Barcelone, Paris et Toulouse, Iter Advisors accompagne des PME, startups et scale-ups dans leur pilotage financier, leur structuration finance et leurs opérations de croissance.")}</p>
         </div>
       </section>
 
@@ -957,19 +877,17 @@ export default function LandingPageClient() {
       {/* SECTION 9: FAQ */}
       <section className="site-section py-16 sm:py-24 lg:py-32 bg-iter-violet/2">
         <div className="container max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-12 text-center">
-            Questions fréquentes
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-12 text-center">{lpText(locale, "Questions fréquentes")}</h2>
 
-          <FAQ />
+          <FAQ locale={locale} />
         </div>
       </section>
 
       {/* Sticky Footer */}
-      <StickyCTAFooter />
+      <StickyCTAFooter locale={locale} />
 
       {/* Footer */}
-      <Footer locale="fr" />
+      <Footer locale={locale} />
 
       {/* Schemas */}
       <script
@@ -977,18 +895,18 @@ export default function LandingPageClient() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'Service',
-            name: 'DAF externalisé pour PME et startups',
-            serviceType: 'Direction financière externalisée',
+            '@type': lpText(locale, "Service"),
+            name: lpText(locale, "DAF externalisé pour PME et startups"),
+            serviceType: lpText(locale, "Direction financière externalisée"),
             provider: {
               '@type': 'Organization',
-              name: 'Iter Advisors',
+              name: lpText(locale, "Iter Advisors"),
               url: 'https://www.iteradvisors.com',
             },
-            areaServed: [{ '@type': 'Country', name: 'France' }],
+            areaServed: [{ '@type': 'Country', name: lpText(locale, "France") }],
             audience: {
               '@type': 'Audience',
-              audienceType: 'PME, Startups, Scale-ups',
+              audienceType: lpText(locale, "PME, Startups, Scale-ups"),
             },
           }),
         }}

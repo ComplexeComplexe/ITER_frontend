@@ -1,20 +1,7 @@
-import { Metadata } from "next";
-import JobsPage from "@/components/pages/JobsPage";
-import { buildMetadata } from "@/lib/metadata";
-import { getCmsNavigation, getJobOffers } from "@/lib/static-content";
-
-export const metadata: Metadata = buildMetadata({
-  locale: "es",
-  title: "Empleo finanzas y CFO externalizado | Iter Advisors",
-  description: "Únete a Iter Advisors. Carreras finanzas: CFO, Finance Manager, Consultor. Ayuda startups y pymes a escalar. Oportunidades impactantes en finanzas.",
-  path: "/jobs",
-  noindex: true,
-});
-
-export default async function Page() {
-  const [cmsNavigation, cmsJobs] = await Promise.all([
-    getCmsNavigation("es"),
-    getJobOffers("es"),
-  ]);
-  return <JobsPage locale="es" cmsNavigation={cmsNavigation} cmsJobs={cmsJobs} />;
+import LocalizedEditorialPage, { editorialMetadata } from '@/lib/content/localized-editorial';
+const source = "/jobs";
+const locale = 'es' as const;
+export const metadata = editorialMetadata(source, locale);
+export default function Page({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  return <LocalizedEditorialPage source={source} locale={locale} searchParams={searchParams} />;
 }

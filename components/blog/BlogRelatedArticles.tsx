@@ -1,3 +1,5 @@
+import { editorialAsset } from "@/lib/content/editorial-assets";
+import { editorialText } from "@/lib/content/editorial-text";
 import Link from "next/link";
 import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
@@ -60,8 +62,8 @@ export default function BlogRelatedArticles({
             <Link key={c.slug} href={c.href} className="group block">
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl mb-4 bg-muted">
                 <Image
-                  src={c.image}
-                  alt={c.alt}
+                  src={editorialAsset(c.image, locale)}
+                  alt={locale === "fr" ? c.alt : editorialText(c.alt, locale)}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

@@ -27,13 +27,17 @@ for (const migration of migrations) {
 }
 // Previously localized aliases must skip the now-redirected article too.
 for (const slug of ['drh-externalise-quand-et-pourquoi', 'daf-externalise-barcelone-guide-startups-espagnoles']) {
-  const target = migrations.find(item => item.slug === slug).target;
+  const targets = slug === 'drh-externalise-quand-et-pourquoi'
+    ? { en: '/en/hr-outsourcing', es: '/es/externalizacion-rrhh' }
+    : { en: '/en/fractional-cfo-barcelona', es: '/es/cfo-externalizado-barcelona' };
   for (const prefix of ['/en/ressources/blog/', '/es/recursos/blog/']) {
+    const target = targets[prefix.startsWith('/en/') ? 'en' : 'es'];
     const source = prefix + slug;
     const response = await fetch(base + source, { redirect: 'manual' });
     const location = new URL(response.headers.get('location') ?? source, base).pathname;
     routes.push({ source, status: response.status, location });
-    if (![301, 308].includes(response.status) || location !== target) failures.push({ source, test: 'flattened-historical-alias' });
+    const final = await fetch(base + target, { redirect: 'manual' });
+    if (![301, 308].includes(response.status) || location !== target || final.status !== 200) failures.push({ source, test: 'flattened-historical-alias' });
   }
 }
 let cursor = 0;

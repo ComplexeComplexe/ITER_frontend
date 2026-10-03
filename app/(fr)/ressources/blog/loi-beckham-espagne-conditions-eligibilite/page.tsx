@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: "Loi Beckham : conditions d'éligibilité 2026",
   description:
     "Qui peut bénéficier de la loi Beckham en Espagne ? Conditions, délais de demande, salariés et dirigeants : le point complet 2026.",
-  alternates: {
+  alternates: {...publishedMetadataAlternates("/ressources/blog/loi-beckham-espagne-conditions-eligibilite"),
     canonical:
       "https://www.iteradvisors.com/ressources/blog/loi-beckham-espagne-conditions-eligibilite",
   },

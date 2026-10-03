@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import { Metadata } from "next";
 import LeadGenPage from "@/components/pages/LeadGenPage";
 import { getCmsNavigation } from "@/lib/static-content";
@@ -7,6 +8,7 @@ import {
 } from "@/lib/content/facts";
 
 export const metadata: Metadata = {
+  alternates: publishedMetadataAlternates("/profil"),
   title: "Diagnostic DAF | Iter Advisors",
   description: "Évaluez vos besoins financiers en 2 minutes. Diagnostic personnalisé gratuit. Découvrez comment un DAF externalisé peut aider votre entreprise.",
   robots: { index: false, follow: false },

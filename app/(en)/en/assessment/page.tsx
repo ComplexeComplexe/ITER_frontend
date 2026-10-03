@@ -1,8 +1,10 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 import { Metadata } from "next";
 import QualificationPage from "@/components/pages/QualificationPage";
 import { getCmsNavigation } from "@/lib/static-content";
 
 export const metadata: Metadata = {
+  alternates: publishedMetadataAlternates("/en/assessment"),
   title: "Company Assessment | Iter Advisors",
   description: "Assess your company's financial maturity in 5 minutes. Get a personalized diagnostic and recommendations from our CFO experts. Free qualification.",
   robots: { index: false, follow: false },

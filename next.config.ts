@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { localeRedirects } from "./lib/locale-redirects";
 
 const nextConfig: NextConfig = {
   trailingSlash: false,
@@ -106,7 +107,7 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    return [
+    return localeRedirects([
       // Consolidation des intentions FR, avec conservation des contenus utiles.
       { source: "/ressources/blog/cout-externalisation-comptable-2026", destination: "/ressources/blog/externalisation-comptable", statusCode: 301 },
       { source: "/ressources/blog/drh-externalise-quand-et-pourquoi", destination: "/drh-externalise", statusCode: 301 },
@@ -1198,7 +1199,7 @@ const nextConfig: NextConfig = {
       // no further rule; EN has no rewrite at all, so needs a direct rule.
       { source: "/es/recursos/fiscalite/:path*", destination: "/ressources/fiscalite/:path*", permanent: true },
       { source: "/en/ressources/fiscalite/:path*", destination: "/ressources/fiscalite/:path*", permanent: true },
-    ];
+    ]);
   },
 };
 

@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 
 
 import { Metadata } from 'next';
@@ -7,7 +8,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: "Moderniser le travail du CFO : données et IA | Iter Advisors",
   description: "Comment le rôle du CFO évolue avec la digitalisation, l'IA et les enjeux ESG. Compétences, missions et leadership du directeur financier moderne.",
-  alternates: {
+  alternates: {...publishedMetadataAlternates("/ressources/blog/la-modernisation-du-role-de-cfo"),
     canonical: "https://www.iteradvisors.com/ressources/blog/la-modernisation-du-role-de-cfo",
   },
   openGraph: {

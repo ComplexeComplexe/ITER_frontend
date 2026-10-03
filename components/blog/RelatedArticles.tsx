@@ -1,3 +1,4 @@
+import { publishedPaths } from "@/lib/locale-route-map";
 import BlogRelatedArticles from './BlogRelatedArticles';
 import { BLOG_COVERS } from '@/lib/blog-covers';
 import type { Locale } from '@/lib/i18n';
@@ -16,7 +17,7 @@ interface RelatedArticlesProps {
 /** Keep hand-picked destinations while sharing the site-wide card treatment. */
 export default function RelatedArticles({ locale, articles }: RelatedArticlesProps) {
   return <BlogRelatedArticles locale={locale} items={articles.map(article => {
-    const slug = article.url.split('/').filter(Boolean).pop() || article.url;
+    const slug = (publishedPaths(article.url)?.fr ?? article.url).split('/').filter(Boolean).pop() || article.url;
     const cover = BLOG_COVERS[slug];
     return { slug, href: article.url, title: article.title, category: article.category,
       image: cover?.cover || '/images/logos/iter-advisors-brand.png', alt: cover?.alt || article.title,

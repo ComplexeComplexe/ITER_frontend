@@ -1,3 +1,4 @@
+import { publishedMetadataAlternates } from "@/lib/metadata";
 
 
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   // also indexed in the past; a 301 redirect (next.config.ts L129)
   // now resolves it here, and this canonical sets the short slug as
   // the single indexable URL for the article.
-  alternates: {
+  alternates: {...publishedMetadataAlternates("/ressources/blog/les-10-outils-pour-cfos-startup"),
     canonical: "https://www.iteradvisors.com/ressources/blog/les-10-outils-pour-cfos-startup",
   },
   openGraph: {

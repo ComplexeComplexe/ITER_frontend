@@ -15,6 +15,7 @@
  */
 
 import Link from "next/link";
+import type { Locale } from "@/lib/i18n";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { ArrowRight } from "lucide-react";
@@ -31,6 +32,7 @@ export interface BlogCardData {
 }
 
 interface BlogFilterableGridProps {
+  locale?: Locale;
   cards: BlogCardData[];
   /** Localised "All" pill label. */
   allLabel: string;
@@ -39,6 +41,7 @@ interface BlogFilterableGridProps {
 }
 
 export default function BlogFilterableGrid({
+  locale = "fr",
   cards,
   allLabel,
   readTimeSuffix,
@@ -83,7 +86,7 @@ export default function BlogFilterableGrid({
       {categories.length > 1 && (
         <div
           role="tablist"
-          aria-label="Filtres par catégorie"
+          aria-label={{ fr: "Filtres par catégorie", en: "Filter by category", es: "Filtrar por categoría" }[locale]}
           className="mb-10 flex flex-wrap gap-2"
         >
           <button

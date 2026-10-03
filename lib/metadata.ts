@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Locale } from "./i18n";
 import { getLocalizedPath } from "./path-localization";
+import { publishedPaths } from "./locale-route-map";
 
 
 const localeMap: Record<Locale, string> = {
@@ -71,9 +72,12 @@ export function buildMetadata({
   const currentFull = locale === "fr" ? safePath : `/${locale}${safePath === "/" ? "" : safePath}`;
   const derive = (target: Locale) => stripLocale(getLocalizedPath(currentFull, target), target);
 
-  const frPath = localizedPaths?.fr ?? derive("fr");
-  const enPath = stripLocale(localizedPaths?.en ?? derive("en"), "en");
-  const esPath = stripLocale(localizedPaths?.es ?? derive("es"), "es");
+  const published = publishedPaths(currentFull);
+  const effectivePaths = published ?? localizedPaths;
+  const absent = published ? [] : disableHreflang;
+  const frPath = effectivePaths?.fr ?? derive("fr");
+  const enPath = stripLocale(effectivePaths?.en ?? derive("en"), "en");
+  const esPath = stripLocale(effectivePaths?.es ?? derive("es"), "es");
 
   // SEO-P0-01: RFC 5646 language-region codes as keys so Next.js renders
   // <link rel="alternate" hreflang="fr-FR" href="..." /> in <head>.
@@ -94,13 +98,13 @@ export function buildMetadata({
     "en-GB": enUrl,
     "es-ES": esUrl,
   };
-  if (disableHreflang?.includes("en")) delete languages["en-GB"];
-  if (disableHreflang?.includes("es")) delete languages["es-ES"];
+  if (absent?.includes("en")) delete languages["en-GB"];
+  if (absent?.includes("es")) delete languages["es-ES"];
   // SEO-AUD-0824 §2 — le français pouvait lui aussi manquer : un article publié
   // seulement en espagnol déclarait un alternate FR qui redirige vers la liste
   // des articles. On retire alors fr-FR, et x-default désigne la page courante
   // plutôt qu'une traduction française inexistante.
-  if (disableHreflang?.includes("fr")) {
+  if (absent?.includes("fr")) {
     delete languages["fr-FR"];
     languages["x-default"] = url;
   }
@@ -220,4 +224,14 @@ export async function buildStrapiCollectionMetadata({
     localizedPaths,
     disableHreflang,
   });
+}
+
+/** Static route metadata uses the same truthful cluster as the language menu. */
+export function publishedMetadataAlternates(path: string): Metadata['alternates'] {
+  const base = 'https://www.iteradvisors.com';
+  const paths = publishedPaths(path);
+  return {
+    canonical: base + path,
+    ...(paths ? { languages: { 'fr-FR': base + paths.fr, 'en-GB': base + paths.en, 'es-ES': base + paths.es, 'x-default': base + paths.fr } } : {}),
+  };
 }

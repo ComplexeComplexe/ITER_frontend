@@ -392,15 +392,14 @@ export default function Header({
                     {l}
                   </span>
                 ) : translations[l] ? (
-                  <Link
-                locale={locale}
+                  <NativeLink
                     key={l}
                     href={translations[l]!}
                     onClick={() => setMobileOpen(false)}
                     className="text-xs uppercase tracking-widest px-3 py-1.5 border rounded-lg border-white/10 text-white/40 hover:text-white hover:border-white/30 transition-colors"
                   >
                     {l}
-                  </Link>
+                  </NativeLink>
                 ) : (
                   <span key={l} aria-disabled="true" className="text-xs px-3 py-1.5 text-white/60">
                     {l.toUpperCase()}<span className="block text-[10px]">{unavailable}</span>
