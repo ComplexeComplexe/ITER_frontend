@@ -1,3 +1,4 @@
+import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 import { parityHref } from "@/lib/locale-route-map";
 import HRExpert from "@/components/HRExpert";
 import ExpertProfileSections from "@/components/ExpertProfileSections";
@@ -114,6 +115,7 @@ export default function AuthorPage({
   const fullName = `${member.firstName} ${member.lastName}`;
   const canonicalPath = `${t.aboutHref}/${member.slug}`;
   const isFinanceExpert = member.slug === FINANCE_EXPERT.slug;
+  const isNewCfo = ["hugo-lepresle", "gonzalo-serratosa-de-caralt"].includes(member.slug);
   const personId = editorialPersonId(canonicalPath);
   const personSchema = {
     "@context": "https://schema.org",
@@ -142,7 +144,7 @@ export default function AuthorPage({
       {/* Person JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [personSchema, { "@type": "ProfilePage", "@id": `https://www.iteradvisors.com${canonicalPath}#webpage`, url: `https://www.iteradvisors.com${canonicalPath}`, name: fullName, mainEntity: { "@id": personId }, ...(isFinanceExpert && { dateModified: locale === "fr" ? "2026-10-01" : "2026-10-03" }) }] }) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [personSchema, { "@type": "ProfilePage", "@id": `https://www.iteradvisors.com${canonicalPath}#webpage`, url: `https://www.iteradvisors.com${canonicalPath}`, name: fullName, mainEntity: { "@id": personId }, ...(isFinanceExpert && { dateModified: locale === "fr" ? "2026-10-01" : "2026-10-03" }), ...(isNewCfo && { datePublished: PAGE_REVISIONS[canonicalPath], dateModified: PAGE_REVISIONS[canonicalPath] }) }] }) }}
       />
 
       <section className="site-hero bg-background pt-32 pb-12 lg:pb-16">
