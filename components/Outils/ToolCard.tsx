@@ -5,7 +5,7 @@ export interface ToolCardProps {
   name: string;
   slug: string;
   logo: string;
-  /** SEO-optimized alt text for the logo (TICKET T3/T4). Optional for
+  /** Accessible brand label for the logo. Optional for
    *  backwards compat with callers that haven't been migrated yet. */
   logoAlt?: string;
   category: string;
@@ -66,7 +66,7 @@ export default function ToolCard({
         <p className="text-sm text-gray-700 mb-4 flex-grow">{shortDescription}</p>
 
         {/* CTA */}
-        <div className="inline-flex items-center gap-1 text-blue-900 font-semibold text-sm hover:gap-2 transition-all">
+        <div className="inline-flex items-center gap-1 text-iter-violet font-semibold text-sm hover:gap-2 transition-all">
           Voir la fiche
           <span>→</span>
         </div>

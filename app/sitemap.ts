@@ -479,6 +479,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const slug of TOOL_CATEGORY_SLUGS) {
     entries.push({ url: `${BASE}/ressources/outils/${slug}`, lastModified: D.tools });
   }
+  entries.push({ url: `${BASE}/ressources/outils/methode`, lastModified: "2026-10-03" });
   // SEO-REP §6.2 (2026-08-15) — page recrutement Fractional CFO, distincte de
   // /fractional-cfo-startups (commerciale) et absente du sitemap jusqu'ici.
   entries.push({ url: `${BASE}/carrieres/fractional-cfo`, lastModified: D.jobs });

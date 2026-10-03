@@ -5,7 +5,7 @@ export const TOOL_PRICING: Record<string, ToolPricing> = {
     "label": "Selon formule et utilisateurs",
     "url": "https://www.pennylane.com/fr/tarifs",
     "note": "Le prix dépend de la formule et des utilisateurs. Vérifier les modules, chaque entité et la facturation mensuelle ou annuelle.",
-    "checkedAt": "2026-09-05"
+    "checkedAt": "2026-10-03"
   },
   "agicap": {
     "label": "Sur devis",

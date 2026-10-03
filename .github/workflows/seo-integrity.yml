@@ -48,4 +48,5 @@ jobs:
           node scripts/audit-decision-guides.mjs http://127.0.0.1:3100
           node scripts/audit-cabinet-journey.mjs http://127.0.0.1:3100
           node scripts/audit-tool-cfo-journey.mjs http://127.0.0.1:3100
+          node scripts/audit-pennylane-review.mjs http://127.0.0.1:3100
           node scripts/audit-final-editorial.mjs http://127.0.0.1:3100

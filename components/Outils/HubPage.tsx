@@ -315,6 +315,22 @@ export default function HubPage({ locale = 'fr', cmsNavigation }: HubPageProps) 
         </div>
       </section>
 
+      <section className="site-section bg-background pb-12">
+        <div className="container grid md:grid-cols-2 gap-6">
+          <div className="site-card rounded-3xl border border-iter-violet/20 bg-iter-violet/5 p-7">
+            <p className="text-sm font-semibold text-iter-violet mb-3">Comptabilité et pilotage</p>
+            <h2 className="text-2xl font-heading font-bold mb-3">Notre analyse Pennylane</h2>
+            <p className="site-copy text-muted-foreground mb-5">Avantages, limites, tarifs par formule et contrôles de reprise : une lecture de CFO pour préparer votre choix.</p>
+            <Link href="/ressources/outils/pennylane" className="text-iter-violet font-semibold underline underline-offset-4">Lire notre avis Pennylane</Link>
+          </div>
+          <div className="site-card rounded-3xl border border-border p-7">
+            <h2 className="text-2xl font-heading font-bold mb-3">Ce que nos fiches permettent de vérifier</h2>
+            <p className="site-copy text-muted-foreground mb-5">Nous distinguons les fonctions documentées, les critères de direction financière et les résultats de missions lorsqu’ils sont étayés.</p>
+            <Link href="/ressources/outils/methode" className="text-iter-violet font-semibold underline underline-offset-4">Consulter notre méthode éditoriale</Link>
+          </div>
+        </div>
+      </section>
+
       {/* Stage-based recommendations */}
       <section id="recommandation-stade" className="site-section bg-muted/20 py-16 scroll-mt-24">
         <div className="container">

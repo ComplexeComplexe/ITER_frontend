@@ -108,7 +108,7 @@ export default function ToolHeader({
           {/* CTA */}
           <Link
             href={ctaUrl}
-            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-blue-900 text-blue-900 font-semibold rounded-lg hover:bg-blue-900 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-iter-violet text-iter-violet font-semibold rounded-lg hover:bg-iter-violet hover:text-white transition-colors"
           >
             Demander un avis personnalisé
             <span>→</span>
