@@ -173,8 +173,9 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
               highPrice: String(FORMULES[FORMULES.length - 1].prixMax),
               priceSpecification: {
                 "@type": "UnitPriceSpecification",
-                priceType: "https://schema.org/MinimumPrice",
-                price: String(FORMULES[0].prixMin),
+                minPrice: String(FORMULES[0].prixMin),
+                maxPrice: String(FORMULES[FORMULES.length - 1].prixMax),
+                valueAddedTaxIncluded: false,
                 priceCurrency: "EUR",
                 unitText: "MONTH",
               },

@@ -19,7 +19,7 @@ export const dafPillar = {
     lead: "Pilotez votre trésorerie, vos marges et vos financements avec un directeur financier senior dédié, sans recruter à temps plein.",
     intro: "Un DAF externalisé prend en charge le pilotage financier de votre entreprise quelques jours par mois. Il transforme les données comptables et opérationnelles en prévisions, en décisions et en actions suivies avec vous. Le temps partagé décrit ce rythme d’intervention ; fractional CFO est l’appellation anglophone courante.",
     landmarks: [
-      { label: "Budget mensuel", value: budget },
+      { label: "Budget mensuel indicatif", value: budget },
       { label: "Démarrage indicatif", value: DELAIS.missionDemarree },
       { label: "Engagement", value: `Sans durée minimale, préavis de ${ENGAGEMENT.preavisJours} jours` },
     ],
@@ -89,7 +89,7 @@ export const dafPillar = {
   },
   pricing: {
     heading: "Quel budget prévoir et que couvre le forfait ?",
-    intro: `Les missions récurrentes Iter vont de ${budget} par mois. Le forfait porte sur un périmètre de travail et un niveau de séniorité définis au devis. Les volumes de jours présentés dans les formules sont indicatifs : ils ne constituent pas un crédit d’heures.`,
+    intro: `La fourchette indicative des missions récurrentes Iter va de ${budget} par mois. Le forfait porte sur un périmètre de travail et un niveau de séniorité définis au devis. Les volumes de jours présentés dans les formules sont indicatifs : ils ne constituent pas un crédit d’heures.`,
     paragraphs: [
       "Le budget varie avec les livrables attendus, le nombre d’entités, la qualité des données et la complexité de l’organisation. Une entreprise dont le reporting existe déjà n’appelle pas le même travail qu’une fonction finance à reconstruire. La production, l’analyse et la supervision doivent donc être comparées ensemble lorsque vous examinez plusieurs propositions.",
       "Le socle Essentiel comprend notamment un reporting mensuel, un prévisionnel de trésorerie et une revue finance. Les autres formules élargissent le périmètre selon les besoins. Les projets ponctuels et les missions de transition font l’objet d’un chiffrage distinct ; une levée de fonds ou une acquisition n’est pas incluse par défaut dans toute mission récurrente.",

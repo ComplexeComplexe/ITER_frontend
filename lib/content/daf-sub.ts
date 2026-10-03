@@ -471,7 +471,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
             // BAROMÈTRE (2026-09-01) — répartition fournie par Guillaume Rostand,
             // arrondie à la dizaine (facts.ts, REPARTITION_CLIENTS_PAR_FORMULE).
             // La seule donnée de ce type publiée par un cabinet de DAF externalisé.
-            "Sur l'ensemble de nos missions de DAF externalisé, **40 % de nos clients sont sur la formule Essentiel, autour de 3 000 € HT par mois ; 40 % sur la formule Croissance, autour de 5 000 € HT par mois ; et 20 % au-delà** — formule Premium ou mission de transition. Ces montants sont des repères arrondis, pas les bornes des factures individuelles : la grille reste de 3 000 à 8 000 € HT par mois selon le périmètre.",
+            "Sur l'ensemble de nos missions de DAF externalisé, **40 % de nos clients sont sur la formule Essentiel, dont la fourchette indicative est de 3 000 à 5 000 € HT par mois ; 40 % sur Croissance, de 5 000 à 6 500 € HT par mois ; et 20 % sur Premium ou en mission de transition**. Premium se situe dans une fourchette de 6 500 à 8 000 € HT par mois ; la transition fait l'objet d'un devis adapté à sa durée et à son périmètre. Ces fourchettes ne constituent pas des tarifs fixes.",
             "Cette répartition est observée sur notre portefeuille au 1er septembre 2026 et arrondie à la dizaine ; elle bouge avec les missions. Elle ne remplace pas un devis, mais elle répond à la question que tout dirigeant se pose avant de nous appeler : et concrètement, les autres paient combien ?",
           ],
         },
@@ -524,8 +524,8 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           heading: "FAQ - Tarifs du DAF Externalisé",
           content: [
             "Le tarif est-il déductible fiscalement ? À vérifier avec votre conseil fiscal selon la situation de l'entreprise, les règles applicables et les justificatifs. Cette page ne constitue pas une évaluation fiscale.",
-            "Peut-on négocier le tarif ? Nos tarifs sont transparents et basés sur le marché. Nous pouvons adapter le périmètre confié à votre budget, mais nous ne négocions pas le prix des formules : il suit le profil engagé. La qualité de nos DAF justifie nos prix.",
-            "Combien paient la plupart de vos clients ? Au 1er septembre 2026, environ 40 % sont sur Essentiel, autour de 3 000 € HT par mois, 40 % sur Croissance, autour de 5 000 €, et 20 % au-delà. Ces repères sont arrondis : ils ne définissent pas les bornes des factures individuelles et ne remplacent pas le devis.",
+            "Peut-on négocier le tarif ? Les fourchettes donnent un repère de budget, pas un prix fixe. Nous pouvons adapter le périmètre, les livrables et le rythme à vos priorités. Le devis précise les travaux retenus et le profil mobilisé.",
+            "Combien paient la plupart de vos clients ? Les fourchettes mensuelles indicatives sont de 3 000 à 5 000 € HT pour Essentiel, de 5 000 à 6 500 € HT pour Croissance et de 6 500 à 8 000 € HT pour Premium. Le devis dépend du périmètre, du profil mobilisé, des outils et de la complexité de l'organisation.",
             "Y a-t-il un engagement de durée minimum ? Non. La résiliation est possible avec un préavis de 30 jours.",
             "Le tarif inclut-il les déplacements ? Pour les interventions en présentiel, les frais de déplacement (transport, hébergement si nécessaire) sont facturés en sus au coût réel. Les interventions en distanciel ne génèrent pas de frais supplémentaires.",
           ],
@@ -546,10 +546,9 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       sections: [
         {
           content: [
-            // MAILLAGE-T14 (2026-08-31) — réponse directe en tête. La grille ne
-            // varie pas par secteur : c'est le profil affecté qui change. Publier
-            // des fourchettes par secteur reviendrait à inventer des prix.
-            "**Un DAF externalisé spécialisé par secteur est un directeur financier qui connaît déjà les cycles, les marges et les risques de votre activité** — saisonnalité et stocks en e-commerce, supply chain et change en industrie, R&D longue et financement non dilutif en deep tech. La grille reste celle de toutes nos missions, de 3 000 à 8 000 € HT par mois : c'est le profil qui change, pas le prix.",
+            // Fourchettes indicatives partagées : aucun tarif sectoriel ni
+            // montant fixe ne peut être déduit sans cadrage de la mission.
+            "**Un DAF externalisé spécialisé par secteur est un directeur financier qui connaît déjà les cycles, les marges et les risques de votre activité** — saisonnalité et stocks en e-commerce, supply chain et change en industrie, R&D longue et financement non dilutif en deep tech. Les missions récurrentes se situent dans une fourchette indicative de 3 000 à 8 000 € HT par mois. Le devis dépend du périmètre, du profil et de la complexité de votre activité.",
             "Chaque secteur d'activité a ses spécificités financières. Une startup **SaaS** n'a pas les mêmes enjeux qu'une **ETI industrielle** ou une plateforme **e-commerce**. Les cycles de vente sont différents, les modèles économiques varient, les risques ne sont pas les mêmes.",
             "Le cadrage permet de présenter un profil et d'examiner son expérience sur les sujets utiles à votre activité. Les pages ci-dessous précisent les enjeux et livrables à discuter ; elles ne constituent pas, à elles seules, une preuve de mission réalisée dans chaque secteur.",
           ],
@@ -604,7 +603,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
         {
           heading: "FAQ - DAF externalisé par secteur",
           content: [
-            "**Un DAF spécialisé coûte-t-il plus cher qu'un généraliste ?** Non. La grille est la même pour toutes nos missions — de 3 000 à 8 000 € HT par mois selon la formule. La spécialisation joue sur le choix du profil affecté, pas sur le prix.",
+            "**Un DAF spécialisé coûte-t-il plus cher qu'un généraliste ?** La spécialisation fait partie du choix du profil, avec le périmètre et la complexité de la mission. Nos fourchettes récurrentes vont de 3 000 à 8 000 € HT par mois ; le devis précise le budget adapté, sans tarif uniforme par secteur.",
             "**Que gagne-t-on avec un DAF qui connaît le secteur ?** Du temps de montée en charge, surtout. Un DAF qui a déjà piloté un BFR industriel ou un stock e-commerce pose les bonnes questions dès la première semaine, et lit vos indicateurs sans qu'on les lui explique.",
             "**Et si mon secteur n'est pas listé ?** Les pages sectorielles couvrent les cas où la spécialisation change réellement l'intervention. Pour les autres activités, le cadrage initial identifie les enjeux propres à votre modèle — c'est l'objet du premier échange, sans engagement.",
           ],

@@ -48,7 +48,7 @@ export function HrFees({ locale }: { locale: Locale }) {
   const c = HR_COMMERCIAL_COPY[locale];
   const currency = (value: number) => new Intl.NumberFormat(locale === 'fr' ? 'fr-FR' : locale === 'en' ? 'en-IE' : 'es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
   const prices = [
-    `${locale === 'fr' ? 'Dès' : locale === 'en' ? 'From' : 'Desde'} ${currency(HR_COMMERCIAL_TERMS.light.from)}`,
+    c.project,
     `${currency(HR_COMMERCIAL_TERMS.regular.min)} à ${currency(HR_COMMERCIAL_TERMS.regular.max)}`.replace(' à ', locale === 'fr' ? ' à ' : locale === 'en' ? ' to ' : ' a '),
     c.project,
   ];
@@ -58,7 +58,7 @@ export function HrFees({ locale }: { locale: Locale }) {
       {c.priceLabels.map((label, i) => <article key={label} className="site-card p-6 flex flex-col">
         <h3 className="text-xl font-semibold mb-4">{label}</h3>
         <p className="text-2xl font-bold text-iter-violet mb-4">{prices[i]}</p>
-        {i < 2 && <p className="text-sm text-muted-foreground mb-4">{c.priceUnit}</p>}
+        {i === 1 && <p className="text-sm text-muted-foreground mb-4">{c.priceUnit}</p>}
         <p className="text-muted-foreground leading-relaxed flex-1">{c.priceScopes[i]}</p>
         <Link className="site-inline-link mt-5" href={parityHref('/contact#drh', locale)}>{c.request}</Link>
       </article>)}

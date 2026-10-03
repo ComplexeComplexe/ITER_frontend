@@ -393,7 +393,7 @@ export const dafContent: Record<Locale, DafContent> = {
     pricing: {
       heading: "Quel est le tarif d'un DAF externalisé ? Grille tarifaire 2026",
       content: [
-        "Une mission de DAF externalisé chez Iter Advisors démarre à 3 000 € HT par mois et va jusqu'à 8 000 € selon la formule. Nous ne facturons pas à l'heure : le retainer mensuel couvre un scope de travail défini au cadrage, et le prix suit le profil engagé — Finance Manager, CFO senior, ou CFO senior avec analyste dédié. Le détail de ce qui est inclus dans chacune, et la façon dont le devis se construit, sont sur notre [grille tarifaire détaillée](/daf-externalise/tarifs).",
+        "La fourchette indicative d'une mission récurrente de DAF externalisé chez Iter Advisors va de 3 000 à 8 000 € HT par mois, selon le périmètre et le profil. Nous ne facturons pas à l'heure : le retainer mensuel couvre un scope de travail défini au cadrage, et le prix suit le profil engagé — Finance Manager, CFO senior, ou CFO senior avec analyste dédié. Le détail de ce qui est inclus dans chacune, et la façon dont le devis se construit, sont sur notre [grille tarifaire détaillée](/daf-externalise/tarifs).",
       ],
     },
     pricingTable: {
@@ -605,7 +605,7 @@ export const dafContent: Record<Locale, DafContent> = {
         // traîne "différence daf externalisé salarié".
         question: "Quelle est la différence entre un DAF externalisé et un DAF salarié ?",
         answer:
-          "Le coût et l'engagement. Un DAF salarié représente 100 000 à 213 000 € de coût employeur annuel, charges comprises, et 3 à 6 mois de recrutement ; un DAF externalisé démarre à 3 000 € HT/mois, démarre sous 8 à 15 jours, et se résilie avec 30 jours de préavis sans durée minimale. Le recrutement se justifie quand le besoin devient un temps plein durable — un seuil qui dépend de la complexité de l'entreprise, pas de sa seule taille. Le tableau comparatif plus haut détaille les sept critères.",
+          "Le coût et l'engagement. Un DAF salarié représente 100 000 à 213 000 € de coût employeur annuel, charges comprises, et 3 à 6 mois de recrutement ; les honoraires indicatifs d'un DAF externalisé vont de 3 000 à 8 000 € HT/mois selon le périmètre. La mission démarre sous 8 à 15 jours et se résilie avec 30 jours de préavis sans durée minimale. Le recrutement se justifie quand le besoin devient un temps plein durable — un seuil qui dépend de la complexité de l'entreprise, pas de sa seule taille. Le tableau comparatif plus haut détaille les sept critères.",
       },
       {
         // GSC-01 (2026-07-19) — question People-Also-Ask fréquente. Détaille

@@ -173,7 +173,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
       meta: {
         title: "DAF externalisé Paris — CFO temps partagé | Iter Advisors",
         description:
-          `Iter Advisors, cabinet de DAF externalisé à Paris. CFO à temps partagé pour PME et startups en Ile-de-France. ${CLIENTS_ACCOMPAGNES} entreprises, dès 3 000 € HT/mois.`,
+          `Iter Advisors, cabinet de DAF externalisé à Paris. CFO à temps partagé pour PME et startups en Ile-de-France. ${CLIENTS_ACCOMPAGNES} entreprises. Budget sur devis selon le périmètre.`,
       },
       breadcrumbLabel: "DAF externalisé Paris",
       h1: "DAF externalisé à Paris : votre CFO à temps partagé en Ile-de-France",
@@ -347,7 +347,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
     fr: {
       meta: {
         title: "DAF externalisé Toulouse : missions et tarifs | Iter",
-        description: "DAF externalisé pour PME et startups à Toulouse : trésorerie, reporting et financement. Dès 3 000 € HT/mois, à distance et sur site selon votre besoin.",
+        description: "DAF externalisé pour PME et startups à Toulouse : trésorerie, reporting et financement. Budget sur devis, à distance ou sur site selon accord.",
       },
       breadcrumbLabel: "DAF externalisé Toulouse",
       h1: "DAF externalisé à Toulouse : piloter votre PME ou votre startup",
