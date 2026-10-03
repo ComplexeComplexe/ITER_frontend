@@ -33,10 +33,6 @@ const navFr: NavItem[] = [
   {
     title: "DAF externalisé",
     href: "/daf-externalise",
-    children: [
-      { text: "Direction Financière (DAF)", href: "/daf-externalise" },
-      { text: "M&A & Levée de fonds", href: "/services/accompagnement-levee-de-fond" },
-    ],
   },
   {
     title: "Services Finance",
@@ -46,7 +42,9 @@ const navFr: NavItem[] = [
       { text: "DAF de transition", href: "/daf-externalise/transition" },
       { text: "Contrôle de gestion externalisé", href: "/services/controle-de-gestion-externalise" },
       { text: "Prévisionnel de trésorerie", href: "/services/previsionnel-tresorerie" },
-      { text: "Comptabilité externalisée", href: "/services/comptabilite-externalisation" },
+      { text: "Coordination comptable", href: "/services/comptabilite-externalisation" },
+      { text: "Accompagnement levée de fonds", href: "/services/accompagnement-levee-de-fond" },
+      { text: "M&A et due diligence", href: "/services/ma-due-diligence" },
     ],
   },
   { title: "DRH à temps partagé", href: "/drh-externalise" },
@@ -79,12 +77,12 @@ const navFr: NavItem[] = [
 const navigationLabels = {
   en: {
     titles: ["Fractional CFO", "Finance Services", "Part-time HR", "Resources", "The Firm", "Contact"],
-    children: [["Finance leadership (CFO)", "M&A and fundraising"], ["Part-time CFO", "Interim CFO", "Management accounting", "Cash flow forecasting", "Accounting coordination"], [], ["Tools", "AI and Finance", "Blog and News", "Case studies", "Glossary", "The CFO role"], ["Our team", "Our clients", "Careers"], []],
+    children: [[], ["Part-time CFO", "Interim CFO", "Management accounting", "Cash flow forecasting", "Accounting coordination", "Fundraising support", "M&A and due diligence"], [], ["Tools", "AI and Finance", "Blog and News", "Case studies", "Glossary", "The CFO role"], ["Our team", "Our clients", "Careers"], []],
     editorial: ["Finance glossary", "The CFO role", "Finance tools", "AI and Finance", "External HR leadership", "Our clients", "Careers"],
   },
   es: {
     titles: ["CFO externo", "Servicios financieros", "RR. HH. a tiempo parcial", "Recursos", "La firma", "Contacto"],
-    children: [["Dirección financiera (CFO)", "M&A y financiación"], ["CFO a tiempo parcial", "CFO de transición", "Control de gestión externo", "Previsión de tesorería", "Coordinación contable"], [], ["Herramientas", "IA y Finanzas", "Blog y Noticias", "Casos de éxito", "Glosario", "Funciones del CFO"], ["Nuestro equipo", "Nuestros clientes", "Empleo"], []],
+    children: [[], ["CFO a tiempo parcial", "CFO de transición", "Control de gestión externo", "Previsión de tesorería", "Coordinación contable", "Apoyo a la financiación", "M&A y due diligence"], [], ["Herramientas", "IA y Finanzas", "Blog y Noticias", "Casos de éxito", "Glosario", "Funciones del CFO"], ["Nuestro equipo", "Nuestros clientes", "Empleo"], []],
     editorial: ["Glosario financiero", "Funciones del CFO", "Herramientas financieras", "IA y Finanzas", "Dirección externa de RR. HH.", "Nuestros clientes", "Empleo"],
   },
 };

@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import ServiceTable from '@/components/design/ServiceTable';
+import ServiceSection from '@/components/design/ServiceSection';
 import Link from 'next/link';
 import PublishedLocaleLink from '@/components/PublishedLocaleLink';
 import type { Locale } from '@/lib/i18n';
@@ -8,9 +10,7 @@ import { getToolBySlug } from '@/data/tools';
 
 export function HrPillars({ locale }: { locale: Locale }) {
   const c = HR_COMMERCIAL_COPY[locale];
-  return <section data-page-block="piliers" id="piliers" className="site-section bg-iter-light">
-    <div className="site-container">
-      <h2>{c.pillarsTitle}</h2>
+  return <ServiceSection id="piliers" title={c.pillarsTitle} tinted>
       <p className="site-copy text-muted-foreground max-w-3xl mt-5">{c.pillarsIntro}</p>
       <div className="grid md:grid-cols-2 gap-6 mt-8">
         {c.pillars.map((pillar, i) => <article key={pillar.title} className="site-card p-6 sm:p-8 flex flex-col">
@@ -21,30 +21,20 @@ export function HrPillars({ locale }: { locale: Locale }) {
           <Link href={parityHref(pillar.href, locale)} className="site-inline-link mt-5">{pillar.link}</Link>
         </article>)}
       </div>
-    </div>
-  </section>;
+  </ServiceSection>;
 }
 
 export function HrComparison({ locale }: { locale: Locale }) {
   const c = HR_COMMERCIAL_COPY[locale];
-  return <section data-page-block="alternatives" id="alternatives" className="site-section">
-    <div className="site-container">
-      <h2>{c.comparisonTitle}</h2>
+  return <ServiceSection id="alternatives" title={c.comparisonTitle}>
       <p className="site-copy text-muted-foreground max-w-3xl mt-5">{c.comparisonIntro}</p>
-      <div role="region" aria-label={c.comparisonTitle} tabIndex={0} className="overflow-x-auto rounded-2xl border border-border mt-8 focus-visible:outline-2 focus-visible:outline-iter-violet">
-        <table className="w-full min-w-180 text-sm text-left">
-          <caption className="sr-only">{c.comparisonTitle}</caption>
-          <thead className="bg-iter-dark text-white"><tr>{c.headers.map(h => <th key={h} scope="col" className="p-4 font-semibold">{h}</th>)}</tr></thead>
-          <tbody>{c.comparison.map(row => <tr key={row[0]} className="border-t border-border">{row.map((cell, i) => i === 0 ? <th key={i} scope="row" className="p-4 font-semibold align-top">{cell}</th> : <td key={i} className="p-4 align-top text-muted-foreground leading-relaxed">{cell}</td>)}</tr>)}</tbody>
-        </table>
-      </div>
+      <ServiceTable caption={c.comparisonTitle} headers={c.headers} rows={c.comparison} captionHidden />
       <p className="text-sm text-muted-foreground mt-5 max-w-4xl leading-relaxed">{c.salaryNote}</p>
       <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F15018" className="site-inline-link mt-4">{c.legalSource}</a>
-    </div>
-  </section>;
+  </ServiceSection>;
 }
 
-export function HrFees({ locale }: { locale: Locale }) {
+export function HrFees({ locale, includeHeading = true }: { locale: Locale; includeHeading?: boolean }) {
   const c = HR_COMMERCIAL_COPY[locale];
   const currency = (value: number) => new Intl.NumberFormat(locale === 'fr' ? 'fr-FR' : locale === 'en' ? 'en-IE' : 'es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
   const prices = [
@@ -53,7 +43,7 @@ export function HrFees({ locale }: { locale: Locale }) {
     c.project,
   ];
   return <>
-    <h2>{c.priceTitle}</h2><p className="site-copy text-muted-foreground max-w-3xl mt-5">{c.priceIntro}</p>
+    {includeHeading && <h2>{c.priceTitle}</h2>}<p className="site-copy text-muted-foreground max-w-3xl mt-5">{c.priceIntro}</p>
     <div className="grid md:grid-cols-3 gap-6 mt-8">
       {c.priceLabels.map((label, i) => <article key={label} className="site-card p-6 flex flex-col">
         <h3 className="text-xl font-semibold mb-4">{label}</h3>
@@ -69,20 +59,15 @@ export function HrFees({ locale }: { locale: Locale }) {
 
 export function HrCountries({ locale }: { locale: Locale }) {
   const c = HR_COMMERCIAL_COPY[locale];
-  return <section data-page-block="france-espagne" id="france-espagne" className="site-section bg-iter-light">
-    <div className="site-container">
-      <h2>{c.countriesTitle}</h2><p className="site-copy text-muted-foreground max-w-3xl mt-5">{c.countriesIntro}</p>
+  return <ServiceSection id="france-espagne" title={c.countriesTitle} tinted><p className="site-copy text-muted-foreground max-w-3xl mt-5">{c.countriesIntro}</p>
       <div className="grid md:grid-cols-3 gap-6 mt-8">{c.countries.map(([title, text]) => <article key={title} className="site-card p-6"><h3 className="text-xl font-semibold mb-4">{title}</h3><p className="text-muted-foreground leading-relaxed">{text}</p></article>)}</div>
       <PublishedLocaleLink locale={locale} href={parityHref('/ressources/fiscalite/beckham-law', locale)} className="site-inline-link mt-6">{c.beckham}</PublishedLocaleLink>
-    </div>
-  </section>;
+  </ServiceSection>;
 }
 
 export function HrTools({ locale }: { locale: Locale }) {
   const c = HR_COMMERCIAL_COPY[locale];
-  return <section data-page-block="outils-rh" id="outils-rh" className="site-section">
-    <div className="site-container">
-      <h2>{c.toolsTitle}</h2><p className="site-copy text-muted-foreground max-w-3xl mt-5">{c.toolsIntro}</p>
+  return <ServiceSection id="outils-rh" title={c.toolsTitle}><p className="site-copy text-muted-foreground max-w-3xl mt-5">{c.toolsIntro}</p>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">{Object.entries(c.toolUses).map(([slug, use]) => {
         const tool = getToolBySlug(slug)!;
         return <article key={slug} className="site-card p-6">
@@ -92,6 +77,5 @@ export function HrTools({ locale }: { locale: Locale }) {
         </article>;
       })}</div>
       <Link href={parityHref('/ressources/outils', locale)} className="site-inline-link mt-6">{c.toolsLink}</Link>
-    </div>
-  </section>;
+  </ServiceSection>;
 }
