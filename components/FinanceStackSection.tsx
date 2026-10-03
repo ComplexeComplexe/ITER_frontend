@@ -34,7 +34,7 @@ export default function FinanceStackSection({ locale }: { locale: Locale }) {
                     key={tool.name}
                     className="site-card rounded-2xl border border-border bg-background p-5"
                   >
-                    {tool.logo && <div className={`h-10 flex items-center mb-4 ${tool.name === "Kyriba" ? "bg-iter-dark rounded-lg px-3 w-fit" : ""}`}><Image src={tool.logo} alt={`Logo ${tool.name}`} width={140} height={40} sizes="140px" className="max-h-10 max-w-36 object-contain w-auto" /></div>}
+                    {tool.logo && <div className={`h-10 flex items-center mb-4 ${tool.name === "Kyriba" ? "bg-iter-dark rounded-lg px-3 w-fit" : ""}`}><Image src={tool.logo} alt={`Logo ${tool.name}`} width={140} height={40} sizes="140px" className="h-10 w-35 object-contain object-left" /></div>}
                     <h4 className="font-semibold mb-3">
                       <a
                         href={tool.url}

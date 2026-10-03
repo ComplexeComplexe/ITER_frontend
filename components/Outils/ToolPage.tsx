@@ -48,7 +48,7 @@ export default function ToolPage({ slug, locale = 'fr', cmsNavigation, tool }: T
             <div className="flex flex-wrap gap-3 mt-6"><Link href="#profils" className="site-button site-button-primary rounded-full bg-iter-violet text-white px-5 py-3 font-semibold">Est-ce adapté à mon entreprise ?</Link><Link href="#prix" className="site-button site-button-secondary rounded-full border border-border px-5 py-3">Examiner le budget</Link></div>
           </div>
           <aside className="site-card rounded-2xl border border-border bg-white p-7">
-            <div className={`h-20 flex items-center mb-6 ${["kyriba", "upflow"].includes(slug) ? "bg-iter-dark rounded-xl px-4" : ""}`}>{tool.logo && <Image src={tool.logo} alt={`Logo ${tool.name}`} width={220} height={80} className="max-h-20 max-w-full w-auto object-contain" sizes="220px" priority />}</div>
+            <div className={`h-20 flex items-center mb-6 ${["kyriba", "upflow"].includes(slug) ? "bg-iter-dark rounded-xl px-4" : ""}`}>{tool.logo && <Image src={tool.logo} alt={`Logo ${tool.name}`} width={220} height={80} className="h-20 w-55 max-w-full object-contain object-left" sizes="220px" priority />}</div>
             <p className="text-xs uppercase tracking-wide text-muted-foreground">Tarification éditeur</p><p className="font-semibold mt-2 mb-4">{pricing.label}</p>
             <a href={pricing.url} className="text-sm text-iter-violet underline">Consulter les conditions tarifaires</a>
             <p className="text-xs text-muted-foreground mt-5">{slug === 'pennylane' ? '4 ans d’usage · environ 50 % des clients Iter. Données du cabinet confirmées le 3 octobre 2026.' : 'Critères de sélection fondés sur la documentation. Sources et critères détaillés dans la fiche.'}</p>

@@ -35,7 +35,7 @@ export default function ToolCard({
               width={120}
               height={40}
               sizes="120px"
-              className="max-w-full max-h-full object-contain"
+              className="h-16 w-32 object-contain"
             /> : <span className="text-sm font-semibold text-center text-gray-700">{name}</span>}
           </div>
 

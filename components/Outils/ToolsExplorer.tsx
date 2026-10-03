@@ -34,7 +34,7 @@ export default function ToolsExplorer({ tools, categories, locale }: { tools: Ex
     <p role="status" aria-live="polite" aria-atomic="true" className="text-sm text-muted-foreground my-5">{visible.length} {t.count}{locale !== 'fr' && ` · ${t.language}`}</p>
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {visible.map(tool => <Link key={tool.slug} href={`/ressources/outils/${tool.slug}`} onClick={() => measure('tool_click', tool.slug)} className="site-card group rounded-2xl border border-border bg-background p-6 flex flex-col hover:border-iter-violet/50 transition-colors focus-visible:outline-2 focus-visible:outline-iter-violet">
-        <div className={`h-12 flex items-center mb-5 ${["kyriba", "upflow"].includes(tool.slug) ? "bg-iter-dark rounded-lg px-3 w-fit" : ""}`}>{tool.logo && <Image src={tool.logo} alt={`Logo ${tool.name}`} width={144} height={48} className="max-h-12 w-auto max-w-36 object-contain" sizes="144px" />}</div>
+        <div className={`h-12 flex items-center mb-5 ${["kyriba", "upflow"].includes(tool.slug) ? "bg-iter-dark rounded-lg px-3 w-fit" : ""}`}>{tool.logo && <Image src={tool.logo} alt={`Logo ${tool.name}`} width={144} height={48} className="h-12 w-36 object-contain object-left" sizes="144px" />}</div>
         <p className="text-xs text-iter-violet font-semibold mb-3">{tool.slug === 'pennylane' ? t.experience : t.docs}</p>
         <h3 className="font-heading font-bold text-xl mb-2">{tool.name}</h3>
         <p className="text-xs text-muted-foreground mb-3">{categories[tool.category]}</p>
