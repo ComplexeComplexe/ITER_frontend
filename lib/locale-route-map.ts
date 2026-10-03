@@ -632,6 +632,16 @@ export const LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
     "en": "/en/about/florent-greth",
     "es": "/es/quienes-somos/florent-greth"
   },
+  "/a-propos/hugo-lepresle": {
+    fr: "/a-propos/hugo-lepresle",
+    en: "/en/about/hugo-lepresle",
+    es: "/es/quienes-somos/hugo-lepresle"
+  },
+  "/a-propos/gonzalo-serratosa-de-caralt": {
+    fr: "/a-propos/gonzalo-serratosa-de-caralt",
+    en: "/en/about/gonzalo-serratosa-de-caralt",
+    es: "/es/quienes-somos/gonzalo-serratosa-de-caralt"
+  },
   "/a-propos/borith-biv": {
     "fr": "/a-propos/borith-biv",
     "en": "/en/about/borith-biv",

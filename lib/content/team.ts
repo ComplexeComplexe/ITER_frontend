@@ -416,6 +416,44 @@ const fallbackData: FallbackMemberData[] = [
     order: 16,
     showInHero: false,
   },
+  // Membership and CFO roles confirmed by the site owner on 2026-10-03.
+  // Career summary: public LinkedIn profiles and Sébastien's arrival announcement.
+  {
+    id: 17,
+    documentId: "hugo-lepresle",
+    firstName: "Hugo",
+    lastName: "Lepresle",
+    roles: { fr: "CFO", en: "CFO", es: "CFO" },
+    h1Roles: { fr: "DAF externalisé", en: "Fractional CFO", es: "CFO externo" },
+    slug: "hugo-lepresle",
+    photo: { url: "/images/team/hugo-lepresle.webp" },
+    linkedIn: "https://www.linkedin.com/in/hugo-lepresle-84ab7a90/",
+    order: 17,
+    showInHero: false,
+    bio: {
+      fr: "Hugo Lepresle est CFO chez Iter Advisors. Son parcours comprend la direction financière de Pepette et le contrôle de gestion chez Michel et Augustin.",
+      en: "Hugo Lepresle is a CFO at Iter Advisors. His background includes finance leadership at Pepette and management control at Michel et Augustin.",
+      es: "Hugo Lepresle es CFO en Iter Advisors. Su trayectoria incluye la dirección financiera de Pepette y el control de gestión en Michel et Augustin.",
+    },
+  },
+  {
+    id: 18,
+    documentId: "gonzalo-serratosa-de-caralt",
+    firstName: "Gonzalo",
+    lastName: "Serratosa de Caralt",
+    roles: { fr: "CFO", en: "CFO", es: "CFO" },
+    h1Roles: { fr: "DAF externalisé", en: "Fractional CFO", es: "CFO externo" },
+    slug: "gonzalo-serratosa-de-caralt",
+    photo: { url: "/images/team/gonzalo-serratosa-de-caralt.webp" },
+    linkedIn: "https://www.linkedin.com/in/gonzalo-serratosa-de-caralt-585178157/",
+    order: 18,
+    showInHero: false,
+    bio: {
+      fr: "Gonzalo Serratosa de Caralt est CFO chez Iter Advisors. Il a travaillé en audit chez EY puis comme consultant financier auprès de startups.",
+      en: "Gonzalo Serratosa de Caralt is a CFO at Iter Advisors. He worked in audit at EY before becoming a financial consultant for startups.",
+      es: "Gonzalo Serratosa de Caralt es CFO en Iter Advisors. Trabajó en auditoría en EY antes de ejercer como consultor financiero para startups.",
+    },
+  },
 ];
 
 export function getTeamMembers(locale: Locale): StrapiTeamMember[] {

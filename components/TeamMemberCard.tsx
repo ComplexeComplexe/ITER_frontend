@@ -77,7 +77,7 @@ export default function TeamMemberCard({
       href={linkedin}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`LinkedIn — ${name}`}
+      aria-label={`LinkedIn: ${name}`}
       className="mt-1.5 inline-flex justify-center"
     >
       <svg
@@ -98,10 +98,14 @@ export default function TeamMemberCard({
   // lien vers une page qui n'existe pas.
   if (!profil) {
     return (
-      <a href={linkedin} target="_blank" rel="noopener noreferrer" className={classes}>
-        {visuel}
-        {linkedin !== "#" && <div className="mt-1.5 flex justify-center">{iconeLinkedIn}</div>}
-      </a>
+      <div className={classes}>
+        {linkedin !== "#" ? (
+          <a href={linkedin} target="_blank" rel="noopener noreferrer" className="group block">
+            {visuel}
+          </a>
+        ) : visuel}
+        {iconeLinkedIn && <div className="mt-1.5 flex justify-center">{iconeLinkedIn}</div>}
+      </div>
     );
   }
 

@@ -727,13 +727,9 @@ export default function HomePage({
             <div className="flex flex-wrap justify-center gap-6">
               {team.map((member, i) => {
                 const name = `${member.firstName} ${member.lastName}`.trim();
-                // Try Strapi first, then fallback to local image
-                const strapiPhotoUrl = strapiMediaUrl(member.photo);
-                const localPhotoSlug = `${member.firstName}-${member.lastName}`.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[̀-ͯ]/g, '');
-                // Use local JPG (can be upgraded to WebP in future)
-                const localPhotoUrl = `/images/team/${localPhotoSlug}.jpg`;
-                // Use local image if Strapi doesn't have one
-                const photoUrl = strapiPhotoUrl || localPhotoUrl;
+                // Use a declared asset; a member without a photo gets initials.
+                // Constructing a JPG from their name can emit a broken image.
+                const photoUrl = strapiMediaUrl(member.photo);
                 const initials = `${member.firstName?.[0] ?? ""}${member.lastName?.[0] ?? ""}`.toUpperCase();
                 const hasLinkedin = member.linkedIn && member.linkedIn.trim().length > 0;
                 const profile = resolveAuthorUrl(name);
