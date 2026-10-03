@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     localizedPaths: { fr: "/drh-externalise", en: "/hr-outsourcing", es: "/externalizacion-rrhh" },
     // Keep the primary commercial query concise; specific scope and fees live in the description.
     fallbackTitle: "DRH externalisé pour PME et startups | Iter Advisors",
-    fallbackDescription: "DRH externalisé pour PME et startups avec Borith Biv : recrutement, management et organisation RH. Dès 1 800 € HT/mois, selon le périmètre.",
+    fallbackDescription: "DRH externalisé pour PME et startups avec Borith Biv : recrutement, management et organisation RH. Fourchettes indicatives et devis selon le périmètre.",
   });
 }
 

@@ -3,7 +3,6 @@ import {
   CLIENTS_ACCOMPAGNES,
   CONSULTANTS,
   FONDS_LEVES,
-  FORMULES,
   ENGAGEMENT,
   TRUSTFOLIO_RATING,
 } from "./facts";
@@ -57,7 +56,6 @@ const copy = {
       "Trésorerie, budgets, reporting et financements : un directeur financier intégré à votre équipe, quelques jours par mois. Pour les PME et startups en France et en Espagne.",
     contact: "Échanger avec un DAF",
     fees: "Voir les tarifs",
-    month: "€ HT / mois",
     notice: "Préavis de",
     days: "jours",
     noMinimum: "Sans durée minimale.",
@@ -226,7 +224,6 @@ const copy = {
       "Cash flow, budgets, reporting and financing: a finance director embedded in your team for a few days a month. For SMEs and startups in France and Spain.",
     contact: "Talk to a CFO",
     fees: "View fees",
-    month: "€ / month excl. VAT",
     notice: "Notice period:",
     days: "days",
     noMinimum: "No minimum term.",
@@ -398,7 +395,6 @@ const copy = {
       "Tesorería, presupuestos, reporting y financiación: un director financiero integrado en su equipo unos días al mes. Para pymes y startups en Francia y España.",
     contact: "Hablar con un CFO",
     fees: "Ver honorarios",
-    month: "€ / mes sin IVA",
     notice: "Preaviso de",
     days: "días",
     noMinimum: "Sin permanencia mínima.",
@@ -564,9 +560,6 @@ const copy = {
 export function getHomePilotage(locale: Locale) {
   const t = copy[locale];
   const facts = getDafOfferFacts(locale);
-  const format = new Intl.NumberFormat(locale);
-  const min = format.format(Math.min(...FORMULES.map((f) => f.prixMin)));
-  const max = format.format(Math.max(...FORMULES.map((f) => f.prixMax)));
   const reviews = [TRUSTFOLIO_REVIEWS[4], TRUSTFOLIO_REVIEWS[1]].map(
     (review, i) => ({
       ...review,
@@ -576,9 +569,7 @@ export function getHomePilotage(locale: Locale) {
   return {
     ...t,
     team: { ...t.team, eyebrow: `${t.team.eyebrow} · ${CONSULTANTS} ${locale === "es" ? "consultores" : "consultants"}` },
-    price: `${min} ${locale === "en" ? "to" : locale === "es" ? "a" : "à"} ${max} ${t.month}`,
     engagement: `${t.notice} ${ENGAGEMENT.preavisJours} ${t.days}`,
-    priceDetail: facts.price,
     start: facts.start,
     proofs: [
       { value: String(CLIENTS_ACCOMPAGNES), label: t.companies },

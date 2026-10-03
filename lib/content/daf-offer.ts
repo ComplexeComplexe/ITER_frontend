@@ -30,10 +30,10 @@ export function getDafOffer(locale: Locale) {
       ? `Sin duración mínima de compromiso; cancelación con ${ENGAGEMENT.preavisJours} días de preaviso.`
       : ENGAGEMENT.formulation;
   const billing = locale === "en"
-    ? "The monthly retainer covers an agreed scope of work and seniority, not hours or a day-rate package. Days shown are observed averages. Any additional scope requires a signed amendment."
+    ? "Prices shown are indicative ranges. The quote depends on scope, seniority, data quality, tools, entities and availability required. The monthly retainer covers an agreed scope of work, not hours or a day-rate package. Days shown are observed averages. Any additional scope requires a signed amendment."
     : locale === "es"
-      ? "La cuota mensual cubre un alcance de trabajo y un nivel de experiencia acordados, no un paquete de horas o jornadas. Los días indicados son promedios observados. Cualquier ampliación requiere un acuerdo adicional firmado."
-      : "Le forfait mensuel couvre un périmètre de travail et un niveau de séniorité, pas un nombre d'heures ou de journées. Les jours indiqués sont des moyennes observées. Aucun dépassement n'est facturé sans avenant signé.";
+      ? "Los importes publicados son horquillas orientativas. El presupuesto depende del alcance, experiencia, calidad de los datos, herramientas, entidades y disponibilidad necesaria. La cuota mensual cubre un alcance de trabajo acordado, no un paquete de horas o jornadas. Los días indicados son promedios observados. Cualquier ampliación requiere un acuerdo adicional firmado."
+      : "Les prix affichés sont des fourchettes indicatives. Le devis dépend du périmètre, de la séniorité, de la qualité des données, des outils, des entités et de la disponibilité attendue. Le forfait mensuel couvre un périmètre convenu, pas un nombre d'heures ou de journées. Les jours indiqués sont des moyennes observées. Aucun dépassement n'est facturé sans avenant signé.";
   return {
     tiers, commitment, billing,
     volume: duration(`${VOLUME_DAF_JOURS_MOIS.min} à ${VOLUME_DAF_JOURS_MOIS.max} jours`),

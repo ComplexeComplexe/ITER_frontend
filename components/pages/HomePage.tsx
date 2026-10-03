@@ -72,9 +72,9 @@ export default function HomePage({
                   key={slug}
                   src={`/images/logos/logo-${slug}.${slug === "hosco" ? "svg" : "webp"}`}
                   alt={HOME_CLIENT_NAMES[i]}
-                  width={140}
-                  height={48}
-                  sizes="(max-width: 600px) 100px, 140px"
+                  width={180}
+                  height={108}
+                  sizes="(max-width: 760px) 160px, 180px"
                   unoptimized={slug === "hosco"}
                 />
               ))}
@@ -152,8 +152,6 @@ export default function HomePage({
                 </Link>
               </p>
               <div className={styles.pricing}>
-                <strong>{t.price}</strong>
-                <p>{t.priceDetail}</p>
                 <Link
                   locale={locale}
                   className={styles.textLink}

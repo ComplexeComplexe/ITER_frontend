@@ -42,7 +42,7 @@ export default function HeroSection({ locale }: { locale: Locale }) {
               </Link>
             </div>
             <p className={styles.price}>
-              {t.price} · {t.engagement}
+              {t.engagement}
             </p>
             <p className={styles.start}>
               {t.noMinimum} {t.start}

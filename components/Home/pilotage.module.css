@@ -341,7 +341,7 @@
   padding-top: 12px;
 }
 .logos {
-  padding: 28px 0;
+  padding: 36px 0;
   border-bottom: 1px solid var(--site-border);
 }
 .logos p {
@@ -359,8 +359,9 @@
 }
 .logos img {
   width: 100%;
-  max-width: 140px;
-  height: 36px;
+  max-width: 180px;
+  height: auto;
+  aspect-ratio: 5 / 3;
   object-fit: contain;
 }
 .needs {
@@ -479,15 +480,6 @@
   border-bottom: 1px solid var(--site-border);
   padding: 22px 0;
   margin: 24px 0;
-}
-.pricing strong {
-  font-family: var(--font-heading), sans-serif;
-  font-size: 23px;
-}
-.pricing p {
-  font-size: 13px;
-  color: var(--site-muted);
-  margin: 8px 0 16px;
 }
 .related {
   display: flex;
@@ -756,6 +748,7 @@
     height: 240px;
   }
   .logos .wrap > div {
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
   .split {
@@ -808,12 +801,11 @@
     margin: 8px 0;
   }
   .logos .wrap > div {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 24px;
   }
   .logos img {
-    height: 28px;
-    max-width: 120px;
+    max-width: 160px;
   }
   .hrGrid {
     grid-template-columns: 1fr;

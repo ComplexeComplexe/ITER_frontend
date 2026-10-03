@@ -17,13 +17,15 @@ describe('Validated HR commercial offer', () => {
       const schemas = [...page.querySelectorAll('script[type="application/ld+json"]')].map(node => JSON.parse(node.textContent!));
       const service = schemas.find(schema => schema['@type'] === 'Service');
       const offers = service.hasOfferCatalog.itemListElement;
-      expect(offers[0].priceSpecification).toMatchObject({ minPrice: 1800, priceCurrency: 'EUR', valueAddedTaxIncluded: false });
+      expect(offers[0].priceSpecification).toBeUndefined();
+      expect(offers.every((offer: { price?: string }) => offer.price === undefined)).toBe(true);
       expect(offers[1].priceSpecification).toMatchObject({ minPrice: 3200, maxPrice: 4800, priceCurrency: 'EUR', valueAddedTaxIncluded: false });
       expect(offers[2].priceSpecification).toBeUndefined();
       const faq = schemas.find(schema => schema['@type'] === 'FAQPage');
       expect(faq.mainEntity[1].acceptedAnswer.text).toBe(page.querySelectorAll('#questions details p')[1].textContent);
       const feeText = page.querySelector('#budget')!.textContent!.replace(/[\s.,]/g, '');
-      expect(feeText).toContain('1800'); expect(feeText).toContain('3200'); expect(feeText).toContain('4800');
+      expect(feeText).not.toContain('1800'); expect(feeText).toContain('3200'); expect(feeText).toContain('4800');
+      expect(page.querySelector('#budget article')!.textContent).toMatch(/Sur devis|By quotation|Según presupuesto/);
       const comparison = page.querySelector('#alternatives')!.textContent!;
       expect(comparison).toMatch(/brut|gross/);
       expect(comparison).not.toMatch(/250|450|60\s*%/);

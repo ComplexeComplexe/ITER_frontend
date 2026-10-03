@@ -66,6 +66,17 @@ describe("published Pilotage homepage", () => {
       ).toEqual(visible);
     }
   });
+  it("shows no service fees on the homepage, while keeping the tariff route and unduplicated client logos", () => {
+    for (const locale of locales) {
+      const doc = render(locale);
+      const text = doc.body.textContent!.replace(/[\s.,–]/g, "");
+      expect(text).not.toMatch(/(?<!\d)(?:3000|5000|6500|8000)(?!\d)/);
+      const logos = doc.querySelectorAll("section[aria-label] img");
+      expect(logos).toHaveLength(6);
+      expect(new Set([...logos].map(logo => logo.getAttribute("alt"))).size).toBe(6);
+      expect(doc.querySelector(`a[href="${parityHref("/daf-externalise/tarifs", locale)}"]`)).not.toBeNull();
+    }
+  });
   it("labels the illustrative forecast and describes the actual minimum and ending cash", () => {
     expect(HOME_CASH_EXAMPLE).toHaveLength(13);
     expect(Math.min(...HOME_CASH_EXAMPLE)).toBe(61);
