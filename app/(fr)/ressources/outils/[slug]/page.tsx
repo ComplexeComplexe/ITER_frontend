@@ -1,3 +1,4 @@
+import { getToolReviewTitle } from '@/data/toolReviews';
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/metadata";
@@ -10,7 +11,7 @@ const categoryMeta = {
   "logiciels-comptabilite": {
     title: "Logiciels comptabilité PME 2026 | Iter Advisors",
     description:
-      "Comparatif des meilleurs logiciels comptabilité pour PME 10-100 salariés. Avis d'experts DAF sur Pennylane, Sage, Cegid. Prix, implémentation, avantages.",
+      "Pennylane, Sage et Cegid : usages, limites, reprise comptable et coût total. Critères pour choisir avec votre cabinet.",
   },
   "logiciels-tresorerie": {
     title: "Logiciels de trésorerie : critères de choix | Iter Advisors",
@@ -25,7 +26,7 @@ const categoryMeta = {
   "logiciels-paie": {
     title: "Logiciels de paie PME : PayFit vs Silae 2026 | Iter Advisors",
     description:
-      "Meilleurs logiciels paie pour startups et PME. Avis expert sur PayFit, Silae, Lucca. DSN automatique, intégration compta, prix.",
+      "PayFit, Silae et Lucca : périmètre paie, contrôles, modules RH et coût total. Critères pour préparer une sélection.",
   },
 };
 
@@ -61,8 +62,8 @@ export async function generateMetadata({
   // Check if it's a tool
   const tool = getToolBySlug(slug);
   if (tool) {
-    const title = `Avis ${tool.name} : usages et critères de choix`;
-    const description = `Avis ${tool.name} : points forts, limites, intégrations et critères de choix pour PME et startups. Sources de tarification et questions à poser à l’éditeur.`;
+    const title = getToolReviewTitle(tool);
+    const description = slug === "pennylane" ? "Notre avis Pennylane après quatre ans d’usage chez Iter, pour environ 50 % de nos clients : centralisation comptable, limites du reporting et critères de choix." : `Avis ${tool.name} : points forts, limites, intégrations et critères de choix pour PME et startups. Sources de tarification et questions à poser à l’éditeur.`;
     return buildMetadata({
       locale: "fr",
       title,

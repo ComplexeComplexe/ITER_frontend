@@ -6,6 +6,7 @@ export const FINANCE_STACK_VALIDATED_DATE = "2026-10-03";
 export const FINANCE_STACK = [
   {
     name: "Pennylane",
+    logo: "/images/logos/tools/pennylane-official.svg",
     category: "comptabilite",
     url: "https://www.pennylane.com/fr",
     content: {
@@ -28,6 +29,7 @@ export const FINANCE_STACK = [
   },
   {
     name: "Holded",
+    logo: "/images/logos/tools/holded-official.svg",
     category: "comptabilite",
     url: "https://www.holded.com",
     content: {
@@ -47,6 +49,7 @@ export const FINANCE_STACK = [
   },
   {
     name: "NetSuite",
+    logo: "/images/logos/tools/netsuite-official.svg",
     category: "erp",
     url: "https://www.netsuite.com",
     content: {
@@ -69,6 +72,7 @@ export const FINANCE_STACK = [
   },
   {
     name: "Odoo",
+    logo: "/images/logos/tools/odoo-official.svg",
     category: "erp",
     url: "https://www.odoo.com",
     content: {
@@ -91,6 +95,7 @@ export const FINANCE_STACK = [
   },
   {
     name: "Microsoft Dynamics 365 Finance",
+    logo: "/images/logos/tools/dynamics-365-official.svg",
     category: "erp",
     url: "https://www.microsoft.com/en-us/dynamics-365/products/finance",
     content: {
@@ -112,6 +117,7 @@ export const FINANCE_STACK = [
   },
   {
     name: "Agicap",
+    logo: "/images/logos/tools/agicap-official.png",
     category: "tresorerie",
     url: "https://agicap.com",
     content: {
@@ -133,6 +139,7 @@ export const FINANCE_STACK = [
   },
   {
     name: "Kyriba",
+    logo: "/images/logos/tools/kyriba-official.svg",
     category: "tresorerie",
     url: "https://www.kyriba.com",
     content: {
@@ -153,6 +160,7 @@ export const FINANCE_STACK = [
   },
   {
     name: "Spendesk",
+    logo: "/images/logos/tools/spendesk-official.svg",
     category: "depenses",
     url: "https://www.spendesk.com",
     content: {
@@ -175,6 +183,7 @@ export const FINANCE_STACK = [
   },
   {
     name: "Pleo",
+    logo: "/images/logos/tools/pleo-official.svg",
     category: "depenses",
     url: "https://www.pleo.io",
     content: {
@@ -196,6 +205,7 @@ export const FINANCE_STACK = [
   },
   {
     name: "Ramp",
+    logo: "",
     category: "depenses",
     url: "https://ramp.com",
     content: {
@@ -270,6 +280,7 @@ export function getFinanceStackCategories(locale: Locale) {
     description: "",
     tools: FINANCE_STACK.filter((tool) => tool.category === id).map((tool) => ({
       name: tool.name,
+      logo: tool.logo,
       url: tool.url,
       category: tool.category,
       ...tool.content[locale],

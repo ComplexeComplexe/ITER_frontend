@@ -2,6 +2,7 @@ import type { Locale } from "./i18n";
 
 /** Published routes only. The proposed translations are not navigation targets. */
 export const LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
+  "/ressources/outils/methodologie": { fr: "/ressources/outils/methodologie", en: "/en/ressources/tools/methodology", es: "/es/recursos/herramientas/metodologia" },
   "/": {
     "fr": "/",
     "en": "/en",

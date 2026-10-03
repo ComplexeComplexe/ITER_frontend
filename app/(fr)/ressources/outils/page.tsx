@@ -6,7 +6,7 @@ import { getCmsNavigation } from "@/lib/static-content";
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
   // P2-03: Shortened from 74 chars to 55 chars to prevent SERP truncation
-  title: "Outils finance : annuaire et critères | Iter Advisors",
+  title: "Outils financiers : avis de DAF | Iter Advisors",
   description:
     "Comparez les outils de comptabilité, trésorerie, dépenses, paie et reporting. Critères à tester, sources éditeurs et questions pour préparer vos devis.",
   path: "/ressources/outils",

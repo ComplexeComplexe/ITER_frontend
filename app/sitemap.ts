@@ -468,6 +468,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     if (inEs) entries.push({ url: esUrl, ...common, lastModified: blogModified(slug, "es") });
   }
 
+  for (const path of ["/ressources/outils/methodologie", "/en/ressources/tools/methodology", "/es/recursos/herramientas/metodologia"]) entries.push({ url: `${BASE}${path}`, lastModified: "2026-10-03" });
+
   // ── Tool sheets (FR-only) ─────────────────────────────────────────────────
   // SITEMAP-FIX: EN/ES tool pages return 404 (no route). FR only.
   for (const slug of TOOL_SLUGS) {

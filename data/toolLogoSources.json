@@ -1,0 +1,225 @@
+[
+  {
+    "slug": "spendesk",
+    "asset": "/images/logos/tools/spendesk-official.svg",
+    "source": "https://www.spendesk.com",
+    "kind": "publisher-inline-svg",
+    "checkedAt": "2026-10-03",
+    "bytes": 3968,
+    "sha256": "75c02f84aec34d50b47f1bb931f32d87afb27091269709bc7ae5480ecc9d0868",
+    "preparation": "Resolve publisher CSS variable --brand-deep-purple to its official #7136ed value for standalone SVG rendering."
+  },
+  {
+    "slug": "fygr",
+    "asset": "/images/logos/tools/fygr-official.svg",
+    "source": "https://www.okimia.com/fr",
+    "kind": "publisher-inline-svg",
+    "checkedAt": "2026-10-03",
+    "bytes": 3063,
+    "sha256": "01170246289ab7891165729ab8d9bfc307b9ac1efd2d44661fc60d37189abff7"
+  },
+  {
+    "slug": "qonto",
+    "asset": "/images/logos/tools/qonto-official.svg",
+    "source": "https://qonto.com/fr",
+    "kind": "publisher-inline-svg",
+    "checkedAt": "2026-10-03",
+    "bytes": 2431,
+    "sha256": "b3464992934501e5f1b76c1151452b616db5d8cbea379b0d9d4a012c11e2fa55"
+  },
+  {
+    "slug": "payhawk",
+    "asset": "/images/logos/tools/payhawk-official.svg",
+    "source": "https://payhawk.com/es",
+    "kind": "publisher-inline-svg",
+    "checkedAt": "2026-10-03",
+    "bytes": 2852,
+    "sha256": "86b07054d1fb1cc094bf46dad99f5b0fe6ec1b61b01fc75412dc05bb5dce246c"
+  },
+  {
+    "slug": "holded",
+    "asset": "/images/logos/tools/holded-official.svg",
+    "source": "https://www.holded.com",
+    "kind": "publisher-inline-svg",
+    "checkedAt": "2026-10-03",
+    "bytes": 12061,
+    "sha256": "dd8517e8a177d65bc30dc354bf172b63c18252d505238363ee8c69528849aba2"
+  },
+  {
+    "slug": "factorial",
+    "asset": "/images/logos/tools/factorial-official.svg",
+    "source": "https://factorial.fr/",
+    "kind": "publisher-inline-svg",
+    "checkedAt": "2026-10-03",
+    "bytes": 4130,
+    "sha256": "5a265c71ca73373f3eafbced887c2abfcf86a715bee7626e607cecddf5f39ddd"
+  },
+  {
+    "slug": "pennylane",
+    "asset": "/images/logos/tools/pennylane-official.svg",
+    "source": "https://www.pennylane.com/_nuxt/logo.BkRDgVYD.svg",
+    "discoveredOn": "https://www.pennylane.com/fr",
+    "kind": "publisher-asset",
+    "checkedAt": "2026-10-03",
+    "bytes": 8170,
+    "sha256": "1c3e082edf5269f5904392ab740a292be00e16df3d7b92cfd88fc28268d3d7e1"
+  },
+  {
+    "slug": "agicap",
+    "asset": "/images/logos/tools/agicap-official.png",
+    "source": "https://agicap.com/static/45fe8ac6abdc2fea7df6d1ec64c16b65/0c049/Logo2025.png",
+    "discoveredOn": "https://agicap.com/fr/",
+    "kind": "publisher-asset",
+    "checkedAt": "2026-10-03",
+    "bytes": 1952,
+    "sha256": "2fa01cfeef3a6affd1d8fc7eae0b45cb395dc0d9532c0591435dd9694cd7e79b"
+  },
+  {
+    "slug": "payfit",
+    "asset": "/images/logos/tools/payfit-official.svg",
+    "source": "https://www.datocms-assets.com/50397/1789377249-favicon.svg",
+    "discoveredOn": "https://payfit.com/fr/",
+    "kind": "publisher-asset",
+    "checkedAt": "2026-10-03",
+    "bytes": 948,
+    "sha256": "3011799341a80b0eb74f8737de760e71584673da2b54cbfb6e616166acaafd83"
+  },
+  {
+    "slug": "cegid-loop",
+    "asset": "/images/logos/tools/cegid-loop-official.svg",
+    "source": "https://www.cegid.com/fr/wp-content/uploads/sites/7/2026/08/cegid-logo-blue-rgb.svg",
+    "discoveredOn": "https://www.cegid.com/fr/solutions/expertise-comptable/",
+    "kind": "publisher-asset",
+    "checkedAt": "2026-10-03",
+    "bytes": 2388,
+    "sha256": "1b7360d2eb61dff901dd4b963423f74050aa5243d56047aef311ed823613a47a"
+  },
+  {
+    "slug": "pleo",
+    "asset": "/images/logos/tools/pleo-official.svg",
+    "source": "https://www.pleo.io/fr",
+    "discoveredOn": "https://www.pleo.io/fr",
+    "kind": "publisher-inline-svg",
+    "checkedAt": "2026-10-03",
+    "bytes": 1233,
+    "sha256": "8cc8fbb5ced2e939e32477df24448e504767bd6028f27b07316eb0135bea1a42"
+  },
+  {
+    "slug": "silae",
+    "asset": "/images/logos/tools/silae-official.svg",
+    "source": "https://www.silae.fr/wp-content/themes/silae/assets/images/logo.svg",
+    "discoveredOn": "https://www.silae.fr",
+    "kind": "publisher-asset",
+    "checkedAt": "2026-10-03",
+    "bytes": 5368,
+    "sha256": "11640358c8b25b770e385a71a129c81194e790dee6becaac6f3533b4a6d13ea4"
+  },
+  {
+    "slug": "lucca",
+    "asset": "/images/logos/tools/lucca-official.svg",
+    "source": "https://www.lucca.fr/assets/img/logo-lucca.svg",
+    "discoveredOn": "https://www.lucca.fr",
+    "kind": "publisher-asset",
+    "checkedAt": "2026-10-03",
+    "bytes": 4081,
+    "sha256": "d77e8d32161e94aa4308d8042330cd4e054ca63da088c832ac787a4c960a9693"
+  },
+  {
+    "slug": "upflow",
+    "asset": "/images/logos/tools/upflow-official.png",
+    "source": "https://upflow.io/images/logo-dark.png",
+    "discoveredOn": "https://upflow.io/",
+    "kind": "publisher-asset",
+    "checkedAt": "2026-10-03",
+    "bytes": 5905,
+    "sha256": "922230eec0f2e9577c5c730cf9545ce02e95b7149dea4ef41b3ea3f8186b1367"
+  },
+  {
+    "slug": "leanpay",
+    "asset": "/images/logos/tools/leanpay-official.svg",
+    "source": "https://cdn.prod.website-files.com/5fd4ecc534b9d0792cfe1bc2/6278dfff1f772ba48c02e478_Plan%20de%20travail%204_2.svg",
+    "discoveredOn": "https://www.leanpay.io/",
+    "kind": "publisher-asset",
+    "checkedAt": "2026-10-03",
+    "bytes": 4074,
+    "sha256": "f2618d10674c0eb4068d90004ca1adfa5d9ea0abd384388883c9f89dac980e06"
+  },
+  {
+    "slug": "equify",
+    "asset": "/images/logos/tools/equify-official.svg",
+    "source": "https://www.equify.eu/hubfs/Equify_June2023/Images/Equify-logo.svg",
+    "discoveredOn": "https://www.equify.eu/",
+    "kind": "publisher-asset",
+    "checkedAt": "2026-10-03",
+    "bytes": 3006,
+    "sha256": "9530b47e52e2bf77b552ff7e5f2af767f587b90e179cd16613c360b154bf957a"
+  },
+  {
+    "slug": "odoo",
+    "asset": "/images/logos/tools/odoo-official.svg",
+    "source": "https://odoocdn.com/openerp_website/static/src/img/assets/svg/odoo_logo.svg",
+    "discoveredOn": "https://www.odoo.com",
+    "kind": "publisher-asset",
+    "checkedAt": "2026-10-03",
+    "bytes": 590,
+    "sha256": "a13f9b3558d13074ef69d82186cb6476e8ac6d9e7044c8429bdcbc2975ec7d70"
+  },
+  {
+    "slug": "kyriba",
+    "asset": "/images/logos/tools/kyriba-official.svg",
+    "source": "https://admin.main-bvxea6i-f4qo6e7ncusey.us-2.platformsh.site/site-assets/images/Logo_2024-05-01-174741_kzgr.svg",
+    "discoveredOn": "https://www.kyriba.com/fr/",
+    "kind": "publisher-asset",
+    "checkedAt": "2026-10-03",
+    "bytes": 6674,
+    "sha256": "3e1cbfc80ea1b9fba48eed9be2c3594fe4cdfa0745dec0392bc2e087813f28cd"
+  },
+  {
+    "slug": "dynamics-365",
+    "asset": "/images/logos/tools/dynamics-365-official.svg",
+    "source": "https://download.microsoft.com/download/498606aa-6d27-4f13-aa5c-1401078c153b/Dynamics-365-icons-scalable.zip",
+    "archivePath": "Dynamics 365 App Icons/FinanceOperations_scalable.svg",
+    "kind": "official-icon-kit",
+    "checkedAt": "2026-10-03",
+    "bytes": 4226,
+    "sha256": "cb3c76a254571104fc12adc666a52fa53ce09bd7322ea790fc925976c17a63f7"
+  },
+  {
+    "slug": "power-bi",
+    "asset": "/images/logos/tools/power-bi-official.svg",
+    "source": "https://raw.githubusercontent.com/microsoft/PowerBI-Icons/main/SVG/Power-BI.svg",
+    "checkedAt": "2026-10-03",
+    "bytes": 4988,
+    "kind": "official-microsoft-repository",
+    "sha256": "55daee85ccbe0d410909cd3b2b2d974d9a450ca3c6208992eec99fa9fa7b0b8d"
+  },
+  {
+    "slug": "revolut-business",
+    "asset": "/images/logos/tools/revolut-business-official.svg",
+    "source": "https://developer.revolut.com/assets/oba/Business-Logo-package.zip",
+    "checkedAt": "2026-10-03",
+    "bytes": 7720,
+    "archivePath": "Business Logo package/Business - SVG/Revolut-02-business-wordmark-FINAL-01.svg",
+    "sha256": "c75527762b7a59e67acf7f2a2d6da247e596cab96b8a5d022e1ac6a6937ef755"
+  },
+  {
+    "slug": "carta",
+    "asset": "/images/logos/tools/carta-official.svg",
+    "source": "https://drive.google.com/uc?export=download&id=1eQypaSv4_w1IJddUOJopFe2XlzIK0A5-",
+    "discoveredOn": "https://carta.com/press/",
+    "checkedAt": "2026-10-03",
+    "bytes": 1427,
+    "kind": "publisher-public-press-kit",
+    "sha256": "60281b0e3f6786802fbc7b5b8303eab7e3ebf85b080ef57bd5548ac2d2c7af14"
+  },
+  {
+    "slug": "netsuite",
+    "asset": "/images/logos/tools/netsuite-official.svg",
+    "source": "https://static.oracle.com/cdn/fnd/gallery/2610.0.0/images/ico-netsuite-alt.svg",
+    "discoveredOn": "https://static.oracle.com/cdn/fnd/gallery/2610.0.0/images/preview/index.html",
+    "checkedAt": "2026-10-03",
+    "bytes": 1624,
+    "kind": "official-oracle-gallery",
+    "sha256": "9e84fb2dbf5f1e98f2c958eda0920f4b28e64de6be11a79c750c2b51156d21da"
+  }
+]

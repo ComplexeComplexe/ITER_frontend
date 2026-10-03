@@ -1,3 +1,4 @@
+import { getToolReviewTitle } from '@/data/toolReviews';
 import { editorialPersonId } from "@/lib/content/finance-expert";
 import { Tool } from '@/data/tools';
 import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
@@ -41,7 +42,7 @@ export function generateToolArticleSchema(tool: Tool) {
     '@type': 'Article',
     '@id': `${url}#article`,
     url,
-    headline: `Avis ${tool.name} : usages et critères de choix`,
+    headline: getToolReviewTitle(tool),
     description: `Points forts : ${tool.forWho.join(', ')}. Points de vigilance : ${tool.notForWho.join(', ')}.`,
     inLanguage: 'fr-FR',
     about: {

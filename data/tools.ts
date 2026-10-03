@@ -1,3 +1,4 @@
+import { getToolSummary } from "./toolSummaries";
 import { TOOL_PRICING } from "./toolPricing";
 export interface Tool {
   slug: string;
@@ -8,12 +9,7 @@ export interface Tool {
   category: 'comptabilite' | 'tresorerie' | 'depenses' | 'paie' | 'recouvrement' | 'sirh' | 'equity' | 'reporting';
   categorySlug: string;
   logo: string;
-  /**
-   * SEO-optimized alt text rendered on the `<Image>` of the logo wherever
-   * the tool appears (card, hero, stack combo, comparison table). Includes
-   * the brand name + a short positioning keyword so it contributes to the
-   * page's semantic context rather than the generic "Logo {name}" placeholder.
-   */
+  /** Plain accessible brand name, without keyword stuffing. */
   logoAlt: string;
   website: string;
   implementationTime: string;
@@ -32,8 +28,8 @@ export const tools: Tool[] = [
     name: 'Pennylane',
     category: 'comptabilite',
     categorySlug: 'logiciels-comptabilite',
-    logo: '/images/logos/tools/pennylane.svg',
-    logoAlt: 'Logo Pennylane — logiciel de comptabilité en ligne pour startups et PME',
+    logo: "/images/logos/tools/pennylane-official.svg",
+    logoAlt: "Logo Pennylane",
     website: 'https://www.pennylane.com',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["pennylane"].label,
@@ -42,15 +38,15 @@ export const tools: Tool[] = [
     notForWho: ["Reprise des soldes et des justificatifs à organiser", "Stocks et flux métiers à examiner séparément"],
     experts: ['sebastien'],
     hasVerbatim: false,
-    shortDescription: "Factures et pièces dans un environnement partagé. Reprise des soldes et des justificatifs à organiser.",
+    shortDescription: getToolSummary("pennylane"),
   },
   {
     slug: 'agicap',
     name: 'Agicap',
     category: 'tresorerie',
     categorySlug: 'logiciels-tresorerie',
-    logo: '/images/logos/tools/agicap.svg',
-    logoAlt: 'Logo Agicap — logiciel de prévision de trésorerie pour PME',
+    logo: "/images/logos/tools/agicap-official.png",
+    logoAlt: "Logo Agicap",
     website: 'https://agicap.com/fr/',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["agicap"].label,
@@ -59,15 +55,15 @@ export const tools: Tool[] = [
     notForWho: ["Connexions de chaque banque à confirmer", "Hypothèses de paiement à maintenir"],
     experts: ['benjamin'],
     hasVerbatim: false,
-    shortDescription: "Suivi des comptes et des flux de trésorerie. Connexions de chaque banque à confirmer.",
+    shortDescription: getToolSummary("agicap"),
   },
   {
     slug: 'spendesk',
     name: 'Spendesk',
     category: 'depenses',
     categorySlug: 'gestion-depenses',
-    logo: '/images/logos/tools/spendesk.svg',
-    logoAlt: 'Logo Spendesk — logiciel de gestion des dépenses et notes de frais pour scale-ups',
+    logo: "/images/logos/tools/spendesk-official.svg",
+    logoAlt: "Logo Spendesk",
     website: 'https://www.spendesk.com',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["spendesk"].label,
@@ -76,15 +72,15 @@ export const tools: Tool[] = [
     notForWho: ["Délégations et exceptions à définir", "Export vers le logiciel comptable à tester"],
     experts: ['sebastien'],
     hasVerbatim: false,
-    shortDescription: "Circuit de demandes et d’approbations. Délégations et exceptions à définir.",
+    shortDescription: getToolSummary("spendesk"),
   },
   {
     slug: 'payfit',
     name: 'PayFit',
     category: 'paie',
     categorySlug: 'logiciels-paie',
-    logo: '/images/logos/tools/payfit.svg',
-    logoAlt: 'Logo PayFit — logiciel de paie et DSN automatisé pour startups et PME',
+    logo: "/images/logos/tools/payfit-official.svg",
+    logoAlt: "Logo PayFit",
     website: 'https://payfit.com/fr/',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["payfit"].label,
@@ -93,7 +89,7 @@ export const tools: Tool[] = [
     notForWho: ["Convention collective à confirmer", "Responsabilité de production et de contrôle à écrire"],
     experts: ['sebastien'],
     hasVerbatim: false,
-    shortDescription: "Paie et données collaborateurs. Convention collective à confirmer.",
+    shortDescription: getToolSummary("payfit"),
   },
   // ─── 9 fiches outils ajoutées via TICKET 5 ───────────────────────────
   {
@@ -102,7 +98,7 @@ export const tools: Tool[] = [
     category: 'comptabilite',
     categorySlug: 'logiciels-comptabilite',
     logo: '/images/logos/tools/sage.png',
-    logoAlt: 'Logo Sage — logiciel comptable historique pour PME industrielles et multi-sociétés',
+    logoAlt: "Logo Sage",
     website: 'https://www.sage.com/fr-fr/',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["sage"].label,
@@ -111,15 +107,15 @@ export const tools: Tool[] = [
     notForWho: ["Migration et modules à chiffrer"],
     experts: ['benjamin'],
     hasVerbatim: false,
-    shortDescription: "Édition et hébergement à identifier. Migration et modules à chiffrer.",
+    shortDescription: getToolSummary("sage"),
   },
   {
     slug: 'cegid-loop',
     name: 'Cegid Loop',
     category: 'comptabilite',
     categorySlug: 'logiciels-comptabilite',
-    logo: '/images/logos/tools/cegid-loop.png',
-    logoAlt: 'Logo Cegid Loop, solution de production comptable',
+    logo: "/images/logos/tools/cegid-loop-official.svg",
+    logoAlt: "Logo Cegid Loop",
     website: 'https://www.cegid.com/fr/solutions/expertise-comptable/',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["cegid-loop"].label,
@@ -128,16 +124,15 @@ export const tools: Tool[] = [
     notForWho: ["Accès entreprise et cabinet à définir"],
     experts: ['benjamin'],
     hasVerbatim: false,
-    shortDescription:
-      "Solution de production comptable et de collaboration entre le cabinet et ses clients. Périmètre et intégrations à confirmer avec le cabinet.",
+    shortDescription: getToolSummary("cegid-loop"),
   },
   {
     slug: 'fygr',
     name: 'Okimia (ex-Fygr)',
     category: 'tresorerie',
     categorySlug: 'logiciels-tresorerie',
-    logo: '/images/logos/tools/fygr.png',
-    logoAlt: 'Logo Fygr — outil de trésorerie économique pour PME 10-80 salariés',
+    logo: "/images/logos/tools/fygr-official.svg",
+    logoAlt: "Logo Okimia (ex-Fygr)",
     website: 'https://www.okimia.com/fr',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["fygr"].label,
@@ -146,16 +141,15 @@ export const tools: Tool[] = [
     notForWho: ["Connexions et entités à confirmer"],
     experts: ['benjamin'],
     hasVerbatim: false,
-    shortDescription:
-      "Alternative économique à Agicap pour les PME. Visibilité claire sur le cash, prévisions 13 semaines, onboarding express, à 3x moins cher.",
+    shortDescription: getToolSummary("fygr"),
   },
   {
     slug: 'pleo',
     name: 'Pleo',
     category: 'depenses',
     categorySlug: 'gestion-depenses',
-    logo: '/images/logos/tools/pleo.png',
-    logoAlt: 'Logo Pleo — cartes de paiement et gestion des dépenses pour startups en seed',
+    logo: "/images/logos/tools/pleo-official.svg",
+    logoAlt: "Logo Pleo",
     website: 'https://www.pleo.io/fr',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["pleo"].label,
@@ -164,16 +158,15 @@ export const tools: Tool[] = [
     notForWho: ["Droits, entités et plafonds à tester"],
     experts: ['sebastien'],
     hasVerbatim: false,
-    shortDescription:
-      "Le Spendesk des petites structures. Onboarding 10 minutes, cartes virtuelles instantanées, intégration Pennylane native.",
+    shortDescription: getToolSummary("pleo"),
   },
   {
     slug: 'silae',
     name: 'Silae',
     category: 'paie',
     categorySlug: 'logiciels-paie',
-    logo: '/images/logos/tools/silae.png',
-    logoAlt: 'Logo Silae — logiciel de paie multi-conventions pour PME (BTP, spectacle, maritime)',
+    logo: "/images/logos/tools/silae-official.svg",
+    logoAlt: "Logo Silae",
     website: 'https://www.silae.fr',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["silae"].label,
@@ -182,16 +175,15 @@ export const tools: Tool[] = [
     notForWho: ["Convention et prestataire à confirmer"],
     experts: ['benjamin'],
     hasVerbatim: false,
-    shortDescription:
-      "Solution paie pour structures complexes : 600+ CCN couvertes, gestion des temps, multi-statuts. La référence pour BTP et spectacle.",
+    shortDescription: getToolSummary("silae"),
   },
   {
     slug: 'lucca',
     name: 'Lucca',
     category: 'paie',
     categorySlug: 'logiciels-paie',
-    logo: '/images/logos/tools/lucca.png',
-    logoAlt: 'Logo Lucca — suite RH complète (absences, temps, notes de frais) pour PME 20-200 salariés',
+    logo: "/images/logos/tools/lucca-official.svg",
+    logoAlt: "Logo Lucca",
     website: 'https://www.lucca.fr',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["lucca"].label,
@@ -200,16 +192,15 @@ export const tools: Tool[] = [
     notForWho: ["Modules et interfaces paie à identifier"],
     experts: ['benjamin'],
     hasVerbatim: false,
-    shortDescription:
-      "Suite RH qui va au-delà de la paie. 8 modules intégrés : absences, temps, frais, onboarding, talents. Complément naturel de PayFit.",
+    shortDescription: getToolSummary("lucca"),
   },
   {
     slug: 'qonto',
     name: 'Qonto',
     category: 'depenses',
     categorySlug: 'gestion-depenses',
-    logo: '/images/logos/tools/qonto.png',
-    logoAlt: 'Logo Qonto — banque en ligne pro pour startups et PME françaises',
+    logo: "/images/logos/tools/qonto-official.svg",
+    logoAlt: "Logo Qonto",
     website: 'https://qonto.com/fr',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["qonto"].label,
@@ -218,16 +209,15 @@ export const tools: Tool[] = [
     notForWho: ["Quotas, pouvoirs et financement à examiner"],
     experts: ['sebastien'],
     hasVerbatim: false,
-    shortDescription:
-      "La banque des entrepreneurs français. IBAN FR, cartes virtuelles instantanées, intégration native Pennylane / Agicap / Spendesk selon le forfait choisi.",
+    shortDescription: getToolSummary("qonto"),
   },
   {
     slug: 'revolut-business',
     name: 'Revolut Business',
     category: 'depenses',
     categorySlug: 'gestion-depenses',
-    logo: '/images/logos/tools/revolut-business.png',
-    logoAlt: 'Logo Revolut Business — banque multi-devises pour startups internationales',
+    logo: "/images/logos/tools/revolut-business-official.svg",
+    logoAlt: "Logo Revolut Business",
     website: 'https://www.revolut.com/business/',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["revolut-business"].label,
@@ -236,16 +226,15 @@ export const tools: Tool[] = [
     notForWho: ["Pays, coordonnées de compte et frais à confirmer"],
     experts: ['sebastien'],
     hasVerbatim: false,
-    shortDescription:
-      "La banque des startups internationales. 30+ devises au taux interbancaire, IBAN GBP/EUR/USD, intégrations Stripe / PayPal / Shopify.",
+    shortDescription: getToolSummary("revolut-business"),
   },
   {
     slug: 'payhawk',
     name: 'Payhawk',
     category: 'depenses',
     categorySlug: 'gestion-depenses',
-    logo: '/images/logos/tools/payhawk.png',
-    logoAlt: 'Logo Payhawk — gestion des dépenses multi-devises et ERP pour ETI internationales',
+    logo: "/images/logos/tools/payhawk-official.svg",
+    logoAlt: "Logo Payhawk",
     website: 'https://payhawk.com/',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["payhawk"].label,
@@ -254,8 +243,7 @@ export const tools: Tool[] = [
     notForWho: ["Pays, devises et connecteurs à tester"],
     experts: ['benjamin'],
     hasVerbatim: false,
-    shortDescription:
-      "Le Spendesk des entreprises internationales. 50+ devises, cartes multi-pays, intégrations ERP (SAP, Oracle, NetSuite), reporting consolidé.",
+    shortDescription: getToolSummary("payhawk"),
   },
 
   // ═══════════════════════════════════════════════════════════════════════
@@ -273,8 +261,8 @@ export const tools: Tool[] = [
     name: 'Kyriba',
     category: 'tresorerie',
     categorySlug: 'logiciels-tresorerie',
-    logo: '',
-    logoAlt: 'Logo Kyriba — plateforme de trésorerie groupe pour ETI multi-devises',
+    logo: "/images/logos/tools/kyriba-official.svg",
+    logoAlt: "Logo Kyriba",
     website: 'https://www.kyriba.com/fr/',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["kyriba"].label,
@@ -283,8 +271,7 @@ export const tools: Tool[] = [
     notForWho: ["Connectivité bancaire et gouvernance à cadrer"],
     experts: ['benjamin'],
     hasVerbatim: false,
-    shortDescription:
-      "La trésorerie de groupe pour les ETI. Cash pooling multi-devises, hedging intégré, connexion 2 000+ banques via SWIFT. Notre choix ETI 50 M€+.",
+    shortDescription: getToolSummary("kyriba"),
   },
 
   {
@@ -292,8 +279,8 @@ export const tools: Tool[] = [
     name: 'Power BI',
     category: 'reporting',
     categorySlug: 'reporting-dataviz',
-    logo: '',
-    logoAlt: 'Logo Microsoft Power BI — outil de reporting financier et dashboards pour CFO',
+    logo: "/images/logos/tools/power-bi-official.svg",
+    logoAlt: "Logo Power BI",
     website: 'https://powerbi.microsoft.com/fr-fr/',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["power-bi"].label,
@@ -302,8 +289,7 @@ export const tools: Tool[] = [
     notForWho: ["Qualité des données et droits de partage à cadrer"],
     experts: ['benjamin'],
     hasVerbatim: false,
-    shortDescription:
-      "Tableaux de bord financiers à partir de sources préparées et rapprochées. Connexions, modèle de données et droits de partage à définir selon vos outils.",
+    shortDescription: getToolSummary("power-bi"),
   },
 
   {
@@ -311,8 +297,8 @@ export const tools: Tool[] = [
     name: 'Upflow',
     category: 'recouvrement',
     categorySlug: 'recouvrement-cash-collection',
-    logo: '',
-    logoAlt: 'Logo Upflow — automatisation du recouvrement client B2B pour PME',
+    logo: "/images/logos/tools/upflow-official.png",
+    logoAlt: "Logo Upflow",
     website: 'https://upflow.io/',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["upflow"].label,
@@ -321,8 +307,7 @@ export const tools: Tool[] = [
     notForWho: ["Factures, paiements et litiges à synchroniser"],
     experts: ['benjamin'],
     hasVerbatim: false,
-    shortDescription:
-      "Un outil de suivi du recouvrement client B2B à évaluer selon vos flux de facturation et vos besoins de relance.",
+    shortDescription: getToolSummary("upflow"),
   },
 
   {
@@ -330,8 +315,8 @@ export const tools: Tool[] = [
     name: 'LeanPay',
     category: 'recouvrement',
     categorySlug: 'recouvrement-cash-collection',
-    logo: '',
-    logoAlt: 'Logo LeanPay — recouvrement digital français pour PME',
+    logo: "/images/logos/tools/leanpay-official.svg",
+    logoAlt: "Logo LeanPay",
     website: 'https://www.leanpay.io/',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["leanpay"].label,
@@ -340,8 +325,7 @@ export const tools: Tool[] = [
     notForWho: ["Qualité de la balance et traitement des litiges à vérifier"],
     experts: ['sebastien'],
     hasVerbatim: false,
-    shortDescription:
-      "Une solution de recouvrement à comparer selon les scénarios de relance, les intégrations et le volume de factures.",
+    shortDescription: getToolSummary("leanpay"),
   },
 
   {
@@ -349,8 +333,8 @@ export const tools: Tool[] = [
     name: 'Factorial',
     category: 'sirh',
     categorySlug: 'sirh-rh',
-    logo: '',
-    logoAlt: 'Logo Factorial — SIRH complet France + Espagne pour PME',
+    logo: "/images/logos/tools/factorial-official.svg",
+    logoAlt: "Logo Factorial",
     website: 'https://factorial.fr/',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["factorial"].label,
@@ -359,8 +343,7 @@ export const tools: Tool[] = [
     notForWho: ["Modules, paie et droits à préciser"],
     experts: ['sebastien'],
     hasVerbatim: false,
-    shortDescription:
-      "Un SIRH à évaluer pour centraliser les processus RH de vos équipes, en vérifiant les modules et les pays couverts.",
+    shortDescription: getToolSummary("factorial"),
   },
 
   {
@@ -368,8 +351,8 @@ export const tools: Tool[] = [
     name: 'Carta',
     category: 'equity',
     categorySlug: 'equity-cap-table',
-    logo: '',
-    logoAlt: 'Logo Carta — gestion cap table et BSPCE pour startups levant des fonds',
+    logo: "/images/logos/tools/carta-official.svg",
+    logoAlt: "Logo Carta",
     website: 'https://carta.com/',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["carta"].label,
@@ -378,8 +361,7 @@ export const tools: Tool[] = [
     notForWho: ["Pays et instruments juridiques à confirmer"],
     experts: ['benjamin'],
     hasVerbatim: false,
-    shortDescription:
-      "Une plateforme de gestion de l’actionnariat à étudier selon la structure du capital et les besoins des investisseurs.",
+    shortDescription: getToolSummary("carta"),
   },
 
   {
@@ -387,8 +369,8 @@ export const tools: Tool[] = [
     name: 'Equify',
     category: 'equity',
     categorySlug: 'equity-cap-table',
-    logo: '',
-    logoAlt: 'Logo Equify — alternative française à Carta pour cap table BSPCE',
+    logo: "/images/logos/tools/equify-official.svg",
+    logoAlt: "Logo Equify",
     website: 'https://www.equify.eu/',
     implementationTime: 'À cadrer après reprise et tests',
     priceRange: TOOL_PRICING["equify"].label,
@@ -397,8 +379,7 @@ export const tools: Tool[] = [
     notForWho: ["Historique juridique et habilitations à rapprocher"],
     experts: ['sebastien'],
     hasVerbatim: false,
-    shortDescription:
-      "Une solution de gestion de l’actionnariat à comparer selon les opérations sur le capital et les plans d’intéressement envisagés.",
+    shortDescription: getToolSummary("equify"),
   },
 ];
 
