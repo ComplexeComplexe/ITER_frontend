@@ -51,7 +51,7 @@ export default function DafExternaliseVsSalariePage() {
       author={{
         name: SALARIED_DAF_GUIDE.author,
         avatar: "/images/team/benjamin-ziza.webp",
-        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
+        jobTitle: "Cofondateur et CFO, Iter Advisors",
       }}
       readingTime={6}
       datePublished={SALARIED_DAF_GUIDE.publishedDate}

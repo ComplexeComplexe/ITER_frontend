@@ -45,7 +45,7 @@ export default async function Page() {
       author={{
         name: "Benjamin Ziza",
         avatar: "/images/team/benjamin-ziza.webp",
-        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
+        jobTitle: "Cofondateur et CFO, Iter Advisors",
       }}
       readingTime={11}
       // DONNÉE (2026-08-31, Guillaume Rostand) — durée réelle et signaux de

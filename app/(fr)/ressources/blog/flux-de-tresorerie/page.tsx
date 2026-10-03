@@ -46,7 +46,7 @@ export default function FluxDeTresorerieePage() {
       author={{
         name: "Benjamin Ziza",
         avatar: "/images/team/benjamin-ziza.webp",
-        jobTitle: "Associé fondateur — CFO & Investisseur, Iter Advisors",
+        jobTitle: "Cofondateur et CFO, Iter Advisors",
       }}
       readingTime={10}
       dateModified="2026-09-30"

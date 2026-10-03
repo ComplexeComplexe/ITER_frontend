@@ -1,4 +1,4 @@
-import { GUILLAUME_PROFILE } from "@/lib/content/guillaume-profile";
+import partnerSummaries from "@/lib/content/partner-summaries.json";
 import type { StrapiTeamMember } from "@/lib/static-content";
 import type { Locale } from "@/lib/i18n";
 
@@ -30,6 +30,22 @@ function nameToSlug(firstName: string, lastName: string): string {
   return `${firstName.toLowerCase().replace(/[éèê]/g, 'e')}-${lastName.toLowerCase().replace(/[éèê]/g, 'e')}`;
 }
 
+/** Keep listing, metadata and profile copy aligned with the same approved content. */
+function partnerMemberData(slug: string): Pick<FallbackMemberData, "roles" | "h1Roles" | "bio" | "bioExtended"> {
+  const summary = (partnerSummaries as Record<string, typeof partnerSummaries["guillaume-rostand"]>)[slug];
+  const { fr, en, es } = summary ?? {};
+  if (!fr || !en || !es) throw new Error(`Missing partner profile: ${slug}`);
+  const localize = (select: (profile: typeof partnerSummaries["guillaume-rostand"]["fr"]) => string): Record<Locale, string> => ({
+    fr: select(fr), en: select(en), es: select(es),
+  });
+  return {
+    roles: localize(profile => profile.role),
+    h1Roles: localize(profile => profile.metaRole),
+    bio: localize(profile => profile.bio),
+    bioExtended: localize(profile => profile.bioExtended),
+  };
+}
+
 const fallbackData: FallbackMemberData[] = [
   // === Direction / Partners ===
   {
@@ -37,110 +53,48 @@ const fallbackData: FallbackMemberData[] = [
     documentId: "sebastien-doat",
     firstName: "Sébastien",
     lastName: "Doat",
-    roles: {
-      fr: "Associé fondateur et DAF externalisé",
-      en: "Founding partner and Fractional CFO",
-      es: "Socio fundador y CFO externo"
-    },
-    h1Roles: {
-      fr: "Associé fondateur, DAF externalisé",
-      en: "Founding partner, Fractional CFO",
-      es: "Socio fundador, CFO externo",
-    },
+    ...partnerMemberData("sebastien-doat"),
     slug: "sebastien-doat",
     photo: { url: "/images/team/sebastien-doat.webp" },
     linkedIn: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
     order: 1,
     showInHero: true,
-    bio: {
-      fr: "Sébastien Doat est associé fondateur et DAF externalisé chez Iter Advisors. Basé à Barcelone, il accompagne les dirigeants dans le pilotage de la trésorerie, le reporting et la préparation des financements. Son parcours comprend des fonctions de direction financière chez Carts Guru et Terres de Café.",
-      en: "Sébastien Doat is a founding partner and fractional CFO at Iter Advisors. Based in Barcelona, he supports business leaders with cash management, reporting and financing preparation. His background includes finance leadership roles at Carts Guru and Terres de Café.",
-      es: "Sébastien Doat es socio fundador y CFO externo en Iter Advisors. Desde Barcelona acompaña a directivos en la gestión de tesorería, el reporting y la preparación de financiación. Su trayectoria incluye funciones de dirección financiera en Carts Guru y Terres de Café.",
-    },
-    bioExtended: {
-      fr: "Ses missions associent modélisation financière, suivi des indicateurs et échanges avec les fondateurs et investisseurs. Sur les projets d’automatisation et d’IA en finance, l’accompagnement part des processus, de la qualité des données et des contrôles attendus.",
-      en: "His engagements combine financial modelling, indicator monitoring and discussions with founders and investors. Automation and AI projects in finance start with processes, data quality and expected controls.",
-      es: "Sus misiones combinan modelización financiera, seguimiento de indicadores e intercambios con fundadores e inversores. Los proyectos de automatización e IA en finanzas parten de los procesos, la calidad de los datos y los controles esperados.",
-    },
   },
   {
     id: 2,
     documentId: "benjamin-ziza",
     firstName: "Benjamin",
     lastName: "Ziza",
-    roles: {
-      fr: "Associé fondateur - CFO & Investisseur",
-      en: "Founding Partner - CFO & Investor",
-      es: "Socio fundador - CFO e Inversor"
-    },
-    h1Roles: {
-      fr: "Associé fondateur, DAF externalisé",
-      en: "Founding partner, Fractional CFO",
-      es: "Socio fundador, CFO externo",
-    },
+    ...partnerMemberData("benjamin-ziza"),
     slug: "benjamin-ziza",
     photo: { url: "/images/team/benjamin-ziza.webp" },
     linkedIn: "https://www.linkedin.com/in/benjaminziza/",
     order: 2,
     showInHero: true,
-    bio: {
-      fr: // Bloc 5 (10/08/2026) — formation corrigée : Benjamin est diplômé
-      // d'expertise comptable (DEC, 2012-2015), pas d'une école de commerce.
-      "Benjamin a structuré la direction financière de startups et de PME avant de cofonder Iter Advisors. Il pilote aujourd'hui le bureau de Barcelone et accompagne une dizaine de fondateurs par an sur leur stratégie financière, leur fiscalité internationale (notamment la loi Beckham) et la préparation de leurs levées de fonds. Auteur principal du journal d'Iter Advisors, il écrit sur les sujets qu'il pratique au quotidien : trésorerie, KPIs SaaS, externalisation comptable et fiscalité France-Espagne.",
-      en: "Benjamin structured finance for SaaS startups and industrial SMEs before co-founding Iter Advisors. He now runs the Barcelona office and supports around ten founders a year on financial strategy, international taxation (notably the Beckham Law) and fundraising preparation. As lead writer of the Iter Advisors journal, he covers the topics he practices daily: cash management, SaaS KPIs, accounting outsourcing, and Franco-Spanish taxation.",
-      es: "Benjamin estructuró las finanzas de startups SaaS y pymes industriales antes de cofundar Iter Advisors. Hoy dirige la oficina de Barcelona y acompaña a una decena de fundadores al año en su estrategia financiera, su fiscalidad internacional (en particular la ley Beckham) y la preparación de sus rondas de financiación. Autor principal de la revista de Iter Advisors, escribe sobre los temas que practica a diario: tesorería, KPIs SaaS, externalización contable y fiscalidad franco-española.",
-    },
-    bioExtended: {
-      fr: "Basé à Barcelone, Benjamin apporte une double perspective sur la réglementation financière européenne et les réalités pratiques du développement d'une entreprise technologique — de la mise en place de la première paie à la tenue des boards institutionnels. Son expertise couvre les prévisions de trésorerie à 13 semaines, le reporting de gestion, la restructuration financière et la planification fiscale transfrontalière entre la France, l'Espagne et d'autres pays. Il a accompagné des levées de fonds de 500 K€ pre-seed jusqu'à 15 M€ en Série A, ainsi que plusieurs opérations de M&A. Diplômé d'expertise comptable (DEC, 2012-2015), formé à l'expertise comptable et au commissariat aux comptes, il intervient sur les levées de fonds y compris les dossiers à risque, les plans de restructuration, la structuration post-levée et la préparation de cession. Il s'exprime couramment en français, espagnol et anglais.",
-      en: "Based in Barcelona, Benjamin leads Iter Advisors' Spanish operations and brings a dual perspective on European financial regulation and the practicalities of scaling a technology business — from first payroll setup to institutional board meetings. His expertise includes 13-week cash flow forecasting, management reporting, financial restructuring, and cross-border tax planning across France, Spain, and beyond. He has supported fundraising rounds from €500K pre-seed to €15M Series A, as well as M&A transactions. He writes regularly on SaaS KPIs, treasury management and Franco-Spanish taxation. Benjamin is a qualified chartered accountant (DEC, 2012-2015), trained in both accountancy and statutory audit.",
-      es: "Desde Barcelona, Benjamin dirige las operaciones de Iter Advisors en España y aporta una doble perspectiva sobre la regulación financiera europea y las realidades prácticas de escalar una empresa tecnológica, desde la primera nómina hasta las reuniones de consejo institucional. Su experiencia abarca previsión de tesorería a 13 semanas, reporting de gestión, reestructuración financiera y planificación fiscal transfronteriza entre Francia, España y más allá. Ha apoyado rondas de financiación desde 500 K€ pre-seed hasta 15 M€ en Serie A, así como transacciones de M&A. Escribe con regularidad sobre KPIs SaaS, tesorería y fiscalidad franco-española. Benjamin está titulado en experiencia contable (DEC, 2012-2015), con formación en auditoría legal.000 profesionales de las finanzas cada mes. Benjamin es graduado en Finanzas por una de las principales grandes écoles francesas y habla con fluidez francés, español e inglés.",
-    },
   },
   {
     id: 3,
     documentId: "guillaume-rostand",
     firstName: "Guillaume",
     lastName: "Rostand",
-    roles: { fr: GUILLAUME_PROFILE.fr.teamRole, en: GUILLAUME_PROFILE.en.teamRole, es: GUILLAUME_PROFILE.es.teamRole },
-    h1Roles: { fr: GUILLAUME_PROFILE.fr.metaRole, en: GUILLAUME_PROFILE.en.metaRole, es: GUILLAUME_PROFILE.es.metaRole },
+    ...partnerMemberData("guillaume-rostand"),
     slug: "guillaume-rostand",
     photo: { url: "/images/team/guillaume-rostand.webp" },
     linkedIn: "https://www.linkedin.com/in/rostand/",
     order: 3,
     showInHero: true,
-    bio: { fr: GUILLAUME_PROFILE.fr.intro[0], en: GUILLAUME_PROFILE.en.intro[0], es: GUILLAUME_PROFILE.es.intro[0] },
-    bioExtended: { fr: GUILLAUME_PROFILE.fr.intro[1], en: GUILLAUME_PROFILE.en.intro[1], es: GUILLAUME_PROFILE.es.intro[1] },
   },
   {
     id: 4,
     documentId: "florent-greth",
     firstName: "Florent",
     lastName: "Greth",
-    roles: {
-      fr: "Partner & CFO",
-      en: "Partner & CFO",
-      es: "Partner y CFO"
-    },
-    h1Roles: {
-      fr: "Partner & CFO externalisé",
-      en: "Partner & Fractional CFO",
-      es: "Partner y CFO Externalizado",
-    },
+    ...partnerMemberData("florent-greth"),
     slug: "florent-greth",
     photo: { url: "/images/team/florent-greth.webp" },
     linkedIn: "https://www.linkedin.com/in/florent-greth-cfo-pennylane/?locale=en",
     order: 4,
     showInHero: true,
-    bio: {
-      fr: "Associé et CFO chez Iter Advisors, basé à Barcelone. Plus de 15 ans en direction financière et contrôle de gestion, passés notamment chez PACCOR, VIIA, Abertis Group et KPMG en audit. Il a rejoint Iter Advisors en 2023 pour prendre la responsabilité du pôle DAF externe, et a été nommé associé en 2026. Référent sur le déploiement et la migration Pennylane.",
-      en: "Florent is a Partner & CFO at Iter Advisors. A specialist in SaaS finance tools (Pennylane, Agicap), he supports SMEs and startups on financial structuring and cash flow management.",
-      es: "Florent es Partner y CFO en Iter Advisors. Especialista en herramientas SaaS de finanzas (Pennylane, Agicap), acompaña a pymes y startups en estructuración financiera y gestión de tesorería.",
-    },
-    bioExtended: {
-      fr: "Chez Iter Advisors, Florent intervient auprès de PME en croissance et de startups pour structurer leur direction financière, mettre en place des outils de pilotage adaptés et optimiser leur trésorerie. Expert reconnu des solutions finance SaaS, notamment Pennylane, il accompagne la migration et l'implémentation de ces outils chez ses clients, réduisant les délais de clôture et automatisant les réconciliations comptables. Ses missions couvrent la mise en place de prévisionnels de trésorerie à 12 mois glissants, la construction de tableaux de bord financiers personnalisés, la préparation aux audits et la structuration des process comptables et financiers. Florent est spécialisé dans les secteurs SaaS, e-commerce et services B2B, où il accompagne les fondateurs dans la compréhension et l'amélioration de leurs métriques financières clés : ARR, MRR, churn, LTV/CAC et free cash flow. Il travaille régulièrement sur la préparation aux levées de fonds (Seed à Série A), en construisant les modèles financiers et les data rooms qui rassurent les investisseurs. Au-delà du pilotage financier opérationnel, Florent conseille sur la sélection et l'intégration de la stack technologique finance : ERP, logiciel de trésorerie, gestion des dépenses, facturation et paie. Son approche : simplifier ce qui peut l'être, automatiser ce qui est répétitif, et libérer du temps au fondateur pour se concentrer sur la croissance.",
-      en: "At Iter Advisors, Florent works with growth-stage SMEs and startups to structure their finance function, implement the right management tools, and optimise their cash flow. A recognised expert in SaaS finance solutions, particularly Pennylane, he supports clients through tool migration and implementation — reducing closing times and automating accounting reconciliations. His engagements cover 12-month rolling cash flow forecasts, custom financial dashboards, audit preparation, and structuring of accounting and finance processes. Florent specialises in SaaS, e-commerce and B2B services sectors, where he guides founders in understanding and improving their key financial metrics: ARR, MRR, churn, LTV/CAC and free cash flow. He regularly supports fundraising preparation (Seed to Series A), building financial models and data rooms that instil investor confidence. Beyond operational financial management, Florent advises on selecting and integrating the finance technology stack: ERP, treasury software, expense management, invoicing and payroll. His approach: simplify where possible, automate what is repetitive, and free up time for founders to focus on growth.",
-      es: "En Iter Advisors, Florent trabaja con pymes en crecimiento y startups para estructurar su dirección financiera, implementar las herramientas de control adecuadas y optimizar su tesorería. Experto reconocido en soluciones SaaS de finanzas, en particular Pennylane, acompaña a los clientes en la migración e implementación de estas herramientas, reduciendo los plazos de cierre y automatizando las reconciliaciones contables. Sus misiones abarcan previsiones de tesorería a 12 meses, cuadros de mando financieros personalizados, preparación de auditorías y estructuración de procesos contables y financieros. Florent está especializado en los sectores SaaS, e-commerce y servicios B2B, donde guía a los fundadores en la comprensión y mejora de sus métricas financieras clave: ARR, MRR, churn, LTV/CAC y free cash flow. Trabaja regularmente en la preparación para la captación de fondos (Seed a Serie A), construyendo modelos financieros y data rooms que generan confianza en los inversores. Más allá de la gestión financiera operativa, Florent asesora sobre la selección e integración del stack tecnológico financiero: ERP, software de tesorería, gestión de gastos, facturación y nómina.",
-    },
   },
   {
     id: 5,
