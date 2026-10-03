@@ -19,7 +19,7 @@ export default function RelatedArticles({ locale, articles }: RelatedArticlesPro
     const slug = article.url.split('/').filter(Boolean).pop() || article.url;
     const cover = BLOG_COVERS[slug];
     return { slug, href: article.url, title: article.title, category: article.category,
-      image: cover?.cover || '/images/og-logo.png', alt: cover?.alt || article.title,
+      image: cover?.cover || '/images/logos/iter-advisors-brand.png', alt: cover?.alt || article.title,
       readMinutes: 0, publishedDate: '' };
   })} />;
 }

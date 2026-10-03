@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { getStoredConsent, storeConsent, applyTrackingConsent as pushConsentToGTM, type ConsentState } from "@/lib/analytics/consent";
 
 // ---------------------------------------------------------------------------
@@ -34,6 +34,8 @@ const translations = {
       description:
         "Gérez vos préférences par catégorie. Les cookies nécessaires sont indispensables au fonctionnement du site et ne peuvent pas être désactivés.",
       save: "Enregistrer mes préférences",
+      close: "Fermer sans modifier mes choix",
+      dismissHint: "Sans choix enregistré, fermer conserve uniquement les cookies nécessaires.",
       acceptAll: "Tout accepter",
       detailsLabel: "Liste détaillée des cookies",
       categories: {
@@ -76,6 +78,8 @@ const translations = {
       description:
         "Manage your preferences by category. Necessary cookies are essential for the site to function and cannot be disabled.",
       save: "Save my preferences",
+      close: "Close without changing my choices",
+      dismissHint: "Without a saved choice, closing keeps only necessary cookies.",
       acceptAll: "Accept all",
       detailsLabel: "Detailed cookie list",
       categories: {
@@ -118,6 +122,8 @@ const translations = {
       description:
         "Gestione sus preferencias por categoría. Las cookies necesarias son esenciales para el funcionamiento del sitio y no se pueden desactivar.",
       save: "Guardar mis preferencias",
+      close: "Cerrar sin modificar mis preferencias",
+      dismissHint: "Sin preferencias guardadas, cerrar mantiene solo las cookies necesarias.",
       acceptAll: "Aceptar todo",
       detailsLabel: "Lista detallada de cookies",
       categories: {
@@ -160,16 +166,23 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
     analytics: false,
     marketing: false,
   });
+  const [draftConsent, setDraftConsent] = useState(consent);
+  const hasRecordedChoice = useRef(false);
+  const hasInteracted = useRef(false);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   // Initialisation
   useEffect(() => {
     // The first-visit banner is server-rendered. The head script hides it before
     // paint for valid stored choices; hydration then restores the actual consent.
     const frame = requestAnimationFrame(() => {
+      if (hasInteracted.current) return;
       const stored = getStoredConsent();
       if (stored) {
+        hasRecordedChoice.current = true;
         setShowBanner(false);
         setConsent(stored);
+        setDraftConsent(stored);
         pushConsentToGTM(stored);
       } else {
         // Default consent (all denied) is already set by the <head> script in
@@ -182,11 +195,14 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
 
   // Sauvegarder et appliquer le consentement
   const applyConsent = useCallback((newConsent: ConsentState) => {
+    hasInteracted.current = true;
+    hasRecordedChoice.current = true;
     setConsent(newConsent);
-    storeConsent(newConsent);
-    pushConsentToGTM(newConsent);
+    setDraftConsent(newConsent);
     setShowBanner(false);
     setShowModal(false);
+    storeConsent(newConsent);
+    pushConsentToGTM(newConsent);
   }, []);
 
   const handleAcceptAll = useCallback(() => {
@@ -198,19 +214,71 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
   }, [applyConsent]);
 
   const handleSavePreferences = useCallback(() => {
-    applyConsent(consent);
-  }, [applyConsent, consent]);
+    applyConsent(draftConsent);
+  }, [applyConsent, draftConsent]);
 
   const toggleCategory = useCallback((category: ConsentCategory) => {
     if (category === "necessary") return; // Toujours actif
-    setConsent((prev) => ({ ...prev, [category]: !prev[category] }));
+    setDraftConsent((prev) => ({ ...prev, [category]: !prev[category] }));
   }, []);
 
   // Bouton flottant pour rouvrir les préférences
   const handleOpenPreferences = useCallback(() => {
+    hasInteracted.current = true;
+    setDraftConsent(consent);
     setShowModal(true);
     setShowBanner(false);
-  }, []);
+  }, [consent]);
+
+  const handleClosePreferences = useCallback(() => {
+    // Dismissing the first visit is a refusal, never an implicit opt-in.
+    // Later dismissals discard the draft without changing a saved choice.
+    if (!hasRecordedChoice.current) {
+      applyConsent({ necessary: true, analytics: false, marketing: false });
+    } else {
+      setDraftConsent(consent);
+      setShowModal(false);
+    }
+  }, [applyConsent, consent]);
+
+  useEffect(() => {
+    const open = () => handleOpenPreferences();
+    window.addEventListener("iter:open-cookie-preferences", open);
+    return () => window.removeEventListener("iter:open-cookie-preferences", open);
+  }, [handleOpenPreferences]);
+
+  useEffect(() => {
+    if (!showModal) return;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const focusable = () => Array.from(dialogRef.current?.querySelectorAll<HTMLElement>(
+      'button:not([disabled]), a[href], [tabindex="0"]',
+    ) || []);
+    focusable()[0]?.focus();
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        handleClosePreferences();
+      } else if (event.key === "Tab") {
+        const elements = focusable();
+        const first = elements[0], last = elements.at(-1);
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKey);
+      if (previousFocus?.isConnected) previousFocus.focus();
+    };
+  }, [showModal, handleClosePreferences]);
 
   return (
     <>
@@ -244,7 +312,7 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
                 <h2
-                  className="text-lg font-semibold"
+                  className="flex-1 text-lg font-semibold"
                   style={{
                     fontFamily: "var(--font-heading)",
                     color: "oklch(0.15 0.01 270)",
@@ -252,6 +320,15 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                 >
                   {t.banner.title}
                 </h2>
+                <button
+                  onClick={handleRejectAll}
+                  aria-label={t.modal.close}
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-gray-700 hover:bg-gray-100"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                    <path d="m6 6 12 12M18 6 6 18" />
+                  </svg>
+                </button>
               </div>
 
               {/* Description */}
@@ -284,10 +361,7 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                   {t.banner.rejectAll}
                 </button>
                 <button
-                  onClick={() => {
-                    setShowBanner(false);
-                    setShowModal(true);
-                  }}
+                  onClick={handleOpenPreferences}
                   className="rounded-lg border px-4 py-2.5 text-sm font-medium transition-colors hover:bg-gray-50"
                   style={{
                     borderColor: "oklch(0.42 0.28 275)",
@@ -314,19 +388,23 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
       {/* ----------------------------------------------------------------- */}
       {showModal && (
         <div
+          data-cookie-overlay
+          data-nosnippet
           className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/50 p-4"
           onClick={(e) => {
-            if (e.target === e.currentTarget) setShowModal(false);
+            if (e.target === e.currentTarget) handleClosePreferences();
           }}
         >
           <div
+            ref={dialogRef}
             role="dialog"
             aria-label={t.modal.title}
+            aria-describedby="cookie-preferences-description"
             aria-modal="true"
-            className="max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white shadow-2xl"
+            className="flex max-h-[calc(100dvh-2rem)] w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-white shadow-2xl"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            <div className="p-6">
+            <div className="shrink-0 px-5 pt-5 pb-3">
               {/* Header */}
               <div className="mb-2 flex items-center justify-between">
                 <h2
@@ -339,9 +417,9 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                   {t.modal.title}
                 </h2>
                 <button
-                  onClick={() => setShowModal(false)}
-                  className="rounded-lg p-1.5 transition-colors hover:bg-gray-100"
-                  aria-label="Fermer"
+                  onClick={handleClosePreferences}
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg transition-colors hover:bg-gray-100"
+                  aria-label={t.modal.close}
                 >
                   <svg
                     width="20"
@@ -360,11 +438,15 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
               </div>
 
               <p
-                className="mb-6 text-sm leading-relaxed"
+                id="cookie-preferences-description"
+                className="text-sm leading-relaxed"
                 style={{ color: "oklch(0.45 0.01 270)" }}
               >
                 {t.modal.description}
               </p>
+              <p className="mt-2 text-xs text-gray-600">{t.modal.dismissHint}</p>
+            </div>
+            <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 pb-5">
 
               {/* Catégories */}
               <div className="space-y-4">
@@ -373,7 +455,7 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                 ).map((category) => {
                   const cat = t.modal.categories[category];
                   const isNecessary = category === "necessary";
-                  const isActive = consent[category];
+                  const isActive = draftConsent[category];
 
                   return (
                     <div
@@ -419,7 +501,7 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                             aria-label={cat.title}
                           >
                             <span
-                              className="absolute top-0.5 h-5 w-5 rounded-full bg-white shadow-sm transition-transform duration-200"
+                              className="absolute left-0 top-0.5 h-5 w-5 rounded-full bg-white shadow-sm transition-transform duration-200"
                               style={{
                                 transform: isActive
                                   ? "translateX(22px)"
@@ -454,9 +536,15 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
               >
                 {t.modal.detailsLabel}
               </a>
-
+            </div>
               {/* Boutons */}
-              <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-end sm:gap-3">
+              <div className="flex shrink-0 flex-col gap-2 border-t border-gray-200 bg-white p-4 sm:flex-row sm:flex-wrap sm:justify-end">
+                <button
+                  onClick={handleRejectAll}
+                  className="min-h-11 rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                >
+                  {t.banner.rejectAll}
+                </button>
                 <button
                   onClick={handleAcceptAll}
                   className="rounded-lg border px-4 py-2.5 text-sm font-medium transition-colors hover:bg-gray-50"
@@ -475,7 +563,6 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                   {t.modal.save}
                 </button>
               </div>
-            </div>
           </div>
         </div>
       )}

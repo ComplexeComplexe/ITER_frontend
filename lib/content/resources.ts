@@ -229,7 +229,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
           {
             title: "Fiche métier : Directeur Administratif et Financier",
             href: "/daf-externalise/metier",
-            image: "/images/logos/logo-og-square.png",
+            image: "/images/logos/iter-advisors-brand-square.png",
             tag: "Fiche métier",
           },
         ],
@@ -409,7 +409,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
           {
             title: "Job description: Chief Financial Officer",
             href: "/en/fractional-cfo/role",
-            image: "/images/logos/logo-og-square.png",
+            image: "/images/logos/iter-advisors-brand-square.png",
             tag: "Job description",
           },
         ],
@@ -610,7 +610,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
           {
             title: "Perfil profesional: Director Financiero",
             href: "/es/externalizacion-daf/funciones",
-            image: "/images/logos/logo-og-square.png",
+            image: "/images/logos/iter-advisors-brand-square.png",
             tag: "Perfil profesional",
           },
         ],

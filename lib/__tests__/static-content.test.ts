@@ -27,6 +27,6 @@ describe('static publishing after CMS retirement', () => {
     expect(result.title).toBe('Titre validé');
     expect(result.description).toBe('Description validée');
     expect(result.alternates?.canonical).toBe('https://www.iteradvisors.com/daf-externalise');
-    expect(strapiMediaUrl({ url: '/images/og-logo.png', id: 1, alternativeText: '' })).toBe('/images/og-logo.png');
+    expect(strapiMediaUrl({ url: '/images/logos/iter-advisors-brand.png', id: 1, alternativeText: '' })).toBe('/images/logos/iter-advisors-brand.png');
   });
 });

@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   "alternates": {
     "canonical": "https://www.iteradvisors.com/ressources/blog/cout-daf-externalise-tarifs-prix-2026"
   },
-  "twitter": { "card": "summary_large_image", "images": ["https://www.iteradvisors.com/images/og-logo.png"] },
+  "twitter": { "card": "summary_large_image", "images": ["https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"] },
   "openGraph": {
     "title": "Coût d’un DAF externalisé : comparer les budgets en 2026",
     "description": "Comparez forfait mensuel, tarif journalier et recrutement : périmètre, frais, disponibilité et calcul annuel. Méthode et exemples de budget explicites.",
     "type": "article",
-    "images": [{ "url": "https://www.iteradvisors.com/images/og-logo.png", "width": 1200, "height": 630, "alt": "Iter Advisors : direction financière externalisée" }]
+    "images": [{ "url": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png", "width": 1200, "height": 630, "alt": "Iter Advisors : direction financière externalisée" }]
   }
 };
 export default function Page() { return (

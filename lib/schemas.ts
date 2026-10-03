@@ -331,7 +331,7 @@ export function articleSchema({
       url: `${BASE}/`,
       logo: {
         "@type": "ImageObject",
-        url: `${BASE}/images/logos/logo-og-square.png`,
+        url: `${BASE}/images/logos/iter-advisors-brand-square.png`,
       },
     },
     ...(imageSrc && {

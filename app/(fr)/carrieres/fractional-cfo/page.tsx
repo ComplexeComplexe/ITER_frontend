@@ -54,7 +54,7 @@ const structuredData = {
         "@type": "Organization",
         name: "Iter Advisors",
         sameAs: "https://www.iteradvisors.com",
-        logo: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
+        logo: "https://www.iteradvisors.com/images/logos/iter-advisors-brand-square.png",
       },
       jobLocation: [
         {
@@ -119,7 +119,7 @@ const structuredData = {
       "@id": "https://www.iteradvisors.com/#organization",
       name: "Iter Advisors",
       url: "https://www.iteradvisors.com",
-      logo: "https://www.iteradvisors.com/images/logos/logo-og-square.png",
+      logo: "https://www.iteradvisors.com/images/logos/iter-advisors-brand-square.png",
     },
     // SEO-005 (2026-08-10) — BreadcrumbList manuel retiré. Le composant
     // <Breadcrumb> de la page émet déjà le sien. Tant que ce graphe partait
@@ -145,7 +145,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "Iter Advisors recrute des fractional CFOs seniors (10 ans et plus) pour un portefeuille de startups tech. Freelance, portage ou CDI, mode hybride.",
       url: PAGE_URL,
       type: "website",
-    images: [{ url: "/images/og-logo.png", width: 1200, height: 630 }],
+    images: [{ url: "/images/logos/iter-advisors-brand.png", width: 1200, height: 630 }],
   },
   };
 }
