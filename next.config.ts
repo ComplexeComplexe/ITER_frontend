@@ -934,13 +934,13 @@ const nextConfig: NextConfig = {
       // ── CATCH-ALL: EN tools slugs (/en/ressources/tools/*)
       // /en/ressources/tools hub (200), but no [slug] handler.
       {
-        source: "/en/ressources/tools/:slug",
+        source: "/en/ressources/tools/:slug((?!methodology$)[^/]+)",
         destination: "/ressources/outils/:slug",
         permanent: true,
       },
       // ── CATCH-ALL: ES herramientas slugs (/es/recursos/herramientas/*)
       {
-        source: "/es/recursos/herramientas/:slug",
+        source: "/es/recursos/herramientas/:slug((?!metodologia$)[^/]+)",
         destination: "/ressources/outils/:slug",
         permanent: true,
       },

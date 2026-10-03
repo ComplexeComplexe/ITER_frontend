@@ -31,7 +31,7 @@ export interface ToolsPageContent {
 const content = {
   fr: {
     meta: {
-      title: "Nos outils finance | Iter Advisors",
+      title: "Outils financiers : avis de DAF | Iter Advisors",
       description:
         "Comptabilité, ERP, trésorerie et dépenses : les outils sur lesquels intervient Iter Advisors, leurs usages et les profils d’entreprise concernés.",
     },
@@ -45,7 +45,7 @@ const content = {
   },
   en: {
     meta: {
-      title: "Our finance tools | Iter Advisors",
+      title: "Finance tools: CFO reviews | Iter Advisors",
       description:
         "Accounting, ERP, treasury and expenses: the tools Iter Advisors works with, their uses and the typical businesses they serve.",
     },
@@ -59,7 +59,7 @@ const content = {
   },
   es: {
     meta: {
-      title: "Nuestras herramientas financieras | Iter Advisors",
+      title: "Herramientas financieras: opiniones CFO | Iter Advisors",
       description:
         "Contabilidad, ERP, tesorería y gastos: las herramientas con las que trabaja Iter Advisors, sus usos y los perfiles de empresa habituales.",
     },
