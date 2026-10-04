@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import { localeRedirects } from "./lib/locale-redirects";
+import { correctedGscRedirects } from "./lib/gsc-redirects";
 
 const nextConfig: NextConfig = {
   trailingSlash: false,
@@ -107,7 +108,7 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    return localeRedirects([
+    return correctedGscRedirects(localeRedirects([
       // Consolidation des intentions FR, avec conservation des contenus utiles.
       { source: "/ressources/blog/cout-externalisation-comptable-2026", destination: "/ressources/blog/externalisation-comptable", statusCode: 301 },
       { source: "/ressources/blog/drh-externalise-quand-et-pourquoi", destination: "/drh-externalise", statusCode: 301 },
@@ -129,19 +130,11 @@ const nextConfig: NextConfig = {
       {source: "/services/flux-de-tresorerie", destination: "/services/previsionnel-tresorerie", permanent: true},
       {source: "/es/recursos/blog/les-10-outils-pour-cfos-startup", destination: "/ressources/blog/les-10-outils-pour-cfos-startup", permanent: true},
       {source: "/en/daf-externalise", destination: "/en/fractional-cfo", permanent: true},
-      {source: "/en/daf-externalise/secteurs", destination: "/en/fractional-cfo", permanent: true},
       {source: "/en/daf-externalise/temps-partage", destination: "/en/fractional-cfo/shared-time", permanent: true},
-      {source: "/en/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance", destination: "/en/ressources/blog", permanent: true},
-      {source: "/en/en/ressources/blog/organiser-sa-direction-financiere", destination: "/en/fractional-cfo/role", permanent: true},
-      {source: "/en/en/services/outsourced-financial-management", destination: "/en/fractional-cfo", permanent: true},
       {source: "/en/es/ressources/blog/organiser-sa-direction-financiere", destination: "/ressources/blog/organiser-sa-direction-financiere", permanent: true},
       {source: "/en/externalizacion-daf", destination: "/en/fractional-cfo", permanent: true},
       {source: "/en/ressources/job-descriptions", destination: "/en/fractional-cfo/role", permanent: true},
       {source: "/es/a-propos", destination: "/es/quienes-somos", permanent: true},
-      {source: "/es/daf-externalise/secteurs", destination: "/es/externalizacion-daf", permanent: true},
-      {source: "/es/daf-externalise/tarifs", destination: "/es/externalizacion-daf", permanent: true},
-      {source: "/es/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance", destination: "/en/ressources/blog", permanent: true},
-      {source: "/es/en/ressources/blog/organiser-sa-direction-financiere", destination: "/en/fractional-cfo/role", permanent: true},
       {source: "/es/es/ressources/blog/organiser-sa-direction-financiere", destination: "/ressources/blog/organiser-sa-direction-financiere", permanent: true},
       {source: "/es/ressources", destination: "/es/recursos", permanent: true},
       {source: "/es/ressources/blog/cas-etude-happy-scribe", destination: "/ressources/cas-clients", permanent: true},
@@ -400,11 +393,6 @@ const nextConfig: NextConfig = {
       //
       // Toute nouvelle règle /es/ressources/... doit être ajoutée ICI.
       {
-        source: "/es/ressources/blog/levee-de-fonds-dilutif-vs-non-dilutif",
-        destination: "/es/services/soporte-financiacion",
-        permanent: true,
-      },
-      {
         // Les fiches métiers n'ont jamais eu de version ES. La page ES la
         // plus proche est le rôle du DAF — préférée au listing FR, qui
         // renvoyait le visiteur hispanophone vers du français.
@@ -476,11 +464,6 @@ const nextConfig: NextConfig = {
       // INDEX-02 — 3 redirections 301 pour URLs 404 remontées par GSC (mai 2026).
       // Doivent venir AVANT les catch-all fiche-metier ci-dessous pour matcher
       // sur le slug exact plutôt que sur le pattern générique.
-      {
-        source: "/en/services/outsourced-management-accounting",
-        destination: "/en/services/outsource-your-accounting",
-        permanent: true,
-      },
       {
         source: "/es/services/control-de-gestion-externalizado",
         destination: "/es/services/control-gestion-externalizado",
@@ -644,11 +627,6 @@ const nextConfig: NextConfig = {
       // source, qui s'exécute à l'edge et gagnait. Les deux divergeaient :
       // la version ci-dessous n'avait aucun effet en production et
       // décrivait une destination erronée.
-      {
-        source: "/en/ressources/blog/levee-de-fonds-dilutif-vs-non-dilutif",
-        destination: "/en/services/fund-raising-support",
-        permanent: true,
-      },
       // (La variante ES vit désormais au-dessus du catch-all
       //  /es/ressources/:path*, sans quoi elle ne s'exécutait jamais.)
       {
@@ -658,12 +636,6 @@ const nextConfig: NextConfig = {
       },
       // Full-slug variant of the depublished AI/automation article (the
       // shorter slug was already handled; GSC tracks both forms).
-      {
-        source:
-          "/en/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
-        destination: "/en/ressources/blog",
-        permanent: true,
-      },
       {
         source:
           "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance",
@@ -784,11 +756,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       // Glossary 404 — entry never existed. Send to the hub.
-      {
-        source: "/ressources/glossaire/fusion-acquisition",
-        destination: "/ressources/glossaire",
-        permanent: true,
-      },
       // TICKET F1 (2026-05-17) — /fr/fractional-cfo referenced in tickets but
       // no FR route exists under that path. The canonical FR cluster is
       // /daf-externalise. 301 so internal links and any external backlinks
@@ -951,7 +918,6 @@ const nextConfig: NextConfig = {
       { source: "/ressources/outils/agicap-lite",    destination: "/ressources/outils", permanent: true },
       { source: "/ressources/outils/stripe",          destination: "/ressources/outils", permanent: true },
       { source: "/daf-externalise/locaux",            destination: "/daf-externalise",   permanent: true },
-      { source: "/ressources/blog/daf-transition-quand", destination: "/ressources/blog", permanent: true },
       // SEO-03 (2026-08-30) — doublon avec la page fiscalité, qui porte le même
       // sujet, reçoit 125 liens internes et sert désormais le contenu long.
       { source: "/ressources/blog/impot-revenu-espagne", destination: "/ressources/fiscalite/impot-revenu-espagne", permanent: true },
@@ -1070,7 +1036,6 @@ const nextConfig: NextConfig = {
       { source: "/es/drh-externalise/temps-partage",          destination: "/es/externalizacion-rrhh/tiempo-compartido",     permanent: true },
       { source: "/en/drh-externalise",                       destination: "/en/hr-outsourcing",                             permanent: true },
       { source: "/en/drh-externalise/temps-partage",          destination: "/en/hr-outsourcing/shared-time",                 permanent: true },
-      { source: "/en/services/outsourced-financial-management", destination: "/en/fractional-cfo",          permanent: true },
       { source: "/es/services/outsourced-management-control",   destination: "/es/services/control-gestion-externalizado", permanent: true },
       { source: "/services/externalizar-contabilidad",          destination: "/services/comptabilite-externalisation",     permanent: true },
       { source: "/en/services/externalizar-contabilidad",       destination: "/en/services/outsource-your-accounting",     permanent: true },
@@ -1104,22 +1069,12 @@ const nextConfig: NextConfig = {
 
       // T8 — broken / truncated blog slugs (article doesn't exist or slug
       // got cut by GSC). Send to the locale blog hub instead of 404'ing.
-      { source: "/ressources/blog/consequences-financieres-cyberattaques",
-        destination: "/ressources/blog",
-        permanent: true },
-      { source: "/ressources/blog/anticiper-financierement-ses-recrutements-guide-pratiqu",
-        destination: "/ressources/blog",
-        permanent: true },
-      { source: "/en/ressources/blog/anticiper-financierement-ses-recrutements-guide-prat",
-        destination: "/en/ressources/blog",
-        permanent: true },
 
       // (T8 EN cout-daf redirect now lives at the original line ~750 — the
       // pre-existing rule's destination was updated in place rather than
       // duplicating the source pattern here, which would have been dead code.)
 
       // EC-05: Fix /ressources/outils/reporting-dataviz 404
-      { source: "/ressources/outils/reporting-dataviz", destination: "/ressources/outils", permanent: true },
       // EC-03: City pages — redirect short slugs to full city pages
       { source: "/toulouse", destination: "/daf-externalise-toulouse", permanent: true },
       { source: "/barcelone", destination: "/daf-externalise-barcelone", permanent: true },
@@ -1199,7 +1154,7 @@ const nextConfig: NextConfig = {
       // no further rule; EN has no rewrite at all, so needs a direct rule.
       { source: "/es/recursos/fiscalite/:path*", destination: "/ressources/fiscalite/:path*", permanent: true },
       { source: "/en/ressources/fiscalite/:path*", destination: "/ressources/fiscalite/:path*", permanent: true },
-    ]);
+    ]));
   },
 };
 
