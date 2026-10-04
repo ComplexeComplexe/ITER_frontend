@@ -66,8 +66,8 @@ const redirects = [];
 for (const [path, target] of [
   ['/en/jobs/fractional-cfo-startups', '/en/fractional-cfo-for-startups'],
   ['/en/ressources/blog/organiser-sa-direction-financiere', '/en/ressources/blog/organize-finance-department'],
-  ['/en/en/ressources/blog/organiser-sa-direction-financiere', '/en/fractional-cfo/role'],
-  ['/es/en/ressources/blog/organiser-sa-direction-financiere', '/es/externalizacion-daf/funciones'],
+  ['/en/en/ressources/blog/organiser-sa-direction-financiere', '/en/ressources/blog/organize-finance-department'],
+  ['/es/en/ressources/blog/organiser-sa-direction-financiere', '/es/recursos/blog/organizar-direccion-financiera'],
   ['/ressources/glossaire/daf', '/daf-externalise/metier'],
   ['/jobs/fractional-cfo-startups', '/fractional-cfo-startups'],
   ['/ressources/blog/externaliser-comptabilite-guide', '/ressources/blog/externalisation-comptable'],
