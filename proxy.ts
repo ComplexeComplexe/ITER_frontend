@@ -1,4 +1,5 @@
 import { publishedPaths } from "./lib/locale-route-map";
+import { gscRedirectDestination, removedEditorialPaths } from "./lib/gsc-redirects";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
@@ -264,6 +265,27 @@ const FR_ONLY_BLOG_SLUGS = [
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // Retired articles have no equivalent content. Return an honest error
+  // instead of sending visitors and crawlers to an unrelated blog index.
+  const normalizedPath = pathname.replace(/\/$/, "") || "/";
+  if (removedEditorialPaths.has(normalizedPath)) {
+    const en = normalizedPath.startsWith("/en/");
+    const title = en ? "This page is no longer available" : "Cette page n’est plus disponible";
+    const message = en ? "Find our current articles in the Iter Advisors journal." : "Retrouvez nos articles actuels dans le journal d’Iter Advisors.";
+    const href = en ? "/en/ressources/blog" : "/ressources/blog";
+    return new NextResponse(`<!doctype html><html lang="${en ? "en" : "fr"}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>${title} | Iter Advisors</title></head><body style="font-family:system-ui,sans-serif;margin:0;padding:10vh 8vw;color:#17132f"><main style="max-width:650px"><a href="${en ? "/en" : "/"}" style="color:#4f20ea">Iter Advisors</a><h1>${title}</h1><p>${message}</p><a href="${href}" style="color:#4f20ea">${en ? "Read our articles" : "Voir nos articles"}</a></main></body></html>`, {
+      status: 410,
+      headers: { "Content-Type": "text/html; charset=utf-8", "X-Robots-Tag": "noindex, follow" },
+    });
+  }
+
+  const correctedTarget = gscRedirectDestination(normalizedPath);
+  if (correctedTarget) {
+    const url = request.nextUrl.clone();
+    url.pathname = correctedTarget;
+    return NextResponse.redirect(url, 301);
+  }
 
   /* ── 1. Fix /fr/ prefix (FR is default locale, remove prefix) ──────────── */
   const frPrefixMatch = pathname.match(/^\/fr(\/.*)?$/);

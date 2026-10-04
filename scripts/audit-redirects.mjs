@@ -24,6 +24,7 @@
  * Sortie :  code 0 si tout est propre, 1 sinon (utilisable en CI).
  */
 import { readFileSync } from "node:fs";
+import { createRequire } from "node:module";
 
 /** Convertit un pattern Next.js / Vercel en RegExp.
  *  `:name*` → zéro segment ou plus, `:name+` → un ou plus, `:name` → un. */
@@ -46,18 +47,6 @@ function toRegExp(pattern) {
   return new RegExp(`^${re || "/"}$`);
 }
 
-function parseNextConfig(src) {
-  const out = [];
-  // Les règles sont écrites soit en une ligne, soit sur plusieurs — on
-  // capture chaque objet { source, destination } quelle que soit sa mise en forme.
-  const re = /\{\s*source:\s*"([^"]+)"\s*,\s*destination:\s*"([^"]+)"/g;
-  let m;
-  while ((m = re.exec(src))) {
-    out.push({ source: m[1], destination: m[2], file: "next.config.ts" });
-  }
-  return out;
-}
-
 function parseVercelJson(src) {
   const json = JSON.parse(src);
   return (json.redirects ?? [])
@@ -73,10 +62,16 @@ function parseVercelJson(src) {
     }));
 }
 
+// Evaluate the effective configuration, including locale and GSC helpers.
+// Parsing the source text missed imported rules and flagged removed aliases.
+const require = createRequire(import.meta.url);
+const loadConfig = require("next/dist/server/config").default;
+const nextConfig = await loadConfig(require("next/constants").PHASE_PRODUCTION_BUILD, process.cwd());
+const nextRules = (await nextConfig.redirects()).map(rule => ({ ...rule, file: "next.config.ts" }));
 const rules = [
   // vercel.json s'exécute à l'edge, avant le routage Next.js.
   ...parseVercelJson(readFileSync("vercel.json", "utf8")),
-  ...parseNextConfig(readFileSync("next.config.ts", "utf8")),
+  ...nextRules,
 ].map((r) => ({ ...r, re: toRegExp(r.source) }));
 
 /** Première règle qui matche une URL — sémantique « first match wins ». */
