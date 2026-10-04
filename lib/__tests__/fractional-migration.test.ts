@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 import nextConfig from '../../next.config';
-import vercelConfig from '../../vercel.json';
 import { parityHref } from '../locale-route-map';
 
 const moves = [
@@ -29,13 +28,8 @@ describe('Fractional CFO migration consolidation', () => {
     }
   });
 
-  it('handles optional trailing slashes at the edge before host or framework normalization', () => {
-    for (const [source, destination] of moves) {
-      const index = vercelConfig.redirects.findIndex(item => item.source === source + '{/}?');
-      const domainIndex = vercelConfig.redirects.findIndex(item => item.source === '/:path*');
-      expect(index, source).toBeGreaterThanOrEqual(0);
-      expect(index).toBeLessThan(domainIndex);
-      expect(vercelConfig.redirects[index]).toMatchObject({ destination, permanent: true });
-    }
+  it('keeps global slash normalization enabled during this focused migration', () => {
+    expect(nextConfig.skipTrailingSlashRedirect).not.toBe(true);
+    expect(nextConfig.trailingSlash).not.toBe(true);
   });
 });

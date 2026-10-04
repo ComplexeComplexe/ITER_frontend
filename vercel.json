@@ -68,21 +68,6 @@
   ],
   "redirects": [
     {
-      "source": "/jobs/fractional-cfo-startups{/}?",
-      "destination": "/fractional-cfo-startups",
-      "permanent": true
-    },
-    {
-      "source": "/en/jobs/fractional-cfo-startups{/}?",
-      "destination": "/en/fractional-cfo-for-startups",
-      "permanent": true
-    },
-    {
-      "source": "/es/jobs/fractional-cfo-startups{/}?",
-      "destination": "/es/cfo-externo-startups",
-      "permanent": true
-    },
-    {
       "source": "/:path*",
       "has": [
         {

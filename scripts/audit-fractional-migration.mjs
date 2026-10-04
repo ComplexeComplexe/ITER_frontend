@@ -1,6 +1,6 @@
 /** Checks the startup migration without changing or rewriting its content.
- * Usage: node scripts/audit-fractional-migration.mjs [origin] [--framework-only]
- * --framework-only skips edge-only slash variants on a local Next.js server.
+ * Usage: node scripts/audit-fractional-migration.mjs [origin]
+ * Slash variants may normalize once before the direct migration redirect.
  */
 import { decodeHTML } from 'entities';
 
@@ -17,18 +17,26 @@ const attributes = tag => Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)
 const links = html => [...html.matchAll(/<link\b[^>]*>/gi)].map(m => attributes(m[0]));
 
 for (const [source, target, language] of moves) {
-  for (const suffix of ['', '?utm_source=linkedin&utm_campaign=migration', ...(process.argv.includes('--framework-only') ? [] : ['/', '/?utm_source=linkedin'])]) {
+  for (const suffix of ['', '?utm_source=linkedin&utm_campaign=migration', '/', '/?utm_source=linkedin']) {
     const response = await fetch(base + source + suffix, { redirect: 'manual' });
-    const destination = new URL(response.headers.get('location') ?? '/', base);
+    let destination = new URL(response.headers.get('location') ?? '/', base);
+    const hops = [{ status: response.status, destination: destination.pathname + destination.search }];
     const query = new URL(base + source + suffix).search;
     check(response.status === 308, source + suffix, 'permanent-308');
-    check(destination.pathname === target, source + suffix, 'direct-startup-target-in-same-language');
+    if (suffix.startsWith('/') && destination.pathname === source) {
+      const normalizedResponse = await fetch(destination, { redirect: 'manual' });
+      destination = new URL(normalizedResponse.headers.get('location') ?? '/', base);
+      check(normalizedResponse.status === 308, source + suffix, 'permanent-migration-after-slash-normalization');
+      hops.push({ status: normalizedResponse.status, destination: destination.pathname + destination.search });
+    }
+    check(destination.pathname === target, source + suffix, 'startup-target-in-same-language-with-at-most-one-slash-normalization');
     check(destination.search === query, source + suffix, 'preserve-tracking-parameters');
-    redirects.push({ source: source + suffix, status: response.status, destination: destination.pathname + destination.search });
+    redirects.push({ source: source + suffix, hops, destination: destination.pathname + destination.search });
   }
   const response = await fetch(base + target, { redirect: 'manual' });
   const html = await response.text(), annotations = links(html);
   check(response.status === 200, target, 'final-page-200');
+  check(base !== canonicalOrigin || !/noindex/i.test(response.headers.get('x-robots-tag') ?? ''), target, 'indexable-production-headers');
   check(annotations.some(a => a.rel === 'canonical' && a.href === canonicalOrigin + target), target, 'self-canonical');
   check(!/<meta[^>]*name="(?:robots|googlebot)"[^>]*content="[^"]*noindex/i.test(html), target, 'indexable-html');
   for (const [, otherTarget, otherLanguage] of moves) {
