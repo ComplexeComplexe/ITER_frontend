@@ -45,6 +45,7 @@ jobs:
           node scripts/audit-blog-consolidation.mjs http://127.0.0.1:3100
           node scripts/audit-seo-cleanup.mjs http://127.0.0.1:3100
           node scripts/audit-priority-services.mjs http://127.0.0.1:3100
+          node scripts/audit-fractional-migration.mjs http://127.0.0.1:3100
           node scripts/audit-decision-guides.mjs http://127.0.0.1:3100
           node scripts/audit-cabinet-journey.mjs http://127.0.0.1:3100
           node scripts/audit-tool-cfo-journey.mjs http://127.0.0.1:3100

@@ -64,7 +64,7 @@ await Promise.all(Array.from({ length: 4 }, async () => {
 
 const redirects = [];
 for (const [path, target] of [
-  ['/en/jobs/fractional-cfo-startups', '/en/fractional-cfo'],
+  ['/en/jobs/fractional-cfo-startups', '/en/fractional-cfo-for-startups'],
   ['/en/ressources/blog/organiser-sa-direction-financiere', '/en/ressources/blog/organize-finance-department'],
   ['/en/en/ressources/blog/organiser-sa-direction-financiere', '/en/fractional-cfo/role'],
   ['/es/en/ressources/blog/organiser-sa-direction-financiere', '/es/externalizacion-daf/funciones'],

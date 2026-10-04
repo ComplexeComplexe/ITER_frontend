@@ -344,12 +344,12 @@ const nextConfig: NextConfig = {
       // noindex. Elles pointent maintenant sur la page commerciale.
       {
         source: "/en/jobs/fractional-cfo-startups",
-        destination: "/en/fractional-cfo",
+        destination: "/en/fractional-cfo-for-startups",
         permanent: true,
       },
       {
         source: "/es/jobs/fractional-cfo-startups",
-        destination: "/fractional-cfo-startups",
+        destination: "/es/cfo-externo-startups",
         permanent: true,
       },
       {
