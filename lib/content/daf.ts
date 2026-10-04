@@ -1060,7 +1060,7 @@ export const dafContent: Record<Locale, DafContent> = {
     intro: [
       "Un CFO externalizado - o Director Financiero externalizado - es un profesional senior de las finanzas que interviene en su empresa sin ser empleado a tiempo completo. Asume las mismas responsabilidades que un CFO interno (gestion financiera, tesoreria, reporting, relaciones con inversores) pero de forma flexible: tiempo compartido, mision puntual o suscripcion mensual.",
       "En Iter Advisors, acompañamos a pymes, startups y scale-ups en la estructuración de su **departamento financiero (dpto financiero)**. Nuestros **directores financieros** senior intervienen a tiempo compartido o en misión puntual para ayudarle a tomar las mejores decisiones estratégicas.",
-      "¿Quiere entender la diferencia entre un CFO interno y un fractional CFO? Lea nuestra guía completa [¿Qué es un Fractional CFO?](/es/recursos/blog/que-es-fractional-cfo) o consulte nuestros [servicios financieros](/es/services) para conocer todo lo que un CFO externalizado puede aportar a su empresa.",
+      "¿Quiere entender la diferencia entre un CFO interno y un fractional CFO? Lea nuestra guía completa [CFO a tiempo parcial: definición](/es/recursos/glosario/cfo-tiempo-parcial) o consulte nuestros [servicios financieros](/es/services) para conocer todo lo que un CFO externalizado puede aportar a su empresa.",
     ],
     partnerSection: {
       heading: "Iter Advisors, su socio estrategico",

@@ -46,7 +46,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
     <Section id="besoin" title={t.needs.heading}>
       <span id="pour-qui" className="block scroll-mt-24" />
       <span id="comprendre" className="block scroll-mt-24" />
-      <p className={body}>{t.needs.intro}</p>
+      <p className={body}>{renderInlineMarkdownLinks(t.needs.intro.replace(/\]\((\/[^)]+)\)/g, (_, linkPath: string) => `](${href(linkPath)})`))}</p>
       <div className="space-y-6">{t.needs.items.map(item => <div key={item.title}><h3 className="font-semibold text-foreground">{item.title}</h3><p className={`${body} mt-2`}>{item.text}</p></div>)}</div>
       <p className={`${body} border-l-2 border-iter-violet pl-5`}>{t.needs.note}</p>
     </Section>
@@ -81,7 +81,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
 
     <Section id="tarifs" title={t.pricing.heading}>
       <p className={`${body} font-medium text-foreground`}>{t.pricing.intro}</p>
-      {t.pricing.paragraphs.map(text => <p key={text} className={body}>{text}</p>)}
+      {t.pricing.paragraphs.map(text => <p key={text} className={body}>{renderInlineMarkdownLinks(text.replace(/\]\((\/[^)]+)\)/g, (_, linkPath: string) => `](${href(linkPath)})`))}</p>)}
       <PublishedLocaleLink locale={locale} href={href(t.pricing.link.href)} className={link}>{t.pricing.link.label}</PublishedLocaleLink>
     </Section>
 

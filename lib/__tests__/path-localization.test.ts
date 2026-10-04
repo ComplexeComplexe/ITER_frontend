@@ -167,9 +167,7 @@ describe("articles sans URL propre dans leur langue", () => {
     expect(resolveBlogArticleHref("fr", "flux-de-tresorerie")).toBe(
       "/ressources/blog/flux-de-tresorerie",
     );
-    expect(resolveBlogArticleHref("es", "que-es-fractional-cfo")).toBe(
-      "/es/recursos/blog/que-es-fractional-cfo",
-    );
+    expect(resolveBlogArticleHref("es", "que-es-fractional-cfo")).toBeNull();
   });
 });
 

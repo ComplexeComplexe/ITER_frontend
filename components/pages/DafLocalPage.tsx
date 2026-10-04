@@ -231,11 +231,11 @@ export default function DafLocalPage({
                 <div>
                   <span className="font-semibold text-foreground group-hover:text-iter-violet transition-colors block">
                     {locale === "fr"
-                      ? `DAF externalis\u00e9 ${loc.cityFr}`
+                      ? `DAF externalis\u00e9 à ${loc.cityFr}`
                       : locale === "en"
                         ? `Fractional CFO ${loc.cityEn}`
                         : `CFO externo ${loc.cityEs}`}
-                  </span>
+                  </span>{" "}
                   <span className="text-sm text-muted-foreground">
                     {locale === "fr" ? "D\u00e9couvrir" : locale === "en" ? "Learn more" : "Descubrir"}
                   </span>

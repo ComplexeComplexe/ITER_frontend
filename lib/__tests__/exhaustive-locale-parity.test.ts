@@ -29,8 +29,8 @@ describe('Exhaustive published locale parity', () => {
   });
   it('repairs a legacy French slug without introducing a second redirect or an unrelated page', () => {
     expect(parityHref('/es/recursos/blog/regimes-fiscaux-france-vs-espagne', 'es')).toBe('/es/recursos/blog/regimenes-fiscales-francia-espana');
-    expect(publishedPaths('/es/recursos/blog/que-es-fractional-cfo')).toBeUndefined();
-    expect(resolveBlogArticleHref('es', 'que-es-fractional-cfo')).toBe('/es/recursos/blog/que-es-fractional-cfo');
+    expect(publishedPaths('/es/recursos/blog/que-es-fractional-cfo')?.es).toBe('/es/recursos/glosario/cfo-tiempo-parcial');
+    expect(resolveBlogArticleHref('es', 'que-es-fractional-cfo')).toBeNull();
     expect(resolveBlogArticleHref('en', 'impot-revenu-espagne')).toBe('/en/ressources/tax/spain-income-tax');
     expect(resolveBlogArticleHref('es', 'modelo-720-declaration-biens-etranger')).toBe('/es/recursos/fiscalidad/modelo-720');
   });

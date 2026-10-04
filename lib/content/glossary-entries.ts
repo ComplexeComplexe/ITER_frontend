@@ -811,7 +811,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
       "sections": [
             {
                   "content": [
-                        "Un **fractional CFO** est un directeur financier dont la disponibilité est partagée entre plusieurs missions. Le terme décrit un mode d’intervention à temps partiel, proche du **[DAF externalisé](/daf-externalise)** à temps partagé."
+                        "Un **fractional CFO** est un directeur financier dont la disponibilité est partagée entre plusieurs missions. Le terme décrit un mode d’intervention à temps partiel, proche du **[DAF externalisé](/daf-externalise)** à temps partagé. Pour les besoins de runway et de reporting investisseurs, consultez notre offre de [CFO externalisé pour startups](/fractional-cfo-startups)."
                   ]
             },
             {
@@ -823,14 +823,21 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
             {
                   "heading": "Missions d'un Fractional CFO",
                   "content": [
-                        "Le besoin peut porter sur la trésorerie, le budget, le reporting ou la préparation financière d’une opération. Pour les contextes de revenus récurrents et de financement, voir [fractional CFO](/fractional-cfo-startups). Les priorités et la cadence se définissent sur le dossier.",
+                        "Le besoin peut porter sur la trésorerie, le budget, le reporting ou la préparation financière d’une opération. Pour les contextes de revenus récurrents et de financement, voir [CFO externalisé pour startups](/fractional-cfo-startups). Les priorités et la cadence se définissent sur le dossier.",
                         "La production comptable, la paie et les conseils juridiques ou fiscaux doivent être attribués aux intervenants compétents. Une disponibilité partagée ne suppose pas une présence quotidienne à temps plein."
                   ]
             },
             {
-                  "heading": "Tarifs d'un Fractional CFO en France",
+                  "heading": "Quand choisir le temps partagé plutôt qu’un recrutement ?",
                   "content": [
-                        "Comparez les missions et les disponibilités au même périmètre. Les [formules et tarifs Iter](/daf-externalise/tarifs) sont présentés sur une page dédiée ; aucun montant moyen de marché n’est déduit de cette définition."
+                        "Le temps partagé peut convenir à un besoin récurrent mais partiel : organiser le suivi de trésorerie, rapprocher le budget et les données ou préparer le reporting investisseurs. Une présence quotidienne durable peut justifier un recrutement ; un remplacement temporaire relève d’un mandat de transition.",
+                        "Le contrat doit identifier qui produit les chiffres, qui les contrôle et qui décide. La disponibilité partagée ne garantit ni une levée de fonds, ni une couverture permanente, ni la prise en charge des obligations juridiques et fiscales."
+                  ]
+            },
+            {
+                  "heading": "Où consulter les tarifs d’un CFO externalisé ?",
+                  "content": [
+                        "Comparez les missions et les disponibilités au même périmètre. Les [tarifs d’un DAF ou CFO externalisé](/daf-externalise/tarifs) sont présentés sur une page dédiée ; aucun montant moyen de marché n’est déduit de cette définition."
                   ]
             }
       ],

@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "CFO externo para pymes y startups | Iter Advisors",
-    "description": "CFO externo para pymes y startups: tesorería, reporting y dirección financiera con un interlocutor dedicado. Conozca el alcance, los entregables y los precios."
+    "title": "CFO externo para pymes | Iter Advisors",
+    "description": "CFO externo para pymes: tesorería, reporting y dirección financiera con un interlocutor dedicado. Conozca el alcance, los entregables y cómo trabajamos juntos."
   },
   "breadcrumbLabel": "CFO externo",
   "hero": {
-    "h1": "CFO externo para pymes y startups",
+    "h1": "CFO externo para pymes",
     "lead": "Gestione su tesorería, sus márgenes y su financiación con un director financiero sénior dedicado, sin contratarlo a tiempo completo.",
     "intro": "Un CFO externo dirige las finanzas de su empresa a tiempo parcial. Convierte los datos contables y operativos en previsiones, decisiones y acciones acordadas con usted. Director financiero externo describe la función; a tiempo parcial indica la dedicación. Fractional CFO es la denominación habitual en inglés.",
     "landmarks": [
@@ -52,7 +52,7 @@
   ],
   "needs": {
     "heading": "¿Cuándo recurrir a un CFO externo?",
-    "intro": "La necesidad aparece cuando las decisiones se vuelven más complejas que la información disponible para tomarlas. Puede tratarse de una pyme rentable, una empresa familiar o una startup: preparar una ronda de financiación no es un requisito. Tres situaciones ayudan a identificar las prioridades.",
+    "intro": "La necesidad aparece cuando las decisiones se vuelven más complejas que la información disponible para tomarlas. Puede tratarse de una pyme rentable, una empresa familiar o una startup: consulte nuestro servicio de [CFO externo para startups](/fractional-cfo-startups) para esas necesidades específicas. Preparar una ronda de financiación no es un requisito. Tres situaciones ayudan a identificar las prioridades.",
     "items": [
       {
         "title": "Recuperar la visibilidad financiera",
@@ -172,7 +172,8 @@
     "paragraphs": [
       "El presupuesto depende de los entregables, el número de entidades, la calidad de los datos y la complejidad de la organización. Una empresa que ya tiene reporting necesita un trabajo distinto de otra que está reconstruyendo su función financiera. Compare conjuntamente la producción, el análisis y la supervisión al revisar propuestas.",
       "El paquete Essentiel incluye reporting mensual, una previsión de tesorería y una revisión financiera. Los demás paquetes amplían el alcance según las necesidades. Los proyectos puntuales y las misiones de dirección financiera interina se presupuestan por separado; una ronda o una adquisición no están incluidas automáticamente en cada misión recurrente.",
-      "No hay permanencia mínima y el preaviso para finalizar la misión es de 30 días. No se factura trabajo fuera del alcance acordado sin una modificación contractual firmada. Antes de comprometerse, aclare lo incluido, lo que debe aportar su equipo y las condiciones de revisión. Comparar solo una cuota mensual con un salario a tiempo completo no basta: la disponibilidad y las responsabilidades son distintas."
+      "No hay permanencia mínima y el preaviso para finalizar la misión es de 30 días. No se factura trabajo fuera del alcance acordado sin una modificación contractual firmada. Antes de comprometerse, aclare lo incluido, lo que debe aportar su equipo y las condiciones de revisión. Comparar solo una cuota mensual con un salario a tiempo completo no basta: la disponibilidad y las responsabilidades son distintas.",
+      "Para examinar el alcance, la disponibilidad y los gastos, consulte nuestro [método para comparar presupuestos de CFO externo](/ressources/blog/cout-daf-externalise-tarifs-prix-2026)."
     ],
     "link": {
       "href": "/daf-externalise/tarifs",
@@ -214,7 +215,7 @@
     },
     {
       "question": "¿También trabajan con startups?",
-      "answer": "Sí. Las prioridades pueden incluir el seguimiento de tesorería, el reporting a inversores y la preparación de financiación. La dedicación depende de su organización y de los datos disponibles, no solo de la ronda. Consulte nuestra [dirección financiera para startups](/fractional-cfo-startups)."
+      "answer": "Sí. Las prioridades pueden incluir el seguimiento de tesorería, el reporting a inversores y la preparación de financiación. La dedicación depende de su organización y de los datos disponibles, no solo de la ronda. Consulte nuestra [CFO externo para startups](/fractional-cfo-startups)."
     }
   ],
   "contact": {

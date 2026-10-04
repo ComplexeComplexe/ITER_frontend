@@ -282,6 +282,7 @@ const BLOG_ARTICLE_OVERRIDES: Record<Locale, Record<string, string | null>> = {
     "les-10-outils-pour-cfos-startup": "/ressources/blog/les-10-outils-pour-cfos-startup",
   },
   es: {
+    "que-es-fractional-cfo": null,
     "cout-daf-externalise-tarifs-prix-2026": null,
     // Article anglais, sans version espagnole.
     "fractional-cfo-cost-services-2026": null,

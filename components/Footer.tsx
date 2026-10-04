@@ -28,21 +28,18 @@ import { navigation, footerContent } from "@/lib/navigation";
  */
 const POPULAR_ARTICLES = {
   fr: [
-    { href: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", title: "Comparer le budget d’un DAF" },
     { href: "/ressources/blog/daf-externalise-vs-daf-salarie", title: "DAF externalisé vs salarié" },
     { href: "/ressources/blog/checklist-due-diligence-levee-de-fonds", title: "Due diligence & Levée de fonds" },
     { href: "/ressources/blog/daf-drh-externalises-synergie", title: "DRH et synergie d'équipe" },
     { href: "/ressources/blog/les-10-outils-pour-cfos-startup", title: "Les 10 outils pour CFO startup" },
   ],
   en: [
-    { href: "/en/ressources/blog/fractional-cfo-cost-services-2026", title: "Cost of Fractional CFO" },
     { href: "/en/ressources/blog/daf-externalise-vs-daf-salarie", title: "Fractional CFO vs Employee" },
     { href: "/ressources/blog/checklist-due-diligence-levee-de-fonds", title: "Due Diligence & Fundraising" },
     { href: "/ressources/blog/daf-drh-externalises-synergie", title: "CFO & HR Director synergy" },
     { href: "/ressources/blog/les-10-outils-pour-cfos-startup", title: "10 tools for startup CFOs" },
   ],
   es: [
-    { href: "/es/recursos/blog/cfo-externo-pymes-precio-2026", title: "Precio del CFO externo" },
     { href: "/es/recursos/blog/daf-externalise-vs-daf-salarie", title: "CFO externo vs interno" },
     { href: "/ressources/blog/checklist-due-diligence-levee-de-fonds", title: "Due diligence y financiación" },
     { href: "/ressources/blog/daf-drh-externalises-synergie", title: "CFO y RR. HH.: sinergia" },
@@ -190,7 +187,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                 <Link locale={locale} key={loc.city} href={loc.href} className="flex items-start gap-2 group">
                   <MapPin size={12} className="text-iter-chartreuse mt-0.5 shrink-0 sm:w-4 sm:h-4" />
                   <div>
-                    <span className="text-white/70 text-xs sm:text-sm block group-hover:text-iter-chartreuse transition-colors">{loc.city}</span>
+                    <span className="text-white/70 text-xs sm:text-sm block group-hover:text-iter-chartreuse transition-colors">{loc.city}</span>{" "}
                     <span className="text-white/70 text-xs">{loc.country}</span>
                   </div>
                 </Link>
@@ -272,7 +269,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                 Fractional CFO startups page. The POPULAR_ARTICLES list above
                 hard-wires the /ressources/blog/ prefix, so this lives next to
                 it instead of inside. */}
-            <Link locale={locale} href={parityHref("/fractional-cfo-startups", locale)} className="text-white/70 text-xs hover:text-iter-chartreuse transition-colors mt-3 inline-block">{locale === "es" ? "CFO externo para startups" : "Fractional CFO startups"} →</Link>
+            <Link locale={locale} href={parityHref("/fractional-cfo-startups", locale)} className="text-white/70 text-xs hover:text-iter-chartreuse transition-colors mt-3 inline-block">{locale === "fr" ? "CFO externalisé startups" : locale === "es" ? "CFO externo para startups" : "Fractional CFO for startups"} →</Link>
           </div>
         </div>
 

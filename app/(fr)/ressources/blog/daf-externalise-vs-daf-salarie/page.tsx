@@ -129,6 +129,7 @@ export default function DafExternaliseVsSalariePage() {
       <p>Exemple fictif : une PME dispose d’un comptable interne et d’un cabinet d’expertise comptable, mais aucun responsable ne tient le prévisionnel ni n’explique les écarts de marge. Une mission externalisée peut compléter cette organisation si la charge reste compatible avec les disponibilités proposées.</p>
       <p>À l’inverse, si plusieurs équipes attendent chaque jour des arbitrages financiers et un management de proximité, un poste interne peut être plus adapté. Le modèle hybride conserve une équipe opérationnelle interne et ajoute une expertise externe sur un périmètre défini.</p>
       <p>Un départ imprévu ou une réorganisation peut appeler une <Link href="/daf-externalise/transition">mission de DAF de transition</Link>. Pour une présence récurrente, comparez le fonctionnement d’un <Link href="/daf-externalise/temps-partage">DAF à temps partagé</Link> et celui du recrutement envisagé.</p>
+      <p>Pour un relais temporaire, consultez le <Link href="/ressources/blog/daf-externalise-vs-daf-interimaire">comparatif DAF externalisé ou DAF intérimaire</Link>.</p>
       <InlineCta title="Cadrer votre organisation financière" body="Identifions les livrables, la disponibilité et le budget nécessaires à votre entreprise." ctaLabel="Demander un diagnostic" ctaHref="/contact" />
     </BlogPostPageRefonte>
   );
