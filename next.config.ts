@@ -109,6 +109,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return correctedGscRedirects(localeRedirects([
+      { source: "/es/recursos/blog/que-es-fractional-cfo", destination: "/es/recursos/glosario/cfo-tiempo-parcial", statusCode: 301 },
+      { source: "/es/ressources/blog/que-es-fractional-cfo", destination: "/es/recursos/glosario/cfo-tiempo-parcial", statusCode: 301 },
       // Consolidation des intentions FR, avec conservation des contenus utiles.
       { source: "/ressources/blog/cout-externalisation-comptable-2026", destination: "/ressources/blog/externalisation-comptable", statusCode: 301 },
       { source: "/ressources/blog/drh-externalise-quand-et-pourquoi", destination: "/drh-externalise", statusCode: 301 },

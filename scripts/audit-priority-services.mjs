@@ -3,8 +3,8 @@ const base = (process.argv[2] ?? 'http://127.0.0.1:4046').replace(/\/$/, '');
 const origin = 'https://www.iteradvisors.com';
 const routes = [
   { path: '/daf-externalise-paris', h1: 'DAF externalisé à Paris et en Île-de-France', anchors: ['definition', 'signaux', 'comparatif', 'missions', 'parcours', 'marche-parisien', 'avantage-iter', 'conclusion'], links: ['/daf-externalise', '/daf-externalise/temps-partage', '/fractional-cfo-startups'], author: '/a-propos/sebastien-doat#person' },
-  { path: '/fractional-cfo-startups', h1: 'Fractional CFO pour startups et SaaS', anchors: ['commercial-intro', 'definition', 'pour-qui', 'avantages', 'methodologie', 'tarifs', 'temoignages', 'faq-commercial', 'cta-service', 'jobs-section'], links: ['/daf-externalise', '/ressources/glossaire/arr-mrr', '/ressources/glossaire/cash-burn-runway', '/jobs'] },
-  { path: '/daf-externalise/transition', h1: 'DAF de transition', anchors: ['situations', 'premiers-jours', 'feuille-de-route', 'experience', 'budget', 'preparer-echange'], links: ['/daf-externalise', '/daf-externalise/temps-partage'] },
+  { path: '/fractional-cfo-startups', h1: 'CFO externalisé pour startups et SaaS', anchors: ['commercial-intro', 'definition', 'pour-qui', 'avantages', 'methodologie', 'tarifs', 'temoignages', 'faq-commercial', 'cta-service', 'jobs-section'], links: ['/daf-externalise', '/ressources/glossaire/arr-mrr', '/ressources/glossaire/cash-burn-runway', '/jobs'] },
+  { path: '/daf-externalise/transition', h1: 'DAF de transition pour PME et ETI', anchors: ['situations', 'premiers-jours', 'feuille-de-route', 'experience', 'budget', 'preparer-echange'], links: ['/daf-externalise', '/daf-externalise/temps-partage'] },
 ];
 const failures = [], results = [];
 const schemasOf = html => [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)].flatMap(m => { const value = JSON.parse(m[1]); return value['@graph'] ?? [value]; });
@@ -53,8 +53,11 @@ const legacy = await fetch(base + '/jobs/fractional-cfo-startups', { redirect: '
 if (![301, 308].includes(legacy.status) || new URL(legacy.headers.get('location') ?? '/', base).pathname !== '/fractional-cfo-startups') failures.push({ path: '/jobs/fractional-cfo-startups', reason: 'preserve-legacy-commercial-redirect' });
 const hub = await (await fetch(base + '/services')).text();
 if (!hub.includes('href="/fractional-cfo-startups"')) failures.push({ path: '/services', reason: 'startup-discoverability' });
-// Historical translated aliases must retain the specific pricing/sector intent.
+// Historical translated aliases must retain their specific intent; the merged
+// Spanish article must resolve directly to the final glossary page.
 const translatedAliases = [
+  ['/es/recursos/blog/que-es-fractional-cfo', '/es/recursos/glosario/cfo-tiempo-parcial'],
+  ['/es/ressources/blog/que-es-fractional-cfo', '/es/recursos/glosario/cfo-tiempo-parcial'],
   ['/es/externalizacion-daf/tarifas', '/es/externalizacion-daf/precios'],
   ['/es/externalizacion-daf/tarifs', '/es/externalizacion-daf/precios'],
   ['/es/externalizacion-daf/secteurs', '/es/externalizacion-daf/sectores'],

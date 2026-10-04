@@ -10,12 +10,12 @@ const budget = `${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 
 
 export const dafPillar = {
   meta: {
-    title: "DAF externalisé pour PME et startups | Iter Advisors",
-    description: "DAF externalisé pour PME et startups : trésorerie, reporting et pilotage financier avec un interlocuteur dédié. Découvrez nos missions et nos tarifs.",
+    title: "DAF externalisé pour PME | Iter Advisors",
+    description: "DAF externalisé pour PME : trésorerie, reporting et pilotage financier avec un interlocuteur dédié. Découvrez les missions, les livrables et le fonctionnement.",
   },
   breadcrumbLabel: "DAF externalisé",
   hero: {
-    h1: "DAF externalisé pour PME et startups",
+    h1: "DAF externalisé pour PME",
     lead: "Pilotez votre trésorerie, vos marges et vos financements avec un directeur financier senior dédié, sans recruter à temps plein.",
     intro: "Un DAF externalisé prend en charge le pilotage financier de votre entreprise quelques jours par mois. Il transforme les données comptables et opérationnelles en prévisions, en décisions et en actions suivies avec vous. Le temps partagé décrit ce rythme d’intervention ; fractional CFO est l’appellation anglophone courante.",
     landmarks: [
@@ -35,7 +35,7 @@ export const dafPillar = {
   ],
   needs: {
     heading: "À quel moment faire appel à un DAF externalisé ?",
-    intro: "Le besoin apparaît quand les décisions deviennent plus complexes que les informations disponibles. Vous pouvez être une PME rentable, une entreprise familiale ou une startup : une levée de fonds n’est pas un préalable. Trois situations permettent de reconnaître les priorités à traiter.",
+    intro: "Le besoin apparaît quand les décisions deviennent plus complexes que les informations disponibles. Vous pouvez être une PME rentable, une entreprise familiale ou une startup : consultez notre offre de [CFO externalisé pour startups](/fractional-cfo-startups) pour ses enjeux spécifiques. Une levée de fonds n’est pas un préalable. Trois situations permettent de reconnaître les priorités à traiter.",
     items: [
       { title: "Retrouver de la visibilité", text: "Votre carnet de commandes est rempli, mais votre trésorerie varie sans explication claire. Vous connaissez le chiffre d’affaires, moins la marge par client ou activité. La priorité est de rapprocher les chiffres, d’anticiper les encaissements et de comprendre ce qui consomme du cash avant un recrutement ou un investissement." },
       { title: "Structurer une entreprise qui grandit", text: "Le dirigeant centralise les tableaux, les équipes utilisent des versions différentes et le reporting arrive trop tard. Le chantier porte sur les responsabilités, le calendrier de clôture et les indicateurs utiles. Le DAF travaille avec les personnes déjà en place pour organiser une fonction finance adaptée à votre taille." },
@@ -94,6 +94,7 @@ export const dafPillar = {
       "Le budget varie avec les livrables attendus, le nombre d’entités, la qualité des données et la complexité de l’organisation. Une entreprise dont le reporting existe déjà n’appelle pas le même travail qu’une fonction finance à reconstruire. La production, l’analyse et la supervision doivent donc être comparées ensemble lorsque vous examinez plusieurs propositions.",
       "Le socle Essentiel comprend notamment un reporting mensuel, un prévisionnel de trésorerie et une revue finance. Les autres formules élargissent le périmètre selon les besoins. Les projets ponctuels et les missions de transition font l’objet d’un chiffrage distinct ; une levée de fonds ou une acquisition n’est pas incluse par défaut dans toute mission récurrente.",
       `${ENGAGEMENT.formulation} Aucun dépassement n’est facturé sans avenant signé. Avant de vous engager, faites préciser ce qui est inclus, les contributions attendues de votre équipe et les conditions de révision. Comparer uniquement un forfait mensuel à un salaire à temps plein ne suffit pas : la présence et les responsabilités confiées diffèrent.`,
+      "Pour examiner le périmètre, la disponibilité et les frais, consultez notre [méthode pour comparer des devis de DAF externalisé](/ressources/blog/cout-daf-externalise-tarifs-prix-2026).",
     ],
     link: { href: "/daf-externalise/tarifs", label: "Consulter les formules et les tarifs détaillés" },
   },
@@ -112,7 +113,7 @@ export const dafPillar = {
     { question: "Qui garde la décision et les autorisations de paiement ?", answer: "Le dirigeant conserve les décisions et les autorisations de paiement. Les analyses du DAF servent à préparer les arbitrages. Les accès aux outils doivent correspondre aux tâches confiées ; toute délégation éventuelle nécessite un cadre explicite, distinct d’un simple accès aux informations financières." },
     { question: "Comment préparer la fin d’une mission ?", answer: `Le préavis est de ${ENGAGEMENT.preavisJours} jours. Faites préciser au contrat les modalités de restitution des fichiers, la documentation et la passation à votre équipe ou au prochain intervenant. Ces points doivent être abordés dès le cadrage, avec les règles d’accès et de confidentialité applicables aux données.` },
     { question: "Et si nous avons besoin d’un DAF à temps plein ?", answer: "Une présence quotidienne durable peut justifier un recrutement. Pour un remplacement ou une transformation temporaire, le [DAF de transition](/daf-externalise/transition) est une autre réponse. Le [temps partagé](/daf-externalise/temps-partage) convient à un besoin récurrent dont le volume reste partiel : ces dispositifs se choisissent selon la charge réelle." },
-    { question: "Accompagnez-vous aussi les startups ?", answer: "Oui. Les priorités peuvent inclure le suivi de trésorerie, le reporting investisseurs et la préparation d’un financement. Le niveau d’intervention dépend de l’organisation et des données disponibles, pas seulement du tour de financement. La page [fractional CFO pour startups](/fractional-cfo-startups) détaille cet accompagnement." },
+    { question: "Accompagnez-vous aussi les startups ?", answer: "Oui. Les priorités peuvent inclure le suivi de trésorerie, le reporting investisseurs et la préparation d’un financement. Le niveau d’intervention dépend de l’organisation et des données disponibles, pas seulement du tour de financement. La page [CFO externalisé pour startups](/fractional-cfo-startups) détaille cet accompagnement." },
   ],
   contact: {
     heading: "Échangeons sur votre situation",

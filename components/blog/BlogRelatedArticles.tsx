@@ -71,11 +71,11 @@ export default function BlogRelatedArticles({
               </div>
               {c.category && (
                 <span className="text-[11px] font-semibold uppercase tracking-widest text-iter-violet mb-1.5 block">
-                  {c.category}
+                  {c.category}{" "}
                 </span>
               )}
               <h3 className="text-base lg:text-lg font-semibold font-heading leading-snug group-hover:text-iter-violet transition-colors mb-2">
-                {c.title}
+                {c.title}{" "}
               </h3>
               {c.readMinutes > 0 && (
                 <p className="text-xs text-foreground/55 font-medium">

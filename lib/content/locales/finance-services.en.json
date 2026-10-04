@@ -447,9 +447,9 @@
   "transition": {
     "path": "/daf-externalise/transition",
     "label": "Interim CFO",
-    "title": "Interim CFO and finance leadership | Iter Advisors",
+    "title": "Interim CFO for SMEs and mid-sized firms | Iter Advisors",
     "description": "Interim finance leadership: CFO replacement, temporary responsibilities and handover for SMEs and mid-sized businesses. Priorities, availability and budget.",
-    "headline": "Interim CFO",
+    "headline": "Interim CFO for SMEs and mid-sized firms",
     "promise": "Maintain continuity. Prepare the next stage.",
     "intro": "A departure, absence or transformation leaves financial deadlines to meet. An interim CFO takes a temporary assignment with defined priorities, responsibilities and exit arrangements.",
     "context": "transition",
@@ -568,6 +568,10 @@
       ]
     ],
     "resources": [
+      [
+        "Fractional or interim CFO: the comparison",
+        "/ressources/blog/daf-externalise-vs-daf-interimaire"
+      ],
       [
         "The role of the CFO",
         "/daf-externalise/metier"

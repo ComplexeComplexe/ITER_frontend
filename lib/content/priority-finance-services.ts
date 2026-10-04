@@ -8,9 +8,9 @@ const recurringRange = `${Math.min(...FORMULES.map(item => item.prixMin)).toLoca
 export const PRIORITY_FINANCE_SERVICES: Record<string, FinanceService> = {
   fractional: {
     path: "/fractional-cfo-startups", label: "Fractional CFO pour startups",
-    title: "Fractional CFO pour startups et SaaS | Iter Advisors",
-    description: "Un fractional CFO pour relier trésorerie, runway, revenus SaaS et reporting investisseurs. Livrables, scénarios, responsabilités et budget pour votre startup.",
-    headline: "Fractional CFO pour startups et SaaS",
+    title: "CFO externalisé pour startups et SaaS | Iter Advisors",
+    description: "Un CFO externalisé à temps partagé pour votre startup : trésorerie, runway, revenus SaaS et reporting investisseurs. Livrables, périmètre et budget sur devis.",
+    headline: "CFO externalisé pour startups et SaaS",
     promise: "Relier vos hypothèses de croissance aux décisions de financement.",
     intro: "Votre startup doit décider quand recruter, combien investir et comment financer les prochains mois. Le fractional CFO, ou DAF externalisé pour startup, construit avec vos équipes une lecture cohérente de la trésorerie, des revenus et du budget. Il prépare les arbitrages du dirigeant et les échanges avec les investisseurs.",
     context: "daf", category: "Pilotage des startups et SaaS",

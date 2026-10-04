@@ -447,9 +447,9 @@
   "transition": {
     "path": "/daf-externalise/transition",
     "label": "CFO interino",
-    "title": "CFO interino y dirección financiera | Iter Advisors",
+    "title": "CFO de transición para pymes y empresas medianas | Iter",
     "description": "Dirección financiera interina: sustitución del CFO, mandato temporal y traspaso para pymes y empresas medianas. Prioridades, disponibilidad y presupuesto.",
-    "headline": "CFO interino",
+    "headline": "CFO de transición para pymes y empresas medianas",
     "promise": "Mantener la continuidad. Preparar la siguiente etapa.",
     "intro": "Una salida, una ausencia o una transformación dejan vencimientos financieros que atender. El CFO interino asume un mandato temporal con prioridades, responsabilidades y condiciones de salida definidas.",
     "context": "transition",
@@ -568,6 +568,10 @@
       ]
     ],
     "resources": [
+      [
+        "CFO externo o interino: la comparación",
+        "/ressources/blog/daf-externalise-vs-daf-interimaire"
+      ],
       [
         "La función del director financiero",
         "/daf-externalise/metier"

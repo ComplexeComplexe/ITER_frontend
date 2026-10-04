@@ -151,9 +151,9 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
   "transition": {
     "path": "/daf-externalise/transition",
     "label": "DAF de transition",
-    "title": "DAF de transition : management financier | Iter Advisors",
+    "title": "DAF de transition et intérim pour PME et ETI | Iter Advisors",
     "description": "Management de transition finance : remplacement du DAF, mandat temporaire et passation pour PME et ETI. Priorités, responsabilités, disponibilité et budget.",
-    "headline": "DAF de transition",
+    "headline": "DAF de transition pour PME et ETI",
     "promise": "Assurer la continuité. Préparer la suite.",
     "intro": "Un départ, une absence ou une transformation laisse des échéances financières à tenir. Le DAF de transition prend un mandat temporaire avec des priorités, des responsabilités et une sortie de mission définies.",
     "context": "transition",
@@ -249,6 +249,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       ]
     ],
     "resources": [
+      ["DAF externalisé ou DAF intérimaire : le comparatif", "/ressources/blog/daf-externalise-vs-daf-interimaire"],
       [
         "Le rôle du directeur administratif et financier",
         "/daf-externalise/metier"

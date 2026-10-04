@@ -91,11 +91,11 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "cout-daf-externalise-tarifs-prix-2026": {
       meta: {
-        title: "Coût DAF externalisé : comparer les budgets 2026 | Iter",
+        title: "Comparer des devis de DAF externalisé | Iter Advisors",
         // SEO-02 (2026-08-30) — « 50 à 70 % » et « TJM » sont deux valeurs
         // retirées le 10 août. Une meta description n'est pas dans le corps de
         // la page : le contrôle ne la lisait pas.
-        description: "Périmètre, disponibilité, frais et calcul annuel : comparer un tarif journalier, un forfait mensuel et un recrutement.",
+        description: "Comparez forfait mensuel, tarif journalier et recrutement : périmètre, frais, disponibilité et calcul annuel. Méthode et exemples de budget explicites.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -103,9 +103,10 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogLabel: "Blog",
         blogHref: "/ressources/blog",
       },
-      h1: "Coût d’un DAF externalisé : comparer les budgets en 2026",
-      publishedDate: "2026-03-28",
-      author: "Sébastien Doat",
+      h1: "Comment comparer des devis de DAF externalisé",
+      publishedDate: "2026-05-01",
+      updatedDate: "2026-10-04",
+      author: "Benjamin Ziza",
       category: "",
       htmlContent: undefined,
       content: [],
