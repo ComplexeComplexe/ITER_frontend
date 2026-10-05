@@ -40,8 +40,8 @@ export async function generateMetadata({
     // (« DAF externalisé » / « Fractional CFO » / « CFO Externalizado ») ;
     // `role` est parfois identique d'une langue à l'autre — « CFO » s'écrit
     // pareil dans les trois.
-    title: authorPageTitle(fullName, member.h1Role ?? member.role),
-    description: authorPageDescription(member.bio),
+    title: member.metaTitle ?? authorPageTitle(fullName, member.h1Role ?? member.role),
+    description: member.metaDescription ?? authorPageDescription(member.bio),
     path: `/en/about/${slug}`,
     localizedPaths: localizedPathsFor(slug),
   });

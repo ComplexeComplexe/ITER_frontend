@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import type { ReactNode } from "react";
 import AuthorPage from "@/components/pages/AuthorPage";
-import { getTeamMemberBySlug, authorPageTitle } from "@/lib/content/team";
+import { getTeamMemberBySlug } from "@/lib/content/team";
 import { getPartnerProfile } from "@/lib/content/partner-profiles";
 import { parityHref } from "@/lib/locale-route-map";
 
@@ -26,17 +26,23 @@ describe("Published partner profiles", () => {
         expect(new Set(ids).size).toBe(ids.length);
         for (const anchor of doc.querySelectorAll('a[href^="#"]')) expect(doc.getElementById(anchor.getAttribute("href")!.slice(1))).not.toBeNull();
         const text = doc.querySelector("main")!.textContent!;
+        const graph = JSON.parse(doc.querySelector('script[type="application/ld+json"]')!.textContent!)["@graph"];
+        const person = graph.find((n: Record<string, string>) => n["@type"] === "Person");
         expect(text).not.toMatch(/To complete with|À compléter avec|Para completar con|For review|À relire|Para revisión|15 M€|€15M|2012-2015|15 ans|15 years/);
         expect(text).not.toContain("Outsourced CFO");
         if (slug === "benjamin-ziza") {
           expect(doc.querySelector('a[href="https://www.linkedin.com/in/benjaminziza/"]')).not.toBeNull();
-          expect(text).not.toMatch(/chartered accountant|diplômé d’expertise|decena de fundadores/);
+          expect(text).not.toMatch(/is a chartered accountant|est expert-comptable diplômé|decena de fundadores/);
+          for (const fact of ["Mazars", "Amaris", "IWG", "Billy Mobile", "SAP", "11", "60", "26"]) expect(text).toContain(fact);
+          expect(person.hasCredential).toHaveLength(2);
           expect(doc.querySelector(`a[href="${parityHref("/services/accompagnement-levee-de-fond", locale)}"]`)).not.toBeNull();
         }
         if (slug === "sebastien-doat") {
           expect(text).toContain("AI Summit Barcelona 2026");
           expect(text).toMatch(/15\s?%/);
           expect(text).toContain("Alice");
+          for (const fact of ["ACA Nexia", "Mama Shelter", "Terres de Café", "Carts Guru", "Equito", "NuuBB", "65"]) expect(text).toContain(fact);
+          expect(person.hasCredential).toHaveLength(2);
           expect(doc.querySelector(`a[href="${parityHref("/daf-externalise", locale)}"]`)).not.toBeNull();
           expect(doc.querySelectorAll('a[href^="https://podcast.ausha.co/"]')).toHaveLength(1);
         }
@@ -45,16 +51,21 @@ describe("Published partner profiles", () => {
           expect(doc.querySelector(`a[href="${parityHref("/ressources/outils/pennylane", locale)}"]`)).not.toBeNull();
           expect(doc.querySelector(`a[href="${parityHref("/services/controle-de-gestion-externalise", locale)}"]`)).not.toBeNull();
         }
-        const graph = JSON.parse(doc.querySelector('script[type="application/ld+json"]')!.textContent!)["@graph"];
-        const person = graph.find((n: Record<string, string>) => n["@type"] === "Person");
         expect(person["@id"]).toBe(`https://www.iteradvisors.com/a-propos/${slug}#person`);
-        expect(person).not.toHaveProperty("alumniOf");
+        expect(person.alumniOf.length).toBeGreaterThanOrEqual(1);
+        expect(person.workLocation.address.addressLocality).toBe("Barcelona");
+        expect(person.knowsLanguage).toContain("fr");
+        expect(person.knowsLanguage).toContain("en");
+        expect(person.knowsLanguage).toContain("es");
+        expect(doc.querySelectorAll("aside dl > div")).toHaveLength(5);
         expect(person.knowsAbout.length).toBeGreaterThanOrEqual(3);
         expect(person.sameAs).toContain(member.linkedIn);
         const profile = graph.find((n: Record<string, string>) => n["@type"] === "ProfilePage");
         expect(profile.mainEntity["@id"]).toBe(person["@id"]);
-        expect(profile.dateModified).toBe("2026-10-03");
-        expect(authorPageTitle(fullName, member.h1Role!).length).toBeLessThanOrEqual(60);
+        expect(profile.dateModified).toBe("2026-10-05");
+        expect(member.metaTitle!.length).toBeLessThanOrEqual(60);
+        expect(member.metaTitle).not.toContain("—");
+        expect(member.metaDescription).toBe(getPartnerProfile(slug, locale)!.metaDescription);
       });
     }
   }

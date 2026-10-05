@@ -2,6 +2,7 @@ import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 import { parityHref } from "@/lib/locale-route-map";
 import HRExpert from "@/components/HRExpert";
 import PartnerProfileSections from "@/components/PartnerProfileSections";
+import ProfileProse from "@/components/ProfileProse";
 import { getPartnerProfile } from "@/lib/content/partner-profiles";
 import { FINANCE_EXPERT, editorialPersonId } from "@/lib/content/finance-expert";
 import Link from "next/link";
@@ -127,14 +128,18 @@ export default function AuthorPage({
     givenName: member.firstName,
     familyName: member.lastName,
     jobTitle: member.role,
-    description: member.bio,
+    description: profile?.schemaDescription ?? member.bio,
     url: `https://www.iteradvisors.com${canonicalPath}`,
     image: member.photo?.url
       ? `https://www.iteradvisors.com${member.photo.url}`
       : undefined,
-    sameAs: isFinanceExpert ? [FINANCE_EXPERT.linkedin, FINANCE_EXPERT.malt] : member.linkedIn ? [member.linkedIn] : undefined,
+    sameAs: profile?.sameAs ?? (isFinanceExpert ? [FINANCE_EXPERT.linkedin, FINANCE_EXPERT.malt] : member.linkedIn ? [member.linkedIn] : undefined),
     ...(isFinanceExpert && { subjectOf: { "@type": "PodcastEpisode", inLanguage: "fr-FR", name: FINANCE_EXPERT.podcast.title, url: FINANCE_EXPERT.podcast.href } }),
     ...(profile && { knowsAbout: profile.expertise }),
+    ...(profile?.alumniOf && { alumniOf: profile.alumniOf.map(name => ({ "@type": "CollegeOrUniversity", name })) }),
+    ...(profile?.credentials?.length && { hasCredential: profile.credentials.map(name => ({ "@type": "EducationalOccupationalCredential", name })) }),
+    ...(profile?.languages && { knowsLanguage: profile.languages }),
+    ...(profile?.workLocation && { workLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressLocality: profile.workLocation, addressCountry: "ES" } } }),
     ...(member.slug === "guillaume-rostand" && { alumniOf: [{ "@type": "EducationalOrganization", name: "CELSA" }, { "@type": "EducationalOrganization", name: "Sciences Po" }] }),
     worksFor: {
       "@type": "Organization",
@@ -160,7 +165,7 @@ export default function AuthorPage({
               { label: fullName },
             ]}
           />
-          <div className="grid lg:grid-cols-[200px_1fr] gap-8 lg:gap-12 items-start max-w-4xl">
+          <div className={`grid gap-8 lg:gap-12 items-start ${profile?.facts ? "lg:grid-cols-[200px_minmax(0,1fr)] xl:grid-cols-[200px_minmax(0,1fr)_300px]" : "lg:grid-cols-[200px_1fr] max-w-4xl"}`}>
             {member.photo?.url && (
               <div className="relative w-40 h-40 lg:w-[200px] lg:h-[200px] shrink-0">
                 <Image
@@ -181,11 +186,11 @@ export default function AuthorPage({
                 {profile?.role ?? member.role}
               </p>
               <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-4">
-                {member.bio}
+                <ProfileProse text={member.bio} links={profile?.contentLinks} locale={locale} />
               </p>
               {bioExtended && (
                 <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-6">
-                  {bioExtended}
+                  <ProfileProse text={bioExtended} links={profile?.contentLinks} locale={locale} />
                 </p>
               )}
               {profile && <><p className="text-sm text-muted-foreground mb-5">{{ fr: "Profil mis à jour le ", en: "Profile updated on ", es: "Perfil actualizado el " }[locale]}<time dateTime={PAGE_REVISIONS[canonicalPath]}>{formatDate(PAGE_REVISIONS[canonicalPath], locale)}</time></p><nav aria-label={{ fr: "Dans le profil", en: "In this profile", es: "En este perfil" }[locale]} className="mb-6 flex flex-wrap gap-x-5 gap-y-3 text-sm text-iter-violet">
@@ -205,6 +210,14 @@ export default function AuthorPage({
                 </a>
               )}
             </div>
+            {profile?.facts && <aside className="rounded-2xl border border-border bg-white p-6 lg:col-start-2 xl:col-start-auto" aria-label={{ fr: "Informations professionnelles", en: "Professional information", es: "Información profesional" }[locale]}>
+              <dl className="space-y-5">
+                {profile.facts.map(fact => <div key={fact.label}>
+                  <dt className="text-sm font-semibold text-foreground mb-1">{fact.label}</dt>
+                  <dd className="text-sm text-muted-foreground leading-relaxed">{fact.value}</dd>
+                </div>)}
+              </dl>
+            </aside>}
           </div>
         </div>
       </section>

@@ -16,6 +16,16 @@ export interface PartnerProfile {
   intro: string[];
   sections: ProfileSection[];
   expertise: string[];
+  facts?: { label: string; value: string }[];
+  contentLinks?: ProfileLink[];
+  metaTitle?: string;
+  metaDescription?: string;
+  schemaDescription?: string;
+  alumniOf?: string[];
+  credentials?: string[];
+  languages?: string[];
+  sameAs?: string[];
+  workLocation?: string;
 }
 
 const press = [
