@@ -21,7 +21,7 @@ const blocks = (html: string) => [...doc(html).querySelectorAll("[data-block-key
 const text = (item: Element) => item.textContent!.replace(/\s+/g, " ").trim();
 
 describe("reference and case translation parity", () => {
-  it("keeps both pricing tables, tier amounts and the same reference sections", () => {
+  it("keeps pricing and scope tables, tier amounts and the same reference sections", () => {
     for (const slug of ["tarifs", "metier"] as const) {
       const contents = locales.map(locale => getDafReferenceContent(locale, slug));
       const rendered = locales.map((locale, i) => renderToStaticMarkup(<DafSubPage locale={locale} content={contents[i]} />));
@@ -31,7 +31,7 @@ describe("reference and case translation parity", () => {
         const page = doc(rendered[i]), source = contents[0], content = contents[i];
         expect(page.querySelectorAll("h1")).toHaveLength(1);
         expect(content.sections).toHaveLength(source.sections.length);
-        expect(page.querySelectorAll("table")).toHaveLength(slug === "tarifs" ? 2 : 0);
+        expect(page.querySelectorAll("table")).toHaveLength(slug === "tarifs" ? 3 : 0);
         const faq = buildDafSubFaqSchema(content, locale)!;
         const answers = [...page.querySelectorAll("details")].map(item => ({ question: text(item.querySelector("h3")!), answer: text(item.querySelector(".site-copy")!) }));
         expect(answers).toEqual(faq.mainEntity.map(item => ({ question: item.name, answer: item.acceptedAnswer.text })));
@@ -39,6 +39,8 @@ describe("reference and case translation parity", () => {
         if (slug === "tarifs") {
           expect(content.sections[1].table!.rows.map(row => row[1])).toEqual(getDafOffer(locale).tiers.map(item => item.price));
           expect(content.proofSlugs).toHaveLength(3);
+          expect(content.sections.find(section => section.id === "livrables-par-activite")?.table?.rows).toHaveLength(3);
+          expect(JSON.stringify(content)).not.toMatch(/around EUR 3,000|around EUR 5,000|alrededor de 3.000|alrededor de 5.000/);
         }
       }
     }
