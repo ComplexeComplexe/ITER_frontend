@@ -23,6 +23,8 @@ interface FallbackMemberData {
   /** Extended bio paragraphs rendered on the author page for SEO word-count depth (SEO-15).
    *  Separate from `bio` so schema.org description stays concise. */
   bioExtended?: Record<Locale, string>;
+  metaTitle?: Record<Locale, string>;
+  metaDescription?: Record<Locale, string>;
 }
 
 // Helper function to convert name to slug format
@@ -31,7 +33,7 @@ function nameToSlug(firstName: string, lastName: string): string {
 }
 
 /** Keep listing, metadata and profile copy aligned with the same approved content. */
-function partnerMemberData(slug: string): Pick<FallbackMemberData, "roles" | "h1Roles" | "bio" | "bioExtended"> {
+function partnerMemberData(slug: string): Pick<FallbackMemberData, "roles" | "h1Roles" | "bio" | "bioExtended" | "metaTitle" | "metaDescription"> {
   const summary = (partnerSummaries as Record<string, typeof partnerSummaries["guillaume-rostand"]>)[slug];
   const { fr, en, es } = summary ?? {};
   if (!fr || !en || !es) throw new Error(`Missing partner profile: ${slug}`);
@@ -43,6 +45,8 @@ function partnerMemberData(slug: string): Pick<FallbackMemberData, "roles" | "h1
     h1Roles: localize(profile => profile.metaRole),
     bio: localize(profile => profile.bio),
     bioExtended: localize(profile => profile.bioExtended),
+    ...("metaTitle" in fr && { metaTitle: localize(profile => (profile as typeof fr & { metaTitle: string }).metaTitle) }),
+    ...("metaDescription" in fr && { metaDescription: localize(profile => (profile as typeof fr & { metaDescription: string }).metaDescription) }),
   };
 }
 
@@ -92,7 +96,7 @@ const fallbackData: FallbackMemberData[] = [
     ...partnerMemberData("florent-greth"),
     slug: "florent-greth",
     photo: { url: "/images/team/florent-greth.webp" },
-    linkedIn: "https://www.linkedin.com/in/florent-greth-cfo-pennylane/?locale=en",
+    linkedIn: "https://www.linkedin.com/in/florent-greth-cfo-pennylane/",
     order: 4,
     showInHero: true,
   },
@@ -415,7 +419,7 @@ export const getFallbackTeamMembers = getTeamMembers;
 export function getTeamMemberBySlug(
   slug: string,
   locale: Locale,
-): (StrapiTeamMember & { bio: string; h1Role?: string; bioExtended?: string }) | null {
+): (StrapiTeamMember & { bio: string; h1Role?: string; bioExtended?: string; metaTitle?: string; metaDescription?: string }) | null {
   const member = fallbackData.find((m) => m.slug === slug);
   if (!member || !member.bio?.[locale]) return null;
   return {
@@ -425,6 +429,8 @@ export function getTeamMemberBySlug(
     bio: member.bio[locale],
     h1Role: member.h1Roles?.[locale],
     bioExtended: member.bioExtended?.[locale],
+    metaTitle: member.metaTitle?.[locale],
+    metaDescription: member.metaDescription?.[locale],
   } as StrapiTeamMember & { bio: string; h1Role?: string; bioExtended?: string };
 }
 

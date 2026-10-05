@@ -2,20 +2,32 @@
   "benjamin-ziza": {
     "en": {
       "name": "Benjamin Ziza",
-      "role": "Co-founder of Iter Advisors · CFO in Barcelona · Financial strategy and support for founders",
-      "teamRole": "Co-founder and CFO",
-      "metaRole": "Co-founder, CFO",
+      "role": "Co-founder and Partner, CFO · Transaction Services · Barcelona",
+      "teamRole": "Co-founder and Partner, CFO",
+      "metaRole": "Co-founder and CFO",
       "intro": [
-        "Benjamin Ziza founded Iter Advisors with Sébastien Doat and Guillaume Rostand. Based in Barcelona, he supports startup and SME leaders in structuring their finance function, managing cash flow and preparing their funding plans.",
-        "His work connects day-to-day management with decisions that shape the business: organising financial information, understanding funding requirements and preparing discussions with investors and other advisers."
+        "Benjamin Ziza is a co-founder and Partner at Iter Advisors, which he founded in 2020 with Sébastien Doat and Guillaume Rostand. Based in Barcelona, he oversees a portfolio of fractional CFO engagements and co-leads the firm's Transaction Services practice with Sébastien Doat.",
+        "He trained in accounting at ENOES, completing the DCG and then the DSCG, and followed the chartered accountancy qualification curriculum through the French Ordre des Experts-Comptables. He began his career as a financial auditor at Mazars in Paris. For more than three years, he conducted statutory audit and accounting engagements, mainly in insurance and the non-profit sector. For a global insurance leader, he joined the task force established after an SAP migration: cleaning up 11 million accounting entries, building a KPI database for weekly steering committees, and training groups of 20 to 150 employees."
       ],
       "sections": [
+        {
+          "id": "biographie",
+          "title": "Professional background",
+          "paragraphs": [
+            "He then joined Amaris in Barcelona, an international consulting group operating in 45 countries. For the executive committee, he structured the management control department, managed a team of 15 people and led its relocation to Vietnam and Romania. Appointed Regional Financial and Administrative Manager, he took responsibility for 10 legal entities and 45 business units, representing around 30% of group revenue, with a team spread across France, Spain, Romania, Vietnam and Mauritius.",
+            "At IWG, the parent company of Regus, he was Financial and Administrative Manager for 7 countries, 60 legal entities and £26 million in revenue. His responsibilities covered statutory accounts, audits and tax inspections, monthly reporting, cash management and bank financing, dividend distributions and recapitalisations.",
+            "In 2018, he became CFO of Billy Mobile, a Barcelona-based performance mobile advertising network, a position he held until 2022. This operational adtech experience remains a central thread in his portfolio: publisher monetisation platforms, advertising networks, affiliate marketing and mobile marketing.",
+            "At Iter Advisors, he has supported around thirty companies in Spain and France in adtech and digital marketing, biotechnology and AI for healthcare, travel and hospitality, real estate, B2B SaaS and mobility. With Sébastien Doat, he co-leads the Transaction Services practice: buy-side due diligence for investment funds, sell-side due diligence, business plans and data rooms to prepare business sales.",
+            "His dual background as an auditor and finance director of multinational groups shapes what he brings to founders: reliable accounts, properly managed entities across jurisdictions and a rigorous reading of the numbers when a transaction is being prepared.",
+            "He regularly participates in Barcelona's business ecosystem, including the panel discussion \"From 10 to 100: keys to scaling your company\" organised by Iter Advisors and Barcelona Finance Hub, and discussions on business acquisitions and financial due diligence alongside Guillaume Rostand and Sébastien Doat."
+          ]
+        },
         {
           "id": "role",
           "title": "His role at Iter Advisors",
           "paragraphs": [
-            "Benjamin contributes to the leadership of the firm and its activity in Barcelona. He works on financial strategy for the businesses supported by Iter and on the organisational questions that help founders access usable information.",
-            "His experience complements that of Sébastien Doat, Florent Greth and the finance teams. Guillaume Rostand brings a complementary perspective on business development, offer positioning and relationships with entrepreneurs."
+            "Benjamin leads the firm alongside Sébastien Doat and manages its Barcelona operations. As a Partner, he oversees a portfolio of fractional CFO engagements, with the team's CFOs and finance managers providing operational support.",
+            "He co-leads the Transaction Services practice with Sébastien Doat: buy-side and sell-side financial due diligence, sale preparation, acquisition support and reviews for investment funds."
           ],
           "links": [
             {
@@ -43,7 +55,7 @@
               ]
             },
             {
-              "title": "Preparing funding and transactions",
+              "title": "Transaction Services and transaction preparation",
               "paragraphs": [
                 "His work covers forecasts, the consistency of financial models and preparing information needed for investor discussions or a transaction. This preparation is distinct from funders’ decisions and the responsibilities of specialist advisers."
               ]
@@ -54,13 +66,6 @@
                 "Benjamin also works on financial and organisational questions in a cross-border environment. Tax and legal matters must be addressed with the appropriate professionals, according to the scope of each engagement."
               ]
             }
-          ]
-        },
-        {
-          "id": "parcours",
-          "title": "A career working with businesses",
-          "paragraphs": [
-            "Before co-founding Iter Advisors, Benjamin helped structure finance functions for startups and SMEs. This experience informs his work with founders, from organising reporting to preparing the next stage of development."
           ]
         },
         {
@@ -86,27 +91,108 @@
         }
       ],
       "expertise": [
-        "Structuring and managing the finance function",
-        "Preparing funding and transactions",
-        "Businesses operating between France and Spain"
+        "Multi-entity financial structuring",
+        "Due diligence and Transaction Services",
+        "Performance management",
+        "Adtech",
+        "Audit"
+      ],
+      "metaTitle": "Benjamin Ziza, Co-founder and CFO | Iter Advisors",
+      "metaDescription": "Benjamin Ziza, Iter Advisors co-founder: former Mazars auditor, Billy Mobile CFO, multi-country finance at IWG and Amaris. Transaction Services and adtech.",
+      "workLocation": "Barcelona",
+      "languages": [
+        "fr",
+        "es",
+        "en"
+      ],
+      "alumniOf": [
+        "ENOES, l’École de l’Expertise Comptable et de l’Audit"
+      ],
+      "credentials": [
+        "Diplôme Supérieur de Comptabilité et de Gestion (DSCG)",
+        "Diplôme de Comptabilité et de Gestion (DCG)"
+      ],
+      "schemaDescription": "Benjamin Ziza is a co-founder and Partner at Iter Advisors, which he founded in 2020 with Sébastien Doat and Guillaume Rostand. Based in Barcelona, he oversees a portfolio of fractional CFO engagements and co-leads the firm's Transaction Services practice with Sébastien Doat.",
+      "sameAs": [
+        "https://www.linkedin.com/in/benjaminziza/"
+      ],
+      "contentLinks": [
+        {
+          "label": "Sébastien Doat",
+          "href": "/a-propos/sebastien-doat"
+        },
+        {
+          "label": "Guillaume Rostand",
+          "href": "/a-propos/guillaume-rostand"
+        },
+        {
+          "label": "fractional CFO",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "financial due diligence",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "buy-side due diligence",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "Pennylane",
+          "href": "/ressources/outils/pennylane"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Position",
+          "value": "Co-founder and Partner, CFO"
+        },
+        {
+          "label": "Expertise",
+          "value": "Multi-entity financial structuring · Due diligence and Transaction Services · Performance management"
+        },
+        {
+          "label": "Sectors",
+          "value": "Adtech and digital marketing, biotech and healthcare AI, travel and hospitality, proptech, B2B SaaS, mobility"
+        },
+        {
+          "label": "Office",
+          "value": "Barcelona, engagements in Spain and France"
+        },
+        {
+          "label": "Languages",
+          "value": "French, Spanish, English"
+        }
       ]
     },
     "es": {
       "name": "Benjamin Ziza",
-      "role": "Cofundador de Iter Advisors · CFO en Barcelona · Estrategia financiera y acompañamiento de fundadores",
-      "teamRole": "Cofundador y CFO",
-      "metaRole": "Cofundador, CFO",
+      "role": "Cofundador y socio, CFO · Transaction Services · Barcelona",
+      "teamRole": "Cofundador y socio, CFO",
+      "metaRole": "cofundador y CFO",
       "intro": [
-        "Benjamin Ziza creó Iter Advisors con Sébastien Doat y Guillaume Rostand. Desde Barcelona, acompaña a los responsables de startups y pymes en la estructuración de su función financiera, la gestión de su tesorería y la preparación de sus proyectos de financiación.",
-        "Su trabajo conecta la gestión diaria con las decisiones que marcan el rumbo de la empresa: organizar los datos financieros, comprender las necesidades de financiación y preparar las conversaciones con inversores y otros asesores."
+        "Benjamin Ziza es cofundador y socio de Iter Advisors, firma que creó en 2020 con Sébastien Doat y Guillaume Rostand. Basado en Barcelona, supervisa una cartera de mandatos de CFO externo y codirige, junto con Sébastien Doat, el área de Transaction Services del despacho.",
+        "Se formó en contabilidad en ENOES, donde cursó el DCG y después el DSCG, y siguió el itinerario del diploma de expertise comptable a través del Ordre des Experts-Comptables francés. Comenzó como auditor financiero en Mazars, en París. Durante más de tres años realizó misiones de auditoría legal y contabilidad, principalmente en seguros y en el sector asociativo. Para un líder mundial del seguro, integró el equipo creado tras una migración a SAP: depuración de 11 millones de asientos contables, base de KPIs para los comités de seguimiento semanales y formación de grupos de 20 a 150 empleados."
       ],
       "sections": [
+        {
+          "id": "biographie",
+          "title": "Trayectoria profesional",
+          "paragraphs": [
+            "Después se incorporó en Barcelona a Amaris, grupo internacional de consultoría presente en 45 países. Para el comité ejecutivo, estructuró el departamento de control de gestión, dirigió un equipo de 15 personas y lideró su traslado a Vietnam y Rumanía. Nombrado Regional Financial and Administrative Manager, asumió 10 entidades jurídicas y 45 unidades de negocio, aproximadamente el 30 % de los ingresos del grupo, con un equipo repartido entre Francia, España, Rumanía, Vietnam y Mauricio.",
+            "En IWG, matriz de Regus, fue Financial and Administrative Manager para 7 países, 60 entidades jurídicas y 26 M£ de ingresos: cuentas estatutarias, auditorías e inspecciones fiscales, reporting mensual, tesorería y financiación bancaria, reparto de dividendos y recapitalizaciones.",
+            "En 2018 pasó a ser CFO de Billy Mobile, red de publicidad móvil orientada al rendimiento con sede en Barcelona, cargo que ocupó hasta 2022. Esta experiencia operativa en adtech sigue siendo un eje de su cartera: plataformas de monetización para editores, redes publicitarias, afiliación y marketing móvil.",
+            "En Iter Advisors ha acompañado a unas treinta empresas en España y Francia, en adtech y marketing digital, biotecnología e IA aplicada a la salud, viajes y hostelería, inmobiliario, SaaS B2B y movilidad. Con Sébastien Doat codirige el área de Transaction Services: due diligences de compra para fondos de inversión, due diligences de venta, planes de negocio y data rooms para preparar ventas de empresas.",
+            "Su doble experiencia, como auditor y como director financiero de grupos multinacionales, se refleja en lo que aporta a los fundadores: cuentas fiables, entidades bien gestionadas en distintas jurisdicciones y una lectura rigurosa de las cifras cuando se prepara una operación.",
+            "Participa regularmente en el ecosistema barcelonés, en particular en la mesa redonda \"From 10 to 100: keys to scaling your company\", organizada por Iter Advisors y Barcelona Finance Hub, y en encuentros sobre adquisición de empresas y due diligence financiera junto a Guillaume Rostand y Sébastien Doat."
+          ]
+        },
         {
           "id": "role",
           "title": "Su función en Iter Advisors",
           "paragraphs": [
-            "Benjamin participa en la dirección del despacho y en su actividad en Barcelona. Trabaja en la estrategia financiera de las empresas acompañadas y en las cuestiones organizativas que permiten a los fundadores disponer de información útil.",
-            "Su experiencia complementa la de Sébastien Doat, Florent Greth y los equipos financieros. Guillaume Rostand aporta una perspectiva complementaria sobre desarrollo comercial, posicionamiento de las ofertas y relaciones con emprendedores."
+            "Benjamin dirige el despacho junto con Sébastien Doat y gestiona las operaciones de Barcelona. Como socio, supervisa una cartera de mandatos de CFO externo, con los CFO y finance managers del equipo que realizan el seguimiento operativo.",
+            "Codirige con Sébastien Doat el área de Transaction Services: due diligences financieras de compra y venta, preparación de ventas, acompañamiento de adquisiciones y revisiones para fondos de inversión."
           ],
           "links": [
             {
@@ -134,7 +220,7 @@
               ]
             },
             {
-              "title": "Preparación de financiación y operaciones",
+              "title": "Transaction Services y preparación de operaciones",
               "paragraphs": [
                 "Su intervención abarca las previsiones, la coherencia del modelo financiero y la preparación de la información necesaria para conversar con inversores o realizar una operación. Este trabajo debe distinguirse de las decisiones de los financiadores y de la función de los asesores especializados."
               ]
@@ -145,13 +231,6 @@
                 "Benjamin también trabaja en cuestiones financieras y organizativas en un entorno transfronterizo. Los asuntos fiscales y jurídicos deben tratarse con los profesionales adecuados, según el alcance de cada proyecto."
               ]
             }
-          ]
-        },
-        {
-          "id": "parcours",
-          "title": "Una trayectoria junto a las empresas",
-          "paragraphs": [
-            "Antes de cofundar Iter Advisors, Benjamin participó en la estructuración de funciones financieras de startups y pymes. Esta experiencia nutre su trabajo con los fundadores, desde la organización de los informes hasta la preparación de una nueva etapa de desarrollo."
           ]
         },
         {
@@ -177,27 +256,112 @@
         }
       ],
       "expertise": [
-        "Estructuración y gestión financiera",
-        "Preparación de financiación y operaciones",
-        "Empresas entre Francia y España"
+        "Estructuración financiera multiempresa",
+        "Due diligence y Transaction Services",
+        "Gestión del rendimiento",
+        "Adtech",
+        "Audit"
+      ],
+      "metaTitle": "Benjamin Ziza, cofundador y CFO | Iter Advisors",
+      "metaDescription": "Benjamin Ziza, cofundador de Iter Advisors: ex-Mazars, CFO de Billy Mobile, finanzas internacionales en IWG y Amaris. Transaction Services, adtech, Barcelona.",
+      "workLocation": "Barcelona",
+      "languages": [
+        "fr",
+        "es",
+        "en"
+      ],
+      "alumniOf": [
+        "ENOES, l’École de l’Expertise Comptable et de l’Audit"
+      ],
+      "credentials": [
+        "Diplôme Supérieur de Comptabilité et de Gestion (DSCG)",
+        "Diplôme de Comptabilité et de Gestion (DCG)"
+      ],
+      "schemaDescription": "Benjamin Ziza es cofundador y socio de Iter Advisors, firma que creó en 2020 con Sébastien Doat y Guillaume Rostand. Basado en Barcelona, supervisa una cartera de mandatos de CFO externo y codirige, junto con Sébastien Doat, el área de Transaction Services del despacho.",
+      "sameAs": [
+        "https://www.linkedin.com/in/benjaminziza/"
+      ],
+      "contentLinks": [
+        {
+          "label": "Sébastien Doat",
+          "href": "/a-propos/sebastien-doat"
+        },
+        {
+          "label": "Guillaume Rostand",
+          "href": "/a-propos/guillaume-rostand"
+        },
+        {
+          "label": "CFO externo",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "dirección financiera externa",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "due diligences financieras",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "due diligences de compra",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "Pennylane",
+          "href": "/ressources/outils/pennylane"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Cargo",
+          "value": "Cofundador y socio, CFO"
+        },
+        {
+          "label": "Especialidades",
+          "value": "Estructuración financiera multiempresa · Due diligence y Transaction Services · Gestión del rendimiento"
+        },
+        {
+          "label": "Sectores",
+          "value": "Adtech y marketing digital, biotecnología e IA en salud, viajes y hostelería, proptech, SaaS B2B, movilidad"
+        },
+        {
+          "label": "Oficina",
+          "value": "Barcelona, misiones en España y Francia"
+        },
+        {
+          "label": "Idiomas",
+          "value": "Francés, español, inglés"
+        }
       ]
     },
     "fr": {
       "name": "Benjamin Ziza",
-      "role": "Cofondateur d’Iter Advisors · CFO à Barcelone · Stratégie financière et accompagnement des fondateurs",
-      "teamRole": "Cofondateur et CFO",
-      "metaRole": "Cofondateur, CFO",
+      "role": "Cofondateur et Partner, CFO · Transaction Services · Barcelone",
+      "teamRole": "Cofondateur et Partner, CFO",
+      "metaRole": "cofondateur et CFO",
       "intro": [
-        "Benjamin Ziza a créé Iter Advisors avec Sébastien Doat et Guillaume Rostand. Basé à Barcelone, il accompagne les dirigeants de startups et de PME dans la structuration de leur fonction financière, le pilotage de leur trésorerie et la préparation de leurs projets de financement.",
-        "Son activité se situe à la rencontre de la gestion quotidienne et des décisions qui engagent l’entreprise : organiser les chiffres, comprendre les besoins de financement et préparer les échanges avec les investisseurs et les autres conseils."
+        "Benjamin Ziza est cofondateur et Partner d'Iter Advisors, cabinet qu'il a créé en 2020 avec Sébastien Doat et Guillaume Rostand. Basé à Barcelone, il supervise un portefeuille de mandats de CFO à temps partagé et co-pilote, avec Sébastien Doat, la practice Transaction Services du cabinet.",
+        "Formé à l'expertise comptable à l'ENOES (DCG puis DSCG), il a suivi le cursus du diplôme d'expertise comptable auprès de l'Ordre des Experts-Comptables. Il débute chez Mazars à Paris, comme auditeur financier. Pendant plus de trois ans, il conduit des missions de commissariat aux comptes et d'expertise comptable, principalement dans l'assurance et le secteur associatif. Pour un leader mondial de l'assurance, il intègre la task force mise en place après une migration SAP : assainissement de 11 millions d'écritures comptables, base de KPIs pour les comités de pilotage hebdomadaires, formation de groupes de 20 à 150 collaborateurs."
       ],
       "sections": [
+        {
+          "id": "biographie",
+          "title": "Son parcours professionnel",
+          "paragraphs": [
+            "Il rejoint ensuite à Barcelone Amaris, groupe international de conseil présent dans 45 pays. Pour le comité exécutif, il structure le département contrôle de gestion, encadre une équipe de 15 personnes et pilote sa délocalisation vers le Vietnam et la Roumanie. Nommé Regional Financial and Administrative Manager, il prend en charge 10 entités juridiques et 45 business units, soit environ 30 % du chiffre d'affaires du groupe, avec une équipe répartie entre la France, l'Espagne, la Roumanie, le Vietnam et l'île Maurice.",
+            "Chez IWG, maison mère de Regus, il est Financial and Administrative Manager pour 7 pays, 60 entités juridiques et 26 M£ de chiffre d'affaires : comptes statutaires, audits et contrôles fiscaux, reporting mensuel, trésorerie et financements bancaires, distributions de dividendes et recapitalisations.",
+            "En 2018, il devient CFO de Billy Mobile, réseau de publicité mobile à la performance basé à Barcelone, poste qu'il occupe jusqu'en 2022. Cette expérience opérationnelle dans l'adtech reste un fil conducteur de son portefeuille : plateformes de monétisation pour éditeurs, réseaux publicitaires, affiliation et marketing mobile.",
+            "Chez Iter Advisors, il a accompagné une trentaine d'entreprises en Espagne et en France, dans l'adtech et le marketing digital, la biotech et l'IA appliquée à la santé, le voyage et l'hôtellerie, l'immobilier, le SaaS B2B et la mobilité. Avec Sébastien Doat, il co-pilote la practice Transaction Services : due diligences acquéreur pour le compte de fonds d'investissement, due diligences vendeur, business plans et data rooms pour préparer les cessions.",
+            "Sa double culture, celle de l'auditeur et celle du directeur financier de groupes multi-pays, se retrouve dans ce qu'il apporte aux fondateurs : des comptes fiables, des entités bien tenues dans plusieurs juridictions et une lecture rigoureuse des chiffres quand une opération se prépare.",
+            "Il intervient régulièrement dans l'écosystème barcelonais, notamment lors de la table ronde \"From 10 to 100 : keys to scaling your company\" organisée par Iter Advisors et Barcelona Finance Hub, ou sur la reprise d'entreprise et la due diligence financière aux côtés de Guillaume Rostand et Sébastien Doat."
+          ]
+        },
         {
           "id": "role",
           "title": "Son rôle chez Iter Advisors",
           "paragraphs": [
-            "Benjamin contribue à la direction du cabinet et à son activité à Barcelone. Il intervient sur la stratégie financière des entreprises accompagnées et sur les questions d’organisation qui permettent aux fondateurs de disposer d’informations utilisables.",
-            "Son expérience complète celle de Sébastien Doat, de Florent Greth et des équipes financières. Guillaume Rostand apporte un regard complémentaire sur le développement commercial, le positionnement des offres et les relations avec les entrepreneurs."
+            "Benjamin dirige le cabinet aux côtés de Sébastien Doat et pilote les opérations de Barcelone. En tant que Partner, il supervise un portefeuille de mandats de CFO à temps partagé, avec les CFO et finance managers de l'équipe qui assurent le suivi opérationnel.",
+            "Il co-pilote avec Sébastien Doat la practice Transaction Services : due diligences financières buy side et sell side, préparation des cessions, accompagnement des acquisitions et revues pour le compte de fonds d'investissement."
           ],
           "links": [
             {
@@ -225,7 +389,7 @@
               ]
             },
             {
-              "title": "Préparation des financements et des opérations",
+              "title": "Transaction Services et préparation des opérations",
               "paragraphs": [
                 "Son intervention porte sur les prévisions, la cohérence du modèle financier et la préparation des informations nécessaires aux échanges avec les investisseurs ou à une opération. Ce travail de préparation doit être distingué des décisions des financeurs et du rôle des conseils spécialisés."
               ]
@@ -236,13 +400,6 @@
                 "Benjamin travaille également sur les questions financières et d’organisation rencontrées dans un environnement transfrontalier. Les sujets fiscaux et juridiques doivent être traités avec les professionnels compétents, selon le périmètre de chaque dossier."
               ]
             }
-          ]
-        },
-        {
-          "id": "parcours",
-          "title": "Un parcours au contact des entreprises",
-          "paragraphs": [
-            "Avant de cofonder Iter Advisors, Benjamin a participé à la structuration de fonctions financières de startups et de PME. Cette expérience nourrit son travail auprès des fondateurs, de l’organisation du reporting à la préparation d’une nouvelle étape de développement."
           ]
         },
         {
@@ -268,29 +425,114 @@
         }
       ],
       "expertise": [
-        "Structuration et pilotage financier",
-        "Préparation des financements et des opérations",
-        "Entreprises entre la France et l’Espagne"
+        "Structuration financière multi-entités",
+        "Due diligence et Transaction Services",
+        "Pilotage de la performance",
+        "Adtech",
+        "Audit"
+      ],
+      "metaTitle": "Benjamin Ziza, cofondateur et CFO | Iter Advisors",
+      "metaDescription": "Benjamin Ziza, cofondateur d'Iter Advisors : ex-Mazars, CFO de Billy Mobile, finance multi-pays chez IWG et Amaris. Transaction Services, adtech, Barcelone.",
+      "workLocation": "Barcelona",
+      "languages": [
+        "fr",
+        "es",
+        "en"
+      ],
+      "alumniOf": [
+        "ENOES, l’École de l’Expertise Comptable et de l’Audit"
+      ],
+      "credentials": [
+        "Diplôme Supérieur de Comptabilité et de Gestion (DSCG)",
+        "Diplôme de Comptabilité et de Gestion (DCG)"
+      ],
+      "schemaDescription": "Benjamin Ziza est cofondateur et Partner d'Iter Advisors, cabinet qu'il a créé en 2020 avec Sébastien Doat et Guillaume Rostand. Basé à Barcelone, il supervise un portefeuille de mandats de CFO à temps partagé et co-pilote, avec Sébastien Doat, la practice Transaction Services du cabinet.",
+      "sameAs": [
+        "https://www.linkedin.com/in/benjaminziza/"
+      ],
+      "contentLinks": [
+        {
+          "label": "Sébastien Doat",
+          "href": "/a-propos/sebastien-doat"
+        },
+        {
+          "label": "Guillaume Rostand",
+          "href": "/a-propos/guillaume-rostand"
+        },
+        {
+          "label": "CFO à temps partagé",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "direction financière externalisée",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "due diligences financières",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "due diligences acquéreur",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "Pennylane",
+          "href": "/ressources/outils/pennylane"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Position",
+          "value": "Cofondateur et Partner, CFO"
+        },
+        {
+          "label": "Expertises",
+          "value": "Structuration financière multi-entités · Due diligence et Transaction Services · Pilotage de la performance"
+        },
+        {
+          "label": "Secteurs",
+          "value": "Adtech et marketing digital, biotech et IA santé, voyage et hôtellerie, proptech, SaaS B2B, mobilité"
+        },
+        {
+          "label": "Bureau",
+          "value": "Barcelone, missions en Espagne et en France"
+        },
+        {
+          "label": "Langues",
+          "value": "Français, espagnol, anglais"
+        }
       ]
     }
   },
   "sebastien-doat": {
     "en": {
       "name": "Sébastien Doat",
-      "role": "Co-founder of Iter Advisors · Fractional CFO in Barcelona · Cash flow, reporting and funding preparation",
-      "teamRole": "Co-founder and Fractional CFO",
-      "metaRole": "Co-founder, CFO",
+      "role": "Co-founder and Partner, CFO · M&A and Transaction Services · Barcelona",
+      "teamRole": "Co-founder and Partner, CFO",
+      "metaRole": "Co-founder and CFO",
       "intro": [
-        "Sébastien Doat founded Iter Advisors with Benjamin Ziza and Guillaume Rostand. Based in Barcelona, he supports business leaders in managing their company’s finances, with a particular focus on cash flow, forecasts and preparing funding decisions.",
-        "His background includes finance leadership roles at Carts Guru and Terres de Café. At Iter, his work combines financial data with discussions with founders and investors."
+        "Sébastien Doat is a co-founder and Partner at Iter Advisors, which he founded in 2020 with Benjamin Ziza and Guillaume Rostand. He leads a team of 15 finance professionals and heads the firm's M&A and Transaction Services practice with Benjamin Ziza.",
+        "He began his career in Transaction Services at ACA Nexia in Paris. He carried out buy-side and sell-side financial due diligence, mainly on technology and telecommunications companies, and supported acquisitions and disposals: analytical reviews of income statements and balance sheets, budget and business plan analysis, and cash flow reviews. He supervised teams of two to four auditors alongside financial audit engagements."
       ],
       "sections": [
+        {
+          "id": "biographie",
+          "title": "Professional background",
+          "paragraphs": [
+            "He then joined the Mama Shelter hospitality group, where he led the holding company's acquisition strategy alongside its CFO, including target sourcing, due diligence and negotiations. Three transactions were completed in 18 months.",
+            "He subsequently moved into operational finance leadership. As the first CFO of Terres de Café, a speciality coffee brand operating in France and the United States, he raised €1.3 million and supported store openings in Paris and Los Angeles. At Carts Guru, a SaaS marketing automation platform, he was CFO and General Manager Europe, working between Barcelona and San Francisco. He supported the company as it grew to $7.4 million in ARR and more than 65 employees, raised $7.2 million, and managed finance, legal, tax and human resources, including the stock option plan.",
+            "Since founding Iter Advisors, he has worked as a fractional CFO for technology scale-ups in Spain and France. At SolarMente, he supported a €50 million funding round and then led the acquisition of Eltex, bringing the headcount to 110. He has also been CFO of Happy Scribe, a profitable, bootstrapped AI transcription platform with €7 million in ARR; Equito, with more than €3 million raised in equity and non-dilutive financing; Impact Plus, with €2.2 million raised from ECP; and NuuBB, with €2.5 million in bank financing. In total, he has contributed to more than €65 million in fundraising and financing.",
+            "This dual perspective, from the auditor who challenges the figures and the CFO who produces them, is what he brings to founders and investors: a business ready for scrutiny, whether for a funding round, an acquisition or a sale.",
+            "Sébastien is active in the startup ecosystem. He mentors at Wilco in Paris, Pôle Action Média in Perpignan, IDEM and the Netmentora network in Catalonia, and regularly contributes to Barcelona Finance Hub. In 2026, Iter Advisors is a partner of AI Summit Barcelona's Startup Selection.",
+            "He holds the DCG and DSCG qualifications and graduated from ISEM Montpellier with a master's in Accounting, Finance and Audit and Universidad Carlos III de Madrid with a master's in Business and Finance, through a double-degree programme."
+          ]
+        },
         {
           "id": "role",
           "title": "His role at Iter Advisors",
           "paragraphs": [
-            "Sébastien works as a Fractional CFO for the businesses supported by Iter. He helps define financial priorities, organise reporting and prepare the information business leaders need to make decisions.",
-            "His work complements that of Benjamin Ziza and Florent Greth, and that of the teams handling operations and analysis. Each engagement defines responsibilities, deliverables and the review schedule."
+            "Sébastien leads a team of 15 finance professionals, including fractional CFOs, finance managers and analysts, working across Barcelona, Paris and Toulouse. With Benjamin Ziza, he co-leads the M&A and Transaction Services practice: buy-side and sell-side financial due diligence, sale preparation, acquisition support and reviews for investment funds.",
+            "He remains directly involved in a portfolio of CFO engagements, setting financial priorities, structuring reporting and preparing decisions for management and the board."
           ],
           "links": [
             {
@@ -324,7 +566,7 @@
               ]
             },
             {
-              "title": "Funding and acquisitions",
+              "title": "M&A, due diligence and financing",
               "paragraphs": [
                 "Sébastien works on the financial preparation of transactions and the discussions they require. His interview on the Le Nerf de la Guerre podcast covers, in particular, his experience of the financial aspects of subsidiary acquisitions."
               ]
@@ -335,21 +577,6 @@
                 "These subjects start with processes, data quality and the controls required. The finance role is to determine what needs to be measured and verified before selecting a technical solution."
               ]
             }
-          ]
-        },
-        {
-          "id": "cas-aisb",
-          "title": "AI Summit Barcelona 2026",
-          "paragraphs": [
-            "For AI Summit Barcelona, led by Guillaume Rostand, Sébastien and Alice contributed to financial monitoring for a highly seasonal events business. The need was to track expenditure against the budget, sales and cash-flow timing gaps, providing a usable financial picture when important spending decisions had to be made quickly.",
-            "Guillaume confirms savings of 15% against the budget and clear accounts the day after the event. These elements describe the ability to monitor the financial situation and prepare decisions, followed by clear reporting the day after the event."
-          ]
-        },
-        {
-          "id": "interventions",
-          "title": "Career and public speaking",
-          "paragraphs": [
-            "His finance leadership roles at Carts Guru and Terres de Café preceded the creation of Iter Advisors. His public professional background also describes Fractional CFO engagements for Happy Scribe and SolarMente."
           ],
           "links": [
             {
@@ -365,31 +592,121 @@
               "href": "/services/previsionnel-tresorerie"
             }
           ]
+        },
+        {
+          "id": "cas-aisb",
+          "title": "AI Summit Barcelona 2026",
+          "paragraphs": [
+            "For AI Summit Barcelona, led by Guillaume Rostand, Sébastien and Alice contributed to financial monitoring for a highly seasonal events business. The need was to track expenditure against the budget, sales and cash-flow timing gaps, providing a usable financial picture when important spending decisions had to be made quickly.",
+            "Guillaume confirms savings of 15% against the budget and clear accounts the day after the event. These elements describe the ability to monitor the financial situation and prepare decisions, followed by clear reporting the day after the event."
+          ]
         }
       ],
       "expertise": [
-        "Cash flow and forecasts",
-        "Reporting and financial modelling",
-        "Funding and acquisitions",
-        "Tools, automation and AI in finance"
+        "Financial due diligence and M&A",
+        "Fundraising and financing",
+        "Finance function structuring",
+        "Transaction Services",
+        "SaaS"
+      ],
+      "metaTitle": "Sébastien Doat, Co-founder and CFO | Iter Advisors",
+      "metaDescription": "Sébastien Doat, Iter Advisors co-founder: ACA Nexia Transaction Services, tech scale-up CFO, over €65m in fundraising and financing. Career and contact.",
+      "workLocation": "Barcelona",
+      "languages": [
+        "fr",
+        "en",
+        "es"
+      ],
+      "alumniOf": [
+        "ISEM Montpellier",
+        "Universidad Carlos III de Madrid"
+      ],
+      "credentials": [
+        "Diplôme Supérieur de Comptabilité et de Gestion (DSCG)",
+        "Diplôme de Comptabilité et de Gestion (DCG)"
+      ],
+      "schemaDescription": "Sébastien Doat is a co-founder and Partner at Iter Advisors, which he founded in 2020 with Benjamin Ziza and Guillaume Rostand. He leads a team of 15 finance professionals and heads the firm's M&A and Transaction Services practice with Benjamin Ziza.",
+      "sameAs": [
+        "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
+        "https://www.malt.com/profile/sebastiendoat"
+      ],
+      "contentLinks": [
+        {
+          "label": "Benjamin Ziza",
+          "href": "/a-propos/benjamin-ziza"
+        },
+        {
+          "label": "Guillaume Rostand",
+          "href": "/a-propos/guillaume-rostand"
+        },
+        {
+          "label": "fractional CFO",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "financial due diligence",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "buy-side due diligence",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "Pennylane",
+          "href": "/ressources/outils/pennylane"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Position",
+          "value": "Co-founder and Partner, CFO"
+        },
+        {
+          "label": "Expertise",
+          "value": "Financial due diligence and M&A · Fundraising and financing · Finance function structuring"
+        },
+        {
+          "label": "Sectors",
+          "value": "SaaS, AI, telecommunications, fintech, energy, e-commerce"
+        },
+        {
+          "label": "Office",
+          "value": "Barcelona, engagements in Spain and France"
+        },
+        {
+          "label": "Languages",
+          "value": "French, English, Spanish"
+        }
       ]
     },
     "es": {
       "name": "Sébastien Doat",
-      "role": "Cofundador de Iter Advisors · CFO externo en Barcelona · Tesorería, informes y preparación de financiación",
-      "teamRole": "Cofundador y CFO externo",
-      "metaRole": "Cofundador, CFO",
+      "role": "Cofundador y socio, CFO · M&A y Transaction Services · Barcelona",
+      "teamRole": "Cofundador y socio, CFO",
+      "metaRole": "cofundador y CFO",
       "intro": [
-        "Sébastien Doat creó Iter Advisors con Benjamin Ziza y Guillaume Rostand. Desde Barcelona, acompaña a los directivos en la gestión financiera de sus empresas, con especial atención a la tesorería, las previsiones y la preparación de decisiones de financiación.",
-        "Su trayectoria incluye funciones de dirección financiera en Carts Guru y Terres de Café. En Iter, su intervención combina el trabajo con los datos financieros y las conversaciones con fundadores e inversores."
+        "Sébastien Doat es cofundador y socio de Iter Advisors, firma que creó en 2020 con Benjamin Ziza y Guillaume Rostand. Dirige un equipo de 15 profesionales de las finanzas y lidera, junto con Benjamin Ziza, el área de M&A y Transaction Services del despacho.",
+        "Comenzó su carrera en Transaction Services en ACA Nexia, en París. Realizó due diligences financieras de compra y de venta, principalmente sobre empresas tecnológicas y de telecomunicaciones, y acompañó procesos de adquisición y venta: revisiones analíticas de la cuenta de resultados y del balance, análisis de presupuestos y planes de negocio, y revisión de flujos de caja. Supervisó equipos de dos a cuatro auditores, en paralelo a misiones de auditoría financiera."
       ],
       "sections": [
+        {
+          "id": "biographie",
+          "title": "Trayectoria profesional",
+          "paragraphs": [
+            "Después se incorporó al grupo hotelero Mama Shelter, donde dirigió la estrategia de adquisiciones de la sociedad holding junto al director financiero: identificación de objetivos, due diligence y negociaciones. Se cerraron tres operaciones en 18 meses.",
+            "A continuación pasó a la dirección financiera operativa. Como primer director financiero de Terres de Café, marca de cafés de especialidad presente en Francia y Estados Unidos, captó 1,3 M€ y acompañó la apertura de tiendas en París y Los Ángeles. En Carts Guru, plataforma SaaS de marketing automation, fue CFO y General Manager Europe entre Barcelona y San Francisco. Acompañó a la empresa hasta alcanzar 7,4 M$ de ARR y más de 65 empleados, captó 7,2 M$ y asumió las finanzas, los asuntos jurídicos, la fiscalidad y los recursos humanos, incluido el plan de opciones sobre acciones.",
+            "Desde la creación de Iter Advisors, trabaja como CFO externo para scale-ups tecnológicas en España y Francia. En SolarMente, acompañó una ronda de 50 M€ y después lideró la adquisición de Eltex, que elevó la plantilla a 110 personas. También ha sido CFO de Happy Scribe, plataforma de transcripción con IA rentable y autofinanciada, con 7 M€ de ARR; de Equito, con más de 3 M€ captados en capital y financiación no dilutiva; de Impact Plus, con 2,2 M€ captados de ECP; y de NuuBB, con 2,5 M€ de financiación bancaria. En total, ha contribuido a más de 65 M€ en rondas de inversión y financiación.",
+            "Esta doble perspectiva, la del auditor que cuestiona las cifras y la del CFO que las produce, es lo que aporta a fundadores e inversores: una empresa preparada para ser auditada, ya sea para una ronda, una adquisición o una venta.",
+            "Sébastien participa activamente en el ecosistema startup. Es mentor en Wilco, en París; en Pôle Action Média, en Perpiñán; en IDEM y en la red Netmentora en Cataluña, y colabora regularmente con Barcelona Finance Hub. En 2026, Iter Advisors es socio de la Startup Selection de AI Summit Barcelona.",
+            "Titular de las acreditaciones DCG y DSCG, es graduado de ISEM Montpellier, con un máster en Contabilidad, Finanzas y Auditoría, y de la Universidad Carlos III de Madrid, con un máster en Business and Finance, mediante una doble titulación."
+          ]
+        },
         {
           "id": "role",
           "title": "Su función en Iter Advisors",
           "paragraphs": [
-            "Sébastien interviene como CFO externo en las empresas acompañadas. Ayuda a definir las prioridades financieras, organizar los informes y preparar la información necesaria para las decisiones de sus responsables.",
-            "Su actividad complementa la de Benjamin Ziza y Florent Greth, así como el trabajo de los equipos encargados de las operaciones y el análisis. Cada proyecto define las responsabilidades, los entregables y la frecuencia del seguimiento."
+            "Sébastien dirige un equipo de 15 profesionales de las finanzas, CFO externos, finance managers y analistas, repartidos entre Barcelona, París y Toulouse. Con Benjamin Ziza codirige el área de M&A y Transaction Services: due diligences financieras de compra y venta, preparación de ventas, acompañamiento de adquisiciones y revisiones para fondos de inversión.",
+            "Sigue directamente implicado en una cartera de mandatos CFO, donde define las prioridades financieras, estructura el reporting y prepara las decisiones del directivo y del consejo."
           ],
           "links": [
             {
@@ -423,7 +740,7 @@
               ]
             },
             {
-              "title": "Financiación y adquisiciones",
+              "title": "M&A, due diligence y financiación",
               "paragraphs": [
                 "Sébastien trabaja en la preparación financiera de operaciones y en las conversaciones que requieren. Su entrevista en el pódcast Le Nerf de la Guerre presenta, entre otros temas, su experiencia en la parte financiera de adquisiciones de filiales."
               ]
@@ -434,21 +751,6 @@
                 "Estos temas parten de los procesos, la calidad de los datos y los controles necesarios. La función financiera consiste en determinar qué se debe medir y verificar antes de elegir una solución técnica."
               ]
             }
-          ]
-        },
-        {
-          "id": "cas-aisb",
-          "title": "AI Summit Barcelona 2026",
-          "paragraphs": [
-            "Para AI Summit Barcelona, dirigido por Guillaume Rostand, Sébastien y Alice contribuyeron al seguimiento financiero de una actividad de eventos muy estacional. El objetivo era seguir los gastos respecto al presupuesto, las ventas y los desfases de tesorería, para disponer de una visión financiera útil cuando había que decidir rápidamente gastos importantes.",
-            "Guillaume confirma un ahorro del 15 % respecto al presupuesto y cuentas claras desde el día siguiente al evento. Estos elementos describen la capacidad de seguir la situación financiera y preparar decisiones, y después disponer de informes claros al día siguiente del evento."
-          ]
-        },
-        {
-          "id": "interventions",
-          "title": "Trayectoria e intervenciones públicas",
-          "paragraphs": [
-            "Su trayectoria en dirección financiera en Carts Guru y Terres de Café precede a la creación de Iter Advisors. En su trayectoria profesional pública también ha presentado proyectos de CFO a tiempo parcial para Happy Scribe y SolarMente."
           ],
           "links": [
             {
@@ -464,31 +766,125 @@
               "href": "/services/previsionnel-tresorerie"
             }
           ]
+        },
+        {
+          "id": "cas-aisb",
+          "title": "AI Summit Barcelona 2026",
+          "paragraphs": [
+            "Para AI Summit Barcelona, dirigido por Guillaume Rostand, Sébastien y Alice contribuyeron al seguimiento financiero de una actividad de eventos muy estacional. El objetivo era seguir los gastos respecto al presupuesto, las ventas y los desfases de tesorería, para disponer de una visión financiera útil cuando había que decidir rápidamente gastos importantes.",
+            "Guillaume confirma un ahorro del 15 % respecto al presupuesto y cuentas claras desde el día siguiente al evento. Estos elementos describen la capacidad de seguir la situación financiera y preparar decisiones, y después disponer de informes claros al día siguiente del evento."
+          ]
         }
       ],
       "expertise": [
-        "Tesorería y previsiones",
-        "Informes y modelización financiera",
-        "Financiación y adquisiciones",
-        "Herramientas, automatización e IA en finanzas"
+        "Due diligence financiera y M&A",
+        "Captación de capital y financiación",
+        "Estructuración de la función financiera",
+        "Transaction Services",
+        "SaaS"
+      ],
+      "metaTitle": "Sébastien Doat, cofundador y CFO | Iter Advisors",
+      "metaDescription": "Sébastien Doat, cofundador de Iter Advisors: Transaction Services en ACA Nexia, CFO de scale-ups tech y más de 65 M€ en inversión y financiación.",
+      "workLocation": "Barcelona",
+      "languages": [
+        "fr",
+        "en",
+        "es"
+      ],
+      "alumniOf": [
+        "ISEM Montpellier",
+        "Universidad Carlos III de Madrid"
+      ],
+      "credentials": [
+        "Diplôme Supérieur de Comptabilité et de Gestion (DSCG)",
+        "Diplôme de Comptabilité et de Gestion (DCG)"
+      ],
+      "schemaDescription": "Sébastien Doat es cofundador y socio de Iter Advisors, firma que creó en 2020 con Benjamin Ziza y Guillaume Rostand. Dirige un equipo de 15 profesionales de las finanzas y lidera, junto con Benjamin Ziza, el área de M&A y Transaction Services del despacho.",
+      "sameAs": [
+        "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
+        "https://www.malt.com/profile/sebastiendoat"
+      ],
+      "contentLinks": [
+        {
+          "label": "Benjamin Ziza",
+          "href": "/a-propos/benjamin-ziza"
+        },
+        {
+          "label": "Guillaume Rostand",
+          "href": "/a-propos/guillaume-rostand"
+        },
+        {
+          "label": "CFO externo",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "dirección financiera externa",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "due diligences financieras",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "due diligences de compra",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "Pennylane",
+          "href": "/ressources/outils/pennylane"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Cargo",
+          "value": "Cofundador y socio, CFO"
+        },
+        {
+          "label": "Especialidades",
+          "value": "Due diligence financiera y M&A · Captación de capital y financiación · Estructuración de la función financiera"
+        },
+        {
+          "label": "Sectores",
+          "value": "SaaS, IA, telecomunicaciones, fintech, energía, e-commerce"
+        },
+        {
+          "label": "Oficina",
+          "value": "Barcelona, misiones en España y Francia"
+        },
+        {
+          "label": "Idiomas",
+          "value": "Francés, inglés, español"
+        }
       ]
     },
     "fr": {
       "name": "Sébastien Doat",
-      "role": "Cofondateur d’Iter Advisors · DAF externalisé à Barcelone · Trésorerie, reporting et préparation des financements",
-      "teamRole": "Cofondateur et DAF externalisé",
-      "metaRole": "Cofondateur, DAF",
+      "role": "Cofondateur et Partner, CFO · M&A et Transaction Services · Barcelone",
+      "teamRole": "Cofondateur et Partner, CFO",
+      "metaRole": "cofondateur et CFO",
       "intro": [
-        "Sébastien Doat a créé Iter Advisors avec Benjamin Ziza et Guillaume Rostand. Basé à Barcelone, il accompagne les dirigeants dans le pilotage financier de leur entreprise, avec une attention particulière à la trésorerie, aux prévisions et à la préparation des décisions de financement.",
-        "Son parcours comprend des fonctions de direction financière chez Carts Guru et Terres de Café. Chez Iter, son intervention associe le travail sur les données financières et les échanges avec les fondateurs et investisseurs."
+        "Sébastien Doat est cofondateur et Partner d'Iter Advisors, cabinet qu'il a créé en 2020 avec Benjamin Ziza et Guillaume Rostand. Il y dirige une équipe de 15 professionnels de la finance et pilote, avec Benjamin Ziza, la verticale M&A et Transaction Services du cabinet.",
+        "Il a commencé sa carrière en Transaction Services chez ACA Nexia, à Paris. Il y a réalisé des due diligences financières buy side et sell side, principalement sur des entreprises technologiques et de télécommunications, et accompagné des processus d'acquisition et de cession d'entreprises : revues analytiques du compte de résultat et du bilan, analyse des budgets et des business plans, revue des flux de trésorerie. Il y a encadré des équipes de deux à quatre auditeurs, en parallèle de missions d'audit financier."
       ],
       "sections": [
+        {
+          "id": "biographie",
+          "title": "Son parcours professionnel",
+          "paragraphs": [
+            "Il rejoint ensuite le groupe hôtelier Mama Shelter, où il conduit la stratégie d'acquisition de la holding aux côtés du directeur financier : sourcing des cibles, due diligences et négociations. Trois opérations sont conclues en 18 mois.",
+            "Il passe ensuite de l'autre côté de la table, en direction financière opérationnelle. Premier directeur administratif et financier de Terres de Café, marque de cafés de spécialité présente en France et aux États-Unis, il lève 1,3 M€ et accompagne l'ouverture de boutiques à Paris et à Los Angeles. Chez Carts Guru, plateforme SaaS de marketing automation, il est CFO et General Manager Europe entre Barcelone et San Francisco. Il accompagne la société jusqu'à 7,4 M$ d'ARR et plus de 65 collaborateurs, lève 7,2 M$ et prend en charge la finance, le juridique, la fiscalité et les ressources humaines, y compris le plan de stock-options.",
+            "Depuis la création d'Iter Advisors, il intervient comme CFO à temps partagé auprès de scale-ups tech en Espagne et en France. Chez Solarmente, il accompagne une levée de 50 M€ puis mène l'acquisition d'Eltex, qui porte l'effectif à 110 personnes. Il a également été CFO de Happy Scribe, plateforme de transcription par IA rentable et autofinancée (7 M€ d'ARR), d'Equito (plus de 3 M€ levés en fonds propres et en financements non dilutifs), d'Impact Plus (2,2 M€ levés auprès d'ECP) et de NuuBB (2,5 M€ de financement bancaire). Au total, il a contribué à plus de 65 M€ de levées de fonds et de financements.",
+            "Ce double regard, celui de l'auditeur qui challenge les chiffres et celui du CFO qui les produit, est ce qu'il apporte aux fondateurs comme aux investisseurs : une entreprise prête à être auditée, qu'il s'agisse d'une levée, d'une acquisition ou d'une cession.",
+            "Sébastien est actif dans l'écosystème startup. Il est mentor chez Wilco à Paris, au Pôle Action Média à Perpignan, à l'IDEM et au sein du réseau Netmentora en Catalogne, et intervient régulièrement au Barcelona Finance Hub. En 2026, Iter Advisors est partenaire de la Startup Selection d'AI Summit Barcelona.",
+            "Titulaire du DCG et du DSCG, il est diplômé de l'ISEM Montpellier (master Comptabilité, Finance et Audit) et de l'Universidad Carlos III de Madrid (master Business and Finance, en double diplôme)."
+          ]
+        },
         {
           "id": "role",
           "title": "Son rôle chez Iter Advisors",
           "paragraphs": [
-            "Sébastien intervient comme DAF externalisé auprès des entreprises accompagnées. Il contribue à définir les priorités financières, à organiser le reporting et à préparer les éléments nécessaires aux décisions du dirigeant.",
-            "Son activité complète celle de Benjamin Ziza et de Florent Greth, ainsi que le travail des équipes chargées des opérations et des analyses. La définition d’une mission précise les responsabilités de chacun, les livrables et la cadence de suivi."
+            "Sébastien dirige une équipe de 15 professionnels de la finance, CFO à temps partagé, finance managers et analystes, répartis entre Barcelone, Paris et Toulouse. Il co-pilote avec Benjamin Ziza la verticale M&A et Transaction Services : due diligences financières buy side et sell side, préparation des cessions, accompagnement des acquisitions et revues pour le compte de fonds d'investissement.",
+            "Il reste directement impliqué sur un portefeuille de mandats CFO, où il définit les priorités financières, structure le reporting et prépare les décisions du dirigeant et du board."
           ],
           "links": [
             {
@@ -522,7 +918,7 @@
               ]
             },
             {
-              "title": "Financement et acquisitions",
+              "title": "M&A, due diligence et financement",
               "paragraphs": [
                 "Sébastien intervient sur la préparation financière d’opérations et sur les échanges qu’elles nécessitent. Son entretien dans le podcast Le Nerf de la Guerre présente notamment son expérience de la partie financière d’acquisitions de filiales."
               ]
@@ -533,21 +929,6 @@
                 "Ces sujets partent des processus, de la qualité des données et des contrôles attendus. Le rôle financier consiste à déterminer ce qu’il faut mesurer et vérifier, avant de retenir une solution technique."
               ]
             }
-          ]
-        },
-        {
-          "id": "cas-aisb",
-          "title": "AI Summit Barcelona 2026",
-          "paragraphs": [
-            "Pour AI Summit Barcelona, dirigé par Guillaume Rostand, Sébastien et Alice ont contribué au suivi financier d’une activité événementielle très saisonnière. Le besoin portait sur le suivi des dépenses par rapport au budget, les ventes et les décalages de trésorerie, afin de disposer d’une vision financière utilisable lorsque des dépenses importantes devaient être décidées rapidement.",
-            "Guillaume confirme 15 % d’économies par rapport au budget et des comptes clairs dès le lendemain de l’événement. Ces éléments décrivent la capacité à suivre la situation financière et à préparer les décisions, puis à disposer d’un reporting clair au lendemain de l’événement."
-          ]
-        },
-        {
-          "id": "interventions",
-          "title": "Parcours et prises de parole",
-          "paragraphs": [
-            "Son parcours de direction financière chez Carts Guru et Terres de Café précède la création d’Iter Advisors. Il a également présenté des missions de CFO à temps partagé pour Happy Scribe et SolarMente dans son parcours professionnel public."
           ],
           "links": [
             {
@@ -563,33 +944,127 @@
               "href": "/services/previsionnel-tresorerie"
             }
           ]
+        },
+        {
+          "id": "cas-aisb",
+          "title": "AI Summit Barcelona 2026",
+          "paragraphs": [
+            "Pour AI Summit Barcelona, dirigé par Guillaume Rostand, Sébastien et Alice ont contribué au suivi financier d’une activité événementielle très saisonnière. Le besoin portait sur le suivi des dépenses par rapport au budget, les ventes et les décalages de trésorerie, afin de disposer d’une vision financière utilisable lorsque des dépenses importantes devaient être décidées rapidement.",
+            "Guillaume confirme 15 % d’économies par rapport au budget et des comptes clairs dès le lendemain de l’événement. Ces éléments décrivent la capacité à suivre la situation financière et à préparer les décisions, puis à disposer d’un reporting clair au lendemain de l’événement."
+          ]
         }
       ],
       "expertise": [
-        "Trésorerie et prévisions",
-        "Reporting et modélisation financière",
-        "Financement et acquisitions",
-        "Outils, automatisation et IA en finance"
+        "Due diligence financière et M&A",
+        "Levée de fonds et financement",
+        "Structuration de la fonction finance",
+        "Transaction Services",
+        "SaaS"
+      ],
+      "metaTitle": "Sébastien Doat, cofondateur et CFO | Iter Advisors",
+      "metaDescription": "Sébastien Doat, cofondateur d'Iter Advisors : transaction services chez ACA Nexia, CFO de scale-ups tech, plus de 65 M€ levés. Parcours, missions et contact.",
+      "workLocation": "Barcelona",
+      "languages": [
+        "fr",
+        "en",
+        "es"
+      ],
+      "alumniOf": [
+        "ISEM Montpellier",
+        "Universidad Carlos III de Madrid"
+      ],
+      "credentials": [
+        "Diplôme Supérieur de Comptabilité et de Gestion (DSCG)",
+        "Diplôme de Comptabilité et de Gestion (DCG)"
+      ],
+      "schemaDescription": "Sébastien Doat est cofondateur et Partner d'Iter Advisors, cabinet qu'il a créé en 2020 avec Benjamin Ziza et Guillaume Rostand. Il y dirige une équipe de 15 professionnels de la finance et pilote, avec Benjamin Ziza, la verticale M&A et Transaction Services du cabinet.",
+      "sameAs": [
+        "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
+        "https://www.malt.com/profile/sebastiendoat"
+      ],
+      "contentLinks": [
+        {
+          "label": "Benjamin Ziza",
+          "href": "/a-propos/benjamin-ziza"
+        },
+        {
+          "label": "Guillaume Rostand",
+          "href": "/a-propos/guillaume-rostand"
+        },
+        {
+          "label": "CFO à temps partagé",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "direction financière externalisée",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "due diligences financières",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "due diligences acquéreur",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "Pennylane",
+          "href": "/ressources/outils/pennylane"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Position",
+          "value": "Cofondateur et Partner, CFO"
+        },
+        {
+          "label": "Expertises",
+          "value": "Due diligence financière et M&A · Levée de fonds et financement · Structuration de la fonction finance"
+        },
+        {
+          "label": "Secteurs",
+          "value": "SaaS, IA, télécoms, fintech, énergie, e-commerce"
+        },
+        {
+          "label": "Bureau",
+          "value": "Barcelone, missions en Espagne et en France"
+        },
+        {
+          "label": "Langues",
+          "value": "Français, anglais, espagnol"
+        }
       ]
     }
   },
   "florent-greth": {
     "en": {
       "name": "Florent Greth",
-      "role": "Partner at Iter Advisors · CFO in Barcelona · Pennylane integration and financial management organisation",
-      "teamRole": "Partner and CFO",
-      "metaRole": "Partner, CFO",
+      "role": "Partner, CFO · Fractional CFO practice · Barcelona",
+      "teamRole": "Partner, CFO",
+      "metaRole": "Partner and CFO",
       "intro": [
-        "Florent Greth is a partner and CFO at Iter Advisors. He supports businesses in structuring their finance function and organising their tools. His work includes Pennylane integration and migration.",
-        "His experience connects finance leadership, management control and accounting processes. It complements that of Benjamin Ziza, Sébastien Doat and the teams involved in the firm’s engagements."
+        "Florent Greth is a Partner and CFO at Iter Advisors, becoming a partner in February 2026. Based in Barcelona, he leads the firm's fractional CFO practice with his teams, working in both Spanish-speaking and French-speaking markets.",
+        "He began his career as a financial auditor at KPMG in Mulhouse. His work covered all accounting cycles: sales and receivables, purchasing and payables, cash, fixed assets, inventory valuation and tax compliance."
       ],
       "sections": [
+        {
+          "id": "biographie",
+          "title": "Professional background",
+          "paragraphs": [
+            "He then moved to Barcelona and joined Abertis, an infrastructure group then listed on the IBEX 35, as a corporate controller. For nearly four years, he conducted monthly performance reviews of international subsidiaries, strengthened group reporting, led the budget cycle, and built rolling forecasts and multi-scenario projections for management.",
+            "At VIIA, he became Financial Manager for Spain and led the finances of the joint venture between VIIA and Primafrio. He established the finance department from scratch, prepared quarterly board meetings and implemented management control. At the rail terminal, he built an activity-based cost model, replaced cost-plus pricing with published per-operation rates, and turned the site into an autonomous profit centre.",
+            "At PACCOR, an industrial packaging group, he was a Senior Controller tasked with turning around a struggling management control and accounting department. He restored compliance with group reporting deadlines, became the financial point of contact for the CEO and board, introduced rolling forecasts at 1, 3 and 12 months linked to production planning and cash flow, and led the migration from QlikView to a modern BI tool.",
+            "He joined Iter Advisors in 2024 as a fractional CFO for SMEs and scale-ups with revenue of €2 million to €8 million. His engagements include managing SaaS metrics and the three-year plan of a B2B software company with €3 million in ARR, securing non-dilutive financing for the international expansion of an adtech business with €8 million in revenue, renegotiating a hospitality group's mortgage debt, and modernising e-commerce finance functions with Pennylane and Payhawk. He also supports fundraising, data room preparation and sell-side due diligence.",
+            "His career, from a Big Four firm to major groups and then growing SMEs, shapes what he brings to business leaders: the reporting discipline of a listed group, adapted to the pace and resources of an SME.",
+            "Educated at ESADE Business & Law School, he works in French, Spanish and English and uses Catalan in a professional setting."
+          ]
+        },
         {
           "id": "role",
           "title": "His role at Iter Advisors",
           "paragraphs": [
-            "Florent works with the businesses supported by Iter to organise financial flows, establish monitoring suited to their needs and align tools with team responsibilities.",
-            "In an integration project, the software is only part of the work. The scope must specify the data to migrate, interfaces, permissions and controls, as well as the responsibilities of the client, Iter and the accountant."
+            "A partner since February 2026, Florent leads Iter Advisors' fractional CFO practice. He manages the firm's CFOs and finance managers in Spanish-speaking and French-speaking markets and oversees the quality of deliverables: monthly closes, reporting, cash flow forecasts and budgets.",
+            "He remains directly involved in a portfolio of engagements, structuring the finance function, selecting and deploying tools including Pennylane, and preparing decision-making information for management and investors."
           ],
           "links": [
             {
@@ -631,13 +1106,6 @@
           ]
         },
         {
-          "id": "parcours",
-          "title": "A background in finance and audit",
-          "paragraphs": [
-            "Florent’s background includes experience at PACCOR, VIIA and Abertis Group, as well as audit experience at KPMG. These stages connect his finance leadership work with an understanding of operations and controls."
-          ]
-        },
-        {
           "id": "ressources",
           "title": "Pennylane within the finance function",
           "paragraphs": [
@@ -661,27 +1129,115 @@
         }
       ],
       "expertise": [
-        "Pennylane integration and migration",
-        "Reporting and management control",
-        "Organising the finance function"
+        "Management control and FP&A",
+        "Finance function and tools",
+        "France-Spain financial management",
+        "Pennylane",
+        "Reporting",
+        "SaaS"
+      ],
+      "metaTitle": "Florent Greth, Partner and CFO | Iter Advisors",
+      "metaDescription": "Florent Greth, Iter Advisors Partner and CFO: former KPMG, Abertis, VIIA and PACCOR. Leads the fractional CFO practice in Spain and France.",
+      "workLocation": "Barcelona",
+      "languages": [
+        "fr",
+        "es",
+        "en",
+        "ca"
+      ],
+      "alumniOf": [
+        "ESADE Business & Law School"
+      ],
+      "credentials": [],
+      "schemaDescription": "Florent Greth is a Partner and CFO at Iter Advisors, becoming a partner in February 2026. Based in Barcelona, he leads the firm's fractional CFO practice with his teams, working in both Spanish-speaking and French-speaking markets.",
+      "sameAs": [
+        "https://www.linkedin.com/in/florent-greth-cfo-pennylane/"
+      ],
+      "contentLinks": [
+        {
+          "label": "Sébastien Doat",
+          "href": "/a-propos/sebastien-doat"
+        },
+        {
+          "label": "Benjamin Ziza",
+          "href": "/a-propos/benjamin-ziza"
+        },
+        {
+          "label": "Guillaume Rostand",
+          "href": "/a-propos/guillaume-rostand"
+        },
+        {
+          "label": "fractional CFO",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "financial due diligence",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "buy-side due diligence",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "Pennylane",
+          "href": "/ressources/outils/pennylane"
+        },
+        {
+          "label": "Spanish-speaking",
+          "href": "/ressources/blog/filiale-espagnole-pilotage-financier"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Position",
+          "value": "Partner, CFO"
+        },
+        {
+          "label": "Expertise",
+          "value": "Management control and FP&A · Finance function and tools · France-Spain financial management"
+        },
+        {
+          "label": "Sectors",
+          "value": "B2B SaaS, adtech and media, hospitality and tourism, e-commerce, real estate, industry and logistics"
+        },
+        {
+          "label": "Office",
+          "value": "Barcelona, Spanish-speaking and French-speaking markets"
+        },
+        {
+          "label": "Languages",
+          "value": "French, Spanish, English, Catalan (professional use)"
+        }
       ]
     },
     "es": {
       "name": "Florent Greth",
-      "role": "Socio de Iter Advisors · CFO en Barcelona · Integración de Pennylane y organización de la gestión financiera",
-      "teamRole": "Socio y CFO",
-      "metaRole": "Socio, CFO",
+      "role": "Socio, CFO · Dirección financiera externa · Barcelona",
+      "teamRole": "Socio, CFO",
+      "metaRole": "socio y CFO",
       "intro": [
-        "Florent Greth es socio y CFO de Iter Advisors. Acompaña a las empresas en la estructuración de su función financiera y la organización de sus herramientas. Su ámbito de intervención incluye la integración y la migración a Pennylane.",
-        "Su experiencia conecta la dirección financiera, el control de gestión y los procesos contables. Complementa la de Benjamin Ziza, Sébastien Doat y los equipos que participan en los proyectos del despacho."
+        "Florent Greth es socio y CFO de Iter Advisors, firma de la que se convirtió en socio en febrero de 2026. Basado en Barcelona, dirige con sus equipos el área de dirección financiera externa del despacho y trabaja tanto en el mercado hispanohablante como en el francófono.",
+        "Comenzó como auditor financiero en KPMG, en Mulhouse. Cubrió todos los ciclos contables: ventas y cuentas a cobrar, compras y proveedores, tesorería, inmovilizado, valoración de existencias y cumplimiento fiscal."
       ],
       "sections": [
+        {
+          "id": "biographie",
+          "title": "Trayectoria profesional",
+          "paragraphs": [
+            "Después se instaló en Barcelona y se incorporó como corporate controller a Abertis, grupo de infraestructuras que entonces cotizaba en el IBEX 35. Durante casi cuatro años realizó revisiones mensuales del rendimiento de las filiales internacionales, reforzó el reporting del grupo, dirigió el ciclo presupuestario y elaboró previsiones continuas y proyecciones con distintos escenarios para la dirección.",
+            "En VIIA pasó a ser Financial Manager para España y dirigió las finanzas de la joint venture entre VIIA y Primafrio. Creó el departamento financiero desde cero, preparó los consejos de administración trimestrales e implantó el control de gestión. En la terminal ferroviaria construyó un modelo de costes por actividad, sustituyó una tarificación cost-plus por una tarifa pública por operación y convirtió el centro en una unidad de beneficio autónoma.",
+            "En PACCOR, grupo industrial de envases, fue Senior Controller con la misión de recuperar un departamento de control de gestión y contabilidad en dificultades. Restableció el cumplimiento de los plazos de reporting del grupo, se convirtió en interlocutor financiero del CEO y del consejo, implantó previsiones continuas a 1, 3 y 12 meses conectadas con la planificación de producción y la tesorería, y lideró la migración de QlikView a una herramienta de BI moderna.",
+            "Se incorporó a Iter Advisors en 2024 como CFO externo para pymes y scale-ups con entre 2 y 8 M€ de ingresos. Entre sus misiones figuran el seguimiento de métricas SaaS y del plan a tres años de una empresa de software B2B con 3 M€ de ARR, la obtención de financiación no dilutiva para la expansión internacional de una empresa adtech con 8 M€ de ingresos, la renegociación de deuda hipotecaria de un grupo hotelero y la modernización de la función financiera de empresas de e-commerce con Pennylane y Payhawk. También acompaña rondas de inversión, preparación de data rooms y due diligences de venta.",
+            "Su trayectoria, desde una Big Four a grandes grupos y después a pymes en crecimiento, se refleja en lo que aporta a los directivos: el rigor de reporting de un grupo cotizado, adaptado al ritmo y a los recursos de una pyme.",
+            "Formado en ESADE Business & Law School, trabaja en francés, español e inglés, y utiliza el catalán en un entorno profesional."
+          ]
+        },
         {
           "id": "role",
           "title": "Su función en Iter Advisors",
           "paragraphs": [
-            "Florent trabaja con las empresas acompañadas para organizar los flujos financieros, establecer un seguimiento adaptado a sus necesidades y coordinar las herramientas con las responsabilidades de los equipos.",
-            "En una integración, el software es solo una parte del proyecto. El alcance debe especificar los datos que se migrarán, las interfaces, los permisos y los controles, así como la función del cliente, de Iter y del asesor contable."
+            "Socio desde febrero de 2026, Florent dirige el área de dirección financiera externa de Iter Advisors. Supervisa a los CFO y finance managers del despacho, tanto en el mercado hispanohablante como en el francófono, y vela por la calidad de los entregables: cierres mensuales, reporting, previsiones de tesorería y presupuestos.",
+            "Sigue directamente implicado en una cartera de mandatos, donde estructura la función financiera, elige e implanta herramientas, en particular Pennylane, y prepara la información para las decisiones del directivo y de los inversores."
           ],
           "links": [
             {
@@ -723,13 +1279,6 @@
           ]
         },
         {
-          "id": "parcours",
-          "title": "Una trayectoria en finanzas y auditoría",
-          "paragraphs": [
-            "La trayectoria de Florent incluye experiencias en PACCOR, VIIA y Abertis Group, así como una experiencia en auditoría en KPMG. Estas etapas conectan su trabajo de dirección financiera con la comprensión de las operaciones y los controles."
-          ]
-        },
-        {
           "id": "ressources",
           "title": "Pennylane en la organización financiera",
           "paragraphs": [
@@ -753,27 +1302,119 @@
         }
       ],
       "expertise": [
-        "Integración y migración a Pennylane",
-        "Informes y control de gestión",
-        "Organización de la función financiera"
+        "Control de gestión y FP&A",
+        "Estructuración de la función financiera y herramientas",
+        "Gestión Francia España",
+        "Pennylane",
+        "Reporting",
+        "SaaS"
+      ],
+      "metaTitle": "Florent Greth, socio y CFO | Iter Advisors",
+      "metaDescription": "Florent Greth, socio y CFO de Iter Advisors: ex-KPMG, Abertis, VIIA y PACCOR. Dirige el área de dirección financiera externa en España y Francia.",
+      "workLocation": "Barcelona",
+      "languages": [
+        "fr",
+        "es",
+        "en",
+        "ca"
+      ],
+      "alumniOf": [
+        "ESADE Business & Law School"
+      ],
+      "credentials": [],
+      "schemaDescription": "Florent Greth es socio y CFO de Iter Advisors, firma de la que se convirtió en socio en febrero de 2026. Basado en Barcelona, dirige con sus equipos el área de dirección financiera externa del despacho y trabaja tanto en el mercado hispanohablante como en el francófono.",
+      "sameAs": [
+        "https://www.linkedin.com/in/florent-greth-cfo-pennylane/"
+      ],
+      "contentLinks": [
+        {
+          "label": "Sébastien Doat",
+          "href": "/a-propos/sebastien-doat"
+        },
+        {
+          "label": "Benjamin Ziza",
+          "href": "/a-propos/benjamin-ziza"
+        },
+        {
+          "label": "Guillaume Rostand",
+          "href": "/a-propos/guillaume-rostand"
+        },
+        {
+          "label": "CFO externo",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "dirección financiera externa",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "due diligences financieras",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "due diligences de compra",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "Pennylane",
+          "href": "/ressources/outils/pennylane"
+        },
+        {
+          "label": "mercado hispanohablante",
+          "href": "/ressources/blog/filiale-espagnole-pilotage-financier"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Cargo",
+          "value": "Socio, CFO"
+        },
+        {
+          "label": "Especialidades",
+          "value": "Control de gestión y FP&A · Estructuración de la función financiera y herramientas · Gestión Francia España"
+        },
+        {
+          "label": "Sectores",
+          "value": "SaaS B2B, adtech y medios, hostelería y turismo, e-commerce, inmobiliario, industria y logística"
+        },
+        {
+          "label": "Oficina",
+          "value": "Barcelona, mercados hispanohablante y francófono"
+        },
+        {
+          "label": "Idiomas",
+          "value": "Francés, español, inglés, catalán (uso profesional)"
+        }
       ]
     },
     "fr": {
       "name": "Florent Greth",
-      "role": "Associé d’Iter Advisors · CFO à Barcelone · Intégration Pennylane et organisation du pilotage financier",
-      "teamRole": "Associé et CFO",
-      "metaRole": "Associé, CFO",
+      "role": "Partner, CFO · Direction financière externalisée · Barcelone",
+      "teamRole": "Partner, CFO",
+      "metaRole": "Partner et CFO",
       "intro": [
-        "Florent Greth est associé et CFO chez Iter Advisors. Il accompagne les entreprises dans la structuration de leur fonction financière et l’organisation de leurs outils. Son domaine d’intervention comprend notamment l’intégration et la migration Pennylane.",
-        "Son expérience relie la direction financière, le contrôle de gestion et les processus comptables. Elle complète celle de Benjamin Ziza, de Sébastien Doat et des équipes qui interviennent dans les missions du cabinet."
+        "Florent Greth est Partner et CFO d'Iter Advisors, dont il est devenu associé en février 2026. Basé à Barcelone, il dirige avec ses équipes la branche métier du cabinet, la direction financière externalisée, et intervient à la fois sur le marché hispanophone et sur le marché francophone.",
+        "Il débute chez KPMG, à Mulhouse, comme auditeur financier. Il y couvre l'ensemble des cycles : ventes et créances, achats et fournisseurs, trésorerie, immobilisations, valorisation des stocks et conformité fiscale."
       ],
       "sections": [
+        {
+          "id": "biographie",
+          "title": "Son parcours professionnel",
+          "paragraphs": [
+            "Il s'installe ensuite à Barcelone et rejoint Abertis, groupe d'infrastructures alors coté à l'IBEX 35, comme corporate controller. Pendant près de quatre ans, il conduit les revues mensuelles de performance des filiales internationales, fiabilise le reporting de groupe, pilote le cycle budgétaire et construit les prévisions glissantes et les projections multi-scénarios présentées à la direction.",
+            "Chez VIIA, il devient Financial Manager pour l'Espagne et dirige les finances de la joint-venture entre VIIA et Primafrio. Il crée le département financier de zéro, prépare les conseils d'administration trimestriels et met en place le contrôle de gestion. Sur le terminal ferroviaire, il construit un modèle de coûts par activité, remplace une tarification cost-plus par un tarif public par opération et transforme le site en centre de profit autonome.",
+            "Chez PACCOR, groupe industriel d'emballage, il est Senior Controller avec pour mission de redresser un service contrôle de gestion et comptabilité en difficulté. Il rétablit le respect des délais de reporting du groupe, devient l'interlocuteur financier du CEO et du board, met en place une prévision glissante à 1, 3 et 12 mois reliée à la planification de production et à la trésorerie, et pilote la migration de QlikView vers un outil de BI moderne.",
+            "Il rejoint Iter Advisors en 2024 comme CFO à temps partagé auprès de PME et scale-ups réalisant entre 2 et 8 M€ de chiffre d'affaires. Il y pilote notamment les métriques SaaS et le plan à trois ans d'un éditeur B2B à 3 M€ d'ARR, obtient des financements non dilutifs pour l'expansion internationale d'une entreprise adtech à 8 M€ de chiffre d'affaires, renégocie la dette hypothécaire d'un groupe hôtelier et modernise la fonction finance d'acteurs du e-commerce avec Pennylane et Payhawk. Il accompagne aussi des levées de fonds, la constitution de data rooms et des due diligences vendeur.",
+            "Son parcours, du Big Four aux grands groupes puis aux PME en croissance, se retrouve dans ce qu'il apporte aux dirigeants : la rigueur de reporting d'un groupe coté, appliquée au rythme et aux moyens d'une PME.",
+            "Formé à ESADE Business & Law School, il travaille en français, en espagnol et en anglais, et pratique le catalan dans un cadre professionnel."
+          ]
+        },
         {
           "id": "role",
           "title": "Son rôle chez Iter Advisors",
           "paragraphs": [
-            "Florent intervient auprès des entreprises accompagnées pour organiser les flux financiers, mettre en place un suivi adapté à leurs besoins et articuler les outils avec les responsabilités des équipes.",
-            "Dans une intégration, le logiciel n’est qu’une partie du projet. Le périmètre doit préciser les données à reprendre, les interfaces, les droits et les contrôles, ainsi que le rôle du client, d’Iter et de l’expert-comptable."
+            "Associé depuis février 2026, Florent dirige la branche métier d'Iter Advisors : la direction financière externalisée. Il encadre les CFO et finance managers du cabinet, sur le marché hispanophone comme sur le marché francophone, et veille à la qualité des livrables : clôtures mensuelles, reporting, prévisionnel de trésorerie, budgets.",
+            "Il reste directement impliqué sur un portefeuille de mandats, où il structure la fonction finance, choisit et déploie les outils, notamment Pennylane, et prépare les éléments de décision du dirigeant et des investisseurs."
           ],
           "links": [
             {
@@ -815,13 +1456,6 @@
           ]
         },
         {
-          "id": "parcours",
-          "title": "Un parcours en finance et en audit",
-          "paragraphs": [
-            "Le parcours de Florent comprend des expériences chez PACCOR, VIIA et Abertis Group, ainsi qu’une expérience en audit chez KPMG. Ces étapes relient son travail de direction financière à la compréhension des opérations et des contrôles."
-          ]
-        },
-        {
           "id": "ressources",
           "title": "Pennylane dans l’organisation financière",
           "paragraphs": [
@@ -845,9 +1479,89 @@
         }
       ],
       "expertise": [
-        "Intégration et migration Pennylane",
-        "Reporting et contrôle de gestion",
-        "Organisation de la fonction financière"
+        "Contrôle de gestion et FP&A",
+        "Structuration de la fonction finance et des outils",
+        "Pilotage France Espagne",
+        "Pennylane",
+        "Reporting",
+        "SaaS"
+      ],
+      "metaTitle": "Florent Greth, Partner et CFO | Iter Advisors",
+      "metaDescription": "Florent Greth, Partner et CFO d'Iter Advisors : ex-KPMG, Abertis, VIIA et PACCOR. Dirige la direction financière externalisée en Espagne et en France.",
+      "workLocation": "Barcelona",
+      "languages": [
+        "fr",
+        "es",
+        "en",
+        "ca"
+      ],
+      "alumniOf": [
+        "ESADE Business & Law School"
+      ],
+      "credentials": [],
+      "schemaDescription": "Florent Greth est Partner et CFO d'Iter Advisors, dont il est devenu associé en février 2026. Basé à Barcelone, il dirige avec ses équipes la branche métier du cabinet, la direction financière externalisée, et intervient à la fois sur le marché hispanophone et sur le marché francophone.",
+      "sameAs": [
+        "https://www.linkedin.com/in/florent-greth-cfo-pennylane/"
+      ],
+      "contentLinks": [
+        {
+          "label": "Sébastien Doat",
+          "href": "/a-propos/sebastien-doat"
+        },
+        {
+          "label": "Benjamin Ziza",
+          "href": "/a-propos/benjamin-ziza"
+        },
+        {
+          "label": "Guillaume Rostand",
+          "href": "/a-propos/guillaume-rostand"
+        },
+        {
+          "label": "CFO à temps partagé",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "direction financière externalisée",
+          "href": "/daf-externalise"
+        },
+        {
+          "label": "due diligences financières",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "due diligences acquéreur",
+          "href": "/services/ma-due-diligence"
+        },
+        {
+          "label": "Pennylane",
+          "href": "/ressources/outils/pennylane"
+        },
+        {
+          "label": "marché hispanophone",
+          "href": "/ressources/blog/filiale-espagnole-pilotage-financier"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Position",
+          "value": "Partner, CFO"
+        },
+        {
+          "label": "Expertises",
+          "value": "Contrôle de gestion et FP&A · Structuration de la fonction finance et des outils · Pilotage France Espagne"
+        },
+        {
+          "label": "Secteurs",
+          "value": "SaaS B2B, adtech et médias, hôtellerie et tourisme, e-commerce, immobilier, industrie et logistique"
+        },
+        {
+          "label": "Bureau",
+          "value": "Barcelone, marchés hispanophone et francophone"
+        },
+        {
+          "label": "Langues",
+          "value": "Français, espagnol, anglais, catalan (usage professionnel)"
+        }
       ]
     }
   }
