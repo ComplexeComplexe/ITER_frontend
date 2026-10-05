@@ -35,7 +35,7 @@ const press = [
 ] as const;
 
 /** Guillaume's supplied biography is the source of personal facts. Updated 3 October 2026. */
-export const GUILLAUME_PROFILE: Record<Locale, PartnerProfile> = {
+const GUILLAUME_BIOGRAPHY: Record<Locale, PartnerProfile> = {
   fr: {
     name: "Guillaume Rostand",
     role: "Cofondateur d’Iter Advisors · Entrepreneur et investisseur à Barcelone · Cofondateur et CEO d’AI Summit Barcelona",
@@ -211,3 +211,72 @@ export const GUILLAUME_PROFILE: Record<Locale, PartnerProfile> = {
     ],
   },
 };
+
+/** Use the same professional profile layout without inventing qualifications or languages. */
+const professionalDetails: Record<Locale, Pick<PartnerProfile, "role" | "facts" | "metaTitle" | "metaDescription" | "contentLinks">> = {
+  fr: {
+    role: "Cofondateur · Entrepreneur et investisseur · Barcelone",
+    facts: [
+      { label: "Position", value: "Cofondateur d’Iter Advisors" },
+      { label: "Expertises", value: "Marketing digital · Développement commercial · Investissement en startups" },
+      { label: "Secteurs", value: "SaaS B2B et marketplaces" },
+      { label: "Bureau", value: "Barcelone, installé depuis 2011" },
+      { label: "Formation", value: "CELSA · Sciences Po" },
+    ],
+    metaTitle: "Guillaume Rostand, cofondateur | Iter Advisors",
+    metaDescription: "Guillaume Rostand, cofondateur d’Iter Advisors : marketing, développement commercial et investissement dans 25 startups. Parcours, projets et contact.",
+    contentLinks: [
+      { label: "Benjamin Ziza", href: "/a-propos/benjamin-ziza" },
+      { label: "Sébastien Doat", href: "/a-propos/sebastien-doat" },
+      { label: "DAF externalisé", href: "/daf-externalise" },
+    ],
+  },
+  en: {
+    role: "Co-founder · Entrepreneur and investor · Barcelona",
+    facts: [
+      { label: "Position", value: "Co-founder of Iter Advisors" },
+      { label: "Expertise", value: "Digital marketing · Business development · Startup investment" },
+      { label: "Sectors", value: "B2B SaaS and marketplaces" },
+      { label: "Office", value: "Barcelona, based here since 2011" },
+      { label: "Education", value: "CELSA · Sciences Po" },
+    ],
+    metaTitle: "Guillaume Rostand, Co-founder | Iter Advisors",
+    metaDescription: "Guillaume Rostand, Iter Advisors co-founder: marketing, business development and investment in 25 startups. Career, projects and contact.",
+    contentLinks: [
+      { label: "Benjamin Ziza", href: "/a-propos/benjamin-ziza" },
+      { label: "Sébastien Doat", href: "/a-propos/sebastien-doat" },
+      { label: "Fractional CFO", href: "/daf-externalise" },
+    ],
+  },
+  es: {
+    role: "Cofundador · Emprendedor e inversor · Barcelona",
+    facts: [
+      { label: "Cargo", value: "Cofundador de Iter Advisors" },
+      { label: "Especialidades", value: "Marketing digital · Desarrollo comercial · Inversión en startups" },
+      { label: "Sectores", value: "SaaS B2B y marketplaces" },
+      { label: "Oficina", value: "Barcelona, residente desde 2011" },
+      { label: "Formación", value: "CELSA · Sciences Po" },
+    ],
+    metaTitle: "Guillaume Rostand, cofundador | Iter Advisors",
+    metaDescription: "Guillaume Rostand, cofundador de Iter Advisors: marketing, desarrollo comercial e inversión en 25 startups. Trayectoria, proyectos y contacto.",
+    contentLinks: [
+      { label: "Benjamin Ziza", href: "/a-propos/benjamin-ziza" },
+      { label: "Sébastien Doat", href: "/a-propos/sebastien-doat" },
+      { label: "CFO externo", href: "/daf-externalise" },
+    ],
+  },
+};
+
+export const GUILLAUME_PROFILE: Record<Locale, PartnerProfile> = Object.fromEntries(
+  (["fr", "en", "es"] as const).map(locale => {
+    const biography = GUILLAUME_BIOGRAPHY[locale];
+    const career = biography.sections.find(section => section.id === "parcours")!;
+    return [locale, {
+      ...biography,
+      ...professionalDetails[locale],
+      schemaDescription: biography.intro[0],
+      workLocation: "Barcelona",
+      sections: [career, ...biography.sections.filter(section => section.id !== "parcours")],
+    }];
+  }),
+) as Record<Locale, PartnerProfile>;

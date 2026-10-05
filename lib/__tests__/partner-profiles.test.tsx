@@ -21,7 +21,7 @@ describe("Published partner profiles", () => {
         expect(doc.querySelectorAll("h1")).toHaveLength(1);
         expect(doc.querySelector("h1")!.textContent).toBe(fullName);
         expect(doc.querySelectorAll("[data-partner-profile]")).toHaveLength(1);
-        expect(doc.querySelectorAll("[data-partner-profile] h2")).toHaveLength(4);
+        expect(doc.querySelectorAll("[data-partner-profile] h2")).toHaveLength(slug === "sebastien-doat" ? 3 : 4);
         const ids = [...doc.querySelectorAll("[id]")].map(node => node.id);
         expect(new Set(ids).size).toBe(ids.length);
         for (const anchor of doc.querySelectorAll('a[href^="#"]')) expect(doc.getElementById(anchor.getAttribute("href")!.slice(1))).not.toBeNull();
@@ -38,9 +38,10 @@ describe("Published partner profiles", () => {
           expect(doc.querySelector(`a[href="${parityHref("/services/accompagnement-levee-de-fond", locale)}"]`)).not.toBeNull();
         }
         if (slug === "sebastien-doat") {
-          expect(text).toContain("AI Summit Barcelona 2026");
-          expect(text).toMatch(/15\s?%/);
-          expect(text).toContain("Alice");
+          expect(text).not.toContain("AI Summit Barcelona");
+          expect(text).not.toMatch(/15\s?%/);
+          expect(text).not.toContain("Alice");
+          expect(doc.querySelector('#cas-aisb')).toBeNull();
           for (const fact of ["ACA Nexia", "Mama Shelter", "Terres de Café", "Carts Guru", "Equito", "NuuBB", "65"]) expect(text).toContain(fact);
           expect(person.hasCredential).toHaveLength(2);
           expect(doc.querySelector(`a[href="${parityHref("/daf-externalise", locale)}"]`)).not.toBeNull();

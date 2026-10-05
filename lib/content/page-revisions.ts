@@ -25,9 +25,9 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/es/quienes-somos/benjamin-ziza": "2026-10-05",
   "/es/quienes-somos/florent-greth": "2026-10-05",
 
-  "/a-propos/guillaume-rostand": "2026-10-03",
-  "/en/about/guillaume-rostand": "2026-10-03",
-  "/es/quienes-somos/guillaume-rostand": "2026-10-03",
+  "/a-propos/guillaume-rostand": "2026-10-05",
+  "/en/about/guillaume-rostand": "2026-10-05",
+  "/es/quienes-somos/guillaume-rostand": "2026-10-05",
   "/ressources/blog/daf-externalise-startup": "2026-10-03",
   "/es/externalizacion-daf": "2026-10-03",
   "/en/fractional-cfo": "2026-10-03",
