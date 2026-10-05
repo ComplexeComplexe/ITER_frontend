@@ -1,3 +1,4 @@
+import HrCatalogue from "@/components/HrCatalogue";
 import { getLocalizedHRService, hrServiceInterface } from "@/lib/content/hr-locales";
 import { parityHref } from "@/lib/locale-route-map";
 import HRExpert from "@/components/HRExpert";
@@ -53,9 +54,10 @@ export default function HRServicePage({
       <ServiceHero locale={locale} family="rh" title={content.h1} label={content.breadcrumb} eyebrow={ui.eyebrow} lead={content.intro[0]} intro={content.intro[1]}
         primary={{ href: href(`/contact#${content.slug}`), label: ui.primary }} secondary={{ href: "#methode", label: ui.method }}
         summary={[{ label: ui.need, value: content.breadcrumb }, { label: ui.work, value: ui.scope }, { label: ui.budget, value: ui.quote }]}
-        proof={<PageByline locale={locale} author={HR_AUTHOR} dateModified={locale === "fr" ? "2026-10-01" : "2026-10-03"} className="mt-4" />}
+        proof={<PageByline locale={locale} author={HR_AUTHOR} dateModified={"2026-10-05"} className="mt-4" />}
         navigation={[{ id: "perimetre", label: ui.perimeter }, { id: "methode", label: ui.navMethod }, { id: "budget", label: ui.budget }]} />
 
+      <HrCatalogue locale={locale} service={content.slug} />
       {/* What is */}
       <section data-page-block="scope" id="perimetre" className="site-section bg-muted/30 py-20">
         <div className="container max-w-4xl">
@@ -262,7 +264,7 @@ export default function HRServicePage({
               description: content.meta.description,
               locale,
               author: HR_AUTHOR,
-              dateModified: locale === "fr" ? "2026-10-01" : "2026-10-03",
+              dateModified: "2026-10-05",
             })
           ),
         }}
