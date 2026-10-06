@@ -287,10 +287,6 @@ const leadContent = {
         a: getDafOffer("en").commitment,
       },
       {
-        q: "How does onboarding work?",
-        a: getDafOfferFacts("en").start,
-      },
-      {
         q: "What's the difference with an accounting firm?",
         a: "A Fractional CFO is a financial strategist who drives your performance. They go far beyond accounting: forecasts, fundraising, KPIs, investor relations.",
       },

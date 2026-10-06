@@ -3,7 +3,6 @@ import {
   CLIENTS_ACCOMPAGNES,
   CONSULTANTS,
   FONDS_LEVES,
-  ENGAGEMENT,
   TRUSTFOLIO_RATING,
 } from "./facts";
 import { getDafOfferFacts } from "./offer-facts";
@@ -569,8 +568,6 @@ export function getHomePilotage(locale: Locale) {
   return {
     ...t,
     team: { ...t.team, eyebrow: `${t.team.eyebrow} · ${CONSULTANTS} ${locale === "es" ? "consultores" : "consultants"}` },
-    engagement: `${t.notice} ${ENGAGEMENT.preavisJours} ${t.days}`,
-    start: facts.start,
     proofs: [
       { value: String(CLIENTS_ACCOMPAGNES), label: t.companies },
       {
@@ -580,10 +577,10 @@ export function getHomePilotage(locale: Locale) {
       },
       { value: `${TRUSTFOLIO_RATING}/5`, label: t.rating },
     ],
-    faqItems: t.faq.questions.map((q, i) => ({
+    faqItems: t.faq.questions.flatMap((q, i) => i === 1 ? [] : [{
       q,
-      a: i === 0 ? facts.geography : i === 1 ? facts.start : t.faq.answers[i],
-    })),
+      a: i === 0 ? facts.geography : t.faq.answers[i],
+    }]),
     reviewItems: reviews,
   };
 }

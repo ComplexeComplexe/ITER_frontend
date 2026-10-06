@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "@/components/PublishedLocaleLink";
 import PageLayout from "@/components/PageLayout";
 import TeamMemberCard from "@/components/TeamMemberCard";
+import ClientLogoMarquee from "@/components/Home/ClientLogoMarquee";
 import HeroSection from "@/components/Home/HeroSection";
 import HomeDecisionResources from "@/components/HomeDecisionResources";
 import styles from "@/components/Home/pilotage.module.css";
@@ -13,8 +14,6 @@ import {
 } from "@/lib/content/home-journey";
 import {
   getHomePilotage,
-  HOME_CLIENT_LOGOS,
-  HOME_CLIENT_NAMES,
   HOME_LEAD_SLUGS,
   HOME_NEED_PATHS,
   HOME_TRUSTFOLIO_URL,
@@ -63,24 +62,7 @@ export default function HomePage({
           }}
         />
         <HeroSection locale={locale} />
-        <section className={styles.logos} aria-label={t.logoLabel}>
-          <div className={styles.wrap}>
-            <p>{t.logoLabel}</p>
-            <div>
-              {HOME_CLIENT_LOGOS.map((slug, i) => (
-                <Image
-                  key={slug}
-                  src={`/images/logos/logo-${slug}.${slug === "hosco" ? "svg" : "webp"}`}
-                  alt={HOME_CLIENT_NAMES[i]}
-                  width={180}
-                  height={108}
-                  sizes="(max-width: 760px) 160px, 180px"
-                  unoptimized={slug === "hosco"}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+        <ClientLogoMarquee locale={locale} label={t.logoLabel} />
         <section className={styles.section} data-journey="home-needs">
           <div className={styles.wrap}>
             <div className={styles.heading}>
