@@ -159,7 +159,7 @@
           "answer": "Non. La transmission des données ne dispense pas de vos obligations déclaratives de TVA. Faites confirmer le régime et les échéances par votre expert-comptable."
         }
       ],
-      "seoTitle": "Facturation électronique PME : obligations et méthode"
+      "seoTitle": "Facturation électronique PME : guide CFO"
     },
     "deploiement-pme": {
       "title": "Déployer la facturation électronique dans une PME",
@@ -276,7 +276,7 @@
           "answer": "L’expert-comptable ou le conseil compétent qualifie les opérations. Iter prépare les flux et les contrôles dans le périmètre convenu ; l’éditeur répond du fonctionnement de sa plateforme."
         }
       ],
-      "seoTitle": "Facturation électronique : déploiement PME et checklist"
+      "seoTitle": "Facturation électronique : déploiement PME"
     },
     "e-reporting": {
       "title": "E-reporting : opérations, données et contrôles pour une PME",
@@ -347,7 +347,7 @@
           "answer": "Non. Il faut distinguer le document remis au client et les données transmises à l’administration. Faites qualifier vos opérations avant de paramétrer la transmission."
         }
       ],
-      "seoTitle": "E-reporting : définition, données et contrôles CFO"
+      "seoTitle": "E-reporting : données et contrôles CFO"
     },
     "choisir-plateforme-agreee": {
       "title": "Choisir une plateforme agréée : la grille de décision CFO",
@@ -441,7 +441,7 @@
         }
       ],
       "faq": [],
-      "seoTitle": "Plateforme agréée : critères de choix d’un CFO"
+      "seoTitle": "Plateforme agréée : le choix du CFO"
     },
     "formats-factur-x": {
       "title": "Factur-X, XML et PDF : comprendre les formats de facture",
@@ -502,7 +502,7 @@
           "answer": "Non. Il faut vérifier les données structurées, les règles métier et le circuit de transmission. Le nom du fichier ne prouve ni conformité ni réception."
         }
       ],
-      "seoTitle": "Factur-X : format de facture, XML et contrôles"
+      "seoTitle": "Factur-X : formats et contrôles"
     },
     "cout-deploiement": {
       "title": "Coût de la facturation électronique : construire votre budget",
@@ -587,7 +587,7 @@
           "answer": "Un premier cadrage peut être discuté, mais une estimation fiable suppose de connaître sources, entités, flux et état des données. Le devis doit préciser hypothèses, exclusions et responsabilités."
         }
       ],
-      "seoTitle": "Facturation électronique : coût et budget de déploiement"
+      "seoTitle": "Facturation électronique : coût et budget"
     }
   },
   "en": {
@@ -867,7 +867,7 @@
           "answer": "The accountant or qualified adviser classifies transactions. Iter prepares flows and controls within the agreed scope; the vendor is responsible for its platform’s operation."
         }
       ],
-      "seoTitle": "Electronic invoicing: SME implementation checklist"
+      "seoTitle": "E-invoicing: SME implementation checklist"
     },
     "e-reporting": {
       "title": "E-reporting in France: transactions, data and SME controls",
@@ -1032,7 +1032,7 @@
         }
       ],
       "faq": [],
-      "seoTitle": "Approved invoicing platforms: CFO selection criteria"
+      "seoTitle": "Approved platforms: CFO selection criteria"
     },
     "formats-factur-x": {
       "title": "Factur-X, XML and PDF: understand invoice formats",
@@ -1178,7 +1178,7 @@
           "answer": "An initial scope can be discussed, but a reliable estimate requires sources, entities, flows and data condition. The quote should state assumptions, exclusions and responsibilities."
         }
       ],
-      "seoTitle": "Electronic invoicing: implementation cost and budget"
+      "seoTitle": "Electronic invoicing: implementation cost"
     }
   },
   "es": {
@@ -1341,7 +1341,7 @@
           "answer": "No. Transmitir datos no elimina las obligaciones de declaración del IVA. Confirme régimen y plazos con su asesor contable."
         }
       ],
-      "seoTitle": "Facturación electrónica en Francia: guía para pymes"
+      "seoTitle": "Facturación electrónica en Francia: guía"
     },
     "deploiement-pme": {
       "title": "Implantar la facturación electrónica en una pyme francesa",
@@ -1458,7 +1458,7 @@
           "answer": "El asesor contable o competente clasifica operaciones. Iter prepara flujos y controles dentro del alcance; el proveedor responde del funcionamiento de su plataforma."
         }
       ],
-      "seoTitle": "Facturación electrónica: implantación y checklist"
+      "seoTitle": "Facturación electrónica: implantación"
     },
     "e-reporting": {
       "title": "E-reporting en Francia: operaciones, datos y controles para pymes",
@@ -1529,7 +1529,7 @@
           "answer": "No. Distinga documento entregado al cliente y datos transmitidos a la administración. Clasifique operaciones antes de configurar el envío."
         }
       ],
-      "seoTitle": "E-reporting en Francia: datos y controles de CFO"
+      "seoTitle": "E-reporting francés: datos y controles"
     },
     "choisir-plateforme-agreee": {
       "title": "Elegir una plataforma autorizada: criterios de un CFO",
@@ -1623,7 +1623,7 @@
         }
       ],
       "faq": [],
-      "seoTitle": "Plataforma autorizada: criterios de selección de CFO"
+      "seoTitle": "Plataforma autorizada: criterios de CFO"
     },
     "formats-factur-x": {
       "title": "Factur-X, XML y PDF: entender los formatos de factura",
@@ -1684,7 +1684,7 @@
           "answer": "No. Compruebe datos estructurados, reglas de negocio y circuito de transmisión. El nombre del archivo no prueba conformidad ni recepción."
         }
       ],
-      "seoTitle": "Factur-X: formato de factura, XML y controles"
+      "seoTitle": "Factur-X: formatos y controles"
     },
     "cout-deploiement": {
       "title": "Coste de implantar facturación electrónica: preparar el presupuesto",
