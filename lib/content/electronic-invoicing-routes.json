@@ -1,0 +1,32 @@
+{
+  "guide": {
+    "fr": "/ressources/facturation-electronique",
+    "en": "/en/resources/electronic-invoicing",
+    "es": "/es/recursos/facturacion-electronica"
+  },
+  "deploiement-pme": {
+    "fr": "/ressources/facturation-electronique/deploiement-pme",
+    "en": "/en/resources/electronic-invoicing/implementation-smes",
+    "es": "/es/recursos/facturacion-electronica/implantacion-pymes"
+  },
+  "e-reporting": {
+    "fr": "/ressources/facturation-electronique/e-reporting",
+    "en": "/en/resources/electronic-invoicing/e-reporting",
+    "es": "/es/recursos/facturacion-electronica/e-reporting"
+  },
+  "choisir-plateforme-agreee": {
+    "fr": "/ressources/facturation-electronique/choisir-plateforme-agreee",
+    "en": "/en/resources/electronic-invoicing/choose-approved-platform",
+    "es": "/es/recursos/facturacion-electronica/elegir-plataforma-autorizada"
+  },
+  "formats-factur-x": {
+    "fr": "/ressources/facturation-electronique/formats-factur-x",
+    "en": "/en/resources/electronic-invoicing/factur-x-formats",
+    "es": "/es/recursos/facturacion-electronica/formatos-factur-x"
+  },
+  "cout-deploiement": {
+    "fr": "/ressources/facturation-electronique/cout-deploiement",
+    "en": "/en/resources/electronic-invoicing/implementation-cost",
+    "es": "/es/recursos/facturacion-electronica/coste-implantacion"
+  }
+}

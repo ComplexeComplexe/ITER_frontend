@@ -1,3 +1,4 @@
+import { InvoiceResourceCard } from '@/components/pages/ElectronicInvoicingPage';
 import { cloneElement, isValidElement, type ReactElement, type ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import PageLayout from '@/components/PageLayout';
@@ -55,6 +56,7 @@ async function localizedTree(node: ReactNode, locale: TargetLocale): Promise<Rea
   const children = await localizedTree(original.children as ReactNode, locale);
   const type = element.type as unknown as { $$typeof?: symbol; $$id?: string };
   if (element.type === Footer) return <Footer locale={locale} />;
+  if (element.type === InvoiceResourceCard) return <InvoiceResourceCard locale={locale} />;
   if (element.type === PageLayout) return <PageLayout locale={locale}>{children}</PageLayout>;
   // React marks imported client boundaries; invoking one would break its hooks.
   const client = type?.$$typeof === Symbol.for('react.client.reference');

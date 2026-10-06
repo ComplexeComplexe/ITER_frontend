@@ -1,0 +1,1775 @@
+{
+  "fr": {
+    "guide": {
+      "title": "Facturation électronique pour les PME : obligations et mise en œuvre",
+      "answer": "La réforme française organise la circulation des factures et la transmission des données fiscales via des plateformes agréées. Depuis le 1er septembre 2026, les entreprises concernées doivent pouvoir recevoir les factures électroniques ; les PME et microentreprises passent à l’émission et à l’e-reporting le 1er septembre 2027. Commencez par identifier vos flux, votre plateforme de réception et la qualité de vos données.",
+      "quote": "La facture électronique ne crée pas le désordre, elle le rend visible et bloquant.",
+      "summary": [
+        "Le calendrier dépend de la taille de l’entreprise et du flux.",
+        "Un PDF envoyé par mail ne suffit pas au dispositif.",
+        "Le CFO doit organiser les données, les validations et le traitement des rejets."
+      ],
+      "sections": [
+        {
+          "id": "enjeu",
+          "title": "Le vrai problème : qui facture quoi, et depuis quel outil ?",
+          "paragraphs": [
+            "Sébastien Doat aborde la réforme depuis les mandats de CFO d’Iter. Son expérience porte sur le diagnostic des flux et l’arbitrage outil ; le paramétrage opérationnel est porté par l’équipe DAF, notamment Florent Greth. Les réponses recueillies le 6 octobre 2026 décrivent des diagnostics et une méthode. Elles ne documentent pas encore de gains mesurés après déploiement.",
+            "Le dirigeant pense parfois devoir simplement changer un format de fichier. Sébastien signale plutôt des identifiants clients ou fournisseurs incomplets, des doublons, plusieurs outils de facturation non reliés et des validations mal définies. Une migration qui conserve ces défauts déplace le problème : le fichier peut être structuré et la facture rester mal adressée ou impossible à rapprocher."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "perimetre",
+          "title": "Quel dispositif correspond à vos ventes ?",
+          "paragraphs": [
+            "La première cartographie sépare les opérations B2B entre entreprises établies en France, les ventes à des particuliers, les opérations internationales et les factures adressées au secteur public. Le régime de TVA, les exonérations et les situations particulières doivent ensuite être qualifiés avec l’expert-comptable. Le calendrier français présenté ici ne s’applique pas automatiquement à une filiale espagnole."
+          ],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Flux",
+              "Orientation à vérifier",
+              "Première vérification"
+            ],
+            "rows": [
+              [
+                "B2B domestique soumis au dispositif",
+                "Facture électronique via PA",
+                "Identité et adresse de facturation du destinataire"
+              ],
+              [
+                "B2C et opérations internationales concernées",
+                "E-reporting de transaction",
+                "Sources de vente, entité et traitement TVA"
+              ],
+              [
+                "Opérations avec TVA exigible à l’encaissement",
+                "Données de paiement selon le régime et les exceptions",
+                "Encaissements, acomptes et éventuelle option sur les débits"
+              ]
+            ]
+          },
+          "sources": [
+            "scope",
+            "payment"
+          ],
+          "links": [
+            "e-reporting"
+          ]
+        },
+        {
+          "id": "calendrier",
+          "title": "Le calendrier français et les actions à mener maintenant",
+          "paragraphs": [
+            "Pour une PME, attendre 2027 pour regarder la réception serait trop tard. Vérifiez la désignation de la plateforme, l’adresse de réception et les accès des personnes qui traitent les achats. Préparez ensuite l’émission sur un échantillon représentatif, sans confondre abonnement activé et circuit opérationnel testé."
+          ],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Date",
+              "Obligation dans le périmètre de la réforme"
+            ],
+            "rows": [
+              [
+                "1er septembre 2026",
+                "Réception pour toutes les tailles ; émission et e-reporting pour grandes entreprises et ETI."
+              ],
+              [
+                "1er septembre 2027",
+                "Émission et e-reporting pour PME et microentreprises."
+              ]
+            ]
+          },
+          "sources": [
+            "calendar"
+          ],
+          "links": []
+        },
+        {
+          "id": "diagnostic",
+          "title": "Les trois questions de Sébastien avant de choisir un outil",
+          "paragraphs": [
+            "Ces réponses déterminent le projet d’intégration. Si l’entreprise facture déjà dans son logiciel comptable et dispose d’un référentiel propre, le circuit peut être relativement simple. Si un ERP métier doit rester la source, il faut tester le connecteur, les données et le retour des statuts. Le prix de l’abonnement ne tranche pas ces questions."
+          ],
+          "bullets": [
+            "D’où partent les factures : ERP, logiciel comptable, caisse, boutique ou autre outil ? Combien de sources émettent ?",
+            "Quelle répartition entre B2B France, B2C et international, et depuis quelle entité ?",
+            "Quel régime de TVA et quelle exigibilité : débits, encaissements et cas particuliers à vérifier ?"
+          ],
+          "table": null,
+          "sources": [],
+          "links": [
+            "choisir-plateforme-agreee"
+          ]
+        },
+        {
+          "id": "donnees",
+          "title": "Préparer les données et répartir les responsabilités",
+          "paragraphs": [
+            "Corrigez les identifiants dans le système qui les produit. Une correction faite uniquement dans la plateforme peut disparaître au prochain import. Le fichier tiers doit permettre de distinguer les entités, les destinataires et les adresses de routage. Faites valider les champs requis avec la plateforme plutôt que de présumer qu’un SIRET suffit à tous les cas.",
+            "Nommez une personne pour émettre, une autre pour valider si nécessaire et un responsable pour les rejets. L’expert-comptable qualifie les cas fiscaux ; l’éditeur confirme le comportement de la plateforme ; le client signe sa désignation et conserve la responsabilité de ses opérations. Le CFO coordonne ces travaux et relie le suivi des factures à la trésorerie."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "deploiement-pme"
+          ]
+        },
+        {
+          "id": "tests",
+          "title": "Tester les exceptions avant de considérer le circuit prêt",
+          "paragraphs": [
+            "Un test doit couvrir une facture simple, un avoir, un acompte et un rejet, selon les flux réellement présents. Conservez pour chacun la donnée source, le résultat attendu, le statut reçu, la pièce de contrôle et le nom du responsable. Un test réussi sur un seul client ne démontre pas la couverture de toutes les entités.",
+            "Sébastien ne dispose pas encore de mesure avant/après attribuable à la réforme. Il propose de suivre le taux de rejet, le délai de comptabilisation fournisseur, les litiges de réception et le DSO. Une variation du DSO doit être analysée avec le volume de ventes, les conditions de paiement et la politique de relance : elle ne peut pas être attribuée automatiquement au logiciel."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "formats-factur-x"
+          ]
+        },
+        {
+          "id": "accompagnement",
+          "title": "Ce qu’Iter peut organiser avec votre équipe",
+          "paragraphs": [
+            "Le périmètre décrit par Sébastien comprend le diagnostic des flux, la matrice des cas, la préparation des référentiels, le paramétrage Pennylane lorsque pertinent, les tests, une procédure de rejets et la formation. Les livrables envisagés sont une cartographie, un procès-verbal de tests et une procédure. Le périmètre effectivement confié, les accès et les interlocuteurs sont précisés avant la mission.",
+            "Iter intervient comme équipe finance. L’accompagnement ne remplace ni une qualification fiscale par l’expert-comptable, ni l’immatriculation et le support de l’éditeur. Si votre besoin dépasse la réforme, la coordination comptable et le pilotage par un DAF peuvent être examinés ensemble."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "cout-deploiement"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Faut-il changer tout son logiciel comptable ?",
+          "answer": "Pas systématiquement. Vérifiez d’abord les flux, le rôle de l’ERP et la connexion à une plateforme agréée. Un logiciel compatible peut fonctionner avec une PA distincte."
+        },
+        {
+          "question": "L’e-reporting remplace-t-il la déclaration de TVA ?",
+          "answer": "Non. La transmission des données ne dispense pas de vos obligations déclaratives de TVA. Faites confirmer le régime et les échéances par votre expert-comptable."
+        }
+      ],
+      "seoTitle": "Facturation électronique PME : guide CFO"
+    },
+    "deploiement-pme": {
+      "title": "Déployer la facturation électronique dans une PME",
+      "answer": "Un déploiement commence par les flux et les données, puis par la plateforme. La méthode proposée par Sébastien prévoit une cartographie, une matrice TVA, des tests de factures et une procédure de rejet. Le projet est opérationnel lorsque l’équipe sait gérer les exceptions sans dépendre du consultant.",
+      "quote": "Je ne considérerais pas le projet comme terminé tant qu’une facture rejetée n’a pas été traitée de bout en bout par l’équipe du client, sans nous.",
+      "summary": [
+        "Huit étapes avec un responsable et une preuve",
+        "Corriger les données à leur source",
+        "Tester les exceptions avant de passer en exploitation"
+      ],
+      "sections": [
+        {
+          "id": "etapes",
+          "title": "La méthode en huit étapes",
+          "paragraphs": [
+            "Cette séquence est un protocole de travail proposé à partir des réponses de Sébastien. Elle ne décrit pas un déploiement client terminé ni un résultat certifié. Le périmètre et les accès doivent être convenus avant intervention."
+          ],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Étape",
+              "Responsable proposé",
+              "Preuve attendue"
+            ],
+            "rows": [
+              [
+                "Cartographier les flux",
+                "Iter et équipe finance",
+                "Diagramme des outils, entités et circuits"
+              ],
+              [
+                "Qualifier les cas TVA",
+                "Expert-comptable et finance",
+                "Matrice B2B, B2C, international et exigibilité"
+              ],
+              [
+                "Nettoyer les référentiels",
+                "Entreprise avec Iter",
+                "Liste des corrections dans le système source"
+              ],
+              [
+                "Désigner la plateforme",
+                "Direction du client",
+                "Contrat et périmètre confirmés"
+              ],
+              [
+                "Configurer les circuits",
+                "Iter et éditeur selon mission",
+                "Paramétrage émission, réception, e-reporting"
+              ],
+              [
+                "Tester un échantillon",
+                "Iter et équipe client",
+                "Compte rendu de test et anomalies"
+              ],
+              [
+                "Traiter les exceptions",
+                "Équipe client avec Iter",
+                "Procédure de rejet et de litige"
+              ],
+              [
+                "Former et transférer",
+                "Iter et responsables internes",
+                "Responsables nommés et essai autonome"
+              ]
+            ]
+          },
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "referentiels",
+          "title": "Éviter la correction qui disparaît au prochain import",
+          "paragraphs": [
+            "Vérifiez les identifiants, l’entité qui facture, les destinataires et les doublons. Corrigez dans l’ERP ou le logiciel qui alimente les autres systèmes. Documentez qui peut modifier une fiche tiers et qui valide un changement de coordonnées. Une importation réussie ne prouve pas que le destinataire recevra la bonne facture."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "tests",
+          "title": "Tester autre chose qu’une facture standard",
+          "paragraphs": [],
+          "bullets": [
+            "Facture et avoir : références, montants et cohérence du retour comptable.",
+            "Acompte et paiement partiel : qualification TVA et rapprochement des encaissements.",
+            "Plusieurs entités et flux B2C : destinataire, source et absence de double transmission.",
+            "Rejet : propriétaire de l’incident, correction à la source et preuve du nouveau traitement."
+          ],
+          "table": null,
+          "sources": [],
+          "links": [
+            "formats-factur-x",
+            "e-reporting"
+          ]
+        },
+        {
+          "id": "suivi",
+          "title": "Passer de la configuration à l’exploitation",
+          "paragraphs": [
+            "Prévoyez un responsable du suivi quotidien, un circuit d’escalade vers l’éditeur et un contrôle périodique avec la comptabilité. Le taux de rejet, les anomalies non résolues et le délai de traitement des factures peuvent servir d’indicateurs. Fixez leur définition et une période de référence avant d’annoncer un gain."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        }
+      ],
+      "faq": [
+        {
+          "question": "Qui valide la conformité fiscale ?",
+          "answer": "L’expert-comptable ou le conseil compétent qualifie les opérations. Iter prépare les flux et les contrôles dans le périmètre convenu ; l’éditeur répond du fonctionnement de sa plateforme."
+        }
+      ],
+      "seoTitle": "Facturation électronique : déploiement PME"
+    },
+    "e-reporting": {
+      "title": "E-reporting : opérations, données et contrôles pour une PME",
+      "answer": "L’e-reporting transmet à l’administration des données de certaines opérations qui ne relèvent pas du circuit de facturation électronique B2B domestique. Il faut distinguer les données de transaction des données de paiement. Le périmètre, les exceptions et le rythme dépendent de l’opération et du régime fiscal.",
+      "quote": "",
+      "summary": [
+        "Séparer transactions et paiements",
+        "Documenter les exceptions TVA",
+        "Rapprocher les systèmes avec un tableau de passage"
+      ],
+      "sections": [
+        {
+          "id": "perimetre",
+          "title": "Qualifier chaque flux",
+          "paragraphs": [
+            "Pour une entreprise établie en France, certaines ventes aux particuliers et opérations internationales peuvent relever de l’e-reporting, sous conditions. Une matrice par entité doit distinguer B2B domestique, B2C et international. Un groupe France-Espagne ne peut pas appliquer automatiquement les règles françaises à toutes ses filiales."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [
+            "scope"
+          ],
+          "links": []
+        },
+        {
+          "id": "paiements",
+          "title": "Transactions et paiements : deux contrôles distincts",
+          "paragraphs": [
+            "Les données de transaction décrivent les opérations ; les données de paiement suivent les encaissements dans les cas concernés. Pour les prestations, l’exigibilité de la TVA doit être examinée. Les exceptions liées à l’option pour les débits et à l’autoliquidation ne doivent pas faire oublier les cas particuliers, notamment les acomptes. Faites valider la matrice plutôt que de déduire une règle du seul type de logiciel."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [
+            "payment",
+            "paymentData"
+          ],
+          "links": []
+        },
+        {
+          "id": "rapprochement",
+          "title": "Ne pas confondre ventes et encaissements",
+          "paragraphs": [
+            "Le chiffre d’affaires comptable, le total transmis et le versement du prestataire de paiement ne sont pas mécaniquement égaux. Construisez un tableau de passage : montants HT et TTC, TVA, décalages de période, remboursements, avoirs et commissions du prestataire. Une différence expliquée vaut mieux qu’une égalité forcée.",
+            "Exemple pédagogique : une vente TTC peut être encaissée plus tard et versée nette de frais. Le contrôle doit relier la vente, sa TVA, le paiement et la commission, avec des références conservées. Ce n’est pas un cas client ni un résultat de mission."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "sources",
+          "title": "Retrouver les données et gérer les anomalies",
+          "paragraphs": [
+            "Identifiez le propriétaire de chaque source : boutique, caisse, ERP, prestataire de paiement et comptabilité. Demandez à l’éditeur quels flux sont réellement couverts, quelles données manquent et comment le retour d’erreur est traité. Testez l’absence de double déclaration et conservez la preuve d’une correction. La fréquence réglementaire doit être vérifiée selon votre régime, puis inscrite dans le calendrier de contrôle."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "deploiement-pme"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Une vente B2C est-elle une facture électronique B2B ?",
+          "answer": "Non. Il faut distinguer le document remis au client et les données transmises à l’administration. Faites qualifier vos opérations avant de paramétrer la transmission."
+        }
+      ],
+      "seoTitle": "E-reporting : données et contrôles CFO"
+    },
+    "choisir-plateforme-agreee": {
+      "title": "Choisir une plateforme agréée : la grille de décision CFO",
+      "answer": "Une plateforme agréée doit être choisie selon vos flux, votre ERP et les contrôles attendus. Vérifiez son statut dans la liste DGFiP, puis demandez une démonstration sur vos cas réels. L’agrément ne suffit pas à prouver que l’intégration, les exports et le support conviennent à votre entreprise.",
+      "quote": "",
+      "summary": [
+        "Vérifier le statut officiel",
+        "Tester le circuit existant",
+        "Comparer le coût total et la sortie"
+      ],
+      "sections": [
+        {
+          "id": "statut",
+          "title": "PA, logiciel compatible et ancien terme PDP",
+          "paragraphs": [
+            "La plateforme agréée assure les fonctions réglementaires de transmission et de routage. Un logiciel compatible peut s’appuyer sur une PA distincte. Le terme PDP reste présent dans des documents anciens ; recherchez le statut actuel sur la liste officielle, en distinguant les situations décrites par la DGFiP."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [
+            "platforms",
+            "approved"
+          ],
+          "links": []
+        },
+        {
+          "id": "grille",
+          "title": "Six critères à comparer à périmètre identique",
+          "paragraphs": [],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Critère",
+              "Preuve à demander"
+            ],
+            "rows": [
+              [
+                "Outil source",
+                "Facture issue de l’ERP et retour de statut"
+              ],
+              [
+                "Entités et flux",
+                "B2B, B2C, international et séparation des sociétés"
+              ],
+              [
+                "Contrôles",
+                "Avoir, acompte, rejet et correction"
+              ],
+              [
+                "Exports et API",
+                "Données récupérables, droits et documentation"
+              ],
+              [
+                "Support",
+                "Interlocuteur et procédure d’incident"
+              ],
+              [
+                "Coût total",
+                "Abonnement, connecteur, reprise et temps interne"
+              ]
+            ]
+          },
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "pennylane",
+          "title": "Pennylane : un usage réel, une recommandation conditionnelle",
+          "paragraphs": [
+            "Iter utilise Pennylane depuis quatre ans pour environ la moitié de ses clients. Sébastien apprécie la centralisation comptable et la préparation d’une précomptabilité propre ; il considère le reporting encore limité. Ces observations ne constituent pas une certification de tous les flux de facturation électronique.",
+            "Pour une entreprise mono-entité qui facture déjà dans l’outil, une solution intégrée mérite d’être étudiée. Pour un ERP métier, plusieurs entités ou des flux mixtes, exigez une preuve sur le connecteur, les retours de statut et les cas B2G si concernés. Nous ne présentons pas ici de test API ou B2G réalisé par Iter."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "demonstration",
+          "title": "Faire rejouer votre scénario avant de signer",
+          "paragraphs": [
+            "Préparez un jeu de données anonymisé et un résultat attendu. Vérifiez émission, réception, avoir, rejet, correction et export. Demandez ce qui est inclus dans l’offre et ce qui dépend d’un développement. Conservez le compte rendu : une démonstration commerciale ne remplace pas une recette sur votre environnement."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "deploiement-pme",
+            "cout-deploiement"
+          ]
+        }
+      ],
+      "faq": [],
+      "seoTitle": "Plateforme agréée : le choix du CFO"
+    },
+    "formats-factur-x": {
+      "title": "Factur-X, XML et PDF : comprendre les formats de facture",
+      "answer": "Factur-X associe un PDF lisible et des données XML structurées dans un même document. Un PDF ordinaire envoyé par email ne suffit pas à constituer le circuit réglementaire de facturation électronique. Le format, le contenu et le routage doivent être contrôlés ensemble.",
+      "quote": "",
+      "summary": [
+        "Lisible pour une personne, structuré pour le logiciel",
+        "Contrôler la cohérence des données",
+        "Tester le rejet et le retour comptable"
+      ],
+      "sections": [
+        {
+          "id": "format",
+          "title": "Ce que contient Factur-X",
+          "paragraphs": [
+            "Le standard hybride utilise un PDF/A-3 contenant un fichier XML. La représentation visuelle sert au lecteur ; les données structurées servent au traitement automatique. Les profils ne couvrent pas tous le même niveau de détail. L’éditeur et la plateforme doivent confirmer le profil et les données nécessaires à votre usage."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [
+            "formats"
+          ],
+          "links": []
+        },
+        {
+          "id": "exemple",
+          "title": "Exemple pédagogique : une facture et son avoir",
+          "paragraphs": [
+            "Imaginez une facture de prestation suivie d’un avoir partiel. Le contrôle porte sur la référence de la facture initiale, les montants et la TVA, puis sur le destinataire et le statut retourné. La lecture du PDF doit rester cohérente avec les données traitées par le logiciel. Cet exemple décrit un contrôle à préparer, pas un fichier client testé par Iter."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "controle",
+          "title": "Une grille de recette accessible à la finance",
+          "paragraphs": [],
+          "bullets": [
+            "Document : le format annoncé et le XML sont-ils réellement présents ?",
+            "Données : les montants, identifiants et références sont-ils cohérents ?",
+            "Technique : les contrôles de structure et règles métier passent-ils ?",
+            "Circuit : la facture arrive-t-elle au bon destinataire et son retour est-il exploitable ?"
+          ],
+          "table": null,
+          "sources": [
+            "validation"
+          ],
+          "links": [
+            "deploiement-pme"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Convertir un PDF suffit-il ?",
+          "answer": "Non. Il faut vérifier les données structurées, les règles métier et le circuit de transmission. Le nom du fichier ne prouve ni conformité ni réception."
+        }
+      ],
+      "seoTitle": "Factur-X : formats et contrôles"
+    },
+    "cout-deploiement": {
+      "title": "Coût de la facturation électronique : construire votre budget",
+      "answer": "Le budget dépend des outils existants, des entités, des flux et de la qualité des données. Séparez abonnement, intégration, reprise, formation et exploitation. Sans ces paramètres et un devis à jour, un prix unique serait trompeur. Cette page ne publie pas de fourchette non validée.",
+      "quote": "Je privilégierais un investissement dans la qualité des données de facturation avant l’achat d’un nouvel outil, lorsque l’entreprise est déjà sur une PA intégrée à sa compta. Limite : si l’outil de facturation actuel ne peut pas émettre en format structuré, il faut changer d’outil d’abord.",
+      "summary": [
+        "Budgéter le projet au-delà de l’abonnement",
+        "Faire préciser ce qui est inclus",
+        "Suivre le coût des exceptions"
+      ],
+      "sections": [
+        {
+          "id": "postes",
+          "title": "Les cinq postes à demander dans le devis",
+          "paragraphs": [],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Poste",
+              "Paramètres à préciser"
+            ],
+            "rows": [
+              [
+                "Abonnement",
+                "Fonctions couvertes, volume et entités"
+              ],
+              [
+                "Intégration",
+                "Connecteurs, API, mapping et retours de statut"
+              ],
+              [
+                "Préparation des données",
+                "Doublons, identifiants, sources et responsabilité"
+              ],
+              [
+                "Recette et formation",
+                "Échantillon, anomalies, procédure et transfert"
+              ],
+              [
+                "Exploitation",
+                "Traitement des rejets, support et contrôles"
+              ]
+            ]
+          },
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "scenarios",
+          "title": "Trois scénarios, trois niveaux de travail",
+          "paragraphs": [
+            "Ces scénarios illustrent les facteurs de charge, sans montant ni résultat client. Même lorsqu’une fonction est comprise dans une offre logicielle, la préparation des données et le temps interne restent à examiner. Demandez une confirmation écrite de la couverture et des frais supplémentaires."
+          ],
+          "bullets": [
+            "Une entité facture dans son logiciel comptable : vérifier la couverture, les référentiels et les tests.",
+            "Un ERP métier reste la source : budgéter le connecteur, les correspondances de données et les retours de statut.",
+            "Plusieurs entités et ventes B2C internationales : cartographier les flux et valider la matrice TVA avant estimation."
+          ],
+          "table": null,
+          "sources": [],
+          "links": [
+            "choisir-plateforme-agreee"
+          ]
+        },
+        {
+          "id": "suivre",
+          "title": "Mesurer le coût de fonctionnement après lancement",
+          "paragraphs": [
+            "Suivez le nombre de rejets, le temps passé à les corriger et les incidents récurrents. Distinguez ce temps du coût initial de déploiement. Une baisse du DSO ou des délais de saisie exige une période comparable et une méthode de mesure ; nous ne publions pas ici de retour sur investissement observé."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "deploiement-pme"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Peut-on chiffrer sans diagnostic ?",
+          "answer": "Un premier cadrage peut être discuté, mais une estimation fiable suppose de connaître sources, entités, flux et état des données. Le devis doit préciser hypothèses, exclusions et responsabilités."
+        }
+      ],
+      "seoTitle": "Facturation électronique : coût et budget"
+    }
+  },
+  "en": {
+    "guide": {
+      "title": "Electronic invoicing in France: SME requirements and implementation",
+      "answer": "The French reform routes invoices and tax data through approved platforms. Since 1 September 2026, businesses within scope must be able to receive electronic invoices; SMEs and microbusinesses move to issuance and e-reporting on 1 September 2027. Start by identifying your flows, receiving platform and data quality.",
+      "quote": "Electronic invoicing does not create the disorder; it makes it visible and obstructive.",
+      "summary": [
+        "Timing depends on business size and transaction type.",
+        "An emailed PDF is insufficient for the reform.",
+        "The CFO must organise data, approvals and rejection handling."
+      ],
+      "sections": [
+        {
+          "id": "enjeu",
+          "title": "The real issue: who invoices what, and from which system?",
+          "paragraphs": [
+            "Sébastien Doat approaches the reform through Iter’s CFO engagements. His experience covers flow diagnostics and system decisions; operational configuration is handled by the finance team, including Florent Greth. His answers collected on 6 October 2026 describe diagnostics and a method. They do not yet document measured post-deployment gains.",
+            "A director may expect only a file-format change. Sébastien instead highlights incomplete customer or supplier identifiers, duplicates, disconnected billing systems and unclear approvals. Migrating those defects only moves the problem: a structured invoice may still be misrouted or impossible to reconcile."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "perimetre",
+          "title": "Which process applies to your sales?",
+          "paragraphs": [
+            "The initial map separates domestic B2B transactions, consumer sales, international transactions and public-sector invoices. VAT treatment, exemptions and special situations must then be classified with the accountant. The French timetable here does not automatically apply to a Spanish subsidiary."
+          ],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Flow",
+              "Process to confirm",
+              "First check"
+            ],
+            "rows": [
+              [
+                "Domestic B2B within scope",
+                "Electronic invoice through an approved platform",
+                "Recipient identity and invoice address"
+              ],
+              [
+                "In-scope B2C and international transactions",
+                "Transaction e-reporting",
+                "Sales sources, entity and VAT treatment"
+              ],
+              [
+                "Transactions with VAT due on receipt of payment",
+                "Payment data depending on treatment and exceptions",
+                "Receipts, advances and any VAT-on-debits election"
+              ]
+            ]
+          },
+          "sources": [
+            "scope",
+            "payment"
+          ],
+          "links": [
+            "e-reporting"
+          ]
+        },
+        {
+          "id": "calendrier",
+          "title": "French timetable and actions to take now",
+          "paragraphs": [
+            "An SME should not wait until 2027 to review receipt. Check platform designation, the receiving address and purchasing-team access. Then prepare issuance using a representative sample. An activated subscription is not evidence of a tested operational process."
+          ],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Date",
+              "Requirement within the reform’s scope"
+            ],
+            "rows": [
+              [
+                "1 September 2026",
+                "Receipt for all sizes; issuance and e-reporting for large and mid-sized businesses."
+              ],
+              [
+                "1 September 2027",
+                "Issuance and e-reporting for SMEs and microbusinesses."
+              ]
+            ]
+          },
+          "sources": [
+            "calendar"
+          ],
+          "links": []
+        },
+        {
+          "id": "diagnostic",
+          "title": "Sébastien’s three questions before choosing a system",
+          "paragraphs": [
+            "These answers determine the integration project. If billing already happens in accounting software with clean master data, the process may be relatively simple. If a specialist ERP must remain the source, test the connector, data and status updates. Subscription price cannot settle those questions."
+          ],
+          "bullets": [
+            "Where do invoices originate: ERP, accounting software, checkout, online shop or another system? How many sources issue invoices?",
+            "What is the split between French B2B, consumer sales and international operations, and which entity sells?",
+            "Which VAT regime and tax point apply: debits, receipts and special cases to check?"
+          ],
+          "table": null,
+          "sources": [],
+          "links": [
+            "choisir-plateforme-agreee"
+          ]
+        },
+        {
+          "id": "donnees",
+          "title": "Prepare data and assign responsibilities",
+          "paragraphs": [
+            "Correct identifiers in the source system. A correction made only on the platform may disappear at the next import. Master data must distinguish entities, recipients and routing addresses. Confirm required fields with the platform rather than assuming that a SIRET alone covers every case.",
+            "Assign issuance, approval where needed and rejection ownership. The accountant classifies tax cases; the vendor confirms platform behaviour; the client signs platform designation and remains responsible for operations. The CFO coordinates the work and connects invoice monitoring with cash management."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "deploiement-pme"
+          ]
+        },
+        {
+          "id": "tests",
+          "title": "Test exceptions before declaring the process ready",
+          "paragraphs": [
+            "Tests should cover a standard invoice, credit note, advance and rejection, depending on actual flows. Keep the source data, expected result, received status, evidence and owner for each. Success for one customer does not demonstrate coverage of every entity.",
+            "Sébastien does not yet have before-and-after measurements attributable to the reform. He recommends tracking rejection rates, supplier posting time, receipt disputes and DSO. DSO changes must be assessed alongside sales volumes, payment terms and collection policies; they cannot automatically be attributed to software."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "formats-factur-x"
+          ]
+        },
+        {
+          "id": "accompagnement",
+          "title": "What Iter can organise with your team",
+          "paragraphs": [
+            "The scope described by Sébastien includes flow diagnostics, case classification, master-data preparation, Pennylane configuration where relevant, testing, a rejection procedure and training. Planned deliverables are a flow map, test record and procedure. Actual scope, access and contacts are agreed before the engagement.",
+            "Iter acts as a finance team. Its support does not replace tax classification by the accountant or platform registration and vendor support. If the need extends beyond the reform, accounting coordination and CFO support can be scoped together."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "cout-deploiement"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Must the entire accounting system change?",
+          "answer": "Not necessarily. Check flows, the ERP’s role and its connection to an approved platform first. Compatible software can work with a separate approved platform."
+        },
+        {
+          "question": "Does e-reporting replace VAT returns?",
+          "answer": "No. Data transmission does not remove VAT-return obligations. Confirm the treatment and deadlines with your accountant."
+        }
+      ],
+      "seoTitle": "Electronic invoicing in France: SME guide"
+    },
+    "deploiement-pme": {
+      "title": "Implement electronic invoicing in a French SME",
+      "answer": "Implementation starts with flows and data, then the platform. Sébastien’s proposed method includes a flow map, a VAT matrix, invoice tests and a rejection procedure. The process is operational when the team can handle exceptions without relying on the consultant.",
+      "quote": "I would not consider the project complete until the client’s team had handled a rejected invoice from start to finish without us.",
+      "summary": [
+        "Eight steps with an owner and evidence",
+        "Correct data at its source",
+        "Test exceptions before going live"
+      ],
+      "sections": [
+        {
+          "id": "etapes",
+          "title": "The eight-step method",
+          "paragraphs": [
+            "This sequence is a working protocol based on Sébastien’s answers. It does not describe a completed client deployment or certified result. Scope and access must be agreed before work begins."
+          ],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Step",
+              "Suggested owner",
+              "Expected evidence"
+            ],
+            "rows": [
+              [
+                "Map flows",
+                "Iter and finance team",
+                "Diagram of systems, entities and flows"
+              ],
+              [
+                "Classify VAT cases",
+                "Accountant and finance",
+                "Matrix of B2B, B2C, international and tax points"
+              ],
+              [
+                "Clean master data",
+                "Company with Iter",
+                "Corrections recorded in the source system"
+              ],
+              [
+                "Appoint the platform",
+                "Client management",
+                "Contract and scope confirmed"
+              ],
+              [
+                "Configure workflows",
+                "Iter and vendor within scope",
+                "Issuance, receipt and e-reporting settings"
+              ],
+              [
+                "Test a sample",
+                "Iter and client team",
+                "Test record and issues"
+              ],
+              [
+                "Handle exceptions",
+                "Client team with Iter",
+                "Rejection and dispute procedure"
+              ],
+              [
+                "Train and hand over",
+                "Iter and internal owners",
+                "Named owners and independent trial"
+              ]
+            ]
+          },
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "referentiels",
+          "title": "Avoid fixes that disappear at the next import",
+          "paragraphs": [
+            "Check identifiers, the issuing entity, recipients and duplicates. Correct the ERP or application feeding other systems. Record who can edit master data and approve changed details. A successful import does not prove the right recipient will receive the right invoice."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "tests",
+          "title": "Test more than a standard invoice",
+          "paragraphs": [],
+          "bullets": [
+            "Invoice and credit note: references, amounts and accounting consistency.",
+            "Advance and partial payment: VAT classification and receipt reconciliation.",
+            "Multiple entities and consumer flows: recipient, source and no duplicate submission.",
+            "Rejection: issue owner, source correction and evidence of reprocessing."
+          ],
+          "table": null,
+          "sources": [],
+          "links": [
+            "formats-factur-x",
+            "e-reporting"
+          ]
+        },
+        {
+          "id": "suivi",
+          "title": "Move from configuration to operations",
+          "paragraphs": [
+            "Assign a daily owner, a vendor escalation process and periodic checks with accounting. Rejection rate, unresolved issues and invoice processing time can be indicators. Define them and a reference period before claiming improvement."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        }
+      ],
+      "faq": [
+        {
+          "question": "Who validates tax treatment?",
+          "answer": "The accountant or qualified adviser classifies transactions. Iter prepares flows and controls within the agreed scope; the vendor is responsible for its platform’s operation."
+        }
+      ],
+      "seoTitle": "E-invoicing: SME implementation checklist"
+    },
+    "e-reporting": {
+      "title": "E-reporting in France: transactions, data and SME controls",
+      "answer": "E-reporting submits data on certain transactions outside the French domestic B2B e-invoicing circuit to the tax administration. Transaction data and payment data are separate. Scope, exceptions and frequency depend on the transaction and tax regime.",
+      "quote": "",
+      "summary": [
+        "Separate transactions and payments",
+        "Document VAT exceptions",
+        "Reconcile systems with a bridge"
+      ],
+      "sections": [
+        {
+          "id": "perimetre",
+          "title": "Classify each flow",
+          "paragraphs": [
+            "For a business established in France, certain consumer sales and international transactions may fall under e-reporting, subject to conditions. An entity-level matrix should distinguish domestic B2B, B2C and international flows. A France-Spain group cannot automatically apply French rules to every subsidiary."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [
+            "scope"
+          ],
+          "links": []
+        },
+        {
+          "id": "paiements",
+          "title": "Transactions and payments: two separate controls",
+          "paragraphs": [
+            "Transaction data describes operations; payment data tracks receipts where required. For services, examine the VAT tax point. Exceptions involving the debit option and reverse charge must not obscure special cases, including advances. Validate the matrix rather than infer a rule from software alone."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [
+            "payment",
+            "paymentData"
+          ],
+          "links": []
+        },
+        {
+          "id": "rapprochement",
+          "title": "Do not confuse sales with cash receipts",
+          "paragraphs": [
+            "Accounting revenue, submitted totals and payment-provider settlements are not automatically equal. Build a reconciliation bridge for net and gross amounts, VAT, timing, refunds, credit notes and provider fees. An explained difference is better than a forced equality.",
+            "Illustrative example: a gross sale may be collected later and settled net of fees. Link the sale, VAT, payment and fee while retaining references. This is not a client case or engagement result."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "sources",
+          "title": "Locate data and handle issues",
+          "paragraphs": [
+            "Identify the owner of each source: shop, checkout, ERP, payment provider and accounting. Ask the vendor which flows are covered, what data is missing and how errors are returned. Test for duplicate reporting and retain correction evidence. Check statutory frequency for your regime and add it to the control calendar."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "deploiement-pme"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Is a consumer sale a B2B electronic invoice?",
+          "answer": "No. Distinguish the document given to the customer from data submitted to the administration. Classify transactions before configuring submission."
+        }
+      ],
+      "seoTitle": "French e-reporting: data and CFO controls"
+    },
+    "choisir-plateforme-agreee": {
+      "title": "Choose an approved platform: a CFO decision framework",
+      "answer": "Choose an approved platform based on flows, ERP and required controls. Check its status on the DGFiP list, then request a demonstration using your scenarios. Approval alone does not prove the integration, exports and support fit your business.",
+      "quote": "",
+      "summary": [
+        "Check official status",
+        "Test the existing workflow",
+        "Compare total cost and exit options"
+      ],
+      "sections": [
+        {
+          "id": "statut",
+          "title": "Approved platform, compatible software and the former PDP term",
+          "paragraphs": [
+            "The approved platform handles statutory transmission and routing functions. Compatible software may rely on a separate approved platform. The former PDP term still appears in older documents; check current status on the official list and distinguish the situations described by DGFiP."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [
+            "platforms",
+            "approved"
+          ],
+          "links": []
+        },
+        {
+          "id": "grille",
+          "title": "Six criteria to compare on the same scope",
+          "paragraphs": [],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Criterion",
+              "Evidence to request"
+            ],
+            "rows": [
+              [
+                "Source system",
+                "ERP-issued invoice and returned status"
+              ],
+              [
+                "Entities and flows",
+                "B2B, B2C, international and entity separation"
+              ],
+              [
+                "Controls",
+                "Credit note, advance, rejection and correction"
+              ],
+              [
+                "Exports and API",
+                "Recoverable data, permissions and documentation"
+              ],
+              [
+                "Support",
+                "Contact and incident process"
+              ],
+              [
+                "Total cost",
+                "Subscription, connector, migration and internal time"
+              ]
+            ]
+          },
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "pennylane",
+          "title": "Pennylane: real use, a conditional recommendation",
+          "paragraphs": [
+            "Iter has used Pennylane for four years for around half its clients. Sébastien values accounting centralisation and clean pre-accounting preparation; he finds reporting still limited. These observations do not certify every electronic-invoicing flow.",
+            "For a single entity already billing in the application, an integrated solution deserves consideration. With a specialist ERP, multiple entities or mixed flows, require evidence for the connector, status returns and any relevant B2G cases. We do not present an API or B2G test performed by Iter here."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "demonstration",
+          "title": "Run your scenario before signing",
+          "paragraphs": [
+            "Prepare anonymised data and expected outcomes. Check issuance, receipt, credit note, rejection, correction and export. Ask what is included and what needs development. Keep the record: a sales demonstration is not acceptance testing in your environment."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "deploiement-pme",
+            "cout-deploiement"
+          ]
+        }
+      ],
+      "faq": [],
+      "seoTitle": "Approved platforms: CFO selection criteria"
+    },
+    "formats-factur-x": {
+      "title": "Factur-X, XML and PDF: understand invoice formats",
+      "answer": "Factur-X combines a readable PDF and structured XML data in one document. An ordinary PDF sent by email is not enough to establish the statutory electronic-invoicing circuit. Check the format, content and routing together.",
+      "quote": "",
+      "summary": [
+        "Readable for people, structured for software",
+        "Check data consistency",
+        "Test rejection and accounting feedback"
+      ],
+      "sections": [
+        {
+          "id": "format",
+          "title": "What Factur-X contains",
+          "paragraphs": [
+            "The hybrid standard uses a PDF/A-3 containing an XML file. The visual representation serves the reader; structured data supports automation. Profiles provide different levels of detail. The vendor and platform should confirm the profile and data required for your use."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [
+            "formats"
+          ],
+          "links": []
+        },
+        {
+          "id": "exemple",
+          "title": "Illustrative example: an invoice and a credit note",
+          "paragraphs": [
+            "Imagine a service invoice followed by a partial credit note. Check the original invoice reference, amounts and VAT, then the recipient and returned status. The PDF view must agree with data processed by the application. This describes a test to prepare, not a client file tested by Iter."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "controle",
+          "title": "Acceptance checks for the finance team",
+          "paragraphs": [],
+          "bullets": [
+            "Document: are the stated format and XML actually present?",
+            "Data: are amounts, identifiers and references consistent?",
+            "Technical: do structural and business-rule checks pass?",
+            "Workflow: does the invoice reach the right recipient with usable feedback?"
+          ],
+          "table": null,
+          "sources": [
+            "validation"
+          ],
+          "links": [
+            "deploiement-pme"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Is converting a PDF enough?",
+          "answer": "No. Check structured data, business rules and the transmission circuit. A file name proves neither compliance nor receipt."
+        }
+      ],
+      "seoTitle": "Factur-X invoice format: XML and checks"
+    },
+    "cout-deploiement": {
+      "title": "Electronic-invoicing implementation cost: build your budget",
+      "answer": "Budget depends on existing systems, entities, flows and data quality. Separate subscription, integration, migration, training and operations. Without those parameters and a current quote, a single price would mislead. This page publishes no unvalidated price range.",
+      "quote": "I would prioritise investing in invoice data quality before buying a new system when the company already has an approved platform integrated with its accounting. The limit: if the current billing system cannot issue structured invoices, the system must change first.",
+      "summary": [
+        "Budget beyond the subscription",
+        "Clarify what is included",
+        "Track exception-handling costs"
+      ],
+      "sections": [
+        {
+          "id": "postes",
+          "title": "Five cost items to request in the quote",
+          "paragraphs": [],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Item",
+              "Parameters to clarify"
+            ],
+            "rows": [
+              [
+                "Subscription",
+                "Included functions, volume and entities"
+              ],
+              [
+                "Integration",
+                "Connectors, API, mapping and status returns"
+              ],
+              [
+                "Data preparation",
+                "Duplicates, identifiers, sources and ownership"
+              ],
+              [
+                "Testing and training",
+                "Sample, issues, procedures and handover"
+              ],
+              [
+                "Operations",
+                "Rejections, support and checks"
+              ]
+            ]
+          },
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "scenarios",
+          "title": "Three scenarios, three workloads",
+          "paragraphs": [
+            "These scenarios illustrate workload drivers without figures or client results. Even when a function is included in a software offer, data preparation and internal time still require review. Request written confirmation of coverage and additional charges."
+          ],
+          "bullets": [
+            "One entity invoices in accounting software: check coverage, master data and tests.",
+            "A specialist ERP remains the source: budget for the connector, data mapping and status returns.",
+            "Multiple entities and international consumer sales: map flows and validate the VAT matrix before estimating."
+          ],
+          "table": null,
+          "sources": [],
+          "links": [
+            "choisir-plateforme-agreee"
+          ]
+        },
+        {
+          "id": "suivre",
+          "title": "Measure operating cost after launch",
+          "paragraphs": [
+            "Track rejection counts, correction time and recurring incidents. Separate this workload from initial implementation cost. Reduced DSO or entry delays requires a comparable period and measurement method; no observed return on investment is published here."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "deploiement-pme"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Can cost be estimated without a diagnostic?",
+          "answer": "An initial scope can be discussed, but a reliable estimate requires sources, entities, flows and data condition. The quote should state assumptions, exclusions and responsibilities."
+        }
+      ],
+      "seoTitle": "Electronic invoicing: implementation cost"
+    }
+  },
+  "es": {
+    "guide": {
+      "title": "Facturación electrónica en Francia: obligaciones y puesta en marcha para pymes",
+      "answer": "La reforma francesa organiza la circulación de facturas y datos fiscales mediante plataformas autorizadas. Desde el 1 de septiembre de 2026, las empresas afectadas deben poder recibir facturas electrónicas; las pymes y microempresas pasan a la emisión y al e-reporting el 1 de septiembre de 2027. Empiece por identificar sus flujos, plataforma de recepción y calidad de datos.",
+      "quote": "La factura electrónica no crea el desorden; lo hace visible y bloquea el proceso.",
+      "summary": [
+        "El calendario depende del tamaño y de la operación.",
+        "Enviar un PDF por correo no basta para la reforma.",
+        "El CFO debe organizar datos, validaciones y gestión de rechazos."
+      ],
+      "sections": [
+        {
+          "id": "enjeu",
+          "title": "El problema real: ¿quién factura qué y desde qué sistema?",
+          "paragraphs": [
+            "Sébastien Doat aborda la reforma desde las misiones de CFO de Iter. Su experiencia cubre el diagnóstico de flujos y las decisiones sobre herramientas; la configuración operativa corresponde al equipo financiero, incluido Florent Greth. Sus respuestas del 6 de octubre de 2026 describen diagnósticos y un método, sin resultados medidos tras el despliegue.",
+            "El directivo puede pensar que solo debe cambiar un formato. Sébastien señala identificadores incompletos, duplicados, sistemas de facturación desconectados y validaciones poco claras. Migrar esos defectos desplaza el problema: una factura estructurada puede seguir mal dirigida o resultar imposible de conciliar."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "perimetre",
+          "title": "¿Qué dispositivo corresponde a sus ventas?",
+          "paragraphs": [
+            "La cartografía inicial distingue B2B entre empresas establecidas en Francia, ventas a particulares, operaciones internacionales y facturas al sector público. El asesor contable debe calificar IVA, exenciones y casos especiales. Este calendario francés no se aplica automáticamente a una filial española."
+          ],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Flujo",
+              "Dispositivo que confirmar",
+              "Primera comprobación"
+            ],
+            "rows": [
+              [
+                "B2B nacional dentro del ámbito",
+                "Factura electrónica mediante PA",
+                "Identidad y dirección de facturación del destinatario"
+              ],
+              [
+                "B2C y operaciones internacionales afectadas",
+                "E-reporting de operaciones",
+                "Fuentes de venta, entidad y tratamiento del IVA"
+              ],
+              [
+                "Operaciones con IVA exigible al cobro",
+                "Datos de pago según el régimen y las excepciones",
+                "Cobros, anticipos y posible opción por devengo"
+              ]
+            ]
+          },
+          "sources": [
+            "scope",
+            "payment"
+          ],
+          "links": [
+            "e-reporting"
+          ]
+        },
+        {
+          "id": "calendrier",
+          "title": "Calendario francés y acciones que emprender ahora",
+          "paragraphs": [
+            "Una pyme no debe esperar a 2027 para revisar la recepción. Compruebe la designación de la plataforma, la dirección de recepción y los accesos del equipo de compras. Prepare después la emisión con una muestra representativa: una suscripción activa no demuestra que el circuito esté probado."
+          ],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Fecha",
+              "Obligación dentro del ámbito de la reforma"
+            ],
+            "rows": [
+              [
+                "1 de septiembre de 2026",
+                "Recepción para todos los tamaños; emisión y e-reporting para grandes y medianas empresas (ETI)."
+              ],
+              [
+                "1 de septiembre de 2027",
+                "Emisión y e-reporting para pymes y microempresas."
+              ]
+            ]
+          },
+          "sources": [
+            "calendar"
+          ],
+          "links": []
+        },
+        {
+          "id": "diagnostic",
+          "title": "Las tres preguntas de Sébastien antes de elegir una herramienta",
+          "paragraphs": [
+            "Las respuestas determinan la integración. Si la empresa ya factura en su software contable con datos maestros correctos, el circuito puede ser relativamente sencillo. Si debe conservar un ERP sectorial, hay que probar el conector, los datos y el retorno de estados. La cuota de suscripción no resuelve esas cuestiones."
+          ],
+          "bullets": [
+            "¿De dónde salen las facturas: ERP, software contable, caja, tienda u otro sistema? ¿Cuántas fuentes emiten?",
+            "¿Cómo se reparten B2B en Francia, B2C e internacional, y qué entidad vende?",
+            "¿Qué régimen y exigibilidad del IVA se aplican: devengo, cobros y casos particulares que comprobar?"
+          ],
+          "table": null,
+          "sources": [],
+          "links": [
+            "choisir-plateforme-agreee"
+          ]
+        },
+        {
+          "id": "donnees",
+          "title": "Preparar datos y repartir responsabilidades",
+          "paragraphs": [
+            "Corrija los identificadores en el sistema de origen. Una corrección solo en la plataforma puede desaparecer al importar de nuevo. Los datos maestros deben distinguir entidades, destinatarios y direcciones de enrutamiento. Confirme los campos exigidos con la plataforma, sin suponer que un SIRET basta siempre.",
+            "Asigne emisión, validación cuando proceda y gestión de rechazos. El asesor contable califica los casos fiscales; el proveedor confirma el funcionamiento; el cliente firma la designación y mantiene la responsabilidad de sus operaciones. El CFO coordina el trabajo y conecta las facturas con la tesorería."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "deploiement-pme"
+          ]
+        },
+        {
+          "id": "tests",
+          "title": "Probar excepciones antes de considerar listo el circuito",
+          "paragraphs": [
+            "Las pruebas deben cubrir factura normal, abono, anticipo y rechazo según los flujos reales. Conserve datos de origen, resultado esperado, estado recibido, evidencia y responsable. Una prueba correcta con un cliente no demuestra la cobertura de todas las entidades.",
+            "Sébastien aún no dispone de medidas antes/después atribuibles a la reforma. Propone seguir rechazos, plazo de contabilización de proveedores, disputas de recepción y DSO. Sus variaciones deben analizarse junto con ventas, condiciones de pago y recobro; no se atribuyen automáticamente al software."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "formats-factur-x"
+          ]
+        },
+        {
+          "id": "accompagnement",
+          "title": "Qué puede organizar Iter con su equipo",
+          "paragraphs": [
+            "El alcance descrito por Sébastien comprende diagnóstico de flujos, matriz de casos, preparación de datos maestros, configuración de Pennylane cuando proceda, pruebas, procedimiento de rechazos y formación. Los entregables previstos son cartografía, acta de pruebas y procedimiento. Alcance, accesos e interlocutores se acuerdan antes de la misión.",
+            "Iter interviene como equipo financiero. El apoyo no sustituye la calificación fiscal por el asesor contable ni el registro de la plataforma y soporte del proveedor. Si el problema va más allá de la reforma, pueden estudiarse coordinación contable y apoyo de CFO."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "cout-deploiement"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "¿Hay que cambiar todo el software contable?",
+          "answer": "No necesariamente. Revise primero los flujos, el papel del ERP y la conexión a una plataforma autorizada. Un software compatible puede funcionar con una PA distinta."
+        },
+        {
+          "question": "¿El e-reporting sustituye la declaración del IVA?",
+          "answer": "No. Transmitir datos no elimina las obligaciones de declaración del IVA. Confirme régimen y plazos con su asesor contable."
+        }
+      ],
+      "seoTitle": "Facturación electrónica en Francia: guía"
+    },
+    "deploiement-pme": {
+      "title": "Implantar la facturación electrónica en una pyme francesa",
+      "answer": "La implantación empieza por flujos y datos, después por la plataforma. El método propuesto por Sébastien incluye cartografía, matriz de IVA, pruebas de facturas y procedimiento de rechazos. El circuito es operativo cuando el equipo sabe gestionar excepciones sin depender del consultor.",
+      "quote": "No consideraría terminado el proyecto hasta que el equipo del cliente hubiera gestionado una factura rechazada de principio a fin, sin nosotros.",
+      "summary": [
+        "Ocho etapas con responsable y prueba",
+        "Corregir datos en origen",
+        "Probar excepciones antes de operar"
+      ],
+      "sections": [
+        {
+          "id": "etapes",
+          "title": "El método en ocho etapas",
+          "paragraphs": [
+            "La secuencia es un protocolo basado en las respuestas de Sébastien. No describe una implantación cliente terminada ni un resultado certificado. Alcance y accesos se acuerdan antes de intervenir."
+          ],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Etapa",
+              "Responsable propuesto",
+              "Prueba esperada"
+            ],
+            "rows": [
+              [
+                "Cartografiar flujos",
+                "Iter y equipo financiero",
+                "Diagrama de sistemas, entidades y circuitos"
+              ],
+              [
+                "Clasificar casos de IVA",
+                "Asesor contable y finanzas",
+                "Matriz B2B, B2C, internacional y exigibilidad"
+              ],
+              [
+                "Limpiar datos maestros",
+                "Empresa con Iter",
+                "Correcciones registradas en origen"
+              ],
+              [
+                "Designar la plataforma",
+                "Dirección del cliente",
+                "Contrato y alcance confirmados"
+              ],
+              [
+                "Configurar circuitos",
+                "Iter y proveedor según alcance",
+                "Configuración de emisión, recepción y e-reporting"
+              ],
+              [
+                "Probar una muestra",
+                "Iter y equipo cliente",
+                "Acta de pruebas e incidencias"
+              ],
+              [
+                "Gestionar excepciones",
+                "Equipo cliente con Iter",
+                "Procedimiento de rechazos y disputas"
+              ],
+              [
+                "Formar y transferir",
+                "Iter y responsables internos",
+                "Responsables nombrados y prueba autónoma"
+              ]
+            ]
+          },
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "referentiels",
+          "title": "Evitar correcciones que desaparecen al importar",
+          "paragraphs": [
+            "Compruebe identificadores, entidad emisora, destinatarios y duplicados. Corrija en el ERP o sistema que alimenta los demás. Documente quién puede modificar datos maestros y validar cambios. Una importación correcta no prueba que el destinatario reciba la factura correcta."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "tests",
+          "title": "Probar más que una factura estándar",
+          "paragraphs": [],
+          "bullets": [
+            "Factura y abono: referencias, importes y coherencia contable.",
+            "Anticipo y pago parcial: tratamiento del IVA y conciliación de cobros.",
+            "Varias entidades y B2C: destinatario, origen y ausencia de doble envío.",
+            "Rechazo: responsable, corrección en origen y prueba de nuevo tratamiento."
+          ],
+          "table": null,
+          "sources": [],
+          "links": [
+            "formats-factur-x",
+            "e-reporting"
+          ]
+        },
+        {
+          "id": "suivi",
+          "title": "Pasar de configuración a explotación",
+          "paragraphs": [
+            "Asigne responsable diario, escalado al proveedor y controles periódicos con contabilidad. Tasa de rechazo, incidencias pendientes y plazo de tratamiento pueden ser indicadores. Defina métricas y periodo de referencia antes de afirmar mejoras."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        }
+      ],
+      "faq": [
+        {
+          "question": "¿Quién valida el tratamiento fiscal?",
+          "answer": "El asesor contable o competente clasifica operaciones. Iter prepara flujos y controles dentro del alcance; el proveedor responde del funcionamiento de su plataforma."
+        }
+      ],
+      "seoTitle": "Facturación electrónica: implantación"
+    },
+    "e-reporting": {
+      "title": "E-reporting en Francia: operaciones, datos y controles para pymes",
+      "answer": "El e-reporting transmite a la administración datos de determinadas operaciones fuera del circuito francés de facturación electrónica B2B nacional. Datos de transacción y de pago son distintos. Alcance, excepciones y frecuencia dependen de la operación y del régimen fiscal.",
+      "quote": "",
+      "summary": [
+        "Separar transacciones y pagos",
+        "Documentar excepciones de IVA",
+        "Conciliar sistemas con un cuadro de ajustes"
+      ],
+      "sections": [
+        {
+          "id": "perimetre",
+          "title": "Clasificar cada flujo",
+          "paragraphs": [
+            "Para una empresa establecida en Francia, determinadas ventas a particulares y operaciones internacionales pueden estar sujetas a e-reporting, con condiciones. La matriz por entidad distingue B2B nacional, B2C e internacional. Un grupo Francia-España no puede aplicar automáticamente las reglas francesas a todas sus filiales."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [
+            "scope"
+          ],
+          "links": []
+        },
+        {
+          "id": "paiements",
+          "title": "Transacciones y pagos: dos controles distintos",
+          "paragraphs": [
+            "Los datos de transacción describen operaciones; los datos de pago siguen cobros cuando corresponde. Para servicios, revise la exigibilidad del IVA. Las excepciones por opción de devengo y autoliquidación no deben ocultar casos particulares, incluidos anticipos. Valide la matriz en lugar de deducir reglas del software."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [
+            "payment",
+            "paymentData"
+          ],
+          "links": []
+        },
+        {
+          "id": "rapprochement",
+          "title": "No confundir ventas y cobros",
+          "paragraphs": [
+            "Los ingresos contables, totales transmitidos y liquidaciones del proveedor de pagos no son automáticamente iguales. Prepare ajustes por importes sin y con IVA, periodos, reembolsos, abonos y comisiones. Es mejor explicar diferencias que forzar una igualdad.",
+            "Ejemplo didáctico: una venta con IVA puede cobrarse después y liquidarse neta de comisiones. Vincule venta, IVA, cobro y comisión, conservando referencias. No es un caso cliente ni resultado de misión."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "sources",
+          "title": "Localizar datos y gestionar incidencias",
+          "paragraphs": [
+            "Identifique responsables de tienda, caja, ERP, proveedor de pagos y contabilidad. Pregunte qué flujos cubre el proveedor, qué datos faltan y cómo devuelve errores. Compruebe duplicidades y conserve pruebas de corrección. Verifique frecuencia según régimen e incorpórela al calendario de control."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "deploiement-pme"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "¿Una venta B2C es una factura electrónica B2B?",
+          "answer": "No. Distinga documento entregado al cliente y datos transmitidos a la administración. Clasifique operaciones antes de configurar el envío."
+        }
+      ],
+      "seoTitle": "E-reporting francés: datos y controles"
+    },
+    "choisir-plateforme-agreee": {
+      "title": "Elegir una plataforma autorizada: criterios de un CFO",
+      "answer": "Elija una plataforma autorizada según flujos, ERP y controles. Compruebe su estado en la lista DGFiP y solicite una demostración de sus escenarios. La autorización no prueba por sí sola que integración, exportaciones y soporte encajen en su empresa.",
+      "quote": "",
+      "summary": [
+        "Comprobar estado oficial",
+        "Probar circuito existente",
+        "Comparar coste total y salida"
+      ],
+      "sections": [
+        {
+          "id": "statut",
+          "title": "PA, software compatible y antiguo término PDP",
+          "paragraphs": [
+            "La plataforma autorizada realiza funciones reglamentarias de transmisión y enrutamiento. Un software compatible puede apoyarse en una PA distinta. PDP aparece en documentos antiguos; compruebe estado actual en la lista oficial y distinga las situaciones descritas por DGFiP."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [
+            "platforms",
+            "approved"
+          ],
+          "links": []
+        },
+        {
+          "id": "grille",
+          "title": "Seis criterios a comparar con el mismo alcance",
+          "paragraphs": [],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Criterio",
+              "Prueba a solicitar"
+            ],
+            "rows": [
+              [
+                "Sistema origen",
+                "Factura del ERP y retorno de estado"
+              ],
+              [
+                "Entidades y flujos",
+                "B2B, B2C, internacional y separación de sociedades"
+              ],
+              [
+                "Controles",
+                "Abono, anticipo, rechazo y corrección"
+              ],
+              [
+                "Exportación y API",
+                "Datos recuperables, permisos y documentación"
+              ],
+              [
+                "Soporte",
+                "Contacto y procedimiento de incidencias"
+              ],
+              [
+                "Coste total",
+                "Cuota, conector, migración y tiempo interno"
+              ]
+            ]
+          },
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "pennylane",
+          "title": "Pennylane: uso real, recomendación condicionada",
+          "paragraphs": [
+            "Iter utiliza Pennylane desde hace cuatro años para aproximadamente la mitad de sus clientes. Sébastien valora centralización contable y preparación de datos limpios; considera el reporting aún limitado. Estas observaciones no certifican todos los flujos de facturación electrónica.",
+            "Para una sola entidad que ya factura en la aplicación, conviene estudiar una solución integrada. Con ERP sectorial, varias entidades o flujos mixtos, exija pruebas de conector, retorno de estados y B2G si corresponde. No presentamos aquí pruebas API o B2G realizadas por Iter."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "demonstration",
+          "title": "Reproducir su escenario antes de firmar",
+          "paragraphs": [
+            "Prepare datos anonimizados y resultados esperados. Compruebe emisión, recepción, abono, rechazo, corrección y exportación. Pregunte qué incluye la oferta y qué requiere desarrollo. Conserve acta: una demo comercial no sustituye pruebas en su entorno."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "deploiement-pme",
+            "cout-deploiement"
+          ]
+        }
+      ],
+      "faq": [],
+      "seoTitle": "Plataforma autorizada: criterios de CFO"
+    },
+    "formats-factur-x": {
+      "title": "Factur-X, XML y PDF: entender los formatos de factura",
+      "answer": "Factur-X combina un PDF legible y datos XML estructurados en un documento. Un PDF ordinario enviado por email no basta para constituir el circuito reglamentario de facturación electrónica. Compruebe formato, contenido y enrutamiento conjuntamente.",
+      "quote": "",
+      "summary": [
+        "Legible para personas, estructurado para software",
+        "Comprobar coherencia de datos",
+        "Probar rechazos y retorno contable"
+      ],
+      "sections": [
+        {
+          "id": "format",
+          "title": "Qué contiene Factur-X",
+          "paragraphs": [
+            "El estándar híbrido utiliza un PDF/A-3 con un archivo XML. La representación visual sirve al lector; los datos estructurados permiten automatización. Los perfiles ofrecen distintos niveles de detalle. Proveedor y plataforma deben confirmar perfil y datos necesarios."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [
+            "formats"
+          ],
+          "links": []
+        },
+        {
+          "id": "exemple",
+          "title": "Ejemplo didáctico: factura y abono",
+          "paragraphs": [
+            "Imagine una factura de servicios seguida de un abono parcial. Compruebe referencia original, importes e IVA, destinatario y estado devuelto. El PDF debe ser coherente con los datos procesados. Es un control a preparar, no un archivo cliente probado por Iter."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "controle",
+          "title": "Pruebas accesibles al equipo financiero",
+          "paragraphs": [],
+          "bullets": [
+            "Documento: ¿incluye el formato anunciado y el XML?",
+            "Datos: ¿son coherentes importes, identificadores y referencias?",
+            "Técnica: ¿supera controles de estructura y reglas de negocio?",
+            "Circuito: ¿llega al destinatario correcto con retorno utilizable?"
+          ],
+          "table": null,
+          "sources": [
+            "validation"
+          ],
+          "links": [
+            "deploiement-pme"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "¿Basta con convertir un PDF?",
+          "answer": "No. Compruebe datos estructurados, reglas de negocio y circuito de transmisión. El nombre del archivo no prueba conformidad ni recepción."
+        }
+      ],
+      "seoTitle": "Factur-X: formatos y controles"
+    },
+    "cout-deploiement": {
+      "title": "Coste de implantar facturación electrónica: preparar el presupuesto",
+      "answer": "El presupuesto depende de sistemas existentes, entidades, flujos y calidad de datos. Separe cuota, integración, migración, formación y explotación. Sin esos parámetros y presupuesto actualizado, un precio único induciría a error. No publicamos rangos sin validar.",
+      "quote": "Priorizaría invertir en la calidad de los datos de facturación antes de comprar una herramienta nueva cuando la empresa ya utiliza una PA integrada con su contabilidad. Límite: si el sistema de facturación no puede emitir en formato estructurado, hay que cambiarlo primero.",
+      "summary": [
+        "Presupuestar más allá de la cuota",
+        "Precisar lo incluido",
+        "Seguir coste de excepciones"
+      ],
+      "sections": [
+        {
+          "id": "postes",
+          "title": "Cinco partidas a pedir en el presupuesto",
+          "paragraphs": [],
+          "bullets": [],
+          "table": {
+            "headers": [
+              "Partida",
+              "Parámetros a precisar"
+            ],
+            "rows": [
+              [
+                "Cuota",
+                "Funciones, volumen y entidades"
+              ],
+              [
+                "Integración",
+                "Conectores, API, mapeo y estados"
+              ],
+              [
+                "Preparación de datos",
+                "Duplicados, identificadores, origen y responsables"
+              ],
+              [
+                "Pruebas y formación",
+                "Muestra, incidencias, procedimiento y transferencia"
+              ],
+              [
+                "Explotación",
+                "Rechazos, soporte y controles"
+              ]
+            ]
+          },
+          "sources": [],
+          "links": []
+        },
+        {
+          "id": "scenarios",
+          "title": "Tres escenarios, tres cargas de trabajo",
+          "paragraphs": [
+            "Estos escenarios ilustran factores de carga sin importes ni resultados cliente. Aunque una función esté incluida en el software, hay que revisar preparación de datos y tiempo interno. Solicite confirmación escrita de cobertura y cargos adicionales."
+          ],
+          "bullets": [
+            "Una entidad factura en software contable: comprobar cobertura, datos maestros y pruebas.",
+            "Un ERP sectorial sigue siendo origen: presupuestar conector, mapeo y retorno de estados.",
+            "Varias entidades y B2C internacional: cartografiar flujos y validar matriz de IVA antes de estimar."
+          ],
+          "table": null,
+          "sources": [],
+          "links": [
+            "choisir-plateforme-agreee"
+          ]
+        },
+        {
+          "id": "suivre",
+          "title": "Medir coste operativo tras el lanzamiento",
+          "paragraphs": [
+            "Siga rechazos, tiempo de corrección e incidencias recurrentes. Separe esa carga del coste inicial. Una reducción de DSO o plazos de registro necesita periodo comparable y método; no publicamos aquí rentabilidad observada."
+          ],
+          "bullets": [],
+          "table": null,
+          "sources": [],
+          "links": [
+            "deploiement-pme"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "¿Puede estimarse sin diagnóstico?",
+          "answer": "Puede discutirse un alcance inicial, pero una estimación fiable requiere fuentes, entidades, flujos y estado de datos. El presupuesto debe indicar hipótesis, exclusiones y responsabilidades."
+        }
+      ],
+      "seoTitle": "Facturación electrónica: coste y presupuesto"
+    }
+  }
+}

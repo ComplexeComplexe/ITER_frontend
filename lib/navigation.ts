@@ -56,6 +56,7 @@ const navFr: NavItem[] = [
       // IA-FINANCE (2026-09-01) — hub de la nouvelle section, en sous-menu
       // (pas d'entrée de niveau 1 : le header en a déjà cinq).
       { text: "IA & Finance", href: "/ressources/ia-finance" },
+      { text: "Facturation électronique", href: "/ressources/facturation-electronique" },
       { text: "Blog & Actualités", href: "/ressources/blog" },
       { text: "Cas clients", href: "/ressources/cas-clients" },
       { text: "Glossaire", href: "/ressources/glossaire" },
@@ -77,12 +78,12 @@ const navFr: NavItem[] = [
 const navigationLabels = {
   en: {
     titles: ["Fractional CFO", "Finance Services", "Part-time HR", "Resources", "The Firm", "Contact"],
-    children: [[], ["Part-time CFO", "Interim CFO", "Management accounting", "Cash flow forecasting", "Accounting coordination", "Fundraising support", "M&A and due diligence"], [], ["Tools", "AI and Finance", "Blog and News", "Case studies", "Glossary", "The CFO role"], ["Our team", "Our clients", "Careers"], []],
+    children: [[], ["Part-time CFO", "Interim CFO", "Management accounting", "Cash flow forecasting", "Accounting coordination", "Fundraising support", "M&A and due diligence"], [], ["Tools", "AI and Finance", "Electronic invoicing", "Blog and News", "Case studies", "Glossary", "The CFO role"], ["Our team", "Our clients", "Careers"], []],
     editorial: ["Finance glossary", "The CFO role", "Finance tools", "AI and Finance", "External HR leadership", "Our clients", "Careers"],
   },
   es: {
     titles: ["CFO externo", "Servicios financieros", "RR. HH. a tiempo parcial", "Recursos", "La firma", "Contacto"],
-    children: [[], ["CFO a tiempo parcial", "CFO de transición", "Control de gestión externo", "Previsión de tesorería", "Coordinación contable", "Apoyo a la financiación", "M&A y due diligence"], [], ["Herramientas", "IA y Finanzas", "Blog y Noticias", "Casos de éxito", "Glosario", "Funciones del CFO"], ["Nuestro equipo", "Nuestros clientes", "Empleo"], []],
+    children: [[], ["CFO a tiempo parcial", "CFO de transición", "Control de gestión externo", "Previsión de tesorería", "Coordinación contable", "Apoyo a la financiación", "M&A y due diligence"], [], ["Herramientas", "IA y Finanzas", "Facturación electrónica", "Blog y Noticias", "Casos de éxito", "Glosario", "Funciones del CFO"], ["Nuestro equipo", "Nuestros clientes", "Empleo"], []],
     editorial: ["Glosario financiero", "Funciones del CFO", "Herramientas financieras", "IA y Finanzas", "Dirección externa de RR. HH.", "Nuestros clientes", "Empleo"],
   },
 };
@@ -117,6 +118,7 @@ export const footerContent: Record<Locale, FooterContent> = {
       // IA-FINANCE (2026-09-01) — le sous-menu est monté côté client ; le
       // pied de page est rendu au serveur sur chaque page.
       { text: "IA & Finance", href: "/ressources/ia-finance" },
+      { text: "Facturation électronique", href: "/ressources/facturation-electronique" },
       // CONTENUS-T9 (2026-08-31) — /drh-externalise (P18, CPC 13,94 €) : sa
       // seule ancre depuis l'accueil vivait dans le menu déroulant, monté
       // côté client, invisible des crawlers. Le pied de page est rendu au

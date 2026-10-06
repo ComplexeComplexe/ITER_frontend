@@ -2,6 +2,8 @@
 import fs from 'node:fs';
 import { decodeHTML } from 'entities';
 const registry = JSON.parse(fs.readFileSync('lib/content/editorial-locales/registry.json', 'utf8'));
+const invoiceRoutes = JSON.parse(fs.readFileSync('lib/content/electronic-invoicing-routes.json', 'utf8'));
+for (const paths of Object.values(invoiceRoutes)) registry[paths.fr] = { paths, noindex: false };
 const origin = 'https://www.iteradvisors.com';
 const errors = [];
 const attr = (tag, key) => tag.match(new RegExp(`\\b${key}=["']([^"']*)["']`, 'i'))?.[1];
