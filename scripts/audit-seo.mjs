@@ -297,6 +297,7 @@ for (const abs of urls) {
     /^\/(?:(?:en|es)\/)?services\/[a-z]/.test(path)
   ) {
     let auteurPerson = false;
+    let auteurCabinetService = false;
     let auteurOrganisationNomme = null;
     let dateModifiee = false;
     for (const bloc of blocsJsonLd) {
@@ -308,6 +309,14 @@ for (const abs of urls) {
           if (n.dateModified) dateModifiee = true;
           for (const a of [].concat(n.author ?? [])) {
             if (a["@type"] === "Person") auteurPerson = true;
+            // Cabinet commercial copy can have an Organization author without
+            // assigning personal writing or review to the service contact.
+            if (/^\/(?:(?:en|es)\/)?services\/[a-z]/.test(path) &&
+                t === "WebPage" && a["@type"] === "Organization" &&
+                a.name === "Iter Advisors" && a["@id"] === "https://www.iteradvisors.com/#organization" &&
+                /(?:Publié par|Published by|Publicado por)/.test(texte)) {
+              auteurCabinetService = true;
+            }
             // Une Organization dont le nom contient une espace et pas le mot
             // « Iter » est presque sûrement une personne mal balisée.
             else if (a["@type"] === "Organization" && a.name && !/iter/i.test(a.name) && a.name.includes(" ")) {
@@ -321,7 +330,7 @@ for (const abs of urls) {
     }
     if (auteurOrganisationNomme) {
       fail("eeat/auteur", `${path} — « ${auteurOrganisationNomme} » balisé en Organization, pas en Person`);
-    } else if (!auteurPerson) {
+    } else if (!auteurPerson && !auteurCabinetService) {
       fail("eeat/auteur", `${path} — aucun author Person dans l'Article`);
     }
     if (!dateModifiee) fail("eeat/date", `${path} — pas de dateModified`);
