@@ -9,7 +9,7 @@ import { parityHref } from "@/lib/locale-route-map";
 import { getFinanceServices, financeInterface } from "@/lib/content/finance-service-locales";
 import { getPublishedCases } from "@/lib/content/published-cases";
 import { getDocumentedCase } from "@/lib/content/documented-cases";
-import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
+import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
 import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 import styles from "./finance.module.css";
 import controlUx from "./control-deliverables.module.css";
@@ -44,7 +44,7 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
   const translatedProof = locale === "fr" ? undefined : getPublishedCases(locale).find(item => item.slug === service.case);
   const proof = originalProof && { ...originalProof, ...(translatedProof ? { proof: translatedProof.solution, summary: translatedProof.challenge } : {}) };
   const contact = href(`/contact#${service.context}`);
-  const author = service.author ?? FINANCE_AUTHOR;
+  const author = service.author ?? ITER_AUTHOR;
   const modified = PAGE_REVISIONS[path] ?? (locale === "fr" ? FINANCE_REVIEW_DATE : LOCALE_ALIGNMENT_DATE);
   const schema = {
     "@context": "https://schema.org",

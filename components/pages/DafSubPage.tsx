@@ -1,5 +1,5 @@
 import PageByline from "@/components/PageByline";
-import { FINANCE_AUTHOR, type EditorialAuthor } from "@/lib/schemas/editorial";
+import { ITER_AUTHOR, type EditorialAuthor } from "@/lib/schemas/editorial";
 import Link from "@/components/PublishedLocaleLink";
 import { parityHref } from "@/lib/locale-route-map";
 import { dafClusterHref } from "@/lib/path-localization";
@@ -64,7 +64,7 @@ const markdownComponents = (locale: Locale): Components => ({
   ),
 });
 
-export default function DafSubPage({ locale, content, cmsNavigation, heroImage, author = FINANCE_AUTHOR, contactContext }: DafSubPageProps) {
+export default function DafSubPage({ locale, content, cmsNavigation, heroImage, author = ITER_AUTHOR, contactContext }: DafSubPageProps) {
   const mdComponents = markdownComponents(locale);
   const firstSection = content.sections[0];
   const bodySections = content.sections.slice(1);

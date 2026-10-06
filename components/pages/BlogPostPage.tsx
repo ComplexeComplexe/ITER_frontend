@@ -3,6 +3,8 @@ import FinanceExpert from "@/components/FinanceExpert";
 import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
 import { aboutHref } from "@/lib/path-localization";
+import { resolveAuthorUrl } from "@/lib/content/team";
+import { parityHref } from "@/lib/locale-route-map";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
@@ -115,7 +117,8 @@ export default function BlogPostPage({
   // SEO-ULT §4b (2026-08-15) — l'espagnol était traité à part, mais l'anglais
   // recevait `/en/a-propos/<slug>`, qui redirige vers `/en/about/<slug>`. La
   // signature de chaque article EN portait donc un lien vers une 308.
-  const authorUrl = authorMember ? aboutHref(locale, authorMember.slug) : undefined;
+  const knownAuthorUrl = author ? resolveAuthorUrl(author) : undefined;
+  const authorUrl = authorMember ? aboutHref(locale, authorMember.slug) : knownAuthorUrl ? parityHref(knownAuthorUrl, locale) : undefined;
 
   /* ── Schema.org Article structured data ────────────────────────── */
   const articleUrl = slug ? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
