@@ -334,7 +334,7 @@ export default async function GuideFiscalPage({
                   key={c.href}
                   locale={locale}
                   href={parityHref(c.href, locale)}
-                  className="group block rounded-2xl border border-border/60 overflow-hidden hover:border-iter-violet/50 hover:shadow-md transition-all"
+                  className="internal-link-card group block overflow-hidden"
                 >
                   <div className="relative aspect-[16/9] bg-muted">
                     <Image

@@ -223,7 +223,7 @@ export default function DafLocalPage({
                 locale={locale}
                 key={i}
                 href={locale === "fr" ? loc.hrefFr : locale === "en" ? loc.hrefEn : loc.hrefEs}
-                className="site-card group flex items-center gap-4 bg-background border border-border/50 rounded-2xl p-6 hover:border-iter-violet/30 transition-all duration-300"
+                className="internal-link-card site-card group flex items-center gap-4 bg-background border border-border/50 rounded-2xl p-6 hover:border-iter-violet/30 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
                   <MapPin size={20} className="text-iter-violet" />
@@ -281,7 +281,7 @@ export default function DafLocalPage({
                 locale={locale}
                 key={i}
                 href={service.href}
-                className="site-card group flex items-center gap-4 bg-muted/30 border border-border/50 rounded-2xl p-6 hover:border-iter-violet/30 transition-all duration-300"
+                className="internal-link-card site-card group flex items-center gap-4 bg-muted/30 border border-border/50 rounded-2xl p-6 hover:border-iter-violet/30 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-iter-violet/10 flex items-center justify-center shrink-0 group-hover:bg-iter-violet/20 transition-colors">
                   <service.icon size={20} className="text-iter-violet" />
