@@ -1687,18 +1687,19 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Comment choisir un cabinet de DAF externalisé : la grille de décision",
       publishedDate: "2026-08-31",
+      updatedDate: "2026-10-06",
       author: "Sébastien Doat",
       category: "DAF externalisé",
-      htmlContent: `<p>Cette grille aide à comparer les propositions. Pour connaître les missions, le budget et les modalités d’intervention d’Iter, consultez notre offre de <a href="/daf-externalise">DAF externalisé</a>.</p>
+      htmlContent: `<p>Cette grille aide à comparer les propositions. Vous avez déjà identifié votre besoin ? Consultez <a href="/daf-externalise">notre accompagnement DAF externalisé pour PME et startups</a> pour examiner le périmètre, les livrables et le fonctionnement de la mission.</p>
 <p><strong>Choisir un cabinet de DAF externalisé se joue sur cinq critères : la séniorité réelle du profil affecté, le modèle économique, les conditions de sortie, la continuité de service et l'adéquation sectorielle.</strong> Cette grille s'applique à n'importe quel cabinet — y compris le nôtre. Voici comment l'utiliser, les questions à poser, et les signaux qui doivent vous alerter.</p>
 <h2>Critère 1 — La séniorité réelle du profil affecté</h2>
 <p>La plaquette montre les associés ; la mission est parfois tenue par un junior. La seule question qui compte : <em>qui</em>, nommément, interviendra chez vous, avec quel parcours ? Demandez à rencontrer la personne avant de signer, et vérifiez que son expérience couvre votre situation — une levée si vous levez, du multi-entités si vous en avez.</p>
 <h2>Critère 2 — Le modèle économique</h2>
-<p>Trois modèles coexistent sur le marché : la facturation au temps (TJM), le forfait de jours, et le retainer sur périmètre. Aucun n'est malhonnête, mais ils créent des incitations différentes : un cabinet payé au jour a intérêt à ce que la mission dure ; un retainer sur scope a intérêt à ce qu'elle soit efficace. Exigez de savoir ce qui déclenche un dépassement, et ce qui est inclus sans supplément.</p>
+<p>Les propositions peuvent être facturées à la journée, selon un volume de jours ou selon un périmètre récurrent. Aucun modèle ne garantit à lui seul la qualité ou l’efficacité. Comparez les livrables, la disponibilité, les responsabilités et les conditions de révision du devis. Faites préciser ce qui déclenche un supplément et comment une évolution du besoin est approuvée.</p>
 <h2>Critère 3 — Les conditions de sortie</h2>
-<p>C'est le critère le plus négligé au moment de signer, et le plus douloureux après. Trois questions : y a-t-il une durée d'engagement minimale ? Quel est le préavis ? Que se passe-t-il pour vos données et vos accès aux outils au départ ? Un prestataire confiant dans sa qualité n'a pas besoin de vous enfermer — chez nous, c'est sans durée minimale avec un préavis de 30 jours, et ce devrait être un standard du marché.</p>
+<p>Avant de signer, posez trois questions : y a-t-il une durée d’engagement minimale ? Quel est le préavis ? Que se passe-t-il pour vos données et vos accès aux outils au départ ? Chez Iter, les missions récurrentes n’ont pas de durée minimale et prévoient un préavis de 30 jours. D’autres engagements peuvent avoir une durée adaptée à un projet : examinez les conditions et la passation avant de décider.</p>
 <h2>Critère 4 — La continuité de service</h2>
-<p>Un DAF indépendant, seul, ne peut ni tomber malade ni partir en vacances sans que votre fonction finance s'arrête. Un cabinet doit pouvoir répondre : que se passe-t-il si notre DAF est indisponible ? Qui connaît le dossier en second ? La revue par un pair fait-elle partie du fonctionnement ?</p>
+<p>Cabinet ou indépendant, vérifiez l’organisation prévue en cas d’absence : qui connaît le dossier, quels travaux peuvent continuer et comment les urgences sont traitées ? Une revue par un pair ou un relais documenté peut être utile. La continuité dépend du dispositif convenu, pas uniquement du statut du prestataire.</p>
 <h2>Critère 5 — L'adéquation sectorielle</h2>
 <p>Un excellent DAF industriel peut se perdre dans les métriques SaaS, et inversement. Vérifiez les références sur votre secteur et votre stade — pas le logo du client, la nature de la mission. Notre page <a href="/daf-externalise/secteurs">DAF externalisé par secteur</a> explique ce que la spécialisation change réellement : le profil affecté, pas le prix.</p>
 <h2>Les questions à poser en rendez-vous</h2>
@@ -1709,12 +1710,18 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li>Que se passe-t-il si mon DAF est indisponible un mois ?</li>
 <li>Sur quelles missions comparables à la mienne êtes-vous intervenus, et que puis-je vérifier ?</li>
 </ul>
+<h2>Passer des critères au périmètre de mission</h2>
+<p>Après cette grille, préparez trois éléments : la décision financière à prendre, les données disponibles et les livrables attendus. Notre offre décrit l’organisation de la mission et les responsabilités à convenir au devis.</p>
+<p><a href="/daf-externalise">Examiner le périmètre de l’accompagnement Iter</a></p>
+<h2>Un exemple à examiner : Opti Digital</h2>
+<p>La mission documentée associe reporting mensuel, procédures de clôture, migration ERP et financement non dilutif. Pour comparer une référence à votre besoin, examinez les travaux confiés et leur articulation avec les équipes et les conseils externes. Ce périmètre ne constitue pas une promesse de résultat pour votre entreprise.</p>
+<p><a href="/ressources/cas-clients/opti-digital-structuration-financement">Lire le périmètre de la mission Opti Digital</a></p>
 <h2>Les signaux d'alerte</h2>
-<p><strong>L'opacité tarifaire.</strong> Un cabinet qui refuse d'expliquer sa grille avant le rendez-vous commercial vous fera la même chose en cours de mission. Une grille publique — comme notre page <a href="/daf-externalise/tarifs">tarifs du DAF externalisé</a> — n'est pas un argument marketing, c'est un test de transparence.</p>
+<p><strong>L'opacité tarifaire.</strong> L’absence de prix public n’est pas, à elle seule, un signal de mauvaise qualité. En revanche, le prestataire doit expliquer le périmètre, les facteurs de coût et les travaux hors devis. Nos <a href="/daf-externalise/tarifs">fourchettes de tarifs DAF</a> donnent un repère à adapter à votre situation.</p>
 <p><strong>La promesse sans réserve.</strong> Un démarrage « garanti sous 48 h », une économie « garantie », un résultat chiffré promis avant d'avoir vu vos comptes : la finance ne se garantit pas sur plaquette. Méfiez-vous des chiffres ronds sans méthode.</p>
-<p><strong>Le verrouillage contractuel.</strong> Engagement de 12 mois reconductible tacitement, préavis de 3 mois, pénalités de sortie : ces clauses signalent un cabinet qui retient ses clients par le contrat plutôt que par le service.</p>
+<p><strong>Le verrouillage contractuel.</strong> Une durée minimale, une reconduction ou des frais de sortie doivent être expliqués et proportionnés au travail prévu. Demandez ce qui se passe en cas de changement de besoin, et comment vos fichiers et vos accès vous sont restitués.</p>
 <h2>Et si la bonne réponse n'était pas un cabinet ?</h2>
-<p>Soyez honnête sur votre besoin. Pour une mission ponctuelle de trois mois sur un sujet précis, un indépendant expérimenté peut suffire. Pour un remplacement urgent à temps plein, c'est un <a href="/daf-externalise/transition">DAF de transition</a>. Le cabinet en retainer prend son sens quand le besoin est récurrent et que la continuité compte — c'est le format <a href="/daf-externalise/temps-partage">DAF à temps partagé</a>, décrit sur notre page <a href="/daf-externalise">DAF externe</a>.</p>`,
+<p>Soyez honnête sur votre besoin. Pour une mission ponctuelle de trois mois sur un sujet précis, un indépendant expérimenté peut suffire. Pour un remplacement urgent à temps plein, c'est un <a href="/daf-externalise/transition">DAF de transition</a>. Le cabinet en retainer prend son sens quand le besoin est récurrent et que la continuité compte — c'est le format <a href="/daf-externalise/temps-partage">DAF à temps partagé</a>.</p>`,
       content: [],
     },
 
