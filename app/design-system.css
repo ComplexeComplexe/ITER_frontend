@@ -126,3 +126,33 @@ html:is([lang="fr"], [lang="en"], [lang="es"]) .home-rh-card a { color:#4323b5; 
  html:is([lang="fr"], [lang="en"], [lang="es"]) .home-rh-card h2 { font-size:17px; line-height:1.25; }
  html:is([lang="fr"], [lang="en"], [lang="es"]) .home-rh-card p { display:none; }
 }
+
+/* Contextual navigation cards, shared across all locales. */
+.internal-link-card.internal-link-card {
+  display: block;
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, var(--color-iter-violet) 14%, white);
+  border-left: 4px solid var(--color-iter-violet);
+  border-radius: 0;
+  background: linear-gradient(110deg, color-mix(in srgb, var(--color-iter-violet) 6%, white), white 85%);
+  padding: 1.25rem 1.5rem;
+  color: var(--color-foreground);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+.internal-link-card.internal-link-card:hover {
+  border-color: var(--color-iter-violet);
+  color: var(--color-iter-violet);
+}
+.internal-link-card.internal-link-card:focus-visible {
+  outline: 2px solid var(--color-iter-violet);
+  outline-offset: 4px;
+}
+.internal-link-card.internal-link-card.flex { display: flex; }
+@media (max-width: 640px) {
+  .internal-link-card.internal-link-card { padding: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .internal-link-card.internal-link-card { transition: none; }
+}
