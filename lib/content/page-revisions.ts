@@ -1,5 +1,8 @@
 /** Substantive page changes. Shared navigation changes do not refresh every URL. */
 export const PAGE_REVISIONS: Record<string, string> = {
+  "/ressources/blog/choisir-cabinet-daf-externalise": "2026-10-06",
+  "/en/ressources/blog/choose-fractional-cfo-firm": "2026-10-06",
+  "/es/recursos/blog/elegir-consultora-cfo-externo": "2026-10-06",
   "/es/servicios/formacion-desarrollo": "2026-10-05",
   "/en/services/training-development": "2026-10-05",
   "/es/servicios/cumplimiento-laboral": "2026-10-05",
