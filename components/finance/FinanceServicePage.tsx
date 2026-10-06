@@ -54,7 +54,7 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
     ],
   };
   const copy = "text-base text-muted-foreground leading-relaxed";
-  const link = "text-iter-violet underline underline-offset-4 font-medium";
+  const link = "internal-link-card font-medium";
   const proofTitle = proof ? `${ui.documented} : ${proof.company}` : ui.people;
   return <PageLayout locale={locale}>
     <div data-finance-template="service" data-page-id={service.path}>
