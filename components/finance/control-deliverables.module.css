@@ -5,11 +5,12 @@
 @media (hover: hover) { .card:hover::before { opacity: 1; } }
 .number { font-family: var(--font-heading), sans-serif; font-size: 28px; font-weight: 700; color: var(--site-violet); line-height: 1.1; }
 .card h3 { font-size: 18px; line-height: 1.4; }
+.card > p { font-size: 15px; line-height: 1.65; }
 .description { display: grid; gap: 14px; }
 .description dt { font-size: 12px; color: var(--site-muted); }
 .description dd { margin-top: 4px; font-size: 15px; line-height: 1.65; }
 .description > div:last-child dd::before { content: "→"; color: var(--site-violet); margin-right: 8px; font-weight: 600; }
 .test > :global(section[data-block-key]) { padding-block: 32px; }
 @media (max-width: 640px) { .test > :global(section[data-block-key]) { padding-block: 24px; } }
-@media (max-width: 640px) { .card { grid-template-columns: 36px minmax(0, 1fr); gap: 12px; padding: 18px 16px; } .description { grid-column: 2; } .number { font-size: 24px; } }
+@media (max-width: 640px) { .card { grid-template-columns: 36px minmax(0, 1fr); gap: 12px; padding: 18px 16px; } .description, .card > p { grid-column: 2; } .number { font-size: 24px; } }
 @media (prefers-reduced-motion: reduce) { .card::before { transition: none; } }
