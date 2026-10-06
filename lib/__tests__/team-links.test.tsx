@@ -35,7 +35,8 @@ describe("Team profiles and links", () => {
         const profile = graph.find((n: Record<string, string>) => n["@type"] === "ProfilePage");
         expect(person["@id"]).toBe(`https://www.iteradvisors.com/a-propos/${slug}#person`);
         expect(profile.mainEntity["@id"]).toBe(person["@id"]);
-        expect(profile.datePublished).toBe("2026-10-03");
+        expect(profile.datePublished).toBe("2026-10-03T00:00:00Z");
+        expect(profile.dateModified).toBe("2026-10-03T00:00:00Z");
         expect(person.sameAs).toEqual([member.linkedIn]);
         expect(page.querySelectorAll("h1")).toHaveLength(1);
         expect(page.querySelector('a[href="#publications"]')).toBeNull();

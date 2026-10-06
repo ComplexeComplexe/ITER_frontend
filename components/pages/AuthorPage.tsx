@@ -120,6 +120,9 @@ export default function AuthorPage({
   const profile = getPartnerProfile(member.slug, locale);
   const isNewCfo = ["hugo-lepresle", "gonzalo-serratosa-de-caralt"].includes(member.slug);
   const personId = editorialPersonId(canonicalPath);
+  // Revision records have day precision. Use a fixed UTC boundary, never the build time.
+  const revision = PAGE_REVISIONS[canonicalPath];
+  const profileRevision = revision ? `${revision}T00:00:00Z` : undefined;
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -153,7 +156,7 @@ export default function AuthorPage({
       {/* Person JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [personSchema, { "@type": "ProfilePage", "@id": `https://www.iteradvisors.com${canonicalPath}#webpage`, url: `https://www.iteradvisors.com${canonicalPath}`, name: fullName, mainEntity: { "@id": personId }, ...(profile && { dateModified: PAGE_REVISIONS[canonicalPath] }), ...(isNewCfo && { datePublished: PAGE_REVISIONS[canonicalPath], dateModified: PAGE_REVISIONS[canonicalPath] }) }] }) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [personSchema, { "@type": "ProfilePage", "@id": `https://www.iteradvisors.com${canonicalPath}#webpage`, url: `https://www.iteradvisors.com${canonicalPath}`, name: fullName, mainEntity: { "@id": personId }, ...(profile && { dateModified: profileRevision }), ...(isNewCfo && { datePublished: profileRevision, dateModified: profileRevision }) }] }) }}
       />
 
       <section className="site-hero bg-background pt-32 pb-12 lg:pb-16">
