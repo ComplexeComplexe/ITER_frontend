@@ -14,6 +14,13 @@ export const ALIGNED_PAGE_IDS = [
   "/daf-externalise-barcelone", "/daf-externalise-toulouse",
   "/daf-externalise/secteurs", "/daf-externalise/ecommerce", "/daf-externalise/industrie", "/daf-externalise/deep-tech",
   "/ressources",
+  "/ressources/facturation-electronique",
+  "/ressources/facturation-electronique/deploiement-pme",
+  "/ressources/facturation-electronique/e-reporting",
+  "/ressources/facturation-electronique/choisir-plateforme-agreee",
+  "/ressources/facturation-electronique/formats-factur-x",
+  "/ressources/facturation-electronique/cout-deploiement",
+
   "/ressources/ia-finance",
   "/ressources/ia-finance/automatiser-reporting-financier",
   "/ressources/ia-finance/chatgpt-finance",
@@ -36,4 +43,4 @@ export function alignedPaths(sourcePath: string) {
 
 /** Dates reflect the actual reviewed family, not the most recent batch globally. */
 const HR_CABINET_IDS = new Set<string>(["/drh-externalise", "/drh-externalise/temps-partage", "/services/recrutement-talent-acquisition", "/services/gestion-paie-charges-sociales", "/services/formation-developpement", "/services/conformite-droit-travail", "/a-propos", "/contact", "/a-propos/sebastien-doat", "/a-propos/borith-biv"]);
-export function localeAlignmentDate(sourcePath: string): string { return sourcePath === "/" || HR_CABINET_IDS.has(sourcePath) ? "2026-10-03" : LOCALE_ALIGNMENT_DATE; }
+export function localeAlignmentDate(sourcePath: string): string { return sourcePath.startsWith("/ressources/facturation-electronique") ? "2026-10-06" : sourcePath === "/" || HR_CABINET_IDS.has(sourcePath) ? "2026-10-03" : LOCALE_ALIGNMENT_DATE; }

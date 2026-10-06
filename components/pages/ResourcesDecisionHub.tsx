@@ -1,3 +1,4 @@
+import { InvoiceResourceCard } from '@/components/pages/ElectronicInvoicingPage';
 import Link from "@/components/PublishedLocaleLink";
 import type { Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
@@ -86,6 +87,7 @@ export default function ResourcesDecisionHub({ locale, cmsNavigation }: { locale
               </article>
             ))}
           </div>
+          <InvoiceResourceCard locale={locale} />
           <div className="flex flex-wrap gap-5 mt-6">
             <Link locale={locale} href={parityHref("/ressources/blog", locale)} className={linkStyle}>{tr("Tous les articles")}</Link>
             <Link locale={locale} href={parityHref("/ressources/blog/quand-embaucher-daf-externalise-5-signes", locale)} className={linkStyle}>{tr("Identifier votre besoin de DAF")}</Link>

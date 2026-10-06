@@ -1,5 +1,6 @@
 import type { Locale } from "./i18n";
 import paths from "./content/editorial-locales/paths.json";
+import invoiceRoutes from "./content/electronic-invoicing-routes.json";
 import aliases from "./content/editorial-locales/aliases.json";
 
 /** Published routes only. The proposed translations are not navigation targets. */
@@ -747,7 +748,7 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   }
 };
 
-export const LOCALE_ROUTES: Record<string, Record<Locale, string>> = { ...LEGACY_LOCALE_ROUTES, ...paths };
+export const LOCALE_ROUTES: Record<string, Record<Locale, string>> = { ...LEGACY_LOCALE_ROUTES, ...Object.fromEntries(Object.values(invoiceRoutes).map(routes => [routes.fr, routes])), ...paths };
 
 export function publishedPaths(path: string): Record<Locale, string> | undefined {
   const original = path.replace(/[?#].*$/, '').replace(/\/$/, '') || '/';
