@@ -12,6 +12,7 @@ import { getDocumentedCase } from "@/lib/content/documented-cases";
 import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
 import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 import styles from "./finance.module.css";
+import controlUx from "./control-deliverables.module.css";
 import ServiceSection from "@/components/design/ServiceSection";
 import ServiceFaq from "@/components/design/ServiceFaq";
 import ServiceTable from "@/components/design/ServiceTable";
@@ -53,11 +54,12 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
       { "@type": "FAQPage", mainEntity: service.faq.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
     ],
   };
+  const controlTest = locale === "fr" && service.path === "/services/controle-de-gestion-externalise";
   const copy = "text-base text-muted-foreground leading-relaxed";
   const link = "text-iter-violet underline underline-offset-4 font-medium";
   const proofTitle = proof ? `${ui.documented} : ${proof.company}` : ui.people;
   return <PageLayout locale={locale}>
-    <div data-finance-template="service" data-page-id={service.path}>
+    <div data-finance-template="service" data-page-id={service.path} className={controlTest ? controlUx.test : undefined}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       <ServiceHero locale={locale} title={service.headline} label={service.label} eyebrow={`Iter Advisors · ${service.category}`} lead={service.promise} intro={service.intro}
         primary={{ href: contact, label: ui.cta }} secondary={{ href: "#livrables", label: ui.deliverables }}
@@ -72,9 +74,10 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
       <ServiceSection id="livrables" title={service.headings?.deliverables ?? ui.inHand}>
         <Aliases service={service} section="livrables" />
         <p className={copy}>{ui.chosen}</p>
-        <div className="divide-y divide-border">{service.deliverables.map(([title, detail, decision]) => <article key={title} className="py-6 first:pt-0">
+        <div className={controlTest ? controlUx.list : "divide-y divide-border"}>{service.deliverables.map(([title, detail, decision], index) => <article key={title} className={controlTest ? controlUx.card : "py-6 first:pt-0"}>
+          {controlTest && <span className={controlUx.number} aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>}
           <h3 className="font-semibold text-foreground">{title}</h3>
-          <dl className="mt-4 grid sm:grid-cols-2 gap-5">
+          <dl className={controlTest ? controlUx.description : "mt-4 grid sm:grid-cols-2 gap-5"}>
             <div><dt className="font-semibold text-foreground">{ui.outputs}</dt><dd className={`${copy} mt-2`}>{detail}</dd></div>
             <div><dt className="font-semibold text-foreground">{ui.decide}</dt><dd className={`${copy} mt-2`}>{decision}</dd></div>
           </dl>
