@@ -9,7 +9,7 @@ import { Locale } from "@/lib/i18n";
 import type { CmsNavItem } from "@/lib/static-content";
 import { type HRServiceContent, HR_SERVICE_SLUGS } from "@/lib/content/hr-services";
 import { faqPageSchema } from "@/lib/schemas";
-import { editorialWebPageSchema, HR_AUTHOR } from "@/lib/schemas/editorial";
+import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
 import PageByline from "@/components/PageByline";
 import PageLayout from "@/components/PageLayout";
 
@@ -54,7 +54,7 @@ export default function HRServicePage({
       <ServiceHero locale={locale} family="rh" title={content.h1} label={content.breadcrumb} eyebrow={ui.eyebrow} lead={content.intro[0]} intro={content.intro[1]}
         primary={{ href: href(`/contact#${content.slug}`), label: ui.primary }} secondary={{ href: "#methode", label: ui.method }}
         summary={[{ label: ui.need, value: content.breadcrumb }, { label: ui.work, value: ui.scope }, { label: ui.budget, value: ui.quote }]}
-        proof={<PageByline locale={locale} author={HR_AUTHOR} dateModified={"2026-10-05"} className="mt-4" />}
+        proof={<PageByline locale={locale} author={ITER_AUTHOR} dateModified={"2026-10-05"} className="mt-4" />}
         navigation={[{ id: "perimetre", label: ui.perimeter }, { id: "methode", label: ui.navMethod }, { id: "budget", label: ui.budget }]} />
 
       <HrCatalogue locale={locale} service={content.slug} />
@@ -263,7 +263,7 @@ export default function HRServicePage({
               name: content.h1,
               description: content.meta.description,
               locale,
-              author: HR_AUTHOR,
+              author: ITER_AUTHOR,
               dateModified: "2026-10-05",
             })
           ),

@@ -4,7 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import PageByline from "@/components/PageByline";
 import { FINANCE_REVIEW_DATE } from "@/lib/content/finance-services";
-import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
+import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
 import type { Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
 import { getFinanceHub } from "@/lib/content/finance-hub-locales";
@@ -18,7 +18,7 @@ export default function FinanceServicesHub({ locale = "fr" }: { locale?: Locale 
   const services = getFinanceServices(locale);
   const href = (path: string) => parityHref(path, locale);
   const modified = locale === "fr" ? (PAGE_REVISIONS["/services"] ?? FINANCE_REVIEW_DATE) : LOCALE_ALIGNMENT_DATE;
-  const schema = editorialWebPageSchema({ path: href("/services"), name: t.title, description: t.description, locale, author: FINANCE_AUTHOR, dateModified: modified });
+  const schema = editorialWebPageSchema({ path: href("/services"), name: t.title, description: t.description, locale, author: ITER_AUTHOR, dateModified: modified });
   return <PageLayout locale={locale}><div className={styles.root} data-finance-template="hub">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     <section className={`${styles.hero} site-hero`}><div className={styles.wrap}><Breadcrumb locale={locale} items={[{ label: t.label }]} /><div className={styles.hubHero}>
@@ -33,7 +33,7 @@ export default function FinanceServicesHub({ locale = "fr" }: { locale?: Locale 
     <section className={`${styles.section} ${styles.stacked}`}><div className={styles.sectionHeading}><p className={styles.eyebrow}>{t.explore}</p><h2>{t.cases}</h2></div><div className={styles.resourceList}><PublishedLocaleLink locale={locale} href={href("/ressources/cas-clients/opti-digital-structuration-financement")}>{t.caseLabels[0]} <span aria-hidden="true">↗</span></PublishedLocaleLink><PublishedLocaleLink locale={locale} href={href("/ressources/cas-clients/seasonly-marge-par-canal-bfr")}>{t.caseLabels[1]} <span aria-hidden="true">↗</span></PublishedLocaleLink><PublishedLocaleLink locale={locale} href={href("/ressources/cas-clients/solarmente-serie-b-cleantech")}>{t.caseLabels[2]} <span aria-hidden="true">↗</span></PublishedLocaleLink></div></section>
     <section className={styles.contact}><p className={styles.eyebrow}>{t.start}</p><h2>{t.contactTitle}</h2><p>{t.contact}</p><PublishedLocaleLink locale={locale} href={href("/contact#services-finance")} className={`${styles.primary} site-button site-button-primary`}>{t.cta} <span aria-hidden="true">↗</span></PublishedLocaleLink></section>
     <section className={`${styles.section} ${styles.stacked}`}><div className={styles.sectionHeading}><h2>{t.hrTitle}</h2><p>{t.hrIntro}</p></div><div className={styles.related}><PublishedLocaleLink locale={locale} href={href("/drh-externalise")}>{t.hr} <span aria-hidden="true">↗</span></PublishedLocaleLink>{getServicesContent(locale).services.filter(service => service.category === "rh").map(service => <PublishedLocaleLink locale={locale} key={service.href} href={service.href}>{service.title} ↗</PublishedLocaleLink>)}</div></section>
-    <div className={styles.byline}><PageByline locale={locale} author={FINANCE_AUTHOR} dateModified={modified} /></div>
+    <div className={styles.byline}><PageByline locale={locale} author={ITER_AUTHOR} dateModified={modified} /></div>
     </div>
   </div></PageLayout>;
 }

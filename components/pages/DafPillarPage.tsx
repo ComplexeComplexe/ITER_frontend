@@ -12,7 +12,7 @@ import type { Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
 import { getDafPillarContent, pillarInterface } from "@/lib/content/daf-pillar-locales";
 import { faqPageSchema } from "@/lib/schemas";
-import { editorialWebPageSchema } from "@/lib/schemas/editorial";
+import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
 import { renderInlineMarkdownLinks, stripInlineMarkdown } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import ServiceHero from "@/components/design/ServiceHero";
@@ -22,7 +22,7 @@ import Section from "@/components/design/ServiceSection";
 import ServiceContact from "@/components/design/ServiceContact";
 import PageByline from "@/components/PageByline";
 
-const AUTHOR = { name: "Sébastien Doat", slug: "sebastien-doat" };
+const AUTHOR = ITER_AUTHOR;
 const SITE = "https://www.iteradvisors.com";
 const safeJson = (value: unknown) => JSON.stringify(value).replace(/</g, "\\u003c");
 const body = "text-base text-muted-foreground leading-relaxed";

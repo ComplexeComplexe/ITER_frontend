@@ -1,28 +1,21 @@
 import { editorialPersonId } from "@/lib/content/finance-expert";
 import type { Locale } from "@/lib/i18n";
 import { aboutHref } from "@/lib/path-localization";
+import { parityHref } from "@/lib/locale-route-map";
 
-/**
- * Attribution éditoriale des pages de services.
- *
- * REDESIGN-P4 (2026-09-01) — 23 pages de services n'avaient ni auteur, ni
- * date, ni schéma qui les porte : la garde E-E-A-T de la recette ne les
- * couvrait pas, et un moteur n'avait aucun moyen de savoir qui parle. Le
- * schéma `WebPage` porte l'auteur (Person reliée à sa fiche) et les dates ;
- * le composant PageByline les rend visibles, avec rel="author".
- *
- * Attributions à valider par Guillaume : finance → Benjamin Ziza (associé
- * fondateur, CFO), RH → Borith Biv (Partner Capital Humain).
- */
+/** Keep named editorial authors distinct from contacts and cabinet commercial copy. */
 
 export interface EditorialAuthor {
   name: string;
+  type?: "Person" | "Organization";
   /** Slug de la fiche /a-propos/<slug> (localisée par aboutHref). */
   slug: string;
 }
 
 export const FINANCE_AUTHOR: EditorialAuthor = { name: "Benjamin Ziza", slug: "benjamin-ziza" };
 export const HR_AUTHOR: EditorialAuthor = { name: "Borith Biv", slug: "borith-biv" };
+/** Commercial copy belongs to the cabinet; named contacts are not assumed authors. */
+export const ITER_AUTHOR: EditorialAuthor = { name: "Iter Advisors", slug: "", type: "Organization" };
 
 /** Pages de services : dernière refonte de fond en mai, attribution et FAQ en septembre. */
 export const SERVICE_PUBLISHED = "2026-05-17";
@@ -36,6 +29,7 @@ export const SERVICE_MODIFIED_LABEL: Record<Locale, string> = {
 const SITE = "https://www.iteradvisors.com";
 
 export function authorHref(locale: Locale, author: EditorialAuthor): string {
+  if (author.type === "Organization") return parityHref("/a-propos", locale);
   return aboutHref(locale, author.slug);
 }
 
@@ -68,7 +62,12 @@ export function editorialWebPageSchema({
     inLanguage: locale === "fr" ? "fr-FR" : locale === "en" ? "en-GB" : "es-ES",
     datePublished,
     dateModified,
-    author: {
+    author: author.type === "Organization" ? {
+      "@type": "Organization",
+      "@id": `${SITE}/#organization`,
+      name: author.name,
+      url: SITE,
+    } : {
       "@type": "Person",
       "@id": editorialPersonId(authorHref(locale, author)),
       name: author.name,

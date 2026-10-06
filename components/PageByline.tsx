@@ -7,16 +7,12 @@ import {
   type EditorialAuthor,
 } from "@/lib/schemas/editorial";
 
-/**
- * Ligne d'attribution des pages de services : qui a rédigé, quand c'est à
- * jour. Rendue au serveur, lien rel="author" vers la fiche de l'auteur.
- * Utilisable depuis un composant client (aucune API serveur).
- */
+/** Server-rendered attribution: named author or cabinet publisher, plus revision date. */
 
-const STRINGS: Record<Locale, { by: string; updated: string }> = {
-  fr: { by: "Rédigé par", updated: "mis à jour le" },
-  en: { by: "Written by", updated: "updated on" },
-  es: { by: "Redactado por", updated: "actualizado el" },
+const STRINGS: Record<Locale, { by: string; publishedBy: string; updated: string }> = {
+  fr: { by: "Rédigé par", publishedBy: "Publié par", updated: "mis à jour le" },
+  en: { by: "Written by", publishedBy: "Published by", updated: "updated on" },
+  es: { by: "Redactado por", publishedBy: "Publicado por", updated: "actualizado el" },
 };
 
 export default function PageByline({
@@ -40,7 +36,7 @@ export default function PageByline({
   const link = tone === "dark" ? "text-white underline hover:no-underline" : "text-iter-violet hover:underline";
   return (
     <p className={`text-sm ${muted} ${className}`}>
-      {t.by}{" "}
+      {author.type === "Organization" ? t.publishedBy : t.by}{" "}
       <Link href={authorHref(locale, author)} rel="author" className={`font-medium ${link}`}>
         {author.name}
       </Link>

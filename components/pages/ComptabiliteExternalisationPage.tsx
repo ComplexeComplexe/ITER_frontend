@@ -10,7 +10,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import ClientTestimonials from "@/components/ClientTestimonials";
 import PageByline from "@/components/PageByline";
-import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
+import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
 import { faqPageSchema } from "@/lib/schemas";
 import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 
@@ -84,7 +84,7 @@ export default function ComptabiliteExternalisationPage({
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-4 leading-tight">
               {t.h1}
             </h1>
-            <PageByline locale={locale} author={FINANCE_AUTHOR} dateModified={modified} className="mb-6 sm:mb-8" />
+            <PageByline locale={locale} author={ITER_AUTHOR} dateModified={modified} className="mb-6 sm:mb-8" />
             <script
               type="application/ld+json"
               dangerouslySetInnerHTML={{
@@ -94,7 +94,7 @@ export default function ComptabiliteExternalisationPage({
                     name: t.h1,
                     description: t.meta?.description ?? t.h1,
                     locale,
-                    author: FINANCE_AUTHOR,
+                    author: ITER_AUTHOR,
                     dateModified: modified,
                   })
                 ),

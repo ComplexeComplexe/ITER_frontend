@@ -8,7 +8,7 @@ import CTASection from "@/components/CTASection";
 import type { CmsNavItem } from "@/lib/static-content";
 import { motion } from "framer-motion";
 import PageByline from "@/components/PageByline";
-import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
+import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
 
 const breadcrumbLabels: Record<Locale, { services: string; servicesHref: string; page: string }> = {
   fr: { services: "Services", servicesHref: "/services", page: "Cash Flow Forecast" },
@@ -57,7 +57,7 @@ export default function CashFlowForecastPage({ locale, content: t, cmsNavigation
               name: t.hero.h1,
               description: t.hero.intro,
               locale,
-              author: FINANCE_AUTHOR,
+              author: ITER_AUTHOR,
             })
           ),
         }}
@@ -78,7 +78,7 @@ export default function CashFlowForecastPage({ locale, content: t, cmsNavigation
           >
             {t.hero.h1}
           </motion.h1>
-          <PageByline locale={locale} author={FINANCE_AUTHOR} className="mb-6" />
+          <PageByline locale={locale} author={ITER_AUTHOR} className="mb-6" />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

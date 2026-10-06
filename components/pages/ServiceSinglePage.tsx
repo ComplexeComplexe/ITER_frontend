@@ -11,7 +11,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import StrapiBlocks from "@/components/StrapiBlocks";
 import type { StrapiServiceSinglePage, StrapiBlock, CmsNavItem } from "@/lib/static-content";
 import { serviceSchema, faqPageSchema } from "@/lib/schemas";
-import { editorialWebPageSchema, FINANCE_AUTHOR } from "@/lib/schemas/editorial";
+import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
 import PageByline from "@/components/PageByline";
 import CaseProofLinks from "@/components/CaseProofLinks";
 import CashForecastExample from "@/components/finance/CashForecastExample";
@@ -132,7 +132,7 @@ export default function ServiceSinglePage({
               name: page.heroTitle || breadcrumbTitle,
               description: page.heroSubtitle || breadcrumbTitle,
               locale,
-              author: FINANCE_AUTHOR,
+              author: ITER_AUTHOR,
               dateModified: modified,
             })
           ),
@@ -181,7 +181,7 @@ export default function ServiceSinglePage({
                 {page.heroSubtitle}
               </p>
             )}
-            <PageByline locale={locale} author={FINANCE_AUTHOR} dateModified={modified} className="mb-6 sm:mb-8" />
+            <PageByline locale={locale} author={ITER_AUTHOR} dateModified={modified} className="mb-6 sm:mb-8" />
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 href={contactPath}
