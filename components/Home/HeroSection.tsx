@@ -41,12 +41,6 @@ export default function HeroSection({ locale }: { locale: Locale }) {
                 <span aria-hidden="true">→</span>
               </Link>
             </div>
-            <p className={styles.price}>
-              {t.engagement}
-            </p>
-            <p className={styles.start}>
-              {t.noMinimum} {t.start}
-            </p>
             <div className={styles.proofs}>
               {t.proofs.map((proof, i) =>
                 i === 2 ? (

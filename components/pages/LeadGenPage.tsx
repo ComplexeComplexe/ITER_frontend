@@ -454,10 +454,6 @@ const content: Record<
           a: getDafOffer("en").commitment,
         },
         {
-          q: "How does onboarding work?",
-          a: getDafOfferFacts("en").start,
-        },
-        {
           q: "What's the difference with an accounting firm?",
           a: "An accounting firm produces your annual accounts and tax filings. A Fractional CFO drives your financial strategy: forecasting, fundraising, investor reporting, cash-flow optimization. Both are complementary.",
         },
