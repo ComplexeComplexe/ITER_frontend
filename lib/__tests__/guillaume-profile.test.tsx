@@ -35,7 +35,7 @@ describe("Guillaume's supplied biography", () => {
       expect(person.jobTitle).not.toMatch(/CFO|DAF/);
       expect(person.alumniOf.map((school: { name: string }) => school.name)).toEqual(["CELSA", "Sciences Po"]);
       expect(person.workLocation.address.addressLocality).toBe('Barcelona');
-      expect(graph.find((entry: Record<string, string>) => entry["@type"] === "ProfilePage").dateModified).toBe("2026-10-05");
+      expect(graph.find((entry: Record<string, string>) => entry["@type"] === "ProfilePage").dateModified).toBe("2026-10-05T00:00:00Z");
       expect(member.metaTitle!.length).toBeLessThanOrEqual(60);
     });
   }
