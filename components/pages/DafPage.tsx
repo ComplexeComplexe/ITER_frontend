@@ -1541,7 +1541,7 @@ export default function DafPage({
               <Link
                 key={l.href}
                 href={l.href}
-                className="internal-link-card text-sm font-medium text-left"
+                className="text-sm font-medium text-iter-violet hover:underline"
               >
                 {l.label} →
               </Link>

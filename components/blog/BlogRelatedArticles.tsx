@@ -59,7 +59,7 @@ export default function BlogRelatedArticles({
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((c) => (
-            <Link key={c.slug} href={c.href} className="internal-link-card group block">
+            <Link key={c.slug} href={c.href} className="group block">
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl mb-4 bg-muted">
                 <Image
                   src={editorialAsset(c.image, locale)}
