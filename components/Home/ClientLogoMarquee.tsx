@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import type { Locale } from "@/lib/i18n";
 import styles from "./client-logos.module.css";
 
@@ -20,13 +19,7 @@ const logos = [
   { name: "Aviquali", file: "clients/aviquali.png" },
 ];
 
-export default function ClientLogoMarquee({ locale, label }: { locale: Locale; label: string }) {
-  const [paused, setPaused] = useState(false);
-  const text = {
-    fr: { pause: "Mettre en pause", play: "Reprendre le défilement" },
-    en: { pause: "Pause scrolling", play: "Resume scrolling" },
-    es: { pause: "Pausar", play: "Reanudar el desplazamiento" },
-  }[locale];
+export default function ClientLogoMarquee({ label }: { locale: Locale; label: string }) {
   return (
     <section className={styles.section} aria-label={label}>
       <svg width="0" height="0" aria-hidden="true" className={styles.filters}>
@@ -46,14 +39,8 @@ export default function ClientLogoMarquee({ locale, label }: { locale: Locale; l
           </filter>
         </defs>
       </svg>
-      <div className={styles.heading}>
-        <p>{label}</p>
-        <button type="button" aria-pressed={paused} onClick={() => setPaused(!paused)}>
-          {paused ? text.play : text.pause}
-        </button>
-      </div>
-      <div className={styles.viewport}>
-        <div className={styles.track} style={{ animationPlayState: paused ? "paused" : undefined }}>
+      <div className={styles.viewport} tabIndex={0}>
+        <div className={styles.track}>
           {[0, 1].map((copy) => (
             <div className={styles.group} key={copy} aria-hidden={copy === 1 ? true : undefined}>
               {logos.map((logo) => (
