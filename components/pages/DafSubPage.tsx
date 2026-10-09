@@ -1,3 +1,4 @@
+import { dafPricingGraph } from "@/lib/schemas/pillars";
 import PageByline from "@/components/PageByline";
 import { ITER_AUTHOR, type EditorialAuthor } from "@/lib/schemas/editorial";
 import Link from "@/components/PublishedLocaleLink";
@@ -71,6 +72,7 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
+      {contactContext === "tarifs" && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(dafPricingGraph(locale, content)).replace(/</g, "\\u003c") }} />}
 
       {/* ─── Hero ─── */}
       <section className="site-hero bg-gradient-to-br from-background via-background to-iter-violet/5 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">

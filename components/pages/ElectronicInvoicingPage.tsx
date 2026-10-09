@@ -28,11 +28,12 @@ export default function ElectronicInvoicingPage({ pageKey, locale }: { pageKey: 
   const url = `https://www.iteradvisors.com${path}`;
   const schema = {
     '@context': 'https://schema.org', '@type': 'Article', '@id': `${url}#article`, url,
-    headline: page.title, description: page.description, inLanguage: locale, image: invoiceImage(pageKey, locale),
+    headline: page.title, description: page.description, inLanguage: { fr: 'fr-FR', en: 'en-GB', es: 'es-ES' }[locale], image: invoiceImage(pageKey, locale),
     datePublished: INVOICE_TIMESTAMP, dateModified: INVOICE_TIMESTAMP,
     author: { '@type': 'Person', '@id': FINANCE_EXPERT.id, name: FINANCE_EXPERT.name, url: `https://www.iteradvisors.com${parityHref(FINANCE_EXPERT.href, locale)}` },
     publisher: { '@type': 'Organization', '@id': 'https://www.iteradvisors.com/#organization', name: 'Iter Advisors' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    mainEntityOfPage: { '@id': `${url}#webpage` },
+    about: { '@type': 'Thing', name: ui.topic },
     citation: sourceIds.map(id => INVOICE_SOURCES[id].url),
   };
   const faqSchema = {
@@ -40,7 +41,20 @@ export default function ElectronicInvoicingPage({ pageKey, locale }: { pageKey: 
     mainEntity: page.faq.map(item => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   };
   const companions = Object.keys(INVOICE_ROUTES).filter(key => key !== 'guide') as InvoicePageKey[];
+  const webPageSchema = {
+    '@context': 'https://schema.org', '@type': 'WebPage', '@id': `${url}#webpage`, url,
+    name: page.title, description: page.description, inLanguage: schema.inLanguage,
+    datePublished: INVOICE_TIMESTAMP, dateModified: INVOICE_TIMESTAMP,
+    isPartOf: { '@id': 'https://www.iteradvisors.com/#website' },
+    publisher: { '@id': 'https://www.iteradvisors.com/#organization' },
+    mainEntity: { '@id': `${url}#article` },
+    ...(pageKey === 'guide' ? { hasPart: companions.map(key => ({
+      '@type': 'WebPage', '@id': `https://www.iteradvisors.com${INVOICE_ROUTES[key][locale]}#webpage`,
+      url: `https://www.iteradvisors.com${INVOICE_ROUTES[key][locale]}`, name: getInvoiceContent(key, locale).title,
+    })) } : {}),
+  };
   return <PageLayout locale={locale}>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema).replace(/</g, '\\u003c') }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, '\\u003c') }} />
     <section className="site-hero pt-24 sm:pt-32 pb-10 bg-gradient-to-br from-background via-iter-violet/5 to-background">

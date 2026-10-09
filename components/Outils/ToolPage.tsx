@@ -8,7 +8,7 @@ import { type Tool, getToolBySlug, CATEGORIES_WITH_PAGE } from '@/data/tools';
 import { toolSelection, TOOL_SELECTION_REVIEW_DATE } from '@/data/toolSelection';
 import { toolReviews, PENNYLANE_EXPERIENCE, getToolReviewTitle } from '@/data/toolReviews';
 import { TOOL_PRICING } from '@/data/toolPricing';
-import { generateToolArticleSchema, generateFAQSchema, getToolAuthor } from '@/lib/schemas/toolSchemas';
+import { generateToolArticleSchema, generateToolWebPageSchema, generateFAQSchema, getToolAuthor } from '@/lib/schemas/toolSchemas';
 import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
 
 export interface ToolPageProps { slug: string; locale: 'fr' | 'en' | 'es'; cmsNavigation?: CmsNavItem[]; tool: Tool; }
@@ -35,6 +35,7 @@ export default function ToolPage({ slug, locale = 'fr', cmsNavigation, tool }: T
   ];
   const sections = [['verdict', 'L’essentiel'], ['profils', 'Pour qui ?'], ['limites', 'Points forts et limites'], ['prix', 'Prix et coût total'], ['integration', 'Intégration'], ['alternatives', 'Alternatives'], ['faq', 'Questions fréquentes'], ['sources', 'Sources']];
   return <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolWebPageSchema(tool)).replace(/</g, '\\u003c') }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolArticleSchema(tool)) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(tool.name, faq, slug)) }} />
     <section className="site-hero pt-32 pb-12 bg-background">

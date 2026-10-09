@@ -1,7 +1,7 @@
 import PublishedLocaleLink from "@/components/PublishedLocaleLink";
 import Image from "next/image";
 import { Linkedin } from "lucide-react";
-import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
+import { editorialPersonId, FINANCE_EXPERT } from "@/lib/content/finance-expert";
 import type { CmsNavItem, StrapiTeamMember } from "@/lib/static-content";
 import { strapiMediaUrl } from "@/lib/static-content";
 import { getFallbackTeamMembers } from "@/lib/content/team";
@@ -155,6 +155,8 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
             name: t.hero.h1,
             description: t.meta.description,
             provider: { "@id": `${SITE}/#organization` },
+            mainEntityOfPage: { "@id": `${SITE}${path}#webpage` },
+            audience: { "@type": "BusinessAudience", audienceType: { fr: "PME, startups et scale-ups", en: "SMEs, startups and scale-ups", es: "Pymes, startups y scale-ups" }[locale] },
             areaServed: [
               { "@type": "Country", name: "France" },
               { "@type": "Country", name: ui.spain },
@@ -221,7 +223,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
               },
               {
                 "@type": "Person",
-                "@id": `${SITE}/#florent-greth`,
+                "@id": editorialPersonId(aboutHref(locale, "florent-greth")),
                 name: "Florent Greth",
                 jobTitle: ui.partner,
                 url: `${SITE}${aboutHref(locale, "florent-greth")}`,

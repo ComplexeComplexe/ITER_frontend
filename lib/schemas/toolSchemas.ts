@@ -1,6 +1,7 @@
 import { getToolReviewTitle } from '@/data/toolReviews';
 import { editorialPersonId } from "@/lib/content/finance-expert";
 import { Tool } from '@/data/tools';
+import { toolSelection } from '@/data/toolSelection';
 import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
 
 /**
@@ -47,6 +48,7 @@ export function generateToolArticleSchema(tool: Tool) {
     inLanguage: 'fr-FR',
     about: {
       '@type': 'SoftwareApplication',
+      '@id': `${tool.website.replace(/\/$/, '')}#software`,
       name: tool.name,
       url: tool.website,
       applicationCategory: 'BusinessApplication',
@@ -58,7 +60,8 @@ export function generateToolArticleSchema(tool: Tool) {
       url: `https://www.iteradvisors.com${author.url}`,
     },
     publisher: { '@id': 'https://www.iteradvisors.com/#organization' },
-    mainEntityOfPage: url,
+    mainEntityOfPage: { '@id': `${url}#webpage` },
+    citation: toolSelection[tool.slug]?.source,
     dateModified: PAGE_REVISIONS[`/ressources/outils/${tool.slug}`] ?? TOOLS_REVIEW_DATE,
     datePublished: '2026-09-01',
   };
@@ -110,5 +113,18 @@ export function generateHowToSchema(
       text: s.detail,
       url: `https://www.iteradvisors.com/ressources/outils/${toolSlug}#step${i + 1}`,
     })),
+  };
+}
+
+/** Page identity kept distinct from its editorial article and the third-party software. */
+export function generateToolWebPageSchema(tool: Tool) {
+  const article = generateToolArticleSchema(tool);
+  return {
+    '@context': 'https://schema.org', '@type': 'WebPage',
+    '@id': `${article.url}#webpage`, url: article.url,
+    name: article.headline, description: article.description, inLanguage: article.inLanguage,
+    datePublished: article.datePublished, dateModified: article.dateModified,
+    publisher: article.publisher, isPartOf: { '@id': 'https://www.iteradvisors.com/#website' },
+    mainEntity: { '@id': article['@id'] },
   };
 }

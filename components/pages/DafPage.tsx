@@ -1373,7 +1373,7 @@ export default function DafPage({
                 },
                 {
                   "@type": "Person",
-                  "@id": "https://www.iteradvisors.com/#florent-greth",
+                  "@id": "https://www.iteradvisors.com/a-propos/florent-greth#person",
                   name: "Florent Greth",
                   jobTitle: "Partner & CFO",
                   url: "https://www.iteradvisors.com/a-propos",
