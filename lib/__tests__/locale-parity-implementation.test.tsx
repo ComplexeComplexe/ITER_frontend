@@ -34,8 +34,9 @@ describe("reviewed locale parity", () => {
       for (const question of faq.mainEntity) expect(html).toContain(question.name.replace(/&/g, "&amp;"));
       const service = scripts.find(item => item["@type"] === "Service");
       expect(service.url).toBe(`${base}${alignedPaths("/daf-externalise")![locale]}`);
-      expect(service.offers.lowPrice).toBe(String(FORMULES[0].prixMin));
-      expect(service.offers.highPrice).toBe(String(FORMULES.at(-1)!.prixMax));
+      expect(service.offers["@type"]).toBe("Offer");
+      expect(service.offers.priceSpecification.minPrice).toBe(FORMULES[0].prixMin);
+      expect(service.offers.priceSpecification.maxPrice).toBe(FORMULES.at(-1)!.prixMax);
     }
   });
   it("keeps service sections, deliverables, questions and variant tables across all ten services", () => {

@@ -1,3 +1,4 @@
+import { indicativePriceSpecification } from './identity';
 import type { Locale } from '@/lib/i18n';
 import type { DafSubContent } from '@/lib/content/daf-sub';
 import { FORMULES } from '@/lib/content/facts';
@@ -30,10 +31,7 @@ export function dafPricingGraph(locale: Locale, content: DafSubContent) {
             '@type': 'Offer', name: offer.tiers[i].name,
             description: offer.billing,
             url: `${SITE}${path}`, itemOffered: { '@id': serviceId },
-            priceSpecification: {
-              '@type': 'UnitPriceSpecification', minPrice: plan.prixMin, maxPrice: plan.prixMax,
-              priceCurrency: 'EUR', valueAddedTaxIncluded: false, unitText: 'MONTH',
-            },
+            priceSpecification: indicativePriceSpecification(plan.prixMin, plan.prixMax, 'MONTH'),
           })),
         },
       },

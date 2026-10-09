@@ -21,8 +21,8 @@ export const FINANCE_EXPERT = {
 /** A single Person ID across translated profiles, articles, services and the organization. */
 export function editorialPersonId(url: string): string {
   const absolute = new URL(url, "https://www.iteradvisors.com");
-  if (absolute.pathname.replace(/\/$/, "").endsWith(`/${FINANCE_EXPERT.slug}`)) return FINANCE_EXPERT.id;
-  const newMember = absolute.pathname.match(/^\/(?:en\/about|es\/quienes-somos|a-propos)\/(hugo-lepresle|gonzalo-serratosa-de-caralt|guillaume-rostand|benjamin-ziza|florent-greth|borith-biv)\/?$/);
-  if (newMember) return `https://www.iteradvisors.com/a-propos/${newMember[1]}#person`;
+  if (absolute.origin === "https://www.iteradvisors.com" && absolute.pathname.replace(/\/$/, "").endsWith(`/${FINANCE_EXPERT.slug}`)) return FINANCE_EXPERT.id;
+  const newMember = absolute.pathname.match(/^\/(?:en\/(?:about|a-propos)|es\/(?:quienes-somos|a-propos)|a-propos)\/([a-z0-9]+(?:-[a-z0-9]+)*)\/?$/);
+  if (newMember && absolute.origin === "https://www.iteradvisors.com") return `https://www.iteradvisors.com/a-propos/${newMember[1]}#person`;
   return `${absolute.origin}${absolute.pathname.replace(/\/$/, "")}#person`;
 }

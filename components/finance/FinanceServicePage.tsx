@@ -49,7 +49,7 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
-      editorialWebPageSchema({ path, name: service.headline, description: service.description, locale, author, dateModified: modified }),
+      editorialWebPageSchema({ path, name: service.headline, description: service.description, locale, author, dateModified: modified, mainEntityId: `https://www.iteradvisors.com${path}#service` }),
       { "@type": "Service", "@id": `https://www.iteradvisors.com${path}#service`, name: service.headline, description: service.intro, url: `https://www.iteradvisors.com${path}`, provider: { "@id": "https://www.iteradvisors.com/#organization" }, ...(service.areaServed ? { areaServed: { "@type": "Place", name: service.areaServed } } : {}) },
       { "@type": "FAQPage", mainEntity: service.faq.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
     ],

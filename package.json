@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack && node scripts/check-indexability.mjs && node scripts/check-locale-parity.mjs",
+    "build": "next build --webpack && node scripts/check-indexability.mjs && node scripts/check-locale-parity.mjs && node scripts/check-schema-integrity.mjs",
     "start": "next start",
     "lint": "eslint",
     "test": "playwright test",
@@ -23,7 +23,8 @@
     "migrate:export-strapi": "tsx scripts/export-strapi.ts",
     "migrate:images": "tsx scripts/migrate-cdn-images.ts",
     "audit:indexability": "node scripts/check-indexability.mjs",
-    "audit:locales": "node scripts/check-locale-parity.mjs"
+    "audit:locales": "node scripts/check-locale-parity.mjs",
+    "audit:schemas": "node scripts/check-schema-integrity.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

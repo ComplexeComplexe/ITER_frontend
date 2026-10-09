@@ -33,9 +33,10 @@ export default function DafLocalPage({
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": `${canonicalUrl}#localbusiness`,
-    name: `Iter Advisors - ${city.charAt(0).toUpperCase() + city.slice(1)}`,
+    "@type": "LocalBusiness",
+    "@id": "https://www.iteradvisors.com/#barcelona-office",
+    parentOrganization: { "@id": "https://www.iteradvisors.com/#organization" },
+    name: "Iter Advisors - Barcelona",
     description: t.meta.description,
     url: canonicalUrl,
     email: "contact@iteradvisors.com",
@@ -65,8 +66,6 @@ export default function DafLocalPage({
             ? "Paris, Ile-de-France"
             : "Toulouse, Occitanie",
     },
-    priceRange: "€€",
-    openingHours: "Mo-Fr 09:00-18:00",
     image: "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png",
     // Review-snippet fix (2026-05-29): self-serving aggregateRating + Review
     // nodes removed. These were Trustfolio (third-party) reviews about Iter
@@ -82,6 +81,7 @@ export default function DafLocalPage({
     name: t.h1,
     description: t.meta.description,
     provider: {
+      "@id": "https://www.iteradvisors.com/#organization",
       "@type": "Organization",
       name: "Iter Advisors",
       url: "https://www.iteradvisors.com",
@@ -100,7 +100,7 @@ export default function DafLocalPage({
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }} />
-      {city !== "toulouse" && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema).replace(/</g, "\\u003c") }} />}
+      {city === "barcelone" && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema).replace(/</g, "\\u003c") }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema).replace(/</g, "\\u003c") }} />
 
       {/* Hero */}

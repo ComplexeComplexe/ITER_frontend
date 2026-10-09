@@ -1,3 +1,4 @@
+import { absoluteSchemaUrl, schemaLanguage, ORGANIZATION_ID, WEBSITE_ID } from "@/lib/schemas/identity";
 import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 import { parityHref } from "@/lib/locale-route-map";
 import HRExpert from "@/components/HRExpert";
@@ -134,7 +135,7 @@ export default function AuthorPage({
     description: profile?.schemaDescription ?? member.bio,
     url: `https://www.iteradvisors.com${canonicalPath}`,
     image: member.photo?.url
-      ? `https://www.iteradvisors.com${member.photo.url}`
+      ? absoluteSchemaUrl(member.photo.url)
       : undefined,
     sameAs: profile?.sameAs ?? (isFinanceExpert ? [FINANCE_EXPERT.linkedin, FINANCE_EXPERT.malt] : member.linkedIn ? [member.linkedIn] : undefined),
     ...(isFinanceExpert && { subjectOf: { "@type": "PodcastEpisode", inLanguage: "fr-FR", name: FINANCE_EXPERT.podcast.title, url: FINANCE_EXPERT.podcast.href } }),
@@ -156,7 +157,7 @@ export default function AuthorPage({
       {/* Person JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [personSchema, { "@type": "ProfilePage", "@id": `https://www.iteradvisors.com${canonicalPath}#webpage`, url: `https://www.iteradvisors.com${canonicalPath}`, name: fullName, mainEntity: { "@id": personId }, ...(profile && { dateModified: profileRevision }), ...(isNewCfo && { datePublished: profileRevision, dateModified: profileRevision }) }] }) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [personSchema, { "@type": "ProfilePage", "@id": `https://www.iteradvisors.com${canonicalPath}#webpage`, url: `https://www.iteradvisors.com${canonicalPath}`, name: fullName, inLanguage: schemaLanguage(canonicalPath), isPartOf: { "@id": WEBSITE_ID }, publisher: { "@id": ORGANIZATION_ID }, mainEntity: { "@id": personId }, ...(profileRevision && { dateModified: profileRevision }), ...(isNewCfo && { datePublished: profileRevision, dateModified: profileRevision }) }] }) }}
       />
 
       <section className="site-hero bg-background pt-32 pb-12 lg:pb-16">

@@ -100,7 +100,7 @@ export default function DocumentShell({
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": ["ProfessionalService", "Organization"],
+                  "@type": "Organization",
                   "@id": "https://www.iteradvisors.com/#organization",
                   name: "Iter Advisors",
                   // Spanish SL (sociedad limitada), NIF B42960849.
@@ -129,7 +129,6 @@ export default function DocumentShell({
                       addressCountry: "FR",
                     },
                   ],
-                  openingHours: "Mo-Fr 09:00-18:00",
                   // SEO-FIN §7.4 (2026-08-15) — enrichissement remonté depuis
                   // /daf-externalise, qui redéfinissait un second nœud avec le
                   // même @id=#organization. Deux définitions concurrentes de la
@@ -180,14 +179,10 @@ export default function DocumentShell({
                       sameAs: "https://www.linkedin.com/in/rostand/",
                     },
                   ],
-                  // SEO-09 (2026-07-01) — sameAs consolidé pour renforcer
-                  // l'entité "Iter Advisors" dans le Knowledge Graph. Le
-                  // profil Trustfolio est ajouté comme signal third-party
-                  // vérifiable qui légitime l'aggregateRating porté par
-                  // le Service /daf-externalise (voir DafPage.tsx).
+                  // Official profiles identify the cabinet; they do not enable review stars.
                   sameAs: [
                     "https://www.linkedin.com/company/iter-advisors/",
-                    "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc/reviews",
+                    "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
                     "https://www.youtube.com/@IterAdvisors1",
                   ],
                   // SEO-05 (2026-08-31) — aggregateRating volontairement

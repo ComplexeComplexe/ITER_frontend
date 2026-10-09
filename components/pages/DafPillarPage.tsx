@@ -1,3 +1,4 @@
+import { indicativePriceSpecification } from "@/lib/schemas/identity";
 import PublishedLocaleLink from "@/components/PublishedLocaleLink";
 import Image from "next/image";
 import { Linkedin } from "lucide-react";
@@ -163,18 +164,13 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
             ],
             url: `${SITE}${path}`,
             offers: {
-              "@type": "AggregateOffer",
-              priceCurrency: "EUR",
-              lowPrice: String(FORMULES[0].prixMin),
-              highPrice: String(FORMULES[FORMULES.length - 1].prixMax),
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                minPrice: String(FORMULES[0].prixMin),
-                maxPrice: String(FORMULES[FORMULES.length - 1].prixMax),
-                valueAddedTaxIncluded: false,
-                priceCurrency: "EUR",
-                unitText: "MONTH",
-              },
+              "@type": "Offer",
+              description: t.pricing.intro,
+              url: `${SITE}${path}#tarifs`,
+              priceSpecification: indicativePriceSpecification(
+                Math.min(...FORMULES.map(plan => plan.prixMin)),
+                Math.max(...FORMULES.map(plan => plan.prixMax)), "MONTH",
+              ),
             },
           }),
         }}

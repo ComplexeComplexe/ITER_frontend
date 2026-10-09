@@ -1,3 +1,4 @@
+import { indicativePriceSpecification } from '@/lib/schemas/identity';
 import type { Locale } from '@/lib/i18n';
 
 /** Commercial figures confirmed by Guillaume on 3 October 2026. */
@@ -154,7 +155,7 @@ export function hrOfferCatalog(locale: Locale) {
     '@type': 'OfferCatalog', name: c.priceTitle,
     itemListElement: [
       { '@type': 'Offer', name: c.priceLabels[0], description: `${c.priceScopes[0]} ${c.project}.` },
-      { '@type': 'Offer', name: c.priceLabels[1], description: c.priceScopes[1], priceSpecification: { '@type': 'UnitPriceSpecification', minPrice: HR_COMMERCIAL_TERMS.regular.min, maxPrice: HR_COMMERCIAL_TERMS.regular.max, priceCurrency: 'EUR', valueAddedTaxIncluded: false, unitText: locale === 'fr' ? 'mois' : locale === 'en' ? 'month' : 'mes' } },
+      { '@type': 'Offer', name: c.priceLabels[1], description: c.priceScopes[1], priceSpecification: indicativePriceSpecification(HR_COMMERCIAL_TERMS.regular.min, HR_COMMERCIAL_TERMS.regular.max, 'MONTH') },
       { '@type': 'Offer', name: c.priceLabels[2], description: `${c.priceScopes[2]} ${c.project}.` },
     ],
   };
