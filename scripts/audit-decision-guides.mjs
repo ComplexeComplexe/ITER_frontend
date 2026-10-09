@@ -2,7 +2,7 @@
 const base = (process.argv[2] ?? 'http://127.0.0.1:4046').replace(/\/$/, '');
 const origin = 'https://www.iteradvisors.com';
 const targets = [
-  { path: '/ressources/blog/daf-externalise-vs-daf-salarie', anchors: ['contexte', 'cout-total', 'daf-salarie', 'daf-externalise', 'comparaison-directe', 'matrice-decision'], links: ['/daf-externalise', '/daf-externalise/tarifs', '/daf-externalise/transition'], author: 'Benjamin Ziza' },
+  { path: '/ressources/blog/daf-externalise-vs-daf-salarie', modified: '2026-10-09', anchors: ['contexte', 'cout-total', 'daf-salarie', 'daf-externalise', 'comparaison-directe', 'matrice-decision'], links: ['/daf-externalise', '/daf-externalise/tarifs', '/daf-externalise/transition'], author: 'Benjamin Ziza' },
   { path: '/ressources/blog/daf-externalise-vs-daf-interimaire', anchors: ['differences-fondamentales', 'tableau-comparatif', 'cout-tjm', 'quand-choisir', 'cas-usage', 'conclusion', 'faq'], links: ['/daf-externalise', '/daf-externalise/tarifs', '/daf-externalise/transition', '/daf-externalise/temps-partage'], author: 'Benjamin Ziza' },
   { path: '/ressources/blog/quand-embaucher-daf-externalise-5-signes', anchors: ['signe-1-burn-rate', 'signe-2-compta-retard', 'signe-3-levee-engagee', 'signe-4-controle-gestion', 'signe-5-fondateurs-finance', 'section-6-daf-externalise-vs-salarie', 'faq'], links: ['/daf-externalise', '/services/controle-de-gestion-externalise', '/services/previsionnel-tresorerie'], author: 'Sébastien Doat' },
   { path: '/ressources/blog/cash-burn-calculer-runway-anticiper-levee', anchors: ['methode', 'exemple', 'runway', 'seuils', 'regle-or', 'forecast', 'reduire-burn'], links: ['/daf-externalise', '/ressources/blog/flux-de-tresorerie', '/services/previsionnel-tresorerie'], author: 'Benjamin Ziza' },
@@ -31,7 +31,7 @@ for (const target of targets) {
     check(articles.length === 1, 'one-article-schema');
     const slug = { 'Benjamin Ziza': 'benjamin-ziza', 'Sébastien Doat': 'sebastien-doat' }[target.author];
     check(articles[0]?.author?.['@id'] === `${origin}/a-propos/${slug}#person`, 'preserved-author');
-    check(articles[0]?.dateModified?.startsWith('2026-10-02'), 'substantive-revision-date');
+    check(articles[0]?.dateModified?.startsWith(target.modified ?? '2026-10-02'), 'substantive-revision-date');
   }
   if (target.path.endsWith('interimaire')) {
     check(schemas.filter(s => s['@type'] === 'FAQPage').length === 1, 'one-faq-schema');
