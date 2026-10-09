@@ -65,6 +65,7 @@ describe("Published partner profiles", () => {
         expect(profile.mainEntity["@id"]).toBe(person["@id"]);
         expect(profile.dateModified).toBe("2026-10-09T05:32:44.000Z");
         expect(member.metaTitle).toContain(member.role);
+        expect(member.metaTitle!.length).toBeLessThanOrEqual(60);
         expect(member.metaTitle).not.toContain("—");
         expect(member.metaDescription).toBe(getPartnerProfile(slug, locale)!.metaDescription);
       });

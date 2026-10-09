@@ -1,4 +1,4 @@
-import { resolveCompanyCopy, getApprovedPerson } from "@/lib/company-facts";
+import { resolveCompanyCopy, getApprovedPerson, approvedPersonTitle } from "@/lib/company-facts";
 import partnerSummaries from "@/lib/content/partner-summaries.json";
 import type { StrapiTeamMember } from "@/lib/static-content";
 import type { Locale } from "@/lib/i18n";
@@ -432,7 +432,7 @@ export function getTeamMemberBySlug(
     bio: member.bio[locale],
     h1Role: member.h1Roles?.[locale],
     bioExtended: member.bioExtended?.[locale],
-    metaTitle: getApprovedPerson(slug) ? `${getApprovedPerson(slug)!.name}, ${getApprovedPerson(slug)!.roles[locale]} | Iter Advisors` : member.metaTitle?.[locale],
+    metaTitle: approvedPersonTitle(slug, locale) ?? member.metaTitle?.[locale],
     metaDescription: member.metaDescription?.[locale],
   } as StrapiTeamMember & { bio: string; h1Role?: string; bioExtended?: string };
 }

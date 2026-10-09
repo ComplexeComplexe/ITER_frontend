@@ -27,6 +27,14 @@ export const ORG_ID = 'https://www.iteradvisors.com/#organization';
 export const personId = (slug: string) => `https://www.iteradvisors.com/a-propos/${slug}#person`;
 export const getApprovedPerson = (slug: string) => Object.values(PEOPLE).find(person => person.slug === slug);
 
+/** Keep the complete approved role; omit the brand suffix when the title would exceed 60 characters. */
+export function approvedPersonTitle(slug: string, locale: Locale): string | undefined {
+  const person = getApprovedPerson(slug);
+  if (!person) return undefined;
+  const title = `${person.name}, ${person.roles[locale]}`;
+  return title.length + ' | Iter Advisors'.length <= 60 ? `${title} | Iter Advisors` : title;
+}
+
 /** Profile templates retain their wording but never duplicate approved numbers or titles. */
 export function companyText(text: string, locale: Locale): string {
   return text.replace(/\{\{(foundingYear|financeTeamSize|clientsCount|teamLabel|role:([a-z-]+))\}\}/g, (_, key: string, slug?: string) => {
