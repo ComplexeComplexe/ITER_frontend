@@ -13,6 +13,8 @@ async function visit(dir) {
       const html = await readFile(path, 'utf8');
       const visible = decodeHTML(html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/g, '').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ');
       const ld = [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m => JSON.stringify(JSON.parse(m[1]))).join(' ');
+      const metadata = [...html.matchAll(/<title>(.*?)<\/title>|<meta name="description" content="([^"]*)"/g)].map(m => decodeHTML(m[1] || m[2])).join(' ');
+      if (/Logiciels|Gestion des dépenses|Méthode des avis/i.test(metadata)) failures.push({path,reason:'untranslated-French-metadata'});
       const match = (visible + ' ' + ld).match(promise);
       if (match) failures.push({ path, reason:'withdrawn-contractual-promise', match:match[0] });
       if (visible.includes('Startups et SaaS') || visible.includes('Les cas documentés')) failures.push({path, reason:'known-untranslated-French-copy'});
