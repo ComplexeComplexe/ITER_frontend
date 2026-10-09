@@ -1,10 +1,11 @@
 "use client";
+import { isClientLogoApproved } from "@/lib/content/client-logo-permissions";
 
 import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
 import styles from "./client-logos.module.css";
 
-const logos = [
+export const CLIENT_LOGO_CANDIDATES = [
   { name: "Ukio", file: "clients/ukio.webp" },
   { name: "HappyScribe", file: "clients/happyscribe.png" },
   { name: "Near Space Labs", file: "clients/near-space-labs.png" },
@@ -20,6 +21,8 @@ const logos = [
 ];
 
 export default function ClientLogoMarquee({ label }: { locale: Locale; label: string }) {
+  const logos = CLIENT_LOGO_CANDIDATES.filter(logo => isClientLogoApproved(logo.name));
+  if (logos.length === 0) return null;
   return (
     <section className={styles.section} aria-label={label}>
       <svg width="0" height="0" aria-hidden="true" className={styles.filters}>

@@ -222,7 +222,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     "besoin-fonds-roulement-bfr": {
       meta: {
         title: "BFR — Définition et calcul complet | Iter Advisors",
-        description: "BFR : définition, formule de calcul, benchmarks par secteur, leviers d'optimisation. Le guide complet pour piloter votre trésorerie.",
+        description: "BFR : définition, formule de calcul, exemples par modèle économique, leviers de pilotage. Le guide complet pour piloter votre trésorerie.",
       },
       h1: "Besoin en Fonds de Roulement (BFR) — Définition, Formule et Calcul",
       sections: [
@@ -259,22 +259,22 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
           ],
         },
         {
-          heading: "Benchmarks et seuils par secteur",
+          heading: "Interpréter le BFR selon le modèle économique",
           content: [
-            "**SaaS (abonnement)** : BFR/CA = -10 à 5%. DSO 15-30j, DIO 0j, DPO 30-45j. Cible : négatif.",
-            "**E-commerce D2C** : BFR/CA = 15-25%. DSO 5-15j, DIO 30-60j, DPO 30-45j. Cible : < 15%.",
-            "**Industrie** : BFR/CA = 20-35%. DSO 45-75j, DIO 30-90j, DPO 30-60j. Cible : < 25%.",
-            "**BTP** : BFR/CA = 25-40%. DSO 60-90j, DIO 15-30j, DPO 45-75j. Cible : < 30%.",
-            "**Interprétation** : BFR < 0 = excellent. 0-15% = sain. 15-30% = à surveiller. > 30% = critique.",
+            "**SaaS (abonnement)** : distinguez les clients facturés à l’avance des clients qui paient à échéance. Un abonnement ne garantit pas un BFR négatif.",
+            "**E-commerce D2C** : examinez la rotation des stocks, les remboursements et les délais des prestataires de paiement. Une vente encaissée ne signifie pas que le cash est déjà disponible.",
+            "**Industrie** : rapprochez stocks, encours de production, acomptes et échéances clients. Suivez les variations mensuelles avant de conclure à un besoin permanent.",
+            "**BTP** : intégrez les situations de travaux, les acomptes et les retenues de garantie. La durée et le calendrier du chantier changent le besoin de financement.",
+            "**Interprétation** : il n’existe pas de seuil universel qui rende un BFR sain ou critique. Comparez des périodes et des périmètres homogènes, puis testez le retard client et la saisonnalité dans le plan de trésorerie.",
           ],
         },
         {
           heading: "Limites et pièges",
           content: [
-            "**BFR négatif ≠ trésorerie saine.** Un BFR négatif est excellent mais ne garantit pas une trésorerie positive si l'entreprise a des dettes financières lourdes.",
+            "**BFR négatif ≠ trésorerie saine.** Un BFR négatif peut refléter un encaissement anticipé, mais ne garantit pas une trésorerie positive si l'entreprise a des dettes financières lourdes.",
             "**Saisonnalité ignorée.** Le BFR annuel masque des variations mensuelles importantes.",
-            "**Croissance = BFR qui augmente.** Une entreprise qui double son CA en 1 an doit financer une augmentation de BFR de 20-30% du CA additionnel.",
-            "**Comparaison sectorielle obligatoire.** Un BFR de 20% du CA est excellent pour une industrie mais critique pour une SaaS.",
+            "**Croissance = BFR qui augmente.** Le financement additionnel dépend des stocks, des délais clients et fournisseurs et des acomptes. Calculez-le avec vos hypothèses, sans appliquer un pourcentage sectoriel automatique.",
+            "**Comparaison sectorielle obligatoire.** Comparez votre BFR avec le cycle de votre activité et des périodes homogènes ; le même ratio ne produit pas le même risque dans chaque entreprise.",
           ],
         },
         {

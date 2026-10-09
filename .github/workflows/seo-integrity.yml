@@ -23,7 +23,9 @@ jobs:
       - run: npm run test:unit
       - run: npm run build
       - name: Validate approved cabinet figures and tools
-        run: node scripts/audit-cabinet-facts.mjs
+        run: |
+          node scripts/audit-cabinet-facts.mjs
+          node scripts/audit-conversion-trust.mjs
       - name: Start production preview
         run: |
           npm run start -- --hostname 127.0.0.1 --port 3100 > /tmp/iter-preview.log 2>&1 &

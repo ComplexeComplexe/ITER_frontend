@@ -69,7 +69,7 @@ export const dafPillar = {
       { company: "SolarMente", title: "Préparer une levée et une acquisition", text: "Le cas documenté sur la période 2022 à 2024 porte sur un modèle financier multi-scénarios, une data room, le reporting au conseil et des procédures de contrôle de trésorerie. Il comprend l’intégration financière de l’acquisition d’Eltex en 2024, dans un contexte de croissance d’une cleantech.", takeaway: "Pour le dirigeant : organiser les informations et les hypothèses nécessaires à une opération. Les dirigeants, investisseurs et conseils ont également contribué à ces projets ; leur réussite ne peut pas être attribuée au seul accompagnement d’Iter.", href: "/ressources/cas-clients/solarmente-serie-b-cleantech", linkLabel: "Voir la mission SolarMente" },
     ],
     quote: {
-      text: "J'apprécie particulièrement leur capacité à nous challenger et à éclairer nos décisions stratégiques.",
+      text: "leur capacité à nous challenger et à nous éclairer dans nos prises de décisions stratégiques.",
       author: "Magali Quentel-Reme",
       role: "CEO et co-fondatrice, Opti Digital",
       sourceUrl: "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",

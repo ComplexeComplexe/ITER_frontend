@@ -50,7 +50,7 @@ export const toolReviews: Record<string, ToolReview> = {
     alternatives: ['pennylane', 'sage'],
   },
   okimia: {
-    verdict: "Fygr est devenu Okimia. L’URL de cette fiche est conservée pour retrouver les recherches historiques, mais le produit et les conditions actuels doivent être évalués sous le nom Okimia.",
+    verdict: "Fygr est devenu Okimia. L’ancienne URL Fygr redirige vers cette fiche Okimia. Cette analyse documentaire examine les conditions et critères de choix actuels, sans prétendre constituer un test d’usage du produit.",
     fit: "Une entreprise qui cherche à organiser sa prévision de trésorerie peut examiner Okimia à partir de ses banques, de ses échéances et de ses catégories de flux. Une prévision exploitable doit relier les mouvements observés aux encaissements et décaissements attendus.",
     avoid: "Le changement de nom ne permet pas de reconduire automatiquement un ancien prix ou un ancien comparatif. Faites vérifier les entités, les connexions et les modules de la formule actuelle. Aucun avantage chiffré de coût par rapport à Agicap n’est établi ici.",
     decision: "Faites reconstruire une semaine de flux puis un scénario de retard client. Comparez les prévisions et les soldes bancaires réels, avec les mêmes dates de référence. La lisibilité des écarts et le temps nécessaire pour corriger une hypothèse comptent davantage qu’un nombre annoncé de fonctionnalités.",
@@ -158,5 +158,5 @@ export const PENNYLANE_EXPERIENCE = {
 };
 
 export function getToolReviewTitle(tool: { slug: string; name: string }) {
-  return tool.slug === 'pennylane' ? 'Avis Pennylane : 4 ans d’usage, prix et limites' : `Avis ${tool.name} : limites, prix et intégration`;
+  return tool.slug === 'pennylane' ? 'Avis Pennylane : 4 ans d’usage, prix et limites' : `${tool.name} : analyse, prix et intégration`;
 }

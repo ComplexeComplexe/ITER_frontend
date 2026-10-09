@@ -79,12 +79,12 @@ const navigationLabels = {
   en: {
     titles: ["Fractional CFO", "Finance Services", "Part-time HR", "Resources", "The Firm", "Contact"],
     children: [[], ["Part-time CFO", "Interim CFO", "Management accounting", "Cash flow forecasting", "Accounting coordination", "Fundraising support", "M&A and due diligence"], [], ["Tools", "AI and Finance", "Electronic invoicing", "Blog and News", "Case studies", "Glossary", "The CFO role"], ["Our team", "Our clients", "Careers"], []],
-    editorial: ["Finance glossary", "The CFO role", "Finance tools", "AI and Finance", "External HR leadership", "Our clients", "Careers"],
+    editorial: ["Finance glossary", "The CFO role", "Finance tools", "AI and Finance", "Electronic invoicing", "External HR leadership", "Our clients", "Careers"],
   },
   es: {
     titles: ["CFO externo", "Servicios financieros", "RR. HH. a tiempo parcial", "Recursos", "La firma", "Contacto"],
     children: [[], ["CFO a tiempo parcial", "CFO de transición", "Control de gestión externo", "Previsión de tesorería", "Coordinación contable", "Apoyo a la financiación", "M&A y due diligence"], [], ["Herramientas", "IA y Finanzas", "Facturación electrónica", "Blog y Noticias", "Casos de éxito", "Glosario", "Funciones del CFO"], ["Nuestro equipo", "Nuestros clientes", "Empleo"], []],
-    editorial: ["Glosario financiero", "Funciones del CFO", "Herramientas financieras", "IA y Finanzas", "Dirección externa de RR. HH.", "Nuestros clientes", "Empleo"],
+    editorial: ["Glosario financiero", "Funciones del CFO", "Herramientas financieras", "IA y Finanzas", "Facturación electrónica", "Dirección externa de RR. HH.", "Nuestros clientes", "Empleo"],
   },
 };
 function localizeNavigation(locale: "en" | "es"): NavItem[] {

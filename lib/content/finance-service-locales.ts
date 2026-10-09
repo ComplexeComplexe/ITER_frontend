@@ -1,3 +1,4 @@
+import { contractContent } from "./contract-copy";
 import type { Locale } from "@/lib/i18n";
 import { FINANCE_SERVICES, type FinanceService } from "./finance-services";
 import en from "./locales/finance-services.en.json";
@@ -5,7 +6,7 @@ import es from "./locales/finance-services.es.json";
 
 // JSON arrays are validated against the FR tuple shapes by the parity tests.
 const translated = { en, es } as unknown as Record<"en" | "es", Record<string, FinanceService>>;
-export function getFinanceServices(locale: Locale): Record<string, FinanceService> { return locale === "fr" ? FINANCE_SERVICES : translated[locale]; }
+export function getFinanceServices(locale: Locale): Record<string, FinanceService> { return contractContent(locale === "fr" ? FINANCE_SERVICES : translated[locale], locale); }
 export function getFinanceService(key: string, locale: Locale): FinanceService { return getFinanceServices(locale)[key]; }
 
 export const financeInterface = {

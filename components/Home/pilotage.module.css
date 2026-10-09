@@ -37,7 +37,7 @@
   outline-offset: 5px;
 }
 .eyebrow {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -170,7 +170,7 @@
   line-height: 1.1;
 }
 .proofs span {
-  font-size: 11px;
+  font-size: 12px;
   margin-top: 5px;
   line-height: 1.4;
 }
@@ -220,7 +220,7 @@
   justify-content: space-between;
   gap: 10px;
   align-items: center;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.09em;
   margin-bottom: 20px;
@@ -249,7 +249,7 @@
   margin: 0 0 24px;
 }
 .kpis dt {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--site-muted);
   line-height: 1.3;
 }
@@ -264,7 +264,7 @@
   padding-top: 6px;
 }
 .axis {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--site-muted);
   margin: 0 0 8px;
 }
@@ -294,7 +294,7 @@
   background: white;
   padding: 1px 4px;
   color: var(--site-violet);
-  font-size: 9px;
+  font-size: 12px;
 }
 .bars {
   position: absolute;
@@ -327,7 +327,7 @@
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  font-size: 9px;
+  font-size: 12px;
   color: var(--site-muted);
   white-space: nowrap;
 }
@@ -335,7 +335,7 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  font-size: 9px;
+  font-size: 12px;
   color: var(--site-muted);
   border-top: 1px solid var(--site-border);
   padding-top: 12px;
@@ -386,7 +386,7 @@
   border-color: var(--site-violet);
 }
 .number {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--site-violet);
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -450,7 +450,7 @@
   content: "−";
 }
 .services summary > span {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--site-accent);
   display: inline-block;
   width: 32px;
@@ -639,7 +639,7 @@
 }
 .quotes figcaption span,
 .quotes small {
-  font-size: 11px;
+  font-size: 12px;
   color: #ffffffd9;
 }
 .reviewSource {
@@ -715,7 +715,7 @@
   font-weight: 700;
 }
 .final figcaption span {
-  font-size: 11px;
+  font-size: 12px;
   color: #ffffffe6;
 }
 @media (max-width: 1000px) {
@@ -889,10 +889,10 @@
     min-height: 48px;
   }
   .price {
-    font-size: 11px;
+    font-size: 12px;
   }
   .start {
-    font-size: 11px;
+    font-size: 12px;
   }
   .proofs {
     gap: 14px;
@@ -901,13 +901,13 @@
     font-size: 23px;
   }
   .proofs span {
-    font-size: 10px;
+    font-size: 12px;
   }
   .sheet {
     padding: 20px 16px;
   }
   .sheetTop {
-    font-size: 9px;
+    font-size: 12px;
   }
   .page .sheet h2 {
     font-size: 26px;
@@ -919,7 +919,7 @@
     font-size: 21px;
   }
   .kpis dt {
-    font-size: 9px;
+    font-size: 12px;
   }
   .bars {
     gap: 5px;
@@ -928,10 +928,10 @@
     height: 160px;
   }
   .week {
-    font-size: 8px;
+    font-size: 12px;
   }
   .sheetFooter {
-    font-size: 8px;
+    font-size: 12px;
   }
   .leads img {
     height: 200px;
@@ -940,7 +940,7 @@
     font-size: 14px;
   }
   .leads figcaption span {
-    font-size: 11px;
+    font-size: 12px;
   }
   .page .section h2 {
     font-size: 29px;
@@ -965,4 +965,9 @@
   .needs > a:hover {
     transform: none;
   }
+}
+
+@media (max-width: 600px) {
+  .bars > :nth-child(even) .week { visibility: hidden; }
+  .sheetFooter { flex-wrap: wrap; gap: 8px; }
 }

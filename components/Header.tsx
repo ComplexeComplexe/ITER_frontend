@@ -117,7 +117,7 @@ export default function Header({
           : "bg-transparent"
       }`}
     >
-      <div className="container grid grid-cols-[1fr_auto] xl:grid-cols-[1fr_auto_1fr] items-center h-16 lg:h-[72px] gap-4">
+      <div className="container grid grid-cols-[1fr_auto] xl:grid-cols-[1fr_auto_1fr] items-center h-16 lg:h-[72px] gap-2 xl:gap-4">
         {/* Logo */}
         <Link locale={locale} href={homePath} className="flex items-center gap-2 group relative z-10 min-w-0">
           <Image
@@ -232,7 +232,7 @@ export default function Header({
         </nav>
 
         {/* Right side: lang + CTA (desktop) + menu toggle (mobile) */}
-        <div className="flex items-center justify-end gap-3 min-w-0">
+        <div className="flex items-center justify-end gap-1 xl:gap-3 min-w-0">
           <div className="hidden xl:flex items-center gap-3">
             {/* Language Switcher — click-driven (mouseenter caused flicker on the
                 ~8px gap between trigger and panel; outside-click + Escape close
@@ -303,11 +303,15 @@ export default function Header({
             </Link>
           </div>
 
+          <Link locale={locale} href={contactItem.href} onClick={() => setMobileOpen(false)}
+            className="xl:hidden inline-flex min-h-11 items-center justify-center rounded-full border border-white/60 px-3 text-sm font-semibold text-white hover:bg-white/10">
+            {locale === "es" ? "Contacto" : "Contact"}
+          </Link>
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
-            className="xl:hidden p-2 text-white relative z-10"
+            className="xl:hidden h-11 w-11 flex items-center justify-center text-white relative z-10"
             aria-label={locale === "en" ? (mobileOpen ? "Close menu" : "Open menu") : locale === "es" ? (mobileOpen ? "Cerrar el menú" : "Abrir el menú") : (mobileOpen ? "Fermer le menu" : "Ouvrir le menu")}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}

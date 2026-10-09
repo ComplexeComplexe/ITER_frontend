@@ -779,9 +779,9 @@ export default function LeadGenPage({
         }),
       });
 
-      if (!res.ok) {
-        const body = await res.json().catch(() => null);
-        throw new Error(body?.details || "Server error");
+      const receipt = await res.json();
+      if (!res.ok || receipt.success !== true) {
+        throw new Error(receipt?.details || "Server error");
       }
 
       setIsSubmitted(true);

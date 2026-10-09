@@ -28,7 +28,7 @@ describe("Contact qualification and attribution", () => {
     for (const value of ["#email=test@example.com", "#__proto__", "#constructor", "#unknown"]) expect(getContactContext(value)).toBeUndefined();
   });
   it("submits selected need, timeline and originating offer, then records one conversion", async () => {
-    const fetchMock = vi.fn().mockResolvedValue({ ok: true });
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true, receiptId: "local-mock" }) });
     vi.stubGlobal("fetch", fetchMock);
     const { container } = render(<ContactPage locale="fr" />);
     expect(screen.getByLabelText(/Votre priorité/)).toHaveValue("daf-startup");
@@ -47,7 +47,7 @@ describe("Contact qualification and attribution", () => {
     ["comptabilite", "accounting", "/services/comptabilite-externalisation"],
   ])("preserves the %s service need through submission and conversion", async (context, need, originPage) => {
     window.history.replaceState({}, "", `/contact#${context}`);
-    const fetchMock = vi.fn().mockResolvedValue({ ok: true });
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true, receiptId: "local-mock" }) });
     vi.stubGlobal("fetch", fetchMock);
     const { container } = render(<ContactPage locale="fr" />);
     expect(screen.getByLabelText(/Votre priorité/)).toHaveValue(need);
@@ -59,7 +59,7 @@ describe("Contact qualification and attribution", () => {
   });
   it("keeps AI context and optional company/message without inventing a booking", async () => {
     window.history.replaceState({}, "", "/contact#ia-reporting");
-    const fetchMock = vi.fn().mockResolvedValue({ ok: true }); vi.stubGlobal("fetch", fetchMock);
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true, receiptId: "local-mock" }) }); vi.stubGlobal("fetch", fetchMock);
     const { container } = render(<ContactPage locale="fr" />);
     expect(screen.getByLabelText(/Votre priorité/)).toHaveValue("automation");
     expect(container.querySelector('[name="company"]')).not.toBeRequired();
@@ -71,7 +71,7 @@ describe("Contact qualification and attribution", () => {
   });
   it("preserves a legacy funding link without capturing unrelated query data", async () => {
     window.history.replaceState({}, "", "/contact?type=levee-de-fonds&email=private@example.com");
-    const fetchMock = vi.fn().mockResolvedValue({ ok: true }); vi.stubGlobal("fetch", fetchMock);
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true, receiptId: "local-mock" }) }); vi.stubGlobal("fetch", fetchMock);
     const { container } = render(<ContactPage locale="fr" />);
     expect(screen.getByLabelText(/Votre priorité/)).toHaveValue("funding");
     fillAndSubmit(container);
@@ -89,8 +89,16 @@ describe("Contact qualification and attribution", () => {
     expect(getContactContext("#daf-drh-synergie")?.need).toBe("rh");
     expect(getContactContext("#formation-cfo")?.need).toBe("other");
   });
+  it("does not count an HTTP 200 response without a confirmed receipt as a lead", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: false }) }));
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    const { container } = render(<ContactPage locale="fr" />);
+    fillAndSubmit(container);
+    await screen.findByText(/Une erreur est survenue/);
+    expect(events()).toHaveLength(0);
+  });
   it("retains qualification after failure and records conversion only on a successful retry", async () => {
-    const fetchMock = vi.fn().mockResolvedValueOnce({ ok: false, json: async () => ({}) }).mockResolvedValueOnce({ ok: true });
+    const fetchMock = vi.fn().mockResolvedValueOnce({ ok: false, json: async () => ({}) }).mockResolvedValueOnce({ ok: true, json: async () => ({ success: true, receiptId: "local-mock" }) });
     vi.stubGlobal("fetch", fetchMock);
     vi.spyOn(console, "error").mockImplementation(() => {});
     const { container } = render(<ContactPage locale="fr" />);

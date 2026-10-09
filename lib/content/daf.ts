@@ -1,3 +1,4 @@
+import { contractContent } from "./contract-copy";
 import { CLIENTS_ACCOMPAGNES, TEAM_LABEL, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 import { getFinanceStackSummary } from "./finance-stack";
 import { Locale } from "../i18n";
@@ -1284,5 +1285,5 @@ export const dafContent: Record<Locale, DafContent> = {
 };
 
 export function getDafContent(locale: Locale) {
-  return dafContent[locale];
+  return contractContent(dafContent[locale], locale);
 }
