@@ -170,10 +170,10 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
   "gestion-paie-charges-sociales": {
     "slug": "gestion-paie-charges-sociales",
     "meta": {
-      "title": "Gestion de la paie externalisée | Iter Advisors",
+      "title": "Coordination et contrôle de la paie | Iter Advisors",
       "description": "Clarifier qui collecte, produit, contrôle et valide votre paie. Périmètre, méthode et responsabilités définis avec votre équipe."
     },
-    "h1": "Gestion de la paie : organiser les rôles et les contrôles",
+    "h1": "Coordination de la paie : organiser les rôles et les contrôles",
     "breadcrumb": "Paie et coordination",
     "intro": [
       "La paie repose sur une circulation fiable des informations entre salariés, managers, administration du personnel, prestataire de paie et direction financière.",

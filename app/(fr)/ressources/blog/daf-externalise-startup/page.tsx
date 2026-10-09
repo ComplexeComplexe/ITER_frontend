@@ -2,7 +2,6 @@ import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
-import { Callout, ProseTable } from '@/components/blog';
 import MidArticleSoftCTA from '@/components/blog/MidArticleSoftCTA';
 
 export const metadata: Metadata = {
@@ -51,7 +50,7 @@ export default function DafExternaliseStartupPage() {
         url: "/a-propos/benjamin-ziza",
       }}
       readingTime={6}
-      dateModified="2026-07-24"
+      dateModified="2026-10-09"
       heroImage="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80"
       toc={[
         { id: "pourquoi-startup", label: "1. Pourquoi un DAF en startup ?" },
@@ -61,7 +60,7 @@ export default function DafExternaliseStartupPage() {
         { id: "vs-cfo-interne", label: "5. DAF externalisé vs CFO interne" },
         { id: "choisir", label: "6. Comment choisir ?" },
       ]}
-      tldr="Pour une startup, le DAF externalisé représente 30 à 60 % d'économie face à un CFO interne. Il est indispensable dès la première levée de fonds. Les 5 déclencheurs pour recruter : levée, board, MRR > 100k€, team > 15 personnes, international."
+      tldr="Évaluez le besoin de direction financière selon les décisions, les livrables, la disponibilité et la complexité. Levée de fonds, reporting investisseurs, revenus récurrents, recrutements et international sont des signaux à examiner, sans seuil universel ni économie garantie."
       relatedArticles={[
         {
           url: "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
@@ -110,15 +109,10 @@ export default function DafExternaliseStartupPage() {
         Dès que vous avez un board (même informel), vous devez produire un reporting mensuel ou trimestriel structuré : P&L, trésorerie, KPIs, analyse des écarts vs budget. Sans DAF, ce reporting prend du temps à un fondateur qui devrait être focalisé sur la croissance. Avec un DAF externalisé, le board reçoit un pack financier clair sous 5 jours après la clôture mensuelle.
       </p>
 
-      <h3>Déclencheur 3 : MRR supérieur à 100 k€</h3>
-      <p>
-        À ce stade, les flux financiers deviennent suffisamment complexes pour justifier un suivi rigoureux : reconnaissance des revenus, gestion des débiteurs, suivi des coûts variables vs fixes, pilotage du burn rate. C&apos;est aussi le seuil à partir duquel les erreurs comptables ont un impact matériel sur vos décisions de recrutement ou d&apos;investissement.
-      </p>
-
-      <h3>Déclencheur 4 : l&apos;équipe dépasse 15 personnes</h3>
-      <p>
-        Au-delà de 15 salariés, la masse salariale représente généralement 50 à 70 % des dépenses totales. Piloter la rémunération, les provisions pour congés, les BSPCE, et l&apos;impact du recrutement sur le runway devient un travail à part entière. Un DAF externalisé prend en charge ce suivi et alerte le fondateur dès que le budget de recrutement dépasse les limites du plan.
-      </p>
+      <h3>Déclencheur 3 : les revenus récurrents se complexifient</h3>
+      <p>{"Reconnaissance des revenus, créances, coûts variables et suivi du burn peuvent exiger un pilotage renforcé. Le montant de MRR ne suffit pas à fixer un seuil de recrutement."}</p>
+      <h3>{"Déclencheur 4 : les recrutements mobilisent le budget"}</h3>
+      <p>{"Reliez le plan de recrutement à la trésorerie, aux engagements de rémunération et aux scénarios d’activité. Le besoin de suivi dépend de l’organisation, pas d’un nombre universel de salariés."}</p>
 
       <h3>Déclencheur 5 : l&apos;internationalisation</h3>
       <p>
@@ -151,125 +145,16 @@ export default function DafExternaliseStartupPage() {
         Une startup en croissance rapide accumule des erreurs comptables si ses processus ne sont pas structurés dès le départ : facturation clients non suivie, provisions manquantes, interco mal traitées. Le DAF externalisé met en place un plan comptable adapté, coordonne le cabinet expert-comptable, et supervise les clôtures mensuelles pour que les chiffres soient fiables et disponibles rapidement.
       </p>
 
-      <Callout type="warning" title="Chiffre clé">
-        Le DAF externalisé prépare votre due diligence — sans lui, 60 % des dossiers de levée de fonds arrivent avec des irrégularités comptables qui allongent le closing ou le font échouer.
-      </Callout>
+      <p>{"Le DAF contribue à préparer les pièces financières et à identifier les écarts avant la due diligence. Aucun taux de dossiers irréguliers ou de réussite de levée n’est établi ici."}</p>
 
       <MidArticleSoftCTA locale="fr" />
 
       <h2 id="cout-startup">4. Coût d&apos;un DAF externalisé pour une startup</h2>
 
-      <p>
-        Le coût dépend essentiellement du temps passé, lui-même fonction de la complexité et du stade de la startup. Pour une startup de 500 k€ à 3 M€ de CA, le rythme standard est de 1 à 2 jours par semaine. Voici les fourchettes observées en 2026 :
-      </p>
-
-      <ProseTable>
-        <thead>
-          <tr>
-            <th>Stade / CA</th>
-            <th>Rythme DAF</th>
-            <th>Coût mensuel</th>
-            <th>Coût annuel</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Amorçage (&lt; 500 k€ CA)</td>
-            <td>0,5 j/sem</td>
-            <td>800 – 1 200 €</td>
-            <td>10 000 – 14 000 €</td>
-          </tr>
-          <tr>
-            <td>Early-stage (500 k€ – 2 M€ CA)</td>
-            <td>1 j/sem</td>
-            <td>1 500 – 2 500 €</td>
-            <td>18 000 – 30 000 €</td>
-          </tr>
-          <tr>
-            <td>Growth (2 M€ – 5 M€ CA)</td>
-            <td>2 j/sem</td>
-            <td>2 500 – 3 500 €</td>
-            <td>30 000 – 42 000 €</td>
-          </tr>
-          <tr>
-            <td>Scale-up (5 M€ – 10 M€ CA)</td>
-            <td>3 j/sem</td>
-            <td>3 500 – 5 000 €</td>
-            <td>42 000 – 60 000 €</td>
-          </tr>
-          <tr>
-            <td>Période de levée de fonds</td>
-            <td>3-4 j/sem (temporaire)</td>
-            <td>4 000 – 6 000 €</td>
-            <td>Facturation mission</td>
-          </tr>
-        </tbody>
-      </ProseTable>
-
-      <p>
-        Ces tarifs correspondent à des DAFs avec 10 à 20 ans d&apos;expérience, ayant déjà piloté des levées de fonds ou des exits. Le coût peut varier selon la complexité fiscale (multi-entités, international), la qualité de la comptabilité existante, et les outils en place.
-      </p>
-
-      <h2 id="vs-cfo-interne">5. DAF externalisé vs CFO interne : la comparaison qui compte</h2>
-
-      <p>
-        La question revient systématiquement dans les startups qui dépassent 2 M€ de CA : est-ce que je dois recruter un CFO interne ? La réponse dépend du stade, mais les chiffres sont sans appel avant 5 à 10 M€ de CA.
-      </p>
-
-      <ProseTable>
-        <thead>
-          <tr>
-            <th>Critère</th>
-            <th>DAF externalisé</th>
-            <th>CFO interne</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Coût mensuel (charges incluses)</strong></td>
-            <td>2 000 – 4 000 €</td>
-            <td>8 000 – 14 000 €</td>
-          </tr>
-          <tr>
-            <td><strong>Délai de démarrage</strong></td>
-            <td>2 – 4 semaines</td>
-            <td>2 – 4 mois (recrutement)</td>
-          </tr>
-          <tr>
-            <td><strong>Séniorité garantie</strong></td>
-            <td>10 – 20 ans d&apos;expérience</td>
-            <td>Variable selon budget</td>
-          </tr>
-          <tr>
-            <td><strong>Flexibilité du temps</strong></td>
-            <td>Ajustable mois par mois</td>
-            <td>Fixe (temps plein)</td>
-          </tr>
-          <tr>
-            <td><strong>Risque de départ</strong></td>
-            <td>Zéro (remplacé par le cabinet)</td>
-            <td>Élevé (marché tendu)</td>
-          </tr>
-          <tr>
-            <td><strong>Réseau investisseurs</strong></td>
-            <td>Fort (multi-clients)</td>
-            <td>Dépend du profil recruté</td>
-          </tr>
-          <tr>
-            <td><strong>Pertinence dès</strong></td>
-            <td>Dès la première levée</td>
-            <td>À partir de 5 – 10 M€ CA</td>
-          </tr>
-        </tbody>
-      </ProseTable>
-
-      <p>
-        Pour une startup de 2 M€ de CA, le différentiel de coût entre les deux options est de 6 000 à 10 000 € par mois — soit 72 000 à 120 000 € par an. À ce stade, cette somme représente souvent 2 à 3 recrutements commerciaux ou techniques supplémentaires, qui ont un impact direct sur la croissance. Le DAF externalisé permet de garder ce budget là où il crée de la valeur.
-      </p>
-
-      <Callout type="info" title="Règle empirique">
-        Le passage au CFO interne se justifie généralement quand vous avez besoin d&apos;une présence quotidienne (plus de 4 jours par semaine) de manière structurelle — ce qui correspond typiquement à 5 – 10 M€ de CA avec une équipe finance d&apos;au moins 2 personnes à superviser.
-      </Callout>
+      <p>{"Le devis dépend du périmètre, du profil, de la complexité des données et de la disponibilité convenue. Les fourchettes Iter sont indicatives et ne correspondent pas à un tarif automatique selon le chiffre d’affaires ou le stade de levée."}</p>
+      <p><Link href="/daf-externalise/tarifs">{"Consulter les fourchettes de tarifs et leur périmètre"}</Link></p>
+      <h2 id="vs-cfo-interne">{"5. DAF externalisé ou CFO interne : comparer le besoin"}</h2>
+      <p>{"Le recrutement interne peut répondre à une présence quotidienne durable et au management de la fonction finance. Une mission à temps partagé couvre un périmètre convenu et des échanges réguliers. Comparez le coût employeur du recrutement réel aux honoraires de la proposition, avec les mêmes besoins de comptabilité, logiciels et support."}</p>
 
       <h2 id="choisir">6. Comment choisir son DAF externalisé quand on est une startup ?</h2>
 

@@ -429,7 +429,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
     "arr-mrr": {
       meta: {
         title: "ARR & MRR — Définitions et Calcul pour SaaS | Iter Advisors",
-        description: "ARR (Annual Recurring Revenue) et MRR (Monthly Recurring Revenue) : les métriques de référence du SaaS. Calcul, benchmarks, seuils de levée.",
+        description: "ARR et MRR : définitions, formules, exemples et limites pour lire la croissance SaaS et préparer un financement.",
       },
       h1: "ARR & MRR — Définitions et Calcul pour SaaS",
       sections: [
@@ -459,20 +459,17 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
           heading: "Pourquoi c'est important",
           content: [
             "**Prédictibilité.** Le revenu récurrent est prévisible. L’ARR annualise le revenu récurrent courant ; ce n’est pas une garantie de chiffre d’affaires futur. Résiliations, variations de prix et nouveaux contrats modifient cette trajectoire.",
-            "**Base de valorisation.** SaaS en croissance > 100% : valorisation 10-20x ARR. SaaS mature : 5-8x.",
+            "**Valorisation.** Aucun multiple d’ARR universel : croissance, marge, rétention, qualité des revenus et conditions de marché doivent être documentées avec des comparables datés.",
             "**Mesure de la traction.** MRR qui croît 10%/mois = doubling time de 7 mois.",
             "**Pilotage opérationnel.** La décomposition du MRR permet d'identifier les leviers de croissance.",
           ],
         },
         {
-          heading: "Benchmarks et seuils ARR par levée",
+          heading: "Préparer un financement sans seuil universel de MRR",
           content: [
-            "**Pre-seed** : prototype, pas encore de MRR significatif.",
-            "**Seed** : 10-50K€ MRR (120-600K€ ARR).",
-            "**Series A** : 50-200K€ MRR (600K€-2,4M€ ARR).",
-            "**Series B** : 200-500K€ MRR (2,4-6M€ ARR).",
-            "**Series C+** : > 500K€ MRR (> 6M€ ARR).",
-            "**Croissance ARR YoY** : > 100% early, 50-100% growth, 30-50% scale-up.",
+            "Présentez le revenu récurrent, son évolution et ses sources, avec une définition stable du MRR.",
+            "Reliez la traction à la rétention, aux marges, au runway et au besoin de financement.",
+            "Les attentes des investisseurs dépendent du modèle, du marché, de la géographie et de la période. Aucun montant de MRR ne garantit un tour de financement.",
           ],
         },
         {
@@ -491,7 +488,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
             "**ARR vs CA ?** Le CA inclut toutes les sources. L'ARR ne compte que le revenu récurrent d'abonnement.",
             "**Comment passer de MRR à ARR ?** ARR = MRR × 12.",
             "**Le MRR inclut-il les services pro ?** Non, uniquement le revenu récurrent d'abonnement.",
-            "**Quel est un bon taux de croissance MRR ?** Pour une SaaS B2B early stage, 10-15%/mois est excellent.",
+            "**Quel est un bon taux de croissance MRR ?** Analysez la tendance par cohorte, avec la rétention, la marge et la consommation de trésorerie. Un taux isolé ne suffit pas à qualifier la performance.",
           ],
         },
       ],

@@ -8,7 +8,6 @@ import { InlineCta, ProseTable } from '@/components/blog';
 
 import { getDafOffer } from '@/lib/content/daf-offer';
 import { SALARIED_DAF_GUIDE } from '@/lib/content/decision-guide-meta';
-import { COUT_DAF_SALARIE } from '@/lib/content/facts';
 const offer = getDafOffer('fr');
 
 export const metadata: Metadata = {
@@ -98,14 +97,14 @@ export default function DafExternaliseVsSalariePage() {
       <ProseTable>
         <thead><tr><th>Base</th><th>DAF salarié</th><th>DAF externalisé Iter</th></tr></thead>
         <tbody>
-          <tr><td>Budget annuel de référence</td><td>{offer.salary} € de coût employeur chargé</td><td>{offer.annualPrice} € HT pour douze mois</td></tr>
+          <tr><td>Budget annuel à comparer</td><td>{offer.salary}</td><td>{offer.annualPrice} € HT pour douze mois</td></tr>
           <tr><td>Prix mensuel</td><td>Selon le contrat de travail</td><td>{offer.price}</td></tr>
           <tr><td>Disponibilité</td><td>Présence quotidienne selon le contrat</td><td>Périmètre convenu, {offer.volume} par mois en moyenne observée</td></tr>
           <tr><td>Comptabilité et logiciels</td><td>À budgéter selon l’organisation</td><td>À budgéter selon l’organisation</td></tr>
         </tbody>
       </ProseTable>
-      <p>La référence salariale est le coût employeur complet d’un profil de séniorité équivalente, avec une médiane de {COUT_DAF_SALARIE.median.toLocaleString('fr-FR')} € par an. Cette base interne de comparaison ne constitue pas un devis de recrutement. Le budget externalisé correspond aux formules Iter annualisées, hors missions ponctuelles.</p>
-      <p>La comparaison ne suppose pas une disponibilité identique : une mission à temps partagé ne remplace pas automatiquement un poste à plein temps. Au bas de la référence salariale, l’écart avec une formule Premium peut être limité. Ajoutez dans les deux scénarios les mêmes besoins de comptabilité, logiciels et support, puis comparez les livrables.</p>
+      <p>{"Le coût employeur doit être établi pour le recrutement envisagé : salaire brut, cotisations patronales, variable et avantages documentés. Il ne s’agit pas d’une étude salariale. Le budget externalisé correspond aux fourchettes Iter annualisées, hors missions ponctuelles."}</p>
+      <p>{"Une mission à temps partagé ne remplace pas automatiquement un poste à plein temps. Ajoutez les mêmes besoins de comptabilité, logiciels et support dans les deux scénarios, puis comparez les livrables et la disponibilité."}</p>
       <p>{offer.billing} Retrouvez les inclusions et les exclusions dans la <Link href="/daf-externalise/tarifs">grille des tarifs du DAF externalisé</Link>.</p>
       <h2 id="daf-salarie">3. Quand recruter un DAF salarié ?</h2>
       <p>Le recrutement répond à un besoin de direction financière continue : management d’une équipe importante, décisions quotidiennes, coordination opérationnelle ou gouvernance exigeant un interlocuteur permanent. Un salarié construit sa connaissance de l’entreprise dans la durée.</p>

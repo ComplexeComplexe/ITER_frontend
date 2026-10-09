@@ -268,7 +268,7 @@ const content: Record<
       items: [
         {
           q: "Combien coûte un DAF externalisé ?",
-          a: "Une mission récurrente se situe dans une fourchette indicative de 3 000 à 8 000 € HT par mois, selon le périmètre et le profil. Le retainer couvre un scope défini au cadrage, pas un nombre d'heures. Un premier diagnostic gratuit permet de préciser le périmètre et le budget. Face au coût employeur d'un directeur financier salarié, l'économie va de 30 à 60 %.",
+          a: "Une mission récurrente se situe dans une fourchette indicative de 3 000 à 8 000 € HT par mois, selon le périmètre et le profil. Le retainer couvre un scope défini au cadrage, pas un nombre d'heures. Un premier diagnostic gratuit permet de préciser le périmètre et le budget. Comparez les honoraires au coût employeur du recrutement envisagé, selon le périmètre et la disponibilité.",
         },
         {
           q: "Quel est l'engagement minimum ?",

@@ -13,7 +13,7 @@ import { getContactPath } from "@/lib/navigation";
 import { getDafContent, type FaqRichAnswer, type LongTailQA, type SourceCitation } from "@/lib/content/daf";
 import { faqPageSchema, speakableSchema } from "@/lib/schemas";
 import { dafClusterHref } from "@/lib/path-localization";
-import { COUT_DAF_SALARIE, FORMULES } from "@/lib/content/facts";
+import { FORMULES } from "@/lib/content/facts";
 import { renderInlineMarkdownLinks } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -738,11 +738,7 @@ export default function DafPage({
                 {FORMULES[0].prixMin.toLocaleString("fr-FR")} et{" "}
                 {FORMULES[FORMULES.length - 1].prixMax.toLocaleString("fr-FR")} € HT/mois
               </strong>{" "}
-              selon la formule et le périmètre confié, en retainer mensuel. À titre de comparaison,
-              un directeur financier salarié de séniorité équivalente représente un{" "}
-              {COUT_DAF_SALARIE.base} de{" "}
-              {COUT_DAF_SALARIE.min.toLocaleString("fr-FR")} à{" "}
-              {COUT_DAF_SALARIE.max.toLocaleString("fr-FR")} € par an.
+              selon la formule et le périmètre confié, en retainer mensuel. Comparez le budget de recrutement et les honoraires selon la séniorité, le périmètre et la disponibilité réellement nécessaires.
             </p>
           )}
           {t.pricing.content.map((p, i) => (

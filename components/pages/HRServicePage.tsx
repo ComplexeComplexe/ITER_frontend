@@ -12,6 +12,7 @@ import { faqPageSchema } from "@/lib/schemas";
 import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
 import PageByline from "@/components/PageByline";
 import PageLayout from "@/components/PageLayout";
+import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 
 /**
  * Dedicated HR service page renderer (TICKET 1).
@@ -37,6 +38,7 @@ export default function HRServicePage({
   const ui = hrServiceInterface(locale);
   const href = (source: string) => parityHref(source, locale);
   const path = href(`/services/${content.slug}`);
+  const modified = PAGE_REVISIONS[path] ?? "2026-10-05";
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -46,7 +48,9 @@ export default function HRServicePage({
     description: content.meta.description,
     provider: { "@id": "https://www.iteradvisors.com/#organization" },
     url: `https://www.iteradvisors.com${path}`,
-    serviceType: ui.cluster,
+    serviceType: content.slug === "gestion-paie-charges-sociales"
+      ? { fr: "Coordination et contrôle de la paie", en: "Payroll coordination and checks", es: "Coordinación y control de nóminas" }[locale]
+      : ui.cluster,
   };
   const siblings = HR_SERVICE_SLUGS.filter((s) => s !== content.slug).map((s) => getLocalizedHRService(s, locale));
 
@@ -55,7 +59,7 @@ export default function HRServicePage({
       <ServiceHero locale={locale} family="rh" title={content.h1} label={content.breadcrumb} eyebrow={ui.eyebrow} lead={content.intro[0]} intro={content.intro[1]}
         primary={{ href: href(`/contact#${content.slug}`), label: ui.primary }} secondary={{ href: "#methode", label: ui.method }}
         summary={[{ label: ui.need, value: content.breadcrumb }, { label: ui.work, value: ui.scope }, { label: ui.budget, value: ui.quote }]}
-        proof={<PageByline locale={locale} author={ITER_AUTHOR} dateModified={"2026-10-05"} className="mt-4" />}
+        proof={<PageByline locale={locale} author={ITER_AUTHOR} dateModified={modified} className="mt-4" />}
         navigation={[{ id: "perimetre", label: ui.perimeter }, { id: "methode", label: ui.navMethod }, { id: "budget", label: ui.budget }]} />
 
       <HrCatalogue locale={locale} service={content.slug} />
@@ -265,7 +269,7 @@ export default function HRServicePage({
               description: content.meta.description,
               locale,
               author: ITER_AUTHOR,
-              dateModified: "2026-10-05",
+              dateModified: modified,
             }), mainEntity: { "@id": `https://www.iteradvisors.com${path}#service` } }
           ),
         }}

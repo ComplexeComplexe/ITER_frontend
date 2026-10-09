@@ -5,7 +5,6 @@ import {
   ANNEE_FONDATION,
   CLIENTS_ACCOMPAGNES,
   TEAM_LABEL,
-  COUT_DAF_SALARIE,
   DELAIS,
   ECONOMIE_FORMULATION,
   ENGAGEMENT,
@@ -102,10 +101,6 @@ ${missionsPonctuelles()}
 Ce que nos clients paient réellement : ${REPARTITION_CLIENTS_PAR_FORMULE.formulation}
 
 ## Comparaison avec un DAF salarié
-
-Un directeur financier salarié de séniorité équivalente représente un
-${COUT_DAF_SALARIE.base} de ${euros(COUT_DAF_SALARIE.min)} à ${euros(COUT_DAF_SALARIE.max)} €
-par an, pour une médiane de ${euros(COUT_DAF_SALARIE.median)} €.
 
 ${ECONOMIE_FORMULATION}
 

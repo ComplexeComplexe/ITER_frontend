@@ -105,10 +105,10 @@
   "gestion-paie-charges-sociales": {
     "slug": "gestion-paie-charges-sociales",
     "meta": {
-      "title": "Payroll coordination | Iter Advisors",
+      "title": "Payroll coordination and checks | Iter Advisors",
       "description": "Clarify who collects, produces, checks and approves payroll. Agree the scope, method and responsibilities with your team."
     },
-    "h1": "Payroll management: organise roles and checks",
+    "h1": "Payroll coordination: organise roles and checks",
     "breadcrumb": "Payroll and coordination",
     "intro": [
       "Payroll relies on reliable information flows between employees, managers, personnel administration, the payroll provider and the finance team.",
