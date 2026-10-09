@@ -39,7 +39,7 @@ await Promise.all(Array.from({ length: 4 }, async () => {
       }
       if (toolSlugs.some(slug => path === `/ressources/outils/${slug}`)) {
         const articles = schemas.filter(schema => schema['@type'] === 'Article' && schema.about?.['@type'] === 'SoftwareApplication');
-        if (articles.length !== 1 || !articles[0]?.author?.url) failures.push({ path, test: 'software-guide-authorship' });
+        if (articles.length !== 1 || !/^https:\/\/www\.iteradvisors\.com\/a-propos\/[^/#]+#person$/.test(articles[0]?.author?.['@id'] ?? '')) failures.push({ path, test: 'software-guide-authorship' });
         if (schemas.some(schema => schema['@type'] === 'Review' || schema.reviewRating || schema.aggregateRating)) failures.push({ path, test: 'undocumented-rating' });
         if (articles[0] && !html.includes(`datetime="${articles[0].dateModified}"`) && !html.includes(`dateTime="${articles[0].dateModified}"`)) failures.push({ path, test: 'visible-update-date' });
         if (schemas.some(schema => schema.totalTime && !schema.totalTime.startsWith('P'))) failures.push({ path, test: 'duration-format' });
