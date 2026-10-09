@@ -818,184 +818,101 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     "tableau-de-bord-financier-startup-12-kpis": {
       meta: {
         title: "Dashboard financier startup : 12 KPIs CFO | Iter Advisors",
-        description: "12 KPIs financiers essentiels pour startups : croissance, acquisition, trésorerie, rentabilité. Formules, benchmarks et tableau de bord par nos CFOs.",
+        description: "12 KPIs financiers pour startups : formules, limites et décisions à préparer. Construire des alertes adaptées à votre modèle et à vos données.",
       },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
       h1: "Tableau de bord financier startup : les 12 KPIs que tout CFO doit suivre",
       publishedDate: "2026-05-13",
+      updatedDate: "2026-10-09",
       author: "Sébastien Doat",
       category: "Gestion financière",
       htmlContent: `<p>Un tableau de bord financier efficace ne se mesure pas au nombre d'indicateurs qu'il contient, mais à la pertinence de ceux-ci. Un excès de métriques noie l'information ; un déficit masque les signaux d'alerte.</p>
-<p>Ce guide présente 12 KPIs (Key Performance Indicators) structurés en 4 catégories, avec pour chacun : la formule de calcul, le benchmark sectoriel, et la fréquence de suivi recommandée. Ces indicateurs sont applicables à l'ensemble des startups SaaS et PME digitales en phase de croissance — et constituent le socle du pilotage d'un <a href="/fractional-cfo-startups">fractional CFO startup</a> chez Iter Advisors.</p>
+<p>Ces 12 indicateurs sont une base de travail pour les modèles d’abonnement. Choisissez ceux qui éclairent vos décisions ; les alertes dépendent de votre historique, de vos marges, du cycle commercial et du financement. Aucun seuil de levée ni benchmark sectoriel non sourcé n’est présenté ici.</p>
 <h2 id="categorie-1-croissance">Catégorie 1 — Croissance (3 KPIs)</h2>
 <h3>KPI 1 — MRR (Monthly Recurring Revenue)</h3>
 <p>Le MRR est le revenu récurrent mensuel. Il constitue la métrique fondamentale de toute entreprise en modèle d'abonnement.</p>
 <p><strong>Formule :</strong> MRR = Σ (prix de chaque abonnement actif / période en mois)</p>
 <p><strong>Exemple :</strong> un client payant 12 000 € par an contribue 1 000 € au MRR. Un client payant 500 € par mois contribue 500 €.</p>
-<table>
-<thead><tr><th>Phase</th><th>MRR cible</th></tr></thead>
-<tbody>
-<tr><td>Pre-seed</td><td>1 000 € – 5 000 €</td></tr>
-<tr><td>Seed</td><td>5 000 € – 50 000 €</td></tr>
-<tr><td>Series A</td><td>50 000 € – 200 000 €</td></tr>
-<tr><td>Series B</td><td>200 000 € – 500 000 €</td></tr>
-</tbody>
-</table>
+<p>Analysez le MRR par cohorte et rapprochez-le des contrats actifs. Aucun seuil de MRR ne garantit une levée.</p>
 <p><strong>Fréquence de suivi :</strong> hebdomadaire (minimum mensuelle).</p>
 <h3>KPI 2 — Net New MRR</h3>
 <p>Le Net New MRR mesure la croissance réelle du revenu récurrent en intégrant les pertes.</p>
 <p><strong>Formule :</strong> Net New MRR = New MRR + Expansion MRR − Contraction MRR − Churned MRR</p>
 <p><strong>Seuils de vigilance :</strong></p>
 <ul>
-<li>Net New MRR positif sur 3 mois consécutifs : croissance saine</li>
-<li>Net New MRR négatif : alerte immédiate (churn supérieur aux acquisitions)</li>
+<li>Analyser la tendance du Net New MRR et ses composantes</li>
+<li>Net New MRR négatif : contraction après acquisitions, expansion et pertes</li>
 </ul>
 <p><strong>Fréquence de suivi :</strong> mensuelle.</p>
 <h3>KPI 3 — Taux de croissance MRR mensuel</h3>
 <p><strong>Formule :</strong> (MRR mois N − MRR mois N-1) / MRR mois N-1 × 100</p>
-<table>
-<thead><tr><th>Taux</th><th>Évaluation</th></tr></thead>
-<tbody>
-<tr><td>&gt; 15 %/mois</td><td>Excellente (<em>doubling time</em> &lt; 5 mois)</td></tr>
-<tr><td>10 % – 15 %</td><td>Très bonne</td></tr>
-<tr><td>5 % – 10 %</td><td>Bonne</td></tr>
-<tr><td>2 % – 5 %</td><td>Modérée</td></tr>
-<tr><td>&lt; 2 %</td><td>Alertante</td></tr>
-</tbody>
-</table>
+<p>Interprétez la croissance avec la base de départ, la rétention et le coût d’acquisition.</p>
 <p><strong>Fréquence de suivi :</strong> mensuelle.</p>
 <h2 id="categorie-2-acquisition">Catégorie 2 — Acquisition et rétention (3 KPIs)</h2>
 <h3>KPI 4 — CAC (Customer Acquisition Cost)</h3>
 <p>Le CAC mesure le coût total pour acquérir un nouveau client.</p>
 <p><strong>Formule :</strong> CAC = (dépenses marketing + dépenses commerciales SDR/AE) / nombre de nouveaux clients</p>
-<table>
-<thead><tr><th>ARPU mensuel</th><th>CAC cible</th></tr></thead>
-<tbody>
-<tr><td>&lt; 100 €</td><td>&lt; 500 €</td></tr>
-<tr><td>100 € – 500 €</td><td>1 000 € – 3 000 €</td></tr>
-<tr><td>500 € – 2 000 €</td><td>3 000 € – 8 000 €</td></tr>
-<tr><td>&gt; 2 000 €</td><td>8 000 € – 20 000 €</td></tr>
-</tbody>
-</table>
+<p>Comparez les cohortes et les canaux sur un périmètre de coûts identique, avec leur marge et leur délai de récupération.</p>
 <p><strong>Fréquence de suivi :</strong> mensuelle, par canal d'acquisition.</p>
 <h3>KPI 5 — LTV/CAC</h3>
 <p>Le ratio LTV/CAC mesure le retour sur investissement de l'acquisition client.</p>
 <p><strong>Formule :</strong> LTV/CAC = (ARPU × marge brute %) / (churn mensuel × CAC)</p>
-<table>
-<thead><tr><th>Ratio</th><th>Évaluation</th></tr></thead>
-<tbody>
-<tr><td>&gt; 5</td><td>Excellent</td></tr>
-<tr><td>3 – 5</td><td>Sain (standard du marché)</td></tr>
-<tr><td>1 – 3</td><td>Fragile</td></tr>
-<tr><td>&lt; 1</td><td>Non viable</td></tr>
-</tbody>
-</table>
+<p>La LTV dépend des hypothèses de churn et de marge ; testez leur stabilité avant de fixer une alerte.</p>
 <p><strong>Fréquence de suivi :</strong> trimestrielle.</p>
 <h3>KPI 6 — NRR (Net Revenue Retention)</h3>
 <p>Le NRR mesure le pourcentage de revenus conservés d'une cohorte de clients, en incluant l'expansion (<em>upsell</em>/<em>cross-sell</em>).</p>
 <p><strong>Formule :</strong> NRR = (MRR début période + Expansion − Contraction − Churn) / MRR début période × 100</p>
-<table>
-<thead><tr><th>NRR</th><th>Évaluation</th></tr></thead>
-<tbody>
-<tr><td>&gt; 120 %</td><td>Excellent (croissance organique)</td></tr>
-<tr><td>110 % – 120 %</td><td>Très bon</td></tr>
-<tr><td>100 % – 110 %</td><td>Correct</td></tr>
-<tr><td>&lt; 100 %</td><td>Alertant (churn non compensé)</td></tr>
-</tbody>
-</table>
+<p>Un NRR inférieur à 100 % traduit une contraction de la cohorte ; l’analyse doit distinguer résiliations, baisse d’usage et expansion.</p>
 <p><strong>Fréquence de suivi :</strong> mensuelle.</p>
 <h2 id="categorie-3-tresorerie">Catégorie 3 — Trésorerie (3 KPIs)</h2>
 <h3>KPI 7 — Burn rate net</h3>
 <p>Le burn rate net mesure la consommation mensuelle de trésorerie.</p>
 <p><strong>Formule :</strong> Burn rate = dépenses mensuelles totales − revenus mensuels encaissés</p>
-<table>
-<thead><tr><th>Runway</th><th>Zone</th><th>Action</th></tr></thead>
-<tbody>
-<tr><td>&gt; 18 mois</td><td>Verte</td><td>Croissance prioritaire</td></tr>
-<tr><td>12 – 18 mois</td><td>Jaune</td><td>Préparer la prochaine levée</td></tr>
-<tr><td>6 – 12 mois</td><td>Orange</td><td>Activer la levée ou réduire les coûts</td></tr>
-<tr><td>&lt; 6 mois</td><td>Rouge</td><td>Plan d'urgence</td></tr>
-</tbody>
-</table>
+<p>Construisez les alertes de cash à partir des échéances et des scénarios de financement, avec une marge de sécurité convenue.</p>
 <p><strong>Fréquence de suivi :</strong> hebdomadaire.</p>
 <h3>KPI 8 — Runway</h3>
 <p><strong>Formule :</strong> Runway (mois) = trésorerie disponible / burn rate net</p>
-<p><strong>Règle du venture capital :</strong> lever des fonds quand le runway est de 12 à 18 mois. Jamais en dessous de 9 mois — le délai de négociation avec les VC étant de 3 à 6 mois en moyenne.</p>
+<p>Préparez le financement selon le calendrier des engagements et les scénarios de cash. Un ratio de runway suppose un burn stable et peut masquer des décaissements ponctuels.</p>
 <p><strong>Fréquence de suivi :</strong> hebdomadaire.</p>
 <h3>KPI 9 — BFR / CA</h3>
 <p>Le ratio BFR / CA mesure le besoin en fonds de roulement rapporté au chiffre d'affaires.</p>
 <p><strong>Formule :</strong> BFR / CA = (Stocks + Créances clients − Dettes fournisseurs) / CA annuel × 100</p>
-<table>
-<thead><tr><th>Secteur</th><th>BFR/CA cible</th></tr></thead>
-<tbody>
-<tr><td>SaaS (abonnement)</td><td>-10 % à +5 %</td></tr>
-<tr><td>E-commerce D2C</td><td>10 % – 20 %</td></tr>
-<tr><td>Industrie</td><td>20 % – 30 %</td></tr>
-<tr><td>Services / Consulting</td><td>8 % – 15 %</td></tr>
-</tbody>
-</table>
+<p>Le BFR dépend du cycle de vente, des stocks et des délais de règlement. Fixez une alerte selon le besoin de cash de votre activité.</p>
 <p><strong>Fréquence de suivi :</strong> mensuelle.</p>
 <h2 id="categorie-4-rentabilite">Catégorie 4 — Rentabilité et efficacité (3 KPIs)</h2>
 <h3>KPI 10 — Marge brute</h3>
 <p><strong>Formule :</strong> Marge brute = (CA − Coût des ventes) / CA × 100</p>
-<table>
-<thead><tr><th>Marge brute</th><th>Évaluation</th></tr></thead>
-<tbody>
-<tr><td>&gt; 80 %</td><td>Excellente (SaaS pur)</td></tr>
-<tr><td>70 % – 80 %</td><td>Très bonne</td></tr>
-<tr><td>60 % – 70 %</td><td>Correcte (SaaS avec services)</td></tr>
-<tr><td>&lt; 60 %</td><td>À améliorer</td></tr>
-</tbody>
-</table>
+<p>Comparez la marge par produit, canal et cohorte avec des règles constantes de classement des coûts.</p>
 <p><strong>Fréquence de suivi :</strong> mensuelle.</p>
 <h3>KPI 11 — CAC Payback Period</h3>
 <p>Le CAC payback period mesure le délai pour récupérer l'investissement d'acquisition d'un client.</p>
 <p><strong>Formule :</strong> CAC Payback = CAC / (ARPU mensuel × marge brute %)</p>
-<table>
-<thead><tr><th>Délai</th><th>Évaluation</th></tr></thead>
-<tbody>
-<tr><td>&lt; 6 mois</td><td>Excellent</td></tr>
-<tr><td>6 – 12 mois</td><td>Très bon</td></tr>
-<tr><td>12 – 18 mois</td><td>Correct</td></tr>
-<tr><td>&gt; 18 mois</td><td>Trop long</td></tr>
-</tbody>
-</table>
+<p>Définissez le délai de récupération acceptable selon la marge, la rétention et la trésorerie disponible.</p>
 <p><strong>Fréquence de suivi :</strong> trimestrielle.</p>
 <h3>KPI 12 — Rule of 40</h3>
 <p>La Rule of 40 additionne le taux de croissance et la marge EBITDA. Elle évalue l'équilibre croissance / rentabilité.</p>
 <p><strong>Formule :</strong> Rule of 40 = Taux de croissance annuel du CA (%) + Marge EBITDA (%)</p>
-<table>
-<thead><tr><th>Score</th><th>Évaluation</th></tr></thead>
-<tbody>
-<tr><td>&gt; 40 %</td><td>Excellent (SaaS mature)</td></tr>
-<tr><td>20 % – 40 %</td><td>Bon</td></tr>
-<tr><td>&lt; 20 %</td><td>À améliorer</td></tr>
-</tbody>
-</table>
+<p>La Rule of 40 est un indicateur de lecture SaaS ; aucun score ne remplace l’analyse du cash, du stade de développement et de la qualité des revenus.</p>
 <p><strong>Fréquence de suivi :</strong> trimestrielle.</p>
 <h2 id="recapitulatif">Tableau récapitulatif</h2>
 <table>
-<thead><tr><th>KPI</th><th>Formule</th><th>Fréquence</th><th>Seuil d'alerte</th></tr></thead>
+<thead><tr><th>KPI</th><th>Formule</th><th>Fréquence</th></tr></thead>
 <tbody>
-<tr><td>MRR</td><td>Σ (prix abonnements / 12)</td><td>Hebdo.</td><td>Stagnation 2 mois</td></tr>
-<tr><td>Net New MRR</td><td>New + Expansion − Churn</td><td>Mens.</td><td>Négatif</td></tr>
-<tr><td>Croissance MRR</td><td>(N − N-1) / N-1</td><td>Mens.</td><td>&lt; 5 %</td></tr>
-<tr><td>CAC</td><td>(Marketing + Sales) / Nouveaux</td><td>Mens.</td><td>Hausse &gt; 20 %</td></tr>
-<tr><td>LTV/CAC</td><td>LTV / CAC</td><td>Trim.</td><td>&lt; 3</td></tr>
-<tr><td>NRR</td><td>(Début + Exp − Churn) / Début</td><td>Mens.</td><td>&lt; 100 %</td></tr>
-<tr><td>Burn rate</td><td>Dépenses − Revenus</td><td>Hebdo.</td><td>Runway &lt; 9 mois</td></tr>
-<tr><td>Runway</td><td>Trésorerie / Burn</td><td>Hebdo.</td><td>&lt; 12 mois</td></tr>
-<tr><td>BFR/CA</td><td>BFR / CA annuel</td><td>Mens.</td><td>&gt; 25 %</td></tr>
-<tr><td>Marge brute</td><td>(CA − COGS) / CA</td><td>Mens.</td><td>&lt; 60 %</td></tr>
-<tr><td>CAC Payback</td><td>CAC / (ARPU × marge)</td><td>Trim.</td><td>&gt; 18 mois</td></tr>
-<tr><td>Rule of 40</td><td>Croissance + Marge EBITDA</td><td>Trim.</td><td>&lt; 20 %</td></tr>
+<tr><td>MRR</td><td>Σ (prix abonnements / période en mois)</td><td>Hebdo.</td></tr>
+<tr><td>Net New MRR</td><td>New + Expansion − Contraction − Churn</td><td>Mens.</td></tr>
+<tr><td>Croissance MRR</td><td>(N − N-1) / N-1</td><td>Mens.</td></tr>
+<tr><td>CAC</td><td>(Marketing + Sales) / Nouveaux</td><td>Mens.</td></tr>
+<tr><td>LTV/CAC</td><td>LTV / CAC</td><td>Trim.</td></tr>
+<tr><td>NRR</td><td>(Début + Exp − Contraction − Churn) / Début</td><td>Mens.</td></tr>
+<tr><td>Burn rate</td><td>Dépenses − Revenus</td><td>Hebdo.</td></tr>
+<tr><td>Runway</td><td>Trésorerie / Burn</td><td>Hebdo.</td></tr>
+<tr><td>BFR/CA</td><td>BFR / CA annuel</td><td>Mens.</td></tr>
+<tr><td>Marge brute</td><td>(CA − COGS) / CA</td><td>Mens.</td></tr>
+<tr><td>CAC Payback</td><td>CAC / (ARPU × marge)</td><td>Trim.</td></tr>
+<tr><td>Rule of 40</td><td>Croissance + Marge EBITDA</td><td>Trim.</td></tr>
 </tbody>
 </table>
-<div class="callout-cfo">
-<p class="callout-cfo__title">Le regard du CFO</p>
-<p>« Les fondateurs que j'accompagne veulent souvent 25 KPIs dès le départ. Je leur impose d'en commencer par 5. Le MRR, le burn rate, le runway, le CAC, et le churn. Quand ces 5 sont maîtrisés, on ajoute les 7 autres. Un tableau de bord non lu est un tableau de bord inutile — aussi beau soit-il. »</p>
-<span class="callout-cfo__author">Benjamin Ziza — Associé fondateur, Iter Advisors</span>
-</div>
+<p>Commencez avec un petit nombre d’indicateurs liés aux décisions de votre équipe. Ajoutez-en lorsque les définitions, les sources et la fréquence de revue sont maîtrisées.</p>
 <h2 id="construire-premier-tableau">Section — Comment construire son premier tableau de bord</h2>
 <h3>Outils recommandés</h3>
 <table>
@@ -1018,7 +935,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 </tbody>
 </table>
 <h2 id="faq">FAQ</h2>
-<p><strong>Q : Par quels KPIs doit-on commencer ?</strong><br>R : MRR, burn rate, runway, CAC, et churn. Ces 5 indicateurs couvrent 80 % des besoins de pilotage d'une startup en Series A.</p>
+<p><strong>Q : Par quels KPIs doit-on commencer ?</strong><br>R : MRR, burn rate, runway, CAC, et churn. Le choix dépend du modèle économique et des décisions à préparer.</p>
 <p><strong>Q : À quelle fréquence faut-il les mettre à jour ?</strong><br>R : Le MRR, le burn rate, et le runway : hebdomadairement. Le CAC, le churn, et la marge brute : mensuellement. Le LTV/CAC, le NRR, et la Rule of 40 : trimestriellement.</p>
 <p><strong>Q : Quel outil pour créer un tableau de bord ?</strong><br>R : Google Sheets suffit pour démarrer. Finthesis ou Google Data Studio conviennent pour des dashboards plus sophistiqués.</p>
 <p><strong>Q : La Rule of 40 s'applique-t-elle à toutes les startups ?</strong><br>R : Non. Elle est principalement pertinente pour les SaaS B2B matures (Series B+). En phase seed, le focus doit être sur le MRR et le CAC.</p>
@@ -1545,8 +1462,8 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 
     "loi-beckham-economie-impot-simulation": {
       meta: {
-        title: "Loi Beckham : économie d'impôt et simulation",
-        description: "Taux fixe de 24 % vs barème progressif jusqu'à 47 % : simulation chiffrée de l'économie d'impôt avec le régime Beckham, par niveau de salaire.",
+        title: "Loi Beckham : méthode de simulation de l’impôt",
+        description: "Comparez Beckham et IRPF ordinaire : données à réunir, assiette, région, situation familiale et exemple fictif du calcul au taux légal.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -1554,7 +1471,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogLabel: "Blog",
         blogHref: "/ressources/blog",
       },
-      h1: "Loi Beckham : le calcul de l'économie d'impôt, salaire par salaire",
+      h1: "Loi Beckham : comment préparer une simulation fiable",
       publishedDate: "2026-07-24",
       category: "Fiscalité Espagne",
       htmlContent: undefined,
@@ -1888,36 +1805,11 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogHref: "/en/ressources/blog",
       },
       h1: "Fractional CFO vs In-House CFO: Which Model Wins in 2026?",
-      updatedDate: "2026-09-13",
+      updatedDate: "2026-10-09",
       publishedDate: "2026-05-11",
       author: "Sébastien Doat",
       category: "Fractional CFO",
-      htmlContent: `<p>Your business is growing, the finance topics are getting harder, and you've realised your accountant and your CEO can no longer carry the load alone. You need a CFO. The question is: full-time hire, or <a href="/en/fractional-cfo">Fractional CFO</a>?</p>
-<p>This guide breaks down the trade-offs across cost, flexibility, expertise and ROI — and gives you a clear answer based on your stage.</p>
-<h2 id="cost">Cost: a 30-60% gap</h2>
-<p>A salaried CFO in France costs €100,000-€213,000/year all-in. A Fractional CFO costs EUR ${getDafOffer("en").annualPrice} excl. VAT/year for an equivalent senior profile. Read the detailed pricing in <a href="/en/ressources/blog/fractional-cfo-cost-services-2026">our 2026 cost guide</a>.</p>
-<p>The cost gap is not just salary — it's also:</p>
-<ul>
-<li><strong>No employer charges</strong> (42-45% of gross in France) — disappear entirely with a Fractional CFO.</li>
-<li><strong>No severance risk</strong> — if growth slows, a Fractional CFO engagement ends with 30 days notice under the agreed engagement terms; employment termination costs depend on the individual situation.</li>
-<li><strong>No recruitment friction</strong> — CFO searches take 4-6 months. A Fractional CFO is typically ready to start in ${getDafOffer("en").start}, subject to profile availability and scope.</li>
-</ul>
-<h2 id="flexibility">Flexibility &amp; speed</h2>
-<p>A salaried CFO is 5 days/week, every week. ${getDafOffer("en").billing} ${getDafOffer("en").commitment}</p>
-<p>This matters because CFO needs are cyclical. A Series A campaign needs 6-8 days/month of CFO bandwidth for 3 months. Once closed, 2-3 days/month is plenty. With a salaried CFO, you pay full-time for both peaks and troughs.</p>
-<h2 id="expertise">Expertise &amp; perspective</h2>
-<p>A salaried CFO knows your business deeply but lives in a single-company bubble. A fractional CFO brings experience from different assignments. Ask for relevant sector experience, examples of deliverables and the proposed availability.</p>
-<p>This translates into faster diagnosis (you've seen this pattern in 8 other startups), better tool choices (you know which ERP actually scales), and a richer network (you've worked with most VCs, banks and law firms in the region).</p>
-<h2 id="when">When to switch from Fractional to full-time</h2>
-<p>Three signals say you've outgrown the Fractional model:</p>
-<ol>
-<li><strong>50+ employees with a real finance team.</strong> The complexity now warrants 5-day-a-week leadership.</li>
-<li><strong>Multi-entity / international consolidation.</strong> Daily presence across multiple legal entities is hard part-time.</li>
-<li><strong>You've raised a Series B or beyond.</strong> Investors expect a full-time CFO in the C-suite seat.</li>
-</ol>
-<p>These signals warrant a review of the required availability rather than an automatic headcount threshold. If daily leadership is required, consider hiring — but a Fractional CFO can lead the search and onboard the successor.</p>
-<h2 id="cta">Need help deciding?</h2>
-<p>Every situation is different. <a href="/en/contact">Book a free 30-minute diagnostic</a> with one of our Fractional CFOs — we'll tell you straight whether you need us, or whether you're ready for a full-time hire.</p>`,
+      htmlContent: `<h2>Compare according to the actual need</h2><p>A part-time engagement and an in-house role do not provide the same availability. Compare employer cost for the planned hire with the proposed fees, according to seniority, scope and deliverables.</p><p>No universal savings percentage is established. Review Iter fee ranges and their scope.</p><p><a href="/en/fractional-cfo/pricing">Indicative Fractional CFO fee ranges</a></p>`,
       content: [],
     },
     "externalisation-comptable": {
@@ -2408,36 +2300,11 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogHref: "/es/recursos/blog",
       },
       h1: "CFO Externalizado vs CFO Interno: ¿Qué Modelo Gana en 2026?",
-      updatedDate: "2026-09-13",
+      updatedDate: "2026-10-09",
       publishedDate: "2026-05-11",
       author: "Sébastien Doat",
       category: "CFO externalizado",
-      htmlContent: `<p>Su negocio crece, los temas financieros se complican y se ha dado cuenta de que su contable y su CEO ya no pueden con todo. Necesita un CFO. La pregunta es: ¿fichaje a tiempo completo o <a href="/es/externalizacion-daf">CFO externalizado</a>?</p>
-<p>Esta guía desglosa los compromisos en coste, flexibilidad, expertise y ROI — y le da una respuesta clara según su etapa.</p>
-<h2 id="cost">Coste: una brecha del 30-60 %</h2>
-<p>Un CFO asalariado cuesta 100.000-213.000 €/año con todo incluido. Un CFO externalizado cuesta ${getDafOffer("es").annualPrice} € sin IVA/año por un perfil senior equivalente. Vea el detalle de tarifas en <a href="/es/recursos/blog/cfo-externo-pymes-precio-2026">nuestra guía de costes 2026</a>.</p>
-<p>La brecha no es solo el salario — también es:</p>
-<ul>
-<li><strong>Sin cargas patronales</strong> (30-42% del bruto en España / Francia) — desaparecen por completo con un CFO externalizado.</li>
-<li><strong>Sin riesgo de indemnización</strong> — si el crecimiento se ralentiza, una misión termina con 30 días de preaviso según las condiciones pactadas; los costes de una extinción laboral dependen de cada situación.</li>
-<li><strong>Sin fricción de reclutamiento</strong> — la búsqueda de un CFO lleva 4-6 meses. Un CFO externalizado es disponible para iniciar la misión en ${getDafOffer("es").start} de forma orientativa, según el perfil y el alcance.</li>
-</ul>
-<h2 id="flexibility">Flexibilidad y velocidad</h2>
-<p>Un CFO asalariado es 5 días/semana, todas las semanas. ${getDafOffer("es").billing} ${getDafOffer("es").commitment}</p>
-<p>Esto importa porque las necesidades de CFO son cíclicas. Una campaña Series A necesita 6-8 días/mes de bandwidth durante 3 meses. Una vez cerrada, 2-3 días/mes basta. Con un asalariado, paga full-time para picos y valles.</p>
-<h2 id="expertise">Expertise y perspectiva</h2>
-<p>Un CFO asalariado conoce su empresa a fondo pero vive en una burbuja mono-empresa. Un CFO externalizado aporta experiencia de distintas misiones. Pida referencias sectoriales, ejemplos de entregables y la disponibilidad propuesta.</p>
-<p>Esto se traduce en diagnóstico más rápido (ha visto este patrón en otras 8 startups), mejores elecciones de herramientas (sabe qué ERP escala) y una red más rica (ha trabajado con la mayoría de VCs, bancos y bufetes de la región).</p>
-<h2 id="when">¿Cuándo pasar de externalizado a interno?</h2>
-<p>Tres señales indican que ha superado el modelo externalizado:</p>
-<ol>
-<li><strong>50+ empleados con equipo finanzas real.</strong> La complejidad justifica liderazgo 5 días/semana.</li>
-<li><strong>Multi-entidad / consolidación internacional.</strong> La presencia diaria en múltiples entidades es difícil a tiempo parcial.</li>
-<li><strong>Ha levantado Series B o más.</strong> Los inversores esperan un CFO a tiempo completo en el C-suite.</li>
-</ol>
-<p>Estas señales justifican revisar la disponibilidad necesaria, no aplicar un umbral automático de plantilla. Si necesita dirección diaria, valore la contratación — pero un CFO externalizado puede liderar la búsqueda y onboarding del sucesor.</p>
-<h2 id="cta">¿Le ayudamos a decidir?</h2>
-<p>Cada situación es diferente. <a href="/es/contact">Reserve un diagnóstico gratuito de 30 minutos</a> con uno de nuestros CFO externalizados — le diremos sin rodeos si nos necesita, o si ya está listo para un fichaje a tiempo completo.</p>`,
+      htmlContent: `<h2>Comparar según la necesidad real</h2><p>Una misión a tiempo parcial y un puesto interno no ofrecen la misma disponibilidad. Compare el coste de la contratación prevista con los honorarios propuestos, según experiencia, alcance y entregables.</p><p>No se establece un porcentaje universal de ahorro. Consulte las horquillas Iter y su alcance.</p><p><a href="/es/externalizacion-daf/precios">Horquillas orientativas del CFO externo</a></p>`,
       content: [],
     },
     "externalisation-comptable": {

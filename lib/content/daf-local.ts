@@ -39,7 +39,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
   "h1": "DAF externalisé à Barcelone pour PME et startups",
   "intro": [
     "Votre entreprise est implantée à Barcelone ou développe une activité entre la France et l’Espagne. Vous cherchez des chiffres comparables, des prévisions de trésorerie et un interlocuteur pour préparer les décisions de la direction.",
-    "Barcelone est le siège d’Iter Advisors, Carrer Casp 54. Benjamin Ziza, Florent Greth, Tom Jauffre et Deisy Arias Ramírez y interviennent sur les sujets financiers. Les langues de travail, la présence sur site et les relais sont précisés au cadrage."
+    "Barcelone est le siège d’Iter Advisors, Carrer Casp 54. Benjamin Ziza, Florent Greth, Tom Jaufre et Deisy Arias Ramírez y interviennent sur les sujets financiers. Les langues de travail, la présence sur site et les relais sont précisés au cadrage."
   ],
   "sections": [
     {

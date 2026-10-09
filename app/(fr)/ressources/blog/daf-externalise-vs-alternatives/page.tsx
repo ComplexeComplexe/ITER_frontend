@@ -32,7 +32,7 @@ const FAQ_ITEMS: { question: string; answer: string }[] = [
   {
     question: "DAF externalisé ou DAF salarié : quelle est la différence de coût ?",
     answer:
-      "Un DAF salarié senior coûte 100 000 à 213 000 € chargés par an (fourchette selon la région et la taille de l'entreprise, charges patronales incluses à ~45 %). Un DAF externalisé coûte 24 000 à 96 000 € HT/an selon la formule (2 à 8 jours par mois à 2 000-8 000 €/mois). Économie moyenne : 60 à 75 % pour un périmètre équivalent. À noter : le DAF externalisé est facturé en prestation de services, sans charges sociales et déductible du résultat.",
+      "Établissez le coût employeur du recrutement réel : salaire, cotisations patronales, variable et avantages. Comparez-le aux honoraires de la proposition, à séniorité, périmètre et disponibilité explicités. Les fourchettes Iter ne constituent pas une étude salariale ni une garantie d’économie.",
   },
   {
     question: "DAF externalisé ou expert-comptable : quelle est la vraie différence ?",
@@ -42,7 +42,7 @@ const FAQ_ITEMS: { question: string; answer: string }[] = [
   {
     question: "DAF externalisé ou contrôleur de gestion : lequel choisir ?",
     answer:
-      "Un contrôleur de gestion pilote les tableaux de bord opérationnels (marges par produit, KPIs commerciaux, budgets) mais n'a pas la vision stratégique du DAF. Un DAF externalisé englobe le contrôle de gestion PLUS la trésorerie, le reporting board, les relations investisseurs et la stratégie financière. Pour une PME de moins de 50 salariés, un DAF externalisé couvre tout. Au-delà de 50 salariés, un contrôleur de gestion interne épaule le DAF externalisé sur l'opérationnel.",
+      "Le contrôleur de gestion prépare budgets, tableaux de bord et analyses de marge. La direction financière peut aussi coordonner trésorerie, financement et gouvernance. La répartition dépend du travail à accomplir et de l’équipe, sans seuil universel d’effectif.",
   },
   {
     question: "DAF externalisé et fractional CFO : est-ce la même chose ?",
@@ -52,7 +52,7 @@ const FAQ_ITEMS: { question: string; answer: string }[] = [
   {
     question: "Quand faut-il basculer d'un DAF externalisé vers un DAF salarié ?",
     answer:
-      "Le déclencheur classique est atteindre 50-80 salariés OU 10-15 M€ de chiffre d'affaires OU une complexité qui nécessite une présence quotidienne (multi-entités, groupes internationaux, opérations M&A régulières). Chez Iter Advisors, nous préparons souvent nos clients à cette transition : nous rédigeons la fiche de poste, participons aux entretiens et assurons la passation avec le DAF recruté. Cette continuité évite les 3-6 mois classiques d'absence de pilotage financier lors d'un recrutement direct.",
+      "Un poste interne peut se justifier par un besoin quotidien durable de management et de décision financière. Évaluez la charge, la séniorité et la continuité nécessaire. Un accompagnement externe peut contribuer à la définition du poste et à la passation selon le mandat convenu.",
   },
 ];
 
@@ -75,7 +75,7 @@ const articleSchema = {
     "Le guide comparatif complet pour choisir entre DAF externalisé, salarié, expert-comptable, contrôleur de gestion et fractional CFO.",
   author: { "@id": "https://www.iteradvisors.com/a-propos/sebastien-doat#person" },
   datePublished: "2026-07-13",
-  dateModified: "2026-07-13",
+  dateModified: "2026-10-09",
   mainEntityOfPage: PAGE_URL,
   publisher: { "@id": "https://www.iteradvisors.com/#organization" },
 };
@@ -110,7 +110,7 @@ export default function DafExternaliseVsAlternativesPage() {
           url: "/a-propos/sebastien-doat",
         }}
         readingTime={11}
-        dateModified="2026-07-13"
+        dateModified="2026-10-09"
         toc={[
           { id: "vs-salarie", label: "1. DAF externalisé vs DAF salarié" },
           { id: "vs-expert-comptable", label: "2. DAF externalisé vs expert-comptable" },
@@ -119,7 +119,7 @@ export default function DafExternaliseVsAlternativesPage() {
           { id: "matrice", label: "5. Matrice de décision : quelle solution pour votre stade" },
           { id: "faq", label: "6. FAQ" },
         ]}
-        tldr="Le DAF externalisé n'a pas UN concurrent mais 4 alternatives distinctes selon votre besoin. Vs DAF salarié : 60-75 % moins cher, mais moins présent. Vs expert-comptable : complémentaire, pas concurrent (pilotage vs conformité). Vs contrôleur de gestion : le DAF englobe et dépasse le rôle. Vs fractional CFO : même chose, terminologie différente (FR vs anglo-saxonne). Matrice de décision en fin d'article."
+        tldr="Comparez les modèles selon les responsabilités, la disponibilité et le coût total à périmètre explicite. Le DAF et l’expert-comptable sont complémentaires. Aucun seuil d’effectif ni pourcentage d’économie universel ne détermine le choix."
         relatedArticles={[
           {
             url: "/ressources/blog/daf-externalise-vs-daf-salarie",
@@ -139,68 +139,13 @@ export default function DafExternaliseVsAlternativesPage() {
         ]}
       >
         <h2 id="vs-salarie">1. DAF externalisé vs DAF salarié</h2>
-        <p>
-          C&apos;est la comparaison la plus fréquente. Le débat n&apos;est plus « faut-il un DAF ? »
-          (la réponse est oui dès 20-30 salariés ou 3 M€ de CA) mais <strong>« quel format ? »</strong>.
-          Le recrutement d&apos;un DAF salarié senior coûte cher, prend 3 à 6 mois et engage
-          l&apos;entreprise sur du long terme. L&apos;externalisation offre un point d&apos;entrée
-          progressif.
-        </p>
-        <ProseTable>
-          <thead>
-            <tr>
-              <th>Critère</th>
-              <th>DAF salarié senior</th>
-              <th>DAF externalisé (Iter Advisors)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Coût annuel</td>
-              <td>100 000 - 213 000 € chargés</td>
-              <td>24 000 - 96 000 € HT (2 à 8 j/mois)</td>
-            </tr>
-            <tr>
-              <td>Délai de mise en poste</td>
-              <td>3 à 6 mois (recrutement + préavis)</td>
-              <td>48 h à 2 semaines</td>
-            </tr>
-            <tr>
-              <td>Présence</td>
-              <td>Temps plein sur site</td>
-              <td>2 à 8 jours/mois, hybride</td>
-            </tr>
-            <tr>
-              <td>Expérience typique</td>
-              <td>Souvent 1 secteur, 3-5 employeurs</td>
-              <td>Multi-sectorielle, 20-50 missions</td>
-            </tr>
-            <tr>
-              <td>Charges sociales</td>
-              <td>+45 % du brut</td>
-              <td>Aucune (prestation de services)</td>
-            </tr>
-            <tr>
-              <td>Engagement</td>
-              <td>CDI, préavis 3 mois</td>
-              <td>Préavis 30 jours</td>
-            </tr>
-            <tr>
-              <td>Vision stratégique</td>
-              <td>Approfondie sur votre business</td>
-              <td>Cross-fertilisation multi-clients</td>
-            </tr>
-          </tbody>
-        </ProseTable>
-        <p>
-          <strong>Verdict.</strong> Le DAF externalisé bat le DAF salarié sur 5 des 7 critères pour
-          une PME de moins de 50 salariés. Au-delà, le DAF salarié devient pertinent — souvent en
-          continuant avec le DAF externalisé en rôle d&apos;advisor board. Pour une analyse
-          détaillée cas par cas, voir notre article dédié :{" "}
-          <Link href="/ressources/blog/daf-externalise-vs-daf-salarie">
-            DAF externalisé vs DAF salarié : le comparatif détaillé
-          </Link>.
-        </p>
+        <p>{"Le format doit répondre au besoin réel : direction financière quotidienne, intervention régulière ou appui ponctuel. La taille de l’entreprise ne suffit pas à imposer une solution."}</p>
+        <ProseTable><thead><tr><th>Critère</th><th>DAF salarié</th><th>DAF externalisé</th></tr></thead><tbody>
+          <tr><td>{"Budget à comparer"}</td><td>{"Coût employeur du recrutement envisagé"}</td><td>{"Fourchettes et devis selon le périmètre"}</td></tr>
+          <tr><td>{"Disponibilité"}</td><td>{"Selon le contrat et l’organisation"}</td><td>{"Rythme et échanges convenus dans la proposition"}</td></tr>
+          <tr><td>{"Expérience"}</td><td>{"Parcours du candidat à vérifier"}</td><td>{"Parcours du professionnel affecté à vérifier"}</td></tr>
+        </tbody></ProseTable>
+        <p><Link href="/ressources/blog/daf-externalise-vs-daf-salarie">DAF externalisé vs DAF salarié : le comparatif détaillé</Link></p>
 
         <h2 id="vs-expert-comptable">2. DAF externalisé vs expert-comptable</h2>
         <p>
@@ -308,19 +253,10 @@ export default function DafExternaliseVsAlternativesPage() {
               <td>❌</td>
               <td>✅ Co-pilote avec dirigeant</td>
             </tr>
-            <tr>
-              <td>Coût annuel (profil senior)</td>
-              <td>45 000 - 60 000 € chargés</td>
-              <td>24 000 - 96 000 € HT</td>
-            </tr>
+
           </tbody>
         </ProseTable>
-        <p>
-          <strong>Verdict.</strong> Pour une PME de moins de 50 salariés, un DAF externalisé couvre
-          le périmètre du CDG et va bien au-delà. Au-delà de 50 salariés, le duo{" "}
-          <strong>DAF externalisé + CDG interne</strong> est optimal : le CDG produit la data
-          opérationnelle au quotidien, le DAF pilote la stratégie et le board.
-        </p>
+        <p>{"Définissez les responsabilités du contrôleur de gestion et du DAF selon la production des données, les analyses et les décisions à préparer. Les deux fonctions peuvent travailler ensemble dans une organisation de toute taille."}</p>
 
         <h2 id="vs-fractional-cfo">4. DAF externalisé vs fractional CFO</h2>
         <p>
@@ -383,52 +319,7 @@ export default function DafExternaliseVsAlternativesPage() {
           Voici la matrice que nous utilisons chez Iter Advisors pour orienter nos prospects vers
           la bonne combinaison de ressources financières :
         </p>
-        <ProseTable>
-          <thead>
-            <tr>
-              <th>Stade / Contexte</th>
-              <th>Configuration recommandée</th>
-              <th>Budget financier annuel typique</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>TPE 1-10 salariés, mono-activité</td>
-              <td>Expert-comptable seul</td>
-              <td>4 000 - 10 000 € HT</td>
-            </tr>
-            <tr>
-              <td>PME 10-30 salariés, croissance</td>
-              <td>Expert-comptable + DAF externalisé Essentiel (2-3 j/mois)</td>
-              <td>28 000 - 48 000 € HT</td>
-            </tr>
-            <tr>
-              <td>Startup pré-Série A, VC-backed</td>
-              <td>Expert-comptable + Fractional CFO (2-4 j/mois)</td>
-              <td>32 000 - 60 000 € HT</td>
-            </tr>
-            <tr>
-              <td>PME 30-50 salariés, structurée</td>
-              <td>Expert-comptable + DAF externalisé Croissance (4-6 j/mois)</td>
-              <td>52 000 - 80 000 € HT</td>
-            </tr>
-            <tr>
-              <td>Scale-up 50-100 salariés, levée</td>
-              <td>Expert-comptable + DAF externalisé Premium + Fractional CFO advisor</td>
-              <td>85 000 - 130 000 € HT</td>
-            </tr>
-            <tr>
-              <td>ETI 100+ salariés, multi-entités</td>
-              <td>DAF salarié + CDG interne + DAF externalisé advisor</td>
-              <td>150 000 - 250 000 €</td>
-            </tr>
-            <tr>
-              <td>Situation d&apos;urgence (départ DAF, crise, cession)</td>
-              <td>DAF de transition (temps plein 3-12 mois)</td>
-              <td>18 000 - 30 000 €/mois</td>
-            </tr>
-          </tbody>
-        </ProseTable>
+        <p>{"Listez les livrables manquants, les décisions à prendre chaque semaine, les personnes à encadrer et les échéances. Faites préciser pour chaque proposition le responsable, la disponibilité, la continuité, les exclusions et le budget total."}</p>
         <Callout type="success" title="Note importante">
           Cette matrice est un point de départ, pas une prescription. Chaque entreprise a un
           contexte unique (secteur, capital, ambitions M&A, complexité fiscale). Chez Iter

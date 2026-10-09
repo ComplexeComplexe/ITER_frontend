@@ -3,9 +3,23 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import BlogPostPage from '../BlogPostPage';
 import PageByline from '../../PageByline';
 import { ITER_AUTHOR, FINANCE_AUTHOR } from '@/lib/schemas/editorial';
+import { getTeamMembers, getTeamMemberBySlug } from '@/lib/content/team';
 vi.mock('next/navigation', () => ({ usePathname: () => '/ressources/outils/malibou', useRouter: () => ({ push: vi.fn() }), useSearchParams: () => new URLSearchParams() }));
 
 describe('editorial attribution consistency', () => {
+  it.each(['en', 'es'] as const)('localizes author roles even when %s receives French team records', locale => {
+    const teamMembers = getTeamMembers('fr');
+    for (const member of teamMembers) {
+      const local = getTeamMemberBySlug(member.slug, locale);
+      if (!local) continue;
+      const author = `${member.firstName} ${member.lastName}`;
+      const doc = new DOMParser().parseFromString(renderToStaticMarkup(<BlogPostPage locale={locale} title="Example" author={author} teamMembers={teamMembers} slug="example" breadcrumbs={{ resourcesLabel: 'Resources', resourcesHref: '/ressources', blogLabel: 'Blog', blogHref: '/ressources/blog' }} />), 'text/html');
+      expect(doc.querySelector('main')?.textContent).toContain(local.role);
+      if (local.role !== member.role) expect(doc.querySelector('main')?.textContent).not.toContain(member.role);
+      const article = [...doc.querySelectorAll('script[type="application/ld+json"]')].map(s => JSON.parse(s.textContent!)).find(s => s['@type'] === 'BlogPosting');
+      expect(article.author['@id']).toBe(`https://www.iteradvisors.com/a-propos/${member.slug}#person`);
+    }
+  });
   it('keeps a known named author linked as a Person even without CMS team records', () => {
     for (const locale of ['fr', 'en', 'es'] as const) {
       const doc = new DOMParser().parseFromString(renderToStaticMarkup(<BlogPostPage locale={locale} title="Example" author="Benjamin Ziza" slug="example" breadcrumbs={{ resourcesLabel: 'Resources', resourcesHref: '/ressources', blogLabel: 'Blog', blogHref: '/ressources/blog' }} />), 'text/html');

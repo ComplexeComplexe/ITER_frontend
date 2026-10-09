@@ -139,46 +139,9 @@ export const MISSIONS_PONCTUELLES = [
   { nom: "Intégration Pennylane", min: 8000, max: 25000, unite: "projet" },
 ] as const;
 
-/**
- * Coût de référence d'un DAF salarié — dénominateur de toute comparaison.
- *
- * Base : coût employeur complet, part patronale incluse, package complet
- * (variable, avantages, BSPCE ou equity quand ils font partie de la
- * rémunération d'un profil de séniorité équivalente). France et Espagne.
- *
- * HORS périmètre : coût de recrutement, onboarding, risque de vacance de
- * poste. Ces éléments s'évoquent qualitativement, jamais dans le chiffre.
- *
- * Toute page affichant 90-150 k€, 80-150 k€ ou 95-110 k€ est alignée ici, avec
- * la mention explicite « coût employeur chargé ».
- */
-export const COUT_DAF_SALARIE = {
-  min: 100000,
-  max: 213000,
-  median: 150000,
-  base: "coût employeur chargé",
-} as const;
-
-/**
- * Économie annoncée — fourchette unique.
- *
- * Hypothèse : coût employeur médian de 150 000 €/an comparé au retainer Iter
- * annualisé, soit 36 000 à 96 000 € HT selon la formule. Sur ces bases,
- * l'économie calculée va de 36 % (Premium) à 76 % (Essentiel) ; la fourchette
- * publiée est volontairement conservatrice.
- *
- * ⚠ Point de vigilance acté : comparée au bas de fourchette (100 000 €),
- * l'économie sur Premium tombe sous 10 %. Toute note de méthode doit donc
- * préciser la base médiane.
- *
- * Les sept autres valeurs qui circulaient — 30-50, 50-70, 50-75, 60, 60-70,
- * 60-80 et 60-85 % — sont supprimées.
- */
-export const ECONOMIE_VS_SALARIE = { min: 30, max: 60 } as const;
-
-/** Formulation validée, à publier telle quelle plutôt qu'à paraphraser. */
+/** No market salary range or guaranteed savings without a dated, comparable source. */
 export const ECONOMIE_FORMULATION =
-  "Un DAF externalisé Iter Advisors représente 30 à 60 % d'économie par rapport au coût employeur d'un directeur financier salarié de séniorité équivalente, selon le stade de maturité de l'entreprise et le périmètre confié.";
+  "Comparez le coût employeur et les honoraires sur un périmètre, une séniorité et une disponibilité explicités. Aucun pourcentage d’économie ne s’applique à toutes les entreprises.";
 
 /* ── Délais ────────────────────────────────────────────────────────────── */
 

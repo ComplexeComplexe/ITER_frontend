@@ -3,7 +3,7 @@ import FinanceExpert from "@/components/FinanceExpert";
 import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
 import { aboutHref } from "@/lib/path-localization";
-import { resolveAuthorUrl } from "@/lib/content/team";
+import { getTeamMemberBySlug, resolveAuthorUrl } from "@/lib/content/team";
 import { parityHref } from "@/lib/locale-route-map";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -106,13 +106,12 @@ export default function BlogPostPage({
       )
     : undefined;
   const authorRole = authorMember
-    ? (authorMember.role && typeof authorMember.role === "string"
+    ? (getTeamMemberBySlug(authorMember.slug, locale)?.role ??
+      (authorMember.role && typeof authorMember.role === "string"
         ? authorMember.role
         : (authorMember as unknown as { roles?: Record<string, string> })
             ?.roles?.[locale] ??
-          (authorMember as unknown as { roles?: Record<string, string> })
-            ?.roles?.fr ??
-          "")
+          ""))
     : "";
   // SEO-ULT §4b (2026-08-15) — l'espagnol était traité à part, mais l'anglais
   // recevait `/en/a-propos/<slug>`, qui redirige vers `/en/about/<slug>`. La

@@ -845,8 +845,8 @@
       "en": "/en/ressources/blog/beckham-law-tax-savings-simulation",
       "es": "/es/recursos/blog/ley-beckham-simulacion-ahorro-fiscal"
     },
-    "title": "Loi Beckham : économie d'impôt et simulation",
-    "description": "Taux fixe de 24 % vs barème progressif jusqu'à 47 % : simulation chiffrée de l'économie d'impôt avec le régime Beckham, par niveau de salaire.",
+    "title": "Loi Beckham : méthode de simulation de l’impôt",
+    "description": "Comparez Beckham et IRPF ordinaire : données à réunir, assiette, région, situation familiale et exemple fictif du calcul au taux légal.",
     "noindex": false,
     "source": "/ressources/blog/loi-beckham-economie-impot-simulation",
     "sharedEditorial": true
@@ -954,7 +954,7 @@
       "es": "/es/recursos/blog/cuadro-mando-financiero-startup-kpis"
     },
     "title": "Dashboard financier startup : 12 KPIs CFO | Iter Advisors",
-    "description": "12 KPIs financiers essentiels pour startups : croissance, acquisition, trésorerie, rentabilité. Formules, benchmarks et tableau de bord par nos CFOs.",
+    "description": "12 KPIs financiers pour startups : formules, limites et décisions à préparer. Construire des alertes adaptées à votre modèle et à vos données.",
     "noindex": false,
     "source": "/ressources/blog/[slug]",
     "sharedEditorial": true
@@ -1110,7 +1110,7 @@
       "es": "/es/recursos/glosario/arr-mrr"
     },
     "title": "ARR & MRR — Définitions et Calcul pour SaaS | Iter Advisors",
-    "description": "ARR (Annual Recurring Revenue) et MRR (Monthly Recurring Revenue) : les métriques de référence du SaaS. Calcul, benchmarks, seuils de levée.",
+    "description": "ARR et MRR : définitions, formules, exemples et limites pour lire la croissance SaaS et préparer un financement.",
     "noindex": false,
     "source": "/ressources/glossaire/[slug]",
     "sharedEditorial": true
@@ -1745,7 +1745,7 @@
       "en": "/en/services/payroll-coordination",
       "es": "/es/servicios/coordinacion-nominas"
     },
-    "title": "Gestion de la paie externalisée | Iter Advisors",
+    "title": "Coordination et contrôle de la paie | Iter Advisors",
     "description": "Clarifier qui collecte, produit, contrôle et valide votre paie. Périmètre, méthode et responsabilités définis avec votre équipe.",
     "noindex": false,
     "source": "/services/gestion-paie-charges-sociales",

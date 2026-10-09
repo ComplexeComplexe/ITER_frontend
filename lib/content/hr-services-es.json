@@ -105,10 +105,10 @@
   "gestion-paie-charges-sociales": {
     "slug": "gestion-paie-charges-sociales",
     "meta": {
-      "title": "Coordinación de nóminas | Iter Advisors",
+      "title": "Coordinación y control de nóminas | Iter Advisors",
       "description": "Clarifica quién recopila, produce, revisa y valida las nóminas. Alcance, método y responsabilidades acordados con tu equipo."
     },
-    "h1": "Gestión de nóminas y organización de controles",
+    "h1": "Coordinación de nóminas y organización de controles",
     "breadcrumb": "Nóminas y coordinación",
     "intro": [
       "Las nóminas dependen de un flujo fiable de información entre empleados, responsables, administración de personal, proveedor de nóminas y dirección financiera.",

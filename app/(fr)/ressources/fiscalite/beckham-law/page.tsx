@@ -32,12 +32,10 @@ import type { TocHeading } from "@/components/blog/ArticleTOC";
 
 const PATH = "/ressources/fiscalite/beckham-law";
 const PUBLISHED_DATE = "2026-05-31";
-const MODIFIED_DATE = "2026-08-02";
+const MODIFIED_DATE = "2026-10-09";
 
 const HERO_IMG =
   "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1200&q=80";
-const SIMU_IMG =
-  "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
@@ -54,7 +52,7 @@ export const metadata: Metadata = buildMetadata({
 const TOC: TocHeading[] = [
   { id: "definition", level: 2, label: "Qu'est-ce que la loi Beckham ?" },
   { id: "taux", level: 2, label: "Le taux de 24 % : ce qui est taxé" },
-  { id: "simulation", level: 2, label: "IRPF classique ou loi Beckham : le calcul" },
+  { id: "simulation", level: 2, label: "IRPF classique ou loi Beckham : préparer une comparaison fiable" },
   { id: "conditions", level: 2, label: "Conditions d'éligibilité en 2026" },
   { id: "reforme-2023", level: 2, label: "Ce que la réforme 2023 a changé" },
   { id: "procedure", level: 2, label: "La demande étape par étape" },
@@ -69,7 +67,7 @@ const FAQ = [
   {
     question: "Quel est le taux d'imposition de la loi Beckham ?",
     answer:
-      "Les revenus du travail de source espagnole sont taxés à un taux fixe de 24 % jusqu'à 600 000 € par an, puis à 47 % au-delà. Les revenus du capital de source espagnole suivent le barème de l'épargne des non-résidents (19 % à 28 %). Les revenus étrangers hors travail ne sont pas imposés en Espagne.",
+      "Les revenus du travail sont réputés obtenus en Espagne pendant l’application du régime. Le barème prévoit 24 % jusqu’à 600 000 € de base liquidable concernée, puis 47 % sur l’excédent. Les revenus du capital relevant du barème distinct de l’article 93 sont taxés de 19 % à 30 % depuis 2025. Vérifiez la qualification et la source de chaque revenu.",
   },
   {
     question: "Qui peut bénéficier de la loi Beckham en 2026 ?",
@@ -99,7 +97,7 @@ const FAQ = [
   {
     question: "À partir de quel salaire la loi Beckham est-elle avantageuse ?",
     answer:
-      "Autour de 66 000 € de salaire brut annuel. En dessous, l'IRPF ordinaire coûte moins cher que le taux fixe de 24 %. À 80 000 €, l'économie est d'environ 2 000 € par an ; à 150 000 €, de l'ordre de 15 000 € par an selon la communauté autonome et la situation familiale.",
+      "Il n’existe pas de seuil universel de salaire garantissant un avantage. Comparez les deux régimes pour une même année, une même assiette et une situation personnelle définie, en tenant compte de la communauté autonome, des réductions applicables et des autres revenus. Faites valider le calcul et l’éligibilité avant d’opter.",
   },
   {
     question: "Que se passe-t-il si je quitte l'Espagne avant la fin des 6 ans ?",
@@ -154,22 +152,10 @@ export default function Page() {
       author={{ name: "Sébastien Doat", url: "/a-propos/sebastien-doat" }}
       publishedDate={PUBLISHED_DATE}
       modifiedDate={MODIFIED_DATE}
-      modifiedLabel="2 août 2026"
-      badge="Mis à jour en août 2026"
+      modifiedLabel="9 octobre 2026"
+      badge="Mis à jour en octobre 2026"
       readMinutes={14}
-      dek={
-        <>
-          La loi Beckham est le surnom du régime fiscal espagnol des impatriés — officiellement, le
-          « régimen especial » de l&apos;article 93 de la loi sur l&apos;IRPF. Son principe : pendant{" "}
-          <strong className="text-foreground">6 ans</strong>, un nouveau résident espagnol est imposé
-          selon les règles des non-résidents, à un{" "}
-          <strong className="text-foreground">taux fixe de 24 %</strong> sur ses revenus du travail de
-          source espagnole, au lieu du barème progressif qui culmine à 47 %. Ses revenus de source
-          étrangère restent, pour l&apos;essentiel, hors du champ de l&apos;impôt espagnol. Ce guide
-          détaille les conditions en vigueur en 2026, la procédure de demande, les simulations
-          chiffrées et les limites du régime.
-        </>
-      }
+      dek={"La loi Beckham désigne le régime spécial de l’article 93 de la loi IRPF. Sous conditions, il s’applique pendant l’année d’acquisition de la résidence espagnole et les cinq années suivantes. Ce guide explique les taux, les démarches et les hypothèses à documenter pour comparer ce régime à l’IRPF ordinaire."}
       heroImage={{
         src: HERO_IMG,
         alt: "Loi Beckham en Espagne : le régime fiscal des impatriés à taux fixe de 24 %",
@@ -283,7 +269,7 @@ export default function Page() {
             </tr>
             <tr>
               <td>Revenus du capital de source espagnole (dividendes, intérêts, plus-values)</td>
-              <td>Barème de l&apos;épargne des non-résidents : 19 % à 28 % selon les tranches</td>
+              <td>{"Barème de l’épargne de l’article 93 : de 19 % à 30 % selon les tranches, depuis 2025"}</td>
             </tr>
             <tr>
               <td>Revenus de source étrangère (hors travail)</td>
@@ -300,6 +286,7 @@ export default function Page() {
           </tbody>
         </table>
       </div>
+      <p><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a93">{"Source des taux : article 93 de la loi IRPF, version consolidée du BOE."}</a></p>
       <p>
         Deux points de cette table méritent un éclairage, car ils sont mal traités dans la plupart
         des publications en ligne.
@@ -323,94 +310,16 @@ export default function Page() {
         </div>
       </div>
 
-      <p>
-        Sur les revenus du travail : le taux de 24 % s&apos;applique sans abattements ni réductions.
-        Le régime ordinaire, lui, prévoit un minimum personnel et familial et diverses réductions —
-        c&apos;est pourquoi le Beckham n&apos;est pas avantageux à tous les niveaux de revenus, comme
-        le montre la simulation ci-dessous.
-      </p>
-
-      {/* ── Simulation ── */}
-      <h2 id="simulation">IRPF classique ou loi Beckham : le calcul, salaire par salaire</h2>
-      <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-muted my-6">
-        <Image
-          src={SIMU_IMG}
-          alt="Simulation d'impôt sous la loi Beckham : taux fixe de 24 % contre barème progressif de l'IRPF"
-          fill
-          sizes="(max-width: 768px) 100vw, 768px"
-          className="object-cover"
-          loading="lazy"
-        />
-      </div>
-      <p>
-        En régime ordinaire, le{" "}
-        <Link href="/ressources/fiscalite/impot-revenu-espagne">barème de l&apos;IRPF espagnol</Link>{" "}
-        est progressif : 19 % sur les premiers euros, puis 24 %, 30 %, 37 %, 45 %, et 47 % au-delà de
-        300 000 € (tranche étatique + autonomique). Sous Beckham, chaque euro de salaire est taxé à
-        24 %, dès le premier euro.
-      </p>
-      <p>
-        Le point d&apos;équilibre se situe autour de <strong>66 000 €</strong> de salaire brut annuel.
-        En dessous, le taux effectif de l&apos;IRPF ordinaire est inférieur à 24 % : le régime spécial
-        vous coûterait plus cher qu&apos;il ne vous fait économiser. Au-dessus, l&apos;écart se creuse
-        vite :
-      </p>
-      <div className="prose-table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Salaire brut annuel</th>
-              <th scope="col">IRPF ordinaire (estimation)</th>
-              <th scope="col">Loi Beckham</th>
-              <th scope="col">Économie annuelle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>60 000 €</td>
-              <td>~14 500 €</td>
-              <td>14 400 €</td>
-              <td>≈ 0 € (point mort)</td>
-            </tr>
-            <tr>
-              <td>80 000 €</td>
-              <td>~21 000 €</td>
-              <td>19 200 €</td>
-              <td className="font-semibold text-emerald-600">~2 000 €</td>
-            </tr>
-            <tr>
-              <td>120 000 €</td>
-              <td>~36 000 €</td>
-              <td>28 800 €</td>
-              <td className="font-semibold text-emerald-600">~7 000 €</td>
-            </tr>
-            <tr style={{ background: "rgb(16 185 129 / 0.10)" }}>
-              <td>
-                <strong>150 000 €</strong>
-              </td>
-              <td>~51 000 €</td>
-              <td>36 000 €</td>
-              <td className="font-semibold text-emerald-600">~15 000 €</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p>
-        Ces montants sont des ordres de grandeur calculés pour un célibataire sans enfant, hors
-        cotisations sociales (qui restent identiques dans les deux régimes : environ 6,35 % côté
-        salarié). Le résultat exact dépend de votre communauté autonome et de votre situation
-        familiale. Pour un calcul appliqué à votre propre salaire, consultez notre article dédié :{" "}
-        <Link href="/ressources/blog/loi-beckham-economie-impot-simulation">
-          la simulation de l&apos;économie d&apos;impôt sous la loi Beckham, salaire par salaire
-        </Link>
-        .
-      </p>
-      <p>
-        L&apos;économie ne se limite d&apos;ailleurs pas au salaire : pour un dirigeant qui perçoit
-        des dividendes ou des plus-values de source française, l&apos;exonération espagnole des
-        revenus étrangers pèse souvent plus lourd que le taux fixe lui-même. C&apos;est aussi ce qui
-        rend le régime incompatible avec certaines situations — voir les limites plus bas.
-      </p>
+      <p>{"Le taux fixe ne garantit pas une économie. Le régime ordinaire dépend notamment de la communauté autonome et de la situation personnelle. Un salaire brut seul ne permet pas de trancher."}</p>
+      <h2 id="simulation">{"IRPF classique ou loi Beckham : préparer une comparaison fiable"}</h2>
+      <div className="prose-table-wrapper"><table><thead><tr><th scope="col">{"Hypothèse"}</th><th scope="col">{"À documenter avant le calcul"}</th></tr></thead><tbody>
+        <tr><td>{"Année et résidence"}</td><td>{"Année fiscale, communauté autonome et situation de résidence."}</td></tr>
+        <tr><td>{"Assiette du travail"}</td><td>{"Salaire, variable et avantages ; distinguer le brut et l’assiette imposable."}</td></tr>
+        <tr><td>{"Situation personnelle"}</td><td>{"Composition du foyer et réductions applicables au régime ordinaire."}</td></tr>
+        <tr><td>{"Autres revenus et prélèvements"}</td><td>{"Revenus du capital, actifs et cotisations présentés séparément de l’impôt."}</td></tr>
+      </tbody></table></div>
+      <p>{"Aucun point mort salarial ni montant d’économie type n’est publié ici sans scénario validé. Une simulation doit citer ses barèmes, préciser ses hypothèses et comparer l’impôt total, pas uniquement les taux marginaux."}</p>
+      <p><Link href="/ressources/blog/loi-beckham-economie-impot-simulation">{"Voir la méthode de simulation et les données à réunir"}</Link></p>
 
       {/* ── Conditions ── */}
       <h2 id="conditions">Conditions d&apos;éligibilité en 2026</h2>
@@ -600,8 +509,7 @@ export default function Page() {
         <li>
           <strong>Aucune déduction ni réduction de l&apos;IRPF ordinaire</strong> : ni minimum
           personnel et familial, ni réduction pour cotisations retraite, ni abattements autonomiques.
-          C&apos;est la contrepartie du taux fixe, et la raison pour laquelle le régime est perdant
-          sous ~66 000 € de revenus.
+          {"Ces différences doivent être intégrées à la comparaison personnalisée ; elles ne permettent pas de fixer un seuil universel de salaire."}
         </li>
         <li>
           <strong>Pas de protection conventionnelle.</strong> Pendant la durée du régime, vous

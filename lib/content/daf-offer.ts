@@ -1,5 +1,5 @@
 import type { Locale } from "../i18n";
-import { COUT_DAF_SALARIE, DELAIS, ENGAGEMENT, FORMULES, VOLUME_DAF_JOURS_MOIS } from "./facts";
+import { DELAIS, ENGAGEMENT, FORMULES, VOLUME_DAF_JOURS_MOIS } from "./facts";
 
 /** Localized presentation of the approved offer. Prices and terms stay in facts.ts. */
 export function getDafOffer(locale: Locale) {
@@ -39,7 +39,7 @@ export function getDafOffer(locale: Locale) {
     volume: duration(`${VOLUME_DAF_JOURS_MOIS.min} à ${VOLUME_DAF_JOURS_MOIS.max} jours`),
     price: monthly(minimum, maximum),
     annualPrice: range(minimum * 12, maximum * 12),
-    salary: range(COUT_DAF_SALARIE.min, COUT_DAF_SALARIE.max),
+    salary: ({ fr: "À établir selon le recrutement envisagé", en: "To be established for the planned hire", es: "A determinar según la contratación prevista" })[locale],
     start: duration(DELAIS.missionDemarree),
     transitionStart: duration(DELAIS.transitionUrgent),
     caption: locale === "en" ? "Monthly CFO packages — days are indicative averages, the commitment covers the agreed scope"
