@@ -10,7 +10,7 @@ import { getFallbackTeamMembers } from "@/lib/content/team";
 import { parityHref } from "@/lib/locale-route-map";
 import {
   CLIENTS_ACCOMPAGNES,
-  FONDS_LEVES,
+  FINANCE_TEAM_SIZE,
 } from "@/lib/content/facts";
 
 vi.mock("@/components/PageLayout", () => ({
@@ -65,16 +65,16 @@ describe("published Pilotage homepage", () => {
       ).toEqual(visible);
     }
   });
-  it("shows no service fees on the homepage, while keeping the tariff route and accessible client logos", () => {
+  it("shows no service fees on the homepage, while keeping the tariff route and withholding unapproved client logos", () => {
     for (const locale of locales) {
       const doc = render(locale);
       const text = doc.body.textContent!.replace(/[\s.,–]/g, "");
       expect(text).not.toMatch(/(?<!\d)(?:3000|5000|6500|8000)(?!\d)/);
       const logos = doc.querySelectorAll('section[aria-label] img[alt^="Logo "]');
-      expect(logos).toHaveLength(12);
-      expect(new Set([...logos].map(logo => logo.getAttribute("alt"))).size).toBe(12);
+      expect(logos).toHaveLength(0);
+      expect(doc.querySelector("h1")?.textContent).toContain("Iter Advisors");
       const copies = doc.querySelectorAll('section[aria-label] [aria-hidden="true"] img');
-      expect(copies).toHaveLength(12);
+      expect(copies).toHaveLength(0);
       expect([...copies].every(logo => logo.getAttribute("alt") === "")).toBe(true);
       expect(doc.querySelector(`a[href="${parityHref("/daf-externalise/tarifs", locale)}"]`)).not.toBeNull();
     }
@@ -101,7 +101,7 @@ describe("published Pilotage homepage", () => {
       const t = getHomePilotage(locale);
       expect(t.proofs[0].value).toBe(String(CLIENTS_ACCOMPAGNES));
       expect(t.proofs[1].value.replace(/[^0-9]/g, " ").trim()).toBe(
-        FONDS_LEVES.replace(/[^0-9]/g, " ").trim(),
+        String(FINANCE_TEAM_SIZE),
       );
       const hero = render(locale).querySelector('[data-journey="home-hero"]')!;
       expect(hero.textContent).not.toMatch(/Préavis de 30|30 days.? notice|preaviso de 30|Sans durée minimale|No minimum term|Sin permanencia mínima/);

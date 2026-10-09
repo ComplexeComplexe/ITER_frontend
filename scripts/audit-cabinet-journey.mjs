@@ -27,9 +27,9 @@ for (const path of paths) {
   if (['/', '/en', '/es'].includes(path)) {
     const locale = path === '/' ? 'fr' : path.slice(1);
     const expected = {
-      fr: { title: 'Iter Advisors : DAF &amp; DRH à temps partagé | Paris, Barcelone', headline: 'Un DAF senior pour piloter vos finances.', contact: '/contact#daf', fees: '/daf-externalise/tarifs', offer: '/daf-externalise', fiction: 'Données fictives' },
-      en: { title: 'Iter Advisors: Fractional CFO &amp; HR | Paris, Barcelona', headline: 'A senior CFO to lead your finances.', contact: '/en/contact#daf', fees: '/en/fractional-cfo/pricing', offer: '/en/fractional-cfo', fiction: 'Fictional data' },
-      es: { title: 'Iter Advisors: CFO externo y RR. HH. | París, Barcelona', headline: 'Un CFO sénior para dirigir sus finanzas.', contact: '/es/contact#daf', fees: '/es/externalizacion-daf/precios', offer: '/es/externalizacion-daf', fiction: 'Datos ficticios' },
+      fr: { title: 'Iter Advisors : DAF &amp; DRH à temps partagé | Paris, Barcelone', headline: 'Iter Advisors, vos DAF seniors pour piloter vos finances.', contact: '/contact#daf', fees: '/daf-externalise/tarifs', offer: '/daf-externalise', fiction: 'Données fictives' },
+      en: { title: 'Iter Advisors: Fractional CFO &amp; HR | Paris, Barcelona', headline: 'Iter Advisors, your senior CFOs to manage your finances.', contact: '/en/contact#daf', fees: '/en/fractional-cfo/pricing', offer: '/en/fractional-cfo', fiction: 'Fictional data' },
+      es: { title: 'Iter Advisors: CFO externo y RR. HH. | París, Barcelona', headline: 'Iter Advisors, sus CFO sénior para dirigir sus finanzas.', contact: '/es/contact#daf', fees: '/es/externalizacion-daf/precios', offer: '/es/externalizacion-daf', fiction: 'Datos ficticios' },
     }[locale];
     check(html.includes(`<title>${expected.title}</title>`), 'cabinet-title');
     const hero = main.match(/data-journey="home-hero".*?<\/section>/s)?.[0] ?? '';

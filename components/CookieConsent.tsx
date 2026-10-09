@@ -20,13 +20,13 @@ interface CookieConsentProps {
 const translations = {
   fr: {
     banner: {
-      title: "Nous respectons votre vie privée",
+      title: "Vos choix cookies",
       description:
-        "Nous déposons des cookies d'analyse et de marketing uniquement après votre consentement explicite. Vous pouvez tout accepter, tout refuser ou personnaliser vos choix.",
+        "Analyse et marketing : votre accord est requis.",
       acceptAll: "Tout accepter",
       rejectAll: "Tout refuser",
       customize: "Personnaliser",
-      policyLink: "Voir la politique cookies complète",
+      policyLink: "Politique cookies",
       policyHref: "/politique-cookies",
     },
     modal: {
@@ -64,13 +64,13 @@ const translations = {
   },
   en: {
     banner: {
-      title: "We respect your privacy",
+      title: "Your cookie choices",
       description:
-        "We set analytics and marketing cookies only after your explicit consent. You can accept all, reject all, or customize your choices.",
+        "Analytics and marketing require your consent.",
       acceptAll: "Accept all",
       rejectAll: "Reject all",
       customize: "Customize",
-      policyLink: "See the full cookie policy",
+      policyLink: "Cookie policy",
       policyHref: "/en/cookie-policy",
     },
     modal: {
@@ -108,13 +108,13 @@ const translations = {
   },
   es: {
     banner: {
-      title: "Respetamos su privacidad",
+      title: "Sus opciones de cookies",
       description:
-        "Instalamos cookies de análisis y marketing únicamente tras su consentimiento explícito. Puede aceptar todo, rechazar todo o personalizar sus preferencias.",
+        "Análisis y marketing solo con su consentimiento.",
       acceptAll: "Aceptar todo",
       rejectAll: "Rechazar todo",
       customize: "Personalizar",
-      policyLink: "Ver la política de cookies completa",
+      policyLink: "Política de cookies",
       policyHref: "/es/politica-cookies",
     },
     modal: {
@@ -292,13 +292,13 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
           role="dialog"
           aria-label={t.banner.title}
           aria-modal="false"
-          className="fixed bottom-0 left-0 right-0 z-[9999] p-4 md:p-6"
+          className="fixed bottom-0 left-0 right-0 z-[9999] p-2 md:p-6"
           style={{ fontFamily: "var(--font-body)" }}
         >
           <div className="mx-auto max-w-4xl rounded-2xl border border-[oklch(0.92_0.004_270)] bg-white shadow-2xl">
-            <div className="p-5 md:p-6">
+            <div className="p-3 md:p-6">
               {/* Titre */}
-              <div className="mb-3 flex items-center gap-2">
+              <div className="mb-1 flex items-center gap-2">
                 <svg
                   width="20"
                   height="20"
@@ -312,7 +312,7 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
                 <h2
-                  className="flex-1 text-lg font-semibold"
+                  className="flex-1 text-sm md:text-lg font-semibold"
                   style={{
                     fontFamily: "var(--font-heading)",
                     color: "oklch(0.15 0.01 270)",
@@ -333,26 +333,17 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
 
               {/* Description */}
               <p
-                className="mb-3 text-sm leading-relaxed"
+                className="mb-1 text-sm leading-snug md:leading-relaxed"
                 style={{ color: "oklch(0.45 0.01 270)" }}
               >
                 {t.banner.description}
               </p>
 
-              {/* Lien vers politique cookies détaillée */}
-              <a
-                href={t.banner.policyHref}
-                className="mb-5 inline-block text-xs underline hover:no-underline"
-                style={{ color: "oklch(0.42 0.28 275)" }}
-              >
-                {t.banner.policyLink}
-              </a>
-
               {/* Boutons */}
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-end sm:gap-3">
+              <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center sm:justify-end sm:gap-3">
                 <button
                   onClick={handleRejectAll}
-                  className="rounded-lg border px-4 py-2.5 text-sm font-medium transition-colors hover:bg-gray-50"
+                  className="min-h-11 rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors hover:bg-gray-50"
                   style={{
                     borderColor: "oklch(0.92 0.004 270)",
                     color: "oklch(0.45 0.01 270)",
@@ -362,7 +353,7 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                 </button>
                 <button
                   onClick={handleOpenPreferences}
-                  className="rounded-lg border px-4 py-2.5 text-sm font-medium transition-colors hover:bg-gray-50"
+                  className="order-3 sm:order-none min-h-11 rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors hover:bg-gray-50"
                   style={{
                     borderColor: "oklch(0.42 0.28 275)",
                     color: "oklch(0.42 0.28 275)",
@@ -372,11 +363,12 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                 </button>
                 <button
                   onClick={handleAcceptAll}
-                  className="rounded-lg px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:opacity-90"
-                  style={{ backgroundColor: "oklch(0.42 0.28 275)" }}
+                  className="min-h-11 rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors hover:bg-gray-50"
+                  style={{ borderColor: "oklch(0.92 0.004 270)", color: "oklch(0.45 0.01 270)" }}
                 >
                   {t.banner.acceptAll}
                 </button>
+                <a href={t.banner.policyHref} className="order-4 inline-flex min-h-11 items-center justify-center text-sm underline hover:no-underline" style={{ color: "oklch(0.42 0.28 275)" }}>{t.banner.policyLink}</a>
               </div>
             </div>
           </div>
@@ -547,7 +539,7 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                 </button>
                 <button
                   onClick={handleAcceptAll}
-                  className="rounded-lg border px-4 py-2.5 text-sm font-medium transition-colors hover:bg-gray-50"
+                  className="min-h-11 rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors hover:bg-gray-50"
                   style={{
                     borderColor: "oklch(0.92 0.004 270)",
                     color: "oklch(0.45 0.01 270)",
@@ -557,7 +549,7 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                 </button>
                 <button
                   onClick={handleSavePreferences}
-                  className="rounded-lg px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:opacity-90"
+                  className="min-h-11 rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors hover:bg-gray-50"
                   style={{ backgroundColor: "oklch(0.42 0.28 275)" }}
                 >
                   {t.modal.save}

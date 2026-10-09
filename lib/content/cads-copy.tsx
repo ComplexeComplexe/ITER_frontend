@@ -1,4 +1,5 @@
 'use client';
+import { contractCopy } from "./contract-copy";
 import { cloneElement, createContext, isValidElement, useContext, type ReactElement, type ReactNode } from 'react';
 import type { Locale } from '@/lib/i18n';
 import copy from './editorial-locales/cads.json';
@@ -10,7 +11,7 @@ export function cadsText(source: string, locale: Locale) {
   if (locale === 'fr') return source;
   const key = source.replace(/\s+/g, ' ').trim();
   const text = (copy[locale] as Record<string, string>)[key];
-  return text === undefined ? source : (source.match(/^\s*/)?.[0] ?? '') + text + (source.match(/\s*$/)?.[0] ?? '');
+  return text === undefined ? source : (source.match(/^\s*/)?.[0] ?? '') + contractCopy(text, locale) + (source.match(/\s*$/)?.[0] ?? '');
 }
 /** Translate only presentation props. Event handlers, field names and values survive. */
 export function cadsElement(node: ReactNode, locale: Locale): ReactNode {

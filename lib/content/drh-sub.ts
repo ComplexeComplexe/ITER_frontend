@@ -1,3 +1,4 @@
+import { contractContent } from "./contract-copy";
 import { Locale } from "../i18n";
 
 export type DrhSubPageSlug = "temps-partage";
@@ -165,5 +166,5 @@ const slugMapping: Record<Locale, Record<string, DrhSubPageSlug>> = {
 export function getDrhSubContent(locale: Locale, urlSlug: string): DrhSubContent | undefined {
   const key = slugMapping[locale]?.[urlSlug];
   if (!key) return undefined;
-  return drhSubContent[locale][key];
+  return contractContent(drhSubContent[locale][key], locale);
 }

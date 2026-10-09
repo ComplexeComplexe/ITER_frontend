@@ -117,6 +117,8 @@ function buildSourceLabel(source: string): string {
   }
 }
 
+const htmlEscape = (value: string) => value.replace(/[&<>"']/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[character]!));
+
 function buildHtmlEmail(
   source: string,
   data: Record<string, string>,
@@ -135,7 +137,7 @@ function buildHtmlEmail(
     .filter(([, v]) => v)
     .map(
       ([k, v]) =>
-        `<li>${FIELD_LABELS[k] || k}: ${v}</li>`,
+        `<li>${htmlEscape(FIELD_LABELS[k] || k)}: ${htmlEscape(v)}</li>`,
     )
     .join("");
 
@@ -192,7 +194,23 @@ function buildPlainText(
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { source, data } = body;
+    const { source, data: rawData } = body ?? {};
+    const allowedSources = new Set(["contact", "profil", "campagne"]);
+    if (!allowedSources.has(source) || !rawData || typeof rawData !== "object" || Array.isArray(rawData)) {
+      return NextResponse.json({ error: "Invalid lead payload" }, { status: 400 });
+    }
+    const data: Record<string, string> = {};
+    for (const [key, value] of Object.entries(rawData)) {
+      if (!(key in FIELD_MAP) && key !== "website") continue;
+      if (typeof value !== "string" || value.length > 6000) {
+        return NextResponse.json({ error: "Invalid lead field" }, { status: 400 });
+      }
+      data[key] = value.trim();
+    }
+    if (data.website || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email ?? "")) {
+      return NextResponse.json({ error: "Invalid lead" }, { status: 400 });
+    }
+    delete data.website;
 
     if (!source || !data) {
       return NextResponse.json(
@@ -216,16 +234,16 @@ export async function POST(request: NextRequest) {
       replyTo,
     });
 
-    if (error) {
+    if (error || !result?.id) {
       console.error("Resend error:", JSON.stringify(error, null, 2));
       return NextResponse.json(
-        { error: "Failed to send email", details: error.message },
+        { error: "Failed to send email", details: "Delivery was not accepted" },
         { status: 500 },
       );
     }
 
-    console.log("Email sent:", result?.id);
-    return NextResponse.json({ success: true });
+    console.log("Lead notification accepted by provider:", result.id);
+    return NextResponse.json({ success: true, receiptId: result.id });
   } catch (err) {
     console.error("API error:", err);
     return NextResponse.json(

@@ -25,9 +25,9 @@ export function getDafOffer(locale: Locale) {
   const minimum = Math.min(...FORMULES.map(plan => plan.prixMin));
   const maximum = Math.max(...FORMULES.map(plan => plan.prixMax));
   const commitment = locale === "en"
-    ? `No minimum engagement duration; cancellation with ${ENGAGEMENT.preavisJours} days' notice.`
+    ? "Duration and handover terms are agreed in the contract."
     : locale === "es"
-      ? `Sin duración mínima de compromiso; cancelación con ${ENGAGEMENT.preavisJours} días de preaviso.`
+      ? "La duración y las condiciones de traspaso se acuerdan en el contrato."
       : ENGAGEMENT.formulation;
   const billing = locale === "en"
     ? "Prices shown are indicative ranges. The quote depends on scope, seniority, data quality, tools, entities and availability required. The monthly retainer covers an agreed scope of work, not hours or a day-rate package. Days shown are observed averages. Any additional scope requires a signed amendment."

@@ -1,3 +1,4 @@
+import { contractContent } from "./contract-copy";
 import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 import { getDafOffer } from "./daf-offer";
 import { Locale } from "../i18n";
@@ -409,7 +410,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
 
 export function getDafLocalContent(city: DafLocalCity, locale: Locale): DafLocalContent {
   if (city !== "paris" && locale !== "fr") {
-    const content = (locale === "en" ? citiesEn : citiesEs)[city];
+    const content = contractContent((locale === "en" ? citiesEn : citiesEs)[city], locale);
     const offer = getDafOffer(locale);
     const offerText = `${locale === "en" ? "Iter packages range from" : "Los planes Iter van de"} ${offer.price}. ${offer.billing} ${offer.commitment}`;
     return {
@@ -418,5 +419,5 @@ export function getDafLocalContent(city: DafLocalCity, locale: Locale): DafLocal
       faq: content.faq.map(item => ({ ...item, answer: item.answer.replace("__OFFER__", offerText) })),
     };
   }
-  return localContent[city][locale];
+  return contractContent(localContent[city][locale], locale);
 }

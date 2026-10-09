@@ -1,3 +1,4 @@
+import { contractCopy } from "./contract-copy";
 import { decodeHTML } from "entities";
 import english from './editorial-locales/en.json';
 import spanish from './editorial-locales/es.json';
@@ -13,7 +14,7 @@ const decode = decodeHTML;
 export function editorialText(text: string, locale: TargetLocale): string {
   const translated = dictionaries[locale][normalize(text)];
   if (translated === undefined) return text;
-  return (text.match(/^\s*/)?.[0] ?? '') + translated + (text.match(/\s*$/)?.[0] ?? '');
+  return (text.match(/^\s*/)?.[0] ?? '') + contractCopy(translated, locale) + (text.match(/\s*$/)?.[0] ?? '');
 }
 export function editorialHtml(html: string, locale: TargetLocale): string {
   return html.split(/(<[^>]*>)/g).map(part => part.startsWith('<')

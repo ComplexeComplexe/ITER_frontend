@@ -1,4 +1,5 @@
 "use client";
+import { isClientLogoApproved } from "@/lib/content/client-logo-permissions";
 import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 
 import { useState, useEffect, FormEvent, useRef } from "react";
@@ -101,7 +102,7 @@ const contactPageText = {
   },
 } as const;
 
-const clientLogos = [
+const clientLogoCandidates = [
   { src: "/images/logos/logo-happyscribe.webp", alt: "Happy Scribe" },
   { src: "/images/logos/logo-impact.webp", alt: "IMPACT+" },
   { src: "/images/logos/logo-mitiga.webp", alt: "Mitiga Solutions" },
@@ -114,6 +115,8 @@ const clientLogos = [
   { src: "/images/logos/logo-ukio.webp", alt: "Ukio" },
   { src: "/images/logos/logo-yego.webp", alt: "Yego" },
 ];
+
+const clientLogos = clientLogoCandidates.filter(logo => isClientLogoApproved(logo.alt));
 
 /* ─── Main Component ─── */
 export default function ContactPage({
@@ -177,9 +180,9 @@ export default function ContactPage({
         body: JSON.stringify({ source: "contact", data }),
       });
 
-      if (!res.ok) {
-        const body = await res.json().catch(() => null);
-        throw new Error(body?.details || "Erreur serveur");
+      const receipt = await res.json();
+      if (!res.ok || receipt.success !== true) {
+        throw new Error(receipt?.details || "Erreur serveur");
       }
 
       // Preserve the existing conversion event: it is emitted only after
@@ -456,7 +459,7 @@ export default function ContactPage({
       </section>
 
       {/* ═══ CLIENT LOGOS ═══ */}
-      <section className="site-section bg-background py-16 lg:py-20">
+      {clientLogos.length > 0 && <section className="site-section bg-background py-16 lg:py-20">
         <div className="container">
           <p className="text-center text-sm font-medium text-muted-foreground uppercase tracking-widest mb-10">
             {need === "rh" ? ({ fr: "Des entreprises accompagnées par Iter en direction financière", en: "Companies supported by Iter in finance", es: "Empresas acompañadas por Iter en finanzas" }[locale]) : tx.clientsTitle}
@@ -474,7 +477,7 @@ export default function ContactPage({
             ))}
           </div>
         </div>
-      </section>
+      </section>}
     </PageLayout>
   );
 }

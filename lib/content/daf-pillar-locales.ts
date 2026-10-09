@@ -1,3 +1,4 @@
+import { contractContent } from "./contract-copy";
 import { PEOPLE, resolveCompanyCopy } from "@/lib/company-facts";
 import { CLIENTS_ACCOMPAGNES } from "./facts";
 import type { Locale } from "@/lib/i18n";
@@ -7,11 +8,12 @@ import es from "./locales/daf-pillar.es.json";
 
 const content: Record<Locale, DafPillarContent> = { fr: dafPillar, en, es };
 export function getDafPillarContent(locale: Locale): DafPillarContent {
-  const page = resolveCompanyCopy(content[locale], locale);
+  const page = contractContent(resolveCompanyCopy(content[locale], locale), locale);
   return {
     ...page,
     hero: {
       ...page.hero,
+      landmarks: locale === "fr" ? page.hero.landmarks : page.hero.landmarks.slice(0, 2),
       proofs: page.hero.proofs.map((proof) =>
         proof.replace("{{clients}}", String(CLIENTS_ACCOMPAGNES)),
       ),

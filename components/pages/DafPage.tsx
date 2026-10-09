@@ -70,7 +70,7 @@ const HOW_TO_COLLAB: Record<
       },
       {
         name: "Recurring management & reporting",
-        text: "The CFO delivers monthly reporting, runs strategic committees and adjusts scope as your business evolves — with no minimum commitment.",
+        text: "The CFO delivers monthly reporting, runs strategic committees and adjusts scope as your business evolves.",
       },
     ],
   },

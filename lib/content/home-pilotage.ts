@@ -2,7 +2,7 @@ import type { Locale } from "@/lib/i18n";
 import {
   CLIENTS_ACCOMPAGNES,
   TEAM_LABEL,
-  FONDS_LEVES,
+  FINANCE_TEAM_SIZE,
   TRUSTFOLIO_RATING,
 } from "./facts";
 import { getDafOfferFacts } from "./offer-facts";
@@ -50,11 +50,11 @@ const copy = {
         `Un DAF senior pour piloter vos finances. Équipe finance et RH à Paris et Barcelone, ${CLIENTS_ACCOMPAGNES} entreprises accompagnées. Découvrez nos missions et tarifs.`,
     },
     eyebrow: "Cabinet finance & RH · Paris / Barcelone",
-    headline: ["Un ", "DAF senior", " pour piloter vos finances."],
+    headline: ["Iter Advisors, vos ", "DAF seniors", " pour piloter vos finances."],
     subtitle:
       "Trésorerie, budgets, reporting et financements : un directeur financier intégré à votre équipe, quelques jours par mois. Pour les PME et startups en France et en Espagne.",
     contact: "Échanger avec un DAF",
-    fees: "Voir les tarifs",
+    fees: "Voir les fourchettes",
     notice: "Préavis de",
     days: "jours",
     noMinimum: "Sans durée minimale.",
@@ -170,7 +170,7 @@ const copy = {
       title: "Le regard de nos clients.",
       source: "Lire les avis sur Trustfolio",
       translated: "",
-      bodies: [] as string[],
+      bodies: ["leur capacité à nous challenger et à nous éclairer dans nos prises de décisions stratégiques.", "avec sérieux, disponibilité et efficacité."],
     },
     moments: {
       eyebrow: "Quand nous appeler",
@@ -218,7 +218,7 @@ const copy = {
         `A senior CFO to lead your finances. Finance and HR teams in Paris and Barcelona, ${CLIENTS_ACCOMPAGNES} businesses supported. Explore our services, people and fees.`,
     },
     eyebrow: "Finance & HR firm · Paris / Barcelona",
-    headline: ["A ", "senior CFO", " to lead your finances."],
+    headline: ["Iter Advisors, your ", "senior CFOs", " to manage your finances."],
     subtitle:
       "Cash flow, budgets, reporting and financing: a finance director embedded in your team for a few days a month. For SMEs and startups in France and Spain.",
     contact: "Talk to a CFO",
@@ -337,10 +337,10 @@ const copy = {
       eyebrow: "Their experience in their words",
       title: "Our clients’ perspective.",
       source: "Read the reviews on Trustfolio",
-      translated: "Translated from French",
+      translated: "Excerpt translated from French",
       bodies: [
-        "After five years of working together, Iter remains a strategic asset, combining multidisciplinary expertise with a long-term perspective.",
-        "Iter’s teams structured our finance function with diligence, availability and efficiency, even exceeding our initial expectations.",
+        "their ability to challenge us and inform our strategic decisions.",
+        "with diligence, availability and efficiency.",
       ],
     },
     moments: {
@@ -389,7 +389,7 @@ const copy = {
         `Un CFO sénior para dirigir sus finanzas. Equipos de finanzas y RR. HH. en París y Barcelona, ${CLIENTS_ACCOMPAGNES} empresas acompañadas. Conozca servicios y honorarios.`,
     },
     eyebrow: "Consultoría de finanzas y RR. HH. · París / Barcelona",
-    headline: ["Un ", "CFO sénior", " para dirigir sus finanzas."],
+    headline: ["Iter Advisors, sus ", "CFO sénior", " para dirigir sus finanzas."],
     subtitle:
       "Tesorería, presupuestos, reporting y financiación: un director financiero integrado en su equipo unos días al mes. Para pymes y startups en Francia y España.",
     contact: "Hablar con un CFO",
@@ -509,10 +509,10 @@ const copy = {
       eyebrow: "Su experiencia de acompañamiento",
       title: "La perspectiva de nuestros clientes.",
       source: "Leer las opiniones en Trustfolio",
-      translated: "Traducido del francés",
+      translated: "Extracto traducido del francés",
       bodies: [
-        "Tras cinco años de colaboración, Iter sigue siendo un activo estratégico que aporta experiencia multidisciplinar y visión a largo plazo.",
-        "Los equipos de Iter estructuraron nuestra función financiera con rigor, disponibilidad y eficiencia, superando incluso nuestras expectativas iniciales.",
+        "su capacidad para cuestionarnos y ayudarnos a tomar decisiones estratégicas.",
+        "con rigor, disponibilidad y eficiencia.",
       ],
     },
     moments: {
@@ -571,9 +571,8 @@ export function getHomePilotage(locale: Locale) {
     proofs: [
       { value: String(CLIENTS_ACCOMPAGNES), label: t.companies },
       {
-        value:
-          locale === "en" ? `€${FONDS_LEVES.replace(" M€", "M")}` : FONDS_LEVES,
-        label: t.raised,
+        value: String(FINANCE_TEAM_SIZE),
+        label: { fr: "professionnels de la finance", en: "finance professionals", es: "profesionales de finanzas" }[locale],
       },
       { value: `${TRUSTFOLIO_RATING}/5`, label: t.rating },
     ],

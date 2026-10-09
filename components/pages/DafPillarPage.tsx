@@ -1,3 +1,4 @@
+import ScopeResponsibilities from "@/components/finance/ScopeResponsibilities";
 import { indicativePriceSpecification } from "@/lib/schemas/identity";
 import PublishedLocaleLink from "@/components/PublishedLocaleLink";
 import Image from "next/image";
@@ -59,6 +60,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
         <dl className="mt-4 grid sm:grid-cols-2 gap-5"><div><dt className="font-semibold text-foreground">{ui.deliverable}</dt><dd className={`${body} mt-2`}>{item.deliverable}</dd></div><div><dt className="font-semibold text-foreground">{ui.decision}</dt><dd className={`${body} mt-2`}>{item.decision}</dd></div></dl>
         <PublishedLocaleLink locale={locale} className={`${link} inline-flex mt-4`} href={href(item.href)}>{item.linkLabel}</PublishedLocaleLink>
       </article>)}</div>
+      <ScopeResponsibilities locale={locale} kind="finance" />
       <figure className="site-card bg-white border border-border p-5 sm:p-7">
         <figcaption><h3 className="font-semibold text-foreground">{t.missions.example.heading}</h3><p className={`${body} mt-2`}>{t.missions.example.intro}</p></figcaption>
         <ServiceTable caption={ui.caption} headers={ui.headers} rows={t.missions.example.rows} captionHidden />
@@ -140,7 +142,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
 
     <Section id="faq" title={ui.faq}>
       <ServiceFaq items={t.faq.map(item => ({ question: item.question, answer: renderInlineMarkdownLinks(item.answer.replace(/\]\((\/[^)]+)\)/g, (_, linkPath: string) => `](${href(linkPath)})`)) }))} />
-      <nav id="secteurs" aria-label={ui.sectors} className="scroll-mt-24 text-sm"><p className="font-semibold mb-3">{ui.explore}</p><ul className="flex flex-wrap gap-x-5 gap-y-3">{[["Startups et SaaS", "/fractional-cfo-startups"], ["E-commerce", "/daf-externalise/ecommerce"], [ui.industry, "/daf-externalise/industrie"], ["Deep-tech", "/daf-externalise/deep-tech"]].map(([label, sectorPath]) => <li key={sectorPath}><PublishedLocaleLink locale={locale} href={href(sectorPath)} className={link}>{label}</PublishedLocaleLink></li>)}</ul></nav>
+      <nav id="secteurs" aria-label={ui.sectors} className="scroll-mt-24 text-sm"><p className="font-semibold mb-3">{ui.explore}</p><ul className="flex flex-wrap gap-x-5 gap-y-3">{[[locale === "fr" ? "Startups et SaaS" : locale === "en" ? "Startups and SaaS" : "Startups y SaaS", "/fractional-cfo-startups"], ["E-commerce", "/daf-externalise/ecommerce"], [ui.industry, "/daf-externalise/industrie"], ["Deep-tech", "/daf-externalise/deep-tech"]].map(([label, sectorPath]) => <li key={sectorPath}><PublishedLocaleLink locale={locale} href={href(sectorPath)} className={link}>{label}</PublishedLocaleLink></li>)}</ul></nav>
     </Section>
 
     <ServiceContact locale={locale} title={t.contact.heading} text={t.contact.text} href={href(t.contact.href)} label={t.hero.cta} />

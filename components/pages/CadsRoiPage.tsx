@@ -167,7 +167,7 @@ function Hero({ formRef }: { formRef: React.RefObject<HTMLDivElement | null> }) 
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-white/70">
             <TrustItem value="13 semaines" label="horizon indicatif du prévisionnel" />
             <TrustItem value={`${CLIENTS_ACCOMPAGNES}`} label="entreprises accompagnées" />
-            <TrustItem value="30 jours" label="préavis de fin de mission récurrente" />
+            {locale === "fr" ? <TrustItem value="30 jours" label="préavis de fin de mission récurrente" /> : <TrustItem value={locale === "en" ? "Agreed" : "Acordado"} label={locale === "en" ? "scope defined in the contract" : "alcance definido en el contrato"} />}
           </div>
         </div>
 

@@ -1,3 +1,4 @@
+import { contractContent } from "./contract-copy";
 import { getFinanceStackSummary } from "./finance-stack";
 import { Locale } from "../i18n";
 import { FORMULES, ENGAGEMENT, MISSIONS_PONCTUELLES } from "./facts";
@@ -1582,7 +1583,7 @@ const slugMapping: Record<Locale, Record<string, DafSubPageSlug>> = {
 export function getDafSubContent(locale: Locale, urlSlug: string): DafSubContent | undefined {
   const key = slugMapping[locale]?.[urlSlug];
   if (!key) return undefined;
-  const content = dafSubContent[locale][key];
+  const content = contractContent(dafSubContent[locale][key], locale);
   if (locale === "fr" && key === "metier") {
     return { ...content, sections: [...content.sections, {
       heading: "Exercer le métier de DAF chez Iter Advisors",
