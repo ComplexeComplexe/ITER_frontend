@@ -1,18 +1,18 @@
+import { indicativePriceSpecification } from "@/lib/schemas/identity";
 import PublishedLocaleLink from "@/components/PublishedLocaleLink";
 import Image from "next/image";
 import { Linkedin } from "lucide-react";
-import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
+import { PEOPLE, personId, COMPANY } from "@/lib/company-facts";
 import type { CmsNavItem, StrapiTeamMember } from "@/lib/static-content";
 import { strapiMediaUrl } from "@/lib/static-content";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import { aboutHref } from "@/lib/path-localization";
-import { FORMULES } from "@/lib/content/facts";
 import { DAF_PILLAR_MODIFIED, DAF_PILLAR_MODIFIED_LABEL, DAF_PILLAR_PATH, DAF_PILLAR_PUBLISHED } from "@/lib/content/daf-pillar";
 import type { Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
 import { getDafPillarContent, pillarInterface } from "@/lib/content/daf-pillar-locales";
 import { faqPageSchema } from "@/lib/schemas";
-import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
+import { editorialWebPageSchema } from "@/lib/schemas/editorial";
 import { renderInlineMarkdownLinks, stripInlineMarkdown } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import ServiceHero from "@/components/design/ServiceHero";
@@ -22,7 +22,7 @@ import Section from "@/components/design/ServiceSection";
 import ServiceContact from "@/components/design/ServiceContact";
 import PageByline from "@/components/PageByline";
 
-const AUTHOR = ITER_AUTHOR;
+const AUTHOR = { name: PEOPLE.sebastien.name, slug: PEOPLE.sebastien.slug };
 const SITE = "https://www.iteradvisors.com";
 const safeJson = (value: unknown) => JSON.stringify(value).replace(/</g, "\\u003c");
 const body = "text-base text-muted-foreground leading-relaxed";
@@ -155,24 +155,20 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
             name: t.hero.h1,
             description: t.meta.description,
             provider: { "@id": `${SITE}/#organization` },
+            mainEntityOfPage: { "@id": `${SITE}${path}#webpage` },
+            audience: { "@type": "BusinessAudience", audienceType: { fr: "PME, startups et scale-ups", en: "SMEs, startups and scale-ups", es: "Pymes, startups y scale-ups" }[locale] },
             areaServed: [
               { "@type": "Country", name: "France" },
               { "@type": "Country", name: ui.spain },
             ],
             url: `${SITE}${path}`,
             offers: {
-              "@type": "AggregateOffer",
-              priceCurrency: "EUR",
-              lowPrice: String(FORMULES[0].prixMin),
-              highPrice: String(FORMULES[FORMULES.length - 1].prixMax),
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                minPrice: String(FORMULES[0].prixMin),
-                maxPrice: String(FORMULES[FORMULES.length - 1].prixMax),
-                valueAddedTaxIncluded: false,
-                priceCurrency: "EUR",
-                unitText: "MONTH",
-              },
+              "@type": "Offer",
+              description: t.pricing.intro,
+              url: `${SITE}${path}#tarifs`,
+              priceSpecification: indicativePriceSpecification(
+                COMPANY.dafMonthlyPrice.min, COMPANY.dafMonthlyPrice.max, locale === "fr" ? "mois" : locale === "en" ? "month" : "mes",
+              ),
             },
           }),
         }}
@@ -189,7 +185,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
               author: AUTHOR,
               datePublished: DAF_PILLAR_PUBLISHED,
               dateModified: DAF_PILLAR_MODIFIED,
-            }), mainEntity: { "@id": `${SITE}${path}#service-offer` } },
+            }), mainEntity: { "@id": `${SITE}${path}#service-offer` }, contributor: { "@id": personId(PEOPLE.florent.slug) } },
           ),
         }}
       />
@@ -201,36 +197,6 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
               t.faq.map((item) => ({ question: item.question, answer: stripInlineMarkdown(item.answer) })),
             ),
           ),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: safeJson({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "Person",
-                "@id": FINANCE_EXPERT.id,
-                name: "Sébastien Doat",
-                jobTitle: ui.founder,
-                url: `${SITE}${aboutHref(locale, "sebastien-doat")}`,
-                sameAs: ["https://www.linkedin.com/in/sebastien-doat-fractional-cfo/"],
-                worksFor: { "@type": "Organization", "@id": `${SITE}/#organization`, name: "Iter Advisors" },
-                knowsAbout: ui.expertise,
-              },
-              {
-                "@type": "Person",
-                "@id": `${SITE}/#florent-greth`,
-                name: "Florent Greth",
-                jobTitle: ui.partner,
-                url: `${SITE}${aboutHref(locale, "florent-greth")}`,
-                sameAs: ["https://www.linkedin.com/in/florent-greth-cfo-pennylane/"],
-                worksFor: { "@type": "Organization", "@id": `${SITE}/#organization`, name: "Iter Advisors" },
-                knowsAbout: ui.florentExpertise,
-              },
-            ],
-          }),
         }}
       />
     </PageLayout>;

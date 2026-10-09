@@ -3,8 +3,8 @@ import { CLIENTS_ACCOMPAGNES, DELAIS, ENGAGEMENT, FORMULES } from "@/lib/content
 
 export const DAF_PILLAR_PATH = "/daf-externalise";
 export const DAF_PILLAR_PUBLISHED = "2026-05-17";
-export const DAF_PILLAR_MODIFIED = "2026-10-03";
-export const DAF_PILLAR_MODIFIED_LABEL = "3 octobre 2026";
+export const DAF_PILLAR_MODIFIED = "2026-10-09";
+export const DAF_PILLAR_MODIFIED_LABEL = "9 octobre 2026";
 const fmt = (n: number) => n.toLocaleString("fr-FR").replace(/ | /g, " ");
 const budget = `${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT`;
 
@@ -100,7 +100,7 @@ export const dafPillar = {
   },
   experts: {
     heading: "Qui pilote votre mission chez Iter ?",
-    intro: "Sébastien Doat, associé fondateur et DAF externalisé, est votre interlocuteur finance. Le profil affecté à la mission dépend du besoin : CFO ou Finance Manager senior, avec l’appui prévu dans la formule. Le premier échange sert aussi à vérifier cette adéquation, plutôt qu’à vous proposer un niveau de séniorité identique pour tous les travaux.",
+    intro: "Sébastien Doat, {{role:sebastien-doat}}, est votre interlocuteur finance. Le profil affecté à la mission dépend du besoin : CFO ou Finance Manager senior, avec l’appui prévu dans la formule. Le premier échange sert aussi à vérifier cette adéquation, plutôt qu’à vous proposer un niveau de séniorité identique pour tous les travaux.",
     paragraphs: [
       "Les associés supervisent les engagements et interviennent sur les sujets structurants. Le cadrage permet de distinguer la personne qui produit le reporting, celle qui conduit la revue et celle qui relit les livrables sensibles. La continuité repose sur la connaissance du dossier et l’organisation d’un relais, sans promettre qu’une même personne sera disponible en toutes circonstances.",
       "L’automatisation et l’IA peuvent faciliter la collecte ou la préparation des analyses lorsqu’elles répondent à un besoin identifié. Elles ne remplacent ni le contrôle des chiffres ni la discussion avec le dirigeant. La priorité reste une information compréhensible et utilisable, avec des outils adaptés à votre équipe.",
@@ -108,8 +108,8 @@ export const dafPillar = {
     slugs: ["sebastien-doat", "florent-greth"],
   },
   faq: [
-    { question: "Dois-je changer d’expert-comptable ?", answer: "L’intervention du DAF n’implique pas, en elle-même, de changer de cabinet. L’expert-comptable produit et sécurise l’information comptable et fiscale selon sa lettre de mission ; le DAF organise son utilisation pour piloter. Les échanges et responsabilités sont définis ensemble. [Comparer les rôles](/ressources/blog/daf-externalise-vs-expert-comptable)." },
-    { question: "Faut-il changer nos logiciels ?", answer: "Un changement ne doit pas être un préalable automatique. L’existant est examiné avant de proposer une évolution : données accessibles, fiabilité et temps de traitement. Une migration éventuelle doit avoir un objectif, un coût et un périmètre définis. [Notre approche IA et finance](/ressources/ia-finance)." },
+    { question: "Dois-je changer d’expert-comptable ?", answer: "L’intervention du DAF n’implique pas, en elle-même, de changer de cabinet. L’expert-comptable produit et sécurise l’information comptable et fiscale selon sa lettre de mission ; le DAF organise son utilisation pour piloter. Les échanges et responsabilités sont définis ensemble. [Pour aller plus loin, comparez les rôles du DAF et de l’expert-comptable](/ressources/blog/daf-externalise-vs-expert-comptable)." },
+    { question: "Faut-il changer nos logiciels ?", answer: "Un changement ne doit pas être un préalable automatique. L’existant est examiné avant de proposer une évolution : données accessibles, fiabilité et temps de traitement. Une migration éventuelle doit avoir un objectif, un coût et un périmètre définis. [Notre approche de l’IA en finance détaille cette méthode](/ressources/ia-finance)." },
     { question: "Qui garde la décision et les autorisations de paiement ?", answer: "Le dirigeant conserve les décisions et les autorisations de paiement. Les analyses du DAF servent à préparer les arbitrages. Les accès aux outils doivent correspondre aux tâches confiées ; toute délégation éventuelle nécessite un cadre explicite, distinct d’un simple accès aux informations financières." },
     { question: "Comment préparer la fin d’une mission ?", answer: `Le préavis est de ${ENGAGEMENT.preavisJours} jours. Faites préciser au contrat les modalités de restitution des fichiers, la documentation et la passation à votre équipe ou au prochain intervenant. Ces points doivent être abordés dès le cadrage, avec les règles d’accès et de confidentialité applicables aux données.` },
     { question: "Et si nous avons besoin d’un DAF à temps plein ?", answer: "Une présence quotidienne durable peut justifier un recrutement. Pour un remplacement ou une transformation temporaire, le [DAF de transition](/daf-externalise/transition) est une autre réponse. Le [temps partagé](/daf-externalise/temps-partage) convient à un besoin récurrent dont le volume reste partiel : ces dispositifs se choisissent selon la charge réelle." },

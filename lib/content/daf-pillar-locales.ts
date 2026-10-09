@@ -1,3 +1,4 @@
+import { PEOPLE, resolveCompanyCopy } from "@/lib/company-facts";
 import { CLIENTS_ACCOMPAGNES } from "./facts";
 import type { Locale } from "@/lib/i18n";
 import { dafPillar, type DafPillarContent } from "./daf-pillar";
@@ -6,7 +7,7 @@ import es from "./locales/daf-pillar.es.json";
 
 const content: Record<Locale, DafPillarContent> = { fr: dafPillar, en, es };
 export function getDafPillarContent(locale: Locale): DafPillarContent {
-  const page = content[locale];
+  const page = resolveCompanyCopy(content[locale], locale);
   return {
     ...page,
     hero: {
@@ -37,8 +38,8 @@ export const pillarInterface = {
     industry: "Industrie",
     service: "DAF externalisé",
     spain: "Espagne",
-    founder: "Associé fondateur, DAF externalisé et CFO",
-    partner: "Associé et CFO",
+    founder: PEOPLE.sebastien.roles.fr,
+    partner: PEOPLE.florent.roles.fr,
     expertise: [
       "DAF externalisé",
       "direction financière externalisée",
@@ -71,8 +72,8 @@ export const pillarInterface = {
     industry: "Industry",
     service: "Fractional CFO",
     spain: "Spain",
-    founder: "Founding partner and Fractional CFO",
-    partner: "Partner and CFO",
+    founder: PEOPLE.sebastien.roles.en,
+    partner: PEOPLE.florent.roles.en,
     expertise: [
       "Fractional CFO",
       "Financial management",
@@ -105,8 +106,8 @@ export const pillarInterface = {
     industry: "Industria",
     service: "CFO externo",
     spain: "España",
-    founder: "Socio fundador y CFO externo",
-    partner: "Socio y CFO",
+    founder: PEOPLE.sebastien.roles.es,
+    partner: PEOPLE.florent.roles.es,
     expertise: [
       "CFO externo",
       "Dirección financiera",

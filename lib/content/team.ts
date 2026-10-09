@@ -1,3 +1,4 @@
+import { resolveCompanyCopy, getApprovedPerson, approvedPersonTitle } from "@/lib/company-facts";
 import partnerSummaries from "@/lib/content/partner-summaries.json";
 import type { StrapiTeamMember } from "@/lib/static-content";
 import type { Locale } from "@/lib/i18n";
@@ -38,11 +39,11 @@ function partnerMemberData(slug: string): Pick<FallbackMemberData, "roles" | "h1
   const { fr, en, es } = summary ?? {};
   if (!fr || !en || !es) throw new Error(`Missing partner profile: ${slug}`);
   const localize = (select: (profile: typeof partnerSummaries["guillaume-rostand"]["fr"]) => string): Record<Locale, string> => ({
-    fr: select(fr), en: select(en), es: select(es),
+    fr: resolveCompanyCopy(select(fr), "fr"), en: resolveCompanyCopy(select(en), "en"), es: resolveCompanyCopy(select(es), "es"),
   });
   return {
-    roles: localize(profile => profile.role),
-    h1Roles: localize(profile => profile.metaRole),
+    roles: { fr: getApprovedPerson(slug)!.roles.fr, en: getApprovedPerson(slug)!.roles.en, es: getApprovedPerson(slug)!.roles.es },
+    h1Roles: { fr: getApprovedPerson(slug)!.roles.fr, en: getApprovedPerson(slug)!.roles.en, es: getApprovedPerson(slug)!.roles.es },
     bio: localize(profile => profile.bio),
     bioExtended: localize(profile => profile.bioExtended),
     ...("metaTitle" in fr && { metaTitle: localize(profile => (profile as typeof fr & { metaTitle: string }).metaTitle) }),
@@ -403,7 +404,8 @@ export function getTeamMembers(locale: Locale): StrapiTeamMember[] {
   return fallbackData.map((member) => ({
     ...member,
     title: `${member.firstName} ${member.lastName}`,
-    role: member.roles[locale],
+    linkedIn: getApprovedPerson(member.slug)?.linkedin ?? member.linkedIn,
+    role: getApprovedPerson(member.slug)?.roles[locale] ?? member.roles[locale],
   })) as StrapiTeamMember[];
 }
 
@@ -425,11 +427,12 @@ export function getTeamMemberBySlug(
   return {
     ...member,
     title: `${member.firstName} ${member.lastName}`,
-    role: member.roles[locale],
+    linkedIn: getApprovedPerson(member.slug)?.linkedin ?? member.linkedIn,
+    role: getApprovedPerson(member.slug)?.roles[locale] ?? member.roles[locale],
     bio: member.bio[locale],
     h1Role: member.h1Roles?.[locale],
     bioExtended: member.bioExtended?.[locale],
-    metaTitle: member.metaTitle?.[locale],
+    metaTitle: approvedPersonTitle(slug, locale) ?? member.metaTitle?.[locale],
     metaDescription: member.metaDescription?.[locale],
   } as StrapiTeamMember & { bio: string; h1Role?: string; bioExtended?: string };
 }

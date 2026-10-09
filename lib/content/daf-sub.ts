@@ -466,7 +466,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           ],
         },
         {
-          heading: "Ce que nos clients paient réellement",
+          heading: "Répartition des missions et fourchettes indicatives",
           content: [
             // BAROMÈTRE (2026-09-01) — répartition fournie par Guillaume Rostand,
             // arrondie à la dizaine (facts.ts, REPARTITION_CLIENTS_PAR_FORMULE).
@@ -525,7 +525,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
           content: [
             "Le tarif est-il déductible fiscalement ? À vérifier avec votre conseil fiscal selon la situation de l'entreprise, les règles applicables et les justificatifs. Cette page ne constitue pas une évaluation fiscale.",
             "Peut-on négocier le tarif ? Les fourchettes donnent un repère de budget, pas un prix fixe. Nous pouvons adapter le périmètre, les livrables et le rythme à vos priorités. Le devis précise les travaux retenus et le profil mobilisé.",
-            "Combien paient la plupart de vos clients ? Les fourchettes mensuelles indicatives sont de 3 000 à 5 000 € HT pour Essentiel, de 5 000 à 6 500 € HT pour Croissance et de 6 500 à 8 000 € HT pour Premium. Le devis dépend du périmètre, du profil mobilisé, des outils et de la complexité de l'organisation.",
+            "Quelles sont les fourchettes par formule ? Les fourchettes mensuelles indicatives sont de 3 000 à 5 000 € HT pour Essentiel, de 5 000 à 6 500 € HT pour Croissance et de 6 500 à 8 000 € HT pour Premium. Le devis dépend du périmètre, du profil mobilisé, des outils et de la complexité de l'organisation.",
             "Y a-t-il un engagement de durée minimum ? Non. La résiliation est possible avec un préavis de 30 jours.",
             "Le tarif inclut-il les déplacements ? Pour les interventions en présentiel, les frais de déplacement (transport, hébergement si nécessaire) sont facturés en sus au coût réel. Les interventions en distanciel ne génèrent pas de frais supplémentaires.",
           ],

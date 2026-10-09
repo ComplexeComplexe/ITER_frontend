@@ -19,7 +19,7 @@ export const toolReviews: Record<string, ToolReview> = {
     fit: "Une PME avec plusieurs comptes, des décalages clients-fournisseurs ou une activité saisonnière peut examiner Agicap pour rapprocher les soldes et construire des scénarios. La direction financière doit pouvoir expliquer chaque variation, puis corriger les hypothèses commerciales ou de dépenses.",
     avoid: "Si les factures ne comportent pas d’échéances exploitables ou si personne ne tient à jour les hypothèses, l’automatisation bancaire seule ne résout pas le besoin. Le cash affiché aujourd’hui et le cash disponible dans trois mois répondent à deux questions différentes.",
     decision: "Faites simuler le retard de votre plus gros client, une échéance de TVA et une dépense d’investissement. Demandez une restitution du solde minimum, avec le détail des flux responsables. Pour plusieurs sociétés, vérifiez la distinction entre disponibilités de chaque entité et vision groupe, ainsi que le traitement des transferts internes.",
-    alternatives: ['fygr', 'kyriba', 'pennylane'],
+    alternatives: ['okimia', 'kyriba', 'pennylane'],
   },
   spendesk: {
     verdict: "Spendesk est à examiner pour organiser les dépenses avant leur paiement : demandes, approbations, justificatifs et affectation budgétaire. Le bénéfice recherché doit porter sur le circuit de contrôle, pas seulement sur la distribution de cartes.",
@@ -49,7 +49,7 @@ export const toolReviews: Record<string, ToolReview> = {
     decision: "Demandez au cabinet de montrer une pièce déposée par l’entreprise, sa prise en compte comptable et le retour d’une anomalie. Vérifiez ensuite comment récupérer les journaux, les soldes et les documents en fin de mission. Le calendrier de clôture et la fréquence de restitution doivent être écrits.",
     alternatives: ['pennylane', 'sage'],
   },
-  fygr: {
+  okimia: {
     verdict: "Fygr est devenu Okimia. L’URL de cette fiche est conservée pour retrouver les recherches historiques, mais le produit et les conditions actuels doivent être évalués sous le nom Okimia.",
     fit: "Une entreprise qui cherche à organiser sa prévision de trésorerie peut examiner Okimia à partir de ses banques, de ses échéances et de ses catégories de flux. Une prévision exploitable doit relier les mouvements observés aux encaissements et décaissements attendus.",
     avoid: "Le changement de nom ne permet pas de reconduire automatiquement un ancien prix ou un ancien comparatif. Faites vérifier les entités, les connexions et les modules de la formule actuelle. Aucun avantage chiffré de coût par rapport à Agicap n’est établi ici.",
@@ -103,7 +103,7 @@ export const toolReviews: Record<string, ToolReview> = {
     fit: "Un groupe avec plusieurs sociétés et des flux bancaires complexes peut étudier Kyriba pour structurer la vision de liquidité. La pertinence dépend du périmètre fonctionnel et de la capacité de l’équipe à administrer les connexions et les habilitations.",
     avoid: "Si le problème se limite à maintenir une prévision simple pour une seule société, examinez d’abord une solution proportionnée. Aucun seuil automatique de chiffre d’affaires ne justifie à lui seul un projet Kyriba. L’effort de déploiement doit être chiffré avec les banques et l’intégrateur.",
     decision: "Cartographiez les comptes, les mandats, les formats de paiement et les scénarios de risque. Faites valider la séparation entre préparation et autorisation des paiements. Le pilote doit démontrer la traçabilité des flux, la gestion des incidents et la disponibilité des données nécessaires aux décisions groupe.",
-    alternatives: ['agicap', 'fygr'],
+    alternatives: ['agicap', 'okimia'],
   },
   'power-bi': {
     verdict: "Power BI peut servir au reporting financier si les sources et le modèle de données sont préparés. Il constitue une couche d’analyse ; la qualité d’un tableau de bord reste liée à celle des écritures et des référentiels qui l’alimentent.",

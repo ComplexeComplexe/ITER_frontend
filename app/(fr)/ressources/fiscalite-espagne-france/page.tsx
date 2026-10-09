@@ -102,6 +102,8 @@ export default async function Page() {
         isPartOf: { "@id": "https://www.iteradvisors.com/#website" },
         hasPart: readyPillars.map((p) => ({
           "@type": "Article",
+          "@id": `https://www.iteradvisors.com${p.href}#article`,
+          inLanguage: "fr-FR",
           url: `https://www.iteradvisors.com${p.href}`,
           name: p.label,
         })),

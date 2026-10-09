@@ -36,11 +36,11 @@ describe('Validated HR commercial offer', () => {
     for (const locale of locales) {
       const page = parse(locale);
       const schemas = [...page.querySelectorAll('script[type="application/ld+json"]')].map(node => JSON.parse(node.textContent!));
-      const person = schemas.find(schema => schema['@type'] === 'Person');
-      expect(person['@id']).toBe('https://www.iteradvisors.com/a-propos/borith-biv#person');
-      expect(person.sameAs).toEqual(['https://www.linkedin.com/in/borith-biv-linkb/']);
+      expect(schemas.some(schema => schema['@type'] === 'Person')).toBe(false);
+      const webpage = schemas.find(schema => schema['@type'] === 'WebPage');
+      expect(webpage.author).toEqual({ '@id': 'https://www.iteradvisors.com/a-propos/borith-biv#person' });
       expect(schemas.find(schema => schema['@type'] === 'Service').provider['@id']).toBe('https://www.iteradvisors.com/#organization');
-      expect(person.reviewedBy).toBeUndefined();
+      expect(webpage.reviewedBy).toBeUndefined();
       expect(page.querySelector(`a[href="${parityHref('/a-propos/borith-biv', locale)}"]`)).not.toBeNull();
       expect(page.querySelector('#piliers')!.querySelectorAll('article')).toHaveLength(4);
       for (const slug of ['payfit', 'lucca', 'factorial', 'silae']) expect(page.querySelector(`#outils-rh a[href="${parityHref(`/ressources/outils/${slug}`, locale)}"]`)).not.toBeNull();

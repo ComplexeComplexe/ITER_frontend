@@ -73,20 +73,11 @@ const articleSchema = {
   headline: "DAF externalisé vs alternatives : le comparatif complet 2026",
   description:
     "Le guide comparatif complet pour choisir entre DAF externalisé, salarié, expert-comptable, contrôleur de gestion et fractional CFO.",
-  author: {
-    "@type": "Person",
-    name: "Sébastien Doat",
-    jobTitle: "Associé fondateur — DAF externalisé & CFO",
-    url: "https://www.iteradvisors.com/a-propos",
-  },
+  author: { "@id": "https://www.iteradvisors.com/a-propos/sebastien-doat#person" },
   datePublished: "2026-07-13",
   dateModified: "2026-07-13",
   mainEntityOfPage: PAGE_URL,
-  publisher: {
-    "@type": "Organization",
-    "@id": "https://www.iteradvisors.com/#organization",
-    name: "Iter Advisors",
-  },
+  publisher: { "@id": "https://www.iteradvisors.com/#organization" },
 };
 
 export default function DafExternaliseVsAlternativesPage() {

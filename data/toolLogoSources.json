@@ -10,7 +10,7 @@
     "preparation": "Resolve publisher CSS variable --brand-deep-purple to its official #7136ed value for standalone SVG rendering."
   },
   {
-    "slug": "fygr",
+    "slug": "okimia",
     "asset": "/images/logos/tools/fygr-official.svg",
     "source": "https://www.okimia.com/fr",
     "kind": "publisher-inline-svg",

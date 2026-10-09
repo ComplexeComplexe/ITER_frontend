@@ -1,8 +1,4 @@
-import { CLIENTS_ACCOMPAGNES, CONSULTANTS } from "@/lib/content/facts";
-import { CABINET_EXPERTISES } from "@/lib/content/cabinet-expertise";
-import { FINANCE_EXPERT, editorialPersonId } from "@/lib/content/finance-expert";
-import { getPartnerProfile } from "@/lib/content/partner-profiles";
-import { parityHref } from "@/lib/locale-route-map";
+import { COMPANY, PEOPLE, personId } from "@/lib/company-facts";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "@/app/globals.css";
 import { TRACKING_BOOTSTRAP, CONSENT_DISPLAY_BOOTSTRAP } from "@/lib/analytics/consent";
@@ -51,21 +47,21 @@ export default function DocumentShell({
 }: Readonly<{ locale: Locale; children: React.ReactNode }>) {
   const organizationCopy = {
     fr: {
-      description: `Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. ${CONSULTANTS} consultants, ${CLIENTS_ACCOMPAGNES} entreprises accompagnées. Équipes à Barcelone et Paris ; accompagnement à distance ou sur accord à Toulouse.`,
+      description: `Cabinet de DAF et DRH externalisés pour PME, startups et scale-ups. ${COMPANY.teamLabel.fr}, ${COMPANY.clientsCount} entreprises accompagnées. Équipes à Barcelone et Paris ; accompagnement à distance ou sur accord à Toulouse.`,
       slogan: "La meilleure version de votre direction financière",
-      expertise: [...CABINET_EXPERTISES.map(({ label }) => label), "Directeur financier externalisé", "CFO à temps partagé", "Fractional CFO", "Direction financière externalisée", "Gestion de trésorerie", "M&A et due diligence financière", "Pilotage financier startup"],
+      expertise: ["DAF externalisé", "DRH externalisée", "Contrôle de gestion", "Gestion de trésorerie", "Logiciels de gestion financière", "Pennylane"],
       france: "France", spain: "Espagne", barcelona: "Barcelone",
     },
     en: {
-      description: `Fractional CFO firm for SMEs, startups and scale-ups. ${CONSULTANTS} consultants and ${CLIENTS_ACCOMPAGNES} companies supported. Teams in Barcelona and Paris; remote support or an agreed arrangement in Toulouse.`,
+      description: `Fractional CFO and HR leadership firm for SMEs, startups and scale-ups. ${COMPANY.teamLabel.en}, ${COMPANY.clientsCount} companies supported. Teams in Barcelona and Paris; remote support or an agreed arrangement in Toulouse.`,
       slogan: "A stronger finance function for your business",
-      expertise: ["Fractional CFO", "External HR director", "Management accounting", "Fundraising preparation", "France-Spain taxation", "Cash flow management", "M&A and financial due diligence", "Startup financial management"],
+      expertise: ["Fractional CFO", "External HR leadership", "Management accounting", "Cash flow management", "Financial management software", "Pennylane"],
       france: "France", spain: "Spain", barcelona: "Barcelona",
     },
     es: {
-      description: `Firma de CFO externo para pymes, startups y scale-ups. ${CONSULTANTS} consultores y ${CLIENTS_ACCOMPAGNES} empresas acompañadas. Equipos en Barcelona y París; apoyo a distancia o según acuerdo en Toulouse.`,
+      description: `Firma de CFO externo y dirección de RRHH para pymes, startups y scale-ups. ${COMPANY.teamLabel.es}, ${COMPANY.clientsCount} empresas acompañadas. Equipos en Barcelona y París; apoyo a distancia o según acuerdo en Toulouse.`,
       slogan: "Una función financiera más sólida para tu empresa",
-      expertise: ["CFO externo", "Director de RR. HH. externo", "Control de gestión", "Preparación de rondas de financiación", "Fiscalidad Francia-España", "Gestión de tesorería", "M&A y due diligence financiera", "Gestión financiera para startups"],
+      expertise: ["CFO externo", "Dirección de RRHH externa", "Control de gestión", "Gestión de tesorería", "Software de gestión financiera", "Pennylane"],
       france: "Francia", spain: "España", barcelona: "Barcelona",
     },
   }[locale];
@@ -100,11 +96,11 @@ export default function DocumentShell({
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": ["ProfessionalService", "Organization"],
+                  "@type": "Organization",
                   "@id": "https://www.iteradvisors.com/#organization",
-                  name: "Iter Advisors",
+                  name: COMPANY.name,
                   // Spanish SL (sociedad limitada), NIF B42960849.
-                  legalName: "Iter Advisors S.L.",
+                  legalName: COMPANY.legalName,
                   taxID: "B42960849",
                   vatID: "ESB42960849",
                   url: "https://www.iteradvisors.com/",
@@ -123,22 +119,16 @@ export default function DocumentShell({
                       postalCode: "08010",
                       addressCountry: "ES",
                     },
-                    {
-                      "@type": "PostalAddress",
-                      addressLocality: "Paris",
-                      addressCountry: "FR",
-                    },
                   ],
-                  openingHours: "Mo-Fr 09:00-18:00",
                   // SEO-FIN §7.4 (2026-08-15) — enrichissement remonté depuis
                   // /daf-externalise, qui redéfinissait un second nœud avec le
                   // même @id=#organization. Deux définitions concurrentes de la
                   // même entité, dont une seule portait ces propriétés. Elles
                   // décrivent le cabinet, pas la page : leur place est ici, où
                   // l'entité est déclarée une fois pour tout le site.
-                  alternateName: ["Iter Advisors S.L.", "Iter Advisors Cabinet DAF"],
+                  alternateName: [COMPANY.legalName],
                   slogan: organizationCopy.slogan,
-                  foundingDate: "2021",
+                  foundingDate: String(COMPANY.foundingYear),
                   areaServed: [
                     { "@type": "Country", name: organizationCopy.france },
                     { "@type": "Country", name: organizationCopy.spain },
@@ -154,40 +144,11 @@ export default function DocumentShell({
                     availableLanguage: ["French", "English", "Spanish"],
                   },
                   knowsAbout: organizationCopy.expertise,
-                  founder: [
-                    {
-                      "@type": "Person",
-                      "@id": FINANCE_EXPERT.id,
-                      url: `https://www.iteradvisors.com${parityHref(FINANCE_EXPERT.href, locale)}`,
-                      name: FINANCE_EXPERT.name,
-                      jobTitle: getPartnerProfile("sebastien-doat", locale)?.teamRole,
-                      sameAs: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
-                    },
-                    {
-                      "@type": "Person",
-                      name: "Benjamin Ziza",
-                      "@id": editorialPersonId("/a-propos/benjamin-ziza"),
-                      url: `https://www.iteradvisors.com${parityHref("/a-propos/benjamin-ziza", locale)}`,
-                      jobTitle: getPartnerProfile("benjamin-ziza", locale)?.teamRole,
-                      sameAs: "https://www.linkedin.com/in/benjaminziza/",
-                    },
-                    {
-                      "@type": "Person",
-                      name: "Guillaume Rostand",
-                      "@id": editorialPersonId("/a-propos/guillaume-rostand"),
-                      url: `https://www.iteradvisors.com${parityHref("/a-propos/guillaume-rostand", locale)}`,
-                      jobTitle: getPartnerProfile("guillaume-rostand", locale)?.teamRole,
-                      sameAs: "https://www.linkedin.com/in/rostand/",
-                    },
-                  ],
-                  // SEO-09 (2026-07-01) — sameAs consolidé pour renforcer
-                  // l'entité "Iter Advisors" dans le Knowledge Graph. Le
-                  // profil Trustfolio est ajouté comme signal third-party
-                  // vérifiable qui légitime l'aggregateRating porté par
-                  // le Service /daf-externalise (voir DafPage.tsx).
+                  founder: [PEOPLE.sebastien, PEOPLE.benjamin, PEOPLE.guillaume].map(person => ({ "@id": personId(person.slug) })),
+                  // Official profiles identify the cabinet; they do not enable review stars.
                   sameAs: [
                     "https://www.linkedin.com/company/iter-advisors/",
-                    "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc/reviews",
+                    "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
                     "https://www.youtube.com/@IterAdvisors1",
                   ],
                   // SEO-05 (2026-08-31) — aggregateRating volontairement
@@ -210,7 +171,7 @@ export default function DocumentShell({
                   "@type": "WebSite",
                   "@id": "https://www.iteradvisors.com/#website",
                   url: "https://www.iteradvisors.com/",
-                  name: "Iter Advisors",
+                  name: COMPANY.name,
                   publisher: {
                     "@id": "https://www.iteradvisors.com/#organization",
                   },

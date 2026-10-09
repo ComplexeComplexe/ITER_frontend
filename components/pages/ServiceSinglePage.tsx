@@ -134,6 +134,7 @@ export default function ServiceSinglePage({
               locale,
               author: ITER_AUTHOR,
               dateModified: modified,
+              mainEntityId: `https://www.iteradvisors.com${serviceUrl}#service`,
             })
           ),
         }}

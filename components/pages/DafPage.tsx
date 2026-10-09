@@ -1,5 +1,4 @@
 "use client";
-import { FINANCE_EXPERT } from "@/lib/content/finance-expert";
 import { CLIENTS_ACCOMPAGNES, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 
 import { useState, type ReactNode } from "react";
@@ -1291,7 +1290,7 @@ export default function DafPage({
                   maxPrice: String(FORMULES[FORMULES.length - 1].prixMax),
                   valueAddedTaxIncluded: false,
                   priceCurrency: "EUR",
-                  unitText: "MONTH",
+                  unitCode: "MON", unitText: "mois",
                 },
                 offers: FORMULES.map((f) => ({
                   "@type": "Offer",
@@ -1304,7 +1303,7 @@ export default function DafPage({
                     maxPrice: String(f.prixMax),
                     valueAddedTaxIncluded: false,
                     priceCurrency: "EUR",
-                    unitText: "MONTH",
+                    unitCode: "MON", unitText: "mois",
                   },
                   availability: "https://schema.org/InStock",
                 })),
@@ -1336,68 +1335,6 @@ export default function DafPage({
           déjà que Google ne supporte pas FinancialService pour les review
           snippets, seule raison de son ajout ; l'aggregateRating en avait été
           retiré en juillet. Il ne restait que le doublon. */}
-
-      {/* GAP 2 (2026-05-19) — Person schemas for named CFO experts (E-E-A-T / YMYL signal).
-          Sébastien Doat (founding partner) + Florent Greth (partner CFO).
-          sameAs → LinkedIn profiles; knowsAbout → primary expertise signals.
-          These structured entities confirm authorship & domain expertise to Google. */}
-      {locale === "fr" && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "Person",
-                  "@id": FINANCE_EXPERT.id,
-                  name: "Sébastien Doat",
-                  jobTitle: "Associé fondateur — DAF externalisé & CFO",
-                  url: "https://www.iteradvisors.com/a-propos",
-                  sameAs: [
-                    "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
-                  ],
-                  worksFor: {
-                    "@type": "Organization",
-                    "@id": "https://www.iteradvisors.com/#organization",
-                    name: "Iter Advisors",
-                  },
-                  knowsAbout: [
-                    "DAF externalisé",
-                    "CFO à temps partagé",
-                    "direction financière externalisée",
-                    "levée de fonds",
-                    "reporting financier",
-                    "budget prévisionnel",
-                  ],
-                },
-                {
-                  "@type": "Person",
-                  "@id": "https://www.iteradvisors.com/#florent-greth",
-                  name: "Florent Greth",
-                  jobTitle: "Partner & CFO",
-                  url: "https://www.iteradvisors.com/a-propos",
-                  sameAs: [
-                    "https://www.linkedin.com/in/florent-greth-cfo-pennylane/",
-                  ],
-                  worksFor: {
-                    "@type": "Organization",
-                    "@id": "https://www.iteradvisors.com/#organization",
-                    name: "Iter Advisors",
-                  },
-                  knowsAbout: [
-                    "DAF externalisé",
-                    "CFO",
-                    "finance startups",
-                    "tableau de bord financier",
-                    "contrôle de gestion",
-                  ],
-                },
-              ],
-            }),
-          }}
-        />
-      )}
 
       {/* Review Schema removed (2026-05-29): self-serving Trustfolio reviews
           about Iter Advisors are ineligible for Google review rich results, so

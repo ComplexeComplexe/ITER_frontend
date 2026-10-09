@@ -50,7 +50,7 @@ export const verbatims: Verbatim[] = [
     context: 'Retail multi-magasin 12 PDV - France',
   },
   {
-    toolSlug: 'fygr',
+    toolSlug: 'okimia',
     expert: 'benjamin',
     quote:
       "Fygr est notre recommandation pour les PME qui trouvent Agicap trop cher. À 49 €/mois, vous avez déjà la visibilité essentielle sur votre trésorerie. Parfait pour les structures 10-50 personnes en croissance contrôlée. L'onboarding se fait en une demi-journée.",
@@ -101,7 +101,7 @@ export const verbatims: Verbatim[] = [
 ];
 
 // Preserve attributed wording in the source; withhold outdated claims until the author validates them.
-const quotesPendingReview = new Set(["cegid-loop", "payfit", "fygr", "payhawk"]);
+const quotesPendingReview = new Set(["cegid-loop", "payfit", "okimia", "payhawk"]);
 
 export function getVerbatimsByTool(toolSlug: string): Verbatim | undefined {
   return quotesPendingReview.has(toolSlug) ? undefined : verbatims.find((v) => v.toolSlug === toolSlug);

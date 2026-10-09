@@ -41,6 +41,7 @@ export function editorialWebPageSchema({
   author,
   datePublished = SERVICE_PUBLISHED,
   dateModified = SERVICE_MODIFIED,
+  mainEntityId,
 }: {
   /** Chemin relatif de la page, avec son préfixe de locale s'il y a lieu. */
   path: string;
@@ -50,6 +51,7 @@ export function editorialWebPageSchema({
   author: EditorialAuthor;
   datePublished?: string;
   dateModified?: string;
+  mainEntityId?: string;
 }): Record<string, unknown> {
   const url = `${SITE}${path}`;
   return {
@@ -62,17 +64,8 @@ export function editorialWebPageSchema({
     inLanguage: locale === "fr" ? "fr-FR" : locale === "en" ? "en-GB" : "es-ES",
     datePublished,
     dateModified,
-    author: author.type === "Organization" ? {
-      "@type": "Organization",
-      "@id": `${SITE}/#organization`,
-      name: author.name,
-      url: SITE,
-    } : {
-      "@type": "Person",
-      "@id": editorialPersonId(authorHref(locale, author)),
-      name: author.name,
-      url: `${SITE}${authorHref(locale, author)}`,
-    },
+    ...(mainEntityId && { mainEntity: { "@id": mainEntityId } }),
+    author: { "@id": author.type === "Organization" ? `${SITE}/#organization` : editorialPersonId(authorHref(locale, author)) },
     publisher: { "@id": `${SITE}/#organization` },
     isPartOf: { "@id": `${SITE}/#website` },
   };

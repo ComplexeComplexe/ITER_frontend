@@ -1,4 +1,4 @@
-import { CONSULTANTS } from "@/lib/content/facts";
+import { TEAM_LABEL } from "@/lib/content/facts";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -47,7 +47,7 @@ const sectionLabels: Record<Locale, { perks: string; perksItems: string[]; whyTi
       { title: "Croissance rapide", desc: "Rejoignez une entreprise en pleine expansion depuis 2021, avec un portefeuille de clients en constante croissance." },
       { title: "Impact direct", desc: "Travaillez directement avec les fondateurs, les CFOs et les C-suite de startups innovantes." },
       { title: "Développement personnel", desc: "Accès à des formations, e-learning et conférences pour développer vos compétences." },
-      { title: "Équipe internationale", desc: `Une équipe de ${CONSULTANTS} consultants de différentes nationalités, unis par la passion de la finance.` },
+      { title: "Équipe internationale", desc: `Une équipe de ${TEAM_LABEL.fr} de différentes nationalités, unis par la passion de la finance.` },
     ],
   },
   en: {
@@ -63,7 +63,7 @@ const sectionLabels: Record<Locale, { perks: string; perksItems: string[]; whyTi
       { title: "Rapid growth", desc: "Join a fast-growing company since 2021, with an ever-expanding client portfolio." },
       { title: "Direct impact", desc: "Work directly with founders, CFOs and C-suite of innovative startups." },
       { title: "Personal development", desc: "Access to training, e-learning and conferences to grow your skills." },
-      { title: "International team", desc: `A team of ${CONSULTANTS} consultants from different nationalities, united by a passion for finance.` },
+      { title: "International team", desc: `A team of ${TEAM_LABEL.en} from different nationalities, united by a passion for finance.` },
     ],
   },
   es: {
@@ -79,7 +79,7 @@ const sectionLabels: Record<Locale, { perks: string; perksItems: string[]; whyTi
       { title: "Crecimiento rápido", desc: "Únase a una empresa en plena expansión desde 2021, con una cartera de clientes en constante crecimiento." },
       { title: "Impacto directo", desc: "Trabaje directamente con fundadores, CFOs y C-suite de startups innovadoras." },
       { title: "Desarrollo personal", desc: "Acceso a formaciones, e-learning y conferencias para desarrollar sus habilidades." },
-      { title: "Equipo internacional", desc: `Un equipo de ${CONSULTANTS} consultores de diferentes nacionalidades, unidos por la pasión por las finanzas.` },
+      { title: "Equipo internacional", desc: `Un equipo de ${TEAM_LABEL.es} de diferentes nacionalidades, unidos por la pasión por las finanzas.` },
     ],
   },
 };

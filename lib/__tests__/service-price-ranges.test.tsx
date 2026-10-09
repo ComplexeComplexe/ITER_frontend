@@ -17,14 +17,14 @@ describe("CFO indicative pricing", () => {
       expect(offer.price).toBeUndefined();
       expect(offer.priceSpecification.price).toBeUndefined();
       expect(offer.priceSpecification).toMatchObject({
-        minPrice: String(FORMULES[0].prixMin),
-        maxPrice: String(FORMULES.at(-1)!.prixMax),
+        minPrice: FORMULES[0].prixMin,
+        maxPrice: FORMULES.at(-1)!.prixMax,
         priceCurrency: "EUR",
         valueAddedTaxIncluded: false,
       });
       const visible = doc.querySelector("#tarifs")!.textContent!.replace(/[\s,.–]/g, "");
-      expect(visible).toContain(offer.priceSpecification.minPrice);
-      expect(visible).toContain(offer.priceSpecification.maxPrice);
+      expect(visible).toContain(String(offer.priceSpecification.minPrice));
+      expect(visible).toContain(String(offer.priceSpecification.maxPrice));
     }
   });
 });

@@ -1,3 +1,4 @@
+import { PEOPLE } from "@/lib/company-facts";
 import { InvoiceResourceCard } from '@/components/pages/ElectronicInvoicingPage';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,7 +9,7 @@ import { type Tool, getToolBySlug, CATEGORIES_WITH_PAGE } from '@/data/tools';
 import { toolSelection, TOOL_SELECTION_REVIEW_DATE } from '@/data/toolSelection';
 import { toolReviews, PENNYLANE_EXPERIENCE, getToolReviewTitle } from '@/data/toolReviews';
 import { TOOL_PRICING } from '@/data/toolPricing';
-import { generateToolArticleSchema, generateFAQSchema, getToolAuthor } from '@/lib/schemas/toolSchemas';
+import { generateToolArticleSchema, generateToolWebPageSchema, generateFAQSchema, getToolAuthor, PENNYLANE_REVIEWED_AT } from '@/lib/schemas/toolSchemas';
 import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
 
 export interface ToolPageProps { slug: string; locale: 'fr' | 'en' | 'es'; cmsNavigation?: CmsNavItem[]; tool: Tool; }
@@ -35,6 +36,7 @@ export default function ToolPage({ slug, locale = 'fr', cmsNavigation, tool }: T
   ];
   const sections = [['verdict', 'L’essentiel'], ['profils', 'Pour qui ?'], ['limites', 'Points forts et limites'], ['prix', 'Prix et coût total'], ['integration', 'Intégration'], ['alternatives', 'Alternatives'], ['faq', 'Questions fréquentes'], ['sources', 'Sources']];
   return <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolWebPageSchema(tool)).replace(/</g, '\\u003c') }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolArticleSchema(tool)) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(tool.name, faq, slug)) }} />
     <section className="site-hero pt-32 pb-12 bg-background">
@@ -44,7 +46,7 @@ export default function ToolPage({ slug, locale = 'fr', cmsNavigation, tool }: T
           <div className="max-w-3xl">
             <p className="text-sm font-semibold text-iter-violet mb-3">{categoryLabels[tool.category]} · {slug === 'pennylane' ? 'Retour d’usage Iter confirmé' : 'Analyse documentaire et critères de DAF'}</p>
             <h1 className="text-3xl lg:text-5xl font-bold font-heading mb-5">{getToolReviewTitle(tool)}</h1>
-            <p className="text-sm text-muted-foreground mb-6">Repères éditoriaux par <Link href={author.url} rel="author" className="text-iter-violet underline">{author.name}</Link> · mis à jour le <time dateTime={modified}>{date}</time></p>
+            <p className="text-sm text-muted-foreground mb-6">{slug === "pennylane" ? "Par " : "Repères éditoriaux par "}<Link href={author.url} rel="author" className="text-iter-violet underline">{author.name}</Link>{slug === "pennylane" && <><span> · {PEOPLE.florent.roles.fr} · relu par </span><Link href={`/a-propos/${PEOPLE.sebastien.slug}`} className="text-iter-violet underline">{PEOPLE.sebastien.name}</Link><span> le </span><time dateTime={PENNYLANE_REVIEWED_AT}>{new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${PENNYLANE_REVIEWED_AT}T12:00:00Z`))}</time></>} · mis à jour le <time dateTime={modified}>{date}</time></p>
             <p className="site-copy text-lg leading-relaxed">{review.verdict}</p>
             <div className="flex flex-wrap gap-3 mt-6"><Link href="#profils" className="site-button site-button-primary rounded-full bg-iter-violet text-white px-5 py-3 font-semibold">Est-ce adapté à mon entreprise ?</Link><Link href="#prix" className="site-button site-button-secondary rounded-full border border-border px-5 py-3">Examiner le budget</Link></div>
           </div>

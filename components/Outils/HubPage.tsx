@@ -1,3 +1,5 @@
+import { parityHref } from "@/lib/locale-route-map";
+import { schemaLanguage } from "@/lib/schemas/identity";
 import { InvoiceResourceCard } from '@/components/pages/ElectronicInvoicingPage';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -20,7 +22,7 @@ export default function HubPage({ locale, cmsNavigation }: HubPageProps) {
   const path = { fr: '/ressources/outils', en: '/en/ressources/tools', es: '/es/recursos/herramientas' }[locale];
   const pennylane = tools.find(tool => tool.slug === 'pennylane')!;
   return <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': `https://www.iteradvisors.com${path}`, url: `https://www.iteradvisors.com${path}`, name: t.title, inLanguage: locale, mainEntity: { '@type': 'ItemList', itemListElement: directory.map((tool, index) => ({ '@type': 'ListItem', position: index + 1, name: tool.name, url: `https://www.iteradvisors.com/ressources/outils/${tool.slug}` })) } }) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': `https://www.iteradvisors.com${path}`, url: `https://www.iteradvisors.com${path}`, name: t.title, inLanguage: schemaLanguage(path), mainEntity: { '@type': 'ItemList', itemListElement: directory.map((tool, index) => ({ '@type': 'ListItem', position: index + 1, name: tool.name, url: `https://www.iteradvisors.com${parityHref(`/ressources/outils/${tool.slug}`, locale)}` })) } }) }} />
     <section className="site-hero pt-32 pb-14 bg-background"><div className="container">
       <Breadcrumb locale={locale} items={[{ label: labels.resourcesLabel, href: labels.resourcesHref }, { label: labels.breadcrumbLabel }]} />
       <div className="max-w-4xl mt-8"><p className="text-sm font-semibold text-iter-violet mb-4">{t.eyebrow}</p><h1 className="font-heading font-bold text-4xl lg:text-6xl mb-6">{t.title}</h1><p className="site-copy text-lg text-muted-foreground leading-relaxed max-w-3xl">{t.intro}</p><div className="flex flex-wrap gap-3 mt-8"><Link href="#explorer" className="site-button site-button-primary bg-iter-violet text-white px-6 py-3 rounded-full font-semibold">{t.explore}</Link><Link href="#recommandation-stade" className="site-button site-button-secondary border border-border px-6 py-3 rounded-full">{t.stack}</Link></div></div>

@@ -7,13 +7,13 @@ afterEach(() => { cleanup(); window.dataLayer = []; });
 describe('tool discovery without indexable filter combinations', () => {
   it('renders every published review before interaction and filters cash synonyms without changing the URL', () => {
     render(<ToolsExplorer tools={getToolDirectory('fr')} categories={TOOL_CATEGORY_LABELS.fr} locale="fr" />);
-    expect(screen.getAllByRole('link')).toHaveLength(20);
+    expect(screen.getAllByRole('link')).toHaveLength(21);
     const before = window.location.href;
     fireEvent.change(screen.getByRole('searchbox'), { target: { value: 'cash' } });
     expect(screen.getAllByRole('link')).toHaveLength(3);
     expect(window.location.href).toBe(before);
     fireEvent.click(screen.getByRole('button', { name: 'Réinitialiser' }));
-    expect(screen.getAllByRole('link')).toHaveLength(20);
+    expect(screen.getAllByRole('link')).toHaveLength(21);
   });
   it('announces empty results and never sends search text into analytics', () => {
     render(<ToolsExplorer tools={getToolDirectory('fr')} categories={TOOL_CATEGORY_LABELS.fr} locale="fr" />);

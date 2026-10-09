@@ -1,3 +1,4 @@
+import { absoluteSchemaUrl, schemaLanguage, ORGANIZATION_ID, WEBSITE_ID } from "@/lib/schemas/identity";
 import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 import { parityHref } from "@/lib/locale-route-map";
 import HRExpert from "@/components/HRExpert";
@@ -122,7 +123,7 @@ export default function AuthorPage({
   const personId = editorialPersonId(canonicalPath);
   // Revision records have day precision. Use a fixed UTC boundary, never the build time.
   const revision = PAGE_REVISIONS[canonicalPath];
-  const profileRevision = revision ? `${revision}T00:00:00Z` : undefined;
+  const profileRevision = revision ? new Date(revision).toISOString() : undefined;
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -134,9 +135,9 @@ export default function AuthorPage({
     description: profile?.schemaDescription ?? member.bio,
     url: `https://www.iteradvisors.com${canonicalPath}`,
     image: member.photo?.url
-      ? `https://www.iteradvisors.com${member.photo.url}`
+      ? absoluteSchemaUrl(member.photo.url)
       : undefined,
-    sameAs: profile?.sameAs ?? (isFinanceExpert ? [FINANCE_EXPERT.linkedin, FINANCE_EXPERT.malt] : member.linkedIn ? [member.linkedIn] : undefined),
+    sameAs: profile?.sameAs ?? (isFinanceExpert ? [FINANCE_EXPERT.linkedin] : member.linkedIn ? [member.linkedIn] : undefined),
     ...(isFinanceExpert && { subjectOf: { "@type": "PodcastEpisode", inLanguage: "fr-FR", name: FINANCE_EXPERT.podcast.title, url: FINANCE_EXPERT.podcast.href } }),
     ...(profile && { knowsAbout: profile.expertise }),
     ...(profile?.alumniOf && { alumniOf: profile.alumniOf.map(name => ({ "@type": "CollegeOrUniversity", name })) }),
@@ -144,11 +145,7 @@ export default function AuthorPage({
     ...(profile?.languages && { knowsLanguage: profile.languages }),
     ...(profile?.workLocation && { workLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressLocality: profile.workLocation, addressCountry: "ES" } } }),
     ...(member.slug === "guillaume-rostand" && { alumniOf: [{ "@type": "EducationalOrganization", name: "CELSA" }, { "@type": "EducationalOrganization", name: "Sciences Po" }] }),
-    worksFor: {
-      "@type": "Organization",
-      "@id": "https://www.iteradvisors.com/#organization",
-      name: "Iter Advisors",
-    },
+    worksFor: { "@id": ORGANIZATION_ID },
   };
 
   return (
@@ -156,7 +153,7 @@ export default function AuthorPage({
       {/* Person JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [personSchema, { "@type": "ProfilePage", "@id": `https://www.iteradvisors.com${canonicalPath}#webpage`, url: `https://www.iteradvisors.com${canonicalPath}`, name: fullName, mainEntity: { "@id": personId }, ...(profile && { dateModified: profileRevision }), ...(isNewCfo && { datePublished: profileRevision, dateModified: profileRevision }) }] }) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [personSchema, { "@type": "ProfilePage", "@id": `https://www.iteradvisors.com${canonicalPath}#webpage`, url: `https://www.iteradvisors.com${canonicalPath}`, name: fullName, inLanguage: schemaLanguage(canonicalPath), isPartOf: { "@id": WEBSITE_ID }, publisher: { "@id": ORGANIZATION_ID }, mainEntity: { "@id": personId }, ...(profileRevision && { dateModified: profileRevision }), ...(isNewCfo && { datePublished: profileRevision, dateModified: profileRevision }) }] }) }}
       />
 
       <section className="site-hero bg-background pt-32 pb-12 lg:pb-16">

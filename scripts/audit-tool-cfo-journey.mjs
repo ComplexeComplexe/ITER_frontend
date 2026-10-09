@@ -20,7 +20,7 @@ for (const path of paths) {
   check(html.match(/rel="canonical" href="([^"]+)"/)?.[1] === origin + path, 'canonical');
   check([...main.matchAll(/<h1\b/g)].length === 1, 'one-h1');
   check(articles.length === 1 && articles[0]?.headline === h1, 'one-article-with-matching-headline');
-  check(articles[0]?.author?.['@type'] === 'Person' && articles[0]?.author?.url, 'identified-author');
+  check(/^https:\/\/www\.iteradvisors\.com\/a-propos\/[^/#]+#person$/.test(articles[0]?.author?.['@id'] ?? ''), 'identified-author');
   check(main.includes('href="/daf-externalise"'), 'primary-offer-link');
   if (path.startsWith('/ressources/outils/')) {
     if (!path.endsWith('/malibou')) toolTexts.push({ path, text });

@@ -1,3 +1,4 @@
+import { absoluteSchemaUrl, ORGANIZATION_ID, WEBSITE_ID, schemaLanguage, indicativePriceSpecification } from "@/lib/schemas/identity";
 import { editorialPersonId } from "@/lib/content/finance-expert";
 /**
  * JSON-LD structured data helpers for SEO.
@@ -53,13 +54,15 @@ export function breadcrumbSchema(items: BreadcrumbItemSchema[]): Record<string, 
 /**
  * Generate Service JSON-LD schema with optional offer catalog.
  * NOTE: aggregateRating is NOT included (removed per ticket requirement).
- * Reason: Google does not accept aggregateRating under Service type without individual Review objects.
- * Self-serving reviews without external verification are not eligible for rich results.
+ * Google does not offer review stars for a service or self-serving organization reviews,
+ * including verified testimonials embedded by a third-party widget.
  */
 export interface ServiceOffer {
   name: string;
-  price?: string;
-  priceCurrency?: string;
+  minPrice?: number;
+  maxPrice?: number;
+  unitText?: string;
+  priceCurrency?: "EUR";
   description?: string;
 }
 
@@ -82,14 +85,12 @@ export function serviceSchema({
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${absoluteSchemaUrl(url)}#service`,
+    mainEntityOfPage: { "@id": `${absoluteSchemaUrl(url)}#webpage` },
     name,
     description,
     url: url.startsWith("http") ? url : `${BASE}${url}`,
-    provider: {
-      "@type": "Organization",
-      name: "Iter Advisors",
-      url: `${BASE}/`,
-    },
+    provider: { "@id": ORGANIZATION_ID },
   };
 
   if (serviceType) schema.serviceType = serviceType;
@@ -102,7 +103,7 @@ export function serviceSchema({
         "@type": "Offer",
         name: o.name,
         ...(o.description && { description: o.description }),
-        ...(o.price && { price: o.price }),
+        ...(o.minPrice !== undefined && o.maxPrice !== undefined && o.unitText && { priceSpecification: indicativePriceSpecification(o.minPrice, o.maxPrice, o.unitText) }),
         ...(o.priceCurrency && { priceCurrency: o.priceCurrency }),
       })),
     };
@@ -142,6 +143,7 @@ export function personSchema({
     worksFor: {
       "@type": "Organization",
       name: worksForName,
+      ...(worksForName === "Iter Advisors" && { "@id": ORGANIZATION_ID }),
       url: `${BASE}/`,
     },
     ...(knowsAbout && knowsAbout.length > 0 && { knowsAbout }),
@@ -153,8 +155,7 @@ export function personSchema({
  *
  * Use for ordered, step-by-step procedures where each step has a name and
  * short description. Google's HowTo guidelines deprecate rich-result display
- * for this type, but it still feeds AI-generated answers (Perplexity,
- * SearchGPT, Gemini) — which is the GEO target for T-7.
+ * for this type, and there is no guaranteed AI citation benefit from this markup.
  */
 export interface HowToStep {
   name: string;
@@ -223,14 +224,15 @@ export function speakableSchema({
  *
  * The function name (`financialServiceSchema`) is kept for backward
  * compatibility with existing imports, but the emitted @type is
- * ProfessionalService — Schema.org positions FinancialService for
+ * Organization — Schema.org positions FinancialService for
  * banks / insurance / lenders, which isn't what Iter Advisors is.
  * (T4 / 2026-06-07: docstring sync.)
  */
 export function financialServiceSchema(): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "Organization",
+    "@id": ORGANIZATION_ID,
     name: "Iter Advisors",
     // Spanish SL — keep the legal identifiers in sync with the
     // canonical Organization graph emitted from app/layout.tsx.
@@ -255,13 +257,7 @@ export function financialServiceSchema(): Record<string, unknown> {
         postalCode: "08010",
         addressCountry: "ES",
       },
-      {
-        "@type": "PostalAddress",
-        addressLocality: "Paris",
-        addressCountry: "FR",
-      },
     ],
-    openingHours: "Mo-Fr 09:00-18:00",
     // Review-snippet fix (2026-05-29): no self-serving aggregateRating here
     // either (this helper is currently unused, but kept consistent with the
     // policy applied across the live pages).
@@ -299,8 +295,7 @@ export function articleSchema({
    *  generic Organization fallback. */
   authorUrl?: string;
   imageSrc?: string;
-  /** Number of words in the article body — Google rewards explicit
-   *  wordCount for ranking long-form content. */
+  /** Number of words in the article body; no documented ranking bonus. */
   wordCount?: number;
   /** Article section / category (e.g. "Fiscalité"). */
   articleSection?: string;
@@ -308,32 +303,15 @@ export function articleSchema({
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${absoluteSchemaUrl(url)}#article`,
+    inLanguage: schemaLanguage(url),
     headline,
     description,
     url: url.startsWith("http") ? url : `${BASE}${url}`,
     ...(datePublished && { datePublished }),
     ...(dateModified && { dateModified }),
-    author: authorUrl
-      ? {
-          "@type": "Person",
-          "@id": editorialPersonId(authorUrl),
-          name: authorName,
-          url: authorUrl.startsWith("http") ? authorUrl : `${BASE}${authorUrl}`,
-        }
-      : {
-          "@type": "Organization",
-          name: authorName,
-          url: `${BASE}/`,
-        },
-    publisher: {
-      "@type": "Organization",
-      name: "Iter Advisors",
-      url: `${BASE}/`,
-      logo: {
-        "@type": "ImageObject",
-        url: `${BASE}/images/logos/iter-advisors-brand-square.png`,
-      },
-    },
+    author: authorUrl ? { "@id": editorialPersonId(authorUrl) } : authorName === "Iter Advisors" ? { "@id": ORGANIZATION_ID } : { "@type": "Person", name: authorName },
+    publisher: { "@id": ORGANIZATION_ID },
     ...(imageSrc && {
       image: {
         "@type": "ImageObject",
@@ -344,13 +322,17 @@ export function articleSchema({
     ...(articleSection && { articleSection }),
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": url.startsWith("http") ? url : `${BASE}${url}`,
+      "@id": `${absoluteSchemaUrl(url)}#webpage`,
+      url: absoluteSchemaUrl(url),
+      mainEntity: { "@id": `${absoluteSchemaUrl(url)}#article` },
+      isPartOf: { "@id": WEBSITE_ID },
     },
   };
 }
 
 /**
- * Generate Review JSON-LD schema array with corrected structure (Ticket fixes).
+ * Legacy review serializer. Do not use for Iter testimonials: self-serving reviews
+ * on Organization are not eligible for Google review snippets.
  * Implements Corrections 2-4 from the ticket:
  * - Correction 2: author type is "Person" (not "Thing")
  * - Correction 3: Rating uses ratingValue (not name)
@@ -394,5 +376,5 @@ export function reviewsSchema(reviews: ReviewData[]): Record<string, unknown> {
  * Render a JSON-LD script tag string (for use in dangerouslySetInnerHTML).
  */
 export function jsonLdString(schema: Record<string, unknown>): string {
-  return JSON.stringify(schema);
+  return JSON.stringify(schema).replace(/</g, "\\u003c");
 }

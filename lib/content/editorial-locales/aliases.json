@@ -217,9 +217,9 @@
   "/en/ressources/outils/factorial": "/en/ressources/tools/factorial",
   "/es/ressources/outils/factorial": "/es/recursos/herramientas/factorial",
   "/es/recursos/outils/factorial": "/es/recursos/herramientas/factorial",
-  "/en/ressources/outils/fygr": "/en/ressources/tools/fygr",
-  "/es/ressources/outils/fygr": "/es/recursos/herramientas/fygr",
-  "/es/recursos/outils/fygr": "/es/recursos/herramientas/fygr",
+  "/en/ressources/outils/okimia": "/en/ressources/tools/okimia",
+  "/es/ressources/outils/okimia": "/es/recursos/herramientas/okimia",
+  "/es/recursos/outils/fygr": "/es/recursos/herramientas/okimia",
   "/en/ressources/outils/gestion-depenses": "/en/ressources/tools/expense-management",
   "/en/ressources/outils/expense-management": "/en/ressources/tools/expense-management",
   "/es/ressources/outils/gestion-depenses": "/es/recursos/herramientas/gestion-gastos",
@@ -531,5 +531,7 @@
   "/ressources/fiche-metier/expert-paie-et-administration-du-personnel": "/services/gestion-paie-charges-sociales",
   "/en/ressources/fiche-metier/expert-paie-et-administration-du-personnel": "/en/services/payroll-coordination",
   "/es/recursos/blog/que-es-fractional-cfo": "/es/recursos/glosario/cfo-tiempo-parcial",
-  "/es/ressources/blog/que-es-fractional-cfo": "/es/recursos/glosario/cfo-tiempo-parcial"
+  "/es/ressources/blog/que-es-fractional-cfo": "/es/recursos/glosario/cfo-tiempo-parcial",
+  "/en/ressources/outils/fygr": "/en/ressources/tools/okimia",
+  "/es/ressources/outils/fygr": "/es/recursos/herramientas/okimia"
 }

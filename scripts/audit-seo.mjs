@@ -308,12 +308,11 @@ for (const abs of urls) {
           if (!/Article|BlogPosting|Review|WebPage/.test(t)) continue;
           if (n.dateModified) dateModifiee = true;
           for (const a of [].concat(n.author ?? [])) {
-            if (a["@type"] === "Person") auteurPerson = true;
+            if (a["@type"] === "Person" || /^https:\/\/www\.iteradvisors\.com\/a-propos\/[^/#]+#person$/.test(a["@id"] ?? "")) auteurPerson = true;
             // Cabinet commercial copy can have an Organization author without
             // assigning personal writing or review to the service contact.
             if (/^\/(?:(?:en|es)\/)?services\/[a-z]/.test(path) &&
-                t === "WebPage" && a["@type"] === "Organization" &&
-                a.name === "Iter Advisors" && a["@id"] === "https://www.iteradvisors.com/#organization" &&
+                t === "WebPage" && a["@id"] === "https://www.iteradvisors.com/#organization" &&
                 /(?:Publié par|Published by|Publicado por)/.test(texte)) {
               auteurCabinetService = true;
             }

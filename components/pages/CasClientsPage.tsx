@@ -1,5 +1,5 @@
 "use client";
-import { CLIENTS_ACCOMPAGNES, CONSULTANTS, FONDS_LEVES } from "@/lib/content/facts";
+import { CLIENTS_ACCOMPAGNES, FINANCE_TEAM_SIZE, FONDS_LEVES } from "@/lib/content/facts";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView, AnimatePresence } from "framer-motion";
@@ -232,7 +232,7 @@ function getContent(locale: Locale) {
         heading: "L'impact Iter Advisors en chiffres",
         items: [
           { value: String(CLIENTS_ACCOMPAGNES), label: "Entreprises accompagnées" },
-          { value: String(CONSULTANTS), label: "Consultants" },
+          { value: String(FINANCE_TEAM_SIZE), label: "Professionnels de la finance et une direction RH" },
           { value: FONDS_LEVES, label: "De fonds levés par nos clients" },
           { value: "5/5", label: "Note Trustfolio" },
         ],
@@ -454,7 +454,7 @@ function getContent(locale: Locale) {
         heading: "The Iter Advisors impact in numbers",
         items: [
           { value: String(CLIENTS_ACCOMPAGNES), label: "Companies supported" },
-          { value: String(CONSULTANTS), label: "Consultants" },
+          { value: String(FINANCE_TEAM_SIZE), label: "Finance professionals and an HR leadership function" },
           { value: FONDS_LEVES, label: "Raised by our clients" },
           { value: "5/5", label: "Trustfolio rating" },
         ],
@@ -676,7 +676,7 @@ function getContent(locale: Locale) {
         heading: "El impacto de Iter Advisors en cifras",
         items: [
           { value: String(CLIENTS_ACCOMPAGNES), label: "Empresas acompañadas" },
-          { value: String(CONSULTANTS), label: "Consultores" },
+          { value: String(FINANCE_TEAM_SIZE), label: "Profesionales de las finanzas y una dirección de RRHH" },
           { value: FONDS_LEVES, label: "Levantados por nuestros clientes" },
           { value: "5/5", label: "Nota Trustfolio" },
         ],

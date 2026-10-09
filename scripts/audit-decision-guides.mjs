@@ -29,7 +29,8 @@ for (const target of targets) {
   if (target.author) {
     const articles = schemas.filter(s => ['Article', 'BlogPosting'].includes(s['@type']));
     check(articles.length === 1, 'one-article-schema');
-    check(articles[0]?.author?.name === target.author, 'preserved-author');
+    const slug = { 'Benjamin Ziza': 'benjamin-ziza', 'Sébastien Doat': 'sebastien-doat' }[target.author];
+    check(articles[0]?.author?.['@id'] === `${origin}/a-propos/${slug}#person`, 'preserved-author');
     check(articles[0]?.dateModified?.startsWith('2026-10-02'), 'substantive-revision-date');
   }
   if (target.path.endsWith('interimaire')) {

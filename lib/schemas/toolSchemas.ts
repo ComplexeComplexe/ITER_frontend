@@ -1,6 +1,8 @@
+import { PEOPLE, personId } from "@/lib/company-facts";
 import { getToolReviewTitle } from '@/data/toolReviews';
 import { editorialPersonId } from "@/lib/content/finance-expert";
 import { Tool } from '@/data/tools';
+import { toolSelection } from '@/data/toolSelection';
 import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
 
 /**
@@ -13,6 +15,7 @@ import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
  *
  * À remonter à la main quand les avis outils sont réellement revus.
  */
+export const PENNYLANE_REVIEWED_AT = '2026-10-09';
 export const TOOLS_REVIEW_DATE = '2026-09-05';
 export const TOOLS_REVIEW_DATE_LABEL = '5 septembre 2026';
 
@@ -25,12 +28,13 @@ export const TOOLS_REVIEW_DATE_LABEL = '5 septembre 2026';
  * Attribution à valider par Guillaume.
  */
 export const TOOL_AUTHORS = {
-  sebastien: { name: 'Sébastien Doat', url: '/a-propos/sebastien-doat' },
-  benjamin: { name: 'Benjamin Ziza', url: '/a-propos/benjamin-ziza' },
+  sebastien: { name: PEOPLE.sebastien.name, url: `/a-propos/${PEOPLE.sebastien.slug}` },
+  benjamin: { name: PEOPLE.benjamin.name, url: `/a-propos/${PEOPLE.benjamin.slug}` },
+  florent: { name: PEOPLE.florent.name, url: `/a-propos/${PEOPLE.florent.slug}` },
 } as const;
 
 export function getToolAuthor(tool: Tool) {
-  return TOOL_AUTHORS[tool.experts[0] ?? 'benjamin'];
+  return tool.slug === 'pennylane' ? TOOL_AUTHORS.florent : TOOL_AUTHORS[tool.experts[0] ?? 'benjamin'];
 }
 
 /** An editorial guide, without an undocumented numerical product rating. */
@@ -47,18 +51,16 @@ export function generateToolArticleSchema(tool: Tool) {
     inLanguage: 'fr-FR',
     about: {
       '@type': 'SoftwareApplication',
+      '@id': `${tool.website.replace(/\/$/, '')}#software`,
       name: tool.name,
       url: tool.website,
-      applicationCategory: 'BusinessApplication',
+      applicationCategory: 'BusinessApplication', operatingSystem: 'Web', sameAs: [tool.website],
     },
-    author: {
-      '@type': 'Person',
-      '@id': editorialPersonId(author.url),
-      name: author.name,
-      url: `https://www.iteradvisors.com${author.url}`,
-    },
+    author: { '@id': editorialPersonId(author.url) },
+    image: `https://www.iteradvisors.com${tool.logo}`,
     publisher: { '@id': 'https://www.iteradvisors.com/#organization' },
-    mainEntityOfPage: url,
+    mainEntityOfPage: { '@id': `${url}#webpage` },
+    citation: toolSelection[tool.slug]?.source,
     dateModified: PAGE_REVISIONS[`/ressources/outils/${tool.slug}`] ?? TOOLS_REVIEW_DATE,
     datePublished: '2026-09-01',
   };
@@ -110,5 +112,19 @@ export function generateHowToSchema(
       text: s.detail,
       url: `https://www.iteradvisors.com/ressources/outils/${toolSlug}#step${i + 1}`,
     })),
+  };
+}
+
+/** Page identity kept distinct from its editorial article and the third-party software. */
+export function generateToolWebPageSchema(tool: Tool) {
+  const article = generateToolArticleSchema(tool);
+  return {
+    '@context': 'https://schema.org', '@type': 'WebPage',
+    '@id': `${article.url}#webpage`, url: article.url,
+    name: article.headline, description: article.description, inLanguage: article.inLanguage,
+    datePublished: article.datePublished, dateModified: article.dateModified,
+    publisher: article.publisher, isPartOf: { '@id': 'https://www.iteradvisors.com/#website' },
+    mainEntity: { '@id': article['@id'] },
+    ...(tool.slug === 'pennylane' && { reviewedBy: { '@id': personId(PEOPLE.sebastien.slug) }, lastReviewed: PENNYLANE_REVIEWED_AT }),
   };
 }

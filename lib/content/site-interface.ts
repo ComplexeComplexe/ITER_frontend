@@ -1,3 +1,4 @@
+import { PEOPLE } from "@/lib/company-facts";
 import type { Locale } from "../i18n";
 
 /** Small UI dictionary shared by server templates and interactive islands. */
@@ -6,7 +7,7 @@ const interfaceText = {
     finance: "Services finance", hr: "Direction RH", brief: "La mission en bref",
     team: "Rencontrer l’équipe", pageNav: "Dans cette page",
     financeContact: "Votre interlocuteur finance", financeTitle: "Échanger avec Sébastien Doat",
-    financeRole: "Associé fondateur et DAF externalisé",
+    financeRole: PEOPLE.sebastien.roles.fr,
     financeDescription: "Sébastien Doat, associé fondateur d’Iter Advisors, accompagne les dirigeants sur le pilotage financier, la trésorerie et la préparation des financements.",
     profile: "Parcours, publications et interventions", linkedin: "Profil LinkedIn",
     contact: "Présenter mon besoin", hrContact: "Votre interlocuteur RH",
@@ -18,7 +19,7 @@ const interfaceText = {
     finance: "Finance services", hr: "HR leadership", brief: "The engagement at a glance",
     team: "Meet the team", pageNav: "On this page",
     financeContact: "Your finance contact", financeTitle: "Talk to Sébastien Doat",
-    financeRole: "Founding partner and Fractional CFO",
+    financeRole: PEOPLE.sebastien.roles.en,
     financeDescription: "Sébastien Doat, founding partner of Iter Advisors, works with business leaders on financial management, cash flow and financing preparation.",
     profile: "Experience, publications and talks", linkedin: "LinkedIn profile",
     contact: "Describe my needs", hrContact: "Your HR contact",
@@ -30,7 +31,7 @@ const interfaceText = {
     finance: "Servicios financieros", hr: "Dirección de RR. HH.", brief: "La misión en breve",
     team: "Conocer al equipo", pageNav: "En esta página",
     financeContact: "Su interlocutor financiero", financeTitle: "Hablar con Sébastien Doat",
-    financeRole: "Socio fundador y CFO externo",
+    financeRole: PEOPLE.sebastien.roles.es,
     financeDescription: "Sébastien Doat, socio fundador de Iter Advisors, acompaña a los dirigentes en el control financiero, la tesorería y la preparación de la financiación.",
     profile: "Trayectoria, publicaciones e intervenciones", linkedin: "Perfil de LinkedIn",
     contact: "Describir mi necesidad", hrContact: "Su interlocutor de RR. HH.",

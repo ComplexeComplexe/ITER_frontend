@@ -1,3 +1,5 @@
+import { ORG_ID } from "@/lib/company-facts";
+import { hrOfferCatalog } from "@/lib/content/hr-commercial";
 import Link from "next/link";
 import Image from "next/image";
 import { ReactNode } from "react";
@@ -91,58 +93,14 @@ export default function DrhPage({
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": "ProfessionalService",
+                  "@type": "Service",
                   "@id": "https://www.iteradvisors.com/drh-externalise#service",
-                  name: "DRH Externalisé — Iter Advisors",
-                  provider: {
-                    "@type": "Organization",
-                    "@id": "https://www.iteradvisors.com/#organization",
-                    name: "Iter Advisors",
-                    url: "https://www.iteradvisors.com",
-                    logo: "https://www.iteradvisors.com/images/logos/logo-hero.png",
-                    sameAs: [
-                      "https://www.linkedin.com/company/iter-advisors/",
-                      "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
-                    ],
-                  },
-                  description:
-                    "Cabinet de DRH externalisé pour PME et startups. Direction RH à temps partagé dès 2 500 €/mois. Recrutement, conformité, gestion des talents. Paris, Toulouse, Barcelone.",
+                  name: "DRH externalisé | Iter Advisors",
+                  provider: { "@id": ORG_ID },
+                  description: "Direction RH externalisée pour PME et startups : recrutement, conformité et gestion des talents.",
                   url: "https://www.iteradvisors.com/drh-externalise",
-                  areaServed: [
-                    { "@type": "City", name: "Paris" },
-                    { "@type": "City", name: "Toulouse" },
-                    { "@type": "City", name: "Barcelone" },
-                  ],
-                  hasOfferCatalog: {
-                    "@type": "OfferCatalog",
-                    name: "Formules DRH Externalisé",
-                    itemListElement: [
-                      {
-                        "@type": "Offer",
-                        name: "Essentiel",
-                        description: "2 jours/mois — Audit, recrutement, conformité",
-                        price: "2500",
-                        priceCurrency: "EUR",
-                      },
-                      {
-                        "@type": "Offer",
-                        name: "Croissance",
-                        description: "4 jours/mois — + Onboarding, talents, rémunération",
-                        price: "4500",
-                        priceCurrency: "EUR",
-                      },
-                      {
-                        "@type": "Offer",
-                        name: "Premium",
-                        description: "8+ jours/mois — + SIRH, culture, formation",
-                        price: "8000",
-                        priceCurrency: "EUR",
-                      },
-                    ],
-                  },
-                  // Review-snippet fix (2026-05-29): self-serving Trustfolio
-                  // aggregateRating removed from this ProfessionalService — it is
-                  // ineligible for Google review rich results.
+                  areaServed: ["France", "Spain"],
+                  hasOfferCatalog: hrOfferCatalog(locale),
                 },
                 {
                   "@type": "FAQPage",

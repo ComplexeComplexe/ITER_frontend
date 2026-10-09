@@ -44,7 +44,7 @@ for (const [source, page] of Object.entries(registry)) {
     if (!page.noindex && target.canonical?.replace(/\/$/, '') !== (origin + path).replace(/\/$/, '')) errors.push(`Wrong canonical: ${path}`);
     if (!page.noindex && Object.values(page.paths).some(path => !target.alternates.some(url => url?.replace(/\/$/, '') === (origin + path).replace(/\/$/, '')))) errors.push(`Incomplete alternates: ${path}`);
     if (JSON.stringify(target.signature) !== JSON.stringify(fr.signature)) errors.push(`Section mismatch: ${path}`);
-    const french = new Set(fr.strings.filter(text => (text.split(' ').length >= 4 && /\b(le|les|du|des|une|votre|vous|vos|notre|nous|avec|dans|pour|est)\b/i.test(text)) || /^(Découvrir|En savoir plus|Voir les ressources|Trésorerie|Comptabilité|Recrutement|Prénom|Nom|Société|Clôture|Prévisionnel)$/i.test(text)));
+    const french = new Set(fr.strings.filter(text => (text.split(' ').length >= 4 && /\b(le|les|du|des|une|votre|vous|vos|notre|nous|avec|dans|pour|est)\b/i.test(text)) || /^(Découvrir|En savoir plus|Voir les ressources|Trésorerie|Comptabilité|Recrutement|Prénom|Nom|Société|Clôture|Prévisionnel|Partner, CFO et expert Pennylane|· relu par)$/i.test(text)));
     for (const text of target.strings) if (french.has(text)) errors.push(`Untranslated content: ${path}: ${text.slice(0, 160)}`);
   }
 }

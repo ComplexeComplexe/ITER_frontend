@@ -5,7 +5,7 @@ import { ArrowRight, Mail, Linkedin } from "lucide-react";
 import { getCmsNavigation } from "@/lib/static-content";
 import {
   CLIENTS_ACCOMPAGNES,
-  CONSULTANTS,
+  TEAM_LABEL,
   TRUSTFOLIO_RATING,
   TRUSTFOLIO_REVIEW_COUNT,
 } from "@/lib/content/facts";
@@ -384,7 +384,7 @@ export default async function Page() {
                 et nos process accélèrent vos missions
               </li>
               <li>
-                <strong>Communauté de pairs seniors</strong> : {CONSULTANTS} consultants
+                <strong>Communauté de pairs seniors</strong> : {TEAM_LABEL.fr}
                 finance avec qui échanger
               </li>
               <li>

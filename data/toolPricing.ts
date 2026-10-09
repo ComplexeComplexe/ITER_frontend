@@ -37,7 +37,7 @@ export const TOOL_PRICING: Record<string, ToolPricing> = {
     "note": "La page éditeur présente ses solutions pour cabinets. Confirmer la disponibilité, le périmètre et le tarif de la solution retenue avant souscription.",
     "checkedAt": "2026-09-05"
   },
-  "fygr": {
+  "okimia": {
     "label": "Selon formule et engagement",
     "url": "https://www.okimia.com/fr/tarifs",
     "note": "Fygr est devenu Okimia. Comparer la formule, le nombre d’entités et de banques, les options et la durée de facturation ; ne pas confondre prix annualisé et mensuel.",

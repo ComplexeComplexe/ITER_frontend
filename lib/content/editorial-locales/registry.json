@@ -1403,11 +1403,11 @@
     "source": "/ressources/outils/[slug]",
     "sharedEditorial": true
   },
-  "/ressources/outils/fygr": {
+  "/ressources/outils/okimia": {
     "paths": {
-      "fr": "/ressources/outils/fygr",
-      "en": "/en/ressources/tools/fygr",
-      "es": "/es/recursos/herramientas/fygr"
+      "fr": "/ressources/outils/okimia",
+      "en": "/en/ressources/tools/okimia",
+      "es": "/es/recursos/herramientas/okimia"
     },
     "title": "Avis Okimia (ex-Fygr) : limites, prix et intégration",
     "description": "Avis Okimia (ex-Fygr) : points forts, limites, intégrations et critères de choix pour PME et startups. Sources de tarification et questions à poser à l’éditeur.",

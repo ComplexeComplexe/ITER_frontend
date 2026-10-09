@@ -40,12 +40,13 @@ export default function HRServicePage({
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `https://www.iteradvisors.com${path}#service`,
+    mainEntityOfPage: { "@id": `https://www.iteradvisors.com${path}#webpage` },
     name: content.h1,
     description: content.meta.description,
     provider: { "@id": "https://www.iteradvisors.com/#organization" },
     url: `https://www.iteradvisors.com${path}`,
     serviceType: ui.cluster,
-    inLanguage: locale,
   };
   const siblings = HR_SERVICE_SLUGS.filter((s) => s !== content.slug).map((s) => getLocalizedHRService(s, locale));
 
@@ -258,14 +259,14 @@ export default function HRServicePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            editorialWebPageSchema({
+            { ...editorialWebPageSchema({
               path,
               name: content.h1,
               description: content.meta.description,
               locale,
               author: ITER_AUTHOR,
               dateModified: "2026-10-05",
-            })
+            }), mainEntity: { "@id": `https://www.iteradvisors.com${path}#service` } }
           ),
         }}
       />

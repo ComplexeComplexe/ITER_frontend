@@ -9,5 +9,6 @@ export const TOOL_CATEGORY_LABELS = {
 const aliases = { comptabilite: 'accounting contabilidad facturation facturacion invoice compta', tresorerie: 'cash treasury tesoreria trésorerie prévision prevision forecast', depenses: 'notes de frais expense gastos cartes cards tarjetas banque bank banca paiement pago', paie: 'payroll nomina nómina salaire salary', sirh: 'hr rrhh ressources humaines personnel', reporting: 'bi dashboard tableau de bord cuadro mando', recouvrement: 'collection cobros relances factures client receivables', equity: 'cap table bspce accionariado capital dilution' };
 export function getToolDirectory(locale: Locale) {
   const index = { fr: 0, en: 1, es: 2 }[locale];
-  return tools.map(tool => ({ slug: tool.slug, name: tool.name, logo: tool.logo, category: tool.category, description: descriptions[tool.slug][index], searchTerms: aliases[tool.category] }));
+  const directory = tools.map(tool => ({ slug: tool.slug, name: tool.name, logo: tool.logo, category: tool.category, description: descriptions[tool.slug][index], searchTerms: aliases[tool.category] }));
+  return [...directory, { slug: "malibou", name: "malibou", logo: "", category: "paie" as const, description: ["Paie accompagnée et SIRH : analyse documentaire.", "Supported payroll and HR software: documentary analysis.", "Nómina acompañada y software de RRHH: análisis documental."][index], searchTerms: aliases.paie }];
 }

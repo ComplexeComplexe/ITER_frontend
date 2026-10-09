@@ -1,5 +1,5 @@
 import { getFinanceStackSummary } from "./finance-stack";
-import { CLIENTS_ACCOMPAGNES, CONSULTANTS } from "@/lib/content/facts";
+import { CLIENTS_ACCOMPAGNES, FINANCE_TEAM_SIZE } from "@/lib/content/facts";
 import { serviceHref } from "../path-localization";
 import { getDafOfferFacts } from "./offer-facts";
 import { Locale } from "../i18n";
@@ -54,7 +54,7 @@ export const homeContent = {
     stats: [
       { value: `${CLIENTS_ACCOMPAGNES}`, bold: "Entreprises accompagnées", rest: " par Iter Advisors" },
       { value: "+100\u00A0M", bold: "Levées de fonds", rest: " par nos clients depuis 2021" },
-      { value: String(CONSULTANTS), bold: "Consultants", rest: " experts de la fonction Finance au service de nos clients" },
+      { value: String(FINANCE_TEAM_SIZE), bold: "Professionnels de la finance", rest: " et une direction RH au service de nos clients" },
       { value: "30", bold: "Partenaires technologiques", rest: " au service de la performance financière" },
     ],
     whyChoose: {
@@ -248,7 +248,7 @@ export const homeContent = {
     stats: [
       { value: `${CLIENTS_ACCOMPAGNES}`, bold: "Companies supported", rest: " by Iter Advisors" },
       { value: "+100\u00A0M", bold: "Funds raised by", rest: " our customers since 2021" },
-      { value: String(CONSULTANTS), bold: "Consultants", rest: " Finance experts at the service of our customers" },
+      { value: String(FINANCE_TEAM_SIZE), bold: "Finance professionals", rest: " and an HR leadership function supporting our clients" },
       { value: "30", bold: "Technology partners", rest: " for financial performance" },
     ],
     whyChoose: {
@@ -431,7 +431,7 @@ export const homeContent = {
     stats: [
       { value: `${CLIENTS_ACCOMPAGNES}`, bold: "Empresas acompañadas", rest: " por Iter Advisors" },
       { value: "+100\u00A0M", bold: "Fondos recaudados por", rest: " nuestros clientes desde 2021" },
-      { value: String(CONSULTANTS), bold: "Consultores", rest: " expertos en finanzas al servicio de nuestros clientes" },
+      { value: String(FINANCE_TEAM_SIZE), bold: "Profesionales de las finanzas", rest: " y una dirección de RRHH al servicio de nuestros clientes" },
       { value: "30", bold: "Socios tecnológicos", rest: " al servicio del rendimiento financiero" },
     ],
     whyChoose: {

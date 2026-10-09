@@ -12,10 +12,12 @@ export default function DocumentedCasePage({ locale, item, cmsNavigation }: { lo
   const date = (value: string) => new Intl.DateTimeFormat(locale === "en" ? "en-GB" : locale === "es" ? "es-ES" : "fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(value));
   const schema = {
     "@context": "https://schema.org", "@type": "Article",
-    headline: item.title, description: item.summary, inLanguage: locale,
-    mainEntityOfPage: `https://www.iteradvisors.com${item.href}`,
+    "@id": `https://www.iteradvisors.com${item.href}#article`,
+    url: `https://www.iteradvisors.com${item.href}`,
+    headline: item.title, description: item.summary, inLanguage: { fr: "fr-FR", en: "en-GB", es: "es-ES" }[locale],
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://www.iteradvisors.com${item.href}#webpage`, url: `https://www.iteradvisors.com${item.href}`, mainEntity: { "@id": `https://www.iteradvisors.com${item.href}#article` }, isPartOf: { "@id": "https://www.iteradvisors.com/#website" } },
     datePublished: item.published, dateModified: item.modified,
-    author: { "@type": "Organization", name: "Iter Advisors", url: "https://www.iteradvisors.com/a-propos" },
+    author: { "@type": "Organization", "@id": "https://www.iteradvisors.com/#organization", name: "Iter Advisors", url: "https://www.iteradvisors.com/" },
     publisher: { "@id": "https://www.iteradvisors.com/#organization" },
   };
   return (

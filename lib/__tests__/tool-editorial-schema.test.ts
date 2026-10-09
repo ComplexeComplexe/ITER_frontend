@@ -8,8 +8,7 @@ describe('software guides without undocumented scores', () => {
       const schema = generateToolArticleSchema(tool);
       expect(schema['@type']).toBe('Article');
       expect(schema.about).toMatchObject({ '@type': 'SoftwareApplication', name: tool.name, url: tool.website });
-      expect(schema.author.name).toBe(getToolAuthor(tool).name);
-      expect(schema.author.url).toBe(`https://www.iteradvisors.com${getToolAuthor(tool).url}`);
+      expect(schema.author).toEqual({ '@id': `https://www.iteradvisors.com${getToolAuthor(tool).url}#person` });
       expect(schema.dateModified >= schema.datePublished).toBe(true);
       expect(schema).not.toHaveProperty('reviewRating');
       expect(schema).not.toHaveProperty('aggregateRating');

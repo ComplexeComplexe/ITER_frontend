@@ -63,7 +63,8 @@ describe("Published partner profiles", () => {
         expect(person.sameAs).toContain(member.linkedIn);
         const profile = graph.find((n: Record<string, string>) => n["@type"] === "ProfilePage");
         expect(profile.mainEntity["@id"]).toBe(person["@id"]);
-        expect(profile.dateModified).toBe("2026-10-05T00:00:00Z");
+        expect(profile.dateModified).toBe("2026-10-09T05:32:44.000Z");
+        expect(member.metaTitle).toContain(member.role);
         expect(member.metaTitle!.length).toBeLessThanOrEqual(60);
         expect(member.metaTitle).not.toContain("—");
         expect(member.metaDescription).toBe(getPartnerProfile(slug, locale)!.metaDescription);

@@ -182,7 +182,7 @@
   },
   "experts": {
     "heading": "¿Quién dirige su misión en Iter?",
-    "intro": "Sébastien Doat, socio fundador y CFO externo, es su interlocutor financiero. El perfil asignado depende de la necesidad: CFO o Finance Manager sénior, con el apoyo previsto en el paquete. La primera conversación también comprueba esa adecuación, en lugar de proponer la misma experiencia para todos los trabajos.",
+    "intro": "Sébastien Doat, {{role:sebastien-doat}}, es su interlocutor financiero. El perfil asignado depende de la necesidad: CFO o Finance Manager sénior, con el apoyo previsto en el paquete. La primera conversación también comprueba esa adecuación, en lugar de proponer la misma experiencia para todos los trabajos.",
     "paragraphs": [
       "Los socios supervisan los compromisos e intervienen en los proyectos de mayor alcance. Al definir la misión, se distingue quién prepara el reporting, quién dirige la revisión y quién comprueba los entregables sensibles. La continuidad depende del conocimiento del expediente y de organizar la cobertura; no significa que una misma persona esté siempre disponible.",
       "La automatización y la IA pueden facilitar la recopilación de datos o la preparación de análisis cuando responden a una necesidad identificada. No sustituyen la comprobación de las cifras ni la conversación con el dirigente. La prioridad sigue siendo una información comprensible y utilizable, con herramientas adaptadas al equipo."
@@ -195,11 +195,11 @@
   "faq": [
     {
       "question": "¿Tengo que cambiar de asesoría contable?",
-      "answer": "Trabajar con un CFO no implica automáticamente cambiar de asesoría. Esta prepara y comprueba la información contable y fiscal según su contrato; el CFO organiza su uso para la gestión financiera. Las responsabilidades y los intercambios se acuerdan conjuntamente. [Comparar las funciones](/ressources/blog/daf-externalise-vs-expert-comptable)."
+      "answer": "Trabajar con un CFO no implica automáticamente cambiar de asesoría. Esta prepara y comprueba la información contable y fiscal según su contrato; el CFO organiza su uso para la gestión financiera. Las responsabilidades y los intercambios se acuerdan conjuntamente. [Para profundizar, compare las funciones del CFO y del asesor contable](/ressources/blog/daf-externalise-vs-expert-comptable)."
     },
     {
       "question": "¿Tenemos que cambiar de software?",
-      "answer": "Cambiar de software no es un requisito automático. Primero se revisan el acceso a los datos, su fiabilidad y el tiempo de tratamiento con las herramientas existentes. Una migración necesita un objetivo, un coste y un alcance definidos. [Nuestro enfoque de IA y finanzas](/ressources/ia-finance)."
+      "answer": "Cambiar de software no es un requisito automático. Primero se revisan el acceso a los datos, su fiabilidad y el tiempo de tratamiento con las herramientas existentes. Una migración necesita un objetivo, un coste y un alcance definidos. [Nuestro enfoque de IA en finanzas detalla este método](/ressources/ia-finance)."
     },
     {
       "question": "¿Quién mantiene las decisiones y las autorizaciones de pago?",

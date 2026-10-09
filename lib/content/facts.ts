@@ -1,3 +1,4 @@
+import { COMPANY } from "@/lib/company-facts";
 /**
  * Source de vérité éditoriale — chiffres et promesses publiables d'Iter Advisors.
  *
@@ -32,7 +33,7 @@
  * `foundingDate` du balisage Organization : il affirmait donc avoir accompagné
  * des clients deux ans avant sa création.
  */
-export const ANNEE_FONDATION = 2021;
+export const ANNEE_FONDATION = COMPANY.foundingYear;
 
 /** Note Trustfolio, sur 5. */
 export const TRUSTFOLIO_RATING = "5";
@@ -45,11 +46,12 @@ export const TRUSTFOLIO_REVIEW_COUNT = 35;
 export const TRUSTFOLIO_VERIFIED_DATE = "2026-09-26";
 
 /** Entreprises accompagnées depuis la création, confirmé par Guillaume le 3 octobre 2026. */
-export const CLIENTS_ACCOMPAGNES = 90;
+export const CLIENTS_ACCOMPAGNES = COMPANY.clientsCount;
 
-/** Effectif de consultants confirmé par Guillaume le 3 octobre 2026. */
-export const CONSULTANTS = 20;
-export const CABINET_METRICS_VALIDATED_DATE = "2026-10-03";
+/** Effectif finance et direction RH confirmés par Guillaume le 9 octobre 2026. */
+export const FINANCE_TEAM_SIZE = COMPANY.financeTeamSize;
+export const TEAM_LABEL = COMPANY.teamLabel;
+export const CABINET_METRICS_VALIDATED_DATE = COMPANY.validatedAt;
 
 /** Montant levé par les clients accompagnés, formaté. */
 export const FONDS_LEVES = "100 M€";
@@ -65,7 +67,7 @@ export const BUREAUX = ["Barcelone", "Paris"] as const;
  * Les mentions « à partir de 2 000 € » (grille du pilier) et « à partir de
  * 4 500 € » (/fractional-cfo-startups) sont retirées du site.
  */
-export const PRIX_ENTREE_HT_MOIS = 3000;
+export const PRIX_ENTREE_HT_MOIS = COMPANY.dafMonthlyPrice.min;
 
 /**
  * Grille officielle — source unique pour toutes les pages commerciales.
@@ -89,7 +91,7 @@ export const FORMULES = [
     nom: "Essentiel",
     codeInterne: "STARTER",
     volumeIndicatif: `${VOLUME_DAF_JOURS_MOIS.min} à 2 jours par mois`,
-    prixMin: 3000,
+    prixMin: COMPANY.dafMonthlyPrice.min,
     prixMax: 5000,
     cible: "Startups en Seed, moins de 30 collaborateurs",
     inclus:
@@ -112,7 +114,7 @@ export const FORMULES = [
     codeInterne: "SCALE",
     volumeIndicatif: `5 à ${VOLUME_DAF_JOURS_MOIS.max} jours par mois`,
     prixMin: 6500,
-    prixMax: 8000,
+    prixMax: COMPANY.dafMonthlyPrice.max,
     cible: "Série B et au-delà",
     inclus:
       "Scope Croissance, plus M&A et due diligence, board et gouvernance, internationalisation, data et BI finance.",
@@ -195,13 +197,13 @@ export const DELAIS = {
   /** Cumulés depuis le premier contact, après validation de la proposition. */
   contratSigne: "8 jours ouvrés",
   /** Bout en bout, du premier échange au démarrage effectif. */
-  missionDemarree: "8 à 15 jours",
+  missionDemarree: `${COMPANY.startDelayDays} jours`,
   /** Pour un reporting mensuel ; au-delà, dépend de la roadmap arrêtée. */
   premiersLivrables: "dès le premier mois d'intervention",
   /** Remplace « 48 à 72 h ». Selon disponibilité du profil et complexité. */
   transitionUrgent: "7 à 10 jours",
   /** Remplace « 5 jours ». Intervention plug and play. */
-  fractionalCfo: "8 à 15 jours",
+  fractionalCfo: `${COMPANY.startDelayDays} jours`,
 } as const;
 
 /* ── Engagement ────────────────────────────────────────────────────────── */
@@ -215,7 +217,7 @@ export const DELAIS = {
  */
 export const ENGAGEMENT = {
   dureeMinimale: null,
-  preavisJours: 30,
+  preavisJours: COMPANY.noticeDays,
   /** « Sans engagement » seul n'est pas publiable : le préavis doit suivre. */
   formulation:
     "Sans durée d'engagement minimale, résiliable avec un préavis de 30 jours.",
