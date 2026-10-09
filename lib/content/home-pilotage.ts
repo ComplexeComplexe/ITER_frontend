@@ -1,7 +1,7 @@
 import type { Locale } from "@/lib/i18n";
 import {
   CLIENTS_ACCOMPAGNES,
-  CONSULTANTS,
+  TEAM_LABEL,
   FONDS_LEVES,
   TRUSTFOLIO_RATING,
 } from "./facts";
@@ -567,7 +567,7 @@ export function getHomePilotage(locale: Locale) {
   );
   return {
     ...t,
-    team: { ...t.team, eyebrow: `${t.team.eyebrow} · ${CONSULTANTS} ${locale === "es" ? "consultores" : "consultants"}` },
+    team: { ...t.team, eyebrow: `${t.team.eyebrow} · ${TEAM_LABEL[locale]}` },
     proofs: [
       { value: String(CLIENTS_ACCOMPAGNES), label: t.companies },
       {

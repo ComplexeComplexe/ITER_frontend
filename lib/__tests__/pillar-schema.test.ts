@@ -16,7 +16,7 @@ describe('pillar identity and indicative fees', () => {
       const catalog = (service as { hasOfferCatalog: { itemListElement: Array<Record<string, unknown>> } }).hasOfferCatalog;
       catalog.itemListElement.forEach((offer, index) => {
         expect(offer).not.toHaveProperty('price');
-        expect(offer.priceSpecification).toMatchObject({ minPrice: FORMULES[index].prixMin, maxPrice: FORMULES[index].prixMax, valueAddedTaxIncluded: false, unitText: 'MONTH' });
+        expect(offer.priceSpecification).toMatchObject({ minPrice: FORMULES[index].prixMin, maxPrice: FORMULES[index].prixMax, valueAddedTaxIncluded: false, unitCode: 'MON', unitText: { fr: 'mois', en: 'month', es: 'mes' }[locale] });
         expect(offer.itemOffered).toEqual(page.mainEntity);
       });
     });

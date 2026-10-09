@@ -182,7 +182,7 @@
   },
   "experts": {
     "heading": "Who leads your engagement at Iter?",
-    "intro": "Sébastien Doat, founding partner and Fractional CFO, is your finance contact. The assigned profile depends on your needs: a CFO or senior Finance Manager, with the support included in the package. The first conversation checks that fit, rather than offering the same level of seniority for every task.",
+    "intro": "Sébastien Doat, {{role:sebastien-doat}}, is your finance contact. The assigned profile depends on your needs: a CFO or senior Finance Manager, with the support included in the package. The first conversation checks that fit, rather than offering the same level of seniority for every task.",
     "paragraphs": [
       "Partners oversee commitments and contribute to major projects. Scoping distinguishes who prepares reporting, who leads the review and who checks sensitive deliverables. Continuity depends on understanding the engagement and arranging cover; it does not promise that one person will always be available.",
       "Automation and AI can help collect data or prepare analysis where they address an identified need. They do not replace checking the figures or discussing them with the business leader. The priority remains understandable, usable information and tools suited to your team."
@@ -195,11 +195,11 @@
   "faq": [
     {
       "question": "Do I need to change my accountant?",
-      "answer": "Working with a CFO does not automatically require changing accounting firms. Your accountant produces and checks accounting and tax information under the agreed engagement terms; the CFO organizes its use for financial management. Responsibilities and communication are agreed together. [Compare the roles](/ressources/blog/daf-externalise-vs-expert-comptable)."
+      "answer": "Working with a CFO does not automatically require changing accounting firms. Your accountant produces and checks accounting and tax information under the agreed engagement terms; the CFO organizes its use for financial management. Responsibilities and communication are agreed together. [For more detail, compare the roles of a CFO and an accountant](/ressources/blog/daf-externalise-vs-expert-comptable)."
     },
     {
       "question": "Do we need to change our software?",
-      "answer": "A software change is not an automatic prerequisite. Existing tools are reviewed for data access, reliability and processing time before proposing changes. Any migration needs a defined objective, cost and scope. [Our approach to AI and finance](/ressources/ia-finance)."
+      "answer": "A software change is not an automatic prerequisite. Existing tools are reviewed for data access, reliability and processing time before proposing changes. Any migration needs a defined objective, cost and scope. [Our approach to AI in finance explains this method](/ressources/ia-finance)."
     },
     {
       "question": "Who retains decision-making and payment authorization?",

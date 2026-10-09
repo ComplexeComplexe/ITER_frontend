@@ -90,12 +90,7 @@ export function serviceSchema({
     name,
     description,
     url: url.startsWith("http") ? url : `${BASE}${url}`,
-    provider: {
-      "@id": ORGANIZATION_ID,
-      "@type": "Organization",
-      name: "Iter Advisors",
-      url: `${BASE}/`,
-    },
+    provider: { "@id": ORGANIZATION_ID },
   };
 
   if (serviceType) schema.serviceType = serviceType;
@@ -262,11 +257,6 @@ export function financialServiceSchema(): Record<string, unknown> {
         postalCode: "08010",
         addressCountry: "ES",
       },
-      {
-        "@type": "PostalAddress",
-        addressLocality: "Paris",
-        addressCountry: "FR",
-      },
     ],
     // Review-snippet fix (2026-05-29): no self-serving aggregateRating here
     // either (this helper is currently unused, but kept consistent with the
@@ -320,29 +310,8 @@ export function articleSchema({
     url: url.startsWith("http") ? url : `${BASE}${url}`,
     ...(datePublished && { datePublished }),
     ...(dateModified && { dateModified }),
-    author: authorUrl
-      ? {
-          "@type": "Person",
-          "@id": editorialPersonId(authorUrl),
-          name: authorName,
-          url: authorUrl.startsWith("http") ? authorUrl : `${BASE}${authorUrl}`,
-        }
-      : {
-          "@type": authorName === "Iter Advisors" ? "Organization" : "Person",
-          ...(authorName === "Iter Advisors" && { "@id": ORGANIZATION_ID }),
-          name: authorName,
-          ...(authorName === "Iter Advisors" && { url: `${BASE}/` }),
-        },
-    publisher: {
-      "@id": ORGANIZATION_ID,
-      "@type": "Organization",
-      name: "Iter Advisors",
-      url: `${BASE}/`,
-      logo: {
-        "@type": "ImageObject",
-        url: `${BASE}/images/logos/iter-advisors-brand-square.png`,
-      },
-    },
+    author: authorUrl ? { "@id": editorialPersonId(authorUrl) } : authorName === "Iter Advisors" ? { "@id": ORGANIZATION_ID } : { "@type": "Person", name: authorName },
+    publisher: { "@id": ORGANIZATION_ID },
     ...(imageSrc && {
       image: {
         "@type": "ImageObject",

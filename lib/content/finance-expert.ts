@@ -1,13 +1,15 @@
+import { PEOPLE, personId } from "@/lib/company-facts";
+
 /** Public identity. A finance contact is not automatically an article's author or reviewer. */
 export const FINANCE_EXPERT = {
-  name: "Sébastien Doat",
-  slug: "sebastien-doat",
-  href: "/a-propos/sebastien-doat",
-  id: "https://www.iteradvisors.com/a-propos/sebastien-doat#person",
-  linkedin: "https://www.linkedin.com/in/sebastien-doat-fractional-cfo/",
+  name: PEOPLE.sebastien.name,
+  slug: PEOPLE.sebastien.slug,
+  href: `/a-propos/${PEOPLE.sebastien.slug}`,
+  id: personId(PEOPLE.sebastien.slug),
+  linkedin: PEOPLE.sebastien.linkedin,
   malt: "https://www.malt.com/profile/sebastiendoat",
   photo: "/images/team/sebastien-doat.webp",
-  role: "Associé fondateur et DAF externalisé",
+  role: PEOPLE.sebastien.roles.fr,
   description: "Sébastien Doat, associé fondateur d’Iter Advisors, accompagne les dirigeants sur le pilotage financier, la trésorerie et la préparation des financements.",
   expertise: ["DAF externalisé", "Gestion de trésorerie", "Modélisation financière", "Reporting investisseurs", "Acquisitions et intégration financière"],
   podcast: {

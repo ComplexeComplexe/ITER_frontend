@@ -109,6 +109,14 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return correctedGscRedirects(localeRedirects([
+      // Approved Okimia migration: explicit 301 (permanent:true would emit 308).
+      {"source": "/ressources/outils/fygr", "destination": "/ressources/outils/okimia", "statusCode": 301},
+      {"source": "/en/ressources/tools/fygr", "destination": "/en/ressources/tools/okimia", "statusCode": 301},
+      {"source": "/es/recursos/herramientas/fygr", "destination": "/es/recursos/herramientas/okimia", "statusCode": 301},
+      {"source": "/en/ressources/outils/fygr", "destination": "/en/ressources/tools/okimia", "statusCode": 301},
+      {"source": "/es/ressources/outils/fygr", "destination": "/es/recursos/herramientas/okimia", "statusCode": 301},
+      {"source": "/es/recursos/outils/fygr", "destination": "/es/recursos/herramientas/okimia", "statusCode": 301},
+
       { source: "/es/recursos/blog/que-es-fractional-cfo", destination: "/es/recursos/glosario/cfo-tiempo-parcial", statusCode: 301 },
       { source: "/es/ressources/blog/que-es-fractional-cfo", destination: "/es/recursos/glosario/cfo-tiempo-parcial", statusCode: 301 },
       // Consolidation des intentions FR, avec conservation des contenus utiles.

@@ -21,6 +21,9 @@ for (const url of urls) {
     const fail = message => errors.push(`${pathname}: ${message}`);
     if (types.includes('ProfessionalService')) fail('deprecated ProfessionalService');
     if (types.includes('Person') && node.name && node['@id']) {
+      if (!/\/(?:a-propos|about|quienes-somos)\//.test(pathname)) fail('full Person outside its profile page');
+      if (!/^https:\/\/www\.iteradvisors\.com\/a-propos\/[^/#]+#person$/.test(node['@id'])) fail('noncanonical person identity');
+      if (node.sameAs?.some(link => link.includes('malt.'))) fail('Malt in Person sameAs');
       if (!people.has(node.name)) people.set(node.name, new Set());
       people.get(node.name).add(node['@id']);
     }
@@ -41,6 +44,7 @@ for (const url of urls) {
       if (node.author?.name === 'Iter Advisors' && node.author['@id'] !== `${site}/#organization`) fail('cabinet author lacks canonical organization');
     }
     if (types.includes('UnitPriceSpecification')) {
+      if (/^(?:MONTH|mois|month|mes)$/i.test(node.unitText ?? '') && (node.unitCode !== 'MON' || node.unitText === 'MONTH')) fail('monthly range lacks normalized MON unit');
       prices++;
       if (node.price !== undefined || !(Number(node.maxPrice) > Number(node.minPrice)) || node.valueAddedTaxIncluded !== false || node.priceCurrency !== 'EUR' || !node.unitText) fail('invalid indicative VAT-exclusive range');
     }

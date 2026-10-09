@@ -26,7 +26,7 @@ for (const path of paths) {
     for (const anchor of ['evolution', 'trois-piliers', 'digitalisation', 'ia-data', 'esg-reporting', 'leadership']) check(path, main.includes(`id="${anchor}"`), 'retained-navigation:' + anchor);
   }
   if (path.includes('les-10-outils')) {
-    for (const slug of ['pennylane', 'cegid-loop', 'sage', 'agicap', 'fygr', 'qonto', 'power-bi', 'spendesk', 'pleo', 'carta']) check(path, main.includes(`href="/ressources/outils/${slug}"`), 'startup-test-to-tool:' + slug);
+    for (const slug of ['pennylane', 'cegid-loop', 'sage', 'agicap', 'okimia', 'qonto', 'power-bi', 'spendesk', 'pleo', 'carta']) check(path, main.includes(`href="/ressources/outils/${slug}"`), 'startup-test-to-tool:' + slug);
     check(path, main.includes('href="/ressources/blog/essentiels-outils-tech-finance"'), 'startup-angle-to-general-method');
   }
   if (path.includes('transition')) {

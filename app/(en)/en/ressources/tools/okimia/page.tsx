@@ -1,5 +1,5 @@
 import LocalizedEditorialPage, { editorialMetadata } from '@/lib/content/localized-editorial';
-const source = "/ressources/outils/fygr";
+const source = "/ressources/outils/okimia";
 const locale = 'en' as const;
 export const metadata = editorialMetadata(source, locale);
 export default function Page({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {

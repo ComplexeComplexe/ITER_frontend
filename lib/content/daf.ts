@@ -1,4 +1,4 @@
-import { CLIENTS_ACCOMPAGNES, CONSULTANTS, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
+import { CLIENTS_ACCOMPAGNES, TEAM_LABEL, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 import { getFinanceStackSummary } from "./finance-stack";
 import { Locale } from "../i18n";
 import { getDafOffer } from "./daf-offer";
@@ -516,7 +516,7 @@ export const dafContent: Record<Locale, DafContent> = {
         // condensés : /ressources/outils est la page propriétaire du sujet et
         // tient ses fiches à jour, celles-ci figeaient un état du marché.
         "Un DAF externalisé s'appuie sur une stack moderne pour automatiser les tâches répétitives et se concentrer sur l'analyse :",
-        "Comptabilité et facturation avec [Pennylane](/ressources/outils/pennylane) ou [Sage](/ressources/outils/sage) ; trésorerie et prévisionnel glissant avec [Agicap](/ressources/outils/agicap) ou [Fygr](/ressources/outils/fygr) ; dépenses et cartes avec [Spendesk](/ressources/outils/spendesk), [Pleo](/ressources/outils/pleo) ou [Payhawk](/ressources/outils/payhawk) ; reporting sur Power BI, Looker ou Metabase.",
+        "Comptabilité et facturation avec [Pennylane](/ressources/outils/pennylane) ou [Sage](/ressources/outils/sage) ; trésorerie et prévisionnel glissant avec [Agicap](/ressources/outils/agicap) ou [Fygr](/ressources/outils/okimia) ; dépenses et cartes avec [Spendesk](/ressources/outils/spendesk), [Pleo](/ressources/outils/pleo) ou [Payhawk](/ressources/outils/payhawk) ; reporting sur Power BI, Looker ou Metabase.",
         `${getFinanceStackSummary("fr")} [Découvrez nos outils finance](/ressources/outils) et notre guide sur les [10 outils pour un CFO startup](/ressources/blog/les-10-outils-pour-cfos-startup).`,
         // IA-FINANCE (2026-09-01) — le pilier ne disait rien de l'IA alors que
         // la section dédiée existe : c'est le lien entrant qui porte le plus
@@ -527,7 +527,7 @@ export const dafContent: Record<Locale, DafContent> = {
     whyChoose: {
       heading: "Pourquoi choisir Iter Advisors comme cabinet de DAF externalisé ?",
       content: [
-        `Iter Advisors se distingue par la qualité de ses équipes et la profondeur de son accompagnement. Nos ${CONSULTANTS} consultants interviennent sur le pilotage financier et la structuration de la fonction finance.`,
+        `Iter Advisors se distingue par la qualité de ses équipes et la profondeur de son accompagnement. Nos professionnels de la finance interviennent sur le pilotage financier et la structuration de la fonction finance.`,
         getFinanceStackSummary("fr"),
         `La satisfaction de nos clients est notre priorité : nous affichons une note de 5/5 sur Trustfolio, avec ${TRUSTFOLIO_REVIEW_COUNT} avis vérifiés. Cette excellence se traduit par des relations durables et des résultats concrets pour les entreprises que nous accompagnons.`,
       ],
@@ -690,7 +690,7 @@ export const dafContent: Record<Locale, DafContent> = {
         { label: "Who it's for", text: "startups raising funds, growing SMEs, scale-ups in transformation." },
         { label: "Lead time", text: `engagement starts within ${offerEn.start}.` },
         { label: "Commitment", text: offerEn.commitment },
-        { label: "Iter Advisors in numbers", text: `${CONSULTANTS} finance consultants, ${CLIENTS_ACCOMPAGNES} companies supported, EUR 100M raised, 5/5 on Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} reviews).` },
+        { label: "Iter Advisors in numbers", text: `${TEAM_LABEL.en}, ${CLIENTS_ACCOMPAGNES} companies supported, EUR 100M raised, 5/5 on Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} reviews).` },
       ],
     },
     definitionBox: {
@@ -912,7 +912,7 @@ export const dafContent: Record<Locale, DafContent> = {
     whyChoose: {
       heading: "Why choose Iter Advisors as your Fractional CFO firm?",
       content: [
-        `Iter Advisors stands out for the quality of its teams and the depth of its support. Our ${CONSULTANTS} consultants support financial management and the structuring of the finance function.`,
+        `Iter Advisors stands out for the quality of its teams and the depth of its support. Our finance professionals support financial management and the structuring of the finance function.`,
         getFinanceStackSummary("en"),
         `Client satisfaction is our priority: we have a 5/5 rating on Trustfolio with ${TRUSTFOLIO_REVIEW_COUNT} verified reviews. This excellence translates into lasting relationships and tangible results for the companies we support.`,
       ],
@@ -1042,7 +1042,7 @@ export const dafContent: Record<Locale, DafContent> = {
         { label: "Para quién", text: "startups en ronda de financiación, pymes en crecimiento, empresas en transformación." },
         { label: "Plazo", text: `inicio de la misión en ${offerEs.start}.` },
         { label: "Compromiso", text: offerEs.commitment },
-        { label: "Iter Advisors en cifras", text: `${CONSULTANTS} consultores financieros, ${CLIENTS_ACCOMPAGNES} empresas acompañadas, 100 M€ levantados, nota 5/5 en Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} opiniones).` },
+        { label: "Iter Advisors en cifras", text: `${TEAM_LABEL.es}, ${CLIENTS_ACCOMPAGNES} empresas acompañadas, 100 M€ levantados, nota 5/5 en Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} opiniones).` },
       ],
     },
     definitionBox: {
@@ -1212,7 +1212,7 @@ export const dafContent: Record<Locale, DafContent> = {
     whyChoose: {
       heading: "Por que elegir Iter Advisors como su gabinete de CFO externalizado?",
       content: [
-        `Iter Advisors se distingue por la calidad de sus equipos y la profundidad de su acompanamiento. Nuestros ${CONSULTANTS} consultores acompañan la gestión financiera y la estructuración de la función financiera.`,
+        `Iter Advisors se distingue por la calidad de sus equipos y la profundidad de su acompanamiento. Nuestros profesionales de las finanzas acompañan la gestión financiera y la estructuración de la función financiera.`,
         getFinanceStackSummary("es"),
         `La satisfaccion de nuestros clientes es nuestra prioridad: contamos con una nota de 5/5 en Trustfolio, con ${TRUSTFOLIO_REVIEW_COUNT} opiniones verificadas. Esta excelencia se traduce en relaciones duraderas y resultados concretos para las empresas que acompanamos.`,
       ],

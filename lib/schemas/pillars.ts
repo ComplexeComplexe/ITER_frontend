@@ -31,7 +31,7 @@ export function dafPricingGraph(locale: Locale, content: DafSubContent) {
             '@type': 'Offer', name: offer.tiers[i].name,
             description: offer.billing,
             url: `${SITE}${path}`, itemOffered: { '@id': serviceId },
-            priceSpecification: indicativePriceSpecification(plan.prixMin, plan.prixMax, 'MONTH'),
+            priceSpecification: indicativePriceSpecification(plan.prixMin, plan.prixMax, locale === 'fr' ? 'mois' : locale === 'en' ? 'month' : 'mes'),
           })),
         },
       },

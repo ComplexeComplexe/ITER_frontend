@@ -65,17 +65,7 @@ export function editorialWebPageSchema({
     datePublished,
     dateModified,
     ...(mainEntityId && { mainEntity: { "@id": mainEntityId } }),
-    author: author.type === "Organization" ? {
-      "@type": "Organization",
-      "@id": `${SITE}/#organization`,
-      name: author.name,
-      url: SITE,
-    } : {
-      "@type": "Person",
-      "@id": editorialPersonId(authorHref(locale, author)),
-      name: author.name,
-      url: `${SITE}${authorHref(locale, author)}`,
-    },
+    author: { "@id": author.type === "Organization" ? `${SITE}/#organization` : editorialPersonId(authorHref(locale, author)) },
     publisher: { "@id": `${SITE}/#organization` },
     isPartOf: { "@id": `${SITE}/#website` },
   };

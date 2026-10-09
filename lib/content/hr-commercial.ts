@@ -1,3 +1,4 @@
+import { COMPANY } from "@/lib/company-facts";
 import { indicativePriceSpecification } from '@/lib/schemas/identity';
 import type { Locale } from '@/lib/i18n';
 
@@ -5,7 +6,7 @@ import type { Locale } from '@/lib/i18n';
 export const HR_COMMERCIAL_TERMS = {
   confirmedAt: '2026-10-03', currency: 'EUR', vatIncluded: false,
   light: { minDays: 1, maxDays: 2, from: 1800 },
-  regular: { minDays: 3, maxDays: 4, min: 3200, max: 4800 },
+  regular: { minDays: 3, maxDays: 4, min: COMPANY.drhMonthlyPrice.min, max: COMPANY.drhMonthlyPrice.max },
   employeeFrance: { min: 90000, max: 140000, basis: 'annual-gross-salary' },
 } as const;
 
@@ -155,7 +156,7 @@ export function hrOfferCatalog(locale: Locale) {
     '@type': 'OfferCatalog', name: c.priceTitle,
     itemListElement: [
       { '@type': 'Offer', name: c.priceLabels[0], description: `${c.priceScopes[0]} ${c.project}.` },
-      { '@type': 'Offer', name: c.priceLabels[1], description: c.priceScopes[1], priceSpecification: indicativePriceSpecification(HR_COMMERCIAL_TERMS.regular.min, HR_COMMERCIAL_TERMS.regular.max, 'MONTH') },
+      { '@type': 'Offer', name: c.priceLabels[1], description: c.priceScopes[1], priceSpecification: indicativePriceSpecification(HR_COMMERCIAL_TERMS.regular.min, HR_COMMERCIAL_TERMS.regular.max, locale === 'fr' ? 'mois' : locale === 'en' ? 'month' : 'mes') },
       { '@type': 'Offer', name: c.priceLabels[2], description: `${c.priceScopes[2]} ${c.project}.` },
     ],
   };

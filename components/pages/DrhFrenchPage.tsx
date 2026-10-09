@@ -1,3 +1,4 @@
+import { PEOPLE, personId } from "@/lib/company-facts";
 import HrCatalogue from "@/components/HrCatalogue";
 import type { Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
@@ -11,8 +12,7 @@ import ServiceFaq from "@/components/design/ServiceFaq";
 import ServiceContact from "@/components/design/ServiceContact";
 import HRExpert from "@/components/HRExpert";
 import { HR_FAQ, HR_TIME_FAQ, HR_LINKS, HR_TERMS } from "@/lib/content/hr-offer";
-import { faqPageSchema, personSchema } from "@/lib/schemas";
-import { getTeamMemberBySlug } from "@/lib/content/team";
+import { faqPageSchema } from "@/lib/schemas";
 import { HR_COMMERCIAL_COPY, hrOfferCatalog } from "@/lib/content/hr-commercial";
 import { HrPillars, HrComparison, HrFees, HrCountries, HrTools } from "@/components/HrCommercialBlocks";
 import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
@@ -29,7 +29,6 @@ export default function DrhFrenchPage({ sharedTime = false, cmsNavigation, local
   const commercial = HR_COMMERCIAL_COPY[locale];
   const ui = getSiteInterface(locale);
   const modified = PAGE_REVISIONS[path] ?? "2026-10-03";
-  const borith = getTeamMemberBySlug("borith-biv", locale)!;
   const faq = localizeHrValue(sharedTime ? HR_TIME_FAQ : HR_FAQ, locale).map(item => ({ ...item }));
   if (!sharedTime) faq[1] = { ...faq[1], answer: commercial.priceFaq };
   const needs = sharedTime ? [
@@ -68,8 +67,7 @@ export default function DrhFrenchPage({ sharedTime = false, cmsNavigation, local
   return <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
     <div className={compact ? compactUx.test : undefined}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Service", "@id": `https://www.iteradvisors.com${path}#service`, name: title, url: `https://www.iteradvisors.com${path}`, provider: { "@id": "https://www.iteradvisors.com/#organization" }, mainEntityOfPage: { "@id": `https://www.iteradvisors.com${path}#webpage` }, areaServed: [{ "@type": "Country", name: "France" }, { "@type": "Country", name: "Spain" }], serviceType: t("Direction RH externalisée"), ...(!sharedTime && { hasOfferCatalog: hrOfferCatalog(locale) }), description: sharedTime ? t("Fonctionnement, rythme, responsabilités et passation d’une direction RH à temps partagé.") : t("Direction RH pour PME et startups : organisation, recrutement et accompagnement des managers, selon un périmètre convenu.") }) }} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", "@id": `https://www.iteradvisors.com${path}#webpage`, url: `https://www.iteradvisors.com${path}`, name: title, inLanguage: locale === "fr" ? "fr-FR" : locale === "en" ? "en-GB" : "es-ES", dateModified: modified, author: { "@id": "https://www.iteradvisors.com/#organization" }, about: { "@id": "https://www.iteradvisors.com/a-propos/borith-biv#person" }, publisher: { "@id": "https://www.iteradvisors.com/#organization" }, isPartOf: { "@id": "https://www.iteradvisors.com/#website" }, mainEntity: { "@id": `https://www.iteradvisors.com${path}#service` } }) }} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema({ name: "Borith Biv", jobTitle: borith.role, url: href("/a-propos/borith-biv"), imageUrl: "/images/team/borith-biv.webp", sameAs: borith.linkedIn ? [borith.linkedIn] : [] })) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", "@id": `https://www.iteradvisors.com${path}#webpage`, url: `https://www.iteradvisors.com${path}`, name: title, inLanguage: locale === "fr" ? "fr-FR" : locale === "en" ? "en-GB" : "es-ES", dateModified: modified, author: { "@id": personId(PEOPLE.borith.slug) }, about: { "@id": "https://www.iteradvisors.com/a-propos/borith-biv#person" }, publisher: { "@id": "https://www.iteradvisors.com/#organization" }, isPartOf: { "@id": "https://www.iteradvisors.com/#website" }, mainEntity: { "@id": `https://www.iteradvisors.com${path}#service` } }) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(faq)) }} />
     <ServiceHero locale={locale} family="rh" isRoot={!sharedTime} title={title} label={sharedTime ? t("Temps partagé") : t("DRH externalisé")} eyebrow={t("Iter Advisors · Direction RH")}
       lead={sharedTime ? t("Une présence régulière, des priorités suivies, des responsabilités définies.") : t("Structurer vos équipes, accompagner vos managers, organiser vos priorités RH.")}

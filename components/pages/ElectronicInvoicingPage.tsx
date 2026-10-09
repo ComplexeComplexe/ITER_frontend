@@ -30,7 +30,7 @@ export default function ElectronicInvoicingPage({ pageKey, locale }: { pageKey: 
     '@context': 'https://schema.org', '@type': 'Article', '@id': `${url}#article`, url,
     headline: page.title, description: page.description, inLanguage: { fr: 'fr-FR', en: 'en-GB', es: 'es-ES' }[locale], image: invoiceImage(pageKey, locale),
     datePublished: INVOICE_TIMESTAMP, dateModified: INVOICE_TIMESTAMP,
-    author: { '@type': 'Person', '@id': FINANCE_EXPERT.id, name: FINANCE_EXPERT.name, url: `https://www.iteradvisors.com${parityHref(FINANCE_EXPERT.href, locale)}` },
+    author: { '@id': FINANCE_EXPERT.id },
     publisher: { '@type': 'Organization', '@id': 'https://www.iteradvisors.com/#organization', name: 'Iter Advisors' },
     mainEntityOfPage: { '@id': `${url}#webpage` },
     about: { '@type': 'Thing', name: ui.topic },

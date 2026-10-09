@@ -1,3 +1,4 @@
+import { COMPANY } from "@/lib/company-facts";
 import type { Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
 import en from "@/lib/content/expert-profile-en.json";
@@ -25,7 +26,7 @@ export default function ExpertProfileSections({ locale = "fr" }: { locale?: Loca
     <section id="parcours" className="scroll-mt-28">
       <p className="site-eyebrow">{t("Expérience opérationnelle")}</p><h2 className="mb-5">{t("Un parcours de direction financière")}</h2>
       <ul className="divide-y divide-border">
-        <li className="py-4"><h3>{t("Iter Advisors")}</h3><p className="text-muted-foreground mt-2">{t("Associé fondateur et CFO depuis novembre 2020. Accompagnement des dirigeants sur la structuration financière et les financements.")}</p></li>
+        <li className="py-4"><h3>{t("Iter Advisors")}</h3><p className="text-muted-foreground mt-2">{({ fr: `Cofondateur et CFO depuis ${COMPANY.foundingYear}. Accompagnement des dirigeants sur la structuration financière et les financements.`, en: `Co-founder and CFO since ${COMPANY.foundingYear}. Supporting business leaders with financial structuring and financing.`, es: `Cofundador y CFO desde ${COMPANY.foundingYear}. Acompañamiento a directivos en estructuración financiera y financiación.` }[locale])}</p></li>
         <li className="py-4"><h3>{t("Carts Guru et Terres de Café")}</h3><p className="text-muted-foreground mt-2">{t("Des fonctions de direction financière avant Iter Advisors, dans des entreprises en développement.")}</p></li>
         <li className="py-4"><h3>{t("Happy Scribe et SolarMente")}</h3><p className="text-muted-foreground mt-2">{t("Des missions de CFO à temps partagé présentées dans son parcours professionnel public.")}</p></li>
       </ul>

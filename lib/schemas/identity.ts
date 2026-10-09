@@ -1,6 +1,7 @@
+import { ORG_ID } from '@/lib/company-facts';
 /** Stable identities shared by all Schema.org producers. */
 export const SITE_ORIGIN = 'https://www.iteradvisors.com';
-export const ORGANIZATION_ID = `${SITE_ORIGIN}/#organization`;
+export const ORGANIZATION_ID = ORG_ID;
 export const WEBSITE_ID = `${SITE_ORIGIN}/#website`;
 export function absoluteSchemaUrl(path: string): string {
   return new URL(path, `${SITE_ORIGIN}/`).href;
@@ -15,5 +16,6 @@ export function indicativePriceSpecification(min: number, max: number, unitText:
     throw new Error('Indicative prices require a valid range and an explicit unit');
   }
   return { '@type': 'UnitPriceSpecification', minPrice: min, maxPrice: max,
-    priceCurrency: 'EUR', valueAddedTaxIncluded: false, unitText };
+    priceCurrency: 'EUR', valueAddedTaxIncluded: false,
+    ...(/^(?:MONTH|mois|month|mes)$/i.test(unitText) ? { unitCode: 'MON', unitText: unitText === 'MONTH' ? 'mois' : unitText } : { unitText }) };
 }

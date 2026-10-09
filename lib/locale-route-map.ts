@@ -421,10 +421,10 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
     "en": "/ressources/outils/cegid-loop",
     "es": "/ressources/outils/cegid-loop"
   },
-  "/ressources/outils/fygr": {
-    "fr": "/ressources/outils/fygr",
-    "en": "/ressources/outils/fygr",
-    "es": "/ressources/outils/fygr"
+  "/ressources/outils/okimia": {
+    "fr": "/ressources/outils/okimia",
+    "en": "/ressources/outils/okimia",
+    "es": "/ressources/outils/okimia"
   },
   "/ressources/outils/pleo": {
     "fr": "/ressources/outils/pleo",

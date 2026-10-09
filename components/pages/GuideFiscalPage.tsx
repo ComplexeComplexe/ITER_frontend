@@ -142,12 +142,7 @@ export default async function GuideFiscalPage({
         datePublished: publishedDate,
         dateModified: modifiedDate,
         inLanguage: { fr: "fr-FR", en: "en-GB", es: "es-ES" }[locale],
-        author: {
-          "@type": "Person",
-          "@id": editorialPersonId(author.url),
-          name: author.name,
-          url: `${SITE}${author.url}`,
-        },
+        author: { "@id": editorialPersonId(author.url) },
         publisher: { "@id": `${SITE}/#organization` },
         isPartOf: {
           "@type": "CollectionPage",

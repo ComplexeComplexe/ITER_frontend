@@ -109,7 +109,7 @@ export const EDITORIAL_SOURCE_PAGES = {
   "/ressources/outils/cegid-loop": { component: Source36, params: {"slug": "cegid-loop"} },
   "/ressources/outils/equify": { component: Source36, params: {"slug": "equify"} },
   "/ressources/outils/factorial": { component: Source36, params: {"slug": "factorial"} },
-  "/ressources/outils/fygr": { component: Source36, params: {"slug": "fygr"} },
+  "/ressources/outils/okimia": { component: Source36, params: {"slug": "okimia"} },
   "/ressources/outils/gestion-depenses": { component: Source36, params: {"slug": "gestion-depenses"} },
   "/ressources/outils/kyriba": { component: Source36, params: {"slug": "kyriba"} },
   "/ressources/outils/leanpay": { component: Source36, params: {"slug": "leanpay"} },

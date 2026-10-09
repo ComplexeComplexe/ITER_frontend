@@ -553,7 +553,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <p>Cas fictif : une PME doit payer ses salaires avant l’encaissement de son principal client. Décalez cette recette dans une copie du prévisionnel. Le dirigeant doit pouvoir identifier le point bas, retrouver l’hypothèse et vérifier l’écart avec le scénario initial. Évaluez le temps de mise à jour et la compréhension du résultat par la personne responsable.</p>
 <h2 id="reco">Organiser le pilotage après le choix</h2>
 <p>Le logiciel collecte des données ; une personne doit tenir les hypothèses à jour. Fixez une revue des écarts, un responsable des échéances et les décisions à prendre lorsque la trésorerie passe sous votre seuil de sécurité. Notre <a href="/services/previsionnel-tresorerie">accompagnement en prévisionnel de trésorerie</a> porte sur cette organisation.</p>
-<p>Consultez les <a href="/ressources/outils/agicap">critères de choix Agicap</a> et la <a href="/ressources/outils/fygr">fiche Okimia, ex-Fygr</a>.</p>
+<p>Consultez les <a href="/ressources/outils/agicap">critères de choix Agicap</a> et la <a href="/ressources/outils/okimia">fiche Okimia, ex-Fygr</a>.</p>
 <h2 id="sources">Sources et méthode</h2>
 <p>Vérifié le 13 septembre 2026 : <a href="https://agicap.com/fr/">site officiel Agicap</a> et <a href="https://www.okimia.com/fr">site officiel Okimia</a>, qui annonce le changement de nom de Fygr. Les exemples sont fictifs. Cette comparaison ne revendique ni nombre de déploiements ni gains mesurés ; le périmètre contractuel fait foi.</p>`,
       content: [],

@@ -123,7 +123,7 @@ export default function AuthorPage({
   const personId = editorialPersonId(canonicalPath);
   // Revision records have day precision. Use a fixed UTC boundary, never the build time.
   const revision = PAGE_REVISIONS[canonicalPath];
-  const profileRevision = revision ? `${revision}T00:00:00Z` : undefined;
+  const profileRevision = revision ? new Date(revision).toISOString() : undefined;
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -137,7 +137,7 @@ export default function AuthorPage({
     image: member.photo?.url
       ? absoluteSchemaUrl(member.photo.url)
       : undefined,
-    sameAs: profile?.sameAs ?? (isFinanceExpert ? [FINANCE_EXPERT.linkedin, FINANCE_EXPERT.malt] : member.linkedIn ? [member.linkedIn] : undefined),
+    sameAs: profile?.sameAs ?? (isFinanceExpert ? [FINANCE_EXPERT.linkedin] : member.linkedIn ? [member.linkedIn] : undefined),
     ...(isFinanceExpert && { subjectOf: { "@type": "PodcastEpisode", inLanguage: "fr-FR", name: FINANCE_EXPERT.podcast.title, url: FINANCE_EXPERT.podcast.href } }),
     ...(profile && { knowsAbout: profile.expertise }),
     ...(profile?.alumniOf && { alumniOf: profile.alumniOf.map(name => ({ "@type": "CollegeOrUniversity", name })) }),
@@ -145,11 +145,7 @@ export default function AuthorPage({
     ...(profile?.languages && { knowsLanguage: profile.languages }),
     ...(profile?.workLocation && { workLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressLocality: profile.workLocation, addressCountry: "ES" } } }),
     ...(member.slug === "guillaume-rostand" && { alumniOf: [{ "@type": "EducationalOrganization", name: "CELSA" }, { "@type": "EducationalOrganization", name: "Sciences Po" }] }),
-    worksFor: {
-      "@type": "Organization",
-      "@id": "https://www.iteradvisors.com/#organization",
-      name: "Iter Advisors",
-    },
+    worksFor: { "@id": ORGANIZATION_ID },
   };
 
   return (

@@ -104,12 +104,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         datePublished: GLOSSARY_PUBLISHED,
         dateModified: modified,
         inLanguage: "fr-FR",
-        author: {
-          "@type": "Person",
-          "@id": editorialPersonId(GLOSSARY_AUTHOR.url),
-          name: GLOSSARY_AUTHOR.name,
-          url: `https://www.iteradvisors.com${GLOSSARY_AUTHOR.url}`,
-        },
+        author: { "@id": editorialPersonId(GLOSSARY_AUTHOR.url) },
         publisher: { "@id": "https://www.iteradvisors.com/#organization" },
         isPartOf: { "@type": "CollectionPage", "@id": "https://www.iteradvisors.com/ressources/glossaire#collection" },
       },

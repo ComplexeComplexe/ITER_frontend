@@ -241,7 +241,7 @@ export const toolSelection: Record<string, ToolSelection> = {
       "label": "Organisation comptable"
     }
   },
-  "fygr": {
+  "okimia": {
     "source": "https://www.okimia.com/fr",
     "intro": "Fygr est devenu Okimia. La solution présente un suivi et une prévision de trésorerie reliés aux banques et à l’ERP. Conservez cette fiche pour comprendre l’évolution du produit, puis vérifiez l’offre actuellement proposée.",
     "scenario": "Une PME veut remplacer un suivi dispersé dans des tableurs par une lecture des échéances et des soldes.",

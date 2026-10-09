@@ -51,7 +51,7 @@
         <text x="0" y="28" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.8" font-family="'Helvetica Neue', Arial, sans-serif">D'expertise</text>
       </g>
       <g transform="translate(300, 0)">
-        <text x="0" y="0" font-size="28" font-weight="700" fill="#FFF" font-family="'Helvetica Neue', Arial, sans-serif">85+</text>
+        <text x="0" y="0" font-size="28" font-weight="700" fill="#FFF" font-family="'Helvetica Neue', Arial, sans-serif">90</text>
         <text x="0" y="28" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.8" font-family="'Helvetica Neue', Arial, sans-serif">Entreprises</text>
       </g>
     </g>

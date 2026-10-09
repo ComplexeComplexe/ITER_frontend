@@ -10,9 +10,9 @@ describe('editorial attribution consistency', () => {
     for (const locale of ['fr', 'en', 'es'] as const) {
       const doc = new DOMParser().parseFromString(renderToStaticMarkup(<BlogPostPage locale={locale} title="Example" author="Benjamin Ziza" slug="example" breadcrumbs={{ resourcesLabel: 'Resources', resourcesHref: '/ressources', blogLabel: 'Blog', blogHref: '/ressources/blog' }} />), 'text/html');
       const article = [...doc.querySelectorAll('script[type="application/ld+json"]')].map(s => JSON.parse(s.textContent!)).find(s => s['@type'] === 'BlogPosting');
-      expect(article.author).toMatchObject({ '@type': 'Person', name: 'Benjamin Ziza', '@id': 'https://www.iteradvisors.com/a-propos/benjamin-ziza#person' });
-      expect(article.author.url).toBe('https://www.iteradvisors.com' + { fr: '/a-propos/benjamin-ziza', en: '/en/about/benjamin-ziza', es: '/es/quienes-somos/benjamin-ziza' }[locale]);
-      expect(doc.querySelector(`a[href="${new URL(article.author.url).pathname}"]`)).not.toBeNull();
+      expect(article.author).toMatchObject({ '@id': 'https://www.iteradvisors.com/a-propos/benjamin-ziza#person' });
+      const profilePath = { fr: '/a-propos/benjamin-ziza', en: '/en/about/benjamin-ziza', es: '/es/quienes-somos/benjamin-ziza' }[locale];
+      expect(doc.querySelector(`a[href="${profilePath}"]`)).not.toBeNull();
     }
   });
   it('distinguishes cabinet publication from personal writing in all languages', () => {

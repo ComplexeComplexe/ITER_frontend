@@ -81,7 +81,7 @@ describe("reviewed AI-finance journeys", () => {
         const article = schema.find((s: { "@type": string }) => s["@type"] === "Article");
         expect(article.url).toBe("https://www.iteradvisors.com" + iaGuideHref(slug, locale));
         expect(article.inLanguage).toBe({ fr: "fr-FR", en: "en-GB", es: "es-ES" }[locale]);
-        expect(article.author.name).toBe("Benjamin Ziza");
+        expect(article.author).not.toHaveProperty("name");
         expect(article.author["@id"]).toBe("https://www.iteradvisors.com/a-propos/benjamin-ziza#person");
         if (locale !== "fr") expect(article.datePublished).toBe("2026-10-02");
         const faq = schema.find((s: { "@type": string }) => s["@type"] === "FAQPage");
