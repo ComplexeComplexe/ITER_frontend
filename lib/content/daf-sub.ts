@@ -415,7 +415,7 @@ export const dafSubContent: Record<Locale, Record<DafSubPageSlug, DafSubContent>
       parentLabel: "DAF externalisé",
       parentHref: "/daf-externalise",
       breadcrumbLabel: "Tarifs",
-      h1: "Tarifs DAF externalisé : formules et budget",
+      h1: "Tarifs DAF externalisé",
       sections: [
         {
           content: [

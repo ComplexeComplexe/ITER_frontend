@@ -3,9 +3,9 @@
     "path": "/fractional-cfo-startups",
     "label": "CFO para startups",
     "title": "CFO externo para startups y SaaS | Iter Advisors",
-    "description": "Un CFO externo para conectar tesorería, runway, ingresos SaaS y reporting a inversores. Entregables, escenarios, responsabilidades y presupuesto.",
+    "description": "Un CFO externo a tiempo parcial, o fractional CFO, apoya a una startup en tesorería, runway y reporting a inversores. Alcance y presupuesto acordados.",
     "headline": "CFO externo para startups y SaaS",
-    "promise": "Relacionar las hipótesis de crecimiento con las decisiones de financiación.",
+    "promise": "Un CFO externo a tiempo parcial, o fractional CFO, es un director financiero que acompaña a una startup sin ocupar un puesto a jornada completa.",
     "intro": "Su startup debe decidir cuándo contratar, cuánto invertir y cómo financiar los próximos meses. El CFO externo construye con sus equipos una visión coherente de caja, ingresos y presupuesto. Prepara decisiones del dirigente e intercambios con inversores.",
     "context": "daf",
     "category": "Finanzas para startups y SaaS",
@@ -110,6 +110,10 @@
     "case": "solarmente-serie-b-cleantech",
     "proofNote": "Este caso cleantech abarca 2022 a 2024 e ilustra preparación financiera de operaciones. No es un caso SaaS ni una previsión de resultados; contribuyeron dirigentes, inversores y asesores.",
     "faq": [
+      [
+        "¿Qué es un fractional CFO?",
+        "Un fractional CFO es un director financiero que acompaña a una empresa a tiempo parcial. En Iter no es empleado de la startup cliente. CFO externo describe la función prestada desde fuera; a tiempo parcial indica el ritmo recurrente."
+      ],
       [
         "¿Cómo responde un CFO externo a las necesidades de una startup?",
         "Presta dirección financiera a tiempo parcial. La especificidad startup incluye hipótesis de crecimiento, consumo de caja, financiación y expectativas de inversores. Para SaaS también incluye coherencia de datos de ingresos recurrentes."
@@ -299,14 +303,14 @@
     "path": "/daf-externalise/temps-partage",
     "label": "CFO a tiempo parcial",
     "title": "CFO a tiempo parcial para pymes | Iter Advisors",
-    "description": "Un CFO a tiempo parcial para gestionar tesorería, presupuestos y decisiones. Entregables, dedicación y precios para pymes y startups.",
+    "description": "Un CFO a tiempo parcial ofrece dirección financiera recurrente. Volumen indicativo Iter: 1–8 días al mes. Alcance, disponibilidad y presupuesto acordados.",
     "headline": "CFO a tiempo parcial",
     "headings": {
       "need": "¿Cuándo elegir un CFO a tiempo parcial?",
       "deliverables": "Los entregables para dirigir las finanzas",
       "method": "¿Cómo trabaja un director financiero a tiempo parcial?"
     },
-    "promise": "Una dirección financiera que acompaña a su empresa a largo plazo.",
+    "promise": "Un CFO a tiempo parcial es un director financiero que acompaña a una empresa unos días al mes, de forma recurrente.",
     "intro": "Necesita cifras claras y un interlocutor para decidir, sin contratar a un director financiero a tiempo completo. El CFO a tiempo parcial organiza la gestión con su equipo a un ritmo acordado conjuntamente.",
     "context": "temps-partage",
     "category": "Gestión financiera recurrente",
@@ -404,6 +408,10 @@
     "case": "opti-digital-structuration-financement",
     "faq": [
       [
+        "¿Qué es un CFO a tiempo parcial?",
+        "Un CFO a tiempo parcial acompaña a una pyme de forma recurrente sin ser empleado de la empresa cliente. El volumen indicativo de Iter es de 1 a 8 días al mes. El contrato define el alcance y la disponibilidad, no un crédito de días."
+      ],
+      [
         "¿Qué relación tiene con un CFO externo?",
         "CFO externo describe una dirección financiera prestada fuera de una relación laboral. La dedicación parcial es su modalidad recurrente, con intervenciones planificadas. Un CFO interino responde a una necesidad temporal de continuidad o transformación."
       ],
@@ -447,10 +455,10 @@
   "transition": {
     "path": "/daf-externalise/transition",
     "label": "CFO interino",
-    "title": "CFO de transición para pymes y empresas medianas | Iter",
-    "description": "Dirección financiera interina: sustitución del CFO, mandato temporal y traspaso para pymes y empresas medianas. Prioridades, disponibilidad y presupuesto.",
-    "headline": "CFO de transición para pymes y empresas medianas",
-    "promise": "Mantener la continuidad. Preparar la siguiente etapa.",
+    "title": "CFO de transición para pymes | Iter Advisors",
+    "description": "Un CFO de transición asume temporalmente la dirección financiera: sustitución, cierre o transformación. Duración, responsabilidades y traspaso acordados.",
+    "headline": "CFO de transición",
+    "promise": "Un CFO de transición asume temporalmente la dirección financiera para una sustitución, un cierre o una transformación.",
     "intro": "Una salida, una ausencia o una transformación dejan vencimientos financieros que atender. El CFO interino asume un mandato temporal con prioridades, responsabilidades y condiciones de salida definidas.",
     "context": "transition",
     "category": "Tomar el relevo temporalmente",
@@ -547,8 +555,12 @@
     "budget": "La referencia de Iter es de 8.000 a 12.000 € sin IVA al mes, según el mandato, la disponibilidad y la complejidad. Tras evaluar la necesidad, puede considerarse un inicio en 7 a 10 días, sujeto a disponibilidad y acceso a la información.",
     "faq": [
       [
+        "¿La misión de CFO de transición determina el tipo de contrato?",
+        "No. Transición describe el carácter temporal de la misión de dirección financiera. No determina por sí sola el tipo de contrato laboral o de prestación de servicios. El acuerdo debe precisar la modalidad, responsabilidades y traspaso."
+      ],
+      [
         "¿Cuánto dura una misión interina?",
-        "La duración depende del motivo de la sustitución, los vencimientos y la disponibilidad del sucesor. El mandato precisa los objetivos de salida, las condiciones de prórroga y el tiempo de traspaso."
+        "La duración depende del motivo de la sustitución, los vencimientos y la disponibilidad del sucesor. Se acuerda al definir el alcance, junto con los objetivos de salida, posibles prórrogas y traspaso. No existe una duración estándar para todas las misiones."
       ],
       [
         "¿Cuándo elegir un CFO interino en lugar de uno a tiempo parcial?",

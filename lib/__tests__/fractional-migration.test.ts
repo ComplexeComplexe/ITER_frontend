@@ -14,7 +14,7 @@ describe('Fractional CFO migration consolidation', () => {
     for (const [source, destination] of moves) {
       const rule = redirects.find(item => item.source === source);
       expect(rule?.destination, source).toBe(destination);
-      expect(rule && ('permanent' in rule ? rule.permanent : rule.statusCode === 308)).toBe(true);
+      expect(rule?.statusCode).toBe(301);
       expect(redirects.some(item => item.source === destination), destination).toBe(false);
     }
   });

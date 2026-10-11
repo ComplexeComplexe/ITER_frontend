@@ -187,17 +187,16 @@ export default async function Page() {
           {/* Le rôle */}
           <div>
             <h2 className="text-xl sm:text-2xl font-bold font-heading text-foreground mb-6">
-              Le rôle d&apos;un fractional CFO chez Iter Advisors
+              Vos missions de CFO chez Iter Advisors
             </h2>
             <div className="prose prose-sm sm:prose-base max-w-none space-y-4">
               <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Un <strong>fractional CFO</strong> (ou DAF à temps partagé) est
-                un directeur financier senior qui intervient dans plusieurs
-                entreprises sans être salarié à temps plein dans aucune. Il
-                assume les mêmes responsabilités qu&apos;un CFO interne —
-                pilotage financier, trésorerie, reporting, relations
-                investisseurs — mais sur un mode flexible adapté aux besoins de
-                chaque startup.
+                Cette page présente le rôle de CFO au sein d’Iter Advisors et
+                les modalités de candidature. Pour comprendre l’accompagnement
+                destiné aux entreprises, consultez notre page{" "}
+                <Link href="/fractional-cfo-startups" className="text-iter-violet underline">
+                  CFO externalisé pour startups
+                </Link>.
               </p>
               <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Chez Iter Advisors, vos missions typiques incluent :

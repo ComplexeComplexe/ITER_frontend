@@ -64,7 +64,7 @@ const pricing = {
  es: {
   title: "Precios del CFO externo: planes y presupuesto", metaTitle: "Precios CFO externo 2026: honorarios por misión", parent: "CFO externo", breadcrumb: "Precios", cta: "Solicitar un presupuesto",
   headings: [undefined, "Tabla de precios 2026", "Tres ejemplos para preparar su presupuesto", "Qué se incluye y qué se presupuesta por separado", "Qué pagan realmente nuestros clientes", "¿Qué influye en el precio?", "Comparación con las alternativas", "¿Cómo funciona la facturación?", "¿Cómo obtener un presupuesto?", "Otras páginas de dirección financiera", "FAQ: honorarios del CFO externo"],
-  intro: (price: string) => [`Elija un alcance de dirección financiera, con una cuota mensual y entregables definidos en el presupuesto. Los planes recurrentes van de **${price}**, según el perfil y la complejidad.`, "A continuación encontrará la tabla oficial, ejemplos de presupuesto y puntos que deben definirse. Para comparar modalidades de facturación y alternativas, consulte la **[método para comparar presupuestos de CFO externo](/ressources/blog/cout-daf-externalise-tarifs-prix-2026)**."],
+  intro: (price: string) => [`Elija un alcance de dirección financiera, con una cuota mensual y entregables definidos en el presupuesto. Los planes recurrentes van de **${price}**, según el perfil y la complejidad.`, "A continuación encontrará la tabla oficial, ejemplos de presupuesto y puntos que deben definirse. Para comparar modalidades de facturación y alternativas, consulte el **[método para comparar presupuestos de CFO externo](/ressources/blog/cout-daf-externalise-tarifs-prix-2026)**."],
   grid: ["Tres planes mensuales: precios sin IVA y dedicación media orientativa", "Plan", "Cuota mensual sin IVA", "Dedicación orientativa", "Entregables incluidos", "Perfil"],
   outputs: ["Reporting mensual de resultados, tesorería e indicadores; previsión de tesorería a 13 semanas; revisión financiera mensual con la dirección; apoyo puntual.", "Alcance Esencial, más plan de negocio a 3–5 años, rondas, deuda no dilutiva, estructuración tras la ronda y reporting a inversores.", "Alcance Crecimiento, más M&A y due diligence, consejo y gobierno corporativo, internacionalización, datos y BI financieros."],
   profiles: ["CFO o Finance Manager sénior dedicado, con revisión por un socio.", "CFO sénior dedicado.", "CFO sénior dedicado y analista financiero."],
@@ -130,7 +130,17 @@ export function getDafReferenceContent(locale: Locale, slug: "tarifs" | "metier"
  const c = scopeCopy[locale];
  const clean = (text: string) => text.replace(/forfait mensuel/g, "budget mensuel sur devis").replace(/forfait récurrent/g, "accompagnement récurrent").replace(/Inclus dans le forfait/g, "Dans le périmètre convenu").replace(/distincts du forfait/g, "distincts des honoraires").replace(/monthly retainer/g, "monthly budget agreed by quotation").replace(/forfaits du cabinet/g, "fourchettes du cabinet").replace(/un forfait contractuel/g, "une facturation à la journée").replace(/Included in the retainer/g, "Within the agreed scope").replace(/recurring retainer/g, "recurring engagement");
  const sections = base.sections.map(section => ({ ...section, content: section.content.map(clean), ...(section.table ? { table: { ...section.table, headers: section.table.headers.map(h => h.replace("Livrables inclus", "Livrables à convenir au devis").replace("Included deliverables", "Deliverables to agree in the quote").replace("Entregables incluidos", "Entregables que acordar")) } } : {}) }));
+
+ const offer = getDafOffer(locale);
+ const answer = {
+  fr: `Chez Iter Advisors, le budget indicatif d’un DAF externalisé en accompagnement récurrent est de ${offer.price}. Le devis dépend du périmètre, du profil, des entités, des outils et de la qualité des données, pas du chiffre d’affaires seul.`,
+  en: `At Iter Advisors, indicative fees for recurring fractional CFO support range from ${offer.price}. The quote depends on scope, seniority, entities, tools and data quality, not revenue alone.`,
+  es: `En Iter Advisors, el precio orientativo del acompañamiento recurrente de CFO externo va de ${offer.price}. El presupuesto depende del alcance, perfil, entidades, herramientas y calidad de los datos, no solo de la facturación.`,
+ }[locale].replace(/\s+/g, " ");
+ sections[0] = { ...sections[0], content: [answer, ...sections[0].content] };
+ const faq = sections.find(section => section.heading?.toLowerCase().startsWith("faq"));
+ if (faq) faq.content = [`**${{ fr: "Quel est le tarif d’un DAF externalisé ?", en: "How much does a fractional CFO cost?", es: "¿Cuál es el precio de un CFO externo?" }[locale]}** ${answer}`, ...faq.content];
  sections.splice(3, 0, { id: "livrables-par-activite", heading: c.title, content: [c.intro, c.note], table: { caption: c.title, headers: c.headers, rows: c.rows } });
  const modified = PAGE_REVISIONS[parityHref("/daf-externalise/tarifs", locale)];
- return { ...base, sections, modified: { date: modified, label: new Intl.DateTimeFormat(locale, {dateStyle:"long",timeZone:"UTC"}).format(new Date(`${modified}T12:00:00Z`)) } };
+ return { ...base, h1: { fr: "Tarifs DAF externalisé", en: "Fractional CFO pricing", es: "Precios del CFO externo" }[locale], sections, modified: { date: modified, label: new Intl.DateTimeFormat(locale, {dateStyle:"long",timeZone:"UTC"}).format(new Date(`${modified}T12:00:00Z`)) } };
 }

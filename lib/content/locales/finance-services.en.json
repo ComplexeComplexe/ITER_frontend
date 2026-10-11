@@ -3,9 +3,9 @@
     "path": "/fractional-cfo-startups",
     "label": "Fractional CFO for startups",
     "title": "Fractional CFO for startups and SaaS | Iter Advisors",
-    "description": "A Fractional CFO to connect cash flow, runway, SaaS revenue and investor reporting. Deliverables, scenarios, responsibilities and budget for your startup.",
+    "description": "A fractional CFO supports a startup part-time with cash flow, runway and investor reporting. Deliverables, scope and indicative fees agreed in the quote.",
     "headline": "Fractional CFO for startups and SaaS",
-    "promise": "Connect growth assumptions to financing decisions.",
+    "promise": "A fractional CFO is a finance director who supports a startup part-time without a full-time position.",
     "intro": "Your startup must decide when to hire, how much to invest and how to fund the coming months. A Fractional CFO builds a consistent view of cash flow, revenue and budgets with your teams, preparing leadership decisions and investor discussions.",
     "context": "daf",
     "category": "Startup and SaaS finance",
@@ -110,6 +110,10 @@
     "case": "solarmente-serie-b-cleantech",
     "proofNote": "This cleantech case covers 2022 to 2024 and illustrates financial preparation for transactions. It is not a SaaS case or a forecast of results; leaders, investors and advisers contributed.",
     "faq": [
+      [
+        "What is a fractional CFO?",
+        "A fractional CFO is a finance director who supports a business part-time. At Iter, the CFO is not employed by the startup client. Outsourced describes external support; part-time describes the recurring working arrangement."
+      ],
       [
         "How does a Fractional CFO address startup needs?",
         "The arrangement provides part-time finance leadership. Startup needs include growth assumptions, cash consumption, financing and investor expectations. For SaaS, this also includes consistent recurring revenue data."
@@ -299,14 +303,14 @@
     "path": "/daf-externalise/temps-partage",
     "label": "Part-time CFO",
     "title": "Part-time CFO for SMEs | Iter Advisors",
-    "description": "A part-time CFO to manage cash flow, budgets and decisions. Explore deliverables, working arrangements and pricing for SMEs and startups.",
+    "description": "A part-time CFO provides recurring finance leadership. Iter’s indicative volume is 1–8 days per month; scope, availability and fees are agreed in the quote.",
     "headline": "Part-time CFO",
     "headings": {
       "need": "When should you choose a part-time CFO?",
       "deliverables": "Part-time CFO deliverables for financial management",
       "method": "How does a part-time CFO work?"
     },
-    "promise": "Finance leadership that supports your business over time.",
+    "promise": "A part-time CFO is a finance director who supports a business for a few days each month on a recurring basis.",
     "intro": "You need clear figures and a finance contact to support decisions, without hiring a full-time CFO. A part-time CFO organizes financial management with your team at a frequency agreed together.",
     "context": "temps-partage",
     "category": "Ongoing financial management",
@@ -404,6 +408,10 @@
     "case": "opti-digital-structuration-financement",
     "faq": [
       [
+        "What is a part-time CFO?",
+        "A part-time CFO supports an SME on a recurring basis without being employed by that client. Iter’s indicative volume is 1–8 days per month. The contract defines scope and availability, rather than a credit of days."
+      ],
+      [
         "How does this relate to a Fractional CFO?",
         "Fractional CFO describes finance leadership provided outside a salaried role. Part-time work is its recurring arrangement, with planned interventions. An interim CFO addresses a temporary need for continuity or transformation."
       ],
@@ -447,10 +455,10 @@
   "transition": {
     "path": "/daf-externalise/transition",
     "label": "Interim CFO",
-    "title": "Interim CFO for SMEs and mid-sized firms | Iter Advisors",
-    "description": "Interim finance leadership: CFO replacement, temporary responsibilities and handover for SMEs and mid-sized businesses. Priorities, availability and budget.",
-    "headline": "Interim CFO for SMEs and mid-sized firms",
-    "promise": "Maintain continuity. Prepare the next stage.",
+    "title": "Interim CFO for SMEs | Iter Advisors",
+    "description": "An interim CFO takes over finance leadership temporarily. Replacement, financial close or transformation, with duration and handover agreed during scoping.",
+    "headline": "Interim CFO",
+    "promise": "An interim CFO temporarily takes over finance leadership for a replacement, financial close or transformation.",
     "intro": "A departure, absence or transformation leaves financial deadlines to meet. An interim CFO takes a temporary assignment with defined priorities, responsibilities and exit arrangements.",
     "context": "transition",
     "category": "Taking over temporarily",
@@ -547,8 +555,12 @@
     "budget": "The Iter range is €8,000 to €12,000 excluding VAT per month, depending on the assignment, availability and complexity. A start within 7 to 10 days may be considered after qualification, subject to availability and information access.",
     "faq": [
       [
+        "Does an interim CFO assignment determine the employment arrangement?",
+        "No. Interim describes the temporary nature of the finance leadership assignment. It does not, by itself, determine the employment or service contract. The agreement must specify the working arrangement, responsibilities and handover."
+      ],
+      [
         "How long does an interim engagement last?",
-        "Duration depends on the reason for replacement, deadlines and the successor’s availability. The assignment specifies exit objectives, extension terms and handover time."
+        "Duration depends on the replacement reason, deadlines and successor availability. It is agreed during scoping, alongside exit objectives, extension arrangements and handover. No standard duration applies to every assignment."
       ],
       [
         "When should we choose an interim CFO rather than a part-time CFO?",

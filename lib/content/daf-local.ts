@@ -351,7 +351,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
         description: "DAF externalisé pour PME et startups à Toulouse : trésorerie, reporting et financement. Budget sur devis, à distance ou sur site selon accord.",
       },
       breadcrumbLabel: "DAF externalisé Toulouse",
-      h1: "DAF externalisé à Toulouse : piloter votre PME ou votre startup",
+      h1: "DAF externalisé à Toulouse",
       intro: [
         "Votre entreprise est à Toulouse et vous avez besoin de visibilité sur le cash, les marges ou un financement ? Un DAF senior prend en charge le pilotage avec vos équipes et votre expert-comptable, pour un périmètre défini avant le démarrage.",
         "Nos missions sont pilotées depuis Paris et Barcelone, avec des déplacements à Toulouse convenus au cadrage. Le budget est de 3 000 à 8 000 € HT par mois ; le démarrage intervient en 8 à 15 jours après le premier échange, selon le profil et le périmètre.",

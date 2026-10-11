@@ -340,7 +340,7 @@ const nextConfig: NextConfig = {
       {
         source: "/jobs/fractional-cfo-startups",
         destination: "/fractional-cfo-startups",
-        permanent: true,
+        statusCode: 301,
       },
       // Les variantes EN/ES visaient le hub /en/jobs et /es/jobs, ce qui
       // envoyait un visiteur en intention d'achat sur une page recrutement
@@ -348,12 +348,12 @@ const nextConfig: NextConfig = {
       {
         source: "/en/jobs/fractional-cfo-startups",
         destination: "/en/fractional-cfo-for-startups",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/es/jobs/fractional-cfo-startups",
         destination: "/es/cfo-externo-startups",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/en/jobs/marketing-growth-strategy",
