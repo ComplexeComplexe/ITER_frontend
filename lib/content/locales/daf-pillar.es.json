@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "CFO externo para pymes | Iter Advisors",
-    "description": "CFO externo para pymes: tesorería, reporting y dirección financiera con un interlocutor dedicado. Conozca el alcance, los entregables y cómo trabajamos juntos."
+    "description": "Un CFO externo dirige las finanzas de una pyme sin ser empleado de ella. También se llama CFO externalizado. Funciones, modalidades y presupuesto orientativo."
   },
   "breadcrumbLabel": "CFO externo",
   "hero": {
     "h1": "CFO externo para pymes",
-    "lead": "Gestione su tesorería, sus márgenes y su financiación con un director financiero sénior dedicado, sin contratarlo a tiempo completo.",
-    "intro": "Un CFO externo dirige las finanzas de su empresa a tiempo parcial. Convierte los datos contables y operativos en previsiones, decisiones y acciones acordadas con usted. Director financiero externo describe la función; a tiempo parcial indica la dedicación. Fractional CFO es la denominación habitual en inglés.",
+    "lead": "Un CFO externo es un director financiero que dirige las finanzas de una pyme sin ser empleado de esa empresa.",
+    "intro": "CFO externalizado describe la misma función; fractional CFO es el término habitual en inglés para el formato a tiempo parcial. El acompañamiento puede ser recurrente o una misión temporal de transición. Con Iter, organice la tesorería, los márgenes y la financiación con un director financiero sénior dedicado.",
     "landmarks": [
       {
         "label": "Presupuesto mensual orientativo",
@@ -70,7 +70,7 @@
     "note": "Si solo necesita llevar la contabilidad, o requiere un director financiero a tiempo completo, compare la dedicación parcial con otras soluciones antes de decidir."
   },
   "missions": {
-    "heading": "Qué recibe y qué decisiones permite preparar",
+    "heading": "Funciones del CFO externo",
     "intro": "El alcance se acuerda al inicio: no todas las misiones incluyen todos los entregables. El trabajo recurrente suele combinar previsiones, reporting y una revisión con el dirigente. Los trabajos de financiación, transformación o adquisición se añaden según su situación.",
     "items": [
       {
@@ -115,7 +115,14 @@
           "Escenario que debe aprobar el dirigente"
         ]
       ]
-    }
+    },
+    "overview": [
+      "Planificación: el CFO elabora presupuestos y previsiones de tesorería con la dirección.",
+      "Control de gestión: el CFO organiza los cuadros de mando y sigue los márgenes.",
+      "Tesorería: el CFO sigue el circulante y los cobros, y prepara las conversaciones con los bancos.",
+      "Financiación: el CFO prepara datos y escenarios para una ronda, financiación bancaria o contratación.",
+      "Decisiones: el CFO prepara las opciones; los poderes de firma y pago siguen las delegaciones acordadas."
+    ]
   },
   "cases": {
     "heading": "Dos misiones para entender nuestra intervención",
@@ -193,6 +200,14 @@
     ]
   },
   "faq": [
+    {
+      "question": "¿Qué es un CFO externo?",
+      "answer": "Un CFO externo es un director financiero que trabaja para una pyme sin ser empleado de la empresa cliente. También se denomina CFO externalizado. Fractional CFO suele referirse al acompañamiento a tiempo parcial; una misión de transición responde a una necesidad temporal."
+    },
+    {
+      "question": "¿Qué diferencia hay entre CFO externo, a tiempo parcial y de transición?",
+      "answer": "CFO externo describe una dirección financiera prestada desde fuera de la empresa. El formato a tiempo parcial es recurrente, normalmente unos días al mes. La transición es una misión temporal de sustitución o transformación, con duración y disponibilidad acordadas."
+    },
     {
       "question": "¿Tengo que cambiar de asesoría contable?",
       "answer": "Trabajar con un CFO no implica automáticamente cambiar de asesoría. Esta prepara y comprueba la información contable y fiscal según su contrato; el CFO organiza su uso para la gestión financiera. Las responsabilidades y los intercambios se acuerdan conjuntamente. [Para profundizar, compare las funciones del CFO y del asesor contable](/ressources/blog/daf-externalise-vs-expert-comptable)."

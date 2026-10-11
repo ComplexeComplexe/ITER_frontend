@@ -22,11 +22,11 @@ for (const [source, target, language] of moves) {
     let destination = new URL(response.headers.get('location') ?? '/', base);
     const hops = [{ status: response.status, destination: destination.pathname + destination.search }];
     const query = new URL(base + source + suffix).search;
-    check(response.status === 308, source + suffix, 'permanent-308');
+    check(response.status === (suffix.startsWith('/') ? 308 : 301), source + suffix, 'permanent-301-or-slash-normalization');
     if (suffix.startsWith('/') && destination.pathname === source) {
       const normalizedResponse = await fetch(destination, { redirect: 'manual' });
       destination = new URL(normalizedResponse.headers.get('location') ?? '/', base);
-      check(normalizedResponse.status === 308, source + suffix, 'permanent-migration-after-slash-normalization');
+      check(normalizedResponse.status === 301, source + suffix, 'permanent-migration-after-slash-normalization');
       hops.push({ status: normalizedResponse.status, destination: destination.pathname + destination.search });
     }
     check(destination.pathname === target, source + suffix, 'startup-target-in-same-language-with-at-most-one-slash-normalization');

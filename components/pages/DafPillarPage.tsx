@@ -55,6 +55,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
     <Section id="missions" title={t.missions.heading} tinted>
       <span id="livrables-pme" className="block scroll-mt-24" />
       <p className={body}>{t.missions.intro}</p>
+      <ul className="list-disc pl-5 space-y-2 text-muted-foreground">{t.missions.overview.map(item => <li key={item}>{item}</li>)}</ul>
       <div className="divide-y divide-border">{t.missions.items.map(item => <article key={item.title} className="py-6 first:pt-0">
         <h3 className="font-semibold text-foreground">{item.title}</h3>
         <dl className="mt-4 grid sm:grid-cols-2 gap-5"><div><dt className="font-semibold text-foreground">{ui.deliverable}</dt><dd className={`${body} mt-2`}>{item.deliverable}</dd></div><div><dt className="font-semibold text-foreground">{ui.decision}</dt><dd className={`${body} mt-2`}>{item.decision}</dd></div></dl>

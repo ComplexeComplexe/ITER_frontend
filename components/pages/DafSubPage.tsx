@@ -89,11 +89,13 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
               {content.h1}
             </h1>
 
-            {content.modified && <PageByline locale={locale} author={author} dateModified={content.modified.date} dateLabel={content.modified.label} className="mb-6" />}
+            {contactContext !== "tarifs" && content.modified && <PageByline locale={locale} author={author} dateModified={content.modified.date} dateLabel={content.modified.label} className="mb-6" />}
 
             {/* Intro paragraphs from section 0 */}
-            {firstSection?.content.map((p, i) => (
-              <div
+            {firstSection?.content.map((p, i) => {
+              const IntroTag = contactContext === "tarifs" && i === 0 ? "p" : "div";
+              return (
+              <IntroTag
                 key={i}
                 className={`mb-4 leading-relaxed prose prose-sm max-w-none [&>p]:m-0 [&>strong]:font-semibold [&>strong]:text-foreground [&>a]:text-iter-violet [&>a]:underline [&>a]:underline-offset-2 hover:[&>a]:no-underline ${
                   i === 0
@@ -102,8 +104,10 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                 }`}
               >
                 <ReactMarkdown components={mdComponents}>{p}</ReactMarkdown>
-              </div>
-            ))}
+              </IntroTag>
+              );
+            })}
+            {contactContext === "tarifs" && content.modified && <PageByline locale={locale} author={author} dateModified={content.modified.date} dateLabel={content.modified.label} className="mt-6" />}
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">

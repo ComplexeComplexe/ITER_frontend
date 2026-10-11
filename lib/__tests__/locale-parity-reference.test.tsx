@@ -24,7 +24,7 @@ describe("reference and case translation parity", () => {
   it("keeps pricing and scope tables, tier amounts and the same reference sections", () => {
     for (const slug of ["tarifs", "metier"] as const) {
       const contents = locales.map(locale => getDafReferenceContent(locale, slug));
-      const rendered = locales.map((locale, i) => renderToStaticMarkup(<DafSubPage locale={locale} content={contents[i]} />));
+      const rendered = locales.map((locale, i) => renderToStaticMarkup(<DafSubPage locale={locale} content={contents[i]} contactContext={slug === "tarifs" ? "tarifs" : undefined} />));
       expect(blocks(rendered[1])).toEqual(blocks(rendered[0]));
       expect(blocks(rendered[2])).toEqual(blocks(rendered[0]));
       for (const [i, locale] of locales.entries()) {
@@ -37,6 +37,9 @@ describe("reference and case translation parity", () => {
         expect(answers).toEqual(faq.mainEntity.map(item => ({ question: item.name, answer: item.acceptedAnswer.text })));
         expect(content.sections.some(section => section.content.some(value => /48 (heures|hours|horas)/.test(value)))).toBe(false);
         if (slug === "tarifs") {
+          const opening = page.querySelector("h1")!.nextElementSibling;
+          expect(opening?.tagName).toBe("P");
+          expect(text(opening!)).toBe(content.sections[0].content[0]);
           expect(content.sections[1].table!.rows.map(row => row[1])).toEqual(getDafOffer(locale).tiers.map(item => item.price));
           expect(content.proofSlugs).toHaveLength(3);
           expect(content.sections.find(section => section.id === "livrables-par-activite")?.table?.rows).toHaveLength(3);

@@ -30,7 +30,7 @@ describe("reviewed locale parity", () => {
       expect(html.match(/<h2[ >]/g)).toHaveLength(8);
       const scripts = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].map(match => JSON.parse(match[1]));
       const faq = scripts.find(item => item["@type"] === "FAQPage");
-      expect(faq.mainEntity).toHaveLength(6);
+      expect(faq.mainEntity).toHaveLength(8);
       for (const question of faq.mainEntity) expect(html).toContain(question.name.replace(/&/g, "&amp;"));
       const service = scripts.find(item => item["@type"] === "Service");
       expect(service.url).toBe(`${base}${alignedPaths("/daf-externalise")![locale]}`);

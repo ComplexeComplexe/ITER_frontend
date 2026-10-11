@@ -3,21 +3,21 @@ import { CLIENTS_ACCOMPAGNES, DELAIS, ENGAGEMENT, FORMULES } from "@/lib/content
 
 export const DAF_PILLAR_PATH = "/daf-externalise";
 export const DAF_PILLAR_PUBLISHED = "2026-05-17";
-export const DAF_PILLAR_MODIFIED = "2026-10-09";
-export const DAF_PILLAR_MODIFIED_LABEL = "9 octobre 2026";
+export const DAF_PILLAR_MODIFIED = "2026-10-11";
+export const DAF_PILLAR_MODIFIED_LABEL = "11 octobre 2026";
 const fmt = (n: number) => n.toLocaleString("fr-FR").replace(/ | /g, " ");
 const budget = `${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT`;
 
 export const dafPillar = {
   meta: {
     title: "DAF externalisé pour PME | Iter Advisors",
-    description: "DAF externalisé pour PME : trésorerie, reporting et pilotage financier avec un interlocuteur dédié. Découvrez les missions, les livrables et le fonctionnement.",
+    description: "Un DAF externalisé pilote la finance d’une PME sans en être salarié. Missions, temps partagé, transition et budget indicatif de 3 000 à 8 000 € HT/mois.",
   },
   breadcrumbLabel: "DAF externalisé",
   hero: {
     h1: "DAF externalisé pour PME",
-    lead: "Pilotez votre trésorerie, vos marges et vos financements avec un directeur financier senior dédié, sans recruter à temps plein.",
-    intro: "Un DAF externalisé prend en charge le pilotage financier de votre entreprise quelques jours par mois. Il transforme les données comptables et opérationnelles en prévisions, en décisions et en actions suivies avec vous. Le temps partagé décrit ce rythme d’intervention ; fractional CFO est l’appellation anglophone courante.",
+    lead: "Un DAF externalisé est un directeur administratif et financier qui pilote la finance d’une PME sans en être salarié.",
+    intro: "Le temps partagé est le format récurrent : quelques jours par mois, dans la durée. La transition répond à un besoin temporaire, comme un remplacement, une clôture ou une cession. Avec Iter, pilotez votre trésorerie, vos marges et vos financements avec un directeur financier senior dédié, sans recruter à temps plein.",
     landmarks: [
       { label: "Budget mensuel indicatif", value: budget },
       { label: "Démarrage indicatif", value: DELAIS.missionDemarree },
@@ -44,7 +44,8 @@ export const dafPillar = {
     note: "Si vous cherchez uniquement une tenue comptable, ou une présence de direction à temps plein, le dispositif à temps partagé doit être comparé aux autres solutions avant de décider.",
   },
   missions: {
-    heading: "Ce que vous recevez et les décisions que cela prépare",
+    overview: ["Pilotage : le DAF construit le budget, les prévisions et le plan de trésorerie avec le dirigeant.", "Contrôle de gestion : le DAF met en place les tableaux de bord et suit les marges.", "Trésorerie : le DAF suit le BFR et les encaissements, et prépare les échanges bancaires.", "Financement : le DAF prépare les données et les scénarios d’une levée, d’un dossier bancaire ou d’un recrutement.", "Décision : le DAF prépare les arbitrages ; les pouvoirs de signature et de paiement restent définis par les délégations convenues."],
+    heading: "Missions du DAF externalisé",
     intro: "Le périmètre est défini au départ : toutes les missions n’incluent pas tous les livrables. Le socle récurrent associe généralement prévisionnel, reporting et revue avec le dirigeant. Les travaux de financement, de transformation ou d’acquisition sont ajoutés selon votre situation.",
     items: [
       { title: "Anticiper la trésorerie", deliverable: "Un prévisionnel à 13 semaines, avec les encaissements, paiements, échéances de dette et hypothèses à surveiller. La fréquence d’actualisation est convenue selon la volatilité de votre activité et la disponibilité des données.", decision: "Identifier une tension à venir, préparer un échange bancaire ou arbitrer le calendrier d’une dépense. Le prévisionnel distingue les flux connus des hypothèses ; il ne garantit pas les encaissements.", href: "/services/previsionnel-tresorerie", linkLabel: "Prévisionnel de trésorerie" },
@@ -108,6 +109,9 @@ export const dafPillar = {
     slugs: ["sebastien-doat", "florent-greth"],
   },
   faq: [
+    {"question": "Qu’est-ce qu’un DAF externalisé ?", "answer": "Un DAF externalisé est un directeur administratif et financier qui pilote la finance d’une PME sans en être salarié. Il peut intervenir à temps partagé ou sur une mission temporaire de transition. Son rôle complète les travaux de l’expert-comptable, selon les responsabilités convenues."},
+    {"question": "Quelle différence entre DAF externalisé, temps partagé et transition ?", "answer": "DAF externalisé décrit le recours à une direction financière extérieure à l’entreprise. Le temps partagé est un format récurrent, généralement quelques jours par mois. La transition est une mission temporaire de remplacement ou de transformation, dont la durée et la disponibilité sont convenues au cadrage."},
+
     { question: "Dois-je changer d’expert-comptable ?", answer: "L’intervention du DAF n’implique pas, en elle-même, de changer de cabinet. L’expert-comptable produit et sécurise l’information comptable et fiscale selon sa lettre de mission ; le DAF organise son utilisation pour piloter. Les échanges et responsabilités sont définis ensemble. [Pour aller plus loin, comparez les rôles du DAF et de l’expert-comptable](/ressources/blog/daf-externalise-vs-expert-comptable)." },
     { question: "Faut-il changer nos logiciels ?", answer: "Un changement ne doit pas être un préalable automatique. L’existant est examiné avant de proposer une évolution : données accessibles, fiabilité et temps de traitement. Une migration éventuelle doit avoir un objectif, un coût et un périmètre définis. [Notre approche de l’IA en finance détaille cette méthode](/ressources/ia-finance)." },
     { question: "Qui garde la décision et les autorisations de paiement ?", answer: "Le dirigeant conserve les décisions et les autorisations de paiement. Les analyses du DAF servent à préparer les arbitrages. Les accès aux outils doivent correspondre aux tâches confiées ; toute délégation éventuelle nécessite un cadre explicite, distinct d’un simple accès aux informations financières." },

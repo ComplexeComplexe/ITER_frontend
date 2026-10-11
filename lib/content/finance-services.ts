@@ -27,10 +27,10 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     "path": "/daf-externalise/temps-partage",
     "label": "DAF à temps partagé",
     "title": "DAF à temps partagé pour PME | Iter Advisors",
-    "description": "Un DAF à temps partagé pour suivre votre trésorerie, vos budgets et vos décisions. Missions, livrables, rythme et tarifs pour PME et startups.",
+    "description": "Un DAF à temps partagé pilote la finance quelques jours par mois, dans la durée. Repère Iter : 1 à 8 jours indicatifs. Missions, livrables et budget sur devis.",
     "headline": "DAF à temps partagé",
     headings: { need: "Quand choisir un DAF à temps partagé ?", deliverables: "DAF part time : les livrables pour piloter", method: "Comment intervient un directeur financier à temps partagé ?" },
-    "promise": "Une direction financière qui suit votre entreprise dans la durée.",
+    "promise": "Un DAF à temps partagé est un directeur financier qui accompagne une entreprise quelques jours par mois, de façon récurrente.",
     "intro": "Vous avez besoin de visibilité sur vos chiffres et d’un interlocuteur pour décider, sans recruter un directeur financier à temps plein. Le DAF à temps partagé organise le pilotage avec votre équipe, à un rythme défini ensemble.",
     "context": "temps-partage",
     "category": "Piloter dans la durée",
@@ -107,6 +107,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     "budget": `Les missions récurrentes Iter se situent entre 3 000 et 8 000 € HT par mois. Les ${volume} jours mensuels sont un volume indicatif observé, pas un forfait contractuel : le devis porte sur le périmètre et le profil mobilisé. La grille détaillée permet de situer votre besoin.`,
     "case": "opti-digital-structuration-financement",
     "faq": [
+      ["Qu’est-ce qu’un DAF à temps partagé ?", `Un DAF à temps partagé est un directeur financier qui suit une PME quelques jours par mois, dans la durée. Chez Iter, il intervient sans être salarié de l’entreprise cliente. Le volume indicatif va de ${volume} jours par mois ; le contrat définit le périmètre et la disponibilité, pas un crédit de jours.`],
       [
         "Quelle différence avec un DAF externalisé ?",
         "DAF externalisé désigne le recours à une direction financière hors salariat. Le temps partagé en est le format récurrent, avec des interventions planifiées. La transition répond plutôt à un besoin temporaire de continuité ou de transformation."
@@ -151,10 +152,10 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
   "transition": {
     "path": "/daf-externalise/transition",
     "label": "DAF de transition",
-    "title": "DAF de transition et intérim pour PME et ETI | Iter Advisors",
-    "description": "Management de transition finance : remplacement du DAF, mandat temporaire et passation pour PME et ETI. Priorités, responsabilités, disponibilité et budget.",
-    "headline": "DAF de transition pour PME et ETI",
-    "promise": "Assurer la continuité. Préparer la suite.",
+    "title": "DAF de transition pour PME | Iter Advisors",
+    "description": "Un DAF de transition reprend temporairement la direction financière : remplacement, clôture ou transformation. Durée et passation convenues au cadrage.",
+    "headline": "DAF de transition",
+    "promise": "Un DAF de transition reprend temporairement la direction financière pour assurer un remplacement, une clôture ou une transformation.",
     "intro": "Un départ, une absence ou une transformation laisse des échéances financières à tenir. Le DAF de transition prend un mandat temporaire avec des priorités, des responsabilités et une sortie de mission définies.",
     "context": "transition",
     "category": "Prendre le relais",
@@ -230,7 +231,8 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     ],
     "budget": `La fourchette Iter est de ${transitionRange} € HT par mois selon le mandat, la disponibilité et la complexité. Un démarrage sous 7 à 10 jours peut être envisagé après qualification, sous réserve de disponibilité et d’accès aux informations.`,
     "faq": [
-      ["Combien de temps dure une mission de transition ?", "La durée est définie à partir du motif du remplacement, des échéances et de la disponibilité du successeur. Le mandat prévoit les objectifs de sortie, les modalités de prolongation et le temps nécessaire à la passation."],
+      ["DAF de transition et intérim désignent-ils la même chose ?", "La transition décrit une mission temporaire de direction financière. L’intérim, au sens du travail temporaire, désigne un cadre d’emploi avec une entreprise de travail temporaire. Le terme transition ne suffit pas à déterminer le statut contractuel : le contrat précise le cadre d’intervention, les responsabilités et la passation."],
+      ["Combien de temps dure une mission de transition ?", "La durée dépend du motif du remplacement, des échéances et de la disponibilité du successeur. Elle est convenue au cadrage, avec les objectifs de sortie, les modalités de prolongation et le temps nécessaire à la passation. Aucune durée standard ne s’applique à toutes les missions."],
       [
         "Quand choisir la transition plutôt que le temps partagé ?",
         "La transition répond à une situation temporaire : remplacement, continuité ou transformation. Le temps partagé correspond à un besoin récurrent avec des interventions planifiées dans la durée."

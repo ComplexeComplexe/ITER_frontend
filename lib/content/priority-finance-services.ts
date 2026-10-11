@@ -9,9 +9,9 @@ export const PRIORITY_FINANCE_SERVICES: Record<string, FinanceService> = {
   fractional: {
     path: "/fractional-cfo-startups", label: "Fractional CFO pour startups",
     title: "CFO externalisé pour startups et SaaS | Iter Advisors",
-    description: "Un CFO externalisé à temps partagé pour votre startup : trésorerie, runway, revenus SaaS et reporting investisseurs. Livrables, périmètre et budget sur devis.",
+    description: "Un CFO fractionnaire, ou fractional CFO, pilote la finance d’une startup à temps partagé : trésorerie, runway et reporting investisseurs. Budget sur devis.",
     headline: "CFO externalisé pour startups et SaaS",
-    promise: "Relier vos hypothèses de croissance aux décisions de financement.",
+    promise: "Un CFO fractionnaire, ou fractional CFO, est un directeur financier qui intervient à temps partagé dans une startup, sans poste à temps plein.",
     intro: "Votre startup doit décider quand recruter, combien investir et comment financer les prochains mois. Le fractional CFO, ou DAF externalisé pour startup, construit avec vos équipes une lecture cohérente de la trésorerie, des revenus et du budget. Il prépare les arbitrages du dirigeant et les échanges avec les investisseurs.",
     context: "daf", category: "Pilotage des startups et SaaS",
     summary: [["Votre besoin", "Runway, budget et reporting investisseurs"], ["Votre organisation", "Un CFO à temps partagé, avec votre équipe"], ["Budget Iter", `De ${recurringRange} € HT / mois selon le périmètre`]],
@@ -57,6 +57,7 @@ export const PRIORITY_FINANCE_SERVICES: Record<string, FinanceService> = {
     case: "solarmente-serie-b-cleantech",
     proofNote: "Ce cas cleantech couvre 2022–2024 et illustre la préparation financière d’opérations. Il ne constitue pas un cas SaaS ni une prévision de résultat ; les dirigeants, investisseurs et conseils ont contribué aux opérations.",
     faq: [
+      ["Qu’est-ce qu’un CFO fractionnaire ?", "Un CFO fractionnaire, ou fractional CFO en anglais, est un directeur financier qui accompagne une entreprise à temps partagé. Chez Iter, il intervient sans être salarié de la startup cliente. CFO externalisé désigne la fonction exercée à l’extérieur de l’entreprise ; DAF à temps partagé précise le rythme récurrent."],
       ["Quelle différence entre fractional CFO et DAF externalisé pour startup ?", "Les deux expressions désignent ici une direction financière à temps partagé. La spécificité startup concerne les hypothèses de croissance, la consommation de cash, le financement et les attentes des investisseurs. Pour un SaaS, elle comprend aussi la cohérence des données de revenus récurrents."],
       ["Peut-on conserver notre expert-comptable ?", "Oui. Le cadrage distingue la production comptable, le rapprochement des données et le pilotage. Le CFO travaille avec votre cabinet et vos équipes ; les travaux inclus et les interlocuteurs sont précisés au contrat."],
       ["Accompagnez-vous une startup avant sa première levée ?", "Le besoin est étudié selon les décisions à préparer et les données disponibles. Une mission ciblée de modélisation peut être plus appropriée qu’un suivi récurrent. Aucun stade de financement ne rend automatiquement nécessaire un CFO externalisé."],
