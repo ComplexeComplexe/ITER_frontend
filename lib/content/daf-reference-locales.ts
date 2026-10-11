@@ -2,7 +2,7 @@ import { contractContent } from "./contract-copy";
 import type { Locale } from "@/lib/i18n";
 import { getDafSubContent, type DafSubContent } from "./daf-sub";
 import { getDafOffer } from "./daf-offer";
-import { FORMULES } from "./facts";
+import { FORMULES, MISSIONS_PONCTUELLES, REPARTITION_CLIENTS_PAR_FORMULE } from "./facts";
 import { PAGE_REVISIONS } from "./page-revisions";
 import { parityHref } from "@/lib/locale-route-map";
 
@@ -132,15 +132,53 @@ export function getDafReferenceContent(locale: Locale, slug: "tarifs" | "metier"
  const sections = base.sections.map(section => ({ ...section, content: section.content.map(clean), ...(section.table ? { table: { ...section.table, headers: section.table.headers.map(h => h.replace("Livrables inclus", "Livrables à convenir au devis").replace("Included deliverables", "Deliverables to agree in the quote").replace("Entregables incluidos", "Entregables que acordar")) } } : {}) }));
 
  const offer = getDafOffer(locale);
- const answer = {
-  fr: `Chez Iter Advisors, le budget indicatif d’un DAF externalisé en accompagnement récurrent est de ${offer.price}. Le devis dépend du périmètre, du profil, des entités, des outils et de la qualité des données, pas du chiffre d’affaires seul.`,
-  en: `At Iter Advisors, indicative fees for recurring fractional CFO support range from ${offer.price}. The quote depends on scope, seniority, entities, tools and data quality, not revenue alone.`,
-  es: `En Iter Advisors, el precio orientativo del acompañamiento recurrente de CFO externo va de ${offer.price}. El presupuesto depende del alcance, perfil, entidades, herramientas y calidad de los datos, no solo de la facturación.`,
- }[locale].replace(/\s+/g, " ");
- sections[0] = { ...sections[0], content: [answer, ...sections[0].content] };
+ const normalized = (text: string) => text.replace(/\s+/g, " ");
+ const transition = MISSIONS_PONCTUELLES.find(mission => mission.nom === "DAF de transition")!;
+ const num = (value: number) => value.toLocaleString(locale === "en" ? "en-GB" : locale === "es" ? "es-ES" : "fr-FR");
+ const transitionPrice = `${num(transition.min)}–${num(transition.max)}`;
+ const answer = normalized({
+  fr: `Chez Iter Advisors, l’accompagnement récurrent d’un DAF externalisé se situe dans une fourchette indicative de ${offer.price}, selon le périmètre et le profil. Les ${offer.volume} par mois sont un volume observé, pas une présence garantie.`,
+  en: `At Iter Advisors, recurring fractional CFO support has an indicative fee range of ${offer.price}, depending on scope and seniority. The ${offer.volume} per month is an observed volume, not guaranteed attendance.`,
+  es: `En Iter Advisors, el acompañamiento recurrente de CFO externo tiene una horquilla orientativa de ${offer.price}, según el alcance y el perfil. Los ${offer.volume} al mes son un volumen observado, no una presencia garantizada.`,
+ }[locale]);
+ const billingAnswer = {
+  fr: "Pour l’accompagnement récurrent, Iter facture un budget mensuel sur un périmètre convenu, pas au TJM : les jours observés ne constituent pas un forfait de journées.",
+  en: "For recurring support, Iter bills a monthly budget for an agreed scope, rather than a daily rate: observed days are not a package of billable days.",
+  es: "Para el acompañamiento recurrente, Iter factura un presupuesto mensual por un alcance acordado, no una tarifa diaria: los días observados no constituyen un paquete de jornadas.",
+ }[locale];
+ const transitionAnswer = normalized({
+  fr: `Chez Iter, la fourchette indicative d’un DAF de transition est de ${transitionPrice} € HT/mois, sur devis, selon le mandat et la disponibilité ; consultez l’offre de [DAF de transition](/daf-externalise/transition).`,
+  en: `At Iter, indicative interim CFO fees range from EUR ${transitionPrice} excl. VAT/month, quoted according to scope and availability; see [interim CFO support](/daf-externalise/transition).`,
+  es: `En Iter, la horquilla orientativa de un CFO de transición es de ${transitionPrice} € sin IVA/mes, según presupuesto, alcance y disponibilidad; consulte el servicio de [CFO de transición](/daf-externalise/transition).`,
+ }[locale]);
+ sections[0] = { ...sections[0], content: [answer, billingAnswer, ...sections[0].content.slice(1).map(text => text.replace("le **[méthode", "la **[méthode"))] };
+ const portfolio = REPARTITION_CLIENTS_PAR_FORMULE;
+ const date = new Intl.DateTimeFormat(locale, { dateStyle: "long", timeZone: "UTC" }).format(new Date(`${portfolio.dateObservation}T12:00:00Z`));
+ const snapshot = {
+  fr: `Au ${date.replace(/^1 /, "1er ")}, ${portfolio.essentielPct} % des clients Iter sont sur Essentiel, ${portfolio.croissancePct} % sur Croissance et ${portfolio.auDelaPct} % sur Premium ou en transition.`,
+  en: `As of ${date}, ${portfolio.essentielPct}% of Iter clients use Essential, ${portfolio.croissancePct}% Growth and ${portfolio.auDelaPct}% Premium or interim support.`,
+  es: `A ${date}, el ${portfolio.essentielPct} % de los clientes de Iter está en Esencial, el ${portfolio.croissancePct} % en Crecimiento y el ${portfolio.auDelaPct} % en Premium o transición.`,
+ }[locale];
+ sections[1] = { ...sections[1], lead: snapshot };
+ sections[4] = { ...sections[4], content: [
+  { fr: `La fourchette des accompagnements récurrents reste de ${offer.price}. Premium et transition ont des périmètres distincts ; la transition est chiffrée sur un devis propre.`, en: `The recurring support range remains ${offer.price}. Premium and interim assignments have different scopes; interim support requires its own quote.`, es: `La horquilla del acompañamiento recurrente sigue siendo ${offer.price}. Premium y transición tienen alcances distintos; la transición se presupuesta por separado.` }[locale],
+  { fr: "La répartition datée présentée au-dessus de la grille est une observation du portefeuille, arrondie à la dizaine de points de pourcentage. Elle évolue avec les missions et ne définit pas un barème de prix.", en: "The dated distribution above the pricing table is a portfolio observation rounded to ten percentage points. It changes with assignments and does not define a price list.", es: "La distribución fechada sobre la tabla es una observación de la cartera, redondeada a decenas de puntos porcentuales. Cambia con las misiones y no define una tarifa fija." }[locale],
+ ] };
+ const salary = {
+  fr: "Pour un recrutement en France, établissez le coût employeur avec le salaire brut, les cotisations patronales, le variable et les avantages prévus : le [simulateur officiel Urssaf](https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net) fournit une estimation à partir de ces paramètres, sans couvrir toutes les particularités de l’entreprise.",
+  en: "For a hire in France, estimate employer cost using gross salary, employer contributions, variable pay and benefits: the [official Urssaf calculator](https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net) provides an indicative estimate from the inputs, without covering every company-specific situation.",
+  es: "Para una contratación en Francia, calcule el coste empresarial con el salario bruto, las cotizaciones empresariales, el variable y los beneficios: el [simulador oficial de Urssaf](https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net) ofrece una estimación orientativa, sin cubrir todas las particularidades de la empresa.",
+ }[locale];
+ const annual = normalized({
+  fr: `Les fourchettes Iter représentent ${offer.annualPrice} € HT par an pour un périmètre à temps partagé sur douze mois. Une mission partielle et un poste à temps plein ne couvrent pas la même disponibilité ; aucun pourcentage d’économie universel n’est annoncé.`,
+  en: `Iter’s ranges represent EUR ${offer.annualPrice} excl. VAT per year for part-time support over twelve months. A partial assignment and a full-time role do not provide the same availability; no universal savings percentage is claimed.`,
+  es: `Las horquillas de Iter representan ${offer.annualPrice} € sin IVA al año para un alcance a tiempo parcial durante doce meses. Una misión parcial y un puesto a jornada completa no ofrecen la misma disponibilidad; no se anuncia un porcentaje universal de ahorro.`,
+ }[locale]);
+ sections[6] = { ...sections[6], content: [sections[6].content[0], salary, annual, ...sections[6].content.slice(2)] };
  const faq = sections.find(section => section.heading?.toLowerCase().startsWith("faq"));
- if (faq) faq.content = [`**${{ fr: "Quel est le tarif d’un DAF externalisé ?", en: "How much does a fractional CFO cost?", es: "¿Cuál es el precio de un CFO externo?" }[locale]}** ${answer}`, ...faq.content];
+ const questions = { fr: ["Combien coûte un DAF externalisé par mois ?", "Quel est le TJM d’un DAF externalisé ?", "Combien coûte un DAF de transition ?"], en: ["How much does a fractional CFO cost per month?", "What is the daily rate for a fractional CFO?", "How much does an interim CFO cost?"], es: ["¿Cuánto cuesta un CFO externo al mes?", "¿Cuál es la tarifa diaria de un CFO externo?", "¿Cuánto cuesta un CFO de transición?"] }[locale];
+ if (faq) faq.content = [answer, billingAnswer, transitionAnswer].map((text, i) => `**${questions[i]}** ${text}`).concat(faq.content);
  sections.splice(3, 0, { id: "livrables-par-activite", heading: c.title, content: [c.intro, c.note], table: { caption: c.title, headers: c.headers, rows: c.rows } });
  const modified = PAGE_REVISIONS[parityHref("/daf-externalise/tarifs", locale)];
- return { ...base, h1: { fr: "Tarifs DAF externalisé", en: "Fractional CFO pricing", es: "Precios del CFO externo" }[locale], sections, modified: { date: modified, label: new Intl.DateTimeFormat(locale, {dateStyle:"long",timeZone:"UTC"}).format(new Date(`${modified}T12:00:00Z`)) } };
+ return { ...base, h1: { fr: `Tarif d’un DAF externalisé : ${offer.price.replace("–", " à ").replace("HT/mois", "HT par mois")}`, en: `Fractional CFO pricing: ${offer.price}`, es: `Precio de un CFO externo: ${offer.price}` }[locale], sections, modified: { date: modified, label: new Intl.DateTimeFormat(locale, {dateStyle:"long",timeZone:"UTC"}).format(new Date(`${modified}T12:00:00Z`)) } };
 }

@@ -4,7 +4,7 @@ const origin = 'https://www.iteradvisors.com';
 const routes = [
   { path: '/daf-externalise-paris', h1: 'DAF externalisé à Paris et en Île-de-France', anchors: ['definition', 'signaux', 'comparatif', 'missions', 'parcours', 'marche-parisien', 'avantage-iter', 'conclusion'], links: ['/daf-externalise', '/daf-externalise/temps-partage', '/fractional-cfo-startups'], author: '/a-propos/sebastien-doat#person' },
   { path: '/fractional-cfo-startups', h1: 'CFO externalisé pour startups et SaaS', anchors: ['commercial-intro', 'definition', 'pour-qui', 'avantages', 'methodologie', 'tarifs', 'temoignages', 'faq-commercial', 'cta-service', 'jobs-section'], links: ['/daf-externalise', '/ressources/glossaire/arr-mrr', '/ressources/glossaire/cash-burn-runway', '/jobs'] },
-  { path: '/daf-externalise/transition', h1: 'DAF de transition', anchors: ['situations', 'premiers-jours', 'feuille-de-route', 'experience', 'budget', 'preparer-echange'], links: ['/daf-externalise', '/daf-externalise/temps-partage'] },
+  { path: '/daf-externalise/transition', h1: 'DAF de transition pour PME', anchors: ['situations', 'premiers-jours', 'feuille-de-route', 'experience', 'budget', 'preparer-echange'], links: ['/daf-externalise', '/daf-externalise/temps-partage'] },
 ];
 const failures = [], results = [];
 const schemasOf = html => [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)].flatMap(m => { const value = JSON.parse(m[1]); return value['@graph'] ?? [value]; });

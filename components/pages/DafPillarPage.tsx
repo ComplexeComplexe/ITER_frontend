@@ -68,6 +68,10 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
       </figure>
     </Section>
 
+    <Section id="expert-comptable" title={t.accounting.heading}>
+      <p className={body}>{t.accounting.text}</p>
+    </Section>
+
     <Section id="preuves" title={t.cases.heading}>
       <p className={body}>{t.cases.intro}</p>
       <div className="grid md:grid-cols-2 gap-6">{t.cases.items.map(item => <article className="site-card border border-border p-5 sm:p-7 flex flex-col" key={item.company}><p className="site-eyebrow">{item.company}</p><h3 className="font-semibold text-foreground">{item.title}</h3><p className={`${body} mt-4`}>{item.text}</p><p className={`${body} mt-4 mb-5`}>{item.takeaway}</p><PublishedLocaleLink locale={locale} href={href(item.href)} className={`${link} mt-auto`}>{item.linkLabel}</PublishedLocaleLink></article>)}</div>

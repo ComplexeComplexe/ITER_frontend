@@ -303,15 +303,15 @@
     "path": "/daf-externalise/temps-partage",
     "label": "Part-time CFO",
     "title": "Part-time CFO for SMEs | Iter Advisors",
-    "description": "A part-time CFO provides recurring finance leadership. Iter’s indicative volume is 1–8 days per month; scope, availability and fees are agreed in the quote.",
+    "description": "Part-time CFO for SMEs: recurring support, deliverables and fees. Iter’s observed 1–8 days per month is an indicative volume, not a day-rate package.",
     "headline": "Part-time CFO",
     "headings": {
       "need": "When should you choose a part-time CFO?",
       "deliverables": "Part-time CFO deliverables for financial management",
       "method": "How does a part-time CFO work?"
     },
-    "promise": "A part-time CFO is a finance director who supports a business for a few days each month on a recurring basis.",
-    "intro": "You need clear figures and a finance contact to support decisions, without hiring a full-time CFO. A part-time CFO organizes financial management with your team at a frequency agreed together.",
+    "promise": "A part-time CFO, also known as a fractional CFO, is a finance director who supports an SME on a recurring basis without a full-time position.",
+    "intro": "At Iter, 1–8 days per month is an indicative observed volume, not a guaranteed attendance schedule or package of days. Scope and availability are agreed in the quote. Part-time support is recurring; an interim assignment is temporary.",
     "context": "temps-partage",
     "category": "Ongoing financial management",
     "summary": [
@@ -412,12 +412,16 @@
         "A part-time CFO supports an SME on a recurring basis without being employed by that client. Iter’s indicative volume is 1–8 days per month. The contract defines scope and availability, rather than a credit of days."
       ],
       [
-        "How does this relate to a Fractional CFO?",
-        "Fractional CFO describes finance leadership provided outside a salaried role. Part-time work is its recurring arrangement, with planned interventions. An interim CFO addresses a temporary need for continuity or transformation."
+        "How many days per month?",
+        "At Iter, the observed volume ranges from 1 to 8 days per month. This is indicative, not a package or credit of days; scope and availability are agreed in the quote."
       ],
       [
-        "How many days should we plan for?",
-        "The indicative Iter range is 1 to 8 days per month. It depends on entities, tools, deadlines and work carried out internally. Headcount alone is insufficient to determine it."
+        "Part-time CFO or interim CFO?",
+        "Part-time support meets recurring needs with agreed availability. Interim support addresses a temporary replacement or transformation assignment, with an agreed exit and handover."
+      ],
+      [
+        "How does this relate to a Fractional CFO?",
+        "Fractional CFO describes finance leadership provided outside a salaried role. Part-time work is its recurring arrangement, with planned interventions. An interim CFO addresses a temporary need for continuity or transformation."
       ],
       [
         "Do we need to change accountants?",
@@ -456,10 +460,10 @@
     "path": "/daf-externalise/transition",
     "label": "Interim CFO",
     "title": "Interim CFO for SMEs | Iter Advisors",
-    "description": "An interim CFO takes over finance leadership temporarily. Replacement, financial close or transformation, with duration and handover agreed during scoping.",
-    "headline": "Interim CFO",
-    "promise": "An interim CFO temporarily takes over finance leadership for a replacement, financial close or transformation.",
-    "intro": "A departure, absence or transformation leaves financial deadlines to meet. An interim CFO takes a temporary assignment with defined priorities, responsibilities and exit arrangements.",
+    "description": "Interim CFO for SMEs: replacement, financial close and handover. Indicative fees: EUR 8,000–12,000 excl. VAT/month. Start subject to availability.",
+    "headline": "Interim CFO for SMEs",
+    "promise": "An interim CFO temporarily takes over an SME’s finance leadership for a replacement, financial close or transaction.",
+    "intro": "Priorities, responsibilities and handover are defined during scoping. A start within 7 to 10 days may be considered after qualification, subject to professional availability and access to information.",
     "context": "transition",
     "category": "Taking over temporarily",
     "summary": [
@@ -552,7 +556,7 @@
       "Presence and decision-making authority are agreed with management. The engagement does not automatically confer signing authority or power over bank accounts.",
       "The CFO coordinates teams and advisers within the agreed scope. Legal, tax or insolvency issues also involve the relevant qualified professionals. Planning the exit begins during scoping."
     ],
-    "budget": "The Iter range is €8,000 to €12,000 excluding VAT per month, depending on the assignment, availability and complexity. A start within 7 to 10 days may be considered after qualification, subject to availability and information access.",
+    "budget": "At Iter Advisors, indicative interim CFO fees range from EUR 8,000 to 12,000 excl. VAT/month, quoted according to the required availability and assignment.",
     "faq": [
       [
         "Does an interim CFO assignment determine the employment arrangement?",

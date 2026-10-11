@@ -21,16 +21,16 @@ const blocks = (html: string) => [...html.matchAll(/data-block-key="([^"]+)"/g)]
 const base = "https://www.iteradvisors.com";
 
 describe("reviewed locale parity", () => {
-  it("renders the same eight pillar sections and one visible H1 in each language", () => {
-    const expected = ["besoin", "missions", "preuves", "methode", "tarifs", "pourquoi-iter", "faq", "contact"];
+  it("renders the same nine pillar sections and one visible H1 in each language", () => {
+    const expected = ["besoin", "missions", "expert-comptable", "preuves", "methode", "tarifs", "pourquoi-iter", "faq", "contact"];
     for (const locale of locales) {
       const html = renderToStaticMarkup(<DafPillarPage locale={locale} />);
       expect(blocks(html)).toEqual(expected);
       expect(html.match(/<h1[ >]/g)).toHaveLength(1);
-      expect(html.match(/<h2[ >]/g)).toHaveLength(8);
+      expect(html.match(/<h2[ >]/g)).toHaveLength(9);
       const scripts = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].map(match => JSON.parse(match[1]));
       const faq = scripts.find(item => item["@type"] === "FAQPage");
-      expect(faq.mainEntity).toHaveLength(8);
+      expect(faq.mainEntity).toHaveLength(10);
       for (const question of faq.mainEntity) expect(html).toContain(question.name.replace(/&/g, "&amp;"));
       const service = scripts.find(item => item["@type"] === "Service");
       expect(service.url).toBe(`${base}${alignedPaths("/daf-externalise")![locale]}`);

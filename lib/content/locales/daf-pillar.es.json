@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "CFO externo para pymes | Iter Advisors",
-    "description": "Un CFO externo dirige las finanzas de una pyme sin ser empleado de ella. También se llama CFO externalizado. Funciones, modalidades y presupuesto orientativo."
+    "description": "CFO externo para pymes: funciones, apoyo a tiempo parcial y papel de la asesoría. Presupuesto orientativo según el alcance y el perfil."
   },
   "breadcrumbLabel": "CFO externo",
   "hero": {
     "h1": "CFO externo para pymes",
-    "lead": "Un CFO externo es un director financiero que dirige las finanzas de una pyme sin ser empleado de esa empresa.",
+    "lead": "Un CFO externo, a menudo a tiempo parcial (fractional CFO), es un director financiero que dirige las finanzas de una pyme sin ser empleado de esa empresa.",
     "intro": "CFO externalizado describe la misma función; fractional CFO es el término habitual en inglés para el formato a tiempo parcial. El acompañamiento puede ser recurrente o una misión temporal de transición. Con Iter, organice la tesorería, los márgenes y la financiación con un director financiero sénior dedicado.",
     "landmarks": [
       {
@@ -32,6 +32,10 @@
     {
       "id": "missions",
       "label": "Entregables"
+    },
+    {
+      "id": "expert-comptable",
+      "label": "Asesoría contable"
     },
     {
       "id": "preuves",
@@ -205,6 +209,14 @@
       "answer": "Un CFO externo es un director financiero que trabaja para una pyme sin ser empleado de la empresa cliente. También se denomina CFO externalizado. Fractional CFO suele referirse al acompañamiento a tiempo parcial; una misión de transición responde a una necesidad temporal."
     },
     {
+      "question": "¿Qué diferencia hay entre un CFO externo y una asesoría contable?",
+      "answer": "La asesoría contable prepara las cuentas y las declaraciones según el alcance de su encargo. El CFO externo utiliza esa información para prever, gestionar y preparar las decisiones de la dirección; complementa el trabajo de la asesoría."
+    },
+    {
+      "question": "¿Cuánto cuesta un CFO externo?",
+      "answer": "En Iter Advisors, el acompañamiento recurrente tiene una horquilla orientativa de 3.000–8.000 € sin IVA al mes según el alcance y el perfil; consulte los [precios del CFO externo](/daf-externalise/tarifs)."
+    },
+    {
       "question": "¿Qué diferencia hay entre CFO externo, a tiempo parcial y de transición?",
       "answer": "CFO externo describe una dirección financiera prestada desde fuera de la empresa. El formato a tiempo parcial es recurrente, normalmente unos días al mes. La transición es una misión temporal de sustitución o transformación, con duración y disponibilidad acordadas."
     },
@@ -237,5 +249,9 @@
     "heading": "Hablemos de su situación",
     "text": "Describa su prioridad, su organización actual y su plazo. Le contactaremos para precisar la necesidad y acordar una conversación. Servirá para identificar un alcance útil y la información necesaria para una propuesta. El formulario no reserva una cita automáticamente.",
     "href": "/contact#daf"
+  },
+  "accounting": {
+    "heading": "CFO externo o asesoría contable",
+    "text": "La asesoría contable prepara las cuentas y las declaraciones según el alcance de su encargo. El CFO externo utiliza esa información para prever, gestionar y preparar las decisiones de la dirección; complementa el trabajo de la asesoría."
   }
 }

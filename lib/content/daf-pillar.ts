@@ -3,20 +3,20 @@ import { CLIENTS_ACCOMPAGNES, DELAIS, ENGAGEMENT, FORMULES } from "@/lib/content
 
 export const DAF_PILLAR_PATH = "/daf-externalise";
 export const DAF_PILLAR_PUBLISHED = "2026-05-17";
-export const DAF_PILLAR_MODIFIED = "2026-10-11";
-export const DAF_PILLAR_MODIFIED_LABEL = "11 octobre 2026";
+export const DAF_PILLAR_MODIFIED = "2026-10-12";
+export const DAF_PILLAR_MODIFIED_LABEL = "12 octobre 2026";
 const fmt = (n: number) => n.toLocaleString("fr-FR").replace(/ | /g, " ");
 const budget = `${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT`;
 
 export const dafPillar = {
   meta: {
     title: "DAF externalisé pour PME | Iter Advisors",
-    description: "Un DAF externalisé pilote la finance d’une PME sans en être salarié. Missions, temps partagé, transition et budget indicatif de 3 000 à 8 000 € HT/mois.",
+    description: `DAF externalisé pour PME : pilotage à temps partagé, missions et rôle de l’expert-comptable. Budget indicatif : ${budget}/mois.`,
   },
   breadcrumbLabel: "DAF externalisé",
   hero: {
     h1: "DAF externalisé pour PME",
-    lead: "Un DAF externalisé est un directeur administratif et financier qui pilote la finance d’une PME sans en être salarié.",
+    lead: "Un DAF externalisé, souvent à temps partagé (DAF part-time ou fractional CFO), est un directeur administratif et financier qui pilote la finance d’une PME sans en être salarié.",
     intro: "Le temps partagé est le format récurrent : quelques jours par mois, dans la durée. La transition répond à un besoin temporaire, comme un remplacement, une clôture ou une cession. Avec Iter, pilotez votre trésorerie, vos marges et vos financements avec un directeur financier senior dédié, sans recruter à temps plein.",
     landmarks: [
       { label: "Budget mensuel indicatif", value: budget },
@@ -28,6 +28,7 @@ export const dafPillar = {
   },
   nav: [
     { id: "missions", label: "Missions" },
+    { id: "expert-comptable", label: "Expert-comptable" },
     { id: "preuves", label: "Cas clients" },
     { id: "methode", label: "Fonctionnement" },
     { id: "tarifs", label: "Tarifs" },
@@ -62,6 +63,7 @@ export const dafPillar = {
       ],
     },
   },
+  accounting: {"heading": "DAF externalisé ou expert-comptable", "text": "L’expert-comptable produit les comptes et les déclarations selon sa lettre de mission. Le DAF externalisé utilise ces comptes pour prévoir, piloter et préparer les décisions du dirigeant ; il complète la mission du cabinet comptable."},
   cases: {
     heading: "Deux missions pour comprendre notre intervention",
     intro: "Les exemples suivants décrivent des travaux documentés. Leur périmètre illustre deux besoins différents ; il ne préjuge ni du calendrier ni des résultats d’une nouvelle mission.",
@@ -110,6 +112,8 @@ export const dafPillar = {
   },
   faq: [
     {"question": "Qu’est-ce qu’un DAF externalisé ?", "answer": "Un DAF externalisé est un directeur administratif et financier qui pilote la finance d’une PME sans en être salarié. Il peut intervenir à temps partagé ou sur une mission temporaire de transition. Son rôle complète les travaux de l’expert-comptable, selon les responsabilités convenues."},
+    {"question": "Quelle différence entre un DAF externalisé et un expert-comptable ?", "answer": "L’expert-comptable produit les comptes et les déclarations selon sa lettre de mission. Le DAF externalisé utilise ces comptes pour prévoir, piloter et préparer les décisions du dirigeant ; il complète la mission du cabinet comptable."},
+    { question: "Combien coûte un DAF externalisé ?", answer: `Chez Iter Advisors, l’accompagnement récurrent se situe dans une fourchette indicative de ${budget} par mois selon le périmètre et le profil ; consultez les [tarifs du DAF externalisé](/daf-externalise/tarifs).` },
     {"question": "Quelle différence entre DAF externalisé, temps partagé et transition ?", "answer": "DAF externalisé décrit le recours à une direction financière extérieure à l’entreprise. Le temps partagé est un format récurrent, généralement quelques jours par mois. La transition est une mission temporaire de remplacement ou de transformation, dont la durée et la disponibilité sont convenues au cadrage."},
 
     { question: "Dois-je changer d’expert-comptable ?", answer: "L’intervention du DAF n’implique pas, en elle-même, de changer de cabinet. L’expert-comptable produit et sécurise l’information comptable et fiscale selon sa lettre de mission ; le DAF organise son utilisation pour piloter. Les échanges et responsabilités sont définis ensemble. [Pour aller plus loin, comparez les rôles du DAF et de l’expert-comptable](/ressources/blog/daf-externalise-vs-expert-comptable)." },
