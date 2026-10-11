@@ -169,6 +169,8 @@ export default function DafSubPage({ locale, content, cmsNavigation, heroImage, 
                   </div>
                 )}
 
+                {section.lead && <p className="site-copy text-base text-foreground mb-5"><ReactMarkdown components={mdComponents}>{section.lead}</ReactMarkdown></p>}
+
                 {section.table && (
                   <div className="overflow-x-auto mb-6" role="region" aria-label={section.table.caption} tabIndex={0}>
                     <table className="w-full min-w-[640px] text-sm border-collapse">

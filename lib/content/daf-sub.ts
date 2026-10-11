@@ -23,6 +23,7 @@ export interface DafSubContent {
     id?: string;
     heading?: string;
     content: string[];
+    lead?: string;
     table?: { caption: string; headers: string[]; rows: string[][] };
   }[];
   ctaButton: string;

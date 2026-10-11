@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "Fractional CFO for SMEs | Iter Advisors",
-    "description": "A fractional CFO manages an SME’s finances part-time. Responsibilities, interim assignments and indicative Iter fees of EUR 3,000–8,000 excl. VAT/month."
+    "description": "Fractional CFO for SMEs: responsibilities, recurring support and the accountant’s role. Indicative Iter fees: EUR 3,000–8,000 excl. VAT/month."
   },
   "breadcrumbLabel": "Fractional CFO",
   "hero": {
     "h1": "Fractional CFO for SMEs",
-    "lead": "A fractional CFO is a finance director who manages an SME’s finances on a part-time basis without being employed by that business.",
+    "lead": "A fractional CFO, also called a part-time CFO, is a finance director who manages an SME’s finances part-time without being employed by that business.",
     "intro": "Part-time support is recurring, usually a few days each month. An interim CFO assignment addresses a temporary need such as a replacement, a financial close or a transaction. With Iter, manage cash flow, margins and financing with a dedicated senior finance professional.",
     "landmarks": [
       {
@@ -32,6 +32,10 @@
     {
       "id": "missions",
       "label": "Deliverables"
+    },
+    {
+      "id": "expert-comptable",
+      "label": "Accountant"
     },
     {
       "id": "preuves",
@@ -205,6 +209,14 @@
       "answer": "A fractional CFO is a finance director who supports a business part-time without being employed by that client. External CFO support can also cover a temporary interim assignment. Financial leadership complements the work of the external accountant, within agreed responsibilities."
     },
     {
+      "question": "How does a fractional CFO differ from an external accountant?",
+      "answer": "The external accountant prepares accounts and filings within the scope of the engagement letter. The fractional CFO uses this information to forecast, manage performance and prepare decisions with management; the CFO complements the accountant’s work."
+    },
+    {
+      "question": "How much does a fractional CFO cost?",
+      "answer": "At Iter Advisors, recurring support has an indicative fee range of EUR 3,000–8,000 excl. VAT/month depending on scope and seniority; see [fractional CFO pricing](/daf-externalise/tarifs)."
+    },
+    {
       "question": "How do outsourced, part-time and interim CFO support differ?",
       "answer": "Outsourced CFO support describes finance leadership provided externally. Part-time support is recurring, usually a few days each month. Interim support is a temporary replacement or transformation assignment with an agreed duration and availability."
     },
@@ -237,5 +249,9 @@
     "heading": "Let’s discuss your situation",
     "text": "Describe your priority, current organization and deadline. We will get back to you to clarify your needs and agree on a conversation. This helps identify a useful scope and the information needed for a proposal. The form does not automatically book an appointment.",
     "href": "/contact#daf"
+  },
+  "accounting": {
+    "heading": "Fractional CFO or external accountant",
+    "text": "The external accountant prepares accounts and filings within the scope of the engagement letter. The fractional CFO uses this information to forecast, manage performance and prepare decisions with management; the CFO complements the accountant’s work."
   }
 }

@@ -303,15 +303,15 @@
     "path": "/daf-externalise/temps-partage",
     "label": "CFO a tiempo parcial",
     "title": "CFO a tiempo parcial para pymes | Iter Advisors",
-    "description": "Un CFO a tiempo parcial ofrece dirección financiera recurrente. Volumen indicativo Iter: 1–8 días al mes. Alcance, disponibilidad y presupuesto acordados.",
+    "description": "CFO a tiempo parcial para pymes: apoyo recurrente, entregables y presupuesto. En Iter, 1–8 días al mes es un volumen observado, no un paquete de jornadas.",
     "headline": "CFO a tiempo parcial",
     "headings": {
       "need": "¿Cuándo elegir un CFO a tiempo parcial?",
       "deliverables": "Los entregables para dirigir las finanzas",
       "method": "¿Cómo trabaja un director financiero a tiempo parcial?"
     },
-    "promise": "Un CFO a tiempo parcial es un director financiero que acompaña a una empresa unos días al mes, de forma recurrente.",
-    "intro": "Necesita cifras claras y un interlocutor para decidir, sin contratar a un director financiero a tiempo completo. El CFO a tiempo parcial organiza la gestión con su equipo a un ritmo acordado conjuntamente.",
+    "promise": "Un CFO a tiempo parcial, o fractional CFO, es un director financiero que acompaña a una pyme de forma recurrente sin ocupar un puesto a jornada completa.",
+    "intro": "En Iter, de 1 a 8 días al mes es un volumen orientativo observado, no una garantía de presencia ni un paquete de jornadas. El alcance y la disponibilidad se acuerdan en el presupuesto. El apoyo a tiempo parcial es recurrente; la transición es temporal.",
     "context": "temps-partage",
     "category": "Gestión financiera recurrente",
     "summary": [
@@ -412,12 +412,16 @@
         "Un CFO a tiempo parcial acompaña a una pyme de forma recurrente sin ser empleado de la empresa cliente. El volumen indicativo de Iter es de 1 a 8 días al mes. El contrato define el alcance y la disponibilidad, no un crédito de días."
       ],
       [
-        "¿Qué relación tiene con un CFO externo?",
-        "CFO externo describe una dirección financiera prestada fuera de una relación laboral. La dedicación parcial es su modalidad recurrente, con intervenciones planificadas. Un CFO interino responde a una necesidad temporal de continuidad o transformación."
+        "¿Cuántos días al mes?",
+        "En Iter, el volumen observado va de 1 a 8 días al mes. Es orientativo, no un paquete ni un crédito de jornadas; el alcance y la disponibilidad se acuerdan en el presupuesto."
       ],
       [
-        "¿Cuántos días hay que prever?",
-        "La referencia orientativa de Iter es de 1 a 8 días al mes. Depende de las entidades, las herramientas, los vencimientos y el trabajo realizado internamente. El número de empleados no basta para determinarlo."
+        "¿CFO a tiempo parcial o CFO de transición?",
+        "El apoyo a tiempo parcial responde a una necesidad recurrente con disponibilidad acordada. La transición es una misión temporal de sustitución o transformación, con salida y traspaso previstos."
+      ],
+      [
+        "¿Qué relación tiene con un CFO externo?",
+        "CFO externo describe una dirección financiera prestada fuera de una relación laboral. La dedicación parcial es su modalidad recurrente, con intervenciones planificadas. Un CFO interino responde a una necesidad temporal de continuidad o transformación."
       ],
       [
         "¿Hay que cambiar de asesoría contable?",
@@ -456,10 +460,10 @@
     "path": "/daf-externalise/transition",
     "label": "CFO interino",
     "title": "CFO de transición para pymes | Iter Advisors",
-    "description": "Un CFO de transición asume temporalmente la dirección financiera: sustitución, cierre o transformación. Duración, responsabilidades y traspaso acordados.",
-    "headline": "CFO de transición",
-    "promise": "Un CFO de transición asume temporalmente la dirección financiera para una sustitución, un cierre o una transformación.",
-    "intro": "Una salida, una ausencia o una transformación dejan vencimientos financieros que atender. El CFO interino asume un mandato temporal con prioridades, responsabilidades y condiciones de salida definidas.",
+    "description": "CFO de transición para pymes: sustitución, cierre y traspaso. Horquilla orientativa: 8.000–12.000 € sin IVA/mes. Inicio según disponibilidad.",
+    "headline": "CFO de transición para pymes",
+    "promise": "Un CFO de transición asume temporalmente la dirección financiera de una pyme para una sustitución, un cierre o una operación de venta.",
+    "intro": "Las prioridades, responsabilidades y el traspaso se definen desde el inicio. Puede contemplarse un comienzo en 7 a 10 días tras evaluar la necesidad, sujeto a disponibilidad del perfil y acceso a la información.",
     "context": "transition",
     "category": "Tomar el relevo temporalmente",
     "summary": [
@@ -552,7 +556,7 @@
       "La presencia y la facultad de decisión se acuerdan con la dirección. La misión no supone automáticamente una delegación de firma ni poderes sobre las cuentas bancarias.",
       "El CFO coordina a los equipos y asesores dentro del alcance acordado. Los asuntos jurídicos, fiscales o concursales también corresponden a los profesionales competentes. La preparación de la salida empieza al definir el alcance."
     ],
-    "budget": "La referencia de Iter es de 8.000 a 12.000 € sin IVA al mes, según el mandato, la disponibilidad y la complejidad. Tras evaluar la necesidad, puede considerarse un inicio en 7 a 10 días, sujeto a disponibilidad y acceso a la información.",
+    "budget": "En Iter Advisors, los honorarios orientativos de un CFO de transición van de 8.000 a 12.000 € sin IVA al mes, según presupuesto, disponibilidad y alcance.",
     "faq": [
       [
         "¿La misión de CFO de transición determina el tipo de contrato?",

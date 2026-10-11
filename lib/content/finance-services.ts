@@ -1,6 +1,6 @@
 import { PRIORITY_FINANCE_SERVICES } from "./priority-finance-services";
 import type { EditorialAuthor } from "../schemas/editorial";
-import { FORMULES, MISSIONS_PONCTUELLES, VOLUME_DAF_JOURS_MOIS, ENGAGEMENT } from "./facts";
+import { FORMULES, MISSIONS_PONCTUELLES, VOLUME_DAF_JOURS_MOIS, ENGAGEMENT, DELAIS } from "./facts";
 
 const euros = (amount: number) => new Intl.NumberFormat("fr-FR").format(amount);
 const recurringRange = `${euros(Math.min(...FORMULES.map(item => item.prixMin)))} à ${euros(Math.max(...FORMULES.map(item => item.prixMax)))}`;
@@ -27,11 +27,11 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     "path": "/daf-externalise/temps-partage",
     "label": "DAF à temps partagé",
     "title": "DAF à temps partagé pour PME | Iter Advisors",
-    "description": "Un DAF à temps partagé pilote la finance quelques jours par mois, dans la durée. Repère Iter : 1 à 8 jours indicatifs. Missions, livrables et budget sur devis.",
+    "description": `DAF à temps partagé pour PME : suivi récurrent, livrables et budget. Chez Iter, ${volume} jours par mois sont un volume observé, pas un forfait.`,
     "headline": "DAF à temps partagé",
     headings: { need: "Quand choisir un DAF à temps partagé ?", deliverables: "DAF part time : les livrables pour piloter", method: "Comment intervient un directeur financier à temps partagé ?" },
-    "promise": "Un DAF à temps partagé est un directeur financier qui accompagne une entreprise quelques jours par mois, de façon récurrente.",
-    "intro": "Vous avez besoin de visibilité sur vos chiffres et d’un interlocuteur pour décider, sans recruter un directeur financier à temps plein. Le DAF à temps partagé organise le pilotage avec votre équipe, à un rythme défini ensemble.",
+    "promise": "Un DAF à temps partagé (ou DAF part-time) est un directeur financier qui suit une PME de façon récurrente, sans poste à temps plein.",
+    "intro": `Chez Iter, ${volume} jours par mois sont un volume indicatif observé, pas un engagement de présence ni un forfait de jours. Le périmètre et la disponibilité sont convenus au devis. Le temps partagé répond à un besoin récurrent ; la transition à un mandat temporaire.`,
     "context": "temps-partage",
     "category": "Piloter dans la durée",
     "summary": [
@@ -107,27 +107,13 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     "budget": `Les missions récurrentes Iter se situent entre 3 000 et 8 000 € HT par mois. Les ${volume} jours mensuels sont un volume indicatif observé, pas un forfait contractuel : le devis porte sur le périmètre et le profil mobilisé. La grille détaillée permet de situer votre besoin.`,
     "case": "opti-digital-structuration-financement",
     "faq": [
-      ["Qu’est-ce qu’un DAF à temps partagé ?", `Un DAF à temps partagé est un directeur financier qui suit une PME quelques jours par mois, dans la durée. Chez Iter, il intervient sans être salarié de l’entreprise cliente. Le volume indicatif va de ${volume} jours par mois ; le contrat définit le périmètre et la disponibilité, pas un crédit de jours.`],
-      [
-        "Quelle différence avec un DAF externalisé ?",
-        "DAF externalisé désigne le recours à une direction financière hors salariat. Le temps partagé en est le format récurrent, avec des interventions planifiées. La transition répond plutôt à un besoin temporaire de continuité ou de transformation."
-      ],
-      [
-        "Combien de jours faut-il prévoir ?",
-        `Le volume indicatif Iter va de ${volume} jours par mois. Il dépend des entités, des outils, des échéances et du travail assuré en interne. Le nombre de salariés ne suffit pas à le déterminer.`
-      ],
-      [
-        "Faut-il changer d’expert-comptable ?",
-        "Pas nécessairement. Le cadrage identifie les travaux du cabinet comptable, les données attendues et le rôle du DAF. Une coordination claire évite les doubles travaux."
-      ],
-      [
-        "Peut-on ensuite recruter un DAF ?",
-        "Oui. La mission peut préparer la transmission des outils, des hypothèses et du calendrier à une personne recrutée en interne. Cette passation est à prévoir dans le périmètre."
-      ],
-      [
-        "Quel engagement est prévu ?",
-        `La grille Iter prévoit un accompagnement mensuel sans durée minimale, résiliable avec un préavis de ${ENGAGEMENT.preavisJours} jours. Les prestations et toute évolution de périmètre sont formalisées dans le contrat.`
-      ]
+      ["Qu’est-ce qu’un DAF à temps partagé ?", "Un DAF à temps partagé, ou DAF part-time, est un directeur financier qui suit une PME de façon récurrente, sans poste à temps plein."],
+      ["Combien de jours par mois ?", `Chez Iter, le volume observé va de ${volume} jours par mois. Il est indicatif, pas un forfait ni un crédit de jours ; le périmètre et la disponibilité sont convenus au devis.`],
+      ["DAF à temps partagé ou DAF de transition ?", "Le temps partagé répond à un besoin récurrent avec une disponibilité convenue. La transition répond à un mandat temporaire de remplacement ou de transformation, avec une sortie et une passation prévues."],
+      ["Quelle différence avec un DAF externalisé ?", "DAF externalisé désigne le recours à une direction financière extérieure. Le temps partagé en est le format récurrent, avec des interventions planifiées. Une mission temporaire de transition constitue un autre format."],
+      ["Faut-il changer d’expert-comptable ?", "Pas nécessairement. Le cadrage identifie les travaux du cabinet comptable, les données attendues et le rôle du DAF. Une coordination claire évite les doubles travaux."],
+      ["Peut-on ensuite recruter un DAF ?", "Oui. La mission peut préparer la transmission des outils, des hypothèses et du calendrier à une personne recrutée en interne. Cette passation est à prévoir dans le périmètre."],
+      ["Quel engagement est prévu ?", "La grille Iter prévoit un accompagnement mensuel sans durée minimale, résiliable avec un préavis de 30 jours. Les prestations et toute évolution de périmètre sont formalisées dans le contrat."]
     ],
     "resources": [
       [
@@ -153,10 +139,10 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     "path": "/daf-externalise/transition",
     "label": "DAF de transition",
     "title": "DAF de transition pour PME | Iter Advisors",
-    "description": "Un DAF de transition reprend temporairement la direction financière : remplacement, clôture ou transformation. Durée et passation convenues au cadrage.",
-    "headline": "DAF de transition",
-    "promise": "Un DAF de transition reprend temporairement la direction financière pour assurer un remplacement, une clôture ou une transformation.",
-    "intro": "Un départ, une absence ou une transformation laisse des échéances financières à tenir. Le DAF de transition prend un mandat temporaire avec des priorités, des responsabilités et une sortie de mission définies.",
+    "description": `DAF de transition pour PME : remplacement, clôture et passation. Fourchette indicative : ${transitionRange} € HT/mois. Démarrage selon disponibilité.`,
+    "headline": "DAF de transition pour PME",
+    "promise": "Un DAF de transition, ou directeur financier de transition, prend temporairement la direction financière d’une PME pour un remplacement, une clôture ou une cession.",
+    "intro": `Les priorités, les responsabilités et la passation sont prévues dès le cadrage. Un démarrage sous ${DELAIS.transitionUrgent} peut être envisagé après qualification, sous réserve de disponibilité du profil et d’accès aux informations.`,
     "context": "transition",
     "category": "Prendre le relais",
     "summary": [
@@ -229,7 +215,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       "Le niveau de présence et les pouvoirs de décision sont convenus avec la direction. L’intervention ne suppose pas automatiquement une délégation de signature ou un pouvoir sur les comptes bancaires.",
       "Le DAF coordonne les équipes et conseils dans son périmètre. Le traitement d’une difficulté juridique, fiscale ou d’une procédure collective relève aussi des professionnels compétents. La préparation de la sortie commence dès le cadrage."
     ],
-    "budget": `La fourchette Iter est de ${transitionRange} € HT par mois selon le mandat, la disponibilité et la complexité. Un démarrage sous 7 à 10 jours peut être envisagé après qualification, sous réserve de disponibilité et d’accès aux informations.`,
+    "budget": `Chez Iter Advisors, la fourchette indicative d’un DAF de transition est de ${transitionRange} € HT par mois, sur devis, selon la disponibilité demandée et le mandat.`,
     "faq": [
       ["DAF de transition et intérim désignent-ils la même chose ?", "La transition décrit une mission temporaire de direction financière. L’intérim, au sens du travail temporaire, désigne un cadre d’emploi avec une entreprise de travail temporaire. Le terme transition ne suffit pas à déterminer le statut contractuel : le contrat précise le cadre d’intervention, les responsabilités et la passation."],
       ["Combien de temps dure une mission de transition ?", "La durée dépend du motif du remplacement, des échéances et de la disponibilité du successeur. Elle est convenue au cadrage, avec les objectifs de sortie, les modalités de prolongation et le temps nécessaire à la passation. Aucune durée standard ne s’applique à toutes les missions."],
