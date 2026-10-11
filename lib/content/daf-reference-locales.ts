@@ -138,8 +138,8 @@ export function getDafReferenceContent(locale: Locale, slug: "tarifs" | "metier"
  const transitionPrice = `${num(transition.min)}–${num(transition.max)}`;
  const answer = normalized({
   fr: `Chez Iter Advisors, l’accompagnement récurrent d’un DAF externalisé se situe dans une fourchette indicative de ${offer.price}, selon le périmètre et le profil. Les ${offer.volume} par mois sont un volume observé, pas une présence garantie.`,
-  en: `At Iter Advisors, recurring fractional CFO support has an indicative fee range of ${offer.price}, depending on scope and seniority. The ${offer.volume} per month is an observed volume, not guaranteed attendance.`,
-  es: `En Iter Advisors, el acompañamiento recurrente de CFO externo tiene una horquilla orientativa de ${offer.price}, según el alcance y el perfil. Los ${offer.volume} al mes son un volumen observado, no una presencia garantizada.`,
+  en: `At Iter Advisors, recurring fractional CFO support has an indicative fee range of ${offer.price}, depending on scope and seniority. The observed workload is ${offer.volume} per month; this does not guarantee a fixed attendance schedule.`,
+  es: `En Iter Advisors, el acompañamiento recurrente de CFO externo tiene una horquilla orientativa de ${offer.price}, según el alcance y el perfil. El volumen observado es de ${offer.volume} al mes, sin que esto garantice un calendario fijo de presencia.`,
  }[locale]);
  const billingAnswer = {
   fr: "Pour l’accompagnement récurrent, Iter facture un budget mensuel sur un périmètre convenu, pas au TJM : les jours observés ne constituent pas un forfait de journées.",
@@ -157,7 +157,7 @@ export function getDafReferenceContent(locale: Locale, slug: "tarifs" | "metier"
  const snapshot = {
   fr: `Au ${date.replace(/^1 /, "1er ")}, ${portfolio.essentielPct} % des clients Iter sont sur Essentiel, ${portfolio.croissancePct} % sur Croissance et ${portfolio.auDelaPct} % sur Premium ou en transition.`,
   en: `As of ${date}, ${portfolio.essentielPct}% of Iter clients use Essential, ${portfolio.croissancePct}% Growth and ${portfolio.auDelaPct}% Premium or interim support.`,
-  es: `A ${date}, el ${portfolio.essentielPct} % de los clientes de Iter está en Esencial, el ${portfolio.croissancePct} % en Crecimiento y el ${portfolio.auDelaPct} % en Premium o transición.`,
+  es: `A fecha de ${date}, el ${portfolio.essentielPct} % de los clientes de Iter está en Esencial, el ${portfolio.croissancePct} % en Crecimiento y el ${portfolio.auDelaPct} % en Premium o transición.`,
  }[locale];
  sections[1] = { ...sections[1], lead: snapshot };
  sections[4] = { ...sections[4], content: [
