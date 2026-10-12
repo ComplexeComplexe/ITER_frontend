@@ -1,3 +1,4 @@
+import { withThumbnailMetadata } from "@/lib/thumbnails";
 import { publishedMetadataAlternates } from "@/lib/metadata";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -5,7 +6,7 @@ import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
 import { getCmsNavigation } from "@/lib/static-content";
 import { Callout, ProseTable, InlineCTA } from "@/components/blog";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withThumbnailMetadata({
   title: "Guide Levée Fonds | Iter Advisors",
   description:
     "Guide complet levée de fonds. Préparation comptable, due diligence, documentation, valorisation. Iter Advisors a assisté startups à lever +100M€.",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+}, "/ressources/blog/levee-de-fonds-guide");
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");

@@ -11,6 +11,7 @@ import { toolReviews, PENNYLANE_EXPERIENCE, getToolReviewTitle } from '@/data/to
 import { TOOL_PRICING } from '@/data/toolPricing';
 import { generateToolArticleSchema, generateToolWebPageSchema, generateFAQSchema, getToolAuthor, PENNYLANE_REVIEWED_AT } from '@/lib/schemas/toolSchemas';
 import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
+import { getThumbnail } from '@/lib/thumbnails';
 
 export interface ToolPageProps { slug: string; locale: 'fr' | 'en' | 'es'; cmsNavigation?: CmsNavItem[]; tool: Tool; }
 const categoryLabels: Record<Tool['category'], string> = { comptabilite: 'Comptabilité', tresorerie: 'Trésorerie', depenses: 'Dépenses et paiements', paie: 'Paie et RH', recouvrement: 'Recouvrement client', sirh: 'SIRH et RH', equity: 'Actionnariat et cap table', reporting: 'Reporting et BI' };
@@ -21,6 +22,7 @@ const paragraphClass = 'site-copy text-muted-foreground leading-relaxed';
 /** Server-rendered editorial analysis, with no fabricated score or reviewer. */
 export default function ToolPage({ slug, locale = 'fr', cmsNavigation, tool }: ToolPageProps) {
   const selection = toolSelection[slug];
+  const illustration = slug === 'pennylane' ? getThumbnail(`/ressources/outils/${slug}`) : undefined;
   const review = toolReviews[slug];
   const author = getToolAuthor(tool);
   const pricing = TOOL_PRICING[slug];
@@ -59,6 +61,7 @@ export default function ToolPage({ slug, locale = 'fr', cmsNavigation, tool }: T
         </div>
       </div>
     </section>
+    {illustration && <figure className="container max-w-3xl pb-8"><Image src={illustration.src} alt={illustration.alt} width={1200} height={630} sizes="(max-width:768px) 100vw, 680px" className="h-auto w-full rounded-2xl" loading="lazy" /><figcaption className="mt-2 text-sm text-muted-foreground">Schéma illustratif pour préparer le choix et les connexions entre outils.</figcaption></figure>}
     <div className="container grid lg:grid-cols-[210px_minmax(0,1fr)] gap-10 pb-16">
       <aside className="lg:pt-10"><nav aria-label={`Sommaire ${tool.name}`} className="lg:sticky lg:top-28 rounded-2xl bg-muted/30 p-5"><p className="font-semibold mb-3">Dans cette fiche</p><ul className="flex flex-wrap lg:flex-col gap-x-4 gap-y-3 text-sm">{sections.map(([id, label]) => <li key={id}><a href={`#${id}`} className="text-muted-foreground hover:text-iter-violet underline underline-offset-4">{label}</a></li>)}</ul></nav></aside>
       <div className="min-w-0 max-w-4xl">

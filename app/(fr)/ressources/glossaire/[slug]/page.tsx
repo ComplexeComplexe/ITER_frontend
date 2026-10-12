@@ -14,6 +14,7 @@ import {
 } from "@/lib/glossary-links";
 import { getCmsNavigation } from "@/lib/static-content";
 import { faqPageSchema } from "@/lib/schemas";
+import { thumbnailImageObject, primaryThumbnailSchema } from '@/lib/thumbnails';
 import { glossaryFaqItems } from "@/lib/glossary-faq";
 import { PAGE_REVISIONS, latestRevision } from "@/lib/content/page-revisions";
 
@@ -101,6 +102,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         url: pageUrl,
         headline: content.h1,
         description: content.meta.description,
+        image: thumbnailImageObject(pageUrl),
+        mainEntityOfPage: { '@type':'WebPage', '@id':`${pageUrl}#webpage`, url:pageUrl, ...primaryThumbnailSchema(pageUrl) },
         datePublished: GLOSSARY_PUBLISHED,
         dateModified: modified,
         inLanguage: "fr-FR",

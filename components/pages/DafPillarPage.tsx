@@ -13,7 +13,7 @@ import type { Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
 import { getDafPillarContent, pillarInterface } from "@/lib/content/daf-pillar-locales";
 import { faqPageSchema } from "@/lib/schemas";
-import { editorialWebPageSchema } from "@/lib/schemas/editorial";
+import { editorialWebPageSchema } from '@/lib/schemas/editorial-thumbnail';
 import { renderInlineMarkdownLinks, stripInlineMarkdown } from "@/lib/render-markdown-inline-links";
 import PageLayout from "@/components/PageLayout";
 import ServiceHero from "@/components/design/ServiceHero";

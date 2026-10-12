@@ -1,3 +1,4 @@
+import { getThumbnail } from '@/lib/thumbnails';
 import { editorialLinkLabel, localizeEditorialLink } from "@/lib/editorial-links";
 import { Locale } from "@/lib/i18n";
 import { resolveBlogArticleHref } from "@/lib/path-localization";
@@ -297,8 +298,8 @@ export default function BlogListingPage({
       : t.cards.map((c) => ({
           title: c.title,
           href: c.href,
-          image: c.image,
-          alt: c.title,
+          image: getThumbnail(c.href)?.src ?? c.image,
+          alt: getThumbnail(c.href)?.alt ?? c.title,
           category: null as string | null,
           date: null as string | null,
           readMinutes: undefined as number | undefined,

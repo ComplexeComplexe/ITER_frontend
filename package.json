@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack && node scripts/check-indexability.mjs && node scripts/check-locale-parity.mjs && node scripts/check-schema-integrity.mjs",
+    "build": "npm run thumbnails:generate && next build --webpack && node scripts/check-indexability.mjs && node scripts/check-locale-parity.mjs && node scripts/check-schema-integrity.mjs && node scripts/check-thumbnails.mjs",
     "start": "next start",
     "lint": "eslint",
     "test": "playwright test",
@@ -24,7 +24,10 @@
     "migrate:images": "tsx scripts/migrate-cdn-images.ts",
     "audit:indexability": "node scripts/check-indexability.mjs",
     "audit:locales": "node scripts/check-locale-parity.mjs",
-    "audit:schemas": "node scripts/check-schema-integrity.mjs"
+    "audit:schemas": "node scripts/check-schema-integrity.mjs",
+    "thumbnails:generate": "node --import tsx scripts/generate-thumbnails.ts",
+    "thumbnails:audit": "node scripts/audit-thumbnail-inventory.mjs",
+    "thumbnails:check": "node scripts/check-thumbnails.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
@@ -52,6 +55,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "jsdom": "^29.1.1",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "tsx": "^4",
     "typescript": "^5",

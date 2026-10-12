@@ -1,3 +1,4 @@
+import { withThumbnailMetadata } from "@/lib/thumbnails";
 import { publishedMetadataAlternates } from "@/lib/metadata";
 import type { Metadata } from "next";
 import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
@@ -5,7 +6,7 @@ import { FINANCE_STACK_GUIDE, FINANCE_STACK_GUIDE_HTML } from "@/lib/content/fin
 import { estimateReadMinutes } from "@/lib/blog-read-time";
 
 const PAGE_URL = "https://www.iteradvisors.com/ressources/blog/essentiels-outils-tech-finance";
-export const metadata: Metadata = {
+export const metadata: Metadata = withThumbnailMetadata({
   title: FINANCE_STACK_GUIDE.title,
   description: FINANCE_STACK_GUIDE.description,
   alternates: {...publishedMetadataAlternates("/ressources/blog/essentiels-outils-tech-finance"),  canonical: PAGE_URL },
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     images: [{ url: "/images/blog/essentiels-outils-tech-finance.webp", width: 1200, height: 630 }],
   },
-};
+}, "/ressources/blog/essentiels-outils-tech-finance");
 
 export default function EssentielsOutilsTechFinancePage() {
   return <BlogPostPageRefonte

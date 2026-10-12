@@ -1,4 +1,5 @@
 import { PEOPLE, personId } from "@/lib/company-facts";
+import { thumbnailImageObject, primaryThumbnailSchema } from '../thumbnails';
 import { getToolReviewTitle } from '@/data/toolReviews';
 import { editorialPersonId } from "@/lib/content/finance-expert";
 import { Tool } from '@/data/tools';
@@ -57,7 +58,7 @@ export function generateToolArticleSchema(tool: Tool) {
       applicationCategory: 'BusinessApplication', operatingSystem: 'Web', sameAs: [tool.website],
     },
     author: { '@id': editorialPersonId(author.url) },
-    image: `https://www.iteradvisors.com${tool.logo}`,
+    image: thumbnailImageObject(url) ?? `https://www.iteradvisors.com${tool.logo}`,
     publisher: { '@id': 'https://www.iteradvisors.com/#organization' },
     mainEntityOfPage: { '@id': `${url}#webpage` },
     citation: toolSelection[tool.slug]?.source,
@@ -121,6 +122,7 @@ export function generateToolWebPageSchema(tool: Tool) {
   return {
     '@context': 'https://schema.org', '@type': 'WebPage',
     '@id': `${article.url}#webpage`, url: article.url,
+    ...primaryThumbnailSchema(article.url),
     name: article.headline, description: article.description, inLanguage: article.inLanguage,
     datePublished: article.datePublished, dateModified: article.dateModified,
     publisher: article.publisher, isPartOf: { '@id': 'https://www.iteradvisors.com/#website' },

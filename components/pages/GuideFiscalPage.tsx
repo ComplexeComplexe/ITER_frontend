@@ -5,6 +5,7 @@ import type { Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
 import { iaText } from "@/lib/content/ia-finance-interface";
 import Image from "next/image";
+import { getThumbnail, thumbnailImageObject, primaryThumbnailSchema } from '@/lib/thumbnails';
 import { ArrowRight, CheckCircle2, Clock, Sparkles } from "lucide-react";
 import { getCmsNavigation } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
@@ -121,6 +122,7 @@ export default async function GuideFiscalPage({
 }: GuideFiscalPageProps) {
   const cmsNavigation = await getCmsNavigation(locale);
   const pageUrl = `${SITE}${path}`;
+  heroImage = getThumbnail(path) ?? heroImage;
   const refs = references ?? (referencesKey ? getFiscaliteReferences(referencesKey) : []);
 
   const headings: TocHeading[] = [
@@ -138,7 +140,8 @@ export default async function GuideFiscalPage({
         url: pageUrl,
         headline: headline ?? h1,
         description,
-        image: heroImage.src,
+        image: thumbnailImageObject(path) ?? heroImage.src,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `${pageUrl}#webpage`, url: pageUrl, ...primaryThumbnailSchema(path) },
         datePublished: publishedDate,
         dateModified: modifiedDate,
         inLanguage: { fr: "fr-FR", en: "en-GB", es: "es-ES" }[locale],
@@ -205,13 +208,14 @@ export default async function GuideFiscalPage({
 
           <p className="text-base sm:text-lg text-foreground/80 leading-relaxed mb-8">{dek}</p>
 
-          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-muted">
+          <div className="overflow-hidden rounded-2xl bg-muted">
             <Image
               src={heroImage.src}
               alt={heroImage.alt}
-              fill
+              width={1200}
+              height={630}
               sizes="(max-width: 768px) 100vw, 768px"
-              className="object-cover"
+              className="h-auto w-full"
               priority
             />
           </div>
@@ -333,8 +337,8 @@ export default async function GuideFiscalPage({
                 >
                   <div className="relative aspect-[16/9] bg-muted">
                     <Image
-                      src={c.img}
-                      alt={c.alt}
+                      src={getThumbnail(parityHref(c.href,locale))?.src ?? c.img}
+                      alt={getThumbnail(parityHref(c.href,locale))?.alt ?? c.alt}
                       fill
                       sizes="(max-width: 640px) 100vw, 360px"
                       className="object-cover"

@@ -13,6 +13,7 @@
  */
 import { blogPosts } from "@/lib/content/blog-posts";
 import { BLOG_COVERS } from "@/lib/blog-covers";
+import { getThumbnail } from './thumbnails';
 import { estimateReadMinutes } from "@/lib/blog-read-time";
 import type { Locale } from "@/lib/i18n";
 import { resolveBlogArticleHref } from "@/lib/path-localization";
@@ -84,7 +85,7 @@ export function getRelatedArticles(
 
   return picked.map(({ slug, post }) => {
     const title = post.h1 ?? slug;
-    const { src, alt } = coverFor(slug, title);
+    const { src, alt } = getThumbnail(resolveBlogArticleHref(locale, slug) ?? '') ?? coverFor(slug, title);
     return {
       slug,
       href: resolveBlogArticleHref(locale, slug) as string,

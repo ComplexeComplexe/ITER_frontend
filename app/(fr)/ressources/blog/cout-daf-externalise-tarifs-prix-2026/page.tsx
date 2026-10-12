@@ -1,3 +1,4 @@
+import { withThumbnailMetadata } from "@/lib/thumbnails";
 import { publishedMetadataAlternates } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -5,7 +6,7 @@ import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
 import ProseTable from "@/components/blog/ProseTable";
 import { getDafOffer } from "@/lib/content/daf-offer";
 const offer = getDafOffer("fr");
-export const metadata: Metadata = {
+export const metadata: Metadata = withThumbnailMetadata({
   "title": "Comparer des devis de DAF externalisé | Iter Advisors",
   "description": "Comparez forfait mensuel, tarif journalier et recrutement : périmètre, frais, disponibilité et calcul annuel. Méthode et exemples de budget explicites.",
   "alternates": {...publishedMetadataAlternates("/ressources/blog/cout-daf-externalise-tarifs-prix-2026"),
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     "type": "article",
     "images": [{ "url": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png", "width": 1200, "height": 630, "alt": "Iter Advisors : direction financière externalisée" }]
   }
-};
+}, "/ressources/blog/cout-daf-externalise-tarifs-prix-2026");
 export default function Page() { return (
 <BlogPostPageRefonte locale="fr"
  breadcrumbs={{resourcesLabel:"Ressources",resourcesHref:"/ressources",blogLabel:"Blog",blogHref:"/ressources/blog"}}

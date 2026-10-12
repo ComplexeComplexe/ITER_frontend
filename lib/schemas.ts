@@ -1,5 +1,6 @@
 import { absoluteSchemaUrl, ORGANIZATION_ID, WEBSITE_ID, schemaLanguage, indicativePriceSpecification } from "@/lib/schemas/identity";
 import { editorialPersonId } from "@/lib/content/finance-expert";
+import { thumbnailImageObject, primaryThumbnailSchema } from './thumbnails';
 /**
  * JSON-LD structured data helpers for SEO.
  * Generates FAQPage, BreadcrumbList, Service, and other schemas.
@@ -300,6 +301,7 @@ export function articleSchema({
   /** Article section / category (e.g. "Fiscalité"). */
   articleSection?: string;
 }): Record<string, unknown> {
+  const thumbnail = thumbnailImageObject(url);
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -312,10 +314,10 @@ export function articleSchema({
     ...(dateModified && { dateModified }),
     author: authorUrl ? { "@id": editorialPersonId(authorUrl) } : authorName === "Iter Advisors" ? { "@id": ORGANIZATION_ID } : { "@type": "Person", name: authorName },
     publisher: { "@id": ORGANIZATION_ID },
-    ...(imageSrc && {
-      image: {
+    ...((thumbnail || imageSrc) && {
+      image: thumbnail ?? {
         "@type": "ImageObject",
-        url: imageSrc.startsWith("http") ? imageSrc : `${BASE}${imageSrc}`,
+        url: imageSrc?.startsWith("http") ? imageSrc : `${BASE}${imageSrc}`,
       },
     }),
     ...(wordCount && wordCount > 0 && { wordCount }),
@@ -324,6 +326,7 @@ export function articleSchema({
       "@type": "WebPage",
       "@id": `${absoluteSchemaUrl(url)}#webpage`,
       url: absoluteSchemaUrl(url),
+      ...primaryThumbnailSchema(url),
       mainEntity: { "@id": `${absoluteSchemaUrl(url)}#article` },
       isPartOf: { "@id": WEBSITE_ID },
     },
