@@ -98,7 +98,7 @@ export const navigation: Record<Locale, NavItem[]> = { fr: navFr, en: localizeNa
 export const footerContent: Record<Locale, FooterContent> = {
   fr: {
     description:
-      "Iter Advisors, avec des équipes à Barcelone et Paris et une intervention à distance ou sur accord à Toulouse, est un cabinet spécialisé dans les services de DAF externalisé, de conseil stratégique et d\u2019accompagnement en investissements, fusions-acquisitions.",
+      "Direction financière et RH à temps partagé pour startups et PME tech. Siège à Barcelone, équipe en France et en Espagne.",
     copyright: "Copyright \u00A9 2025-2026 Iter Advisors. Tous droits réservés.",
     trustfolio: `Note de 5/5 sur ${TRUSTFOLIO_REVIEW_COUNT} avis sur notre profil`,
     legalLinks: [
@@ -106,36 +106,26 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Politique de confidentialité", href: "/politique-de-confidentialite" },
       { text: "Politique de cookies", href: "/politique-cookies" },
     ],
-    // SEO-AUD-0824 §3 (2026-08-24) — « Nos clients » et « Carrières » ne
-    // vivaient que dans le second niveau du menu, qui n'est rendu qu'après
-    // ouverture côté client : aucun crawler ne les voyait. /clients et les
-    // trois offres d'emploi étaient donc orphelines, alors qu'un visiteur les
-    // atteignait en deux clics. Le pied de page, lui, est rendu au serveur.
+    // Header submenus are server-rendered; Footer filters repeated destinations.
     editorialLinks: [
       { text: "Glossaire financier", href: "/ressources/glossaire" },
       { text: "Fiche métier DAF", href: "/daf-externalise/metier" },
       { text: "Outils finance", href: "/ressources/outils" },
-      // IA-FINANCE (2026-09-01) — le sous-menu est monté côté client ; le
-      // pied de page est rendu au serveur sur chaque page.
       { text: "IA & Finance", href: "/ressources/ia-finance" },
       { text: "Facturation électronique", href: "/ressources/facturation-electronique" },
-      // CONTENUS-T9 (2026-08-31) — /drh-externalise (P18, CPC 13,94 €) : sa
-      // seule ancre depuis l'accueil vivait dans le menu déroulant, monté
-      // côté client, invisible des crawlers. Le pied de page est rendu au
-      // serveur sur chaque page.
       { text: "Direction RH externalisée", href: "/drh-externalise" },
       { text: "Nos clients", href: "/clients" },
       { text: "Carrières", href: "/jobs" },
     ],
+    // Paris is not promoted sitewide while its page states there is no local office.
     locations: [
       { city: "Barcelone", country: "Espagne", href: "/daf-externalise-barcelone" },
-      { city: "Paris", country: "France", href: "/daf-externalise-paris" },
       { city: "Toulouse", country: "France", href: "/daf-externalise-toulouse" },
     ],
   },
   en: {
     description:
-      "Iter Advisors, with teams in Barcelona and Paris, serving Toulouse remotely or on agreed visits, specializes in Fractional CFO services, strategic consulting and support for investments and mergers & acquisitions.",
+      "Fractional CFO and HR leadership for tech startups and SMEs. Headquartered in Barcelona, teams across France and Spain.",
     copyright: "Copyright \u00A9 2025-2026 Iter Advisors. All Rights Reserved.",
     trustfolio: `5/5 rating based on ${TRUSTFOLIO_REVIEW_COUNT} reviews on our profile`,
     legalLinks: [
@@ -150,20 +140,17 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Outsourced HR direction", href: "/en/hr-outsourcing" },
       { text: "Our clients", href: "/en/clients" },
       { text: "Careers", href: "/en/jobs" },
-      // SEO-AUD-0824 §10 — cette page était à quatre clics de l'accueil : le
-      // cluster RH n'est atteignable qu'en passant par la bascule de langue
-      // puis deux niveaux. Le pied de page la ramène à un clic.
       { text: "Fractional HR Director", href: "/en/hr-outsourcing/shared-time" },
     ],
+    // Paris is not promoted sitewide while its page states there is no local office.
     locations: [
       { city: "Barcelona", country: "Spain", href: "/en/fractional-cfo-barcelona" },
-      { city: "Paris", country: "France", href: "/en/fractional-cfo-paris" },
       { city: "Toulouse", country: "France", href: "/en/fractional-cfo-toulouse" },
     ],
   },
   es: {
     description:
-      "Iter Advisors, con equipos en Barcelona y París e intervención en Toulouse a distancia o mediante visitas acordadas, es una empresa especializada en servicios externos de CFO, consultoría estratégica y apoyo a inversiones, fusiones y adquisiciones.",
+      "Dirección financiera y de RR. HH. a tiempo parcial para startups y pymes tech. Sede en Barcelona, equipos en Francia y España.",
     copyright: "Copyright \u00A9 2025-2026 Iter Advisors. Todos los derechos reservados.",
     trustfolio: `Puntuación de 5/5 basada en ${TRUSTFOLIO_REVIEW_COUNT} opiniones en nuestro perfil`,
     legalLinks: [
@@ -180,9 +167,9 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Empleo", href: "/es/jobs" },
       { text: "RRHH a tiempo compartido", href: "/es/externalizacion-rrhh/tiempo-compartido" },
     ],
+    // Paris is not promoted sitewide while its page states there is no local office.
     locations: [
       { city: "Barcelona", country: "España", href: "/es/cfo-externalizado-barcelona" },
-      { city: "Paris", country: "Francia", href: "/es/cfo-externalizado-paris" },
       { city: "Toulouse", country: "Francia", href: "/es/cfo-externalizado-toulouse" },
     ],
   },
