@@ -16,6 +16,36 @@ const breadcrumbLabels: Record<Locale, { services: string; servicesHref: string;
   es: { services: "Servicios", servicesHref: "/es/services", page: "Ley Beckham" },
 };
 
+/* Audit SEO 2026-10-15 (2.1) — cette page vise la demande (Modelo 149) ; le
+ * guide complet porte la requête « ley beckham ». On relie les deux pour que
+ * Google comprenne lequel fait autorité, au lieu de les mettre en concurrence. */
+const relatedGuides: Record<Locale, { title: string; links: { source: string; label: string }[] }> = {
+  fr: {
+    title: "Pour comprendre le régime",
+    links: [
+      { source: "/ressources/fiscalite/beckham-law", label: "Le guide complet de la loi Beckham" },
+      { source: "/ressources/blog/loi-beckham-espagne-conditions-eligibilite", label: "Les conditions d'éligibilité en détail" },
+      { source: "/ressources/blog/loi-beckham-economie-impot-simulation", label: "La méthode pour comparer avec l'IRPF classique" },
+    ],
+  },
+  en: {
+    title: "Understand the regime first",
+    links: [
+      { source: "/ressources/fiscalite/beckham-law", label: "The complete guide to the Beckham Law" },
+      { source: "/ressources/blog/loi-beckham-espagne-conditions-eligibilite", label: "Eligibility conditions in detail" },
+      { source: "/ressources/blog/loi-beckham-economie-impot-simulation", label: "How to compare it with standard IRPF" },
+    ],
+  },
+  es: {
+    title: "Para entender el régimen",
+    links: [
+      { source: "/ressources/fiscalite/beckham-law", label: "La guía completa de la Ley Beckham" },
+      { source: "/ressources/blog/loi-beckham-espagne-conditions-eligibilite", label: "Los requisitos en detalle" },
+      { source: "/ressources/blog/loi-beckham-economie-impot-simulation", label: "Cómo compararla con el IRPF general" },
+    ],
+  },
+};
+
 interface LeyBeckhamPageProps {
   locale: Locale;
   content: LeyBeckhamContent;
@@ -72,6 +102,16 @@ export default function LeyBeckhamPage({ locale, content: t, cmsNavigation }: Le
           >
             {t.hero.intro}
           </p>
+          <nav aria-labelledby="beckham-guides" className="site-card mt-8 max-w-2xl rounded-2xl border-l-4 border-iter-violet bg-iter-violet/5 p-6">
+            <p id="beckham-guides" className="mb-3 font-semibold text-foreground">{relatedGuides[locale].title}</p>
+            <ul className="space-y-2">
+              {relatedGuides[locale].links.map(link => (
+                <li key={link.source}>
+                  <Link className="text-iter-violet underline" href={parityHref(link.source, locale)}>{link.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </section>
 

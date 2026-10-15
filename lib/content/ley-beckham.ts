@@ -31,11 +31,11 @@ export interface LeyBeckhamContent {
 const content: Record<Locale, LeyBeckhamContent> = {
   "en": {
     "meta": {
-      "title": "Beckham Law Spain: eligibility and application | Iter",
+      "title": "Applying for the Beckham Law: documents and Form 149",
       "description": "Understand Spain’s special tax regime for people relocating to Spain: eligibility, employment income, Form 149 and the documents to prepare."
     },
     "hero": {
-      "h1": "Beckham Law in Spain: check eligibility before applying",
+      "h1": "Applying for the Beckham Law: what to check and prepare",
       "intro": "The Beckham Law is the common name for the special regime under Article 93 of Spain’s Personal Income Tax Law. Eligibility depends on the circumstances of the move and the conditions set out in the legislation; it is not an automatic benefit for every expatriate."
     },
     "sections": [
@@ -109,11 +109,11 @@ const content: Record<Locale, LeyBeckhamContent> = {
   },
   "es": {
     "meta": {
-      "title": "Ley Beckham: requisitos y solicitud | Iter Advisors",
+      "title": "Solicitar la Ley Beckham: documentos y Modelo 149",
       "description": "Requisitos del régimen especial para personas desplazadas a España, tributación del trabajo, modelo 149 y documentación que conviene preparar."
     },
     "hero": {
-      "h1": "Ley Beckham en España: comprobar los requisitos antes de solicitarla",
+      "h1": "Solicitar la Ley Beckham: qué comprobar y qué preparar",
       "intro": "La Ley Beckham es el nombre habitual del régimen especial del artículo 93 de la Ley del IRPF. Su aplicación depende del motivo del desplazamiento y de las condiciones legales; no es una ventaja automática para cualquier persona que se instale en España."
     },
     "sections": [
