@@ -41,7 +41,7 @@ export const metadata: Metadata = buildMetadata({
   locale: "fr",
   title: "Loi Beckham Espagne : conditions et taux | Iter Advisors",
   description:
-    "Loi Beckham : taux fixe de 24 % pendant 6 ans, conditions 2026, Modelo 149 et simulation de l'économie d'impôt. Le guide complet du régime des impatriés.",
+    "Loi Beckham : taux fixe de 24 % pendant 6 ans, conditions 2026, Modelo 149 et méthode pour comparer avec l'IRPF classique. Le guide du régime des impatriés.",
   path: PATH,
   // T1 (2026-06-07): FR-only page — drop EN/ES hreflang so Google
   // doesn't crawl synthetic /en|/es URLs that 404.
@@ -148,7 +148,7 @@ export default function Page() {
       path={PATH}
       breadcrumbLabel="Loi Beckham"
       h1="Loi Beckham en Espagne 2026 : le régime fiscal des impatriés à taux fixe"
-      description="Loi Beckham : taux fixe de 24 % pendant 6 ans, conditions 2026, Modelo 149 et simulation de l'économie d'impôt. Le guide complet du régime des impatriés."
+      description="Loi Beckham : taux fixe de 24 % pendant 6 ans, conditions 2026, Modelo 149 et méthode pour comparer avec l'IRPF classique. Le guide du régime des impatriés."
       author={{ name: "Sébastien Doat", url: "/a-propos/sebastien-doat" }}
       publishedDate={PUBLISHED_DATE}
       modifiedDate={MODIFIED_DATE}
