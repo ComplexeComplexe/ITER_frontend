@@ -151,47 +151,6 @@ export function personSchema({
 }
 
 /**
- * Generate HowTo JSON-LD schema (e.g. "How does the collaboration work?").
- *
- * Use for ordered, step-by-step procedures where each step has a name and
- * short description. Google's HowTo guidelines deprecate rich-result display
- * for this type, and there is no guaranteed AI citation benefit from this markup.
- */
-export interface HowToStep {
-  name: string;
-  text: string;
-  url?: string;
-}
-
-export function howToSchema({
-  name,
-  description,
-  steps,
-  totalTime,
-}: {
-  name: string;
-  description?: string;
-  steps: HowToStep[];
-  /** ISO 8601 duration, e.g. "P14D" for 14 days. */
-  totalTime?: string;
-}): Record<string, unknown> {
-  return {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name,
-    ...(description && { description }),
-    ...(totalTime && { totalTime }),
-    step: steps.map((s, i) => ({
-      "@type": "HowToStep",
-      position: i + 1,
-      name: s.name,
-      text: s.text,
-      ...(s.url && { url: s.url.startsWith("http") ? s.url : `${BASE}${s.url}` }),
-    })),
-  };
-}
-
-/**
  * Generate Speakable JSON-LD schema (voice-search optimization).
  *
  * Marks specific page sections (via CSS selectors) as suitable for voice
@@ -327,48 +286,6 @@ export function articleSchema({
       mainEntity: { "@id": `${absoluteSchemaUrl(url)}#article` },
       isPartOf: { "@id": WEBSITE_ID },
     },
-  };
-}
-
-/**
- * Legacy review serializer. Do not use for Iter testimonials: self-serving reviews
- * on Organization are not eligible for Google review snippets.
- * Implements Corrections 2-4 from the ticket:
- * - Correction 2: author type is "Person" (not "Thing")
- * - Correction 3: Rating uses ratingValue (not name)
- * - Correction 4: itemReviewed is included in each review
- */
-export interface ReviewData {
-  author: string;
-  datePublished: string; // ISO date YYYY-MM-DD
-  reviewBody: string;
-  rating: number; // 1-5
-  url?: string; // Link to source (e.g. Trustfolio)
-}
-
-export function reviewsSchema(reviews: ReviewData[]): Record<string, unknown> {
-  return {
-    "@context": "https://schema.org",
-    "@graph": reviews.map((review) => ({
-      "@type": "Review",
-      author: {
-        "@type": "Person",
-        name: review.author,
-      },
-      datePublished: review.datePublished,
-      reviewBody: review.reviewBody,
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: String(review.rating),
-        bestRating: "5",
-        worstRating: "1",
-      },
-      itemReviewed: {
-        "@type": "Organization",
-        "@id": "https://www.iteradvisors.com/#organization",
-      },
-      ...(review.url && { url: review.url }),
-    })),
   };
 }
 

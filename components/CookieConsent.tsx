@@ -290,7 +290,7 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
           data-consent-banner
           data-nosnippet
           role="dialog"
-          aria-label={t.banner.title}
+          aria-labelledby="cookie-banner-title"
           aria-modal="false"
           className="fixed bottom-0 left-0 right-0 z-[9999] p-2 md:p-6"
           style={{ fontFamily: "var(--font-body)" }}
@@ -311,7 +311,10 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                 >
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
-                <h2
+                {/* Pas de <h2> : la bannière est servie dans le HTML de toutes
+                    les pages et polluait leur plan de titres (audit SEO 2026-10-15). */}
+                <p
+                  id="cookie-banner-title"
                   className="flex-1 text-sm md:text-lg font-semibold"
                   style={{
                     fontFamily: "var(--font-heading)",
@@ -319,7 +322,7 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
                   }}
                 >
                   {t.banner.title}
-                </h2>
+                </p>
                 <button
                   onClick={handleRejectAll}
                   aria-label={t.modal.close}
