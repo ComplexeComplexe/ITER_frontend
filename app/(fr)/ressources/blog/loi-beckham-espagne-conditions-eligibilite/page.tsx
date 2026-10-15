@@ -55,7 +55,7 @@ export default async function Page() {
       heroImage="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1200&q=80"
       toc={[
         { id: "principe", label: "Principe : 24 % pendant 6 ans" },
-        { id: "conditions-base", label: "Les 4 conditions cumulatives" },
+        { id: "conditions-base", label: "Les 3 conditions cumulatives" },
         { id: "profils-eligibles", label: "Profils éligibles" },
         { id: "profils-exclus", label: "Profils exclus" },
         { id: "delai-demande", label: "Délai : 6 mois pour demander" },
@@ -64,9 +64,9 @@ export default async function Page() {
       tldr={
         <>
           <p>
-            <strong>4 conditions cumulatives :</strong> non-résident fiscal les 5 ans
-            précédents + transfert professionnel + contrat espagnol + revenus
-            principaux en Espagne.
+            <strong>3 conditions cumulatives :</strong> non-résident fiscal les 5 ans
+            précédents + déplacement lié à un motif professionnel admis + aucun revenu
+            obtenu via un établissement stable en Espagne.
           </p>
           <p>
             <strong>Délai impératif :</strong> demande dans les 6 mois via formulaire
@@ -159,13 +159,14 @@ export default async function Page() {
         emprendedores e inversores desplazados a territorio español</em>.
       </Callout>
 
-      {/* ─── 2. Les 4 conditions de base ──────────────────────────────────── */}
-      <h2 id="conditions-base">4 conditions cumulatives pour être éligible au régime Beckham en 2026</h2>
+      {/* ─── 2. Les 3 conditions de base ──────────────────────────────────── */}
+      <h2 id="conditions-base">3 conditions cumulatives pour être éligible au régime Beckham en 2026</h2>
 
       <p>
         L&apos;accès au régime Beckham est conditionné à la réunion <strong>simultanée</strong>{' '}
-        des quatre critères suivants. L&apos;absence de l&apos;un seul d&apos;entre eux entraîne le
-        rejet de la demande.
+        des trois conditions suivantes, auxquelles s&apos;ajoute le délai de demande de 6 mois
+        détaillé plus bas. L&apos;absence d&apos;une seule d&apos;entre elles entraîne le rejet de la
+        demande.
       </p>
 
       <h3>Condition 1 — Non-résident fiscal en Espagne les 5 années précédentes</h3>
@@ -179,41 +180,39 @@ export default async function Page() {
         résidence fiscale au sens de la loi espagnole.
       </p>
 
-      <h3>Condition 2 — Déménagement en Espagne pour raisons professionnelles</h3>
+      <h3>Condition 2 — Un déplacement lié à un motif professionnel admis</h3>
 
       <p>
-        L&apos;installation en Espagne doit être motivée par une activité professionnelle, et
-        non par des raisons personnelles. L&apos;administration fiscale espagnole (AEAT) vérifie
+        L&apos;installation en Espagne doit être la conséquence d&apos;un motif professionnel, et
+        non de raisons personnelles. L&apos;administration fiscale espagnole (AEAT) vérifie
         que le transfert est antérieur ou concomitant au début de l&apos;activité en Espagne.
         Un déménagement intervenu plusieurs mois avant la prise de poste peut faire
         l&apos;objet d&apos;une question.
       </p>
 
-      <h3>Condition 3 — Contrat de travail espagnol ou nomination comme dirigeant</h3>
-
       <p>
-        Le demandeur doit justifier soit d&apos;un <strong>contrat de travail avec une
-        entité espagnole</strong>, soit d&apos;une <strong>nomination comme membre du
-        conseil d&apos;administration</strong> (administrador, consejero) d&apos;une société
-        espagnole, à condition que cette société ne soit pas une simple société
-        patrimoniale. Depuis 2023, les travailleurs détachés par une entreprise étrangère
-        peuvent également satisfaire cette condition, sous réserve de justifier du
-        détachement.
+        Les motifs admis depuis la réforme de 2023 : un contrat de travail avec une entité
+        espagnole, une mutation ou un détachement ordonné par l&apos;employeur, le télétravail
+        international pour un employeur étranger, une nomination comme administrateur
+        d&apos;une société espagnole (hors société patrimoniale détenue à 25 % ou plus), une
+        activité entrepreneuriale reconnue comme innovante, ou un profil hautement qualifié
+        recruté par une startup certifiée.
       </p>
 
-      <h3>Condition 4 — Revenus principaux de source espagnole</h3>
+      <h3>Condition 3 — Aucun revenu obtenu via un établissement stable en Espagne</h3>
 
       <p>
-        Les revenus du travail doivent être <strong>principalement générés en Espagne</strong>.
-        Cette condition est en pratique vérifiée par le fait que le travailleur exerce
-        son activité sur le territoire espagnol. Les revenus de source étrangère sont
-        exclus de la base imposable au titre du régime Beckham — ce qui constitue un
-        avantage notable pour les personnes percevant des dividendes ou des revenus
-        immobiliers à l&apos;étranger.
+        Le demandeur ne doit pas percevoir de revenus qui seraient qualifiés de revenus
+        obtenus par l&apos;intermédiaire d&apos;un établissement stable situé en Espagne. Une
+        activité indépendante exercée depuis une installation fixe sur place est donc
+        exclue, sauf dans les cas d&apos;activité entrepreneuriale prévus par la réforme de
+        2023. Les revenus de source étrangère, hors revenus du travail, restent en dehors
+        de la base imposable au titre du régime Beckham — un avantage notable pour les
+        personnes percevant des dividendes ou des revenus immobiliers à l&apos;étranger.
       </p>
 
       <Callout type="warning" title="Condition cumulative">
-        Ces quatre conditions doivent être réunies <strong>simultanément</strong> au moment
+        Ces trois conditions doivent être réunies <strong>simultanément</strong> au moment
         du dépôt de la demande. La non-satisfaction d&apos;une seule condition, même
         marginalement, entraîne un rejet que l&apos;AEAT ne corrige pas rétroactivement.
       </Callout>
@@ -345,8 +344,9 @@ export default async function Page() {
       </p>
 
       <Callout type="info" title="Le cas du dirigeant de société française">
-        Un dirigeant rémunéré uniquement par sa société française (SARL, SAS) ne remplit
-        pas la condition de contrat espagnol ou de nomination dans une entité espagnole.
+        Un dirigeant rémunéré uniquement par son mandat social dans sa société française
+        (SARL, SAS) ne relève d&apos;aucun des motifs admis : ce mandat n&apos;est ni un contrat de
+        travail ni une nomination dans une entité espagnole.
         Pour accéder au régime, il lui faut soit créer une entité espagnole et y être
         nommé, soit conclure un contrat de travail avec une société espagnole existante.
       </Callout>
@@ -475,7 +475,7 @@ export default async function Page() {
           <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
             <span style={{ flexShrink: 0, fontWeight: 700, color: '#6d4aff' }}>③</span>
             <div>
-              <strong>Disposez-vous d&apos;un contrat de travail espagnol ou d&apos;une nomination comme dirigeant d&apos;une entité espagnole opérationnelle ?</strong>
+              <strong>Ce déplacement repose-t-il sur un motif admis (contrat de travail, détachement, télétravail international, nomination comme administrateur, activité entrepreneuriale innovante) ?</strong>
               <div style={{ marginTop: '0.25rem', fontSize: '0.875rem', color: '#64748b' }}>
                 ☐ Oui (condition remplie) &nbsp;&nbsp; ☐ Non (condition non remplie — exclusion probable)
               </div>
@@ -484,7 +484,7 @@ export default async function Page() {
           <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
             <span style={{ flexShrink: 0, fontWeight: 700, color: '#6d4aff' }}>④</span>
             <div>
-              <strong>Vos revenus principaux seront-ils de source espagnole (activité exercée en Espagne) ?</strong>
+              <strong>Exercerez-vous votre activité sans établissement stable en Espagne (pas d&apos;activité indépendante depuis une installation fixe sur place) ?</strong>
               <div style={{ marginTop: '0.25rem', fontSize: '0.875rem', color: '#64748b' }}>
                 ☐ Oui (condition remplie) &nbsp;&nbsp; ☐ Non (condition non remplie — exclusion probable)
               </div>

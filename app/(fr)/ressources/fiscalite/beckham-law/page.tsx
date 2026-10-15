@@ -341,12 +341,17 @@ export default function Page() {
           sous visa nomade digital, ou entrepreneuriat dans une startup certifiée.
         </li>
         <li>
-          <strong>Une demande dans les délais.</strong> L&apos;option doit être exercée via le Modelo
-          149 dans les 6 mois suivant l&apos;inscription à la Sécurité sociale espagnole (ou le début
-          effectif de l&apos;activité). Ce délai est impératif : passé ce point, le régime est perdu
-          pour toute la période concernée.
+          <strong>Aucun revenu via un établissement stable.</strong> Vous ne devez pas percevoir de
+          revenus obtenus par l&apos;intermédiaire d&apos;un établissement stable situé en Espagne, sauf
+          dans les cas d&apos;activité entrepreneuriale prévus par la réforme de 2023.
         </li>
       </ol>
+      <p>
+        <strong>Une demande dans les délais.</strong> L&apos;option doit être exercée via le Modelo
+        149 dans les 6 mois suivant l&apos;inscription à la Sécurité sociale espagnole (ou le début
+        effectif de l&apos;activité). Ce délai est impératif : passé ce point, le régime est perdu
+        pour toute la période concernée.
+      </p>
 
       <p>Qui est éligible, qui ne l&apos;est pas — l&apos;état du droit en 2026 :</p>
       <div className="prose-table-wrapper">

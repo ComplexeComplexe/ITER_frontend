@@ -23,7 +23,7 @@ export function dafPricingGraph(locale: Locale, content: DafSubContent) {
         mainEntity: { '@id': serviceId },
       },
       {
-        '@type': 'Service', '@id': serviceId, url: serviceUrl,
+        '@type': 'Service', '@id': serviceId, url: serviceUrl, name: content.h1,
         provider: { '@id': `${SITE}/#organization` },
         hasOfferCatalog: {
           '@type': 'OfferCatalog', '@id': `${SITE}${path}#offers`, name: content.h1,

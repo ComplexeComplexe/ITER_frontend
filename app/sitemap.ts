@@ -529,8 +529,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Native EN/ES Beckham guides, reviewed against AEAT on 2026-09-05.
   // The French guide is broader, so no synthetic translation cluster.
+  // EN↔ES form one cluster (same x-default as lib/metadata.ts).
+  const beckhamAlternates = {
+    languages: {
+      "en-GB": `${BASE}/en/services/ley-beckham`,
+      "es-ES": `${BASE}/es/services/ley-beckham`,
+      "x-default": `${BASE}/en/services/ley-beckham`,
+    },
+  };
   for (const locale of ["en", "es"]) {
-    entries.push({ url: `${BASE}/${locale}/services/ley-beckham`, lastModified: "2026-09-05" });
+    entries.push({ url: `${BASE}/${locale}/services/ley-beckham`, lastModified: "2026-09-05", alternates: beckhamAlternates });
   }
 
   // ── Author pages ──────────────────────────────────────────────────────────

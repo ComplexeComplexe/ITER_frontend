@@ -104,9 +104,12 @@ export function buildMetadata({
   // seulement en espagnol déclarait un alternate FR qui redirige vers la liste
   // des articles. On retire alors fr-FR, et x-default désigne la page courante
   // plutôt qu'une traduction française inexistante.
+  // Audit SEO 2026-10-15 — x-default doit être identique sur toutes les pages
+  // du groupe : avec « la page courante », la paire EN/ES ley-beckham déclarait
+  // deux x-default différents. On prend l'anglais s'il existe, sinon l'espagnol.
   if (absent?.includes("fr")) {
     delete languages["fr-FR"];
-    languages["x-default"] = url;
+    languages["x-default"] = languages["en-GB"] ?? languages["es-ES"] ?? url;
   }
 
   const meta: Metadata = {

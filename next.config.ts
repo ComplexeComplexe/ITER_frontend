@@ -356,18 +356,8 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
       {
-        source: "/en/jobs/marketing-growth-strategy",
-        destination: "/en/jobs",
-        permanent: true, // 301 redirect (not translated)
-      },
-      {
         source: "/es/jobs/marketing-growth-strategy",
         destination: "/es/jobs",
-        permanent: true, // 301 redirect (not translated)
-      },
-      {
-        source: "/en/jobs/senior-finance-manager",
-        destination: "/en/jobs",
         permanent: true, // 301 redirect (not translated)
       },
       {
