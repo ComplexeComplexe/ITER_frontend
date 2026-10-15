@@ -2,7 +2,7 @@ import HRExpert from "@/components/HRExpert";
 import FinanceExpert from "@/components/FinanceExpert";
 import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
-import { aboutHref } from "@/lib/path-localization";
+import { aboutHref, resolveBlogArticleHref } from "@/lib/path-localization";
 import { getTeamMemberBySlug, resolveAuthorUrl } from "@/lib/content/team";
 import { parityHref } from "@/lib/locale-route-map";
 import PageLayout from "@/components/PageLayout";
@@ -120,7 +120,7 @@ export default function BlogPostPage({
   const authorUrl = authorMember ? aboutHref(locale, authorMember.slug) : knownAuthorUrl ? parityHref(knownAuthorUrl, locale) : undefined;
 
   /* ── Schema.org Article structured data ────────────────────────── */
-  const articleUrl = slug ? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
+  const articleUrl = slug ? resolveBlogArticleHref(locale,slug) ?? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
   const modified = latestRevision(updatedDate, publishedDate, PAGE_REVISIONS[articleUrl]) || undefined;
   const structuredData = articleSchema({
     headline: title,

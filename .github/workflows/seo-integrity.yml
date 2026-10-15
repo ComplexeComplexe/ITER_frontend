@@ -37,6 +37,8 @@ jobs:
           exit 1
       - name: Validate canonical URLs, internal links and hreflang
         run: node scripts/audit-seo.mjs http://127.0.0.1:3100
+      - name: Validate editorial thumbnails and dynamic blog indexes
+        run: node scripts/check-thumbnails.mjs --origin=http://127.0.0.1:3100
       - name: Validate FAQ, landmarks and images
         run: node scripts/audit-structured-data.mjs http://127.0.0.1:3100
       - name: Validate anchors and localized contact links

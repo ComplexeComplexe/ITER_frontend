@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Locale } from "./i18n";
 import { getLocalizedPath } from "./path-localization";
 import { publishedPaths } from "./locale-route-map";
+import { withThumbnailMetadata } from './thumbnails';
 
 
 const localeMap: Record<Locale, string> = {
@@ -156,7 +157,7 @@ export function buildMetadata({
     },
   };
 
-  return meta;
+  return noindex ? meta : withThumbnailMetadata(meta, currentFull);
 }
 
 /**

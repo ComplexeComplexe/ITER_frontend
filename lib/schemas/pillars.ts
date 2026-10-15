@@ -4,7 +4,8 @@ import type { DafSubContent } from '@/lib/content/daf-sub';
 import { FORMULES } from '@/lib/content/facts';
 import { getDafOffer } from '@/lib/content/daf-offer';
 import { parityHref } from '@/lib/locale-route-map';
-import { editorialWebPageSchema, ITER_AUTHOR } from './editorial';
+import { editorialWebPageSchema } from './editorial-thumbnail';
+import { ITER_AUTHOR } from './editorial';
 
 const SITE = 'https://www.iteradvisors.com';
 

@@ -1,3 +1,4 @@
+import { withThumbnailMetadata } from "@/lib/thumbnails";
 import { publishedMetadataAlternates } from "@/lib/metadata";
 import { Metadata } from 'next';
 import Link from 'next/link';
@@ -5,7 +6,7 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, ProseTable } from '@/components/blog';
 import { getCmsNavigation } from '@/lib/static-content';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withThumbnailMetadata({
   title: "Loi Beckham : conditions d'éligibilité 2026",
   description:
     "Qui peut bénéficier de la loi Beckham en Espagne ? Conditions, délais de demande, salariés et dirigeants : le point complet 2026.",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+}, "/ressources/blog/loi-beckham-espagne-conditions-eligibilite");
 
 export default async function Page() {
   const cmsNavigation = await getCmsNavigation("fr");

@@ -1,9 +1,10 @@
+import { withThumbnailMetadata } from "@/lib/thumbnails";
 import { publishedMetadataAlternates } from "@/lib/metadata";
 import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withThumbnailMetadata({
   title: "Loi Beckham : méthode de simulation de l’impôt",
   description:
     "Comparez Beckham et IRPF ordinaire : données à réunir, assiette, région, situation familiale et exemple fictif du calcul au taux légal.",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+}, "/ressources/blog/loi-beckham-economie-impot-simulation");
 
 export default function Page() {
   return (

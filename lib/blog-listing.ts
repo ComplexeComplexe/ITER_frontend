@@ -1,4 +1,5 @@
 import { resolveBlogArticleHref } from "./path-localization";
+import { getThumbnail } from './thumbnails';
 /**
  * Helper that assembles the blog listing from the static
  * `lib/content/blog-posts.ts` source (instead of Strapi). It returns
@@ -50,11 +51,12 @@ function altFor(slug: string, fallbackTitle: string): string {
   return BLOG_COVERS[slug]?.alt ?? fallbackTitle;
 }
 
-function buildMedia(slug: string, title: string): StrapiMedia {
+function buildMedia(slug: string, title: string, locale: Locale): StrapiMedia {
+  const thumbnail = getThumbnail(resolveBlogArticleHref(locale, slug) ?? '');
   return {
     id: 0,
-    url: coverFor(slug),
-    alternativeText: altFor(slug, title),
+    url: thumbnail?.src ?? coverFor(slug),
+    alternativeText: thumbnail?.alt ?? altFor(slug, title),
   } as unknown as StrapiMedia;
 }
 
@@ -80,7 +82,7 @@ export function getStaticBlogListing(locale: Locale): StrapiBlogArticle[] {
       // BlogListingPage doesn't use these, but the type requires them.
       content: [],
       excerpt: description,
-      featuredImage: buildMedia(slug, post.h1 ?? slug),
+      featuredImage: buildMedia(slug, post.h1 ?? slug, locale),
       publishedDate,
       tableOfContents: false,
       category: post.category ?? "",

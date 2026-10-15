@@ -1,3 +1,4 @@
+import { withThumbnailMetadata } from "@/lib/thumbnails";
 import { publishedMetadataAlternates } from "@/lib/metadata";
 
 
@@ -5,7 +6,7 @@ import { Metadata } from 'next';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withThumbnailMetadata({
   title: "Moderniser le travail du CFO : données et IA | Iter Advisors",
   description: "Comment le rôle du CFO évolue avec la digitalisation, l'IA et les enjeux ESG. Compétences, missions et leadership du directeur financier moderne.",
   alternates: {...publishedMetadataAlternates("/ressources/blog/la-modernisation-du-role-de-cfo"),
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: "/images/blog/la-modernisation-du-role-de-cfo.webp", width: 1200, height: 630 }],
   },
-};
+}, "/ressources/blog/la-modernisation-du-role-de-cfo");
 
 export default function ModernisationRoleCfoPage() {
   return (

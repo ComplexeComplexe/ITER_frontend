@@ -1,3 +1,4 @@
+import { withThumbnailMetadata } from "@/lib/thumbnails";
 import { publishedMetadataAlternates } from "@/lib/metadata";
 
 
@@ -6,7 +7,7 @@ import Link from 'next/link';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, InlineCta, ProseTable } from '@/components/blog';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withThumbnailMetadata({
   title: "Flux de trésorerie : calcul et prévisionnel",
   description: "Comprenez les flux de trésorerie avec un exemple fictif : encaissements, décaissements, BFR et passage à un prévisionnel de trésorerie.",
   alternates: {...publishedMetadataAlternates("/ressources/blog/flux-de-tresorerie"),
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: "/images/blog/flux-de-tresorerie.webp", width: 1200, height: 630 }],
   },
-};
+}, "/ressources/blog/flux-de-tresorerie");
 
 export default function FluxDeTresorerieePage() {
   return (

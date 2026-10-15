@@ -1,0 +1,4402 @@
+[
+  {
+    "path": "/",
+    "title": "Iter Advisors",
+    "locale": "fr",
+    "category": "corporate",
+    "variant": "brand",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/a-propos",
+    "title": "Le cabinet Iter Advisors",
+    "locale": "fr",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/a-propos/benjamin-carlot",
+    "title": "Benjamin Carlot : Head of Finance & Controlling",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/a-propos/benjamin-ziza",
+    "title": "Benjamin Ziza",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "capital",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/a-propos/borith-biv",
+    "title": "Borith Biv : Partner Capital Humain & DRH externalisé",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/a-propos/christophe-hoarau",
+    "title": "Christophe Hoarau : CFO & Data Officer",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/a-propos/deisy-arias-ramirez",
+    "title": "Deisy Arias Ramirez : CFO",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/a-propos/florent-greth",
+    "title": "Florent Greth",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/a-propos/gonzalo-serratosa-de-caralt",
+    "title": "Gonzalo Serratosa de Caralt : DAF externalisé",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/a-propos/guillaume-rostand",
+    "title": "Guillaume Rostand",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "capital",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/a-propos/hugo-lepresle",
+    "title": "Hugo Lepresle : DAF externalisé",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/a-propos/jessica-barnicaud",
+    "title": "Jessica Barnicaud : CFO",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/a-propos/sebastien-doat",
+    "title": "Sébastien Doat",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "capital",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/a-propos/sebastien-preel",
+    "title": "Sébastien Preel : CFO",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/a-propos/tom-jaufre",
+    "title": "Tom Jaufre : CFO & M&A",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/carrieres/fractional-cfo",
+    "title": "Rejoindre Iter Advisors comme Fractional CFO senior",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/clients",
+    "title": "Nos clients : 90 startups et PME tech accompagnées",
+    "locale": "fr",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/contact",
+    "title": "Contactez nos experts financiers",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/daf-externalise",
+    "title": "DAF externalisé",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/daf-externalise-barcelone",
+    "title": "DAF externalisé à Barcelone pour PME et startups",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/daf-externalise-paris",
+    "title": "DAF externalisé à Paris et en Île-de-France",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/daf-externalise-toulouse",
+    "title": "DAF externalisé à Toulouse",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/daf-externalise/deep-tech",
+    "title": "DAF externalisé deep tech",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/daf-externalise/ecommerce",
+    "title": "DAF externalisé e-commerce",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/daf-externalise/industrie",
+    "title": "DAF externalisé industrie",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/daf-externalise/metier",
+    "title": "DAF : définition, rôle et missions du directeur administratif…",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/daf-externalise/secteurs",
+    "title": "DAF externalisé par secteur",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/daf-externalise/tarifs",
+    "title": "Tarif d’un DAF externalisé : 3 000 à 8 000 € HT par mois",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/daf-externalise/temps-partage",
+    "title": "DAF à temps partagé",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/daf-externalise/transition",
+    "title": "DAF de transition pour PME",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "cash",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/drh-externalise",
+    "title": "DRH externalisé",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "organisation",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/drh-externalise/temps-partage",
+    "title": "Comment fonctionne un DRH à temps partagé ?",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en",
+    "title": "Iter Advisors",
+    "locale": "en",
+    "category": "corporate",
+    "variant": "brand",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/about",
+    "title": "About us",
+    "locale": "en",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/about/benjamin-carlot",
+    "title": "Benjamin Carlot : Head of Finance & Controlling",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/about/benjamin-ziza",
+    "title": "Benjamin Ziza",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/about/borith-biv",
+    "title": "Borith Biv : Human Capital Partner and external HR director",
+    "locale": "en",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/about/christophe-hoarau",
+    "title": "Christophe Hoarau : CFO & Data Officer",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/about/deisy-arias-ramirez",
+    "title": "Deisy Arias Ramirez : CFO",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/about/florent-greth",
+    "title": "Florent Greth",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/about/gonzalo-serratosa-de-caralt",
+    "title": "Gonzalo Serratosa de Caralt : Fractional CFO",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/about/guillaume-rostand",
+    "title": "Guillaume Rostand",
+    "locale": "en",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/about/hugo-lepresle",
+    "title": "Hugo Lepresle : Fractional CFO",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/about/jessica-barnicaud",
+    "title": "Jessica Barnicaud : CFO",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/about/sebastien-doat",
+    "title": "Sébastien Doat",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/about/sebastien-preel",
+    "title": "Sébastien Preel : CFO",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/about/tom-jaufre",
+    "title": "Tom Jaufre : CFO & M&A",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/careers/fractional-cfo",
+    "title": "Join Iter Advisors as senior Fractional CFO",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/clients",
+    "title": "Our clients: 90 tech startups and SMEs we've supported",
+    "locale": "en",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/contact",
+    "title": "Contact our financial experts",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/cookie-policy",
+    "title": "Cookie Policy",
+    "locale": "en",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/fractional-cfo",
+    "title": "Fractional CFO for SMEs",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/fractional-cfo-barcelona",
+    "title": "Fractional CFO in Barcelona for SMEs and startups",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/fractional-cfo-for-startups",
+    "title": "Fractional CFO for startups and SaaS",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/fractional-cfo-paris",
+    "title": "Fractional CFO in Paris and Île-de-France",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/fractional-cfo-toulouse",
+    "title": "Fractional CFO in Toulouse for your SME or startup",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/fractional-cfo/deep-tech",
+    "title": "Fractional CFO for deep tech: finance R&D stages and track runway",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/fractional-cfo/ecommerce",
+    "title": "Fractional CFO for e-commerce: connect growth, margins and cash",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/fractional-cfo/manufacturing",
+    "title": "Fractional CFO for manufacturing",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/fractional-cfo/pricing",
+    "title": "Fractional CFO pricing: EUR 3,000–8,000 excl. VAT/month",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/fractional-cfo/role",
+    "title": "CFO: definition, role and responsibilities of the finance…",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/fractional-cfo/sectors",
+    "title": "Fractional CFO by industry: adapt finance to your business",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/fractional-cfo/shared-time",
+    "title": "Part-time CFO",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/fractional-cfo/transition",
+    "title": "Interim CFO for SMEs",
+    "locale": "en",
+    "category": "finance",
+    "variant": "cash",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/hr-outsourcing",
+    "title": "HR director support for SMEs and startups",
+    "locale": "en",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/hr-outsourcing/shared-time",
+    "title": "How does a part-time HR director work?",
+    "locale": "en",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/jobs/junior-finance-analyst",
+    "title": "Junior financial analyst — France",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/jobs/marketing-growth-strategy",
+    "title": "Marketing & Growth Strategy Manager — Iter Advisors",
+    "locale": "en",
+    "category": "hr",
+    "variant": "recruitment",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/jobs/senior-finance-manager",
+    "title": "Senior Finance Manager — join Iter Advisors",
+    "locale": "en",
+    "category": "hr",
+    "variant": "recruitment",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/legal-notice",
+    "title": "Legal Notice",
+    "locale": "en",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/privacy-policy",
+    "title": "Privacy Policy",
+    "locale": "en",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/resources/ai-finance",
+    "title": "AI and finance: real cases and practical guides for SMEs",
+    "locale": "en",
+    "category": "ai",
+    "variant": "workflow",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/resources/ai-finance/90-day-roadmap",
+    "title": "AI and finance: a 90-day roadmap for a pilot",
+    "locale": "en",
+    "category": "ai",
+    "variant": "workflow",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/resources/ai-finance/automate-financial-reporting",
+    "title": "Automating financial reporting: method, controls and ROI",
+    "locale": "en",
+    "category": "ai",
+    "variant": "review",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/resources/ai-finance/chatgpt-finance",
+    "title": "ChatGPT for finance",
+    "locale": "en",
+    "category": "ai",
+    "variant": "review",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/resources/ai-finance/experience-reports",
+    "title": "AI in finance: real cases, published results and limits",
+    "locale": "en",
+    "category": "ai",
+    "variant": "workflow",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/resources/ai-finance/llms-finance",
+    "title": "LLMs in finance: compare ChatGPT, Claude and Gemini",
+    "locale": "en",
+    "category": "ai",
+    "variant": "workflow",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/resources/ai-finance/tools",
+    "title": "AI and financial reporting tools: how to choose for an SME",
+    "locale": "en",
+    "category": "ai",
+    "variant": "workflow",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/resources/electronic-invoicing",
+    "title": "Electronic invoicing in France: SME requirements 2026-2027",
+    "locale": "en",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/guide-en.png"
+  },
+  {
+    "path": "/en/resources/electronic-invoicing/choose-approved-platform",
+    "title": "How to choose a French approved platform in 2026",
+    "locale": "en",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/choisir-plateforme-agreee-en.png"
+  },
+  {
+    "path": "/en/resources/electronic-invoicing/e-reporting",
+    "title": "E-reporting in France: requirements, data and controls 2026-2027",
+    "locale": "en",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/e-reporting-en.png"
+  },
+  {
+    "path": "/en/resources/electronic-invoicing/factur-x-formats",
+    "title": "Factur-X, UBL and CII: understanding invoice formats",
+    "locale": "en",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/formats-factur-x-en.png"
+  },
+  {
+    "path": "/en/resources/electronic-invoicing/implementation-cost",
+    "title": "Electronic-invoicing implementation cost: build your budget",
+    "locale": "en",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/cout-deploiement-en.png"
+  },
+  {
+    "path": "/en/resources/electronic-invoicing/implementation-smes",
+    "title": "Implement electronic invoicing in a French SME",
+    "locale": "en",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/deploiement-pme-en.png"
+  },
+  {
+    "path": "/en/ressources",
+    "title": "Resources to manage your finance",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog",
+    "title": "The Iter Advisors journal",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/agicap-vs-fygr-cash-flow-tools",
+    "title": "Agicap vs Fygr (Okimia): which treasury tool to choose?",
+    "locale": "en",
+    "category": "finance",
+    "variant": "cash",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/ai-automation-repetitive-finance-tasks",
+    "title": "Automation in finance: which tasks to tackle first?",
+    "locale": "en",
+    "category": "ai",
+    "variant": "workflow",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/ai-finance-department-automation",
+    "title": "AI and financial management: the role of the CFO in an SME",
+    "locale": "en",
+    "category": "ai",
+    "variant": "workflow",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/beckham-law-spain-eligibility",
+    "title": "Beckham Law: are you eligible for the impatriate regime?",
+    "locale": "en",
+    "category": "tax",
+    "variant": "comparison",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/beckham-law-tax-savings-simulation",
+    "title": "Beckham Law: how to prepare a reliable simulation",
+    "locale": "en",
+    "category": "tax",
+    "variant": "residence",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/cash-burn-runway-fundraising",
+    "title": "Cash burn and runway: calculate cash consumption",
+    "locale": "en",
+    "category": "finance",
+    "variant": "cash",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/choose-fractional-cfo-firm",
+    "title": "How to choose a Fractional CFO firm: the decision grid",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/daf-externalise-vs-daf-salarie",
+    "title": "Employee or Fractional CFO: which option to choose?",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/essential-finance-technology-tools",
+    "title": "Choose and integrate the tools of your financial management",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/external-cfo-role-responsibilities",
+    "title": "What an external CFO does: missions and deliverables",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/externalisation-comptable",
+    "title": "Accounting outsourcing: organize the mission and compare costs",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/flux-de-tresorerie",
+    "title": "Cash flow: definition, calculation and importance for the…",
+    "locale": "en",
+    "category": "finance",
+    "variant": "cash",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/fractional-cfo-cost-services-2026",
+    "title": "How to compare fractional CFO quotes",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/fractional-cfo-hr-director-coordination",
+    "title": "Fractional CFO and HR director: coordinate responsibilities",
+    "locale": "en",
+    "category": "hr",
+    "variant": "organisation",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/fractional-cfo-vs-accountant",
+    "title": "Fractional CFO vs Chartered Accountant: what’s the difference?",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/fractional-cfo-vs-interim-cfo",
+    "title": "Fractional CFO or interim CFO: what to choose?",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/france-spain-tax-comparison",
+    "title": "France-Spain taxation: comparison 2026",
+    "locale": "en",
+    "category": "tax",
+    "variant": "comparison",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/fundraising-due-diligence-checklist",
+    "title": "Due diligence checklist",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/fundraising-guide",
+    "title": "Fundraising: financial and legal preparation 2026",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/happy-scribe-finance-case-study",
+    "title": "Happy Scribe case study",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/modern-cfo-role",
+    "title": "Modernize the work of the CFO: data, AI and decisions",
+    "locale": "en",
+    "category": "ai",
+    "variant": "workflow",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/organize-finance-department",
+    "title": "Financial management",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/payfit-vs-silae-sme-comparison",
+    "title": "PayFit vs Silae vs malibou: which payroll software to choose?",
+    "locale": "en",
+    "category": "hr",
+    "variant": "organisation",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/pennylane-vs-sage-comparison",
+    "title": "Pennylane vs Sage: which tool for your accounting?",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/reduce-working-capital-requirements",
+    "title": "How to reduce your WCR: 7 actionable levers",
+    "locale": "en",
+    "category": "tools",
+    "variant": "stack",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/saas-series-a-finance-stack",
+    "title": "Structuring the financial stack of a SaaS in Series A",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/spanish-subsidiary-financial-management",
+    "title": "French company with Spanish subsidiary: who manages the finance?",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/startup-cfo-tools",
+    "title": "10 CFO tools in startups: prepare the first tests",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/startup-financial-dashboard-kpis",
+    "title": "Startup financial dashboard",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/term-sheet-key-clauses",
+    "title": "Term Sheet: how to negotiate key clauses",
+    "locale": "en",
+    "category": "finance",
+    "variant": "capital",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/blog/when-to-hire-fractional-cfo",
+    "title": "When to call on a CFO: five signals to look at",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/cas-clients",
+    "title": "Our customer cases",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/cas-clients/opti-digital-structuration-financement",
+    "title": "Opti Digital: building a finance function over time",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/cas-clients/seasonly-marge-par-canal-bfr",
+    "title": "Seasonly: managing channel margins and financing working capital",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/cas-clients/solarmente-serie-b-cleantech",
+    "title": "SolarMente: preparing finance for fundraising and an acquisition",
+    "locale": "en",
+    "category": "finance",
+    "variant": "capital",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/france-spain-tax",
+    "title": "Taxation Spain France: benchmarks for managers and entrepreneurs",
+    "locale": "en",
+    "category": "tax",
+    "variant": "residence",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/glossaire",
+    "title": "Financial glossary",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/glossaire/arr-mrr",
+    "title": "ARR & MRR — Definitions and Calculation for SaaS",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/glossaire/bfr",
+    "title": "Working Capital Requirement (WCR)",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/glossaire/cac-ltv",
+    "title": "CAC & LTV — Definitions, Formulas and LTV/CAC Ratio",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/glossaire/cash-burn-runway",
+    "title": "Cash Burn & Runway — Definition and Calculation for Startups",
+    "locale": "en",
+    "category": "finance",
+    "variant": "cash",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/glossaire/cfo",
+    "title": "CFO: definition of Chief Financial Officer",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/glossaire/churn-rate",
+    "title": "Churn Rate — Definition, Calculation and Thresholds",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/glossaire/ebitda",
+    "title": "EBITDA: definition, calculation and use in corporate finance",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/glossaire/external-hr-director",
+    "title": "external HR director: definition, missions and operation",
+    "locale": "en",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/glossaire/fractional-cfo",
+    "title": "Fractional CFO: definition and scope",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/glossaire/french-equity-incentives-bspce-bsa",
+    "title": "BSPCE, BSA and BSA Air: understanding the differences",
+    "locale": "en",
+    "category": "finance",
+    "variant": "capital",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/glossaire/management-control",
+    "title": "Management control: definition, missions and tools",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/glossaire/run-rate",
+    "title": "Run Rate — Definition and Calculation for Projections",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tax/beckham-law",
+    "title": "Beckham Law in Spain 2026",
+    "locale": "en",
+    "category": "tax",
+    "variant": "comparison",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tax/form-720",
+    "title": "Modelo 720: the dreaded reporting obligation for expatriates…",
+    "locale": "en",
+    "category": "tax",
+    "variant": "residence",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tax/france-spain-double-taxation",
+    "title": "France-Spain tax treaty: how to avoid double taxation",
+    "locale": "en",
+    "category": "tax",
+    "variant": "treaty",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tax/france-spain-tax-residence",
+    "title": "Tax residence France Spain",
+    "locale": "en",
+    "category": "tax",
+    "variant": "comparison",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tax/spain-income-tax",
+    "title": "Income tax in Spain (IRPF)",
+    "locale": "en",
+    "category": "tax",
+    "variant": "residence",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools",
+    "title": "Financial tools: CFO opinions and criteria",
+    "locale": "en",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/accounting-software",
+    "title": "Accounting for SMEs: the comparison of our Fractional CFOs",
+    "locale": "en",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/agicap",
+    "title": "Agicap: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/carta",
+    "title": "Carta: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/cash-flow-software",
+    "title": "Cash flow for SMEs: the comparison of our Fractional CFOs",
+    "locale": "en",
+    "category": "finance",
+    "variant": "cash",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/cegid-loop",
+    "title": "Cegid Loop: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/equify",
+    "title": "Equify: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/expense-management",
+    "title": "Expense management for SMEs",
+    "locale": "en",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/factorial",
+    "title": "Factorial: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/kyriba",
+    "title": "Kyriba: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/leanpay",
+    "title": "LeanPay: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/lucca",
+    "title": "Lucca: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/malibou",
+    "title": "malibou: reviews, prices and comparison with PayFit",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/methodology",
+    "title": "How we build our finance software reviews",
+    "locale": "en",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/okimia",
+    "title": "Okimia : analyse, prix et intégration",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/payfit",
+    "title": "PayFit: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/payhawk",
+    "title": "Payhawk: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/payroll-software",
+    "title": "Payroll & HR for SMEs: the comparison of our Fractional CFOs",
+    "locale": "en",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/pennylane",
+    "title": "Pennylane review: 4 years of use, prices and limitations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/pleo",
+    "title": "Pleo: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/power-bi",
+    "title": "Power BI: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/qonto",
+    "title": "Qonto: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/revolut-business",
+    "title": "Revolut Business: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/sage",
+    "title": "Sage: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/silae",
+    "title": "Silae: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/spendesk",
+    "title": "Spendesk: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/ressources/tools/upflow",
+    "title": "Upflow: analysis, pricing and integrations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/services",
+    "title": "Finance services for SMEs and startups",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/services/cash-flow-forecast",
+    "title": "Cash flow forecasting",
+    "locale": "en",
+    "category": "finance",
+    "variant": "cash",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/services/employment-compliance",
+    "title": "HR compliance and adviser coordination",
+    "locale": "en",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/services/financial-operations-organization",
+    "title": "Financial operations",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/services/fund-raising-support",
+    "title": "Fundraising financial preparation",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/services/ley-beckham",
+    "title": "Beckham Law in Spain: check eligibility before applying",
+    "locale": "en",
+    "category": "tax",
+    "variant": "residence",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/services/ma-due-diligence",
+    "title": "M&A and financial due diligence",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/services/outsource-your-accounting",
+    "title": "Accounting coordination",
+    "locale": "en",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/services/outsourced-management-control",
+    "title": "Management control and reporting",
+    "locale": "en",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/services/payroll-coordination",
+    "title": "Payroll coordination: organise roles and checks",
+    "locale": "en",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/services/recruitment-talent-acquisition",
+    "title": "Recruitment support for SMEs and startups",
+    "locale": "en",
+    "category": "hr",
+    "variant": "recruitment",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/en/services/training-development",
+    "title": "Team training and development",
+    "locale": "en",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es",
+    "title": "Iter Advisors",
+    "locale": "es",
+    "category": "corporate",
+    "variant": "brand",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/aviso-legal",
+    "title": "Aviso Legal",
+    "locale": "es",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/carreras/cfo-externo",
+    "title": "Únase a Iter Advisors como CFO a tiempo parcial senior",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/cfo-externalizado-barcelona",
+    "title": "CFO externo en Barcelona para pymes y startups",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/cfo-externalizado-paris",
+    "title": "CFO externo en París e Île-de-France",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/cfo-externalizado-toulouse",
+    "title": "CFO externo en Toulouse para su pyme o startup",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/cfo-externo-startups",
+    "title": "CFO externo para startups y SaaS",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/clientes",
+    "title": "Nuestros clientes: 90 startups y PYMES tech acompañadas",
+    "locale": "es",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/contact",
+    "title": "Contacte con nuestros expertos financieros",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/empleos/analista-financiero-junior",
+    "title": "Analista financiero junior — Francia",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/empleos/marketing-estrategia-crecimiento",
+    "title": "Gerente de Estrategia de Marketing y Crecimiento — Iter Advisors",
+    "locale": "es",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/empleos/responsable-financiero-senior",
+    "title": "Gerente senior de finanzas: únase a Iter Advisors",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/externalizacion-daf",
+    "title": "CFO externo para pymes",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/externalizacion-daf/deep-tech",
+    "title": "CFO externo deep tech",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/externalizacion-daf/ecommerce",
+    "title": "CFO externo e-commerce: conectar crecimiento, margen y tesorería",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/externalizacion-daf/funciones",
+    "title": "CFO: definición, papel y funciones del director financiero",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/externalizacion-daf/industria",
+    "title": "CFO externo industria: gestionar costes, existencias e inversión",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/externalizacion-daf/precios",
+    "title": "Precio de un CFO externo: 3000–8000 € sin IVA/mes",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/externalizacion-daf/sectores",
+    "title": "CFO externo por sector: adaptar la gestión a su actividad",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/externalizacion-daf/tiempo-compartido",
+    "title": "CFO a tiempo parcial",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/externalizacion-daf/transicion",
+    "title": "CFO de transición para pymes",
+    "locale": "es",
+    "category": "finance",
+    "variant": "cash",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/externalizacion-rrhh",
+    "title": "Dirección de RR. HH. externa",
+    "locale": "es",
+    "category": "hr",
+    "variant": "organisation",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/externalizacion-rrhh/tiempo-compartido",
+    "title": "¿Cómo funciona una dirección de RRHH a tiempo parcial?",
+    "locale": "es",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/politica-cookies",
+    "title": "Política de cookies",
+    "locale": "es",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/politica-de-privacidad",
+    "title": "Política de Privacidad",
+    "locale": "es",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/quienes-somos",
+    "title": "Sobre nosotros",
+    "locale": "es",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/quienes-somos/benjamin-carlot",
+    "title": "Benjamin Carlot : Jefe de Finanzas y Control",
+    "locale": "es",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/quienes-somos/benjamin-ziza",
+    "title": "Benjamin Ziza",
+    "locale": "es",
+    "category": "finance",
+    "variant": "capital",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/quienes-somos/borith-biv",
+    "title": "Borith Biv : Socio de Capital Humano y dirección de RRHH externa",
+    "locale": "es",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/quienes-somos/christophe-hoarau",
+    "title": "Christophe Hoarau : CFO y Oficial de Datos",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/quienes-somos/deisy-arias-ramirez",
+    "title": "Deisy Arias Ramirez : CFO",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/quienes-somos/florent-greth",
+    "title": "Florent Greth",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/quienes-somos/gonzalo-serratosa-de-caralt",
+    "title": "Gonzalo Serratosa de Caralt : CFO externo",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/quienes-somos/guillaume-rostand",
+    "title": "Guillaume Rostand",
+    "locale": "es",
+    "category": "finance",
+    "variant": "capital",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/quienes-somos/hugo-lepresle",
+    "title": "Hugo Lepresle : CFO externo",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/quienes-somos/jessica-barnicaud",
+    "title": "Jessica Barnicaud : CFO",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/quienes-somos/sebastien-doat",
+    "title": "Sébastien Doat",
+    "locale": "es",
+    "category": "finance",
+    "variant": "capital",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/quienes-somos/sebastien-preel",
+    "title": "Sébastien Preel : CFO",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/quienes-somos/tom-jaufre",
+    "title": "Tom Jaufre : CFO y M&A",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos",
+    "title": "Recursos para gestionar sus finanzas",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog",
+    "title": "La revista Iter Advisors",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/agicap-vs-fygr-tesoreria",
+    "title": "Agicap vs Fygr (Okimia): ¿qué herramienta de tesorería elegir?",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/cash-burn-runway-financiacion",
+    "title": "Cash burn y runway: calcular el consumo de efectivo",
+    "locale": "es",
+    "category": "finance",
+    "variant": "cash",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/caso-happy-scribe-finanzas",
+    "title": "Estudio de caso de Happy Scribe",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/cfo-externo-funciones",
+    "title": "Qué hace un CFO externo: misiones y entregables",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/cfo-externo-pymes-precio-2026",
+    "title": "Cómo comparar presupuestos de CFO externo",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/cfo-externo-vs-asesoria-contable",
+    "title": "CFO externo vs Contador Público: ¿cuál es la diferencia?",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/cfo-externo-vs-cfo-interino",
+    "title": "CFO externo o CFO interino: ¿qué elegir?",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/checklist-due-diligence-financiacion",
+    "title": "Lista de verificación de diligencia debida",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/coordinacion-cfo-director-rrhh",
+    "title": "CFO y director de RR. HH. externalizado",
+    "locale": "es",
+    "category": "hr",
+    "variant": "organisation",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/cuadro-mando-financiero-startup-kpis",
+    "title": "Panel financiero de startups: los 12 KPI que todo CFO debe seguir",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/cuando-contratar-cfo-externo",
+    "title": "Cuándo recurrir a un director financiero",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/daf-externalise-vs-daf-salarie",
+    "title": "CFO empleado o externalizado: ¿qué opción elegir?",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/elegir-consultora-cfo-externo",
+    "title": "Cómo elegir una consultora de CFO externo: la matriz de decisión",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/evolucion-funcion-cfo",
+    "title": "Modernizar el trabajo del CFO: datos, IA y decisiones",
+    "locale": "es",
+    "category": "ai",
+    "variant": "workflow",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/externalisation-comptable",
+    "title": "Outsourcing contable: organizar la misión y comparar costes",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/flux-de-tresorerie",
+    "title": "Flujo de caja: definición, cálculo e importancia para el negocio",
+    "locale": "es",
+    "category": "finance",
+    "variant": "cash",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/gestion-financiera-filial-espana",
+    "title": "Empresa francesa con filial española",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/guia-rondas-financiacion",
+    "title": "Captación de financiación: preparación financiera y legal 2026",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/herramientas-cfo-startup",
+    "title": "10 herramientas del CFO en startups: prepara las primeras pruebas",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/herramientas-financieras-saas-serie-a",
+    "title": "Estructuración del stack financiero de un SaaS en Serie A",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/herramientas-tecnologia-financiera",
+    "title": "Elige e integra las herramientas de tu gestión financiera",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/ia-automatizacion-direccion-financiera",
+    "title": "IA y gestión financiera: el papel del CFO en una PYME",
+    "locale": "es",
+    "category": "ai",
+    "variant": "workflow",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/ia-automatizacion-tareas-repetitivas-finanzas",
+    "title": "Automatización en las finanzas: ¿qué tareas abordar primero?",
+    "locale": "es",
+    "category": "ai",
+    "variant": "workflow",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/ley-beckham-espana-requisitos",
+    "title": "Ley Beckham: ¿se puede acoger al régimen de impatriación?",
+    "locale": "es",
+    "category": "tax",
+    "variant": "comparison",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/ley-beckham-simulacion-ahorro-fiscal",
+    "title": "Ley Beckham: cómo preparar una simulación fiable",
+    "locale": "es",
+    "category": "tax",
+    "variant": "residence",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/organizar-direccion-financiera",
+    "title": "Gestión financiera: cómo organizarla según tu tamaño y etapa",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/payfit-vs-silae-comparativa-pymes",
+    "title": "PayFit vs Silae vs malibou: ¿qué software de nómina elegir?",
+    "locale": "es",
+    "category": "hr",
+    "variant": "organisation",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/pennylane-vs-sage-comparativa",
+    "title": "Pennylane vs Sage: ¿qué herramienta para tu contabilidad?",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/reducir-necesidades-capital-circulante",
+    "title": "Cómo reducir tu NOF: 7 palancas accionables",
+    "locale": "es",
+    "category": "tools",
+    "variant": "calculator",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/regimenes-fiscales-francia-espana",
+    "title": "Fiscalidad Francia-España: comparación 2026",
+    "locale": "es",
+    "category": "tax",
+    "variant": "comparison",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/blog/term-sheet-clausulas-clave",
+    "title": "Hoja de términos: cómo negociar cláusulas clave",
+    "locale": "es",
+    "category": "finance",
+    "variant": "capital",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/casos-de-exito",
+    "title": "Nuestros casos de clientes",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/casos-de-exito/opti-digital-structuration-financement",
+    "title": "Opti Digital: estructurar la función financiera a largo plazo",
+    "locale": "es",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/casos-de-exito/seasonly-marge-par-canal-bfr",
+    "title": "Seasonly: gestionar márgenes por canal y financiar el circulante",
+    "locale": "es",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/casos-de-exito/solarmente-serie-b-cleantech",
+    "title": "SolarMente: preparar las finanzas para una ronda y una…",
+    "locale": "es",
+    "category": "finance",
+    "variant": "cash",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/facturacion-electronica",
+    "title": "Facturación electrónica en Francia: obligaciones 2026-2027",
+    "locale": "es",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/guide-es.png"
+  },
+  {
+    "path": "/es/recursos/facturacion-electronica/coste-implantacion",
+    "title": "Coste de implantar facturación electrónica",
+    "locale": "es",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/cout-deploiement-es.png"
+  },
+  {
+    "path": "/es/recursos/facturacion-electronica/e-reporting",
+    "title": "E-reporting en Francia: obligaciones, datos y controles 2026-2027",
+    "locale": "es",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/e-reporting-es.png"
+  },
+  {
+    "path": "/es/recursos/facturacion-electronica/elegir-plataforma-autorizada",
+    "title": "Cómo elegir una plataforma autorizada francesa en 2026",
+    "locale": "es",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/choisir-plateforme-agreee-es.png"
+  },
+  {
+    "path": "/es/recursos/facturacion-electronica/formatos-factur-x",
+    "title": "Factur-X, UBL y CII: entender formatos de factura",
+    "locale": "es",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/formats-factur-x-es.png"
+  },
+  {
+    "path": "/es/recursos/facturacion-electronica/implantacion-pymes",
+    "title": "Implantar la facturación electrónica en una pyme francesa",
+    "locale": "es",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/deploiement-pme-es.png"
+  },
+  {
+    "path": "/es/recursos/fiscalidad-francia-espana",
+    "title": "Fiscalidad España Francia",
+    "locale": "es",
+    "category": "tax",
+    "variant": "residence",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/fiscalidad/doble-imposicion-francia-espana",
+    "title": "Tratado fiscal Francia-España: cómo evitar la doble imposición",
+    "locale": "es",
+    "category": "tax",
+    "variant": "treaty",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/fiscalidad/irpf-espana",
+    "title": "Impuesto sobre la renta en España (IRPF)",
+    "locale": "es",
+    "category": "tax",
+    "variant": "residence",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/fiscalidad/ley-beckham",
+    "title": "Ley Beckham en España 2026",
+    "locale": "es",
+    "category": "tax",
+    "variant": "comparison",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/fiscalidad/modelo-720",
+    "title": "Modelo 720: la temida obligación de informar para expatriados…",
+    "locale": "es",
+    "category": "tax",
+    "variant": "residence",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/fiscalidad/residencia-fiscal-francia-espana",
+    "title": "Residencia fiscal Francia España",
+    "locale": "es",
+    "category": "tax",
+    "variant": "comparison",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/glosario",
+    "title": "Glosario financiero",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/glosario/arr-mrr",
+    "title": "ARR y MRR: definiciones y cálculo para SaaS",
+    "locale": "es",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/glosario/cac-ltv",
+    "title": "CAC y LTV: definiciones, fórmulas y relación LTV/CAC",
+    "locale": "es",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/glosario/cash-burn-runway",
+    "title": "Cash Burn & Runway: definición y cálculo para empresas emergentes",
+    "locale": "es",
+    "category": "finance",
+    "variant": "cash",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/glosario/cfo",
+    "title": "CFO: definición de director financiero",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/glosario/cfo-tiempo-parcial",
+    "title": "CFO a tiempo parcial: definición y funciones",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/glosario/control-gestion",
+    "title": "Control de gestión: definición, misiones y herramientas",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/glosario/director-rrhh-externo",
+    "title": "Director de RR. HH. externo: funciones y organización",
+    "locale": "es",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/glosario/ebitda",
+    "title": "EBITDA: definición, cálculo y uso en finanzas corporativas",
+    "locale": "es",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/glosario/incentivos-capital-francia-bspce-bsa",
+    "title": "BSPCE, BSA y BSA Air: entendiendo las diferencias",
+    "locale": "es",
+    "category": "finance",
+    "variant": "capital",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/glosario/necesidades-capital-circulante",
+    "title": "Necesidades operativas de fondos (NOF): definición y cálculo",
+    "locale": "es",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/glosario/run-rate",
+    "title": "Run rate: definición y cálculo de proyecciones",
+    "locale": "es",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/glosario/tasa-churn",
+    "title": "Tasa de abandono: definición, cálculo y umbrales",
+    "locale": "es",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas",
+    "title": "Herramientas financieras: opiniones y criterios del CFO",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/agicap",
+    "title": "Agicap: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/carta",
+    "title": "Carta: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/cegid-loop",
+    "title": "Cegid Loop: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/equify",
+    "title": "Equify: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/factorial",
+    "title": "Factorial: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/gestion-gastos",
+    "title": "Gestión de gastos para PYMES",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/kyriba",
+    "title": "Kyriba: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/leanpay",
+    "title": "LeanPay: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/lucca",
+    "title": "Lucca: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/malibou",
+    "title": "malibou: opiniones, precios y comparación con PayFit",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/metodologia",
+    "title": "Cómo elaboramos las opiniones de herramientas financieras",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/okimia",
+    "title": "Okimia : analyse, prix et intégration",
+    "locale": "es",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/payfit",
+    "title": "PayFit: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/payhawk",
+    "title": "Payhawk: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/pennylane",
+    "title": "Opinión sobre Pennylane: 4 años de uso, precios y límites",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/pleo",
+    "title": "Pleo: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/power-bi",
+    "title": "Power BI: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/qonto",
+    "title": "Qonto: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/revolut-business",
+    "title": "Revolut Business: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/sage",
+    "title": "Sage: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/silae",
+    "title": "Silae: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/software-contabilidad",
+    "title": "Contabilidad para PYMES",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/software-nominas",
+    "title": "Nómina y Recursos Humanos para PYMES",
+    "locale": "es",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/software-tesoreria",
+    "title": "Tesorería para PYMES",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/spendesk",
+    "title": "Spendesk: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/herramientas/upflow",
+    "title": "Upflow: análisis, precios e integración",
+    "locale": "es",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/ia-finanzas",
+    "title": "IA y finanzas: casos reales y guías prácticas para pymes",
+    "locale": "es",
+    "category": "ai",
+    "variant": "workflow",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/ia-finanzas/automatizar-reporting-financiero",
+    "title": "Automatizar el reporting financiero: método, controles y ROI",
+    "locale": "es",
+    "category": "ai",
+    "variant": "review",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/ia-finanzas/chatgpt-finanzas",
+    "title": "ChatGPT para finanzas: ejemplos, prompts y controles",
+    "locale": "es",
+    "category": "ai",
+    "variant": "review",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/ia-finanzas/experiencias",
+    "title": "IA en finanzas: casos reales, resultados publicados y límites",
+    "locale": "es",
+    "category": "ai",
+    "variant": "workflow",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/ia-finanzas/herramientas",
+    "title": "Herramientas IA y reporting financiero: elegir para una pyme",
+    "locale": "es",
+    "category": "ai",
+    "variant": "workflow",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/ia-finanzas/hoja-ruta-90-dias",
+    "title": "IA y finanzas: hoja de ruta de 90 días para un piloto",
+    "locale": "es",
+    "category": "ai",
+    "variant": "workflow",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/recursos/ia-finanzas/llm-finanzas",
+    "title": "LLM en finanzas: comparar ChatGPT, Claude y Gemini",
+    "locale": "es",
+    "category": "ai",
+    "variant": "workflow",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/services",
+    "title": "Servicios financieros para pymes y startups",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/services/control-gestion-externalizado",
+    "title": "Control de gestión externo",
+    "locale": "es",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/services/externalizar-contabilidad",
+    "title": "Coordinación de la contabilidad externa",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/services/gestion-financiera-externalizada",
+    "title": "Gestión de operaciones financieras",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/services/ley-beckham",
+    "title": "Ley Beckham en España",
+    "locale": "es",
+    "category": "tax",
+    "variant": "residence",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/services/ma-due-diligence",
+    "title": "M&A y due diligence financiera",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/services/prevision-tesoreria",
+    "title": "Previsión de tesorería",
+    "locale": "es",
+    "category": "finance",
+    "variant": "cash",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/services/soporte-financiacion",
+    "title": "Preparación financiera de rondas",
+    "locale": "es",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/servicios/coordinacion-nominas",
+    "title": "Coordinación de nóminas y organización de controles",
+    "locale": "es",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/servicios/cumplimiento-laboral",
+    "title": "Conformidad de RRHH y coordinación de asesores",
+    "locale": "es",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/servicios/formacion-desarrollo",
+    "title": "Formación y desarrollo de equipos",
+    "locale": "es",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/es/servicios/seleccion-talento",
+    "title": "Apoyo a la contratación para pymes y startups",
+    "locale": "es",
+    "category": "hr",
+    "variant": "recruitment",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/fractional-cfo-startups",
+    "title": "CFO externalisé pour startups et SaaS",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/jobs/finance-analyst-junior-fr",
+    "title": "Analyste financier junior — France",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "recruitment",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/jobs/marketing-growth-strategy",
+    "title": "Responsable Marketing & Growth Strategy — Iter Advisors",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "recruitment",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/jobs/senior-finance-manager",
+    "title": "Senior Finance Manager — rejoindre Iter Advisors",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "recruitment",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/mentions-legales",
+    "title": "Mentions légales",
+    "locale": "fr",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/politique-cookies",
+    "title": "Politique de cookies",
+    "locale": "fr",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/politique-de-confidentialite",
+    "title": "Politique de confidentialité",
+    "locale": "fr",
+    "category": "corporate",
+    "variant": "brand",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources",
+    "title": "Des ressources pour piloter votre finance",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog",
+    "title": "Le journal d’Iter Advisors",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/agicap-vs-fygr-outil-tresorerie",
+    "title": "Agicap vs Fygr (Okimia) : quel outil de trésorerie choisir ?",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "stack",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/cas-etude-happy-scribe",
+    "title": "Cas d'étude Happy Scribe",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/cash-burn-calculer-runway-anticiper-levee",
+    "title": "Cash burn et runway : calculer la consommation de trésorerie",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "cash",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/cfo-externe-role-missions-2026",
+    "title": "Ce que fait un CFO externe : missions et livrables",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/checklist-due-diligence-levee-de-fonds",
+    "title": "Checklist due diligence",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/blog/checklist-due-diligence-levee-de-fonds.webp"
+  },
+  {
+    "path": "/ressources/blog/choisir-cabinet-daf-externalise",
+    "title": "Comment choisir un cabinet de DAF externalisé",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
+    "title": "Comment comparer des devis de DAF externalisé",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/daf-drh-externalises-synergie",
+    "title": "DAF et DRH externalisés : coordonner les responsabilités",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "organisation",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/daf-externalise-vs-daf-interimaire",
+    "title": "DAF externalisé ou DAF intérimaire : que choisir ?",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "path": "/ressources/blog/daf-externalise-vs-daf-salarie",
+    "title": "DAF salarié ou externalisé : quelle option choisir ?",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/blog/daf-externalise-vs-daf-salarie.webp"
+  },
+  {
+    "path": "/ressources/blog/daf-externalise-vs-expert-comptable",
+    "title": "DAF externalisé vs Expert-Comptable : quelle différence ?",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/essentiels-outils-tech-finance",
+    "title": "Choisir et intégrer les outils de sa direction financière",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/blog/essentiels-outils-tech-finance.webp"
+  },
+  {
+    "path": "/ressources/blog/externalisation-comptable",
+    "title": "Externalisation comptable",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/filiale-espagnole-pilotage-financier",
+    "title": "Société française avec filiale espagnole",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/flux-de-tresorerie",
+    "title": "Flux de trésorerie",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "cash",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/blog/flux-de-tresorerie.webp"
+  },
+  {
+    "path": "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
+    "title": "Automatisation en finance : quelles tâches traiter en premier ?",
+    "locale": "fr",
+    "category": "ai",
+    "variant": "workflow",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/ia-finance-automatisation-direction-financiere",
+    "title": "IA et direction financière : le rôle du DAF dans une PME",
+    "locale": "fr",
+    "category": "ai",
+    "variant": "workflow",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/la-modernisation-du-role-de-cfo",
+    "title": "Moderniser le travail du CFO : données, IA et décisions",
+    "locale": "fr",
+    "category": "ai",
+    "variant": "workflow",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/blog/la-modernisation-du-role-de-cfo.webp"
+  },
+  {
+    "path": "/ressources/blog/les-10-outils-pour-cfos-startup",
+    "title": "10 outils CFO en startup : préparer les premiers tests",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "stack",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/blog/les-10-outils-pour-cfos-startup.webp"
+  },
+  {
+    "path": "/ressources/blog/levee-de-fonds-guide",
+    "title": "Levée de fonds : préparation financière et juridique 2026",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/blog/levee-de-fonds.webp"
+  },
+  {
+    "path": "/ressources/blog/loi-beckham-economie-impot-simulation",
+    "title": "Loi Beckham : comment préparer une simulation fiable",
+    "locale": "fr",
+    "category": "tax",
+    "variant": "residence",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "path": "/ressources/blog/loi-beckham-espagne-conditions-eligibilite",
+    "title": "Loi Beckham : êtes-vous éligible au régime des impatriés ?",
+    "locale": "fr",
+    "category": "tax",
+    "variant": "comparison",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "path": "/ressources/blog/organiser-sa-direction-financiere",
+    "title": "Direction financière",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/blog/organiser-sa-direction-financiere.webp"
+  },
+  {
+    "path": "/ressources/blog/payfit-vs-silae-comparatif-pme",
+    "title": "PayFit vs Silae vs malibou : quel logiciel de paie choisir ?",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "organisation",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",
+    "title": "Pennylane vs Sage : quel outil pour votre comptabilité ?",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "stack",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/quand-embaucher-daf-externalise-5-signes",
+    "title": "Quand faire appel à un DAF : cinq signaux à examiner",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/reduire-bfr-7-leviers-actionnables",
+    "title": "Comment réduire votre BFR : 7 leviers actionnables",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/regimes-fiscaux-france-vs-espagne",
+    "title": "Fiscalité France / Espagne",
+    "locale": "fr",
+    "category": "tax",
+    "variant": "comparison",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/stack-financier-saas-series-a",
+    "title": "Structurer la stack financière d’une SaaS en Series A",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "stack",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/tableau-de-bord-financier-startup-12-kpis",
+    "title": "Tableau de bord financier startup",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/blog/term-sheet-negocier-clauses-cles",
+    "title": "Term Sheet : comment négocier les clauses clés",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "capital",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/cas-clients",
+    "title": "Nos cas clients",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/cas-clients/opti-digital-structuration-financement",
+    "title": "Opti Digital : structurer la fonction finance dans la durée",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/cas-clients/seasonly-marge-par-canal-bfr",
+    "title": "Seasonly : piloter la marge par canal et financer le BFR",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/cas-clients/solarmente-serie-b-cleantech",
+    "title": "SolarMente : structurer la finance pour une levée et une…",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/facturation-electronique",
+    "title": "Facturation électronique PME",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/guide-fr.png"
+  },
+  {
+    "path": "/ressources/facturation-electronique/choisir-plateforme-agreee",
+    "title": "Comment choisir une plateforme agréée en 2026 ?",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/choisir-plateforme-agreee-fr.png"
+  },
+  {
+    "path": "/ressources/facturation-electronique/cout-deploiement",
+    "title": "Coût de la facturation électronique : construire votre budget",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/cout-deploiement-fr.png"
+  },
+  {
+    "path": "/ressources/facturation-electronique/deploiement-pme",
+    "title": "Déployer la facturation électronique dans une PME",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/deploiement-pme-fr.png"
+  },
+  {
+    "path": "/ressources/facturation-electronique/e-reporting",
+    "title": "E-reporting : obligations, données et contrôles 2026-2027",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/e-reporting-fr.png"
+  },
+  {
+    "path": "/ressources/facturation-electronique/formats-factur-x",
+    "title": "Factur-X, UBL et CII : comprendre les formats de facture",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "invoice",
+    "square": false,
+    "preserve": true,
+    "previousImage": "https://www.iteradvisors.com/images/electronic-invoicing/formats-factur-x-fr.png"
+  },
+  {
+    "path": "/ressources/fiscalite-espagne-france",
+    "title": "Fiscalité Espagne France",
+    "locale": "fr",
+    "category": "tax",
+    "variant": "residence",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/fiscalite/beckham-law",
+    "title": "Loi Beckham en Espagne 2026",
+    "locale": "fr",
+    "category": "tax",
+    "variant": "comparison",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/fiscalite/double-imposition-france-espagne",
+    "title": "Double imposition",
+    "locale": "fr",
+    "category": "tax",
+    "variant": "treaty",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/fiscalite/impot-revenu-espagne",
+    "title": "Impôt sur le revenu en Espagne",
+    "locale": "fr",
+    "category": "tax",
+    "variant": "residence",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/fiscalite/modelo-720",
+    "title": "Modelo 720 : l'obligation déclarative redoutée des expatriés…",
+    "locale": "fr",
+    "category": "tax",
+    "variant": "residence",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/fiscalite/residence-fiscale-france-espagne",
+    "title": "Résidence fiscale France Espagne",
+    "locale": "fr",
+    "category": "tax",
+    "variant": "comparison",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/glossaire",
+    "title": "Glossaire financier",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/glossaire/arr-mrr",
+    "title": "ARR & MRR — Définitions et Calcul pour SaaS",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/glossaire/besoin-fonds-roulement-bfr",
+    "title": "BFR : comprendre le calcul",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/glossaire/bspce-bsa",
+    "title": "BSPCE, BSA et BSA Air : comprendre les différences",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "capital",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/glossaire/cac-ltv",
+    "title": "CAC & LTV — Définitions, Formules et Ratio LTV/CAC",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/glossaire/cash-burn-runway",
+    "title": "Cash Burn & Runway — Définition et Calcul pour Startups",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "cash",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/glossaire/cfo",
+    "title": "CFO : définition du Chief Financial Officer",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/glossaire/churn-rate",
+    "title": "Churn Rate — Définition, Calcul et Seuils",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/glossaire/controle-de-gestion",
+    "title": "Contrôle de gestion : définition, missions et outils",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/glossaire/drh-externalise",
+    "title": "DRH externalisé : définition, missions et fonctionnement",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/glossaire/ebitda",
+    "title": "EBITDA : définition, calcul et utilisation en finance…",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/glossaire/fractional-cfo",
+    "title": "Fractional CFO : définition du temps partagé",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/glossaire/run-rate",
+    "title": "Run Rate — Définition et Calcul pour Projections",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/ia-finance",
+    "title": "IA et finance",
+    "locale": "fr",
+    "category": "ai",
+    "variant": "workflow",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/ia-finance/automatiser-reporting-financier",
+    "title": "Automatiser le reporting financier : méthode, contrôles et ROI",
+    "locale": "fr",
+    "category": "ai",
+    "variant": "review",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/ia-finance/chatgpt-finance",
+    "title": "ChatGPT pour la finance : exemples, prompts et contrôles",
+    "locale": "fr",
+    "category": "ai",
+    "variant": "review",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/ia-finance/feuille-de-route-90-jours",
+    "title": "IA et finance : feuille de route à 90 jours pour un pilote",
+    "locale": "fr",
+    "category": "ai",
+    "variant": "workflow",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/ia-finance/llm-finance",
+    "title": "LLM en finance : comparer ChatGPT, Claude et Gemini",
+    "locale": "fr",
+    "category": "ai",
+    "variant": "workflow",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/ia-finance/outils",
+    "title": "Outils IA et reporting financier : comment choisir pour une PME",
+    "locale": "fr",
+    "category": "ai",
+    "variant": "workflow",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/ia-finance/retours-experience",
+    "title": "IA en finance : cas réels, résultats publiés et limites",
+    "locale": "fr",
+    "category": "ai",
+    "variant": "workflow",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils",
+    "title": "Outils financiers : avis et critères de DAF",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/agicap",
+    "title": "Agicap : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/carta",
+    "title": "Carta : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/cegid-loop",
+    "title": "Cegid Loop : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/equify",
+    "title": "Equify : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/factorial",
+    "title": "Factorial : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/gestion-depenses",
+    "title": "Gestion des dépenses pour PME",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/kyriba",
+    "title": "Kyriba : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/leanpay",
+    "title": "LeanPay : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/logiciels-comptabilite",
+    "title": "Comptabilité pour PME : le comparatif de nos DAF externalisés",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/logiciels-paie",
+    "title": "Paie & RH pour PME : le comparatif de nos DAF externalisés",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/logiciels-tresorerie",
+    "title": "Trésorerie pour PME : le comparatif de nos DAF externalisés",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/lucca",
+    "title": "Lucca : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/malibou",
+    "title": "malibou : avis, prix et comparatif avec PayFit",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/methodologie",
+    "title": "Comment nous construisons nos avis sur les outils finance",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "stack",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/okimia",
+    "title": "Okimia : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/payfit",
+    "title": "PayFit : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/payhawk",
+    "title": "Payhawk : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/pennylane",
+    "title": "Pennylane : usages et limites",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "stack",
+    "square": true,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/pleo",
+    "title": "Pleo : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/power-bi",
+    "title": "Power BI : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/qonto",
+    "title": "Qonto : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/revolut-business",
+    "title": "Revolut Business : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/sage",
+    "title": "Sage : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/silae",
+    "title": "Silae : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/spendesk",
+    "title": "Spendesk : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/ressources/outils/upflow",
+    "title": "Upflow : analyse, prix et intégration",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/services",
+    "title": "Services finance pour PME et startups",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/services/accompagnement-levee-de-fond",
+    "title": "Accompagnement à la levée de fonds",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "capital",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/services/comptabilite-externalisation",
+    "title": "Comptabilité externalisée",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/services/conformite-droit-travail",
+    "title": "Conformité RH et coordination des conseils",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/services/controle-de-gestion-externalise",
+    "title": "Contrôle de gestion externalisé",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/services/formation-developpement",
+    "title": "Formation et développement des équipes",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/services/gestion-financiere-externalisee",
+    "title": "Gestion financière opérationnelle",
+    "locale": "fr",
+    "category": "tools",
+    "variant": "calculator",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/services/gestion-paie-charges-sociales",
+    "title": "Coordination de la paie : organiser les rôles et les contrôles",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "organisation",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/services/ma-due-diligence",
+    "title": "M&A et due diligence financière",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "dashboard",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/services/previsionnel-tresorerie",
+    "title": "Prévisionnel de trésorerie",
+    "locale": "fr",
+    "category": "finance",
+    "variant": "cash",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  },
+  {
+    "path": "/services/recrutement-talent-acquisition",
+    "title": "Recrutement externalisé pour PME et startups",
+    "locale": "fr",
+    "category": "hr",
+    "variant": "recruitment",
+    "square": false,
+    "preserve": false,
+    "previousImage": "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"
+  }
+]

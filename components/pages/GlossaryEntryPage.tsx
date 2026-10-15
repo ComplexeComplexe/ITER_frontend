@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from 'next/image';
+import { getThumbnail } from '@/lib/thumbnails';
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { Locale } from "@/lib/i18n";
@@ -122,6 +124,7 @@ export default function GlossaryEntryPage({
   const [first, ...rest] = content.sections;
   const [definition, ...firstRest] = first?.content ?? [];
   const related = slug ? getRelatedGlossary(locale, slug) : [];
+  const illustration = slug === 'besoin-fonds-roulement-bfr' ? getThumbnail(glossaryHref(locale,slug)) : undefined;
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
@@ -166,6 +169,7 @@ export default function GlossaryEntryPage({
       <section className="bg-background py-8 sm:py-10">
         <div className="container max-w-3xl">
           <div className="prose-iter-blog max-w-[72ch]">
+            {illustration && <figure className="not-prose mb-8"><Image src={illustration.src} alt={illustration.alt} width={1200} height={630} sizes="(max-width:768px) 100vw, 680px" className="h-auto w-full rounded-2xl" loading="lazy" /></figure>}
             {firstRest.map((p, j) => (
               <ReactMarkdown key={`intro-${j}`} components={md}>
                 {p}

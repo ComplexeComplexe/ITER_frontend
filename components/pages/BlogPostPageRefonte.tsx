@@ -1,4 +1,6 @@
 import { BLOG_ILLUSTRATIONS } from "@/lib/blog-illustrations";
+import { getThumbnail } from '@/lib/thumbnails';
+import { resolveBlogArticleHref } from '@/lib/path-localization';
 import { Locale } from "@/lib/i18n";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -68,7 +70,7 @@ export default function BlogPostPageRefonte({
   faqItems,
 }: BlogPostPageRefonteProps) {
   // Build article URL for schema
-  const articleUrl = slug ? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
+  const articleUrl = slug ? resolveBlogArticleHref(locale,slug) ?? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
   const modified = latestRevision(dateModified, PAGE_REVISIONS[articleUrl]);
 
   // SEO-06 (2026-08-31) — dix articles passaient leur auteur sans `url` :
@@ -86,7 +88,7 @@ export default function BlogPostPageRefonte({
   // propagé au JSON-LD Article. Amélioration silencieuse mais critique
   // sur les articles YMYL finance. Cf. reco-seo-iteradvisors.md §2.1
   // "Signature auteur E-E-A-T sur tous les articles".
-  const bodyImage = slug ? BLOG_ILLUSTRATIONS[slug] : undefined;
+  const bodyImage = getThumbnail(articleUrl) ?? (slug ? BLOG_ILLUSTRATIONS[slug] : undefined);
   const structuredData = articleSchema({
     headline: title,
     description: metaDescription || dek,

@@ -1,3 +1,4 @@
+import { withThumbnailMetadata } from "@/lib/thumbnails";
 import { publishedMetadataAlternates } from "@/lib/metadata";
 
 
@@ -10,7 +11,7 @@ import { getDafOffer } from '@/lib/content/daf-offer';
 import { SALARIED_DAF_GUIDE } from '@/lib/content/decision-guide-meta';
 const offer = getDafOffer('fr');
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withThumbnailMetadata({
   title: SALARIED_DAF_GUIDE.title,
   description: SALARIED_DAF_GUIDE.description,
   alternates: {...publishedMetadataAlternates("/ressources/blog/daf-externalise-vs-daf-salarie"),
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: "/images/blog/daf-externalise-vs-daf-salarie.webp", width: 1200, height: 630 }],
   },
-};
+}, "/ressources/blog/daf-externalise-vs-daf-salarie");
 
 export default function DafExternaliseVsSalariePage() {
   return (

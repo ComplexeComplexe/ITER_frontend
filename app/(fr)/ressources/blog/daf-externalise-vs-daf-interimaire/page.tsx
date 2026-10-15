@@ -1,3 +1,4 @@
+import { withThumbnailMetadata } from "@/lib/thumbnails";
 import { publishedMetadataAlternates } from "@/lib/metadata";
 import { Metadata } from 'next';
 import Link from 'next/link';
@@ -14,7 +15,7 @@ import { MISSIONS_PONCTUELLES } from '@/lib/content/facts';
 const PAGE_URL =
   'https://www.iteradvisors.com/ressources/blog/daf-externalise-vs-daf-interimaire';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withThumbnailMetadata({
   title:
     'DAF externalisé ou intérimaire : comparatif 2026',
   description:
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     ],
   },
   robots: { index: true, follow: true },
-};
+}, "/ressources/blog/daf-externalise-vs-daf-interimaire");
 
 const offer = getDafOffer('fr');
 const transition = MISSIONS_PONCTUELLES.find(item => item.nom === 'DAF de transition')!;

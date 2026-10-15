@@ -1,3 +1,4 @@
+import { withThumbnailMetadata } from "@/lib/thumbnails";
 import { publishedMetadataAlternates } from "@/lib/metadata";
 import Link from 'next/link';
 
@@ -6,7 +7,7 @@ import { Metadata } from 'next';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta } from '@/components/blog';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withThumbnailMetadata({
   title: "Due diligence financière : documents à préparer",
   description: "Checklist de due diligence financière pour préparer votre levée : documents comptables, trésorerie, cap table, hypothèses et organisation de la data room.",
   alternates: {...publishedMetadataAlternates("/ressources/blog/checklist-due-diligence-levee-de-fonds"),
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: "/images/blog/checklist-due-diligence-levee-de-fonds.webp", width: 1200, height: 630 }],
   },
-};
+}, "/ressources/blog/checklist-due-diligence-levee-de-fonds");
 
 export default function ChecklistDueDiligencePage() {
   return (

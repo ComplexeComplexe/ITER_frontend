@@ -1,3 +1,4 @@
+import { withThumbnailMetadata } from "@/lib/thumbnails";
 import { publishedMetadataAlternates } from "@/lib/metadata";
 
 
@@ -6,7 +7,7 @@ import { Metadata } from 'next';
 import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { InlineCta, ProseTable } from '@/components/blog';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withThumbnailMetadata({
   // CONTENUS-T7 (2026-08-31) — « directions financières » : 480 recherches
   // par mois, page en P20. Le title ne disait rien (« Direction Financière »
   // tout court) ; il porte désormais la requête et son intention.
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: "/images/blog/organiser-sa-direction-financiere.webp", width: 1200, height: 630 }],
   },
-};
+}, "/ressources/blog/organiser-sa-direction-financiere");
 
 export default function OrganiserDirectionFinancierePage() {
   return (

@@ -10,7 +10,8 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import ClientTestimonials from "@/components/ClientTestimonials";
 import PageByline from "@/components/PageByline";
-import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
+import { editorialWebPageSchema } from '@/lib/schemas/editorial-thumbnail';
+import { ITER_AUTHOR } from '@/lib/schemas/editorial';
 import { faqPageSchema } from "@/lib/schemas";
 import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 

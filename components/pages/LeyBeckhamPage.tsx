@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { parityHref } from "@/lib/locale-route-map";
 import PageByline from "@/components/PageByline";
-import { editorialWebPageSchema } from "@/lib/schemas/editorial";
+import { editorialWebPageSchema } from '@/lib/schemas/editorial-thumbnail';
 
 import { Locale } from "@/lib/i18n";
 import { LeyBeckhamContent } from "@/lib/content/ley-beckham";

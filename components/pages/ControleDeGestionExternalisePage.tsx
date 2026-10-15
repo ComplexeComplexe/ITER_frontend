@@ -9,7 +9,8 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import PageByline from "@/components/PageByline";
-import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
+import { editorialWebPageSchema } from '@/lib/schemas/editorial-thumbnail';
+import { ITER_AUTHOR } from '@/lib/schemas/editorial';
 
 interface ControleDeGestionExternaliseePageProps {
   locale: Locale;

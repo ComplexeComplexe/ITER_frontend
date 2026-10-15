@@ -1,4 +1,5 @@
 import { publishedMetadataAlternates } from "@/lib/metadata";
+import { withThumbnailMetadata } from '@/lib/thumbnails';
 import type { Metadata } from "next";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
@@ -11,12 +12,12 @@ type TaxLocale = keyof typeof taxComparison;
 
 export function taxComparisonMetadata(locale: TaxLocale): Metadata {
   const t = taxComparison[locale];
-  return {
+  return withThumbnailMetadata({
     title: t.title, description: t.description,
     alternates: publishedMetadataAlternates(TAX_COMPARISON_PATHS[locale]),
     robots: { index: true, follow: true },
     openGraph: { title: t.title, description: t.description, type: "article", images: [{ url: "/images/logos/iter-advisors-brand.png", alt: t.title }] },
-  };
+  }, TAX_COMPARISON_PATHS[locale]);
 }
 
 export default async function TaxComparisonPage({ locale }: { locale: TaxLocale }) {
