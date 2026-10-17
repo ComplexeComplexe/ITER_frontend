@@ -454,7 +454,136 @@
       "transition",
       "controle",
       "organisation"
-    ]
+    ],
+    "extraSections": {
+      "afterNeed": [
+        {
+          "id": "missions",
+          "title": "Las funciones de un CFO a tiempo parcial",
+          "paragraphs": [
+            "El alcance se elige entre estas funciones al definir la misión y se ajusta cuando cambian sus prioridades."
+          ],
+          "items": [
+            [
+              "Gestión y cuadros de mando",
+              "Reporting mensual del resultado, los márgenes, la tesorería y los indicadores propios de su actividad, con el análisis de desviaciones frente al presupuesto."
+            ],
+            [
+              "Tesorería",
+              "Previsión de tesorería a 13 semanas, seguimiento de cobros y vencimientos, y preparación de las decisiones de gasto."
+            ],
+            [
+              "Presupuesto y previsiones",
+              "Proceso presupuestario, escenarios de ingresos, gastos y contrataciones, y plan de negocio a 3-5 años cuando la situación lo requiere."
+            ],
+            [
+              "Organización de la función financiera",
+              "Calendario de cierre con la asesoría contable, herramientas, controles y circuitos de aprobación. El CFO estructura estos trabajos; no lleva la contabilidad."
+            ],
+            [
+              "Financiación y relaciones bancarias",
+              "Expedientes bancarios, deuda no dilutiva, preparación de una ronda de financiación y reporting a inversores."
+            ],
+            [
+              "Gobierno y operaciones",
+              "Preparación de comités y consejos; para las empresas más avanzadas, M&A y due diligence."
+            ]
+          ]
+        },
+        {
+          "id": "fractional-cfo",
+          "title": "CFO a tiempo parcial o fractional CFO: ¿el mismo rol?",
+          "paragraphs": [
+            "Sí. «CFO a tiempo parcial» y «fractional CFO» designan el mismo rol; en las pymes francesas se habla de «DAF à temps partagé». Los tres se refieren a un director financiero sénior que acompaña a varias empresas, cada una de forma recurrente.",
+            "La misión es la misma: estructurar la función financiera, gestionar la tesorería y preparar las decisiones. El CFO interino responde, en cambio, a un mandato temporal de sustitución o de transformación."
+          ],
+          "links": [
+            [
+              "El CFO en nuestro glosario",
+              "/ressources/glossaire/cfo"
+            ],
+            [
+              "Fractional CFO para startups",
+              "/fractional-cfo-startups"
+            ]
+          ]
+        }
+      ],
+      "beforeBudget": [
+        {
+          "id": "limites",
+          "title": "Lo que no hace un CFO a tiempo parcial",
+          "items": [
+            [
+              "No sustituye a su asesoría contable.",
+              "La asesoría prepara las cuentas y las declaraciones según su carta de encargo. El CFO organiza la gestión, utiliza esta información y coordina el calendario; no registra asientos."
+            ],
+            [
+              "No está presente de forma continua.",
+              "Las intervenciones se planifican y la disponibilidad se acuerda al definir el alcance. Una necesidad de presencia diaria requiere una contratación o una misión interina."
+            ],
+            [
+              "No ejecuta la operativa diaria.",
+              "Las reclamaciones a clientes, el registro de facturas y las nóminas siguen a cargo de sus equipos o proveedores. El CFO las estructura y las controla."
+            ]
+          ],
+          "links": [
+            [
+              "Externalización contable",
+              "/services/comptabilite-externalisation"
+            ],
+            [
+              "CFO interino",
+              "/daf-externalise/transition"
+            ]
+          ]
+        },
+        {
+          "id": "cout",
+          "title": "¿Cuánto cuesta un CFO a tiempo parcial en 2026?",
+          "paragraphs": [
+            "En Iter, las misiones recurrentes van de 3.000 a 8.000 € sin IVA al mes, según el alcance y el perfil asignado. Los volúmenes de días son medias observadas, no paquetes: la propuesta cubre un alcance de trabajo."
+          ],
+          "table": {
+            "caption": "Tarifas Iter 2026: presupuesto mensual sin IVA y volumen medio observado",
+            "headers": [
+              "Fórmula",
+              "Presupuesto mensual sin IVA",
+              "Volumen medio observado",
+              "Alcance"
+            ],
+            "rows": [
+              [
+                "Esencial",
+                "3.000 a 5.000 €",
+                "1 a 2 días al mes",
+                "Reporting mensual de P&L, tesorería y KPI, previsión de tesorería a 13 semanas, revisión financiera mensual con el dirigente, soporte puntual."
+              ],
+              [
+                "Crecimiento",
+                "5.000 a 6.500 €",
+                "3 a 5 días al mes",
+                "Alcance Esencial, más plan de negocio a 3-5 años, ronda de financiación, deuda no dilutiva, estructuración tras la ronda y reporting a inversores."
+              ],
+              [
+                "Premium",
+                "6.500 a 8.000 €",
+                "5 a 8 días al mes",
+                "Alcance Crecimiento, más M&A y due diligence, consejo y gobierno, internacionalización, datos y BI financiero."
+              ]
+            ]
+          }
+        },
+        {
+          "id": "demarrage",
+          "title": "Plazos de inicio y compromiso",
+          "paragraphs": [
+            "Su necesidad se cualifica en 2 días hábiles, se le presenta un perfil en 5 días hábiles y la misión empieza entre 8 y 15 días después del primer contacto. Los primeros entregables llegan desde el primer mes de intervención.",
+            "Sin duración mínima de compromiso; se puede rescindir con un preaviso de 30 días."
+          ]
+        }
+      ]
+    }
   },
   "transition": {
     "path": "/daf-externalise/transition",
