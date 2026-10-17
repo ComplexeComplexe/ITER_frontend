@@ -28,8 +28,8 @@ type TaxContent = {
 
 export const taxComparison: Record<"fr" | "es", TaxContent> = {
   fr: {
-    title: "Fiscalité France-Espagne : comparatif 2026",
-    description: "IS, TVA et coût employeur en France et en Espagne : taux 2026, conditions des régimes réduits et méthode de comparaison avec sources officielles.",
+    title: "Fiscalité Espagne vs France 2026 : taux d’imposition",
+    description: "Taux d’imposition 2026 en Espagne et en France : IS à 25 %, TVA à 21 % et 20 %, coût employeur et régimes réduits. Comparatif avec sources officielles.",
     category: "Fiscalité internationale",
     authorRole: "Associé fondateur, CFO et investisseur, Iter Advisors",
     summary: "Le taux normal d’impôt sur les sociétés est de 25 % dans les deux pays. Les différences viennent des régimes réduits, de la base imposable, de la TVA et du coût complet des équipes. Il faut comparer une même activité et un même exercice, sans déduire une économie automatique du pays d’implantation.",
@@ -37,6 +37,7 @@ export const taxComparison: Record<"fr" | "es", TaxContent> = {
     sourceLabels: { frIs: "DGFiP : impôt sur les sociétés", frConditions: "Service Public : conditions du taux réduit français", esIs: "AEAT : taux de l’impôt sur les sociétés", frVat: "Ministère de l’Économie : TVA en France", esVat: "AEAT : taux de TVA en Espagne", frPayroll: "Urssaf : simulateur de cotisations employeur", esPayroll: "Seguridad Social : cotisations du régime général", beckham: "BOE : article 93, régime des impatriés" },
     sections: [
       { id: "impot-societes", title: "Impôt sur les sociétés : 25 % au taux normal, des régimes réduits sous conditions", paragraphs: [
+        "Ce comparatif porte sur la fiscalité des entreprises. Pour l’impôt sur le revenu des particuliers, le barème IRPF 2026 tranche par tranche figure dans notre [guide de l’impôt sur le revenu en Espagne](/ressources/fiscalite/impot-revenu-espagne).",
         "En France, le taux normal de 25 % s’applique depuis les exercices ouverts en 2022. Le taux réduit de 15 % porte sur les premiers 42 500 € de bénéfice par période de douze mois, notamment sous conditions de chiffre d’affaires, de libération et de détention du capital. La contribution sociale de 3,3 % sur l’IS obéit à ses propres conditions et à un abattement : elle ne transforme pas le taux normal de toutes les PME en 25,83 %.",
         "En Espagne, il faut distinguer le taux général, les petites entreprises, les microentreprises et les sociétés nouvellement créées. Le tableau ci-dessous concerne les périodes fiscales ouvertes en 2026 et les sociétés relevant du régime commun ; les régimes foraux et autres situations particulières demandent une analyse distincte."
       ], table: { caption: "Repères d’IS pour 2026, à appliquer à la base imposable et sous conditions", headers: ["Situation", "France", "Espagne, régime commun"], rows: [
@@ -85,6 +86,7 @@ export const taxComparison: Record<"fr" | "es", TaxContent> = {
     sourceLabels: { frIs: "DGFiP: Impuesto sobre Sociedades francés", frConditions: "Service Public: requisitos del tipo reducido francés", esIs: "AEAT: tipos del Impuesto sobre Sociedades", frVat: "Ministerio de Economía: IVA en Francia", esVat: "AEAT: tipos de IVA en España", frPayroll: "Urssaf: simulador de cotizaciones empresariales", esPayroll: "Seguridad Social: cotizaciones del régimen general", beckham: "BOE: artículo 93, régimen de impatriados" },
     sections: [
       { id: "impuesto-sociedades", title: "Impuesto sobre Sociedades: 25 % general y tipos reducidos con requisitos", paragraphs: [
+        "Esta comparativa trata la fiscalidad de las empresas. Para el impuesto sobre la renta de las personas físicas, la escala del IRPF 2026 tramo a tramo figura en nuestra [guía del IRPF en España](/es/recursos/fiscalidad/irpf-espana).",
         "En Francia, el tipo general del 25 % se aplica desde los ejercicios iniciados en 2022. El 15 % reducido alcanza los primeros 42.500 € de beneficio por periodo de doce meses, sujeto, entre otros requisitos, a facturación, desembolso y titularidad del capital. La contribución social del 3,3 % sobre el impuesto tiene condiciones y una reducción de base propias: no convierte el tipo general de todas las pymes en un 25,83 %.",
         "En España deben diferenciarse el tipo general, las entidades de reducida dimensión, las microempresas y las entidades de nueva creación. El cuadro se refiere a periodos impositivos iniciados en 2026 y al régimen común; los regímenes forales y otras situaciones especiales requieren un análisis específico."
       ], table: { caption: "Referencias de IS para 2026, aplicables a la base imponible y sujetas a requisitos", headers: ["Situación", "Francia", "España, régimen común"], rows: [
@@ -105,7 +107,7 @@ export const taxComparison: Record<"fr" | "es", TaxContent> = {
       ], sources: ["frPayroll", "esPayroll"] },
       { id: "regimenes-especiales", title: "Microempresa, autónomos y ley Beckham: distinguir a quién se aplican", paragraphs: [
         "El régimen francés de microentreprise corresponde a una actividad individual y no equivale al tipo reducido de IS de una sociedad. En España, la condición de autónomo, sus obligaciones fiscales y sus cotizaciones deben analizarse por separado de las reglas de una SL. La comparación parte del estatuto previsto y de sus requisitos de acceso.",
-        "El régimen de impatriados, conocido como ley Beckham, se dirige a personas físicas elegibles. No reduce el Impuesto sobre Sociedades de una filial. Deben comprobarse el motivo del traslado, la residencia fiscal previa, las rentas afectadas y el plazo de opción. La [guía de la ley Beckham](/es/services/ley-beckham) explica estos puntos; la norma se encuentra en el artículo 93 de la Ley del IRPF.",
+        "El régimen de impatriados, conocido como ley Beckham, se dirige a personas físicas elegibles. No reduce el Impuesto sobre Sociedades de una filial. Deben comprobarse el motivo del traslado, la residencia fiscal previa, las rentas afectadas y el plazo de opción. La [guía de la ley Beckham](/es/recursos/fiscalidad/ley-beckham) explica estos puntos; la norma se encuentra en el artículo 93 de la Ley del IRPF.",
         "La tributación personal del directivo, el impuesto de la sociedad y el coste de los empleados son tres cálculos distintos. No se decide una residencia o estructura comparando únicamente dos tipos marginales."
       ], sources: ["beckham"] },
       { id: "tu-perfil", title: "¿Qué organización comparar según su actividad?", paragraphs: [
