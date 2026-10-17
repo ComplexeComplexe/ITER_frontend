@@ -179,7 +179,7 @@ const content: Record<Locale, FundRaisingSupportContent> = {
       {
         "heading": "Modelo financiero y necesidad de fondos",
         "content": [
-          "Ayudamos a documentar hipótesis de ingresos, gastos, contrataciones y tesorería. Los escenarios muestran las necesidades de financiación y el efecto de posibles retrasos. El dirigente valida las hipótesis y los datos pendientes quedan identificados."
+          "Ayudamos a documentar hipótesis de ingresos, gastos, contrataciones y tesorería. Los escenarios muestran las necesidades de financiación y el efecto de posibles retrasos. La dirección valida las hipótesis y los datos pendientes quedan identificados."
         ]
       },
       {
@@ -191,13 +191,13 @@ const content: Record<Locale, FundRaisingSupportContent> = {
       {
         "heading": "Definir el papel de cada participante",
         "content": [
-          "El dirigente presenta el proyecto y decide las condiciones. El CFO prepara las cifras, explica los escenarios y coordina las respuestas financieras. La búsqueda y el contacto con inversores se asignan por separado al dirigente o a un asesor contratado. Las posibles presentaciones se concretan al definir el alcance."
+          "El fundador o la dirección presenta el proyecto y decide las condiciones. El CFO prepara las cifras, explica los escenarios y coordina las respuestas financieras. La búsqueda y el contacto con inversores se asignan por separado a la dirección o a un asesor contratado. Las posibles presentaciones se concretan al definir el alcance."
         ]
       },
       {
         "heading": "Entregables y seguimiento",
         "content": [
-          "Se acuerdan el modelo, el registro de hipótesis, los documentos y las reuniones necesarios. Tras la financiación, el acompañamiento puede incluir presupuesto, previsión de tesorería y reporting a inversores si están incluidos en el mandato."
+          "Se acuerdan el modelo, el registro de hipótesis, los documentos y las reuniones necesarios. Tras la financiación, el apoyo puede incluir presupuesto, previsión de tesorería y reporting a inversores si están incluidos en el mandato."
         ]
       },
       {
@@ -212,7 +212,7 @@ const content: Record<Locale, FundRaisingSupportContent> = {
       "items": [
         {
           "question": "¿Actúan como intermediarios de financiación?",
-          "answer": "El servicio descrito es preparación y seguimiento financiero. La búsqueda de inversores se asigna por separado al dirigente o a su asesor contratado."
+          "answer": "El servicio descrito es preparación y seguimiento financiero. La búsqueda de inversores se asigna por separado a la dirección o a su asesor contratado."
         },
         {
           "question": "¿Qué documentos debo preparar?",

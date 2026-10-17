@@ -1,6 +1,7 @@
 import type { ControleSection, controleDeGestionExternaliseeContent } from "@/lib/content/controle-de-gestion-externalise";
 import Link from "next/link";
 import Image from "next/image";
+import { quoteMarks } from "@/lib/quote-marks";
 import { ArrowRight, Check } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { BOOKING_URL } from "@/lib/navigation";
@@ -256,7 +257,7 @@ export default function ControleDeGestionExternalisePage({
                       className="border-l-4 border-iter-violet bg-iter-violet/5 rounded-r-lg p-5 sm:p-6"
                     >
                       <blockquote className="site-copy text-sm sm:text-base text-foreground/80 italic leading-relaxed mb-3">
-                        « {tst.quote} »
+                        {quoteMarks(locale).open}{tst.quote}{quoteMarks(locale).close}
                       </blockquote>
                       <figcaption className="text-xs sm:text-sm">
                         <span className="font-semibold text-foreground not-italic">

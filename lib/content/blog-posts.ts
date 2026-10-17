@@ -1780,7 +1780,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 </tbody>
 </table>
 <h2 id="vs-salary">Fractional vs full-time CFO</h2>
-<p>A salaried CFO in France costs €100,000-€213,000/year all-in (gross salary 80–150k + 25-42% employer charges + bonus + benefits). A Fractional CFO costs €24,000-€96,000/year — <strong>50-70% less</strong>, with no recruitment risk, no notice period, and the freedom to flex hours up or down with growth phases.</p>
+<p>A salaried CFO in France costs €100,000-€213,000/year all-in (gross salary 80–150k + 25-42% employer contributions + bonus + benefits). A Fractional CFO costs €24,000-€96,000/year — <strong>50-70% less</strong>, with no recruitment risk, no notice period, and the freedom to flex hours up or down with growth phases.</p>
 <p>Read more on the head-to-head: <a href="/en/ressources/blog/daf-externalise-vs-daf-salarie">Fractional CFO vs in-house CFO</a>.</p>
 <h2 id="roi">ROI: the part nobody talks about</h2>
 <p>The salary saving is only half the story. The real ROI lives in three areas:</p>
@@ -2187,7 +2187,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <p>Para ver misiones documentadas, consulte nuestros <a href="/ressources/cas-clients">casos de clientes (en francés)</a>: contexto, trabajo realizado y entregables. Los resultados dependen de cada empresa.</p>
 <h2 id="faq">FAQ</h2>
 <p><strong>¿Cuánto cuesta un fractional CFO ?</strong> Las fórmulas de Iter Advisors van de ${getDafOffer("es").price}. ${getDafOffer("es").billing}</p>
-<p><strong>¿Qué diferencia hay entre fractional CFO y part-time CFO ?</strong> Son sinónimos. « Fractional » es el término anglosajón estándar; en España también se utiliza « CFO a tiempo compartido ».</p>
+<p><strong>¿Qué diferencia hay entre fractional CFO y part-time CFO ?</strong> Son sinónimos. «Fractional» es el término anglosajón estándar; en España también se utiliza «CFO a tiempo compartido».</p>
 <p><strong>¿Un fractional CFO puede acompañar una ronda de financiación ?</strong> Sí, es una de sus misiones principales. Nuestros fractional CFOs en Iter Advisors han acompañado más de 100 M€ de levantamientos de capital.</p>
 <p><strong>¿Listo para contratar un fractional CFO ?</strong> Descubra nuestro servicio de <a href="/es/externalizacion-daf">CFO Externalizado</a> o <a href="/es/contact">cuéntenos sus necesidades</a>.</p>`,
       content: [],
@@ -2229,7 +2229,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <h2 id="mistakes">5 errores que matan a las pymes</h2>
 <ol>
 <li><strong>No hacer previsión.</strong> Espera al cierre del mes para ver si tiene suficiente caja. Demasiado tarde. Solución: previsión rodante a 13 semanas, actualizada semanalmente.</li>
-<li><strong>Confundir beneficio y caja.</strong> Amortizaciones y provisiones reducen el beneficio pero no la caja. Capex reduce la caja pero no el beneficio. Hay que pilotar ambos por separado.</li>
+<li><strong>Confundir beneficio y caja.</strong> Amortizaciones y provisiones reducen el beneficio pero no la caja. Capex reduce la caja pero no el beneficio. Hay que gestionar ambos por separado.</li>
 <li><strong>Cobranzas débiles.</strong> Sin recordatorios automáticos = miles de euros varados en cobros tardíos. Solución: software de facturación con recordatorios automáticos.</li>
 <li><strong>Pagar a proveedores al recibir la factura.</strong> Use todo el plazo de crédito que le concedió el proveedor. Día 1 ≠ día 30.</li>
 <li><strong>Sin conciliación bancaria diaria.</strong> Sin ella, los errores se acumulan. Solución: conciliación automatizada vía Pennylane, Stripe, etc.</li>
@@ -2419,7 +2419,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li>Reciba y valide las facturas de clientes y proveedores cada mes</li>
 <li>Participe en el cierre mensual con su proveedor</li>
 <li>Comente las desviaciones en su P&L: ¿estaba prevista esta partida? ¿Corresponde este ingreso a nuestras previsiones?</li>
-<li>Utilice las cifras para pilotar su empresa, no solo para cumplir las obligaciones legales</li>
+<li>Utilice las cifras para dirigir su empresa, no solo para cumplir las obligaciones legales</li>
 </ul>
 <hr>
 <h2 id="cuanto-cuesta-la-externalizacion-contable-tarifas-y-modelos-de-facturacion">¿Cuánto cuesta la externalización contable? Tarifas y modelos de facturación</h2>
@@ -2508,7 +2508,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <ul>
 <li>🎯 <strong>Externalizar la contabilidad libera tiempo</strong>: en promedio, 4-8 horas por semana que puede reinvertir en el crecimiento</li>
 <li>🛡️ <strong>Le protege contra los riesgos de conformidad</strong>: sanciones, recargos, contenciosos</li>
-<li>💡 <strong>Le da acceso a una expertise</strong>: optimización fiscal, pilotaje, preparación de captación de fondos</li>
+<li>💡 <strong>Le da acceso a una expertise</strong>: optimización fiscal, gestión financiera, preparación de captación de fondos</li>
 <li>💰 <strong>Cuesta menos de lo que piensa</strong>: 800 a 2.000 EUR/mes en promedio para una pyme, no es nada comparado con el coste de un error contable</li>
 <li>🚀 <strong>Profesionaliza su empresa</strong>: un activo cuando capta fondos o trabaja con grandes clientes</li>
 </ul>

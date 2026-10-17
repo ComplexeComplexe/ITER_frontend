@@ -2501,7 +2501,7 @@
           "id": "enjeu",
           "title": "¿Por qué la facturación electrónica es un proyecto financiero?",
           "paragraphs": [
-            "La facturación electrónica cambia el circuito de facturas, además de su presentación. En nuestras misiones observamos identificadores incompletos, duplicados y herramientas de facturación desconectadas. Recomendamos resolver estos problemas antes de migrar: un archivo estructurado puede seguir mal dirigido o ser imposible de conciliar.",
+            "La facturación electrónica cambia el circuito de las facturas, no solo su presentación. En nuestros encargos observamos identificadores incompletos, duplicados y herramientas de facturación desconectadas. Recomendamos resolver estos problemas antes de migrar: un archivo estructurado puede seguir mal dirigido o ser imposible de conciliar.",
             "La dirección debe identificar quién factura, desde qué herramienta y para qué entidad. Conectamos esta cartografía con compras, ventas y cobros. La prioridad es un circuito trazable, con un equipo capaz de resolver excepciones y recuperar datos útiles para decidir."
           ],
           "bullets": [],
@@ -2689,7 +2689,7 @@
           "paragraphs": [
             "A 6 de octubre de 2026, el Código General de Impuestos francés (CGI) prevé 50 € por factura por incumplir la emisión electrónica, con límite anual de 15.000 €. El artículo 1788 D prevé 500 € por transmisión de e-reporting incumplida, con límite anual de 15.000 € para cada obligación afectada. Son importes legales a esta fecha, no una sanción automática.",
             "Los textos prevén una exención condicionada para una primera infracción subsanada voluntariamente o dentro de los treinta días de la primera solicitud. La falta de PA receptora tiene otro procedimiento: requerimiento de tres meses, después 500 € y posteriormente 1.000 € si persiste, repetibles según el procedimiento legal.",
-            "El ministerio anuncia acompañamiento y tolerancia hasta finales de 2026 para empresas con dificultades de implantación. Recomendamos documentar incidencias y medidas correctoras mientras se avanza hacia el cumplimiento. La tolerancia no elimina la obligación ni la necesidad de designar una plataforma."
+            "El ministerio anuncia apoyo y tolerancia hasta finales de 2026 para las empresas con dificultades de implantación. Recomendamos documentar las incidencias y las medidas correctoras mientras se avanza hacia el cumplimiento. La tolerancia no elimina la obligación ni la necesidad de designar una plataforma."
           ],
           "bullets": [],
           "sources": [

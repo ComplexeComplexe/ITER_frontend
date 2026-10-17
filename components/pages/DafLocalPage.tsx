@@ -1,6 +1,7 @@
 import { reviewsForLocale } from "@/lib/content/review-translations";
 import Link from "@/components/PublishedLocaleLink";
 import { parityHref } from "@/lib/locale-route-map";
+import { quoteMarks } from "@/lib/quote-marks";
 import { ArrowRight, MapPin, Building2, Users, Briefcase, BarChart3, Wallet, Rocket, Compass, Network, Star } from "lucide-react";
 import Image from "next/image";
 import { Locale } from "@/lib/i18n";
@@ -385,7 +386,7 @@ export default function DafLocalPage({
                   ))}
                 </div>
                 <blockquote lang={locale} className="text-lg text-muted-foreground italic mb-4 leading-relaxed">
-                  « {review.reviewBody} »
+                  {quoteMarks(locale).open}{review.reviewBody}{quoteMarks(locale).close}
                 </blockquote>
                 {locale !== "fr" && <p className="text-sm text-muted-foreground mb-4">{locale === "en" ? "Translated from the original French review" : "Traducción de la opinión original en francés"}</p>}
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">

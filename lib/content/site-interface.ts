@@ -32,7 +32,7 @@ const interfaceText = {
     team: "Conocer al equipo", pageNav: "En esta página",
     financeContact: "Su interlocutor financiero", financeTitle: "Hablar con Sébastien Doat",
     financeRole: PEOPLE.sebastien.roles.es,
-    financeDescription: "Sébastien Doat, socio fundador de Iter Advisors, acompaña a los dirigentes en el control financiero, la tesorería y la preparación de la financiación.",
+    financeDescription: "Sébastien Doat, socio fundador de Iter Advisors, asesora a la dirección en el control financiero, la tesorería y la preparación de la financiación.",
     profile: "Trayectoria, publicaciones e intervenciones", linkedin: "Perfil de LinkedIn",
     contact: "Describir mi necesidad", hrContact: "Su interlocutor de RR. HH.",
     hrRole: "Socio de Capital Humano",

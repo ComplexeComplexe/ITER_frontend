@@ -108,7 +108,11 @@ const HORS_ARBITRAGE = [
 
 const strip = (html) =>
   html
-    .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<!--[\s\S]*?-->/g, " ")
+    // NATIF-EN-ES (2026-10-17) — React sépare deux nœuds de texte adjacents
+    // par `<!-- -->` : remplacé par une espace, il faisait lire « «La factura »
+    // comme « « La factura » et créait de faux positifs sur les guillemets.
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, " ")
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;|&#160;/g, " ")
     .replace(/&#x27;|&apos;/g, "'")
@@ -188,6 +192,51 @@ for (const abs of urls) {
   // chaînes JS) et se rend littéralement. Sept libellés FR/ES étaient touchés.
   const esc = texte.match(/\\u[0-9a-f]{4}/i);
   if (esc) fail("texte/échappement", `${path} — séquence littérale « ${esc[0]} »`);
+
+  // ── 3a quater. Résidus de français dans les pages EN et ES
+  //
+  // NATIF-EN-ES (2026-10-17) — la revue éditoriale a relevé « Lawless Beckham »
+  // (pour « sans loi Beckham »), « rental of physical persons » (IRPF),
+  // « 24 % à 27 % » sur des pages anglaises et espagnoles, « lifting » pour
+  // « levée », « piezas » pour « pièces », des guillemets français dans le
+  // texte anglais, des formats de nombres français (« 32 000 € », « 24 % »)
+  // dans le texte anglais, et des latino-américanismes (« financiamiento »).
+  // Aucun de ces résidus n'était vu par la recette, qui ne lisait que les
+  // valeurs chiffrées. Les motifs sont propres à chaque langue : un « à »
+  // après un chiffre n'a aucune lecture légitime en anglais ni en espagnol.
+  const RESIDUS_EN = [
+    { re: /\blifting\b/, sujet: "« lifting » pour levée de fonds" },
+    { re: /\bTJMs?\b/, sujet: "sigle français TJM (daily rate)" },
+    { re: /Lawless Beckham|rental of physical persons/i, sujet: "traduction automatique (IRPF / loi Beckham)" },
+    { re: /[«»]/, sujet: "guillemets français dans un texte anglais" },
+    { re: /[%€\d]\sà\s/, sujet: "« à » français dans une fourchette" },
+    { re: /\bmanagement controllers?\b/i, sujet: "« management controller » (financial controller)" },
+    { re: /\b(?:social|employer) charges\b/i, sujet: "« charges » (contributions)" },
+    { re: /\d{1,3} \d{3} ?€/, sujet: "format de nombre français (€32,000 attendu)" },
+    { re: /\d %/, sujet: "espace avant % (24% attendu en anglais)" },
+  ];
+  const RESIDUS_ES = [
+    { re: /\bpiezas (?:contables|justificativas)\b/i, sujet: "« piezas » pour pièces (justificantes)" },
+    { re: /Beckham sin ley|alquiler de personas f[ií]sicas/i, sujet: "traduction automatique (IRPF / ley Beckham)" },
+    { re: /«\s|\s»/, sujet: "comillas latinas espacées à la française" },
+    { re: /[%€\d]\sà\s/, sujet: "« à » français dans une fourchette" },
+    { re: /\bdirigentes?\b/i, sujet: "« dirigente » (directivo, fundador)" },
+    { re: /\btableros?\b/i, sujet: "« tablero » (cuadro de mando)" },
+    { re: /\d{1,3} \d{3} ?€/, sujet: "format de nombre français (32.000 € attendu)" },
+    { re: /\bfinanciamiento\b|\bpron[oó]stico rodante\b/i, sujet: "latino-américanisme (financiación, previsión móvil)" },
+  ];
+  // Cluster DAF gelé jusqu'au 16 novembre 2026 (décision du 17 octobre) : les
+  // piliers EN et ES et leurs sous-pages ne sont pas retouchés d'ici là, leurs
+  // résidus connus (guillemets « », « dirigente ») sont donc tolérés. Retirer
+  // cette exclusion au dégel.
+  const GELE_DAF = /^\/(?:en\/fractional-cfo|es\/externalizacion-daf)(?:\/|$)/;
+  const enPage = path === "/en" || path.startsWith("/en/");
+  const esPage = path === "/es" || path.startsWith("/es/");
+  const residus = GELE_DAF.test(path) ? [] : enPage ? RESIDUS_EN : esPage ? RESIDUS_ES : [];
+  for (const { re, sujet } of residus) {
+    const m = texte.match(re);
+    if (m) fail("traduction/résidu", `${path} — ${sujet} : « ${m[0]} »`);
+  }
 
   // ── 3a bis. Les mêmes valeurs, dans la meta description
   //

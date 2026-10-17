@@ -230,7 +230,7 @@ const servicesEn: ServicesContent = {
     { title: "Outsourced financial management", href: "/en/fractional-cfo", category: "finance" },
     { title: "Fractional HR Director", href: "/en/hr-outsourcing", category: "rh" },
     { title: "Recruitment & talent acquisition", href: "/en/hr-outsourcing", category: "rh" },
-    { title: "Payroll & social charges", href: "/en/hr-outsourcing", category: "rh" },
+    { title: "Payroll & social contributions", href: "/en/hr-outsourcing", category: "rh" },
     { title: "Training & development", href: "/en/hr-outsourcing", category: "rh" },
     { title: "Compliance & labor law", href: "/en/hr-outsourcing", category: "rh" },
   ],
