@@ -40,7 +40,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
   "h1": "DAF externalisé à Barcelone pour PME et startups",
   "intro": [
     "Votre entreprise est implantée à Barcelone ou développe une activité entre la France et l’Espagne. Vous cherchez des chiffres comparables, des prévisions de trésorerie et un interlocuteur pour préparer les décisions de la direction.",
-    "Barcelone est le siège d’Iter Advisors, Carrer Casp 54. Benjamin Ziza, Florent Greth, Tom Jaufre et Deisy Arias Ramírez y interviennent sur les sujets financiers. Les langues de travail, la présence sur site et les relais sont précisés au cadrage."
+    "Barcelone est le siège d’Iter Advisors, Carrer Casp 54. Benjamin Ziza, Florent Greth, Tom Jaufre et Deisy Arias Ramírez y interviennent sur les sujets financiers. Le cabinet travaille en français, en espagnol et en anglais ; la langue de chaque mission, la présence sur site et les relais sont confirmés au cadrage, selon le DAF mobilisé."
   ],
   "sections": [
     {
@@ -153,7 +153,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
     },
     {
       "question": "Quelles langues et quelle présence sont prévues ?",
-      "answer": "Les langues de travail, les interventions sur site, le travail à distance et les interlocuteurs sont précisés au cadrage, selon les besoins et les profils mobilisés."
+      "answer": "Le cabinet travaille en français, en espagnol et en anglais. La langue de chaque mission, les interventions sur site, le travail à distance et les interlocuteurs sont confirmés au cadrage, selon les besoins et le DAF mobilisé."
     },
     {
       "question": "Pouvez-vous gérer la comptabilité espagnole ?",

@@ -9,11 +9,15 @@ import { getContactPath } from "@/lib/navigation";
 import { dafClusterHref, getLocalizedPath, serviceHref } from "@/lib/path-localization";
 import { getDafLocalContent, DafLocalCity } from "@/lib/content/daf-local";
 import { faqPageSchema } from "@/lib/schemas";
+import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
 import { TRUSTFOLIO_REVIEWS, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/trustfolio-reviews";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
 import CaseProofLinks from "@/components/CaseProofLinks";
+
+const UPDATED_LABEL: Record<Locale, string> = { fr: "Mis à jour le", en: "Updated", es: "Actualizado el" };
+const DATE_LOCALE: Record<Locale, string> = { fr: "fr-FR", en: "en-GB", es: "es-ES" };
 
 export default function DafLocalPage({
   locale,
@@ -27,6 +31,24 @@ export default function DafLocalPage({
   const t = getDafLocalContent(city, locale);
   const contactPath = getContactPath(locale);
   const canonicalUrl = `https://www.iteradvisors.com${getLocalizedPath(`/daf-externalise-${city}`, locale)}`;
+
+  /* Audit SEO 2026-10-15 (2.2) — date de mise à jour visible et dans le
+   * JSON-LD, lue dans PAGE_REVISIONS (même source que le lastmod du sitemap). */
+  const modified = PAGE_REVISIONS[getLocalizedPath(`/daf-externalise-${city}`, locale)];
+  const modifiedLabel = modified
+    ? `${UPDATED_LABEL[locale]} ${new Date(`${modified}T12:00:00Z`).toLocaleDateString(DATE_LOCALE[locale], { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}`
+    : null;
+  const webPageSchema = modified ? {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
+    name: t.meta.title,
+    inLanguage: DATE_LOCALE[locale],
+    dateModified: modified,
+    isPartOf: { "@id": "https://www.iteradvisors.com/#website" },
+    publisher: { "@id": "https://www.iteradvisors.com/#organization" },
+  } : null;
 
   /* JSON-LD schemas */
   const faqSchema = faqPageSchema(t.faq);
@@ -101,6 +123,7 @@ export default function DafLocalPage({
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }} />
       {city === "barcelone" && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema).replace(/</g, "\\u003c") }} />}
+      {webPageSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema).replace(/</g, "\\u003c") }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema).replace(/</g, "\\u003c") }} />
 
       {/* Hero */}
@@ -124,6 +147,11 @@ export default function DafLocalPage({
               <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl mb-6">
                 {t.h1}
               </h1>
+              {modified && modifiedLabel && (
+                <p className="mb-4 text-sm text-muted-foreground">
+                  <time dateTime={modified}>{modifiedLabel}</time>
+                </p>
+              )}
               {t.intro.map((paragraph, i) => (
                 <p
                   key={i}
