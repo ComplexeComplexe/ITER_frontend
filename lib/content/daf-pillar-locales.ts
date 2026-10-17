@@ -1,3 +1,4 @@
+import { getCompanyGeography } from "@/lib/company-facts";
 import { contractContent } from "./contract-copy";
 import { PEOPLE, resolveCompanyCopy } from "@/lib/company-facts";
 import { CLIENTS_ACCOMPAGNES } from "./facts";
@@ -30,7 +31,7 @@ export const pillarInterface = {
     decision: "Pour décider",
     caption: "Trame illustrative de revue mensuelle, sans données client",
     headers: ["Constat", "Question à examiner", "Action à suivre"],
-    cities: ["Paris", "Barcelone", "Toulouse"],
+    cities: [...getCompanyGeography("fr").cities],
     cityPrefix: "DAF externalisé à",
     linkedIn: "Profil LinkedIn de",
     ai: "Notre approche de l’IA en finance",
@@ -64,7 +65,7 @@ export const pillarInterface = {
     decision: "Decisions it supports",
     caption: "Illustrative monthly review without client data",
     headers: ["Finding", "Question to examine", "Action to follow"],
-    cities: ["Paris", "Barcelona", "Toulouse"],
+    cities: [...getCompanyGeography("en").cities],
     cityPrefix: "Fractional CFO in",
     linkedIn: "LinkedIn profile of",
     ai: "Our approach to AI in finance",
@@ -98,7 +99,7 @@ export const pillarInterface = {
     decision: "Para decidir",
     caption: "Ejemplo de revisión mensual sin datos de clientes",
     headers: ["Observación", "Pregunta a examinar", "Acción a seguir"],
-    cities: ["París", "Barcelona", "Toulouse"],
+    cities: [...getCompanyGeography("es").cities],
     cityPrefix: "CFO externo en",
     linkedIn: "Perfil de LinkedIn de",
     ai: "Nuestro enfoque de IA en finanzas",

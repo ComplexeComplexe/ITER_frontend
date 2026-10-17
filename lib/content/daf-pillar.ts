@@ -1,3 +1,4 @@
+import { getCompanyGeography } from "@/lib/company-facts";
 /** French transactional pillar. Commercial facts stay shared with the pricing page. */
 import { CLIENTS_ACCOMPAGNES, DELAIS, ENGAGEMENT, FORMULES } from "@/lib/content/facts";
 
@@ -23,7 +24,7 @@ export const dafPillar = {
       { label: "Démarrage indicatif", value: DELAIS.missionDemarree },
       { label: "Engagement", value: `Sans durée minimale, préavis de ${ENGAGEMENT.preavisJours} jours` },
     ],
-    proofs: [`${CLIENTS_ACCOMPAGNES} entreprises accompagnées`, "Équipes à Paris et Barcelone"],
+    proofs: [`${CLIENTS_ACCOMPAGNES} entreprises accompagnées`, getCompanyGeography("fr").presence],
     cta: "Échanger sur mon besoin",
   },
   nav: [
@@ -88,7 +89,7 @@ export const dafPillar = {
       { title: "Ajuster le dispositif", text: "Le suivi permet de revoir les hypothèses et les priorités. Une nouvelle entité, une acquisition ou un changement d’outil peut nécessiter un avenant. Les canaux de contact, le traitement des urgences et le relais en cas d’absence sont à préciser au cadrage, selon la disponibilité nécessaire à votre organisation." },
     ],
     note: "Prévoyez un interlocuteur interne, les accès adaptés et du temps pour valider les hypothèses. La charge de préparation dépend de la qualité des données : elle est à estimer ensemble, sans promettre un nombre d’heures identique à toutes les entreprises.",
-    cities: "Nos équipes sont basées à Paris et Barcelone. Le rythme sur site et à distance est convenu au cadrage. À Toulouse, les interventions se font à distance et avec des déplacements selon accord.",
+    cities: getCompanyGeography("fr").summary,
   },
   pricing: {
     heading: "Quel budget prévoir et que couvre le forfait ?",

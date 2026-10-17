@@ -1,10 +1,11 @@
+import { getCompanyGeography } from "@/lib/company-facts";
 import type { Locale } from "@/lib/i18n";
 
 // Short interface copy only: safe to use in the homepage's client component.
 const journeys = {
   fr: {
     title: "Votre direction financière externalisée, du cash au reporting",
-    subtitle: "Un DAF senior à temps partagé pour piloter votre trésorerie, fiabiliser le reporting et préparer vos financements. Pour les PME et startups, avec des équipes à Paris et Barcelone.",
+    subtitle: `Un DAF senior à temps partagé pour piloter votre trésorerie, fiabiliser le reporting et préparer vos financements. ${getCompanyGeography("fr").presence}`,
     contact: "Échanger sur mon besoin finance", offer: "Direction financière externalisée",
     hrLabel: "Offre DRH", hrTitle: "Direction RH à temps partagé", hrText: "Recrutement, organisation, management : un accompagnement RH pour vos équipes.", hrCta: "Découvrir l’offre DRH",
     reviews: " · Avis sur le cabinet", choice: "Choisir un accompagnement",
@@ -28,7 +29,7 @@ const journeys = {
   },
   en: {
     title: "Your Fractional CFO, from cash flow to reporting",
-    subtitle: "A senior part-time CFO to manage your cash flow, improve reporting reliability and prepare financing. For SMEs and startups, with teams in Paris and Barcelona.",
+    subtitle: `A senior part-time CFO to manage your cash flow, improve reporting reliability and prepare financing. ${getCompanyGeography("en").presence}`,
     contact: "Discuss my finance needs", offer: "Fractional CFO services",
     hrLabel: "HR director services", hrTitle: "Part-time HR leadership", hrText: "Recruitment, organisation and management: HR support for your teams.", hrCta: "Explore our HR services",
     reviews: " · Reviews of the firm", choice: "Choose your support",
@@ -52,7 +53,7 @@ const journeys = {
   },
   es: {
     title: "Su CFO externo, de la tesorería al reporting",
-    subtitle: "Un director financiero sénior a tiempo parcial para gestionar su tesorería, mejorar la fiabilidad del reporting y preparar la financiación. Para pymes y startups, con equipos en París y Barcelona.",
+    subtitle: `Un director financiero sénior a tiempo parcial para gestionar su tesorería, mejorar la fiabilidad del reporting y preparar la financiación. ${getCompanyGeography("es").presence}`,
     contact: "Hablar de mis necesidades financieras", offer: "Dirección financiera externa",
     hrLabel: "Servicios de dirección de RR. HH.", hrTitle: "Dirección de RR. HH. a tiempo parcial", hrText: "Selección, organización y gestión: apoyo de recursos humanos para sus equipos.", hrCta: "Descubrir nuestros servicios de RR. HH.",
     reviews: " · Opiniones sobre la firma", choice: "Elegir un acompañamiento",

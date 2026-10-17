@@ -1,3 +1,4 @@
+import { getCompanyGeography } from "@/lib/company-facts";
 import { buildMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -157,7 +158,7 @@ export default async function Page() {
                 • CDI temps plein, rémunération 55-75 k€/an selon profil
               </li>
               <li>
-                • Bureaux centraux à Paris et Barcelone — mode hybride
+                {getCompanyGeography('fr').summary}
               </li>
               <li>
                 • Équipe de 2-4 analystes financiers à manager et accompagner

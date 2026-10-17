@@ -1,3 +1,4 @@
+import { getCompanyGeography } from "@/lib/company-facts";
 import { contractCopy } from "./contract-copy";
 import { decodeHTML } from "entities";
 import english from './editorial-locales/en.json';
@@ -12,7 +13,10 @@ const decode = decodeHTML;
 
 /** Offline, versioned copy only. No browser translation or translation API. */
 export function editorialText(text: string, locale: TargetLocale): string {
-  const translated = dictionaries[locale][normalize(text)];
+  const sourceGeography = getCompanyGeography('fr');
+  const normalized = normalize(text);
+  const geographicKey = normalized === sourceGeography.presence ? 'presence' : normalized === sourceGeography.summary ? 'summary' : undefined;
+  const translated = geographicKey ? getCompanyGeography(locale)[geographicKey] : dictionaries[locale][normalized];
   if (translated === undefined) return text;
   return (text.match(/^\s*/)?.[0] ?? '') + contractCopy(translated, locale) + (text.match(/\s*$/)?.[0] ?? '');
 }

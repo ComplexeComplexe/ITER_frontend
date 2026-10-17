@@ -1,4 +1,5 @@
 import { parityHref } from "./locale-route-map";
+import { getCompanyGeography } from "./company-facts";
 import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 import { Locale } from "./i18n";
 
@@ -13,7 +14,7 @@ export interface NavItem {
 export interface FooterLocation {
   city: string;
   country: string;
-  href: string;
+  href?: string;
 }
 
 export interface FooterContent {
@@ -98,7 +99,7 @@ export const navigation: Record<Locale, NavItem[]> = { fr: navFr, en: localizeNa
 export const footerContent: Record<Locale, FooterContent> = {
   fr: {
     description:
-      "Direction financière et RH à temps partagé pour startups et PME tech. Siège à Barcelone, équipe en France et en Espagne.",
+      `Direction financière et RH à temps partagé pour startups et PME tech. ${getCompanyGeography("fr").presence}`,
     copyright: "Copyright \u00A9 2025-2026 Iter Advisors. Tous droits réservés.",
     trustfolio: `Note de 5/5 sur ${TRUSTFOLIO_REVIEW_COUNT} avis sur notre profil`,
     legalLinks: [
@@ -117,15 +118,16 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Nos clients", href: "/clients" },
       { text: "Carrières", href: "/jobs" },
     ],
-    // Paris is not promoted sitewide while its page states there is no local office.
+    // Presence is confirmed; Paris remains plain text rather than a sitewide link.
     locations: [
-      { city: "Barcelone", country: "Espagne", href: "/daf-externalise-barcelone" },
-      { city: "Toulouse", country: "France", href: "/daf-externalise-toulouse" },
+      { city: getCompanyGeography("fr").cities[0], country: "France" },
+      { city: getCompanyGeography("fr").cities[1], country: "Espagne", href: "/daf-externalise-barcelone" },
+      { city: getCompanyGeography("fr").cities[2], country: "France", href: "/daf-externalise-toulouse" },
     ],
   },
   en: {
     description:
-      "Fractional CFO and HR leadership for tech startups and SMEs. Headquartered in Barcelona, teams across France and Spain.",
+      `Fractional CFO and HR leadership for tech startups and SMEs. ${getCompanyGeography("en").presence}`,
     copyright: "Copyright \u00A9 2025-2026 Iter Advisors. All Rights Reserved.",
     trustfolio: `5/5 rating based on ${TRUSTFOLIO_REVIEW_COUNT} reviews on our profile`,
     legalLinks: [
@@ -142,15 +144,16 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Careers", href: "/en/jobs" },
       { text: "Fractional HR Director", href: "/en/hr-outsourcing/shared-time" },
     ],
-    // Paris is not promoted sitewide while its page states there is no local office.
+    // Presence is confirmed; Paris remains plain text rather than a sitewide link.
     locations: [
-      { city: "Barcelona", country: "Spain", href: "/en/fractional-cfo-barcelona" },
-      { city: "Toulouse", country: "France", href: "/en/fractional-cfo-toulouse" },
+      { city: getCompanyGeography("en").cities[0], country: "France" },
+      { city: getCompanyGeography("en").cities[1], country: "Spain", href: "/en/fractional-cfo-barcelona" },
+      { city: getCompanyGeography("en").cities[2], country: "France", href: "/en/fractional-cfo-toulouse" },
     ],
   },
   es: {
     description:
-      "Dirección financiera y de RR. HH. a tiempo parcial para startups y pymes tech. Sede en Barcelona, equipos en Francia y España.",
+      `Dirección financiera y de RR. HH. a tiempo parcial para startups y pymes tech. ${getCompanyGeography("es").presence}`,
     copyright: "Copyright \u00A9 2025-2026 Iter Advisors. Todos los derechos reservados.",
     trustfolio: `Puntuación de 5/5 basada en ${TRUSTFOLIO_REVIEW_COUNT} opiniones en nuestro perfil`,
     legalLinks: [
@@ -167,10 +170,11 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Empleo", href: "/es/jobs" },
       { text: "RRHH a tiempo compartido", href: "/es/externalizacion-rrhh/tiempo-compartido" },
     ],
-    // Paris is not promoted sitewide while its page states there is no local office.
+    // Presence is confirmed; Paris remains plain text rather than a sitewide link.
     locations: [
-      { city: "Barcelona", country: "España", href: "/es/cfo-externalizado-barcelona" },
-      { city: "Toulouse", country: "Francia", href: "/es/cfo-externalizado-toulouse" },
+      { city: getCompanyGeography("es").cities[0], country: "Francia" },
+      { city: getCompanyGeography("es").cities[1], country: "España", href: "/es/cfo-externalizado-barcelona" },
+      { city: getCompanyGeography("es").cities[2], country: "Francia", href: "/es/cfo-externalizado-toulouse" },
     ],
   },
 };

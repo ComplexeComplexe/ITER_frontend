@@ -1,3 +1,4 @@
+import { getCompanyGeography } from "@/lib/company-facts";
 import { contractContent } from "./contract-copy";
 import { CLIENTS_ACCOMPAGNES, TEAM_LABEL, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 import { getFinanceStackSummary } from "./finance-stack";
@@ -239,7 +240,7 @@ export const dafContent: Record<Locale, DafContent> = {
     // une modalité, avec lien vers sa page propriétaire.
     h1: "DAF externalisé pour PME et startups : votre direction financière externalisée",
     intro: [
-      `Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Notre offre couvre toutes les modalités : directeur financier externalisé en mission longue, direction financière externalisée à l'année, DAF à temps partagé sur 1 à 8 jours par mois, ou CFO externalisé en mission ponctuelle. Mission démarrée sous 8 à 15 jours, sans durée minimale et avec un préavis de 30 jours. ${CLIENTS_ACCOMPAGNES} entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne, avec des équipes à Paris et Barcelone, et une intervention à Toulouse à distance ou sur accord.`,
+      `Iter Advisors est un cabinet de DAF externalisé spécialisé dans l'accompagnement des PME, startups et scale-ups. Notre offre couvre toutes les modalités : directeur financier externalisé en mission longue, direction financière externalisée à l'année, DAF à temps partagé sur 1 à 8 jours par mois, ou CFO externalisé en mission ponctuelle. Mission démarrée sous 8 à 15 jours, sans durée minimale et avec un préavis de 30 jours. ${CLIENTS_ACCOMPAGNES} entreprises accompagnées, 100 M€ levés, note 5/5 sur Trustfolio (${TRUSTFOLIO_REVIEW_COUNT} avis vérifiés) : nous sommes un acteur de référence du DAF externalisé en France et en Espagne, avec une présence à ${getCompanyGeography("fr").cityList}.`,
       "Un DAF externalisé — aussi appelé DAF à temps partagé ou CFO externalisé — est un directeur financier senior qui intervient dans votre entreprise sans en être salarié. Il co-pilote le dirigeant sur les sujets financiers : pilotage, trésorerie, reporting, relations investisseurs. Le format est flexible : temps partagé, mission ponctuelle ou abonnement mensuel. Pour la nuance avec son équivalent anglo-saxon, consultez notre fiche [Le CFO (Chief Financial Officer)](/ressources/glossaire/cfo). Pour la version dédiée aux startups VC-backed, voir notre offre [Fractional CFO pour startups](/fractional-cfo-startups).",
     ],
     // SEO-003 (2026-08-09) — section resserrée. Ses trois paragraphes
@@ -714,7 +715,7 @@ export const dafContent: Record<Locale, DafContent> = {
     partnerSection: {
       heading: "Iter Advisors, your strategic partner",
       content: [
-        "Iter Advisors is a Fractional CFO firm with teams in Barcelona and Paris, serving Toulouse remotely or through agreed visits. We provide our clients with experienced finance directors (10+ years of experience) capable of addressing all the financial challenges of a growing company.",
+        `${getCompanyGeography("en").presence} Our fractional CFOs work with growing businesses on an agreed scope of financial leadership.`,
         "Our approach is built on three fundamental pillars: technical expertise, strategic vision and flexibility. Each engagement is tailored to meet the specific challenges of your business.",
         `With ${CLIENTS_ACCOMPAGNES} companies supported and more than EUR 100 million in fundraising completed by our clients, Iter Advisors has established itself as a leading player in Fractional CFO services in France and Spain.`,
       ],
@@ -1112,7 +1113,7 @@ export const dafContent: Record<Locale, DafContent> = {
           content: [
             "Nuestros **directores financieros** son profesionales senior con más de 10 años de experiencia en dirección financiera de pymes, startups y scale-ups. Cada **director financiero** de Iter Advisors interviene en 3 a 5 empresas en paralelo, lo que le permite aportar una visión multi-sectorial y un retorno de experiencia rico — imposible de obtener con un único CFO interno.",
             "¿Qué perfil de **director financiero** necesita? Para una startup pre-seed, un director financiero operativo enfocado en cash flow y reporting basic. Para una scale-up Series B, un director financiero estratégico capaz de pilotar un fundraising de 10 M€ o un M&A. Para una pyme establecida, un director financiero generalista capaz de gestionar la rentabilidad y la fiscalidad en paralelo.",
-            "En España, nuestros **directores financieros** intervienen tanto en Madrid como en Barcelona, con expertise específica sobre la fiscalidad española (IRPF, IS, ley Beckham) y los marcos contables locales (PGC, Impuesto de Sociedades).",
+            getCompanyGeography("es").summary,
           ],
         },
       ],

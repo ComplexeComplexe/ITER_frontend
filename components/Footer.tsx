@@ -156,15 +156,18 @@ export default function Footer({ locale }: { locale: Locale }) {
               {locale === "fr" ? "Zones d’intervention" : locale === "en" ? "Where we work" : "Dónde intervenimos"}
             </p>
             <div className="space-y-2 sm:space-y-3">
-              {content.locations.map((loc) => (
-                <Link locale={locale} key={loc.city} href={loc.href} className="flex min-h-11 items-start gap-2 group">
+              {content.locations.map((loc) => {
+                const details = <>
                   <MapPin size={12} className="text-iter-chartreuse mt-0.5 shrink-0 sm:w-4 sm:h-4" />
                   <div>
                     <span className="text-white/70 text-sm block group-hover:text-iter-chartreuse transition-colors">{loc.city}</span>{" "}
                     <span className="text-white/70 text-sm">{loc.country}</span>
                   </div>
-                </Link>
-              ))}
+                </>;
+                return loc.href
+                  ? <Link locale={locale} key={loc.city} href={loc.href} className="flex min-h-11 items-start gap-2 group">{details}</Link>
+                  : <div key={loc.city} className="flex min-h-11 items-start gap-2">{details}</div>;
+              })}
             </div>
             <div className="flex items-center gap-3 mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
               <a

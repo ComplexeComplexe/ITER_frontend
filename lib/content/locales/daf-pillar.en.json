@@ -24,7 +24,7 @@
     ],
     "proofs": [
       "{{clients}} companies supported",
-      "Teams in Paris and Barcelona"
+      "{{geographicPresence}}"
     ],
     "cta": "Discuss my needs"
   },
@@ -175,7 +175,7 @@
       }
     ],
     "note": "Plan for an internal contact, appropriate access and time to validate assumptions. Preparation effort depends on data quality and is estimated together; we do not promise the same number of hours for every company.",
-    "cities": "Our teams are based in Paris and Barcelona. On-site and remote working arrangements are agreed during scoping. In Toulouse, support is remote with travel by agreement."
+    "cities": "{{geographicSummary}}"
   },
   "pricing": {
     "heading": "What budget should you plan and what does the fee cover?",

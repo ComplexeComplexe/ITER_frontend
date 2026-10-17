@@ -1,4 +1,5 @@
 "use client";
+import { getCompanyGeography } from "@/lib/company-facts";
 import { CLIENTS_ACCOMPAGNES, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 
 import { useState, type ReactNode } from "react";
@@ -1033,11 +1034,7 @@ export default function DafPage({
                 : "Un CFO externalizado cerca de usted"}
           </h2>
           <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 sm:mb-10 max-w-2xl">
-            {locale === "fr"
-              ? "Nos équipes sont basées à Barcelone et Paris. À Toulouse, nous intervenons à distance et lors de visites convenues au cadrage."
-              : locale === "en"
-                ? "Our teams are based in Barcelona and Paris. We serve Toulouse remotely and through visits agreed when scoping the assignment."
-                : "Nuestros equipos están en Barcelona y París. En Toulouse intervenimos a distancia y mediante visitas acordadas al definir la misión."}
+            {getCompanyGeography(locale).summary}
           </p>
           <div className="grid sm:grid-cols-3 gap-3 sm:gap-4">
             {[

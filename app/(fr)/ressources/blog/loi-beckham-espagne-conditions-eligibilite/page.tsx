@@ -554,7 +554,7 @@ export default async function Page() {
           <li className="flex gap-2">
             <span aria-hidden className="text-iter-violet">→</span>
             <span>
-              Besoin d&apos;un accompagnement fiscal complet à Barcelone ou Madrid ? Découvrez
+              Besoin de coordonner votre direction financière en France et en Espagne ? Découvrez
               notre offre de{' '}
               <Link
                 href="/daf-externalise"
