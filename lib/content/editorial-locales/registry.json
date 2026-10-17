@@ -103,7 +103,7 @@
     },
     "title": "Gonzalo Serratosa de Caralt — DAF externalisé",
     "description": "Gonzalo Serratosa de Caralt est CFO chez Iter Advisors. Il a travaillé en audit chez EY puis comme consultant financier auprès de startups.",
-    "noindex": false,
+    "noindex": true,
     "source": "/a-propos/[slug]",
     "sharedEditorial": false
   },
@@ -127,7 +127,7 @@
     },
     "title": "Hugo Lepresle — DAF externalisé | Iter Advisors",
     "description": "Hugo Lepresle est CFO chez Iter Advisors. Son parcours comprend la direction financière de Pepette et le contrôle de gestion chez Michel et Augustin.",
-    "noindex": false,
+    "noindex": true,
     "source": "/a-propos/[slug]",
     "sharedEditorial": false
   },

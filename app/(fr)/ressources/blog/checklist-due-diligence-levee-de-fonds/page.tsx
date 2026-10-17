@@ -7,12 +7,15 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, StatGrid, InlineCta } from '@/components/blog';
 
 export const metadata: Metadata = {
+  robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
   title: "Due diligence financière : documents à préparer",
   description: "Checklist de due diligence financière pour préparer votre levée : documents comptables, trésorerie, cap table, hypothèses et organisation de la data room.",
   alternates: {...publishedMetadataAlternates("/ressources/blog/checklist-due-diligence-levee-de-fonds"),
     canonical: "https://www.iteradvisors.com/ressources/blog/checklist-due-diligence-levee-de-fonds",
   },
   openGraph: {
+    url: "https://www.iteradvisors.com/ressources/blog/checklist-due-diligence-levee-de-fonds",
+    locale: "fr_FR",
     title: "Checklist due diligence levée de fonds | Iter Advisors",
     description: "Checklist complète pour préparer la due diligence financière de votre levée de fonds.",
     type: "article",

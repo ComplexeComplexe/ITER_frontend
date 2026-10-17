@@ -11,6 +11,7 @@ import { SALARIED_DAF_GUIDE } from '@/lib/content/decision-guide-meta';
 const offer = getDafOffer('fr');
 
 export const metadata: Metadata = {
+  robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
   title: SALARIED_DAF_GUIDE.title,
   description: SALARIED_DAF_GUIDE.description,
   alternates: {...publishedMetadataAlternates("/ressources/blog/daf-externalise-vs-daf-salarie"),
@@ -27,6 +28,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    url: "https://www.iteradvisors.com/ressources/blog/daf-externalise-vs-daf-salarie",
+    locale: "fr_FR",
     title: SALARIED_DAF_GUIDE.title,
     description: SALARIED_DAF_GUIDE.description,
     type: "article",

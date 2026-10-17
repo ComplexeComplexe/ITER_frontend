@@ -8,6 +8,7 @@ import {
   getTeamMemberBySlug,
   authorPageTitle,
   authorPageDescription,
+  THIN_PROFILE_SLUGS,
 } from "@/lib/content/team";
 import { blogPosts } from "@/lib/content/blog-posts";
 
@@ -55,6 +56,9 @@ export async function generateMetadata({
     description: member.metaDescription ?? authorPageDescription(member.bio),
     path: `/a-propos/${slug}`,
     localizedPaths: localizedPathsFor(slug),
+    // HYGIENE-FR (2026-10-17) — deux fiches de moins de 80 mots restent
+    // lisibles mais hors index tant qu'elles ne sont pas enrichies.
+    noindex: THIN_PROFILE_SLUGS.has(slug),
   });
 }
 

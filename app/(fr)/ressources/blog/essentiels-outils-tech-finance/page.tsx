@@ -6,10 +6,12 @@ import { estimateReadMinutes } from "@/lib/blog-read-time";
 
 const PAGE_URL = "https://www.iteradvisors.com/ressources/blog/essentiels-outils-tech-finance";
 export const metadata: Metadata = {
+  robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
   title: FINANCE_STACK_GUIDE.title,
   description: FINANCE_STACK_GUIDE.description,
   alternates: {...publishedMetadataAlternates("/ressources/blog/essentiels-outils-tech-finance"),  canonical: PAGE_URL },
   openGraph: {
+    locale: "fr_FR",
     title: FINANCE_STACK_GUIDE.title,
     description: FINANCE_STACK_GUIDE.description,
     type: "article",

@@ -14,8 +14,8 @@ export function taxComparisonMetadata(locale: TaxLocale): Metadata {
   return {
     title: t.title, description: t.description,
     alternates: publishedMetadataAlternates(TAX_COMPARISON_PATHS[locale]),
-    robots: { index: true, follow: true },
-    openGraph: { title: t.title, description: t.description, type: "article", images: [{ url: "/images/logos/iter-advisors-brand.png", alt: t.title }] },
+    robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    openGraph: { title: t.title, description: t.description, type: "article", url: `https://www.iteradvisors.com${TAX_COMPARISON_PATHS[locale]}`, locale: locale === "fr" ? "fr_FR" : "es_ES", images: [{ url: "/images/logos/iter-advisors-brand.png", alt: t.title }] },
   };
 }
 

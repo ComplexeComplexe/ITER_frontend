@@ -75,9 +75,9 @@ export const clients: Client[] = [
     sector: "ecommerce",
   },
   {
-    name: "Solamente",
+    name: "SolarMente",
     logoSrc: "/images/logos/logo-solamente.webp",
-    sector: "ecommerce",
+    sector: "climatetech",
   },
   {
     name: "Surfe",

@@ -8,6 +8,7 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 
 
 export const metadata: Metadata = {
+  robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
   title: "10 outils CFO en startup : tests | Iter Advisors",
   description: "Dix outils à examiner pour une startup : flux à tester, données à reprendre, responsabilités et devis. Une sélection à adapter, sans stack imposée.",
   // SEO audit 16 mai 2026 — Explicit canonical declared because the
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     canonical: "https://www.iteradvisors.com/ressources/blog/les-10-outils-pour-cfos-startup",
   },
   openGraph: {
+    locale: "fr_FR",
     title: "10 outils CFO en startup : tests | Iter Advisors",
     description: "Dix outils à examiner pour une startup : flux à tester, données à reprendre, responsabilités et devis. Une sélection à adapter, sans stack imposée.",
     type: "article",

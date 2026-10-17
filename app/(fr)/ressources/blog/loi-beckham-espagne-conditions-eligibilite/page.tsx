@@ -13,11 +13,10 @@ export const metadata: Metadata = {
     canonical:
       "https://www.iteradvisors.com/ressources/blog/loi-beckham-espagne-conditions-eligibilite",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+    robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
   openGraph: {
+    url: "https://www.iteradvisors.com/ressources/blog/loi-beckham-espagne-conditions-eligibilite",
+    locale: "fr_FR",
     images: [
       {
         url: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1200&q=80",
