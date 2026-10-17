@@ -15,6 +15,34 @@ export const COMPANY = {
   noticeDays: 30, startDelayDays: '8 à 15', validatedAt: '2026-10-09',
 } as const;
 
+/** Geographic presence confirmed by Guillaume on 17 October 2026.
+ * Presence is distinct from a staffed office or a legal headquarters. */
+export const COMPANY_GEOGRAPHY = {
+  validatedAt: '2026-10-17',
+  cities: {
+    fr: ['Paris', 'Barcelone', 'Toulouse'],
+    en: ['Paris', 'Barcelona', 'Toulouse'],
+    es: ['París', 'Barcelona', 'Toulouse'],
+  },
+  headquarters: 'Barcelona',
+} as const;
+
+export function getCompanyGeography(locale: Locale) {
+  const cities = COMPANY_GEOGRAPHY.cities[locale];
+  const cityList = `${cities[0]}, ${cities[1]} ${locale === 'fr' ? 'et' : locale === 'en' ? 'and' : 'y'} ${cities[2]}`;
+  const presence = {
+    fr: `Iter Advisors est présent à ${cityList}.`,
+    en: `Iter Advisors has a presence in ${cityList}.`,
+    es: `Iter Advisors tiene presencia en ${cityList}.`,
+  }[locale];
+  const details = {
+    fr: 'Barcelone est le siège du cabinet. Les modalités d’intervention sur place ou à distance sont définies au cadrage de chaque mission.',
+    en: 'Barcelona is the firm’s headquarters. On-site and remote arrangements are agreed when defining each engagement.',
+    es: 'Barcelona es la sede del despacho. Las modalidades presenciales y a distancia se acuerdan al definir cada misión.',
+  }[locale];
+  return { cities, cityList, presence, summary: `${presence} ${details}` };
+}
+
 export const PEOPLE = {
   sebastien: { slug: 'sebastien-doat', name: 'Sébastien Doat', roles: { fr: 'Cofondateur, DAF externalisé et CFO', en: 'Co-founder, fractional CFO and CFO', es: 'Cofundador, CFO externo y CFO' }, linkedin: 'https://www.linkedin.com/in/sebastien-doat-fractional-cfo/' },
   benjamin: { slug: 'benjamin-ziza', name: 'Benjamin Ziza', roles: { fr: 'Cofondateur et CFO', en: 'Co-founder and CFO', es: 'Cofundador y CFO' }, linkedin: 'https://www.linkedin.com/in/benjaminziza/' },

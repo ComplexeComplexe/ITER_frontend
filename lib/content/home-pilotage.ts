@@ -1,3 +1,4 @@
+import { getCompanyGeography } from "@/lib/company-facts";
 import type { Locale } from "@/lib/i18n";
 import {
   CLIENTS_ACCOMPAGNES,
@@ -45,11 +46,11 @@ export const HOME_NEED_PATHS = [
 const copy = {
   fr: {
     meta: {
-      title: "Iter Advisors : DAF & DRH à temps partagé | Paris, Barcelone",
+      title: `Iter Advisors : DAF & DRH | ${getCompanyGeography("fr").cities.join(", ")}`,
       description:
-        `Un DAF senior pour piloter vos finances. Équipe finance et RH à Paris et Barcelone, ${CLIENTS_ACCOMPAGNES} entreprises accompagnées. Découvrez nos missions et tarifs.`,
+        `Un DAF senior pour piloter vos finances. Présence à ${getCompanyGeography("fr").cityList}, ${CLIENTS_ACCOMPAGNES} entreprises accompagnées. Découvrez nos missions et tarifs.`,
     },
-    eyebrow: "Cabinet finance & RH · Paris / Barcelone",
+    eyebrow: `Cabinet finance & RH · ${getCompanyGeography("fr").cities.join(" / ")}`,
     headline: ["Iter Advisors, vos ", "DAF seniors", " pour piloter vos finances."],
     subtitle:
       "Trésorerie, budgets, reporting et financements : un directeur financier intégré à votre équipe, quelques jours par mois. Pour les PME et startups en France et en Espagne.",
@@ -156,7 +157,7 @@ const copy = {
         },
         {
           title: "Entre France et Espagne",
-          text: "Des équipes à Paris et Barcelone, qui travaillent avec vos partenaires locaux.",
+          text: getCompanyGeography("fr").presence,
         },
       ],
     },
@@ -213,11 +214,11 @@ const copy = {
   },
   en: {
     meta: {
-      title: "Iter Advisors: Fractional CFO & HR | Paris, Barcelona",
+      title: `Iter Advisors: CFO & HR | ${getCompanyGeography("en").cities.join(", ")}`,
       description:
-        `A senior CFO to lead your finances. Finance and HR teams in Paris and Barcelona, ${CLIENTS_ACCOMPAGNES} businesses supported. Explore our services, people and fees.`,
+        `A senior CFO to lead your finances. Presence in ${getCompanyGeography("en").cityList}, ${CLIENTS_ACCOMPAGNES} businesses supported. Explore our services, people and fees.`,
     },
-    eyebrow: "Finance & HR firm · Paris / Barcelona",
+    eyebrow: `Finance & HR firm · ${getCompanyGeography("en").cities.join(" / ")}`,
     headline: ["Iter Advisors, your ", "senior CFOs", " to manage your finances."],
     subtitle:
       "Cash flow, budgets, reporting and financing: a finance director embedded in your team for a few days a month. For SMEs and startups in France and Spain.",
@@ -324,7 +325,7 @@ const copy = {
         },
         {
           title: "Across France and Spain",
-          text: "Teams in Paris and Barcelona working with your local partners.",
+          text: getCompanyGeography("en").presence,
         },
       ],
     },
@@ -384,11 +385,11 @@ const copy = {
   },
   es: {
     meta: {
-      title: "Iter Advisors: CFO externo y RR. HH. | París, Barcelona",
+      title: `Iter Advisors: CFO y RR. HH. | ${getCompanyGeography("es").cities.join(", ")}`,
       description:
-        `Un CFO sénior para dirigir sus finanzas. Equipos de finanzas y RR. HH. en París y Barcelona, ${CLIENTS_ACCOMPAGNES} empresas acompañadas. Conozca servicios y honorarios.`,
+        `Un CFO sénior para dirigir sus finanzas. Presencia en ${getCompanyGeography("es").cityList}, ${CLIENTS_ACCOMPAGNES} empresas acompañadas. Conozca servicios y honorarios.`,
     },
-    eyebrow: "Consultoría de finanzas y RR. HH. · París / Barcelona",
+    eyebrow: `Finanzas y RR. HH. · ${getCompanyGeography("es").cities.join(" / ")}`,
     headline: ["Iter Advisors, sus ", "CFO sénior", " para dirigir sus finanzas."],
     subtitle:
       "Tesorería, presupuestos, reporting y financiación: un director financiero integrado en su equipo unos días al mes. Para pymes y startups en Francia y España.",
@@ -496,7 +497,7 @@ const copy = {
         },
         {
           title: "Entre Francia y España",
-          text: "Equipos en París y Barcelona que trabajan con sus colaboradores locales.",
+          text: getCompanyGeography("es").presence,
         },
       ],
     },

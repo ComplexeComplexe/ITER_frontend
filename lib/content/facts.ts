@@ -1,4 +1,4 @@
-import { COMPANY } from "@/lib/company-facts";
+import { COMPANY, COMPANY_GEOGRAPHY } from "@/lib/company-facts";
 /**
  * Source de vérité éditoriale — chiffres et promesses publiables d'Iter Advisors.
  *
@@ -56,8 +56,9 @@ export const CABINET_METRICS_VALIDATED_DATE = COMPANY.validatedAt;
 /** Montant levé par les clients accompagnés, formaté. */
 export const FONDS_LEVES = "100 M€";
 
-/** Bureaux. Barcelone est le siège du cabinet, pas une antenne. */
-export const BUREAUX = ["Barcelone", "Paris"] as const;
+/** Three cities of presence; the legal headquarters remains in Barcelona.
+ * This is not a list of staffed offices or postal addresses. */
+export const VILLES_PRESENCE = COMPANY_GEOGRAPHY.cities.fr;
 
 /* ── Tarifs ────────────────────────────────────────────────────────────── */
 

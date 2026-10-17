@@ -1,4 +1,4 @@
-import { COMPANY, PEOPLE, personId } from "@/lib/company-facts";
+import { COMPANY, COMPANY_GEOGRAPHY, PEOPLE, personId } from "@/lib/company-facts";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "@/app/globals.css";
 import { TRACKING_BOOTSTRAP, CONSENT_DISPLAY_BOOTSTRAP } from "@/lib/analytics/consent";
@@ -132,9 +132,7 @@ export default function DocumentShell({
                   areaServed: [
                     { "@type": "Country", name: organizationCopy.france },
                     { "@type": "Country", name: organizationCopy.spain },
-                    { "@type": "City", name: "Paris" },
-                    { "@type": "City", name: "Toulouse" },
-                    { "@type": "City", name: organizationCopy.barcelona },
+                    ...COMPANY_GEOGRAPHY.cities[locale].map(name => ({ "@type": "City", name })),
                   ],
                   contactPoint: {
                     "@type": "ContactPoint",
