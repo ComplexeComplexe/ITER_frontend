@@ -65,8 +65,10 @@ export function approvedPersonTitle(slug: string, locale: Locale): string | unde
 
 /** Profile templates retain their wording but never duplicate approved numbers or titles. */
 export function companyText(text: string, locale: Locale): string {
-  return text.replace(/\{\{(foundingYear|financeTeamSize|clientsCount|teamLabel|role:([a-z-]+))\}\}/g, (_, key: string, slug?: string) => {
+  return text.replace(/\{\{(foundingYear|financeTeamSize|clientsCount|teamLabel|geographicPresence|geographicSummary|role:([a-z-]+))\}\}/g, (_, key: string, slug?: string) => {
     if (slug) return getApprovedPerson(slug)?.roles[locale] ?? '';
+    if (key === 'geographicPresence') return getCompanyGeography(locale).presence;
+    if (key === 'geographicSummary') return getCompanyGeography(locale).summary;
     if (key === 'teamLabel') return COMPANY.teamLabel[locale];
     return String(COMPANY[key as 'foundingYear' | 'financeTeamSize' | 'clientsCount']);
   });

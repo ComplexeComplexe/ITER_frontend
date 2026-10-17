@@ -1,3 +1,4 @@
+import { getCompanyGeography } from "@/lib/company-facts";
 import { buildMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -330,8 +331,7 @@ export default async function Page() {
                 HT par jour selon séniorité)
               </li>
               <li>
-                <strong>Équipes à Barcelone et Paris</strong> ; intervention à Toulouse
-                à distance ou sur accord. Le mode de collaboration est défini selon la mission.
+                {getCompanyGeography('fr').summary}
               </li>
               <li>
                 <strong>Portefeuille de clients déjà constitué</strong> : pas
@@ -417,7 +417,7 @@ export default async function Page() {
                 </strong>
               </li>
               <li>
-                <strong>Équipes</strong> : Barcelone et Paris ; Toulouse à distance ou sur accord
+                {getCompanyGeography('fr').presence}
               </li>
               <li>
                 Recommandé par{" "}

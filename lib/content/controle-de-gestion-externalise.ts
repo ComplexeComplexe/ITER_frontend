@@ -1,3 +1,4 @@
+import { getCompanyGeography } from "@/lib/company-facts";
 /**
  * Content for /services/controle-de-gestion-externalise.
  *
@@ -61,7 +62,7 @@ export const controleDeGestionExternaliseeContent = {
       lede: "Vous ne savez pas si votre startup est rentable ce mois-ci ? Vous prenez des décisions à l'aveugle faute de chiffres fiables ? Un contrôle de gestion externalisé donne aux fondateurs la visibilité financière dont ils ont besoin pour piloter — sans recruter un contrôleur de gestion à plein temps.",
       stats: [
         "Accompagnement startups et PME",
-        "Équipes Paris et Barcelone, intervention à Toulouse",
+        getCompanyGeography("fr").presence,
         "Calendrier défini au cadrage",
       ],
       primaryCta: { label: "Décrire mon besoin de reporting", href: "/contact#reporting" },

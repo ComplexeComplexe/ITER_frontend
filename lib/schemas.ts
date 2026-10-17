@@ -1,3 +1,4 @@
+import { getCompanyGeography } from "@/lib/company-facts";
 import { absoluteSchemaUrl, ORGANIZATION_ID, WEBSITE_ID, schemaLanguage, indicativePriceSpecification } from "@/lib/schemas/identity";
 import { editorialPersonId } from "@/lib/content/finance-expert";
 /**
@@ -200,7 +201,7 @@ export function financialServiceSchema(): Record<string, unknown> {
     vatID: "ESB42960849",
     url: `${BASE}/`,
     description:
-      "Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. Équipes à Barcelone et Paris ; accompagnement à distance ou sur accord à Toulouse.",
+      `Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. ${getCompanyGeography("fr").presence}`,
     email: "contact@iteradvisors.com",
     contactPoint: {
       "@type": "ContactPoint",

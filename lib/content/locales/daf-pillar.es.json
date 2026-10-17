@@ -24,7 +24,7 @@
     ],
     "proofs": [
       "{{clients}} empresas acompañadas",
-      "Equipos en París y Barcelona"
+      "{{geographicPresence}}"
     ],
     "cta": "Hablar de mi necesidad"
   },
@@ -175,7 +175,7 @@
       }
     ],
     "note": "Prevea un interlocutor interno, los accesos adecuados y tiempo para validar las hipótesis. La preparación depende de la calidad de los datos y se estima conjuntamente; no prometemos el mismo número de horas para todas las empresas.",
-    "cities": "Nuestros equipos están en París y Barcelona. El trabajo presencial y a distancia se acuerda al definir la misión. En Toulouse, trabajamos a distancia con desplazamientos según lo acordado."
+    "cities": "{{geographicSummary}}"
   },
   "pricing": {
     "heading": "¿Qué presupuesto prever y qué incluye la cuota?",

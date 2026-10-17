@@ -1,4 +1,4 @@
-import { COMPANY, COMPANY_GEOGRAPHY, PEOPLE, personId } from "@/lib/company-facts";
+import { COMPANY, COMPANY_GEOGRAPHY, getCompanyGeography, PEOPLE, personId } from "@/lib/company-facts";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "@/app/globals.css";
 import { TRACKING_BOOTSTRAP, CONSENT_DISPLAY_BOOTSTRAP } from "@/lib/analytics/consent";
@@ -47,19 +47,19 @@ export default function DocumentShell({
 }: Readonly<{ locale: Locale; children: React.ReactNode }>) {
   const organizationCopy = {
     fr: {
-      description: `Cabinet de DAF et DRH externalisés pour PME, startups et scale-ups. ${COMPANY.teamLabel.fr}, ${COMPANY.clientsCount} entreprises accompagnées. Équipes à Barcelone et Paris ; accompagnement à distance ou sur accord à Toulouse.`,
+      description: `Cabinet de DAF et DRH externalisés pour PME, startups et scale-ups. ${COMPANY.teamLabel.fr}, ${COMPANY.clientsCount} entreprises accompagnées. ${getCompanyGeography("fr").presence}`,
       slogan: "La meilleure version de votre direction financière",
       expertise: ["DAF externalisé", "DRH externalisée", "Contrôle de gestion", "Gestion de trésorerie", "Logiciels de gestion financière", "Pennylane"],
       france: "France", spain: "Espagne", barcelona: "Barcelone",
     },
     en: {
-      description: `Fractional CFO and HR leadership firm for SMEs, startups and scale-ups. ${COMPANY.teamLabel.en}, ${COMPANY.clientsCount} companies supported. Teams in Barcelona and Paris; remote support or an agreed arrangement in Toulouse.`,
+      description: `Fractional CFO and HR leadership firm for SMEs, startups and scale-ups. ${COMPANY.teamLabel.en}, ${COMPANY.clientsCount} companies supported. ${getCompanyGeography("en").presence}`,
       slogan: "A stronger finance function for your business",
       expertise: ["Fractional CFO", "External HR leadership", "Management accounting", "Cash flow management", "Financial management software", "Pennylane"],
       france: "France", spain: "Spain", barcelona: "Barcelona",
     },
     es: {
-      description: `Firma de CFO externo y dirección de RRHH para pymes, startups y scale-ups. ${COMPANY.teamLabel.es}, ${COMPANY.clientsCount} empresas acompañadas. Equipos en Barcelona y París; apoyo a distancia o según acuerdo en Toulouse.`,
+      description: `Firma de CFO externo y dirección de RRHH para pymes, startups y scale-ups. ${COMPANY.teamLabel.es}, ${COMPANY.clientsCount} empresas acompañadas. ${getCompanyGeography("es").presence}`,
       slogan: "Una función financiera más sólida para tu empresa",
       expertise: ["CFO externo", "Dirección de RRHH externa", "Control de gestión", "Gestión de tesorería", "Software de gestión financiera", "Pennylane"],
       france: "Francia", spain: "España", barcelona: "Barcelona",

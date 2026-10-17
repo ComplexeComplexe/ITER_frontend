@@ -5,8 +5,9 @@ import { getHomePilotage } from '@/lib/content/home-pilotage';
 import { getHomeContent } from '@/lib/content/home';
 import { getAboutContent } from '@/lib/content/about';
 import { VILLES_PRESENCE } from '@/lib/content/facts';
-import { pillarInterface } from '@/lib/content/daf-pillar-locales';
+import { getDafPillarContent, pillarInterface } from '@/lib/content/daf-pillar-locales';
 import { footerContent } from '@/lib/navigation';
+import { editorialText } from '@/lib/content/editorial-text';
 
 describe('approved geographic presence', () => {
   it('keeps the same three cities across locales and distinguishes the headquarters', () => {
@@ -26,6 +27,8 @@ describe('approved geographic presence', () => {
       expect(getHomeContent(locale).faqs.some(item => item.a === geography.summary)).toBe(true);
       expect(getAboutContent(locale).whoWeAre.paragraphs).toContain(geography.summary);
       expect(pillarInterface[locale].cities).toEqual(geography.cities);
+      expect(getDafPillarContent(locale).method.cities).toBe(geography.summary);
+      expect(getDafPillarContent(locale).hero.proofs).toContain(geography.presence);
       expect(footerContent[locale].locations.map(place => place.city)).toEqual(geography.cities);
       expect(footerContent[locale].description).toContain(geography.presence);
       for (const city of geography.cities) {
@@ -37,6 +40,10 @@ describe('approved geographic presence', () => {
       expect(geography.summary).not.toMatch(/Lyon|Bordeaux|Madrid/);
       // Keep Paris visible without undoing the approved footer linking policy.
       expect(footerContent[locale].locations[0].href).toBeUndefined();
+      if (locale !== 'fr') {
+        expect(editorialText(getCompanyGeography('fr').presence, locale)).toBe(geography.presence);
+        expect(editorialText(getCompanyGeography('fr').summary, locale)).toBe(geography.summary);
+      }
     });
   }
 });

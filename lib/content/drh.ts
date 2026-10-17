@@ -1,3 +1,4 @@
+import { getCompanyGeography } from "@/lib/company-facts";
 import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 import { Locale } from "../i18n";
 
@@ -335,7 +336,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       {
         question: "Où interviennent vos DRH externalisés ?",
         answer:
-          "Nos équipes sont à Barcelone et Paris. À Toulouse, nous intervenons à distance ou sur accord. Nos DRH interviennent sur site et en distanciel selon vos besoins. Nous avons une expertise particulière sur les sujets transfrontaliers France–Espagne (convention collective, droit local, impatriation).",
+          `${getCompanyGeography("fr").presence} Nos DRH interviennent sur site et en distanciel selon vos besoins. Nous avons une expertise particulière sur les sujets transfrontaliers France–Espagne (convention collective, droit local, impatriation).`,
       },
     ],
     ctaButton: "Prendre rendez-vous",
@@ -501,7 +502,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       {
         question: "Where do your outsourced HR directors work?",
         answer:
-          "Our teams are based in Barcelona and Paris. We serve Toulouse remotely or through agreed visits. Our HR directors work on-site and remotely depending on your needs. We have particular expertise in cross-border France–Spain matters (collective agreement, local law, inpatriation).",
+          `${getCompanyGeography("en").presence} Our HR directors work on-site and remotely depending on your needs. We have particular expertise in cross-border France–Spain matters (collective agreement, local law, inpatriation).`,
       },
     ],
     ctaButton: "Make an appointment",
@@ -665,7 +666,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       {
         question: "¿Dónde intervienen sus directores de RRHH externalizados?",
         answer:
-          "Nuestros equipos están en Barcelona y París. En Toulouse intervenimos en remoto o mediante visitas acordadas. Nuestros directores de RRHH intervienen in situ y en remoto según sus necesidades. Tenemos una experiencia particular en temas transfronterizos Francia–España (convenio colectivo, derecho local, impatriación).",
+          `${getCompanyGeography("es").presence} Nuestros directores de RRHH intervienen in situ y en remoto según sus necesidades. Tenemos una experiencia particular en temas transfronterizos Francia–España (convenio colectivo, derecho local, impatriación).`,
       },
     ],
     ctaButton: "Concertar una cita",
