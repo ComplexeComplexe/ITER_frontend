@@ -454,7 +454,136 @@
       "transition",
       "controle",
       "organisation"
-    ]
+    ],
+    "extraSections": {
+      "afterNeed": [
+        {
+          "id": "missions",
+          "title": "What a part-time CFO does",
+          "paragraphs": [
+            "The scope is chosen from these responsibilities during scoping, then adjusted as your priorities change."
+          ],
+          "items": [
+            [
+              "Financial management and dashboards",
+              "Monthly reporting on results, margins, cash and the indicators that matter to your business, with variance analysis against budget."
+            ],
+            [
+              "Cash",
+              "A 13-week cash forecast, monitoring of receipts and payment deadlines, and preparation of spending decisions."
+            ],
+            [
+              "Budget and forecasts",
+              "The budgeting process, revenue, cost and hiring scenarios, and a 3-to-5-year business plan when the situation calls for it."
+            ],
+            [
+              "Organizing the finance function",
+              "Closing calendar with the accounting firm, tools, controls and approval workflows. The CFO structures this work; they do not keep the books."
+            ],
+            [
+              "Funding and banking relationships",
+              "Bank files, non-dilutive debt, fundraising preparation and investor reporting."
+            ],
+            [
+              "Governance and transactions",
+              "Preparing committees and board meetings; for more advanced companies, M&A and due diligence."
+            ]
+          ]
+        },
+        {
+          "id": "fractional-cfo",
+          "title": "Part-time CFO or fractional CFO: the same role?",
+          "paragraphs": [
+            "Yes. “Part-time CFO” and “fractional CFO” describe the same role; French SMEs usually say “DAF à temps partagé”. All three refer to a senior finance director who supports several companies, each on a recurring basis.",
+            "The engagement is the same: structure the finance function, manage cash and prepare decisions. An interim CFO, by contrast, covers a temporary replacement or transformation mandate."
+          ],
+          "links": [
+            [
+              "The CFO role in our glossary",
+              "/ressources/glossaire/cfo"
+            ],
+            [
+              "Fractional CFO for startups",
+              "/fractional-cfo-startups"
+            ]
+          ]
+        }
+      ],
+      "beforeBudget": [
+        {
+          "id": "limites",
+          "title": "What a part-time CFO does not do",
+          "items": [
+            [
+              "They do not replace your accounting firm.",
+              "The firm prepares the accounts and filings under its engagement letter. The CFO organizes financial management, uses this information and coordinates the calendar; they do not post entries."
+            ],
+            [
+              "They are not on site continuously.",
+              "Work is scheduled and availability is agreed during scoping. A need for daily presence calls for a hire or an interim engagement."
+            ],
+            [
+              "They do not run day-to-day operations.",
+              "Customer follow-ups, invoice entry and payroll stay with your teams or providers. The CFO structures and controls them."
+            ]
+          ],
+          "links": [
+            [
+              "Outsourced accounting",
+              "/services/comptabilite-externalisation"
+            ],
+            [
+              "Interim CFO",
+              "/daf-externalise/transition"
+            ]
+          ]
+        },
+        {
+          "id": "cout",
+          "title": "How much does a part-time CFO cost in 2026?",
+          "paragraphs": [
+            "At Iter, recurring engagements range from €3,000 to €8,000 excluding VAT per month, depending on scope and the profile assigned. Day volumes are observed averages, not packages: the proposal covers a scope of work."
+          ],
+          "table": {
+            "caption": "Iter 2026 pricing: monthly budget excl. VAT and average observed volume",
+            "headers": [
+              "Plan",
+              "Monthly budget excl. VAT",
+              "Average observed volume",
+              "Scope"
+            ],
+            "rows": [
+              [
+                "Essential",
+                "€3,000 to €5,000",
+                "1 to 2 days per month",
+                "Monthly P&L, cash and KPI reporting, 13-week cash forecast, monthly finance review with the business leader, ad hoc support."
+              ],
+              [
+                "Growth",
+                "€5,000 to €6,500",
+                "3 to 5 days per month",
+                "Essential scope, plus a 3-to-5-year business plan, fundraising, non-dilutive debt, post-raise structuring and investor reporting."
+              ],
+              [
+                "Premium",
+                "€6,500 to €8,000",
+                "5 to 8 days per month",
+                "Growth scope, plus M&A and due diligence, board and governance, international expansion, finance data and BI."
+              ]
+            ]
+          }
+        },
+        {
+          "id": "demarrage",
+          "title": "Start times and commitment",
+          "paragraphs": [
+            "Your request is qualified within 2 working days, a profile is presented within 5 working days and the engagement starts 8 to 15 days after the first conversation. The first deliverables arrive in the first month of work.",
+            "No minimum term; cancellable with 30 days’ notice."
+          ]
+        }
+      ]
+    }
   },
   "transition": {
     "path": "/daf-externalise/transition",

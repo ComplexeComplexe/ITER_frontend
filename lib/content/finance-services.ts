@@ -1,6 +1,7 @@
 import { PRIORITY_FINANCE_SERVICES } from "./priority-finance-services";
 import type { EditorialAuthor } from "../schemas/editorial";
 import { FORMULES, MISSIONS_PONCTUELLES, VOLUME_DAF_JOURS_MOIS, ENGAGEMENT, DELAIS } from "./facts";
+import { COMPANY } from "@/lib/company-facts";
 
 const euros = (amount: number) => new Intl.NumberFormat("fr-FR").format(amount);
 const recurringRange = `${euros(Math.min(...FORMULES.map(item => item.prixMin)))} à ${euros(Math.max(...FORMULES.map(item => item.prixMax)))}`;
@@ -18,6 +19,17 @@ export interface FinanceService {
   headings?: { need: string; deliverables: string; method: string };
   calendar?: { heading?: string; caption: string; headers: [string, string, string]; rows: [string, string, string][]; note: string };
   budgetResource?: { href: string; label: string };
+  /** Sections propres à une page, rendues après « besoin » et avant « tarifs ». */
+  extraSections?: { afterNeed?: FinanceExtraSection[]; beforeBudget?: FinanceExtraSection[] };
+}
+
+export interface FinanceExtraSection {
+  id: string;
+  title: string;
+  paragraphs?: string[];
+  items?: [string, string][];
+  table?: { caption: string; headers: string[]; rows: string[][] };
+  links?: [string, string][];
 }
 
 export const FINANCE_REVIEW_DATE = "2026-09-30";
@@ -26,9 +38,68 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
   "temps-partage": {
     "path": "/daf-externalise/temps-partage",
     "label": "DAF à temps partagé",
-    "title": "DAF à temps partagé pour PME | Iter Advisors",
-    "description": `DAF à temps partagé pour PME : suivi récurrent, livrables et budget. Chez Iter, ${volume} jours par mois sont un volume observé, pas un forfait.`,
-    "headline": "DAF à temps partagé",
+    // Audit GSC 2026-10-17 — la refonte #153 (30 sept.) avait réduit la page de
+    // 2 112 à 1 198 mots ; toutes ses requêtes ont perdu 20 à 40 places la
+    // semaine du 5 oct. On rétablit title, H1 et sections, faits de facts.ts.
+    "title": "DAF à temps partagé : missions et tarifs 2026",
+    "description": `DAF à temps partagé pour PME : missions, livrables et budget de ${recurringRange} € HT/mois. Volume observé de ${volume} jours par mois, sans forfait.`,
+    "headline": "DAF à temps partagé : un directeur financier dédié à votre PME",
+    extraSections: {
+      afterNeed: [
+        {
+          id: "missions",
+          title: "Les missions d’un DAF à temps partagé",
+          paragraphs: ["Le périmètre est choisi au cadrage parmi ces missions, puis ajusté lorsque vos priorités évoluent."],
+          items: [
+            ["Pilotage et tableaux de bord", "Reporting mensuel du résultat, des marges, de la trésorerie et des indicateurs propres à votre activité, avec l’analyse des écarts au budget."],
+            ["Trésorerie", "Prévisionnel de trésorerie à 13 semaines, suivi des encaissements et des échéances, préparation des arbitrages de dépenses."],
+            ["Budget et prévisions", "Processus budgétaire, scénarios de revenus, de charges et de recrutements, business plan à 3 à 5 ans lorsque la situation le demande."],
+            ["Organisation de la fonction finance", "Calendrier de clôture avec le cabinet comptable, outils, contrôles et circuits de validation. Le DAF structure ces travaux ; il ne tient pas la comptabilité."],
+            ["Financement et relations bancaires", "Dossiers bancaires, dette non dilutive, préparation d’une levée de fonds et reporting investisseurs."],
+            ["Gouvernance et opérations", "Préparation des comités et des conseils ; pour les structures plus avancées, M&A et due diligence."],
+          ],
+        },
+        {
+          id: "fractional-cfo",
+          title: "DAF à temps partagé ou fractional CFO : même métier ?",
+          paragraphs: [
+            "Oui. « DAF à temps partagé » est le terme employé dans les PME françaises ; « fractional CFO » ou « part-time CFO » est son équivalent dans les startups et les équipes internationales. Les deux désignent un directeur financier senior qui suit plusieurs entreprises, chacune de façon récurrente.",
+            "La mission est la même : structurer la fonction finance, piloter la trésorerie et préparer les décisions. Le DAF de transition répond, lui, à un mandat temporaire de remplacement ou de transformation.",
+          ],
+          links: [["Le CFO expliqué dans le glossaire", "/ressources/glossaire/cfo"], ["Fractional CFO pour startups", "/fractional-cfo-startups"]],
+        },
+      ],
+      beforeBudget: [
+        {
+          id: "limites",
+          title: "Ce qu’un DAF à temps partagé ne fait pas",
+          items: [
+            ["Il ne remplace pas votre cabinet comptable.", "Le cabinet produit les comptes et les déclarations selon sa lettre de mission. Le DAF organise le pilotage, utilise ces informations et coordonne le calendrier ; il ne saisit pas les écritures."],
+            ["Il n’est pas présent en continu.", "Les interventions sont planifiées et la disponibilité est convenue au cadrage. Un besoin de présence quotidienne relève d’un recrutement ou d’une mission de transition."],
+            ["Il n’exécute pas l’opérationnel du quotidien.", "Relances clients, saisie des factures et paie restent portées par vos équipes ou vos prestataires. Le DAF les structure et les contrôle."],
+          ],
+          links: [["Externalisation comptable", "/services/comptabilite-externalisation"], ["DAF de transition", "/daf-externalise/transition"]],
+        },
+        {
+          id: "cout",
+          title: "Combien coûte un DAF à temps partagé en 2026 ?",
+          paragraphs: [`Chez Iter, les missions récurrentes se situent entre ${recurringRange} € HT par mois, selon le périmètre et le profil mobilisé. Les volumes de jours sont des moyennes observées, pas des forfaits : le devis porte sur un périmètre de travail.`],
+          table: {
+            caption: "Grille Iter 2026 : budget mensuel HT et volume moyen observé",
+            headers: ["Formule", "Budget mensuel HT", "Volume moyen observé", "Périmètre"],
+            rows: FORMULES.map(item => [item.nom, `${euros(item.prixMin)} à ${euros(item.prixMax)} €`, item.volumeIndicatif, item.inclus]),
+          },
+        },
+        {
+          id: "demarrage",
+          title: "Délais de démarrage et engagement",
+          paragraphs: [
+            `Votre besoin est qualifié sous ${DELAIS.qualification}, un profil vous est présenté sous ${DELAIS.profilPresente} et la mission démarre ${COMPANY.startDelayDays} jours après le premier échange. Les premiers livrables arrivent ${DELAIS.premiersLivrables}.`,
+            ENGAGEMENT.formulation,
+          ],
+        },
+      ],
+    },
     headings: { need: "Quand choisir un DAF à temps partagé ?", deliverables: "DAF part time : les livrables pour piloter", method: "Comment intervient un directeur financier à temps partagé ?" },
     "promise": "Un DAF à temps partagé (ou DAF part-time) est un directeur financier qui suit une PME de façon récurrente, sans poste à temps plein.",
     "intro": `Chez Iter, ${volume} jours par mois sont un volume indicatif observé, pas un engagement de présence ni un forfait de jours. Le périmètre et la disponibilité sont convenus au devis. Le temps partagé répond à un besoin récurrent ; la transition à un mandat temporaire.`,

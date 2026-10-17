@@ -3,7 +3,7 @@ import PublishedLocaleLink from "@/components/PublishedLocaleLink";
 import PageLayout from "@/components/PageLayout";
 import ServiceHero from "@/components/design/ServiceHero";
 import PageByline from "@/components/PageByline";
-import { FINANCE_REVIEW_DATE, type FinanceService } from "@/lib/content/finance-services";
+import { FINANCE_REVIEW_DATE, type FinanceService, type FinanceExtraSection } from "@/lib/content/finance-services";
 import type { Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
 import { getFinanceServices, financeInterface } from "@/lib/content/finance-service-locales";
@@ -30,6 +30,20 @@ const anchors: Record<string, Record<string, string[]>> = {
   "/services/gestion-financiere-externalisee": { besoin: ["mission"] },
   "/services/accompagnement-levee-de-fond": { besoin: ["mission"] },
 };
+
+function ExtraSection({ section, locale }: { section: FinanceExtraSection; locale: Locale }) {
+  const copy = "text-base text-muted-foreground leading-relaxed";
+  return <ServiceSection id={section.id} title={section.title}>
+    {section.paragraphs?.map(text => <p key={text} className={copy}>{text}</p>)}
+    {section.items && <dl className="space-y-5">{section.items.map(([term, detail]) => <div key={term}>
+      <dt className="font-semibold text-foreground">{term}</dt><dd className={`${copy} mt-1`}>{detail}</dd>
+    </div>)}</dl>}
+    {section.table && <ServiceTable caption={section.table.caption} headers={section.table.headers} rows={section.table.rows} />}
+    {section.links && <ul className="flex flex-wrap gap-x-5 gap-y-3">{section.links.map(([label, linkPath]) => <li key={linkPath}>
+      <PublishedLocaleLink locale={locale} href={parityHref(linkPath, locale)} className="text-iter-violet underline underline-offset-4 font-medium">{label}</PublishedLocaleLink>
+    </li>)}</ul>}
+  </ServiceSection>;
+}
 
 function Aliases({ service, section }: { service: FinanceService; section: string }) {
   return (anchors[service.path]?.[section] ?? []).map(id => <span key={id} id={id} className={styles.anchor} aria-hidden="true" />);
@@ -71,6 +85,7 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
         <p className={copy}>{service.definition}</p>
         <ul className="space-y-3 list-disc pl-5 text-muted-foreground leading-relaxed">{service.signals.map(item => <li key={item}>{item}</li>)}</ul>
       </ServiceSection>
+      {service.extraSections?.afterNeed?.map(section => <ExtraSection key={section.id} section={section} locale={locale} />)}
       <ServiceSection id="livrables" title={service.headings?.deliverables ?? ui.inHand}>
         <Aliases service={service} section="livrables" />
         <p className={copy}>{ui.chosen}</p>
@@ -107,6 +122,7 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
         {service.scope.map(text => <p key={text} className={copy}>{text}</p>)}
         <PublishedLocaleLink locale={locale} href={href("/daf-externalise")} className={link}>{service.context === "organisation" ? ui.overall : ui.position}</PublishedLocaleLink>
       </ServiceSection>
+      {service.extraSections?.beforeBudget?.map(section => <ExtraSection key={section.id} section={section} locale={locale} />)}
       <ServiceSection id="tarifs" title={ui.quote}>
         <Aliases service={service} section="tarifs" /><p className={copy}>{service.budget}</p>
         <PublishedLocaleLink locale={locale} href={href(service.budgetResource?.href ?? "/daf-externalise/tarifs")} className={link}>{service.budgetResource?.label ?? ui.prices}</PublishedLocaleLink>
