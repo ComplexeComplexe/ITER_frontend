@@ -6,7 +6,7 @@
     "description": "Un CFO externo a tiempo parcial, o fractional CFO, apoya a una startup en tesorería, runway y reporting a inversores. Alcance y presupuesto acordados.",
     "headline": "CFO externo para startups y SaaS",
     "promise": "Un CFO externo a tiempo parcial, o fractional CFO, es un director financiero que acompaña a una startup sin ocupar un puesto a jornada completa.",
-    "intro": "Su startup debe decidir cuándo contratar, cuánto invertir y cómo financiar los próximos meses. El CFO externo construye con sus equipos una visión coherente de caja, ingresos y presupuesto. Prepara decisiones del dirigente e intercambios con inversores.",
+    "intro": "Su startup debe decidir cuándo contratar, cuánto invertir y cómo financiar los próximos meses. El CFO externo construye con sus equipos una visión coherente de caja, ingresos y presupuesto. Prepara decisiones del directivo e intercambios con inversores.",
     "context": "daf",
     "category": "Finanzas para startups y SaaS",
     "summary": [
@@ -30,7 +30,7 @@
     },
     "signals": [
       "Antes de una ronda: las hipótesis comerciales, el presupuesto de contratación y la necesidad de financiación no están conciliados.",
-      "Después de una ronda: el dirigente debe traducir el plan en gastos, hitos y reporting al consejo.",
+      "Después de una ronda: el directivo debe traducir el plan en gastos, hitos y reporting al consejo.",
       "Para un SaaS: ingresos recurrentes, churn, cobros y margen se siguen en herramientas distintas con definiciones a veces incompatibles.",
       "En un crecimiento con varias entidades: el equipo debe explicar desviaciones entre países, actividades o canales antes de decidir dónde invertir."
     ],
@@ -53,7 +53,7 @@
       ]
     ],
     "exampleTitle": "Una decisión de contratación sin resultados inventados",
-    "example": "Antes de abrir dos puestos, el dirigente puede comparar una incorporación inmediata, un retraso y un escenario de ventas prudente. Cada opción incluye costes completos facilitados por el equipo, fechas de incorporación y cobros esperados. El CFO explica el efecto en caja y las hipótesis; el dirigente aprueba el compromiso. Es un ejemplo de trabajo, no un resultado de cliente ni una recomendación de financiación.",
+    "example": "Antes de abrir dos puestos, el directivo puede comparar una incorporación inmediata, un retraso y un escenario de ventas prudente. Cada opción incluye costes completos facilitados por el equipo, fechas de incorporación y cobros esperados. El CFO explica el efecto en caja y las hipótesis; el directivo aprueba el compromiso. Es un ejemplo de trabajo, no un resultado de cliente ni una recomendación de financiación.",
     "calendar": {
       "heading": "Indicadores vinculados a su actividad",
       "caption": "Ejemplos de datos SaaS que conciliar",
@@ -102,13 +102,13 @@
     ],
     "scopeTitle": "Un CFO con sus equipos, sin prometer una ronda",
     "scope": [
-      "El dirigente fija prioridades y decide. El CFO prepara el modelo, cuestiona hipótesis y organiza el seguimiento. La asesoría conserva la responsabilidad de su contrato; los equipos comerciales y operativos explican los datos.",
-      "Preparar una ronda puede incluir modelo, data room y preguntas de due diligence. Participan dirigentes, inversores y asesores. No se garantizan una ronda, su valoración ni acceso privilegiado a fondos.",
+      "El directivo fija prioridades y decide. El CFO prepara el modelo, cuestiona hipótesis y organiza el seguimiento. La asesoría conserva la responsabilidad de su contrato; los equipos comerciales y operativos explican los datos.",
+      "Preparar una ronda puede incluir modelo, data room y preguntas de due diligence. Participan directivos, inversores y asesores. No se garantizan una ronda, su valoración ni acceso privilegiado a fondos.",
       "Si se incorpora un CFO interno, el traspaso abarca fuentes, hipótesis, accesos autorizados y calendario. La dirección financiera no otorga automáticamente facultad de firma ni poderes bancarios."
     ],
     "budget": "El acompañamiento recurrente de Iter va de 3.000 a 8.000 € sin IVA al mes. La propuesta depende de entidades, datos, reporting y perfil. Los proyectos excepcionales, desplazamientos y trabajos de otros asesores se distinguen. Comparar con una contratación requiere considerar disponibilidad y responsabilidades: son servicios distintos.",
     "case": "solarmente-serie-b-cleantech",
-    "proofNote": "Este caso cleantech abarca 2022 a 2024 e ilustra preparación financiera de operaciones. No es un caso SaaS ni una previsión de resultados; contribuyeron dirigentes, inversores y asesores.",
+    "proofNote": "Este caso cleantech abarca 2022 a 2024 e ilustra preparación financiera de operaciones. No es un caso SaaS ni una previsión de resultados; contribuyeron directivos, inversores y asesores.",
     "faq": [
       [
         "¿Qué es un fractional CFO?",
@@ -202,7 +202,7 @@
       "method": "Acordar el ritmo y los interlocutores"
     },
     "signals": [
-      "El dirigente prepara solo las cifras para dirección o un encuentro bancario.",
+      "El directivo prepara solo las cifras para dirección o un encuentro bancario.",
       "El equipo y la asesoría tienen datos, pero cuesta conciliar presupuesto y previsiones.",
       "Una contratación, una nueva implantación o varias entidades exigen comparar escenarios antes de gastar."
     ],
@@ -329,7 +329,7 @@
       ]
     ],
     "signals": [
-      "El dirigente reúne las cifras antes de cada decisión.",
+      "El directivo reúne las cifras antes de cada decisión.",
       "La contabilidad está disponible, pero las previsiones y el reporting siguen siendo irregulares.",
       "El crecimiento, los inversores o varias entidades hacen más compleja la gestión."
     ],
@@ -400,8 +400,8 @@
     ],
     "scopeTitle": "Una función de dirección coordinada con su equipo",
     "scope": [
-      "El CFO trabaja con el dirigente, los responsables operativos y la asesoría contable. Organiza la gestión; las tareas diarias y las decisiones tienen responsables explícitos. Una necesidad de presencia permanente requiere otra organización.",
-      "El dirigente fija las prioridades y aprueba los compromisos. El CFO construye escenarios y analiza desviaciones. La asesoría prepara las cuentas según su contrato; los responsables operativos explican pedidos, existencias y vencimientos. La facultad de firma o el acceso bancario no se derivan automáticamente de la misión.",
+      "El CFO trabaja con el directivo, los responsables operativos y la asesoría contable. Organiza la gestión; las tareas diarias y las decisiones tienen responsables explícitos. Una necesidad de presencia permanente requiere otra organización.",
+      "El directivo fija las prioridades y aprueba los compromisos. El CFO construye escenarios y analiza desviaciones. La asesoría prepara las cuentas según su contrato; los responsables operativos explican pedidos, existencias y vencimientos. La facultad de firma o el acceso bancario no se derivan automáticamente de la misión.",
       "Una ronda, una adquisición o una transformación importante pueden requerir trabajo adicional. El contrato precisa los trabajos incluidos, la cobertura de ausencias y el tratamiento de urgencias."
     ],
     "budget": "Las misiones recurrentes de Iter van de 3.000 a 8.000 € sin IVA al mes. Los 1 a 8 días mensuales observados son orientativos, no un paquete contractual: la propuesta define el alcance y el perfil asignado. La tabla detallada permite situar su necesidad.",
@@ -557,7 +557,7 @@
                 "Esencial",
                 "3.000 a 5.000 €",
                 "1 a 2 días al mes",
-                "Reporting mensual de P&L, tesorería y KPI, previsión de tesorería a 13 semanas, revisión financiera mensual con el dirigente, soporte puntual."
+                "Reporting mensual de P&L, tesorería y KPI, previsión de tesorería a 13 semanas, revisión financiera mensual con el directivo, soporte puntual."
               ],
               [
                 "Crecimiento",
@@ -705,7 +705,7 @@
       ],
       [
         "¿Cómo preparan el traspaso?",
-        "La misión precisa los documentos, accesos, procedimientos, hipótesis y asuntos pendientes que deben transmitirse. El calendario se acuerda con el dirigente y el sucesor."
+        "La misión precisa los documentos, accesos, procedimientos, hipótesis y asuntos pendientes que deben transmitirse. El calendario se acuerda con el directivo y el sucesor."
       ],
       [
         "¿Qué debemos preparar para contactarles?",
@@ -874,7 +874,7 @@
       ]
     ],
     "signals": [
-      "Los documentos que faltan bloquean el cierre y requieren tiempo del dirigente.",
+      "Los documentos que faltan bloquean el cierre y requieren tiempo del directivo.",
       "No sabe quién comprueba los datos ni quién valida los vencimientos.",
       "Sus herramientas contables y su reporting utilizan información distinta."
     ],
@@ -1198,7 +1198,7 @@
     "description": "Prepare las finanzas de su ronda: modelo financiero, data room y respuestas a inversores. Entregables y calendario definidos según su proyecto.",
     "headline": "Preparación financiera de rondas",
     "promise": "Hipótesis explicadas. Un expediente financiero coherente.",
-    "intro": "El CFO traduce su proyecto en escenarios financieros y organiza los datos que esperan los inversores. El dirigente presenta el proyecto; buscar inversores es un mandato distinto.",
+    "intro": "El CFO traduce su proyecto en escenarios financieros y organiza los datos que esperan los inversores. El directivo presenta el proyecto; buscar inversores es un mandato distinto.",
     "context": "levee",
     "category": "Preparar una operación",
     "summary": [
@@ -1239,7 +1239,7 @@
       ]
     ],
     "exampleTitle": "Hacer que una hipótesis pueda discutirse",
-    "example": "Acelerar las ventas implica gastos y contrataciones. El modelo relaciona estas decisiones con la caja y prueba retrasos de ingresos o financiación para que el dirigente compare opciones.",
+    "example": "Acelerar las ventas implica gastos y contrataciones. El modelo relaciona estas decisiones con la caja y prueba retrasos de ingresos o financiación para que el directivo compare opciones.",
     "steps": [
       [
         "Definir la preparación",
@@ -1254,9 +1254,9 @@
         "Preparar respuestas y actualizar escenarios; organizar el reporting posterior si está previsto."
       ]
     ],
-    "scopeTitle": "CFO, dirigente y asesor de financiación: funciones complementarias",
+    "scopeTitle": "CFO, directivo y asesor de financiación: funciones complementarias",
     "scope": [
-      "El dirigente presenta el proyecto y decide las condiciones aceptables. El CFO prepara y explica las cifras. Un asesor contratado puede buscar y contactar a inversores conforme a su mandato.",
+      "El directivo presenta el proyecto y decide las condiciones aceptables. El CFO prepara y explica las cifras. Un asesor contratado puede buscar y contactar a inversores conforme a su mandato.",
       "Las posibles presentaciones, los intercambios y las responsabilidades se acuerdan al definir el alcance. Los aspectos jurídicos y fiscales se revisan con asesores competentes en sus propias misiones."
     ],
     "budget": "La propuesta depende de la madurez del modelo, los datos, las entidades y los intercambios previstos. Precisa entregables y calendario de trabajo. El plazo de financiación también depende de inversores y negociaciones.",
@@ -1264,7 +1264,7 @@
     "faq": [
       [
         "¿Actúan como asesores de captación de fondos?",
-        "El servicio descrito abarca la preparación y el seguimiento financieros. La búsqueda de inversores corresponde al dirigente o a un asesor contratado. Las posibles presentaciones se acuerdan al definir el alcance."
+        "El servicio descrito abarca la preparación y el seguimiento financieros. La búsqueda de inversores corresponde al directivo o a un asesor contratado. Las posibles presentaciones se acuerdan al definir el alcance."
       ],
       [
         "¿Qué preparar para la primera conversación?",
@@ -1310,7 +1310,7 @@
     "description": "Prepare una adquisición, venta o ronda: resultados, deuda, capital circulante y escenarios. Análisis, entregables y honorarios definidos en la propuesta.",
     "headline": "M&A y due diligence financiera",
     "promise": "Analizar una operación con datos examinados.",
-    "intro": "Comprador, dirigente o vendedor: le ayudamos a organizar y analizar información financiera útil para su operación. El mandato distingue preparación del expediente, revisión financiera y trabajos de otros asesores.",
+    "intro": "Comprador, directivo o vendedor: le ayudamos a organizar y analizar información financiera útil para su operación. El mandato distingue preparación del expediente, revisión financiera y trabajos de otros asesores.",
     "context": "due-diligence",
     "category": "Preparar una operación",
     "summary": [

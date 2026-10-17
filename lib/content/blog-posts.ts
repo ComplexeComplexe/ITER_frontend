@@ -1780,7 +1780,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 </tbody>
 </table>
 <h2 id="vs-salary">Fractional vs full-time CFO</h2>
-<p>A salaried CFO in France costs €100,000-€213,000/year all-in (gross salary 80–150k + 25-42% employer charges + bonus + benefits). A Fractional CFO costs €24,000-€96,000/year — <strong>50-70% less</strong>, with no recruitment risk, no notice period, and the freedom to flex hours up or down with growth phases.</p>
+<p>A salaried CFO in France costs €100,000-€213,000/year all-in (gross salary 80–150k + 25-42% employer contributions + bonus + benefits). A Fractional CFO costs €24,000-€96,000/year — <strong>50-70% less</strong>, with no recruitment risk, no notice period, and the freedom to flex hours up or down with growth phases.</p>
 <p>Read more on the head-to-head: <a href="/en/ressources/blog/daf-externalise-vs-daf-salarie">Fractional CFO vs in-house CFO</a>.</p>
 <h2 id="roi">ROI: the part nobody talks about</h2>
 <p>The salary saving is only half the story. The real ROI lives in three areas:</p>
@@ -2187,7 +2187,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <p>Para ver misiones documentadas, consulte nuestros <a href="/ressources/cas-clients">casos de clientes (en francés)</a>: contexto, trabajo realizado y entregables. Los resultados dependen de cada empresa.</p>
 <h2 id="faq">FAQ</h2>
 <p><strong>¿Cuánto cuesta un fractional CFO ?</strong> Las fórmulas de Iter Advisors van de ${getDafOffer("es").price}. ${getDafOffer("es").billing}</p>
-<p><strong>¿Qué diferencia hay entre fractional CFO y part-time CFO ?</strong> Son sinónimos. « Fractional » es el término anglosajón estándar; en España también se utiliza « CFO a tiempo compartido ».</p>
+<p><strong>¿Qué diferencia hay entre fractional CFO y part-time CFO ?</strong> Son sinónimos. «Fractional» es el término anglosajón estándar; en España también se utiliza «CFO a tiempo compartido».</p>
 <p><strong>¿Un fractional CFO puede acompañar una ronda de financiación ?</strong> Sí, es una de sus misiones principales. Nuestros fractional CFOs en Iter Advisors han acompañado más de 100 M€ de levantamientos de capital.</p>
 <p><strong>¿Listo para contratar un fractional CFO ?</strong> Descubra nuestro servicio de <a href="/es/externalizacion-daf">CFO Externalizado</a> o <a href="/es/contact">cuéntenos sus necesidades</a>.</p>`,
       content: [],
