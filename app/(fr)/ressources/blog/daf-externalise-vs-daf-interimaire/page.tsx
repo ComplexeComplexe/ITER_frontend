@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     'Externalisé ou intérimaire : durée, coût, mission, engagement. Le comparatif complet pour choisir le bon modèle de direction financière.',
   alternates: {...publishedMetadataAlternates("/ressources/blog/daf-externalise-vs-daf-interimaire"),  canonical: PAGE_URL },
   openGraph: {
+    locale: "fr_FR",
     title:
       'DAF externalisé vs DAF intérimaire : lequel choisir en 2026 ?',
     description:
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  robots: { index: true, follow: true },
+    robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
 };
 
 const offer = getDafOffer('fr');

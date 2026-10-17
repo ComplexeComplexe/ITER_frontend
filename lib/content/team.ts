@@ -500,3 +500,11 @@ export function getAuthorSlugs(): string[] {
     .filter((m) => m.bio && m.bio.fr && m.bio.en && m.bio.es)
     .map((m) => m.slug);
 }
+
+/**
+ * HYGIENE-FR (2026-10-17) — fiches d'équipe de moins de 80 mots (Hugo
+ * Lepresle, Gonzalo Serratosa). Elles restent en ligne et liées, mais passent
+ * en `noindex` et sortent du sitemap tant qu'elles ne sont pas enrichies :
+ * une fiche de deux phrases indexée n'apporte rien et dilue le reste.
+ */
+export const THIN_PROFILE_SLUGS = new Set<string>(["hugo-lepresle", "gonzalo-serratosa-de-caralt"]);

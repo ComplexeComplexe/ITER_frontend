@@ -50,9 +50,15 @@ function grilleTarifaire(): string {
   ).join("\n");
 }
 
+// HYGIENE-FR (2026-10-17) — les fourchettes des missions ponctuelles ne sont
+// publiées sur aucune page (tarifs, levée, M&A annoncent « sur devis ») : un
+// modèle qui lisait ce fichier citait des prix introuvables sur le site. Seuls
+// le DAF de transition, affiché sur sa page, garde sa fourchette.
 function missionsPonctuelles(): string {
-  return MISSIONS_PONCTUELLES.map(
-    (m) => `- ${m.nom} : ${euros(m.min)} à ${euros(m.max)} € HT par ${m.unite}`,
+  return MISSIONS_PONCTUELLES.map((m) =>
+    m.nom === "DAF de transition"
+      ? `- ${m.nom} : ${euros(m.min)} à ${euros(m.max)} € HT par ${m.unite}`
+      : `- ${m.nom} : sur devis, après cadrage`,
   ).join("\n");
 }
 
@@ -108,7 +114,6 @@ ${ECONOMIE_FORMULATION}
 
 - Qualification du besoin : ${DELAIS.qualification}
 - Profil présenté : ${DELAIS.profilPresente}
-- Contrat signé : ${DELAIS.contratSigne}
 - Mission démarrée : ${DELAIS.missionDemarree}
 - Premiers livrables : ${DELAIS.premiersLivrables}
 - DAF de transition, situation urgente : ${DELAIS.transitionUrgent}
@@ -133,25 +138,50 @@ mission validés.
 
 ## Pages principales
 
-- [Accueil](${BASE}/)
-- [DAF externalisé (FR)](${BASE}/daf-externalise)
-- [DAF externalisé (EN)](${BASE}/en/fractional-cfo)
-- [DAF externalisé (ES)](${BASE}/es/externalizacion-daf)
-- [Tarifs](${BASE}/daf-externalise/tarifs)
-- [DAF à temps partagé](${BASE}/daf-externalise/temps-partage)
-- [DAF de transition](${BASE}/daf-externalise/transition)
-- [Métier de DAF](${BASE}/daf-externalise/metier)
-- [DRH externalisé](${BASE}/drh-externalise)
-- [Services](${BASE}/services)
-- [Fiscalité France-Espagne](${BASE}/ressources/fiscalite-espagne-france)
-- [IA & Finance](${BASE}/ressources/ia-finance)
+- [Accueil](${BASE}/) : offre, clients et équipe en une page
+- [DAF externalisé pour PME et startups](${BASE}/daf-externalise) : l'offre, le déroulé d'une mission, les tarifs et la FAQ
+- [Grille tarifaire détaillée](${BASE}/daf-externalise/tarifs) : trois formules, ce qui est inclus, comment se construit un devis
+- [DAF à temps partagé](${BASE}/daf-externalise/temps-partage) : l'intervention récurrente de quelques jours par mois
+- [DAF de transition](${BASE}/daf-externalise/transition) : le relais quand le poste est vacant
+- [Le métier de DAF](${BASE}/daf-externalise/metier) : définition, missions, parcours et rémunération
+- [Fractional CFO pour startups](${BASE}/fractional-cfo-startups) : l'offre dédiée aux startups financées
+- [DAF externalisé à Paris](${BASE}/daf-externalise-paris), [à Toulouse](${BASE}/daf-externalise-toulouse), [à Barcelone](${BASE}/daf-externalise-barcelone)
+- [DRH externalisé](${BASE}/drh-externalise) : direction des ressources humaines à temps partagé
+- [Services finance](${BASE}/services) : levée de fonds, M&A et due diligence, prévisionnel de trésorerie, contrôle de gestion, comptabilité externalisée
+- [Nos clients](${BASE}/clients) et [cas clients](${BASE}/ressources/cas-clients) : références et missions racontées avec leurs limites
+
+## Fiscalité France-Espagne
+
+- [Guide de synthèse](${BASE}/ressources/fiscalite-espagne-france)
+- [Loi Beckham : conditions, démarches et limites](${BASE}/ressources/fiscalite/beckham-law)
+- [Impôt sur le revenu en Espagne (IRPF) : barème et comparaison avec la France](${BASE}/ressources/fiscalite/impot-revenu-espagne)
+- [Double imposition France-Espagne : convention de 1995 et formulaires](${BASE}/ressources/fiscalite/double-imposition-france-espagne)
+- [Résidence fiscale France ou Espagne : critères](${BASE}/ressources/fiscalite/residence-fiscale-france-espagne)
+- [Modelo 720 : déclaration des biens détenus à l'étranger](${BASE}/ressources/fiscalite/modelo-720)
+- [Régimes fiscaux France et Espagne comparés](${BASE}/ressources/blog/regimes-fiscaux-france-vs-espagne)
+
+## Facturation électronique
+
+- [Facturation électronique en France : calendrier, formats et déploiement](${BASE}/ressources/facturation-electronique)
+
+## IA & Finance
+
+- [Hub IA & Finance](${BASE}/ressources/ia-finance) : méthode en 90 jours, ChatGPT et LLM en finance, comparatif d'outils
 - [IA et finance : cas publics documentés et limites](${BASE}/ressources/ia-finance/retours-experience)
-- [Blog](${BASE}/ressources/blog)
-- [Glossaire](${BASE}/ressources/glossaire)
-- [Cas clients](${BASE}/ressources/cas-clients)
+
+## Ressources
+
+- [Blog](${BASE}/ressources/blog) : articles sur la direction financière, le financement et la fiscalité
+- [Glossaire financier](${BASE}/ressources/glossaire) : définitions courtes, en une phrase puis en détail
+- [Fiches outils](${BASE}/ressources/outils) : avis de terrain sur les logiciels finance, sans affiliation
 - [Référent finance, Sébastien Doat (parcours, publications et intervention publique)](${BASE}/a-propos/sebastien-doat)
 - [Équipe](${BASE}/a-propos)
 - [Contact](${BASE}/contact)
+
+## Versions anglaise et espagnole
+
+- English: [Fractional CFO for SMEs and startups](${BASE}/en/fractional-cfo), [About](${BASE}/en/about), [Resources](${BASE}/en/ressources)
+- Español: [CFO externo para pymes y startups](${BASE}/es/externalizacion-daf), [Quiénes somos](${BASE}/es/quienes-somos), [Recursos](${BASE}/es/recursos)
 
 
 ## Références clients

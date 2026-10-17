@@ -7,6 +7,7 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { Callout, InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
+  robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
   title: "Flux de trésorerie : calcul et prévisionnel",
   description: "Comprenez les flux de trésorerie avec un exemple fictif : encaissements, décaissements, BFR et passage à un prévisionnel de trésorerie.",
   alternates: {...publishedMetadataAlternates("/ressources/blog/flux-de-tresorerie"),
@@ -23,6 +24,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    url: "https://www.iteradvisors.com/ressources/blog/flux-de-tresorerie",
+    locale: "fr_FR",
     title: "Flux de trésorerie — Définition et Calcul | Iter Advisors",
     description: "Comprendre les flux de trésorerie (cash flow) : définition, calcul, types, importance pour la gestion financière. Guide complet.",
     type: "article",

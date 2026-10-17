@@ -993,7 +993,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       publishedDate: "2026-05-13",
       author: "Benjamin Ziza",
       category: "Fiscalité internationale",
-      htmlContent: `<p>L'installation en Espagne — et notamment à Barcelone ou Madrid — représente une opportunité stratégique pour de nombreux entrepreneurs français. Le coût de la vie inférieur de 25 à 35 % par rapport à Paris, un écosystème startup en croissance, et un cadre de vie attractif en font une destination privilégiée.</p>
+      htmlContent: `<p>L'installation en Espagne — et notamment à Barcelone ou Madrid — représente une opportunité stratégique pour de nombreux entrepreneurs français. Un coût de la vie souvent inférieur à celui de Paris, un écosystème startup en croissance et un cadre de vie attractif en font une destination privilégiée.</p>
 <p>Cependant, la fiscalité espagnole présente des spécificités que tout entrepreneur ou salarié expatrié doit maîtriser avant de s'installer. L'impôt sur le revenu en Espagne (IRPF — <em>Impuesto sobre la Renta de las Personas Físicas</em>) fonctionne selon des règles distinctes du système français, avec des opportunités d'optimisation significatives pour ceux qui préparent correctement leur arrivée.</p>
 <p>Ce guide couvre l'ensemble des aspects pratiques : barèmes, régime des expatriés (loi Beckham), démarches administratives, et comparaison avec la fiscalité française.</p>
 <p><strong>Le barème IRPF 2026 applicable aux résidents espagnols :</strong></p>
@@ -1057,7 +1057,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <thead><tr><th>Type de revenu</th><th>Taux d'imposition</th></tr></thead>
 <tbody>
 <tr><td>Revenus du travail</td><td>24 % (plafonné à 600 000 €)</td></tr>
-<tr><td>Revenus du capital</td><td>19 % (jusqu'à 6 000 €) puis progressif</td></tr>
+<tr><td>Revenus du capital</td><td>De 19 % à 30 %, par tranches</td></tr>
 <tr><td>Revenus étrangers</td><td>Exonérés (sauf travail effectif)</td></tr>
 </tbody>
 </table>
@@ -1067,7 +1067,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li><strong>Sans loi Beckham</strong> (Catalogne) : impôt d'environ <strong>32 000 € à 33 000 €</strong></li>
 <li><strong>Avec loi Beckham</strong> : impôt de <strong>24 000 €</strong> (24 %)</li>
 </ul>
-<p><strong>Économie annuelle : 8 000 € à 9 000 €</strong>, soit 40 000 € à 45 000 € sur 5 ans.</p>
+<p><strong>Économie annuelle dans cet exemple : 8 000 € à 9 000 €</strong>, chaque année pendant la durée du régime (l'année du changement de résidence et les cinq suivantes). Exemple illustratif, avant déductions et hors revenus du capital : le calcul est à refaire sur votre situation.</p>
 <h3>Limites de la loi Beckham</h3>
 <ul>
 <li>Durée limitée à 6 ans</li>
@@ -1498,7 +1498,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 
     "levee-de-fonds-guide": {
       meta: {
-        title: "Guide Levée Fonds | Iter Advisors",
+        title: "Levée de fonds : le guide du dirigeant | Iter Advisors",
         description: "Guide complet levée de fonds. Préparation comptable, due diligence, documentation, valorisation. Iter Advisors a assisté startups à lever +100M€.",
       },
       breadcrumbs: {
@@ -1518,8 +1518,8 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 
     "ia-et-automatisation-des-taches-repetitives": {
       meta: {
-        title: "IA et automatisation financière | Iter Advisors",
-        description: "Découvrez comment l'IA et l'automatisation libèrent 30-40 % du temps de vos équipes finance. Guide pratique avec cas d'usage et outils par Iter Advisors.",
+        title: "Automatisation en finance : quelles tâches prioriser ?",
+        description: "Quelles tâches répétitives de la fonction finance automatiser en premier, avec quels contrôles et quels outils. Guide pratique d'Iter Advisors, sans chiffre inventé.",
       },
       breadcrumbs: {
         resourcesLabel: "Ressources",
@@ -1527,7 +1527,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
         blogLabel: "Blog",
         blogHref: "/ressources/blog",
       },
-      h1: "IA et automatisation : gagner 30-40 % de temps dans les tâches répétitives",
+      h1: "Automatisation en finance : quelles tâches prioriser ?",
       publishedDate: "2026-05-01",
       author: "Benjamin Ziza",
       category: "Digitalisation",
@@ -1785,7 +1785,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <h2 id="roi">ROI: the part nobody talks about</h2>
 <p>The salary saving is only half the story. The real ROI lives in three areas:</p>
 <ol>
-<li><strong>Working capital release.</strong> A good Fractional CFO routinely shaves 10-20% off your working capital — on a €5M revenue business with €800k WCR, that's €80-160k of cash back in the bank, year one. Often more than the entire engagement fee.</li>
+<li><strong>Working capital release.</strong> A good fractional CFO usually frees up part of your working capital. Illustrative order of magnitude: on a €5M revenue business with €800k of working capital requirement, every 10% released is €80k of cash back in the bank. Often more than the entire engagement fee.</li>
 <li><strong>Fundraising uplift.</strong> A clean data room and a credible CFO at the table can lift a valuation by 10-15%. On a €5M Series A, that's €500-750k of additional value created — for a CFO investment of ~€50k over the round.</li>
 <li><strong>Decision quality.</strong> A weekly cash forecast and monthly board pack force discipline. Bad decisions get caught early; good ones get reinforced.</li>
 </ol>
@@ -2280,7 +2280,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <h2 id="roi">ROI: la parte de la que nadie habla</h2>
 <p>El ahorro en salario es solo la mitad de la historia. El verdadero ROI vive en tres áreas:</p>
 <ol>
-<li><strong>Liberación de fondo de maniobra.</strong> Un buen CFO externalizado reduce rutinariamente un 10-20% el WCR — en un negocio de 5M€ de facturación con 800k€ de WCR, son 80-160k€ de caja recuperada el primer año. A menudo más que el coste total de la misión.</li>
+<li><strong>Liberación de fondo de maniobra.</strong> Un buen CFO externo suele liberar parte del fondo de maniobra. Orden de magnitud ilustrativo: en un negocio de 5 M€ de facturación con 800 k€ de necesidades operativas de fondos, cada 10 % liberado son 80 k€ de caja recuperada. A menudo más que el coste total de la misión.</li>
 <li><strong>Plusvalía en fundraising.</strong> Una data room limpia y un CFO creíble en la mesa pueden subir una valoración un 10-15%. En una Series A de 5M€, son 500-750k€ de valor adicional creado — por una inversión en CFO de ~50k€ en la ronda.</li>
 <li><strong>Calidad de decisión.</strong> Una previsión semanal de caja y un board pack mensual fuerzan disciplina. Las malas decisiones se detectan pronto; las buenas se refuerzan.</li>
 </ol>

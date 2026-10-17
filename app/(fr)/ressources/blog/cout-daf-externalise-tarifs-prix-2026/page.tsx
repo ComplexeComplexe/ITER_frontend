@@ -6,6 +6,7 @@ import ProseTable from "@/components/blog/ProseTable";
 import { getDafOffer } from "@/lib/content/daf-offer";
 const offer = getDafOffer("fr");
 export const metadata: Metadata = {
+  robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
   "title": "Comparer des devis de DAF externalisé | Iter Advisors",
   "description": "Comparez forfait mensuel, tarif journalier et recrutement : périmètre, frais, disponibilité et calcul annuel. Méthode et exemples de budget explicites.",
   "alternates": {...publishedMetadataAlternates("/ressources/blog/cout-daf-externalise-tarifs-prix-2026"),
@@ -13,6 +14,8 @@ export const metadata: Metadata = {
   },
   "twitter": { "card": "summary_large_image", "images": ["https://www.iteradvisors.com/images/logos/iter-advisors-brand.png"] },
   "openGraph": {
+    "url": "https://www.iteradvisors.com/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
+    "locale": "fr_FR",
     "title": "Comment comparer des devis de DAF externalisé",
     "description": "Comparez forfait mensuel, tarif journalier et recrutement : périmètre, frais, disponibilité et calcul annuel. Méthode et exemples de budget explicites.",
     "type": "article",

@@ -6,17 +6,16 @@ import { getCmsNavigation } from "@/lib/static-content";
 import { Callout, ProseTable, InlineCTA } from "@/components/blog";
 
 export const metadata: Metadata = {
-  title: "Guide Levée Fonds | Iter Advisors",
+  title: "Levée de fonds : le guide du dirigeant | Iter Advisors",
   description:
     "Guide complet levée de fonds. Préparation comptable, due diligence, documentation, valorisation. Iter Advisors a assisté startups à lever +100M€.",
   alternates: {...publishedMetadataAlternates("/ressources/blog/levee-de-fonds-guide"),
     canonical: "https://www.iteradvisors.com/ressources/blog/levee-de-fonds-guide",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+    robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
   openGraph: {
+    url: "https://www.iteradvisors.com/ressources/blog/levee-de-fonds-guide",
+    locale: "fr_FR",
     images: [
       {
         url: "/images/blog/levee-de-fonds.webp",
@@ -120,9 +119,9 @@ export default async function Page() {
       </p>
 
       <Callout type="info" title="Réalité des investisseurs">
-        Les investisseurs consacrent 30% du temps de due diligence sur finances, 20%
-        sur juridique, 50% sur marché/équipe/traction. Négliger les finances = risque
-        immédiat.
+        En due diligence, les investisseurs répartissent leur temps entre les finances,
+        le juridique et le trio marché, équipe, traction. Les finances sont le volet que
+        vous maîtrisez entièrement : les négliger est un risque immédiat.
       </Callout>
 
       <p>

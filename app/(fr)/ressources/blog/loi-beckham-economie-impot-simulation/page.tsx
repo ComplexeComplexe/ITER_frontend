@@ -11,11 +11,10 @@ export const metadata: Metadata = {
     canonical:
       "https://www.iteradvisors.com/ressources/blog/loi-beckham-economie-impot-simulation",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+    robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
   openGraph: {
+    url: "https://www.iteradvisors.com/ressources/blog/loi-beckham-economie-impot-simulation",
+    locale: "fr_FR",
     title: "Loi Beckham : méthode de simulation de l’impôt",
     description:
       "Comparez Beckham et IRPF ordinaire : données à réunir, assiette, région, situation familiale et exemple fictif du calcul au taux légal.",

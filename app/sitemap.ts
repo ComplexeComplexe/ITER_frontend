@@ -6,7 +6,7 @@ import { TAX_COMPARISON_MODIFIED } from "@/lib/content/tax-comparison";
 import type { MetadataRoute } from "next";
 import { PAGE_REVISIONS, latestRevision } from "@/lib/content/page-revisions";
 import { DOCUMENTED_CASES } from "@/lib/content/documented-cases";
-import { getAuthorSlugs } from "@/lib/content/team";
+import { getAuthorSlugs, THIN_PROFILE_SLUGS } from "@/lib/content/team";
 import { blogPosts } from "@/lib/content/blog-posts";
 import { tools, CATEGORIES_WITH_PAGE } from "@/data/tools";
 import { getGlossaryPages } from "@/lib/content/glossary-entries";
@@ -32,7 +32,7 @@ const D = {
   glossary:      "2026-09-01", // REDESIGN-P3 — définition en tête, byline, termes liés
   author:        "2026-05-17", // Person schema + author bio pages added
   jobs:          "2026-04-01", // noindexed but discoverable (TICKET-12)
-  fiscalite:     "2026-05-31", // Fiscalité Espagne France cocoon — initial publication
+  fiscalite:     "2026-09-01", // HYGIENE-FR — aligné sur le dateModified des quatre piliers // Fiscalité Espagne France cocoon — initial publication
   iaFinance:     "2026-09-05", // IA & Finance: sources, cases and six guides
 } as const;
 
@@ -543,7 +543,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // ── Author pages ──────────────────────────────────────────────────────────
   // Hreflang cluster: FR /a-propos/<slug>, EN /en/about/<slug>, ES /es/quienes-somos/<slug>.
-  for (const slug of getAuthorSlugs()) {
+  // HYGIENE-FR (2026-10-17) — les fiches en noindex (THIN_PROFILE_SLUGS)
+  // sortent du sitemap : un sitemap ne doit contenir que des pages indexables.
+  for (const slug of getAuthorSlugs().filter((s) => !THIN_PROFILE_SLUGS.has(s))) {
     entries.push(
       ...entryAllLocales(
         { fr: `/a-propos/${slug}`, en: `/about/${slug}`, es: `/quienes-somos/${slug}` },

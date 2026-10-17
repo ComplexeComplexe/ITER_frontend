@@ -7,6 +7,7 @@ import BlogPostPageRefonte from '@/components/pages/BlogPostPageRefonte';
 import { InlineCta, ProseTable } from '@/components/blog';
 
 export const metadata: Metadata = {
+  robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
   // CONTENUS-T7 (2026-08-31) — « directions financières » : 480 recherches
   // par mois, page en P20. Le title ne disait rien (« Direction Financière »
   // tout court) ; il porte désormais la requête et son intention.
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
     canonical: "https://www.iteradvisors.com/ressources/blog/organiser-sa-direction-financiere",
   },
   openGraph: {
+    url: "https://www.iteradvisors.com/ressources/blog/organiser-sa-direction-financiere",
+    locale: "fr_FR",
     title: "Organiser sa direction financière en 2026 | Iter Advisors",
     description: "Responsabilités, calendrier de clôture, reporting et coordination avec le DAF : une méthode à adapter à votre entreprise.",
     type: "article",
