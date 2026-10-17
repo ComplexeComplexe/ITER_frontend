@@ -7,8 +7,8 @@
     "breadcrumbLabel": "CFO externo Barcelona",
     "h1": "CFO externo en Barcelona para pymes y startups",
     "intro": [
-      "Un CFO externo en Barcelona dirige las finanzas de una pyme o startup sin ser empleado de esa empresa. Interviene a tiempo parcial, en remoto o de forma presencial según el alcance acordado. Su empresa está ubicada en Barcelona o desarrolla una actividad entre Francia y España. Necesita cifras comparables, previsiones de tesorería y un interlocutor financiero para preparar las decisiones de la dirección.",
-      "Barcelona es la sede de Iter Advisors, en Carrer Casp 54. Benjamin Ziza, Florent Greth, Tom Jaufre y Deisy Arias Ramírez trabajan allí en asuntos financieros. El despacho trabaja en francés, español e inglés; el idioma de cada misión, la presencia en sus instalaciones y los interlocutores se confirman al definir el alcance, según el CFO asignado."
+      "Un CFO externo en Barcelona dirige las finanzas de una pyme o una startup sin formar parte de su plantilla. Interviene a tiempo parcial, en remoto o en sus oficinas, según el alcance acordado. Su empresa tiene sede en Barcelona o trabaja entre Francia y España, y necesita cifras comparables, previsiones de tesorería y un interlocutor financiero que prepare las decisiones de la dirección.",
+      "Barcelona es la sede de Iter Advisors, en Carrer Casp 54. Benjamin Ziza, Florent Greth, Tom Jaufre y Deisy Arias Ramírez trabajan allí en asuntos financieros. El despacho trabaja en francés, español e inglés; el idioma de cada encargo, la presencia en sus oficinas y los interlocutores se confirman al definir el alcance, según el CFO asignado."
     ],
     "ctaButton": "Hablemos de sus necesidades en Barcelona",
     "sections": [
@@ -16,17 +16,17 @@
         "id": "missions",
         "heading": "Dirección financiera para su actividad en España",
         "content": [
-          "La misión puede incluir una previsión de tesorería, el presupuesto y un reporting mensual para la dirección o los inversores. En un grupo presente en ambos países, definimos las categorías, hipótesis y calendarios necesarios para comparar las entidades de forma coherente.",
-          "La financiación se prepara con los directivos y sus asesores: modelo financiero, escenarios, data room y seguimiento de preguntas. El caso SolarMente describe trabajos de estructuración financiera y apoyo en una operación; sus resultados no son una previsión para otra empresa."
+          "El encargo puede incluir una previsión de tesorería, el presupuesto y un reporting mensual para la dirección o los inversores. En un grupo presente en ambos países, definimos las categorías, las hipótesis y los calendarios necesarios para comparar las entidades de forma coherente.",
+          "La financiación se prepara con los fundadores y sus asesores: modelo financiero, escenarios, data room y seguimiento de las preguntas. El caso SolarMente describe trabajos de estructuración financiera y de apoyo en una operación; sus resultados no son una previsión para otra empresa."
         ],
         "links": [
           {
             "href": "/daf-externalise",
-            "label": "Comprender la misión de CFO externo"
+            "label": "Entender el encargo de un CFO externo"
           },
           {
             "href": "/ressources/cas-clients/solarmente-serie-b-cleantech",
-            "label": "Leer el alcance de la misión SolarMente"
+            "label": "Leer el alcance del encargo SolarMente"
           },
           {
             "href": "/services/previsionnel-tresorerie",
@@ -41,14 +41,14 @@
         ],
         "heading": "Coordinar al CFO, la gestoría y sus asesores",
         "content": [
-          "Iter Advisors no es una asesoría contable. La dirección financiera organiza la gestión y la coordinación con su gestoría o despacho español. La contabilidad, las declaraciones, las nóminas y el asesoramiento especializado quedan asignados en el contrato a los profesionales competentes.",
-          "Para una filial española, identifique quién produce los datos locales, quién controla los flujos intragrupo y quién los concilia con el reporting del grupo. Las normas fiscales y laborales dependen de su situación; ningún tipo ni beneficio debe aplicarse sin el examen de los asesores correspondientes.",
-          "Una contratación también debe incorporarse a las previsiones: remuneración, costes laborales, fecha de incorporación y capacidad de integración. Una diferencia general de salarios entre dos ciudades no permite establecer el coste de su puesto."
+          "Iter Advisors no es una asesoría contable. El CFO organiza el seguimiento y la coordinación con su gestoría o despacho en España. La contabilidad, las declaraciones fiscales, las nóminas y el asesoramiento especializado quedan asignados por contrato a los profesionales competentes.",
+          "Si tiene una filial española, identifique quién produce los datos locales, quién controla los flujos intragrupo y quién los concilia con el reporting del grupo. Las normas fiscales y laborales dependen de su situación: ningún tipo ni ningún incentivo debe aplicarse sin que lo revisen los asesores correspondientes.",
+          "Una contratación también debe entrar en las previsiones: salario, cotizaciones a la Seguridad Social, fecha de incorporación y capacidad de integración del equipo. Una diferencia general de salarios entre dos ciudades no sirve para fijar el coste de su puesto."
         ],
         "links": [
           {
             "href": "/ressources/blog/filiale-espagnole-pilotage-financier",
-            "label": "Organizar la gestión financiera de una filial española"
+            "label": "Organizar la dirección financiera de una filial española"
           },
           {
             "href": "/services/comptabilite-externalisation",
@@ -64,8 +64,8 @@
         "id": "subventions",
         "heading": "Financiación: partir de los programas oficiales",
         "content": [
-          "ENISA ofrece préstamos participativos para startups y pymes. ACCIÓ publica convocatorias de ayudas y servicios empresariales. Barcelona Activa ofrece acompañamiento al emprendimiento. Estos programas tienen objetivos, calendarios y condiciones diferentes.",
-          "Consulte las condiciones vigentes y compruebe la elegibilidad de la empresa antes de preparar una solicitud. El plan de tesorería debe distinguir solicitud, decisión y cobro. Una financiación solicitada no está concedida; presupuestos, justificantes y responsabilidades deben definirse con los interlocutores implicados."
+          "ENISA ofrece préstamos participativos para startups y pymes. ACCIÓ publica convocatorias de ayudas y servicios para empresas. Barcelona Activa ofrece asesoramiento al emprendimiento. Estos programas tienen objetivos, calendarios y condiciones diferentes.",
+          "Consulte las bases vigentes y compruebe que la empresa cumple los requisitos antes de preparar una solicitud. El plan de tesorería debe distinguir solicitud, resolución y cobro. Una ayuda solicitada no es una ayuda concedida; presupuestos, justificantes y responsabilidades deben acordarse con los interlocutores implicados."
         ],
         "links": [
           {
@@ -86,8 +86,8 @@
         "id": "erreurs",
         "heading": "Preparar el primer contacto",
         "content": [
-          "Presente las entidades, países, herramientas, bancos e interlocutores existentes. Añada las decisiones que deben prepararse y los plazos próximos: contratación, cierre, necesidad de financiación o reporting para inversores.",
-          "Los primeros trabajos consisten en examinar los datos disponibles, los accesos y los elementos sin conciliar. Designe una persona responsable de la transmisión y validación en cada entidad. La frecuencia de la misión depende de estas necesidades, más que de la dirección de la sede."
+          "Presente las entidades, los países, las herramientas, los bancos y los interlocutores actuales. Añada las decisiones que hay que preparar y los plazos próximos: una contratación, un cierre, una necesidad de financiación o el reporting para inversores.",
+          "Los primeros trabajos consisten en examinar los datos disponibles, los accesos y los elementos sin conciliar. Designe en cada entidad una persona responsable de enviar y validar la información. La frecuencia del encargo depende de estas necesidades, más que de la dirección de la sede."
         ],
         "links": [
           {
@@ -105,7 +105,7 @@
         "heading": "¿Qué presupuesto prever en Barcelona?",
         "content": [
           "__OFFER__",
-          "El presupuesto precisa entregables, interlocutores, disponibilidad y posibles desplazamientos. Iter aplica la misma tabla de precios en sus sedes; la ubicación por sí sola no permite deducir un ahorro. Los proyectos puntuales y los servicios de los asesores deben distinguirse del alcance recurrente."
+          "El presupuesto precisa entregables, interlocutores, disponibilidad y posibles desplazamientos. Iter aplica la misma tabla de precios en todas sus sedes; la ubicación por sí sola no permite deducir un ahorro. Los proyectos puntuales y los servicios de otros asesores se distinguen del alcance recurrente."
         ],
         "links": [
           {
@@ -122,15 +122,15 @@
       },
       {
         "question": "¿Qué idiomas y qué presencia se prevén?",
-        "answer": "El despacho trabaja en francés, español e inglés. El idioma de cada misión, las visitas a sus instalaciones, el trabajo a distancia y los interlocutores se confirman al definir el alcance, según sus necesidades y el CFO asignado."
+        "answer": "El despacho trabaja en francés, español e inglés. El idioma de cada encargo, las visitas a sus oficinas, el trabajo a distancia y los interlocutores se confirman al definir el alcance, según sus necesidades y el CFO asignado."
       },
       {
         "question": "¿Pueden gestionar la contabilidad española?",
-        "answer": "Iter no es una asesoría contable. Organizamos la gestión financiera y la coordinación con su gestoría o despacho español. La preparación de cuentas, las declaraciones y las nóminas se asignan expresamente a los profesionales correspondientes."
+        "answer": "Iter no es una asesoría contable. Organizamos la dirección financiera y la coordinación con su gestoría o despacho en España. La preparación de las cuentas, las declaraciones y las nóminas se asignan expresamente a los profesionales correspondientes."
       },
       {
         "question": "¿Pueden garantizar una ayuda o financiación?",
-        "answer": "No. Los programas dependen de criterios, calendarios y una decisión del organismo. Preparar una solicitud y previsiones financieras no garantiza la elegibilidad ni la obtención de financiación."
+        "answer": "No. Los programas dependen de unos criterios, de un calendario y de la resolución del organismo. Preparar una solicitud y unas previsiones financieras no garantiza ni la elegibilidad ni la concesión de la financiación."
       }
     ]
   },
@@ -143,7 +143,7 @@
     "h1": "CFO externo en Toulouse para su pyme o startup",
     "intro": [
       "¿Su empresa está en Toulouse y necesita visibilidad sobre la tesorería, los márgenes o una financiación? Un CFO sénior asume la gestión financiera con su equipo y su asesor contable, con un alcance definido antes de empezar.",
-      "Las misiones se coordinan desde París y Barcelona, con desplazamientos a Toulouse acordados al definir el alcance. El presupuesto es de 3.000 a 8.000 € sin IVA al mes; el inicio se prevé entre 8 y 15 días tras el primer contacto, según el perfil y el alcance."
+      "Los encargos se coordinan desde París y Barcelona, con desplazamientos a Toulouse acordados al definir el alcance. El presupuesto es de 3.000 a 8.000 € sin IVA al mes; el inicio se prevé entre 8 y 15 días tras el primer contacto, según el perfil y el alcance."
     ],
     "ctaButton": "Describa sus necesidades en Toulouse",
     "sections": [
@@ -151,7 +151,7 @@
         "heading": "Qué definimos antes de empezar",
         "content": [
           "Un interlocutor financiero dedicado, las prioridades de la dirección, los datos disponibles y las responsabilidades respectivas del CFO, su equipo y su asesor contable.",
-          "El calendario de revisiones, los entregables y los desplazamientos se acuerdan por escrito. El seguimiento habitual se realiza a distancia; las reuniones presenciales se organizan según las necesidades de la misión. No prometemos presencia local semanal."
+          "El calendario de revisiones, los entregables y los desplazamientos se acuerdan por escrito. El seguimiento habitual se hace a distancia; las reuniones presenciales se organizan según las necesidades del encargo. No prometemos presencia local semanal."
         ]
       },
       {
@@ -179,7 +179,7 @@
       {
         "heading": "Nuestra presencia en Toulouse, en la práctica",
         "content": [
-          "No tenemos consultor residente en Toulouse. Las misiones las siguen nuestros equipos de París y Barcelona; el perfil se presenta antes de la firma para comprobar su adecuación a su actividad.",
+          "No tenemos consultor residente en Toulouse. Los encargos los siguen nuestros equipos de París y Barcelona; el perfil se presenta antes de la firma para comprobar que encaja con su actividad.",
           "Nuestra dirección de domiciliación es 32 boulevard d'Arcole, 31000 Toulouse. Las reuniones se celebran a distancia o en sus instalaciones, según lo acordado."
         ]
       }
@@ -199,7 +199,7 @@
       },
       {
         "question": "¿Tienen un caso de cliente de Toulouse?",
-        "answer": "Todavía no tenemos un caso de cliente de Toulouse publicable. Los casos del sitio ilustran misiones realizadas en otras ubicaciones. La experiencia del perfil propuesto y los entregables esperados se examinan al definir el alcance."
+        "answer": "Todavía no tenemos un caso de cliente de Toulouse publicable. Los casos del sitio ilustran encargos realizados en otras ubicaciones. La experiencia del perfil propuesto y los entregables esperados se examinan al definir el alcance."
       },
       {
         "question": "¿Cuál es el plazo de inicio?",

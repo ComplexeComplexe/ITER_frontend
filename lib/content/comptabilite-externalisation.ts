@@ -330,7 +330,7 @@ export const comptabiliteExternalisationContent = {
         name: "Mathurin Blouin",
         company: "MFL",
         sector: "CEO",
-        text: "Iter nos acompañó en la implantación del reporting y la gestión de tesorería, aportando mayor visibilidad y tranquilidad financiera.",
+        text: "Iter nos ayudó en la implantación del reporting y la gestión de tesorería, aportando mayor visibilidad y tranquilidad financiera.",
         rating: 5,
       },
     ],
@@ -367,7 +367,7 @@ export const comptabiliteExternalisationContent = {
           },
           {
             title: "El cierre anual tarda meses.",
-            text: "Cuando el balance y la cuenta de resultados solo se finalizan varios meses después del cierre del ejercicio, la dirección pilota a ciegas durante buena parte del año siguiente.",
+            text: "Cuando el balance y la cuenta de resultados solo se finalizan varios meses después del cierre del ejercicio, la dirección navega a ciegas durante buena parte del año siguiente.",
           },
           {
             title: "Los inversores o los bancos piden datos estructurados.",
@@ -385,7 +385,7 @@ export const comptabiliteExternalisationContent = {
         id: "benefices",
         title: "Los beneficios concretos de una contabilidad externalizada",
         paragraphs: [
-          "Externalizar la contabilidad no es solo delegar una carga administrativa. Produce efectos medibles sobre la calidad del pilotaje de la empresa.",
+          "Externalizar la contabilidad no es solo delegar una carga administrativa. Produce efectos medibles sobre la calidad de la gestión de la empresa.",
         ],
         bullets: [
           {
@@ -478,7 +478,7 @@ export const comptabiliteExternalisationContent = {
       {"id":"tarifs","title":"Cómo presupuestar la externalización contable","paragraphs":["Solicite presupuestos sobre un mismo alcance: volumen de documentos, entidades, obligaciones, nóminas, cierres y reporting. Separe el arranque, el coste recurrente, las opciones y el trabajo interno. No publicamos una media de mercado sin una fuente verificable."],"tables":[{"caption":"Partidas del presupuesto","headers":["Partida","Qué comprobar"],"rows":[["Arranque","Migración, recuperación de datos y formación"],["Recurrente","Documentos, entidades, obligaciones y cierres"],["Opciones","Nóminas, reporting y trabajos excepcionales"]]}]},
       {
         id: "approche-iter",
-        title: "Cómo acompaña Iter Advisors tu contabilidad externalizada",
+        title: "Cómo gestiona Iter Advisors tu contabilidad externalizada",
         paragraphs: [
           "Nuestro enfoque se apoya en tres principios: integración fluida, herramientas existentes y experiencia financiera de nivel CFO.",
           "Integración sin ruptura. No te obligamos a cambiar de software de un día para otro. Iter Advisors trabaja con las herramientas que ya utilizas, ya sea Pennylane, Sage, QuickBooks u otras soluciones cloud. Cuando se necesita una migración, el calendario depende de la calidad de los datos, las integraciones y los controles acordados.",
@@ -553,9 +553,9 @@ export const comptabiliteExternalisationContent = {
         id: "conclusion",
         title: "Conclusión",
         paragraphs: [
-          "Una contabilidad fiable y al día es la base de cualquier pilotaje financiero serio. Para quienes dirigen startups y pymes en crecimiento, la externalización contable ofrece un equilibrio pertinente: la experiencia de un profesional sin el coste ni la rigidez de una contratación interna.",
+          "Una contabilidad fiable y al día es la base de cualquier gestión financiera seria. Para quienes dirigen startups y pymes en crecimiento, la externalización contable ofrece un equilibrio pertinente: la experiencia de un profesional sin el coste ni la rigidez de una contratación interna.",
           "En Iter Advisors tratamos la contabilidad como una herramienta de decisión, no como una simple obligación administrativa. Nos integramos en tus herramientas existentes, respetamos tus plazos y te damos la visibilidad que necesitas para avanzar con tranquilidad.",
-          "Puedes hablar con Iter Advisors para evaluar el nivel de acompañamiento contable adecuado para tu empresa.",
+          "Puedes hablar con Iter Advisors para evaluar el nivel de apoyo contable adecuado para tu empresa.",
         ],
       },
     ],

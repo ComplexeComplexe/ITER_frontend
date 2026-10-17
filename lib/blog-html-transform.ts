@@ -72,7 +72,11 @@ function transformFaq(html: string): {
 } {
   // Find the FAQ heading (id="faq" preferred, fallback to a literal
   // "<h2>FAQ" / "Foire aux questions" / "Frequently asked").
-  const headingRe = /<h2[^>]*id=["']faq["'][^>]*>[\s\S]*?<\/h2>|<h2[^>]*>\s*(?:FAQ|F\.A\.Q\.|Foire aux questions|Frequently[^<]*Asked[^<]*Questions)[^<]*<\/h2>/i;
+  // NATIF-EN-ES (2026-10-17) — le corps d'un article peut arriver ici déjà
+  // traduit (pages EN et ES partagées) : les identifiants et libellés
+  // espagnols et anglais de la FAQ doivent être reconnus, sinon la section
+  // ES perdait ses <details> et le contrôle de parité des sections échouait.
+  const headingRe = /<h2[^>]*id=["'](?:faq|preguntas-frecuentes|frequently-asked|questions-frequentes)[^"']*["'][^>]*>[\s\S]*?<\/h2>|<h2[^>]*>\s*(?:FAQ|F\.A\.Q\.|Foire aux questions|Questions fréquentes|Preguntas frecuentes|Frequently[^<]*Asked[^<]*Questions)[^<]*<\/h2>/i;
   const headingMatch = html.match(headingRe);
   if (!headingMatch || headingMatch.index === undefined) {
     return { html, faqs: [] };

@@ -231,12 +231,12 @@ const content: Record<Locale, MaDueDiligenceContent> = {
     },
     "hero": {
       "h1": "M&A y due diligence financiera: preparar sus decisiones",
-      "intro": "Ayudamos a dirigentes, vendedores y compradores a organizar y analizar la información financiera. La preparación, la revisión del comprador y el trabajo de los asesores legales y fiscales tienen alcances distintos."
+      "intro": "Ayudamos a directivos, vendedores y compradores a organizar y analizar la información financiera. La preparación, la revisión del comprador y el trabajo de los asesores legales y fiscales tienen alcances distintos."
     },
     "sections": [
       {
         "heading": "Alcance, documentación y límites",
-        "content": "<p>Se definen el objetivo, los destinatarios, la información disponible y los entregables. La revisión puede cubrir resultados, circulante, tesorería, deuda e hipótesis financieras. Se identifican las piezas que faltan y las preguntas pendientes.</p><p>Preparar una data room es distinto de una revisión independiente. Las cuestiones legales, fiscales y laborales se coordinan con los asesores correspondientes. El análisis financiero ayuda a decidir; no garantiza el cierre ni la valoración.</p>"
+        "content": "<p>Se definen el objetivo, los destinatarios, la información disponible y los entregables. La revisión puede cubrir resultados, circulante, tesorería, deuda e hipótesis financieras. Se identifican los documentos que faltan y las preguntas pendientes.</p><p>Preparar una data room es distinto de una revisión independiente. Las cuestiones legales, fiscales y laborales se coordinan con los asesores correspondientes. El análisis financiero ayuda a decidir; no garantiza el cierre ni la valoración.</p>"
       }
     ],
     "services": {
@@ -252,7 +252,7 @@ const content: Record<Locale, MaDueDiligenceContent> = {
         },
         {
           "name": "Acompanamiento en rondas de financiacion",
-          "description": "Modelo financiero, preparación de la data room y apoyo a las preguntas financieras. La búsqueda de inversores, si procede, se asigna por separado al dirigente o a su asesor designado."
+          "description": "Modelo financiero, preparación de la data room y apoyo a las preguntas financieras. La búsqueda de inversores, si procede, se asigna por separado a la dirección o a su asesor designado."
         },
         {
           "name": "Valoracion de empresas",
@@ -275,7 +275,7 @@ const content: Record<Locale, MaDueDiligenceContent> = {
         {
           "step": "02",
           "title": "Preparacion del data room",
-          "description": "Organizar las piezas financieras e identificar la información que falta."
+          "description": "Organizar los justificantes financieros e identificar la información que falta."
         },
         {
           "step": "03",
@@ -285,7 +285,7 @@ const content: Record<Locale, MaDueDiligenceContent> = {
         {
           "step": "04",
           "title": "Negociacion y cierre",
-          "description": "Dar seguimiento a las preguntas financieras dentro del mandato, junto al dirigente y los otros asesores."
+          "description": "Dar seguimiento a las preguntas financieras dentro del mandato, junto a la dirección y los demás asesores."
         }
       ]
     },

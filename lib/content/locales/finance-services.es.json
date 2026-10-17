@@ -5,8 +5,8 @@
     "title": "CFO externo para startups y SaaS | Iter Advisors",
     "description": "Un CFO externo a tiempo parcial, o fractional CFO, apoya a una startup en tesorería, runway y reporting a inversores. Alcance y presupuesto acordados.",
     "headline": "CFO externo para startups y SaaS",
-    "promise": "Un CFO externo a tiempo parcial, o fractional CFO, es un director financiero que acompaña a una startup sin ocupar un puesto a jornada completa.",
-    "intro": "Su startup debe decidir cuándo contratar, cuánto invertir y cómo financiar los próximos meses. El CFO externo construye con sus equipos una visión coherente de caja, ingresos y presupuesto. Prepara decisiones del directivo e intercambios con inversores.",
+    "promise": "Un CFO externo a tiempo parcial, o fractional CFO, es un director financiero que trabaja con una startup sin ocupar un puesto a jornada completa.",
+    "intro": "Su startup debe decidir cuándo contratar, cuánto invertir y cómo financiar los próximos meses. El CFO externo construye con sus equipos una visión coherente de caja, ingresos y presupuesto. Prepara las decisiones del fundador y las conversaciones con los inversores.",
     "context": "daf",
     "category": "Finanzas para startups y SaaS",
     "summary": [
@@ -30,11 +30,11 @@
     },
     "signals": [
       "Antes de una ronda: las hipótesis comerciales, el presupuesto de contratación y la necesidad de financiación no están conciliados.",
-      "Después de una ronda: el directivo debe traducir el plan en gastos, hitos y reporting al consejo.",
+      "Después de una ronda: el fundador debe traducir el plan en gastos, hitos y reporting al consejo.",
       "Para un SaaS: ingresos recurrentes, churn, cobros y margen se siguen en herramientas distintas con definiciones a veces incompatibles.",
       "En un crecimiento con varias entidades: el equipo debe explicar desviaciones entre países, actividades o canales antes de decidir dónde invertir."
     ],
-    "definition": "Fractional CFO describe una dirección financiera a tiempo parcial. Esta página trata necesidades de startups y SaaS; la oferta general explica otras modalidades. La necesidad depende de decisiones, calidad de datos y competencias internas. La facturación o el consumo de caja por sí solos no justifican una misión. Si necesita presencia permanente, contratar puede ser más adecuado.",
+    "definition": "Fractional CFO describe una dirección financiera a tiempo parcial. Esta página trata las necesidades de startups y SaaS; la oferta general explica otras modalidades. La necesidad depende de las decisiones, la calidad de los datos y las competencias internas. La facturación o el consumo de caja por sí solos no justifican un encargo. Si necesita presencia permanente, contratar puede ser más adecuado.",
     "deliverables": [
       [
         "Previsión de tesorería y runway",
@@ -53,7 +53,7 @@
       ]
     ],
     "exampleTitle": "Una decisión de contratación sin resultados inventados",
-    "example": "Antes de abrir dos puestos, el directivo puede comparar una incorporación inmediata, un retraso y un escenario de ventas prudente. Cada opción incluye costes completos facilitados por el equipo, fechas de incorporación y cobros esperados. El CFO explica el efecto en caja y las hipótesis; el directivo aprueba el compromiso. Es un ejemplo de trabajo, no un resultado de cliente ni una recomendación de financiación.",
+    "example": "Antes de abrir dos puestos, el fundador puede comparar una incorporación inmediata, un retraso y un escenario de ventas prudente. Cada opción incluye los costes completos facilitados por el equipo, las fechas de incorporación y los cobros esperados. El CFO explica el efecto en caja y las hipótesis; el fundador aprueba el compromiso. Es un ejemplo de trabajo, no un resultado de cliente ni una recomendación de financiación.",
     "calendar": {
       "heading": "Indicadores vinculados a su actividad",
       "caption": "Ejemplos de datos SaaS que conciliar",
@@ -102,17 +102,17 @@
     ],
     "scopeTitle": "Un CFO con sus equipos, sin prometer una ronda",
     "scope": [
-      "El directivo fija prioridades y decide. El CFO prepara el modelo, cuestiona hipótesis y organiza el seguimiento. La asesoría conserva la responsabilidad de su contrato; los equipos comerciales y operativos explican los datos.",
-      "Preparar una ronda puede incluir modelo, data room y preguntas de due diligence. Participan directivos, inversores y asesores. No se garantizan una ronda, su valoración ni acceso privilegiado a fondos.",
+      "El fundador fija las prioridades y decide. El CFO prepara el modelo, cuestiona las hipótesis y organiza el seguimiento. La asesoría conserva la responsabilidad de su contrato; los equipos comerciales y operativos explican los datos.",
+      "Preparar una ronda puede incluir modelo, data room y preguntas de due diligence. Participan fundadores, inversores y asesores. No se garantizan ni una ronda, ni su valoración, ni un acceso privilegiado a los fondos.",
       "Si se incorpora un CFO interno, el traspaso abarca fuentes, hipótesis, accesos autorizados y calendario. La dirección financiera no otorga automáticamente facultad de firma ni poderes bancarios."
     ],
-    "budget": "El acompañamiento recurrente de Iter va de 3.000 a 8.000 € sin IVA al mes. La propuesta depende de entidades, datos, reporting y perfil. Los proyectos excepcionales, desplazamientos y trabajos de otros asesores se distinguen. Comparar con una contratación requiere considerar disponibilidad y responsabilidades: son servicios distintos.",
+    "budget": "El encargo recurrente de Iter va de 3.000 a 8.000 € sin IVA al mes. La propuesta depende de las entidades, los datos, el reporting y el perfil. Los proyectos excepcionales, los desplazamientos y los trabajos de otros asesores se distinguen. Comparar con una contratación exige considerar disponibilidad y responsabilidades: son servicios distintos.",
     "case": "solarmente-serie-b-cleantech",
-    "proofNote": "Este caso cleantech abarca 2022 a 2024 e ilustra preparación financiera de operaciones. No es un caso SaaS ni una previsión de resultados; contribuyeron directivos, inversores y asesores.",
+    "proofNote": "Este caso cleantech abarca de 2022 a 2024 e ilustra la preparación financiera de operaciones. No es un caso SaaS ni una previsión de resultados; contribuyeron fundadores, inversores y asesores.",
     "faq": [
       [
         "¿Qué es un fractional CFO?",
-        "Un fractional CFO es un director financiero que acompaña a una empresa a tiempo parcial. En Iter no es empleado de la startup cliente. CFO externo describe la función prestada desde fuera; a tiempo parcial indica el ritmo recurrente."
+        "Un fractional CFO es un director financiero que trabaja con una empresa a tiempo parcial. En Iter no es empleado de la startup cliente. CFO externo describe la función prestada desde fuera; a tiempo parcial indica el ritmo recurrente."
       ],
       [
         "¿Cómo responde un CFO externo a las necesidades de una startup?",
@@ -123,8 +123,8 @@
         "Sí. Se distingue producción contable, conciliación y gestión. El CFO trabaja con la asesoría y los equipos; el contrato precisa trabajos e interlocutores."
       ],
       [
-        "¿Acompañan antes de la primera ronda?",
-        "La necesidad se evalúa según decisiones y datos disponibles. Una misión concreta de modelización puede ser más adecuada que un seguimiento recurrente. Ninguna etapa exige automáticamente un CFO externo."
+        "¿Trabajan con startups antes de la primera ronda?",
+        "La necesidad se evalúa según las decisiones y los datos disponibles. Un encargo concreto de modelización puede ser más adecuado que un seguimiento recurrente. Ninguna etapa exige automáticamente un CFO externo."
       ],
       [
         "¿Qué preparar para la primera conversación?",
@@ -136,7 +136,7 @@
       ],
       [
         "¿Qué compromiso exige el apoyo recurrente?",
-        "Acompañamiento mensual sin permanencia mínima, con preaviso de 30 días. El contrato precisa alcance y proyectos adicionales. Una misión puntual se define por separado."
+        "Apoyo mensual sin permanencia mínima, con preaviso de 30 días. El contrato precisa el alcance y los proyectos adicionales. Un encargo puntual se define por separado."
       ]
     ],
     "resources": [
@@ -174,7 +174,7 @@
     "description": "CFO externo en París e Île-de-France: tesorería, reporting y presupuestos para pymes y startups. Presencia, responsabilidades y alcance acordados.",
     "headline": "CFO externo en París e Île-de-France",
     "promise": "Organizar la gestión financiera de su empresa en la región parisina.",
-    "intro": "Su pyme, startup o filial está en París o Île-de-France. Busca un interlocutor que conecte caja, resultados y decisiones de dirección. Iter Advisors estudia un acompañamiento adaptado al equipo, con trabajo presencial y a distancia acordado al definir la misión.",
+    "intro": "Su pyme, startup o filial está en París o Île-de-France. Busca un interlocutor que conecte caja, resultados y decisiones de dirección. Iter Advisors estudia un apoyo adaptado al equipo, con trabajo presencial y a distancia acordado al definir el encargo.",
     "context": "daf",
     "category": "París e Île-de-France",
     "areaServed": "París e Île-de-France",
@@ -202,11 +202,11 @@
       "method": "Acordar el ritmo y los interlocutores"
     },
     "signals": [
-      "El directivo prepara solo las cifras para dirección o un encuentro bancario.",
+      "El fundador prepara solo las cifras para la dirección o una reunión con el banco.",
       "El equipo y la asesoría tienen datos, pero cuesta conciliar presupuesto y previsiones.",
       "Una contratación, una nueva implantación o varias entidades exigen comparar escenarios antes de gastar."
     ],
-    "definition": "La necesidad local se refiere a organizar la colaboración: lugares, disponibilidad, acceso a datos y coordinación. La misión puede ser recurrente o temporal. La página nacional describe las modalidades de CFO externo; esta explica cómo preparar una intervención en una empresa de la región parisina.",
+    "definition": "La necesidad local consiste en organizar la colaboración: lugares, disponibilidad, acceso a los datos y coordinación. El encargo puede ser recurrente o temporal. La página nacional describe las modalidades de CFO externo; esta explica cómo preparar una intervención en una empresa de la región parisina.",
     "deliverables": [
       [
         "Previsión de tesorería",
@@ -246,9 +246,9 @@
       "Para una empresa de la región parisina con actividad en España, se identifican responsables locales, flujos y reporting de grupo. No se presuponen ventajas fiscales automáticas ni acceso privilegiado a inversores o programas públicos.",
       "El perfil, la disponibilidad y la presencia se confirman antes del compromiso. Un proyecto de financiación o relevo diario puede necesitar un mandato específico, distinto del seguimiento recurrente."
     ],
-    "budget": "Las misiones recurrentes de Iter van de 3.000 a 8.000 € sin IVA al mes. Son rangos del despacho, no una media del mercado parisino. La propuesta depende del alcance, perfil y organización; distingue desplazamientos y proyectos complementarios. El inicio se confirma tras evaluar la necesidad.",
+    "budget": "Los encargos recurrentes de Iter van de 3.000 a 8.000 € sin IVA al mes. Son horquillas del despacho, no una media del mercado parisino. La propuesta depende del alcance, el perfil y la organización; distingue desplazamientos y proyectos complementarios. El inicio se confirma tras evaluar la necesidad.",
     "case": "opti-digital-structuration-financement",
-    "proofNote": "Esta referencia describe una misión de Iter y resultados cualitativos. No se presenta como referencia parisina: la fuente no establece la ubicación de la misión. No se promete ningún beneficio cuantificado para su empresa.",
+    "proofNote": "Esta referencia describe un encargo de Iter y resultados cualitativos. No se presenta como referencia parisina: la fuente no establece la ubicación del encargo. No se promete ningún beneficio cuantificado para su empresa.",
     "faq": [
       [
         "¿Trabajan presencialmente en Île-de-France?",
@@ -289,7 +289,7 @@
         "/fractional-cfo-startups"
       ],
       [
-        "Acompañar actividad en España",
+        "Apoyar una actividad en España",
         "/daf-externalise-barcelone"
       ]
     ],
@@ -310,7 +310,7 @@
       "deliverables": "Los entregables para dirigir las finanzas",
       "method": "¿Cómo trabaja un director financiero a tiempo parcial?"
     },
-    "promise": "Un CFO a tiempo parcial, o fractional CFO, es un director financiero que acompaña a una pyme de forma recurrente sin ocupar un puesto a jornada completa.",
+    "promise": "Un CFO a tiempo parcial, o fractional CFO, es un director financiero que trabaja con una pyme de forma recurrente sin ocupar un puesto a jornada completa.",
     "intro": "En Iter, de 1 a 8 días al mes es un volumen orientativo observado, no una garantía de presencia ni un paquete de jornadas. El alcance y la disponibilidad se acuerdan en el presupuesto. El apoyo a tiempo parcial es recurrente; la transición es temporal.",
     "context": "temps-partage",
     "category": "Gestión financiera recurrente",
@@ -329,7 +329,7 @@
       ]
     ],
     "signals": [
-      "El directivo reúne las cifras antes de cada decisión.",
+      "La dirección reúne las cifras antes de cada decisión.",
       "La contabilidad está disponible, pero las previsiones y el reporting siguen siendo irregulares.",
       "El crecimiento, los inversores o varias entidades hacen más compleja la gestión."
     ],
@@ -354,7 +354,7 @@
     "exampleTitle": "Qué puede incluir su revisión financiera",
     "example": "Una revisión de la tesorería prevista, de los resultados frente al presupuesto y de las decisiones con sus responsables. El reporting prepara la conversación; la reunión termina con acciones cuyo avance se revisa en el siguiente encuentro.",
     "calendar": {
-      "caption": "Ejemplo de calendario que debe adaptarse a la misión",
+      "caption": "Ejemplo de calendario que debe adaptarse al encargo",
       "headers": [
         "Revisión",
         "Trabajo preparado",
@@ -400,16 +400,16 @@
     ],
     "scopeTitle": "Una función de dirección coordinada con su equipo",
     "scope": [
-      "El CFO trabaja con el directivo, los responsables operativos y la asesoría contable. Organiza la gestión; las tareas diarias y las decisiones tienen responsables explícitos. Una necesidad de presencia permanente requiere otra organización.",
-      "El directivo fija las prioridades y aprueba los compromisos. El CFO construye escenarios y analiza desviaciones. La asesoría prepara las cuentas según su contrato; los responsables operativos explican pedidos, existencias y vencimientos. La facultad de firma o el acceso bancario no se derivan automáticamente de la misión.",
+      "El CFO trabaja con la dirección, los responsables operativos y la asesoría contable. Organiza la gestión; las tareas diarias y las decisiones tienen responsables explícitos. Una necesidad de presencia permanente requiere otra organización.",
+      "La dirección fija las prioridades y aprueba los compromisos. El CFO construye escenarios y analiza desviaciones. La asesoría prepara las cuentas según su contrato; los responsables operativos explican pedidos, existencias y vencimientos. La facultad de firma o el acceso bancario no se derivan automáticamente del encargo.",
       "Una ronda, una adquisición o una transformación importante pueden requerir trabajo adicional. El contrato precisa los trabajos incluidos, la cobertura de ausencias y el tratamiento de urgencias."
     ],
-    "budget": "Las misiones recurrentes de Iter van de 3.000 a 8.000 € sin IVA al mes. Los 1 a 8 días mensuales observados son orientativos, no un paquete contractual: la propuesta define el alcance y el perfil asignado. La tabla detallada permite situar su necesidad.",
+    "budget": "Los encargos recurrentes de Iter van de 3.000 a 8.000 € sin IVA al mes. Los 1 a 8 días mensuales observados son orientativos, no un paquete contractual: la propuesta define el alcance y el perfil asignado. La tabla detallada permite situar su necesidad.",
     "case": "opti-digital-structuration-financement",
     "faq": [
       [
         "¿Qué es un CFO a tiempo parcial?",
-        "Un CFO a tiempo parcial acompaña a una pyme de forma recurrente sin ser empleado de la empresa cliente. El volumen indicativo de Iter es de 1 a 8 días al mes. El contrato define el alcance y la disponibilidad, no un crédito de días."
+        "Un CFO a tiempo parcial trabaja con una pyme de forma recurrente sin ser empleado de la empresa cliente. El volumen indicativo de Iter es de 1 a 8 días al mes. El contrato define el alcance y la disponibilidad, no un crédito de días."
       ],
       [
         "¿Cuántos días al mes?",
@@ -417,7 +417,7 @@
       ],
       [
         "¿CFO a tiempo parcial o CFO de transición?",
-        "El apoyo a tiempo parcial responde a una necesidad recurrente con disponibilidad acordada. La transición es una misión temporal de sustitución o transformación, con salida y traspaso previstos."
+        "El apoyo a tiempo parcial responde a una necesidad recurrente con disponibilidad acordada. La transición es un encargo temporal de sustitución o transformación, con salida y traspaso previstos."
       ],
       [
         "¿Qué relación tiene con un CFO externo?",
@@ -429,11 +429,11 @@
       ],
       [
         "¿Podemos contratar después a un CFO?",
-        "Sí. La misión puede preparar el traspaso de herramientas, hipótesis y calendario a una persona contratada internamente. Ese traspaso debe incluirse en el alcance."
+        "Sí. El encargo puede preparar el traspaso de herramientas, hipótesis y calendario a una persona contratada internamente. Ese traspaso debe incluirse en el alcance."
       ],
       [
         "¿Qué compromiso se exige?",
-        "La tabla de Iter prevé acompañamiento mensual sin permanencia mínima, rescindible con un preaviso de 30 días. Los servicios y los cambios de alcance se formalizan en el contrato."
+        "La tabla de Iter prevé un apoyo mensual sin permanencia mínima, rescindible con un preaviso de 30 días. Los servicios y los cambios de alcance se formalizan en el contrato."
       ]
     ],
     "resources": [
@@ -461,7 +461,7 @@
           "id": "missions",
           "title": "Las funciones de un CFO a tiempo parcial",
           "paragraphs": [
-            "El alcance se elige entre estas funciones al definir la misión y se ajusta cuando cambian sus prioridades."
+            "El alcance se elige entre estas funciones al definir el encargo y se ajusta cuando cambian sus prioridades."
           ],
           "items": [
             [
@@ -494,8 +494,8 @@
           "id": "fractional-cfo",
           "title": "CFO a tiempo parcial o fractional CFO: ¿el mismo rol?",
           "paragraphs": [
-            "Sí. «CFO a tiempo parcial» y «fractional CFO» designan el mismo rol; en las pymes francesas se habla de «DAF à temps partagé». Los tres se refieren a un director financiero sénior que acompaña a varias empresas, cada una de forma recurrente.",
-            "La misión es la misma: estructurar la función financiera, gestionar la tesorería y preparar las decisiones. El CFO interino responde, en cambio, a un mandato temporal de sustitución o de transformación."
+            "Sí. «CFO a tiempo parcial» y «fractional CFO» designan el mismo rol; en las pymes francesas se habla de «DAF à temps partagé». Los tres se refieren a un director financiero sénior que trabaja con varias empresas, cada una de forma recurrente.",
+            "La función es la misma: estructurar la función financiera, gestionar la tesorería y preparar las decisiones. El CFO interino responde, en cambio, a un mandato temporal de sustitución o de transformación."
           ],
           "links": [
             [
@@ -520,7 +520,7 @@
             ],
             [
               "No está presente de forma continua.",
-              "Las intervenciones se planifican y la disponibilidad se acuerda al definir el alcance. Una necesidad de presencia diaria requiere una contratación o una misión interina."
+              "Las intervenciones se planifican y la disponibilidad se acuerda al definir el alcance. Una necesidad de presencia diaria requiere una contratación o un encargo interino."
             ],
             [
               "No ejecuta la operativa diaria.",
@@ -542,7 +542,7 @@
           "id": "cout",
           "title": "¿Cuánto cuesta un CFO a tiempo parcial en 2026?",
           "paragraphs": [
-            "En Iter, las misiones recurrentes van de 3.000 a 8.000 € sin IVA al mes, según el alcance y el perfil asignado. Los volúmenes de días son medias observadas, no paquetes: la propuesta cubre un alcance de trabajo."
+            "En Iter, los encargos recurrentes van de 3.000 a 8.000 € sin IVA al mes, según el alcance y el perfil asignado. Los volúmenes de días son medias observadas, no paquetes: la propuesta cubre un alcance de trabajo."
           ],
           "table": {
             "caption": "Tarifas Iter 2026: presupuesto mensual sin IVA y volumen medio observado",
@@ -557,7 +557,7 @@
                 "Esencial",
                 "3.000 a 5.000 €",
                 "1 a 2 días al mes",
-                "Reporting mensual de P&L, tesorería y KPI, previsión de tesorería a 13 semanas, revisión financiera mensual con el directivo, soporte puntual."
+                "Reporting mensual de P&L, tesorería y KPI, previsión de tesorería a 13 semanas, revisión financiera mensual con la dirección, soporte puntual."
               ],
               [
                 "Crecimiento",
@@ -578,7 +578,7 @@
           "id": "demarrage",
           "title": "Plazos de inicio y compromiso",
           "paragraphs": [
-            "Su necesidad se cualifica en 2 días hábiles, se le presenta un perfil en 5 días hábiles y la misión empieza entre 8 y 15 días después del primer contacto. Los primeros entregables llegan desde el primer mes de intervención.",
+            "Su necesidad se cualifica en 2 días hábiles, se le presenta un perfil en 5 días hábiles y el encargo empieza entre 8 y 15 días después del primer contacto. Los primeros entregables llegan desde el primer mes de intervención.",
             "Sin duración mínima de compromiso; se puede rescindir con un preaviso de 30 días."
           ]
         }
@@ -611,10 +611,10 @@
     ],
     "signals": [
       "Su CFO deja la empresa o se ausenta durante un periodo sensible.",
-      "Un cierre, una financiación o un cambio de herramientas requiere más apoyo directivo.",
+      "Un cierre, una financiación o un cambio de herramientas requiere más apoyo de la dirección.",
       "Está contratando a un director financiero y necesita organizar el relevo."
     ],
-    "definition": "La dirección financiera interina consiste en confiar temporalmente la gestión a un CFO con un periodo y un mandato definidos. La misión combina la atención a las prioridades inmediatas y la preparación de una organización duradera. La dedicación parcial responde, en cambio, a una necesidad recurrente de dirección financiera.",
+    "definition": "La dirección financiera interina consiste en confiar temporalmente la gestión a un CFO con un periodo y un mandato definidos. El encargo combina la atención a las prioridades inmediatas y la preparación de una organización duradera. La dedicación parcial responde, en cambio, a una necesidad recurrente de dirección financiera.",
     "deliverables": [
       [
         "Diagnóstico priorizado",
@@ -652,7 +652,7 @@
           "Mandato y responsabilidades aprobados por la dirección"
         ],
         [
-          "Durante la misión",
+          "Durante el encargo",
           "Vencimientos atendidos, riesgos abiertos y decisiones documentadas",
           "Revisión de avances y ajuste del alcance"
         ],
@@ -682,18 +682,18 @@
     ],
     "scopeTitle": "Una presencia adaptada al mandato",
     "scope": [
-      "La presencia y la facultad de decisión se acuerdan con la dirección. La misión no supone automáticamente una delegación de firma ni poderes sobre las cuentas bancarias.",
+      "La presencia y la facultad de decisión se acuerdan con la dirección. El encargo no supone automáticamente una delegación de firma ni poderes sobre las cuentas bancarias.",
       "El CFO coordina a los equipos y asesores dentro del alcance acordado. Los asuntos jurídicos, fiscales o concursales también corresponden a los profesionales competentes. La preparación de la salida empieza al definir el alcance."
     ],
     "budget": "En Iter Advisors, los honorarios orientativos de un CFO de transición van de 8.000 a 12.000 € sin IVA al mes, según presupuesto, disponibilidad y alcance.",
     "faq": [
       [
-        "¿La misión de CFO de transición determina el tipo de contrato?",
-        "No. Transición describe el carácter temporal de la misión de dirección financiera. No determina por sí sola el tipo de contrato laboral o de prestación de servicios. El acuerdo debe precisar la modalidad, responsabilidades y traspaso."
+        "¿El encargo de CFO de transición determina el tipo de contrato?",
+        "No. Transición describe el carácter temporal del encargo de dirección financiera. No determina por sí sola el tipo de contrato laboral o de prestación de servicios. El acuerdo debe precisar la modalidad, las responsabilidades y el traspaso."
       ],
       [
-        "¿Cuánto dura una misión interina?",
-        "La duración depende del motivo de la sustitución, los vencimientos y la disponibilidad del sucesor. Se acuerda al definir el alcance, junto con los objetivos de salida, posibles prórrogas y traspaso. No existe una duración estándar para todas las misiones."
+        "¿Cuánto dura un encargo interino?",
+        "La duración depende del motivo de la sustitución, los vencimientos y la disponibilidad del sucesor. Se acuerda al definir el alcance, junto con los objetivos de salida, las posibles prórrogas y el traspaso. No existe una duración estándar para todos los encargos."
       ],
       [
         "¿Cuándo elegir un CFO interino en lugar de uno a tiempo parcial?",
@@ -705,7 +705,7 @@
       ],
       [
         "¿Cómo preparan el traspaso?",
-        "La misión precisa los documentos, accesos, procedimientos, hipótesis y asuntos pendientes que deben transmitirse. El calendario se acuerda con el directivo y el sucesor."
+        "El encargo precisa los documentos, accesos, procedimientos, hipótesis y asuntos pendientes que deben transmitirse. El calendario se acuerda con la dirección y el sucesor."
       ],
       [
         "¿Qué debemos preparar para contactarles?",
@@ -726,7 +726,7 @@
         "/ressources/blog/organiser-sa-direction-financiere"
       ],
       [
-        "Precios de las misiones CFO",
+        "Precios de los encargos de CFO",
         "/daf-externalise/tarifs"
       ]
     ],
@@ -809,7 +809,7 @@
       "La contabilidad aporta una base indispensable. El control de gestión organiza su interpretación económica, por ejemplo un margen por canal o un presupuesto por responsable. Ambas funciones coordinan sus calendarios y reglas.",
       "La automatización es útil cuando las fuentes y las definiciones son estables. Un cuadro de mando actualizado automáticamente sigue necesitando controles, un responsable y comentarios sobre anomalías. Una herramienta no sustituye el análisis."
     ],
-    "budget": "La propuesta distingue la construcción inicial del reporting y su seguimiento. El número de entidades, las fuentes, los ejes analíticos y la frecuencia de las revisiones determinan el alcance. Si también necesita financiación y decisiones de dirección, una misión de CFO a tiempo parcial puede ser más adecuada.",
+    "budget": "La propuesta distingue la construcción inicial del reporting y su seguimiento. El número de entidades, las fuentes, los ejes analíticos y la frecuencia de las revisiones determinan el alcance. Si también necesita financiación y decisiones de dirección, un encargo de CFO a tiempo parcial puede ser más adecuado.",
     "case": "seasonly-marge-par-canal-bfr",
     "faq": [
       [
@@ -874,7 +874,7 @@
       ]
     ],
     "signals": [
-      "Los documentos que faltan bloquean el cierre y requieren tiempo del directivo.",
+      "Los documentos que faltan bloquean el cierre y consumen tiempo de la dirección.",
       "No sabe quién comprueba los datos ni quién valida los vencimientos.",
       "Sus herramientas contables y su reporting utilizan información distinta."
     ],
@@ -925,7 +925,7 @@
     "faq": [
       [
         "¿Tengo que cambiar de asesoría contable?",
-        "No necesariamente. El acompañamiento puede partir de su asesoría actual, aclarando intercambios, vencimientos y funciones. La necesidad de cambio se evalúa al definir el alcance."
+        "No necesariamente. El apoyo puede partir de su asesoría actual, aclarando intercambios, vencimientos y funciones. La necesidad de cambio se evalúa al definir el alcance."
       ],
       [
         "¿Están incluidas la llevanza y las declaraciones?",
@@ -1059,7 +1059,7 @@
       "Los responsables comerciales, de compras y operaciones aportan las fechas esperadas. El CFO consolida, comprueba coherencias y prepara decisiones. La frecuencia depende de la situación.",
       "La obtención de financiación, las negociaciones y las decisiones de pago son acciones distintas. Las opciones se comparan teniendo en cuenta sus costes y restricciones."
     ],
-    "budget": "La propuesta depende de las entidades, los bancos, la calidad de los calendarios de pago y la frecuencia de seguimiento. La previsión puede ser una misión específica o un entregable de un acompañamiento recurrente de CFO.",
+    "budget": "La propuesta depende de las entidades, los bancos, la calidad de los calendarios de pago y la frecuencia de seguimiento. La previsión puede ser un encargo específico o un entregable de un apoyo recurrente de CFO.",
     "case": "seasonly-marge-par-canal-bfr",
     "faq": [
       [
@@ -1098,7 +1098,7 @@
     "description": "Estructure las operaciones financieras: responsabilidades, datos, cierre y reporting. Un alcance adaptado a su equipo.",
     "headline": "Gestión de operaciones financieras",
     "promise": "Una función financiera que sabe quién hace qué.",
-    "intro": "Cuando se acumulan archivos, herramientas y responsabilidades, producir las cifras se convierte en un proyecto. El acompañamiento organiza las operaciones financieras para que su equipo disponga de un funcionamiento compartido.",
+    "intro": "Cuando se acumulan archivos, herramientas y responsabilidades, producir las cifras se convierte en un proyecto. El apoyo organiza las operaciones financieras para que su equipo disponga de un funcionamiento compartido.",
     "context": "organisation",
     "category": "Estructurar la función financiera",
     "summary": [
@@ -1120,7 +1120,7 @@
       "Las validaciones y los seguimientos dependen de una sola persona.",
       "El crecimiento o una nueva entidad exige una organización más explícita."
     ],
-    "definition": "Las operaciones financieras organizan la circulación de datos, las responsabilidades y el calendario para producir las cifras. Para facturas, pagos o conciliaciones, la misión comienza por identificar quién prepara, comprueba y valida. El CFO externo atiende la gestión y las decisiones de dirección; el contrato precisa los trabajos de Iter y los que conserva su equipo.",
+    "definition": "Las operaciones financieras organizan la circulación de los datos, las responsabilidades y el calendario para producir las cifras. Para facturas, pagos o conciliaciones, el encargo empieza por identificar quién prepara, quién comprueba y quién valida. El CFO externo atiende la gestión y las decisiones de dirección; el contrato precisa los trabajos de Iter y los que conserva su equipo.",
     "deliverables": [
       [
         "Reparto de funciones",
@@ -1198,7 +1198,7 @@
     "description": "Prepare las finanzas de su ronda: modelo financiero, data room y respuestas a inversores. Entregables y calendario definidos según su proyecto.",
     "headline": "Preparación financiera de rondas",
     "promise": "Hipótesis explicadas. Un expediente financiero coherente.",
-    "intro": "El CFO traduce su proyecto en escenarios financieros y organiza los datos que esperan los inversores. El directivo presenta el proyecto; buscar inversores es un mandato distinto.",
+    "intro": "El CFO traduce su proyecto en escenarios financieros y organiza los datos que esperan los inversores. El fundador presenta el proyecto; buscar inversores es un mandato distinto.",
     "context": "levee",
     "category": "Preparar una operación",
     "summary": [
@@ -1212,7 +1212,7 @@
       ],
       [
         "Presupuesto",
-        "Misión puntual o complementaria, bajo presupuesto"
+        "Encargo puntual o complementario, bajo presupuesto"
       ]
     ],
     "signals": [
@@ -1220,7 +1220,7 @@
       "Las cifras del modelo, del reporting y del expediente para inversores difieren.",
       "Las preguntas financieras requieren tiempo del equipo sin coordinación."
     ],
-    "definition": "El acompañamiento abarca la preparación y el seguimiento financieros. El modelo, los escenarios y la data room explican las cifras y las incertidumbres. La misión no garantiza importe captado, valoración ni fecha de cierre.",
+    "definition": "El apoyo abarca la preparación y el seguimiento financieros. El modelo, los escenarios y la data room explican las cifras y las incertidumbres. El encargo no garantiza ni el importe captado, ni la valoración, ni la fecha de cierre.",
     "deliverables": [
       [
         "Modelo financiero",
@@ -1239,7 +1239,7 @@
       ]
     ],
     "exampleTitle": "Hacer que una hipótesis pueda discutirse",
-    "example": "Acelerar las ventas implica gastos y contrataciones. El modelo relaciona estas decisiones con la caja y prueba retrasos de ingresos o financiación para que el directivo compare opciones.",
+    "example": "Acelerar las ventas implica gastos y contrataciones. El modelo relaciona estas decisiones con la caja y prueba retrasos de ingresos o de financiación para que la dirección compare opciones.",
     "steps": [
       [
         "Definir la preparación",
@@ -1250,28 +1250,28 @@
         "Documentar hipótesis, conciliar cifras y organizar documentos financieros."
       ],
       [
-        "Acompañar los intercambios",
+        "Apoyar las conversaciones",
         "Preparar respuestas y actualizar escenarios; organizar el reporting posterior si está previsto."
       ]
     ],
-    "scopeTitle": "CFO, directivo y asesor de financiación: funciones complementarias",
+    "scopeTitle": "CFO, fundador y asesor de financiación: funciones complementarias",
     "scope": [
-      "El directivo presenta el proyecto y decide las condiciones aceptables. El CFO prepara y explica las cifras. Un asesor contratado puede buscar y contactar a inversores conforme a su mandato.",
-      "Las posibles presentaciones, los intercambios y las responsabilidades se acuerdan al definir el alcance. Los aspectos jurídicos y fiscales se revisan con asesores competentes en sus propias misiones."
+      "El fundador presenta el proyecto y decide las condiciones aceptables. El CFO prepara y explica las cifras. Un asesor contratado puede buscar y contactar a inversores conforme a su mandato.",
+      "Las posibles presentaciones, los intercambios y las responsabilidades se acuerdan al definir el alcance. Los aspectos jurídicos y fiscales se revisan con asesores competentes en sus propios encargos."
     ],
     "budget": "La propuesta depende de la madurez del modelo, los datos, las entidades y los intercambios previstos. Precisa entregables y calendario de trabajo. El plazo de financiación también depende de inversores y negociaciones.",
     "case": "solarmente-serie-b-cleantech",
     "faq": [
       [
         "¿Actúan como asesores de captación de fondos?",
-        "El servicio descrito abarca la preparación y el seguimiento financieros. La búsqueda de inversores corresponde al directivo o a un asesor contratado. Las posibles presentaciones se acuerdan al definir el alcance."
+        "El servicio descrito abarca la preparación y el seguimiento financieros. La búsqueda de inversores corresponde al fundador o a un asesor contratado. Las posibles presentaciones se acuerdan al definir el alcance."
       ],
       [
         "¿Qué preparar para la primera conversación?",
         "Cuentas y reporting disponibles, tesorería, calendarios de deuda e hipótesis del proyecto. Después se acuerda cómo compartirlos de forma segura."
       ],
       [
-        "¿Continúa el acompañamiento después de la ronda?",
+        "¿Continúa el apoyo después de la ronda?",
         "Si lo prevé el mandato, puede incluir actualizar el presupuesto, seguir la caja y preparar reporting para inversores."
       ]
     ],
@@ -1310,7 +1310,7 @@
     "description": "Prepare una adquisición, venta o ronda: resultados, deuda, capital circulante y escenarios. Análisis, entregables y honorarios definidos en la propuesta.",
     "headline": "M&A y due diligence financiera",
     "promise": "Analizar una operación con datos examinados.",
-    "intro": "Comprador, directivo o vendedor: le ayudamos a organizar y analizar información financiera útil para su operación. El mandato distingue preparación del expediente, revisión financiera y trabajos de otros asesores.",
+    "intro": "Comprador, empresario o vendedor: le ayudamos a organizar y analizar la información financiera útil para su operación. El mandato distingue la preparación del expediente, la revisión financiera y los trabajos de otros asesores.",
     "context": "due-diligence",
     "category": "Preparar una operación",
     "summary": [
@@ -1375,12 +1375,12 @@
     "case": "solarmente-serie-b-cleantech",
     "faq": [
       [
-        "¿Preparación y due diligence son la misma misión?",
+        "¿Preparación y due diligence son el mismo encargo?",
         "No. Preparar el expediente consiste en organizar y explicar información. Una revisión independiente la examina para sus destinatarios según un mandato propio."
       ],
       [
         "¿Pueden intervenir para el comprador?",
-        "El alcance puede cubrir la revisión financiera de los datos disponibles de la empresa objetivo, los puntos de atención y los análisis útiles para negociar. Se define al acordar la misión."
+        "El alcance puede cubrir la revisión financiera de los datos disponibles de la empresa objetivo, los puntos de atención y los análisis útiles para negociar. Se define al acordar el encargo."
       ],
       [
         "¿Qué documentos se necesitan?",

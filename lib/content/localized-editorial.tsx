@@ -27,6 +27,13 @@ function data(value: unknown, locale: TargetLocale, key = ''): unknown {
       if (key === '@id' && /#(?:person|organization|website)$/.test(value)) return value;
       return parityHref(value, locale);
     }
+    // NATIF-EN-ES (2026-10-17) — un corps d'article passé en prop `html` à un
+    // composant client (gabarit fiscal, articles) arrivait ici comme une seule
+    // chaîne : le dictionnaire, indexé par phrase, ne la trouvait pas et le
+    // français sortait tel quel sur les pages EN et ES (citation « On voit
+    // trop d'entrepreneurs… » sur la page IRPF anglaise). Une chaîne qui
+    // contient des balises est traduite nœud par nœud, comme un __html.
+    if (/<[a-z][^>]*>/i.test(value)) return editorialHtml(value, locale);
     return editorialText(value, locale);
   }
   if (Array.isArray(value)) return value.map(item => data(item, locale));

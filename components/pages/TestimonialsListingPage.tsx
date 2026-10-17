@@ -1,6 +1,7 @@
 "use client";
 
 import { Locale } from "@/lib/i18n";
+import { quoteMarks } from "@/lib/quote-marks";
 import type { CmsNavItem } from "@/lib/static-content";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -427,7 +428,7 @@ export default function TestimonialsListingPage({
 
                   {/* Quote */}
                   <blockquote className="text-sm text-muted-foreground leading-relaxed mb-5 italic">
-                    &laquo; {uc.quote} &raquo;
+                    {quoteMarks(locale).open}{uc.quote}{quoteMarks(locale).close}
                   </blockquote>
 
                   {/* Person */}

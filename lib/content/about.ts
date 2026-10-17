@@ -356,19 +356,19 @@ export const aboutContent: Record<Locale, AboutContent> = {
     meta: {
       title: "Sobre nosotros | Iter Advisors",
       description:
-        "Iter Advisors, firma de CFO externo y consultoría financiera. Apoyamos pymes y startups en estructuración financiera y captación de fondos.",
+        "Iter Advisors, firma de CFO externo y consultoría financiera. Asesoramos a pymes y startups en estructuración financiera y captación de fondos.",
     },
     hero: {
       h1: "Sobre nosotros",
       intro:
-        "Iter Advisors es una firma de consultoría financiera y CFO externo que apoya el crecimiento estratégico de sus socios estructurando, gestionando y escalando su función financiera.",
+        "Iter Advisors es una firma de consultoría financiera y CFO externo que apoya el crecimiento de las empresas con las que trabaja estructurando, dirigiendo y escalando su función financiera.",
     },
     whoWeAre: {
       heading: "Quiénes somos",
       paragraphs: [
-        `Nuestro equipo cuenta con ${TEAM_LABEL.es} y hemos acompañado a ${CLIENTS_ACCOMPAGNES} empresas desde la creación del gabinete.`,
-        "Iter Advisors es una firma de consultoría financiera que acompaña a startups, pymes y empresas medianas en crecimiento. Intervenimos como CFO externo, a tiempo parcial o de transición para estructurar y gestionar su función financiera. Para startups financiadas por capital riesgo ofrecemos también [CFO para startups](/fractional-cfo-startups).",
-        "Fundada en 2021, Iter Advisors reúne CFOs experimentados de trayectorias complementarias: auditoría, control de gestión, dirección financiera, M&A. Su visión compartida\u00A0: hacer accesible a las empresas en crecimiento una dirección financiera de primer nivel.",
+        `Nuestro equipo cuenta con ${TEAM_LABEL.es} y hemos asesorado a ${CLIENTS_ACCOMPAGNES} empresas desde la creación de la firma.`,
+        "Iter Advisors es una firma de consultoría financiera que trabaja con startups, pymes y empresas medianas en crecimiento. Intervenimos como CFO externo, a tiempo parcial o de transición, para estructurar y dirigir su función financiera. Para startups financiadas con capital riesgo ofrecemos también un [CFO para startups](/fractional-cfo-startups).",
+        "Fundada en 2021, Iter Advisors reúne a CFO experimentados con trayectorias complementarias: auditoría, control de gestión, dirección financiera, M&A. Su visión compartida\u00A0: poner al alcance de las empresas en crecimiento una dirección financiera de primer nivel.",
         getCompanyGeography("es").summary,
       ],
     },
@@ -385,7 +385,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           title: "Proyecciones financieras sólidas",
           description:
-            "Anticipar para decidir mejor. Construimos modelos de previsión robustos que le permiten pilotar su actividad con confianza y preparar sus rondas de financiación.",
+            "Anticipar para decidir mejor. Construimos modelos de previsión robustos que le permiten dirigir su actividad con confianza y preparar sus rondas de financiación.",
         },
         {
           title: "Optimización financiera",
@@ -407,12 +407,12 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           title: "Lanzamiento",
           description:
-            "Estructure su función financiera desde el inicio. Puesta en marcha de la contabilidad, herramientas de gestión y primeros cuadros de mando para pilotar su actividad.",
+            "Estructure su función financiera desde el inicio. Puesta en marcha de la contabilidad, herramientas de gestión y primeros cuadros de mando para dirigir su actividad.",
         },
         {
           title: "Crecimiento",
           description:
-            "Acompañe su escalada. Refuerzo de los procesos financieros, construcción de planes de negocio, pilotaje del rendimiento y preparación para rondas de financiación.",
+            "Sostenga su crecimiento. Refuerzo de los procesos financieros, construcción de planes de negocio, seguimiento del rendimiento y preparación de las rondas de financiación.",
         },
         {
           title: "Gestión de crisis",
@@ -434,7 +434,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
     team: {
       heading: "Nuestro equipo",
       intro:
-        "Un equipo de CFOs experimentados con trayectorias complementarias, unidos por una misma pasión por el acompañamiento de empresas en crecimiento.",
+        "Un equipo de CFO experimentados con trayectorias complementarias, unidos por una misma pasión: trabajar con empresas en crecimiento.",
       members: [],
     },
     faq: {
@@ -443,52 +443,52 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           question: "¿Qué es un CFO externo?",
           answer:
-            "Un CFO externo acompaña al directivo en la gestión financiera según un alcance y una dedicación acordados. Su presencia, responsabilidades y entregables deben compararse con los de un puesto interno.",
+            "Un CFO externo trabaja con la dirección de la empresa en la gestión financiera, con un alcance y una dedicación acordados. Su presencia, sus responsabilidades y sus entregables deben compararse con los de un puesto interno.",
         },
         {
-          question: "¿Cuál es la diferencia entre un CFO a tiempo compartido y un CFO de transición?",
+          question: "¿Cuál es la diferencia entre un CFO a tiempo parcial y un CFO de transición?",
           answer:
-            "El tiempo parcial responde a una necesidad regular de gestión. Una misión de transición cubre una situación temporal, como una sustitución o reorganización. La presencia y disponibilidad se precisan en la propuesta.",
+            "El tiempo parcial responde a una necesidad regular de dirección financiera. Un encargo de transición cubre una situación temporal, como una sustitución o una reorganización. La presencia y la disponibilidad se precisan en la propuesta.",
         },
         {
           question: "¿A qué tipo de empresa se dirige Iter Advisors?",
           answer:
-            "Acompañamos principalmente a startups, pymes y empresas de mediana capitalización en crecimiento, desde la fase semilla hasta la fase de scale-up. Nuestros clientes operan en sectores variados: tech, SaaS, e-commerce, servicios, industria, etc.",
+            "Trabajamos sobre todo con startups, pymes y empresas medianas en crecimiento, desde la fase semilla hasta la fase de scale-up. Nuestros clientes operan en sectores variados: tech, SaaS, e-commerce, servicios, industria, etc.",
         },
         {
-          question: "¿Cómo funciona una misión con Iter Advisors?",
+          question: "¿Cómo funciona una colaboración con Iter Advisors?",
           answer:
-            "Tras un primer intercambio para comprender sus necesidades, le proponemos un CFO adaptado a su contexto. La misión comienza con un diagnóstico de su función financiera, seguido de un plan de acción concreto. Luego intervenimos de forma regular según la fórmula elegida.",
+            "Tras una primera conversación para entender sus necesidades, le proponemos un CFO adaptado a su contexto. El encargo empieza con un diagnóstico de su función financiera, seguido de un plan de acción concreto. Después intervenimos de forma regular según la fórmula elegida.",
         },
         {
           question: "¿Cuánto cuesta un CFO externo?",
           answer:
-            "El presupuesto depende de los entregables, la dedicación y la complejidad. La página de precios presenta referencias indicativas. Un acompañamiento a tiempo parcial y un puesto a tiempo completo no cubren automáticamente la misma necesidad.",
+            "El presupuesto depende de los entregables, la dedicación y la complejidad. La página de precios presenta referencias orientativas. Un apoyo a tiempo parcial y un puesto a jornada completa no cubren automáticamente la misma necesidad.",
         },
         {
-          question: "¿Qué herramientas utilizáis?",
+          question: "¿Qué herramientas utilizan?",
           answer:
             getFinanceStackSummary("es"),
         },
         {
-          question: "¿Trabajáis a nivel internacional?",
+          question: "¿Trabajan a nivel internacional?",
           answer:
-            "Sí, acompañamos a empresas en Francia, España e internacionalmente. Nuestro equipo es bilingüe (francés/inglés) y algunos de nuestros CFOs también hablan español.",
+            "Sí, trabajamos con empresas en Francia, en España y a nivel internacional. Nuestro equipo es bilingüe (francés/inglés) y algunos de nuestros CFO también hablan español.",
         },
         {
-          question: "¿Podéis acompañarnos en una ronda de financiación?",
+          question: "¿Pueden ayudarnos en una ronda de financiación?",
           answer:
-            "Por supuesto. El acompañamiento en rondas de financiación es una de nuestras especialidades. Intervenimos en la preparación del dossier para inversores, la modelización financiera, la data room, la due diligence y la negociación con los fondos.",
+            "Por supuesto. Las rondas de financiación son una de nuestras especialidades. Intervenimos en la preparación del dosier para inversores, la modelización financiera, la data room, la due diligence y la negociación con los fondos.",
         },
         {
-          question: "¿Cuál es la duración media de una misión?",
+          question: "¿Cuál es la duración media de un encargo?",
           answer:
-            "La duración, dedicación, preaviso y traspaso se acuerdan según la misión. No publicamos una duración media sin datos comparables y fechados.",
+            "La duración, la dedicación, el preaviso y el traspaso se acuerdan en cada encargo. No publicamos una duración media sin datos comparables y fechados.",
         },
         {
           question: "¿Cómo contactar con Iter Advisors?",
           answer:
-            "El formulario y nuestros datos de contacto permiten presentar tu necesidad. Te contactaremos para precisar la situación y organizar una conversación. No se reserva una cita automáticamente.",
+            "El formulario y nuestros datos de contacto le permiten presentarnos su necesidad. Nos pondremos en contacto con usted para precisar la situación y organizar una conversación. No se reserva ninguna cita de forma automática.",
         },
       ],
     },

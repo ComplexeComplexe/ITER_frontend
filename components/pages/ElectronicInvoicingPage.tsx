@@ -4,13 +4,15 @@ import PageLayout from '@/components/PageLayout';
 import Breadcrumb from '@/components/Breadcrumb';
 import type { Locale } from '@/lib/i18n';
 import { parityHref } from '@/lib/locale-route-map';
+import { quoteMarks } from '@/lib/quote-marks';
 import { FINANCE_EXPERT } from '@/lib/content/finance-expert';
 import { getInvoiceContent, invoiceImage, INVOICE_DATE, INVOICE_TIMESTAMP, INVOICE_ROUTES, INVOICE_UI, INVOICE_SOURCES, type InvoicePageKey } from '@/lib/content/electronic-invoicing';
 
 const linkClass = 'text-iter-violet underline underline-offset-4 hover:decoration-2 focus-visible:outline-2 focus-visible:outline-offset-4';
 function ExpertQuote({ text, locale }: { text: string; locale: Locale }) {
   const ui = INVOICE_UI[locale];
-  return <blockquote className="border-l-4 border-iter-violet bg-iter-violet/5 px-6 py-5 rounded-r-2xl my-8"><p className="text-lg leading-relaxed">« {text} »</p><cite className="block text-sm not-italic mt-3 text-muted-foreground">{ui.quote}{ui.translated && ` · ${ui.translated}`}</cite></blockquote>;
+  const q = quoteMarks(locale);
+  return <blockquote className="border-l-4 border-iter-violet bg-iter-violet/5 px-6 py-5 rounded-r-2xl my-8"><p className="text-lg leading-relaxed">{q.open}{text}{q.close}</p><cite className="block text-sm not-italic mt-3 text-muted-foreground">{ui.quote}{ui.translated && ` · ${ui.translated}`}</cite></blockquote>;
 }
 export function InvoiceResourceCard({ locale }: { locale: Locale }) {
   const ui = INVOICE_UI[locale];

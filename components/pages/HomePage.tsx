@@ -20,6 +20,7 @@ import {
 } from "@/lib/content/home-pilotage";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import { parityHref } from "@/lib/locale-route-map";
+import { quoteMarks } from "@/lib/quote-marks";
 import { faqPageSchema } from "@/lib/schemas";
 import { strapiMediaUrl } from "@/lib/static-content";
 import type { Locale } from "@/lib/i18n";
@@ -289,7 +290,7 @@ export default function HomePage({
             <div className={styles.quotes}>
               {t.reviewItems.map((review) => (
                 <figure key={review.name}>
-                  <blockquote>« {review.body} »</blockquote>
+                  <blockquote>{quoteMarks(locale).open}{review.body}{quoteMarks(locale).close}</blockquote>
                   <figcaption>
                     <strong>{review.name}</strong>
                     <span>
