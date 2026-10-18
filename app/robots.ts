@@ -1,6 +1,10 @@
 import type { MetadataRoute } from "next";
 
-const privatePaths = ["/api/", "/_next/data/", "/profil/merci", "/campagne/merci"];
+// HYGIENE-2 (2026-10-18) — /profil/merci et /campagne/merci retirés : ces
+// routes n'existent pas dans app/ (la seule page de remerciement est
+// /lp/daf-externalise/merci, déjà en noindex) et répondaient 404. Un
+// Disallow vers une 404 est inutile et trompeur pour les crawlers.
+const privatePaths = ["/api/", "/_next/data/"];
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -9,7 +13,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
         // /_next/static/ and /_next/image must be crawlable for JS/CSS/images.
-        // Only block internal data routes (/_next/data/) and confirmation pages.
+        // Only block internal data routes (/_next/data/) and the API.
         // SEO-16 (2026-07-01) — retiré les résidus WordPress (/wp-admin,
         // /wp-content, /wp-includes, /comments/feed, /feed) qui étaient
         // hérités du site pre-Next.js. Ces routes n'existent plus, les

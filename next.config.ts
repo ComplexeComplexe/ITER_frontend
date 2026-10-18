@@ -109,6 +109,16 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return correctedGscRedirects(localeRedirects([
+      // HYGIENE-2 (2026-10-18) — doublons de l'accueil relevés par l'audit du
+      // 18/10 : `/index` répondait 200 (Next.js normalise /index vers la page
+      // racine, x-matched-path: /) et `/fr` passait par une 301 du proxy. Les
+      // deux rejoignent `/` en un seul saut 308. La variante `/fr/` garde un
+      // saut de plus : la suppression du slash final est une redirection
+      // interne de Next.js marquée `priority: true` (load-custom-routes.js),
+      // évaluée avant toute règle de next.config ou de vercel.json —
+      // /notre-expertise/ en production en témoigne.
+      { source: "/index", destination: "/", permanent: true },
+      { source: "/fr", destination: "/", permanent: true },
       // Approved Okimia migration: explicit 301 (permanent:true would emit 308).
       {"source": "/ressources/outils/fygr", "destination": "/ressources/outils/okimia", "statusCode": 301},
       {"source": "/en/ressources/tools/fygr", "destination": "/en/ressources/tools/okimia", "statusCode": 301},
