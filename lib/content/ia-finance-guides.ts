@@ -11,7 +11,7 @@ const hub = "/ressources/ia-finance";
 const link = (slug: string, label: string) => `<a href="${hub}/${slug}">${label}</a>`;
 const source = (key: IaSourceKey, label: string) => `<a href="${IA_SOURCES[key].url}">${label}</a>`;
 const table = (caption: string, heads: string[], rows: string[][]) => `<div class="prose-table-wrapper"><table class="min-w-[32rem]"><caption>${caption}</caption><thead><tr>${heads.map(h => `<th scope="col">${h}</th>`).join("")}</tr></thead><tbody>${rows.map(row => `<tr>${row.map((cell, i) => i === 0 ? `<th scope="row">${cell}</th>` : `<td>${cell}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
-const financeImage = "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80";
+const financeImage = "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp";
 
 /** Contenu éditorial statique uniquement : aucun HTML provenant d'un utilisateur. */
 export const IA_GUIDES: Record<string, IaGuide> = {

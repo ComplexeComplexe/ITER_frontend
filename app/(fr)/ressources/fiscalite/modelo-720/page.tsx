@@ -100,7 +100,7 @@ export default async function Page() {
         </>
       }
       heroImage={{
-        src: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&w=1200&q=80",
+        src: "/images/blog/modelo-720-declaration-biens-etranger.webp",
         alt: "Modelo 720 : déclarer ses biens à l'étranger en Espagne",
       }}
       kpis={[
@@ -148,13 +148,13 @@ export default async function Page() {
       related={[
         {
           href: "/ressources/fiscalite/double-imposition-france-espagne",
-          img: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=600&q=80",
+          img: "/images/blog/double-imposition-france-espagne-convention.webp",
           alt: "Convention fiscale France-Espagne : éviter la double imposition",
           title: "Convention fiscale France-Espagne : qui impose quoi, et comment éviter la double imposition",
         },
         {
           href: "/ressources/fiscalite/beckham-law",
-          img: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80",
+          img: "/images/blog/loi-beckham-espagne-conditions-eligibilite.webp",
           alt: "Loi Beckham en Espagne : le régime des impatriés",
           title: "Loi Beckham : le régime des impatriés — et pourquoi il dispense du Modelo 720",
         },

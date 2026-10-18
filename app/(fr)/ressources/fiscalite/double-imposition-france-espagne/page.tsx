@@ -109,7 +109,7 @@ export default async function Page() {
         </>
       }
       heroImage={{
-        src: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1200&q=80",
+        src: "/images/blog/double-imposition-france-espagne-convention.webp",
         alt: "Convention fiscale France-Espagne : éviter la double imposition en 2026",
       }}
       kpis={[
@@ -159,13 +159,13 @@ export default async function Page() {
       related={[
         {
           href: "/ressources/fiscalite/residence-fiscale-france-espagne",
-          img: "https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&w=600&q=80",
+          img: "/images/blog/bareme-irpf-espagne-2026.webp",
           alt: "Résidence fiscale France-Espagne : les trois critères",
           title: "Résidence fiscale France-Espagne : les 3 critères qui décident où vous payez vos impôts",
         },
         {
           href: "/ressources/fiscalite/modelo-720",
-          img: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&w=600&q=80",
+          img: "/images/blog/modelo-720-declaration-biens-etranger.webp",
           alt: "Modelo 720 : déclarer ses biens à l'étranger en Espagne",
           title: "Modelo 720 : l'obligation déclarative des biens conservés en France",
         },

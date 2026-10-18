@@ -35,7 +35,7 @@ const PUBLISHED_DATE = "2026-05-31";
 const MODIFIED_DATE = "2026-10-09";
 
 const HERO_IMG =
-  "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1200&q=80";
+  "/images/blog/loi-beckham-espagne-conditions-eligibilite.webp";
 
 export const metadata: Metadata = buildMetadata({
   locale: "fr",
@@ -208,13 +208,13 @@ export default function Page() {
       related={[
         {
           href: "/ressources/blog/loi-beckham-economie-impot-simulation",
-          img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80",
+          img: "/images/blog/externalisation-comptable.webp",
           alt: "Calculatrice et documents financiers — simulation de l'économie d'impôt sous la loi Beckham",
           title: "Loi Beckham : le calcul de l'économie d'impôt, salaire par salaire",
         },
         {
           href: "/ressources/blog/loi-beckham-espagne-conditions-eligibilite",
-          img: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=600&q=80",
+          img: "/images/blog/double-imposition-france-espagne-convention.webp",
           alt: "Vue de Madrid — conditions d'éligibilité au régime des impatriés en Espagne",
           title: "Loi Beckham : êtes-vous éligible au régime des impatriés ?",
         },

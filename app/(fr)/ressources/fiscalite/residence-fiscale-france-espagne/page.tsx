@@ -90,7 +90,7 @@ export default function Page() {
         </>
       }
       heroImage={{
-        src: "https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&w=1200&q=80",
+        src: "/images/blog/bareme-irpf-espagne-2026.webp",
         alt: "Résidence fiscale France-Espagne : les trois critères qui décident où payer ses impôts",
       }}
       kpis={[
@@ -133,13 +133,13 @@ export default function Page() {
       related={[
         {
           href: "/ressources/fiscalite/double-imposition-france-espagne",
-          img: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=600&q=80",
+          img: "/images/blog/double-imposition-france-espagne-convention.webp",
           alt: "Convention fiscale France-Espagne : éviter la double imposition",
           title: "Convention fiscale France-Espagne : qui impose quoi une fois la résidence fixée",
         },
         {
           href: "/ressources/fiscalite/beckham-law",
-          img: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80",
+          img: "/images/blog/loi-beckham-espagne-conditions-eligibilite.webp",
           alt: "Loi Beckham en Espagne : le régime des impatriés",
           title: "Loi Beckham : devenir résident espagnol sans le barème progressif pendant 6 ans",
         },
