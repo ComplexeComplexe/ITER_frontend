@@ -95,7 +95,15 @@ export function editorialText(text: string, locale: TargetLocale): string {
   // français sans clé est rendu tel quel : un paragraphe Markdown passe ici
   // une première fois entier, puis nœud par nœud après rendu, et modifier sa
   // ponctuation ferait échouer la seconde recherche.
-  if (translated === undefined) return /\p{L}/u.test(text) ? formatNumbers(text, locale) : nativePunctuation(formatNumbers(text, locale), locale);
+  // Une phrase française sans clé (quatre mots ou plus) est rendue telle
+  // quelle : reformater ses nombres (« 12 000 € » → « €12,000 ») avant la
+  // seconde recherche, nœud par nœud, faisait échouer celle-ci (glossaire
+  // ARR/MRR). Les fragments courts (cellules « 600 000 € », « : ») gardent
+  // le format de la langue.
+  if (translated === undefined) {
+    const phrase = /\p{L}/u.test(text) && text.trim().split(/\s+/).length >= 4;
+    return phrase ? text : nativePunctuation(formatNumbers(text, locale), locale);
+  }
   const body = nativePunctuation(formatNumbers(contractCopy(translated, locale), locale), locale);
   // En anglais, un nœud qui commence par « % » suit un nombre rendu dans le
   // nœud voisin (« {pct} % de nos clients ») : l'espace française avant le

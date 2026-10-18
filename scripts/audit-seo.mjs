@@ -294,7 +294,7 @@ for (const abs of urls) {
   // strip() remplace chaque balise par une espace : « <strong>Model</strong>: x »
   // se lirait « Model : x ». Une balise immédiatement suivie de « : » ou « ; »
   // est donc retirée sans espace avant le contrôle du lexique.
-  const texteLexique = strip(html.replace(/<[^>]+>(?=\s*[:;])/g, ""));
+  const texteLexique = strip(html.replace(/(?:<[^>]+>)+(?=\s*[:;])/g, ""));
   for (const { re, sujet } of lexique) {
     if (HORS_LEXIQUE.some((x) => x.path.test(path) && x.sujet.test(sujet))) continue;
     const m = `${strip(titres[0] ?? "")} | ${metaDescription} | ${texteLexique}`.match(re);
