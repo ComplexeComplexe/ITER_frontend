@@ -75,7 +75,7 @@ export function renderInlineMarkdownLinks(text: string): ReactNode {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-iter-violet hover:underline"
+            className="text-iter-violet underline underline-offset-4 hover:no-underline"
           >
             {label}
           </a>,
@@ -85,7 +85,7 @@ export function renderInlineMarkdownLinks(text: string): ReactNode {
           <Link
             key={`l-${key++}`}
             href={url}
-            className="text-iter-violet hover:underline"
+            className="text-iter-violet underline underline-offset-4 hover:no-underline"
           >
             {label}
           </Link>,
