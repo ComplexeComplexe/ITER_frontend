@@ -282,7 +282,8 @@ for (const abs of urls) {
     { re: /(?<![\p{L}\p{N}_])[Tt]us?\s+(?=\p{L})/u, sujet: "possessif « tu/tus » (su/sus attendu)" },
     { re: /\bSalvia\b/, sujet: "marque traduite (Sage)" },
     { re: /\bRampa\b/, sujet: "marque traduite (Ramp)" },
-    { re: /malib[úu]\b/i, sujet: "marque traduite (malibou)" },
+    // « \\b » ignore les lettres accentuées : « malibú » n'était pas vu en fin de mot.
+    { re: /malib[úu](?!\p{L})/iu, sujet: "marque traduite (malibou)" },
     { re: /\S[ \u00A0\u202F]:(?=\s|$)/, sujet: "espace française avant « : »" },
     { re: /\S[ \u00A0\u202F];(?=\s|$)/, sujet: "espace française avant « ; »" },
     { re: /Cofondateur, DAF externalisé/, sujet: "fonction d'auteur restée en français" },
