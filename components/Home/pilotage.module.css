@@ -190,13 +190,16 @@
   border-radius: 50%;
 }
 .rhSignal p {
-  font-size: 12px;
+  font-size: 14px;
   flex: 1;
   margin: 0;
   color: #ffffffe6;
 }
 .rhSignal > a {
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
   color: white;
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -462,13 +465,19 @@
   padding-left: 32px;
 }
 .services details > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   margin-left: 32px;
   color: var(--site-accent);
-  font-size: 13px;
+  font-size: 14px;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 .textLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--site-violet);
   font-weight: 600;
   text-decoration: underline;
@@ -488,12 +497,15 @@
   margin: 26px 0;
 }
 .related > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   padding: 9px 12px;
   border: 1px solid var(--site-border);
   border-radius: var(--site-button-radius);
   color: var(--site-violet);
   background: white;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   text-decoration: none;
 }
@@ -602,7 +614,7 @@
   font-size: 16px;
 }
 .leads figcaption span {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--site-muted);
 }
 .teamRest {

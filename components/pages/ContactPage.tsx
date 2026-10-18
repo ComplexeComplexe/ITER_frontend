@@ -4,7 +4,7 @@ import { CLIENTS_ACCOMPAGNES } from "@/lib/content/facts";
 
 import { useState, useEffect, FormEvent, useRef } from "react";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   Mail,
@@ -22,6 +22,7 @@ import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import { pushLeadFormSubmitted } from "@/lib/analytics/leadForm";
 import { CONTACT_NEEDS, getContactContext } from "@/lib/contact-context";
+import { getCompanyGeography } from "@/lib/company-facts";
 
 /* ─── i18n content for the new sections ─── */
 const contactPageText = {
@@ -41,12 +42,7 @@ const contactPageText = {
     hoursValue: "Lun – Ven, 9h – 18h",
     calendlyLabel: "Réserver un créneau",
     calendlyDesc: "Planifiez un appel de 30 min avec un expert",
-    officesTitle: "Nos bureaux",
-    offices: [
-      { city: "Barcelone", country: "Espagne", flag: "🇪🇸" },
-      { city: "Paris", country: "France", flag: "🇫🇷" },
-      { city: "Toulouse (domiciliation)", country: "France", flag: "🇫🇷" },
-    ],
+    officesTitle: "Notre présence",
     clientsTitle: "Ils nous font confiance",
     successMessage: "Merci\u00A0! Votre message a bien été envoyé. Notre équipe reviendra vers vous pour préciser votre besoin et organiser un échange.",
   },
@@ -66,12 +62,7 @@ const contactPageText = {
     hoursValue: "Mon – Fri, 9am – 6pm",
     calendlyLabel: "Book a slot",
     calendlyDesc: "Schedule a 30-min call with an expert",
-    officesTitle: "Our offices",
-    offices: [
-      { city: "Barcelona", country: "Spain", flag: "🇪🇸" },
-      { city: "Paris", country: "France", flag: "🇫🇷" },
-      { city: "Toulouse (domiciliation)", country: "France", flag: "🇫🇷" },
-    ],
+    officesTitle: "Where we work",
     clientsTitle: "They trust us",
     successMessage: "Thank you! Your message has been sent. Our team will get back to you to clarify your needs and arrange a conversation.",
   },
@@ -91,12 +82,7 @@ const contactPageText = {
     hoursValue: "Lun – Vie, 9h – 18h",
     calendlyLabel: "Reservar una cita",
     calendlyDesc: "Programe una llamada de 30 min con un experto",
-    officesTitle: "Nuestras oficinas",
-    offices: [
-      { city: "Barcelona", country: "España", flag: "🇪🇸" },
-      { city: "París", country: "Francia", flag: "🇫🇷" },
-      { city: "Toulouse (domiciliation)", country: "Francia", flag: "🇫🇷" },
-    ],
+    officesTitle: "Nuestra presencia",
     clientsTitle: "Confían en nosotros",
     successMessage: "Gracias. Su mensaje ha sido enviado. Nuestro equipo le contactará para precisar su necesidad y organizar una conversación.",
   },
@@ -128,6 +114,7 @@ export default function ContactPage({
 }) {
   const t = getContactContent(locale);
   const tx = contactPageText[locale];
+  const geography = getCompanyGeography(locale);
   const [pending, setPending] = useState(false);
   const [success, setSuccess] = useState(false);
   const [need, setNeed] = useState("");
@@ -147,8 +134,6 @@ export default function ContactPage({
 
   const formRef = useRef<HTMLDivElement>(null);
 
-  const officesRef = useRef<HTMLDivElement>(null);
-  const officesInView = useInView(officesRef, { once: true, margin: "-60px" });
 
   const [error, setError] = useState("");
 
@@ -234,7 +219,7 @@ export default function ContactPage({
         </div>
 
         <div className="container relative z-10" ref={heroRef}>
-          <Breadcrumb locale={locale} items={[{ label: t.h1 }]} variant="dark" />
+          <Breadcrumb locale={locale} items={[{ label: locale === "es" ? "Contacto" : "Contact" }]} variant="dark" />
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 mt-6 lg:mt-8 items-start">
             {/* ── Left: hero copy (3/5 on desktop) ── */}
@@ -249,11 +234,11 @@ export default function ContactPage({
               </span>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-heading leading-[1.1] mb-6">
-                {need === "rh" ? ({ fr: "Parlons de votre organisation RH", en: "Let us discuss your HR organisation", es: "Hablemos de tu organización de RR. HH." }[locale]) : need === "automation" ? (locale === "fr" ? "Parlons de votre reporting et de l’IA" : locale === "en" ? "Let’s discuss reporting and AI" : "Hablemos de reporting e IA") : tx.h1}
+                {need === "rh" ? ({ fr: "Parlons de votre organisation RH", en: "Let us discuss your HR organisation", es: "Hablemos de su organización de RR. HH." }[locale]) : need === "automation" ? (locale === "fr" ? "Parlons de votre reporting et de l’IA" : locale === "en" ? "Let’s discuss reporting and AI" : "Hablemos de reporting e IA") : tx.h1}
               </h1>
 
               <p className="text-base sm:text-lg text-white/70 leading-relaxed mb-8">
-                {need === "rh" ? ({ fr: "Décrivez vos équipes, vos priorités et les sujets RH à traiter. Nous préciserons ensemble le périmètre et les intervenants nécessaires.", en: "Describe your teams, priorities and HR matters. We will agree the scope and professionals needed.", es: "Describe tus equipos, prioridades y asuntos de RR. HH. Acordaremos el alcance y los profesionales necesarios." }[locale]) : tx.subtitle}
+                {need === "rh" ? ({ fr: "Décrivez vos équipes, vos priorités et les sujets RH à traiter. Nous préciserons ensemble le périmètre et les intervenants nécessaires.", en: "Describe your teams, priorities and HR matters. We will agree the scope and professionals needed.", es: "Describa sus equipos, prioridades y asuntos de RR. HH. Acordaremos el alcance y los profesionales necesarios." }[locale]) : tx.subtitle}
               </p>
 
               {/* Trust badges */}
@@ -268,7 +253,7 @@ export default function ContactPage({
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 size={16} className="text-iter-chartreuse" />
-                  <span className="text-white/60 text-sm">{need === "rh" ? ({ fr: "Un périmètre RH défini avec vous", en: "An HR scope agreed with you", es: "Un alcance de RR. HH. acordado contigo" }[locale]) : tx.trustBadge}</span>
+                  <span className="text-white/60 text-sm">{need === "rh" ? ({ fr: "Un périmètre RH défini avec vous", en: "An HR scope agreed with you", es: "Un alcance de RR. HH. acordado con usted" }[locale]) : tx.trustBadge}</span>
                 </div>
               </div>
             </motion.div>
@@ -338,8 +323,8 @@ export default function ContactPage({
                       </div>
                     </div>
                     {renderFields(t.form.fields.filter(field => field.name !== "phone"))}
-                    <details className="text-sm"><summary className="cursor-pointer py-2 text-iter-violet">{locale === "fr" ? "Ajouter un téléphone (facultatif)" : locale === "en" ? "Add a phone number (optional)" : "Añadir un teléfono (opcional)"}</summary>{renderFields(t.form.fields.filter(field => field.name === "phone"))}</details>
-                    <p className="text-xs text-muted-foreground">{locale === "fr" ? "Nous vous recontactons pour préciser le besoin et convenir d’un échange. Aucun rendez-vous n’est réservé automatiquement." : locale === "en" ? "We will contact you to clarify your needs and arrange a conversation. No appointment is booked automatically." : "Le contactaremos para concretar su necesidad y acordar una conversación. No se reserva una cita automáticamente."}</p>
+                    <details className="text-sm"><summary className="cursor-pointer min-h-11 py-3 text-iter-violet">{locale === "fr" ? "Ajouter un téléphone (facultatif)" : locale === "en" ? "Add a phone number (optional)" : "Añadir un teléfono (opcional)"}</summary>{renderFields(t.form.fields.filter(field => field.name === "phone"))}</details>
+                    <p className="text-sm text-muted-foreground">{locale === "fr" ? "Nous vous recontactons pour préciser le besoin et convenir d’un échange. Aucun rendez-vous n’est réservé automatiquement." : locale === "en" ? "We will contact you to clarify your needs and arrange a conversation. No appointment is booked automatically." : "Le contactaremos para concretar su necesidad y acordar una conversación. No se reserva una cita automáticamente."}</p>
 
                     <div className="pt-1">
                       <button
@@ -427,30 +412,28 @@ export default function ContactPage({
 
       {/* ═══ OFFICES ═══ */}
       <section className="site-section bg-muted/30 py-20 lg:py-24">
-        <div className="container" ref={officesRef}>
+        <div className="container">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={officesInView ? { opacity: 1, y: 0 } : {}}
+            initial={false}
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
             <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground">
               {tx.officesTitle}
             </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl mx-auto">{geography.summary}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {tx.offices.map((office, i) => (
+            {geography.cities.map((city, i) => (
               <motion.div
-                key={office.city}
-                initial={{ opacity: 0, y: 20 }}
-                animate={officesInView ? { opacity: 1, y: 0 } : {}}
+                key={city}
+                initial={false}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="site-card group relative bg-white rounded-2xl border border-border/50 p-8 text-center hover:shadow-lg hover:border-iter-violet/20 transition-all duration-300"
               >
-                <div className="text-4xl mb-4">{office.flag}</div>
-                <h3 className="text-lg font-bold text-foreground mb-1">{office.city}</h3>
-                <p className="text-sm text-muted-foreground">{office.country}</p>
+                <div className="text-4xl mb-4" aria-hidden="true">{i === 1 ? "🇪🇸" : "🇫🇷"}</div>
+                <h3 className="text-lg font-bold text-foreground mb-1">{city}</h3>
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-iter-violet rounded-t-full opacity-0 group-hover:opacity-100 transition-opacity" />
               </motion.div>
             ))}

@@ -30,13 +30,13 @@ import type { Locale } from "@/lib/i18n";
  */
 
 const dmSans = DM_Sans({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
 });
 
 const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   variable: "--font-heading",
   display: "swap",
 });

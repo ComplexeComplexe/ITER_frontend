@@ -31,10 +31,9 @@ describe("published Pilotage homepage", () => {
       expect(doc.querySelectorAll("h1")).toHaveLength(1);
       expect(doc.querySelector("h1")?.textContent).toBe(t.headline.join(""));
       const hero = doc.querySelector('[data-journey="home-hero"]')!;
-      for (const path of ["/contact#daf", "/daf-externalise/tarifs"])
-        expect(
-          hero.querySelector(`a[href="${parityHref(path, locale)}"]`),
-        ).not.toBeNull();
+      expect(hero.querySelector(`a[href="${parityHref("/contact#daf", locale)}"]`)).not.toBeNull();
+      expect(hero.querySelector(`a[href="${parityHref("/daf-externalise/tarifs", locale)}"]`)).toBeNull();
+      expect(hero.querySelectorAll('[class*="actions"] > a')).toHaveLength(1);
       expect(
         doc.querySelector(
           `a[href="${parityHref("/daf-externalise", locale)}"]`,
@@ -76,7 +75,7 @@ describe("published Pilotage homepage", () => {
       const copies = doc.querySelectorAll('section[aria-label] [aria-hidden="true"] img');
       expect(copies).toHaveLength(0);
       expect([...copies].every(logo => logo.getAttribute("alt") === "")).toBe(true);
-      expect(doc.querySelector(`a[href="${parityHref("/daf-externalise/tarifs", locale)}"]`)).not.toBeNull();
+      expect(doc.querySelectorAll(`a[href="${parityHref("/daf-externalise/tarifs", locale)}"]`)).toHaveLength(1);
     }
   });
   it("labels the illustrative forecast and describes the actual minimum and ending cash", () => {

@@ -109,7 +109,7 @@ export default function HomePage({
                   </summary>
                   <p>{item.desc}</p>
                   <Link locale={locale} href={item.href}>
-                    {t.services.link} <span aria-hidden="true">→</span>
+                    {item.title} <span aria-hidden="true">→</span>
                   </Link>
                 </details>
               ))}
@@ -144,7 +144,7 @@ export default function HomePage({
                 </Link>
               </div>
               <nav className={styles.related} aria-label={t.offer.related}>
-                {HOME_CLUSTER_PATHS.map((path, i) => (
+                {HOME_CLUSTER_PATHS.map((path, i) => path === "/daf-externalise/tarifs" ? null : (
                   <Link locale={locale} key={path} href={href(path)}>
                     {journey.cluster[i]}
                   </Link>

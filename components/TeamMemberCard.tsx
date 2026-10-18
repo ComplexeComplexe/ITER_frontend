@@ -55,7 +55,7 @@ export default function TeamMemberCard({
             width={96}
             height={96}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            unoptimized
+            sizes="96px"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
@@ -68,7 +68,7 @@ export default function TeamMemberCard({
       <h3 className="font-semibold text-sm group-hover:text-iter-violet transition-colors">
         {name}
       </h3>
-      <p className="text-xs text-muted-foreground mt-0.5">{member.role}</p>
+      <p className="text-sm text-muted-foreground mt-0.5">{member.role}</p>
     </>
   );
 
@@ -78,10 +78,10 @@ export default function TeamMemberCard({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`LinkedIn: ${name}`}
-      className="mt-1.5 inline-flex justify-center"
+      className="mt-1.5 inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-iter-violet"
     >
       <svg
-        className="w-3.5 h-3.5 text-muted-foreground/40 hover:text-iter-violet transition-colors"
+        className="w-4 h-4 text-muted-foreground hover:text-iter-violet transition-colors"
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"

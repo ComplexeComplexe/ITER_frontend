@@ -295,7 +295,7 @@ export default function CookieConsent({ locale = "fr" }: CookieConsentProps) {
           className="fixed bottom-0 left-0 right-0 z-[9999] p-2 md:p-6"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          <div className="mx-auto max-w-4xl rounded-2xl border border-[oklch(0.92_0.004_270)] bg-white shadow-2xl">
+          <div className="mx-auto max-w-4xl md:ml-auto md:mr-0 md:max-w-lg rounded-2xl border border-[oklch(0.92_0.004_270)] bg-white shadow-2xl">
             <div className="p-3 md:p-6">
               {/* Titre */}
               <div className="mb-1 flex items-center gap-2">

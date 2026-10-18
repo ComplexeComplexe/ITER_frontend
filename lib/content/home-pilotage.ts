@@ -55,7 +55,7 @@ const copy = {
     subtitle:
       "Trésorerie, budgets, reporting et financements : un directeur financier intégré à votre équipe, quelques jours par mois. Pour les PME et startups en France et en Espagne.",
     contact: "Échanger avec un DAF",
-    fees: "Voir les fourchettes",
+    fees: "Consulter les tarifs DAF",
     notice: "Préavis de",
     days: "jours",
     noMinimum: "Sans durée minimale.",
@@ -223,7 +223,7 @@ const copy = {
     subtitle:
       "Cash flow, budgets, reporting and financing: a finance director embedded in your team for a few days a month. For SMEs and startups in France and Spain.",
     contact: "Talk to a CFO",
-    fees: "View fees",
+    fees: "View CFO pricing",
     notice: "Notice period:",
     days: "days",
     noMinimum: "No minimum term.",
@@ -394,7 +394,7 @@ const copy = {
     subtitle:
       "Tesorería, presupuestos, reporting y financiación: un director financiero integrado en su equipo unos días al mes. Para pymes y startups en Francia y España.",
     contact: "Hablar con un CFO",
-    fees: "Ver honorarios",
+    fees: "Consultar honorarios del CFO",
     notice: "Preaviso de",
     days: "días",
     noMinimum: "Sin permanencia mínima.",

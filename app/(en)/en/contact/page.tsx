@@ -8,8 +8,8 @@ export async function generateMetadata(): Promise<Metadata> {
     endpoint: "contact-page",
     locale: "en",
     path: "/contact",
-    fallbackTitle: "Free CFO Consultation | Iter Advisors",
-    fallbackDescription: "Book a free 45-minute financial diagnosis with a senior Iter Advisors CFO. No commitment, clear next steps.",
+    fallbackTitle: "Contact our finance & HR team | Iter Advisors",
+    fallbackDescription: "Discuss your finance or HR needs with Iter Advisors. Free initial conversation, with a presence in Paris, Barcelona and Toulouse.",
   });
 }
 

@@ -244,7 +244,7 @@ export default function Header({
                 onClick={() => setLangOpen(!langOpen)}
                 aria-haspopup="menu"
                 aria-expanded={langOpen}
-                className="flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-white/50 uppercase tracking-wider hover:text-white transition-colors"
+                className="flex min-h-11 items-center gap-1.5 px-3 py-2 text-sm font-medium text-white/80 uppercase tracking-wider hover:text-white transition-colors"
               >
                 {locale}
                 <svg
@@ -343,7 +343,7 @@ export default function Header({
                     </Link>
                     {item.children && (
                       <button
-                        className="p-3 text-white/40"
+                        className="min-h-11 min-w-11 p-3 text-white/80"
                         type="button"
                         aria-controls={`header-mobile-panel-${i}`}
                         aria-label={`${locale === "fr" ? "Sous-menu" : locale === "en" ? "Submenu" : "Submenú"} ${item.title}`}
@@ -370,7 +370,7 @@ export default function Header({
                 locale={locale}
                           key={child.href}
                           href={child.href}
-                          className="block py-2 px-4 text-sm text-white/40 hover:text-white transition-colors rounded-lg"
+                          className="flex min-h-11 items-center py-3 px-4 text-sm text-white/80 hover:text-white transition-colors rounded-lg"
                           onClick={() => setMobileOpen(false)}
                         >
                           {child.text}
@@ -400,7 +400,7 @@ export default function Header({
                     key={l}
                     href={translations[l]!}
                     onClick={() => setMobileOpen(false)}
-                    className="text-xs uppercase tracking-widest px-3 py-1.5 border rounded-lg border-white/10 text-white/40 hover:text-white hover:border-white/30 transition-colors"
+                    className="inline-flex min-h-11 min-w-11 items-center justify-center text-sm uppercase tracking-widest px-3 py-2 border rounded-lg border-white/30 text-white/80 hover:text-white hover:border-white/60 transition-colors"
                   >
                     {l}
                   </NativeLink>
