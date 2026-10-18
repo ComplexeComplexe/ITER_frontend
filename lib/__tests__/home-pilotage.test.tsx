@@ -75,7 +75,7 @@ describe("published Pilotage homepage", () => {
       const copies = doc.querySelectorAll('section[aria-label] [aria-hidden="true"] img');
       expect(copies).toHaveLength(0);
       expect([...copies].every(logo => logo.getAttribute("alt") === "")).toBe(true);
-      expect(doc.querySelector(`a[href="${parityHref("/daf-externalise/tarifs", locale)}"]`)).not.toBeNull();
+      expect(doc.querySelectorAll(`a[href="${parityHref("/daf-externalise/tarifs", locale)}"]`)).toHaveLength(1);
     }
   });
   it("labels the illustrative forecast and describes the actual minimum and ending cash", () => {

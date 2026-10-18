@@ -144,7 +144,7 @@ export default function HomePage({
                 </Link>
               </div>
               <nav className={styles.related} aria-label={t.offer.related}>
-                {HOME_CLUSTER_PATHS.map((path, i) => (
+                {HOME_CLUSTER_PATHS.map((path, i) => path === "/daf-externalise/tarifs" ? null : (
                   <Link locale={locale} key={path} href={href(path)}>
                     {journey.cluster[i]}
                   </Link>
