@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80",
+        url: "/images/blog/daf-externalise-startup.webp",
         width: 1200,
         height: 630,
         alt: "DAF externalisé pour startup",
@@ -51,7 +51,7 @@ export default function DafExternaliseStartupPage() {
       }}
       readingTime={6}
       dateModified="2026-10-09"
-      heroImage="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80"
+      heroImage="/images/blog/daf-externalise-startup.webp"
       toc={[
         { id: "pourquoi-startup", label: "1. Pourquoi un DAF en startup ?" },
         { id: "quand-recruter", label: "2. Les 5 déclencheurs" },

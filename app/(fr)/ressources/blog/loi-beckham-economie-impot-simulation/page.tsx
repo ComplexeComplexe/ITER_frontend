@@ -21,7 +21,9 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=1200&q=80",
+        url: "/images/blog/loi-beckham-economie-impot-simulation.webp",
+        width: 1200,
+        height: 630,
         alt: "Loi Beckham : simulation de l'économie d'impôt par niveau de salaire",
       },
     ],
@@ -50,7 +52,7 @@ export default function Page() {
       }}
       readingTime={5}
       dateModified="2026-10-09"
-      heroImage="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=1200&q=80"
+      heroImage="/images/blog/loi-beckham-economie-impot-simulation.webp"
       toc={[
         { id: "principe-calcul", label: "Comment fonctionne le calcul" },
         { id: "tableau-simulation", label: "Les données de la simulation" },

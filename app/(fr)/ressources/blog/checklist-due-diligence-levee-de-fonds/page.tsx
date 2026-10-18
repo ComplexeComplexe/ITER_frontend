@@ -250,7 +250,7 @@ export default function ChecklistDueDiligencePage() {
       <h3>Quels documents les VCs demandent-ils systématiquement en due diligence ?</h3>
       <p>La liste minimum que tout fonds VC demande : bilans et comptes de résultat 3 ans certifiés, cap table à jour avec les BSA/BSPCE, prévisionnel P&L + trésorerie 3 ans (avec hypothèses détaillées), contrats des 5 à 10 clients représentant 80 % du CA, table d&apos;amortissement des dettes, et rapport KYC sur les fondateurs. Une data room bien structurée facilite la revue des documents sans garantir le délai de closing.</p>
       <h3>Quel est le rôle d&apos;un DAF externalisé pendant la due diligence ?</h3>
-      <p>Le <a href="/daf-externalise">directeur financier à temps partagé</a> joue trois rôles pendant la due diligence : (1) il audite les chiffres historiques et détecte les anomalies avant que les investisseurs les trouvent ; (2) il construit le prévisionnel avec des hypothèses défendables et un modèle sensibilisé ; (3) il répond aux questions financières des VCs et de leurs experts-comptables. Chez Iter Advisors, nos clients accompagnés ont levé plus de 100 M€ depuis 2021.</p>
+      <p>Le <Link href="/daf-externalise">directeur financier à temps partagé</Link> joue trois rôles pendant la due diligence : (1) il audite les chiffres historiques et détecte les anomalies avant que les investisseurs les trouvent ; (2) il construit le prévisionnel avec des hypothèses défendables et un modèle sensibilisé ; (3) il répond aux questions financières des VCs et de leurs experts-comptables. Chez Iter Advisors, nos clients accompagnés ont levé plus de 100 M€ depuis 2021.</p>
     </BlogPostPageRefonte>
   );
 }

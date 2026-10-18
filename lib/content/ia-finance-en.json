@@ -6,7 +6,7 @@
     "description": "Automate SME reporting: sources, reconciliations, controls, an illustrative ROI calculation and a documented case. A finance-led method.",
     "dek": "Automating financial reporting means making data collection reliable, applying reproducible calculation rules and preparing commentary. Start with an approved report against which to compare the new process, with an owner for each discrepancy.",
     "published": "2026-09-01",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "image": "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp",
     "summary": [
       "Separate data connections, calculations and AI-assisted commentary.",
       "Validate totals and exceptions before distributing a dashboard.",
@@ -74,7 +74,7 @@
     "description": "Three finance exercises: variance commentary, document requests and board preparation. Prompts, expected answers and data confidentiality.",
     "dek": "ChatGPT can help a finance team comment on a budget, draft document requests and analyse files with calculation tools. How reliable it is depends on the data you supply, the checks you run and the context you give it: fluent prose is no proof that a figure is right.",
     "published": "2026-09-01",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "image": "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp",
     "summary": [
       "The examples below are teaching exercises built on fictitious data.",
       "Ask for the calculation steps, then verify the results in your reference tool.",
@@ -138,7 +138,7 @@
     "description": "Choose an LLM for finance: test framework, sources, calculations, confidentiality and integration. A comparison protocol without an artificial ranking.",
     "dek": "The right LLM for a finance team is the one that passes a reproducible business test in an authorised environment. Compare answer quality, traceability of figures and correction time on the same documents and the same instructions.",
     "published": "2026-09-01",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "image": "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp",
     "summary": [
       "Assess the model, its host application and its connectors separately.",
       "Compare answers on an identical set of files, with an answer key prepared before the test.",
@@ -205,7 +205,7 @@
     "description": "Compare reporting, connectors and AI assistants: criteria, total costs, licences and questions before buying. Links to vendor documentation.",
     "dek": "Choosing a financial tool starts with the data to use and the controls required. Assess the accounting software, data connection, reporting and AI assistant separately: buying a licence does not automatically connect these four layers.",
     "published": "2026-09-01",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "image": "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp",
     "summary": [
       "An available API is not a ready-to-use connector.",
       "Include report readers, maintenance and internal time in the budget.",
@@ -269,7 +269,7 @@
     "description": "An AI and reporting rollout plan for SMEs: owners, deliverables, stage gates, measured benefits and a return to manual processes when needed.",
     "dek": "The 90-day objective is to test one financial process within a controlled scope and decide whether it warrants expansion. Timing depends on access, closing cycles and data quality. It guarantees neither productivity gains nor a close by day five.",
     "published": "2026-09-01",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "image": "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp",
     "summary": [
       "One priority process, a business owner and a before-and-after reference.",
       "Progress depends on quality criteria as well as dates.",
@@ -338,7 +338,7 @@
     "description": "U.S. Venture, Armanino and Hebbia: three documented AI cases and their relevance to SMEs. Opti Digital is a separate Iter financial-structuring assignment.",
     "dek": "Three public cases illustrate specific AI uses in finance: reconciliations, document requests and document analysis. We identify each result’s publisher, what is measured and what an SME can test. These companies are not presented as Iter Advisors clients.",
     "published": "2026-09-05",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "image": "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp",
     "summary": [
       "Vendor case results are neither independent audits nor promises of gains.",
       "Suggested SME applications are our interpretation of the cases and require local testing.",

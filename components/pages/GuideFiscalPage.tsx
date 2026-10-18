@@ -138,7 +138,9 @@ export default async function GuideFiscalPage({
         url: pageUrl,
         headline: headline ?? h1,
         description,
-        image: heroImage.src,
+        // Hero covers are served from /public since Unsplash was dropped:
+        // schema.org wants an absolute URL.
+        image: heroImage.src.startsWith("/") ? `${SITE}${heroImage.src}` : heroImage.src,
         datePublished: publishedDate,
         dateModified: modifiedDate,
         inLanguage: { fr: "fr-FR", en: "en-GB", es: "es-ES" }[locale],

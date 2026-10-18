@@ -30,9 +30,10 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
+        url: '/images/blog/daf-externalise-vs-daf-interimaire.webp',
         width: 1200,
         height: 630,
+        alt: 'DAF externalisé ou DAF intérimaire : comparatif 2026',
       },
     ],
   },
@@ -59,7 +60,7 @@ export default function DafExternalisVsDafInterimairePage() {
     dek="Durée, disponibilité, responsabilités et budget : comparer un mandat temporaire et une direction financière à temps partagé."
     author={{ name: 'Benjamin Ziza', avatar: '/images/team/benjamin-ziza.webp', jobTitle: 'Associé fondateur et CFO, Iter Advisors', url: '/a-propos/benjamin-ziza' }}
     readingTime={6} datePublished="2026-07-24" dateModified="2026-10-02"
-    heroImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+    heroImage="/images/blog/daf-externalise-vs-daf-interimaire.webp"
     toc={[{ id: 'differences-fondamentales', label: '1. Différences fondamentales' }, { id: 'tableau-comparatif', label: '2. Tableau comparatif' }, { id: 'cout-tjm', label: '3. Comparer les budgets' }, { id: 'quand-choisir', label: '4. Quand choisir lequel ?' }, { id: 'cas-usage', label: '5. Scénarios illustratifs' }, { id: 'conclusion', label: '6. Préparer votre décision' }]}
     tldr="Le mandat temporaire précise un relais et sa sortie. Le temps partagé organise un suivi récurrent. Comparez la disponibilité et les responsabilités avant le prix ; un statut externe ne garantit ni un délai ni une économie."
     faqItems={FAQ_ITEMS}

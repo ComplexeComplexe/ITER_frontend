@@ -263,6 +263,13 @@ const FR_ONLY_BLOG_SLUGS = [
 /*  Middleware                                                         */
 /* ------------------------------------------------------------------ */
 
+// HYGIENE-2 (2026-10-18) — les trois listings blog sont prérendus. Le
+// paramètre `?page=` hérité (ancienne pagination) était traité dans la page
+// FR par un `notFound()` après lecture de `searchParams`, ce qui rendait les
+// trois listings dynamiques (no-store, x-vercel-cache MISS). Il est traité ici,
+// avant la page, par une redirection permanente vers l'URL propre.
+const BLOG_LISTINGS = new Set(["/ressources/blog", "/en/ressources/blog", "/es/recursos/blog"]);
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -293,6 +300,13 @@ export function proxy(request: NextRequest) {
     const rest = frPrefixMatch[1] || "/";
     const url = request.nextUrl.clone();
     url.pathname = rest;
+    return NextResponse.redirect(url, 301);
+  }
+
+  /* ── 1b. Listings blog : `?page=` hérité → URL propre (voir BLOG_LISTINGS) ── */
+  if (BLOG_LISTINGS.has(pathname) && request.nextUrl.searchParams.has("page")) {
+    const url = request.nextUrl.clone();
+    url.search = "";
     return NextResponse.redirect(url, 301);
   }
 

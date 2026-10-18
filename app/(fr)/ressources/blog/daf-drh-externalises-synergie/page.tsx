@@ -6,9 +6,14 @@ import BlogPostPageRefonte from "@/components/pages/BlogPostPageRefonte";
 export const metadata: Metadata = {
   robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
   title: "DAF et DRH : coordonner les responsabilités | Iter Advisors",
-  description: "Budget, recrutements et paie : comment coordonner DAF et DRH externalisés, clarifier les rôles et comparer les périmètres sans promettre une économie automatique.",
+  description: "Budget, recrutements et paie : coordonner DAF et DRH externalisés, clarifier les rôles et comparer les périmètres sans promettre une économie automatique.",
   alternates: {...publishedMetadataAlternates("/ressources/blog/daf-drh-externalises-synergie"),  canonical: "https://www.iteradvisors.com/ressources/blog/daf-drh-externalises-synergie" },
-  openGraph: { title: "DAF et DRH : coordonner les responsabilités | Iter Advisors", description: "Budget, recrutements et paie : comment coordonner DAF et DRH externalisés, clarifier les rôles et comparer les périmètres sans promettre une économie automatique.", url: "https://www.iteradvisors.com/ressources/blog/daf-drh-externalises-synergie", locale: "fr_FR", type: "article" },
+  openGraph: { title: "DAF et DRH : coordonner les responsabilités | Iter Advisors", description: "Budget, recrutements et paie : coordonner DAF et DRH externalisés, clarifier les rôles et comparer les périmètres sans promettre une économie automatique.", url: "https://www.iteradvisors.com/ressources/blog/daf-drh-externalises-synergie", locale: "fr_FR", type: "article",
+    // HYGIENE-2 (2026-10-18) — la couverture de l'article est un SVG, que les
+    // réseaux sociaux n'acceptent pas en og:image ; l'objet openGraph de la page
+    // remplace celui du layout, donc l'image par défaut était perdue (seul
+    // twitter:image, hérité, restait). Visuel raster 1200×630 du layout.
+    images: [{ url: "/images/logos/iter-advisors-brand.png", width: 1200, height: 630, alt: "Logo Iter Advisors" }] },
 };
 export default function Page() {
   return <BlogPostPageRefonte locale="fr" breadcrumbs={{ resourcesLabel:"Ressources", resourcesHref:"/ressources", blogLabel:"Blog", blogHref:"/ressources/blog" }} slug="daf-drh-externalises-synergie" category="Organisation"
