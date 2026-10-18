@@ -1,4 +1,5 @@
 import type { Locale } from "@/lib/i18n";
+import { colon, semicolon } from "@/lib/quote-marks";
 
 /** Tools and use cases confirmed by Guillaume Rostand on 3 October 2026.
  * This describes engagement scope, not certifications or formal partnerships. */
@@ -290,12 +291,14 @@ export function getFinanceStackCategories(locale: Locale) {
 
 export function getFinanceStackSummary(locale: Locale): string {
   const categories = getFinanceStackCategories(locale);
+  // NATIF-EN-ES phase 2 (2026-10-18) — séparateurs à la française (« : », « ; »
+  // précédés d'une espace) sur la FAQ anglaise et espagnole de la page équipe.
   const list = categories
     .map(
       (category) =>
-        `${category.heading} : ${category.tools.map((tool) => tool.name).join(", ")}`,
+        `${category.heading}${colon(locale)}${category.tools.map((tool) => tool.name).join(", ")}`,
     )
-    .join(" ; ");
+    .join(semicolon(locale));
   const tail = {
     fr: "Le choix dépend des besoins, des outils déjà en place et du périmètre convenu.",
     en: "The choice depends on your needs, existing tools and the agreed scope.",

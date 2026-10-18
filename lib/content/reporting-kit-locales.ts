@@ -27,15 +27,15 @@ const translations: Record<"en" | "es", Record<string, string>> = {
     "décrit les contrôles à organiser avec votre équipe.": "describes controls to organise with your team."
   },
   "es": {
-    "Essayez sur un reporting fictif, avec son corrigé": "Prueba un reporting ficticio con su solución",
+    "Essayez sur un reporting fictif, avec son corrigé": "Pruebe un reporting ficticio con su solución",
     "Ce kit pédagogique ne contient aucune donnée client. Il décrit un mois pour une entreprise fictive, en milliers d’euros, avec des charges positives. Le solde CA moins charges n’est pas un EBITDA comptable.": "Este kit didáctico no contiene datos de clientes. Describe un mes de una empresa ficticia en miles de euros, con gastos positivos. El saldo ingresos menos gastos no es un EBITDA contable.",
     "Télécharger le kit complet (ZIP)": "Descargar el kit completo (ZIP)",
     "ou": "o",
     "ouvrir le fichier CSV": "abrir el archivo CSV",
-    "Ouvrez les données dans Excel ou votre tableur : séparateur point-virgule, encodage UTF-8. Vérifiez la période, l’entité, l’unité et l’unicité des identifiants.": "Abre los datos en Excel o tu hoja de cálculo: separador punto y coma, codificación UTF-8. Verifica periodo, entidad, unidad e identificadores únicos.",
-    "Agrégez le chiffre d’affaires et les charges, puis calculez les écarts. Comparez avec le corrigé fourni.": "Agrega ingresos y gastos, calcula las desviaciones y compara con la solución incluida.",
-    "Utilisez le prompt ci-dessous sur ce fichier fictif. Rejetez toute cause non présente dans les données.": "Utiliza el prompt siguiente con el archivo ficticio. Rechaza causas no presentes en los datos.",
-    "Testez ensuite le fichier avec doublon : le contrôle doit identifier la ligne répétée avant de valider le total.": "Prueba después el archivo con duplicado: el control debe identificar la fila repetida antes de validar el total.",
+    "Ouvrez les données dans Excel ou votre tableur : séparateur point-virgule, encodage UTF-8. Vérifiez la période, l’entité, l’unité et l’unicité des identifiants.": "Abra los datos en Excel o su hoja de cálculo: separador punto y coma, codificación UTF-8. Verifique periodo, entidad, unidad e identificadores únicos.",
+    "Agrégez le chiffre d’affaires et les charges, puis calculez les écarts. Comparez avec le corrigé fourni.": "Añada ingresos y gastos, calcule las desviaciones y compare con la solución incluida.",
+    "Utilisez le prompt ci-dessous sur ce fichier fictif. Rejetez toute cause non présente dans les données.": "Utilice el prompt siguiente con el archivo ficticio. Rechace causas no presentes en los datos.",
+    "Testez ensuite le fichier avec doublon : le contrôle doit identifier la ligne répétée avant de valider le total.": "Pruebe después el archivo con duplicado: el control debe identificar la fila repetida antes de validar el total.",
     "Résultat attendu du fichier valide, en k€": "Resultado esperado del archivo válido, en k€",
     "Indicateur": "Indicador",
     "Budget": "Presupuesto",
@@ -48,9 +48,9 @@ const translations: Record<"en" | "es", Record<string, string>> = {
     "Analyse ce reporting fictif en k€. Vérifie les identifiants dupliqués, les périodes, les unités et les champs vides avant tout calcul. En cas d’anomalie, indique-la et suspends la validation des totaux. Sinon, calcule le CA, les charges et le solde simplifié, puis leurs écarts au budget. Montre les opérations ou le code utilisé. Rédige un commentaire de 120 mots maximum, en séparant faits, hypothèses et questions. N’invente aucune cause. Un pourcentage avec budget nul est non calculable.": "Analiza este reporting ficticio en k€. Verifica identificadores duplicados, periodos, unidades y campos vacíos antes de calcular. Si hay una anomalía, indícala y suspende la validación de totales. Si no, calcula ingresos, gastos y saldo simplificado, y sus desviaciones respecto al presupuesto. Muestra las operaciones o el código. Redacta un comentario de 120 palabras como máximo, separando hechos, hipótesis y preguntas. No inventes causas. Un porcentaje con presupuesto cero no es calculable.",
     "Commentaire de référence :": "Comentario de referencia:",
     "le CA est inférieur au budget de 20 k€ et les charges le dépassent de 5 k€. Le solde simplifié baisse donc de 25 k€. Les données ne permettent pas d’attribuer ces écarts à un prix, un volume ou un recrutement : ces causes doivent être vérifiées auprès des responsables.": "los ingresos son 20 k€ inferiores al presupuesto y los gastos lo superan en 5 k€. El saldo simplificado cae 25 k€. Los datos no permiten atribuirlo a precio, volumen o contratación: esas causas deben verificarse con los responsables.",
-    "La réussite de cet exercice ne valide pas un déploiement sur vos comptes. Le": "Superar el ejercicio no valida un despliegue sobre tus cuentas. El",
+    "La réussite de cet exercice ne valide pas un déploiement sur vos comptes. Le": "Superar el ejercicio no valida un despliegue sobre sus cuentas. El",
     "protocole de pilote": "protocolo del piloto",
-    "décrit les contrôles à organiser avec votre équipe.": "describe los controles que debes organizar con tu equipo."
+    "décrit les contrôles à organiser avec votre équipe.": "describe los controles que debe organizar con su equipo."
   }
 };
 export function reportingKitText(locale: Locale, source: string) {

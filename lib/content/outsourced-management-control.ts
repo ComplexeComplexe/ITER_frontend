@@ -196,7 +196,7 @@ const content: Record<Locale, OutsourcedManagementControlContent> = {
     meta: {
       title: "Control de gestión y FP&A externalizados | Iter Advisors",
       description:
-        "Control de gestión: cuadros de mando KPI, análisis de varianza, optimización de costos. Reportes mensuales. Comienza en 4 semanas.",
+        "Control de gestión: cuadros de mando KPI, análisis de varianza, optimización de costes. Reportes mensuales. Comienza en 4 semanas.",
     },
     hero: {
       h1: "Control de gestión y FP&A externalizados",
@@ -219,8 +219,8 @@ const content: Record<Locale, OutsourcedManagementControlContent> = {
           "Cuadros de mando KPI: Ingresos, margen bruto, CAC, LTV, retención, quema de caja, etc.",
           "Análisis de varianza: Presupuesto vs. real, identificación de conductores de varianza.",
           "Modelado financiero: Escenarios de crecimiento, análisis de sensibilidad, pronósticos.",
-          "Unidad económica: Costos por cliente, márgenes por producto/canal, análisis de contribución.",
-          "Optimización de costos: Identificación de ineficiencias, recomendaciones de ahorro.",
+          "Unidad económica: Costes por cliente, márgenes por producto/canal, análisis de contribución.",
+          "Optimización de costes: Identificación de ineficiencias, recomendaciones de ahorro.",
         ],
       },
       {
@@ -246,9 +246,9 @@ const content: Record<Locale, OutsourcedManagementControlContent> = {
       title: "Preguntas frecuentes",
       items: [
         {
-          question: "¿Cuál es el costo del control de gestión externalizado?",
+          question: "¿Cuál es el coste del control de gestión externalizado?",
           answer:
-            "Presupuesto según datos, entidades, indicadores y entregables. Se distingue la puesta en marcha del acompañamiento recurrente.",
+            "Presupuesto según datos, entidades, indicadores y entregables. Se distingue la puesta en marcha del asesoramiento recurrente.",
         },
         {
           question: "¿Cuánto tiempo para implementar los cuadros de mando?",

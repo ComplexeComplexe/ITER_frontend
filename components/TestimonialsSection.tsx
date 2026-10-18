@@ -17,10 +17,10 @@ const content: Record<
   },
   en: {
     overline: "Testimonials",
-    heading: "They talk about us",
+    heading: "What our clients say",
     subtitle:
-      "Discover our clients' feedback on our finance and human resources support.",
-    widgetCta: "Discover our clients' testimonials",
+      "Client feedback on our finance and HR support.",
+    widgetCta: "Read our clients' reviews",
   },
   es: {
     overline: "Testimonios",

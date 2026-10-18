@@ -61,7 +61,7 @@ export default function ServicesPage({
                     ? "Services Iter Advisors — DAF et DRH externalisés travaillant sur les tableaux de bord financiers et RH"
                     : locale === "en"
                       ? "Iter Advisors services — fractional CFO and HR Director working on financial and HR dashboards"
-                      : "Servicios Iter Advisors — DAF y DRH externalizados trabajando en cuadros de mando financieros y de RRHH"
+                      : "Servicios Iter Advisors — DAF y DRH externalizados trabajando en cuadros de mando financieros y de RR. HH."
                 }
                 width={560}
                 height={400}

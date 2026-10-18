@@ -7,6 +7,7 @@ import type { Locale } from '@/lib/i18n';
 import { parityHref } from '@/lib/locale-route-map';
 import { HR_COMMERCIAL_COPY, HR_COMMERCIAL_TERMS } from '@/lib/content/hr-commercial';
 import { getToolBySlug } from '@/data/tools';
+import { colon } from '@/lib/quote-marks';
 
 export function HrPillars({ locale }: { locale: Locale }) {
   const c = HR_COMMERCIAL_COPY[locale];
@@ -17,7 +18,7 @@ export function HrPillars({ locale }: { locale: Locale }) {
           <p className="site-eyebrow">0{i + 1}</p>
           <h3 className="text-xl font-semibold mb-4">{pillar.title}</h3>
           <p className="text-muted-foreground leading-relaxed">{pillar.text}</p>
-          <p className="border-t border-border pt-4 mt-5 text-sm"><strong>{c.output} : </strong>{pillar.output}</p>
+          <p className="border-t border-border pt-4 mt-5 text-sm"><strong>{c.output}{colon(locale)}</strong>{pillar.output}</p>
           <Link href={parityHref(pillar.href, locale)} className="site-inline-link mt-5">{pillar.link}</Link>
         </article>)}
       </div>

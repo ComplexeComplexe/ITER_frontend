@@ -207,17 +207,17 @@ const servicesEn: ServicesContent = {
     paragraph:
       "Effective financial management is essential to the stability and growth of your business. We support you with solutions tailored to your needs.",
     bullets: [
-      "Tools and methods to anticipate, analyze and optimize your finances.",
+      "Tools and methods to anticipate, analyse and optimise your finances.",
       "From auditing to risk management, we reinforce the reliability of your decisions.",
-      "A customized approach to support your growth.",
+      "A tailored approach to support your growth.",
     ],
   },
   body: {
-    heading: "Our services to structure and optimize your financial management",
+    heading: "Our services to structure and optimise your financial management",
     paragraphs: [
-      "At Iter Advisors, we support companies at every stage of their development, helping them to structure, manage and optimize their finances.",
-      "Whether you need to improve your management control, make your financial reporting more reliable, secure a fund-raising operation or optimize your cash flow, we can provide you with tailor-made solutions.",
-      "We are also involved in financial auditing, risk management and cost optimization, to help you make informed, sustainable decisions.",
+      "At Iter Advisors, we support companies at every stage of their development, helping them to structure, manage and optimise their finances.",
+      "Whether you need to improve your management control, make your financial reporting more reliable, secure a fundraising round or optimise your cash flow, we can provide you with tailor-made solutions.",
+      "We are also involved in financial auditing, risk management and cost optimisation, to help you make informed, sustainable decisions.",
       "Our team works alongside you to implement tools and strategies that boost financial performance and support your growth.",
     ],
   },
@@ -232,7 +232,7 @@ const servicesEn: ServicesContent = {
     { title: "Recruitment & talent acquisition", href: "/en/hr-outsourcing", category: "rh" },
     { title: "Payroll & social contributions", href: "/en/hr-outsourcing", category: "rh" },
     { title: "Training & development", href: "/en/hr-outsourcing", category: "rh" },
-    { title: "Compliance & labor law", href: "/en/hr-outsourcing", category: "rh" },
+    { title: "Compliance & employment law", href: "/en/hr-outsourcing", category: "rh" },
   ],
 };
 
@@ -240,7 +240,7 @@ const servicesEs: ServicesContent = {
   meta: {
     title: "Servicios | Iter Advisors",
     description:
-      "Iter Advisors: captaci\u00f3n de fondos, control de gesti\u00f3n, contabilidad y tesorer\u00eda para pymes y startups en Espa\u00f1a, Francia, B\u00e9lgica.",
+      "Iter Advisors: captaci\u00f3n de fondos, control de gesti\u00f3n, contabilidad y tesorer\u00eda para pymes y startups en Espa\u00f1a y Francia.",
   },
   hero: {
     h1: "Servicios",
@@ -264,15 +264,15 @@ const servicesEs: ServicesContent = {
     ],
   },
   services: [
-    { title: "Apoyo a la captacion de fondos", href: "/es/services/soporte-financiacion", category: "finance" },
-    { title: "Control de gestion externalizado", href: "/es/services/control-gestion-externalizado", category: "finance" },
-    { title: "Gestion financiera externalizada", href: "/es/services/gestion-financiera-externalizada", category: "finance" },
-    { title: "Prevision de tesoreria", href: "/es/services/prevision-tesoreria", category: "finance" },
-    { title: "M&A & Due Diligence", href: "/es/services/ma-due-diligence", category: "finance" },
-    { title: "Director de RRHH externalizado", href: "/es/externalizacion-rrhh", category: "rh" },
-    { title: "Reclutamiento & adquisicion de talento", href: "/es/externalizacion-rrhh", category: "rh" },
-    { title: "Nomina y cargas sociales", href: "/es/externalizacion-rrhh", category: "rh" },
-    { title: "Formacion y desarrollo", href: "/es/externalizacion-rrhh", category: "rh" },
+    { title: "Apoyo a la captación de fondos", href: "/es/services/soporte-financiacion", category: "finance" },
+    { title: "Control de gestión externalizado", href: "/es/services/control-gestion-externalizado", category: "finance" },
+    { title: "Gestión financiera externalizada", href: "/es/services/gestion-financiera-externalizada", category: "finance" },
+    { title: "Previsión de tesorería", href: "/es/services/prevision-tesoreria", category: "finance" },
+    { title: "M&A y due diligence", href: "/es/services/ma-due-diligence", category: "finance" },
+    { title: "Director de RR. HH. externo", href: "/es/externalizacion-rrhh", category: "rh" },
+    { title: "Selección y adquisición de talento", href: "/es/externalizacion-rrhh", category: "rh" },
+    { title: "Nómina y cotizaciones sociales", href: "/es/externalizacion-rrhh", category: "rh" },
+    { title: "Formación y desarrollo", href: "/es/externalizacion-rrhh", category: "rh" },
     { title: "Cumplimiento y derecho laboral", href: "/es/externalizacion-rrhh", category: "rh" },
   ],
 };

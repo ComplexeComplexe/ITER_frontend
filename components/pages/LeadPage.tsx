@@ -305,7 +305,7 @@ const leadContent = {
       "Evalúe sus necesidades financieras y descubra cómo nuestros DAF externalizados pueden estructurar su crecimiento.",
     ctaPrimary: "Obtener mi diagnóstico gratuito",
     ctaSecondary: "Concertar una cita",
-    trustLine: "empresas acompañadas",
+    trustLine: "empresas asesoradas",
     trustRating: "5/5 en Trustfolio",
     trustReviews: "opiniones verificadas",
     problemTitle: "¿Navega a ciegas?",
@@ -333,7 +333,7 @@ const leadContent = {
       },
     ],
     quizTitle: "Su diagnóstico en 4 preguntas",
-    quizSubtitle: "Descubra el perfil de acompañamiento ideal para su empresa.",
+    quizSubtitle: "Descubra el perfil de asesoramiento ideal para su empresa.",
     steps: [
       {
         question: "¿En qué etapa se encuentra su empresa?",
@@ -419,7 +419,7 @@ const leadContent = {
         a: "Su DAF externalizado está operativo desde la primera semana. Se integra con sus herramientas existentes (Pennylane, Qonto, etc.) y participa en sus comités.",
       },
       {
-        q: "¿Cuál es la diferencia con un despacho contable?",
+        q: "¿Cuál es la diferencia con una asesoría contable?",
         a: "Un DAF externalizado es un estratega financiero que pilota su rendimiento. Va mucho más allá de la contabilidad: previsiones, rondas de financiación, KPIs, relaciones con inversores.",
       },
     ],

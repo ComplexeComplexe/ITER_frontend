@@ -387,7 +387,7 @@ const copy = {
     meta: {
       title: `Iter Advisors: CFO y RR. HH. | ${getCompanyGeography("es").cities.join(", ")}`,
       description:
-        `Un CFO sénior para dirigir sus finanzas. Presencia en ${getCompanyGeography("es").cityList}, ${CLIENTS_ACCOMPAGNES} empresas acompañadas. Conozca servicios y honorarios.`,
+        `Un CFO sénior para dirigir sus finanzas. Presencia en ${getCompanyGeography("es").cityList}, ${CLIENTS_ACCOMPAGNES} empresas asesoradas. Conozca servicios y honorarios.`,
     },
     eyebrow: `Finanzas y RR. HH. · ${getCompanyGeography("es").cities.join(" / ")}`,
     headline: ["Iter Advisors, sus ", "CFO sénior", " para dirigir sus finanzas."],
@@ -398,7 +398,7 @@ const copy = {
     notice: "Preaviso de",
     days: "días",
     noMinimum: "Sin permanencia mínima.",
-    companies: "empresas acompañadas",
+    companies: "empresas asesoradas",
     raised: "captados por nuestros clientes",
     rating: "en Trustfolio",
     logoLabel: "A su lado en las decisiones importantes",
@@ -437,7 +437,7 @@ const copy = {
         },
         {
           label: "Reporting",
-          title: "Fiabilizar mi reporting",
+          title: "Hacer fiable mi reporting",
           text: "Conciliar los datos, comprender los márgenes y revisar el rendimiento mensual.",
         },
       ],
@@ -457,8 +457,8 @@ const copy = {
     },
     rh: {
       eyebrow: "Dirección de RR. HH. a tiempo parcial",
-      title: "Equipos que crecen. Una organización que acompaña.",
-      text: "Selección, incorporación, organización, coordinación de nóminas y cumplimiento: un director de RR. HH. sénior le acompaña unos días al mes, con un alcance definido.",
+      title: "Equipos que crecen. Una organización que los sostiene.",
+      text: "Selección, incorporación, organización, coordinación de nóminas y cumplimiento: un director de RR. HH. sénior trabaja con usted unos días al mes, con un alcance definido.",
       role: "Socio de Capital Humano",
     },
     method: {
@@ -507,7 +507,7 @@ const copy = {
       link: "Conocer a todo el equipo",
     },
     reviews: {
-      eyebrow: "Su experiencia de acompañamiento",
+      eyebrow: "La experiencia de nuestros clientes",
       title: "La perspectiva de nuestros clientes.",
       source: "Leer las opiniones en Trustfolio",
       translated: "Extracto traducido del francés",
@@ -532,8 +532,8 @@ const copy = {
       title: "Antes de conocernos.",
       questions: [
         "¿Dónde trabajan?",
-        "¿Cuándo puede empezar una misión?",
-        "¿Cómo funciona el acompañamiento?",
+        "¿Cuándo puede empezar un encargo?",
+        "¿Cómo funciona el asesoramiento?",
         "¿Pueden trabajar con nuestras herramientas?",
         "¿También pueden apoyar los RR. HH.?",
         "¿Pueden ayudarnos a preparar financiación?",
@@ -542,8 +542,8 @@ const copy = {
         "",
         "",
         "Definimos las prioridades, designamos su interlocutor y acordamos un ritmo de trabajo y entregables. Revisamos las condiciones con usted cuando cambian las necesidades.",
-        "Revisamos su organización actual antes de recomendar cambios. Las herramientas sirven para fiabilizar los datos y dirigir la función financiera.",
-        "Sí. Borith Biv dirige el apoyo de RR. HH. a tiempo parcial, con un alcance distinto del acompañamiento financiero.",
+        "Revisamos su organización actual antes de recomendar cambios. Las herramientas sirven para hacer fiables los datos y dirigir la función financiera.",
+        "Sí. Borith Biv dirige el apoyo de RR. HH. a tiempo parcial, con un alcance distinto del asesoramiento financiero.",
         "Preparamos el modelo financiero, las hipótesis y la información necesaria para conversar con los financiadores. El alcance se acuerda con usted; conseguir financiación también depende de la empresa y los inversores.",
       ],
       link: "Conocer el servicio de CFO externo",

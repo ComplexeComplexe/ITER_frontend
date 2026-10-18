@@ -54,6 +54,12 @@ async function localizedTree(node: ReactNode, locale: TargetLocale): Promise<Rea
   if (typeof node === 'string') return editorialText(node, locale);
   if (Array.isArray(node)) {
     const children = await Promise.all(node.map(child => localizedTree(child, locale)));
+    // NATIF-EN-ES phase 2 (2026-10-18) — JSX sépare « </Link>{" "}— l'une de… »
+    // en un nœud espace et un nœud texte ; traduit, le second commence par « : »
+    // et l'espace française réapparaissait devant (« externalizado : una »).
+    for (let i = 0; i < children.length - 1; i++) {
+      if (typeof children[i] === 'string' && /^\s+$/.test(children[i] as string) && typeof children[i + 1] === 'string' && /^[:;]/.test(children[i + 1] as string)) children[i] = '';
+    }
     return children.map((child, index) => isValidElement(child) && child.key === null ? cloneElement(child, { key: `localized-${index}` }) : child);
   }
   if (!isValidElement(node)) return node;

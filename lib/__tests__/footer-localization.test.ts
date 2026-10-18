@@ -42,7 +42,7 @@ describe('translated footer destinations', () => {
       expect(taxGuide?.closest('ul')?.querySelectorAll('a')).toHaveLength(1);
       expect(footer.textContent).not.toMatch(/Articles populaires|Popular Articles|Artículos populares/);
       const feeLink = links.find(a => a.getAttribute('href') === parityHref('/daf-externalise/tarifs', locale));
-      expect(feeLink?.textContent).toBe(locale === 'fr' ? 'Tarifs' : locale === 'en' ? 'Fees' : 'Precios');
+      expect(feeLink?.textContent).toBe(locale === 'fr' ? 'Tarifs' : locale === 'en' ? 'Fees' : 'Honorarios');
       const trustfolio = footer.querySelector('a[href="https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc"]');
       expect(trustfolio?.textContent).toContain('5/5 Trustfolio');
       expect(trustfolio?.getAttribute('rel')).toBe('noopener noreferrer');

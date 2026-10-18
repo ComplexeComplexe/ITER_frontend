@@ -345,7 +345,7 @@ export const comptabiliteExternalisationContent = {
         id: "definition",
         title: "¿Qué es la externalización contable?",
         paragraphs: [
-          "La externalización contable consiste en confiar toda o parte de la contabilidad a un proveedor externo, en lugar de a un empleado interno. El alcance varía según las necesidades: puede limitarse al registro contable y a las declaraciones fiscales, o incluir la gestión de nóminas, el seguimiento de tesorería y el acompañamiento en el cierre anual.",
+          "La externalización contable consiste en confiar toda o parte de la contabilidad a un proveedor externo, en lugar de a un empleado interno. El alcance varía según las necesidades: puede limitarse al registro contable y a las declaraciones fiscales, o incluir la gestión de nóminas, el seguimiento de tesorería y el asesoramiento en el cierre anual.",
           "A diferencia de una asesoría tradicional, que a menudo se limita a producir las cuentas anuales, una externalización contable moderna se integra en el día a día de la empresa. Funciona en flujo continuo: facturas de proveedores, gastos, cobros de clientes, declaraciones de IVA, todo se trata sobre la marcha. La dirección conserva una visibilidad en tiempo real sobre su situación financiera.",
           "Las herramientas cloud han transformado este modelo. Con programas como Pennylane, Sage o QuickBooks, el proveedor externo accede a los mismos datos que la dirección. Se acabaron los intercambios de archivos Excel por correo y el desfase de varias semanas entre la realidad operativa y las cifras contables.",
         ],

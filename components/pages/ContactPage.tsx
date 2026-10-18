@@ -80,10 +80,10 @@ const contactPageText = {
     h1: "Contacte con nuestros expertos financieros",
     subtitle:
       "Hable con un CFO experimentado para identificar las palancas de crecimiento de su empresa. Primera llamada gratuita y sin compromiso.",
-    trustBadge: `${CLIENTS_ACCOMPAGNES} empresas acompañadas`,
+    trustBadge: `${CLIENTS_ACCOMPAGNES} empresas asesoradas`,
     ratingLabel: "5/5 en Trustfolio",
     formTitle: "Envíenos un mensaje",
-    formSubtitle: "La primera conversación es gratuita y permite definir su necesidad. Un análisis detallado o una misión se concretan después en un alcance y un presupuesto.",
+    formSubtitle: "La primera conversación es gratuita y permite definir su necesidad. Un análisis detallado o un encargo se concretan después en un alcance y un presupuesto.",
     infoTitle: "Otras formas de contactarnos",
     emailLabel: "Email",
     phoneLabel: "Teléfono",
@@ -249,11 +249,11 @@ export default function ContactPage({
               </span>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-heading leading-[1.1] mb-6">
-                {need === "rh" ? ({ fr: "Parlons de votre organisation RH", en: "Let us discuss your HR organisation", es: "Hablemos de tu organización de RRHH" }[locale]) : need === "automation" ? (locale === "fr" ? "Parlons de votre reporting et de l’IA" : locale === "en" ? "Let’s discuss reporting and AI" : "Hablemos de reporting e IA") : tx.h1}
+                {need === "rh" ? ({ fr: "Parlons de votre organisation RH", en: "Let us discuss your HR organisation", es: "Hablemos de tu organización de RR. HH." }[locale]) : need === "automation" ? (locale === "fr" ? "Parlons de votre reporting et de l’IA" : locale === "en" ? "Let’s discuss reporting and AI" : "Hablemos de reporting e IA") : tx.h1}
               </h1>
 
               <p className="text-base sm:text-lg text-white/70 leading-relaxed mb-8">
-                {need === "rh" ? ({ fr: "Décrivez vos équipes, vos priorités et les sujets RH à traiter. Nous préciserons ensemble le périmètre et les intervenants nécessaires.", en: "Describe your teams, priorities and HR matters. We will agree the scope and professionals needed.", es: "Describe tus equipos, prioridades y asuntos de RRHH. Acordaremos el alcance y los profesionales necesarios." }[locale]) : tx.subtitle}
+                {need === "rh" ? ({ fr: "Décrivez vos équipes, vos priorités et les sujets RH à traiter. Nous préciserons ensemble le périmètre et les intervenants nécessaires.", en: "Describe your teams, priorities and HR matters. We will agree the scope and professionals needed.", es: "Describe tus equipos, prioridades y asuntos de RR. HH. Acordaremos el alcance y los profesionales necesarios." }[locale]) : tx.subtitle}
               </p>
 
               {/* Trust badges */}
@@ -268,7 +268,7 @@ export default function ContactPage({
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 size={16} className="text-iter-chartreuse" />
-                  <span className="text-white/60 text-sm">{need === "rh" ? ({ fr: "Un périmètre RH défini avec vous", en: "An HR scope agreed with you", es: "Un alcance de RRHH acordado contigo" }[locale]) : tx.trustBadge}</span>
+                  <span className="text-white/60 text-sm">{need === "rh" ? ({ fr: "Un périmètre RH défini avec vous", en: "An HR scope agreed with you", es: "Un alcance de RR. HH. acordado contigo" }[locale]) : tx.trustBadge}</span>
                 </div>
               </div>
             </motion.div>
@@ -462,7 +462,7 @@ export default function ContactPage({
       {clientLogos.length > 0 && <section className="site-section bg-background py-16 lg:py-20">
         <div className="container">
           <p className="text-center text-sm font-medium text-muted-foreground uppercase tracking-widest mb-10">
-            {need === "rh" ? ({ fr: "Des entreprises accompagnées par Iter en direction financière", en: "Companies supported by Iter in finance", es: "Empresas acompañadas por Iter en finanzas" }[locale]) : tx.clientsTitle}
+            {need === "rh" ? ({ fr: "Des entreprises accompagnées par Iter en direction financière", en: "Companies supported by Iter in finance", es: "Empresas asesoradas por Iter en finanzas" }[locale]) : tx.clientsTitle}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-14 opacity-60">
             {clientLogos.map((logo) => (

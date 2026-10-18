@@ -193,14 +193,14 @@ const contentEs: ClientsPageContent = {
       `Startups y PYMES tech con Iter Advisors: Happy Scribe, IMPACT+, Surfe, Ukio. SaaS, fintech, proptech. ${CLIENTS_ACCOMPAGNES} empresas, 5/5 Trustfolio.`,
   },
   breadcrumbLabel: "Nuestros clientes",
-  h1: `Nuestros clientes: ${CLIENTS_ACCOMPAGNES} startups y PYMES tech acompañadas`,
+  h1: `Nuestros clientes: ${CLIENTS_ACCOMPAGNES} startups y PYMES tech asesoradas`,
   intro:
-    `Desde nuestros inicios, hemos acompañado a ${CLIENTS_ACCOMPAGNES} empresas tecnológicas — startups, scale-ups y PYMES — en la estructuración de su dirección financiera. Nuestros clientes han recaudado más de 100 millones de euros y operan en Francia, España e internacionalmente, en sectores tan variados como SaaS B2B, fintech, AdTech, PropTech, ClimateTech, comercio electrónico y movilidad.`,
+    `Desde nuestros inicios, hemos asesorado a ${CLIENTS_ACCOMPAGNES} empresas tecnológicas — startups, scale-ups y PYMES — en la estructuración de su dirección financiera. Nuestros clientes han recaudado más de 100 millones de euros y operan en Francia, España e internacionalmente, en sectores tan variados como SaaS B2B, fintech, AdTech, PropTech, ClimateTech, comercio electrónico y movilidad.`,
   listIntro: "Una selección de las marcas tech con las que trabajamos o hemos trabajado:",
-  sectorsHeading: "Sectores acompañados",
-  ctaHeading: "¿Quieres unirte a estas empresas?",
+  sectorsHeading: "Sectores asesorados",
+  ctaHeading: "¿Quiere unirse a estas empresas?",
   ctaParagraph:
-    "Acompañamos a startups, scale-ups y PYMES tech en gestión de tesorería, reporting, captación de fondos, M&A y control de gestión. Hablemos de tu proyecto.",
+    "Asesoramos a startups, scale-ups y PYMES tech en gestión de tesorería, reporting, captación de fondos, M&A y control de gestión. Hablemos de su proyecto.",
   ctaButton: "Reservar una llamada",
 };
 

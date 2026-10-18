@@ -90,7 +90,7 @@ export default function DrhSubPage({ locale, content, cmsNavigation }: DrhSubPag
         <div className="container max-w-4xl">
           <div className="site-card rounded-3xl border border-border/60 bg-muted/30 p-6 sm:p-8">
             <p className="text-xs font-bold uppercase tracking-widest text-iter-violet mb-2">
-              {locale === "fr" ? "Direction RH externalisée" : locale === "en" ? "Outsourced HR direction" : "Dirección de RRHH externalizada"}
+              {locale === "fr" ? "Direction RH externalisée" : locale === "en" ? "Outsourced HR direction" : "Dirección de RR. HH. externalizada"}
             </p>
             <p className="text-base text-foreground leading-relaxed mb-4">
               {locale === "fr" ? (

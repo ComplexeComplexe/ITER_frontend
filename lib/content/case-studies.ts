@@ -392,11 +392,11 @@ const content: Record<Locale, CaseStudiesContent> = {
     meta: {
       title: "Casos Prácticos - Iter Advisors",
       description:
-        "Conoce las misiones de Iter con SolarMente, Seasonly y Opti Digital: contexto, entregables y resultados documentados. Casos detallados en francés.",
+        "Conoce los encargos de Iter con SolarMente, Seasonly y Opti Digital: contexto, entregables y resultados documentados. Casos detallados en francés.",
     },
     h1: "Casos Prácticos",
     intro:
-      "SolarMente, Seasonly y Opti Digital: tres misiones financieras, con contexto, entregables y límites. Los casos detallados están disponibles en francés.",
+      "SolarMente, Seasonly y Opti Digital: tres encargos financieros, con contexto, entregables y límites. Los casos detallados están disponibles en francés.",
     resourcesLabel: "Recursos",
     resourcesHref: "/es/recursos",
     breadcrumbLabel: "Casos prácticos",
@@ -441,7 +441,7 @@ const content: Record<Locale, CaseStudiesContent> = {
         description:
           "Fundadores sin experiencia financiera. Estructuramos reporting desde cero.",
         challenge:
-          "Crecimiento rápido (3x ARR en 1 año) pero cero visibilidad financiera. Equipo enfocado en producto, sin gestión de costos ni budgeting.",
+          "Crecimiento rápido (3x ARR en 1 año) pero cero visibilidad financiera. Equipo enfocado en producto, sin gestión de costes ni budgeting.",
         solution:
           "Auditoría inicial completa, reporting mensual, dashboards KPI por producto, budgeting trimestral con forecasting.",
         results: [

@@ -35,19 +35,19 @@ export const HR_CATALOGUE = {
   limits: 'Payroll coordination does not automatically include payroll production. Sensitive legal matters involve qualified advisers. Local obligations and documents are adapted to the relevant country; the French CSE is not a Spanish employee representation arrangement.',
  },
  es: {
-  title: 'Del diagnóstico de RRHH a los documentos de trabajo del equipo',
+  title: 'Del diagnóstico de RR. HH. a los documentos de trabajo del equipo',
   intro: 'El catálogo separa el seguimiento recurrente de los proyectos especializados. El presupuesto selecciona los trabajos útiles según plantilla, países, recursos internos y prioridades. No incluye automáticamente todos los servicios.',
   scope: 'Trabajos posibles', output: 'Documentos previstos',
   items: [
-   ['Administración y coordinación de nóminas', 'Revisar expedientes, organizar el calendario de RRHH, recopilar variables y comprobarlas con el proveedor de nóminas.', 'Lista de documentos pendientes, proceso de recopilación de variables y calendario de controles.'],
+   ['Administración y coordinación de nóminas', 'Revisar expedientes, organizar el calendario de RR. HH., recopilar variables y comprobarlas con el proveedor de nóminas.', 'Lista de documentos pendientes, proceso de recopilación de variables y calendario de controles.'],
    ['Selección e incorporación', 'Definir el puesto con el responsable, buscar candidatos, organizar entrevistas y preparar la llegada.', 'Descripción de puesto, ficha de evaluación, selección final y seguimiento a los 30, 60 y 90 días.'],
    ['Retribución y organización', 'Precisar funciones, niveles salariales, variables y beneficios con la dirección financiera.', 'Organigrama, reparto de responsabilidades y marco retributivo para revisar con la dirección.'],
    ['Desarrollo y gestión de equipos', 'Organizar entrevistas, identificar necesidades de formación y preparar reuniones con los responsables.', 'Plantillas de entrevista, plan de formación y seguimiento de acciones.'],
    ['Cumplimiento y relaciones laborales', 'Organizar la revisión documental y los intercambios con asesores competentes, según el país y la situación de la empresa.', 'Calendario de revisión, lista de documentos y seguimiento de acciones con responsables.'],
-   ['Sistemas e indicadores de RRHH', 'Definir requisitos antes de seleccionar o implantar una herramienta y organizar accesos y datos.', 'Documento de requisitos, matriz de accesos e indicadores de rotación, ausencias o selección según la necesidad.'],
+   ['Sistemas e indicadores de RR. HH.', 'Definir requisitos antes de seleccionar o implantar una herramienta y organizar accesos y datos.', 'Documento de requisitos, matriz de accesos e indicadores de rotación, ausencias o selección según la necesidad.'],
   ],
   separate: 'Proyectos con alcance independiente',
-  projects: 'Diagnóstico de RRHH, due diligence laboral, preparación del componente de RRHH de una ronda, sustitución temporal del director de RRHH o formación del equipo interno. La selección y una implantación importante de software pueden necesitar una misión separada.',
+  projects: 'Diagnóstico de RR. HH., due diligence laboral, preparación del componente de RR. HH. de una ronda, sustitución temporal del director de RR. HH. o formación del equipo interno. La selección y una implantación importante de software pueden necesitar un encargo separado.',
   limits: 'Coordinar nóminas no incluye automáticamente su elaboración. Los asuntos jurídicos sensibles se tratan con asesores competentes. Las obligaciones y documentos se adaptan al país; el CSE francés no se traslada a la representación de trabajadores en España.',
  },
 } satisfies Record<Locale, { title: string; intro: string; scope: string; output: string; items: string[][]; separate: string; projects: string; limits: string }>;

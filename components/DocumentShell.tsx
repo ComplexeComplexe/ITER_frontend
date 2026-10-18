@@ -59,9 +59,9 @@ export default function DocumentShell({
       france: "France", spain: "Spain", barcelona: "Barcelona",
     },
     es: {
-      description: `Firma de CFO externo y dirección de RRHH para pymes, startups y scale-ups. ${COMPANY.teamLabel.es}, ${COMPANY.clientsCount} empresas acompañadas. ${getCompanyGeography("es").presence}`,
-      slogan: "Una función financiera más sólida para tu empresa",
-      expertise: ["CFO externo", "Dirección de RRHH externa", "Control de gestión", "Gestión de tesorería", "Software de gestión financiera", "Pennylane"],
+      description: `Firma de CFO externo y dirección de RR. HH. para pymes, startups y scale-ups. ${COMPANY.teamLabel.es}, ${COMPANY.clientsCount} empresas asesoradas. ${getCompanyGeography("es").presence}`,
+      slogan: "Una función financiera más sólida para su empresa",
+      expertise: ["CFO externo", "Dirección de RR. HH. externa", "Control de gestión", "Gestión de tesorería", "Software de gestión financiera", "Pennylane"],
       france: "Francia", spain: "España", barcelona: "Barcelona",
     },
   }[locale];

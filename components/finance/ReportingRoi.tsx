@@ -26,7 +26,7 @@ const copy = {
   es: {
     labels: ["Tiempo mensual actual", "Tiempo posterior, incluidos controles y correcciones", "Coste horario total", "Licencias, conectores y mantenimiento adicionales", "Implantación, formación y tiempo interno"],
     units: ["horas", "horas", "€ / hora", "€ / mes", "€ iniciales"],
-    intro: "Hipótesis ficticias precargadas: sustitúyelas por tus mediciones. No se envía ninguna cifra a Iter.",
+    intro: "Hipótesis ficticias precargadas: sustitúyalas por sus mediciones. No se envía ninguna cifra a Iter.",
     net: "€ / mes de valor neto de capacidad", hours: "horas liberadas al mes.",
     noPayback: "Sin amortización con estas hipótesis: el beneficio neto es nulo o negativo.",
     payback: "Amortización orientativa:", months: "meses.", invalid: "Introduce un número positivo o cero en cada campo.",

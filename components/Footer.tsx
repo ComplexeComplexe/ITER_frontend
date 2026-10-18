@@ -7,6 +7,8 @@ import Image from "next/image";
 import { MapPin, Linkedin } from "lucide-react";
 import { Locale } from "@/lib/i18n";
 import { navigation, footerContent } from "@/lib/navigation";
+import { colon } from "@/lib/quote-marks";
+import { TRUSTFOLIO_RATING, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/facts";
 
 export default function Footer({ locale }: { locale: Locale }) {
   const content = footerContent[locale];
@@ -27,7 +29,7 @@ export default function Footer({ locale }: { locale: Locale }) {
   const startupHref = parityHref("/fractional-cfo-startups", locale);
   const serviceLinks = [
     { text: locale === "fr" ? "DAF externalisé" : locale === "en" ? "Fractional CFO" : "CFO externo", href: financeHref },
-    { text: locale === "fr" ? "Tarifs" : locale === "en" ? "Fees" : "Precios", href: parityHref("/daf-externalise/tarifs", locale) },
+    { text: locale === "fr" ? "Tarifs" : locale === "en" ? "Fees" : "Honorarios", href: parityHref("/daf-externalise/tarifs", locale) },
     ...(serviceNav?.children ?? []).filter(item => ![financeHref, hrHref, startupHref].includes(parityHref(item.href, locale))),
     { text: locale === "fr" ? "CFO externalisé startups" : locale === "en" ? "Fractional CFO for startups" : "CFO externo para startups", href: startupHref },
   ];
@@ -63,9 +65,11 @@ export default function Footer({ locale }: { locale: Locale }) {
                   </svg>
                 ))}
               </div>
-              <span className="text-white/70 text-sm">5/5 Trustfolio</span>
+              {/* NATIF-EN-ES phase 2 (2026-10-18) — la note vient de facts.ts et
+                  s'accompagne du nombre d'avis vérifiés, seule preuve publiable. */}
+              <span className="text-white/70 text-sm">{TRUSTFOLIO_RATING}/5 Trustfolio · {TRUSTFOLIO_REVIEW_COUNT} {locale === "fr" ? "avis" : locale === "en" ? "reviews" : "opiniones"}</span>
             </a>
-            <p className="text-sm text-white/80 mb-4">{ui.financeContact} : <Link locale={locale} href={parityHref(FINANCE_EXPERT.href, locale)} className="text-white underline underline-offset-4">{FINANCE_EXPERT.name}</Link></p>
+            <p className="text-sm text-white/80 mb-4">{ui.financeContact}{colon(locale)}<Link locale={locale} href={parityHref(FINANCE_EXPERT.href, locale)} className="text-white underline underline-offset-4">{FINANCE_EXPERT.name}</Link></p>
             {/* Company Legal Details — E-E-A-T trust signals.
                 Iter Advisors S.L. is registered in Spain (NIF B42960849);
                 Barcelona is the headquarters; areas served are listed separately. */}
@@ -75,7 +79,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                 <MapPin size={12} className="shrink-0 mt-0.5 text-iter-chartreuse/80" aria-hidden />
                 <span>Carrer Casp, 54, 5-1° · 08010 Barcelona</span>
               </p>
-              <p className="text-white/70">NIF&nbsp;: B42960849</p>
+              <p className="text-white/70">NIF{colon(locale)}B42960849</p>
               <p>
                 <a
                   href="mailto:contact@iteradvisors.com"

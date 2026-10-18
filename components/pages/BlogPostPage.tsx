@@ -4,6 +4,8 @@ import { Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
 import { aboutHref } from "@/lib/path-localization";
 import { getTeamMemberBySlug, resolveAuthorUrl } from "@/lib/content/team";
+import { getApprovedPerson } from "@/lib/company-facts";
+import { nativePunctuationHtml } from "@/lib/quote-marks";
 import { parityHref } from "@/lib/locale-route-map";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -105,13 +107,17 @@ export default function BlogPostPage({
           m.slug.replace(/-/g, " ") === author.toLowerCase().replace(/-/g, " "),
       )
     : undefined;
+  // NATIF-EN-ES phase 2 (2026-10-18) — `teamMembers` arrive avec le rôle
+  // français (« Cofondateur, DAF externalisé et CFO ») et `getTeamMemberBySlug`
+  // ne répond que pour les membres dotés d'une bio dans la langue : huit
+  // articles EN et ES signaient donc Sébastien Doat en français. Le rôle
+  // approuvé par langue (company-facts) prime, puis la fiche traduite, puis
+  // le rôle brut en dernier recours.
   const authorRole = authorMember
-    ? (getTeamMemberBySlug(authorMember.slug, locale)?.role ??
-      (authorMember.role && typeof authorMember.role === "string"
-        ? authorMember.role
-        : (authorMember as unknown as { roles?: Record<string, string> })
-            ?.roles?.[locale] ??
-          ""))
+    ? (getApprovedPerson(authorMember.slug)?.roles[locale] ??
+      getTeamMemberBySlug(authorMember.slug, locale)?.role ??
+      (authorMember as unknown as { roles?: Record<string, string> })?.roles?.[locale] ??
+      (authorMember.role && typeof authorMember.role === "string" ? authorMember.role : ""))
     : "";
   // SEO-ULT §4b (2026-08-15) — l'espagnol était traité à part, mais l'anglais
   // recevait `/en/a-propos/<slug>`, qui redirige vers `/en/about/<slug>`. La
@@ -136,8 +142,10 @@ export default function BlogPostPage({
   });
 
   /* ── Server-side HTML transforms (tables + FAQ accordion) ──────── */
+  // NATIF-EN-ES phase 2 (2026-10-18) — les articles écrits directement en
+  // anglais ou en espagnol gardaient des « : » espacés à la française.
   const transformed = htmlContent
-    ? transformArticleHtml(injectHeadingIds(htmlContent))
+    ? transformArticleHtml(injectHeadingIds(nativePunctuationHtml(htmlContent, locale)))
     : { html: "", faqs: [] };
   const faqJsonLd =
     transformed.faqs.length > 0

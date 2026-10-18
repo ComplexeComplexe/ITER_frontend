@@ -1,8 +1,9 @@
 import ScopeResponsibilities from "@/components/finance/ScopeResponsibilities";
 import { PEOPLE, personId } from "@/lib/company-facts";
 import HrCatalogue from "@/components/HrCatalogue";
-import type { Locale } from "@/lib/i18n";
+import { formatLongDate, type Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
+import { colon } from "@/lib/quote-marks";
 import { hrText, localizeHrValue } from "@/lib/content/hr-locales";
 import PublishedLocaleLink from "@/components/PublishedLocaleLink";
 import Link from "next/link";
@@ -119,7 +120,7 @@ export default function DrhFrenchPage({ sharedTime = false, cmsNavigation, local
       </ServiceSection>
     </>}
     <ServiceSection id="ressources-rh" title={t("Approfondir votre besoin RH")}><div className="grid sm:grid-cols-2 gap-5 mt-8">{localizeHrValue(HR_LINKS, locale).map(x=><Link key={x.href} href={href(x.href)} className="site-card p-6"><h3 className="text-xl font-semibold mb-3">{x.label} ↗</h3><p className="text-muted-foreground">{x.description}</p></Link>)}</div><div className="site-actions"><Link className="site-inline-link" href={sharedTime ? href("/drh-externalise#cadrage") : "#cadrage"}>{t("Préparer le cadrage de votre mission RH")}</Link><PublishedLocaleLink locale={locale} className="site-inline-link" href={href("/ressources/blog/daf-drh-externalises-synergie")}>{t("Coordonner le DAF et le DRH")}</PublishedLocaleLink></div></ServiceSection>
-    <ServiceSection id="questions" title={t("Questions fréquentes")}><ServiceFaq items={faq} /><p className="text-sm text-muted-foreground">{commercial.updated} <time dateTime={modified}>{new Intl.DateTimeFormat(locale, { dateStyle: "long", timeZone: "UTC" }).format(new Date(`${modified}T12:00:00Z`))}</time> · <Link href={href("/a-propos/borith-biv")} className="text-iter-violet underline underline-offset-4">{ui.hrContact} : Borith Biv</Link></p></ServiceSection>
+    <ServiceSection id="questions" title={t("Questions fréquentes")}><ServiceFaq items={faq} /><p className="text-sm text-muted-foreground">{commercial.updated} <time dateTime={modified}>{formatLongDate(modified, locale)}</time> · <Link href={href("/a-propos/borith-biv")} className="text-iter-violet underline underline-offset-4">{ui.hrContact}{colon(locale)}Borith Biv</Link></p></ServiceSection>
     <ServiceContact locale={locale} title={commercial.contactTitle} text={commercial.contactText} href={href(sharedTime ? "/contact#drh-temps-partage" : "/contact#drh")} label={t("Parlons de votre besoin RH")} />
     </div>
   </PageLayout>;

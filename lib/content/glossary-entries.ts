@@ -1159,7 +1159,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
         {
           heading: "El CFO Externalizado (CFO Fraccionado)",
           content: [
-            "El concepto de **CFO Externalizado** (o CFO Fraccionado en inglés) sirve a empresas con cultura internacional tal como **[Director Financiero Externalizado](/es/externalizacion-daf)** lo hace para empresas españolas tradicionales. Un CFO senior divide su tiempo entre múltiples empresas clientes, proporcionando experiencia de alto nivel a costos amigables para pymes y startups.",
+            "El concepto de **CFO Externalizado** (o CFO Fraccionado en inglés) sirve a empresas con cultura internacional tal como **[Director Financiero Externalizado](/es/externalizacion-daf)** lo hace para empresas españolas tradicionales. Un CFO senior divide su tiempo entre múltiples empresas clientes, proporcionando experiencia de alto nivel a costes amigables para pymes y startups.",
             "En Iter Advisors, nuestros asociados trabajan indistintamente como Director Financiero Externalizado o CFO Externalizado según la cultura de la empresa cliente. Aprenda más sobre nuestros servicios de **[CFO Externalizado](/es/externalizacion-daf)** en nuestra página dedicada.",
           ],
         },

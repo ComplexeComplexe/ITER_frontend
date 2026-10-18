@@ -189,7 +189,7 @@ const content: Record<Locale, CashFlowForecastContent> = {
     },
     cta: {
       title: "Need help building or interpreting your cash flow forecast?",
-      description: "Iter Advisors helps startups and scale-ups model cash scenarios, fundraising strategies, and working capital optimization.",
+      description: "Iter Advisors helps startups and scale-ups model cash scenarios, fundraising strategies and working capital optimisation.",
       buttonText: "Schedule a consultation",
       buttonHref: "/en/contact",
     },

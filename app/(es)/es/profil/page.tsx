@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Diagnóstico Financiero Gratuito | Iter Advisors",
     description:
-      `Evalúe sus necesidades en 2 min y obtenga un diagnóstico personalizado. ${CLIENTS_ACCOMPAGNES} empresas acompañadas, 5/5 Trustfolio.`,
+      `Evalúe sus necesidades en 2 min y obtenga un diagnóstico personalizado. ${CLIENTS_ACCOMPAGNES} empresas asesoradas, 5/5 Trustfolio.`,
     type: "website",
   },
 };

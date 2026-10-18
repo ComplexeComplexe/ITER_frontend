@@ -109,40 +109,40 @@ export const drhSubContent: Record<Locale, Record<DrhSubPageSlug, DrhSubContent>
   es: {
     "temps-partage": {
       meta: {
-        title: "RRHH a tiempo compartido | Dirección RH | Iter Advisors",
+        title: "RR. HH. a tiempo compartido | Dirección RH | Iter Advisors",
         description:
-          "El director de RRHH a tiempo compartido: una solución flexible para estructurar y pilotar su función de personas. Descubra la oferta de Iter Advisors.",
+          "El director de RR. HH. a tiempo compartido: una solución flexible para estructurar y pilotar su función de personas. Descubra la oferta de Iter Advisors.",
       },
-      parentLabel: "RRHH externalizado",
+      parentLabel: "RR. HH. externalizado",
       parentHref: "/es/externalizacion-rrhh",
-      breadcrumbLabel: "RRHH a tiempo compartido",
-      h1: "El director de RRHH a tiempo compartido: dirección de personas flexible y eficaz",
+      breadcrumbLabel: "RR. HH. a tiempo compartido",
+      h1: "El director de RR. HH. a tiempo compartido: dirección de personas flexible y eficaz",
       sections: [
         {
           content: [
-            "El director de RRHH a tiempo compartido es un director de recursos humanos que interviene de forma regular en su empresa, generalmente unos días por semana o al mes. Esta fórmula ofrece un acceso permanente a una experiencia RRHH de alto nivel, optimizando costes.",
-            "Esta solución se dirige especialmente a pymes, startups y scale-ups que necesitan una función RRHH estructurada pero cuya actividad no justifica aún una contratación a tiempo completo.",
+            "El director de RR. HH. a tiempo compartido es un director de recursos humanos que interviene de forma regular en su empresa, generalmente unos días por semana o al mes. Esta fórmula ofrece un acceso permanente a una experiencia RR. HH. de alto nivel, optimizando costes.",
+            "Esta solución se dirige especialmente a pymes, startups y scale-ups que necesitan una función RR. HH. estructurada pero cuya actividad no justifica aún una contratación a tiempo completo.",
           ],
         },
         {
-          heading: "¿Cómo funciona el RRHH a tiempo compartido?",
+          heading: "¿Cómo funciona el RR. HH. a tiempo compartido?",
           content: [
-            "El director de RRHH a tiempo compartido se integra en su organización como un miembro más de su equipo directivo. Participa en la definición de la estrategia de personas, trabaja con los managers en reclutamiento y desarrollo del talento, y asegura un seguimiento regular de la conformidad y las relaciones laborales.",
+            "El director de RR. HH. a tiempo compartido se integra en su organización como un miembro más de su equipo directivo. Participa en la definición de la estrategia de personas, trabaja con los managers en reclutamiento y desarrollo del talento, y asegura un seguimiento regular de la conformidad y las relaciones laborales.",
             "La frecuencia de intervención se define según sus necesidades: por lo general de 1 a 3 días por semana. Puede aumentarse en periodos intensos (reclutamientos masivos, reestructuración, despliegue SIRH) o reducirse en fase de crucero.",
           ],
         },
         {
           heading: "Ventajas del tiempo compartido",
           content: [
-            "La primera ventaja es económica: el coste de un director de RRHH a tiempo compartido representa una fracción del coste de un director en plantilla, con el mismo nivel de experiencia. Se beneficia de una mirada externa y de experiencia multisectorial.",
-            "La continuidad es otro activo importante: el director de RRHH a tiempo compartido acompaña a su empresa en el tiempo y desarrolla un conocimiento profundo de su cultura y sus retos. Por último, la flexibilidad permite ajustar el volumen de intervención en función del crecimiento de su actividad.",
+            "La primera ventaja es económica: el coste de un director de RR. HH. a tiempo compartido representa una fracción del coste de un director en plantilla, con el mismo nivel de experiencia. Se beneficia de una mirada externa y de experiencia multisectorial.",
+            "La continuidad es otro activo importante: el director de RR. HH. a tiempo compartido asesora a su empresa en el tiempo y desarrolla un conocimiento profundo de su cultura y sus retos. Por último, la flexibilidad permite ajustar el volumen de intervención en función del crecimiento de su actividad.",
           ],
         },
         {
           heading: "El enfoque Iter Advisors",
           content: [
-            "En Iter Advisors, cada misión RRHH comienza con un diagnóstico de su situación de personas (contratos, nómina, conformidad, organización). Definimos juntos un plan de acción priorizado y una fórmula de acompañamiento adaptada a su madurez y presupuesto.",
-            "Nuestra presencia en Barcelona, París y Toulouse nos permite intervenir en empresas francesas e internacionales. Contáctenos para hablar de sus necesidades de RRHH.",
+            "En Iter Advisors, cada encargo RR. HH. comienza con un diagnóstico de su situación de personas (contratos, nómina, conformidad, organización). Definimos juntos un plan de acción priorizado y una fórmula de asesoramiento adaptada a su madurez y presupuesto.",
+            "Nuestra presencia en Barcelona, París y Toulouse nos permite intervenir en empresas francesas e internacionales. Contáctenos para hablar de sus necesidades de RR. HH.",
           ],
         },
       ],

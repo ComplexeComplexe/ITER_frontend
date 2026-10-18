@@ -69,7 +69,7 @@ const translations = {
         "Analytics and marketing require your consent.",
       acceptAll: "Accept all",
       rejectAll: "Reject all",
-      customize: "Customize",
+      customize: "Customise",
       policyLink: "Cookie policy",
       policyHref: "/en/cookie-policy",
     },

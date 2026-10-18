@@ -27,7 +27,7 @@ describe("cookie preferences", () => {
   });
   for (const [locale, customize, close] of [
     ["fr", "Personnaliser", "Fermer sans modifier mes choix"],
-    ["en", "Customize", "Close without changing my choices"],
+    ["en", "Customise", "Close without changing my choices"],
     ["es", "Personalizar", "Cerrar sin modificar mis preferencias"],
   ] as const) {
     it(`dismisses and remembers a first-visit refusal in ${locale}`, () => {
