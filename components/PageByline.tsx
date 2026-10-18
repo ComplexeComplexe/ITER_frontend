@@ -37,7 +37,7 @@ export default function PageByline({
   return (
     <p className={`text-sm ${muted} ${className}`}>
       {author.type === "Organization" ? t.publishedBy : t.by}{" "}
-      <Link href={authorHref(locale, author)} rel="author" className={`font-medium ${link}`}>
+      <Link href={authorHref(locale, author)} rel="author" className={`inline-flex min-h-11 items-center align-middle font-medium ${link}`}>
         {author.name}
       </Link>
       {" · "}

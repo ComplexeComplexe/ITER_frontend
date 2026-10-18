@@ -29,7 +29,7 @@ export default function Footer({ locale }: { locale: Locale }) {
   const startupHref = parityHref("/fractional-cfo-startups", locale);
   const serviceLinks = [
     { text: locale === "fr" ? "DAF externalisé" : locale === "en" ? "Fractional CFO" : "CFO externo", href: financeHref },
-    { text: locale === "fr" ? "Tarifs" : locale === "en" ? "Fees" : "Honorarios", href: parityHref("/daf-externalise/tarifs", locale) },
+    { text: locale === "fr" ? "Tarifs DAF" : locale === "en" ? "CFO pricing" : "Honorarios CFO", href: parityHref("/daf-externalise/tarifs", locale) },
     ...(serviceNav?.children ?? []).filter(item => ![financeHref, hrHref, startupHref].includes(parityHref(item.href, locale))),
     { text: locale === "fr" ? "CFO externalisé startups" : locale === "en" ? "Fractional CFO for startups" : "CFO externo para startups", href: startupHref },
   ];

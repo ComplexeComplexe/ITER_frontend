@@ -27,7 +27,7 @@ const AUTHOR = { name: PEOPLE.sebastien.name, slug: PEOPLE.sebastien.slug };
 const SITE = "https://www.iteradvisors.com";
 const safeJson = (value: unknown) => JSON.stringify(value).replace(/</g, "\\u003c");
 const body = "text-base text-muted-foreground leading-relaxed";
-const link = "text-iter-violet underline underline-offset-4 font-medium";
+const link = "inline-flex min-h-11 items-center text-iter-violet underline underline-offset-4 font-medium";
 
 /** Server-rendered content and native FAQ; shared navigation remains interactive. */
 export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr" }: { locale?: Locale; cmsNavigation?: CmsNavItem[]; teamMembers?: StrapiTeamMember[] }) {
