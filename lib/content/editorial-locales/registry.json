@@ -546,7 +546,7 @@
       "es": "/es/politica-de-privacidad"
     },
     "title": "Politique de confidentialité | Iter Advisors",
-    "description": "Politique de confidentialité d'Iter Advisors : comment nous collectons, utilisons et protégeons vos données personnelles. Vos droits RGPD et comment les exercer.",
+    "description": "Politique de confidentialité d'Iter Advisors : collecte, usage et protection de vos données personnelles. Vos droits RGPD et comment les exercer.",
     "noindex": false,
     "source": "/politique-de-confidentialite",
     "sharedEditorial": false
@@ -690,7 +690,7 @@
       "es": "/es/recursos/blog/coordinacion-cfo-director-rrhh"
     },
     "title": "DAF et DRH : coordonner les responsabilités | Iter Advisors",
-    "description": "Budget, recrutements et paie : comment coordonner DAF et DRH externalisés, clarifier les rôles et comparer les périmètres sans promettre une économie automatique.",
+    "description": "Budget, recrutements et paie : coordonner DAF et DRH externalisés, clarifier les rôles et comparer les périmètres sans promettre une économie automatique.",
     "noindex": false,
     "source": "/ressources/blog/daf-drh-externalises-synergie",
     "sharedEditorial": true
@@ -1518,7 +1518,7 @@
       "es": "/es/recursos/herramientas/metodologia"
     },
     "title": "Méthode des avis outils finance | Iter Advisors",
-    "description": "Une fiche utile doit permettre de décider : quel besoin est couvert, pour quelle organisation, avec quelles limites et quel effort de mise en place. Notre méthode sépare les faits documentés, les critères de DAF et les retours d’usage confirmés.",
+    "description": "Notre méthode d’avis sur les outils finance : faits documentés, critères de DAF et retours d’usage confirmés, pour décider quel besoin est couvert.",
     "noindex": false,
     "source": "/ressources/outils/methodologie",
     "sharedEditorial": false

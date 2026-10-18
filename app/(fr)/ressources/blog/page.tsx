@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
 import BlogListingPage from "@/components/pages/BlogListingPage";
 import { getBlogArticles, getCmsNavigation } from "@/lib/static-content";
 import { buildMetadata } from "@/lib/metadata";
@@ -21,13 +20,14 @@ export const metadata: Metadata = buildMetadata({
   },
 });
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-}) {
-  const params = await searchParams;
-  if (params.page !== undefined) notFound();
+// HYGIENE-2 (2026-10-18) — cette page lisait `searchParams` pour renvoyer
+// une 404 sur `?page=` : c'était la seule raison pour laquelle les trois
+// listings blog (FR, et EN/ES qui rendent ce même composant via
+// LocalizedEditorialPage) restaient dynamiques — `private, no-cache,
+// no-store`, x-vercel-cache MISS, TTFB 0,3–0,9 s contre 0,2–0,27 s sur les
+// pages statiques. Le paramètre `?page=` est désormais traité par proxy.ts
+// (301 vers l'URL propre) et la page est prérendue comme les autres.
+export default async function Page() {
   // Source of truth is the static lib/content/blog-posts.ts (26 articles).
   // Strapi was previously the primary source but only ever returned a
   // 7-article subset, so the listing was silently truncated.

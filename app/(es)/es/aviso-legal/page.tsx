@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/aviso-legal",
     localizedPaths: { fr: "/mentions-legales", en: "/legal-notice", es: "/aviso-legal" },
     fallbackTitle: "Aviso legal - Condiciones generales | Iter Advisors",
-    fallbackDescription: "Consulte el aviso legal, las condiciones generales y la informacion del editor del sitio web de Iter Advisors. Servicios de DAF externalizado en Francia y Espana.",
+    fallbackDescription: "Aviso legal de Iter Advisors S.L. (NIF B42960849): razón social, sede en Barcelona, director de la publicación y proveedor de alojamiento del sitio web.",
   });
 }
 

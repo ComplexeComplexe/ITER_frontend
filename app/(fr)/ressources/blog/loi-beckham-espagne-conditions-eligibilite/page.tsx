@@ -19,7 +19,9 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1200&q=80",
+        url: "/images/blog/loi-beckham-espagne-conditions-eligibilite.webp",
+        width: 1200,
+        height: 630,
         alt: "Loi Beckham : conditions d'éligibilité en Espagne 2026",
       },
     ],
@@ -51,7 +53,7 @@ export default async function Page() {
       }}
       readingTime={6}
       dateModified="2026-07-24"
-      heroImage="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1200&q=80"
+      heroImage="/images/blog/loi-beckham-espagne-conditions-eligibilite.webp"
       toc={[
         { id: "principe", label: "Principe : 24 % pendant 6 ans" },
         { id: "conditions-base", label: "Les 3 conditions cumulatives" },
