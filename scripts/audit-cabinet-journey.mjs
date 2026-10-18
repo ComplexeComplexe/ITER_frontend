@@ -5,7 +5,7 @@ const expertise = ['DAF externalisé', 'DRH externalisé', 'Contrôle de gestion
 const localizedExpertise = {
   fr: ['DAF externalisé', 'DRH externalisée', 'Contrôle de gestion', 'Gestion de trésorerie', 'Logiciels de gestion financière', 'Pennylane'],
   en: ['Fractional CFO', 'External HR leadership', 'Management accounting', 'Cash flow management', 'Financial management software', 'Pennylane'],
-  es: ['CFO externo', 'Dirección de RRHH externa', 'Control de gestión', 'Gestión de tesorería', 'Software de gestión financiera', 'Pennylane'],
+  es: ['CFO externo', 'Dirección de RR. HH. externa', 'Control de gestión', 'Gestión de tesorería', 'Software de gestión financiera', 'Pennylane'],
 };
 const paths = ['/', '/services/gestion-financiere-externalisee', '/ressources/fiscalite-espagne-france', '/ressources/blog/essentiels-outils-tech-finance', '/ressources/blog/stack-financier-saas-series-a', '/ressources/ia-finance/outils', '/en', '/es'];
 const failures = [], results = [];
