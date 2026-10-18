@@ -31,10 +31,9 @@ describe("published Pilotage homepage", () => {
       expect(doc.querySelectorAll("h1")).toHaveLength(1);
       expect(doc.querySelector("h1")?.textContent).toBe(t.headline.join(""));
       const hero = doc.querySelector('[data-journey="home-hero"]')!;
-      for (const path of ["/contact#daf", "/daf-externalise/tarifs"])
-        expect(
-          hero.querySelector(`a[href="${parityHref(path, locale)}"]`),
-        ).not.toBeNull();
+      expect(hero.querySelector(`a[href="${parityHref("/contact#daf", locale)}"]`)).not.toBeNull();
+      expect(hero.querySelector(`a[href="${parityHref("/daf-externalise/tarifs", locale)}"]`)).toBeNull();
+      expect(hero.querySelectorAll('[class*="actions"] > a')).toHaveLength(1);
       expect(
         doc.querySelector(
           `a[href="${parityHref("/daf-externalise", locale)}"]`,

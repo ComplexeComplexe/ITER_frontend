@@ -185,16 +185,9 @@ export default function AboutPage({
                       {stage.href && (
                         <Link
                           href={parityHref(stage.href, locale)}
-                          aria-label={
-                            locale === "fr"
-                              ? `En savoir plus sur ${stage.title}`
-                              : locale === "en"
-                              ? `Learn more about ${stage.title}`
-                              : `Saber m\u00e1s sobre ${stage.title}`
-                          }
-                          className="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-iter-violet hover:underline transition-colors"
+                          className="inline-flex min-h-11 items-center gap-1.5 mt-3 text-sm font-medium text-iter-violet hover:underline transition-colors"
                         >
-                          {locale === "fr" ? "En savoir plus" : locale === "en" ? "Learn more" : "Saber m\u00e1s"}
+                          {locale === "fr" ? `Accompagnement : ${stage.title.toLowerCase()}` : locale === "en" ? `Support: ${stage.title.toLowerCase()}` : `Acompañamiento: ${stage.title.toLowerCase()}`}
                           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                         </Link>
                       )}

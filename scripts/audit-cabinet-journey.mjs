@@ -36,7 +36,8 @@ for (const path of paths) {
     const headline = hero.match(/<h1[^>]*>(.*?)<\/h1>/s)?.[1].replace(/<[^>]*>/g, '') ?? '';
     check(main.includes('data-home-template="pilotage"'), 'shared-pilotage-template');
     check(headline === expected.headline, 'approved-h1');
-    check(hero.includes(`href="${expected.contact}"`) && hero.includes(`href="${expected.fees}"`), 'localized-hero-journey');
+    check(hero.includes(`href="${expected.contact}"`) && !hero.includes(`href="${expected.fees}"`), 'single-localized-hero-cta');
+    check(main.includes(`href="${expected.fees}"`), 'retained-pricing-link-in-offer');
     check(main.includes(`href="${expected.offer}"`), 'retained-offer-link');
     check(hero.includes(expected.fiction), 'illustrative-forecast-labelled');
   }

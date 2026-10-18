@@ -32,14 +32,6 @@ export default function HeroSection({ locale }: { locale: Locale }) {
                 {t.contact}
                 <span aria-hidden="true">↗</span>
               </Link>
-              <Link
-                locale={locale}
-                href={parityHref("/daf-externalise/tarifs", locale)}
-                className={styles.secondary}
-              >
-                {t.fees}
-                <span aria-hidden="true">→</span>
-              </Link>
             </div>
             <div className={styles.proofs}>
               {t.proofs.map((proof, i) =>

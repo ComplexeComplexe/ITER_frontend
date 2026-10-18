@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "es",
     path: "/contact",
     fallbackTitle: "Contacto | Iter Advisors",
-    fallbackDescription: "Contacte con Iter Advisors para una consulta gratuita con un CFO senior. Oficinas en Barcelona, París y Toulouse. Respuesta en 2 días laborables.",
+    fallbackDescription: "Primera conversación gratuita sobre sus necesidades financieras o de RR. HH. Presencia en París, Barcelona y Toulouse. Contacte con Iter Advisors.",
   });
 }
 

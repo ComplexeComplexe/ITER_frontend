@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: "fr",
     path: "/contact",
     fallbackTitle: "Contact — DAF externalisé & DRH | Iter Advisors",
-    fallbackDescription: "Contactez Iter Advisors pour un premier échange gratuit avec un expert financier. Bureaux à Barcelone, Paris et Toulouse.",
+    fallbackDescription: "Premier échange gratuit sur votre direction financière ou RH. Présence à Paris, Barcelone et Toulouse. Décrivez votre besoin à Iter Advisors.",
   });
 }
 

@@ -48,35 +48,35 @@ export default function Breadcrumb({
         />
       )}
       <nav className="site-breadcrumb mb-8" aria-label={locale === "fr" ? "Fil d’Ariane" : locale === "es" ? "Ruta de navegación" : "Breadcrumb"}>
-        <ol className="flex items-center gap-2 flex-wrap text-[12px] tracking-wide">
+        <ol className="flex items-center gap-x-2 flex-wrap text-sm tracking-wide">
           <li>
             <Link
               href={homePath}
               className={
                 isDark
-                  ? "text-white/30 hover:text-white/60 transition-colors"
-                  : "text-foreground/30 hover:text-iter-violet transition-colors"
+                  ? "inline-flex min-h-11 items-center text-white/80 hover:text-white transition-colors"
+                  : "inline-flex min-h-11 items-center text-muted-foreground hover:text-iter-violet transition-colors"
               }
             >
               Iter Advisors
             </Link>
           </li>
           {items.map((item, i) => (
-            <li key={i} className="flex items-center gap-2">
-              <span className={isDark ? "text-white/15" : "text-foreground/15"}>/</span>
+            <li key={i} className="flex min-w-0 items-center gap-2">
+              <span aria-hidden="true" className="shrink-0">/</span>
               {item.href ? (
                 <Link
                   href={item.href}
                   className={
                     isDark
-                      ? "text-white/30 hover:text-white/60 transition-colors"
-                      : "text-foreground/30 hover:text-iter-violet transition-colors"
+                      ? "inline-flex min-h-11 items-center text-white/80 hover:text-white transition-colors"
+                      : "inline-flex min-h-11 items-center text-muted-foreground hover:text-iter-violet transition-colors"
                   }
                 >
                   {item.label}
                 </Link>
               ) : (
-                <span className={isDark ? "text-white/50" : "text-foreground/50"}>
+                <span aria-current="page" className="min-w-0 py-2">
                   {item.label}
                 </span>
               )}

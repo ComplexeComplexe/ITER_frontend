@@ -109,7 +109,7 @@ export default function HomePage({
                   </summary>
                   <p>{item.desc}</p>
                   <Link locale={locale} href={item.href}>
-                    {t.services.link} <span aria-hidden="true">→</span>
+                    {item.title} <span aria-hidden="true">→</span>
                   </Link>
                 </details>
               ))}
