@@ -498,7 +498,7 @@ function getContent(locale: Locale) {
         badge: "CASOS DE ÉXITO",
         h1: "Resultados concretos para empresas ambiciosas",
         subtitle:
-          "Descubra cómo hemos acompañado a startups, scale-ups y PYMEs en la estructuración de su dirección financiera.",
+          "Descubra cómo hemos asesorado a startups, scale-ups y PYMEs en la estructuración de su dirección financiera.",
         cta: "Concertar una cita",
         ctaSecondary: "Descubrir nuestros servicios",
       },
@@ -553,7 +553,7 @@ function getContent(locale: Locale) {
           challenge:
             "Surfe, herramienta de sincronización CRM-LinkedIn en fuerte crecimiento, necesitaba estructurar su función financiera para preparar su Serie A y convencer a inversores tier-1.",
           solution:
-            "Acompañamiento completo en la preparación de la data room, modelización financiera, plan de negocio y coaching de fundadores para los pitchs con inversores.",
+            "Asesoramiento completo en la preparación de la data room, modelización financiera, plan de negocio y coaching de fundadores para los pitchs con inversores.",
           results: [
             { metric: "Ronda exitosa", value: "Serie A" },
             { metric: "Data room lista en", value: "4 semanas" },
@@ -675,8 +675,8 @@ function getContent(locale: Locale) {
       stats: {
         heading: "El impacto de Iter Advisors en cifras",
         items: [
-          { value: String(CLIENTS_ACCOMPAGNES), label: "Empresas acompañadas" },
-          { value: String(FINANCE_TEAM_SIZE), label: "Profesionales de las finanzas y una dirección de RRHH" },
+          { value: String(CLIENTS_ACCOMPAGNES), label: "Empresas asesoradas" },
+          { value: String(FINANCE_TEAM_SIZE), label: "Profesionales de las finanzas y una dirección de RR. HH." },
 
           { value: "5/5", label: "Nota Trustfolio" },
         ],
@@ -710,7 +710,7 @@ function getContent(locale: Locale) {
           {
             icon: "TrendingUp",
             title: "Resultados",
-            desc: "Seguimiento continuo, ajuste de estrategia y acompañamiento a largo plazo.",
+            desc: "Seguimiento continuo, ajuste de estrategia y asesoramiento a largo plazo.",
           },
         ],
       },

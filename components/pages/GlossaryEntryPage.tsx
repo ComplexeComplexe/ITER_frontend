@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
-import { Locale } from "@/lib/i18n";
+import { formatLongDate, Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
 import { GlossaryEntryContent } from "@/lib/content/glossary-entries";
 import { glossaryHref } from "@/lib/path-localization";
@@ -118,7 +118,7 @@ export default function GlossaryEntryPage({
 }: GlossaryEntryPageProps) {
   const t = STRINGS[locale];
   const modifiedLabel = modified === GLOSSARY_MODIFIED ? GLOSSARY_MODIFIED_LABEL[locale]
-    : new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(modified));
+    : formatLongDate(modified, locale);
   const [first, ...rest] = content.sections;
   const [definition, ...firstRest] = first?.content ?? [];
   const related = slug ? getRelatedGlossary(locale, slug) : [];

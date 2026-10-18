@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import BlogPostPageRefonte from "./BlogPostPageRefonte";
 import { ProseTable } from "@/components/blog";
 import { getCmsNavigation } from "@/lib/static-content";
+import { colon } from "@/lib/quote-marks";
 import { taxComparison, TAX_COMPARISON_MODIFIED, TAX_COMPARISON_PATHS, TAX_COMPARISON_SLUG, TAX_SOURCES } from "@/lib/content/tax-comparison";
 
 type TaxLocale = keyof typeof taxComparison;
@@ -44,7 +45,7 @@ export default async function TaxComparisonPage({ locale }: { locale: TaxLocale 
         <thead><tr>{section.table.headers.map(header => <th key={header} scope="col">{header}</th>)}</tr></thead>
         <tbody>{section.table.rows.map(row => <tr key={row[0]}>{row.map((cell, index) => index === 0 ? <th key={index} scope="row">{cell}</th> : <td key={index}>{cell}</td>)}</tr>)}</tbody>
       </ProseTable>}
-      {section.sources && <p className="text-sm">{t.sourcesLabel} : {section.sources.map((source, index) => <span key={source}>{index > 0 && " · "}<a href={TAX_SOURCES[source]}>{t.sourceLabels[source]}</a></span>)}</p>}
+      {section.sources && <p className="text-sm">{t.sourcesLabel}{colon(locale)}{section.sources.map((source, index) => <span key={source}>{index > 0 && " · "}<a href={TAX_SOURCES[source]}>{t.sourceLabels[source]}</a></span>)}</p>}
     </section>)}
     <h2 id="faq">{fr ? "Questions fréquentes" : "Preguntas frecuentes"}</h2>
     {t.faq.map(item => <section key={item.question}><h3>{item.question}</h3><p>{item.answer}</p></section>)}

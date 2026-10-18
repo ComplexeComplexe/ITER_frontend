@@ -185,7 +185,7 @@ const content: Record<Locale, FundRaisingSupportContent> = {
       {
         "heading": "Data room y preguntas financieras",
         "content": [
-          "La misión puede incluir conciliar cuentas y reporting, organizar documentos y preparar respuestas junto al equipo interno y la asesoría contable. Los asesores legales y fiscales cubren sus propios ámbitos."
+          "El encargo puede incluir conciliar cuentas y reporting, organizar documentos y preparar respuestas junto al equipo interno y la asesoría contable. Los asesores legales y fiscales cubren sus propios ámbitos."
         ]
       },
       {

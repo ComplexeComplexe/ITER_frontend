@@ -43,10 +43,10 @@ const categoryIcons: Record<string, React.ElementType> = {
   "Missions ponctuelles (add-ons)": Wrench,
   "Stratégie RH": Briefcase,
   "HR Strategy": Briefcase,
-  "Estrategia de RRHH": Briefcase,
+  "Estrategia de RR. HH.": Briefcase,
   "Reporting RH": Building2,
   "HR Reporting": Building2,
-  "Informes de RRHH": Building2,
+  "Informes de RR. HH.": Building2,
 };
 
 import type { DrhServiceCategory } from "@/lib/content/drh-services-data";

@@ -192,7 +192,7 @@ export default function DrhPage({
                 ? "DRH externalisé Iter Advisors — responsable RH en visioconférence avec son équipe pour piloter les ressources humaines"
                 : locale === "en"
                   ? "Iter Advisors outsourced HR Director — HR manager on video call managing people operations"
-                  : "Director de RRHH externalizado Iter Advisors — responsable de RRHH en videoconferencia gestionando el equipo"
+                  : "Director de RR. HH. externalizado Iter Advisors — responsable de RR. HH. en videoconferencia gestionando el equipo"
             }
             width={800}
             height={450}
@@ -544,7 +544,7 @@ export default function DrhPage({
                     ? "Accompagnement levée de fonds"
                     : locale === "en"
                       ? "Fund-raising support"
-                      : "Acompañamiento captación de fondos",
+                      : "Asesoramiento captación de fondos",
                 href: serviceHref("accompagnement-levee-de-fond", locale),
                 icon: Rocket,
               },

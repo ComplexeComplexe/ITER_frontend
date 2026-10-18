@@ -165,10 +165,10 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Glosario financiero", href: "/es/recursos/glosario" },
       { text: "Funciones del CFO", href: "/es/externalizacion-daf/funciones" },
       { text: "Herramientas financieras", href: "/es/recursos/herramientas" },
-      { text: "Dirección de RRHH externalizada", href: "/es/externalizacion-rrhh" },
+      { text: "Dirección de RR. HH. externalizada", href: "/es/externalizacion-rrhh" },
       { text: "Nuestros clientes", href: "/es/clientes" },
       { text: "Empleo", href: "/es/jobs" },
-      { text: "RRHH a tiempo compartido", href: "/es/externalizacion-rrhh/tiempo-compartido" },
+      { text: "RR. HH. a tiempo compartido", href: "/es/externalizacion-rrhh/tiempo-compartido" },
     ],
     // Presence is confirmed; Paris remains plain text rather than a sitewide link.
     locations: [

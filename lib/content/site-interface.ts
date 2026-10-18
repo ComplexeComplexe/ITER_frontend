@@ -24,11 +24,11 @@ const interfaceText = {
     profile: "Experience, publications and talks", linkedin: "LinkedIn profile",
     contact: "Describe my needs", hrContact: "Your HR contact",
     hrRole: "Human Capital Partner",
-    hrDescription: "Discuss your organization, recruitment and the HR issues taking up your team's time. The initial conversation helps define the scope and the professionals required.",
+    hrDescription: "Discuss your organisation, recruitment and the HR issues taking up your team's time. The initial conversation helps define the scope and the professionals required.",
     hrCta: "Describe my HR needs", hrOffer: "Explore external HR leadership",
   },
   es: {
-    finance: "Servicios financieros", hr: "Dirección de RR. HH.", brief: "La misión en breve",
+    finance: "Servicios financieros", hr: "Dirección de RR. HH.", brief: "El encargo en breve",
     team: "Conocer al equipo", pageNav: "En esta página",
     financeContact: "Su interlocutor financiero", financeTitle: "Hablar con Sébastien Doat",
     financeRole: PEOPLE.sebastien.roles.es,

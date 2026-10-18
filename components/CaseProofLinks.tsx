@@ -7,7 +7,7 @@ export default function CaseProofLinks({ slugs, heading, locale = "fr" }: { slug
   return (
     <section className="site-section bg-muted/30 py-12 sm:py-16">
       <div className="container max-w-5xl">
-        <h2 className="text-2xl sm:text-3xl font-bold font-heading mb-6">{heading ?? (locale === "fr" ? "Des missions documentées" : locale === "en" ? "Documented engagements" : "Misiones documentadas")}</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold font-heading mb-6">{heading ?? (locale === "fr" ? "Des missions documentées" : locale === "en" ? "Documented engagements" : "Encargos documentados")}</h2>
         <div className={`grid gap-4 ${cases.length > 2 ? "md:grid-cols-3" : cases.length === 2 ? "md:grid-cols-2" : "max-w-3xl"}`}>
           {cases.map(item => (
             <article key={item.slug} className="site-card bg-background rounded-2xl border border-border/50 p-6 flex flex-col">

@@ -351,7 +351,7 @@ const qualContent = {
     h1Accent: "en 5 minutos",
     subtitle:
       "Responda a nuestras preguntas para recibir un análisis personalizado de su madurez financiera y recomendaciones a medida.",
-    trustLine: `${CLIENTS_ACCOMPAGNES} empresas acompañadas`,
+    trustLine: `${CLIENTS_ACCOMPAGNES} empresas asesoradas`,
     sections: [
       {
         id: "company",
@@ -441,7 +441,7 @@ const qualContent = {
               "Automatizar procesos financieros",
               "Contratar un DAF / RAF",
               "Gestionar relaciones con inversores",
-              "Estructurar nóminas / RRHH",
+              "Estructurar nóminas / RR. HH.",
               "Otro",
             ],
             required: true,

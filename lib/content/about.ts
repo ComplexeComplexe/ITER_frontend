@@ -220,7 +220,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
     hero: {
       h1: "About us",
       intro:
-        "Iter Advisors is a Fractional CFO and finance advisory firm that supports the strategic growth of its partners by structuring, managing, and scaling their finance function.",
+        "Iter Advisors is a fractional CFO and finance advisory firm that supports the strategic growth of its clients by structuring, managing and scaling their finance function.",
     },
     whoWeAre: {
       heading: "Who we are",
@@ -239,7 +239,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           title: "Best-in-class accounting",
           description:
-            "The foundation of all effective financial management. We ensure that your accounts are maintained with rigor, transparency and in compliance with current standards.",
+            "The foundation of all effective financial management. We ensure that your accounts are maintained with rigour, transparency and in compliance with current standards.",
         },
         {
           title: "High-quality financial forecasting",
@@ -247,9 +247,9 @@ export const aboutContent: Record<Locale, AboutContent> = {
             "Anticipate to make better decisions. We build robust forecasting models that allow you to steer your business with confidence and prepare your fundraising rounds.",
         },
         {
-          title: "Financial optimization",
+          title: "Financial optimisation",
           description:
-            "Maximizing the performance of every euro invested. We identify optimization levers to improve your profitability, cash flow and cost structure.",
+            "Maximising the performance of every euro invested. We identify optimisation levers to improve your profitability, cash flow and cost structure.",
         },
         {
           title: "A strong entrepreneurial spirit",
@@ -279,14 +279,14 @@ export const aboutContent: Record<Locale, AboutContent> = {
             "React quickly to difficulties. Emergency cash flow planning, renegotiation with creditors, financial restructuring and strategic support.",
         },
         {
-          title: "Fund raising",
+          title: "Fundraising",
           description:
-            "Prepare and secure your financing. Building the investor file, financial modeling, due diligence and negotiation with investment funds.",
+            "Prepare and secure your financing. Building the investor file, financial modelling, due diligence and negotiation with investment funds.",
         },
         {
           title: "After fundraising",
           description:
-            "Deploy raised funds effectively. Setting up investor reporting, structuring growth, recruiting and organizing the finance department.",
+            "Deploy raised funds effectively. Setting up investor reporting, structuring growth, recruiting and organising the finance department.",
         },
       ],
     },
@@ -305,7 +305,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
             "A fractional CFO supports the business leader with financial management within an agreed scope and schedule. Presence, responsibilities and deliverables should be compared with those of an internal position.",
         },
         {
-          question: "What is the difference between a shared-time CFO and a transitional CFO?",
+          question: "What is the difference between a part-time CFO and an interim CFO?",
           answer:
             "Part-time support addresses an ongoing management need. An interim engagement covers a temporary situation such as a replacement or reorganisation. Presence and availability are set out in the proposal.",
         },
@@ -337,7 +337,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           question: "Can you support us on a fundraising round?",
           answer:
-            "Absolutely. Fundraising support is one of our specialties. We assist with investor file preparation, financial modeling, data room, due diligence and negotiation with funds.",
+            "Absolutely. Fundraising support is one of our specialities. We assist with investor file preparation, financial modelling, data room, due diligence and negotiation with funds.",
         },
         {
           question: "What is the average duration of an engagement?",
@@ -368,7 +368,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
       paragraphs: [
         `Nuestro equipo cuenta con ${TEAM_LABEL.es} y hemos asesorado a ${CLIENTS_ACCOMPAGNES} empresas desde la creación de la firma.`,
         "Iter Advisors es una firma de consultoría financiera que trabaja con startups, pymes y empresas medianas en crecimiento. Intervenimos como CFO externo, a tiempo parcial o de transición, para estructurar y dirigir su función financiera. Para startups financiadas con capital riesgo ofrecemos también un [CFO para startups](/fractional-cfo-startups).",
-        "Fundada en 2021, Iter Advisors reúne a CFO experimentados con trayectorias complementarias: auditoría, control de gestión, dirección financiera, M&A. Su visión compartida\u00A0: poner al alcance de las empresas en crecimiento una dirección financiera de primer nivel.",
+        "Fundada en 2021, Iter Advisors reúne a CFO experimentados con trayectorias complementarias: auditoría, control de gestión, dirección financiera, M&A. Su visión compartida: poner al alcance de las empresas en crecimiento una dirección financiera de primer nivel.",
         getCompanyGeography("es").summary,
       ],
     },
@@ -422,7 +422,7 @@ export const aboutContent: Record<Locale, AboutContent> = {
         {
           title: "Ronda de financiación",
           description:
-            "Prepare y asegure su financiación. Elaboración del dossier para inversores, modelización financiera, due diligence y negociación con fondos de inversión.",
+            "Prepare y asegure su financiación. Elaboración del dosier para inversores, modelización financiera, due diligence y negociación con fondos de inversión.",
         },
         {
           title: "Post-ronda",

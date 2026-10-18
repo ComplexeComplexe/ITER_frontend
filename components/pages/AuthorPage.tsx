@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Linkedin } from "lucide-react";
 import { Locale } from "@/lib/i18n";
+import { colon } from "@/lib/quote-marks";
 import { resolveBlogArticleHref } from "@/lib/path-localization";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -180,7 +181,7 @@ export default function AuthorPage({
             )}
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-3">
-                {isFinanceExpert || profile ? fullName : `${fullName} : ${member.h1Role ?? member.role}`}
+                {isFinanceExpert || profile ? fullName : `${fullName}${colon(locale)}${member.h1Role ?? member.role}`}
               </h1>
               <p className="text-lg text-iter-violet font-medium mb-6">
                 {profile?.role ?? member.role}
@@ -223,7 +224,7 @@ export default function AuthorPage({
       </section>
 
       {profile && <PartnerProfileSections profile={profile} locale={locale} />}
-      {member.slug === "borith-biv" && <section className="site-section"><div className="site-container max-w-4xl"><HRExpert locale={locale} /><div className="site-actions"><Link className="site-inline-link" href={parityHref("/drh-externalise/temps-partage", locale)}>{{ fr: "Comprendre le fonctionnement du temps partagé", en: "Understand part-time HR support", es: "Comprender el apoyo de RRHH a tiempo parcial" }[locale]}</Link><Link className="site-inline-link" href={parityHref("/services/recrutement-talent-acquisition", locale)}>{{ fr: "Recrutement et intégration", en: "Recruitment and onboarding", es: "Selección e incorporación" }[locale]}</Link></div></div></section>}
+      {member.slug === "borith-biv" && <section className="site-section"><div className="site-container max-w-4xl"><HRExpert locale={locale} /><div className="site-actions"><Link className="site-inline-link" href={parityHref("/drh-externalise/temps-partage", locale)}>{{ fr: "Comprendre le fonctionnement du temps partagé", en: "Understand part-time HR support", es: "Comprender el apoyo de RR. HH. a tiempo parcial" }[locale]}</Link><Link className="site-inline-link" href={parityHref("/services/recrutement-talent-acquisition", locale)}>{{ fr: "Recrutement et intégration", en: "Recruitment and onboarding", es: "Selección e incorporación" }[locale]}</Link></div></div></section>}
 
       {/* Le bloc « articles publiés » n'est rendu que s'il y a des articles.
           Auparavant, les 17 fiches auteur sans publication affichaient un

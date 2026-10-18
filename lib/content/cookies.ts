@@ -28,7 +28,7 @@ export interface CookiePolicyContent {
 }
 
 const LAST_UPDATED_FR = "23 avril 2026";
-const LAST_UPDATED_EN = "April 23, 2026";
+const LAST_UPDATED_EN = "23 April 2026";
 const LAST_UPDATED_ES = "23 de abril de 2026";
 
 // ---------------------------------------------------------------------------

@@ -40,7 +40,7 @@ const STRINGS: Record<
   es: {
     eyebrow: "Hablemos",
     title: "¿Una pregunta sobre su organización financiera?",
-    body: "Cuéntenos su situación y sus prioridades. Una primera conversación permitirá aclarar sus necesidades y el alcance de un posible acompañamiento.",
+    body: "Cuéntenos su situación y sus prioridades. Una primera conversación permitirá aclarar sus necesidades y el alcance de un posible asesoramiento.",
     cta: "Explicar mis necesidades",
     ariaLabel: "Contactar con Iter Advisors para explicar mis necesidades",
   },

@@ -1,10 +1,11 @@
-import { getCompanyGeography } from "@/lib/company-facts";
+import { getCompanyGeography, PEOPLE } from "@/lib/company-facts";
 import { contractCopy } from "./contract-copy";
 import { decodeHTML } from "entities";
 import english from './editorial-locales/en.json';
 import spanish from './editorial-locales/es.json';
 import overrides from './editorial-locales/overrides.json';
 import { parityHref } from '@/lib/locale-route-map';
+import { nativePunctuation } from '@/lib/quote-marks';
 type TargetLocale = 'en' | 'es';
 const dictionaries: Record<TargetLocale, Record<string, string>> = { en: { ...english, ...overrides.en }, es: { ...spanish, ...overrides.es } };
 const normalize = (text: string) => text.replace(/\s+/g, ' ').trim();
@@ -66,19 +67,44 @@ function translateDynamic(text: string, locale: TargetLocale): string | undefine
   return undefined;
 }
 
+/**
+ * NATIF-EN-ES phase 2 (2026-10-18) — la fonction approuvée d'un associé
+ * (« Cofondateur, DAF externalisé et CFO ») arrive en français dans la byline
+ * et l'attribut alt des articles rendus depuis la source FR : huit pages EN et
+ * ES signaient Sébastien Doat en français. Les fonctions de company-facts sont
+ * la source unique ; on les substitue dans tout nœud qui les contient.
+ */
+function translateRoles(text: string, locale: TargetLocale): string | undefined {
+  let out = text;
+  for (const person of Object.values(PEOPLE)) {
+    if (out.includes(person.roles.fr)) out = out.split(person.roles.fr).join(person.roles[locale]);
+  }
+  return out === text ? undefined : out;
+}
+
 /** Offline, versioned copy only. No browser translation or translation API. */
 export function editorialText(text: string, locale: TargetLocale): string {
   const sourceGeography = getCompanyGeography('fr');
   const normalized = normalize(text);
   const geographicKey = normalized === sourceGeography.presence ? 'presence' : normalized === sourceGeography.summary ? 'summary' : undefined;
-  const translated = geographicKey ? getCompanyGeography(locale)[geographicKey] : (dictionaries[locale][normalized] ?? translateDynamic(normalized, locale));
-  if (translated === undefined) return formatNumbers(text, locale);
-  const body = formatNumbers(contractCopy(translated, locale), locale);
+  const translated = geographicKey ? getCompanyGeography(locale)[geographicKey] : (dictionaries[locale][normalized] ?? translateDynamic(normalized, locale) ?? translateRoles(normalized, locale));
+  // NATIF-EN-ES phase 2 (2026-10-18) — un nœud « : » ou « ; » laissé entre
+  // deux nœuds traduits gardait son espace française (« Equify : the
+  // essentials », « Holded ; ERP »). La ponctuation est normalisée sur les
+  // nœuds traduits et sur les fragments sans lettre (« : », « ; »). Un nœud
+  // français sans clé est rendu tel quel : un paragraphe Markdown passe ici
+  // une première fois entier, puis nœud par nœud après rendu, et modifier sa
+  // ponctuation ferait échouer la seconde recherche.
+  if (translated === undefined) return /\p{L}/u.test(text) ? formatNumbers(text, locale) : nativePunctuation(formatNumbers(text, locale), locale);
+  const body = nativePunctuation(formatNumbers(contractCopy(translated, locale), locale), locale);
   // En anglais, un nœud qui commence par « % » suit un nombre rendu dans le
   // nœud voisin (« {pct} % de nos clients ») : l'espace française avant le
   // signe est retirée pour obtenir « 50% of our customers ».
   const lead = locale === 'en' && body.startsWith('%') ? '' : (text.match(/^\s*/)?.[0] ?? '');
-  return lead + body + (text.match(/\s*$/)?.[0] ?? '');
+  const trail = text.match(/\s*$/)?.[0] ?? '';
+  // Un nœud réduit à « : » ou « ; » (« Communauté de pairs seniors</strong> : »)
+  // perd son espace de tête, qui n'a pas de lecture légitime hors du français.
+  return (/^[:;]/.test(body) ? '' : lead) + body + trail;
 }
 export function editorialHtml(html: string, locale: TargetLocale): string {
   return html.split(/(<[^>]*>)/g).map(part => part.startsWith('<')

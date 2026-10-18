@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Locale } from "@/lib/i18n";
+import { formatLongDate, type Locale } from "@/lib/i18n";
 import {
   authorHref,
   SERVICE_MODIFIED,
@@ -41,7 +41,7 @@ export default function PageByline({
         {author.name}
       </Link>
       {" · "}
-      {t.updated} <time dateTime={dateModified}>{dateLabel ?? (dateModified === SERVICE_MODIFIED ? SERVICE_MODIFIED_LABEL[locale] : new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${dateModified}T12:00:00Z`)))}</time>
+      {t.updated} <time dateTime={dateModified}>{dateLabel ?? (dateModified === SERVICE_MODIFIED ? SERVICE_MODIFIED_LABEL[locale] : formatLongDate(dateModified, locale))}</time>
     </p>
   );
 }

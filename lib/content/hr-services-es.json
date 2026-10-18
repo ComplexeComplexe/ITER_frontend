@@ -3,18 +3,18 @@
     "slug": "recrutement-talent-acquisition",
     "meta": {
       "title": "Apoyo a la contratación | Iter Advisors",
-      "description": "Organiza la contratación desde la definición del puesto hasta la incorporación. Alcance, método y responsabilidades acordados con tu equipo."
+      "description": "Organice la contratación desde la definición del puesto hasta la incorporación. Alcance, método y responsabilidades acordados con su equipo."
     },
     "h1": "Apoyo a la contratación para pymes y startups",
     "breadcrumb": "Selección e incorporación",
     "intro": [
-      "Quieres contratar un perfil financiero o reforzar tus equipos. El primer paso es precisar el puesto, el presupuesto, las competencias y la capacidad de tu organización para incorporar a la persona.",
-      "El apoyo se acuerda contigo: definición del puesto, búsqueda de candidatos, preparación de entrevistas o seguimiento de la incorporación. Las responsabilidades de decisión quedan explícitas."
+      "Quiere contratar un perfil financiero o reforzar sus equipos. El primer paso es precisar el puesto, el presupuesto, las competencias y la capacidad de su organización para incorporar a la persona.",
+      "El apoyo se acuerda con usted: definición del puesto, búsqueda de candidatos, preparación de entrevistas o seguimiento de la incorporación. Las responsabilidades de decisión quedan explícitas."
     ],
     "whatIs": {
       "heading": "Qué puede cubrir el encargo",
       "paragraphs": [
-        "Organiza la contratación desde la definición del puesto hasta la incorporación.",
+        "Organice la contratación desde la definición del puesto hasta la incorporación.",
         "Los entregables y el reparto de responsabilidades se precisan en la propuesta."
       ],
       "bullets": [
@@ -25,7 +25,7 @@
       ]
     },
     "whyOutsource": {
-      "heading": "Un apoyo adaptado a tu organización",
+      "heading": "Un apoyo adaptado a su organización",
       "benefits": [
         {
           "label": "Prioridades explícitas",
@@ -75,7 +75,7 @@
       "heading": "Presupuesto y alcance",
       "rows": [
         {
-          "formula": "Un encargo acordado contigo",
+          "formula": "Un encargo acordado con usted",
           "scope": "Trabajos, entregables y dedicación acordados",
           "price": "Según presupuesto"
         }
@@ -97,22 +97,22 @@
       }
     ],
     "cta": {
-      "heading": "Qué asunto de RRHH quieres abordar",
-      "body": "Describe tu organización, tus interlocutores actuales y tus prioridades. La primera conversación permitirá precisar los siguientes pasos.",
-      "buttonLabel": "Presentar mi necesidad de RRHH"
+      "heading": "Qué asunto de RR. HH. quiere abordar",
+      "body": "Describe su organización, sus interlocutores actuales y sus prioridades. La primera conversación permitirá precisar los siguientes pasos.",
+      "buttonLabel": "Presentar mi necesidad de RR. HH."
     }
   },
   "gestion-paie-charges-sociales": {
     "slug": "gestion-paie-charges-sociales",
     "meta": {
       "title": "Coordinación y control de nóminas | Iter Advisors",
-      "description": "Clarifica quién recopila, produce, revisa y valida las nóminas. Alcance, método y responsabilidades acordados con tu equipo."
+      "description": "Clarifica quién recopila, produce, revisa y valida las nóminas. Alcance, método y responsabilidades acordados con su equipo."
     },
     "h1": "Coordinación de nóminas y organización de controles",
     "breadcrumb": "Nóminas y coordinación",
     "intro": [
       "Las nóminas dependen de un flujo fiable de información entre empleados, responsables, administración de personal, proveedor de nóminas y dirección financiera.",
-      "El encargo de RRHH puede organizar esta coordinación y el seguimiento de los controles. La elaboración de nóminas y declaraciones requiere un alcance explícito con el proveedor correspondiente; no se incluye automáticamente en un encargo de dirección de RRHH."
+      "El encargo de RR. HH. puede organizar esta coordinación y el seguimiento de los controles. La elaboración de nóminas y declaraciones requiere un alcance explícito con el proveedor correspondiente; no se incluye automáticamente en un encargo de dirección de RR. HH."
     ],
     "whatIs": {
       "heading": "Qué puede cubrir el encargo",
@@ -128,7 +128,7 @@
       ]
     },
     "whyOutsource": {
-      "heading": "Un apoyo adaptado a tu organización",
+      "heading": "Un apoyo adaptado a su organización",
       "benefits": [
         {
           "label": "Prioridades explícitas",
@@ -178,7 +178,7 @@
       "heading": "Presupuesto y alcance",
       "rows": [
         {
-          "formula": "Un encargo acordado contigo",
+          "formula": "Un encargo acordado con usted",
           "scope": "Trabajos, entregables y dedicación acordados",
           "price": "Según presupuesto"
         }
@@ -188,11 +188,11 @@
     "faq": [
       {
         "question": "¿Está incluida la elaboración de nóminas?",
-        "answer": "Debe indicarse expresamente en la propuesta, con el proveedor, los países y las responsabilidades. La supervisión de RRHH y la elaboración de nóminas son funciones distintas."
+        "answer": "Debe indicarse expresamente en la propuesta, con el proveedor, los países y las responsabilidades. La supervisión de RR. HH. y la elaboración de nóminas son funciones distintas."
       },
       {
         "question": "¿Qué herramientas utilizáis?",
-        "answer": "La definición del encargo parte de tu organización y de tu software actual. La herramienta depende de las necesidades, del país y del nivel de delegación."
+        "answer": "La definición del encargo parte de su organización y de su software actual. La herramienta depende de las necesidades, del país y del nivel de delegación."
       },
       {
         "question": "¿Cómo se acuerdan el presupuesto y el compromiso?",
@@ -200,22 +200,22 @@
       }
     ],
     "cta": {
-      "heading": "Qué asunto de RRHH quieres abordar",
-      "body": "Describe tu organización, tus interlocutores actuales y tus prioridades. La primera conversación permitirá precisar los siguientes pasos.",
-      "buttonLabel": "Presentar mi necesidad de RRHH"
+      "heading": "Qué asunto de RR. HH. quiere abordar",
+      "body": "Describe su organización, sus interlocutores actuales y sus prioridades. La primera conversación permitirá precisar los siguientes pasos.",
+      "buttonLabel": "Presentar mi necesidad de RR. HH."
     }
   },
   "formation-developpement": {
     "slug": "formation-developpement",
     "meta": {
-      "title": "Formación y desarrollo de RRHH | Iter Advisors",
-      "description": "Relaciona las necesidades de competencias con el trabajo del equipo. Alcance, método y responsabilidades acordados con tu equipo."
+      "title": "Formación y desarrollo de RR. HH. | Iter Advisors",
+      "description": "Relaciona las necesidades de competencias con el trabajo del equipo. Alcance, método y responsabilidades acordados con su equipo."
     },
     "h1": "Formación y desarrollo de equipos",
     "breadcrumb": "Formación y desarrollo",
     "intro": [
       "Un plan de desarrollo empieza por las situaciones de trabajo: qué competencias faltan, para qué tareas y con qué efectos esperados.",
-      "Iter puede ayudarte a estructurar estas necesidades, coordinar las acciones y realizar el seguimiento con los responsables. Las formaciones especializadas, los proveedores y sus condiciones se identifican por separado."
+      "Iter puede ayudarle a estructurar estas necesidades, coordinar las acciones y realizar el seguimiento con los responsables. Las formaciones especializadas, los proveedores y sus condiciones se identifican por separado."
     ],
     "whatIs": {
       "heading": "Qué puede cubrir el encargo",
@@ -231,7 +231,7 @@
       ]
     },
     "whyOutsource": {
-      "heading": "Un apoyo adaptado a tu organización",
+      "heading": "Un apoyo adaptado a su organización",
       "benefits": [
         {
           "label": "Prioridades explícitas",
@@ -281,7 +281,7 @@
       "heading": "Presupuesto y alcance",
       "rows": [
         {
-          "formula": "Un encargo acordado contigo",
+          "formula": "Un encargo acordado con usted",
           "scope": "Trabajos, entregables y dedicación acordados",
           "price": "Según presupuesto"
         }
@@ -291,7 +291,7 @@
     "faq": [
       {
         "question": "¿Impartís todas las formaciones?",
-        "answer": "La propuesta distingue el apoyo de RRHH, las acciones internas y las formaciones impartidas por entidades especializadas."
+        "answer": "La propuesta distingue el apoyo de RR. HH., las acciones internas y las formaciones impartidas por entidades especializadas."
       },
       {
         "question": "¿Se garantiza la financiación?",
@@ -303,22 +303,22 @@
       }
     ],
     "cta": {
-      "heading": "Qué asunto de RRHH quieres abordar",
-      "body": "Describe tu organización, tus interlocutores actuales y tus prioridades. La primera conversación permitirá precisar los siguientes pasos.",
-      "buttonLabel": "Presentar mi necesidad de RRHH"
+      "heading": "Qué asunto de RR. HH. quiere abordar",
+      "body": "Describe su organización, sus interlocutores actuales y sus prioridades. La primera conversación permitirá precisar los siguientes pasos.",
+      "buttonLabel": "Presentar mi necesidad de RR. HH."
     }
   },
   "conformite-droit-travail": {
     "slug": "conformite-droit-travail",
     "meta": {
-      "title": "Conformidad laboral y RRHH | Iter Advisors",
-      "description": "Identifica los asuntos que tratar e involucra a los profesionales adecuados. Alcance, método y responsabilidades acordados con tu equipo."
+      "title": "Conformidad laboral y RR. HH. | Iter Advisors",
+      "description": "Identifique los asuntos que tratar e involucra a los profesionales adecuados. Alcance, método y responsabilidades acordados con su equipo."
     },
-    "h1": "Conformidad de RRHH y coordinación de asesores",
+    "h1": "Conformidad de RR. HH. y coordinación de asesores",
     "breadcrumb": "Conformidad y relaciones laborales",
     "intro": [
-      "La dirección de RRHH organiza el seguimiento de prácticas, documentos y cuestiones laborales. Identifica asuntos que requieren asesoramiento especializado y prepara información útil para examinarlos.",
-      "La legislación aplicable, las responsabilidades del empleador y las funciones de los asesores deben examinarse en el contexto de la empresa y del país correspondiente. Un apoyo de RRHH no sustituye automáticamente una consulta jurídica."
+      "La dirección de RR. HH. organiza el seguimiento de prácticas, documentos y cuestiones laborales. Identifique asuntos que requieren asesoramiento especializado y prepara información útil para examinarlos.",
+      "La legislación aplicable, las responsabilidades del empleador y las funciones de los asesores deben examinarse en el contexto de la empresa y del país correspondiente. Un apoyo de RR. HH. no sustituye automáticamente una consulta jurídica."
     ],
     "whatIs": {
       "heading": "Qué puede cubrir el encargo",
@@ -327,14 +327,14 @@
         "Los entregables y el reparto de responsabilidades se precisan en la propuesta."
       ],
       "bullets": [
-        "Un estado de los asuntos de RRHH y documentos que revisar",
+        "Un estado de los asuntos de RR. HH. y documentos que revisar",
         "Una lista de prioridades e interlocutores competentes",
         "Un calendario de seguimiento de las acciones acordadas",
         "Una documentación de decisiones e intercambios necesarios"
       ]
     },
     "whyOutsource": {
-      "heading": "Un apoyo adaptado a tu organización",
+      "heading": "Un apoyo adaptado a su organización",
       "benefits": [
         {
           "label": "Prioridades explícitas",
@@ -371,7 +371,7 @@
       "heading": "Ejemplos de necesidades que delimitar",
       "cases": [
         {
-          "title": "Estructurar una función de RRHH",
+          "title": "Estructurar una función de RR. HH.",
           "description": "Distinguir las tareas habituales, los controles y los asuntos que debe examinar un especialista."
         },
         {
@@ -384,7 +384,7 @@
       "heading": "Presupuesto y alcance",
       "rows": [
         {
-          "formula": "Un encargo acordado contigo",
+          "formula": "Un encargo acordado con usted",
           "scope": "Trabajos, entregables y dedicación acordados",
           "price": "Según presupuesto"
         }
@@ -393,7 +393,7 @@
     },
     "faq": [
       {
-        "question": "¿El apoyo de RRHH sustituye a un abogado?",
+        "question": "¿El apoyo de RR. HH. sustituye a un abogado?",
         "answer": "No. Los asuntos que requieren asesoramiento jurídico especializado se tratan con un profesional competente. La propuesta define la función de cada participante."
       },
       {
@@ -406,9 +406,9 @@
       }
     ],
     "cta": {
-      "heading": "Qué asunto de RRHH quieres abordar",
-      "body": "Describe tu organización, tus interlocutores actuales y tus prioridades. La primera conversación permitirá precisar los siguientes pasos.",
-      "buttonLabel": "Presentar mi necesidad de RRHH"
+      "heading": "Qué asunto de RR. HH. quiere abordar",
+      "body": "Describe su organización, sus interlocutores actuales y sus prioridades. La primera conversación permitirá precisar los siguientes pasos.",
+      "buttonLabel": "Presentar mi necesidad de RR. HH."
     }
   }
 }

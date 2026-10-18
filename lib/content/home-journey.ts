@@ -56,7 +56,7 @@ const journeys = {
     subtitle: `Un director financiero sénior a tiempo parcial para gestionar su tesorería, mejorar la fiabilidad del reporting y preparar la financiación. ${getCompanyGeography("es").presence}`,
     contact: "Hablar de mis necesidades financieras", offer: "Dirección financiera externa",
     hrLabel: "Servicios de dirección de RR. HH.", hrTitle: "Dirección de RR. HH. a tiempo parcial", hrText: "Selección, organización y gestión: apoyo de recursos humanos para sus equipos.", hrCta: "Descubrir nuestros servicios de RR. HH.",
-    reviews: " · Opiniones sobre la firma", choice: "Elegir un acompañamiento",
+    reviews: " · Opiniones sobre la firma", choice: "Elegir un asesoramiento",
     choices: [
       { title: "Un CFO para mi empresa", text: "Funciones, equipo y honorarios", href: "/daf-externalise" },
       { title: "Tesorería y reporting fiables", text: "Indicadores, márgenes y decisiones", href: "/services/controle-de-gestion-externalise" },
@@ -67,8 +67,8 @@ const journeys = {
     hr: { eyebrow: "Dirección de recursos humanos", title: "Una dirección de RR. HH. a tiempo parcial para organizar sus equipos", paragraphs: [
       "¿Aumentan las contrataciones, necesitan orientación los responsables o recaen los asuntos de RR. HH. en el director? Iter le ayuda a organizar la función de recursos humanos y avanzar en sus prioridades, con un alcance y un ritmo de intervención acordados conjuntamente.",
       "Para pymes y startups que necesitan dirección de RR. HH. sin contratar a tiempo completo: selección e incorporación, organización de equipos, prácticas de gestión o coordinación de nóminas y proveedores de recursos humanos.",
-      "El CFO aporta información sobre el presupuesto y los costes de personal; el director de RR. HH. acompaña a la organización y a sus equipos. Puede recurrir a una u otra especialidad según sus necesidades.",
-    ], cta: "Descubrir nuestro acompañamiento de RR. HH.", shared: "¿Cómo funciona el apoyo a tiempo parcial?", nav: "Servicios de RR. HH.", links: ["Selección e incorporación", "Nóminas y coordinación", "Formación y desarrollo", "Cumplimiento y relaciones laborales"] },
+      "El CFO aporta información sobre el presupuesto y los costes de personal; el director de RR. HH. asesora a la organización y a sus equipos. Puede recurrir a una u otra especialidad según sus necesidades.",
+    ], cta: "Descubrir nuestro asesoramiento de RR. HH.", shared: "¿Cómo funciona el apoyo a tiempo parcial?", nav: "Servicios de RR. HH.", links: ["Selección e incorporación", "Nóminas y coordinación", "Formación y desarrollo", "Cumplimiento y relaciones laborales"] },
     resources: { eyebrow: "Recursos", title: "Recursos para sus próximas decisiones", intro: "Elegir un CFO, anticipar necesidades de tesorería o mejorar el reporting: empiece por su prioridad.", all: "Todos nuestros recursos", hr: "También: ¿cuándo organizar su función de RR. HH.?", cards: [
       { label: "Elegir su CFO", title: "CFO interno o externo: ¿cómo decidir?", text: "Compare responsabilidades, disponibilidad y presupuesto para un mismo alcance.", detail: "Comparativa y criterios de decisión" },
       { label: "Anticipar la tesorería", title: "Capital circulante: palancas para gestionar la tesorería", text: "Identifique el efecto de las existencias, los plazos de cobro y los vencimientos de proveedores.", detail: "Guía práctica" },

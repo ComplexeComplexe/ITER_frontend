@@ -202,16 +202,16 @@ const content: Record<Locale, OutsourceYourAccountingContent> = {
     hero: {
       h1: "Contabilidad externalizada para startups y PMEs",
       intro:
-        "La contabilidad es un desafío constante para las startups: demasiado compleja para gestionar internamente, demasiado cara para un contador a tiempo completo. Iter Advisors ofrece contabilidad externalizada completa, confiable y a costo predecible.",
+        "La contabilidad es un desafío constante para las startups: demasiado compleja para gestionar internamente, demasiado cara para un asesor contable a tiempo completo. Iter Advisors ofrece contabilidad externalizada completa, confiable y a coste predecible.",
     },
     sections: [
       {
         heading: "¿Por qué externalizar tu contabilidad?",
         content: [
           "Cumplimiento garantizado: Aseguramos que tu contabilidad cumpla con las regulaciones y todas las declaraciones obligatorias.",
-          "Costos predecibles: Sin sorpresas, sin facturas impredecibles. Tarifas fijas mensuales que puedes presupuestar.",
+          "Costes predecibles: Sin sorpresas, sin facturas impredecibles. Tarifas fijas mensuales que puedes presupuestar.",
           "Libera a tu equipo: Tu equipo se enfoca en el crecimiento del negocio, no en declaraciones fiscales.",
-          "Conocimiento experto: Acceso a contadores certificados sin el costo de una contratación interna.",
+          "Conocimiento experto: Acceso a asesores contables certificados sin el coste de una contratación interna.",
         ],
       },
       {

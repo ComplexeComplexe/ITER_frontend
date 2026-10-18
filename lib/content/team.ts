@@ -114,7 +114,7 @@ const fallbackData: FallbackMemberData[] = [
     h1Roles: {
       fr: "Partner Capital Humain & DRH externalisé",
       en: "Human Capital Partner and external HR director",
-      es: "Socio de Capital Humano y dirección de RRHH externa",
+      es: "Socio de Capital Humano y dirección de RR. HH. externa",
     },
     slug: "borith-biv",
     photo: { url: "/images/team/borith-biv.webp" },
@@ -124,12 +124,12 @@ const fallbackData: FallbackMemberData[] = [
     bio: {
       fr: "Borith est Partner Capital Humain chez Iter Advisors. Il accompagne les PME et startups sur la structuration RH, le recrutement des profils financiers et la gestion des équipes en croissance.",
       en: "Borith is Human Capital Partner at Iter Advisors. He supports SMEs and startups with HR organisation, recruitment of finance professionals and management of growing teams.",
-      es: "Borith es socio de Capital Humano en Iter Advisors. Acompaña a pymes y startups en la estructuración de RRHH, la contratación de perfiles financieros y la gestión de equipos en crecimiento.",
+      es: "Borith es socio de Capital Humano en Iter Advisors. Asesora a pymes y startups en la estructuración de RR. HH., la contratación de perfiles financieros y la gestión de equipos en crecimiento.",
     },
     bioExtended: {
       fr: "La mission commence par la compréhension de votre organisation, des ressources internes et des sujets à traiter. Les responsabilités, le rythme et les intervenants nécessaires sont définis au cadrage. Les prestations de paie et les sujets juridiques spécialisés doivent être identifiés séparément. Le parcours détaillé, les références pertinentes et les modalités d’intervention peuvent être précisés lors du premier échange.",
       en: "The engagement starts with understanding your organisation, internal resources and matters to address. Responsibilities, schedule and required professionals are agreed at scoping. Payroll services and specialist legal matters must be identified separately. Detailed experience, relevant references and working arrangements can be discussed in the first conversation.",
-      es: "La misión empieza por comprender tu organización, los recursos internos y los asuntos que tratar. Las responsabilidades, dedicación y profesionales necesarios se definen al delimitar el alcance. Las prestaciones de nóminas y los asuntos jurídicos especializados se identifican por separado. La experiencia detallada, referencias pertinentes y condiciones de intervención pueden precisarse en la primera conversación.",
+      es: "El encargo empieza por comprender su organización, los recursos internos y los asuntos que tratar. Las responsabilidades, dedicación y profesionales necesarios se definen al delimitar el alcance. Las prestaciones de nóminas y los asuntos jurídicos especializados se identifican por separado. La experiencia detallada, referencias pertinentes y condiciones de intervención pueden precisarse en la primera conversación.",
     },
   },
 
@@ -352,7 +352,7 @@ const fallbackData: FallbackMemberData[] = [
     roles: {
       fr: "Intern Financial Analyst",
       en: "Intern Financial Analyst",
-      es: "Analista Financiero Interno"
+      es: "Analista financiero en prácticas"
     },
     slug: "andress-ayme",
     photo: { url: "/images/team/andress-ayme.webp" },

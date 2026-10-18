@@ -104,7 +104,7 @@
     "scope": [
       "The founder sets priorities and decides. The CFO prepares the model, challenges assumptions and organises follow-up. The accountant remains responsible for work under its engagement terms; sales and operations explain the activity data.",
       "Fundraising preparation may include the model, data room and due diligence questions. Discussions involve leaders, investors and advisers. Funding, valuation or privileged access to funds are not guaranteed.",
-      "If an internal CFO joins, handover covers sources, assumptions, authorized access and the calendar. Finance leadership does not automatically confer signing authority or power over bank accounts."
+      "If an internal CFO joins, handover covers sources, assumptions, authorised access and the calendar. Finance leadership does not automatically confer signing authority or power over bank accounts."
     ],
     "budget": "Recurring Iter support ranges from €3,000 to €8,000 excluding VAT per month. The quote depends on entities, data, reporting and the assigned profile. Exceptional projects, travel and other advisers’ work are identified separately. Comparison with hiring should include availability and responsibilities: these are different services.",
     "case": "solarmente-serie-b-cleantech",
@@ -993,7 +993,7 @@
       "Collection dates are uncertain while costs have been committed.",
       "You need to decide on recruitment, purchasing or financing."
     ],
-    "definition": "A cash flow forecast tracks the dates and amounts of receipts and payments. It differs from a profit and loss statement: a sale can be recognized before payment. A 13-week horizon provides an operational view, supplemented by longer scenarios where necessary.",
+    "definition": "A cash flow forecast tracks the dates and amounts of receipts and payments. It differs from a profit and loss statement: a sale can be recognised before payment. A 13-week horizon provides an operational view, supplemented by longer scenarios where necessary.",
     "deliverables": [
       [
         "Rolling forecast",
@@ -1036,7 +1036,7 @@
           "€15,000"
         ]
       ],
-      "note": "All amounts are fictitious. The second week ends positive, but the first reveals a €5,000 requirement if the assumptions occur. Identifying a shortfall guarantees neither an authorized overdraft nor financing: assess options and terms before the deadline."
+      "note": "All amounts are fictitious. The second week ends positive, but the first reveals a €5,000 requirement if the assumptions occur. Identifying a shortfall guarantees neither an authorised overdraft nor financing: assess options and terms before the deadline."
     },
     "exampleTitle": "Example of interpreting a forecast",
     "example": "If a receipt changes date, the team updates the assumption and compares weekly balances. It can test different calendars and assess possible decisions with management. A forecast does not turn an uncertain receivable into available cash; comparing forecast with actuals explains the variance.",
@@ -1057,7 +1057,7 @@
     "scopeTitle": "A forecast maintained by the right people",
     "scope": [
       "Sales, purchasing and operations contribute expected dates. The CFO consolidates, checks consistency and prepares decisions. Update frequency depends on the situation.",
-      "Obtaining financing, negotiating with third parties and authorizing payments are separate actions. Options are compared with their costs and constraints."
+      "Obtaining financing, negotiating with third parties and authorising payments are separate actions. Options are compared with their costs and constraints."
     ],
     "budget": "The proposal depends on the number of entities and banks, the quality of payment schedules and monitoring frequency. Forecasting can be a dedicated engagement or a deliverable within recurring CFO support.",
     "case": "seasonly-marge-par-canal-bfr",
@@ -1197,7 +1197,7 @@
     "title": "Fundraising financial preparation | Iter Advisors",
     "description": "Prepare the finances for a funding round: financial model, data room and investor answers. Deliverables and calendar agreed for your project.",
     "headline": "Fundraising financial preparation",
-    "promise": "Explained assumptions. A consistent financial file.",
+    "promise": "Explained assumptions. A coherent financial pack.",
     "intro": "The CFO translates your project into financial scenarios and organises the data investors expect. The business leader presents the project; finding investors is a separate assignment.",
     "context": "levee",
     "category": "Preparing a transaction",
@@ -1309,7 +1309,7 @@
     "title": "M&A and financial due diligence | Iter Advisors",
     "description": "Prepare an acquisition, sale or funding round: results, debt, working capital and scenarios. Analyses, deliverables and fees defined in the proposal.",
     "headline": "M&A and financial due diligence",
-    "promise": "Assess a transaction using examined data.",
+    "promise": "Assess a transaction on reviewed data.",
     "intro": "Buyer, business leader or seller: we help organise and analyse the financial information relevant to your transaction. The assignment distinguishes preparing the file, financial review and other advisers’ work.",
     "context": "due-diligence",
     "category": "Preparing a transaction",

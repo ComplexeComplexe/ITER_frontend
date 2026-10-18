@@ -8,7 +8,7 @@ export const COMPANY = {
   teamLabel: {
     fr: `${financeTeamSize} professionnels de la finance et une direction RH`,
     en: `${financeTeamSize} finance professionals and an HR leadership function`,
-    es: `${financeTeamSize} profesionales de las finanzas y una dirección de RRHH`,
+    es: `${financeTeamSize} profesionales de las finanzas y una dirección de RR. HH.`,
   },
   dafMonthlyPrice: { min: 3000, max: 8000, currency: 'EUR' },
   drhMonthlyPrice: { min: 3200, max: 4800, currency: 'EUR' },
@@ -38,7 +38,7 @@ export function getCompanyGeography(locale: Locale) {
   const details = {
     fr: 'Barcelone est le siège du cabinet. Les modalités d’intervention sur place ou à distance sont définies au cadrage de chaque mission.',
     en: 'Barcelona is the firm’s headquarters. On-site and remote arrangements are agreed when defining each engagement.',
-    es: 'Barcelona es la sede del despacho. Las modalidades presenciales y a distancia se acuerdan al definir cada misión.',
+    es: 'Barcelona es la sede de la firma. Las modalidades presenciales y a distancia se acuerdan al definir cada encargo.',
   }[locale];
   return { cities, cityList, presence, summary: `${presence} ${details}` };
 }

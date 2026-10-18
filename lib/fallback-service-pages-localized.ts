@@ -194,7 +194,7 @@ const fallbackServicePagesEs: Record<string, StrapiServiceSinglePage> = {
       {
         id: 2,
         question: "¿Quién mantiene la previsión después de la puesta en marcha?",
-        answer: [createParagraph("Dos modelos posibles: (1) su equipo interno mantiene el modelo con una revisión mensual de Iter Advisors, o (2) Iter Advisors lo mantiene en el marco de una misión de DAF externalizado (a partir de 2 días/mes). El 70% de nuestros clientes eligen la opción 2 durante los primeros 6 meses.")],
+        answer: [createParagraph("Dos modelos posibles: (1) su equipo interno mantiene el modelo con una revisión mensual de Iter Advisors, o (2) Iter Advisors lo mantiene en el marco de un encargo de DAF externalizado (a partir de 2 días/mes). El 70% de nuestros clientes eligen la opción 2 durante los primeros 6 meses.")],
       },
       {
         id: 3,
@@ -204,7 +204,7 @@ const fallbackServicePagesEs: Record<string, StrapiServiceSinglePage> = {
       {
         id: 4,
         question: "¿Cuánto cuesta el servicio?",
-        answer: [createParagraph("La puesta en marcha se presupuesta según los datos y entregables. Una misión de dirección financiera recurrente se sitúa entre 3.000 y 8.000 € sin IVA al mes según el alcance; no es una tarifa de software ni de producción contable aislada.")],
+        answer: [createParagraph("La puesta en marcha se presupuesta según los datos y entregables. Un encargo de dirección financiera recurrente se sitúa entre 3.000 y 8.000 € sin IVA al mes según el alcance; no es una tarifa de software ni de producción contable aislada.")],
       },
     ],
     seo: {},
@@ -215,7 +215,7 @@ const fallbackServicePagesEs: Record<string, StrapiServiceSinglePage> = {
     content: [
       // T8 (2026-06-07): enriched from ~180 → ~600 words.
       createParagraph("La gestión financiera externalizada se ha convertido en esencial para empresas que quieren controlar sus finanzas concentrándose en su negocio. Consiste en delegar todas o parte de las funciones financieras a un experto externo — un CFO fraccionario o DAF externalizado — sin asumir el coste de una contratación a tiempo completo."),
-      createParagraph("Ya sea una startup en fase de crecimiento, una PYME que estructura su dirección financiera, o una empresa de mid-market que prepara una operación M&A, este enfoque ofrece ventajas estratégicas claras: reducción de costes fijos, acceso a expertise senior desde el primer día, flexibilidad en el alcance de la misión, y mejora medible de los procesos financieros internos."),
+      createParagraph("Ya sea una startup en fase de crecimiento, una PYME que estructura su dirección financiera, o una empresa de mid-market que prepara una operación M&A, este enfoque ofrece ventajas estratégicas claras: reducción de costes fijos, acceso a expertise senior desde el primer día, flexibilidad en el alcance del encargo, y mejora medible de los procesos financieros internos."),
       createHeading("¿Qué es la gestión financiera externalizada?"),
       createParagraph("La gestión financiera externalizada (o fractional CFO) significa delegar funciones de dirección financiera a un consultor externo con experiencia de alto nivel — típicamente un ex-CFO de grupo o un DAF senior con 10+ años de experiencia operativa. Los servicios incluyen:"),
       createList([
@@ -260,13 +260,13 @@ const fallbackServicePagesEs: Record<string, StrapiServiceSinglePage> = {
       },
       {
         id: 3,
-        question: "¿Cuánto dura una misión típica?",
-        answer: [createParagraph("La duración media es de 12-18 meses. Algunas misiones son puntuales (preparación de levantamiento de fondos: 3-6 meses), otras son recurrentes durante años. Sin compromiso de duración mínima — usted puede ajustar o terminar la misión con un preaviso de 30 días.")],
+        question: "¿Cuánto dura un encargo típico?",
+        answer: [createParagraph("La duración media es de 12-18 meses. Algunos encargos son puntuales (preparación de levantamiento de fondos: 3-6 meses), otras son recurrentes durante años. Sin compromiso de duración mínima — usted puede ajustar o terminar el encargo con un preaviso de 30 días.")],
       },
       {
         id: 4,
         question: "¿En qué sectores tienen experiencia?",
-        answer: [createParagraph("Nuestro equipo cubre SaaS, e-commerce, industria, retail, servicios B2B, biotech y fintech. Cada misión es atribuida a un DAF cuya experiencia sectorial coincide con su negocio. Para sectores muy específicos (criptoactivos, marketplaces de 2 lados), tenemos asociados especializados.")],
+        answer: [createParagraph("Nuestro equipo cubre SaaS, e-commerce, industria, retail, servicios B2B, biotech y fintech. Cada encargo es atribuida a un DAF cuya experiencia sectorial coincide con su negocio. Para sectores muy específicos (criptoactivos, marketplaces de 2 lados), tenemos asociados especializados.")],
       },
     ],
     seo: {},

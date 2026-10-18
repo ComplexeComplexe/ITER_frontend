@@ -6,6 +6,7 @@ import PageByline from "@/components/PageByline";
 import { FINANCE_REVIEW_DATE, type FinanceService, type FinanceExtraSection } from "@/lib/content/finance-services";
 import type { Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
+import { colon } from "@/lib/quote-marks";
 import { getFinanceServices, financeInterface } from "@/lib/content/finance-service-locales";
 import { getPublishedCases } from "@/lib/content/published-cases";
 import { getDocumentedCase } from "@/lib/content/documented-cases";
@@ -71,7 +72,7 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
   const controlTest = locale === "fr" && service.path === "/services/controle-de-gestion-externalise";
   const copy = "text-base text-muted-foreground leading-relaxed";
   const link = "text-iter-violet underline underline-offset-4 font-medium";
-  const proofTitle = proof ? `${ui.documented} : ${proof.company}` : ui.people;
+  const proofTitle = proof ? `${ui.documented}${colon(locale)}${proof.company}` : ui.people;
   return <PageLayout locale={locale}>
     <div data-finance-template="service" data-page-id={service.path} className={controlTest ? controlUx.test : undefined}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
@@ -127,7 +128,7 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
         <Aliases service={service} section="tarifs" /><p className={copy}>{service.budget}</p>
         <PublishedLocaleLink locale={locale} href={href(service.budgetResource?.href ?? "/daf-externalise/tarifs")} className={link}>{service.budgetResource?.label ?? ui.prices}</PublishedLocaleLink>
       </ServiceSection>
-      <ServiceSection id="faq" title={`FAQ : ${service.label.toLowerCase()}`}>
+      <ServiceSection id="faq" title={`FAQ${colon(locale)}${service.label.toLowerCase()}`}>
         <Aliases service={service} section="faq" />
         <ServiceFaq items={service.faq.map(([question, answer]) => ({ question, answer }))} />
       </ServiceSection>

@@ -298,7 +298,7 @@ const content: Record<Locale, MaDueDiligenceContent> = {
         },
         {
           "question": "Cual es el coste de un acompanamiento de due diligence?",
-          "answer": "Cada misión tiene un presupuesto específico. La preparación del expediente, la asistencia al vendedor y la revisión del comprador cubren trabajos distintos. La propuesta define entregables, responsabilidades, calendario y trabajos adicionales."
+          "answer": "Cada encargo tiene un presupuesto específico. La preparación del expediente, la asistencia al vendedor y la revisión del comprador cubren trabajos distintos. La propuesta define entregables, responsabilidades, calendario y trabajos adicionales."
         },
         {
           "question": "Pueden intervenir de urgencia?",
@@ -306,7 +306,7 @@ const content: Record<Locale, MaDueDiligenceContent> = {
         },
         {
           "question": "Trabajan con empresas fuera de Francia?",
-          "answer": "Acompañamos a empresas en Francia y España. Las normas contables aplicables y la intervención de asesores legales y fiscales locales se definen para cada misión."
+          "answer": "Asesoramos a empresas en Francia y España. Las normas contables aplicables y la intervención de asesores legales y fiscales locales se definen para cada encargo."
         }
       ]
     },

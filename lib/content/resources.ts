@@ -440,7 +440,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
     breadcrumbLabel: "Recursos",
     h1: "Recursos",
     intro:
-      "Consulte todos los contenidos creados por nuestros CFOs: artículos, fichas temáticas, testimonios, plantillas descargables y mucho más. Nuestro objetivo: darle las claves para gestionar su crecimiento financiero y tomar decisiones informadas en cada etapa del desarrollo de su empresa. Nuestra biblioteca cubre el DAF externalizado, la gestión financiera, las rondas de inversión, la contabilidad, el flujo de tesorería, la fusiones y adquisiciones, la externalización de RRHH y las herramientas que utilizan los equipos financieros modernos. Tanto si está preparando una ronda de inversión, restructurando su función financiera o comparando precios de DAF externalizados, nuestros recursos se basan en la experiencia real con clientes en España, Francia y Bélgica. Cada guía está redactada por un CFO en ejercicio, revisada para garantizar su exactitud y actualizada cuando evolucionan las normativas.",
+      "Consulte todos los contenidos creados por nuestros CFOs: artículos, fichas temáticas, testimonios, plantillas descargables y mucho más. Nuestro objetivo: darle las claves para gestionar su crecimiento financiero y tomar decisiones informadas en cada etapa del desarrollo de su empresa. Nuestra biblioteca cubre el DAF externalizado, la gestión financiera, las rondas de inversión, la contabilidad, el flujo de tesorería, la fusiones y adquisiciones, la externalización de RR. HH. y las herramientas que utilizan los equipos financieros modernos. Tanto si está preparando una ronda de inversión, restructurando su función financiera o comparando precios de DAF externalizados, nuestros recursos se basan en la experiencia real con clientes en España, Francia y Bélgica. Cada guía está redactada por un CFO en ejercicio, revisada para garantizar su exactitud y actualizada cuando evolucionan las normativas.",
     searchPlaceholder: "Buscar un recurso…",
     searchNoResult: "Ningún recurso coincide con su búsqueda.",
     navLabels: {
@@ -456,7 +456,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         {
           title: "DAF externalizado: guía completa",
           href: "/es/externalizacion-daf",
-          description: "Rol, misiones, coste y criterios de selección de un DAF a tiempo parcial.",
+          description: "Rol, encargos, coste y criterios de selección de un DAF a tiempo parcial.",
         },
         {
           title: "Checklist due diligence — ronda de financiación",
@@ -546,7 +546,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
             tag: "Caso práctico",
           },
           {
-            title: "Ukio: acompañamiento en la ronda de financiación Serie A",
+            title: "Ukio: asesoramiento en la ronda de financiación Serie A",
             href: "/es/recursos/casos-de-exito",
             image: "/images/logos/logo-ukio.webp",
             tag: "Caso práctico",

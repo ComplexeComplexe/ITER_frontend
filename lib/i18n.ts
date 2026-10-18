@@ -2,6 +2,22 @@ export const locales = ["fr", "en", "es"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "fr";
 
+/**
+ * Étiquette BCP 47 à passer à Intl pour chaque langue du site.
+ *
+ * NATIF-EN-ES phase 2 (2026-10-18) — `Intl.DateTimeFormat("en", …)` retombe
+ * sur l'anglais américain et rendait « October 2, 2026 » sur les bylines
+ * anglaises, quand les autres pages écrivent « 13 September 2026 ». Le site
+ * s'adresse à un lectorat britannique et européen : en-GB partout.
+ */
+export const INTL_LOCALE: Record<Locale, string> = { fr: "fr-FR", en: "en-GB", es: "es-ES" };
+
+/** Date longue dans la langue de la page (« 2 octobre 2026 », « 2 October 2026 », « 2 de octubre de 2026 »). */
+export function formatLongDate(isoDate: string, locale: Locale): string {
+  const value = /^\d{4}-\d{2}-\d{2}$/.test(isoDate) ? `${isoDate}T12:00:00Z` : isoDate;
+  return new Intl.DateTimeFormat(INTL_LOCALE[locale], { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(value));
+}
+
 export function getLocaleFromPath(pathname: string): Locale {
   const seg = pathname.split("/")[1];
   if (seg === "en" || seg === "es") return seg;

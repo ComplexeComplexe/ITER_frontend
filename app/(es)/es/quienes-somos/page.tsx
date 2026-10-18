@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     // P2-03: Shortened from 72 chars to 49 chars
     title: "Iter Advisors: equipo, historia y oficinas",
     // P1-03: Expanded from 23 chars to full meta description (> 120 chars)
-    description: "Conoce al equipo de Iter Advisors, su historia y organización. Apoyo financiero y de RRHH en Francia y España.",
+    description: "Conozca al equipo de Iter Advisors, su historia y organización. Asesoramiento financiero y de RR. HH. en Francia y España.",
   });
 }
 

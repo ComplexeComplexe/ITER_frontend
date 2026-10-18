@@ -280,7 +280,7 @@ const content: Record<Locale, GlossaryContent> = {
     hero: {
       h1: "Glosario Financiero",
       intro:
-        "Desmitificar las finanzas con nuestras definiciones claras y prácticas. Los términos esenciales para dirigir tu negocio.",
+        "Desmitificar las finanzas con nuestras definiciones claras y prácticas. Los términos esenciales para dirigir su negocio.",
     },
     intro: {
       paragraph:
@@ -302,9 +302,9 @@ const content: Record<Locale, GlossaryContent> = {
           "Una startup con €500k de efectivo y €50k de burn mensual tiene 10 meses de runway.",
       },
       {
-        title: "CAC (Costo de Adquisición de Clientes)",
+        title: "CAC (Coste de Adquisición de Clientes)",
         definition:
-          "El costo promedio para adquirir un cliente. Se calcula dividiendo el gasto en marketing por la cantidad de clientes adquiridos.",
+          "El coste promedio para adquirir un cliente. Se calcula dividiendo el gasto en marketing por la cantidad de clientes adquiridos.",
         context:
           "Si gastas €10k en marketing y adquieres 100 clientes, tu CAC = €100.",
       },
@@ -359,9 +359,9 @@ const content: Record<Locale, GlossaryContent> = {
       },
     ],
     cta: {
-      title: "¿Necesitas ayuda para interpretar tus números?",
+      title: "¿Necesita ayuda para interpretar sus cifras?",
       description:
-        "Consulta con un experto de Iter Advisors. Te ayudamos a entender tus métricas financieras.",
+        "Consulte con un experto de Iter Advisors. Le ayudamos a entender sus métricas financieras.",
       buttonText: "Solicitar consulta gratuita",
       buttonHref: "/es/contact",
     },

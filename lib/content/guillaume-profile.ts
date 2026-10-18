@@ -159,13 +159,13 @@ const GUILLAUME_BIOGRAPHY: Record<Locale, PartnerProfile> = {
     metaRole: "Cofundador",
     expertise: ["Marketing digital", "Desarrollo comercial", "Inversión en startups", "Ecosistemas tecnológicos"],
     intro: [
-      "Guillaume Rostand creó Iter Advisors con Benjamin Ziza y Sébastien Doat. Emprendedor francés instalado en Barcelona desde 2011, aporta al despacho su experiencia en marketing digital, desarrollo comercial y acompañamiento de fundadores.",
+      "Guillaume Rostand creó Iter Advisors con Benjamin Ziza y Sébastien Doat. Emprendedor francés instalado en Barcelona desde 2011, aporta a la firma su experiencia en marketing digital, desarrollo comercial y asesoramiento de fundadores.",
       "También cofundador y CEO de AI Summit Barcelona, dedica hoy una parte importante de su actividad a las aplicaciones de la inteligencia artificial y a los encuentros entre empresas, investigadores, inversores y comunidades tecnológicas.",
     ],
     sections: [
       { id: "role", title: "Su papel en Iter Advisors", paragraphs: [
-        "En Iter Advisors, Guillaume contribuye al posicionamiento del despacho, a su estrategia de desarrollo y a sus relaciones con los emprendedores. Su experiencia complementa la de Benjamin Ziza, Sébastien Doat y los equipos responsables de las misiones financieras.",
-        "Conoce las preguntas a las que se enfrentan los directivos al desarrollar su actividad: cómo encontrar clientes, construir una oferta clara, organizar el crecimiento y reunir las competencias necesarias en cada etapa.",
+        "En Iter Advisors, Guillaume contribuye al posicionamiento de la firma, a su estrategia de desarrollo y a sus relaciones con los emprendedores. Su experiencia complementa la de Benjamin Ziza, Sébastien Doat y los equipos responsables de los encargos financieros.",
+        "Está familiarizado con las preguntas a las que se enfrentan los directivos al desarrollar su actividad: cómo encontrar clientes, construir una oferta clara, organizar el crecimiento y reunir las competencias necesarias en cada etapa.",
         "Esta experiencia alimenta una convicción compartida por los socios de Iter: las decisiones comerciales y financieras deben comunicarse. Una ambición de crecimiento necesita un mercado, un equipo y una comprensión precisa de los recursos disponibles para llevarla a cabo.",
       ], links: [
         { label: "El perfil de Benjamin Ziza", href: "/a-propos/benjamin-ziza" },
@@ -175,9 +175,9 @@ const GUILLAUME_BIOGRAPHY: Record<Locale, PartnerProfile> = {
       { id: "experience", title: "Sus ámbitos de experiencia", items: [
         { title: "Marketing digital y desarrollo comercial", paragraphs: [
           "Guillaume ha dedicado la mayor parte de su carrera al marketing, la captación de clientes y los contenidos. Su experiencia abarca el posicionamiento orgánico, las campañas de captación, el CRM, el posicionamiento de las ofertas y la organización de equipos de marketing.",
-          "En Iter, esta perspectiva ayuda a conectar los servicios del despacho con las necesidades concretas de los directivos.",
+          "En Iter, esta perspectiva ayuda a conectar los servicios de la firma con las necesidades concretas de los directivos.",
         ] },
-        { title: "Inversión y acompañamiento de emprendedores", paragraphs: [
+        { title: "Inversión y asesoramiento de emprendedores", paragraphs: [
           "Inversor en 25 startups, especialmente en los sectores SaaS B2B y marketplaces, Guillaume se interesa tanto por los equipos como por los modelos de negocio.",
           "Su implicación con los fundadores puede adoptar distintas formas: debatir un posicionamiento, compartir una experiencia de crecimiento, abrir una relación comercial o ayudar a encontrar un interlocutor adecuado. También participa en este enfoque colectivo a través de Le Club Startup, del que es cofundador.",
         ] },
@@ -187,8 +187,8 @@ const GUILLAUME_BIOGRAPHY: Record<Locale, PartnerProfile> = {
       ] },
       { id: "projets", title: "Proyectos construidos con otros", items: [
         { title: "Iter Advisors", paragraphs: [
-          "La creación de Iter Advisors con Benjamin Ziza y Sébastien Doat se basa en la complementariedad de sus trayectorias. El despacho acompaña a las empresas en la estructuración y gestión de su función financiera. Guillaume aporta su experiencia como directivo de marketing, emprendedor e inversor.",
-        ], links: [{ label: "El acompañamiento de CFO externo del despacho", href: "/daf-externalise" }] },
+          "La creación de Iter Advisors con Benjamin Ziza y Sébastien Doat se basa en la complementariedad de sus trayectorias. La firma asesora a las empresas en la estructuración y gestión de su función financiera. Guillaume aporta su experiencia como directivo de marketing, emprendedor e inversor.",
+        ], links: [{ label: "El asesoramiento de CFO externo de la firma", href: "/daf-externalise" }] },
         { title: "AI Summit Barcelona y AI Week Barcelona", paragraphs: [
           "Cofundado en 2025, AI Summit Barcelona reúne a quienes desarrollan, financian y utilizan la inteligencia artificial. Guillaume dirige hoy el proyecto con sus socios y su equipo.",
           "El proyecto también forma parte de AI Week Barcelona, que reúne eventos y comunidades en toda la ciudad. Su ambición es impulsar colaboraciones y hacer que las novedades de la IA sean más accesibles para las empresas.",

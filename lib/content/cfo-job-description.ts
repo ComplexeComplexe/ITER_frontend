@@ -294,7 +294,7 @@ const content: Record<Locale, CFOJobDescriptionContent> = {
         "Modelado financiero y pronósticos de tesorería",
         "Configuración de dashboards KPI y reportes",
         "Apoyo en recaudación de fondos y due diligence",
-        "Análisis de unit economics y optimización de costos",
+        "Análisis de unit economics y optimización de costes",
         "Asesoramiento en estrategia financiera y pricing",
         "Supervisión de contabilidad externa",
         "Preparación de presentaciones de inversores",
@@ -312,7 +312,7 @@ const content: Record<Locale, CFOJobDescriptionContent> = {
       heading: "Comparación: CFO Tiempo Completo vs Externalizado",
       aspects: [
         {
-          label: "Costo mensual",
+          label: "Coste mensual",
           fullTime: "€10,000 - €20,000",
           fractional: "€2,000 - €6,000",
         },

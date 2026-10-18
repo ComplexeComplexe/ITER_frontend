@@ -1,6 +1,6 @@
 import FinanceExpert from "@/components/FinanceExpert";
 import Link from "@/components/PublishedLocaleLink";
-import type { Locale } from "@/lib/i18n";
+import { formatLongDate, type Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
 import { iaText } from "@/lib/content/ia-finance-interface";
 import { getIaGuide, iaHub, iaGuideHref } from "@/lib/content/ia-finance-locales";
@@ -26,7 +26,7 @@ export default async function IaFinanceHub({ locale = "fr" }: { locale?: Locale 
   const hub = iaHub(locale);
   const cmsNavigation = await getCmsNavigation(locale);
   const modified = locale === "fr" ? (PAGE_REVISIONS[IA_FINANCE_HUB.href] ?? "2026-09-05") : "2026-10-02";
-  const modifiedLabel = new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${modified}T12:00:00Z`));
+  const modifiedLabel = formatLongDate(modified, locale);
   const structuredData = {"@context":"https://schema.org", "@type":"CollectionPage", "@id":`https://www.iteradvisors.com${hub.href}#collection`, url:`https://www.iteradvisors.com${hub.href}`, name:title, description, inLanguage:{fr:"fr-FR",en:"en-GB",es:"es-ES"}[locale], dateModified:modified, isPartOf:{"@id":"https://www.iteradvisors.com/#website"}, hasPart:paths.map(slug => ({"@type":"Article", "@id":`https://www.iteradvisors.com${iaGuideHref(slug, locale)}#article`, inLanguage:{fr:"fr-FR",en:"en-GB",es:"es-ES"}[locale], url:`https://www.iteradvisors.com${iaGuideHref(slug, locale)}`, name:getIaGuide(locale, slug).title}))};
   return <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData).replace(/</g, "\\u003c")}} />

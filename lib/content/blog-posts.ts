@@ -501,7 +501,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       category: "outils-stack",
       htmlContent: `<p>Pour choisir entre Pennylane et Sage, partez des opérations à gérer : achats, ventes, stocks, immobilisations et reporting. Pennylane présente une plateforme financière et comptable intégrée. Sage propose plusieurs produits : une comparaison utile doit préciser lesquels, avec leurs modules et leur mode d’hébergement.</p>
 <h2 id="verdict">Le verdict en 30 secondes</h2>
-<p>Présélectionnez Pennylane si votre priorité est de relier facturation, dépenses et comptabilité dans un même environnement. Étudiez une offre Sage identifiée si votre projet inclut une gestion commerciale ou un ERP plus étendu. Ce sont des pistes de sélection, à confirmer par une démonstration sur vos données, et non un classement universel.</p>
+<p>Verdict : Pennylane pour une PME de services qui veut facturer, suivre ses dépenses et collaborer avec son cabinet dans un seul outil ; Sage dès que l’activité exige une gestion commerciale, des stocks ou un ERP plus étendu. Présélectionnez Pennylane si votre priorité est de relier facturation, dépenses et comptabilité dans un même environnement. Étudiez une offre Sage identifiée si votre projet inclut une gestion commerciale ou un ERP plus étendu. Ce sont des pistes de sélection, à confirmer par une démonstration sur vos données, et non un classement universel.</p>
 <h2 id="comparatif">Les critères à tester</h2>
 <table><thead><tr><th>Besoin</th><th>Vérification à demander aux deux éditeurs</th></tr></thead><tbody>
 <tr><td>Comptabilité</td><td>Plan de comptes, clôture, export des écritures et collaboration avec votre cabinet</td></tr>
@@ -537,7 +537,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       htmlContent: `<p>Agicap et Okimia, anciennement Fygr, proposent des outils de suivi et de prévision de trésorerie. Le choix dépend de vos banques, de vos entités et de la façon dont vous construisez vos prévisions. Un nombre de salariés ou un ancien prix d’appel ne suffit pas à départager les deux.</p>
 <p>Avant de comparer les logiciels, distinguez solde, encaissements et décaissements dans le guide des <a href="/ressources/blog/flux-de-tresorerie">flux de trésorerie</a>.</p>
 <h2 id="verdict">Le verdict en 30 secondes</h2>
-<p>Présélectionnez les solutions sur un même besoin : consolider vos soldes, expliquer les mouvements et anticiper les décaissements. Agicap présente aussi des fonctions de gestion des postes clients et fournisseurs. Okimia présente la connexion des comptes bancaires et de l’ERP. Demandez une démonstration des fonctions incluses dans chaque offre envisagée.</p>
+<p>Verdict : Agicap pour un groupe multi-entités qui veut aussi piloter ses postes clients et fournisseurs ; Okimia (ex-Fygr) pour une PME mono-entité qui cherche d’abord une connexion simple de ses banques et de son ERP. Présélectionnez les solutions sur un même besoin : consolider vos soldes, expliquer les mouvements et anticiper les décaissements. Agicap présente aussi des fonctions de gestion des postes clients et fournisseurs. Okimia présente la connexion des comptes bancaires et de l’ERP. Demandez une démonstration des fonctions incluses dans chaque offre envisagée.</p>
 <h2 id="comparatif">Comparer sur vos flux réels</h2>
 <table><thead><tr><th>Critère</th><th>Question à poser</th><th>Preuve attendue</th></tr></thead><tbody>
 <tr><td>Banques et devises</td><td>Mes comptes exacts sont-ils pris en charge ?</td><td>Connexion testée et fréquence de mise à jour documentée</td></tr>
@@ -958,7 +958,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       category: "rh-paie",
       htmlContent: `<p>Pour comparer PayFit, Silae et malibou, commencez par décider qui produira et contrôlera la paie. La plateforme choisie et le niveau de délégation sont deux décisions liées. Une interface simple ne suffit pas si personne ne valide les variables, les bulletins et les déclarations.</p>
 <h2 id="verdict">Le verdict en 30 secondes</h2>
-<p>PayFit présente un logiciel et un service de paie en ligne. Silae propose un socle paie et RH utilisé notamment par des cabinets et des intégrateurs. malibou associe une plateforme RH et un accompagnement paie dédié, avec une production sur Silae. Comparez les offres et les responsabilités effectivement incluses, plutôt que les seules marques.</p>
+<p>Verdict : PayFit si votre équipe produit elle-même la paie dans un outil en ligne ; Silae si un cabinet ou un intégrateur la produit pour vous ; malibou si vous voulez une plateforme RH moderne avec un gestionnaire de paie dédié qui produit et contrôle les bulletins. PayFit présente un logiciel et un service de paie en ligne. Silae propose un socle paie et RH utilisé notamment par des cabinets et des intégrateurs. malibou associe une plateforme RH et un accompagnement paie dédié, avec une production sur Silae. Comparez les offres et les responsabilités effectivement incluses, plutôt que les seules marques.</p>
 <h2 id="comparatif">La grille de comparaison</h2>
 <table><thead><tr><th>Critère</th><th>À vérifier pour chaque proposition</th></tr></thead><tbody>
 <tr><td>Production</td><td>Qui saisit les variables, produit les bulletins et valide les déclarations ?</td></tr>
@@ -2133,7 +2133,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     "que-es-fractional-cfo": {
       meta: {
         title: "¿Qué es un Fractional CFO? Guía para Pymes | Iter Advisors",
-        description: "¿Qué es un Fractional CFO? Definición, misiones, ventajas y coste. Guía para pymes y startups que necesitan dirección financiera senior a tiempo parcial.",
+        description: "¿Qué es un Fractional CFO? Definición, encargos, ventajas y coste. Guía para pymes y startups que necesitan dirección financiera senior a tiempo parcial.",
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
@@ -2154,7 +2154,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li>Gestión de tesorería y previsiones</li>
 <li>Reporting al board y a los inversores</li>
 <li>Control de gestión y presupuestos</li>
-<li>Acompañamiento en rondas de financiación</li>
+<li>Asesoramiento en rondas de financiación</li>
 <li>Optimización fiscal</li>
 </ul>
 <p>La dedicación depende del alcance acordado. En Iter Advisors, el volumen orientativo es de ${getDafOffer("es").volume} al mes; no es una promesa de cobertura a tiempo completo. Para más detalles, consulte nuestra página <a href="/es/externalizacion-daf">CFO Externalizado</a>.</p>
@@ -2184,11 +2184,11 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li><strong>Acceso a una red de expertos</strong> (VCs, bancos, abogados)</li>
 <li><strong>Primeros entregables acordados al inicio</strong></li>
 </ol>
-<p>Para ver misiones documentadas, consulte nuestros <a href="/ressources/cas-clients">casos de clientes (en francés)</a>: contexto, trabajo realizado y entregables. Los resultados dependen de cada empresa.</p>
+<p>Para ver encargos documentados, consulte nuestros <a href="/ressources/cas-clients">casos de clientes (en francés)</a>: contexto, trabajo realizado y entregables. Los resultados dependen de cada empresa.</p>
 <h2 id="faq">FAQ</h2>
 <p><strong>¿Cuánto cuesta un fractional CFO ?</strong> Las fórmulas de Iter Advisors van de ${getDafOffer("es").price}. ${getDafOffer("es").billing}</p>
 <p><strong>¿Qué diferencia hay entre fractional CFO y part-time CFO ?</strong> Son sinónimos. «Fractional» es el término anglosajón estándar; en España también se utiliza «CFO a tiempo compartido».</p>
-<p><strong>¿Un fractional CFO puede acompañar una ronda de financiación ?</strong> Sí, es una de sus misiones principales. Nuestros fractional CFOs en Iter Advisors han acompañado más de 100 M€ de levantamientos de capital.</p>
+<p><strong>¿Un fractional CFO puede asesorar una ronda de financiación ?</strong> Sí, es uno de sus encargos principales. Nuestros fractional CFOs en Iter Advisors han asesorado más de 100 M€ de levantamientos de capital.</p>
 <p><strong>¿Listo para contratar un fractional CFO ?</strong> Descubra nuestro servicio de <a href="/es/externalizacion-daf">CFO Externalizado</a> o <a href="/es/contact">cuéntenos sus necesidades</a>.</p>`,
       content: [],
     },
@@ -2209,7 +2209,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       author: "Benjamin Ziza",
       category: "Guías prácticas",
       htmlContent: `<p>El <strong>flujo de caja (cash flow)</strong> es el indicador financiero más importante para cualquier empresa, y sin embargo sigue siendo mal dominado. Mide cada euro de tesorería que entra y sale en un periodo dado, y es el verdadero barómetro de la salud financiera de su empresa. El beneficio es una opinión contable. El flujo de caja es un hecho.</p>
-<p>En Iter Advisors, nuestros <a href="/es/externalizacion-daf">CFO externalizados</a> implementan un sistema de gestión de caja en los primeros 30 días de cada misión — porque ningún otro indicador predice tan bien el fracaso (o el crecimiento).</p>
+<p>En Iter Advisors, nuestros <a href="/es/externalizacion-daf">CFO externalizados</a> implementan un sistema de gestión de caja en los primeros 30 días de cada encargo — porque ningún otro indicador predice tan bien el fracaso (o el crecimiento).</p>
 <h2 id="three-types">Los tres tipos de flujo de caja</h2>
 <ul>
 <li><strong>Cash flow operativo</strong> — la tesorería generada por su actividad principal (ventas menos gastos operativos). Cuanto más sano sea, más sostenible es el negocio.</li>
@@ -2280,12 +2280,12 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <h2 id="roi">ROI: la parte de la que nadie habla</h2>
 <p>El ahorro en salario es solo la mitad de la historia. El verdadero ROI vive en tres áreas:</p>
 <ol>
-<li><strong>Liberación de fondo de maniobra.</strong> Un buen CFO externo suele liberar parte del fondo de maniobra. Orden de magnitud ilustrativo: en un negocio de 5 M€ de facturación con 800 k€ de necesidades operativas de fondos, cada 10 % liberado son 80 k€ de caja recuperada. A menudo más que el coste total de la misión.</li>
+<li><strong>Liberación de fondo de maniobra.</strong> Un buen CFO externo suele liberar parte del fondo de maniobra. Orden de magnitud ilustrativo: en un negocio de 5 M€ de facturación con 800 k€ de necesidades operativas de fondos, cada 10 % liberado son 80 k€ de caja recuperada. A menudo más que el coste total del encargo.</li>
 <li><strong>Plusvalía en fundraising.</strong> Una data room limpia y un CFO creíble en la mesa pueden subir una valoración un 10-15%. En una Series A de 5M€, son 500-750k€ de valor adicional creado — por una inversión en CFO de ~50k€ en la ronda.</li>
 <li><strong>Calidad de decisión.</strong> Una previsión semanal de caja y un board pack mensual fuerzan disciplina. Las malas decisiones se detectan pronto; las buenas se refuerzan.</li>
 </ol>
 <h2 id="cta">¿Listo para comparar?</h2>
-<p>Cada misión en Iter Advisors comienza con un diagnóstico gratuito de 30 minutos — revisamos sus números, dimensionamos el paquete adecuado y confirmamos si un CFO externalizado realmente encaja con su etapa. <a href="/es/contact">Reserve un slot</a>.</p>`,
+<p>Cada encargo en Iter Advisors comienza con un diagnóstico gratuito de 30 minutos — revisamos sus números, dimensionamos el paquete adecuado y confirmamos si un CFO externalizado realmente encaja con su etapa. <a href="/es/contact">Reserve un slot</a>.</p>`,
       content: [],
     },
     "daf-externalise-vs-daf-salarie": {
@@ -2304,7 +2304,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       publishedDate: "2026-05-11",
       author: "Sébastien Doat",
       category: "CFO externalizado",
-      htmlContent: `<h2>Comparar según la necesidad real</h2><p>Una misión a tiempo parcial y un puesto interno no ofrecen la misma disponibilidad. Compare el coste de la contratación prevista con los honorarios propuestos, según experiencia, alcance y entregables.</p><p>No se establece un porcentaje universal de ahorro. Consulte las horquillas Iter y su alcance.</p><p><a href="/es/externalizacion-daf/precios">Horquillas orientativas del CFO externo</a></p>`,
+      htmlContent: `<h2>Comparar según la necesidad real</h2><p>Un encargo a tiempo parcial y un puesto interno no ofrecen la misma disponibilidad. Compare el coste de la contratación prevista con los honorarios propuestos, según experiencia, alcance y entregables.</p><p>No se establece un porcentaje universal de ahorro. Consulte las horquillas Iter y su alcance.</p><p><a href="/es/externalizacion-daf/precios">Horquillas orientativas del CFO externo</a></p>`,
       content: [],
     },
     "externalisation-comptable": {
@@ -2522,7 +2522,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     "la-modernisation-du-role-de-cfo": {
       meta: {
         title: "Modernización del rol de CFO en 2026 | Iter Advisors",
-        description: "Cómo evoluciona el rol del CFO con la digitalización y la IA. Descubra las nuevas competencias y misiones del director financiero moderno.",
+        description: "Cómo evoluciona el rol del CFO con la digitalización y la IA. Descubra las nuevas competencias y encargos del director financiero moderno.",
       },
       breadcrumbs: {
         resourcesLabel: "Recursos",
@@ -2533,7 +2533,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       h1: "La modernización del rol de CFO",
       content: [
         "El rol del CFO (Chief Financial Officer) ha evolucionado considerablemente en los últimos años. Antes limitado a la supervisión contable y al reporting, el director financiero es hoy un verdadero socio estratégico en el corazón de las decisiones de la empresa.",
-        "La transformación digital es el primer motor de esta evolución. La automatización de tareas repetitivas (asiento contable, conciliación bancaria, reporting) libera tiempo para misiones de mayor valor añadido: análisis estratégico, apoyo a la toma de decisiones, gestión de riesgos.",
+        "La transformación digital es el primer motor de esta evolución. La automatización de tareas repetitivas (asiento contable, conciliación bancaria, reporting) libera tiempo para encargos de mayor valor añadido: análisis estratégico, apoyo a la toma de decisiones, gestión de riesgos.",
         "La inteligencia artificial abre nuevas perspectivas para la función financiera. Las herramientas de predicción basadas en machine learning permiten anticipar las evoluciones de tesorería, optimizar los precios y detectar anomalías contables con una precisión inédita.",
         "El CFO moderno también debe dominar los temas ESG (Medio ambiente, Social, Gobernanza) que ocupan un lugar creciente en la estrategia empresarial. Las finanzas sostenibles, el reporting extra-financiero y el impact investing se convierten en competencias imprescindibles.",
         "Finalmente, la dimensión humana sigue siendo central. El CFO debe saber comunicar con las distintas partes interesadas (directivos, inversores, equipos operativos) y traducir los datos financieros en recomendaciones accionables. El liderazgo y la visión estratégica son, más que nunca, cualidades esenciales.",

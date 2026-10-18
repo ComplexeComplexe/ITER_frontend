@@ -58,7 +58,7 @@ const legalNoticeEn: LegalPageContent = {
     {
       heading: "Intellectual Property",
       content:
-        "All content displayed on this website, including designs, texts, images, logos, icons, trade names, trademarks and any other information that may be used for industrial and/or commercial purposes, is protected by the corresponding copyright.\n\nAny reproduction, transmission or storage of this information is strictly prohibited without the prior authorization of the owner, ITER ADVISORS S.L.\n\nThe user may only use the information for the management of their orders and the associated contact data.",
+        "All content displayed on this website, including designs, texts, images, logos, icons, trade names, trademarks and any other information that may be used for industrial and/or commercial purposes, is protected by the corresponding copyright.\n\nAny reproduction, transmission or storage of this information is strictly prohibited without the prior authorisation of the owner, ITER ADVISORS S.L.\n\nThe user may only use the information for the management of their orders and the associated contact data.",
     },
     {
       heading: "Hyperlinks",
@@ -190,9 +190,9 @@ const privacyEn: LegalPageContent = {
         "The specific purposes of each processing operation are set out in the informative clauses included in the various data collection methods (online forms, paper forms, advertisements or informative notes).\n\nHowever, personal data will be used exclusively to provide an effective response to user requests, defined according to the service or collection system used.",
     },
     {
-      heading: "Legitimization",
+      heading: "Legal basis",
       content:
-        "As a general rule, ITER ADVISORS, S.L. obtains the express and unequivocal consent of the data subject prior to any processing of their personal data, through informative clauses incorporated into the various collection systems.\n\nIf consent is not required, the processing will be based on a legal or regulatory basis that authorizes or requires the processing of the data subject's data.",
+        "As a general rule, ITER ADVISORS, S.L. obtains the express and unequivocal consent of the data subject prior to any processing of their personal data, through informative clauses incorporated into the various collection systems.\n\nIf consent is not required, the processing will be based on a legal or regulatory basis that authorises or requires the processing of the data subject's data.",
     },
     {
       heading: "Recipients",
@@ -222,7 +222,7 @@ const privacyEn: LegalPageContent = {
     {
       heading: "Security",
       content:
-        "The security measures adopted by ITER ADVISORS, S.L. comply with the provisions of Article 32 of the GDPR. These measures take into account technological advances, implementation costs and the nature, scope and purposes of data processing, in order to guarantee an adequate level of security.\n\nITER ADVISORS, S.L. has implemented mechanisms to:\n\u2022 Guarantee the confidentiality, integrity and availability of processing systems and services.\n\u2022 Rapidly restore access to data in the event of a physical or technical incident.\n\u2022 Regularly verify, evaluate and improve the effectiveness of security measures.\n\u2022 Pseudonymize and encrypt personal data when necessary.",
+        "The security measures adopted by ITER ADVISORS, S.L. comply with the provisions of Article 32 of the GDPR. These measures take into account technological advances, implementation costs and the nature, scope and purposes of data processing, in order to guarantee an adequate level of security.\n\nITER ADVISORS, S.L. has implemented mechanisms to:\n\u2022 Guarantee the confidentiality, integrity and availability of processing systems and services.\n\u2022 Rapidly restore access to data in the event of a physical or technical incident.\n\u2022 Regularly verify, evaluate and improve the effectiveness of security measures.\n\u2022 Pseudonymise and encrypt personal data when necessary.",
     },
   ],
 };

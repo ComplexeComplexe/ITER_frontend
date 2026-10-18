@@ -480,7 +480,7 @@ const content: Record<
         "Evalúe sus necesidades financieras en 2 minutos y descubra cómo nuestros DAF externalizados pueden estructurar su crecimiento.",
       cta: "Obtener mi diagnóstico gratuito",
       ctaSecondary: "Descubrir nuestros servicios",
-      socialProof: `${CLIENTS_ACCOMPAGNES} empresas acompañadas`,
+      socialProof: `${CLIENTS_ACCOMPAGNES} empresas asesoradas`,
       trustfolio: "5/5 Trustfolio",
     },
     problem: {
@@ -608,7 +608,7 @@ const content: Record<
         },
         {
           quote:
-            "Iter nos acompañó en la implementación del reporting y la gestión de tesorería, aportando mucha mejor visibilidad y tranquilidad financiera.",
+            "Iter nos asesoró en la implementación del reporting y la gestión de tesorería, aportando mucha mejor visibilidad y tranquilidad financiera.",
           name: "Mathurin Blouin",
           role: "CEO",
           company: "MFL",
@@ -638,7 +638,7 @@ const content: Record<
         },
         {
           q: "¿Trabajan con startups early-stage?",
-          a: "Sí, acompañamos empresas desde Seed hasta Serie B+, así como PYMEs establecidas. Nuestros expertos adaptan su enfoque a su etapa de madurez.",
+          a: "Sí, asesoramos empresas desde Seed hasta Serie B+, así como PYMEs establecidas. Nuestros expertos adaptan su enfoque a su etapa de madurez.",
         },
       ],
     },

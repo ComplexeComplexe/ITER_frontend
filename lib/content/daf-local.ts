@@ -307,7 +307,7 @@ const localContent: Record<DafLocalCity, Record<Locale, DafLocalContent>> = {
           ],
         },
         {
-          heading: "Nuestras misiones en Paris",
+          heading: "Nuestros encargos en Paris",
           content: [
             "Gestion financiera y reporting para startups y pymes de Ile-de-France.",
             "Preparacion de rondas de financiacion con VCs parisinos (Partech, Elaia, Breega, Idinvest).",

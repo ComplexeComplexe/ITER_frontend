@@ -178,6 +178,7 @@ for (const abs of urls) {
 
   // ── 3. Valeurs commerciales retirées lors des arbitrages
   const texte = strip(html);
+  const metaDescription = html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "";
   for (const { re, sujet } of VALEURS_INTERDITES) {
     const exclu = HORS_ARBITRAGE.some((x) => x.path.test(path) && x.sujet.test(sujet));
     if (exclu) continue;
@@ -238,12 +239,74 @@ for (const abs of urls) {
     if (m) fail("traduction/résidu", `${path} — ${sujet} : « ${m[0]} »`);
   }
 
+  // ── 3a quinquies. Lexique natif des pages EN et ES
+  //
+  // NATIF-EN-ES phase 2 (2026-10-18) — le contrôle qualité du 18 octobre sur
+  // le HTML live notait l'anglais 5/10 et l'espagnol 4,2/10 : les résidus
+  // venaient de fichiers que le lot du 17 octobre n'avait pas couverts
+  // (orthographe américaine, « shared-time », « recipe » pour recette, dates
+  // « October 2, 2026 », espace française devant « : » dans le pied de page ;
+  // « misión », « acompañamiento », « despacho », tutoiement, « costo »,
+  // « Salvia » pour Sage en espagnol). Chaque motif a été testé sur le HTML
+  // construit avant d'être ajouté. Le lexique cible : anglais britannique
+  // (organisation, modelling, rigour, labour), mission → engagement/encargo,
+  // cabinet → firm/firma, espagnol d'Espagne au vouvoiement.
+  const MOIS_EN = "January|February|March|April|May|June|July|August|September|October|November|December";
+  const LEXIQUE_EN = [
+    { re: /\b(?!(?:size|sizes|sized|prize|prizes|prized|seize|seized|resize|resized|downsize|downsized|downsizing|capsize|capsized|oversize|oversized)\b)[A-Za-z]{2,}iz(?:e|es|ed|ing|ation|ations)\b/, sujet: "orthographe américaine en -ize (organise, organisation)" },
+    { re: /\b[A-Za-z]{3,}yz(?:e|es|ed|ing)\b/, sujet: "orthographe américaine en -yze (analyse)" },
+    { re: /\blabor\b/i, sujet: "« labor » (labour, employment law)" },
+    { re: /\brigor\b/i, sujet: "« rigor » (rigour)" },
+    { re: /\bmodel(?:ing|ed)\b/i, sujet: "« modeling » (modelling)" },
+    { re: /\bshared-time\b/i, sujet: "« shared-time » (part-time)" },
+    { re: /\brecipes?\b/i, sujet: "« recipe » pour recette (receipt, acceptance test)" },
+    { re: /\bcoins\b/i, sujet: "« coins » pour pièces (supporting documents)" },
+    { re: /\bencrypt(?:ed|ing|s)?\b/i, sujet: "« encrypt » pour chiffrer (cost, budget)" },
+    { re: /Toggle signal/i, sujet: "« Toggle signal » (When to reconsider)" },
+    { re: /\S[ \u00A0\u202F]:(?=\s|$)/, sujet: "espace française avant « : »" },
+    { re: /\S[ \u00A0\u202F];(?=\s|$)/, sujet: "espace française avant « ; »" },
+    { re: new RegExp(`\\b(?:${MOIS_EN}) \\d{1,2}, \\d{4}\\b`), sujet: "date au format américain (2 October 2026 attendu)" },
+    { re: /Cofondateur, DAF externalisé/, sujet: "fonction d'auteur restée en français" },
+  ];
+  const LEXIQUE_ES = [
+    { re: /\bmisi[oó]n(?:es)?\b/i, sujet: "« misión » (encargo, proyecto)" },
+    { re: /\bacompañ/i, sujet: "« acompañ- » (asesoramiento, asesorar)" },
+    { re: /\bdespachos?\b/i, sujet: "« despacho » (firma, asesoría)" },
+    { re: /\bdirigentes?\b/i, sujet: "« dirigente » (directivo)" },
+    { re: /\bpiezas\b/i, sujet: "« piezas » (justificantes)" },
+    { re: /\bcostos?\b/i, sujet: "« costo » (coste)" },
+    { re: /\bcontador(?:es|a|as)?\b/i, sujet: "« contador » (asesor contable)" },
+    { re: /\bagreg(?:ar|a|ue|amos|an)\b/i, sujet: "« agregar » (añadir)" },
+    { re: /\butilidades\b/i, sujet: "« utilidades » (beneficios)" },
+    { re: /(?:^|[.!?¿¡:;]\s+)(?:Conoce|Descubre)\b/, sujet: "impératif en tú (Conozca, Descubra)" },
+    { re: /(?<![\p{L}\p{N}_])[Tt]us?\s+(?=\p{L})/u, sujet: "possessif « tu/tus » (su/sus attendu)" },
+    { re: /\bSalvia\b/, sujet: "marque traduite (Sage)" },
+    { re: /\bRampa\b/, sujet: "marque traduite (Ramp)" },
+    { re: /malib[úu]\b/i, sujet: "marque traduite (malibou)" },
+    { re: /\S[ \u00A0\u202F]:(?=\s|$)/, sujet: "espace française avant « : »" },
+    { re: /\S[ \u00A0\u202F];(?=\s|$)/, sujet: "espace française avant « ; »" },
+    { re: /Cofondateur, DAF externalisé/, sujet: "fonction d'auteur restée en français" },
+  ];
+  // La politique de confidentialité chiffre réellement des données :
+  // « encrypt » y est le bon mot.
+  const HORS_LEXIQUE = [{ path: /^\/en\/privacy-policy$/, sujet: /encrypt/ }];
+  const lexique = GELE_DAF.test(path) ? [] : enPage ? LEXIQUE_EN : esPage ? LEXIQUE_ES : [];
+  // strip() remplace chaque balise par une espace : « <strong>Model</strong>: x »
+  // se lirait « Model : x ». Une balise immédiatement suivie de « : » ou « ; »
+  // est donc retirée sans espace avant le contrôle du lexique.
+  const texteLexique = strip(html.replace(/<[^>]+>(?=\s*[:;])/g, ""));
+  for (const { re, sujet } of lexique) {
+    if (HORS_LEXIQUE.some((x) => x.path.test(path) && x.sujet.test(sujet))) continue;
+    const m = `${strip(titres[0] ?? "")} | ${metaDescription} | ${texteLexique}`.match(re);
+    if (m) fail("lexique/natif", `${path} — ${sujet} : « ${m[0]} »`);
+  }
+
   // ── 3a bis. Les mêmes valeurs, dans la meta description
   //
   // SEO-02 (2026-08-30) — une meta description ne fait pas partie du corps de
   // la page : `strip()` ne la voyait pas. L'article tarifs y annonçait
   // « Économisez 50 à 70 % » et un TJM, deux valeurs retirées le 10 août.
-  const metaDesc = html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "";
+  const metaDesc = metaDescription;
   for (const { re, sujet } of VALEURS_INTERDITES) {
     const exclu = HORS_ARBITRAGE.some((x) => x.path.test(path) && x.sujet.test(sujet));
     if (exclu) continue;
@@ -599,6 +662,8 @@ const parTest = echecs.reduce((acc, e) => ((acc[e.test] = (acc[e.test] ?? 0) + 1
 console.log(`\n❌ ${echecs.length} échec(s) :`);
 for (const [t, n] of Object.entries(parTest).sort((a, b) => b[1] - a[1])) console.log(`  ${n}× ${t}`);
 console.log();
-for (const e of echecs.slice(0, 40)) console.log(`  [${e.test}] ${e.detail}`);
-if (echecs.length > 40) console.log(`  … et ${echecs.length - 40} autre(s)`);
+// AUDIT_ALL=1 liste tous les échecs (utile pour converger lors d'un lot).
+const plafond = process.env.AUDIT_ALL ? echecs.length : 40;
+for (const e of echecs.slice(0, plafond)) console.log(`  [${e.test}] ${e.detail}`);
+if (echecs.length > plafond) console.log(`  … et ${echecs.length - plafond} autre(s)`);
 process.exit(1);

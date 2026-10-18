@@ -157,7 +157,7 @@ export default function AboutPage({
                 ? "Accompagnement"
                 : locale === "en"
                   ? "Support"
-                  : "Acompañamiento"}
+                  : "Asesoramiento"}
             </span>
             <h2 className="text-3xl lg:text-4xl font-bold font-heading mb-4">
               {t.whenToCall.heading}

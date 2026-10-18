@@ -242,11 +242,11 @@
     ],
     "scopeTitle": "Coordinación con sus equipos y asesores",
     "scope": [
-      "La asesoría prepara cuentas según su contrato; el CFO organiza su interpretación, previsiones y decisiones con dirección. Los asesores fiscales, jurídicos o laborales intervienen en su ámbito. Iter no es un despacho de expertos contables.",
+      "La asesoría prepara cuentas según su contrato; el CFO organiza su interpretación, previsiones y decisiones con dirección. Los asesores fiscales, jurídicos o laborales intervienen en su ámbito. Iter no es una asesoría contable.",
       "Para una empresa de la región parisina con actividad en España, se identifican responsables locales, flujos y reporting de grupo. No se presuponen ventajas fiscales automáticas ni acceso privilegiado a inversores o programas públicos.",
       "El perfil, la disponibilidad y la presencia se confirman antes del compromiso. Un proyecto de financiación o relevo diario puede necesitar un mandato específico, distinto del seguimiento recurrente."
     ],
-    "budget": "Los encargos recurrentes de Iter van de 3.000 a 8.000 € sin IVA al mes. Son horquillas del despacho, no una media del mercado parisino. La propuesta depende del alcance, el perfil y la organización; distingue desplazamientos y proyectos complementarios. El inicio se confirma tras evaluar la necesidad.",
+    "budget": "Los encargos recurrentes de Iter van de 3.000 a 8.000 € sin IVA al mes. Son horquillas de la firma, no una media del mercado parisino. La propuesta depende del alcance, el perfil y la organización; distingue desplazamientos y proyectos complementarios. El inicio se confirma tras evaluar la necesidad.",
     "case": "opti-digital-structuration-financement",
     "proofNote": "Esta referencia describe un encargo de Iter y resultados cualitativos. No se presenta como referencia parisina: la fuente no establece la ubicación del encargo. No se promete ningún beneficio cuantificado para su empresa.",
     "faq": [
@@ -587,7 +587,7 @@
   },
   "transition": {
     "path": "/daf-externalise/transition",
-    "label": "CFO interino",
+    "label": "CFO de transición",
     "title": "CFO de transición para pymes | Iter Advisors",
     "description": "CFO de transición para pymes: sustitución, cierre y traspaso. Horquilla orientativa: 8.000–12.000 € sin IVA/mes. Inicio según disponibilidad.",
     "headline": "CFO de transición para pymes",
@@ -634,7 +634,7 @@
     ],
     "headings": {
       "need": "¿Cuándo considerar una dirección financiera interina?",
-      "deliverables": "Los entregables del CFO interino",
+      "deliverables": "Los entregables del CFO de transición",
       "method": "Del mandato temporal al traspaso"
     },
     "calendar": {
@@ -696,7 +696,7 @@
         "La duración depende del motivo de la sustitución, los vencimientos y la disponibilidad del sucesor. Se acuerda al definir el alcance, junto con los objetivos de salida, las posibles prórrogas y el traspaso. No existe una duración estándar para todos los encargos."
       ],
       [
-        "¿Cuándo elegir un CFO interino en lugar de uno a tiempo parcial?",
+        "¿Cuándo elegir un CFO de transición en lugar de uno a tiempo parcial?",
         "El mandato interino responde a una situación temporal: sustitución, continuidad o transformación. La dedicación parcial atiende una necesidad recurrente con intervenciones planificadas."
       ],
       [
@@ -766,7 +766,7 @@
       ]
     ],
     "signals": [
-      "Conoce la facturación, pero no el margen por actividad o canal.",
+      "Conozca la facturación, pero no el margen por actividad o canal.",
       "El reporting exige muchas tareas manuales y llega después de decidir.",
       "Se registran desviaciones presupuestarias sin explicación ni responsable identificado."
     ],
@@ -796,7 +796,7 @@
         "Definir decisiones, dimensiones de análisis e indicadores realmente necesarios."
       ],
       [
-        "Fiabilizar el reporting",
+        "Hacer fiable el reporting",
         "Conciliar fuentes, explicar las reglas de cálculo y documentar los ajustes."
       ],
       [

@@ -19,7 +19,7 @@
     "es": {
       "role": "{{role:guillaume-rostand}}",
       "metaRole": "{{role:guillaume-rostand}}",
-      "bio": "Guillaume Rostand creó Iter Advisors con Benjamin Ziza y Sébastien Doat. Emprendedor francés instalado en Barcelona desde 2011, aporta al despacho su experiencia en marketing digital, desarrollo comercial y acompañamiento de fundadores.",
+      "bio": "Guillaume Rostand creó Iter Advisors con Benjamin Ziza y Sébastien Doat. Emprendedor francés instalado en Barcelona desde 2011, aporta a la firma su experiencia en marketing digital, desarrollo comercial y asesoramiento de fundadores.",
       "bioExtended": "También cofundador y CEO de AI Summit Barcelona, dedica hoy una parte importante de su actividad a las aplicaciones de la inteligencia artificial y a los encuentros entre empresas, investigadores, inversores y comunidades tecnológicas.",
       "metaTitle": "guillaume-rostand, {{role:guillaume-rostand}} | Iter Advisors",
       "metaDescription": "Guillaume Rostand, cofundador de Iter Advisors: marketing, desarrollo comercial e inversión en 25 startups. Trayectoria, proyectos y contacto."
@@ -45,8 +45,8 @@
     "es": {
       "role": "{{role:benjamin-ziza}}",
       "metaRole": "{{role:benjamin-ziza}}",
-      "bio": "Benjamin Ziza es {{role:benjamin-ziza}} de Iter Advisors, firma que creó en {{foundingYear}} con Sébastien Doat y Guillaume Rostand. Basado en Barcelona, supervisa una cartera de mandatos de CFO externo y codirige, junto con Sébastien Doat, el área de Transaction Services del despacho.",
-      "bioExtended": "Se formó en contabilidad en ENOES, donde cursó el DCG y después el DSCG, y siguió el itinerario del diploma de expertise comptable a través del Ordre des Experts-Comptables francés. Comenzó como auditor financiero en Mazars, en París. Durante más de tres años realizó misiones de auditoría legal y contabilidad, principalmente en seguros y en el sector asociativo. Para un líder mundial del seguro, integró el equipo creado tras una migración a SAP: depuración de 11 millones de asientos contables, base de KPIs para los comités de seguimiento semanales y formación de grupos de 20 a 150 empleados.",
+      "bio": "Benjamin Ziza es {{role:benjamin-ziza}} de Iter Advisors, firma que creó en {{foundingYear}} con Sébastien Doat y Guillaume Rostand. Basado en Barcelona, supervisa una cartera de mandatos de CFO externo y codirige, junto con Sébastien Doat, el área de Transaction Services de la firma.",
+      "bioExtended": "Se formó en contabilidad en ENOES, donde cursó el DCG y después el DSCG, y siguió el itinerario del diploma de expertise comptable a través del Ordre des Experts-Comptables francés. Comenzó como auditor financiero en Mazars, en París. Durante más de tres años realizó trabajos de auditoría legal y contabilidad, principalmente en seguros y en el sector asociativo. Para un líder mundial del seguro, integró el equipo creado tras una migración a SAP: depuración de 11 millones de asientos contables, base de KPIs para los comités de seguimiento semanales y formación de grupos de 20 a 150 empleados.",
       "metaTitle": "Benjamin Ziza, {{role:benjamin-ziza}} | Iter Advisors",
       "metaDescription": "Benjamin Ziza, cofundador de Iter Advisors: ex-Mazars, CFO de Billy Mobile, finanzas internacionales en IWG y Amaris. Transaction Services, adtech, Barcelona."
     }
@@ -71,8 +71,8 @@
     "es": {
       "role": "{{role:sebastien-doat}}",
       "metaRole": "{{role:sebastien-doat}}",
-      "bio": "Sébastien Doat es {{role:sebastien-doat}} de Iter Advisors, firma que creó en {{foundingYear}} con Benjamin Ziza y Guillaume Rostand. Dirige un equipo de {{financeTeamSize}} profesionales de las finanzas y lidera, junto con Benjamin Ziza, el área de M&A y Transaction Services del despacho.",
-      "bioExtended": "Comenzó su carrera en Transaction Services en ACA Nexia, en París. Realizó due diligences financieras de compra y de venta, principalmente sobre empresas tecnológicas y de telecomunicaciones, y acompañó procesos de adquisición y venta: revisiones analíticas de la cuenta de resultados y del balance, análisis de presupuestos y planes de negocio, y revisión de flujos de caja. Supervisó equipos de dos a cuatro auditores, en paralelo a misiones de auditoría financiera.",
+      "bio": "Sébastien Doat es {{role:sebastien-doat}} de Iter Advisors, firma que creó en {{foundingYear}} con Benjamin Ziza y Guillaume Rostand. Dirige un equipo de {{financeTeamSize}} profesionales de las finanzas y lidera, junto con Benjamin Ziza, el área de M&A y Transaction Services de la firma.",
+      "bioExtended": "Comenzó su carrera en Transaction Services en ACA Nexia, en París. Realizó due diligences financieras de compra y de venta, principalmente sobre empresas tecnológicas y de telecomunicaciones, y asesoró procesos de adquisición y venta: revisiones analíticas de la cuenta de resultados y del balance, análisis de presupuestos y planes de negocio, y revisión de flujos de caja. Supervisó equipos de dos a cuatro auditores, en paralelo a trabajos de auditoría financiera.",
       "metaTitle": "Sébastien Doat, {{role:sebastien-doat}} | Iter Advisors",
       "metaDescription": "Sébastien Doat, cofundador de Iter Advisors: Transaction Services en ACA Nexia, CFO de scale-ups tech y más de 65 M€ en inversión y financiación."
     }
@@ -97,7 +97,7 @@
     "es": {
       "role": "{{role:florent-greth}}",
       "metaRole": "{{role:florent-greth}}",
-      "bio": "Florent Greth es {{role:florent-greth}} de Iter Advisors, firma de la que se convirtió en socio en febrero de 2026. Basado en Barcelona, dirige con sus equipos el área de dirección financiera externa del despacho y trabaja tanto en el mercado hispanohablante como en el francófono.",
+      "bio": "Florent Greth es {{role:florent-greth}} de Iter Advisors, firma de la que se convirtió en socio en febrero de 2026. Basado en Barcelona, dirige con sus equipos el área de dirección financiera externa de la firma y trabaja tanto en el mercado hispanohablante como en el francófono.",
       "bioExtended": "Comenzó como auditor financiero en KPMG, en Mulhouse. Cubrió todos los ciclos contables: ventas y cuentas a cobrar, compras y proveedores, tesorería, inmovilizado, valoración de existencias y cumplimiento fiscal.",
       "metaTitle": "Florent Greth, {{role:florent-greth}} | Iter Advisors",
       "metaDescription": "Florent Greth, socio y CFO de Iter Advisors: ex-KPMG, Abertis, VIIA y PACCOR. Dirige el área de dirección financiera externa en España y Francia."

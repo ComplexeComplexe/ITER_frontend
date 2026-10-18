@@ -311,7 +311,7 @@ export const homeContent = {
     financeServices: [
       { title: "Fractional CFO", href: "/en/fractional-cfo", desc: "A dedicated part-time CFO to structure and manage your finance function." },
       { title: "Management control", href: serviceHref("controle-de-gestion-externalise", "en"), desc: "Dashboards, reporting and performance analysis for informed decisions." },
-      { title: "Cash management", href: serviceHref("previsionnel-tresorerie", "en"), desc: "Cash flow forecasting, working capital optimization and liquidity management." },
+      { title: "Cash management", href: serviceHref("previsionnel-tresorerie", "en"), desc: "Cash flow forecasting, working capital optimisation and liquidity management." },
       { title: "Fundraising", href: serviceHref("accompagnement-levee-de-fond", "en"), desc: "Strategic support to secure your financing and convince investors." },
       { title: "M&A & Due Diligence", href: "/en/services/ma-due-diligence", desc: "M&A advisory and financial audits to secure your operations." },
     ],
@@ -389,7 +389,7 @@ export const homeContent = {
     },
     hero: {
       h1: { before: "La mejor versión de su ", highlight: "dirección financiera", highlightAlt: "dirección de recursos humanos", after: "" },
-      h2: "Consultoría en finanzas corporativas, CFO externo y dirección de RRHH externalizada. Estructuramos, dirigimos y optimizamos sus funciones de soporte para que crezca de forma sana y sostenible.",
+      h2: "Consultoría en finanzas corporativas, CFO externo y dirección de RR. HH. externalizada. Estructuramos, dirigimos y optimizamos sus funciones de soporte para que crezca de forma sana y sostenible.",
       cta: "Describir mi necesidad",
     },
     about: {
@@ -431,7 +431,7 @@ export const homeContent = {
     stats: [
       { value: `${CLIENTS_ACCOMPAGNES}`, bold: "Empresas asesoradas", rest: " por Iter Advisors" },
       { value: "+100\u00A0M", bold: "Fondos captados por", rest: " nuestros clientes desde 2021" },
-      { value: String(FINANCE_TEAM_SIZE), bold: "Profesionales de las finanzas", rest: " y una dirección de RRHH al servicio de nuestros clientes" },
+      { value: String(FINANCE_TEAM_SIZE), bold: "Profesionales de las finanzas", rest: " y una dirección de RR. HH. al servicio de nuestros clientes" },
       { value: "30", bold: "Socios tecnológicos", rest: " al servicio del rendimiento financiero" },
     ],
     whyChoose: {
@@ -499,7 +499,7 @@ export const homeContent = {
       { title: "M&A & Due Diligence", href: "/es/services/ma-due-diligence", desc: "Asesoramiento en fusiones y adquisiciones y revisiones financieras para asegurar sus operaciones." },
     ],
     hrServices: [
-      { title: "Director de RRHH externo", desc: "Un director de recursos humanos a tiempo parcial, dedicado a su empresa, para estructurar y dirigir su función de RRHH." },
+      { title: "Director de RR. HH. externo", desc: "Un director de recursos humanos a tiempo parcial, dedicado a su empresa, para estructurar y dirigir su función de RR. HH." },
       { title: "Selección e incorporación", desc: "Búsqueda, selección e incorporación de talento para construir equipos de alto rendimiento." },
       { title: "Gestión de nóminas", desc: "Externalización completa de la nómina, cumplimiento ante la Seguridad Social y optimización de los costes laborales." },
       { title: "Formación y desarrollo", desc: "Planes de formación, desarrollo de competencias y gestión de carreras para retener a su talento." },
@@ -538,12 +538,12 @@ export const homeContent = {
       { q: "¿Cuál es la diferencia entre un CFO externo y un contable?", a: "Un contable lleva la contabilidad y las obligaciones declarativas. Un CFO externo va mucho más allá: estrategia financiera, seguimiento del rendimiento, captación de fondos, relación con los inversores, optimización de costes y estructuración del crecimiento." },
       { q: "¿Cuánto cuesta un CFO externo?", a: getDafOfferFacts("es").price },
       { q: "¿Qué herramientas utilizan en el día a día?", a: getFinanceStackSummary("es") },
-      { q: "¿Ofrecen también servicios de Director de RRHH externo?", a: "Sí, Iter Advisors cuenta con un área de RRHH completa: director de RRHH externo, director de RRHH a tiempo parcial, gestión de nóminas, selección de personal, cumplimiento laboral e implantación de procesos de RRHH. Nuestros expertos de RRHH intervienen con la misma flexibilidad que nuestros CFO." },
+      { q: "¿Ofrecen también servicios de Director de RR. HH. externo?", a: "Sí, Iter Advisors cuenta con un área de RR. HH. completa: director de RR. HH. externo, director de RR. HH. a tiempo parcial, gestión de nóminas, selección de personal, cumplimiento laboral e implantación de procesos de RR. HH. Nuestros expertos de RR. HH. intervienen con la misma flexibilidad que nuestros CFO." },
       { q: "¿En qué zonas geográficas operan?", a: getDafOfferFacts("es").geography },
       { q: "¿Cómo es una colaboración típica?", a: "Nuestra colaboración sigue 4 etapas: diagnóstico inicial de su situación, construcción conjunta de una hoja de ruta estratégica, implantación operativa con integración en su equipo y, después, seguimiento continuo con reporting regular y ajustes." },
       { q: "¿Pueden ayudarnos en una ronda de financiación?", a: "Por supuesto. Las rondas de financiación son una de nuestras especialidades. Preparamos su data room, construimos su business plan, estructuramos la parte financiera de su pitch deck y le apoyamos en las negociaciones con los inversores." },
     ],
-    servicesHeading: "CFO externo y RRHH externalizados: dos áreas de experiencia para pymes y startups",
+    servicesHeading: "CFO externo y RR. HH. externalizados: dos áreas de experiencia para pymes y startups",
     servicesSubtitle: "Trabajamos con las empresas en cada etapa de su desarrollo con soluciones a medida en finanzas y recursos humanos.",
     processHeading: "Una colaboración estructurada en 4 pasos",
     processSubtitle: "Desde el diagnóstico inicial hasta el seguimiento continuo, construimos con usted una trayectoria clara y medible.",
