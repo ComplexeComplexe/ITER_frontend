@@ -105,7 +105,7 @@ export default async function Page() {
         </>
       }
       heroImage={{
-        src: "https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1200&q=80",
+        src: "/images/blog/impot-revenu-espagne.webp",
         alt: "Impôt sur le revenu en Espagne (IRPF) : barème 2026",
       }}
       kpis={[
@@ -162,13 +162,13 @@ export default async function Page() {
       related={[
         {
           href: "/ressources/fiscalite/beckham-law",
-          img: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80",
+          img: "/images/blog/loi-beckham-espagne-conditions-eligibilite.webp",
           alt: "Loi Beckham en Espagne : le régime des impatriés",
           title: "Loi Beckham : conditions 2026, simulation salaire par salaire et limites du régime",
         },
         {
           href: "/ressources/blog/regimes-fiscaux-france-vs-espagne",
-          img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80",
+          img: "/images/blog/externalisation-comptable.webp",
           alt: "Comparaison des régimes fiscaux France et Espagne",
           title: "Fiscalité France vs Espagne : IS, charges sociales, TVA — le comparatif complet",
         },

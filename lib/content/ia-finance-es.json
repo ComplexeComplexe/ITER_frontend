@@ -6,7 +6,7 @@
     "description": "Automatiza el reporting de una pyme: fuentes, conciliaciones, controles, ejemplo de ROI y caso documentado. Un método dirigido por finanzas.",
     "dek": "Automatizar el reporting financiero consiste en asegurar la recogida de datos, aplicar reglas de cálculo reproducibles y preparar comentarios. El punto de partida es un informe aprobado con el que comparar el nuevo proceso, con un responsable para cada diferencia.",
     "published": "2026-09-01",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "image": "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp",
     "summary": [
       "Separa la conexión de datos, los cálculos y los comentarios asistidos por IA.",
       "Valida los totales y las excepciones antes de distribuir un cuadro de mando.",
@@ -74,7 +74,7 @@
     "description": "Tres ejercicios para finanzas: comentario de desviaciones, solicitud de documentos y preparación del consejo. Prompts, respuestas esperadas y confidencialidad.",
     "dek": "ChatGPT puede ayudar a una dirección financiera a comentar un presupuesto, preparar solicitudes de documentos y analizar archivos con herramientas de cálculo. La fiabilidad depende de los datos, las verificaciones y el contexto: una respuesta fluida no demuestra que una cifra sea correcta.",
     "published": "2026-09-01",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "image": "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp",
     "summary": [
       "Los ejemplos son didácticos y utilizan datos ficticios.",
       "Pide los pasos del cálculo y verifica los resultados en tu herramienta de referencia.",
@@ -138,7 +138,7 @@
     "description": "Elige un LLM para finanzas: pruebas, fuentes, cálculos, confidencialidad e integración. Un protocolo comparativo sin clasificación artificial.",
     "dek": "El LLM adecuado para un equipo financiero es el que supera una prueba de negocio reproducible en un entorno autorizado. Compara la calidad de las respuestas, la trazabilidad de las cifras y el tiempo de corrección con los mismos documentos y las mismas instrucciones.",
     "published": "2026-09-01",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "image": "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp",
     "summary": [
       "Evalúa por separado el modelo, la aplicación que lo aloja y sus conectores.",
       "Compara respuestas sobre un mismo expediente, con solución preparada antes de la prueba.",
@@ -205,7 +205,7 @@
     "description": "Compara reporting, conectores y asistentes IA: criterios, coste total, licencias y preguntas antes de comprar. Documentación de los proveedores.",
     "dek": "Elegir una herramienta financiera empieza por los datos que se utilizarán y los controles esperados. Evalúa por separado software contable, conexión de datos, reporting y asistente IA: comprar una licencia no conecta automáticamente estas cuatro capas.",
     "published": "2026-09-01",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "image": "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp",
     "summary": [
       "Una API disponible no es un conector listo para usar.",
       "Incluye lectores de informes, mantenimiento y tiempo interno en el presupuesto.",
@@ -269,7 +269,7 @@
     "description": "Plan de despliegue IA y reporting para pymes: responsables, entregables, criterios de paso, medición de beneficios y vuelta al proceso manual si hace falta.",
     "dek": "En 90 días, el objetivo es probar un proceso financiero con un alcance controlado y decidir si merece ampliarse. El calendario depende de accesos, cierres y calidad de los datos. No garantiza productividad ni cierre en cinco días.",
     "published": "2026-09-01",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "image": "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp",
     "summary": [
       "Un proceso prioritario, un responsable de negocio y una referencia antes/después.",
       "El avance depende de criterios de calidad, no solo de fechas.",
@@ -338,7 +338,7 @@
     "description": "U.S. Venture, Armanino y Hebbia: tres casos de IA documentados y su alcance para pymes. Opti Digital, encargo financiero de Iter, se presenta aparte.",
     "dek": "Tres casos públicos muestran usos concretos de IA en finanzas: conciliaciones, solicitudes de documentos y análisis documental. Indicamos quién publica el resultado, qué se mide y qué puede probar una pyme. No se presentan como clientes de Iter Advisors.",
     "published": "2026-09-05",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "image": "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp",
     "summary": [
       "Los resultados de casos de proveedores no son auditorías independientes ni promesas de beneficio.",
       "Las aplicaciones propuestas para pymes son nuestra interpretación y deben probarse localmente.",
