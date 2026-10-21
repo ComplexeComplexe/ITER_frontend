@@ -43,7 +43,6 @@ const TEAM_FROM_PAGE: { firstName: string; lastName: string; roleFr: string; rol
   { firstName: "Benjamin", lastName: "Ziza", roleFr: "Co-fondateur et CFO", roleEn: "Co-founder & CFO", roleEs: "Cofundador y CFO", linkedIn: "https://www.linkedin.com/in/benjaminziza/" },
   { firstName: "Guillaume", lastName: "Rostand", roleFr: "Associé fondateur et CMO", roleEn: "Founding Partner & CMO", roleEs: "Socio fundador y CMO", linkedIn: "https://www.linkedin.com/in/guillaumerostand/" },
   { firstName: "Quico", lastName: "Montuenga Rios", roleFr: "Fractional CFO", roleEn: "Fractional CFO", roleEs: "CFO fraccional", linkedIn: "https://www.linkedin.com/in/quico-montuenga-rios/" },
-  { firstName: "Deisy", lastName: "Arias Ramirez", roleFr: "Fractional CFO", roleEn: "Fractional CFO", roleEs: "CFO fraccional", linkedIn: "https://www.linkedin.com/in/deisy-arias-ramirez/" },
   { firstName: "Florent", lastName: "Greth", roleFr: "Fractional CFO", roleEn: "Fractional CFO", roleEs: "CFO fraccional", linkedIn: "https://www.linkedin.com/in/florent-greth/" },
   { firstName: "Ornella", lastName: "Salgado", roleFr: "Analyste financière", roleEn: "Finance Analyst", roleEs: "Analista financiera", linkedIn: "https://www.linkedin.com/in/ornella-salgado/" },
   { firstName: "Tom", lastName: "Jaufre", roleFr: "Finance CFO", roleEn: "Finance CFO", roleEs: "CFO finanzas", linkedIn: "https://www.linkedin.com/in/tom-jaufre/" },
