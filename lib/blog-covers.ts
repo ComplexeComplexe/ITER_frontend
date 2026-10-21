@@ -1,3 +1,4 @@
+import { REMUNERATION_SLUGS, REMUNERATION_IMAGE, REMUNERATION_ALTS } from "./content/director-remuneration-guide";
 /**
  * Maps each blog article slug to its cover image and the alt text
  * consumed by <Image alt={…}>.
@@ -18,6 +19,9 @@ export interface BlogCover {
 }
 
 export const BLOG_COVERS: Record<string, BlogCover> = {
+  [REMUNERATION_SLUGS.fr]: { cover: REMUNERATION_IMAGE, alt: REMUNERATION_ALTS.fr },
+  [REMUNERATION_SLUGS.en]: { cover: REMUNERATION_IMAGE, alt: REMUNERATION_ALTS.en },
+  [REMUNERATION_SLUGS.es]: { cover: REMUNERATION_IMAGE, alt: REMUNERATION_ALTS.es },
   // ── Articles avec photo (WebP 1200×630 sous /images/blog, maintenus à la main) ──
   "flux-de-tresorerie": { cover: "/images/blog/flux-de-tresorerie-photo.webp", alt: "Flux de trésorerie : définition, calcul et pilotage pour PME" },
   "externalisation-comptable": { cover: "/images/blog/externalisation-comptable.webp", alt: "Externalisation comptable : le guide pratique pour PME et startups" },

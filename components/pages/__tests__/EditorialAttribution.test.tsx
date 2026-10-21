@@ -1,12 +1,26 @@
 import { describe, expect, it, vi } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import BlogPostPage from '../BlogPostPage';
+import BlogPostPageRefonte from '../BlogPostPageRefonte';
 import PageByline from '../../PageByline';
 import { ITER_AUTHOR, FINANCE_AUTHOR } from '@/lib/schemas/editorial';
 import { getTeamMembers, getTeamMemberBySlug } from '@/lib/content/team';
 vi.mock('next/navigation', () => ({ usePathname: () => '/ressources/outils/malibou', useRouter: () => ({ push: vi.fn() }), useSearchParams: () => new URLSearchParams() }));
 
 describe('editorial attribution consistency', () => {
+  it.each(['fr', 'en', 'es'] as const)('keeps a linked cabinet byline an Organization in %s', locale => {
+    const url = { fr: '/a-propos', en: '/en/about', es: '/es/quienes-somos' }[locale];
+    const doc = new DOMParser().parseFromString(renderToStaticMarkup(
+      <BlogPostPageRefonte locale={locale} title="Example" dek="Example" category="Finance"
+        author={{ name: 'Iter Advisors', url }} slug="example" readingTime={1}
+        dateModified="2026-10-21" toc={[]} breadcrumbs={{ resourcesLabel: 'Resources', resourcesHref: '/ressources', blogLabel: 'Blog', blogHref: '/ressources/blog' }}>
+        <p>Example</p>
+      </BlogPostPageRefonte>
+    ), 'text/html');
+    const article = [...doc.querySelectorAll('script[type="application/ld+json"]')].map(s => JSON.parse(s.textContent!)).find(s => s['@type'] === 'BlogPosting');
+    expect(article.author).toEqual({ '@id': 'https://www.iteradvisors.com/#organization' });
+    expect(doc.querySelector(`a[rel="author"][href="${url}"]`)?.textContent).toBe('Iter Advisors');
+  });
   it.each(['en', 'es'] as const)('localizes author roles even when %s receives French team records', locale => {
     const teamMembers = getTeamMembers('fr');
     for (const member of teamMembers) {

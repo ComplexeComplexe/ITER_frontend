@@ -1,3 +1,4 @@
+import { REMUNERATION_SLUGS, REMUNERATION_IMAGE, REMUNERATION_ALTS } from "./content/director-remuneration-guide";
 /**
  * Slug → body illustration map. Each entry points to a 1200×630 WebP
  * (q=82) under `public/images/blog/illustrations/` (named after the
@@ -21,6 +22,9 @@ export interface BlogIllustration {
 }
 
 export const BLOG_ILLUSTRATIONS: Record<string, BlogIllustration> = {
+  [REMUNERATION_SLUGS.fr]: { src: REMUNERATION_IMAGE, alt: REMUNERATION_ALTS.fr },
+  [REMUNERATION_SLUGS.en]: { src: REMUNERATION_IMAGE, alt: REMUNERATION_ALTS.en },
+  [REMUNERATION_SLUGS.es]: { src: REMUNERATION_IMAGE, alt: REMUNERATION_ALTS.es },
   "impot-revenu-espagne": {
     src: "/images/blog/illustrations/impot-revenu-espagne.webp",
     alt: "Illustration éditoriale : Impôt sur le revenu en Espagne (IRPF) — guide pour entrepreneurs et expatriés",

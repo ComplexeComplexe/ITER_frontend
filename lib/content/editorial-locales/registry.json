@@ -1774,5 +1774,17 @@
     "noindex": false,
     "source": "/services/recrutement-talent-acquisition",
     "sharedEditorial": false
+  },
+  "/ressources/blog/remuneration-dirigeant-tresorerie-pme": {
+    "paths": {
+      "fr": "/ressources/blog/remuneration-dirigeant-tresorerie-pme",
+      "en": "/en/ressources/blog/director-remuneration-sme-cash-flow",
+      "es": "/es/recursos/blog/remuneracion-directivo-tesoreria-pyme"
+    },
+    "title": "Rémunération du dirigeant et trésorerie | Iter Advisors",
+    "description": "Construisez un budget de rémunération compatible avec la trésorerie de votre PME : coût complet, calendrier, scénarios et validations nécessaires.",
+    "noindex": false,
+    "source": "/ressources/blog/remuneration-dirigeant-tresorerie-pme",
+    "sharedEditorial": false
   }
 }

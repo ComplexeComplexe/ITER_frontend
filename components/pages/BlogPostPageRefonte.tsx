@@ -94,7 +94,7 @@ export default function BlogPostPageRefonte({
     datePublished: datePublished ?? dateModified,
     dateModified: modified,
     authorName: author.name,
-    authorUrl,
+    authorUrl: author.name === "Iter Advisors" ? undefined : authorUrl,
     imageSrc: bodyImage?.src ?? heroImage,
   });
 
