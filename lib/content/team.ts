@@ -135,28 +135,6 @@ const fallbackData: FallbackMemberData[] = [
 
   // === Finance - CFO ===
   {
-    id: 6,
-    documentId: "deisy-arias-ramirez",
-    firstName: "Deisy",
-    lastName: "Arias Ramirez",
-    roles: { fr: "CFO", en: "CFO", es: "CFO" },
-    slug: "deisy-arias-ramirez",
-    photo: { url: "/images/team/deisy-arias-ramirez.webp" },
-    linkedIn: "https://www.linkedin.com/in/deisyarias/",
-    order: 6,
-    showInHero: false,
-    bio: {
-      fr: "Deisy est CFO chez Iter Advisors. Elle accompagne des startups et PME sur le pilotage financier, la gestion de trésorerie et la préparation aux levées de fonds.",
-      en: "Deisy is a CFO at Iter Advisors, supporting startups and SMEs on financial management, cash flow and fundraising preparation.",
-      es: "Deisy es CFO en Iter Advisors y asesora a startups y pymes en control financiero, gestión de tesorería y preparación para rondas de inversión.",
-    },
-    bioExtended: {
-      fr: "Chez Iter Advisors, Deisy intervient auprès de startups et PME en croissance pour structurer leur pilotage financier et les préparer aux étapes clés de leur développement. Ses missions couvrent la mise en place de tableaux de bord financiers, la construction de prévisionnels de trésorerie, l'analyse des marges et la préparation des dossiers d'investissement. Elle est spécialisée dans les secteurs SaaS et tech, où elle accompagne les fondateurs sur les métriques financières propres à ces modèles (ARR, CAC, LTV, unit economics). Deisy intervient également sur la structuration comptable et l'optimisation des process financiers, en s'appuyant sur les meilleurs outils du marché. Son approche pragmatique et orientée résultats lui permet d'être rapidement opérationnelle et d'apporter de la valeur dès les premières semaines de mission. Elle parle couramment français, espagnol et anglais.",
-      en: "At Iter Advisors, Deisy works with growth-stage startups and SMEs to structure their financial management and prepare them for key milestones. Her engagements cover financial dashboard setup, cash flow forecasting, margin analysis and investor file preparation. She specialises in SaaS and tech sectors, guiding founders on financial metrics specific to these models (ARR, CAC, LTV, unit economics). Deisy also works on accounting structuring and financial process optimisation, leveraging best-in-class tools. Her pragmatic, results-oriented approach allows her to become operational quickly and deliver value from the first weeks of an engagement. She speaks fluent French, Spanish and English.",
-      es: "En Iter Advisors, Deisy trabaja con startups y pymes en crecimiento para estructurar su control financiero y prepararlas para hitos clave. Sus proyectos incluyen implementación de cuadros de mando financieros, previsiones de tesorería, análisis de márgenes y preparación de documentación para inversores. Está especializada en los sectores SaaS y tech, donde guía a los fundadores en las métricas financieras propias de estos modelos (ARR, CAC, LTV, unit economics). Habla con fluidez francés, español e inglés.",
-    },
-  },
-  {
     id: 7,
     documentId: "sebastien-preel",
     firstName: "Sébastien",
@@ -165,7 +143,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "sebastien-preel",
     photo: { url: "/images/team/sebastien-preel.webp" },
     linkedIn: "https://www.linkedin.com/in/spreel/",
-    order: 7,
+    order: 12,
     showInHero: false,
     bio: {
       fr: "Sébastien est CFO chez Iter Advisors. Il accompagne PME et ETI sur la structuration financière, le contrôle de gestion et les opérations de M&A.",
@@ -293,7 +271,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "ornella-salgado",
     photo: { url: "/images/team/ornella-salgado.webp" },
     linkedIn: "https://www.linkedin.com/in/ornellaslgd/",
-    order: 12,
+    order: 13,
     showInHero: false,
   },
   {
@@ -309,7 +287,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "pauline-mathieu",
     photo: { url: "/images/team/pauline-mathieu.webp" },
     linkedIn: "https://www.linkedin.com/in/pauline-mathieu-082488160/",
-    order: 13,
+    order: 14,
     showInHero: false,
   },
   {
@@ -325,7 +303,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "alice-fumeron",
     photo: { url: "/images/team/alice-fumeron.webp" },
     linkedIn: "https://www.linkedin.com/in/alicefumeron/",
-    order: 14,
+    order: 15,
     showInHero: false,
   },
   {
@@ -341,7 +319,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "carole-casse",
     photo: { url: "/images/team/carole-casse.webp" },
     linkedIn: "https://www.linkedin.com/in/carole-casse/",
-    order: 15,
+    order: 16,
     showInHero: false,
   },
   {
@@ -357,7 +335,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "andress-ayme",
     photo: { url: "/images/team/andress-ayme.webp" },
     linkedIn: "https://www.linkedin.com/in/andress-ayme-089904276/",
-    order: 16,
+    order: 17,
     showInHero: false,
   },
   // Membership and CFO roles confirmed by the site owner on 2026-10-03.
@@ -372,7 +350,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "hugo-lepresle",
     photo: { url: "/images/team/hugo-lepresle.webp" },
     linkedIn: "https://www.linkedin.com/in/hugo-lepresle-84ab7a90/",
-    order: 17,
+    order: 6,
     showInHero: false,
     bio: {
       fr: "Hugo Lepresle est CFO chez Iter Advisors. Son parcours comprend la direction financière de Pepette et le contrôle de gestion chez Michel et Augustin.",
@@ -390,7 +368,7 @@ const fallbackData: FallbackMemberData[] = [
     slug: "gonzalo-serratosa-de-caralt",
     photo: { url: "/images/team/gonzalo-serratosa-de-caralt.webp" },
     linkedIn: "https://www.linkedin.com/in/gonzalo-serratosa-de-caralt-585178157/",
-    order: 18,
+    order: 7,
     showInHero: false,
     bio: {
       fr: "Gonzalo Serratosa de Caralt est CFO chez Iter Advisors. Il a travaillé en audit chez EY puis comme consultant financier auprès de startups.",
@@ -401,7 +379,7 @@ const fallbackData: FallbackMemberData[] = [
 ];
 
 export function getTeamMembers(locale: Locale): StrapiTeamMember[] {
-  return fallbackData.map((member) => ({
+  return [...fallbackData].sort((a, b) => a.order - b.order).map((member) => ({
     ...member,
     title: `${member.firstName} ${member.lastName}`,
     linkedIn: getApprovedPerson(member.slug)?.linkedin ?? member.linkedIn,

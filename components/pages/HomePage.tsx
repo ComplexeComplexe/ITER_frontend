@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "@/components/PublishedLocaleLink";
 import PageLayout from "@/components/PageLayout";
 import TeamMemberCard from "@/components/TeamMemberCard";
+import TeamPortrait from "@/components/TeamPortrait";
 import ClientLogoMarquee from "@/components/Home/ClientLogoMarquee";
 import HeroSection from "@/components/Home/HeroSection";
 import HomeDecisionResources from "@/components/HomeDecisionResources";
@@ -22,7 +23,6 @@ import { getFallbackTeamMembers } from "@/lib/content/team";
 import { parityHref } from "@/lib/locale-route-map";
 import { quoteMarks } from "@/lib/quote-marks";
 import { faqPageSchema } from "@/lib/schemas";
-import { strapiMediaUrl } from "@/lib/static-content";
 import type { Locale } from "@/lib/i18n";
 import type { StrapiTeamMember, CmsNavItem } from "@/lib/static-content";
 
@@ -252,13 +252,7 @@ export default function HomePage({
               {leads.map((member) => (
                 <figure key={member.slug}>
                   <Link locale={locale} href={href(`/a-propos/${member.slug}`)}>
-                    <Image
-                      src={strapiMediaUrl(member.photo)}
-                      alt={`${member.firstName} ${member.lastName}`}
-                      width={280}
-                      height={320}
-                      sizes="(max-width: 600px) 45vw, 24vw"
-                    />
+                    <TeamPortrait member={member} variant="lead" />
                     <figcaption>
                       <strong>
                         {member.firstName} {member.lastName}

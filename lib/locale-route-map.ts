@@ -651,11 +651,6 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
     "en": "/en/about/borith-biv",
     "es": "/es/quienes-somos/borith-biv"
   },
-  "/a-propos/deisy-arias-ramirez": {
-    "fr": "/a-propos/deisy-arias-ramirez",
-    "en": "/en/about/deisy-arias-ramirez",
-    "es": "/es/quienes-somos/deisy-arias-ramirez"
-  },
   "/a-propos/sebastien-preel": {
     "fr": "/a-propos/sebastien-preel",
     "en": "/en/about/sebastien-preel",

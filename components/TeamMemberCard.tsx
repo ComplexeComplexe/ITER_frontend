@@ -1,14 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
+import TeamPortrait from "@/components/TeamPortrait";
 import type { StrapiTeamMember } from "@/lib/static-content";
-import { strapiMediaUrl } from "@/lib/static-content";
 import { getAuthorSlugs } from "@/lib/content/team";
 import { aboutHref } from "@/lib/path-localization";
 import type { Locale } from "@/lib/i18n";
-
-function getInitials(firstName: string, lastName: string): string {
-  return `${firstName?.[0] ?? ""}${lastName?.[0] ?? ""}`.toUpperCase();
-}
 
 const PROFILS_PUBLIES = new Set(getAuthorSlugs());
 
@@ -40,31 +35,12 @@ export default function TeamMemberCard({
   locale?: Locale;
 }) {
   const name = `${member.firstName} ${member.lastName}`.trim();
-  const photoUrl = strapiMediaUrl(member.photo);
   const linkedin = member.linkedIn || "#";
-  const initials = getInitials(member.firstName, member.lastName);
   const profil = PROFILS_PUBLIES.has(member.slug) ? aboutHref(locale, member.slug) : null;
 
   const visuel = (
     <>
-      <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-3 rounded-2xl bg-iter-violet overflow-hidden group-hover:shadow-lg group-hover:shadow-iter-violet/20 transition-all duration-300">
-        {photoUrl ? (
-          <Image
-            src={photoUrl}
-            alt={name}
-            width={96}
-            height={96}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            sizes="96px"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <span className="text-white font-bold text-lg md:text-xl">
-              {initials}
-            </span>
-          </div>
-        )}
-      </div>
+      <TeamPortrait member={member} />
       <h3 className="font-semibold text-sm group-hover:text-iter-violet transition-colors">
         {name}
       </h3>

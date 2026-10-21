@@ -598,14 +598,6 @@
   color: var(--site-ink);
   text-decoration: none;
 }
-.leads img {
-  width: 100%;
-  height: 290px;
-  object-fit: cover;
-  object-position: 50% 20%;
-  border-radius: var(--site-radius);
-  background: var(--site-paper);
-}
 .leads figcaption {
   display: flex;
   flex-direction: column;
