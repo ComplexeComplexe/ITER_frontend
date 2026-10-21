@@ -36,7 +36,7 @@ export default function DirectorRemunerationGuidePage({ locale }: { locale: Loca
       category={post.category!}
       title={post.h1}
       dek={post.meta.description}
-      author={{ name: "Iter Advisors" }}
+      author={{ name: "Iter Advisors", url: { fr: "/a-propos", en: "/en/about", es: "/es/quienes-somos" }[locale] }}
       readingTime={estimateReadMinutes(html)}
       datePublished={post.publishedDate!}
       dateModified={post.updatedDate!}

@@ -411,6 +411,10 @@ for (const abs of urls) {
   ) {
     let auteurPerson = false;
     let auteurCabinetService = false;
+    let auteurCabinetArticle = false;
+    const cabinetByline = [...html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)].some(([, attrs, label]) =>
+      /rel="author"/.test(attrs) && /href="(?:https:\/\/www\.iteradvisors\.com)?\/(?:a-propos|en\/about|es\/quienes-somos)"/.test(attrs) && strip(label).trim() === "Iter Advisors"
+    );
     let auteurOrganisationNomme = null;
     let dateModifiee = false;
     for (const bloc of blocsJsonLd) {
@@ -422,6 +426,10 @@ for (const abs of urls) {
           if (n.dateModified) dateModifiee = true;
           for (const a of [].concat(n.author ?? [])) {
             if (a["@type"] === "Person" || /^https:\/\/www\.iteradvisors\.com\/a-propos\/[^/#]+#person$/.test(a["@id"] ?? "")) auteurPerson = true;
+            // https://developers.google.com/search/docs/appearance/structured-data/article
+            // An actual organization byline is valid for an Article. Keep the
+            // entity reference and visible cabinet link aligned; never label a person Organization.
+            if (/^(Article|BlogPosting)$/.test(t) && a["@id"] === "https://www.iteradvisors.com/#organization" && cabinetByline) auteurCabinetArticle = true;
             // Cabinet commercial copy can have an Organization author without
             // assigning personal writing or review to the service contact.
             if (/^\/(?:(?:en|es)\/)?services\/[a-z]/.test(path) &&
@@ -442,8 +450,8 @@ for (const abs of urls) {
     }
     if (auteurOrganisationNomme) {
       fail("eeat/auteur", `${path} — « ${auteurOrganisationNomme} » balisé en Organization, pas en Person`);
-    } else if (!auteurPerson && !auteurCabinetService) {
-      fail("eeat/auteur", `${path} — aucun author Person dans l'Article`);
+    } else if (!auteurPerson && !auteurCabinetService && !auteurCabinetArticle) {
+      fail("eeat/auteur", `${path} — auteur absent ou incohérent avec la signature visible`);
     }
     if (!dateModifiee) fail("eeat/date", `${path} — pas de dateModified`);
     if (!/rel="author"/.test(html)) fail("eeat/byline", `${path} — pas de lien visible rel="author"`);

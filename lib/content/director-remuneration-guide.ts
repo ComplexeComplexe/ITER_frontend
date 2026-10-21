@@ -113,8 +113,8 @@ export const REMUNERATION_GUIDE: Record<Locale, BlogPostData> = {
   },
   es: {
     ...common,
-    meta: { title: 'Remuneración y tesorería de la pyme | Iter Advisors', description: 'Prepara un presupuesto de remuneración compatible con la tesorería de tu pyme: coste total, calendario de pagos, escenarios y comprobaciones necesarias.' },
-    h1: 'Remuneración del directivo: ¿cuánto puede pagar tu pyme sin comprometer su tesorería?',
+    meta: { title: 'Remuneración y tesorería de la pyme | Iter Advisors', description: 'Prepare un presupuesto de remuneración compatible con la tesorería de su pyme: coste total, calendario de pagos, escenarios y comprobaciones necesarias.' },
+    h1: 'Remuneración del directivo: ¿cuánto puede pagar su pyme sin comprometer su tesorería?',
     category: 'Gestión financiera',
     breadcrumbs: { resourcesLabel: 'Recursos', resourcesHref: '/es/recursos', blogLabel: 'Blog', blogHref: '/es/recursos/blog' },
     htmlContent: `
@@ -127,7 +127,7 @@ export const REMUNERATION_GUIDE: Record<Locale, BlogPostData> = {
 <p>Esta distinción permite construir escenarios comparables. Evita tratar un salario neto mensual, un dividendo bruto anual y un ahorro fiscal estimado como si fueran importes equivalentes.</p>
 <h2 id="cout-complet">¿Cómo calcular el coste total para la empresa?</h2>
 <p>El presupuesto debe recoger todos los flujos asociados a la opción estudiada y sus vencimientos. El importe que llega a la cuenta personal del directivo no representa necesariamente la totalidad de las salidas de caja de la sociedad.</p>
-<p>Para cada escenario, prepara una ficha sencilla:</p>
+<p>Para cada escenario, prepare una ficha sencilla:</p>
 <table><thead><tr><th scope="col">Elemento que debe concretarse</th><th scope="col">Pregunta que debe resolverse</th></tr></thead><tbody>
 <tr><th scope="row">Ingresos del directivo</th><td>¿Qué importe queda disponible antes y después de los impuestos personales?</td></tr>
 <tr><th scope="row">Coste para la sociedad</th><td>¿Qué pagos, cotizaciones, honorarios y otros costes hay que financiar?</td></tr>
