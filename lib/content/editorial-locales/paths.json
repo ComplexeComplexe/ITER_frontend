@@ -738,5 +738,10 @@
     "fr": "/services/recrutement-talent-acquisition",
     "en": "/en/services/recruitment-talent-acquisition",
     "es": "/es/servicios/seleccion-talento"
+  },
+  "/ressources/blog/remuneration-dirigeant-tresorerie-pme": {
+    "fr": "/ressources/blog/remuneration-dirigeant-tresorerie-pme",
+    "en": "/en/ressources/blog/director-remuneration-sme-cash-flow",
+    "es": "/es/recursos/blog/remuneracion-directivo-tesoreria-pyme"
   }
 }

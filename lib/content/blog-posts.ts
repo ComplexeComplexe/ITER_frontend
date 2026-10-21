@@ -1,3 +1,4 @@
+import { REMUNERATION_GUIDE, REMUNERATION_SLUGS } from "./director-remuneration-guide";
 import { getFinanceStackSummary } from "./finance-stack";
 import { CFO_EXTERNE_GUIDE } from "./cfo-externe-guide";
 import { FINANCE_STACK_GUIDE, FINANCE_STACK_GUIDE_HTML } from "./finance-stack-guide";
@@ -39,6 +40,7 @@ export interface BlogPostData {
 
 export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
   fr: {
+    [REMUNERATION_SLUGS.fr]: REMUNERATION_GUIDE.fr,
     "essentiels-outils-tech-finance": {
       meta: { title: FINANCE_STACK_GUIDE.title, description: FINANCE_STACK_GUIDE.description },
       breadcrumbs: { resourcesLabel: "Ressources", resourcesHref: "/ressources", blogLabel: "Blog", blogHref: "/ressources/blog" },
@@ -1637,6 +1639,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 
   },
   en: {
+    [REMUNERATION_SLUGS.en]: REMUNERATION_GUIDE.en,
     "essentiels-outils-tech-finance": {
       meta: {
         title: "Financial Tech Tools for CFOs & SMEs | Iter Advisors",
@@ -2070,6 +2073,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
   },
   es: {
+    [REMUNERATION_SLUGS.es]: REMUNERATION_GUIDE.es,
     "essentiels-outils-tech-finance": {
       meta: {
         title: "Herramientas tech esenciales para finanzas | Iter Advisors",
