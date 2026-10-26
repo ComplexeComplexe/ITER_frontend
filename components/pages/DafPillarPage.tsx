@@ -1,3 +1,4 @@
+import { PAGE_REVISIONS, latestRevision } from "@/lib/content/page-revisions";
 import ScopeResponsibilities from "@/components/finance/ScopeResponsibilities";
 import { indicativePriceSpecification } from "@/lib/schemas/identity";
 import PublishedLocaleLink from "@/components/PublishedLocaleLink";
@@ -35,6 +36,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
   const ui = pillarInterface[locale];
   const href = (path: string) => parityHref(path, locale);
   const path = href(DAF_PILLAR_PATH);
+  const modified = locale === "fr" ? DAF_PILLAR_MODIFIED : latestRevision(PAGE_REVISIONS[path], DAF_PILLAR_MODIFIED);
   const teamSource = teamMembers?.length ? teamMembers : getFallbackTeamMembers(locale);
   const experts = t.experts.slugs.map(slug => teamSource.find(m => m.slug === slug)).filter((m): m is StrapiTeamMember => Boolean(m));
   return <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
@@ -142,7 +144,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
       </div>
       {t.experts.paragraphs.map(text => <p className={body} key={text}>{text}</p>)}
       <PublishedLocaleLink locale={locale} href={href("/ressources/ia-finance")} className={link}>{ui.ai}</PublishedLocaleLink>
-      <PageByline locale={locale} author={AUTHOR} dateModified={DAF_PILLAR_MODIFIED} dateLabel={locale === "fr" ? DAF_PILLAR_MODIFIED_LABEL : undefined} />
+      <PageByline locale={locale} author={AUTHOR} dateModified={modified} dateLabel={locale === "fr" ? DAF_PILLAR_MODIFIED_LABEL : undefined} />
     </Section>
 
     <Section id="faq" title={ui.faq}>
@@ -191,7 +193,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
               locale,
               author: AUTHOR,
               datePublished: DAF_PILLAR_PUBLISHED,
-              dateModified: DAF_PILLAR_MODIFIED,
+              dateModified: modified,
             }), mainEntity: { "@id": `${SITE}${path}#service-offer` }, contributor: { "@id": personId(PEOPLE.florent.slug) } },
           ),
         }}
