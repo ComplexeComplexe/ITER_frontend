@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "CFO externo para pymes | Iter Advisors",
-    "description": "CFO externo para pymes: funciones, apoyo a tiempo parcial y papel de la asesoría. Presupuesto orientativo según el alcance y el perfil."
+    "description": "CFO externo para pymes en España y Francia: previsión de tesorería, márgenes y financiación. Consulte casos de clientes, alcance y honorarios orientativos."
   },
   "breadcrumbLabel": "CFO externo",
   "hero": {
     "h1": "CFO externo para pymes",
-    "lead": "Un CFO externo, a menudo a tiempo parcial (fractional CFO), es un director financiero que dirige las finanzas de una pyme sin ser empleado de esa empresa.",
-    "intro": "CFO externalizado describe la misma función; fractional CFO es el término habitual en inglés para el formato a tiempo parcial. El acompañamiento puede ser recurrente o una misión temporal de transición. Con Iter, organice la tesorería, los márgenes y la financiación con un director financiero sénior dedicado.",
+    "lead": "Cuente con un CFO externo sénior para anticipar la tesorería, entender los márgenes y preparar financiación, con un alcance definido según las prioridades de su empresa.",
+    "intro": "Un CFO externo es un director financiero que trabaja junto a su equipo y su asesoría sin incorporarse a la plantilla. La dedicación a tiempo parcial permite organizar un seguimiento recurrente. Iter acompaña a pymes y startups en España y Francia; el perfil, los entregables y la disponibilidad se acuerdan antes de comenzar.",
     "landmarks": [
       {
         "label": "Presupuesto mensual orientativo",
@@ -26,7 +26,7 @@
       "{{clients}} empresas acompañadas",
       "{{geographicPresence}}"
     ],
-    "cta": "Hablar de mi necesidad"
+    "cta": "Hablar de mis prioridades financieras"
   },
   "nav": [
     {
@@ -56,7 +56,7 @@
   ],
   "needs": {
     "heading": "¿Cuándo recurrir a un CFO externo?",
-    "intro": "La necesidad aparece cuando las decisiones se vuelven más complejas que la información disponible para tomarlas. Puede tratarse de una pyme rentable, una empresa familiar o una startup: consulte nuestro servicio de [CFO externo para startups](/fractional-cfo-startups) para esas necesidades específicas. Preparar una ronda de financiación no es un requisito. Tres situaciones ayudan a identificar las prioridades.",
+    "intro": "La necesidad aparece cuando las decisiones se vuelven más complejas que la información disponible para tomarlas. Puede tratarse de una pyme rentable, una empresa familiar o una startup: consulte nuestro servicio de [CFO externo para startups](/fractional-cfo-startups) para esas necesidades específicas. Preparar una ronda de financiación no es un requisito. Estas situaciones ayudan a identificar las prioridades.",
     "items": [
       {
         "title": "Recuperar la visibilidad financiera",
@@ -130,7 +130,7 @@
   },
   "cases": {
     "heading": "Dos misiones para entender nuestra intervención",
-    "intro": "Estos ejemplos describen trabajos documentados. Ilustran dos necesidades distintas; no anticipan el calendario ni los resultados de una nueva misión.",
+    "intro": "Opti Digital ilustra el seguimiento financiero recurrente y la organización de procesos; SolarMente, la preparación financiera de una ronda y una adquisición. Cada caso explica el trabajo realizado y sus límites.",
     "items": [
       {
         "company": "Opti Digital",
@@ -178,7 +178,7 @@
     "cities": "{{geographicSummary}}"
   },
   "pricing": {
-    "heading": "¿Qué presupuesto prever y qué incluye la cuota?",
+    "heading": "Honorarios del CFO externo y alcance del servicio",
     "intro": "La horquilla orientativa de las misiones recurrentes de Iter va de 3.000 a 8.000 € sin IVA al mes. La cuota cubre un alcance de trabajo y un nivel de experiencia definidos en la propuesta. Los días indicativos de los paquetes no constituyen una bolsa de horas.",
     "paragraphs": [
       "El presupuesto depende de los entregables, el número de entidades, la calidad de los datos y la complejidad de la organización. Una empresa que ya tiene reporting necesita un trabajo distinto de otra que está reconstruyendo su función financiera. Compare conjuntamente la producción, el análisis y la supervisión al revisar propuestas.",
@@ -241,8 +241,8 @@
       "answer": "Una necesidad permanente de presencia diaria puede justificar una contratación. Para una sustitución o transformación temporal, un [CFO interino](/daf-externalise/transition) es otra opción. La [dirección financiera a tiempo parcial](/daf-externalise/temps-partage) responde a un trabajo recurrente con dedicación parcial. Elija según la carga real."
     },
     {
-      "question": "¿También trabajan con startups?",
-      "answer": "Sí. Las prioridades pueden incluir el seguimiento de tesorería, el reporting a inversores y la preparación de financiación. La dedicación depende de su organización y de los datos disponibles, no solo de la ronda. Consulte nuestra [CFO externo para startups](/fractional-cfo-startups)."
+      "question": "¿Acompañan a pymes y startups en España y Francia?",
+      "answer": "Sí. Iter Advisors tiene presencia en Barcelona, París y Toulouse. Antes de comenzar se acuerdan las entidades incluidas, el reporting necesario y la coordinación con las asesorías locales. El idioma de trabajo, español, francés o inglés, depende del CFO asignado. Consulte la [misión documentada de SolarMente](/ressources/cas-clients/solarmente-serie-b-cleantech) como ejemplo de trabajo con una cleantech española. Para las startups, el alcance puede incluir seguimiento del runway y reporting para inversores. Consulte el servicio de [CFO externo para startups](/fractional-cfo-startups)."
     }
   ],
   "contact": {

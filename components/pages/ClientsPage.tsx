@@ -12,6 +12,8 @@ import {
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import { ArrowRight } from "lucide-react";
+import { getReviewedCases } from "@/lib/content/documented-case-locales";
+import { parityHref } from "@/lib/locale-route-map";
 
 /**
  * Public clients page (GEO-5).
@@ -34,6 +36,12 @@ export default function ClientsPage({
   cmsNavigation?: CmsNavItem[];
 }) {
   const t = getClientsPageContent(locale);
+  const cases = getReviewedCases(locale);
+  const evidence = {
+    fr: { title: "Des missions documentées", intro: "Découvrez le contexte, les livrables et les résultats de trois accompagnements. Chaque cas précise le périmètre de l’intervention d’Iter.", read: "Lire le cas", offer: "Découvrir notre accompagnement de DAF externalisé" },
+    en: { title: "Documented client engagements", intro: "Explore the context, deliverables and results of three engagements. Each case explains the scope of Iter’s work.", read: "Read the case study", offer: "Explore our fractional CFO service" },
+    es: { title: "Misiones documentadas", intro: "Conozca el contexto, los entregables y los resultados de tres encargos. Cada caso precisa el alcance del trabajo de Iter.", read: "Leer el caso", offer: "Conocer nuestro servicio de CFO externo" },
+  }[locale];
 
   // Group clients by sector for the textual list (helps both humans and
   // LLMs see "X is a SaaS client of Iter Advisors").
@@ -87,6 +95,21 @@ export default function ClientsPage({
             {t.h1}
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">{t.intro}</p>
+        </div>
+      </section>
+
+      <section className="site-section bg-background pb-12" aria-labelledby="client-evidence">
+        <div className="container max-w-5xl">
+          <h2 id="client-evidence" className="text-2xl font-semibold font-heading mb-4">{evidence.title}</h2>
+          <p className="text-muted-foreground leading-relaxed mb-6">{evidence.intro}</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {cases.map(item => <article key={item.slug} className="site-card border border-border/40 rounded-2xl p-6 flex flex-col">
+              <h3 className="text-lg font-semibold">{item.company}</h3>
+              <p className="text-muted-foreground leading-relaxed mt-3 mb-4">{item.summary}</p>
+              <Link href={item.href} className="inline-flex min-h-11 items-center text-iter-violet underline underline-offset-4 mt-auto">{evidence.read} {item.company}</Link>
+            </article>)}
+          </div>
+          <Link href={parityHref("/daf-externalise", locale)} className="inline-flex min-h-11 items-center text-iter-violet underline underline-offset-4 mt-6">{evidence.offer}</Link>
         </div>
       </section>
 
