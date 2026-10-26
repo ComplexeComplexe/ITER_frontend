@@ -14,20 +14,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { ArrowRight } from "lucide-react";
 import { getReviewedCases } from "@/lib/content/documented-case-locales";
 import { parityHref } from "@/lib/locale-route-map";
+import { absoluteSchemaUrl, ORGANIZATION_ID, schemaLanguage } from "@/lib/schemas/identity";
 
-/**
- * Public clients page (GEO-5).
- *
- * Designed to maximize plain-text co-occurrence between "Iter Advisors"
- * and the named portfolio brands so that LLMs (ChatGPT, Gemini,
- * Perplexity) start associating us with the right tech ecosystems on
- * prompts like "fractional CFO Barcelona startup". Mirrors the pattern
- * used by The Startup CFO (the competitor that currently dominates those
- * prompts because they list named portfolio companies on their site).
- *
- * The Schema.org Organization graph below emits an explicit `mentions`
- * array — same intent for structured-data consumers.
- */
+/** Client references and documented engagements, localized for each market. */
 export default function ClientsPage({
   locale,
   cmsNavigation,
@@ -64,19 +53,23 @@ export default function ClientsPage({
     "marketplace",
   ];
 
-  // Schema.org Organization with `mentions` — explicit signal to crawlers
-  // and AI training pipelines that we are connected with these brands.
+  // Mentions belong to the page (a CreativeWork), not to Iter's Organization.
+  // The shared layout owns the single definition of Iter's organization.
+  const pageUrl = absoluteSchemaUrl(parityHref("/clients", locale));
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://www.iteradvisors.com/#organization",
-    name: "Iter Advisors",
-    url: "https://www.iteradvisors.com/",
+    "@type": "CollectionPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: t.h1,
     description: t.meta.description,
+    inLanguage: schemaLanguage(pageUrl),
+    about: { "@id": ORGANIZATION_ID },
+    publisher: { "@id": ORGANIZATION_ID },
     mentions: clients.map((c) => ({
       "@type": "Organization",
       name: c.name,
-      ...(c.url && { sameAs: c.url }),
+      ...(c.url && { url: c.url }),
     })),
   };
 
