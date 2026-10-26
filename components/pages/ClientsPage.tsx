@@ -40,7 +40,7 @@ export default function ClientsPage({
   const evidence = {
     fr: { title: "Des missions documentées", intro: "Découvrez le contexte, les livrables et les résultats de trois accompagnements. Chaque cas précise le périmètre de l’intervention d’Iter.", read: "Lire le cas", offer: "Découvrir notre accompagnement de DAF externalisé" },
     en: { title: "Documented client engagements", intro: "Explore the context, deliverables and results of three engagements. Each case explains the scope of Iter’s work.", read: "Read the case study", offer: "Explore our fractional CFO service" },
-    es: { title: "Misiones documentadas", intro: "Conozca el contexto, los entregables y los resultados de tres encargos. Cada caso precisa el alcance del trabajo de Iter.", read: "Leer el caso", offer: "Conocer nuestro servicio de CFO externo" },
+    es: { title: "Casos de clientes documentados", intro: "Conozca el contexto, los entregables y los resultados de tres encargos. Cada caso precisa el alcance del trabajo de Iter.", read: "Leer el caso", offer: "Conocer nuestro servicio de CFO externo" },
   }[locale];
 
   // Group clients by sector for the textual list (helps both humans and
