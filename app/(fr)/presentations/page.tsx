@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import styles from "./presentations.module.css";
 
 export const metadata: Metadata = {
   title: "Présentations | Iter Advisors",
@@ -79,7 +80,7 @@ export default function PresentationsPage() {
                   return (
                     <li key={language.code}>
                       {document ? (
-                        <a href={`/presentations/${document.file}`} hrefLang={language.code} type="application/pdf" className="flex min-h-14 items-center justify-between gap-3 rounded-lg border border-[#e4dff0] px-4 py-3 transition-colors hover:border-[#6038ec] hover:bg-[#f5f1ff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6038ec]" aria-label={`${presentation.title} : ouvrir le PDF en ${language.label}, ${document.size}`}>
+                        <a href={`/presentations/${document.file}`} hrefLang={language.code} data-language={language.code} type="application/pdf" className={`${styles.languageLink} flex min-h-14 items-center justify-between gap-3 rounded-lg px-4 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6038ec]`} aria-label={`${presentation.title} : ouvrir le PDF en ${language.label}, ${document.size}`}>
                           <span lang={language.code} className="font-medium">{language.label}</span>
                           <span className="whitespace-nowrap text-sm text-[#61596e]">PDF · {document.size} <span aria-hidden="true">↗</span></span>
                         </a>
@@ -100,7 +101,7 @@ export default function PresentationsPage() {
             <h2 id="partners-title" className="font-heading text-xl font-bold">Présentation partenaires</h2>
             <p className="mt-2 text-[#61596e]">Une présentation de l’offre finance, des références et des missions pour les partenaires d’Iter Advisors.</p>
           </div>
-          <a href="/presentations/iter-advisors-partenaires-fr.pdf" hrefLang="fr" type="application/pdf" className="mt-5 inline-flex min-h-12 shrink-0 items-center rounded-lg bg-[#6038ec] px-5 py-3 font-medium text-white hover:bg-[#4e2dc4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6038ec] sm:mt-0">Français · PDF <span className="ml-3" aria-hidden="true">↗</span></a>
+          <a href="/presentations/iter-advisors-partenaires-fr.pdf" hrefLang="fr" data-language="fr" type="application/pdf" className={`${styles.languageLink} mt-5 inline-flex min-h-12 shrink-0 items-center rounded-lg px-5 py-3 font-medium focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6038ec] sm:mt-0`}>Français · PDF <span className="ml-3" aria-hidden="true">↗</span></a>
         </section>
         <p className="mt-8 text-sm text-[#61596e]">Iter Advisors · Finance & RH · France et Espagne</p>
       </div>

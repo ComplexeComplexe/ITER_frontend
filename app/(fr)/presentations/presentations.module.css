@@ -1,0 +1,54 @@
+.languageLink {
+  --language-color: 96, 56, 236;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(var(--language-color), 0.2);
+  background: white;
+  color: #17112c;
+  transition: border-color 240ms ease;
+}
+
+.languageLink[data-language="fr"] {
+  --language-color: 49, 108, 210;
+}
+
+.languageLink[data-language="es"] {
+  --language-color: 196, 132, 24;
+}
+
+.languageLink::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(105deg, rgba(var(--language-color), 0.2), rgba(var(--language-color), 0.06) 65%, transparent);
+  opacity: 0.6;
+  transition: opacity 240ms ease;
+}
+
+.languageLink:focus-visible {
+  border-color: rgba(var(--language-color), 0.5);
+}
+
+.languageLink:focus-visible::before {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .languageLink:hover {
+    border-color: rgba(var(--language-color), 0.5);
+  }
+
+  .languageLink:hover::before {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .languageLink,
+  .languageLink::before {
+    transition: none;
+  }
+}
