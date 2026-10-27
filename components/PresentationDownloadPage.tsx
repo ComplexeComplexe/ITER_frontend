@@ -30,7 +30,7 @@ export default function PresentationDownloadPage({ offer, locale }: {
           <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">{document.title}</h1>
           <p className="mt-4 text-lg leading-relaxed text-[#61596e]">{document.description}</p>
         </div>
-        <section aria-label={`${copy.preview} ${document.title}`} className="grid items-center gap-8 rounded-2xl border border-[#e4dff0] bg-white p-5 sm:p-8 md:grid-cols-2 md:gap-12">
+        <section aria-label={`${copy.preview} ${document.title}`} className="grid items-start gap-8 rounded-2xl border border-[#e4dff0] bg-white p-5 sm:p-8 md:grid-cols-2 md:gap-12">
           <div className="order-1 md:order-2">
             <p className="text-sm font-medium uppercase tracking-wide text-[#6038ec]">PDF · {copy.pages} · {document.size}</p>
             <p className="my-5 text-lg leading-relaxed text-[#61596e]">{copy.help}</p>
