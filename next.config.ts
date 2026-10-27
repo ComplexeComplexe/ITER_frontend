@@ -31,6 +31,12 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      // Presentations are shared by direct link, including the PDF files.
+      // Keep them crawlable so search engines can read the noindex directive.
+      {
+        source: "/presentations/:path*",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }],
+      },
       // Security & SEO headers for all pages
       {
         source: "/(.*)",
