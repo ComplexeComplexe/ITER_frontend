@@ -50,6 +50,7 @@ const presentations: Presentation[] = [
     audience: "Fractional HR",
     description: "Structuration RH, recrutement, rémunération, développement des équipes et organisation.",
     documents: {
+      fr: { file: "iter-advisors-hr-fr.pdf", size: "2,4 Mo" },
       en: { file: "iter-advisors-hr-en.pdf", size: "2,3 Mo" },
       es: { file: "iter-advisors-hr-es.pdf", size: "2,5 Mo" },
     },
