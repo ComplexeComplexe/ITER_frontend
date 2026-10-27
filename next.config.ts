@@ -31,6 +31,10 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      ...["/CFO-tech", "/CFO-pme", "/en/cfo-tech", "/en/cfo-smb", "/es/cfo-tech", "/es/cfo-pymes"].map((source) => ({
+        source,
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }],
+      })),
       // Presentations are shared by direct link, including the PDF files.
       // Keep them crawlable so search engines can read the noindex directive.
       {
