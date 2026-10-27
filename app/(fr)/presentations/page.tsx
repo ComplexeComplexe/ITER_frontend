@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "./presentations.module.css";
+import { presentationPath, type PresentationOffer } from "@/lib/presentations";
 
 export const metadata: Metadata = {
   title: "Présentations | Iter Advisors",
@@ -18,6 +19,7 @@ const languages = [
 type Language = (typeof languages)[number]["code"];
 type Document = { file: string; size: string };
 type Presentation = {
+  offer?: PresentationOffer;
   title: string;
   audience: string;
   description: string;
@@ -26,6 +28,7 @@ type Presentation = {
 
 const presentations: Presentation[] = [
   {
+    offer: "cfo-tech",
     title: "CFO Tech",
     audience: "Startups & scale-ups",
     description: "Direction financière, business plan, trésorerie, levée de fonds et accompagnement de la croissance.",
@@ -36,6 +39,7 @@ const presentations: Presentation[] = [
     },
   },
   {
+    offer: "cfo-pme",
     title: "CFO PME",
     audience: "PME · SMBs · PYMEs",
     description: "Pilotage financier, contrôle de gestion, comptabilité, fiscalité et coordination des fonctions de l’entreprise.",
@@ -80,7 +84,12 @@ export default function PresentationsPage() {
                   const document = presentation.documents[language.code];
                   return (
                     <li key={language.code}>
-                      {document ? (
+                      {document && presentation.offer ? (
+                        <Link href={presentationPath(presentation.offer, language.code)} prefetch={false} hrefLang={language.code} data-language={language.code} className={`${styles.languageLink} flex min-h-14 items-center justify-between gap-3 rounded-lg px-4 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6038ec]`} aria-label={`${presentation.title} : consulter la présentation en ${language.label}`}>
+                          <span lang={language.code} className="font-medium">{language.label}</span>
+                          <span className="whitespace-nowrap text-sm text-[#61596e]">Voir <span aria-hidden="true">→</span></span>
+                        </Link>
+                      ) : document ? (
                         <a href={`/presentations/${document.file}`} hrefLang={language.code} data-language={language.code} type="application/pdf" className={`${styles.languageLink} flex min-h-14 items-center justify-between gap-3 rounded-lg px-4 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6038ec]`} aria-label={`${presentation.title} : ouvrir le PDF en ${language.label}, ${document.size}`}>
                           <span lang={language.code} className="font-medium">{language.label}</span>
                           <span className="whitespace-nowrap text-sm text-[#61596e]">PDF · {document.size} <span aria-hidden="true">↗</span></span>
