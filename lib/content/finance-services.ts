@@ -42,7 +42,7 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     // 2 112 à 1 198 mots ; toutes ses requêtes ont perdu 20 à 40 places la
     // semaine du 5 oct. On rétablit title, H1 et sections, faits de facts.ts.
     "title": "DAF à temps partagé : missions et tarifs 2026",
-    "description": `DAF à temps partagé pour PME : missions, livrables et budget de ${recurringRange} € HT/mois. Volume observé de ${volume} jours par mois, sans forfait.`,
+    "description": `Un DAF à temps partagé pour piloter votre trésorerie, votre budget et vos décisions. Accompagnement de ${recurringRange} € HT/mois, selon le périmètre convenu.`,
     "headline": "DAF à temps partagé : un directeur financier dédié à votre PME",
     extraSections: {
       afterNeed: [

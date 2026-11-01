@@ -12,7 +12,7 @@ const budget = `${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 
 export const dafPillar = {
   meta: {
     title: "DAF externalisé pour PME | Iter Advisors",
-    description: `DAF externalisé pour PME : pilotage à temps partagé, missions et rôle de l’expert-comptable. Budget indicatif : ${budget}/mois.`,
+    description: `DAF externalisé pour PME : pilotez votre trésorerie, vos marges et votre reporting avec un DAF senior. Budget indicatif : ${budget}/mois.`,
   },
   breadcrumbLabel: "DAF externalisé",
   hero: {
