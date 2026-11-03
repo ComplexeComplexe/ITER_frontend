@@ -4,6 +4,8 @@ import type { Locale } from '@/lib/i18n';
 const financeTeamSize = 15;
 export const COMPANY = {
   name: 'Iter Advisors', legalName: 'Iter Advisors S.L.', foundingYear: 2021,
+  taxID: 'B42960849', vatID: 'ESB42960849', email: 'contact@iteradvisors.com',
+  registeredAddress: { streetAddress: 'Carrer Casp, 54, 5-1°', addressLocality: 'Barcelona', postalCode: '08010', addressCountry: 'ES' },
   clientsCount: 90, financeTeamSize,
   teamLabel: {
     fr: `${financeTeamSize} professionnels de la finance et une direction RH`,
@@ -41,6 +43,23 @@ export function getCompanyGeography(locale: Locale) {
     es: 'Barcelona es la sede de la firma. Las modalidades presenciales y a distancia se acuerdan al definir cada encargo.',
   }[locale];
   return { cities, cityList, presence, summary: `${presence} ${details}` };
+}
+
+/** Existing official company profiles only. Add new profiles after ownership and content verification. */
+export const COMPANY_PROFILES = [
+  'https://www.linkedin.com/company/iter-advisors/',
+  'https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc',
+  'https://www.youtube.com/@IterAdvisors1',
+] as const;
+
+/** Factual identification shared by the organization schema and multilingual context file. */
+export function getCompanyIdentity(locale: Locale): string {
+  const identity = {
+    fr: `${COMPANY.legalName} est un cabinet de direction financière et RH externalisée, créé en ${COMPANY.foundingYear}, au service des PME, startups et scale-ups en France et en Espagne.`,
+    en: `${COMPANY.legalName} is a fractional CFO and outsourced HR leadership firm founded in ${COMPANY.foundingYear}, serving SMEs, startups and scale-ups in France and Spain.`,
+    es: `${COMPANY.legalName} es una firma de dirección financiera y de RR. HH. externalizada, fundada en ${COMPANY.foundingYear}, que trabaja con pymes, startups y scale-ups en Francia y España.`,
+  }[locale];
+  return `${identity} ${getCompanyGeography(locale).summary}`;
 }
 
 export const PEOPLE = {
