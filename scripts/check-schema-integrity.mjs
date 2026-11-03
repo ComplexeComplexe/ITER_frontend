@@ -1,5 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { require as tsRequire } from 'tsx/cjs/api';
+const { COMPANY, COMPANY_PROFILES, ORG_ID, getCompanyIdentity } = tsRequire('../lib/company-facts.ts', import.meta.url);
 const site = 'https://www.iteradvisors.com';
 const root = '.next/server/app';
 const urls = [...fs.readFileSync(`${root}/sitemap.xml.body`, 'utf8').matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
@@ -16,6 +18,14 @@ for (const url of urls) {
   checked++;
   const html = fs.readFileSync(file, 'utf8');
   const schemas = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)].map(m => JSON.parse(m[1]));
+  const locale = pathname.startsWith('/en/') || pathname === '/en' ? 'en' : pathname.startsWith('/es/') || pathname === '/es' ? 'es' : 'fr';
+  const organizations = [...nodes(schemas)].filter(node => node['@id'] === ORG_ID && node.legalName);
+  if (organizations.length !== 1) errors.push(`${pathname}: expected one full canonical Organization`);
+  for (const organization of organizations) {
+    if (JSON.stringify(organization.sameAs) !== JSON.stringify(COMPANY_PROFILES)) errors.push(`${pathname}: official company profiles differ from the registry`);
+    if (organization.disambiguatingDescription !== getCompanyIdentity(locale)) errors.push(`${pathname}: company identity is missing or in the wrong language`);
+    if (organization.legalName !== COMPANY.legalName || organization.taxID !== COMPANY.taxID || organization.vatID !== COMPANY.vatID) errors.push(`${pathname}: legal identity differs from approved facts`);
+  }
   for (const node of nodes(schemas)) {
     const types = Array.isArray(node['@type']) ? node['@type'] : [node['@type']];
     const fail = message => errors.push(`${pathname}: ${message}`);

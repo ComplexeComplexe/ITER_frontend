@@ -1,3 +1,4 @@
+import { COMPANY } from "@/lib/company-facts";
 import { reviewsForLocale } from "@/lib/content/review-translations";
 import Link from "@/components/PublishedLocaleLink";
 import { parityHref } from "@/lib/locale-route-map";
@@ -11,7 +12,7 @@ import { dafClusterHref, getLocalizedPath, serviceHref } from "@/lib/path-locali
 import { getDafLocalContent, DafLocalCity } from "@/lib/content/daf-local";
 import { faqPageSchema } from "@/lib/schemas";
 import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
-import { TRUSTFOLIO_REVIEWS, TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/trustfolio-reviews";
+import { TRUSTFOLIO_REVIEW_COUNT } from "@/lib/content/trustfolio-reviews";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
@@ -62,33 +63,12 @@ export default function DafLocalPage({
     name: "Iter Advisors - Barcelona",
     description: t.meta.description,
     url: canonicalUrl,
-    email: "contact@iteradvisors.com",
+    email: COMPANY.email,
     // Iter Advisors S.L. — registered office: Carrer Casp, 54, 5-1°,
     // 08010 Barcelona (NIF B42960849). Paris has no public street address.
     // Toulouse is a service area and does not emit a local business node.
-    address:
-      city === "barcelone"
-        ? {
-            "@type": "PostalAddress",
-            streetAddress: "Carrer Casp, 54, 5-1°",
-            addressLocality: "Barcelona",
-            postalCode: "08010",
-            addressCountry: "ES",
-          }
-        : {
-            "@type": "PostalAddress",
-            addressLocality: city === "paris" ? "Paris" : "Toulouse",
-            addressCountry: "FR",
-          },
-    areaServed: {
-      "@type": "Place",
-      name:
-        city === "barcelone"
-          ? "Barcelona, Spain"
-          : city === "paris"
-            ? "Paris, Ile-de-France"
-            : "Toulouse, Occitanie",
-    },
+    address: { "@type": "PostalAddress", ...COMPANY.registeredAddress },
+    areaServed: { "@type": "Place", name: "Barcelona, Spain" },
     image: "https://www.iteradvisors.com/images/logos/iter-advisors-brand.png",
     // Review-snippet fix (2026-05-29): self-serving aggregateRating + Review
     // nodes removed. These were Trustfolio (third-party) reviews about Iter

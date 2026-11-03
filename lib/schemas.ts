@@ -1,4 +1,3 @@
-import { getCompanyGeography } from "@/lib/company-facts";
 import { absoluteSchemaUrl, ORGANIZATION_ID, WEBSITE_ID, schemaLanguage, indicativePriceSpecification } from "@/lib/schemas/identity";
 import { editorialPersonId } from "@/lib/content/finance-expert";
 /**
@@ -176,52 +175,6 @@ export function speakableSchema({
       "@type": "SpeakableSpecification",
       cssSelector: cssSelectors,
     },
-  };
-}
-
-/**
- * Generate ProfessionalService JSON-LD schema for the organization.
- *
- * The function name (`financialServiceSchema`) is kept for backward
- * compatibility with existing imports, but the emitted @type is
- * Organization — Schema.org positions FinancialService for
- * banks / insurance / lenders, which isn't what Iter Advisors is.
- * (T4 / 2026-06-07: docstring sync.)
- */
-export function financialServiceSchema(): Record<string, unknown> {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": ORGANIZATION_ID,
-    name: "Iter Advisors",
-    // Spanish SL — keep the legal identifiers in sync with the
-    // canonical Organization graph emitted from app/layout.tsx.
-    legalName: "Iter Advisors S.L.",
-    taxID: "B42960849",
-    vatID: "ESB42960849",
-    url: `${BASE}/`,
-    description:
-      `Cabinet de DAF externalisé et CFO à temps partagé pour PME, startups et scale-ups. ${getCompanyGeography("fr").presence}`,
-    email: "contact@iteradvisors.com",
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "customer service",
-      email: "contact@iteradvisors.com",
-      availableLanguage: ["French", "English", "Spanish"],
-    },
-    address: [
-      {
-        "@type": "PostalAddress",
-        streetAddress: "Carrer Casp, 54, 5-1°",
-        addressLocality: "Barcelona",
-        postalCode: "08010",
-        addressCountry: "ES",
-      },
-    ],
-    // Review-snippet fix (2026-05-29): no self-serving aggregateRating here
-    // either (this helper is currently unused, but kept consistent with the
-    // policy applied across the live pages).
-    sameAs: ["https://www.linkedin.com/company/iter-advisors/"],
   };
 }
 

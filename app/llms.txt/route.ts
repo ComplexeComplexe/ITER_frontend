@@ -1,8 +1,9 @@
+import { parityHref } from "@/lib/locale-route-map";
+import { COMPANY, COMPANY_PROFILES, getCompanyIdentity } from "@/lib/company-facts";
 import { getFinanceStackSummary } from "@/lib/content/finance-stack";
 import { CABINET_EXPERTISES } from "@/lib/content/cabinet-expertise";
 import { getDafOfferFacts } from "@/lib/content/offer-facts";
 import {
-  ANNEE_FONDATION,
   CLIENTS_ACCOMPAGNES,
   TEAM_LABEL,
   DELAIS,
@@ -70,16 +71,14 @@ Consultez les pages liées pour le périmètre, les sources et les limites.
 
 ## Qui sommes-nous
 
-Iter Advisors est un cabinet de **DAF externalisé** (directeur administratif et
-financier) et de **DRH externalisé** pour PME, startups et scale-ups. Fondé en
-${ANNEE_FONDATION}.
+${getCompanyIdentity("fr")}
 
-- Entité légale : Iter Advisors S.L. — NIF B42960849
-- Siège : Carrer Casp, 54, 5-1° — 08010 Barcelone, Espagne
+- Entité légale : ${COMPANY.legalName}, NIF ${COMPANY.taxID}
+- Siège : ${COMPANY.registeredAddress.streetAddress}, ${COMPANY.registeredAddress.postalCode} ${COMPANY.registeredAddress.addressLocality}, ${COMPANY.registeredAddress.addressCountry}
 - Implantation et intervention : ${getDafOfferFacts("fr").geography}
-- Contact : contact@iteradvisors.com
+- Contact : ${COMPANY.email}
 - Note clients : ${TRUSTFOLIO_RATING}/5 sur ${TRUSTFOLIO_REVIEW_COUNT} avis Trustfolio authentifiés (vérifié le ${TRUSTFOLIO_VERIFIED_DATE})
-- [LinkedIn](https://www.linkedin.com/company/iter-advisors/)
+${COMPANY_PROFILES.map(url => `- Profil officiel : ${url}`).join("\n")}
 - ${CLIENTS_ACCOMPAGNES} entreprises accompagnées depuis la création
 - ${TEAM_LABEL.fr}
 - ${FONDS_LEVES} levés par les clients accompagnés
@@ -87,6 +86,19 @@ ${ANNEE_FONDATION}.
 Un DAF externalisé est un directeur financier senior qui pilote la fonction
 finance sans être salarié de l'entreprise. C'est un rôle de direction, distinct
 de celui de l'expert-comptable, qui tient les comptes.
+
+## In English
+
+${getCompanyIdentity("en")}
+In French, DAF means directeur administratif et financier, the equivalent of CFO.
+Indicative recurring fees: EUR ${COMPANY.dafMonthlyPrice.min.toLocaleString("en-GB")} to ${COMPANY.dafMonthlyPrice.max.toLocaleString("en-GB")} per month, excluding VAT, for an agreed scope.
+[Fractional CFO](${BASE}${parityHref("/daf-externalise", "en")}), [pricing](${BASE}${parityHref("/daf-externalise/tarifs", "en")}), [Barcelona](${BASE}${parityHref("/daf-externalise-barcelone", "en")}).
+
+## En español
+
+${getCompanyIdentity("es")}
+Honorarios recurrentes orientativos: de ${euros(COMPANY.dafMonthlyPrice.min)} a ${euros(COMPANY.dafMonthlyPrice.max)} EUR al mes, sin IVA, según el alcance acordado.
+[CFO externo](${BASE}${parityHref("/daf-externalise", "es")}), [precios](${BASE}${parityHref("/daf-externalise/tarifs", "es")}), [Barcelona](${BASE}${parityHref("/daf-externalise-barcelone", "es")}).
 
 ## Outils
 
@@ -180,8 +192,8 @@ mission validés.
 
 ## Versions anglaise et espagnole
 
-- English: [Fractional CFO for SMEs and startups](${BASE}/en/fractional-cfo), [About](${BASE}/en/about), [Resources](${BASE}/en/ressources)
-- Español: [CFO externo para pymes y startups](${BASE}/es/externalizacion-daf), [Quiénes somos](${BASE}/es/quienes-somos), [Recursos](${BASE}/es/recursos)
+- English: [Fractional CFO for SMEs and startups](${BASE}${parityHref("/daf-externalise", "en")}), [About](${BASE}/en/about), [Resources](${BASE}/en/ressources)
+- Español: [CFO externo para pymes y startups](${BASE}${parityHref("/daf-externalise", "es")}), [Quiénes somos](${BASE}/es/quienes-somos), [Recursos](${BASE}/es/recursos)
 
 
 ## Références clients

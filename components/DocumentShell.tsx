@@ -1,4 +1,4 @@
-import { COMPANY, COMPANY_GEOGRAPHY, getCompanyGeography, PEOPLE, personId } from "@/lib/company-facts";
+import { COMPANY, COMPANY_GEOGRAPHY, COMPANY_PROFILES, getCompanyIdentity, getCompanyGeography, PEOPLE, personId } from "@/lib/company-facts";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "@/app/globals.css";
 import { TRACKING_BOOTSTRAP, CONSENT_DISPLAY_BOOTSTRAP } from "@/lib/analytics/consent";
@@ -101,10 +101,11 @@ export default function DocumentShell({
                   name: COMPANY.name,
                   // Spanish SL (sociedad limitada), NIF B42960849.
                   legalName: COMPANY.legalName,
-                  taxID: "B42960849",
-                  vatID: "ESB42960849",
+                  taxID: COMPANY.taxID,
+                  vatID: COMPANY.vatID,
                   url: "https://www.iteradvisors.com/",
                   description: organizationCopy.description,
+                  disambiguatingDescription: getCompanyIdentity(locale),
                   logo: {
                     "@type": "ImageObject",
                     url: "https://www.iteradvisors.com/images/logos/iter-advisors-brand-square.png",
@@ -114,10 +115,7 @@ export default function DocumentShell({
                   address: [
                     {
                       "@type": "PostalAddress",
-                      streetAddress: "Carrer Casp, 54, 5-1°",
-                      addressLocality: "Barcelona",
-                      postalCode: "08010",
-                      addressCountry: "ES",
+                      ...COMPANY.registeredAddress,
                     },
                   ],
                   // SEO-FIN §7.4 (2026-08-15) — enrichissement remonté depuis
@@ -136,7 +134,7 @@ export default function DocumentShell({
                   ],
                   contactPoint: {
                     "@type": "ContactPoint",
-                    email: "contact@iteradvisors.com",
+                    email: COMPANY.email,
                     contactType: "customer service",
                     areaServed: ["FR", "ES"],
                     availableLanguage: ["French", "English", "Spanish"],
@@ -144,11 +142,7 @@ export default function DocumentShell({
                   knowsAbout: organizationCopy.expertise,
                   founder: [PEOPLE.sebastien, PEOPLE.benjamin, PEOPLE.guillaume].map(person => ({ "@id": personId(person.slug) })),
                   // Official profiles identify the cabinet; they do not enable review stars.
-                  sameAs: [
-                    "https://www.linkedin.com/company/iter-advisors/",
-                    "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc",
-                    "https://www.youtube.com/@IterAdvisors1",
-                  ],
+                  sameAs: COMPANY_PROFILES,
                   // SEO-05 (2026-08-31) — aggregateRating volontairement
                   // absent, ici comme partout : les avis qu'un site porte sur
                   // sa propre organisation sont « self-serving » au sens des
