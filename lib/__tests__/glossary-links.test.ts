@@ -61,7 +61,7 @@ describe("DAF definition consolidation", () => {
     const related = getRelatedGlossary("fr", "cfo");
     expect(related.some(page => page.slug === "daf")).toBe(true);
     expect(glossaryHref("fr", "daf")).toBe("/daf-externalise/metier");
-    expect(glossaryHref("en", "cfo")).toBe("/en/ressources/glossaire/cfo");
+    expect(glossaryHref("en", "cfo")).toBe("/en/resources/glossary/cfo");
     expect(glossaryHref("fr", "ebitda")).toBe("/ressources/glossaire/ebitda");
   });
 });

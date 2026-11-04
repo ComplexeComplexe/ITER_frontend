@@ -1,3 +1,4 @@
+import { finalPublicPath } from "./url-migration";
 import { Metadata } from "next";
 import { Locale } from "./i18n";
 import { getLocalizedPath } from "./path-localization";
@@ -43,10 +44,10 @@ export function buildMetadata({
   const base = "https://www.iteradvisors.com";
 
   // Strip leading locale prefix from path to prevent double-locale in canonical/URL
-  // e.g. path="/en/ressources/blog/slug" with locale="en" would produce /en/en/...
+  // e.g. path="/en/resources/blog/slug" with locale="en" would produce /en/en/...
   const safePath = (locale !== "fr" && path.startsWith(`/${locale}`)) ? path.replace(`/${locale}`, '') || '/' : path;
 
-  const url = locale === "fr" ? `${base}${safePath}` : `${base}/${locale}${safePath === "/" ? "" : safePath}`;
+  const url = finalPublicPath(locale === "fr" ? `${base}${safePath}` : `${base}/${locale}${safePath === "/" ? "" : safePath}`);
 
   // Strip a locale prefix without amputating a path that merely starts with the
   // same letters (`/energie…` is not an EN path).
@@ -111,6 +112,8 @@ export function buildMetadata({
     delete languages["fr-FR"];
     languages["x-default"] = languages["en-GB"] ?? languages["es-ES"] ?? url;
   }
+
+  for (const lang of Object.keys(languages)) languages[lang] = finalPublicPath(languages[lang]);
 
   const meta: Metadata = {
     title,
@@ -234,7 +237,7 @@ export function publishedMetadataAlternates(path: string): Metadata['alternates'
   const base = 'https://www.iteradvisors.com';
   const paths = publishedPaths(path);
   return {
-    canonical: base + path,
+    canonical: finalPublicPath(base + path),
     ...(paths ? { languages: { 'fr-FR': base + paths.fr, 'en-GB': base + paths.en, 'es-ES': base + paths.es, 'x-default': base + paths.fr } } : {}),
   };
 }

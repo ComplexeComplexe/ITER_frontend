@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     languages: {
       "x-default": "https://www.iteradvisors.com/ressources/blog/daf-externalise-vs-daf-salarie",
       "fr-FR": "https://www.iteradvisors.com/ressources/blog/daf-externalise-vs-daf-salarie",
-      "en-GB": "https://www.iteradvisors.com/en/ressources/blog/daf-externalise-vs-daf-salarie",
-      "es-ES": "https://www.iteradvisors.com/es/recursos/blog/daf-externalise-vs-daf-salarie",
+      "en-GB": "https://www.iteradvisors.com/en/resources/blog/fractional-cfo-vs-in-house-cfo",
+      "es-ES": "https://www.iteradvisors.com/es/recursos/blog/cfo-externo-vs-cfo-en-plantilla",
     },
   },
   openGraph: {

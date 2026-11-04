@@ -19,9 +19,9 @@ const breadcrumbsByLocale = {
   },
   en: {
     resourcesLabel: "Resources",
-    resourcesHref: "/en/ressources",
+    resourcesHref: "/en/resources",
     blogLabel: "Blog",
-    blogHref: "/en/ressources/blog",
+    blogHref: "/en/resources/blog",
   },
   es: {
     resourcesLabel: "Recursos",

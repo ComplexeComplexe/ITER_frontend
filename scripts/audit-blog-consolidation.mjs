@@ -30,7 +30,7 @@ for (const slug of ['drh-externalise-quand-et-pourquoi', 'daf-externalise-barcel
   const targets = slug === 'drh-externalise-quand-et-pourquoi'
     ? { en: '/en/hr-outsourcing', es: '/es/externalizacion-rrhh' }
     : { en: '/en/fractional-cfo-barcelona', es: '/es/cfo-externalizado-barcelona' };
-  for (const prefix of ['/en/ressources/blog/', '/es/recursos/blog/']) {
+  for (const prefix of ['/en/resources/blog/', '/es/recursos/blog/']) {
     const target = targets[prefix.startsWith('/en/') ? 'en' : 'es'];
     const source = prefix + slug;
     const response = await fetch(base + source, { redirect: 'manual' });

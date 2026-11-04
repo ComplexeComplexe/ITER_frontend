@@ -285,12 +285,12 @@ export const homeContent = {
       paragraph:
         "Find all the content produced by our CFOs: articles, theme sheets, testimonials, downloadable templates, etc.",
       cta: "See our resources",
-      resourcesHref: "/en/ressources",
+      resourcesHref: "/en/resources",
     },
     blogCards: [
       {
         title: "AI and automation of repetitive tasks in the Finance department",
-        href: "/en/ressources/blog",
+        href: "/en/resources/blog",
         image: "/images/blog/ia-automatisation.jpg",
         date: "Mar 12, 2026",
       },
@@ -496,7 +496,7 @@ export const homeContent = {
       { title: "Control de gestión", href: serviceHref("controle-de-gestion-externalise", "es"), desc: "Cuadros de mando, reporting y análisis de resultados para decidir con datos fiables." },
       { title: "Gestión de tesorería", href: serviceHref("previsionnel-tresorerie", "es"), desc: "Previsión de tesorería, optimización del circulante y gestión de la liquidez." },
       { title: "Captación de fondos", href: serviceHref("accompagnement-levee-de-fond", "es"), desc: "Asesoramiento estratégico para cerrar su financiación y convencer a los inversores." },
-      { title: "M&A & Due Diligence", href: "/es/services/ma-due-diligence", desc: "Asesoramiento en fusiones y adquisiciones y revisiones financieras para asegurar sus operaciones." },
+      { title: "M&A & Due Diligence", href: "/es/servicios/ma-due-diligence", desc: "Asesoramiento en fusiones y adquisiciones y revisiones financieras para asegurar sus operaciones." },
     ],
     hrServices: [
       { title: "Director de RR. HH. externo", desc: "Un director de recursos humanos a tiempo parcial, dedicado a su empresa, para estructurar y dirigir su función de RR. HH." },

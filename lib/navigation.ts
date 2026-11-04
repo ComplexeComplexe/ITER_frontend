@@ -136,9 +136,9 @@ export const footerContent: Record<Locale, FooterContent> = {
       { text: "Cookie policy", href: "/en/cookie-policy" },
     ],
     editorialLinks: [
-      { text: "Finance glossary", href: "/en/ressources/glossaire" },
+      { text: "Finance glossary", href: "/en/resources/glossary" },
       { text: "CFO role", href: "/en/fractional-cfo/role" },
-      { text: "Finance tools", href: "/en/ressources/tools" },
+      { text: "Finance tools", href: "/en/resources/tools" },
       { text: "Outsourced HR direction", href: "/en/hr-outsourcing" },
       { text: "Our clients", href: "/en/clients" },
       { text: "Careers", href: "/en/jobs" },
@@ -191,7 +191,7 @@ export const languageSwitcher: Record<Locale, { label: string; flag: string }> =
 
 export function getContactPath(locale: Locale): string {
   if (locale === "fr") return "/contact";
-  return `/${locale}/contact`;
+  return locale === "es" ? "/es/contacto" : "/en/contact";
 }
 
 // 2026-05-30: Sébastien is on paternity leave, so the "book a meeting"

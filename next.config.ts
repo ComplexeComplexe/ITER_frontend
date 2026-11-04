@@ -1,3 +1,4 @@
+import { migratedRedirects } from "./lib/url-migration";
 import type { NextConfig } from "next";
 import { localeRedirects } from "./lib/locale-redirects";
 import { correctedGscRedirects } from "./lib/gsc-redirects";
@@ -117,7 +118,7 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    return correctedGscRedirects(localeRedirects([
+    return migratedRedirects(correctedGscRedirects(localeRedirects([
       // HYGIENE-2 (2026-10-18) — doublons de l'accueil relevés par l'audit du
       // 18/10 : `/index` répondait 200 (Next.js normalise /index vers la page
       // racine, x-matched-path: /) et `/fr` passait par une 301 du proxy. Les
@@ -1173,7 +1174,7 @@ const nextConfig: NextConfig = {
       // no further rule; EN has no rewrite at all, so needs a direct rule.
       { source: "/es/recursos/fiscalite/:path*", destination: "/ressources/fiscalite/:path*", permanent: true },
       { source: "/en/ressources/fiscalite/:path*", destination: "/ressources/fiscalite/:path*", permanent: true },
-    ]));
+    ])));
   },
 };
 

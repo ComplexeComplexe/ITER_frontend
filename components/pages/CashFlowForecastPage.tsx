@@ -13,7 +13,7 @@ import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
 const breadcrumbLabels: Record<Locale, { services: string; servicesHref: string; page: string }> = {
   fr: { services: "Services", servicesHref: "/services", page: "Cash Flow Forecast" },
   en: { services: "Services", servicesHref: "/en/services", page: "Cash Flow Forecast" },
-  es: { services: "Servicios", servicesHref: "/es/services", page: "Flujo de Caja" },
+  es: { services: "Servicios", servicesHref: "/es/servicios", page: "Flujo de Caja" },
 };
 
 interface CashFlowForecastPageProps {
@@ -53,7 +53,7 @@ export default function CashFlowForecastPage({ locale, content: t, cmsNavigation
                   ? "/services/flux-de-tresorerie"
                   : locale === "en"
                     ? "/en/services/cash-flow-forecast"
-                    : "/es/services/flujo-de-caja",
+                    : "/es/servicios/flujo-de-caja",
               name: t.hero.h1,
               description: t.hero.intro,
               locale,

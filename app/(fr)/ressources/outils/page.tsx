@@ -12,7 +12,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/ressources/outils",
   localizedPaths: {
     fr: "/ressources/outils",
-    en: "/en/ressources/tools",
+    en: "/en/resources/tools",
     es: "/es/recursos/herramientas",
   },
 });

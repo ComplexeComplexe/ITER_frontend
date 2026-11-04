@@ -273,7 +273,7 @@ const content: Record<Locale, OutsourceYourAccountingContent> = {
       description:
         "Consulta gratis con un experto de Iter Advisors. Evaluamos tu situación y te ofrecemos un presupuesto sin compromiso.",
       buttonText: "Solicitar consulta gratuita",
-      buttonHref: "/es/contact",
+      buttonHref: "/es/contacto",
     },
   },
 };

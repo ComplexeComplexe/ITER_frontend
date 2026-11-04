@@ -19,7 +19,7 @@ export default function HubPage({ locale, cmsNavigation }: HubPageProps) {
   const t = TOOL_HUB_COPY[locale];
   const labels = getToolsContent(locale);
   const directory = getToolDirectory(locale);
-  const path = { fr: '/ressources/outils', en: '/en/ressources/tools', es: '/es/recursos/herramientas' }[locale];
+  const path = { fr: '/ressources/outils', en: '/en/resources/tools', es: '/es/recursos/herramientas' }[locale];
   const pennylane = tools.find(tool => tool.slug === 'pennylane')!;
   return <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': `https://www.iteradvisors.com${path}`, url: `https://www.iteradvisors.com${path}`, name: t.title, inLanguage: schemaLanguage(path), mainEntity: { '@type': 'ItemList', itemListElement: directory.map((tool, index) => ({ '@type': 'ListItem', position: index + 1, name: tool.name, url: `https://www.iteradvisors.com${parityHref(`/ressources/outils/${tool.slug}`, locale)}` })) } }) }} />

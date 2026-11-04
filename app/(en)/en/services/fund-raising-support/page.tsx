@@ -5,6 +5,6 @@ import { buildMetadata } from "@/lib/metadata";
 
 export function generateMetadata(): Metadata {
  const service = getFinanceService("levee", "en");
- return buildMetadata({ locale: "en", path: "/en/services/fund-raising-support", title: service.title, description: service.description, localizedPaths: {"fr": "/services/accompagnement-levee-de-fond", "en": "/en/services/fund-raising-support", "es": "/es/services/soporte-financiacion"} });
+ return buildMetadata({ locale: "en", path: "/en/services/fund-raising-support", title: service.title, description: service.description, localizedPaths: {"fr": "/services/accompagnement-levee-de-fond", "en": "/en/services/fund-raising-support", "es": "/es/servicios/soporte-financiacion"} });
 }
 export default function Page() { return <FinanceServicePage locale="en" service={getFinanceService("levee", "en")} />; }

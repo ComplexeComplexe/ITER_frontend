@@ -105,7 +105,7 @@ export function getReviewedCases(locale: Locale) {
     };
   });
 }
-export const getReviewedCase = (slug: string, locale: Locale) => getReviewedCases(locale).find(item => item.slug === slug);
+export const getReviewedCase = (slug: string, locale: Locale) => getReviewedCases(locale).find(item => item.href.split("/").pop() === slug);
 
 export const caseInterface = {
   fr: { resources: "Ressources", cases: "Cas clients", case: "Cas client", by: "Par", published: "Publié le", updated: "Mis à jour le", situation: "La situation de départ", need: "Le besoin du dirigeant", work: "Le travail réalisé par Iter", outputs: "Les livrables de la mission", results: "Les résultats et leur portée", feedback: "Le retour du client", feedbackText: "Consultez le témoignage de la direction sur la plateforme d’avis.", comparable: "Un besoin comparable dans votre entreprise ?", ctaText: "Le premier échange sert à identifier vos priorités, les livrables utiles et le profil adapté. Le périmètre et le budget sont définis avant le démarrage.", offer: "Missions d’un DAF externalisé pour PME et startups", prices: "Tarifs et périmètres", contact: "Décrire mon besoin", channelText: "Pour mettre en place un P&L par canal et une revue régulière des marges, découvrez notre" },

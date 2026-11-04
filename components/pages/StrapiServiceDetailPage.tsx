@@ -8,7 +8,7 @@ import { StrapiServiceDetail } from "@/lib/static-content";
 const labels: Record<Locale, { services: string; servicesHref: string }> = {
   fr: { services: "Services", servicesHref: "/services" },
   en: { services: "Services", servicesHref: "/en/services" },
-  es: { services: "Servicios", servicesHref: "/es/services" },
+  es: { services: "Servicios", servicesHref: "/es/servicios" },
 };
 
 export default function StrapiServiceDetailPage({ locale, service }: { locale: Locale; service: StrapiServiceDetail }) {

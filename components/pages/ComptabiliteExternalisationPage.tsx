@@ -51,7 +51,7 @@ export default function ComptabiliteExternalisationPage({
   cmsNavigation,
 }: ComptabiliteExternalisationPageProps) {
   const t = content;
-  const pagePath = locale === "es" ? "/es/services/externalizar-contabilidad" : locale === "en" ? "/en/services/outsource-your-accounting" : "/services/comptabilite-externalisation";
+  const pagePath = locale === "es" ? "/es/servicios/externalizar-contabilidad" : locale === "en" ? "/en/services/outsource-your-accounting" : "/services/comptabilite-externalisation";
   const modified = PAGE_REVISIONS[pagePath];
   const faqItems = t.sections.flatMap((section: { faqs?: Array<{ question: string; answer: string }> }) => section.faqs ?? []);
   const copy = {

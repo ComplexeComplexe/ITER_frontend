@@ -363,7 +363,7 @@ const content: Record<Locale, GlossaryContent> = {
       description:
         "Consulte con un experto de Iter Advisors. Le ayudamos a entender sus métricas financieras.",
       buttonText: "Solicitar consulta gratuita",
-      buttonHref: "/es/contact",
+      buttonHref: "/es/contacto",
     },
   },
 };

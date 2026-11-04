@@ -65,8 +65,8 @@ await Promise.all(Array.from({ length: 4 }, async () => {
 const redirects = [];
 for (const [path, target] of [
   ['/en/jobs/fractional-cfo-startups', '/en/fractional-cfo-for-startups'],
-  ['/en/ressources/blog/organiser-sa-direction-financiere', '/en/ressources/blog/organize-finance-department'],
-  ['/en/en/ressources/blog/organiser-sa-direction-financiere', '/en/ressources/blog/organize-finance-department'],
+  ['/en/resources/blog/organiser-sa-direction-financiere', '/en/resources/blog/organize-finance-department'],
+  ['/en/en/ressources/blog/organiser-sa-direction-financiere', '/en/resources/blog/organize-finance-department'],
   ['/es/en/ressources/blog/organiser-sa-direction-financiere', '/es/recursos/blog/organizar-direccion-financiera'],
   ['/ressources/glossaire/daf', '/daf-externalise/metier'],
   ['/jobs/fractional-cfo-startups', '/fractional-cfo-startups'],
@@ -84,7 +84,7 @@ for (const [path, target] of [
 }
 const jobs = [];
 const jobsHub = await (await fetch(base + '/jobs')).text();
-for (const path of ['/jobs/finance-analyst-junior-fr', '/jobs/senior-finance-manager', '/jobs/marketing-growth-strategy']) {
+for (const path of ['/emplois/analyste-financier-junior', '/emplois/responsable-financier-senior', '/emplois/marketing-strategie-croissance']) {
   const response = await fetch(base + path, { redirect: 'manual' });
   const linked = jobsHub.includes(`href="${path}"`);
   jobs.push({ path, status: response.status, linkedFromHub: linked });

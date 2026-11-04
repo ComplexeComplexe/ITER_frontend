@@ -63,7 +63,7 @@ export default function Page() {
       tldr="Le régime spécial applique 24 % jusqu’à 600 000 € de base relevant de ce barème, puis 47 % au-delà. Pour savoir s’il est avantageux, comparez les deux régimes selon votre année fiscale, votre communauté autonome, vos revenus et votre situation personnelle."
       relatedArticles={[
         {
-          url: "/ressources/fiscalite/beckham-law",
+          url: "/ressources/fiscalite/loi-beckham",
           category: "Fiscalité",
           title: "Guide complet de la loi Beckham en Espagne",
         },
@@ -97,7 +97,7 @@ export default function Page() {
         <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a93">BOE : Ley 35/2006, artículo 93</a></li>
         <li><a href="https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-tributacion-no-residentes/regimenes-opcionales/regimen-especial-impatriados.html">AEAT : régime spécial des impatriés</a></li>
       </ul>
-      <p><Link href="/ressources/fiscalite/beckham-law">{"Consulter les conditions et la procédure du régime Beckham"}</Link></p>
+      <p><Link href="/ressources/fiscalite/loi-beckham">{"Consulter les conditions et la procédure du régime Beckham"}</Link></p>
       <p><Link href="/contact">{"Présenter ma situation à Iter Advisors"}</Link></p>
     </BlogPostPageRefonte>
   );

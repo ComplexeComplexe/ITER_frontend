@@ -165,7 +165,7 @@ mission validés.
 ## Fiscalité France-Espagne
 
 - [Guide de synthèse](${BASE}/ressources/fiscalite-espagne-france)
-- [Loi Beckham : conditions, démarches et limites](${BASE}/ressources/fiscalite/beckham-law)
+- [Loi Beckham : conditions, démarches et limites](${BASE}/ressources/fiscalite/loi-beckham)
 - [Impôt sur le revenu en Espagne (IRPF) : barème et comparaison avec la France](${BASE}/ressources/fiscalite/impot-revenu-espagne)
 - [Double imposition France-Espagne : convention de 1995 et formulaires](${BASE}/ressources/fiscalite/double-imposition-france-espagne)
 - [Résidence fiscale France ou Espagne : critères](${BASE}/ressources/fiscalite/residence-fiscale-france-espagne)
@@ -192,7 +192,7 @@ mission validés.
 
 ## Versions anglaise et espagnole
 
-- English: [Fractional CFO for SMEs and startups](${BASE}${parityHref("/daf-externalise", "en")}), [About](${BASE}/en/about), [Resources](${BASE}/en/ressources)
+- English: [Fractional CFO for SMEs and startups](${BASE}${parityHref("/daf-externalise", "en")}), [About](${BASE}/en/about), [Resources](${BASE}/en/resources)
 - Español: [CFO externo para pymes y startups](${BASE}${parityHref("/daf-externalise", "es")}), [Quiénes somos](${BASE}/es/quienes-somos), [Recursos](${BASE}/es/recursos)
 
 

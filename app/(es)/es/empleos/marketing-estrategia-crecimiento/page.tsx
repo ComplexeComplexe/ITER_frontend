@@ -1,5 +1,5 @@
 import LocalizedEditorialPage, { editorialMetadata } from '@/lib/content/localized-editorial';
-const source = "/jobs/marketing-growth-strategy";
+const source = "/emplois/marketing-strategie-croissance";
 const locale = 'es' as const;
 export const metadata = editorialMetadata(source, locale);
 export default function Page({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {

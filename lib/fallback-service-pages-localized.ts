@@ -154,7 +154,7 @@ const fallbackServicePagesEs: Record<string, StrapiServiceSinglePage> = {
     heroSubtitle: "Modelo Deslizante 13 Semanas - Anticipe sus necesidades de caja",
     content: [
       // T8 (2026-06-07): enriched from ~110 → ~550 words to fix thin
-      // content and trigger indexing on /es/services/prevision-tesoreria.
+      // content and trigger indexing on /es/servicios/prevision-tesoreria.
       createParagraph("La previsión de tesorería es la herramienta financiera más crítica para cualquier PYME o startup. Un beneficio contable no paga las facturas — el efectivo sí. En Iter Advisors construimos modelos de tesorería deslizantes de 13 semanas que anticipan tensiones de caja, optimizan el capital circulante y aseguran su pista financiera (runway) durante los próximos 6 a 24 meses."),
       createParagraph("Más del 60% de las PYMEs españolas que cierran lo hacen siendo rentables sobre el papel pero sin liquidez en cuenta. Una previsión de tesorería bien construida es la diferencia entre detectar un problema con 3 meses de margen o descubrirlo el día que el banco rechaza un pago."),
       createHeading("¿Por qué una previsión de tesorería?"),

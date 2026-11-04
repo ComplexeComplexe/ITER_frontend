@@ -16,7 +16,7 @@ const breadcrumbsByLocale = {
   },
   en: {
     resourcesLabel: "Resources",
-    resourcesHref: "/en/ressources",
+    resourcesHref: "/en/resources",
     fichesLabel: "Job descriptions",
     fichesHref: "/en/fractional-cfo/role",
   },

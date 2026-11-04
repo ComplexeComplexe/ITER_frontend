@@ -31,7 +31,7 @@ const content: Record<
   },
   en: {
     resourcesLabel: "Resources",
-    resourcesHref: "/en/ressources",
+    resourcesHref: "/en/resources",
     breadcrumbLabel: "Glossary",
     h1: "Financial glossary",
     intro:

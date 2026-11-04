@@ -29,7 +29,7 @@ for (const path of paths) {
     const expected = {
       fr: { title: 'Iter Advisors : DAF &amp; DRH | Paris, Barcelone, Toulouse', headline: 'Iter Advisors, vos DAF seniors pour piloter vos finances.', contact: '/contact#daf', fees: '/daf-externalise/tarifs', offer: '/daf-externalise', fiction: 'Données fictives' },
       en: { title: 'Iter Advisors: CFO &amp; HR | Paris, Barcelona, Toulouse', headline: 'Iter Advisors, your senior CFOs to manage your finances.', contact: '/en/contact#daf', fees: '/en/fractional-cfo/pricing', offer: '/en/fractional-cfo', fiction: 'Fictional data' },
-      es: { title: 'Iter Advisors: CFO y RR. HH. | París, Barcelona, Toulouse', headline: 'Iter Advisors, sus CFO sénior para dirigir sus finanzas.', contact: '/es/contact#daf', fees: '/es/externalizacion-daf/precios', offer: '/es/externalizacion-daf', fiction: 'Datos ficticios' },
+      es: { title: 'Iter Advisors: CFO y RR. HH. | París, Barcelona, Toulouse', headline: 'Iter Advisors, sus CFO sénior para dirigir sus finanzas.', contact: '/es/contacto#daf', fees: '/es/externalizacion-daf/precios', offer: '/es/externalizacion-daf', fiction: 'Datos ficticios' },
     }[locale];
     check(html.includes(`<title>${expected.title}</title>`), 'cabinet-title');
     const hero = main.match(/data-journey="home-hero".*?<\/section>/s)?.[0] ?? '';

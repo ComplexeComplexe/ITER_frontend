@@ -161,7 +161,7 @@ export default async function Page() {
       }}
       related={[
         {
-          href: "/ressources/fiscalite/beckham-law",
+          href: "/ressources/fiscalite/loi-beckham",
           img: "/images/blog/loi-beckham-espagne-conditions-eligibilite.webp",
           alt: "Loi Beckham en Espagne : le régime des impatriés",
           title: "Loi Beckham : conditions 2026, simulation salaire par salaire et limites du régime",

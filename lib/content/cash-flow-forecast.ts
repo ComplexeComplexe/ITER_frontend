@@ -258,7 +258,7 @@ const content: Record<Locale, CashFlowForecastContent> = {
       title: "¿Necesitas ayuda construyendo tu previsión de flujo de caja?",
       description: "Iter Advisors ayuda a startups y empresas en crecimiento a modelar escenarios de flujo de caja, estrategias de recaudación y optimización del capital de trabajo.",
       buttonText: "Agendar una consulta",
-      buttonHref: "/es/contact",
+      buttonHref: "/es/contacto",
     },
   },
 };

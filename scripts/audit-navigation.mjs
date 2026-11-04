@@ -34,7 +34,7 @@ await Promise.all(Array.from({ length: 5 }, async () => {
           sectionLinks++;
           if (!ids.has(decodeURIComponent(href.slice(1)))) failures.push(`${path}: missing ${href}`);
         }
-        if (locale && /^\/(?:en\/|es\/)?contact(?:[?#]|$)/.test(href)) {
+        if (locale && /^\/(?:en\/|es\/)?contact(?:o)?(?:[?#]|$)/.test(href)) {
           contactLinks++;
           if (!href.startsWith(`/${locale}/contact`)) failures.push(`${path}: wrong contact locale ${href}`);
         }

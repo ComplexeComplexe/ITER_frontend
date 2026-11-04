@@ -93,14 +93,14 @@ const HORS_ARBITRAGE = [
   { path: /^\/(drh-externalise|services\/comptabilite-externalisation|services\/controle-de-gestion-externalise)/, sujet: /coût DAF salarié/ },
   { path: /^\/(es\/externalizacion-rrhh|en\/hr-outsourcing)/, sujet: /coût DAF salarié/ },
   // Délais de réponse du support (SLA), pas des promesses de démarrage.
-  { path: /^\/(services\/comptabilite-externalisation|es\/services\/externalizar-contabilidad|ressources\/blog\/cout-externalisation-comptable-2026)/, sujet: /délai de démarrage/ },
+  { path: /^\/(services\/comptabilite-externalisation|es\/servicios\/externalizar-contabilidad|ressources\/blog\/cout-externalisation-comptable-2026)/, sujet: /délai de démarrage/ },
   // Les articles de blog commentent le marché des TJM (comparatifs, guides de
   // coût) et la page métier donne la rémunération d'un DAF : ce ne sont pas des
   // prix Iter. Le contrôle vise les pages commerciales et les métas.
-  { path: /^\/(ressources\/blog|en\/ressources\/blog|es\/recursos\/blog|daf-externalise\/metier|en\/fractional-cfo\/(role|metier)|es\/externalizacion-daf\/(funciones|metier)|carrieres|jobs|en\/jobs|es\/jobs)/, sujet: /TJM client/ },
+  { path: /^\/(ressources\/blog|en\/resources\/blog|es\/recursos\/blog|daf-externalise\/metier|en\/fractional-cfo\/(role|metier)|es\/externalizacion-daf\/(funciones|metier)|carrieres|jobs|en\/jobs|es\/jobs)/, sujet: /TJM client/ },
   // La comptabilité externalisée a sa propre fourchette (2 000 à 8 000 €),
   // non arbitrée : ce n'est pas la grille DAF.
-  { path: /^\/(services\/comptabilite-externalisation|es\/services\/externalizar-contabilidad|en\/services\/outsource-your-accounting|ressources\/blog\/(externalisation-comptable|externaliser-comptabilite-guide|cout-externalisation-comptable-2026)|en\/ressources\/blog\/externalisation-comptable|es\/recursos\/blog\/externalisation-comptable)/, sujet: /grille tarifaire/ },
+  { path: /^\/(services\/comptabilite-externalisation|es\/servicios\/externalizar-contabilidad|en\/services\/outsource-your-accounting|ressources\/blog\/(externalisation-comptable|externaliser-comptabilite-guide|cout-externalisation-comptable-2026)|en\/resources\/blog\/externalisation-comptable|es\/recursos\/blog\/externalisation-comptable)/, sujet: /grille tarifaire/ },
   // La grille de choix d'un cabinet cite « engagement de 12 mois » comme signal
   // d'alerte chez d'autres prestataires — pas comme une condition Iter.
   { path: /^\/ressources\/blog\/choisir-cabinet-daf-externalise/, sujet: /engagement/ },
@@ -367,7 +367,7 @@ for (const abs of urls) {
 
   // Commercial FAQ regressions also occur in translations and JSON-LD.
   // Restrict this check to DAF summaries: other offers have their own terms.
-  const dafSummaryPaths = new Set(["/", "/en", "/es", "/ressources", "/en/ressources", "/es/recursos", "/fractional-cfo-startups", "/daf-externalise/temps-partage", "/en/fractional-cfo/shared-time", "/ressources/glossaire/daf"]);
+  const dafSummaryPaths = new Set(["/", "/en", "/es", "/ressources", "/en/resources", "/es/recursos", "/fractional-cfo-startups", "/daf-externalise/temps-partage", "/en/fractional-cfo/shared-time", "/ressources/glossaire/daf"]);
   if (dafSummaryPaths.has(path)) {
     const published = `${texte} ${metaDesc} ${jsonld}`.normalize("NFKC");
     for (const re of [

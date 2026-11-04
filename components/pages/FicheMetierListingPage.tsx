@@ -33,7 +33,7 @@ const content: Record<
   },
   en: {
     resourcesLabel: "Resources",
-    resourcesHref: "/en/ressources",
+    resourcesHref: "/en/resources",
     breadcrumbLabel: "Job descriptions",
     h1: "Job descriptions",
     intro:

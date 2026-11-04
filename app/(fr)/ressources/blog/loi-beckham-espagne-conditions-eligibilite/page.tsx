@@ -81,7 +81,7 @@ export default async function Page() {
       }
       relatedArticles={[
         {
-          url: "/ressources/fiscalite/beckham-law",
+          url: "/ressources/fiscalite/loi-beckham",
           category: "Fiscalité",
           title: "Guide complet de la loi Beckham en Espagne 2026",
         },
@@ -431,7 +431,7 @@ export default async function Page() {
 
       <Callout type="info">
         Pour aller plus loin sur le calcul de l&apos;économie d&apos;impôt réelle, consultez notre{' '}
-        <Link href="/ressources/fiscalite/beckham-law">
+        <Link href="/ressources/fiscalite/loi-beckham">
           guide complet de la loi Beckham
         </Link>{' '}
         qui détaille les simulations chiffrées par tranche de revenus.
@@ -544,7 +544,7 @@ export default async function Page() {
             <span>
               Consultez notre{' '}
               <Link
-                href="/ressources/fiscalite/beckham-law"
+                href="/ressources/fiscalite/loi-beckham"
                 className="text-iter-violet font-semibold underline underline-offset-2 hover:no-underline"
               >
                 guide complet de la loi Beckham

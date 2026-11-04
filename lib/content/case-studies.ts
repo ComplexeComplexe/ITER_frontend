@@ -305,7 +305,7 @@ const content: Record<Locale, CaseStudiesContent> = {
     intro:
       "SolarMente, Seasonly and Opti Digital: three finance engagements, with context, deliverables and limitations. The detailed case studies are available in French.",
     resourcesLabel: "Resources",
-    resourcesHref: "/en/ressources",
+    resourcesHref: "/en/resources",
     breadcrumbLabel: "Case studies",
     challengeLabel: "Challenge",
     solutionLabel: "Solution",

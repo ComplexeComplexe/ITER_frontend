@@ -1,3 +1,4 @@
+import { finalPublicPath } from "./url-migration";
 import type { Locale } from "./i18n";
 import paths from "./content/editorial-locales/paths.json";
 import invoiceRoutes from "./content/electronic-invoicing-routes.json";
@@ -5,7 +6,7 @@ import aliases from "./content/editorial-locales/aliases.json";
 
 /** Published routes only. The proposed translations are not navigation targets. */
 const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
-  "/ressources/outils/methodologie": { fr: "/ressources/outils/methodologie", en: "/en/ressources/tools/methodology", es: "/es/recursos/herramientas/metodologia" },
+  "/ressources/outils/methodologie": { fr: "/ressources/outils/methodologie", en: "/en/resources/tools/methodology", es: "/es/recursos/herramientas/metodologia" },
   "/": {
     "fr": "/",
     "en": "/en",
@@ -74,61 +75,61 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   "/services": {
     "fr": "/services",
     "en": "/en/services",
-    "es": "/es/services"
+    "es": "/es/servicios"
   },
   "/services/previsionnel-tresorerie": {
     "fr": "/services/previsionnel-tresorerie",
     "en": "/en/services/cash-flow-forecast",
-    "es": "/es/services/prevision-tesoreria"
+    "es": "/es/servicios/prevision-tesoreria"
   },
   "/services/gestion-financiere-externalisee": {
     "fr": "/services/gestion-financiere-externalisee",
     "en": "/en/services/financial-operations-organization",
-    "es": "/es/services/gestion-financiera-externalizada"
+    "es": "/es/servicios/gestion-financiera-externalizada"
   },
   "/services/accompagnement-levee-de-fond": {
     "fr": "/services/accompagnement-levee-de-fond",
     "en": "/en/services/fund-raising-support",
-    "es": "/es/services/soporte-financiacion"
+    "es": "/es/servicios/soporte-financiacion"
   },
   "/services/comptabilite-externalisation": {
     "fr": "/services/comptabilite-externalisation",
     "en": "/en/services/outsource-your-accounting",
-    "es": "/es/services/externalizar-contabilidad"
+    "es": "/es/servicios/externalizar-contabilidad"
   },
   "/services/controle-de-gestion-externalise": {
     "fr": "/services/controle-de-gestion-externalise",
     "en": "/en/services/outsourced-management-control",
-    "es": "/es/services/control-gestion-externalizado"
+    "es": "/es/servicios/control-gestion-externalizado"
   },
   "/services/ma-due-diligence": {
     "fr": "/services/ma-due-diligence",
     "en": "/en/services/ma-due-diligence",
-    "es": "/es/services/ma-due-diligence"
+    "es": "/es/servicios/ma-due-diligence"
   },
   "/ressources": {
     "fr": "/ressources",
-    "en": "/en/ressources",
+    "en": "/en/resources",
     "es": "/es/recursos"
   },
   "/ressources/blog": {
     "fr": "/ressources/blog",
-    "en": "/en/ressources/blog",
+    "en": "/en/resources/blog",
     "es": "/es/recursos/blog"
   },
   "/ressources/glossaire": {
     "fr": "/ressources/glossaire",
-    "en": "/en/ressources/glossaire",
+    "en": "/en/resources/glossary",
     "es": "/es/recursos/glosario"
   },
   "/ressources/cas-clients": {
     "fr": "/ressources/cas-clients",
-    "en": "/en/ressources/cas-clients",
+    "en": "/en/resources/case-studies",
     "es": "/es/recursos/casos-de-exito"
   },
   "/ressources/outils": {
     "fr": "/ressources/outils",
-    "en": "/en/ressources/tools",
+    "en": "/en/resources/tools",
     "es": "/es/recursos/herramientas"
   },
   "/ressources/fiscalite-espagne-france": {
@@ -151,10 +152,10 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
     "en": "/ressources/fiscalite/impot-revenu-espagne",
     "es": "/ressources/fiscalite/impot-revenu-espagne"
   },
-  "/ressources/fiscalite/beckham-law": {
-    "fr": "/ressources/fiscalite/beckham-law",
-    "en": "/ressources/fiscalite/beckham-law",
-    "es": "/ressources/fiscalite/beckham-law"
+  "/ressources/fiscalite/loi-beckham": {
+    "fr": "/ressources/fiscalite/loi-beckham",
+    "en": "/ressources/fiscalite/loi-beckham",
+    "es": "/ressources/fiscalite/loi-beckham"
   },
   "/ressources/fiscalite/modelo-720": {
     "fr": "/ressources/fiscalite/modelo-720",
@@ -209,7 +210,7 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   "/contact": {
     "fr": "/contact",
     "en": "/en/contact",
-    "es": "/es/contact"
+    "es": "/es/contacto"
   },
   "/mentions-legales": {
     "fr": "/mentions-legales",
@@ -258,7 +259,7 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   },
   "/ressources/blog/cout-daf-externalise-tarifs-prix-2026": {
     "fr": "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
-    "en": "/en/ressources/blog/fractional-cfo-cost-services-2026",
+    "en": "/en/resources/blog/fractional-cfo-cost-services-2026",
     "es": "/es/recursos/blog/cfo-externo-pymes-precio-2026"
   },
   "/ressources/blog/filiale-espagnole-pilotage-financier": {
@@ -283,8 +284,8 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   },
   "/ressources/blog/daf-externalise-vs-daf-salarie": {
     "fr": "/ressources/blog/daf-externalise-vs-daf-salarie",
-    "en": "/en/ressources/blog/daf-externalise-vs-daf-salarie",
-    "es": "/es/recursos/blog/daf-externalise-vs-daf-salarie"
+    "en": "/en/resources/blog/fractional-cfo-vs-in-house-cfo",
+    "es": "/es/recursos/blog/cfo-externo-vs-cfo-en-plantilla"
   },
   "/ressources/blog/daf-externalise-vs-expert-comptable": {
     "fr": "/ressources/blog/daf-externalise-vs-expert-comptable",
@@ -293,13 +294,13 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   },
   "/ressources/blog/externalisation-comptable": {
     "fr": "/ressources/blog/externalisation-comptable",
-    "en": "/en/ressources/blog/externalisation-comptable",
-    "es": "/es/recursos/blog/externalisation-comptable"
+    "en": "/en/resources/blog/outsourced-accounting",
+    "es": "/es/recursos/blog/externalizacion-contable"
   },
   "/ressources/blog/flux-de-tresorerie": {
     "fr": "/ressources/blog/flux-de-tresorerie",
-    "en": "/en/ressources/blog/flux-de-tresorerie",
-    "es": "/es/recursos/blog/flux-de-tresorerie"
+    "en": "/en/resources/blog/cash-flow-statement",
+    "es": "/es/recursos/blog/flujo-de-caja"
   },
   "/ressources/blog/la-modernisation-du-role-de-cfo": {
     "fr": "/ressources/blog/la-modernisation-du-role-de-cfo",
@@ -516,20 +517,20 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
     "en": "/carrieres/fractional-cfo",
     "es": "/carrieres/fractional-cfo"
   },
-  "/jobs/finance-analyst-junior-fr": {
-    "fr": "/jobs/finance-analyst-junior-fr",
-    "en": "/jobs/finance-analyst-junior-fr",
-    "es": "/jobs/finance-analyst-junior-fr"
+  "/emplois/analyste-financier-junior": {
+    "fr": "/emplois/analyste-financier-junior",
+    "en": "/emplois/analyste-financier-junior",
+    "es": "/emplois/analyste-financier-junior"
   },
-  "/jobs/marketing-growth-strategy": {
-    "fr": "/jobs/marketing-growth-strategy",
-    "en": "/jobs/marketing-growth-strategy",
-    "es": "/jobs/marketing-growth-strategy"
+  "/emplois/marketing-strategie-croissance": {
+    "fr": "/emplois/marketing-strategie-croissance",
+    "en": "/emplois/marketing-strategie-croissance",
+    "es": "/emplois/marketing-strategie-croissance"
   },
-  "/jobs/senior-finance-manager": {
-    "fr": "/jobs/senior-finance-manager",
-    "en": "/jobs/senior-finance-manager",
-    "es": "/jobs/senior-finance-manager"
+  "/emplois/responsable-financier-senior": {
+    "fr": "/emplois/responsable-financier-senior",
+    "en": "/emplois/responsable-financier-senior",
+    "es": "/emplois/responsable-financier-senior"
   },
   "/ressources/outils/malibou": {
     "fr": "/ressources/outils/malibou",
@@ -543,7 +544,7 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   },
   "/ressources/glossaire/besoin-fonds-roulement-bfr": {
     "fr": "/ressources/glossaire/besoin-fonds-roulement-bfr",
-    "en": "/en/ressources/glossaire/bfr",
+    "en": "/en/resources/glossary/working-capital-requirement",
     "es": "/ressources/glossaire/besoin-fonds-roulement-bfr"
   },
   "/ressources/glossaire/bspce-bsa": {
@@ -563,7 +564,7 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   },
   "/ressources/glossaire/cfo": {
     "fr": "/ressources/glossaire/cfo",
-    "en": "/en/ressources/glossaire/cfo",
+    "en": "/en/resources/glossary/cfo",
     "es": "/ressources/glossaire/cfo"
   },
   "/ressources/glossaire/churn-rate": {
@@ -583,7 +584,7 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   },
   "/ressources/glossaire/ebitda": {
     "fr": "/ressources/glossaire/ebitda",
-    "en": "/en/ressources/glossaire/ebitda",
+    "en": "/en/resources/glossary/ebitda",
     "es": "/ressources/glossaire/ebitda"
   },
   "/ressources/glossaire/fractional-cfo": {
@@ -678,18 +679,18 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
   },
   "/ressources/cas-clients/solarmente-serie-b-cleantech": {
     "fr": "/ressources/cas-clients/solarmente-serie-b-cleantech",
-    "en": "/en/ressources/cas-clients/solarmente-serie-b-cleantech",
+    "en": "/en/resources/case-studies/solarmente-serie-b-cleantech",
     "es": "/es/recursos/casos-de-exito/solarmente-serie-b-cleantech"
   },
   "/ressources/cas-clients/seasonly-marge-par-canal-bfr": {
     "fr": "/ressources/cas-clients/seasonly-marge-par-canal-bfr",
-    "en": "/en/ressources/cas-clients/seasonly-marge-par-canal-bfr",
-    "es": "/es/recursos/casos-de-exito/seasonly-marge-par-canal-bfr"
+    "en": "/en/resources/case-studies/seasonly-channel-margin-working-capital",
+    "es": "/es/recursos/casos-de-exito/seasonly-margen-por-canal-capital-circulante"
   },
   "/ressources/cas-clients/opti-digital-structuration-financement": {
     "fr": "/ressources/cas-clients/opti-digital-structuration-financement",
-    "en": "/en/ressources/cas-clients/opti-digital-structuration-financement",
-    "es": "/es/recursos/casos-de-exito/opti-digital-structuration-financement"
+    "en": "/en/resources/case-studies/opti-digital-financing-structure",
+    "es": "/es/recursos/casos-de-exito/opti-digital-estructuracion-financiacion"
   },
   "/politique-cookies": {
     "fr": "/politique-cookies",
@@ -746,7 +747,7 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
 export const LOCALE_ROUTES: Record<string, Record<Locale, string>> = { ...LEGACY_LOCALE_ROUTES, ...Object.fromEntries(Object.values(invoiceRoutes).map(routes => [routes.fr, routes])), ...paths };
 
 export function publishedPaths(path: string): Record<Locale, string> | undefined {
-  const original = path.replace(/[?#].*$/, '').replace(/\/$/, '') || '/';
+  const original = finalPublicPath(path).replace(/[?#].*$/, '').replace(/\/$/, '') || '/';
   const direct = LOCALE_ROUTES[original] ?? Object.values(LOCALE_ROUTES).find(paths => Object.values(paths).includes(original));
   if (direct && direct.en.startsWith('/en') && direct.es.startsWith('/es')) return direct;
   const base = (aliases as Record<string, string>)[original] ?? original;
@@ -762,6 +763,6 @@ export function parityHref(source: string, locale: Locale): string {
   const [, base, suffix = ''] = input.match(/^([^?#]+)([\s\S]*)$/) ?? [];
   if (!base) return source;
   const routes = publishedPaths(base);
-  if (!routes) return source;
+  if (!routes) return finalPublicPath(source);
   return (absolute ? origin : '') + routes[locale] + suffix;
 }

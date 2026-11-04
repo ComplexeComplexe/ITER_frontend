@@ -1,3 +1,4 @@
+import { finalPublicPath } from "./url-migration";
 import { LOCALE_ROUTES, publishedPaths, parityHref } from "./locale-route-map";
 /**
  * Path localization for the language switcher.
@@ -181,19 +182,19 @@ const RESOURCES_TOOLS_ALIASES = new Set(["outils", "tools", "herramientas"]);
  */
 const RESOURCES_BASE: Record<Locale, string> = {
   fr: "ressources",
-  en: "ressources",
+  en: "resources",
   es: "recursos",
 };
 
 const GLOSSARY_PATH: Record<Locale, string> = {
   fr: "glossaire",
-  en: "glossaire",
+  en: "glossary",
   es: "glosario",
 };
 
 const CASE_STUDIES_PATH: Record<Locale, string> = {
   fr: "cas-clients",
-  en: "cas-clients",
+  en: "case-studies",
   es: "casos-de-exito",
 };
 
@@ -201,7 +202,7 @@ const CASE_STUDIES_PATH: Record<Locale, string> = {
 export function resourcesHref(locale: Locale, sub?: string): string {
   const prefix = locale === "fr" ? "" : `/${locale}`;
   const base = `${prefix}/${RESOURCES_BASE[locale]}`;
-  return sub ? `${base}/${sub}` : base;
+  return finalPublicPath(sub ? `${base}/${sub}` : base);
 }
 
 /** URL d'un article de blog dans la locale donnée. */
@@ -342,7 +343,7 @@ export function toolsHref(locale: Locale, sub?: string): string {
  */
 export function serviceHref(canonical: ServicePageSlug, locale: Locale): string {
   const prefix = locale === "fr" ? "" : `/${locale}`;
-  return `${prefix}/services/${SERVICE_URL_SLUG_BY_LOCALE[locale][canonical]}`;
+  return finalPublicPath(`${prefix}/services/${SERVICE_URL_SLUG_BY_LOCALE[locale][canonical]}`);
 }
 
 /** URL d'une page du cluster DRH, par locale. */
@@ -364,7 +365,7 @@ function getPathWithoutLocale(pathname: string): { locale: Locale; path: string 
  * Returns the equivalent path in the target locale when switching languages.
  * Falls back to home if the route cannot be mapped.
  */
-export function getLocalizedPath(pathname: string, targetLocale: Locale): string {
+function rawLocalizedPath(pathname: string, targetLocale: Locale): string {
   if (publishedPaths(pathname)) return parityHref(pathname, targetLocale);
   for (const id of ALIGNED_PAGE_IDS) {
     const paths = alignedPaths(id)!;
@@ -458,7 +459,7 @@ export function getLocalizedPath(pathname: string, targetLocale: Locale): string
   }
 
   // Services
-  if (segs[0] === "services") {
+  if ((segs[0] === "services" || segs[0] === "servicios")) {
     if (segs.length === 1) return `${prefix}/services`;
     const urlSlug = segs[1];
     const canonical = getCanonicalServiceSlug(currentLocale, urlSlug);
@@ -471,7 +472,7 @@ export function getLocalizedPath(pathname: string, targetLocale: Locale): string
 
   // Resources (ressources) — structure: /ressources, /ressources/blog, /ressources/blog/[slug], etc.
   // Also handle /recursos (ES canonical) since middleware redirects /es/ressources/* → /es/recursos/*.
-  if (segs[0] === "ressources" || segs[0] === "recursos") {
+  if (segs[0] === "ressources" || segs[0] === "resources" || segs[0] === "recursos") {
     if (segs.length === 1) return resourcesHref(targetLocale);
 
     // Tools hub: outils ↔ tools ↔ herramientas (+ sub-categories share the same slugs)
@@ -513,4 +514,8 @@ export function getLocalizedPath(pathname: string, targetLocale: Locale): string
   // redirects that resolve mismatches), so this is safer than dropping the
   // user on the locale home page.
   return `${prefix}/${segs.join("/")}`;
+}
+
+export function getLocalizedPath(path: string, locale: Locale): string {
+  return finalPublicPath(rawLocalizedPath(path, locale));
 }

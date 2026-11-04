@@ -38,7 +38,7 @@ const COPY = {
     home: "Back to the homepage",
     services: "Our services",
     resources: "Resources",
-    hrefs: { home: "/en", services: "/en/services", resources: "/en/ressources" },
+    hrefs: { home: "/en", services: "/en/services", resources: "/en/resources" },
   },
   es: {
     code: "Error 404",
@@ -47,7 +47,7 @@ const COPY = {
     home: "Volver al inicio",
     services: "Nuestros servicios",
     resources: "Recursos",
-    hrefs: { home: "/es", services: "/es/services", resources: "/es/recursos" },
+    hrefs: { home: "/es", services: "/es/servicios", resources: "/es/recursos" },
   },
 } as const;
 

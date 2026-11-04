@@ -1046,7 +1046,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <span class="callout-cfo__author">Benjamin Ziza — Associé fondateur, Iter Advisors</span>
 </div>
 <h2 id="section-3-loi-beckham">La loi Beckham : régime des expatriés</h2>
-<p><a href="/ressources/fiscalite/beckham-law">La loi Beckham</a> (article 93 de la LIRPF) constitue l'outil fiscal le plus puissant pour les expatriés s'installant en Espagne. Ce régime permet d'être imposé comme non-résident pendant les 6 premières années, avec des taux très avantageux.</p>
+<p><a href="/ressources/fiscalite/loi-beckham">La loi Beckham</a> (article 93 de la LIRPF) constitue l'outil fiscal le plus puissant pour les expatriés s'installant en Espagne. Ce régime permet d'être imposé comme non-résident pendant les 6 premières années, avec des taux très avantageux.</p>
 <h3>Conditions d'éligibilité</h3>
 <ul>
 <li>Ne pas avoir été résident fiscal en Espagne au cours des 5 années précédant le déménagement</li>
@@ -1280,7 +1280,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <p>Le taux final que vous paierez dépendra de votre région de résidence. Par exemple, la Communauté de Madrid applique généralement des taux autonomes plus bas que la moyenne nationale, tandis que la Catalogne ou la Communauté Valencienne appliquent des taux marginaux supérieurs (pouvant dépasser les 50% pour les très hauts revenus).</p>
 <p>Il est également crucial de prendre en compte les déductions personnelles et familiales (minimum personnel de 5 550 € pour un contribuable célibataire de moins de 65 ans) avant d'appliquer le barème.</p>
 <p><em>Note : Les revenus de l'épargne (dividendes, plus-values) sont soumis à un barème distinct, allant de 19% (jusqu'à 6 000 €) à 28% (au-delà de 300 000 €).</em></p>
-<p>Pour les dirigeants et cadres qui s'installent en Espagne, <a href="/ressources/fiscalite/beckham-law">le régime Beckham</a> permet d'échapper à ce barème progressif : un taux forfaitaire de 24 % sur les revenus de source espagnole jusqu'à 600 000 €, sous conditions d'éligibilité. Notre équipe de <a href="/daf-externalise-barcelone">DAF externalisés à Barcelone</a> accompagne régulièrement ce type d'arbitrage.</p>`,
+<p>Pour les dirigeants et cadres qui s'installent en Espagne, <a href="/ressources/fiscalite/loi-beckham">le régime Beckham</a> permet d'échapper à ce barème progressif : un taux forfaitaire de 24 % sur les revenus de source espagnole jusqu'à 600 000 €, sous conditions d'éligibilité. Notre équipe de <a href="/daf-externalise-barcelone">DAF externalisés à Barcelone</a> accompagne régulièrement ce type d'arbitrage.</p>`,
       content: [],
     },
 
@@ -1332,7 +1332,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 
     // B-01 (2026-08-02) — entrée supprimée. Elle alimentait À LA FOIS
     // /ressources/blog/loi-beckham-espagne-conditions-2026 ET la page
-    // pilier /ressources/fiscalite/beckham-law (via SOURCE_SLUG) : un seul
+    // pilier /ressources/fiscalite/loi-beckham (via SOURCE_SLUG) : un seul
     // contenu servi à deux URLs, avec title et H1 identiques, donc
     // cannibalisation sur "loi beckham espagne". La page pilier porte
     // désormais son propre contenu et l'URL blog part en 301 vers
@@ -1392,7 +1392,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <h2>Le Modelo 720 : obligation déclarative en Espagne</h2>
 <p>Si vous résidez en Espagne et détenez des biens ou comptes bancaires en France d'une valeur supérieure à <strong>50 000 €</strong>, vous êtes tenu de les déclarer via le <a href="/ressources/fiscalite/modelo-720">Modelo 720</a>. Cette déclaration informative (non imposable en elle-même) recense vos comptes bancaires, valeurs mobilières et biens immobiliers détenus à l'étranger. Le non-respect de cette obligation entraînait historiquement des amendes très élevées — la CJUE les a jugées disproportionnées en 2022, mais l'obligation déclarative reste en vigueur.</p>
 <h2>Le régime Beckham : une alternative fiscale pour les impatriés</h2>
-<p>Pour les personnes qui s'installent en Espagne après avoir résidé à l'étranger pendant au moins 5 ans, le <a href="/ressources/fiscalite/beckham-law">régime des impatriés (loi Beckham)</a> constitue une alternative radicalement différente à la convention classique. Plutôt que d'appliquer le barème progressif de l'IRPF (qui monte jusqu'à <strong>47 %</strong>), le régime Beckham plafonne l'imposition à un taux forfaitaire de <strong>24 % sur les revenus de source espagnole jusqu'à 600 000 €</strong>, pendant 6 ans.</p>
+<p>Pour les personnes qui s'installent en Espagne après avoir résidé à l'étranger pendant au moins 5 ans, le <a href="/ressources/fiscalite/loi-beckham">régime des impatriés (loi Beckham)</a> constitue une alternative radicalement différente à la convention classique. Plutôt que d'appliquer le barème progressif de l'IRPF (qui monte jusqu'à <strong>47 %</strong>), le régime Beckham plafonne l'imposition à un taux forfaitaire de <strong>24 % sur les revenus de source espagnole jusqu'à 600 000 €</strong>, pendant 6 ans.</p>
 <p>Ce régime est totalement distinct de la convention de double imposition franco-espagnole : les revenus de source française restent imposables en France, les revenus de source espagnole sont taxés à 24 % sous Beckham. L'articulation des deux mécanismes — convention + Beckham — peut générer une optimisation significative pour les dirigeants et cadres s'installant à Barcelone ou Madrid.</p>
 <h2>Note pratique sur les formulaires</h2>
 <p>Côté français, pour déclarer des revenus de source étrangère tout en évitant la double imposition, il faut utiliser le formulaire <strong>2047</strong> en complément de la déclaration classique 2042. Côté espagnol, la déclaration annuelle de l'IRPF (formulaire 100) prend en compte les crédits d'impôt de la convention. Si vous gérez une activité transfrontalière depuis Barcelone ou San Sebastián, notre équipe de <a href="/daf-externalise-barcelone">DAF externalisés à Barcelone</a> accompagne régulièrement des dirigeants dans la structuration de ce type de situation.</p>
@@ -1647,9 +1647,9 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       breadcrumbs: {
         resourcesLabel: "Resources",
-        resourcesHref: "/en/ressources",
+        resourcesHref: "/en/resources",
         blogLabel: "Blog",
-        blogHref: "/en/ressources/blog",
+        blogHref: "/en/resources/blog",
       },
       h1: "Essential financial tech tools",
       content: [
@@ -1667,9 +1667,9 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       breadcrumbs: {
         resourcesLabel: "Resources",
-        resourcesHref: "/en/ressources",
+        resourcesHref: "/en/resources",
         blogLabel: "Blog",
-        blogHref: "/en/ressources/blog",
+        blogHref: "/en/resources/blog",
       },
       h1: "AI and automation of repetitive tasks in the Finance department",
       content: [
@@ -1687,9 +1687,9 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       breadcrumbs: {
         resourcesLabel: "Resources",
-        resourcesHref: "/en/ressources",
+        resourcesHref: "/en/resources",
         blogLabel: "Blog",
-        blogHref: "/en/ressources/blog",
+        blogHref: "/en/resources/blog",
       },
       h1: "Organizing your finance department",
       content: [
@@ -1708,9 +1708,9 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       breadcrumbs: {
         resourcesLabel: "Resources",
-        resourcesHref: "/en/ressources",
+        resourcesHref: "/en/resources",
         blogLabel: "Blog",
-        blogHref: "/en/ressources/blog",
+        blogHref: "/en/resources/blog",
       },
       h1: "Cash Flow Management: Definition & Best Practices for SMEs",
       publishedDate: "2026-05-10",
@@ -1761,9 +1761,9 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       breadcrumbs: {
         resourcesLabel: "Resources",
-        resourcesHref: "/en/ressources",
+        resourcesHref: "/en/resources",
         blogLabel: "Blog",
-        blogHref: "/en/ressources/blog",
+        blogHref: "/en/resources/blog",
       },
       h1: "Fractional CFO Cost in 2026: Day Rates, Packages and ROI",
       publishedDate: "2026-05-12",
@@ -1784,7 +1784,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 </table>
 <h2 id="vs-salary">Fractional vs full-time CFO</h2>
 <p>A salaried CFO in France costs €100,000-€213,000/year all-in (gross salary 80–150k + 25-42% employer contributions + bonus + benefits). A Fractional CFO costs €24,000-€96,000/year — <strong>50-70% less</strong>, with no recruitment risk, no notice period, and the freedom to flex hours up or down with growth phases.</p>
-<p>Read more on the head-to-head: <a href="/en/ressources/blog/daf-externalise-vs-daf-salarie">Fractional CFO vs in-house CFO</a>.</p>
+<p>Read more on the head-to-head: <a href="/en/resources/blog/fractional-cfo-vs-in-house-cfo">Fractional CFO vs in-house CFO</a>.</p>
 <h2 id="roi">ROI: the part nobody talks about</h2>
 <p>The salary saving is only half the story. The real ROI lives in three areas:</p>
 <ol>
@@ -1803,9 +1803,9 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       breadcrumbs: {
         resourcesLabel: "Resources",
-        resourcesHref: "/en/ressources",
+        resourcesHref: "/en/resources",
         blogLabel: "Blog",
-        blogHref: "/en/ressources/blog",
+        blogHref: "/en/resources/blog",
       },
       h1: "Fractional CFO vs In-House CFO: Which Model Wins in 2026?",
       updatedDate: "2026-10-09",
@@ -1822,9 +1822,9 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       breadcrumbs: {
         resourcesLabel: "Resources",
-        resourcesHref: "/en/ressources",
+        resourcesHref: "/en/resources",
         blogLabel: "Blog",
-        blogHref: "/en/ressources/blog",
+        blogHref: "/en/resources/blog",
       },
       h1: "Accounting Outsourcing: The Complete Guide for SME and Startup Founders",
       updatedDate: "2026-09-13",
@@ -2038,9 +2038,9 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       breadcrumbs: {
         resourcesLabel: "Resources",
-        resourcesHref: "/en/ressources",
+        resourcesHref: "/en/resources",
         blogLabel: "Blog",
-        blogHref: "/en/ressources/blog",
+        blogHref: "/en/resources/blog",
       },
       h1: "The modernization of the CFO role",
       content: [
@@ -2059,9 +2059,9 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       },
       breadcrumbs: {
         resourcesLabel: "Resources",
-        resourcesHref: "/en/ressources",
+        resourcesHref: "/en/resources",
         blogLabel: "Blog",
-        blogHref: "/en/ressources/blog",
+        blogHref: "/en/resources/blog",
       },
       h1: "Fractional CFO: cost, scope and when to hire one",
       publishedDate: "2026-07-24",
@@ -2193,7 +2193,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <p><strong>¿Cuánto cuesta un fractional CFO ?</strong> Las fórmulas de Iter Advisors van de ${getDafOffer("es").price}. ${getDafOffer("es").billing}</p>
 <p><strong>¿Qué diferencia hay entre fractional CFO y part-time CFO ?</strong> Son sinónimos. «Fractional» es el término anglosajón estándar; en España también se utiliza «CFO a tiempo compartido».</p>
 <p><strong>¿Un fractional CFO puede asesorar una ronda de financiación ?</strong> Sí, es uno de sus encargos principales. Nuestros fractional CFOs en Iter Advisors han asesorado más de 100 M€ de levantamientos de capital.</p>
-<p><strong>¿Listo para contratar un fractional CFO ?</strong> Descubra nuestro servicio de <a href="/es/externalizacion-daf">CFO Externalizado</a> o <a href="/es/contact">cuéntenos sus necesidades</a>.</p>`,
+<p><strong>¿Listo para contratar un fractional CFO ?</strong> Descubra nuestro servicio de <a href="/es/externalizacion-daf">CFO Externalizado</a> o <a href="/es/contacto">cuéntenos sus necesidades</a>.</p>`,
       content: [],
     },
     // ─── FINAL-04: top 4 FR articles translated to ES ─────────────────
@@ -2220,7 +2220,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li><strong>Cash flow de inversión</strong> — capex, adquisiciones y enajenaciones de activos. Suele ser negativo en una empresa en crecimiento.</li>
 <li><strong>Cash flow de financiación</strong> — préstamos bancarios, rondas de capital, reembolsos de deuda, dividendos pagados.</li>
 </ul>
-<p>Una empresa rentable puede quebrar si el cash flow operativo se mantiene negativo demasiado tiempo — por eso una <a href="/es/services/prevision-tesoreria">previsión de tesorería</a> es innegociable más allá de cierta etapa.</p>
+<p>Una empresa rentable puede quebrar si el cash flow operativo se mantiene negativo demasiado tiempo — por eso una <a href="/es/servicios/prevision-tesoreria">previsión de tesorería</a> es innegociable más allá de cierta etapa.</p>
 <h2 id="ccc">Ciclo de conversión de caja: la métrica clave</h2>
 <p>El <strong>Cash Conversion Cycle (CCC)</strong> mide el número de días entre pagar a proveedores y cobrar de clientes. Cuanto más corto, mejor.</p>
 <p><strong>Ejemplo:</strong> Una pyme de servicios que factura a clientes a 30 días y paga a proveedores a 60 días tiene un CCC de <em>menos</em> 30 días — cobra antes de deber nada. El caso contrario (facturar a 60, pagar a 30) significa que tiene que financiar 30 días de actividad de su propio bolsillo.</p>
@@ -2247,7 +2247,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 </ul>
 <p>Invertir 500-1.000 €/mes en este stack se amortiza en un trimestre gracias a los errores evitados y al tiempo recuperado del CFO.</p>
 <h2 id="cta">¿Necesita un CFO para implementarlo?</h2>
-<p>Si la gestión de caja se siente como conjeturas, no está solo. La mayoría de las pymes en crecimiento chocan con este muro alrededor de 1-3 M€ de facturación. Nuestros <a href="/es/externalizacion-daf">CFO externalizados</a> pueden desplegar previsiones, dashboards y herramientas en 4-6 semanas — sin el coste de un fichaje a tiempo completo. <a href="/es/contact">Reserve un diagnóstico gratuito de 30 minutos</a>.</p>`,
+<p>Si la gestión de caja se siente como conjeturas, no está solo. La mayoría de las pymes en crecimiento chocan con este muro alrededor de 1-3 M€ de facturación. Nuestros <a href="/es/externalizacion-daf">CFO externalizados</a> pueden desplegar previsiones, dashboards y herramientas en 4-6 semanas — sin el coste de un fichaje a tiempo completo. <a href="/es/contacto">Reserve un diagnóstico gratuito de 30 minutos</a>.</p>`,
       content: [],
     },
     "cout-daf-externalise-tarifs-prix-2026": {
@@ -2280,7 +2280,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 </table>
 <h2 id="vs-salary">CFO externalizado vs CFO interno</h2>
 <p>Un CFO asalariado en Francia / España cuesta 100.000-213.000 €/año con todo incluido (salario bruto 80-150k + 25-42% cargas patronales + bonus + beneficios). Un CFO externalizado cuesta 24.000-96.000 €/año — <strong>50-70% menos</strong>, sin riesgo de reclutamiento, sin preaviso, y con la libertad de modular las horas según las fases de crecimiento.</p>
-<p>Más detalles: <a href="/es/recursos/blog/daf-externalise-vs-daf-salarie">CFO externalizado vs CFO interno</a>.</p>
+<p>Más detalles: <a href="/es/recursos/blog/cfo-externo-vs-cfo-en-plantilla">CFO externalizado vs CFO interno</a>.</p>
 <h2 id="roi">ROI: la parte de la que nadie habla</h2>
 <p>El ahorro en salario es solo la mitad de la historia. El verdadero ROI vive en tres áreas:</p>
 <ol>
@@ -2289,7 +2289,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <li><strong>Calidad de decisión.</strong> Una previsión semanal de caja y un board pack mensual fuerzan disciplina. Las malas decisiones se detectan pronto; las buenas se refuerzan.</li>
 </ol>
 <h2 id="cta">¿Listo para comparar?</h2>
-<p>Cada encargo en Iter Advisors comienza con un diagnóstico gratuito de 30 minutos — revisamos sus números, dimensionamos el paquete adecuado y confirmamos si un CFO externalizado realmente encaja con su etapa. <a href="/es/contact">Reserve un slot</a>.</p>`,
+<p>Cada encargo en Iter Advisors comienza con un diagnóstico gratuito de 30 minutos — revisamos sus números, dimensionamos el paquete adecuado y confirmamos si un CFO externalizado realmente encaja con su etapa. <a href="/es/contacto">Reserve un slot</a>.</p>`,
       content: [],
     },
     "daf-externalise-vs-daf-salarie": {
@@ -2453,7 +2453,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <ul>
 <li>✅ <strong>Tiene entre 5 y 100 empleados</strong>: el tamaño crítico donde la externalización resulta rentable</li>
 <li>✅ <strong>Tiene más de 50 transacciones contables al mes</strong>: más allá, hacerlo uno mismo consume demasiado tiempo</li>
-<li>✅ <strong>Su tesorería se complica</strong>: varias cuentas bancarias, transferencias regulares, necesidad de una <a href="/es/services/prevision-tesoreria">previsión de tesorería</a></li>
+<li>✅ <strong>Su tesorería se complica</strong>: varias cuentas bancarias, transferencias regulares, necesidad de una <a href="/es/servicios/prevision-tesoreria">previsión de tesorería</a></li>
 <li>✅ <strong>Tiene empleados</strong>: las nóminas se convierten en una obligación compleja</li>
 <li>✅ <strong>Prepara una captación de fondos</strong>: un expediente contable limpio es un activo mayor</li>
 <li>✅ <strong>No le gusta hacer la contabilidad</strong>: es la señal más fuerte. La contabilidad debe ser una herramienta, no una carga.</li>
@@ -2467,7 +2467,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 </ul>
 <hr>
 <h2 id="externalizacion-contable-vs-cfo-externalizado-cual-es-la-diferencia">Externalización contable vs CFO externalizado: ¿cuál es la diferencia?</h2>
-<p>Muchos directivos confunden la externalización de la teneduría contable (gabinete contable) y la externalización de la <a href="/es/services/gestion-financiera-externalizada">dirección financiera</a> (<a href="/es/externalizacion-daf">nuestro gabinete de consultoría financiera</a>). Son dos servicios complementarios, no sinónimos.</p>
+<p>Muchos directivos confunden la externalización de la teneduría contable (gabinete contable) y la externalización de la <a href="/es/servicios/gestion-financiera-externalizada">dirección financiera</a> (<a href="/es/externalizacion-daf">nuestro gabinete de consultoría financiera</a>). Son dos servicios complementarios, no sinónimos.</p>
 <table>
 <thead>
 <tr>
@@ -2504,7 +2504,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 </tr>
 </tbody>
 </table>
-<p><strong>En la práctica:</strong> La mayoría de startups y pymes empiezan por externalizar la contabilidad (gabinete contable), luego añaden un <a href="/es/services/gestion-financiera-externalizada">servicio de dirección financiera externalizada</a> cuando entran en una fase de crecimiento rápido o de captación de fondos.</p>
+<p><strong>En la práctica:</strong> La mayoría de startups y pymes empiezan por externalizar la contabilidad (gabinete contable), luego añaden un <a href="/es/servicios/gestion-financiera-externalizada">servicio de dirección financiera externalizada</a> cuando entran en una fase de crecimiento rápido o de captación de fondos.</p>
 <p>Idealmente, estos dos servicios trabajan juntos: el CFO da la estrategia, el gabinete contable asegura la calidad de las cuentas.</p>
 <hr>
 <h2 id="conclusion-la-externalizacion-contable-no-es-un-lujo-es-una-necesidad">Conclusión: La externalización contable no es un lujo, es una necesidad</h2>
@@ -2518,7 +2518,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 </ul>
 <p>Si dirige una pyme o una startup de 5 a 50 empleados, la externalización contable ya no debería ser una pregunta. Debería ser una práctica estándar, igual que probablemente ha externalizado su infraestructura IT (cloud en lugar de servidores on-prem).</p>
 <p>La verdadera pregunta no es "¿debo externalizar?", sino "¿cómo elegir al partner adecuado?". Este artículo le da todos los criterios de selección. Ahora, depende de usted actuar.</p>
-<p>Descubra nuestro <a href="/es/services/externalizar-contabilidad">servicio de externalización contable</a> o <a href="/es/contact">reserve un diagnóstico gratuito de 30 minutos</a> con uno de nuestros asesores senior.</p>`,
+<p>Descubra nuestro <a href="/es/servicios/externalizar-contabilidad">servicio de externalización contable</a> o <a href="/es/contacto">reserve un diagnóstico gratuito de 30 minutos</a> con uno de nuestros asesores senior.</p>`,
       content: [],
     },
     // T7 (2026-06-07): ES translation of la-modernisation-du-role-de-cfo

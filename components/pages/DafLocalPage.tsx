@@ -266,7 +266,7 @@ export default function DafLocalPage({
             {[
               // SEO-ULT \u00a74b (2026-08-15) \u2014 ces cinq href \u00e9taient compos\u00e9s \u00e0 la
               // main en pr\u00e9fixant le slug anglais par la locale. En espagnol,
-              // /es/services/fund-raising-support & co n'existent pas : les
+              // /es/servicios/fund-raising-support & co n'existent pas : les
               // trois pages villes ES partaient en 308, et les trois pages EN
               // faisaient de m\u00eame sur le lien DAF \u00e0 temps partag\u00e9.
               { title: locale === "fr" ? "Lev\u00e9e de fonds" : locale === "en" ? "Fund-raising" : "Captación de financiación", href: serviceHref("accompagnement-levee-de-fond", locale), icon: Rocket },

@@ -1,3 +1,4 @@
+import { finalPublicPath } from "./lib/url-migration";
 import { publishedPaths } from "./lib/locale-route-map";
 import { gscRedirectDestination, removedEditorialPaths } from "./lib/gsc-redirects";
 import { NextResponse } from "next/server";
@@ -290,7 +291,7 @@ export function proxy(request: NextRequest) {
   const correctedTarget = gscRedirectDestination(normalizedPath);
   if (correctedTarget) {
     const url = request.nextUrl.clone();
-    url.pathname = correctedTarget;
+    url.pathname = finalPublicPath(correctedTarget);
     return NextResponse.redirect(url, 301);
   }
 
@@ -299,7 +300,7 @@ export function proxy(request: NextRequest) {
   if (frPrefixMatch) {
     const rest = frPrefixMatch[1] || "/";
     const url = request.nextUrl.clone();
-    url.pathname = rest;
+    url.pathname = finalPublicPath(rest);
     return NextResponse.redirect(url, 301);
   }
 
@@ -321,7 +322,7 @@ export function proxy(request: NextRequest) {
     const firstLocale = doubleLocaleMatch[1];
     const rest = doubleLocaleMatch[3] || "";
     const url = request.nextUrl.clone();
-    url.pathname = `/${firstLocale}${rest}`;
+    url.pathname = finalPublicPath(`/${firstLocale}${rest}`);
     return NextResponse.redirect(url, 301);
   }
 
@@ -329,7 +330,7 @@ export function proxy(request: NextRequest) {
   const target = SLUG_REDIRECTS[pathname];
   if (target && target !== pathname) {
     const url = request.nextUrl.clone();
-    url.pathname = target;
+    url.pathname = finalPublicPath(target);
     return NextResponse.redirect(url, 301);
   }
 
@@ -343,7 +344,7 @@ export function proxy(request: NextRequest) {
     // Orphaned fiche-metier slugs -> redirect to listing
     if (ORPHAN_FICHE_METIER_SLUGS.includes(slug)) {
       const url = request.nextUrl.clone();
-      url.pathname = basePath;
+      url.pathname = finalPublicPath(basePath);
       return NextResponse.redirect(url, 301);
     }
 
@@ -354,7 +355,7 @@ export function proxy(request: NextRequest) {
       const correctSlug = frFromEn || frFromEs;
       if (correctSlug && correctSlug !== slug) {
         const url = request.nextUrl.clone();
-        url.pathname = `${basePath}/${correctSlug}`;
+        url.pathname = finalPublicPath(`${basePath}/${correctSlug}`);
         return NextResponse.redirect(url, 301);
       }
     } else if (locale === "en") {
@@ -362,7 +363,7 @@ export function proxy(request: NextRequest) {
       const enSlug = FR_TO_EN_FICHE[slug];
       if (enSlug && enSlug !== slug) {
         const url = request.nextUrl.clone();
-        url.pathname = `${basePath}/${enSlug}`;
+        url.pathname = finalPublicPath(`${basePath}/${enSlug}`);
         return NextResponse.redirect(url, 301);
       }
       // On EN: if slug is ES, redirect to EN slug
@@ -371,7 +372,7 @@ export function proxy(request: NextRequest) {
         const enFromFr = FR_TO_EN_FICHE[frFromEs];
         if (enFromFr && enFromFr !== slug) {
           const url = request.nextUrl.clone();
-          url.pathname = `${basePath}/${enFromFr}`;
+          url.pathname = finalPublicPath(`${basePath}/${enFromFr}`);
           return NextResponse.redirect(url, 301);
         }
       }
@@ -380,7 +381,7 @@ export function proxy(request: NextRequest) {
       const esSlug = FR_TO_ES_FICHE[slug];
       if (esSlug && esSlug !== slug) {
         const url = request.nextUrl.clone();
-        url.pathname = `${basePath}/${esSlug}`;
+        url.pathname = finalPublicPath(`${basePath}/${esSlug}`);
         return NextResponse.redirect(url, 301);
       }
       // On ES: if slug is EN, redirect to ES slug
@@ -389,7 +390,7 @@ export function proxy(request: NextRequest) {
         const esFromFr = FR_TO_ES_FICHE[frFromEn];
         if (esFromFr && esFromFr !== slug) {
           const url = request.nextUrl.clone();
-          url.pathname = `${basePath}/${esFromFr}`;
+          url.pathname = finalPublicPath(`${basePath}/${esFromFr}`);
           return NextResponse.redirect(url, 301);
         }
       }
@@ -405,14 +406,14 @@ export function proxy(request: NextRequest) {
     // Orphan slugs (never had content)
     if (ORPHAN_BLOG_SLUGS.includes(slug)) {
       const url = request.nextUrl.clone();
-      url.pathname = locale ? `/${locale}/ressources/blog` : "/ressources/blog";
+      url.pathname = finalPublicPath(locale ? `/${locale}/ressources/blog` : "/ressources/blog");
       return NextResponse.redirect(url, 301);
     }
 
     // FR-only blog posts accessed from EN/ES -> redirect to FR version
     if (locale && FR_ONLY_BLOG_SLUGS.includes(slug)) {
       const url = request.nextUrl.clone();
-      url.pathname = `/ressources/blog/${slug}`;
+      url.pathname = finalPublicPath(`/ressources/blog/${slug}`);
       return NextResponse.redirect(url, 301);
     }
   }
@@ -420,7 +421,7 @@ export function proxy(request: NextRequest) {
   /* ── 6. Trailing slash normalization ─────────────────────────────── */
   if (pathname.length > 1 && pathname.endsWith("/")) {
     const url = request.nextUrl.clone();
-    url.pathname = pathname.slice(0, -1);
+    url.pathname = finalPublicPath(pathname.slice(0, -1));
     return NextResponse.redirect(url, 301);
   }
 

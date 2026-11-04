@@ -231,7 +231,7 @@
     "paths": {
       "fr": "/contact",
       "en": "/en/contact",
-      "es": "/es/contact"
+      "es": "/es/contacto"
     },
     "title": "Contact — DAF externalisé & DRH | Iter Advisors",
     "description": "Contactez Iter Advisors pour un premier échange gratuit avec un expert financier. Bureaux à Barcelone, Paris et Toulouse.",
@@ -443,40 +443,40 @@
     "source": "/jobs",
     "sharedEditorial": true
   },
-  "/jobs/finance-analyst-junior-fr": {
+  "/emplois/analyste-financier-junior": {
     "paths": {
-      "fr": "/jobs/finance-analyst-junior-fr",
+      "fr": "/emplois/analyste-financier-junior",
       "en": "/en/jobs/junior-finance-analyst",
       "es": "/es/empleos/analista-financiero-junior"
     },
     "title": "Analyste financier junior France — Iter Advisors recrute",
     "description": "Iter Advisors recrute un(e) analyste financier junior à Paris. CDI ou alternance. Cabinet de DAF externalisé. Formation et progression assurées.",
     "noindex": false,
-    "source": "/jobs/finance-analyst-junior-fr",
+    "source": "/emplois/analyste-financier-junior",
     "sharedEditorial": true
   },
-  "/jobs/marketing-growth-strategy": {
+  "/emplois/marketing-strategie-croissance": {
     "paths": {
-      "fr": "/jobs/marketing-growth-strategy",
+      "fr": "/emplois/marketing-strategie-croissance",
       "en": "/en/jobs/marketing-growth-strategy",
       "es": "/es/empleos/marketing-estrategia-crecimiento"
     },
     "title": "Marketing & Growth Strategy — Recrutement | Iter Advisors",
     "description": "Iter Advisors recrute un(e) responsable Marketing & Growth Strategy. Cabinet de DAF externalisé à Barcelone, Paris, Toulouse. Postes ouverts.",
     "noindex": false,
-    "source": "/jobs/marketing-growth-strategy",
+    "source": "/emplois/marketing-strategie-croissance",
     "sharedEditorial": true
   },
-  "/jobs/senior-finance-manager": {
+  "/emplois/responsable-financier-senior": {
     "paths": {
-      "fr": "/jobs/senior-finance-manager",
+      "fr": "/emplois/responsable-financier-senior",
       "en": "/en/jobs/senior-finance-manager",
       "es": "/es/empleos/responsable-financiero-senior"
     },
     "title": "Senior Finance Manager — Recrutement | Iter Advisors",
     "description": "Senior Finance Manager pour piloter et coordonner les missions clients chez Iter Advisors. Cabinet DAF externalisé Barcelone, Paris, Toulouse.",
     "noindex": false,
-    "source": "/jobs/senior-finance-manager",
+    "source": "/emplois/responsable-financier-senior",
     "sharedEditorial": true
   },
   "/lp/daf-externalise": {
@@ -566,7 +566,7 @@
   "/ressources": {
     "paths": {
       "fr": "/ressources",
-      "en": "/en/ressources",
+      "en": "/en/resources",
       "es": "/es/recursos"
     },
     "title": "Ressources Finance & DAF : blog et outils | Iter Advisors",
@@ -578,7 +578,7 @@
   "/ressources/blog": {
     "paths": {
       "fr": "/ressources/blog",
-      "en": "/en/ressources/blog",
+      "en": "/en/resources/blog",
       "es": "/es/recursos/blog"
     },
     "title": "Blog finance d'entreprise & DAF externalisé | Iter Advisors",
@@ -590,7 +590,7 @@
   "/ressources/blog/agicap-vs-fygr-outil-tresorerie": {
     "paths": {
       "fr": "/ressources/blog/agicap-vs-fygr-outil-tresorerie",
-      "en": "/en/ressources/blog/agicap-vs-fygr-cash-flow-tools",
+      "en": "/en/resources/blog/agicap-vs-fygr-cash-flow-tools",
       "es": "/es/recursos/blog/agicap-vs-fygr-tesoreria"
     },
     "title": "Agicap vs Fygr — Quel outil trésorerie ? | Iter Advisors",
@@ -602,7 +602,7 @@
   "/ressources/blog/cas-etude-happy-scribe": {
     "paths": {
       "fr": "/ressources/blog/cas-etude-happy-scribe",
-      "en": "/en/ressources/blog/happy-scribe-finance-case-study",
+      "en": "/en/resources/blog/happy-scribe-finance-case-study",
       "es": "/es/recursos/blog/caso-happy-scribe-finanzas"
     },
     "title": "Happy Scribe : 0→2M€ de revenu avec un DAF | Iter Advisors",
@@ -614,7 +614,7 @@
   "/ressources/blog/cash-burn-calculer-runway-anticiper-levee": {
     "paths": {
       "fr": "/ressources/blog/cash-burn-calculer-runway-anticiper-levee",
-      "en": "/en/ressources/blog/cash-burn-runway-fundraising",
+      "en": "/en/resources/blog/cash-burn-runway-fundraising",
       "es": "/es/recursos/blog/cash-burn-runway-financiacion"
     },
     "title": "Cash burn et runway : calcul et limites | Iter Advisors",
@@ -626,7 +626,7 @@
   "/ressources/blog/cfo-externe-role-missions-2026": {
     "paths": {
       "fr": "/ressources/blog/cfo-externe-role-missions-2026",
-      "en": "/en/ressources/blog/external-cfo-role-responsibilities",
+      "en": "/en/resources/blog/external-cfo-role-responsibilities",
       "es": "/es/recursos/blog/cfo-externo-funciones"
     },
     "title": "CFO externe : missions et livrables | Iter Advisors",
@@ -638,7 +638,7 @@
   "/ressources/blog/checklist-due-diligence-levee-de-fonds": {
     "paths": {
       "fr": "/ressources/blog/checklist-due-diligence-levee-de-fonds",
-      "en": "/en/ressources/blog/fundraising-due-diligence-checklist",
+      "en": "/en/resources/blog/fundraising-due-diligence-checklist",
       "es": "/es/recursos/blog/checklist-due-diligence-financiacion"
     },
     "title": "Due diligence financière : documents à préparer",
@@ -650,7 +650,7 @@
   "/ressources/blog/choisir-cabinet-daf-externalise": {
     "paths": {
       "fr": "/ressources/blog/choisir-cabinet-daf-externalise",
-      "en": "/en/ressources/blog/choose-fractional-cfo-firm",
+      "en": "/en/resources/blog/choose-fractional-cfo-firm",
       "es": "/es/recursos/blog/elegir-consultora-cfo-externo"
     },
     "title": "Choisir un cabinet de DAF externalisé : la grille",
@@ -662,7 +662,7 @@
   "/ressources/blog/cout-daf-externalise-tarifs-prix-2026": {
     "paths": {
       "fr": "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
-      "en": "/en/ressources/blog/fractional-cfo-cost-services-2026",
+      "en": "/en/resources/blog/fractional-cfo-cost-services-2026",
       "es": "/es/recursos/blog/cfo-externo-pymes-precio-2026"
     },
     "title": "Comparer des devis de DAF externalisé | Iter Advisors",
@@ -674,7 +674,7 @@
   "/ressources/blog/daf-drh-externalises-synergie": {
     "paths": {
       "fr": "/ressources/blog/daf-drh-externalises-synergie",
-      "en": "/en/ressources/blog/fractional-cfo-hr-director-coordination",
+      "en": "/en/resources/blog/fractional-cfo-hr-director-coordination",
       "es": "/es/recursos/blog/coordinacion-cfo-director-rrhh"
     },
     "title": "DAF et DRH : coordonner les responsabilités | Iter Advisors",
@@ -686,7 +686,7 @@
   "/ressources/blog/daf-externalise-vs-daf-interimaire": {
     "paths": {
       "fr": "/ressources/blog/daf-externalise-vs-daf-interimaire",
-      "en": "/en/ressources/blog/fractional-cfo-vs-interim-cfo",
+      "en": "/en/resources/blog/fractional-cfo-vs-interim-cfo",
       "es": "/es/recursos/blog/cfo-externo-vs-cfo-interino"
     },
     "title": "DAF externalisé ou intérimaire : comparatif 2026",
@@ -698,8 +698,8 @@
   "/ressources/blog/daf-externalise-vs-daf-salarie": {
     "paths": {
       "fr": "/ressources/blog/daf-externalise-vs-daf-salarie",
-      "en": "/en/ressources/blog/daf-externalise-vs-daf-salarie",
-      "es": "/es/recursos/blog/daf-externalise-vs-daf-salarie"
+      "en": "/en/resources/blog/fractional-cfo-vs-in-house-cfo",
+      "es": "/es/recursos/blog/cfo-externo-vs-cfo-en-plantilla"
     },
     "title": "DAF salarié ou externalisé : comparatif | Iter Advisors",
     "description": "DAF salarié ou externalisé : comparez disponibilité, responsabilités, budget complet et passation pour choisir selon le travail à accomplir.",
@@ -710,7 +710,7 @@
   "/ressources/blog/daf-externalise-vs-expert-comptable": {
     "paths": {
       "fr": "/ressources/blog/daf-externalise-vs-expert-comptable",
-      "en": "/en/ressources/blog/fractional-cfo-vs-accountant",
+      "en": "/en/resources/blog/fractional-cfo-vs-accountant",
       "es": "/es/recursos/blog/cfo-externo-vs-asesoria-contable"
     },
     "title": "DAF externalisé ou expert-comptable : comparatif",
@@ -722,7 +722,7 @@
   "/ressources/blog/essentiels-outils-tech-finance": {
     "paths": {
       "fr": "/ressources/blog/essentiels-outils-tech-finance",
-      "en": "/en/ressources/blog/essential-finance-technology-tools",
+      "en": "/en/resources/blog/essential-finance-technology-tools",
       "es": "/es/recursos/blog/herramientas-tecnologia-financiera"
     },
     "title": "Outils finance : sélection et intégration | Iter Advisors",
@@ -734,8 +734,8 @@
   "/ressources/blog/externalisation-comptable": {
     "paths": {
       "fr": "/ressources/blog/externalisation-comptable",
-      "en": "/en/ressources/blog/externalisation-comptable",
-      "es": "/es/recursos/blog/externalisation-comptable"
+      "en": "/en/resources/blog/outsourced-accounting",
+      "es": "/es/recursos/blog/externalizacion-contable"
     },
     "title": "Externalisation comptable : tarifs et organisation | Iter",
     "description": "Choisir un prestataire comptable : responsabilités, reprise des données, comparaison des devis et coût complet. Distinguer comptabilité et DAF.",
@@ -746,7 +746,7 @@
   "/ressources/blog/filiale-espagnole-pilotage-financier": {
     "paths": {
       "fr": "/ressources/blog/filiale-espagnole-pilotage-financier",
-      "en": "/en/ressources/blog/spanish-subsidiary-financial-management",
+      "en": "/en/resources/blog/spanish-subsidiary-financial-management",
       "es": "/es/recursos/blog/gestion-financiera-filial-espana"
     },
     "title": "Filiale en Espagne : qui pilote la finance ?",
@@ -758,8 +758,8 @@
   "/ressources/blog/flux-de-tresorerie": {
     "paths": {
       "fr": "/ressources/blog/flux-de-tresorerie",
-      "en": "/en/ressources/blog/flux-de-tresorerie",
-      "es": "/es/recursos/blog/flux-de-tresorerie"
+      "en": "/en/resources/blog/cash-flow-statement",
+      "es": "/es/recursos/blog/flujo-de-caja"
     },
     "title": "Flux de trésorerie : calcul et prévisionnel",
     "description": "Comprenez les flux de trésorerie avec un exemple fictif : encaissements, décaissements, BFR et passage à un prévisionnel de trésorerie.",
@@ -770,7 +770,7 @@
   "/ressources/blog/ia-et-automatisation-des-taches-repetitives": {
     "paths": {
       "fr": "/ressources/blog/ia-et-automatisation-des-taches-repetitives",
-      "en": "/en/ressources/blog/ai-automation-repetitive-finance-tasks",
+      "en": "/en/resources/blog/ai-automation-repetitive-finance-tasks",
       "es": "/es/recursos/blog/ia-automatizacion-tareas-repetitivas-finanzas"
     },
     "title": "Automatisation en finance : quelles tâches prioriser ?",
@@ -782,7 +782,7 @@
   "/ressources/blog/ia-finance-automatisation-direction-financiere": {
     "paths": {
       "fr": "/ressources/blog/ia-finance-automatisation-direction-financiere",
-      "en": "/en/ressources/blog/ai-finance-department-automation",
+      "en": "/en/resources/blog/ai-finance-department-automation",
       "es": "/es/recursos/blog/ia-automatizacion-direccion-financiera"
     },
     "title": "IA et direction financière : le rôle du DAF dans une PME",
@@ -794,7 +794,7 @@
   "/ressources/blog/la-modernisation-du-role-de-cfo": {
     "paths": {
       "fr": "/ressources/blog/la-modernisation-du-role-de-cfo",
-      "en": "/en/ressources/blog/modern-cfo-role",
+      "en": "/en/resources/blog/modern-cfo-role",
       "es": "/es/recursos/blog/evolucion-funcion-cfo"
     },
     "title": "Moderniser le travail du CFO : données et IA | Iter Advisors",
@@ -806,7 +806,7 @@
   "/ressources/blog/les-10-outils-pour-cfos-startup": {
     "paths": {
       "fr": "/ressources/blog/les-10-outils-pour-cfos-startup",
-      "en": "/en/ressources/blog/startup-cfo-tools",
+      "en": "/en/resources/blog/startup-cfo-tools",
       "es": "/es/recursos/blog/herramientas-cfo-startup"
     },
     "title": "10 outils CFO en startup : tests | Iter Advisors",
@@ -818,7 +818,7 @@
   "/ressources/blog/levee-de-fonds-guide": {
     "paths": {
       "fr": "/ressources/blog/levee-de-fonds-guide",
-      "en": "/en/ressources/blog/fundraising-guide",
+      "en": "/en/resources/blog/fundraising-guide",
       "es": "/es/recursos/blog/guia-rondas-financiacion"
     },
     "title": "Guide Levée Fonds | Iter Advisors",
@@ -830,7 +830,7 @@
   "/ressources/blog/loi-beckham-economie-impot-simulation": {
     "paths": {
       "fr": "/ressources/blog/loi-beckham-economie-impot-simulation",
-      "en": "/en/ressources/blog/beckham-law-tax-savings-simulation",
+      "en": "/en/resources/blog/beckham-law-tax-savings-simulation",
       "es": "/es/recursos/blog/ley-beckham-simulacion-ahorro-fiscal"
     },
     "title": "Loi Beckham : méthode de simulation de l’impôt",
@@ -842,7 +842,7 @@
   "/ressources/blog/loi-beckham-espagne-conditions-eligibilite": {
     "paths": {
       "fr": "/ressources/blog/loi-beckham-espagne-conditions-eligibilite",
-      "en": "/en/ressources/blog/beckham-law-spain-eligibility",
+      "en": "/en/resources/blog/beckham-law-spain-eligibility",
       "es": "/es/recursos/blog/ley-beckham-espana-requisitos"
     },
     "title": "Loi Beckham : conditions d'éligibilité 2026",
@@ -854,7 +854,7 @@
   "/ressources/blog/organiser-sa-direction-financiere": {
     "paths": {
       "fr": "/ressources/blog/organiser-sa-direction-financiere",
-      "en": "/en/ressources/blog/organize-finance-department",
+      "en": "/en/resources/blog/organize-finance-department",
       "es": "/es/recursos/blog/organizar-direccion-financiera"
     },
     "title": "Direction financière : organisation, rôles et processus 2026",
@@ -866,7 +866,7 @@
   "/ressources/blog/payfit-vs-silae-comparatif-pme": {
     "paths": {
       "fr": "/ressources/blog/payfit-vs-silae-comparatif-pme",
-      "en": "/en/ressources/blog/payfit-vs-silae-sme-comparison",
+      "en": "/en/resources/blog/payfit-vs-silae-sme-comparison",
       "es": "/es/recursos/blog/payfit-vs-silae-comparativa-pymes"
     },
     "title": "PayFit vs Silae vs malibou : comparatif paie PME 2026",
@@ -878,7 +878,7 @@
   "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements": {
     "paths": {
       "fr": "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",
-      "en": "/en/ressources/blog/pennylane-vs-sage-comparison",
+      "en": "/en/resources/blog/pennylane-vs-sage-comparison",
       "es": "/es/recursos/blog/pennylane-vs-sage-comparativa"
     },
     "title": "Pennylane vs Sage : comparatif expert 2026 | Iter Advisors",
@@ -890,7 +890,7 @@
   "/ressources/blog/quand-embaucher-daf-externalise-5-signes": {
     "paths": {
       "fr": "/ressources/blog/quand-embaucher-daf-externalise-5-signes",
-      "en": "/en/ressources/blog/when-to-hire-fractional-cfo",
+      "en": "/en/resources/blog/when-to-hire-fractional-cfo",
       "es": "/es/recursos/blog/cuando-contratar-cfo-externo"
     },
     "title": "Quand faire appel à un DAF : 5 signaux | Iter Advisors",
@@ -902,7 +902,7 @@
   "/ressources/blog/reduire-bfr-7-leviers-actionnables": {
     "paths": {
       "fr": "/ressources/blog/reduire-bfr-7-leviers-actionnables",
-      "en": "/en/ressources/blog/reduce-working-capital-requirements",
+      "en": "/en/resources/blog/reduce-working-capital-requirements",
       "es": "/es/recursos/blog/reducir-necesidades-capital-circulante"
     },
     "title": "Réduire le BFR : 7 leviers actionnables | Iter Advisors",
@@ -914,7 +914,7 @@
   "/ressources/blog/regimes-fiscaux-france-vs-espagne": {
     "paths": {
       "fr": "/ressources/blog/regimes-fiscaux-france-vs-espagne",
-      "en": "/en/ressources/blog/france-spain-tax-comparison",
+      "en": "/en/resources/blog/france-spain-tax-comparison",
       "es": "/es/recursos/blog/regimenes-fiscales-francia-espana"
     },
     "title": "Fiscalité Espagne vs France 2026 : taux d’imposition",
@@ -926,7 +926,7 @@
   "/ressources/blog/stack-financier-saas-series-a": {
     "paths": {
       "fr": "/ressources/blog/stack-financier-saas-series-a",
-      "en": "/en/ressources/blog/saas-series-a-finance-stack",
+      "en": "/en/resources/blog/saas-series-a-finance-stack",
       "es": "/es/recursos/blog/herramientas-financieras-saas-serie-a"
     },
     "title": "Stack financier SaaS Series A : outils et budget | Iter",
@@ -938,7 +938,7 @@
   "/ressources/blog/tableau-de-bord-financier-startup-12-kpis": {
     "paths": {
       "fr": "/ressources/blog/tableau-de-bord-financier-startup-12-kpis",
-      "en": "/en/ressources/blog/startup-financial-dashboard-kpis",
+      "en": "/en/resources/blog/startup-financial-dashboard-kpis",
       "es": "/es/recursos/blog/cuadro-mando-financiero-startup-kpis"
     },
     "title": "Dashboard financier startup : 12 KPIs CFO | Iter Advisors",
@@ -950,7 +950,7 @@
   "/ressources/blog/term-sheet-negocier-clauses-cles": {
     "paths": {
       "fr": "/ressources/blog/term-sheet-negocier-clauses-cles",
-      "en": "/en/ressources/blog/term-sheet-key-clauses",
+      "en": "/en/resources/blog/term-sheet-key-clauses",
       "es": "/es/recursos/blog/term-sheet-clausulas-clave"
     },
     "title": "Term Sheet : négocier les clauses clés | Iter Advisors",
@@ -962,7 +962,7 @@
   "/ressources/cas-clients": {
     "paths": {
       "fr": "/ressources/cas-clients",
-      "en": "/en/ressources/cas-clients",
+      "en": "/en/resources/case-studies",
       "es": "/es/recursos/casos-de-exito"
     },
     "title": "Cas Clients DAF | Iter Advisors",
@@ -974,8 +974,8 @@
   "/ressources/cas-clients/opti-digital-structuration-financement": {
     "paths": {
       "fr": "/ressources/cas-clients/opti-digital-structuration-financement",
-      "en": "/en/ressources/cas-clients/opti-digital-structuration-financement",
-      "es": "/es/recursos/casos-de-exito/opti-digital-structuration-financement"
+      "en": "/en/resources/case-studies/opti-digital-financing-structure",
+      "es": "/es/recursos/casos-de-exito/opti-digital-estructuracion-financiacion"
     },
     "title": "Opti Digital : structurer la finance | Iter Advisors",
     "description": "Migration ERP, reporting, clôture et financement non dilutif : comment Iter accompagne une PME adtech dans la structuration de sa fonction finance.",
@@ -986,8 +986,8 @@
   "/ressources/cas-clients/seasonly-marge-par-canal-bfr": {
     "paths": {
       "fr": "/ressources/cas-clients/seasonly-marge-par-canal-bfr",
-      "en": "/en/ressources/cas-clients/seasonly-marge-par-canal-bfr",
-      "es": "/es/recursos/casos-de-exito/seasonly-marge-par-canal-bfr"
+      "en": "/en/resources/case-studies/seasonly-channel-margin-working-capital",
+      "es": "/es/recursos/casos-de-exito/seasonly-margen-por-canal-capital-circulante"
     },
     "title": "Seasonly : marge par canal et BFR | Iter Advisors",
     "description": "P&L par canal, pilotage des stocks et reporting hebdomadaire : une mission de DAF externalisé pour une marque de beauté multi-canal.",
@@ -998,7 +998,7 @@
   "/ressources/cas-clients/solarmente-serie-b-cleantech": {
     "paths": {
       "fr": "/ressources/cas-clients/solarmente-serie-b-cleantech",
-      "en": "/en/ressources/cas-clients/solarmente-serie-b-cleantech",
+      "en": "/en/resources/case-studies/solarmente-serie-b-cleantech",
       "es": "/es/recursos/casos-de-exito/solarmente-serie-b-cleantech"
     },
     "title": "SolarMente : levée et structuration finance | Iter Advisors",
@@ -1010,7 +1010,7 @@
   "/ressources/fiscalite-espagne-france": {
     "paths": {
       "fr": "/ressources/fiscalite-espagne-france",
-      "en": "/en/ressources/france-spain-tax",
+      "en": "/en/resources/france-spain-tax",
       "es": "/es/recursos/fiscalidad-francia-espana"
     },
     "title": "Fiscalité France-Espagne : le guide 2026 | Iter Advisors",
@@ -1019,22 +1019,22 @@
     "source": "/ressources/fiscalite-espagne-france",
     "sharedEditorial": true
   },
-  "/ressources/fiscalite/beckham-law": {
+  "/ressources/fiscalite/loi-beckham": {
     "paths": {
-      "fr": "/ressources/fiscalite/beckham-law",
-      "en": "/en/ressources/tax/beckham-law",
+      "fr": "/ressources/fiscalite/loi-beckham",
+      "en": "/en/resources/tax/beckham-law",
       "es": "/es/recursos/fiscalidad/ley-beckham"
     },
     "title": "Loi Beckham Espagne : conditions et taux | Iter Advisors",
     "description": "Loi Beckham : taux fixe de 24 % pendant 6 ans, conditions 2026, Modelo 149 et méthode pour comparer avec l'IRPF classique. Le guide du régime des impatriés.",
     "noindex": false,
-    "source": "/ressources/fiscalite/beckham-law",
+    "source": "/ressources/fiscalite/loi-beckham",
     "sharedEditorial": true
   },
   "/ressources/fiscalite/double-imposition-france-espagne": {
     "paths": {
       "fr": "/ressources/fiscalite/double-imposition-france-espagne",
-      "en": "/en/ressources/tax/france-spain-double-taxation",
+      "en": "/en/resources/tax/france-spain-double-taxation",
       "es": "/es/recursos/fiscalidad/doble-imposicion-francia-espana"
     },
     "title": "Convention fiscale France-Espagne 2026",
@@ -1046,7 +1046,7 @@
   "/ressources/fiscalite/impot-revenu-espagne": {
     "paths": {
       "fr": "/ressources/fiscalite/impot-revenu-espagne",
-      "en": "/en/ressources/tax/spain-income-tax",
+      "en": "/en/resources/tax/spain-income-tax",
       "es": "/es/recursos/fiscalidad/irpf-espana"
     },
     "title": "Impôt sur le revenu en Espagne : barème 2026 | Iter Advisors",
@@ -1058,7 +1058,7 @@
   "/ressources/fiscalite/modelo-720": {
     "paths": {
       "fr": "/ressources/fiscalite/modelo-720",
-      "en": "/en/ressources/tax/form-720",
+      "en": "/en/resources/tax/form-720",
       "es": "/es/recursos/fiscalidad/modelo-720"
     },
     "title": "Modelo 720 Espagne : biens à l'étranger | Iter Advisors",
@@ -1070,7 +1070,7 @@
   "/ressources/fiscalite/residence-fiscale-france-espagne": {
     "paths": {
       "fr": "/ressources/fiscalite/residence-fiscale-france-espagne",
-      "en": "/en/ressources/tax/france-spain-tax-residence",
+      "en": "/en/resources/tax/france-spain-tax-residence",
       "es": "/es/recursos/fiscalidad/residencia-fiscal-francia-espana"
     },
     "title": "Résidence fiscale Espagne vs France 2026 | Iter Advisors",
@@ -1082,7 +1082,7 @@
   "/ressources/glossaire": {
     "paths": {
       "fr": "/ressources/glossaire",
-      "en": "/en/ressources/glossaire",
+      "en": "/en/resources/glossary",
       "es": "/es/recursos/glosario"
     },
     "title": "Glossaire Finance | Iter Advisors",
@@ -1094,7 +1094,7 @@
   "/ressources/glossaire/arr-mrr": {
     "paths": {
       "fr": "/ressources/glossaire/arr-mrr",
-      "en": "/en/ressources/glossaire/arr-mrr",
+      "en": "/en/resources/glossary/arr-mrr",
       "es": "/es/recursos/glosario/arr-mrr"
     },
     "title": "ARR & MRR — Définitions et Calcul pour SaaS | Iter Advisors",
@@ -1106,7 +1106,7 @@
   "/ressources/glossaire/besoin-fonds-roulement-bfr": {
     "paths": {
       "fr": "/ressources/glossaire/besoin-fonds-roulement-bfr",
-      "en": "/en/ressources/glossaire/bfr",
+      "en": "/en/resources/glossary/working-capital-requirement",
       "es": "/es/recursos/glosario/necesidades-capital-circulante"
     },
     "title": "BFR — Définition et calcul complet | Iter Advisors",
@@ -1118,7 +1118,7 @@
   "/ressources/glossaire/bspce-bsa": {
     "paths": {
       "fr": "/ressources/glossaire/bspce-bsa",
-      "en": "/en/ressources/glossaire/french-equity-incentives-bspce-bsa",
+      "en": "/en/resources/glossary/french-equity-incentives-bspce-bsa",
       "es": "/es/recursos/glosario/incentivos-capital-francia-bspce-bsa"
     },
     "title": "BSPCE, BSA et BSA Air : différences | Iter Advisors",
@@ -1130,7 +1130,7 @@
   "/ressources/glossaire/cac-ltv": {
     "paths": {
       "fr": "/ressources/glossaire/cac-ltv",
-      "en": "/en/ressources/glossaire/cac-ltv",
+      "en": "/en/resources/glossary/cac-ltv",
       "es": "/es/recursos/glosario/cac-ltv"
     },
     "title": "CAC & LTV — Définitions, Formules et Ratio | Iter Advisors",
@@ -1142,7 +1142,7 @@
   "/ressources/glossaire/cash-burn-runway": {
     "paths": {
       "fr": "/ressources/glossaire/cash-burn-runway",
-      "en": "/en/ressources/glossaire/cash-burn-runway",
+      "en": "/en/resources/glossary/cash-burn-runway",
       "es": "/es/recursos/glosario/cash-burn-runway"
     },
     "title": "Cash Burn & Runway — Calcul et définition | Iter Advisors",
@@ -1154,7 +1154,7 @@
   "/ressources/glossaire/cfo": {
     "paths": {
       "fr": "/ressources/glossaire/cfo",
-      "en": "/en/ressources/glossaire/cfo",
+      "en": "/en/resources/glossary/cfo",
       "es": "/es/recursos/glosario/cfo"
     },
     "title": "CFO : définition du Chief Financial Officer | Iter Advisors",
@@ -1166,7 +1166,7 @@
   "/ressources/glossaire/churn-rate": {
     "paths": {
       "fr": "/ressources/glossaire/churn-rate",
-      "en": "/en/ressources/glossaire/churn-rate",
+      "en": "/en/resources/glossary/churn-rate",
       "es": "/es/recursos/glosario/tasa-churn"
     },
     "title": "Churn Rate — Définition, Calcul et Seuils | Iter Advisors",
@@ -1178,7 +1178,7 @@
   "/ressources/glossaire/controle-de-gestion": {
     "paths": {
       "fr": "/ressources/glossaire/controle-de-gestion",
-      "en": "/en/ressources/glossaire/management-control",
+      "en": "/en/resources/glossary/management-control",
       "es": "/es/recursos/glosario/control-gestion"
     },
     "title": "Contrôle de gestion : définition et outils | Iter Advisors",
@@ -1190,7 +1190,7 @@
   "/ressources/glossaire/drh-externalise": {
     "paths": {
       "fr": "/ressources/glossaire/drh-externalise",
-      "en": "/en/ressources/glossaire/external-hr-director",
+      "en": "/en/resources/glossary/external-hr-director",
       "es": "/es/recursos/glosario/director-rrhh-externo"
     },
     "title": "DRH externalisé : définition et missions | Iter Advisors",
@@ -1202,7 +1202,7 @@
   "/ressources/glossaire/ebitda": {
     "paths": {
       "fr": "/ressources/glossaire/ebitda",
-      "en": "/en/ressources/glossaire/ebitda",
+      "en": "/en/resources/glossary/ebitda",
       "es": "/es/recursos/glosario/ebitda"
     },
     "title": "EBITDA : Définition et Calcul | Iter Advisors",
@@ -1214,7 +1214,7 @@
   "/ressources/glossaire/fractional-cfo": {
     "paths": {
       "fr": "/ressources/glossaire/fractional-cfo",
-      "en": "/en/ressources/glossaire/fractional-cfo",
+      "en": "/en/resources/glossary/fractional-cfo",
       "es": "/es/recursos/glosario/cfo-tiempo-parcial"
     },
     "title": "Fractional CFO : définition du temps partagé | Iter Advisors",
@@ -1226,7 +1226,7 @@
   "/ressources/glossaire/run-rate": {
     "paths": {
       "fr": "/ressources/glossaire/run-rate",
-      "en": "/en/ressources/glossaire/run-rate",
+      "en": "/en/resources/glossary/run-rate",
       "es": "/es/recursos/glosario/run-rate"
     },
     "title": "Run Rate — Définition et calcul | Iter Advisors",
@@ -1322,7 +1322,7 @@
   "/ressources/outils": {
     "paths": {
       "fr": "/ressources/outils",
-      "en": "/en/ressources/tools",
+      "en": "/en/resources/tools",
       "es": "/es/recursos/herramientas"
     },
     "title": "Outils financiers : avis de DAF | Iter Advisors",
@@ -1334,7 +1334,7 @@
   "/ressources/outils/agicap": {
     "paths": {
       "fr": "/ressources/outils/agicap",
-      "en": "/en/ressources/tools/agicap",
+      "en": "/en/resources/tools/agicap",
       "es": "/es/recursos/herramientas/agicap"
     },
     "title": "Agicap : analyse, prix et intégration",
@@ -1346,7 +1346,7 @@
   "/ressources/outils/carta": {
     "paths": {
       "fr": "/ressources/outils/carta",
-      "en": "/en/ressources/tools/carta",
+      "en": "/en/resources/tools/carta",
       "es": "/es/recursos/herramientas/carta"
     },
     "title": "Carta : analyse, prix et intégration",
@@ -1358,7 +1358,7 @@
   "/ressources/outils/cegid-loop": {
     "paths": {
       "fr": "/ressources/outils/cegid-loop",
-      "en": "/en/ressources/tools/cegid-loop",
+      "en": "/en/resources/tools/cegid-loop",
       "es": "/es/recursos/herramientas/cegid-loop"
     },
     "title": "Cegid Loop : analyse, prix et intégration",
@@ -1370,7 +1370,7 @@
   "/ressources/outils/equify": {
     "paths": {
       "fr": "/ressources/outils/equify",
-      "en": "/en/ressources/tools/equify",
+      "en": "/en/resources/tools/equify",
       "es": "/es/recursos/herramientas/equify"
     },
     "title": "Equify : analyse, prix et intégration",
@@ -1382,7 +1382,7 @@
   "/ressources/outils/factorial": {
     "paths": {
       "fr": "/ressources/outils/factorial",
-      "en": "/en/ressources/tools/factorial",
+      "en": "/en/resources/tools/factorial",
       "es": "/es/recursos/herramientas/factorial"
     },
     "title": "Factorial : analyse, prix et intégration",
@@ -1394,7 +1394,7 @@
   "/ressources/outils/okimia": {
     "paths": {
       "fr": "/ressources/outils/okimia",
-      "en": "/en/ressources/tools/okimia",
+      "en": "/en/resources/tools/okimia",
       "es": "/es/recursos/herramientas/okimia"
     },
     "title": "Okimia (ex-Fygr) : analyse, prix et intégration",
@@ -1406,7 +1406,7 @@
   "/ressources/outils/gestion-depenses": {
     "paths": {
       "fr": "/ressources/outils/gestion-depenses",
-      "en": "/en/ressources/tools/expense-management",
+      "en": "/en/resources/tools/expense-management",
       "es": "/es/recursos/herramientas/gestion-gastos"
     },
     "title": "Gestion des dépenses : Spendesk vs Pleo 2026 | Iter Advisors",
@@ -1418,7 +1418,7 @@
   "/ressources/outils/kyriba": {
     "paths": {
       "fr": "/ressources/outils/kyriba",
-      "en": "/en/ressources/tools/kyriba",
+      "en": "/en/resources/tools/kyriba",
       "es": "/es/recursos/herramientas/kyriba"
     },
     "title": "Kyriba : analyse, prix et intégration",
@@ -1430,7 +1430,7 @@
   "/ressources/outils/leanpay": {
     "paths": {
       "fr": "/ressources/outils/leanpay",
-      "en": "/en/ressources/tools/leanpay",
+      "en": "/en/resources/tools/leanpay",
       "es": "/es/recursos/herramientas/leanpay"
     },
     "title": "LeanPay : analyse, prix et intégration",
@@ -1442,7 +1442,7 @@
   "/ressources/outils/logiciels-comptabilite": {
     "paths": {
       "fr": "/ressources/outils/logiciels-comptabilite",
-      "en": "/en/ressources/tools/accounting-software",
+      "en": "/en/resources/tools/accounting-software",
       "es": "/es/recursos/herramientas/software-contabilidad"
     },
     "title": "Logiciels comptabilité PME 2026 | Iter Advisors",
@@ -1454,7 +1454,7 @@
   "/ressources/outils/logiciels-paie": {
     "paths": {
       "fr": "/ressources/outils/logiciels-paie",
-      "en": "/en/ressources/tools/payroll-software",
+      "en": "/en/resources/tools/payroll-software",
       "es": "/es/recursos/herramientas/software-nominas"
     },
     "title": "Logiciels de paie PME : PayFit vs Silae 2026 | Iter Advisors",
@@ -1466,7 +1466,7 @@
   "/ressources/outils/logiciels-tresorerie": {
     "paths": {
       "fr": "/ressources/outils/logiciels-tresorerie",
-      "en": "/en/ressources/tools/cash-flow-software",
+      "en": "/en/resources/tools/cash-flow-software",
       "es": "/es/recursos/herramientas/software-tesoreria"
     },
     "title": "Logiciels de trésorerie : critères de choix | Iter Advisors",
@@ -1478,7 +1478,7 @@
   "/ressources/outils/lucca": {
     "paths": {
       "fr": "/ressources/outils/lucca",
-      "en": "/en/ressources/tools/lucca",
+      "en": "/en/resources/tools/lucca",
       "es": "/es/recursos/herramientas/lucca"
     },
     "title": "Lucca : analyse, prix et intégration",
@@ -1490,7 +1490,7 @@
   "/ressources/outils/malibou": {
     "paths": {
       "fr": "/ressources/outils/malibou",
-      "en": "/en/ressources/tools/malibou",
+      "en": "/en/resources/tools/malibou",
       "es": "/es/recursos/herramientas/malibou"
     },
     "title": "malibou : avis, prix et comparatif PayFit | Iter Advisors",
@@ -1502,7 +1502,7 @@
   "/ressources/outils/methodologie": {
     "paths": {
       "fr": "/ressources/outils/methodologie",
-      "en": "/en/ressources/tools/methodology",
+      "en": "/en/resources/tools/methodology",
       "es": "/es/recursos/herramientas/metodologia"
     },
     "title": "Méthode des avis outils finance | Iter Advisors",
@@ -1514,7 +1514,7 @@
   "/ressources/outils/payfit": {
     "paths": {
       "fr": "/ressources/outils/payfit",
-      "en": "/en/ressources/tools/payfit",
+      "en": "/en/resources/tools/payfit",
       "es": "/es/recursos/herramientas/payfit"
     },
     "title": "PayFit : analyse, prix et intégration",
@@ -1526,7 +1526,7 @@
   "/ressources/outils/payhawk": {
     "paths": {
       "fr": "/ressources/outils/payhawk",
-      "en": "/en/ressources/tools/payhawk",
+      "en": "/en/resources/tools/payhawk",
       "es": "/es/recursos/herramientas/payhawk"
     },
     "title": "Payhawk : analyse, prix et intégration",
@@ -1538,7 +1538,7 @@
   "/ressources/outils/pennylane": {
     "paths": {
       "fr": "/ressources/outils/pennylane",
-      "en": "/en/ressources/tools/pennylane",
+      "en": "/en/resources/tools/pennylane",
       "es": "/es/recursos/herramientas/pennylane"
     },
     "title": "Avis Pennylane : 4 ans d’usage, prix et limites",
@@ -1550,7 +1550,7 @@
   "/ressources/outils/pleo": {
     "paths": {
       "fr": "/ressources/outils/pleo",
-      "en": "/en/ressources/tools/pleo",
+      "en": "/en/resources/tools/pleo",
       "es": "/es/recursos/herramientas/pleo"
     },
     "title": "Pleo : analyse, prix et intégration",
@@ -1562,7 +1562,7 @@
   "/ressources/outils/power-bi": {
     "paths": {
       "fr": "/ressources/outils/power-bi",
-      "en": "/en/ressources/tools/power-bi",
+      "en": "/en/resources/tools/power-bi",
       "es": "/es/recursos/herramientas/power-bi"
     },
     "title": "Power BI : analyse, prix et intégration",
@@ -1574,7 +1574,7 @@
   "/ressources/outils/qonto": {
     "paths": {
       "fr": "/ressources/outils/qonto",
-      "en": "/en/ressources/tools/qonto",
+      "en": "/en/resources/tools/qonto",
       "es": "/es/recursos/herramientas/qonto"
     },
     "title": "Qonto : analyse, prix et intégration",
@@ -1586,7 +1586,7 @@
   "/ressources/outils/revolut-business": {
     "paths": {
       "fr": "/ressources/outils/revolut-business",
-      "en": "/en/ressources/tools/revolut-business",
+      "en": "/en/resources/tools/revolut-business",
       "es": "/es/recursos/herramientas/revolut-business"
     },
     "title": "Revolut Business : analyse, prix et intégration",
@@ -1598,7 +1598,7 @@
   "/ressources/outils/sage": {
     "paths": {
       "fr": "/ressources/outils/sage",
-      "en": "/en/ressources/tools/sage",
+      "en": "/en/resources/tools/sage",
       "es": "/es/recursos/herramientas/sage"
     },
     "title": "Sage : analyse, prix et intégration",
@@ -1610,7 +1610,7 @@
   "/ressources/outils/silae": {
     "paths": {
       "fr": "/ressources/outils/silae",
-      "en": "/en/ressources/tools/silae",
+      "en": "/en/resources/tools/silae",
       "es": "/es/recursos/herramientas/silae"
     },
     "title": "Silae : analyse, prix et intégration",
@@ -1622,7 +1622,7 @@
   "/ressources/outils/spendesk": {
     "paths": {
       "fr": "/ressources/outils/spendesk",
-      "en": "/en/ressources/tools/spendesk",
+      "en": "/en/resources/tools/spendesk",
       "es": "/es/recursos/herramientas/spendesk"
     },
     "title": "Spendesk : analyse, prix et intégration",
@@ -1634,7 +1634,7 @@
   "/ressources/outils/upflow": {
     "paths": {
       "fr": "/ressources/outils/upflow",
-      "en": "/en/ressources/tools/upflow",
+      "en": "/en/resources/tools/upflow",
       "es": "/es/recursos/herramientas/upflow"
     },
     "title": "Upflow : analyse, prix et intégration",
@@ -1647,7 +1647,7 @@
     "paths": {
       "fr": "/services",
       "en": "/en/services",
-      "es": "/es/services"
+      "es": "/es/servicios"
     },
     "title": "Services financiers externalisés pour PME | Iter Advisors",
     "description": "Services de direction financière externalisée : trésorerie, contrôle de gestion, levée de fonds, comptabilité pour PME et startups.",
@@ -1659,7 +1659,7 @@
     "paths": {
       "fr": "/services/accompagnement-levee-de-fond",
       "en": "/en/services/fund-raising-support",
-      "es": "/es/services/soporte-financiacion"
+      "es": "/es/servicios/soporte-financiacion"
     },
     "title": "Accompagnement levée de fonds | Iter Advisors",
     "description": "Préparez les finances de votre levée : modèle financier, data room et réponses aux investisseurs. Livrables et calendrier définis selon votre projet.",
@@ -1671,7 +1671,7 @@
     "paths": {
       "fr": "/services/comptabilite-externalisation",
       "en": "/en/services/outsource-your-accounting",
-      "es": "/es/services/externalizar-contabilidad"
+      "es": "/es/servicios/externalizar-contabilidad"
     },
     "title": "Comptabilité externalisée pour PME | Iter Advisors",
     "description": "Organisez votre comptabilité externalisée : collecte des pièces, clôture, outils et coordination avec votre expert-comptable. Périmètre et devis adaptés.",
@@ -1695,7 +1695,7 @@
     "paths": {
       "fr": "/services/controle-de-gestion-externalise",
       "en": "/en/services/outsourced-management-control",
-      "es": "/es/services/control-gestion-externalizado"
+      "es": "/es/servicios/control-gestion-externalizado"
     },
     "title": "Contrôle de gestion externalisé pour PME : budget et marges",
     "description": "Budget, marges et reporting : un contrôle de gestion externalisé pour comprendre vos résultats. Livrables, revue mensuelle et articulation avec vos équipes.",
@@ -1719,7 +1719,7 @@
     "paths": {
       "fr": "/services/gestion-financiere-externalisee",
       "en": "/en/services/financial-operations-organization",
-      "es": "/es/services/gestion-financiera-externalizada"
+      "es": "/es/servicios/gestion-financiera-externalizada"
     },
     "title": "Gestion financière opérationnelle pour PME | Iter Advisors",
     "description": "Structurez les opérations financières de votre entreprise : responsabilités, données, clôture et reporting. Un périmètre adapté à votre équipe.",
@@ -1743,7 +1743,7 @@
     "paths": {
       "fr": "/services/ma-due-diligence",
       "en": "/en/services/ma-due-diligence",
-      "es": "/es/services/ma-due-diligence"
+      "es": "/es/servicios/ma-due-diligence"
     },
     "title": "M&A et due diligence financière | Iter Advisors",
     "description": "Préparez une acquisition, une cession ou une levée : résultats, dette, BFR et scénarios. Analyses, livrables et honoraires définis sur devis.",
@@ -1755,7 +1755,7 @@
     "paths": {
       "fr": "/services/previsionnel-tresorerie",
       "en": "/en/services/cash-flow-forecast",
-      "es": "/es/services/prevision-tesoreria"
+      "es": "/es/servicios/prevision-tesoreria"
     },
     "title": "Prévisionnel de trésorerie à 13 semaines | Iter Advisors",
     "description": "Construisez et suivez un prévisionnel de trésorerie à 13 semaines : encaissements, échéances, hypothèses et scénarios pour préparer vos décisions.",
@@ -1778,7 +1778,7 @@
   "/ressources/blog/remuneration-dirigeant-tresorerie-pme": {
     "paths": {
       "fr": "/ressources/blog/remuneration-dirigeant-tresorerie-pme",
-      "en": "/en/ressources/blog/director-remuneration-sme-cash-flow",
+      "en": "/en/resources/blog/director-remuneration-sme-cash-flow",
       "es": "/es/recursos/blog/remuneracion-directivo-tesoreria-pyme"
     },
     "title": "Rémunération du dirigeant et trésorerie | Iter Advisors",

@@ -272,7 +272,7 @@ const content: Record<Locale, OutsourcedManagementControlContent> = {
       description:
         "Consulta con un experto en FP&A. Evaluamos tus necesidades y proponemos un plan de implementación.",
       buttonText: "Solicitar consulta gratuita",
-      buttonHref: "/es/contact",
+      buttonHref: "/es/contacto",
     },
   },
 };
