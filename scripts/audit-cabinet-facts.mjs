@@ -60,7 +60,7 @@ for (const route of [
   "en/about",
   "es/quienes-somos",
   "ressources/outils",
-  "en/ressources/tools",
+  "en/resources/tools",
   "es/recursos/herramientas",
 ]) {
   const html = await readFile(join(root, route + ".html"), "utf8");
