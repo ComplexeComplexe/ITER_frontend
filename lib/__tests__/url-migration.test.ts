@@ -12,6 +12,11 @@ const { match, compile } = createRequire(import.meta.url)('next/dist/compiled/pa
 describe('November language URL migration', () => {
   it('redirects all 103 old addresses directly with 301 and never redirects a destination', async () => {
     expect((await config.redirects!()).some(rule => rule.source === '/en/ressources/tools/pennylane')).toBe(false);
+    for (const root of ['/en/ressources', '/en/ressources/cas-clients', '/en/ressources/glossaire', '/es/services']) {
+      expect((await config.redirects!()).find(rule => rule.source === root)).toMatchObject({
+        destination: mapping[root as keyof typeof mapping], statusCode: 301,
+      });
+    }
     const rules = [...edge.redirects.filter(rule => !('has' in rule)), ...await config.redirects!()];
     for (const [source, destination] of Object.entries(mapping)) {
       const rule = rules.find(rule => match(rule.source)(source));

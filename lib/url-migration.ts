@@ -63,6 +63,9 @@ export function migratedRedirects(legacy: Redirect[]): Redirect[] {
   }
   const all = [...rules.values()];
   return [
+    // Vercel retains the destination slash when :path* is empty, unlike
+    // next start. Explicit folder roots prevent a second normalization hop.
+    ...prefixes.map(([source, destination]) => ({ source, destination, statusCode: 301 as const })),
     ...all.filter(rule => !rule.source.includes(':')),
     ...all.filter(rule => rule.source.includes(':')),
     ...prefixes.map(([source, destination]) => ({ source: source + '/:path*', destination: destination + '/:path*', statusCode: 301 as const })),
