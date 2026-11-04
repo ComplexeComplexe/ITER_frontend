@@ -29,7 +29,7 @@ const needs = [
     { title: "Organiser la finance d’un SaaS en Series A", href: "/ressources/blog/stack-financier-saas-series-a" },
   ] },
   { title: "Travailler entre France et Espagne", text: "Retrouver les guides fiscaux et identifier les points à examiner avec vos conseils.", links: [
-    { title: "Loi Beckham : conditions et démarches", href: "/ressources/fiscalite/beckham-law" },
+    { title: "Loi Beckham : conditions et démarches", href: "/ressources/fiscalite/loi-beckham" },
     { title: "Impôt sur le revenu en Espagne", href: "/ressources/fiscalite/impot-revenu-espagne" },
     { title: "Comparer les régimes fiscaux France-Espagne", href: "/ressources/blog/regimes-fiscaux-france-vs-espagne" },
   ] },

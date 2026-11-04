@@ -46,9 +46,9 @@ describe("verified GSC corrections", () => {
   });
 
   it("keeps the corresponding content when switching languages from an obsolete URL", () => {
-    expect(parityHref("/en/services/outsourced-financial-management", "es")).toBe("/es/services/gestion-financiera-externalizada");
-    expect(parityHref("/ressources/testimonials/solarmente", "en")).toBe("/en/ressources/cas-clients/solarmente-serie-b-cleantech");
-    expect(parityHref("/ressources/blog/levee-de-fonds-dilutif-vs-non-dilutif", "en")).toBe("/en/ressources/blog/fundraising-guide");
+    expect(parityHref("/en/services/outsourced-financial-management", "es")).toBe("/es/servicios/gestion-financiera-externalizada");
+    expect(parityHref("/ressources/testimonials/solarmente", "en")).toBe("/en/resources/case-studies/solarmente-serie-b-cleantech");
+    expect(parityHref("/ressources/blog/levee-de-fonds-dilutif-vs-non-dilutif", "en")).toBe("/en/resources/blog/fundraising-guide");
   });
 });
 

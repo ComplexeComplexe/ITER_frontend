@@ -348,7 +348,7 @@ const content: Record<Locale, CFOJobDescriptionContent> = {
       description:
         "En Iter Advisors, ofrecemos soluciones de finanzas adaptadas: auditoría inicial, configuración de reportes, o apoyo CFO completo.",
       buttonText: "Discute tu necesidad",
-      buttonHref: "/es/contact",
+      buttonHref: "/es/contacto",
     },
   },
 };

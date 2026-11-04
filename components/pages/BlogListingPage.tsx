@@ -95,7 +95,7 @@ const content: Record<
   },
   en: {
     resourcesLabel: "Resources",
-    resourcesHref: "/en/ressources",
+    resourcesHref: "/en/resources",
     breadcrumbLabel: "Blog",
     h1: "The Iter Advisors journal",
     intro:
@@ -113,8 +113,8 @@ const content: Record<
     featuredCta: "Read the article",
     mostReadLabel: "Recommended guides",
     mostReadArticles: [
-      { title: "Fractional CFO cost in 2026: pricing, packages and ROI", href: "/en/ressources/blog/fractional-cfo-cost-services-2026", category: "Fractional CFO" },
-      { title: "Fractional CFO vs full-time CFO: complete comparison", href: "/en/ressources/blog/daf-externalise-vs-daf-salarie", category: "Fractional CFO" },
+      { title: "Fractional CFO cost in 2026: pricing, packages and ROI", href: "/en/resources/blog/fractional-cfo-cost-services-2026", category: "Fractional CFO" },
+      { title: "Fractional CFO vs full-time CFO: complete comparison", href: "/en/resources/blog/fractional-cfo-vs-in-house-cfo", category: "Fractional CFO" },
       { title: "Due diligence checklist: financial preparation for fundraising", href: "/ressources/blog/checklist-due-diligence-levee-de-fonds", category: "Fundraising" },
       { title: "Cash burn: calculate your runway and prepare your raise", href: "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", category: "Fundraising" },
       { title: "Tax regimes: France vs Spain — Full comparison 2026", href: "/ressources/blog/regimes-fiscaux-france-vs-espagne", category: "Tax" },
@@ -123,7 +123,7 @@ const content: Record<
       {
         title:
           "AI and automation of repetitive tasks in the Finance department",
-        href: "/en/ressources/blog",
+        href: "/en/resources/blog",
         image: "/images/blog/ia-automatisation.webp",
       },
       {
@@ -159,7 +159,7 @@ const content: Record<
     mostReadLabel: "Guías recomendadas",
     mostReadArticles: [
       { title: "¿Cuánto cuesta un DAF externalizado en 2026?", href: "/es/recursos/blog/cfo-externo-pymes-precio-2026", category: "DAF externalizado" },
-      { title: "DAF externalizado vs DAF asalariado: análisis completo", href: "/es/recursos/blog/daf-externalise-vs-daf-salarie", category: "DAF externalizado" },
+      { title: "DAF externalizado vs DAF asalariado: análisis completo", href: "/es/recursos/blog/cfo-externo-vs-cfo-en-plantilla", category: "DAF externalizado" },
       { title: "Checklist due diligence: preparación financiera para la ronda de inversión", href: "/ressources/blog/checklist-due-diligence-levee-de-fonds", category: "Inversión" },
       { title: "Cash burn: calcular el runway y anticipar la ronda", href: "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", category: "Inversión" },
       { title: "Regímenes fiscales: Francia vs España — Comparativa completa 2026", href: "/es/recursos/blog/regimes-fiscaux-france-vs-espagne", category: "Fiscalidad" },

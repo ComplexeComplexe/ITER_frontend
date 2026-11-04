@@ -153,7 +153,7 @@ export default async function Page() {
           title: "Convention fiscale France-Espagne : qui impose quoi, et comment éviter la double imposition",
         },
         {
-          href: "/ressources/fiscalite/beckham-law",
+          href: "/ressources/fiscalite/loi-beckham",
           img: "/images/blog/loi-beckham-espagne-conditions-eligibilite.webp",
           alt: "Loi Beckham en Espagne : le régime des impatriés",
           title: "Loi Beckham : le régime des impatriés — et pourquoi il dispense du Modelo 720",

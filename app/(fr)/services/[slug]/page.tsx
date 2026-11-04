@@ -56,7 +56,7 @@ function getServiceLocalizedPaths(slug: ServicePageSlug) {
   return {
     fr: `/services/${SERVICE_URL_SLUG_BY_LOCALE.fr[slug]}`,
     en: `/en/services/${SERVICE_URL_SLUG_BY_LOCALE.en[slug]}`,
-    es: `/es/services/${SERVICE_URL_SLUG_BY_LOCALE.es[slug]}`,
+    es: `/es/servicios/${SERVICE_URL_SLUG_BY_LOCALE.es[slug]}`,
   };
 }
 

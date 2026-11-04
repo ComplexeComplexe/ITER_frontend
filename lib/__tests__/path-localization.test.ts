@@ -33,7 +33,7 @@ import {
 describe("racines localisées", () => {
   it("l'espagnol dit recursos, pas ressources", () => {
     expect(resourcesHref("fr")).toBe("/ressources");
-    expect(resourcesHref("en")).toBe("/en/ressources");
+    expect(resourcesHref("en")).toBe("/en/resources");
     expect(resourcesHref("es")).toBe("/es/recursos");
   });
 
@@ -46,14 +46,14 @@ describe("racines localisées", () => {
   it("glossaire, outils et cas clients suivent la langue", () => {
     expect(glossaryHref("es")).toBe("/es/recursos/glosario");
     expect(toolsHref("es")).toBe("/es/recursos/herramientas");
-    expect(toolsHref("en")).toBe("/en/ressources/tools");
+    expect(toolsHref("en")).toBe("/en/resources/tools");
     expect(caseStudiesHref("es")).toBe("/es/recursos/casos-de-exito");
-    expect(caseStudiesHref("en")).toBe("/en/ressources/cas-clients");
+    expect(caseStudiesHref("en")).toBe("/en/resources/case-studies");
   });
 
   it("les articles de blog vivent sous la racine de leur langue", () => {
     expect(blogHref("es", "que-es-fractional-cfo")).toBe("/es/recursos/blog/que-es-fractional-cfo");
-    expect(blogHref("en", "flux-de-tresorerie")).toBe("/en/ressources/blog/flux-de-tresorerie");
+    expect(blogHref("en", "flux-de-tresorerie")).toBe("/en/resources/blog/cash-flow-statement");
   });
 });
 
@@ -67,12 +67,12 @@ describe("services et clusters", () => {
     );
     // C'est ici que les pages villes ES envoyaient vers le slug anglais.
     expect(serviceHref("accompagnement-levee-de-fond", "es")).toBe(
-      "/es/services/soporte-financiacion",
+      "/es/servicios/soporte-financiacion",
     );
     expect(serviceHref("controle-de-gestion-externalise", "es")).toBe(
-      "/es/services/control-gestion-externalizado",
+      "/es/servicios/control-gestion-externalizado",
     );
-    expect(serviceHref("previsionnel-tresorerie", "es")).toBe("/es/services/prevision-tesoreria");
+    expect(serviceHref("previsionnel-tresorerie", "es")).toBe("/es/servicios/prevision-tesoreria");
   });
 
   it("le cluster DAF n'expose jamais /en/daf-externalise", () => {
@@ -93,9 +93,9 @@ describe("services et clusters", () => {
 describe("sélecteur de langue", () => {
   it("bascule un article de blog sans changer de rubrique", () => {
     expect(getLocalizedPath("/ressources/blog/flux-de-tresorerie", "es")).toBe(
-      "/es/recursos/blog/flux-de-tresorerie",
+      "/es/recursos/blog/flujo-de-caja",
     );
-    expect(getLocalizedPath("/es/recursos/blog/flux-de-tresorerie", "fr")).toBe(
+    expect(getLocalizedPath("/es/recursos/blog/flujo-de-caja", "fr")).toBe(
       "/ressources/blog/flux-de-tresorerie",
     );
   });
@@ -150,7 +150,7 @@ describe("articles sans URL propre dans leur langue", () => {
 
   it("renvoie vers le français les traductions retirées de la circulation", () => {
     expect(resolveBlogArticleHref("en", "essentiels-outils-tech-finance")).toBe(
-      "/en/ressources/blog/essential-finance-technology-tools",
+      "/en/resources/blog/essential-finance-technology-tools",
     );
     expect(resolveBlogArticleHref("es", "organiser-sa-direction-financiere")).toBe(
       "/es/recursos/blog/organizar-direccion-financiera",
@@ -159,7 +159,7 @@ describe("articles sans URL propre dans leur langue", () => {
 
   it("écarte les doublons de slug entre langues", () => {
     // La version EN vit sous `fractional-cfo-cost-services-2026`, déjà listée.
-    expect(resolveBlogArticleHref("en", "cout-daf-externalise-tarifs-prix-2026")).toBe("/en/ressources/blog/fractional-cfo-cost-services-2026");
+    expect(resolveBlogArticleHref("en", "cout-daf-externalise-tarifs-prix-2026")).toBe("/en/resources/blog/fractional-cfo-cost-services-2026");
     expect(resolveBlogArticleHref("es", "cout-daf-externalise-tarifs-prix-2026")).toBe("/es/recursos/blog/cfo-externo-pymes-precio-2026");
   });
 

@@ -7,7 +7,7 @@ import DocumentedCasePage from "@/components/pages/DocumentedCasePage";
 
 export const dynamicParams = false;
 const locale = "es";
-export function generateStaticParams() { return getReviewedCases(locale).map(({ slug }) => ({ slug })); }
+export function generateStaticParams() { return getReviewedCases(locale).map(({ href }) => ({ slug: href.split("/").pop()! })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const item = getReviewedCase((await params).slug, locale);
   if (!item) notFound();

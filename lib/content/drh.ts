@@ -383,15 +383,15 @@ export const drhContent: Record<Locale, DrhContent> = {
         },
         {
           title: "Multi-sector expertise",
-          text: `With [[${CLIENTS_ACCOMPAGNES} companies supported|/en/ressources/cas-clients]], our HR directors work across 5 sectors (SaaS, Deep-Tech, e-Commerce, Industry, Services) and bring cross-sector best practices to your organisation.`,
+          text: `With [[${CLIENTS_ACCOMPAGNES} companies supported|/en/resources/case-studies]], our HR directors work across 5 sectors (SaaS, Deep-Tech, e-Commerce, Industry, Services) and bring cross-sector best practices to your organisation.`,
         },
         {
           title: "Operational from day one",
-          text: "Unlike an internal hire (3 to 6 months of onboarding), the outsourced HR director is productive within 1 to 2 weeks thanks to [[structured recruitment processes|/en/ressources/blog]] and proven playbooks.",
+          text: "Unlike an internal hire (3 to 6 months of onboarding), the outsourced HR director is productive within 1 to 2 weeks thanks to [[structured recruitment processes|/en/resources/blog]] and proven playbooks.",
         },
         {
           title: "Shared network and tools",
-          text: "Access to our ecosystem: partner recruitment firms, [[HRIS tools|/en/ressources/tools]] negotiated in volume, pre-qualified CV pools, and sector-specific compensation benchmarks.",
+          text: "Access to our ecosystem: partner recruitment firms, [[HRIS tools|/en/resources/tools]] negotiated in volume, pre-qualified CV pools, and sector-specific compensation benchmarks.",
         },
       ],
     },
@@ -450,8 +450,8 @@ export const drhContent: Record<Locale, DrhContent> = {
       heading: "What our clients say about their outsourced HR director",
       items: [],
       ctaText:
-        "Discover [[our detailed case studies|/en/ressources/cas-clients]] to see how our HR directors have supported growing SMEs and startups.",
-      ctaHref: "/en/ressources/cas-clients",
+        "Discover [[our detailed case studies|/en/resources/case-studies]] to see how our HR directors have supported growing SMEs and startups.",
+      ctaHref: "/en/resources/case-studies",
     },
     faq: [
       {
@@ -531,7 +531,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       heading: "¿Qué es un director de RR. HH. externalizado?",
       content: [
         "El director de RR. HH. externalizado interviene en su empresa sin ser empleado. Asume las mismas responsabilidades que un director de RR. HH. interno: estrategia de personas, reclutamiento, gestión del talento, cumplimiento normativo laboral, relaciones con la representación del personal y pilotaje de la función RR. HH.",
-        "Esta solución está dirigida a empresas que necesitan una experiencia RR. HH. de alto nivel sin contratar a tiempo completo. El director de RR. HH. externalizado puede intervenir a tiempo compartido (por ejemplo, unos días por semana o al mes) o en encargos puntuales (auditoría, due diligence RR. HH., [[asesoramiento en financiación|/es/services/soporte-financiacion]], etc.).",
+        "Esta solución está dirigida a empresas que necesitan una experiencia RR. HH. de alto nivel sin contratar a tiempo completo. El director de RR. HH. externalizado puede intervenir a tiempo compartido (por ejemplo, unos días por semana o al mes) o en encargos puntuales (auditoría, due diligence RR. HH., [[asesoramiento en financiación|/es/servicios/soporte-financiacion]], etc.).",
       ],
     },
     advantages: {
@@ -608,7 +608,7 @@ export const drhContent: Record<Locale, DrhContent> = {
         ],
       },
       closingText:
-        "Nuestro director de RR. HH. externalizado trabaja mano a mano con su [[asesor fiscal|/es/services/externalizar-contabilidad]] para garantizar el cumplimiento social y fiscal.",
+        "Nuestro director de RR. HH. externalizado trabaja mano a mano con su [[asesor fiscal|/es/servicios/externalizar-contabilidad]] para garantizar el cumplimiento social y fiscal.",
     },
     testimonials: {
       heading: "Lo que nuestros clientes dicen de su director de RR. HH. externalizado",
@@ -651,7 +651,7 @@ export const drhContent: Record<Locale, DrhContent> = {
       {
         question: "¿El director de RR. HH. externalizado gestiona las nóminas?",
         answer:
-          "El director de RR. HH. externalizado supervisa y coordina las nóminas (verificación de recibos de salario, control de cargas, arbitraje en casos complejos) pero no las procesa directamente. Trabaja con su [[asesor fiscal o nuestro socio de nóminas|/es/services/externalizar-contabilidad]] para garantizar el cumplimiento. Esta separación de funciones garantiza un control de calidad sin conflicto de intereses.",
+          "El director de RR. HH. externalizado supervisa y coordina las nóminas (verificación de recibos de salario, control de cargas, arbitraje en casos complejos) pero no las procesa directamente. Trabaja con su [[asesor fiscal o nuestro socio de nóminas|/es/servicios/externalizar-contabilidad]] para garantizar el cumplimiento. Esta separación de funciones garantiza un control de calidad sin conflicto de intereses.",
       },
       {
         question: "¿Cuál es la diferencia entre un director de RR. HH. externalizado y un consultor freelance de RR. HH.?",
@@ -698,7 +698,7 @@ export function getDrhContent(locale: Locale): DrhContent {
       headers: english ? ["Criterion", "External HR lead", "Internal HR lead"] : ["Criterio", "Responsable externo", "Responsable interno"],
       rows: english ? [["Scope", "Agreed priorities and deliverables", "Ongoing organisational responsibility"], ["Availability", "Working cadence agreed in the proposal", "Employment contract and organisation"], ["Budget", "Quotation for the agreed scope", "Employer cost and recruitment"]] : [["Alcance", "Prioridades y entregables acordados", "Responsabilidad permanente"], ["Disponibilidad", "Ritmo acordado en la propuesta", "Contrato y organización"], ["Presupuesto", "Presupuesto según alcance", "Coste del empleador y selección"]],
     } },
-    testimonials: { ...t.testimonials, heading: english ? "Company references" : "Referencias de empresas", ctaText: english ? "View [[documented company references|/en/ressources/cas-clients]]. Finance cases do not establish outcomes for an HR engagement." : "Consulte las [[referencias documentadas|/es/recursos/casos-de-exito]]. Los casos de Finanzas no acreditan resultados de un encargo de RR. HH." },
+    testimonials: { ...t.testimonials, heading: english ? "Company references" : "Referencias de empresas", ctaText: english ? "View [[documented company references|/en/resources/case-studies]]. Finance cases do not establish outcomes for an HR engagement." : "Consulte las [[referencias documentadas|/es/recursos/casos-de-exito]]. Los casos de Finanzas no acreditan resultados de un encargo de RR. HH." },
     faq: t.faq.map(item => {
       if (/cost|budget|commitment|cuánto cuesta|coste|precio|compromiso/i.test(item.question)) return { ...item, answer: terms };
       if (/freelance/i.test(item.question)) return { ...item, answer: english ? "Compare the named expert, their availability, the scope and the arrangements for continuity. A firm or an independent consultant may be suitable depending on your needs; assess the actual proposal." : "Compare el experto asignado, su disponibilidad, el alcance y la continuidad prevista. Un gabinete o un profesional independiente pueden ser adecuados según la necesidad; revise la propuesta concreta." };

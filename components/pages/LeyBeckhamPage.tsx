@@ -1,3 +1,4 @@
+import { finalPublicPath } from "@/lib/url-migration";
 import Link from "next/link";
 import { parityHref } from "@/lib/locale-route-map";
 import PageByline from "@/components/PageByline";
@@ -13,7 +14,7 @@ import type { CmsNavItem } from "@/lib/static-content";
 const breadcrumbLabels: Record<Locale, { services: string; servicesHref: string; page: string }> = {
   fr: { services: "Services", servicesHref: "/services", page: "Loi Beckham" },
   en: { services: "Services", servicesHref: "/en/services", page: "Beckham Law" },
-  es: { services: "Servicios", servicesHref: "/es/services", page: "Ley Beckham" },
+  es: { services: "Servicios", servicesHref: "/es/servicios", page: "Ley Beckham" },
 };
 
 /* Audit SEO 2026-10-15 (2.1) — cette page vise la demande (Modelo 149) ; le
@@ -23,7 +24,7 @@ const relatedGuides: Record<Locale, { title: string; links: { source: string; la
   fr: {
     title: "Pour comprendre le régime",
     links: [
-      { source: "/ressources/fiscalite/beckham-law", label: "Le guide complet de la loi Beckham" },
+      { source: "/ressources/fiscalite/loi-beckham", label: "Le guide complet de la loi Beckham" },
       { source: "/ressources/blog/loi-beckham-espagne-conditions-eligibilite", label: "Les conditions d'éligibilité en détail" },
       { source: "/ressources/blog/loi-beckham-economie-impot-simulation", label: "La méthode pour comparer avec l'IRPF classique" },
     ],
@@ -31,7 +32,7 @@ const relatedGuides: Record<Locale, { title: string; links: { source: string; la
   en: {
     title: "Understand the regime first",
     links: [
-      { source: "/ressources/fiscalite/beckham-law", label: "The complete guide to the Beckham Law" },
+      { source: "/ressources/fiscalite/loi-beckham", label: "The complete guide to the Beckham Law" },
       { source: "/ressources/blog/loi-beckham-espagne-conditions-eligibilite", label: "Eligibility conditions in detail" },
       { source: "/ressources/blog/loi-beckham-economie-impot-simulation", label: "How to compare it with standard IRPF" },
     ],
@@ -39,7 +40,7 @@ const relatedGuides: Record<Locale, { title: string; links: { source: string; la
   es: {
     title: "Para entender el régimen",
     links: [
-      { source: "/ressources/fiscalite/beckham-law", label: "La guía completa de la Ley Beckham" },
+      { source: "/ressources/fiscalite/loi-beckham", label: "La guía completa de la Ley Beckham" },
       { source: "/ressources/blog/loi-beckham-espagne-conditions-eligibilite", label: "Los requisitos en detalle" },
       { source: "/ressources/blog/loi-beckham-economie-impot-simulation", label: "Cómo compararla con el IRPF general" },
     ],
@@ -58,7 +59,7 @@ export default function LeyBeckhamPage({ locale, content: t, cmsNavigation }: Le
   const dateModified = "2026-09-06";
   const dateLabel = { fr: "6 septembre 2026", en: "6 September 2026", es: "6 de septiembre de 2026" }[locale];
   const pageSchema = editorialWebPageSchema({
-    path: `${locale === "fr" ? "" : `/${locale}`}/services/ley-beckham`,
+    path: finalPublicPath(`${locale === "fr" ? "" : `/${locale}`}/services/ley-beckham`),
     name: t.hero.h1, description: t.meta.description, locale, author,
     datePublished: "2026-09-05", dateModified,
   });

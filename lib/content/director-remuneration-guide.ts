@@ -70,7 +70,7 @@ export const REMUNERATION_GUIDE: Record<Locale, BlogPostData> = {
     meta: { title: 'Director remuneration and cash flow | Iter Advisors', description: 'Build a director remuneration budget that your SME can sustain: total company cost, payment timing, cash flow scenarios and the checks to complete.' },
     h1: 'Director remuneration: how much can your SME afford to pay?',
     category: 'Financial management',
-    breadcrumbs: { resourcesLabel: 'Resources', resourcesHref: '/en/ressources', blogLabel: 'Blog', blogHref: '/en/ressources/blog' },
+    breadcrumbs: { resourcesLabel: 'Resources', resourcesHref: '/en/resources', blogLabel: 'Blog', blogHref: '/en/resources/blog' },
     htmlContent: `
 <p>Sustainable director remuneration covers personal needs while leaving the company enough cash to operate and invest. To establish an affordable amount, compare the director’s target income with the full cost to the company and the dates on which payments fall due.</p>
 <p>Start with a budget. Regular remuneration, dividends and any other arrangements can then be assessed and validated against the circumstances of both the director and the business.</p>
@@ -98,7 +98,7 @@ export const REMUNERATION_GUIDE: Record<Locale, BlogPostData> = {
 <h2 id="previsionnel">How should remuneration enter the cash flow forecast?</h2>
 <p>The annual budget shows the overall cost. The cash flow forecast shows when the company will actually need the funds.</p>
 <p>Payments to the director should appear alongside payroll, supplier payments, taxes, loan repayments and investment. Customer receipts should be scheduled for the dates on which payment is realistically expected.</p>
-<p>Our guide to <a href="/en/ressources/blog/flux-de-tresorerie">cash flow and forecasting</a> explains the distinction between accounting profit and cash movements.</p>
+<p>Our guide to <a href="/en/resources/blog/cash-flow-statement">cash flow and forecasting</a> explains the distinction between accounting profit and cash movements.</p>
 <p>One approach is to compare a base scenario with a delayed-collection scenario. For each remuneration option, examine the lowest forecast cash balance and the expenditure that could become difficult to fund.</p>
 <h2 id="arbitrage">What if the budget cannot support the desired income?</h2>
 <p>Make the gap visible before taking on commitments.</p>
@@ -144,7 +144,7 @@ export const REMUNERATION_GUIDE: Record<Locale, BlogPostData> = {
 <h2 id="previsionnel">¿Cómo integrar la remuneración en la previsión de tesorería?</h2>
 <p>El presupuesto anual muestra el coste global. La previsión de tesorería señala cuándo necesitará la empresa disponer del dinero.</p>
 <p>Los pagos al directivo deben figurar junto a las nóminas, los proveedores, los impuestos, las cuotas de préstamos y las inversiones. Los cobros de clientes deben situarse en la fecha en la que razonablemente se espera recibirlos.</p>
-<p>Nuestra guía sobre <a href="/es/recursos/blog/flux-de-tresorerie">flujos de caja y previsiones</a> explica esta diferencia entre el resultado contable y los movimientos de dinero.</p>
+<p>Nuestra guía sobre <a href="/es/recursos/blog/flujo-de-caja">flujos de caja y previsiones</a> explica esta diferencia entre el resultado contable y los movimientos de dinero.</p>
 <p>Un método consiste en comparar un escenario central con otro de retrasos en los cobros. Para cada opción de remuneración, se analiza el saldo mínimo previsto y los gastos que podrían resultar difíciles de financiar.</p>
 <h2 id="arbitrage">¿Qué hacer si el presupuesto no permite alcanzar los ingresos deseados?</h2>
 <p>La diferencia debe hacerse visible antes de asumir compromisos.</p>
@@ -155,6 +155,6 @@ export const REMUNERATION_GUIDE: Record<Locale, BlogPostData> = {
 <ul><li>Las últimas cuentas anuales y una situación contable reciente.</li><li>El detalle de las remuneraciones y los pagos actuales.</li><li>Las cuentas a cobrar y a pagar, con sus vencimientos.</li><li>El calendario de impuestos, cotizaciones y préstamos.</li><li>El presupuesto de contratación e inversiones.</li><li>Las simulaciones de los asesores, con sus fechas e hipótesis.</li><li>Los contratos y justificantes de los mecanismos previstos.</li></ul>
 <p>El CFO concilia esta información y prepara los escenarios. El directivo decide con los asesores correspondientes y determina qué situaciones exigirán una nueva revisión: caída de actividad, retrasos en los cobros, contrataciones o cambios en su situación personal.</p>
 <p>En Iter Advisors, los servicios de <a href="/es/externalizacion-daf">CFO externo</a> combinan presupuesto, previsiones de tesorería y apoyo a las decisiones. El alcance se define según los datos disponibles y las necesidades de la empresa.</p>
-<p><a href="/es/contact">Consultar mis necesidades de gestión financiera</a></p>`,
+<p><a href="/es/contacto">Consultar mis necesidades de gestión financiera</a></p>`,
   },
 };

@@ -23,7 +23,7 @@ const breadcrumbsByLocale: Record<
 > = {
   fr: { servicesLabel: "Services", servicesHref: "/services" },
   en: { servicesLabel: "Services", servicesHref: "/en/services" },
-  es: { servicesLabel: "Servicios", servicesHref: "/es/services" },
+  es: { servicesLabel: "Servicios", servicesHref: "/es/servicios" },
 };
 
 const sectionIcons = [TrendingUp, BarChart3, Shield, Rocket, Settings, Target, Compass, Zap];

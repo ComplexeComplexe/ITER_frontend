@@ -34,7 +34,7 @@ export default async function TaxComparisonPage({ locale }: { locale: TaxLocale 
     heroImage="/images/blog/covers/regimes-fiscaux-france-vs-espagne.svg"
     toc={[...t.sections.map(section => ({ id: section.id, label: section.title })), { id: "faq", label: "FAQ" }, { id: "sources", label: t.sourcesLabel }]}
     tldr={t.summary} metaDescription={t.description} faqItems={t.faq}
-    relatedArticles={[{ url: t.cta.serviceHref, category: fr ? "Direction financière" : "Dirección financiera", title: t.cta.serviceLabel }, { url: fr ? "/ressources/fiscalite/beckham-law" : "/es/services/ley-beckham", category: t.category, title: fr ? "Régime Beckham : conditions et limites" : "Ley Beckham: requisitos y límites" }]}
+    relatedArticles={[{ url: t.cta.serviceHref, category: fr ? "Direction financière" : "Dirección financiera", title: t.cta.serviceLabel }, { url: fr ? "/ressources/fiscalite/loi-beckham" : "/es/servicios/ley-beckham", category: t.category, title: fr ? "Régime Beckham : conditions et limites" : "Ley Beckham: requisitos y límites" }]}
   >
     <p className="text-sm text-muted-foreground">{t.checked}</p>
     {t.sections.map(section => <section key={section.id}>

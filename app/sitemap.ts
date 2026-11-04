@@ -1,3 +1,4 @@
+import { finalPublicPath } from "@/lib/url-migration";
 import localeAliases from "@/lib/content/editorial-locales/aliases.json";
 import registry from "@/lib/content/editorial-locales/registry.json";
 import { ALIGNED_PAGE_IDS, localeAlignmentDate, alignedPaths } from "@/lib/content/locale-publication";
@@ -272,7 +273,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // alternates désignaient le contrôle de gestion, une autre offre.
     entries.push(
       { url: `${BASE}/services/gestion-financiere-externalisee`, lastModified: D.service },
-      { url: `${BASE}/es/services/gestion-financiera-externalizada`, lastModified: D.service },
+      { url: `${BASE}/es/servicios/gestion-financiera-externalizada`, lastModified: D.service },
     );
   }
 
@@ -352,7 +353,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: D.fiscalite,
   });
   entries.push({
-    url: `${BASE}/ressources/fiscalite/beckham-law`,
+    url: `${BASE}/ressources/fiscalite/loi-beckham`,
     lastModified: D.fiscalite,
   });
   entries.push({
@@ -470,7 +471,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     if (inEs) entries.push({ url: esUrl, ...common, lastModified: blogModified(slug, "es") });
   }
 
-  for (const path of ["/ressources/outils/methodologie", "/en/ressources/tools/methodology", "/es/recursos/herramientas/metodologia"]) entries.push({ url: `${BASE}${path}`, lastModified: "2026-10-03" });
+  for (const path of ["/ressources/outils/methodologie", "/en/resources/tools/methodology", "/es/recursos/herramientas/metodologia"]) entries.push({ url: `${BASE}${path}`, lastModified: "2026-10-03" });
 
   // ── Tool sheets (FR-only) ─────────────────────────────────────────────────
   // SITEMAP-FIX: EN/ES tool pages return 404 (no route). FR only.
@@ -514,7 +515,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // française : elle a maintenant sa propre URL, encore faut-il la déclarer.
   for (const { slug } of getGlossaryPages("en")) {
     entries.push({
-      url: `${BASE}/en/ressources/glossaire/${slug}`,
+      url: `${BASE}/en/resources/glossary/${slug}`,
       lastModified: D.glossary,
     });
   }
@@ -532,9 +533,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // EN↔ES form one cluster (same x-default as lib/metadata.ts).
   const beckhamAlternates = {
     languages: {
-      "en-GB": `${BASE}/en/services/ley-beckham`,
-      "es-ES": `${BASE}/es/services/ley-beckham`,
-      "x-default": `${BASE}/en/services/ley-beckham`,
+      "en-GB": `${BASE}/en/services/beckham-law`,
+      "es-ES": `${BASE}/es/servicios/ley-beckham`,
+      "x-default": `${BASE}/en/services/beckham-law`,
     },
   };
   for (const locale of ["en", "es"]) {
@@ -556,7 +557,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   entries.push(...DOCUMENTED_CASES.map(item => ({ url: `${BASE}${item.href}`, lastModified: item.modified })));
 
-  const transactionalUpdates = new Set(["/services/controle-de-gestion-externalise", "/services/comptabilite-externalisation", "/en/services/outsourced-management-control", "/es/services/control-gestion-externalizado", "/es/services/gestion-financiera-externalizada", "/es/services/externalizar-contabilidad", "/es/services/prevision-tesoreria", "/es/services/soporte-financiacion", "/services/gestion-financiere-externalisee", "/ressources/blog/les-10-outils-pour-cfos-startup", "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", "/daf-externalise", "/fractional-cfo-startups", "/daf-externalise-toulouse", "/en/fractional-cfo-toulouse", "/es/cfo-externalizado-toulouse", "/contact", "/en/contact", "/es/contact", "/daf-externalise/temps-partage", "/daf-externalise/secteurs", "/services/accompagnement-levee-de-fond"]);
+  const transactionalUpdates = new Set(["/services/controle-de-gestion-externalise", "/services/comptabilite-externalisation", "/en/services/outsourced-management-control", "/es/servicios/control-gestion-externalizado", "/es/servicios/gestion-financiera-externalizada", "/es/servicios/externalizar-contabilidad", "/es/servicios/prevision-tesoreria", "/es/servicios/soporte-financiacion", "/services/gestion-financiere-externalisee", "/ressources/blog/les-10-outils-pour-cfos-startup", "/ressources/blog/cash-burn-calculer-runway-anticiper-levee", "/daf-externalise", "/fractional-cfo-startups", "/daf-externalise-toulouse", "/en/fractional-cfo-toulouse", "/es/cfo-externalizado-toulouse", "/contact", "/en/contact", "/es/contacto", "/daf-externalise/temps-partage", "/daf-externalise/secteurs", "/services/accompagnement-levee-de-fond"]);
   const consistencyUpdates = new Set([
     "",
     "/daf-externalise-toulouse",
@@ -566,13 +567,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/daf-externalise/temps-partage",
     "/en",
     "/en/fractional-cfo/shared-time",
-    "/en/ressources",
-    "/en/services/ley-beckham",
+    "/en/resources",
+    "/en/services/beckham-law",
     "/es",
     "/es/cfo-externalizado-toulouse",
     "/es/recursos",
     "/es/recursos/blog/regimes-fiscaux-france-vs-espagne",
-    "/es/services/ley-beckham",
+    "/es/servicios/ley-beckham",
     "/fractional-cfo-startups",
     "/ressources",
     "/ressources/blog/cout-daf-externalise-tarifs-prix-2026",
@@ -589,6 +590,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ressources/outils/logiciels-tresorerie",
     "/services/controle-de-gestion-externalise"
   ]);
+  for (const item of entries) {
+    item.url = finalPublicPath(item.url);
+    if (item.alternates?.languages) {
+      item.alternates.languages = Object.fromEntries(Object.entries(item.alternates.languages).map(([lang, href]) => [lang, typeof href === "string" ? finalPublicPath(href) : href]));
+    }
+  }
   // Replace the migrated clusters atomically: no proposed or duplicate URLs.
   for (const sourcePath of ALIGNED_PAGE_IDS) {
     const paths = alignedPaths(sourcePath)!;
@@ -612,7 +619,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
   return entries.filter(item => !(item.url.slice(BASE.length) in localeAliases)).map(item => ({
     ...item,
-    lastModified: latestRevision(PAGE_REVISIONS[item.url.slice(BASE.length) || "/"], item.lastModified, consistencyUpdates.has(item.url.slice(BASE.length)) ? "2026-09-06" : transactionalUpdates.has(item.url.slice(BASE.length)) || [...tools.filter(tool => !tool.logo).map(tool => `/ressources/outils/${tool.slug}`), "/daf-externalise/deep-tech", "/daf-externalise/industrie", "/daf-externalise/ecommerce", "/ressources/outils", "/ressources/blog/stack-financier-saas-series-a", "/daf-externalise-paris", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", "/ressources/cas-clients", "/en/ressources/cas-clients"].some(path => item.url === `${BASE}${path}`)
+    lastModified: latestRevision(PAGE_REVISIONS[item.url.slice(BASE.length) || "/"], item.lastModified, consistencyUpdates.has(item.url.slice(BASE.length)) ? "2026-09-06" : transactionalUpdates.has(item.url.slice(BASE.length)) || [...tools.filter(tool => !tool.logo).map(tool => `/ressources/outils/${tool.slug}`), "/daf-externalise/deep-tech", "/daf-externalise/industrie", "/daf-externalise/ecommerce", "/ressources/outils", "/ressources/blog/stack-financier-saas-series-a", "/daf-externalise-paris", "/ressources/blog/cout-daf-externalise-tarifs-prix-2026", "/ressources/cas-clients", "/en/resources/case-studies"].some(path => item.url === `${BASE}${path}`)
       ? "2026-09-05" : undefined),
   }));
 }

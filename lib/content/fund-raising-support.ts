@@ -228,7 +228,7 @@ const content: Record<Locale, FundRaisingSupportContent> = {
       "title": "Preparar las finanzas de su ronda",
       "description": "Modelo financiero, data room y preguntas de inversores, con un alcance definido según su etapa, sus datos y sus plazos.",
       "buttonText": "Describir mi necesidad",
-      "buttonHref": "/es/contact#levee"
+      "buttonHref": "/es/contacto#levee"
     }
   }
 };

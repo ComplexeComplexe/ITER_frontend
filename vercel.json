@@ -139,7 +139,7 @@
     },
     {
       "source": "/en/ressources/testimonials/happy-scribe",
-      "destination": "/en/ressources/blog/happy-scribe-finance-case-study",
+      "destination": "/en/resources/blog/happy-scribe-finance-case-study",
       "statusCode": 301
     },
     {
@@ -174,27 +174,27 @@
     },
     {
       "source": "/es/services/previsionnel-tresorerie",
-      "destination": "/es/services/prevision-tesoreria",
+      "destination": "/es/servicios/prevision-tesoreria",
       "permanent": true
     },
     {
       "source": "/es/services/comptabilite-externalisation",
-      "destination": "/es/services/externalizar-contabilidad",
+      "destination": "/es/servicios/externalizar-contabilidad",
       "permanent": true
     },
     {
       "source": "/es/services/controle-de-gestion-externalise",
-      "destination": "/es/services/control-gestion-externalizado",
+      "destination": "/es/servicios/control-gestion-externalizado",
       "permanent": true
     },
     {
       "source": "/es/services/gestion-financiere-externalisee",
-      "destination": "/es/services/gestion-financiera-externalizada",
+      "destination": "/es/servicios/gestion-financiera-externalizada",
       "permanent": true
     },
     {
       "source": "/es/services/accompagnement-levee-de-fond",
-      "destination": "/es/services/soporte-financiacion",
+      "destination": "/es/servicios/soporte-financiacion",
       "permanent": true
     },
     {
@@ -203,18 +203,8 @@
       "permanent": true
     },
     {
-      "source": "/es/contacto",
-      "destination": "/es/contact",
-      "permanent": true
-    },
-    {
       "source": "/es/daf-externalizado",
       "destination": "/es/externalizacion-daf",
-      "permanent": true
-    },
-    {
-      "source": "/es/servicios",
-      "destination": "/es/services",
       "permanent": true
     },
     {
@@ -224,7 +214,7 @@
     },
     {
       "source": "/en/ressources/testimonials/:slug",
-      "destination": "/en/ressources/cas-clients",
+      "destination": "/en/resources/case-studies",
       "permanent": true
     },
     {
@@ -239,7 +229,7 @@
     },
     {
       "source": "/en/category/:path*",
-      "destination": "/en/ressources/blog",
+      "destination": "/en/resources/blog",
       "permanent": true
     },
     {
@@ -274,7 +264,7 @@
     },
     {
       "source": "/es/services/levee-de-fonds",
-      "destination": "/es/services/soporte-financiacion",
+      "destination": "/es/servicios/soporte-financiacion",
       "permanent": true
     },
     {
@@ -284,7 +274,7 @@
     },
     {
       "source": "/en/testimonials/:slug",
-      "destination": "/en/ressources/cas-clients",
+      "destination": "/en/resources/case-studies",
       "permanent": true
     },
     {
@@ -299,7 +289,7 @@
     },
     {
       "source": "/en/glossaire/:slug",
-      "destination": "/en/ressources/glossaire",
+      "destination": "/en/resources/glossary",
       "permanent": true
     },
     {
@@ -364,7 +354,7 @@
     },
     {
       "source": "/en/ressources/blog/ia-act-opportunite-fintechs",
-      "destination": "/en/ressources/blog",
+      "destination": "/en/resources/blog",
       "permanent": true
     },
     {

@@ -3,9 +3,9 @@ import CadsRoiSource from "@/app/(fr)/cads/roi/page";
 import Utility1495 from "@/app/(fr)/cads/page";
 import Source0 from "@/app/(fr)/carrieres/fractional-cfo/page";
 import Source1 from "@/app/(fr)/jobs/page";
-import Source2 from "@/app/(fr)/jobs/finance-analyst-junior-fr/page";
-import Source3 from "@/app/(fr)/jobs/marketing-growth-strategy/page";
-import Source4 from "@/app/(fr)/jobs/senior-finance-manager/page";
+import Source2 from "@/app/(fr)/emplois/analyste-financier-junior/page";
+import Source3 from "@/app/(fr)/emplois/marketing-strategie-croissance/page";
+import Source4 from "@/app/(fr)/emplois/responsable-financier-senior/page";
 import Source5 from "@/app/(fr)/lp/daf-externalise/page";
 import Source6 from "@/app/(fr)/lp/daf-externalise/merci/page";
 import Source7 from "@/app/(fr)/ressources/blog/page";
@@ -29,7 +29,7 @@ import Source24 from "@/app/(fr)/ressources/blog/organiser-sa-direction-financie
 import Source25 from "@/app/(fr)/ressources/blog/regimes-fiscaux-france-vs-espagne/page";
 import Source26 from "@/app/(fr)/ressources/cas-clients/page";
 import Source27 from "@/app/(fr)/ressources/fiscalite-espagne-france/page";
-import Source28 from "@/app/(fr)/ressources/fiscalite/beckham-law/page";
+import Source28 from "@/app/(fr)/ressources/fiscalite/loi-beckham/page";
 import Source29 from "@/app/(fr)/ressources/fiscalite/double-imposition-france-espagne/page";
 import Source30 from "@/app/(fr)/ressources/fiscalite/impot-revenu-espagne/page";
 import Source31 from "@/app/(fr)/ressources/fiscalite/modelo-720/page";
@@ -46,9 +46,9 @@ export const EDITORIAL_SOURCE_PAGES = {
   "/cads": { component: Utility1495, params: {} },
   "/carrieres/fractional-cfo": { component: Source0, params: {} },
   "/jobs": { component: Source1, params: {} },
-  "/jobs/finance-analyst-junior-fr": { component: Source2, params: {} },
-  "/jobs/marketing-growth-strategy": { component: Source3, params: {} },
-  "/jobs/senior-finance-manager": { component: Source4, params: {} },
+  "/emplois/analyste-financier-junior": { component: Source2, params: {} },
+  "/emplois/marketing-strategie-croissance": { component: Source3, params: {} },
+  "/emplois/responsable-financier-senior": { component: Source4, params: {} },
   "/lp/daf-externalise": { component: Source5, params: {} },
   "/lp/daf-externalise/merci": { component: Source6, params: {} },
   "/ressources/blog": { component: Source7, params: {} },
@@ -85,7 +85,7 @@ export const EDITORIAL_SOURCE_PAGES = {
   "/ressources/blog/term-sheet-negocier-clauses-cles": { component: Source8, params: {"slug": "term-sheet-negocier-clauses-cles"} },
   "/ressources/cas-clients": { component: Source26, params: {} },
   "/ressources/fiscalite-espagne-france": { component: Source27, params: {} },
-  "/ressources/fiscalite/beckham-law": { component: Source28, params: {} },
+  "/ressources/fiscalite/loi-beckham": { component: Source28, params: {} },
   "/ressources/fiscalite/double-imposition-france-espagne": { component: Source29, params: {} },
   "/ressources/fiscalite/impot-revenu-espagne": { component: Source30, params: {} },
   "/ressources/fiscalite/modelo-720": { component: Source31, params: {} },

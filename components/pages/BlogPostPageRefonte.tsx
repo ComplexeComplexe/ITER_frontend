@@ -1,3 +1,4 @@
+import { finalPublicPath } from "@/lib/url-migration";
 import { BLOG_ILLUSTRATIONS } from "@/lib/blog-illustrations";
 import { Locale } from "@/lib/i18n";
 import PageLayout from "@/components/PageLayout";
@@ -68,7 +69,7 @@ export default function BlogPostPageRefonte({
   faqItems,
 }: BlogPostPageRefonteProps) {
   // Build article URL for schema
-  const articleUrl = slug ? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref;
+  const articleUrl = finalPublicPath(slug ? `${breadcrumbs.blogHref}/${slug}` : breadcrumbs.blogHref);
   const modified = latestRevision(dateModified, PAGE_REVISIONS[articleUrl]);
 
   // SEO-06 (2026-08-31) — dix articles passaient leur auteur sans `url` :

@@ -9,7 +9,7 @@ import type { Locale } from "@/lib/i18n";
  *
  * SEO-AUD-0824 §2 — les pages d'article déclaraient systématiquement les trois
  * langues. Pour un article publié seulement en français, cela produisait
- * `/en/ressources/blog/<slug>` et `/es/recursos/blog/<slug>` : deux URL qui
+ * `/en/resources/blog/<slug>` et `/es/recursos/blog/<slug>` : deux URL qui
  * redirigent vers l'article français. Google les lisait comme des traductions,
  * les crawlait, et recevait une 308 — 26 des 59 hreflang fautifs relevés le
  * 24 août venaient de là.

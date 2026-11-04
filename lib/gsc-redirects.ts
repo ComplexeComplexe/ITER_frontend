@@ -1,9 +1,10 @@
+import { finalPublicPath } from "./url-migration";
 import type { NextConfig } from "next";
 type Redirect = Awaited<ReturnType<NonNullable<NextConfig["redirects"]>>>[number];
 
 // GSC workbook checked against production on 2026-10-04.
 // Keep exact replacements ahead of legacy wildcard fallbacks.
-export const gscRedirects: Redirect[] = [
+const originalGscRedirects: Redirect[] = [
   // Two related chains found by evaluating the effective routing configuration.
   { source: "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance", destination: "/es/recursos/blog/ia-automatizacion-tareas-repetitivas-finanzas", statusCode: 301 },
   { source: "/en/ressources/glossaire/daf", destination: "/en/fractional-cfo/role", statusCode: 301 },
@@ -41,6 +42,8 @@ export const gscRedirects: Redirect[] = [
   {"source":"/en/ressources/fiche-metier/expert-paie-et-administration-du-personnel","destination":"/en/services/payroll-coordination","statusCode":301},
   {"source":"/ressources/outils/reporting-dataviz","destination":"/ressources/outils/power-bi","statusCode":301},
 ];
+
+export const gscRedirects: Redirect[] = originalGscRedirects.map(rule => ({ ...rule, destination: finalPublicPath(rule.destination) }));
 
 export const removedEditorialPaths = new Set([
   "/ressources/consequences-financieres-cyberattaques",

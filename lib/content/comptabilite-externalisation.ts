@@ -282,8 +282,8 @@ export const comptabiliteExternalisationContent = {
   /**
    * SEO-REP §4.2 (2026-08-15) — traduction espagnole du contenu français.
    *
-   * Avant cette passe, /es/services/externalizar-contabilidad rendait le MÊME
-   * composant que le hub /es/services, avec pour seule différence un H1
+   * Avant cette passe, /es/servicios/externalizar-contabilidad rendait le MÊME
+   * composant que le hub /es/servicios, avec pour seule différence un H1
    * surchargé : similarité Jaccard de 0,96 sur des séquences de 5 mots. Ce
    * n'était pas deux pages proches, c'était la même page servie deux fois.
    *
@@ -486,7 +486,7 @@ export const comptabiliteExternalisationContent = {
           "Contables que entienden tu negocio. Nuestros equipos no se limitan a registrar asientos. Entienden el contexto de tu empresa: tu modelo de negocio, tus retos de tesorería, tus obligaciones frente a los inversores. Esta visión global permite producir una contabilidad que sirve al pilotaje, no solo al cumplimiento fiscal.",
         ],
         closingText:
-          "La externalización contable funciona mejor cuando se integra en una estrategia financiera global. Para una visión completa, explora también nuestra oferta de [[CFO externalizado|/es/externalizacion-daf]] (dirección financiera completa) y nuestros servicios de [[previsión de tesorería|/es/services/prevision-tesoreria]] y [[control de gestión|/es/services/control-gestion-externalizado]] para un pilotaje de 360°.",
+          "La externalización contable funciona mejor cuando se integra en una estrategia financiera global. Para una visión completa, explora también nuestra oferta de [[CFO externalizado|/es/externalizacion-daf]] (dirección financiera completa) y nuestros servicios de [[previsión de tesorería|/es/servicios/prevision-tesoreria]] y [[control de gestión|/es/servicios/control-gestion-externalizado]] para un pilotaje de 360°.",
       },
       {
         id: "erreurs-eviter",

@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     languages: {
       "x-default": "https://www.iteradvisors.com/ressources/blog/flux-de-tresorerie",
       "fr-FR": "https://www.iteradvisors.com/ressources/blog/flux-de-tresorerie",
-      "en-GB": "https://www.iteradvisors.com/en/ressources/blog/flux-de-tresorerie",
-      "es-ES": "https://www.iteradvisors.com/es/recursos/blog/flux-de-tresorerie",
+      "en-GB": "https://www.iteradvisors.com/en/resources/blog/cash-flow-statement",
+      "es-ES": "https://www.iteradvisors.com/es/recursos/blog/flujo-de-caja",
     },
   },
   openGraph: {

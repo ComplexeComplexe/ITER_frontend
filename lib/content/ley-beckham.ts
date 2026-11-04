@@ -182,7 +182,7 @@ const content: Record<Locale, LeyBeckhamContent> = {
       "title": "Preparar su traslado a España",
       "description": "Identifique las cuestiones financieras y administrativas que necesita revisar.",
       "buttonText": "Contactar con Iter Advisors",
-      "buttonHref": "/es/contact"
+      "buttonHref": "/es/contacto"
     }
   },
   "fr": {

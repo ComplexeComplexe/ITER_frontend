@@ -42,9 +42,9 @@ const jobsFr: JobsContent = {
     // SEO-007 (2026-08-10) — l'entrée listait la page commerciale parmi les
     // postes ouverts. Elle pointe désormais sur l'offre de recrutement.
     { title: "Fractional CFO senior", href: "/carrieres/fractional-cfo" },
-    { title: "Responsable Marketing & Growth Strategy", href: "/jobs/marketing-growth-strategy" },
-    { title: "Senior Finance Manager", href: "/jobs/senior-finance-manager" },
-    { title: "Analyste financier junior", href: "/jobs/finance-analyst-junior-fr" },
+    { title: "Responsable Marketing & Growth Strategy", href: "/emplois/marketing-strategie-croissance" },
+    { title: "Senior Finance Manager", href: "/emplois/responsable-financier-senior" },
+    { title: "Analyste financier junior", href: "/emplois/analyste-financier-junior" },
   ],
   discoverLabel: "D\u00e9couvrir",
 };
@@ -67,9 +67,9 @@ const jobsEn: JobsContent = {
   },
   jobs: [
     { title: "Senior Fractional CFO", href: "/carrieres/fractional-cfo" },
-    { title: "Marketing & Growth Strategy Manager", href: "/jobs/marketing-growth-strategy" },
-    { title: "Senior Finance Manager", href: "/jobs/senior-finance-manager" },
-    { title: "Junior Financial Analyst", href: "/jobs/finance-analyst-junior-fr" },
+    { title: "Marketing & Growth Strategy Manager", href: "/emplois/marketing-strategie-croissance" },
+    { title: "Senior Finance Manager", href: "/emplois/responsable-financier-senior" },
+    { title: "Junior Financial Analyst", href: "/emplois/analyste-financier-junior" },
   ],
   discoverLabel: "Discover",
 };
@@ -92,9 +92,9 @@ const jobsEs: JobsContent = {
   },
   jobs: [
     { title: "CFO Fraccionario senior", href: "/carrieres/fractional-cfo" },
-    { title: "Responsable de Marketing y Crecimiento", href: "/jobs/marketing-growth-strategy" },
-    { title: "Senior Finance Manager", href: "/jobs/senior-finance-manager" },
-    { title: "Analista Financiero Junior", href: "/jobs/finance-analyst-junior-fr" },
+    { title: "Responsable de Marketing y Crecimiento", href: "/emplois/marketing-strategie-croissance" },
+    { title: "Senior Finance Manager", href: "/emplois/responsable-financier-senior" },
+    { title: "Analista Financiero Junior", href: "/emplois/analyste-financier-junior" },
   ],
   discoverLabel: "Descubra",
 };

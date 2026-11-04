@@ -14,7 +14,7 @@ export default function Footer({ locale }: { locale: Locale }) {
   const content = footerContent[locale];
   const ui = getSiteInterface(locale);
   const nav = navigation[locale];
-  const serviceNav = nav.find((n) => n.href === (locale === "fr" ? "/services" : `/${locale}/services`));
+  const serviceNav = nav.find((n) => n.href === parityHref("/services", locale));
   const resourceNav = nav.find(
     (n) => n.title === "Ressources" || n.title === "Resources" || n.title === "Recursos"
   );

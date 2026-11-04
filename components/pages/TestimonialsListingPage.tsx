@@ -297,7 +297,7 @@ const pageContent: Record<Locale, {
   },
   en: {
     resourcesLabel: "Resources",
-    resourcesHref: "/en/ressources",
+    resourcesHref: "/en/resources",
     breadcrumbLabel: "Case studies",
     h1: "Our case studies",
     intro: "Discover how Iter Advisors supports its clients every day. Testimonials and feedback from business leaders who trust us.",

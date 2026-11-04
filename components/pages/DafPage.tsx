@@ -1459,13 +1459,13 @@ export default function DafPage({
                 ]
               : locale === "en"
                 ? [
-                    { href: "/en/ressources/blog/fractional-cfo-cost-services-2026", label: "The complete 2026 pricing guide" },
-                    { href: "/en/ressources/blog/daf-externalise-vs-daf-salarie", label: "Fractional CFO vs in-house CFO" },
-                    { href: "/en/ressources/cas-clients", label: "See our case studies" },
+                    { href: "/en/resources/blog/fractional-cfo-cost-services-2026", label: "The complete 2026 pricing guide" },
+                    { href: "/en/resources/blog/fractional-cfo-vs-in-house-cfo", label: "Fractional CFO vs in-house CFO" },
+                    { href: "/en/resources/case-studies", label: "See our case studies" },
                   ]
                 : [
                     { href: "/es/recursos/blog/cfo-externo-pymes-precio-2026", label: "La guía completa de tarifas 2026" },
-                    { href: "/es/recursos/blog/daf-externalise-vs-daf-salarie", label: "CFO externalizado vs CFO interno" },
+                    { href: "/es/recursos/blog/cfo-externo-vs-cfo-en-plantilla", label: "CFO externalizado vs CFO interno" },
                     { href: "/es/recursos/casos-de-exito", label: "Ver nuestros casos de cliente" },
                   ]).map((l) => (
               <Link

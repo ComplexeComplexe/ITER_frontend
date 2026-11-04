@@ -15,7 +15,7 @@ import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
 const breadcrumbLabels: Record<Locale, { services: string; servicesHref: string; page: string }> = {
   fr: { services: "Services", servicesHref: "/services", page: "M&A et Due Diligence" },
   en: { services: "Services", servicesHref: "/en/services", page: "M&A and Due Diligence" },
-  es: { services: "Servicios", servicesHref: "/es/services", page: "M&A y Due Diligence" },
+  es: { services: "Servicios", servicesHref: "/es/servicios", page: "M&A y Due Diligence" },
 };
 
 interface MaDueDiligencePageProps {

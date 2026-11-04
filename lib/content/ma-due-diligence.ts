@@ -314,7 +314,7 @@ const content: Record<Locale, MaDueDiligenceContent> = {
       "title": "Prepare su proxima operacion",
       "description": "Describa la operación, el calendario y los documentos disponibles para concretar una primera conversación.",
       "buttonText": "Describir mi necesidad",
-      "buttonHref": "/es/contact#due-diligence"
+      "buttonHref": "/es/contacto#due-diligence"
     }
   }
 };

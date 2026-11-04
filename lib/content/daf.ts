@@ -710,7 +710,7 @@ export const dafContent: Record<Locale, DafContent> = {
     intro: [
       "A **Fractional CFO** — or Fractional Chief Financial Officer — is a senior finance professional who works within your company without being a full-time employee. When you hire a Fractional CFO, you get the same responsibilities as an in-house CFO (financial strategy, cash flow, reporting, investor relations) but on a flexible basis: part-time, project-based, or monthly retainer.",
       `At Iter Advisors, we support ${CLIENTS_ACCOMPAGNES} SMEs, startups and scale-ups by deploying a Fractional CFO into their finance function. Our Fractional CFOs are senior operators (10+ years) ready to structure forecasting, lead fundraising, or step in as interim CFO — without the cost or commitment of a full-time hire.`,
-      "New to the role? Start with our glossary entry [What is a CFO?](/en/ressources/glossaire/cfo) to understand the difference between CFO, Finance Director and Controller — and explore [our finance services](/en/services) for the full scope of what a Fractional CFO can deliver.",
+      "New to the role? Start with our glossary entry [What is a CFO?](/en/resources/glossary/cfo) to understand the difference between CFO, Finance Director and Controller — and explore [our finance services](/en/services) for the full scope of what a Fractional CFO can deliver.",
     ],
     partnerSection: {
       heading: "Iter Advisors, your strategic partner",
@@ -1062,7 +1062,7 @@ export const dafContent: Record<Locale, DafContent> = {
     intro: [
       "Un CFO externalizado - o Director Financiero externalizado - es un profesional senior de las finanzas que interviene en su empresa sin ser empleado a tiempo completo. Asume las mismas responsabilidades que un CFO interno (gestion financiera, tesoreria, reporting, relaciones con inversores) pero de forma flexible: tiempo compartido, mision puntual o suscripcion mensual.",
       "En Iter Advisors, acompañamos a pymes, startups y scale-ups en la estructuración de su **departamento financiero (dpto financiero)**. Nuestros **directores financieros** senior intervienen a tiempo compartido o en misión puntual para ayudarle a tomar las mejores decisiones estratégicas.",
-      "¿Quiere entender la diferencia entre un CFO interno y un fractional CFO? Lea nuestra guía completa [CFO a tiempo parcial: definición](/es/recursos/glosario/cfo-tiempo-parcial) o consulte nuestros [servicios financieros](/es/services) para conocer todo lo que un CFO externalizado puede aportar a su empresa.",
+      "¿Quiere entender la diferencia entre un CFO interno y un fractional CFO? Lea nuestra guía completa [CFO a tiempo parcial: definición](/es/recursos/glosario/cfo-tiempo-parcial) o consulte nuestros [servicios financieros](/es/servicios) para conocer todo lo que un CFO externalizado puede aportar a su empresa.",
     ],
     partnerSection: {
       heading: "Iter Advisors, su socio estrategico",

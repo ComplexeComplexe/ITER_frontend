@@ -38,7 +38,7 @@ describe('approved October identity, author and migration corrections', () => {
       expect(directory.filter(tool => tool.slug === 'malibou')).toHaveLength(1);
       expect(directory.filter(tool => tool.slug === 'okimia')).toHaveLength(1);
       expect(directory.some(tool => tool.slug === 'fygr')).toBe(false);
-      expect(parityHref('/ressources/outils/okimia', locale)).toBe({ fr: '/ressources/outils/okimia', en: '/en/ressources/tools/okimia', es: '/es/recursos/herramientas/okimia' }[locale]);
+      expect(parityHref('/ressources/outils/okimia', locale)).toBe({ fr: '/ressources/outils/okimia', en: '/en/resources/tools/okimia', es: '/es/recursos/herramientas/okimia' }[locale]);
     });
   }
   it('distinguishes Pennylane authorship from review and keeps the existing publication date', () => {
@@ -55,7 +55,7 @@ describe('approved October identity, author and migration corrections', () => {
     const rules = await config.redirects!();
     for (const [source, destination] of [
       ['/ressources/outils/fygr', '/ressources/outils/okimia'],
-      ['/en/ressources/tools/fygr', '/en/ressources/tools/okimia'],
+      ['/en/resources/tools/fygr', '/en/resources/tools/okimia'],
       ['/es/recursos/herramientas/fygr', '/es/recursos/herramientas/okimia'],
     ]) {
       const rule = rules.find(rule => rule.source === source)!;

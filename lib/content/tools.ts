@@ -51,7 +51,7 @@ const content = {
     },
     breadcrumbLabel: "Our tools",
     resourcesLabel: "Resources",
-    resourcesHref: "/en/ressources",
+    resourcesHref: "/en/resources",
     h1: "Our technology stack",
     ctaHeading: "Need help organising your finance tools?",
     ctaText:

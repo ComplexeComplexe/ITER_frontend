@@ -91,7 +91,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Loi Beckham 2026 : guide complet",
-          href: "/ressources/fiscalite/beckham-law",
+          href: "/ressources/fiscalite/loi-beckham",
           description: "Taux 24 %, conditions, démarches et calcul d'économie d'impôt en Espagne.",
         },
         {
@@ -125,7 +125,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Loi Beckham 2026 : taux 24 %, conditions et démarches",
-          href: "/ressources/fiscalite/beckham-law",
+          href: "/ressources/fiscalite/loi-beckham",
           image: "/images/blog/illustrations/impot-revenu-espagne.webp",
           tag: "Fiscalité",
         },
@@ -271,7 +271,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Beckham Law 2026: complete guide",
-          href: "/ressources/fiscalite/beckham-law",
+          href: "/ressources/fiscalite/loi-beckham",
           description: "24% flat rate, conditions, and step-by-step guide for expats in Spain.",
         },
         {
@@ -305,7 +305,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Beckham Law 2026: 24% rate, conditions, and process",
-          href: "/ressources/fiscalite/beckham-law",
+          href: "/ressources/fiscalite/loi-beckham",
           image: "/images/blog/illustrations/impot-revenu-espagne.webp",
           tag: "Taxation",
         },
@@ -340,29 +340,29 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         id: "cas-clients",
         heading: "Case studies",
         seeAllLabel: "See all case studies",
-        seeAllHref: "/en/ressources/cas-clients",
+        seeAllHref: "/en/resources/case-studies",
         cards: [
           {
             title: "Happy Scribe: financial structuring of a scale-up",
-            href: "/en/ressources/cas-clients",
+            href: "/en/resources/case-studies",
             image: "/images/logos/logo-happyscribe.webp",
             tag: "Case study",
           },
           {
             title: "Ukio: Series A fundraising support",
-            href: "/en/ressources/cas-clients",
+            href: "/en/resources/case-studies",
             image: "/images/logos/logo-ukio.webp",
             tag: "Case study",
           },
           {
             title: "Surfe: reporting setup and performance management",
-            href: "/en/ressources/cas-clients",
+            href: "/en/resources/case-studies",
             image: "/images/logos/logo-surfe.webp",
             tag: "Case study",
           },
           {
             title: "Yego: cash management optimization",
-            href: "/en/ressources/cas-clients",
+            href: "/en/resources/case-studies",
             image: "/images/logos/logo-yego.webp",
             tag: "Case study",
           },
@@ -372,11 +372,11 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         id: "blog",
         heading: "Blog",
         seeAllLabel: "See all articles",
-        seeAllHref: "/en/ressources/blog",
+        seeAllHref: "/en/resources/blog",
         cards: [
           {
             title: "AI and automation of repetitive tasks in the Finance department",
-            href: "/en/ressources/blog",
+            href: "/en/resources/blog",
             image: "/images/blog/ia-automatisation.jpg",
             tag: "Blog",
           },
@@ -394,7 +394,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
           },
           {
             title: "How to structure your financial department",
-            href: "/en/ressources/blog",
+            href: "/en/resources/blog",
             image: "/images/blog/modernisation-cfo.jpg",
             tag: "Blog",
           },
@@ -465,7 +465,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Ley Beckham 2026: guía completa",
-          href: "/ressources/fiscalite/beckham-law",
+          href: "/ressources/fiscalite/loi-beckham",
           description: "Tipo fijo 24 %, condiciones y trámites para expatriados en España.",
         },
         {
@@ -499,7 +499,7 @@ export const resourcesContent: Record<Locale, ResourcesContent> = {
         },
         {
           title: "Ley Beckham 2026: tipo 24 %, condiciones y trámites",
-          href: "/ressources/fiscalite/beckham-law",
+          href: "/ressources/fiscalite/loi-beckham",
           image: "/images/blog/illustrations/impot-revenu-espagne.webp",
           tag: "Fiscalidad",
         },

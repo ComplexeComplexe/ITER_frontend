@@ -62,7 +62,7 @@ export function HrCountries({ locale }: { locale: Locale }) {
   const c = HR_COMMERCIAL_COPY[locale];
   return <ServiceSection id="france-espagne" title={c.countriesTitle} tinted><p className="site-copy text-muted-foreground max-w-3xl mt-5">{c.countriesIntro}</p>
       <div className="grid md:grid-cols-3 gap-6 mt-8">{c.countries.map(([title, text]) => <article key={title} className="site-card p-6"><h3 className="text-xl font-semibold mb-4">{title}</h3><p className="text-muted-foreground leading-relaxed">{text}</p></article>)}</div>
-      <PublishedLocaleLink locale={locale} href={parityHref('/ressources/fiscalite/beckham-law', locale)} className="site-inline-link mt-6">{c.beckham}</PublishedLocaleLink>
+      <PublishedLocaleLink locale={locale} href={parityHref('/ressources/fiscalite/loi-beckham', locale)} className="site-inline-link mt-6">{c.beckham}</PublishedLocaleLink>
   </ServiceSection>;
 }
 

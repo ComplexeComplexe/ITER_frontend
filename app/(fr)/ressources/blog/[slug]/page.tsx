@@ -14,7 +14,7 @@ const blogBasePath = "/ressources/blog";
 // Ahrefs T-404 (2026-06-08) — these 4 fiscalité blog articles are FR-only
 // (the EN/ES variants don't exist in lib/content/blog-posts.ts). Without
 // `disableHreflang`, buildStrapiCollectionMetadata emits hreflang URLs that
-// 404 (e.g. /en/ressources/blog/bareme-irpf-espagne-2026). We also rely on
+// 404 (e.g. /en/resources/blog/bareme-irpf-espagne-2026). We also rely on
 // middleware FR_ONLY_BLOG_SLUGS to 301 any direct EN/ES hits.
 const FR_ONLY_FISCALITE_BLOG_SLUGS = new Set([
   "bareme-irpf-espagne-2026",
@@ -33,9 +33,9 @@ const breadcrumbsByLocale = {
   },
   en: {
     resourcesLabel: "Resources",
-    resourcesHref: "/en/ressources",
+    resourcesHref: "/en/resources",
     blogLabel: "Blog",
-    blogHref: "/en/ressources/blog",
+    blogHref: "/en/resources/blog",
   },
   es: {
     resourcesLabel: "Recursos",
