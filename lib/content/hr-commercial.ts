@@ -134,7 +134,7 @@ export const HR_COMMERCIAL_COPY = {
     toolUses: { payfit: 'Payroll and input collection.', lucca: 'HR data, absences and payroll inputs.', factorial: 'HR data and process organisation.', silae: 'Payroll production with your provider.' }, toolsLink: 'Explore finance and HR software selection criteria',
   },
   es: {
-    intro: 'Un director de RR. HH. externo dirige la función de recursos humanos sin ser un empleado a jornada completa. En Iter Advisors, Borith Biv acompaña a la dirección y a los responsables en la organización, la contratación y el seguimiento de las prioridades de RR. HH. El alcance acordado precisa los entregables y las responsabilidades de los proveedores de nóminas y los asesores jurídicos.',
+    intro: 'Un director de RR. HH. externo dirige la función de recursos humanos sin ser un empleado a jornada completa. En Iter Advisors, Borith Biv asesora a la dirección y a los responsables en la organización, la contratación y el seguimiento de las prioridades de RR. HH. El alcance acordado precisa los entregables y las responsabilidades de los proveedores de nóminas y los asesores jurídicos.',
     budget: hrRegularBudget('es'),
     updated: 'Actualizado el',
     contactTitle: '¿Qué prioridades de RR. HH. necesita abordar?',
