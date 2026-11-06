@@ -1,4 +1,3 @@
-import { editorialPersonId } from "@/lib/content/finance-expert";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import GlossaryEntryPage from "@/components/pages/GlossaryEntryPage";
@@ -7,7 +6,7 @@ import { getGlossaryEntryContent, getGlossaryPages } from "@/lib/content/glossar
 import { blogPosts } from "@/lib/content/blog-posts";
 import { resolveBlogArticleHref } from "@/lib/path-localization";
 import {
-  GLOSSARY_AUTHOR,
+  getGlossaryAuthor,
   GLOSSARY_MODIFIED,
   GLOSSARY_PUBLISHED,
   htmlMentionsGlossary,
@@ -104,7 +103,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         datePublished: GLOSSARY_PUBLISHED,
         dateModified: modified,
         inLanguage: "fr-FR",
-        author: { "@id": editorialPersonId(GLOSSARY_AUTHOR.url) },
+        author: { "@id": getGlossaryAuthor(slug).id },
         publisher: { "@id": "https://www.iteradvisors.com/#organization" },
         isPartOf: { "@type": "CollectionPage", "@id": "https://www.iteradvisors.com/ressources/glossaire#collection" },
       },

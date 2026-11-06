@@ -5,12 +5,23 @@ import type { Locale } from '@/lib/i18n';
 /** Commercial figures confirmed by Guillaume on 3 October 2026. */
 export const HR_COMMERCIAL_TERMS = {
   confirmedAt: '2026-10-03', currency: 'EUR', vatIncluded: false,
-  light: { minDays: 1, maxDays: 2, from: 1800 },
+  light: { minDays: 1, maxDays: 2 },
   regular: { minDays: 3, maxDays: 4, min: COMPANY.drhMonthlyPrice.min, max: COMPANY.drhMonthlyPrice.max },
   employeeFrance: { min: 90000, max: 140000, basis: 'annual-gross-salary' },
 } as const;
 
+function hrRegularBudget(locale: Locale) {
+  const { min, max, minDays, maxDays } = HR_COMMERCIAL_TERMS.regular;
+  const number = new Intl.NumberFormat(locale === 'fr' ? 'fr-FR' : locale === 'en' ? 'en-GB' : 'es-ES');
+  return {
+    fr: `${number.format(min)} à ${number.format(max)} € HT/mois pour ${minDays} à ${maxDays} jours ; autres formats sur devis`,
+    en: `€${number.format(min)} to €${number.format(max)}/month excluding VAT for ${minDays} to ${maxDays} days; other formats by quotation`,
+    es: `${number.format(min)} a ${number.format(max)} € al mes sin IVA para ${minDays} a ${maxDays} días; otros formatos según presupuesto`,
+  }[locale];
+}
+
 interface CommercialCopy {
+  intro: string;
   budget: string;
   updated: string;
   contactTitle: string;
@@ -45,7 +56,8 @@ interface CommercialCopy {
 }
 export const HR_COMMERCIAL_COPY = {
   fr: {
-    budget: 'Sur devis, selon le périmètre et la disponibilité attendue',
+    intro: 'Un DRH externalisé prend en charge la direction RH de votre entreprise sans être salarié à temps plein. Chez Iter Advisors, Borith Biv accompagne le dirigeant et les managers sur l’organisation, le recrutement et le suivi des priorités RH. Le périmètre précise les livrables et les responsabilités des prestataires de paie et des conseils juridiques.',
+    budget: hrRegularBudget('fr'),
     updated: 'Mis à jour le',
     contactTitle: 'Quelles priorités RH souhaitez-vous traiter ?',
     contactText: 'Présentez vos équipes, les sujets ouverts et les échéances. Le premier échange permet de préciser les travaux utiles, les responsabilités et le rythme.',
@@ -91,7 +103,8 @@ export const HR_COMMERCIAL_COPY = {
     toolsLink: 'Explorer les critères de choix des outils financiers et RH',
   },
   en: {
-    budget: 'By quotation, depending on scope and availability required',
+    intro: 'An external HR director manages your HR function without being a full-time employee. At Iter Advisors, Borith Biv works with the business leader and managers on organisation, recruitment and HR priorities. The agreed scope sets out deliverables and the responsibilities of payroll providers and legal advisers.',
+    budget: hrRegularBudget('en'),
     updated: 'Updated on',
     contactTitle: 'Which HR priorities do you need to address?',
     contactText: 'Describe your teams, open issues and deadlines. The initial conversation clarifies useful work, responsibilities and the schedule.',
@@ -121,7 +134,8 @@ export const HR_COMMERCIAL_COPY = {
     toolUses: { payfit: 'Payroll and input collection.', lucca: 'HR data, absences and payroll inputs.', factorial: 'HR data and process organisation.', silae: 'Payroll production with your provider.' }, toolsLink: 'Explore finance and HR software selection criteria',
   },
   es: {
-    budget: 'Según presupuesto, alcance y disponibilidad necesaria',
+    intro: 'Un director de RR. HH. externo dirige la función de recursos humanos sin ser un empleado a jornada completa. En Iter Advisors, Borith Biv acompaña a la dirección y a los responsables en la organización, la contratación y el seguimiento de las prioridades de RR. HH. El alcance acordado precisa los entregables y las responsabilidades de los proveedores de nóminas y los asesores jurídicos.',
+    budget: hrRegularBudget('es'),
     updated: 'Actualizado el',
     contactTitle: '¿Qué prioridades de RR. HH. necesita abordar?',
     contactText: 'Describa sus equipos, los asuntos abiertos y los plazos. La primera conversación precisa el trabajo útil, las responsabilidades y la dedicación.',

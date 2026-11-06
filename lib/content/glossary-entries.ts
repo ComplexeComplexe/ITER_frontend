@@ -712,38 +712,42 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
       meta: {
         title: "DRH externalisé : définition et missions | Iter Advisors",
         description:
-          "DRH externalisé ou DRH à temps partagé : définition, périmètre d'intervention, différence avec un DRH salarié et tarifs 2026.",
+          "DRH externalisé : définition, missions et différence avec le temps partagé. Comprendre les responsabilités et le budget avant de choisir votre organisation RH.",
       },
       h1: "DRH externalisé : définition, missions et fonctionnement",
       sections: [
         {
           content: [
-            "Un **DRH externalisé** (Directeur des Ressources Humaines externalisé) est un professionnel RH senior qui intervient pour plusieurs entreprises en parallèle, à temps partagé. Aussi appelé DRH à temps partagé, ce modèle permet aux PME d'accéder à une direction RH experte sans recruter à temps plein.",
+            "**Un DRH externalisé** est un directeur des ressources humaines qui accompagne une entreprise sans en être salarié à temps plein. Il organise les priorités RH avec le dirigeant et les managers. La mission peut être récurrente à temps partagé ou ponctuelle, selon le besoin.",
           ],
         },
         {
           heading: "Missions du DRH externalisé",
           content: [
-            "**Recrutement et intégration :** Définition des fiches de poste, pilotage des processus de recrutement, onboarding et période d'essai.",
-            "**Relations sociales :** Rédaction et négociation d'accords d'entreprise, animation du CSE, gestion des conflits individuels et collectifs.",
-            "**Conformité sociale :** Veille juridique, conformité RGPD RH, politique de santé au travail, gestion des risques sociaux.",
-            "**Développement RH :** Plans de formation, GPEC/GEPP, politique de rémunération, entretiens annuels.",
-            "**Paie et administration :** Coordination avec l'expert-comptable ou le prestataire paie. Le DRH externalisé supervise sans traiter directement.",
+            "**Organisation et management :** Clarifier les rôles, préparer les entretiens et suivre les actions convenues avec les managers.",
+            "**Recrutement et intégration :** Définir les postes, organiser la sélection et préparer l’arrivée des collaborateurs.",
+            "**Dialogue social et conformité :** Organiser les échéances et les documents à revoir avec les professionnels compétents dans le pays concerné.",
+            "**Paie et administration :** Organiser les variables et les échanges avec le prestataire désigné. La production des bulletins et le conseil juridique spécialisé ne sont pas inclus automatiquement.",
           ],
         },
         {
           heading: "DRH externalisé vs DRH à temps partagé",
           content: [
-            "Les deux termes désignent la même réalité. **DRH externalisé** insiste sur le fait que la fonction RH est confiée à l'extérieur. **DRH à temps partagé** insiste sur le mode d'organisation : un professionnel partage son temps entre plusieurs entreprises clientes.",
-            "Chez Iter Advisors, nos **[DRH externalisés](/drh-externalise)** interviennent en France et en Espagne, avec une expertise particulière sur les sujets RH transfrontaliers.",
+            "L’externalisation décrit le recours à une direction RH extérieure. Le **temps partagé** est une modalité récurrente : la présence, les livrables et les moyens de contact sont convenus pour travailler dans la durée. Une mission ponctuelle répond à un besoin délimité.",
+            "La page **[DRH à temps partagé](/drh-externalise/temps-partage)** détaille la cadence, les relais internes et la passation. L’offre **[DRH externalisé](/drh-externalise)** présente le périmètre, les missions et le budget.",
           ],
         },
         {
           heading: "Quand faire appel à un DRH externalisé ?",
           content: [
-            "**10 à 50 salariés :** Besoin ponctuel — recrutements, accord d'entreprise, premier CSE. 1 à 2 jours/mois.",
-            "**50 à 150 salariés :** Besoin récurrent — pilotage RH mensuel, conformité, plans de formation. 4 à 8 jours/mois.",
-            "**Croissance rapide ou situation de crise :** Restructuration, pic de recrutement, fusion-acquisition. Mission à durée déterminée.",
+            "Le besoin se précise lorsque les recrutements se multiplient, que les managers manquent de repères ou que le dirigeant porte seul les sujets RH. L’effectif ne détermine pas automatiquement un nombre de jours : les priorités, les ressources internes et les pays concernés comptent aussi.",
+            "Une présence quotidienne durable peut justifier un recrutement interne. Pour une tâche isolée de paie, de recrutement ou de conseil juridique, un spécialiste peut être plus adapté.",
+          ],
+        },
+        {
+          heading: "Quel budget prévoir ?",
+          content: [
+            "Le devis précise les travaux, le rythme, les interlocuteurs et les frais éventuels. Consultez les **[tarifs indicatifs de l’offre RH](/drh-externalise#budget)** pour comparer les formats sur un même périmètre. Les conditions de l’offre DAF ne s’appliquent pas automatiquement à une mission RH.",
           ],
         },
       ],

@@ -57,6 +57,15 @@ const MONTHS: Record<TargetLocale, string[]> = {
 function translateDynamic(text: string, locale: TargetLocale): string | undefined {
   const read = text.match(/^(\d+) min de lecture$/);
   if (read) return locale === 'en' ? `${read[1]} min read` : `${read[1]} min de lectura`;
+  // Byline dates are separate text nodes from the translated "Updated on" label.
+  const date = text.match(/^(1er|\d{1,2}) ([a-zéû]+) (\d{4})$/i);
+  if (date) {
+    const month = MONTHS_FR.indexOf(date[2].toLowerCase());
+    if (month >= 0) {
+      const day = date[1] === '1er' ? '1' : date[1];
+      return locale === 'en' ? `${day} ${MONTHS.en[month]} ${date[3]}` : `${day} de ${MONTHS.es[month]} de ${date[3]}`;
+    }
+  }
   const updated = text.match(/^Mis à jour le (1er|\d{1,2}) ([a-zéû]+) (\d{4})$/i);
   if (updated) {
     const m = MONTHS_FR.indexOf(updated[2].toLowerCase());
