@@ -5,6 +5,8 @@ const origin = 'https://www.iteradvisors.com';
 const slugs = [...readFileSync('data/tools.ts', 'utf8').matchAll(/    slug: '([^']+)'/g)].map(m => m[1]);
 const paths = [...slugs.map(s => '/ressources/outils/' + s), '/ressources/blog/cfo-externe-role-missions-2026', '/ressources/glossaire/cfo', '/ressources/glossaire/fractional-cfo'];
 const failures = [], results = [], toolTexts = [];
+// Payroll and HRIS pages should lead to the HR offer, finance tools to the CFO offer.
+const hrTools = new Set(['payfit', 'silae', 'lucca', 'factorial']);
 const flatten = data => Array.isArray(data) ? data.flatMap(flatten) : data?.['@graph'] ? flatten(data['@graph']) : [data];
 const decode = s => s.replaceAll('&amp;', '&').replaceAll('&#x27;', "'").replaceAll('&quot;', '"').replaceAll('&lt;', '<').replaceAll('&gt;', '>');
 for (const path of paths) {
@@ -21,7 +23,10 @@ for (const path of paths) {
   check([...main.matchAll(/<h1\b/g)].length === 1, 'one-h1');
   check(articles.length === 1 && articles[0]?.headline === h1, 'one-article-with-matching-headline');
   check(/^https:\/\/www\.iteradvisors\.com\/a-propos\/[^/#]+#person$/.test(articles[0]?.author?.['@id'] ?? ''), 'identified-author');
-  check(main.includes('href="/daf-externalise"'), 'primary-offer-link');
+  const isHrTool = path.startsWith('/ressources/outils/') && hrTools.has(path.split('/').at(-1));
+  const primaryOffer = isHrTool ? '/drh-externalise' : '/daf-externalise';
+  check(main.includes(`href="${primaryOffer}"`), 'primary-offer-link');
+  if (isHrTool) check(main.includes('id="experience-rh"') && text.includes('Borith'), 'documented-hr-field-note');
   if (path.startsWith('/ressources/outils/')) {
     if (!path.endsWith('/malibou')) toolTexts.push({ path, text });
     check(main.includes('Sources et méthode') && main.includes('source officielle'), 'visible-product-source');
