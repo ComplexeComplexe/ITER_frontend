@@ -21,6 +21,13 @@ export const GLOSSARY_AUTHOR = {
   url: "/a-propos/sebastien-doat",
 } as const;
 
+/** Editorial attribution does not imply a personal review by the HR expert. */
+export function getGlossaryAuthor(slug?: string) {
+  return slug === "drh-externalise"
+    ? { name: "Iter Advisors", url: "/a-propos", id: "https://www.iteradvisors.com/#organization" }
+    : { ...GLOSSARY_AUTHOR, id: `https://www.iteradvisors.com${GLOSSARY_AUTHOR.url}#person` };
+}
+
 /** Fiches construites en avril 2026 ; revues (définition en tête, termes
  *  liés, attribution) le 1er septembre 2026. */
 export const GLOSSARY_PUBLISHED = "2026-04-15";
@@ -44,7 +51,7 @@ const RELATED: Record<string, string[]> = {
   "bspce-bsa": ["cfo", "daf", "fractional-cfo"],
   cfo: ["daf", "fractional-cfo", "controle-de-gestion", "bspce-bsa"],
   daf: ["cfo", "fractional-cfo", "drh-externalise", "controle-de-gestion"],
-  "drh-externalise": ["daf", "cfo"],
+  "drh-externalise": [],
   "controle-de-gestion": ["daf", "ebitda", "besoin-fonds-roulement-bfr", "run-rate"],
   "fractional-cfo": ["cfo", "daf", "cash-burn-runway"],
 };

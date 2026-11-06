@@ -18,7 +18,7 @@ export default function ServiceHero({ title, label, eyebrow, lead, intro, primar
   lead: string;
   intro?: string;
   primary: { href: string; label: string };
-  secondary: { href: string; label: string };
+  secondary?: { href: string; label: string };
   summary: ReadonlyArray<{ label: string; value: string }>;
   proof?: ReactNode;
   navigation: ReadonlyArray<{ id: string; label: string }>;
@@ -36,7 +36,7 @@ export default function ServiceHero({ title, label, eyebrow, lead, intro, primar
             {intro && <p className="site-intro">{intro}</p>}
             <div className="site-actions">
               <Link href={primary.href} className="site-button site-button-primary">{primary.label}<span aria-hidden="true">↗</span></Link>
-              <Link href={secondary.href} className="site-button site-button-secondary">{secondary.label}<span aria-hidden="true">↓</span></Link>
+              {secondary && <Link href={secondary.href} className="site-button site-button-secondary">{secondary.label}<span aria-hidden="true">↓</span></Link>}
             </div>
             {proof}
             {family === "rh" ? <HRExpert compact locale={locale} /> : <FinanceExpert compact locale={locale} />}

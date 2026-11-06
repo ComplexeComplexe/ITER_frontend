@@ -5,8 +5,9 @@ import { formatLongDate, Locale } from "@/lib/i18n";
 import { getContactPath } from "@/lib/navigation";
 import { GlossaryEntryContent } from "@/lib/content/glossary-entries";
 import { glossaryHref } from "@/lib/path-localization";
+import { parityHref } from "@/lib/locale-route-map";
 import {
-  GLOSSARY_AUTHOR,
+  getGlossaryAuthor,
   GLOSSARY_MODIFIED,
   GLOSSARY_MODIFIED_LABEL,
   getRelatedGlossary,
@@ -116,7 +117,14 @@ export default function GlossaryEntryPage({
   mentions = [],
   modified = GLOSSARY_MODIFIED,
 }: GlossaryEntryPageProps) {
-  const t = STRINGS[locale];
+  const isHr = slug === "drh-externalise";
+  const hrCopy = {
+    fr: { eyebrow: "Glossaire RH", ctaTitle: "Besoin de structurer votre fonction RH ?", ctaText: "Borith Biv, Partner Capital Humain, vous accompagne pour préciser vos priorités, les livrables et le rythme d’une mission RH.", cta: "Découvrir l’offre DRH externalisé" },
+    en: { eyebrow: "HR glossary", ctaTitle: "Need to structure your HR function?", ctaText: "Borith Biv, Human Capital Partner, helps you define the priorities, deliverables and schedule of an HR engagement.", cta: "Explore external HR management" },
+    es: { eyebrow: "Glosario de RR. HH.", ctaTitle: "¿Necesita estructurar su función de RR. HH.?", ctaText: "Borith Biv, Partner de Capital Humano, le ayuda a definir las prioridades, los entregables y la dedicación de un encargo de RR. HH.", cta: "Conocer la dirección de RR. HH. externa" },
+  };
+  const t = isHr ? { ...STRINGS[locale], ...hrCopy[locale] } : STRINGS[locale];
+  const author = getGlossaryAuthor(slug);
   const modifiedLabel = modified === GLOSSARY_MODIFIED ? GLOSSARY_MODIFIED_LABEL[locale]
     : formatLongDate(modified, locale);
   const [first, ...rest] = content.sections;
@@ -142,8 +150,8 @@ export default function GlossaryEntryPage({
             </span>
             <span className="text-xs text-muted-foreground">
               {t.by}{" "}
-              <Link href={GLOSSARY_AUTHOR.url} rel="author" className="text-iter-violet hover:underline">
-                {GLOSSARY_AUTHOR.name}
+              <Link href={author.url} rel="author" className="text-iter-violet hover:underline">
+                {author.name}
               </Link>
               {" · "}
               <time dateTime={modified}>{modifiedLabel}</time>
@@ -233,7 +241,7 @@ export default function GlossaryEntryPage({
             <p className="text-base sm:text-lg font-semibold text-foreground mb-2">{t.ctaTitle}</p>
             <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">{t.ctaText}</p>
             <Link
-              href={getContactPath(locale)}
+              href={isHr ? parityHref("/drh-externalise", locale) : getContactPath(locale)}
               className="site-button site-button-primary inline-flex items-center gap-2 px-6 py-3 rounded-full bg-iter-violet text-white font-semibold hover:bg-iter-violet/90 transition-all duration-300"
             >
               {t.cta}

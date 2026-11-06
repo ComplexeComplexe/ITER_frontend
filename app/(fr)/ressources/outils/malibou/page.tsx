@@ -94,7 +94,7 @@ const htmlContent = `<p>malibou combine une plateforme RH, la technologie de pai
 <p><strong><a href="/ressources/outils/lucca">Lucca</a></strong> — suite RH complète (absences, temps, frais, entretiens) à coupler à une brique paie séparée. Vérifier la reprise et les interfaces avec la paie.</p>
 <h2 id="notre-avis">Notre avis</h2>
 <p>Pour les startups et PME qui souhaitent déléguer la production de la paie sans renoncer à une plateforme RH moderne, malibou fait partie des alternatives à considérer. Sa proposition — un SIRH centralisé associé à un gestionnaire de paie dédié — répond à un besoin réel pour les entreprises sans équipe paie interne.</p>
-<p>Le choix d'un outil de paie doit tenir compte du coût, du niveau d'autonomie recherché, de la convention collective et de l'organisation financière de l'entreprise. C'est précisément le type d'arbitrage qu'un <a href="/daf-externalise">DAF externalisé</a> peut cadrer avec le dirigeant et les équipes RH.</p>
+<p>Le choix d’un outil de paie dépend aussi de votre organisation RH : qui transmet les variables, qui valide les bulletins et qui répond aux salariés ? Notre offre de <a href="/drh-externalise">DRH externalisé</a> permet de cadrer ces responsabilités avec le dirigeant et le prestataire de paie.</p>
 <h2 id="faq">Questions fréquentes</h2>
 <p><strong>Combien coûte malibou ?</strong><br>28 € HT par collaborateur et par mois, à partir de 5 salariés, auxquels s'ajoutent 50 € par salarié de frais de mise en place facturés le premier mois. malibou ne commercialise qu'un seul plan, qui donne accès à l'ensemble des fonctionnalités SIRH et à l'accompagnement du gestionnaire de paie dédié : il n'y a ni module optionnel, ni palier supérieur à débloquer. Au-delà d'un certain effectif, l'éditeur propose un prix sur mesure, sans grille publiée. <em>Tarifs relevés le 14 août 2026.</em></p>
 <p><strong>malibou convient-il à mon entreprise ?</strong><br>malibou s'adresse principalement aux entreprises qui souhaitent associer un logiciel RH à une production de paie accompagnée. Pour les structures importantes, internationales ou présentant des cas très spécifiques, un cadrage préalable est recommandé. Un DAF externalisé peut notamment comparer le coût, le niveau de service, les intégrations et les risques opérationnels des différentes solutions.</p>
@@ -124,7 +124,7 @@ export default async function Page() {
       htmlContent={htmlContent}
       cmsNavigation={cmsNavigation}
       publishedDate={PUBLISHED_DATE}
-      updatedDate="2026-10-02"
+      updatedDate="2026-11-06"
       author="Benjamin Ziza"
       category="rh-paie"
       metaDescription="Notre avis sur malibou : fonctionnement, accompagnement paie, prix, avantages, limites et comparaison avec PayFit pour les startups et PME."
