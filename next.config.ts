@@ -32,6 +32,10 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      {
+        source: "/offre-imbattable",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }],
+      },
       ...["/CFO-tech", "/CFO-pme", "/en/cfo-tech", "/en/cfo-smb", "/es/cfo-tech", "/es/cfo-pymes"].map((source) => ({
         source,
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }],
