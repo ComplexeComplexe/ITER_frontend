@@ -26,7 +26,6 @@ export default function PresentationDownloadPage({ offer, locale }: {
           </nav>
         </header>
         <div className="mb-8 mt-12 max-w-2xl sm:mt-16">
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.12em] text-[#6038ec]">{document.audience}</p>
           <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">{document.title}</h1>
           <p className="mt-4 text-lg leading-relaxed text-[#61596e]">{document.description}</p>
         </div>

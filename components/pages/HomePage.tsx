@@ -67,7 +67,6 @@ export default function HomePage({
         <section className={styles.section} data-journey="home-needs">
           <div className={styles.wrap}>
             <div className={styles.heading}>
-              <p className={styles.eyebrow}>{t.needs.eyebrow}</p>
               <h2>{t.needs.title}</h2>
               <p>{t.needs.intro}</p>
             </div>
@@ -97,7 +96,6 @@ export default function HomePage({
         >
           <div className={`${styles.wrap} ${styles.split}`}>
             <div className={styles.heading}>
-              <p className={styles.eyebrow}>{t.services.eyebrow}</p>
               <h2>{t.services.title}</h2>
             </div>
             <div className={styles.services}>
@@ -119,7 +117,6 @@ export default function HomePage({
         <section className={styles.section} data-journey="home-finance-offer">
           <div className={`${styles.wrap} ${styles.split}`}>
             <div>
-              <p className={styles.eyebrow}>{t.offer.eyebrow}</p>
               <h2>{t.offer.title}</h2>
             </div>
             <div>
@@ -175,7 +172,6 @@ export default function HomePage({
               </figcaption>
             </figure>
             <div>
-              <p className={styles.eyebrow}>{t.rh.eyebrow}</p>
               <h2>{t.rh.title}</h2>
               <p className={styles.intro}>{t.rh.text}</p>
               <nav className={styles.related} aria-label={journey.hr.nav}>
@@ -198,7 +194,6 @@ export default function HomePage({
         <section className={styles.section} data-journey="home-method">
           <div className={styles.wrap}>
             <div className={styles.heading}>
-              <p className={styles.eyebrow}>{t.method.eyebrow}</p>
               <h2>{t.method.title}</h2>
             </div>
             <ol className={styles.method}>
@@ -217,7 +212,6 @@ export default function HomePage({
           data-journey="home-why"
         >
           <div className={styles.wrap}>
-            <p className={styles.eyebrow}>{t.why.eyebrow}</p>
             <h2>{t.why.title}</h2>
             <div className={styles.three}>
               {t.why.items.map((item) => (
@@ -237,7 +231,6 @@ export default function HomePage({
           <div className={styles.wrap}>
             <div className={`${styles.heading} ${styles.headingLink}`}>
               <div>
-                <p className={styles.eyebrow}>{t.team.eyebrow}</p>
                 <h2>{t.team.title}</h2>
               </div>
               <Link
@@ -279,7 +272,6 @@ export default function HomePage({
           data-journey="home-reviews"
         >
           <div className={styles.wrap}>
-            <p className={styles.eyebrow}>{t.reviews.eyebrow}</p>
             <h2>{t.reviews.title}</h2>
             <div className={styles.quotes}>
               {t.reviewItems.map((review) => (
@@ -310,7 +302,6 @@ export default function HomePage({
         <section className={styles.section} data-journey="home-moments">
           <div className={`${styles.wrap} ${styles.split}`}>
             <div>
-              <p className={styles.eyebrow}>{t.moments.eyebrow}</p>
               <h2>{t.moments.title}</h2>
             </div>
             <ul className={styles.moments}>
@@ -323,7 +314,6 @@ export default function HomePage({
         <section className={styles.section} data-journey="home-faq">
           <div className={`${styles.wrap} ${styles.split}`}>
             <div>
-              <p className={styles.eyebrow}>{t.faq.eyebrow}</p>
               <h2>{t.faq.title}</h2>
             </div>
             <div className={styles.faq}>
@@ -352,7 +342,6 @@ export default function HomePage({
         >
           <div className={`${styles.wrap} ${styles.final}`}>
             <div>
-              <p className={styles.eyebrow}>{t.final.eyebrow}</p>
               <h2>{t.final.title}</h2>
               <p className={styles.intro}>{t.final.text}</p>
               <Link

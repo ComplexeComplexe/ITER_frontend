@@ -47,7 +47,6 @@ export interface BlogPostLayoutProps {
 export default function BlogPostLayout({
   locale,
   articleUrl,
-  category,
   title,
   dek,
   author,
@@ -67,7 +66,7 @@ export default function BlogPostLayout({
         articleUrl={articleUrl}
         image={bodyImage?.src}
         imageAlt={bodyImage?.alt}
-        category={category}
+
         title={title}
         dek={dek}
         author={author}

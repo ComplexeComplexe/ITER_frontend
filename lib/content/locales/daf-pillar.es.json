@@ -74,25 +74,25 @@
     "note": "Si solo necesita llevar la contabilidad, o requiere un director financiero a tiempo completo, compare la dedicación parcial con otras soluciones antes de decidir."
   },
   "missions": {
-    "heading": "Funciones del CFO externo",
+    "heading": "¿Qué funciones puede asumir un CFO externo?",
     "intro": "El alcance se acuerda al inicio: no todas las misiones incluyen todos los entregables. El trabajo recurrente suele combinar previsiones, reporting y una revisión con el dirigente. Los trabajos de financiación, transformación o adquisición se añaden según su situación.",
     "items": [
       {
-        "title": "Anticipar la tesorería",
+        "title": "Previsión de tesorería",
         "deliverable": "Una previsión a 13 semanas con cobros, pagos, vencimientos de deuda e hipótesis que conviene seguir. La frecuencia de actualización se acuerda según la volatilidad de la actividad y la disponibilidad de datos.",
         "decision": "Identificar una posible tensión de caja, preparar una conversación con el banco o decidir cuándo realizar un gasto. La previsión distingue los flujos conocidos de las hipótesis; no garantiza los cobros.",
         "href": "/services/previsionnel-tresorerie",
         "linkLabel": "Previsión de tesorería"
       },
       {
-        "title": "Entender la rentabilidad",
+        "title": "Reporting mensual y análisis de márgenes",
         "deliverable": "Un reporting mensual sobre resultados, tesorería e indicadores pertinentes, con un análisis de las desviaciones presupuestarias. Según su modelo, el análisis puede abarcar una actividad, un canal, una entidad o un proyecto.",
         "decision": "Detectar un margen que se deteriora, revisar un precio o reconsiderar un gasto. Se señalan las cifras provisionales y los límites de comparación para evitar decisiones basadas en información incompleta.",
         "href": "/services/controle-de-gestion-externalise",
         "linkLabel": "Control de gestión y reporting"
       },
       {
-        "title": "Construir un plan financiable",
+        "title": "Presupuesto y preparación de financiación",
         "deliverable": "Un presupuesto o plan de negocio con escenarios y, si se acuerda, un expediente de financiación. Las necesidades de caja se relacionan con las hipótesis de ventas, contratación e inversión.",
         "decision": "Comparar posibles trayectorias y preparar las preguntas de bancos o inversores. Obtener financiación también depende del proyecto y de sus decisiones; el CFO no puede prometer el resultado.",
         "href": "/services/accompagnement-levee-de-fond",
@@ -129,7 +129,7 @@
     ]
   },
   "cases": {
-    "heading": "Dos misiones para entender nuestra intervención",
+    "heading": "Ejemplos de proyectos de dirección financiera externa",
     "intro": "Estos ejemplos describen trabajos documentados. Ilustran dos necesidades distintas; no anticipan el calendario ni los resultados de una nueva misión.",
     "items": [
       {
@@ -158,7 +158,7 @@
     }
   },
   "method": {
-    "heading": "¿Cómo funciona la colaboración?",
+    "heading": "¿Cómo funciona un encargo de CFO externo?",
     "intro": "El plazo orientativo de inicio es de 8 a 15 días, sujeto a la confirmación del perfil y del alcance. La puesta en marcha sigue sus prioridades y el estado de sus datos, sin imponer el mismo programa de 90 días a todas las empresas.",
     "steps": [
       {
@@ -178,7 +178,7 @@
     "cities": "{{geographicSummary}}"
   },
   "pricing": {
-    "heading": "¿Qué presupuesto prever y qué incluye la cuota?",
+    "heading": "¿Cuánto cuesta un CFO externo?",
     "intro": "La horquilla orientativa de las misiones recurrentes de Iter va de 3.000 a 8.000 € sin IVA al mes. La cuota cubre un alcance de trabajo y un nivel de experiencia definidos en la propuesta. Los días indicativos de los paquetes no constituyen una bolsa de horas.",
     "paragraphs": [
       "El presupuesto depende de los entregables, el número de entidades, la calidad de los datos y la complejidad de la organización. Una empresa que ya tiene reporting necesita un trabajo distinto de otra que está reconstruyendo su función financiera. Compare conjuntamente la producción, el análisis y la supervisión al revisar propuestas.",
@@ -192,7 +192,7 @@
     }
   },
   "experts": {
-    "heading": "¿Quién dirige su misión en Iter?",
+    "heading": "¿Quién se encarga de su dirección financiera en Iter?",
     "intro": "Sébastien Doat, {{role:sebastien-doat}}, es su interlocutor financiero. El perfil asignado depende de la necesidad: CFO o Finance Manager sénior, con el apoyo previsto en el paquete. La primera conversación también comprueba esa adecuación, en lugar de proponer la misma experiencia para todos los trabajos.",
     "paragraphs": [
       "Los socios supervisan los compromisos e intervienen en los proyectos de mayor alcance. Al definir la misión, se distingue quién prepara el reporting, quién dirige la revisión y quién comprueba los entregables sensibles. La continuidad depende del conocimiento del expediente y de organizar la cobertura; no significa que una misma persona esté siempre disponible.",

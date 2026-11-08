@@ -12,7 +12,7 @@ export default function ExpertProfileSections({ locale = "fr" }: { locale?: Loca
   const t = (source: string) => { if (locale === "fr") return source; const value = (locale === "en" ? en : es) as Record<string, string>; if (!value[source]) throw new Error(`Missing expert translation: ${locale}/${source}`); return value[source]; };
   return <div className="container max-w-4xl py-12 space-y-14">
     <section id="expertise" className="scroll-mt-28">
-      <p className="site-eyebrow">{t("L’accompagnement financier")}</p><h2 className="mb-5">{t("Sur quels sujets échanger avec Sébastien ?")}</h2>
+      <h2 className="mb-5">{t("Sur quels sujets échanger avec Sébastien ?")}</h2>
       <div className="grid sm:grid-cols-2 gap-4">
         {[
           {title:t("Direction financière à temps partagé"),text:t("Définir les priorités, organiser le pilotage et préparer les décisions avec le dirigeant."),href:"/daf-externalise"},
@@ -24,7 +24,7 @@ export default function ExpertProfileSections({ locale = "fr" }: { locale?: Loca
       <p className="mt-5 text-muted-foreground leading-relaxed">{t("Pour l’IA, le rôle du DAF porte sur les données, les indicateurs et la validation des résultats. Les guides distinguent les cas publics, les exercices pédagogiques et les missions du cabinet. Ils ne remplacent pas l’analyse de votre situation.")}</p>
     </section>
     <section id="parcours" className="scroll-mt-28">
-      <p className="site-eyebrow">{t("Expérience opérationnelle")}</p><h2 className="mb-5">{t("Un parcours de direction financière")}</h2>
+      <h2 className="mb-5">{t("Un parcours de direction financière")}</h2>
       <ul className="divide-y divide-border">
         <li className="py-4"><h3>{t("Iter Advisors")}</h3><p className="text-muted-foreground mt-2">{({ fr: `Cofondateur et CFO depuis ${COMPANY.foundingYear}. Accompagnement des dirigeants sur la structuration financière et les financements.`, en: `Co-founder and CFO since ${COMPANY.foundingYear}. Supporting business leaders with financial structuring and financing.`, es: `Cofundador y CFO desde ${COMPANY.foundingYear}. Asesoramiento a directivos en estructuración financiera y financiación.` }[locale])}</p></li>
         <li className="py-4"><h3>{t("Carts Guru et Terres de Café")}</h3><p className="text-muted-foreground mt-2">{t("Des fonctions de direction financière avant Iter Advisors, dans des entreprises en développement.")}</p></li>
@@ -33,7 +33,7 @@ export default function ExpertProfileSections({ locale = "fr" }: { locale?: Loca
       <p className="mt-4 text-sm text-muted-foreground">{t("Parcours à consulter sur")}{" "}<a href={expert.linkedin} className="text-iter-violet underline">{t("LinkedIn")}</a> {t("et")}{" "}<a href={expert.malt} className="text-iter-violet underline">{t("Malt")}</a>{t(". Les périmètres et résultats des missions du cabinet sont présentés séparément dans nos")}{" "}<PublishedLocaleLink locale={locale} href={href("/ressources/cas-clients")} className="text-iter-violet underline">{t("cas clients")}</PublishedLocaleLink>.</p>
     </section>
     <section id="interventions" className="scroll-mt-28">
-      <p className="site-eyebrow">{t("Prise de parole publique")}</p><h2 className="mb-5">{t("Sébastien dans Le Nerf de la Guerre")}</h2>
+      <h2 className="mb-5">{t("Sébastien dans Le Nerf de la Guerre")}</h2>
       <article className="site-card rounded-2xl bg-iter-violet/5 p-6 sm:p-8"><p className="text-sm text-muted-foreground mb-3">{t("Podcast · épisode 12 ·")}{" "}<time dateTime={expert.podcast.date}>{t("7 février 2025")}</time></p><h3 className="mb-4">{locale === "fr" ? expert.podcast.title : locale === "en" ? "Managing the financial side of subsidiary acquisitions" : "Gestionar la parte financiera de adquisiciones de filiales"}</h3><p className="leading-relaxed text-muted-foreground">{t("Dans cet entretien, Sébastien revient sur son parcours et son expérience des acquisitions de filiales. Une intervention pour découvrir sa pratique de la direction financière et les sujets qu’il rencontre en entreprise.")}</p><a href={expert.podcast.href} className="site-button site-button-primary mt-5">{t("Écouter l’entretien sur Ausha")}</a></article>
     </section>
     <section id="ressources" className="scroll-mt-28"><h2 className="mb-5">{t("Préparer un échange avec Sébastien")}</h2><p className="text-muted-foreground leading-relaxed mb-5">{t("Décrivez votre activité, votre organisation financière et la décision à préparer. Un échéancier de trésorerie, un exemple de reporting ou la liste de vos outils permettent de rendre le premier échange concret.")}</p><div className="flex flex-wrap gap-4"><Link href={href("/contact#sebastien-doat")} className="site-button site-button-primary">{t("Présenter ma situation")}</Link><Link href={href("/daf-externalise/tarifs")} className="site-button site-button-secondary">{t("Périmètres et tarifs DAF")}</Link></div></section>

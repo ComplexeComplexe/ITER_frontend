@@ -131,9 +131,6 @@ function Hero({ formRef }: { formRef: React.RefObject<HTMLDivElement | null> }) 
       <div className="container relative grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         {/* Left — pitch */}
         <div>
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest text-iter-chartreuse mb-5">
-            CFO part-time / DAF externalisé
-          </span>
 
           <h1 className="text-4xl lg:text-6xl font-bold font-heading leading-[1.05] mb-6">
             DAF externalisé pour <span className="text-iter-chartreuse">PME et startups</span>

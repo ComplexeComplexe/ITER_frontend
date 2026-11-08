@@ -101,7 +101,7 @@ const htmlContent = `<p>malibou combine une plateforme RH, la technologie de pai
 <p><strong>La migration depuis PayFit est-elle compliquée ?</strong><br>Selon l'éditeur, la migration est prise en charge par le gestionnaire de paie dédié, qui récupère l'historique, migre le dossier et réalise un audit de conformité avant la première clôture. Nous recommandons de faire préciser le délai et le périmètre exacts de cet accompagnement avant de s'engager.</p>
 <p><strong>Quelle est la différence entre malibou et PayFit ?</strong><br>Avec PayFit, l'entreprise produit elle-même sa paie dans l'interface. Avec malibou, un gestionnaire de paie dédié produit et contrôle les bulletins sur la technologie Silae, en plus de l'interface RH.</p>
 <p><strong>malibou remplace-t-il un expert-comptable ?</strong><br>Non. malibou prend en charge la production de la paie ; les missions comptables (bilans, déclarations fiscales) restent du ressort de l'expert-comptable ou d'un DAF externalisé pour le pilotage financier global.</p>
-<h2 id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<h2 id="pour-aller-plus-loin">Comparaisons et outils de paie associés</h2>
 <p>Pour aller plus loin : <a href="/ressources/blog/payfit-vs-silae-comparatif-pme">comparatif PayFit vs Silae vs malibou</a>, <a href="/ressources/outils/payfit">fiche PayFit</a>, <a href="/ressources/outils/silae">fiche Silae</a> et <a href="/ressources/outils">l'ensemble de nos comparatifs d'outils CFO</a>.</p>
 <h2 id="cta">Besoin d'aide pour choisir votre organisation paie et RH ?</h2>
 <div class="not-prose rounded-2xl bg-iter-chartreuse/10 border-l-4 border-iter-chartreuse p-6 sm:p-8 my-10">

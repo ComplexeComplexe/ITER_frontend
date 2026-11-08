@@ -4,7 +4,6 @@ import Image from "next/image";
 import {
   ArrowRight,
   Briefcase,
-  Users,
   Globe,
   TrendingUp,
   MapPin,
@@ -131,14 +130,6 @@ export default function JobsPage({
           <Breadcrumb locale={locale} items={[{ label: "Jobs" }]} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-iter-violet/10 flex items-center justify-center">
-                  <Users size={24} className="text-iter-violet" />
-                </div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet">
-                  {locale === "fr" ? "Carrières" : locale === "en" ? "Careers" : "Carreras"}
-                </span>
-              </div>
               <h1 className="text-4xl lg:text-6xl font-bold font-heading text-foreground max-w-3xl mb-6 leading-tight">
                 {t.hero.h1}
               </h1>

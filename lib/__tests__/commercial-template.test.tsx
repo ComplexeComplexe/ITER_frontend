@@ -8,6 +8,7 @@ import { getFinanceServices } from "@/lib/content/finance-service-locales";
 import { navigation } from "@/lib/navigation";
 import { parityHref } from "@/lib/locale-route-map";
 import { getSiteInterface } from "@/lib/content/site-interface";
+import { FINANCE_SERVICES } from "@/lib/content/finance-services";
 
 vi.mock("@/components/PageLayout", () => ({ default: ({ children }: { children: ReactNode }) => <main>{children}</main> }));
 const doc = (element: ReactNode) => new DOMParser().parseFromString(renderToStaticMarkup(element), "text/html");
@@ -24,10 +25,12 @@ describe("Unified commercial experience", () => {
   });
   it("preserves distinct service copy, local conversion routes and server-rendered FAQ answers", () => {
     for (const locale of ["fr", "en", "es"] as const) {
-      for (const service of Object.values(getFinanceServices(locale))) {
-        const page = doc(<FinanceServicePage locale={locale} service={service} />);
+      for (const [key, service] of Object.entries(getFinanceServices(locale))) {
+        // French routes may still pass the historical shared object.
+        const page = doc(<FinanceServicePage locale={locale} service={FINANCE_SERVICES[key]} />);
         expect(page.querySelectorAll("h1")).toHaveLength(1);
         expect(page.querySelector("h1")!.textContent).toBe(service.headline);
+        expect(page.querySelector("#tarifs h2")!.textContent).toBe(service.budgetHeading);
         expect(page.querySelector("#besoin")!.textContent).toContain(service.definition);
         for (const [, detail, decision] of service.deliverables) {
           expect(page.querySelector("#livrables")!.textContent).toContain(detail);
@@ -47,11 +50,33 @@ describe("Unified commercial experience", () => {
       for (const element of [<DafPillarPage key="pillar" locale={locale} />, <FinanceServicePage key="finance" locale={locale} service={service} />, <DrhFrenchPage key="hr" locale={locale} />]) {
         const page = doc(element);
         expect(page.querySelector(".site-service-hero .site-brief")!.getAttribute("aria-label")).toBe(getSiteInterface(locale).brief);
+        expect(page.querySelector(".site-service-hero [data-speakable] > p.site-eyebrow")).toBeNull();
         expect(page.querySelector(".site-section-nav")).not.toBeNull();
         const sections = [...page.querySelectorAll("section[data-block-key]")].filter(section => section.id !== "contact");
         expect(sections.every(section => section.querySelector(":scope > .container.max-w-4xl"))).toBe(true);
         expect(page.querySelectorAll("details.group").length).toBeGreaterThan(0);
         expect(page.querySelector("#contact.site-contact-band")).not.toBeNull();
+      }
+    }
+  });
+  it("keeps the six pillars' visible attribution, revision dates and FAQ aligned with JSON-LD", () => {
+    for (const locale of ["fr", "en", "es"] as const) {
+      for (const [element, author] of [
+        [<DafPillarPage key="daf" locale={locale} />, "sebastien-doat"],
+        [<DrhFrenchPage key="hr" locale={locale} />, "borith-biv"],
+      ] as const) {
+        const page = doc(element);
+        const schemas = [...page.querySelectorAll('script[type="application/ld+json"]')].map(node => JSON.parse(node.textContent!));
+        const webpage = schemas.find(schema => schema["@type"] === "WebPage");
+        expect(webpage.author["@id"]).toBe(`https://www.iteradvisors.com/a-propos/${author}#person`);
+        expect(page.querySelector('a[rel="author"]')!.getAttribute("href")).toBe(parityHref(`/a-propos/${author}`, locale));
+        expect(page.querySelector("time")!.getAttribute("datetime")).toBe(webpage.dateModified);
+        const faq = schemas.find(schema => schema["@type"] === "FAQPage");
+        expect([...page.querySelectorAll("details")].map(detail => ({
+          q: detail.querySelector("h3")!.textContent,
+          a: detail.querySelector("p")!.textContent,
+        }))).toEqual(faq.mainEntity.map((q: { name: string; acceptedAnswer: { text: string } }) => ({ q: q.name, a: q.acceptedAnswer.text })));
+        if (author === "sebastien-doat") expect(page.querySelectorAll("#expert-comptable table tbody tr")).toHaveLength(3);
       }
     }
   });

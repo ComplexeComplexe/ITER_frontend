@@ -16,7 +16,6 @@ export default function HeroSection({ locale }: { locale: Locale }) {
       <div className={styles.wrap}>
         <div className={styles.heroGrid}>
           <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>{t.eyebrow}</p>
             <h1>
               {t.headline[0]}
               <em>{t.headline[1]}</em>

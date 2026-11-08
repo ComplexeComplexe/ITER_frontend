@@ -119,12 +119,6 @@ export default function DafLocalPage({
           />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <MapPin className="text-iter-chartreuse" size={20} />
-                <span className="text-iter-chartreuse font-medium text-sm uppercase tracking-wider">
-                  {city === "barcelone" ? "Barcelona" : city === "paris" ? "Paris" : "Toulouse"}
-                </span>
-              </div>
               <h1 className="text-4xl lg:text-5xl font-bold font-heading text-foreground max-w-2xl mb-6">
                 {t.h1}
               </h1>

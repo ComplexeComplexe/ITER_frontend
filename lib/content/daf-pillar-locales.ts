@@ -6,12 +6,14 @@ import type { Locale } from "@/lib/i18n";
 import { dafPillar, type DafPillarContent } from "./daf-pillar";
 import en from "./locales/daf-pillar.en.json";
 import es from "./locales/daf-pillar.es.json";
+import { PILLAR_DECISIONS } from "./pillar-decisions";
 
 const content: Record<Locale, DafPillarContent> = { fr: dafPillar, en, es };
 export function getDafPillarContent(locale: Locale): DafPillarContent {
   const page = contractContent(resolveCompanyCopy(content[locale], locale), locale);
   return {
     ...page,
+    faq: [...page.faq, PILLAR_DECISIONS[locale].financeCoverage],
     hero: {
       ...page.hero,
       landmarks: locale === "fr" ? page.hero.landmarks : page.hero.landmarks.slice(0, 2),
@@ -35,7 +37,7 @@ export const pillarInterface = {
     cityPrefix: "DAF externalisé à",
     linkedIn: "Profil LinkedIn de",
     ai: "Notre approche de l’IA en finance",
-    faq: "Les questions à clarifier avant de démarrer",
+    faq: "Questions fréquentes sur le DAF externalisé",
     sectors: "Accompagnements sectoriels",
     explore: "Approfondir selon votre activité",
     industry: "Industrie",
@@ -69,7 +71,7 @@ export const pillarInterface = {
     cityPrefix: "Fractional CFO in",
     linkedIn: "LinkedIn profile of",
     ai: "Our approach to AI in finance",
-    faq: "Questions to clarify before starting",
+    faq: "Frequently asked questions about fractional CFO services",
     sectors: "Sector-specific support",
     explore: "Explore support for your business",
     industry: "Industry",
@@ -103,7 +105,7 @@ export const pillarInterface = {
     cityPrefix: "CFO externo en",
     linkedIn: "Perfil de LinkedIn de",
     ai: "Nuestro enfoque de IA en finanzas",
-    faq: "Preguntas que conviene aclarar antes de empezar",
+    faq: "Preguntas frecuentes sobre el CFO externo",
     sectors: "Acompañamiento por sectores",
     explore: "Conozca el acompañamiento para su actividad",
     industry: "Industria",

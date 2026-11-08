@@ -13,9 +13,9 @@ interface TldrProps {
 export default function Tldr({ children, locale = 'fr' }: TldrProps) {
   return (
     <div className="site-card mb-8 rounded-lg border-l-4 border-iter-violet bg-iter-violet/5 p-6">
-      <h3 className="mb-3 font-semibold text-slate-900">
-        {{ fr: 'À retenir en 30 secondes', en: 'Key points in 30 seconds', es: 'Lo esencial en 30 segundos' }[locale]}
-      </h3>
+      <h2 className="mb-3 text-base font-semibold text-slate-900">
+        {{ fr: 'Résumé de l’article', en: 'Article summary', es: 'Resumen del artículo' }[locale]}
+      </h2>
       <div className="space-y-2 text-sm leading-relaxed text-slate-700">
         {typeof children === 'string' ? (
           <p>{children}</p>

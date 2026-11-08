@@ -56,7 +56,7 @@ export default function HRServicePage({
 
   return (
     <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-      <ServiceHero locale={locale} family="rh" title={content.h1} label={content.breadcrumb} eyebrow={ui.eyebrow} lead={content.intro[0]} intro={content.intro[1]}
+      <ServiceHero locale={locale} family="rh" title={content.h1} label={content.breadcrumb} lead={content.intro[0]} intro={content.intro[1]}
         primary={{ href: href(`/contact#${content.slug}`), label: ui.primary }} secondary={{ href: "#methode", label: ui.method }}
         summary={[{ label: ui.need, value: content.breadcrumb }, { label: ui.work, value: ui.scope }, { label: ui.budget, value: ui.quote }]}
         proof={<PageByline locale={locale} author={ITER_AUTHOR} dateModified={modified} className="mt-4" />}

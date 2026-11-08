@@ -22,6 +22,7 @@ import ServiceFaq from "@/components/design/ServiceFaq";
 import Section from "@/components/design/ServiceSection";
 import ServiceContact from "@/components/design/ServiceContact";
 import PageByline from "@/components/PageByline";
+import { PILLAR_DECISIONS } from "@/lib/content/pillar-decisions";
 
 const AUTHOR = { name: PEOPLE.sebastien.name, slug: PEOPLE.sebastien.slug };
 const SITE = "https://www.iteradvisors.com";
@@ -33,12 +34,13 @@ const link = "inline-flex min-h-11 items-center text-iter-violet underline under
 export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr" }: { locale?: Locale; cmsNavigation?: CmsNavItem[]; teamMembers?: StrapiTeamMember[] }) {
   const t = getDafPillarContent(locale);
   const ui = pillarInterface[locale];
+  const decisions = PILLAR_DECISIONS[locale];
   const href = (path: string) => parityHref(path, locale);
   const path = href(DAF_PILLAR_PATH);
   const teamSource = teamMembers?.length ? teamMembers : getFallbackTeamMembers(locale);
   const experts = t.experts.slugs.map(slug => teamSource.find(m => m.slug === slug)).filter((m): m is StrapiTeamMember => Boolean(m));
   return <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-    <ServiceHero locale={locale} title={t.hero.h1} label={t.breadcrumbLabel} eyebrow={ui.eyebrow}
+    <ServiceHero locale={locale} title={t.hero.h1} label={t.breadcrumbLabel}
       lead={t.hero.lead} intro={t.hero.intro}
       primary={{ href: href(t.contact.href), label: t.hero.cta }} secondary={{ href: "#tarifs", label: ui.pricing }}
       summary={t.hero.landmarks} navigation={t.nav}
@@ -68,13 +70,14 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
       </figure>
     </Section>
 
-    <Section id="expert-comptable" title={t.accounting.heading}>
+    <Section id="expert-comptable" title={decisions.comparison.title}>
       <p className={body}>{t.accounting.text}</p>
+      <ServiceTable caption={decisions.comparison.title} headers={decisions.comparison.headers} rows={decisions.comparison.rows} captionHidden />
     </Section>
 
     <Section id="preuves" title={t.cases.heading}>
       <p className={body}>{t.cases.intro}</p>
-      <div className="grid md:grid-cols-2 gap-6">{t.cases.items.map(item => <article className="site-card border border-border p-5 sm:p-7 flex flex-col" key={item.company}><p className="site-eyebrow">{item.company}</p><h3 className="font-semibold text-foreground">{item.title}</h3><p className={`${body} mt-4`}>{item.text}</p><p className={`${body} mt-4 mb-5`}>{item.takeaway}</p><PublishedLocaleLink locale={locale} href={href(item.href)} className={`${link} mt-auto`}>{item.linkLabel}</PublishedLocaleLink></article>)}</div>
+      <div className="grid md:grid-cols-2 gap-6">{t.cases.items.map(item => <article className="site-card border border-border p-5 sm:p-7 flex flex-col" key={item.company}><h3 className="font-semibold text-foreground">{item.company} : {item.title}</h3><p className={`${body} mt-4`}>{item.text}</p><p className={`${body} mt-4 mb-5`}>{item.takeaway}</p><PublishedLocaleLink locale={locale} href={href(item.href)} className={`${link} mt-auto`}>{item.linkLabel}</PublishedLocaleLink></article>)}</div>
       <figure id="avis" className="border-l-2 border-iter-violet pl-5 scroll-mt-24"><blockquote className="site-copy text-foreground">« {t.cases.quote.text} »</blockquote><figcaption className="mt-3 text-sm text-muted-foreground"><strong className="text-foreground">{t.cases.quote.author}</strong>, {t.cases.quote.role}<br /><a className={link} href={t.cases.quote.sourceUrl} target="_blank" rel="noopener noreferrer">{t.cases.quote.sourceLabel}</a></figcaption></figure>
       <PublishedLocaleLink locale={locale} href={href(t.contact.href)} className="site-button site-button-primary">{t.hero.cta}</PublishedLocaleLink>
     </Section>
@@ -142,6 +145,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
       </div>
       {t.experts.paragraphs.map(text => <p className={body} key={text}>{text}</p>)}
       <PublishedLocaleLink locale={locale} href={href("/ressources/ia-finance")} className={link}>{ui.ai}</PublishedLocaleLink>
+      <p className="text-sm text-muted-foreground">{decisions.financeRevision}</p>
       <PageByline locale={locale} author={AUTHOR} dateModified={DAF_PILLAR_MODIFIED} dateLabel={locale === "fr" ? DAF_PILLAR_MODIFIED_LABEL : undefined} />
     </Section>
 

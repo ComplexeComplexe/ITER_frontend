@@ -4,8 +4,8 @@ import { CLIENTS_ACCOMPAGNES, DELAIS, ENGAGEMENT, FORMULES } from "@/lib/content
 
 export const DAF_PILLAR_PATH = "/daf-externalise";
 export const DAF_PILLAR_PUBLISHED = "2026-05-17";
-export const DAF_PILLAR_MODIFIED = "2026-10-12";
-export const DAF_PILLAR_MODIFIED_LABEL = "12 octobre 2026";
+export const DAF_PILLAR_MODIFIED = "2026-11-08";
+export const DAF_PILLAR_MODIFIED_LABEL = "8 novembre 2026";
 const fmt = (n: number) => n.toLocaleString("fr-FR").replace(/ | /g, " ");
 const budget = `${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT`;
 
@@ -47,12 +47,12 @@ export const dafPillar = {
   },
   missions: {
     overview: ["Pilotage : le DAF construit le budget, les prévisions et le plan de trésorerie avec le dirigeant.", "Contrôle de gestion : le DAF met en place les tableaux de bord et suit les marges.", "Trésorerie : le DAF suit le BFR et les encaissements, et prépare les échanges bancaires.", "Financement : le DAF prépare les données et les scénarios d’une levée, d’un dossier bancaire ou d’un recrutement.", "Décision : le DAF prépare les arbitrages ; les pouvoirs de signature et de paiement restent définis par les délégations convenues."],
-    heading: "Missions du DAF externalisé",
+    heading: "Quelles missions confier à un DAF externalisé ?",
     intro: "Le périmètre est défini au départ : toutes les missions n’incluent pas tous les livrables. Le socle récurrent associe généralement prévisionnel, reporting et revue avec le dirigeant. Les travaux de financement, de transformation ou d’acquisition sont ajoutés selon votre situation.",
     items: [
-      { title: "Anticiper la trésorerie", deliverable: "Un prévisionnel à 13 semaines, avec les encaissements, paiements, échéances de dette et hypothèses à surveiller. La fréquence d’actualisation est convenue selon la volatilité de votre activité et la disponibilité des données.", decision: "Identifier une tension à venir, préparer un échange bancaire ou arbitrer le calendrier d’une dépense. Le prévisionnel distingue les flux connus des hypothèses ; il ne garantit pas les encaissements.", href: "/services/previsionnel-tresorerie", linkLabel: "Prévisionnel de trésorerie" },
-      { title: "Comprendre la rentabilité", deliverable: "Un reporting mensuel du résultat, de la trésorerie et des indicateurs pertinents, avec une lecture des écarts au budget. Selon votre modèle, l’analyse porte sur une activité, un canal, une entité ou un projet.", decision: "Repérer une marge qui se dégrade, discuter d’un prix ou revoir une dépense. Les données provisoires et les limites de comparaison sont signalées pour éviter de décider sur un chiffre incomplet.", href: "/services/controle-de-gestion-externalise", linkLabel: "Contrôle de gestion externalisé" },
-      { title: "Construire une trajectoire finançable", deliverable: "Un budget ou un business plan avec ses scénarios et, si la mission le prévoit, un dossier de financement. Les besoins de trésorerie sont reliés aux hypothèses de vente, de recrutement et d’investissement.", decision: "Comparer plusieurs trajectoires et préparer les questions des banques ou investisseurs. L’obtention d’un financement dépend aussi du projet et de leurs décisions ; elle ne peut pas être promise par le DAF.", href: "/services/accompagnement-levee-de-fond", linkLabel: "Préparer une levée de fonds" },
+      { title: "Prévisionnel de trésorerie", deliverable: "Un prévisionnel à 13 semaines, avec les encaissements, paiements, échéances de dette et hypothèses à surveiller. La fréquence d’actualisation est convenue selon la volatilité de votre activité et la disponibilité des données.", decision: "Identifier une tension à venir, préparer un échange bancaire ou arbitrer le calendrier d’une dépense. Le prévisionnel distingue les flux connus des hypothèses ; il ne garantit pas les encaissements.", href: "/services/previsionnel-tresorerie", linkLabel: "Prévisionnel de trésorerie" },
+      { title: "Reporting mensuel et analyse des marges", deliverable: "Un reporting mensuel du résultat, de la trésorerie et des indicateurs pertinents, avec une lecture des écarts au budget. Selon votre modèle, l’analyse porte sur une activité, un canal, une entité ou un projet.", decision: "Repérer une marge qui se dégrade, discuter d’un prix ou revoir une dépense. Les données provisoires et les limites de comparaison sont signalées pour éviter de décider sur un chiffre incomplet.", href: "/services/controle-de-gestion-externalise", linkLabel: "Contrôle de gestion externalisé" },
+      { title: "Budget et préparation des financements", deliverable: "Un budget ou un business plan avec ses scénarios et, si la mission le prévoit, un dossier de financement. Les besoins de trésorerie sont reliés aux hypothèses de vente, de recrutement et d’investissement.", decision: "Comparer plusieurs trajectoires et préparer les questions des banques ou investisseurs. L’obtention d’un financement dépend aussi du projet et de leurs décisions ; elle ne peut pas être promise par le DAF.", href: "/services/accompagnement-levee-de-fond", linkLabel: "Préparer une levée de fonds" },
     ],
     example: {
       heading: "Une revue mensuelle orientée vers l’action",
@@ -66,7 +66,7 @@ export const dafPillar = {
   },
   accounting: {"heading": "DAF externalisé ou expert-comptable", "text": "L’expert-comptable produit les comptes et les déclarations selon sa lettre de mission. Le DAF externalisé utilise ces comptes pour prévoir, piloter et préparer les décisions du dirigeant ; il complète la mission du cabinet comptable."},
   cases: {
-    heading: "Deux missions pour comprendre notre intervention",
+    heading: "Exemples de missions de direction financière externalisée",
     intro: "Les exemples suivants décrivent des travaux documentés. Leur périmètre illustre deux besoins différents ; il ne préjuge ni du calendrier ni des résultats d’une nouvelle mission.",
     items: [
       { company: "Opti Digital", title: "Structurer la fonction finance dans la durée", text: "Dans cette PME adtech, l’accompagnement associe reporting mensuel, procédures de clôture, migration ERP et financement non dilutif. La mission comprend aussi la coordination des sujets fiscaux et juridiques avec les conseils externes. Elle montre comment le pilotage récurrent peut s’articuler avec des chantiers de structuration.", takeaway: "Pour le dirigeant : disposer d’une fonction finance organisée et d’un interlocuteur pour relier les différents travaux. Aucun montant de financement ni gain de productivité n’est annoncé ici.", href: "/ressources/cas-clients/opti-digital-structuration-financement", linkLabel: "Voir la mission Opti Digital" },
@@ -81,7 +81,7 @@ export const dafPillar = {
     },
   },
   method: {
-    heading: "Comment se passe la collaboration ?",
+    heading: "Comment fonctionne une mission de DAF externalisé ?",
     intro: `Le délai indicatif de démarrage est de ${DELAIS.missionDemarree}, à confirmer selon le profil et le périmètre. La mise en place suit ensuite vos priorités et l’état de vos données, sans imposer le même programme de 90 jours à chaque entreprise.`,
     steps: [
       { title: "Cadrer les responsabilités", text: "Nous examinons vos outils, les données disponibles et les décisions à préparer. Le cadrage écrit précise les livrables, leur fréquence, les interlocuteurs et les travaux hors périmètre. Votre équipe identifie qui transmet les informations ; le rôle de l’expert-comptable est clarifié pour éviter les doublons." },
@@ -92,7 +92,7 @@ export const dafPillar = {
     cities: getCompanyGeography("fr").summary,
   },
   pricing: {
-    heading: "Quel budget prévoir et que couvre le forfait ?",
+    heading: "Quel est le tarif d’un DAF externalisé ?",
     intro: `La fourchette indicative des missions récurrentes Iter va de ${budget} par mois. Le forfait porte sur un périmètre de travail et un niveau de séniorité définis au devis. Les volumes de jours présentés dans les formules sont indicatifs : ils ne constituent pas un crédit d’heures.`,
     paragraphs: [
       "Le budget varie avec les livrables attendus, le nombre d’entités, la qualité des données et la complexité de l’organisation. Une entreprise dont le reporting existe déjà n’appelle pas le même travail qu’une fonction finance à reconstruire. La production, l’analyse et la supervision doivent donc être comparées ensemble lorsque vous examinez plusieurs propositions.",
@@ -103,7 +103,7 @@ export const dafPillar = {
     link: { href: "/daf-externalise/tarifs", label: "Consulter les formules et les tarifs détaillés" },
   },
   experts: {
-    heading: "Qui pilote votre mission chez Iter ?",
+    heading: "Qui assure votre direction financière chez Iter ?",
     intro: "Sébastien Doat, {{role:sebastien-doat}}, est votre interlocuteur finance. Le profil affecté à la mission dépend du besoin : CFO ou Finance Manager senior, avec l’appui prévu dans la formule. Le premier échange sert aussi à vérifier cette adéquation, plutôt qu’à vous proposer un niveau de séniorité identique pour tous les travaux.",
     paragraphs: [
       "Les associés supervisent les engagements et interviennent sur les sujets structurants. Le cadrage permet de distinguer la personne qui produit le reporting, celle qui conduit la revue et celle qui relit les livrables sensibles. La continuité repose sur la connaissance du dossier et l’organisation d’un relais, sans promettre qu’une même personne sera disponible en toutes circonstances.",
