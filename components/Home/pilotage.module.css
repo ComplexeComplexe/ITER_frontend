@@ -519,20 +519,7 @@
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 64px;
-  align-items: center;
-}
-.hrIllustration {
-  margin: 0;
-}
-.hrIllustration img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-}
-.hrIllustration figcaption {
-  font-size: 12px;
-  margin-top: 12px;
-  color: var(--site-muted);
+  align-items: start;
 }
 .method {
   display: grid;

@@ -120,8 +120,6 @@ const copy = {
       title: "Des équipes qui grandissent. Une organisation qui suit.",
       text: "Recrutement, onboarding, organisation, coordination de la paie et conformité : un DRH senior vous accompagne quelques jours par mois, sur un périmètre défini.",
       role: "Partner Capital Humain",
-      imageAlt: "Un groupe de collaborateurs réunis dans un espace de travail",
-      imageCaption: "Photo d’illustration",
     },
     method: {
       eyebrow: "Du premier échange au rythme de croisière",
@@ -290,8 +288,6 @@ const copy = {
       title: "Growing teams. An organisation that keeps up.",
       text: "Recruitment, onboarding, organisation, payroll coordination and compliance: a senior HR director supports you for a few days a month within an agreed scope.",
       role: "Human Capital Partner",
-      imageAlt: "A group of colleagues gathered in a workspace",
-      imageCaption: "Illustrative photo",
     },
     method: {
       eyebrow: "From the first conversation to a steady rhythm",
@@ -464,8 +460,6 @@ const copy = {
       title: "Equipos que crecen. Una organización que los sostiene.",
       text: "Selección, incorporación, organización, coordinación de nóminas y cumplimiento: un director de RR. HH. sénior trabaja con usted unos días al mes, con un alcance definido.",
       role: "Socio de Capital Humano",
-      imageAlt: "Un grupo de compañeros reunidos en un espacio de trabajo",
-      imageCaption: "Foto ilustrativa",
     },
     method: {
       eyebrow: "De la primera conversación al ritmo de trabajo",

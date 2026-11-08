@@ -156,20 +156,8 @@ export default function HomePage({
           className={`${styles.section} ${styles.tint}`}
         >
           <div className={`${styles.wrap} ${styles.hrGrid}`}>
-            <figure className={styles.hrIllustration}>
-              <Image
-                src="/images/home-rh-team-illustration.webp"
-                alt={t.rh.imageAlt}
-                width={1600}
-                height={1067}
-                sizes="(max-width: 600px) calc(100vw - 48px), (max-width: 1160px) 40vw, 480px"
-              />
-              <figcaption>
-                {t.rh.imageCaption} · EmbedSocial / Unsplash
-              </figcaption>
-            </figure>
+            <h2>{t.rh.title}</h2>
             <div>
-              <h2>{t.rh.title}</h2>
               <p className={styles.intro}>{t.rh.text}</p>
               <nav className={styles.related} aria-label={journey.hr.nav}>
                 {HOME_HR_PATHS.map((path, i) => (
