@@ -44,7 +44,8 @@ await Promise.all(Array.from({ length: 5 }, async () => {
       const body = html.split(/<footer\b/)[0];
       if (required && !body.includes(`href="${required}"`)) failures.push(`${path}: missing contextual link ${required}`);
       if (path === "/daf-externalise/transition") {
-        const faqs = [...html.matchAll(/<h2\b[^>]*>FAQ[^<]*<\/h2>/gi)];
+        // Identify the FAQ section by its stable anchor, not its translated title.
+        const faqs = [...html.matchAll(/<section\b[^>]*\bid="faq"[^>]*>/gi)];
         if (faqs.length !== 1) failures.push(`${path}: expected one FAQ, found ${faqs.length}`);
       }
     } catch (error) {
