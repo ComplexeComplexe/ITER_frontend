@@ -4,8 +4,8 @@ import { CLIENTS_ACCOMPAGNES, DELAIS, ENGAGEMENT, FORMULES } from "@/lib/content
 
 export const DAF_PILLAR_PATH = "/daf-externalise";
 export const DAF_PILLAR_PUBLISHED = "2026-05-17";
-export const DAF_PILLAR_MODIFIED = "2026-10-12";
-export const DAF_PILLAR_MODIFIED_LABEL = "12 octobre 2026";
+export const DAF_PILLAR_MODIFIED = "2026-11-08";
+export const DAF_PILLAR_MODIFIED_LABEL = "8 novembre 2026";
 const fmt = (n: number) => n.toLocaleString("fr-FR").replace(/ | /g, " ");
 const budget = `${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT`;
 

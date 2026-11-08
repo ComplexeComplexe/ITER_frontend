@@ -6,12 +6,14 @@ import type { Locale } from "@/lib/i18n";
 import { dafPillar, type DafPillarContent } from "./daf-pillar";
 import en from "./locales/daf-pillar.en.json";
 import es from "./locales/daf-pillar.es.json";
+import { PILLAR_DECISIONS } from "./pillar-decisions";
 
 const content: Record<Locale, DafPillarContent> = { fr: dafPillar, en, es };
 export function getDafPillarContent(locale: Locale): DafPillarContent {
   const page = contractContent(resolveCompanyCopy(content[locale], locale), locale);
   return {
     ...page,
+    faq: [...page.faq, PILLAR_DECISIONS[locale].financeCoverage],
     hero: {
       ...page.hero,
       landmarks: locale === "fr" ? page.hero.landmarks : page.hero.landmarks.slice(0, 2),

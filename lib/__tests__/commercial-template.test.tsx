@@ -55,4 +55,25 @@ describe("Unified commercial experience", () => {
       }
     }
   });
+  it("keeps the six pillars' visible attribution, revision dates and FAQ aligned with JSON-LD", () => {
+    for (const locale of ["fr", "en", "es"] as const) {
+      for (const [element, author] of [
+        [<DafPillarPage key="daf" locale={locale} />, "sebastien-doat"],
+        [<DrhFrenchPage key="hr" locale={locale} />, "borith-biv"],
+      ] as const) {
+        const page = doc(element);
+        const schemas = [...page.querySelectorAll('script[type="application/ld+json"]')].map(node => JSON.parse(node.textContent!));
+        const webpage = schemas.find(schema => schema["@type"] === "WebPage");
+        expect(webpage.author["@id"]).toBe(`https://www.iteradvisors.com/a-propos/${author}#person`);
+        expect(page.querySelector('a[rel="author"]')!.getAttribute("href")).toBe(parityHref(`/a-propos/${author}`, locale));
+        expect(page.querySelector("time")!.getAttribute("datetime")).toBe(webpage.dateModified);
+        const faq = schemas.find(schema => schema["@type"] === "FAQPage");
+        expect([...page.querySelectorAll("details")].map(detail => ({
+          q: detail.querySelector("h3")!.textContent,
+          a: detail.querySelector("p")!.textContent,
+        }))).toEqual(faq.mainEntity.map((q: { name: string; acceptedAnswer: { text: string } }) => ({ q: q.name, a: q.acceptedAnswer.text })));
+        if (author === "sebastien-doat") expect(page.querySelectorAll("#expert-comptable table tbody tr")).toHaveLength(3);
+      }
+    }
+  });
 });

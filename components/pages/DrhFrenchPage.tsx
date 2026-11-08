@@ -18,6 +18,8 @@ import { faqPageSchema } from "@/lib/schemas";
 import { HR_COMMERCIAL_COPY, hrOfferCatalog } from "@/lib/content/hr-commercial";
 import { HrPillars, HrComparison, HrFees, HrCountries, HrTools } from "@/components/HrCommercialBlocks";
 import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
+import PageByline from "@/components/PageByline";
+import { PILLAR_DECISIONS } from "@/lib/content/pillar-decisions";
 import { getSiteInterface } from "@/lib/content/site-interface";
 import type { CmsNavItem } from "@/lib/static-content";
 import compactUx from "@/components/finance/control-deliverables.module.css";
@@ -29,10 +31,17 @@ export default function DrhFrenchPage({ sharedTime = false, cmsNavigation, local
   const path = href(sharedTime ? "/drh-externalise/temps-partage" : "/drh-externalise");
   const title = sharedTime ? t("Comment fonctionne un DRH à temps partagé ?") : t("DRH externalisé pour PME et startups");
   const commercial = HR_COMMERCIAL_COPY[locale];
+  const decisions = PILLAR_DECISIONS[locale];
   const ui = getSiteInterface(locale);
   const modified = PAGE_REVISIONS[path] ?? "2026-10-03";
-  const faq = localizeHrValue(sharedTime ? HR_TIME_FAQ : HR_FAQ, locale).map(item => ({ ...item }));
-  if (!sharedTime) faq[1] = { ...faq[1], answer: commercial.priceFaq };
+  const faq = localizeHrValue(sharedTime ? HR_TIME_FAQ : HR_FAQ, locale).map(item =>
+    !sharedTime && item.question === t("Où et comment se déroule la mission ?")
+      ? { ...decisions.hrCoverage }
+      : { ...item },
+  );
+  if (!sharedTime) {
+    faq[1] = { ...faq[1], answer: commercial.priceFaq };
+  }
   const needs = sharedTime ? [
     [t("Un rythme convenu"), t("Définir les jours ou plages d’intervention, les réunions et les moyens de contact. Adapter la présence aux travaux prévus, sans promettre une disponibilité à temps plein.")],
     [t("Des responsabilités explicites"), t("Le dirigeant conserve ses décisions d’employeur. Le DRH prépare les options, accompagne les managers et coordonne les intervenants dans le périmètre convenu.")],
@@ -112,7 +121,13 @@ export default function DrhFrenchPage({ sharedTime = false, cmsNavigation, local
       </ServiceSection>
     </>}
     <ServiceSection id="ressources-rh" title={t("Approfondir votre besoin RH")}><div className="grid sm:grid-cols-2 gap-5 mt-8">{localizeHrValue(HR_LINKS, locale).map(x=><Link key={x.href} href={href(x.href)} className="site-card p-6"><h3 className="text-xl font-semibold mb-3">{x.label} ↗</h3><p className="text-muted-foreground">{x.description}</p></Link>)}</div><div className="site-actions"><Link className="site-inline-link" href={sharedTime ? href("/drh-externalise#cadrage") : "#cadrage"}>{t("Préparer le cadrage de votre mission RH")}</Link><PublishedLocaleLink locale={locale} className="site-inline-link" href={href("/ressources/blog/daf-drh-externalises-synergie")}>{t("Coordonner le DAF et le DRH")}</PublishedLocaleLink></div></ServiceSection>
-    <ServiceSection id="questions" title={t("Questions fréquentes")}><ServiceFaq items={faq} /><p className="text-sm text-muted-foreground">{commercial.updated} <time dateTime={modified}>{formatLongDate(modified, locale)}</time> · <Link href={href("/a-propos/borith-biv")} className="text-iter-violet underline underline-offset-4">{ui.hrContact}{colon(locale)}Borith Biv</Link></p></ServiceSection>
+    <ServiceSection id="questions" title={t("Questions fréquentes")}>
+      <ServiceFaq items={faq} />
+      {sharedTime ? <p className="text-sm text-muted-foreground">{commercial.updated} <time dateTime={modified}>{formatLongDate(modified, locale)}</time> · <Link href={href("/a-propos/borith-biv")} className="text-iter-violet underline underline-offset-4">{ui.hrContact}{colon(locale)}Borith Biv</Link></p> : <>
+        <p className="text-sm text-muted-foreground">{decisions.hrRevision}</p>
+        <PageByline locale={locale} author={{ name: PEOPLE.borith.name, slug: PEOPLE.borith.slug }} dateModified={modified} />
+      </>}
+    </ServiceSection>
     <ServiceContact locale={locale} title={commercial.contactTitle} text={commercial.contactText} href={href(sharedTime ? "/contact#drh-temps-partage" : "/contact#drh")} label={t("Parlons de votre besoin RH")} />
     </div>
   </PageLayout>;

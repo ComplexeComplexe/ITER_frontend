@@ -1,0 +1,93 @@
+{
+  "preparedAt": "2026-11-08",
+  "status": "draft",
+  "publishedAt": null,
+  "productionCommit": null,
+  "baseline": {
+    "measuredAt": "2026-11-08",
+    "engine": "Perplexity web Search, private sessions, Best model selector",
+    "promptIds": [
+      "daf-fr",
+      "daf-en",
+      "daf-es",
+      "drh-fr",
+      "drh-en",
+      "drh-es"
+    ],
+    "completedPrompts": 6,
+    "mentionedPrompts": 6,
+    "inlineCitationPrompts": 6,
+    "limits": "One run per cross-border prompt, not representative of generic queries or other engines. No causal attribution."
+  },
+  "pages": [
+    {
+      "url": "https://www.iteradvisors.com/daf-externalise",
+      "contentRevisionDate": "2026-11-08",
+      "changes": [
+        "comparison-table",
+        "france-spain-faq",
+        "revision-note"
+      ]
+    },
+    {
+      "url": "https://www.iteradvisors.com/en/fractional-cfo",
+      "contentRevisionDate": "2026-11-08",
+      "changes": [
+        "comparison-table",
+        "france-spain-faq",
+        "revision-note"
+      ]
+    },
+    {
+      "url": "https://www.iteradvisors.com/es/externalizacion-daf",
+      "contentRevisionDate": "2026-11-08",
+      "changes": [
+        "comparison-table",
+        "france-spain-faq",
+        "revision-note"
+      ]
+    },
+    {
+      "url": "https://www.iteradvisors.com/drh-externalise",
+      "contentRevisionDate": "2026-11-08",
+      "changes": [
+        "france-spain-faq",
+        "visible-author-link",
+        "revision-note"
+      ]
+    },
+    {
+      "url": "https://www.iteradvisors.com/en/hr-outsourcing",
+      "contentRevisionDate": "2026-11-08",
+      "changes": [
+        "france-spain-faq",
+        "visible-author-link",
+        "revision-note"
+      ]
+    },
+    {
+      "url": "https://www.iteradvisors.com/es/externalizacion-rrhh",
+      "contentRevisionDate": "2026-11-08",
+      "changes": [
+        "france-spain-faq",
+        "visible-author-link",
+        "revision-note"
+      ]
+    }
+  ],
+  "publicationChecklist": [
+    "Record actual publication date and production commit after release",
+    "Verify all six production URLs and visible/JSON-LD date parity"
+  ],
+  "measurementPlan": [
+    {
+      "delayAfterPublicationDays": 7,
+      "review": "Repeat the same six prompts, retain answers and inline source URLs; inspect claims, not mention order."
+    },
+    {
+      "delayAfterPublicationDays": 21,
+      "review": "Repeat prompts and compare search/conversion signals over equivalent periods; no causal claim without controlling other changes."
+    }
+  ],
+  "methodAttribution": "GEO Content Engineering, adapted from Eugen Ullrich, eullrich.com, CC BY 4.0. Implementation uses Service and existing FAQPage; no special AI schema."
+}

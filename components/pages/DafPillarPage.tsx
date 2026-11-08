@@ -22,6 +22,7 @@ import ServiceFaq from "@/components/design/ServiceFaq";
 import Section from "@/components/design/ServiceSection";
 import ServiceContact from "@/components/design/ServiceContact";
 import PageByline from "@/components/PageByline";
+import { PILLAR_DECISIONS } from "@/lib/content/pillar-decisions";
 
 const AUTHOR = { name: PEOPLE.sebastien.name, slug: PEOPLE.sebastien.slug };
 const SITE = "https://www.iteradvisors.com";
@@ -33,6 +34,7 @@ const link = "inline-flex min-h-11 items-center text-iter-violet underline under
 export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr" }: { locale?: Locale; cmsNavigation?: CmsNavItem[]; teamMembers?: StrapiTeamMember[] }) {
   const t = getDafPillarContent(locale);
   const ui = pillarInterface[locale];
+  const decisions = PILLAR_DECISIONS[locale];
   const href = (path: string) => parityHref(path, locale);
   const path = href(DAF_PILLAR_PATH);
   const teamSource = teamMembers?.length ? teamMembers : getFallbackTeamMembers(locale);
@@ -68,8 +70,9 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
       </figure>
     </Section>
 
-    <Section id="expert-comptable" title={t.accounting.heading}>
+    <Section id="expert-comptable" title={decisions.comparison.title}>
       <p className={body}>{t.accounting.text}</p>
+      <ServiceTable caption={decisions.comparison.title} headers={decisions.comparison.headers} rows={decisions.comparison.rows} captionHidden />
     </Section>
 
     <Section id="preuves" title={t.cases.heading}>
@@ -142,6 +145,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
       </div>
       {t.experts.paragraphs.map(text => <p className={body} key={text}>{text}</p>)}
       <PublishedLocaleLink locale={locale} href={href("/ressources/ia-finance")} className={link}>{ui.ai}</PublishedLocaleLink>
+      <p className="text-sm text-muted-foreground">{decisions.financeRevision}</p>
       <PageByline locale={locale} author={AUTHOR} dateModified={DAF_PILLAR_MODIFIED} dateLabel={locale === "fr" ? DAF_PILLAR_MODIFIED_LABEL : undefined} />
     </Section>
 
