@@ -1008,9 +1008,6 @@ export default function CasClientsPage({
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <span className="inline-block text-[11px] font-semibold tracking-widest text-iter-chartreuse uppercase mb-4">
-              {t.hero.badge}
-            </span>
             <h1 className="text-4xl lg:text-6xl font-bold font-heading text-white leading-tight mb-6">
               {t.hero.h1}
             </h1>

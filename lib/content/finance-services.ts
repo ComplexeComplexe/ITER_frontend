@@ -17,6 +17,7 @@ export interface FinanceService {
   steps: [string, string][]; scopeTitle: string; scope: string[]; budget: string;
   case?: string; proofNote?: string; author?: EditorialAuthor; areaServed?: string; faq: [string, string][]; resources: [string, string][]; related: string[];
   headings?: { need: string; deliverables: string; method: string };
+  budgetHeading?: string;
   calendar?: { heading?: string; caption: string; headers: [string, string, string]; rows: [string, string, string][]; note: string };
   budgetResource?: { href: string; label: string };
   /** Sections propres à une page, rendues après « besoin » et avant « tarifs ». */

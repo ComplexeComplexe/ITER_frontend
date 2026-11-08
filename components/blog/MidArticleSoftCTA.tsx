@@ -58,9 +58,6 @@ export default function MidArticleSoftCTA({ locale }: { locale: Locale }) {
     >
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-8">
         <div className="flex-1 min-w-0">
-          <p className="text-[11px] font-bold uppercase tracking-widest text-iter-violet mb-2">
-            {t.eyebrow}
-          </p>
           <p className="text-lg font-semibold font-heading text-foreground leading-snug mb-2">
             {t.title}
           </p>

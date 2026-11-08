@@ -74,25 +74,25 @@
     "note": "If you only need bookkeeping, or a full-time finance leader, compare the part-time arrangement with other solutions before deciding."
   },
   "missions": {
-    "heading": "Fractional CFO responsibilities",
+    "heading": "What does a fractional CFO do?",
     "intro": "The scope is agreed at the start: not every engagement includes every deliverable. Recurring work generally combines forecasting, reporting and a review with the business leader. Financing, transformation or acquisition work is added according to your situation.",
     "items": [
       {
-        "title": "Anticipate cash flow",
+        "title": "Cash-flow forecasting",
         "deliverable": "A 13-week forecast covering receipts, payments, debt maturities and the assumptions to monitor. The update frequency is agreed according to business volatility and data availability.",
         "decision": "Identify a potential cash shortfall, prepare discussions with a bank or decide when to incur an expense. The forecast distinguishes known flows from assumptions; it does not guarantee collections.",
         "href": "/services/previsionnel-tresorerie",
         "linkLabel": "Cash flow forecasting"
       },
       {
-        "title": "Understand profitability",
+        "title": "Monthly reporting and margin analysis",
         "deliverable": "Monthly reporting on profit, cash flow and relevant indicators, with an explanation of budget variances. Depending on your business model, analysis covers an activity, channel, entity or project.",
         "decision": "Identify a deteriorating margin, discuss pricing or review an expense. Provisional figures and comparison limitations are identified to avoid making decisions from incomplete data.",
         "href": "/services/controle-de-gestion-externalise",
         "linkLabel": "Management control and reporting"
       },
       {
-        "title": "Build a financeable business plan",
+        "title": "Budgeting and financing preparation",
         "deliverable": "A budget or business plan with scenarios and, where agreed, a financing package. Cash requirements are linked to sales, recruitment and investment assumptions.",
         "decision": "Compare possible paths and prepare for questions from banks or investors. Securing funding also depends on the project and their decisions; the CFO cannot promise an outcome.",
         "href": "/services/accompagnement-levee-de-fond",
@@ -129,7 +129,7 @@
     ]
   },
   "cases": {
-    "heading": "Two engagements that show how we work",
+    "heading": "Examples of fractional CFO engagements",
     "intro": "These examples describe documented work. They illustrate two different needs; they do not predict the timing or results of a new engagement.",
     "items": [
       {
@@ -158,7 +158,7 @@
     }
   },
   "method": {
-    "heading": "How does the collaboration work?",
+    "heading": "How does a fractional CFO engagement work?",
     "intro": "The indicative start time is 8 to 15 days, subject to confirming the profile and scope. Setup then follows your priorities and the condition of your data, rather than imposing the same 90-day program on every business.",
     "steps": [
       {
@@ -178,7 +178,7 @@
     "cities": "{{geographicSummary}}"
   },
   "pricing": {
-    "heading": "What budget should you plan and what does the fee cover?",
+    "heading": "What does a fractional CFO cost?",
     "intro": "The indicative range for recurring Iter engagements is €3,000 to €8,000 excluding VAT per month. The fee covers an agreed scope and level of seniority set out in the proposal. The indicative working days shown in the packages do not represent a bank of hours.",
     "paragraphs": [
       "The budget varies with expected deliverables, the number of entities, data quality and organizational complexity. A company with existing reporting needs different work from one rebuilding its finance function. Compare production, analysis and supervision together when reviewing proposals.",
@@ -192,7 +192,7 @@
     }
   },
   "experts": {
-    "heading": "Who leads your engagement at Iter?",
+    "heading": "Who provides your finance leadership at Iter?",
     "intro": "Sébastien Doat, {{role:sebastien-doat}}, is your finance contact. The assigned profile depends on your needs: a CFO or senior Finance Manager, with the support included in the package. The first conversation checks that fit, rather than offering the same level of seniority for every task.",
     "paragraphs": [
       "Partners oversee commitments and contribute to major projects. Scoping distinguishes who prepares reporting, who leads the review and who checks sensitive deliverables. Continuity depends on understanding the engagement and arranging cover; it does not promise that one person will always be available.",

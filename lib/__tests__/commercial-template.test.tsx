@@ -8,6 +8,7 @@ import { getFinanceServices } from "@/lib/content/finance-service-locales";
 import { navigation } from "@/lib/navigation";
 import { parityHref } from "@/lib/locale-route-map";
 import { getSiteInterface } from "@/lib/content/site-interface";
+import { FINANCE_SERVICES } from "@/lib/content/finance-services";
 
 vi.mock("@/components/PageLayout", () => ({ default: ({ children }: { children: ReactNode }) => <main>{children}</main> }));
 const doc = (element: ReactNode) => new DOMParser().parseFromString(renderToStaticMarkup(element), "text/html");
@@ -24,10 +25,12 @@ describe("Unified commercial experience", () => {
   });
   it("preserves distinct service copy, local conversion routes and server-rendered FAQ answers", () => {
     for (const locale of ["fr", "en", "es"] as const) {
-      for (const service of Object.values(getFinanceServices(locale))) {
-        const page = doc(<FinanceServicePage locale={locale} service={service} />);
+      for (const [key, service] of Object.entries(getFinanceServices(locale))) {
+        // French routes may still pass the historical shared object.
+        const page = doc(<FinanceServicePage locale={locale} service={FINANCE_SERVICES[key]} />);
         expect(page.querySelectorAll("h1")).toHaveLength(1);
         expect(page.querySelector("h1")!.textContent).toBe(service.headline);
+        expect(page.querySelector("#tarifs h2")!.textContent).toBe(service.budgetHeading);
         expect(page.querySelector("#besoin")!.textContent).toContain(service.definition);
         for (const [, detail, decision] of service.deliverables) {
           expect(page.querySelector("#livrables")!.textContent).toContain(detail);
@@ -47,6 +50,7 @@ describe("Unified commercial experience", () => {
       for (const element of [<DafPillarPage key="pillar" locale={locale} />, <FinanceServicePage key="finance" locale={locale} service={service} />, <DrhFrenchPage key="hr" locale={locale} />]) {
         const page = doc(element);
         expect(page.querySelector(".site-service-hero .site-brief")!.getAttribute("aria-label")).toBe(getSiteInterface(locale).brief);
+        expect(page.querySelector(".site-service-hero [data-speakable] > p.site-eyebrow")).toBeNull();
         expect(page.querySelector(".site-section-nav")).not.toBeNull();
         const sections = [...page.querySelectorAll("section[data-block-key]")].filter(section => section.id !== "contact");
         expect(sections.every(section => section.querySelector(":scope > .container.max-w-4xl"))).toBe(true);

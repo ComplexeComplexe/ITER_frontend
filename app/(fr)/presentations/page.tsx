@@ -69,7 +69,6 @@ export default function PresentationsPage() {
           ITER ADVISORS
         </Link>
         <header className="mb-10 mt-12 max-w-2xl">
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.16em] text-[#6038ec]">Finance & Ressources humaines</p>
           <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">Nos présentations</h1>
           <p className="mt-5 text-lg leading-relaxed text-[#61596e]">Choisissez votre offre et votre langue. Chaque présentation est disponible au format PDF, en trois pages.</p>
         </header>

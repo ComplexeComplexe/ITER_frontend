@@ -61,7 +61,7 @@ export const HR_COMMERCIAL_COPY = {
     updated: 'Mis à jour le',
     contactTitle: 'Quelles priorités RH souhaitez-vous traiter ?',
     contactText: 'Présentez vos équipes, les sujets ouverts et les échéances. Le premier échange permet de préciser les travaux utiles, les responsabilités et le rythme.',
-    pillarsTitle: 'Quatre piliers pour structurer votre fonction RH',
+    pillarsTitle: 'Quelles missions confier à un DRH externalisé ?',
     pillarsIntro: 'La mission part de vos sujets concrets. Les travaux sont choisis avec le dirigeant, les managers et les prestataires concernés.',
     output: 'Exemple de livrable',
     pillars: [
@@ -108,7 +108,7 @@ export const HR_COMMERCIAL_COPY = {
     updated: 'Updated on',
     contactTitle: 'Which HR priorities do you need to address?',
     contactText: 'Describe your teams, open issues and deadlines. The initial conversation clarifies useful work, responsibilities and the schedule.',
-    pillarsTitle: 'Four areas to structure your HR function',
+    pillarsTitle: 'What does an outsourced HR director do?',
     pillarsIntro: 'The engagement starts with your practical needs. Work is agreed with the business leader, managers and relevant providers.', output: 'Example deliverable',
     pillars: [
       { title: 'Compliance and employee relations', text: 'Organise the HR calendar, identify documents to review and prepare employee-representation matters, including the French CSE where relevant. Legal decisions and validation are agreed with qualified professionals.', output: 'A calendar of deadlines, open issues and owners.', href: '/services/conformite-droit-travail', link: 'Compliance and employee relations' },

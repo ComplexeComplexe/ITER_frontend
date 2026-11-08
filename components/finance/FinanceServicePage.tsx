@@ -8,7 +8,7 @@ import type { Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
 import { colon } from "@/lib/quote-marks";
 import { getFinanceServices, financeInterface } from "@/lib/content/finance-service-locales";
-import { getPublishedCases } from "@/lib/content/published-cases";
+import { getReviewedCases } from "@/lib/content/documented-case-locales";
 import { getDocumentedCase } from "@/lib/content/documented-cases";
 import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
 import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
@@ -50,14 +50,15 @@ function Aliases({ service, section }: { service: FinanceService; section: strin
   return (anchors[service.path]?.[section] ?? []).map(id => <span key={id} id={id} className={styles.anchor} aria-hidden="true" />);
 }
 
-export default function FinanceServicePage({ service, locale = "fr" }: { service: FinanceService; locale?: Locale }) {
+export default function FinanceServicePage({ service: sourceService, locale = "fr" }: { service: FinanceService; locale?: Locale }) {
   const ui = financeInterface[locale];
   const services = getFinanceServices(locale);
+  const service = Object.values(services).find(item => item.path === sourceService.path) ?? sourceService;
   const href = (path: string) => parityHref(path, locale);
   const path = href(service.path);
   const originalProof = service.case ? getDocumentedCase(service.case) : undefined;
-  const translatedProof = locale === "fr" ? undefined : getPublishedCases(locale).find(item => item.slug === service.case);
-  const proof = originalProof && { ...originalProof, ...(translatedProof ? { proof: translatedProof.solution, summary: translatedProof.challenge } : {}) };
+  const translatedProof = locale === "fr" ? undefined : getReviewedCases(locale).find(item => item.slug === service.case);
+  const proof = originalProof && { ...originalProof, detail: translatedProof?.solution, ...(translatedProof ? { proof: translatedProof.proof, summary: translatedProof.challenge } : {}) };
   const contact = href(`/contact#${service.context}`);
   const author = service.author ?? ITER_AUTHOR;
   const modified = PAGE_REVISIONS[path] ?? (locale === "fr" ? FINANCE_REVIEW_DATE : LOCALE_ALIGNMENT_DATE);
@@ -76,7 +77,7 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
   return <PageLayout locale={locale}>
     <div data-finance-template="service" data-page-id={service.path} className={controlTest ? controlUx.test : undefined}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
-      <ServiceHero locale={locale} title={service.headline} label={service.label} eyebrow={`Iter Advisors · ${service.category}`} lead={service.promise} intro={service.intro}
+      <ServiceHero locale={locale} title={service.headline} label={service.label} lead={service.promise} intro={service.intro}
         primary={{ href: contact, label: ui.cta }} secondary={{ href: "#livrables", label: ui.deliverables }}
         summary={service.summary.map(([label, value]) => ({ label, value }))}
         proof={<p className="text-sm text-muted-foreground mt-4">{ui.intro}</p>}
@@ -100,13 +101,13 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
         </article>)}</div>
         <aside id="exemple" className="relative site-card border border-border border-l-2 border-l-iter-violet p-5 sm:p-7">
           <Aliases service={service} section="exemple" />
-          <p className="site-eyebrow">{ui.practice}</p><h3 className="font-semibold text-foreground">{service.exampleTitle}</h3><p className={`${copy} mt-4`}>{service.example}</p>
+          <h3 className="font-semibold text-foreground">{service.exampleTitle}</h3><p className={`${copy} mt-4`}>{service.example}</p>
         </aside>
       </ServiceSection>
       <ServiceSection id="preuves" title={proofTitle}>
         <Aliases service={service} section="preuves" />
         {proof ? <article className="site-card border border-border p-5 sm:p-7">
-          <h3 className="font-semibold text-foreground">{proof.proof}</h3><p className={`${copy} mt-4`}>{proof.summary}</p>
+          <h3 className="font-semibold text-foreground">{proof.proof}</h3>{proof.detail && <p className={`${copy} mt-4`}>{proof.detail}</p>}<p className={`${copy} mt-4`}>{proof.summary}</p>
           {service.proofNote && <p className={`${copy} mt-4`}>{service.proofNote}</p>}
           <PublishedLocaleLink locale={locale} href={href(proof.href)} className={`${link} inline-flex mt-5`}>{ui.readCase}</PublishedLocaleLink>
         </article> : <><p className={copy}>{ui.caseIntro}</p><PublishedLocaleLink locale={locale} href={href("/a-propos#equipe")} className={link}>{ui.team}</PublishedLocaleLink></>}
@@ -124,11 +125,11 @@ export default function FinanceServicePage({ service, locale = "fr" }: { service
         <PublishedLocaleLink locale={locale} href={href("/daf-externalise")} className={link}>{service.context === "organisation" ? ui.overall : ui.position}</PublishedLocaleLink>
       </ServiceSection>
       {service.extraSections?.beforeBudget?.map(section => <ExtraSection key={section.id} section={section} locale={locale} />)}
-      <ServiceSection id="tarifs" title={ui.quote}>
+      <ServiceSection id="tarifs" title={service.budgetHeading ?? ui.quote}>
         <Aliases service={service} section="tarifs" /><p className={copy}>{service.budget}</p>
         <PublishedLocaleLink locale={locale} href={href(service.budgetResource?.href ?? "/daf-externalise/tarifs")} className={link}>{service.budgetResource?.label ?? ui.prices}</PublishedLocaleLink>
       </ServiceSection>
-      <ServiceSection id="faq" title={`FAQ${colon(locale)}${service.label.toLowerCase()}`}>
+      <ServiceSection id="faq" title={`${{ fr: "Questions fréquentes", en: "Frequently asked questions", es: "Preguntas frecuentes" }[locale]}${colon(locale)}${service.label}`}>
         <Aliases service={service} section="faq" />
         <ServiceFaq items={service.faq.map(([question, answer]) => ({ question, answer }))} />
       </ServiceSection>

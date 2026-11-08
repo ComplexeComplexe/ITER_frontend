@@ -40,7 +40,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
   const teamSource = teamMembers?.length ? teamMembers : getFallbackTeamMembers(locale);
   const experts = t.experts.slugs.map(slug => teamSource.find(m => m.slug === slug)).filter((m): m is StrapiTeamMember => Boolean(m));
   return <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
-    <ServiceHero locale={locale} title={t.hero.h1} label={t.breadcrumbLabel} eyebrow={ui.eyebrow}
+    <ServiceHero locale={locale} title={t.hero.h1} label={t.breadcrumbLabel}
       lead={t.hero.lead} intro={t.hero.intro}
       primary={{ href: href(t.contact.href), label: t.hero.cta }} secondary={{ href: "#tarifs", label: ui.pricing }}
       summary={t.hero.landmarks} navigation={t.nav}
@@ -77,7 +77,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
 
     <Section id="preuves" title={t.cases.heading}>
       <p className={body}>{t.cases.intro}</p>
-      <div className="grid md:grid-cols-2 gap-6">{t.cases.items.map(item => <article className="site-card border border-border p-5 sm:p-7 flex flex-col" key={item.company}><p className="site-eyebrow">{item.company}</p><h3 className="font-semibold text-foreground">{item.title}</h3><p className={`${body} mt-4`}>{item.text}</p><p className={`${body} mt-4 mb-5`}>{item.takeaway}</p><PublishedLocaleLink locale={locale} href={href(item.href)} className={`${link} mt-auto`}>{item.linkLabel}</PublishedLocaleLink></article>)}</div>
+      <div className="grid md:grid-cols-2 gap-6">{t.cases.items.map(item => <article className="site-card border border-border p-5 sm:p-7 flex flex-col" key={item.company}><h3 className="font-semibold text-foreground">{item.company} : {item.title}</h3><p className={`${body} mt-4`}>{item.text}</p><p className={`${body} mt-4 mb-5`}>{item.takeaway}</p><PublishedLocaleLink locale={locale} href={href(item.href)} className={`${link} mt-auto`}>{item.linkLabel}</PublishedLocaleLink></article>)}</div>
       <figure id="avis" className="border-l-2 border-iter-violet pl-5 scroll-mt-24"><blockquote className="site-copy text-foreground">« {t.cases.quote.text} »</blockquote><figcaption className="mt-3 text-sm text-muted-foreground"><strong className="text-foreground">{t.cases.quote.author}</strong>, {t.cases.quote.role}<br /><a className={link} href={t.cases.quote.sourceUrl} target="_blank" rel="noopener noreferrer">{t.cases.quote.sourceLabel}</a></figcaption></figure>
       <PublishedLocaleLink locale={locale} href={href(t.contact.href)} className="site-button site-button-primary">{t.hero.cta}</PublishedLocaleLink>
     </Section>

@@ -373,7 +373,6 @@ export default function BlogListingPage({
                 excerpt: featured.excerpt,
               }}
               cta={t.featuredCta}
-              eyebrow={t.featuredEyebrow}
               readTimeSuffix={t.readTimeSuffix}
             />
           )}

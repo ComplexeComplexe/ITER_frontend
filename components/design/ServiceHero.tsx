@@ -8,13 +8,12 @@ import { getSiteInterface } from "@/lib/content/site-interface";
 import { parityHref } from "@/lib/locale-route-map";
 
 /** Shared French commercial-page heading. Content and anchors remain page-specific. */
-export default function ServiceHero({ title, label, eyebrow, lead, intro, primary, secondary, summary, proof, navigation, family = "finance", locale = "fr", isRoot = false }: {
+export default function ServiceHero({ title, label, lead, intro, primary, secondary, summary, proof, navigation, family = "finance", locale = "fr", isRoot = false }: {
   locale?: Locale;
   isRoot?: boolean;
   family?: "finance" | "rh";
   title: string;
   label: string;
-  eyebrow: string;
   lead: string;
   intro?: string;
   primary: { href: string; label: string };
@@ -30,7 +29,6 @@ export default function ServiceHero({ title, label, eyebrow, lead, intro, primar
         <Breadcrumb locale={locale} items={isRoot ? [{ label }] : [{ label: family === "rh" ? ui.hr : ui.finance, href: parityHref(family === "rh" ? "/drh-externalise" : "/services", locale) }, { label }]} />
         <div className="site-hero-grid">
           <div data-speakable="true">
-            <p className="site-eyebrow">{eyebrow}</p>
             <h1>{title}</h1>
             <p className="site-lead">{lead}</p>
             {intro && <p className="site-intro">{intro}</p>}

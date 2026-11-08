@@ -139,7 +139,6 @@ export default function GlossaryEntryPage({
             locale={locale}
             items={[{ label: t.glossary, href: glossaryHref(locale) }, { label: content.h1 }]}
           />
-          <p className="mt-6 text-xs font-bold uppercase tracking-widest text-iter-violet">{t.eyebrow}</p>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-5 mt-2 leading-tight text-balance">
             {content.h1}
           </h1>
@@ -162,9 +161,6 @@ export default function GlossaryEntryPage({
             <div className="site-card rounded-2xl border-l-4 border-iter-violet bg-iter-violet/5 p-6">
               {/* <div>, pas <aside> : les extracteurs (Readability, LLM) suppriment
                   les <aside> comme contenu secondaire, or c'est la définition. */}
-              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-iter-violet">
-                {t.inOneSentence}
-              </p>
               <div className="text-base sm:text-lg text-foreground/85 leading-relaxed [&_p]:m-0 [&_strong]:text-foreground [&_a]:text-iter-violet [&_a]:underline">
                 <ReactMarkdown components={md}>{definition}</ReactMarkdown>
               </div>

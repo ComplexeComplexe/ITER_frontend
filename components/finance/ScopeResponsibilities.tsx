@@ -6,9 +6,14 @@ const copy = {
 };
 export default function ScopeResponsibilities({ locale, kind }: { locale: Locale; kind: "finance" | "hr" }) {
   const t = copy[locale];
+  const title = {
+    fr: { finance: "Livrables financiers : préparation et validation", hr: "Livrables RH : préparation et validation" },
+    en: { finance: "Finance deliverables: preparation and approval", hr: "HR deliverables: preparation and approval" },
+    es: { finance: "Entregables financieros: preparación y validación", hr: "Entregables de RR. HH.: preparación y validación" },
+  }[locale][kind];
   return <div className="mt-8">
-    <h3 className="font-heading text-xl font-semibold mb-3">{t.title}</h3><p className="text-muted-foreground mb-4">{t.intro}</p>
-    <div className="overflow-x-auto"><table className="w-full text-left text-sm border-collapse"><caption className="sr-only">{t.title}</caption><thead><tr>{t.headers.map(h => <th key={h} scope="col" className="border-b p-3 font-semibold">{h}</th>)}</tr></thead><tbody>{t[kind].map(row => <tr key={row[0]}><th scope="row" className="border-b p-3 font-semibold align-top">{row[0]}</th>{row.slice(1).map(cell => <td key={cell} className="border-b p-3 align-top min-w-44">{cell}</td>)}</tr>)}</tbody></table></div>
+    <h3 className="font-heading text-xl font-semibold mb-3">{title}</h3><p className="text-muted-foreground mb-4">{t.intro}</p>
+    <div className="overflow-x-auto"><table className="w-full text-left text-sm border-collapse"><caption className="sr-only">{title}</caption><thead><tr>{t.headers.map(h => <th key={h} scope="col" className="border-b p-3 font-semibold">{h}</th>)}</tr></thead><tbody>{t[kind].map(row => <tr key={row[0]}><th scope="row" className="border-b p-3 font-semibold align-top">{row[0]}</th>{row.slice(1).map(cell => <td key={cell} className="border-b p-3 align-top min-w-44">{cell}</td>)}</tr>)}</tbody></table></div>
     <p className="mt-3 text-sm text-muted-foreground">{t.note}</p>
   </div>;
 }

@@ -196,7 +196,7 @@ export default function BlogPostPage({
           { label: title },
         ]} /></div>
       </div>
-      <BlogHero locale={locale} title={title} category={category} dek={metaDescription}
+      <BlogHero locale={locale} title={title} dek={metaDescription}
         author={{ name: author || "Iter Advisors", avatar: authorMember?.photo?.url, jobTitle: authorRole, url: authorUrl || aboutHref(locale) }}
         readingTime={readMinutes || undefined} dateModified={modified} articleUrl={articleUrl}
         image={bodyImage?.src} imageAlt={bodyImage?.alt} />

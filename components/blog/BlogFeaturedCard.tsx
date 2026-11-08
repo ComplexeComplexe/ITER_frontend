@@ -23,8 +23,6 @@ interface BlogFeaturedCardProps {
   data: BlogFeaturedData;
   /** Localised CTA on the featured card. */
   cta: string;
-  /** Localised eyebrow label above the title ("À la une", "Featured", "Destacado"). */
-  eyebrow: string;
   /** Localised suffix for read time. */
   readTimeSuffix: string;
 }
@@ -32,7 +30,6 @@ interface BlogFeaturedCardProps {
 export default function BlogFeaturedCard({
   data,
   cta,
-  eyebrow,
   readTimeSuffix,
 }: BlogFeaturedCardProps) {
   return (
@@ -52,16 +49,6 @@ export default function BlogFeaturedCard({
           />
         </div>
         <div className="flex flex-col justify-center p-8 lg:p-12">
-          <span className="inline-flex items-center gap-2 mb-4">
-            <span className="text-[11px] font-bold uppercase tracking-widest text-iter-chartreuse bg-iter-violet px-2.5 py-1 rounded-full">
-              {eyebrow}
-            </span>
-            {data.category && (
-              <span className="text-xs font-semibold uppercase tracking-widest text-iter-violet">
-                {data.category}
-              </span>
-            )}
-          </span>
           <h2 className="text-2xl lg:text-3xl font-bold font-heading text-foreground leading-tight mb-4 group-hover:text-iter-violet transition-colors">
             {data.title}
           </h2>

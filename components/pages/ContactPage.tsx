@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   Mail,
-  Phone,
   Clock,
   CheckCircle2,
   Linkedin,
@@ -228,10 +227,6 @@ export default function ContactPage({
               transition={{ duration: 0.6 }}
               className="lg:col-span-3 text-white"
             >
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-medium tracking-wide mb-6 backdrop-blur-sm">
-                <Phone size={12} />
-                {tx.badge}
-              </span>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-heading leading-[1.1] mb-6">
                 {need === "rh" ? ({ fr: "Parlons de votre organisation RH", en: "Let us discuss your HR organisation", es: "Hablemos de su organización de RR. HH." }[locale]) : need === "automation" ? (locale === "fr" ? "Parlons de votre reporting et de l’IA" : locale === "en" ? "Let’s discuss reporting and AI" : "Hablemos de reporting e IA") : tx.h1}
