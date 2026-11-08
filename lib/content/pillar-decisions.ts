@@ -60,8 +60,8 @@ export const PILLAR_DECISIONS = {
       answer: `${getCompanyGeography("es").presence} El CFO externo de Iter puede organizar el reporting y el seguimiento de tesorería de entidades españolas y francesas dentro del alcance acordado. La propuesta precisa entidades, idiomas, desplazamientos y profesional asignado. La contabilidad, las nóminas y las declaraciones locales corresponden a los proveedores competentes y no se incluyen automáticamente en la dirección financiera.`,
     },
     hrCoverage: {
-      question: "¿Acompañan a equipos en España y Francia?",
-      answer: `${getCompanyGeography("es").presence} Borith Biv acompaña la organización de RR. HH., la contratación y los responsables de equipos dentro del alcance acordado. Para equipos en España y Francia, la propuesta identifica las entidades empleadoras, los idiomas, los desplazamientos y los profesionales responsables de nóminas y validaciones jurídicas locales. La dirección de RR. HH. puede contratarse independientemente de un encargo de CFO de Iter.`,
+      question: "¿Asesoran a empresas en España y Francia?",
+      answer: `${getCompanyGeography("es").presence} Borith Biv asesora a la dirección y a los responsables de equipos sobre organización de RR. HH. y contratación, dentro del alcance acordado. Para equipos en España y Francia, la propuesta identifica las entidades empleadoras, los idiomas, los desplazamientos y los profesionales responsables de nóminas y validaciones jurídicas locales. La dirección de RR. HH. puede contratarse independientemente de un encargo de CFO de Iter.`,
     },
     financeRevision: "Esta revisión: comparación de las funciones del CFO externo, del director financiero en plantilla y de la asesoría contable, y precisión del alcance España–Francia.",
     hrRevision: "Esta revisión: precisión del alcance de RR. HH. España–Francia y atribución del contenido profesional a Borith Biv.",
