@@ -156,19 +156,16 @@ export default function HomePage({
           className={`${styles.section} ${styles.tint}`}
         >
           <div className={`${styles.wrap} ${styles.hrGrid}`}>
-            <figure className={styles.hrPortrait}>
+            <figure className={styles.hrIllustration}>
               <Image
-                src="/images/team/borith-biv.webp"
-                alt="Borith Biv"
-                width={320}
-                height={380}
-                sizes="(max-width: 600px) 220px, 320px"
+                src="/images/home-rh-team-illustration.webp"
+                alt={t.rh.imageAlt}
+                width={1600}
+                height={1067}
+                sizes="(max-width: 600px) calc(100vw - 48px), (max-width: 1160px) 40vw, 480px"
               />
               <figcaption>
-                <Link locale={locale} href={href("/a-propos/borith-biv")}>
-                  Borith Biv
-                </Link>{" "}
-                · {t.rh.role}
+                {t.rh.imageCaption} · EmbedSocial / Unsplash
               </figcaption>
             </figure>
             <div>

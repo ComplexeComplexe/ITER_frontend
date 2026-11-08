@@ -517,28 +517,22 @@
 }
 .hrGrid {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 80px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 64px;
   align-items: center;
 }
-.hrPortrait {
+.hrIllustration {
   margin: 0;
 }
-.hrPortrait img {
+.hrIllustration img {
   width: 100%;
-  height: 380px;
-  object-fit: cover;
-  object-position: 50% 25%;
-  border-radius: 160px 160px 16px 16px;
+  height: auto;
+  border-radius: 20px;
 }
-.hrPortrait figcaption {
+.hrIllustration figcaption {
   font-size: 12px;
   margin-top: 12px;
   color: var(--site-muted);
-}
-.hrPortrait a {
-  color: var(--site-ink);
-  font-weight: 600;
 }
 .method {
   display: grid;
@@ -814,12 +808,6 @@
   .hrGrid {
     grid-template-columns: 1fr;
     gap: 32px;
-  }
-  .hrPortrait {
-    max-width: 240px;
-  }
-  .hrPortrait img {
-    height: 280px;
   }
   .method {
     grid-template-columns: repeat(2, 1fr);
