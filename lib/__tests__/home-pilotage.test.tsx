@@ -64,16 +64,23 @@ describe("published Pilotage homepage", () => {
       ).toEqual(visible);
     }
   });
-  it("shows no service fees on the homepage, while keeping the tariff route and withholding unapproved client logos", () => {
+  it("keeps the client logo strip directly below the hero in every language", () => {
     for (const locale of locales) {
       const doc = render(locale);
       const text = doc.body.textContent!.replace(/[\s.,–]/g, "");
       expect(text).not.toMatch(/(?<!\d)(?:3000|5000|6500|8000)(?!\d)/);
       const logos = doc.querySelectorAll('section[aria-label] img[alt^="Logo "]');
-      expect(logos).toHaveLength(0);
+      expect(logos).toHaveLength(12);
+      const hero = doc.querySelector('[data-journey="home-hero"]')!;
+      expect(hero.nextElementSibling).toBe(logos[0].closest("section"));
+      expect([...logos].map(logo => logo.getAttribute("alt"))).toEqual([
+        "Logo Ukio", "Logo HappyScribe", "Logo Near Space Labs", "Logo Storefront",
+        "Logo Stannah", "Logo Neat", "Logo Mitiga", "Logo AI Summit Barcelona",
+        "Logo Talent-R", "Logo MFL", "Logo Yego", "Logo Aviquali",
+      ]);
       expect(doc.querySelector("h1")?.textContent).toContain("Iter Advisors");
       const copies = doc.querySelectorAll('section[aria-label] [aria-hidden="true"] img');
-      expect(copies).toHaveLength(0);
+      expect(copies).toHaveLength(12);
       expect([...copies].every(logo => logo.getAttribute("alt") === "")).toBe(true);
       expect(doc.querySelectorAll(`a[href="${parityHref("/daf-externalise/tarifs", locale)}"]`)).toHaveLength(1);
     }

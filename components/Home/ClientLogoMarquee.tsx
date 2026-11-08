@@ -1,5 +1,4 @@
 "use client";
-import { isClientLogoApproved } from "@/lib/content/client-logo-permissions";
 
 import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
@@ -21,8 +20,6 @@ export const CLIENT_LOGO_CANDIDATES = [
 ];
 
 export default function ClientLogoMarquee({ label }: { locale: Locale; label: string }) {
-  const logos = CLIENT_LOGO_CANDIDATES.filter(logo => isClientLogoApproved(logo.name));
-  if (logos.length === 0) return null;
   return (
     <section className={styles.section} aria-label={label}>
       <svg width="0" height="0" aria-hidden="true" className={styles.filters}>
@@ -46,7 +43,7 @@ export default function ClientLogoMarquee({ label }: { locale: Locale; label: st
         <div className={styles.track}>
           {[0, 1].map((copy) => (
             <div className={styles.group} key={copy} aria-hidden={copy === 1 ? true : undefined}>
-              {logos.map((logo) => (
+              {CLIENT_LOGO_CANDIDATES.map((logo) => (
                 <div className={`${styles.item} ${logo.variant ? styles[logo.variant] : ""}`} key={logo.name}>
                   <Image src={`/images/logos/${logo.file}`} alt={copy === 0 ? `Logo ${logo.name}` : ""}
                     loading="eager" width={210} height={80} sizes="(max-width: 760px) 160px, 210px" unoptimized={logo.file.endsWith(".svg")} />
