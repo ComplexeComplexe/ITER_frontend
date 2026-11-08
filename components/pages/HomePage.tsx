@@ -156,23 +156,8 @@ export default function HomePage({
           className={`${styles.section} ${styles.tint}`}
         >
           <div className={`${styles.wrap} ${styles.hrGrid}`}>
-            <figure className={styles.hrPortrait}>
-              <Image
-                src="/images/team/borith-biv.webp"
-                alt="Borith Biv"
-                width={320}
-                height={380}
-                sizes="(max-width: 600px) 220px, 320px"
-              />
-              <figcaption>
-                <Link locale={locale} href={href("/a-propos/borith-biv")}>
-                  Borith Biv
-                </Link>{" "}
-                · {t.rh.role}
-              </figcaption>
-            </figure>
+            <h2>{t.rh.title}</h2>
             <div>
-              <h2>{t.rh.title}</h2>
               <p className={styles.intro}>{t.rh.text}</p>
               <nav className={styles.related} aria-label={journey.hr.nav}>
                 {HOME_HR_PATHS.map((path, i) => (
