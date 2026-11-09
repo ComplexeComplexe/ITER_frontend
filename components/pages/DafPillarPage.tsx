@@ -84,7 +84,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
 
     <Section id="methode" title={t.method.heading} tinted>
       <p className={body}>{t.method.intro}</p>
-      <ol className="space-y-6">{t.method.steps.map((step, index) => <li key={step.title}><h3 className="font-semibold text-foreground"><span className="text-iter-violet">{index + 1}. </span>{step.title}</h3><p className={`${body} mt-2`}>{step.text}</p></li>)}</ol>
+      <ol className="space-y-6">{t.method.steps.map(step => <li key={step.title}><h3 className="font-semibold text-foreground">{step.title}</h3><p className={`${body} mt-2`}>{step.text}</p></li>)}</ol>
       <p className={body}>{t.method.note}</p>
       <div id="villes" className="scroll-mt-24"><p className={body}>{t.method.cities}</p><ul className="mt-3 flex flex-wrap gap-x-5 gap-y-3">{["/daf-externalise-paris", "/daf-externalise-barcelone", "/daf-externalise-toulouse"].map((cityPath, index) => <li key={cityPath}><PublishedLocaleLink locale={locale} className={link} href={href(cityPath)}>{ui.cityPrefix} {ui.cities[index]}</PublishedLocaleLink></li>)}</ul></div>
     </Section>

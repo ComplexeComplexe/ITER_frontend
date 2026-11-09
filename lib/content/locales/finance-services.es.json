@@ -1017,26 +1017,26 @@
       "method": "Construir, conciliar y actualizar la previsión"
     },
     "calendar": {
-      "heading": "Un saldo final positivo puede ocultar una tensión intermedia",
-      "caption": "Ejemplo ficticio de dos semanas con 20.000 € de caja inicial",
+      "heading": "Cómo usar la previsión para decidir un pago",
+      "caption": "Ejemplo ficticio de previsión de tesorería a 13 semanas",
       "headers": [
         "Periodo",
-        "Cobros y pagos supuestos",
-        "Saldo al final de la semana"
+        "Escenario",
+        "Saldo final y umbral de seguridad"
       ],
       "rows": [
         [
-          "Semana 1",
-          "20.000 € cobrados − 45.000 € pagados = −25.000 €",
-          "−5.000 €"
+          "Semana 3",
+          "Escenario base",
+          "219.600 €, es decir, 30.400 € por debajo del umbral de 250.000 €"
         ],
         [
-          "Semana 2",
-          "50.000 € cobrados − 30.000 € pagados = +20.000 €",
-          "15.000 €"
+          "Semana 9",
+          "Cobros −20 %, pagos +10 %",
+          "Saldo negativo"
         ]
       ],
-      "note": "Todos los importes son ficticios. El saldo de la segunda semana es positivo, pero la primera revela una necesidad de 5.000 € si se cumplen las hipótesis. Identificar la tensión no garantiza un descubierto autorizado ni financiación: hay que examinar las opciones y condiciones antes del vencimiento."
+      "note": "En esta simulación, la dirección estudia financiar las facturas pendientes de cobro antes de comprometer un anticipo de 85.000 € a un proveedor. El saldo mínimo del escenario base sigue siendo positivo, pero el escenario adverso revela un riesgo de falta de liquidez."
     },
     "exampleTitle": "Ejemplo de interpretación de la previsión",
     "example": "Si un cobro cambia de fecha, el equipo actualiza la hipótesis y compara los saldos semanales. Puede probar distintos calendarios y examinar decisiones con la dirección. La previsión no convierte un crédito incierto en caja disponible; comparar lo previsto y lo realizado explica la desviación.",
@@ -1046,17 +1046,17 @@
         "Identificar cuentas bancarias, créditos, deudas y compromisos conocidos."
       ],
       [
-        "Construir escenarios",
-        "Situar flujos, documentar hipótesis y probar las incertidumbres más sensibles."
+        "Construir los escenarios",
+        "A partir de documentación escrita, separamos los cobros confirmados, los probables (ponderados y ajustados al historial de pagos) y los inciertos. Los cobros inciertos quedan fuera del escenario base."
       ],
       [
         "Actualizar y decidir",
-        "Comparar con lo realizado, revisar las próximas semanas y seguir las acciones acordadas."
+        "Cada semana, el responsable de finanzas compara la previsión con los flujos reales y añade una semana. El CFO valida las hipótesis y prepara las decisiones que se revisarán con la dirección."
       ]
     ],
     "scopeTitle": "Una previsión mantenida por las personas adecuadas",
     "scope": [
-      "Los responsables comerciales, de compras y operaciones aportan las fechas esperadas. El CFO consolida, comprueba coherencias y prepara decisiones. La frecuencia depende de la situación.",
+      "Ventas, compras y operaciones aportan las fechas previstas. El responsable de finanzas mantiene la previsión y el CFO revisa las hipótesis. Una tensión de liquidez puede exigir revisiones más frecuentes.",
       "La obtención de financiación, las negociaciones y las decisiones de pago son acciones distintas. Las opciones se comparan teniendo en cuenta sus costes y restricciones."
     ],
     "budget": "La propuesta depende de las entidades, los bancos, la calidad de los calendarios de pago y la frecuencia de seguimiento. La previsión puede ser un encargo específico o un entregable de un apoyo recurrente de CFO.",

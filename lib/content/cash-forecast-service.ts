@@ -33,7 +33,7 @@ export const cashForecastService: StrapiServiceSinglePage = {
     link("Consultez notre ", "sélection de logiciels de trésorerie", "/ressources/outils/logiciels-tresorerie", " pour comparer les besoins couverts."),
     link("Avant de connecter les outils, découvrez comment ", "fiabiliser les données et automatiser le reporting", "/ressources/ia-finance/automatiser-reporting-financier", ". Le guide inclut un exercice fictif et les contrôles à conserver."),
     h("Un exemple de mission documentée"),
-    link("Chez Seasonly, les travaux décrits associent lecture de marge par canal, suivi des stocks et financement du BFR. Consultez ", "le cas Seasonly et ses limites", "/ressources/cas-clients/seasonly-marge-par-canal-bfr", " pour comprendre les livrables. Ce cas ne constitue pas une promesse de gain de trésorerie pour une autre entreprise."),
+    link("Chez Seasonly, les travaux décrits associent lecture de marge par canal, suivi des stocks et prévisionnel de trésorerie hebdomadaire. Consultez ", "le cas Seasonly et ses limites", "/ressources/cas-clients/seasonly-marge-par-canal-bfr", " pour comprendre les livrables. Ce cas ne constitue pas une promesse de gain de trésorerie pour une autre entreprise."),
     h("Périmètre, budget et démarrage"),
     p("La construction initiale et le suivi récurrent sont cadrés selon la qualité des données, le nombre d’entités et les échéances. Le premier échange sert à préciser ces éléments ; aucun délai de livraison ni montant de mission ponctuelle n’est garanti avant ce cadrage."),
     p(getDafOfferFacts("fr").price),
