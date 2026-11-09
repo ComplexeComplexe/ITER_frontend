@@ -64,7 +64,7 @@
       },
       {
         "title": "Organizar una empresa en crecimiento",
-        "text": "El dirigente centraliza las hojas de cálculo, los equipos utilizan versiones distintas y el reporting llega demasiado tarde. El trabajo se centra en las responsabilidades, el calendario de cierre y los indicadores útiles. El CFO colabora con las personas del equipo para organizar una función financiera adaptada a su empresa."
+        "text": "Tras una ronda de financiación o una etapa de crecimiento, al equipo puede faltarle tiempo para preparar los informes para inversores y analizar los márgenes. El CFO reparte las responsabilidades con el equipo, aclara el calendario de cierre y define los indicadores que conviene seguir."
       },
       {
         "title": "Preparar financiación o una operación",
@@ -158,23 +158,23 @@
     }
   },
   "method": {
-    "heading": "¿Cómo funciona un encargo de CFO externo?",
-    "intro": "El plazo orientativo de inicio es de 8 a 15 días, sujeto a la confirmación del perfil y del alcance. La puesta en marcha sigue sus prioridades y el estado de sus datos, sin imponer el mismo programa de 90 días a todas las empresas.",
+    "heading": "El primer mes con un CFO externo",
+    "intro": "Este es el calendario habitual de una toma de relevo. Los plazos dependen de las prioridades acordadas, del acceso a los datos y del estado de la contabilidad.",
     "steps": [
       {
-        "title": "Acordar las responsabilidades",
-        "text": "Revisamos sus herramientas, los datos disponibles y las decisiones que hay que preparar. El alcance escrito define los entregables, su frecuencia, los interlocutores y el trabajo no incluido. Su equipo identifica quién proporciona la información; se aclara el papel de la asesoría contable para evitar duplicidades."
+        "title": "Semana 1. Revisar los flujos y organizar el traspaso",
+        "text": "Conciliamos los saldos bancarios y revisamos los próximos vencimientos y responsabilidades con su equipo. Prepare el libro mayor y el balance de sumas y saldos de los últimos doce meses, los extractos bancarios, los informes de antigüedad de saldos de clientes y proveedores, el inventario si procede, los contratos clave, las nóminas y la financiación vigente."
       },
       {
-        "title": "Organizar un mes de trabajo",
-        "text": "El ritmo combina la recopilación y conciliación de datos, la preparación de análisis y una revisión con el dirigente. Las acciones acordadas tienen un responsable y una fecha. El trabajo puede repartirse durante el mes: un número orientativo de días no significa que todo ocurra en una sola reunión."
+        "title": "Semanas 2 y 3. Prever la tesorería e identificar los riesgos",
+        "text": "Preparamos una previsión de tesorería a 13 semanas e identificamos los cobros retrasados, los pagos críticos y las hipótesis pendientes de verificar. La dirección puede ver qué fechas debe vigilar y quién debe confirmar los datos que faltan."
       },
       {
-        "title": "Ajustar el funcionamiento",
-        "text": "Las revisiones permiten reconsiderar las hipótesis y las prioridades. Una nueva entidad, una adquisición o un cambio de herramientas puede requerir una modificación contractual. Los canales de contacto, las urgencias y la cobertura de ausencias se acuerdan al definir el alcance, según la disponibilidad que necesita su organización."
+        "title": "Semana 4. Revisar el primer informe de gestión",
+        "text": "La primera revisión reúne la cuenta de resultados, la tesorería y algunos indicadores acordados con la dirección. De ella salen decisiones, responsables y plazos."
       }
     ],
-    "note": "Prevea un interlocutor interno, los accesos adecuados y tiempo para validar las hipótesis. La preparación depende de la calidad de los datos y se estima conjuntamente; no prometemos el mismo número de horas para todas las empresas.",
+    "note": "Si hay que corregir los datos de partida, disponer de informes fiables puede llevar de dos a tres meses. El presupuesto, el margen por canal, el circulante o la financiación se abordan después según las prioridades. Si incorpora un CFO interno, los modelos y procedimientos documentados facilitan el traspaso.",
     "cities": "{{geographicSummary}}"
   },
   "pricing": {

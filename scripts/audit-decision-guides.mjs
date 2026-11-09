@@ -43,7 +43,7 @@ for (const target of targets) {
     check(!/40\s*% des fondateurs|décoter votre valorisation|Jamais avec moins de 9 mois|Revenus \(MRR\)/i.test(text), 'no-universal-financing-or-mrr-cash-confusion');
     check(text.includes('125 875') && text.includes('80 875') && text.includes('8,04') && text.includes('fictif'), 'labelled-burn-example');
   }
-  if (target.path === '/services/previsionnel-tresorerie') check(text.includes('20 000') && text.includes('−5 000') && text.includes('15 000') && text.includes('fictifs'), 'labelled-weekly-example');
+  if (target.path === '/services/previsionnel-tresorerie') check(text.includes('219 600') && text.includes('30 400') && text.includes('250 000') && text.includes('Semaine 9') && text.includes('fictif'), 'labelled-weekly-example');
   results.push({ path: target.path, status: response.status });
 }
 console.log(JSON.stringify({ results, failures }, null, 2));

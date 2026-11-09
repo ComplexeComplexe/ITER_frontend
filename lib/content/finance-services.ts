@@ -603,14 +603,14 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
     ],
     headings: { need: "Quand construire un prévisionnel de trésorerie ?", deliverables: "Les supports pour suivre les prochaines échéances", method: "Construire, rapprocher et actualiser le prévisionnel" },
     calendar: {
-      heading: "Un solde final positif peut cacher une tension intermédiaire",
-      caption: "Exemple fictif sur deux semaines, avec 20 000 € de trésorerie au départ",
-      headers: ["Période", "Encaissements et décaissements supposés", "Solde de fin de semaine"],
+      heading: "Comment le prévisionnel éclaire une décision de paiement",
+      caption: "Exemple fictif de prévisionnel glissant à 13 semaines",
+      headers: ["Période", "Scénario", "Solde et seuil de sécurité"],
       rows: [
-        ["Semaine 1", "20 000 € encaissés − 45 000 € décaissés = −25 000 €", "−5 000 €"],
-        ["Semaine 2", "50 000 € encaissés − 30 000 € décaissés = +20 000 €", "15 000 €"],
+        ["Semaine 3", "Scénario de base", "219 600 €, soit 30 400 € sous le seuil de 250 000 €"],
+        ["Semaine 9", "Encaissements −20 %, décaissements +10 %", "Solde négatif"],
       ],
-      note: "Tous ces montants sont fictifs. Le solde de la deuxième semaine est positif, mais la première révèle un besoin de 5 000 € si les hypothèses se réalisent. Identifier la tension ne garantit ni découvert autorisé ni financement : il faut examiner les options et leurs conditions avant l’échéance.",
+      note: "Dans cette simulation, la direction examine le financement de créances avant d’engager un acompte fournisseur de 85 000 €. Le point bas du scénario de base reste positif, mais le scénario dégradé révèle un risque de manquer de liquidités.",
     },
     "exampleTitle": "Exemple de lecture du prévisionnel",
     "example": "Si une recette change de date, l’équipe actualise l’hypothèse et compare les soldes de chaque semaine. Elle peut tester plusieurs calendriers, puis examiner les décisions possibles avec la direction. Le prévisionnel ne transforme pas une créance incertaine en cash disponible ; le suivi du prévu face au réalisé permet d’expliquer l’écart.",
@@ -621,16 +621,16 @@ export const FINANCE_SERVICES: Record<string, FinanceService> = {
       ],
       [
         "Construire les scénarios",
-        "Positionner les flux, documenter les hypothèses et tester les incertitudes les plus sensibles."
+        "Sur la base d’éléments écrits, distinguer les encaissements confirmés, les probables (pondérés et décalés selon l’historique de paiement) et les incertains. Ces derniers restent hors du scénario de base."
       ],
       [
         "Actualiser et décider",
-        "Comparer au réalisé, réviser les prochaines semaines et suivre les actions convenues."
+        "Le Finance Manager rapproche chaque semaine le prévu du réalisé et ajoute une semaine. Le DAF valide les hypothèses et prépare les décisions à examiner avec le dirigeant."
       ]
     ],
     "scopeTitle": "Une prévision entretenue par les bonnes personnes",
     "scope": [
-      "Les responsables commerciaux, achats et opérations contribuent aux dates attendues. Le DAF consolide, vérifie les cohérences et prépare les arbitrages. La fréquence de mise à jour dépend de la situation.",
+      "Les équipes commerciales, achats et opérations renseignent les dates attendues. Le Finance Manager tient le modèle à jour et le DAF vérifie les hypothèses. En cas de tension, le suivi peut être rapproché.",
       "L’obtention d’un financement, les négociations avec les tiers et les décisions de paiement restent des démarches distinctes. Les options se comparent en tenant compte de leurs coûts et de leurs contraintes."
     ],
     "budget": "Le devis dépend du nombre d’entités, des banques, de la qualité des échéanciers et de la fréquence de suivi. Le prévisionnel peut être une mission dédiée ou un livrable d’un accompagnement DAF récurrent.",

@@ -64,7 +64,7 @@
       },
       {
         "title": "Organize a growing business",
-        "text": "The business leader brings together the spreadsheets, teams use different versions and reporting arrives too late. The work focuses on responsibilities, the closing calendar and useful indicators. The CFO works with the people already in place to organize a finance function suited to your business."
+        "text": "After a funding round or a period of growth, the existing team may struggle to find time for investor reporting and margin analysis. The CFO agrees responsibilities with the team, clarifies the closing timetable and chooses which indicators to track."
       },
       {
         "title": "Prepare financing or a transaction",
@@ -158,23 +158,23 @@
     }
   },
   "method": {
-    "heading": "How does a fractional CFO engagement work?",
-    "intro": "The indicative start time is 8 to 15 days, subject to confirming the profile and scope. Setup then follows your priorities and the condition of your data, rather than imposing the same 90-day program on every business.",
+    "heading": "The first month with a fractional CFO",
+    "intro": "This is a typical handover. The timetable depends on agreed priorities, access to the data and the state of the accounts.",
     "steps": [
       {
-        "title": "Agree responsibilities",
-        "text": "We review your tools, available data and upcoming decisions. The written scope defines deliverables, frequency, contacts and work outside the engagement. Your team identifies who supplies information; the accountant’s role is clarified to avoid duplication."
+        "title": "Week 1. Review cash flows and organise the handover",
+        "text": "We reconcile bank balances and review upcoming payments and responsibilities with your team. Gather the last twelve months of general ledger and trial balance data, bank statements, aged receivables and payables, inventory records if relevant, key contracts, payroll and outstanding financing."
       },
       {
-        "title": "Organize a working month",
-        "text": "The process combines collecting and reconciling data, preparing analysis and reviewing it with the business leader. Agreed actions have an owner and a deadline. Work may be spread across the month: an indicative number of days does not mean everything happens in one meeting."
+        "title": "Weeks 2 and 3. Forecast cash and map risks",
+        "text": "We build a 13-week cash flow forecast and identify late receipts, critical payments and assumptions to verify. Management can see which dates to watch and who needs to confirm missing information."
       },
       {
-        "title": "Adjust the arrangement",
-        "text": "Regular reviews revisit assumptions and priorities. A new entity, acquisition or tool change may require a contract amendment. Contact channels, urgent requests and cover for absences are agreed during scoping, according to the availability your organization needs."
+        "title": "Week 4. Review the first management report",
+        "text": "The first review brings together the profit and loss account, cash position and a few indicators agreed with management. It closes with decisions, owners and deadlines."
       }
     ],
-    "note": "Plan for an internal contact, appropriate access and time to validate assumptions. Preparation effort depends on data quality and is estimated together; we do not promise the same number of hours for every company.",
+    "note": "If the data needs remediation, establishing reliable reporting can take two to three months. Budgeting, channel margins, working capital or financing work follows according to priorities. If you hire an in-house CFO, documented models and procedures make the handover easier.",
     "cities": "{{geographicSummary}}"
   },
   "pricing": {

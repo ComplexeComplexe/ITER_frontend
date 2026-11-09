@@ -20,12 +20,13 @@ const caseDetails = [
     slug: "seasonly-marge-par-canal-bfr",
     company: "Seasonly",
     metaTitle: "Seasonly : marge par canal et BFR | Iter Advisors",
-    title: "Seasonly : piloter la marge par canal et financer le BFR",
-    summary: "P&L par canal, pilotage des stocks et reporting hebdomadaire : une mission de DAF externalisé pour une marque de beauté multi-canal.",
-    proof: "P&L par canal et plan de financement du BFR",
-    deliverables: ["P&L distincts pour la vente directe, le retail et les marketplaces", "Suivi des stocks et des besoins de financement", "Plan de financement du besoin en fonds de roulement", "Tableau de bord hebdomadaire pour les dirigeants et actionnaires"],
-    limits: "L'évolution de marge publiée est mesurée en points de pourcentage, sur la marge brute consolidée de tous les canaux. La comparaison porte sur deux périodes de douze mois équivalentes, avant et après la mise en place du P&L par canal. Les dates calendaires de ces périodes ne sont pas publiées. Ce résultat est propre à cette mission et ne constitue pas une prévision pour une autre entreprise.",
+    title: "Seasonly, de la passation au suivi des marges par canal",
+    summary: "Comment Iter a repris la direction financière de Seasonly et mis en place un suivi de la marge par canal, des stocks et de la trésorerie.",
+    proof: "Comptes de résultat par canal et suivi hebdomadaire de trésorerie",
+    deliverables: ["Audit des flux, des stocks et du reporting", "Comptes de résultat par canal pour les studios, le retail, le e-commerce et le B2B", "Tableaux de bord et prévisionnel de trésorerie hebdomadaires", "Suivi du besoin en fonds de roulement"],
+    limits: "Les éléments présentés portent sur les travaux et livrables de la mission. Le témoignage public de la direction porte sur la continuité de la fonction finance.",
     offer: { href: "/daf-externalise/ecommerce", label: "DAF externalisé pour le e-commerce" },
+    source: { href: "https://trustfolio.co/profil/iter-advisors-q3yNQhXTUNc", label: "Témoignage de la direction de Seasonly sur Trustfolio" },
     relatedService: { href: "/services/controle-de-gestion-externalise", label: "contrôle de gestion externalisé" },
   },
   {
@@ -50,7 +51,7 @@ export const DOCUMENTED_CASES = caseDetails.map(detail => {
     ...detail,
     href: `/ressources/cas-clients/${detail.slug}`,
     published: "2026-09-05",
-    modified: "2026-09-26",
+    modified: detail.slug === "seasonly-marge-par-canal-bfr" ? "2026-11-09" : "2026-09-26",
   };
 });
 

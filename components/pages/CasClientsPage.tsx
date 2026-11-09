@@ -42,7 +42,7 @@ interface CaseStudy {
   challenge: string;
   solution: string;
   results: { metric: string; value: string }[];
-  testimonial: { quote: string; author: string; role: string };
+  testimonial?: { quote: string; author: string; role: string };
   highlight: string;
 }
 
@@ -158,22 +158,14 @@ function getContent(locale: Locale) {
           serviceTag: "Trésorerie",
           stage: "PME",
           location: "Paris",
-          challenge:
-            "Seasonly, marque de cosmétiques bio en ligne, faisait face à des tensions de trésorerie récurrentes liées à la saisonnalité de son activité et aux délais de paiement fournisseurs.",
-          solution:
-            "Mise en place d'un prévisionnel de trésorerie glissant sur 12 mois, renégociation des conditions fournisseurs et optimisation du cycle de cash conversion.",
+          challenge: "Seasonly devait assurer la continuité de sa direction financière et suivre sa trésorerie chaque semaine avant d’engager des stocks ou de nouvelles ouvertures.",
+          solution: "Iter a organisé la passation, audité les flux et mis en place des comptes de résultat par canal et un suivi hebdomadaire de la trésorerie.",
           results: [
-            { metric: "Cash runway étendu", value: "+6 mois" },
-            { metric: "Délai fournisseur", value: "+30 jours" },
-            { metric: "Prévisionnel glissant", value: "12 mois" },
+            { metric: "Passation", value: "Finance" },
+            { metric: "Marge", value: "Par canal" },
+            { metric: "Trésorerie", value: "Hebdomadaire" },
           ],
-          testimonial: {
-            quote:
-              "On est passé d'une gestion au jour le jour à une vraie visibilité sur notre trésorerie. Iter nous a donné la sérénité pour investir dans notre croissance.",
-            author: "Seasonly",
-            role: "Fondatrice",
-          },
-          highlight: "+6 mois de runway",
+          highlight: "Suivi de la marge par canal",
         },
         {
           id: "neat",
@@ -380,22 +372,14 @@ function getContent(locale: Locale) {
           serviceTag: "Treasury",
           stage: "SME",
           location: "Paris",
-          challenge:
-            "Seasonly, an online organic cosmetics brand, faced recurring cash flow tensions linked to seasonality and supplier payment terms.",
-          solution:
-            "Implementation of a rolling 12-month cash forecast, renegotiation of supplier terms and optimization of the cash conversion cycle.",
+          challenge: "Seasonly needed continuity in finance leadership and a weekly view of cash before committing to inventory or new openings.",
+          solution: "Iter organised the handover, reviewed cash flows and set up channel P&Ls and weekly cash flow monitoring.",
           results: [
-            { metric: "Cash runway extended", value: "+6 months" },
-            { metric: "Supplier terms", value: "+30 days" },
-            { metric: "Rolling forecast", value: "12 months" },
+            { metric: "Handover", value: "Finance" },
+            { metric: "Margins", value: "By channel" },
+            { metric: "Cash flow", value: "Weekly" },
           ],
-          testimonial: {
-            quote:
-              "We went from day-to-day management to real visibility on our cash flow. Iter gave us the peace of mind to invest in growth.",
-            author: "Seasonly",
-            role: "Founder",
-          },
-          highlight: "+6 months runway",
+          highlight: "Channel margin reporting",
         },
         {
           id: "neat",
@@ -602,22 +586,14 @@ function getContent(locale: Locale) {
           serviceTag: "Tesorería",
           stage: "PYME",
           location: "París",
-          challenge:
-            "Seasonly, marca de cosmética bio online, enfrentaba tensiones de tesorería recurrentes vinculadas a la estacionalidad y los plazos de pago a proveedores.",
-          solution:
-            "Implementación de un previsional de tesorería deslizante a 12 meses, renegociación de condiciones con proveedores y optimización del ciclo de conversión de caja.",
+          challenge: "Seasonly necesitaba dar continuidad a la dirección financiera y seguir la tesorería cada semana antes de comprometer compras de existencias o nuevas aperturas.",
+          solution: "Iter organizó el traspaso, revisó los flujos e implantó cuentas de resultados por canal y un seguimiento semanal de la tesorería.",
           results: [
-            { metric: "Runway extendido", value: "+6 meses" },
-            { metric: "Plazo proveedores", value: "+30 días" },
-            { metric: "Previsional deslizante", value: "12 meses" },
+            { metric: "Traspaso", value: "Finanzas" },
+            { metric: "Margen", value: "Por canal" },
+            { metric: "Tesorería", value: "Semanal" },
           ],
-          testimonial: {
-            quote:
-              "Pasamos de una gestión día a día a una verdadera visibilidad sobre nuestra tesorería. Iter nos dio la serenidad para invertir en crecimiento.",
-            author: "Seasonly",
-            role: "Fundadora",
-          },
-          highlight: "+6 meses de runway",
+          highlight: "Seguimiento del margen por canal",
         },
         {
           id: "neat",
@@ -925,21 +901,23 @@ function CaseDetail({
           </div>
 
           {/* Testimonial */}
-          <div className="site-card bg-iter-dark rounded-xl p-6">
-            <Quote size={24} className="text-iter-chartreuse mb-3" />
-            <p className="text-white/90 leading-relaxed italic mb-4">
-              &ldquo;{cs.testimonial.quote}&rdquo;
-            </p>
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-iter-violet flex items-center justify-center text-white text-xs font-bold">
-                {cs.testimonial.author.charAt(0)}
-              </div>
-              <div>
-                <div className="text-white text-sm font-semibold">{cs.testimonial.author}</div>
-                <div className="text-white/50 text-xs">{cs.testimonial.role}</div>
+          {cs.testimonial && (
+            <div className="site-card bg-iter-dark rounded-xl p-6">
+              <Quote size={24} className="text-iter-chartreuse mb-3" />
+              <p className="text-white/90 leading-relaxed italic mb-4">
+                &ldquo;{cs.testimonial.quote}&rdquo;
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-iter-violet flex items-center justify-center text-white text-xs font-bold">
+                  {cs.testimonial.author.charAt(0)}
+                </div>
+                <div>
+                  <div className="text-white text-sm font-semibold">{cs.testimonial.author}</div>
+                  <div className="text-white/50 text-xs">{cs.testimonial.role}</div>
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           {/* CTA */}
           <div className="flex gap-3">

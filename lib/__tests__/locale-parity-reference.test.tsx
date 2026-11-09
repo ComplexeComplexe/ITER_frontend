@@ -61,8 +61,10 @@ describe("reference and case translation parity", () => {
         expect(doc(html).querySelectorAll("h1")).toHaveLength(1);
       }
       expect(cases[0].limits).toContain("2022–2024");
-      expect(cases[1].results[0]).toMatch(/8 (points|percentage points|puntos porcentuales)/);
-      expect(cases[1].limits).toMatch(/douze mois|twelve-month|doce meses/);
+      expect(cases[1].results.join(" ")).not.toMatch(/\d/);
+      expect(cases[1].results.join(" ")).toMatch(/hebdomadaire|weekly|semanal/i);
+      expect(cases[1].solution).toContain("2025");
+      expect(cases[1].source?.href).toContain("trustfolio.co/profil/");
       expect(cases[2].limits).toContain("2025");
       expect(cases[2].limits).toMatch(/qualitatifs|qualitative|cualitativos/);
     }

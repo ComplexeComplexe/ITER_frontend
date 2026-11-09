@@ -83,22 +83,15 @@ const content: Record<Locale, CaseStudiesContent> = {
       },
       {
         slug: "seasonly-marge-par-canal-bfr",
-        title: "Seasonly — marge brute +8 points et financement du BFR",
+        title: "Seasonly, de la passation au suivi des marges par canal",
         sector: "D2C",
         sectorTag: "D2C / Beauté",
         teamSize: "PME multi-canal",
-        duration: "DAF externalisé récurrent",
-        description:
-          "Marque de beauté clean française vendant en direct, en retail et sur marketplaces, sans lecture de marge par canal. Le financement des stocks créait une tension sur le besoin en fonds de roulement, et ni les dirigeants ni les actionnaires ne disposaient d'un reporting hebdomadaire lisible.",
-        challenge:
-          "Savoir quel canal gagnait réellement de l'argent, et financer le stock sans dégrader la trésorerie.",
-        solution:
-          "Modélisation du P&L par canal — DTC, retail et marketplaces. Pilotage des stocks et structuration du financement du besoin en fonds de roulement. Mise en place d'un tableau de bord hebdomadaire à destination des dirigeants et des actionnaires.",
-        results: [
-          "Marge brute +8 points",
-          "P&L par canal, tableau de bord hebdomadaire et plan de financement du BFR livrés",
-          "Méthode : marge brute consolidée tous canaux, comparée sur deux périodes de douze mois équivalentes, avant et après la mise en place du P&L par canal.",
-        ],
+        duration: "Prise de relais de la direction financière",
+        description: "En novembre 2024, le départ de la responsable financière de Seasonly a rendu nécessaire une passation. La marque de beauté devait continuer à suivre sa trésorerie et à informer ses investisseurs en pleine expansion.",
+        challenge: "Disposer d’une visibilité hebdomadaire sur la trésorerie avant d’engager des achats de stock ou des ouvertures.",
+        solution: "Après la passation, Iter a audité les flux, les stocks et le reporting en décembre 2024. En janvier 2025, l’équipe a mis en place les tableaux de bord et les comptes de résultat par canal. Le suivi hebdomadaire de la trésorerie et du BFR a pris le relais.",
+        results: ["Continuité de la fonction finance après la passation", "Comptes de résultat par canal pour suivre la marge", "Reporting et prévisions de trésorerie à fréquence hebdomadaire"],
       },
       {
         slug: "opti-digital-structuration-financement",

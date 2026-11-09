@@ -4,8 +4,8 @@ import { CLIENTS_ACCOMPAGNES, DELAIS, ENGAGEMENT, FORMULES } from "@/lib/content
 
 export const DAF_PILLAR_PATH = "/daf-externalise";
 export const DAF_PILLAR_PUBLISHED = "2026-05-17";
-export const DAF_PILLAR_MODIFIED = "2026-11-08";
-export const DAF_PILLAR_MODIFIED_LABEL = "8 novembre 2026";
+export const DAF_PILLAR_MODIFIED = "2026-11-09";
+export const DAF_PILLAR_MODIFIED_LABEL = "9 novembre 2026";
 const fmt = (n: number) => n.toLocaleString("fr-FR").replace(/ | /g, " ");
 const budget = `${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT`;
 
@@ -40,7 +40,7 @@ export const dafPillar = {
     intro: "Le besoin apparaît quand les décisions deviennent plus complexes que les informations disponibles. Vous pouvez être une PME rentable, une entreprise familiale ou une startup : consultez notre offre de [CFO externalisé pour startups](/fractional-cfo-startups) pour ses enjeux spécifiques. Une levée de fonds n’est pas un préalable. Trois situations permettent de reconnaître les priorités à traiter.",
     items: [
       { title: "Retrouver de la visibilité", text: "Votre carnet de commandes est rempli, mais votre trésorerie varie sans explication claire. Vous connaissez le chiffre d’affaires, moins la marge par client ou activité. La priorité est de rapprocher les chiffres, d’anticiper les encaissements et de comprendre ce qui consomme du cash avant un recrutement ou un investissement." },
-      { title: "Structurer une entreprise qui grandit", text: "Le dirigeant centralise les tableaux, les équipes utilisent des versions différentes et le reporting arrive trop tard. Le chantier porte sur les responsabilités, le calendrier de clôture et les indicateurs utiles. Le DAF travaille avec les personnes déjà en place pour organiser une fonction finance adaptée à votre taille." },
+      { title: "Structurer une entreprise qui grandit", text: "Après une levée ou une phase de croissance, l’équipe en place peut manquer de temps pour produire le reporting investisseurs et analyser les marges. Le DAF répartit les responsabilités avec elle, clarifie le calendrier de clôture et choisit les indicateurs à suivre." },
       { title: "Préparer un financement ou une opération", text: "Vous devez présenter un projet à une banque, préparer une levée ou étudier une acquisition. Le travail consiste à rendre les hypothèses explicites, tester les scénarios et organiser les documents demandés. Ces projets font l’objet d’un périmètre précis, distinct du suivi mensuel lorsqu’ils le nécessitent." },
     ],
     note: "Si vous cherchez uniquement une tenue comptable, ou une présence de direction à temps plein, le dispositif à temps partagé doit être comparé aux autres solutions avant de décider.",
@@ -81,14 +81,14 @@ export const dafPillar = {
     },
   },
   method: {
-    heading: "Comment fonctionne une mission de DAF externalisé ?",
-    intro: `Le délai indicatif de démarrage est de ${DELAIS.missionDemarree}, à confirmer selon le profil et le périmètre. La mise en place suit ensuite vos priorités et l’état de vos données, sans imposer le même programme de 90 jours à chaque entreprise.`,
+    heading: "Le premier mois avec un DAF externalisé",
+    intro: "Voici le déroulé type d’une prise de relais. Le calendrier dépend des priorités convenues, des accès et de l’état de la comptabilité.",
     steps: [
-      { title: "Cadrer les responsabilités", text: "Nous examinons vos outils, les données disponibles et les décisions à préparer. Le cadrage écrit précise les livrables, leur fréquence, les interlocuteurs et les travaux hors périmètre. Votre équipe identifie qui transmet les informations ; le rôle de l’expert-comptable est clarifié pour éviter les doublons." },
-      { title: "Organiser un mois de travail", text: "Le rythme associe collecte et rapprochement des données, préparation des analyses, puis revue avec le dirigeant. Les actions retenues ont un responsable et une échéance. Ce travail peut être réparti sur le mois : un volume indicatif de jours ne signifie pas que tout se joue lors d’une seule réunion." },
-      { title: "Ajuster le dispositif", text: "Le suivi permet de revoir les hypothèses et les priorités. Une nouvelle entité, une acquisition ou un changement d’outil peut nécessiter un avenant. Les canaux de contact, le traitement des urgences et le relais en cas d’absence sont à préciser au cadrage, selon la disponibilité nécessaire à votre organisation." },
+      { title: "Semaine 1. Auditer les flux et organiser la passation", text: "Nous rapprochons les soldes bancaires et faisons le point sur les échéances et les responsabilités avec votre équipe. Préparez les douze derniers mois de grand livre et de balance comptable, les relevés bancaires, les balances âgées clients et fournisseurs, les stocks si vous en avez, les contrats clés, la paie et les financements en cours." },
+      { title: "Semaines 2 et 3. Prévoir la trésorerie et cartographier les risques", text: "Nous construisons un prévisionnel à 13 semaines et recensons les retards d’encaissement, les paiements sensibles et les hypothèses à vérifier. Le dirigeant sait quelles échéances surveiller et qui doit confirmer les informations manquantes." },
+      { title: "Semaine 4. Présenter un premier reporting", text: "La première revue rapproche le compte de résultat, la trésorerie et quelques indicateurs choisis avec le dirigeant. Elle débouche sur des décisions, des responsables et des échéances." },
     ],
-    note: "Prévoyez un interlocuteur interne, les accès adaptés et du temps pour valider les hypothèses. La charge de préparation dépend de la qualité des données : elle est à estimer ensemble, sans promettre un nombre d’heures identique à toutes les entreprises.",
+    note: "Lorsque les données demandent des reprises, il faut parfois deux à trois mois pour fiabiliser le reporting. Le budget, la marge par canal, le BFR ou les dossiers de financement viennent ensuite selon les priorités. Si vous recrutez un DAF en interne, la documentation des modèles et des procédures facilite la passation.",
     cities: getCompanyGeography("fr").summary,
   },
   pricing: {
