@@ -51,6 +51,7 @@ const GUILLAUME_BIOGRAPHY: Record<Locale, PartnerProfile> = {
         "Chez Iter Advisors, Guillaume contribue au positionnement du cabinet, à sa stratégie de développement et à ses relations avec les entrepreneurs. Son expérience complète celle de Benjamin Ziza, de Sébastien Doat et des équipes chargées des missions financières.",
         "Il connaît les questions auxquelles les dirigeants sont confrontés lorsqu’ils cherchent à développer leur activité : comment trouver leurs clients, construire une offre lisible, organiser leur croissance et réunir les compétences nécessaires à chaque étape.",
         "Cette expérience nourrit une conviction commune aux associés d’Iter : les décisions commerciales et financières doivent se parler. Une ambition de croissance a besoin d’un marché, d’une équipe et d’une compréhension précise des ressources disponibles pour la réaliser.",
+        "Iter Advisors présente aussi ses sujets financiers en vidéo courte. Les coulisses du Reel publié avec Agence 54 expliquent comment le cabinet a adapté un sujet fiscal au format Instagram.",
       ], links: [
         { label: "Le profil de Benjamin Ziza", href: "/a-propos/benjamin-ziza" },
         { label: "Le profil de Sébastien Doat", href: "/a-propos/sebastien-doat" },
@@ -229,6 +230,7 @@ const professionalDetails: Record<Locale, Pick<PartnerProfile, "role" | "facts" 
       { label: "Benjamin Ziza", href: "/a-propos/benjamin-ziza" },
       { label: "Sébastien Doat", href: "/a-propos/sebastien-doat" },
       { label: "DAF externalisé", href: "/daf-externalise" },
+      { label: "Les coulisses du Reel publié avec Agence 54", href: "https://www.54bcn.com/fr/blog/cas-client-iter-advisors-239000-vues-instagram" },
     ],
   },
   en: {
