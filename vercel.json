@@ -143,6 +143,11 @@
       "statusCode": 301
     },
     {
+      "source": "/en/ressources/testimonials/surf",
+      "destination": "/en/resources/case-studies",
+      "statusCode": 301
+    },
+    {
       "source": "/services/consolidation-financiere",
       "destination": "/services",
       "permanent": true
