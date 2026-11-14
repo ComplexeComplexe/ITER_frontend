@@ -49,6 +49,9 @@ export default function IaFinanceGuide({ slug, locale = "fr" }: { slug: string; 
       <div className="[&_tbody_th]:px-4 [&_tbody_th]:py-3 [&_tbody_th]:text-left [&_tbody_th]:align-top [&_caption]:text-left [&_caption]:p-3 [&_caption]:font-medium" dangerouslySetInnerHTML={{ __html: section.html }} />
     </section>)}
     {hasKit && <ReportingKit locale={locale} />}
+    {hasCalculator && locale === "fr" && (
+      <p>Pour prolonger cet exercice en équipe, l’<a href="https://wegoto.ai/fr/equipes/finance/">atelier IA pour les équipes finance de WeGoTo.ai</a> propose de recalculer un écart dans un tableur et de relire le commentaire généré à partir des chiffres vérifiés.</p>
+    )}
     {hasCalculator && <section><h2 id="calculateur-roi" className="scroll-mt-24">{t("Quel gain net sur vos hypothèses ?")}</h2><ReportingRoi locale={locale} /></section>}
     <FinanceExpert locale={locale} compact />
   </GuideFiscalPage>;
