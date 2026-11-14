@@ -233,8 +233,9 @@ export default async function Page() {
               conseils fiscaux de chaque pays.
             </p>
             <p className="site-copy text-sm sm:text-base text-muted-foreground leading-relaxed mb-3">
-              Nos DAF externalisés et experts financiers vous accompagnent
-              pour :
+              Un{" "}
+              <Link href="/daf-externalise" className="text-iter-violet underline">DAF externalisé</Link>{" "}
+              peut assurer ce pilotage et vous aider à structurer le suivi financier.
             </p>
             <ul className="space-y-2 list-none pl-0 mb-6">
               {[

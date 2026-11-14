@@ -152,14 +152,12 @@ const nextConfig: NextConfig = {
       { source: "/ressources/blog/daf-externalise-startup", destination: "/ressources/blog", permanent: true },
       // GSC 2026-09-05: canonical destinations for published aliases and observed chains.
       {source: "/es/recursos/case-studies", destination: "/es/recursos/casos-de-exito", permanent: true},
-      {source: "/es/sobre-nosotros/benjamin-ziza", destination: "/es/quienes-somos/benjamin-ziza", permanent: true},
       {source: "/es/sobre-nosotros", destination: "/es/quienes-somos", permanent: true},
       {source: "/en/services/flux-de-tresorerie", destination: "/en/services/cash-flow-forecast", permanent: true},
       {source: "/es/services/flujo-de-caja", destination: "/es/services/prevision-tesoreria", permanent: true},
       {source: "/fr/services/flux-de-tresorerie", destination: "/services/previsionnel-tresorerie", permanent: true},
       {source: "/services/flux-de-tresorerie", destination: "/services/previsionnel-tresorerie", permanent: true},
       {source: "/es/recursos/blog/les-10-outils-pour-cfos-startup", destination: "/ressources/blog/les-10-outils-pour-cfos-startup", permanent: true},
-      {source: "/en/daf-externalise", destination: "/en/fractional-cfo", permanent: true},
       {source: "/en/daf-externalise/temps-partage", destination: "/en/fractional-cfo/shared-time", permanent: true},
       {source: "/en/es/ressources/blog/organiser-sa-direction-financiere", destination: "/ressources/blog/organiser-sa-direction-financiere", permanent: true},
       {source: "/en/externalizacion-daf", destination: "/en/fractional-cfo", permanent: true},
@@ -176,7 +174,6 @@ const nextConfig: NextConfig = {
       {source: "/es/ressources/blog/la-modernisation-du-role-de-cfo", destination: "/ressources/blog/la-modernisation-du-role-de-cfo", permanent: true},
       {source: "/es/ressources/blog/organiser-sa-direction-financiere", destination: "/ressources/blog/organiser-sa-direction-financiere", permanent: true},
       {source: "/es/ressources/blog/stack-financier-saas-series-a", destination: "/ressources/blog/stack-financier-saas-series-a", permanent: true},
-      {source: "/es/ressources/fiscalite/beckham-law", destination: "/ressources/fiscalite/beckham-law", permanent: true},
       {source: "/es/ressources/glossaire", destination: "/es/recursos/glosario", permanent: true},
       {source: "/es/ressources/glossaire/cash-burn-runway", destination: "/ressources/glossaire/cash-burn-runway", permanent: true},
       {source: "/es/ressources/glossaire/fusion-acquisition", destination: "/ressources/glossaire", permanent: true},
@@ -424,11 +421,6 @@ const nextConfig: NextConfig = {
         source: "/es/ressources/fiche-metier/:path*",
         destination: "/es/externalizacion-daf/funciones",
         permanent: true,
-      },
-      {
-        source: "/es/ressources/case-studies",
-        destination: "/es/recursos/casos-de-exito",
-        permanent: true, // 301 redirect (merged content)
       },
       {
         source: "/es/ressources/testimonials",
@@ -1079,10 +1071,6 @@ const nextConfig: NextConfig = {
       { source: "/ressources/organiser-sa-direction-financiere",
         destination: "/ressources/blog/organiser-sa-direction-financiere",
         permanent: true },
-
-      // T8 — root-level slug without locale prefix; /en/fractional-cfo is
-      // the canonical EN destination (FR equivalent is /daf-externalise).
-      { source: "/fractional-cfo", destination: "/en/fractional-cfo", permanent: true },
 
       // T8 — Spanish "fiches métiers" route never existed; route to the
       // FR canonical (fiche-metier listing) until a localized one ships.

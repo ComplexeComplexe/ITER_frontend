@@ -5,6 +5,17 @@ type Redirect = Awaited<ReturnType<NonNullable<NextConfig["redirects"]>>>[number
 // GSC workbook checked against production on 2026-10-04.
 // Keep exact replacements ahead of legacy wildcard fallbacks.
 const originalGscRedirects: Redirect[] = [
+  // November 2026 GSC samples with a verified destination.
+  { source: "/en/daf-externalise", destination: "/en/fractional-cfo", statusCode: 301 },
+  { source: "/en/a-propos/benjamin-ziza", destination: "/en/about/benjamin-ziza", statusCode: 301 },
+  { source: "/en/ressources/fiche-metier/fractional-cfo", destination: "/en/fractional-cfo/role", statusCode: 301 },
+  { source: "/en/ressources/testimonials/surf", destination: "/en/resources/case-studies", statusCode: 301 },
+  { source: "/es/ressources/case-studies", destination: "/es/recursos/casos-de-exito", statusCode: 301 },
+  { source: "/es/ressources/fiscalite/beckham-law", destination: "/es/recursos/fiscalidad/ley-beckham", statusCode: 301 },
+  { source: "/fractional-cfo", destination: "/en/fractional-cfo", statusCode: 301 },
+  { source: "/en/about/deisy-arias-ramirez", destination: "/en/about", statusCode: 301 },
+  { source: "/es/sobre-nosotros/benjamin-ziza", destination: "/es/quienes-somos/benjamin-ziza", statusCode: 301 },
+  { source: "/wp-content/uploads/2025/03/cash-is-queen-and-king-2024-2025.pdf", destination: "/ressources/blog/flux-de-tresorerie", statusCode: 301 },
   // Two related chains found by evaluating the effective routing configuration.
   { source: "/es/ressources/blog/ia-et-automatisation-des-taches-repetitives-du-departement-finance", destination: "/es/recursos/blog/ia-automatizacion-tareas-repetitivas-finanzas", statusCode: 301 },
   { source: "/en/ressources/glossaire/daf", destination: "/en/fractional-cfo/role", statusCode: 301 },
