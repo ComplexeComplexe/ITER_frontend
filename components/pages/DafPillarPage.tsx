@@ -8,7 +8,8 @@ import type { CmsNavItem, StrapiTeamMember } from "@/lib/static-content";
 import { strapiMediaUrl } from "@/lib/static-content";
 import { getFallbackTeamMembers } from "@/lib/content/team";
 import { aboutHref } from "@/lib/path-localization";
-import { DAF_PILLAR_MODIFIED, DAF_PILLAR_MODIFIED_LABEL, DAF_PILLAR_PATH, DAF_PILLAR_PUBLISHED } from "@/lib/content/daf-pillar";
+import { DAF_PILLAR_MODIFIED, DAF_PILLAR_MODIFIED_LABEL, DAF_PILLAR_PATH, DAF_PILLAR_PUBLISHED, DAF_PILLAR_TRANSLATIONS_MODIFIED } from "@/lib/content/daf-pillar";
+import { getDocumentedCase } from "@/lib/content/documented-cases";
 import type { Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
 import { getDafPillarContent, pillarInterface } from "@/lib/content/daf-pillar-locales";
@@ -35,6 +36,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
   const t = getDafPillarContent(locale);
   const ui = pillarInterface[locale];
   const decisions = PILLAR_DECISIONS[locale];
+  const dateModified = locale === "fr" ? DAF_PILLAR_MODIFIED : DAF_PILLAR_TRANSLATIONS_MODIFIED;
   const href = (path: string) => parityHref(path, locale);
   const path = href(DAF_PILLAR_PATH);
   const teamSource = teamMembers?.length ? teamMembers : getFallbackTeamMembers(locale);
@@ -42,9 +44,9 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
   return <PageLayout locale={locale} cmsNavigation={cmsNavigation}>
     <ServiceHero locale={locale} title={t.hero.h1} label={t.breadcrumbLabel}
       lead={t.hero.lead} intro={t.hero.intro}
-      primary={{ href: href(t.contact.href), label: t.hero.cta }} secondary={{ href: "#tarifs", label: ui.pricing }}
+      primary={{ href: href(t.contact.href), label: t.hero.cta }} secondary={locale === "fr" ? undefined : { href: "#tarifs", label: ui.pricing }}
       summary={t.hero.landmarks} navigation={t.nav}
-      proof={<div className="mt-6 space-y-3"><ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">{t.hero.proofs.map(item => <li key={item}>{item}</li>)}</ul><a href="#preuves" className={link}>{ui.proof}</a></div>} />
+      proof={<div className="mt-6 space-y-3"><ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">{t.hero.proofs.map(item => <li key={item}>{item}</li>)}</ul><div className="flex flex-wrap gap-x-6"><a href="#preuves" className={link}>{ui.proof}</a>{locale === "fr" && <a href="#tarifs" className={link}>{ui.pricing}</a>}</div></div>} />
 
     <Section id="besoin" title={t.needs.heading}>
       <span id="pour-qui" className="block scroll-mt-24" />
@@ -57,13 +59,13 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
     <Section id="missions" title={t.missions.heading} tinted>
       <span id="livrables-pme" className="block scroll-mt-24" />
       <p className={body}>{t.missions.intro}</p>
-      <ul className="list-disc pl-5 space-y-2 text-muted-foreground">{t.missions.overview.map(item => <li key={item}>{item}</li>)}</ul>
+      {locale !== "fr" && <ul className="list-disc pl-5 space-y-2 text-muted-foreground">{t.missions.overview.map(item => <li key={item}>{item}</li>)}</ul>}
       <div className="divide-y divide-border">{t.missions.items.map(item => <article key={item.title} className="py-6 first:pt-0">
         <h3 className="font-semibold text-foreground">{item.title}</h3>
         <dl className="mt-4 grid sm:grid-cols-2 gap-5"><div><dt className="font-semibold text-foreground">{ui.deliverable}</dt><dd className={`${body} mt-2`}>{item.deliverable}</dd></div><div><dt className="font-semibold text-foreground">{ui.decision}</dt><dd className={`${body} mt-2`}>{item.decision}</dd></div></dl>
         <PublishedLocaleLink locale={locale} className={`${link} inline-flex mt-4`} href={href(item.href)}>{item.linkLabel}</PublishedLocaleLink>
       </article>)}</div>
-      <ScopeResponsibilities locale={locale} kind="finance" />
+      {locale !== "fr" && <ScopeResponsibilities locale={locale} kind="finance" />}
       <figure className="site-card bg-white border border-border p-5 sm:p-7">
         <figcaption><h3 className="font-semibold text-foreground">{t.missions.example.heading}</h3><p className={`${body} mt-2`}>{t.missions.example.intro}</p></figcaption>
         <ServiceTable caption={ui.caption} headers={ui.headers} rows={t.missions.example.rows} captionHidden />
@@ -77,7 +79,20 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
 
     <Section id="preuves" title={t.cases.heading}>
       <p className={body}>{t.cases.intro}</p>
-      <div className="grid md:grid-cols-2 gap-6">{t.cases.items.map(item => <article className="site-card border border-border p-5 sm:p-7 flex flex-col" key={item.company}><h3 className="font-semibold text-foreground">{item.company} : {item.title}</h3><p className={`${body} mt-4`}>{item.text}</p><p className={`${body} mt-4 mb-5`}>{item.takeaway}</p><PublishedLocaleLink locale={locale} href={href(item.href)} className={`${link} mt-auto`}>{item.linkLabel}</PublishedLocaleLink></article>)}</div>
+      <div className="grid md:grid-cols-2 gap-6">{t.cases.items.map(item => {
+        const evidence = locale === "fr" ? getDocumentedCase(item.href.split("/").pop()!) : undefined;
+        return <article className="site-card border border-border p-5 sm:p-7 flex flex-col" key={item.company}>
+          <h3 className="font-semibold text-foreground">{item.company} : {item.title}</h3>
+          {evidence ? <>
+            <dl className="mt-5 space-y-5">
+              <div><dt className="font-semibold text-foreground">Le besoin</dt><dd className={`${body} mt-2`}>{item.text}</dd></div>
+              <div><dt className="font-semibold text-foreground">L’intervention d’Iter</dt><dd className={`${body} mt-2`}>{item.takeaway}</dd></div>
+              <div><dt className="font-semibold text-foreground">Les travaux réalisés</dt><dd className={`${body} mt-2`}><ul className="list-disc pl-5 space-y-2">{evidence.deliverables.map(deliverable => <li key={deliverable}>{deliverable}</li>)}</ul></dd></div>
+            </dl>
+          </> : <><p className={`${body} mt-4`}>{item.text}</p><p className={`${body} mt-4`}>{item.takeaway}</p></>}
+          <PublishedLocaleLink locale={locale} href={href(item.href)} className={`${link} mt-auto pt-5`}>{item.linkLabel}</PublishedLocaleLink>
+        </article>;
+      })}</div>
       <figure id="avis" className="border-l-2 border-iter-violet pl-5 scroll-mt-24"><blockquote className="site-copy text-foreground">« {t.cases.quote.text} »</blockquote><figcaption className="mt-3 text-sm text-muted-foreground"><strong className="text-foreground">{t.cases.quote.author}</strong>, {t.cases.quote.role}<br /><a className={link} href={t.cases.quote.sourceUrl} target="_blank" rel="noopener noreferrer">{t.cases.quote.sourceLabel}</a></figcaption></figure>
       <PublishedLocaleLink locale={locale} href={href(t.contact.href)} className="site-button site-button-primary">{t.hero.cta}</PublishedLocaleLink>
     </Section>
@@ -145,8 +160,8 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
       </div>
       {t.experts.paragraphs.map(text => <p className={body} key={text}>{text}</p>)}
       <PublishedLocaleLink locale={locale} href={href("/ressources/ia-finance")} className={link}>{ui.ai}</PublishedLocaleLink>
-      <p className="text-sm text-muted-foreground">{decisions.financeRevision}</p>
-      <PageByline locale={locale} author={AUTHOR} dateModified={DAF_PILLAR_MODIFIED} dateLabel={locale === "fr" ? DAF_PILLAR_MODIFIED_LABEL : undefined} />
+      <p className="text-sm text-muted-foreground">{locale === "fr" ? "Cette révision : présentation des missions simplifiée et détail des travaux réalisés chez Opti Digital et SolarMente." : decisions.financeRevision}</p>
+      <PageByline locale={locale} author={AUTHOR} dateModified={dateModified} dateLabel={locale === "fr" ? DAF_PILLAR_MODIFIED_LABEL : undefined} />
     </Section>
 
     <Section id="faq" title={ui.faq}>
@@ -195,7 +210,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
               locale,
               author: AUTHOR,
               datePublished: DAF_PILLAR_PUBLISHED,
-              dateModified: DAF_PILLAR_MODIFIED,
+              dateModified,
             }), mainEntity: { "@id": `${SITE}${path}#service-offer` }, contributor: { "@id": personId(PEOPLE.florent.slug) } },
           ),
         }}

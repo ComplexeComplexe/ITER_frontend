@@ -5,6 +5,11 @@ const registry = JSON.parse(fs.readFileSync('lib/content/editorial-locales/regis
 const invoiceRoutes = JSON.parse(fs.readFileSync('lib/content/electronic-invoicing-routes.json', 'utf8'));
 for (const paths of Object.values(invoiceRoutes)) registry[paths.fr] = { paths, noindex: false };
 const origin = 'https://www.iteradvisors.com';
+// The reviewed DAF copy is a French-only editorial pilot. Keep its section
+// order and FAQ structure aligned without requiring the removed duplicate
+// deliverables table to be republished in French. All other routes retain
+// the complete h2/h3/table/details/form comparison.
+const sectionLevelParity = new Set(['/daf-externalise']);
 const errors = [];
 const attr = (tag, key) => tag.match(new RegExp(`\\b${key}=["']([^"']*)["']`, 'i'))?.[1];
 const normalise = text => decodeHTML(text).replace(/\s+/g, ' ').trim();
@@ -29,7 +34,7 @@ function inspect(path) {
     catch { errors.push(`Invalid JSON-LD: ${path}`); }
   }
   const canonical = [...html.matchAll(/<link\b[^>]*>/g)].map(m => m[0]).find(tag => attr(tag, 'rel') === 'canonical');
-  return { strings, canonical: canonical && attr(canonical, 'href'), lang: attr(html.match(/<html\b[^>]*>/)?.[0] ?? '', 'lang'), signature: [...main.matchAll(/<(h2|h3|table|details|form)\b/gi)].map(m => m[1].toLowerCase()), alternates: [...html.matchAll(/<link\b[^>]*>/g)].map(m => m[0]).filter(tag => attr(tag, 'rel') === 'alternate' && attr(tag, 'hreflang')).map(tag => attr(tag, 'href')) };
+  return { strings, canonical: canonical && attr(canonical, 'href'), lang: attr(html.match(/<html\b[^>]*>/)?.[0] ?? '', 'lang'), signature: [...main.matchAll(/<(h2|h3|table|details|form)\b/gi)].map(m => m[1].toLowerCase()), sections: [...main.matchAll(/<section\b[^>]*data-block-key="([^"]+)"/gi)].map(m => m[1]), alternates: [...html.matchAll(/<link\b[^>]*>/g)].map(m => m[0]).filter(tag => attr(tag, 'rel') === 'alternate' && attr(tag, 'hreflang')).map(tag => attr(tag, 'href')) };
 }
 let checked = 0;
 for (const [source, page] of Object.entries(registry)) {
@@ -43,7 +48,10 @@ for (const [source, page] of Object.entries(registry)) {
     if (target.lang !== locale) errors.push(`Wrong document language: ${path}`);
     if (!page.noindex && target.canonical?.replace(/\/$/, '') !== (origin + path).replace(/\/$/, '')) errors.push(`Wrong canonical: ${path}`);
     if (!page.noindex && Object.values(page.paths).some(path => !target.alternates.some(url => url?.replace(/\/$/, '') === (origin + path).replace(/\/$/, '')))) errors.push(`Incomplete alternates: ${path}`);
-    if (JSON.stringify(target.signature) !== JSON.stringify(fr.signature)) errors.push(`Section mismatch: ${path}`);
+    const structure = item => sectionLevelParity.has(source)
+      ? { sections: item.sections, signature: item.signature.filter(tag => tag !== 'h3' && tag !== 'table') }
+      : item.signature;
+    if (JSON.stringify(structure(target)) !== JSON.stringify(structure(fr))) errors.push(`Section mismatch: ${path}`);
     const french = new Set(fr.strings.filter(text => (text.split(' ').length >= 4 && /\b(le|les|du|des|une|votre|vous|vos|notre|nous|avec|dans|pour|est)\b/i.test(text)) || /^(Découvrir|En savoir plus|Voir les ressources|Trésorerie|Comptabilité|Recrutement|Prénom|Nom|Société|Clôture|Prévisionnel|Partner, CFO et expert Pennylane|· relu par)$/i.test(text)));
     for (const text of target.strings) if (french.has(text)) errors.push(`Untranslated content: ${path}: ${text.slice(0, 160)}`);
   }
