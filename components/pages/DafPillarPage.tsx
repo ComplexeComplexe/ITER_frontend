@@ -24,12 +24,15 @@ import Section from "@/components/design/ServiceSection";
 import ServiceContact from "@/components/design/ServiceContact";
 import PageByline from "@/components/PageByline";
 import { PILLAR_DECISIONS } from "@/lib/content/pillar-decisions";
+import SpotlightCard from "@/components/design/SpotlightCard";
+import interactionStyles from "@/components/design/DafInteractions.module.css";
 
 const AUTHOR = { name: PEOPLE.sebastien.name, slug: PEOPLE.sebastien.slug };
 const SITE = "https://www.iteradvisors.com";
 const safeJson = (value: unknown) => JSON.stringify(value).replace(/</g, "\\u003c");
 const body = "text-base text-muted-foreground leading-relaxed";
 const link = "inline-flex min-h-11 items-center text-iter-violet underline underline-offset-4 font-medium";
+const editorialLink = `inline-flex min-h-11 items-center text-iter-violet font-medium ${interactionStyles.editorialLink}`;
 
 /** Server-rendered content and native FAQ; shared navigation remains interactive. */
 export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr" }: { locale?: Locale; cmsNavigation?: CmsNavItem[]; teamMembers?: StrapiTeamMember[] }) {
@@ -63,7 +66,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
       <div className="divide-y divide-border">{t.missions.items.map(item => <article key={item.title} className="py-6 first:pt-0">
         <h3 className="font-semibold text-foreground">{item.title}</h3>
         <dl className="mt-4 grid sm:grid-cols-2 gap-5"><div><dt className="font-semibold text-foreground">{ui.deliverable}</dt><dd className={`${body} mt-2`}>{item.deliverable}</dd></div><div><dt className="font-semibold text-foreground">{ui.decision}</dt><dd className={`${body} mt-2`}>{item.decision}</dd></div></dl>
-        <PublishedLocaleLink locale={locale} className={`${link} inline-flex mt-4`} href={href(item.href)}>{item.linkLabel}</PublishedLocaleLink>
+        <PublishedLocaleLink locale={locale} className={`${editorialLink} mt-4`} href={href(item.href)}><span className={interactionStyles.linkText}>{item.linkLabel}</span></PublishedLocaleLink>
       </article>)}</div>
       {locale !== "fr" && <ScopeResponsibilities locale={locale} kind="finance" />}
       <figure className="site-card bg-white border border-border p-5 sm:p-7">
@@ -81,7 +84,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
       <p className={body}>{t.cases.intro}</p>
       <div className="grid md:grid-cols-2 gap-6">{t.cases.items.map(item => {
         const evidence = locale === "fr" ? getDocumentedCase(item.href.split("/").pop()!) : undefined;
-        return <article className="site-card border border-border p-5 sm:p-7 flex flex-col" key={item.company}>
+        return <SpotlightCard className="site-card border border-border p-5 sm:p-7 flex flex-col" key={item.company}>
           <h3 className="font-semibold text-foreground">{item.company} : {item.title}</h3>
           {evidence ? <>
             <dl className="mt-5 space-y-5">
@@ -90,8 +93,8 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
               <div><dt className="font-semibold text-foreground">Les travaux réalisés</dt><dd className={`${body} mt-2`}><ul className="list-disc pl-5 space-y-2">{evidence.deliverables.map(deliverable => <li key={deliverable}>{deliverable}</li>)}</ul></dd></div>
             </dl>
           </> : <><p className={`${body} mt-4`}>{item.text}</p><p className={`${body} mt-4`}>{item.takeaway}</p></>}
-          <PublishedLocaleLink locale={locale} href={href(item.href)} className={`${link} mt-auto pt-5`}>{item.linkLabel}</PublishedLocaleLink>
-        </article>;
+          <PublishedLocaleLink locale={locale} href={href(item.href)} className={`${editorialLink} ${interactionStyles.caseLink} mt-auto pt-5`}><span className={interactionStyles.linkText}>{item.linkLabel}</span></PublishedLocaleLink>
+        </SpotlightCard>;
       })}</div>
       <figure id="avis" className="border-l-2 border-iter-violet pl-5 scroll-mt-24"><blockquote className="site-copy text-foreground">« {t.cases.quote.text} »</blockquote><figcaption className="mt-3 text-sm text-muted-foreground"><strong className="text-foreground">{t.cases.quote.author}</strong>, {t.cases.quote.role}<br /><a className={link} href={t.cases.quote.sourceUrl} target="_blank" rel="noopener noreferrer">{t.cases.quote.sourceLabel}</a></figcaption></figure>
       <PublishedLocaleLink locale={locale} href={href(t.contact.href)} className="site-button site-button-primary">{t.hero.cta}</PublishedLocaleLink>
@@ -107,7 +110,7 @@ export default function DafPillarPage({ cmsNavigation, teamMembers, locale = "fr
     <Section id="tarifs" title={t.pricing.heading}>
       <p className={`${body} font-medium text-foreground`}>{t.pricing.intro}</p>
       {t.pricing.paragraphs.map(text => <p key={text} className={body}>{renderInlineMarkdownLinks(text.replace(/\]\((\/[^)]+)\)/g, (_, linkPath: string) => `](${href(linkPath)})`))}</p>)}
-      <PublishedLocaleLink locale={locale} href={href(t.pricing.link.href)} className={link}>{t.pricing.link.label}</PublishedLocaleLink>
+      <PublishedLocaleLink locale={locale} href={href(t.pricing.link.href)} className={editorialLink}><span className={interactionStyles.linkText}>{t.pricing.link.label}</span></PublishedLocaleLink>
     </Section>
 
     <Section id="pourquoi-iter" title={t.experts.heading} tinted>

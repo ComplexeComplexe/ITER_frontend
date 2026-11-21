@@ -1,0 +1,72 @@
+/* Scoped to the DAF pillar. All colours and radii use Iter's existing tokens. */
+.card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--color-background);
+}
+
+.glow {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 560px;
+  height: 560px;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle, color-mix(in srgb, var(--site-violet) 12%, transparent), transparent 70%);
+}
+
+/* One native link per case; its click target extends across the card. */
+.caseLink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--site-radius);
+}
+
+.card:has(.caseLink:focus-visible) {
+  outline: 3px solid var(--site-violet);
+  outline-offset: 4px;
+}
+
+/* A persistent underline also works on touch screens and without scripts. */
+.linkText {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .linkText {
+    text-decoration: none;
+    background-image: linear-gradient(color-mix(in srgb, currentColor 60%, transparent), color-mix(in srgb, currentColor 60%, transparent)), linear-gradient(currentColor, currentColor);
+    background-position: left calc(100% - 1px);
+    background-repeat: no-repeat;
+    background-size: 100% 1px, 0% 2px;
+    transition: background-size 180ms cubic-bezier(.23, 1, .32, 1);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .editorialLink:hover .linkText {
+    background-size: 100% 1px, 100% 2px;
+  }
+
+  .editorialLink:focus-visible .linkText {
+    background-size: 100% 1px, 100% 2px;
+    transition: none;
+  }
+}
+
+@media (min-width: 768px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .glow {
+    display: block;
+    transition: opacity 160ms cubic-bezier(.23, 1, .32, 1);
+  }
+
+  .card[data-spotlight="active"] .glow {
+    opacity: 1;
+  }
+}
