@@ -387,7 +387,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <h2 id="reco">Un protocole de choix concret</h2>
 <p>Préparez un dossier de démonstration anonymisé avec une facture d’achat, une vente, un avoir, un actif et une ventilation analytique. Demandez à chaque candidat de traiter le même parcours, jusqu’à l’export comptable. Notez les interventions manuelles, les contrôles possibles et les limites constatées. Faites valider le résultat par la personne qui tiendra la comptabilité.</p>
 <p>Avant toute migration, convenez du solde de reprise, des accès, des responsabilités et du rapprochement avec l’ancien système. Le DAF cadre le besoin et le pilotage ; le logiciel ne remplace pas la validation comptable.</p>
-<p>Pour aller plus loin : <a href="/ressources/outils/pennylane">fiche Pennylane</a>, <a href="/ressources/outils/sage">fiche Sage</a> et <a href="/services/comptabilite-externalisation">organisation de votre comptabilité externalisée</a>.</p>
+<p>Pour aller plus loin : <a href="/ressources/outils/pennylane">notre avis sur Pennylane</a>, <a href="/ressources/outils/sage">fiche Sage</a> et <a href="/services/comptabilite-externalisation">organisation de votre comptabilité externalisée</a>.</p>
 <h2 id="sources">Sources et méthode</h2>
 <p>Documentation consultée le 13 septembre 2026 : <a href="https://www.pennylane.com/fr">présentation officielle Pennylane</a> et <a href="https://www.sage.com/fr-fr/produits/">gamme officielle Sage</a>. Cette grille est une aide au choix, pas un benchmark chronométré ni un compte rendu de résultats clients. Les tarifs et fonctionnalités doivent être confirmés dans l’offre retenue.</p>`,
       content: [],
@@ -659,7 +659,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <h2 id="acomptes">Levier 5 : coordonner les acomptes fournisseurs</h2>
 <p>Placez les acomptes fournisseurs dans le même calendrier que les recettes attendues. Étudiez un échelonnement lié aux étapes du projet, sans supposer que le fournisseur acceptera une baisse des acomptes.</p>
 <h2 id="production">Levier 6 : suivre les travaux en cours</h2>
-<p>En production ou en prestation, repérez les étapes qui immobilisent des ressources avant la facturation. Une meilleure coordination entre opérations et finance peut réduire les retards. Le gain se mesure sur les flux observés et les coûts de mise en œuvre.</p>
+<p>En production ou en prestation, repérez les étapes qui immobilisent des ressources avant la facturation. Une équipe de <a href="/daf-externalise">direction financière externalisée</a> peut coordonner les opérations et la finance pour réduire les retards. Le gain se mesure sur les flux observés et les coûts de mise en œuvre.</p>
 <h2 id="factoring">Levier 7 : comparer les solutions de financement</h2>
 <p>L’affacturage peut financer certaines créances selon leur éligibilité. Examinez le montant réellement disponible, les frais, les garanties, les recours et la gestion de la relation client. Comparez les propositions sur un périmètre identique avec vos partenaires financiers.</p>
 <h2 id="experience">Mesurer l’effet avant de généraliser</h2>
@@ -667,7 +667,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <p>Passer de 110 à 90 jours de stock libère 102 000 € dans cet exemple, à coût des ventes et autres postes inchangés. Le BFR descend alors à 364 600 €. Avant de réduire les commandes, vérifiez les délais de réapprovisionnement et le risque de rupture par référence.</p>
 <h2 id="bfr-negatif">Quand un BFR négatif masque une tension de trésorerie</h2>
 <p>Avant de conclure qu’un BFR négatif libère durablement du cash, examinez quatre points. Un ralentissement peut réduire les nouveaux encaissements. Les avances des clients correspondent à des prestations encore à fournir. Les dettes fournisseurs échues peuvent donner une image trop favorable. Enfin, comparez plusieurs mois si la clôture tombe à un point bas saisonnier.</p>
-<p>Utilisez un <a href="/services/previsionnel-tresorerie">prévisionnel de trésorerie à 13 semaines</a> pour comparer le scénario de départ, les actions retenues et le réalisé. Suivez séparément les effets de volume, de saisonnalité et de prix.</p>
+<p>Utilisez un <a href="/services/previsionnel-tresorerie">prévisionnel de trésorerie à 13 semaines</a> pour comparer le scénario de départ, les actions retenues et le réalisé. Le <a href="/services/controle-de-gestion-externalise">contrôle de gestion externalisé</a> permet de suivre séparément les effets de volume, de saisonnalité et de prix.</p>
 <p>Le <a href="/ressources/cas-clients/seasonly-marge-par-canal-bfr">cas Seasonly</a> décrit la mise en place du suivi des marges, des stocks et de la trésorerie dans une entreprise réelle.</p>
 <p><a href="/contact#tresorerie">Décrire mon besoin de trésorerie</a></p>`,
       content: [],

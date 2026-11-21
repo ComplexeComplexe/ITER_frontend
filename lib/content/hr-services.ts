@@ -80,7 +80,7 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
       "heading": "Ce que peut couvrir la mission",
       "paragraphs": [
         "Organiser vos recrutements, de la définition du besoin à l’arrivée du collaborateur.",
-        "Les livrables et le partage des responsabilités sont précisés dans la proposition."
+        "Les livrables et le partage des responsabilités sont précisés dans la proposition. Si le besoin inclut aussi l’organisation RH et l’accompagnement des managers, une mission de [DRH externalisé](/drh-externalise) permet de cadrer cet ensemble."
       ],
       "bullets": [
         "Une fiche de poste et des critères de sélection partagés",
@@ -183,7 +183,7 @@ export const hrServices: Record<HRServiceSlug, HRServiceContent> = {
       "heading": "Ce que peut couvrir la mission",
       "paragraphs": [
         "Clarifier qui collecte, produit, contrôle et valide votre paie.",
-        "Les livrables et le partage des responsabilités sont précisés dans la proposition."
+        "Les livrables et le partage des responsabilités sont précisés dans la proposition. Pour coordonner la paie avec les recrutements, l’organisation et les managers, consultez le périmètre de notre [direction RH externalisée](/drh-externalise)."
       ],
       "bullets": [
         "Un calendrier de collecte et de validation des variables",

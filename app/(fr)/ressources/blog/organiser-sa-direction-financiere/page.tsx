@@ -81,7 +81,7 @@ export default function OrganiserDirectionFinancierePage() {
         },
       ]}
     >
-      <p>La direction financière organise les données, les prévisions et les décisions de l’entreprise. Sa structure dépend des entités, des flux et des compétences disponibles. Un <Link href="/daf-externalise">DAF externalisé</Link> peut coordonner ce travail avec votre équipe et votre expert-comptable.</p>
+      <p>La direction financière organise les données, les prévisions et les décisions de l’entreprise. Sa structure dépend des entités, des flux et des compétences disponibles. Une équipe de <Link href="/daf-externalise">direction financière externalisée</Link> peut coordonner ce travail avec votre équipe et votre expert-comptable.</p>
       <h2 id="pourquoi-structure">1. Pourquoi structurer votre finance ?</h2>
       <p>Commencez par les difficultés observées : reporting tardif, trésorerie peu prévisible, factures manquantes ou responsabilités dispersées. L’objectif est de savoir quels chiffres sont fiables, quelles décisions ils éclairent et qui suit les actions. Une organisation financière ne garantit ni financement ni croissance.</p>
       <h2 id="modeles-par-taille">2. Modèles d’organisation selon la complexité</h2>

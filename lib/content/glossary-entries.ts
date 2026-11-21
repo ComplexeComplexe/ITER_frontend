@@ -159,6 +159,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
           content: [
             "Un EBITDA positif signifie que l'entreprise génère de la valeur à partir de son activité opérationnelle. Un EBITDA négatif est un signal d'alerte : l'entreprise consomme plus de ressources qu'elle n'en génère.",
             "La marge d'EBITDA (EBITDA / Chiffre d'affaires) est un indicateur de rentabilité opérationnelle. Son niveau « normal » dépend fortement du secteur et du stade de l'entreprise : comparez-la à celle de vos pairs plutôt qu'à un seuil universel. Les éditeurs SaaS matures affichent en général des marges plus élevées que l'industrie ou le négoce.",
+            "Le [contrôle de gestion externalisé](/services/controle-de-gestion-externalise) permet de rapprocher cette marge du budget et d’expliquer les écarts par activité, produit ou canal.",
             "Un **[DAF externalisé](/daf-externalise)** peut vous aider à calculer et à interpréter votre EBITDA dans le contexte de votre secteur d'activité, et à identifier les leviers d'amélioration. Pour en savoir plus sur les autres indicateurs financiers clés, consultez notre définition du **[BFR](/ressources/glossaire/besoin-fonds-roulement-bfr)**.",
           ],
         },
@@ -796,7 +797,7 @@ export const glossaryEntries: Record<Locale, Partial<Record<GlossaryEntrySlug, G
         {
           heading: "Contrôleur de gestion externalisé",
           content: [
-            "Un **contrôleur de gestion externalisé** peut accompagner une PME dont le besoin ne justifie pas un poste à temps plein. Le devis dépend des entités, des sources de données, du reporting, du budget et des prévisions à produire. Le périmètre est précisé avant le démarrage.",
+            "Un **[contrôleur de gestion externalisé](/services/controle-de-gestion-externalise)** peut accompagner une PME dont le besoin ne justifie pas un poste à temps plein. Le devis dépend des entités, des sources de données, du reporting, du budget et des prévisions à produire. Le périmètre est précisé avant le démarrage.",
             "Au-delà de 500K€ de CA ou 15 collaborateurs, le contrôle de gestion devient indispensable pour piloter efficacement la croissance.",
           ],
         },

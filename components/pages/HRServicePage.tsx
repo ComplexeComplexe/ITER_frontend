@@ -13,6 +13,7 @@ import { editorialWebPageSchema, ITER_AUTHOR } from "@/lib/schemas/editorial";
 import PageByline from "@/components/PageByline";
 import PageLayout from "@/components/PageLayout";
 import { PAGE_REVISIONS } from "@/lib/content/page-revisions";
+import { renderInlineMarkdownLinks } from "@/lib/render-markdown-inline-links";
 
 /**
  * Dedicated HR service page renderer (TICKET 1).
@@ -71,7 +72,7 @@ export default function HRServicePage({
           </h2>
           {content.whatIs.paragraphs.map((p, i) => (
             <p key={i} className="text-muted-foreground leading-relaxed mb-4">
-              {p}
+              {renderInlineMarkdownLinks(p)}
             </p>
           ))}
           {content.whatIs.bullets && (
