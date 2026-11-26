@@ -40,7 +40,7 @@ export default function ToolsExplorer({ tools, categories, locale }: { tools: Ex
         <h3 className="font-heading font-bold text-xl mb-2">{tool.name}</h3>
         <p className="text-xs text-muted-foreground mb-3">{categories[tool.category]}</p>
         <p className="text-sm text-muted-foreground leading-relaxed flex-1">{tool.description}</p>
-        <span className="mt-5 pt-4 border-t border-border text-sm font-semibold text-iter-violet">{t.read} <span aria-hidden="true">→</span></span>
+        <span className="mt-5 pt-4 border-t border-border text-sm font-semibold text-iter-violet">{t.read} <span aria-hidden="true" className="site-decorative-arrow">→</span></span>
       </Link>)}
     </div>
     {!visible.length && <p className="py-12 text-center text-muted-foreground">{t.empty}</p>}

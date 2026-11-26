@@ -48,13 +48,13 @@ export default function MerciPage() {
               </p>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
-                  <span className="text-iter-violet">→</span>
+                  <span className="text-iter-violet site-decorative-arrow" aria-hidden="true">→</span>
                   <Link href="/ressources/blog" className="hover:text-iter-violet hover:underline">
                     Parcourez notre blog finance (cash, reporting, levée…)
                   </Link>
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-iter-violet">→</span>
+                  <span className="text-iter-violet site-decorative-arrow" aria-hidden="true">→</span>
                   <Link
                     href="/ressources/blog/cout-daf-externalise-tarifs-prix-2026"
                     className="hover:text-iter-violet hover:underline"
@@ -63,7 +63,7 @@ export default function MerciPage() {
                   </Link>
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-iter-violet">→</span>
+                  <span className="text-iter-violet site-decorative-arrow" aria-hidden="true">→</span>
                   <Link href="/a-propos" className="hover:text-iter-violet hover:underline">
                     Rencontrez l&apos;équipe Iter Advisors
                   </Link>
@@ -75,7 +75,7 @@ export default function MerciPage() {
               href="/"
               className="inline-flex items-center gap-2 text-iter-violet hover:underline font-medium"
             >
-              ← Retour à l&apos;accueil
+              <span className="site-decorative-arrow" aria-hidden="true">←</span> Retour à l&apos;accueil
             </Link>
           </div>
         </div>

@@ -454,7 +454,7 @@ function StickyCTAFooter({ locale }: { locale: Locale }) {
         }}
         className="w-full px-4 py-3 rounded-full bg-iter-chartreuse text-iter-dark font-semibold text-sm"
       >
-        Planifier →
+        Planifier <span className="site-decorative-arrow" aria-hidden="true">→</span>
       </button>
     </div>
   );

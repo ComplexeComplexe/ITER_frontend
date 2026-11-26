@@ -54,7 +54,7 @@ export default function ToolCard({
         {/* CTA */}
         <div className="inline-flex items-center gap-1 text-iter-violet font-semibold text-sm hover:gap-2 transition-all">
           Voir la fiche
-          <span>→</span>
+          <span className="site-decorative-arrow" aria-hidden="true">→</span>
         </div>
       </div>
     </Link>

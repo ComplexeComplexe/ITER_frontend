@@ -82,7 +82,7 @@ export default function HomePage({
                   </span>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
-                  <span className={styles.arrow} aria-hidden="true">
+                  <span className={`site-decorative-arrow ${styles.arrow}`} aria-hidden="true">
                     ↗
                   </span>
                 </Link>
@@ -107,7 +107,7 @@ export default function HomePage({
                   </summary>
                   <p>{item.desc}</p>
                   <Link locale={locale} href={item.href}>
-                    {item.title} <span aria-hidden="true">→</span>
+                    {item.title} <span aria-hidden="true" className="site-decorative-arrow">→</span>
                   </Link>
                 </details>
               ))}
@@ -128,7 +128,7 @@ export default function HomePage({
                   className={styles.textLink}
                   href={href("/daf-externalise")}
                 >
-                  {t.offer.anchor} <span aria-hidden="true">→</span>
+                  {t.offer.anchor} <span aria-hidden="true" className="site-decorative-arrow">→</span>
                 </Link>
               </p>
               <div className={styles.pricing}>
@@ -137,7 +137,7 @@ export default function HomePage({
                   className={styles.textLink}
                   href={href("/daf-externalise/tarifs")}
                 >
-                  {t.fees} →
+                  {t.fees} <span className="site-decorative-arrow" aria-hidden="true">→</span>
                 </Link>
               </div>
               <nav className={styles.related} aria-label={t.offer.related}>
@@ -171,7 +171,7 @@ export default function HomePage({
                 href={href("/drh-externalise")}
                 className={styles.textLink}
               >
-                {t.rhLink} →
+                {t.rhLink} <span className="site-decorative-arrow" aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
@@ -223,7 +223,7 @@ export default function HomePage({
                 className={styles.textLink}
                 href={href("/a-propos")}
               >
-                {t.team.link} →
+                {t.team.link} <span className="site-decorative-arrow" aria-hidden="true">→</span>
               </Link>
             </div>
             <div className={styles.leads}>
@@ -280,7 +280,7 @@ export default function HomePage({
               target="_blank"
               rel="noopener noreferrer"
             >
-              {t.reviews.source} →
+              {t.reviews.source} <span className="site-decorative-arrow" aria-hidden="true">→</span>
             </a>
           </div>
         </section>
@@ -313,7 +313,7 @@ export default function HomePage({
                 className={styles.textLink}
                 href={href("/daf-externalise")}
               >
-                {t.faq.link} →
+                {t.faq.link} <span className="site-decorative-arrow" aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
@@ -335,7 +335,7 @@ export default function HomePage({
                 href={href("/contact#daf")}
               >
                 {t.contact}
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true" className="site-decorative-arrow">↗</span>
               </Link>
             </div>
             <figure>

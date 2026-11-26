@@ -10,6 +10,9 @@
 .description dt { font-size: 12px; color: var(--site-muted); }
 .description dd { margin-top: 4px; font-size: 15px; line-height: 1.65; }
 .description > div:last-child dd::before { content: "→"; color: var(--site-violet); margin-right: 8px; font-weight: 600; }
+@media (max-width: 767px) {
+  .description > div:last-child dd::before { content: none; }
+}
 .test > :global(section[data-block-key]) { padding-block: 32px; }
 @media (max-width: 640px) { .test > :global(section[data-block-key]) { padding-block: 24px; } }
 @media (max-width: 640px) { .card { grid-template-columns: 36px minmax(0, 1fr); gap: 12px; padding: 18px 16px; } .description, .card > p { grid-column: 2; } .number { font-size: 24px; } }

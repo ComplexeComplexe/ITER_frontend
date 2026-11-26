@@ -33,8 +33,8 @@ export default function ServiceHero({ title, label, lead, intro, primary, second
             <p className="site-lead">{lead}</p>
             {intro && <p className="site-intro">{intro}</p>}
             <div className="site-actions">
-              <Link href={primary.href} className="site-button site-button-primary">{primary.label}<span aria-hidden="true">↗</span></Link>
-              {secondary && <Link href={secondary.href} className="site-button site-button-secondary">{secondary.label}<span aria-hidden="true">↓</span></Link>}
+              <Link href={primary.href} className="site-button site-button-primary">{primary.label}<span aria-hidden="true" className="site-decorative-arrow">↗</span></Link>
+              {secondary && <Link href={secondary.href} className="site-button site-button-secondary">{secondary.label}<span aria-hidden="true" className="site-decorative-arrow">↓</span></Link>}
             </div>
             {proof}
             {family === "rh" ? <HRExpert compact locale={locale} /> : <FinanceExpert compact locale={locale} />}
@@ -42,7 +42,7 @@ export default function ServiceHero({ title, label, lead, intro, primary, second
           <aside className="site-brief" aria-label={ui.brief}>
             <p className="site-eyebrow">{ui.brief}</p>
             <dl>{summary.map(item => <div key={item.label}><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl>
-            <Link href={parityHref("/a-propos#equipe", locale)} className="site-inline-link">{ui.team} <span aria-hidden="true">↗</span></Link>
+            <Link href={parityHref("/a-propos#equipe", locale)} className="site-inline-link">{ui.team} <span aria-hidden="true" className="site-decorative-arrow">↗</span></Link>
           </aside>
         </div>
       </div>

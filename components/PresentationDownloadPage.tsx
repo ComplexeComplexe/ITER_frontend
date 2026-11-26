@@ -34,7 +34,7 @@ export default function PresentationDownloadPage({ offer, locale }: {
             <p className="text-sm font-medium uppercase tracking-wide text-[#6038ec]">PDF · {copy.pages} · {document.size}</p>
             <p className="my-5 text-lg leading-relaxed text-[#61596e]">{copy.help}</p>
             <a href={`/presentations/${document.file}`} download={document.file} type="application/pdf" className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-lg bg-[#6038ec] px-5 py-4 text-center font-medium text-white transition-colors hover:bg-[#4e2dc4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6038ec] motion-reduce:transition-none">
-              {copy.download}<span aria-hidden="true">↓</span>
+              {copy.download}<span aria-hidden="true" className="site-decorative-arrow">↓</span>
             </a>
           </div>
           <div className="order-2 mx-auto w-full max-w-sm overflow-hidden rounded-lg border border-[#e4dff0] bg-[#faf9fd] md:order-1">
