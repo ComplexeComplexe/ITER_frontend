@@ -7,7 +7,7 @@ import { TAX_COMPARISON_MODIFIED } from "@/lib/content/tax-comparison";
 import type { MetadataRoute } from "next";
 import { PAGE_REVISIONS, latestRevision } from "@/lib/content/page-revisions";
 import { DOCUMENTED_CASES } from "@/lib/content/documented-cases";
-import { getAuthorSlugs, THIN_PROFILE_SLUGS } from "@/lib/content/team";
+import { getAuthorSlugs } from "@/lib/content/team";
 import { blogPosts } from "@/lib/content/blog-posts";
 import { tools, CATEGORIES_WITH_PAGE } from "@/data/tools";
 import { getGlossaryPages } from "@/lib/content/glossary-entries";
@@ -47,9 +47,9 @@ interface LocalizedPaths {
 function buildAlternates(paths: LocalizedPaths) {
   return {
     languages: {
-      fr:          `${BASE}${paths.fr}`,
-      en:          `${BASE}/en${paths.en === "/" ? "" : paths.en}`,
-      es:          `${BASE}/es${paths.es === "/" ? "" : paths.es}`,
+      "fr-FR":     `${BASE}${paths.fr}`,
+      "en-GB":     `${BASE}/en${paths.en === "/" ? "" : paths.en}`,
+      "es-ES":     `${BASE}/es${paths.es === "/" ? "" : paths.es}`,
       "x-default": `${BASE}${paths.fr}`,
     },
   };
@@ -544,9 +544,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // ── Author pages ──────────────────────────────────────────────────────────
   // Hreflang cluster: FR /a-propos/<slug>, EN /en/about/<slug>, ES /es/quienes-somos/<slug>.
-  // HYGIENE-FR (2026-10-17) — les fiches en noindex (THIN_PROFILE_SLUGS)
-  // sortent du sitemap : un sitemap ne doit contenir que des pages indexables.
-  for (const slug of getAuthorSlugs().filter((s) => !THIN_PROFILE_SLUGS.has(s))) {
+  // All published team biographies, including Hugo and Gonzalo, are indexable.
+  for (const slug of getAuthorSlugs()) {
     entries.push(
       ...entryAllLocales(
         { fr: `/a-propos/${slug}`, en: `/about/${slug}`, es: `/quienes-somos/${slug}` },

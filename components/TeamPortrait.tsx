@@ -36,9 +36,14 @@ export default function TeamPortrait({ member, variant = "card" }: { member: Str
     top: `${-treatment.crop[1] / treatment.crop[2] * 100}%`,
     filter: `brightness(${treatment.light ?? 1.04}) contrast(0.98) saturate(${treatment.color ?? 0.78})`,
   };
+  // Account for the source photograph extending beyond the square crop.
+  const scale = treatment ? treatment.source[0] / treatment.crop[2] : 1;
+  const sizes = variant === "lead"
+    ? `(max-width: 600px) ${Math.ceil(70 * scale)}vw, ${Math.ceil(450 * scale)}px`
+    : `(max-width: 767px) ${Math.ceil(80 * scale)}px, ${Math.ceil(96 * scale)}px`;
   return (
     <span className={`${styles.frame} ${styles[variant]}`} data-team-portrait={member.slug}>
-      {photo ? <Image src={photo} alt={name} width={640} height={640} sizes={variant === "lead" ? "(max-width: 600px) 70vw, 450px" : "180px"} className={styles.image} style={cropStyle} /> : <span className={styles.initials}>{`${member.firstName?.[0] ?? ""}${member.lastName?.[0] ?? ""}`.toUpperCase()}</span>}
+      {photo ? <Image src={photo} alt={name} width={640} height={640} sizes={sizes} className={styles.image} style={cropStyle} /> : <span className={styles.initials}>{`${member.firstName?.[0] ?? ""}${member.lastName?.[0] ?? ""}`.toUpperCase()}</span>}
     </span>
   );
 }

@@ -215,6 +215,7 @@ export default function ServiceSinglePage({
               alt={heroImage.alt}
               width={800}
               height={450}
+              sizes="(max-width: 816px) calc(100vw - 48px), 768px"
               className="rounded-2xl object-cover w-full"
               loading="lazy"
             />

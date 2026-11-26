@@ -141,6 +141,11 @@ const fallbackData: FallbackMemberData[] = [
     lastName: "Preel",
     roles: { fr: "CFO", en: "CFO", es: "CFO" },
     slug: "sebastien-preel",
+    metaTitle: {
+      fr: "Sébastien Preel, DAF externalisé | Iter Advisors",
+      en: "Sébastien Preel, Fractional CFO | Iter Advisors",
+      es: "Sébastien Preel, CFO externo | Iter Advisors",
+    },
     photo: { url: "/images/team/sebastien-preel.webp" },
     linkedIn: "https://www.linkedin.com/in/spreel/",
     order: 12,
@@ -167,6 +172,11 @@ const fallbackData: FallbackMemberData[] = [
       es: "CFO y M&A"
     },
     slug: "tom-jaufre",
+    metaTitle: {
+      fr: "Tom Jaufre, DAF et fusions-acquisitions | Iter Advisors",
+      en: "Tom Jaufre, CFO & M&A | Iter Advisors",
+      es: "Tom Jaufre, CFO y M&A | Iter Advisors",
+    },
     photo: { url: "/images/team/tom-jaufre.webp" },
     linkedIn: "https://www.linkedin.com/in/tom-jaufre-65904175/",
     order: 8,
@@ -189,6 +199,11 @@ const fallbackData: FallbackMemberData[] = [
     lastName: "Barnicaud",
     roles: { fr: "CFO", en: "CFO", es: "CFO" },
     slug: "jessica-barnicaud",
+    metaTitle: {
+      fr: "Jessica Barnicaud, DAF externalisée | Iter Advisors",
+      en: "Jessica Barnicaud, Fractional CFO | Iter Advisors",
+      es: "Jessica Barnicaud, CFO externa | Iter Advisors",
+    },
     photo: { url: "/images/team/jessica-barnicaud.webp" },
     linkedIn: "https://www.linkedin.com/in/jessica-barnicaud/",
     order: 9,
@@ -215,6 +230,11 @@ const fallbackData: FallbackMemberData[] = [
       es: "Jefe de Finanzas y Control"
     },
     slug: "benjamin-carlot",
+    metaTitle: {
+      fr: "Benjamin Carlot, finance et contrôle | Iter Advisors",
+      en: "Benjamin Carlot, Finance & Controlling | Iter Advisors",
+      es: "Benjamin Carlot, finanzas y control | Iter Advisors",
+    },
     photo: { url: "/images/team/benjamin-carlot.webp" },
     linkedIn: "https://www.linkedin.com/in/benjamin-carlot-fractional-cfo-43303120/",
     order: 10,
@@ -241,6 +261,11 @@ const fallbackData: FallbackMemberData[] = [
       es: "CFO y Oficial de Datos"
     },
     slug: "christophe-hoarau",
+    metaTitle: {
+      fr: "Christophe Hoarau, DAF et Data Officer | Iter Advisors",
+      en: "Christophe Hoarau, CFO & Data Officer | Iter Advisors",
+      es: "Christophe Hoarau, CFO y Data Officer | Iter Advisors",
+    },
     photo: { url: "/images/team/christophe-hoarau.webp" },
     linkedIn: "https://www.linkedin.com/in/christophe-hoarau-2bb8b8ab/",
     order: 11,
@@ -478,11 +503,3 @@ export function getAuthorSlugs(): string[] {
     .filter((m) => m.bio && m.bio.fr && m.bio.en && m.bio.es)
     .map((m) => m.slug);
 }
-
-/**
- * HYGIENE-FR (2026-10-17) — fiches d'équipe de moins de 80 mots (Hugo
- * Lepresle, Gonzalo Serratosa). Elles restent en ligne et liées, mais passent
- * en `noindex` et sortent du sitemap tant qu'elles ne sont pas enrichies :
- * une fiche de deux phrases indexée n'apporte rien et dilue le reste.
- */
-export const THIN_PROFILE_SLUGS = new Set<string>(["hugo-lepresle", "gonzalo-serratosa-de-caralt"]);
