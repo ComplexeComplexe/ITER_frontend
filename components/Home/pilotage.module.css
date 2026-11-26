@@ -777,7 +777,10 @@
     grid-template-columns: 1fr;
   }
   .needs > a {
-    padding: 22px 22px 38px;
+    padding: 22px;
+  }
+  .needs .arrow {
+    display: none;
   }
   .needs h3 {
     margin: 10px 0;
