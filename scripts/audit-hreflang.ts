@@ -18,8 +18,13 @@
  */
 
 const BASE = process.env.BASE ?? "https://www.iteradvisors.com";
-const LIMIT = process.env.LIMIT ? parseInt(process.env.LIMIT, 10) : 200;
+const LIMIT = process.env.LIMIT ? parseInt(process.env.LIMIT, 10) : Infinity;
 const CONCURRENCY = 5;
+const PUBLIC = "https://www.iteradvisors.com";
+const normalize = (url: string) => url.replace(/\/$/, "");
+const fetchUrl = (url: string) => `${BASE}${new URL(url).pathname}`;
+const sitemapAlternates = new Map<string, HreflangEntry[]>();
+const attribute = (tag: string, name: string) => tag.match(new RegExp(`\\b${name}=["']([^"']*)["']`, "i"))?.[1];
 
 type HreflangEntry = { hreflang: string; href: string };
 type PageReport = {
@@ -27,6 +32,8 @@ type PageReport = {
   status: number;
   alternates: HreflangEntry[];
   hasXDefault: boolean;
+  noindex?: boolean;
+  canonical?: string;
 };
 type Issue = {
   url: string;
@@ -36,7 +43,12 @@ type Issue = {
     | "duplicate_hreflang"
     | "no_reciprocity"
     | "broken_target"
-    | "redirect_target";
+    | "redirect_target"
+    | "noindex_target"
+    | "non_self_canonical"
+    | "html_xml_mismatch"
+    | "missing_self_reference"
+    | "inconsistent_cluster";
   detail: string;
 };
 
@@ -46,8 +58,12 @@ async function fetchSitemapUrls(): Promise<string[]> {
     throw new Error(`sitemap.xml returned ${res.status}`);
   }
   const xml = await res.text();
+  for (const [block] of xml.matchAll(/<url>[\s\S]*?<\/url>/g)) {
+    const url = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
+    if (url) sitemapAlternates.set(normalize(url), extractHreflang(block.replaceAll("xhtml:link", "link")));
+  }
   const urls = Array.from(xml.matchAll(/<loc>([^<]+)<\/loc>/g)).map((m) =>
-    m[1].trim(),
+    normalize(m[1].trim()),
   );
   // Dedupe and cap
   const unique = Array.from(new Set(urls));
@@ -72,17 +88,20 @@ function extractHreflang(html: string): HreflangEntry[] {
 
 async function fetchPageReport(url: string): Promise<PageReport | { url: string; error: string }> {
   try {
-    const res = await fetch(url, { redirect: "manual" });
+    if (new URL(url).origin !== PUBLIC) throw new Error(`Unexpected target domain: ${url}`);
+    const res = await fetch(fetchUrl(url), { redirect: "manual", signal: AbortSignal.timeout(30000) });
     if (res.status >= 300 && res.status < 400) {
       return { url, status: res.status, alternates: [], hasXDefault: false };
     }
     if (!res.ok) {
       return { url, status: res.status, alternates: [], hasXDefault: false };
     }
-    const html = await res.text();
+    const html = (await res.text()).replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
     const alternates = extractHreflang(html);
     const hasXDefault = alternates.some((a) => a.hreflang === "x-default");
-    return { url, status: res.status, alternates, hasXDefault };
+    const canonical = [...html.matchAll(/<link\b[^>]*>/gi)].map(m => m[0]).find(tag => attribute(tag, "rel") === "canonical");
+    const noindex = /noindex/i.test(res.headers.get("x-robots-tag") ?? "") || [...html.matchAll(/<meta\b[^>]*>/gi)].some(([tag]) => /^(robots|googlebot)$/i.test(attribute(tag, "name") ?? "") && /noindex/i.test(attribute(tag, "content") ?? ""));
+    return { url, status: res.status, alternates, hasXDefault, canonical: canonical && attribute(canonical, "href"), noindex };
   } catch (e) {
     return { url, error: e instanceof Error ? e.message : String(e) };
   }
@@ -119,10 +138,25 @@ async function main() {
       issues.push({ url: r.url, kind: "fetch_error", detail: r.error });
       continue;
     }
-    byUrl.set(r.url, r);
+    byUrl.set(normalize(r.url), r);
   }
 
+  const missing = [...new Set([...byUrl.values()].flatMap(r => r.alternates.map(a => normalize(a.href))))].filter(url => !byUrl.has(url));
+  for (const r of await pMap(missing, CONCURRENCY, fetchPageReport)) {
+    if ("error" in r) issues.push({ url: r.url, kind: "fetch_error", detail: r.error });
+    else byUrl.set(normalize(r.url), r);
+  }
   const valid = Array.from(byUrl.values());
+  const signature = (entries: HreflangEntry[]) => JSON.stringify(entries.map(a => [a.hreflang, normalize(a.href)]).sort());
+  for (const r of valid) {
+    if (r.status !== 200) issues.push({ url: r.url, kind: "broken_target", detail: `HTTP ${r.status}` });
+    if (r.noindex) issues.push({ url: r.url, kind: "noindex_target", detail: "Excluded from indexation" });
+    if (normalize(r.canonical ?? "") !== normalize(r.url)) issues.push({ url: r.url, kind: "non_self_canonical", detail: r.canonical ?? "missing" });
+    if (sitemapAlternates.has(normalize(r.url)) && signature(r.alternates) !== signature(sitemapAlternates.get(normalize(r.url))!)) issues.push({ url: r.url, kind: "html_xml_mismatch", detail: "HTML and sitemap language sets differ" });
+    const pathname = new URL(r.url).pathname;
+    const ownLanguage = /^\/en(?:\/|$)/.test(pathname) ? "en-GB" : /^\/es(?:\/|$)/.test(pathname) ? "es-ES" : "fr-FR";
+    if (r.alternates.length && !r.alternates.some(a => a.hreflang === ownLanguage && normalize(a.href) === normalize(r.url))) issues.push({ url: r.url, kind: "missing_self_reference", detail: ownLanguage });
+  }
 
   // 1. Missing x-default
   for (const r of valid) {
@@ -135,7 +169,7 @@ async function main() {
   for (const r of valid) {
     const seen = new Map<string, string>();
     for (const a of r.alternates) {
-      if (seen.has(a.hreflang) && seen.get(a.hreflang) !== a.href) {
+      if (seen.has(a.hreflang)) {
         issues.push({
           url: r.url,
           kind: "duplicate_hreflang",
@@ -151,9 +185,9 @@ async function main() {
   for (const r of valid) {
     for (const a of r.alternates) {
       if (a.hreflang === "x-default") continue;
-      const target = byUrl.get(a.href);
+      const target = byUrl.get(normalize(a.href));
       if (!target) continue; // target might be outside our crawl set
-      const reverse = target.alternates.find((x) => x.href === r.url);
+      const reverse = target.alternates.find((x) => normalize(x.href) === normalize(r.url));
       if (!reverse) {
         issues.push({
           url: r.url,
@@ -161,26 +195,19 @@ async function main() {
           detail: `${r.url} → hreflang=${a.hreflang} → ${a.href}, but reverse missing`,
         });
       }
+      if (signature(target.alternates) !== signature(r.alternates)) issues.push({ url: r.url, kind: "inconsistent_cluster", detail: `Cluster differs at ${a.href}` });
     }
   }
 
-  // 4. Broken / redirect targets — fast HEAD on every distinct target
+  // 4. Every target was fetched above, including alternates outside the sitemap.
   const distinctTargets = new Set<string>();
   for (const r of valid) for (const a of r.alternates) distinctTargets.add(a.href);
-  const targetStatuses = await pMap(Array.from(distinctTargets), CONCURRENCY, async (u) => {
-    try {
-      const res = await fetch(u, { method: "HEAD", redirect: "manual" });
-      return { url: u, status: res.status };
-    } catch {
-      return { url: u, status: 0 };
-    }
-  });
-  const statusByUrl = new Map(targetStatuses.map((t) => [t.url, t.status]));
+  const statusByUrl = new Map([...distinctTargets].map(url => [url, byUrl.get(normalize(url))?.status ?? 0]));
   for (const r of valid) {
     for (const a of r.alternates) {
       const s = statusByUrl.get(a.href);
       if (s === undefined) continue;
-      if (s >= 400) {
+      if (s === 0 || s >= 400) {
         issues.push({ url: r.url, kind: "broken_target", detail: `hreflang=${a.hreflang} → ${a.href} returned ${s}` });
       } else if (s >= 300 && s < 400) {
         issues.push({ url: r.url, kind: "redirect_target", detail: `hreflang=${a.hreflang} → ${a.href} returned ${s}` });
@@ -197,6 +224,7 @@ async function main() {
       return acc;
     }, {}),
     issues,
+    pages: valid,
   };
   console.log(JSON.stringify(summary, null, 2));
   if (issues.length > 0) {

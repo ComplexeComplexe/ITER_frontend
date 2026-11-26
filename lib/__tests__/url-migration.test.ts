@@ -29,7 +29,7 @@ describe('November language URL migration', () => {
   });
   it('publishes each new address exactly once and removes every old address from sitemap alternates', () => {
     const entries = sitemap();
-    expect(entries).toHaveLength(434);
+    expect(new Set(entries.map(entry => entry.url)).size).toBe(entries.length);
     for (const [old, current] of Object.entries(mapping)) {
       expect(entries.filter(entry => entry.url === 'https://www.iteradvisors.com' + current), current).toHaveLength(1);
       expect(JSON.stringify(entries)).not.toContain('https://www.iteradvisors.com' + old + '"');

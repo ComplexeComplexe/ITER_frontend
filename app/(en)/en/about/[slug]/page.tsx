@@ -10,7 +10,6 @@ import {
   getTeamMemberBySlug,
   authorPageTitle,
   authorPageDescription,
-  THIN_PROFILE_SLUGS,
 } from "@/lib/content/team";
 import { blogPosts } from "@/lib/content/blog-posts";
 
@@ -45,7 +44,6 @@ export async function generateMetadata({
     description: member.metaDescription ?? authorPageDescription(member.bio),
     path: `/en/about/${slug}`,
     localizedPaths: localizedPathsFor(slug),
-    noindex: THIN_PROFILE_SLUGS.has(slug),
   });
 }
 

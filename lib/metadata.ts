@@ -129,7 +129,9 @@ export function buildMetadata({
       : "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
     alternates: {
       canonical: url,
-      languages,
+      // Hreflang translations must be indexable. Careers listings remain
+      // intentionally noindex, so they must not advertise an excluded cluster.
+      ...(noindex ? {} : { languages }),
     },
     openGraph: {
       title,

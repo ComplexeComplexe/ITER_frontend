@@ -13,6 +13,6 @@ export default async function Page() {
   const schema = buildDafSubFaqSchema(content, locale);
   return <>
     {schema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />}
-    <DafSubPage locale={locale} content={content} cmsNavigation={await getCmsNavigation(locale)} contactContext="daf" heroImage={{ src: "/images/stock/metier-daf.png", alt: "A CFO reviews financial dashboards" }} />
+    <DafSubPage locale={locale} content={content} cmsNavigation={await getCmsNavigation(locale)} contactContext="daf" heroImage={{ src: "/images/stock/metier-daf.webp", alt: "A CFO reviews financial dashboards" }} />
   </>;
 }
