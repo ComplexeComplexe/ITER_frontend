@@ -540,7 +540,7 @@ export default async function Page() {
         </p>
         <ul className="space-y-2 text-slate-700">
           <li className="flex gap-2">
-            <span aria-hidden className="text-iter-violet">→</span>
+            <span aria-hidden className="text-iter-violet site-decorative-arrow">→</span>
             <span>
               Consultez notre{' '}
               <Link
@@ -553,7 +553,7 @@ export default async function Page() {
             </span>
           </li>
           <li className="flex gap-2">
-            <span aria-hidden className="text-iter-violet">→</span>
+            <span aria-hidden className="text-iter-violet site-decorative-arrow">→</span>
             <span>
               Besoin de coordonner votre direction financière en France et en Espagne ? Découvrez
               notre offre de{' '}

@@ -565,7 +565,7 @@ export default function DafPage({
                 : locale === "en"
                   ? "Book a meeting"
                   : "Reservar una cita"}
-              <span aria-hidden>→</span>
+              <span aria-hidden className="site-decorative-arrow">→</span>
             </a>
           </div>
         </div>
@@ -711,7 +711,7 @@ export default function DafPage({
                 : locale === "en"
                   ? "Book a free diagnostic"
                   : "Reservar un diagnóstico gratuito"}
-              <span aria-hidden>→</span>
+              <span aria-hidden className="site-decorative-arrow">→</span>
             </a>
           </div>
         </div>
@@ -883,7 +883,7 @@ export default function DafPage({
                 : locale === "en"
                   ? "Request a quote"
                   : "Solicitar un presupuesto"}
-              <span aria-hidden>→</span>
+              <span aria-hidden className="site-decorative-arrow">→</span>
             </a>
           </div>
         </div>
@@ -1473,7 +1473,7 @@ export default function DafPage({
                 href={l.href}
                 className="text-sm font-medium text-iter-violet hover:underline"
               >
-                {l.label} →
+                {l.label} <span className="site-decorative-arrow" aria-hidden="true">→</span>
               </Link>
             ))}
           </div>
@@ -1744,8 +1744,17 @@ function Footnotes({ items, locale }: { items: SourceCitation[]; locale: Locale 
           {items.map((c) => (
             <li key={c.id} id={`footnote-${c.id}`}>
               {c.text}{" "}
-              <a href={c.url} target="_blank" rel="noopener" className="text-iter-violet hover:underline">
-                ↗
+              <a
+                href={c.url}
+                target="_blank"
+                rel="noopener"
+                className="text-iter-violet hover:underline"
+                aria-label={locale === "fr" ? "Consulter la source" : locale === "en" ? "View source" : "Ver fuente"}
+              >
+                <span className="site-mobile-arrow-label">
+                  {locale === "fr" ? "Consulter la source" : locale === "en" ? "View source" : "Ver fuente"}
+                </span>
+                <span className="site-decorative-arrow" aria-hidden="true">↗</span>
               </a>
             </li>
           ))}

@@ -430,3 +430,18 @@
 html.iter-consent-stored [data-consent-banner] {
   display: none;
 }
+
+/* Decorative Unicode arrows can render as emoji on iOS. Hide their shared
+   marker on mobile, while keeping source links readable when the icon was
+   their only visible label. No script or font substitution is needed. */
+.site-mobile-arrow-label {
+  display: none;
+}
+@media (max-width: 767px) {
+  .site-decorative-arrow {
+    display: none;
+  }
+  .site-mobile-arrow-label {
+    display: inline;
+  }
+}

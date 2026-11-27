@@ -86,12 +86,12 @@ export default function PresentationsPage() {
                       {document && presentation.offer ? (
                         <Link href={presentationPath(presentation.offer, language.code)} prefetch={false} hrefLang={language.code} data-language={language.code} className={`${styles.languageLink} flex min-h-14 items-center justify-between gap-3 rounded-lg px-4 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6038ec]`} aria-label={`${presentation.title} : consulter la présentation en ${language.label}`}>
                           <span lang={language.code} className="font-medium">{language.label}</span>
-                          <span className="whitespace-nowrap text-sm text-[#61596e]">Voir <span aria-hidden="true">→</span></span>
+                          <span className="whitespace-nowrap text-sm text-[#61596e]">Voir <span aria-hidden="true" className="site-decorative-arrow">→</span></span>
                         </Link>
                       ) : document ? (
                         <a href={`/presentations/${document.file}`} hrefLang={language.code} data-language={language.code} type="application/pdf" className={`${styles.languageLink} flex min-h-14 items-center justify-between gap-3 rounded-lg px-4 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6038ec]`} aria-label={`${presentation.title} : ouvrir le PDF en ${language.label}, ${document.size}`}>
                           <span lang={language.code} className="font-medium">{language.label}</span>
-                          <span className="whitespace-nowrap text-sm text-[#61596e]">PDF · {document.size} <span aria-hidden="true">↗</span></span>
+                          <span className="whitespace-nowrap text-sm text-[#61596e]">PDF · {document.size} <span aria-hidden="true" className="site-decorative-arrow">↗</span></span>
                         </a>
                       ) : (
                         <div className="flex min-h-14 items-center justify-between gap-3 rounded-lg bg-[#f8f7fa] px-4 py-3 text-[#6e6679]">
@@ -110,7 +110,7 @@ export default function PresentationsPage() {
             <h2 id="partners-title" className="font-heading text-xl font-bold">Présentation partenaires</h2>
             <p className="mt-2 text-[#61596e]">Une présentation de l’offre finance, des références et des missions pour les partenaires d’Iter Advisors.</p>
           </div>
-          <a href="/presentations/iter-advisors-partenaires-fr.pdf" hrefLang="fr" data-language="fr" type="application/pdf" className={`${styles.languageLink} mt-5 inline-flex min-h-12 shrink-0 items-center rounded-lg px-5 py-3 font-medium focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6038ec] sm:mt-0`}>Français · PDF <span className="ml-3" aria-hidden="true">↗</span></a>
+          <a href="/presentations/iter-advisors-partenaires-fr.pdf" hrefLang="fr" data-language="fr" type="application/pdf" className={`${styles.languageLink} mt-5 inline-flex min-h-12 shrink-0 items-center rounded-lg px-5 py-3 font-medium focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6038ec] sm:mt-0`}>Français · PDF <span className="ml-3 site-decorative-arrow" aria-hidden="true">↗</span></a>
         </section>
         <p className="mt-8 text-sm text-[#61596e]">Iter Advisors · Finance & RH · France et Espagne</p>
       </div>

@@ -29,7 +29,7 @@ export default function HeroSection({ locale }: { locale: Locale }) {
                 className={styles.primary}
               >
                 {t.contact}
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true" className="site-decorative-arrow">↗</span>
               </Link>
             </div>
             <div className={styles.proofs}>
@@ -67,7 +67,7 @@ export default function HeroSection({ locale }: { locale: Locale }) {
             <strong>{t.rhSignal}</strong> {t.rhSignalText}
           </p>
           <Link locale={locale} href={parityHref("/drh-externalise", locale)}>
-            {t.rhLink} <span aria-hidden="true">→</span>
+            {t.rhLink} <span aria-hidden="true" className="site-decorative-arrow">→</span>
           </Link>
         </div>
       </div>

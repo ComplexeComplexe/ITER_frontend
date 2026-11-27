@@ -234,7 +234,7 @@ export default function CategoryPage({
                       className="inline-flex items-center gap-2 px-6 py-3 text-iter-violet font-semibold hover:gap-3 transition-all"
                     >
                       Lire l&apos;avis complet
-                      <span>→</span>
+                      <span className="site-decorative-arrow" aria-hidden="true">→</span>
                     </Link>
                   )}
                 </div>

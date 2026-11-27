@@ -179,7 +179,7 @@ export default function DafLocalPage({
                 {paragraph}
               </p>
             ))}
-            {section.links && <ul className="flex flex-wrap gap-x-6 gap-y-3 mt-6">{section.links.map(link => <li key={link.href}><Link locale={locale} className="site-inline-link" href={parityHref(link.href, locale)}>{link.label} ↗</Link></li>)}</ul>}
+            {section.links && <ul className="flex flex-wrap gap-x-6 gap-y-3 mt-6">{section.links.map(link => <li key={link.href}><Link locale={locale} className="site-inline-link" href={parityHref(link.href, locale)}>{link.label} <span className="site-decorative-arrow" aria-hidden="true">↗</span></Link></li>)}</ul>}
           </div>
         </section>
       ))}
@@ -391,10 +391,11 @@ export default function DafLocalPage({
               className="inline-flex items-center gap-2 text-iter-violet hover:text-iter-violet/80 font-semibold transition-colors"
             >
               {locale === "fr"
-                ? `Voir les ${TRUSTFOLIO_REVIEW_COUNT} avis sur Trustfolio →`
+                ? `Voir les ${TRUSTFOLIO_REVIEW_COUNT} avis sur Trustfolio`
                 : locale === "en"
-                  ? `View all ${TRUSTFOLIO_REVIEW_COUNT} reviews on Trustfolio →`
-                  : `Ver las ${TRUSTFOLIO_REVIEW_COUNT} opiniones en Trustfolio →`}
+                  ? `View all ${TRUSTFOLIO_REVIEW_COUNT} reviews on Trustfolio`
+                  : `Ver las ${TRUSTFOLIO_REVIEW_COUNT} opiniones en Trustfolio`}{" "}
+              <span className="site-decorative-arrow" aria-hidden="true">→</span>
             </a>
           </div>
         </div>
