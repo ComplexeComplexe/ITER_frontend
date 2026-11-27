@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1170" viewBox="0 0 1600 1170" role="img" aria-labelledby="title desc" xml:lang="fr"><title id="title">Du grand livre au reporting de gestion</title><desc id="desc">Illustration pédagogique. Chiffres entièrement fictifs, en k€.</desc><rect width="1600" height="1170" fill="#f6f5fa"/><g font-family="Arial, sans-serif">
+<text x="76" y="70" font-size="21" fill="#4b2fc7" font-weight="700" text-anchor="start">PENNYLANE ET LE TRAVAIL DU CFO</text>
+<text x="76" y="131" font-size="42" fill="#24232f" font-weight="700" text-anchor="start">Du grand livre au reporting de gestion</text>
+<text x="76" y="181" font-size="25" fill="#666475" font-weight="400" text-anchor="start">Illustration pédagogique. Chiffres entièrement fictifs, en k€.</text>
+<rect x="76" y="220" width="461" height="146" rx="18" fill="#fff" stroke="#dedbe9" stroke-width="2"/>
+<text x="101" y="269" font-size="27" fill="#24232f" font-weight="700" text-anchor="start">1. Pennylane</text>
+<text x="101" y="309" font-size="22" fill="#666475" font-weight="400" text-anchor="start">Factures et transactions</text>
+<text x="101" y="340" font-size="22" fill="#666475" font-weight="400" text-anchor="start">Catégories et périodes</text>
+<rect x="569" y="220" width="461" height="146" rx="18" fill="#fff" stroke="#dedbe9" stroke-width="2"/>
+<text x="594" y="269" font-size="27" fill="#24232f" font-weight="700" text-anchor="start">2. Contrôles de clôture</text>
+<text x="594" y="309" font-size="22" fill="#666475" font-weight="400" text-anchor="start">Complétude et affectations</text>
+<text x="594" y="340" font-size="22" fill="#666475" font-weight="400" text-anchor="start">Écritures de régularisation</text>
+<rect x="1062" y="220" width="461" height="146" rx="18" fill="#fff" stroke="#dedbe9" stroke-width="2"/>
+<text x="1087" y="269" font-size="27" fill="#24232f" font-weight="700" text-anchor="start">3. Excel ou Google Sheets</text>
+<text x="1087" y="309" font-size="22" fill="#666475" font-weight="400" text-anchor="start">Reporting financier</text>
+<text x="1087" y="340" font-size="22" fill="#666475" font-weight="400" text-anchor="start">Reporting de trésorerie</text>
+<rect x="76" y="404" width="708" height="590" rx="18" fill="#fff" stroke="#dedbe9" stroke-width="2"/>
+<text x="104" y="459" font-size="29" fill="#24232f" font-weight="700" text-anchor="start">Reporting financier</text>
+<text x="104" y="500" font-size="19" fill="#666475" font-weight="400" text-anchor="start">Exemple reconstitué hors interface Pennylane</text>
+<text x="546" y="559" font-size="20" fill="#666475" font-weight="700" text-anchor="end">Mois 1</text>
+<text x="639" y="559" font-size="20" fill="#666475" font-weight="700" text-anchor="end">Mois 2</text>
+<text x="732" y="559" font-size="20" fill="#666475" font-weight="700" text-anchor="end">Mois 3</text>
+<text x="104" y="604" font-size="22" fill="#24232f" font-weight="400" text-anchor="start">Chiffre d’affaires</text>
+<text x="546" y="604" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">120</text>
+<text x="639" y="604" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">135</text>
+<text x="732" y="604" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">150</text>
+<text x="104" y="662" font-size="22" fill="#24232f" font-weight="400" text-anchor="start">Coûts directs</text>
+<text x="546" y="662" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">-42</text>
+<text x="639" y="662" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">-47</text>
+<text x="732" y="662" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">-52</text>
+<rect x="94" y="686" width="672" height="52" rx="8" fill="#eeeafa"/>
+<text x="104" y="720" font-size="22" fill="#24232f" font-weight="700" text-anchor="start">Marge brute</text>
+<text x="546" y="720" font-size="23" fill="#4b2fc7" font-weight="700" text-anchor="end">78</text>
+<text x="639" y="720" font-size="23" fill="#4b2fc7" font-weight="700" text-anchor="end">88</text>
+<text x="732" y="720" font-size="23" fill="#4b2fc7" font-weight="700" text-anchor="end">98</text>
+<text x="104" y="778" font-size="22" fill="#24232f" font-weight="400" text-anchor="start">Charges de structure</text>
+<text x="546" y="778" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">-63</text>
+<text x="639" y="778" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">-67</text>
+<text x="732" y="778" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">-71</text>
+<rect x="94" y="802" width="672" height="52" rx="8" fill="#eeeafa"/>
+<text x="104" y="836" font-size="22" fill="#24232f" font-weight="700" text-anchor="start">Résultat d’exploitation</text>
+<text x="546" y="836" font-size="23" fill="#4b2fc7" font-weight="700" text-anchor="end">15</text>
+<text x="639" y="836" font-size="23" fill="#4b2fc7" font-weight="700" text-anchor="end">21</text>
+<text x="732" y="836" font-size="23" fill="#4b2fc7" font-weight="700" text-anchor="end">27</text>
+<text x="104" y="959" font-size="20" fill="#666475" font-weight="400" text-anchor="start">Charges et produits rattachés à leur période.</text>
+<rect x="816" y="404" width="708" height="590" rx="18" fill="#fff" stroke="#dedbe9" stroke-width="2"/>
+<text x="844" y="459" font-size="29" fill="#24232f" font-weight="700" text-anchor="start">Reporting de trésorerie</text>
+<text x="844" y="500" font-size="19" fill="#666475" font-weight="400" text-anchor="start">Exemple reconstitué hors interface Pennylane</text>
+<text x="1286" y="559" font-size="20" fill="#666475" font-weight="700" text-anchor="end">Mois 1</text>
+<text x="1379" y="559" font-size="20" fill="#666475" font-weight="700" text-anchor="end">Mois 2</text>
+<text x="1472" y="559" font-size="20" fill="#666475" font-weight="700" text-anchor="end">Mois 3</text>
+<text x="844" y="604" font-size="22" fill="#24232f" font-weight="400" text-anchor="start">Solde d’ouverture</text>
+<text x="1286" y="604" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">80</text>
+<text x="1379" y="604" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">88</text>
+<text x="1472" y="604" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">101</text>
+<text x="844" y="662" font-size="22" fill="#24232f" font-weight="400" text-anchor="start">Encaissements</text>
+<text x="1286" y="662" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">110</text>
+<text x="1379" y="662" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">125</text>
+<text x="1472" y="662" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">142</text>
+<text x="844" y="720" font-size="22" fill="#24232f" font-weight="400" text-anchor="start">Décaissements</text>
+<text x="1286" y="720" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">-102</text>
+<text x="1379" y="720" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">-112</text>
+<text x="1472" y="720" font-size="23" fill="#24232f" font-weight="400" text-anchor="end">-119</text>
+<rect x="834" y="744" width="672" height="52" rx="8" fill="#eeeafa"/>
+<text x="844" y="778" font-size="22" fill="#24232f" font-weight="700" text-anchor="start">Flux net</text>
+<text x="1286" y="778" font-size="23" fill="#4b2fc7" font-weight="700" text-anchor="end">8</text>
+<text x="1379" y="778" font-size="23" fill="#4b2fc7" font-weight="700" text-anchor="end">13</text>
+<text x="1472" y="778" font-size="23" fill="#4b2fc7" font-weight="700" text-anchor="end">23</text>
+<rect x="834" y="802" width="672" height="52" rx="8" fill="#eeeafa"/>
+<text x="844" y="836" font-size="22" fill="#24232f" font-weight="700" text-anchor="start">Solde de clôture</text>
+<text x="1286" y="836" font-size="23" fill="#4b2fc7" font-weight="700" text-anchor="end">88</text>
+<text x="1379" y="836" font-size="23" fill="#4b2fc7" font-weight="700" text-anchor="end">101</text>
+<text x="1472" y="836" font-size="23" fill="#4b2fc7" font-weight="700" text-anchor="end">124</text>
+<text x="844" y="959" font-size="20" fill="#666475" font-weight="400" text-anchor="start">Encaissements et paiements selon leur échéance.</text>
+<text x="76" y="1056" font-size="24" fill="#24232f" font-weight="700" text-anchor="start">Processus décrit par Florent Greth, illustré avec des données fictives.</text>
+<text x="76" y="1098" font-size="23" fill="#666475" font-weight="400" text-anchor="start">Aucun dossier client, aucun montant réel, aucun résultat attribué à Pennylane.</text>
+</g></svg>

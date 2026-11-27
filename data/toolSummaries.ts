@@ -1,5 +1,6 @@
+import pennylaneExperience from './pennylaneExperience.json';
 export const descriptions: Record<string, [string, string, string]> = {
-  pennylane: ['Comptabilité centralisée et précomptabilité. Notre retour : quatre ans d’usage, avec une réserve sur le reporting.', 'Centralised accounting and pre-accounting. Our experience: four years of use, with a reservation about reporting.', 'Contabilidad centralizada y preparación contable. Nuestra experiencia: cuatro años de uso, con una reserva sobre el reporting.'],
+  pennylane: [pennylaneExperience.fr.summary, pennylaneExperience.en.summary, pennylaneExperience.es.summary],
   agicap: ['Prévision de trésorerie : rapprocher les soldes, les échéances et les hypothèses de paiement.', 'Cash forecasting: reconcile balances, due dates and payment assumptions.', 'Previsión de tesorería: conciliar saldos, vencimientos e hipótesis de pago.'],
   spendesk: ['Dépenses et achats : clarifier les validations, les justificatifs et le suivi budgétaire.', 'Expenses and purchasing: clarify approvals, receipts and budget monitoring.', 'Gastos y compras: definir aprobaciones, justificantes y seguimiento presupuestario.'],
   payfit: ['Paie et RH : examiner la convention collective, les variables et le contrôle des bulletins.', 'Payroll and HR: check collective agreements, payroll inputs and payslip controls.', 'Nómina y RR. HH.: revisar convenios, variables y controles de nómina.'],

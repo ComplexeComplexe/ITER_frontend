@@ -727,7 +727,7 @@
           "id": "pennylane",
           "title": "Quand choisir Pennylane pour la facturation électronique ?",
           "paragraphs": [
-            "Pennylane figure dans la liste DGFiP des opérateurs satisfaisant aux conditions, tests d’interopérabilité compris, consultée le 6 octobre 2026. Nous utilisons Pennylane depuis quatre ans pour environ la moitié de nos clients. Nous apprécions la centralisation comptable et la préparation d’une précomptabilité propre ; le reporting reste un point à compléter selon le besoin.",
+            "Pennylane figure dans la liste DGFiP des opérateurs satisfaisant aux conditions, tests d’interopérabilité compris, consultée le 6 octobre 2026. Florent Greth utilise Pennylane depuis février 2024 et l’intègre pour des entreprises en France. Dans les missions décrites, le reporting financier et de trésorerie reste préparé sur Excel ou Google Sheets. Iter Advisors est partenaire de Pennylane.",
             "Nous privilégions la solution intégrée lorsque l’entreprise facture déjà dans Pennylane ou peut y basculer avec des entités simples. Si un progiciel de gestion intégré (ERP) métier doit rester la source de facturation, nous demandons une démonstration du connecteur et des retours de statut. Les factures au secteur public doivent également figurer dans la démonstration lorsqu’elles représentent un flux important."
           ],
           "bullets": [],
@@ -1970,7 +1970,7 @@
           "id": "pennylane",
           "title": "When should you choose Pennylane for electronic invoicing?",
           "paragraphs": [
-            "Pennylane appears on the DGFiP list of operators meeting the requirements, including interoperability tests, checked on 6 October 2026. We have used Pennylane for four years for approximately half our clients. We value accounting centralisation and clean pre-accounting preparation; reporting needs additional work depending on requirements.",
+            "Pennylane appears on the DGFiP list of operators meeting the requirements, including interoperability tests, checked on 6 October 2026. Florent Greth has used Pennylane since February 2024 and implements it for businesses in France. In the engagements described, financial and cash reporting is still prepared in Excel or Google Sheets. Iter Advisors is a Pennylane partner.",
             "We favour an integrated solution when the company already invoices in Pennylane or can move simple entities into it. If a business-specific enterprise resource planning system (ERP) must remain the invoice source, we request a connector and status-return demonstration. Public-sector invoices should also feature in the demonstration where they represent a significant flow."
           ],
           "bullets": [],
@@ -3213,7 +3213,7 @@
           "id": "pennylane",
           "title": "¿Cuándo elegir Pennylane para la facturación electrónica?",
           "paragraphs": [
-            "Pennylane figura en la lista DGFiP de operadores que cumplen las condiciones, incluidas las pruebas de interoperabilidad, consultada el 6 de octubre de 2026. Utilizamos Pennylane desde hace cuatro años para aproximadamente la mitad de nuestros clientes. Valoramos la centralización contable y la preparación de datos limpios; el reporting requiere complementos según las necesidades.",
+            "Pennylane figura en la lista DGFiP de operadores que cumplen las condiciones, incluidas las pruebas de interoperabilidad, consultada el 6 de octubre de 2026. Florent Greth utiliza Pennylane desde febrero de 2024 y lo implanta para empresas en Francia. En los proyectos descritos, el reporting financiero y de tesorería sigue preparándose en Excel o Google Sheets. Iter Advisors es socio de Pennylane.",
             "Priorizamos la solución integrada cuando la empresa factura ya en Pennylane o puede trasladar entidades sencillas. Si un sistema de planificación de recursos empresariales (ERP) sectorial debe seguir siendo la fuente, solicitamos una demostración del conector y del retorno de estados. Las facturas al sector público también deben incluirse cuando representen un flujo relevante."
           ],
           "bullets": [],

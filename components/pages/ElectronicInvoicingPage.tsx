@@ -1,3 +1,4 @@
+import { PAGE_REVISIONS } from '@/lib/content/page-revisions';
 import Link from 'next/link';
 import Image from 'next/image';
 import PageLayout from '@/components/PageLayout';
@@ -26,12 +27,16 @@ export default function ElectronicInvoicingPage({ pageKey, locale }: { pageKey: 
   const page = getInvoiceContent(pageKey, locale);
   const ui = INVOICE_UI[locale];
   const path = INVOICE_ROUTES[pageKey][locale];
+  const modified = PAGE_REVISIONS[path] ?? INVOICE_DATE;
+  const modifiedTimestamp = modified === INVOICE_DATE ? INVOICE_TIMESTAMP : `${modified}T12:00:00Z`;
+  const modifiedLabel = new Intl.DateTimeFormat({ fr: 'fr-FR', en: 'en-GB', es: 'es-ES' }[locale], { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(modifiedTimestamp));
+  const updated = modified === INVOICE_DATE ? ui.updated : `${{ fr: 'Mis à jour le', en: 'Updated on', es: 'Actualizado el' }[locale]} ${modifiedLabel}`;
   const sourceIds = [...new Set(page.sections.flatMap(section => section.sources))];
   const url = `https://www.iteradvisors.com${path}`;
   const schema = {
     '@context': 'https://schema.org', '@type': 'Article', '@id': `${url}#article`, url,
     headline: page.title, description: page.description, inLanguage: { fr: 'fr-FR', en: 'en-GB', es: 'es-ES' }[locale], image: invoiceImage(pageKey, locale),
-    datePublished: INVOICE_TIMESTAMP, dateModified: INVOICE_TIMESTAMP,
+    datePublished: INVOICE_TIMESTAMP, dateModified: modifiedTimestamp,
     author: { '@id': FINANCE_EXPERT.id },
     publisher: { '@type': 'Organization', '@id': 'https://www.iteradvisors.com/#organization', name: 'Iter Advisors' },
     mainEntityOfPage: { '@id': `${url}#webpage` },
@@ -46,7 +51,7 @@ export default function ElectronicInvoicingPage({ pageKey, locale }: { pageKey: 
   const webPageSchema = {
     '@context': 'https://schema.org', '@type': 'WebPage', '@id': `${url}#webpage`, url,
     name: page.title, description: page.description, inLanguage: schema.inLanguage,
-    datePublished: INVOICE_TIMESTAMP, dateModified: INVOICE_TIMESTAMP,
+    datePublished: INVOICE_TIMESTAMP, dateModified: modifiedTimestamp,
     isPartOf: { '@id': 'https://www.iteradvisors.com/#website' },
     publisher: { '@id': 'https://www.iteradvisors.com/#organization' },
     mainEntity: { '@id': `${url}#article` },
@@ -67,7 +72,7 @@ export default function ElectronicInvoicingPage({ pageKey, locale }: { pageKey: 
         <p className="site-copy text-lg text-muted-foreground leading-relaxed mt-6 max-w-4xl">{page.answer}</p>
         <div className="flex items-center gap-4 mt-7">
           <Image src={FINANCE_EXPERT.photo} alt="Sébastien Doat" width={56} height={56} className="rounded-full object-cover w-14 h-14" />
-          <p className="text-sm leading-relaxed">{ui.by} <Link href={parityHref(FINANCE_EXPERT.href, locale)} className={linkClass}>Sébastien Doat</Link>, {ui.role.charAt(0).toLowerCase() + ui.role.slice(1)} <span aria-hidden="true">·</span> <time dateTime={INVOICE_DATE}>{ui.updated}</time> <span aria-hidden="true">·</span> <time dateTime={INVOICE_DATE}>{ui.date}</time></p>
+          <p className="text-sm leading-relaxed">{ui.by} <Link href={parityHref(FINANCE_EXPERT.href, locale)} className={linkClass}>Sébastien Doat</Link>, {ui.role.charAt(0).toLowerCase() + ui.role.slice(1)} <span aria-hidden="true">·</span> <time dateTime={modified}>{updated}</time> <span aria-hidden="true">·</span> <time dateTime={INVOICE_DATE}>{ui.date}</time></p>
         </div>
       </div>
     </section>

@@ -126,5 +126,9 @@
   "/images/blog/covers/daf-externalise-vs-expert-comptable.svg": {
     "en": "/images/blog/covers/en/daf-externalise-vs-expert-comptable.svg",
     "es": "/images/blog/covers/es/daf-externalise-vs-expert-comptable.svg"
+  },
+  "/images/blog/covers/pennylane-reporting-fictif.svg": {
+    "en": "/images/blog/covers/en/pennylane-reporting-fictif.svg",
+    "es": "/images/blog/covers/es/pennylane-reporting-fictif.svg"
   }
 }

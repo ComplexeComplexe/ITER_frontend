@@ -1,0 +1,101 @@
+{
+  "fr": {
+    "title": "Avis Pennylane : retour d’un CFO, prix et limites",
+    "description": "L’avis de Florent Greth, utilisateur de Pennylane depuis février 2024 : clôture, reporting sur Excel, stocks et déploiement. Iter est partenaire de Pennylane.",
+    "verdict": "Florent Greth utilise Pennylane depuis février 2024 et l’a déployé pour plusieurs entreprises en France. Son retour porte principalement sur le module Gestion, et sur le module comptable pour certains dossiers. Dans les missions qu’il décrit, le reporting financier et de trésorerie reste construit dans Excel ou Google Sheets après les contrôles de clôture.",
+    "usage": "Florent Greth utilise Pennylane depuis février 2024 pour des missions en France, principalement sur le module Gestion et, pour certains dossiers, sur le module comptable.",
+    "strength": "Rapprocher les factures clients et fournisseurs des transactions bancaires, attribuer des catégories et affecter les opérations à leur période.",
+    "reporting": "Dans les missions décrites par Florent, les rapports financiers et de trésorerie restent construits dans Excel ou Google Sheets. Pennylane fournit les données comptables ; après les contrôles de clôture et les régularisations, l’équipe les reprend dans ses fichiers de pilotage. Florent estime que les tableaux de bord disponibles ne couvrent pas suffisamment les besoins de ces missions. Avant de choisir, testez les restitutions attendues avec vos catégories et indicateurs, dans l’abonnement envisagé.",
+    "stock": "Florent recommande une vigilance particulière pour les entreprises dont l’activité exige un suivi important des stocks, notamment dans le e-commerce. Ce point de vigilance vient de son expérience d’intégrateur : vérifiez le suivi attendu et les interfaces nécessaires avant de retenir Pennylane.",
+    "cost": "Florent identifie deux facteurs importants dans le coût du déploiement : la complexité de l’analytique souhaitée et le nombre de sources de données, avec ou sans connecteurs natifs. Le devis doit aussi distinguer abonnement, accès, reprise de l’historique et accompagnement.",
+    "partnership": "Iter Advisors est partenaire de Pennylane. Cet avis s’appuie sur l’expérience d’utilisation et d’intégration de Florent Greth.",
+    "workflow": [
+      "Rapprocher les factures clients et fournisseurs avec les transactions bancaires.",
+      "Attribuer les catégories, notamment avec les règles de catégorisation, et affecter les opérations à une période.",
+      "Au début du mois suivant, exporter le grand livre et vérifier la présence des charges et des produits du mois ainsi que leurs catégories.",
+      "Passer les écritures de régularisation de fin de période, puis reprendre les données dans les fichiers Excel ou Google Sheets utilisés pour le reporting."
+    ],
+    "hub": "Florent Greth utilise Pennylane depuis février 2024 et l’intègre pour des entreprises en France. Dans les missions décrites, le reporting financier et de trésorerie reste préparé sur Excel ou Google Sheets. Iter Advisors est partenaire de Pennylane.",
+    "summary": "Pennylane : retour de Florent Greth, utilisateur depuis février 2024, sur la clôture et le reporting. Iter est partenaire de Pennylane.",
+    "labels": {
+      "practice": "Notre utilisation de Pennylane : le retour de Florent Greth",
+      "scope": "Périmètre de son expérience",
+      "strength": "Ce qu’il utilise au quotidien",
+      "workflow": "De Pennylane au reporting : une clôture mensuelle",
+      "reporting": "Pourquoi le reporting reste dans Excel ou Google Sheets",
+      "stock": "Stocks et e-commerce : le point de vigilance de Florent",
+      "official": "Les fonctions proposées dépendent de l’offre et évoluent. La documentation officielle présente des rapports analytiques et un tableau de bord : leur existence ne suffit pas à confirmer qu’ils couvrent vos besoins de pilotage.",
+      "reportsLink": "Rapports analytiques Pennylane",
+      "dashboardLink": "Tableau de bord analytique Pennylane",
+      "figureAlt": "Exemple fictif : données Pennylane, contrôles de clôture puis reporting financier et de trésorerie sur tableur.",
+      "figureCaption": "Illustration pédagogique avec des données entièrement fictives, reconstituée hors interface Pennylane. Aucun dossier client ni résultat mesuré n’est reproduit.",
+      "evidence": "Retour d’expérience communiqué par Florent Greth le 27 novembre 2026. L’illustration utilise uniquement des données fictives."
+    }
+  },
+  "en": {
+    "title": "Pennylane review: a CFO’s experience, pricing and limits",
+    "description": "Florent Greth’s experience using Pennylane since February 2024: month-end close, Excel reporting, inventory and implementation. Iter is a Pennylane partner.",
+    "verdict": "Florent Greth has used Pennylane since February 2024 and has implemented it for several businesses in France. His experience mainly covers the Gestion module, with the accounting module used on some engagements. In the engagements he describes, financial and cash reporting is still built in Excel or Google Sheets after the month-end checks.",
+    "usage": "Florent Greth has used Pennylane since February 2024 on engagements in France, mainly with the Gestion module and, on some engagements, the accounting module.",
+    "strength": "Matching customer and supplier invoices to bank transactions, assigning categories and allocating entries to the correct period.",
+    "reporting": "In the engagements described by Florent, financial and cash reports are still built in Excel or Google Sheets. Pennylane supplies the accounting data; after closing checks and adjustments, the team brings it into its reporting files. Florent finds that the available dashboards do not sufficiently meet the needs of these engagements. Before choosing, test the outputs you need with your own categories and indicators in the intended subscription.",
+    "stock": "Florent recommends particular care for businesses that require extensive inventory tracking, especially in e-commerce. This concern reflects his implementation experience: check the required stock tracking and integrations before choosing Pennylane.",
+    "cost": "Florent identifies two important implementation cost factors: the complexity of the required analytical accounting and the number of data sources, with or without native connectors. The quote should also separate the subscription, access rights, historical data migration and support.",
+    "partnership": "Iter Advisors is a Pennylane partner. This review draws on Florent Greth’s experience using and implementing the software.",
+    "workflow": [
+      "Match customer and supplier invoices to bank transactions.",
+      "Assign categories, including through categorisation rules, and allocate entries to a period.",
+      "At the start of the following month, export the general ledger and check that the month’s expenses and revenue are complete and correctly categorised.",
+      "Post period-end adjusting entries, then bring the data into the Excel or Google Sheets files used for reporting."
+    ],
+    "hub": "Florent Greth has used Pennylane since February 2024 and implements it for businesses in France. In the engagements described, financial and cash reporting is still prepared in Excel or Google Sheets. Iter Advisors is a Pennylane partner.",
+    "summary": "Pennylane: Florent Greth’s experience of closing and reporting, using the software since February 2024. Iter is a Pennylane partner.",
+    "labels": {
+      "practice": "How we use Pennylane: Florent Greth’s experience",
+      "scope": "Scope of his experience",
+      "strength": "What he uses day to day",
+      "workflow": "From Pennylane to reporting: a month-end close",
+      "reporting": "Why reporting remains in Excel or Google Sheets",
+      "stock": "Inventory and e-commerce: Florent’s point to check",
+      "official": "Available features depend on the plan and change over time. The official documentation describes analytical reports and a dashboard: their availability alone does not establish whether they cover your management reporting needs.",
+      "reportsLink": "Pennylane analytical reports",
+      "dashboardLink": "Pennylane analytical dashboard",
+      "figureAlt": "Fictitious example: Pennylane data, closing checks, then financial and cash reporting in spreadsheets.",
+      "figureCaption": "Educational illustration with entirely fictitious data, recreated outside the Pennylane interface. No client file or measured result is reproduced.",
+      "evidence": "Experience shared by Florent Greth on 27 November 2026. The illustration uses fictitious data only."
+    }
+  },
+  "es": {
+    "title": "Opinión de Pennylane: experiencia de un CFO y precios",
+    "description": "La experiencia de Florent Greth con Pennylane desde febrero de 2024: cierre, reporting en Excel, existencias e implantación. Iter es socio de Pennylane.",
+    "verdict": "Florent Greth utiliza Pennylane desde febrero de 2024 y lo ha implantado para varias empresas en Francia. Su experiencia se centra principalmente en el módulo Gestion y, en algunos proyectos, en el módulo contable. En los proyectos que describe, el reporting financiero y de tesorería sigue elaborándose en Excel o Google Sheets tras los controles de cierre.",
+    "usage": "Florent Greth utiliza Pennylane desde febrero de 2024 en proyectos en Francia, principalmente con el módulo Gestion y, en algunos casos, con el módulo contable.",
+    "strength": "Conciliar las facturas de clientes y proveedores con los movimientos bancarios, asignar categorías e imputar las operaciones al período correspondiente.",
+    "reporting": "En los proyectos descritos por Florent, los informes financieros y de tesorería siguen elaborándose en Excel o Google Sheets. Pennylane proporciona los datos contables; tras los controles de cierre y los ajustes, el equipo los incorpora a sus archivos de reporting. Florent considera que los cuadros de mando disponibles no cubren suficientemente las necesidades de estos proyectos. Antes de elegir, pruebe los informes que necesita con sus categorías e indicadores en la suscripción prevista.",
+    "stock": "Florent recomienda prestar especial atención a las empresas que necesitan un seguimiento importante de las existencias, especialmente en comercio electrónico. Esta observación procede de su experiencia de implantación: compruebe el seguimiento necesario y las integraciones antes de elegir Pennylane.",
+    "cost": "Florent identifica dos factores importantes en el coste de implantación: la complejidad de la contabilidad analítica requerida y el número de fuentes de datos, con o sin conectores nativos. El presupuesto también debe separar suscripción, accesos, migración del histórico y asesoramiento.",
+    "partnership": "Iter Advisors es socio de Pennylane. Esta opinión se basa en la experiencia de uso e implantación de Florent Greth.",
+    "workflow": [
+      "Conciliar las facturas de clientes y proveedores con los movimientos bancarios.",
+      "Asignar categorías, también mediante reglas de categorización, e imputar las operaciones a un período.",
+      "Al inicio del mes siguiente, exportar el libro mayor y comprobar que se han incluido y categorizado correctamente los gastos e ingresos del mes.",
+      "Registrar los asientos de ajuste de cierre y trasladar los datos a los archivos Excel o Google Sheets utilizados para el reporting."
+    ],
+    "hub": "Florent Greth utiliza Pennylane desde febrero de 2024 y lo implanta para empresas en Francia. En los proyectos descritos, el reporting financiero y de tesorería sigue preparándose en Excel o Google Sheets. Iter Advisors es socio de Pennylane.",
+    "summary": "Pennylane: experiencia de Florent Greth en cierre y reporting, usuario desde febrero de 2024. Iter es socio de Pennylane.",
+    "labels": {
+      "practice": "Cómo utilizamos Pennylane: la experiencia de Florent Greth",
+      "scope": "Alcance de su experiencia",
+      "strength": "Qué utiliza en el día a día",
+      "workflow": "De Pennylane al reporting: un cierre mensual",
+      "reporting": "Por qué el reporting sigue en Excel o Google Sheets",
+      "stock": "Existencias y comercio electrónico: qué comprobar según Florent",
+      "official": "Las funciones disponibles dependen del plan y evolucionan. La documentación oficial describe informes analíticos y un cuadro de mando: su existencia no confirma por sí sola que cubran sus necesidades de reporting de gestión.",
+      "reportsLink": "Informes analíticos de Pennylane",
+      "dashboardLink": "Cuadro de mando analítico de Pennylane",
+      "figureAlt": "Ejemplo ficticio: datos de Pennylane, controles de cierre y reporting financiero y de tesorería en hojas de cálculo.",
+      "figureCaption": "Ilustración didáctica con datos completamente ficticios, recreada fuera de la interfaz de Pennylane. No reproduce ningún archivo de cliente ni resultado medido.",
+      "evidence": "Experiencia compartida por Florent Greth el 27 de noviembre de 2026. La ilustración utiliza únicamente datos ficticios."
+    }
+  }
+}

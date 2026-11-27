@@ -1,3 +1,4 @@
+import pennylaneExperience from '@/data/pennylaneExperience.json';
 import { getToolReviewTitle } from '@/data/toolReviews';
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -63,7 +64,7 @@ export async function generateMetadata({
   const tool = getToolBySlug(slug);
   if (tool) {
     const title = getToolReviewTitle(tool);
-    const description = slug === "pennylane" ? "Notre avis Pennylane après quatre ans d’usage chez Iter, pour environ 50 % de nos clients : centralisation comptable, limites du reporting et critères de choix." : `Avis ${tool.name} : points forts, limites, intégrations et critères de choix pour PME et startups. Sources de tarification et questions à poser à l’éditeur.`;
+    const description = slug === "pennylane" ? pennylaneExperience.fr.description : `Avis ${tool.name} : points forts, limites, intégrations et critères de choix pour PME et startups. Sources de tarification et questions à poser à l’éditeur.`;
     return buildMetadata({
       locale: "fr",
       title,

@@ -43,7 +43,7 @@ describe('Exhaustive published locale parity', () => {
     expect(editorialText('Pennylane', 'en')).toBe('Pennylane');
   });
   it('provides a translated SVG illustration for both languages without replacing the French asset', () => {
-    expect(Object.keys(assets)).toHaveLength(32);
+    expect(Object.keys(assets)).toHaveLength(33);
     for (const [original, localized] of Object.entries(assets)) {
       expect(original).not.toContain('/en/');
       expect(localized.en).toMatch(/\/covers\/en\/.*\.svg$/);

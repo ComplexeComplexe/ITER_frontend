@@ -48,7 +48,7 @@ describe("Published partner profiles", () => {
           expect(doc.querySelectorAll('a[href^="https://podcast.ausha.co/"]')).toHaveLength(1);
         }
         if (slug === "florent-greth") {
-          for (const fact of ["Pennylane", "50", "PACCOR", "VIIA", "Abertis", "KPMG"]) expect(text).toContain(fact);
+          for (const fact of ["Pennylane", "2024", "PACCOR", "VIIA", "Abertis", "KPMG"]) expect(text).toContain(fact);
           expect(doc.querySelector(`a[href="${parityHref("/ressources/outils/pennylane", locale)}"]`)).not.toBeNull();
           expect(doc.querySelector(`a[href="${parityHref("/services/controle-de-gestion-externalise", locale)}"]`)).not.toBeNull();
         }
@@ -63,7 +63,7 @@ describe("Published partner profiles", () => {
         expect(person.sameAs).toContain(member.linkedIn);
         const profile = graph.find((n: Record<string, string>) => n["@type"] === "ProfilePage");
         expect(profile.mainEntity["@id"]).toBe(person["@id"]);
-        expect(profile.dateModified).toBe("2026-10-09T05:32:44.000Z");
+        expect(profile.dateModified).toBe(slug === "florent-greth" ? "2026-11-27T12:00:00.000Z" : "2026-10-09T05:32:44.000Z");
         expect(member.metaTitle).toContain(member.role);
         expect(member.metaTitle!.length).toBeLessThanOrEqual(60);
         expect(member.metaTitle).not.toContain("—");
