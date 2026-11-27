@@ -23,8 +23,8 @@ describe('tool review evidence and crawlable inventory', () => {
   });
   it('shares the same review inventory in each hub without inventing translated review routes', () => {
     for (const locale of ['fr', 'en', 'es'] as const) expect(getToolDirectory(locale).map(tool => tool.slug)).toEqual([...tools.map(tool => tool.slug), "malibou"]);
-    expect(toolReviews.pennylane.verdict).toContain('quatre ans');
-    expect(toolReviews.pennylane.verdict).toContain('50 %');
+    expect(toolReviews.pennylane.verdict).toContain('février 2024');
+    expect(toolReviews.pennylane.verdict).not.toMatch(/quatre ans|50\s?%/);
     for (const review of Object.values(toolReviews)) {
       expect(review).not.toHaveProperty("rating");
       expect(review).not.toHaveProperty("reviewRating");

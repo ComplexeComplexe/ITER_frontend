@@ -1,3 +1,4 @@
+import pennylaneExperience from './pennylaneExperience.json';
 /** Editorial selection protocols. No undocumented implementation or client-result claims. */
 export interface ToolSelection {
   source: string;
@@ -45,7 +46,7 @@ export const toolSelection: Record<string, ToolSelection> = {
     "limit": "Le logiciel ne remplace pas le contrôle comptable. Si le cabinet utilise un autre système, convenez du fichier échangé, du rythme et du responsable de validation avant la migration.",
     "question": "Comment préparer une migration vers Pennylane ?",
     "answer": "Arrêtez une date de reprise, listez les dossiers ouverts et les pièces à conserver, puis validez une balance et une clôture test. Le délai dépend de la reprise et des connexions ; un calendrier fixe ne peut pas être déduit du seul nom du logiciel.",
-    "cost": "Abonnement, accès du cabinet, modules, historique repris et accompagnement doivent figurer dans le même devis.",
+    "cost": pennylaneExperience.fr.cost,
     "comparison": {
       "href": "/ressources/blog/pennylane-vs-sage-comparatif-40-deploiements",
       "label": "Comparer Pennylane et une solution Sage identifiée"

@@ -1,3 +1,4 @@
+import pennylaneExperience from './pennylaneExperience.json';
 /** Editorial decision criteria, not undocumented hands-on tests or ratings. */
 export interface ToolReview {
   verdict: string;
@@ -8,9 +9,9 @@ export interface ToolReview {
 }
 export const toolReviews: Record<string, ToolReview> = {
   pennylane: {
-    verdict: "Notre avis sur Pennylane : un socle utile pour centraliser la comptabilité et préparer une précomptabilité propre. Iter l’utilise depuis quatre ans, pour environ 50 % de ses clients. Notre réserve principale concerne le reporting, encore limité au regard de certains besoins de pilotage.",
+    verdict: pennylaneExperience.fr.verdict,
     fit: "Pennylane convient à une PME ou une startup française qui veut réunir factures, justificatifs et échanges comptables dans un environnement commun. L’intérêt est particulièrement concret lorsque l’entreprise et son expert-comptable travaillent sur le même dossier : la qualité des pièces et la répartition des tâches deviennent plus faciles à suivre.",
-    avoid: "Si votre priorité est un reporting de gestion élaboré, un budget multi-scénarios ou une consolidation complexe, commencez par tester ces restitutions. Notre réserve sur le reporting est un retour d’usage du cabinet ; elle ne signifie pas que Pennylane ne propose aucun rapport. Une couche d’analyse complémentaire peut rester nécessaire.",
+    avoid: pennylaneExperience.fr.stock,
     decision: "Avant de migrer, demandez au cabinet comptable qui contrôle les écritures, qui traite les pièces manquantes et qui valide la clôture. Testez un mois complet : factures fournisseurs, encaissements, avoirs, banque et ventilation analytique. Comparez ensuite le reporting obtenu au tableau de bord dont le dirigeant a réellement besoin. Une interface agréable ne compense pas un historique mal repris.",
     alternatives: ['sage', 'cegid-loop', 'power-bi'],
   },
@@ -149,14 +150,14 @@ export const toolReviews: Record<string, ToolReview> = {
   },
 };
 
-/** User-confirmed firm experience. No individual quotation or measured ROI implied. */
+/** Florent’s dated personal experience, without firm-wide adoption figures. */
 export const PENNYLANE_EXPERIENCE = {
-  confirmedAt: '2026-10-03', years: 4, clientSharePercent: 50,
-  strength: 'Centraliser la comptabilité et préparer une précomptabilité propre.',
-  limit: 'Un reporting encore limité pour certains besoins de pilotage.',
+  confirmedAt: '2026-11-27', startedAt: '2024-02',
+  usage: pennylaneExperience.fr.usage,
+  strength: pennylaneExperience.fr.strength,
   specialist: { name: 'Florent Greth', href: '/a-propos/florent-greth' },
 };
 
 export function getToolReviewTitle(tool: { slug: string; name: string }) {
-  return tool.slug === 'pennylane' ? 'Avis Pennylane : 4 ans d’usage, prix et limites' : `${tool.name} : analyse, prix et intégration`;
+  return tool.slug === 'pennylane' ? pennylaneExperience.fr.title : `${tool.name} : analyse, prix et intégration`;
 }
