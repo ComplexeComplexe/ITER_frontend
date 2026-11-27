@@ -181,6 +181,11 @@ export default async function Page() {
         résidence fiscale au sens de la loi espagnole.
       </p>
 
+      <p>
+        Les critères qui déterminent la résidence fiscale sont détaillés dans notre guide sur la 
+        <Link href="/ressources/fiscalite/residence-fiscale-france-espagne">résidence fiscale France ou Espagne</Link>.
+      </p>
+
       <h3>Condition 2 — Un déplacement lié à un motif professionnel admis</h3>
 
       <p>
