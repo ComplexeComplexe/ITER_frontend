@@ -6,6 +6,8 @@ export interface ContactFormField {
   type: "text" | "email" | "tel" | "textarea";
   required: boolean;
   half?: boolean;
+  /** Message affiché sous le champ quand il est :user-invalid (après saisie ou envoi). */
+  errorMessage?: string;
 }
 
 export interface ContactContent {
@@ -36,9 +38,9 @@ export const contactContent: Record<Locale, ContactContent> = {
     form: {
       fields: [
         { name: "company", label: "Entreprise (facultatif)", type: "text", required: false },
-        { name: "lastName", label: "Nom", type: "text", required: true, half: true },
-        { name: "firstName", label: "Prénom", type: "text", required: true, half: true },
-        { name: "email", label: "E-mail", type: "email", required: true, half: true },
+        { name: "lastName", label: "Nom", type: "text", required: true, half: true, errorMessage: "Erreur : indiquez votre nom." },
+        { name: "firstName", label: "Prénom", type: "text", required: true, half: true, errorMessage: "Erreur : indiquez votre prénom." },
+        { name: "email", label: "E-mail", type: "email", required: true, half: true, errorMessage: "Erreur : indiquez une adresse e-mail au format nom@entreprise.com." },
         { name: "phone", label: "Téléphone", type: "tel", required: false, half: true },
         { name: "message", label: "Votre besoin en quelques mots (facultatif)", type: "textarea", required: false },
       ],
@@ -59,9 +61,9 @@ export const contactContent: Record<Locale, ContactContent> = {
     form: {
       fields: [
         { name: "company", label: "Company (optional)", type: "text", required: false },
-        { name: "lastName", label: "Last name", type: "text", required: true, half: true },
-        { name: "firstName", label: "First name", type: "text", required: true, half: true },
-        { name: "email", label: "E-mail", type: "email", required: true, half: true },
+        { name: "lastName", label: "Last name", type: "text", required: true, half: true, errorMessage: "Error: enter your last name." },
+        { name: "firstName", label: "First name", type: "text", required: true, half: true, errorMessage: "Error: enter your first name." },
+        { name: "email", label: "E-mail", type: "email", required: true, half: true, errorMessage: "Error: enter an email address in the format name@company.com." },
         { name: "phone", label: "Phone", type: "tel", required: false, half: true },
         { name: "message", label: "Your needs in a few words (optional)", type: "textarea", required: false },
       ],
@@ -82,9 +84,9 @@ export const contactContent: Record<Locale, ContactContent> = {
     form: {
       fields: [
         { name: "company", label: "Empresa (opcional)", type: "text", required: false },
-        { name: "lastName", label: "Apellido", type: "text", required: true, half: true },
-        { name: "firstName", label: "Nombre", type: "text", required: true, half: true },
-        { name: "email", label: "Correo", type: "email", required: true, half: true },
+        { name: "lastName", label: "Apellido", type: "text", required: true, half: true, errorMessage: "Error: indique su apellido." },
+        { name: "firstName", label: "Nombre", type: "text", required: true, half: true, errorMessage: "Error: indique su nombre." },
+        { name: "email", label: "Correo", type: "email", required: true, half: true, errorMessage: "Error: indique un correo electrónico con el formato nombre@empresa.com." },
         { name: "phone", label: "Teléfono", type: "tel", required: false, half: true },
         { name: "message", label: "Su necesidad en pocas palabras (opcional)", type: "textarea", required: false },
       ],
