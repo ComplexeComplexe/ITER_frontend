@@ -188,7 +188,7 @@ export default async function GuideFiscalPage({
             </span>
             <span className="text-xs text-muted-foreground">
               {iaText(locale, "Par")}{" "}
-              <Link locale={locale} href={parityHref(author.url, locale)} rel="author" className="text-iter-violet hover:underline">
+              <Link locale={locale} href={parityHref(author.url, locale)} rel="author" className="text-iter-violet underline underline-offset-2 hover:decoration-2">
                 {author.name}
               </Link>
               {" · "}
@@ -215,6 +215,7 @@ export default async function GuideFiscalPage({
               sizes="(max-width: 768px) 100vw, 768px"
               className="object-cover"
               priority
+              fetchPriority="high"
             />
           </div>
 

@@ -370,7 +370,7 @@ export default function Page() {
                   <span
                     className={
                       ok
-                        ? "inline-block rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-semibold text-emerald-700"
+                        ? "inline-block rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-semibold text-emerald-800"
                         : "inline-block rounded-full bg-red-50 px-2.5 py-0.5 text-xs font-semibold text-red-700"
                     }
                   >

@@ -201,7 +201,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
     },
     "externalisation-comptable": {
   "meta": {
-    "title": "Externalisation comptable : tarifs et organisation | Iter",
+    "title": "Externalisation de la comptabilité : tarifs et organisation | Iter",
     "description": "Choisir un prestataire comptable : responsabilités, reprise des données, comparaison des devis et coût complet. Distinguer comptabilité et DAF."
   },
   "breadcrumbs": {
