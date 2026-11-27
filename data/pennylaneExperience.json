@@ -68,12 +68,12 @@
   "es": {
     "title": "Opinión de Pennylane: experiencia de un CFO y precios",
     "description": "La experiencia de Florent Greth con Pennylane desde febrero de 2024: cierre, reporting en Excel, existencias e implantación. Iter es socio de Pennylane.",
-    "verdict": "Florent Greth utiliza Pennylane desde febrero de 2024 y lo ha implantado para varias empresas en Francia. Su experiencia se centra principalmente en el módulo Gestion y, en algunos proyectos, en el módulo contable. En las misiones que describe, el reporting financiero y de tesorería sigue elaborándose en Excel o Google Sheets tras los controles de cierre.",
+    "verdict": "Florent Greth utiliza Pennylane desde febrero de 2024 y lo ha implantado para varias empresas en Francia. Su experiencia se centra principalmente en el módulo Gestion y, en algunos proyectos, en el módulo contable. En los proyectos que describe, el reporting financiero y de tesorería sigue elaborándose en Excel o Google Sheets tras los controles de cierre.",
     "usage": "Florent Greth utiliza Pennylane desde febrero de 2024 en proyectos en Francia, principalmente con el módulo Gestion y, en algunos casos, con el módulo contable.",
     "strength": "Conciliar las facturas de clientes y proveedores con los movimientos bancarios, asignar categorías e imputar las operaciones al período correspondiente.",
-    "reporting": "En las misiones descritas por Florent, los informes financieros y de tesorería siguen elaborándose en Excel o Google Sheets. Pennylane proporciona los datos contables; tras los controles de cierre y los ajustes, el equipo los incorpora a sus archivos de reporting. Florent considera que los cuadros de mando disponibles no cubren suficientemente las necesidades de estas misiones. Antes de elegir, pruebe los informes que necesita con sus categorías e indicadores en la suscripción prevista.",
+    "reporting": "En los proyectos descritos por Florent, los informes financieros y de tesorería siguen elaborándose en Excel o Google Sheets. Pennylane proporciona los datos contables; tras los controles de cierre y los ajustes, el equipo los incorpora a sus archivos de reporting. Florent considera que los cuadros de mando disponibles no cubren suficientemente las necesidades de estos proyectos. Antes de elegir, pruebe los informes que necesita con sus categorías e indicadores en la suscripción prevista.",
     "stock": "Florent recomienda prestar especial atención a las empresas que necesitan un seguimiento importante de las existencias, especialmente en comercio electrónico. Esta observación procede de su experiencia de implantación: compruebe el seguimiento necesario y las integraciones antes de elegir Pennylane.",
-    "cost": "Florent identifica dos factores importantes en el coste de implantación: la complejidad de la contabilidad analítica requerida y el número de fuentes de datos, con o sin conectores nativos. El presupuesto también debe separar suscripción, accesos, migración del histórico y acompañamiento.",
+    "cost": "Florent identifica dos factores importantes en el coste de implantación: la complejidad de la contabilidad analítica requerida y el número de fuentes de datos, con o sin conectores nativos. El presupuesto también debe separar suscripción, accesos, migración del histórico y asesoramiento.",
     "partnership": "Iter Advisors es socio de Pennylane. Esta opinión se basa en la experiencia de uso e implantación de Florent Greth.",
     "workflow": [
       "Conciliar las facturas de clientes y proveedores con los movimientos bancarios.",
@@ -81,7 +81,7 @@
       "Al inicio del mes siguiente, exportar el libro mayor y comprobar que se han incluido y categorizado correctamente los gastos e ingresos del mes.",
       "Registrar los asientos de ajuste de cierre y trasladar los datos a los archivos Excel o Google Sheets utilizados para el reporting."
     ],
-    "hub": "Florent Greth utiliza Pennylane desde febrero de 2024 y lo implanta para empresas en Francia. En las misiones descritas, el reporting financiero y de tesorería sigue preparándose en Excel o Google Sheets. Iter Advisors es socio de Pennylane.",
+    "hub": "Florent Greth utiliza Pennylane desde febrero de 2024 y lo implanta para empresas en Francia. En los proyectos descritos, el reporting financiero y de tesorería sigue preparándose en Excel o Google Sheets. Iter Advisors es socio de Pennylane.",
     "summary": "Pennylane: experiencia de Florent Greth en cierre y reporting, usuario desde febrero de 2024. Iter es socio de Pennylane.",
     "labels": {
       "practice": "Cómo utilizamos Pennylane: la experiencia de Florent Greth",
