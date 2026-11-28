@@ -395,5 +395,154 @@
       "automatiser-reporting-financier"
     ],
     "metaTitle": "AI in finance: real cases, results and limits"
+  },
+  "agents-ia-finance": {
+    "label": "AI agents in the finance function",
+    "title": "AI agents in the finance function: 12 real workflows and their controls",
+    "metaTitle": "AI agents in finance: 12 real workflows and their controls",
+    "description": "Fundraising, reporting, cash, reconciliation, audit: the AI workflows Iter uses on engagements, their status and the human review built into each one.",
+    "dek": "An AI agent in the finance function runs defined steps on a company's data (read, match, calculate, draft) and hands over a deliverable that a named person approves. These are the workflows Iter Advisors uses on engagements, with their real status, their trigger and the human review planned for each one.",
+    "published": "2026-11-28",
+    "image": "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp",
+    "summary": [
+      "An agent chains steps together; it does not replace sign-off by the CFO or the external accountant.",
+      "Every workflow has a trigger, a deliverable and a human checkpoint written down in advance.",
+      "The statuses are real: in production, validated or in testing. No client result is published without consent."
+    ],
+    "sections": [
+      {
+        "id": "definition",
+        "title": "What is an AI agent in the finance function?",
+        "html": "<p>An assistant answers a request in a conversation. An AI agent goes further: it follows a sequence of steps defined in advance, uses tools (reading an export, calculating in a workbook, calling the API of accounting software) and produces a complete deliverable.</p><p>On our engagements, we distinguish four things:</p><ul><li><strong>The skill:</strong> a reusable method, such as a 13-week cash forecast, that the assistant applies the same way for every client.</li><li><strong>The agent:</strong> a workflow that chains several steps and several skills through to the deliverable.</li><li><strong>The routine:</strong> an agent triggered on a fixed date, for example the first day of the month.</li><li><strong>The cockpit:</strong> an interface where a responsible person decides the ambiguous cases before the agent executes.</li></ul><p>An agent does not replace sign-off by the CFO or the external accountant. It prepares, checks and documents; the decision stays human.</p>"
+      },
+      {
+        "id": "workflows",
+        "title": "Which workflows does Iter use on engagements?",
+        "html": "<p>The table lists the workflows in our internal catalogue that cover clients' financial management, as at 28 November 2026. \"In production\" means used on client files; \"validated\" means tested and being rolled out; \"in testing\" means in pilot.</p><div class=\"prose-table-wrapper\"><table class=\"min-w-[32rem]\"><caption>Iter Advisors AI workflows in the finance function</caption><thead><tr><th scope=\"col\">Workflow</th><th scope=\"col\">Trigger</th><th scope=\"col\">Deliverable</th><th scope=\"col\">Human review</th><th scope=\"col\">Status</th></tr></thead><tbody><tr><th scope=\"row\">Investor pack for a funding round</th><td>Fundraising engagement signed</td><td>Three-scenario model, deck, teaser, data-room tracker</td><td>The CFO approves every version; the founder decides on valuation</td><td>In production</td></tr><tr><th scope=\"row\">Critical review of a business plan</th><td>Business plan received from the client</td><td>Summary note, adjusted model, open questions</td><td>CFO review before it goes to the founder</td><td>In production</td></tr><tr><th scope=\"row\">Audit of prior financial years</th><td>Start of an engagement or pre-due diligence</td><td>Anomalies ranked by severity, proposed corrections</td><td>No entry posted without approval</td><td>In production</td></tr><tr><th scope=\"row\">Monthly reporting</th><td>Month-end close</td><td>Reporting workbooks, variance commentary</td><td>CFO quality check before sending</td><td>In production</td></tr><tr><th scope=\"row\">Cash forecast refreshed by script</th><td>Need for visibility on cash</td><td>Excel model, trends tab, variance note</td><td>The CFO approves the receipt assumptions</td><td>In production</td></tr><tr><th scope=\"row\">Crisis diagnosis</th><td>Cash alert</td><td>Three costed options and a recommendation</td><td>Partner approval before sending</td><td>In production</td></tr><tr><th scope=\"row\">Order-to-cash on Holded</th><td>Outsourced financial controller engagement</td><td>Invoices, bank and Stripe reconciliation, reminders</td><td>Entries approved by a finance manager</td><td>In production</td></tr><tr><th scope=\"row\">Customer account matching</th><td>Catch-up for the year, then every close</td><td>Matching applied, exceptions report</td><td>Dry run by default, approval at every stage</td><td>Validated</td></tr><tr><th scope=\"row\">Claude project and second brain per client</th><td>Start of an engagement</td><td>Client sheet, dated assumptions, decision log</td><td>The lead CFO records every decision</td><td>Validated</td></tr><tr><th scope=\"row\">CFO agent suite with an orchestrator</th><td>Any request from the founder</td><td>Budget versus actuals, board pack, scenarios, cap table</td><td>The CFO reviews and signs every deliverable</td><td>Validated</td></tr><tr><th scope=\"row\">Quality check on a deliverable</th><td>Deliverable ready to send</td><td>Score out of 100, blocking issues, corrections</td><td>The CFO decides whether it is sent</td><td>In testing</td></tr><tr><th scope=\"row\">Meeting notes and tasks</th><td>End of a recorded client meeting</td><td>Meeting notes, commitments, proposed tasks</td><td>No task created without the CFO's approval</td><td>In testing</td></tr></tbody></table></div><p>The tools are the ones our clients already use: Pennylane, Holded, Pleo, Qonto, Stripe, Excel, Google Drive and Notion. The assistant is Claude, used in one project per client (see our <a href=\"/ressources/ia-finance/claude-finance\">guide to Claude for finance</a>).</p>"
+      },
+      {
+        "id": "lettrage",
+        "title": "Example: how do you match customer accounts in stages?",
+        "html": "<p>Matching links each customer invoice to its payment. When it is poorly kept, the aged receivables, days sales outstanding and reminders are all wrong. Our agent takes the manual procedure and runs it through the accounting software's API, with safeguards that a manual run does not have.</p><ol><li>Extract the unmatched customer lines and their identifiers just before each batch.</li><li>Load the payments from the invoicing ERP, which is the reference for what has actually been paid.</li><li>Apply the rules in order: ERP reference, shared reference, identical amount closest in date, groups of two to four lines that net to zero.</li><li>Always exclude invoices still open in the ERP, aggregated accounts and any group that does not balance, even by €0.01.</li><li>Apply in stages (5, 10, 15, 20, 50, then 100 groups), with four checks between stages and a stop at the first discrepancy.</li><li>Close the run: matching rate before and after, exceptions report by account.</li></ol><p>The first live test covers three to five accounts, with the person responsible for accounting at the client. Discrepancies and reclassifications go only through a journal entry approved by the external accountant.</p>"
+      },
+      {
+        "id": "controle",
+        "title": "How do you stay in control of agents that produce deliverables?",
+        "html": "<p>Every workflow states in advance who approves what. The rules that recur across our catalogue:</p><ul><li>The agent proposes; the CFO approves before anything is sent to the client.</li><li>No accounting entry, payment or task is created without explicit approval.</li><li>Sensitive operations start as a dry run, then on a small scope.</li><li>A high-stakes deliverable goes through a quality check scored out of 100, with blocking issues.</li><li>Every month, a review cross-checks what was planned, what was delivered and what was promised in meetings.</li></ul><p>The monthly review weights four criteria: deadlines (35 points), quality (35), commitments kept (20) and documentation discipline (10). A task missing from the tracking tool counts as not done.</p>"
+      },
+      {
+        "id": "memoire",
+        "title": "Why keep a second brain for each client file?",
+        "html": "<p>An assistant forgets everything between two conversations unless it is given context. For each client, we keep a structured memory: a one-page client sheet, dated and sourced assumptions, a decision log that is only ever added to, and dated deliverables.</p><p>This memory does three things: it prepares the weekly review with the founder without re-explaining the context, it lets every agent read the same information, and it hands the file over if the CFO changes. The lead CFO on the file owns it.</p>"
+      },
+      {
+        "id": "commencer",
+        "title": "Which workflow should your finance team start with?",
+        "html": "<div class=\"prose-table-wrapper\"><table class=\"min-w-[32rem]\"><caption>Choosing a first workflow</caption><thead><tr><th scope=\"col\">Your situation</th><th scope=\"col\">First workflow</th><th scope=\"col\">Prerequisites</th></tr></thead><tbody><tr><th scope=\"row\">Monthly reporting takes several days</th><td>Monthly reporting with variance commentary</td><td>A reliable close and a reference report</td></tr><tr><th scope=\"row\">Cash is tight or a funding round is coming</th><td>Refreshed cash forecast</td><td>Exportable bank statements and general ledger</td></tr><tr><th scope=\"row\">The aged receivables cannot be trusted</th><td>Customer account matching</td><td>An ERP or invoicing tool that knows what has been paid</td></tr><tr><th scope=\"row\">A new CFO is taking over the file</th><td>Audit of prior financial years</td><td>Annual accounts, trial balances and the general ledger export</td></tr></tbody></table></div><p>To scope a pilot, follow our <a href=\"/ressources/ia-finance/feuille-de-route-90-jours\">90-day roadmap</a>. A <a href=\"/daf-externalise\">fractional CFO</a> can also set up these workflows as part of an engagement.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Can an AI agent post accounting entries on its own?",
+        "answer": "It can prepare and apply repetitive operations, such as matching, within limits set in advance. At Iter, sensitive operations start as a dry run, then on a small scope, and discrepancies go through an entry approved by the external accountant."
+      },
+      {
+        "question": "Do you need a technical team to use these workflows?",
+        "answer": "Not for skills and projects, which are used inside the assistant. Agents that call the API of accounting software need an initial set-up and access rights agreed with the founder."
+      },
+      {
+        "question": "Which software is compatible?",
+        "answer": "Our workflows currently run with Pennylane, Holded, Pleo, Qonto, Stripe, Excel, Google Drive and Notion. Other software works if it offers a reliable export or an API."
+      },
+      {
+        "question": "Are the time savings guaranteed?",
+        "answer": "No. The gain depends on data quality, how regular the close is and the time spent on review. We do not publish a client's figures without their written consent."
+      }
+    ],
+    "sources": [
+      "anthropicFinanceAgents",
+      "claudeSkills",
+      "pennylane"
+    ],
+    "related": [
+      "claude-finance",
+      "feuille-de-route-90-jours"
+    ]
+  },
+  "claude-finance": {
+    "label": "Claude for finance",
+    "title": "Claude for finance: projects, skills and agents for a finance team",
+    "metaTitle": "Claude for finance: projects, skills and agents",
+    "description": "Using Claude in an SME finance team: one project per client, skills, agents, Excel, which data to share and the limits, with how Iter uses it.",
+    "dek": "Claude, Anthropic's assistant, is used in finance in three ways: a project per client file that keeps the context, skills that apply a method, and agents that chain the steps of a deliverable. This guide separates what the vendor announces from what we use on engagements.",
+    "published": "2026-11-28",
+    "image": "/images/blog/tableau-de-bord-financier-startup-12-kpis.webp",
+    "summary": [
+      "For an SME, what matters most is projects, skills and the Excel integration.",
+      "Vendor announcements are cited with their date; Iter's own use is described separately.",
+      "The data you share and the decisions you take remain the company's responsibility."
+    ],
+    "sections": [
+      {
+        "id": "offre",
+        "title": "What does Anthropic offer for finance?",
+        "html": "<p>On 5 May 2026, <a href=\"https://www.anthropic.com/news/finance-agents\">Anthropic presented ten agent templates for financial services</a>, including a financial model builder, a valuation reviewer, a general ledger reconciler and a month-end closer. They run as plugins in Claude Cowork and Claude Code on all paid plans.</p><p>On the same date, Anthropic stated that its add-ins for Excel, PowerPoint and Word are generally available. In Excel, Claude builds models from filings and data feeds, and audits formulas across linked workbooks.</p><p>The <a href=\"https://claude.com/fr/solutions/financial-services\">Financial Services page</a> is aimed at banks, insurers, asset managers and fintechs, with market-data connectors (FactSet, S&amp;P Capital IQ, PitchBook, Morningstar). For an SME, the everyday building blocks are simpler: projects, skills and Excel.</p>"
+      },
+      {
+        "id": "projets",
+        "title": "What is a Claude project for in a finance file?",
+        "html": "<p>A <a href=\"https://support.claude.com/en/articles/9517075-what-are-projects\">Claude project</a> is a workspace with its own chat history and its own knowledge base. Projects are open to every account, including free ones (five projects at most); the Team and Enterprise plans let you share them with view or edit rights.</p><p>At Iter, every client has its own project. It holds the engagement instructions and the file's second brain: a one-page client sheet, dated and sourced assumptions, a decision log and dated deliverables. The CFO prepares the weekly review with the founder without re-explaining the context, and the file stays easy to hand over.</p><ul><li>Upload approved documents: latest close, budget, reporting procedure.</li><li>Write short instructions: expected role, deliverable format, review rules.</li><li>Date every assumption and state its source.</li></ul>"
+      },
+      {
+        "id": "skills",
+        "title": "What are skills, and which ones are useful in finance?",
+        "html": "<p><a href=\"https://support.claude.com/en/articles/12512176-what-are-skills\">Skills</a> are folders of instructions, scripts and resources that Claude loads when the task calls for them. They are available on every plan, from Free to Enterprise, provided code execution is enabled. On Team and Enterprise, administrators can roll them out to the whole team.</p><p>A skill fixes a method: the same forecast, the same check, the same format for every client. These are the families we use on engagements:</p><div class=\"prose-table-wrapper\"><table class=\"min-w-[32rem]\"><caption>Finance skills used by Iter</caption><thead><tr><th scope=\"col\">Family</th><th scope=\"col\">What the skill does</th><th scope=\"col\">Review</th></tr></thead><tbody><tr><th scope=\"row\">Cash</th><td>13-week forecast including VAT, corporate tax, social security contributions and payroll; customer reminders</td><td>Receipt assumptions approved by the CFO</td></tr><tr><th scope=\"row\">Performance management</th><td>Budget versus actuals, re-forecast, board pack</td><td>Variance commentary reviewed before sending</td></tr><tr><th scope=\"row\">Business model economics</th><td>SaaS unit economics, profitability by customer, pricing audit</td><td>Data reconciled with the accounts</td></tr><tr><th scope=\"row\">Decisions</th><td>Hiring affordability, scenarios, BSPCE and cap table</td><td>Assumptions decided by the founder</td></tr><tr><th scope=\"row\">Fundraising</th><td>Investor readiness, financial model, data room</td><td>Every version approved by the CFO</td></tr><tr><th scope=\"row\">Quality</th><td>Check on a deliverable before sending, score out of 100</td><td>The CFO decides whether it is sent</td></tr></tbody></table></div><p>The workflows that combine these skills are detailed in our guide to <a href=\"/ressources/ia-finance/agents-ia-finance\">AI agents in the finance function</a>.</p>"
+      },
+      {
+        "id": "excel",
+        "title": "How do you use Claude in Excel without weakening a model?",
+        "html": "<ol><li>Work on a copy of the workbook and keep the reference version untouched.</li><li>Ask Claude to list every cell it changed and the formula it used.</li><li>Recalculate the control totals: closing cash, balance sheet total, profit.</li><li>Build revenue from drivers (volumes, prices, churn) rather than hard-coded amounts.</li><li>Have the assumptions reviewed by the person responsible for them.</li></ol><p>To compare Claude with ChatGPT or Gemini on the same file, use our <a href=\"/ressources/ia-finance/llm-finance\">LLM comparison protocol</a>.</p>"
+      },
+      {
+        "id": "donnees",
+        "title": "Which data should you share with Claude?",
+        "html": "<p><a href=\"https://www.anthropic.com/legal/commercial-terms\">Anthropic's Commercial Terms</a>, effective since 17 June 2025, state that Anthropic may not train models on customer content from its business services. The Financial Services page adds that, on the Team and Enterprise plans, models are not trained on your data by default. Consumer offerings fall under different terms: <a href=\"https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training\">check the data-use setting</a> before any use.</p><ul><li>Use a business account authorised by the company.</li><li>Remove unnecessary personal data: employee names, bank details, contact details.</li><li>Give connectors read-only access until a use case is approved.</li></ul>"
+      },
+      {
+        "id": "limites",
+        "title": "What should you refuse to delegate to Claude?",
+        "html": "<p>Some decisions commit the company and stay with an identified person:</p><ul><li>budget and forecast assumptions;</li><li>accounting entries and provisions;</li><li>payment approvals;</li><li>communication with banks and investors.</li></ul><p>Claude prepares, calculates and drafts. The <a href=\"/daf-externalise\">CFO</a> checks, decides and signs.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Is Claude suitable for an SME or only for banks?",
+        "answer": "The Financial Services offering mainly targets large institutions. An SME already benefits from projects, skills and the Excel add-in, which are available on standard plans."
+      },
+      {
+        "question": "Do you need a paid plan?",
+        "answer": "Projects and skills exist on the free plan, with limits. The financial agent plugins announced in May 2026 require a paid plan, and sharing projects across the team requires a Team or Enterprise plan."
+      },
+      {
+        "question": "Claude or ChatGPT for finance?",
+        "answer": "Neither is best for every team. Test both on the same file, with an answer key prepared in advance, in an environment the company has authorised."
+      },
+      {
+        "question": "How does Iter use Claude?",
+        "answer": "Every client has a Claude project with its second brain. Our CFOs rely on a suite of finance skills and on agents whose every deliverable is reviewed and approved before it is sent."
+      }
+    ],
+    "sources": [
+      "anthropicFinanceAgents",
+      "claudeFinancialServices",
+      "claudeProjects",
+      "claudeSkills",
+      "anthropicCommercialTerms",
+      "anthropicData"
+    ],
+    "related": [
+      "agents-ia-finance",
+      "llm-finance"
+    ]
   }
 }

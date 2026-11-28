@@ -57,18 +57,18 @@ describe("reviewed AI-finance journeys", () => {
     }
     expect(localizeIaHtml('<a href="/ressources/ia-finance/chatgpt-finance#pieces">Test</a>', "es")).toContain('/es/recursos/ia-finanzas/chatgpt-finanzas#pieces');
   });
-  it("renders complete hubs with six local guide links and identical blocks", async () => {
+  it("renders complete hubs with eight local guide links and identical blocks", async () => {
     const rendered = await Promise.all(locales.map(async locale => renderToStaticMarkup(await IaFinanceHub({ locale }))));
     const blocks = (html: string) => [...doc(html).querySelectorAll("[data-block-key]")].map(e => e.getAttribute("data-block-key"));
     for (const [i, locale] of locales.entries()) {
       expect(blocks(rendered[i])).toEqual(blocks(rendered[0]));
       const page = doc(rendered[i]);
       expect(page.querySelectorAll("h1")).toHaveLength(1);
-      expect(page.querySelectorAll("h2")).toHaveLength(5);
+      expect(page.querySelectorAll("h2")).toHaveLength(6);
       for (const slug of Object.keys(IA_GUIDES)) expect(page.querySelector(`a[href="${iaGuideHref(slug, locale)}"]`)).not.toBeNull();
       const schema = JSON.parse(page.querySelector('script[type="application/ld+json"]')!.textContent!);
-      expect(schema.hasPart).toHaveLength(6);
-      expect(schema.hasPart.map((s: { url: string }) => s.url)).toEqual(["automatiser-reporting-financier", "chatgpt-finance", "llm-finance", "outils", "retours-experience", "feuille-de-route-90-jours"].map(slug => "https://www.iteradvisors.com" + iaGuideHref(slug, locale)));
+      expect(schema.hasPart).toHaveLength(8);
+      expect(schema.hasPart.map((s: { url: string }) => s.url)).toEqual(["automatiser-reporting-financier", "agents-ia-finance", "claude-finance", "chatgpt-finance", "llm-finance", "outils", "retours-experience", "feuille-de-route-90-jours"].map(slug => "https://www.iteradvisors.com" + iaGuideHref(slug, locale)));
     }
   });
   it("keeps visible FAQ and Article schema accurate, with complete exercises", async () => {
@@ -83,7 +83,7 @@ describe("reviewed AI-finance journeys", () => {
         expect(article.inLanguage).toBe({ fr: "fr-FR", en: "en-GB", es: "es-ES" }[locale]);
         expect(article.author).not.toHaveProperty("name");
         expect(article.author["@id"]).toBe("https://www.iteradvisors.com/a-propos/benjamin-ziza#person");
-        if (locale !== "fr") expect(article.datePublished).toBe("2026-10-02");
+        if (locale !== "fr") expect(article.datePublished).toBe(IA_GUIDES[slug].published > "2026-10-02" ? IA_GUIDES[slug].published : "2026-10-02");
         const faq = schema.find((s: { "@type": string }) => s["@type"] === "FAQPage");
         expect([...page.querySelectorAll("#faq details")].map(d => ({ q: text(d.querySelector("h3")!), a: text(d.querySelector("p")!) }))).toEqual(faq.mainEntity.map((q: { name: string; acceptedAnswer: { text: string } }) => ({ q: q.name, a: q.acceptedAnswer.text })));
         for (const a of page.querySelectorAll('a[href^="#"]')) expect(page.getElementById(a.getAttribute("href")!.slice(1))).not.toBeNull();

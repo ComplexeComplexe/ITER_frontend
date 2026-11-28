@@ -189,6 +189,16 @@
     "en": "/en/resources/ai-finance/90-day-roadmap",
     "es": "/es/recursos/ia-finanzas/hoja-ruta-90-dias"
   },
+  "/ressources/ia-finance/agents-ia-finance": {
+    "fr": "/ressources/ia-finance/agents-ia-finance",
+    "en": "/en/resources/ai-finance/ai-agents-finance",
+    "es": "/es/recursos/ia-finanzas/agentes-ia-finanzas"
+  },
+  "/ressources/ia-finance/claude-finance": {
+    "fr": "/ressources/ia-finance/claude-finance",
+    "en": "/en/resources/ai-finance/claude-finance",
+    "es": "/es/recursos/ia-finanzas/claude-finanzas"
+  },
   "/ressources/ia-finance/retours-experience": {
     "fr": "/ressources/ia-finance/retours-experience",
     "en": "/en/resources/ai-finance/experience-reports",

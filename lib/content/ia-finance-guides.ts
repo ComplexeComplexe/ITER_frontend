@@ -111,5 +111,154 @@ export const IA_GUIDES: Record<string, IaGuide> = {
       {id:"transposer",title:"Comment transposer ces cas sans copier leurs promesses ?",html:`${table("Décider du premier pilote",["Votre problème","Cas utile","Mesure locale"],[["Rapprochements longs","U.S. Venture","Temps complet et taux d’exceptions"],["Demandes de pièces imprécises","Armanino","Temps de rédaction et allers-retours"],["Dossiers volumineux","Hebbia","Exactitude des références et omissions"],["Données dispersées","Opti Digital, structuration financière","Fiabilité du reporting et procédure de clôture"]])}<p>La ${link("feuille-de-route-90-jours","feuille de route à 90 jours")} aide à transformer une idée en test mesurable. Un <a href="/daf-externalise">DAF externalisé</a> peut en piloter le cadrage et les contrôles avec vos équipes.</p>`},
     ],faq:[{question:"Ces entreprises sont-elles toutes clientes d’Iter Advisors ?",answer:"Non. U.S. Venture, Armanino et Hebbia sont des cas publics publiés par des éditeurs. Opti Digital est présenté séparément comme une mission Iter de structuration financière."},{question:"Les gains publiés sont-ils reproductibles dans une PME ?",answer:"Ils ne sont pas garantis. Les volumes, l’environnement technique et les coûts de contrôle diffèrent. Mesurez le résultat sur un périmètre comparable avant d’étendre le dispositif."},{question:"Pourquoi distinguer résultat mesuré et bénéfice estimé ?",answer:"Une estimation exprime un potentiel. Un résultat mesuré doit préciser le processus, la période, le point de départ et la méthode. Lorsque ces éléments manquent, le chiffre ne suffit pas à établir un ROI."}],sources:["usVenture","armanino","hebbia"],related:["feuille-de-route-90-jours","automatiser-reporting-financier"],
   },
+  "agents-ia-finance": {
+    "label": "Agents IA en direction financière",
+    "title": "Agents IA en direction financière : 12 workflows réels et leurs contrôles",
+    "metaTitle": "Agents IA en finance : 12 workflows réels et leurs contrôles",
+    "description": "Levée de fonds, reporting, trésorerie, lettrage, audit : les workflows IA qu’Iter utilise en mission, leur statut et le contrôle humain prévu.",
+    "dek": "Un agent IA en direction financière enchaîne des étapes définies sur les données d’un dossier (lire, rapprocher, calculer, rédiger) et remet un livrable qu’un responsable valide. Voici les workflows qu’Iter Advisors utilise en mission, avec leur statut réel, leur déclencheur et le contrôle humain prévu.",
+    "published": "2026-11-28",
+    "image": financeImage,
+    "summary": [
+      "Un agent enchaîne des étapes ; il ne remplace ni la validation du DAF ni celle de l’expert-comptable.",
+      "Chaque workflow a un déclencheur, un livrable et un point de contrôle humain écrit à l’avance.",
+      "Les statuts sont réels : en production, validé ou en test. Aucun résultat client n’est publié sans accord."
+    ],
+    "sections": [
+      {
+        "id": "definition",
+        "title": "Qu’est-ce qu’un agent IA en direction financière ?",
+        "html": "<p>Un assistant répond à une demande dans une conversation. Un agent IA va plus loin : il suit un enchaînement d’étapes défini à l’avance, utilise des outils (lecture d’un export, calcul dans un classeur, appel à l’API d’un logiciel comptable) et produit un livrable complet.</p><p>Dans nos missions, nous distinguons quatre objets :</p><ul><li><strong>La skill :</strong> une méthode réutilisable, par exemple un prévisionnel de trésorerie à 13 semaines, que l’assistant applique de la même façon à chaque dossier.</li><li><strong>L’agent :</strong> un workflow qui enchaîne plusieurs étapes et plusieurs skills jusqu’au livrable.</li><li><strong>La routine :</strong> un agent déclenché à date fixe, par exemple le premier jour du mois.</li><li><strong>Le cockpit :</strong> une interface où un responsable arbitre les cas ambigus avant que l’agent exécute.</li></ul><p>Un agent ne remplace ni la validation du DAF ni celle de l’expert-comptable. Il prépare, vérifie et documente ; la décision reste humaine.</p>"
+      },
+      {
+        "id": "workflows",
+        "title": "Quels workflows Iter utilise-t-il en mission ?",
+        "html": "<p>Le tableau recense les workflows de notre catalogue interne consacrés au pilotage financier des clients, au 28 novembre 2026. « En production » signifie utilisé sur des dossiers clients ; « validé » signifie testé et en cours de généralisation ; « en test » signifie en pilote.</p><div class=\"prose-table-wrapper\"><table class=\"min-w-[32rem]\"><caption>Workflows IA d’Iter Advisors en direction financière</caption><thead><tr><th scope=\"col\">Workflow</th><th scope=\"col\">Déclencheur</th><th scope=\"col\">Livrable</th><th scope=\"col\">Contrôle humain</th><th scope=\"col\">Statut</th></tr></thead><tbody><tr><th scope=\"row\">Pack investisseur pour une levée de fonds</th><td>Mandat de levée signé</td><td>Modèle à trois scénarios, deck, teaser, suivi de la data room</td><td>Le CFO valide chaque version ; le dirigeant arbitre la valorisation</td><td>En production</td></tr><tr><th scope=\"row\">Revue critique d’un business plan</th><td>Business plan reçu du client</td><td>Note de synthèse, modèle retraité, questions ouvertes</td><td>Relecture du CFO avant restitution</td><td>En production</td></tr><tr><th scope=\"row\">Audit des exercices antérieurs</th><td>Démarrage d’un mandat ou pré-due diligence</td><td>Anomalies classées par gravité, corrections proposées</td><td>Aucune écriture passée sans accord</td><td>En production</td></tr><tr><th scope=\"row\">Reporting mensuel</th><td>Clôture comptable du mois</td><td>Classeurs de reporting, commentaire des écarts</td><td>Contrôle qualité du CFO avant envoi</td><td>En production</td></tr><tr><th scope=\"row\">Prévisionnel de trésorerie actualisé par script</th><td>Besoin de visibilité sur le cash</td><td>Modèle Excel, onglet de tendances, note d’écarts</td><td>Le CFO valide les hypothèses d’encaissement</td><td>En production</td></tr><tr><th scope=\"row\">Diagnostic de crise</th><td>Alerte de trésorerie</td><td>Trois options chiffrées et une recommandation</td><td>Validation par un associé avant envoi</td><td>En production</td></tr><tr><th scope=\"row\">Order-to-cash sur Holded</th><td>Mandat de finance controller</td><td>Factures, conciliation bancaire et Stripe, relances</td><td>Écritures validées par un finance manager</td><td>En production</td></tr><tr><th scope=\"row\">Lettrage des comptes clients</th><td>Rattrapage d’exercice, puis chaque clôture</td><td>Lettrage appliqué, rapport d’exceptions</td><td>Simulation par défaut, validation à chaque palier</td><td>Validé</td></tr><tr><th scope=\"row\">Projet Claude et second brain par client</th><td>Démarrage d’un mandat</td><td>Fiche client, hypothèses datées, journal de décisions</td><td>Le CFO responsable du dossier trace chaque décision</td><td>Validé</td></tr><tr><th scope=\"row\">Suite d’agents CFO avec orchestrateur</th><td>Toute demande du dirigeant</td><td>Budget contre réel, board pack, scénarios, table de capitalisation</td><td>Le CFO relit et signe chaque livrable</td><td>Validé</td></tr><tr><th scope=\"row\">Contrôle qualité d’un livrable</th><td>Livrable prêt à partir</td><td>Score sur 100, points bloquants, corrections</td><td>Le CFO décide de l’envoi</td><td>En test</td></tr><tr><th scope=\"row\">Compte rendu de réunion et tâches</th><td>Fin d’une réunion client enregistrée</td><td>Compte rendu, engagements, tâches proposées</td><td>Aucune tâche créée sans accord du CFO</td><td>En test</td></tr></tbody></table></div><p>Les outils mobilisés sont ceux des dossiers : Pennylane, Holded, Pleo, Qonto, Stripe, Excel, Google Drive et Notion. L’assistant est Claude, utilisé dans un projet par dossier (voir notre <a href=\"/ressources/ia-finance/claude-finance\">guide Claude pour la finance</a>).</p>"
+      },
+      {
+        "id": "lettrage",
+        "title": "Exemple : comment lettrer les comptes clients par paliers ?",
+        "html": "<p>Le lettrage rapproche chaque facture client de son règlement. Mal tenu, il fausse la balance âgée, le délai de paiement client et les relances. Notre agent reprend la procédure manuelle et l’exécute par l’API du logiciel comptable, avec des garde-fous qu’une exécution à la main n’a pas.</p><ol><li>Extraire, juste avant chaque lot, les lignes clients non lettrées et leurs identifiants.</li><li>Charger les règlements de l’ERP de facturation, qui fait référence sur ce qui est réellement payé.</li><li>Appliquer les règles dans l’ordre : référence de l’ERP, référence commune, montant identique au plus proche en date, groupes de deux à quatre lignes à somme nulle.</li><li>Exclure systématiquement les factures encore ouvertes dans l’ERP, les comptes agrégés et tout groupe déséquilibré, même de 0,01 €.</li><li>Appliquer par paliers (5, 10, 15, 20, 50 puis 100 groupes), avec quatre contrôles entre deux paliers et un arrêt au premier écart.</li><li>Clôturer le run : taux de lettrage avant et après, rapport d’exceptions par compte.</li></ol><p>Le premier test réel porte sur trois à cinq comptes, avec la personne responsable de la comptabilité chez le client. Les écarts et reclassements passent uniquement par une opération diverse validée par l’expert-comptable.</p>"
+      },
+      {
+        "id": "controle",
+        "title": "Comment garder la main sur des agents qui produisent des livrables ?",
+        "html": "<p>Chaque workflow écrit à l’avance qui valide quoi. Les règles qui reviennent dans notre catalogue :</p><ul><li>L’agent propose ; le CFO valide avant tout envoi au client.</li><li>Aucune écriture comptable, aucun paiement et aucune tâche ne sont créés sans accord explicite.</li><li>Les opérations sensibles démarrent en simulation, puis sur un petit périmètre.</li><li>Un livrable à enjeu passe un contrôle qualité noté sur 100, avec des points bloquants.</li><li>Chaque mois, une revue recoupe ce qui était prévu, ce qui a été livré et ce qui a été promis en réunion.</li></ul><p>La revue mensuelle pondère quatre critères : délais (35 points), qualité (35), engagements tenus (20) et discipline de documentation (10). Une tâche absente de l’outil de suivi est considérée comme non faite.</p>"
+      },
+      {
+        "id": "memoire",
+        "title": "Pourquoi tenir un « second brain » par dossier client ?",
+        "html": "<p>Un assistant oublie tout entre deux conversations si on ne lui donne pas de contexte. Pour chaque client, nous tenons une mémoire structurée : une fiche d’une page, les hypothèses datées et sourcées, un journal de décisions où l’on ajoute sans jamais effacer, et les livrables datés.</p><p>Cette mémoire sert à trois choses : préparer la revue hebdomadaire avec le dirigeant sans réexpliquer le contexte, permettre à tous les agents de lire les mêmes informations, et transmettre le dossier si le CFO change. Le CFO responsable du dossier en est le propriétaire.</p>"
+      },
+      {
+        "id": "commencer",
+        "title": "Par quel workflow commencer dans votre équipe finance ?",
+        "html": "<div class=\"prose-table-wrapper\"><table class=\"min-w-[32rem]\"><caption>Choisir un premier workflow</caption><thead><tr><th scope=\"col\">Votre situation</th><th scope=\"col\">Premier workflow</th><th scope=\"col\">Prérequis</th></tr></thead><tbody><tr><th scope=\"row\">Le reporting mensuel prend plusieurs jours</th><td>Reporting mensuel avec commentaire des écarts</td><td>Une clôture fiable et un reporting de référence</td></tr><tr><th scope=\"row\">La trésorerie est tendue ou une levée se prépare</th><td>Prévisionnel de trésorerie actualisé</td><td>Relevés bancaires et grand livre exportables</td></tr><tr><th scope=\"row\">La balance âgée n’est pas fiable</th><td>Lettrage des comptes clients</td><td>Un ERP ou un outil de facturation qui sait ce qui est payé</td></tr><tr><th scope=\"row\">Un nouveau DAF reprend le dossier</th><td>Audit des exercices antérieurs</td><td>Comptes annuels, balances et FEC</td></tr></tbody></table></div><p>Pour cadrer un pilote, suivez notre <a href=\"/ressources/ia-finance/feuille-de-route-90-jours\">feuille de route à 90 jours</a>. Un <a href=\"/daf-externalise\">DAF externalisé</a> peut aussi mettre en place ces workflows dans le cadre d’une mission.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Un agent IA peut-il passer des écritures comptables seul ?",
+        "answer": "Il peut préparer et appliquer des opérations répétitives, comme un lettrage, dans un cadre fixé à l’avance. Chez Iter, les opérations sensibles démarrent en simulation, puis sur un petit périmètre, et les écarts passent par une écriture validée par l’expert-comptable."
+      },
+      {
+        "question": "Faut-il une équipe technique pour utiliser ces workflows ?",
+        "answer": "Non pour les skills et les projets, qui s’utilisent dans l’assistant. Les agents qui appellent l’API d’un logiciel comptable demandent un paramétrage initial et des accès définis avec le dirigeant."
+      },
+      {
+        "question": "Quels logiciels sont compatibles ?",
+        "answer": "Nos workflows fonctionnent aujourd’hui avec Pennylane, Holded, Pleo, Qonto, Stripe, Excel, Google Drive et Notion. Un autre logiciel convient s’il permet un export fiable ou dispose d’une API."
+      },
+      {
+        "question": "Les gains de temps sont-ils garantis ?",
+        "answer": "Non. Le gain dépend de la qualité des données, de la régularité des clôtures et du temps de contrôle. Nous ne publions pas de résultat chiffré d’un client sans son accord écrit."
+      }
+    ],
+    "sources": [
+      "anthropicFinanceAgents",
+      "claudeSkills",
+      "pennylane"
+    ],
+    "related": [
+      "claude-finance",
+      "feuille-de-route-90-jours"
+    ]
+  },
+  "claude-finance": {
+    "label": "Claude pour la finance",
+    "title": "Claude pour la finance : projets, skills et agents pour une équipe finance",
+    "metaTitle": "Claude pour la finance : projets, skills et agents",
+    "description": "Utiliser Claude dans une équipe finance de PME : projets par dossier, skills, agents, Excel, données confiées et limites, avec l’usage d’Iter.",
+    "dek": "Claude, l’assistant d’Anthropic, s’utilise en finance de trois façons : un projet par dossier qui garde le contexte, des skills qui appliquent une méthode et des agents qui enchaînent les étapes d’un livrable. Ce guide sépare ce que l’éditeur annonce de ce que nous utilisons en mission.",
+    "published": "2026-11-28",
+    "image": financeImage,
+    "summary": [
+      "Pour une PME, l’essentiel tient dans les projets, les skills et l’intégration à Excel.",
+      "Les annonces de l’éditeur sont citées avec leur date ; l’usage d’Iter est décrit séparément.",
+      "Les données confiées et les décisions restent sous la responsabilité de l’entreprise."
+    ],
+    "sections": [
+      {
+        "id": "offre",
+        "title": "Que propose Anthropic pour la finance ?",
+        "html": "<p>Le 5 mai 2026, <a href=\"https://www.anthropic.com/news/finance-agents\">Anthropic a présenté dix modèles d’agents pour les services financiers</a>, dont un constructeur de modèles financiers, un réviseur de valorisation, un rapprochement du grand livre et un agent de clôture mensuelle. Ils s’utilisent comme plugins dans Claude Cowork et Claude Code, sur tous les forfaits payants.</p><p>À la même date, Anthropic indique que ses compléments pour Excel, PowerPoint et Word sont disponibles. Dans Excel, Claude construit des modèles à partir de documents et de flux de données, et contrôle les formules entre classeurs liés.</p><p>La <a href=\"https://claude.com/fr/solutions/financial-services\">page Services financiers</a> vise les banques, les assureurs, les gestionnaires d’actifs et les fintechs, avec des connecteurs de données de marché (FactSet, S&amp;P Capital IQ, PitchBook, Morningstar). Pour une PME, les briques utiles au quotidien sont plus simples : les projets, les skills et Excel.</p>"
+      },
+      {
+        "id": "projets",
+        "title": "À quoi sert un projet Claude pour un dossier financier ?",
+        "html": "<p>Un <a href=\"https://support.claude.com/en/articles/9517075-what-are-projects\">projet Claude</a> est un espace de travail avec son propre historique et sa propre base de documents. Les projets sont ouverts à tous les comptes, y compris gratuits (cinq projets au maximum) ; les forfaits Team et Enterprise permettent de les partager en lecture ou en modification.</p><p>Chez Iter, chaque client a son projet. Il contient les instructions de la mission et le « second brain » du dossier : fiche client d’une page, hypothèses datées et sourcées, journal de décisions et livrables datés. Le CFO prépare ainsi la revue hebdomadaire avec le dirigeant sans réexpliquer le contexte, et le dossier reste transmissible.</p><ul><li>Déposez des documents validés : dernière clôture, budget, procédure de reporting.</li><li>Écrivez des instructions courtes : rôle attendu, format des livrables, règles de contrôle.</li><li>Datez chaque hypothèse et indiquez sa source.</li></ul>"
+      },
+      {
+        "id": "skills",
+        "title": "Que sont les skills et lesquelles servent en finance ?",
+        "html": "<p>Les <a href=\"https://support.claude.com/en/articles/12512176-what-are-skills\">skills</a> sont des dossiers d’instructions, de scripts et de ressources que Claude charge quand la tâche le demande. Elles sont disponibles sur tous les forfaits, de Free à Enterprise, à condition d’activer l’exécution de code. Sur Team et Enterprise, les administrateurs peuvent les déployer pour toute l’équipe.</p><p>Une skill fixe une méthode : le même prévisionnel, le même contrôle, le même format à chaque dossier. Voici les familles que nous utilisons en mission :</p><div class=\"prose-table-wrapper\"><table class=\"min-w-[32rem]\"><caption>Skills financières utilisées par Iter</caption><thead><tr><th scope=\"col\">Famille</th><th scope=\"col\">Ce que fait la skill</th><th scope=\"col\">Contrôle</th></tr></thead><tbody><tr><th scope=\"row\">Trésorerie</th><td>Prévisionnel à 13 semaines avec TVA, IS, URSSAF et paie ; relances clients</td><td>Hypothèses d’encaissement validées par le CFO</td></tr><tr><th scope=\"row\">Pilotage</th><td>Budget contre réel, re-forecast, board pack</td><td>Écarts commentés relus avant envoi</td></tr><tr><th scope=\"row\">Économie du modèle</th><td>Unit economics SaaS, rentabilité par client, audit des prix</td><td>Données rapprochées de la comptabilité</td></tr><tr><th scope=\"row\">Décisions</th><td>Capacité à recruter, scénarios, BSPCE et table de capitalisation</td><td>Hypothèses arbitrées par le dirigeant</td></tr><tr><th scope=\"row\">Levée de fonds</th><td>Préparation investisseurs, modèle financier, data room</td><td>Chaque version validée par le CFO</td></tr><tr><th scope=\"row\">Qualité</th><td>Contrôle d’un livrable avant envoi, score sur 100</td><td>Le CFO décide de l’envoi</td></tr></tbody></table></div><p>Le détail des workflows qui assemblent ces skills figure dans notre guide sur les <a href=\"/ressources/ia-finance/agents-ia-finance\">agents IA en direction financière</a>.</p>"
+      },
+      {
+        "id": "excel",
+        "title": "Comment utiliser Claude dans Excel sans fragiliser un modèle ?",
+        "html": "<ol><li>Travaillez sur une copie du classeur et gardez la version de référence intacte.</li><li>Demandez à Claude d’indiquer chaque cellule modifiée et la formule utilisée.</li><li>Recalculez les totaux de contrôle : trésorerie de fin de période, total du bilan, résultat.</li><li>Construisez le revenu par inducteurs (volumes, prix, churn) plutôt que par montants saisis en dur.</li><li>Faites relire les hypothèses par la personne qui en est responsable.</li></ol><p>Pour comparer Claude à ChatGPT ou Gemini sur un même dossier, utilisez notre <a href=\"/ressources/ia-finance/llm-finance\">protocole de comparaison des LLM</a>.</p>"
+      },
+      {
+        "id": "donnees",
+        "title": "Quelles données confier à Claude ?",
+        "html": "<p>Les <a href=\"https://www.anthropic.com/legal/commercial-terms\">conditions commerciales d’Anthropic</a>, en vigueur depuis le 17 juin 2025, prévoient qu’Anthropic n’entraîne pas ses modèles sur les contenus des clients de ses services professionnels. La page Services financiers précise que, sur les forfaits Team et Enterprise, les modèles ne sont pas entraînés sur vos données par défaut. Les offres grand public relèvent d’autres conditions : <a href=\"https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training\">vérifiez le réglage d’utilisation des données</a> avant tout usage.</p><ul><li>Utilisez un compte professionnel autorisé par l’entreprise.</li><li>Retirez les données personnelles inutiles : noms de salariés, IBAN, coordonnées.</li><li>Donnez des accès en lecture seule aux connecteurs tant qu’un usage n’est pas validé.</li></ul>"
+      },
+      {
+        "id": "limites",
+        "title": "Que faut-il refuser de déléguer à Claude ?",
+        "html": "<p>Certaines décisions engagent l’entreprise et restent validées par un responsable identifié :</p><ul><li>les hypothèses du budget et du prévisionnel ;</li><li>les écritures comptables et les provisions ;</li><li>l’approbation des paiements ;</li><li>la communication aux banques et aux investisseurs.</li></ul><p>Claude prépare, calcule et rédige. Le <a href=\"/daf-externalise\">DAF</a> vérifie, arbitre et signe.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Claude est-il adapté à une PME ou réservé aux banques ?",
+        "answer": "L’offre Services financiers vise surtout les grandes institutions. Une PME tire déjà parti des projets, des skills et du complément Excel, accessibles sur les forfaits standards."
+      },
+      {
+        "question": "Faut-il un forfait payant ?",
+        "answer": "Les projets et les skills existent sur le forfait gratuit, avec des limites. Les plugins d’agents financiers annoncés en mai 2026 nécessitent un forfait payant, et le partage des projets dans l’équipe un forfait Team ou Enterprise."
+      },
+      {
+        "question": "Claude ou ChatGPT pour la finance ?",
+        "answer": "Aucun n’est meilleur pour toutes les équipes. Testez les deux sur un même dossier, avec un corrigé préparé à l’avance, dans un environnement autorisé par l’entreprise."
+      },
+      {
+        "question": "Comment Iter utilise-t-il Claude ?",
+        "answer": "Chaque client a un projet Claude avec son second brain. Nos CFO s’appuient sur une suite de skills financières et sur des agents dont chaque livrable est relu et validé avant envoi."
+      }
+    ],
+    "sources": [
+      "anthropicFinanceAgents",
+      "claudeFinancialServices",
+      "claudeProjects",
+      "claudeSkills",
+      "anthropicCommercialTerms",
+      "anthropicData"
+    ],
+    "related": [
+      "agents-ia-finance",
+      "llm-finance"
+    ]
+  },
 };
 export const IA_GUIDE_SLUGS = Object.keys(IA_GUIDES);
