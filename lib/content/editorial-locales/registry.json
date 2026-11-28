@@ -1241,8 +1241,8 @@
       "en": "/en/resources/ai-finance",
       "es": "/es/recursos/ia-finanzas"
     },
-    "title": "IA et finance : cas réels et guides pratiques pour les PME",
-    "description": "Reporting automatisé, ChatGPT, choix des outils et cas documentés : une méthode pour appliquer l’IA à la finance d’une PME avec des résultats vérifiables.",
+    "title": "IA et finance : guides et cas réels pour l’équipe finance",
+    "description": "Agents IA, Claude, ChatGPT, reporting automatisé et cas documentés : comment équiper une équipe finance et utiliser l’IA avec des contrôles vérifiables.",
     "noindex": false,
     "source": "/ressources/ia-finance",
     "sharedEditorial": false
@@ -1281,6 +1281,30 @@
     "description": "Un plan de déploiement IA et reporting pour PME : responsables, livrables, critères de passage, mesure des gains et retour au processus manuel si nécessaire.",
     "noindex": false,
     "source": "/ressources/ia-finance/feuille-de-route-90-jours",
+    "sharedEditorial": false
+  },
+  "/ressources/ia-finance/agents-ia-finance": {
+    "paths": {
+      "fr": "/ressources/ia-finance/agents-ia-finance",
+      "en": "/en/resources/ai-finance/ai-agents-finance",
+      "es": "/es/recursos/ia-finanzas/agentes-ia-finanzas"
+    },
+    "title": "Agents IA en finance : 12 workflows réels et leurs contrôles",
+    "description": "Levée de fonds, reporting, trésorerie, lettrage, audit : les workflows IA qu’Iter utilise en mission, leur statut et le contrôle humain prévu.",
+    "noindex": false,
+    "source": "/ressources/ia-finance/agents-ia-finance",
+    "sharedEditorial": false
+  },
+  "/ressources/ia-finance/claude-finance": {
+    "paths": {
+      "fr": "/ressources/ia-finance/claude-finance",
+      "en": "/en/resources/ai-finance/claude-finance",
+      "es": "/es/recursos/ia-finanzas/claude-finanzas"
+    },
+    "title": "Claude pour la finance : projets, skills et agents",
+    "description": "Utiliser Claude dans une équipe finance de PME : projets par dossier, skills, agents, Excel, données confiées et limites, avec l’usage d’Iter.",
+    "noindex": false,
+    "source": "/ressources/ia-finance/claude-finance",
     "sharedEditorial": false
   },
   "/ressources/ia-finance/llm-finance": {

@@ -369,6 +369,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/outils",
     "/feuille-de-route-90-jours",
     "/retours-experience",
+    "/agents-ia-finance",
+    "/claude-finance",
   ]) {
     entries.push({
       url: `${BASE}/ressources/ia-finance${slug}`,

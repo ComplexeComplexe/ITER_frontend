@@ -1,6 +1,6 @@
 import FinanceExpert from "@/components/FinanceExpert";
 import Link from "@/components/PublishedLocaleLink";
-import type { Locale } from "@/lib/i18n";
+import { formatLongDate, type Locale } from "@/lib/i18n";
 import { parityHref } from "@/lib/locale-route-map";
 import { iaText } from "@/lib/content/ia-finance-interface";
 import { getIaGuide, iaHub, iaGuideHref, iaReference } from "@/lib/content/ia-finance-locales";
@@ -15,6 +15,8 @@ export default function IaFinanceGuide({ slug, locale = "fr" }: { slug: string; 
   const t = (source: string) => iaText(locale, source);
   const hasKit = ["automatiser-reporting-financier", "chatgpt-finance"].includes(slug);
   const hasCalculator = slug === "automatiser-reporting-financier";
+  /** Guides published after the October 2026 translation batch carry their own date in every language. */
+  const fresh = guide.published > "2026-10-02";
   const context = hasCalculator ? "ia-reporting" : slug === "chatgpt-finance" ? "ia-chatgpt" : "ia-finance";
   return <GuideFiscalPage
     locale={locale}
@@ -24,9 +26,9 @@ export default function IaFinanceGuide({ slug, locale = "fr" }: { slug: string; 
     h1={guide.title}
     description={guide.description}
     author={IA_FINANCE_AUTHOR}
-    publishedDate={locale === "fr" ? guide.published : "2026-10-02"}
-    modifiedDate={locale === "fr" ? (hasKit ? "2026-09-30" : "2026-09-05") : "2026-10-02"}
-    modifiedLabel={locale === "fr" ? (hasKit ? "30 septembre 2026" : "5 septembre 2026") : (locale === "en" ? "2 October 2026" : "2 de octubre de 2026")}
+    publishedDate={locale === "fr" || fresh ? guide.published : "2026-10-02"}
+    modifiedDate={fresh ? guide.published : locale === "fr" ? (hasKit ? "2026-09-30" : "2026-09-05") : "2026-10-02"}
+    modifiedLabel={fresh ? formatLongDate(guide.published, locale) : locale === "fr" ? (hasKit ? "30 septembre 2026" : "5 septembre 2026") : (locale === "en" ? "2 October 2026" : "2 de octubre de 2026")}
     badge={t("Cas et sources actualisés")}
     dek={guide.dek}
     heroImage={{ src: guide.image, alt: t("Tableaux de bord et analyse de données financières") }}
@@ -39,7 +41,7 @@ export default function IaFinanceGuide({ slug, locale = "fr" }: { slug: string; 
     related={guide.related.map(key => ({href:iaGuideHref(key, locale), title:getIaGuide(locale, key).title, img:getIaGuide(locale, key).image, alt:getIaGuide(locale, key).label}))}
     references={guide.sources.map(key => iaReference(key, locale))}
   >
-    <p className="text-sm">{locale !== "fr" ? (locale === "en" ? "English version published on 2 October 2026. Sources rechecked on the same date." + (hasKit ? " The corrected teaching kit was added to the French guide on 30 September 2026." : "") : "Versión española publicada el 2 de octubre de 2026. Fuentes revisadas ese día." + (hasKit ? " El kit didáctico con solución se añadió a la guía francesa el 30 de septiembre de 2026." : "")) : hasKit ? "Mise à jour du 30 septembre 2026 : ajout d’un kit pédagogique corrigé" + (hasCalculator ? " et d’un calculateur de rentabilité." : ".") + " Sources documentaires vérifiées le 5 septembre 2026." : "Mise à jour du 5 septembre 2026 : cas attribués, méthode de contrôle et liens documentaires vérifiés."}</p>
+    <p className="text-sm">{fresh ? ({ fr: "Publié le 28 novembre 2026. Sources Anthropic et Claude consultées le même jour. Les workflows Iter sont décrits sans nom ni résultat de client.", en: "Published on 28 November 2026. Anthropic and Claude sources checked on the same date. Iter workflows are described without client names or results.", es: "Publicado el 28 de noviembre de 2026. Fuentes de Anthropic y Claude consultadas ese día. Los flujos de Iter se describen sin nombres ni resultados de clientes." }[locale]) : locale !== "fr" ? (locale === "en" ? "English version published on 2 October 2026. Sources rechecked on the same date." + (hasKit ? " The corrected teaching kit was added to the French guide on 30 September 2026." : "") : "Versión española publicada el 2 de octubre de 2026. Fuentes revisadas ese día." + (hasKit ? " El kit didáctico con solución se añadió a la guía francesa el 30 de septiembre de 2026." : "")) : hasKit ? "Mise à jour du 30 septembre 2026 : ajout d’un kit pédagogique corrigé" + (hasCalculator ? " et d’un calculateur de rentabilité." : ".") + " Sources documentaires vérifiées le 5 septembre 2026." : "Mise à jour du 5 septembre 2026 : cas attribués, méthode de contrôle et liens documentaires vérifiés."}</p>
     {hasKit && <nav aria-label={t("Outils pratiques du guide")} className="not-prose my-6 flex flex-wrap gap-3">
       <a href="#kit-reporting" className="site-button site-button-secondary inline-flex min-h-11 items-center rounded-full border border-iter-violet/30 px-4 py-2 font-medium text-iter-violet">{t("Accéder au kit corrigé")}</a>
       {hasCalculator && <a href="#calculateur-roi" className="site-button site-button-secondary inline-flex min-h-11 items-center rounded-full border border-iter-violet/30 px-4 py-2 font-medium text-iter-violet">{t("Calculer mon gain net")}</a>}

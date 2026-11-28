@@ -187,6 +187,16 @@ const LEGACY_LOCALE_ROUTES: Record<string, Record<Locale, string>> = {
     "en": "/en/resources/ai-finance/tools",
     "es": "/es/recursos/ia-finanzas/herramientas"
 },
+  "/ressources/ia-finance/agents-ia-finance": {
+    "fr": "/ressources/ia-finance/agents-ia-finance",
+    "en": "/en/resources/ai-finance/ai-agents-finance",
+    "es": "/es/recursos/ia-finanzas/agentes-ia-finanzas"
+},
+  "/ressources/ia-finance/claude-finance": {
+    "fr": "/ressources/ia-finance/claude-finance",
+    "en": "/en/resources/ai-finance/claude-finance",
+    "es": "/es/recursos/ia-finanzas/claude-finanzas"
+},
   "/ressources/ia-finance/feuille-de-route-90-jours": {
     "fr": "/ressources/ia-finance/feuille-de-route-90-jours",
     "en": "/en/resources/ai-finance/90-day-roadmap",

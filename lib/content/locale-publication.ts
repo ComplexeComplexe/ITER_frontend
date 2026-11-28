@@ -28,6 +28,8 @@ export const ALIGNED_PAGE_IDS = [
   "/ressources/ia-finance/outils",
   "/ressources/ia-finance/feuille-de-route-90-jours",
   "/ressources/ia-finance/retours-experience",
+  "/ressources/ia-finance/claude-finance",
+  "/ressources/ia-finance/agents-ia-finance",
 
   "/services/recrutement-talent-acquisition",
   "/services/gestion-paie-charges-sociales",
