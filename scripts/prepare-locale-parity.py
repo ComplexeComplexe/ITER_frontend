@@ -58,7 +58,7 @@ FIXED = """
 /daf-externalise-barcelone|/en/fractional-cfo-barcelona|/es/cfo-externalizado-barcelona
 /daf-externalise-paris|/en/fractional-cfo-paris|/es/cfo-externalizado-paris
 /daf-externalise-toulouse|/en/fractional-cfo-toulouse|/es/cfo-externalizado-toulouse
-/carrieres/fractional-cfo|/en/careers/fractional-cfo|/es/carreras/cfo-externo
+/carrieres/fractional-cfo|/en/careers/fractional-cfo|/es/carreras/cfo-tiempo-parcial
 /jobs/finance-analyst-junior-fr|/en/jobs/junior-finance-analyst|/es/empleos/analista-financiero-junior
 /jobs/marketing-growth-strategy|/en/jobs/marketing-growth-strategy|/es/empleos/marketing-estrategia-crecimiento
 /jobs/senior-finance-manager|/en/jobs/senior-finance-manager|/es/empleos/responsable-financiero-senior

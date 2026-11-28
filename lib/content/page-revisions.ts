@@ -11,7 +11,7 @@ export const PAGE_REVISIONS: Record<string, string> = {
   "/es/recursos/glosario/director-rrhh-externo": "2026-11-06",
   "/en/resources/glossary/external-hr-director": "2026-11-06",
   "/ressources/glossaire/drh-externalise": "2026-11-06",
-  "/es/carreras/cfo-externo": "2026-10-11",
+  "/es/carreras/cfo-tiempo-parcial": "2026-10-11",
   "/en/careers/fractional-cfo": "2026-10-11",
   "/en/resources/blog/fractional-cfo-cost-services-2026": "2026-10-11",
   "/daf-externalise-toulouse": "2026-10-11",
