@@ -4,22 +4,22 @@ import { CLIENTS_ACCOMPAGNES, DELAIS, ENGAGEMENT, FORMULES } from "@/lib/content
 
 export const DAF_PILLAR_PATH = "/daf-externalise";
 export const DAF_PILLAR_PUBLISHED = "2026-05-17";
-export const DAF_PILLAR_MODIFIED = "2026-11-19";
-export const DAF_PILLAR_MODIFIED_LABEL = "19 novembre 2026";
+export const DAF_PILLAR_MODIFIED = "2026-11-28";
+export const DAF_PILLAR_MODIFIED_LABEL = "28 novembre 2026";
 export const DAF_PILLAR_TRANSLATIONS_MODIFIED = "2026-11-09";
 const fmt = (n: number) => n.toLocaleString("fr-FR").replace(/ | /g, " ");
 const budget = `${fmt(FORMULES[0].prixMin)} à ${fmt(FORMULES[FORMULES.length - 1].prixMax)} € HT`;
 
 export const dafPillar = {
   meta: {
-    title: "DAF externalisé pour PME | Iter Advisors",
-    description: `DAF externalisé pour PME : pilotez votre trésorerie, vos marges et votre reporting avec un DAF senior. Budget indicatif : ${budget}/mois.`,
+    title: "DAF externalisé pour PME : définition, missions, tarifs",
+    description: `Un DAF externalisé pilote la finance d’une PME sans en être salarié : trésorerie, marges, financements. Missions, méthode et budget : ${budget}/mois.`,
   },
   breadcrumbLabel: "DAF externalisé",
   hero: {
     h1: "DAF externalisé pour PME",
     lead: "Anticipez votre trésorerie, comprenez vos marges et préparez vos financements avec un DAF senior, sans recruter à temps plein.",
-    intro: "Votre direction financière externalisée associe prévisionnel de trésorerie, reporting mensuel et revue avec le dirigeant. Un interlocuteur dédié vous aide à relier les chiffres aux décisions de votre entreprise.",
+    intro: "Un DAF externalisé est un directeur administratif et financier qui pilote la finance d’une PME sans en être salarié, à temps partagé ou sur une mission de transition. Il complète l’expert-comptable : votre direction financière externalisée transforme les comptes en prévisionnel de trésorerie, en reporting mensuel et en décisions prises avec le dirigeant.",
     landmarks: [
       { label: "Budget mensuel indicatif", value: budget },
       { label: "Démarrage indicatif", value: DELAIS.missionDemarree },
