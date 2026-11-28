@@ -558,6 +558,9 @@ export default function Page() {
         Modelo 720, déductions à reconstruire.
       </p>
       <p>
+        Pour anticiper le passage au barème progressif, consultez notre guide sur l&apos;<Link href="/ressources/fiscalite/impot-revenu-espagne">impôt sur le revenu en Espagne (IRPF)</Link>.
+      </p>
+      <p>
         La bonne pratique consiste à préparer cette sortie dès la quatrième année : restructuration
         éventuelle des revenus du capital, utilisation des enveloppes de réduction (plans de pension,
         dans leurs limites), arbitrage sur la résidence si votre situation professionnelle a changé.

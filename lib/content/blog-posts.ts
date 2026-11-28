@@ -868,6 +868,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       category: "Fiscalité internationale",
       htmlContent: `<p>L'installation en Espagne — et notamment à Barcelone ou Madrid — représente une opportunité stratégique pour de nombreux entrepreneurs français. Un coût de la vie souvent inférieur à celui de Paris, un écosystème startup en croissance et un cadre de vie attractif en font une destination privilégiée.</p>
 <p>Cependant, la fiscalité espagnole présente des spécificités que tout entrepreneur ou salarié expatrié doit maîtriser avant de s'installer. L'impôt sur le revenu en Espagne (IRPF — <em>Impuesto sobre la Renta de las Personas Físicas</em>) fonctionne selon des règles distinctes du système français, avec des opportunités d'optimisation significatives pour ceux qui préparent correctement leur arrivée.</p>
+<p>Pour une vue d'ensemble des deux systèmes, consultez notre <a href="/ressources/fiscalite-espagne-france">guide de la fiscalité France-Espagne</a>.</p>
 <p>Ce guide couvre l'ensemble des aspects pratiques : barèmes, régime des expatriés (loi Beckham), démarches administratives, et comparaison avec la fiscalité française.</p>
 <p><strong>Le barème IRPF 2026 applicable aux résidents espagnols :</strong></p>
 <table>
@@ -1000,6 +1001,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
 <h2 id="section-7-erreurs">Erreurs fréquentes à éviter</h2>
 <p><strong>Erreur 1 — Ne pas déclarer les revenus français.</strong> Même avec la loi Beckham, certains revenus non-exonérés doivent être déclarés. L'administration fiscale espagnole échange des informations avec la France.</p>
 <p><strong>Erreur 2 — Confondre résidence administrative et résidence fiscale.</strong> On est résident fiscal espagnol après 183 jours de présence sur le territoire. Le critère des 183 jours est strict.</p>
+<p>Pour les critères détaillés, consultez notre guide sur la <a href="/ressources/fiscalite/residence-fiscale-france-espagne">résidence fiscale France ou Espagne</a>.</p>
 <p><strong>Erreur 3 — Oublier le Modelo 720.</strong> Un compte N26 ou Revolut, une assurance-vie française ou un appartement à Paris sont des biens à l'étranger au sens espagnol. Les amendes forfaitaires ont été supprimées après l'arrêt de la CJUE de 2022, mais la déclaration reste obligatoire et contrôlée.</p>
 <p><strong>Erreur 4 — Sous-estimer les délais de traitement.</strong> L'obtention du NIE (<em>Número de Identidad de Extranjero</em>), l'ouverture du compte bancaire, l'enregistrement fiscal : comptez 4 à 8 semaines au total.</p>
 <h2 id="faq">FAQ</h2>
@@ -1172,6 +1174,7 @@ export const blogPosts: Record<Locale, Record<string, BlogPostData>> = {
       author: "Florent Greth",
       category: "fiscalite-internationale",
       htmlContent: `<p>Le Modelo 720 est une déclaration informative obligatoire pour tout résident fiscal en Espagne possédant des biens ou des droits situés à l'étranger. Bien qu'il ne s'agisse pas d'un impôt à payer, le non-respect de cette obligation peut entraîner des sanctions.</p>
+<p>Pour vérifier si vous êtes résident fiscal en Espagne, appliquez les critères de notre guide sur la <a href="/ressources/fiscalite/residence-fiscale-france-espagne">résidence fiscale France ou Espagne</a>.</p>
 <h2>Qui est concerné et quels sont les seuils ?</h2>
 <p>Vous devez présenter le Modelo 720 si la valeur totale de vos biens à l'étranger dépasse <strong>50 000 €</strong> dans l'une de ces trois catégories distinctes :</p>
 <ol>
