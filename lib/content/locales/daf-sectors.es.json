@@ -1,7 +1,7 @@
 {
   "secteurs": {
     "meta": {
-      "title": "CFO externo por sector | Iter Advisors",
+      "title": "CFO por sector: finanzas adaptadas a su actividad",
       "description": "CFO externo para startups, e-commerce, industria y deep tech: prioridades financieras, indicadores, entregables y selección del perfil según su actividad."
     },
     "parentLabel": "CFO externo",
@@ -130,7 +130,7 @@
   },
   "industrie": {
     "meta": {
-      "title": "CFO externo industria: costes y circulante | Iter",
+      "title": "CFO para la industria: costes y circulante | Iter",
       "description": "CFO externo para empresas industriales: costes, márgenes, existencias, tesorería e inversión. Descubra el alcance y los entregables de la misión."
     },
     "parentLabel": "CFO externo",
