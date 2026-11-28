@@ -20,7 +20,7 @@ const COPY = {
   es: {
     href: "/es/servicios/ley-beckham",
     lead: "¿Va a solicitar el régimen?",
-    label: "Nuestro acompañamiento Ley Beckham: verificación de requisitos, presentación del Modelo 149 y coordinación con su asesor fiscal",
+    label: "Nuestro asesoramiento sobre la Ley Beckham: verificación de requisitos, presentación del Modelo 149 y coordinación con su asesor fiscal",
   },
 } as const;
 
