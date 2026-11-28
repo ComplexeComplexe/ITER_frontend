@@ -45,8 +45,13 @@ export default function ClientLogoMarquee({ label }: { locale: Locale; label: st
             <div className={styles.group} key={copy} aria-hidden={copy === 1 ? true : undefined}>
               {CLIENT_LOGO_CANDIDATES.map((logo) => (
                 <div className={`${styles.item} ${logo.variant ? styles[logo.variant] : ""}`} key={logo.name}>
+                  {/* `eager` reste nécessaire : en `lazy`, les logos masqués par l'overflow du
+                      bandeau ne se chargent qu'en entrant dans le cadre et apparaissent vides.
+                      `fetchPriority="low"` les fait passer après les ressources critiques et
+                      empêche React 19 d'émettre un <link rel="preload"> par logo (12 préchargements
+                      qui concurrençaient les polices du H1, élément LCP). */}
                   <Image src={`/images/logos/${logo.file}`} alt={copy === 0 ? `Logo ${logo.name}` : ""}
-                    loading="eager" width={210} height={80} sizes="(max-width: 760px) 160px, 210px" unoptimized={logo.file.endsWith(".svg")} />
+                    loading="eager" fetchPriority="low" width={210} height={80} sizes="(max-width: 760px) 160px, 210px" unoptimized={logo.file.endsWith(".svg")} />
                 </div>
               ))}
             </div>

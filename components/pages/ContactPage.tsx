@@ -22,6 +22,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { pushLeadFormSubmitted } from "@/lib/analytics/leadForm";
 import { CONTACT_NEEDS, getContactContext } from "@/lib/contact-context";
 import { getCompanyGeography } from "@/lib/company-facts";
+import { useUserInvalidAria } from "@/lib/forms/useUserInvalidAria";
 
 /* ─── i18n content for the new sections ─── */
 const contactPageText = {
@@ -132,6 +133,8 @@ export default function ContactPage({
   const heroRef = useRef<HTMLDivElement>(null);
 
   const formRef = useRef<HTMLDivElement>(null);
+  const contactFormRef = useRef<HTMLFormElement>(null);
+  useUserInvalidAria(contactFormRef);
 
 
   const [error, setError] = useState("");
@@ -284,7 +287,7 @@ export default function ContactPage({
                     </p>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form ref={contactFormRef} onSubmit={handleSubmit} className="space-y-4">
                     {error && (
                       <div role="alert" className="site-card rounded-xl bg-red-50 border border-red-200 p-4 text-sm text-red-700">
                         {error}
@@ -487,8 +490,18 @@ function renderFields(fields: readonly ContactFormField[]) {
 }
 
 function FieldInput({ field }: { field: ContactFormField }) {
+  // `user-invalid:` (pseudo-classe :user-invalid, Baseline 2023) : l'erreur
+  // n'apparaît qu'après que la personne a modifié puis quitté le champ, ou
+  // tenté d'envoyer — pas dès la première frappe. Bordure + fond + texte pour
+  // ne pas signaler l'erreur par la seule couleur.
   const baseClasses =
-    "w-full bg-muted/50 border border-border/80 rounded-xl px-5 py-3.5 text-foreground placeholder:text-muted-foreground/50 text-sm focus:outline-none focus:border-iter-violet/50 focus:ring-2 focus:ring-iter-violet/10 focus:bg-white transition-all duration-200";
+    "peer w-full bg-muted/50 border border-border/80 rounded-xl px-5 py-3.5 text-foreground placeholder:text-muted-foreground/50 text-sm focus:outline-none focus:border-iter-violet/50 focus:ring-2 focus:ring-iter-violet/10 focus:bg-white user-invalid:border-red-600 user-invalid:bg-red-50 transition-all duration-200";
+  const errorId = field.errorMessage ? `${field.name}-error` : undefined;
+  const errorText = field.errorMessage ? (
+    <p id={errorId} className="hidden peer-user-invalid:block mt-1.5 text-sm text-red-700">
+      {field.errorMessage}
+    </p>
+  ) : null;
 
   if (field.type === "textarea") {
     return (
@@ -502,8 +515,10 @@ function FieldInput({ field }: { field: ContactFormField }) {
           name={field.name}
           required={field.required}
           rows={3}
+          data-error={errorId}
           className={baseClasses + " resize-none"}
         />
+        {errorText}
       </div>
     );
   }
@@ -520,8 +535,10 @@ function FieldInput({ field }: { field: ContactFormField }) {
         name={field.name}
         required={field.required}
         autoComplete={({ firstName: "given-name", lastName: "family-name", email: "email", phone: "tel", company: "organization" } as Record<string, string>)[field.name]}
+        data-error={errorId}
         className={baseClasses}
       />
+      {errorText}
     </div>
   );
 }

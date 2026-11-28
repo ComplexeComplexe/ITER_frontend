@@ -411,19 +411,36 @@
 .prose-iter-blog .callout-tldr p { margin: 0 0 8px; }
 .prose-iter-blog .callout-tldr p:last-child { margin: 0; }
 
-/* ─── Custom scrollbar ─── */
-::-webkit-scrollbar {
-  width: 6px;
+/* ─── Custom scrollbar ───
+   Propriétés standard (Chrome 121+, Firefox, Safari 26.2+), avec repli WebKit
+   pour les navigateurs qui ne connaissent pas scrollbar-color. Curseur à 55 %
+   d'opacité : ≈ 3,9:1 contre le fond de page (l'ancien 30 % donnait ≈ 2:1,
+   sous le seuil WCAG 1.4.11 de 3:1). */
+:root {
+  --scrollbar-thumb: oklch(0.42 0.28 275 / 0.55);
+  --scrollbar-thumb-hover: oklch(0.42 0.28 275 / 0.75);
+  --scrollbar-track: transparent;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: oklch(0.42 0.28 275 / 0.3);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: oklch(0.42 0.28 275 / 0.5);
+@supports not (scrollbar-color: auto) {
+  :root {
+    scrollbar-width: auto;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+  }
 }
 
 /* Preserve stored consent without making first-visit visitors wait for hydration. */
