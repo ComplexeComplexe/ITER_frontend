@@ -63,7 +63,20 @@ function missionsPonctuelles(): string {
   ).join("\n");
 }
 
+// Libellé lisible d'un profil officiel, pour l'écrire en lien Markdown
+// `[nom](url)` : un parseur llms.txt ne lit pas une URL nue (contrôle
+// claude-seo agentic_check, « malformed-link »).
+const profileLabel = (url: string) => {
+  const host = new URL(url).hostname.replace(/^www\./, "");
+  if (host.includes("linkedin")) return "LinkedIn";
+  if (host.includes("trustfolio")) return "Trustfolio";
+  if (host.includes("youtube")) return "YouTube";
+  return host;
+};
+
 const CONTENU = `# Iter Advisors — llms.txt
+
+> Iter Advisors est un cabinet de DAF et de DRH externalisés (direction financière et RH à temps partagé ou de transition) pour PME, startups et scale-ups en France et en Espagne, présent à Paris, Barcelone et Toulouse.
 
 Fiche de contexte destinée aux moteurs génératifs (ChatGPT, Claude, Perplexity,
 Gemini). Les données commerciales proviennent du référentiel d'offre du site.
@@ -78,7 +91,7 @@ ${getCompanyIdentity("fr")}
 - Implantation et intervention : ${getDafOfferFacts("fr").geography}
 - Contact : ${COMPANY.email}
 - Note clients : ${TRUSTFOLIO_RATING}/5 sur ${TRUSTFOLIO_REVIEW_COUNT} avis Trustfolio authentifiés (vérifié le ${TRUSTFOLIO_VERIFIED_DATE})
-${COMPANY_PROFILES.map(url => `- Profil officiel : ${url}`).join("\n")}
+${COMPANY_PROFILES.map(url => `- [Profil officiel ${profileLabel(url)}](${url})`).join("\n")}
 - ${CLIENTS_ACCOMPAGNES} entreprises accompagnées depuis la création
 - ${TEAM_LABEL.fr}
 - ${FONDS_LEVES} levés par les clients accompagnés
@@ -157,10 +170,13 @@ mission validés.
 - [DAF de transition](${BASE}/daf-externalise/transition) : le relais quand le poste est vacant
 - [Le métier de DAF](${BASE}/daf-externalise/metier) : définition, missions, parcours et rémunération
 - [Fractional CFO pour startups](${BASE}/fractional-cfo-startups) : l'offre dédiée aux startups financées
-- [DAF externalisé à Paris](${BASE}/daf-externalise-paris), [à Toulouse](${BASE}/daf-externalise-toulouse), [à Barcelone](${BASE}/daf-externalise-barcelone)
+- [DAF externalisé à Paris](${BASE}/daf-externalise-paris) : l'offre pour les entreprises parisiennes
+- [DAF externalisé à Toulouse](${BASE}/daf-externalise-toulouse) : l'offre pour les entreprises toulousaines
+- [DAF externalisé à Barcelone](${BASE}/daf-externalise-barcelone) : l'offre depuis le siège du cabinet
 - [DRH externalisé](${BASE}/drh-externalise) : direction des ressources humaines à temps partagé
 - [Services finance](${BASE}/services) : levée de fonds, M&A et due diligence, prévisionnel de trésorerie, contrôle de gestion, comptabilité externalisée
-- [Nos clients](${BASE}/clients) et [cas clients](${BASE}/ressources/cas-clients) : références et missions racontées avec leurs limites
+- [Nos clients](${BASE}/clients) : références clients par secteur
+- [Cas clients](${BASE}/ressources/cas-clients) : missions racontées avec leurs limites
 
 ## Fiscalité France-Espagne
 
@@ -192,8 +208,14 @@ mission validés.
 
 ## Versions anglaise et espagnole
 
-- English: [Fractional CFO for SMEs and startups](${BASE}${parityHref("/daf-externalise", "en")}), [About](${BASE}/en/about), [Resources](${BASE}/en/resources)
-- Español: [CFO externo para pymes y startups](${BASE}${parityHref("/daf-externalise", "es")}), [Quiénes somos](${BASE}/es/quienes-somos), [Recursos](${BASE}/es/recursos)
+- [Fractional CFO for SMEs and startups](${BASE}${parityHref("/daf-externalise", "en")}) : English version of the offer
+- [Beckham Law in Spain](${BASE}${parityHref("/ressources/fiscalite/loi-beckham", "en")}) : English guide to the Spanish impatriate tax regime
+- [About Iter Advisors](${BASE}/en/about) : English
+- [Resources](${BASE}/en/resources) : English articles and guides
+- [CFO externo para pymes y startups](${BASE}${parityHref("/daf-externalise", "es")}) : versión en español de la oferta
+- [Ley Beckham en España](${BASE}${parityHref("/ressources/fiscalite/loi-beckham", "es")}) : guía en español del régimen de impatriados
+- [Quiénes somos](${BASE}/es/quienes-somos) : español
+- [Recursos](${BASE}/es/recursos) : artículos y guías en español
 
 
 ## Références clients

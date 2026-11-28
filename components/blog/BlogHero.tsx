@@ -26,7 +26,7 @@ export default function BlogHero({ image, imageAlt, title, dek, author, readingT
           {dek && <p className="mb-6 text-lg leading-relaxed text-muted-foreground">{dek}</p>}
           <ArticleMeta locale={locale} date={dateModified} readMinutes={readingTime} shareUrl={articleUrl} shareTitle={title} />
           <div className="border-t border-border/50 pt-5"><AuthorByline author={author} /></div>
-          {image && <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-3xl bg-muted"><Image src={image} alt={imageAlt || title} fill sizes="(max-width: 768px) 100vw, 768px" className="object-cover" priority /></div>}
+          {image && <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-3xl bg-muted"><Image src={image} alt={imageAlt || title} fill sizes="(max-width: 768px) 100vw, 768px" className="object-cover" priority fetchPriority="high" /></div>}
         </div>
       </div>
     </section>
